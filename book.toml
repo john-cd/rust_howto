@@ -1,0 +1,65 @@
+[book]
+authors = ["S John CD"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Rust Cheatsheets"
+description = "Cheatsheets for the Rust language."
+
+[build]
+build-dir = "book"                # the directory where the output is placed
+create-missing = false            # whether or not to create missing pages
+use-default-preprocessors = true  # use the default preprocessors `links` and `index`
+extra-watch-dirs = []             # directories to watch for triggering builds
+
+[rust]
+edition = "2021"
+
+[preprocessor.hide]
+hide = true
+
+#[preprocessor.index]
+
+#[preprocessor.links]
+
+# # https://rust-lang.github.io/mdBook/format/configuration/renderers.html
+# [output.html]
+# theme = "my-theme"
+# default-theme = "light"
+# preferred-dark-theme = "navy"
+# curly-quotes = true
+# mathjax-support = false
+# copy-fonts = true
+# additional-css = ["custom.css", "custom2.css"]
+# additional-js = ["custom.js"]
+# no-section-label = false
+# git-repository-url = "https://github.com/rust-lang/mdBook"
+# git-repository-icon = "fa-github"
+# edit-url-template = "https://github.com/<owner>/<repo>/edit/<branch>/{path}"
+# site-url = "/example-book/"
+# cname = "myproject.rs"
+# input-404 = "not-found.md"
+
+# [output.html.playground]
+# editable = false         # allows editing the source code
+# copyable = true          # include the copy button for copying code snippets
+# copy-js = true           # includes the JavaScript for the code editor
+# line-numbers = false     # displays line numbers for editable code
+# runnable = true          # displays a run button for rust code
+
+# [output.html.code]
+# # A prefix string per language (one or more chars).
+# # Any line starting with whitespace+prefix is hidden.
+# hidelines = { python = "~" }
+
+# [output.html.search]
+# enable = true            # enables the search feature
+# limit-results = 30       # maximum number of search results
+# teaser-word-count = 30   # number of words used for a search result teaser
+# use-boolean-and = true   # multiple search terms must all match
+# boost-title = 2          # ranking boost factor for matches in headers
+# boost-hierarchy = 1      # ranking boost factor for matches in page names
+# boost-paragraph = 1      # ranking boost factor for matches in text
+# expand = true            # partial words will match longer terms
+# heading-split-level = 3  # link results to heading levels
+# copy-js = true           # include Javascript code for search

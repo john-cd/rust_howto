@@ -1,0 +1,14 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = false    # two spaces at the end of a line should insert a <br /> tag.
+insert_final_newline = false
+
+# See also: Google's style guide: https://github.com/google/styleguide/blob/gh-pages/docguide/style.md
