@@ -1,8 +1,5 @@
 # Traits
 
-[](  )
-https://blog.rust-lang.org/2015/05/11/traits.html
-
 ```rust
 pub trait Summary {
     fn summarize(&self) -> String;
@@ -22,7 +19,7 @@ impl Summary for NewsArticle {          // implement Trait on a Type
 }
 ```
 
-Default implementation:
+## Default implementation
 
 ```rust
 pub trait Summary {
@@ -34,7 +31,7 @@ pub trait Summary {
 }
 ```
 
-Supertraits:
+## Supertraits
 
 ```rust
 use std::fmt;
@@ -45,6 +42,8 @@ trait OutlinePrint: fmt::Display {
     }
 }
 ```
+
+## Newtype pattern
 
 Unlike interfaces in languages like Java, C# or Scala, new traits can be implemented for existing types. One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate. If neither are, use the Newtype pattern:
 
@@ -62,7 +61,7 @@ impl fmt::Display for Wrapper {
 ```
 
 
-Trait as parameter:
+## Trait as parameter
 
 ```rust
 pub fn notify(item: &impl Summary) {  // accepts any type that implements the specified trait. 
@@ -76,7 +75,7 @@ pub fn notify<T: Summary>(item: &T) {
 }
 ```
 
-Multiple traits:
+## Multiple traits
 
 ```rust
 pub fn notify(item: &(impl Summary + Display)) { }
@@ -89,7 +88,7 @@ where
 }
 ```
 
-Traits can also be generic.
+## Generic traits
 
 ```rust
 trait Test<T> {
@@ -101,7 +100,7 @@ impl<T, U> Test<T> for U {
 }
 ```
 
-Associated types:
+## Associated types
 
 ```rust
 pub trait Iterator {
@@ -118,3 +117,8 @@ trait Add<Rhs=Self> {  // default generic type
     fn add(self, rhs: Rhs) -> Self::Output;
 }
 ```
+
+
+## See also
+
+[Traits]( https://blog.rust-lang.org/2015/05/11/traits.html )

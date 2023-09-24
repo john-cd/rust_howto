@@ -19,6 +19,8 @@ Items in a parent module can’t use the private items inside child modules, but
 
 [Visibility rules]( https://doc.rust-lang.org/rust-by-example/mod/visibility.html ) 
 
+[A clear explanation of Rust’s module system]( https://www.sheshbabu.com/posts/rust-module-system/ )
+
 
 ## Use keyword
 

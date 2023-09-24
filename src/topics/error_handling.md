@@ -1,10 +1,12 @@
 # Error Handling
 
+## Irrecoverable panics
+
 ```rust
 panic!("crash and burn"); 
 ```
 
-Recoverable errors with `Result`:
+## Recoverable errors with `Result`:
 
 ```rust
 let mut guess = String::new();

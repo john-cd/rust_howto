@@ -13,7 +13,7 @@ Floating point: `f32`, `f64`
 Boolean: `bool` - `true`, `false`
 Char: `let z: char = 'ℤ';` - Unicode
 
-Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);` destructuring via `let (x, y, z) = tup;`  access via `let five_hundred = x.0;`;
+Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);` destructuring via `let (x, y, z) = tup;` access via `let five_hundred = x.0;`;
 Arrays: `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. access via `let first = a[0];`
 A vector is a similar collection type provided by the standard library that is allowed to grow or shrink in size.
 

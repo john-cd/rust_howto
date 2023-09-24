@@ -1,10 +1,10 @@
 [book]
-authors = ["S John CD"]
+authors = ["John CD"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Rust Cheatsheets"
-description = "Cheatsheets for the Rust language."
+title = "Rust Howto"
+description = "Recipes for the Rust language."
 
 [build]
 build-dir = "book"                # the directory where the output is placed

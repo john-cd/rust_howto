@@ -28,3 +28,11 @@ The Rust standard library provides channels for message passing and smart pointe
 [Concurrency]( https://doc.rust-lang.org/book/ch16-00-concurrency.html )
 
 [Message Passing]( https://doc.rust-lang.org/book/ch16-02-message-passing.html )
+
+[crossbeam](https://docs.rs/crossbeam/latest/crossbeam/)
+
+[Parking Lot]( https://crates.io/crates/parking_lot ): more compact and efficient implementations of the standard synchronization primitives.
+
+[Dashmap]( https://docs.rs/dashmap/5.3.3/dashmap/struct.DashMap.html# )
+
+[Rayon]( https://github.com/rayon-rs/rayon ) for parallel data processing

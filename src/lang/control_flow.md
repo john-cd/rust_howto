@@ -1,6 +1,6 @@
 # Control Flow
 
-If else 
+**If else** 
 
 ```rust
     let result = if number < 5 {         // condition must return a bool; `if` is an expression
@@ -14,7 +14,7 @@ If else
 
 Also `else if <cond> { ... }`
 
-Loop
+**Loop**
 
 ```rust
 let mut counter = 0;
@@ -28,7 +28,7 @@ let mut counter = 0;
     };
 ```    
 
-While 
+**While** 
 
 ```rust
 while number != 0 {
@@ -37,7 +37,7 @@ while number != 0 {
     }
 ```   
 
-For 
+**For** 
 
 ```rust
 let a = [10, 20, 30, 40, 50];

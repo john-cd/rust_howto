@@ -1,1 +1,3 @@
-book
+/book
+.DS_Store
+.vscode/settings.json
