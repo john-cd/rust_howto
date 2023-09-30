@@ -53,6 +53,7 @@ fn calculate_length(s: &String) -> usize {
 // it refers to, s1 is not dropped.
 ```
 
+
 Mutable reference 
 
 ```rust

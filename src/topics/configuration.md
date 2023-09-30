@@ -36,8 +36,3 @@ fn main() -> Result<(), confy::ConfyError> {
     Ok(())
 }
 ```
-
-
-
-
-

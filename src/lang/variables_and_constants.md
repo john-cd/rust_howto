@@ -25,4 +25,4 @@ let Point { x: a, y: b } = p;   // a = 0, b = 7
 let Point { x, y } = p;         // simpler
 ```
 
-Starting the name of a variable with an underscore silences unused variable warnings. 
+Starting the name of a variable with an underscore silences unused variable warnings.

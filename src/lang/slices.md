@@ -1,6 +1,5 @@
 # Slices
 
-
 ```rust
     let s = String::from("hello world");
 

@@ -2,28 +2,28 @@
 authors = ["John CD"]
 language = "en"
 multilingual = false
-src = "src"
-title = "Rust Howto"
-description = "Recipes for the Rust language."
+#src = "src"
+title = "Rust How-to"
+description = "A compendium of links, code snippets, and recipes for the Rust language."
 
 [build]
-build-dir = "book"                # the directory where the output is placed
-create-missing = false            # whether or not to create missing pages
-use-default-preprocessors = true  # use the default preprocessors `links` and `index`
-extra-watch-dirs = []             # directories to watch for triggering builds
+#build-dir = "book"                # the directory where the output is placed
+create-missing = false             # whether or not to create missing pages
+#use-default-preprocessors = true  # use the default preprocessors `links` and `index`
+#extra-watch-dirs = []             # directories to watch for triggering builds
 
 [rust]
 edition = "2021"
 
 [preprocessor.hide]
-hide = true
+hide = true                        # enables mdbook-hide
 
 #[preprocessor.index]
 
 #[preprocessor.links]
 
-# # https://rust-lang.github.io/mdBook/format/configuration/renderers.html
-# [output.html]
+# # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html
+[output.html]
 # theme = "my-theme"
 # default-theme = "light"
 # preferred-dark-theme = "navy"
@@ -33,12 +33,20 @@ hide = true
 # additional-css = ["custom.css", "custom2.css"]
 # additional-js = ["custom.js"]
 # no-section-label = false
-# git-repository-url = "https://github.com/rust-lang/mdBook"
+git-repository-url = "https://github.com/john-cd/rust_howto"
 # git-repository-icon = "fa-github"
-# edit-url-template = "https://github.com/<owner>/<repo>/edit/<branch>/{path}"
-# site-url = "/example-book/"
-# cname = "myproject.rs"
+edit-url-template = "https://github.com/john-cd/rust_howto/edit/main/{path}"
+site-url = "/rust_howto/"
+# cname = "john-cd.com"
 # input-404 = "not-found.md"
+
+[output.html.print]
+enable = true              # include support for printable output
+page-break = false         # insert page-break after each chapter
+
+[output.html.fold]
+enable = true     # whether or not to enable section folding
+level = 0         # the depth to start folding
 
 # [output.html.playground]
 # editable = false         # allows editing the source code

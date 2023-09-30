@@ -12,4 +12,3 @@
 [Dapr SDK for Rust]( https://github.com/dapr/rust-sdk )
 
 [Dapr Rust SDK example]( https://github.com/dapr/rust-sdk/tree/master/examples )
-

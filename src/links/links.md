@@ -29,7 +29,3 @@
 [rust-learning]( https://github.com/ctjhoa/rust-learning ): a bunch of links to blog posts, articles, videos, etc for learning Rust
 
 [Learning Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/index.html)
-
-
-
-

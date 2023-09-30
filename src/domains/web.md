@@ -34,17 +34,6 @@
 [Reqwest]( https://docs.rs/reqwest/latest/reqwest/ )
 
 
-
-
-
-
-
-
-
-
+## Examples
 
 [Building a crawler in Rust: Design and Associated Types]( https://kerkour.com/rust-crawler-associated-types )
-
-
-
-

@@ -34,5 +34,3 @@ enum Option<T> {
 let some_number = Some(5);
 let absent_number: Option<i32> = None;
 ```
-
-

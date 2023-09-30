@@ -4,6 +4,7 @@
 
 <https://john-cd.com/rust_howto>
 
+<https://john-cd.github.io/rust_howto>
 
 ## Install
 
@@ -17,6 +18,8 @@ cargo install mdbook-hide
 ```bash
 mdbook serve --open
 ```
+
+Development endpoint: <http://localhost:3000/>
 
 To mark a chapter as hidden, add this special Comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 

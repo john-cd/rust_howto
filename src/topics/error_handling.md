@@ -6,6 +6,7 @@
 panic!("crash and burn"); 
 ```
 
+
 ## Recoverable errors with `Result`:
 
 ```rust
@@ -36,6 +37,7 @@ fn main() {
     });
 }
 ```
+
 
 ## A Shortcut for Propagating Errors: the ? Operator
 
@@ -78,6 +80,7 @@ fn main() {
 ```
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
+
 
 ### Errors
 

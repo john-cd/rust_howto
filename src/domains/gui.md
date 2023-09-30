@@ -15,4 +15,3 @@ See the relevant section in [blessed.rs]( https://blessed.rs/crates )
 [iced-rs]( https://github.com/iced-rs ): a cross-platform GUI library for Rust, inspired by Elm.
 
 [druid]( https://github.com/linebender/druid ): a data-first Rust-native UI design toolkit (experimental).
-

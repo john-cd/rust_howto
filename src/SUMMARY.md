@@ -1,5 +1,7 @@
 # Rust How-to
 
+[Introduction](README.md)
+
 # Rust Language
 
 - [General](lang/rust_language.md)
