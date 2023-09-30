@@ -1,5 +1,10 @@
 
 
+# Web site
+
+<https://john-cd.com/rust_howto>
+
+
 ## Install
 
 ```bash
