@@ -3,13 +3,15 @@
 {
 	"name": "mdbook on Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/rust:bullseye", // or"mcr.microsoft.com/devcontainers/base:bullseye",
+	"build": { "dockerfile": "Dockerfile" },  // "args": { "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
+    //"containerEnv": { "MY_CONTAINER_VAR": "my-container-value"},
+    //"runArgs": ["-p", "3000:3000"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-    "features": {
-		"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {}
-	},
+    // "features": {
+	// 	"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {}
+	// },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
@@ -28,7 +30,7 @@
 		}
 	},
 
-    "postCreateCommand": "cargo install mdbook-hide; mdbook serve --open"
+    // "postCreateCommand": ""
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
