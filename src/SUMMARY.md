@@ -34,7 +34,7 @@
 - [Smart Pointers](std/smart_pointers.md)
 
 
-# Rust Topics
+# Rust Cross-cutting Topics
 
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
@@ -59,6 +59,7 @@
   - [Faster linking](tools/faster_linking.md)
 - [Formatting and Linting](tools/formatting_linting.md)
 - [Rustup](tools/rustup.md)
+- [Just](tools/just.md)
 - [mdBook](tools/mdbook.md)
 - [Other tools](tools/other_tools.md)
 
