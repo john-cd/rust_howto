@@ -39,7 +39,7 @@
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
 - [Configuration](topics/configuration.md)
-- [Logging](topics/logging.md)
+- [Logging / Tracing](topics/logging.md)
 - [Database access](topics/databases.md)
 - [Testing](topics/tests.md)
 - [Lazy initialization](topics/lazy_initialization.md)

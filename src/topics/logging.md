@@ -70,13 +70,13 @@ trace!("!");
 
 event!(target: "app_events", Level::TRACE, "something has happened!");
 
-// records an event with two fields:
+// records an event with two fields (also works for spans)
 event!(Level::INFO, answer = 42, question = "life, the universe, and everything");
 
 // unlike other fields, `message`'s shorthand initialization is just the string itself.
 debug!(excitement = "yay!", "hello!");
 
-// shorthand
+// shorthand for user = user
 let user = "ferris";
 event!(Level::TRACE, "login", user);
 
@@ -98,14 +98,14 @@ let span = span!(Level::TRACE, "my_span");
 }   // Dropping the guard will exit the span.
 ```
 
-One-liner:
+One-liner with `.entered()`:
 
 ```rust
 let span = span!(Level::TRACE, "some span").entered();
 
 // code here is within the span
 
-// explicitly exit the span, returning it
+// optionally, explicitly exit the span, returning it
 let span = span.exit();
 
 // code here is no longer within the span
