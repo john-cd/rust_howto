@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+	"name": "mdbook on Debian",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/rust:bullseye", // or"mcr.microsoft.com/devcontainers/base:bullseye",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+    "features": {
+		"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+    "customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"EditorConfig.EditorConfig",
+				"tamasfe.even-better-toml",
+				"github.vscode-github-actions",
+				"DavidAnson.vscode-markdownlint"
+			]
+		}
+	},
+
+    "postCreateCommand": "cargo install mdbook-hide; mdbook serve --open"
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
