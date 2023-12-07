@@ -1,5 +1,4 @@
 FROM mcr.microsoft.com/devcontainers/rust:bullseye as final
-# or"mcr.microsoft.com/devcontainers/base:bullseye",
 
 SHELL ["bash", "-c"]
 
