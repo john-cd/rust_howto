@@ -3,6 +3,11 @@
 [Are we Web yet?]( https://www.arewewebyet.org/ )
 
 
+## Axum
+
+[Crates.io example source code (using Axum)](https://github.com/rust-lang/crates.io/tree/main)
+
+
 ## Actix
 
 [Actix web]( https://actix.rs/ )
@@ -12,11 +17,6 @@
 [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial]( https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/ )
 
 [Practical Rust Web Development - API Rest]( https://dev.to/werner/practical-rust-web-development-api-rest-29g1 )
-
-
-## Axum
-
-[Crates.io example source code (using Axum)](https://github.com/rust-lang/crates.io/tree/main)
 
 
 ## Rocket

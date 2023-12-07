@@ -67,6 +67,7 @@
 
 - [CLI](domains/cli.md)
 - [Web](domains/web.md)
+  - [CORS](domains/cors.md)
 - [WASM](domains/wasm.md)
 - [GUI](domains/gui.md)
 - [Cross-platform](domains/crossplatform.md)
