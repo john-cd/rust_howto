@@ -14,14 +14,50 @@ tracing-subscriber = "0.3"
 
 ## Initialization
 
+Basic tracing
+
 ```rust
 use tracing_subscriber;
 
 tracing_subscriber::fmt::init();  // filter events at runtime using environment variables: RUST_LOG=debug,my_crate=trace
 ```
 
+Combine layers
+
 ```rust
-// Configure a custom event formatter
+use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+
+tracing_subscriber::registry()
+    .with(tracing_subscriber::EnvFilter::new(
+        std::env::var("RUST_LOG").unwrap_or_else(|_| {
+            "myproj=debug,axum=debug,tower_http=debug,mongodb=debug".into()
+        }),
+    ))
+    .with(tracing_subscriber::fmt::layer())
+    .init();
+```
+
+Or with a custom formatting layer
+
+```rust
+use tracing_subscriber::{fmt, EnvFilter};
+use tracing_subscriber::prelude::*;
+
+let fmt_layer = fmt::layer()
+    .with_target(false);
+let filter_layer = EnvFilter::try_from_default_env()
+    .or_else(|_| EnvFilter::try_new("info"))
+    .unwrap();
+
+tracing_subscriber::registry()
+    .with(filter_layer)
+    .with(fmt_layer)
+    .init();
+```
+
+Configure a custom event formatter
+
+```rust
 use tracing_subscriber::fmt;
 
 // Configure a custom event formatter
@@ -35,23 +71,6 @@ let format = fmt::format()
 // Create a `fmt` subscriber that uses our custom event format, and set it as the default.
 tracing_subscriber::fmt()
     .event_format(format)
-    .init();
-```
-
-```rust
-// Combine layers
-use tracing_subscriber::{fmt, EnvFilter};
-use tracing_subscriber::prelude::*;
-
-let fmt_layer = fmt::layer()
-    .with_target(false);
-let filter_layer = EnvFilter::try_from_default_env()
-    .or_else(|_| EnvFilter::try_new("info"))
-    .unwrap();
-
-tracing_subscriber::registry()
-    .with(filter_layer)
-    .with(fmt_layer)
     .init();
 ```
 
