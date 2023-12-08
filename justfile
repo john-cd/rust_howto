@@ -7,7 +7,7 @@ clean:
 build:
   mdbook build
 
-serve:
+serve: test
   mdbook serve --open
   # to change the port: --port 3001
 
