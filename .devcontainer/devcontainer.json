@@ -3,8 +3,8 @@
 {
 	"name": "mdbook on Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { "dockerfile": "Dockerfile" },  // "args": { "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
-    //"containerEnv": { "MY_CONTAINER_VAR": "my-container-value"},
+	"build": { "dockerfile": "Dockerfile", "context" : "..", "args": { "WORK_DIR": "${containerWorkspaceFolder}" } }, // "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
+    //"containerEnv": {},
     //"runArgs": ["-p", "3000:3000"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -33,5 +33,5 @@
     // "postCreateCommand": ""
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"remoteUser": "root"
 }

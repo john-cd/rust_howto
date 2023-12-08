@@ -13,15 +13,27 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install just wget \
     && apt-get autoremove -y && apt-get clean -y
 
-RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
-#    cargo install mdbook && \
-    cargo install mdbook-hide
-
 # Install mdbook from the binary release
 RUN <<EOF
 set -e
 wget -c https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
 EOF
+
+RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
+    cargo install mdbook-hide
+    #; cargo install mdbook-keeper
+
+ARG WORK_DIR
+WORKDIR ${WORK_DIR}
+
+COPY src/lib.rs src/
+COPY Cargo.toml Cargo.lock ./
+COPY .cargo/config.toml .cargo/
+
+# Build stub project required by mdbook-keeper
+RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
+    --mount=type=cache,target=/cargo-target-rust_howto/ \
+    cargo build
 
 EXPOSE 3000
 
