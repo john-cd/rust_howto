@@ -25,7 +25,7 @@ If we make an enum public, all of its variants are then public. We only need `pu
 
 Rust has no `null`
 
-```rust
+```rust,ignore
 enum Option<T> {
     None,
     Some(T),

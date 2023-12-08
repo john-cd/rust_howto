@@ -1,6 +1,6 @@
 # Match, if let, while let
 
-```rust
+```rust,ignore
 enum Coin {
     Penny,
     Nickel,

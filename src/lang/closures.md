@@ -10,7 +10,7 @@ fn find_emails(list: Vec<String>) -> Vec<String> {
 
 Closure with type annotations:
 
-```rust
+```rust,ignore
 let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation. Multiple statements can be enclosed in a block. 
     println!("calculating slowly...");
     thread::sleep(Duration::from_secs(2));
@@ -28,7 +28,7 @@ They preferentially capture variables by reference and only go lower when requir
 
 To force a move:
 
-```rust
+```rust,ignore
 use std::thread;
 
 fn main() {

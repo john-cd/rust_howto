@@ -2,14 +2,14 @@
 
 **If else** 
 
-```rust
-    let result = if number < 5 {         // condition must return a bool; `if` is an expression
-        println!("condition was true");
-        5
-    } else {
-        println!("condition was false");
-        6
-    }
+```rust,ignore
+let result = if number < 5 {         // condition must return a bool; `if` is an expression
+    println!("condition was true");
+    5
+} else {
+    println!("condition was false");
+    6
+}
 ```
 
 Also `else if <cond> { ... }`
@@ -19,18 +19,18 @@ Also `else if <cond> { ... }`
 ```rust
 let mut counter = 0;
 
-    let result = loop {
-        counter += 1;
+let result = loop {
+    counter += 1;
 
-        if counter == 10 {
-            break counter * 2;  // also `continue` and Loop labels https://doc.rust-lang.org/book/ch03-05-control-flow.html 
-        }
-    };
+    if counter == 10 {
+        break counter * 2;  // also `continue` and Loop labels https://doc.rust-lang.org/book/ch03-05-control-flow.html 
+    }
+};
 ```    
 
 **While** 
 
-```rust
+```rust,ignore
 while number != 0 {
         println!("{number}!");
         number -= 1;
@@ -39,7 +39,7 @@ while number != 0 {
 
 **For** 
 
-```rust
+```rust,ignore
 let a = [10, 20, 30, 40, 50];
 
 for element in a {

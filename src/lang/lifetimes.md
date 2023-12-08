@@ -2,7 +2,7 @@
 
 Prevent dangling references.
 
-```rust
+```rust,ignore
 &i32        // a reference
 &'a i32     // a reference with an explicit lifetime
 &'a mut i32 // a mutable reference with an explicit lifetime
@@ -31,7 +31,7 @@ struct ImportantExcerpt<'a> {
 
 In Methods:
 
-```rust
+```rust,ignore
 impl<'a> ImportantExcerpt<'a> {
     fn level(&self) -> i32 {
         3

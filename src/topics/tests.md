@@ -55,7 +55,7 @@ mod tests {
 
 Custom message:
 
-```rust
+```rust,ignore
 assert!(
     result.contains("Carol"),
     "Greeting did not contain name, value was `{}`",

@@ -15,7 +15,7 @@ let x = x + 1;  // redefines x; type can change
 
 Destructuring:
 
-```rust
+```rust,ignore
 // destructuring tuples
  let (x, y, z) = (1, 2, 3);
 

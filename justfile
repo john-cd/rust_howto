@@ -8,8 +8,11 @@ build:
   mdbook build
 
 serve:
-  mdbook serve --open # --port 3001
+  mdbook serve --open
+  # to change the port: --port 3001
 
+test:
+  mdbook test
 
 
 

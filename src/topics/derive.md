@@ -2,7 +2,7 @@
 
 [Derive More]( https://crates.io/crates/derive_more )
 
-```rust
+```rust,ignore
 extern crate derive_more;
 use derive_more::{Add, Display, From, Into};
 

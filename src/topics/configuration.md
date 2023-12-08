@@ -7,7 +7,7 @@
 
 It supersedes [dotenv]( https://crates.io/crates/dotenv )
 
-```rust
+```rust,ignore
 use std::env;
 use std::error::Error;
 
@@ -26,17 +26,27 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 To retrieve a single environment variable
 
-```rust
-let log_env_var = std::env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
+```rust,ignore
+use std::env;
+
+#fn main() {
+#    println!(env_extract());
+#}
+#
+#fn env_extract() -> String {
+
+let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
 
 let user_env_var = env::var("USER").expect("$USER is not set");
 
 let shell = env!("SHELL", "$SHELL is not set"); // inspect an environment variable at compile-time.
+
 let optional_value = option_env!("SHELL"); 
 
 return optional_value
         .unwrap_or("no shell set")
-        .to_string()
+        .to_string();
+#}
 ```
 
 [https://www.thorsten-hans.com/working-with-environment-variables-in-rust/]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
@@ -52,7 +62,9 @@ envy = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 ```
 
-```rust
+```rust,ignore
+use serde::Deserialize;
+
 #[derive(Deserialize, Debug)]
 struct Configuration {
     port: u16,
@@ -77,8 +89,8 @@ let c = envy::prefixed("MY_APP__")
 
 [Confy]( https://docs.rs/confy/latest/confy/index.html )
 
-```rust
-use serde_derive::{Serialize, Deserialize};
+```rust,ignore
+use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
 struct MyConfig {

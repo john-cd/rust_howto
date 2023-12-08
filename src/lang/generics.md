@@ -3,6 +3,8 @@
 ## Generic Structs
 
 ```rust
+use std::fmt::Display;
+
 struct Point<T> {
     x: T,
     y: T,

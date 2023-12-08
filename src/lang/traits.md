@@ -63,7 +63,7 @@ impl fmt::Display for Wrapper {
 
 ## Trait as parameter
 
-```rust
+```rust,ignore
 pub fn notify(item: &impl Summary) {  // accepts any type that implements the specified trait. 
     println!("Breaking news! {}", item.summarize());
 }
@@ -77,7 +77,7 @@ pub fn notify<T: Summary>(item: &T) {
 
 ## Multiple traits
 
-```rust
+```rust,ignore
 pub fn notify(item: &(impl Summary + Display)) { }
 
 fn some_function<T, U>(t: &T, u: &U) -> i32

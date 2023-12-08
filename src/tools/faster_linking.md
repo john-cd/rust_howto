@@ -8,7 +8,7 @@ system you are using:
 To speed up the linking phase you have to install the alternative linker on your machine and add
 this configuration file to the project:
 
-```
+```toml
 # .cargo/config.toml
 # On Windows
 # ```

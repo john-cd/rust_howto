@@ -22,7 +22,7 @@ When the owner goes out of scope, the value will be dropped.
 
 Rust will never automatically create “deep” copies of your data. Use `clone`
 
-```rust
+```rust,ignore
 let s3 = s2.clone();            // Deeply copy the heap data of the String, not just the stack data
 ```
 

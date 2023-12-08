@@ -16,7 +16,7 @@ tracing-subscriber = "0.3"
 
 Basic tracing
 
-```rust
+```rust,ignore
 use tracing_subscriber;
 
 tracing_subscriber::fmt::init();  // filter events at runtime using environment variables: RUST_LOG=debug,my_crate=trace
@@ -24,7 +24,7 @@ tracing_subscriber::fmt::init();  // filter events at runtime using environment 
 
 Combine layers
 
-```rust
+```rust,ignore
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 tracing_subscriber::registry()
@@ -39,7 +39,7 @@ tracing_subscriber::registry()
 
 Or with a custom formatting layer
 
-```rust
+```rust,ignore
 use tracing_subscriber::{fmt, EnvFilter};
 use tracing_subscriber::prelude::*;
 
@@ -57,7 +57,7 @@ tracing_subscriber::registry()
 
 Configure a custom event formatter
 
-```rust
+```rust,ignore
 use tracing_subscriber::fmt;
 
 // Configure a custom event formatter
@@ -77,8 +77,8 @@ tracing_subscriber::fmt()
 
 ## Events
 
-```rust
-use tracing::{event, Level};
+```rust,ignore
+use tracing::{event, error, warn, info, debug, trace, Level};
 
 event!(Level::INFO, "something happened");
 error!("!");
@@ -106,7 +106,7 @@ event!(Level::TRACE, greeting = ?my_struct);
 
 ## Spans
 
-```rust
+```rust,ignore
 use tracing::{span, Level};
 let span = span!(Level::TRACE, "my_span");
 // `enter` returns a RAII guard which, when dropped, exits the span. this
@@ -119,7 +119,9 @@ let span = span!(Level::TRACE, "my_span");
 
 One-liner with `.entered()`:
 
-```rust
+```rust,ignore
+use tracing::{span, Level};
+
 let span = span!(Level::TRACE, "some span").entered();
 
 // code here is within the span
@@ -135,7 +137,7 @@ let span = span.entered();
 
 Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use `in_scope`
 
-```rust
+```rust,ignore
 async fn my_async_function() {
     let span = info_span!("my_async_function");
 
@@ -165,7 +167,7 @@ async fn my_async_function() {
 
 ## Add tracing spans to functions
 
-```rust
+```rust,ignore
 use tracing::{Level, event, instrument};
 
 #[instrument]

@@ -8,7 +8,7 @@ fn main() {
 
 ## Async Main Function
 
-```rust
+```rust,ignore
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
   Ok(())

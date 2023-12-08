@@ -39,7 +39,7 @@ hello_utils = { path = "hello_utils", version = "0.1.0" }                      #
 
 Examples of version requirements and the versions that would be allowed with them:
 
-```
+```toml
 1.2.3  :=  >=1.2.3, <2.0.0
 1.2    :=  >=1.2.0, <2.0.0
 1      :=  >=1.0.0, <2.0.0

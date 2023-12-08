@@ -11,7 +11,7 @@ struct User {
 
 Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
 
-```rust
+```rust,ignore
 // create an instance 
 let user1 = User {
         active: true,

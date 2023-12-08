@@ -1,6 +1,6 @@
 # Package Layout
 
-```
+```text
 .
 ├── Cargo.lock
 ├── Cargo.toml

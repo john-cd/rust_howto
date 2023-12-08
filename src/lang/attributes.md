@@ -2,7 +2,7 @@
 
 Attributes can take arguments with different syntaxes:
 
-```rust
+```rust,ignore
 #[attribute = "value"]
 #[attribute(key = "value")]
 #[attribute(value)]

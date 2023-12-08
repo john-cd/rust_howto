@@ -3,16 +3,16 @@
 ## String type
 
 ```rust
-let s1 = String::from("hello");     // Unicode, not ASCII
+let mut s1 = String::from("hello");     // Unicode, not ASCII
 s1.push_str(", world!");            // This kind of string can be mutated
 s1.clear();                         // this empties the String, making it equal to ""
 
 let s2 = "initial contents".to_string();  // alternative init from string literals - available on any type that implements the Display trait
 
 let s3 = s1 + &s2;                  // concat: note s1 has been moved here and can no longer be used
-let s = format!("{s1}-{s2}-{s3}");
+// let s = format!("{s1}-{s2}-{s3}");
 
-let s: &str = &s1[0..4]; // string slice -  contains the first 4 bytes of the string. 
+let s: &str = &s3[0..4]; // string slice -  contains the first 4 bytes of the string. 
 // caution: If we were to try to slice only part of a unicode character’s bytes, Rust would panic at runtime 
 
 // iterate 

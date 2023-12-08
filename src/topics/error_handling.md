@@ -2,14 +2,14 @@
 
 ## Irrecoverable panics
 
-```rust
+```rust,ignore
 panic!("crash and burn"); 
 ```
 
 
 ## Recoverable errors with `Result`:
 
-```rust
+```rust,ignore
 let mut guess = String::new();
 
 io::stdin()
@@ -21,7 +21,7 @@ let greeting_file = File::open("hello.txt").unwrap(); // alternative: panics if 
 
 unwrap_or_else:
 
-```rust
+```rust,ignore
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -41,7 +41,7 @@ fn main() {
 
 ## A Shortcut for Propagating Errors: the ? Operator
 
-```rust
+```rust,ignore
 use std::fs::File;
 use std::io::{self, Read};
 
@@ -62,7 +62,7 @@ Another example:
 ```rust
 use std::error::Error;
 
-fn parse_port(s: &str) -> Result<u16, Box<Error>> {  // needed to use Box<Error>, because the returned error type cannot be determined during compile time: It will either contain an instance of std::num::ParseIntError (from the parse method, when parsing fails), or a string (when the port is zero).
+fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {  // needed to use Box<dyn Error>, because the returned error type cannot be determined during compile time: It will either contain an instance of std::num::ParseIntError (from the parse method, when parsing fails), or a string (when the port is zero).
     let port: u16 = s.parse()?;
     if port == 0 {
         Err(Box::from(format!("invalid: {}", port)))
