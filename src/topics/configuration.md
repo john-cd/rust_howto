@@ -39,7 +39,7 @@ return optional_value
         .to_string()
 ```
 
-< https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ >
+[https://www.thorsten-hans.com/working-with-environment-variables-in-rust/]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
 
 
 ### Envy
