@@ -2,9 +2,11 @@ default:
   @just --list --unsorted
 
 clean:
+  cargo clean
   mdbook clean
 
 build:
+  cargo build
   mdbook build
 
 serve: test
@@ -14,5 +16,6 @@ serve: test
 test:
   mdbook test
 
-
+update:
+  cargo update
 

@@ -19,22 +19,19 @@ set -e
 wget -c https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
 EOF
 
+# Install mdbook-hide and keeper (note the workaround)
 RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
-    cargo install mdbook-hide
-    #; cargo install mdbook-keeper
+    cargo install mdbook-hide; \
+    cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 
 ARG WORK_DIR
 WORKDIR ${WORK_DIR}
 
-COPY src/lib.rs src/
-COPY Cargo.toml Cargo.lock ./
-COPY .cargo/config.toml .cargo/
-
-# Build stub project required by mdbook-keeper
-RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
-    --mount=type=cache,target=/cargo-target-rust_howto/ \
-    cargo build
+VOLUME /usr/local/cargo/registry/
+# See .cargo/config.toml
+VOLUME /cargo-target-rust_howto/
 
 EXPOSE 3000
 
-CMD sleep infinity
+# Build stub project required by mdbook-keeper
+CMD cargo build; sleep infinity

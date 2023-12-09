@@ -75,4 +75,4 @@ level = 0         # the depth to start folding
 [preprocessor.keeper]
 command = "mdbook-keeper"
 # NOTE: the file Cargo.toml should exist at this path.
-manifest_dir = "."
+manifest_dir = "./deps"
