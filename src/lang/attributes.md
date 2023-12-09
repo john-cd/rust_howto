@@ -12,6 +12,16 @@ Attributes can take arguments with different syntaxes:
 Inner attributes: `#![attr]`
 
 
+### Useful module-wide attributes during early coding
+
+```rust,ignore
+#![allow(unused_variables)]
+#![allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_must_use)]
+```
+
+
 ## Derive
 
 ```rust
