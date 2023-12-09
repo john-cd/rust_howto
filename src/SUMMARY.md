@@ -38,6 +38,7 @@
 
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
+  - [Error customization](topics/error_customization.md)
 - [Configuration](topics/configuration.md)
 - [Logging / Tracing](topics/logging.md)
 - [Database access](topics/databases.md)

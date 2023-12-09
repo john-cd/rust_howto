@@ -7,19 +7,19 @@ panic!("crash and burn");
 ```
 
 
-## Recoverable errors with `Result`:
+## Recoverable errors with `Result`
 
 ```rust,ignore
 let mut guess = String::new();
 
 io::stdin()
-        .read_line(&mut guess) // read_line puts whatever the user enters into the string we pass to it, but it also returns a Result value.
-        .expect("Failed to read line"); // If this instance of Result is an Err value, expect will cause the program to crash and display the message that you passed as an argument to expect. 
+    .read_line(&mut guess) // read_line puts whatever the user enters into the string we pass to it, but it also returns a Result value.
+    .expect("Failed to read line"); // If this instance of Result is an Err value, expect will cause the program to crash and display the message that you passed as an argument to expect. 
 
 let greeting_file = File::open("hello.txt").unwrap(); // alternative: panics if error - no message
 ```
 
-unwrap_or_else:
+**unwrap_or_else**
 
 ```rust,ignore
 use std::fs::File;
@@ -55,7 +55,7 @@ fn read_username_from_file() -> Result<String, io::Error> {
 
 If the value of the Result is an Ok, the value inside the Ok will get returned from this expression, and the program will continue. If the value is an Err, the Err will be returned from the whole function as if we had used the return keyword so the error value gets propagated to the calling code.
 
-This error points out that we’re only allowed to use the ? operator in a function that returns Result, Option, or another type that implements `FromResidual`.
+This error points out that we’re only allowed to use the `?` operator in a function that returns Result, Option, or another type that implements `FromResidual`.
 
 Another example:
 
@@ -80,8 +80,3 @@ fn main() {
 ```
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
-
-
-### Errors
-
-[Anyhow]( https://crates.io/crates/anyhow )
