@@ -7,20 +7,21 @@ struct User {
     email: String,
     sign_in_count: u64,
 }
+
+fn main() {
+    // create an instance 
+    let user1 = User {
+            active: true,
+            username: String::from("someusername123"),
+            email: String::from("someone@example.com"),
+            sign_in_count: 1,
+        };
+}
 ```
 
 Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
 
 ```rust,ignore
-// create an instance 
-let user1 = User {
-        active: true,
-        username: String::from("someusername123"),
-        email: String::from("someone@example.com"),
-        sign_in_count: 1,
-    };
-
-
 fn build_user(email: String, username: String) -> User {
     User {
         active: true,
@@ -30,22 +31,31 @@ fn build_user(email: String, username: String) -> User {
     }
 }
 
-// struct update
-let user2 = User {
-    email: String::from("another@example.com"),
-    ..user1    // the remaining fields not explicitly set should have the same value as the fields in the given instance.
-};
+fn main() {
+    // struct update
+    let user2 = User {
+        email: String::from("another@example.com"),
+        ..user1    // the remaining fields not explicitly set should have the same value as the fields in the given instance.
+    };
+}
 ```
 
 ```rust
 // Tuple struct
 struct Color(i32, i32, i32);
-let black = Color(0, 0, 0);
+
+fn main() {
+    let black = Color(0, 0, 0);
+}
 ```
 
 ```rust
 // Unit-like struct
 struct AlwaysEqual;  // no data
+
+fn main() { 
+    let s = AlwaysEqual;
+}
 ```
 
 ```rust
@@ -71,4 +81,6 @@ impl Rectangle {
         }
     }
 }
+
+fn main() {}
 ```

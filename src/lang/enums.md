@@ -8,13 +8,15 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
-let home = Message::ChangeColor(127, 0, 0);  // note the :: 
-
 // define methods on enums.
 impl Message {
     fn call(&self) {
         // method body would be defined here
     }
+}
+
+fn main() {
+    let home = Message::ChangeColor(127, 0, 0);  // note the :: 
 }
 ```
 
@@ -31,6 +33,8 @@ enum Option<T> {
     Some(T),
 }
 
-let some_number = Some(5);
-let absent_number: Option<i32> = None;
+fn main() {
+    let some_number = Some(5);
+    let absent_number: Option<i32> = None;
+}
 ```

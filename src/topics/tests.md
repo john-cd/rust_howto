@@ -51,16 +51,20 @@ mod tests {
     }
 
 }
+
+fn main() {}
 ```
 
 Custom message:
 
 ```rust,ignore
-assert!(
-    result.contains("Carol"),
-    "Greeting did not contain name, value was `{}`",
-    result
-);
+fn main() {
+    assert!(
+        result.contains("Carol"),
+        "Greeting did not contain name, value was `{}`",
+        result
+    );
+}
 ```
 
 

@@ -19,7 +19,9 @@ Basic tracing
 ```rust,ignore
 use tracing_subscriber;
 
-tracing_subscriber::fmt::init();  // filter events at runtime using environment variables: RUST_LOG=debug,my_crate=trace
+fn main() {
+    tracing_subscriber::fmt::init();  // filter events at runtime using environment variables: RUST_LOG=debug,my_crate=trace
+}
 ```
 
 Combine layers
@@ -27,14 +29,16 @@ Combine layers
 ```rust,ignore
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
-tracing_subscriber::registry()
-    .with(tracing_subscriber::EnvFilter::new(
-        std::env::var("RUST_LOG").unwrap_or_else(|_| {
-            "myproj=debug,axum=debug,tower_http=debug,mongodb=debug".into()
-        }),
-    ))
-    .with(tracing_subscriber::fmt::layer())
-    .init();
+fn main() {
+    tracing_subscriber::registry()
+        .with(tracing_subscriber::EnvFilter::new(
+            std::env::var("RUST_LOG").unwrap_or_else(|_| {
+                "myproj=debug,axum=debug,tower_http=debug,mongodb=debug".into()
+            }),
+        ))
+        .with(tracing_subscriber::fmt::layer())
+        .init();
+}
 ```
 
 Or with a custom formatting layer
@@ -43,16 +47,18 @@ Or with a custom formatting layer
 use tracing_subscriber::{fmt, EnvFilter};
 use tracing_subscriber::prelude::*;
 
-let fmt_layer = fmt::layer()
-    .with_target(false);
-let filter_layer = EnvFilter::try_from_default_env()
-    .or_else(|_| EnvFilter::try_new("info"))
-    .unwrap();
+fn main() {
+    let fmt_layer = fmt::layer()
+        .with_target(false);
+    let filter_layer = EnvFilter::try_from_default_env()
+        .or_else(|_| EnvFilter::try_new("info"))
+        .unwrap();
 
-tracing_subscriber::registry()
-    .with(filter_layer)
-    .with(fmt_layer)
-    .init();
+    tracing_subscriber::registry()
+        .with(filter_layer)
+        .with(fmt_layer)
+        .init();
+}
 ```
 
 Configure a custom event formatter
@@ -60,18 +66,20 @@ Configure a custom event formatter
 ```rust,ignore
 use tracing_subscriber::fmt;
 
-// Configure a custom event formatter
-let format = fmt::format()
-   .with_level(false) // don't include levels in formatted output
-   .with_target(false) // don't include targets
-   .with_thread_ids(true) // include the thread ID of the current thread
-   .with_thread_names(true) // include the name of the current thread
-   .compact(); // use the `Compact` formatting style.
+fn main() {
+    // Configure a custom event formatter
+    let format = fmt::format()
+    .with_level(false) // don't include levels in formatted output
+    .with_target(false) // don't include targets
+    .with_thread_ids(true) // include the thread ID of the current thread
+    .with_thread_names(true) // include the name of the current thread
+    .compact(); // use the `Compact` formatting style.
 
-// Create a `fmt` subscriber that uses our custom event format, and set it as the default.
-tracing_subscriber::fmt()
-    .event_format(format)
-    .init();
+    // Create a `fmt` subscriber that uses our custom event format, and set it as the default.
+    tracing_subscriber::fmt()
+        .event_format(format)
+        .init();
+}
 ```
 
 
@@ -80,27 +88,29 @@ tracing_subscriber::fmt()
 ```rust,ignore
 use tracing::{event, error, warn, info, debug, trace, Level};
 
-event!(Level::INFO, "something happened");
-error!("!");
-warn!("!");
-info!("!");
-debug!("!");
-trace!("!");
+fn main() {
+    event!(Level::INFO, "something happened");
+    error!("!");
+    warn!("!");
+    info!("!");
+    debug!("!");
+    trace!("!");
 
-event!(target: "app_events", Level::TRACE, "something has happened!");
+    event!(target: "app_events", Level::TRACE, "something has happened!");
 
-// records an event with two fields (also works for spans)
-event!(Level::INFO, answer = 42, question = "life, the universe, and everything");
+    // records an event with two fields (also works for spans)
+    event!(Level::INFO, answer = 42, question = "life, the universe, and everything");
 
-// unlike other fields, `message`'s shorthand initialization is just the string itself.
-debug!(excitement = "yay!", "hello!");
+    // unlike other fields, `message`'s shorthand initialization is just the string itself.
+    debug!(excitement = "yay!", "hello!");
 
-// shorthand for user = user
-let user = "ferris";
-event!(Level::TRACE, "login", user);
+    // shorthand for user = user
+    let user = "ferris";
+    event!(Level::TRACE, "login", user);
 
-// `my_struct` will be recorded using its `fmt::Debug` implementation.
-event!(Level::TRACE, greeting = ?my_struct);
+    // `my_struct` will be recorded using its `fmt::Debug` implementation.
+    event!(Level::TRACE, greeting = ?my_struct);
+}
 ```
 
 
@@ -108,13 +118,16 @@ event!(Level::TRACE, greeting = ?my_struct);
 
 ```rust,ignore
 use tracing::{span, Level};
-let span = span!(Level::TRACE, "my_span");
-// `enter` returns a RAII guard which, when dropped, exits the span. this
-// indicates that we are in the span for the current lexical scope.
-{
-    let _guard = span.enter();
-    // Any trace events that occur before the guard is dropped will occur within the span.
-}   // Dropping the guard will exit the span.
+
+fn main() {
+    let span = span!(Level::TRACE, "my_span");
+    // `enter` returns a RAII guard which, when dropped, exits the span. this
+    // indicates that we are in the span for the current lexical scope.
+    {
+        let _guard = span.enter();
+        // Any trace events that occur before the guard is dropped will occur within the span.
+    }   // Dropping the guard will exit the span.
+}
 ```
 
 One-liner with `.entered()`:
@@ -122,17 +135,19 @@ One-liner with `.entered()`:
 ```rust,ignore
 use tracing::{span, Level};
 
-let span = span!(Level::TRACE, "some span").entered();
+fn main() {
+    let span = span!(Level::TRACE, "some span").entered();
 
-// code here is within the span
+    // code here is within the span
 
-// optionally, explicitly exit the span, returning it
-let span = span.exit();
+    // optionally, explicitly exit the span, returning it
+    let span = span.exit();
 
-// code here is no longer within the span
+    // code here is no longer within the span
 
-// enter the span again
-let span = span.entered();
+    // enter the span again
+    let span = span.entered();
+}
 ```
 
 Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use `in_scope`
@@ -162,6 +177,7 @@ async fn my_async_function() {
     let some_value = some_other_async_function()
     .instrument(debug_span!("some_other_async_function"))
     .await;
+}
 ```
 
 

@@ -53,6 +53,8 @@ pub enum DataStoreError {
     #[error(transparent)]  //  forward the source and Display methods straight through to an underlying error without adding an additional message. 
     Other(#[from] anyhow::Error),
 }
+
+fn main() {}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
@@ -73,6 +75,8 @@ pub struct MyError {
     source: anyhow::Error,
     backtrace: std::backtrace::Backtrace,  // automatically detected to implement provide()
 }
+
+fn main() {}
 ```
 
 See also [eyre]( https://docs.rs/eyre/latest/eyre/ )

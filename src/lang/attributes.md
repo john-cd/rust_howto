@@ -27,7 +27,9 @@ Inner attributes: `#![attr]`
 ```rust
 // on structs 
 #[derive(Debug, PartialEq, Eq, PartialOrd)]
-struct S; 
+struct S;
+
+fn main() {}
 ```
 
 ## Other Examples
@@ -38,12 +40,16 @@ struct S;
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+
+fn main() { println!("{}", add(1, 2)); }
 ```
 
 ```rust
 // Disables the `dead_code` lint
 #[allow(dead_code)]
 fn unused_function() {}
+
+fn main() {}
 ```
 
 ## Conditional Compilation

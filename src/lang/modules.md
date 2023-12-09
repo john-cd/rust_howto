@@ -68,5 +68,7 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 ```rust
 use std::collections::HashMap;
 
-let mut map: HashMap<u32, String>  = HashMap::new();
+fn main() {
+    let mut map: HashMap<u32, String>  = HashMap::new();
+}
 ```

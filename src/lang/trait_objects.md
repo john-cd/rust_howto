@@ -20,6 +20,8 @@ impl Screen {
         }
     }
 }
+
+fn main() {}
 ```
 
 ## See also

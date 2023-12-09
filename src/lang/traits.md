@@ -17,6 +17,8 @@ impl Summary for NewsArticle {          // implement Trait on a Type
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
 }
+
+fn main() {}
 ```
 
 ## Default implementation
@@ -29,6 +31,8 @@ pub trait Summary {
         format!("(Read more from {}...)", self.summarize_author())  // can call a non-default method
     }
 }
+
+fn main() {}
 ```
 
 ## Supertraits
@@ -41,6 +45,8 @@ trait OutlinePrint: fmt::Display {
         println!("* {} *", self);  // can use println! because self is guaranteed to implement Display 
     }
 }
+
+fn main() {}
 ```
 
 ## Newtype pattern
@@ -57,7 +63,9 @@ impl fmt::Display for Wrapper {
         write!(f, "[{}]", self.0.join(", "))
     }
 }
-// If we wanted the new type to have every method the inner type has, implement the `Deref` trait. 
+// If we wanted the new type to have every method the inner type has, implement the `Deref` trait.
+
+fn main() {}
 ```
 
 
@@ -69,10 +77,11 @@ pub fn notify(item: &impl Summary) {  // accepts any type that implements the sp
 }
 
 // or trait bound syntax:
-
 pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
+
+fn main() {}
 ```
 
 ## Multiple traits
@@ -86,6 +95,8 @@ where
     U: Clone + Debug,
 { 
 }
+
+fn main() {}
 ```
 
 ## Generic traits
@@ -98,6 +109,8 @@ trait Test<T> {
 impl<T, U> Test<T> for U {
     fn test(t: T) {}
 }
+
+fn main() {}
 ```
 
 ## Associated types
@@ -108,6 +121,8 @@ pub trait Iterator {
 
     fn next(&mut self) -> Option<Self::Item>;
 }
+
+fn main() {}
 ```
 
 ```rust
@@ -116,6 +131,8 @@ trait Add<Rhs=Self> {  // default generic type
 
     fn add(self, rhs: Rhs) -> Self::Output;
 }
+
+fn main() {}
 ```
 
 

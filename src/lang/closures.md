@@ -6,6 +6,8 @@ fn find_emails(list: Vec<String>) -> Vec<String> {
         .filter(|s| s.contains("@"))  // closure
         .collect()
 }
+
+fn main() {}
 ```
 
 Closure with type annotations:
@@ -16,7 +18,7 @@ let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation.
     thread::sleep(Duration::from_secs(2));
     num
 };
-```    
+```
 
 Closures can capture variables:
 
@@ -59,6 +61,8 @@ fn apply_to_3<F>(f: F) -> i32 where
 
     f(3)
 }
+
+fn main() {}
 ```
 
 - Fn: the closure uses the captured value by reference (&T)

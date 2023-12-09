@@ -20,6 +20,8 @@ fn value_in_cents(coin: Coin) -> u8 {
         // if needed, use catchall _ =>
     }
 }
+
+fn main() {}
 ```
 
 ```rust
@@ -30,10 +32,12 @@ struct Point {
     z: i32,
 }
 
-let origin = Point { x: 0, y: 0, z: 0 };
+fn main() {
+    let origin = Point { x: 0, y: 0, z: 0 };
 
-match origin {
-    Point { x, .. } => println!("x is {}", x),  // Ignoring all fields of a Point except for x by using ..
+    match origin {
+        Point { x, .. } => println!("x is {}", x),  // Ignoring all fields of a Point except for x by using ..
+    }
 }
 ```
 
@@ -41,24 +45,28 @@ Patterns accept ` 1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gu
 
 
 ```rust
-// if let
-let config_max = Some(3u8);
-if let Some(max) = config_max {
-        println!("The maximum is configured to be {}", max);
-    }
+fn main() {
+    // if let
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+            println!("The maximum is configured to be {}", max);
+        }
+}
 ```
 
 ```rust
-// while let
-let mut stack = Vec::new();
+fn main() {
+    // while let
+    let mut stack = Vec::new();
 
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
 
-    while let Some(top) = stack.pop() {
-        println!("{}", top);
-    }
+        while let Some(top) = stack.pop() {
+            println!("{}", top);
+        }
+}
 ```
 
 ## See Also

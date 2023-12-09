@@ -20,21 +20,21 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
         y
     }
 }
+
+fn main() {}
 ```
-Lifetime Annotations in Struct Definitions:
+Lifetime Annotations in Struct Definitions and methods:
 
 ```rust
 struct ImportantExcerpt<'a> { 
     part: &'a str,
 }
-```
 
-In Methods:
-
-```rust,ignore
 impl<'a> ImportantExcerpt<'a> {
     fn level(&self) -> i32 {
         3
     }
 }
+
+fn main() {}
 ```

@@ -29,24 +29,23 @@ To retrieve a single environment variable
 ```rust,ignore
 use std::env;
 
-#fn main() {
-#    println!(env_extract());
-#}
-#
-#fn env_extract() -> String {
+fn env_extract() -> String {
+    let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
 
-let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
+    let user_env_var = env::var("USER").expect("$USER is not set");
 
-let user_env_var = env::var("USER").expect("$USER is not set");
+    let shell = env!("SHELL", "$SHELL is not set"); // inspect an environment variable at compile-time.
 
-let shell = env!("SHELL", "$SHELL is not set"); // inspect an environment variable at compile-time.
+    let optional_value = option_env!("SHELL"); 
 
-let optional_value = option_env!("SHELL"); 
+    return optional_value
+            .unwrap_or("no shell set")
+            .to_string();
+}
 
-return optional_value
-        .unwrap_or("no shell set")
-        .to_string();
-#}
+fn main() {
+    println!(env_extract());
+}
 ```
 
 [https://www.thorsten-hans.com/working-with-environment-variables-in-rust/]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
@@ -71,12 +70,14 @@ struct Configuration {
     items_per_page: u16
 }
 
-let c = envy::from_env::<Configuration>()
-        .expect("Please provide PORT and ITEMS_PER_PAGE env vars");
+fn main() {
+    let c = envy::from_env::<Configuration>()
+            .expect("Please provide PORT and ITEMS_PER_PAGE env vars");
 
-let c = envy::prefixed("MY_APP__")
-        .from_env::<Configuration>()
-        .expect("Please provide MY_APP__PORT and MY_APP__ITEMS_PER_PAGE env vars");
+    let c = envy::prefixed("MY_APP__")
+            .from_env::<Configuration>()
+            .expect("Please provide MY_APP__PORT and MY_APP__ITEMS_PER_PAGE env vars");
+}
 ```
 
 
