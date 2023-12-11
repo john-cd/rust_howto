@@ -1,19 +1,35 @@
-# Web site
+# Rust How-To
+
+A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem.
+
+Everything you need for day-to-day Rust coding, all in one place.
+
+
+## Web site
 
 This book is deployed on <https://john-cd.com/rust_howto>
 
-repo: <https://john-cd.github.io/rust_howto>
+GitHub repo: <https://john-cd.github.io/rust_howto>
 
 
 ## Install
 
-VS Code should prompt you to open the code in a Dev Container, which installs `just`, `wget`, `mdbook` and its plugins automatically.
+### VS Code 
+
+Clone the repo and open the folder in [VS Code]( https://code.visualstudio.com/ ). It should prompt you to open the code in a Docker container, which installs `mdbook` and couple of its plugins, `just`, `wget` automatically. Make sure you have installed
+
+- [Dev Container extension]( https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers )
+- [Docker Desktop]( https://www.docker.com/products/docker-desktop/ ) (or just the Docker engine).
+
+
+### Other
+
 If you are not using VS Code, install the dev container CLI or simply install on your local machine:
 
 ```bash
 cargo install mdbook
 cargo install mdbook-hide
-# in the future: cargo install mdbook-keeper
+# optional: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 ```
 
 
@@ -38,6 +54,7 @@ To mark a chapter as hidden, add this special Comment anywhere in the Markdown f
 ```
 <!--hidden-->
 ```
+
 
 ## Links
 
