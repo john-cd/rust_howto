@@ -1334,6 +1334,7 @@ dependencies = [
  "envy",
  "http",
  "http-body-util",
+ "once_cell",
  "sea-orm",
  "serde",
  "serde_derive",
