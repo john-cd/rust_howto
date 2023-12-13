@@ -25,14 +25,12 @@
 - [Iterators](lang/iterators.md)
 - [Macros](lang/macros.md)
  
-
 # Standard Library
 
 - [Vectors](std/vectors.md)
 - [Hashmap](std/hashmaps.md)
 - [Strings](std/strings.md)
 - [Smart Pointers](std/smart_pointers.md)
-
 
 # Cross-cutting Topics
 
@@ -47,8 +45,6 @@
 - [Concurrency](topics/concurrency.md)
 - [Async](topics/async.md)
 - [Documentation](topics/documentation.md)
-
-
 
 # Rust Tools
 
@@ -65,7 +61,6 @@
 - [mdBook](tools/mdbook.md)
 - [Other tools](tools/other_tools.md)
 
-
 # Domains
 
 - [CLI](domains/cli.md)
@@ -78,7 +73,6 @@
 - [Cloud](domains/cloud.md)
 - [Data](domains/data.md)
 - [ML](domains/ml.md)
-
 
 # Rust Links
 
