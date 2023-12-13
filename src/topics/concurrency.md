@@ -70,6 +70,7 @@ fn main() {
 
 [Rayon docs]( https://docs.rs/rayon/latest/rayon/ )
 
+[Rayon github]( https://github.com/rayon-rs/rayon )
 
 ### Parallel iteration
 
@@ -138,4 +139,4 @@ The Rust standard library provides channels for message passing and smart pointe
 
 [Dashmap]( https://docs.rs/dashmap/5.3.3/dashmap/struct.DashMap.html# )
 
-[Rayon]( https://github.com/rayon-rs/rayon ) for parallel data processing
+
