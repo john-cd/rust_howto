@@ -84,6 +84,7 @@ pub fn notify<T: Summary>(item: &T) {
 fn main() {}
 ```
 
+
 ## Multiple traits
 
 ```rust,ignore
@@ -99,6 +100,7 @@ where
 fn main() {}
 ```
 
+
 ## Generic traits
 
 ```rust
@@ -112,6 +114,7 @@ impl<T, U> Test<T> for U {
 
 fn main() {}
 ```
+
 
 ## Associated types
 

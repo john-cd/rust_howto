@@ -63,7 +63,6 @@ fn main() {
 }
 ```
 
-
 Mutable reference 
 
 ```rust

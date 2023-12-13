@@ -6,6 +6,7 @@ fn main() {
 }
 ```
 
+
 ## Async Main Function
 
 ```rust,ignore

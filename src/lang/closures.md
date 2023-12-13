@@ -43,6 +43,7 @@ fn main() {
 }
 ```
 
+
 ## Closures as input parameters
 
 ```rust

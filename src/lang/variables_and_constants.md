@@ -8,7 +8,7 @@ fn main() {
 }
 ```
 
-Shadowing:
+## Shadowing
 
 ```rust
 fn main() {
@@ -17,7 +17,7 @@ fn main() {
 }
 ```
 
-Destructuring:
+## Destructuring
 
 ```rust,ignore
 fn main() {

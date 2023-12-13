@@ -50,6 +50,7 @@ fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {   // function pointer - see al
 fn main() {}
 ```
 
+
 ## Diverging functions 
 
 Diverging functions never return. 

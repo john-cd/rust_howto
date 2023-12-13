@@ -24,6 +24,7 @@ impl Screen {
 fn main() {}
 ```
 
+
 ## See also
 
 [Trait Objects]( https://doc.rust-lang.org/book/ch17-02-trait-objects.html )
