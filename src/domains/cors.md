@@ -14,7 +14,7 @@ use std::convert::Infallible;
 use std::error::Error;
 
 async fn handle(request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, Infallible> {
-    Ok(Response::new(Full::default()))
+    Ok(Response::new(Full::default())) 
 }
 
 async fn main() -> Result<(), Box<dyn Error>> {

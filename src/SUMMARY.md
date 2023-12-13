@@ -34,7 +34,7 @@
 - [Smart Pointers](std/smart_pointers.md)
 
 
-# Rust Cross-cutting Topics
+# Cross-cutting Topics
 
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
@@ -69,6 +69,7 @@
 
 - [CLI](domains/cli.md)
 - [Web](domains/web.md)
+  - [Middleware](domains/middleware.md)
   - [CORS](domains/cors.md)
 - [WASM](domains/wasm.md)
 - [GUI](domains/gui.md)
