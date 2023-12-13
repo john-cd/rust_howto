@@ -146,6 +146,7 @@ async fn send_recv() {
     assert_eq!(None, rx.next().await);
 }
 
+// `for` loops are not usable with Streams, but for imperative-style code, `while let` and the `next`/`try_next` functions can be used:
 async fn sum_with_next(mut stream: Pin<&mut dyn Stream<Item = i32>>) -> i32 {
     use futures::stream::StreamExt;
     let mut sum = 0;
@@ -153,6 +154,47 @@ async fn sum_with_next(mut stream: Pin<&mut dyn Stream<Item = i32>>) -> i32 {
         sum += item;
     }
     sum
+}
+```
+
+There are combinator-style methods such as `map`, `filter`, and `fold`, and their early-exit-on-error cousins `try_map`, `try_filter`, and `try_fold`.
+To process multiple items from a stream concurrently, use the `for_each_concurrent` and `try_for_each_concurrent` methods.
+
+```rust,ignore
+use futures::StreamExt;
+use tokio::fs::File;
+use tokio::io;
+
+type Result = std::result::Result<(), Box<dyn std::error::Error>>;
+
+async fn download_file(url: &str, filename: &str) -> Result {
+    let response = reqwest::get(url).await?;
+    let content = response.bytes().await?;
+    let mut file = File::create(filename).await?;
+    io::copy(&mut content.as_ref(), &mut file).await?;
+    Ok(())
+}
+
+#[tokio::main]
+async fn main() -> Result {
+    let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"];
+    let filenames = ["file1.txt"];
+
+    let futures = urls.iter().zip(filenames.iter()).map( |(url, filename)| download_file(url, filename));
+
+    let fut = futures::stream::iter(futures).for_each_concurrent(4, |fut| async move {
+        if let Err(e) = fut.await {
+            println!("Error: {}", e);
+            if let Some(source) = e.source() {
+                println!("  Caused by: {}", source);
+            }
+        }
+    }); // Download 4 files concurrently
+
+    fut.await;
+
+    println!("Downloaded files successfully!");
+    Ok(())
 }
 ```
 
