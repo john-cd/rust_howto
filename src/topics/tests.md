@@ -12,8 +12,10 @@
 mod tests {
     use super::*; // access to all objects in the parent module, which contains the main code
 
+    // Test functions must be free, monomorphic functions that take no arguments, and commonly return (), 
+    // or Result<T, E> where T: Termination, E: Debug
     #[test]
-    fn larger_can_hold_smaller() {
+    fn larger_can_hold_smaller() {  
         let larger = Rectangle {
             width: 8,
             height: 7,
@@ -38,7 +40,7 @@ mod tests {
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {
-            Ok(())
+            Ok(()) // pass if OK
         } else {
             Err(String::from("two plus two does not equal four"))
         }
