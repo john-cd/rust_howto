@@ -72,4 +72,6 @@ fn main() {
 
 ## See Also
 
-[Approx]( https://docs.rs/approx/0.4.0/approx/index.html )
+[Approx]( https://docs.rs/approx/latest/approx/index.html )
+
+[cargo-nextest]( https://nexte.st/ ): `cargo nextest run; cargo test --doc`
