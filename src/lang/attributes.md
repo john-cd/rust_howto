@@ -9,40 +9,38 @@ Attributes can take arguments with different syntaxes:
 #[attribute(value, value2)]
 ```
 
-Inner attributes: `#![attr]`
+Inner attributes `#![attr]` apply to the item that the attribute is declared within. 
 
 
-### Useful module-wide attributes during early coding
+### Lint attributes
+
+During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
 ```rust,ignore
 #![allow(unused_variables)]
+#![allow(unused_mut)]
 #![allow(unused_imports)]
-#![allow(dead_code)]
 #![allow(unused_must_use)]
+// or simply #[allow(unused)]
+#![allow(dead_code)]
+#[allow(missing_docs)]
 ```
 
+For production-ready code, replace the above by the following, for example.
 
-## Derive
-
-```rust
-// on structs 
-#[derive(Debug, PartialEq, Eq, PartialOrd)]
-struct S;
-
-fn main() {}
+```rust,ignore
+#![warn(
+    unused,
+    missing_debug_implementations,
+    missing_copy_implementations,
+    missing_docs,
+    rust_2018_idioms,
+)]
+#![deny(unreachable_pub)]  // error if violation
+#![forbid(unsafe_code)]    // same as `deny` +forbids changing the lint level afterwards
 ```
 
-## Other Examples
-
-```rust
-// Must use the results of the fn
-#[must_use]  
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-fn main() { println!("{}", add(1, 2)); }
-```
+You also apply these attributes to specific functions:
 
 ```rust
 // Disables the `dead_code` lint
@@ -52,7 +50,47 @@ fn unused_function() {}
 fn main() {}
 ```
 
+List of lint checks: `rustc -W help`. `rustc` also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
+
+
+## Automatic trait derivation
+
+```rust
+// on structs 
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
+struct S(i32);
+
+fn main() {
+    println!("{:?}", S(0));
+    println!("{}", S(1) == S(1));
+}
+```
+
+
+## Must Use
+
+```rust
+// Must use the results of the fn; also applies to traits, structs, enums...
+#[must_use]  
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+fn main() { println!("{}", add(1, 2)); }
+```
+
+
+## Deprecated
+
+```rust,ignore
+#[deprecated(since = "5.2.0", note = "use bar instead")]
+pub fn foo() {}
+```
+
+
 ## Conditional Compilation
+
+[Conditional compilation]( https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute )
 
 ```rust
 // This function only gets compiled if the target OS is linux
