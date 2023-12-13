@@ -47,7 +47,7 @@
 - [Concurrency](topics/concurrency.md)
 - [Async](topics/async.md)
 - [Documentation](topics/documentation.md)
-- [Cross-compilation](topics/cross_compilation.md)
+
 
 
 # Rust Tools
@@ -59,6 +59,7 @@
   - [Package layout](tools/package_layout.md)
   - [Faster linking](tools/faster_linking.md)
 - [Formatting and Linting](tools/formatting_linting.md)
+- [Cross-compilation](tools/cross_compilation.md)
 - [Rustup](tools/rustup.md)
 - [Just](tools/just.md)
 - [mdBook](tools/mdbook.md)
