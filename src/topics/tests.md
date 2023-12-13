@@ -12,8 +12,8 @@
 mod tests {
     use super::*; // access to all objects in the parent module, which contains the main code
 
-    // Test functions must be free, monomorphic functions that take no arguments, and commonly return (), 
-    // or Result<T, E> where T: Termination, E: Debug
+    // Test functions must be free, monomorphic functions that take no arguments, 
+    // and commonly return () or Result<T, E> where T: Termination, E: Debug
     #[test]
     fn larger_can_hold_smaller() {  
         let larger = Rectangle {
