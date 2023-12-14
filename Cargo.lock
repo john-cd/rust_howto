@@ -1763,6 +1763,7 @@ dependencies = [
  "http 1.0.0",
  "http-body-util",
  "once_cell",
+ "parking_lot",
  "rayon",
  "reqwest",
  "sea-orm",
