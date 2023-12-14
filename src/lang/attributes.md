@@ -55,16 +55,7 @@ List of lint checks: `rustc -W help`. `rustc` also recognizes the tool lints for
 
 ## Automatic trait derivation
 
-```rust
-// on structs 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
-struct S(i32);
-
-fn main() {
-    println!("{:?}", S(0));
-    println!("{}", S(1) == S(1));
-}
-```
+See [Automatic derivation](../topics/derive.md)
 
 
 ## Must Use
