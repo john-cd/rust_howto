@@ -1,4 +1,4 @@
-# Shared state
+# Shared-State Concurrency
 
 The Rust standard library provides smart pointer types, such as `Mutex<T>` and `Arc<T>`, that are safe to use in concurrent contexts.
 
@@ -38,7 +38,7 @@ fn main() {
 
 ## Parking Lot
 
-[Parking Lot]( https://crates.io/crates/parking_lot ) provides implementations of `Mutex`, `RwLock`, `Condvar` and `Once` that are smaller, faster and more flexible than those in the Rust standard library. It also provides a ReentrantMutex type.
+[Parking Lot]( https://crates.io/crates/parking_lot ) provides implementations of `Mutex`, `RwLock`, `Condvar` and `Once` that are smaller, faster and more flexible than those in the Rust standard library. It also provides a `ReentrantMutex` type.
 
 `std::sync::Mutex` works fine, but Parking Lot is faster.
 
@@ -74,11 +74,24 @@ let lock = RwLock::new(5);
 } // write lock is dropped here
 ```
 
-## Crossbeam
+## Atomics
 
-[crossbeam](https://docs.rs/crossbeam/latest/crossbeam/)
+Atomic types in [std::sync::atomic]( https://doc.rust-lang.org/std/sync/atomic/index.html ) provide primitive shared-memory communication between threads, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including `AtomicBool`, `AtomicIsize`, `AtomicUsize`, `AtomicI8`, `AtomicU16`, etc.
 
-```rust
+```rust,ignore
+use std::sync::atomic::{AtomicUsize, Ordering};
+
+static GLOBAL_THREAD_COUNT: AtomicUsize = AtomicUsize::new(0);
+
+let old_thread_count = GLOBAL_THREAD_COUNT.fetch_add(1, Ordering::SeqCst);
+println!("live threads: {}", old_thread_count + 1);
+```
+
+The most common way to share an atomic variable is to put it into an `Arc` (an atomically-reference-counted shared pointer).
+
+[crossbeam](https://docs.rs/crossbeam/latest/crossbeam/) also offers `AtomicCell`, a thread-safe mutable memory location. This type is equivalent to `Cell`, except it can also be shared among multiple threads.
+
+```rust,ignore
 use crossbeam_utils::atomic::AtomicCell;
 
 let a = AtomicCell::new(7);

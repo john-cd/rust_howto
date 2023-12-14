@@ -44,6 +44,7 @@
 - [Lazy initialization](topics/lazy_initialization.md)
 - [Concurrency](topics/concurrency.md)
   - [Message Passing](topics/message_passing.md)
+  - [Shared-State Concurrency](topics/shared_state.md)
 - [Async](topics/async.md)
 - [Documentation](topics/documentation.md)
 
