@@ -2,7 +2,7 @@
 
 [Introduction](README.md)
 
-# Rust Language
+## Rust Language
 
 - [General](lang/rust_language.md)
 - [Main function](lang/main.md)
@@ -24,15 +24,15 @@
 - [Closures](lang/closures.md)
 - [Iterators](lang/iterators.md)
 - [Macros](lang/macros.md)
- 
-# Standard Library
+
+## Standard Library
 
 - [Vectors](std/vectors.md)
 - [Hashmap](std/hashmaps.md)
 - [Strings](std/strings.md)
 - [Smart Pointers](std/smart_pointers.md)
 
-# Cross-cutting Topics
+## Cross-cutting Topics
 
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
@@ -43,10 +43,11 @@
 - [Testing](topics/tests.md)
 - [Lazy initialization](topics/lazy_initialization.md)
 - [Concurrency](topics/concurrency.md)
+  - [Message Passing](topics/message_passing.md)
 - [Async](topics/async.md)
 - [Documentation](topics/documentation.md)
 
-# Rust Tools
+## Rust Tools
 
 - [Rust Installation](tools/install.md)
 - [Crate registries](tools/crates.md)
@@ -61,7 +62,7 @@
 - [mdBook](tools/mdbook.md)
 - [Other tools](tools/other_tools.md)
 
-# Domains
+## Domains
 
 - [CLI](domains/cli.md)
 - [Web](domains/web.md)
@@ -74,7 +75,7 @@
 - [Data](domains/data.md)
 - [ML](domains/ml.md)
 
-# Rust Links
+## Rust Links
 
 - [Essential Links](links/links.md)
 - [Example Code](links/example_code.md)
