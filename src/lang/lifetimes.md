@@ -23,6 +23,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 fn main() {}
 ```
+
 Lifetime Annotations in Struct Definitions and methods:
 
 ```rust

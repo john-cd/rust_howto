@@ -15,7 +15,6 @@ A number of third-party libraries support `Tower` and the `Service` trait: [hype
 
 [Building a Tower middleware from scratch]( https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md )
 
-
 ## Tower HTTP
 
 HTTP specific Tower utilities
@@ -79,7 +78,6 @@ async fn main() {
         .service_fn(handler);
 }
 ```
-
 
 ## Alternatives
 

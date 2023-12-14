@@ -9,10 +9,9 @@ Attributes can take arguments with different syntaxes:
 #[attribute(value, value2)]
 ```
 
-Inner attributes `#![attr]` apply to the item that the attribute is declared within. 
+Inner attributes `#![attr]` apply to the item that the attribute is declared within.
 
-
-### Lint attributes
+## Lint attributes
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
@@ -52,11 +51,9 @@ fn main() {}
 
 List of lint checks: `rustc -W help`. `rustc` also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
 
-
 ## Automatic trait derivation
 
 See [Automatic derivation](../topics/derive.md)
-
 
 ## Must Use
 
@@ -70,14 +67,12 @@ fn add(a: i32, b: i32) -> i32 {
 fn main() { println!("{}", add(1, 2)); }
 ```
 
-
 ## Deprecated
 
 ```rust,ignore
 #[deprecated(since = "5.2.0", note = "use bar instead")]
 pub fn foo() {}
 ```
-
 
 ## Conditional Compilation
 
@@ -107,7 +102,6 @@ fn main() {
     }
 }
 ```
-
 
 ## See Also
 

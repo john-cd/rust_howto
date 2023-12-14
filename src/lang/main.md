@@ -6,7 +6,6 @@ fn main() {
 }
 ```
 
-
 ## Async Main Function
 
 ```rust,ignore
@@ -15,4 +14,3 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
   Ok(())
 }
 ```
-

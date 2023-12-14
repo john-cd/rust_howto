@@ -1,8 +1,8 @@
 # Simple Data Types
 
-- Integers: `i8`, `i16`, `i32`, `i64`, `i128`, `isize` 
+- Integers: `i8`, `i16`, `i32`, `i64`, `i128`, `isize`
 - Unsigned: `u8`, `u16`, `u32`, `u128`, `usize`
-  - `usize` and `isize` are 32 or 64 bits, depending on the architecture of the computer. 
+  - `usize` and `isize` are 32 or 64 bits, depending on the architecture of the computer.
 - Floating point: `f32`, `f64`
 - Boolean: `bool`: `true`, `false`
 - Char: `let z: char = 'ℤ';` Unicode
@@ -13,7 +13,6 @@
   - A vector is a similar collection type provided by the standard library that is allowed to grow or shrink in size
 - Unit (aka void): `()`
 - Type aliases: `type Kilometers = i32;`
-
 
 ## Overflow handling
 

@@ -6,7 +6,6 @@
 
 [Just Programmer's Manual]( https://just.systems/man/en/chapter_1.html )
 
-
 ## Installation in a dev container
 
 ```Dockerfile
@@ -34,11 +33,9 @@ For Alpine, use `apk`:
 RUN apk add just
 ```
 
+## Example `justfile`
 
-## Example `justfile` 
-
-Place it in the root folder of your project. Run `just` to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe. 
-
+Place it in the root folder of your project. Run `just` to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
 # Load a .env file, if present.

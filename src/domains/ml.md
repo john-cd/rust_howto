@@ -12,7 +12,6 @@
 
 [Genetic algos in Rust]( https://github.com/thomasbratt/watchmaker )
 
-
 ## Quant
 
 [rustquant]( https://lib.rs/crates/rustquant )

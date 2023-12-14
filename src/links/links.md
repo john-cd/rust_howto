@@ -10,19 +10,17 @@
 
 [Rust Cookbook (old)](https://rust-lang-nursery.github.io/rust-cookbook/intro.html)
 
-[Rust Design Patterns]( https://rust-unofficial.github.io/patterns/intro.html ) 
+[Rust Design Patterns]( https://rust-unofficial.github.io/patterns/intro.html )
 
 [Easy Rust]( https://fongyoong.github.io/easy_rust/Chapter_1.html )
 
 [The Rustonomicon](https://doc.rust-lang.org/nomicon/intro.html)
-
 
 ## Lists of Rust links
 
 [The Rust Starter Pack](https://opheron.github.io/rust-starter-pack/)
 
 [Awesome Rust](https://github.com/rust-unofficial/awesome-rust): a curated list of Rust code and resources.
-
 
 ## Learn
 

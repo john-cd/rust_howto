@@ -4,23 +4,20 @@ A documentation summary and a compendium of snippets and recipes for the Rust la
 
 Everything you need for day-to-day Rust coding, all in one place.
 
-
 ## Web site
 
 This book is deployed on <https://john-cd.com/rust_howto>
 
 GitHub repo: <https://john-cd.github.io/rust_howto>
 
-
 ## Install
 
-### VS Code 
+### VS Code
 
 Clone the repo and open the folder in [VS Code]( https://code.visualstudio.com/ ). It should prompt you to open the code in a Docker container, which installs `mdbook` and couple of its plugins, `just`, `wget` automatically. Make sure you have installed
 
 - [Dev Container extension]( https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers )
 - [Docker Desktop]( https://www.docker.com/products/docker-desktop/ ) (or just the Docker engine).
-
 
 ### Other
 
@@ -32,29 +29,27 @@ cargo install mdbook-hide
 # optional: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 ```
 
-
 ## Develop
 
 ```bash
 mdbook serve --open
 ```
 
-or simply 
+or simply
 
 ```bash
 just serve
 ```
+
 Development endpoint: <http://localhost:3000/>
 
 `just` alone lists all commonly used recipes.
 
-
 To mark a chapter as hidden, add this special Comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
-```
+```xml
 <!--hidden-->
 ```
-
 
 ## Links
 

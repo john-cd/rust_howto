@@ -82,7 +82,6 @@ fn main() {
 }
 ```
 
-
 ## Events
 
 ```rust,ignore
@@ -112,7 +111,6 @@ fn main() {
     event!(Level::TRACE, greeting = ?my_struct);
 }
 ```
-
 
 ## Spans
 
@@ -179,7 +177,6 @@ async fn my_async_function() {
     .await;
 }
 ```
-
 
 ## Add tracing spans to functions
 

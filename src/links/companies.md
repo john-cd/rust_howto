@@ -1,4 +1,4 @@
-# Companies that use Rust 
+# Companies that use Rust
 
 [Mozilla]( https://www.mozilla.org/en-US/ )
 

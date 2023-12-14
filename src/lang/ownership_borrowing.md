@@ -43,11 +43,10 @@ fn main() {
 }
 ```
 
-
 ### Borrowing
 
-Passing a variable to a function will move or copy, just as assignment does. 
-To avoid passing a value along, borrow the value: 
+Passing a variable to a function will move or copy, just as assignment does.
+To avoid passing a value along, borrow the value:
 
 ```rust
 fn main() {
@@ -63,7 +62,7 @@ fn main() {
 }
 ```
 
-Mutable reference 
+Mutable reference
 
 ```rust
 fn main() {

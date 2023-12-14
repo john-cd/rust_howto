@@ -11,19 +11,18 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs `rustfmt` to exit with an error code if the input is not formatted correctly (useful for CI). 
+Using `--check` instructs `rustfmt` to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check
 ```
-
 
 ### Configuration
 
 [Configuring Rustfmt]( https://rust-lang.github.io/rustfmt/?version=v1.6.0&search= )
 
 Create a `rustfmt.toml` in the project root folder.  
-For example, 
+For example,
 
 ```toml
 edition = "2021"
@@ -66,8 +65,6 @@ List config options with
 rustfmt --help=config
 ```
 
-
 ### Formatting attributes
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`, `#[rustfmt::skip::macros(macro_name)]`, or `#![rustfmt::skip::attributes(custom_attribute)]`
-

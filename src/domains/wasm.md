@@ -2,7 +2,6 @@
 
 [Rust and WebAssembly (book)]( https://rustwasm.github.io/docs/book/ )
 
-
 ## Yew
 
 [What is Yew?](https://yew.rs/)

@@ -2,7 +2,6 @@
 
 [The Cargo book]( https://doc.rust-lang.org/cargo/index.html )
 
-
 `cargo help` or `cargo <command> --help`
 
 ```sh
@@ -14,11 +13,10 @@ cargo run               # Build and run a project in one step
 cargo run -- arg1 somefile.txt > output.txt # pass arguments to the program and collect output
 cargo check             # Quickly checks your code to make sure it compiles but doesn’t produce an executable
 cargo clean             # Removes build artifacts
-cargo test              # Looks for tests to run in two places: in each of your src files and any tests in tests/. 
+cargo test              # Looks for tests to run in two places: in each of your src files and any tests in tests/.
 cargo update            # Updates all dependencies - respect the SemVer constraints in cargo.toml
 cargo update -p regex   # Updates just “regex”
 ```
-
 
 ## `Cargo.toml` and lock files
 
@@ -52,8 +50,7 @@ Examples of version requirements and the versions that would be allowed with the
 
 Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html>
 
-If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`. If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` into git. 
-
+If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`. If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` into git.
 
 ```sh
 cargo install cargo-edit   # install if needed
@@ -68,7 +65,6 @@ cargo watch -x check                # Run cargo check after every code change
 cargo watch -x check -x test -x run # Run cargo check after code changes. If it succeeds, it launches cargo test. If tests pass, it launches the application with cargo run.
 ```
 
-
 ## Formatting
 
 ```sh
@@ -76,7 +72,6 @@ rustup component add rustfmt # install if needed
 cargo fmt
 cargo fmt -- --check # fails if code is not formatted, use in CD / CI
 ```
-
 
 ## Linting
 
@@ -87,7 +82,6 @@ cargo clippy
 
 Mute a warning using the #[allow(clippy::lint_name)] attributes
 
-
 ## Fix
 
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
@@ -96,11 +90,9 @@ Can automatically fix compiler warnings that have a clear way to correct the pro
 cargo fix 
 ```
 
-
 ## Code coverage
 
 [Tarpaulin]( https://github.com/xd009642/tarpaulin )
-
 
 ## Security audit
 
@@ -108,7 +100,6 @@ cargo fix
 cargo install cargo-audit
 cargo audit
 ```
-
 
 ## Unused dependencies
 
@@ -120,7 +111,6 @@ or (simpler) [Machete]( https://blog.benj.me/2022/04/27/cargo-machete/ )
 cargo install cargo-machete
 cargo machete
 ```
-
 
 ## Templates
 

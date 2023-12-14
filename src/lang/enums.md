@@ -22,7 +22,6 @@ fn main() {
 
 If we make an enum public, all of its variants are then public. We only need `pub` before the `enum` keyword.
 
-
 ## Option
 
 Rust has no `null`

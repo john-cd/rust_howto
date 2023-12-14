@@ -6,7 +6,6 @@
 
 [rust-analyzer (home page)]( https://rust-analyzer.github.io/ )
 
-
 ## IntelliJ Rust
 
 If you don’t have a JetBrains license, IntelliJ IDEA is available for free and supports IntelliJ Rust.

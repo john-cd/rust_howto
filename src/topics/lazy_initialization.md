@@ -2,7 +2,7 @@
 
 [OnceCell]( https://doc.rust-lang.org/core/cell/struct.OnceCell.html ): a cell which can be written to only once.
 
-The corresponding Sync version of OnceCell<T> is `OnceLock<T>`.
+The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ```rust
 use std::cell::OnceCell;
@@ -18,7 +18,6 @@ fn main() {
     assert!(cell.get().is_some());
 }
 ```
-
 
 ## Older library
 

@@ -41,8 +41,7 @@ fn main() {
 }
 ```
 
-Patterns accept ` 1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` guards, @-binding `Message::Hello { id: id_variable @ 3..=7,}`.
-
+Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` guards, @-binding `Message::Hello { id: id_variable @ 3..=7,}`.
 
 ```rust
 fn main() {
@@ -68,7 +67,6 @@ fn main() {
         }
 }
 ```
-
 
 ## See Also
 

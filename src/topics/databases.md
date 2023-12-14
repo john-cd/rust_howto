@@ -6,7 +6,6 @@
 
 [sqlx (crate)]( https://lib.rs/crates/sqlx )
 
-
 ## SeaORM
 
 [seaORM]( https://www.sea-ql.org/SeaORM/ )
@@ -14,7 +13,6 @@
 [seaORM cookbook]( https://www.sea-ql.org/sea-orm-cookbook/000-sea-orm-cookbook.html )
 
 [Seaography GraphQL server]( https://www.sea-ql.org/Seaography/ )
-
 
 ## Diesel
 

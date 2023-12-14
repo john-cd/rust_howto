@@ -1,6 +1,5 @@
 # Configuration
 
-
 ## Environment variables
 
 [dotenvy]( https://crates.io/crates/dotenvy )
@@ -50,7 +49,6 @@ fn main() {
 
 [https://www.thorsten-hans.com/working-with-environment-variables-in-rust/]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
 
-
 ### Envy
 
 Envy can deserialize environment variables into typesafe struct.
@@ -80,11 +78,9 @@ fn main() {
 }
 ```
 
-
 ## Config
 
 [config]( https://crates.io/crates/config ): layered configuration system for Rust applications. Read from JSON, TOML, YAML, INI, RON, JSON5 files.
-
 
 ## Confy
 

@@ -1,6 +1,6 @@
 # Vectors
 
-Vectors can only store values that are the same type. 
+Vectors can only store values that are the same type.
 
 ```rust
 fn main() {

@@ -14,8 +14,8 @@ fn foo(x: i32, unit_label: char) -> i32 {
 fn main() {}
 ```
 
-The unit type `()` (void in some languages) is the default return type when no type is given for a function. It could be omitted: `fn log(message: &str) { ... }`
-
+The unit type `()` (void in some languages) is the default return type when no type is given for a function.
+It could be omitted: `fn log(message: &str) { ... }`
 
 ## Generic functions
 
@@ -36,7 +36,7 @@ fn generic<T: ?Sized>(t: &T) {  // By default, generic functions will work only 
 fn main() {}
 ```
 
-## 
+## Function pointers
 
 ```rust
 fn add_one(x: i32) -> i32 {
@@ -50,10 +50,9 @@ fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {   // function pointer - see al
 fn main() {}
 ```
 
+## Diverging functions
 
-## Diverging functions 
-
-Diverging functions never return. 
+Diverging functions never return.
 
 ```rust,ignore
 fn foo() -> ! {  // empty type

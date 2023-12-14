@@ -1,12 +1,11 @@
 
 # [Install Rust]( https://www.rust-lang.org/tools/install )
 
-
 ## Key Steps
 
-- Install [Rustup]( https://rustup.rs/ ) 
+- Install [Rustup]( https://rustup.rs/ )
 
-On WSL / Unix: 
+On WSL / Unix:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -33,7 +32,7 @@ cd hello_world
 code .      # open VS Code and edit 
 ```
 
-- Build / run the code. 
+- Build / run the code.
 
 ```bash
 cargo check

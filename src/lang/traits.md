@@ -68,7 +68,6 @@ impl fmt::Display for Wrapper {
 fn main() {}
 ```
 
-
 ## Trait as parameter
 
 ```rust,ignore
@@ -83,7 +82,6 @@ pub fn notify<T: Summary>(item: &T) {
 
 fn main() {}
 ```
-
 
 ## Multiple traits
 
@@ -100,7 +98,6 @@ where
 fn main() {}
 ```
 
-
 ## Generic traits
 
 ```rust
@@ -114,7 +111,6 @@ impl<T, U> Test<T> for U {
 
 fn main() {}
 ```
-
 
 ## Associated types
 
@@ -137,7 +133,6 @@ trait Add<Rhs=Self> {  // default generic type
 
 fn main() {}
 ```
-
 
 ## See also
 

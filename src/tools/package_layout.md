@@ -33,5 +33,5 @@
 - A package is a bundle of one or more crates - as defined by a `Cargo.toml` file
 - A crate is the smallest amount of code that the Rust compiler considers at a time.
 - A crate can come in one of two forms: a binary crate (must have a function called `main`) or a library crate.
-- A package can contain as many binary crates as you like, but at most only one library crate. 
+- A package can contain as many binary crates as you like, but at most only one library crate.
 - If a package contains src/main.rs and src/lib.rs, it has two crates: a binary and a library, both with the same name as the package.

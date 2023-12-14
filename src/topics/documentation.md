@@ -4,7 +4,6 @@
 
 [doc.rs]( https://docs.rs/ ): open-source documentation host for Rust crates.
 
-
 ## Documenting your code
 
 1) Add documentation comments to your code.
@@ -14,7 +13,7 @@
 #[doc = r" This is a doc comment."]
 ```
 
-`rustdoc` uses the CommonMark Markdown specification. 
+`rustdoc` uses the CommonMark Markdown specification.
 
 ```rust,ignore
     /// Returns a person with the name given them

@@ -6,7 +6,6 @@
 panic!("crash and burn"); 
 ```
 
-
 ## Recoverable errors with `Result`
 
 ```rust,ignore
@@ -19,7 +18,7 @@ io::stdin()
 let greeting_file = File::open("hello.txt").unwrap(); // alternative: panics if error - no message
 ```
 
-**unwrap_or_else**
+### unwrap_or_else
 
 ```rust,ignore
 use std::fs::File;
@@ -37,7 +36,6 @@ fn main() {
     });
 }
 ```
-
 
 ## A Shortcut for Propagating Errors: the ? Operator
 

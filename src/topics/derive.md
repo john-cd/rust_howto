@@ -15,8 +15,7 @@ fn main() {
 }
 ```
 
-You can use the `cargo-expand` utility to see the exact code that is generated for your specific type. 
-
+You can use the `cargo-expand` utility to see the exact code that is generated for your specific type.
 
 ## Derive More
 

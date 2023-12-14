@@ -1,6 +1,6 @@
 # Control Flow
 
-**If else** 
+## If else
 
 ```rust,ignore
 fn main() {
@@ -16,7 +16,7 @@ fn main() {
 
 Also `else if <cond> { ... }`
 
-**Loop**
+## Loop
 
 ```rust
 fn main() {
@@ -30,9 +30,9 @@ fn main() {
         }
     };
 }
-```    
+```
 
-**While** 
+## While
 
 ```rust,ignore
 fn main() {
@@ -41,9 +41,9 @@ fn main() {
             number -= 1;
         }
 }
-```   
+```
 
-**For** 
+## For
 
 ```rust,ignore
 fn main() {

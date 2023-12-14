@@ -1,12 +1,10 @@
-## Other Tools
+# Other Tools
 
 [Rust tools]( https://www.rust-lang.org/tools )
-
 
 ## Deployment
 
 [shuttle.rs]( https://www.shuttle.rs/ )
-
 
 ## Tools written in Rust
 
