@@ -10,7 +10,6 @@
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
 - In most cases, prefer `Tokio` - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ )
 
-
 ```rust,ignore
 // async transforms a block of code into a state machine that implements a trait called Future.
 async fn foo() -> u8 { 5 }  // `foo()` returns a type that implements `Future<Output = u8>`.
@@ -46,14 +45,13 @@ fn main() {
 }
 ```
 
-
 ## Futures crate
 
 [Futures crate]( https://crates.io/crates/futures )
 
-**Select**
+### Select
 
-Polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime. 
+Polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
 ```rust,ignore
 fn main() {
@@ -80,7 +78,7 @@ fn main() {
 }
 ```
 
-**Joining futures**
+### Joining futures
 
 ```rust,ignore
 async fn foo(i: u32) -> u32 { i }
@@ -93,7 +91,7 @@ let futures = vec![foo(1), foo(2), foo(3)];
 assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]); 
 ```
 
-**Map, then, either, flatten**
+### Map, then, either, flatten
 
 ```rust,ignore
 use futures::future::FutureExt;  // An extension trait for Futures that provides a variety of convenient adapters.
@@ -125,10 +123,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-
 ### Streams
 
-Futures are about a single value that will eventually be produced,  but many event sources naturally produce a stream of values over time. 
+Futures are about a single value that will eventually be produced,  but many event sources naturally produce a stream of values over time.
 
 ```rust,ignore
 async fn send_recv() {
@@ -198,10 +195,9 @@ async fn main() -> Result {
 }
 ```
 
+## Async traits
 
-## async traits
-
-The async working group's headline goal for 2023 is to stabilize a "minimum viable product" (MVP) version of async functions in traits. 
+The async working group's headline goal for 2023 is to stabilize a "minimum viable product" (MVP) version of async functions in traits.
 In the meanwhile, use the [Async trait crate]( https://github.com/dtolnay/async-trait ).
 
 ```rust,ignore
@@ -226,7 +222,6 @@ impl Advertisement for Modal {
 }
 ```
 
-
 ## Tokio
 
 [Tokio]( https://tokio.rs/ )
@@ -235,6 +230,9 @@ impl Advertisement for Modal {
 
 [Tokio mini-Redis example]( https://github.com/tokio-rs/mini-redis )
 
+### Async channels
+
+Tokio's sync module provides channels for using in async code.
 
 ## Alternatives to Tokio
 

@@ -1,4 +1,4 @@
-# Concurrency 
+# Concurrency
 
 ## Thread-based
 
@@ -24,8 +24,7 @@ fn main() {
 }
 ```
 
-When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running. 
-
+When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running.
 
 ### [Scoped threads]( https://doc.rust-lang.org/std/thread/fn.scope.html )
 
@@ -65,7 +64,6 @@ fn main() {
 }
 ```
 
-
 ## Rayon - parallel processing
 
 [Rayon docs]( https://docs.rs/rayon/latest/rayon/ )
@@ -91,18 +89,22 @@ fn increment_all(input: &mut [i32]) {
 }
 ```
 
-
 ### Parallel sorting
 
 ```rust,ignore
+use rayon::prelude::*
+
 let mut v = [-5, 4, 1, -3, 2];
 v.par_sort();
 ```
 
+### Custom tasks
 
-### [Rayon threadpool]( https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html# )
+Rayon implements [join]( https://docs.rs/rayon/latest/rayon/fn.join.html ), [scope]( https://docs.rs/rayon/latest/rayon/fn.scope.html ),  [spawn]( https://docs.rs/rayon/latest/rayon/fn.spawn.html ) that may run on the global or a custom [Rayon threadpool]( https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html# ).
 
 ```rust,ignore
+use rayon::prelude::*
+
  fn main() {
         // Build the threadpool
         let pool = rayon::ThreadPoolBuilder::new().num_threads(8).build().unwrap();
@@ -121,22 +123,6 @@ v.par_sort();
     }
 ```
 
-
-## Message passing and shared state
-
-The Rust standard library provides channels for message passing and smart pointer types, such as `Mutex<T>` and `Arc<T>`, that are safe to use in concurrent contexts. 
-
-
 ## See Also
 
 [Concurrency]( https://doc.rust-lang.org/book/ch16-00-concurrency.html )
-
-[Message Passing]( https://doc.rust-lang.org/book/ch16-02-message-passing.html )
-
-[crossbeam](https://docs.rs/crossbeam/latest/crossbeam/)
-
-[Parking Lot]( https://crates.io/crates/parking_lot ): more compact and efficient implementations of the standard synchronization primitives.
-
-[Dashmap]( https://docs.rs/dashmap/5.3.3/dashmap/struct.DashMap.html# )
-
-
