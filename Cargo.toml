@@ -2,6 +2,8 @@
 
 members = [
     "deps",
+    "examples/crossbeam",
+    "examples/streams",
 ]
-
+exclude = []
 resolver = "2"
