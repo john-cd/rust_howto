@@ -9,7 +9,7 @@ cargo --version
 cargo new hello_cargo   # Create a new project. Can add --bin  or --lib
 cargo build             # Creates an executable file in target/debug/hello_cargo
 cargo build --release
-cargo run               # Build and run a project in one step 
+cargo run               # Build and run a project in one step
 cargo run -- arg1 somefile.txt > output.txt # pass arguments to the program and collect output
 cargo check             # Quickly checks your code to make sure it compiles but doesn’t produce an executable
 cargo clean             # Removes build artifacts
@@ -77,7 +77,7 @@ cargo fmt -- --check # fails if code is not formatted, use in CD / CI
 
 ```sh
 rustup component add clippy # install if needed
-cargo clippy   
+cargo clippy
 ```
 
 Mute a warning using the #[allow(clippy::lint_name)] attributes
@@ -87,7 +87,7 @@ Mute a warning using the #[allow(clippy::lint_name)] attributes
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
 
 ```sh
-cargo fix 
+cargo fix
 ```
 
 ## Code coverage
