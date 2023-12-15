@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/devcontainers/rust:bullseye as final
 SHELL ["bash", "-c"]
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install wget \
+    && apt-get -y install wget fzf \
     && apt-get autoremove -y && apt-get clean -y
 
 ## Install fmt and clippy
