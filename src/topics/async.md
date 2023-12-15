@@ -26,10 +26,10 @@ async fn first_task() -> SomeStruct { /* ... */ }
 async fn second_task_1(&s: SomeStruct ) { /* ... */ }
 async fn second_task_2() { /* ... */ }
 
-async fn do_something() { // The value returned by async fn is a Future. 
+async fn do_something() { // The value returned by async fn is a Future.
 
     let s = first_task().await; // use `.await` to prevent blocking the thread
-    
+
     let f1 = second_task_1(&s);
     let f2 = second_task_2();
     futures::join!(f1, f2);     // `join!` is like `.await` but can wait for multiple futures concurrently.
@@ -88,7 +88,7 @@ assert_eq!(join!(foo(1), foo(2)), (1, 2)); // `join!` is variadic, so you can pa
 
 let futures = vec![foo(1), foo(2), foo(3)];
 // Create a future which represents a collection of the outputs of the futures given.
-assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]); 
+assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 ```
 
 ### Map, then, either, flatten
@@ -100,10 +100,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let future_of_1 = async { 1 };
 
     // Map this future’s output to a (possibly) different type, returning a new future of the resulting type.
-    let new_future = future.map(|x| x + 3); 
+    let new_future = future.map(|x| x + 3);
 
     // Chain on a computation for when a future finished, passing the result of the future to the provided closure f.
-    let future_of_4 = future_of_1.then(|x| async move { x + 3 }); 
+    let future_of_4 = future_of_1.then(|x| async move { x + 3 });
     assert_eq!(future_of_4.await, 4);
 
     // Conditional `Either` future
@@ -226,20 +226,40 @@ impl Advertisement for Modal {
 
 [Tokio]( https://tokio.rs/ )
 
+[Tokio tutorial]( https://tokio.rs/tokio/tutorial )
+
 [rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main ): a template for a tokio-rs app with logging & command line argument parser
+
+[Tokio examples]( https://github.com/tokio-rs/tokio/tree/master/examples )
 
 [Tokio mini-Redis example]( https://github.com/tokio-rs/mini-redis )
 
-### Async channels
+Tokio provides multiple variations of the runtime. Everything from a multi-threaded, work-stealing runtime to a light-weight, single-threaded runtime.
 
-Tokio's sync module provides channels for using in async code.
 
-## Alternatives to Tokio
+## Channels for use in async code
+
+Tokio's `sync` module provides channels for using in async code.
+
+### OneShot
+
+`oneshot` sends a single value from a single producer to a single consumer.
+This channel is usually used to send the result of a computation to a waiter.
+
+```rust,ignore
+
+```
+
+
+[Postage](https://lib.rs/crates/postage) is an alternative to `tokio::sync`.
+
+
+## Alternatives to the Tokio async ecosystem
+
+[async-std]( https://crates.io/crates/async-std ): async version of the Rust standard library. No longer maintained?
+
+[Smol]( https://crates.io/crates/smol )
+
+[Embassy]( https://embassy.dev/ )
 
 [Mio]( https://crates.io/crates/mio ) is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions.
-
-[async-std]( https://crates.io/crates/async-std ): async version of the Rust standard library. (Older) alternative to Tokio.
-
-Smol
-
-Embassy
