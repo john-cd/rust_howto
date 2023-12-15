@@ -17,7 +17,10 @@ async fn main() -> Result {
     let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"];
     let filenames = ["file1.txt"];
 
-    let futures = urls.iter().zip(filenames.iter()).map( |(url, filename)| download_file(url, filename));
+    let futures = urls
+        .iter()
+        .zip(filenames.iter())
+        .map(|(url, filename)| download_file(url, filename));
 
     let fut = futures::stream::iter(futures).for_each_concurrent(4, |fut| async move {
         if let Err(e) = fut.await {

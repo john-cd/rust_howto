@@ -6,7 +6,6 @@ async fn some_computation(input: u32) -> String {
 }
 
 async fn one_shot() {
-
     let (tx, rx) = oneshot::channel();
 
     tokio::spawn(async move {

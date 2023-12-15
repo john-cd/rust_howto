@@ -18,18 +18,18 @@ fn main() {
                 0 => {
                     map_clone.insert("key1", thread_id);
                     println!("Thread {} inserted key1", thread_id);
-                },
+                }
                 1 => {
                     map_clone.insert("key2", thread_id);
                     println!("Thread {} inserted key2", thread_id);
-                },
+                }
                 2 => {
                     if let Some(value) = map_clone.get("key1") {
                         println!("Thread {} read key1: {}", thread_id, *value);
                     } else {
                         println!("Thread {} couldn't find key1", thread_id);
                     }
-                },
+                }
                 3 => {
                     if let Some(mut value) = map_clone.get_mut("key2") {
                         *value += 10;
@@ -37,7 +37,7 @@ fn main() {
                     } else {
                         println!("Thread {} couldn't find key2", thread_id);
                     }
-                },
+                }
                 _ => panic!("Unknown thread ID"),
             }
         }));
@@ -55,9 +55,4 @@ fn main() {
 
     // Access the final state of the map from the main thread
     println!("final count: {}", map.iter().count());
-
 }
-
-
-
-
