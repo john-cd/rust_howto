@@ -1,4 +1,6 @@
 # Deps
 
-This is a stub project required for mdbook-keeper.
-Please add to Cargo.toml all the dependencies that your Rust code embedded into the mdbook markdown requires.
+This is a stub project required for `mdbook-keeper` as a way of collecting all dependencies for `mdbook test`.
+
+Run `cargo add <crate>` in this folder or edit `Cargo.toml` in this folder to add dependencies that the Rust code embedded into the book markdown requires.
+
