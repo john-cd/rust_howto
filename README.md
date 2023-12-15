@@ -19,6 +19,8 @@ Clone the repo and open the folder in [VS Code]( https://code.visualstudio.com/ 
 - [Dev Container extension]( https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers )
 - [Docker Desktop]( https://www.docker.com/products/docker-desktop/ ) (or just the Docker engine).
 
+Note that opening the folder may take a little while the first time around.
+
 ### Other
 
 If you are not using VS Code, install the dev container CLI or simply install on your local machine:
