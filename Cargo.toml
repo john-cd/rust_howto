@@ -5,6 +5,7 @@ members = [
     "examples/crossbeam",
     "examples/dashmap",
     "examples/streams",
+    "examples/tokio",
 ]
 exclude = []
 resolver = "2"
