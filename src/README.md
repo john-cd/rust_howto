@@ -1,4 +1,3 @@
-# Rust How-To
 
 **A compendium of examples and recipes for the Rust language and ecosystem.**
 
@@ -6,7 +5,7 @@
 
 ## Prerequisites
 
-Readers should already be familiar with [Rust]( https://www.rust-lang.org/ ). The [Rust book ](https://doc.rust-lang.org/book/) is an excellent resource to get started with.
+Readers should already be familiar with [Rust]( https://www.rust-lang.org/ ). The [Rust book](https://doc.rust-lang.org/book/) is an excellent resource to get started with.
 
 ## What you will find here
 
