@@ -3,6 +3,7 @@
 members = [
     "deps",
     "examples/crossbeam",
+    "examples/dashmap",
     "examples/streams",
 ]
 exclude = []
