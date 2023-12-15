@@ -2,7 +2,7 @@
 
 [Introduction](README.md)
 
-## Rust Language
+# Language
 
 - [General](lang/rust_language.md)
 - [Main function](lang/main.md)
@@ -25,14 +25,14 @@
 - [Iterators](lang/iterators.md)
 - [Macros](lang/macros.md)
 
-## Standard Library
+# Standard Library
 
 - [Vectors](std/vectors.md)
 - [Hashmap](std/hashmaps.md)
 - [Strings](std/strings.md)
 - [Smart pointers](std/smart_pointers.md)
 
-## Cross-cutting Topics
+# Cross-cutting Topics
 
 - [Automatic derivation](topics/derive.md)
 - [Error handling](topics/error_handling.md)
@@ -49,7 +49,7 @@
 - [Async](topics/async.md)
 - [Documentation](topics/documentation.md)
 
-## Rust Tools
+# Tools
 
 - [Rust installation](tools/install.md)
 - [Crate registries](tools/crates.md)
@@ -64,7 +64,7 @@
 - [mdBook](tools/mdbook.md)
 - [Other tools](tools/other_tools.md)
 
-## Domains
+# Domains
 
 - [CLI](domains/cli.md)
 - [Web](domains/web.md)
@@ -77,7 +77,7 @@
 - [Data](domains/data.md)
 - [ML](domains/ml.md)
 
-## Rust Links
+# Links
 
 - [Essential links](links/links.md)
 - [Example code](links/example_code.md)
@@ -85,7 +85,5 @@
 - [Blogs](links/blogs.md)
 - [Books](links/books.md)
 - [Companies](links/companies.md)
-
----
 
 [Thanks](misc/thanks.md)
