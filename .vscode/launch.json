@@ -1,0 +1,138 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'rust_howto'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=rust_howto"
+                ],
+                "filter": {
+                    "name": "rust_howto",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'crossbeam_channel_example'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=crossbeam_channel_example",
+                    "--package=crossbeam_channel_example"
+                ],
+                "filter": {
+                    "name": "crossbeam_channel_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'crossbeam_channel_example'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=crossbeam_channel_example",
+                    "--package=crossbeam_channel_example"
+                ],
+                "filter": {
+                    "name": "crossbeam_channel_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'dashmap_example'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=dashmap_example",
+                    "--package=dashmap_example"
+                ],
+                "filter": {
+                    "name": "dashmap_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'dashmap_example'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=dashmap_example",
+                    "--package=dashmap_example"
+                ],
+                "filter": {
+                    "name": "dashmap_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'stream_example'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=stream_example",
+                    "--package=stream_example"
+                ],
+                "filter": {
+                    "name": "stream_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'stream_example'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=stream_example",
+                    "--package=stream_example"
+                ],
+                "filter": {
+                    "name": "stream_example",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
