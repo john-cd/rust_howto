@@ -1,13 +1,13 @@
 [workspace]
 
 members = [
-    # stub project for dependencies of the code embedded in the markdown.
+    # stub project to declare the dependencies of the code embedded in the markdown
     "deps",
     # examples independent from the book markdown
-    "xmpl/crossbeam",
-    "xmpl/dashmap",
-    "xmpl/streams",
-    "xmpl/tokio",
+    "xmpl/crossbeam_channel_example",
+    "xmpl/dashmap_example",
+    "xmpl/stream_example",
+    "xmpl/tokio_example",
 ]
 exclude = []
 resolver = "2"
