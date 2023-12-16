@@ -47,6 +47,8 @@
   - [Shared-state concurrency](topics/shared_state.md)
   - [Concurrent data structures](topics/concurrent_data_structures.md)
 - [Async](topics/async.md)
+  - [Tokio](topics/tokio.md)
+  - [Streams](topics/streams.md)
 - [Documentation](topics/documentation.md)
 
 # Tools
@@ -81,7 +83,7 @@
 
 - [Essential links](links/links.md)
 - [Example code](links/example_code.md)
-- [Rust cheatsheets](links/rust_cheatsheets.md)
+- [Cheatsheets](links/rust_cheatsheets.md)
 - [Blogs](links/blogs.md)
 - [Books](links/books.md)
 - [Companies](links/companies.md)
