@@ -34,8 +34,8 @@ async fn do_something() {
 }
 
 // We replace `fn main()` by `async fn main()` and declare which executor runtime we'll use - in this case, Tokio.
-// The runtime crate must be added to Cargo.toml, of course: `tokio = { version = "1", features = ["full"] }`
-// The #[tokio::main] attribute is a macro that transforms it into a synchronous fn main() that initializes a runtime instance and executes the async main function.
+// The runtime crate must be added to `Cargo.toml`: `tokio = { version = "1", features = ["full"] }`
+// Technically, the #[tokio::main] attribute is a macro that transforms it into a synchronous fn main() that initializes a runtime instance and executes the async main function.
 #[tokio::main]
 async fn main() {
     do_something().await; // note: `await` must be called or nothing is executing - Futures are lazy
@@ -75,15 +75,25 @@ async fn main() {
 - Dropping a future stops it from making further progress.
 - Async is zero-cost in Rust. You can use `async` without heap allocations and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
-- Both single- and multithreaded runtimes are available in Rust, which have different strengths and weaknesses.
+- Both single- and multithreaded runtimes are available.
 
 ## Which crate provides what?
 
 - The `async`/`await` syntaxic sugar is supported directly by the Rust compiler.
-- The most fundamental traits, types and functions, such as the `Future` trait are provided by the standard library.
+- The most fundamental traits, types, and functions, such as the `Future` trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the `futures` crate. They can be used in any async Rust application.
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
-- In most cases, prefer the `Tokio` runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ )
+
+## Async runtimes
+
+In most cases, prefer the [Tokio](tokio.md) runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ ).
+
+Alternatives to the Tokio async ecosystem include:
+
+- [async-std]( https://crates.io/crates/async-std ): async version of the Rust standard library. No longer maintained?
+- [Smol]( https://crates.io/crates/smol )
+- [Embassy]( https://embassy.dev/ ) for embedded systems.
+- [Mio]( https://crates.io/crates/mio ) is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 ## Async traits
 
