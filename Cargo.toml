@@ -4,10 +4,9 @@ members = [
     # stub project to declare the dependencies of the code embedded in the markdown
     "deps",
     # examples independent from the book markdown
-    "xmpl/crossbeam_channel_example",
-    "xmpl/dashmap_example",
-    "xmpl/stream_example",
-    "xmpl/tokio_example",
+    "xmpl/*"
 ]
+# Only check / build main crate by default (check all with `--workspace`)
+default-members = ["deps"]
 exclude = []
 resolver = "2"

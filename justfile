@@ -36,6 +36,7 @@ xbuild:
 # Build the book from its markdown files (incl. testing of the examples embedded in the markdown)
 build:
   mdbook build
+# It does call cargo build and mdbook test
 
 # Test the examples embedded in the markdown
 test:
@@ -46,7 +47,7 @@ test:
 # Serve the book (incl. testing of the examples embedded in the markdown)
 serve:
   mdbook serve --open
-  # to change the port: --port 3001
+# to change the port: --port 3001
 
 # Watch the book's markdown files and rebuilds it on changes
 # watch:
