@@ -4,124 +4,86 @@
 
 [Asynchronous Programming in Rust (book)]( https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html )
 
-- The most fundamental traits, types and functions, such as the `Future` trait are provided by the standard library. A future represents an asynchronous computation that might not have finished yet.
-- The `async`/`await` syntaxic sugar is supported directly by the Rust compiler.
-- Many utility types, macros and functions are provided by the `futures` crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
-- In most cases, prefer `Tokio` - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ )
+## Basic Example
 
 ```rust,ignore
-// async transforms a block of code into a state machine that implements a trait called Future.
-async fn foo() -> u8 { 5 }  // `foo()` returns a type that implements `Future<Output = u8>`.
+// Most often, we will use async functions.
+// Rust transforms the `async fn` at compile time into a state machine that _implicitly_ returns a `Future`.
+// A future represents an asynchronous computation that might not have finished yet.
+async fn first_task() -> SomeStruct { /* ... */ }
 
-fn bar() -> impl Future<Output = u8> {
-    // This `async` block results in a type that implements `Future<Output = u8>`.
+async fn second_task_1(&s: SomeStruct ) { /* ... */ }
+
+// `async fn` is really syntaxic sugar for a function...
+fn second_task_2() -> impl Future<Output = ()> {
+    // ...that contains an `async` block.
     async {
-        let x: u8 = foo().await;  // `foo().await` will result in a value of type `u8`.
-        x + 5
-    }
+        ()
+    }   // returns `Future<Output = ()>`
 }
 
-async fn first_task() -> SomeStruct { /* ... */ }
-async fn second_task_1(&s: SomeStruct ) { /* ... */ }
-async fn second_task_2() { /* ... */ }
+async fn do_something() {
+    // Use `.await` to start executing the future.
+    let s = first_task().await;
+    // `await` yields control back to the executor, which may decide to do other work if the task is not ready, then come back here.
 
-async fn do_something() { // The value returned by async fn is a Future.
-
-    let s = first_task().await; // use `.await` to prevent blocking the thread
-
+    // `join!` is like `.await` but can wait for multiple futures concurrently, returning when all branches complete.
     let f1 = second_task_1(&s);
     let f2 = second_task_2();
-    futures::join!(f1, f2);     // `join!` is like `.await` but can wait for multiple futures concurrently.
+    futures::join!(f1, f2);     // or tokio::join!
 }
 
-fn main() {
-    let future = do_something(); // Futures are lazy - nothing is happening until driven to completion by .await, block_on...
-
-    // `block_on` blocks the current thread until the provided future has run to
-    // completion. Other executors provide more complex behavior, like scheduling
-    // multiple futures onto the same thread. See `Tokio`.
-    futures::executor::block_on(future); // `future` is run and "hello, world!" is printed
-}
-```
-
-## Futures crate
-
-[Futures crate]( https://crates.io/crates/futures )
-
-### Select
-
-Polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
-
-```rust,ignore
-fn main() {
-    use futures::{
-        future::FutureExt, // for `.fuse()`
-        pin_mut,
-        select,
-    };
-
-    async fn task_one() { /* ... */ }
-    async fn task_two() { /* ... */ }
-
-    async fn race_tasks() {
-        let t1 = task_one().fuse();
-        let t2 = task_two().fuse();
-
-        pin_mut!(t1, t2);
-
-        select! {
-            () = t1 => println!("task one completed first"),
-            () = t2 => println!("task two completed first"),
-        }
-    }
+// We replace `fn main()` by `async fn main()` and declare which executor runtime we'll use - in this case, Tokio.
+// The runtime crate must be added to Cargo.toml, of course: `tokio = { version = "1", features = ["full"] }`
+// The #[tokio::main] attribute is a macro that transforms it into a synchronous fn main() that initializes a runtime instance and executes the async main function.
+#[tokio::main]
+async fn main() {
+    do_something().await; // note: `await` must be called or nothing is executing - Futures are lazy
 }
 ```
 
-### Joining futures
+As any form of cooperative multitasking, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
 
-```rust,ignore
-async fn foo(i: u32) -> u32 { i }
+## Differences with other languages
 
-//Polls multiple futures simultaneously, returning a tuple of all results once complete.
-assert_eq!(join!(foo(1), foo(2)), (1, 2)); // `join!` is variadic, so you can pass any number of futures
+Rust's implementation of `async` differs from most languages in a few ways:
 
-let futures = vec![foo(1), foo(2), foo(3)];
-// Create a future which represents a collection of the outputs of the futures given.
-assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
-```
+- Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
-### Map, then, either, flatten
-
-```rust,ignore
-use futures::future::FutureExt;  // An extension trait for Futures that provides a variety of convenient adapters.
-
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let future_of_1 = async { 1 };
-
-    // Map this future’s output to a (possibly) different type, returning a new future of the resulting type.
-    let new_future = future.map(|x| x + 3);
-
-    // Chain on a computation for when a future finished, passing the result of the future to the provided closure f.
-    let future_of_4 = future_of_1.then(|x| async move { x + 3 });
-    assert_eq!(future_of_4.await, 4);
-
-    // Conditional `Either` future
-    let x = 6;
-    let future = if x > 10 {
-        async { true }.left_future()
-    } else {
-        async { false }.right_future()
-    };
-    assert_eq!(future.await, false);
-
-    // Flatten nested futures
-    let nested_future = async { async { 1 } };
-    let future = nested_future.flatten();
-    assert_eq!(future.await, 1);
-    Ok(())
+```rust
+async fn say_world() {
+    println!("world");
 }
+
+#[tokio::main]
+async fn main() {
+    // Calling `say_world()` does not execute the body of `say_world()`.
+    let op = say_world();
+
+    // This println! comes first
+    println!("hello");
+
+    // Calling `.await` on `op` starts executing `say_world`.
+    op.await;
+}
+// Prints:
+// hello
+// world
+// Example from https://tokio.rs/tokio/tutorial/hello-tokio
 ```
+
+- Dropping a future stops it from making further progress.
+- Async is zero-cost in Rust. You can use `async` without heap allocations and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
+- No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
+- Both single- and multithreaded runtimes are available in Rust, which have different strengths and weaknesses.
+
+## Which crate provides what?
+
+- The `async`/`await` syntaxic sugar is supported directly by the Rust compiler.
+- The most fundamental traits, types and functions, such as the `Future` trait are provided by the standard library.
+- Many utility types, macros and functions are provided by the `futures` crate. They can be used in any async Rust application.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
+- In most cases, prefer the `Tokio` runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ )
 
 ## Async traits
 

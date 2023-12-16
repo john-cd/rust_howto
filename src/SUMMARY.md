@@ -49,6 +49,7 @@
 - [Async](topics/async.md)
   - [Tokio](topics/tokio.md)
   - [Streams](topics/streams.md)
+  - [Futures crate](topics/futures.md)
 - [Documentation](topics/documentation.md)
 
 # Tools
