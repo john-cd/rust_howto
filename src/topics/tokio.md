@@ -1,7 +1,6 @@
 # Tokio
 
 Tokio is an asynchronous runtime for the Rust programming language. It provides the building blocks needed for writing networking applications.
-
 Tokio provides a few major components:
 
 - Multiple variations of the runtime for executing asynchronous code. Everything from a multi-threaded, work-stealing runtime to a light-weight, single-threaded runtime.
@@ -10,31 +9,60 @@ Tokio provides a few major components:
 
 [Tokio]( https://tokio.rs/ )
 
-[Tokio tutorial]( https://tokio.rs/tokio/tutorial )
+[Tokio glossary]( https://tokio.rs/tokio/glossary )
 
-[rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main ): a template for a tokio-rs app with logging & command line argument parser
+[Tokio tutorial]( https://tokio.rs/tokio/tutorial )
 
 [Tokio examples]( https://github.com/tokio-rs/tokio/tree/master/examples )
 
 [Tokio mini-Redis example]( https://github.com/tokio-rs/mini-redis )
 
-## Channels for use in async code
+Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main )
 
-Tokio's `sync` module provides channels for using in async code.
+## Graceful shutdown
 
-### OneShot
+Example from [tokio_graceful_shutdown]( https://docs.rs/tokio-graceful-shutdown/latest/tokio_graceful_shutdown/ ):
 
-`oneshot` sends a single value from a single producer to a single consumer.
-This channel is usually used to send the result of a computation to a waiter.
+```rust,ignore
+use tokio_graceful_shutdown::{SubsystemBuilder, SubsystemHandle, Toplevel};
+use tokio::time::{sleep, Duration};
 
-[Postage](https://lib.rs/crates/postage) is an alternative to `tokio::sync`.
+type Result = Result<(), Box<dyn Error>>;
 
-## Alternatives to the Tokio async ecosystem
+async fn countdown() {
+    for i in (1..=5).rev() {
+        tracing::info!("Shutting down in: {}", i);
+        sleep(Duration::from_millis(1000)).await;
+    }
+}
 
-[async-std]( https://crates.io/crates/async-std ): async version of the Rust standard library. No longer maintained?
+async fn countdown_subsystem(subsys: SubsystemHandle) -> Result {
+    tokio::select! {
+        _ = subsys.on_shutdown_requested() => {
+            tracing::info!("Countdown cancelled.");
+        },
+        _ = countdown() => {
+            subsys.request_shutdown();
+        }
+    };
 
-[Smol]( https://crates.io/crates/smol )
+    Ok(())
+}
 
-[Embassy]( https://embassy.dev/ )
+#[tokio::main]
+async fn main() -> Result {
+    // Init logging
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::TRACE)
+        .init();
 
-[Mio]( https://crates.io/crates/mio ) is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions.
+    // Setup and execute subsystem tree
+    Toplevel::new(|s| async move {
+        s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
+    })
+    .catch_signals()  // signals the Toplevel object to listen for SIGINT/SIGTERM/Ctrl+C
+    .handle_shutdown_requests(Duration::from_millis(1000))  // collects all the return values of the subsystems, determines the global error state
+    .await
+    .map_err(Into::into)
+}
+```
