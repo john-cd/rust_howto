@@ -50,7 +50,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 - Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
-```rust
+```rust,ignore
 async fn say_world() {
     println!("world");
 }
