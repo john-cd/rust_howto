@@ -2597,7 +2597,10 @@ dependencies = [
 name = "tokio_example"
 version = "0.1.0"
 dependencies = [
+ "rayon",
  "tokio",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

@@ -1,8 +1,6 @@
-# Concurrency
+# Multithreading
 
-## Thread-based
-
-### Spawn, join
+## Spawn, join
 
 ```rust
 use std::thread;
@@ -26,7 +24,9 @@ fn main() {
 
 When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running.
 
-### [Scoped threads]( https://doc.rust-lang.org/std/thread/fn.scope.html )
+## Scoped threads
+
+[Scoped threads]( https://doc.rust-lang.org/std/thread/fn.scope.html )
 
 ```rust,ignore
 use std::error::Error;
@@ -98,9 +98,9 @@ let mut v = [-5, 4, 1, -3, 2];
 v.par_sort();
 ```
 
-### Custom tasks
+### Custom parallel tasks
 
-Rayon implements [join]( https://docs.rs/rayon/latest/rayon/fn.join.html ), [scope]( https://docs.rs/rayon/latest/rayon/fn.scope.html ),  [spawn]( https://docs.rs/rayon/latest/rayon/fn.spawn.html ) that may run on the global or a custom [Rayon threadpool]( https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html# ).
+Rayon implements [join]( https://docs.rs/rayon/latest/rayon/fn.join.html ), [scope]( https://docs.rs/rayon/latest/rayon/fn.scope.html ), [spawn]( https://docs.rs/rayon/latest/rayon/fn.spawn.html ) that may run on the global or a custom [Rayon threadpool]( https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html# ).
 
 ```rust,ignore
 use rayon::prelude::*
@@ -109,7 +109,7 @@ use rayon::prelude::*
         // Build the threadpool
         let pool = rayon::ThreadPoolBuilder::new().num_threads(8).build().unwrap();
         // `install` executes the closure within the threadpool. Any attempts to use join, scope, or parallel iterators will then operate within that threadpool.
-        let n = pool.install(|| fib(20)); 
+        let n = pool.install(|| fib(20));
         println!("{}", n);
    }
 
@@ -117,7 +117,7 @@ use rayon::prelude::*
         if n == 0 || n == 1 {
             return n;
         }
-        // Conceptually, calling join() is similar to spawning two threads, one executing each of the two closures. 
+        // Conceptually, calling join() is similar to spawning two threads, one executing each of the two closures.
         let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`
         return a + b;
     }

@@ -42,7 +42,7 @@
 - [Database access](topics/databases.md)
 - [Testing](topics/tests.md)
 - [Lazy initialization](topics/lazy_initialization.md)
-- [Concurrency](topics/concurrency.md)
+- [Multithreading](topics/multithreading.md)
   - [Message passing](topics/message_passing.md)
   - [Shared-state concurrency](topics/shared_state.md)
   - [Concurrent data structures](topics/concurrent_data_structures.md)
