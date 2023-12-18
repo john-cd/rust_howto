@@ -1,5 +1,5 @@
 [package]
-name = "blocking_async_mix_example"
+name = "mix_blocking_and_async"
 version = "0.1.0"
 edition = "2021"
 

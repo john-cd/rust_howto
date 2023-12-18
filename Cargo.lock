@@ -213,16 +213,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "blocking_async_mix_example"
-version = "0.1.0"
-dependencies = [
- "rayon",
- "tokio",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "borsh"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1206,6 +1196,16 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.48.0",
+]
+
+[[package]]
+name = "mix_blocking_and_async"
+version = "0.1.0"
+dependencies = [
+ "rayon",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
