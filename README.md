@@ -28,7 +28,9 @@ If you are not using VS Code, install the dev container CLI or simply install on
 ```bash
 cargo install mdbook
 cargo install mdbook-hide
-# optional: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
+cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
+cargo install just
+cargo build
 ```
 
 ## Develop
