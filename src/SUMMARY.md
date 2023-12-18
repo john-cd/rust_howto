@@ -48,6 +48,7 @@
   - [Concurrent data structures](topics/concurrent_data_structures.md)
 - [Async](topics/async.md)
   - [Tokio](topics/tokio.md)
+  - [Async channels](topics/async_channels.md)
   - [Streams](topics/streams.md)
   - [Futures crate](topics/futures.md)
 - [Documentation](topics/documentation.md)
