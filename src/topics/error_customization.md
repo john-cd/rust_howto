@@ -33,22 +33,22 @@ use thiserror::Error;
 #[derive(Error, Debug)]
 pub enum DataStoreError {
     // A Display impl is generated for your error if you provide #[error("...")] messages on the struct or each variant of your enum
-    #[error("data store disconnected")] 
+    #[error("data store disconnected")]
     Disconnect(#[from] io::Error),  // A From impl is generated for each variant containing a #[from] attribute.
-    
+
     #[error("the data for key `{0}` is not available")]
     Redaction(String),
-    
+
     #[error("invalid header (expected {expected:?}, found {found:?})")]
     InvalidHeader {
         expected: String,
         found: String,
     },
-    
+
     #[error("unknown data store error")]
     Unknown,
 
-    #[error(transparent)]  //  forward the source and Display methods straight through to an underlying error without adding an additional message. 
+    #[error(transparent)]  //  forward the source and Display methods straight through to an underlying error without adding an additional message.
     Other(#[from] anyhow::Error),
 }
 
@@ -77,4 +77,97 @@ pub struct MyError {
 fn main() {}
 ```
 
-See also [eyre]( https://docs.rs/eyre/latest/eyre/ )
+## Miette
+
+[Miette]( https://lib.rs/crates/miette ) prints fancy diagnostics upon error.
+
+```rust,ignore
+use miette::{Diagnostic, SourceSpan, NamedSource};
+
+// In library code, `thiserror` plays nicely with `miette` to define unique error types and error wrappers
+use thiserror::Error;
+
+// You can derive a `Diagnostic` from any `std::error::Error` type.
+#[derive(Error, Diagnostic, Debug)]
+pub enum MyLibError {
+    #[error("A bad thing happened!")] // provided by `thisError`
+    #[diagnostic(
+    // Use `#[diagnostic(code(...))]` to set the unique code for this error.
+    code(my_lib::bad_thing),
+    // Set the URL that will be displayed as an actual link in supported terminals.
+    // `url(docsrs)` automatically create a link to this diagnostic on docs.rs
+    // or use a custom URK like `url("https://my_website.com/error_codes#{}", self.code)`
+    url(docsrs),
+    // Supply help text
+    help("try doing it better next time?"))]
+    BadThingHappened,
+
+    #[error("Something went wrong!")]
+    SomethingWentWrong {
+        // The Source that we're gonna be printing snippets out of.
+        // This can be a String if you don't have or care about file names.
+        #[source_code]
+        src: NamedSource,
+        // Snippets and highlights can be included in the diagnostic!
+        // You may also use `(usize, usize)`, the byte-offset and length into an associated SourceCode
+        // or `Option<SourceSpan>`
+        #[label("This bit highlighted here is the problem")]
+        bad_bit: SourceSpan,
+
+        // Programmatically supply the help text
+        #[help]
+        advice: Option<String>, // Can also just be `String`
+
+        // Related errors
+        #[related]
+        others: Vec<MyLibError>,
+    },
+
+    // Wrap an Error
+    #[error(transparent)] // forward the source and Display methods straight through to an underlying error.
+    #[diagnostic(code(my_lib::io_error))]
+    IoError(#[from] std::io::Error),
+
+    // Wrap another Diagnostic
+    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`]. You won't see labels otherwise
+    #[error(transparent)]
+    #[diagnostic(transparent)]
+    AnotherError(#[from] AnotherError),
+}
+
+#[derive(Error, Diagnostic, Debug)]
+#[error("another error")]
+pub struct AnotherError {
+    #[label("here")]
+    pub at: SourceSpan,
+}
+
+fn this_fails() -> Result<()> {
+    // You can use plain strings as a `Source`, or anything that implements
+    // the one-method `Source` trait.
+    let src = "source\n  text\n    here".to_string();
+    // You may also use map_err(|error| { error.with_source_code(String::from("source code")) }) later.
+
+    Err(MyLibError::SomethingWentWrong {
+        src: NamedSource::new("bad_file.rs", src),
+        bad_bit: (9, 4).into(),
+        advice: Some("Some help text".to_string()),
+        others: vec![MyLibError::BadThingHappened],
+    })?;
+    Ok(())
+}
+
+use miette::Result;
+
+// To get errors printed nicely in application code, just return a `Result<()>`
+// Note: You can swap out the default reporter for a custom one using
+// `miette::set_hook()`
+fn main() -> Result<()> {
+    this_fails()?;
+    Ok(())
+}
+```
+
+## See also
+
+[eyre]( https://docs.rs/eyre/latest/eyre/ )
