@@ -2,13 +2,23 @@
 
 write the intro
 
+main README.md document the xmpl folder
+
+add GA
+
+rejigger pages under multithreading
+
 explanation text for language pages
 
 review configuration page
 
 Option page
 
-dataabase access:
+CLI: clap
+
+move my clap / CLI example to xmpl
+
+database access:
 - sqlx
 - seaORM
 
@@ -17,6 +27,13 @@ CI / CD: rust-cache
 improve / speed up github workflow - currently it installs Rust
 
 cargo outdated / audit / license / deny
+
+https://lib.rs/crates/cargo-hack
+
+AWS
+https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
+https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
+https://github.com/awsdocs/aws-doc-sdk-examples
 
 more details in the standard library section
 
@@ -31,17 +48,25 @@ add more to tokio.md
 
 add more to async_channels
 
-rejigger pages under multithreading
+https://docs.rs/async-channel/latest/async_channel/
 
 https://ryhl.io/blog/async-what-is-blocking/
 
 https://ryhl.io/blog/actors-with-tokio/
 
-CLI: clap, walkdir, notify, indicatif, ratatui
+https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
+
+Tower
+
+
+
+walkdir, notify, indicatif, ratatui
 
 - regex
 - time
 - chrono
+
+https://lib.rs/crates/serde_json
 
 errors: color-eyre
 
@@ -60,8 +85,6 @@ macros
 
 - cargo expand
 - syn, quote, paste
-
-
 
 egui
 
