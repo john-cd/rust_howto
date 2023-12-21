@@ -35,6 +35,8 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
     }
     cake
 }
+
+fn main() { bake_cake(Some("rainbow nonpareils")); }
 ```
 
 ## Adapters for working with references
