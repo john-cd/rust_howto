@@ -16,24 +16,8 @@ impl Message {
 }
 
 fn main() {
-    let home = Message::ChangeColor(127, 0, 0);  // note the :: 
+    let home = Message::ChangeColor(127, 0, 0);  // note the ::
 }
 ```
 
 If we make an enum public, all of its variants are then public. We only need `pub` before the `enum` keyword.
-
-## Option
-
-Rust has no `null`
-
-```rust,ignore
-enum Option<T> {
-    None,
-    Some(T),
-}
-
-fn main() {
-    let some_number = Some(5);
-    let absent_number: Option<i32> = None;
-}
-```
