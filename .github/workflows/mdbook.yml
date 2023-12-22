@@ -32,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MDBOOK_VERSION: 0.4.36
+      CARGO_TARGET_DIR: ./target/
     steps:
       - uses: actions/checkout@v4
       ## Rust
@@ -75,9 +76,9 @@ jobs:
       #     cargo audit
       #     cargo pants
       - name: Cargo test all crates, including xmpl/*
-        run: cargo test --locked --target-dir ./target/ --workspace
+        run: cargo test --locked --workspace
       - name: Build all crates, including xmpl/*
-        run: cargo build --locked --target-dir ./target/ --workspace
+        run: cargo build --locked --workspace
       ## Book
       - name: Install cargo binstall
         run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
