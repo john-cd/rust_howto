@@ -6,19 +6,18 @@ main README.md document the xmpl folder
 
 add GA
 
-rejigger pages under multithreading
-
 explanation text for language pages
 
 review configuration page
 
-Option page
+finish Option page
 
 CLI: clap
 
 move my clap / CLI example to xmpl
 
 database access:
+
 - sqlx
 - seaORM
 
@@ -28,37 +27,36 @@ improve / speed up github workflow - currently it installs Rust
 
 cargo outdated / audit / license / deny
 
-https://lib.rs/crates/cargo-hack
+<https://lib.rs/crates/cargo-hack>
 
 AWS
-https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
-https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
-https://github.com/awsdocs/aws-doc-sdk-examples
+<https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>
+<https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples>
+<https://github.com/awsdocs/aws-doc-sdk-examples>
 
 more details in the standard library section
 
 add more to tokio.md
+
 - async main
 - spawning
 - networking
 - 'static and Send constraints
 - I/O
 - Join, select
-- https://tokio.rs/tokio/topics/tracing-next-steps
+- <https://tokio.rs/tokio/topics/tracing-next-steps>
 
 add more to async_channels
 
-https://docs.rs/async-channel/latest/async_channel/
+<https://docs.rs/async-channel/latest/async_channel/>
 
-https://ryhl.io/blog/async-what-is-blocking/
+<https://ryhl.io/blog/async-what-is-blocking/>
 
-https://ryhl.io/blog/actors-with-tokio/
+<https://ryhl.io/blog/actors-with-tokio/>
 
-https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
+<https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code>
 
 Tower
-
-
 
 walkdir, notify, indicatif, ratatui
 
@@ -66,7 +64,7 @@ walkdir, notify, indicatif, ratatui
 - time
 - chrono
 
-https://lib.rs/crates/serde_json
+<https://lib.rs/crates/serde_json>
 
 errors: color-eyre
 
@@ -87,7 +85,6 @@ macros
 - syn, quote, paste
 
 egui
-
 
 ## Topics of interest
 
