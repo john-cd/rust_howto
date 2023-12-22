@@ -191,7 +191,7 @@ trait Example {
 
 ## Async and traits
 
-See [Async](../topics/async.md)
+See [Async](../concurrency/async.md)
 
 ## See also
 

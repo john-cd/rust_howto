@@ -1,5 +1,7 @@
 # Async
 
+Asynchronous programming, or async for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await syntax
+
 [Are we async yet?]( https://areweasyncyet.rs/ )
 
 [Asynchronous Programming in Rust (book)]( https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html )
@@ -86,7 +88,7 @@ async fn main() {
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](tokio.md) runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ ).
+In most cases, prefer the [Tokio](../topics/tokio.md) runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ ).
 
 Alternatives to the Tokio async ecosystem include:
 

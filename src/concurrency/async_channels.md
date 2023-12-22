@@ -4,7 +4,7 @@ The most common form of synchronization in an async program is message passing. 
 
 Tokio's `sync` module provides channels that work well with async code.
 
-### OneShot
+## OneShot
 
 `oneshot` sends a single value from a single producer to a single consumer.
 This channel is usually used to send the result of a computation to a waiter.

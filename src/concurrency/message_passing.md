@@ -1,8 +1,8 @@
 # Message passing
 
-The Rust standard library provides channels for message passing that are safe to use in concurrent contexts.
+One increasingly popular approach to ensuring safe concurrency is message passing, where threads communicate by sending each other messages containing data. The Rust standard library provides channels for message passing that are safe to use in concurrent contexts.
 
-[Message Passing]( https://doc.rust-lang.org/book/ch16-02-message-passing.html )
+Message passing in `async` programming is covered in a separate page: [async channels](async_channels.md)
 
 ## Multiple producers, single consumer
 
@@ -114,7 +114,7 @@ let ticker = tick(Duration::from_millis(50));
 let timeout = after(Duration::from_secs(1));
 
 loop {
-    // `select` wait until any one of the channels becomes ready and execute it. 
+    // `select` wait until any one of the channels becomes ready and execute it.
     select! {
         recv(ticker) -> _ => println!("elapsed: {:?}", start.elapsed()),
         recv(timeout) -> _ => break,
@@ -122,3 +122,7 @@ loop {
     }
 }
 ```
+
+## Reference
+
+[Message Passing]( https://doc.rust-lang.org/book/ch16-02-message-passing.html )

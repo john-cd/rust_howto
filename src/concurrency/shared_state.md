@@ -1,5 +1,7 @@
 # Shared-State Concurrency
 
+Channels are similar to single ownership, because once you transfer a value down a channel, you should no longer use that value. Shared memory concurrency is like multiple ownership: multiple threads can access the same memory location at the same time.
+
 The Rust standard library provides smart pointer types, such as `Mutex<T>` and `Arc<T>`, that are safe to use in concurrent contexts.
 
 ## Mutex
@@ -14,17 +16,17 @@ fn main() {
 
     // We wrap Mutex in Arc to allow for multiple owners.
     // Arc<T> is safe to use in concurrent situations.
-    let counter = Arc::new(Mutex::new(0)); 
+    let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
     for _ in 0..10 {
         // `clone` is somewhat a misnomer; it creates another pointer to the same Mutex, increasing the strong reference count.
-        let counter = Arc::clone(&counter); 
+        let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
             let mut num = counter.lock().unwrap();
             *num += 1;
         }  // releases the lock automatically when the MutexGuard goes out of scope.
-        ); 
+        );
         handles.push(handle);
     }
 
