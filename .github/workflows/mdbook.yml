@@ -58,7 +58,7 @@ jobs:
       - name: Rust code lint
         run: |
           cargo fmt --all --check
-          cargo clippy -- --deny warnings --workspace
+          cargo clippy --workspace -- --deny warnings
       # - name: Install cargo check tools
       #   run: |
       #     cargo install --locked cargo-deny || true
