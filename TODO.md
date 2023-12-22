@@ -23,8 +23,6 @@ database access:
 
 CI / CD: rust-cache
 
-improve / speed up github workflow - currently it installs Rust
-
 cargo outdated / audit / license / deny
 
 <https://lib.rs/crates/cargo-hack>
