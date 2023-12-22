@@ -41,6 +41,8 @@ jobs:
         run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
       - name: Install mdbook
         run: cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
+      - name: Install mdbook-hide
+        run: cargo install mdbook-hide
       - name: Install mdbook-keeper
         run: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
       - name: Setup Pages
