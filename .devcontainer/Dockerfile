@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/rust:bullseye as final
+FROM mcr.microsoft.com/devcontainers/rust:bookworm as final
 
 SHELL ["bash", "-c"]
 
