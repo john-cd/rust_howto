@@ -9,7 +9,7 @@
 1) Add documentation comments to your code.
 
 ```rust,ignore
-/// This is a doc comment. It is equivalent to the next line. 
+/// This is a doc comment. It is equivalent to the next line.
 #[doc = r" This is a doc comment."]
 ```
 
@@ -39,9 +39,7 @@
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
-
 2) Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using cargo), with a website inside.
-
 
 ## Module- or crate-level documentation
 
@@ -65,7 +63,6 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 ```rust,ignore
 #![doc(html_playground_url = "https://playground.example.com/")]
 ```
-
 
 ## Badges
 
