@@ -48,6 +48,7 @@
   - [Shared-state concurrency](topics/shared_state.md)
   - [Concurrent data structures](topics/concurrent_data_structures.md)
 - [Async](topics/async.md)
+  - [Async and traits](topics/async_traits.md)
   - [Tokio](topics/tokio.md)
   - [Async channels](topics/async_channels.md)
   - [Streams](topics/streams.md)
