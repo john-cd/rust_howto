@@ -85,9 +85,9 @@ jobs:
       - name: Install mdbook
         run: cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
       - name: Install mdbook-hide
-        run: cargo install mdbook-hide
+        run: cargo install --force mdbook-hide
       - name: Install mdbook-keeper
-        run: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
+        run: cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
       - name: Build with mdBook (will call `mdbook test`)
         run: mdbook build
       # GitHub Pages
