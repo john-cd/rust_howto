@@ -7,31 +7,14 @@ Tokio provides a few major components:
 - An asynchronous version of the standard library.
 - A large ecosystem of libraries.
 
-[Tokio]( https://tokio.rs/ )
+## Key links
 
-[Tokio glossary]( https://tokio.rs/tokio/glossary )
-
-[Tokio tutorial]( https://tokio.rs/tokio/tutorial )
-
-[Tokio examples]( https://github.com/tokio-rs/tokio/tree/master/examples )
-
-[Tokio mini-Redis example]( https://github.com/tokio-rs/mini-redis )
-
-Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main )
-
-## Basics
-
-- creating and running a runtime, spawning tasks, working with I/O and timers, and handling errors.
-
-### Join
-
-By running all async expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn` and pass the join handle to join!.
-
-### Spawning
-
-## IO
-
-- The I/O section of the website explains how to read and write data asynchronously with Tokio, using streams, codecs, and futures. It also shows how to handle errors and timeouts.
+- [Tokio]( https://tokio.rs/ )
+- [Tokio glossary]( https://tokio.rs/tokio/glossary )
+- [Tokio tutorial]( https://tokio.rs/tokio/tutorial )
+- [Tokio examples]( https://github.com/tokio-rs/tokio/tree/master/examples )
+- [Tokio mini-Redis example]( https://github.com/tokio-rs/mini-redis )
+- Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main )
 
 ## Graceful shutdown
 
