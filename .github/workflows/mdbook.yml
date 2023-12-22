@@ -1,6 +1,7 @@
-# Sample workflow for building and deploying a mdBook site to GitHub Pages
+# Workflow for building and deploying a mdBook site to GitHub Pages
 #
 # To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
+# See also https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 #
 name: Deploy mdBook site to Pages
 # run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
@@ -33,10 +34,51 @@ jobs:
       MDBOOK_VERSION: 0.4.36
     steps:
       - uses: actions/checkout@v4
+      ## Rust
       - name: Install rustup
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: Install rustfmt and clippy
+        run: |
+          rustup component add rustfmt
+          rustup component add clippy
+      - name: Rust code lint
+        run: |
+          cargo fmt --all --check
+          cargo clippy -- --deny warnings --workspace
+      # - name: Install cargo check tools
+      #   run: |
+      #     cargo install --locked cargo-deny || true
+      #     cargo install --locked cargo-outdated || true
+      #     cargo install --locked cargo-udeps || true
+      #     cargo install --locked cargo-audit || true
+      #     cargo install --locked cargo-pants || true
+      # - name: Check dependencies
+      #   run: |
+      #     cargo deny check
+      #     cargo outdated --exit-code 1
+      #     cargo udeps
+      #     rm -rf ~/.cargo/advisory-db
+      #     cargo audit
+      #     cargo pants
+      - name: Cargo test all crates, including xmpl/*
+        run: cargo test --locked --target-dir ./target/ --workspace
+      - name: Build all crates, including xmpl/*
+        run: cargo build --locked --target-dir ./target/ --workspace
+      ## Book
       - name: Install cargo binstall
         run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
       - name: Install mdbook
@@ -45,13 +87,12 @@ jobs:
         run: cargo install mdbook-hide
       - name: Install mdbook-keeper
         run: cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
+      - name: Build with mdBook (will call `mdbook test`)
+        run: mdbook build
+      # GitHub Pages
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: Build `deps` crate
-        run: cargo build --locked --target-dir ./target/
-      - name: Build with mdBook
-        run: mdbook build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
