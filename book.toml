@@ -48,8 +48,8 @@ page-break = false         # insert page-break after each chapter
 enable = true     # whether or not to enable section folding
 level = 0         # the depth to start folding
 
-# [output.html.playground]
-# editable = false         # allows editing the source code
+[output.html.playground]
+editable = true            # allows editing the source code
 # copyable = true          # include the copy button for copying code snippets
 # copy-js = true           # includes the JavaScript for the code editor
 # line-numbers = false     # displays line numbers for editable code
