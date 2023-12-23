@@ -1,6 +1,6 @@
 # Structs
 
-```rust
+```rust,editable
 struct User {
     active: bool,
     username: String,
@@ -9,7 +9,7 @@ struct User {
 }
 
 fn main() {
-    // create an instance 
+    // create an instance
     let user1 = User {
             active: true,
             username: String::from("someusername123"),
@@ -21,7 +21,7 @@ fn main() {
 
 Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
 
-```rust,ignore
+```rust,editable,ignore
 fn build_user(email: String, username: String) -> User {
     User {
         active: true,
@@ -40,7 +40,7 @@ fn main() {
 }
 ```
 
-```rust
+```rust,editable
 // Tuple struct
 struct Color(i32, i32, i32);
 
@@ -49,16 +49,16 @@ fn main() {
 }
 ```
 
-```rust
+```rust,editable
 // Unit-like struct
 struct AlwaysEqual;  // no data
 
-fn main() { 
+fn main() {
     let s = AlwaysEqual;
 }
 ```
 
-```rust
+```rust,editable
 // Methods
 struct Rectangle {
     width: u32,

@@ -2,7 +2,7 @@
 
 Attributes can take arguments with different syntaxes:
 
-```rust,ignore
+```rust,editable,ignore
 #[attribute = "value"]
 #[attribute(key = "value")]
 #[attribute(value)]
@@ -15,7 +15,7 @@ Inner attributes `#![attr]` apply to the item that the attribute is declared wit
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
-```rust,ignore
+```rust,editable,ignore
 #![allow(unused_variables)]
 #![allow(unused_mut)]
 #![allow(unused_imports)]
@@ -27,7 +27,7 @@ During early development, place the following attributes at the top of `main.rs`
 
 For production-ready code, replace the above by the following, for example.
 
-```rust,ignore
+```rust,editable,ignore
 #![warn(
     unused,
     missing_debug_implementations,
@@ -41,7 +41,7 @@ For production-ready code, replace the above by the following, for example.
 
 You also apply these attributes to specific functions:
 
-```rust
+```rust,editable
 // Disables the `dead_code` lint
 #[allow(dead_code)]
 fn unused_function() {}
@@ -57,9 +57,9 @@ See [Automatic derivation](../topics/derive.md)
 
 ## Must Use
 
-```rust
+```rust,editable
 // Must use the results of the fn; also applies to traits, structs, enums...
-#[must_use]  
+#[must_use]
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -69,7 +69,7 @@ fn main() { println!("{}", add(1, 2)); }
 
 ## Deprecated
 
-```rust,ignore
+```rust,editable,ignore
 #[deprecated(since = "5.2.0", note = "use bar instead")]
 pub fn foo() {}
 ```
@@ -78,7 +78,7 @@ pub fn foo() {}
 
 [Conditional compilation]( https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute )
 
-```rust
+```rust,editable
 // This function only gets compiled if the target OS is linux
 #[cfg(target_os = "linux")]
 fn are_you_on_linux() {

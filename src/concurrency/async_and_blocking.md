@@ -12,7 +12,7 @@ See [Async: What is blocking? blog post]( https://ryhl.io/blog/async-what-is-blo
 
 Use [`spawn_blocking`]( https://docs.rs/tokio/1.35.0/tokio/task/fn.spawn_blocking.html ) to run a _small portion_ of synchronous code.
 
-```rust
+```rust,editable
 #[tokio::main]
 async fn main() {
     // This is running on Tokio. We may not block here.
@@ -28,7 +28,7 @@ async fn main() {
 
 ## Using the `rayon` crate
 
-```rust,ignore
+```rust,editable,ignore
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();
 
@@ -58,7 +58,7 @@ async fn main() {
 
 If a blocking operation keeps running forever, you should run it on a dedicated thread.
 
-```rust,ignore
+```rust,editable,ignore
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();
 
@@ -92,7 +92,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [futures-executor](https://docs.rs/futures-executor/latest/futures_executor/index.html) includes a minimal executor. The [block_on](https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html) function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
-```rust
+```rust,editable
 async fn do_something() { }
 
 fn main() {
@@ -107,7 +107,7 @@ fn main() {
 
 ### Using the Tokio runtime directly
 
-```rust
+```rust,editable
 fn main() {
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .worker_threads(1)

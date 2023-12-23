@@ -16,7 +16,7 @@ tracing-subscriber = "0.3"
 
 Basic tracing
 
-```rust,ignore
+```rust,editable,ignore
 use tracing_subscriber;
 
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 
 Combine layers
 
-```rust,ignore
+```rust,editable,ignore
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 fn main() {
@@ -43,7 +43,7 @@ fn main() {
 
 Or with a custom formatting layer
 
-```rust,ignore
+```rust,editable,ignore
 use tracing_subscriber::{fmt, EnvFilter};
 use tracing_subscriber::prelude::*;
 
@@ -63,7 +63,7 @@ fn main() {
 
 Configure a custom event formatter
 
-```rust,ignore
+```rust,editable,ignore
 use tracing_subscriber::fmt;
 
 fn main() {
@@ -84,7 +84,7 @@ fn main() {
 
 ## Events
 
-```rust,ignore
+```rust,editable,ignore
 use tracing::{event, error, warn, info, debug, trace, Level};
 
 fn main() {
@@ -114,7 +114,7 @@ fn main() {
 
 ## Spans
 
-```rust,ignore
+```rust,editable,ignore
 use tracing::{span, Level};
 
 fn main() {
@@ -130,7 +130,7 @@ fn main() {
 
 One-liner with `.entered()`:
 
-```rust,ignore
+```rust,editable,ignore
 use tracing::{span, Level};
 
 fn main() {
@@ -150,7 +150,7 @@ fn main() {
 
 Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use `in_scope`
 
-```rust,ignore
+```rust,editable,ignore
 async fn my_async_function() {
     let span = info_span!("my_async_function");
 
@@ -180,7 +180,7 @@ async fn my_async_function() {
 
 ## Add tracing spans to functions
 
-```rust,ignore
+```rust,editable,ignore
 use tracing::{Level, event, instrument};
 
 #[instrument]
@@ -201,3 +201,7 @@ async fn my_async_function() {
     some_other_async_function().await;
 }
 ```
+
+## OpenTelemetry
+
+[OpenTelemetry Rust documentation]( https://opentelemetry.io/docs/instrumentation/rust/ )

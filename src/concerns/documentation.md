@@ -8,14 +8,14 @@
 
 1) Add documentation comments to your code.
 
-```rust,ignore
+```rust,editable,ignore
 /// This is a doc comment. It is equivalent to the next line.
 #[doc = r" This is a doc comment."]
 ```
 
 `rustdoc` uses the CommonMark Markdown specification.
 
-```rust,ignore
+```rust,editable,ignore
     /// Returns a person with the name given them
     ///
     /// # Arguments
@@ -47,7 +47,7 @@ Use `//!` at the top of the file (instead of `///`) for module-level documentati
 
 The first lines within `lib.rs` will compose the crate-level documentation front-page.
 
-```rust,ignore
+```rust,editable,ignore
 //! Fast and easy queue abstraction.
 //!
 //! Provides an abstraction over a queue.  When the abstraction is used
@@ -60,7 +60,7 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 
 - To add a "run" button on your documentation (allowing its execution in the rust playground), use the following attribute:
 
-```rust,ignore
+```rust,editable,ignore
 #![doc(html_playground_url = "https://playground.example.com/")]
 ```
 

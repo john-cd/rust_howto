@@ -2,7 +2,7 @@
 
 As of Rust 1.75, it is possible to have `async` functions in traits:
 
-```rust,ignore
+```rust,editable,ignore
 trait HealthCheck {
     async fn check(&mut self) -> bool;   // <- async fn defined in a Trait
 }
@@ -24,7 +24,7 @@ async fn do_health_check(hc: impl HealthCheck) {
 
 This is in turn enabled by return-position `impl Trait` in traits, since `async fn` is sugar for functions that return `-> impl Future`.
 
-```rust,ignore
+```rust,editable,ignore
 trait Container {
     fn items(&self) -> impl Iterator<Item = Widget>;
 }
@@ -40,7 +40,7 @@ Note that there are still caveats for public traits - see [Announcing `async fn`
 
 In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the [Async trait crate]( https://github.com/dtolnay/async-trait ).
 
-```rust,ignore
+```rust,editable,ignore
 use async_trait::async_trait;
 
 #[async_trait]

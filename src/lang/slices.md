@@ -1,6 +1,6 @@
 # Slices
 
-```rust
+```rust,editable
 fn main() {
     let s = String::from("hello world");
 

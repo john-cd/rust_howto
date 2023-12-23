@@ -1,6 +1,6 @@
 # Closures
 
-```rust
+```rust,editable
 fn find_emails(list: Vec<String>) -> Vec<String> {
     list.into_iter()
         .filter(|s| s.contains("@"))  // closure
@@ -12,8 +12,8 @@ fn main() {}
 
 Closure with type annotations:
 
-```rust,ignore
-let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation. Multiple statements can be enclosed in a block. 
+```rust,editable,ignore
+let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation. Multiple statements can be enclosed in a block.
     println!("calculating slowly...");
     thread::sleep(Duration::from_secs(2));
     num
@@ -30,7 +30,7 @@ They preferentially capture variables by reference and only go lower when requir
 
 To force a move:
 
-```rust,ignore
+```rust,editable,ignore
 use std::thread;
 
 fn main() {
@@ -45,7 +45,7 @@ fn main() {
 
 ## Closures as input parameters
 
-```rust
+```rust,editable
 // A function which takes a closure as an argument and calls it.
 // <F> denotes that F is a "Generic type parameter"
 fn apply<F>(f: F)

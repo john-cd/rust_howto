@@ -1,6 +1,6 @@
 # Variables and Constants
 
-```rust
+```rust,editable
 fn main() {
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;  // set only to a constant expression; type must be annotated
     let apples = 5;                 // immutable
@@ -10,7 +10,7 @@ fn main() {
 
 ## Shadowing
 
-```rust
+```rust,editable
 fn main() {
     let x = 5;
     let x = x + 1;  // redefines x; type can change
@@ -19,7 +19,7 @@ fn main() {
 
 ## Destructuring
 
-```rust,ignore
+```rust,editable,ignore
 fn main() {
     // destructuring tuples
     let (x, y, z) = (1, 2, 3);

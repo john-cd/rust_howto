@@ -2,7 +2,7 @@
 
 ## Generic Structs
 
-```rust
+```rust,editable
 use std::fmt::Display;
 
 struct Point<T> {
@@ -16,7 +16,7 @@ impl<T> Point<T> {
     }
 }
 
-impl Point<f32> {  // specify constraints on generic types 
+impl Point<f32> {  // specify constraints on generic types
     fn distance_from_origin(&self) -> f32 {
         (self.x.powi(2) + self.y.powi(2)).sqrt()
     }

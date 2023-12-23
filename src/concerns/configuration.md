@@ -6,7 +6,7 @@
 
 It supersedes [dotenv]( https://crates.io/crates/dotenv )
 
-```rust,ignore
+```rust,editable,ignore
 use std::env;
 use std::error::Error;
 
@@ -25,7 +25,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 To retrieve a single environment variable
 
-```rust,ignore
+```rust,editable,ignore
 use std::env;
 
 fn env_extract() -> String {
@@ -35,7 +35,7 @@ fn env_extract() -> String {
 
     let shell = env!("SHELL", "$SHELL is not set"); // inspect an environment variable at compile-time.
 
-    let optional_value = option_env!("SHELL"); 
+    let optional_value = option_env!("SHELL");
 
     return optional_value
             .unwrap_or("no shell set")
@@ -59,7 +59,7 @@ envy = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 ```
 
-```rust,ignore
+```rust,editable,ignore
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
@@ -86,7 +86,7 @@ fn main() {
 
 [Confy]( https://docs.rs/confy/latest/confy/index.html )
 
-```rust,ignore
+```rust,editable,ignore
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]

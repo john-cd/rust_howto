@@ -2,7 +2,7 @@
 
 ## Spawn, join
 
-```rust
+```rust,editable
 use std::thread;
 use std::time::Duration;
 
@@ -28,7 +28,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 [Scoped threads]( https://doc.rust-lang.org/std/thread/fn.scope.html )
 
-```rust,ignore
+```rust,editable,ignore
 use std::error::Error;
 use std::path::Path;
 use std::sync::mpsc;
@@ -74,7 +74,7 @@ fn main() {
 
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel.
 
-```rust, ignore
+```rust,editable, ignore
 use rayon::prelude::*;
 
 fn sum_of_squares(input: &[i32]) -> i32 {
@@ -91,7 +91,7 @@ fn increment_all(input: &mut [i32]) {
 
 ### Parallel sorting
 
-```rust,ignore
+```rust,editable,ignore
 use rayon::prelude::*
 
 let mut v = [-5, 4, 1, -3, 2];
@@ -102,7 +102,7 @@ v.par_sort();
 
 Rayon implements [join]( https://docs.rs/rayon/latest/rayon/fn.join.html ), [scope]( https://docs.rs/rayon/latest/rayon/fn.scope.html ), [spawn]( https://docs.rs/rayon/latest/rayon/fn.spawn.html ) that may run on the global or a custom [Rayon threadpool]( https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html# ).
 
-```rust,ignore
+```rust,editable,ignore
 use rayon::prelude::*
 
  fn main() {

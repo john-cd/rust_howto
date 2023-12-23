@@ -2,7 +2,7 @@
 
 Rust has no `null`. Instead, use [Option]( https://doc.rust-lang.org/std/option/ ):
 
-```rust,ignore
+```rust,editable,ignore
 enum Option<T> {
     None,
     Some(T),
@@ -11,7 +11,7 @@ enum Option<T> {
 
 Every `Option` is either `Some` and contains a value, or `None`, and does not.
 
-```rust,ignore
+```rust,editable,ignore
 fn main() {
     let some_number = Some(5);
     let absent_number: Option<i32> = None;
@@ -20,7 +20,7 @@ fn main() {
 
 It is often used with `match`, `if let`, or `while let`:
 
-```rust
+```rust,editable
 fn bake_cake(sprinkles: Option<&str>) -> String {
     let mut cake = String::from("A delicious cake base...");
 
@@ -59,7 +59,7 @@ If the Option is None:
 
 ## Combinators
 
-```rust
+```rust,editable
 use std::fs;
 
 // `and_then` applies a function to the wrapped value if it's Some.

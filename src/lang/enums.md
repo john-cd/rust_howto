@@ -1,6 +1,6 @@
 # Enums
 
-```rust
+```rust,editable
 enum Message {
     Quit,
     Move { x: i32, y: i32 },    // struct-like

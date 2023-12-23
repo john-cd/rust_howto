@@ -29,9 +29,9 @@ Create a shortcut to a path with the `use` keyword once, and then use the shorte
 
 [Use]( https://doc.rust-lang.org/rust-by-example/mod/use.html )
 
-```rust,ignore
-use std::fs::File;              // `File` without prefix is now available in the scope  
-use std::collections::HashMap;  // for code from an external crate, the absolute path begins with the crate name - here, the standard `std` library 
+```rust,editable,ignore
+use std::fs::File;              // `File` without prefix is now available in the scope
+use std::collections::HashMap;  // for code from an external crate, the absolute path begins with the crate name - here, the standard `std` library
 
 use std::collections::*;        // Glob - all public objects
 
@@ -55,7 +55,7 @@ pub use crate::front_of_house::hosting; // Reexporting -  Now that this pub use 
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
-```rust,ignore
+```rust,editable,ignore
 use crate::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
@@ -65,7 +65,7 @@ pub fn eat_at_restaurant() {
 
 On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path.
 
-```rust
+```rust,editable
 use std::collections::HashMap;
 
 fn main() {

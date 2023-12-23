@@ -2,7 +2,7 @@
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a stream of values over time.
 
-```rust,ignore
+```rust,editable,ignore
 use futures::stream::{self, StreamExt};
 
 async fn count_to_five() -> impl Stream<Item = u32> {
@@ -23,7 +23,7 @@ There are combinator-style methods such as `map`, `filter`, and `fold`, and thei
 
 To process multiple items from a stream concurrently, use the `for_each_concurrent` and `try_for_each_concurrent` methods:
 
-```rust,ignore
+```rust,editable,ignore
 use futures::StreamExt;
 use tokio::fs::File;
 use tokio::io;

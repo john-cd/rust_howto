@@ -4,17 +4,17 @@
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
-```rust
+```rust,editable
 // in the same file than the main code
 
-#[cfg(test)]  // only for unit tests 
+#[cfg(test)]  // only for unit tests
 mod tests {
     use super::*; // access to all objects in the parent module, which contains the main code
 
-    // Test functions must be free, monomorphic functions that take no arguments, 
+    // Test functions must be free, monomorphic functions that take no arguments,
     // and commonly return () or Result<T, E> where T: Termination, E: Debug
     #[test]
-    fn larger_can_hold_smaller() {  
+    fn larger_can_hold_smaller() {
         let larger = Rectangle {
             width: 8,
             height: 7,
@@ -24,7 +24,7 @@ mod tests {
             height: 1,
         };
 
-        assert!(larger.can_hold(&smaller)); 
+        assert!(larger.can_hold(&smaller));
         // or assert_eq!(result, some_const);
         // or assert_ne!
     }
@@ -58,7 +58,7 @@ fn main() {}
 
 Custom message:
 
-```rust,ignore
+```rust,editable,ignore
 fn main() {
     assert!(
         result.contains("Carol"),

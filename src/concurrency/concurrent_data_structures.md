@@ -6,7 +6,7 @@
 
 DashMap tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
-```rust,ignore
+```rust,editable,ignore
 use dashmap::DashMap;
 use std::sync::Arc;
 use std::thread;
@@ -69,7 +69,7 @@ fn main() {
 
 ## Bounded Multi-producer Multi-consumer Queue
 
-```rust,ignore
+```rust,editable,ignore
 use crossbeam_queue::ArrayQueue;
 
 let q = ArrayQueue::new(2);

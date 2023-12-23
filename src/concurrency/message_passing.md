@@ -6,7 +6,7 @@ Message passing in `async` programming is covered in a separate page: [async cha
 
 ## Multiple producers, single consumer
 
-```rust
+```rust,editable
 use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
@@ -48,7 +48,7 @@ fn main() {
 
 Multi-producer multi-consumer channels for message passing.
 
-```rust,ignore
+```rust,editable,ignore
 use crossbeam_channel::unbounded;
 use crossbeam_channel::{RecvError, TryRecvError};
 use std::thread;
@@ -103,7 +103,7 @@ fn main() {
 
 Example using specialized channels for tickers and timeout
 
-```rust,ignore
+```rust,editable,ignore
 use std::time::{Duration, Instant};
 use crossbeam_channel::{after, select, tick};
 

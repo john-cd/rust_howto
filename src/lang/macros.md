@@ -6,7 +6,7 @@
 
 [Rust Macros]( https://veykril.github.io/tlborm/ )
 
-```rust,ignore
+```rust,editable,ignore
 use std::cell::RefCell;
 
 // Used as an expression.

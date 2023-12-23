@@ -9,7 +9,7 @@ Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](
 
 `Select` polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
-```rust,ignore
+```rust,editable,ignore
 fn main() {
     use futures::{
         future::FutureExt, // for `.fuse()`
@@ -36,7 +36,7 @@ fn main() {
 
 ## Joining futures
 
-```rust,ignore
+```rust,editable,ignore
 async fn foo(i: u32) -> u32 { i }
 
 // The `join!` macro polls multiple futures simultaneously, returning a tuple of all results once complete.
@@ -51,7 +51,7 @@ assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 
 The `futures` crate provides an extension trait that provides a variety of convenient adapters.
 
-```rust,ignore
+```rust,editable,ignore
 use futures::future::FutureExt;
 
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

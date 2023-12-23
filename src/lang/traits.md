@@ -1,6 +1,6 @@
 # Traits
 
-```rust
+```rust,editable
 pub trait Summary {
     fn summarize(&self) -> String;
 }
@@ -29,7 +29,7 @@ Trait methods are in scope only when their trait is.
 
 ## Default implementation
 
-```rust,ignore
+```rust,editable,ignore
 pub trait Summary {
     fn summarize_author(&self) -> String;
 
@@ -41,7 +41,7 @@ pub trait Summary {
 
 ## Supertraits
 
-```rust
+```rust,editable
 use std::fmt;
 
 trait OutlinePrint: fmt::Display {
@@ -60,7 +60,7 @@ fn main() { String::from("test").outline_print(); }
 
 Unlike interfaces in languages like Java, C# or Scala, new traits can be implemented for _existing_ types.
 
-```rust,ignore
+```rust,editable,ignore
 trait MyHash {
     fn hash(&self) -> u64;
 }
@@ -74,7 +74,7 @@ impl MyHash for i64 {
 
 One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate. If neither are, use the Newtype pattern:
 
-```rust
+```rust,editable
 use std::fmt;
 
 struct Wrapper(Vec<String>); // tuple struct wrapping the type we want to add a non-local trait to.
@@ -91,7 +91,7 @@ fn main() { println!("{}", Wrapper(vec!["example".to_string(), "example 2".to_st
 
 ## Trait as parameter
 
-```rust,ignore
+```rust,editable,ignore
 // Accepts any type that implements the specified trait:
 pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
@@ -105,7 +105,7 @@ pub fn notify2<T: Summary>(item: &T) {
 
 ## Multiple traits
 
-```rust,ignore
+```rust,editable,ignore
 // Note the `+`
 fn notify(item: &(impl Summary + Display)) { }
 
@@ -119,7 +119,7 @@ where
 
 ## Return-position impl Trait
 
-```rust
+```rust,editable
 fn returns_closure() -> impl Fn(i32) -> i32 {
     |x| x + 1
 }
@@ -132,7 +132,7 @@ fn main() {
 
 ## Generic traits
 
-```rust,ignore
+```rust,editable,ignore
 trait Test<T> {
     fn test(t: T);
 }
@@ -144,7 +144,7 @@ impl<T, U> Test<T> for U { // note the <> in two places
 
 ## Associated types
 
-```rust,ignore
+```rust,editable,ignore
 pub trait Iterator {
     type Item;   // in Impl, use e.g. `Iterator<Item = u32>`
 
@@ -152,7 +152,7 @@ pub trait Iterator {
 }
 ```
 
-```rust,ignore
+```rust,editable,ignore
 trait Add<Rhs=Self> {  // default generic type
     type Output;
 
@@ -162,7 +162,7 @@ trait Add<Rhs=Self> {  // default generic type
 
 ## Trait bounds
 
-```rust,ignore
+```rust,editable,ignore
 // Trait bounds: the `print_hash` function is generic over an unknown type `T`,
 // but requires that `T` implements the `Hash` trait.
 fn print_hash<T: Hash>(t: &T) {
@@ -182,7 +182,7 @@ impl<A: Hash, B: Hash> Hash for Pair<A, B> {
 
 ## Constants in traits
 
-```rust,ignore
+```rust,editable,ignore
 trait Example {
     const CONST_NO_DEFAULT: i32;
     const CONST_WITH_DEFAULT: i32 = 99;

@@ -9,7 +9,7 @@ Tokio's `sync` module provides channels that work well with async code.
 `oneshot` sends a single value from a single producer to a single consumer.
 This channel is usually used to send the result of a computation to a waiter.
 
-```rust,ignore
+```rust,editable,ignore
 use tokio::sync::oneshot;
 
 async fn download_file() -> Result<String, std::io::Error> {

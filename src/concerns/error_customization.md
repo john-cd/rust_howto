@@ -9,7 +9,7 @@ Use `thiserror` if you are a library that wants to design your own dedicated err
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
-```rust,ignore
+```rust,editable,ignore
 use anyhow::{Context, Result};
 
 fn main() -> Result<()> {
@@ -27,7 +27,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`, includ
 
 [thisError]( https://docs.rs/thiserror/latest/thiserror/ ) provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
-```rust,ignore
+```rust,editable,ignore
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -57,14 +57,14 @@ fn main() {}
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
-```rust,ignore
+```rust,editable,ignore
 #[error("{var}")] ⟶ write!("{}", self.var)
 #[error("{0}")] ⟶ write!("{}", self.0)
 #[error("{var:?}")] ⟶ write!("{:?}", self.var)
 #[error("{0:?}")] ⟶ write!("{:?}", self.0)
 ```
 
-```rust,ignore
+```rust,editable,ignore
 #[derive(Error, Debug)]
 pub struct MyError {
     msg: String,
@@ -81,7 +81,7 @@ fn main() {}
 
 [Miette]( https://lib.rs/crates/miette ) prints fancy diagnostics upon error.
 
-```rust,ignore
+```rust,editable,ignore
 use miette::{Diagnostic, SourceSpan, NamedSource};
 
 // In library code, `thiserror` plays nicely with `miette` to define unique error types and error wrappers

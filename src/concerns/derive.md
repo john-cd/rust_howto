@@ -4,8 +4,8 @@ The `derive` attribute generates code that will implement a trait with its own d
 
 [Derivable traits]( https://doc.rust-lang.org/book/appendix-03-derivable-traits.html )
 
-```rust
-// on structs 
+```rust,editable
+// on structs
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
 struct S(i32);
 
@@ -21,7 +21,7 @@ You can use the `cargo-expand` utility to see the exact code that is generated f
 
 [Derive More]( https://crates.io/crates/derive_more ) derive lots of additional, commonly used traits and static methods for both structs and enums.
 
-```rust,ignore
+```rust,editable,ignore
 extern crate derive_more;
 
 use derive_more::{Add, Display, From, Into};

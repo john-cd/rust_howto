@@ -6,7 +6,7 @@
 - Each value in Rust has an owner.
 - There can only be one owner at a time.
 
-```rust
+```rust,editable
 fn main() {
     let s1 = String::from("hello"); // On the heap
     let s2 = s1;                    // s1 was MOVED into s2 - NOT a shallow copy - Rust invalidates s1
@@ -16,17 +16,17 @@ fn main() {
 
 When the owner goes out of scope, the value will be dropped.
 
-```rust
+```rust,editable
 fn main() {
     {
-    let s = String::from("hello");  
-    } // variable out of scope - Rust calls `drop` 
+    let s = String::from("hello");
+    } // variable out of scope - Rust calls `drop`
 }
 ```
 
 Rust will never automatically create “deep” copies of your data. Use `clone`
 
-```rust,ignore
+```rust,editable,ignore
 fn main() {
     let s3 = s2.clone();            // Deeply copy the heap data of the String, not just the stack data
 }
@@ -34,7 +34,7 @@ fn main() {
 
 If a type implements the `Copy` trait (stack-only, fixed-size values, like integers, floats, and tuples thereof), variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
 
-```rust
+```rust,editable
 fn main() {
     let x = 5;  // Integer
     let y = x;  // No MOVE
@@ -48,7 +48,7 @@ fn main() {
 Passing a variable to a function will move or copy, just as assignment does.
 To avoid passing a value along, borrow the value:
 
-```rust
+```rust,editable
 fn main() {
     let s1 = String::from("hello");
 
@@ -64,7 +64,7 @@ fn main() {
 
 Mutable reference
 
-```rust
+```rust,editable
 fn main() {
     let mut s = String::from("hello");
     change(&mut s);

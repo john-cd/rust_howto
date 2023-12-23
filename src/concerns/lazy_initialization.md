@@ -4,7 +4,7 @@
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
-```rust
+```rust,editable
 use std::cell::OnceCell;
 
 fn main() {
@@ -27,7 +27,7 @@ fn main() {
 
 once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 
-```rust,ignore
+```rust,editable,ignore
 use std::{sync::Mutex, collections::HashMap};
 use once_cell::sync::Lazy;
 

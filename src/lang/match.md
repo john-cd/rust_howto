@@ -1,6 +1,6 @@
 # Match, if let, while let
 
-```rust,ignore
+```rust,editable,ignore
 enum Coin {
     Penny,
     Nickel,
@@ -10,10 +10,10 @@ enum Coin {
 
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => 1,   
+        Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter(state) => {                   // pattern binding to value 
+        Coin::Quarter(state) => {                   // pattern binding to value
             println!("State quarter from {:?}!", state);
             25
         }
@@ -24,7 +24,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 fn main() {}
 ```
 
-```rust
+```rust,editable
 // struct pattern matching
 struct Point {
     x: i32,
@@ -43,7 +43,7 @@ fn main() {
 
 Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` guards, @-binding `Message::Hello { id: id_variable @ 3..=7,}`.
 
-```rust
+```rust,editable
 fn main() {
     // if let
     let config_max = Some(3u8);
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-```rust
+```rust,editable
 fn main() {
     // while let
     let mut stack = Vec::new();

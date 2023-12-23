@@ -2,7 +2,7 @@
 
 All of the keys must have the same type as each other, and all of the values must have the same type.
 
-```rust
+```rust,editable
 use std::collections::HashMap;
 
 fn main() {
@@ -19,7 +19,7 @@ fn main() {
         println!("{key}: {value}");
     }
 
-    // 
+    //
     scores.entry(String::from("Yellow")).or_insert(50); // Adding a Key and Value Only If a Key Isn’t Present
 }
 ```

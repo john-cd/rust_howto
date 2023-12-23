@@ -2,25 +2,25 @@
 
 ## Irrecoverable panics
 
-```rust,ignore
-panic!("crash and burn"); 
+```rust,editable,ignore
+panic!("crash and burn");
 ```
 
 ## Recoverable errors with `Result`
 
-```rust,ignore
+```rust,editable,ignore
 let mut guess = String::new();
 
 io::stdin()
     .read_line(&mut guess) // read_line puts whatever the user enters into the string we pass to it, but it also returns a Result value.
-    .expect("Failed to read line"); // If this instance of Result is an Err value, expect will cause the program to crash and display the message that you passed as an argument to expect. 
+    .expect("Failed to read line"); // If this instance of Result is an Err value, expect will cause the program to crash and display the message that you passed as an argument to expect.
 
 let greeting_file = File::open("hello.txt").unwrap(); // alternative: panics if error - no message
 ```
 
 ### unwrap_or_else
 
-```rust,ignore
+```rust,editable,ignore
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -39,7 +39,7 @@ fn main() {
 
 ## A Shortcut for Propagating Errors: the ? Operator
 
-```rust,ignore
+```rust,editable,ignore
 use std::fs::File;
 use std::io::{self, Read};
 
@@ -59,7 +59,7 @@ This error points out that we’re only allowed to use the `?` operator in a fun
 
 Another example:
 
-```rust
+```rust,editable
 use std::error::Error;
 
 fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {  // needed to use Box<dyn Error>, because the returned error type cannot be determined during compile time: It will either contain an instance of std::num::ParseIntError (from the parse method, when parsing fails), or a string (when the port is zero).

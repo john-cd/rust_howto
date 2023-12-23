@@ -1,6 +1,6 @@
 # Main function
 
-```rust
+```rust,editable
 fn main() {
     println!("Hello, world!");
 }
@@ -8,7 +8,7 @@ fn main() {
 
 ## Async Main Function
 
-```rust,ignore
+```rust,editable,ignore
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
   Ok(())

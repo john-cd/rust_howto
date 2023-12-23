@@ -8,7 +8,7 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 
 ## Basic Example
 
-```rust,ignore
+```rust,editable,ignore
 // Most often, we will use async functions.
 // Rust transforms the `async fn` at compile time into a state machine that _implicitly_ returns a `Future`.
 // A future represents an asynchronous computation that might not have finished yet.
@@ -52,7 +52,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 - Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
-```rust,ignore
+```rust,editable,ignore
 async fn say_world() {
     println!("world");
 }

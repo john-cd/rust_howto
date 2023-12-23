@@ -2,7 +2,7 @@
 
 Vectors can only store values that are the same type.
 
-```rust
+```rust,editable
 fn main() {
     let mut v: Vec<i32> = Vec::new();
     v.push(5);
@@ -16,7 +16,7 @@ fn main() {
     let third: Option<&i32> = v.get(2);
 
     for i in &v {
-        println!("{i}"); 
+        println!("{i}");
     }
 
     for i in &mut v {

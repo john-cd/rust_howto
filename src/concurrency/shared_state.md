@@ -8,7 +8,7 @@ The Rust standard library provides smart pointer types, such as `Mutex<T>` and `
 
 Allow access to data from one thread at a time.
 
-```rust
+```rust,editable
 use std::sync::{Arc, Mutex};
 use std::thread;
 
@@ -44,7 +44,7 @@ fn main() {
 
 `std::sync::Mutex` works fine, but Parking Lot is faster.
 
-```rust,ignore
+```rust,editable,ignore
 use parking_lot::Once;
 
 static START: Once = Once::new();
@@ -55,7 +55,7 @@ START.call_once(|| {
 });
 ```
 
-```rust,ignore
+```rust,editable,ignore
 use parking_lot::RwLock;
 
 let lock = RwLock::new(5);
@@ -80,7 +80,7 @@ let lock = RwLock::new(5);
 
 Atomic types in [std::sync::atomic]( https://doc.rust-lang.org/std/sync/atomic/index.html ) provide primitive shared-memory communication between threads, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including `AtomicBool`, `AtomicIsize`, `AtomicUsize`, `AtomicI8`, `AtomicU16`, etc.
 
-```rust,ignore
+```rust,editable,ignore
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 static GLOBAL_THREAD_COUNT: AtomicUsize = AtomicUsize::new(0);
@@ -93,7 +93,7 @@ The most common way to share an atomic variable is to put it into an `Arc` (an a
 
 [crossbeam](https://docs.rs/crossbeam/latest/crossbeam/) also offers `AtomicCell`, a thread-safe mutable memory location. This type is equivalent to `Cell`, except it can also be shared among multiple threads.
 
-```rust,ignore
+```rust,editable,ignore
 use crossbeam_utils::atomic::AtomicCell;
 
 let a = AtomicCell::new(7);
