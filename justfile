@@ -22,16 +22,10 @@ xclippy:
 # Check all projects in the xmpl folder (and all of their dependencies) for errors
 xcheck:
   for d in {{examples}}; do ( echo $d; cargo check --package $d ); done
-#  cargo check --workspace --all-targets --all-features
 
 # Compile all projects in the xmpl folder
 xbuild:
   for d in {{examples}}; do ( echo $d; cargo build --package $d ); done
-#  cargo build --workspace --all-targets --all-features
-
-# Test all projects
-#xtest:
-#  cargo test --workspace --all-targets --all-features
 
 # Build the book from its markdown files (incl. testing of the examples embedded in the markdown)
 build:
@@ -56,3 +50,15 @@ serve:
 # Update Cargo.lock dependencies for all projects (incl. dependencies used by the book and the xmpl folder)
 update:
   cargo update
+
+# Check all projects
+checkall:
+  cargo check --workspace --all-targets --all-features
+
+# Build all projects
+buildall:
+  cargo build --workspace --all-targets --all-features --timings
+
+# Test all projects
+testall:
+  cargo test --workspace --all-targets --all-features
