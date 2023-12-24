@@ -8,24 +8,40 @@ add GA
 
 explanation text for language pages
 
+review example testing using libraries outside of `std` - make mdbook-keeper work or use doctest instead
+
+address mdbook navigation bug
+
+review Install Rust
+
+map, unwrap_or
+
 review configuration page
 
 finish Option page
 
 CLI: clap
 
-move my clap / CLI example to xmpl
+move clap / CLI example to xmpl
 
 database access:
 
 - sqlx
 - seaORM
 
+incorporate examples
+
 CI / CD: rust-cache
 
 cargo outdated / audit / license / deny
 
+review deny.toml
+
 <https://lib.rs/crates/cargo-hack>
+
+review rustfmt.toml
+
+IDEs - add latest JetBrains tooling
 
 AWS
 <https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>
@@ -56,6 +72,10 @@ add more to async_channels
 
 Tower
 
+finish actor.md
+
+Comparison to other languages
+
 walkdir, notify, indicatif, ratatui
 
 - regex
@@ -64,7 +84,7 @@ walkdir, notify, indicatif, ratatui
 
 <https://lib.rs/crates/serde_json>
 
-errors: color-eyre
+errors: color-eyre, eyre
 
 testing: Approx example
 
@@ -83,6 +103,18 @@ macros
 - syn, quote, paste
 
 egui
+
+Badges
+
+rust and Docker - multistage builds
+
+rust + docker compose
+
+rust + Mongo example
+
+rust axum example
+
+shuttle.rs example
 
 ## Topics of interest
 
