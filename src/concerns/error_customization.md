@@ -61,10 +61,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
 ```rust,editable,ignore
-#[error("{var}")] ⟶ write!("{}", self.var)
-#[error("{0}")] ⟶ write!("{}", self.0)
-#[error("{var:?}")] ⟶ write!("{:?}", self.var)
-#[error("{0:?}")] ⟶ write!("{:?}", self.0)
+#[error("{var}")] ⟶ write!("{}", self.var)
+#[error("{0}")] ⟶ write!("{}", self.0)
+#[error("{var:?}")] ⟶ write!("{:?}", self.var)
+#[error("{0:?}")] ⟶ write!("{:?}", self.0)
 ```
 
 ```rust,editable,ignore
