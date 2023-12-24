@@ -70,7 +70,7 @@ cargo watch -x check -x test -x run # Run cargo check after code changes. If it 
 ```sh
 rustup component add rustfmt # install if needed
 cargo fmt
-cargo fmt -- --check # fails if code is not formatted, use in CD / CI
+cargo fmt -- --check # fails if code is not formatted; use in CD / CI
 ```
 
 ## Linting
