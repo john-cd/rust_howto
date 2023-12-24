@@ -2,11 +2,11 @@
 
 Prevent dangling references.
 
-```rust,editable,ignore
-&i32        // a reference
-&'a i32     // a reference with an explicit lifetime
-&'a mut i32 // a mutable reference with an explicit lifetime
+`&i32`        a reference
+`&'a i32`     a reference with an explicit lifetime
+`&'a mut i32` a mutable reference with an explicit lifetime
 
+```rust,editable,ignore
 let s: &'static str = "I have a static lifetime.";
 ```
 
@@ -21,10 +21,13 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     }
 }
 
-fn main() {}
+fn main() {
+    let (x,y) = ("short", "looooooong");
+    println!("{}", longest(x, y));
+}
 ```
 
-Lifetime Annotations in Struct Definitions and methods:
+## Lifetime Annotations in Struct Definitions and methods
 
 ```rust,editable
 struct ImportantExcerpt<'a> {
@@ -37,5 +40,8 @@ impl<'a> ImportantExcerpt<'a> {
     }
 }
 
-fn main() {}
+fn main() {
+    let ie = ImportantExcerpt { part: "a part" };
+    println!("{}", ie.level());
+}
 ```

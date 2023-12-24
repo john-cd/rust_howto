@@ -11,10 +11,11 @@ enum Option<T> {
 
 Every `Option` is either `Some` and contains a value, or `None`, and does not.
 
-```rust,editable,ignore
+```rust,editable
 fn main() {
     let some_number = Some(5);
     let absent_number: Option<i32> = None;
+    println!("{:?}", absent_number);
 }
 ```
 
@@ -36,7 +37,9 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
     cake
 }
 
-fn main() { bake_cake(Some("rainbow nonpareils")); }
+fn main() {
+    bake_cake(Some("rainbow nonpareils"));
+}
 ```
 
 ## Adapters for working with references

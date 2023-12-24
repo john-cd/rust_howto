@@ -7,10 +7,14 @@ fn find_emails(list: Vec<String>) -> Vec<String> {
         .collect()
 }
 
-fn main() {}
+fn main() {
+    for s in find_emails(vec![String::from("example"), String::from("example@example.com")]) {
+        println!("{}", s);
+    }
+}
 ```
 
-Closure with type annotations:
+## Closure with type annotations
 
 ```rust,editable,ignore
 let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation. Multiple statements can be enclosed in a block.
@@ -20,7 +24,7 @@ let expensive_closure = |num: u32| -> u32 {  // closure can use type annotation.
 };
 ```
 
-Closures can capture variables:
+Closures can capture variables
 
 - by reference: &T
 - by mutable reference: &mut T
@@ -62,7 +66,9 @@ fn apply_to_3<F>(f: F) -> i32 where
     f(3)
 }
 
-fn main() {}
+fn main() {
+    apply(|| println!("applied"));
+}
 ```
 
 - Fn: the closure uses the captured value by reference (&T)

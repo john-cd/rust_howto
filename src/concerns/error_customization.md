@@ -52,7 +52,10 @@ pub enum DataStoreError {
     Other(#[from] anyhow::Error),
 }
 
-fn main() {}
+fn main() -> Result<(), Box<dyn Error>> {
+    Err(DataStoreError::Unknown)?;
+    Ok(())
+}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
@@ -73,8 +76,6 @@ pub struct MyError {
     source: anyhow::Error,
     backtrace: std::backtrace::Backtrace,  // automatically detected to implement provide()
 }
-
-fn main() {}
 ```
 
 ## Miette

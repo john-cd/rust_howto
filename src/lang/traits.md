@@ -60,15 +60,20 @@ fn main() { String::from("test").outline_print(); }
 
 Unlike interfaces in languages like Java, C# or Scala, new traits can be implemented for _existing_ types.
 
-```rust,editable,ignore
+```rust,editable
 trait MyHash {
-    fn hash(&self) -> u64;
+    fn myhash(&self) -> u64;
 }
 
 impl MyHash for i64 {
-    fn hash(&self) -> u64 {
+    fn myhash(&self) -> u64 {
         *self as u64
     }
+}
+
+fn main() {
+    let x = 1i64;
+    println!("{}", x.myhash());
 }
 ```
 
@@ -86,34 +91,71 @@ impl fmt::Display for Wrapper {
 }
 // If we wanted the new type to have every method the inner type has, implement the `Deref` trait.
 
-fn main() { println!("{}", Wrapper(vec!["example".to_string(), "example 2".to_string()])); }
+fn main() {
+    println!("{}", Wrapper(vec!["example".to_string(), "example 2".to_string()]));
+}
 ```
 
 ## Trait as parameter
 
-```rust,editable,ignore
+```rust,editable
 // Accepts any type that implements the specified trait:
-pub fn notify(item: &impl Summary) {
+fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
 }
 
 // Trait bound syntax (mostly equivalent):
-pub fn notify2<T: Summary>(item: &T) {
+fn notify2<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
+}
+
+pub trait Summary {
+    fn summarize(&self) -> String;
+}
+
+struct Article {
+    txt: String,
+}
+
+impl Summary for Article {
+    fn summarize(&self) -> String {
+        self.txt.clone()
+    }
+}
+
+fn main() {
+    let a = Article { txt: String::from("some text") };
+    notify(&a);
+    notify2(&a);
 }
 ```
 
 ## Multiple traits
 
-```rust,editable,ignore
+```rust,editable
+#![allow(dead_code)]
+use std::fmt::Debug;
+use std::clone::Clone;
+
 // Note the `+`
-fn notify(item: &(impl Summary + Display)) { }
+fn a_function(item: &(impl Debug + Clone)) {
+    println!("{:?}", item.clone());
+}
 
 fn some_function<T, U>(t: &T, u: &U) -> i32
 where
-    T: Display + Clone, // note the `+`
-    U: Clone + Debug,
+    T: Debug + Clone, // note the `+`
+    U: Debug + Clone,
 {
+    42
+}
+
+#[derive(Debug, Clone)]
+struct S;
+
+fn main() {
+    let s = S;
+    a_function(&s);
 }
 ```
 
@@ -132,20 +174,29 @@ fn main() {
 
 ## Generic traits
 
-```rust,editable,ignore
+```rust,editable
 trait Test<T> {
-    fn test(t: T);
+    fn test(_t: T);
 }
 
-impl<T, U> Test<T> for U { // note the <> in two places
-    fn test(t: T) {}
+struct SomeStruct;
+
+impl<T> Test<T> for SomeStruct { // note the <> in two places
+    fn test(_t: T) {
+        println!("test");
+    }
+}
+
+fn main() {
+    SomeStruct::test(1);
+    SomeStruct::test(true);
 }
 ```
 
 ## Associated types
 
 ```rust,editable,ignore
-pub trait Iterator {
+trait Iterator {
     type Item;   // in Impl, use e.g. `Iterator<Item = u32>`
 
     fn next(&mut self) -> Option<Self::Item>;
@@ -162,11 +213,16 @@ trait Add<Rhs=Self> {  // default generic type
 
 ## Trait bounds
 
-```rust,editable,ignore
+```rust,editable
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+
 // Trait bounds: the `print_hash` function is generic over an unknown type `T`,
 // but requires that `T` implements the `Hash` trait.
 fn print_hash<T: Hash>(t: &T) {
-    println!("The hash is {}", t.hash())
+    let mut hasher = DefaultHasher::new();
+    t.hash(&mut hasher);
+    println!("The hash is {:x}", hasher.finish());
 }
 
 struct Pair<A, B> { first: A, second: B }
@@ -174,18 +230,34 @@ struct Pair<A, B> { first: A, second: B }
 // Generics make it possible to implement a trait conditionally
 // Here, the Pair type implements Hash if, and only if, its components do
 impl<A: Hash, B: Hash> Hash for Pair<A, B> {
-    fn hash(&self) -> u64 {
-        self.first.hash() ^ self.second.hash()
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.first.hash(state);
+        self.second.hash(state);
     }
+}
+
+fn main() {
+    let p = Pair { first: 1, second: "2" };
+    print_hash(&p);
 }
 ```
 
 ## Constants in traits
 
-```rust,editable,ignore
+```rust,editable
 trait Example {
     const CONST_NO_DEFAULT: i32;
     const CONST_WITH_DEFAULT: i32 = 99;
+}
+
+struct S;
+
+impl Example for S {
+    const CONST_NO_DEFAULT: i32 = 0;
+}
+
+fn main() {
+    println!("{} {}", S::CONST_NO_DEFAULT, S::CONST_WITH_DEFAULT);
 }
 ```
 

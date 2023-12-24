@@ -21,17 +21,24 @@ fn main() {
 
 Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
 
-```rust,editable,ignore
+```rust,editable
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+}
+
 fn build_user(email: String, username: String) -> User {
     User {
         active: true,
         username,       // instead of username: username - field init shorthand
-        email,
-        sign_in_count: 1,
+        email,          // same
     }
 }
 
 fn main() {
+    let user1 = build_user("user@example.com".into(), "user".to_string());
+
     // struct update
     let user2 = User {
         email: String::from("another@example.com"),
@@ -59,21 +66,19 @@ fn main() {
 ```
 
 ```rust,editable
-// Methods
 struct Rectangle {
     width: u32,
     height: u32,
 }
 
 impl Rectangle {                    // implementation block (multiple allowed for a given struct)
+    // Method
     fn area(&self) -> u32 {         // short for self: &Self, an alias for the type that the impl block is for
         self.width * self.height
     }
-}
 
-// Associated Functions - NO &self
-// often use for constructors: SomeType::new(...)
-impl Rectangle {
+    // Associated Functions - NO self, &self, or &mut self
+    // often use for constructors: SomeType::new(...)
     fn square(size: u32) -> Self {
         Self {
             width: size,
@@ -82,5 +87,8 @@ impl Rectangle {
     }
 }
 
-fn main() {}
+fn main() {
+  let sq = Rectangle::square(5);
+  println!("area: {}", sq.area());
+}
 ```

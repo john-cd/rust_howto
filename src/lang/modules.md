@@ -51,6 +51,8 @@ use std::fmt::Result;
 use std::io::Result as IoResult;        // Alias
 
 pub use crate::front_of_house::hosting; // Reexporting -  Now that this pub use has re-exported the hosting module from the root module, external code can now use the path <crate>::hosting::add_to_waitlist() instead.
+
+fn main() {}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:

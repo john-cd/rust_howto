@@ -19,12 +19,14 @@ fn main() {
 
 ## Destructuring
 
-```rust,editable,ignore
+```rust,editable
 fn main() {
     // destructuring tuples
     let (x, y, z) = (1, 2, 3);
 
     // destructuring structs
+    struct Point{ x: i32, y: i32, }
+
     let p = Point { x: 0, y: 7 };
     let Point { x: a, y: b } = p;   // a = 0, b = 7
     let Point { x, y } = p;         // simpler

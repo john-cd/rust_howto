@@ -21,13 +21,16 @@ fn main() {
     {
     let s = String::from("hello");
     } // variable out of scope - Rust calls `drop`
+
+    // ERROR println!("{}", s);
 }
 ```
 
 Rust will never automatically create “deep” copies of your data. Use `clone`
 
-```rust,editable,ignore
+```rust,editable
 fn main() {
+    let s2 = String::from("hello");
     let s3 = s2.clone();            // Deeply copy the heap data of the String, not just the stack data
 }
 ```
@@ -56,22 +59,22 @@ fn main() {
 
     fn calculate_length(s: &String) -> usize {
         s.len()
-    }
-    // Here, s goes out of scope. But because it does not have ownership of what
-    // it refers to, s1 is not dropped.
+    } // Here, s goes out of scope. But because it does not have ownership of what
+      // it refers to, s1 is not dropped.
+
 }
 ```
 
-Mutable reference
+### Mutable reference
 
 ```rust,editable
-fn main() {
-    let mut s = String::from("hello");
-    change(&mut s);
+fn change(some_string: &mut String) {  // note the `&mut`
+    some_string.push_str(", world");
+}
 
-    fn change(some_string: &mut String) {
-        some_string.push_str(", world");
-    }
+fn main() {
+    let mut s = String::from("hello");  // note the `mut`
+    change(&mut s);
 }
 ```
 

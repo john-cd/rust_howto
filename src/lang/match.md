@@ -1,11 +1,11 @@
 # Match, if let, while let
 
-```rust,editable,ignore
+```rust,editable
 enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter(UsState),
+    Quarter(String),
 }
 
 fn value_in_cents(coin: Coin) -> u8 {
@@ -21,7 +21,9 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 
-fn main() {}
+fn main() {
+    println!("{}", value_in_cents(Coin::Penny));
+}
 ```
 
 ```rust,editable

@@ -4,7 +4,7 @@
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
-```rust,editable
+```rust,editable,ignore
 // in the same file than the main code
 
 #[cfg(test)]  // only for unit tests
@@ -52,8 +52,6 @@ mod tests {
     }
 
 }
-
-fn main() {}
 ```
 
 Custom message:

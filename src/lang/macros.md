@@ -6,22 +6,24 @@
 
 [Rust Macros]( https://veykril.github.io/tlborm/ )
 
-```rust,editable,ignore
+```rust,editable
 use std::cell::RefCell;
 
-// Used as an expression.
-let x = vec![1,2,3];
+fn main() {
+  // Used as an expression.
+  let x = vec![1,2,3];
 
-// Used as a statement.
-println!("Hello!");
+  // Used as a statement.
+  println!("Hello!");
 
-// Used in a pattern.
-macro_rules! pat {
-    ($i:ident) => (Some($i))
-}
+  // Used in a pattern.
+  macro_rules! pat {
+      ($i:ident) => (Some($i))
+  }
 
-if let pat!(x) = Some(1) {
-    assert_eq!(x, 1);
+  if let pat!(x) = Some(1) {
+      assert_eq!(x, 1);
+  }
 }
 
 // Used in a type.
@@ -32,12 +34,13 @@ macro_rules! Tuple {
 type N2 = Tuple!(i32, i32);
 
 // Used as an item.
-thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+//thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
 
 // Used as an associated item.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => { const CONST: $t = $v; };
 }
+
 trait T {
     const_maker!{i32, 7}
 }
@@ -46,6 +49,7 @@ trait T {
 macro_rules! example {
     () => { println!("Macro call in a macro!") };
 }
+
 // Outer macro `example` is expanded, then inner macro `println` is expanded.
-example!();
+// example!();
 ```

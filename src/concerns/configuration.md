@@ -25,15 +25,19 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 To retrieve a single environment variable
 
-```rust,editable,ignore
+```rust,editable
 use std::env;
 
 fn env_extract() -> String {
     let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
+    println!("RUST_LOG: {log_env_var}");
 
     let user_env_var = env::var("USER").expect("$USER is not set");
+    println!("USER: {user_env_var}");
 
-    let shell = env!("SHELL", "$SHELL is not set"); // inspect an environment variable at compile-time.
+    // Inspect an environment variable at compile-time.
+    // Uncomment to test.
+    // let shell = env!("SHELL", "$SHELL is not set");
 
     let optional_value = option_env!("SHELL");
 
@@ -43,7 +47,7 @@ fn env_extract() -> String {
 }
 
 fn main() {
-    println!(env_extract());
+    println!("SHELL: {}", env_extract());
 }
 ```
 
