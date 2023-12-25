@@ -64,12 +64,11 @@ fn main() {
 
 Diverging functions never return.
 
-```rust,editable,ignore
+```rust,editable,should_panic
 fn foo() -> ! {  // empty type
     panic!("This call never returns.");
 }
 
-#[should_panic]
 fn main() {
     println!("Will panic");
     foo();
