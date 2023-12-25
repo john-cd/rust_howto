@@ -122,10 +122,11 @@ target-dir="/cargo-target-rust_howto/target"
 # codegen-units = 16
 # rpath = false
 
+## "Release" is used by the Github Action CD/CI workflow only -  no need to optimize heavily
 [profile.release]
-opt-level = 2
-strip = true
+opt-level = 0
 incremental = false
+codegen-units = 256
 
 # [registries.<name>]  # registries other than crates.io
 # index = "…"          # URL of the registry index
