@@ -86,4 +86,6 @@
   - [Books](links/books.md)
   - [Companies](links/companies.md)
 
+---
+
 [Thanks](misc/thanks.md)

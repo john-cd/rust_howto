@@ -20,7 +20,7 @@ Tokio provides a few major components:
 
 Example from [tokio_graceful_shutdown]( https://docs.rs/tokio-graceful-shutdown/latest/tokio_graceful_shutdown/ ):
 
-```rust,ignore
+```rust,editable,ignore
 use tokio_graceful_shutdown::{SubsystemBuilder, SubsystemHandle, Toplevel};
 use tokio::time::{sleep, Duration};
 
