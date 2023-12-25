@@ -67,7 +67,7 @@ target-dir="/cargo-target-rust_howto/target"
 # [patch.<registry>]
 # # Same keys as for [patch] in Cargo.toml
 
-# Cargo has 4 built-in profiles: dev, release, test, and bench.
+## Cargo has 4 built-in profiles: dev, release, test, and bench.
 
 # [profile.<name>]         # Modify profile settings via config.
 # inherits = "dev"         # Inherits settings from [profile.dev].
@@ -87,14 +87,45 @@ target-dir="/cargo-target-rust_howto/target"
 # [profile.<name>.package.<name>]  # Override profile for a package.
 # # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
 
-# # Enable a small amount of optimization in debug mode
+## Defaults for profile.dev
+# [profile.dev]
+# opt-level = 0
+# debug = true
+# split-debuginfo = '...'  # Platform-specific.
+# strip = false
+# debug-assertions = true
+# overflow-checks = true
+# lto = false
+# panic = 'unwind'
+# incremental = true
+# codegen-units = 256
+# rpath = false
+
+# Example: enable a small amount of optimization in debug mode
 # [profile.dev]
 # opt-level = 1
-
 # # Enable high optimizations for dependencies, but not for our code:
 # [profile.dev.package."*"]
 # opt-level = 3
 
+## Default for release
+# [profile.release]
+# opt-level = 3
+# debug = false
+# split-debuginfo = '...'  # Platform-specific.
+# strip = false
+# debug-assertions = false
+# overflow-checks = false
+# lto = false
+# panic = 'unwind'
+# incremental = false
+# codegen-units = 16
+# rpath = false
+
+[profile.release]
+opt-level = 2
+strip = true
+incremental = false
 
 # [registries.<name>]  # registries other than crates.io
 # index = "…"          # URL of the registry index
