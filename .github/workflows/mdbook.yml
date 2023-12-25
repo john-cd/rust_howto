@@ -33,24 +33,27 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.36
       CARGO_TARGET_DIR: ./target/
+      #CARGO_INCREMENTAL: 0
     steps:
       - uses: actions/checkout@v4
       ## Rust
-      - name: Set up cargo cache
-        uses: actions/cache@v3
-        continue-on-error: false
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-cargo-
+      # - name: Set up cargo cache
+      #   uses: actions/cache@v3
+      #   continue-on-error: false
+      #   with:
+      #     path: |
+      #       ~/.cargo/bin/
+      #       ~/.cargo/registry/index/
+      #       ~/.cargo/registry/cache/
+      #       ~/.cargo/git/db/
+      #       target/
+      #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      #     restore-keys: ${{ runner.os }}-cargo-
+      - name: Install clang lld
+        run: sudo apt-get install -y clang lld
       - name: Install rustup
         run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
           rustup update
       - name: Install rustfmt and clippy
         run: |
