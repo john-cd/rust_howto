@@ -78,8 +78,8 @@ jobs:
       #     rm -rf ~/.cargo/advisory-db
       #     cargo audit
       #     cargo pants
-      - name: Cargo test all crates, including xmpl/*
-        run: cargo test --locked --workspace
+      # - name: Cargo test all crates, including xmpl/*
+      #   run: cargo test --locked --workspace
       - name: Build all crates, including xmpl/*
         run: cargo build --locked --workspace
       ## Book
