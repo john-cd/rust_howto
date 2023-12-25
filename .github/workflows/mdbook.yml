@@ -49,8 +49,9 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Install clang lld
-        run: sudo apt-get install -y clang lld
+      - name: Install clang mold
+        run: sudo apt-get install -y clang mold
+        # alternatively, install: lld
       - name: Install rustup
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y -L | sh
       # - name: Rustup update
