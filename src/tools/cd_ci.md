@@ -36,6 +36,10 @@
 
 [rust-cache]( https://github.com/marketplace/actions/rust-cache )
 
+`Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
+
+Example `.github/workflows/<name>.yml`
+
 ```yaml
 - uses: actions/checkout@v4
 
