@@ -53,7 +53,7 @@ jobs:
         run: sudo apt-get install -y clang lld
       - name: Install rustup
         run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y 10 | sh
           rustup update
       - name: Install rustfmt and clippy
         run: |
