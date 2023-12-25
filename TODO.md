@@ -1,24 +1,36 @@
 # TODO
 
+review example testing using libraries outside of `std` - make mdbook-keeper work or use doctest instead
+
 write the intro
 
 main README.md document the xmpl folder
 
 add GA
 
+{{#include file.rs:2}}
+{{#include file.rs::10}}
+{{#include file.rs:2:}}
+{{#include file.rs:2:10}}
+{{#playground example.rs editable}}
+https://rust-lang.github.io/mdBook/format/mdbook.html
+
 explanation text for language pages
 
-review example testing using libraries outside of `std` - make mdbook-keeper work or use doctest instead
+finish cd_ci.md
+finish improve_speed
+finish Cargo Plugins / cargo.md
+finish faster linking
 
-address mdbook navigation bug
+separate web
 
 review Install Rust
 
-map, unwrap_or
-
-review configuration page
+review Configuration page
 
 finish Option page
+
+map, unwrap_or
 
 CLI: clap
 
@@ -43,10 +55,7 @@ review rustfmt.toml
 
 IDEs - add latest JetBrains tooling
 
-AWS
-<https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>
-<https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples>
-<https://github.com/awsdocs/aws-doc-sdk-examples>
+
 
 more details in the standard library section
 
@@ -74,7 +83,12 @@ Tower
 
 finish actor.md
 
-Comparison to other languages
+finish Comparison to other languages
+
+AWS
+<https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>
+<https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples>
+<https://github.com/awsdocs/aws-doc-sdk-examples>
 
 walkdir, notify, indicatif, ratatui
 
