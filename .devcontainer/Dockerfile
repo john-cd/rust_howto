@@ -3,8 +3,10 @@ FROM mcr.microsoft.com/devcontainers/rust:bookworm as final
 SHELL ["bash", "-c"]
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install wget fzf lld clang \
+    && apt-get -y install fzf mold lld clang \
     && apt-get autoremove -y && apt-get clean -y
+# Alternatives: use the `lld` or `mold` linker
+# Other packages that may be needed: wget
 
 ## Install fmt and clippy
 RUN rustup update; rustup component add clippy; rustup component add rustfmt
