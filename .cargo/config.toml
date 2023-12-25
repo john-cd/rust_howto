@@ -67,6 +67,8 @@ target-dir="/cargo-target-rust_howto/target"
 # [patch.<registry>]
 # # Same keys as for [patch] in Cargo.toml
 
+# Cargo has 4 built-in profiles: dev, release, test, and bench.
+
 # [profile.<name>]         # Modify profile settings via config.
 # inherits = "dev"         # Inherits settings from [profile.dev].
 # opt-level = 0            # Optimization level.
@@ -84,6 +86,15 @@ target-dir="/cargo-target-rust_howto/target"
 # # Same keys for a normal profile.
 # [profile.<name>.package.<name>]  # Override profile for a package.
 # # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
+
+# # Enable a small amount of optimization in debug mode
+# [profile.dev]
+# opt-level = 1
+
+# # Enable high optimizations for dependencies, but not for our code:
+# [profile.dev.package."*"]
+# opt-level = 3
+
 
 # [registries.<name>]  # registries other than crates.io
 # index = "…"          # URL of the registry index
@@ -104,9 +115,14 @@ target-dir="/cargo-target-rust_howto/target"
 # rev = "…"            # revision for the git repository
 
 [target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
-## Another variant:
+## Using `lld`
+# [target.x86_64-unknown-linux-gnu]
+# rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+
+## Another variant
 # [target.x86_64-unknown-linux-gnu]
 # linker = "/usr/bin/clang"
 # rustflags = ["-Clink-arg=-fuse-ld=lld", "-Zshare-generics=y"]
