@@ -53,12 +53,12 @@ jobs:
         run: sudo apt-get install -y clang lld
       - name: Install rustup
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y -L | sh
-      - name: Rustup update
-        run: rustup update
-      - name: Install rustfmt and clippy
-        run: |
-          rustup component add rustfmt
-          rustup component add clippy
+      # - name: Rustup update
+      #   run: rustup update
+      # - name: Install rustfmt and clippy
+      #   run: |
+      #     rustup component add rustfmt
+      #     rustup component add clippy
       - name: Rust code lint
         run: |
           cargo fmt --all --check
