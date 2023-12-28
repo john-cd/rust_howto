@@ -16,25 +16,7 @@
 `rustdoc` uses the CommonMark Markdown specification.
 
 ```rust,editable,ignore
-    /// Returns a person with the name given them
-    ///
-    /// # Arguments
-    ///
-    /// * `name` - A string slice that holds the name of the person
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// // You can have rust code between fences inside the comments
-    /// // If you pass --test to `rustdoc`, it will even test it for you!
-    /// use doc::Person;
-    /// let person = Person::new("name");
-    /// ```
-    pub fn new(name: &str) -> Person {
-        Person {
-            name: name.to_string(),
-        }
-    }
+{{#include ../../deps/examples/rustdoc.rs}}
 ```
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
