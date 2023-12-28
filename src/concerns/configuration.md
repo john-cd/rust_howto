@@ -7,13 +7,13 @@
 It supersedes [dotenv]( https://crates.io/crates/dotenv )
 
 ```rust,editable,ignore
-{{#include dotenvy.rs}}
+{{#include ../../deps/examples/dotenvy.rs}}
 ```
 
 To retrieve a single environment variable
 
 ```rust,editable
-{{#include env.rs}}
+{{#include ../../deps/examples/env.rs}}
 ```
 
 [https://www.thorsten-hans.com/working-with-environment-variables-in-rust/]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
@@ -29,7 +29,7 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ```rust,editable,ignore
-{{#include envy.rs}}
+{{#include ../../deps/examples/envy.rs}}
 ```
 
 ## Config
@@ -41,5 +41,5 @@ serde = { version = "1.0", features = ["derive"] }
 [Confy]( https://docs.rs/confy/latest/confy/index.html )
 
 ```rust,editable,ignore
-{{#include confy.rs}}
+{{#include ../../deps/examples/confy.rs}}
 ```

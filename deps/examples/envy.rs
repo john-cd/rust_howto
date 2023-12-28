@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
@@ -14,5 +16,5 @@ fn main() {
             .from_env::<Configuration>()
             .expect("Please provide MY_APP__PORT and MY_APP__ITEMS_PER_PAGE env vars");
 
-    println!("c: {} c2: {}", c, c2);
+    println!("c: {:?} c2: {:?}", c, c2);
 }
