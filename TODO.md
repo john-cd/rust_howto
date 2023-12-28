@@ -17,6 +17,8 @@ https://rust-lang.github.io/mdBook/format/mdbook.html
 
 explanation text for language pages
 
+recreate index.hbs in theme
+
 finish cd_ci.md
 finish improve_speed
 finish Cargo Plugins / cargo.md
