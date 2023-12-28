@@ -53,13 +53,13 @@ jobs:
         # alternatively, install: lld
       - name: Install rustup
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y -L | sh
-      # - name: Rustup update
-      #   run: rustup update
-      # - name: Install rustfmt and clippy
-      #   run: |
-      #     rustup component add rustfmt
-      #     rustup component add clippy
-      - name: Log rust / rustup version
+      - name: Rustup update
+        run: rustup update stable; rustup default stable
+      - name: Install rustfmt and clippy
+        run: |
+          rustup component add rustfmt
+          rustup component add clippy
+      - name: Log Rust / rustup versions
         run: rustup check
       - name: Rust code lint
         run: |
