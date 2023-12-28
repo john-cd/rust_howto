@@ -8,8 +8,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Alternatives: use the `lld` or `mold` linker
 # Other packages that may be needed: wget
 
-## Install fmt and clippy
-RUN rustup update; rustup component add clippy; rustup component add rustfmt
+## Update Rust if needed; install fmt and clippy if needed
+RUN rustup update
+RUN rustup component add clippy; rustup component add rustfmt
 
 ## Install cargo binstall (binary install)
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
@@ -49,4 +50,6 @@ VOLUME /cargo-target-rust_howto/
 EXPOSE 3000
 
 # Build stub project required by mdbook-keeper
-CMD cargo build; sleep infinity
+# Print toolchain info
+# Sleep to keep the container running
+CMD cargo build; rustup check; sleep infinity
