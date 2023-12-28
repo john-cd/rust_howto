@@ -35,6 +35,8 @@ finish Option page
 map, unwrap_or
 
 CLI: clap
+[Clap](https://github.com/clap-rs/clap)
+
 
 move clap / CLI example to xmpl
 
@@ -57,7 +59,9 @@ review rustfmt.toml
 
 IDEs - add latest JetBrains tooling
 
+Loco
 
+[Loco article](https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails)
 
 more details in the standard library section
 
@@ -95,14 +99,27 @@ AWS
 walkdir, notify, indicatif, ratatui
 
 - regex
+[Regex](https://github.com/rust-lang/regex)
 - time
 - chrono
 
 <https://lib.rs/crates/serde_json>
 
+[monostate for serde](https://github.com/dtolnay/monostate)
+
+[serde-ignored](https://github.com/dtolnay/serde-ignored)
+
+
+traits
+
+[dyn clone](https://github.com/dtolnay/dyn-clone)
+
+
 errors: color-eyre, eyre
 
 testing: Approx example
+[fuzzing](https://github.com/rust-fuzz/afl.rs)
+
 
 - axum
 - loco
@@ -118,6 +135,17 @@ macros
 - cargo expand
 - syn, quote, paste
 
+[paste](https://github.com/dtolnay/paste)
+
+[proc-macro2](https://github.com/dtolnay/proc-macro2)
+
+[syn](https://github.com/dtolnay/syn)
+
+[proc macro workshop](https://github.com/dtolnay/proc-macro-workshop)
+
+[Watt](https://github.com/dtolnay/watt)
+
+
 egui
 
 Badges
@@ -131,6 +159,54 @@ rust + Mongo example
 rust axum example
 
 shuttle.rs example
+
+Windows
+
+[windows-rs](https://github.com/microsoft/windows-rs)
+[native windows gui](https://github.com/gabdube/native-windows-gui)
+
+CLI
+[open-rs](https://github.com/Byron/open-rs)
+
+Tools
+
+[startship](https://github.com/starship/starship)
+
+[Bacon](https://github.com/Canop/bacon)
+
+[Roogle](https://roogle.hkmatsumoto.com/search)
+
+[Roogle](https://github.com/roogle-rs/roogle)
+
+Data
+
+[polars](https://github.com/pola-rs/polars)
+
+GPU
+
+[rust-gpu](https://github.com/EmbarkStudios/rust-gpu)
+
+Python
+
+[pyOxidizer](https://github.com/indygreg/PyOxidizer)
+
+Books
+
+https://github.com/nnethercote/perf-book
+
+
+[Salsa](https://github.com/salsa-rs/salsa)
+
+Games
+
+https://github.com/bevyengine/bevy
+
+
+Languages
+
+[Rust quizz](https://dtolnay.github.io/rust-quiz)
+
+
 
 ## Topics of interest
 
