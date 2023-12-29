@@ -3,7 +3,7 @@
 {
 	"name": "mdbook on Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { "dockerfile": "Dockerfile", "context" : "..", "args": { "WORK_DIR": "${containerWorkspaceFolder}" } }, // "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
+	"build": { "dockerfile": "Dockerfile", "context" : "..", "target": "development", "args": { "WORK_DIR": "${containerWorkspaceFolder}" } }, // "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
     "mounts": [{ "source": "rust_howto_cargo-crate-cache", "target": "/usr/local/cargo/registry/", "type": "volume" },
                { "source": "rust_howto_cargo-target-cache", "target": "/cargo-target-rust_howto/", "type": "volume" }],
     //"containerEnv": {},
