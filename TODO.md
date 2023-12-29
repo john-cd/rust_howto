@@ -1,12 +1,6 @@
 # TODO
 
-review example testing using libraries outside of `std` - make mdbook-keeper work or use doctest instead
-
-write the intro
-
-main README.md document the xmpl folder
-
-add GA
+finish migration of examples to deps/examples (next: domains)
 
 {{#include file.rs:2}}
 {{#include file.rs::10}}
@@ -15,7 +9,23 @@ add GA
 {{#playground example.rs editable}}
 <https://rust-lang.github.io/mdBook/format/mdbook.html>
 
+review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
+
+make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+
+revisit workflow.yml; use Docker container to unify dev and CI?
+
+write the intro
+
+main README.md
+
+remove xmpl folder and finalize justfile
+
+add GA
+
 explanation text for language pages
+
+license
 
 recreate index.hbs in theme
 
@@ -53,6 +63,10 @@ cargo outdated / audit / license / deny
 review deny.toml
 
 <https://lib.rs/crates/cargo-hack>
+
+<https://github.com/matklad/cargo-xtask>
+
+<https://github.com/ThePuzzlemaker/cargo-crates>
 
 review rustfmt.toml
 
@@ -141,6 +155,8 @@ macros
 
 [Watt](https://github.com/dtolnay/watt)
 
+[Dyn Clone]( https://github.com/dtolnay/dyn-clone )
+
 egui
 
 Badges
@@ -165,13 +181,15 @@ CLI
 
 Tools
 
-[startship](https://github.com/starship/starship)
+[startship]( https://github.com/starship/starship )
 
-[Bacon](https://github.com/Canop/bacon)
+[Bacon]( https://github.com/Canop/bacon )
 
-[Roogle](https://roogle.hkmatsumoto.com/search)
+[Roogle]( https://roogle.hkmatsumoto.com/search )
 
-[Roogle](https://github.com/roogle-rs/roogle)
+[Roogle]( https://github.com/roogle-rs/roogle )
+
+[Bat]( https://github.com/sharkdp/bat )
 
 Data
 
