@@ -5,16 +5,18 @@ struct SomeStruct;
 // Most often, we will use async functions.
 // Rust transforms the `async fn` at compile time into a state machine that _implicitly_ returns a `Future`.
 // A future represents an asynchronous computation that might not have finished yet.
-async fn first_task() -> SomeStruct { /* ... */ SomeStruct }
+async fn first_task() -> SomeStruct {
+    /* ... */
+    SomeStruct
+}
 
-async fn second_task_1(_s: &SomeStruct ) { /* ... */ }
+async fn second_task_1(_s: &SomeStruct) { /* ... */
+}
 
 // `async fn` is really syntaxic sugar for a function...
 fn second_task_2() -> impl Future<Output = ()> {
     // ...that contains an `async` block.
-    async {
-        ()
-    }   // returns `Future<Output = ()>`
+    async { () } // returns `Future<Output = ()>`
 }
 
 async fn do_something() {
@@ -25,7 +27,7 @@ async fn do_something() {
     // `join!` is like `.await` but can wait for multiple futures concurrently, returning when all branches complete.
     let f1 = second_task_1(&s);
     let f2 = second_task_2();
-    futures::join!(f1, f2);     // or tokio::join!
+    futures::join!(f1, f2); // or tokio::join!
 }
 
 // We replace `fn main()` by `async fn main()` and declare which executor runtime we'll use - in this case, Tokio.

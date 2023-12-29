@@ -13,7 +13,9 @@ impl Container for MyContainer {
 }
 
 fn main() {
-    let c = MyContainer { items: vec![1, 2, 3] };
+    let c = MyContainer {
+        items: vec![1, 2, 3],
+    };
     for i in c.items {
         println!("{}", i);
     }
