@@ -5,18 +5,7 @@
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ```rust,editable
-use std::cell::OnceCell;
-
-fn main() {
-    let cell = OnceCell::new();
-    assert!(cell.get().is_none());
-
-    let value: &String = cell.get_or_init(|| {
-        "Hello, World!".to_string()
-    });
-    assert_eq!(value, "Hello, World!");
-    assert!(cell.get().is_some());
-}
+{{#include ../../deps/examples/once_cell.rs}}
 ```
 
 ## Older library
@@ -27,19 +16,6 @@ fn main() {
 
 once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 
-```rust,editable,ignore
-use std::{sync::Mutex, collections::HashMap};
-use once_cell::sync::Lazy;
-
-// must be static, not const
-static GLOBAL_DATA: Lazy<Mutex<HashMap<i32, String>>> = Lazy::new(|| {
-    let mut m = HashMap::new();
-    m.insert(13, "Spica".to_string());
-    m.insert(74, "Hoyten".to_string());
-    Mutex::new(m)
-});
-
-fn main() {
-    println!("{:?}", GLOBAL_DATA.lock().unwrap());
-}
+```rust,editable
+{{#include ../../deps/examples/once_cell2.rs}}
 ```
