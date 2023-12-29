@@ -1,4 +1,5 @@
-fn foo() -> ! {  // <-- empty type
+fn foo() -> ! {
+    // <-- empty type
     panic!("This call never returns.");
 }
 
