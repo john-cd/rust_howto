@@ -1,17 +1,7 @@
 # Functions
 
 ```rust,editable
-fn foo(x: i32, unit_label: char) -> i32 {
-    let y = {
-        let z = 3;
-        x + z       // expression at the end of a block - no semi-colon
-    };
-
-    println!("The value of y is: {y}{unit_label}");
-    y               // returns y - no semi-colon
-}
-
-fn main() -> () { println!("{}", foo(1, 'm')); }
+{{#include ../../deps/examples/functions.rs}}
 ```
 
 The unit type `()` (`void` in some languages) is the default return type when no type is given for a function.
@@ -20,44 +10,17 @@ It could be omitted: `fn log(message: &str) { ... }`
 ## Generic functions
 
 ```rust,editable
-fn generic<T>(_t: T) {
-  println!("got t");
-}
-
-// Explicitly specified type parameter `char` to `generic()`. Note the turbofish notation ::<>
-fn main() {
-    generic::<char>('a');
-}
+{{#include ../../deps/examples/generic_functions.rs}}
 ```
 
 ```rust,editable
-use std::fmt::Display;
-
-fn generic<T: ?Sized + Display>(t: &T) {  // By default, generic functions will work only on types that have a known size at compile time. Use ?Sized to relax that.
-    // t must be some kind of pointer: &, Rc, Box...
-    println!("{}", t);
-}
-
-fn main() {
-  let s = String::from("hello");
-  generic(&s[..]);
-}
+{{#include ../../deps/examples/generic_functions2.rs}}
 ```
 
 ## Function pointers
 
 ```rust,editable
-fn add_one(x: i32) -> i32 {
-    x + 1
-}
-
-fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {   // function pointer
-    f(arg) + f(arg)
-}
-
-fn main() {
-    println!("{}", do_twice(add_one, 1));
-}
+{{#include ../../deps/examples/function_pointers.rs}}
 ```
 
 ## Diverging functions
@@ -65,12 +28,5 @@ fn main() {
 Diverging functions never return.
 
 ```rust,editable,should_panic
-fn foo() -> ! {  // empty type
-    panic!("This call never returns.");
-}
-
-fn main() {
-    println!("Will panic");
-    foo();
-}
+{{#include ../../deps/examples/diverging_functions.rs}}
 ```
