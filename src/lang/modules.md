@@ -29,13 +29,13 @@ Create a shortcut to a path with the `use` keyword once, and then use the shorte
 
 [Use]( https://doc.rust-lang.org/rust-by-example/mod/use.html )
 
-```rust,editable,ignore
+```rust,editable
 {{#include ../../deps/examples/modules.rs}}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
-```rust,editable,ignore
+```rust,editable
 {{#include ../../deps/examples/modules2.rs}}
 ```
 
