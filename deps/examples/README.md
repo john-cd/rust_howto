@@ -12,4 +12,4 @@ cargo test --examples
 cargo run --example <name>
 ```
 
-To run all example, use `just runall`.
+To run all examples, use `just runall`.
