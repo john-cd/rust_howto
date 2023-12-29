@@ -465,13 +465,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dashmap_example"
-version = "0.1.0"
-dependencies = [
- "dashmap",
-]
-
-[[package]]
 name = "der"
 version = "0.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1853,6 +1846,7 @@ dependencies = [
  "bytes",
  "confy",
  "crossbeam-channel",
+ "crossbeam-queue",
  "dashmap",
  "derive_more",
  "dotenvy",
