@@ -15,8 +15,8 @@ create-missing = false             # whether or not to create missing pages
 [rust]
 edition = "2021"
 
-[preprocessor.hide]
-hide = true                        # enables mdbook-hide
+# [preprocessor.hide]
+# hide = true                        # enables mdbook-hide
 
 #[preprocessor.index]
 
@@ -72,7 +72,7 @@ editable = true            # allows editing the source code
 # heading-split-level = 3  # link results to heading levels
 # copy-js = true           # include Javascript code for search
 
-[preprocessor.keeper]
-command = "mdbook-keeper"
-# NOTE: the file Cargo.toml should exist at this path.
-manifest_dir = "./deps"
+# [preprocessor.keeper]
+# command = "mdbook-keeper"
+# # NOTE: the file Cargo.toml should exist at this path.
+# manifest_dir = "./deps"
