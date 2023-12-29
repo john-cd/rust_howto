@@ -1,6 +1,6 @@
 // library code: define unique error types and error wrappers
-use miette::{Diagnostic, SourceSpan, NamedSource};
 use miette::Result;
+use miette::{Diagnostic, NamedSource, SourceSpan};
 
 // You can derive a `Diagnostic` from any `std::error::Error` type.
 // `thiserror` plays nicely with `miette`

@@ -1,5 +1,5 @@
-use std::{sync::Mutex, collections::HashMap};
 use once_cell::sync::Lazy;
+use std::{collections::HashMap, sync::Mutex};
 
 // must be static, not const
 static GLOBAL_DATA: Lazy<Mutex<HashMap<i32, String>>> = Lazy::new(|| {

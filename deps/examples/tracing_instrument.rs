@@ -1,8 +1,7 @@
-use tracing::{Level, event, instrument};
+use tracing::{event, instrument, Level};
 
 #[instrument]
 fn my_function(my_arg: usize) {
-
     // This event will be recorded inside a span named `my_function` with the
     // field `my_arg`.
     event!(Level::INFO, "inside my_function!");
@@ -12,7 +11,6 @@ fn my_function(my_arg: usize) {
 // used on an async function
 #[instrument(level = "info")]
 async fn my_async_function() {
-
     // This is correct! If we yield here, the span will be exited,
     // and re-entered when we resume.
     some_other_async_function().await;

@@ -1,9 +1,8 @@
-use tracing_subscriber::{fmt, filter::EnvFilter};
 use tracing_subscriber::prelude::*;
+use tracing_subscriber::{filter::EnvFilter, fmt};
 
 fn main() {
-    let fmt_layer = fmt::layer()
-        .with_target(false);
+    let fmt_layer = fmt::layer().with_target(false);
     let filter_layer = EnvFilter::try_from_default_env()
         .or_else(|_| EnvFilter::try_new("info"))
         .unwrap();

@@ -1,4 +1,4 @@
-use tracing::{event, error, warn, info, debug, trace, Level};
+use tracing::{debug, error, event, info, trace, warn, Level};
 
 fn main() {
     event!(Level::INFO, "something happened");
@@ -11,7 +11,11 @@ fn main() {
     event!(target: "app_events", Level::TRACE, "something has happened!");
 
     // records an event with two fields (also works for spans)
-    event!(Level::INFO, answer = 42, question = "life, the universe, and everything");
+    event!(
+        Level::INFO,
+        answer = 42,
+        question = "life, the universe, and everything"
+    );
 
     // unlike other fields, `message`'s shorthand initialization is just the string itself.
     debug!(excitement = "yay!", "hello!");

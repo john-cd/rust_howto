@@ -1,4 +1,4 @@
-use tracing::{info_span, debug_span, Instrument};
+use tracing::{debug_span, info_span, Instrument};
 
 async fn my_async_function() {
     let span = info_span!("my_async_function");
@@ -14,19 +14,19 @@ async fn my_async_function() {
 
     // instrument async code
     async move {
-    // This is correct! If we yield here, the span will be exited,
-    // and re-entered when we resume.
-    some_other_async_function().await;
+        // This is correct! If we yield here, the span will be exited,
+        // and re-entered when we resume.
+        some_other_async_function().await;
     }
-    .instrument(span)     // instrument the async block with the span...
-    .await;                    // ...and await it.
+    .instrument(span) // instrument the async block with the span...
+    .await; // ...and await it.
 
     let _some_value = some_other_async_function()
-    .instrument(debug_span!("some_other_async_function"))
-    .await;
+        .instrument(debug_span!("some_other_async_function"))
+        .await;
 }
 
-async fn some_other_async_function() { }
+async fn some_other_async_function() {}
 
 #[tokio::main]
 async fn main() {

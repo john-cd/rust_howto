@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 struct MyConfig {
@@ -8,7 +8,12 @@ struct MyConfig {
 
 /// `MyConfig` implements `Default`
 impl ::std::default::Default for MyConfig {
-    fn default() -> Self { Self { version: 0, api_key: "".into() } }
+    fn default() -> Self {
+        Self {
+            version: 0,
+            api_key: "".into(),
+        }
+    }
 }
 
 fn main() -> Result<(), confy::ConfyError> {

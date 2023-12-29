@@ -2,7 +2,7 @@
 
 // in the same file than the main code
 
-#[cfg(test)]  // only for unit tests
+#[cfg(test)] // only for unit tests
 mod tests {
     use super::*; // access to all objects in the parent module, which contains the main code
 
@@ -25,7 +25,7 @@ mod tests {
     }
 
     #[test]
-    #[should_panic]  // The test passes if the code inside the function panics; the test fails if the code inside the function doesn’t panic.
+    #[should_panic] // The test passes if the code inside the function panics; the test fails if the code inside the function doesn’t panic.
     fn another() {
         panic!("Make this test fail");
     }
@@ -45,7 +45,6 @@ mod tests {
     fn expensive_test() {
         // code that takes an hour to run
     }
-
 }
 
 struct Rectangle {

@@ -1,7 +1,7 @@
 use std::env;
 
 fn env_extract() -> String {
-    let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| {"debug".into() });
+    let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| "debug".into());
     println!("RUST_LOG: {log_env_var}");
 
     let user_env_var = env::var("USER").expect("$USER is not set");
@@ -13,9 +13,7 @@ fn env_extract() -> String {
 
     let optional_value = option_env!("SHELL");
 
-    return optional_value
-            .unwrap_or("no shell set")
-            .to_string();
+    return optional_value.unwrap_or("no shell set").to_string();
 }
 
 fn main() {

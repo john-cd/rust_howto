@@ -1,5 +1,5 @@
-use std::io;
 use std::fs::File;
+use std::io;
 
 fn main() {
     let mut guess = String::new();

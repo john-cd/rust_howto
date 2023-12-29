@@ -7,5 +7,5 @@ fn main() {
     {
         let _guard = span.enter();
         // Any trace events that occur before the guard is dropped will occur within the span.
-    }   // Dropping the guard will exit the span.
+    } // Dropping the guard will exit the span.
 }

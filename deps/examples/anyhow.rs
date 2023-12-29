@@ -1,6 +1,5 @@
 use anyhow::{Context, Result};
 
-
 fn do_something() -> Result<()> {
     Err(anyhow::Error::msg("Some Error"))
 }
