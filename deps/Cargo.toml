@@ -32,6 +32,7 @@ serde = { version = "1.0.193", features = ["derive"] }
 serde_derive = "1.0.193"
 thiserror = "1.0.52"
 tokio = { version = "1.35.0", features = ["full"] }
+tokio-graceful-shutdown = "0.14.2"
 tower = "0.4.13"
 tower-http = "0.5.0"
 tracing = "0.1.40"
