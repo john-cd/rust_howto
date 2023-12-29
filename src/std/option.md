@@ -30,8 +30,8 @@ It is often used with `match`, `if let`, or `while let`:
 
 ## Extracting the value contained in Option
 
-These methods extract the contained value in an Option<T> when it is the Some variant.
-If the Option is None:
+These methods extract the contained value in an `Option<T>` when it is the Some variant.
+If the `Option` is None:
 
 - `expect` panics with a provided custom message
 - `unwrap` panics with a generic message
