@@ -1,43 +1,21 @@
-use std::time::Duration;
 use tokio::sync::oneshot;
 
-async fn download_file() -> Result<String, std::io::Error> {
-    // Simulate downloading a file
-    let filename = "data.txt";
-    tokio::time::sleep(Duration::from_secs(2)).await;
-    println!("Downloaded file: {}", filename);
-    Ok(filename.to_owned())
+async fn some_computation(input: u32) -> String {
+    format!("the result of computation {}", input)
 }
 
-async fn process_file(filename: String) {
-    // Simulate processing the downloaded file
-    println!("Processing file: {}", filename);
-    tokio::time::sleep(Duration::from_secs(1)).await;
-    println!("Finished processing file.");
-}
+pub async fn one_shot() {
+    let (tx, rx) = oneshot::channel();
 
-async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
-    let (sender, receiver) = oneshot::channel();
-
-    // Spawn the download task
     tokio::spawn(async move {
-        let filename = download_file().await?;
-        sender.send(filename).expect("Failed to send filename");
-        Ok::<(), std::io::Error>(())
+        let res = some_computation(0).await;
+        tx.send(res).unwrap();
+        // alernatively, return the value via the joinhandle returned by `spawn`
     });
 
-    // Wait for the downloaded filename from the receiver
-    let filename = receiver.await?;
+    // Do other work while the computation is happening in the background
 
-    // Spawn the processing task with the filename
-    tokio::spawn(async move {
-        process_file(filename).await;
-    });
-
-    Ok(())
-}
-
-fn main() {
-    let rt = tokio::runtime::Runtime::new().unwrap();
-    rt.block_on(async { async_main().await }).unwrap();
+    // Wait for the computation result
+    let res = rx.await.unwrap();
+    println!("{}", res);
 }
