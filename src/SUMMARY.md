@@ -52,6 +52,7 @@
     - [Async channels](concurrency/async_channels.md)
     - [Streams](concurrency/streams.md)
     - [Futures crate](concurrency/futures.md)
+    - [Mixing Async and Blocking](concurrency/async_and_blocking.md)
 
 - [Tools](tools/tools.md)
   - [Rust installation](tools/install.md)
