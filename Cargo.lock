@@ -444,13 +444,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "crossbeam_channel_example"
-version = "0.1.0"
-dependencies = [
- "crossbeam-channel",
-]
-
-[[package]]
 name = "crypto-common"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1888,6 +1881,7 @@ dependencies = [
  "confy",
  "crossbeam-channel",
  "crossbeam-queue",
+ "crossbeam-utils",
  "dashmap",
  "derive_more",
  "dotenvy",
