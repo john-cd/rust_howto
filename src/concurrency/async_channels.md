@@ -19,6 +19,12 @@ Another example:
 {{#include ../../deps/examples/async_channels_oneshot2.rs}}
 ```
 
+## Multiple Producer, Single Consumer
+
+```rust,editable,ignore,mdbook-runnable
+{{#include ../../deps/examples/async_channels_mpsc.rs}}
+```
+
 ## Alternatives to Tokio `sync`
 
 [Postage]( https://lib.rs/crates/postage )

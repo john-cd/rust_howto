@@ -1,7 +1,7 @@
 use tokio::sync::mpsc;
 
 async fn some_computation(input: u32) -> String {
-    format!("the result of computation {}", input)
+    format!("the result of computation is {}", input)
 }
 
 pub async fn multi_producer_single_receiver() {
@@ -17,4 +17,9 @@ pub async fn multi_producer_single_receiver() {
     while let Some(res) = rx.recv().await {
         println!("{}", res);
     }
+}
+
+#[tokio::main]
+async fn main() {
+    multi_producer_single_receiver().await;
 }

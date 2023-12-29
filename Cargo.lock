@@ -2785,13 +2785,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tokio_example"
-version = "0.1.0"
-dependencies = [
- "tokio",
-]
-
-[[package]]
 name = "toml"
 version = "0.5.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
