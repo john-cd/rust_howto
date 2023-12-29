@@ -1849,6 +1849,7 @@ name = "rust_howto"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-trait",
  "bytes",
  "confy",
  "crossbeam-channel",
