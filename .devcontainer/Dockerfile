@@ -8,9 +8,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Alternatives: use the `lld` or `mold` linker
 # Other packages that may be needed: wget
 
-## Update Rust if needed; install fmt and clippy if needed
-RUN rustup update
-RUN rustup component add clippy; rustup component add rustfmt
+## Update Rust if needed (note: update stable is required for Rust 1.74 -> Rust 1.75 somehow)
+RUN rustup update stable && rustup default stable
+
+## Install fmt and clippy if needed
+RUN rustup component add clippy
+RUN rustup component add rustfmt
 
 ## Install cargo binstall (binary install)
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
