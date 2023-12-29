@@ -1,6 +1,8 @@
 /book
 /doctest_cache/
 *.url
+hello.txt
+file1.txt
 
 # Windows ------------------------
 
