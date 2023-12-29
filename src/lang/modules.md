@@ -30,47 +30,17 @@ Create a shortcut to a path with the `use` keyword once, and then use the shorte
 [Use]( https://doc.rust-lang.org/rust-by-example/mod/use.html )
 
 ```rust,editable,ignore
-use std::fs::File;              // `File` without prefix is now available in the scope
-use std::collections::HashMap;  // for code from an external crate, the absolute path begins with the crate name - here, the standard `std` library
-
-use std::collections::*;        // Glob - all public objects
-
-use itertools::Itertools;
-use syntax::ast;
-
-use std::{cmp::Ordering, io};   // combining multiple use lines together
-use std::io::{self, Write};
-
-use crate::utils::insert_use;   // absolute path - for code from the current crate, it starts with the literal crate.
-
-use self::auto_import;          // A relative path starts from the current module and uses self, super, or an identifier in the current module.
-
-use super::AssistContext;       // We can construct relative paths that begin in the parent module, rather than the current module or the crate root, by using super at the start of the path.
-
-use std::fmt::Result;
-use std::io::Result as IoResult;        // Alias
-
-pub use crate::front_of_house::hosting; // Reexporting -  Now that this pub use has re-exported the hosting module from the root module, external code can now use the path <crate>::hosting::add_to_waitlist() instead.
-
-fn main() {}
+{{#include ../../deps/examples/modules.rs}}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
 ```rust,editable,ignore
-use crate::front_of_house::hosting;
-
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-}
+{{#include ../../deps/examples/modules2.rs}}
 ```
 
 On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path.
 
 ```rust,editable
-use std::collections::HashMap;
-
-fn main() {
-    let mut map: HashMap<u32, String>  = HashMap::new();
-}
+{{#include ../../deps/examples/modules3.rs}}
 ```
