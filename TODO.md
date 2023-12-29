@@ -7,6 +7,7 @@ finish migration of examples to deps/examples (next: domains)
 {{#include file.rs:2:}}
 {{#include file.rs:2:10}}
 {{#playground example.rs editable}}
+
 <https://rust-lang.github.io/mdBook/format/mdbook.html>
 
 review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
@@ -30,8 +31,11 @@ license
 recreate index.hbs in theme
 
 finish cd_ci.md
+
 finish improve_speed
+
 finish Cargo Plugins / cargo.md
+
 finish faster linking
 
 separate web
@@ -51,7 +55,7 @@ move clap / CLI example to xmpl
 
 database access:
 
-- sqlx
+- sqlx [sqlx](https://github.com/launchbadge/sqlx)
 - seaORM
 
 incorporate examples
@@ -87,6 +91,7 @@ add more to tokio.md
 - I/O
 - Join, select
 - <https://tokio.rs/tokio/topics/tracing-next-steps>
+- [Async stream](https://github.com/tokio-rs/async-stream)
 
 add more to async_channels
 
@@ -99,6 +104,8 @@ add more to async_channels
 <https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code>
 
 Tower
+
+[Building a SaaS with Rust and Next.js](<https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/>)
 
 finish actor.md
 
@@ -140,7 +147,7 @@ testing: Approx example
 - mongodb
 - elasticsearch
 
-macros
+Macros
 
 - cargo expand
 - syn, quote, paste
@@ -174,9 +181,11 @@ shuttle.rs example
 Windows
 
 [windows-rs](https://github.com/microsoft/windows-rs)
+
 [native windows gui](https://github.com/gabdube/native-windows-gui)
 
 CLI
+
 [open-rs](https://github.com/Byron/open-rs)
 
 Tools
