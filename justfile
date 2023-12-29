@@ -1,5 +1,5 @@
-# list of the (last part of) folder names under the `xmpl` directory, space separated
-examples := `find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' '`
+# # list of the (last part of) folder names under the `xmpl` directory, space separated
+# examples := `find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' '`
 
 default:
   @just --list --unsorted
@@ -11,21 +11,21 @@ clean:
   mdbook clean
   rm --recursive --force ./doctest_cache/
 
-# Format the code of all projects in the xmpl folder (DOES NOT INCLUDE examples embedded in the markdown)
-xfmt:
-  for d in {{examples}}; do ( echo $d; cargo fmt -v --package $d ); done
+# # Format the code of all projects in the xmpl folder (DOES NOT INCLUDE examples embedded in the markdown)
+# xfmt:
+#   for d in {{examples}}; do ( echo $d; cargo fmt -v --package $d ); done
 
-# Scan the code of all projects in the xmpl folder for common mistakes (DOES NOT INCLUDE examples embedded in the markdown)
-xclippy:
-  for d in {{examples}}; do ( echo $d; cargo clippy --package $d ); done
+# # Scan the code of all projects in the xmpl folder for common mistakes (DOES NOT INCLUDE examples embedded in the markdown)
+# xclippy:
+#   for d in {{examples}}; do ( echo $d; cargo clippy --package $d ); done
 
-# Check all projects in the xmpl folder (and all of their dependencies) for errors
-xcheck:
-  for d in {{examples}}; do ( echo $d; cargo check --package $d ); done
+# # Check all projects in the xmpl folder (and all of their dependencies) for errors
+# xcheck:
+#   for d in {{examples}}; do ( echo $d; cargo check --package $d ); done
 
-# Compile all projects in the xmpl folder
-xbuild:
-  for d in {{examples}}; do ( echo $d; cargo build --package $d ); done
+# # Compile all projects in the xmpl folder
+# xbuild:
+#   for d in {{examples}}; do ( echo $d; cargo build --package $d ); done
 
 # Build the book from its markdown files (incl. testing of the examples embedded in the markdown)
 build:
@@ -36,6 +36,7 @@ build:
 test:
   mdbook test
 #  mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+#  mdbook test
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. testing of the examples embedded in the markdown)
@@ -51,14 +52,32 @@ serve:
 update:
   cargo update
 
+# Format all projects
+fmtall:
+  cargo fmt --all
+
 # Check all projects
 checkall:
-  cargo check --workspace --all-targets --all-features
+  cargo check --workspace --all-targets --locked
+# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build all projects
 buildall:
-  cargo build --workspace --all-targets --all-features --timings
+  cargo build --workspace --all-targets --locked
+# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+# optional: --timings
 
 # Test all projects
 testall:
-  cargo test --workspace --all-targets --all-features
+  cargo test --workspace --all-targets --locked
+# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+# Run all examples
+runall:
+  #! /bin/bash
+  set -o pipefail
+  set -e
+  examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
+  for e in $examples; do ( echo $e; cargo run --example $e --all-features --locked || true); done
+  examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
+  for e in $examples_in_dir; do ( echo $e; cargo run --example $e --all-features --locked || true ); done
