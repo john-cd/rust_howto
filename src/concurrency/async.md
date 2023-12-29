@@ -8,40 +8,8 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 
 ## Basic Example
 
-```rust,editable,ignore
-// Most often, we will use async functions.
-// Rust transforms the `async fn` at compile time into a state machine that _implicitly_ returns a `Future`.
-// A future represents an asynchronous computation that might not have finished yet.
-async fn first_task() -> SomeStruct { /* ... */ }
-
-async fn second_task_1(&s: SomeStruct ) { /* ... */ }
-
-// `async fn` is really syntaxic sugar for a function...
-fn second_task_2() -> impl Future<Output = ()> {
-    // ...that contains an `async` block.
-    async {
-        ()
-    }   // returns `Future<Output = ()>`
-}
-
-async fn do_something() {
-    // Use `.await` to start executing the future.
-    let s = first_task().await;
-    // `await` yields control back to the executor, which may decide to do other work if the task is not ready, then come back here.
-
-    // `join!` is like `.await` but can wait for multiple futures concurrently, returning when all branches complete.
-    let f1 = second_task_1(&s);
-    let f2 = second_task_2();
-    futures::join!(f1, f2);     // or tokio::join!
-}
-
-// We replace `fn main()` by `async fn main()` and declare which executor runtime we'll use - in this case, Tokio.
-// The runtime crate must be added to `Cargo.toml`: `tokio = { version = "1", features = ["full"] }`
-// Technically, the #[tokio::main] attribute is a macro that transforms it into a synchronous fn main() that initializes a runtime instance and executes the async main function.
-#[tokio::main]
-async fn main() {
-    do_something().await; // note: `await` must be called or nothing is executing - Futures are lazy
-}
+```rust,editable,ignore,mdbook-runnable
+{{#include ../../deps/examples/async.rs}}
 ```
 
 As any form of cooperative multitasking, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
@@ -52,26 +20,8 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 - Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
-```rust,editable,ignore
-async fn say_world() {
-    println!("world");
-}
-
-#[tokio::main]
-async fn main() {
-    // Calling `say_world()` does not execute the body of `say_world()`.
-    let op = say_world();
-
-    // This println! comes first
-    println!("hello");
-
-    // Calling `.await` on `op` starts executing `say_world`.
-    op.await;
-}
-// Prints:
-// hello
-// world
-// Example from https://tokio.rs/tokio/tutorial/hello-tokio
+```rust,editable,ignore,mdbook-runnable
+{{#include ../../deps/examples/async2.rs}}
 ```
 
 - Dropping a future stops it from making further progress.
