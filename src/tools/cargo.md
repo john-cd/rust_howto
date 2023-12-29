@@ -80,7 +80,7 @@ rustup component add clippy # install if needed
 cargo clippy
 ```
 
-Mute a warning using the #[allow(clippy::lint_name)] attributes
+Mute a warning using the `#[allow(clippy::lint_name)]` attributes
 
 ## Fix
 
