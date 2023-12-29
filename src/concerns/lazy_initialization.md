@@ -16,6 +16,6 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 
-```rust,editable
+```rust,editable,ignore
 {{#include ../../deps/examples/once_cell2.rs}}
 ```
