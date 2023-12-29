@@ -38,7 +38,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 `cargo-binutils` packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
 
-### Alternative - Mold linker
+## Alternative - Mold linker
 
 `mold` is up to 5× faster than `lld`, but with a few caveats like limited platform support and occasional stability issues. To install mold, run `sudo apt-get install mold clang` in Ubuntu.
 
