@@ -13,7 +13,7 @@ add GA
 {{#include file.rs:2:}}
 {{#include file.rs:2:10}}
 {{#playground example.rs editable}}
-https://rust-lang.github.io/mdBook/format/mdbook.html
+<https://rust-lang.github.io/mdBook/format/mdbook.html>
 
 explanation text for language pages
 
@@ -36,7 +36,6 @@ map, unwrap_or
 
 CLI: clap
 [Clap](https://github.com/clap-rs/clap)
-
 
 move clap / CLI example to xmpl
 
@@ -109,17 +108,14 @@ walkdir, notify, indicatif, ratatui
 
 [serde-ignored](https://github.com/dtolnay/serde-ignored)
 
-
 traits
 
 [dyn clone](https://github.com/dtolnay/dyn-clone)
-
 
 errors: color-eyre, eyre
 
 testing: Approx example
 [fuzzing](https://github.com/rust-fuzz/afl.rs)
-
 
 - axum
 - loco
@@ -144,7 +140,6 @@ macros
 [proc macro workshop](https://github.com/dtolnay/proc-macro-workshop)
 
 [Watt](https://github.com/dtolnay/watt)
-
 
 egui
 
@@ -192,21 +187,17 @@ Python
 
 Books
 
-https://github.com/nnethercote/perf-book
-
+<https://github.com/nnethercote/perf-book>
 
 [Salsa](https://github.com/salsa-rs/salsa)
 
 Games
 
-https://github.com/bevyengine/bevy
-
+[Bevy](https://github.com/bevyengine/bevy )
 
 Languages
 
 [Rust quizz](https://dtolnay.github.io/rust-quiz)
-
-
 
 ## Topics of interest
 
