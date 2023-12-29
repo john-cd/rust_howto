@@ -13,6 +13,12 @@ This channel is usually used to send the result of a computation to a waiter.
 {{#include ../../deps/examples/async_channels_oneshot.rs}}
 ```
 
+Another example:
+
+```rust,editable,ignore,mdbook-runnable
+{{#include ../../deps/examples/async_channels_oneshot2.rs}}
+```
+
 ## Alternatives to Tokio `sync`
 
 [Postage]( https://lib.rs/crates/postage )
