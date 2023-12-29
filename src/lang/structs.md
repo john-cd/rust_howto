@@ -1,94 +1,19 @@
 # Structs
 
 ```rust,editable
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
-}
-
-fn main() {
-    // create an instance
-    let user1 = User {
-            active: true,
-            username: String::from("someusername123"),
-            email: String::from("someone@example.com"),
-            sign_in_count: 1,
-        };
-}
+{{#include ../../deps/examples/structs.rs}}
 ```
 
 Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
 
 ```rust,editable
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-}
-
-fn build_user(email: String, username: String) -> User {
-    User {
-        active: true,
-        username,       // instead of username: username - field init shorthand
-        email,          // same
-    }
-}
-
-fn main() {
-    let user1 = build_user("user@example.com".into(), "user".to_string());
-
-    // struct update
-    let user2 = User {
-        email: String::from("another@example.com"),
-        ..user1    // the remaining fields not explicitly set should have the same value as the fields in the given instance.
-    };
-}
+{{#include ../../deps/examples/structs2.rs}}
 ```
 
 ```rust,editable
-// Tuple struct
-struct Color(i32, i32, i32);
-
-fn main() {
-    let black = Color(0, 0, 0);
-}
+{{#include ../../deps/examples/structs3.rs}}
 ```
 
 ```rust,editable
-// Unit-like struct
-struct AlwaysEqual;  // no data
-
-fn main() {
-    let s = AlwaysEqual;
-}
-```
-
-```rust,editable
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {                    // implementation block (multiple allowed for a given struct)
-    // Method
-    fn area(&self) -> u32 {         // short for self: &Self, an alias for the type that the impl block is for
-        self.width * self.height
-    }
-
-    // Associated Functions - NO self, &self, or &mut self
-    // often use for constructors: SomeType::new(...)
-    fn square(size: u32) -> Self {
-        Self {
-            width: size,
-            height: size,
-        }
-    }
-}
-
-fn main() {
-  let sq = Rectangle::square(5);
-  println!("area: {}", sq.area());
-}
+{{#include ../../deps/examples/structs4.rs}}
 ```
