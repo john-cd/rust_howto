@@ -42,11 +42,7 @@ For production-ready code, replace the above by the following, for example.
 You also apply these attributes to specific functions:
 
 ```rust,editable
-// Disables the `dead_code` lint
-#[allow(dead_code)]
-fn unused_function() {}
-
-fn main() {}
+{{#include ../../deps/examples/allow_dead_code.rs}}
 ```
 
 List of lint checks: `rustc -W help`. `rustc` also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
@@ -58,13 +54,7 @@ See [Automatic derivation](../concerns/derive.md)
 ## Must Use
 
 ```rust,editable
-// Must use the results of the fn; also applies to traits, structs, enums...
-#[must_use]
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-fn main() { println!("{}", add(1, 2)); }
+{{#include ../../deps/examples/must_use.rs}}
 ```
 
 ## Deprecated
@@ -79,28 +69,7 @@ pub fn foo() {}
 [Conditional compilation]( https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute )
 
 ```rust,editable
-// This function only gets compiled if the target OS is linux
-#[cfg(target_os = "linux")]
-fn are_you_on_linux() {
-    println!("You are running linux!");
-}
-
-// And this function only gets compiled if the target OS is *not* linux
-#[cfg(not(target_os = "linux"))]
-fn are_you_on_linux() {
-    println!("You are *not* running linux!");
-}
-
-fn main() {
-    are_you_on_linux();
-
-    println!("Are you sure?");
-    if cfg!(target_os = "linux") {                  // alternative: use cfg!
-        println!("Yes. It's definitely linux!");
-    } else {
-        println!("Yes. It's definitely *not* linux!");
-    }
-}
+{{#include ../../deps/examples/conditional_compilation.rs}}
 ```
 
 ## See Also
