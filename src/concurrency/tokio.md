@@ -21,5 +21,5 @@ Tokio provides a few major components:
 Example from [tokio_graceful_shutdown]( https://docs.rs/tokio-graceful-shutdown/latest/tokio_graceful_shutdown/ ):
 
 ```rust,editable,ignore,mdbook-runnable
-{{#include ../../deps/examples/tokio_graceful_shutdown.rs}
+{{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
 ```
