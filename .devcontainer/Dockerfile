@@ -9,7 +9,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Other packages that may be needed: wget
 
 ## Update Rust if needed; install fmt and clippy if needed
-RUN rustup update
+RUN rustup update stable && rustup default stable
 RUN rustup component add clippy; rustup component add rustfmt
 
 ## Install cargo binstall (binary install)
