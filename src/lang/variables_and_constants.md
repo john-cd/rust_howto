@@ -1,36 +1,19 @@
 # Variables and Constants
 
 ```rust,editable
-fn main() {
-    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;  // set only to a constant expression; type must be annotated
-    let apples = 5;                 // immutable
-    let mut guess = String::new();  // mutable
-}
+{{#include ../../deps/examples/vars_and_consts.rs}}
 ```
 
 ## Shadowing
 
 ```rust,editable
-fn main() {
-    let x = 5;
-    let x = x + 1;  // redefines x; type can change
-}
+{{#include ../../deps/examples/shadowing.rs}}
 ```
 
 ## Destructuring
 
 ```rust,editable
-fn main() {
-    // destructuring tuples
-    let (x, y, z) = (1, 2, 3);
-
-    // destructuring structs
-    struct Point{ x: i32, y: i32, }
-
-    let p = Point { x: 0, y: 7 };
-    let Point { x: a, y: b } = p;   // a = 0, b = 7
-    let Point { x, y } = p;         // simpler
-}
+{{#include ../../deps/examples/destructuring.rs}}
 ```
 
 Starting the name of a variable with an underscore silences unused variable warnings.
