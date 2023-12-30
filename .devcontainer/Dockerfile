@@ -101,7 +101,7 @@ RUN cargo fmt --all --check
 ## Lint all examples
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-RUN cargo clippy --workspace --all-targets -- --deny warnings
+RUN cargo clippy --workspace --all-targets --locked -- --deny warnings
 
 ## Check dependencies
 # RUN cargo deny check \
