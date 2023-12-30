@@ -1,10 +1,20 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "mdbook on Debian",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { "dockerfile": "Dockerfile", "context" : "..", "target": "development", "args": { "WORK_DIR": "${containerWorkspaceFolder}" } }, // "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
-    "mounts": [{ "source": "rust_howto_cargo-crate-cache", "target": "/usr/local/cargo/registry/", "type": "volume" },
+	// More info: https://containers.dev/guide/dockerfile
+	"build": {  "dockerfile": "Dockerfile",
+                "context" : "..",
+                "target": "development",
+                "args": {
+                    "WORK_DIR": "${containerWorkspaceFolder}"
+                }, // format: "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
+                "runArgs": [
+                    "--cap-add=SYS_PTRACE",
+                    "--security-opt",
+                    "seccomp=unconfined"
+                ] //  ptrace based debuggers like C++ / Rust to work in the container
+            },
+    "mounts": [{ "source": "rust_howto_cargo-crate-cache", "target": "/usr/local/cargo/registry/", "type": "volume"},
                { "source": "rust_howto_cargo-target-cache", "target": "/cargo-target-rust_howto/", "type": "volume" }],
     //"containerEnv": {},
     //"runArgs": ["-p", "3000:3000"],
