@@ -1,20 +1,12 @@
 # TODO
 
-finish migration of examples to deps/examples (next: domains)
-
-{{#include file.rs:2}}
-{{#include file.rs::10}}
-{{#include file.rs:2:}}
-{{#include file.rs:2:10}}
-{{#playground example.rs editable}}
-
-<https://rust-lang.github.io/mdBook/format/mdbook.html>
+finish to review examples marked `ignore`
 
 review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
 
 make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
-revisit workflow.yml; use Docker container to unify dev and CI?
+revisit workflow.yml; make new dockerfile work with it
 
 write the intro
 
