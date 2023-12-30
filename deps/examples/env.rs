@@ -13,7 +13,7 @@ fn env_extract() -> String {
 
     let optional_value = option_env!("SHELL");
 
-    return optional_value.unwrap_or("no shell set").to_string();
+    optional_value.unwrap_or("no shell set").to_string()
 }
 
 fn main() {

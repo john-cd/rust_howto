@@ -1,3 +1,5 @@
+#![allow(clippy::bind_instead_of_map)]
+
 use std::fs;
 
 // `and_then` applies a function to the wrapped value if it's Some.

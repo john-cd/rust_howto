@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(clippy::match_single_binding)]
 
 // struct pattern matching
 struct Point {

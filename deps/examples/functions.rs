@@ -8,6 +8,6 @@ fn foo(x: i32, unit_label: char) -> i32 {
     y // returns y - no semi-colon
 }
 
-fn main() -> () {
+fn main() {
     println!("{}", foo(1, 'm'));
 }

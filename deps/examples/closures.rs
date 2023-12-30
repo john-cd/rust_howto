@@ -1,6 +1,6 @@
 fn find_emails(list: Vec<String>) -> Vec<String> {
     list.into_iter()
-        .filter(|s| s.contains("@")) // <-- closure
+        .filter(|s| s.contains('@')) // <-- closure
         .collect()
 }
 

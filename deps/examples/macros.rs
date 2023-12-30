@@ -1,3 +1,5 @@
+#![allow(clippy::useless_vec)]
+
 fn main() {
     // Used as an expression.
     let _x = vec![1, 2, 3];

@@ -1,3 +1,4 @@
+#![allow(clippy::async_yields_async)]
 use futures::future::FutureExt;
 
 #[tokio::main]
@@ -18,7 +19,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     } else {
         async { false }.right_future()
     };
-    assert_eq!(future.await, false);
+    assert!(!(future.await));
 
     // Flatten nested futures
     let nested_future = async { async { 1 } };

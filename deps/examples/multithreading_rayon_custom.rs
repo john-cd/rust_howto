@@ -15,5 +15,5 @@ fn fib(n: usize) -> usize {
     }
     // Conceptually, calling join() is similar to spawning two threads, one executing each of the two closures.
     let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`
-    return a + b;
+    a + b
 }

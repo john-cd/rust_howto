@@ -1,3 +1,5 @@
+#![allow(clippy::vec_init_then_push)]
+
 fn main() {
     let mut v: Vec<i32> = Vec::new();
     v.push(5);

@@ -52,22 +52,26 @@ serve:
 update:
   cargo update
 
-# Format all projects
+# Format all examples
 fmtall:
   cargo fmt --all
 
-# Check all projects
+# Scan the code of all projects in the xmpl folder for common mistakes (DOES NOT INCLUDE examples embedded in the markdown)
+clippyall:
+  cargo clippy --workspace --all-targets --locked
+
+# Check all examples
 checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
-# Build all projects
+# Build all examples
 buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
-# Test all projects
+# Test all examples
 testall:
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
