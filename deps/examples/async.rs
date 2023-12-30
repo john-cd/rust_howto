@@ -17,7 +17,7 @@ async fn second_task_1(_s: &SomeStruct) { /* ... */
 #[allow(clippy::manual_async_fn)]
 fn second_task_2() -> impl Future<Output = ()> {
     // ...that contains an `async` block.
-    async { } // returns `Future<Output = ()>`
+    async {} // returns `Future<Output = ()>`
 }
 
 async fn do_something() {
