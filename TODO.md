@@ -10,9 +10,7 @@ revisit workflow.yml; make new dockerfile work with it
 
 write the intro
 
-main README.md
-
-remove xmpl folder and finalize justfile
+revisit CI section of main README.md
 
 add GA
 
