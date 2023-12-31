@@ -12,6 +12,17 @@ review example testing using libraries outside of `std` - make mdbook-keeper wor
 
 make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
+Search within the book
+
+<https://endler.dev/2019/tinysearch/>
+<https://stork-search.net/>
+<https://github.com/lucaong/minisearch>
+<https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html>
+<https://github.com/typesense/typesense>
+<https://news.ycombinator.com/item?id=23473303>
+
+Algolia
+
 <https://github.com/rust-unofficial/awesome-rust>
 
 <https://github.com/rust-unofficial/patterns>
