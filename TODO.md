@@ -1,16 +1,24 @@
 # TODO
 
+revisit workflow.yml; make new dockerfile work with it; revisit CI section of main README.md
+
+polish the intro
+
+add GA
+
 finish to review examples marked `ignore`
 
 review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
 
 make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
-revisit workflow.yml; make new dockerfile work with it; revisit CI section of main README.md
+<https://github.com/rust-unofficial/awesome-rust>
 
-polish the intro
+<https://github.com/rust-unofficial/patterns>
 
-add GA
+<https://github.com/brson/stdx>
+
+<https://opheron.github.io/rust-starter-pack/>
 
 explanation text for language pages
 
