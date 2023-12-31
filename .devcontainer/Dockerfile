@@ -112,12 +112,12 @@ RUN cargo fmt --all --check
 ## Make sure all examples compile
 ## Test all examples
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - see .cargo/config.toml for release profile config.
+## - see .cargo/config.toml for `ci` profile config.
 RUN <<EOF
-cargo clippy --workspace --all-targets --locked --release -- --deny warnings
-cargo check --workspace --all-targets --locked --release
-cargo build --workspace --all-targets --locked --release
-cargo test --workspace --all-targets --locked --release
+cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
+cargo check --workspace --all-targets --locked --profile ci
+cargo build --workspace --all-targets --locked --profile ci
+cargo test --workspace --all-targets --locked --profile ci
 EOF
 
 ## Test the examples embedded in the markdown

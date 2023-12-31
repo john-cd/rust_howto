@@ -122,11 +122,18 @@ target-dir="/cargo-target-rust_howto/target"
 # codegen-units = 16
 # rpath = false
 
-## "Release" is used by the Github Action CD/CI workflow only -  no need to optimize heavily
-[profile.release]
+## "ci" is used by the Github Action CD/CI workflow -  no need to optimize heavily
+[profile.ci]
+inherits = "release"  # Inherits debug = false debug-assertions = false overflow-checks = false incremental = false...
+opt-level = "s"       # Optimize for binary size
+strip = true          # Stripping debug info can greatly reduce binary size.
+lto = "off"           # No link-time optimization
+codegen-units = 256   # More code generation units allows more of a crate to be processed in parallel possibly reducing compile time, but may produce slower code.
+# see: https://doc.rust-lang.org/cargo/reference/profiles.html
+# see: https://nnethercote.github.io/perf-book/build-configuration.html
+
+[profile.ci.package."*"]  # Override profile for all packages.
 opt-level = 0
-incremental = false
-codegen-units = 256
 
 # [registries.<name>]  # registries other than crates.io
 # index = "…"          # URL of the registry index
