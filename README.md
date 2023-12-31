@@ -71,9 +71,9 @@ Verify the markdown is properly rendered using `just serve` or `mdbook serve --o
 
 ## Dev Container and Docker
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to installs `mdbook` and rust tooling.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install `mdbook` and rust tooling.
 
-If you don't want to use Dev Container, use the following from the project's root directory to manually build the Docker image and run it.
+If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg WORK_DIR=/build .
@@ -94,7 +94,7 @@ To connect to the (host OS) docker engine from within the container, add
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
 ```
 
-## Continuous Integration
+## Deployment to GitHub Pages
 
 The continuous integration worflow is found under `.github`.
 
