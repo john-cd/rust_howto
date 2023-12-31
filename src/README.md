@@ -34,7 +34,6 @@ The [Rust cookbook]( https://rust-lang-nursery.github.io/rust-cookbook/ ) demons
 
 This book is in its **early days** - feel free to submit an issue or a pull request to the [repo]( https://github.com/john-cd/rust_howto ).
 
-Contributions, from small edits to whole chapters, are most welcome. An informal (and very long) list of topics of interest is kept in [TODO](../TODO.md).
-Embedded examples should be ideally _runnable_ on the [Rust playground]( https://play.rust-lang.org/ ) or at least directly copy-pastable into the reader's code.Please read [CONTRIBUTING.md](../CONTRIBUTING.md) for more details.
+Contributions, from small edits to whole chapters, are most welcome. An informal (and very long) list of topics of interest is kept in [TODO](https://github.com/john-cd/rust_howto/blob/main/TODO.md). Embedded examples should be ideally _runnable_ on the [Rust playground]( https://play.rust-lang.org/ ) or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md](https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md) for more details.
 
 This site is not affiliated with the [Rust Foundation]( https://foundation.rust-lang.org/ ).
