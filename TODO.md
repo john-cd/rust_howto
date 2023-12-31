@@ -6,11 +6,9 @@ review example testing using libraries outside of `std` - make mdbook-keeper wor
 
 make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
-revisit workflow.yml; make new dockerfile work with it
+revisit workflow.yml; make new dockerfile work with it; revisit CI section of main README.md
 
-write the intro
-
-revisit CI section of main README.md
+polish the intro
 
 add GA
 
@@ -28,7 +26,7 @@ finish Cargo Plugins / cargo.md
 
 finish faster linking
 
-separate web
+web examples into separate section
 
 review Install Rust
 
@@ -47,8 +45,6 @@ database access:
 
 - sqlx [sqlx](https://github.com/launchbadge/sqlx)
 - seaORM
-
-incorporate examples
 
 CI / CD: rust-cache
 
