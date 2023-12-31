@@ -1,8 +1,8 @@
-# Examples
+# Deps
 
-This folder contains examples that are embedded into the book.
+The `examples` folder contains Rust code examples that are embedded into the book.
 
-Run `cargo add <crate>` in this folder or edit `Cargo.toml` in this folder to add dependencies that the Rust code embedded into the book markdown or the examples requires.
+Run `cargo add <crate>` (or edit `Cargo.toml`) in this folder to add new dependencies that these examples may require.
 
 ## Common commands
 
