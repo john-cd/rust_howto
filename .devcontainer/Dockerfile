@@ -98,11 +98,6 @@ ENV CARGO_TARGET_DIR=./target/
 ## Fails if not formatted properly
 RUN cargo fmt --all --check
 
-## Lint all examples
-## - Elevate clippy warnings to errors, which will in turn fail the build.
-## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-RUN cargo clippy --workspace --all-targets --locked -- --deny warnings
-
 ## Check dependencies
 # RUN cargo deny check \
 #     && cargo outdated --exit-code 1 \
@@ -111,18 +106,20 @@ RUN cargo clippy --workspace --all-targets --locked -- --deny warnings
 #     && cargo audit \
 #     && cargo pants
 
+## Lint all examples
+## - Elevate clippy warnings to errors, which will in turn fail the build.
 ## Check all examples
-RUN cargo check --workspace --all-targets --locked
-
 ## Make sure all examples compile
-RUN cargo build --workspace --all-targets --locked
-## --release is not necessary; we don't execute any of them later
-
 ## Test all examples
-RUN cargo test --workspace --all-targets --locked
+## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+## - see .cargo/config.toml for release profile config.
+RUN <<EOF
+cargo clippy --workspace --all-targets --locked --release -- --deny warnings
+cargo check --workspace --all-targets --locked --release
+cargo build --workspace --all-targets --locked --release
+cargo test --workspace --all-targets --locked --release
+EOF
 
 ## Test the examples embedded in the markdown
-RUN mdbook test
-
 ## Build the book and copy into ./book
-RUN mdbook build
+RUN mdbook test && mdbook build
