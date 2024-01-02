@@ -113,3 +113,6 @@ Example `.github/workflows/<name>.yml`
 ## See also
 
 [Optimizing CI/CD pipelines in your Rust projects]( https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/ )
+
+<https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>
+<https://github.com/marketplace/actions/upload-a-build-artifact>
