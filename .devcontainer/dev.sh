@@ -4,6 +4,9 @@ echo "-------------------------------------------"
 echo "Format the code"
 cargo fmt --all
 
+echo "Fetch the dependencies"
+cargo fetch
+
 echo "Build all examples"
 cargo build --workspace --all-targets
 

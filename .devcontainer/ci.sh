@@ -16,6 +16,9 @@ cargo fmt --all --check
 #     && cargo audit \
 #     && cargo pants
 
+## Fetch the dependencies
+cargo fetch
+
 ## Lint all examples
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
