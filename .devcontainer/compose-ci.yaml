@@ -3,5 +3,5 @@ services:
     image: rust_howto_ci:${IMAGE_VERSION}  # Name and tag of the image that will be built
     volumes:
       - type: bind
-        source: ./book       # on Windows, something like: /d/book
+        source: ${BOOK_PATH}       # on Windows, something like: /d/book; on Linux, ../book; relative path is resolved from the Compose file’s directory
         target: /code/book
