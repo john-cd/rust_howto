@@ -4,7 +4,6 @@
 # See also https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 #
 name: Deploy mdBook site to Pages
-# run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
   # Runs on pushes targeting the default branch
@@ -27,12 +26,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
+  ## Build job
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event. Operating system: ${{ runner.os }}"
-      - uses: actions/checkout@v4
+      - name: Basic information
+        run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
+      - name: Code checkout
+        uses: actions/checkout@v4
       ## Rust
       # - name: Set up cargo cache
       #   uses: actions/cache@v3
