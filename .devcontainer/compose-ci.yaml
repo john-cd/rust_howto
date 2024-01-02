@@ -3,5 +3,5 @@ services:
     image: rust_howto_ci:${IMAGE_VERSION}  # Name and tag of the image that will be built
     volumes:
       - type: bind
-        source: /d/book
+        source: ./book       # on Windows, something like: /d/book
         target: /code/book
