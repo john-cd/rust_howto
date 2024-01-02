@@ -1,29 +1,22 @@
+// Dev Container setup
+// Keep this file as simple as possible and use Docker Compose files to configure the container instead.
 // For format details, see https://aka.ms/devcontainer.json.
 {
     "name": "mdbook on Debian",
-
     // More info: https://containers.dev/guide/dockerfile
-    "build": {  "dockerfile": "Dockerfile",
-                "context" : "..",
-                "target": "development",
-                "args": {
-                    "WORK_DIR": "${containerWorkspaceFolder}"
-                } // build args format: "MYARG": "MYVALUE", "MYARGFROMENVVAR": "${localEnv:VARIABLE_NAME}" }
-            },
+    "dockerComposeFile": [
+        "compose.yaml",
+        "compose.override.yaml"
+    ],
+    // The 'service' property is the name of the service in .devcontainer/compose.yaml
+    // for the container that VS Code should use.
+    "service": "book",
+    // The optional 'workspaceFolder' property is the path VS Code should open by default when
+    // connected. This is typically a file mount in .devcontainer/compose.yaml
+    "workspaceFolder": "/code",
 
-    "mounts": [{ "source": "rust_howto_cargo-crate-cache", "target": "/usr/local/cargo/registry/", "type": "volume"},
-               { "source": "rust_howto_cargo-target-cache", "target": "/cargo-target-rust_howto/", "type": "volume" }],
-
-    // Required for ptrace based debuggers like C++ / Rust to work in the container
-    "runArgs": [ "--cap-add=SYS_PTRACE",
-                 "--security-opt",
-                 "seccomp=unconfined"],
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// example: "features": {},
-    // example: "features": {
-	// 	"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {}
-	// },
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // We install Docker within the container and connect to the host OS docker engine.
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
             "installDockerBuildx": true,
@@ -31,28 +24,24 @@
             "dockerDashComposeVersion": "v2"
         }
     },
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
-
-	// Configure tool-specific properties.
-	// example: "customizations": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+        3000
+    ],
+    // Configure tool-specific properties.
     "customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-azuretools.vscode-docker",
-				"EditorConfig.EditorConfig",
-				"tamasfe.even-better-toml",
-				"DavidAnson.vscode-markdownlint",
-				"serayuzgur.crates",
-				"vadimcn.vscode-lldb",
-				"rust-lang.rust-analyzer"
-			]
-		}
-	},
-
-    // Execute the following script (if present) each time the container is successfully started.
-    "postStartCommand": "if [ -f ./.devcontainer/start.sh ]; then ./.devcontainer/start.sh; fi;",
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "EditorConfig.EditorConfig",
+                "tamasfe.even-better-toml",
+                "DavidAnson.vscode-markdownlint",
+                "serayuzgur.crates",
+                "vadimcn.vscode-lldb",
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    },
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     "remoteUser": "root"

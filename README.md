@@ -76,8 +76,8 @@ The `development` target of the multi-stage `.devcontainer\Dockerfile` is used b
 If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg WORK_DIR=/build .
-docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/build  rust_howto_dev
+docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_VERSION=1.75.0 .
+docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code  rust_howto_dev
 docker exec -it rust_howto_dev1 bash
 ```
 
@@ -94,6 +94,26 @@ To connect to the (host OS) docker engine from within the container, add
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
 ```
 
+## Docker Compose
+
+Test the developement container (which get called by Dev Container)
+
+```bash
+cd ./.devcontainer
+docker compose build   # uses compose.yaml and compose.override.yaml
+docker compose up -d
+# or simply
+docker compose up --build -d
+```
+
+Test the docker compose setup used during CI:
+
+```bash
+cd ./.devcontainer
+docker compose -f compose.yaml -f compose-ci.yaml build
+docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker compose -f compose.yaml -f compose-ci.yaml up
+```
+
 ## Deployment to GitHub Pages
 
 The continuous integration worflow is found under `.github`.
@@ -104,7 +124,7 @@ To test the `docker` image manually, use
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci .
-docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/build/book rust_howto_ci bash
+docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
 ```
 
 **NOTE:** this is WORK IN PROGRESS.

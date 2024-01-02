@@ -4,18 +4,21 @@
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
 
-ARG RUST_VERSION=1.75.0
+ARG RUST_VERSION
 FROM rust:${RUST_VERSION}-bookworm as base
 # alternative: mcr.microsoft.com/devcontainers/rust:bookworm
 
 SHELL ["bash", "-c"]
 
 ## Install linker and other utilities
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install fzf mold clang \
-    # Remove imagemagick due to https://security-tracker.debian.org/tracker/CVE-2019-10131
-    && apt-get purge -y imagemagick imagemagick-6-common \
-    && apt-get autoremove -y && apt-get clean -y
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update \
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends fzf mold clang \
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
 # Alternatively, use `lld` instead of the `mold` linker
 # Configuration in .cargo/config.toml
 
@@ -23,8 +26,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN rustup update
 
 ## Install fmt and clippy if needed
-RUN rustup component add clippy
-RUN rustup component add rustfmt
+RUN rustup component add clippy rustfmt
 
 ## Install cargo binstall (binary install)
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
@@ -42,7 +44,7 @@ RUN cargo binstall --no-confirm just
 # EOF
 
 ## Install mdbook from the binary release
-ARG MDBOOK_VERSION=0.4.36
+ARG MDBOOK_VERSION
 RUN cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
 ## Alternatively
 # RUN <<EOF
@@ -62,64 +64,37 @@ RUN cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
 
+WORKDIR /code
 
 ## --------------------------------
 ## Stage to use for development
 FROM base as development
 
-## Dev Container typically mounts the project root to /workspace/<project_name>/ in the container.
-## There is no way to specify Docker's option -w in `devcontainer.json`.
-## Therefore we pass the path as a build arg and use it to set the working directory in the container.
-## (see devcontainer.json)
-ARG WORK_DIR
-WORKDIR ${WORK_DIR}
-
-## `devcontainer.json` mounts the following two folders to named volumes for caching purposes:
-## - /usr/local/cargo/registry/
-## - /cargo-target-rust_howto/
-## The latter is the compile target directory which is overriden in `.cargo/config.toml`
+## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
+    && echo "$SNIPPET" >> "/root/.bashrc"
 
 ## For `mdbook serve --open`
 EXPOSE 3000
 
+## https://code.visualstudio.com/remote/advancedcontainers/start-processes
+COPY --chmod=755 .devcontainer/dev.sh ./.devcontainer/
+ENTRYPOINT [ "./.devcontainer/dev.sh" ]
+
 ## Sleep to keep the container running.
-CMD sleep infinity
+## The command is passed to `start.sh`.
+CMD [ "sleep", "infinity" ]
 
 ## --------------------------------
 ## Stage for Continuous Integration
 FROM base as ci
 
-WORKDIR /build
+## Copy the code in the container (in WORKDIR), excluding what is in .dockerignore
 COPY . .
 
 ENV CARGO_TARGET_DIR=./target/
 
-## Checks the Rust code formatting
-## Fails if not formatted properly
-RUN cargo fmt --all --check
+## Make sure the start script has permission to execute
+RUN chmod +x ./.devcontainer/ci.sh
 
-## Check dependencies
-# RUN cargo deny check \
-#     && cargo outdated --exit-code 1 \
-#     && cargo udeps \
-#     && rm -rf ~/.cargo/advisory-db \
-#     && cargo audit \
-#     && cargo pants
-
-## Lint all examples
-## - Elevate clippy warnings to errors, which will in turn fail the build.
-## Check all examples
-## Make sure all examples compile
-## Test all examples
-## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - see .cargo/config.toml for `ci` profile config.
-RUN <<EOF
-cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
-cargo check --workspace --all-targets --locked --profile ci
-cargo build --workspace --all-targets --locked --profile ci
-cargo test --workspace --all-targets --locked --profile ci
-EOF
-
-## Test the examples embedded in the markdown
-## Build the book and copy into ./book
-RUN mdbook test && mdbook build
+ENTRYPOINT [ "./.devcontainer/ci.sh" ]

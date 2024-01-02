@@ -1,0 +1,22 @@
+## DEV settings
+##
+## Override / merges with settings in compose.yaml
+## Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
+services:
+  book:
+    image: rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
+    build:
+      target: development
+    volumes:
+      - command_history:/command_history
+      - type: bind
+        source: .. # relative to the Compose file’s directory
+        target: /code
+    # Required for ptrace-based debugger like C++, Go, and Rust.
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+
+volumes:
+  command_history:
