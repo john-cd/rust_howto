@@ -76,16 +76,16 @@ The `development` target of the multi-stage `.devcontainer\Dockerfile` is used b
 If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_VERSION=1.75.0 .
+docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_VERSION=1.75.0 --build-arg MDBOOK_VERSION=0.4.36 .
 docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code  rust_howto_dev
 docker exec -it rust_howto_dev1 bash
 ```
 
-To cache the crate and the target folders, add
+To cache the crate and the target folders from run to run, add
 
 ```bash
---mount type=volume,src=rust_howto_cargo-crate-cache,dst=/usr/local/cargo/registry/
---mount type=volume,src=rust_howto_cargo-target-cache,dst=/cargo-target-rust_howto/
+--mount type=volume,src=rust_howto_cargo_crate_cache,dst=/usr/local/cargo/registry/
+--mount type=volume,src=rust_howto_cargo_target_cache,dst=/cargo-target-rust_howto/
 ```
 
 To connect to the (host OS) docker engine from within the container, add
@@ -96,7 +96,7 @@ To connect to the (host OS) docker engine from within the container, add
 
 ## Docker Compose
 
-Test the developement container (which get called by Dev Container)
+Test the docker compose setup used during developement (which Dev Container runs) with:
 
 ```bash
 cd ./.devcontainer
@@ -106,17 +106,17 @@ docker compose up -d
 docker compose up --build -d
 ```
 
-Test the docker compose setup used during CI:
+## Deployment to GitHub Pages
+
+The continuous integration worflow is found under `.github`.
+
+Test the docker compose setup used during CI using:
 
 ```bash
 cd ./.devcontainer
 docker compose -f compose.yaml -f compose-ci.yaml build
 docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker compose -f compose.yaml -f compose-ci.yaml up
 ```
-
-## Deployment to GitHub Pages
-
-The continuous integration worflow is found under `.github`.
 
 The `ci` target in the `Dockerfile` is meant to be used by the GitHub Action continuous workflow.
 
@@ -127,7 +127,7 @@ docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
 ```
 
-**NOTE:** this is WORK IN PROGRESS.
+[Related Stackoverflow question]( https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action )
 
 ## Optional pre-processors
 
