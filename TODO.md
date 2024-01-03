@@ -2,15 +2,15 @@
 
 docker layer caching
 
-https://docs.docker.com/build/ci/github-actions/
+<https://docs.docker.com/build/ci/github-actions/>
 
-https://docs.docker.com/build/cache/backends/
+<https://docs.docker.com/build/cache/backends/>
 
-https://docs.docker.com/build/ci/github-actions/cache/
-https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
-https://github.com/actions/cache/issues/31
-[docker-cache](https://github.com/ScribeMD/docker-cache)
-[cached-docker-images](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images)
+<https://docs.docker.com/build/ci/github-actions/cache/>
+
+<https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>
+
+<https://github.com/actions/cache/issues/31>
 
 revisit CI section of main README.md
 
@@ -37,13 +37,9 @@ Search within the book
 
 Algolia
 
-<https://github.com/rust-unofficial/awesome-rust>
+Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
 
-<https://github.com/rust-unofficial/patterns>
-
-<https://github.com/brson/stdx>
-
-<https://opheron.github.io/rust-starter-pack/>
+Review <https://github.com/rust-unofficial/patterns> - already in links.md
 
 explanation text for language pages
 
@@ -69,14 +65,13 @@ finish Option page
 
 map, unwrap_or
 
-CLI: clap
-[Clap](https://github.com/clap-rs/clap)
+CLI: clap example
 
 move clap / CLI example to xmpl
 
 database access:
 
-- sqlx [sqlx](https://github.com/launchbadge/sqlx)
+- sqlx
 - seaORM
 
 CI / CD: rust-cache
@@ -85,19 +80,11 @@ cargo outdated / audit / license / deny
 
 review deny.toml
 
-<https://lib.rs/crates/cargo-hack>
-
-<https://github.com/matklad/cargo-xtask>
-
-<https://github.com/ThePuzzlemaker/cargo-crates>
-
 review rustfmt.toml
 
 IDEs - add latest JetBrains tooling
 
-Loco
-
-[Loco article](https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails)
+Loco.md in drafts
 
 more details in the standard library section
 
@@ -110,11 +97,8 @@ add more to tokio.md
 - I/O
 - Join, select
 - <https://tokio.rs/tokio/topics/tracing-next-steps>
-- [Async stream](https://github.com/tokio-rs/async-stream)
 
 add more to async_channels
-
-<https://docs.rs/async-channel/latest/async_channel/>
 
 <https://ryhl.io/blog/async-what-is-blocking/>
 
@@ -124,29 +108,17 @@ add more to async_channels
 
 Tower
 
-[Building a SaaS with Rust and Next.js](<https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/>)
-
 finish actor.md
 
 finish Comparison to other languages
 
 AWS
-<https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>
-<https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples>
-<https://github.com/awsdocs/aws-doc-sdk-examples>
 
 walkdir, notify, indicatif, ratatui
 
-- regex
-[Regex](https://github.com/rust-lang/regex)
+- regex.md
 - time
 - chrono
-
-<https://lib.rs/crates/serde_json>
-
-[monostate for serde](https://github.com/dtolnay/monostate)
-
-[serde-ignored](https://github.com/dtolnay/serde-ignored)
 
 traits
 
@@ -168,19 +140,6 @@ testing: Approx example
 
 Macros
 
-- cargo expand
-- syn, quote, paste
-
-[paste](https://github.com/dtolnay/paste)
-
-[proc-macro2](https://github.com/dtolnay/proc-macro2)
-
-[syn](https://github.com/dtolnay/syn)
-
-[proc macro workshop](https://github.com/dtolnay/proc-macro-workshop)
-
-[Watt](https://github.com/dtolnay/watt)
-
 [Dyn Clone]( https://github.com/dtolnay/dyn-clone )
 
 egui
@@ -197,53 +156,21 @@ rust axum example
 
 shuttle.rs example
 
-Windows
+windows.md
 
-[windows-rs](https://github.com/microsoft/windows-rs)
-
-[native windows gui](https://github.com/gabdube/native-windows-gui)
-
-CLI
-
-[open-rs](https://github.com/Byron/open-rs)
-
-Tools
-
-[startship]( https://github.com/starship/starship )
-
-[Bacon]( https://github.com/Canop/bacon )
-
-[Roogle]( https://roogle.hkmatsumoto.com/search )
-
-[Roogle]( https://github.com/roogle-rs/roogle )
-
-[Bat]( https://github.com/sharkdp/bat )
+other_tools.md
 
 Data
 
-[polars](https://github.com/pola-rs/polars)
-
-GPU
-
-[rust-gpu](https://github.com/EmbarkStudios/rust-gpu)
+GPU.md
 
 Python
 
-[pyOxidizer](https://github.com/indygreg/PyOxidizer)
-
 Books
 
-<https://github.com/nnethercote/perf-book>
-
-[Salsa](https://github.com/salsa-rs/salsa)
-
-Games
-
-[Bevy](https://github.com/bevyengine/bevy )
+games.md
 
 Languages
-
-[Rust quizz](https://dtolnay.github.io/rust-quiz)
 
 ## Topics of interest
 
