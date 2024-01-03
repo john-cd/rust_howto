@@ -22,8 +22,6 @@ Per the curated list of Rust crates [blessed.rs]( https://blessed.rs/crates ), "
 
 This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the typically dry [reference docs](https://docs.rs/), and hopes to become a "cheatsheet on steroid" for the Rust ecosystem (_not just_ the Rust language).
 
-Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs]( https://blessed.rs/crates ), the most downloaded libraries in [crates.io]( https://crates.io/ ), and 'high quality crates' per [lib.rs]( https://lib.rs/ ) [statistics]( https://lib.rs/stats ).
-
 ## What other books should I consult?
 
 [Rust by Example]( https://doc.rust-lang.org/rust-by-example/index.html ) is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
@@ -34,6 +32,8 @@ The [Rust cookbook]( https://rust-lang-nursery.github.io/rust-cookbook/ ) demons
 
 This book is in its **early days** - feel free to submit an issue or a pull request to the [repo]( https://github.com/john-cd/rust_howto ).
 
-Contributions, from small edits to whole chapters, are most welcome. An informal (and very long) list of topics of interest is kept in [TODO](https://github.com/john-cd/rust_howto/blob/main/TODO.md). Embedded examples should be ideally _runnable_ on the [Rust playground]( https://play.rust-lang.org/ ) or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md](https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md) for more details.
+Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder]( https://github.com/john-cd/rust_howto/tree/main/drafts ). An informal (and very long) list of topics of interest is kept in [TODO]( https://github.com/john-cd/rust_howto/blob/main/TODO.md ). Embedded examples should be ideally _runnable_ on the [Rust playground]( https://play.rust-lang.org/ ) or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md]( https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md ) for more details.
+
+Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs]( https://blessed.rs/crates ), the most downloaded libraries in [crates.io]( https://crates.io/ ), and 'high quality crates' per [lib.rs]( https://lib.rs/ ) [statistics]( https://lib.rs/stats ). Review [essential crates](links/essential_crates.md) for topic ideas.
 
 This site is not affiliated with the [Rust Foundation]( https://foundation.rust-lang.org/ ).
