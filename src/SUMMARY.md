@@ -83,6 +83,7 @@
 - [Links](links/links.md)
   - [Example code](links/example_code.md)
   - [Cheatsheets](links/rust_cheatsheets.md)
+  - [Essential crates](links/essential_crates.md)
   - [Blogs](links/blogs.md)
   - [Books](links/books.md)
   - [Companies](links/companies.md)
