@@ -18,6 +18,8 @@ polish the intro
 
 add GA
 
+logo
+
 finish to review examples marked `ignore`
 
 review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
