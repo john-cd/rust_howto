@@ -118,7 +118,7 @@ docker compose -f compose.yaml -f compose-ci.yaml build
 docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker compose -f compose.yaml -f compose-ci.yaml up
 ```
 
-The `ci` target in the `Dockerfile` is meant to be used by the GitHub Action continuous workflow.
+It uses the `ci` target in `.devcontainer/Dockerfile`.
 
 To test the `docker` image manually, use
 
@@ -131,24 +131,20 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_h
 
 ## Optional pre-processors
 
-[mdbook-linkcheck]( https://github.com/Michael-F-Bryan/mdbook-linkcheck ) is a backend for `mdbook` that will check links.
-
+- [mdbook-linkcheck]( https://github.com/Michael-F-Bryan/mdbook-linkcheck ) is a backend for `mdbook` that will check links.
 Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
-
-[mdbook-hide]( https://github.com/ankitrgadiya/mdbook-hide/ )
-
-Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add this special Comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
+- [mdbook-hide]( https://github.com/ankitrgadiya/mdbook-hide/ ) hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
 ```xml
 <!--hidden-->
 ```
 
-[mdbook-keeper]( https://crates.io/crates/mdbook-keeper )
+- [mdbook-keeper]( https://crates.io/crates/mdbook-keeper ). Install with
 
 ```bash
 cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>
 ```
 
-## Links
+## Reference
 
 [mdBook]( https://rust-lang.github.io/mdBook/index.html )

@@ -34,20 +34,17 @@ jobs:
         run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
       - name: Code checkout
         uses: actions/checkout@v4
-      ## Rust
-      ## https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
+      ## Use the following in conjunction with cache_from/to type=local in compose-ci.yaml if type=gha caching does not work
+      ## See also https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
       # - name: Set up cargo cache
       #   uses: actions/cache@v3
       #   continue-on-error: false
       #   with:
       #     path: |
-      #       ~/.cargo/bin/
-      #       ~/.cargo/registry/index/
-      #       ~/.cargo/registry/cache/
-      #       ~/.cargo/git/db/
-      #       target/
+      #       ./.cache/
       #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       #     restore-keys: ${{ runner.os }}-cargo-
+      ## Rust
       - name: Build docker image
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml build
       - name: Create book directory

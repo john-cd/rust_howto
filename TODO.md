@@ -1,19 +1,5 @@
 # TODO
 
-docker layer caching
-
-<https://docs.docker.com/build/ci/github-actions/>
-
-<https://docs.docker.com/build/cache/backends/>
-
-<https://docs.docker.com/build/ci/github-actions/cache/>
-
-<https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>
-
-<https://github.com/actions/cache/issues/31>
-
-revisit CI section of main README.md
-
 polish the intro
 
 add GA
