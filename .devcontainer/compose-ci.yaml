@@ -1,7 +1,16 @@
+name: rust_howto_ci
 services:
   book:
     image: rust_howto_ci:${IMAGE_VERSION}  # Name and tag of the image that will be built
+    build:
+      target: ci
+      cache_from:
+        - type=gha                          # GitHub Action cache
+        #- type=local,dest=./.cache
+      cache_to:
+        - type=gha,mode=max
+        #- type=local,dest=./.cache
     volumes:
       - type: bind
-        source: ${BOOK_PATH}       # on Windows, something like: /d/book; on Linux, ../book; relative path is resolved from the Compose file’s directory
+        source: ${BOOK_PATH}                # See .env file
         target: /code/book

@@ -2,21 +2,32 @@
 ##
 ## Override / merges with settings in compose.yaml
 ## Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
+name: rust_howto_dev
 services:
   book:
     image: rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
     build:
       target: development
     volumes:
-      - command_history:/command_history
       - type: bind
         source: .. # relative to the Compose file’s directory
         target: /code
-    # Required for ptrace-based debugger like C++, Go, and Rust.
+      - cargo_home_cache:/usr/local/cargo/ # https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache
+      - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml
+      - command_history:/command_history
+
+    ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
 
+# Create volumes in dev only, since the CI virtual machine is emepheral
 volumes:
+  cargo_home_cache:
+    name: "cargo_home_cache_${RUST_VERSION}"
+  cargo_target_cache:
+    name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION}"
   command_history:
+    name: "${COMPOSE_PROJECT_NAME}_command_history"
+## Without custom names, the docker volumes will be prefixed by the compose project name + _

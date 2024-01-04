@@ -1,23 +1,12 @@
 # Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
 version: "3.8"
-name: rust_howto
 services:
   book:
     build:
       context: ..
-      dockerfile: .devcontainer/Dockerfile # path relative to context
-      target: ci
+      dockerfile: .devcontainer/Dockerfile  # path relative to context
       args:
-        RUST_VERSION: ${RUST_VERSION}
+        RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL}
         MDBOOK_VERSION: ${MDBOOK_VERSION}
       cache_from:
-        - rust:${RUST_VERSION}-bookworm
-    volumes:
-      - cargo_crate_cache:/usr/local/cargo/registry/
-      - cargo_target_cache:/code/target
-
-
-volumes:
-  cargo_crate_cache:
-  cargo_target_cache:
-## The actual docker volume names will be prefixed by the compose project name + _
+        - rust:${RUST_IMAGE_LABEL}

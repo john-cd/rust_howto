@@ -4,8 +4,8 @@
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
 
-ARG RUST_VERSION
-FROM rust:${RUST_VERSION}-bookworm as base
+ARG RUST_IMAGE_LABEL
+FROM rust:${RUST_IMAGE_LABEL} as base
 # alternative: mcr.microsoft.com/devcontainers/rust:bookworm
 
 SHELL ["bash", "-c"]
