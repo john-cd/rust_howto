@@ -18,12 +18,15 @@
     // Features to add to the dev container. More info: https://containers.dev/features.
     // We install Docker within the container and connect to the host OS docker engine.
     "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-            "installDockerBuildx": true,
-            "version": "latest",
-            "dockerDashComposeVersion": "v2"
-        }
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     },
+    // "features": {
+    //    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+    //        "installDockerBuildx": true,
+    //        "version": "latest",
+    //        "dockerDashComposeVersion": "v2"
+    //    }
+    // },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
         3000
