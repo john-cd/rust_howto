@@ -28,8 +28,11 @@ fn example() -> Result<(), Box<dyn std::error::Error>> {
 
 fn main() {
     match example() {
-        Ok(_) => { println!("Got OK"); },
-        Err(err) => { println!("Got {}", err); }
+        Ok(_) => {
+            println!("Got OK");
+        }
+        Err(err) => {
+            println!("Got {}", err);
+        }
     }
 }
-
