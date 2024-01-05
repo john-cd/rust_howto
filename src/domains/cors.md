@@ -4,6 +4,6 @@
 
 Using the Tower ecosystem:
 
-```rust,editable,ignore
+```rust,editable,ignore,noplayground
 {{#include ../../deps/examples/cors.rs}}
 ```

@@ -10,7 +10,7 @@ There are combinator-style methods such as `map`, `filter`, and `fold`, and thei
 
 To process multiple items from a stream concurrently, use the `for_each_concurrent` and `try_for_each_concurrent` methods:
 
-```rust,editable,ignore
+```rust,editable,ignore,noplayground
 {{#include ../../deps/examples/streams2.rs}}
 ```
 

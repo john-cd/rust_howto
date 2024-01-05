@@ -21,7 +21,7 @@ HTTP specific Tower utilities
 
 [tower_http documentation]( https://docs.rs/tower-http/latest/tower_http/ )
 
-```rust,ignore
+```rust,ignore,noplayground
 {{#include ../../deps/examples/tower_http.rs}}
 ```
 
