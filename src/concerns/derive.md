@@ -12,7 +12,6 @@ You can use the `cargo-expand` utility to see the exact code that is generated f
 
 [Derive More]( https://crates.io/crates/derive_more ) derive lots of additional, commonly used traits and static methods for both structs and enums.
 
-```rust,editable,ignore,noplayground
-# extern crate derive_more;
+```rust,editable,noplayground
 {{#include ../../deps/examples/derive_more.rs}}
 ```
