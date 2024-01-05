@@ -1,18 +1,19 @@
 # TODO
 
-tower_http example polish
+tower_http example polish; other examples have been checked against the rust playground
 
 polish the intro
 
-add GA
+add GA; recreate index.hbs in theme
+
+review example testing using libraries outside of `std` - WIP; review generate.sh
+
+- make mdbook-keeper work or use rustdoc / doctest instead
+- make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+
+license
 
 logo
-
-finish to review examples marked `ignore`
-
-review example testing using libraries outside of `std` - make mdbook-keeper work or use rustdoc / doctest instead
-
-make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
 Search within the book
 
@@ -31,9 +32,9 @@ Review <https://github.com/rust-unofficial/patterns> - already in links.md
 
 explanation text for language pages
 
-license
+web examples into separate section
 
-recreate index.hbs in theme
+review Install Rust
 
 finish cd_ci.md
 
@@ -42,10 +43,6 @@ finish improve_speed
 finish Cargo Plugins / cargo.md
 
 finish faster linking
-
-web examples into separate section
-
-review Install Rust
 
 review Configuration page
 
