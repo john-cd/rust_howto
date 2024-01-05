@@ -12,7 +12,7 @@ It supersedes [dotenv]( https://crates.io/crates/dotenv )
 
 To retrieve a single environment variable
 
-```rust,editable,,should_panic
+```rust,editable,should_panic
 {{#include ../../deps/examples/env.rs}}
 ```
 
