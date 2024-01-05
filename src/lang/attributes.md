@@ -15,28 +15,14 @@ Inner attributes `#![attr]` apply to the item that the attribute is declared wit
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
-```rust,editable,ignore
-#![allow(unused_variables)]
-#![allow(unused_mut)]
-#![allow(unused_imports)]
-#![allow(unused_must_use)]
-// or simply #[allow(unused)]
-#![allow(dead_code)]
-#[allow(missing_docs)]
+```rust,editable
+{{#include ../../deps/examples/attributes_debug.rs}}
 ```
 
 For production-ready code, replace the above by the following, for example.
 
-```rust,editable,ignore
-#![warn(
-    unused,
-    missing_debug_implementations,
-    missing_copy_implementations,
-    missing_docs,
-    rust_2018_idioms,
-)]
-#![deny(unreachable_pub)]  // error if violation
-#![forbid(unsafe_code)]    // same as `deny` +forbids changing the lint level afterwards
+```rust,editable
+{{#include ../../deps/examples/attributes_production.rs}}
 ```
 
 You also apply these attributes to specific functions:
@@ -54,14 +40,13 @@ See [Automatic derivation](../concerns/derive.md)
 ## Must Use
 
 ```rust,editable
-{{#include ../../deps/examples/must_use.rs}}
+{{#include ../../deps/examples/attributes_must_use.rs}}
 ```
 
 ## Deprecated
 
-```rust,editable,ignore
-#[deprecated(since = "5.2.0", note = "use bar instead")]
-pub fn foo() {}
+```rust,editable
+{{#include ../../deps/examples/attributes_deprecated.rs}}
 ```
 
 ## Conditional Compilation
