@@ -6,7 +6,7 @@
 
 DashMap tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
-```rust,editable,ignore
+```rust,editable,ignore,noplayground
 {{#include ../../deps/examples/dashmap.rs}}
 ```
 
