@@ -15,7 +15,7 @@
 
 `rustdoc` uses the CommonMark Markdown specification.
 
-```rust,editable,ignore
+```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/rustdoc.rs}}
 ```
 
