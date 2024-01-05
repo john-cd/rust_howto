@@ -64,6 +64,8 @@ RUN cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
 
+RUN cargo binstall --no-confirm ripgrep
+
 WORKDIR /code
 
 ## --------------------------------
