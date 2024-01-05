@@ -8,7 +8,9 @@ async fn countdown() {
     }
 }
 
-async fn countdown_subsystem(subsys: SubsystemHandle) -> std::result::Result<(), Box<dyn std::error::Error + Send + Sync>> {
+async fn countdown_subsystem(
+    subsys: SubsystemHandle,
+) -> std::result::Result<(), Box<dyn std::error::Error + Send + Sync>> {
     tokio::select! {
         _ = subsys.on_shutdown_requested() => {
             tracing::info!("Countdown cancelled.");
