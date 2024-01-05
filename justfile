@@ -75,8 +75,7 @@ build:
 
 # Test the examples embedded in the markdown
 test:
-  mdbook test
-#  TODO fix mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+  mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. testing of the examples embedded in the markdown)
