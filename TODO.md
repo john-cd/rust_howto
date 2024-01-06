@@ -4,16 +4,16 @@ tower_http example polish; other examples have been checked against the rust pla
 
 polish the intro
 
-add GA; recreate index.hbs in theme
-
 review example testing using libraries outside of `std` - WIP; review generate.sh
 
 - make mdbook-keeper work or use rustdoc / doctest instead
 - make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 
+update GA settings
+
 license
 
-logo
+logo / favicon
 
 Search within the book
 
@@ -35,6 +35,8 @@ explanation text for language pages
 web examples into separate section
 
 review Install Rust
+
+[Error Chain]( https://docs.rs/error-chain/latest/error_chain/ )
 
 finish cd_ci.md
 
@@ -124,8 +126,6 @@ testing: Approx example
 - elasticsearch
 
 Macros
-
-[Dyn Clone]( https://github.com/dtolnay/dyn-clone )
 
 egui
 
