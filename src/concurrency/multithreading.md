@@ -43,3 +43,5 @@ Rayon implements [join]( https://docs.rs/rayon/latest/rayon/fn.join.html ), [sco
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
 ```
+
+{{#include ../links.md}}

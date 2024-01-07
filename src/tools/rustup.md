@@ -19,10 +19,12 @@ rustup show             # Show which toolchain will be used in the current direc
 rustup target list      # Show which toolchain will be used in the current directory
 rustup toolchain list   # Overview of what is installed on your system
 rustup component list   # See a list of available and installed components.
-```  
+```
 
 [Rustup command examples]( https://rust-lang.github.io/rustup/examples.html )
 
 ## See also
 
 [Rustup documentation]( https://rust-lang.github.io/rustup/ )
+
+{{#include ../links.md}}

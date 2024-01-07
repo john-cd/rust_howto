@@ -11,3 +11,5 @@
 If you don’t have a JetBrains license, IntelliJ IDEA is available for free and supports IntelliJ Rust.
 
 If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains’ IDE suite.
+
+{{#include ../links.md}}

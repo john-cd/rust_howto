@@ -15,3 +15,5 @@
 ## Quant
 
 [rustquant]( https://lib.rs/crates/rustquant )
+
+{{#include ../links.md}}

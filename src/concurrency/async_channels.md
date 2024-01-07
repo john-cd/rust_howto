@@ -30,3 +30,5 @@ Another example:
 [async_channel]( https://docs.rs/async-channel/latest/async_channel/ )
 
 [Postage]( https://lib.rs/crates/postage )
+
+{{#include ../links.md}}

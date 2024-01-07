@@ -21,3 +21,5 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe,
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/async_traits3.rs}}
 ```
+
+{{#include ../links.md}}

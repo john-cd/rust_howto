@@ -43,3 +43,5 @@ serde = { version = "1.0", features = ["derive"] }
 ```rust,editable,ignore
 {{#include ../../deps/examples/confy.rs}}
 ```
+
+{{#include ../links.md}}

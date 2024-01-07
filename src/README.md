@@ -37,3 +37,5 @@ Contributions, from small edits to whole chapters, are most welcome. Draft pages
 Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs]( https://blessed.rs/crates ), the most downloaded libraries in [crates.io]( https://crates.io/ ), and 'high quality crates' per [lib.rs]( https://lib.rs/ ) [statistics]( https://lib.rs/stats ). Review [essential crates](links/essential_crates.md) for topic ideas.
 
 This site is not affiliated with the [Rust Foundation]( https://foundation.rust-lang.org/ ).
+
+{{#include ./links.md}}

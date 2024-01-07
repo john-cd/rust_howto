@@ -39,7 +39,7 @@ Place it in the root folder of your project. Run `just` to see a list of recipes
 
 ```makefile
 # Load a .env file, if present.
-set dotenv-load  
+set dotenv-load
 
 default:
   @just --list --unsorted
@@ -66,3 +66,5 @@ foo:
   hello='Yo'
   echo "$hello from Bash!"
 ```
+
+{{#include ../links.md}}

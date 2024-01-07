@@ -25,3 +25,5 @@
 [Bat]( https://github.com/sharkdp/bat )
 
 [Exa]( https://github.com/ogham/exa )
+
+{{#include ../links.md}}

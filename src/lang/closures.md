@@ -35,3 +35,5 @@ To force a move:
 - `FnOnce`: the closure uses the captured value by value (`T`)
 
 Functions may also be used as arguments.
+
+{{#include ../links.md}}

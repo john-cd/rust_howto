@@ -9,3 +9,5 @@ Consult the following web sites for crate recommendations:
 - [Crates.io's most (recent) downloads]( https://crates.io/crates?sort=recent-downloads )
 - [Rust starter pack]( https://opheron.github.io/rust-starter-pack/ )
 - [stdx]( https://github.com/brson/stdx )
+
+{{#include ../links.md}}

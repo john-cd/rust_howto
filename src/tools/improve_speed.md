@@ -43,3 +43,5 @@ From-scratch builds with incremental compilation enabled adds about 15–20% ove
 ## Reference
 
 [8 Solutions for Troubleshooting Your Rust Build Times]( https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e )
+
+{{#include ../links.md}}

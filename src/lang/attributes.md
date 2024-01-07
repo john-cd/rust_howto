@@ -62,3 +62,5 @@ See [Automatic derivation](../concerns/derive.md)
 [Attributes reference]( https://doc.rust-lang.org/reference/attributes.html )
 
 [Rust by example - attributes]( https://doc.rust-lang.org/rust-by-example/attribute.html )
+
+{{#include ../links.md}}

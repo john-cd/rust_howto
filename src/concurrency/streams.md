@@ -15,3 +15,5 @@ To process multiple items from a stream concurrently, use the `for_each_concurre
 ```
 
 See also [Tokio async-stream]( https://github.com/tokio-rs/async-stream )
+
+{{#include ../links.md}}

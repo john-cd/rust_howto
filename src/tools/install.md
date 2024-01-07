@@ -29,7 +29,7 @@ rustup doc
 ```bash
 cargo new hello_world
 cd hello_world
-code .      # open VS Code and edit 
+code .      # open VS Code and edit
 ```
 
 - Build / run the code.
@@ -39,3 +39,5 @@ cargo check
 cargo build
 cargo run
 ```
+
+{{#include ../links.md}}

@@ -24,3 +24,5 @@ Rust prefers snake case for variables and functions, so a method would be called
 - [Closures](../lang/closures.md)
 - [Iterators](../lang/iterators.md)
 - [Macros](../lang/macros.md)
+
+{{#include ../links.md}}

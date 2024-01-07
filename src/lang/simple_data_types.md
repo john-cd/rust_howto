@@ -20,3 +20,5 @@
 - Return the `None` value if there is overflow with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
+
+{{#include ../links.md}}

@@ -9,3 +9,5 @@
 - [Testing](tests.md)
 - [Lazy initialization](lazy_initialization.md)
 - [Documentation](documentation.md)
+
+{{#include ../links.md}}

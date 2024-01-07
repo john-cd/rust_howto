@@ -25,3 +25,5 @@ Also `else if <cond> { ... }`
 ```rust,editable
 {{#include ../../deps/examples/for.rs}}
 ```
+
+{{#include ../links.md}}

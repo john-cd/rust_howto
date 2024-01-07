@@ -49,3 +49,5 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 ## Badges
 
 [Shield.io]( https://shields.io/ )
+
+{{#include ../links.md}}

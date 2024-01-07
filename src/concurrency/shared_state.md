@@ -41,3 +41,5 @@ The most common way to share an atomic variable is to put it into an `Arc` (an a
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/shared_state_atomics.rs}}
 ```
+
+{{#include ../links.md}}

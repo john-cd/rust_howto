@@ -44,3 +44,5 @@ To avoid passing a value along, borrow the value:
 ```
 
 If you have a mutable reference to a value, you can have no other simultaneous references to that value! Functions like a read/write lock.
+
+{{#include ../links.md}}

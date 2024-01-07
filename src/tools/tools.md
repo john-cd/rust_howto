@@ -12,3 +12,5 @@
 - [Just](just.md)
 - [mdBook](mdbook.md)
 - [Other tools](other_tools.md)
+
+{{#include ../links.md}}

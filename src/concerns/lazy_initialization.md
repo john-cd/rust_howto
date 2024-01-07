@@ -19,3 +19,5 @@ once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/once_cell2.rs}}
 ```
+
+{{#include ../links.md}}

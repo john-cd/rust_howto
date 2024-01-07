@@ -53,3 +53,5 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 ## See also
 
 [eyre]( https://docs.rs/eyre/latest/eyre/ )
+
+{{#include ../links.md}}

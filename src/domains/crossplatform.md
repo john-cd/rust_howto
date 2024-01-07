@@ -9,3 +9,5 @@
  The architecture is event-driven, based on event sourcing. The Core holds the majority of state, which is updated in response to events happening in the Shell. The interface between the Core and the Shell is messaged based.
 
 The user interface layer is built natively, with modern declarative UI frameworks such as Swift UI, Jetpack Compose and React/Vue or a WASM based framework on the web.
+
+{{#include ../links.md}}

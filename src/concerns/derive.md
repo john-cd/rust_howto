@@ -15,3 +15,5 @@ You can use the `cargo-expand` utility to see the exact code that is generated f
 ```rust,editable,ignore,noplayground
 {{#include ../../deps/examples/derive_more.rs}}
 ```
+
+{{#include ../links.md}}

@@ -44,3 +44,5 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 ```rust,editable
 {{#include ../../deps/examples/modules3.rs}}
 ```
+
+{{#include ../links.md}}

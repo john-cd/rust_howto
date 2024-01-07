@@ -17,3 +17,5 @@ Struct fields follow the general rule of everything being private by default unl
 ```rust,editable
 {{#include ../../deps/examples/structs4.rs}}
 ```
+
+{{#include ../links.md}}

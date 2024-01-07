@@ -21,3 +21,5 @@ The generic lifetime `'a` will get the concrete lifetime that is equal to the sm
 ```rust,editable
 {{#include ../../deps/examples/lifetime.rs}}
 ```
+
+{{#include ../links.md}}

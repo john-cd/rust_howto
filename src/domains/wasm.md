@@ -7,3 +7,5 @@
 [What is Yew?](https://yew.rs/)
 
 [Example real world app built with Rust + Yew + WebAssembly]( https://github.com/jetli/rust-yew-realworld-example-app )
+
+{{#include ../links.md}}

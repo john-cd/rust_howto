@@ -29,3 +29,5 @@
 [proc macro workshop]( https://github.com/dtolnay/proc-macro-workshop )
 
 [Watt]( https://github.com/dtolnay/watt )
+
+{{#include ../links.md}}

@@ -44,3 +44,5 @@ If the `Option` is None:
 ```rust,editable
 {{#include ../../deps/examples/options3.rs}}
 ```
+
+{{#include ../links.md}}

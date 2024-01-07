@@ -26,3 +26,5 @@ The `futures` crate provides an extension trait that provides a variety of conve
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/futures3.rs}}
 ```
+
+{{#include ../links.md}}

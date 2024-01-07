@@ -30,3 +30,5 @@ Diverging functions never return.
 ```rust,editable,should_panic
 {{#include ../../deps/examples/diverging_functions.rs}}
 ```
+
+{{#include ../links.md}}

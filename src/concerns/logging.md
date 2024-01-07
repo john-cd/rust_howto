@@ -71,3 +71,5 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 ## OpenTelemetry
 
 [OpenTelemetry Rust documentation]( https://opentelemetry.io/docs/instrumentation/rust/ )
+
+{{#include ../links.md}}

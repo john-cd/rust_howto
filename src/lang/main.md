@@ -9,3 +9,5 @@
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/async_main.rs}}
 ```
+
+{{#include ../links.md}}

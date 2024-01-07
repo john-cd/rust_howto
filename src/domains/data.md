@@ -7,3 +7,5 @@
 [arrow-rs]( https://github.com/apache/arrow-rs ): official Rust implementation of Apache Arrow
 
 [Apache Arrow DataFusion]( https://arrow.apache.org/datafusion/ ) SQL Query Engine
+
+{{#include ../links.md}}

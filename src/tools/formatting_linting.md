@@ -21,7 +21,7 @@ cargo fmt --all -- --check
 
 [Configuring Rustfmt]( https://rust-lang.github.io/rustfmt/?version=v1.6.0&search= )
 
-Create a `rustfmt.toml` in the project root folder.  
+Create a `rustfmt.toml` in the project root folder.
 For example,
 
 ```toml
@@ -68,3 +68,5 @@ rustfmt --help=config
 ### Formatting attributes
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`, `#[rustfmt::skip::macros(macro_name)]`, or `#![rustfmt::skip::attributes(custom_attribute)]`
+
+{{#include ../links.md}}

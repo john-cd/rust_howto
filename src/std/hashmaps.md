@@ -5,3 +5,5 @@ All of the keys must have the same type as each other, and all of the values mus
 ```rust,editable
 {{#include ../../deps/examples/hashmaps.rs}}
 ```
+
+{{#include ../links.md}}
