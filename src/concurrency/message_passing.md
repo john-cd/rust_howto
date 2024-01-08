@@ -26,6 +26,6 @@ Example using specialized channels for tickers and timeout
 
 ## Reference
 
-[Message Passing (rust book)][message-passing-rust-book]
+[Message Passing (rust book)][message-passing-rust-book]⮳
 
 {{#include ../links.md}}

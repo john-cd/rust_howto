@@ -2,7 +2,7 @@
 
 ## Dashmap
 
-[Dashmap][dashmap] is an implementation of a concurrent associative array/hashmap in Rust.
+[Dashmap][dashmap]⮳ is an implementation of a concurrent associative array/hashmap in Rust.
 
 DashMap tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 

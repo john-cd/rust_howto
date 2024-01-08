@@ -1,6 +1,6 @@
 # Lazy Init
 
-[OnceCell]( https://doc.rust-lang.org/core/cell/struct.OnceCell.html ): a cell which can be written to only once.
+[OnceCell⮳]( https://doc.rust-lang.org/core/cell/struct.OnceCell.html ): a cell which can be written to only once.
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
@@ -10,7 +10,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ## Older library
 
-[Once Cell][once-cell-librs]
+[Once Cell][once-cell-librs]⮳
 
 `once_cell` provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A OnceCell might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe.
 

@@ -16,7 +16,7 @@ Use when
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
 
-[Box]( https://doc.rust-lang.org/book/ch15-01-box.html )
+[Box]( https://doc.rust-lang.org/book/ch15-01-box.html )⮳
 
 ## Rc
 

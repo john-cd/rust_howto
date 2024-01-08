@@ -1,8 +1,8 @@
 # Documentation
 
-[The rustdoc book]( https://doc.rust-lang.org/rustdoc/index.html )
+[The rustdoc book][rustdoc-book]⮳
 
-[doc.rs]( https://docs.rs/ ): open-source documentation host for Rust crates.
+[docs.rs][docs-rs]⮳: open-source documentation host for Rust crates.
 
 ## Documenting your code
 
@@ -48,6 +48,9 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 
 ## Badges
 
-[Shield.io]( https://shields.io/ )
+[Shield.io][shield-io]⮳
 
+[docs-rs]: https://docs.rs/
+[rustdoc-book]: https://doc.rust-lang.org/rustdoc/index.html
+[shield-io]: https://shields.io/
 {{#include ../links.md}}

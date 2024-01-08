@@ -1,9 +1,9 @@
 
-# [Install Rust]( https://www.rust-lang.org/tools/install )
+# [Install Rust]( https://www.rust-lang.org/tools/install )⮳
 
 ## Key Steps
 
-- Install [Rustup]( https://rustup.rs/ )
+- Install [Rustup]( https://rustup.rs/ )⮳
 
 On WSL / Unix:
 

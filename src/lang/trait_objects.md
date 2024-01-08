@@ -8,7 +8,7 @@ A type like `&ClickCallback` or `Box<dyn ClickCallback>` where `ClickCallback` i
 {{#include ../../deps/examples/trait_objects.rs}}
 ```
 
-The set of traits after `dyn` is made up of an [object-safe]( https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety ) base trait plus any number of autotraits (one of `Send`, `Sync`, `Unpin`, `UnwindSafe`, and `RefUnwindSafe` - see [special traits]( https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html )).
+The set of traits after `dyn` is made up of an [object-safe]( https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety )⮳ base trait plus any number of autotraits (one of `Send`, `Sync`, `Unpin`, `UnwindSafe`, and `RefUnwindSafe` - see [special traits]( https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html )⮳).
 
 ```rust,editable,ignore
 dyn Trait
@@ -19,6 +19,6 @@ dyn Trait + 'static
 
 ## See also
 
-[Trait Objects (docs)]( https://doc.rust-lang.org/book/ch17-02-trait-objects.html )
+[Trait Objects (docs)]( https://doc.rust-lang.org/book/ch17-02-trait-objects.html )⮳
 
 {{#include ../links.md}}

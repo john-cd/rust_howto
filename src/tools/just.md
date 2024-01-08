@@ -2,9 +2,9 @@
 
 `just` is a command runner / Make replacement.
 
-[https://just.systems/]( https://just.systems/ )
+[https://just.systems/]( https://just.systems/ )⮳
 
-[Just Programmer's Manual]( https://just.systems/man/en/chapter_1.html )
+[Just Programmer's Manual]( https://just.systems/man/en/chapter_1.html )⮳
 
 ## Installation in a dev container
 

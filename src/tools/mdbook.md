@@ -1,6 +1,6 @@
 # mdBook
 
-[mdBook]( https://github.com/rust-lang/mdBook ): a utility to create modern online books from Markdown files.
+[mdBook]( https://github.com/rust-lang/mdBook )⮳: a utility to create modern online books from Markdown files.
 
 ```bash
 cargo install mdbook
@@ -13,8 +13,8 @@ mdbook serve --open
 
 ## See also
 
-[mdBook documentation]( https://rust-lang.github.io/mdBook/index.html )
+[mdBook documentation]( https://rust-lang.github.io/mdBook/index.html )⮳
 
-[mdbook-hide]( https://github.com/ankitrgadiya/mdbook-hide/ )
+[mdbook-hide]( https://github.com/ankitrgadiya/mdbook-hide/ )⮳
 
 {{#include ../links.md}}

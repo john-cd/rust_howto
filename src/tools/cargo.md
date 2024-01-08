@@ -1,6 +1,6 @@
 # Cargo (package manager) and tools
 
-[The Cargo book]( https://doc.rust-lang.org/cargo/index.html )
+[The Cargo book]( https://doc.rust-lang.org/cargo/index.html )⮳
 
 `cargo help` or `cargo <command> --help`
 
@@ -48,7 +48,7 @@ Examples of version requirements and the versions that would be allowed with the
 0      :=  >=0.0.0, <1.0.0
 ```
 
-Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html>
+Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html>⮳
 
 If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`. If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` into git.
 
@@ -92,7 +92,7 @@ cargo fix
 
 ## Code coverage
 
-[Tarpaulin]( https://github.com/xd009642/tarpaulin )
+[Tarpaulin]( https://github.com/xd009642/tarpaulin )⮳
 
 ## Security audit
 
@@ -103,9 +103,9 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps]( https://github.com/est31/cargo-udeps )
+[udeps]( https://github.com/est31/cargo-udeps )⮳
 
-or (simpler) [Machete]( https://blog.benj.me/2022/04/27/cargo-machete/ )
+or (simpler) [Machete]( https://blog.benj.me/2022/04/27/cargo-machete/ )⮳
 
 ```sh
 cargo install cargo-machete
@@ -114,6 +114,6 @@ cargo machete
 
 ## Templates
 
-[Cargo Generate](https://cargo-generate.github.io/cargo-generate/index.html): developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate](https://cargo-generate.github.io/cargo-generate/index.html)⮳: developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 {{#include ../links.md}}

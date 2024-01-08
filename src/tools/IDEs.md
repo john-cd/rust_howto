@@ -1,10 +1,10 @@
 # IDEs
 
-[VS Code]( https://code.visualstudio.com/docs/languages/rust )
+[VS Code]( https://code.visualstudio.com/docs/languages/rust )⮳
 
-[Rust plugin for VS Code]( https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer )
+[Rust plugin for VS Code]( https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer )⮳
 
-[rust-analyzer (home page)]( https://rust-analyzer.github.io/ )
+[rust-analyzer (home page)]( https://rust-analyzer.github.io/ )⮳
 
 ## IntelliJ Rust
 

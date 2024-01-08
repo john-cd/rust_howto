@@ -16,8 +16,8 @@
 
 ## See Also
 
-[Approx][approx]
+[Approx][approx]⮳
 
-[cargo-nextest][cargo-nextest]: `cargo nextest run; cargo test --doc`
+[cargo-nextest][cargo-nextest]⮳: `cargo nextest run; cargo test --doc`
 
 {{#include ../links.md}}

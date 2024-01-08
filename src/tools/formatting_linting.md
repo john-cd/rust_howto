@@ -1,6 +1,6 @@
 # Formatting and Linting
 
-## [rustfmt]( https://github.com/rust-lang/rustfmt )
+## [rustfmt]( https://github.com/rust-lang/rustfmt )⮳
 
 Install with `rustup component add rustfmt`
 
@@ -19,7 +19,7 @@ cargo fmt --all -- --check
 
 ### Configuration
 
-[Configuring Rustfmt]( https://rust-lang.github.io/rustfmt/?version=v1.6.0&search= )
+[Configuring Rustfmt]( https://rust-lang.github.io/rustfmt/?version=v1.6.0&search= )⮳
 
 Create a `rustfmt.toml` in the project root folder.
 For example,

@@ -51,7 +51,7 @@ See [Automatic derivation](../concerns/derive.md)
 
 ## Conditional Compilation
 
-[Conditional compilation]( https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute )
+[Conditional compilation]( https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute )⮳
 
 ```rust,editable
 {{#include ../../deps/examples/conditional_compilation.rs}}
@@ -59,8 +59,8 @@ See [Automatic derivation](../concerns/derive.md)
 
 ## See Also
 
-[Attributes reference]( https://doc.rust-lang.org/reference/attributes.html )
+[Attributes reference]( https://doc.rust-lang.org/reference/attributes.html )⮳
 
-[Rust by example - attributes]( https://doc.rust-lang.org/rust-by-example/attribute.html )
+[Rust by example - attributes]( https://doc.rust-lang.org/rust-by-example/attribute.html )⮳
 
 {{#include ../links.md}}

@@ -10,7 +10,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Scoped threads
 
-[Scoped threads][scoped-threads-rust-book]
+[Scoped threads][scoped-threads-rust-book]⮳
 
 ```rust,editable
 {{#include ../../deps/examples/multithreading_scoped_threads.rs}}
@@ -18,9 +18,9 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Rayon - parallel processing
 
-[Rayon (docs)][rayon]
+[Rayon (docs)][rayon]⮳
 
-[Rayon (github)][rayon-github]
+[Rayon (github)][rayon-github]⮳
 
 ### Parallel iteration
 
@@ -38,7 +38,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 ### Custom parallel tasks
 
-Rayon implements [join][join], [scope][scope], [spawn][spawn] that may run on the global or a custom [Rayon threadpool][rayon-threadpool].
+Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon-threadpool]⮳.
 
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
@@ -48,5 +48,4 @@ Rayon implements [join][join], [scope][scope], [spawn][spawn] that may run on th
 [scope]: https://docs.rs/rayon/latest/rayon/fn.scope.html
 [spawn]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
 [rayon-threadpool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
-
 {{#include ../links.md}}

@@ -1,29 +1,29 @@
 # Other Tools
 
-[Rust tools]( https://www.rust-lang.org/tools )
+[Rust tools]( https://www.rust-lang.org/tools )⮳
 
 ## API search
 
-[Roogle]( https://roogle.hkmatsumoto.com/search )
+[Roogle]( https://roogle.hkmatsumoto.com/search )⮳
 
-[Roogle (github)]( https://github.com/roogle-rs/roogle )
+[Roogle (github)]( https://github.com/roogle-rs/roogle )⮳
 
 ## Deployment
 
-[shuttle.rs]( https://www.shuttle.rs/ )
+[shuttle.rs]( https://www.shuttle.rs/ )⮳
 
 ## Tools written in Rust
 
-[My terminal became more Rusty Community](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l)
+[My terminal became more Rusty Community](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l)⮳
 
-[open-rs](https://github.com/Byron/open-rs)
+[open-rs](https://github.com/Byron/open-rs)⮳
 
-[Starship]( https://github.com/starship/starship )
+[Starship]( https://github.com/starship/starship )⮳
 
-[Bacon]( https://github.com/Canop/bacon )
+[Bacon]( https://github.com/Canop/bacon )⮳
 
-[Bat]( https://github.com/sharkdp/bat )
+[Bat]( https://github.com/sharkdp/bat )⮳
 
-[Exa]( https://github.com/ogham/exa )
+[Exa]( https://github.com/ogham/exa )⮳
 
 {{#include ../links.md}}

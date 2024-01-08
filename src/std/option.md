@@ -1,6 +1,6 @@
 # Option
 
-Rust has no `null`. Instead, use [Option]( https://doc.rust-lang.org/std/option/ ):
+Rust has no `null`. Instead, use [Option]( https://doc.rust-lang.org/std/option/ )⮳:
 
 ```rust,editable,ignore
 enum Option<T> {
