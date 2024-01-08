@@ -39,6 +39,9 @@ mdbook test
 ## Build the book and copy into ./book
 mdbook build
 
+## Add statci assets
+#cp static/*.html book/
+
 echo "----------"
 
 ## Do not remove.
