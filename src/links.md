@@ -40,8 +40,8 @@ Keep lines sorted.
 [cat-caching-badge]: https://badge-cache.kominick.com/badge/caching--x.svg?style=social
 [cat-caching]: https://crates.io/categories/caching
 
-[cat-command-line-badge]: https://badge-cache.kominick.com/badge/command_line--x.svg?style=social
-[cat-command-line]: https://crates.io/categories/command-line-interface
+[cat-command-line-interface-badge]: https://badge-cache.kominick.com/badge/command_line_interface--x.svg?style=social
+[cat-command-line-interface]: https://crates.io/categories/command-line-interface
 
 [cat-command-line-utilities-badge]: https://badge-cache.kominick.com/badge/command_line_utilities--x.svg?style=social
 [cat-command-line-utilities]: https://crates.io/categories/command-line-utilities
@@ -175,7 +175,7 @@ Keep lines sorted.
 [cat-no-std-badge]: https://badge-cache.kominick.com/badge/no_std--x.svg?style=social
 [cat-no-std]: https://crates.io/categories/no-std
 
-[cat-no-alloc-badge]: https://badge-cache.kominick.com/badge/no-alloc--x.svg?style=social
+[cat-no-alloc-badge]: https://badge-cache.kominick.com/badge/no_alloc--x.svg?style=social
 [cat-no-alloc]: https://crates.io/categories/no-std::no-alloc
 
 [cat-os-badge]: https://badge-cache.kominick.com/badge/OS--x.svg?style=social
@@ -232,10 +232,10 @@ Keep lines sorted.
 [cat-simulation-badge]: https://badge-cache.kominick.com/badge/simulation--x.svg?style=social
 [cat-simulation]: https://crates.io/categories/simulation
 
-[cat-template-engine-badge]: https://badge-cache.kominick.com/badge/template-engine--x.svg?style=social
+[cat-template-engine-badge]: https://badge-cache.kominick.com/badge/template_engine--x.svg?style=social
 [cat-template-engine]: https://crates.io/categories/template-engine
 
-[cat-text-editors-badge]: https://badge-cache.kominick.com/badge/text-editors--x.svg?style=social
+[cat-text-editors-badge]: https://badge-cache.kominick.com/badge/text_editors--x.svg?style=social
 [cat-text-editors]: https://crates.io/categories/text-editors
 
 [cat-text-processing-badge]: https://badge-cache.kominick.com/badge/text_processing--x.svg?style=social
@@ -253,13 +253,13 @@ Keep lines sorted.
 [cat-web-programming-badge]: https://badge-cache.kominick.com/badge/web-programming--x.svg?style=social
 [cat-web-programming]: https://crates.io/categories/web-programming
 
-[cat-http-client-badge]: https://badge-cache.kominick.com/badge/http-client--x.svg?style=social
+[cat-http-client-badge]: https://badge-cache.kominick.com/badge/http_client--x.svg?style=social
 [cat-http-client]: https://crates.io/categories/web-programming::http-client
 
 [cat-websocket-badge]: https://badge-cache.kominick.com/badge/websocket--x.svg?style=social
 [cat-websocket]: https://crates.io/categories/web-programming::websocket
 
-[cat-http-server-badge]: https://badge-cache.kominick.com/badge/http-server--x.svg?style=social
+[cat-http-server-badge]: https://badge-cache.kominick.com/badge/http_server--x.svg?style=social
 [cat-http-server]: https://crates.io/categories/web-programming::http-server
 
 <!-- Crates
@@ -269,8 +269,8 @@ Template:
 []: https://docs.rs//
 -->
 
-[ansi_term-badge]: https://badge-cache.kominick.com/crates/v/base64.svg?label=ansi_term
-[ansi_term]: https://docs.rs/ansi_term/
+[ansi-term-badge]: https://badge-cache.kominick.com/crates/v/ansi_term.svg?label=ansi_term
+[ansi-term]: https://docs.rs/ansi_term/
 
 [anyhow-badge]: https://badge-cache.kominick.com/crates/v/anyhow.svg?label=anyhow
 [anyhow]: https://docs.rs/anyhow/
@@ -283,8 +283,8 @@ Template:
 [arrow-rs]: https://docs.rs/arrow-rs
 [arrow-rs-github]: https://github.com/apache/arrow-rs
 
-[async_channel-badge]: https://badge-cache.kominick.com/crates/v/async_channel.svg?label=async_channel
-[async_channel]: https://docs.rs/async-channel/
+[async-channel-badge]: https://badge-cache.kominick.com/crates/v/async_channel.svg?label=async_channel
+[async-channel]: https://docs.rs/async_channel/
 
 [async-std-badge]: https://badge-cache.kominick.com/crates/v/async-std.svg?label=async-std
 [async-std]: https://docs.rs/async-std/
@@ -327,6 +327,8 @@ Template:
 [crossbeam-badge]: https://badge-cache.kominick.com/crates/v/crossbeam.svg?label=crossbeam
 [crossbeam]: https://docs.rs/crossbeam/
 
+[crux-badge]: https://badge-cache.kominick.com/crates/v/crux.svg?label=crux
+[crux]: https://docs.rs/crux/
 [crux-github]: https://redbadger.github.io/crux/
 
 [csv-badge]: https://badge-cache.kominick.com/crates/v/csv.svg?label=csv
@@ -337,14 +339,14 @@ Template:
 
 [datafusion-badge]: https://badge-cache.kominick.com/crates/v/datafusion.svg?label=datafusion
 [datafusion]: https://docs.rs/datafusion/
-[Apache Arrow DataFusion]( https://arrow.apache.org/datafusion/ )
+[datafusion-web]: https://arrow.apache.org/datafusion/
 
 [dashmap-badge]: https://badge-cache.kominick.com/crates/v/dashmap.svg?label=dashmap
 [dashmap]: https://docs.rs/dashmap/
 
-[derive_more-badge]: https://badge-cache.kominick.com/crates/v/derive_more.svg?label=derive_more
-[derive_more]: https://docs.rs/derive_more/
-[derive_more-crate]: https://crates.io/crates/derive_more/
+[derive-more-badge]: https://badge-cache.kominick.com/crates/v/derive_more.svg?label=derive_more
+[derive-more]: https://docs.rs/derive_more/
+[derive-more-crate]: https://crates.io/crates/derive_more/
 
 [diesel-badge]: https://badge-cache.kominick.com/crates/v/diesel.svg?label=diesel
 [diesel]: https://docs.rs/diesel/
@@ -361,14 +363,14 @@ Template:
 [embassy-web]: https://embassy.dev/
 [embassy-github]: https://github.com/akiles/embassy/
 
-[env_logger-badge]: https://badge-cache.kominick.com/crates/v/env_logger.svg?label=env_logger
-[env_logger]: https://docs.rs/env_logger/
+[env-logger-badge]: https://badge-cache.kominick.com/crates/v/env_logger.svg?label=env_logger
+[env-logger]: https://docs.rs/env_logger/
 
 [error-chain-badge]: https://badge-cache.kominick.com/crates/v/error-chain.svg?label=error-chain
 [error-chain]: https://docs.rs/error-chain/
 
 [eyre-badge]: https://badge-cache.kominick.com/crates/v/eyre.svg?label=eyre
-[eyre]: https://docs.rs/eyre/latest/eyre/
+[eyre]: https://docs.rs/eyre/
 
 [flate2-badge]: https://badge-cache.kominick.com/crates/v/flate2.svg?label=flate2
 [flate2]: https://docs.rs/flate2/
@@ -397,7 +399,7 @@ Template:
 [memmap-badge]: https://badge-cache.kominick.com/crates/v/memmap.svg?label=memmap
 [memmap]: https://docs.rs/memmap/
 
-[miette-badge]: https://badge-cache.kominick.com/crates/v/memmap.svg?label=memmap
+[miette-badge]: https://badge-cache.kominick.com/crates/v/miette.svg?label=miette
 [miette]: https://docs.rs/miette/
 [miette-librs]: https://lib.rs/crates/miette
 
@@ -420,15 +422,15 @@ Template:
 [num_cpus-badge]: https://badge-cache.kominick.com/crates/v/num_cpus.svg?label=num_cpus
 [num_cpus]: https://docs.rs/num_cpus/
 
-[once_cell-badge]: https://badge-cache.kominick.com/crates/v/once_cell.svg?label=once_cell
-[once_cell]: https://docs.rs/once_cell/
-[once_cell-librs]: https://lib.rs/crates/once_cell
+[once-cell-badge]: https://badge-cache.kominick.com/crates/v/once_cell.svg?label=once_cell
+[once-cell]: https://docs.rs/once_cell/
+[once-cell-librs]: https://lib.rs/crates/once_cell
 
 [parking-lot-badge]: https://badge-cache.kominick.com/crates/v/parking-lot.svg?label=parking-lot
 [parking-lot]: https://docs.rs/parking-lot/
 [parking-lot-crate]: https://crates.io/crates/parking_lot/
 
-[percent-encoding-badge]: https://badge-cache.kominick.com/crates/v/percent-encoding.svg?label=percent-encoding
+[percent-encoding-badge]: https://badge-cache.kominick.com/crates/v/percent_encoding.svg?label=percent_encoding
 [percent-encoding]: https://docs.rs/percent_encoding/
 
 [polars-badge]: https://badge-cache.kominick.com/crates/v/polars.svg?label=polars
@@ -446,12 +448,12 @@ Template:
 [rand-badge]: https://badge-cache.kominick.com/crates/v/rand.svg?label=rand
 [rand]: https://docs.rs/rand/
 
-[rand_distr-badge]: https://badge-cache.kominick.com/crates/v/rand.svg?label=rand_distr
-[rand_distr]: https://docs.rs/rand_distr/
+[rand-distr-badge]: https://badge-cache.kominick.com/crates/v/rand_distr.svg?label=rand_distr
+[rand-distr]: https://docs.rs/rand_distr/
 
 [rayon-badge]: https://badge-cache.kominick.com/crates/v/rayon.svg?label=rayon
 [rayon]: https://docs.rs/rayon/
-[rayon-github]: https://github.com/rayon-rs/rayon
+[rayon-github]: https://github.com/rayon-rs/rayon/
 
 [regex-badge]: https://badge-cache.kominick.com/crates/v/regex.svg?label=regex
 [regex]: https://docs.rs/regex/
@@ -463,13 +465,13 @@ Template:
 [ring]: https://docs.rs/ring/
 
 [rusqlite-badge]: https://badge-cache.kominick.com/crates/v/rusqlite.svg?label=rusqlite
-[rusqlite]:  https://docs.rs/rusqlite/
+[rusqlite]: https://docs.rs/rusqlite/
 
-[same_file-badge]: https://badge-cache.kominick.com/crates/v/same_file.svg?label=same_file
-[same_file]: https://docs.rs/same-file/
+[same-file-badge]: https://badge-cache.kominick.com/crates/v/same_file.svg?label=same_file
+[same-file]: https://docs.rs/same_file/
 
-[sea_orm-badge]: https://badge-cache.kominick.com/crates/v/sea_orm.svg?label=sea_orm
-[sea_orm]: https://docs.rs/sea-orm/
+[sea-orm-badge]: https://badge-cache.kominick.com/crates/v/sea_orm.svg?label=sea_orm
+[sea-orm]: https://docs.rs/sea_orm/
 
 [select-badge]: https://badge-cache.kominick.com/crates/v/select.svg?label=select
 [select]: https://docs.rs/select/
@@ -489,10 +491,10 @@ Template:
 
 [sqlx-badge]: https://badge-cache.kominick.com/crates/v/sqlx.svg?label=sqlx
 [sqlx]: https://docs.rs/sqlx/
-[sqlx-librs]: https://lib.rs/crates/sqlx
+[sqlx-librs]: https://lib.rs/crates/sqlx/
 
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
-[std]: https://doc.rust-lang.org/std
+[std]: https://doc.rust-lang.org/std/
 
 [syslog-badge]: https://badge-cache.kominick.com/crates/v/syslog.svg?label=syslog
 [syslog]: https://docs.rs/syslog/
@@ -507,8 +509,8 @@ Template:
 [tempdir-badge]: https://badge-cache.kominick.com/crates/v/tempdir.svg?label=tempdir
 [tempdir]: https://docs.rs/tempdir/
 
-[thisError-badge]: https://badge-cache.kominick.com/crates/v/thisError.svg?label=thisError
-[thisError]: https://docs.rs/thiserror/latest/thiserror/
+[thiserror-badge]: https://badge-cache.kominick.com/crates/v/thiserror.svg?label=thiserror
+[thiserror]: https://docs.rs/thiserror/
 
 [threadpool-badge]: https://badge-cache.kominick.com/crates/v/threadpool.svg?label=threadpool
 [threadpool]: https://docs.rs/threadpool/
@@ -518,8 +520,8 @@ Template:
 [tokio-web]: https://tokio.rs/
 [tokio-github]: https://github.com/tokio-rs/tokio/
 
-[tokio_graceful_shutdown-badge]: https://badge-cache.kominick.com/crates/v/tokio_graceful_shutdown.svg?label=tokio_graceful_shutdown
-[tokio_graceful_shutdown]: https://docs.rs/tokio_graceful_shutdown/
+[tokio-graceful-shutdown-badge]: https://badge-cache.kominick.com/crates/v/tokio_graceful_shutdown.svg?label=tokio_graceful_shutdown
+[tokio-graceful-shutdown]: https://docs.rs/tokio_graceful_shutdown/
 
 [toml-badge]: https://badge-cache.kominick.com/crates/v/toml.svg?label=toml
 [toml]: https://docs.rs/toml/
@@ -529,15 +531,15 @@ Template:
 [tracing-web]: https://tracing.rs/tracing/
 [tracing-github]: https://github.com/tokio-rs/tracing
 
-[tracing-subscriber-badge]: https://badge-cache.kominick.com/crates/v/tracing-subscriber.svg?label=tracing-subscriber
-[tracing-subscriber]: https://docs.rs/tracing-subscriber/
+[tracing-subscriber-badge]: https://badge-cache.kominick.com/crates/v/tracing_subscriber.svg?label=tracing_subscriber
+[tracing-subscriber]: https://docs.rs/tracing_subscriber/
 [tracing-subscriber-crate]: https://crates.io/crates/tracing-subscriber
 
 [url-badge]: https://badge-cache.kominick.com/crates/v/url.svg?label=url
 [url]: https://docs.rs/url/
 
 [unicode-segmentation-badge]: https://badge-cache.kominick.com/crates/v/unicode-segmentation.svg?label=unicode-segmentation
-[unicode-segmentation]: https://docs.rs/unicode-segmentation/
+[unicode-segmentation]: https://docs.rs/unicode_segmentation/
 
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
@@ -553,19 +555,19 @@ Template:
 
 <!-- Std doc -->
 
-[std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/index.html
+[std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/
 
 <!-- Other -->
 
-[Are we async yet?]: https://areweasyncyet.rs/
+[are-we-async-yet?]: https://areweasyncyet.rs/
 
-[Asynchronous Programming in Rust (book)]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+[asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 
-[Command Line Applications in Rust]: https://rust-cli.github.io/book/index.html
+[rust-cli-book]: https://rust-cli.github.io/book/index.html
 
 [aws-sdk]: https://aws.amazon.com/sdk-for-rust/
 
-[blessed.rs]: https://blessed.rs/crates
+[blessed-rs]: https://blessed.rs/crates
 
 [cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
