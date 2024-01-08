@@ -43,7 +43,7 @@ mdbook build
 #cp static/*.html book/
 
 ## https://lib.rs/crates/mdbook-sitemap-generator
-mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
+#mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
 
 echo "----------"
 
