@@ -44,6 +44,7 @@ mdbook build
 
 ## https://lib.rs/crates/mdbook-sitemap-generator
 mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
+sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
 
 echo "----------"
 
