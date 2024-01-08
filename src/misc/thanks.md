@@ -7,7 +7,7 @@ This reference guide is inspired from online websites, blogs, and documentation,
 - [Rust by Practice][rust-by-practice-book]
 - [Asynchronous Programming in Rust][async-rust-book]
 - The [rustdoc book][rustdoc-book]
-- [docs.rs][doc-rs]
+- [docs.rs][docs-rs]
 - [https://www.lpalmieri.com/][lpalmieri-web]
 - [https://codevoweb.com/][codevoweb]
 - [Rust for professionals][rust-for-professionals]
