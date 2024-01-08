@@ -1,3 +1,5 @@
 # Incremental Computation
 
-[Salsa](https://github.com/salsa-rs/salsa)
+[Salsa][salsa]
+
+[salsa]: https://github.com/salsa-rs/salsa

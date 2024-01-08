@@ -109,12 +109,14 @@ walkdir, notify, indicatif, ratatui
 
 traits
 
-[dyn clone](https://github.com/dtolnay/dyn-clone)
+[dyn clone][dyn clone]
+[dyn clone]: <https://github.com/dtolnay/dyn-clone>
 
 errors: color-eyre, eyre
 
 testing: Approx example
-[fuzzing](https://github.com/rust-fuzz/afl.rs)
+[fuzzing][fuzzing]
+[fuzzing]: <https://github.com/rust-fuzz/afl.rs>
 
 - axum
 - loco

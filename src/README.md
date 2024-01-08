@@ -14,13 +14,13 @@ Next are [tools](tools/tools.md), such as Cargo, Clippy, Rustfmt, as well as lin
 
 This book is intended both for new Rust programmers (to get an overview of the capabilities of the Rust ecosystem and pointers to other resources) and for experienced programmers (to find code examples and review best practices for common programming tasks).
 
-Readers should have already some basic familiarity with [Rust]( https://www.rust-lang.org/ )⮳ concepts. The [Rust book](https://doc.rust-lang.org/book/)⮳ is an excellent resource for complete beginners to get started with.
+Readers should have already some basic familiarity with [Rust][rust]⮳ concepts. The [Rust book][rust-book]⮳ is an excellent resource for complete beginners to get started with.
 
 ## Why this book?
 
-Per the curated list of Rust crates [blessed.rs]( https://blessed.rs/crates )⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with ~~almost~~ _more than_ 100 thousand crates to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are (not yet) dominant platforms like `Rails`, `Django`, `Spring` or `Node` in the Rust world.
+Per the curated list of Rust crates [blessed.rs][blessed-rs]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with ~~almost~~ _more than_ 100 thousand crates to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are (not yet) dominant frameworks or platforms like `Rails`, `Django`, `Spring` or `Node` in the Rust world.
 
-This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the typically dry [reference docs](https://docs.rs/)⮳, and hopes to become a "cheatsheet on steroid" for the Rust ecosystem (_not just_ the Rust language).
+This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the typically dry [reference docs][reference-docs]⮳, and hopes to become a "cheatsheet on steroid" for the Rust ecosystem (_not just_ the Rust language).
 
 ## What other books should I consult?
 
@@ -38,4 +38,7 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 
 This site is not affiliated with the [Rust Foundation]( https://foundation.rust-lang.org/ )⮳.
 
+[reference-docs]: https://docs.rs/
+[rust]: https://www.rust-lang.org/
+[rust-book]: https://doc.rust-lang.org/book/
 {{#include ./links.md}}

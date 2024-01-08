@@ -117,9 +117,9 @@ Example `.github/workflows/<name>.yml`
 <https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>
 <https://github.com/marketplace/actions/upload-a-build-artifact>
 
-[docker-cache](https://github.com/ScribeMD/docker-cache)
+[docker-cache][docker-cache]
 
-[cached-docker-images](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images)
+[cached-docker-images][cached-docker-images]
 
 [Docker GitHub Action]( https://docs.docker.com/build/ci/github-actions/ )
 
@@ -128,3 +128,6 @@ Example `.github/workflows/<name>.yml`
 <https://docs.docker.com/build/ci/github-actions/cache/>
 
 <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>
+
+[docker-cache]: https://github.com/ScribeMD/docker-cache
+[cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images

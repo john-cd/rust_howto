@@ -50,7 +50,4 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 
 [Shield.io][shield-io]⮳
 
-[docs-rs]: https://docs.rs/
-[rustdoc-book]: https://doc.rust-lang.org/rustdoc/index.html
-[shield-io]: https://shields.io/
 {{#include ../links.md}}

@@ -2,18 +2,25 @@
 
 ## Links
 
-[Robotics on lib.rs]( https://lib.rs/science/robotics )
+[Robotics on lib.rs][robotics-librs]
 
-[robotics.rs]( https://robotics.rs/ )
+[robotics.rs][robotics-rs]
 
-[Bonsai BT](https://github.com/Sollimann/bonsai)
+[Bonsai BT][bonsai-bt]
 
-[Zenoh]( https://zenoh.io/ )
+[Zenoh][zenoh]
 
-[OPen Rust Robotics]( https://github.com/openrr/openrr )
+[Open Rust Robotics][openrr]
 
 <https://www.tangramvision.com/blog/why-rust-for-robots>
 
 <https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community/>
 
-[OpenCV]( https://opencv.org/ )
+[OpenCV][opencv]
+
+[bonsai-bt]: https://github.com/Sollimann/bonsai
+[opencv]: https://opencv.org/
+[openrr]: https://github.com/openrr/openrr
+[robotics-librs]: https://lib.rs/science/robotics
+[robotics-rs]: https://robotics.rs/
+[zenoh]: https://zenoh.io/

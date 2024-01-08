@@ -14,9 +14,9 @@
 
 ## Tools written in Rust
 
-[My terminal became more Rusty Community](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l)⮳
+[My terminal became more Rusty Community][My terminal became more Rusty Community]⮳
 
-[open-rs](https://github.com/Byron/open-rs)⮳
+[open-rs][open-rs]
 
 [Starship]( https://github.com/starship/starship )⮳
 
@@ -26,4 +26,6 @@
 
 [Exa]( https://github.com/ogham/exa )⮳
 
+[My terminal became more Rusty Community]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
+[open-rs]: https://github.com/Byron/open-rs
 {{#include ../links.md}}

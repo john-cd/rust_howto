@@ -390,6 +390,7 @@ Template:
 
 [futures-executor-badge]: https://badge-cache.kominick.com/crates/v/futures-executor.svg?label=futures-executor
 [futures-executor]: https://docs.rs/futures-executor/
+[block-on]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
 
 [glob-badge]:https://badge-cache.kominick.com/crates/v/glob.svg?label=glob
 [glob]: https://docs.rs/glob/
@@ -551,6 +552,8 @@ Template:
 [tokio]: https://docs.rs/tokio/
 [tokio-web]: https://tokio.rs/
 [tokio-github]: https://github.com/tokio-rs/tokio/
+[spawn-blocking]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
+[bridging-with-sync-code]: https://tokio.rs/tokio/topics/bridging
 
 [tokio-graceful-shutdown-badge]: https://badge-cache.kominick.com/crates/v/tokio_graceful_shutdown.svg?label=tokio_graceful_shutdown
 [tokio-graceful-shutdown]: https://docs.rs/tokio_graceful_shutdown/
@@ -602,8 +605,9 @@ Template:
 [message-passing-rust-book]: https://doc.rust-lang.org/book/ch16-02-message-passing.html
 [scoped-threads-rust-book]: https://doc.rust-lang.org/std/thread/fn.scope.html
 
-<!-- Std doc -->
+<!-- Std / Core Docs -->
 
+[oncecell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
 [std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/
 
 <!-- Books and web sites -->
@@ -628,6 +632,10 @@ Template:
 [rustonomicon-book]: https://doc.rust-lang.org/nomicon/intro.html
 [rust-quizz]: https://dtolnay.github.io/rust-quiz/
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
+[what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking/
 [zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production/
 
 <!-- Other -->
+
+[shield-io]: https://shields.io/
+[opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/

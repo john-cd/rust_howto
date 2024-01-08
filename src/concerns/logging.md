@@ -1,6 +1,6 @@
 # Logs
 
-[![tracing-badge]][tracing]
+[![tracing-badge]][tracing]⮳
 
 [Tokio tracing (GitHub)][tracing-github]⮳
 
@@ -74,5 +74,4 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 
 [OpenTelemetry Rust documentation][opentelemetry-rust]⮳
 
-[opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
 {{#include ../links.md}}

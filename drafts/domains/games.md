@@ -1,3 +1,5 @@
 # Games
 
-[Bevy](https://github.com/bevyengine/bevy )
+[Bevy][bevy]
+
+[bevy]: https://github.com/bevyengine/bevy

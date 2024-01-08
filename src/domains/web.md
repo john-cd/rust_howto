@@ -4,7 +4,7 @@
 
 ## Axum
 
-[Crates.io example source code (using Axum)](https://github.com/rust-lang/crates.io/tree/main)⮳
+[Crates.io example source code (using Axum)][axum]⮳
 
 ## Actix
 
@@ -33,6 +33,7 @@
 [Building a crawler in Rust: Design and Associated Types]( https://kerkour.com/rust-crawler-associated-types )⮳
 
 [actix-examples]: https://github.com/actix/examples
+[axum]: https://github.com/rust-lang/crates.io/tree/main
 [practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
 [rust-rocket-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
 {{#include ../links.md}}

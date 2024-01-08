@@ -14,7 +14,7 @@ To retrieve a single environment variable,
 {{#include ../../deps/examples/env.rs}}
 ```
 
-[Working with environment varibales in Rust☍]( https://www.thorsten-hans.com/working-with-environment-variables-in-rust/ )
+[Working with environment variables in Rust][working-with-env-variables]⮳
 
 ### Envy
 
@@ -43,4 +43,5 @@ It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 {{#include ../../deps/examples/confy.rs}}
 ```
 
+[working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 {{#include ../links.md}}

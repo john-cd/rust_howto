@@ -1,3 +1,5 @@
 # Regex
 
-[Regex](https://github.com/rust-lang/regex)
+[Regex][regex]
+
+[regex]: https://github.com/rust-lang/regex

@@ -1,6 +1,6 @@
 # Lazy Init
 
-[OnceCell⮳]( https://doc.rust-lang.org/core/cell/struct.OnceCell.html ): a cell which can be written to only once.
+[OnceCell][oncecell]⮳: a cell which can be written to only once.
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 

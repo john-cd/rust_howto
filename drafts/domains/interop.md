@@ -6,6 +6,8 @@ pyo3
 
 ### Rust tools for Python
 
-[pyOxidizer](https://github.com/indygreg/PyOxidizer)
+[pyOxidizer]
 
 Ruff
+
+[pyOxidizer]: https://github.com/indygreg/PyOxidizer
