@@ -1,4 +1,4 @@
-| Catehories |
+| Categories |
 |------------|
 | [![cat-accessibility-badge]][cat-accessibility] |
 | [![cat-aerospace-badge]][cat-aerospace] |
@@ -12,7 +12,7 @@
 | [![cat-asynchronous-badge]][cat-asynchronous] |
 | [![cat-authentication-badge]][cat-authentication] |
 | [![cat-caching-badge]][cat-caching] |
-| [![cat-command-line-badge]][cat-command-line] |
+| [![cat-command-line-interface-badge]][cat-command-line-interface] |
 | [![cat-command-line-utilities-badge]][cat-command-line-utilities] |
 | [![cat-compilers-badge]][cat-compilers] |
 | [![cat-compression-badge]][cat-compression] |

@@ -4,7 +4,7 @@ This book is **a compendium of Rust ecosystem examples, recipes, and links**. It
 
 It quickly summarizes the basics of the [language](lang/rust_language.md) and often-used elements of the [standard library](std/standard_library.md).
 
-It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](concerns/error_handling), [error customization](concerns/error_customization.md), [configuration](concerns/configuration.md), [logging](concerns/logging.md)...
+It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](concerns/error_handling.md), [error customization](concerns/error_customization.md), [configuration](concerns/configuration.md), [logging](concerns/logging.md)...
 
 [Concurrency](concurrency/concurrency.md), including [asynchronous programming](concurrency/async.md), are covered in details.
 

@@ -26,8 +26,4 @@ cross run --target aarch64-unknown-linux-gnu
 
 [Example Cross.toml file]( https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml )
 
-## See also
-
-[Rust Cross-Compilation With GitHub Actions]( https://reemus.dev/tldr/rust-cross-compilation-github-actions )
-
 {{#include ../links.md}}

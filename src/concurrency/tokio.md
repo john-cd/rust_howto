@@ -18,7 +18,7 @@ Tokio provides a few major components:
 
 ## Graceful shutdown
 
-Example from [tokio_graceful_shutdown][tokio_graceful_shutdown]:
+Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]:
 
 ```rust,editable,ignore,noplayground
 {{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
