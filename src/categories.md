@@ -1,3 +1,5 @@
+# Categories
+
 | Categories |
 |------------|
 | [![cat-accessibility-badge]][cat-accessibility] |

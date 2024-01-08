@@ -32,7 +32,8 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## Config
 
-[Config][config] is a layered configuration system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
+[Config][config] is a layered configuration system for Rust applications.
+It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 

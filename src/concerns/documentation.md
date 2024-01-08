@@ -6,7 +6,7 @@
 
 ## Documenting your code
 
-1) Add documentation comments to your code.
+- Add documentation comments to your code.
 
 ```rust,editable,ignore
 /// This is a doc comment. It is equivalent to the next line.
@@ -21,7 +21,7 @@
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
-2) Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using cargo), with a website inside.
+- Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using cargo), with a website inside.
 
 ## Module- or crate-level documentation
 
