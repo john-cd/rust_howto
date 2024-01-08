@@ -72,7 +72,6 @@ runall:
 # Build the book from its markdown files
 build:
   mdbook build
-  #mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
 
 # Test the examples embedded in the markdown
 test:
