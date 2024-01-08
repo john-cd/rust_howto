@@ -18,9 +18,9 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Rayon - parallel processing
 
-[Rayon docs]( https://docs.rs/rayon/latest/rayon/ )
+[Rayon (docs)][rayon]
 
-[Rayon github]( https://github.com/rayon-rs/rayon )
+[Rayon (github)][rayon-github]
 
 ### Parallel iteration
 

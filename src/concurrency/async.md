@@ -2,9 +2,9 @@
 
 Asynchronous programming, or async for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await syntax
 
-[Are we async yet?]( https://areweasyncyet.rs/ )
+[Are we async yet?][Are we async yet?]
 
-[Asynchronous Programming in Rust (book)]( https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html )
+[Asynchronous Programming in Rust (book)][Asynchronous Programming in Rust (book)]
 
 ## Basic Example
 
@@ -42,9 +42,9 @@ In most cases, prefer the [Tokio](../concurrency/tokio.md) runtime - see [The St
 
 Alternatives to the Tokio async ecosystem include:
 
-- [async-std]( https://crates.io/crates/async-std ): async version of the Rust standard library. No longer maintained?
-- [Smol]( https://crates.io/crates/smol )
-- [Embassy]( https://embassy.dev/ ) for embedded systems.
-- [Mio]( https://crates.io/crates/mio ) is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+- [async-std][async-std-crate]: async version of the Rust standard library. No longer maintained?
+- [Smol][smol-crate]
+- [Embassy][embassy-web] for embedded systems.
+- [Mio][mio-crate] is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 {{#include ../links.md}}

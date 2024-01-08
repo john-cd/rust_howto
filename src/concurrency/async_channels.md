@@ -27,8 +27,8 @@ Another example:
 
 ## Alternatives to Tokio `sync`
 
-[async_channel]( https://docs.rs/async-channel/latest/async_channel/ )
+[async_channel][async_channel]
 
-[Postage]( https://lib.rs/crates/postage )
+[Postage (lib.rs)][postage-librs]
 
 {{#include ../links.md}}

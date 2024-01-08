@@ -1,8 +1,10 @@
 # Logs
 
-[Tokio tracing]( https://github.com/tokio-rs/tracing )
+[![tracing-badge]][tracing]
 
-[tracing-subscriber]( https://crates.io/crates/tracing-subscriber )
+[Tokio tracing (GitHub)][tracing-github]
+
+[tracing-subscriber (crates)][tracing-subscriber-crate]
 
 Add to `Cargo.toml`
 

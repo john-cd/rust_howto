@@ -1,6 +1,6 @@
 # CORS
 
-[https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS]( https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS )
+[CORS (mozilla)][cors-mozilla]
 
 Using the Tower ecosystem:
 

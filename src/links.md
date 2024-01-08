@@ -262,10 +262,41 @@ Keep lines sorted.
 [cat-http-server-badge]: https://badge-cache.kominick.com/badge/http-server--x.svg?style=social
 [cat-http-server]: https://crates.io/categories/web-programming::http-server
 
-<!-- Crates -->
+<!-- Crates
+
+Template:
+[-badge]: https://badge-cache.kominick.com/crates/v/.svg?label=
+[]: https://docs.rs//
+-->
 
 [ansi_term-badge]: https://badge-cache.kominick.com/crates/v/base64.svg?label=ansi_term
 [ansi_term]: https://docs.rs/ansi_term/
+
+[anyhow-badge]: https://badge-cache.kominick.com/crates/v/anyhow.svg?label=anyhow
+[anyhow]: https://docs.rs/anyhow/
+[anyhow-crate]: https://crates.io/crates/anyhow
+
+[approx-badge]: https://badge-cache.kominick.com/crates/v/approx.svg?label=approx
+[approx]: https://docs.rs/approx
+
+[arrow-rs-badge]: https://badge-cache.kominick.com/crates/v/arrow-rs.svg?label=arrow-rs
+[arrow-rs]: https://docs.rs/arrow-rs
+[arrow-rs-github]: https://github.com/apache/arrow-rs
+
+[async_channel-badge]: https://badge-cache.kominick.com/crates/v/async_channel.svg?label=async_channel
+[async_channel]: https://docs.rs/async-channel/
+
+[async-std-badge]: https://badge-cache.kominick.com/crates/v/async-std.svg?label=async-std
+[async-std]: https://docs.rs/async-std/
+[async-std-crate]: https://crates.io/crates/async-std
+
+[async-stream-badge]: https://badge-cache.kominick.com/crates/v/async-stream.svg?label=async-stream
+[async-stream]: https://docs.rs/async-stream/
+[async-stream-github]: https://github.com/tokio-rs/async-stream
+
+[async-trait-badge]: https://badge-cache.kominick.com/crates/v/async-trait.svg?label=async-trait
+[async-trait]: https://docs.rs/async-trait/
+[async-trait-github]: https://github.com/dtolnay/async-trait/
 
 [base64-badge]: https://badge-cache.kominick.com/crates/v/base64.svg?label=base64
 [base64]: https://docs.rs/base64/
@@ -284,9 +315,19 @@ Keep lines sorted.
 
 [clap-badge]: https://badge-cache.kominick.com/crates/v/clap.svg?label=clap
 [clap]: https://docs.rs/clap/
+[clap-github]: https://github.com/clap-rs/clap
+
+[config-badge]: https://badge-cache.kominick.com/crates/v/config.svg?label=config
+[config]: https://docs.rs/config/
+[config-crate]: https://crates.io/crates/config
+
+[confy-badge]: https://badge-cache.kominick.com/crates/v/confy.svg?label=confy
+[confy]: https://docs.rs/confy/
 
 [crossbeam-badge]: https://badge-cache.kominick.com/crates/v/crossbeam.svg?label=crossbeam
 [crossbeam]: https://docs.rs/crossbeam/
+
+[crux-github]: https://redbadger.github.io/crux/
 
 [csv-badge]: https://badge-cache.kominick.com/crates/v/csv.svg?label=csv
 [csv]: https://docs.rs/csv/
@@ -294,12 +335,31 @@ Keep lines sorted.
 [data-encoding-badge]: https://badge-cache.kominick.com/crates/v/data-encoding.svg?label=data-encoding
 [data-encoding]: https://docs.rs/data-encoding/
 
-[-badge]: https://badge-cache.kominick.com/crates/v/.svg?label=
+[datafusion-badge]: https://badge-cache.kominick.com/crates/v/datafusion.svg?label=datafusion
+[datafusion]: https://docs.rs/datafusion/
+[Apache Arrow DataFusion]( https://arrow.apache.org/datafusion/ )
+
+[dashmap-badge]: https://badge-cache.kominick.com/crates/v/dashmap.svg?label=dashmap
+[dashmap]: https://docs.rs/dashmap/
+
+[derive_more-badge]: https://badge-cache.kominick.com/crates/v/derive_more.svg?label=derive_more
+[derive_more]: https://docs.rs/derive_more/
+[derive_more-crate]: https://crates.io/crates/derive_more/
+
+[diesel-badge]: https://badge-cache.kominick.com/crates/v/diesel.svg?label=diesel
+[diesel]: https://docs.rs/diesel/
+
 [dotenv-badge]: https://badge-cache.kominick.com/crates/v/dotenv.svg?label=dotenv
-[dotenv]: https://crates.io/crates/dotenv
+[dotenv]: https://docs.rs/dotenv/
+[dotenv-crate]: https://crates.io/crates/dotenv/
 
 [dotenvy-badge]: https://badge-cache.kominick.com/crates/v/dotenvy.svg?label=dotenvy
-[dotenvy]: https://crates.io/crates/dotenvy
+[dotenvy]: https://docs.rs/dotenvy/
+[dotenvy-crate]: https://crates.io/crates/dotenvy/
+
+[embassy-badge]: https://badge-cache.kominick.com/crates/v/embassy.svg?label=embassy
+[embassy-web]: https://embassy.dev/
+[embassy-github]: https://github.com/akiles/embassy/
 
 [env_logger-badge]: https://badge-cache.kominick.com/crates/v/env_logger.svg?label=env_logger
 [env_logger]: https://docs.rs/env_logger/
@@ -307,8 +367,14 @@ Keep lines sorted.
 [error-chain-badge]: https://badge-cache.kominick.com/crates/v/error-chain.svg?label=error-chain
 [error-chain]: https://docs.rs/error-chain/
 
+[eyre-badge]: https://badge-cache.kominick.com/crates/v/eyre.svg?label=eyre
+[eyre]: https://docs.rs/eyre/latest/eyre/
+
 [flate2-badge]: https://badge-cache.kominick.com/crates/v/flate2.svg?label=flate2
 [flate2]: https://docs.rs/flate2/
+
+[futures-executor-badge]: https://badge-cache.kominick.com/crates/v/futures-executor.svg?label=futures-executor
+[futures-executor]: https://docs.rs/futures-executor/
 
 [glob-badge]:https://badge-cache.kominick.com/crates/v/glob.svg?label=glob
 [glob]: https://docs.rs/glob/
@@ -331,8 +397,16 @@ Keep lines sorted.
 [memmap-badge]: https://badge-cache.kominick.com/crates/v/memmap.svg?label=memmap
 [memmap]: https://docs.rs/memmap/
 
-[mime-badge]: https://badge-cache.kominick.com/crates/v/csv.svg?label=mime
+[miette-badge]: https://badge-cache.kominick.com/crates/v/memmap.svg?label=memmap
+[miette]: https://docs.rs/miette/
+[miette-librs]: https://lib.rs/crates/miette
+
+[mime-badge]: https://badge-cache.kominick.com/crates/v/mime.svg?label=mime
 [mime]: https://docs.rs/mime/
+
+[mio-badge]: https://badge-cache.kominick.com/crates/v/mio.svg?label=mio
+[mio]: https://docs.rs/mio/
+[mio-crate]: https://crates.io/crates/mio/
 
 [nalgebra-badge]: https://badge-cache.kominick.com/crate/nalgebra.svg?label=nalgebra
 [nalgebra]: https://docs.rs/nalgebra
@@ -346,8 +420,25 @@ Keep lines sorted.
 [num_cpus-badge]: https://badge-cache.kominick.com/crates/v/num_cpus.svg?label=num_cpus
 [num_cpus]: https://docs.rs/num_cpus/
 
+[once_cell-badge]: https://badge-cache.kominick.com/crates/v/once_cell.svg?label=once_cell
+[once_cell]: https://docs.rs/once_cell/
+[once_cell-librs]: https://lib.rs/crates/once_cell
+
+[parking-lot-badge]: https://badge-cache.kominick.com/crates/v/parking-lot.svg?label=parking-lot
+[parking-lot]: https://docs.rs/parking-lot/
+[parking-lot-crate]: https://crates.io/crates/parking_lot/
+
 [percent-encoding-badge]: https://badge-cache.kominick.com/crates/v/percent-encoding.svg?label=percent-encoding
 [percent-encoding]: https://docs.rs/percent_encoding/
+
+[polars-badge]: https://badge-cache.kominick.com/crates/v/polars.svg?label=polars
+[polars]: https://docs.rs/polars/
+[polars-book]: https://pola-rs.github.io/polars-book/
+[polars-github]: https://github.com/pola-rs/polars
+
+[postage-badge]: https://badge-cache.kominick.com/crates/v/postage.svg?label=postage
+[postage]: https://docs.rs/postage/
+[postage-librs]: https://lib.rs/crates/postage
 
 [postgres-badge]: https://badge-cache.kominick.com/crates/v/postgres.svg?label=postgres
 [postgres]: https://docs.rs/postgres/
@@ -360,6 +451,7 @@ Keep lines sorted.
 
 [rayon-badge]: https://badge-cache.kominick.com/crates/v/rayon.svg?label=rayon
 [rayon]: https://docs.rs/rayon/
+[rayon-github]: https://github.com/rayon-rs/rayon
 
 [regex-badge]: https://badge-cache.kominick.com/crates/v/regex.svg?label=regex
 [regex]: https://docs.rs/regex/
@@ -376,6 +468,9 @@ Keep lines sorted.
 [same_file-badge]: https://badge-cache.kominick.com/crates/v/same_file.svg?label=same_file
 [same_file]: https://docs.rs/same-file/
 
+[sea_orm-badge]: https://badge-cache.kominick.com/crates/v/sea_orm.svg?label=sea_orm
+[sea_orm]: https://docs.rs/sea-orm/
+
 [select-badge]: https://badge-cache.kominick.com/crates/v/select.svg?label=select
 [select]: https://docs.rs/select/
 
@@ -388,6 +483,14 @@ Keep lines sorted.
 [serde-json-badge]: https://badge-cache.kominick.com/crates/v/serde_json.svg?label=serde_json
 [serde-json]: https://docs.rs/serde_json/
 
+[smol-badge]: https://badge-cache.kominick.com/crates/v/smol.svg?label=smol
+[smol]: https://docs.rs/smol/
+[smol-crate]: https://crates.io/crates/smol/
+
+[sqlx-badge]: https://badge-cache.kominick.com/crates/v/sqlx.svg?label=sqlx
+[sqlx]: https://docs.rs/sqlx/
+[sqlx-librs]: https://lib.rs/crates/sqlx
+
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
 [std]: https://doc.rust-lang.org/std
 
@@ -397,14 +500,38 @@ Keep lines sorted.
 [tar-badge]: https://badge-cache.kominick.com/crates/v/tar.svg?label=tar
 [tar]: https://docs.rs/tar/
 
+[tauri-badge]: https://badge-cache.kominick.com/crates/v/tauri.svg?label=tauri
+[tauri]: https://docs.rs/tauri/
+[tauri-web]: https://tauri.app/
+
 [tempdir-badge]: https://badge-cache.kominick.com/crates/v/tempdir.svg?label=tempdir
 [tempdir]: https://docs.rs/tempdir/
+
+[thisError-badge]: https://badge-cache.kominick.com/crates/v/thisError.svg?label=thisError
+[thisError]: https://docs.rs/thiserror/latest/thiserror/
 
 [threadpool-badge]: https://badge-cache.kominick.com/crates/v/threadpool.svg?label=threadpool
 [threadpool]: https://docs.rs/threadpool/
 
+[tokio-badge]: https://badge-cache.kominick.com/crates/v/tokio.svg?label=tokio
+[tokio]: https://docs.rs/tokio/
+[tokio-web]: https://tokio.rs/
+[tokio-github]: https://github.com/tokio-rs/tokio/
+
+[tokio_graceful_shutdown-badge]: https://badge-cache.kominick.com/crates/v/tokio_graceful_shutdown.svg?label=tokio_graceful_shutdown
+[tokio_graceful_shutdown]: https://docs.rs/tokio_graceful_shutdown/
+
 [toml-badge]: https://badge-cache.kominick.com/crates/v/toml.svg?label=toml
 [toml]: https://docs.rs/toml/
+
+[tracing-badge]: https://badge-cache.kominick.com/crates/v/tracing.svg?label=tracing
+[tracing]: https://docs.rs/tracing/
+[tracing-web]: https://tracing.rs/tracing/
+[tracing-github]: https://github.com/tokio-rs/tracing
+
+[tracing-subscriber-badge]: https://badge-cache.kominick.com/crates/v/tracing-subscriber.svg?label=tracing-subscriber
+[tracing-subscriber]: https://docs.rs/tracing-subscriber/
+[tracing-subscriber-crate]: https://crates.io/crates/tracing-subscriber
 
 [url-badge]: https://badge-cache.kominick.com/crates/v/url.svg?label=url
 [url]: https://docs.rs/url/
@@ -414,3 +541,33 @@ Keep lines sorted.
 
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
+
+<!-- Tools -->
+
+[cargo-nextest]: https://nexte.st/
+
+<!-- The Rust Book -->
+
+[message-passing-rust-book]: https://doc.rust-lang.org/book/ch16-02-message-passing.html
+[concurrency-rust-book]: https://doc.rust-lang.org/book/ch16-00-concurrency.html
+
+<!-- Std doc -->
+
+[std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/index.html
+
+<!-- Other -->
+
+[Are we async yet?]: https://areweasyncyet.rs/
+
+[Asynchronous Programming in Rust (book)]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+
+[Command Line Applications in Rust]: https://rust-cli.github.io/book/index.html
+
+[aws-sdk]: https://aws.amazon.com/sdk-for-rust/
+
+[blessed.rs]: https://blessed.rs/crates
+
+[cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+[dapr-web]: https://dapr.io/
+[dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk

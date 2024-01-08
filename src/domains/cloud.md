@@ -2,13 +2,13 @@
 
 ## AWS
 
-[AWS SDK]( https://aws.amazon.com/sdk-for-rust/ )
+[AWS Rust SDK][aws-sdk]
 
 ## Dapr
 
-[Dapr]( https://dapr.io/ ) is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
+[Dapr][dapr-web] is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
 
-[Dapr SDK for Rust]( https://github.com/dapr/rust-sdk )
+[Dapr SDK for Rust][dapr-rust-sdk-github]
 
 [Dapr Rust SDK example]( https://github.com/dapr/rust-sdk/tree/master/examples )
 

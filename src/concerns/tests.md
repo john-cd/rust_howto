@@ -16,8 +16,8 @@
 
 ## See Also
 
-[Approx]( https://docs.rs/approx/latest/approx/index.html )
+[Approx][approx]
 
-[cargo-nextest]( https://nexte.st/ ): `cargo nextest run; cargo test --doc`
+[cargo-nextest][cargo-nextest]: `cargo nextest run; cargo test --doc`
 
 {{#include ../links.md}}

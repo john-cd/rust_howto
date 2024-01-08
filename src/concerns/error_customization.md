@@ -5,7 +5,7 @@ Use `thiserror` if you are a library that wants to design your own dedicated err
 
 ## Anyhow
 
-[Anyhow]( https://crates.io/crates/anyhow )
+[Anyhow (crates.io)][anyhow-crate]
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
@@ -17,7 +17,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`, includ
 
 ## thisError
 
-[thisError]( https://docs.rs/thiserror/latest/thiserror/ ) provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
+[thisError][thisError] provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/thiserror.rs}}
@@ -38,7 +38,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[Miette]( https://lib.rs/crates/miette ) prints fancy diagnostics upon error.
+[Miette][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 # extern crate miette;
@@ -52,6 +52,6 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## See also
 
-[eyre]( https://docs.rs/eyre/latest/eyre/ )
+[eyre][eyre]
 
 {{#include ../links.md}}

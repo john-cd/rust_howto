@@ -16,7 +16,7 @@ This is in turn enabled by return-position `impl Trait` in traits, since `async 
 
 Note that there are still caveats for public traits - see [Announcing `async fn` and return-position `impl Trait` in traits]( https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html# ).
 
-In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the [Async trait crate]( https://github.com/dtolnay/async-trait ).
+In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the [Async trait crate (github)][async-trait-github].
 
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/async_traits3.rs}}

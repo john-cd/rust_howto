@@ -5,11 +5,11 @@
 GTK and Tauri are probably the only options which can be described as production-ready without caveats.
 The Rust native options are usable for simple projects but are all still quite incomplete.
 
-See the relevant section in [blessed.rs]( https://blessed.rs/crates )
+See the relevant section in [blessed.rs][blessed.rs]
 
 ## Tauri
 
-[Tauri]( https://tauri.app/ ) is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is equivalent to Electron.
+[Tauri][tauri-web] is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
 
 ## egui
 

@@ -34,11 +34,11 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## Config
 
-[config]( https://crates.io/crates/config ): layered configuration system for Rust applications. Read from JSON, TOML, YAML, INI, RON, JSON5 files.
+[config][config]: layered configuration system for Rust applications. Read from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 
-[Confy]( https://docs.rs/confy/latest/confy/index.html )
+[Confy][confy]
 
 ```rust,editable,ignore
 {{#include ../../deps/examples/confy.rs}}

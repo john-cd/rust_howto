@@ -1,11 +1,12 @@
 # Data and ETL
 
-[polars]( https://pola-rs.github.io/polars-book/ )
+| --- |
+| [![polars-badge]][polars] |
+| [polars (book)][polars-book] |
+| [polars (github)][polars-github] |
 
-[polars (github)](https://github.com/pola-rs/polars)
+[arrow-rs (github)][arrow-rs-github]: official Rust implementation of Apache Arrow
 
-[arrow-rs]( https://github.com/apache/arrow-rs ): official Rust implementation of Apache Arrow
-
-[Apache Arrow DataFusion]( https://arrow.apache.org/datafusion/ ) SQL Query Engine
+[Apache Arrow DataFusion]( https://arrow.apache.org/datafusion/ ) SQL Query Engine [![datafusion-badge]][datafusion]
 
 {{#include ../links.md}}
