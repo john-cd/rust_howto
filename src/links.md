@@ -269,6 +269,8 @@ Template:
 []: https://docs.rs//
 -->
 
+[actix-web]: https://actix.rs/
+
 [ansi-term-badge]: https://badge-cache.kominick.com/crates/v/ansi_term.svg?label=ansi_term
 [ansi-term]: https://docs.rs/ansi_term/
 
@@ -350,6 +352,7 @@ Template:
 
 [diesel-badge]: https://badge-cache.kominick.com/crates/v/diesel.svg?label=diesel
 [diesel]: https://docs.rs/diesel/
+[diesel-librs]: https://lib.rs/crates/diesel/
 
 [dotenv-badge]: https://badge-cache.kominick.com/crates/v/dotenv.svg?label=dotenv
 [dotenv]: https://docs.rs/dotenv/
@@ -358,6 +361,12 @@ Template:
 [dotenvy-badge]: https://badge-cache.kominick.com/crates/v/dotenvy.svg?label=dotenvy
 [dotenvy]: https://docs.rs/dotenvy/
 [dotenvy-crate]: https://crates.io/crates/dotenvy/
+
+[druid-github]: https://github.com/linebender/druid
+
+[egui-badge]: https://badge-cache.kominick.com/crates/v/egui.svg?label=egui
+[egui]: https://docs.rs/egui/
+[egui-crate]: https://crates.io/crates/egui/
 
 [embassy-badge]: https://badge-cache.kominick.com/crates/v/embassy.svg?label=embassy
 [embassy-web]: https://embassy.dev/
@@ -375,6 +384,10 @@ Template:
 [flate2-badge]: https://badge-cache.kominick.com/crates/v/flate2.svg?label=flate2
 [flate2]: https://docs.rs/flate2/
 
+[futures-badge]: https://badge-cache.kominick.com/crates/v/futures.svg?label=futures
+[futures]: https://docs.rs/futures/
+[futures-crate]: https://crates.io/crates/futures
+
 [futures-executor-badge]: https://badge-cache.kominick.com/crates/v/futures-executor.svg?label=futures-executor
 [futures-executor]: https://docs.rs/futures-executor/
 
@@ -383,12 +396,20 @@ Template:
 
 [hyper-badge]: https://badge-cache.kominick.com/crates/v/hyper.svg?label=hyper
 [hyper]: https://docs.rs/hyper/
+[hyper-crate]: https://crates.io/crates/hyper
+
+[iced-rs-github]: https://github.com/iced-rs
 
 [image-badge]: https://badge-cache.kominick.com/crates/v/image.svg?label=image
 [image]: https://docs.rs/image/
 
-[lazy_static-badge]: https://badge-cache.kominick.com/crates/v/lazy_static.svg?label=lazy_static
-[lazy_static]: https://docs.rs/lazy_static/
+[lazy-static-badge]: https://badge-cache.kominick.com/crates/v/lazy_static.svg?label=lazy_static
+[lazy-static]: https://docs.rs/lazy_static/
+
+[linfa-badge]: https://badge-cache.kominick.com/crates/v/linfa.svg?label=linfa
+[lazy_static]: https://docs.rs/linfa/
+[linfa-crate]: https://crates.io/crates/linfa
+[linfa-web]: https://rust-ml.github.io/linfa/
 
 [log-badge]: https://badge-cache.kominick.com/crates/v/log.svg?label=log
 [log]: https://docs.rs/log/
@@ -467,11 +488,19 @@ Template:
 [rusqlite-badge]: https://badge-cache.kominick.com/crates/v/rusqlite.svg?label=rusqlite
 [rusqlite]: https://docs.rs/rusqlite/
 
+[rustquant-badge]: https://badge-cache.kominick.com/crates/v/rustquant.svg?label=rustquant
+[rustquant]: https://docs.rs/rustquant/
+[rustquant-librs]: https://lib.rs/crates/rustquant
+
 [same-file-badge]: https://badge-cache.kominick.com/crates/v/same_file.svg?label=same_file
 [same-file]: https://docs.rs/same_file/
 
+[seography-web]: https://www.sea-ql.org/Seaography/
+
 [sea-orm-badge]: https://badge-cache.kominick.com/crates/v/sea_orm.svg?label=sea_orm
 [sea-orm]: https://docs.rs/sea_orm/
+[sea-orm-web]: https://www.sea-ql.org/SeaORM/
+[sea-orm-cookbook]: https://www.sea-ql.org/sea-orm-cookbook/000-sea-orm-cookbook.html
 
 [select-badge]: https://badge-cache.kominick.com/crates/v/select.svg?label=select
 [select]: https://docs.rs/select/
@@ -485,6 +514,8 @@ Template:
 [serde-json-badge]: https://badge-cache.kominick.com/crates/v/serde_json.svg?label=serde_json
 [serde-json]: https://docs.rs/serde_json/
 
+[smartcore-web]: https://smartcorelib.org/
+
 [smol-badge]: https://badge-cache.kominick.com/crates/v/smol.svg?label=smol
 [smol]: https://docs.rs/smol/
 [smol-crate]: https://crates.io/crates/smol/
@@ -492,6 +523,7 @@ Template:
 [sqlx-badge]: https://badge-cache.kominick.com/crates/v/sqlx.svg?label=sqlx
 [sqlx]: https://docs.rs/sqlx/
 [sqlx-librs]: https://lib.rs/crates/sqlx/
+[sqlx-github]: https://github.com/launchbadge/sqlx
 
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
 [std]: https://doc.rust-lang.org/std/
@@ -526,6 +558,16 @@ Template:
 [toml-badge]: https://badge-cache.kominick.com/crates/v/toml.svg?label=toml
 [toml]: https://docs.rs/toml/
 
+[tower-badge]: https://badge-cache.kominick.com/crates/v/tower.svg?label=tower
+[tower]: https://docs.rs/tower/
+
+[tower-http-badge]: https://badge-cache.kominick.com/crates/v/tower_http.svg?label=tower-http
+[tower-http]: https://docs.rs/tower-http/
+
+[tonic-badge]: https://badge-cache.kominick.com/crates/v/tonic.svg?label=tonic
+[tonic]: https://docs.rs/tonic/
+[tonic-crate]: https://crates.io/crates/tonic
+
 [tracing-badge]: https://badge-cache.kominick.com/crates/v/tracing.svg?label=tracing
 [tracing]: https://docs.rs/tracing/
 [tracing-web]: https://tracing.rs/tracing/
@@ -544,32 +586,48 @@ Template:
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
 
+[yew-badge]: https://badge-cache.kominick.com/crates/v/yew.svg?label=yew
+[yew]: https://docs.rs/yew/
+[yew-web]: https://yew.rs/
+
 <!-- Tools -->
 
 [cargo-nextest]: https://nexte.st/
+[zola-web]: https://www.getzola.org/documentation/getting-started/overview/
 
-<!-- The Rust Book -->
+<!-- Rust Book Chapters -->
 
-[message-passing-rust-book]: https://doc.rust-lang.org/book/ch16-02-message-passing.html
 [concurrency-rust-book]: https://doc.rust-lang.org/book/ch16-00-concurrency.html
+[derivable-traits-rust-book]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
+[message-passing-rust-book]: https://doc.rust-lang.org/book/ch16-02-message-passing.html
+[scoped-threads-rust-book]: https://doc.rust-lang.org/std/thread/fn.scope.html
 
 <!-- Std doc -->
 
 [std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/
 
-<!-- Other -->
+<!-- Books and web sites -->
 
-[are-we-async-yet?]: https://areweasyncyet.rs/
-
-[asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
-
-[rust-cli-book]: https://rust-cli.github.io/book/index.html
-
-[aws-sdk]: https://aws.amazon.com/sdk-for-rust/
-
+[async-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+[awesome-rust]: https://github.com/rust-unofficial/awesome-rust
 [blessed-rs]: https://blessed.rs/crates
+[codevoweb]: https://codevoweb.com/
+[docs-rs]: https://docs.rs/
+[easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
+[learning-rust-linked-lists]: https://rust-unofficial.github.io/too-many-lists/index.html
+[lpalmieri-web]: https://www.lpalmieri.com/
+[rust-book]: https://doc.rust-lang.org/book/title-page.html
+[rust-by-example-book]: https://doc.rust-lang.org/rust-by-example/index.html
+[rust-by-practice-book]: https://practice.rs/why-exercise.html
+[rust-cookbook-fork]: https://jamesgraves.github.io/rust-cookbook/
+[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/intro.html
+[rust-design-patterns]: https://rust-unofficial.github.io/patterns/intro.html
+[rustdoc-book]: https://doc.rust-lang.org/rustdoc/index.html
+[rust-for-professionals]: https://overexact.com/rust-for-professionals/
+[rust-learning]: https://github.com/ctjhoa/rust-learning
+[rustonomicon-book]: https://doc.rust-lang.org/nomicon/intro.html
+[rust-quizz]: https://dtolnay.github.io/rust-quiz
+[rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
+[zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production
 
-[cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-
-[dapr-web]: https://dapr.io/
-[dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
+<!-- Other -->

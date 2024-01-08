@@ -1,19 +1,22 @@
 # Machine Learning
 
-[Are we learning yet?]( https://www.arewelearningyet.com/ )
+[Are we learning yet?][are-we-learning-yet?]
 
-[Linfa]( https://crates.io/crates/linfa )
+[Linfa][linfa-crate]
 
-[Linfa (home page)]( https://rust-ml.github.io/linfa/ )
+[Linfa (home page)][linfa-web]
 
-[SmartCore]( https://smartcorelib.org/ )
+[SmartCore][smartcore-web]
 
-[OpenCV (example)]( https://github.com/amar-laksh/workstation/blob/master/src/main.rs )
+[OpenCV (example)][opencv-example]
 
-[Genetic algos in Rust]( https://github.com/thomasbratt/watchmaker )
+[Genetic algos in Rust][watchmaker]
 
 ## Quant
 
-[rustquant]( https://lib.rs/crates/rustquant )
+[rustquant][rustquant]
 
+[are-we-learning-yet?]: https://www.arewelearningyet.com/
+[opencv-example]: https://github.com/amar-laksh/workstation/blob/master/src/main.rs
+[watchmaker]: https://github.com/thomasbratt/watchmaker
 {{#include ../links.md}}

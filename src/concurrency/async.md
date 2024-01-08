@@ -2,9 +2,9 @@
 
 Asynchronous programming, or async for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await syntax
 
-[Are we async yet?][Are we async yet?]
+[Are we async yet?][are-we-async-yet?]
 
-[Asynchronous Programming in Rust (book)][Asynchronous Programming in Rust (book)]
+[Asynchronous Programming in Rust (book)][asynchronous-programming-in-rust-book]
 
 ## Basic Example
 
@@ -46,5 +46,8 @@ Alternatives to the Tokio async ecosystem include:
 - [Smol][smol-crate]
 - [Embassy][embassy-web] for embedded systems.
 - [Mio][mio-crate] is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+
+[are-we-async-yet?]: https://areweasyncyet.rs/
+[asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 
 {{#include ../links.md}}

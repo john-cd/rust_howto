@@ -2,15 +2,13 @@
 
 ## Environment variables
 
-[dotenvy]( https://crates.io/crates/dotenvy )
-
-It supersedes [dotenv]( https://crates.io/crates/dotenv )
+[dotenvy][dotenvy] supersedes [dotenv][dotenv].
 
 ```rust,editable,ignore
 {{#include ../../deps/examples/dotenvy.rs}}
 ```
 
-To retrieve a single environment variable
+To retrieve a single environment variable,
 
 ```rust,editable,should_panic
 {{#include ../../deps/examples/env.rs}}
@@ -34,7 +32,7 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## Config
 
-[config][config]: layered configuration system for Rust applications. Read from JSON, TOML, YAML, INI, RON, JSON5 files.
+[Config][config] is a layered configuration system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 

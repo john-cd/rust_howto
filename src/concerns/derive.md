@@ -2,7 +2,7 @@
 
 The `derive` attribute generates code that will implement a trait with its own default implementation on the type you’ve annotated with the derive syntax.
 
-[Derivable traits]( https://doc.rust-lang.org/book/appendix-03-derivable-traits.html )
+[Derivable traits][derivable-traits-rust-book]
 
 {{#playground ../../deps/examples/derive.rs editable}}
 
