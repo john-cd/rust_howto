@@ -72,7 +72,7 @@ runall:
 # Build the book from its markdown files
 build:
   mdbook build
-  mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
+  #mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
 
 # Test the examples embedded in the markdown
 test:
@@ -80,7 +80,7 @@ test:
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. testing of the examples embedded in the markdown)
-serve: build
+serve:
   mdbook serve --open
 # to change the port: --port 3001
 
