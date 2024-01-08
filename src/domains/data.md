@@ -1,9 +1,8 @@
 # Data and ETL
 
-| --- |
-| [![polars-badge]][polars] |
-| [polars (book)][polars-book] |
-| [polars (github)][polars-github] |
+| Crate | Book | Repo |
+| ----- | ---- | ---- |
+| [![polars-badge]][polars] | [polars (book)][polars-book] | [polars (github)][polars-github] |
 
 [arrow-rs (github)][arrow-rs-github]: official Rust implementation of Apache Arrow
 
