@@ -39,8 +39,8 @@ mdbook test
 ## Build the book and copy into ./book
 mdbook build
 
-## Add statci assets
-#cp static/*.html book/
+## Add static assets
+cp static/*.* book/
 
 ## https://lib.rs/crates/mdbook-sitemap-generator
 mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml

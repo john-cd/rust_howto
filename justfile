@@ -72,6 +72,8 @@ runall:
 # Build the book from its markdown files
 build:
   mdbook build
+  # Add static assets
+  cp static/*.* book/
 
 # Test the examples embedded in the markdown
 test:
@@ -79,7 +81,7 @@ test:
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. testing of the examples embedded in the markdown)
-serve:
+serve: build
   mdbook serve --open
 # to change the port: --port 3001
 
