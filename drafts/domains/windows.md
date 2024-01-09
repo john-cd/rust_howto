@@ -6,3 +6,4 @@
 
 [native-windows-gui]: https://github.com/gabdube/native-windows-gui
 [windows-rs]: https://github.com/microsoft/windows-rs
+{{#include ../link-refs.md}}

@@ -62,3 +62,5 @@ async fn main() {
 
 [Current thread runtime]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
 [LocalSet]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
+
+{{#include ../link-refs.md}}

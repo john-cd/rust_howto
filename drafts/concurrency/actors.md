@@ -55,3 +55,5 @@ fn main() {
 [Await tree]: https://crates.io/crates/await-tree
 [Ractor]: https://crates.io/crates/ractor
 [Riker]: https://riker.rs/
+
+{{#include ../link-refs.md}}

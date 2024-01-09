@@ -4,14 +4,15 @@
 
 ## Tokio
 
-- [Tokio (github)][tokio-github]
+[Tokio (github)][tokio-github]
 
 ## Other
 
-[Building a SaaS with Rust and Next.js][building-a-saas-with-rust]
+[Building a SaaS with Rust and Next.js][building-a-saas-with-rust-website]
 
-[Rust on Nails][rust-on-nails]
+[Rust on Nails][rust-on-nails-website]
 
-[building-a-saas-with-rust]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
+[building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
 [tokio-github]: https://github.com/tokio-rs
-[rust-on-nails]: https://rust-on-nails.com/
+[rust-on-nails-website]: https://rust-on-nails.com/
+{{#include ../link-refs.md}}
