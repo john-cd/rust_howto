@@ -1,19 +1,46 @@
 # TODO
 
-tower_http example polish; other examples have been checked against the rust playground
+finish links:
+
+- add badges to all src pages from crates.md
+- rename some of the IDs
+- organize link-refs.md
+- review categories.md
+- review crates.md
+- move links in drafts
+- figure out the 404s when linkchecking
 
 polish the intro
 
 review example testing using libraries outside of `std` - WIP; review generate.sh
 
 - make mdbook-keeper work or use rustdoc / doctest instead
-- make it work: mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+- skeptic as used in rust cookbook
+- fix generate.sh
 
-update GA settings
+rename main README to intro
+
+tower_http example polish; other examples have been checked against the rust playground
+
+review GA / GSC - issues with redirects??
+
+explanation text for language pages
+
+web examples into separate section
+
+review Install Rust
+
+add sitemap generation:
+
+https://crates.io/crates/sitemap
+https://crates.io/crates/sitewriter
+https://lib.rs/crates/mdbook-sitemap-generator
 
 license
 
-logo / favicon
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in axum by you, shall be licensed as __, without any additional terms or conditions.
+
+add licenses to thanks page
 
 Search within the book
 
@@ -30,11 +57,9 @@ Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
 
 Review <https://github.com/rust-unofficial/patterns> - already in links.md
 
-explanation text for language pages
+<https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
 
-web examples into separate section
-
-review Install Rust
+Link to <https://stevedonovan.github.io/rust-gentle-intro/>
 
 [Error Chain][Error Chain]
 
