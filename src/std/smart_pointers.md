@@ -16,7 +16,7 @@ Use when
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
 
-[Box][box-rust-book]⮳
+[![box-rust-book-badge]][box-rust-book]
 
 ## Rc
 

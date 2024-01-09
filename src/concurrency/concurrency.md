@@ -19,10 +19,10 @@ Key constructs in Rust:
 
 Here are the topics we’ll cover:
 
-- [Multithreading⮳](multithreading.md)
-- [Message passing⮳](message_passing.md)
-- [Shared-state concurrency⮳](shared_state.md)
-- [Concurrent data structures⮳](concurrent_data_structures.md)
+- [Multithreading](multithreading.md)
+- [Message passing](message_passing.md)
+- [Shared-state concurrency](shared_state.md)
+- [Concurrent data structures](concurrent_data_structures.md)
 
 ## Asynchronous programming
 
@@ -49,6 +49,6 @@ Here are the topics we’ll cover:
 
 ## See Also
 
-[Concurrency (rust book)][concurrency-rust-book]⮳
+[![concurrency-rust-book-badge]][concurrency-rust-book]
 
 {{#include ../link-refs.md}}

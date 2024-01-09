@@ -22,7 +22,7 @@
 
 ## Tools
 
-[Cargo expand][cargo-expand]⮳
+[Cargo expand][cargo-expand-github]⮳
 
 ## Links
 

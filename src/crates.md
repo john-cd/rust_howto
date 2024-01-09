@@ -102,7 +102,7 @@
 
 [![num-badge]][num]
 
-[![num_cpus-badge]][num_cpus]
+[![num-cpus-badge]][num-cpus]
 
 [![once-cell-badge]][once-cell]
 

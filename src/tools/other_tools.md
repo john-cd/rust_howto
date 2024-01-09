@@ -16,14 +16,14 @@
 
 [My terminal became more Rusty Community][My terminal became more Rusty Community]⮳
 
-[open-rs][open-rs]⮳
+[open-rs][open-rs-github]⮳
 
-[Starship][starship]⮳
+[Starship][starship-github]⮳
 
-[Bacon][bacon]⮳
+[Bacon][bacon-github]⮳
 
-[Bat][bat]⮳
+[Bat][bat-github]⮳
 
-[Exa][exa]⮳
+[Exa][exa-github]⮳
 
 {{#include ../link-refs.md}}

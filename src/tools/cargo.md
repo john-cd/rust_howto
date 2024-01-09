@@ -92,7 +92,7 @@ cargo fix
 
 ## Code coverage
 
-[Tarpaulin][tarpaulin]⮳
+[Tarpaulin][tarpaulin-github]⮳
 
 ## Security audit
 
@@ -114,6 +114,6 @@ cargo machete
 
 ## Templates
 
-[Cargo Generate][cargo-generate]⮳: developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][cargo-generate-github]⮳: developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 {{#include ../link-refs.md}}

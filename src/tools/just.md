@@ -2,7 +2,7 @@
 
 `just` is a command runner / Make replacement.
 
-[https://just.systems/][just]⮳
+[https://just.systems/][just-website]⮳
 
 [Just Programmer's Manual][just-programmer-manual]⮳
 
