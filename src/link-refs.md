@@ -262,14 +262,12 @@ Keep lines sorted.
 [cat-http-server-badge]: https://badge-cache.kominick.com/badge/http_server--x.svg?style=social
 [cat-http-server]: https://crates.io/categories/web-programming::http-server/
 
-<!-- Crates
+<!-- Crates -->
 
-Template:
-[-badge]: https://badge-cache.kominick.com/crates/v/.svg?label=
-[]: https://docs.rs//
--->
+[actix-web-badge]: https://badge-cache.kominick.com/crates/v/actix-web.svg?label=actix-web
 
-[actix-web]: https://actix.rs/
+[actix-web]: https://docs.rs/actix-web/latest/actix_web/
+[actix-web-website]: https://actix.rs/
 
 [ansi-term-badge]: https://badge-cache.kominick.com/crates/v/ansi_term.svg?label=ansi_term
 [ansi-term]: https://docs.rs/ansi_term/
@@ -345,7 +343,7 @@ Template:
 
 [datafusion-badge]: https://badge-cache.kominick.com/crates/v/datafusion.svg?label=datafusion
 [datafusion]: https://docs.rs/datafusion/
-[datafusion-web]: https://arrow.apache.org/datafusion/
+[datafusion-website]: https://arrow.apache.org/datafusion/
 
 [dashmap-badge]: https://badge-cache.kominick.com/crates/v/dashmap.svg?label=dashmap
 [dashmap]: https://docs.rs/dashmap/
@@ -366,6 +364,8 @@ Template:
 [dotenvy]: https://docs.rs/dotenvy/
 [dotenvy-crate]: https://crates.io/crates/dotenvy/
 
+[druid-badge]: https://badge-cache.kominick.com/crates/v/druid.svg?label=druid
+[druid]: https://docs.rs/druid/
 [druid-github]: https://github.com/linebender/druid/
 
 [egui-badge]: https://badge-cache.kominick.com/crates/v/egui.svg?label=egui
@@ -373,7 +373,7 @@ Template:
 [egui-crate]: https://crates.io/crates/egui/
 
 [embassy-badge]: https://badge-cache.kominick.com/crates/v/embassy.svg?label=embassy
-[embassy-web]: https://embassy.dev/
+[embassy-website]: https://embassy.dev/
 [embassy-github]: https://github.com/akiles/embassy/
 
 [env-logger-badge]: https://badge-cache.kominick.com/crates/v/env_logger.svg?label=env_logger
@@ -394,7 +394,7 @@ Template:
 
 [futures-executor-badge]: https://badge-cache.kominick.com/crates/v/futures-executor.svg?label=futures-executor
 [futures-executor]: https://docs.rs/futures-executor/
-[block-on]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
+[futures-executor-block-on]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
 
 [glob-badge]:https://badge-cache.kominick.com/crates/v/glob.svg?label=glob
 [glob]: https://docs.rs/glob/
@@ -403,6 +403,8 @@ Template:
 [hyper]: https://docs.rs/hyper/
 [hyper-crate]: https://crates.io/crates/hyper/
 
+[iced-rs-badge]: https://badge-cache.kominick.com/crates/v/iced.svg?label=iced
+[iced-rs]: https://docs.rs/iced/
 [iced-rs-github]: https://github.com/iced-rs/
 
 [image-badge]: https://badge-cache.kominick.com/crates/v/image.svg?label=image
@@ -414,7 +416,7 @@ Template:
 [linfa-badge]: https://badge-cache.kominick.com/crates/v/linfa.svg?label=linfa
 [lazy_static]: https://docs.rs/linfa/
 [linfa-crate]: https://crates.io/crates/linfa/
-[linfa-web]: https://rust-ml.github.io/linfa/
+[linfa-website]: https://rust-ml.github.io/linfa/
 
 [log-badge]: https://badge-cache.kominick.com/crates/v/log.svg?label=log
 [log]: https://docs.rs/log/
@@ -507,11 +509,11 @@ Template:
 [same-file-badge]: https://badge-cache.kominick.com/crates/v/same_file.svg?label=same_file
 [same-file]: https://docs.rs/same_file/
 
-[seography-web]: https://www.sea-ql.org/Seaography/
+[seography-website]: https://www.sea-ql.org/Seaography/
 
 [sea-orm-badge]: https://badge-cache.kominick.com/crates/v/sea_orm.svg?label=sea_orm
 [sea-orm]: https://docs.rs/sea_orm/
-[sea-orm-web]: https://www.sea-ql.org/SeaORM/
+[sea-orm-website]: https://www.sea-ql.org/SeaORM/
 [sea-orm-cookbook]: https://www.sea-ql.org/sea-orm-cookbook/000-sea-orm-cookbook.html
 
 [select-badge]: https://badge-cache.kominick.com/crates/v/select.svg?label=select
@@ -526,7 +528,7 @@ Template:
 [serde-json-badge]: https://badge-cache.kominick.com/crates/v/serde_json.svg?label=serde_json
 [serde-json]: https://docs.rs/serde_json/
 
-[smartcore-web]: https://smartcorelib.org/
+[smartcore-website]: https://smartcorelib.org/
 
 [smol-badge]: https://badge-cache.kominick.com/crates/v/smol.svg?label=smol
 [smol]: https://docs.rs/smol/
@@ -540,6 +542,8 @@ Template:
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
 [std]: https://doc.rust-lang.org/std/
 
+[syn-badge]: https://badge-cache.kominick.com/crates/v/syn.svg?label=syn
+[syn]: https://docs.rs/syn/
 [syn-github]: https://github.com/dtolnay/syn
 
 [syslog-badge]: https://badge-cache.kominick.com/crates/v/syslog.svg?label=syslog
@@ -550,7 +554,7 @@ Template:
 
 [tauri-badge]: https://badge-cache.kominick.com/crates/v/tauri.svg?label=tauri
 [tauri]: https://docs.rs/tauri/
-[tauri-web]: https://tauri.app/
+[tauri-website]: https://tauri.app/
 
 [tempdir-badge]: https://badge-cache.kominick.com/crates/v/tempdir.svg?label=tempdir
 [tempdir]: https://docs.rs/tempdir/
@@ -563,7 +567,7 @@ Template:
 
 [tokio-badge]: https://badge-cache.kominick.com/crates/v/tokio.svg?label=tokio
 [tokio]: https://docs.rs/tokio/
-[tokio-web]: https://tokio.rs/
+[tokio-website]: https://tokio.rs/
 [tokio-github]: https://github.com/tokio-rs/tokio/
 [spawn-blocking]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
 [bridging-with-sync-code]: https://tokio.rs/tokio/topics/bridging
@@ -591,7 +595,7 @@ Template:
 
 [tracing-badge]: https://badge-cache.kominick.com/crates/v/tracing.svg?label=tracing
 [tracing]: https://docs.rs/tracing/
-[tracing-web]: https://tracing.rs/tracing/
+[tracing-website]: https://tracing.rs/tracing/
 [tracing-github]: https://github.com/tokio-rs/tracing/
 
 [tracing-subscriber-badge]: https://badge-cache.kominick.com/crates/v/tracing_subscriber.svg?label=tracing_subscriber
@@ -607,11 +611,13 @@ Template:
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
 
+[watt-badge]: https://badge-cache.kominick.com/crates/v/watt.svg?label=watt
+[watt]: https://docs.rs/watt/
 [watt-github]: https://github.com/dtolnay/watt
 
 [yew-badge]: https://badge-cache.kominick.com/crates/v/yew.svg?label=yew
 [yew]: https://docs.rs/yew/
-[yew-web]: https://yew.rs/
+[yew-website]: https://yew.rs/
 
 <!-- Tools for Rust -->
 [cargo-book]: https://doc.rust-lang.org/cargo/index.html
@@ -627,7 +633,7 @@ Template:
 [roogle]: https://roogle.hkmatsumoto.com/search
 [roogle-github]: https://github.com/roogle-rs/roogle
 [rust-analyzer]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
-[rust-analyzer-web]: https://rust-analyzer.github.io/
+[rust-analyzer-website]: https://rust-analyzer.github.io/
 [rust-tools]: https://www.rust-lang.org/tools
 [rustfmt]: https://github.com/rust-lang/rustfmt
 [rustfmt-config]: https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=
@@ -637,7 +643,7 @@ Template:
 [shuttle-rs]: https://www.shuttle.rs/
 [tarpaulin]: https://github.com/xd009642/tarpaulin
 [vs-code]: https://code.visualstudio.com/docs/languages/rust
-[zola-web]: https://www.getzola.org/documentation/getting-started/overview/
+[zola-website]: https://www.getzola.org/documentation/getting-started/overview/
 
 <!-- Tools built with Rust -->
 [bacon]: https://github.com/Canop/bacon
@@ -679,6 +685,7 @@ Template:
 [easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [learning-rust-linked-lists]: https://rust-unofficial.github.io/too-many-lists/index.html
 [lib-rs]: https://lib.rs/
+[lib-rs-stats]: https://lib.rs/stats/
 [programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274/
 [rust-by-example-playground]: https://doc.rust-lang.org/rust-by-example/meta/playground.html
 [rust-book]: https://doc.rust-lang.org/book/
@@ -692,7 +699,6 @@ Template:
 [rustonomicon-book]: https://doc.rust-lang.org/nomicon/
 [rust-quizz]: https://dtolnay.github.io/rust-quiz/
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
-[zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production/
 
 [attributes-reference]: https://doc.rust-lang.org/reference/attributes.html
 [conditional-compilation]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
@@ -705,10 +711,11 @@ Template:
 <!-- Example Code -->
 [realworld-example-apps]: https://github.com/gothinkster/realworld
 [zero-to-production-book]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
+[zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production/
 
 <!-- Blogs -->
 [codevoweb]: https://codevoweb.com/
-[lpalmieri-web]: https://www.lpalmieri.com/
+[lpalmieri-website]: https://www.lpalmieri.com/
 [rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system/
 [traits-blog]: https://blog.rust-lang.org/2015/05/11/traits.html
 [what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking/
@@ -717,7 +724,6 @@ Template:
 
 <!-- Other -->
 [enable-fast-compiles]: https://bevyengine.org/learn/book/getting-started/setup/#enable-fast-compiles-optional
-[lib-rs-stats]: https://lib.rs/stats/
 [most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
 [shield-io]: https://shields.io/
@@ -746,7 +752,7 @@ Template:
 [watchmaker]: https://github.com/thomasbratt/watchmaker
 
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
-[trillium-web]: https://trillium.rs/welcome
+[trillium-website]: https://trillium.rs/welcome
 
 [are-we-gui-yet?]: https://www.areweguiyet.com/
 
@@ -754,7 +760,7 @@ Template:
 
 [aws-sdk]: https://aws.amazon.com/sdk-for-rust/
 
-[dapr-web]: https://dapr.io/
+[dapr-website]: https://dapr.io/
 [dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
 [dapr-rust-examples]: https://github.com/dapr/rust-sdk/tree/master/examples
 
