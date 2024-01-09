@@ -616,9 +616,11 @@ Template:
 [awesome-rust]: https://github.com/rust-unofficial/awesome-rust/
 [blessed-rs]: https://blessed.rs/crates/
 [codevoweb]: https://codevoweb.com/
+[crates-io]: https://crates.io/
 [docs-rs]: https://docs.rs/
 [easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [learning-rust-linked-lists]: https://rust-unofficial.github.io/too-many-lists/index.html
+[lib-rs]: https://lib.rs/
 [lpalmieri-web]: https://www.lpalmieri.com/
 [rust-book]: https://doc.rust-lang.org/book/title-page.html
 [rust-by-example-book]: https://doc.rust-lang.org/rust-by-example/index.html
@@ -637,5 +639,8 @@ Template:
 
 <!-- Other -->
 
-[shield-io]: https://shields.io/
+[lib-rs-stats]: https://lib.rs/stats/
+[most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
+[shield-io]: https://shields.io/
+[stdx]: https://github.com/brson/stdx/

@@ -14,8 +14,7 @@ This is in turn enabled by return-position `impl Trait` in traits, since `async 
 {{#include ../../deps/examples/async_traits2.rs}}
 ```
 
-Note that there are still caveats for public traits - see [Announcing `async fn` and return-position `impl Trait` in traits]
-[announcing-async-fn]⮳.
+Note that there are still caveats for public traits - see [Announcing `async fn` and return-position `impl Trait` in traits][announcing-async-fn]⮳.
 
 In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the [Async trait crate (github)][async-trait-github].
 
