@@ -6,4 +6,4 @@
 
 If we make an enum public, all of its variants are then public. We only need `pub` before the `enum` keyword.
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

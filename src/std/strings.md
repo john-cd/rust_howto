@@ -16,4 +16,4 @@ Use `{:?}` to use the `Debug` output format (annotate type with `#[derive(Debug)
 
 Also use `dbg!(&rect1);` for debug output (returns ownership of the expression’s value).
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

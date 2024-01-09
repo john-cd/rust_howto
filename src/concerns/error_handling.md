@@ -38,4 +38,4 @@ Another example:
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

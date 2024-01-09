@@ -16,4 +16,4 @@
 [dapr-web]: https://dapr.io/
 [dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
 [dapr-rust-examples]: https://github.com/dapr/rust-sdk/tree/master/examples
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

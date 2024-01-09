@@ -11,4 +11,4 @@
 - [Data](data.md)
 - [ML](ml.md)
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

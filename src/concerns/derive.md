@@ -16,4 +16,4 @@ You can use the `cargo-expand` utility to see the exact code that is generated f
 {{#include ../../deps/examples/derive_more.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

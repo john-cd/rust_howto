@@ -22,4 +22,4 @@
 
 [diesel (lib.rs)][diesel-librs]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

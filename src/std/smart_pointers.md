@@ -27,4 +27,4 @@ The `Rc<T>` type keeps track of the number of references to data on the heap so 
 The `RefCell<T>` type with its interior mutability gives us a type that we can use when we need an immutable type but need to change an inner value of that type; it also enforces the borrowing rules at runtime instead of at compile time.
 
 [box-rust-book]: https://doc.rust-lang.org/book/ch15-01-box.html
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

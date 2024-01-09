@@ -8,4 +8,4 @@
 
 [rust-cli-book]: https://rust-cli.github.io/book/index.html
 [tuify]: https://developerlife.com/2023/09/17/tuify-clap/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

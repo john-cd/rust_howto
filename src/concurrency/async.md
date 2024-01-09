@@ -50,4 +50,4 @@ Alternatives to the Tokio async ecosystem include:
 [are-we-async-yet?]: https://areweasyncyet.rs/
 [asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [state-of-async-rust]: https://corrode.dev/blog/async/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

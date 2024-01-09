@@ -36,4 +36,4 @@
 [roogle-github]: https://github.com/roogle-rs/roogle
 [shuttle-rs]: https://www.shuttle.rs/
 [starship]: https://github.com/starship/starship
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

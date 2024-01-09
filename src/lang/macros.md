@@ -40,4 +40,4 @@
 [rust-reference-macros]: https://doc.rust-lang.org/reference/macros.html
 [syn]: https://github.com/dtolnay/syn
 [watt]: https://github.com/dtolnay/watt
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

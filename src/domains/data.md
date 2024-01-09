@@ -8,4 +8,4 @@
 
 Apache Arrow DataFusion [![datafusion-badge]][datafusion]⮳ SQL Query Engine
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

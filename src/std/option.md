@@ -46,4 +46,4 @@ If the `Option` is None:
 ```
 
 [option]: https://doc.rust-lang.org/std/option/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

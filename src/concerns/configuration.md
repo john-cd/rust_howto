@@ -44,4 +44,4 @@ It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 ```
 
 [working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

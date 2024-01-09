@@ -6,4 +6,4 @@
 
 [cheats-rs]: https://cheats.rs/
 [rust-for-professionals]: https://overexact.com/rust-for-professionals/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

@@ -26,4 +26,4 @@ Also `else if <cond> { ... }`
 {{#include ../../deps/examples/for.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

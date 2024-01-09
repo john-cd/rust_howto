@@ -6,4 +6,4 @@ Vectors can only store values that are the same type.
 {{#include ../../deps/examples/vectors.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

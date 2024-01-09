@@ -54,4 +54,4 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [eyre][eyre]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

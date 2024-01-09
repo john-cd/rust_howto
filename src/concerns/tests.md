@@ -20,4 +20,4 @@
 
 [cargo-nextest][cargo-nextest]⮳: `cargo nextest run; cargo test --doc`
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

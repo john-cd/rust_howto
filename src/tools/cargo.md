@@ -121,4 +121,4 @@ cargo machete
 [cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
 [cargo-udeps]: https://github.com/est31/cargo-udeps
 [tarpaulin]: https://github.com/xd009642/tarpaulin
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

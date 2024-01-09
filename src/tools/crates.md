@@ -8,4 +8,4 @@ The Rust community’s crate registry: [crates.io][crates-io]⮳
 
 Alternative to crates.io: [lib.rs][lib-rs]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

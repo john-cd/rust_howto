@@ -8,4 +8,4 @@
 
 [realworld-example-apps]: https://github.com/gothinkster/realworld
 [zero-to-production-book]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

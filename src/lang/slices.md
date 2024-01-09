@@ -4,4 +4,4 @@
 {{#include ../../deps/examples/slices.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

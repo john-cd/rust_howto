@@ -12,4 +12,4 @@
 [Ferrous Systems]: https://ferrous-systems.com/
 [Freiheit]: https://freiheit.com/
 [Mozilla]: https://www.mozilla.org/en-US/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

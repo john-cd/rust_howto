@@ -10,4 +10,4 @@
 {{#include ../../deps/examples/async_main.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

@@ -16,4 +16,4 @@ DashMap tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 {{#include ../../deps/examples/crossbeam_queue.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

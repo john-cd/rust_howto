@@ -53,4 +53,4 @@ This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 [rust-playground]: https://play.rust-lang.org/
 [statistics]: https://lib.rs/stats
 [todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
-{{#include ./links.md}}
+{{#include ./link-refs.md}}

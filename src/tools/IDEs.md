@@ -15,4 +15,4 @@ If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrain
 [rust-analyzer]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 [rust-analyzer-web]: https://rust-analyzer.github.io/
 [vs-code]: https://code.visualstudio.com/docs/languages/rust
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

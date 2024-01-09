@@ -13,4 +13,4 @@ Consult the following web sites for crate recommendations:
 - [Rust starter pack][rust-starter-pack]⮳
 - [stdx][stdx]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

@@ -22,4 +22,4 @@ The generic lifetime `'a` will get the concrete lifetime that is equal to the sm
 {{#include ../../deps/examples/lifetime.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

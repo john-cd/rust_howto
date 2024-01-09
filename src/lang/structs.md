@@ -18,4 +18,4 @@ Struct fields follow the general rule of everything being private by default unl
 {{#include ../../deps/examples/structs4.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

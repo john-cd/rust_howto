@@ -9,4 +9,4 @@ Using the Tower ecosystem:
 ```
 
 [cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

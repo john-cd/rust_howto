@@ -10,4 +10,4 @@
 
 [rust-yew-realworld-example]: https://github.com/jetli/rust-yew-realworld-example-app
 [rustwasm-book]: https://rustwasm.github.io/docs/book/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

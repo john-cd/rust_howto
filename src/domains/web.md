@@ -39,4 +39,4 @@
 [building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
 [practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
 [rust-rocket-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

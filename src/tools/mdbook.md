@@ -20,4 +20,4 @@ mdbook serve --open
 [mdbook]: https://github.com/rust-lang/mdBook
 [mdbook-documentation]: https://rust-lang.github.io/mdBook/index.html
 [mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

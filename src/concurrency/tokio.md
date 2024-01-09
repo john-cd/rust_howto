@@ -29,4 +29,4 @@ Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 [tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
 [tokio-mini-redis]: https://github.com/tokio-rs/mini-redis
 [rust-tokio-template]: https://github.com/Finomnis/rust-tokio-template/tree/main
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

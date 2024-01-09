@@ -69,4 +69,4 @@ foo:
 
 [just]: https://just.systems/
 [just-programmer-manual]: https://just.systems/man/en/chapter_1.html
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

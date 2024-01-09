@@ -29,4 +29,4 @@ cross run --target aarch64-unknown-linux-gnu
 [cross]: https://github.com/cross-rs/cross
 [cross-wiki]: https://github.com/cross-rs/cross/wiki/Getting-Started
 [example-cross-toml]: https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

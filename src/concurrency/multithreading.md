@@ -48,4 +48,4 @@ Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may 
 [scope]: https://docs.rs/rayon/latest/rayon/fn.scope.html
 [spawn]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
 [rayon-threadpool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

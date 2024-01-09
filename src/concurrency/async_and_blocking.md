@@ -50,4 +50,4 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../deps/examples/call_async_from_blocking_tokio_runtime.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

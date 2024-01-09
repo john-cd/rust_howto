@@ -31,4 +31,4 @@ Another example:
 
 [Postage (lib.rs)][postage-librs]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

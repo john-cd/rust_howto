@@ -73,4 +73,4 @@ For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`, `#[rustfmt
 
 [rustfmt]: https://github.com/rust-lang/rustfmt
 [rustfmt-config]: https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

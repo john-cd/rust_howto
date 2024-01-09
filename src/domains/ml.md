@@ -19,4 +19,4 @@
 [are-we-learning-yet?]: https://www.arewelearningyet.com/
 [opencv-example]: https://github.com/amar-laksh/workstation/blob/master/src/main.rs
 [watchmaker]: https://github.com/thomasbratt/watchmaker
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

@@ -51,4 +51,4 @@ Here are the topics we’ll cover:
 
 [Concurrency (rust book)][concurrency-rust-book]⮳
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

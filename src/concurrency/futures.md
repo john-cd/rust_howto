@@ -27,4 +27,4 @@ The `futures` crate provides an extension trait that provides a variety of conve
 {{#include ../../deps/examples/futures3.rs}}
 ```
 
-{{#include ../links.md}}
+{{#include ../link-refs.md}}

@@ -9,4 +9,4 @@
 [Iterators][iterators]⮳
 
 [iterators]: https://doc.rust-lang.org/book/ch13-02-iterators.html
-{{#include ../links.md}}
+{{#include ../link-refs.md}}
