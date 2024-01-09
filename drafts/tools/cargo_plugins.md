@@ -10,7 +10,6 @@
 
 [cargo-crates][cargo-crates]
 
-
 [cargo-crates]: https://github.com/ThePuzzlemaker/cargo-crates
 [cargo-hack]: https://github.com/taiki-e/cargo-hack
 [cargo-machete]: https://github.com/bnjbvr/cargo-machete
