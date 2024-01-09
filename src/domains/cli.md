@@ -1,6 +1,6 @@
 # CLI
 
-[Clap][clap]⮳
+[![clap-badge]][clap]
 
 [Command Line Applications in Rust][rust-cli-book]⮳
 

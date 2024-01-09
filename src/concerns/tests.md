@@ -16,7 +16,7 @@
 
 ## See Also
 
-[Approx][approx]⮳
+[![approx-badge]][approx] [Approx][approx]⮳
 
 [cargo-nextest][cargo-nextest]⮳: `cargo nextest run; cargo test --doc`
 

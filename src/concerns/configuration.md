@@ -32,12 +32,14 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## Config
 
-[Config][config]⮳ is a layered configuration system for Rust applications.
+[![config-badge]][config]
+
+`Config` is a layered configuration system for Rust applications.
 It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 
-[Confy][confy]⮳
+[![confy-badge]][confy]
 
 ```rust,editable,ignore
 {{#include ../../deps/examples/confy.rs}}

@@ -20,6 +20,8 @@
 
 ## Diesel
 
+[![diesel-badge]][diesel]
+
 [diesel (lib.rs)][diesel-librs]⮳
 
 {{#include ../link-refs.md}}

@@ -279,8 +279,8 @@ Keep lines sorted.
 [approx-badge]: https://badge-cache.kominick.com/crates/v/approx.svg?label=approx
 [approx]: https://docs.rs/approx/
 
-[arrow-rs-badge]: https://badge-cache.kominick.com/crates/v/arrow-rs.svg?label=arrow-rs
-[arrow-rs]: https://docs.rs/arrow-rs/
+[arrow-rs-badge]: https://badge-cache.kominick.com/crates/v/arrow.svg?label=arrow
+[arrow-rs]: https://docs.rs/arrow/
 [arrow-rs-github]: https://github.com/apache/arrow-rs/
 
 [async-channel-badge]: https://badge-cache.kominick.com/crates/v/async_channel.svg?label=async_channel
@@ -373,6 +373,7 @@ Keep lines sorted.
 [egui-crate]: https://crates.io/crates/egui/
 
 [embassy-badge]: https://badge-cache.kominick.com/crates/v/embassy.svg?label=embassy
+[embassy]: https://docs.rs/embassy/
 [embassy-website]: https://embassy.dev/
 [embassy-github]: https://github.com/akiles/embassy/
 
@@ -414,7 +415,7 @@ Keep lines sorted.
 [lazy-static]: https://docs.rs/lazy_static/
 
 [linfa-badge]: https://badge-cache.kominick.com/crates/v/linfa.svg?label=linfa
-[lazy_static]: https://docs.rs/linfa/
+[linfa]: https://docs.rs/linfa/
 [linfa-crate]: https://crates.io/crates/linfa/
 [linfa-website]: https://rust-ml.github.io/linfa/
 

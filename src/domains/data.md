@@ -4,8 +4,8 @@
 | ----- | ---- | ---- |
 | [![polars-badge]][polars]⮳ | [polars (book)][polars-book]⮳ | [polars (github)][polars-github]⮳ |
 
-[arrow-rs (github)][arrow-rs-github]⮳: official Rust implementation of Apache Arrow
+[![arrow-rs-badge]][arrow-rs] [arrow-rs (github)][arrow-rs-github]⮳: official Rust implementation of Apache Arrow
 
-Apache Arrow DataFusion [![datafusion-badge]][datafusion]⮳ SQL Query Engine
+Apache Arrow DataFusion [![datafusion-badge]][datafusion] SQL Query Engine
 
 {{#include ../link-refs.md}}

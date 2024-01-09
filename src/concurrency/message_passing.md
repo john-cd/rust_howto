@@ -26,6 +26,8 @@ Example using specialized channels for tickers and timeout
 
 ## Reference
 
+[![crossbeam-badge]][crossbeam]
+
 [Message Passing (rust book)][message-passing-rust-book]⮳
 
 {{#include ../link-refs.md}}

@@ -8,9 +8,7 @@
 
 ## Actix
 
-[Actix web][actix-web-website]⮳
-
-[Actix examples][actix-examples]⮳
+[![actix-web-badge]][actix-web] [Actix web][actix-web-website] [Actix examples][actix-examples]⮳
 
 [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][auth-web-microservice]⮳
 

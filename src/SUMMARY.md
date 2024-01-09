@@ -90,4 +90,6 @@
 
 ---
 
+[Categories](categories.md)
+[Crates](crates.md)
 [Thanks](misc/thanks.md)

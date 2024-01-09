@@ -5,6 +5,8 @@ Use `thiserror` if you are a library that wants to design your own dedicated err
 
 ## Anyhow
 
+[![anyhow-badge]][anyhow]
+
 [Anyhow (crates.io)][anyhow-crate]⮳
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
