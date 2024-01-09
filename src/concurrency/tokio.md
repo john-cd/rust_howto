@@ -14,7 +14,7 @@ Tokio provides a few major components:
 - [Tokio tutorial][tokio-tutorial]⮳
 - [Tokio examples][tokio-examples]⮳
 - [Tokio mini-Redis example][tokio-mini-redis]⮳
-- Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template]( https://github.com/Finomnis/rust-tokio-template/tree/main )⮳
+- Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template][rust-tokio-template]⮳
 
 ## Graceful shutdown
 
@@ -28,5 +28,5 @@ Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 [tokio-tutorial]: https://tokio.rs/tokio/tutorial
 [tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
 [tokio-mini-redis]: https://github.com/tokio-rs/mini-redis
-
+[rust-tokio-template]: https://github.com/Finomnis/rust-tokio-template/tree/main
 {{#include ../links.md}}

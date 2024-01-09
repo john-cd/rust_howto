@@ -1,11 +1,15 @@
 # Companies that use Rust
 
-[Mozilla]( https://www.mozilla.org/en-US/ )⮳
+[Mozilla]⮳
 
-[Ferrous Systems]( https://ferrous-systems.com/ )⮳
+[Ferrous Systems]⮳
 
-[Embark Studios]( https://www.embark-studios.com/ )⮳
+[Embark Studios]⮳
 
-[Freiheit]( https://freiheit.com/ )⮳
+[Freiheit]⮳
 
+[Embark Studios]: https://www.embark-studios.com/
+[Ferrous Systems]: https://ferrous-systems.com/
+[Freiheit]: https://freiheit.com/
+[Mozilla]: https://www.mozilla.org/en-US/
 {{#include ../links.md}}

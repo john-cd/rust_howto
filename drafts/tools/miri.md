@@ -1,6 +1,7 @@
 # Miri Interpreter
 
-[Miri]( https://github.com/rust-lang/miri )
+[Miri][miri]
+
 
 An experimental interpreter for Rust's mid-level intermediate representation (MIR). It can run binaries and test suites of cargo projects and detect certain classes of undefined behavior. It can also perform cross-interpretation for arbitrary foreign targets.
 
@@ -11,3 +12,5 @@ cargo miri test
 # or
 cargo miri run
 ```
+
+[miri]: https://github.com/rust-lang/miri

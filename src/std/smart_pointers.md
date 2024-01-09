@@ -16,7 +16,7 @@ Use when
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
 
-[Box]( https://doc.rust-lang.org/book/ch15-01-box.html )⮳
+[Box][box-rust-book]⮳
 
 ## Rc
 
@@ -26,4 +26,5 @@ The `Rc<T>` type keeps track of the number of references to data on the heap so 
 
 The `RefCell<T>` type with its interior mutability gives us a type that we can use when we need an immutable type but need to change an inner value of that type; it also enforces the borrowing rules at runtime instead of at compile time.
 
+[box-rust-book]: https://doc.rust-lang.org/book/ch15-01-box.html
 {{#include ../links.md}}

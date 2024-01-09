@@ -1,7 +1,9 @@
 # Rust Cheatsheets
 
-[cheats.rs]( https://cheats.rs/ )⮳
+[cheats.rs][cheats-rs]⮳
 
-[Rust for professionals]( https://overexact.com/rust-for-professionals/ )⮳
+[Rust for professionals][rust-for-professionals]⮳
 
+[cheats-rs]: https://cheats.rs/
+[rust-for-professionals]: https://overexact.com/rust-for-professionals/
 {{#include ../links.md}}

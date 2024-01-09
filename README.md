@@ -28,16 +28,16 @@ GitHub repo: <https://john-cd.github.io/rust_howto>
 
 ### Using VS Code
 
-Clone the repo and open the folder in [VS Code]( https://code.visualstudio.com/ ). It should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
+Clone the repo and open the folder in [VS Code][vs-code]. It should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
 
-- [Dev Container extension]( https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers )
-- [Docker Desktop]( https://www.docker.com/products/docker-desktop/ ) (or at least the Docker engine).
+- [Dev Container extension][dev-container-extension]
+- [Docker Desktop][docker-desktop] (or at least the Docker engine).
 
 Note that opening the code folder in VS Code may take a little while the first time around.
 
 ### Other
 
-If you are not using VS Code, install the [Dev Container CLI]( https://github.com/devcontainers/cli ) or simply install the required tools on your local machine:
+If you are not using VS Code, install the [Dev Container CLI][dev-container-CLI] or simply install the required tools on your local machine:
 
 ```bash
 apt-get update
@@ -63,7 +63,7 @@ To add or edit the book, simply update or add a `.md` file in the appropriate `s
 - You may write very short examples directly in the Markdown (but they won't be be formatted / linted automatically).
 - Test all examples within the book (embedded from `deps/examples` or in code blocks) with `just test` / `mdbook test`.
   - Note that `mdbook test` may fail when the example code is dependent on libraries outside of `std` (TODO investigate why). Use `ignore` after triple backticks in the markdown to suppress these errors.
-- `rust` language code blocks in the Markdown will automatically get a _play_ button, which will execute the code in the [Rust Playground]( https://play.rust-lang.org/ ) and display the output just below the code block. `mdbook-runnable` forces the play button to be displayed when `ignore` is set.
+- `rust` language code blocks in the Markdown will automatically get a _play_ button, which will execute the code in the [Rust Playground][rust-playground] and display the output just below the code block. `mdbook-runnable` forces the play button to be displayed when `ignore` is set.
 - The Rust playground only supports top 100 most downloaded libraries and libraries in the Rust cookbook. `noplayground` removes the play button if a code block does not work on the playground.
 - Example projects that are too complex to be inserted in the book itself (e.g. that include multiple modules) shoud be added as separate folders below `xmpl`. Use `cargo new/init` to create new packages as usual. Insert a link to the appropriate GitHub page in the markdown.
 
@@ -127,19 +127,19 @@ docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
 ```
 
-[Related Stackoverflow question]( https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action )
+[Related Stackoverflow question][stackoverflow]
 
 ## Optional pre-processors
 
-- [mdbook-linkcheck]( https://github.com/Michael-F-Bryan/mdbook-linkcheck ) is a backend for `mdbook` that will check links.
+- [mdbook-linkcheck][mdbook-linkcheck] is a backend for `mdbook` that will check links.
 Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
-- [mdbook-hide]( https://github.com/ankitrgadiya/mdbook-hide/ ) hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
+- [mdbook-hide][mdbook-hide] hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
 ```xml
 <!--hidden-->
 ```
 
-- [mdbook-keeper]( https://crates.io/crates/mdbook-keeper ). Install with
+- [mdbook-keeper][mdbook-keeper]. Install with
 
 ```bash
 cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>
@@ -147,4 +147,15 @@ cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>
 
 ## Reference
 
-[mdBook]( https://rust-lang.github.io/mdBook/index.html )
+[mdBook][mdbook]
+
+[dev-container-CLI]: https://github.com/devcontainers/cli
+[dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+[docker-desktop]: https://www.docker.com/products/docker-desktop/
+[mdbook]: https://rust-lang.github.io/mdBook/index.html
+[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
+[mdbook-keeper]: https://crates.io/crates/mdbook-keeper
+[mdbook-linkcheck]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
+[rust-playground]: https://play.rust-lang.org/
+[stackoverflow]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
+[vs-code]: https://code.visualstudio.com/

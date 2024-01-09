@@ -1,9 +1,11 @@
 
-# [Install Rust]( https://www.rust-lang.org/tools/install )⮳
+# Rust Installation
+
+[Install Rust][install-rust]⮳
 
 ## Key Steps
 
-- Install [Rustup]( https://rustup.rs/ )⮳
+- Install [Rustup][rustup]⮳
 
 On WSL / Unix:
 
@@ -40,4 +42,6 @@ cargo build
 cargo run
 ```
 
+[install-rust]: https://www.rust-lang.org/tools/install
+[rustup]: https://rustup.rs/
 {{#include ../links.md}}

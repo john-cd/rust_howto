@@ -1,3 +1,5 @@
 # Performance
 
-The [Rust Performance Book]( https://github.com/nnethercote/perf-book )
+The [Rust Performance Book][rust-performance-book]
+
+[rust-performance-book]: https://github.com/nnethercote/perf-book

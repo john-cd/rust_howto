@@ -4,7 +4,7 @@
 
 ## Riker
 
-[Riker]( https://riker.rs/ )
+[Riker][riker]
 
 ```rust,editable,ignore
 struct MyActor;
@@ -38,14 +38,20 @@ fn main() {
 
 ## Alternatives
 
-[Actix]( https://github.com/actix/actix )
+[Actix][Actix]
 
-[Ractor]( https://crates.io/crates/ractor )
+[Ractor][Ractor]
 
 ## Utilities
 
-[Await tree]( https://crates.io/crates/await-tree )
+[Await tree][Await tree]
 
 ## Reference
 
-[Actors with Tokio]( https://ryhl.io/blog/actors-with-tokio/ )
+[Actors with Tokio][Actors with Tokio]
+
+[Actix]: https://github.com/actix/actix
+[Actors with Tokio]: https://ryhl.io/blog/actors-with-tokio/
+[Await tree]: https://crates.io/crates/await-tree
+[Ractor]: https://crates.io/crates/ractor
+[Riker]: https://riker.rs/

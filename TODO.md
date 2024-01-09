@@ -36,7 +36,9 @@ web examples into separate section
 
 review Install Rust
 
-[Error Chain]( https://docs.rs/error-chain/latest/error_chain/ )
+[Error Chain][Error Chain]
+
+[Error Chain]:  https://docs.rs/error-chain/latest/error_chain/
 
 finish cd_ci.md
 

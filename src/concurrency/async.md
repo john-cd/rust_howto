@@ -38,7 +38,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](../concurrency/tokio.md) runtime - see [The State of Async Rust: Runtimes]( https://corrode.dev/blog/async/ )⮳.
+In most cases, prefer the [Tokio](../concurrency/tokio.md) runtime - see [The State of Async Rust: Runtimes][state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 
@@ -49,5 +49,5 @@ Alternatives to the Tokio async ecosystem include:
 
 [are-we-async-yet?]: https://areweasyncyet.rs/
 [asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
-
+[state-of-async-rust]: https://corrode.dev/blog/async/
 {{#include ../links.md}}

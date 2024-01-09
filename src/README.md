@@ -24,21 +24,33 @@ This book intends to provide EXAMPLES to demonstrate the use of key Rust crates,
 
 ## What other books should I consult?
 
-[Rust by Example]( https://doc.rust-lang.org/rust-by-example/index.html )⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
+[Rust by Example][rust-by-example]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-The [Rust cookbook]( https://rust-lang-nursery.github.io/rust-cookbook/ )⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates.
+The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates.
 
 ## Call for contributions
 
-This book is in its **early days** - feel free to submit an issue or a pull request to the [repo]( https://github.com/john-cd/rust_howto ).
+This book is in its **early days** - feel free to submit an issue or a pull request to the [repo][repo].
 
-Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder]( https://github.com/john-cd/rust_howto/tree/main/drafts ). An informal (and very long) list of topics of interest is kept in [TODO]( https://github.com/john-cd/rust_howto/blob/main/TODO.md ). Embedded examples should be ideally _runnable_ on the [Rust playground]( https://play.rust-lang.org/ )⮳ or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md]( https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md ) for more details.
+Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][drafts]. An informal (and very long) list of topics of interest is kept in [TODO][todo]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md][contributing] for more details.
 
-Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs]( https://blessed.rs/crates )⮳, the most downloaded libraries in [crates.io]( https://crates.io/ )⮳, and 'high quality crates' per [lib.rs]( https://lib.rs/ )⮳ [statistics]( https://lib.rs/stats )⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
+Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates.io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [statistics][statistics]⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
 
-This site is not affiliated with the [Rust Foundation]( https://foundation.rust-lang.org/ )⮳.
+This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 
+[blessed-rs]: https://blessed.rs/crates
+[contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
+[crates-io]: https://crates.io/
+[drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
+[lib-rs]: https://lib.rs/
 [reference-docs]: https://docs.rs/
+[repo]: https://github.com/john-cd/rust_howto
 [rust]: https://www.rust-lang.org/
 [rust-book]: https://doc.rust-lang.org/book/
+[rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
+[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/
+[rust-foundation]: https://foundation.rust-lang.org/
+[rust-playground]: https://play.rust-lang.org/
+[statistics]: https://lib.rs/stats
+[todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
 {{#include ./links.md}}

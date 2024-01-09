@@ -22,9 +22,11 @@ cross test --target mips64-unknown-linux-gnuabi64
 cross run --target aarch64-unknown-linux-gnu
 ```
 
-[cross Wiki]( https://github.com/cross-rs/cross/wiki/Getting-Started )⮳
+[cross Wiki][cross-wiki]⮳
 
-[Example Cross.toml file]( https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml )⮳
+[Example Cross.toml file][example-cross-toml]⮳
 
 [cross]: https://github.com/cross-rs/cross
+[cross-wiki]: https://github.com/cross-rs/cross/wiki/Getting-Started
+[example-cross-toml]: https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml
 {{#include ../links.md}}

@@ -80,6 +80,7 @@ See [Async](../concurrency/async.md)
 
 ## See also
 
-[Traits (blog)]( https://blog.rust-lang.org/2015/05/11/traits.html )⮳
+[Traits (blog)][traits-blog]⮳
 
+[traits-blog]: https://blog.rust-lang.org/2015/05/11/traits.html
 {{#include ../links.md}}

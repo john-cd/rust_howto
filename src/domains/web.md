@@ -1,6 +1,6 @@
 # Web
 
-[Are we Web yet?]( https://www.arewewebyet.org/ )⮳
+[Are we Web yet?][are-we-web-yet?]⮳
 
 ## Axum
 
@@ -12,7 +12,7 @@
 
 [Actix examples][actix-examples]⮳
 
-[Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial]( https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/ )⮳
+[Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][auth-web-microservice]⮳
 
 [Practical Rust Web Development - API Rest][practical-rust]⮳
 
@@ -30,10 +30,13 @@
 
 ## Examples
 
-[Building a crawler in Rust: Design and Associated Types]( https://kerkour.com/rust-crawler-associated-types )⮳
+[Building a crawler in Rust: Design and Associated Types][building-a-crawler-in-rust]⮳
 
 [actix-examples]: https://github.com/actix/examples
+[are-we-web-yet?]: https://www.arewewebyet.org/
+[auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/
 [axum]: https://github.com/rust-lang/crates.io/tree/main
+[building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
 [practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
 [rust-rocket-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
 {{#include ../links.md}}

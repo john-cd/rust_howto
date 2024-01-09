@@ -2,9 +2,9 @@
 
 `just` is a command runner / Make replacement.
 
-[https://just.systems/]( https://just.systems/ )⮳
+[https://just.systems/][just]⮳
 
-[Just Programmer's Manual]( https://just.systems/man/en/chapter_1.html )⮳
+[Just Programmer's Manual][just-programmer-manual]⮳
 
 ## Installation in a dev container
 
@@ -67,4 +67,6 @@ foo:
   echo "$hello from Bash!"
 ```
 
+[just]: https://just.systems/
+[just-programmer-manual]: https://just.systems/man/en/chapter_1.html
 {{#include ../links.md}}

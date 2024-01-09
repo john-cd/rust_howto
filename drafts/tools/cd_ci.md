@@ -1,6 +1,6 @@
 # Continuous Deployment / Continuous Integration
 
-[Continuous Integration (cargo book)]( https://doc.rust-lang.org/cargo/guide/continuous-integration.html )
+[Continuous Integration (cargo book)][continuous-integration-cargo-book]
 
 ## GitHub Actions
 
@@ -24,7 +24,7 @@
         cargo pants
 ```
 
-[install-action]( https://github.com/taiki-e/install-action ) is a GitHub Action for installing development tools (mainly from GitHub Releases).
+[install-action][install-action] is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -34,7 +34,7 @@
 
 ### Compilation caching
 
-[rust-cache]( https://github.com/marketplace/actions/rust-cache )
+[rust-cache][rust-cache]
 
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 
@@ -112,7 +112,7 @@ Example `.github/workflows/<name>.yml`
 
 ## See also
 
-[Optimizing CI/CD pipelines in your Rust projects]( https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/ )
+[Optimizing CI/CD pipelines in your Rust projects][Optimizing CI/CD pipelines in your Rust projects]
 
 <https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>
 <https://github.com/marketplace/actions/upload-a-build-artifact>
@@ -121,7 +121,7 @@ Example `.github/workflows/<name>.yml`
 
 [cached-docker-images][cached-docker-images]
 
-[Docker GitHub Action]( https://docs.docker.com/build/ci/github-actions/ )
+[Docker GitHub Action][docker-gitHub-action]
 
 <https://docs.docker.com/build/cache/backends/>
 
@@ -129,5 +129,10 @@ Example `.github/workflows/<name>.yml`
 
 <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>
 
-[docker-cache]: https://github.com/ScribeMD/docker-cache
 [cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
+[continuous-integration-cargo-book]: https://doc.rust-lang.org/cargo/guide/continuous-integration.html
+[docker-github-action]: https://docs.docker.com/build/ci/github-actions/
+[docker-cache]: https://github.com/ScribeMD/docker-cache
+[install-action]: https://github.com/taiki-e/install-action
+[Optimizing CI/CD pipelines in your Rust projects]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
+[rust-cache]: https://github.com/marketplace/actions/rust-cache
