@@ -21,7 +21,4 @@ dyn Trait + 'static
 
 [Trait Objects (docs)][trait-objects]⮳
 
-[object-safe]: https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety
-[special-traits]: https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html
-[trait-objects]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html
 {{#include ../link-refs.md}}

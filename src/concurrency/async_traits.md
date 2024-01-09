@@ -22,6 +22,4 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe,
 {{#include ../../deps/examples/async_traits3.rs}}
 ```
 
-[stabilizing-async-fn-in-traits]: https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html
-[announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
 {{#include ../link-refs.md}}

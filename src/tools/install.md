@@ -42,6 +42,4 @@ cargo build
 cargo run
 ```
 
-[install-rust]: https://www.rust-lang.org/tools/install
-[rustup]: https://rustup.rs/
 {{#include ../link-refs.md}}

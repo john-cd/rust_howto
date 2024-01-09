@@ -27,6 +27,4 @@ rustup component list   # See a list of available and installed components.
 
 [Rustup documentation][rustup-documentation]⮳
 
-[rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
-[rustup-documentation]: https://rust-lang.github.io/rustup/
 {{#include ../link-refs.md}}

@@ -8,5 +8,4 @@ Using the Tower ecosystem:
 {{#include ../../deps/examples/cors.rs}}
 ```
 
-[cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 {{#include ../link-refs.md}}

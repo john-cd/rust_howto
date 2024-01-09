@@ -17,7 +17,4 @@ mdbook serve --open
 
 [mdbook-hide][mdbook-hide]⮳
 
-[mdbook]: https://github.com/rust-lang/mdBook
-[mdbook-documentation]: https://rust-lang.github.io/mdBook/index.html
-[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
 {{#include ../link-refs.md}}

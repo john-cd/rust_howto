@@ -45,7 +45,4 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 {{#include ../../deps/examples/modules3.rs}}
 ```
 
-[rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system/
-[use]: https://doc.rust-lang.org/rust-by-example/mod/use.html
-[visibility-rules]: https://doc.rust-lang.org/rust-by-example/mod/visibility.html
 {{#include ../link-refs.md}}

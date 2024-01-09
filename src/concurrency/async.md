@@ -47,7 +47,4 @@ Alternatives to the Tokio async ecosystem include:
 - [Embassy][embassy-web]⮳ for embedded systems.
 - [Mio][mio-crate]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
-[are-we-async-yet?]: https://areweasyncyet.rs/
-[asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
-[state-of-async-rust]: https://corrode.dev/blog/async/
 {{#include ../link-refs.md}}

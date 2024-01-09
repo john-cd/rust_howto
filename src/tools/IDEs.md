@@ -12,7 +12,4 @@ If you don’t have a JetBrains license, IntelliJ IDEA is available for free and
 
 If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains’ IDE suite.
 
-[rust-analyzer]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
-[rust-analyzer-web]: https://rust-analyzer.github.io/
-[vs-code]: https://code.visualstudio.com/docs/languages/rust
 {{#include ../link-refs.md}}

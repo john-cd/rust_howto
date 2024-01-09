@@ -6,6 +6,4 @@
 
 [Zero To Production In Rust (code)][zero-to-production-github]⮳
 
-[realworld-example-apps]: https://github.com/gothinkster/realworld
-[zero-to-production-book]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
 {{#include ../link-refs.md}}

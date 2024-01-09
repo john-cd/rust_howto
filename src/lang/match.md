@@ -22,5 +22,4 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 [Pattern matching][pattern-matching]⮳
 
-[pattern-matching]: https://doc.rust-lang.org/book/ch18-00-patterns.html
 {{#include ../link-refs.md}}

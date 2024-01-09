@@ -24,9 +24,4 @@ Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 {{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
 ```
 
-[tokio-glossary]: https://tokio.rs/tokio/glossary
-[tokio-tutorial]: https://tokio.rs/tokio/tutorial
-[tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
-[tokio-mini-redis]: https://github.com/tokio-rs/mini-redis
-[rust-tokio-template]: https://github.com/Finomnis/rust-tokio-template/tree/main
 {{#include ../link-refs.md}}

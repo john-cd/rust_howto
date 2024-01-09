@@ -67,6 +67,4 @@ foo:
   echo "$hello from Bash!"
 ```
 
-[just]: https://just.systems/
-[just-programmer-manual]: https://just.systems/man/en/chapter_1.html
 {{#include ../link-refs.md}}

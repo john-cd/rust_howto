@@ -326,6 +326,10 @@ Template:
 [confy-badge]: https://badge-cache.kominick.com/crates/v/confy.svg?label=confy
 [confy]: https://docs.rs/confy/
 
+[cross]: https://github.com/cross-rs/cross
+[cross-wiki]: https://github.com/cross-rs/cross/wiki/Getting-Started
+[cross-example-toml]: https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml
+
 [crossbeam-badge]: https://badge-cache.kominick.com/crates/v/crossbeam.svg?label=crossbeam
 [crossbeam]: https://docs.rs/crossbeam/
 
@@ -448,6 +452,10 @@ Template:
 [once-cell]: https://docs.rs/once_cell/
 [once-cell-librs]: https://lib.rs/crates/once_cell/
 
+[paste-badge]: https://badge-cache.kominick.com/crates/v/paste.svg?label=paste
+[paste]: https://docs.rs/paste/
+[paste-github]: https://github.com/dtolnay/paste
+
 [parking-lot-badge]: https://badge-cache.kominick.com/crates/v/parking-lot.svg?label=parking-lot
 [parking-lot]: https://docs.rs/parking-lot/
 [parking-lot-crate]: https://crates.io/crates/parking_lot/
@@ -466,6 +474,9 @@ Template:
 
 [postgres-badge]: https://badge-cache.kominick.com/crates/v/postgres.svg?label=postgres
 [postgres]: https://docs.rs/postgres/
+
+[quote-badge]: https://badge-cache.kominick.com/crates/v/quote.svg?label=quote
+[quote]: https://docs.rs/quote/latest/quote/
 
 [rand-badge]: https://badge-cache.kominick.com/crates/v/rand.svg?label=rand
 [rand]: https://docs.rs/rand/
@@ -529,6 +540,8 @@ Template:
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
 [std]: https://doc.rust-lang.org/std/
 
+[syn-github]: https://github.com/dtolnay/syn
+
 [syslog-badge]: https://badge-cache.kominick.com/crates/v/syslog.svg?label=syslog
 [syslog]: https://docs.rs/syslog/
 
@@ -554,6 +567,11 @@ Template:
 [tokio-github]: https://github.com/tokio-rs/tokio/
 [spawn-blocking]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
 [bridging-with-sync-code]: https://tokio.rs/tokio/topics/bridging
+[tokio-glossary]: https://tokio.rs/tokio/glossary
+[tokio-tutorial]: https://tokio.rs/tokio/tutorial
+[tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
+[tokio-mini-redis]: https://github.com/tokio-rs/mini-redis
+[rust-tokio-template]: https://github.com/Finomnis/rust-tokio-template/tree/main
 
 [tokio-graceful-shutdown-badge]: https://badge-cache.kominick.com/crates/v/tokio_graceful_shutdown.svg?label=tokio_graceful_shutdown
 [tokio-graceful-shutdown]: https://docs.rs/tokio_graceful_shutdown/
@@ -589,58 +607,186 @@ Template:
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
 
+[watt-github]: https://github.com/dtolnay/watt
+
 [yew-badge]: https://badge-cache.kominick.com/crates/v/yew.svg?label=yew
 [yew]: https://docs.rs/yew/
 [yew-web]: https://yew.rs/
 
-<!-- Tools -->
-
+<!-- Tools for Rust -->
+[cargo-book]: https://doc.rust-lang.org/cargo/index.html
+[cargo-expand]: https://github.com/dtolnay/cargo-expand
+[cargo-generate]: https://cargo-generate.github.io/cargo-generate/index.html
+[cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
 [cargo-nextest]: https://nexte.st/
+[cargo-udeps]: https://github.com/est31/cargo-udeps
+[install-rust]: https://www.rust-lang.org/tools/install
+[mdbook]: https://github.com/rust-lang/mdBook
+[mdbook-documentation]: https://rust-lang.github.io/mdBook/index.html
+[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
+[roogle]: https://roogle.hkmatsumoto.com/search
+[roogle-github]: https://github.com/roogle-rs/roogle
+[rust-analyzer]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
+[rust-analyzer-web]: https://rust-analyzer.github.io/
+[rust-tools]: https://www.rust-lang.org/tools
+[rustfmt]: https://github.com/rust-lang/rustfmt
+[rustfmt-config]: https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=
+[rustup]: https://rustup.rs/
+[rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
+[rustup-documentation]: https://rust-lang.github.io/rustup/
+[shuttle-rs]: https://www.shuttle.rs/
+[tarpaulin]: https://github.com/xd009642/tarpaulin
+[vs-code]: https://code.visualstudio.com/docs/languages/rust
 [zola-web]: https://www.getzola.org/documentation/getting-started/overview/
 
-<!-- Rust Book Chapters -->
+<!-- Tools built with Rust -->
+[bacon]: https://github.com/Canop/bacon
+[bat]: https://github.com/sharkdp/bat
+[exa]: https://github.com/ogham/exa
+[just]: https://just.systems/
+[just-programmer-manual]: https://just.systems/man/en/chapter_1.html
+[My terminal became more Rusty Community]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
+[open-rs]: https://github.com/Byron/open-rs
+[starship]: https://github.com/starship/starship
 
+<!-- Rust Book Chapters -->
+[box-rust-book]: https://doc.rust-lang.org/book/ch15-01-box.html
 [concurrency-rust-book]: https://doc.rust-lang.org/book/ch16-00-concurrency.html
 [derivable-traits-rust-book]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
+[iterators]: https://doc.rust-lang.org/book/ch13-02-iterators.html
+[pattern-matching]: https://doc.rust-lang.org/book/ch18-00-patterns.html
 [message-passing-rust-book]: https://doc.rust-lang.org/book/ch16-02-message-passing.html
-[scoped-threads-rust-book]: https://doc.rust-lang.org/std/thread/fn.scope.html
+[trait-objects]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html
+
+[object-safe]: https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety
+[special-traits]: https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html
+
+[use]: https://doc.rust-lang.org/rust-by-example/mod/use.html
+[visibility-rules]: https://doc.rust-lang.org/rust-by-example/mod/visibility.html
 
 <!-- Std / Core Docs -->
-
 [oncecell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
+[option]: https://doc.rust-lang.org/std/option/
 [std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/
+[scoped-threads-rust-book]: https://doc.rust-lang.org/std/thread/fn.scope.html
 
 <!-- Books and web sites -->
-
 [async-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [awesome-rust]: https://github.com/rust-unofficial/awesome-rust/
 [blessed-rs]: https://blessed.rs/crates/
-[codevoweb]: https://codevoweb.com/
 [crates-io]: https://crates.io/
 [docs-rs]: https://docs.rs/
 [easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [learning-rust-linked-lists]: https://rust-unofficial.github.io/too-many-lists/index.html
 [lib-rs]: https://lib.rs/
-[lpalmieri-web]: https://www.lpalmieri.com/
-[rust-book]: https://doc.rust-lang.org/book/title-page.html
-[rust-by-example-book]: https://doc.rust-lang.org/rust-by-example/index.html
-[rust-by-practice-book]: https://practice.rs/why-exercise.html
+[programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274/
+[rust-by-example-playground]: https://doc.rust-lang.org/rust-by-example/meta/playground.html
+[rust-book]: https://doc.rust-lang.org/book/
+[rust-by-example-book]: https://doc.rust-lang.org/rust-by-example/
+[rust-by-practice-book]: https://practice.rs/
 [rust-cookbook-fork]: https://jamesgraves.github.io/rust-cookbook/
-[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/intro.html
-[rust-design-patterns]: https://rust-unofficial.github.io/patterns/intro.html
+[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/
+[rust-design-patterns]: https://rust-unofficial.github.io/patterns/
 [rustdoc-book]: https://doc.rust-lang.org/rustdoc/index.html
-[rust-for-professionals]: https://overexact.com/rust-for-professionals/
 [rust-learning]: https://github.com/ctjhoa/rust-learning/
-[rustonomicon-book]: https://doc.rust-lang.org/nomicon/intro.html
+[rustonomicon-book]: https://doc.rust-lang.org/nomicon/
 [rust-quizz]: https://dtolnay.github.io/rust-quiz/
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
-[what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking/
 [zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production/
 
-<!-- Other -->
+[attributes-reference]: https://doc.rust-lang.org/reference/attributes.html
+[conditional-compilation]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
+[rust-by-example-attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
 
+<!-- Cheatsheets -->
+[cheats-rs]: https://cheats.rs/
+[rust-for-professionals]: https://overexact.com/rust-for-professionals/
+
+<!-- Example Code -->
+[realworld-example-apps]: https://github.com/gothinkster/realworld
+[zero-to-production-book]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
+
+<!-- Blogs -->
+[codevoweb]: https://codevoweb.com/
+[lpalmieri-web]: https://www.lpalmieri.com/
+[rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system/
+[traits-blog]: https://blog.rust-lang.org/2015/05/11/traits.html
+[what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking/
+[8 Solutions for Troubleshooting Your Rust Build Times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
+[Speeding up incremental Rust compilation with dylibs]: https://robert.kra.hn/posts/2022-09-09-speeding-up-incremental-rust-compilation-with-dylibs/
+
+<!-- Other -->
+[enable-fast-compiles]: https://bevyengine.org/learn/book/getting-started/setup/#enable-fast-compiles-optional
 [lib-rs-stats]: https://lib.rs/stats/
 [most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
 [shield-io]: https://shields.io/
 [stdx]: https://github.com/brson/stdx/
+
+[proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
+[proc-macro2]: https://github.com/dtolnay/proc-macro2
+
+[rust-by-example-macros]: https://doc.rust-lang.org/rust-by-example/macros.html
+[rust-macros]: https://veykril.github.io/tlborm/
+[rust-reference-macros]: https://doc.rust-lang.org/reference/macros.html
+
+[actix-examples]: https://github.com/actix/examples
+[are-we-web-yet?]: https://www.arewewebyet.org/
+[auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/
+[axum]: https://github.com/rust-lang/crates.io/tree/main
+[building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
+[practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
+[rust-rocket-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
+
+[rust-yew-realworld-example]: https://github.com/jetli/rust-yew-realworld-example-app
+[rustwasm-book]: https://rustwasm.github.io/docs/book/
+
+[are-we-learning-yet?]: https://www.arewelearningyet.com/
+[opencv-example]: https://github.com/amar-laksh/workstation/blob/master/src/main.rs
+[watchmaker]: https://github.com/thomasbratt/watchmaker
+
+[tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
+[trillium-web]: https://trillium.rs/welcome
+
+[are-we-gui-yet?]: https://www.areweguiyet.com/
+
+[cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+[aws-sdk]: https://aws.amazon.com/sdk-for-rust/
+
+[dapr-web]: https://dapr.io/
+[dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
+[dapr-rust-examples]: https://github.com/dapr/rust-sdk/tree/master/examples
+
+[rust-cli-book]: https://rust-cli.github.io/book/index.html
+[tuify]: https://developerlife.com/2023/09/17/tuify-clap/
+
+[join]: https://docs.rs/rayon/latest/rayon/fn.join.html
+[scope]: https://docs.rs/rayon/latest/rayon/fn.scope.html
+[spawn]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
+[rayon-threadpool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
+
+[are-we-async-yet?]: https://areweasyncyet.rs/
+[asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
+[state-of-async-rust]: https://corrode.dev/blog/async/
+[stabilizing-async-fn-in-traits]: https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html
+[announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
+
+[working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
+
+[contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
+[drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
+[reference-docs]: https://docs.rs/
+[repo]: https://github.com/john-cd/rust_howto
+[rust]: https://www.rust-lang.org/
+[rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
+[rust-foundation]: https://foundation.rust-lang.org/
+[rust-playground]: https://play.rust-lang.org/
+[statistics]: https://lib.rs/stats
+[todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
+
+<!-- Companies -->
+[Embark Studios]: https://www.embark-studios.com/
+[Ferrous Systems]: https://ferrous-systems.com/
+[Freiheit]: https://freiheit.com/
+[Mozilla]: https://www.mozilla.org/en-US/

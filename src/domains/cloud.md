@@ -12,8 +12,4 @@
 
 [Dapr Rust SDK example][dapr-rust-examples]⮳
 
-[aws-sdk]: https://aws.amazon.com/sdk-for-rust/
-[dapr-web]: https://dapr.io/
-[dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
-[dapr-rust-examples]: https://github.com/dapr/rust-sdk/tree/master/examples
 {{#include ../link-refs.md}}

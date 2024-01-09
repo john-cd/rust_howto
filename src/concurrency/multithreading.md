@@ -44,8 +44,4 @@ Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may 
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
 ```
 
-[join]: https://docs.rs/rayon/latest/rayon/fn.join.html
-[scope]: https://docs.rs/rayon/latest/rayon/fn.scope.html
-[spawn]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
-[rayon-threadpool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
 {{#include ../link-refs.md}}

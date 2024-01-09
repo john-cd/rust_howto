@@ -27,6 +27,4 @@ HTTP specific Tower utilities
 
 [Trillium][trillium-web]⮳
 
-[tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
-[trillium-web]: https://trillium.rs/welcome
 {{#include ../link-refs.md}}

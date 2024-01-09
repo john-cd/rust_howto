@@ -23,5 +23,4 @@ Slint
 
 [druid][druid-github]⮳: a data-first Rust-native UI design toolkit (experimental).
 
-[are-we-gui-yet?]: https://www.areweguiyet.com/
 {{#include ../link-refs.md}}

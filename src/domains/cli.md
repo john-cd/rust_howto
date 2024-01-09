@@ -6,6 +6,4 @@
 
 [TUIFY YOUR CLAP CLI APPS AND MAKE THEM MORE INTERACTIVE][tuify]⮳
 
-[rust-cli-book]: https://rust-cli.github.io/book/index.html
-[tuify]: https://developerlife.com/2023/09/17/tuify-clap/
 {{#include ../link-refs.md}}

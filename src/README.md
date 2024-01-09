@@ -38,19 +38,4 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 
-[blessed-rs]: https://blessed.rs/crates
-[contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
-[crates-io]: https://crates.io/
-[drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
-[lib-rs]: https://lib.rs/
-[reference-docs]: https://docs.rs/
-[repo]: https://github.com/john-cd/rust_howto
-[rust]: https://www.rust-lang.org/
-[rust-book]: https://doc.rust-lang.org/book/
-[rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
-[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/
-[rust-foundation]: https://foundation.rust-lang.org/
-[rust-playground]: https://play.rust-lang.org/
-[statistics]: https://lib.rs/stats
-[todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
 {{#include ./link-refs.md}}

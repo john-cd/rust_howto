@@ -116,9 +116,4 @@ cargo machete
 
 [Cargo Generate][cargo-generate]⮳: developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
-[cargo-book]: https://doc.rust-lang.org/cargo/index.html
-[cargo-generate]: https://cargo-generate.github.io/cargo-generate/index.html
-[cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
-[cargo-udeps]: https://github.com/est31/cargo-udeps
-[tarpaulin]: https://github.com/xd009642/tarpaulin
 {{#include ../link-refs.md}}

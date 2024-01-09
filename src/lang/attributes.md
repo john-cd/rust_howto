@@ -63,7 +63,4 @@ See [Automatic derivation](../concerns/derive.md)
 
 [Rust by example - attributes][rust-by-example-attributes]⮳
 
-[attributes-reference]: https://doc.rust-lang.org/reference/attributes.html
-[conditional-compilation]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
-[rust-by-example-attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
 {{#include ../link-refs.md}}
