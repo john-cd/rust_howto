@@ -10,13 +10,13 @@
 
 ## SeaORM
 
-[SeaORM][sea-orm-web]⮳
+[SeaORM][sea-orm-website]⮳
 
 [SeaORM (docs)][sea-orm]⮳
 
 [SeaORM cookbook][sea-orm-cookbook]⮳
 
-[Seaography GraphQL server][seography-web]⮳
+[Seaography GraphQL server][seography-website]⮳
 
 ## Diesel
 

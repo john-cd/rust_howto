@@ -9,7 +9,7 @@ See the relevant section in [blessed.rs][blessed-rs]⮳
 
 ## Tauri
 
-[Tauri][tauri-web]⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
+[Tauri][tauri-website]⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
 
 ## egui
 

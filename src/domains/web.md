@@ -8,7 +8,7 @@
 
 ## Actix
 
-[Actix web][actix-web]⮳
+[Actix web][actix-web-website]⮳
 
 [Actix examples][actix-examples]⮳
 
@@ -22,7 +22,7 @@
 
 ## Static Website Generator
 
-[Zola][zola-web]⮳
+[Zola][zola-website]⮳
 
 ## HTTP client
 

@@ -4,9 +4,9 @@
 
 [Linfa][linfa-crate]⮳
 
-[Linfa (home page)][linfa-web]⮳
+[Linfa (home page)][linfa-website]⮳
 
-[SmartCore][smartcore-web]⮳
+[SmartCore][smartcore-website]⮳
 
 [OpenCV (example)][opencv-example]⮳
 

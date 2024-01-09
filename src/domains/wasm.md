@@ -4,7 +4,7 @@
 
 ## Yew
 
-[What is Yew?][yew-web]⮳
+[What is Yew?][yew-website]⮳
 
 [Example real world app built with Rust + Yew + WebAssembly][rust-yew-realworld-example]⮳
 

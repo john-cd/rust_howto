@@ -6,7 +6,7 @@
 
 ## Dapr
 
-[Dapr][dapr-web]⮳ is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
+[Dapr][dapr-website]⮳ is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
 
 [Dapr SDK for Rust][dapr-rust-sdk-github]⮳
 

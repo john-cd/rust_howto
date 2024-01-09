@@ -38,7 +38,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 ### Futures executor
 
-[futures-executor][futures-executor]⮳ includes a minimal executor. The [`block_on`][block-on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[futures-executor][futures-executor]⮳ includes a minimal executor. The [`block_on`][futures-executor-block-on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,ignore,mdbook-runnable
 {{#include ../../deps/examples/call_async_from_blocking_futures_executor.rs}}

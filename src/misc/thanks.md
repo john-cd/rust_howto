@@ -8,7 +8,7 @@ This reference guide is inspired from online websites, blogs, and documentation,
 - [Asynchronous Programming in Rust][async-rust-book]⮳
 - The [rustdoc book][rustdoc-book]⮳
 - [docs.rs][docs-rs]⮳
-- [https://www.lpalmieri.com/][lpalmieri-web]⮳
+- [https://www.lpalmieri.com/][lpalmieri-website]⮳
 - [https://codevoweb.com/][codevoweb]⮳
 - [Rust for professionals][rust-for-professionals]⮳
 - [Rust Cookbook (fork)][rust-cookbook-fork]⮳

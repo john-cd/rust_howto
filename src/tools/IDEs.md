@@ -4,7 +4,7 @@
 
 [Rust plugin for VS Code][rust-analyzer]⮳
 
-[rust-analyzer (home page)][rust-analyzer-web]⮳
+[rust-analyzer (home page)][rust-analyzer-website]⮳
 
 ## IntelliJ Rust
 

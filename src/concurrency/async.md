@@ -44,7 +44,7 @@ Alternatives to the Tokio async ecosystem include:
 
 - [async-std][async-std-crate]⮳: async version of the Rust standard library. No longer maintained?
 - [Smol][smol-crate]⮳
-- [Embassy][embassy-web]⮳ for embedded systems.
+- [Embassy][embassy-website]⮳ for embedded systems.
 - [Mio][mio-crate]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 {{#include ../link-refs.md}}

@@ -25,6 +25,6 @@ HTTP specific Tower utilities
 
 ## Alternatives
 
-[Trillium][trillium-web]⮳
+[Trillium][trillium-website]⮳
 
 {{#include ../link-refs.md}}
