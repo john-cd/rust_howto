@@ -6,7 +6,7 @@ echo "----------"
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
-cargo fmt --all --check
+cargo +nightly fmt --all --check
 
 ## Check dependencies
 # cargo deny check \
