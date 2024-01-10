@@ -25,8 +25,12 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## Update Rust if needed (note: `rustup update stable && rustup default stable` is required for Rust 1.74 -> Rust 1.75 somehow)
 RUN rustup update
 
-## Install fmt and clippy if needed
-RUN rustup component add clippy rustfmt
+## Install clippy if needed
+RUN rustup component add clippy
+
+## Install nightly fmt
+RUN rustup toolchain install nightly \
+    && rustup component add rustfmt --toolchain nightly
 
 ## Install cargo binstall (binary install)
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash

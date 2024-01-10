@@ -35,7 +35,7 @@ clean:
 
 # Format all examples
 fmtall:
-  cargo fmt --all
+  cargo +nightly fmt --all
 
 # Scan the code of all examples for common mistakes
 clippyall:
