@@ -1,0 +1,12 @@
+[package]
+name = "tools"
+version = "0.1.0"
+edition = "2021"
+publish=false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.79"
+quick-xml = "0.31.0"
+walkdir = "2.4.0"

@@ -102,4 +102,4 @@ update:
 
 # Generate the sitemap.xml file
 sitemap:
-  cargo run --bin sitemap
+  cargo run -p tools --bin sitemap
