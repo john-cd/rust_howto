@@ -12,7 +12,7 @@
 ## Lists of Rust links
 
 - [The Rust Starter Pack][rust-starter-pack]⮳
-- [Awesome Rust][awesome-rust]⮳: a curated list of Rust code and resources.
+- [Awesome Rust][awesome-rust-github]⮳: a curated list of Rust code and resources.
 
 ## Learn
 

@@ -20,11 +20,11 @@ Readers should have already some basic familiarity with [Rust][rust]⮳ concepts
 
 Per the curated list of Rust crates [blessed.rs][blessed-rs]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with ~~almost~~ _more than_ 100 thousand crates to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are (not yet) dominant frameworks or platforms like `Rails`, `Django`, `Spring` or `Node` in the Rust world.
 
-This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the typically dry [reference docs][reference-docs]⮳, and hopes to become a "cheatsheet on steroid" for the Rust ecosystem (_not just_ the Rust language).
+This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the typically dry [reference docs][docs-rs]⮳, and hopes to become a "cheatsheet on steroid" for the Rust ecosystem (_not just_ the Rust language).
 
 ## What other books should I consult?
 
-[Rust by Example][rust-by-example]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
+[Rust by Example][rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
 The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates.
 
@@ -34,7 +34,7 @@ This book is in its **early days** - feel free to submit an issue or a pull requ
 
 Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][drafts]. An informal (and very long) list of topics of interest is kept in [TODO][todo]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md][contributing] for more details.
 
-Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [statistics][statistics]⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
+Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [lib-rs-stats][lib-rs-stats]⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 

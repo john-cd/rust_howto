@@ -1,6 +1,6 @@
 # Lazy Init
 
-[OnceCell][oncecell]⮳: a cell which can be written to only once.
+[OnceCell][core::cell::OnceCell]⮳: a cell which can be written to only once.
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 

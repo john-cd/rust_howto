@@ -5,7 +5,7 @@ This reference guide is inspired from online websites, blogs, and documentation,
 - The [Rust Programming Language][rust-book]⮳
 - [Rust By Example][rust-by-example-book]⮳
 - [Rust by Practice][rust-by-practice-book]⮳
-- [Asynchronous Programming in Rust][async-rust-book]⮳
+- [Asynchronous Programming in Rust][asynchronous-programming-in-rust-book]⮳
 - The [rustdoc book][rustdoc-book]⮳
 - [docs.rs][docs-rs]⮳
 - [https://www.lpalmieri.com/][lpalmieri-website]⮳

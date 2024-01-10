@@ -61,6 +61,6 @@ See [Automatic derivation](../concerns/derive.md)
 
 [Attributes reference][attributes-reference]⮳
 
-[Rust by example - attributes][rust-by-example-attributes]⮳
+[Rust by example - attributes][attributes-rust-by-example]⮳
 
 {{#include ../link-refs.md}}

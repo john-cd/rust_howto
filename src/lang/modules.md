@@ -19,7 +19,7 @@ Items can access other items in the same module, even when private.
 
 Items in a parent module can’t use the private items inside child modules, but items in child modules can use the items in their ancestor modules.
 
-[Visibility rules][visibility-rules]⮳
+[![visibility-rules-rust-by-example-badge]][visibility-rules-rust-by-example]
 
 [A clear explanation of Rust’s module system][rust-module-system]⮳
 
@@ -27,7 +27,7 @@ Items in a parent module can’t use the private items inside child modules, but
 
 Create a shortcut to a path with the `use` keyword once, and then use the shorter name everywhere else in the scope.
 
-[Use][use]⮳
+[![use-rust-by-example-badge]][use-rust-by-example]
 
 ```rust,editable
 {{#include ../../deps/examples/modules.rs}}

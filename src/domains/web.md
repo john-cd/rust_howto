@@ -4,11 +4,11 @@
 
 ## Axum
 
-[Crates.io example source code (using Axum)][axum]⮳
+[Crates.io example source code (using Axum)][crates-io-example-source-code]⮳
 
 ## Actix
 
-[![actix-web-badge]][actix-web] [Actix web][actix-web-website] [Actix examples][actix-examples]⮳
+[![actix-web-badge]][actix-web] [Actix web][actix-web-website] [Actix examples][actix-examples-github]⮳
 
 [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][auth-web-microservice]⮳
 

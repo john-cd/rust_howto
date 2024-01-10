@@ -57,6 +57,8 @@
 [confy-badge]: https://badge-cache.kominick.com/crates/v/confy.svg?label=confy
 [confy]: https://docs.rs/confy/
 
+[core::cell::OnceCell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
+
 [cross]: https://github.com/cross-rs/cross
 [cross-wiki]: https://github.com/cross-rs/cross/wiki/Getting-Started
 [cross-example-toml]: https://github.com/cross-rs/wiki_assets/blob/main/Configuration/Cross.toml
@@ -211,6 +213,11 @@
 [postgres-badge]: https://badge-cache.kominick.com/crates/v/postgres.svg?label=postgres
 [postgres]: https://docs.rs/postgres/
 
+[proc-macro2-badge]: https://badge-cache.kominick.com/crates/v/proc_macro2.svg?label=proc-macro2
+[proc-macro2]: https://docs.rs/proc-macro2/
+[proc-macro2-github]: https://github.com/dtolnay/proc-macro2
+[proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
+
 [quote-badge]: https://badge-cache.kominick.com/crates/v/quote.svg?label=quote
 [quote]: https://docs.rs/quote/latest/quote/
 
@@ -223,6 +230,10 @@
 [rayon-badge]: https://badge-cache.kominick.com/crates/v/rayon.svg?label=rayon
 [rayon]: https://docs.rs/rayon/
 [rayon-github]: https://github.com/rayon-rs/rayon/
+[join]: https://docs.rs/rayon/latest/rayon/fn.join.html
+[scope]: https://docs.rs/rayon/latest/rayon/fn.scope.html
+[spawn]: https://docs.rs/rayon/latest/rayon/fn.spawn.html
+[rayon-threadpool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
 
 [regex-badge]: https://badge-cache.kominick.com/crates/v/regex.svg?label=regex
 [regex]: https://docs.rs/regex/
@@ -275,6 +286,9 @@
 
 [std-badge]: https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg
 [std]: https://doc.rust-lang.org/std/
+[std::option::Option]: https://doc.rust-lang.org/std/option/
+[std::sync::atomic]: https://doc.rust-lang.org/std/sync/atomic/
+[std::thread::scope]: https://doc.rust-lang.org/std/thread/fn.scope.html
 
 [syn-badge]: https://badge-cache.kominick.com/crates/v/syn.svg?label=syn
 [syn]: https://docs.rs/syn/
@@ -336,6 +350,8 @@
 [tracing-subscriber]: https://docs.rs/tracing_subscriber/
 [tracing-subscriber-crate]: https://crates.io/crates/tracing-subscriber/
 
+[trillium-website]: https://trillium.rs/welcome
+
 [url-badge]: https://badge-cache.kominick.com/crates/v/url.svg?label=url
 [url]: https://docs.rs/url/
 
@@ -344,6 +360,8 @@
 
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
+
+[watchmaker]: https://github.com/thomasbratt/watchmaker
 
 [watt-badge]: https://badge-cache.kominick.com/crates/v/watt.svg?label=watt
 [watt]: https://docs.rs/watt/

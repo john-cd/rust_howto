@@ -1,6 +1,6 @@
 # Option
 
-Rust has no `null`. Instead, use [Option][option]⮳:
+Rust has no `null`. Instead, use [Option][std::option::Option]⮳:
 
 ```rust,editable,ignore
 enum Option<T> {

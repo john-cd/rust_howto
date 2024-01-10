@@ -10,7 +10,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Scoped threads
 
-[Scoped threads][scoped-threads-rust-book]⮳
+[Scoped threads][std::thread::scope]⮳
 
 ```rust,editable
 {{#include ../../deps/examples/multithreading_scoped_threads.rs}}
