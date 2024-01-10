@@ -90,6 +90,6 @@
 
 ---
 
-[Categories](categories.md)
-[Crates](crates.md)
+[Categories](misc/categories.md)
+[Crates](misc/crates.md)
 [Thanks](misc/thanks.md)
