@@ -1,10 +1,11 @@
 #![allow(dead_code)]
 
-// in the same file than the main code
+// Put unit tests in the same file than the main code
 
 #[cfg(test)] // only for unit tests
 mod tests {
-    use super::*; // access to all objects in the parent module, which contains the main code
+    // Access to all objects in the parent module, which contains the main code
+    use super::*;
 
     // Test functions must be free, monomorphic functions that take no
     // arguments, and commonly return () or Result<T, E> where T:
@@ -25,17 +26,19 @@ mod tests {
         // or assert_ne!
     }
 
+    // This test passes if the code inside the function panics;
+    // It fails if the code inside the function doesn’t panic.
     #[test]
-    #[should_panic] // The test passes if the code inside the function panics; the test fails if the code inside the function doesn’t panic.
+    #[should_panic]
     fn another() {
         panic!("Make this test fail");
     }
 
-    // with Result
+    // With Result
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {
-            Ok(()) // pass if OK
+            Ok(()) // Pass if OK
         } else {
             Err(String::from("two plus two does not equal four"))
         }
@@ -44,7 +47,7 @@ mod tests {
     #[test]
     #[ignore]
     fn expensive_test() {
-        // code that takes an hour to run
+        // Code that takes an hour to run
     }
 }
 

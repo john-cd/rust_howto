@@ -20,8 +20,8 @@ use tower_http::set_header::SetResponseHeaderLayer;
 use tower_http::trace::TraceLayer;
 // use tower_http::validate_request::ValidateRequestHeaderLayer;
 
-// Our request handler. This is where we would implement the application logic
-// for responding to HTTP requests...
+// Our request handler. This is where we would implement the
+// application logic for responding to HTTP requests...
 async fn handler(
     _request: Request<Full<Bytes>>,
 ) -> Result<Response<Full<Bytes>>, BoxError> {
@@ -40,8 +40,8 @@ impl DatabaseConnectionPool {
     }
 }
 
-// Shared state across all request handlers --- in this case, a pool of database
-// connections.
+// Shared state across all request handlers -
+// in this case, a pool of database connections.
 struct State {
     pool: DatabaseConnectionPool,
 }
@@ -55,10 +55,11 @@ async fn main() {
 
     let content_length_from_response = 0;
 
-    // Use tower's `ServiceBuilder` API to build a stack of tower middleware
-    // wrapping our request handler.
+    // Use tower's `ServiceBuilder` API to build a stack of tower
+    // middleware wrapping our request handler.
     let _service = ServiceBuilder::new()
-        // Mark the `Authorization` request header as sensitive so it doesn't show in logs
+        // Mark the `Authorization` request header as sensitive
+        // so it doesn't show in logs
         .layer(SetSensitiveRequestHeadersLayer::new(once(AUTHORIZATION)))
         // High level logging of requests and responses
         .layer(TraceLayer::new_for_http())
@@ -75,10 +76,11 @@ async fn main() {
             CONTENT_TYPE,
             content_length_from_response,
         ))
-        // Authorize requests using a token
+        //// Authorize requests using a token
         //.layer(ValidateRequestHeaderLayer::bearer("passwordlol"))
-        // Accept only application/json, application/* and */* in a request's ACCEPT header
+        //// Accept only application/json, application/* and */*
+        //// in a request's ACCEPT header
         //.layer(ValidateRequestHeaderLayer::accept("application/json"))
-        // Wrap a `Service` in our middleware stack
+        // Wrap the `Service` in our middleware stack
         .service_fn(handler);
 }

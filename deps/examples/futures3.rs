@@ -5,12 +5,12 @@ use futures::future::FutureExt;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let future_of_1 = async { 1 };
 
-    // Map this future’s output to a (possibly) different type, returning a new
-    // future of the resulting type.
+    // Map this future’s output to a (possibly) different type, returning
+    // a new future of the resulting type.
     let new_future = future_of_1.map(|x| x + 3);
 
-    // Chain on a computation for when a future finished, passing the result of
-    // the future to the provided closure f.
+    // Chain on a computation for when a future finished, passing the
+    // result of the future to the provided closure f.
     let future_of_7 = new_future.then(|x| async move { x + 3 });
     assert_eq!(future_of_7.await, 7);
 

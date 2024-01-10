@@ -6,7 +6,8 @@ use std::fs;
 fn read_file(filename: &str) -> Option<String> {
     fs::read_to_string(filename)
         .ok() // Convert `Result` to `Option`
-        .and_then(|contents| Some(contents.trim().to_string())) // Chain operations on `Some`
+        .and_then(|contents| Some(contents.trim().to_string()))
+        // `and_then` chains operations on `Some`
 }
 
 fn main() {

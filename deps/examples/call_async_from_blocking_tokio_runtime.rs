@@ -10,7 +10,8 @@ fn main() {
         handles.push(runtime.spawn(my_bg_task(i)));
     }
 
-    // Do something time-consuming while the async background tasks execute.
+    // Do something time-consuming while the async background tasks
+    // execute.
     std::thread::sleep(std::time::Duration::from_millis(750));
     println!("Finished time-consuming task.");
 

@@ -4,8 +4,8 @@ use tracing::Level;
 
 #[instrument]
 fn my_function(my_arg: usize) {
-    // This event will be recorded inside a span named `my_function` with the
-    // field `my_arg`.
+    // This event will be recorded inside a span named `my_function`
+    // with the field `my_arg`.
     event!(Level::INFO, "inside my_function!");
     // ...
 }

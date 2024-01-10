@@ -36,8 +36,10 @@ async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     Toplevel::new(|s| async move {
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
     })
-    .catch_signals() // signals the Toplevel object to listen for SIGINT/SIGTERM/Ctrl+C
-    .handle_shutdown_requests(Duration::from_millis(1000)) // collects all the return values of the subsystems, determines the global error state
+    // Signals the Toplevel object to listen for SIGINT/SIGTERM/Ctrl+C
+    .catch_signals()
+    // Collects all the return values of the subsystems, determines the global error state
+    .handle_shutdown_requests(Duration::from_millis(1000))
     .await
     .map_err(|e| e.into())
 }

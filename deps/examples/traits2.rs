@@ -1,9 +1,10 @@
 trait Summary {
     fn summarize_author(&self) -> String;
 
+    // Default implementation
     fn summarize(&self) -> String {
-        // <-- default implementation
-        format!("(Read more from {}...)", self.summarize_author()) // <-- can call a non-default method
+        format!("(Read more from {}...)", self.summarize_author())
+        // The default implementation can call a non-default (abstract) method
     }
 }
 

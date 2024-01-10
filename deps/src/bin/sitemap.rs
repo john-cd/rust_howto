@@ -132,8 +132,8 @@ fn main() -> Result<()> {
     // Write the sitemap
     let sitemap_full_path = format!("{dest_dir}sitemap.xml");
 
-    // File::create will create a file if it does not exist, and will truncate
-    // it if it does.
+    // File::create will create a file if it does not exist, and will
+    // truncate it if it does.
     write_xml(links, File::create(Path::new(sitemap_full_path.as_str()))?)?;
     Ok(())
 }

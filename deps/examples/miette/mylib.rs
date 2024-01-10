@@ -44,14 +44,14 @@ pub enum MyLibError {
 
     // Wrap an Error
     #[error(transparent)]
-    // forward the source and Display methods straight through to an underlying
-    // error.
+    // Forward the source and Display methods straight through
+    // to the underlying error.
     #[diagnostic(code(my_lib::io_error))]
     IoError(#[from] std::io::Error),
 
     // Wrap another Diagnostic
-    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`]. You
-    // won't see labels otherwise
+    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`].
+    // You won't see labels otherwise
     #[error(transparent)]
     #[diagnostic(transparent)]
     AnotherError(#[from] AnotherError),
@@ -65,8 +65,8 @@ pub struct AnotherError {
 }
 
 pub fn this_fails() -> Result<()> {
-    // You can use plain strings as a `Source`, or anything that implements
-    // the one-method `Source` trait.
+    // You can use plain strings as a `Source`,
+    // or anything that implements the one-method `Source` trait.
     let src = "source\n  text\n    here".to_string();
     // You may also use map_err(|error| {
     // error.with_source_code(String::from("source code")) }) later.

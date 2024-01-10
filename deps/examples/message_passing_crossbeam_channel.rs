@@ -8,12 +8,13 @@ fn main() {
     // Create a channel of unbounded capacity.
     let (s1, r1) = unbounded();
 
-    // Alternatively, create a channel that can hold at most n messages at a
-    // time. let (s1, r1) = bounded(5);
+    // Alternatively, create a channel that can hold at most n messages at
+    // a time. let (s1, r1) = bounded(5);
 
-    // Senders and receivers can be cloned to use them to multiple threads.
-    // cloning only creates a new handle to the same sending or receiving side.
-    // It does not create a separate stream of messages in any way
+    // Senders and receivers can be cloned to use them to multiple
+    // threads. cloning only creates a new handle to the same sending
+    // or receiving side. It does not create a separate stream of
+    // messages in any way
     let s2 = s1.clone();
 
     // Send a message into the channel.
@@ -28,12 +29,13 @@ fn main() {
     assert_eq!(r1.try_recv(), Err(TryRecvError::Empty));
 
     s1.send("0").unwrap();
-    // Receive all remaining messages currently in the channel (non-blocking).
+    // Receive all remaining messages currently in the channel
+    // (non-blocking).
     let v: Vec<_> = r1.try_iter().collect();
     println!("{:?}", v);
 
-    // When all senders or all receivers associated with a channel get dropped,
-    // the channel becomes disconnected.
+    // When all senders or all receivers associated with a channel get
+    // dropped, the channel becomes disconnected.
     s1.send("1").unwrap();
     drop(s1);
 

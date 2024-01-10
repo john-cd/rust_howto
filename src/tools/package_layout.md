@@ -7,8 +7,8 @@
 ├── src/
 │   ├── lib.rs                      # The default library file is src/lib.rs.
 │   ├── main.rs                     # The default executable file is src/main.rs.
-│   └── bin/                        # Other executables can be placed in src/bin/, even in library projects.
-│       ├── named-executable.rs
+│   └── bin/                        # Other executables can be placed in src/bin/,
+│       ├── named-executable.rs     # even in library projects.
 │       ├── another-executable.rs
 │       └── multi-file-executable/
 │           ├── main.rs
@@ -23,9 +23,9 @@
 │   └── multi-file-example/
 │       ├── main.rs
 │       └── ex_module.rs
-└── tests/                          # Integration tests go in the tests directory. Tests in your src files should be unit tests and documentation tests.
-    ├── some-integration-tests.rs
-    └── multi-file-test/
+└── tests/                          # Integration tests go in the tests directory.
+    ├── some-integration-tests.rs   # Tests in your src files should be unit tests
+    └── multi-file-test/            # and documentation tests.
         ├── main.rs
         └── test_module.rs
 ```

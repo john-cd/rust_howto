@@ -8,17 +8,27 @@ This is similar to Python's `pyenv` or Node's `nvm`.
 
 ```sh
 rustup help
-rustup toolchain help   # Show the help page for a subcommand (like toolchain)
 
-rustup doc              # Open the local documentation in your browser
+# Show the help page for a subcommand (like toolchain)
+rustup toolchain help
 
-rustup update           # Update to a new verion of Rust
+# Open the local documentation in your browser
+rustup doc
 
-rustup show             # Show which toolchain will be used in the current directory
+# Update to a new verion of Rust
+rustup update
 
-rustup target list      # Show which toolchain will be used in the current directory
-rustup toolchain list   # Overview of what is installed on your system
-rustup component list   # See a list of available and installed components.
+# Show which toolchain will be used in the current directory
+rustup show
+
+# Show which toolchain will be used in the current directory
+rustup target list
+
+# Overview of what is installed on your system
+rustup toolchain list
+
+# See a list of available and installed components.
+rustup component list
 ```
 
 [Rustup command examples][rustup-command-examples]⮳
