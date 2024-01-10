@@ -1,6 +1,6 @@
 # Rust How-to
 
-[Introduction](README.md)
+[Introduction](intro.md)
 
 - [Language](lang/rust_language.md)
   - [Main function](lang/main.md)
