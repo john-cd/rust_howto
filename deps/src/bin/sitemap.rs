@@ -126,7 +126,7 @@ fn main() -> Result<()> {
     let errors: Vec<Error> =
         errors.into_iter().map(Result::unwrap_err).collect();
     // debug: println!("Links: {:?}", links);
-    if errors.len() > 0 {
+    if !errors.is_empty() {
         println!("Errors: {:?}", errors);
     }
     // Create directory
