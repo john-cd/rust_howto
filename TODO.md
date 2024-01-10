@@ -18,8 +18,6 @@ review example testing using libraries outside of `std` - WIP; review generate.s
 - skeptic as used in rust cookbook
 - fix generate.sh
 
-rename main README to intro
-
 tower_http example polish; other examples have been checked against the rust playground
 
 review GA / GSC - issues with redirects??
@@ -29,12 +27,6 @@ explanation text for language pages
 web examples into separate section
 
 review Install Rust
-
-add sitemap generation:
-
-https://crates.io/crates/sitemap
-https://crates.io/crates/sitewriter
-https://lib.rs/crates/mdbook-sitemap-generator
 
 license
 
