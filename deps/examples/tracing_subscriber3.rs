@@ -1,5 +1,6 @@
+use tracing_subscriber::filter::EnvFilter;
+use tracing_subscriber::fmt;
 use tracing_subscriber::prelude::*;
-use tracing_subscriber::{filter::EnvFilter, fmt};
 
 fn main() {
     let fmt_layer = fmt::layer().with_target(false);

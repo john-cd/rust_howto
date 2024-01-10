@@ -4,7 +4,9 @@ use std::sync::mpsc;
 use std::thread;
 
 // Our error type needs to be `Send` to be used in a channel
-fn read_contents<T: AsRef<Path>>(file: T) -> Result<String, Box<dyn Error + Send>> {
+fn read_contents<T: AsRef<Path>>(
+    file: T,
+) -> Result<String, Box<dyn Error + Send>> {
     Ok(file.as_ref().to_string_lossy().into_owned())
 }
 

@@ -7,10 +7,10 @@ use futures::{
 };
 
 async fn task_one() {
-    /* ... */
+    // ...
 }
 async fn task_two() {
-    /* ... */
+    // ...
 }
 
 async fn race_tasks() {

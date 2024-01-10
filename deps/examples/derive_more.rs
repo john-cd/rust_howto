@@ -1,4 +1,7 @@
-use derive_more::{Add, Display, From, Into};
+use derive_more::Add;
+use derive_more::Display;
+use derive_more::From;
+use derive_more::Into;
 
 #[derive(PartialEq, From, Add)]
 struct MyInt(i32);

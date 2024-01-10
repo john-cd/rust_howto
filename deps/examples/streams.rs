@@ -1,4 +1,5 @@
-use futures::stream::{self, StreamExt};
+use futures::stream;
+use futures::stream::StreamExt;
 use futures::Stream;
 
 async fn count_to_five() -> impl Stream<Item = u32> {
@@ -8,7 +9,8 @@ async fn count_to_five() -> impl Stream<Item = u32> {
 #[tokio::main]
 async fn main() {
     let mut stream = count_to_five().await;
-    // `for` loops are not usable with Streams, but for imperative-style code, `while let` and the `next`/`try_next` functions can be used:
+    // `for` loops are not usable with Streams, but for imperative-style code,
+    // `while let` and the `next`/`try_next` functions can be used:
     while let Some(num) = stream.next().await {
         println!("{}", num);
     }

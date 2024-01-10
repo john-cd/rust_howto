@@ -20,6 +20,7 @@ impl Advertisement for Modal {
 
 impl Modal {
     async fn render_fullscreen(&self) {}
+
     async fn hide_for_now(&self) {}
 }
 

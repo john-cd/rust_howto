@@ -1,6 +1,7 @@
-use dashmap::DashMap;
 use std::sync::Arc;
 use std::thread;
+
+use dashmap::DashMap;
 
 fn main() {
     // Create a shared DashMap with an Arc
@@ -33,7 +34,10 @@ fn main() {
                 3 => {
                     if let Some(mut value) = map_clone.get_mut("key2") {
                         *value += 10;
-                        println!("Thread {} incremented key2 value to {}", thread_id, *value);
+                        println!(
+                            "Thread {} incremented key2 value to {}",
+                            thread_id, *value
+                        );
                     } else {
                         println!("Thread {} couldn't find key2", thread_id);
                     }

@@ -1,4 +1,5 @@
-use anyhow::{Context, Result};
+use anyhow::Context;
+use anyhow::Result;
 
 fn do_something() -> Result<()> {
     Err(anyhow::Error::msg("Some Error"))

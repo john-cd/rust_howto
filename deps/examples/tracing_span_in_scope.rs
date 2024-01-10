@@ -1,4 +1,6 @@
-use tracing::{debug_span, info_span, Instrument};
+use tracing::debug_span;
+use tracing::info_span;
+use tracing::Instrument;
 
 async fn my_async_function() {
     let span = info_span!("my_async_function");

@@ -7,7 +7,8 @@ impl Rectangle {
     // implementation block (multiple allowed for a given struct)
     // Method
     fn area(&self) -> u32 {
-        // short for self: &Self, an alias for the type that the impl block is for
+        // short for self: &Self, an alias for the type that the impl block is
+        // for
         self.width * self.height
     }
 

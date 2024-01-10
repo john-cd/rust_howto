@@ -1,12 +1,21 @@
-use bytes::Bytes;
-use http::{header, Method, Request, Response};
-use http_body_util::Full;
 use std::convert::Infallible;
 use std::error::Error;
-use tower::{Service, ServiceBuilder, ServiceExt};
-use tower_http::cors::{Any, CorsLayer};
 
-async fn handle(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, Infallible> {
+use bytes::Bytes;
+use http::header;
+use http::Method;
+use http::Request;
+use http::Response;
+use http_body_util::Full;
+use tower::Service;
+use tower::ServiceBuilder;
+use tower::ServiceExt;
+use tower_http::cors::Any;
+use tower_http::cors::CorsLayer;
+
+async fn handle(
+    _request: Request<Full<Bytes>>,
+) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(Response::new(Full::default()))
 }
 

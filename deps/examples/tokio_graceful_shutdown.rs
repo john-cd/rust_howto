@@ -1,5 +1,8 @@
-use tokio::time::{sleep, Duration};
-use tokio_graceful_shutdown::{SubsystemBuilder, SubsystemHandle, Toplevel};
+use tokio::time::sleep;
+use tokio::time::Duration;
+use tokio_graceful_shutdown::SubsystemBuilder;
+use tokio_graceful_shutdown::SubsystemHandle;
+use tokio_graceful_shutdown::Toplevel;
 
 async fn countdown() {
     for i in (1..=5).rev() {

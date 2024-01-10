@@ -9,7 +9,8 @@ fn main() {
     scores.insert(String::from("Blue"), 25);
 
     let team_name = String::from("Blue");
-    // Get an Option<i32> rather than an Option<&i32>, then unwrap_or to set score to zero if scores doesn't have an entry for the key.
+    // Get an Option<i32> rather than an Option<&i32>, then unwrap_or to set
+    // score to zero if scores doesn't have an entry for the key.
     let _score = scores.get(&team_name).copied().unwrap_or(0);
 
     // Enumerate

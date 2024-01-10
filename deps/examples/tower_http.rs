@@ -1,24 +1,30 @@
-#![allow(unused_imports)]
 #![allow(dead_code)]
 
+use std::iter::once;
+use std::sync::Arc;
+
 use bytes::Bytes;
-use http::{
-    header::{HeaderName, AUTHORIZATION, CONTENT_TYPE},
-    Request, Response,
-};
+use http::header::HeaderName;
+use http::header::AUTHORIZATION;
+use http::header::CONTENT_TYPE;
+use http::Request;
+use http::Response;
 use http_body_util::Full;
-use std::{convert::Infallible, iter::once, net::SocketAddr, sync::Arc};
-use tower::{service_fn, BoxError, ServiceBuilder};
-use tower_http::{
-    add_extension::AddExtensionLayer, compression::CompressionLayer,
-    propagate_header::PropagateHeaderLayer, sensitive_headers::SetSensitiveRequestHeadersLayer,
-    set_header::SetResponseHeaderLayer, trace::TraceLayer,
-    validate_request::ValidateRequestHeaderLayer,
-};
+use tower::BoxError;
+use tower::ServiceBuilder;
+use tower_http::add_extension::AddExtensionLayer;
+use tower_http::compression::CompressionLayer;
+use tower_http::propagate_header::PropagateHeaderLayer;
+use tower_http::sensitive_headers::SetSensitiveRequestHeadersLayer;
+use tower_http::set_header::SetResponseHeaderLayer;
+use tower_http::trace::TraceLayer;
+// use tower_http::validate_request::ValidateRequestHeaderLayer;
 
 // Our request handler. This is where we would implement the application logic
 // for responding to HTTP requests...
-async fn handler(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, BoxError> {
+async fn handler(
+    _request: Request<Full<Bytes>>,
+) -> Result<Response<Full<Bytes>>, BoxError> {
     let empty_body = Full::new(Bytes::new());
     let builder = Response::builder()
         .header("X-Custom-Foo", "bar")
@@ -34,7 +40,8 @@ impl DatabaseConnectionPool {
     }
 }
 
-// Shared state across all request handlers --- in this case, a pool of database connections.
+// Shared state across all request handlers --- in this case, a pool of database
+// connections.
 struct State {
     pool: DatabaseConnectionPool,
 }

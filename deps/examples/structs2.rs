@@ -20,6 +20,7 @@ fn main() {
     // struct update
     let _user2 = User {
         email: String::from("another@example.com"),
-        ..user1 // the remaining fields not explicitly set should have the same value as the fields in the given instance.
+        ..user1 /* the remaining fields not explicitly set should have the
+                 * same value as the fields in the given instance. */
     };
 }

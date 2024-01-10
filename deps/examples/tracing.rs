@@ -1,4 +1,10 @@
-use tracing::{debug, error, event, info, trace, warn, Level};
+use tracing::debug;
+use tracing::error;
+use tracing::event;
+use tracing::info;
+use tracing::trace;
+use tracing::warn;
+use tracing::Level;
 
 fn main() {
     event!(Level::INFO, "something happened");
@@ -17,7 +23,8 @@ fn main() {
         question = "life, the universe, and everything"
     );
 
-    // unlike other fields, `message`'s shorthand initialization is just the string itself.
+    // unlike other fields, `message`'s shorthand initialization is just the
+    // string itself.
     debug!(excitement = "yay!", "hello!");
 
     // shorthand for user = user

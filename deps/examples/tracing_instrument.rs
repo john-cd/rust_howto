@@ -1,4 +1,6 @@
-use tracing::{event, instrument, Level};
+use tracing::event;
+use tracing::instrument;
+use tracing::Level;
 
 #[instrument]
 fn my_function(my_arg: usize) {

@@ -27,7 +27,7 @@ macro_rules! Tuple {
 type _N2 = Tuple!(i32, i32);
 
 // Used as an item.
-//thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+// thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
 
 // Used as an associated item.
 macro_rules! const_maker {

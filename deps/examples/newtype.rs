@@ -7,7 +7,8 @@ impl fmt::Display for Wrapper {
         write!(f, "[{}]", self.0.join(", "))
     }
 }
-// If we wanted the new type to have every method the inner type has, implement the `Deref` trait.
+// If we wanted the new type to have every method the inner type has, implement
+// the `Deref` trait.
 
 fn main() {
     println!(

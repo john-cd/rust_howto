@@ -9,6 +9,7 @@ fn main() {
         .with_thread_names(true) // include the name of the current thread
         .compact(); // use the `Compact` formatting style.
 
-    // Create a `fmt` subscriber that uses our custom event format, and set it as the default.
+    // Create a `fmt` subscriber that uses our custom event format, and set it
+    // as the default.
     tracing_subscriber::fmt().event_format(format).init();
 }

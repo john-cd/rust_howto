@@ -1,12 +1,14 @@
 #![allow(unused_imports, dead_code)]
 
+// For code from an external crate, the absolute path begins with the crate name - here, the standard `std` library
 use std::collections::HashMap;
-use std::fs::File; // `File` without prefix is now available in the scope // For code from an external crate, the absolute path begins with the crate name - here, the standard `std` library
+use std::fs::File; // `File` without prefix is now available in the scope
 
-use std::collections::*; // Glob - all public objects
+use std::collections::*; // Glob - all public objects in `collections` are now in scope
 
-use std::io::{self, Write};
 use std::{cmp::Ordering, fmt}; // Combining multiple use lines together
+
+use std::io::{self, Write}; // Equivalent to `use std::io; use std::io::Write;`
 
 mod utils {
     pub fn insert_use() {}

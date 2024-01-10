@@ -1,13 +1,15 @@
-use crossbeam_channel::unbounded;
-use crossbeam_channel::{RecvError, TryRecvError};
 use std::thread;
+
+use crossbeam_channel::unbounded;
+use crossbeam_channel::RecvError;
+use crossbeam_channel::TryRecvError;
 
 fn main() {
     // Create a channel of unbounded capacity.
     let (s1, r1) = unbounded();
 
-    // Alternatively, create a channel that can hold at most n messages at a time.
-    // let (s1, r1) = bounded(5);
+    // Alternatively, create a channel that can hold at most n messages at a
+    // time. let (s1, r1) = bounded(5);
 
     // Senders and receivers can be cloned to use them to multiple threads.
     // cloning only creates a new handle to the same sending or receiving side.
@@ -30,7 +32,8 @@ fn main() {
     let v: Vec<_> = r1.try_iter().collect();
     println!("{:?}", v);
 
-    // When all senders or all receivers associated with a channel get dropped, the channel becomes disconnected.
+    // When all senders or all receivers associated with a channel get dropped,
+    // the channel becomes disconnected.
     s1.send("1").unwrap();
     drop(s1);
 
@@ -39,7 +42,8 @@ fn main() {
 
     // .. but any remaining messages can still be received.
     println!("{:?}", r1.iter().collect::<Vec<_>>());
-    // Note that the call to `collect` would block if the channel were not disconnected.
+    // Note that the call to `collect` would block if the channel were not
+    // disconnected.
 
     // There are no more messages in the channel.
     assert!(r1.is_empty());

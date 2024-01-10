@@ -14,7 +14,6 @@
 pub struct S;
 
 /// Here is the main function!
-///
 fn main() {
     let _ = S;
 }

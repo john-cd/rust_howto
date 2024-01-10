@@ -22,14 +22,17 @@ async fn main() -> Result {
         .zip(filenames.iter())
         .map(|(url, filename)| download_file(url, filename));
 
-    let fut = futures::stream::iter(futures).for_each_concurrent(4, |fut| async move {
-        if let Err(e) = fut.await {
-            println!("Error: {}", e);
-            if let Some(source) = e.source() {
-                println!("  Caused by: {}", source);
+    let fut = futures::stream::iter(futures).for_each_concurrent(
+        4,
+        |fut| async move {
+            if let Err(e) = fut.await {
+                println!("Error: {}", e);
+                if let Some(source) = e.source() {
+                    println!("  Caused by: {}", source);
+                }
             }
-        }
-    });
+        },
+    );
 
     fut.await;
 

@@ -31,9 +31,10 @@ impl Screen {
 
     fn run(&self) {
         for component in self.components.iter() {
-            // The purpose of trait objects is to permit "late binding" of methods.
-            // Calling a method on a trait object results in virtual dispatch at runtime.
-            // Here, `components` is a mix of `Button` and `Text` structs.
+            // The purpose of trait objects is to permit "late binding" of
+            // methods. Calling a method on a trait object results
+            // in virtual dispatch at runtime. Here, `components` is
+            // a mix of `Button` and `Text` structs.
             component.draw();
         }
     }

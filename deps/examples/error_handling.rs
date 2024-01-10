@@ -1,5 +1,6 @@
 use std::fs::File;
-use std::io::{self, BufRead};
+use std::io;
+use std::io::BufRead;
 
 fn main() {
     let mut cursor = io::Cursor::new(b"foo\nbar");
@@ -11,6 +12,7 @@ fn main() {
         // If this instance of Result is an Err value, expect will cause the program to crash and display the message that you passed as an argument to expect.
         .expect("Failed to read line");
 
-    // Alternative: `unwrap` panics if there is an error - without a custom message.
+    // Alternative: `unwrap` panics if there is an error - without a custom
+    // message.
     let _greeting_file = File::open("hello.txt").unwrap();
 }

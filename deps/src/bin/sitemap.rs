@@ -1,23 +1,26 @@
 //! Inspired by https://github.com/rxdn/mdbook-sitemap-generator/tree/master
+use std::ffi::OsStr;
+use std::fs::File;
+use std::io;
+use std::io::Write;
+use std::path::Path;
+use std::path::PathBuf;
+
 use anyhow::anyhow;
 use anyhow::bail;
 use anyhow::Error;
 use anyhow::Result;
 use quick_xml::events::BytesText;
 use quick_xml::writer::Writer;
-use std::ffi::OsStr;
-use std::fs::File;
-use std::io;
-use std::io::Write;
-use std::path::{Path, PathBuf};
-use walkdir::{DirEntry, WalkDir};
+use walkdir::DirEntry;
+use walkdir::WalkDir;
 
 /// True if the directory entry is hidden (starts with a `.`)
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
-        .map(|s| s.starts_with("."))
+        .map(|s| s.starts_with('.'))
         .unwrap_or(false)
 }
 
@@ -36,7 +39,7 @@ fn find_paths<P: AsRef<Path>>(root_directory: P) -> io::Result<Vec<PathBuf>> {
     {
         if let Some(extension) = entry.path().extension() {
             if extension == "md" {
-                //debug: println!("{}", entry.path().display());
+                // debug: println!("{}", entry.path().display());
                 paths.push(entry.into_path());
             }
         }
@@ -55,7 +58,10 @@ fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     // <urlset>
     writer
         .create_element("urlset")
-        .with_attribute(("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9"))
+        .with_attribute((
+            "xmlns",
+            "http://www.sitemaps.org/schemas/sitemap/0.9",
+        ))
         .write_inner_content(|writer| {
             for link in links.iter() {
                 // <url><loc>
@@ -87,7 +93,7 @@ fn main() -> Result<()> {
                 .ends_with(ex)
         })
     }); // p.ends_with(ex) did not work?
-        //debug: let l = l.map(|path| { println!("{:?}", path); path });
+    // debug: let l = l.map(|path| { println!("{:?}", path); path });
 
     let domain = "https://john-cd.com/rust_howto/";
     let l = l.map(|p| {
@@ -102,7 +108,7 @@ fn main() -> Result<()> {
     let (links, errors): (Vec<_>, Vec<_>) = l.partition(Result::is_ok);
     let links: Vec<_> = links.into_iter().map(Result::unwrap).collect();
     let errors: Vec<_> = errors.into_iter().map(Result::unwrap_err).collect();
-    //debug: println!("Links: {:?}", links);
+    // debug: println!("Links: {:?}", links);
     println!("Errors: {:?}", errors);
 
     // Create directory
@@ -125,6 +131,9 @@ fn main() -> Result<()> {
 
     // Write the sitemap
     let sitemap_full_path = format!("{dest_dir}sitemap.xml");
+
+    // File::create will create a file if it does not exist, and will truncate
+    // it if it does.
     write_xml(links, File::create(Path::new(sitemap_full_path.as_str()))?)?;
     Ok(())
 }

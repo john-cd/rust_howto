@@ -1,5 +1,9 @@
-use crossbeam_channel::{after, select, tick};
-use std::time::{Duration, Instant};
+use std::time::Duration;
+use std::time::Instant;
+
+use crossbeam_channel::after;
+use crossbeam_channel::select;
+use crossbeam_channel::tick;
 
 fn main() {
     let start = Instant::now();
@@ -9,7 +13,8 @@ fn main() {
     let timeout = after(Duration::from_secs(1));
 
     loop {
-        // `select` wait until any one of the channels becomes ready and execute it.
+        // `select` wait until any one of the channels becomes ready and execute
+        // it.
         select! {
             recv(ticker) -> _ => println!("elapsed: {:?}", start.elapsed()),
             recv(timeout) -> _ => break,

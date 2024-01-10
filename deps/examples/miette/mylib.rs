@@ -1,7 +1,8 @@
 // library code: define unique error types and error wrappers
+use miette::Diagnostic;
+use miette::NamedSource;
 use miette::Result;
-use miette::{Diagnostic, NamedSource, SourceSpan};
-
+use miette::SourceSpan;
 // You can derive a `Diagnostic` from any `std::error::Error` type.
 // `thiserror` plays nicely with `miette`
 use thiserror::Error;
@@ -27,8 +28,8 @@ pub enum MyLibError {
         #[source_code]
         src: NamedSource,
         // Snippets and highlights can be included in the diagnostic!
-        // You may also use `(usize, usize)`, the byte-offset and length into an associated SourceCode
-        // or `Option<SourceSpan>`
+        // You may also use `(usize, usize)`, the byte-offset and length into
+        // an associated SourceCode or `Option<SourceSpan>`
         #[label("This bit highlighted here is the problem")]
         bad_bit: SourceSpan,
 
@@ -42,12 +43,15 @@ pub enum MyLibError {
     },
 
     // Wrap an Error
-    #[error(transparent)] // forward the source and Display methods straight through to an underlying error.
+    #[error(transparent)]
+    // forward the source and Display methods straight through to an underlying
+    // error.
     #[diagnostic(code(my_lib::io_error))]
     IoError(#[from] std::io::Error),
 
     // Wrap another Diagnostic
-    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`]. You won't see labels otherwise
+    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`]. You
+    // won't see labels otherwise
     #[error(transparent)]
     #[diagnostic(transparent)]
     AnotherError(#[from] AnotherError),
@@ -64,7 +68,8 @@ pub fn this_fails() -> Result<()> {
     // You can use plain strings as a `Source`, or anything that implements
     // the one-method `Source` trait.
     let src = "source\n  text\n    here".to_string();
-    // You may also use map_err(|error| { error.with_source_code(String::from("source code")) }) later.
+    // You may also use map_err(|error| {
+    // error.with_source_code(String::from("source code")) }) later.
 
     Err(MyLibError::SomethingWentWrong {
         src: NamedSource::new("bad_file.rs", src),

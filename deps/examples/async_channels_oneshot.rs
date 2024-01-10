@@ -10,7 +10,8 @@ async fn one_shot() {
     tokio::spawn(async move {
         let res = some_computation(0).await;
         tx.send(res).unwrap();
-        // Alternatively, return the value via the joinhandle returned by `spawn`
+        // Alternatively, return the value via the joinhandle returned by
+        // `spawn`
     });
 
     // Do other work while the computation is happening in the background

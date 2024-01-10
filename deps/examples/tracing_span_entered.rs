@@ -1,4 +1,5 @@
-use tracing::{span, Level};
+use tracing::span;
+use tracing::Level;
 
 fn main() {
     let span = span!(Level::TRACE, "some span").entered();

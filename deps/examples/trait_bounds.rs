@@ -1,5 +1,6 @@
 use std::collections::hash_map::DefaultHasher;
-use std::hash::{Hash, Hasher};
+use std::hash::Hash;
+use std::hash::Hasher;
 
 // Trait bounds: the `print_hash` function is generic over an unknown type `T`,
 // but requires that `T` implements the `Hash` trait.
