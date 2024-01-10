@@ -1,11 +1,13 @@
-# list of the (last part of) folder names under the `xmpl` directory, space separated
-xmpl := `find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' '`
+alias b := build
+alias s := serve
+alias f := fmtall
 
 default:
   @just --list --unsorted
 # or: @just --choose
 
 # Clean Cargo's `target` and mdbook's `book` and `doctest_cache` directories
+[unix]
 clean:
   cargo clean
   mdbook clean
@@ -56,6 +58,7 @@ testall:
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Run all examples
+[unix]
 runall:
   #! /bin/bash
   set -o pipefail
@@ -66,11 +69,14 @@ runall:
   # Run examples that are in a folder
   examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
   for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
+  # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
+  xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
   # Also run additional examples in the xmpl folder, if any
-  for d in {{xmpl}}; do ( echo $d; cargo run --package $d --locked ); done
+  for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
 
 # Build the book from its markdown files
-build: sitemap
+[unix]
+build: && sitemap
   mdbook build
   # Add static assets
   cp static/*.* book/
@@ -90,8 +96,10 @@ serve: build
 #   mdbook watch --open
 
 # Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
+[confirm]
 update:
   cargo update
 
+# Generate the sitemap.xml file
 sitemap:
   cargo run --bin sitemap
