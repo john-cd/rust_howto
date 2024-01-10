@@ -4,7 +4,8 @@
 
 #[cfg(test)] // only for unit tests
 mod tests {
-    // Access to all objects in the parent module, which contains the main code
+    // Access to all objects in the parent module,
+    // which contains the main code
     use super::*;
 
     // Test functions must be free, monomorphic functions that take no

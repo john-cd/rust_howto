@@ -31,7 +31,8 @@ fn main() {
     let user = "ferris";
     event!(Level::TRACE, "login: {}", user);
 
-    // ?: `my_struct` will be recorded using its `fmt::Debug` implementation.
+    // ?: `my_struct` will be recorded
+    // using its `fmt::Debug` implementation.
     let my_struct = S;
     event!(Level::TRACE, greeting = ?my_struct);
 }
