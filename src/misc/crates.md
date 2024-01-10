@@ -192,4 +192,4 @@
 
 [![yew-badge]][yew]
 
-{{#include ./link-refs.md}}
+{{#include ../refs/link-refs.md}}

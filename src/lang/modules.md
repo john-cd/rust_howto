@@ -45,4 +45,4 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 {{#include ../../deps/examples/modules3.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

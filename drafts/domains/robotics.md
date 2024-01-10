@@ -24,4 +24,4 @@
 [robotics-librs]: https://lib.rs/science/robotics
 [robotics-rs]: https://robotics.rs/
 [zenoh]: https://zenoh.io/
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

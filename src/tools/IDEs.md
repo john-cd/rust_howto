@@ -12,4 +12,4 @@ If you don’t have a JetBrains license, IntelliJ IDEA is available for free and
 
 If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains’ IDE suite.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

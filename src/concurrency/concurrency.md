@@ -51,4 +51,4 @@ Here are the topics we’ll cover:
 
 [![concurrency-rust-book-badge]][concurrency-rust-book]
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

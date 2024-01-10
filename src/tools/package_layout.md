@@ -36,4 +36,4 @@
 - A package can contain as many binary crates as you like, but at most only one library crate.
 - If a package contains src/main.rs and src/lib.rs, it has two crates: a binary and a library, both with the same name as the package.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

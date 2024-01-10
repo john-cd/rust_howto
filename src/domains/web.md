@@ -30,4 +30,4 @@
 
 [Building a crawler in Rust: Design and Associated Types][building-a-crawler-in-rust]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

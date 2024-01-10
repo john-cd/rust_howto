@@ -6,4 +6,4 @@
 
 [Zero To Production In Rust (code)][zero-to-production-github]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

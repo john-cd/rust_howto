@@ -45,4 +45,4 @@ If the `Option` is None:
 {{#include ../../deps/examples/options3.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

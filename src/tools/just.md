@@ -67,4 +67,4 @@ foo:
   echo "$hello from Bash!"
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

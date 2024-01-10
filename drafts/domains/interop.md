@@ -11,4 +11,4 @@ pyo3
 Ruff
 
 [pyOxidizer]: https://github.com/indygreg/PyOxidizer
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

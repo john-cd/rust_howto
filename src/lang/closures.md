@@ -36,4 +36,4 @@ To force a move:
 
 Functions may also be used as arguments.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -17,4 +17,4 @@ mdbook serve --open
 
 [mdbook-hide][mdbook-hide]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

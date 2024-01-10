@@ -22,4 +22,4 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 [Pattern matching][pattern-matching]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

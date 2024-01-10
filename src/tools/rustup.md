@@ -37,4 +37,4 @@ rustup component list
 
 [Rustup documentation][rustup-documentation]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

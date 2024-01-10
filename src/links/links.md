@@ -28,4 +28,4 @@
 - [Books](books.md)
 - [Companies](companies.md)
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

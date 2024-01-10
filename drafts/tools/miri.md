@@ -13,4 +13,4 @@ cargo miri run
 ```
 
 [miri]: https://github.com/rust-lang/miri
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

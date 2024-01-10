@@ -21,4 +21,4 @@ dyn Trait + 'static
 
 [Trait Objects (docs)][trait-objects]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

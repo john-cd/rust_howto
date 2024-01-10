@@ -25,4 +25,4 @@ Rust prefers snake case for variables and functions, so a method would be called
 - [Iterators](../lang/iterators.md)
 - [Macros](../lang/macros.md)
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -160,4 +160,4 @@ cargo machete
 
 [Cargo Generate][cargo-generate-github]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -18,4 +18,4 @@
 
 Starting the name of a variable with an underscore silences unused variable warnings.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -20,4 +20,4 @@ once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 {{#include ../../deps/examples/once_cell2.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

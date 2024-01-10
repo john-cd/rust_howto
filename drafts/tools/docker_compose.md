@@ -13,4 +13,4 @@ An easy way to get started is to run `docker init` in a new folder, select `Rust
 
 [docker-getting-started]: https://docs.docker.com/go/get-started-sharing/
 [docker-rust-guide]: https://docs.docker.com/language/rust/
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

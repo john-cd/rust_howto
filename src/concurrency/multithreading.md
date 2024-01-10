@@ -44,4 +44,4 @@ Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may 
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

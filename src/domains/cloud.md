@@ -12,4 +12,4 @@
 
 [Dapr Rust SDK example][dapr-rust-examples]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

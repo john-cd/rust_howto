@@ -8,4 +8,4 @@
 
 [Example real world app built with Rust + Yew + WebAssembly][rust-yew-realworld-example]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

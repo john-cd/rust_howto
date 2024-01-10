@@ -8,4 +8,4 @@
 
 [Freiheit]⮳
 
-{{#include ../company-refs.md}}
+{{#include ../refs/company-refs.md}}

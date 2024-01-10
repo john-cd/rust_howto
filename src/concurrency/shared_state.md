@@ -42,4 +42,4 @@ The most common way to share an atomic variable is to put it into an `Arc` (an a
 {{#include ../../deps/examples/shared_state_atomics.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

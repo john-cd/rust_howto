@@ -13,4 +13,4 @@
 - [mdBook](mdbook.md)
 - [Other tools](other_tools.md)
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

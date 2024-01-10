@@ -27,4 +27,4 @@ HTTP specific Tower utilities
 
 [Trillium][trillium-website]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

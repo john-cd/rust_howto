@@ -6,4 +6,4 @@
 
 [TUIFY YOUR CLAP CLI APPS AND MAKE THEM MORE INTERACTIVE][tuify]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

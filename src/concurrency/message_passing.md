@@ -30,4 +30,4 @@ Example using specialized channels for tickers and timeout
 
 [Message Passing (rust book)][message-passing-rust-book]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

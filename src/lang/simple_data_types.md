@@ -21,4 +21,4 @@
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

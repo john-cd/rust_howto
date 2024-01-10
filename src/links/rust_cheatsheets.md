@@ -4,4 +4,4 @@
 
 [Rust for professionals][rust-for-professionals]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

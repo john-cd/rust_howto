@@ -15,4 +15,4 @@
 [cargo-machete]: https://github.com/bnjbvr/cargo-machete
 [cargo-make]: https://github.com/sagiegurari/cargo-make
 [cargo-xtask]: https://github.com/matklad/cargo-xtask
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

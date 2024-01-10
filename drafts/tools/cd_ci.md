@@ -136,4 +136,4 @@ Example `.github/workflows/<name>.yml`
 [install-action]: https://github.com/taiki-e/install-action
 [Optimizing CI/CD pipelines in your Rust projects]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
 [rust-cache]: https://github.com/marketplace/actions/rust-cache
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

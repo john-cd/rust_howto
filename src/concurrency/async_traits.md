@@ -22,4 +22,4 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe,
 {{#include ../../deps/examples/async_traits3.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

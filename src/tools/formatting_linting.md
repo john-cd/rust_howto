@@ -71,4 +71,4 @@ rustfmt --help=config
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`, `#[rustfmt::skip::macros(macro_name)]`, or `#![rustfmt::skip::attributes(custom_attribute)]`
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

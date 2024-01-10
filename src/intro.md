@@ -38,4 +38,4 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 
-{{#include ./link-refs.md}}
+{{#include ./refs/link-refs.md}}

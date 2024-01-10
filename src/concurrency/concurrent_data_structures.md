@@ -18,4 +18,4 @@
 {{#include ../../deps/examples/crossbeam_queue.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

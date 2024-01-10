@@ -6,4 +6,4 @@ All of the keys must have the same type as each other, and all of the values mus
 {{#include ../../deps/examples/hashmaps.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

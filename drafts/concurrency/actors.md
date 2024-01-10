@@ -56,4 +56,4 @@ fn main() {
 [Ractor]: https://crates.io/crates/ractor
 [Riker]: https://riker.rs/
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

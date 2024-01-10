@@ -45,4 +45,4 @@ It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 {{#include ../../deps/examples/confy.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

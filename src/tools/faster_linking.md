@@ -54,4 +54,4 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 [Enable Fast Compiles (Bevy)][enable-fast-compiles]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

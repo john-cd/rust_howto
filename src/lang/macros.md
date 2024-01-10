@@ -30,4 +30,4 @@
 
 [Watt][watt-github]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

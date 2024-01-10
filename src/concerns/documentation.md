@@ -50,4 +50,4 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 
 [Shield.io][shield-io]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

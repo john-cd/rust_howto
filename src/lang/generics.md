@@ -6,4 +6,4 @@
 {{#include ../../deps/examples/generic_structs.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

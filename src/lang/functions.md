@@ -31,4 +31,4 @@ Diverging functions never return.
 {{#include ../../deps/examples/diverging_functions.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

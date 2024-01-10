@@ -10,4 +10,4 @@
 - [Lazy initialization](lazy_initialization.md)
 - [Documentation](documentation.md)
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

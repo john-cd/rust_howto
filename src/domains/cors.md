@@ -8,4 +8,4 @@ Using the Tower ecosystem:
 {{#include ../../deps/examples/cors.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -42,4 +42,4 @@ cargo build
 cargo run
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

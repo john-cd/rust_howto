@@ -12,4 +12,4 @@
 
 The user interface layer is built natively, with modern declarative UI frameworks such as Swift UI, Jetpack Compose and React/Vue or a WASM based framework on the web.
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

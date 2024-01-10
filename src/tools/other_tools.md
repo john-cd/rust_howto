@@ -26,4 +26,4 @@
 
 [Exa][exa-github]⮳
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}

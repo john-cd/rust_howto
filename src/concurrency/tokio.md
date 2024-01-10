@@ -24,4 +24,4 @@ Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 {{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
 ```
 
-{{#include ../link-refs.md}}
+{{#include ../refs/link-refs.md}}
