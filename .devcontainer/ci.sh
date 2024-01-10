@@ -42,9 +42,11 @@ mdbook build
 ## Add static assets
 cp static/*.* book/
 
-## https://lib.rs/crates/mdbook-sitemap-generator
-mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
-sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
+## `sitemap.xml` generator
+##  We used https://lib.rs/crates/mdbook-sitemap-generator but there is now custom code in `deps/bin`
+#mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
+#sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
+cargo run --bin sitemap
 
 echo "----------"
 

@@ -70,7 +70,7 @@ runall:
   for d in {{xmpl}}; do ( echo $d; cargo run --package $d --locked ); done
 
 # Build the book from its markdown files
-build:
+build: sitemap
   mdbook build
   # Add static assets
   cp static/*.* book/
@@ -92,3 +92,6 @@ serve: build
 # Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
 update:
   cargo update
+
+sitemap:
+  cargo run --bin sitemap

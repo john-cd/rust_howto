@@ -57,8 +57,10 @@ RUN cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
 #      cargo install --force mdbook-hide; \
 #      cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 
-RUN cargo install --force mdbook-sitemap-generator \
-    && cargo binstall --no-confirm mdbook-linkcheck
+## Superseeded by custom code in `deps`
+#RUN cargo install --force mdbook-sitemap-generator
+
+RUN cargo binstall --no-confirm mdbook-linkcheck
 
 ## TODO https://lib.rs/crates/mdbook-open-on-gh
 
