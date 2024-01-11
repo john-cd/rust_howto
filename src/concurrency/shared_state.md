@@ -39,7 +39,7 @@ The most common way to share an atomic variable is to put it into an `Arc` (an a
 [crossbeam][crossbeam]⮳ also offers `AtomicCell`, a thread-safe mutable memory location. This type is equivalent to `Cell`, except it can also be shared among multiple threads.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/shared_state_atomics.rs}}
+{{#include ../../deps/examples/shared_state_crossbeam.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

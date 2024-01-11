@@ -34,7 +34,7 @@ This book is in its **early days** - feel free to submit an issue or a pull requ
 
 Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][drafts]. An informal (and very long) list of topics of interest is kept in [TODO][todo]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pastable into Rust code. Please read [CONTRIBUTING.md][contributing] for more details.
 
-Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [lib-rs-stats][lib-rs-stats]⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
+Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [statistics][lib-rs-stats]⮳. Review [essential crates](links/essential_crates.md) for topic ideas.
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 

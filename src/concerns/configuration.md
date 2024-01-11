@@ -26,7 +26,7 @@ envy = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 ```
 
-```rust,editable,should_panic
+```rust,editable,should_panic,noplayground
 {{#include ../../deps/examples/envy.rs}}
 ```
 
