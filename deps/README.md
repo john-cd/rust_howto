@@ -7,10 +7,11 @@ Run `cargo add <crate>` (or edit `Cargo.toml`) in this folder to add new depende
 ## Common commands
 
 ```bash
-cargo fmt --all
+cargo +nightly fmt --all
+cargo clippy --examples
 cargo check --examples
 cargo build --examples
-cargo test --examples
+cargo test --tests --examples -- --show-output
 cargo run --example <name>
 ```
 

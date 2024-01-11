@@ -26,21 +26,19 @@ cargo fetch
 cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
 ## Make sure all examples compile
-## We prefer `cargo build ..` to `cargo check --workspace --all-targets --locked --profile ci`
+## We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
 ## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
 cargo build --workspace --all-targets --locked --profile ci
 
-## Test all examples
-cargo test --workspace --all-targets --locked --profile ci
-
-## Test the examples embedded in the markdown
-mdbook test
-
-## Build the book and copy into ./book
+## Build the book (html and fully processed markdown) into ./book/html and ./book/markdown
 mdbook build
 
+## Test all examples (unit tests in /deps/examples, skeptic tests in /deps/tests and anything in /xmpl)
+cargo test --workspace --all-targets --locked --profile ci -- --show-output
+## NOTE supersedes: mdbook test
+
 ## Add static assets
-cp static/*.* book/
+cp static/*.* book/html/
 
 ## `sitemap.xml` generator
 ##  We used https://lib.rs/crates/mdbook-sitemap-generator but there is now custom code in `deps/bin`

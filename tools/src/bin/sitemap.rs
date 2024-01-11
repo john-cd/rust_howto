@@ -130,7 +130,7 @@ fn main() -> Result<()> {
         println!("Errors: {:?}", errors);
     }
     // Create directory
-    let dest_dir = "/code/book/";
+    let dest_dir = "/code/book/html/";
     match Path::new(dest_dir).try_exists() {
         Ok(false) => {
             std::fs::create_dir_all(dest_dir)?;

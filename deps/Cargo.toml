@@ -3,11 +3,9 @@ name = "rust_howto"
 version = "0.1.0"
 edition = "2021"
 publish=false
+build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-# [[bin]]
-# name = "sitemap"
 
 [dependencies]
 doc-comment = "0.3.3"
@@ -42,4 +40,11 @@ tower-http = { version = "0.5.0", features = ["full", "auth"] }
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 walkdir = "2.4.0"
-quick-xml = { version = "0.31.0", features = ["serialize"] }
+
+[build-dependencies]
+skeptic = "0.13.7"
+walkdir = "2.4.0"
+
+[dev-dependencies]
+skeptic = "0.13.7"
+walkdir = "2.4.0"

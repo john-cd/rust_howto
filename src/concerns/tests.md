@@ -10,7 +10,7 @@
 
 ## Custom message
 
-```rust,editable,should_panic
+```rust,editable
 {{#include ../../deps/examples/tests_custom_message.rs}}
 ```
 
