@@ -4,7 +4,6 @@ finish links:
 
 - add badges to all src pages from crates.md
 - rename some of the IDs
-- organize link-refs.md
 - review categories.md
 - review crates.md
 - move links in drafts
@@ -12,11 +11,9 @@ finish links:
 
 polish the intro
 
-review example testing using libraries outside of `std` - WIP; review generate.sh
+review ignore / no_run examples
 
-- make mdbook-keeper work or use rustdoc / doctest instead
-- skeptic as used in rust cookbook
-- fix generate.sh
+review generate.sh
 
 tower_http example polish; other examples have been checked against the rust playground
 
