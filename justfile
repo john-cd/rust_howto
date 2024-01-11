@@ -17,10 +17,6 @@ clean:
 fmtall:
   cargo +nightly fmt --all
 
-# Scan all code for common mistakes
-clippyall:
-  cargo clippy --workspace --all-targets --locked
-
 # Check all code
 checkall:
   cargo check --workspace --all-targets --locked
@@ -31,6 +27,10 @@ buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
+
+# Scan all code for common mistakes
+clippyall:
+  cargo clippy --workspace --all-targets --locked
 
 # Test all code
 testall:
@@ -85,3 +85,6 @@ serve: build
 [confirm]
 update:
   cargo update
+
+# Prepare for git push
+prepare: fmtall clean build clippyall testall serve
