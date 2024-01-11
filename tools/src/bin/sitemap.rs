@@ -3,63 +3,16 @@
 //! or https://crates.io/crates/sitemap instead.
 use std::ffi::OsStr;
 use std::fs::File;
-use std::io;
 use std::io::Write;
 use std::path::Path;
 use std::path::PathBuf;
 
 use anyhow::anyhow;
-use anyhow::bail;
 use anyhow::Error;
 use anyhow::Result;
 use quick_xml::events::BytesText;
 use quick_xml::writer::Writer;
-use walkdir::DirEntry;
-use walkdir::WalkDir;
-
-/// True if the directory entry is hidden (starts with a `.`)
-fn is_hidden(entry: &DirEntry) -> bool {
-    entry
-        .file_name()
-        .to_str()
-        .map(|s| s.starts_with('.'))
-        .unwrap_or(false)
-}
-
-fn find_paths<P: AsRef<Path>>(root_directory: P) -> io::Result<Vec<PathBuf>> {
-    let mut paths = Vec::new();
-
-    let walker = WalkDir::new(root_directory)
-        .sort_by_file_name()
-        .into_iter()
-        // Skip hidden files and directories efficiently on unix systems
-        .filter_entry(|e| !is_hidden(e));
-
-    for entry in walker
-        // Yields only the values for which the supplied closure returns Some(value)
-        // Ignores WalkDir errors
-        .filter_map(|res| res.ok())
-        .filter(|de| de.file_type().is_file())
-    {
-        match entry.path().extension() {
-            Some(extension) => {
-                if extension == "md" {
-                    // debug: println!("{}", entry.path().display());
-                    paths.push(entry.into_path());
-                } else {
-                    println!("Not a Markdown file: {}", entry.path().display());
-                }
-            }
-            None => {
-                println!(
-                    "Could not extract extension for {}",
-                    entry.path().display()
-                );
-            }
-        }
-    }
-    Ok(paths)
-}
+use tools;
 
 fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     let mut writer = Writer::new_with_indent(&mut dest_file, b' ', 2);
@@ -93,8 +46,8 @@ fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
 fn main() -> Result<()> {
     let src = Path::new("/code/src/");
 
-    // Locate the Markdown file
-    let paths: Vec<PathBuf> = find_paths(src)?;
+    // Locate the Markdown files
+    let paths: Vec<PathBuf> = tools::find_paths(src)?;
 
     // Remove a few exceptions
     let exclude = ["refs.md", "SUMMARY.md"];
@@ -131,21 +84,7 @@ fn main() -> Result<()> {
     }
     // Create directory
     let dest_dir = "/code/book/html/";
-    match Path::new(dest_dir).try_exists() {
-        Ok(false) => {
-            std::fs::create_dir_all(dest_dir)?;
-            println!("{} created", dest_dir);
-        }
-        Ok(true) => {
-            // debug: println!("{} already exists", dest_dir);
-        }
-        Err(_) => {
-            bail!(
-                "{}'s existence can neither be confirmed nor denied.",
-                dest_dir
-            );
-        }
-    }
+    tools::create_dir(dest_dir)?;
 
     // Write the sitemap
     let sitemap_full_path: String = format!("{dest_dir}sitemap.xml");
