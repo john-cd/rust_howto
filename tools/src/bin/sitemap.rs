@@ -12,7 +12,6 @@ use anyhow::Error;
 use anyhow::Result;
 use quick_xml::events::BytesText;
 use quick_xml::writer::Writer;
-use tools;
 
 fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     let mut writer = Writer::new_with_indent(&mut dest_file, b' ', 2);
