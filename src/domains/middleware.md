@@ -19,7 +19,7 @@ HTTP specific Tower utilities
 
 [tower_http documentation][tower-http]⮳
 
-```rust,ignore,noplayground
+```rust,noplayground
 {{#include ../../deps/examples/tower_http.rs}}
 ```
 

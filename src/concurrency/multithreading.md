@@ -26,13 +26,13 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon.rs}}
 ```
 
 ### Parallel sorting
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_parsort.rs}}
 ```
 
@@ -40,7 +40,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon-threadpool]⮳.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
 ```
 

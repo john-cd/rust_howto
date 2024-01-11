@@ -18,11 +18,11 @@ Allow access to data from one thread at a time.
 
 `std::sync::Mutex` works fine, but Parking Lot is faster.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/shared_state_parking_lot.rs}}
 ```
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/shared_state_parking_lot2.rs}}
 ```
 
@@ -30,7 +30,7 @@ Allow access to data from one thread at a time.
 
 Atomic types in [std::sync::atomic][std::sync::atomic]⮳ provide primitive shared-memory communication between threads, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including `AtomicBool`, `AtomicIsize`, `AtomicUsize`, `AtomicI8`, `AtomicU16`, etc.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/shared_state_atomics.rs}}
 ```
 
@@ -38,7 +38,7 @@ The most common way to share an atomic variable is to put it into an `Arc` (an a
 
 [crossbeam][crossbeam]⮳ also offers `AtomicCell`, a thread-safe mutable memory location. This type is equivalent to `Cell`, except it can also be shared among multiple threads.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/shared_state_atomics.rs}}
 ```
 

@@ -11,7 +11,7 @@ Use `thiserror` if you are a library that wants to design your own dedicated err
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,no_run,mdbook-runnable
 {{#include ../../deps/examples/anyhow.rs}}
 ```
 
@@ -21,7 +21,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`, includ
 
 [thisError][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,no_run,mdbook-runnable
 {{#include ../../deps/examples/thiserror.rs}}
 ```
 
@@ -34,7 +34,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 #[error("{0:?}")] ⟶ write!("{:?}", self.0)
 ```
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/thiserror2.rs}}
 ```
 
@@ -43,12 +43,10 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [Miette (lib.rs)][miette-librs]⮳ prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
-# extern crate miette;
 {{#include ../../deps/examples/miette/mylib.rs}}
 ```
 
 ```rust,editable,ignore
-# extern crate miette;
 {{#include ../../deps/examples/miette/main.rs}}
 ```
 

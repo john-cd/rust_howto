@@ -2,7 +2,7 @@
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a stream of values over time.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/streams.rs}}
 ```
 
@@ -10,7 +10,7 @@ There are combinator-style methods such as `map`, `filter`, and `fold`, and thei
 
 To process multiple items from a stream concurrently, use the `for_each_concurrent` and `try_for_each_concurrent` methods:
 
-```rust,editable,ignore,noplayground
+```rust,editable,noplayground
 {{#include ../../deps/examples/streams2.rs}}
 ```
 

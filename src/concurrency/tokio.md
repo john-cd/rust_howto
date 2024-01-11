@@ -20,7 +20,7 @@ Tokio provides a few major components:
 
 Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 
-```rust,editable,ignore,noplayground
+```rust,editable,noplayground
 {{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
 ```
 

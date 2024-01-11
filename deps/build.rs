@@ -8,8 +8,9 @@ const REMOVED_TESTS: &[&str] = &[
 ];
 
 fn main() {
-    // Tell Cargo that if the given file changes, to rerun this build script.
-    //println!("cargo:rerun-if-changed=/code/book/markdown/");
+    // Tell Cargo that if the given file changes, to rerun this build
+    // script. println!("cargo:rerun-if-changed=/code/book/markdown/"
+    // );
 
     let paths = WalkDir::new("/code/book/markdown/").into_iter()
         // convert paths to Strings

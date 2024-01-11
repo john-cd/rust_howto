@@ -8,7 +8,7 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 
 ## Basic Example
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/async.rs}}
 ```
 
@@ -20,7 +20,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 - Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/async2.rs}}
 ```
 

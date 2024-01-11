@@ -12,13 +12,13 @@ See [Async: What is blocking? blog post][what-is-blocking]⮳.
 
 Use [`spawn_blocking`][spawn-blocking]⮳ to run a _small portion_ of synchronous code.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_blocking_from_async_spawn_blocking.rs}}
 ```
 
 ## Using the `rayon` crate
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_blocking_from_async_rayon.rs}}
 ```
 
@@ -26,7 +26,7 @@ Use [`spawn_blocking`][spawn-blocking]⮳ to run a _small portion_ of synchronou
 
 If a blocking operation keeps running forever, you should run it on a dedicated thread.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_blocking_from_async_spawn_dedicated_thread.rs}}
 ```
 
@@ -40,13 +40,13 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [futures-executor][futures-executor]⮳ includes a minimal executor. The [`block_on`][futures-executor-block-on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_async_from_blocking_futures_executor.rs}}
 ```
 
 ### Using the Tokio runtime directly
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_async_from_blocking_tokio_runtime.rs}}
 ```
 

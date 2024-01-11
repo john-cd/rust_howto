@@ -2,7 +2,7 @@
 
 As of Rust 1.75, it is possible to have `async` functions in traits:
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/async_traits.rs}}
 ```
 
@@ -18,7 +18,7 @@ Note that there are still caveats for public traits - see [Announcing `async fn`
 
 In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the [![async-trait-badge]][async-trait] [Async trait crate (github)][async-trait-github].
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/async_traits3.rs}}
 ```
 

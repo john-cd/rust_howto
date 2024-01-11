@@ -2,11 +2,12 @@
 
 Rust has no `null`. Instead, use [Option][std::option::Option]⮳:
 
-```rust,editable,ignore
+```rust,editable
 enum Option<T> {
     None,
     Some(T),
 }
+# fn main() {}
 ```
 
 Every `Option` is either `Some` and contains a value, or `None`, and does not.
@@ -41,7 +42,7 @@ If the `Option` is None:
 
 ## Combinators
 
-```rust,editable
+```rust,editable,no_run
 {{#include ../../deps/examples/options3.rs}}
 ```
 

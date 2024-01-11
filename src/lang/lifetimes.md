@@ -6,8 +6,10 @@ Prevent dangling references.
 `&'a i32`     a reference with an explicit lifetime
 `&'a mut i32` a mutable reference with an explicit lifetime
 
-```rust,editable,ignore
+```rust,editable
+# fn main() {
 let s: &'static str = "I have a static lifetime.";
+# }
 ```
 
 The generic lifetime `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:

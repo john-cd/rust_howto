@@ -6,7 +6,7 @@
 
 ## Async Main Function
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/async_main.rs}}
 ```
 

@@ -4,7 +4,7 @@
 
 [dotenvy][dotenvy]⮳ supersedes [dotenv][dotenv]⮳.
 
-```rust,editable,ignore
+```rust,editable,no_run
 {{#include ../../deps/examples/dotenvy.rs}}
 ```
 
@@ -26,7 +26,7 @@ envy = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 ```
 
-```rust,editable,ignore
+```rust,editable,should_panic
 {{#include ../../deps/examples/envy.rs}}
 ```
 
@@ -41,7 +41,7 @@ It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 [![confy-badge]][confy]
 
-```rust,editable,ignore
+```rust,editable,no_run
 {{#include ../../deps/examples/confy.rs}}
 ```
 

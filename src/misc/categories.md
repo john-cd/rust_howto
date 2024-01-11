@@ -89,4 +89,4 @@
 | [![cat-websocket-badge]][cat-websocket] |
 | [![cat-http-server-badge]][cat-http-server] |
 
-{{#include ../refs/link-refs.md}}
+{{#include ../refs/category-refs.md}}

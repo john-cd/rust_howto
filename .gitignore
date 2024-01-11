@@ -3,6 +3,7 @@
 *.url
 hello.txt
 file1.txt
+*.log
 
 # Windows ------------------------
 

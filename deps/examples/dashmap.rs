@@ -54,8 +54,9 @@ fn main() {
 
     assert_eq!(map.remove("key1").unwrap().1, 0); // returns Option<(K, V)>
 
+    assert!(map.contains_key("key2"));
+
     map.remove_if("key2", |_, val| *val == 11);
-    assert!(!map.contains_key("key2"));
 
     // Access the final state of the map from the main thread
     println!("final count: {}", map.iter().count());

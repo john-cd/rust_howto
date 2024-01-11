@@ -52,7 +52,7 @@ buildall:
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
-# Test all examples (incl. in `xmpl` folder)
+# Test all examples (incl. anything in `xmpl` folder)
 testall:
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
@@ -79,11 +79,11 @@ runall:
 build: && sitemap
   mdbook build
   # Add static assets
-  cp static/*.* book/
+  cp static/*.* book/html/
 
-# Test the examples embedded in the markdown (via skeptic)
-test:
-  cargo test --tests --examples --locked -- --show-output
+# Test the examples embedded in the markdown (unit tests + skeptic tests)
+test: build
+  cargo test --tests --examples --locked # -- --show-output
 # NOTE: mdbook test is not reliable when dealing with dependencies outside of the std library
 # mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies

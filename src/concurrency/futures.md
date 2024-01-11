@@ -9,13 +9,13 @@ Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](
 
 `Select` polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/futures.rs}}
 ```
 
 ## Joining futures
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/futures2.rs}}
 ```
 
@@ -23,7 +23,7 @@ Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](
 
 The `futures` crate provides an extension trait that provides a variety of convenient adapters.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/futures3.rs}}
 ```
 

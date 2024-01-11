@@ -14,13 +14,13 @@ Message passing in `async` programming is covered in a separate page: [async cha
 
 Multi-producer multi-consumer channels for message passing.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/message_passing_crossbeam_channel.rs}}
 ```
 
 Example using specialized channels for tickers and timeout
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/message_passing_crossbeam_channel_after_tick.rs}}
 ```
 

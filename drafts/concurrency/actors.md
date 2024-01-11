@@ -6,7 +6,7 @@
 
 [Riker][riker]
 
-```rust,editable,ignore
+```rust,editable
 struct MyActor;
 
 impl Actor for MyActor {
