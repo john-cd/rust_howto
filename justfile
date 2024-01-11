@@ -6,60 +6,58 @@ default:
   @just --list --unsorted
 # or: @just --choose
 
-# Clean Cargo's `target` and mdbook's `book` and `doctest_cache` directories
+# Clean Cargo's `target` and mdbook's `book` directories
 [unix]
 clean:
   cargo clean
   mdbook clean
   rm --recursive --force ./doctest_cache/
 
-# # Format the code of all projects in the xmpl folder
-# xfmt:
-#   for d in {{xmpl}}; do ( echo $d; cargo fmt -v --package $d ); done
-
-# # Scan the code of all projects in the xmpl folder for common mistakes
-# xclippy:
-#   for d in {{xmpl}}; do ( echo $d; cargo clippy --package $d ); done
-
-# # Check all projects in the xmpl folder (and all of their dependencies) for errors
-# xcheck:
-#   for d in {{xmpl}}; do ( echo $d; cargo check --package $d ); done
-
-# # Compile all projects in the xmpl folder
-# xbuild:
-#   for d in {{xmpl}}; do ( echo $d; cargo build --package $d ); done
-
-# # Run all projects in the xmpl folder
-# xrun:
-#   for d in {{xmpl}}; do ( echo $d; cargo run --package $d ); done
-
-# Format all examples
+# Format all code
 fmtall:
   cargo +nightly fmt --all
 
-# Scan the code of all examples for common mistakes
+# Scan all code for common mistakes
 clippyall:
   cargo clippy --workspace --all-targets --locked
 
-# Check all examples
+# Check all code
 checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
-# Build all examples
+# Build all code
 buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
-# Test all examples (incl. anything in `xmpl` folder)
+# Test all code
 testall:
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+# Build the book from its Markdown files
+[unix]
+build: && sitemap
+  mdbook build
+  # Add static assets
+  cp static/*.* book/html/
+
+# Generate the sitemap.xml file
+sitemap:
+  cargo run -p tools --bin sitemap
+
+# Test all examples in the book's Markdown
+test: build
+  cargo test --tests --examples --locked -- --show-output
+# NOTE: mdbook test is not reliable when dealing with dependencies outside of the std library
+# mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+# see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
+
 # Run all examples
 [unix]
-runall:
+run:
   #! /bin/bash
   set -o pipefail
   set -e
@@ -74,21 +72,7 @@ runall:
   # Also run additional examples in the xmpl folder, if any
   for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
 
-# Build the book from its markdown files
-[unix]
-build: && sitemap
-  mdbook build
-  # Add static assets
-  cp static/*.* book/html/
-
-# Test the examples embedded in the markdown (unit tests + skeptic tests)
-test: build
-  cargo test --tests --examples --locked # -- --show-output
-# NOTE: mdbook test is not reliable when dealing with dependencies outside of the std library
-# mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
-# see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
-
-# Serve the book (incl. testing of the examples embedded in the markdown)
+# Serve the book (incl. link checking)
 serve: build
   mdbook serve --open
 # to change the port: --port 3001
@@ -101,7 +85,3 @@ serve: build
 [confirm]
 update:
   cargo update
-
-# Generate the sitemap.xml file
-sitemap:
-  cargo run -p tools --bin sitemap
