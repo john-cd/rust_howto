@@ -10,7 +10,7 @@ description = "A compendium of links, code snippets, and recipes for the Rust la
 #build-dir = "book"                # the directory where the output is placed
 create-missing = false             # whether or not to create missing pages
 #use-default-preprocessors = true  # use the default preprocessors `links` and `index`
-extra-watch-dirs = ["static"]             # directories to watch for triggering builds
+extra-watch-dirs = ["static", "theme", "deps"]             # directories to watch for triggering builds
 
 [rust]
 edition = "2021"
@@ -33,6 +33,7 @@ edition = "2021"
 # mathjax-support = false
 # copy-fonts = true
 # additional-css = ["custom.css", "custom2.css"]
+additional-css = ["theme/custom.css"]
 # additional-js = ["custom.js"]
 # no-section-label = false
 git-repository-url = "https://github.com/john-cd/rust_howto"
@@ -79,14 +80,14 @@ editable = true            # allows editing the source code
 # # NOTE: the file Cargo.toml should exist at this path.
 # manifest_dir = "./deps"
 
-#[output.linkcheck]
+[output.linkcheck]
 # Should we check links on the internet? Enabling this option adds a
 # non-negligible performance impact
-#follow-web-links = false
+follow-web-links = false
 
 # # Are we allowed to link to files outside of the book's root directory? This
 # # may help prevent linking to sensitive files (e.g. "../../../../etc/shadow")
-#traverse-parent-directories = false
+traverse-parent-directories = false
 
 # # If necessary, you can exclude one or more links from being checked with a
 # # list of regular expressions. The regex will be applied to the link href (i.e.
@@ -109,7 +110,7 @@ editable = true            # allows editing the source code
 # # - "error" treats all warnings as errors, failing the linkcheck
 # # - "ignore" will ignore warnings, suppressing diagnostic messages and allowing
 # #   the linkcheck to continuing
-#warning-policy = "error"
+warning-policy = "error"
 
 # # Extra HTTP headers that must be send to certain web sites
 # # in order to link check to succeed.
