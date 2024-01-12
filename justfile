@@ -18,22 +18,22 @@ fmtall:
   cargo +nightly fmt --all
 
 # Check all code
-checkall:
+checkall: build
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build all code
-buildall:
+buildall: build
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
 # Scan all code for common mistakes
-clippyall:
+clippyall: build
   cargo clippy --workspace --all-targets --locked
 
 # Test all code
-testall:
+testall: build
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
@@ -57,7 +57,7 @@ test: build
 
 # Run all examples
 [unix]
-run:
+run: build
   #! /bin/bash
   set -o pipefail
   set -e
