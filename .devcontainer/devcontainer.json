@@ -17,6 +17,8 @@
 
     // Features to add to the dev container. More info: https://containers.dev/features.
     // We install Docker within the container and connect to the host OS docker engine.
+    // See https://github.com/devcontainers/features/tree/main/src/docker-outside-of-docker
+    // See also https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker-compose
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     },
