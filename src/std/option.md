@@ -3,6 +3,7 @@
 Rust has no `null`. Instead, use [Option][std::option::Option]⮳:
 
 ```rust,editable
+# #![allow(unused)]
 enum Option<T> {
     None,
     Some(T),
