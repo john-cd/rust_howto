@@ -76,7 +76,7 @@ The `development` target of the multi-stage `.devcontainer\Dockerfile` is used b
 If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_VERSION=1.75.0 --build-arg MDBOOK_VERSION=0.4.36 .
+docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
 docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code  rust_howto_dev
 docker exec -it rust_howto_dev1 bash
 ```
@@ -128,6 +128,15 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_h
 ```
 
 [Related Stackoverflow question][stackoverflow]
+
+## Push image to Docker Hub
+
+```bash
+docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
+docker login
+# or docker login -u "user" -p "password" docker.io
+docker push johncd/rust_howto_dev:latest
+```
 
 ## Optional pre-processors
 
