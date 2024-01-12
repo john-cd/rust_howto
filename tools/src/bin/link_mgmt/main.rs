@@ -19,14 +19,18 @@ fn parse_markdown_file(path: &Path) -> Result<()> {
     Ok(())
 }
 
+// TODO
 fn main() -> Result<()> {
-    // Locate the Markdown files
+    // Locate the Markdown files with the src directory
     let src = Path::new("/code/src/");
     let paths: Vec<PathBuf> = tools::find_paths(src)?;
 
-    // Create directory
-    let dest_dir = "/code/book/temporary/";
+    // Create temp directory
+    let dest_dir = "/code/book/temp/";
     tools::create_dir(dest_dir)?;
+
+    // Extract links from md files
+    for p in paths {}
 
     Ok(())
 }
