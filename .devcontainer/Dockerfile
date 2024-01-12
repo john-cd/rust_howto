@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends fzf mold clang \
+    && apt-get install -y --no-install-recommends fzf mold clang curl \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -32,12 +32,19 @@ RUN rustup component add clippy
 RUN rustup toolchain install nightly \
     && rustup component add rustfmt --toolchain nightly
 
-## Install cargo binstall (binary install)
-RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+ARG MDBOOK_VERSION
 
+## Install cargo binstall (binary install)
 ## Install just from the binary release
-RUN cargo binstall --no-confirm just
-## Alternatively
+## Install mdbook from the binary release
+## Install ripgrep
+RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
+    && cargo binstall --no-confirm just \
+    && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
+    && cargo binstall --no-confirm mdbook-linkcheck \
+    && cargo binstall --no-confirm ripgrep
+
+## Alternative just install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
 # RUN <<EOF
 #   set -e
@@ -47,35 +54,26 @@ RUN cargo binstall --no-confirm just
 #   apt-get -y install just
 # EOF
 
-## Install mdbook from the binary release
-ARG MDBOOK_VERSION
-RUN cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
-## Alternatively
+## Alternative mdbook install
 # RUN <<EOF
 # set -e
 # wget -c https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
 # EOF
 
-### Install mdbook-hide and keeper (note the workaround to get the unreleased keeper)
+## Optional: install mdbook-hide and keeper (note the workaround to get the unreleased keeper)
 # RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
 #      cargo install --force mdbook-hide; \
 #      cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
 
-## Superseeded by custom code in `deps`
-#RUN cargo install --force mdbook-sitemap-generator
-
-RUN cargo binstall --no-confirm mdbook-linkcheck
-
+## Optional: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
 ## TODO https://lib.rs/crates/mdbook-open-on-gh
 
-### Install cargo check tools
+## TODO Install cargo check tools
 # RUN cargo install --locked cargo-deny || true
 # RUN cargo install --locked cargo-outdated || true
 # RUN cargo install --locked cargo-udeps || true
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
-
-RUN cargo binstall --no-confirm ripgrep
 
 WORKDIR /code
 
@@ -95,7 +93,7 @@ COPY --chmod=755 .devcontainer/dev.sh ./.devcontainer/
 ENTRYPOINT [ "./.devcontainer/dev.sh" ]
 
 ## Sleep to keep the container running.
-## The command is passed to `start.sh`.
+## The command is passed to `dev.sh`.
 CMD [ "sleep", "infinity" ]
 
 ## --------------------------------
