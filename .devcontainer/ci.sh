@@ -19,21 +19,23 @@ cargo +nightly fmt --all --check
 ## Fetch the dependencies
 cargo fetch
 
-## Lint all examples
-## - Elevate clippy warnings to errors, which will in turn fail the build.
-## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - see .cargo/config.toml for `ci` profile config.
-cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
-
-## Make sure all examples compile
-## We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
-## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
-cargo build --workspace --all-targets --locked --profile ci
-
 ## Build the book (html and fully processed markdown) into ./book/html and ./book/markdown
 mdbook build
 
-## Test all examples (unit tests in /deps/examples, skeptic tests in /deps/tests and anything in /xmpl)
+# NOTE: cargo build (specifically build.rs) requires that /code/book/markdown/ has been created
+
+## Make sure all examples compile
+## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
+## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
+## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+## - see .cargo/config.toml for `ci` profile config.
+cargo build --workspace --all-targets --locked --profile ci
+
+## Lint all examples
+## - Elevate clippy warnings to errors, which will in turn fail the build.
+cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
+
+## Test all examples (unit tests in /deps/examples, skeptic tests in /deps/tests and any tests in /xmpl)
 cargo test --workspace --all-targets --locked --profile ci -- --show-output
 ## NOTE supersedes: mdbook test
 
