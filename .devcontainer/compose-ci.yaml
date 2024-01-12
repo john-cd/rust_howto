@@ -7,6 +7,7 @@ services:
       cache_from:
         - type=gha                          # GitHub Action cache
         #- type=local,dest=./.cache
+        - johncd/rust_howto_ci:latest
       cache_to:
         - type=gha,mode=max
         #- type=local,dest=./.cache

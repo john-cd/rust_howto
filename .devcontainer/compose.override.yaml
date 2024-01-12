@@ -8,6 +8,8 @@ services:
     image: rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
     build:
       target: development
+      cache_from:
+        - johncd/rust_howto_dev:latest
     volumes:
       - type: bind
         source: .. # relative to the Compose file’s directory
