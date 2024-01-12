@@ -3,6 +3,9 @@
 
 use walkdir::WalkDir;
 
+// TODO: building tests should happen just before testing, not before build
+// Consider using `ctor` crate to create tests when `cargo test`
+
 const REMOVED_TESTS: &[&str] = &[
     // "/code/book/markdown/dir/file.md",
 ];
