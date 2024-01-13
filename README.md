@@ -45,9 +45,13 @@ apt-get install fzf mold clang # or equivalent for other distros
 rustup update
 rustup component add clippy
 rustup component add rustfmt
+cargo install cargo-nextest
 cargo install mdbook
 cargo install just
 cargo install mdbook-linkcheck
+# for cargo +nightly fmt
+rustup toolchain install nightly
+rustup component add rustfmt --toolchain nightly
 ```
 
 Review `.devcontainer/Dockerfile` for other dependencies.

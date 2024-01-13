@@ -42,7 +42,8 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
     && cargo binstall --no-confirm just \
     && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
     && cargo binstall --no-confirm mdbook-linkcheck \
-    && cargo binstall --no-confirm ripgrep
+    && cargo binstall --no-confirm ripgrep \
+    && cargo binstall --no-confirm --secure cargo-nextest
 
 ## Alternative just install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
