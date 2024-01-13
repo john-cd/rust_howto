@@ -47,7 +47,10 @@ rustup component add clippy
 rustup component add rustfmt
 cargo install mdbook
 cargo install just
+cargo install mdbook-linkcheck
 ```
+
+Review `.devcontainer/Dockerfile` for other dependencies.
 
 ## Development / Editing
 

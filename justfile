@@ -1,17 +1,24 @@
 alias b := build
 alias s := serve
 alias f := fmtall
+set windows-shell := ["cmd.exe", "/c"]
 
 default:
   @just --list --unsorted
 # or: @just --choose
 
 # Clean Cargo's `target` and mdbook's `book` directories
-[unix]
-clean:
+clean: &&_clean
   cargo clean
   mdbook clean
+
+[unix]
+_clean:
   rm --recursive --force ./doctest_cache/
+
+[windows]
+_clean:
+  if exist .doctest_cache rmdir /s /q .doctest_cache
 
 # Format all code
 fmtall:
@@ -38,11 +45,17 @@ testall: build
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build the book from its Markdown files
-[unix]
-build: && sitemap
+build: && sitemap _copystatic
   mdbook build
-  # Add static assets
+
+# Add static assets to build output
+[unix]
+_copystatic:
   cp static/*.* book/html/
+
+[windows]
+_copystatic:
+  copy static\*.* book\html\
 
 # Generate the sitemap.xml file
 sitemap:
