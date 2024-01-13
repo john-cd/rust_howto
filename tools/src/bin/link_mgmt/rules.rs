@@ -88,7 +88,8 @@ static GLOBAL_RULES: Lazy<Vec<Rule>> = Lazy::new(|| {
     v.push(Rule {
         re: r"https://doc.rust-lang.org/std/?",
         label_pattern: "std",
-        badge_url_pattern: "https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg",
+        badge_url_pattern:
+            "https://badge-cache.kominick.com/badge/std-1.75.0-blue.svg",
     });
 
     // [std::option::Option]: https://doc.rust-lang.org/std/option/"
@@ -145,7 +146,8 @@ static GLOBAL_RULES: Lazy<Vec<Rule>> = Lazy::new(|| {
     v.push(Rule {
         re: r"https://(?<owner>\S+?).github.io/(?<repo>\S+?)/?(?:\S*?)",
         label_pattern: "${repo}-github-pages",
-        badge_url_pattern: "https://img.shields.io/badge/${repo}-red?logo=githubpages",
+        badge_url_pattern:
+            "https://img.shields.io/badge/${repo}-red?logo=githubpages",
     });
 
     //  BOOKS
@@ -156,7 +158,8 @@ static GLOBAL_RULES: Lazy<Vec<Rule>> = Lazy::new(|| {
     v.push(Rule {
         re: r"https://doc.rust-lang.org/book/?",
         label_pattern: "rust-book",
-        badge_url_pattern: "https://img.shields.io/badge/Rust_Book-blue?logo=mdbook",
+        badge_url_pattern:
+            "https://img.shields.io/badge/Rust_Book-blue?logo=mdbook",
     });
 
     // [box-rust-book-badge]: https://img.shields.io/badge/Box-blue?logo=mdbook
@@ -164,7 +167,8 @@ static GLOBAL_RULES: Lazy<Vec<Rule>> = Lazy::new(|| {
     v.push(Rule {
         re: r"https://doc.rust-lang.org/book/ch\d{2}-\d{2}-(?<item>).html",
         label_pattern: "rust-book-${item}",
-        badge_url_pattern: "https://img.shields.io/badge/${item}-blue?logo=mdbook",
+        badge_url_pattern:
+            "https://img.shields.io/badge/${item}-blue?logo=mdbook",
     });
 
     // RUST REFERENCE
@@ -184,7 +188,8 @@ static GLOBAL_RULES: Lazy<Vec<Rule>> = Lazy::new(|| {
     v.push(Rule {
         re: r"https://doc.rust-lang.org/rust-by-example/?",
         label_pattern: "rust-by-example",
-        badge_url_pattern: "https://img.shields.io/badge/Rust_by_example-violet?logo=mdbook"
+        badge_url_pattern:
+            "https://img.shields.io/badge/Rust_by_example-violet?logo=mdbook",
     });
 
     // [visibility-rules-rust-by-example-badge]: https://img.shields.io/badge/RBE-Visibility_Rules-violet?logo=mdbook
