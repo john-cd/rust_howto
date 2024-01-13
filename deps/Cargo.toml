@@ -44,7 +44,9 @@ walkdir = "2.4.0"
 [build-dependencies]
 skeptic = "0.13.7"
 walkdir = "2.4.0"
+anyhow = "1.0.77"
 
 [dev-dependencies]
 skeptic = "0.13.7"
 walkdir = "2.4.0"
+anyhow = "1.0.77"
