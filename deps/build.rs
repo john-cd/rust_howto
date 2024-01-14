@@ -17,7 +17,7 @@ const REMOVED_TESTS: &[&str] = &[
 ];
 
 #[allow(dead_code)]
-fn write_log(out: &Vec<u8>, err: &Vec<u8>) -> Result<()> {
+fn write_log(out: &[u8], err: &[u8]) -> Result<()> {
     let mut buffer = BufWriter::new(File::create("build.log")?);
     buffer.write_all(out)?;
     buffer.write_all(err)?;
