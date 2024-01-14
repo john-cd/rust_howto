@@ -6,7 +6,15 @@
 
 ARG RUST_IMAGE_LABEL
 FROM rust:${RUST_IMAGE_LABEL} as base
-# alternative: mcr.microsoft.com/devcontainers/rust:bookworm
+## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
+## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
+## The full Rust image depends on https://github.com/docker-library/buildpack-deps
+
+## TODO consider switching to slim or Alpine image. Need to solve openssl install
+## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
+## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
+# ENV LC_CTYPE=en_US.UTF-8
+# ENV LC_ALL=en_US.UTF-8
 
 SHELL ["bash", "-c"]
 
@@ -15,7 +23,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends fzf mold clang curl pkg-config libssl-dev \
+    && apt-get install -y --no-install-recommends fzf mold clang \
+                                                  curl pkg-config libssl-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -68,6 +77,7 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
 
 ## Optional: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
 ## TODO https://lib.rs/crates/mdbook-open-on-gh
+# cargo binstall --no-confirm mdbook-open-on-gh
 
 ## TODO Install cargo check tools
 # RUN cargo install --locked cargo-deny || true
