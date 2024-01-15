@@ -1,5 +1,7 @@
 # TODO
 
+spell check automation
+
 finish links:
 
 - add badges to all src pages from crates.md
@@ -11,36 +13,25 @@ finish links:
 
 polish the intro
 
-review ignore / no_run examples
-
 review generate.sh
+
+explanation text for language pages
+
+IDEs - add latest JetBrains tooling
+
+review Install Rust
+
+finish to review ignore / no_run examples
 
 tower_http example polish; other examples have been checked against the rust playground
 
 review GA / GSC - issues with redirects??
-
-explanation text for language pages
-
-web examples into separate section
-
-review Install Rust
 
 license
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in axum by you, shall be licensed as __, without any additional terms or conditions.
 
 add licenses to thanks page
-
-Search within the book
-
-<https://endler.dev/2019/tinysearch/>
-<https://stork-search.net/>
-<https://github.com/lucaong/minisearch>
-<https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html>
-<https://github.com/typesense/typesense>
-<https://news.ycombinator.com/item?id=23473303>
-
-Algolia
 
 Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
 
@@ -49,10 +40,6 @@ Review <https://github.com/rust-unofficial/patterns> - already in links.md
 <https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
 
 Link to <https://stevedonovan.github.io/rust-gentle-intro/>
-
-[Error Chain][Error Chain]
-
-[Error Chain]:  https://docs.rs/error-chain/latest/error_chain/
 
 finish cd_ci.md
 
@@ -83,12 +70,6 @@ cargo outdated / audit / license / deny
 
 review deny.toml
 
-review rustfmt.toml
-
-IDEs - add latest JetBrains tooling
-
-Loco.md in drafts
-
 more details in the standard library section
 
 add more to tokio.md
@@ -111,15 +92,12 @@ add more to async_channels
 
 Tower
 
-finish actor.md
-
-finish Comparison to other languages
+add to Comparison to other languages
 
 AWS
 
 walkdir, notify, indicatif, ratatui
 
-- regex.md
 - time
 - chrono
 
@@ -132,9 +110,10 @@ traits
 errors: color-eyre, eyre
 
 testing: Approx example
-[fuzzing][fuzzing]
 
-[fuzzing]: https://github.com/rust-fuzz/afl.rs
+[fuzzing][fuzzing-github]
+
+[fuzzing-github]: https://github.com/rust-fuzz/afl.rs
 
 - axum
 - loco
@@ -157,25 +136,34 @@ rust + docker compose
 
 rust + Mongo example
 
-rust axum example
+add a rust axum example
 
 shuttle.rs example
 
-windows.md
+add to windows.md
 
-other_tools.md
+add to Data
 
-Data
+add to GPU.md
 
-GPU.md
+add to interop / Python
 
-Python
-
-Books
-
-games.md
+add to Books
 
 Languages
+
+finish actor.md
+
+Search within the book
+
+<https://endler.dev/2019/tinysearch/>
+<https://stork-search.net/>
+<https://github.com/lucaong/minisearch>
+<https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html>
+<https://github.com/typesense/typesense>
+<https://news.ycombinator.com/item?id=23473303>
+
+Algolia
 
 ## Topics of interest
 
