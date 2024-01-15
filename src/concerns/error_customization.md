@@ -54,4 +54,6 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [eyre][eyre]⮳
 
+Do not use [Error Chain][error-chain]⮳, which is deprecated.
+
 {{#include ../refs/link-refs.md}}
