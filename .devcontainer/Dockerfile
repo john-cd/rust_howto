@@ -24,13 +24,13 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends fzf mold clang \
-                                                  aspell \
-                                                  curl pkg-config libssl-dev \
+                                                  aspell aspell-en \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
-# Alternatively, use `lld` instead of the `mold` linker
-# Configuration in .cargo/config.toml
+## Alternatively, use `lld` instead of the `mold` linker
+## Configuration in .cargo/config.toml
+## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
 
 ## Update Rust if needed (note: `rustup update stable && rustup default stable` is required for Rust 1.74 -> Rust 1.75 somehow)
 RUN rustup update
