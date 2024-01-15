@@ -138,6 +138,8 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_h
 
 ## Push image to Docker Hub
 
+From the project root folder, use the following to build and push the `development` image:
+
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
 # or docker tag rust_howto_dev johncd/rust_howto_dev:latest
@@ -145,6 +147,8 @@ docker login
 # or docker login -u "user" -p "password" docker.io
 docker push johncd/rust_howto_dev:latest
 ```
+
+Use the following to build and push the CI image:
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
