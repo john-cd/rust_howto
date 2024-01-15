@@ -117,7 +117,7 @@ COPY . .
 
 ENV CARGO_TARGET_DIR=./target/
 
-## Make sure the start script has permission to execute
-RUN chmod +x ./.devcontainer/ci.sh
+## Make sure the start scripts have permission to execute
+RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
 
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]

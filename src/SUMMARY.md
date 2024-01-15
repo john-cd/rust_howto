@@ -70,7 +70,7 @@
   - [CLI](domains/cli.md)
   - [WASM](domains/wasm.md)
   - [GUI](domains/gui.md)
-  - [Cross-platform](domains/crossplatform.md)
+  - [Cross-platform](domains/cross_platform.md)
   - [Cloud](domains/cloud.md)
   - [Data](domains/data.md)
   - [ML](domains/ml.md)

@@ -4,6 +4,9 @@ set -o pipefail
 
 echo "----------"
 
+## Spell checks
+.devcontainer/spellcheck.sh list
+
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check

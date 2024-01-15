@@ -3,7 +3,7 @@
 - [CLI](cli.md)
 - [WASM](wasm.md)
 - [GUI programming](gui.md)
-- [Cross-platform development](crossplatform.md)
+- [Cross-platform development](cross_platform.md)
 - [Cloud](cloud.md)
 - [Data](data.md)
 - [ML](ml.md)

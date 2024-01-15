@@ -2,6 +2,7 @@ personal_ws-1.1 en 0 utf-8
 abcde
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 abcdefghijklmnopqrstuvwxyz
+actix
 Actix
 Addr
 addr
@@ -29,6 +30,7 @@ async
 attr
 Auth
 auth
+axum
 Axum
 backend
 BACKTRACE
@@ -49,6 +51,7 @@ CannotBeABase
 ccccff
 ChainedError
 CHARSET
+cheatsheets
 chrono
 ClientBuilder
 Clippy
@@ -63,6 +66,7 @@ ContentRange
 ContentRangeSpec
 ContentType
 Cookin
+cors
 CORS
 cpus
 CString
@@ -95,6 +99,7 @@ endif
 EnvLogger
 EnvVar
 Enums
+enums
 eprintln
 ErrorKind
 extern
@@ -128,6 +133,7 @@ Hackerman
 Hardcoded
 hardcoded
 HashMap
+hashmaps
 HashSet
 hashtag
 HASHTAG
@@ -195,12 +201,15 @@ mediawiki
 memmap
 Metadata
 metadata
+middleware
 Middleware
+miri
 Miri
 mkdir
 Mmap
 mpsc
 MpscRecv
+multithreading
 Mutex
 MutexGuard
 myfile
@@ -226,6 +235,7 @@ PartialContent
 PartialEq
 PartialRangeIter
 passwd
+pasteable
 PathBuf
 PatternEncoder
 PatternError
@@ -323,7 +333,9 @@ Timelike
 Timestamp
 timestamp
 timezones
+todo
 TODO
+tokio
 Tokio
 TOML
 Toml
@@ -350,6 +362,7 @@ Versioning
 versioning
 VersionReq
 vreq
+wasm
 Wasm
 WASM
 WalkDir
