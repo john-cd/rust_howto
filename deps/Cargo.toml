@@ -41,6 +41,8 @@ tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 walkdir = "2.4.0"
 openssl = { version = "0.10.62", features = ["vendored"] }
+concat-string = "1.0.1"
+concat_strs = "1.0.2"
 
 [build-dependencies]
 skeptic = "0.13.7"
