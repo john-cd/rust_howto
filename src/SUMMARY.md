@@ -54,6 +54,24 @@
     - [Futures crate](concurrency/futures.md)
     - [Mixing Async and Blocking](concurrency/async_and_blocking.md)
 
+- [Web](web/web.md)
+  - [Axum](web/axum.md)
+  - [Actix](web/actix.md)
+  - [Other web frameworks](web/other_frameworks.md)
+  - [Static website generators](web/static_website_generators.md)
+  - [Middleware](web/middleware.md)
+  - [CORS](web/cors.md)
+  - [HTTP clients](web/http_clients.md)
+
+- [Other domains](domains/domains.md)
+  - [CLI](domains/cli.md)
+  - [WASM](domains/wasm.md)
+  - [GUI](domains/gui.md)
+  - [Cross-platform](domains/crossplatform.md)
+  - [Cloud](domains/cloud.md)
+  - [Data](domains/data.md)
+  - [ML](domains/ml.md)
+
 - [Tools](tools/tools.md)
   - [Rust installation](tools/install.md)
   - [Crate registries](tools/crates.md)
@@ -68,18 +86,6 @@
   - [mdBook](tools/mdbook.md)
   - [Other tools](tools/other_tools.md)
 
-- [Domains](domains/domains.md)
-  - [CLI](domains/cli.md)
-  - [Web](domains/web.md)
-    - [Middleware](domains/middleware.md)
-    - [CORS](domains/cors.md)
-  - [WASM](domains/wasm.md)
-  - [GUI](domains/gui.md)
-  - [Cross-platform](domains/crossplatform.md)
-  - [Cloud](domains/cloud.md)
-  - [Data](domains/data.md)
-  - [ML](domains/ml.md)
-
 - [Links](links/links.md)
   - [Example code](links/example_code.md)
   - [Cheatsheets](links/rust_cheatsheets.md)
@@ -87,9 +93,9 @@
   - [Blogs](links/blogs.md)
   - [Books](links/books.md)
   - [Companies](links/companies.md)
+  - [Categories](misc/categories.md)
+  - [Crates](misc/crates.md)
 
 ---
 
-[Categories](misc/categories.md)
-[Crates](misc/crates.md)
 [Thanks](misc/thanks.md)
