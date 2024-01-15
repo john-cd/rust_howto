@@ -26,7 +26,7 @@
 - [Standard library and key crates](std/standard_library.md)
   - [Option](std/option.md)
   - [Vectors](std/vectors.md)
-  - [Hashmap](std/hashmaps.md)
+  - [HashMap](std/hashmaps.md)
   - [Strings](std/strings.md)
   - [Smart pointers](std/smart_pointers.md)
   - [Regex](std/regex.md)
@@ -45,7 +45,7 @@
   - [Documentation](concerns/documentation.md)
 
 - [Concurrency](concurrency/concurrency.md)
-  - [Multithreading](concurrency/multithreading.md)
+  - [Multi-threading](concurrency/multithreading.md)
   - [Message passing](concurrency/message_passing.md)
   - [Shared-state concurrency](concurrency/shared_state.md)
   - [Concurrent data structures](concurrency/concurrent_data_structures.md)
@@ -96,7 +96,7 @@
 
 - [Links](links/links.md)
   - [Example code](links/example_code.md)
-  - [Cheatsheets](links/rust_cheatsheets.md)
+  - [Cheat sheets](links/rust_cheatsheets.md)
   - [Essential crates](links/essential_crates.md)
   - [Blogs](links/blogs.md)
   - [Books](links/books.md)
