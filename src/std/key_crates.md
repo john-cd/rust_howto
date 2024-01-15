@@ -1,12 +1,17 @@
-# Essential crates
+# Key crates
 
-Consult the following web sites for crate recommendations:
+Consult the following sites for crate recommendations:
 
 - [Blessed.rs][blessed-rs]⮳
 - [lib.rs][lib-rs]⮳
 - [lib.rs stats][lib-rs-stats]⮳
 - The Rust community’s official crate registry: [crates.io][crates-io]⮳
 - [Crates.io's most (recent) downloads][most-recent-downloads]⮳
+
+## In this section
+
+- [Regex](regex.md)
+- [Serialization (Serde)](serialization.md)
 
 ## Older resources
 
