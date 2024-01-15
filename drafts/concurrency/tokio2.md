@@ -14,7 +14,7 @@ By running all async expressions on the current task, the expressions are able t
 
 - The I/O section of the website explains how to read and write data asynchronously with Tokio, using streams, codecs, and futures. It also shows how to handle errors and timeouts.
 
-[Current thread runtime][Current thread runtime]
+[Current thread runtime][Current thread runtime]⮳
 
 equivalent to
 
@@ -30,7 +30,7 @@ fn main() {
 }
 ```
 
-[LocalSet][LocalSet]
+[LocalSet][LocalSet]⮳
 
 In some cases, it is necessary to run one or more futures that do not implement Send and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more !Send futures to run together on the same thread.
 

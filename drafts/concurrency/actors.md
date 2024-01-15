@@ -4,7 +4,7 @@
 
 ## Riker
 
-[Riker][riker]
+[Riker][riker]⮳
 
 ```rust,editable
 struct MyActor;
@@ -38,17 +38,17 @@ fn main() {
 
 ## Alternatives
 
-[Actix][Actix]
+[Actix][Actix]⮳
 
-[Ractor][Ractor]
+[Ractor][Ractor]⮳
 
 ## Utilities
 
-[Await tree][Await tree]
+[Await tree][Await tree]⮳
 
 ## Reference
 
-[Actors with Tokio][Actors with Tokio]
+[Actors with Tokio][Actors with Tokio]⮳
 
 [Actix]: https://github.com/actix/actix
 [Actors with Tokio]: https://ryhl.io/blog/actors-with-tokio/

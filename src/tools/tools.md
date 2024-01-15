@@ -7,6 +7,7 @@
 - [Package layout](package_layout.md)
 - [Faster linking](faster_linking.md)
 - [Formatting and linting](formatting_linting.md)
+- [Miri](miri.md)
 - [Cross-compilation](cross_compilation.md)
 - [Rustup](rustup.md)
 - [Just](just.md)

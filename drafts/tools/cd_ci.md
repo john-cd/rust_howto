@@ -1,6 +1,6 @@
 # Continuous Deployment / Continuous Integration
 
-[Continuous Integration (cargo book)][continuous-integration-cargo-book]
+[Continuous Integration (cargo book)][continuous-integration-cargo-book]⮳
 
 ## GitHub Actions
 
@@ -24,7 +24,7 @@
         cargo pants
 ```
 
-[install-action][install-action] is a GitHub Action for installing development tools (mainly from GitHub Releases).
+[install-action][install-action]⮳ is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -34,7 +34,7 @@
 
 ### Compilation caching
 
-[rust-cache][rust-cache]
+[rust-cache][rust-cache]⮳
 
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 
@@ -112,22 +112,22 @@ Example `.github/workflows/<name>.yml`
 
 ## See also
 
-[Optimizing CI/CD pipelines in your Rust projects][Optimizing CI/CD pipelines in your Rust projects]
+[Optimizing CI/CD pipelines in your Rust projects][Optimizing CI/CD pipelines in your Rust projects]⮳
 
-<https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>
-<https://github.com/marketplace/actions/upload-a-build-artifact>
+<https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>⮳
+<https://github.com/marketplace/actions/upload-a-build-artifact>⮳
 
-[docker-cache][docker-cache]
+[docker-cache][docker-cache]⮳
 
-[cached-docker-images][cached-docker-images]
+[cached-docker-images][cached-docker-images]⮳
 
-[Docker GitHub Action][docker-gitHub-action]
+[Docker GitHub Action][docker-gitHub-action]⮳
 
-<https://docs.docker.com/build/cache/backends/>
+<https://docs.docker.com/build/cache/backends/>⮳
 
-<https://docs.docker.com/build/ci/github-actions/cache/>
+<https://docs.docker.com/build/ci/github-actions/cache/>⮳
 
-<https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>
+<https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>⮳
 
 [cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
 [continuous-integration-cargo-book]: https://doc.rust-lang.org/cargo/guide/continuous-integration.html

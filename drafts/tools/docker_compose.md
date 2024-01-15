@@ -8,8 +8,8 @@ An easy way to get started is to run `docker init` in a new folder, select `Rust
 
 ## References
 
-- Docker's [getting started][docker-getting-started] docs.
-- [Docker's Rust guide][docker-rust-guide]
+- Docker's [getting started][docker-getting-started]⮳ docs.
+- [Docker's Rust guide][docker-rust-guide]⮳
 
 [docker-getting-started]: https://docs.docker.com/go/get-started-sharing/
 [docker-rust-guide]: https://docs.docker.com/language/rust/

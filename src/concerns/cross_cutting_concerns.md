@@ -8,6 +8,7 @@
 - [Database access](databases.md)
 - [Testing](tests.md)
 - [Lazy initialization](lazy_initialization.md)
+- [Performance](performance.md)
 - [Documentation](documentation.md)
 
 {{#include ../refs/link-refs.md}}

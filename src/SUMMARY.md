@@ -23,12 +23,14 @@
   - [Iterators](lang/iterators.md)
   - [Macros](lang/macros.md)
 
-- [Standard Library](std/standard_library.md)
+- [Standard library and key crates](std/standard_library.md)
   - [Option](std/option.md)
   - [Vectors](std/vectors.md)
   - [Hashmap](std/hashmaps.md)
   - [Strings](std/strings.md)
   - [Smart pointers](std/smart_pointers.md)
+  - [Regex](std/regex.md)
+  - [Serialization (Serde)](std/serialization.md)
 
 - [Cross-cutting concerns](concerns/cross_cutting_concerns.md)
   - [Automatic derivation](concerns/derive.md)
@@ -39,6 +41,7 @@
   - [Database access](concerns/databases.md)
   - [Testing](concerns/tests.md)
   - [Lazy initialization](concerns/lazy_initialization.md)
+  - [Performance](concerns/performance.md)
   - [Documentation](concerns/documentation.md)
 
 - [Concurrency](concurrency/concurrency.md)
@@ -71,6 +74,10 @@
   - [Cloud](domains/cloud.md)
   - [Data](domains/data.md)
   - [ML](domains/ml.md)
+  - [Games](domains/games.md)
+  - [GPU programming](domains/gpu.md)
+  - [Robotics](domains/robotics.md)
+  - [Windows](domains/windows.md)
 
 - [Tools](tools/tools.md)
   - [Rust installation](tools/install.md)
@@ -80,6 +87,7 @@
   - [Package layout](tools/package_layout.md)
   - [Faster linking](tools/faster_linking.md)
   - [Formatting and linting](tools/formatting_linting.md)
+  - [Miri](tools/miri.md)
   - [Cross-compilation](tools/cross_compilation.md)
   - [Rustup](tools/rustup.md)
   - [Just](tools/just.md)

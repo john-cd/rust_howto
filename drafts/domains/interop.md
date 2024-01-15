@@ -2,13 +2,13 @@
 
 ## Python
 
-pyo3
+pyo3⮳
 
 ### Rust tools for Python
 
-[pyOxidizer]
+[pyOxidizer]⮳
 
-Ruff
+Ruff⮳
 
 [pyOxidizer]: https://github.com/indygreg/PyOxidizer
 {{#include ../refs/link-refs.md}}

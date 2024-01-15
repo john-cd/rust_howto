@@ -1,12 +1,14 @@
 # Serialization
 
+[![serde-badge]][serde]
+
 ## See also
 
-[Serde JSON][serde-json-librs]
+[Serde JSON (lib.rs)][serde-json-librs]
 
-[monostate for serde][monostate-github]
+[Monostate for serde (GitHub)][monostate-github]
 
-[serde-ignored][serde-ignored-github]
+[Serde-ignored (GitHub)][serde-ignored-github]
 
 [monostate-github]: https://github.com/dtolnay/monostate
 [serde-ignored-github]: https://github.com/dtolnay/serde-ignored
