@@ -11,6 +11,7 @@ use url::ParseError;
 use url::Url;
 
 mod link;
+mod parser;
 mod rules;
 
 fn parse_markdown_file(path: &Path) -> Result<()> {
