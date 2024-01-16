@@ -1,3 +1,4 @@
+#![allow(clippy::vec_init_then_push)]
 
 #[macro_use(concat_string)]
 extern crate concat_string;
@@ -19,10 +20,13 @@ fn main() {
     let _datetime = &[DATE, T, TIME].join("");
 
     let list = [DATE, T, TIME];
-    let _datetime: String = list.iter().map(|x| *x).collect();
+    // let _datetime: String = list.iter().map(|x| *x).collect();
+    let _datetime: String = list.iter().copied().collect();
 
+    #[allow(clippy::useless_vec)]
     let list = vec![DATE, T, TIME];
-    let _datetime: String = list.iter().map(|x| *x).collect();
+    // let _datetime: String = list.iter().map(|x| *x).collect();
+    let _datetime: String = list.iter().copied().collect();
 
     let _datetime = &format!("{}{}{}", DATE, T, TIME);
 
@@ -37,14 +41,15 @@ fn main() {
     datetime.push(String::from(DATE));
     datetime.push(String::from(T));
     datetime.push(String::from(TIME));
-    let datetime = datetime.join("");
+    let _datetime = datetime.join("");
 
     let mut datetime = String::with_capacity(20);
     datetime.push_str(DATE);
     datetime.push_str(T); // or 'T'
     datetime.push_str(TIME);
 
-    let _datetime = &(String::from(DATE) + &String::from(T) + &String::from(TIME));
+    let _datetime =
+        &(String::from(DATE) + &String::from(T) + &String::from(TIME));
 
     let _datetime = &(String::from(DATE) + T + TIME);
 
