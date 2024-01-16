@@ -1,7 +1,5 @@
 # TODO
 
-spell check automation
-
 finish links:
 
 - add badges to all src pages from crates.md
