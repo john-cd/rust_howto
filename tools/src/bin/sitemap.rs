@@ -46,7 +46,7 @@ fn main() -> Result<()> {
     let src = Path::new("/code/src/");
 
     // Locate the Markdown files
-    let paths: Vec<PathBuf> = tools::find_paths(src)?;
+    let paths: Vec<PathBuf> = tools::find_markdown_paths(src)?;
 
     // Remove a few exceptions
     let exclude = ["refs.md", "SUMMARY.md"];

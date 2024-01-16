@@ -12,7 +12,7 @@ use clap::Subcommand;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)] // Reads from `Cargo.toml`
-#[command(next_line_help = true)]
+#[command(arg_required_else_help = true)] // displays Help if no arguments are provided
 pub struct Cli {
     #[command(subcommand)]
     pub command: Option<Commands>,

@@ -31,7 +31,7 @@ static GLOBAL_REGEX: Lazy<HashMap<&str, Regex>> = Lazy::new(|| {
 #[derive(Debug)]
 struct Link {
     text: Option<String>,  // [text](...)
-    url: Url,              // [...]: url or [...](url)
+    url: Url,              // [...]: url or [...](url) or <url>
     title: Option<String>, // [...]: url "title" or [...](url "title")
     id: Option<String>,    // [...][id] and [id]: ...
 }

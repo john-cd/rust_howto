@@ -14,6 +14,8 @@ use pulldown_cmark::Parser;
 use pulldown_cmark::Tag;
 use pulldown_cmark_to_cmark::cmark;
 
+// See: https://crates.io/crates/pulldown-cmark
+
 // Private functions
 
 fn get_options() -> Options {
@@ -113,78 +115,114 @@ where
 
 // Public functions
 
-pub fn debug_parse_to_stdout(markdown_input: &str) {
+// Parse the Markdown as events and print them all.
+// See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
+// and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
+pub fn debug_parse_to_stdout<S: AsRef<str>>(markdown_input: S) {
     println!("\nParsing markdown ---------------\n");
 
-    // Set up the parser. We can treat is as any other iterator.
-    // For each event, we print its details, such as the tag or string.
-    let parser = Parser::new_with_broken_link_callback(
-        markdown_input,
-        get_options(),
-        Some(&mut |broken_link: BrokenLink| { callback(broken_link, markdown_input) }),
-    ).map(|event| {
+    //// Set up the parser. We can treat is as any other iterator.
+    //// For each event, we print its details, such as the tag or string.
+    // let parser = Parser::new_with_broken_link_callback(
+    //     markdown_input.as_ref(),
+    //     get_options(),
+    //     Some(&mut |broken_link: BrokenLink| { callback(broken_link,
+    // markdown_input.as_ref()) }), )
+
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
+
+    for event in parser {
         match &event {
-            // Start of a tagged element. Events that are yielded after this event and before its corresponding End event are inside this element. Start and end events are guaranteed to be balanced.
+            // Start of a tagged element. Events that are yielded after this
+            // event and before its corresponding End event are inside this
+            // element. Start and end events are guaranteed to be balanced.
             Event::Start(tag) => {
-                println!("Start: {:?}", tag);
+                println!("Start({:?})", tag);
+
                 match tag {
-                    Tag::Paragraph => println!("Paragraph"),
-                    // A heading. The first field indicates the level of the heading, the second the fragment identifier, and the third the classes.
+                    Tag::Paragraph => println!("Tag::Paragraph"),
+                    // A heading. The first field indicates the level of the
+                    // heading, the second the fragment identifier, and the
+                    // third the classes.
                     Tag::Heading(level, id, classes) => println!(
-                        "Heading heading_level: {} fragment identifier: {:?} classes: {:?}",
+                        "Tag::Heading heading_level: {} fragment identifier: {:?} classes: {:?}",
                         level, id, classes
                     ),
-                    Tag::BlockQuote => println!("BlockQuote"),
+                    Tag::BlockQuote => println!("Tag::BlockQuote"),
                     // A code block.
                     Tag::CodeBlock(code_block_kind) => {
-                        println!("CodeBlock code_block_kind: {:?}", code_block_kind)
-                    },
-                    // A list. If the list is ordered the field indicates the number of the first item. Contains only list items.
+                        println!(
+                            "Tag::CodeBlock code_block_kind: {:?}",
+                            code_block_kind
+                        )
+                    }
+                    // A list. If the list is ordered the field indicates the
+                    // number of the first item. Contains only list items.
                     Tag::List(ordered_list_first_item_number) => println!(
-                        "List ordered_list_first_item_number: {:?}",
+                        "Tag::List ordered_list_first_item_number: {:?}",
                         ordered_list_first_item_number
                     ),
                     // A list item.
-                    Tag::Item => println!("Item (this is a list item)"),
-                    // A footnote definition. The value contained is the footnote’s label by which it can be referred to.
-                    Tag::FootnoteDefinition(label) => println!("FootnoteDefinition label: {}", label),
-                    // A table. Contains a vector describing the text-alignment for each of its columns.
+                    Tag::Item => println!("Tag::Item (this is a list item)"),
+                    // A footnote definition. The value contained is the
+                    // footnote’s label by which it can be referred to.
+                    Tag::FootnoteDefinition(label) => {
+                        println!("Tag::FootnoteDefinition label: {}", label)
+                    }
+                    // A table. Contains a vector describing the text-alignment
+                    // for each of its columns.
                     Tag::Table(column_text_alignment_list) => println!(
-                        "Table column_text_alignment_list: {:?}",
+                        "Tag::Table column_text_alignment_list: {:?}",
                         column_text_alignment_list
                     ),
-                    // A table header. Contains only TableCells. Note that the table body starts immediately after the closure of the TableHead tag. There is no TableBody tag.
-                    Tag::TableHead => println!("TableHead (contains TableRow tags"),
-                    // A table row. Is used both for header rows as body rows. Contains only TableCells.
-                    Tag::TableRow => println!("TableRow (contains TableCell tags)"),
-                    Tag::TableCell => println!("TableCell (contains inline tags)"),
-                    Tag::Emphasis => println!("Emphasis (this is a span tag)"),
-                    Tag::Strong => println!("Strong (this is a span tag)"),
-                    Tag::Strikethrough => println!("Strikethrough (this is a span tag)"),
-                    // A link. The first field is the link type, the second the destination URL and the third is a title.
-                    Tag::Link(
-                        link_type,
-                        dest_url,
-                        title
-                    ) => println!(
-                        "Link link_type: {:?} url: {} title: {}",
+                    // A table header. Contains only TableCells. Note that the
+                    // table body starts immediately after the closure of the
+                    // TableHead tag. There is no TableBody tag.
+                    Tag::TableHead => {
+                        println!("Tag::TableHead (contains TableRow tags")
+                    }
+                    // A table row. Is used both for header rows as body rows.
+                    // Contains only TableCells.
+                    Tag::TableRow => {
+                        println!("Tag::TableRow (contains TableCell tags)")
+                    }
+                    Tag::TableCell => {
+                        println!("Tag::TableCell (contains inline tags)")
+                    }
+                    Tag::Emphasis => {
+                        println!("Tag::Emphasis (this is a span tag)")
+                    }
+                    Tag::Strong => println!("Tag::Strong (this is a span tag)"),
+                    Tag::Strikethrough => {
+                        println!("Tag::Strikethrough (this is a span tag)")
+                    }
+                    // A link. The first field is the link type, the second the
+                    // destination URL and the third is a title.
+                    Tag::Link(link_type, dest_url, title) => println!(
+                        "Tag::Link link_type: {:?} url: {} title: {}",
                         link_type, dest_url, title
                     ),
-                    // An image. The first field is the link type, the second the destination URL and the third is a title.
-                    Tag::Image (link_type, dest_url, title) => println!("Image link_type: {:?} url: {} title: {}", link_type, dest_url, title),
+                    // An image. The first field is the link type, the second
+                    // the destination URL and the third is a title.
+                    Tag::Image(link_type, dest_url, title) => println!(
+                        "Tag::Image link_type: {:?} url: {} title: {}",
+                        link_type, dest_url, title
+                    ),
                 }
-            },
+            }
             // End of a tagged element.
-            Event::End(tag) => println!("End: {:?}", tag),
+            Event::End(tag) => println!("End({:?})", tag),
             // A text node.
-            Event::Text(s) => println!("Text: {:?}", s),
+            Event::Text(s) => println!("Text({:?})", s),
             // An inline code node.
-            Event::Code(s) => println!("Code: {:?}", s),
+            Event::Code(s) => println!("Code({:?})", s),
             // An HTML node.
-            Event::Html(s) => println!("Html: {:?}", s),
-            // A reference to a footnote with given label, which may or may not be defined by an event with a Tag::FootnoteDefinition tag. Definitions and references to them may occur in any order.
+            Event::Html(s) => println!("Html({:?})", s),
+            // A reference to a footnote with given label, which may or may not
+            // be defined by an event with a Tag::FootnoteDefinition tag.
+            // Definitions and references to them may occur in any order.
             Event::FootnoteReference(s) => {
-                println!("FootnoteReference: {:?}", s)
+                println!("FootnoteReference({:?})", s)
             }
             // A soft line break.
             Event::SoftBreak => println!("SoftBreak"),
@@ -192,15 +230,16 @@ pub fn debug_parse_to_stdout(markdown_input: &str) {
             Event::HardBreak => println!("HardBreak"),
             // A horizontal ruler.
             Event::Rule => println!("Rule"),
-            // A task list marker, rendered as a checkbox in HTML. Contains a true when it is checked.
-            Event::TaskListMarker(b) => println!("TaskListMarker: {:?}", b),
+            // A task list marker, rendered as a checkbox in HTML. Contains a
+            // true when it is checked.
+            Event::TaskListMarker(b) => println!("TaskListMarker({:?})", b),
         };
-        event
-    });
+    }
 }
 
-// -> impl Iterator<Item = Event<'input>> + 'callback
-pub fn extract_links(markdown_input: &str) {
+// TODO
+pub fn extract_links<S: AsRef<str>>(markdown_input: S) {
+    // TODO -> impl Iterator<Item = Event<'input>> + 'callback
     // let closure = |broken_link: BrokenLink<'a>| { callback(broken_link,
     // markdown_input) }; let parser =
     // Parser::new_with_broken_link_callback(     markdown_input,
@@ -208,36 +247,47 @@ pub fn extract_links(markdown_input: &str) {
     //     Some(&mut closure),
     // );
 
-    let parser = Parser::new_ext(markdown_input, get_options());
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
 
-    let parser = parser.map(|event| match &event {
-        // Start of a tagged element.
-        Event::Start(Tag::Link(link_type, dest_url, title)) => {
-            // A link. The first field is the link type, the second the
-            // destination URL and the third is a title.
-            println!(
-                "Link link_type: {:?} url: {} title: {}",
-                link_type, dest_url, title
-            );
-        }
-        Event::End(tag @ Tag::Link(link_type, dest_url, title)) => {
-            println!("End: {:?}", tag)
-        }
+    // let parser = parser.map(|event| {
 
-        Event::Start(tag @ Tag::Image(link_type, dest_url, title)) => {
-            println!("End: {:?}", tag)
-        }
-        Event::End(tag @ Tag::Image(link_type, dest_url, title)) => {
-            println!("End: {:?}", tag)
-        }
-        _ => {}
-    });
+    for event in parser {
+        match &event {
+            // Start of a tagged element.
+            Event::Start(Tag::Link(link_type, dest_url, title)) => {
+                // A link. The first field is the link type, the second the
+                // destination URL and the third is a title.
+                println!(
+                    "Event::Start(Tag::Link(link_type: {:?}, dest_url: {}, title: {}))",
+                    link_type, dest_url, title
+                );
+            }
+            Event::End(tag @ Tag::Link(link_type, dest_url, title)) => {
+                println!("Event::End({:?})", tag)
+            }
 
-    // parser
+            Event::Start(tag @ Tag::Image(link_type, dest_url, title)) => {
+                println!("Event::Start({:?})", tag)
+            }
+            Event::End(tag @ Tag::Image(link_type, dest_url, title)) => {
+                println!("Event::End({:?})", tag)
+            }
+            _ => {}
+        }
+        // event
+    }
+    //);
+
+    // TODO connect to links / rules
+
+    // Event::Text(text.replace("Peter", "John").into())
+
+    // .filter(|event| match event {
+    //     Event::Start(Tag::Image { .. }) | Event::End(_) => { false
+    // }     _ => true,
+    // });
+
+    // let markdown_input_length = markdown_input.len();
+    // write_markdown_to(parser, markdown_input_length,
+    // std::io::stdout())?;
 }
-
-// Event::Text(text.replace("Peter", "John").into())
-// .filter(|event| match event {
-//     Event::Start(Tag::Image { .. }) | Event::End(_) => { false }
-//     _ => true,
-// });

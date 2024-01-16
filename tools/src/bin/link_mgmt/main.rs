@@ -14,17 +14,28 @@ mod link;
 mod parser;
 mod rules;
 
-// TODO
 fn main() -> Result<()> {
     let cli = args::parse_arguments();
+    // debug: println!("{:?}", cli);
 
-    println!("{:?}", cli);
+    create_book_temp_dir()?;
 
     match &cli.command {
         Some(args::Commands::Parse) => {
-            // TODO parser::debug_parse_to_stdout(markdown_input);
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
+            // parser::debug_parse_to_stdout(all_markdown);
+            parser::extract_links(all_markdown);
         }
+        // Add more subcommands here: Some(args::Commands::...) => { ... }
         None => {}
     }
+    Ok(())
+}
+
+// Create temp directory
+fn create_book_temp_dir() -> Result<()> {
+    let dest_dir = "/code/book/temp/";
+    tools::create_dir(dest_dir)?;
     Ok(())
 }

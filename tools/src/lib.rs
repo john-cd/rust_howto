@@ -18,7 +18,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 /// Locate Markdown files within a directory
-pub fn find_paths<P: AsRef<Path>>(
+pub fn find_markdown_paths<P: AsRef<Path>>(
     root_directory: P,
 ) -> io::Result<Vec<PathBuf>> {
     let mut paths = Vec::new();
