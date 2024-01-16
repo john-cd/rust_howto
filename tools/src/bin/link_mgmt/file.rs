@@ -8,7 +8,7 @@ use std::path::PathBuf;
 use anyhow::Result;
 
 pub fn read_to_string(path: OsString) -> String {
-    let mut file = File::open(&path).expect("file to exist for reading");
+    let mut file = File::open(path).expect("file to exist for reading");
     let mut buf = String::new();
     file.read_to_string(&mut buf).expect("file to be readable");
     buf

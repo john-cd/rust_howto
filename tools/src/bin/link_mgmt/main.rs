@@ -8,15 +8,14 @@ use anyhow::Result;
 use url::ParseError;
 use url::Url;
 
+mod args;
 mod file;
 mod link;
 mod parser;
 mod rules;
-mod args;
 
 // TODO
 fn main() -> Result<()> {
-
     let cli = args::parse_arguments();
 
     println!("{:?}", cli);

@@ -200,7 +200,7 @@ pub fn debug_parse_to_stdout(markdown_input: &str) {
 }
 
 // -> impl Iterator<Item = Event<'input>> + 'callback
-pub fn extract_links<'input, 'callback>(markdown_input: &'input str) {
+pub fn extract_links(markdown_input: &str) {
     // let closure = |broken_link: BrokenLink<'a>| { callback(broken_link,
     // markdown_input) }; let parser =
     // Parser::new_with_broken_link_callback(     markdown_input,

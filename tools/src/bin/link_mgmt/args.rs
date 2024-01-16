@@ -5,18 +5,17 @@
 //! https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html
 //! https://github.com/clap-rs/clap/tree/master/examples
 
+use std::path::PathBuf;
+
 use clap::Parser;
 use clap::Subcommand;
-use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)] // Reads from `Cargo.toml`
 #[command(next_line_help = true)]
 pub struct Cli {
-
     #[command(subcommand)]
     pub command: Option<Commands>,
-
     // // Positional argument example
     // /// The pattern to look for
     // pattern: Option<String>,
@@ -34,7 +33,7 @@ pub struct Cli {
     // -vvvv show trace
     //  By default, this will only report errors.
     //#[clap(flatten)]
-    //verbose: clap_verbosity_flag::Verbosity, // https://docs.rs/clap-verbosity-flag/2.0.1/clap_verbosity_flag/
+    // verbose: clap_verbosity_flag::Verbosity, // https://docs.rs/clap-verbosity-flag/2.0.1/clap_verbosity_flag/
 }
 
 #[derive(Subcommand, Debug)]
@@ -43,8 +42,7 @@ pub enum Commands {
 }
 
 pub fn parse_arguments() -> Cli {
-    let cli = Cli::parse();
-    cli
+    Cli::parse()
 }
 // Then check for the existence of subcommands, and if found use their
 // matches just as you would the top level cmd
