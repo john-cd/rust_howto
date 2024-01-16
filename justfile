@@ -94,10 +94,16 @@ serve: build
 # watch:
 #   mdbook watch --open
 
+# Prepare for git push
+prepare: fmtall clean build clippyall testall serve
+
+## Utilities --------------------------------------
+
 # Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
 [confirm]
 update:
   cargo update
 
-# Prepare for git push
-prepare: fmtall clean build clippyall testall serve
+# Manage links
+links args:
+  cargo run -p tools --bin link_mgmt -- {{args}}
