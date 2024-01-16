@@ -104,6 +104,8 @@ prepare: fmtall clean build clippyall testall serve
 update:
   cargo update
 
+default := 'help'
+
 # Manage links
-links args:
+links args=default:
   cargo run -p tools --bin link_mgmt -- {{args}}

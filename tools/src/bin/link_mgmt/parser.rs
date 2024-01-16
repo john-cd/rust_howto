@@ -1,7 +1,9 @@
 #![allow(unused)]
 
 use std::borrow::Borrow;
+use std::collections::BTreeMap;
 use std::io::Write;
+use std::path::Path;
 
 use anyhow::Result;
 use pulldown_cmark::html;
@@ -9,6 +11,7 @@ use pulldown_cmark::BrokenLink;
 use pulldown_cmark::BrokenLinkCallback;
 use pulldown_cmark::CowStr;
 use pulldown_cmark::Event;
+use pulldown_cmark::LinkDef;
 use pulldown_cmark::Options;
 use pulldown_cmark::Parser;
 use pulldown_cmark::Tag;
@@ -110,6 +113,22 @@ where
     };
     pulldown_cmark_to_cmark::cmark_with_options(parser, &mut buf, options)?;
     w.write_all(buf.as_bytes())?;
+    Ok(())
+}
+
+fn write_ref_defs<P: AsRef<Path>>(parser: &Parser, path: P) -> Result<()> {
+    let refdefs = parser.reference_definitions();
+
+    // Sorted Map
+    let sorted_refdefs: BTreeMap<_, _> = refdefs.iter().collect();
+    let mut f = std::fs::File::create(path)?;
+    for (s, LinkDef { dest, title, .. }) in sorted_refdefs {
+        if let Some(t) = title {
+            writeln!(&mut f, "[{s}]: {dest} \"{t:?}\"");
+        } else {
+            writeln!(&mut f, "[{s}]: {dest}");
+        }
+    }
     Ok(())
 }
 
@@ -237,8 +256,17 @@ pub fn debug_parse_to_stdout<S: AsRef<str>>(markdown_input: S) {
     }
 }
 
+pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
+    markdown_input: S,
+    path: P,
+) -> Result<()> {
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
+    write_ref_defs(&parser, path)?;
+    Ok(())
+}
+
 // TODO
-pub fn extract_links<S: AsRef<str>>(markdown_input: S) {
+pub fn extract_links<S: AsRef<str>>(markdown_input: S) -> Result<()> {
     // TODO -> impl Iterator<Item = Event<'input>> + 'callback
     // let closure = |broken_link: BrokenLink<'a>| { callback(broken_link,
     // markdown_input) }; let parser =
@@ -247,47 +275,71 @@ pub fn extract_links<S: AsRef<str>>(markdown_input: S) {
     //     Some(&mut closure),
     // );
 
+    let mut in_link = Vec::new();
+    let mut links = Vec::new();
+
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
 
-    // let parser = parser.map(|event| {
+    write_ref_defs(&parser, "./refs.md")?;
 
-    for event in parser {
-        match &event {
-            // Start of a tagged element.
-            Event::Start(Tag::Link(link_type, dest_url, title)) => {
-                // A link. The first field is the link type, the second the
-                // destination URL and the third is a title.
-                println!(
-                    "Event::Start(Tag::Link(link_type: {:?}, dest_url: {}, title: {}))",
-                    link_type, dest_url, title
-                );
-            }
-            Event::End(tag @ Tag::Link(link_type, dest_url, title)) => {
-                println!("Event::End({:?})", tag)
+    parser.for_each(|event| {
+        match event {
+            // Start of a link
+            e @ Event::Start(Tag::Link(..)) => {
+                in_link.push(vec![e]);
             }
 
-            Event::Start(tag @ Tag::Image(link_type, dest_url, title)) => {
-                println!("Event::Start({:?})", tag)
+            // End of the link
+            e @ Event::End(Tag::Link(..)) => {
+                let mut l = in_link.pop().unwrap();
+                l.push(e);
+                links.push(l);
             }
-            Event::End(tag @ Tag::Image(link_type, dest_url, title)) => {
-                println!("Event::End({:?})", tag)
+
+            // Accumulate events while in the link
+            _ if ! in_link.is_empty() => {
+                in_link.last_mut().unwrap().push(event);
             }
+
             _ => {}
         }
-        // event
-    }
-    //);
+    });
 
-    // TODO connect to links / rules
+    // for l in links.iter() {
+    //     // println!("\n{:?}", l);
+    //     //let li = link::Link::new();
+    //     if let Event::Start(Tag::Link(link_type, dest_url, title)) =
+    // &l[0] {         print!("Link: link_type: {:?}, url: {}, title:
+    // {}", link_type, dest_url.clone(), title.clone());     }
+    //     match &l[1] {
+    //         Event::Text(s) => {
+    //             println!(", text: {}", s);
+    //         },
+    //         Event::Start(Tag::Image(link_type, dest_url, title)) => {
+    //             print!("; image: link_type: {:?}, url: {}, title: {}",
+    // link_type, dest_url, title);             if let
+    // Event::Text(lbl) = &l[2] {                 println!(", label:
+    // {}", lbl.to_string())             }
+    //         }
+    //         _ => {
+    //             println!("ERROR");
+    //         }
+    //     };
+    // }
 
-    // Event::Text(text.replace("Peter", "John").into())
+    // let mut f =
+    // std::fs::File::create(std::path::Path::new("./my.log"))?;
 
-    // .filter(|event| match event {
-    //     Event::Start(Tag::Image { .. }) | Event::End(_) => { false
-    // }     _ => true,
-    // });
+    // if links.len() != 0 {
+    //     for l in links {
+    //         write!(&mut f, "{:?}\n", l);
+    //     }
+    // }
 
-    // let markdown_input_length = markdown_input.len();
-    // write_markdown_to(parser, markdown_input_length,
-    // std::io::stdout())?;
+    // let markdown_input_length = markdown_input.as_ref().len();
+    // write_markdown_to(parser, markdown_input_length, f)?;
+
+    Ok(())
 }
+
+// Event::Text(text.replace("Peter", "John").into())

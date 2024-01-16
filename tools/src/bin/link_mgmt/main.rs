@@ -2,6 +2,7 @@
 
 use std::collections::HashMap;
 use std::path::Path;
+use std::path::PathBuf;
 
 use anyhow::Error;
 use anyhow::Result;
@@ -20,12 +21,20 @@ fn main() -> Result<()> {
 
     create_book_temp_dir()?;
 
-    match &cli.command {
-        Some(args::Commands::Parse) => {
+    match cli.command {
+        Some(args::Commands::Debug) => {
             let all_markdown: String =
                 file::read_all_markdown_files_in("./src/")?;
-            // parser::debug_parse_to_stdout(all_markdown);
-            parser::extract_links(all_markdown);
+            parser::debug_parse_to_stdout(all_markdown);
+            // TODO parser::extract_links(all_markdown);
+        }
+        Some(args::Commands::RefDefs { path }) => {
+            let pathbuf = path
+                .unwrap_or(PathBuf::from("/code/book/temp/existing_refs.md"));
+            println!("Writing existing reference definitions to {:?}", pathbuf);
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
+            parser::write_ref_defs_to(all_markdown, pathbuf)?;
         }
         // Add more subcommands here: Some(args::Commands::...) => { ... }
         None => {}
