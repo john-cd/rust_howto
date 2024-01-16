@@ -12,7 +12,7 @@ services:
         - johncd/rust_howto_dev:latest
     volumes:
       - type: bind
-        source: .. # relative to the Compose file’s directory
+        source: ${ROOT_PROJECT_PATH}
         target: /code
       - cargo_home_cache:/usr/local/cargo/ # https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache
       - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml

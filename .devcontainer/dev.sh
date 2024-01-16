@@ -4,8 +4,8 @@
 set -x
 set -v
 
-if [ ! -d /code ]; then
-  echo "/code is not accessible somehow. CHECK BIND MOUNT."
+if [ ! -d /code/.devcontainer/ ]; then
+  echo "ERROR: CHECK BIND MOUNT"
   exec "$@"
   exit 0
 fi
