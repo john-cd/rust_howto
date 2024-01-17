@@ -16,13 +16,13 @@ GitHub repo: <https://john-cd.github.io/rust_howto>
 ## Repo structure
 
 - The repo contains a book, which markdown sources are in the `src` folder.
-- After the book is built using `mdbook`, the resulting HTML and Javascript are found in `book`.
-- The `mdbook` configuration is in `book.toml` and templates in `theme`.
+- After the book is built using `mdbook`, the resulting HTML and Javascript are found in `book/html`.
+- The intermediate (processed) Markdown is in `book/markdown`. The `mdbook` configuration is in `book.toml`; the templates and assets are in `theme` and `static` respectively.
 - The Rust code is organized as a `cargo` workspace:
-  - Examples that are embedded in the book are found in `deps/examples`. These are mostly single, short `.rs` files.
+  - Examples that are embedded in the book are found in `deps/examples`. These are mostly single, short `.rs` files. The `deps/Cargo.toml` list all dependencies used by the embedded examples. Use `cargo add <crate> -F <feature>` while in the `deps` folder to add more as required. `deps/build.rs` creates the Skpetic tests that validate all embedded examples.
   - Additional examples that are too long or complex to be inserted in the book itself will be added under `xmpl`.
-  - The `deps` package's `Cargo.toml` list all dependencies used by embedded examples. Use `cargo add <crate> -F <feature>` while in the `deps` folder to add more as required.
-- The Dev Container configuration file and `Dockerfile` are found in `.devcontainer`.
+  - `tools` contains utilities that e.g. generate the sitemap file and organize links.
+- The Dev Container and Docker (Compose) configuration files are found in `.devcontainer`.
 
 ## Installation
 
