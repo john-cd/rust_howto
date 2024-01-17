@@ -1,14 +1,8 @@
-use std::collections::HashMap;
-use std::fmt::format;
-
-use anyhow::Result;
 use heck::ToKebabCase;
-use once_cell::sync::Lazy;
-use regex::Regex;
 use url::Url;
 
 #[derive(Debug)]
-struct Link {
+pub struct Link {
     text: Option<String>,  // [text](...)
     url: Url,              // [...]: url or [...](url) or <url>
     title: Option<String>, // [...]: url "title" or [...](url "title")
@@ -16,7 +10,7 @@ struct Link {
 }
 
 impl Link {
-    fn new(
+    pub fn new(
         text: Option<String>,
         url: Url,
         title: Option<String>,

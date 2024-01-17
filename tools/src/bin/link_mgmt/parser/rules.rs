@@ -2,7 +2,6 @@
 
 use anyhow::Result;
 use once_cell::sync::Lazy;
-use regex::Regex;
 use url::Url;
 
 pub struct LabelAndBadge(String, String);

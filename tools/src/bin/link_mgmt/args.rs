@@ -7,6 +7,7 @@
 
 use std::path::PathBuf;
 
+use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
 
@@ -22,13 +23,26 @@ pub struct Cli {
 
 #[derive(Subcommand, Debug)]
 pub enum Commands {
-    RefDefs {
-        // The path to the file to write
-        #[arg(short, long)]
-        path: Option<PathBuf>,
-    },
+    /// Write existing reference definitions to a file
+    RefDefs(PathArgs),
+
+    /// Write all existing links to a file
+    Links(PathArgs),
+
+    /// Write all existing inline links to a file
+    InlineLinks(PathArgs),
+
+    /// Parse the entire Markdown code as events and print them.
+    Debug(PathArgs),
+
     Test,
-    Debug,
+}
+
+#[derive(Args, Debug)]
+pub struct PathArgs {
+    // The path to the file to write (optional)
+    #[arg(short, long)]
+    pub path: Option<PathBuf>,
 }
 
 pub fn parse_arguments() -> Cli {
