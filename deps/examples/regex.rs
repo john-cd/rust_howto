@@ -90,7 +90,8 @@ fn search_with_all_regexes(contents: &str) {
                     "{}={}; ",
                     group,
                     // Retrieve each named capture group in turn...
-                    // `extract` can't be used here, since the # of capture groups varies.
+                    // `extract` can't be used here, since the # of capture
+                    // groups varies.
                     caps.name(group).map_or("", |m| m.as_str())
                 );
             }

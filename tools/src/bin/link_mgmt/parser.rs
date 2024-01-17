@@ -340,7 +340,7 @@ pub fn extract_links<S: AsRef<str>>(markdown_input: S) -> Result<()> {
 
     let mut f = std::fs::File::create(std::path::Path::new("./my.log"))?;
 
-    if ! links.is_empty() {
+    if !links.is_empty() {
         for l in links {
             writeln!(&mut f, "{:?}", l);
         }
