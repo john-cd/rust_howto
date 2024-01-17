@@ -44,6 +44,9 @@ tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 walkdir = "2.4.0"
 regex = "1.10.2"
+clap = { version = "4.4.18", features = ["derive"] }
+clap-verbosity-flag = "2.1.2"
+env_logger = "0.10.1"
 
 [build-dependencies]
 skeptic = "0.13.7"
