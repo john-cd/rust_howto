@@ -11,3 +11,4 @@ hello.txt
 file1.txt
 **/.DS_Store
 **/.git
+*.log
