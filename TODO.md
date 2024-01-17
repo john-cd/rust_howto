@@ -15,6 +15,8 @@ review generate.sh
 
 explanation text for language pages
 
+pull request to little book of rust books
+
 IDEs - add latest JetBrains tooling
 
 review Install Rust
@@ -52,10 +54,6 @@ review Configuration page
 finish Option page
 
 map, unwrap_or
-
-CLI: clap example
-
-move clap / CLI example to xmpl
 
 database access:
 
