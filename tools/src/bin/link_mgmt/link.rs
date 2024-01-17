@@ -7,28 +7,6 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use url::Url;
 
-// static GLOBAL_REGEX: Lazy<HashMap<&str, Regex>> = Lazy::new(|| {
-//     let mut m = HashMap::new();
-//     m.insert(
-//         "[text](http...)",
-//         Regex::new(r"\[(?<text>.*?)\]\((?<link>http.*?)\)").
-// unwrap(),     );
-//     m.insert("<http...>",
-// Regex::new(r"<(?<link>http.*?)>").unwrap());     m.insert(
-//         "[text] ...",
-//         Regex::new(r"\[(?<text>.*?)\]\s?[^\[]]").unwrap(),
-//     ); // not followed by [ or <space>[
-//     m.insert(
-//         "[text][label]",
-//         Regex::new(r"\[(?<text>.*?)\]\s??\[(?<label>.*?)\]").
-// unwrap(),     );
-//     // link label with optional title; (?:non-capturing group)
-//     // (?<name>named group)
-//     m.insert("[label]: url \"title\"",
-// Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>.*?)\s*?(?:"(?
-// <title>.*?)")?\s*$"#).unwrap());     m
-// });
-
 #[derive(Debug)]
 struct Link {
     text: Option<String>,  // [text](...)
@@ -122,20 +100,4 @@ impl Link {
     pub fn to_badge_link_label(&self) -> String {
         format!("[{}-badge]: {}", self.get_id(), self.get_badge_url())
     }
-
-    // TODO
-    //
-    // fn from_text(contents: &str) -> Self {
-    //     // let mut h = HashMap::new();
-    //     for (s, re) in GLOBAL_REGEX.iter() {
-    //         let mut results = vec![];
-    //         for (_, [text, link]) in
-    //             re.captures_iter(contents).map(|c| c.extract())
-    //         {
-    //             results.push((text, link));
-    //             println!("{text} {link}");
-    //         }
-    //     }
-    //     todo!();
-    // }
 }

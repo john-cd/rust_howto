@@ -26,7 +26,6 @@ fn main() -> Result<()> {
             let all_markdown: String =
                 file::read_all_markdown_files_in("./src/")?;
             parser::debug_parse_to_stdout(all_markdown);
-            // TODO parser::extract_links(all_markdown);
         }
         Some(args::Commands::RefDefs { path }) => {
             let pathbuf = path
@@ -35,6 +34,13 @@ fn main() -> Result<()> {
             let all_markdown: String =
                 file::read_all_markdown_files_in("./src/")?;
             parser::write_ref_defs_to(all_markdown, pathbuf)?;
+        }
+        Some(args::Commands::Test) => {
+            let all_markdown: String = parser::get_test_markdown();
+            // file::read_all_markdown_files_in("./src/")?;
+            println!("{}", all_markdown);
+            // TODO
+            parser::extract_links(all_markdown);
         }
         // Add more subcommands here: Some(args::Commands::...) => { ... }
         None => {}

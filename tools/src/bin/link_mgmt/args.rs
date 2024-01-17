@@ -43,6 +43,7 @@ pub enum Commands {
         #[arg(short, long)]
         path: Option<PathBuf>,
     },
+    Test,
     Debug,
 }
 

@@ -280,61 +280,71 @@ pub fn extract_links<S: AsRef<str>>(markdown_input: S) -> Result<()> {
 
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
 
-    write_ref_defs(&parser, "./refs.md")?;
-
     parser.for_each(|event| {
         match event {
             // Start of a link
             e @ Event::Start(Tag::Link(..)) => {
+                println!("{:?}", e);
                 in_link.push(vec![e]);
             }
 
             // End of the link
             e @ Event::End(Tag::Link(..)) => {
+                println!("{:?}", e);
                 let mut l = in_link.pop().unwrap();
                 l.push(e);
                 links.push(l);
             }
 
             // Accumulate events while in the link
-            _ if ! in_link.is_empty() => {
-                in_link.last_mut().unwrap().push(event);
+            e if !in_link.is_empty() => {
+                println!("{:?}", e);
+                in_link.last_mut().unwrap().push(e);
             }
 
-            _ => {}
+            e => {
+                println!("IGNORED: {:?}", e);
+            }
         }
     });
 
-    // for l in links.iter() {
-    //     // println!("\n{:?}", l);
-    //     //let li = link::Link::new();
-    //     if let Event::Start(Tag::Link(link_type, dest_url, title)) =
-    // &l[0] {         print!("Link: link_type: {:?}, url: {}, title:
-    // {}", link_type, dest_url.clone(), title.clone());     }
-    //     match &l[1] {
-    //         Event::Text(s) => {
-    //             println!(", text: {}", s);
-    //         },
-    //         Event::Start(Tag::Image(link_type, dest_url, title)) => {
-    //             print!("; image: link_type: {:?}, url: {}, title: {}",
-    // link_type, dest_url, title);             if let
-    // Event::Text(lbl) = &l[2] {                 println!(", label:
-    // {}", lbl.to_string())             }
-    //         }
-    //         _ => {
-    //             println!("ERROR");
-    //         }
-    //     };
-    // }
+    for l in links.iter() {
+        // println!("\n{:?}", l);
+        // TODO let li = link::Link::new();
+        if let Event::Start(Tag::Link(link_type, dest_url, title)) = &l[0] {
+            print!(
+                "Link: link_type: {:?}, url: {}, title: {}",
+                link_type,
+                dest_url.clone(),
+                title.clone()
+            );
+        }
+        match &l[1] {
+            Event::Text(s) => {
+                println!(", text: {}", s);
+            }
+            Event::Start(Tag::Image(link_type, dest_url, title)) => {
+                print!(
+                    "; image: link_type: {:?}, url: {}, title: {}",
+                    link_type, dest_url, title
+                );
+                if let Event::Text(lbl) = &l[2] {
+                    println!(", label: {}", lbl)
+                }
+            }
+            _ => {
+                println!("ERROR");
+            }
+        };
+    }
 
-    // let mut f =
-    // std::fs::File::create(std::path::Path::new("./my.log"))?;
+    let mut f = std::fs::File::create(std::path::Path::new("./my.log"))?;
 
-    // if links.len() != 0 {
-    //     for l in links {
-    //         write!(&mut f, "{:?}\n", l);
-    //     }
-    // }
+    if ! links.is_empty() {
+        for l in links {
+            writeln!(&mut f, "{:?}", l);
+        }
+    }
 
     // let markdown_input_length = markdown_input.as_ref().len();
     // write_markdown_to(parser, markdown_input_length, f)?;
@@ -342,4 +352,30 @@ pub fn extract_links<S: AsRef<str>>(markdown_input: S) -> Result<()> {
     Ok(())
 }
 
-// Event::Text(text.replace("Peter", "John").into())
+pub fn get_test_markdown() -> String {
+    let md: &'static str = "
+<http://url0>
+ [text](url1)
+
+ [text2][lbl]
+
+ [lbl][]
+
+ [lbl]
+
+[lbl]: url2 \"title\"
+
+ ![image](image_url)
+
+ ![image][image_lbl]
+
+ ![image_lbl]
+
+ ![image_lbl][]
+
+image_lbl: image_url \"title\"
+
+ [text3][missing_lbl]
+";
+    md.to_owned()
+}
