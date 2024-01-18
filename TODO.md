@@ -64,6 +64,8 @@ CI / CD: rust-cache
 
 cargo outdated / audit / license / deny
 
+<https://hoverbear.org/blog/rust-state-machine-pattern/>
+
 review deny.toml
 
 more details in the standard library section
