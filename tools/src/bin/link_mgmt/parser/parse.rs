@@ -1,44 +1,111 @@
-use std::io::Write;
-
-use anyhow::bail;
-use anyhow::Result;
 use pulldown_cmark::Event;
 use pulldown_cmark::Parser;
 use pulldown_cmark::Tag;
 use tracing::debug;
 use tracing::error;
-use tracing::info;
-use tracing::trace;
-use tracing::warn;
 
 use super::link::Link;
 use super::link::LinkBuilder;
 
-pub fn extract_links(parser: Parser) -> Result<Vec<Link>> {
-    let mut in_link = Vec::new();
-    let mut links = Vec::new();
+#[derive(Debug, PartialEq, Copy, Clone)]
+enum Where {
+    Elsewhere,
+    InLink, // between Start(Tag::Link(...)) and End(Tag::Link(..))
+    InImageInLink, /* between Start(Tag::Image(...)) and
+             * End(Tag::Image(..)), within a link */
+}
+
+pub fn extract_links(parser: Parser) -> Vec<Link> {
+    let mut state: Vec<(Where, LinkBuilder)> = Vec::new();
+    let mut links: Vec<Link> = Vec::new();
 
     // Retrieve and group all Link-related events
     parser.for_each(|event| {
         match event {
             // Start of a link
-            e @ Event::Start(Tag::Link(..)) => {
-                debug!("Collected {:?}", e);
-                in_link.push(vec![e]);
+            Event::Start(Tag::Link(link_type, dest_url, title)) => {
+                debug!(
+                    "Link: link_type: {:?}, url: {}, title: {}",
+                    link_type,
+                    dest_url.as_ref(),
+                    title.as_ref()
+                );
+                state.push((
+                    Where::InLink,
+                    LinkBuilder::from_type_url_title(
+                        link_type,
+                        dest_url.into_string(),
+                        title.into_string(),
+                    ),
+                ));
             }
 
             // End of the link
             e @ Event::End(Tag::Link(..)) => {
-                debug!("Collected {:?}", e);
-                let mut l = in_link.pop().unwrap();
-                // l.push(e);
-                links.push(l);
+                debug!("{:?}", e);
+                let (whr, link_builder) = state.pop().unwrap(); // Start and End events are balanced
+                assert_eq!(whr, Where::InLink);
+                links.push(link_builder.build());
             }
 
-            // Accumulate events while in the link
-            e if !in_link.is_empty() => {
-                debug!("Collected {:?}", e);
-                in_link.last_mut().unwrap().push(e);
+            // Inspect events while in the link
+            Event::Start(Tag::Image(
+                image_link_type,
+                image_url,
+                image_title,
+            )) if !state.is_empty() => {
+                debug!(
+                    "image: link_type: {:?}, url: {}, title: {}",
+                    image_link_type, image_url, image_title
+                );
+                let (whr, link_builder) = state.pop().unwrap();
+                assert_eq!(whr, Where::InLink);
+                state.push((
+                    Where::InImageInLink,
+                    link_builder.set_image(
+                        image_link_type,
+                        image_url.into_string(),
+                        image_title.into_string(),
+                    ),
+                ));
+            }
+
+            e @ Event::End(Tag::Image(..)) if !state.is_empty() => {
+                debug!("{:?}", e);
+                let (whr, link_builder) = state.pop().unwrap();
+                assert_eq!(whr, Where::InImageInLink);
+                state.push((Where::InLink, link_builder));
+            }
+
+            ref e @ Event::Text(ref t)
+                if state.last().map_or(Where::Elsewhere, |s| s.0)
+                    == Where::InImageInLink =>
+            {
+                debug!("{:?}", e);
+                let (whr, link_builder) = state.pop().unwrap();
+                assert_eq!(whr, Where::InImageInLink);
+                state.push((
+                    whr,
+                    link_builder.add_image_alt_text(t.to_string()),
+                ));
+            }
+
+            ref e @ Event::Text(ref t) if !state.is_empty() => {
+                debug!("{:?}", e);
+                let (whr, link_builder) = state.pop().unwrap();
+                assert_eq!(whr, Where::InLink);
+                state.push((whr, link_builder.add_text(t.to_string())));
+            }
+
+            Event::Code(c) if !state.is_empty() => {
+                debug!("code: {}", c);
+                let (whr, link_builder) = state.pop().unwrap();
+                state.push((whr, link_builder.add_text(c.to_string())));
+            }
+
+            // corner cases: Code within an Image, Link within an Image...
+            e if !state.is_empty() => {
+                error!("Unhandled event while 'in link': {:?}", e);
             }
 
             e => {
@@ -46,55 +113,7 @@ pub fn extract_links(parser: Parser) -> Result<Vec<Link>> {
             }
         }
     });
-    // We could also use `group_by`
+    assert!(state.is_empty());
 
-    // Iterate through Vec<Vec<Event>>
-    let processed = links.iter().map( |l| {
-        let mut lb = Link::builder();
-        lb = extract_start_link(lb, &l[0])?;
-
-        // TODO loop
-        match &l[1] {
-            Event::Text(s) => {
-                debug!("text: {}", s);
-                lb = lb.text(s);
-            }
-            Event::Start(Tag::Image(image_link_type, image_url, image_title)) => {
-                debug!(
-                    "image: link_type: {:?}, url: {}, title: {}",
-                    image_link_type, image_url, image_title
-                );
-                lb = lb.image(image_link_type, image_url, image_title);
-                if let Event::Text(lbl) = &l[2] {
-                    debug!("label: {}", lbl);
-                    lb = lb.label(lbl);
-                }
-            }
-            Event::Code(c) => {
-                debug!("code: {}", c);
-                lb = lb.text(c);
-            }
-            e => {
-                bail!("Expected text or image or code: {:?}", e);
-            }
-        }
-
-        lb.build()
-    }).collect::<Result<Vec<_>, _>>()?;
-
-    Ok(processed)
-}
-
-fn extract_start_link(lb: LinkBuilder, e: &Event) -> Result<LinkBuilder> {
-    if let Event::Start(Tag::Link(link_type, dest_url, title)) = e {
-        debug!(
-            "Link: link_type: {:?}, url: {}, title: {}",
-            link_type,
-            dest_url.as_ref(),
-            title.as_ref()
-        );
-        Ok(lb.type_url_title(link_type, dest_url.as_ref(), title.as_ref()))
-    } else {
-        bail!("Expected Event::Start")
-    }
+    links
 }

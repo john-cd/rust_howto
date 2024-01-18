@@ -29,10 +29,9 @@ fn main() -> Result<()> {
             parser::write_ref_defs_to(all_markdown, pathbuf)?;
         }
         Some(args::Commands::InlineLinks(pathargs)) => {
-            todo!();
-            // let pathbuf = path_or(pathargs, "/code/book/temp/inline_links.md");
-            // println!("Writing existing inline links to {:?}", pathbuf);
-            // parser::write_inline_links(all_markdown, pathbuf)?;
+            let pathbuf = path_or(pathargs, "/code/book/temp/inline_links.md");
+            println!("Writing existing inline links to {:?}", pathbuf);
+            parser::write_inline_links(all_markdown, pathbuf)?;
         }
         Some(args::Commands::Links(pathargs)) => {
             let pathbuf = path_or(pathargs, "/code/book/temp/all_links.md");
@@ -41,9 +40,11 @@ fn main() -> Result<()> {
         }
         Some(args::Commands::Test) => {
             let all_markdown: String = parser::get_test_markdown();
-            println!("{}", all_markdown);
+            // println!("{}", all_markdown);
             // TODO
-            // parser::extract_links(all_markdown);
+            let md = parser::get_test_markdown();
+            let path = "/code/book/temp/test.log";
+            parser::debug_parse_to(md, path)?;
         }
         // Add more subcommands here: Some(args::Commands::...) => { ... }
         None => {}

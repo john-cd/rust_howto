@@ -2,8 +2,8 @@
 
 use anyhow::Result;
 use once_cell::sync::Lazy;
-use url::Url;
 use tracing::info;
+use url::Url;
 
 pub struct LabelAndBadge(String, String);
 
@@ -28,7 +28,8 @@ fn extract_from_url(s: &str) -> Result<()> {
     Ok(())
 }
 
-/// Rule to create a reference label and/or a badge URL from a link URL
+/// Rule to create a reference label and/or a badge URL from a link
+/// URL
 #[derive(Debug, Default)]
 pub(crate) struct Rule<'a> {
     pub re: &'a str,                // Regex pattern to match the url

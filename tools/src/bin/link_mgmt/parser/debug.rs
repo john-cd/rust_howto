@@ -1,6 +1,5 @@
 use std::io::Write;
 
-use anyhow::bail;
 use anyhow::Result;
 use pulldown_cmark::Event;
 use pulldown_cmark::Parser;
