@@ -2,12 +2,10 @@
 
 finish links:
 
-- add badges to all src pages from crates.md
 - rename some of the IDs
 - review categories.md
-- review crates.md
-- move links in drafts
-- figure out the 404s when linkchecking
+- organize link-refs
+- figure out the 404s when linkchecking external websites
 
 polish the intro
 
@@ -16,6 +14,18 @@ review generate.sh
 explanation text for language pages
 
 pull request to little book of rust books
+
+tools
+
+- locate all autolink / inline references to external sites
+- identify duplicate links / labels
+- identify broken links
+- suggest label names based on URL type
+- generate catgeories.md
+- generate crates.md
+- autoreplace autolinks / inline links by ref links
+- generate *-refs.md files
+
 
 IDEs - add latest JetBrains tooling
 
