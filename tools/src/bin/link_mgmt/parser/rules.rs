@@ -3,6 +3,7 @@
 use anyhow::Result;
 use once_cell::sync::Lazy;
 use url::Url;
+use tracing::info;
 
 pub struct LabelAndBadge(String, String);
 
@@ -20,13 +21,14 @@ pub fn process(url: Url, existing_label: Option<&str>) -> LabelAndBadge {
 fn extract_from_url(s: &str) -> Result<()> {
     let u = Url::parse(s)?;
     if u.scheme() != "https" {
-        println!("Not-https: {}", u.as_str());
+        info!("Not-https: {}", u.as_str());
     }
     if let Some(d) = u.domain() {}
     //(u.path())
     Ok(())
 }
 
+/// Rule to create a reference label and/or a badge URL from a link URL
 #[derive(Debug, Default)]
 pub(crate) struct Rule<'a> {
     pub re: &'a str,                // Regex pattern to match the url

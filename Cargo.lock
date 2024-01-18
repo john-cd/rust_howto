@@ -3270,6 +3270,8 @@ dependencies = [
  "pulldown-cmark-to-cmark",
  "quick-xml",
  "regex",
+ "tracing",
+ "tracing-subscriber",
  "url",
  "walkdir",
 ]

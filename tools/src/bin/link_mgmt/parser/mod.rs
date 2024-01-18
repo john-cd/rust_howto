@@ -3,10 +3,13 @@ mod parse;
 mod rules;
 mod test;
 mod write;
+mod debug;
 
+use std::io::Write;
 use std::path::Path;
 
 use anyhow::Result;
+pub use link::Link;
 use pulldown_cmark::BrokenLink;
 use pulldown_cmark::CowStr;
 use pulldown_cmark::Options;
@@ -15,6 +18,7 @@ pub use test::*;
 
 // Private Functions
 
+// Parser options
 fn get_options() -> Options {
     // Set up options and parser.
     // Strikethroughs, etc... are not part of the CommonMark standard
@@ -26,6 +30,8 @@ fn get_options() -> Options {
     options
 }
 
+// Callback function for broken references
+//
 // In case the parser encounters any potential links that have a
 // broken reference (e.g [foo] when there is no [foo]:  entry at the
 // bottom) the provided callback will be called with the
@@ -54,10 +60,11 @@ pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
     println!("\nParsing markdown ---------------\n");
     let f = std::fs::File::create(path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
-    parse::debug_parse_to(parser, f)?;
+    debug::debug_parse_to(parser, f)?;
     Ok(())
 }
 
+// Write the reference definitions to a file
 pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
@@ -68,37 +75,41 @@ pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     Ok(())
 }
 
-// pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
-//     markdown_input: S,
-//     path: P,
-// ) -> Result<()> {
-//     let parser = Parser::new_ext(markdown_input.as_ref(),
-// get_options());     // let parser = parser.filter(|event| {
-//     //     match event {
-//     //     }
-//     // });
-//     let mut f = std::fs::File::create(path)?;
-//     // TODO
-//     Ok(())
-// }
+// Write all inline links (i.e., not written as reference-style links) to a file
+pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
+    markdown_input: S,
+    path: P,
+) -> Result<()> {
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options()); // let parser = parser.filter(|event| {
+    //     match event {
+    //     }
+    // });
+    let mut f = std::fs::File::create(path)?;
+    // TODO
+    Ok(())
+}
 
-// pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
-//     markdown_input: S,
-//     path: P,
-// ) -> Result<()> {
-//     let parser = Parser::new_ext(markdown_input.as_ref(),
-// get_options());
+// Write all links to a file
+pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
+    markdown_input: S,
+    path: P,
+) -> Result<()> {
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
+    let mut f = std::fs::File::create(path)?;
 
-//     let mut f = std::fs::File::create(path)?;
-//     // TODO
-//     let links: Vec<String> = vec![];
-//     if !links.is_empty() {
-//         for l in links {
-//             writeln!(&mut f, "{:?}", l)?;
-//         }
-//     }
-//     Ok(())
-// }
+    let links: Vec<Link> = parse::extract_links(parser)?;
+    if !links.is_empty() {
+        for l in links {
+            writeln!(&mut f, "{:?}\n{}\n{}\n{}\n", l, l.to_inline_link(), l.to_reference_link(), l.to_link_reference())?;
+        }
+    }
+    Ok(())
+}
+
+// TODO
+
+// let markdown_input_length = markdown_input.as_ref().len();
+// write_markdown_to(parser, markdown_input_length, f)?;
 
 //// Set up the parser. We can treat is as any other iterator.
 //// For each event, we print its details, such as the tag or string.

@@ -9,8 +9,9 @@ mod file;
 mod parser;
 
 fn main() -> Result<()> {
+    tracing_subscriber::fmt::init();
+
     let cli = args::parse_arguments();
-    // debug: println!("{:?}", cli);
 
     // Create temp directory
     tools::create_dir("/code/book/temp/")?;
@@ -28,18 +29,18 @@ fn main() -> Result<()> {
             parser::write_ref_defs_to(all_markdown, pathbuf)?;
         }
         Some(args::Commands::InlineLinks(pathargs)) => {
-            let pathbuf = path_or(pathargs, "/code/book/temp/inline_links.md");
-            println!("Writing existing inline links to {:?}", pathbuf);
+            todo!();
+            // let pathbuf = path_or(pathargs, "/code/book/temp/inline_links.md");
+            // println!("Writing existing inline links to {:?}", pathbuf);
             // parser::write_inline_links(all_markdown, pathbuf)?;
         }
         Some(args::Commands::Links(pathargs)) => {
             let pathbuf = path_or(pathargs, "/code/book/temp/all_links.md");
             println!("Writing existing links to {:?}", pathbuf);
-            // TODO parser::write_links(all_markdown, pathbuf)?;
+            parser::write_links(all_markdown, pathbuf)?;
         }
         Some(args::Commands::Test) => {
             let all_markdown: String = parser::get_test_markdown();
-            // file::read_all_markdown_files_in("./src/")?;
             println!("{}", all_markdown);
             // TODO
             // parser::extract_links(all_markdown);
