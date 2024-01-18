@@ -8,16 +8,16 @@ Consult the following sites for crate recommendations:
 - The Rust community’s official crate registry: [crates.io][crates-io]⮳
 - [Crates.io's most (recent) downloads][most-recent-downloads]⮳
 
-## Older resources
+or older resources, such as:
 
 - [Rust starter pack][rust-starter-pack]⮳
 - [stdx][stdx]⮳
 
 ## In this section
 
-- [Regex](regex.md)
-- [Serialization (Serde)](serialization.md)
-- [Time and date](time.md)
+- [Regex](./regex.md)
+- [Serialization (Serde)](./serialization.md)
+- [Time and date](./time.md)
 
 ## See also
 

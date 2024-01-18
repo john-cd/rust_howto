@@ -23,16 +23,17 @@
   - [Iterators](lang/iterators.md)
   - [Macros](lang/macros.md)
 
-- [Standard library and key crates](std/standard_library.md)
+- [Standard library](std/standard_library.md)
   - [Option](std/option.md)
   - [Vectors](std/vectors.md)
   - [HashMap](std/hashmaps.md)
   - [Strings](std/strings.md)
   - [Smart pointers](std/smart_pointers.md)
-  - [Key crates](std/key_crates.md)
-    - [Regex](std/regex.md)
-    - [Serialization (Serde)](std/serialization.md)
-    - [Time and date](std/time.md)
+
+- [Key crates](key/key_crates.md)
+  - [Regex](key/regex.md)
+  - [Serialization (Serde)](key/serialization.md)
+  - [Time and date](key/time.md)
 
 - [Cross-cutting concerns](concerns/cross_cutting_concerns.md)
   - [Automatic derivation](concerns/derive.md)
