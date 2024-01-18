@@ -1,5 +1,7 @@
 # Strings
 
+[![std-badge]][std]
+
 ## String type
 
 ```rust,editable

@@ -1,195 +1,69 @@
 # Crates
 
-  [![actix-web-badge]][actix-web]![Crates.io Total Downloads](https://img.shields.io/crates/d/actix-web)![Crates.io License](https://img.shields.io/crates/l/actix-web)
+Crates mentioned in this book, by alphabetic order.
 
-[![ansi-term-badge]][ansi-term]
+## A
 
-  [![anyhow-badge]][anyhow]
+[![actix-web-badge]][actix-web]  [![ansi-term-badge]][ansi-term]  [![anyhow-badge]][anyhow]  [![approx-badge]][approx]  [![arrow-rs-badge]][arrow-rs]  [![async-channel-badge]][async-channel] [![async-std-badge]][async-std] [![async-stream-badge]][async-stream]  [![async-trait-badge]][async-trait]
 
-  [![approx-badge]][approx]
+## B
 
-  [![arrow-rs-badge]][arrow-rs]
+[![base64-badge]][base64]  [![bitflags-badge]][bitflags]  [![byteorder-badge]][byteorder]
 
-  [![async-channel-badge]][async-channel]
+## C
 
-  [![async-std-badge]][async-std]
+[![cc-badge]][cc]  [![chrono-badge]][chrono]  [![clap-badge]][clap]  [![config-badge]][config]  [![confy-badge]][confy]  [![crossbeam-badge]][crossbeam]  [![crossbeam-channel-badge]][crossbeam-channel]  [![crux-badge]][crux]  [![csv-badge]][csv]
 
-  [![async-stream-badge]][async-stream]
+## D
 
-  [![async-trait-badge]][async-trait]
+[![data-encoding-badge]][data-encoding]  [![datafusion-badge]][datafusion]  [![dashmap-badge]][dashmap]  [![derive-more-badge]][derive-more]  [![diesel-badge]][diesel]  [![dotenv-badge]][dotenv]  [![dotenvy-badge]][dotenvy]  [![druid-badge]][druid]
 
-[![base64-badge]][base64]
+## E
 
-[![bitflags-badge]][bitflags]
+[![egui-badge]][egui]  [![embassy-badge]][embassy]  [![env-logger-badge]][env-logger]  [![envy-badge]][envy]  [![error-chain-badge]][error-chain]  [![eyre-badge]][eyre]
 
-[![byteorder-badge]][byteorder]
+## F
 
-[![cc-badge]][cc]
+[![flate2-badge]][flate2]  [![futures-badge]][futures]  [![futures-executor-badge]][futures-executor]
 
-[![chrono-badge]][chrono]
+## G - K
 
-  [![clap-badge]][clap]
+[![glob-badge]][glob]  [![hyper-badge]][hyper]  [![iced-rs-badge]][iced-rs]  [![image-badge]][image]
 
-  [![config-badge]][config]
+## L
 
-  [![confy-badge]][confy]
+[![lazy-static-badge]][lazy-static]  [![linfa-badge]][linfa]  [![log-badge]][log]  [![log4rs-badge]][log4rs]
 
-[![crossbeam-badge]][crossbeam]
+## M
 
-  [![crux-badge]][crux]
+[![memmap-badge]][memmap]  [![miette-badge]][miette]  [![mime-badge]][mime]  [![mio-badge]][mio]
 
-[![csv-badge]][csv]
+## N
 
-[![data-encoding-badge]][data-encoding]
+[![nalgebra-badge]][nalgebra]  [![ndarray-badge]][ndarray]  [![num-badge]][num]  [![num-cpus-badge]][num-cpus]
 
-  [![datafusion-badge]][datafusion]
+## O - Q
 
-  [![dashmap-badge]][dashmap]
+[![once-cell-badge]][once-cell]  [![paste-badge]][paste]  [![parking-lot-badge]][parking-lot]  [![percent-encoding-badge]][percent-encoding]  [![polars-badge]][polars]  [![postage-badge]][postage]  [![postgres-badge]][postgres]  [![quote-badge]][quote]
 
-  [![derive-more-badge]][derive-more]
+## R
 
-  [![diesel-badge]][diesel]
+[![rand-badge]][rand]  [![rand-distr-badge]][rand-distr]  [![rayon-badge]][rayon]  [![regex-badge]][regex]  [![reqwest-badge]][reqwest]  [![ring-badge]][ring]  [![rusqlite-badge]][rusqlite]  [![rustquant-badge]][rustquant]
 
-[![dotenv-badge]][dotenv]
+## S
 
-[![dotenvy-badge]][dotenvy]
+[![same-file-badge]][same-file]  [![sea-orm-badge]][sea-orm]  [![select-badge]][select]  [![semver-badge]][semver]  [![serde-badge]][serde]  [![serde-json-badge]][serde-json]  [![slint-badge]][slint]  [![smol-badge]][smol]  [![sqlx-badge]][sqlx]  [![std-badge]][std]  [![syslog-badge]][syslog]
 
-[![druid-badge]][druid]
+## T
 
-[![egui-badge]][egui]
+[![tar-badge]][tar]  [![tauri-badge]][tauri]  [![tempdir-badge]][tempdir]  [![thiserror-badge]][thiserror]  [![threadpool-badge]][threadpool]  [![tokio-badge]][tokio]  [![tokio-graceful-shutdown-badge]][tokio-graceful-shutdown]  [![toml-badge]][toml]  [![tower-badge]][tower]  [![tower-http-badge]][tower-http]  [![tonic-badge]][tonic]  [![tracing-badge]][tracing]  [![tracing-subscriber-badge]][tracing-subscriber]
 
-  [![embassy-badge]][embassy]
+## U
 
-[![env-logger-badge]][env-logger]
+[![url-badge]][url]  [![unicode-segmentation-badge]][unicode-segmentation]
 
-[![error-chain-badge]][error-chain]
+## V - Z
 
-[![eyre-badge]][eyre]
-
-[![flate2-badge]][flate2]
-
-[![futures-badge]][futures]
-
-[![futures-executor-badge]][futures-executor]
-
-[![glob-badge]][glob]
-
-[![hyper-badge]][hyper]
-
-[![iced-rs-badge]][iced-rs]
-
-[![image-badge]][image]
-
-[![lazy-static-badge]][lazy-static]
-
-[![linfa-badge]][linfa]
-
-[![log-badge]][log]
-
-[![log4rs-badge]][log4rs]
-
-[![memmap-badge]][memmap]
-
-[![miette-badge]][miette]
-
-[![mime-badge]][mime]
-
-  [![mio-badge]][mio]
-
-[![nalgebra-badge]][nalgebra]
-
-[![ndarray-badge]][ndarray]
-
-[![num-badge]][num]
-
-[![num-cpus-badge]][num-cpus]
-
-[![once-cell-badge]][once-cell]
-
-[![paste-badge]][paste]
-
-[![parking-lot-badge]][parking-lot]
-
-[![percent-encoding-badge]][percent-encoding]
-
-[![polars-badge]][polars]
-
-[![postage-badge]][postage]
-
-[![postgres-badge]][postgres]
-
-[![quote-badge]][quote]
-
-[![rand-badge]][rand]
-
-[![rand-distr-badge]][rand-distr]
-
-[![rayon-badge]][rayon]
-
-[![regex-badge]][regex]
-
-[![reqwest-badge]][reqwest]
-
-[![ring-badge]][ring]
-
-[![rusqlite-badge]][rusqlite]
-
-[![rustquant-badge]][rustquant]
-
-[![same-file-badge]][same-file]
-
-[![sea-orm-badge]][sea-orm]
-
-[![select-badge]][select]
-
-[![semver-badge]][semver]
-
-[![serde-badge]][serde]
-
-[![serde-json-badge]][serde-json]
-
-  [![smol-badge]][smol]
-
-[![sqlx-badge]][sqlx]
-
-[![std-badge]][std]
-
-[![syslog-badge]][syslog]
-
-[![tar-badge]][tar]
-
-[![tauri-badge]][tauri]
-
-[![tempdir-badge]][tempdir]
-
-[![thiserror-badge]][thiserror]
-
-[![threadpool-badge]][threadpool]
-
-[![tokio-badge]][tokio]
-
-[![tokio-graceful-shutdown-badge]][tokio-graceful-shutdown]
-
-[![toml-badge]][toml]
-
-[![tower-badge]][tower]
-
-[![tower-http-badge]][tower-http]
-
-[![tonic-badge]][tonic]
-
-[![tracing-badge]][tracing]
-
-[![tracing-subscriber-badge]][tracing-subscriber]
-
-[![url-badge]][url]
-
-[![unicode-segmentation-badge]][unicode-segmentation]
-
-[![walkdir-badge]][walkdir]
-
-[![watt-badge]][watt]
-
-[![yew-badge]][yew]
+[![walkdir-badge]][walkdir]  [![watt-badge]][watt]  [![yew-badge]][yew]
 
 {{#include ../refs/link-refs.md}}

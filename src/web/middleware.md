@@ -2,6 +2,8 @@
 
 ## Tower
 
+[![tower-badge]][tower]
+
 [Tower][tower]⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
 Tower provides a simple core abstraction, the `Service` trait, which represents an asynchronous function taking a request and returning either a response or an error. It can be used to model both clients and servers.
@@ -15,9 +17,9 @@ A number of third-party libraries support `Tower` and the `Service` trait: [hype
 
 ## Tower HTTP
 
-HTTP specific Tower utilities
+[![tower-http-badge]][tower-http]
 
-[tower_http documentation][tower-http]⮳
+[Tower HTTP][tower-http]⮳ contains HTTP specific Tower utilities.
 
 ```rust,noplayground,ignore
 {{#include ../../deps/examples/tower_http.rs}}

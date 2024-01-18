@@ -6,6 +6,8 @@ The Rust standard library provides smart pointer types, such as `Mutex<T>` and `
 
 ## Mutex
 
+[![std-badge]][std]
+
 Allow access to data from one thread at a time.
 
 ```rust,editable
@@ -14,9 +16,11 @@ Allow access to data from one thread at a time.
 
 ## Parking Lot
 
-[Parking Lot (crates.io)][parking-lot-crate]⮳ provides implementations of `Mutex`, `RwLock`, `Condvar` and `Once` that are smaller, faster and more flexible than those in the Rust standard library. It also provides a `ReentrantMutex` type.
+[![parking-lot-badge]][parking-lot] [(crates.io)][parking-lot-crate]
 
-`std::sync::Mutex` works fine, but Parking Lot is faster.
+[Parking Lot][parking-lot]⮳ provides implementations of `Mutex`, `RwLock`, `Condvar` and `Once` that are smaller, faster and more flexible than those in the Rust standard library. It also provides a `ReentrantMutex` type.
+
+`std::sync::Mutex` works fine, but `Parking Lot` is faster.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/shared_state_parking_lot.rs}}
@@ -27,6 +31,8 @@ Allow access to data from one thread at a time.
 ```
 
 ## Atomics
+
+[![std-badge]][std] [![crossbeam-badge]][crossbeam]
 
 Atomic types in [std::sync::atomic][std::sync::atomic]⮳ provide primitive shared-memory communication between threads, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including `AtomicBool`, `AtomicIsize`, `AtomicUsize`, `AtomicI8`, `AtomicU16`, etc.
 

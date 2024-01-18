@@ -1,6 +1,8 @@
 # Futures crate
 
-The [Futures crate][futures-crate]⮳ provides a number of core abstractions for writing asynchronous code.
+[![futures-badge]][futures]  [crates.io][futures-crate]
+
+The [Futures][futures]⮳ crate provides a number of core abstractions for writing asynchronous code.
 
 In most cases, you will use this crate directly only when writing async code intended to work for multiple runtimes.
 Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](./tokio.md) for example.
@@ -26,5 +28,9 @@ The `futures` crate provides an extension trait that provides a variety of conve
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/futures3.rs}}
 ```
+
+## See also
+
+[![futures-executor-badge]][futures-executor]
 
 {{#include ../refs/link-refs.md}}

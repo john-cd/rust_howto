@@ -2,18 +2,16 @@
 
 [Are we learning yet?][are-we-learning-yet?]⮳
 
-[Linfa][linfa-crate]⮳
-
-[Linfa (home page)][linfa-website]⮳
+[![linfa-badge]][linfa] [(crates.io)][linfa-crate] [(home page)][linfa-website]
 
 [SmartCore][smartcore-website]⮳
 
 [OpenCV (example)][opencv-example]⮳
 
-[Genetic algos in Rust][watchmaker]⮳
+[Watchmaker (genetic algos in Rust)][watchmaker]⮳
 
 ## Quant
 
-[rustquant][rustquant]⮳
+[![rustquant-badge]][rustquant]
 
 {{#include ../refs/link-refs.md}}

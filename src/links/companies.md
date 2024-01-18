@@ -1,11 +1,11 @@
-# Companies that use Rust
+# Companies that use or contribute to Rust
 
-[Mozilla]⮳
+[Mozilla][mozilla-website]⮳
 
-[Ferrous Systems]⮳
+[Ferrous Systems][ferrous-systems-website]⮳
 
-[Embark Studios]⮳
+[Embark Studios][embark-studios-website]⮳
 
-[Freiheit]⮳
+[Freiheit][freiheit-website]⮳
 
 {{#include ../refs/company-refs.md}}

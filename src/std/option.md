@@ -1,5 +1,7 @@
 # Option
 
+[![std-badge]][std]
+
 Rust has no `null`. Instead, use [Option][std::option::Option]⮳:
 
 ```rust,editable

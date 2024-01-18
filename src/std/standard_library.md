@@ -1,14 +1,17 @@
 # Standard Library
 
-- [Option](../std/option.md)
-- [Vectors](../std/vectors.md)
-- [Hashmap](../std/hashmaps.md)
-- [Strings](../std/strings.md)
-- [Smart pointers](../std/smart_pointers.md)
+[![std-badge]][std]
+
+- [Option](option.md)
+- [Vectors](vectors.md)
+- [Hashmap](hashmaps.md)
+- [Strings](strings.md)
+- [Smart pointers](smart_pointers.md)
 
 ## Key Crates
 
 - [Regex](regex.md)
 - [Serialization (Serde)](serialization.md)
+- [Time and date](time.md)
 
 {{#include ../refs/link-refs.md}}

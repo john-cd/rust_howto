@@ -1,5 +1,5 @@
 # HTTP clients
 
-[Reqwest][reqwest]⮳
+[![reqwest-badge]][reqwest]
 
 {{#include ../refs/link-refs.md}}

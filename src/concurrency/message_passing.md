@@ -6,11 +6,15 @@ Message passing in `async` programming is covered in a separate page: [async cha
 
 ## Multiple producers, single consumer
 
+[![std-badge]][std]
+
 ```rust,editable
 {{#include ../../deps/examples/message_passing_mpsc.rs}}
 ```
 
 ## Crossbeam_channel
+
+[![crossbeam-channel-badge]][crossbeam-channel]
 
 Multi-producer multi-consumer channels for message passing.
 
@@ -24,9 +28,11 @@ Example using specialized channels for tickers and timeout
 {{#include ../../deps/examples/message_passing_crossbeam_channel_after_tick.rs}}
 ```
 
-## Reference
+## See also
 
 [![crossbeam-badge]][crossbeam]
+
+[![postage-badge]][postage]
 
 [Message Passing (rust book)][message-passing-rust-book]⮳
 

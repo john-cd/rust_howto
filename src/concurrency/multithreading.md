@@ -2,6 +2,8 @@
 
 ## Spawn, join
 
+[![std-badge]][std]
+
 ```rust,editable
 {{#include ../../deps/examples/multithreading_spawn_join.rs}}
 ```
@@ -9,6 +11,8 @@
 When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running.
 
 ## Scoped threads
+
+[![std-badge]][std]
 
 [Scoped threads][std::thread::scope]⮳
 
@@ -18,7 +22,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Rayon - parallel processing
 
-[Rayon (docs)][rayon]⮳
+[![rayon-badge]][rayon]
 
 [Rayon (github)][rayon-github]⮳
 
@@ -43,5 +47,9 @@ Rayon implements [join][join]⮳, [scope][scope]⮳, [spawn][spawn]⮳ that may 
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}
 ```
+
+## See also
+
+[![threadpool-badge]][threadpool]
 
 {{#include ../refs/link-refs.md}}

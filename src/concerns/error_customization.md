@@ -5,9 +5,7 @@ Use `thiserror` if you are a library that wants to design your own dedicated err
 
 ## Anyhow
 
-[![anyhow-badge]][anyhow]
-
-[Anyhow (crates.io)][anyhow-crate]⮳
+[![anyhow-badge]][anyhow] [(crates.io)][anyhow-crate]
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
@@ -18,6 +16,8 @@ Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return
 Anyhow works with any error type that has an impl of `std::error::Error`, including ones defined in your crate e.g. using `thiserror`.
 
 ## thisError
+
+[![thiserror-badge]][thiserror]
 
 [thisError][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
@@ -40,7 +40,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[Miette (lib.rs)][miette-librs]⮳ prints fancy diagnostics upon error.
+[![miette-badge]][miette] [(lib.rs)][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 {{#include ../../deps/examples/miette/mylib.rs}}
@@ -52,7 +52,9 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## See also
 
-[eyre][eyre]⮳
+[![eyre-badge]][eyre]
+
+[![error-chain-badge]][error-chain]
 
 Do not use [Error Chain][error-chain]⮳, which is deprecated.
 

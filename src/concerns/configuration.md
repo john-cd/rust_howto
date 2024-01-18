@@ -2,6 +2,8 @@
 
 ## Environment variables
 
+[![dotenvy-badge]][dotenvy]
+
 [dotenvy][dotenvy]⮳ supersedes [dotenv][dotenv]⮳.
 
 ```rust,editable,no_run
@@ -17,6 +19,8 @@ To retrieve a single environment variable,
 [Working with environment variables in Rust][working-with-env-variables]⮳
 
 ### Envy
+
+[![envy-badge]][envy]
 
 Envy can deserialize environment variables into typesafe struct.
 
@@ -44,5 +48,9 @@ It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 ```rust,editable,no_run
 {{#include ../../deps/examples/confy.rs}}
 ```
+
+## See also
+
+[![dotenv-badge]][dotenv]
 
 {{#include ../refs/link-refs.md}}

@@ -32,6 +32,7 @@
   - [Key crates](std/key_crates.md)
     - [Regex](std/regex.md)
     - [Serialization (Serde)](std/serialization.md)
+    - [Time and date](std/time.md)
 
 - [Cross-cutting concerns](concerns/cross_cutting_concerns.md)
   - [Automatic derivation](concerns/derive.md)

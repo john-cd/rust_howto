@@ -4,13 +4,10 @@
 
 ## See also
 
-[Serde JSON (lib.rs)][serde-json-librs]
+[![serde-json-badge]][serde-json]  [(lib.rs)][serde-json-librs]
 
-[Monostate for serde (GitHub)][monostate-github]
+[Monostate for serde (github)][monostate-github]
 
-[Serde-ignored (GitHub)][serde-ignored-github]
+[Serde-ignored (github)][serde-ignored-github]
 
-[monostate-github]: https://github.com/dtolnay/monostate
-[serde-ignored-github]: https://github.com/dtolnay/serde-ignored
-[serde-json-librs]: https://lib.rs/crates/serde_json
 {{#include ../refs/link-refs.md}}

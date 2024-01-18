@@ -1,10 +1,8 @@
 # Logs
 
-[![tracing-badge]][tracing]⮳
+[![tracing-badge]][tracing] [(github)][tracing-github]
 
-[Tokio tracing (GitHub)][tracing-github]⮳
-
-[tracing-subscriber (crates)][tracing-subscriber-crate]⮳
+[![tracing-subscriber-badge]][tracing-subscriber] [(crates.io)][tracing-subscriber-crate]
 
 Add to `Cargo.toml`
 
@@ -73,5 +71,13 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 ## OpenTelemetry
 
 [OpenTelemetry Rust documentation][opentelemetry-rust]⮳
+
+## See also
+
+[![env-logger-badge]][env-logger]
+
+[![log-badge]][log]
+
+[![log4rs-badge]][log4rs]
 
 {{#include ../refs/link-refs.md}}

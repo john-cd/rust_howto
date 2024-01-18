@@ -66,6 +66,9 @@
 [crossbeam-badge]: https://badge-cache.kominick.com/crates/v/crossbeam.svg?label=crossbeam
 [crossbeam]: https://docs.rs/crossbeam/
 
+[crossbeam-channel-badge]: https://badge-cache.kominick.com/crates/v/crossbeam_channel.svg?label=crossbeam_channel
+[crossbeam-channel]: https://docs.rs/crossbeam-channel/
+
 [crux-badge]: https://badge-cache.kominick.com/crates/v/crux.svg?label=crux
 [crux]: https://docs.rs/crux/
 [crux-github]: https://redbadger.github.io/crux/
@@ -114,6 +117,9 @@
 
 [env-logger-badge]: https://badge-cache.kominick.com/crates/v/env_logger.svg?label=env_logger
 [env-logger]: https://docs.rs/env_logger/
+
+[envy-badge]: https://badge-cache.kominick.com/crates/v/envy.svg?label=envy
+[envy]: https://docs.rs/envy/latest/envy/
 
 [error-chain-badge]: https://badge-cache.kominick.com/crates/v/error-chain.svg?label=error-chain
 [error-chain]: https://docs.rs/error-chain/
@@ -237,6 +243,7 @@
 
 [regex-badge]: https://badge-cache.kominick.com/crates/v/regex.svg?label=regex
 [regex]: https://docs.rs/regex/
+[regex-github]: https://github.com/rust-lang/regex
 
 [reqwest-badge]: https://badge-cache.kominick.com/crates/v/reqwest.svg?label=reqwest
 [reqwest]: https://docs.rs/reqwest/
@@ -272,6 +279,10 @@
 
 [serde-json-badge]: https://badge-cache.kominick.com/crates/v/serde_json.svg?label=serde_json
 [serde-json]: https://docs.rs/serde_json/
+
+[slint-badge]: https://badge-cache.kominick.com/crates/v/slint.svg?label=slint
+[slint]: https://docs.rs/slint/
+[slint-website]: https://slint.dev/
 
 [smartcore-website]: https://smartcorelib.org/
 

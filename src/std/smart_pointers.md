@@ -1,10 +1,14 @@
 # Smart Pointers
 
+[![std-badge]][std]
+
 - `Rc<T>` enables multiple owners of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 
 ## Box
+
+[![box-rust-book-badge]][box-rust-book]
 
 `Box<T>` allow you to store data on the heap rather than the stack. What remains on the stack is the pointer to the heap data.
 
@@ -15,8 +19,6 @@ Use when
 
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
-
-[![box-rust-book-badge]][box-rust-book]
 
 ## Rc
 

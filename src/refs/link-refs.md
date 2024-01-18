@@ -2,6 +2,7 @@
 
 <!-- Tools for Rust -->
 [cargo-book]: https://doc.rust-lang.org/cargo/index.html
+[cargo-expand]: https://docs.rs/crate/cargo-expand/latest
 [cargo-expand-github]: https://github.com/dtolnay/cargo-expand
 [cargo-generate-github]: https://cargo-generate.github.io/cargo-generate/index.html
 [cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
@@ -173,3 +174,11 @@
 [drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
 [repo]: https://github.com/john-cd/rust_howto
 [todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
+
+<!-- To organize -->
+[monostate-github]: https://github.com/dtolnay/monostate
+[serde-ignored-github]: https://github.com/dtolnay/serde-ignored
+[serde-json-librs]: https://lib.rs/crates/serde_json
+[building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
+[rust-on-nails-website]: https://rust-on-nails.com/
+[loco-article]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails

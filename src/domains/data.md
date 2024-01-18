@@ -1,11 +1,12 @@
 # Data and ETL
 
-| Crate | Book | Repo |
-| ----- | ---- | ---- |
-| [![polars-badge]][polars] | [polars (book)][polars-book]⮳ | [polars (github)][polars-github]⮳ |
 
-[![arrow-rs-badge]][arrow-rs] [arrow-rs (github)][arrow-rs-github]⮳: official Rust implementation of Apache Arrow
+[![polars-badge]][polars]  [(book)][polars-book]  [(github)][polars-github]
 
-Apache Arrow DataFusion [![datafusion-badge]][datafusion] SQL Query Engine
+[![arrow-rs-badge]][arrow-rs]  [(github)][arrow-rs-github] is the official Rust implementation of `Apache Arrow`
+
+[![datafusion-badge]][datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
+
+[![csv-badge]][csv]
 
 {{#include ../refs/link-refs.md}}
