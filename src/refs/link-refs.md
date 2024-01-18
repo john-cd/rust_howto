@@ -124,7 +124,6 @@
 [blessed-rs]: https://blessed.rs/crates/
 [easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [learning-rust-linked-lists]: https://rust-unofficial.github.io/too-many-lists/index.html
-[programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274/
 [rust-cli-book]: https://rust-cli.github.io/book/index.html
 [rust-by-practice-book]: https://practice.rs/
 [rust-cookbook-fork]: https://jamesgraves.github.io/rust-cookbook/
@@ -136,6 +135,12 @@
 [rust-quizz]: https://dtolnay.github.io/rust-quiz/
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
 [rustwasm-book]: https://rustwasm.github.io/docs/book/
+
+<!-- Printed Books -->
+[effective-rust]: https://www.oreilly.com/library/view/effective-rust/9781098151393/
+[programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274/
+[programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
+[rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817/
 
 <!-- Blogs / Tutorials / Others -->
 [announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
@@ -182,3 +187,13 @@
 [building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
 [rust-on-nails-website]: https://rust-on-nails.com/
 [loco-article]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
+[actix]: https://github.com/actix/actix
+[actors-with-tokio]: https://ryhl.io/blog/actors-with-tokio/
+[await-tree]: https://crates.io/crates/await-tree
+[ractor]: https://crates.io/crates/ractor
+[riker]: https://riker.rs/
+[tokio-current-thread-runtime]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
+[tokio-localset]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
+[pyo3-website]: https://pyo3.rs/v0.20.2/
+[ruff-website]: https://astral.sh/ruff
+[pyoxidizer-github]: https://github.com/indygreg/PyOxidizer

@@ -38,22 +38,16 @@ fn main() {
 
 ## Alternatives
 
-[Actix][Actix]⮳
+[Actix][actix]⮳
 
-[Ractor][Ractor]⮳
+[Ractor][ractor]⮳
 
 ## Utilities
 
-[Await tree][Await tree]⮳
+[Await tree][await-tree]⮳
 
 ## Reference
 
-[Actors with Tokio][Actors with Tokio]⮳
-
-[Actix]: https://github.com/actix/actix
-[Actors with Tokio]: https://ryhl.io/blog/actors-with-tokio/
-[Await tree]: https://crates.io/crates/await-tree
-[Ractor]: https://crates.io/crates/ractor
-[Riker]: https://riker.rs/
+[Actors with Tokio][actors-with-tokio]⮳
 
 {{#include ../refs/link-refs.md}}
