@@ -30,4 +30,4 @@
 [ex-cc-static-bundled-cpp]: development_tools/build_tools.html#compile-and-link-statically-to-a-bundled-c-library-1
 [ex-cc-custom-defines]: development_tools/build_tools.html#compile-a-c-library-while-setting-custom-defines
 
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}

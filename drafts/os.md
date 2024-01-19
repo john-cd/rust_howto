@@ -9,7 +9,6 @@
 | [Continuously process child process' outputs][ex-continuous-process-output] | [![std-badge]][std] | [![cat-os-badge]][cat-os][![cat-text-processing-badge]][cat-text-processing] |
 | [Read environment variable][ex-read-env-variable] | [![std-badge]][std] | [![cat-os-badge]][cat-os] |
 
-
 [ex-parse-subprocess-output]: os/external.html#run-an-external-command-and-process-stdout
 [ex-parse-subprocess-input]: os/external.html#run-an-external-command-passing-it-stdin-and-check-for-an-error-code
 [ex-run-piped-external-commands]: os/external.html#run-piped-external-commands
@@ -17,5 +16,4 @@
 [ex-continuous-process-output]: os/external.html#continuously-process-child-process-outputs
 [ex-read-env-variable]: os/external.html#read-environment-variable
 
-
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}

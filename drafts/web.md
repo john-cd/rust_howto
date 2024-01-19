@@ -72,4 +72,4 @@
 
 [ex-basic-authentication]: web/clients/authentication.html#basic-authentication
 
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}

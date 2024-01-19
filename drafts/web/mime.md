@@ -6,4 +6,4 @@
 
 {{#include mime/request.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

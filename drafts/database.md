@@ -14,4 +14,4 @@
 [ex-postgres-insert-query-data]: database/postgres.html#insert-and-query-data
 [ex-postgres-aggregate-data]: database/postgres.html#aggregate-data
 
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}

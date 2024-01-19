@@ -4,4 +4,4 @@
 {{#include sorting/sort_float.md}}
 {{#include sorting/sort_struct.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

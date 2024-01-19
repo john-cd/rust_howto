@@ -4,4 +4,4 @@
 
 {{#include string_parsing/from_str.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

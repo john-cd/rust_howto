@@ -6,4 +6,4 @@
 
 {{#include complex/endian-byte.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

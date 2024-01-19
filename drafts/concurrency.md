@@ -15,7 +15,6 @@
 | [Map-reduce in parallel][ex-rayon-map-reduce] | [![rayon-badge]][rayon] | [![cat-concurrency-badge]][cat-concurrency] |
 | [Generate jpg thumbnails in parallel][ex-rayon-thumbnails] | [![rayon-badge]][rayon] [![glob-badge]][glob] [![image-badge]][image] | [![cat-concurrency-badge]][cat-concurrency][![cat-filesystem-badge]][cat-filesystem] |
 
-
 [ex-crossbeam-spawn]: concurrency/threads.html#spawn-a-short-lived-thread
 [ex-crossbeam-pipeline]: concurrency/threads.html#create-a-parallel-pipeline
 [ex-crossbeam-spsc]: concurrency/threads.html#pass-data-between-two-threads
@@ -29,4 +28,4 @@
 [ex-rayon-map-reduce]: concurrency/parallel.html#map-reduce-in-parallel
 [ex-rayon-thumbnails]: concurrency/parallel.html#generate-jpg-thumbnails-in-parallel
 
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}
