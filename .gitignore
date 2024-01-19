@@ -4,6 +4,7 @@
 hello.txt
 file1.txt
 *.log
+*.Identifier
 
 # Windows ------------------------
 

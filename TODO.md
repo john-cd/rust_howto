@@ -3,13 +3,14 @@
 finish links:
 
 - rename some of the IDs
-- review categories.md
 - organize link-refs
-- figure out the 404s when linkchecking external websites
 
 polish the intro
 
 review generate.sh
+
+- review categories.md
+- figure out the 404s when linkchecking external websites
 
 explanation text for language pages
 
@@ -25,7 +26,6 @@ tools
 - generate crates.md
 - autoreplace autolinks / inline links by ref links
 - generate *-refs.md files
-
 
 IDEs - add latest JetBrains tooling
 

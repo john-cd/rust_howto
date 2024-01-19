@@ -2306,6 +2306,7 @@ dependencies = [
  "miette",
  "once_cell",
  "parking_lot",
+ "rand",
  "rayon",
  "regex",
  "reqwest",
