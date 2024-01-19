@@ -6,4 +6,4 @@
 
 {{#include handle/backtrace.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

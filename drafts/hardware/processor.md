@@ -2,4 +2,4 @@
 
 {{#include processor/cpu-count.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

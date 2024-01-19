@@ -6,4 +6,4 @@
 
 {{#include tar/tar-strip-prefix.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

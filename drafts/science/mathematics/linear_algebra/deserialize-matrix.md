@@ -1,4 +1,5 @@
 ## (De)-Serialize a Matrix
+
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
 Serialize and deserialize a matrix to and from JSON. Serialization is taken care of

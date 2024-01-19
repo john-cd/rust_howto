@@ -2,4 +2,4 @@
 
 {{#include server/listen-unused.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

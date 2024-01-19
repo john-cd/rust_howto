@@ -32,4 +32,4 @@
 [ex-standard-deviation]: mathematics/statistics.html#standard-deviation
 [big-integers]: mathematics/miscellaneous.html#big-integers
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

@@ -12,4 +12,4 @@
 
 {{#include parallel/rayon-thumbnails.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

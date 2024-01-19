@@ -19,4 +19,4 @@
 [ex-unicode-graphemes]: text/string_parsing.html#collect-unicode-graphemes
 [string_parsing-from_str]: text/string_parsing.html#implement-the-fromstr-trait-for-a-custom-struct
 
-{{#include links.md}}
+{{#include ../refs/link-refs.md}}

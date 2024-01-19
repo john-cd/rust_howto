@@ -10,4 +10,4 @@
 
 {{#include regex/replace.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}

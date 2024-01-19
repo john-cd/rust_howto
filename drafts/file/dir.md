@@ -16,4 +16,4 @@
 
 {{#include dir/ignore-case.md}}
 
-{{#include ../links.md}}
+{{#include ../refs/link-refs.md}}
