@@ -4152,6 +4152,7 @@ dependencies = [
  "pulldown-cmark",
  "pulldown-cmark-to-cmark",
  "quick-xml",
+ "rand",
  "regex",
  "tracing",
  "tracing-subscriber",

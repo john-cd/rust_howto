@@ -36,6 +36,8 @@ pub enum Commands {
     Debug(PathArgs),
 
     Test,
+
+    ExtractExamples,
 }
 
 #[derive(Args, Debug)]

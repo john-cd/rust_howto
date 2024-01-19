@@ -16,6 +16,7 @@ pulldown-cmark = "0.9.3"
 # pulldown-cmark = { version = "0.9.2", default-features = false, features = ["simd"] }
 pulldown-cmark-to-cmark = "11.0.2"
 quick-xml = "0.31.0"
+rand = "0.8.5"
 regex = "1.10.2"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
