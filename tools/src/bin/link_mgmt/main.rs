@@ -5,9 +5,9 @@ use std::path::PathBuf;
 use anyhow::Result;
 
 mod args;
+mod extract;
 mod file;
 mod parser;
-mod extract;
 
 fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
@@ -48,9 +48,14 @@ fn main() -> Result<()> {
             parser::debug_parse_to(md, path)?;
         }
         Some(args::Commands::ExtractExamples) => {
+            let code_dst_dir = "/code/deps/examples/temp/";
+            tools::create_dir(code_dst_dir)?;
             let path = "/code/drafts/";
             println!("Extracting examples from .md files in {:?}", path);
-            extract::extract_code_from_all_markdown_files_in(path)?;
+            extract::extract_code_from_all_markdown_files_in(
+                path,
+                code_dst_dir,
+            )?;
         }
         // Add more subcommands here: Some(args::Commands::...) => { ... }
         _ => {}
