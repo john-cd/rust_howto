@@ -1,6 +1,5 @@
 # Data and ETL
 
-
 [![polars-badge]][polars]  [(book)][polars-book]  [(github)][polars-github]
 
 [![arrow-rs-badge]][arrow-rs]  [(github)][arrow-rs-github] is the official Rust implementation of `Apache Arrow`
