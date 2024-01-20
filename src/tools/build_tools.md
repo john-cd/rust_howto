@@ -38,7 +38,7 @@ error-chain = "0.11"
 ### `build.rs`
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/cc-bundled-static.rs}
+{#include ../../deps/examples/cc-bundled-static.rs}
 ```
 
 ### `src/hello.c`
@@ -58,7 +58,7 @@ void greet(const char* name) {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-{#include ../../../deps/examples/cc-bundled-static2.rs}
+{#include ../../deps/examples/cc-bundled-static2.rs}
 ```
 
 ## Compile and link statically to a bundled C++ library
@@ -81,7 +81,7 @@ cc = "1"
 ### `build.rs`
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/cc-bundled-cpp.rs}
+{#include ../../deps/examples/cc-bundled-cpp.rs}
 ```
 
 ### `src/foo.cpp`
@@ -99,7 +99,7 @@ int multiply(int x, int y) {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-{#include ../../../deps/examples/cc-bundled-cpp2.rs}
+{#include ../../deps/examples/cc-bundled-cpp2.rs}
 ```
 
 [cc-build-cpp]: https://docs.rs/cc/*/cc/struct.Build.html#method.cpp
@@ -129,7 +129,7 @@ cc = "1"
 ### `build.rs`
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/cc-defines.rs}
+{#include ../../deps/examples/cc-defines.rs}
 ```
 
 ### `src/foo.c`
@@ -148,7 +148,7 @@ void print_app_info() {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-{#include ../../../deps/examples/cc-defines2.rs}
+{#include ../../deps/examples/cc-defines2.rs}
 ```
 
 [`cc::Build::define`]: https://docs.rs/cc/*/cc/struct.Build.html#method.define

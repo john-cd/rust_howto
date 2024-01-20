@@ -11,7 +11,7 @@ trait.  [`File::create`] opens a [`File`] for writing, [`File::open`] for
 reading.
 
 ```rust,editable
-{#include ../../../deps/examples/read-file.rs}
+{#include ../../deps/examples/read-file.rs}
 ```
 
 ## Avoid writing and reading from a same file
@@ -23,7 +23,7 @@ other handles. In this example, the handles of file to be read from and
 to be written to are tested for equality.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/same-file.rs}
+{#include ../../deps/examples/same-file.rs}
 ```
 
 ```bash
@@ -51,7 +51,7 @@ behind the memory map is not being modified at the same time by another process
 or else a [race condition] occurs.
 
 ```rust,editable
-{#include ../../../deps/examples/memmap.rs}
+{#include ../../deps/examples/memmap.rs}
 ```
 
 [`same_file::Handle`]: https://docs.rs/same-file/*/same_file/struct.Handle.html

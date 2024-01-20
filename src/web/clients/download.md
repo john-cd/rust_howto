@@ -12,7 +12,7 @@ Creates a target [`File`] with name obtained from [`Response::url`] within
 The temporary directory is automatically removed on program exit.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/basic.rs}
+{#include ../../deps/examples/basic.rs}
 ```
 
 ## POST a file to paste-rs
@@ -27,7 +27,7 @@ the file uploads and the response returns.  [`read_to_string`] returns the
 response and displays in the console.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/post-file.rs}
+{#include ../../deps/examples/post-file.rs}
 ```
 
 ## Make a partial download with HTTP range headers
@@ -43,7 +43,7 @@ reqwest module.  The [Range] header specifies the chunk size and position.
 The Range header is defined in [RFC7233][HTTP Range RFC7233].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/partial.rs}
+{#include ../../deps/examples/partial.rs}
 ```
 
 [`Client::post`]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.post

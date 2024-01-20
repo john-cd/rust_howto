@@ -8,7 +8,7 @@ Runs `git log --oneline` as an external [`Command`] and inspects its [`Output`]
 using [`Regex`] to get the hash and message of the last 5 commits.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/process-output.rs}
+{#include ../../deps/examples/process-output.rs}
 ```
 
 ## Run an external command passing it stdin and check for an error code
@@ -19,7 +19,7 @@ Opens the `python` interpreter using an external [`Command`] and passes it a
 python statement for execution. [`Output`] of statement is then parsed.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/send-input.rs}
+{#include ../../deps/examples/send-input.rs}
 ```
 
 ## Run piped external commands
@@ -34,7 +34,7 @@ sort -hr | head -n 10`.
 [`Stdio::piped`] between parent and child.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/piped.rs}
+{#include ../../deps/examples/piped.rs}
 ```
 
 ## Redirect both stdout and stderr of child process to the same file
@@ -51,7 +51,7 @@ The below recipe is equivalent to run the Unix shell command `ls
 . oops >out.txt 2>&1`.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/error-file.rs}
+{#include ../../deps/examples/error-file.rs}
 ```
 
 ## Continuously process child process' outputs
@@ -67,7 +67,7 @@ The below recipe is equivalent to the Unix shell command
 `journalctl | grep usb`.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/continuous.rs}
+{#include ../../deps/examples/continuous.rs}
 ```
 
 ## Read Environment Variable
@@ -77,7 +77,7 @@ The below recipe is equivalent to the Unix shell command
 Reads an environment variable via [std::env::var].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/read-env-variable.rs}
+{#include ../../deps/examples/read-env-variable.rs}
 ```
 
 [`File::try_clone`]: https://doc.rust-lang.org/std/fs/struct.File.html#method.try_clone

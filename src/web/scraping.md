@@ -11,7 +11,7 @@ Call [`filter_map`] on the [`Selection`] retrieves URLs
 from links that have the "href" [`attr`] (attribute).
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/extract-links.rs}
+{#include ../../deps/examples/extract-links.rs}
 ```
 
 ## Check a webpage for broken links
@@ -28,7 +28,7 @@ The task makes a request to the links with [reqwest] and verifies
 [`StatusCode`].  Then the tasks `await` completion before ending the program.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/broken.rs}
+{#include ../../deps/examples/broken.rs}
 ```
 
 ## Extract all unique links from a MediaWiki markup
@@ -42,7 +42,7 @@ look for all entries of internal and external links with
 MediaWiki link syntax is described [here][MediaWiki link syntax].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/unique.rs}
+{#include ../../deps/examples/unique.rs}
 ```
 
 [`attr`]: https://docs.rs/select/*/select/node/struct.Node.html#method.attr

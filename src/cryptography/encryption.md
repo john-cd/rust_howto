@@ -13,7 +13,7 @@ function [`pbkdf2::derive`].  Verifies the hash is correct with
 securely generated random numbers.
 
 ```rust,editable
-{#include ../../../deps/examples/pbkdf2.rs}
+{#include ../../deps/examples/pbkdf2.rs}
 ```
 
 [`pbkdf2::derive`]: https://briansmith.org/rustdoc/ring/pbkdf2/fn.derive.html

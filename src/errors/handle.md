@@ -20,7 +20,7 @@ Other recipes in this book will hide the [error-chain] boilerplate, and can be
 seen by expanding the code with the ⤢ button.
 
 ```rust,editable
-{#include ../../../deps/examples/main.rs}
+{#include ../../deps/examples/main.rs}
 ```
 
 ## Avoid discarding errors during error conversions
@@ -38,7 +38,7 @@ use [`foreign_links`]. An additional [`ErrorKind`] variant for the web service
 error uses `errors` block of the `error_chain!` macro.
 
 ```rust,editable
-{#include ../../../deps/examples/retain.rs}
+{#include ../../deps/examples/retain.rs}
 ```
 
 ## Obtain backtrace of complex error scenarios
@@ -55,7 +55,7 @@ The below recipes attempts to deserialize the value `256` into a
 user code.
 
 ```rust,editable
-{#include ../../../deps/examples/backtrace.rs}
+{#include ../../deps/examples/backtrace.rs}
 ```
 
 Backtrace error rendered:
@@ -76,7 +76,6 @@ Run the recipe with `RUST_BACKTRACE=1` to display a detailed [`backtrace`] assoc
 [`std::io::Error`]: https://doc.rust-lang.org/std/io/struct.Error.html
 [handle errors in Rust]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
 [`ErrorKind`]: https://docs.rs/error-chain/*/error_chain/example_generated/enum.ErrorKind.html
-[`foreign_links`]: https://docs.rs/error-chain/*/error_chain/#foreign-links
 [blocking]: https://docs.rs/reqwest/*/reqwest/blocking/index.html
 [Matching]:https://docs.rs/error-chain/*/error_chain/#matching-errors
 [`backtrace`]: https://docs.rs/error-chain/*/error_chain/trait.ChainedError.html#tymethod.backtrace

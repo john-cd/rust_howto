@@ -12,7 +12,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 `Url` type.
 
 ```rust,editable
-{#include ../../../deps/examples/parse.rs}
+{#include ../../deps/examples/parse.rs}
 ```
 
 ## Create a base URL by removing path segments
@@ -25,7 +25,7 @@ URL.  [`PathSegmentsMut::clear`] removes paths and [`Url::set_query`] removes
 query string.
 
 ```rust,editable
-{#include ../../../deps/examples/base.rs}
+{#include ../../deps/examples/base.rs}
 ```
 
 ## Create new URLs from a base URL
@@ -35,7 +35,7 @@ query string.
 The [`join`] method creates a new URL from a base and relative path.
 
 ```rust,editable
-{#include ../../../deps/examples/new.rs}
+{#include ../../deps/examples/new.rs}
 ```
 
 ## Extract the URL origin (scheme / host / port)
@@ -46,13 +46,13 @@ The [`Url`] struct exposes various methods to extract information about the URL
 it represents.
 
 ```rust,editable
-{#include ../../../deps/examples/origin.rs}
+{#include ../../deps/examples/origin.rs}
 ```
 
 [`origin`] produces the same result.
 
 ```rust,editable
-{#include ../../../deps/examples/origin2.rs}
+{#include ../../deps/examples/origin2.rs}
 ```
 
 ## Remove fragment identifiers and query pairs from a URL
@@ -62,7 +62,7 @@ it represents.
 Parses [`Url`] and slices it with [`url::Position`] to strip unneeded URL parts.
 
 ```rust,editable
-{#include ../../../deps/examples/fragment.rs}
+{#include ../../deps/examples/fragment.rs}
 ```
 
 [`join`]: https://docs.rs/url/*/url/struct.Url.html#method.join

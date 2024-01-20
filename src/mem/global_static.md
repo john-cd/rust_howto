@@ -8,7 +8,7 @@ Declares a lazily evaluated constant [`HashMap`]. The [`HashMap`] will
 be evaluated once and stored behind a global static reference.
 
 ```rust,editable
-{#include ../../../deps/examples/lazy-constant.rs}
+{#include ../../deps/examples/lazy-constant.rs}
 ```
 
 [`HashMap`]: https://doc.rust-lang.org/std/collections/struct.HashMap.html

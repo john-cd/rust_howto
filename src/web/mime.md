@@ -9,7 +9,7 @@ The following example shows how to parse a [`MIME`] type from a string using the
 `unwrap_or` clause.
 
 ```rust,editable
-{#include ../../../deps/examples/string.rs}
+{#include ../../deps/examples/string.rs}
 ```
 
 ## Get MIME type from filename
@@ -21,7 +21,7 @@ filename using the [mime] crate.  The program will check for file extensions
 and match against a known list.  The return value is [`mime:Mime`].
 
 ```rust,editable
-{#include ../../../deps/examples/filename.rs}
+{#include ../../deps/examples/filename.rs}
 ```
 
 ## Parse the MIME type of a HTTP response
@@ -38,7 +38,7 @@ The [`mime`] crate also defines some commonly used MIME types.
 Note that the [`reqwest::header`] module is exported from the [`http`] crate.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/request.rs}
+{#include ../../deps/examples/request.rs}
 ```
 
 [`FromStrError`]: https://docs.rs/mime/*/mime/struct.FromStrError.html

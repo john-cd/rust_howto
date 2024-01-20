@@ -7,7 +7,7 @@
 Calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80.
 
 ```rust,editable
-{#include ../../../deps/examples/side-length.rs}
+{#include ../../deps/examples/side-length.rs}
 ```
 
 ## Verifying tan is equal to sin divided by cos
@@ -17,7 +17,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 Verifies tan(x) is equal to sin(x)/cos(x) for x = 6.
 
 ```rust,editable
-{#include ../../../deps/examples/tan-sin-cos.rs}
+{#include ../../deps/examples/tan-sin-cos.rs}
 ```
 
 ## Distance between two points on the Earth
@@ -36,7 +36,7 @@ compute the central angle. Finally, it's possible to calculate the
 distance.
 
 ```rust,editable
-{#include ../../../deps/examples/latitude-longitude.rs}
+{#include ../../deps/examples/latitude-longitude.rs}
 ```
 
 [float methods]: https://doc.rust-lang.org/std/primitive.f64.html#methods

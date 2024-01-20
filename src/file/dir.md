@@ -13,7 +13,7 @@ compared with 24 hours (24 *60* 60 seconds). [`Metadata::is_file`] filters
 out directories.
 
 ```rust,editable
-{#include ../../../deps/examples/modified.rs}
+{#include ../../deps/examples/modified.rs}
 ```
 
 ## Find loops for a given path
@@ -31,7 +31,7 @@ ln -s /tmp/foo/  /tmp/foo/bar/baz/qux
 The following would assert that a loop exists.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/loops.rs}
+{#include ../../deps/examples/loops.rs}
 ```
 
 ## Recursively find duplicate file names
@@ -42,7 +42,7 @@ Find recursively in the current directory duplicate filenames,
 printing them only once.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/duplicate-name.rs}
+{#include ../../deps/examples/duplicate-name.rs}
 ```
 
 ## Recursively find all files with given predicate
@@ -54,7 +54,7 @@ Using [`follow_links`] ensures symbolic links are followed like they were
 normal directories and files.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/find-file.rs}
+{#include ../../deps/examples/find-file.rs}
 ```
 
 ## Traverse directories while skipping dotfiles
@@ -70,7 +70,7 @@ Root dir `"."` yields through [`WalkDir::depth`] usage in `is_not_hidden`
 predicate.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/skip-dot.rs}
+{#include ../../deps/examples/skip-dot.rs}
 ```
 
 ## Recursively calculate file sizes at given depth
@@ -81,7 +81,7 @@ Recursion depth can be flexibly set by [`WalkDir::min_depth`] & [`WalkDir::max_d
 Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust,editable
-{#include ../../../deps/examples/sizes.rs}
+{#include ../../deps/examples/sizes.rs}
 ```
 
 ## Find all png files recursively
@@ -95,7 +95,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png`
 matches all PNGs in `media` and it's subdirectories.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/png.rs}
+{#include ../../deps/examples/png.rs}
 ```
 
 ## Find all files with given pattern ignoring filename case
@@ -107,7 +107,7 @@ Find all image files in the `/media/` directory matching the `img_[0-9]*.png` pa
 A custom [`MatchOptions`] struct is passed to the [`glob_with`] function making the glob pattern case insensitive while keeping the other options [`Default`].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/ignore-case.rs}
+{#include ../../deps/examples/ignore-case.rs}
 ```
 
 [`follow_links`]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.follow_links

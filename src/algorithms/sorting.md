@@ -9,7 +9,7 @@ be to use [`vec::sort_unstable`] which can be faster, but does not preserve
 the order of equal elements.
 
 ```rust,editable
-{#include ../../../deps/examples/sort.rs}
+{#include ../../deps/examples/sort.rs}
 ```
 
 ## Sort a Vector of Floats
@@ -19,7 +19,7 @@ the order of equal elements.
 A Vector of f32 or f64 can be sorted with [`vec::sort_by`] and [`PartialOrd::partial_cmp`].
 
 ```rust,editable
-{#include ../../../deps/examples/sort_float.rs}
+{#include ../../deps/examples/sort_float.rs}
 ```
 
 ## Sort a Vector of Structs
@@ -32,7 +32,7 @@ order (By name and age). In order to make Person sortable you need four traits [
 You can also provide a custom comparator function using a [`vec:sort_by`] method and sort only by age.
 
 ```rust,editable
-{#include ../../../deps/examples/sort_struct.rs}
+{#include ../../deps/examples/sort_struct.rs}
 ```
 
 [`vec::sort`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort

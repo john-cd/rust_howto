@@ -9,7 +9,7 @@ and implements elementary `clear` operation as well as [`Display`] trait for it.
 Subsequently, shows basic bitwise operations and formatting.
 
 ```rust,editable
-{#include ../../../deps/examples/bitfield.rs}
+{#include ../../deps/examples/bitfield.rs}
 ```
 
 [`bitflags!`]: https://docs.rs/bitflags/*/bitflags/macro.bitflags.html
