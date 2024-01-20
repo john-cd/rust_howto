@@ -9,10 +9,10 @@ type, and floating point numbers are uniformly distributed from 0 up to but not
 including 1.
 
 ```rust,editable
-{{#include ../../deps/examples/rand.rs}}
+{{#include ../../../deps/examples/rand.rs}}
 ```
 
 [`rand::Rng`]: https://docs.rs/rand/*/rand/trait.Rng.html
 [`rand::thread_rng`]: https://docs.rs/rand/*/rand/fn.thread_rng.html
 
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
