@@ -152,8 +152,8 @@
 [image-badge]: https://badge-cache.kominick.com/crates/v/image.svg?label=image
 [image]: https://docs.rs/image/
 
-[lazy-static-badge]: https://badge-cache.kominick.com/crates/v/lazy_static.svg?label=lazy_static
-[lazy-static]: https://docs.rs/lazy_static/
+[lazy-static-badge]: https://badge-cache.kominick.com/crates/v/lazy-static.svg?label=lazy-static
+[lazy-static]: https://docs.rs/lazy-static/
 
 [linfa-badge]: https://badge-cache.kominick.com/crates/v/linfa.svg?label=linfa
 [linfa]: https://docs.rs/linfa/
@@ -189,8 +189,8 @@
 [num-badge]: https://badge-cache.kominick.com/crates/v/num.svg?label=num
 [num]: https://docs.rs/num/
 
-[num-cpus-badge]: https://badge-cache.kominick.com/crates/v/num_cpus.svg?label=num_cpus
-[num-cpus]: https://docs.rs/num_cpus/
+[num-cpus-badge]: https://badge-cache.kominick.com/crates/v/num-cpus.svg?label=num-cpus
+[num-cpus]: https://docs.rs/num-cpus/
 
 [once-cell-badge]: https://badge-cache.kominick.com/crates/v/once_cell.svg?label=once_cell
 [once-cell]: https://docs.rs/once_cell/

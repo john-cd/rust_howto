@@ -1,6 +1,6 @@
 ## Parse command line arguments
 
-[![clap-badge]][clap] [![cat-command-line-badge]][cat-command-line]
+[![clap-badge]][clap]
 
 This application describes the structure of its command-line interface using
 `clap`'s builder style. The [documentation] gives two other possible ways to
