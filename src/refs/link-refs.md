@@ -1,4 +1,5 @@
-{{#include ./crate-refs.md}}
+{{#include crate-refs.md}}
+{{#include category-refs.md}}
 
 <!-- Tools for Rust -->
 [cargo-book]: https://doc.rust-lang.org/cargo/index.html

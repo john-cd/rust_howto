@@ -14,16 +14,16 @@
 | [Find all png files recursively][ex-glob-recursive] | [![glob-badge]][glob] | [![cat-filesystem-badge]][cat-filesystem] |
 | [Find all files with given pattern ignoring filename case][ex-glob-with] | [![glob-badge]][glob] | [![cat-filesystem-badge]][cat-filesystem] |
 
-[ex-std-read-lines]: ./file/read-write.html#read-lines-of-strings-from-a-file
-[ex-avoid-read-write]: ./file/read-write.html#avoid-writing-and-reading-from-a-same-file
-[ex-random-file-access]: ./file/read-write.html#access-a-file-randomly-using-a-memory-map
-[ex-file-24-hours-modified]: ./file/dir.html#file-names-that-have-been-modified-in-the-last-24-hours
-[ex-find-file-loops]: ./file/dir.html#find-loops-for-a-given-path
-[ex-dedup-filenames]: ./file/dir.html#recursively-find-duplicate-file-names
-[ex-file-predicate]: ./file/dir.html#recursively-find-all-files-with-given-predicate
-[ex-file-skip-dot]: ./file/dir.html#traverse-directories-while-skipping-dotfiles
-[ex-file-sizes]: ./file/dir.html#recursively-calculate-file-sizes-at-given-depth
-[ex-glob-recursive]: ./file/dir.html#find-all-png-files-recursively
-[ex-glob-with]: ./file/dir.html#find-all-files-with-given-pattern-ignoring-filename-case
+[ex-std-read-lines]: file/read-write.html#read-lines-of-strings-from-a-file
+[ex-avoid-read-write]: file/read-write.html#avoid-writing-and-reading-from-a-same-file
+[ex-random-file-access]: file/read-write.html#access-a-file-randomly-using-a-memory-map
+[ex-file-24-hours-modified]: file/dir.html#file-names-that-have-been-modified-in-the-last-24-hours
+[ex-find-file-loops]: file/dir.html#find-loops-for-a-given-path
+[ex-dedup-filenames]: file/dir.html#recursively-find-duplicate-file-names
+[ex-file-predicate]: file/dir.html#recursively-find-all-files-with-given-predicate
+[ex-file-skip-dot]: file/dir.html#traverse-directories-while-skipping-dotfiles
+[ex-file-sizes]: file/dir.html#recursively-calculate-file-sizes-at-given-depth
+[ex-glob-recursive]: file/dir.html#find-all-png-files-recursively
+[ex-glob-with]: file/dir.html#find-all-files-with-given-pattern-ignoring-filename-case
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

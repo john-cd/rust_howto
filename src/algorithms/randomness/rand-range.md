@@ -13,7 +13,7 @@ This has the same effect, but may be faster when repeatedly generating numbers
 in the same range.
 
 ```rust,editable
-{#include ../../../deps/examples/rand-range2.rs}
+{#include ../../../deps/examples/rand-range1.rs}
 ```
 
 [`Uniform`]: https://docs.rs/rand/*/rand/distributions/uniform/struct.Uniform.html

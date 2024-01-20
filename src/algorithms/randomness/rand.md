@@ -14,5 +14,3 @@ including 1.
 
 [`rand::Rng`]: https://docs.rs/rand/*/rand/trait.Rng.html
 [`rand::thread_rng`]: https://docs.rs/rand/*/rand/fn.thread_rng.html
-
-{{#include ../../refs/link-refs.md}}

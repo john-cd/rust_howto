@@ -145,9 +145,7 @@ defers crate selection to that project. Any crates that have already
 been evaluated as part of that process are in scope for the cookbook,
 as are crates that are pending evaluation.
 
-{{#include ../refs/link-refs.md}}
-
-[index]: ../drafts/intro.html
+[index]: intro.html
 [error-docs]: https://doc.rust-lang.org/book/error-handling.html
 [error-blog]: https://brson.github.io/2016/11/30/starting-with-error-chain
 [error-chain]: https://docs.rs/error-chain/
@@ -156,3 +154,5 @@ as are crates that are pending evaluation.
 [docs.rs]: https://docs.rs
 [Cargo.toml]: http://doc.crates.io/manifest.html
 [`cargo-edit`]: https://github.com/killercup/cargo-edit
+{{#include refs/link-refs.md}}
+

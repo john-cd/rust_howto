@@ -6,4 +6,4 @@
 
 {{#include download/partial.md}}
 
-{{#include ../../links.md}}
+{{#include ../refs/link-refs.md}}

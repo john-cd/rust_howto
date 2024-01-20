@@ -3,7 +3,7 @@
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a stream of values over time.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/streams.rs}}
+{{#include ../../../deps/examples/streams.rs}}
 ```
 
 There are combinator-style methods such as `map`, `filter`, and `fold`, and their early-exit-on-error cousins `try_map`, `try_filter`, and `try_fold`.

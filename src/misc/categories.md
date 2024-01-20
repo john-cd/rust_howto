@@ -89,6 +89,4 @@
 | [![cat-websocket-badge]][cat-websocket] | [![actix-web-badge]][actix-web] |
 | [![cat-http-server-badge]][cat-http-server] |  |
 
-{{#include ../refs/category-refs.md}}
-
 {{#include ../refs/link-refs.md}}

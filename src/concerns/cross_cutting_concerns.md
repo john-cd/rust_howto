@@ -1,14 +1,22 @@
 # Cross-cutting concerns
 
 - [Automatic derivation](derive.md)
-- [Error handling](error_handling.md)
-- [Error customization](error_customization.md)
+
+- [Error handling](../errors/error_handling.md)
+- [Error customization](../errors/error_customization.md)
+
 - [Configuration](configuration.md)
-- [Logging / tracing](logging.md)
-- [Database access](databases.md)
-- [Testing](tests.md)
+
+- [Logging / tracing](../logging/logging.md)
+
+- [Database access](../databases.md)
+
+- [Testing](../tools/testing/tests.md)
+
 - [Lazy initialization](lazy_initialization.md)
-- [Performance](performance.md)
-- [Documentation](documentation.md)
+
+- [Performance](../tools/performance.md)
+
+- [Documentation](../tools/documentation.md)
 
 {{#include ../refs/link-refs.md}}

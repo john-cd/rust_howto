@@ -8,4 +8,4 @@
 
 {{#include api/paginated.md}}
 
-{{#include ../../links.md}}
+{{#include ../refs/link-refs.md}}

@@ -11,6 +11,5 @@ See crates.io's [documentation on the matter][build-script-docs] for more inform
 
 {{#include build_tools/cc-defines.md}}
 
-{{#include ../refs/link-refs.md}}
-
 [build-script-docs]: http://doc.crates.io/build-script.html
+{{#include ../refs/link-refs.md}}
