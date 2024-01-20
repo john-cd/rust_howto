@@ -65,11 +65,15 @@ pub fn remove_code_from_all_markdown_files_in(
     for p in paths {
         println!("{p:?}");
         let buf = fs::read_to_string(p.as_path())?;
-        let re = Regex::new(r"(?s)(?<first>```rust.*?\n)(?<code>.+?)(?<last>```)")?;
+        let re =
+            Regex::new(r"(?s)(?<first>```rust.*?\n)(?<code>.+?)(?<last>```)")?;
         if re.is_match(&buf) {
-            let replacement = format!("$first{{#include ../../../deps/examples/{}.rs}}\n$last", p.file_stem().unwrap().to_string_lossy());
+            let replacement = format!(
+                "$first{{#include ../../../deps/examples/{}.rs}}\n$last",
+                p.file_stem().unwrap().to_string_lossy()
+            );
             let new_txt = re.replace_all(&buf, replacement);
-            //println!("{}", new_txt);
+            // println!("{}", new_txt);
             File::create(p)?.write_all(new_txt.as_bytes())?;
         }
     }

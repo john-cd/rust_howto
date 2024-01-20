@@ -40,6 +40,9 @@ pub enum Commands {
     ExtractExamples,
 
     RemoveCode,
+
+    /// Replace {{#include <file>.md}} by the file contents
+    IncludeMarkdown,
 }
 
 #[derive(Args, Debug)]
