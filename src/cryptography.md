@@ -9,5 +9,4 @@
 [ex-sha-digest]: cryptography/hashing.md#calculate-the-sha-256-digest-of-a-file
 [ex-hmac]: cryptography/hashing.md#sign-and-verify-a-message-with-hmac-digest
 [ex-pbkdf2]: cryptography/encryption.md#salt-and-hash-a-password-with-pbkdf2
-
 {{#include refs/link-refs.md}}

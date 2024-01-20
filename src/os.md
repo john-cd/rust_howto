@@ -15,5 +15,4 @@
 [ex-redirect-stdout-stderr-same-file]: os/external.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
 [ex-continuous-process-output]: os/external.md#continuously-process-child-process-outputs
 [ex-read-env-variable]: os/external.md#read-environment-variable
-
 {{#include refs/link-refs.md}}

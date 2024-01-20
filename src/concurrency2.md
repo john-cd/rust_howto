@@ -27,5 +27,4 @@
 [ex-rayon-parallel-sort]: concurrency/parallel.md#sort-a-vector-in-parallel
 [ex-rayon-map-reduce]: concurrency/parallel.md#map-reduce-in-parallel
 [ex-rayon-thumbnails]: concurrency/parallel.md#generate-jpg-thumbnails-in-parallel
-
 {{#include refs/link-refs.md}}

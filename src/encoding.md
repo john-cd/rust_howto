@@ -31,5 +31,4 @@
 [ex-json-value]: encoding/complex.md#serialize-and-deserialize-unstructured-json
 [ex-toml-config]: encoding/complex.md#deserialize-a-toml-configuration-file
 [ex-byteorder-le]: encoding/complex.md#read-and-write-integers-in-little-endian-byte-order
-
 {{#include refs/link-refs.md}}
