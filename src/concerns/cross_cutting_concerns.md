@@ -11,7 +11,7 @@
 
 - [Database access](../databases.md)
 
-- [Testing](../tools/testing/tests.md)
+- [Testing](../tools/testing.md)
 
 - [Lazy initialization](lazy_initialization.md)
 
