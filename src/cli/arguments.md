@@ -1,5 +1,5 @@
 # Clap basic
 
-{{#include clap-basic.md}}
+{{#include arguments/clap-basic.md}}
 
 {{#include ../refs/link-refs.md}}

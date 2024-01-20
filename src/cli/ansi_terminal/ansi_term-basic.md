@@ -1,6 +1,6 @@
 ## ANSI Terminal
 
-[![ansi_term-badge]][ansi_term] [![cat-command-line-badge]][cat-command-line]
+[![ansi-term-badge]][ansi-term]
 
 This program depicts the use of [`ansi_term`] crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on ANSI terminals.
 
@@ -21,7 +21,7 @@ needs to construct `Style` struct. [`Style::new()`] creates the struct,
 and properties chained.
 
 ```rust,editable
-{#include ../../../deps/examples/ansi_term-basic2.rs}
+{#include ../../../deps/examples/ansi_term-basic1.rs}
 ```
 
 ### Bold and colored text in terminal
@@ -29,10 +29,9 @@ and properties chained.
 `Colour` implements many similar functions as `Style` and can chain methods.
 
 ```rust,editable
-{#include ../../../deps/examples/ansi_term-basic3.rs}
+{#include ../../../deps/examples/ansi_term-basic2.rs}
 ```
 
-[documentation]: https://docs.rs/ansi_term/
 [`ansi_term`]: https://crates.io/crates/ansi_term
 [`ANSIString`]: https://docs.rs/ansi_term/*/ansi_term/type.ANSIString.html
 [`Style`]: https://docs.rs/ansi_term/*/ansi_term/struct.Style.html

@@ -1,6 +1,6 @@
 ## Draw fractal dispatching work to a thread pool
 
-[![threadpool-badge]][threadpool] [![num-badge]][num] [![num_cpus-badge]][num_cpus] [![image-badge]][image] [![cat-concurrency-badge]][cat-concurrency][![cat-science-badge]][cat-science][![cat-rendering-badge]][cat-rendering]
+[![threadpool-badge]][threadpool] [![num-badge]][num] [![num-cpus-badge]][num-cpus] [![image-badge]][image] [![cat-concurrency-badge]][cat-concurrency][![cat-science-badge]][cat-science][![cat-rendering-badge]][cat-rendering]
 
 This example generates an image by drawing a fractal from the [Julia set]
 with a thread pool for distributed computation.
@@ -9,7 +9,7 @@ with a thread pool for distributed computation.
 
 Allocate memory for output image of given width and height with [`ImageBuffer::new`].
 [`Rgb::from_channels`] calculates RGB pixel values.
-Create [`ThreadPool`] with thread count equal to number of cores with [`num_cpus::get`].
+Create [`ThreadPool`] with thread count equal to number of cores with [`num-cpus::get`].
 [`ThreadPool::execute`] receives each pixel as a separate job.
 
 [`mpsc::channel`] receives the jobs and [`Receiver::recv`] retrieves them.
@@ -24,7 +24,7 @@ Create [`ThreadPool`] with thread count equal to number of cores with [`num_cpus
 [`ImageBuffer::put_pixel`]: https://docs.rs/image/*/image/struct.ImageBuffer.html#method.put_pixel
 [`ImageBuffer::save`]: https://docs.rs/image/*/image/struct.ImageBuffer.html#method.save
 [`mpsc::channel`]: https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html
-[`num_cpus::get`]: https://docs.rs/num_cpus/*/num_cpus/fn.get.html
+[`num-cpus::get`]: https://docs.rs/num-cpus/*/num-cpus/fn.get.html
 [`Receiver::recv`]: https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
 [`Rgb::from_channels`]: https://docs.rs/image/*/image/struct.Rgb.html#method.from_channels
 [`ThreadPool`]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html
