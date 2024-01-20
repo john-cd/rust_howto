@@ -7,5 +7,4 @@
 
 [ex-clap-basic]: cli/arguments.md#parse-command-line-arguments
 [ex-ansi_term-basic]: cli/ansi_terminal.md#ansi-terminal
-
 {{#include refs/link-refs.md}}

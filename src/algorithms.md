@@ -21,5 +21,4 @@
 [ex-sort-integers]:   algorithms/sorting.md#sort-a-vector-of-integers
 [ex-sort-floats]:   algorithms/sorting.md#sort-a-vector-of-floats
 [ex-sort-structs]:   algorithms/sorting.md#sort-a-vector-of-structs
-
 {{#include refs/link-refs.md}}

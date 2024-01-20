@@ -25,5 +25,4 @@
 [ex-file-sizes]: file/dir.md#recursively-calculate-file-sizes-at-given-depth
 [ex-glob-recursive]: file/dir.md#find-all-png-files-recursively
 [ex-glob-with]: file/dir.md#find-all-files-with-given-pattern-ignoring-filename-case
-
 {{#include refs/link-refs.md}}

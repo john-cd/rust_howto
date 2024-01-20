@@ -119,7 +119,7 @@ default like below.  In order to read full contents click on the
 right corner of the snippet.
 
 ```rust,editable
-{#include ../../../deps/examples/about3.rs}
+{#include ../deps/examples/about3.rs}
 ```
 
 For more background on error handling in Rust, read [this page of the

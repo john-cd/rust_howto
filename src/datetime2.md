@@ -17,5 +17,4 @@
 [ex-convert-datetime-timestamp]: datetime/parse.md#convert-date-to-unix-timestamp-and-vice-versa
 [ex-format-datetime]: datetime/parse.md#display-formatted-date-and-time
 [ex-parse-datetime]: datetime/parse.md#parse-string-into-datetime-struct
-
 {{#include refs/link-refs.md}}

@@ -48,14 +48,12 @@
 [ex-extract-links-webpage]: web/scraping.md#extract-all-links-from-a-webpage-html
 [ex-check-broken-links]: web/scraping.md#check-a-webpage-for-broken-links
 [ex-extract-mediawiki-links]: web/scraping.md#extract-all-unique-links-from-a-mediawiki-markup
-
 [ex-url-parse]: web/url.md#parse-a-url-from-a-string-to-a-url-type
 [ex-url-base]: web/url.md#create-a-base-url-by-removing-path-segments
 [ex-url-new-from-base]: web/url.md#create-new-urls-from-a-base-url
 [ex-url-origin]: web/url.md#extract-the-url-origin-scheme--host--port
 [ex-url-rm-frag]: web/url.md#remove-fragment-identifiers-and-query-pairs-from-a-url
-
-[ex-mime-from-string]: web/mime.md-mime-type-from-string
+[ex-mime-from-string]: web/mime.md#get-mime-type-from-string
 [ex-mime-from-filename]: web/mime.md#get-mime-type-from-filename
 [ex-http-response-mime-type]: web/mime.md#parse-the-mime-type-of-a-http-response
 
@@ -69,7 +67,5 @@
 [ex-url-download]: web/clients/download.md#download-a-file-to-a-temporary-directory
 [ex-progress-with-range]: web/clients/download.md#make-a-partial-download-with-http-range-headers
 [ex-file-post]: web/clients/download.md#post-a-file-to-paste-rs
-
-[ex-basic-authentication]: web/clients/authentication.mdasic-authentication
-
+[ex-basic-authentication]: web/clients/authentication.md#basic-authentication
 {{#include refs/link-refs.md}}

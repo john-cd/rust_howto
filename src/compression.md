@@ -9,5 +9,4 @@
 [ex-tar-decompress]: compression/tar.md#decompress-a-tarball
 [ex-tar-compress]: compression/tar.md#compress-a-directory-into-tarball
 [ex-tar-strip-prefix]: compression/tar.md#decompress-a-tarball-while-removing-a-prefix-from-the-paths
-
 {{#include refs/link-refs.md}}

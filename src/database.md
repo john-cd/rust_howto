@@ -13,5 +13,4 @@
 [ex-postgres-create-tables]: database/postgres.md#create-tables-in-a-postgres-database
 [ex-postgres-insert-query-data]: database/postgres.md#insert-and-query-data
 [ex-postgres-aggregate-data]: database/postgres.md#aggregate-data
-
 {{#include refs/link-refs.md}}

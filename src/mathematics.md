@@ -31,5 +31,4 @@
 [ex-central-tendency]: mathematics/statistics.md#measures-of-central-tendency
 [ex-standard-deviation]: mathematics/statistics.md#standard-deviation
 [big-integers]: mathematics/miscellaneous.md#big-integers
-
 {{#include refs/link-refs.md}}

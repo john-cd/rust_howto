@@ -11,7 +11,7 @@ type, and floating point numbers are uniformly distributed from 0 up to but not
 including 1.
 
 ```rust,editable
-{{#include ../../../deps/examples/rand.rs}}
+{{#include ../../deps/examples/rand.rs}}
 ```
 
 ## Generate random numbers within a range
@@ -21,7 +21,7 @@ including 1.
 Generates a random value within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`].
 
 ```rust,editable
-{#include ../../../deps/examples/rand-range.rs}
+{#include ../../deps/examples/rand-range.rs}
 ```
 
 [`Uniform`] can obtain values with [uniform distribution].
@@ -29,7 +29,7 @@ This has the same effect, but may be faster when repeatedly generating numbers
 in the same range.
 
 ```rust,editable
-{#include ../../../deps/examples/rand-range1.rs}
+{#include ../../deps/examples/rand-range1.rs}
 ```
 
 ## Generate random numbers with given distribution
@@ -47,7 +47,7 @@ The [distributions available are documented here][rand-distributions].
 An example using the [`Normal`] distribution is shown below.
 
 ```rust,editable,ignore
-{#include ../../../deps/examples/rand-dist.rs}
+{#include ../../deps/examples/rand-dist.rs}
 ```
 
 ## Generate random values of a custom type
@@ -58,7 +58,7 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 Implements the [`Distribution`] trait on type Point for [`Standard`] in order to allow random generation.
 
 ```rust,editable
-{#include ../../../deps/examples/rand-custom.rs}
+{#include ../../deps/examples/rand-custom.rs}
 ```
 
 ## Create random passwords from a set of alphanumeric characters
@@ -68,7 +68,7 @@ Implements the [`Distribution`] trait on type Point for [`Standard`] in order to
 Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`] sample.
 
 ```rust,editable
-{#include ../../../deps/examples/rand-passwd.rs}
+{#include ../../deps/examples/rand-passwd.rs}
 ```
 
 ## Create random passwords from a set of user-defined characters
@@ -79,7 +79,7 @@ Randomly generates a string of given length ASCII characters with custom
 user-defined bytestring, with [`gen_range`].
 
 ```rust,editable
-{{#include ../../../deps/examples/rand-choose.rs}}
+{{#include ../../deps/examples/rand-choose.rs}}
 ```
 
 [`rand::Rng`]: https://docs.rs/rand/*/rand/trait.Rng.html
