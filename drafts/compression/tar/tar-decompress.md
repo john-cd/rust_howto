@@ -8,21 +8,7 @@ named `archive.tar.gz` located in the current working directory
 to the same location.
 
 ```rust,editable,no_run
-
-use std::fs::File;
-use flate2::read::GzDecoder;
-use tar::Archive;
-
-fn main() -> Result<(), std::io::Error> {
-    let path = "archive.tar.gz";
-
-    let tar_gz = File::open(path)?;
-    let tar = GzDecoder::new(tar_gz);
-    let mut archive = Archive::new(tar);
-    archive.unpack(".")?;
-
-    Ok(())
-}
+{#include ../../../deps/examples/tar-decompress.rs}
 ```
 
 [`Archive::unpack`]: https://docs.rs/tar/*/tar/struct.Archive.html#method.unpack

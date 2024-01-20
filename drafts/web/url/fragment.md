@@ -5,16 +5,7 @@
 Parses [`Url`] and slices it with [`url::Position`] to strip unneeded URL parts.
 
 ```rust,editable
-
-
-use url::{Url, Position, ParseError};
-
-fn main() -> Result<(), ParseError> {
-    let parsed = Url::parse("https://github.com/rust-lang/rust/issues?labels=E-easy&state=open")?;
-    let cleaned: &str = &parsed[..Position::AfterPath];
-    println!("cleaned: {}", cleaned);
-    Ok(())
-}
+{#include ../../../deps/examples/fragment.rs}
 ```
 
 [`url::Position`]: https://docs.rs/url/*/url/enum.Position.html

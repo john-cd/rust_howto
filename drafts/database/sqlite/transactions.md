@@ -12,39 +12,7 @@ a unique constraint on the color name. When an attempt to insert
 a duplicate color is made, the transaction rolls back.
 
 ```rust,editable,no_run
-use rusqlite::{Connection, Result, NO_PARAMS};
-
-fn main() -> Result<()> {
-    let mut conn = Connection::open("cats.db")?;
-
-    successful_tx(&mut conn)?;
-
-    let res = rolled_back_tx(&mut conn);
-    assert!(res.is_err());
-
-    Ok(())
-}
-
-fn successful_tx(conn: &mut Connection) -> Result<()> {
-    let tx = conn.transaction()?;
-
-    tx.execute("delete from cat_colors", NO_PARAMS)?;
-    tx.execute("insert into cat_colors (name) values (?1)", &[&"lavender"])?;
-    tx.execute("insert into cat_colors (name) values (?1)", &[&"blue"])?;
-
-    tx.commit()
-}
-
-fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
-    let tx = conn.transaction()?;
-
-    tx.execute("delete from cat_colors", NO_PARAMS)?;
-    tx.execute("insert into cat_colors (name) values (?1)", &[&"lavender"])?;
-    tx.execute("insert into cat_colors (name) values (?1)", &[&"blue"])?;
-    tx.execute("insert into cat_colors (name) values (?1)", &[&"lavender"])?;
-
-    tx.commit()
-}
+{#include ../../../deps/examples/transactions.rs}
 ```
 
 [`Connection::transaction`]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.transaction

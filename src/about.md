@@ -57,7 +57,7 @@ Consider this example for "generate random numbers within a range":
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
 ```rust,editable
-{#include ../../../deps/examples/about.rs}
+{#include ../deps/examples/about.rs}
 ```
 
 To work with it locally we can run the following commands to create
@@ -105,7 +105,7 @@ The basic pattern we use is to have a `fn main() -> Result`.
 The structure generally looks like:
 
 ```rust,editable
-{#include ../../../deps/examples/about2.rs}
+{#include ../deps/examples/about2.rs}
 ```
 
 This is using the `error_chain!` macro to define a custom `Error` and
@@ -147,7 +147,7 @@ as are crates that are pending evaluation.
 
 {{#include ../refs/link-refs.md}}
 
-[index]: intro.html
+[index]: ../drafts/intro.html
 [error-docs]: https://doc.rust-lang.org/book/error-handling.html
 [error-blog]: https://brson.github.io/2016/11/30/starting-with-error-chain
 [error-chain]: https://docs.rs/error-chain/

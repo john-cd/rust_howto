@@ -7,16 +7,7 @@ logging via an environment variable.  The [`log::debug!`] macro works like other
 [`std::fmt`] formatted strings.
 
 ```rust,editable
-
-fn execute_query(query: &str) {
-    log::debug!("Executing query: {}", query);
-}
-
-fn main() {
-    env_logger::init();
-
-    execute_query("DROP TABLE students");
-}
+{#include ../../../deps/examples/log-debug.rs}
 ```
 
 No output prints when running this code. By default, the

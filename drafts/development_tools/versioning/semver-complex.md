@@ -9,32 +9,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 comparing versions. In other words, two versions may be equal even if their build strings differ.
 
 ```rust,editable
-use semver::{Identifier, Version, SemVerError};
-
-fn main() -> Result<(), SemVerError> {
-    let version_str = "1.0.49-125+g72ee7853";
-    let parsed_version = Version::parse(version_str)?;
-
-    assert_eq!(
-        parsed_version,
-        Version {
-            major: 1,
-            minor: 0,
-            patch: 49,
-            pre: vec![Identifier::Numeric(125)],
-            build: vec![],
-        }
-    );
-    assert_eq!(
-        parsed_version.build,
-        vec![Identifier::AlphaNumeric(String::from("g72ee7853"))]
-    );
-
-    let serialized_version = parsed_version.to_string();
-    assert_eq!(&serialized_version, version_str);
-
-    Ok(())
-}
+{#include ../../../deps/examples/semver-complex.rs}
 ```
 
 [`semver::Version`]: https://docs.rs/semver/*/semver/struct.Version.html

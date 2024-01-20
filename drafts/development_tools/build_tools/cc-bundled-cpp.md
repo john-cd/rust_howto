@@ -18,12 +18,7 @@ cc = "1"
 ### `build.rs`
 
 ```rust,editable,no_run
-fn main() {
-    cc::Build::new()
-        .cpp(true)
-        .file("src/foo.cpp")
-        .compile("foo");
-}
+{#include ../../../deps/examples/cc-bundled-cpp.rs}
 ```
 
 ### `src/foo.cpp`
@@ -41,15 +36,7 @@ int multiply(int x, int y) {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-extern {
-    fn multiply(x : i32, y : i32) -> i32;
-}
-
-fn main(){
-    unsafe {
-        println!("{}", multiply(5,7));
-    }
-}
+{#include ../../../deps/examples/cc-bundled-cpp2.rs}
 ```
 
 [cc-build-cpp]: https://docs.rs/cc/*/cc/struct.Build.html#method.cpp

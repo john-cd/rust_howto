@@ -10,19 +10,7 @@ exist to sort an enumerable data type, [`par_sort_unstable`]
 is usually faster than [stable sorting] algorithms.
 
 ```rust,editable
-
-use rand::{Rng, thread_rng};
-use rand::distributions::Alphanumeric;
-use rayon::prelude::*;
-
-fn main() {
-  let mut vec = vec![String::new(); 100_000];
-  vec.par_iter_mut().for_each(|p| {
-    let mut rng = thread_rng();
-    *p = (0..5).map(|_| rng.sample(&Alphanumeric)).collect()
-  });
-  vec.par_sort_unstable();
-}
+{#include ../../../deps/examples/rayon-parallel-sort.rs}
 ```
 
 [`par_sort_unstable`]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable
