@@ -1,5 +1,10 @@
 alias b := build
+alias ba := buildall
+alias ca := clippyall
+alias l := links
 alias s := serve
+alias t := test
+alias ta := testall
 alias f := fmtall
 set windows-shell := ["cmd.exe", "/c"]
 
@@ -95,7 +100,7 @@ serve: build
 #   mdbook watch --open
 
 # Prepare for git push
-prepare: fmtall clean build clippyall testall serve
+prep: fmtall clean build clippyall testall serve
 
 ## Utilities --------------------------------------
 
