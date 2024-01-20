@@ -10,27 +10,7 @@ with [`reqwest::get`] to get list of all users who have marked a GitHub project 
 processing the response into User instances.
 
 ```rust,editable,no_run
-use serde::Deserialize;
-use reqwest::Error;
-
-#[derive(Deserialize, Debug)]
-struct User {
-    login: String,
-    id: u32,
-}
-
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    let request_url = format!("https://api.github.com/repos/{owner}/{repo}/stargazers",
-                              owner = "rust-lang-nursery",
-                              repo = "rust-cookbook");
-    println!("{}", request_url);
-    let response = reqwest::get(&request_url).await?;
-
-    let users: Vec<User> = response.json().await?;
-    println!("{:?}", users);
-    Ok(())
-}
+{#include ../../../deps/examples/rest-get.rs}
 ```
 
 [`reqwest::get`]: https://docs.rs/reqwest/*/reqwest/fn.get.html

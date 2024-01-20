@@ -11,35 +11,13 @@ The example calls [`Builder::format`] to set a closure which formats each
 message text with timestamp, [`Record::level`] and body ([`Record::args`]).
 
 ```rust,editable
-use std::io::Write;
-use chrono::Local;
-use env_logger::Builder;
-use log::LevelFilter;
-
-fn main() {
-    Builder::new()
-        .format(|buf, record| {
-            writeln!(buf,
-                "{} [{}] - {}",
-                Local::now().format("%Y-%m-%dT%H:%M:%S"),
-                record.level(),
-                record.args()
-            )
-        })
-        .filter(None, LevelFilter::Info)
-        .init();
-
-    log::warn!("warn");
-    log::info!("info");
-    log::debug!("debug");
-}
+{#include ../../../deps/examples/log-timestamp.rs}
 ```
 
 stderr output will contain
 
 ```rust
-2017-05-22T21:57:06 [WARN] - warn
-2017-05-22T21:57:06 [INFO] - info
+{#include ../../../deps/examples/log-timestamp2.rs}
 ```
 
 [`DateTime::format`]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.format

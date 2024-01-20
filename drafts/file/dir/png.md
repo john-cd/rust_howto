@@ -9,22 +9,5 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png`
 matches all PNGs in `media` and it's subdirectories.
 
 ```rust,editable,no_run
-# use error_chain::error_chain;
-
-use glob::glob;
-#
-# error_chain! {
-#     foreign_links {
-#         Glob(glob::GlobError);
-#         Pattern(glob::PatternError);
-#     }
-# }
-
-fn main() -> Result<()> {
-    for entry in glob("**/*.png")? {
-        println!("{}", entry?.display());
-    }
-
-    Ok(())
-}
+{#include ../../../deps/examples/png.rs}
 ```

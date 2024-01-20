@@ -11,18 +11,7 @@ under `backup/logs`path with [`Builder::append_dir_all`].
 data prior to writing it into `archive.tar.gz`.
 
 ```rust,editable,no_run
-
-use std::fs::File;
-use flate2::Compression;
-use flate2::write::GzEncoder;
-
-fn main() -> Result<(), std::io::Error> {
-    let tar_gz = File::create("archive.tar.gz")?;
-    let enc = GzEncoder::new(tar_gz, Compression::default());
-    let mut tar = tar::Builder::new(enc);
-    tar.append_dir_all("backup/logs", "/var/log")?;
-    Ok(())
-}
+{#include ../../../deps/examples/tar-compress.rs}
 ```
 
 [`Builder::append_dir_all`]: https://docs.rs/tar/*/tar/struct.Builder.html#method.append_dir_all

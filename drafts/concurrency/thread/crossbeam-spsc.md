@@ -10,26 +10,7 @@ channel, meaning there is no limit to the number of storeable messages. The
 producer thread sleeps for half a second in between messages.
 
 ```rust,editable
-
-use std::{thread, time};
-use crossbeam_channel::unbounded;
-
-fn main() {
-    let (snd, rcv) = unbounded();
-    let n_msgs = 5;
-    crossbeam::scope(|s| {
-        s.spawn(|_| {
-            for i in 0..n_msgs {
-                snd.send(i).unwrap();
-                thread::sleep(time::Duration::from_millis(100));
-            }
-        });
-    }).unwrap();
-    for _ in 0..n_msgs {
-        let msg = rcv.recv().unwrap();
-        println!("Received {}", msg);
-    }
-}
+{#include ../../../deps/examples/crossbeam-spsc.rs}
 ```
 
 [crossbeam-channel]: https://docs.rs/crate/crossbeam-channel/

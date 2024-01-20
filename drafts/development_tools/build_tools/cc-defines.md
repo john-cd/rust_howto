@@ -23,14 +23,7 @@ cc = "1"
 ### `build.rs`
 
 ```rust,editable,no_run
-fn main() {
-    cc::Build::new()
-        .define("APP_NAME", "\"foo\"")
-        .define("VERSION", format!("\"{}\"", env!("CARGO_PKG_VERSION")).as_str())
-        .define("WELCOME", None)
-        .file("src/foo.c")
-        .compile("foo");
-}
+{#include ../../../deps/examples/cc-defines.rs}
 ```
 
 ### `src/foo.c`
@@ -49,15 +42,7 @@ void print_app_info() {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-extern {
-    fn print_app_info();
-}
-
-fn main(){
-    unsafe {
-        print_app_info();
-    }
-}
+{#include ../../../deps/examples/cc-defines2.rs}
 ```
 
 [cargo-env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html

@@ -11,14 +11,7 @@ There are two main data structures in [`ansi_term`]: [`ANSIString`] and [`Style`
 ### Printing colored text to the Terminal
 
 ```rust,editable
-use ansi_term::Colour;
-
-fn main() {
-    println!("This is {} in color, {} in color and {} in color",
-             Colour::Red.paint("red"),
-             Colour::Blue.paint("blue"),
-             Colour::Green.paint("green"));
-}
+{#include ../../../deps/examples/ansi_term-basic.rs}
 ```
 
 ### Bold text in Terminal
@@ -28,12 +21,7 @@ needs to construct `Style` struct. [`Style::new()`] creates the struct,
 and properties chained.
 
 ```rust,editable
-use ansi_term::Style;
-
-fn main() {
-    println!("{} and this is not",
-             Style::new().bold().paint("This is Bold"));
-}
+{#include ../../../deps/examples/ansi_term-basic2.rs}
 ```
 
 ### Bold and colored text in terminal
@@ -41,15 +29,7 @@ fn main() {
 `Colour` implements many similar functions as `Style` and can chain methods.
 
 ```rust,editable
-use ansi_term::Colour;
-use ansi_term::Style;
-
-fn main(){
-    println!("{}, {} and {}",
-             Colour::Yellow.paint("This is colored"),
-             Style::new().bold().paint("this is bold"),
-             Colour::Yellow.bold().paint("this is bold and colored"));
-}
+{#include ../../../deps/examples/ansi_term-basic3.rs}
 ```
 
 [documentation]: https://docs.rs/ansi_term/

@@ -9,14 +9,7 @@ complex numbers, the Complex type has a few built in
 functions, all of which can be found here: [`num::complex::Complex`].
 
 ```rust,editable
-use std::f64::consts::PI;
-use num::complex::Complex;
-
-fn main() {
-    let x = Complex::new(0.0, 2.0*PI);
-
-    println!("e^(2i * pi) = {}", x.exp()); // =~1
-}
+{#include ../../../deps/examples/mathematical-functions.rs}
 ```
 
 [`num::complex::Complex`]: https://autumnai.github.io/cuticula/num/complex/struct.Complex.html

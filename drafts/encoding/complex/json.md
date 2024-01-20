@@ -11,34 +11,7 @@ is able to represent any valid JSON data.
 The example below shows a `&str` of JSON being parsed.  The expected value is declared using the [`json!`] macro.
 
 ```rust,editable
- use serde_json::json;
-use serde_json::{Value, Error};
-
-fn main() -> Result<(), Error> {
-    let j = r#"{
-                 "userid": 103609,
-                 "verified": true,
-                 "access_privileges": [
-                   "user",
-                   "admin"
-                 ]
-               }"#;
-
-    let parsed: Value = serde_json::from_str(j)?;
-
-    let expected = json!({
-        "userid": 103609,
-        "verified": true,
-        "access_privileges": [
-            "user",
-            "admin"
-        ]
-    });
-
-    assert_eq!(parsed, expected);
-
-    Ok(())
-}
+{#include ../../../deps/examples/json.rs}
 ```
 
 [`from_str`]: https://docs.serde.rs/serde_json/fn.from_str.html

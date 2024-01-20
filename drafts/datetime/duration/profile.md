@@ -8,20 +8,7 @@ Calling [`time::Instant::elapsed`] returns a [`time::Duration`] that we print at
 This method will not mutate or reset the [`time::Instant`] object.
 
 ```rust,editable
-use std::time::{Duration, Instant};
-# use std::thread;
-#
-# fn expensive_function() {
-#     thread::sleep(Duration::from_secs(1));
-# }
-
-fn main() {
-    let start = Instant::now();
-    expensive_function();
-    let duration = start.elapsed();
-
-    println!("Time elapsed in expensive_function() is: {:?}", duration);
-}
+{#include ../../../deps/examples/profile.rs}
 ```
 
 [`time::Duration`]: https://doc.rust-lang.org/std/time/struct.Duration.html
