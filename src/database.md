@@ -8,10 +8,10 @@
 | [Insert and Query data][ex-postgres-insert-query-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
 | [Aggregate data][ex-postgres-aggregate-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
 
-[ex-sqlite-initialization]: database/sqlite.html#create-a-sqlite-database
-[ex-sqlite-insert-select]:  database/sqlite.html#insert-and-select-data
-[ex-postgres-create-tables]: database/postgres.html#create-tables-in-a-postgres-database
-[ex-postgres-insert-query-data]: database/postgres.html#insert-and-query-data
-[ex-postgres-aggregate-data]: database/postgres.html#aggregate-data
+[ex-sqlite-initialization]: database/sqlite.md#create-a-sqlite-database
+[ex-sqlite-insert-select]:  database/sqlite.md#insert-and-select-data
+[ex-postgres-create-tables]: database/postgres.md#create-tables-in-a-postgres-database
+[ex-postgres-insert-query-data]: database/postgres.md#insert-and-query-data
+[ex-postgres-aggregate-data]: database/postgres.md#aggregate-data
 
 {{#include refs/link-refs.md}}
