@@ -40,12 +40,12 @@ Key constructs in Rust:
 
 Here are the topics we’ll cover:
 
-- [Async](async.md)
-  - [Async and traits](async_traits.md)
-  - [Tokio async runtime](tokio.md)
-  - [Async channels](async_channels.md)
-  - [Streams](streams.md)
-  - [Futures crate](futures.md)
+- [Async](async/async.md)
+  - [Async and traits](async/async_traits.md)
+  - [Tokio async runtime](async/tokio.md)
+  - [Async channels](async/async_channels.md)
+  - [Streams](async/streams.md)
+  - [Futures crate](async/futures.md)
 
 ## See Also
 

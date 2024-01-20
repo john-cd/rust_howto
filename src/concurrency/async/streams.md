@@ -11,9 +11,9 @@ There are combinator-style methods such as `map`, `filter`, and `fold`, and thei
 To process multiple items from a stream concurrently, use the `for_each_concurrent` and `try_for_each_concurrent` methods:
 
 ```rust,editable,noplayground,no_run
-{{#include ../../deps/examples/streams2.rs}}
+{{#include ../../../deps/examples/streams2.rs}}
 ```
 
 See also [Tokio async-stream (GitHub)][async-stream-github]⮳ [![async-stream-badge]][async-stream].
 
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}

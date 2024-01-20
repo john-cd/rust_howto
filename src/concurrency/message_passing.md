@@ -2,7 +2,7 @@
 
 One increasingly popular approach to ensuring safe concurrency is message passing, where threads communicate by sending each other messages containing data. The Rust standard library provides channels for message passing that are safe to use in concurrent contexts.
 
-Message passing in `async` programming is covered in a separate page: [async channels](async_channels.md)
+Message passing in `async` programming is covered in a separate page: [async channels](async/async_channels.md)
 
 ## Multiple producers, single consumer
 

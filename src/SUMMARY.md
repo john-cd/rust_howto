@@ -35,9 +35,6 @@
   - [Serialization (Serde)](key/serialization.md)
   - [Time and date](key/time.md)
 
-- [Algorithms]()
-  - [Generate Random Values](algorithms/randomness.md)
-
 - [Cross-cutting concerns](concerns/cross_cutting_concerns.md)
   - [Automatic derivation](concerns/derive.md)
   - [Error handling](concerns/error_handling.md)
@@ -55,13 +52,13 @@
   - [Message passing](concurrency/message_passing.md)
   - [Shared-state concurrency](concurrency/shared_state.md)
   - [Concurrent data structures](concurrency/concurrent_data_structures.md)
-  - [Async](concurrency/async.md)
-    - [Async and traits](concurrency/async_traits.md)
-    - [Tokio async runtime](concurrency/tokio.md)
-    - [Async channels](concurrency/async_channels.md)
-    - [Streams](concurrency/streams.md)
-    - [Futures crate](concurrency/futures.md)
-    - [Mixing Async and Blocking](concurrency/async_and_blocking.md)
+  - [Async](concurrency/async/async.md)
+    - [Async and traits](concurrency/async/async_traits.md)
+    - [Tokio async runtime](concurrency/async/tokio.md)
+    - [Async channels](concurrency/async/async_channels.md)
+    - [Streams](concurrency/async/streams.md)
+    - [Futures crate](concurrency/async/futures.md)
+    - [Mixing Async and Blocking](concurrency/async/async_and_blocking.md)
 
 - [Web](web/web.md)
   - [Axum](web/axum.md)
@@ -85,7 +82,7 @@
   - [Robotics](domains/robotics.md)
   - [Windows](domains/windows.md)
 
-- [Tools](tools/tools.md)
+- [Tools](tools.md)
   - [Rust installation](tools/install.md)
   - [Crate registries](tools/crates.md)
   - [IDEs](tools/IDEs.md)
@@ -100,7 +97,7 @@
   - [mdBook](tools/mdbook.md)
   - [Other tools](tools/other_tools.md)
 
-- [Links](links/links.md)
+- [Links](links.md)
   - [Example code](links/example_code.md)
   - [Cheat sheets](links/rust_cheatsheets.md)
   - [Blogs](links/blogs.md)

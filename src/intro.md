@@ -6,9 +6,9 @@ It quickly summarizes the basics of the [language](lang/rust_language.md) and of
 
 It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](concerns/error_handling.md), [error customization](concerns/error_customization.md), [configuration](concerns/configuration.md), [logging](concerns/logging.md)...
 
-[Concurrency](concurrency/concurrency.md), including [asynchronous programming](concurrency/async.md), are covered in details.
+[Concurrency](concurrency/concurrency.md), including [asynchronous programming](concurrency/async/async.md), are covered in details.
 
-Next are [tools](tools/tools.md), such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming [domains](domains/domains.md) such as [CLI](domains/cli.md) and [Web](web/web.md) development. The [links](links/links.md) section provides pointers to notable Rust websites, books, and code examples.
+Next are [tools](tools.md), such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming [domains](domains/domains.md) such as [CLI](domains/cli.md) and [Web](web/web.md) development. The [links](links.md) section provides pointers to notable Rust websites, books, and code examples.
 
 ## Who should read this book?
 
