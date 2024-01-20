@@ -45,7 +45,7 @@ pub fn include_in_all_markdown_files_in(markdown_root: &str) -> Result<()> {
             if new_txt != buf {
                 //println!("{}",  new_txt);
                 File::create(p)?.write_all(new_txt.as_bytes())?;
-                break;
+                //break;
             }
         }
     }

@@ -13,7 +13,7 @@
 | [Sort a Vector of Structs][ex-sort-structs] | [![std-badge]][std] | [![cat-science-badge]][cat-science] |
 
 [ex-rand]: algorithms/randomness.md#generate-random-numbers
-[ex-rand-range]: algorithms/randomness.mdenerate-random-numbers-within-a-range
+[ex-rand-range]: algorithms/randomness.md#generate-random-numbers-within-a-range
 [ex-rand-dist]: algorithms/randomness.md#generate-random-numbers-with-given-distribution
 [ex-rand-custom]: algorithms/randomness.md#generate-random-values-of-a-custom-type
 [ex-rand-passwd]: algorithms/randomness.md#create-random-passwords-from-a-set-of-alphanumeric-characters
