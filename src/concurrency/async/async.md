@@ -9,7 +9,7 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 ## Basic Example
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async.rs}}
+{{#include ../../../deps/examples/async.rs}}
 ```
 
 As any form of cooperative multitasking, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
@@ -21,7 +21,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 - Rust's `async` operations are lazy. Futures are inert in Rust and only make progress only when polled. The executor calls the `poll` method repeatedly to execute futures.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async2.rs}}
+{{#include ../../../deps/examples/async2.rs}}
 ```
 
 - Dropping a future stops it from making further progress.
@@ -38,7 +38,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](../concurrency/tokio.md) runtime - see [The State of Async Rust: Runtimes][state-of-async-rust]⮳.
+In most cases, prefer the [Tokio](./tokio.md) runtime - see [The State of Async Rust: Runtimes][state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 
@@ -47,4 +47,4 @@ Alternatives to the Tokio async ecosystem include:
 - [![embassy-badge]][embassy] [Embassy][embassy-website]⮳ for embedded systems.
 - [![mio-badge]][mio] [Mio][mio-crate]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}

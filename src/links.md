@@ -22,10 +22,10 @@
 
 ## In this section
 
-- [Example code](example_code.md)
-- [Cheatsheets](rust_cheatsheets.md)
-- [Blogs](blogs.md)
-- [Books](books.md)
-- [Companies](companies.md)
+- [Example code](links/example_code.md)
+- [Cheatsheets](links/rust_cheatsheets.md)
+- [Blogs](links/blogs.md)
+- [Books](links/books.md)
+- [Companies](links/companies.md)
 
-{{#include ../refs/link-refs.md}}
+{{#include ./refs/link-refs.md}}
