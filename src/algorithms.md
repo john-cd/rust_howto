@@ -12,14 +12,14 @@
 | [Sort a Vector of Floats][ex-sort-floats] | [![std-badge]][std] | [![cat-science-badge]][cat-science] |
 | [Sort a Vector of Structs][ex-sort-structs] | [![std-badge]][std] | [![cat-science-badge]][cat-science] |
 
-[ex-rand]: algorithms/randomness.html#generate-random-numbers
-[ex-rand-range]: algorithms/randomness.html#generate-random-numbers-within-a-range
-[ex-rand-dist]: algorithms/randomness.html#generate-random-numbers-with-given-distribution
-[ex-rand-custom]: algorithms/randomness.html#generate-random-values-of-a-custom-type
-[ex-rand-passwd]: algorithms/randomness.html#create-random-passwords-from-a-set-of-alphanumeric-characters
-[ex-rand-choose]:   algorithms/randomness.html#create-random-passwords-from-a-set-of-user-defined-characters
-[ex-sort-integers]:   algorithms/sorting.html#sort-a-vector-of-integers
-[ex-sort-floats]:   algorithms/sorting.html#sort-a-vector-of-floats
-[ex-sort-structs]:   algorithms/sorting.html#sort-a-vector-of-structs
+[ex-rand]: algorithms/randomness.md#generate-random-numbers
+[ex-rand-range]: algorithms/randomness.mdenerate-random-numbers-within-a-range
+[ex-rand-dist]: algorithms/randomness.md#generate-random-numbers-with-given-distribution
+[ex-rand-custom]: algorithms/randomness.md#generate-random-values-of-a-custom-type
+[ex-rand-passwd]: algorithms/randomness.md#create-random-passwords-from-a-set-of-alphanumeric-characters
+[ex-rand-choose]:   algorithms/randomness.md#create-random-passwords-from-a-set-of-user-defined-characters
+[ex-sort-integers]:   algorithms/sorting.md#sort-a-vector-of-integers
+[ex-sort-floats]:   algorithms/sorting.md#sort-a-vector-of-floats
+[ex-sort-structs]:   algorithms/sorting.md#sort-a-vector-of-structs
 
 {{#include refs/link-refs.md}}

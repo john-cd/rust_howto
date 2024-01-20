@@ -14,7 +14,7 @@ producer thread sleeps for half a second in between messages.
 ```
 
 [crossbeam-channel]: https://docs.rs/crate/crossbeam-channel/
-[ex-crossbeam-spawn]: ../thread/concurrency/threads.html#spawn-a-short-lived-thread
+[ex-crossbeam-spawn]: ../threads.md#spawn-a-short-lived-thread
 [`crossbeam::scope`]: https://docs.rs/crossbeam/*/crossbeam/fn.scope.html
 [`Scope::spawn`]: https://docs.rs/crossbeam/*/crossbeam/thread/struct.Scope.html#method.spawn
 [`crossbeam_channel::unbounded`]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/fn.unbounded.html

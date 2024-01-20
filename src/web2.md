@@ -45,31 +45,31 @@
 |--------|--------|------------|
 | [Basic Authentication][ex-basic-authentication] | [![reqwest-badge]][reqwest] | [![cat-net-badge]][cat-net] |
 
-[ex-extract-links-webpage]: web/scraping.html#extract-all-links-from-a-webpage-html
-[ex-check-broken-links]: web/scraping.html#check-a-webpage-for-broken-links
-[ex-extract-mediawiki-links]: web/scraping.html#extract-all-unique-links-from-a-mediawiki-markup
+[ex-extract-links-webpage]: web/scraping.md#extract-all-links-from-a-webpage-html
+[ex-check-broken-links]: web/scraping.md#check-a-webpage-for-broken-links
+[ex-extract-mediawiki-links]: web/scraping.md#extract-all-unique-links-from-a-mediawiki-markup
 
-[ex-url-parse]: web/url.html#parse-a-url-from-a-string-to-a-url-type
-[ex-url-base]: web/url.html#create-a-base-url-by-removing-path-segments
-[ex-url-new-from-base]: web/url.html#create-new-urls-from-a-base-url
-[ex-url-origin]: web/url.html#extract-the-url-origin-scheme--host--port
-[ex-url-rm-frag]: web/url.html#remove-fragment-identifiers-and-query-pairs-from-a-url
+[ex-url-parse]: web/url.md#parse-a-url-from-a-string-to-a-url-type
+[ex-url-base]: web/url.md#create-a-base-url-by-removing-path-segments
+[ex-url-new-from-base]: web/url.md#create-new-urls-from-a-base-url
+[ex-url-origin]: web/url.md#extract-the-url-origin-scheme--host--port
+[ex-url-rm-frag]: web/url.md#remove-fragment-identifiers-and-query-pairs-from-a-url
 
-[ex-mime-from-string]: web/mime.html#get-mime-type-from-string
-[ex-mime-from-filename]: web/mime.html#get-mime-type-from-filename
-[ex-http-response-mime-type]: web/mime.html#parse-the-mime-type-of-a-http-response
+[ex-mime-from-string]: web/mime.md-mime-type-from-string
+[ex-mime-from-filename]: web/mime.md#get-mime-type-from-filename
+[ex-http-response-mime-type]: web/mime.md#parse-the-mime-type-of-a-http-response
 
-[ex-url-basic]: web/clients/requests.html#make-a-http-get-request
-[ex-rest-custom-params]: web/clients/requests.html#set-custom-headers-and-url-parameters-for-a-rest-request
-[ex-rest-get]: web/clients/apis.html#query-the-github-api
-[ex-rest-head]: web/clients/apis.html#check-if-an-api-resource-exists
-[ex-rest-post]: web/clients/apis.html#create-and-delete-gist-with-github-api
-[ex-paginated-api]: web/clients/apis.html#consume-a-paginated-restful-api
-[ex-handle-rate-limited-api]: web/clients/apis.html#handle-a-rate-limited-api
-[ex-url-download]: web/clients/download.html#download-a-file-to-a-temporary-directory
-[ex-progress-with-range]: web/clients/download.html#make-a-partial-download-with-http-range-headers
-[ex-file-post]: web/clients/download.html#post-a-file-to-paste-rs
+[ex-url-basic]: web/clients/requests.md#make-a-http-get-request
+[ex-rest-custom-params]: web/clients/requests.md#set-custom-headers-and-url-parameters-for-a-rest-request
+[ex-rest-get]: web/clients/apis.md#query-the-github-api
+[ex-rest-head]: web/clients/apis.md#check-if-an-api-resource-exists
+[ex-rest-post]: web/clients/apis.md#create-and-delete-gist-with-github-api
+[ex-paginated-api]: web/clients/apis.md#consume-a-paginated-restful-api
+[ex-handle-rate-limited-api]: web/clients/apis.md#handle-a-rate-limited-api
+[ex-url-download]: web/clients/download.md#download-a-file-to-a-temporary-directory
+[ex-progress-with-range]: web/clients/download.md#make-a-partial-download-with-http-range-headers
+[ex-file-post]: web/clients/download.md#post-a-file-to-paste-rs
 
-[ex-basic-authentication]: web/clients/authentication.html#basic-authentication
+[ex-basic-authentication]: web/clients/authentication.mdasic-authentication
 
 {{#include refs/link-refs.md}}

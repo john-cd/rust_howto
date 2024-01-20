@@ -15,17 +15,17 @@
 | [Map-reduce in parallel][ex-rayon-map-reduce] | [![rayon-badge]][rayon] | [![cat-concurrency-badge]][cat-concurrency] |
 | [Generate jpg thumbnails in parallel][ex-rayon-thumbnails] | [![rayon-badge]][rayon] [![glob-badge]][glob] [![image-badge]][image] | [![cat-concurrency-badge]][cat-concurrency][![cat-filesystem-badge]][cat-filesystem] |
 
-[ex-crossbeam-spawn]: concurrency/threads.html#spawn-a-short-lived-thread
-[ex-crossbeam-pipeline]: concurrency/threads.html#create-a-parallel-pipeline
-[ex-crossbeam-spsc]: concurrency/threads.html#pass-data-between-two-threads
-[ex-global-mut-state]: concurrency/threads.html#maintain-global-mutable-state
-[ex-threadpool-walk]: concurrency/threads.html#calculate-sha256-sum-of-iso-files-concurrently
-[ex-threadpool-fractal]: concurrency/threads.html#draw-fractal-dispatching-work-to-a-thread-pool
-[ex-rayon-iter-mut]: concurrency/parallel.html#mutate-the-elements-of-an-array-in-parallel
-[ex-rayon-any-all]: concurrency/parallel.html#test-in-parallel-if-any-or-all-elements-of-a-collection-match-a-given-predicate
-[ex-rayon-parallel-search]: concurrency/parallel.html#search-items-using-given-predicate-in-parallel
-[ex-rayon-parallel-sort]: concurrency/parallel.html#sort-a-vector-in-parallel
-[ex-rayon-map-reduce]: concurrency/parallel.html#map-reduce-in-parallel
-[ex-rayon-thumbnails]: concurrency/parallel.html#generate-jpg-thumbnails-in-parallel
+[ex-crossbeam-spawn]: concurrency/threads.md#spawn-a-short-lived-thread
+[ex-crossbeam-pipeline]: concurrency/threads.md#create-a-parallel-pipeline
+[ex-crossbeam-spsc]: concurrency/threads.md#pass-data-between-two-threads
+[ex-global-mut-state]: concurrency/threads.md#maintain-global-mutable-state
+[ex-threadpool-walk]: concurrency/threads.md#calculate-sha256-sum-of-iso-files-concurrently
+[ex-threadpool-fractal]: concurrency/threads.md#draw-fractal-dispatching-work-to-a-thread-pool
+[ex-rayon-iter-mut]: concurrency/parallel.md#mutate-the-elements-of-an-array-in-parallel
+[ex-rayon-any-all]: concurrency/parallel.md#test-in-parallel-if-any-or-all-elements-of-a-collection-match-a-given-predicate
+[ex-rayon-parallel-search]: concurrency/parallel.md#search-items-using-given-predicate-in-parallel
+[ex-rayon-parallel-sort]: concurrency/parallel.md#sort-a-vector-in-parallel
+[ex-rayon-map-reduce]: concurrency/parallel.md#map-reduce-in-parallel
+[ex-rayon-thumbnails]: concurrency/parallel.md#generate-jpg-thumbnails-in-parallel
 
 {{#include refs/link-refs.md}}

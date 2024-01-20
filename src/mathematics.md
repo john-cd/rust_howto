@@ -17,19 +17,19 @@
 | [Computing standard deviation][ex-standard-deviation] | [![std-badge]][std] | [![cat-science-badge]][cat-science] |
 | [Big integers][big-integers] | [![num-badge]][num] | [![cat-science-badge]][cat-science] |
 
-[vector-norm]: mathematics/linear_algebra.html#vector-norm
-[add-matrices]: mathematics/linear_algebra.html#adding-matrices
-[multiply-matrices]: mathematics/linear_algebra.html#multiplying-matrices
-[multiply-scalar-vector-matrix]: mathematics/linear_algebra.html#multiply-a-scalar-with-a-vector-with-a-matrix
-[invert-matrix]: mathematics/linear_algebra.html#invert-matrix
-[side-length]: mathematics/trigonometry.html#calculating-the-side-length-of-a-triangle
-[tan-sin-cos]: mathematics/trigonometry.html#verifying-tan-is-equal-to-sin-divided-by-cos
-[latitude-longitude]: mathematics/trigonometry.html#distance-between-two-points-on-the-earth
-[create-complex]: mathematics/complex_numbers.html#creating-complex-numbers
-[add-complex]: mathematics/complex_numbers.html#adding-complex-numbers
-[mathematical-functions]: mathematics/complex_numbers.html#mathematical-functions
-[ex-central-tendency]: mathematics/statistics.html#measures-of-central-tendency
-[ex-standard-deviation]: mathematics/statistics.html#standard-deviation
-[big-integers]: mathematics/miscellaneous.html#big-integers
+[vector-norm]: mathematics/linear_algebra.md#vector-norm
+[add-matrices]: mathematics/linear_algebra.md#adding-matrices
+[multiply-matrices]: mathematics/linear_algebra.md#multiplying-matrices
+[multiply-scalar-vector-matrix]: mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-with-a-matrix
+[invert-matrix]: mathematics/linear_algebra.md#invert-matrix
+[side-length]: mathematics/trigonometry.md#calculating-the-side-length-of-a-triangle
+[tan-sin-cos]: mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[latitude-longitude]: mathematics/trigonometry.md#distance-between-two-points-on-the-earth
+[create-complex]: mathematics/complex_numbers.md#creating-complex-numbers
+[add-complex]: mathematics/complex_numbers.md#adding-complex-numbers
+[mathematical-functions]: mathematics/complex_numbers.md#mathematical-functions
+[ex-central-tendency]: mathematics/statistics.md#measures-of-central-tendency
+[ex-standard-deviation]: mathematics/statistics.md#standard-deviation
+[big-integers]: mathematics/miscellaneous.md#big-integers
 
 {{#include refs/link-refs.md}}
