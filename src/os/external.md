@@ -1,15 +1,91 @@
 # External Command
 
-{{#include external/process-output.md}}
+## Run an external command and process stdout
 
-{{#include external/send-input.md}}
+[![regex-badge]][regex] [![cat-os-badge]][cat-os] [![cat-text-processing-badge]][cat-text-processing]
 
-{{#include external/piped.md}}
+Runs `git log --oneline` as an external [`Command`] and inspects its [`Output`]
+using [`Regex`] to get the hash and message of the last 5 commits.
 
-{{#include external/error-file.md}}
+```rust,editable,no_run
+{#include ../../../deps/examples/process-output.rs}
+```
 
-{{#include external/continuous.md}}
+## Run an external command passing it stdin and check for an error code
 
-{{#include external/read-env-variable.md}}
+[![std-badge]][std] [![cat-os-badge]][cat-os]
 
+Opens the `python` interpreter using an external [`Command`] and passes it a
+python statement for execution. [`Output`] of statement is then parsed.
+
+```rust,editable,no_run
+{#include ../../../deps/examples/send-input.rs}
+```
+
+## Run piped external commands
+
+[![std-badge]][std] [![cat-os-badge]][cat-os]
+
+Shows up to the 10<sup>th</sup> biggest files and subdirectories in
+the current working directory. It is equivalent to running: `du -ah . |
+sort -hr | head -n 10`.
+
+[`Command`]s represent a process. Output of a child process is captured with a
+[`Stdio::piped`] between parent and child.
+
+```rust,editable,no_run
+{#include ../../../deps/examples/piped.rs}
+```
+
+## Redirect both stdout and stderr of child process to the same file
+
+[![std-badge]][std] [![cat-os-badge]][cat-os]
+
+Spawns a child process and redirects `stdout` and `stderr` to the same
+file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`process::Stdio`]
+writes to a specified file.  [`File::try_clone`] references the same file handle
+for `stdout` and `stderr`. It will ensure that both handles write with the same
+cursor position.
+
+The below recipe is equivalent to run the Unix shell command `ls
+. oops >out.txt 2>&1`.
+
+```rust,editable,no_run
+{#include ../../../deps/examples/error-file.rs}
+```
+
+## Continuously process child process' outputs
+
+[![std-badge]][std] [![cat-os-badge]][cat-os]
+
+In [Run an external command and process stdout](#run-an-external-command-and-process-stdout),
+processing doesn't start until external [`Command`] is finished.
+The recipe below calls [`Stdio::piped`] to create a pipe, and reads
+`stdout` continuously as soon as the [`BufReader`] is updated.
+
+The below recipe is equivalent to the Unix shell command
+`journalctl | grep usb`.
+
+```rust,editable,no_run
+{#include ../../../deps/examples/continuous.rs}
+```
+
+## Read Environment Variable
+
+[![std-badge]][std] [![cat-os-badge]][cat-os]
+
+Reads an environment variable via [std::env::var].
+
+```rust,editable,no_run
+{#include ../../../deps/examples/read-env-variable.rs}
+```
+
+[`File::try_clone`]: https://doc.rust-lang.org/std/fs/struct.File.html#method.try_clone
+[`process::Stdio`]: https://doc.rust-lang.org/std/process/struct.Stdio.html
+[`BufReader`]: https://doc.rust-lang.org/std/io/struct.BufReader.html
+[`Command`]: https://doc.rust-lang.org/std/process/struct.Command.html
+[`Stdio::piped`]: https://doc.rust-lang.org/std/process/struct.Stdio.html
+[`Output`]: https://doc.rust-lang.org/std/process/struct.Output.html
+[`Regex`]: https://docs.rs/regex/*/regex/struct.Regex.html
+[std::env::var]: https://doc.rust-lang.org/std/env/fn.var.html
 {{#include ../refs/link-refs.md}}

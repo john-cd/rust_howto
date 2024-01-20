@@ -1,7 +1,5 @@
 # Development Tools
 
-{{#include development_tools/debugging.md}}
-
 ## Versioning
 
 | Recipe | Crates | Categories |
