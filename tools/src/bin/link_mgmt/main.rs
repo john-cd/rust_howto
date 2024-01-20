@@ -7,6 +7,7 @@ use anyhow::Result;
 mod args;
 mod extract;
 mod file;
+mod include;
 mod parser;
 
 fn main() -> Result<()> {
@@ -14,35 +15,48 @@ fn main() -> Result<()> {
 
     let cli = args::parse_arguments();
 
-    // Create temp directory
-    tools::create_dir("/code/book/temp/")?;
-
-    let all_markdown: String = file::read_all_markdown_files_in("./src/")?;
-
     match cli.command {
         Some(args::Commands::Debug(pathargs)) => {
+            // Create temp directory
+            tools::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
             parser::debug_parse_to(all_markdown, pathbuf)?;
         }
         Some(args::Commands::RefDefs(pathargs)) => {
+            // Create temp directory
+            tools::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/existing_refs.md");
             println!("Writing existing reference definitions to {:?}", pathbuf);
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
             parser::write_ref_defs_to(all_markdown, pathbuf)?;
         }
         Some(args::Commands::InlineLinks(pathargs)) => {
+            // Create temp directory
+            tools::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/inline_links.md");
             println!("Writing existing inline links to {:?}", pathbuf);
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
             parser::write_inline_links(all_markdown, pathbuf)?;
         }
         Some(args::Commands::Links(pathargs)) => {
+            // Create temp directory
+            tools::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/all_links.md");
             println!("Writing existing links to {:?}", pathbuf);
+            let all_markdown: String =
+                file::read_all_markdown_files_in("./src/")?;
             parser::write_links(all_markdown, pathbuf)?;
         }
         Some(args::Commands::Test) => {
             let all_markdown: String = parser::get_test_markdown();
             // println!("{}", all_markdown);
             // TODO
+            // Create temp directory
+            tools::create_dir("/code/book/temp/")?;
             let md = parser::get_test_markdown();
             let path = "/code/book/temp/test.log";
             parser::debug_parse_to(md, path)?;
@@ -60,6 +74,14 @@ fn main() -> Result<()> {
         Some(args::Commands::RemoveCode) => {
             let path = "/code/drafts/";
             extract::remove_code_from_all_markdown_files_in(path);
+        }
+        Some(args::Commands::RemoveCode) => {
+            let path = "/code/drafts/";
+            extract::remove_code_from_all_markdown_files_in(path);
+        }
+        Some(args::Commands::IncludeMarkdown) => {
+            let path = "/code/src/";
+            include::include_in_all_markdown_files_in(path);
         }
 
         // Add more subcommands here: Some(args::Commands::...) => { ... }
