@@ -9,7 +9,7 @@ The example uses the `rayon` crate, which is a data parallelism library for Rust
 This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
-{#include ../../../deps/examples/rayon-iter-mut.rs}
+{#include ../../deps/examples/rayon-iter-mut.rs}
 ```
 
 ## Test in parallel if any or all elements of a collection match a given predicate
@@ -19,7 +19,7 @@ This is an iterator-like chain that potentially executes in parallel.
 This example demonstrates using the [`rayon::any`] and [`rayon::all`] methods, which are parallelized counterparts to [`std::any`] and [`std::all`]. [`rayon::any`] checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::all`] checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
 ```rust,editable
-{#include ../../../deps/examples/rayon-any-all.rs}
+{#include ../../deps/examples/rayon-any-all.rs}
 ```
 
 ## Search items using given predicate in parallel
@@ -37,7 +37,7 @@ Also note that the argument to the closure is a reference to a reference
 (`&&x`). See the discussion on [`std::find`] for additional details.
 
 ```rust,editable
-{#include ../../../deps/examples/rayon-parallel-search.rs}
+{#include ../../deps/examples/rayon-parallel-search.rs}
 ```
 
 ## Sort a vector in parallel
@@ -52,7 +52,7 @@ exist to sort an enumerable data type, [`par_sort_unstable`]
 is usually faster than [stable sorting] algorithms.
 
 ```rust,editable
-{#include ../../../deps/examples/rayon-parallel-sort.rs}
+{#include ../../deps/examples/rayon-parallel-sort.rs}
 ```
 
 ## Map-reduce in parallel
@@ -69,7 +69,7 @@ reduction and the current element.  Also shows use of [`rayon::sum`],
 which has the same result as the reduce operation in this example.
 
 ```rust,editable
-{#include ../../../deps/examples/rayon-map-reduce.rs}
+{#include ../../deps/examples/rayon-map-reduce.rs}
 ```
 
 ## Generate jpg thumbnails in parallel
@@ -83,7 +83,7 @@ then saves them in a new folder called `thumbnails`.
 images in parallel using [`par_iter`] calling  [`DynamicImage::resize`].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/rayon-thumbnails.rs}
+{#include ../../deps/examples/rayon-thumbnails.rs}
 ```
 
 [`par_sort_unstable`]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable

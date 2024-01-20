@@ -9,14 +9,14 @@ data representation which expects valid UTF-8 rows. Alternatively,
 [`csv::ByteRecord`] makes no assumptions about UTF-8.
 
 ```rust,editable
-{#include ../../../deps/examples/read.rs}
+{#include ../../deps/examples/read.rs}
 ```
 
 Serde deserializes data into strongly type structures. See the
 [`csv::Reader::deserialize`] method.
 
 ```rust,editable
-{#include ../../../deps/examples/read2.rs}
+{#include ../../deps/examples/read2.rs}
 ```
 
 ## Read CSV records with different delimiter
@@ -26,7 +26,7 @@ Serde deserializes data into strongly type structures. See the
 Reads CSV records with a tab [`delimiter`].
 
 ```rust,editable
-{#include ../../../deps/examples/delimiter.rs}
+{#include ../../deps/examples/delimiter.rs}
 ```
 
 ## Filter CSV records matching a predicate
@@ -36,7 +36,7 @@ Reads CSV records with a tab [`delimiter`].
 Returns _only_ the rows from `data` with a field that matches `query`.
 
 ```rust,editable
-{#include ../../../deps/examples/filter.rs}
+{#include ../../deps/examples/filter.rs}
 ```
 
 _Disclaimer: this example has been adapted from [the csv crate tutorial](https://docs.rs/csv/*/csv/tutorial/index.html#filter-by-search)_.
@@ -50,7 +50,7 @@ provides a custom deserializer, [`csv::invalid_option`], which automatically
 converts invalid data to None values.
 
 ```rust,editable
-{#include ../../../deps/examples/invalid.rs}
+{#include ../../deps/examples/invalid.rs}
 ```
 
 ## Serialize records to CSV
@@ -64,7 +64,7 @@ such as numbers, floats, and options use [`serialize`]. Since CSV
 writer uses internal buffer, always explicitly [`flush`] when done.
 
 ```rust,editable
-{#include ../../../deps/examples/serialize.rs}
+{#include ../../deps/examples/serialize.rs}
 ```
 
 ## Serialize records to CSV using Serde
@@ -75,7 +75,7 @@ The following example shows how to serialize custom structs as CSV records using
 the [serde] crate.
 
 ```rust,editable
-{#include ../../../deps/examples/serde-serialize.rs}
+{#include ../../deps/examples/serde-serialize.rs}
 ```
 
 ## Transform CSV column
@@ -89,7 +89,7 @@ csv file, and [serde] to deserialize and serialize the rows to and from bytes.
 See [`csv::Reader::deserialize`], [`serde::Deserialize`], and [`std::str::FromStr`]
 
 ```rust,editable
-{#include ../../../deps/examples/transform.rs}
+{#include ../../deps/examples/transform.rs}
 ```
 
 [`csv::ByteRecord`]: https://docs.rs/csv/*/csv/struct.ByteRecord.html

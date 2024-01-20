@@ -12,7 +12,7 @@ with [`reqwest::get`] to get list of all users who have marked a GitHub project 
 processing the response into User instances.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/rest-get.rs}
+{#include ../../deps/examples/rest-get.rs}
 ```
 
 ## Check if an API resource exists
@@ -29,7 +29,7 @@ Due to both [`ClientBuilder::build`] and [`ReqwestBuilder::send`] returning [`re
 types, the shortcut [`reqwest::Result`] is used for the main function return type.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/rest-head.rs}
+{#include ../../deps/examples/rest-head.rs}
 ```
 
 ## Create and delete Gist with GitHub API
@@ -46,7 +46,7 @@ body. [`RequestBuilder::basic_auth`] handles authentication. The call to
 [`RequestBuilder::send`] synchronously executes the requests.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/rest-post.rs}
+{#include ../../deps/examples/rest-post.rs}
 ```
 
 The example uses [HTTP Basic Auth] in order to authorize access to [GitHub API].
@@ -62,9 +62,24 @@ fetches the next page of results from the remote server as it arrives at the end
 of each page.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/paginated.rs}
+{#include ../../deps/examples/paginated.rs}
 ```
 
+## Handle a rate-limited API
+
+[![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![cat-net-badge]][cat-net]
+
+This example uses the [GitHub API - Rate limiting], as an example of how to
+handle remote server errors.  This example uses the [`hyper::header!`] macro
+to parse the response header and checks for [`reqwest::StatusCode::Forbidden`].
+If the response exceeds the rate limit, the example waits and retries.
+
+```rust,editable,no_run
+{#include ../../deps/examples/rate-limited.rs}
+```
+
+[`hyper::header!`]: https://doc.servo.org/hyper/header/index.html#defining-custom-headers
+[`reqwest::StatusCode::Forbidden`]: https://docs.rs/reqwest/*/reqwest/struct.StatusCode.html#associatedconstant.FORBIDDEN
 [`ClientBuilder::build`]: https://docs.rs/reqwest/*/reqwest/struct.ClientBuilder.html#method.build
 [`Client::head`]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.head
 [`ClientBuilder::timeout`]: https://docs.rs/reqwest/*/reqwest/struct.ClientBuilder.html#method.timeout

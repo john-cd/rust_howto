@@ -9,7 +9,7 @@ function from the `percent-encoding` crate. Then decode using the [`percent_deco
 function.
 
 ```rust,editable
-{#include ../../../deps/examples/percent-encode.rs}
+{#include ../../deps/examples/percent-encode.rs}
 ```
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need
@@ -29,7 +29,7 @@ decodes it with [`form_urlencoded::parse`]. Both functions return iterators
 that collect into a `String`.
 
 ```rust,editable
-{#include ../../../deps/examples/url-encode.rs}
+{#include ../../deps/examples/url-encode.rs}
 ```
 
 ## Encode and decode hex
@@ -47,7 +47,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent.  Compares this
 value to the expected value.
 
 ```rust,editable
-{#include ../../../deps/examples/hex.rs}
+{#include ../../deps/examples/hex.rs}
 ```
 
 ## Encode and decode base64
@@ -58,7 +58,7 @@ Encodes byte slice into `base64` String using [`encode`]
 and decodes it with [`decode`].
 
 ```rust,editable
-{#include ../../../deps/examples/base64.rs}
+{#include ../../deps/examples/base64.rs}
 ```
 
 [`form_urlencoded::byte_serialize`]: https://docs.rs/url/*/url/form_urlencoded/fn.byte_serialize.html

@@ -11,7 +11,7 @@ There are two main data structures in [`ansi_term`]: [`ANSIString`] and [`Style`
 ## Printing colored text to the Terminal
 
 ```rust,editable
-{#include ../../../deps/examples/ansi_term-basic.rs}
+{#include ../../deps/examples/ansi_term-basic.rs}
 ```
 
 ### Bold text in Terminal
@@ -21,7 +21,7 @@ needs to construct `Style` struct. [`Style::new()`] creates the struct,
 and properties chained.
 
 ```rust,editable
-{#include ../../../deps/examples/ansi_term-basic1.rs}
+{#include ../../deps/examples/ansi_term-basic1.rs}
 ```
 
 ### Bold and colored text in terminal
@@ -29,7 +29,7 @@ and properties chained.
 `Colour` implements many similar functions as `Style` and can chain methods.
 
 ```rust,editable
-{#include ../../../deps/examples/ansi_term-basic2.rs}
+{#include ../../deps/examples/ansi_term-basic2.rs}
 ```
 
 [`ansi_term`]: https://crates.io/crates/ansi_term

@@ -9,7 +9,7 @@ Creates two 2-D matrices with [`ndarray::arr2`] and sums them element-wise.
 Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
 ```rust,editable
-{#include ../../../deps/examples/add-matrices.rs}
+{#include ../../deps/examples/add-matrices.rs}
 ```
 
 ## Multiplying matrices
@@ -19,7 +19,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 Creates two matrices with [`ndarray::arr2`] and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`].
 
 ```rust,editable
-{#include ../../../deps/examples/multiply-matrices.rs}
+{#include ../../deps/examples/multiply-matrices.rs}
 ```
 
 ## Multiply a scalar with a vector with a matrix
@@ -41,7 +41,7 @@ the vector is a 1-D array on the right-hand side, so `dot` handles it as a colum
 vector.
 
 ```rust,editable
-{#include ../../../deps/examples/multiply-scalar-vector-matrix.rs}
+{#include ../../deps/examples/multiply-scalar-vector-matrix.rs}
 ```
 
 ## Vector comparison
@@ -64,7 +64,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 their modification later. See [Binary Operators With Two Arrays] for additional detail.
 
 ```rust,editable
-{#include ../../../deps/examples/vector-comparison.rs}
+{#include ../../deps/examples/vector-comparison.rs}
 ```
 
 ## Vector norm
@@ -98,7 +98,7 @@ benefit of users. For internal functions, the more concise `ArrayView1<f64>`
 may be preferable.
 
 ```rust,editable
-{#include ../../../deps/examples/vector-norm.rs}
+{#include ../../deps/examples/vector-norm.rs}
 ```
 
 ## Invert matrix
@@ -108,7 +108,7 @@ may be preferable.
 Creates a 3x3 matrix with [`nalgebra::Matrix3`] and inverts it, if possible.
 
 ```rust,editable
-{#include ../../../deps/examples/invert-matrix.rs}
+{#include ../../deps/examples/invert-matrix.rs}
 ```
 
 ## (De)-Serialize a Matrix
@@ -121,7 +121,7 @@ by [`serde_json::to_string`] and [`serde_json::from_str`] performs deserializati
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust
-{#include ../../../deps/examples/deserialize-matrix.rs}
+{#include ../../deps/examples/deserialize-matrix.rs}
 ```
 
 [`approx`]: https://docs.rs/approx/*/approx/index.html

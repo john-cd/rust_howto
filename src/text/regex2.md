@@ -8,7 +8,7 @@ Validates that an email address is formatted correctly, and extracts everything
 before the @ symbol.
 
 ```rust,editable
-{#include ../../../deps/examples/email.rs}
+{#include ../../deps/examples/email.rs}
 ```
 
 ## Extract a list of unique #Hashtags from a text
@@ -21,7 +21,7 @@ The hashtag regex given here only catches Latin hashtags that start with a
 letter. The complete [twitter hashtag regex] is much more complicated.
 
 ```rust,editable
-{#include ../../../deps/examples/hashtags.rs}
+{#include ../../deps/examples/hashtags.rs}
 ```
 
 ## Extract phone numbers from text
@@ -32,7 +32,7 @@ Processes a string of text using [`Regex::captures_iter`] to capture multiple
 phone numbers.  The example here is for US convention phone numbers.
 
 ```rust,editable
-{#include ../../../deps/examples/phone.rs}
+{#include ../../deps/examples/phone.rs}
 ```
 
 ## Filter a log file by matching multiple regular expressions
@@ -48,7 +48,7 @@ Since backslashes are very common in regular expressions, using
 [raw string literals] makes them more readable.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/filter-log.rs}
+{#include ../../deps/examples/filter-log.rs}
 ```
 
 ## Replace all occurrences of one text pattern with another pattern
@@ -65,7 +65,7 @@ refer to corresponding named capture groups `(?P<abcde>REGEX)` from the search
 regex. See the [replacement string syntax] for examples and escaping detail.
 
 ```rust,editable
-{#include ../../../deps/examples/replace.rs}
+{#include ../../deps/examples/replace.rs}
 ```
 
 [`Regex::captures_iter`]: https://docs.rs/regex/*/regex/struct.Regex.html#method.captures_iter

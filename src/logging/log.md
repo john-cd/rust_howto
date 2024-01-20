@@ -9,7 +9,7 @@ logging via an environment variable.  The [`log::debug!`] macro works like other
 [`std::fmt`] formatted strings.
 
 ```rust,editable
-{#include ../../../deps/examples/log-debug.rs}
+{#include ../../deps/examples/log-debug.rs}
 ```
 
 No output prints when running this code. By default, the
@@ -36,7 +36,7 @@ Proper error handling considers exceptions exceptional.  Here, an error logs
 to stderr with `log`'s convenience macro [`log::error!`].
 
 ```rust,editable
-{#include ../../../deps/examples/log-error.rs}
+{#include ../../deps/examples/log-error.rs}
 ```
 
 ## Log to stdout instead of stderr
@@ -46,7 +46,7 @@ to stderr with `log`'s convenience macro [`log::error!`].
 Creates a custom logger configuration using the [`Builder::target`] to set the target of the log output to [`Target::Stdout`].
 
 ```rust,editable
-{#include ../../../deps/examples/log-stdout.rs}
+{#include ../../deps/examples/log-stdout.rs}
 ```
 
 ## Log messages with a custom logger
@@ -58,7 +58,7 @@ In order to use the logging macros, `ConsoleLogger` implements
 the [`log::Log`] trait and [`log::set_logger`] installs it.
 
 ```rust,editable
-{#include ../../../deps/examples/log-custom-logger.rs}
+{#include ../../deps/examples/log-custom-logger.rs}
 ```
 
 ## Log to the Unix syslog
@@ -71,7 +71,7 @@ the log entry's classification, [`log::LevelFilter`] denotes allowed log verbosi
 and `Option<&str>` holds optional application name.
 
 ```rust,editable
-{#include ../../../deps/examples/log-syslog.rs}
+{#include ../../deps/examples/log-syslog.rs}
 ```
 
 [`log::error!`]: https://docs.rs/log/*/log/macro.error.html

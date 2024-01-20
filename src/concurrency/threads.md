@@ -12,7 +12,7 @@ you can reference data from the calling function.
 This example splits the array in half and performs the work in separate threads.
 
 ```rust,editable
-{#include ../../../deps/examples/crossbeam-spawn.rs}
+{#include ../../deps/examples/crossbeam-spawn.rs}
 ```
 
 ## Create a parallel pipeline
@@ -41,7 +41,7 @@ to prevent the entire program from blocking on the worker for-loops. You can
 think of the calls to `drop` as signaling that no more messages will be sent.
 
 ```rust
-{#include ../../../deps/examples/crossbeam-complex.rs}
+{#include ../../deps/examples/crossbeam-complex.rs}
 ```
 
 ## Pass data between two threads
@@ -56,7 +56,7 @@ channel, meaning there is no limit to the number of storeable messages. The
 producer thread sleeps for half a second in between messages.
 
 ```rust,editable
-{#include ../../../deps/examples/crossbeam-spsc.rs}
+{#include ../../deps/examples/crossbeam-spsc.rs}
 ```
 
 ## Maintain global mutable state
@@ -71,7 +71,7 @@ race conditions. A [`MutexGuard`] must be acquired to read or mutate the
 value stored in a [`Mutex`].
 
 ```rust,editable
-{#include ../../../../deps/examples/global-mut-state.rs}
+{#include ../../deps/examples/global-mut-state.rs}
 ```
 
 ## Calculate SHA256 sum of iso files concurrently
@@ -85,7 +85,7 @@ the current directory and calls [`execute`] to perform the operations of reading
 and computing SHA256 hash.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/threadpool-walk.rs}
+{#include ../../deps/examples/threadpool-walk.rs}
 ```
 
 ## Draw fractal dispatching work to a thread pool
@@ -107,7 +107,7 @@ Create [`ThreadPool`] with thread count equal to number of cores with [`num-cpus
 [`ImageBuffer::save`] writes the image to `output.png`.
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/threadpool-fractal.rs}
+{#include ../../deps/examples/threadpool-fractal.rs}
 ```
 
 [crossbeam-channel]: https://docs.rs/crate/crossbeam-channel/

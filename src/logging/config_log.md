@@ -8,7 +8,7 @@ Creates two modules `foo` and nested `foo::bar` with logging directives
 controlled separately with [`RUST_LOG`] environmental variable.
 
 ```rust,editable
-{#include ../../../deps/examples/log-mod.rs}
+{#include ../../deps/examples/log-mod.rs}
 ```
 
 [`RUST_LOG`] environment variable controls [`env_logger`][env_logger] output.
@@ -43,7 +43,7 @@ Then, [`Builder::init`] initializes the logger.
 All these steps are normally done internally by [`env_logger::init`].
 
 ```rust,editable
-{#include ../../../deps/examples/log-env-variable.rs}
+{#include ../../deps/examples/log-env-variable.rs}
 ```
 
 ## Include timestamp in log messages
@@ -59,13 +59,13 @@ The example calls [`Builder::format`] to set a closure which formats each
 message text with timestamp, [`Record::level`] and body ([`Record::args`]).
 
 ```rust,editable
-{#include ../../../deps/examples/log-timestamp.rs}
+{#include ../../deps/examples/log-timestamp.rs}
 ```
 
 stderr output will contain
 
 ```rust
-{#include ../../../deps/examples/log-timestamp2.rs}
+{#include ../../deps/examples/log-timestamp2.rs}
 ```
 
 ## Log messages to a custom location
@@ -82,7 +82,7 @@ Assigns the configuration to [`log4rs::config::Config`] and sets the default
 [`log::LevelFilter`].
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/log-custom.rs}
+{#include ../../deps/examples/log-custom.rs}
 ```
 
 [`env_logger::init`]: https://docs.rs/env_logger/*/env_logger/fn.init.html

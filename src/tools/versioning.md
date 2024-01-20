@@ -13,7 +13,7 @@ incrementing the major version number resets both the minor and patch version
 numbers to 0.
 
 ```rust,editable
-{#include ../../../deps/examples/semver-increment.rs}
+{#include ../../deps/examples/semver-increment.rs}
 ```
 
 ## Parse a complex version string
@@ -27,7 +27,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 comparing versions. In other words, two versions may be equal even if their build strings differ.
 
 ```rust,editable
-{#include ../../../deps/examples/semver-complex.rs}
+{#include ../../deps/examples/semver-complex.rs}
 ```
 
 ## Check if given version is pre-release
@@ -37,7 +37,7 @@ comparing versions. In other words, two versions may be equal even if their buil
 Given two versions, [`is_prerelease`] asserts that one is pre-release and the other is not.
 
 ```rust,editable
-{#include ../../../deps/examples/semver-prerelease.rs}
+{#include ../../deps/examples/semver-prerelease.rs}
 ```
 
 ## Find the latest version satisfying given range
@@ -49,7 +49,7 @@ Given a list of version &strs, finds the latest [`semver::Version`].
 Also demonstrates `semver` pre-release preferences.
 
 ```rust,editable
-{#include ../../../deps/examples/semver-latest.rs}
+{#include ../../deps/examples/semver-latest.rs}
 ```
 
 ## Check external command version for compatibility
@@ -62,7 +62,7 @@ Runs `git --version` using [`Command`], then parses the version number into a
 "git version x.y.z".
 
 ```rust,editable,no_run
-{#include ../../../deps/examples/semver-command.rs}
+{#include ../../deps/examples/semver-command.rs}
 ```
 
 [`is_prerelease`]: https://docs.rs/semver/*/semver/struct.Version.html#method.is_prerelease

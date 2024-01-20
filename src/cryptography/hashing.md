@@ -8,7 +8,7 @@ Writes some data to a file, then calculates the SHA-256 [`digest::Digest`] of
 the file's contents using [`digest::Context`].
 
 ```rust,editable
-{#include ../../../deps/examples/sha-digest.rs}
+{#include ../../deps/examples/sha-digest.rs}
 ```
 
 [`digest::Context`]: https://briansmith.org/rustdoc/ring/digest/struct.Context.html
@@ -21,7 +21,7 @@ the file's contents using [`digest::Context`].
 Uses [`ring::hmac`] to creates a [`hmac::Signature`] of a string then verifies the signature is correct.
 
 ```rust,editable
-{#include ../../../deps/examples/hmac.rs}
+{#include ../../deps/examples/hmac.rs}
 ```
 
 [`hmac::Signature`]: https://briansmith.org/rustdoc/ring/hmac/struct.Signature.html

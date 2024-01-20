@@ -8,7 +8,7 @@ Gets the current UTC [`DateTime`] and its hour/minute/second via [`Timelike`]
 and its year/month/day/weekday via [`Datelike`].
 
 ```rust,editable
-{#include ../../../deps/examples/current.rs}
+{#include ../../deps/examples/current.rs}
 ```
 
 ## Convert date to UNIX timestamp and vice versa
@@ -21,7 +21,7 @@ Then it calculates what was the date after one billion seconds
 since January 1, 1970 0:00:00 UTC, using [`NaiveDateTime::from_timestamp`].
 
 ```rust,editable
-{#include ../../../deps/examples/timestamp.rs}
+{#include ../../deps/examples/timestamp.rs}
 ```
 
 ## Display formatted date and time
@@ -34,7 +34,7 @@ and [RFC 3339] using [`DateTime::to_rfc3339`], and in a custom format using
 [`DateTime::format`].
 
 ```rust,editable
-{#include ../../../deps/examples/format.rs}
+{#include ../../deps/examples/format.rs}
 ```
 
 ## Parse string into DateTime struct
@@ -53,7 +53,7 @@ identifies a date and a time. For parsing dates and times without timezones use
 [`NaiveDate`], [`NaiveTime`], and [`NaiveDateTime`].
 
 ```rust,editable
-{#include ../../../deps/examples/string.rs}
+{#include ../../deps/examples/string.rs}
 ```
 
 [`NaiveDate::from_ymd`]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDate.html#method.from_ymd
