@@ -38,6 +38,8 @@ pub enum Commands {
     Test,
 
     ExtractExamples,
+
+    RemoveCode,
 }
 
 #[derive(Args, Debug)]
