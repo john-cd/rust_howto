@@ -10,13 +10,13 @@
 | [Replace all occurrences of one text pattern with another pattern.][ex-regex-replace-named] | [![regex-badge]][regex] [![lazy_static-badge]][lazy_static] | [![cat-text-processing-badge]][cat-text-processing] |
 | [Implement the `FromStr` trait for a custom `struct`][string_parsing-from_str] | [![std-badge]][std] | [![cat-text-processing-badge]][cat-text-processing] |
 
-[ex-verify-extract-email]: ../drafts/text/regex.html#verify-and-extract-login-from-an-email-address
-[ex-extract-hashtags]: ../drafts/text/regex.html#extract-a-list-of-unique-hashtags-from-a-text
-[ex-phone]: ../drafts/text/regex.html#extract-phone-numbers-from-text
-[ex-regex-filter-log]: ../drafts/text/regex.html#filter-a-log-file-by-matching-multiple-regular-expressions
-[ex-regex-replace-named]: ../drafts/text/regex.html#replace-all-occurrences-of-one-text-pattern-with-another-pattern
+[ex-verify-extract-email]: text/regex.html#verify-and-extract-login-from-an-email-address
+[ex-extract-hashtags]: text/regex.html#extract-a-list-of-unique-hashtags-from-a-text
+[ex-phone]: text/regex.html#extract-phone-numbers-from-text
+[ex-regex-filter-log]: text/regex.html#filter-a-log-file-by-matching-multiple-regular-expressions
+[ex-regex-replace-named]: text/regex.html#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 
-[ex-unicode-graphemes]: ../drafts/text/string_parsing.html#collect-unicode-graphemes
-[string_parsing-from_str]: ../drafts/text/string_parsing.html#implement-the-fromstr-trait-for-a-custom-struct
+[ex-unicode-graphemes]: text/string_parsing.html#collect-unicode-graphemes
+[string_parsing-from_str]: text/string_parsing.html#implement-the-fromstr-trait-for-a-custom-struct
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

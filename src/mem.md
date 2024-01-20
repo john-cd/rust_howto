@@ -4,6 +4,6 @@
 |--------|--------|------------|
 | [Declare lazily evaluated constant][ex-lazy-constant] | [![lazy_static-badge]][lazy_static] | [![cat-caching-badge]][cat-caching] [![cat-rust-patterns-badge]][cat-rust-patterns] |
 
-[ex-lazy-constant]: ../drafts/mem/global_static.html#declare-lazily-evaluated-constant
+[ex-lazy-constant]: mem/global_static.html#declare-lazily-evaluated-constant
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

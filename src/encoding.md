@@ -17,19 +17,19 @@
 | [Deserialize a TOML configuration file][ex-toml-config] | [![toml-badge]][toml] | [![cat-encoding-badge]][cat-encoding] |
 | [Read and write integers in little-endian byte order][ex-byteorder-le] | [![byteorder-badge]][byteorder] | [![cat-encoding-badge]][cat-encoding] |
 
-[ex-percent-encode]: ./encoding/strings.html#percent-encode-a-string
-[ex-urlencoded]: ./encoding/strings.html#encode-a-string-as-applicationx-www-form-urlencoded
-[ex-hex-encode-decode]: ./encoding/strings.html#encode-and-decode-hex
-[ex-base64]: ./encoding/strings.html#encode-and-decode-base64
-[ex-csv-read]: ./encoding/csv.html#read-csv-records
-[ex-csv-delimiter]: ./encoding/csv.html#read-csv-records-with-different-delimiter
-[ex-csv-filter]: ./encoding/csv.html#filter-csv-records-matching-a-predicate
-[ex-invalid-csv]: ./encoding/csv.html#handle-invalid-csv-data-with-serde
-[ex-serialize-csv]: ./encoding/csv.html#serialize-records-to-csv
-[ex-csv-serde]: ./encoding/csv.html#serialize-records-to-csv-using-serde
-[ex-csv-transform-column]: ./encoding/csv.html#transform-csv-column
-[ex-json-value]: ./encoding/complex.html#serialize-and-deserialize-unstructured-json
-[ex-toml-config]: ./encoding/complex.html#deserialize-a-toml-configuration-file
-[ex-byteorder-le]: ./encoding/complex.html#read-and-write-integers-in-little-endian-byte-order
+[ex-percent-encode]: encoding/strings.html#percent-encode-a-string
+[ex-urlencoded]: encoding/strings.html#encode-a-string-as-applicationx-www-form-urlencoded
+[ex-hex-encode-decode]: encoding/strings.html#encode-and-decode-hex
+[ex-base64]: encoding/strings.html#encode-and-decode-base64
+[ex-csv-read]: encoding/csv.html#read-csv-records
+[ex-csv-delimiter]: encoding/csv.html#read-csv-records-with-different-delimiter
+[ex-csv-filter]: encoding/csv.html#filter-csv-records-matching-a-predicate
+[ex-invalid-csv]: encoding/csv.html#handle-invalid-csv-data-with-serde
+[ex-serialize-csv]: encoding/csv.html#serialize-records-to-csv
+[ex-csv-serde]: encoding/csv.html#serialize-records-to-csv-using-serde
+[ex-csv-transform-column]: encoding/csv.html#transform-csv-column
+[ex-json-value]: encoding/complex.html#serialize-and-deserialize-unstructured-json
+[ex-toml-config]: encoding/complex.html#deserialize-a-toml-configuration-file
+[ex-byteorder-le]: encoding/complex.html#read-and-write-integers-in-little-endian-byte-order
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

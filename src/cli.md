@@ -1,11 +1,19 @@
-# Command Line
+# CLI
 
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Parse command line arguments][ex-clap-basic] | [![clap-badge]][clap] | [![cat-command-line-badge]][cat-command-line] |
-| [ANSI Terminal][ex-ansi_term-basic] | [![ansi_term-badge]][ansi_term]| [![cat-command-line-badge]][cat-command-line] |
+[Command Line Applications in Rust (book)][rust-cli-book]⮳
 
-[ex-clap-basic]: ./cli/arguments.html#parse-command-line-arguments
-[ex-ansi_term-basic]: ./cli/ansi_terminal.html#ansi-terminal
+## Command-line argument parsing
 
-{{#include ../refs/link-refs.md}}
+[![clap-badge]][clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )
+
+```rust,editable,no_run
+{{#include ../deps/examples/clap.rs}}
+```
+
+## See also
+
+[![ansi-term-badge]][ansi-term]
+
+[TUIFY YOUR CLAP CLI APPS AND MAKE THEM MORE INTERACTIVE][tuify]⮳
+
+{{#include refs/link-refs.md}}

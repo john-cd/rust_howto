@@ -1,13 +1,9 @@
-# Regular Expressions
+# Regex Crate
 
-{{#include regex/email.md}}
+[![regex-badge]][regex] [(github)][regex-github]⮳
 
-{{#include regex/hashtags.md}}
-
-{{#include regex/phone.md}}
-
-{{#include regex/filter-log.md}}
-
-{{#include regex/replace.md}}
+```rust,editable
+{{#include ../../deps/examples/regex.rs}}
+```
 
 {{#include ../refs/link-refs.md}}

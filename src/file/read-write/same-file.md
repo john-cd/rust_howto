@@ -17,7 +17,7 @@ cargo run
 displays the contents of the file new.txt.
 
 ```bash
-cargo run >> ./new.txt
+cargo run >> new.txt
 ```
 
 errors because the two files are same.

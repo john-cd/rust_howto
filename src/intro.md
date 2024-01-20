@@ -2,13 +2,13 @@
 
 This book is **a compendium of Rust ecosystem examples, recipes, and links**. It is intended to be **everything you need for day-to-day Rust coding, in one place**.
 
-It quickly summarizes the basics of the [language](lang/rust_language.md) and often-used elements of the [standard library](std/standard_library.md).
+It quickly summarizes the basics of the [language](lang/rust_language.md) and often-used elements of the [standard library](standard_library.md).
 
-It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](concerns/error_handling.md), [error customization](concerns/error_customization.md), [configuration](concerns/configuration.md), [logging](concerns/logging.md)...
+It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](errors/error_handling.md), [error customization](errors/error_customization.md), [configuration](concerns/configuration.md), [logging](logging/logging.md)...
 
-[Concurrency](concurrency/concurrency.md), including [asynchronous programming](concurrency/async/async.md), are covered in details.
+[Concurrency](concurrency.md), including [asynchronous programming](concurrency/async.md), are covered in details.
 
-Next are [tools](tools.md), such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming [domains](domains/domains.md) such as [CLI](domains/cli.md) and [Web](web/web.md) development. The [links](links.md) section provides pointers to notable Rust websites, books, and code examples.
+Next are [tools](tools.md), such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming [domains](domains.md) such as [CLI](cli.md) and [Web](web.md) development. The [links](links.md) section provides pointers to notable Rust websites, books, and code examples.
 
 ## Who should read this book?
 
@@ -38,4 +38,4 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 
-{{#include ./refs/link-refs.md}}
+{{#include refs/link-refs.md}}

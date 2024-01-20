@@ -20,14 +20,14 @@
 | [Compile and link statically to a bundled C++ library][ex-cc-static-bundled-cpp] | [![cc-badge]][cc] | [![cat-development-tools-badge]][cat-development-tools] |
 | [Compile a C library while setting custom defines][ex-cc-custom-defines] | [![cc-badge]][cc] | [![cat-development-tools-badge]][cat-development-tools] |
 
-[ex-semver-increment]: ../drafts/development_tools/versioning.html#parse-and-increment-a-version-string
-[ex-semver-complex]: ../drafts/development_tools/versioning.html#parse-a-complex-version-string
-[ex-semver-prerelease]: ../drafts/development_tools/versioning.html#check-if-given-version-is-pre-release
-[ex-semver-latest]: ../drafts/development_tools/versioning.html#find-the-latest-version-satisfying-given-range
-[ex-semver-command]: ../drafts/development_tools/versioning.html#check-external-command-version-for-compatibility
+[ex-semver-increment]: development_tools/versioning.html#parse-and-increment-a-version-string
+[ex-semver-complex]: development_tools/versioning.html#parse-a-complex-version-string
+[ex-semver-prerelease]: development_tools/versioning.html#check-if-given-version-is-pre-release
+[ex-semver-latest]: development_tools/versioning.html#find-the-latest-version-satisfying-given-range
+[ex-semver-command]: development_tools/versioning.html#check-external-command-version-for-compatibility
 
-[ex-cc-static-bundled]: ../drafts/development_tools/build_tools.html#compile-and-link-statically-to-a-bundled-c-library
-[ex-cc-static-bundled-cpp]: ../drafts/development_tools/build_tools.html#compile-and-link-statically-to-a-bundled-c-library-1
-[ex-cc-custom-defines]: ../drafts/development_tools/build_tools.html#compile-a-c-library-while-setting-custom-defines
+[ex-cc-static-bundled]: development_tools/build_tools.html#compile-and-link-statically-to-a-bundled-c-library
+[ex-cc-static-bundled-cpp]: development_tools/build_tools.html#compile-and-link-statically-to-a-bundled-c-library-1
+[ex-cc-custom-defines]: development_tools/build_tools.html#compile-a-c-library-while-setting-custom-defines
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}
