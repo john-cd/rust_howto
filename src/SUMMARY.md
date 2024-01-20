@@ -35,6 +35,9 @@
   - [Serialization (Serde)](key/serialization.md)
   - [Time and date](key/time.md)
 
+- [Algorithms]()
+  - [Generate Random Values](algorithms/randomness.md)
+
 - [Cross-cutting concerns](concerns/cross_cutting_concerns.md)
   - [Automatic derivation](concerns/derive.md)
   - [Error handling](concerns/error_handling.md)
