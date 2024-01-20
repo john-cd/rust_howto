@@ -57,6 +57,11 @@ fn main() -> Result<()> {
                 code_dst_dir,
             )?;
         }
+        Some(args::Commands::RemoveCode) => {
+            let path = "/code/drafts/";
+            extract::remove_code_from_all_markdown_files_in(path);
+        }
+
         // Add more subcommands here: Some(args::Commands::...) => { ... }
         _ => {}
     }
