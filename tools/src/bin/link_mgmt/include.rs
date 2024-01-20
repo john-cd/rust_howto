@@ -35,17 +35,20 @@ pub fn include_in_all_markdown_files_in(markdown_root: &str) -> Result<()> {
                     println!("Insert {path_file_to_insert:?}");
                     let contents_to_insert =
                         fs::read_to_string(path_file_to_insert)?;
-                    //println!("\n{}", contents_to_insert);
-                    //println!("{}", cap.get(0).unwrap().as_str());
-                    new_txt = new_txt.replace(cap.get(0).unwrap().as_str(), &contents_to_insert);
+                    // println!("\n{}", contents_to_insert);
+                    // println!("{}", cap.get(0).unwrap().as_str());
+                    new_txt = new_txt.replace(
+                        cap.get(0).unwrap().as_str(),
+                        &contents_to_insert,
+                    );
                 } else {
                     println!("Ignored");
                 }
             }
             if new_txt != buf {
-                //println!("{}",  new_txt);
+                // println!("{}",  new_txt);
                 File::create(p)?.write_all(new_txt.as_bytes())?;
-                //break;
+                // break;
             }
         }
     }
