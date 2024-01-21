@@ -4,16 +4,16 @@
 
 [![serde-json-badge]][serde-json] [![cat-encoding-badge]][cat-encoding]
 
-The `[serde_json][serde-json]` crate provides a `[from_str]` function to parse a `&str` of
+The [`serde_json`][serde-json] crate provides a [`from_str`][from_str] function to parse a `&str` of
 JSON.
 
-Unstructured JSON can be parsed into a universal `[serde_json::Value]` type that
+Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde_json::Value] type that
 is able to represent any valid JSON data.
 
-The example below shows a `&str` of JSON being parsed.  The expected value is declared using the `[json!]` macro.
+The example below shows a `&str` of JSON being parsed.  The expected value is declared using the [`json!`][json!] macro.
 
 ```rust,editable
-{#include ../../deps/examples/json.rs}
+{{#include ../../deps/examples/json.rs}}
 ```
 
 ## Deserialize a TOML configuration file
@@ -24,13 +24,13 @@ Parse some TOML into a universal `toml::Value` that is able to represent any
 valid TOML data.
 
 ```rust,editable
-{#include ../../deps/examples/toml.rs}
+{{#include ../../deps/examples/toml.rs}}
 ```
 
 Parse TOML into your own structs using [Serde].
 
 ```rust,editable
-{#include ../../deps/examples/toml2.rs}
+{{#include ../../deps/examples/toml1.rs}}
 ```
 
 ## Read and write integers in little-endian byte order
@@ -42,7 +42,7 @@ be necessary when receiving information over the network, such that bytes
 received are from another system.
 
 ```rust,editable
-{#include ../../deps/examples/endian-byte.rs}
+{{#include ../../deps/examples/endian-byte.rs}}
 ```
 
 [from_str]: https://docs.serde.rs/serde_json/fn.from_str.html

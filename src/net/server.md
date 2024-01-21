@@ -9,7 +9,7 @@ listen until a request is made.  `SocketAddrV4` assigns a random port when
 setting port to 0.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/listen-unused.rs}
+{{#include ../../deps/examples/listen-unused.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}
