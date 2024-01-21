@@ -13,4 +13,4 @@ or older resources, such as:
 - [Rust starter pack][rust-starter-pack]⮳
 - [stdx][stdx]⮳
 
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

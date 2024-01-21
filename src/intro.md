@@ -2,9 +2,9 @@
 
 This book is **a compendium of Rust ecosystem examples, recipes, and links**. It is intended to be **everything you need for day-to-day Rust coding, in one place**.
 
-It quickly summarizes the basics of the [language](lang/rust_language.md) and often-used elements of the [standard library](standard_library.md).
+It quickly summarizes the basics of the [language](lang.md) and often-used elements of the [standard library](standard_library.md).
 
-It then focuses on [cross-cutting concerns](concerns/cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](errors/error_handling.md), [error customization](errors/error_customization.md), [configuration](concerns/configuration.md), [logging](logging/logging.md)...
+It then focuses on [cross-cutting concerns](cross_cutting_concerns.md) that affect most aspects of development e.g. [error handling](errors/error_handling.md), [error customization](errors/error_customization.md), [configuration](concerns/configuration.md), [logging](logging.md)...
 
 [Concurrency](concurrency.md), including [asynchronous programming](concurrency/async.md), are covered in details.
 
@@ -26,16 +26,7 @@ This book intends to provide EXAMPLES to demonstrate the use of key Rust crates,
 
 [Rust by Example][rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates.
-
-## Call for contributions
-
-This book is in its **early days** - feel free to submit an issue or a pull request to the [repo][repo].
-
-Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][drafts]. An informal (and very long) list of topics of interest is kept in [TODO][todo]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pasteable into Rust code. Please read [CONTRIBUTING.md][contributing] for more details.
-
-Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [statistics][lib-rs-stats]⮳. Review [key crates](key/key_crates.md) for topic ideas.
-
-This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
+The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates. The _Rust Cookbook_ is a collection of simple examples that demonstrate good practices to accomplish common
+programming tasks, using the crates of the Rust ecosystem.
 
 {{#include refs/link-refs.md}}

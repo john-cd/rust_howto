@@ -227,6 +227,10 @@
 [quote-badge]: https://badge-cache.kominick.com/crates/v/quote.svg?label=quote
 [quote]: https://docs.rs/quote/latest/quote/
 
+[r3bl-tuify-badge]: https://badge-cache.kominick.com/crates/v/r3bl_tuify.svg?label=r3bl_tuify
+[r3bl-tuify]: https://docs.rs/r3bl_tuify/
+[r3bl_tuify-crate]: https://crates.io/crates/r3bl_tuify
+
 [rand-badge]: https://badge-cache.kominick.com/crates/v/rand.svg?label=rand
 [rand]: https://docs.rs/rand/
 
@@ -362,6 +366,9 @@
 [tracing-subscriber-crate]: https://crates.io/crates/tracing-subscriber/
 
 [trillium-website]: https://trillium.rs/welcome
+
+[tui-rs-badge]: https://badge-cache.kominick.com/crates/v/tui.svg?label=tui-rs
+[tui-rs]: https://docs.rs/tui/
 
 [url-badge]: https://badge-cache.kominick.com/crates/v/url.svg?label=url
 [url]: https://docs.rs/url/

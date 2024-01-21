@@ -17,4 +17,6 @@ This reference guide is inspired from online websites, blogs, and documentation,
 - [Easy Rust][easy-rust]⮳
 - [The Rustonomicon][rustonomicon-book]⮳
 
+This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
+
 {{#include ../refs/link-refs.md}}

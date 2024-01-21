@@ -1,4 +1,4 @@
-## Debugging
+## Logging
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
