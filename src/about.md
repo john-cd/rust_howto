@@ -71,7 +71,7 @@ cd my-example
 Now, we also need to add the necessary crates to [Cargo.toml], as
 indicated by the crate badges, in this case just "rand". To do so,
 we'll use the `cargo add` command, which is provided by the
-[`cargo-edit`] crate, which we need to install first:
+`[cargo-edit]` crate, which we need to install first:
 
 ```sh
 cargo install cargo-edit
@@ -153,5 +153,5 @@ as are crates that are pending evaluation.
 [crates.io]: https://crates.io
 [docs.rs]: https://docs.rs
 [Cargo.toml]: http://doc.crates.io/manifest.html
-[`cargo-edit`]: https://github.com/killercup/cargo-edit
+[cargo-edit]: https://github.com/killercup/cargo-edit
 {{#include refs/link-refs.md}}
