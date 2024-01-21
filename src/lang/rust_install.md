@@ -30,15 +30,17 @@ rustup doc
 ```bash
 cargo new hello_world
 cd hello_world
-code .      # open VS Code and edit
+code .      # open VS Code (or your favorite editor) and edit the code as you wish
 ```
 
 - Build / run the code.
 
 ```bash
-cargo check
-cargo build
-cargo run
+cargo check # check if the code can compile
+cargo build # compile
+cargo run # run the executable
 ```
 
-{{#include refs/link-refs.md}}
+`cargo run` builds the code if `cargo build` has not been invoked before or the code has changed.
+
+{{#include ../refs/link-refs.md}}

@@ -172,34 +172,3 @@ Search within the book
 <https://news.ycombinator.com/item?id=23473303>
 
 Algolia
-
-## Topics of interest
-
-- http crate, hyper
-- pyo3
-- tokio, async-std and related
-- more database examples, including object databases, graph databases, BonsaiDB
-- Raft Consensus library
-- advanced data structures
-- basic and advanced TCP/IP networking
-- file system traversal
-- zip files and other archives
-- sound, graphics, game engines
-- GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits
-- GPU processing, CUDA
-- machine learning, Tensorflow
-- high-performance computing: OpenMP, etc.
-- network filesystems
-- statistics, math, bignum libraries
-- crypto, SSL, SSH, other public key encryption, X.509, RusTLS
-- social media APIs
-- personal file sharing: OwnCloud, etc.
-- search engines
-- AWS and other cloud services
-- buffer pools, garbage collection, or other reference-counted examples
-- IPv6 address processing
-- authentication / authorization: Oauth2, LDAP/AD, DNS lookups
-- cloud stuff: LB, status reporting (Vigil), routing, orchestration, containers
-- version control: libgit2: clone, change branches, create commits, push, pull
-- cargo & project integration via cargo-edit
-- Games: bevy

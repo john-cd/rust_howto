@@ -38,7 +38,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](async/tokio.md) runtime - see [The State of Async Rust: Runtimes][state-of-async-rust]⮳.
+In most cases, prefer the [Tokio](../async/tokio.md) runtime - see [The State of Async Rust: Runtimes][state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 

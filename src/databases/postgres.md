@@ -32,9 +32,9 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 {{#include ../../deps/examples/aggregate_data.rs}}
 ```
 
-[postgres]: https://docs.rs/postgres/0.17.2/postgres/
-[Client::connect]: https://docs.rs/postgres/0.17.2/postgres/struct.Client.html#method.connect
-[execute]: https://docs.rs/postgres/0.17.2/postgres/struct.Client.html#method.execute
-[query]: https://docs.rs/postgres/0.17.2/postgres/struct.Client.html#method.query
+[postgres]: https://docs.rs/postgres/
+[Client::connect]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.connect
+[execute]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.execute
+[query]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.query
 [Museum of Modern Art]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
 {{#include ../refs/link-refs.md}}

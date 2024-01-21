@@ -25,7 +25,7 @@ Tokio provides a few major components:
 Example from [tokio_graceful_shutdown][tokio-graceful-shutdown]⮳:
 
 ```rust,editable,noplayground,no_run
-{{#include ../../../deps/examples/tokio_graceful_shutdown.rs}}
+{{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
 ```
 
-{{#include ../../refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}

@@ -1,8 +1,22 @@
-## Editing
+# Editing
 
-# Formatting and Linting
+## IDEs
 
-## Rustfmt
+[VS Code][vs-code]⮳
+
+[Rust plugin for VS Code][rust-analyzer]⮳
+
+[rust-analyzer (home page)][rust-analyzer-website]⮳
+
+## IntelliJ Rust
+
+If you don’t have a JetBrains license, IntelliJ IDEA is available for free and supports IntelliJ Rust.
+
+If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains’ IDE suite.
+
+## Formatting and Linting
+
+### Rustfmt
 
 [rustfmt][rustfmt]⮳
 
@@ -21,7 +35,7 @@ Using `--check` instructs `rustfmt` to exit with an error code if the input is n
 cargo fmt --all -- --check
 ```
 
-### Configuration
+#### Configuration
 
 [Configuring Rustfmt][rustfmt-config]⮳
 
@@ -69,22 +83,8 @@ List config options with
 rustfmt --help=config
 ```
 
-### Formatting attributes
+#### Formatting attributes
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]` , `#[rustfmt::skip::macros(macro_name)]` , or `#![rustfmt::skip::attributes(custom_attribute)]`
-
-## IDEs
-
-[VS Code][vs-code]⮳
-
-[Rust plugin for VS Code][rust-analyzer]⮳
-
-[rust-analyzer (home page)][rust-analyzer-website]⮳
-
-## IntelliJ Rust
-
-If you don’t have a JetBrains license, IntelliJ IDEA is available for free and supports IntelliJ Rust.
-
-If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains’ IDE suite.
 
 {{#include ../refs/link-refs.md}}

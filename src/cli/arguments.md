@@ -1,8 +1,8 @@
-# Clap basic
+# Command-line argument parsing
 
-## Parse command line arguments
+## Using `clap`'s builder API
 
-[![clap-badge]][clap]
+[![clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )
 
 This application describes the structure of its command-line interface using
 `clap`'s builder style. The [documentation][clap] gives two other possible ways to
@@ -48,6 +48,14 @@ The output is:
 ```bash
 The file passed is: myfile.txt
 Your favorite number must be 256.
+```
+
+## Using `clap`'s derive API
+
+[![clap-badge]][clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )
+
+```rust,editable,no_run
+{{#include ../../deps/examples/clap.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

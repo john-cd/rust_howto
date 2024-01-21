@@ -1,25 +1,16 @@
-# Databases and ORMs
+# Database
 
-## Sqlx
+| Recipe | Crates | Categories |
+|--------|--------|------------|
+| [Create a SQLite database][ex-sqlite-initialization] | [![rusqlite-badge]][rusqlite] | [![cat-database-badge]][cat-database] |
+| [Insert and Query data][ex-sqlite-insert-select] | [![rusqlite-badge]][rusqlite] | [![cat-database-badge]][cat-database] |
+| [Create tables in a Postgres database][ex-postgres-create-tables] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
+| [Insert and Query data][ex-postgres-insert-query-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
+| [Aggregate data][ex-postgres-aggregate-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
 
-[![sqlx-badge]][sqlx] [(github)][sqlx-github] [(lib.rs)][sqlx-librs]
-
-[Sqlx][sqlx] is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, SQLite, and MSSQL.
-
-## SeaORM
-
-[![sea-orm-badge]][sea-orm] [(website)][sea-orm-website] [(cookbook)][sea-orm-cookbook]
-
-[Seaography GraphQL server][seography-website]⮳
-
-## Diesel
-
-[![diesel-badge]][diesel] [(lib.rs)][diesel-librs]
-
-## See also
-
-[![postgres-badge]][postgres]
-
-[![rusqlite-badge]][rusqlite]
-
+[ex-sqlite-initialization]: databases/sqlite.md#create-a-sqlite-database
+[ex-sqlite-insert-select]:  databases/sqlite.md#insert-and-select-data
+[ex-postgres-create-tables]: databases/postgres.md#create-tables-in-a-postgres-database
+[ex-postgres-insert-query-data]: databases/postgres.md#insert-and-query-data
+[ex-postgres-aggregate-data]: databases/postgres.md#aggregate-data
 {{#include refs/link-refs.md}}
