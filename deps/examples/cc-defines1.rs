@@ -1,9 +1,9 @@
-extern "C" {
-    fn print_app_info();
-}
-
+// extern "C" {
+//     fn print_app_info();
+// }
+//
 fn main() {
-    unsafe {
-        print_app_info();
-    }
+    //     unsafe {
+    //         print_app_info();
+    //     }
 }
