@@ -7,7 +7,7 @@
 Decompress (`[GzDecoder]`) and extract (`[Archive::unpack]`) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/tar-decompress.rs}
+{{#include ../../deps/examples/tar-decompress.rs}}
 ```
 
 ## Compress a directory into tarball
@@ -16,21 +16,21 @@ Decompress (`[GzDecoder]`) and extract (`[Archive::unpack]`) all files from a co
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
-Creates a `[File]` wrapped in `[GzEncoder]` and `[tar::Builder]` </br>Adds contents of `/var/log` directory recursively into the archive
-under `backup/logs`path with `[Builder::append_dir_all]`. `[GzEncoder]` is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
+Creates a [`File`][File] wrapped in [`GzEncoder`][GzEncoder] and [`tar::Builder`][tar::Builder] </br>Adds contents of `/var/log` directory recursively into the archive
+under `backup/logs`path with `[Builder::append_dir_all]`. [`GzEncoder`][GzEncoder] is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/tar-compress.rs}
+{{#include ../../deps/examples/tar-compress.rs}}
 ```
 
 ## Decompress a tarball while removing a prefix from the paths
 
 [![flate2-badge]][flate2] [![tar-badge]][tar] [![cat-compression-badge]][cat-compression]
 
-Iterate over the `[Archive::entries]`. Use `[Path::strip_prefix]` to remove the specified path prefix (`bundle/logs`).  Finally, extract the `[tar::Entry]` via `[Entry::unpack]`.
+Iterate over the `[Archive::entries]`. Use [`Path::strip_prefix`][Path::strip_prefix] to remove the specified path prefix (`bundle/logs`).  Finally, extract the [`tar::Entry`][tar::Entry] via `[Entry::unpack]`.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/tar-strip-prefix.rs}
+{{#include ../../deps/examples/tar-strip-prefix.rs}}
 ```
 
 [Archive::unpack]: https://docs.rs/tar/*/tar/struct.Archive.html#method.unpack

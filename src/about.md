@@ -57,7 +57,7 @@ Consider this example for "generate random numbers within a range":
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
 ```rust,editable
-{#include ../deps/examples/about.rs}
+{{#include ../deps/examples/about.rs}}
 ```
 
 To work with it locally we can run the following commands to create
@@ -71,7 +71,7 @@ cd my-example
 Now, we also need to add the necessary crates to [Cargo.toml], as
 indicated by the crate badges, in this case just "rand". To do so,
 we'll use the `cargo add` command, which is provided by the
-`[cargo-edit]` crate, which we need to install first:
+[`cargo-edit`][cargo-edit] crate, which we need to install first:
 
 ```sh
 cargo install cargo-edit
@@ -105,7 +105,7 @@ The basic pattern we use is to have a `fn main() -> Result`.
 The structure generally looks like:
 
 ```rust,editable
-{#include ../deps/examples/about2.rs}
+{{#include ../deps/examples/about1.rs}}
 ```
 
 This is using the `error_chain!` macro to define a custom `Error` and
@@ -119,7 +119,7 @@ default like below.  In order to read full contents click on the
 right corner of the snippet.
 
 ```rust,editable
-{#include ../deps/examples/about3.rs}
+{{#include ../deps/examples/about2.rs}}
 ```
 
 For more background on error handling in Rust, read [this page of the

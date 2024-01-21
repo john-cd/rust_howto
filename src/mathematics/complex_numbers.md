@@ -4,11 +4,11 @@
 
 [![num-badge]][num] [![cat-science-badge]][cat-science]
 
-Creates complex numbers of type `[num::complex::Complex]` Both the real and
+Creates complex numbers of type [`num::complex::Complex`][num::complex::Complex] Both the real and
 imaginary part of the complex number must be of the same type.
 
 ```rust,editable
-{#include ../../deps/examples/create-complex.rs}
+{{#include ../../deps/examples/create-complex.rs}}
 ```
 
 ## Adding complex numbers
@@ -20,7 +20,7 @@ built in types: the numbers in question must be of the same type (i.e. floats
 or integers).
 
 ```rust,editable
-{#include ../../deps/examples/add-complex.rs}
+{{#include ../../deps/examples/add-complex.rs}}
 ```
 
 ## Mathematical functions
@@ -34,7 +34,7 @@ complex numbers, the Complex type has a few built in
 functions, all of which can be found here: `[num::complex::Complex]`
 
 ```rust,editable
-{#include ../../deps/examples/mathematical-functions.rs}
+{{#include ../../deps/examples/mathematical-functions.rs}}
 ```
 
 [num::complex::Complex]: https://autumnai.github.io/cuticula/num/complex/struct.Complex.html

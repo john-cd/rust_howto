@@ -2,7 +2,7 @@
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Measure elapsed time][ex-measure-elapsed-time] | [![std-badge]][std] | [![cat-time-badge]][cat-time] |
+| [Measure elapsed time][ex-measure-elapsed-time] | [![std-badge]][std] | [![cat-date-and-time-badge]][cat-date-and-time] |
 | [Perform checked date and time calculations][ex-datetime-arithmetic] | [![chrono-badge]][chrono] | [![cat-date-and-time-badge]][cat-date-and-time] |
 | [Convert a local time to another timezone][ex-convert-datetime-timezone] | [![chrono-badge]][chrono] | [![cat-date-and-time-badge]][cat-date-and-time] |
 | [Examine the date and time][ex-examine-date-and-time] | [![chrono-badge]][chrono] | [![cat-date-and-time-badge]][cat-date-and-time] |

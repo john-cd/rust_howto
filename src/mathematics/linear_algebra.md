@@ -4,29 +4,29 @@
 
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
-Creates two 2-D matrices with `[ndarray::arr2]` and sums them element-wise.
+Creates two 2-D matrices with [`ndarray::arr2`][ndarray::arr2] and sums them element-wise.
 
 Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
 ```rust,editable
-{#include ../../deps/examples/add-matrices.rs}
+{{#include ../../deps/examples/add-matrices.rs}}
 ```
 
 ## Multiplying matrices
 
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
-Creates two matrices with `[ndarray::arr2]` and performs matrix multiplication on them with `[ndarray::ArrayBase::dot]`
+Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix multiplication on them with `[ndarray::ArrayBase::dot]`
 
 ```rust,editable
-{#include ../../deps/examples/multiply-matrices.rs}
+{{#include ../../deps/examples/multiply-matrices.rs}}
 ```
 
 ## Multiply a scalar with a vector with a matrix
 
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
-Creates a 1-D array (vector) with `[ndarray::arr1]` and a 2-D array (matrix)
+Creates a 1-D array (vector) with [`ndarray::arr1`][ndarray::arr1] and a 2-D array (matrix)
 with `[ndarray::arr2]`
 
 First, a scalar is multiplied by the vector to get
@@ -41,7 +41,7 @@ the vector is a 1-D array on the right-hand side, so `dot` handles it as a colum
 vector.
 
 ```rust,editable
-{#include ../../deps/examples/multiply-scalar-vector-matrix.rs}
+{{#include ../../deps/examples/multiply-scalar-vector-matrix.rs}}
 ```
 
 ## Vector comparison
@@ -53,7 +53,7 @@ The [ndarray] crate supports a number of ways to create arrays -- this recipe cr
 
 This recipe contains an example of comparing two floating-point vectors element-wise.
 Floating-point numbers are often stored inexactly, making exact comparisons difficult.
-However, the `[assert_abs_diff_eq!]` macro from the `[approx]` crate allows for convenient
+However, the [`assert_abs_diff_eq!`][assert_abs_diff_eq!] macro from the [`approx`][approx] crate allows for convenient
 element-wise comparisons. To use the `approx` crate with `ndarray`, the `approx`
 feature must be added to the `ndarray` dependency in `Cargo.toml`. For example,
 `ndarray = { version = "0.13", features = ["approx"] }`.
@@ -64,15 +64,15 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 their modification later. See [Binary Operators With Two Arrays] for additional detail.
 
 ```rust,editable
-{#include ../../deps/examples/vector-comparison.rs}
+{{#include ../../deps/examples/vector-comparison.rs}}
 ```
 
 ## Vector norm
 
 [![ndarray-badge]][ndarray]
 
-This recipe demonstrates use of the `[Array1]` type, `[ArrayView1]` type,
-`[fold]` method, and `[dot]` method in computing the [l1] and [l2] norms of a
+This recipe demonstrates use of the [`Array1`][Array1] type, [`ArrayView1`][ArrayView1] type,
+`[fold]` method, and [`dot`][dot] method in computing the [l1] and [l2] norms of a
 given vector.
 
 + The `l2_norm` function is the simpler of the two, as it computes the
@@ -82,9 +82,9 @@ operation that sums the absolute values of the elements. (This could also be
 performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new
 array for the result of the `mapv`.)
 
-Note that both `l1_norm` and `l2_norm` take the `[ArrayView1]` type. This recipe
+Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ArrayView1] type. This recipe
 considers vector norms, so the norm functions only need to accept one-dimensional
-views (hence `[ArrayView1]` . While the functions could take a
+views (hence [`ArrayView1`][ArrayView1]. While the functions could take a
 parameter of type `&Array1<f64>` instead, that would require the caller to have
 a reference to an owned array, which is more restrictive than just having access
 to a view (since a view can be created from any array or view, not just an owned
@@ -98,17 +98,17 @@ benefit of users. For internal functions, the more concise `ArrayView1<f64>`
 may be preferable.
 
 ```rust,editable
-{#include ../../deps/examples/vector-norm.rs}
+{{#include ../../deps/examples/vector-norm.rs}}
 ```
 
 ## Invert matrix
 
 [![nalgebra-badge]][nalgebra] [![cat-science-badge]][cat-science]
 
-Creates a 3x3 matrix with `[nalgebra::Matrix3]` and inverts it, if possible.
+Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts it, if possible.
 
 ```rust,editable
-{#include ../../deps/examples/invert-matrix.rs}
+{{#include ../../deps/examples/invert-matrix.rs}}
 ```
 
 ## (De)-Serialize a Matrix
@@ -116,12 +116,12 @@ Creates a 3x3 matrix with `[nalgebra::Matrix3]` and inverts it, if possible.
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
 Serialize and deserialize a matrix to and from JSON. Serialization is taken care of
-by `[serde_json::to_string]` and `[serde_json::from_str]` performs deserialization.
+by [`serde_json::to_string`][serde_json::to_string] and [`serde_json::from_str`][serde_json::from_str] performs deserialization.
 
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust
-{#include ../../deps/examples/deserialize-matrix.rs}
+{{#include ../../deps/examples/deserialize-matrix.rs}}
 ```
 
 [approx]: https://docs.rs/approx/*/approx/index.html

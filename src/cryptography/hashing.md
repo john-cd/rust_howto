@@ -4,10 +4,10 @@
 
 [![ring-badge]][ring] [![data-encoding-badge]][data-encoding] [![cat-cryptography-badge]][cat-cryptography]
 
-Writes some data to a file, then calculates the SHA-256 `[digest::Digest]` of the file's contents using `[digest::Context]`
+Writes some data to a file, then calculates the SHA-256 [`digest::Digest`][digest::Digest] of the file's contents using `[digest::Context]`
 
 ```rust,editable
-{#include ../../deps/examples/sha-digest.rs}
+{{#include ../../deps/examples/sha-digest.rs}}
 ```
 
 [digest::Context]: https://briansmith.org/rustdoc/ring/digest/struct.Context.html
@@ -17,10 +17,10 @@ Writes some data to a file, then calculates the SHA-256 `[digest::Digest]` of th
 
 [![ring-badge]][ring] [![cat-cryptography-badge]][cat-cryptography]
 
-Uses `[ring::hmac]` to creates a `[hmac::Signature]` of a string then verifies the signature is correct.
+Uses [`ring::hmac`][ring::hmac] to creates a [`hmac::Signature`][hmac::Signature] of a string then verifies the signature is correct.
 
 ```rust,editable
-{#include ../../deps/examples/hmac.rs}
+{{#include ../../deps/examples/hmac.rs}}
 ```
 
 [hmac::Signature]: https://briansmith.org/rustdoc/ring/hmac/struct.Signature.html
