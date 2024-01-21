@@ -1,7 +1,6 @@
 alias b := build
 alias ba := buildall
 alias ca := clippyall
-alias l := links
 alias s := serve
 alias t := test
 alias ta := testall
@@ -112,5 +111,5 @@ update:
 default := 'help'
 
 # Manage links
-links args=default:
-  cargo run -p tools --bin link_mgmt -- {{args}}
+do args=default:
+  cargo run -p tools --bin do -- {{args}}
