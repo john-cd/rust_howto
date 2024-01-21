@@ -22,7 +22,7 @@ fn main() -> Result<()> {
             match subcmd {
                 RefDefsSubCommand::Write(pathargs) => {
                     // Create temp directory
-                    tools::create_dir("/code/book/temp/")?;
+                    utils::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/existing_refs.md");
                     println!(
@@ -40,7 +40,7 @@ fn main() -> Result<()> {
             match subcmd {
                 LinksSubCommand::WriteAll(pathargs) => {
                     // Create temp directory
-                    tools::create_dir("/code/book/temp/")?;
+                    utils::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/all_links.md");
                     println!("Writing existing links to {:?}", pathbuf);
@@ -50,7 +50,7 @@ fn main() -> Result<()> {
                 }
                 LinksSubCommand::WriteInline(pathargs) => {
                     // Create temp directory
-                    tools::create_dir("/code/book/temp/")?;
+                    utils::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/inline_links.md");
                     println!("Writing existing inline links to {:?}", pathbuf);
@@ -63,7 +63,7 @@ fn main() -> Result<()> {
         Command::Markdown(subcmd) => match subcmd {
             args::MarkdownSubCommand::ExtractCodeExamples => {
                 let code_dst_dir = "/code/deps/examples/temp/";
-                tools::create_dir(code_dst_dir)?;
+                utils::create_dir(code_dst_dir)?;
                 let path = "/code/drafts/";
                 println!("Extracting examples from .md files in {:?}", path);
                 extract::extract_code_from_all_markdown_files_in(
@@ -82,7 +82,7 @@ fn main() -> Result<()> {
         },
         Command::Debug(pathargs) => {
             // Create temp directory
-            tools::create_dir("/code/book/temp/")?;
+            utils::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
             let all_markdown: String =
                 file::read_all_markdown_files_in("./src/")?;
@@ -91,7 +91,7 @@ fn main() -> Result<()> {
         // Command::Test => {
         //     let all_markdown: String = parser::get_test_markdown();
         //     // Create temp directory
-        //     tools::create_dir("/code/book/temp/")?;
+        //     utils::create_dir("/code/book/temp/")?;
         //     let md = parser::get_test_markdown();
         //     let path = "/code/book/temp/test.log";
         //     parser::debug_parse_to(md, path)?;
