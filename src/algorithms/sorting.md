@@ -4,9 +4,7 @@
 
 [![std-badge]][std] [![cat-science-badge]][cat-science]
 
-This example sorts a Vector of integers via `[vec::sort]` Alternative would
-be to use `[vec::sort_unstable]` which can be faster, but does not preserve
-the order of equal elements.
+This example sorts a Vector of integers via `[vec::sort]` Alternative would be to use `[vec::sort_unstable]` which can be faster, but does not preserve the order of equal elements.
 
 ```rust,editable
 {#include ../../deps/examples/sort.rs}

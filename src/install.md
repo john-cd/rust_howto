@@ -1,4 +1,3 @@
-
 # Rust Installation
 
 [Install Rust][install-rust]⮳

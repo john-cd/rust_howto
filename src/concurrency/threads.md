@@ -84,7 +84,7 @@ and computing SHA256 hash.
 This example generates an image by drawing a fractal from the [Julia set]
 with a thread pool for distributed computation.
 
-<a href="https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png"><img src="https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png" width="150" /></a>
+[![Julia Set]( https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png )]( https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png )
 
 Allocate memory for output image of given width and height with `[ImageBuffer::new]`.
 `[Rgb::from_channels]` calculates RGB pixel values.

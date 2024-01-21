@@ -25,8 +25,7 @@ Generates a random value within half-open `[0, 10)` range (not including `10`) w
 ```
 
 `[Uniform]` can obtain values with [uniform distribution].
-This has the same effect, but may be faster when repeatedly generating numbers
-in the same range.
+This has the same effect, but may be faster when repeatedly generating numbers in the same range.
 
 ```rust,editable
 {#include ../../deps/examples/rand-range1.rs}
@@ -36,15 +35,11 @@ in the same range.
 
 [![rand-distr-badge]][rand-distr] [![cat-science-badge]][cat-science]
 
-By default, random numbers in the `rand` crate have
-[uniform distribution]. The `[rand-distr]` crate provides
-other kinds of distributions. To use them, you instantiate
-a distribution, then sample from that distribution using
-`[Distribution::sample]` with help of a random-number
-generator `[rand::Rng]`
+By default, random numbers in the `rand` crate have [uniform distribution]. The `[rand-distr]` crate provides
+other kinds of distributions. To use them, you instantiate a distribution, then sample from that distribution using
+`[Distribution::sample]` with help of a random-number generator `[rand::Rng]`
 
-The [distributions available are documented here][rand-distributions].
-An example using the `[Normal]` distribution is shown below.
+The [distributions available are documented here][rand-distributions]. An example using the `[Normal]` distribution is shown below.
 
 ```rust,editable,ignore
 {#include ../../deps/examples/rand-dist.rs}
@@ -75,8 +70,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 
 [![rand-badge]][rand] [![cat-os-badge]][cat-os]
 
-Randomly generates a string of given length ASCII characters with custom
-user-defined bytestring, with `[gen_range]`
+Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with `[gen_range]`
 
 ```rust,editable
 {{#include ../../deps/examples/rand-choose.rs}}
