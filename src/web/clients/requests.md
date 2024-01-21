@@ -2,7 +2,7 @@
 
 ## Make a HTTP GET request
 
-[![reqwest-badge]][reqwest] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
 Parses the supplied URL and makes a synchronous HTTP GET request
 with [`reqwest::blocking::get`]. Prints obtained [`reqwest::blocking::Response`]
@@ -10,7 +10,7 @@ status and headers. Reads HTTP response body into an allocated [`String`]
 using [`read_to_string`].
 
 ```rust,editable,no_run
-{#include ../../deps/examples/get.rs}
+{#include ../../../deps/examples/get.rs}
 ```
 
 ## Async
@@ -25,12 +25,12 @@ Uses the asynchronous versions of [reqwest], both [`reqwest::get`] and
 [`reqwest::Response`].
 
 ```rust,no_run
-{#include ../../deps/examples/get2.rs}
+{#include ../../../deps/examples/get2.rs}
 ```
 
 ## Set custom headers and URL parameters for a REST request
 
-[![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![url-badge]][url] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
 
 Sets both standard and custom HTTP headers as well as URL parameters
 for a HTTP GET request. Creates a custom header of type `XPoweredBy`
@@ -45,7 +45,7 @@ The request targets <http://httpbin.org/headers> service which responds with
 a JSON dict containing all request headers for easy verification.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/header.rs}
+{#include ../../../deps/examples/header.rs}
 ```
 
 [`header::Authorization`]: https://doc.servo.org/hyper/header/struct.Authorization.html
@@ -62,4 +62,4 @@ a JSON dict containing all request headers for easy verification.
 [`String`]: https://doc.rust-lang.org/std/string/struct.String.html
 [`tokio`]: https://docs.rs/crate/tokio/0.2.11
 [`tokio::main`]: https://tokio.rs/tokio/tutorial/hello-tokio#the-code
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}

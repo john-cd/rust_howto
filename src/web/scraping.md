@@ -2,7 +2,7 @@
 
 ## Extract all links from a webpage HTML
 
-[![reqwest-badge]][reqwest] [![select-badge]][select] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![select-badge]][select] [![cat-network-programming-badge]][cat-network-programming]
 
 Use [`reqwest::get`] to perform a HTTP GET request and then use
 [`Document::from_read`] to parse the response into a HTML document.
@@ -16,7 +16,7 @@ from links that have the "href" [`attr`] (attribute).
 
 ## Check a webpage for broken links
 
-[![reqwest-badge]][reqwest] [![select-badge]][select] [![url-badge]][url] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![select-badge]][select] [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
 
 Call `get_base_url` to retrieve the base URL. If the document has a base tag,
 get the href [`attr`] from base tag. [`Position::BeforePath`] of the original
@@ -33,7 +33,7 @@ The task makes a request to the links with [reqwest] and verifies
 
 ## Extract all unique links from a MediaWiki markup
 
-[![reqwest-badge]][reqwest] [![regex-badge]][regex] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![regex-badge]][regex] [![cat-network-programming-badge]][cat-network-programming]
 
 Pull the source of a MediaWiki page using [`reqwest::get`] and then
 look for all entries of internal and external links with

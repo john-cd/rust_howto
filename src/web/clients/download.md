@@ -2,7 +2,7 @@
 
 ## Download a file to a temporary directory
 
-[![reqwest-badge]][reqwest] [![tempdir-badge]][tempdir] [![cat-net-badge]][cat-net] [![cat-filesystem-badge]][cat-filesystem]
+[![reqwest-badge]][reqwest] [![tempdir-badge]][tempdir] [![cat-network-programming-badge]][cat-network-programming] [![cat-filesystem-badge]][cat-filesystem]
 
 Creates a temporary directory with [`tempfile::Builder`] and downloads
 a file over HTTP using [`reqwest::get`] asynchronously.
@@ -17,7 +17,7 @@ The temporary directory is automatically removed on program exit.
 
 ## POST a file to paste-rs
 
-[![reqwest-badge]][reqwest] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
 [`reqwest::Client`] establishes a connection to <https://paste.rs>
 following the [`reqwest::RequestBuilder`] pattern.  Calling [`Client::post`]
@@ -32,7 +32,7 @@ response and displays in the console.
 
 ## Make a partial download with HTTP range headers
 
-[![reqwest-badge]][reqwest] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
 Uses [`reqwest::blocking::Client::head`] to get the [Content-Length] of the response.
 
@@ -43,7 +43,7 @@ reqwest module.  The [Range] header specifies the chunk size and position.
 The Range header is defined in [RFC7233][HTTP Range RFC7233].
 
 ```rust,editable,no_run
-{#include ../../deps/examples/partial.rs}
+{#include ../../../deps/examples/partial.rs}
 ```
 
 [`Client::post`]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.post
@@ -63,4 +63,4 @@ The Range header is defined in [RFC7233][HTTP Range RFC7233].
 [Content-Length]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length
 [Range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
 [HTTP Range RFC7233]: https://tools.ietf.org/html/rfc7233#section-3.1
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
