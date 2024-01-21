@@ -21,4 +21,4 @@
 [ex-url-download]: web/clients/download.md#download-a-file-to-a-temporary-directory
 [ex-progress-with-range]: web/clients/download.md#make-a-partial-download-with-http-range-headers
 [ex-file-post]: web/clients/download.md#post-a-file-to-paste-rs
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}
