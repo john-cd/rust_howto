@@ -8,9 +8,8 @@ Handles error that occur when trying to open a file that does not
 exist. It is achieved by using [error-chain], a library that takes
 care of a lot of boilerplate code needed in order to [handle errors in Rust].
 
-`Io(std::io::Error)` inside [`foreign_links`] allows automatic
-conversion from [`std::io::Error`] into [`error_chain!`] defined type
-implementing the [`Error`] trait.
+`Io(std::io::Error)` inside `[foreign_links]` allows automatic
+conversion from `[std::io::Error]` into `[error_chain!]` defined type implementing the `[Error]` trait.
 
 The below recipe will tell how long the system has been running by
 opening the Unix file `/proc/uptime` and parse the content to get the
@@ -27,15 +26,13 @@ seen by expanding the code with the ⤢ button.
 
 [![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
 
-The  [error-chain] crate makes [matching] on different error types returned by
-a function possible and relatively compact. [`ErrorKind`] determines the error
+The  [error-chain] crate makes [matching] on different error types returned by a function possible and relatively compact. `[ErrorKind]` determines the error
 type.
 
 Uses [reqwest]::[blocking] to query a random integer generator web service.  Converts
 the string response into an integer. The Rust standard library,
 [reqwest], and the web service can all generate errors. Well defined Rust errors
-use [`foreign_links`]. An additional [`ErrorKind`] variant for the web service
-error uses `errors` block of the `error_chain!` macro.
+use `[foreign_links]` An additional `[ErrorKind]` variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust,editable
 {#include ../../deps/examples/retain.rs}
@@ -46,7 +43,7 @@ error uses `errors` block of the `error_chain!` macro.
 [![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
 
 This recipe shows how to handle a complex error scenario and then
-print a backtrace. It relies on [`chain_err`] to extend errors by
+print a backtrace. It relies on `[chain_err]` to extend errors by
 appending new errors. The error stack can be unwound, thus providing
 a better context to understand why an error was raised.
 
@@ -68,16 +65,16 @@ Error level - description
 └> 3 - field 1: number too large to fit in target type
 ```
 
-Run the recipe with `RUST_BACKTRACE=1` to display a detailed [`backtrace`] associated with this error.
+Run the recipe with `RUST_BACKTRACE=1` to display a detailed `[backtrace]` associated with this error.
 
-[`error_chain!`]: https://docs.rs/error-chain/*/error_chain/macro.error_chain.html
-[`Error`]: https://doc.rust-lang.org/std/error/trait.Error.html
-[`foreign_links`]: https://docs.rs/error-chain/*/error_chain/#foreign-links
-[`std::io::Error`]: https://doc.rust-lang.org/std/io/struct.Error.html
+[error_chain!]: https://docs.rs/error-chain/*/error_chain/macro.error_chain.html
+[Error]: https://doc.rust-lang.org/std/error/trait.Error.html
+[foreign_links]: https://docs.rs/error-chain/*/error_chain/#foreign-links
+[std::io::Error]: https://doc.rust-lang.org/std/io/struct.Error.html
 [handle errors in Rust]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
-[`ErrorKind`]: https://docs.rs/error-chain/*/error_chain/example_generated/enum.ErrorKind.html
+[ErrorKind]: https://docs.rs/error-chain/*/error_chain/example_generated/enum.ErrorKind.html
 [blocking]: https://docs.rs/reqwest/*/reqwest/blocking/index.html
 [Matching]:https://docs.rs/error-chain/*/error_chain/#matching-errors
-[`backtrace`]: https://docs.rs/error-chain/*/error_chain/trait.ChainedError.html#tymethod.backtrace
-[`chain_err`]: https://docs.rs/error-chain/*/error_chain/index.html#chaining-errors
+[backtrace]: https://docs.rs/error-chain/*/error_chain/trait.ChainedError.html#tymethod.backtrace
+[chain_err]: https://docs.rs/error-chain/*/error_chain/index.html#chaining-errors
 {{#include ../refs/link-refs.md}}

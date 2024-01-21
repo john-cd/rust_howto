@@ -36,9 +36,9 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 //! Provides an abstraction over a queue.  When the abstraction is used
 //! there are these advantages:
 //! - Fast
-//! - [`Easy`]
+//! - `[Easy]`
 //!
-//! [`Easy`]: http://thatwaseasy.example.com
+//! [Easy]: http://thatwaseasy.example.com
 
 # fn main() {}
 ```

@@ -5,8 +5,7 @@
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
 The example uses the `rayon` crate, which is a data parallelism library for Rust.
-`rayon` provides the [`par_iter_mut`] method for any parallel iterable data type.
-This is an iterator-like chain that potentially executes in parallel.
+`rayon` provides the `[par_iter_mut]` method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
 {#include ../../deps/examples/rayon-iter-mut.rs}
@@ -16,7 +15,7 @@ This is an iterator-like chain that potentially executes in parallel.
 
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
-This example demonstrates using the [`rayon::any`] and [`rayon::all`] methods, which are parallelized counterparts to [`std::any`] and [`std::all`]. [`rayon::any`] checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::all`] checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
+This example demonstrates using the `[rayon::any]` and `[rayon::all]` methods, which are parallelized counterparts to `[std::any]` and `[std::all]`. `[rayon::any]` checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. `[rayon::all]` checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
 ```rust,editable
 {#include ../../deps/examples/rayon-any-all.rs}
@@ -26,15 +25,12 @@ This example demonstrates using the [`rayon::any`] and [`rayon::all`] methods, w
 
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
-This example uses [`rayon::find_any`] and [`par_iter`] to search a vector in
-parallel for an element satisfying the predicate in the given closure.
+This example uses `[rayon::find_any]` and `[par_iter]` to search a vector in parallel for an element satisfying the predicate in the given closure.
 
-If there are multiple elements satisfying the predicate defined in the closure
-argument of [`rayon::find_any`], `rayon` returns the first one found, not
+If there are multiple elements satisfying the predicate defined in the closure argument of `[rayon::find_any]` `rayon` returns the first one found, not
 necessarily the first one.
 
-Also note that the argument to the closure is a reference to a reference
-(`&&x`). See the discussion on [`std::find`] for additional details.
+Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on `[std::find]` for additional details.
 
 ```rust,editable
 {#include ../../deps/examples/rayon-parallel-search.rs}
@@ -48,8 +44,7 @@ This example will sort in parallel a vector of Strings.
 
 Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random
 values in parallel.  Although [multiple options]
-exist to sort an enumerable data type, [`par_sort_unstable`]
-is usually faster than [stable sorting] algorithms.
+exist to sort an enumerable data type, `[par_sort_unstable]` is usually faster than [stable sorting] algorithms.
 
 ```rust,editable
 {#include ../../deps/examples/rayon-parallel-sort.rs}
@@ -59,13 +54,9 @@ is usually faster than [stable sorting] algorithms.
 
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
-This example uses [`rayon::filter`], [`rayon::map`], and [`rayon::reduce`]
-to calculate the average age of `Person` objects whose age is over 30.
+This example uses `[rayon::filter]` `[rayon::map]` and `[rayon::reduce]` to calculate the average age of `Person` objects whose age is over 30.
 
-[`rayon::filter`] returns elements from a collection that satisfy the given
-predicate.  [`rayon::map`] performs an operation on every element, creating a
-new iteration, and [`rayon::reduce`] performs an operation given the previous
-reduction and the current element.  Also shows use of [`rayon::sum`],
+`[rayon::filter]` returns elements from a collection that satisfy the given predicate. `[rayon::map]` performs an operation on every element, creating a new iteration, and `[rayon::reduce]` performs an operation given the previous reduction and the current element. Also shows use of `[rayon::sum]`
 which has the same result as the reduce operation in this example.
 
 ```rust,editable
@@ -79,28 +70,27 @@ which has the same result as the reduce operation in this example.
 This example generates thumbnails for all .jpg files in the current directory
 then saves them in a new folder called `thumbnails`.
 
-[`glob::glob_with`] finds jpeg files in current directory. `rayon` resizes
-images in parallel using [`par_iter`] calling  [`DynamicImage::resize`].
+`[glob::glob_with]` finds jpeg files in current directory. `rayon` resizes images in parallel using `[par_iter]` calling  `[DynamicImage::resize]`
 
 ```rust,editable,no_run
 {#include ../../deps/examples/rayon-thumbnails.rs}
 ```
 
-[`par_sort_unstable`]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable
+[par_sort_unstable]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable
 [multiple options]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html
 [stable sorting]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort
-[`rayon::filter`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.filter
-[`rayon::map`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.map
-[`rayon::reduce`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.reduce
-[`rayon::sum`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.sum
-[`par_iter_mut`]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
-[`rayon::all`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.all
-[`rayon::any`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.any
-[`std::all`]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all
-[`std::any`]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
-[`rayon::find_any`]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.find_any
-[`std::find`]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
-[`glob::glob_with`]: https://docs.rs/glob/*/glob/fn.glob_with.html
-[`par_iter`]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
-[`DynamicImage::resize`]: https://docs.rs/image/*/image/enum.DynamicImage.html#method.resize
+[rayon::filter]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.filter
+[rayon::map]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.map
+[rayon::reduce]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.reduce
+[rayon::sum]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.sum
+[par_iter_mut]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
+[rayon::all]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.all
+[rayon::any]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.any
+[std::all]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all
+[std::any]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
+[rayon::find_any]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.find_any
+[std::find]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
+[glob::glob_with]: https://docs.rs/glob/*/glob/fn.glob_with.html
+[par_iter]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
+[DynamicImage::resize]: https://docs.rs/image/*/image/enum.DynamicImage.html#method.resize
 {{#include ../refs/link-refs.md}}

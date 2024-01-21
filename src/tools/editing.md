@@ -71,7 +71,7 @@ rustfmt --help=config
 
 ### Formatting attributes
 
-For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`, `#[rustfmt::skip::macros(macro_name)]`, or `#![rustfmt::skip::attributes(custom_attribute)]`
+For things you do not want rustfmt to mangle, use `#[rustfmt::skip]` , `#[rustfmt::skip::macros(macro_name)]` , or `#![rustfmt::skip::attributes(custom_attribute)]`
 
 ## IDEs
 

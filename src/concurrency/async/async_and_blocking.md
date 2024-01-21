@@ -10,7 +10,7 @@ See [Async: What is blocking? blog post][what-is-blocking]⮳.
 
 ## Tokio spawn_blocking
 
-Use [`spawn_blocking`][spawn-blocking]⮳ to run a _small portion_ of synchronous code.
+Use `[spawn_blocking][spawn-blocking]`⮳ to run a _small portion_ of synchronous code.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/examples/call_blocking_from_async_spawn_blocking.rs}}
@@ -38,7 +38,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 ### Futures executor
 
-[futures-executor][futures-executor]⮳ includes a minimal executor. The [`block_on`][futures-executor-block-on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[futures-executor][futures-executor]⮳ includes a minimal executor. The `[block_on][futures-executor-block-on]`⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/examples/call_async_from_blocking_futures_executor.rs}}
