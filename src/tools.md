@@ -1,6 +1,6 @@
 # Tools
 
-- [Rust installation](tools/installing/install.md)
+- [Rust installation](install.md)
 - [Crate registries](tools/other/crates.md)
 - [Cargo](tools/cargo.md)
 - [Package layout](tools/cargo/package_layout.md)

@@ -67,7 +67,7 @@ void greet(const char* name) {
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method `[cpp(true)]` cc-build-cpp] and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
-### `Cargo.toml`
+### `Cargo.toml` (static C++)
 
 ```toml
 [package]
@@ -78,13 +78,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs`
+### `build.rs` (static C++)
 
 ```rust,editable,no_run
 {#include ../../deps/examples/cc-bundled-cpp.rs}
 ```
 
-### `src/foo.cpp`
+### `src/foo.cpp` (static C++)
 
 ```cpp
 extern "C" {
@@ -96,7 +96,7 @@ int multiply(int x, int y) {
 }
 ```
 
-### `src/main.rs`
+### `src/main.rs` (static C++)
 
 ```rust,editable,ignore
 {#include ../../deps/examples/cc-bundled-cpp2.rs}
@@ -114,7 +114,7 @@ as well as `#define WELCOME` (pass `None` as the value for a value-less define).
 a bundled C file with dynamic defines set in `build.rs` and prints "**Welcome to foo - version 1.0.2**"
 when run. Cargo sets some [environment variables][cargo-env] which may be useful for some custom defines.
 
-### `Cargo.toml`
+### `Cargo.toml` (custom defines)
 
 ```toml
 [package]
@@ -126,13 +126,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs`
+### `build.rs` (custom defines)
 
 ```rust,editable,no_run
 {#include ../../deps/examples/cc-defines.rs}
 ```
 
-### `src/foo.c`
+### `src/foo.c` (custom defines)
 
 ```c
 #include <stdio.h>
@@ -145,7 +145,7 @@ void print_app_info() {
 }
 ```
 
-### `src/main.rs`
+### `src/main.rs` (custom defines)
 
 ```rust,editable,ignore
 {#include ../../deps/examples/cc-defines2.rs}
