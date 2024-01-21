@@ -50,7 +50,7 @@ pub enum MyLibError {
     IoError(#[from] std::io::Error),
 
     // Wrap another Diagnostic
-    // Use `#[diagnostic(transparent)]` to wrap another [`Diagnostic`].
+    // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
     // You won't see labels otherwise
     #[error(transparent)]
     #[diagnostic(transparent)]
