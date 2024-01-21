@@ -15,7 +15,7 @@ use anyhow::Result;
 
 pub fn read_all_markdown_files_in(markdown_root: &str) -> Result<String> {
     // Locate the Markdown files with the src directory
-    let paths = tools::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
 
     // Read all .md files into one big String
     let mut buf = Vec::<String>::with_capacity(120);

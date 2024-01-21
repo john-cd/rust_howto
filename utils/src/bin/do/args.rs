@@ -26,7 +26,6 @@ pub struct PathArgs {
 pub(crate) struct Cli {
     #[command(subcommand)]
     pub(crate) command: Command,
-
     // This structure allows the addition of global options, if needed
     //#[clap(flatten)]
     // global_opts: GlobalOpts,
@@ -48,8 +47,7 @@ pub(crate) enum Command {
 
     /// Parse the entire Markdown code as events and print them.
     Debug(PathArgs),
-
-    //Test,
+    // Test,
 }
 
 #[derive(Subcommand, Debug)]

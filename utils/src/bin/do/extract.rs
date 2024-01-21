@@ -17,7 +17,7 @@ pub fn extract_code_from_all_markdown_files_in(
     code_dst_dir: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = tools::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {
@@ -59,7 +59,7 @@ pub fn remove_code_from_all_markdown_files_in(
     markdown_root: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = tools::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {

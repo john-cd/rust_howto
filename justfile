@@ -63,7 +63,7 @@ _copystatic:
 
 # Generate the sitemap.xml file
 sitemap:
-  cargo run -p tools --bin sitemap
+  cargo run -p utils --bin sitemap
 
 # Test all examples in the book's Markdown
 test: build
@@ -112,4 +112,4 @@ default := 'help'
 
 # Manage links
 do args=default:
-  cargo run -p tools --bin do -- {{args}}
+  cargo run -p utils --bin do -- {{args}}
