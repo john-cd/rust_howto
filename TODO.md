@@ -5,18 +5,15 @@ finish links:
 - rename some of the IDs
 - organize link-refs
 
-polish the intro
-
 review generate.sh
 
-- review categories.md
-- figure out the 404s when linkchecking external websites
+figure out the 404s when linkchecking external websites
 
 explanation text for language pages
 
 pull request to little book of rust books
 
-tools
+utils
 
 - locate all autolink / inline references to external sites
 - identify duplicate links / labels
@@ -26,10 +23,6 @@ tools
 - generate crates.md
 - autoreplace autolinks / inline links by ref links
 - generate *-refs.md files
-
-IDEs - add latest JetBrains tooling
-
-review Install Rust
 
 finish to review ignore / no_run examples
 
@@ -55,15 +48,7 @@ finish cd_ci.md
 
 finish improve_speed
 
-finish Cargo Plugins / cargo.md
-
-finish faster linking
-
 review Configuration page
-
-finish Option page
-
-map, unwrap_or
 
 database access:
 
@@ -90,8 +75,6 @@ add more to tokio.md
 - Join, select
 - <https://tokio.rs/tokio/topics/tracing-next-steps>
 
-add more to async_channels
-
 <https://ryhl.io/blog/async-what-is-blocking/>
 
 <https://ryhl.io/blog/actors-with-tokio/>
@@ -104,7 +87,9 @@ add to Comparison to other languages
 
 AWS
 
-walkdir, notify, indicatif, ratatui
+walkdir
+
+notify, indicatif, ratatui
 
 - time
 - chrono
@@ -114,8 +99,6 @@ traits
 [dyn clone][dyn-clone]
 
 [dyn-clone]: https://github.com/dtolnay/dyn-clone
-
-errors: color-eyre, eyre
 
 testing: Approx example
 
