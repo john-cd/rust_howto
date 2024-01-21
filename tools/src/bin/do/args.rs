@@ -11,40 +11,6 @@ use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
 
-#[derive(Parser, Debug)]
-// Reads the following attributes from the package's `Cargo.toml`
-#[command(author, version, about, long_about = None)]
-// Displays the help, if no arguments are provided
-#[command(arg_required_else_help = true)]
-pub struct Cli {
-    #[command(subcommand)]
-    pub command: Option<Commands>,
-}
-
-#[derive(Subcommand, Debug)]
-pub enum Commands {
-    /// Write existing reference definitions to a file
-    RefDefs(PathArgs),
-
-    /// Write all existing links to a file
-    Links(PathArgs),
-
-    /// Write all existing inline links to a file
-    InlineLinks(PathArgs),
-
-    /// Parse the entire Markdown code as events and print them.
-    Debug(PathArgs),
-
-    Test,
-
-    ExtractExamples,
-
-    RemoveCode,
-
-    /// Replace {{#include <file>.md}} by the file contents
-    IncludeMarkdown,
-}
-
 #[derive(Args, Debug)]
 pub struct PathArgs {
     // The path to the file to write (optional)
@@ -52,6 +18,87 @@ pub struct PathArgs {
     pub path: Option<PathBuf>,
 }
 
-pub fn parse_arguments() -> Cli {
+#[derive(Parser, Debug)]
+// Reads the following attributes from the package's `Cargo.toml`
+#[command(author, version, about, long_about = None)]
+// Displays the help, if no arguments are provided
+#[command(arg_required_else_help = true)]
+pub(crate) struct Cli {
+    #[command(subcommand)]
+    pub(crate) command: Command,
+
+    // This structure allows the addition of global options, if needed
+    //#[clap(flatten)]
+    // global_opts: GlobalOpts,
+}
+
+#[derive(Debug, Subcommand)]
+pub(crate) enum Command {
+    /// Manage reference definitions
+    #[command(subcommand)]
+    RefDefs(RefDefsSubCommand),
+
+    /// Manage links
+    #[command(subcommand)]
+    Links(LinksSubCommand),
+
+    /// Manage code examples and includes
+    #[command(subcommand)]
+    Markdown(MarkdownSubCommand),
+
+    /// Parse the entire Markdown code as events and print them.
+    Debug(PathArgs),
+
+    //Test,
+}
+
+#[derive(Subcommand, Debug)]
+pub(crate) enum RefDefsSubCommand {
+    /// Write existing reference definitions to a file
+    Write(PathArgs),
+}
+
+#[derive(Subcommand, Debug)]
+pub(crate) enum LinksSubCommand {
+    /// Write all existing links to a Markdown file
+    WriteAll(PathArgs),
+
+    /// Write all existing inline links to a Markdown file
+    WriteInline(PathArgs),
+}
+
+#[derive(Subcommand, Debug)]
+pub(crate) enum MarkdownSubCommand {
+    /// Extract Rust code examples from the Markdown
+    ExtractCodeExamples,
+
+    /// Rust code examples from the Markdown
+    RemoveCodeExamples,
+
+    /// Replace {{#include <file>.md}} by the file contents
+    ReplaceIncludes,
+}
+
+// Example global args
+// #[derive(Debug, Args)]
+// struct GlobalOpts {
+//     /// Color
+//     #[clap(long, arg_enum, global = true, default_value_t =
+// Color::Auto)]     color: Color,
+
+//     /// Verbosity level (can be specified multiple times)
+//     #[clap(long, short, global = true, parse(from_occurrences))]
+//     verbose: usize,
+//     //... other global options
+// }
+
+// #[derive(Clone, Debug, ArgEnum)]
+// enum Color {
+//     Always,
+//     Auto,
+//     Never,
+// }
+
+pub(crate) fn parse_arguments() -> Cli {
     Cli::parse()
 }
