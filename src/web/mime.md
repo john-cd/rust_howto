@@ -26,7 +26,7 @@ and match against a known list.  The return value is [`mime:Mime`].
 
 ## Parse the MIME type of a HTTP response
 
-[![reqwest-badge]][reqwest] [![mime-badge]][mime] [![cat-net-badge]][cat-net] [![cat-encoding-badge]][cat-encoding]
+[![reqwest-badge]][reqwest] [![mime-badge]][mime] [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding]
 
 When receiving a HTTP reponse from `reqwest` the [MIME type] or media type may be
 found in the [Content-Type] header. [`reqwest::header::HeaderMap::get`] retrieves

@@ -2,7 +2,7 @@
 
 ## Query the GitHub API
 
-[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-net-badge]][cat-net] [![cat-encoding-badge]][cat-encoding]
+[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding]
 
 Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/starring/#list-stargazers)
 with [`reqwest::get`] to get list of all users who have marked a GitHub project with a star.
@@ -17,7 +17,7 @@ processing the response into User instances.
 
 ## Check if an API resource exists
 
-[![reqwest-badge]][reqwest] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
 Query the GitHub Users Endpoint using a HEAD
 request ([`Client::head`]) and then inspect the response code to determine
@@ -34,7 +34,7 @@ types, the shortcut [`reqwest::Result`] is used for the main function return typ
 
 ## Create and delete Gist with GitHub API
 
-[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-net-badge]][cat-net] [![cat-encoding-badge]][cat-encoding]
+[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding]
 
 Creates a gist with POST request to GitHub [gists API v3](https://developer.github.com/v3/gists/)
 using [`Client::post`] and removes it with DELETE request using [`Client::delete`].
@@ -55,7 +55,7 @@ flows.
 
 ## Consume a paginated RESTful API
 
-[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-net-badge]][cat-net] [![cat-encoding-badge]][cat-encoding]
+[![reqwest-badge]][reqwest] [![serde-badge]][serde] [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding]
 
 Wraps a paginated web API in a convenient Rust iterator. The iterator lazily
 fetches the next page of results from the remote server as it arrives at the end
@@ -67,7 +67,7 @@ of each page.
 
 ## Handle a rate-limited API
 
-[![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![cat-net-badge]][cat-net]
+[![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![cat-network-programming-badge]][cat-network-programming]
 
 This example uses the [GitHub API - Rate limiting], as an example of how to
 handle remote server errors.  This example uses the [`hyper::header!`] macro
@@ -75,7 +75,7 @@ to parse the response header and checks for [`reqwest::StatusCode::Forbidden`].
 If the response exceeds the rate limit, the example waits and retries.
 
 ```rust,editable,no_run
-{#include ../../deps/examples/rate-limited.rs}
+{#include ../../../deps/examples/rate-limited.rs}
 ```
 
 [`hyper::header!`]: https://doc.servo.org/hyper/header/index.html#defining-custom-headers
@@ -99,4 +99,4 @@ If the response exceeds the rate limit, the example waits and retries.
 [`reqwest::Response`]: https://docs.rs/reqwest/*/reqwest/struct.Response.html
 [`Response::json`]: https://docs.rs/reqwest/*/reqwest/struct.Response.html#method.json
 [`serde::Deserialize`]: https://docs.rs/serde/*/serde/trait.Deserialize.html
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
