@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
-use std::{collections::HashMap, env};
+use std::collections::HashMap;
+use std::env;
 
 use anyhow::Result;
 use reqwest::Client;
@@ -31,10 +32,19 @@ async fn main() -> Result<()> {
     let gh_pass = env::var("GH_PASS")?;
 
     // Example POST to the GitHub gists API
-    let gist_body =  Post {
+    let gist_body = Post {
         description: "the description for this gist",
         public: true,
-        files: { let mut h = HashMap::new(); h.insert("main.rs", Content{ content: r#"fn main() { println!("hello world!");}"# }); h },
+        files: {
+            let mut h = HashMap::new();
+            h.insert(
+                "main.rs",
+                Content {
+                    content: r#"fn main() { println!("hello world!");}"#,
+                },
+            );
+            h
+        },
     };
 
     let request_url = "https://api.github.com/gists";
