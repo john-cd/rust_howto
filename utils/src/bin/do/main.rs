@@ -8,7 +8,7 @@ mod args;
 
 fn main() -> Result<()> {
     let key = "RUST_LOG";
-    if let Err(_) = env::var(key) {
+    if env::var(key).is_err() {
         env::set_var(key, "info");
     }
 
