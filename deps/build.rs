@@ -48,21 +48,23 @@ fn build_book(root_path: &Path) -> Result<()> {
 }
 
 fn main() -> Result<()> {
+    // Before building the book, generate new reference definitions for
+    // all crate the book's examples depend on... Also generate the
+    // index and the category page. TODO
+
     // TODO
     // Tell Cargo that if the given file changes, to rerun this build
     // script. println!("cargo:rerun-if-changed=/code/book/markdown/"
     // );
 
     let root_path = std::fs::canonicalize("..")?;
-    println!(
-        "cargo:warning=Building the skeptic tests for the book under root {:?}",
-        root_path
-    );
+
+    println!("cargo:warning=Info: building the book...");
 
     // Build the book to get the fully expanded Markdown
     let res = build_book(&root_path);
     if let Err(ref e) = res {
-        println!("cargo:warning=Book building failed. Error: {}", e);
+        println!("cargo:warning=Error: {}", e);
         return res;
     }
 
@@ -81,6 +83,11 @@ fn main() -> Result<()> {
         .filter(|p| p.ends_with(".md"))
         .filter(|p| !REMOVED_TESTS.contains(&p.as_ref()))
         .collect::<Vec<_>>();
+
+    println!(
+        "cargo:warning=Info: building the skeptic tests for the book under root {:?}",
+        root_path
+    );
 
     skeptic::generate_doc_tests(&paths[..]);
 

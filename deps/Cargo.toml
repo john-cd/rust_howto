@@ -85,6 +85,7 @@ tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 unicode-segmentation = "1.10.1"
 url = "2.5.0"
 walkdir = "2.4.0"
+#build-info = "0.0.34"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 syslog = "6.1.0"
@@ -93,6 +94,7 @@ syslog = "6.1.0"
 skeptic = "0.13.7"
 walkdir = "2.4.0"
 anyhow = "1.0.79"
+#build-info-build = "0.0.34"
 
 [dev-dependencies]
 skeptic = "0.13.7"
