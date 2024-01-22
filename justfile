@@ -29,30 +29,34 @@ fmtall:
   cargo +nightly fmt --all
 
 # Check all code
-checkall: build
+checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build all code
-buildall: build
+buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
+# `cargo build` calls `mdbook build` in `build.rs`
 
 # Scan all code for common mistakes
-clippyall: build
+clippyall:
   cargo clippy --workspace --all-targets --locked
+# `cargo clippyall` calls `mdbook build` in `build.rs`
 
 # Test all code
-testall: build
+testall:
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+# `cargo test` calls `mdbook build` in `build.rs`
 
 # Build the book from its Markdown files
 build: && sitemap _copystatic
-  mdbook build
+  cargo build --package deps --locked
+# `cargo build` calls `mdbook build` in `build.rs`
 
-# Add static assets to build output
+# Add static assets to book output
 [unix]
 _copystatic:
   cp static/*.* book/html/
@@ -66,15 +70,16 @@ sitemap:
   cargo run -p utils --bin sitemap
 
 # Test all examples in the book's Markdown
-test: build
-  cargo test --tests --examples --locked -- --show-output
+test:
+  cargo test --package deps --tests --examples --locked -- --show-output
+# This relies on skeptic to build doctests - see `build.rs`
 # NOTE: mdbook test is not reliable when dealing with dependencies outside of the std library
 # mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Run all examples
 [unix]
-run: build
+run:
   #! /bin/bash
   set -o pipefail
   set -e
@@ -92,7 +97,7 @@ run: build
 # Serve the book (incl. link checking)
 serve: build
   mdbook serve --open
-# to change the port: --port 3001
+# To change the port: --port 3001
 
 # Watch the book's markdown files and rebuilds it on changes
 # watch:
