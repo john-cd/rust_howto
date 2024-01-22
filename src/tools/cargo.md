@@ -147,9 +147,9 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps][cargo-udeps]⮳
+[udeps][cargo-udeps-crate]⮳
 
-or (simpler) [Machete][cargo-machete]⮳
+or (simpler) [Machete][cargo-machete-blog]⮳
 
 ```sh
 cargo install cargo-machete
@@ -158,6 +158,6 @@ cargo machete
 
 ## Templates
 
-[Cargo Generate][cargo-generate-github]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][cargo-generate-crate]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 {{#include ../refs/link-refs.md}}

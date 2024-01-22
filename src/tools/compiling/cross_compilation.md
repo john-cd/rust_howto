@@ -2,7 +2,7 @@
 
 ## Cross
 
-[cross][cross]⮳ builds your Rust project for different target operating systems and architectures.
+[cross][cross-github]⮳ builds your Rust project for different target operating systems and architectures.
 It requires `rustup` and `Docker` or `Podman`.
 
 ```sh

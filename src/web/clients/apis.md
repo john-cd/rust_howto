@@ -40,7 +40,7 @@ Creates a gist with POST request to GitHub [gists API v3](https://developer.gith
 using [`Client::post`][Client::post] and removes it with DELETE request using `[Client::delete]`
 
 The [`reqwest::Client`][reqwest::Client] is responsible for details of both requests including
-URL, body and authentication. The POST body from [`serde_json::json!`][serde_json::json!] macro
+URL, body and authentication. The POST body from [`serde_json::json!`][serde-json::json!] macro
 provides arbitrary JSON body. Call to [`RequestBuilder::json`][RequestBuilder::json] sets the request
 body. [`RequestBuilder::basic_auth`][RequestBuilder::basic_auth] handles authentication. The call to
 `[RequestBuilder::send]` synchronously executes the requests.
@@ -91,7 +91,7 @@ If the response exceeds the rate limit, the example waits and retries.
 [RequestBuilder::json]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.json
 [RequestBuilder::send]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.send
 [reqwest::Client]: https://docs.rs/reqwest/*/reqwest/struct.Client.html
-[serde_json::json!]: https://docs.rs/serde_json/*/serde_json/macro.json.html
+[serde-json::json!]: https://docs.rs/serde_json/*/serde_json/macro.json.html
 [GitHub API]: https://developer.github.com/v3/auth/
 [HTTP Basic Auth]: https://tools.ietf.org/html/rfc2617
 [OAuth]: https://oauth.net/getting-started/

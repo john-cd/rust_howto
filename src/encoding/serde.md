@@ -4,7 +4,7 @@
 
 ## See also
 
-[![serde-json-badge]][serde-json]  [(lib.rs)][serde-json-librs]
+[![serde-json-badge]][serde-json]
 
 [Monostate for serde (github)][monostate-github]
 

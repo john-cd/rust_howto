@@ -18,7 +18,7 @@ If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrain
 
 ### Rustfmt
 
-[rustfmt][rustfmt]⮳
+[rustfmt][rustfmt-github]⮳
 
 Install with `rustup component add rustfmt`
 

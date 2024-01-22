@@ -4,7 +4,7 @@
 
 ## Key Steps
 
-- Install [Rustup][rustup]⮳
+- Install [Rustup][rustup-website]⮳
 
 On WSL / Unix:
 

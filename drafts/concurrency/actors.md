@@ -4,7 +4,7 @@
 
 ## Riker
 
-[Riker][riker]⮳
+[Riker (website)][riker-website]⮳
 
 ```rust,editable
 {{#include ../../deps/examples/actors.rs}}
@@ -12,13 +12,13 @@
 
 ## Alternatives
 
-[Actix][actix]⮳
+Actix [(github)][actix-github]⮳
 
-[Ractor][ractor]⮳
+[ractor-crate][ractor-crate]⮳
 
 ## Utilities
 
-[Await tree][await-tree]⮳
+[Await tree][await-tree-crate]⮳
 
 ## Reference
 
