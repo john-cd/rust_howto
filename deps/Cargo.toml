@@ -1,5 +1,5 @@
 [package]
-name = "rust_howto"
+name = "deps" # All crate DEPendencies for the book's examples are stored below.
 version = "0.1.0"
 edition = "2021"
 publish=false
