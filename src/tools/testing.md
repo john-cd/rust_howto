@@ -18,6 +18,6 @@
 
 [![approx-badge]][approx] [Approx][approx]⮳
 
-[cargo-nextest][cargo-nextest]⮳: `cargo nextest run; cargo test --doc`
+[cargo-nextest][cargo-nextest-website]⮳: `cargo nextest run; cargo test --doc`
 
 {{#include ../refs/link-refs.md}}

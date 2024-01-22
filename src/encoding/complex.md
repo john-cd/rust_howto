@@ -7,7 +7,7 @@
 The [`serde_json`][serde-json] crate provides a [`from_str`][from_str] function to parse a `&str` of
 JSON.
 
-Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde_json::Value] type that
+Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde-json::Value] type that
 is able to represent any valid JSON data.
 
 The example below shows a `&str` of JSON being parsed.  The expected value is declared using the [`json!`][json!] macro.
@@ -47,5 +47,5 @@ received are from another system.
 
 [from_str]: https://docs.serde.rs/serde_json/fn.from_str.html
 [json!]: https://docs.serde.rs/serde_json/macro.json.html
-[serde_json::Value]: https://docs.serde.rs/serde_json/enum.Value.html
+[serde-json::Value]: https://docs.serde.rs/serde_json/enum.Value.html
 {{#include ../refs/link-refs.md}}

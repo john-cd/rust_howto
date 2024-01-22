@@ -1,6 +1,5 @@
 # Games
 
-[Bevy][bevy]⮳
+[Bevy][bevy-github]⮳
 
-[bevy]: https://github.com/bevyengine/bevy
 {{#include ../refs/link-refs.md}}

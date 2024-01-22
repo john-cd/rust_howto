@@ -26,7 +26,7 @@ The recipe inserts data into the `author` table using [`execute`][execute] metho
 
 [![postgres-badge]][postgres] [![cat-database-badge]][cat-database]
 
-This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][Museum of Modern Art] in descending order.
+This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample] in descending order.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/aggregate_data.rs}}
@@ -36,5 +36,5 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 [Client::connect]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.connect
 [execute]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.execute
 [query]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.query
-[Museum of Modern Art]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
+[csv-sample]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
 {{#include ../refs/link-refs.md}}

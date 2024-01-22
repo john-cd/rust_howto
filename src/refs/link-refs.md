@@ -3,40 +3,13 @@
 
 <!-- Tools for Rust -->
 [cargo-book]: https://doc.rust-lang.org/cargo/index.html
-[cargo-expand]: https://docs.rs/crate/cargo-expand/latest
-[cargo-expand-github]: https://github.com/dtolnay/cargo-expand
-[cargo-generate-github]: https://cargo-generate.github.io/cargo-generate/index.html
-[cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
-[cargo-nextest]: https://nexte.st/
-[cargo-udeps]: https://github.com/est31/cargo-udeps
 [install-rust]: https://www.rust-lang.org/tools/install
-[mdbook]: https://github.com/rust-lang/mdBook
-[mdbook-documentation]: https://rust-lang.github.io/mdBook/index.html
-[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
-[roogle]: https://roogle.hkmatsumoto.com/search
-[roogle-github]: https://github.com/roogle-rs/roogle
-[rust-analyzer]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
-[rust-analyzer-website]: https://rust-analyzer.github.io/
 [rust-tools]: https://www.rust-lang.org/tools
-[rustfmt]: https://github.com/rust-lang/rustfmt
-[rustfmt-config]: https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=
-[rustup]: https://rustup.rs/
+[rustup-website]: https://rustup.rs/
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup/
 [shuttle-rs]: https://www.shuttle.rs/
-[tarpaulin-github]: https://github.com/xd009642/tarpaulin
 [vs-code]: https://code.visualstudio.com/docs/languages/rust
-[zola-website]: https://www.getzola.org/documentation/getting-started/overview/
-
-<!-- Tools built with Rust -->
-[bacon-github]: https://github.com/Canop/bacon
-[bat-github]: https://github.com/sharkdp/bat
-[exa-github]: https://github.com/ogham/exa
-[just-website]: https://just.systems/
-[just-programmer-manual]: https://just.systems/man/en/chapter_1.html
-[My terminal became more Rusty Community]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
-[open-rs-github]: https://github.com/Byron/open-rs
-[starship-github]: https://github.com/starship/starship
 
 <!-- Rust Book Chapters -->
 [rust-book-badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
@@ -120,7 +93,7 @@
 <!-- GitHub repos (not a crate) -->
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust/
 
-<!-- Books and web sites -->
+<!-- online books and reference websites -->
 [asynchronous-programming-in-rust-book]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [blessed-rs]: https://blessed.rs/crates/
 [easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
@@ -144,6 +117,7 @@
 [rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817/
 
 <!-- Blogs / Tutorials / Others -->
+[actors-with-tokio]: https://ryhl.io/blog/actors-with-tokio/
 [announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
 [are-we-async-yet?]: https://areweasyncyet.rs/
 [are-we-gui-yet?]: https://www.areweguiyet.com/
@@ -152,6 +126,7 @@
 [auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial/
 [aws-sdk]: https://aws.amazon.com/sdk-for-rust/
 [building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
+[building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
 [codevoweb]: https://codevoweb.com/
 [cors-mozilla]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [dapr-website]: https://dapr.io/
@@ -159,11 +134,14 @@
 [dapr-rust-examples]: https://github.com/dapr/rust-sdk/tree/master/examples
 [8 Solutions for Troubleshooting Your Rust Build Times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
 [enable-fast-compiles]: https://bevyengine.org/learn/book/getting-started/setup/#enable-fast-compiles-optional
+[loco-article]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
 [lpalmieri-website]: https://www.lpalmieri.com/
+[My terminal became more Rusty Community]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
 [practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
 [rust-macros]: https://veykril.github.io/tlborm/
 [rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system/
+[rust-on-nails-website]: https://rust-on-nails.com/
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
 [traits-blog]: https://blog.rust-lang.org/2015/05/11/traits.html
 [tuify]: https://developerlife.com/2023/09/17/tuify-clap/
@@ -182,19 +160,3 @@
 [todo]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
 
 <!-- To organize -->
-[monostate-github]: https://github.com/dtolnay/monostate
-[serde-ignored-github]: https://github.com/dtolnay/serde-ignored
-[serde-json-librs]: https://lib.rs/crates/serde_json
-[building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
-[rust-on-nails-website]: https://rust-on-nails.com/
-[loco-article]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
-[actix]: https://github.com/actix/actix
-[actors-with-tokio]: https://ryhl.io/blog/actors-with-tokio/
-[await-tree]: https://crates.io/crates/await-tree
-[ractor]: https://crates.io/crates/ractor
-[riker]: https://riker.rs/
-[tokio-current-thread-runtime]: https://docs.rs/tokio/latest/tokio/attr.main.html#current-thread-runtime
-[tokio-localset]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
-[pyo3-website]: https://pyo3.rs/v0.20.2/
-[ruff-website]: https://astral.sh/ruff
-[pyoxidizer-github]: https://github.com/indygreg/PyOxidizer

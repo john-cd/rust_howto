@@ -116,7 +116,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts i
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
 Serialize and deserialize a matrix to and from JSON. Serialization is taken care of
-by [`serde_json::to_string`][serde_json::to_string] and [`serde_json::from_str`][serde_json::from_str] performs deserialization.
+by [`serde_json::to_string`][serde-json::to_string] and [`serde_json::from_str`][serde-json::from_str] performs deserialization.
 
 Note that serialization followed by deserialization gives back the original matrix.
 
@@ -140,6 +140,6 @@ Note that serialization followed by deserialization gives back the original matr
 [ndarray::ArrayBase::dot]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.dot-1
 [ndarray::arr1]: https://docs.rs/ndarray/*/ndarray/fn.arr1.html
 [ndarray::Array2::dot]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.dot-1
-[serde_json::to_string]: https://docs.rs/serde_json/*/serde_json/fn.to_string.html
-[serde_json::from_str]: https://docs.rs/serde_json/*/serde_json/fn.from_str.html
+[serde-json::to_string]: https://docs.rs/serde_json/*/serde_json/fn.to_string.html
+[serde-json::from_str]: https://docs.rs/serde_json/*/serde_json/fn.from_str.html
 {{#include ../refs/link-refs.md}}

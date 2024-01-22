@@ -8,7 +8,7 @@
 
 [OpenCV (example)][opencv-example]⮳
 
-[Watchmaker (genetic algos in Rust)][watchmaker]⮳
+[Watchmaker (genetic algos in Rust)][watchmaker]  [(crates.io)][watchmaker-crate]  [(github)][watchmaker-github]⮳
 
 ## Quant
 
