@@ -3,13 +3,13 @@ use pulldown_cmark::LinkType;
 
 // Link builder that progressively construct a Link
 // from pieces of information
-#[derive(Debug)]
-pub struct LinkBuilder {
+#[derive(Debug, Default)]
+pub(super) struct LinkBuilder {
     link: Link,
 }
 
 impl LinkBuilder {
-    pub fn from_type_url_title(
+    pub(super) fn from_type_url_title(
         link_type: LinkType,
         url: String,
         title: String,
@@ -24,7 +24,7 @@ impl LinkBuilder {
         }
     }
 
-    pub fn add_text(mut self, text: String) -> Self {
+    pub(super) fn add_text(mut self, text: String) -> Self {
         if !text.is_empty() {
             self.link.text =
                 Some(format!("{}{}", self.link.text.unwrap_or_default(), text));
@@ -32,14 +32,14 @@ impl LinkBuilder {
         self
     }
 
-    // pub fn set_label(mut self, label: String) -> Self {
-    //     if !label.is_empty() {
-    //         self.link.label = Some(label);
-    //     }
-    //     self
-    // }
+    pub(super) fn set_label(mut self, label: String) -> Self {
+        if !label.is_empty() {
+            self.link.label = Some(label);
+        }
+        self
+    }
 
-    pub fn set_image(
+    pub(super) fn set_image(
         self,
         image_link_type: LinkType,
         image_url: String,
@@ -63,7 +63,14 @@ impl LinkBuilder {
         }
     }
 
-    pub fn add_image_alt_text(mut self, image_alt_text: String) -> Self {
+    pub(super) fn set_image_url(mut self, image_url: String) -> Self {
+        if !image_url.is_empty() {
+            self.link.image_url = Some(image_url);
+        }
+        self
+    }
+
+    pub(super) fn add_image_alt_text(mut self, image_alt_text: String) -> Self {
         if !image_alt_text.is_empty() {
             self.link.image_alt_text = Some(
                 self.link.image_alt_text.unwrap_or_default() + &image_alt_text,
@@ -72,7 +79,7 @@ impl LinkBuilder {
         self
     }
 
-    pub fn build(self) -> Link {
+    pub(super) fn build(self) -> Link {
         self.link
     }
 }
@@ -81,7 +88,7 @@ impl LinkBuilder {
 // Markdown links and combinations
 
 #[derive(Debug, Default)]
-pub struct Link {
+pub(super) struct Link {
     link_type: Option<LinkType>,
     text: Option<String>,  // [text](...)
     label: Option<String>, // [...][label] and [label]: ...
@@ -101,7 +108,7 @@ pub struct Link {
 impl Link {
     // Methods that write Markdown directly
 
-    pub fn get_link_type(&self) -> Option<LinkType> {
+    pub(super) fn get_link_type(&self) -> Option<LinkType> {
         self.link_type
     }
 
@@ -141,12 +148,12 @@ impl Link {
     }
 
     // return [text](url) or [text](url "title")
-    pub fn to_inline_link(&self) -> String {
+    pub(super) fn to_inline_link(&self) -> String {
         format!("[{}]( {} )", self.get_text(), self.get_url_and_title())
     }
 
     // return [text][label] or [text/label]
-    pub fn to_reference_link(&self) -> String {
+    pub(super) fn to_reference_link(&self) -> String {
         let txt = self.get_text();
         let label = self.get_label();
         if txt == label {
@@ -157,7 +164,7 @@ impl Link {
     }
 
     // return [label]: url or [label]: url "title"
-    pub fn to_reference_definition(&self) -> String {
+    pub(super) fn to_reference_definition(&self) -> String {
         format!("[{}]: {}", self.get_label(), self.get_url_and_title())
     }
 
@@ -171,7 +178,7 @@ impl Link {
         } else if let Some(lbl) = &self.label {
             lbl
         } else {
-            ""
+            "TODO"
         }
     }
 
@@ -203,7 +210,7 @@ impl Link {
 
     // return a badge image with a link: [ ![al-text][badge-label] ][
     // label ]
-    pub fn to_link_with_badge(&self) -> String {
+    pub(super) fn to_link_with_badge(&self) -> String {
         format!(
             "[![{}][{}]][{}]",
             self.get_badge_alt_text(),
@@ -213,7 +220,11 @@ impl Link {
     }
 
     // return [badge-label]: https://badge-cache.kominick.com/...  "image_title"
-    pub fn to_badge_reference_definition(&self) -> String {
-        format!("[{}]: {}", self.get_label(), self.get_badge_url_and_title())
+    pub(super) fn to_badge_reference_definition(&self) -> String {
+        format!(
+            "[{}]: {}",
+            self.get_badge_label(),
+            self.get_badge_url_and_title()
+        )
     }
 }

@@ -8,7 +8,7 @@ use pulldown_cmark::Tag;
 // Parse the Markdown as events and write them all to e.g. file.
 // See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
 // and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
-pub fn debug_parse_to<W>(parser: Parser, mut f: W) -> Result<()>
+pub(super) fn debug_parse_to<W>(parser: Parser, mut f: W) -> Result<()>
 where
     W: Write,
 {
