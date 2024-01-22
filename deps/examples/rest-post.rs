@@ -1,11 +1,23 @@
 #![allow(dead_code)]
 
-use std::env;
+use std::{collections::HashMap, env};
 
 use anyhow::Result;
 use reqwest::Client;
 use serde::Deserialize;
-use serde_json::json;
+use serde::Serialize;
+
+#[derive(Deserialize, Serialize, Debug)]
+struct Post<'a> {
+    description: &'a str,
+    public: bool,
+    files: HashMap<&'a str, Content<'a>>,
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+struct Content<'a> {
+    content: &'a str,
+}
 
 #[derive(Deserialize, Debug)]
 struct Gist {
@@ -18,14 +30,12 @@ async fn main() -> Result<()> {
     let gh_user = env::var("GH_USER")?;
     let gh_pass = env::var("GH_PASS")?;
 
-    let gist_body = json!({
-    "description": "the description for this gist",
-    "public": true,
-    "files": {
-         "main.rs": {
-         "content": r#"fn main() { println!("hello world!");}"#
-        }
-    }});
+    // Example POST to the GitHub gists API
+    let gist_body =  Post {
+        description: "the description for this gist",
+        public: true,
+        files: { let mut h = HashMap::new(); h.insert("main.rs", Content{ content: r#"fn main() { println!("hello world!");}"# }); h },
+    };
 
     let request_url = "https://api.github.com/gists";
     let response = Client::new()
