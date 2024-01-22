@@ -1,6 +1,7 @@
 mod debug;
 mod link;
 mod parse;
+mod refdefs;
 mod rules;
 mod test;
 mod write;
@@ -9,13 +10,15 @@ use std::io::Write;
 use std::path::Path;
 
 use anyhow::Result;
-pub use link::Link;
 use pulldown_cmark::BrokenLink;
 use pulldown_cmark::CowStr;
 use pulldown_cmark::LinkType;
 use pulldown_cmark::Options;
 use pulldown_cmark::Parser;
-pub use test::*;
+use test::*;
+use tracing::debug;
+use tracing::info;
+use tracing::warn;
 
 // Private Functions
 
@@ -42,7 +45,7 @@ fn _callback<'input>(
     broken_link: BrokenLink<'input>,
     markdown_input: &'input str,
 ) -> Option<(CowStr<'input>, CowStr<'input>)> {
-    println!(
+    warn!(
         "Issue with the markdown: reference: {}, `{}`, type: {:?}",
         broken_link.reference,
         &markdown_input[broken_link.span],
@@ -51,42 +54,57 @@ fn _callback<'input>(
     Some(("https://TODO".into(), "".into()))
 }
 
-// Public Functions
+// pub(crate)lic Functions
 
 // Parse the Markdown as events and print them all.
-pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
+pub(crate) fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
-    println!("\nParsing markdown ---------------\n");
+    debug!("\nParsing markdown ---------------\n");
     let f = std::fs::File::create(path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
     debug::debug_parse_to(parser, f)?;
     Ok(())
 }
 
+// REFERENCE DEFINTIONS
+
 // Write the reference definitions to a file
-pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
+pub(crate) fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
     let f = std::fs::File::create(path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
-    write::write_ref_defs(&parser, f)?;
+    refdefs::write_ref_defs(&parser, f)?;
     Ok(())
 }
+
+pub(crate) fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
+    markdown_input: S,
+    path: P,
+) -> Result<()> {
+    let mut f = std::io::BufWriter::new(std::fs::File::create(path)?);
+    let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
+    refdefs::write_github_repo_badge_refdefs(&parser, &mut f)?;
+    f.flush().unwrap();
+    Ok(())
+}
+
+// LINKS
 
 // TODO need to remove internal links; deduplicate code
 // Write all inline links and autolinks (i.e., not written as
 // reference-style links) to a file
-pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
+pub(crate) fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
 
     let mut f = std::fs::File::create(path)?;
-    let links: Vec<Link> = parse::extract_links(parser);
+    let links: Vec<link::Link> = parse::extract_links(parser);
     let links: Vec<_> = links
         .iter()
         .filter(|l| {
@@ -110,14 +128,14 @@ pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
 }
 
 // Write all links to a file
-pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
+pub(crate) fn write_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
     let mut f = std::fs::File::create(path)?;
 
-    let links: Vec<Link> = parse::extract_links(parser);
+    let links: Vec<link::Link> = parse::extract_links(parser);
     if !links.is_empty() {
         for l in links {
             writeln!(

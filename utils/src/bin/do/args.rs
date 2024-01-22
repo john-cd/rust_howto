@@ -22,7 +22,7 @@ pub struct PathArgs {
 // Reads the following attributes from the package's `Cargo.toml`
 #[command(author, version, about, long_about = None)]
 // Displays the help, if no arguments are provided
-#[command(arg_required_else_help = true)]
+// #[command(arg_required_else_help = true)]
 pub(crate) struct Cli {
     #[command(subcommand)]
     pub(crate) command: Command,
@@ -54,6 +54,9 @@ pub(crate) enum Command {
 pub(crate) enum RefDefsSubCommand {
     /// Write existing reference definitions to a file
     Write(PathArgs),
+
+    /// Generate badges (reference definitions) for e.g. Github links
+    GenerateBadges(PathArgs),
 }
 
 #[derive(Subcommand, Debug)]
@@ -61,8 +64,17 @@ pub(crate) enum LinksSubCommand {
     /// Write all existing links to a Markdown file
     WriteAll(PathArgs),
 
-    /// Write all existing inline links to a Markdown file
+    // TODO finish
+    /// Write all existing inline links and autolinks (i.e., not
+    /// written as reference-style links) to a Markdown file
     WriteInline(PathArgs),
+    // // TODO
+    // /// Identify duplicate links / labels
+    // DuplicateLinks,
+
+    // // TODO
+    // /// Identify broken links (i.e. without reference definition)
+    // BrokenLinks,
 }
 
 #[derive(Subcommand, Debug)]
@@ -75,6 +87,15 @@ pub(crate) enum MarkdownSubCommand {
 
     /// Replace {{#include <file>.md}} by the file contents
     ReplaceIncludes,
+    // TODO
+    // /// Generate categories.md
+    // GenerateCategories,
+
+    // TODO
+    // /// Generate crates.md
+    // GenerateCrates,
+
+    // TODO autoreplace autolinks / inline links by ref links
 }
 
 // Example global args

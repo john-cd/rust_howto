@@ -7,9 +7,14 @@ use pulldown_cmark::html;
 use pulldown_cmark::Event;
 use pulldown_cmark::LinkDef;
 use pulldown_cmark::Parser;
+use regex::Regex;
+
+use super::link::LinkBuilder;
+
+// HTML
 
 #[allow(dead_code)]
-pub fn write_html_to_stdout<'a, I>(parser: I)
+pub(super) fn write_html_to_stdout<'a, I>(parser: I)
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -22,7 +27,7 @@ where
 }
 
 #[allow(dead_code)]
-pub fn write_html_to_bytes<'a, I>(parser: I) -> Result<Vec<u8>>
+pub(super) fn write_html_to_bytes<'a, I>(parser: I) -> Result<Vec<u8>>
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -33,7 +38,7 @@ where
 }
 
 #[allow(dead_code)]
-pub fn write_html_to_string<'a, I>(parser: I) -> String
+pub(super) fn write_html_to_string<'a, I>(parser: I) -> String
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -43,8 +48,10 @@ where
     html_output
 }
 
+// MARKDOWN
+
 #[allow(dead_code)]
-pub fn write_markdown_to<'a, I, E, W>(
+pub(super) fn write_markdown_to<'a, I, E, W>(
     parser: I,
     markdown_input_length: usize,
     mut w: W,
@@ -75,23 +82,5 @@ where
     };
     pulldown_cmark_to_cmark::cmark_with_options(parser, &mut buf, options)?;
     w.write_all(buf.as_bytes())?;
-    Ok(())
-}
-
-pub fn write_ref_defs<W>(parser: &Parser, mut f: W) -> Result<()>
-where
-    W: Write,
-{
-    // BTreeMap is a sorted map
-    let sorted_refdefs: BTreeMap<_, _> =
-        parser.reference_definitions().iter().collect();
-
-    for (s, LinkDef { dest, title, .. }) in sorted_refdefs {
-        if let Some(t) = title {
-            writeln!(&mut f, "[{s}]: {dest} \"{t:?}\"")?;
-        } else {
-            writeln!(&mut f, "[{s}]: {dest}")?;
-        }
-    }
     Ok(())
 }

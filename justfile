@@ -109,7 +109,8 @@ update:
   cargo update
 
 default := 'help'
+empty := ''
 
 # Manage links
-do args=default:
-  cargo run -p utils --bin do -- {{args}}
+do cmd=default subcmd=empty:
+  cargo run -p utils --bin do -- {{cmd}} {{subcmd}}

@@ -4,7 +4,7 @@ use std::path::Path;
 use anyhow::Result;
 
 // // Read a single file to String
-// pub fn read_to_string<P: AsRef<Path>>(path: P) -> String {
+// pub(crate) fn read_to_string<P: AsRef<Path>>(path: P) -> String {
 // let mut file = File::open(path).expect(format!("{:?} should
 // exist.", path).as_str());
 // let mut buf = String::new();
@@ -13,7 +13,9 @@ use anyhow::Result;
 // buf
 // }
 
-pub fn read_all_markdown_files_in(markdown_root: &str) -> Result<String> {
+pub(crate) fn read_all_markdown_files_in(
+    markdown_root: &str,
+) -> Result<String> {
     // Locate the Markdown files with the src directory
     let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
 
@@ -21,7 +23,7 @@ pub fn read_all_markdown_files_in(markdown_root: &str) -> Result<String> {
     let mut buf = Vec::<String>::with_capacity(120);
     for p in paths {
         let s = fs::read_to_string(p.as_path())?;
-        // debug: println!("{:?}: length = {}", p, s.len());
+        // debug!("{:?}: length = {}", p, s.len());
         buf.push(s);
     }
     let all_markdown = buf.concat(); //or .join("");

@@ -8,11 +8,12 @@ use once_cell::sync::Lazy;
 use rand::distributions::Alphanumeric;
 use rand::distributions::DistString;
 use regex::Regex;
+use tracing::info;
 
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 
-pub fn extract_code_from_all_markdown_files_in(
+pub(crate) fn extract_code_from_all_markdown_files_in(
     markdown_root: &str,
     code_dst_dir: &str,
 ) -> Result<()> {
@@ -21,12 +22,12 @@ pub fn extract_code_from_all_markdown_files_in(
 
     // Process each .md file
     for p in paths {
-        println!("{p:?}");
+        info!("{p:?}");
         let buf = fs::read_to_string(p.as_path())?;
         let random_string =
             Alphanumeric.sample_string(&mut rand::thread_rng(), 5);
 
-        // debug: println!("{:?}: length = {}", p, buf.len());
+        // debug!("{:?}: length = {}", p, buf.len());
         for (number, (_, [code])) in EXTRACT_REGEX
             .captures_iter(&buf)
             .map(|c| c.extract())
@@ -48,14 +49,14 @@ pub fn extract_code_from_all_markdown_files_in(
                 ".rs"
             );
             let code_path = Path::new(code_dst_dir).join(code_filename);
-            println!(" {number}:\n {code_path:?}\n");
+            info!(" {number}:\n {code_path:?}\n");
             File::create(code_path)?.write_all(code.as_bytes())?;
         }
     }
     Ok(())
 }
 
-pub fn remove_code_from_all_markdown_files_in(
+pub(crate) fn remove_code_from_all_markdown_files_in(
     markdown_root: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
@@ -63,7 +64,7 @@ pub fn remove_code_from_all_markdown_files_in(
 
     // Process each .md file
     for p in paths {
-        println!("{p:?}");
+        info!("{p:?}");
         let buf = fs::read_to_string(p.as_path())?;
         let re =
             Regex::new(r"(?s)(?<first>```rust.*?\n)(?<code>.+?)(?<last>```)")?;
@@ -73,7 +74,7 @@ pub fn remove_code_from_all_markdown_files_in(
                 p.file_stem().unwrap().to_string_lossy()
             );
             let new_txt = re.replace_all(&buf, replacement);
-            // println!("{}", new_txt);
+            // debug!("{}", new_txt);
             File::create(p)?.write_all(new_txt.as_bytes())?;
         }
     }

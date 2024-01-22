@@ -15,7 +15,7 @@ enum Where {
              * End(Tag::Image(..)), within a link */
 }
 
-pub fn extract_links(parser: Parser) -> Vec<Link> {
+pub(super) fn extract_links(parser: Parser) -> Vec<Link> {
     let mut state: Vec<(Where, LinkBuilder)> = Vec::new();
     let mut links: Vec<Link> = Vec::new();
 

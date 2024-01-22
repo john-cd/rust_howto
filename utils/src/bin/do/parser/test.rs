@@ -1,4 +1,4 @@
-pub fn get_test_markdown() -> String {
+pub(super) fn get_test_markdown() -> String {
     let md: &'static str = "
  <http://url0/>
 
