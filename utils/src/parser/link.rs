@@ -98,6 +98,7 @@ pub(super) struct Link {
 
     // [![image_alt_text][image_label]][...]
     // [image_label]: image_url "image_title"
+    #[allow(dead_code)]
     image_link_type: Option<LinkType>,
     image_alt_text: Option<String>,
     image_label: Option<String>,

@@ -1,15 +1,9 @@
 use std::borrow::Borrow;
-use std::collections::BTreeMap;
 use std::io::Write;
 
 use anyhow::Result;
 use pulldown_cmark::html;
 use pulldown_cmark::Event;
-use pulldown_cmark::LinkDef;
-use pulldown_cmark::Parser;
-use regex::Regex;
-
-use super::link::LinkBuilder;
 
 // HTML
 

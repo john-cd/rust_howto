@@ -15,9 +15,7 @@ use pulldown_cmark::CowStr;
 use pulldown_cmark::LinkType;
 use pulldown_cmark::Options;
 use pulldown_cmark::Parser;
-use test::*;
 use tracing::debug;
-use tracing::info;
 use tracing::warn;
 
 // Private Functions
@@ -57,7 +55,7 @@ fn _callback<'input>(
 // pub(crate)lic Functions
 
 // Parse the Markdown as events and print them all.
-pub(crate) fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
+pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
@@ -71,7 +69,7 @@ pub(crate) fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
 // REFERENCE DEFINTIONS
 
 // Write the reference definitions to a file
-pub(crate) fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
+pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
@@ -81,7 +79,7 @@ pub(crate) fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     Ok(())
 }
 
-pub(crate) fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
+pub fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
@@ -97,7 +95,7 @@ pub(crate) fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
 // TODO need to remove internal links; deduplicate code
 // Write all inline links and autolinks (i.e., not written as
 // reference-style links) to a file
-pub(crate) fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
+pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {
@@ -128,7 +126,7 @@ pub(crate) fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
 }
 
 // Write all links to a file
-pub(crate) fn write_links<S: AsRef<str>, P: AsRef<Path>>(
+pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
     path: P,
 ) -> Result<()> {

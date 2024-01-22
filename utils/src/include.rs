@@ -5,8 +5,6 @@ use std::path::Path;
 
 use anyhow::Result;
 use once_cell::sync::Lazy;
-use rand::distributions::Alphanumeric;
-use rand::distributions::DistString;
 use regex::Regex;
 use tracing::info;
 
@@ -16,11 +14,9 @@ static INSERT_REGEX: Lazy<Regex> = Lazy::new(|| {
 
 // Replace {{#include complex/toml.md}} by the file contents
 // Exclude {{#include refs/link-refs.md}} and similar
-pub(crate) fn include_in_all_markdown_files_in(
-    markdown_root: &str,
-) -> Result<()> {
+pub fn include_in_all_markdown_files_in(markdown_root: &str) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {

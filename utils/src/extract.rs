@@ -13,12 +13,12 @@ use tracing::info;
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 
-pub(crate) fn extract_code_from_all_markdown_files_in(
+pub fn extract_code_from_all_markdown_files_in(
     markdown_root: &str,
     code_dst_dir: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {
@@ -56,11 +56,11 @@ pub(crate) fn extract_code_from_all_markdown_files_in(
     Ok(())
 }
 
-pub(crate) fn remove_code_from_all_markdown_files_in(
+pub fn remove_code_from_all_markdown_files_in(
     markdown_root: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = utils::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {

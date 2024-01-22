@@ -2,11 +2,11 @@
 
 use std::collections::HashMap;
 
-use anyhow::Result;
+// use anyhow::Result;
 use once_cell::sync::Lazy;
-use tracing::info;
-use tracing::warn;
-use url::Url;
+// use tracing::info;
+// use tracing::warn;
+// use url::Url;
 
 // pub(super) struct LabelAndBadge(String, String);
 
@@ -36,6 +36,7 @@ use url::Url;
 #[derive(Debug, Default)]
 pub(super) struct Rule<'a> {
     pub(super) re: &'a str, // Regex pattern to match the url
+    #[allow(dead_code)]
     pub(super) label_pattern: &'a str, // regex replacement pattern
     pub(super) badge_url_pattern: &'a str, /* optional pattern to build a
                              * badge link */
