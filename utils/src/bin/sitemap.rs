@@ -46,7 +46,7 @@ fn main() -> Result<()> {
     let src = Path::new("/code/src/");
 
     // Locate the Markdown files
-    let paths: Vec<PathBuf> = utils::find_markdown_paths(src)?;
+    let paths: Vec<PathBuf> = utils::md::find_markdown_paths(src)?;
 
     // Remove a few exceptions
     let exclude = ["refs.md", "SUMMARY.md"];
@@ -83,7 +83,7 @@ fn main() -> Result<()> {
     }
     // Create directory
     let dest_dir = "/code/book/html/";
-    utils::create_dir(dest_dir)?;
+    utils::dir::create_dir(dest_dir)?;
 
     // Write the sitemap
     let sitemap_full_path: String = format!("{dest_dir}sitemap.xml");
