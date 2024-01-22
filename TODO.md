@@ -1,9 +1,17 @@
 # TODO
 
+polish SUMMARY.md
+
+- auto derive
+- config, concerns
+
+see STATUS.md
+
 finish links:
 
-- rename some of the IDs
-- organize link-refs
+- rename some of the IDs (finish)
+- insert badges instead of (github) - see book/temp
+- create badge refdefs for links to crates.io
 
 review generate.sh
 
