@@ -6,12 +6,21 @@ Run `cargo add <crate>` (or edit `Cargo.toml`) in this folder to add new depende
 
 ## Common commands
 
+Type `just` to browse common commands, or manually enter the following:
+
 ```bash
 cargo +nightly fmt --all
-cargo clippy --examples
+
+mdbook build
+# then
 cargo check --examples
+# or
 cargo build --examples
+# or
+cargo clippy --examples
+# or
 cargo test --tests --examples -- --show-output
+# or
 cargo run --example <name>
 ```
 
