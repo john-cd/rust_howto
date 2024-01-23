@@ -1,6 +1,7 @@
 //#![allow(unused)]
 
 pub mod build_book;
+pub mod dependencies;
 pub mod dir;
 pub mod extract_code;
 pub mod file;
