@@ -4,8 +4,8 @@ use pulldown_cmark::Tag;
 use tracing::debug;
 use tracing::error;
 
-use super::link::Link;
-use super::link::LinkBuilder;
+use super::super::link::Link;
+use super::super::link::LinkBuilder;
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum Where {

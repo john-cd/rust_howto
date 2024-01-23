@@ -5,10 +5,15 @@ use pulldown_cmark::Event;
 use pulldown_cmark::Parser;
 use pulldown_cmark::Tag;
 
-// Parse the Markdown as events and write them all to e.g. file.
-// See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
-// and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
-pub(super) fn debug_parse_to<W>(parser: Parser, mut f: W) -> Result<()>
+/// Parse Markdown and write all raw events to e.g. a file
+/// for debugging purposes
+///
+/// parser: source Markdown parser
+/// w: writer / file to write to
+///
+/// See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
+/// and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
+pub(super) fn debug_parse_to<W>(parser: Parser, mut w: W) -> Result<()>
 where
     W: Write,
 {
@@ -18,29 +23,29 @@ where
             // event and before its corresponding End event are inside this
             // element. Start and end events are guaranteed to be balanced.
             Event::Start(tag) => {
-                writeln!(&mut f, "Start({:?})", tag)?;
+                writeln!(&mut w, "Start({:?})", tag)?;
 
                 match tag {
                     Tag::Paragraph => {
-                        writeln!(&mut f, "Event::Start(Tag::Paragraph)")?;
+                        writeln!(&mut w, "Event::Start(Tag::Paragraph)")?;
                     }
                     // A heading. The first field indicates the level of the
                     // heading, the second the fragment identifier, and the
                     // third the classes.
                     Tag::Heading(level, id, classes) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Heading( heading_level: {} fragment identifier: {:?} classes: {:?} ))",
                             level, id, classes
                         )?;
                     }
                     Tag::BlockQuote => {
-                        writeln!(&mut f, "Event::Start(Tag::BlockQuote)")?;
+                        writeln!(&mut w, "Event::Start(Tag::BlockQuote)")?;
                     }
                     // A code block.
                     Tag::CodeBlock(code_block_kind) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::CodeBlock(code_block_kind: {:?} ))",
                             code_block_kind
                         )?;
@@ -49,7 +54,7 @@ where
                     // number of the first item. Contains only list items.
                     Tag::List(ordered_list_first_item_number) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::List( ordered_list_first_item_number: {:?} ))",
                             ordered_list_first_item_number
                         )?;
@@ -57,7 +62,7 @@ where
                     // A list item.
                     Tag::Item => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Item) (this is a list item)"
                         )?;
                     }
@@ -65,7 +70,7 @@ where
                     // footnote’s label by which it can be referred to.
                     Tag::FootnoteDefinition(label) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::FootnoteDefinition( label: {} ))",
                             label
                         )?;
@@ -74,7 +79,7 @@ where
                     // for each of its columns.
                     Tag::Table(column_text_alignment_list) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Table( column_text_alignment_list: {:?} ))",
                             column_text_alignment_list
                         )?;
@@ -84,7 +89,7 @@ where
                     // TableHead tag. There is no TableBody tag.
                     Tag::TableHead => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::TableHead) (contains TableRow tags)"
                         )?;
                     }
@@ -92,31 +97,31 @@ where
                     // Contains only TableCells.
                     Tag::TableRow => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::TableRow) (contains TableCell tags)"
                         )?;
                     }
                     Tag::TableCell => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::TableCell) (contains inline tags)"
                         )?;
                     }
                     Tag::Emphasis => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Emphasis) (this is a span tag)"
                         )?;
                     }
                     Tag::Strong => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Strong) (this is a span tag)"
                         )?;
                     }
                     Tag::Strikethrough => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Strikethrough) (this is a span tag)"
                         )?;
                     }
@@ -124,7 +129,7 @@ where
                     // destination URL and the third is a title.
                     Tag::Link(link_type, dest_url, title) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Link() link_type: {:?} url: {} title: {} ))",
                             link_type, dest_url, title
                         )?;
@@ -133,7 +138,7 @@ where
                     // the destination URL and the third is a title.
                     Tag::Image(link_type, dest_url, title) => {
                         writeln!(
-                            &mut f,
+                            &mut w,
                             "Event::Start(Tag::Image( link_type: {:?} url: {} title: {} ))",
                             link_type, dest_url, title
                         )?;
@@ -142,42 +147,42 @@ where
             }
             // End of a tagged element.
             Event::End(tag) => {
-                writeln!(&mut f, "Event::End({:?})", tag)?;
+                writeln!(&mut w, "Event::End({:?})", tag)?;
             }
             // A text node.
             Event::Text(s) => {
-                writeln!(&mut f, "Event::Text({:?})", s)?;
+                writeln!(&mut w, "Event::Text({:?})", s)?;
             }
             // An inline code node.
             Event::Code(s) => {
-                writeln!(&mut f, "Event::Code({:?})", s)?;
+                writeln!(&mut w, "Event::Code({:?})", s)?;
             }
             // An HTML node.
             Event::Html(s) => {
-                writeln!(&mut f, "Event::Html({:?})", s)?;
+                writeln!(&mut w, "Event::Html({:?})", s)?;
             }
             // A reference to a footnote with given label, which may or may not
             // be defined by an event with a Tag::FootnoteDefinition tag.
             // Definitions and references to them may occur in any order.
             Event::FootnoteReference(s) => {
-                writeln!(&mut f, "Event::FootnoteReference({:?})", s)?;
+                writeln!(&mut w, "Event::FootnoteReference({:?})", s)?;
             }
             // A soft line break.
             Event::SoftBreak => {
-                writeln!(&mut f, "Event::SoftBreak")?;
+                writeln!(&mut w, "Event::SoftBreak")?;
             }
             // A hard line break.
             Event::HardBreak => {
-                writeln!(&mut f, "Event::HardBreak")?;
+                writeln!(&mut w, "Event::HardBreak")?;
             }
             // A horizontal ruler.
             Event::Rule => {
-                writeln!(&mut f, "Event::Rule")?;
+                writeln!(&mut w, "Event::Rule")?;
             }
             // A task list marker, rendered as a checkbox in HTML. Contains a
             // true when it is checked.
             Event::TaskListMarker(b) => {
-                writeln!(&mut f, "Event::TaskListMarker({:?})", b)?;
+                writeln!(&mut w, "Event::TaskListMarker({:?})", b)?;
             }
         };
     }

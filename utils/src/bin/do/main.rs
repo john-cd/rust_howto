@@ -84,14 +84,16 @@ fn main() -> Result<()> {
                 utils::dir::create_dir(code_dst_dir)?;
                 let path = "/code/drafts/";
                 println!("Extracting examples from .md files in {:?}", path);
-                utils::extract::extract_code_from_all_markdown_files_in(
+                utils::extract_code::extract_code_from_all_markdown_files_in(
                     path,
                     code_dst_dir,
                 )?;
             }
             args::MarkdownSubCommand::RemoveCodeExamples => {
                 let path = "/code/drafts/";
-                utils::extract::remove_code_from_all_markdown_files_in(path)?;
+                utils::extract_code::remove_code_from_all_markdown_files_in(
+                    path,
+                )?;
             }
             args::MarkdownSubCommand::ReplaceIncludes => {
                 let path = "/code/drafts/";

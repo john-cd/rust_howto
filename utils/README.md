@@ -15,7 +15,7 @@ just sitemap
 ```bash
 cargo run -p tools --bin do -- <command>
 # or
-just links <command>
+just do <command>
 ```
 
 Run without arguments to display the the list of commands.

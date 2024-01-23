@@ -4,18 +4,6 @@ use std::process::Command;
 use anyhow::anyhow;
 use anyhow::Result;
 
-// // Write e.g. stdout / stderr to a file.
-// use std::fs::File;
-// use std::io::BufWriter;
-// use std::io::Write;
-// fn write_log(out: &[u8], err: &[u8]) -> Result<()> {
-//     let mut buffer = BufWriter::new(File::create("build.log")?);
-//     buffer.write_all(out)?;
-//     buffer.write_all(err)?;
-//     buffer.flush()?;
-//     Ok(())
-// }
-
 // Invoke `mdbook build`
 //
 // Usage example:

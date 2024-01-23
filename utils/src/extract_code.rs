@@ -10,6 +10,7 @@ use rand::distributions::DistString;
 use regex::Regex;
 use tracing::info;
 
+// Embedded Rust code extraction from Markdown
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 

@@ -7,11 +7,16 @@ use pulldown_cmark::Parser;
 use regex::Regex;
 use tracing::info;
 
-use super::link::LinkBuilder;
+use super::super::link::LinkBuilder;
 
 // REFERENCE DEFINITIONS
 
-pub(super) fn write_ref_defs<W>(parser: &Parser, mut f: W) -> Result<()>
+/// Write reference definitions parsed from a Markdown parser to a
+/// file / writer.
+///
+/// parser: Markdown parser
+/// w: Writer e.g. File
+pub(super) fn write_ref_defs<W>(parser: &Parser, mut w: W) -> Result<()>
 where
     W: Write,
 {
@@ -21,17 +26,23 @@ where
 
     for (s, LinkDef { dest, title, .. }) in sorted_refdefs {
         if let Some(t) = title {
-            writeln!(&mut f, "[{s}]: {dest} \"{t:?}\"")?;
+            writeln!(&mut w, "[{s}]: {dest} \"{t:?}\"")?;
         } else {
-            writeln!(&mut f, "[{s}]: {dest}")?;
+            writeln!(&mut w, "[{s}]: {dest}")?;
         }
     }
     Ok(())
 }
 
+/// Get existing reference definitions from a Markdown parser,
+/// identify URLs that are GitHub repos, create badge URLs for these
+/// links, and write to a writer / file.
+///
+/// parser: Markdown parser
+/// w: Writer (e.g. File) to write to
 pub(super) fn write_github_repo_badge_refdefs<W>(
     parser: &Parser,
-    f: &mut W,
+    w: &mut W,
 ) -> Result<()>
 where
     W: Write,
@@ -55,10 +66,10 @@ where
                 .set_label(lbl.to_string())
                 .set_image_url(badge_image_url.to_string())
                 .build();
-            writeln!(f, "{}", link.to_badge_reference_definition())?;
+            writeln!(w, "{}", link.to_badge_reference_definition())?;
             writeln!(&mut buf, "{}", link.to_link_with_badge())?;
         }
     }
-    f.write_all(&buf)?;
+    w.write_all(&buf)?;
     Ok(())
 }
