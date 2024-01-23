@@ -1,6 +1,6 @@
-
 use std::path::Path;
 use std::process::Command;
+
 use anyhow::anyhow;
 use anyhow::Result;
 
@@ -47,7 +47,9 @@ pub fn build_book(root_path: &Path) -> Result<()> {
 }
 
 // // Tell Cargo to rerun the build.rs script, if the .md files
-// change. fn build_rs_helper() -> Result<()> {
+// change.
+// See also: https://crates.io/crates/cargo-emit
+// fn build_rs_helper() -> Result<()> {
 //     let root_path = std::fs::canonicalize("..")?;
 //     let original_markdown_dir_path = root_path.join("src/");
 //     let original_markdown_paths =
