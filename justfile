@@ -48,8 +48,26 @@ testall: _build-book
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+# Run all examples
+[unix]
+runall: _build-book
+  #! /bin/bash
+  set -o pipefail
+  set -e
+  # Run examples that are simple .rs files
+  examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
+  for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
+  # Run examples that are in a folder
+  examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
+  for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
+  # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
+  xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
+  # Also run additional examples in the xmpl folder, if any
+  for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
+# TODO: this still repeatedly runs `build.rs` somehow.
+
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-build: _generate-refdefs _generate-index-category _build-book && sitemap _copystatic
+build: _generate-refdefs _generate-index-category _build-book && _sitemap _copystatic
 
 # Generate the expanded markdown (input for skeptic) and the book's HTML / JS
 _build-book:
@@ -73,7 +91,7 @@ _copystatic:
   copy static\*.* book\html\
 
 # Generate the sitemap.xml file
-sitemap:
+_sitemap:
   cargo run -p utils --bin sitemap
 
 # Test all examples in the book's Markdown
@@ -83,24 +101,6 @@ test: _build-book
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
 # when dealing with dependencies outside of the std library
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
-
-# Run all examples
-[unix]
-run: _build-book
-  #! /bin/bash
-  set -o pipefail
-  set -e
-  # Run examples that are simple .rs files
-  examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
-  for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
-  # Run examples that are in a folder
-  examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
-  for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
-  # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
-  xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
-  # Also run additional examples in the xmpl folder, if any
-  for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
-# TODO: this still repeatedly runs `build.rs` somehow.
 
 # Serve the book (incl. link checking)
 serve: _build-book
@@ -127,3 +127,6 @@ empty := ''
 # Manage links, ref definitions, etc...
 do cmd=default subcmd=empty:
   cargo run -p utils --bin do -- {{cmd}} {{subcmd}}
+
+run xmpl:
+  cargo run -p deps --example {{xmpl}}
