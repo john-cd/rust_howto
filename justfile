@@ -29,32 +29,39 @@ fmtall:
   cargo +nightly fmt --all
 
 # Check all code
-checkall:
+checkall: _build-book
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build all code
-buildall:
+buildall: _build-book
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
-# `cargo build` calls `mdbook build` in `build.rs`
 
 # Scan all code for common mistakes
-clippyall:
+clippyall: _build-book
   cargo clippy --workspace --all-targets --locked
-# `cargo clippyall` calls `mdbook build` in `build.rs`
 
 # Test all code
-testall:
+testall: _build-book
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-# `cargo test` calls `mdbook build` in `build.rs`
 
-# Build the book from its Markdown files
-build: && sitemap _copystatic
-  cargo build --package deps --locked
-# `cargo build` calls `mdbook build` in `build.rs`
+# Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
+build: _generate-refdefs _generate-index-category _build-book && sitemap _copystatic
+
+# Generate the expanded markdown (input for skeptic) and the book's HTML / JS
+_build-book:
+  mdbook build
+
+# Generate new reference definitions for all crate the book's examples depend on...
+_generate-refdefs:
+  # TODO
+
+# Generate the index and the category page.
+_generate-index-category:
+  # TODO
 
 # Add static assets to book output
 [unix]
@@ -70,16 +77,16 @@ sitemap:
   cargo run -p utils --bin sitemap
 
 # Test all examples in the book's Markdown
-test:
+test: _build-book
   cargo test --package deps --tests --examples --locked -- --show-output
 # This relies on skeptic to build doctests - see `build.rs`
-# NOTE: mdbook test is not reliable when dealing with dependencies outside of the std library
-# mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/
+# NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
+# when dealing with dependencies outside of the std library
 # see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Run all examples
 [unix]
-run:
+run: _build-book
   #! /bin/bash
   set -o pipefail
   set -e
@@ -93,18 +100,19 @@ run:
   xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
   # Also run additional examples in the xmpl folder, if any
   for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
+# TODO: this still repeatedly runs `build.rs` somehow.
 
 # Serve the book (incl. link checking)
-serve: build
+serve: _build-book
   mdbook serve --open
 # To change the port: --port 3001
 
 # Watch the book's markdown files and rebuilds it on changes
-# watch:
+# watch: _build-book
 #   mdbook watch --open
 
 # Prepare for git push
-prep: fmtall clean build clippyall testall serve
+prep: fmtall clean build clippyall testall build serve
 
 ## Utilities --------------------------------------
 
@@ -116,6 +124,6 @@ update:
 default := 'help'
 empty := ''
 
-# Manage links
+# Manage links, ref definitions, etc...
 do cmd=default subcmd=empty:
   cargo run -p utils --bin do -- {{cmd}} {{subcmd}}
