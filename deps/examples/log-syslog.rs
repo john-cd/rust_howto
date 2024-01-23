@@ -1,17 +1,12 @@
-#[cfg(target_os = "linux")]
+use log::LevelFilter;
 #[cfg(target_os = "linux")]
 use syslog::Error;
-#[cfg(target_os = "linux")]
 #[cfg(target_os = "linux")]
 use syslog::Facility;
 
 #[cfg(target_os = "linux")]
 fn main() -> Result<(), Error> {
-    syslog::init(
-        Facility::LOG_USER,
-        log::LevelFilter::Debug,
-        Some("My app name"),
-    )?;
+    syslog::init(Facility::LOG_USER, LevelFilter::Debug, Some("My app name"))?;
     log::debug!("this is a debug {}", "message");
     log::error!("this is an error!");
     Ok(())
