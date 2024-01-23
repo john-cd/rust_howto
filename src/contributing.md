@@ -18,7 +18,9 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
-- `notify`, `indicatif`, `ratatui`
+- `notify`
+- `indicatif`
+- `ratatui`
 - File system traversal, `walkdir`
 - `time`, `chrono`
 - Errors: `color-eyre`, `eyre`
