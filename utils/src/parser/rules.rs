@@ -2,34 +2,13 @@
 
 use std::collections::HashMap;
 
-// use anyhow::Result;
 use once_cell::sync::Lazy;
-// use tracing::info;
-// use tracing::warn;
-// use url::Url;
 
-// pub(super) struct LabelAndBadge(String, String);
-
-// TODO
-// pub(super) fn process(url: Url, existing_label: Option<&str>) ->
-// LabelAndBadge {     let l = existing_label.unwrap_or_default();
 //     for r in GLOBAL_RULES.iter() {
 //         // if {
 
 //         // }
 //     }
-//     LabelAndBadge(String::new(), String::new())
-// }
-
-// fn extract_from_url(s: &str) -> Result<()> {
-//     let u = Url::parse(s)?;
-//     if u.scheme() != "https" {
-//         warn!("Not-https: {}", u.as_str());
-//     }
-//     if let Some(d) = u.domain() {}
-//     //(u.path())
-//     Ok(())
-// }
 
 /// Rule to create a reference label and/or a badge URL from a link
 /// URL
@@ -42,6 +21,7 @@ pub(super) struct Rule<'a> {
                              * badge link */
 }
 
+/// All rules that transform a URL to a label or badge URL
 pub(super) static GLOBAL_RULES: Lazy<HashMap<&str, Rule>> = Lazy::new(|| {
     let mut m = HashMap::new();
 

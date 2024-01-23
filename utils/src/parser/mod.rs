@@ -1,5 +1,5 @@
 mod debug;
-mod link;
+
 mod parse;
 mod refdefs;
 mod rules;
@@ -52,15 +52,19 @@ fn _callback<'input>(
     Some(("https://TODO".into(), "".into()))
 }
 
-// pub(crate)lic Functions
+// Public Functions
 
-// Parse the Markdown as events and print them all.
+/// Parse a Markdown string and write all raw events to e.g. a file
+/// for debugging purposes
+///
+/// markdown_input: &str equivalent
+/// dest_file_path: path to the file to create and write into
 pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
-    path: P,
+    dest_file_path: P,
 ) -> Result<()> {
     debug!("\nParsing markdown ---------------\n");
-    let f = std::fs::File::create(path)?;
+    let f = std::fs::File::create(dest_file_path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
     debug::debug_parse_to(parser, f)?;
     Ok(())
@@ -68,22 +72,32 @@ pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
 
 // REFERENCE DEFINTIONS
 
-// Write the reference definitions to a file
+/// Parse a Markdown string and write reference definitions found
+/// therein to a file, given a path
+///
+/// markdown_input: &str equivalent
+/// dest_file_path: path to the file to create and write into
 pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
-    path: P,
+    dest_file_path: P,
 ) -> Result<()> {
-    let f = std::fs::File::create(path)?;
+    let f = std::fs::File::create(dest_file_path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
     refdefs::write_ref_defs(&parser, f)?;
     Ok(())
 }
 
+/// Get existing reference definitions from a Markdown string,
+/// identify URLs that are GitHub repos, create badge URLs for these
+/// links, and write to a file, given a path.
+///
+/// markdown_input: &str equivalent
+/// dest_file_path: path to the file to create and write into
 pub fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
-    path: P,
+    dest_file_path: P,
 ) -> Result<()> {
-    let mut f = std::io::BufWriter::new(std::fs::File::create(path)?);
+    let mut f = std::io::BufWriter::new(std::fs::File::create(dest_file_path)?);
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
     refdefs::write_github_repo_badge_refdefs(&parser, &mut f)?;
     f.flush().unwrap();
@@ -93,16 +107,21 @@ pub fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
 // LINKS
 
 // TODO need to remove internal links; deduplicate code
-// Write all inline links and autolinks (i.e., not written as
-// reference-style links) to a file
+
+/// Parse a Markdown string and write all inline links and autolinks
+/// (i.e., not written as reference-style links) found therein to a
+/// file
+///
+/// markdown_input: &str equivalent
+/// dest_file_path: path to the file to create and write into
 pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
-    path: P,
+    dest_file_path: P,
 ) -> Result<()> {
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
 
-    let mut f = std::fs::File::create(path)?;
-    let links: Vec<link::Link> = parse::extract_links(parser);
+    let mut f = std::fs::File::create(dest_file_path)?;
+    let links: Vec<super::link::Link> = parse::extract_links(parser);
     let links: Vec<_> = links
         .iter()
         .filter(|l| {
@@ -126,14 +145,16 @@ pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
 }
 
 // Write all links to a file
+/// markdown_input: &str equivalent
+/// dest_file_path: path to the file to create and write into
 pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
     markdown_input: S,
-    path: P,
+    dest_file_path: P,
 ) -> Result<()> {
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
-    let mut f = std::fs::File::create(path)?;
+    let mut f = std::fs::File::create(dest_file_path)?;
 
-    let links: Vec<link::Link> = parse::extract_links(parser);
+    let links: Vec<super::link::Link> = parse::extract_links(parser);
     if !links.is_empty() {
         for l in links {
             writeln!(
