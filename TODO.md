@@ -1,5 +1,9 @@
 # TODO
 
+finish generation of urls from dependencies + append + sort + dedupe
+
+fix failing examples
+
 polish SUMMARY.md
 
 - auto derive
@@ -11,7 +15,7 @@ finish links:
 
 - rename some of the IDs (finish)
 - insert badges instead of (github) - see book/temp
-- create badge refdefs for links to crates.io
+- create badge refdefs for links to crates.io, etc
 
 review generate.sh
 
