@@ -8,3 +8,4 @@ pub mod include;
 mod link;
 pub mod md;
 pub mod parser;
+mod rules;
