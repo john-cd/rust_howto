@@ -1,8 +1,6 @@
 mod debug;
-
 mod parse;
 mod refdefs;
-mod rules;
 mod test;
 mod write;
 

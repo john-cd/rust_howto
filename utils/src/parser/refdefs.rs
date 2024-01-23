@@ -50,7 +50,7 @@ where
     let sorted_refdefs: BTreeMap<_, _> =
         parser.reference_definitions().iter().collect();
 
-    let rule = &super::rules::GLOBAL_RULES["github repo"];
+    let rule = &super::super::rules::GLOBAL_RULES["github repo"];
     let re = Regex::new(rule.re).unwrap();
 
     let mut buf = Vec::new();
