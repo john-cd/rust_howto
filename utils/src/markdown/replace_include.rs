@@ -1,3 +1,4 @@
+/// Replace {{#include <file>.md}} by the file contents
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -12,11 +13,11 @@ static INSERT_REGEX: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"\{\{#include (?<filepath>\S+?\.md)\}\}").unwrap()
 });
 
-// Replace {{#include complex/toml.md}} by the file contents
+// Replace {{#include <file>.md}} by the file contents
 // Exclude {{#include refs/link-refs.md}} and similar
 pub fn include_in_all_markdown_files_in(markdown_root: &str) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {

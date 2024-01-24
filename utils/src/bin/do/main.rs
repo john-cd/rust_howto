@@ -22,7 +22,7 @@ fn main() -> Result<()> {
             match subcmd {
                 RefDefsSubCommand::Write(pathargs) => {
                     // Create temp directory
-                    utils::dir::create_dir("/code/book/temp/")?;
+                    utils::fs::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/existing_refs.md");
                     println!(
@@ -30,24 +30,25 @@ fn main() -> Result<()> {
                         pathbuf
                     );
                     let all_markdown =
-                        utils::file::read_all_markdown_files_in("./src/")?;
-                    utils::parser::write_ref_defs_to(all_markdown, pathbuf)?;
+                        utils::fs::read_to_string_all_markdown_files_in(
+                            "./src/",
+                        )?;
+                    utils::write_ref_defs_to(all_markdown, pathbuf)?;
                 }
                 RefDefsSubCommand::GenerateBadges(pathargs) => {
                     let refdef_pathbuf =
                         path_or(pathargs, "/code/book/temp/badge_refs.md");
 
-                    utils::dir::create_dir("/code/book/temp/")?;
+                    utils::fs::create_dir("/code/book/temp/")?;
                     println!(
                         "Writing reference definitions to {:?}",
                         refdef_pathbuf
                     );
                     let all_markdown =
-                        utils::file::read_all_markdown_files_in("./src/")?;
-                    utils::parser::generate_badges(
-                        all_markdown,
-                        refdef_pathbuf,
-                    )?;
+                        utils::fs::read_to_string_all_markdown_files_in(
+                            "./src/",
+                        )?;
+                    utils::generate_badges(all_markdown, refdef_pathbuf)?;
                 } /* _ => {
                    *     println!("NOT IMPLEMENTED");
                    * } */
@@ -57,23 +58,27 @@ fn main() -> Result<()> {
             match subcmd {
                 LinksSubCommand::WriteAll(pathargs) => {
                     // Create temp directory
-                    utils::dir::create_dir("/code/book/temp/")?;
+                    utils::fs::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/all_links.md");
                     println!("Writing existing links to {:?}", pathbuf);
                     let all_markdown =
-                        utils::file::read_all_markdown_files_in("./src/")?;
-                    utils::parser::write_links(all_markdown, pathbuf)?;
+                        utils::fs::read_to_string_all_markdown_files_in(
+                            "./src/",
+                        )?;
+                    utils::write_links(all_markdown, pathbuf)?;
                 }
                 LinksSubCommand::WriteInline(pathargs) => {
                     // Create temp directory
-                    utils::dir::create_dir("/code/book/temp/")?;
+                    utils::fs::create_dir("/code/book/temp/")?;
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/inline_links.md");
                     println!("Writing existing inline links to {:?}", pathbuf);
                     let all_markdown =
-                        utils::file::read_all_markdown_files_in("./src/")?;
-                    utils::parser::write_inline_links(all_markdown, pathbuf)?;
+                        utils::fs::read_to_string_all_markdown_files_in(
+                            "./src/",
+                        )?;
+                    utils::write_inline_links(all_markdown, pathbuf)?;
                 } /* _ => {
                    *     println!("NOT IMPLEMENTED");
                    * } */
@@ -82,34 +87,33 @@ fn main() -> Result<()> {
         Command::Markdown(subcmd) => match subcmd {
             args::MarkdownSubCommand::ExtractCodeExamples => {
                 let code_dst_dir = "/code/deps/examples/temp/";
-                utils::dir::create_dir(code_dst_dir)?;
+                utils::fs::create_dir(code_dst_dir)?;
                 let path = "/code/drafts/";
                 println!("Extracting examples from .md files in {:?}", path);
-                utils::extract_code::extract_code_from_all_markdown_files_in(
+                utils::markdown::extract_code_from_all_markdown_files_in(
                     path,
                     code_dst_dir,
                 )?;
             }
             args::MarkdownSubCommand::RemoveCodeExamples => {
                 let path = "/code/drafts/";
-                utils::extract_code::remove_code_from_all_markdown_files_in(
-                    path,
-                )?;
+                utils::markdown::remove_code_from_all_markdown_files_in(path)?;
             }
             args::MarkdownSubCommand::ReplaceIncludes => {
                 let path = "/code/drafts/";
-                utils::include::include_in_all_markdown_files_in(path)?;
+                utils::markdown::include_in_all_markdown_files_in(path)?;
             } /* _ => {
                *     println!("NOT IMPLEMENTED");
                * } */
         },
         Command::Debug(pathargs) => {
             // Create temp directory
-            utils::dir::create_dir("/code/book/temp/")?;
+            utils::fs::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
-            let all_markdown =
-                Cow::from(utils::file::read_all_markdown_files_in("./src/")?);
-            utils::parser::debug_parse_to(all_markdown, pathbuf)?;
+            let all_markdown = Cow::from(
+                utils::fs::read_to_string_all_markdown_files_in("./src/")?,
+            );
+            utils::debug_parse_to(all_markdown, pathbuf)?;
         } /* Command::Test => {
            *     let all_markdown: String = parser::get_test_markdown();
            *     // Create temp directory

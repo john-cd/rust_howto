@@ -1,3 +1,4 @@
+/// Output markdown parsing debugging information
 use std::io::Write;
 
 use anyhow::Result;
@@ -13,7 +14,7 @@ use pulldown_cmark::Tag;
 ///
 /// See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
 /// and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
-pub(super) fn debug_parse_to<W>(parser: Parser, mut w: W) -> Result<()>
+pub(crate) fn debug_parse_to<W>(parser: Parser, mut w: W) -> Result<()>
 where
     W: Write,
 {

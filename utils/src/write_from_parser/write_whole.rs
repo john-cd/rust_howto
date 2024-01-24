@@ -1,13 +1,11 @@
+/// Functions that read from a Markdown parser and write the whole
+/// content to various outputs / formats
 use std::borrow::Borrow;
 use std::io::Write;
 
 use anyhow::Result;
 use pulldown_cmark::html;
 use pulldown_cmark::Event;
-use pulldown_cmark::LinkDef;
-use pulldown_cmark::Parser;
-
-use super::refdefs::get_sorted_ref_defs;
 
 // HTML
 
@@ -15,7 +13,7 @@ use super::refdefs::get_sorted_ref_defs;
 ///
 /// parser: Markdown parser
 #[allow(dead_code)]
-pub(super) fn write_html_to_stdout<'a, I>(parser: I)
+pub(crate) fn write_html_to_stdout<'a, I>(parser: I)
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -31,7 +29,7 @@ where
 ///
 /// parser: Markdown parser
 #[allow(dead_code)]
-pub(super) fn write_html_to_bytes<'a, I>(parser: I) -> Result<Vec<u8>>
+pub(crate) fn write_html_to_bytes<'a, I>(parser: I) -> Result<Vec<u8>>
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -45,7 +43,7 @@ where
 ///
 /// parser: Markdown parser
 #[allow(dead_code)]
-pub(super) fn write_html_to_string<'a, I>(parser: I) -> String
+pub(crate) fn write_html_to_string<'a, I>(parser: I) -> String
 where
     I: Iterator<Item = Event<'a>>,
 {
@@ -57,13 +55,13 @@ where
 
 // MARKDOWN
 
-/// Read from a Markdown parser and write Markdown to a writer(e.g.
+/// Read from a Markdown parser and write Markdown to a writer (e.g.
 /// File).
 ///
 /// parser: Markdown parser
 /// w: Writer e.g. File
 #[allow(dead_code)]
-pub(super) fn write_markdown_to<'a, I, E, W>(
+pub(crate) fn write_markdown_to<'a, I, E, W>(
     parser: I,
     markdown_input_length: usize,
     mut w: W,
@@ -94,32 +92,5 @@ where
     };
     pulldown_cmark_to_cmark::cmark_with_options(parser, &mut buf, options)?;
     w.write_all(buf.as_bytes())?;
-    Ok(())
-}
-
-// REFERENCE DEFINITIONS
-
-/// Write reference definitions parsed from a Markdown parser to a
-/// file / writer.
-///
-/// parser: Markdown parser
-/// w: Writer e.g. File
-pub(super) fn write_ref_defs<'input, 'callback, W>(
-    parser: &'input Parser<'input, 'callback>,
-    mut w: W,
-) -> Result<()>
-where
-    W: Write,
-    'callback: 'input,
-{
-    let sorted_refdefs = get_sorted_ref_defs::<'input, 'callback>(parser);
-
-    for (s, LinkDef { dest, title, .. }) in sorted_refdefs {
-        if let Some(t) = title {
-            writeln!(&mut w, "[{s}]: {dest} \"{t:?}\"")?;
-        } else {
-            writeln!(&mut w, "[{s}]: {dest}")?;
-        }
-    }
     Ok(())
 }

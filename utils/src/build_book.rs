@@ -1,3 +1,4 @@
+#![allow(unused)]
 use std::path::Path;
 use std::process::Command;
 
@@ -13,7 +14,7 @@ use anyhow::Result;
 //     println!("cargo:warning=ERROR: {}", e);
 //     return res;
 // }
-pub fn build_book(root_path: &Path) -> Result<()> {
+pub(crate) fn build_book(root_path: &Path) -> Result<()> {
     let output = Command::new("mdbook")
         .args(["build"])
         .current_dir(root_path)

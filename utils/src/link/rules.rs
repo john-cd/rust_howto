@@ -1,28 +1,21 @@
 #![allow(clippy::vec_init_then_push)]
-
+/// Rules to create a reference label and/or a badge URL from a link
+/// URL
 use std::collections::HashMap;
 
 use once_cell::sync::Lazy;
 
-//     for r in GLOBAL_RULES.iter() {
-//         // if {
-
-//         // }
-//     }
-
-/// Rule to create a reference label and/or a badge URL from a link
-/// URL
 #[derive(Debug, Default)]
-pub(super) struct Rule<'a> {
-    pub(super) re: &'a str, // Regex pattern to match the url
+pub(crate) struct Rule<'a> {
+    pub re: &'a str, // Regex pattern to match the url
     #[allow(dead_code)]
-    pub(super) label_pattern: &'a str, // regex replacement pattern
-    pub(super) badge_url_pattern: &'a str, /* optional pattern to build a
-                             * badge link */
+    pub label_pattern: &'a str, // regex replacement pattern
+    pub badge_url_pattern: &'a str, /* optional pattern to build a
+                      * badge link */
 }
 
 /// All rules that transform a URL to a label or badge URL
-pub(super) static GLOBAL_RULES: Lazy<HashMap<&str, Rule>> = Lazy::new(|| {
+pub(crate) static GLOBAL_RULES: Lazy<HashMap<&str, Rule>> = Lazy::new(|| {
     let mut m = HashMap::new();
 
     // CATEGORIES
