@@ -10,3 +10,4 @@ mod link;
 pub mod md;
 pub mod parser;
 mod rules;
+mod test;

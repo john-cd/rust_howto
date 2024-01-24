@@ -1,4 +1,6 @@
+use std::borrow::Cow;
 use std::collections::BTreeMap;
+use std::io::Read;
 use std::path::Path;
 use std::process::Command;
 use std::result;
@@ -8,8 +10,9 @@ use anyhow::Result;
 use regex::Regex;
 use serde::Deserialize;
 use tracing::info;
-use std::borrow::Cow;
+
 use super::link::LinkBuilder;
+use crate::link::Link;
 
 #[derive(Debug, Deserialize)]
 pub struct Dependency<'a> {
@@ -23,7 +26,9 @@ pub struct Dependency<'a> {
 /// crate name and package repository URL)
 ///
 /// dir_path: Path to the directory containing the Cargo.toml file.
-pub fn get_dependencies<P: AsRef<Path>>(dir_path: P) -> Result<Vec<Dependency<'static>>> {
+pub fn get_dependencies<P: AsRef<Path>>(
+    dir_path: P,
+) -> Result<Vec<Dependency<'static>>> {
     let output = Command::new("cargo")
         .args([
             "tree",
@@ -121,7 +126,8 @@ where
     Ok(())
 }
 
-/// Create, for a given crate, multiple reference definitions for common websites such as docs.rs, crates.io, github,
+/// Create, for a given crate, multiple reference definitions for
+/// common websites such as docs.rs, crates.io, github,
 /// and th associated badge URLs
 fn write_for_one_library<W>(
     library_name: &str,
@@ -148,7 +154,7 @@ where
     //     .set_image_url(badge_image_url.to_string())
     //     .build();
 
-    //writeln!(w, "{}", link.to_reference_definition())?;
+    // writeln!(w, "{}", link.to_reference_definition())?;
     // writeln!(w, "{}", link.to_badge_reference_definition())?;
 
     // writeln!(&mut buf, "{}", link.to_reference_link())?;
@@ -156,6 +162,16 @@ where
     Ok(())
 }
 
-// fn sort_and_dedupe() {
+// fn append_sort_dedupe<R, W>(existing_refdefs: R, w: &mut W) ->
+// Result<()> where
+//     R: Read,
+//     W: Write,
+// {
+//     let mut buf: Vec<Link> = Vec::new();
 
+//     // Link has a custom Ord / Eq implementation, thus we can sort.
+//     buf.sort();
+
+//     // w.write_all(&buf)?;
+//     Ok(())
 // }
