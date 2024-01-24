@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use std::env;
 use std::path::PathBuf;
 
@@ -28,7 +29,7 @@ fn main() -> Result<()> {
                         "Writing existing reference definitions to {:?}",
                         pathbuf
                     );
-                    let all_markdown: String =
+                    let all_markdown =
                         utils::file::read_all_markdown_files_in("./src/")?;
                     utils::parser::write_ref_defs_to(all_markdown, pathbuf)?;
                 }
@@ -41,7 +42,7 @@ fn main() -> Result<()> {
                         "Writing reference definitions to {:?}",
                         refdef_pathbuf
                     );
-                    let all_markdown: String =
+                    let all_markdown =
                         utils::file::read_all_markdown_files_in("./src/")?;
                     utils::parser::generate_badges(
                         all_markdown,
@@ -60,7 +61,7 @@ fn main() -> Result<()> {
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/all_links.md");
                     println!("Writing existing links to {:?}", pathbuf);
-                    let all_markdown: String =
+                    let all_markdown =
                         utils::file::read_all_markdown_files_in("./src/")?;
                     utils::parser::write_links(all_markdown, pathbuf)?;
                 }
@@ -70,7 +71,7 @@ fn main() -> Result<()> {
                     let pathbuf =
                         path_or(pathargs, "/code/book/temp/inline_links.md");
                     println!("Writing existing inline links to {:?}", pathbuf);
-                    let all_markdown: String =
+                    let all_markdown =
                         utils::file::read_all_markdown_files_in("./src/")?;
                     utils::parser::write_inline_links(all_markdown, pathbuf)?;
                 } /* _ => {
@@ -106,8 +107,8 @@ fn main() -> Result<()> {
             // Create temp directory
             utils::dir::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
-            let all_markdown: String =
-                utils::file::read_all_markdown_files_in("./src/")?;
+            let all_markdown =
+                Cow::from(utils::file::read_all_markdown_files_in("./src/")?);
             utils::parser::debug_parse_to(all_markdown, pathbuf)?;
         } /* Command::Test => {
            *     let all_markdown: String = parser::get_test_markdown();

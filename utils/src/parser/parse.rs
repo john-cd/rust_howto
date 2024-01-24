@@ -1,3 +1,5 @@
+use std::borrow::Cow;
+
 use pulldown_cmark::Event;
 use pulldown_cmark::Parser;
 use pulldown_cmark::Tag;
@@ -15,9 +17,11 @@ enum Where {
              * End(Tag::Image(..)), within a link */
 }
 
-pub(super) fn extract_links(parser: Parser) -> Vec<Link> {
-    let mut state: Vec<(Where, LinkBuilder)> = Vec::new();
-    let mut links: Vec<Link> = Vec::new();
+pub(super) fn extract_links<'input, 'callback>(
+    parser: Parser<'input, 'callback>,
+) -> Vec<Link<'input>> {
+    let mut state: Vec<(Where, LinkBuilder<'input>)> = Vec::new();
+    let mut links: Vec<Link<'input>> = Vec::new();
 
     // Retrieve and group all Link-related events
     parser.for_each(|event| {
@@ -34,14 +38,14 @@ pub(super) fn extract_links(parser: Parser) -> Vec<Link> {
                     Where::InLink,
                     LinkBuilder::from_type_url_title(
                         link_type,
-                        dest_url.into_string(),
-                        title.into_string(),
+                        dest_url.into(),
+                        title.into(),
                     ),
                 ));
             }
 
             // End of the link
-            e @ Event::End(Tag::Link(..)) => {
+            ref e @ Event::End(Tag::Link(..)) => {
                 debug!("{:?}", e);
                 let (whr, link_builder) = state.pop().unwrap(); // Start and End events are balanced
                 assert_eq!(whr, Where::InLink);
@@ -64,51 +68,49 @@ pub(super) fn extract_links(parser: Parser) -> Vec<Link> {
                     Where::InImageInLink,
                     link_builder.set_image(
                         image_link_type,
-                        image_url.into_string(),
-                        image_title.into_string(),
+                        image_url.into(),
+                        image_title.into(),
                     ),
                 ));
             }
 
-            e @ Event::End(Tag::Image(..)) if !state.is_empty() => {
+            ref e @ Event::End(Tag::Image(..)) if !state.is_empty() => {
                 debug!("{:?}", e);
                 let (whr, link_builder) = state.pop().unwrap();
                 assert_eq!(whr, Where::InImageInLink);
                 state.push((Where::InLink, link_builder));
             }
-
-            ref e @ Event::Text(ref t)
+            // Text of an Image
+            Event::Text(t)
                 if state.last().map_or(Where::Elsewhere, |s| s.0)
                     == Where::InImageInLink =>
             {
-                debug!("{:?}", e);
+                debug!("Event::Text({:?})", t);
                 let (whr, link_builder) = state.pop().unwrap();
                 assert_eq!(whr, Where::InImageInLink);
-                state.push((
-                    whr,
-                    link_builder.add_image_alt_text(t.to_string()),
-                ));
+                state
+                    .push((whr, link_builder.add_image_alt_text(Cow::from(t))));
             }
-
-            ref e @ Event::Text(ref t) if !state.is_empty() => {
-                debug!("{:?}", e);
+            // Text of a Link
+            Event::Text(t) if !state.is_empty() => {
+                debug!("Event::Text({:?})", t);
                 let (whr, link_builder) = state.pop().unwrap();
                 assert_eq!(whr, Where::InLink);
-                state.push((whr, link_builder.add_text(t.to_string())));
+                state.push((whr, link_builder.add_text(Cow::from(t))));
             }
 
             Event::Code(c) if !state.is_empty() => {
                 debug!("code: {}", c);
                 let (whr, link_builder) = state.pop().unwrap();
-                state.push((whr, link_builder.add_text(c.to_string())));
+                state.push((whr, link_builder.add_text(c.into())));
             }
 
             // corner cases: Code within an Image, Link within an Image...
-            e if !state.is_empty() => {
+            ref e if !state.is_empty() => {
                 error!("Unhandled event while 'in link': {:?}", e);
             }
 
-            e => {
+            ref e => {
                 debug!("Ignored: {:?}", e);
             }
         }

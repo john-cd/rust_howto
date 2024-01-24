@@ -8,13 +8,13 @@ use anyhow::Result;
 use regex::Regex;
 use serde::Deserialize;
 use tracing::info;
-
+use std::borrow::Cow;
 use super::link::LinkBuilder;
 
 #[derive(Debug, Deserialize)]
-pub struct Dependency {
-    library_name: String,
-    package_repo_url: Option<String>,
+pub struct Dependency<'a> {
+    library_name: Cow<'a, str>,
+    package_repo_url: Option<Cow<'a, str>>,
 }
 
 // Parse `Cargo.toml` and returns the list of dependencies:
@@ -23,7 +23,7 @@ pub struct Dependency {
 /// crate name and package repository URL)
 ///
 /// dir_path: Path to the directory containing the Cargo.toml file.
-pub fn get_dependencies(dir_path: &Path) -> Result<Vec<Dependency>> {
+pub fn get_dependencies<P: AsRef<Path>>(dir_path: P) -> Result<Vec<Dependency<'static>>> {
     let output = Command::new("cargo")
         .args([
             "tree",
@@ -103,7 +103,7 @@ where
 {
     let sorted_deps: BTreeMap<_, _> = dependencies
         .iter()
-        .map(|dep| (dep.library_name.as_str(), dep))
+        .map(|dep| (dep.library_name.as_ref(), dep))
         .collect();
 
     let mut buf = Vec::new();
@@ -121,7 +121,8 @@ where
     Ok(())
 }
 
-/// Write
+/// Create, for a given crate, multiple reference definitions for common websites such as docs.rs, crates.io, github,
+/// and th associated badge URLs
 fn write_for_one_library<W>(
     library_name: &str,
     package_repo_url: Option<&str>,
@@ -142,11 +143,12 @@ where
 
     // info!("{}", badge_image_url.to_string());
     // let link = LinkBuilder::default()
-    //     .set_label(dep.library_name)
+    //     .set_label(library_name)
+    //     .set_url()
     //     .set_image_url(badge_image_url.to_string())
     //     .build();
 
-    // writeln!(w, "{}", link.to_reference_definition())?;
+    //writeln!(w, "{}", link.to_reference_definition())?;
     // writeln!(w, "{}", link.to_badge_reference_definition())?;
 
     // writeln!(&mut buf, "{}", link.to_reference_link())?;

@@ -1,6 +1,6 @@
 use std::fs;
 use std::path::Path;
-
+use std::borrow::Cow;
 use anyhow::Result;
 
 // // Read a single file to String
@@ -13,7 +13,7 @@ use anyhow::Result;
 // buf
 // }
 
-pub fn read_all_markdown_files_in(markdown_root: &str) -> Result<String> {
+pub fn read_all_markdown_files_in<'a>(markdown_root: &str) -> Result<Cow<str>> {
     // Locate the Markdown files with the src directory
     let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
 
@@ -26,5 +26,5 @@ pub fn read_all_markdown_files_in(markdown_root: &str) -> Result<String> {
     }
     let all_markdown = buf.concat(); //or .join("");
 
-    Ok(all_markdown)
+    Ok(Cow::from(all_markdown))
 }

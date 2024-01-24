@@ -21,14 +21,12 @@ pub fn build_book(root_path: &Path) -> Result<()> {
 
     // write_log(&output.stdout, &output.stderr)?;
 
-    let out_string =
-        String::from_utf8(output.stdout)? + &String::from_utf8(output.stderr)?;
-
     if !output.status.success() {
         return Err(anyhow!(
-            "Book building failed. Status: {}. Output: {}",
+            "Book building failed. Status: {}. Output: {}\n{}",
             output.status,
-            out_string
+            String::from_utf8(output.stdout)?,
+            String::from_utf8(output.stderr)?
         ));
     }
     Ok(())
