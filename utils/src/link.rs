@@ -1,18 +1,21 @@
+use std::borrow::Cow;
+use std::cmp::Ordering;
+
 use heck::ToKebabCase;
 use pulldown_cmark::LinkType;
 
 // Link builder that progressively construct a Link
 // from pieces of information
 #[derive(Debug, Default)]
-pub(super) struct LinkBuilder {
-    link: Link,
+pub(super) struct LinkBuilder<'a> {
+    link: Link<'a>,
 }
 
-impl LinkBuilder {
+impl<'a> LinkBuilder<'a> {
     pub(super) fn from_type_url_title(
         link_type: LinkType,
-        url: String,
-        title: String,
+        url: Cow<'a, str>,
+        title: Cow<'a, str>,
     ) -> Self {
         Self {
             link: Link {
@@ -24,15 +27,24 @@ impl LinkBuilder {
         }
     }
 
-    pub(super) fn add_text(mut self, text: String) -> Self {
-        if !text.is_empty() {
-            self.link.text =
-                Some(format!("{}{}", self.link.text.unwrap_or_default(), text));
+    pub(super) fn set_url(mut self, url: Cow<'a, str>) -> Self {
+        if !url.is_empty() {
+            self.link.url = Some(url);
         }
         self
     }
 
-    pub(super) fn set_label(mut self, label: String) -> Self {
+    pub(super) fn add_text(mut self, text: Cow<'a, str>) -> Self {
+        if !text.is_empty() {
+            self.link.text = Some(
+                format!("{}{}", self.link.text.unwrap_or_default(), text)
+                    .into(),
+            );
+        }
+        self
+    }
+
+    pub(super) fn set_label(mut self, label: Cow<'a, str>) -> Self {
         if !label.is_empty() {
             self.link.label = Some(label);
         }
@@ -42,8 +54,8 @@ impl LinkBuilder {
     pub(super) fn set_image(
         self,
         image_link_type: LinkType,
-        image_url: String,
-        image_title: String,
+        image_url: Cow<'a, str>,
+        image_title: Cow<'a, str>,
     ) -> Self {
         Self {
             link: Link {
@@ -63,50 +75,53 @@ impl LinkBuilder {
         }
     }
 
-    pub(super) fn set_image_url(mut self, image_url: String) -> Self {
+    pub(super) fn set_image_url(mut self, image_url: Cow<'a, str>) -> Self {
         if !image_url.is_empty() {
             self.link.image_url = Some(image_url);
         }
         self
     }
 
-    pub(super) fn add_image_alt_text(mut self, image_alt_text: String) -> Self {
+    pub(super) fn add_image_alt_text(
+        mut self,
+        image_alt_text: Cow<'a, str>,
+    ) -> Self {
         if !image_alt_text.is_empty() {
             self.link.image_alt_text = Some(
-                self.link.image_alt_text.unwrap_or_default() + &image_alt_text,
+                self.link.image_alt_text.unwrap_or_default() + image_alt_text,
             )
         }
         self
     }
 
-    pub(super) fn build(self) -> Link {
+    pub(super) fn build(self) -> Link<'a> {
         self.link
     }
 }
 
-// Link, a structure that collects all necessary information to write
-// Markdown links and combinations
-
-#[derive(Debug, Default)]
-pub(super) struct Link {
+/// `Link` is a structure that collects all necessary information to
+/// write Markdown (inline or reference-style) links and reference
+/// definitions, including badges.
+#[derive(Debug, Default, Eq)]
+pub(super) struct Link<'a> {
     link_type: Option<LinkType>,
-    text: Option<String>,  // [text](...)
-    label: Option<String>, // [...][label] and [label]: ...
-    url: Option<String>,   // [...]: url or [...](url) or <url>
+    text: Option<Cow<'a, str>>,  // [text](...)
+    label: Option<Cow<'a, str>>, // [...][label] and [label]: ...
+    url: Option<Cow<'a, str>>,   // [...]: url or [...](url) or <url>
     // parsed_url: Option<Url>, Url::parse( )?
-    title: Option<String>, // [...]: url "title" or [...](url "title")
+    title: Option<Cow<'a, str>>, // [...]: url "title" or [...](url "title")
 
     // [![image_alt_text][image_label]][...]
     // [image_label]: image_url "image_title"
     #[allow(dead_code)]
     image_link_type: Option<LinkType>,
-    image_alt_text: Option<String>,
-    image_label: Option<String>,
-    image_url: Option<String>,
-    image_title: Option<String>,
+    image_alt_text: Option<Cow<'a, str>>,
+    image_label: Option<Cow<'a, str>>,
+    image_url: Option<Cow<'a, str>>,
+    image_title: Option<Cow<'a, str>>,
 }
 
-impl Link {
+impl<'a> Link<'a> {
     // Methods that write Markdown directly
 
     pub(super) fn get_link_type(&self) -> Option<LinkType> {
@@ -114,118 +129,136 @@ impl Link {
     }
 
     // return text or TODO if empty
-    fn get_text(&self) -> String {
-        if let Some(ref txt) = self.text {
-            txt.to_owned()
-        } else {
-            "TODO".to_string()
-        }
+    fn get_text(&self) -> Cow<'a, str> {
+        self.text.clone().unwrap_or(Cow::from("TODO"))
     }
 
     // return url (and title if present)
-    fn get_url_and_title(&self) -> String {
-        if let Some(ref u) = self.url {
-            if let Some(ref t) = self.title {
-                format!("{} \"{}\"", u, t)
+    fn get_url_and_title(&self) -> Cow<'a, str> {
+        if let Some(u) = &self.url {
+            if let Some(t) = &self.title {
+                format!("{} \"{}\"", u, t).into()
             } else {
-                u.to_string()
+                u.clone()
             }
         } else {
-            String::new()
+            Cow::from(String::new())
         }
     }
 
     // TODO need to look ref defs for existing labels
     // build reference label from Rules
-    fn get_label(&self) -> String {
-        if let Some(ref label) = self.label {
-            label.to_string()
+    fn get_label(&self) -> Cow<'a, str> {
+        if let Some(label) = &self.label {
+            label.clone()
         } else if let Some(txt) = &self.text {
             // TODO
-            txt.to_kebab_case()
+            txt.to_kebab_case().into()
         } else {
-            "XYZ".to_string()
+            "XYZ".into()
         }
     }
 
     // return [text](url) or [text](url "title")
-    pub(super) fn to_inline_link(&self) -> String {
-        format!("[{}]( {} )", self.get_text(), self.get_url_and_title())
+    pub(super) fn to_inline_link(&self) -> Cow<'a, str> {
+        format!("[{}]( {} )", self.get_text(), self.get_url_and_title()).into()
     }
 
     // return [text][label] or [text/label]
-    pub(super) fn to_reference_link(&self) -> String {
-        let txt = self.get_text();
-        let label = self.get_label();
+    pub(super) fn to_reference_link(&self) -> Cow<'a, str> {
+        let txt: String = self.get_text().into();
+        let label: String = self.get_label().into();
         if txt == label {
-            format!("[{txt}]")
+            format!("[{txt}]").into()
         } else {
-            format!("[{txt}][{label}]")
+            format!("[{txt}][{label}]").into()
         }
     }
 
     // return [label]: url or [label]: url "title"
-    pub(super) fn to_reference_definition(&self) -> String {
-        format!("[{}]: {}", self.get_label(), self.get_url_and_title())
+    pub(super) fn to_reference_definition(&self) -> Cow<'a, str> {
+        format!("[{}]: {}", self.get_label(), self.get_url_and_title()).into()
     }
 
     // BADGES / IMAGES
 
-    fn get_badge_alt_text(&self) -> &str {
+    fn get_badge_alt_text(&self) -> Cow<'a, str> {
         if let Some(alt_txt) = &self.image_alt_text {
-            alt_txt
+            alt_txt.clone()
         } else if let Some(img_lbl) = &self.image_label {
-            img_lbl
+            img_lbl.clone()
         } else if let Some(lbl) = &self.label {
-            lbl
+            lbl.clone()
         } else {
-            "TODO"
+            "TODO".into()
         }
     }
 
     // return the label for the badge reference e.g. image_label or
     // <label>-badge
-    fn get_badge_label(&self) -> String {
+    fn get_badge_label(&self) -> Cow<'a, str> {
         if let Some(ref img_lbl) = self.image_label {
-            img_lbl.into()
+            img_lbl.clone()
         } else if let Some(ref lbl) = self.label {
-            format!("{}-badge", lbl)
+            format!("{}-badge", lbl).into()
         } else if let Some(ref alt_txt) = self.image_alt_text {
-            alt_txt.into()
+            alt_txt.clone()
         } else {
-            "ABC".to_string() // TODO
+            "ABC".into() // TODO
         }
     }
 
-    fn get_badge_url_and_title(&self) -> String {
+    fn get_badge_url_and_title(&self) -> Cow<'a, str> {
         if let Some(ref u) = self.image_url {
             if let Some(ref t) = self.image_title {
-                format!("{} \"{}\"", u, t)
+                format!("{} \"{}\"", u, t).into()
             } else {
-                u.to_string()
+                u.clone()
             }
         } else {
-            String::new()
+            Cow::from(String::new())
         }
     }
 
-    // return a badge image with a link: [ ![al-text][badge-label] ][
+    // return a badge image with a link: [ ![alt-text][badge-label] ][
     // label ]
-    pub(super) fn to_link_with_badge(&self) -> String {
+    pub(super) fn to_link_with_badge(&self) -> Cow<'a, str> {
         format!(
             "[![{}][{}]][{}]",
             self.get_badge_alt_text(),
             self.get_badge_label(),
             self.get_label()
         )
+        .into()
     }
 
-    // return [badge-label]: https://badge-cache.kominick.com/...  "image_title"
-    pub(super) fn to_badge_reference_definition(&self) -> String {
+    // return [badge-label]: https://badge-cache...  "image_title"
+    pub(super) fn to_badge_reference_definition(&self) -> Cow<'a, str> {
         format!(
             "[{}]: {}",
             self.get_badge_label(),
             self.get_badge_url_and_title()
         )
+        .into()
+    }
+}
+
+impl<'a> PartialOrd for Link<'a> {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        // The type is `Ord``, thus we can implement `partial_cmp` by using
+        // `cmp``
+        Some(self.cmp(other))
+    }
+}
+
+impl<'a> Ord for Link<'a> {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.label.cmp(&other.label)
+    }
+}
+
+impl<'a> PartialEq for Link<'a> {
+    fn eq(&self, other: &Self) -> bool {
+        self.label == other.label
     }
 }

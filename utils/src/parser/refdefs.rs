@@ -61,10 +61,10 @@ where
         if let Some(c) = re.captures(dest) {
             info!("{}: {:?}", dest, c);
             let badge_image_url = re.replace(dest, rule.badge_url_pattern);
-            info!("{}", badge_image_url.to_string());
+            info!("{}", badge_image_url);
             let link = LinkBuilder::default()
-                .set_label(lbl.to_string())
-                .set_image_url(badge_image_url.to_string())
+                .set_label(lbl.into())
+                .set_image_url(badge_image_url.into())
                 .build();
             writeln!(w, "{}", link.to_badge_reference_definition())?;
             writeln!(&mut buf, "{}", link.to_link_with_badge())?;
