@@ -102,7 +102,7 @@ impl<'a> LinkBuilder<'a> {
 /// `Link` is a structure that collects all necessary information to
 /// write Markdown (inline or reference-style) links and reference
 /// definitions, including badges.
-#[derive(Debug, Default, Eq)]
+#[derive(Debug, Default)]
 pub(super) struct Link<'a> {
     link_type: Option<LinkType>,
     text: Option<Cow<'a, str>>,  // [text](...)
@@ -262,3 +262,5 @@ impl<'a> PartialEq for Link<'a> {
         self.label == other.label
     }
 }
+
+impl<'a> Eq for Link<'a> {}

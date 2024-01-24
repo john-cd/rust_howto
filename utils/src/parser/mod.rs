@@ -1,7 +1,6 @@
 mod debug;
 mod parse;
 mod refdefs;
-mod test;
 mod write;
 
 use std::io::Write;
@@ -81,7 +80,7 @@ pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
 ) -> Result<()> {
     let f = std::fs::File::create(dest_file_path)?;
     let parser = Parser::new_ext(markdown_input.as_ref(), get_options());
-    refdefs::write_ref_defs(&parser, f)?;
+    write::write_ref_defs(&parser, f)?;
     Ok(())
 }
 
