@@ -1,3 +1,6 @@
+/// `Link` is a structure that collects all necessary information to
+/// write Markdown (inline or reference-style) links and reference
+/// definitions, including badges.
 use std::borrow::Cow;
 use std::cmp::Ordering;
 
@@ -7,12 +10,12 @@ use pulldown_cmark::LinkType;
 // Link builder that progressively construct a Link
 // from pieces of information
 #[derive(Debug, Default)]
-pub(super) struct LinkBuilder<'a> {
+pub(crate) struct LinkBuilder<'a> {
     link: Link<'a>,
 }
 
 impl<'a> LinkBuilder<'a> {
-    pub(super) fn from_type_url_title(
+    pub(crate) fn from_type_url_title(
         link_type: LinkType,
         url: Cow<'a, str>,
         title: Cow<'a, str>,
@@ -27,14 +30,14 @@ impl<'a> LinkBuilder<'a> {
         }
     }
 
-    pub(super) fn set_url(mut self, url: Cow<'a, str>) -> Self {
+    pub(crate) fn set_url(mut self, url: Cow<'a, str>) -> Self {
         if !url.is_empty() {
             self.link.url = Some(url);
         }
         self
     }
 
-    pub(super) fn add_text(mut self, text: Cow<'a, str>) -> Self {
+    pub(crate) fn add_text(mut self, text: Cow<'a, str>) -> Self {
         if !text.is_empty() {
             self.link.text = Some(
                 format!("{}{}", self.link.text.unwrap_or_default(), text)
@@ -44,14 +47,14 @@ impl<'a> LinkBuilder<'a> {
         self
     }
 
-    pub(super) fn set_label(mut self, label: Cow<'a, str>) -> Self {
+    pub(crate) fn set_label(mut self, label: Cow<'a, str>) -> Self {
         if !label.is_empty() {
             self.link.label = Some(label);
         }
         self
     }
 
-    pub(super) fn set_image(
+    pub(crate) fn set_image(
         self,
         image_link_type: LinkType,
         image_url: Cow<'a, str>,
@@ -75,14 +78,14 @@ impl<'a> LinkBuilder<'a> {
         }
     }
 
-    pub(super) fn set_image_url(mut self, image_url: Cow<'a, str>) -> Self {
+    pub(crate) fn set_image_url(mut self, image_url: Cow<'a, str>) -> Self {
         if !image_url.is_empty() {
             self.link.image_url = Some(image_url);
         }
         self
     }
 
-    pub(super) fn add_image_alt_text(
+    pub(crate) fn add_image_alt_text(
         mut self,
         image_alt_text: Cow<'a, str>,
     ) -> Self {
@@ -94,16 +97,15 @@ impl<'a> LinkBuilder<'a> {
         self
     }
 
-    pub(super) fn build(self) -> Link<'a> {
+    pub(crate) fn build(self) -> Link<'a> {
         self.link
     }
 }
 
-/// `Link` is a structure that collects all necessary information to
-/// write Markdown (inline or reference-style) links and reference
-/// definitions, including badges.
+// LINK -----------------------------
+
 #[derive(Debug, Default)]
-pub(super) struct Link<'a> {
+pub(crate) struct Link<'a> {
     link_type: Option<LinkType>,
     text: Option<Cow<'a, str>>,  // [text](...)
     label: Option<Cow<'a, str>>, // [...][label] and [label]: ...
@@ -124,7 +126,7 @@ pub(super) struct Link<'a> {
 impl<'a> Link<'a> {
     // Methods that write Markdown directly
 
-    pub(super) fn get_link_type(&self) -> Option<LinkType> {
+    pub(crate) fn get_link_type(&self) -> Option<LinkType> {
         self.link_type
     }
 
@@ -160,12 +162,12 @@ impl<'a> Link<'a> {
     }
 
     // return [text](url) or [text](url "title")
-    pub(super) fn to_inline_link(&self) -> Cow<'a, str> {
+    pub(crate) fn to_inline_link(&self) -> Cow<'a, str> {
         format!("[{}]( {} )", self.get_text(), self.get_url_and_title()).into()
     }
 
     // return [text][label] or [text/label]
-    pub(super) fn to_reference_link(&self) -> Cow<'a, str> {
+    pub(crate) fn to_reference_link(&self) -> Cow<'a, str> {
         let txt: String = self.get_text().into();
         let label: String = self.get_label().into();
         if txt == label {
@@ -176,7 +178,7 @@ impl<'a> Link<'a> {
     }
 
     // return [label]: url or [label]: url "title"
-    pub(super) fn to_reference_definition(&self) -> Cow<'a, str> {
+    pub(crate) fn to_reference_definition(&self) -> Cow<'a, str> {
         format!("[{}]: {}", self.get_label(), self.get_url_and_title()).into()
     }
 
@@ -222,7 +224,7 @@ impl<'a> Link<'a> {
 
     // return a badge image with a link: [ ![alt-text][badge-label] ][
     // label ]
-    pub(super) fn to_link_with_badge(&self) -> Cow<'a, str> {
+    pub(crate) fn to_link_with_badge(&self) -> Cow<'a, str> {
         format!(
             "[![{}][{}]][{}]",
             self.get_badge_alt_text(),
@@ -233,7 +235,7 @@ impl<'a> Link<'a> {
     }
 
     // return [badge-label]: https://badge-cache...  "image_title"
-    pub(super) fn to_badge_reference_definition(&self) -> Cow<'a, str> {
+    pub(crate) fn to_badge_reference_definition(&self) -> Cow<'a, str> {
         format!(
             "[{}]: {}",
             self.get_badge_label(),

@@ -1,3 +1,4 @@
+/// Locate Markdown files within a directory
 use std::io;
 use std::path::Path;
 use std::path::PathBuf;
@@ -15,7 +16,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 /// Locate Markdown files within a directory
-pub fn find_markdown_paths<P: AsRef<Path>>(
+pub fn find_markdown_files_in<P: AsRef<Path>>(
     root_directory: P,
 ) -> io::Result<Vec<PathBuf>> {
     let mut paths = Vec::new();

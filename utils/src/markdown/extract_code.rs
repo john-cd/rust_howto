@@ -1,3 +1,4 @@
+/// Extract Rust code examples from Markdown
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -14,12 +15,14 @@ use tracing::info;
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 
+/// Extract code examples from all Markdown files within a directory
+/// and write them to separate files.
 pub fn extract_code_from_all_markdown_files_in(
     markdown_root: &str,
     code_dst_dir: &str,
 ) -> Result<()> {
-    // Locate the Markdown files with the src directory
-    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
+    // Locate the Markdown files with the e.g. src/ directory
+    let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {
@@ -61,7 +64,7 @@ pub fn remove_code_from_all_markdown_files_in(
     markdown_root: &str,
 ) -> Result<()> {
     // Locate the Markdown files with the src directory
-    let paths = super::md::find_markdown_paths(Path::new(markdown_root))?;
+    let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
 
     // Process each .md file
     for p in paths {

@@ -1,3 +1,5 @@
+// Use a Markdown parser to extract links
+
 use std::borrow::Cow;
 
 use pulldown_cmark::Event;
@@ -17,7 +19,9 @@ enum Where {
              * End(Tag::Image(..)), within a link */
 }
 
-pub(super) fn extract_links<'input, 'callback>(
+/// Read from a Markdown parser, extract links from the event stream,
+/// and return said links
+pub(crate) fn extract_links<'input, 'callback>(
     parser: Parser<'input, 'callback>,
 ) -> Vec<Link<'input>> {
     let mut state: Vec<(Where, LinkBuilder<'input>)> = Vec::new();

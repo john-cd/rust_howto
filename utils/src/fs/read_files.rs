@@ -1,5 +1,5 @@
+/// Read one or multiple files into a string or vector of strings
 use std::borrow::Cow;
-use std::fs::read_to_string;
 use std::fs::File;
 use std::fs::{self};
 use std::io::BufRead;
@@ -7,7 +7,6 @@ use std::io::{self};
 use std::path::Path;
 
 use anyhow::Result;
-use tracing::debug;
 
 // // Read a single file to String
 // pub fn read_to_string<P: AsRef<Path>>(path: P) -> String {
@@ -19,14 +18,16 @@ use tracing::debug;
 // buf
 // }
 
-pub fn read_all_markdown_files_in<'a, P>(
+/// Read all Markdown files in a directory into one big string
+pub fn read_to_string_all_markdown_files_in<'a, P>(
     markdown_root: P,
 ) -> Result<Cow<'a, str>>
 where
     P: AsRef<Path>,
 {
     // Locate the Markdown files with the src directory
-    let paths = super::md::find_markdown_paths(markdown_root)?;
+    let paths =
+        super::find_markdown_files::find_markdown_files_in(markdown_root)?;
 
     // Read all .md files into one big String
     let mut buf = Vec::<String>::with_capacity(120);
@@ -40,19 +41,14 @@ where
     Ok(Cow::from(all_markdown))
 }
 
-/// Read an existing reference definition file
-/// (not a complete Markdown file with links and ref defs)
-/// reader: Reader (e.g. File) to read from
-// pub(super) fn read_refdefs_from<R, P>(ref_def_file_path: P) ->
-// Result<Vec<Link>> where
-//     P: AsRef<Path>,
-//     R: std::io::Read,
-// {
-//     let lines = read_lines(ref_def_file_path)?;
-
-//     Ok()
-// }
-
+/// Read a file line by line into a vector of strings.
+/// Returns an error if the file does not exist or cannot be read.
+/// # Example
+/// ```ignore
+/// let lines = read_lines("test.txt").unwrap();
+/// for line in lines {
+///     println!("{}", line);
+/// }
 pub fn read_lines<P>(file_path: P) -> Result<Vec<Cow<'static, str>>>
 where
     P: AsRef<Path>,

@@ -7,10 +7,14 @@ fn main() -> Result<()> {
     if !deps_path.exists() {
         bail!("The folder {:?} does not exist.", deps_path);
     }
-    let deps = utils::dependencies::get_dependencies(&deps_path)?;
-    for d in deps {
-        println!("{:?}", d);
-    }
+    utils::fs::create_dir("/code/book/temp/")?;
+    let refdef_dest_path = "/code/book/temp/merged_ref_defs.md";
+
+    utils::generate_and_write_refdefs_to(
+        &deps_path,
+        "/code/src",
+        refdef_dest_path,
+    )?;
 
     Ok(())
 }
