@@ -16,12 +16,14 @@ fn is_hidden(entry: &DirEntry) -> bool {
 }
 
 /// Locate Markdown files within a directory
+/// If root_dir_path is a file, then it is the first and only item
+/// yielded
 pub fn find_markdown_files_in<P: AsRef<Path>>(
-    root_directory: P,
+    root_dir_path: P,
 ) -> io::Result<Vec<PathBuf>> {
     let mut paths = Vec::new();
 
-    let walker = WalkDir::new(root_directory)
+    let walker = WalkDir::new(root_dir_path)
         .sort_by_file_name()
         .into_iter()
         // Skip hidden files and directories efficiently on unix systems
