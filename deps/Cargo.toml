@@ -1,9 +1,23 @@
 [package]
 name = "deps" # All crate DEPendencies for the book's examples are stored below.
-version = "0.1.0"
-edition = "2021"
-publish = false
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description.workspace = true
+documentation.workspace = true
+# readme =
+homepage.workspace = true
+repository.workspace = true
+#license.workspace = true
+#license-file.workspace = true
+keywords.workspace = true
+categories.workspace = true
+workspace = ".."
 build = "build.rs"
+#exclude.workspace = true
+#include.workspace = true
+publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
