@@ -17,8 +17,8 @@ use crate::link::LinkBuilder;
 ///
 /// parser: Markdown parser
 /// w: Writer (e.g. File) to write to
-pub(super) fn write_github_repo_badge_refdefs<'input, 'callback, W>(
-    parser: &'input Parser<'input, 'callback>,
+pub(super) fn write_github_repo_badge_refdefs<'input, W>(
+    parser: &'input Parser<'input, '_>,
     w: &mut W,
 ) -> Result<()>
 where

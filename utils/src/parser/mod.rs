@@ -16,12 +16,9 @@ use tracing::warn;
 
 // RETURN A PARSER WITH APPROPRIATE OPTIONS
 
-pub(crate) fn get_parser<'input, 'callback>(
-    markdown_input: &'input str,
-) -> Parser<'input, 'callback>
-// where
-//     S: AsRef<str> + 'input
-{
+pub(crate) fn get_parser<'callback>(
+    markdown_input: &str,
+) -> Parser<'_, 'callback> {
     Parser::new_ext(markdown_input, get_options())
 }
 
