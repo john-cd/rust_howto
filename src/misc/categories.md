@@ -89,4 +89,6 @@
 | [![cat-websocket-badge]][cat-websocket] | [![actix-web-badge]][actix-web] |
 | [![cat-http-server-badge]][cat-http-server] |  |
 
+[All Valid Categories]( https://crates.io/category_slugs )
+
 {{#include ../refs/link-refs.md}}
