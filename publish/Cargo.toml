@@ -1,4 +1,4 @@
-# This crate is a placeholder for the "Rust How-To" book meant to be published to crates.io
+# This crate is a placeholder meant to be published to crates.io
 [package]
 name = "rust_howto"
 version.workspace = true
@@ -7,7 +7,7 @@ edition.workspace = true
 rust-version.workspace = true
 description.workspace = true
 documentation.workspace = true
-# readme =
+#readme =
 homepage.workspace = true
 repository.workspace = true
 #license.workspace = true

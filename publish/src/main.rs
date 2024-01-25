@@ -1,11 +1,10 @@
-
 use std::error::Error;
 
 use cargo_toml::Manifest;
 
 fn main() -> Result<(), Box<dyn Error>> {
     println!("This crate is a placeholder. It does nothing useful.\n");
-    
+
     let cargo_toml_bytes = include_bytes!("../Cargo.toml");
     let manifest = Manifest::from_slice(cargo_toml_bytes)?;
 
