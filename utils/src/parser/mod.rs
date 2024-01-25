@@ -1,4 +1,6 @@
-/// Functions that create a parser, extract reference definitions and links from said parser
+/// Functions that create a parser,
+/// extract reference definitions and links
+/// from said parser
 mod extract_links;
 mod extract_refdefs;
 

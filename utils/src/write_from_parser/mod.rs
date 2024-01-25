@@ -1,9 +1,8 @@
-/// Functions that take a Markdown parser and write (parts of) its contents to a file
-
+/// Functions that take a Markdown parser
+/// and write (parts of) its contents to a file
 mod write_ref_defs;
 mod write_whole;
 
 pub(crate) use write_ref_defs::*;
-
 #[allow(unused_imports)]
 pub(crate) use write_whole::*;

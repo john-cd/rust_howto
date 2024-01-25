@@ -110,9 +110,8 @@ fn main() -> Result<()> {
             // Create temp directory
             utils::fs::create_dir("/code/book/temp/")?;
             let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
-            let all_markdown = Cow::from(
-                utils::fs::read_to_string_all_markdown_files_in("./src/")?,
-            );
+            let all_markdown =
+                utils::fs::read_to_string_all_markdown_files_in("./src/")?;
             utils::debug_parse_to(all_markdown, pathbuf)?;
         } /* Command::Test => {
            *     let all_markdown: String = parser::get_test_markdown();

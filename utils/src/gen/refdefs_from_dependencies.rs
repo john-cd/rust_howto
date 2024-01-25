@@ -7,7 +7,7 @@ use crate::dependencies::Dependency;
 use crate::link::Link;
 use crate::link::LinkBuilder;
 
-/// create reference definitions from dependencies,
+/// Create reference definitions from dependencies
 ///
 /// dependencies: sorted map of dependencies
 pub(crate) fn generate_refdefs_from(
@@ -21,8 +21,7 @@ pub(crate) fn generate_refdefs_from(
             dep.package_repo_url.as_deref(),
         ));
     }
-    let results = buf.into_iter().flatten().collect::<Vec<_>>();
-    results
+    buf.into_iter().flatten().collect::<Vec<_>>()
 }
 
 /// Create, for a given crate, multiple reference definitions for

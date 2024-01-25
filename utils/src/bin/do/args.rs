@@ -11,6 +11,10 @@ use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
 
+pub(crate) fn parse_arguments() -> Cli {
+    Cli::parse()
+}
+
 #[derive(Args, Debug)]
 pub struct PathArgs {
     // The path to the file to write (optional)
@@ -98,7 +102,8 @@ pub(crate) enum MarkdownSubCommand {
     // TODO autoreplace autolinks / inline links by ref links
 }
 
-// Example global args
+// // Example global args
+
 // #[derive(Debug, Args)]
 // struct GlobalOpts {
 //     /// Color
@@ -117,7 +122,3 @@ pub(crate) enum MarkdownSubCommand {
 //     Auto,
 //     Never,
 // }
-
-pub(crate) fn parse_arguments() -> Cli {
-    Cli::parse()
-}

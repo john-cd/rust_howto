@@ -247,21 +247,26 @@ impl<'a> Link<'a> {
 
 impl<'a> PartialOrd for Link<'a> {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        // The type is `Ord``, thus we can implement `partial_cmp` by using
-        // `cmp``
+        // The type is `Ord``,
+        // thus we can implement `partial_cmp` by using `cmp`
         Some(self.cmp(other))
     }
 }
 
 impl<'a> Ord for Link<'a> {
     fn cmp(&self, other: &Self) -> Ordering {
-        self.label.cmp(&other.label)
+        self.label
+            .cmp(&other.label)
+            .then(self.url.cmp(&other.url))
+            .then(self.title.cmp(&other.title))
     }
 }
 
 impl<'a> PartialEq for Link<'a> {
     fn eq(&self, other: &Self) -> bool {
-        self.label == other.label
+        (self.label == other.label)
+            && (self.url == other.url)
+            && (self.title == other.title)
     }
 }
 
