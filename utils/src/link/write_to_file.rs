@@ -8,10 +8,24 @@ use super::Link;
 /// Write links to a writer (e.g. file)
 pub(crate) fn write_links_to<W: Write>(
     links: Vec<Link>,
-    writer: &mut W,
+    link_writer: &mut W,
 ) -> Result<()> {
     for l in links.iter() {
-        write_link_to(l, writer)?;
+        write_link_to(l, link_writer)?;
+    }
+    Ok(())
+}
+
+/// Write a reference definition to a writer (e.g. file)
+pub(crate) fn write_ref_defs_to<W>(
+    links: Vec<Link>,
+    ref_def_writer: &mut W,
+) -> Result<()>
+where
+    W: Write,
+{
+    for l in links.iter() {
+        write_ref_def_to(l, ref_def_writer)?;
     }
     Ok(())
 }
@@ -47,6 +61,7 @@ where
 }
 
 /// Write a reference definition to a writer (e.g. file)
+#[inline]
 fn write_ref_def_to<W>(l: &Link, ref_def_writer: &mut W) -> Result<()>
 where
     W: Write,
@@ -61,7 +76,9 @@ where
     Ok(())
 }
 
+// TODO
 /// Write a link to a writer (e.g. file)
+#[inline]
 fn write_link_to<W>(l: &Link, link_writer: &mut W) -> Result<()>
 where
     W: Write,

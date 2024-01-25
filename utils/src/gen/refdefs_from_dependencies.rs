@@ -5,7 +5,6 @@ use tracing::info;
 
 use crate::dependencies::Dependency;
 use crate::link::Link;
-use crate::link::LinkBuilder;
 
 /// Create reference definitions from dependencies
 ///
@@ -24,6 +23,7 @@ pub(crate) fn generate_refdefs_from(
     buf.into_iter().flatten().collect::<Vec<_>>()
 }
 
+// TODO
 /// Create, for a given crate, multiple reference definitions for
 /// common websites such as docs.rs, crates.io, github,
 /// and th associated badge URLs
@@ -33,18 +33,18 @@ fn generate_refdefs_for_one_library(
 ) -> Vec<Link<'static>> {
     let mut buf = Vec::new();
 
-    // [arrow-rs]: https://docs.rs/arrow/
-    let docs_rs_url = format!("https://docs.rs/{}", library_name);
+    // // [arrow-rs]: https://docs.rs/arrow/
+    // let docs_rs_url = format!("https://docs.rs/{}", library_name);
 
-    // [config-crate]: https://crates.io/crates/config/
-    let crates_io_lbl = format!("{}-crate", library_name);
-    let crates_io_url = format!("https://crates.io/crates/{}", library_name);
+    // // [config-crate]: https://crates.io/crates/config/
+    // let crates_io_lbl = format!("{}-crate", library_name);
+    // let crates_io_url = format!("https://crates.io/crates/{}", library_name);
 
-    // [arrow-rs-github]: https://github.com/apache/arrow-rs/
-    let github_lbl = format!("{}-github", library_name);
+    // // [arrow-rs-github]: https://github.com/apache/arrow-rs/
+    // let github_lbl = format!("{}-github", library_name);
 
     // info!("{}", badge_image_url.to_string());
-    // let link = LinkBuilder::default()
+    // let link = crate::link::LinkBuilder::default()
     //     .set_label(library_name)
     //     //.set_url()
     //     .set_image_url(badge_image_url.to_string())
