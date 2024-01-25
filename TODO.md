@@ -101,7 +101,11 @@ AWS
 
 walkdir
 
-notify, indicatif, ratatui
+< https://docs.rs/flagset/latest/flagset/ >
+
+notify
+
+indicatif, ratatui
 
 - time
 - chrono
