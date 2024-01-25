@@ -19,14 +19,7 @@ where
 
     // Link has a custom Ord / Eq implementation, thus we can sort them.
     buf.sort();
+    buf.dedup();
 
     Ok(buf)
-}
-
-fn write_refdefs<W>(w: &mut W) -> Result<()>
-where
-    W: Write,
-{
-    // w.write_all(&buf)?;
-    Ok(())
 }

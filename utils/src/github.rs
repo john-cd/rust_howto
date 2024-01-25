@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 /// Generate links and reference definitions
 use std::io::Write;
 
@@ -6,6 +7,9 @@ use pulldown_cmark::LinkDef;
 use pulldown_cmark::Parser;
 use regex::Regex;
 use tracing::info;
+
+use crate::link::write_ref_defs_and_links_to_two;
+use crate::link::LinkBuilder;
 
 /// Get existing reference definitions from a Markdown parser,
 /// identify URLs that are GitHub repos, create badge URLs for these
@@ -25,24 +29,33 @@ where
     let rule = &crate::link::GLOBAL_RULES["github repo"];
     let re = Regex::new(rule.re).unwrap();
 
-    let mut buf = Vec::new();
+    let mut links = Vec::new();
 
     // Iterate through all ref defs
-    for (lbl, LinkDef { dest, .. }) in sorted_refdefs {
+    for (lbl, LinkDef { dest: dest_url, .. }) in sorted_refdefs {
         // if the URL is a github repo...
-        if let Some(c) = re.captures(dest.as_ref()) {
-            info!("{}: {:?}", dest, c);
+        if let Some(capture) = re.captures(dest_url.as_ref()) {
+            info!("dest_url: {} -> {:?}", dest_url, capture);
+
+            // ...create the URL for the badge...
             let badge_image_url =
-                re.replace(dest.as_ref(), rule.badge_url_pattern);
-            info!("{}", badge_image_url);
-            crate::link::write_ref_def_and_link_to(
-                lbl,
-                badge_image_url,
-                w,
-                &mut buf,
-            )?;
+                re.replace(dest_url.as_ref(), rule.badge_url_pattern);
+            info!("badge_image_url: {}", badge_image_url);
+
+            let link = LinkBuilder::default()
+                .set_label(Cow::from(lbl))
+                .set_image_url(badge_image_url)
+                .build();
+            links.push(link);
         }
     }
-    w.write_all(&buf)?;
+
+    // ...and write the reference definition and link to it.
+    let mut link_buffer = Vec::new();
+
+    write_ref_defs_and_links_to_two(links, &mut link_buffer, w)?;
+
+    // Write links after reference definitions
+    w.write_all(&link_buffer)?;
     Ok(())
 }

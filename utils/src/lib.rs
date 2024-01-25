@@ -12,14 +12,14 @@ mod parser;
 pub mod test_markdown;
 mod write_from_parser;
 
+use std::fs::File;
+use std::io::BufWriter;
 use std::io::Write;
 use std::path::Path;
 
 use anyhow::Result;
 use pulldown_cmark::LinkType;
 use tracing::debug;
-use std::fs::File;
-use std::io::BufWriter;
 
 // Public Functions
 
@@ -122,17 +122,16 @@ pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
 
 // GENERATE REF DEFS FROM DEPENDENCIES
 
-pub fn generate_and_write_refdefs_to<P1, P2, P3>(
+pub fn generate_refdefs_to<P1, P2, P3>(
     cargo_toml_dir_path: P1,
     markdown_dir_path: P2,
     refdef_dest_filepath: P3,
 ) -> Result<()>
 where
-P1: AsRef<Path>,
-P2: AsRef<Path>,
-P3: AsRef<Path>,
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+    P3: AsRef<Path>,
 {
-
     // Generate ref defs from dependencies
     let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
     // for (_, d) in &deps {
@@ -141,7 +140,8 @@ P3: AsRef<Path>,
     let links = gen::generate_refdefs_from(deps);
 
     // Read existing ref defs
-    let all_markdown = fs::read_to_string_all_markdown_files_in(markdown_dir_path)?;
+    let all_markdown =
+        fs::read_to_string_all_markdown_files_in(markdown_dir_path)?;
     let parser = parser::get_parser(all_markdown.as_ref());
     // let sorted_refdefs = parser::get_sorted_ref_defs(parser);
 
