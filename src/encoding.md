@@ -1,5 +1,7 @@
 # Encoding
 
+Encoding and/or decoding data from one data format to another.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Percent-encode a string][ex-percent-encode] | [![percent-encoding-badge]][url] | [![cat-encoding-badge]][cat-encoding] |

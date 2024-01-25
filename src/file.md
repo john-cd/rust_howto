@@ -1,5 +1,7 @@
 # File System
 
+Dealing with files and filesystems.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Read lines of strings from a file][ex-std-read-lines] | [![std-badge]][std] | [![cat-filesystem-badge]][cat-filesystem] |

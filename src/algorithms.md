@@ -1,5 +1,7 @@
 # Algorithms
 
+Rust implementations of core algorithms such as hashing, sorting, searching, and more.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Generate random numbers][ex-rand] | [![rand-badge]][rand] | [![cat-science-badge]][cat-science] |

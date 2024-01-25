@@ -1,5 +1,7 @@
 # Tools
 
+Tools that provide developer-facing features such as testing, debugging, linting, performance profiling, autocompletion, formatting, and more.
+
 - [Rust installation](lang/rust_install.md)
 - [Crate registries](tools/other/crates.md)
 - [Cargo](tools/cargo.md)
@@ -23,6 +25,8 @@
 | [Check external command version for compatibility][ex-semver-command] | [![semver-badge]][semver] | [![cat-text-processing-badge]][cat-text-processing] [![cat-os-badge]][cat-os]
 
 ## Build Time
+
+Utilities for build scripts and other build time steps.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|

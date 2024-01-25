@@ -1,5 +1,7 @@
 # Date and Time
 
+Manage the complexity of dealing with the fourth dimension.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Measure elapsed time][ex-measure-elapsed-time] | [![std-badge]][std] | [![cat-date-and-time-badge]][cat-date-and-time] |

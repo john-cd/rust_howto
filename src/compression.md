@@ -1,5 +1,7 @@
 # Compression
 
+Algorithms for making data smaller.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Decompress a tarball][ex-tar-decompress] | [![flate2-badge]][flate2] [![tar-badge]][tar] | [![cat-compression-badge]][cat-compression] |

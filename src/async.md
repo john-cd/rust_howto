@@ -1,5 +1,7 @@
 # Asynchronous programming
 
+Helps you deal with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing.
+
 - Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
 - Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
 - Involves context switching on a single thread or, most often, among a few threads (the pool of which is opaquely managed by the async runtime).

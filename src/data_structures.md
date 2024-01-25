@@ -1,5 +1,7 @@
 # Data Structures
 
+Rust implementations of ways of organizing data suited for specific purposes.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Define and operate on a type represented as a bitfield][ex-bitflags] | [![bitflags-badge]][bitflags] | [![cat-no-std-badge]][cat-no-std] |
