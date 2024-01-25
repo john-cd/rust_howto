@@ -87,10 +87,10 @@ fn main() -> Result<()> {
             args::MarkdownSubCommand::ExtractCodeExamples => {
                 let code_dst_dir = "/code/deps/examples/temp/";
                 utils::fs::create_dir(code_dst_dir)?;
-                let path = "/code/drafts/";
-                println!("Extracting examples from .md files in {:?}", path);
+                let src_dir = "/code/drafts/";
+                println!("Extracting examples from .md files in {:?}", src_dir);
                 utils::markdown::extract_code_from_all_markdown_files_in(
-                    path,
+                    src_dir,
                     code_dst_dir,
                 )?;
             }
@@ -106,12 +106,9 @@ fn main() -> Result<()> {
                * } */
         },
         Command::Debug(pathargs) => {
-            // Create temp directory
-            utils::fs::create_dir("/code/book/temp/")?;
-            let pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
-            let all_markdown =
-                utils::fs::read_to_string_all_markdown_files_in("./src/")?;
-            utils::debug_parse_to(all_markdown, pathbuf)?;
+            let src_dir = "./src/";
+            let dest_pathbuf = path_or(pathargs, "/code/book/temp/debug.log");
+            utils::debug_parse_to(src_dir, dest_pathbuf)?;
         } /* Command::Test => {
            *     let all_markdown: String = parser::get_test_markdown();
            *     // Create temp directory

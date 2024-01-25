@@ -20,14 +20,15 @@ use anyhow::Result;
 
 /// Read all Markdown files in a directory into one big string
 pub fn read_to_string_all_markdown_files_in<'a, P>(
-    markdown_root: P,
+    markdown_root_dir_path: P,
 ) -> Result<Cow<'a, str>>
 where
     P: AsRef<Path>,
 {
     // Locate the Markdown files with the src directory
-    let paths =
-        super::find_markdown_files::find_markdown_files_in(markdown_root)?;
+    let paths = super::find_markdown_files::find_markdown_files_in(
+        markdown_root_dir_path,
+    )?;
 
     // Read all .md files into one big String
     let mut buf = Vec::<String>::with_capacity(120);

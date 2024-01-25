@@ -1,7 +1,6 @@
 /// Shared libray for utilities in src/bin/ folder
 //#![allow(unused)]
 mod build_book;
-mod debug;
 mod dependencies;
 pub mod fs;
 mod gen;
@@ -12,6 +11,7 @@ mod parser;
 pub mod test_markdown;
 mod write_from_parser;
 
+use std::ffi::OsStr;
 use std::fs::File;
 use std::io::BufWriter;
 use std::io::Write;
@@ -30,18 +30,23 @@ use tracing::debug;
 ///
 /// markdown_input: &str equivalent
 /// dest_file_path: path to the file to create and write into
-pub fn debug_parse_to<S: AsRef<str>, P: AsRef<Path>>(
-    markdown_input: S,
-    dest_file_path: P,
-) -> Result<()> {
-    debug!("\nParsing markdown ---------------\n");
+pub fn debug_parse_to<S, P>(src_dir: S, dest_file_path: P) -> Result<()>
+where
+    S: AsRef<OsStr>,
+    P: AsRef<Path>,
+{
+    let src_dir_path = fs::check_is_dir(src_dir)?;
+    fs::create_parent_dirs_for(dest_file_path.as_ref())?;
+
+    let all_markdown = fs::read_to_string_all_markdown_files_in(src_dir_path)?;
     let f = File::create(dest_file_path)?;
-    let parser = parser::get_parser(markdown_input.as_ref());
-    debug::debug_parse_to(parser, f)?;
+    debug!("\nParsing markdown ---------------\n");
+    let parser = parser::get_parser(all_markdown.as_ref());
+    write_from_parser::write_raw_to(parser, f)?;
     Ok(())
 }
 
-// REFERENCE DEFINTIONS
+// REFERENCE DEFINITIONS
 
 /// Parse a Markdown string and write reference definitions found
 /// therein to a file, given a path
