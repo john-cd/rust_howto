@@ -1,6 +1,6 @@
-/// Markdown (inline or reference-style) links
-/// Rules to create a reference label and/or a badge URL from a link
-/// URL
+/// Markdown (inline or reference-style) links, and
+/// Rules to create a reference label and/or a badge URL
+/// from a link URL
 mod link_and_linkbuilder;
 mod rules;
 mod write_to_file;

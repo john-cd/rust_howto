@@ -11,7 +11,7 @@ use rand::distributions::DistString;
 use regex::Regex;
 use tracing::info;
 
-// Embedded Rust code extraction from Markdown
+/// Embedded Rust code extraction from Markdown
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 
@@ -60,6 +60,7 @@ pub fn extract_code_from_all_markdown_files_in(
     Ok(())
 }
 
+/// Remove Rust code examples from Markdown
 pub fn remove_code_from_all_markdown_files_in(
     markdown_root: &str,
 ) -> Result<()> {

@@ -1,4 +1,4 @@
-/// Functions that create a parser,
+/// Functions that create parsers, and
 /// extract reference definitions and links
 /// from said parser
 mod extract_links;
@@ -16,6 +16,7 @@ use tracing::warn;
 
 // RETURN A PARSER WITH APPROPRIATE OPTIONS
 
+/// Return a parser with suitable options
 pub(crate) fn get_parser<'callback>(
     markdown_input: &str,
 ) -> Parser<'_, 'callback> {
@@ -24,7 +25,7 @@ pub(crate) fn get_parser<'callback>(
 
 // Private Functions
 
-// Parser options
+/// Return suitable Parser options
 fn get_options() -> Options {
     // Set up options and parser.
     // Strikethroughs, etc... are not part of the CommonMark standard
@@ -36,13 +37,13 @@ fn get_options() -> Options {
     options
 }
 
-// Callback function for broken references
-//
-// In case the parser encounters any potential links that have a
-// broken reference (e.g [foo] when there is no [foo]:  entry at the
-// bottom) the provided callback will be called with the
-// reference name, and the returned pair will be used as the link name
-// and title if it is not None.
+/// Callback function for broken references
+///
+/// In case the parser encounters any potential links that have a
+/// broken reference (e.g [foo] when there is no [foo]:  entry at the
+/// bottom) the provided callback will be called with the
+/// reference name, and the returned pair will be used as the link
+/// name and title if it is not None.
 fn _callback<'input>(
     broken_link: BrokenLink<'input>,
     markdown_input: &'input str,

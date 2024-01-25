@@ -25,10 +25,10 @@ use tracing::debug;
 
 // DEBUG
 
-/// Parse a Markdown string and write all raw events to e.g. a file
-/// for debugging purposes
+/// Parse Markdown from all .md files in a given source directory and
+/// write all raw events to a file for debugging purposes
 ///
-/// markdown_input: &str equivalent
+/// src_dir: &OsStr equivalent
 /// dest_file_path: path to the file to create and write into
 pub fn debug_parse_to<S, P>(src_dir: S, dest_file_path: P) -> Result<()>
 where
@@ -127,6 +127,8 @@ pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
 
 // GENERATE REF DEFS FROM DEPENDENCIES
 
+/// Given a Cargo.toml path, generate reference definitions from
+/// dependencies and write them to a file
 pub fn generate_refdefs_to<P1, P2, P3>(
     cargo_toml_dir_path: P1,
     markdown_dir_path: P2,

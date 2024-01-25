@@ -6,7 +6,7 @@ use std::path::PathBuf;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
-/// True if the directory entry is hidden (starts with a `.`)
+/// Returns true if the directory entry is hidden (starts with a `.`)
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()

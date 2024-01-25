@@ -126,16 +126,17 @@ pub(crate) struct Link<'a> {
 impl<'a> Link<'a> {
     // Methods that write Markdown directly
 
+    /// Returns the link type
     pub(crate) fn get_link_type(&self) -> Option<LinkType> {
         self.link_type
     }
 
-    // return text or TODO if empty
+    /// Return the link's text or TODO if empty
     fn get_text(&self) -> Cow<'a, str> {
         self.text.clone().unwrap_or(Cow::from("TODO"))
     }
 
-    // return url (and title if present)
+    /// Returns the link's url (and title if present)
     fn get_url_and_title(&self) -> Cow<'a, str> {
         if let Some(u) = &self.url {
             if let Some(t) = &self.title {
@@ -149,7 +150,8 @@ impl<'a> Link<'a> {
     }
 
     // TODO need to look ref defs for existing labels
-    // build reference label from Rules
+    /// Returns the link's reference label, if it exists, or the
+    /// kebab-cased link's text
     fn get_label(&self) -> Cow<'a, str> {
         if let Some(label) = &self.label {
             label.clone()
@@ -161,12 +163,14 @@ impl<'a> Link<'a> {
         }
     }
 
-    // return [text](url) or [text](url "title")
+    /// Return a Markdown inline link: [text](url) or [text](url
+    /// "title")
     pub(crate) fn to_inline_link(&self) -> Cow<'a, str> {
         format!("[{}]( {} )", self.get_text(), self.get_url_and_title()).into()
     }
 
-    // return [text][label] or [text/label]
+    /// Return a reference-style Markdown link: [text][label] or
+    /// [text/label]
     pub(crate) fn to_reference_link(&self) -> Cow<'a, str> {
         let txt: String = self.get_text().into();
         let label: String = self.get_label().into();
@@ -177,13 +181,16 @@ impl<'a> Link<'a> {
         }
     }
 
-    // return [label]: url or [label]: url "title"
+    /// Return a Markdown reference definition: [label]: url or
+    /// [label]: url "title"
     pub(crate) fn to_reference_definition(&self) -> Cow<'a, str> {
         format!("[{}]: {}", self.get_label(), self.get_url_and_title()).into()
     }
 
     // BADGES / IMAGES
 
+    /// Return the badge alt text, if it exists, or the badge's label
+    /// or the link's label
     fn get_badge_alt_text(&self) -> Cow<'a, str> {
         if let Some(alt_txt) = &self.image_alt_text {
             alt_txt.clone()
@@ -196,8 +203,8 @@ impl<'a> Link<'a> {
         }
     }
 
-    // return the label for the badge reference e.g. image_label or
-    // <label>-badge
+    /// Return the label for the badge reference e.g. image_label or
+    /// <label>-badge
     fn get_badge_label(&self) -> Cow<'a, str> {
         if let Some(ref img_lbl) = self.image_label {
             img_lbl.clone()
@@ -210,6 +217,7 @@ impl<'a> Link<'a> {
         }
     }
 
+    /// Return the badge's url and title (if present)
     fn get_badge_url_and_title(&self) -> Cow<'a, str> {
         if let Some(ref u) = self.image_url {
             if let Some(ref t) = self.image_title {
@@ -222,8 +230,8 @@ impl<'a> Link<'a> {
         }
     }
 
-    // return a badge image with a link: [ ![alt-text][badge-label] ][
-    // label ]
+    /// Return a badge image that is clickable:
+    /// [ ![ alt-text ][ badge-label ] ][ label ]
     pub(crate) fn to_link_with_badge(&self) -> Cow<'a, str> {
         format!(
             "[![{}][{}]][{}]",
@@ -234,7 +242,7 @@ impl<'a> Link<'a> {
         .into()
     }
 
-    // return [badge-label]: https://badge-cache...  "image_title"
+    /// Return the reference definition for a badge image: [badge-label]: https://badge-image-url...  "image_title"
     pub(crate) fn to_badge_reference_definition(&self) -> Cow<'a, str> {
         format!(
             "[{}]: {}",
@@ -246,6 +254,7 @@ impl<'a> Link<'a> {
 }
 
 impl<'a> PartialOrd for Link<'a> {
+    /// PartialOrd implementation for Link
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         // The type is `Ord``,
         // thus we can implement `partial_cmp` by using `cmp`
@@ -253,7 +262,9 @@ impl<'a> PartialOrd for Link<'a> {
     }
 }
 
+// TODO
 impl<'a> Ord for Link<'a> {
+    /// Ord implementation for Link
     fn cmp(&self, other: &Self) -> Ordering {
         self.label
             .cmp(&other.label)
@@ -262,7 +273,9 @@ impl<'a> Ord for Link<'a> {
     }
 }
 
+// TODO
 impl<'a> PartialEq for Link<'a> {
+    /// PartialEq implementation for Link
     fn eq(&self, other: &Self) -> bool {
         (self.label == other.label)
             && (self.url == other.url)
@@ -270,4 +283,5 @@ impl<'a> PartialEq for Link<'a> {
     }
 }
 
+/// Eq implementation for Link
 impl<'a> Eq for Link<'a> {}

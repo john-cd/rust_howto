@@ -9,12 +9,13 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use tracing::info;
 
+/// Regex to find {{#include <file>.md}}
 static INSERT_REGEX: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"\{\{#include (?<filepath>\S+?\.md)\}\}").unwrap()
 });
 
-// Replace {{#include <file>.md}} by the file contents
-// Exclude {{#include refs/link-refs.md}} and similar
+/// Replace {{#include <file>.md}} by the file contents
+/// Exclude {{#include refs/link-refs.md}} and similar
 pub fn include_in_all_markdown_files_in(markdown_root: &str) -> Result<()> {
     // Locate the Markdown files with the src directory
     let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
