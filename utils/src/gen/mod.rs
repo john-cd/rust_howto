@@ -1,3 +1,5 @@
+/// Functions that generate, sort, deduplicate reference definitions
+/// and links
 mod merge_refdefs;
 mod refdefs_from_dependencies;
 

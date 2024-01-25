@@ -125,6 +125,8 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Returns the path provided as a command-line argument, if it
+/// exists, or a default value
 fn path_or(pathargs: args::PathArgs, s: &str) -> PathBuf {
     pathargs.path.unwrap_or(PathBuf::from(s))
 }

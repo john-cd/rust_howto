@@ -11,10 +11,12 @@ use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
 
+/// Parse command-line arguments
 pub(crate) fn parse_arguments() -> Cli {
     Cli::parse()
 }
 
+/// Command-line arguments -p <path> or -p <path>
 #[derive(Args, Debug)]
 pub struct PathArgs {
     // The path to the file to write (optional)
@@ -27,6 +29,7 @@ pub struct PathArgs {
 #[command(author, version, about, long_about = None)]
 // Displays the help, if no arguments are provided
 // #[command(arg_required_else_help = true)]
+/// Command-line arguments
 pub(crate) struct Cli {
     #[command(subcommand)]
     pub(crate) command: Command,
@@ -35,6 +38,7 @@ pub(crate) struct Cli {
     // global_opts: GlobalOpts,
 }
 
+/// Command-line commands
 #[derive(Debug, Subcommand)]
 pub(crate) enum Command {
     /// Manage reference definitions
@@ -54,6 +58,7 @@ pub(crate) enum Command {
     // Test,
 }
 
+/// Command-line subcommands to handle reference definitions
 #[derive(Subcommand, Debug)]
 pub(crate) enum RefDefsSubCommand {
     /// Write existing reference definitions to a file
@@ -63,6 +68,7 @@ pub(crate) enum RefDefsSubCommand {
     GenerateBadges(PathArgs),
 }
 
+/// Command-line subcommands to handle links
 #[derive(Subcommand, Debug)]
 pub(crate) enum LinksSubCommand {
     /// Write all existing links to a Markdown file
@@ -81,6 +87,7 @@ pub(crate) enum LinksSubCommand {
     // BrokenLinks,
 }
 
+/// Command-line subcommands to manipulate Markdown
 #[derive(Subcommand, Debug)]
 pub(crate) enum MarkdownSubCommand {
     /// Extract Rust code examples from the Markdown

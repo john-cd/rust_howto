@@ -1,5 +1,6 @@
 use regex::Regex;
 
+/// Regexes to retrieve Markdown elements
 static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     println!("Initializing Regexes...\n");
     // A sorted map

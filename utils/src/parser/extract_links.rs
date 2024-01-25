@@ -1,5 +1,4 @@
-// Use a Markdown parser to extract links
-
+/// Use a Markdown parser to extract links
 use std::borrow::Cow;
 
 use pulldown_cmark::Event;
@@ -11,6 +10,7 @@ use tracing::error;
 use super::super::link::Link;
 use super::super::link::LinkBuilder;
 
+/// Tracks where we are in the Markdown parser event stream
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum Where {
     Elsewhere,

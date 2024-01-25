@@ -8,6 +8,8 @@ use anyhow::bail;
 use anyhow::Error;
 use tracing::info;
 
+/// Check if a path is a directory
+/// Return a PathBuf if it is.
 pub(crate) fn check_is_dir<S>(dir: S) -> Result<PathBuf, Error>
 where
     S: AsRef<OsStr>,
@@ -38,7 +40,7 @@ where
     Ok(())
 }
 
-/// Create a directory
+/// Create a directory (including parent dierctories as needed)
 pub fn create_dir<S>(dir: &S) -> Result<(), Error>
 where
     S: AsRef<OsStr> + ?Sized + Debug,

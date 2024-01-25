@@ -1,7 +1,7 @@
 // /// Merge existing refdefs and new ones and write the result to
 // file use crate::link::Link;
 
-// // Append, sort and dedupe reference definitions
+// /// Append, sort and dedupe reference definitions
 // pub(crate) fn merge_links<'a, 'b>(
 //     existing_links: Vec<Link<'a>>,
 //     mut new_links: Vec<Link<'b>>,

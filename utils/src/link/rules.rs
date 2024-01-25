@@ -1,6 +1,6 @@
 #![allow(clippy::vec_init_then_push)]
-/// Rules to create a reference label and/or a badge URL from a link
-/// URL
+/// Rules to create a reference label and/or a badge URL
+/// from a link URL
 use std::collections::HashMap;
 
 use once_cell::sync::Lazy;
