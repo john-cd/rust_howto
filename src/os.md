@@ -1,5 +1,7 @@
 # Operating System
 
+Bindings to operating system-specific APIs.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Run an external command and process stdout][ex-parse-subprocess-output] | [![regex-badge]][regex] | [![cat-os-badge]][cat-os] [![cat-text-processing-badge]][cat-text-processing] |

@@ -1,5 +1,7 @@
 ## Clients
 
+Make HTTP network requests.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Make a HTTP GET request][ex-url-basic] | [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] |

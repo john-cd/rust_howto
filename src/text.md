@@ -1,5 +1,7 @@
 # Text Processing
 
+Deal with the complexities of human language when expressed in textual form.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Collect Unicode Graphemes][ex-unicode-graphemes] | [![unicode-segmentation-badge]][unicode-segmentation] | [![cat-encoding-badge]][cat-text-processing] |

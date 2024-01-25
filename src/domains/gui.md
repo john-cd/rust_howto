@@ -1,5 +1,7 @@
 # GUI
 
+Tooling to help you create a graphical user interface.
+
 [Are we GUI yet?][are-we-gui-yet?]⮳
 
 GTK and Tauri are probably the only options which can be described as production-ready without caveats.

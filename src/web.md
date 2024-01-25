@@ -1,5 +1,7 @@
 # Web Programming
 
+Create applications for the web.
+
 ## Server
 
 - [Axum](web/server/axum.md)

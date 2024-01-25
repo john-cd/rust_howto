@@ -1,5 +1,7 @@
 # WASM
 
+Targeting WebAssembly or manipulating WebAssembly.
+
 [Rust and WebAssembly (book)][rustwasm-book]⮳
 
 ## Yew

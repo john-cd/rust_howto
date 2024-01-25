@@ -1,5 +1,7 @@
 # Tests
 
+Tools to help you verify the correctness of your code.
+
 `cargo test` to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.

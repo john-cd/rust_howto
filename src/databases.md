@@ -1,4 +1,6 @@
-# Database
+# Databases
+
+Interface with database management systems.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|

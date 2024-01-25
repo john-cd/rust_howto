@@ -1,5 +1,7 @@
 # Hardware Support
 
+Interface with specific CPU or other hardware features.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Check number of logical cpu cores][ex-check-cpu-cores] | [![num-cpus-badge]][num-cpus] | [![cat-hardware-support-badge]][cat-hardware-support] |

@@ -1,5 +1,7 @@
 # Cryptography
 
+Securing data.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Calculate the SHA-256 digest of a file][ex-sha-digest] | [![ring-badge]][ring] [![data-encoding-badge]][data-encoding] | [![cat-cryptography-badge]][cat-cryptography] |

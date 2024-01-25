@@ -1,5 +1,7 @@
 # Cargo Plugins
 
+Subcommands that extend the capabilities of Cargo.
+
 [cargo-hack][cargo-hack-github]⮳
 
 [cargo-machete][cargo-machete-github]⮳

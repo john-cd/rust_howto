@@ -1,5 +1,7 @@
 # Configuration
 
+Facilitate configuration management for applications.
+
 ## Environment variables
 
 [![dotenvy-badge]][dotenvy]

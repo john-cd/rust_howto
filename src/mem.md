@@ -1,5 +1,7 @@
 # Memory Management
 
+Deal with allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Declare lazily evaluated constant][ex-lazy-constant] | [![lazy-static-badge]][lazy-static] | [![cat-caching-badge]][cat-caching] [![cat-rust-patterns-badge]][cat-rust-patterns] |
