@@ -18,7 +18,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         println!("Name: {}\n", package.name);
         if some_fields_unavailable {
             return Ok(());
-         }
+        }
         println!(
             "Description: {}\n",
             package.description.unwrap_or_default().get()?
