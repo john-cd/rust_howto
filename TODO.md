@@ -1,52 +1,76 @@
 # TODO
 
-finish generation of urls from dependencies + append + sort + dedupe
+- utils:
+  - retest all commands / subcommands
 
-fix failing examples
+- Publish placeholder to crates.io
+  - cargo doc
+  - add email to Cargo.toml
+  - license?
+  - cargo login
+  - cd publish; cargo publish
 
-polish SUMMARY.md
+- merge dev branch into main! just prep:
+  - fix failing examples
+  - fix clippy warnings
+  - create alternative SUMMARY.md
 
-- auto derive
-- config, concerns
+- polish extended SUMMARY.md
+  - auto derive
+  - config, concerns
 
-see STATUS.md
+- review GA / GSC - issues with redirects??
 
-finish links:
+- fix commented examples
 
-- rename some of the IDs (finish)
-- insert badges instead of (github) - see book/temp
-- create badge refdefs for links to crates.io, etc
+- Rename some of the link IDs in *refs.md - WIP
 
-review generate.sh
+- pull request to little book of rust books
 
-figure out the 404s when linkchecking external websites
+- incorporate cwd.rs example + any other new examples
 
-explanation text for language pages
+- review generate.sh
 
-pull request to little book of rust books
+- finish generation of urls from dependencies + append + sort + dedupe - WIP
+  - update justfile
 
-utils
+- review each new .md file in turn - see STATUS.md
 
-- locate all autolink / inline references to external sites
-- identify duplicate links / labels
-- identify broken links
-- suggest label names based on URL type
-- generate catgeories.md
-- generate crates.md
-- autoreplace autolinks / inline links by ref links
-- generate *-refs.md files
+finish cd_ci.md
 
-finish to review ignore / no_run examples
+finish improve_speed
 
-tower_http example polish; other examples have been checked against the rust playground
+- explanation text for language pages
 
-review GA / GSC - issues with redirects??
+- finish to review ignore / no_run examples
 
-license
+- finish links:
+  - insert badges instead of (github) - see book/temp
+  - create badge refdefs for links to crates.io, lib.rs, RBE book, etc
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in axum by you, shall be licensed as __, without any additional terms or conditions.
+- finish utils
+  - locate all autolink / inline references to external sites - WIP
+  - identify duplicate links / labels
+  - identify broken links
+  - suggest label names based on URL type - WIP
+  - generate categories.md
+  - generate crates.md
+  - autoreplace autolinks / inline links by ref links
+  - generate or merge into *-refs.md files - WIP
+  - identify .md files not in SUMMARY.md
+  - identify .rs examples not used
+  - review TODOs
+  - consider moving utils to a separate repo? or publish as a separate crate?
 
-add licenses to thanks page
+- tower_http example polish; other examples have been checked against the rust playground
+
+- license
+
+- update thanks
+  - add licenses to thanks page ?
+
+- contributing
+  - Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in _ by you, shall be licensed as __, without any additional terms or conditions.
 
 Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
 
@@ -55,10 +79,6 @@ Review <https://github.com/rust-unofficial/patterns> - already in links.md
 <https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
 
 Link to <https://stevedonovan.github.io/rust-gentle-intro/>
-
-finish cd_ci.md
-
-finish improve_speed
 
 review Configuration page
 
@@ -101,7 +121,7 @@ AWS
 
 walkdir
 
-< https://docs.rs/flagset/latest/flagset/ >
+<https://docs.rs/flagset/latest/flagset/>
 
 notify
 
