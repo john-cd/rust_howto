@@ -17,15 +17,23 @@ static EXTRACT_REGEX: Lazy<Regex> =
 
 /// Extract code examples from all Markdown files within a directory
 /// and write them to separate files.
-pub fn extract_code_from_all_markdown_files_in(
-    markdown_root: &str,
-    code_dst_dir: &str,
-) -> Result<()> {
+pub fn extract_code_from_all_markdown_files_in<P1, P2>(
+    markdown_src_dir_path: P1,
+    code_dest_dir_path: P2,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
     // Locate the Markdown files with the e.g. src/ directory
-    let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
+    let markdown_file_paths =
+        crate::fs::find_markdown_files_in(markdown_src_dir_path.as_ref())?;
+
+    // Create the destination directory if it doesn't exist
+    crate::fs::create_dir(code_dest_dir_path.as_ref())?;
 
     // Process each .md file
-    for p in paths {
+    for p in markdown_file_paths {
         info!("{p:?}");
         let buf = fs::read_to_string(p.as_path())?;
         let random_string =
@@ -52,7 +60,7 @@ pub fn extract_code_from_all_markdown_files_in(
                 },
                 ".rs"
             );
-            let code_path = Path::new(code_dst_dir).join(code_filename);
+            let code_path = code_dest_dir_path.as_ref().join(code_filename);
             info!(" {number}:\n {code_path:?}\n");
             File::create(code_path)?.write_all(code.as_bytes())?;
         }
@@ -60,15 +68,24 @@ pub fn extract_code_from_all_markdown_files_in(
     Ok(())
 }
 
-/// Remove Rust code examples from Markdown
-pub fn remove_code_from_all_markdown_files_in(
-    markdown_root: &str,
-) -> Result<()> {
+// TODO
+/// Remove Rust code examples from the Markdown,
+/// replacing each by a {{#include ... }} statement.
+///
+/// Note: does not handle multiple examples in one file well -
+/// You may need to number includes manually.
+pub fn remove_code_from_all_markdown_files_in<P>(
+    markdown_src_dir_path: P,
+) -> Result<()>
+where
+    P: AsRef<Path>,
+{
     // Locate the Markdown files with the src directory
-    let paths = crate::fs::find_markdown_files_in(Path::new(markdown_root))?;
+    let markdown_file_paths =
+        crate::fs::find_markdown_files_in(markdown_src_dir_path)?;
 
     // Process each .md file
-    for p in paths {
+    for p in markdown_file_paths {
         info!("{p:?}");
         let buf = fs::read_to_string(p.as_path())?;
         let re =

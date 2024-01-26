@@ -17,14 +17,14 @@ use crate::link::LinkBuilder;
 ///
 /// parser: Markdown parser
 /// w: Writer (e.g. File) to write to
-pub(super) fn write_github_repo_badge_refdefs<'input, W>(
-    parser: &'input Parser<'input, '_>,
+pub(super) fn write_github_repo_badge_refdefs<W>(
+    parser: Parser,
     w: &mut W,
 ) -> Result<()>
 where
     W: Write,
 {
-    let sorted_refdefs = super::parser::get_sorted_ref_defs(parser);
+    let sorted_refdefs = super::parser::get_sorted_ref_defs(&parser);
 
     let rule = &crate::link::GLOBAL_RULES["github repo"];
     let re = Regex::new(rule.re).unwrap();

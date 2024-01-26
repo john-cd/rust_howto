@@ -1,8 +1,8 @@
-/// Locate Markdown files within a directory
-use std::io;
 use std::path::Path;
 use std::path::PathBuf;
 
+/// Locate Markdown files within a directory
+use anyhow::Result;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
@@ -18,9 +18,10 @@ fn is_hidden(entry: &DirEntry) -> bool {
 /// Locate Markdown files within a directory
 /// If root_dir_path is a file, then it is the first and only item
 /// yielded
-pub fn find_markdown_files_in<P: AsRef<Path>>(
-    root_dir_path: P,
-) -> io::Result<Vec<PathBuf>> {
+pub fn find_markdown_files_in<P>(root_dir_path: P) -> Result<Vec<PathBuf>>
+where
+    P: AsRef<Path>,
+{
     let mut paths = Vec::new();
 
     let walker = WalkDir::new(root_dir_path)

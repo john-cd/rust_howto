@@ -19,7 +19,7 @@ use anyhow::Result;
 // }
 
 /// Read all Markdown files in a directory into one big string
-pub fn read_to_string_all_markdown_files_in<'a, P>(
+pub(crate) fn read_to_string_all_markdown_files_in<'a, P>(
     markdown_root_dir_path: P,
 ) -> Result<Cow<'a, str>>
 where
@@ -50,7 +50,7 @@ where
 /// for line in lines {
 ///     println!("{}", line);
 /// }
-pub fn read_lines<P>(file_path: P) -> Result<Vec<Cow<'static, str>>>
+pub(crate) fn read_lines<P>(file_path: P) -> Result<Vec<Cow<'static, str>>>
 where
     P: AsRef<Path>,
 {
