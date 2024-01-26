@@ -9,22 +9,18 @@ use pulldown_cmark::Parser;
 ///
 /// parser: Markdown parser
 /// w: Writer e.g. File
-pub(crate) fn write_ref_defs<'input, 'callback, W>(
-    parser: &'input Parser<'input, 'callback>,
-    mut w: W,
-) -> Result<()>
+pub(crate) fn write_ref_defs<W>(parser: Parser, w: &mut W) -> Result<()>
 where
     W: Write,
-    'callback: 'input,
+    //'callback: 'input,
 {
-    let sorted_refdefs =
-        crate::parser::get_sorted_ref_defs::<'input, 'callback>(parser);
+    let sorted_refdefs = crate::parser::get_sorted_ref_defs(&parser); // ::<'input, 'callback>
 
     for (s, LinkDef { dest, title, .. }) in sorted_refdefs {
         if let Some(t) = title {
-            writeln!(&mut w, "[{s}]: {dest} \"{t:?}\"")?;
+            writeln!(w, "[{s}]: {dest} \"{t:?}\"")?;
         } else {
-            writeln!(&mut w, "[{s}]: {dest}")?;
+            writeln!(w, "[{s}]: {dest}")?;
         }
     }
     Ok(())

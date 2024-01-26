@@ -64,7 +64,7 @@ where
 pub(crate) fn write_markdown_to<'a, I, E, W>(
     parser: I,
     markdown_input_length: usize,
-    mut w: W,
+    w: &mut W,
 ) -> Result<()>
 where
     I: Iterator<Item = E>,

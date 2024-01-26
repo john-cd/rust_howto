@@ -16,14 +16,6 @@ pub(crate) fn parse_arguments() -> Cli {
     Cli::parse()
 }
 
-/// Command-line arguments -p <path> or -p <path>
-#[derive(Args, Debug)]
-pub struct PathArgs {
-    // The path to the file to write (optional)
-    #[arg(short, long)]
-    pub path: Option<PathBuf>,
-}
-
 #[derive(Parser, Debug)]
 // Reads the following attributes from the package's `Cargo.toml`
 #[command(author, version, about, long_about = None)]
@@ -54,30 +46,32 @@ pub(crate) enum Command {
     Markdown(MarkdownSubCommand),
 
     /// Parse the entire Markdown code as events and print them.
-    Debug(PathArgs),
-    // Test,
+    Debug(SrcDirAndDestFileArgs),
+
+    /// Test Markdown parsing
+    Test,
 }
 
 /// Command-line subcommands to handle reference definitions
 #[derive(Subcommand, Debug)]
 pub(crate) enum RefDefsSubCommand {
     /// Write existing reference definitions to a file
-    Write(PathArgs),
+    Write(SrcDirAndDestFileArgs),
 
     /// Generate badges (reference definitions) for e.g. Github links
-    GenerateBadges(PathArgs),
+    GenerateBadges(SrcDirAndDestFileArgs),
 }
 
 /// Command-line subcommands to handle links
 #[derive(Subcommand, Debug)]
 pub(crate) enum LinksSubCommand {
     /// Write all existing links to a Markdown file
-    WriteAll(PathArgs),
+    WriteAll(SrcDirAndDestFileArgs),
 
     // TODO finish
     /// Write all existing inline links and autolinks (i.e., not
     /// written as reference-style links) to a Markdown file
-    WriteInline(PathArgs),
+    WriteInline(SrcDirAndDestFileArgs),
     // // TODO
     // /// Identify duplicate links / labels
     // DuplicateLinks,
@@ -90,14 +84,15 @@ pub(crate) enum LinksSubCommand {
 /// Command-line subcommands to manipulate Markdown
 #[derive(Subcommand, Debug)]
 pub(crate) enum MarkdownSubCommand {
-    /// Extract Rust code examples from the Markdown
-    ExtractCodeExamples,
+    /// Copy Rust code examples from the Markdown into .rs files.
+    ExtractCodeExamples(SrcDirAndDestDirArgs),
 
-    /// Rust code examples from the Markdown
-    RemoveCodeExamples,
+    /// Replace Rust code examples from the Markdown by {{#include
+    /// ...}} statements
+    ReplaceCodeExamplesByIncludes(MarkdownDirArgs),
 
     /// Replace {{#include <file>.md}} by the file contents
-    ReplaceIncludes,
+    ReplaceIncludesByContents(MarkdownDirArgs),
     // TODO
     // /// Generate categories.md
     // GenerateCategories,
@@ -107,6 +102,45 @@ pub(crate) enum MarkdownSubCommand {
     // GenerateCrates,
 
     // TODO autoreplace autolinks / inline links by ref links
+}
+
+#[derive(Debug, Args)]
+#[command(flatten_help = true)]
+pub struct SrcDirAndDestFileArgs {
+    /// Source directory containing the Markdown files (optional)
+    #[command(flatten)]
+    pub src: MarkdownDirArgs,
+
+    /// The path to the file to write (optional)
+    #[command(flatten)]
+    pub dest: DestFilePathArgs,
+}
+
+#[derive(Args, Debug)]
+pub struct SrcDirAndDestDirArgs {
+    /// Source directory containing the Markdown files (optional)
+    #[command(flatten)]
+    pub src: MarkdownDirArgs,
+
+    /// Path to the directory to write into (optional)
+    #[arg(short, long, value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
+    pub dest_dir_path: Option<PathBuf>,
+}
+
+/// Command-line arguments -d <path>
+#[derive(Args, Debug)]
+pub struct DestFilePathArgs {
+    /// The path to the file to write (optional)
+    #[arg(short, long, value_name = "FILE", value_hint = clap::ValueHint::FilePath)]
+    pub file_path: Option<PathBuf>,
+}
+
+/// Source directory containing the Markdown files (optional)
+#[derive(Args, Debug)]
+pub struct MarkdownDirArgs {
+    /// Source directory containing the Markdown files (optional)
+    #[arg(short, long, value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
+    pub markdown_dir_path: Option<PathBuf>,
 }
 
 // // Example global args

@@ -6,10 +6,13 @@ use anyhow::Result;
 use super::Link;
 
 /// Write links to a writer (e.g. file)
-pub(crate) fn write_links_to<W: Write>(
+pub(crate) fn write_links_to<W>(
     links: Vec<Link>,
     link_writer: &mut W,
-) -> Result<()> {
+) -> Result<()>
+where
+    W: Write,
+{
     for l in links.iter() {
         write_link_to(l, link_writer)?;
     }
@@ -31,10 +34,13 @@ where
 }
 
 /// Write reference definitions and links to a writer (e.g. file)
-pub(crate) fn write_ref_defs_and_links_to<W: Write>(
+pub(crate) fn write_ref_defs_and_links_to<W>(
     links: Vec<Link>,
     writer: &mut W,
-) -> Result<()> {
+) -> Result<()>
+where
+    W: Write,
+{
     for l in links.iter() {
         write_link_to(l, writer)?;
         write_ref_def_to(l, writer)?;

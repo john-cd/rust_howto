@@ -19,7 +19,36 @@ use std::path::Path;
 
 use anyhow::Result;
 use pulldown_cmark::LinkType;
-use tracing::debug;
+use pulldown_cmark::Parser;
+
+/// Helper function:
+/// Checks the source directory exists,
+/// create the destination directory if it doesn't exist,
+/// create the destination file,
+/// parse all the Markdown files in the source directory,
+/// and invoke a closure that uses the parser to write to the file
+fn helper<P1, P2, F>(
+    src_dir_path: P1,
+    dest_file_path: P2,
+    func: F,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+    F: for<'a, 'b, 'c> FnOnce(Parser<'a, 'b>, &'c mut File) -> Result<()>,
+{
+    let src_dir_path = fs::check_is_dir(src_dir_path)?;
+
+    fs::create_parent_dir_for(dest_file_path.as_ref())?;
+
+    let mut f = File::create(dest_file_path)?;
+
+    let all_markdown = fs::read_to_string_all_markdown_files_in(src_dir_path)?;
+    let parser = parser::get_parser(all_markdown.as_ref());
+
+    func(parser, &mut f)?;
+    Ok(())
+}
 
 // Public Functions
 
@@ -28,55 +57,83 @@ use tracing::debug;
 /// Parse Markdown from all .md files in a given source directory and
 /// write all raw events to a file for debugging purposes
 ///
-/// src_dir: &OsStr equivalent
+/// src_dir_path: path to the source directory
 /// dest_file_path: path to the file to create and write into
-pub fn debug_parse_to<S, P>(src_dir: S, dest_file_path: P) -> Result<()>
+pub fn debug_parse_to<P1, P2>(
+    src_dir_path: P1,
+    dest_file_path: P2,
+) -> Result<()>
 where
-    S: AsRef<OsStr>,
-    P: AsRef<Path>,
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
 {
-    let src_dir_path = fs::check_is_dir(src_dir)?;
-    fs::create_parent_dirs_for(dest_file_path.as_ref())?;
+    helper(
+        src_dir_path,
+        dest_file_path,
+        write_from_parser::write_raw_to,
+    )?;
+    Ok(())
+}
 
-    let all_markdown = fs::read_to_string_all_markdown_files_in(src_dir_path)?;
-    let f = File::create(dest_file_path)?;
-    debug!("\nParsing markdown ---------------\n");
-    let parser = parser::get_parser(all_markdown.as_ref());
-    write_from_parser::write_raw_to(parser, f)?;
+/// Test function with fake Markdown
+pub fn test() -> Result<()> {
+    // Create temp directory
+    fs::create_dir("./book/temp/")?;
+
+    let dest_file_path = "./book/temp/test.log";
+    let mut f = BufWriter::new(File::create(dest_file_path)?);
+
+    let test_markdown = test_markdown::get_test_markdown();
+    let parser = parser::get_parser(test_markdown.as_ref());
+    write_from_parser::write_raw_to(parser, &mut f)?;
+    f.flush()?;
     Ok(())
 }
 
 // REFERENCE DEFINITIONS
 
-/// Parse a Markdown string and write reference definitions found
-/// therein to a file, given a path
+/// Parse Markdown from all .md files in a given source directory
+/// and write reference definitions found therein to a file
 ///
-/// markdown_input: &str equivalent
+/// src_dir_path: path to the source directory
 /// dest_file_path: path to the file to create and write into
-pub fn write_ref_defs_to<S: AsRef<str>, P: AsRef<Path>>(
-    markdown_input: S,
-    dest_file_path: P,
-) -> Result<()> {
-    let f = File::create(dest_file_path)?;
-    let parser = parser::get_parser(markdown_input.as_ref());
-    write_from_parser::write_ref_defs(&parser, f)?;
+pub fn write_ref_defs_to<P1, P2>(
+    src_dir_path: P1,
+    dest_file_path: P2,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(
+        src_dir_path,
+        dest_file_path,
+        write_from_parser::write_ref_defs,
+    )?;
     Ok(())
 }
 
-/// Get existing reference definitions from a Markdown string,
-/// identify URLs that are GitHub repos, create badge URLs for these
-/// links, and write to a file, given a path.
+/// Parse Markdown from all .md files in a given source directory,
+/// extract existing reference definitions,
+/// identify URLs that are GitHub repos,
+/// create badge URLs for these links,
+/// and write to a file.
 ///
-/// markdown_input: &str equivalent
+/// src_dir_path: path to the source directory
 /// dest_file_path: path to the file to create and write into
-pub fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
-    markdown_input: S,
-    dest_file_path: P,
-) -> Result<()> {
-    let mut f = BufWriter::new(File::create(dest_file_path)?);
-    let parser = parser::get_parser(markdown_input.as_ref());
-    github::write_github_repo_badge_refdefs(&parser, &mut f)?;
-    f.flush().unwrap();
+pub fn generate_badges<P1, P2>(
+    src_dir_path: P1,
+    dest_file_path: P2,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(
+        src_dir_path,
+        dest_file_path,
+        github::write_github_repo_badge_refdefs,
+    )?;
     Ok(())
 }
 
@@ -84,75 +141,89 @@ pub fn generate_badges<S: AsRef<str>, P: AsRef<Path>>(
 
 // TODO need to remove internal links
 
-/// Parse a Markdown string and write all inline links and autolinks
-/// (i.e., not written as reference-style links) found therein to a
-/// file
+/// Parse Markdown from all .md files in a given source directory,
+/// write all inline links and autolinks (i.e., not written as
+/// reference-style links) found therein to a file
 ///
-/// markdown_input: &str equivalent
+/// src_dir_path: path to the source directory
 /// dest_file_path: path to the file to create and write into
-pub fn write_inline_links<S: AsRef<str>, P: AsRef<Path>>(
-    markdown_input: S,
-    dest_file_path: P,
-) -> Result<()> {
-    let mut f = std::fs::File::create(dest_file_path)?;
+pub fn write_inline_links<P1, P2>(
+    src_dir_path: P1,
+    dest_file_path: P2,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(src_dir_path, dest_file_path, |parser, f| {
+        let links: Vec<link::Link> = parser::extract_links(parser);
+        let links: Vec<_> = links
+            .into_iter()
+            .filter(|l| {
+                [LinkType::Inline, LinkType::Autolink]
+                    .iter()
+                    .any(|&x| l.get_link_type().unwrap() == x)
+            })
+            .collect();
+        link::write_links_to(links, f)?;
+        Ok(())
+    })?;
 
-    let parser = parser::get_parser(markdown_input.as_ref());
-    let links: Vec<link::Link> = parser::extract_links(parser);
-    let links: Vec<_> = links
-        .into_iter()
-        .filter(|l| {
-            [LinkType::Inline, LinkType::Autolink]
-                .iter()
-                .any(|&x| l.get_link_type().unwrap() == x)
-        })
-        .collect();
-    link::write_links_to(links, &mut f)?;
     Ok(())
 }
 
-// Write all links to a file
-/// markdown_input: &str equivalent
+/// Parse Markdown from all .md files in a given source directory,
+/// write all links found therein to a file
+///
+/// src_dir_path: path to the source directory
 /// dest_file_path: path to the file to create and write into
-pub fn write_links<S: AsRef<str>, P: AsRef<Path>>(
-    markdown_input: S,
-    dest_file_path: P,
-) -> Result<()> {
-    let mut f = File::create(dest_file_path)?;
+pub fn write_links<P1, P2>(src_dir_path: P1, dest_file_path: P2) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(src_dir_path, dest_file_path, |parser, f| {
+        let links: Vec<link::Link> = parser::extract_links(parser);
+        link::write_links_to(links, f)?;
+        Ok(())
+    })?;
 
-    let parser = parser::get_parser(markdown_input.as_ref());
-    let links: Vec<link::Link> = parser::extract_links(parser);
-    link::write_links_to(links, &mut f)?;
     Ok(())
 }
 
 // GENERATE REF DEFS FROM DEPENDENCIES
 
-/// Given a Cargo.toml path, generate reference definitions from
-/// dependencies and write them to a file
+/// Given a Cargo.toml path,
+/// generate reference definitions from code dependencies
+/// and write them to a file
+/// cargo_toml_dir_path: path to the directory containing Cargo.toml
+/// markdown_dir_path: path to the directory containing Markdown sources
+/// refdef_dest_file_path: path to the file to create and write into
 pub fn generate_refdefs_to<P1, P2, P3>(
     cargo_toml_dir_path: P1,
     markdown_dir_path: P2,
-    refdef_dest_filepath: P3,
+    refdef_dest_file_path: P3,
 ) -> Result<()>
 where
     P1: AsRef<Path>,
     P2: AsRef<Path>,
     P3: AsRef<Path>,
 {
-    let mut f = File::create(refdef_dest_filepath)?;
-    // Generate ref defs from dependencies
-    let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
-    // for (_, d) in &deps {
-    //     println!("{:?}", d);
-    // }
-    let mut new_links = gen::generate_refdefs_from(deps);
+    // fs::create_dir("/code/book/temp/")?;
+    // let mut f = File::create(refdef_dest_file_path)?;
+    // // Generate ref defs from dependencies
+    // let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
+    // // for (_, d) in &deps {
+    // //     println!("{:?}", d);
+    // // }
+    // let mut new_links = gen::generate_refdefs_from(deps);
 
-    // Read existing ref defs
-    // TODO can we read just the *-refs.md files?
-    let all_markdown =
-        fs::read_to_string_all_markdown_files_in(markdown_dir_path)?;
-    let parser = parser::get_parser(all_markdown.as_ref());
-    let sorted_linkdefs = parser::get_sorted_ref_defs(&parser);
+    // // Read existing ref defs
+    // // TODO can we read just the *-refs.md files?
+    // let all_markdown =
+    //     fs::read_to_string_all_markdown_files_in(markdown_dir_path)?;
+    // let parser = parser::get_parser(all_markdown.as_ref());
+    // let sorted_linkdefs = parser::get_sorted_ref_defs(parser);
 
     // TODO
     // let existing_links = Vec::new();

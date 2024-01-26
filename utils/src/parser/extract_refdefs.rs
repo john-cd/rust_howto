@@ -7,12 +7,9 @@ use pulldown_cmark::Parser;
 /// Extract (and sort) reference definitions from a Markdown parser
 ///
 /// parser: Markdown parser
-pub(crate) fn get_sorted_ref_defs<'input, 'callback>(
-    parser: &'input Parser<'input, 'callback>,
-) -> BTreeMap<&'input str, &'input LinkDef<'input>>
-where
-    'callback: 'input,
-{
+pub(crate) fn get_sorted_ref_defs<'input>(
+    parser: &'input Parser,
+) -> BTreeMap<&'input str, &'input LinkDef<'input>> {
     // BTreeMap is a sorted map
     let sorted_refdefs: BTreeMap<_, _> =
         parser.reference_definitions().iter().collect();
