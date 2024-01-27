@@ -2,7 +2,7 @@ use regex::Regex;
 
 /// Regexes to retrieve Markdown elements
 static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
-    println!("Initializing Regexes...\n");
+    tracing::debug!("Initializing Regexes...\n");
     // A sorted map
     let mut m = BTreeMap::new();
     // A Markdown reference definition (with optional title)

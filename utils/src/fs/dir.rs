@@ -25,11 +25,7 @@ pub(crate) fn create_parent_dir_for<P>(file_path: P) -> Result<(), Error>
 where
     P: AsRef<Path>,
 {
-    let file_path: &Path = file_path.as_ref();
-    if !file_path.is_file() {
-        bail!("{:?} shoud be a file!", file_path);
-    }
-    match file_path.parent() {
+    match AsRef::<Path>::as_ref(&file_path).parent() {
         Some(dir) if dir != Path::new("") => {
             create_dir(dir)?;
         }
@@ -43,22 +39,19 @@ pub fn create_dir<P>(dir_path: P) -> Result<(), Error>
 where
     P: AsRef<Path>,
 {
-    let dir_path = dir_path.as_ref();
-    if !dir_path.is_dir() {
-        bail!("{:?} is not a directory", dir_path);
-    }
-    match dir_path.try_exists() {
+    match dir_path.as_ref().try_exists() {
         Ok(false) => {
-            std::fs::create_dir_all(dir_path)?;
-            info!("{} created", dir_path.display());
+            std::fs::create_dir_all(dir_path.as_ref())?;
+            let p = dir_path.as_ref().display();
+            info!("{} created", p);
         }
         Ok(true) => {
-            // debug: println!("{} already exists", dest_dir);
+            // debug: tracing::debug!("{} already exists", dest_dir);
         }
         Err(_) => {
             bail!(
                 "{:?}'s existence can neither be confirmed nor denied.",
-                dir_path
+                dir_path.as_ref()
             );
         }
     }

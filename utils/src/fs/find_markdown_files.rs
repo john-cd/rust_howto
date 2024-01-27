@@ -3,6 +3,7 @@ use std::path::PathBuf;
 
 /// Locate Markdown files within a directory
 use anyhow::Result;
+use tracing::warn;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
@@ -42,11 +43,11 @@ where
                     // debug: println!("{}", entry.path().display());
                     paths.push(entry.into_path());
                 } else {
-                    println!("Not a Markdown file: {}", entry.path().display());
+                    warn!("Not a Markdown file: {}", entry.path().display());
                 }
             }
             None => {
-                println!(
+                warn!(
                     "Could not extract extension for {}",
                     entry.path().display()
                 );

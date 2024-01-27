@@ -12,6 +12,8 @@ use anyhow::Error;
 use anyhow::Result;
 use quick_xml::events::BytesText;
 use quick_xml::writer::Writer;
+use tracing::error;
+use tracing::info;
 
 /// Write in the sitemap.xml format to a file, given a list of links.
 fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
@@ -60,7 +62,7 @@ fn main() -> Result<()> {
                 .ends_with(ex)
         })
     }); // p.ends_with(ex) did not work here for some reason
-    // debug: let l = l.map(|path| { println!("{:?}", path); path });
+    // debug: let l = l.map(|path| { tracing::debug!("{:?}", path); path });
 
     let domain = "https://john-cd.com/rust_howto/";
     let l = l.map(|p: PathBuf| {
@@ -78,9 +80,9 @@ fn main() -> Result<()> {
     let links: Vec<String> = links.into_iter().map(Result::unwrap).collect();
     let errors: Vec<Error> =
         errors.into_iter().map(Result::unwrap_err).collect();
-    // debug: println!("Links: {:?}", links);
+    // debug: tracing::debug!("Links: {:?}", links);
     if !errors.is_empty() {
-        println!("Errors: {:?}", errors);
+        error!("Errors: {:?}", errors);
     }
     // Create directory
     let dest_dir = "/code/book/html/";
@@ -92,6 +94,6 @@ fn main() -> Result<()> {
     // File::create will create a file if it does not exist, and will
     // truncate it if it does.
     write_xml(links, File::create(Path::new(sitemap_full_path.as_str()))?)?;
-    println!("sitemap.xml created.");
+    info!("sitemap.xml created.");
     Ok(())
 }
