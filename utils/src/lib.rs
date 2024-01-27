@@ -4,7 +4,6 @@ mod build_book;
 mod dependencies;
 pub mod fs;
 mod gen;
-mod github;
 mod link;
 pub mod markdown;
 mod parser;
@@ -130,7 +129,7 @@ where
     helper(
         src_dir_path,
         dest_file_path,
-        github::write_github_repo_badge_refdefs,
+        write_from_parser::write_github_repo_badge_refdefs,
     )?;
     Ok(())
 }
