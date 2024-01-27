@@ -6,7 +6,7 @@ use anyhow::Result;
 use pulldown_cmark::LinkDef;
 use pulldown_cmark::Parser;
 use regex::Regex;
-use tracing::info;
+use tracing::debug;
 
 use crate::link::write_ref_defs_and_links_to_two;
 use crate::link::LinkBuilder;
@@ -17,14 +17,14 @@ use crate::link::LinkBuilder;
 ///
 /// parser: Markdown parser
 /// w: Writer (e.g. File) to write to
-pub(super) fn write_github_repo_badge_refdefs<W>(
+pub(crate) fn write_github_repo_badge_refdefs<W>(
     parser: Parser,
     w: &mut W,
 ) -> Result<()>
 where
     W: Write,
 {
-    let sorted_refdefs = super::parser::get_sorted_ref_defs(&parser);
+    let sorted_refdefs = crate::parser::get_sorted_ref_defs(&parser);
 
     let rule = &crate::link::GLOBAL_RULES["github repo"];
     let re = Regex::new(rule.re).unwrap();
@@ -35,12 +35,12 @@ where
     for (lbl, LinkDef { dest: dest_url, .. }) in sorted_refdefs {
         // if the URL is a github repo...
         if let Some(capture) = re.captures(dest_url.as_ref()) {
-            info!("dest_url: {} -> {:?}", dest_url, capture);
+            debug!("dest_url: {} -> {:?}", dest_url, capture);
 
             // ...create the URL for the badge...
             let badge_image_url =
                 re.replace(dest_url.as_ref(), rule.badge_url_pattern);
-            info!("badge_image_url: {}", badge_image_url);
+            debug!("badge_image_url: {}", badge_image_url);
 
             let link = LinkBuilder::default()
                 .set_label(Cow::from(lbl))
