@@ -9,10 +9,9 @@ use pulldown_cmark::Parser;
 ///
 /// parser: Markdown parser
 /// w: Writer e.g. File
-pub(crate) fn write_ref_defs<W>(parser: Parser, w: &mut W) -> Result<()>
+pub(crate) fn write_ref_defs_to<W>(parser: Parser, w: &mut W) -> Result<()>
 where
     W: Write,
-    //'callback: 'input,
 {
     let sorted_refdefs = crate::parser::get_sorted_ref_defs(&parser); // ::<'input, 'callback>
 
@@ -25,3 +24,6 @@ where
     }
     Ok(())
 }
+
+#[inline]
+fn write_ref_def_to() {}

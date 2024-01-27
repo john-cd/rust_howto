@@ -128,7 +128,7 @@ pub(crate) static GLOBAL_RULES: Lazy<HashMap<&str, Rule>> = Lazy::new(|| {
     // [sqlx-github]: https://github.com/launchbadge/sqlx/
     // https://github.com/amar-laksh/workstation/blob/master/src/main.rs
     m.insert("github repo", Rule {
-        re: r"https://github.com/(?<owner>\S+?)/(?<repo>\S+)/?.*?",
+        re: r"https://github.com/(?<owner>[^/]+?)/(?<repo>[^/]+)/?.*",
         label_pattern: "${repo}-github",
         badge_url_pattern: "https://img.shields.io/badge/${repo}-navy?logo=github",
     });

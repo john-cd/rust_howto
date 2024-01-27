@@ -62,7 +62,8 @@ fn main() -> Result<()> {
                 .ends_with(ex)
         })
     }); // p.ends_with(ex) did not work here for some reason
-    // debug: let l = l.map(|path| { tracing::debug!("{:?}", path); path });
+    // debug: let l = l.map(|path| { tracing::debug!("{:?}", path); path
+    // });
 
     let domain = "https://john-cd.com/rust_howto/";
     let l = l.map(|p: PathBuf| {
