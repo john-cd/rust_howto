@@ -105,7 +105,7 @@ where
     helper(
         src_dir_path,
         dest_file_path,
-        write_from_parser::write_ref_defs,
+        write_from_parser::write_ref_defs_to,
     )?;
     Ok(())
 }

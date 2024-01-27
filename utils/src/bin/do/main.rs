@@ -10,7 +10,7 @@ mod args;
 fn main() -> Result<()> {
     let key = "RUST_LOG";
     if env::var(key).is_err() {
-        env::set_var(key, "info");
+        env::set_var(key, "debug");
     }
 
     tracing_subscriber::fmt::init();
@@ -49,8 +49,7 @@ fn main() -> Result<()> {
                     let refdef_dest_path = args
                         .dest
                         .file_path
-                        .unwrap_or(PathBuf::from("./book/temp/badge_refs.md"))
-                        ;
+                        .unwrap_or(PathBuf::from("./book/temp/badge_refs.md"));
                     println!(
                         "Parsing markdown files found in {} and writing new (github badge) reference definitions to {}...",
                         markdown_src_dir_path.display(),
@@ -74,13 +73,9 @@ fn main() -> Result<()> {
                         .markdown_src_dir_path
                         .unwrap_or(PathBuf::from("./src/"))
                         .canonicalize()?;
-                    let links_dest_path = args
-                        .dest
-                        .file_path
-                        .unwrap_or(PathBuf::from(
-                            "/code/book/temp/all_links.md",
-                        ))
-                        ;
+                    let links_dest_path = args.dest.file_path.unwrap_or(
+                        PathBuf::from("/code/book/temp/all_links.md"),
+                    );
                     println!(
                         "Parsing markdown files found in {} and writing existing links to {}...",
                         markdown_src_dir_path.display(),
@@ -95,13 +90,9 @@ fn main() -> Result<()> {
                         .markdown_src_dir_path
                         .unwrap_or(PathBuf::from("./src/"))
                         .canonicalize()?;
-                    let links_dest_path = args
-                        .dest
-                        .file_path
-                        .unwrap_or(PathBuf::from(
-                            "/code/book/temp/inline_links.md",
-                        ))
-                        ;
+                    let links_dest_path = args.dest.file_path.unwrap_or(
+                        PathBuf::from("/code/book/temp/inline_links.md"),
+                    );
                     println!(
                         "Parsing markdown files found in {} and writing found inline / auto links to {}",
                         markdown_src_dir_path.display(),
@@ -124,10 +115,8 @@ fn main() -> Result<()> {
                     .markdown_src_dir_path
                     .unwrap_or(PathBuf::from("./drafts/"))
                     .canonicalize()?;
-                let code_dest_dir_path = args
-                    .dest_dir_path
-                    .unwrap_or(PathBuf::from("./temp/"))
-                    ;
+                let code_dest_dir_path =
+                    args.dest_dir_path.unwrap_or(PathBuf::from("./temp/"));
                 println!(
                     "Parsing Markdown files found in {} and copying found Rust code blocks to {}",
                     markdown_src_dir_path.display(),
