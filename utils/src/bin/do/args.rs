@@ -45,7 +45,8 @@ pub(crate) enum Command {
     #[command(subcommand)]
     Markdown(MarkdownSubCommand),
 
-    /// Parse the entire Markdown code as events and print them.
+    /// Parse the entire Markdown code as events and write them to a
+    /// file.
     Debug(SrcDirAndDestFileArgs),
 
     /// Test Markdown parsing
@@ -122,25 +123,24 @@ pub struct SrcDirAndDestDirArgs {
     #[command(flatten)]
     pub src: MarkdownDirArgs,
 
-    /// Path to the directory to write into (optional)
-    #[arg(short, long, value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
+    /// Destination directory (optional)
+    #[arg(short='t', long="target-dir", value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
     pub dest_dir_path: Option<PathBuf>,
 }
 
-/// Command-line arguments -d <path>
 #[derive(Args, Debug)]
 pub struct DestFilePathArgs {
-    /// The path to the file to write (optional)
-    #[arg(short, long, value_name = "FILE", value_hint = clap::ValueHint::FilePath)]
+    /// Specify the path of the file to create
+    #[arg(short = 'o', long = "output", value_name = "FILE", value_hint = clap::ValueHint::FilePath)]
     pub file_path: Option<PathBuf>,
 }
 
-/// Source directory containing the Markdown files (optional)
 #[derive(Args, Debug)]
 pub struct MarkdownDirArgs {
-    /// Source directory containing the Markdown files (optional)
-    #[arg(short, long, value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
-    pub markdown_dir_path: Option<PathBuf>,
+    /// Specify the path to the directory containing the source
+    /// Markdown files
+    #[arg(short, long="markdown-dir", value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
+    pub markdown_src_dir_path: Option<PathBuf>,
 }
 
 // // Example global args

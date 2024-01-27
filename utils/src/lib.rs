@@ -1,5 +1,5 @@
-/// Shared libray for utilities in src/bin/ folder
-//#![allow(unused)]
+#![allow(unused)]
+/// Shared library for utilities found in the src/bin/ folder
 mod build_book;
 mod dependencies;
 pub mod fs;
@@ -11,7 +11,6 @@ mod parser;
 pub mod test_markdown;
 mod write_from_parser;
 
-use std::ffi::OsStr;
 use std::fs::File;
 use std::io::BufWriter;
 use std::io::Write;
@@ -77,7 +76,6 @@ where
 
 /// Test function with fake Markdown
 pub fn test() -> Result<()> {
-    // Create temp directory
     fs::create_dir("./book/temp/")?;
 
     let dest_file_path = "./book/temp/test.log";
@@ -197,8 +195,9 @@ where
 /// generate reference definitions from code dependencies
 /// and write them to a file
 /// cargo_toml_dir_path: path to the directory containing Cargo.toml
-/// markdown_dir_path: path to the directory containing Markdown sources
-/// refdef_dest_file_path: path to the file to create and write into
+/// markdown_dir_path: path to the directory containing Markdown
+/// sources refdef_dest_file_path: path to the file to create and
+/// write into
 pub fn generate_refdefs_to<P1, P2, P3>(
     cargo_toml_dir_path: P1,
     markdown_dir_path: P2,
@@ -214,7 +213,7 @@ where
     // // Generate ref defs from dependencies
     // let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
     // // for (_, d) in &deps {
-    // //     println!("{:?}", d);
+    // //     tracing::info!("{:?}", d);
     // // }
     // let mut new_links = gen::generate_refdefs_from(deps);
 
