@@ -25,8 +25,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends fzf mold clang \
                                                   aspell aspell-en \
-                                                  locales xdg-utils desktop-file-utils \
-                                                  nano \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -54,7 +52,6 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
     && cargo binstall --no-confirm just \
     && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
     && cargo binstall --no-confirm mdbook-linkcheck \
-    && cargo binstall --no-confirm ripgrep \
     && cargo binstall --no-confirm --secure cargo-nextest
 
 ## Alternative just install
@@ -92,8 +89,15 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
 WORKDIR /code
 
 ## --------------------------------
-## Stage to use for development
+## Stage for development
 FROM base as development
+
+## Additional packages for developement only
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr
+# locales xdg-utils desktop-file-utils \
+# nano \
+
+# RUN cargo binstall --no-confirm ripgrep
 
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \

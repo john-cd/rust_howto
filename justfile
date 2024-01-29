@@ -131,8 +131,15 @@ do cmd=default subcmd=empty:
 run xmpl:
   cargo run -p deps --example {{xmpl}}
 
+[unix]
 doc:
   cargo clean --doc
-  cargo doc --no-deps --workspace --bins --locked --open
-  # --examples
+  cargo doc --no-deps --workspace --bins --locked
+  # optional: --examples
+  # cargo doc --open does not seem to work when running from a Dev Container in VS Code;
+  # the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML.
+  cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
+  # We could also use `live server` for dynamic reloading. 
+
+
   # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
