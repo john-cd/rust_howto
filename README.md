@@ -226,6 +226,14 @@ xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
 - Add the target directory e.g. `/cargo-target-rust_howto/target` to the VS Code Explorer view (`File` > `Add Folder to Workspace...`), then right-click the `/cargo-target-rust_howto/target/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
 - Or install the `Live Server` or MS `Live Preview` VS Code extensions.
 
+## Publish to crates.io
+
+The `publish` folder contains a placeholder crate, so that the book could be located when searching on `crates.io`.
+
+- Go to `crates.io`, sign in, and create an API token in `Account Settings` > `API Tokens`.
+- Use `cargo login` to save the token in `$CARGO_HOME/credentials.toml`.
+- `cd publish; cargo build; cargo clippy; cargo run; cargo doc` then, when ready, `cargo publish --dry-run; cargo publish`
+
 ## Reference
 
 [mdBook][mdbook]
