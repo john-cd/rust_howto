@@ -132,5 +132,7 @@ run xmpl:
   cargo run -p deps --example {{xmpl}}
 
 doc:
-  cargo doc --workspace --locked
-  xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
+  cargo clean --doc
+  cargo doc --no-deps --workspace --bins --locked --open
+  # --examples
+  # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html

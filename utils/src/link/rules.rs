@@ -7,11 +7,11 @@ use once_cell::sync::Lazy;
 
 #[derive(Debug, Default)]
 pub(crate) struct Rule<'a> {
-    pub re: &'a str, // Regex pattern to match the url
+    pub(crate) re: &'a str, // Regex pattern to match the url
     #[allow(dead_code)]
-    pub label_pattern: &'a str, // regex replacement pattern
-    pub badge_url_pattern: &'a str, /* optional pattern to build a
-                      * badge link */
+    pub(crate) label_pattern: &'a str, // regex replacement pattern
+    pub(crate) badge_url_pattern: &'a str, /* optional pattern to build a
+                             * badge link */
 }
 
 /// All rules that transform a URL to a label or badge URL

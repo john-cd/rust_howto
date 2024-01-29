@@ -1,9 +1,11 @@
 //! Command-line argument parser
 //!
 //! Useful links:
-//! https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html
-//! https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html
-//! https://github.com/clap-rs/clap/tree/master/examples
+//! <https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html>
+//!
+//! <https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html>
+//!
+//! <https://github.com/clap-rs/clap/tree/master/examples>
 
 use std::path::PathBuf;
 
@@ -92,7 +94,7 @@ pub(crate) enum MarkdownSubCommand {
     /// ...}} statements
     ReplaceCodeExamplesByIncludes(MarkdownDirArgs),
 
-    /// Replace {{#include <file>.md}} by the file contents
+    /// Replace {{#include file.md}} by the file contents
     ReplaceIncludesByContents(MarkdownDirArgs),
     // TODO
     // /// Generate categories.md
@@ -107,40 +109,40 @@ pub(crate) enum MarkdownSubCommand {
 
 #[derive(Debug, Args)]
 #[command(flatten_help = true)]
-pub struct SrcDirAndDestFileArgs {
+pub(crate) struct SrcDirAndDestFileArgs {
     /// Source directory containing the Markdown files (optional)
     #[command(flatten)]
-    pub src: MarkdownDirArgs,
+    pub(crate) src: MarkdownDirArgs,
 
     /// The path to the file to write (optional)
     #[command(flatten)]
-    pub dest: DestFilePathArgs,
+    pub(crate) dest: DestFilePathArgs,
 }
 
 #[derive(Args, Debug)]
-pub struct SrcDirAndDestDirArgs {
+pub(crate) struct SrcDirAndDestDirArgs {
     /// Source directory containing the Markdown files (optional)
     #[command(flatten)]
-    pub src: MarkdownDirArgs,
+    pub(crate) src: MarkdownDirArgs,
 
     /// Destination directory (optional)
     #[arg(short='t', long="target-dir", value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
-    pub dest_dir_path: Option<PathBuf>,
+    pub(crate) dest_dir_path: Option<PathBuf>,
 }
 
 #[derive(Args, Debug)]
-pub struct DestFilePathArgs {
+pub(crate) struct DestFilePathArgs {
     /// Specify the path of the file to create
     #[arg(short = 'o', long = "output", value_name = "FILE", value_hint = clap::ValueHint::FilePath)]
-    pub file_path: Option<PathBuf>,
+    pub(crate) file_path: Option<PathBuf>,
 }
 
 #[derive(Args, Debug)]
-pub struct MarkdownDirArgs {
+pub(crate) struct MarkdownDirArgs {
     /// Specify the path to the directory containing the source
     /// Markdown files
     #[arg(short, long="markdown-dir", value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
-    pub markdown_src_dir_path: Option<PathBuf>,
+    pub(crate) markdown_src_dir_path: Option<PathBuf>,
 }
 
 // // Example global args

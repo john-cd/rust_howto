@@ -1,6 +1,6 @@
-//! Inspired by https://github.com/rxdn/mdbook-sitemap-generator/tree/master
-//! Consider using https://docs.rs/sitewriter/1.0.4/sitewriter/.
-//! or https://crates.io/crates/sitemap instead.
+// Inspired by <https://github.com/rxdn/mdbook-sitemap-generator/tree/master>
+// Consider using <https://docs.rs/sitewriter/1.0.4/sitewriter/>.
+// or <https://crates.io/crates/sitemap> instead.
 use std::ffi::OsStr;
 use std::fs::File;
 use std::io::Write;
@@ -15,7 +15,7 @@ use quick_xml::writer::Writer;
 use tracing::error;
 use tracing::info;
 
-/// Write in the sitemap.xml format to a file, given a list of links.
+// Write in the sitemap.xml format to a file, given a list of links.
 fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     let mut writer = Writer::new_with_indent(&mut dest_file, b' ', 2);
 
@@ -45,6 +45,7 @@ fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     Ok::<_, Error>(())
 }
 
+// Create a sitemap.xml file from the  list of markdown files in `src`
 fn main() -> Result<()> {
     let src = Path::new("/code/src/");
 

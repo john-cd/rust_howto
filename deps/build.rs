@@ -17,6 +17,11 @@ const REMOVED_TESTS: &[&str] = &[
 // every time, but rather check the expanded markdown sources exist.
 // See the `justfile`.
 fn main() -> Result<()> {
+    // https://docs.rs/about/builds
+    if std::env::var("DOCS_RS").is_ok() {
+        return Ok(());
+    }
+
     let root_path = std::fs::canonicalize("..")?;
 
     // Check existence of expanded Markdown files (created by `mdbook
