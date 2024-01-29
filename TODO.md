@@ -3,13 +3,6 @@
 - utils:
   - retest all commands / subcommands
 
-- Publish placeholder to crates.io
-  - cargo doc
-  - add email to Cargo.toml
-  - license?
-  - cargo login
-  - cd publish; cargo publish
-
 - merge dev branch into main! just prep:
   - fix failing examples
   - fix clippy warnings
