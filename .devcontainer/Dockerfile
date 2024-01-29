@@ -25,7 +25,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends fzf mold clang \
                                                   aspell aspell-en \
-                                                  xdg-utils \
+                                                  locales xdg-utils desktop-file-utils \
+                                                  nano \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*

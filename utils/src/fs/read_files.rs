@@ -9,7 +9,7 @@ use std::path::Path;
 use anyhow::Result;
 
 // // Read a single file to String
-// pub fn read_to_string<P: AsRef<Path>>(path: P) -> String {
+// pub(crate) fn read_to_string<P: AsRef<Path>>(path: P) -> String {
 // let mut file = File::open(path).expect(format!("{:?} should
 // exist.", path).as_str());
 // let mut buf = String::new();

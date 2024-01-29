@@ -12,9 +12,9 @@ use anyhow::Result;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
-pub struct Dependency<'a> {
-    pub library_name: Cow<'a, str>,
-    pub package_repo_url: Option<Cow<'a, str>>,
+pub(crate) struct Dependency<'a> {
+    pub(crate) library_name: Cow<'a, str>,
+    pub(crate) package_repo_url: Option<Cow<'a, str>>,
 }
 
 // Parse `Cargo.toml` and returns the list of dependencies:

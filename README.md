@@ -40,8 +40,8 @@ Note that opening the code folder in VS Code may take a little while the first t
 If you are not using VS Code, install the [Dev Container CLI][dev-container-CLI] or simply install the required tools on your local machine:
 
 ```bash
-apt-get update
-apt-get install fzf mold clang # or equivalent for other distros
+sudo apt-get update
+sudo apt-get install fzf mold clang # or equivalent for other distros
 rustup update
 rustup component add clippy
 rustup component add rustfmt
@@ -53,6 +53,8 @@ cargo install mdbook-linkcheck
 rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly
 ```
+
+You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review `.devcontainer/Dockerfile` for other dependencies.
 

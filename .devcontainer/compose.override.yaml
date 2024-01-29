@@ -17,6 +17,7 @@ services:
       - cargo_home_cache:/usr/local/cargo/ # https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache
       - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml
       - command_history:/command_history
+      - /tmp/rust_howto/:/cargo-target-rust_howto/  # temporary, to access the documentation compiled by `just doc`
 
     ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:

@@ -15,8 +15,13 @@ use tracing::info;
 static EXTRACT_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?s)```rust.*?\n(?<code>.*?)```").unwrap());
 
-/// Extract code examples from all Markdown files within a directory
-/// and write them to separate files.
+/// Extract code examples from all Markdown files within a source
+/// directory and write them to separate files.
+///
+/// markdown_src_dir_path: path to the source directory
+///
+/// code_dest_dir_path: path to the directory, where destination files
+/// will be created
 pub fn extract_code_from_all_markdown_files_in<P1, P2>(
     markdown_src_dir_path: P1,
     code_dest_dir_path: P2,
@@ -69,11 +74,14 @@ where
 }
 
 // TODO
-/// Remove Rust code examples from the Markdown,
-/// replacing each by a {{#include ... }} statement.
+/// Remove Rust code blocks from Markdown files,
+/// replacing each by an {{#include ... }} statement.
 ///
-/// Note: does not handle multiple examples in one file well -
-/// You may need to number includes manually.
+/// Note: the curent code does not handle multiple examples in one
+/// file well. You may need to number includes manually.
+///
+/// markdown_src_dir_path: path to the source directory containing the
+/// Markdown files
 pub fn remove_code_from_all_markdown_files_in<P>(
     markdown_src_dir_path: P,
 ) -> Result<()>

@@ -14,8 +14,16 @@ static INSERT_REGEX: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"\{\{#include (?<filepath>\S+?\.md)\}\}").unwrap()
 });
 
-/// Replace {{#include <file>.md}} by the file contents
-/// Exclude {{#include refs/link-refs.md}} and similar
+///  Within each mdBook-style Markdown file in a source directory,
+/// replace {{#include file.md}} statements by the contents of the
+/// included file.
+///
+/// See the [mdBook documentation](https://rust-lang.github.io/mdBook/format/mdbook.html#including-files).
+///
+/// Note: {{#include *-refs.md}} are excluded.
+///
+/// markdown_src_dir_path: path to the source directory containing the
+/// Markdown files.
 pub fn include_in_all_markdown_files_in<P>(
     markdown_src_dir_path: P,
 ) -> Result<()>

@@ -73,7 +73,7 @@ where
     Ok(())
 }
 
-/// Test function with fake Markdown
+// Test function that uses fake Markdown
 pub fn test() -> Result<()> {
     fs::create_dir("./book/temp/")?;
 
@@ -93,6 +93,7 @@ pub fn test() -> Result<()> {
 /// and write reference definitions found therein to a file
 ///
 /// src_dir_path: path to the source directory
+///
 /// dest_file_path: path to the file to create and write into
 pub fn write_ref_defs_to<P1, P2>(
     src_dir_path: P1,
@@ -117,6 +118,7 @@ where
 /// and write to a file.
 ///
 /// src_dir_path: path to the source directory
+///
 /// dest_file_path: path to the file to create and write into
 pub fn generate_badges<P1, P2>(
     src_dir_path: P1,
@@ -143,6 +145,7 @@ where
 /// reference-style links) found therein to a file
 ///
 /// src_dir_path: path to the source directory
+///
 /// dest_file_path: path to the file to create and write into
 pub fn write_inline_links<P1, P2>(
     src_dir_path: P1,
@@ -173,6 +176,7 @@ where
 /// write all links found therein to a file
 ///
 /// src_dir_path: path to the source directory
+///
 /// dest_file_path: path to the file to create and write into
 pub fn write_links<P1, P2>(src_dir_path: P1, dest_file_path: P2) -> Result<()>
 where
@@ -193,9 +197,12 @@ where
 /// Given a Cargo.toml path,
 /// generate reference definitions from code dependencies
 /// and write them to a file
-/// cargo_toml_dir_path: path to the directory containing Cargo.toml
-/// markdown_dir_path: path to the directory containing Markdown
-/// sources refdef_dest_file_path: path to the file to create and
+///
+/// cargo_toml_dir_path: path to the directory containing `Cargo.toml`
+///
+/// markdown_dir_path: path to the directory containing Markdown files
+///
+/// refdef_dest_file_path: path to the file to create and
 /// write into
 pub fn generate_refdefs_to<P1, P2, P3>(
     cargo_toml_dir_path: P1,

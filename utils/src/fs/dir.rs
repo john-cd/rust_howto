@@ -34,7 +34,7 @@ where
     Ok(())
 }
 
-/// Create a directory (including parent dierctories as needed)
+/// Create a directory (including parent directories as needed)
 pub fn create_dir<P>(dir_path: P) -> Result<(), Error>
 where
     P: AsRef<Path>,
