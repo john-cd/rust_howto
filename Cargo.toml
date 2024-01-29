@@ -25,6 +25,6 @@ homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
 # license =
 # license-file =
-keywords = ["patterns", "cookbook", "how to", "how-to", "documentation"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation"]
 categories = ["algorithms", "asynchronous", "concurrency", "web-programming", "development-tools"]
 publish = false

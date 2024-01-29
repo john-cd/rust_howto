@@ -5,4 +5,4 @@
 
 The "Rust How-To" book is deployed on <https://john-cd.com/rust_howto>
 
-GitHub repo: <https://john-cd.github.io/rust_howto>
+GitHub repo: <https://github.com/john-cd/rust_howto>
