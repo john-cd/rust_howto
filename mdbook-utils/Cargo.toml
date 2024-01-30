@@ -1,17 +1,17 @@
 [package]
-name = "utils"
+name = "mdbook-utils"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Tools to manage links, reference definitions, code examples in collections of Markdown files, especially `mdbook` sources."
+description = "Tools to manage links, reference definitions, code examples in Markdown files, especially `mdbook` source directories."
 documentation.workspace = true
 readme = "README.md"
 homepage.workspace = true
 repository.workspace = true
 #license.workspace = true
 #license-file.workspace = true
-keywords = [ "documentation", "markdown", "rust code examples", "mdbook" ]
+keywords = [ "documentation", "markdown", "book", "mdbook", "rustbook" ]
 categories = [ "parser-implementations", "parsing", "text-processing", "development-tools", "command-line-utilities" ]
 workspace = ".."
 #exclude.workspace = true

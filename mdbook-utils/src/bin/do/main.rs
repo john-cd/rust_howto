@@ -34,7 +34,7 @@ fn main() -> Result<()> {
                         markdown_src_dir_path.display(),
                         refdef_dest_path.display()
                     );
-                    utils::write_ref_defs_to(
+                    mdbook_utils::write_ref_defs_to(
                         markdown_src_dir_path,
                         refdef_dest_path,
                     )?;
@@ -55,7 +55,7 @@ fn main() -> Result<()> {
                         markdown_src_dir_path.display(),
                         refdef_dest_path.display()
                     );
-                    utils::generate_badges(
+                    mdbook_utils::generate_badges(
                         markdown_src_dir_path,
                         refdef_dest_path,
                     )?;
@@ -81,7 +81,10 @@ fn main() -> Result<()> {
                         markdown_src_dir_path.display(),
                         links_dest_path.display()
                     );
-                    utils::write_links(markdown_src_dir_path, links_dest_path)?;
+                    mdbook_utils::write_links(
+                        markdown_src_dir_path,
+                        links_dest_path,
+                    )?;
                     println!("Done.");
                 }
                 LinksSubCommand::WriteInline(args) => {
@@ -98,7 +101,7 @@ fn main() -> Result<()> {
                         markdown_src_dir_path.display(),
                         links_dest_path.display()
                     );
-                    utils::write_inline_links(
+                    mdbook_utils::write_inline_links(
                         markdown_src_dir_path,
                         links_dest_path,
                     )?;
@@ -122,7 +125,7 @@ fn main() -> Result<()> {
                     markdown_src_dir_path.display(),
                     code_dest_dir_path.display()
                 );
-                utils::markdown::extract_code_from_all_markdown_files_in(
+                mdbook_utils::markdown::extract_code_from_all_markdown_files_in(
                     markdown_src_dir_path,
                     code_dest_dir_path,
                 )?;
@@ -142,7 +145,7 @@ fn main() -> Result<()> {
                     .default(false)
                     .interact()?;
                 if confirmation {
-                    utils::markdown::remove_code_from_all_markdown_files_in(
+                    mdbook_utils::markdown::remove_code_from_all_markdown_files_in(
                         markdown_src_dir_path,
                     )?;
                     println!("Done.");
@@ -164,7 +167,7 @@ fn main() -> Result<()> {
                     .default(false)
                     .interact()?;
                 if confirmation {
-                    utils::markdown::include_in_all_markdown_files_in(
+                    mdbook_utils::markdown::include_in_all_markdown_files_in(
                         markdown_src_dir_path,
                     )?;
                     println!("Done.");
@@ -175,6 +178,34 @@ fn main() -> Result<()> {
                *     println!("NOT IMPLEMENTED");
                * } */
         },
+        Command::SiteMap(args) => {
+            let markdown_src_dir_path = args
+                .src
+                .markdown_src_dir_path
+                .unwrap_or(PathBuf::from("./src/"))
+                .canonicalize()?;
+
+            let base_url = args
+                .base_url
+                .unwrap_or(url::Url::parse("https://john-cd.com/rust_howto/")?);
+
+            let sitemap_dest_file_path = args
+                .dest
+                .file_path
+                .unwrap_or(PathBuf::from("./book/html/sitemap.xml"));
+
+            println!(
+                "Generating {} from the list of Markdown files in {}...",
+                sitemap_dest_file_path.display(),
+                markdown_src_dir_path.display(),
+            );
+            mdbook_utils::generate_sitemap(
+                markdown_src_dir_path,
+                base_url,
+                sitemap_dest_file_path,
+            )?;
+            println!("Done.");
+        }
         Command::Debug(args) => {
             let markdown_src_dir_path = args
                 .src
@@ -190,11 +221,12 @@ fn main() -> Result<()> {
                 markdown_src_dir_path.display(),
                 log_dest_path.display()
             );
-            utils::debug_parse_to(markdown_src_dir_path, log_dest_path)?;
+            mdbook_utils::debug_parse_to(markdown_src_dir_path, log_dest_path)?;
             println!("Done.");
         }
         Command::Test => {
-            utils::test()?;
+            mdbook_utils::test()?;
+            println!("Done.");
         } /* Add more subcommands here: Some(args::Commands::...) => { ... }
            * _ => {
            *     println!("NOT IMPLEMENTED");
