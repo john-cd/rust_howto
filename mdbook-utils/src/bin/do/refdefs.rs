@@ -11,7 +11,7 @@ pub(crate) enum RefDefsSubCommand {
     /// Write existing reference definitions to a file
     Write(MarkdownSrcDirAndDestFileArgs),
 
-    // TODO
+    // TODO merge with generation from dependencies?
     /// Generate badges (reference definitions) for e.g. Github links
     GenerateBadges(MarkdownSrcDirAndDestFileArgs),
 
@@ -84,6 +84,8 @@ pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
             //         "/code/src",
             //         refdef_dest_path,
             //     )?;
+            println!("NOT IMPLEMENTED");
+            println!("Done.");
         } /* _ => {
            *     println!("NOT IMPLEMENTED");
            * } */

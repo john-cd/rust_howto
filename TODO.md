@@ -1,13 +1,5 @@
 # TODO
 
-test new sitemap
-  <url>
-    <loc>https://john-cd.com/rust_howto/index.html</loc>
-  </url>
-  <url>
-    <loc>https://john-cd.com/rust_howto/index.html</loc>
-  </url>
-
 - utils:
   - retest all commands / subcommands
   - review <https://docs.rs/markdown-gen/1.2.1/markdown_gen/markdown/index.html>
@@ -23,11 +15,13 @@ test new sitemap
   - auto derive
   - config, concerns
 
-- review GA / GSC - issues with redirects??
-
 - fix commented examples
 
+- review GA / GSC - issues with redirects??
+
 - Rename some of the link IDs in *refs.md - WIP
+
+test new sitemap with new website layout
 
 - consider publishing the utils crate
 
