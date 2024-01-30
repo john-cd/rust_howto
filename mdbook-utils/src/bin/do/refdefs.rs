@@ -9,14 +9,15 @@ use super::args::*;
 #[derive(Subcommand, Debug)]
 pub(crate) enum RefDefsSubCommand {
     /// Write existing reference definitions to a file
-    Write(SrcDirAndDestFileArgs),
+    Write(MarkdownSrcDirAndDestFileArgs),
 
+    // TODO
     /// Generate badges (reference definitions) for e.g. Github links
-    GenerateBadges(SrcDirAndDestFileArgs),
+    GenerateBadges(MarkdownSrcDirAndDestFileArgs),
 
-    /// Generate reference definitions from code examples'
-    /// dependencies
-    GenerateRefDefs(SrcDirAndDestFileArgs),
+    /// Generate reference definitions
+    /// from code examples' dependencies
+    GenerateFromDependencies(DependenciesDirAndDestFileArgs),
 }
 
 pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
@@ -63,41 +64,29 @@ pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
             )?;
             println!("Done.");
         }
-        RefDefsSubCommand::GenerateRefDefs(args) => {
-            let markdown_src_dir_path = args
-                .src
-                .markdown_src_dir_path
-                .unwrap_or(PathBuf::from("./src/"))
+        RefDefsSubCommand::GenerateFromDependencies(args) => {
+            let manifest_dir_path = args
+                .manifest_dir_path
+                .unwrap_or(PathBuf::from("."))
                 .canonicalize()?;
             let refdef_dest_path = args
                 .dest
                 .file_path
-                .unwrap_or(PathBuf::from("./book/temp/badge_refs.md"));
+                .unwrap_or(PathBuf::from("./book/temp/dependencies_refs.md"));
             println!(
-                "Parsing markdown files found in {} and writing new (github badge) reference definitions to {}...",
-                markdown_src_dir_path.display(),
-                refdef_dest_path.display()
+                "Creating reference definitions in {} from the manifest in {}...",
+                refdef_dest_path.display(),
+                manifest_dir_path.display()
             );
+            // TODO
+            //     mdbook_utils::generate_refdefs_to(
+            //         &deps_path,
+            //         "/code/src",
+            //         refdef_dest_path,
+            //     )?;
         } /* _ => {
            *     println!("NOT IMPLEMENTED");
            * } */
     }
     Ok(())
 }
-
-// fn gen_ref_defs() -> Result<()> {
-//     let root_path = std::fs::canonicalize("..")?;
-//     let deps_path = root_path.join("deps/");
-//     if !deps_path.exists() {
-//         bail!("The folder {:?} does not exist.", deps_path);
-//     }
-//     let refdef_dest_path = "/code/book/temp/merged_ref_defs.md";
-
-//     mdbook_utils::generate_refdefs_to(
-//         &deps_path,
-//         "/code/src",
-//         refdef_dest_path,
-//     )?;
-
-//     Ok(())
-// }

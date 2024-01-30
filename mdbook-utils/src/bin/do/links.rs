@@ -9,12 +9,12 @@ use super::args::*;
 #[derive(Subcommand, Debug)]
 pub(crate) enum LinksSubCommand {
     /// Write all existing links to a Markdown file
-    WriteAll(SrcDirAndDestFileArgs),
+    WriteAll(MarkdownSrcDirAndDestFileArgs),
 
     // TODO finish
     /// Write all existing inline / autolinks (i.e., not
     /// written as reference-style links) to a Markdown file
-    WriteInline(SrcDirAndDestFileArgs),
+    WriteInline(MarkdownSrcDirAndDestFileArgs),
 
     /// Identify duplicate links / labels
     DuplicateLinks,
