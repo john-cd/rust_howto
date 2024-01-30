@@ -1,5 +1,13 @@
 # TODO
 
+test new sitemap
+  <url>
+    <loc>https://john-cd.com/rust_howto/index.html</loc>
+  </url>
+  <url>
+    <loc>https://john-cd.com/rust_howto/index.html</loc>
+  </url>
+
 - utils:
   - retest all commands / subcommands
   - review <https://docs.rs/markdown-gen/1.2.1/markdown_gen/markdown/index.html>
