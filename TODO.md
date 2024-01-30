@@ -2,6 +2,9 @@
 
 - utils:
   - retest all commands / subcommands
+  - review <https://docs.rs/markdown-gen/1.2.1/markdown_gen/markdown/index.html>
+  - review <https://crates.io/crates/parse-hyperlinks>
+  - align with CommonMark spec?
 
 - merge dev branch into main! just prep:
   - fix failing examples
@@ -17,6 +20,8 @@
 - fix commented examples
 
 - Rename some of the link IDs in *refs.md - WIP
+
+- consider publishing the utils crate
 
 - pull request to little book of rust books
 
