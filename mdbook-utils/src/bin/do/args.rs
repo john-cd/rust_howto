@@ -68,7 +68,6 @@ pub(crate) enum RefDefsSubCommand {
 
     /// Generate badges (reference definitions) for e.g. Github links
     GenerateBadges(SrcDirAndDestFileArgs),
-
     // Generate reference definitions from code examples' dependencies
     // GenerateRefDefs(SrcDirAndDestFileArgs),
 }
