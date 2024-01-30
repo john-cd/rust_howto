@@ -16,11 +16,11 @@ pub(crate) enum LinksSubCommand {
     /// written as reference-style links) to a Markdown file
     WriteInline(MarkdownSrcDirAndDestFileArgs),
 
-    /// Identify duplicate links / labels
-    DuplicateLinks,
+    /// Identify duplicate links / labels and write to a Markdown file
+    DuplicateLinks(MarkdownSrcDirAndDestFileArgs),
 
-    /// Identify broken links (i.e. without reference definition)
-    BrokenLinks,
+    /// Identify broken links (i.e. without reference definition) and write to a Markdown file
+    BrokenLinks(MarkdownSrcDirAndDestFileArgs),
 }
 
 pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
@@ -64,9 +64,46 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
             )?;
             println!("Done.");
         }
-        _ => {
+        LinksSubCommand::DuplicateLinks(args) => {
+            let markdown_src_dir_path = args
+                .src
+                .markdown_src_dir_path
+                .unwrap_or(PathBuf::from("./src/"))
+                .canonicalize()?;
+            let links_dest_path = args
+                .dest
+                .file_path
+                .unwrap_or(PathBuf::from("/code/book/temp/inline_links.md"));
+            println!(
+                "Parsing markdown files found in {} and writing duplicates links to {}...",
+                markdown_src_dir_path.display(),
+                links_dest_path.display()
+            );
+            // TODO
             println!("NOT IMPLEMENTED");
+            println!("Done.");
         }
+        LinksSubCommand::BrokenLinks(args) => {
+            let markdown_src_dir_path = args
+                .src
+                .markdown_src_dir_path
+                .unwrap_or(PathBuf::from("./src/"))
+                .canonicalize()?;
+            let links_dest_path = args
+                .dest
+                .file_path
+                .unwrap_or(PathBuf::from("/code/book/temp/inline_links.md"));
+            println!(
+                "Parsing markdown files found in {} and writing broken links to {}...",
+                markdown_src_dir_path.display(),
+                links_dest_path.display()
+            );
+            // TODO
+            println!("NOT IMPLEMENTED");
+            println!("Done.");
+        } /* _ => {
+           *     println!("NOT IMPLEMENTED");
+           * } */
     }
     Ok(())
 }

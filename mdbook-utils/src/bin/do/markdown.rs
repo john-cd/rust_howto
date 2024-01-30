@@ -19,11 +19,11 @@ pub(crate) enum MarkdownSubCommand {
     /// Replace {{#include file.md}} by the file contents
     ReplaceIncludesByContents(MarkdownDirArgs),
 
-    /// Generate categories.md
-    GenerateCategories,
+    /// Generate a listing of crates.io dependencies and write to a Markdown file
+    GenerateCategories(DestFilePathArgs),
 
-    /// Generate crates.md
-    GenerateCrates,
+    /// Generate a crate index and write to a Markdown file
+    GenerateCrates(MarkdownSrcDirAndDestFileArgs),
     // TODO autoreplace autolinks / inline links by ref links
 }
 
@@ -92,9 +92,33 @@ pub(crate) fn run(subcmd: MarkdownSubCommand) -> Result<()> {
                 println!("Cancelled.");
             }
         }
-        _ => {
+        MarkdownSubCommand::GenerateCategories(args) => {
+            let categories_dest_path = args
+                .file_path
+                .unwrap_or(PathBuf::from("./book/temp/categories.md"));
+            println!(
+                "Writing crates.io categories to {}...",
+                categories_dest_path.display()
+            );
+            // TODO
             println!("NOT IMPLEMENTED");
+            println!("Done.");
         }
+        MarkdownSubCommand::GenerateCrates(args) => {
+            let crates_dest_path = args
+                .dest
+                .file_path
+                .unwrap_or(PathBuf::from("./book/temp/crates.md"));
+            println!(
+                "Writing crate index to {}...",
+                crates_dest_path.display()
+            );
+            // TODO
+            println!("NOT IMPLEMENTED");
+            println!("Done.");
+        } /* _ => {
+           *     println!("NOT IMPLEMENTED");
+           * } */
     }
     Ok(())
 }
