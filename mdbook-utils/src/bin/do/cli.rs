@@ -51,11 +51,11 @@ pub(crate) enum Command {
 
     /// Generate a sitemap.xml file from the list of Markdown files
     /// in a source directory
-    SiteMap(SrcDirAndUrlAndDestFileArgs),
+    SiteMap(MarkdownSrcDirUrlAndDestFileArgs),
 
     /// Parse the entire Markdown code as events
     /// and write them to a file.
-    Debug(SrcDirAndDestFileArgs),
+    Debug(MarkdownSrcDirAndDestFileArgs),
 
     /// Test Markdown parsing
     Test,

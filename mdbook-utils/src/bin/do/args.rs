@@ -22,7 +22,7 @@ pub(crate) struct MarkdownDirArgs {
 /// Markdown source directory and destination file
 #[derive(Debug, Args)]
 #[command(flatten_help = true)]
-pub(crate) struct SrcDirAndDestFileArgs {
+pub(crate) struct MarkdownSrcDirAndDestFileArgs {
     /// Source directory containing the Markdown files
     #[command(flatten)]
     pub(crate) src: MarkdownDirArgs,
@@ -47,7 +47,7 @@ pub(crate) struct DependenciesDirAndDestFileArgs {
 
 /// Markdown source directory and destination directory
 #[derive(Args, Debug)]
-pub(crate) struct SrcDirAndDestDirArgs {
+pub(crate) struct MarkdownSrcDirAndDestDirArgs {
     /// Source directory containing the Markdown files
     #[command(flatten)]
     pub(crate) src: MarkdownDirArgs,
@@ -59,7 +59,7 @@ pub(crate) struct SrcDirAndDestDirArgs {
 
 #[derive(Debug, Args)]
 #[command(flatten_help = true)]
-pub(crate) struct SrcDirAndUrlAndDestFileArgs {
+pub(crate) struct MarkdownSrcDirUrlAndDestFileArgs {
     /// Source directory containing the source Markdown files
     #[command(flatten)]
     pub(crate) src: MarkdownDirArgs,

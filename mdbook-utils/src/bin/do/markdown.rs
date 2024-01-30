@@ -10,7 +10,7 @@ use super::args::*;
 #[derive(Subcommand, Debug)]
 pub(crate) enum MarkdownSubCommand {
     /// Copy Rust code examples from the Markdown into .rs files.
-    ExtractCodeExamples(SrcDirAndDestDirArgs),
+    ExtractCodeExamples(MarkdownSrcDirAndDestDirArgs),
 
     /// Replace Rust code examples from the Markdown by {{#include
     /// ...}} statements
