@@ -78,7 +78,7 @@ fn parse_url(
 ) -> Result<url::Url, Box<dyn std::error::Error + Send + Sync + 'static>> {
     // Parse an absolute URL from a string.
     let url =
-        url::Url::parse(s).or_else(|_| Err(anyhow!("Invalid URL: {s}")))?;
+        url::Url::parse(s).map_err(|_| anyhow!("Invalid URL: {s}"))?;
     Ok(url)
 }
 
