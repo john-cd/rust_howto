@@ -1,4 +1,4 @@
-# This crate is a placeholder meant to be published to crates.io
+# This crate is a placeholder published to crates.io to make rust_howto searchable there.
 [package]
 name = "rust_howto"
 version.workspace = true
