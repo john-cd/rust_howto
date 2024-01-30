@@ -1,21 +1,5 @@
-# Utilities
+# mdBook Utilities
 
-This package contains tools to help manage the book.
+This package contains tools to manage links, reference definitions, code examples in Markdown files, especially `mdbook` source directories."
 
-## Sitemap.xml generation
-
-```bash
-cargo run -p mdbook-utils --bin sitemap
-# or simply
-just sitemap
-```
-
-## Link / reference / markdown management (WIP)
-
-```bash
-cargo run -p mdbook-utils --bin do -- <command>
-# or
-just do <command>
-```
-
-Run without arguments to display the the list of commands.
+Run the tool without arguments to display the the list of commands.
