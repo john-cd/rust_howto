@@ -6,3 +6,7 @@
 The "Rust How-To" book is deployed on <https://john-cd.com/rust_howto>
 
 GitHub repo: <https://github.com/john-cd/rust_howto>
+
+## Note
+
+This is a placeholder crate. You can `cargo install rust_howto`, but the executable does not do much apart from printing key values from the manifest :-)
