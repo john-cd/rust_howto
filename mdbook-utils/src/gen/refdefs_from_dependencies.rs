@@ -31,7 +31,7 @@ fn generate_refdefs_for_one_library(
     library_name: &str,
     package_repo_url: Option<&str>,
 ) -> Vec<Link<'static>> {
-    let mut buf = Vec::new();
+    //let mut buf = Vec::new();
 
     // // [arrow-rs]: https://docs.rs/arrow/
     // let docs_rs_url = format!("https://docs.rs/{}", library_name);
@@ -50,5 +50,7 @@ fn generate_refdefs_for_one_library(
     //     .set_image_url(badge_image_url.to_string())
     //     .build();
 
-    buf
+    //buf
+
+    Vec::new()
 }
