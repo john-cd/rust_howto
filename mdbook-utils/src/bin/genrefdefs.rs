@@ -9,7 +9,11 @@ fn main() -> Result<()> {
     }
     let refdef_dest_path = "/code/book/temp/merged_ref_defs.md";
 
-    utils::generate_refdefs_to(&deps_path, "/code/src", refdef_dest_path)?;
+    mdbook_utils::generate_refdefs_to(
+        &deps_path,
+        "/code/src",
+        refdef_dest_path,
+    )?;
 
     Ok(())
 }

@@ -24,6 +24,3 @@ where
     }
     Ok(())
 }
-
-#[inline]
-fn write_ref_def_to() {}

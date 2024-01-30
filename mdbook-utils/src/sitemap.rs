@@ -16,8 +16,8 @@ use tracing::error;
 use tracing::info;
 
 // Write in the sitemap.xml format to a file, given a list of links.
-fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
-    let mut writer = Writer::new_with_indent(&mut dest_file, b' ', 2);
+fn write_xml<W: Write>(links: Vec<String>, w: &mut W) -> Result<()> {
+    let mut writer = Writer::new_with_indent(w, b' ', 2);
 
     writer.write_bom()?;
     // Insert <?xml version="1.0" encoding="UTF-8"?>
@@ -45,12 +45,20 @@ fn write_xml(links: Vec<String>, mut dest_file: File) -> Result<()> {
     Ok::<_, Error>(())
 }
 
-// Create a sitemap.xml file from the  list of markdown files in `src`
-fn main() -> Result<()> {
-    let src = Path::new("/code/src/");
-
+// Create a sitemap.xml file from the  list of markdown files
+// in a source directory.
+pub(crate) fn generate_sitemap<P1, W>(
+    src_dir_path: P1,
+    base_url: url::Url,
+    w: &mut W,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    W: Write,
+{
     // Locate the Markdown files
-    let paths: Vec<PathBuf> = utils::fs::find_markdown_files_in(src)?;
+    let paths: Vec<PathBuf> =
+        crate::fs::find_markdown_files_in(src_dir_path.as_ref())?;
 
     // Remove a few exceptions
     let exclude = ["refs.md", "SUMMARY.md"];
@@ -66,13 +74,12 @@ fn main() -> Result<()> {
     // debug: let l = l.map(|path| { tracing::debug!("{:?}", path); path
     // });
 
-    let domain = "https://john-cd.com/rust_howto/";
     let l = l.map(|p: PathBuf| {
         p.with_extension("html")
-            .strip_prefix(src) // Result<&Path, _>
+            .strip_prefix(src_dir_path.as_ref()) // Result<&Path, _>
             .map_err(anyhow::Error::from)
             .and_then(|p| p.to_str().ok_or(anyhow!("Non UTF-8 path: {:?}", p)))
-            .map(|s| format!("{domain}{s}")) // Prefix with domain
+            .map(|s| format!("{base_url}{s}")) // Prefix with domain
             .map(|s| s.replace("intro.html", "index.html"))
     });
 
@@ -86,16 +93,9 @@ fn main() -> Result<()> {
     if !errors.is_empty() {
         error!("Errors: {:?}", errors);
     }
-    // Create directory
-    let dest_dir = "/code/book/html/";
-    utils::fs::create_dir(dest_dir)?;
 
     // Write the sitemap
-    let sitemap_full_path: String = format!("{dest_dir}sitemap.xml");
-
-    // File::create will create a file if it does not exist, and will
-    // truncate it if it does.
-    write_xml(links, File::create(Path::new(sitemap_full_path.as_str()))?)?;
+    write_xml(links, w)?;
     info!("sitemap.xml created.");
     Ok(())
 }

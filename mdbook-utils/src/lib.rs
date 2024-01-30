@@ -7,6 +7,7 @@ mod gen;
 mod link;
 pub mod markdown;
 mod parser;
+mod sitemap;
 pub mod test_markdown;
 mod write_from_parser;
 
@@ -15,6 +16,7 @@ use std::io::BufWriter;
 use std::io::Write;
 use std::path::Path;
 
+use anyhow::bail;
 use anyhow::Result;
 use pulldown_cmark::LinkType;
 use pulldown_cmark::Parser;
@@ -236,6 +238,48 @@ where
     // let links = gen::merge_links(existing_links, new_links);
     // link::write_ref_defs_to(links, &mut f)?;
     // write links
+    Ok(())
+}
+
+// SITEMAP
+
+/// Create a sitemap.xml file from the list of Markdown files in a
+/// source directory
+///
+/// src_dir_path: path to the source directory
+///
+/// domain: base URL e.g. https://john-cd.com/rust_howto/
+///
+/// dest_file_path: the path to the destination file e.g.
+/// book/html/sitemap.xml
+pub fn generate_sitemap<P1, P2>(
+    src_dir_path: P1,
+    base_url: url::Url,
+    dest_file_path: P2,
+) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    // Verify source path
+    let src_dir_path = fs::check_is_dir(src_dir_path)?;
+
+    // Returns an error whether this URL is a cannot-be-a-base URL,
+    // meaning that parsing a relative URL string with this URL
+    // as the base will return an error.
+    if (base_url.cannot_be_a_base()) {
+        bail!("Invalid URL - cannot be a base: {}", base_url)
+    }
+
+    // Create the parent folders of the destination file, if needed
+    fs::create_parent_dir_for(dest_file_path.as_ref())?;
+
+    // File::create will create a file if it does not exist,
+    // and will truncate it if it does.
+    let mut f = File::create(dest_file_path)?;
+
+    crate::sitemap::generate_sitemap(src_dir_path, base_url, &mut f)?;
+
     Ok(())
 }
 

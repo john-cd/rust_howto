@@ -9,6 +9,7 @@
 
 use std::path::PathBuf;
 
+use anyhow::anyhow;
 use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
@@ -43,12 +44,16 @@ pub(crate) enum Command {
     #[command(subcommand)]
     Links(LinksSubCommand),
 
-    /// Manage code examples and includes
+    /// Manage code blocks (embedded examples) and includes
     #[command(subcommand)]
     Markdown(MarkdownSubCommand),
 
-    /// Parse the entire Markdown code as events and write them to a
-    /// file.
+    /// Generate a sitemap.xml file from the list of Markdown files
+    /// in a source directory
+    SiteMap(SrcDirAndUrlAndDestFileArgs),
+
+    /// Parse the entire Markdown code as events
+    /// and write them to a file.
     Debug(SrcDirAndDestFileArgs),
 
     /// Test Markdown parsing
@@ -143,6 +148,31 @@ pub(crate) struct MarkdownDirArgs {
     /// Markdown files
     #[arg(short, long="markdown-dir", value_name = "DIR", value_hint = clap::ValueHint::DirPath)]
     pub(crate) markdown_src_dir_path: Option<PathBuf>,
+}
+
+#[derive(Debug, Args)]
+#[command(flatten_help = true)]
+pub(crate) struct SrcDirAndUrlAndDestFileArgs {
+    /// Source directory containing the Markdown files (optional)
+    #[command(flatten)]
+    pub(crate) src: MarkdownDirArgs,
+
+    #[arg(short='b', long="base-url", value_name = "URL", value_parser = parse_url)]
+    pub(crate) base_url: Option<url::Url>,
+
+    /// The path to the file to write (optional)
+    #[command(flatten)]
+    pub(crate) dest: DestFilePathArgs,
+}
+
+/// Parse a URL
+fn parse_url(
+    s: &str,
+) -> Result<url::Url, Box<dyn std::error::Error + Send + Sync + 'static>> {
+    // Parse an absolute URL from a string.
+    let url =
+        url::Url::parse(s).or_else(|_| Err(anyhow!("Invalid URL: {s}")))?;
+    Ok(url)
 }
 
 // // Example global args

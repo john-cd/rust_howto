@@ -6,7 +6,7 @@ members = [
     # examples independent from the book markdown
     "xmpl/*",
     # utilities to build the book
-    "utils"
+    "mdbook-utils"
     # crates.io placeholder
 ,   "publish"]
 exclude = []
