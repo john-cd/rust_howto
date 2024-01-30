@@ -9,7 +9,7 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use tracing::info;
 
-/// Regex to find {{#include <file>.md}}
+/// Regex to find {{#include \<file\>.md}}
 static INSERT_REGEX: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"\{\{#include (?<filepath>\S+?\.md)\}\}").unwrap()
 });

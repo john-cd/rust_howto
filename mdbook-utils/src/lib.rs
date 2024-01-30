@@ -248,7 +248,7 @@ where
 ///
 /// src_dir_path: path to the source directory
 ///
-/// domain: base URL e.g. https://john-cd.com/rust_howto/
+/// domain: base URL e.g. <https://john-cd.com/rust_howto/>
 ///
 /// dest_file_path: the path to the destination file e.g.
 /// book/html/sitemap.xml

@@ -169,8 +169,8 @@ impl<'a> Link<'a> {
         format!("[{}]( {} )", self.get_text(), self.get_url_and_title()).into()
     }
 
-    /// Return a reference-style Markdown link: [text][label] or
-    /// [text/label]
+    /// Return a reference-style Markdown link: \[text\]\[label\] or
+    /// \[text/label\]
     pub(crate) fn to_reference_link(&self) -> Cow<'a, str> {
         let txt: String = self.get_text().into();
         let label: String = self.get_label().into();
@@ -181,8 +181,8 @@ impl<'a> Link<'a> {
         }
     }
 
-    /// Return a Markdown reference definition: [label]: url or
-    /// [label]: url "title"
+    /// Return a Markdown reference definition: \[label\]: url or
+    /// \[label\]: url "title"
     pub(crate) fn to_reference_definition(&self) -> Cow<'a, str> {
         format!("[{}]: {}", self.get_label(), self.get_url_and_title()).into()
     }
@@ -204,7 +204,7 @@ impl<'a> Link<'a> {
     }
 
     /// Return the label for the badge reference e.g. image_label or
-    /// <label>-badge
+    /// \<label\>-badge
     fn get_badge_label(&self) -> Cow<'a, str> {
         if let Some(ref img_lbl) = self.image_label {
             img_lbl.clone()
@@ -231,7 +231,7 @@ impl<'a> Link<'a> {
     }
 
     /// Return a badge image that is clickable:
-    /// [ ![ alt-text ][ badge-label ] ][ label ]
+    /// \[ !\[ alt-text \]\[ badge-label \] \]\[ label \]
     pub(crate) fn to_link_with_badge(&self) -> Cow<'a, str> {
         format!(
             "[![{}][{}]][{}]",

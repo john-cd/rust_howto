@@ -17,7 +17,8 @@ pub(crate) struct Dependency<'a> {
     pub(crate) package_repo_url: Option<Cow<'a, str>>,
 }
 
-// Parse `Cargo.toml` and returns the list of dependencies:
+/// Parse `Cargo.toml` and returns the list of dependencies:
+///
 /// Calls cargo tree --depth 1 --edges normal --prefix none --format
 /// {lib},{r} --locked (immediate children, no-dev/build, flat list,
 /// crate name and package repository URL)

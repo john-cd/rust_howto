@@ -12,8 +12,8 @@ use pulldown_cmark::Tag;
 /// parser: source Markdown parser
 /// w: writer / file to write to
 ///
-/// See https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html
-/// and https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html
+/// See <https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Event.html>
+/// and <https://docs.rs/pulldown-cmark/latest/pulldown_cmark/enum.Tag.html>
 pub(crate) fn write_raw_to<W>(parser: Parser, w: &mut W) -> Result<()>
 where
     W: Write,
