@@ -35,7 +35,7 @@ where
 }
 
 /// Create a directory (including parent directories as needed)
-pub fn create_dir<P>(dir_path: P) -> Result<(), Error>
+pub(crate) fn create_dir<P>(dir_path: P) -> Result<(), Error>
 where
     P: AsRef<Path>,
 {
