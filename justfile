@@ -92,7 +92,7 @@ _copystatic:
 
 # Generate the sitemap.xml file
 _sitemap:
-  cargo run -p utils --bin sitemap
+  cargo run -p mdbook-utils --bin do site-map
 
 # Test all examples in the book's Markdown
 test: _build-book
@@ -114,23 +114,7 @@ serve: _build-book
 # Prepare for git push
 prep: fmtall clean build clippyall testall build serve
 
-## Utilities --------------------------------------
-
-# Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
-[confirm]
-update:
-  cargo update
-
-default := 'help'
-empty := ''
-
-# Manage links, ref definitions, etc...
-do cmd=default subcmd=empty:
-  cargo run -p utils --bin do -- {{cmd}} {{subcmd}}
-
-# Run a specific example (among those in `deps/examples`)
-run xmpl:
-  cargo run -p deps --example {{xmpl}}
+## Documentation --------------------------------------
 
 # Build and display the `cargo doc` documentation for a specific package (e.g. deps)
 [unix]
@@ -151,3 +135,21 @@ docall:
   # We could also use `live server` for dynamic reloading.
   # See README.md for other alternatives, such as:
   # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
+
+## Utilities --------------------------------------
+
+# Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
+[confirm]
+update:
+  cargo update
+
+default := 'help'
+empty := ''
+
+# Manage links, ref definitions, etc...
+do cmd=default subcmd=empty:
+  cargo run -p mdbook-utils --bin do -- {{cmd}} {{subcmd}}
+
+# Run a specific example (among those in `deps/examples`)
+run xmpl:
+  cargo run -p deps --example {{xmpl}}

@@ -1,6 +1,7 @@
 use std::env;
 use std::path::PathBuf;
 
+use anyhow::bail;
 use anyhow::Result;
 use args::*;
 use dialoguer::Confirm;
@@ -234,3 +235,20 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
+
+// fn gen_ref_defs() -> Result<()> {
+//     let root_path = std::fs::canonicalize("..")?;
+//     let deps_path = root_path.join("deps/");
+//     if !deps_path.exists() {
+//         bail!("The folder {:?} does not exist.", deps_path);
+//     }
+//     let refdef_dest_path = "/code/book/temp/merged_ref_defs.md";
+
+//     mdbook_utils::generate_refdefs_to(
+//         &deps_path,
+//         "/code/src",
+//         refdef_dest_path,
+//     )?;
+
+//     Ok(())
+// }
