@@ -143,11 +143,11 @@ docall:
 update:
   cargo update
 
-default := 'help'
+help := 'help'
 empty := ''
 
 # Manage links, ref definitions, etc...
-do cmd=default subcmd=empty:
+do cmd=help subcmd=empty:
   cargo run -p mdbook-utils --bin do -- {{cmd}} {{subcmd}}
 
 # Run a specific example (among those in `deps/examples`)

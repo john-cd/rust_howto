@@ -86,13 +86,16 @@ where
     // Separate links from errors and print errors if any
     let (links, errors): (Vec<Result<_, _>>, Vec<Result<_, _>>) =
         l.partition(Result::is_ok);
-    let links: Vec<String> = links.into_iter().map(Result::unwrap).collect();
+    let mut links: Vec<String> = links.into_iter().map(Result::unwrap).collect();
     let errors: Vec<Error> =
         errors.into_iter().map(Result::unwrap_err).collect();
     // debug: tracing::debug!("Links: {:?}", links);
     if !errors.is_empty() {
         error!("Errors: {:?}", errors);
     }
+
+    links.dedup();
+    links.sort();
 
     // Write the sitemap
     write_xml(links, w)?;
