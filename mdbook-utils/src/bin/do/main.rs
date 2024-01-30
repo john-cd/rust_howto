@@ -1,12 +1,14 @@
 use std::env;
 use std::path::PathBuf;
 
-use anyhow::bail;
 use anyhow::Result;
-use args::*;
-use dialoguer::Confirm;
+use cli::*;
 
 mod args;
+mod cli;
+mod links;
+mod markdown;
+mod refdefs;
 
 fn main() -> Result<()> {
     let key = "RUST_LOG";
@@ -16,169 +18,18 @@ fn main() -> Result<()> {
 
     tracing_subscriber::fmt::init();
 
-    let Cli { command: cmd } = args::parse_arguments();
+    let Cli { command: cmd } = cli::parse_arguments();
 
     match cmd {
         Command::RefDefs(subcmd) => {
-            match subcmd {
-                RefDefsSubCommand::Write(args) => {
-                    let markdown_src_dir_path = args
-                        .src
-                        .markdown_src_dir_path
-                        .unwrap_or(PathBuf::from("./src/"))
-                        .canonicalize()?;
-                    let refdef_dest_path = args.dest.file_path.unwrap_or(
-                        PathBuf::from("./book/temp/existing_refs.md"),
-                    );
-                    println!(
-                        "Parsing markdown files found in {} and writing existing reference definitions to {}...",
-                        markdown_src_dir_path.display(),
-                        refdef_dest_path.display()
-                    );
-                    mdbook_utils::write_ref_defs_to(
-                        markdown_src_dir_path,
-                        refdef_dest_path,
-                    )?;
-                    println!("Done.");
-                }
-                RefDefsSubCommand::GenerateBadges(args) => {
-                    let markdown_src_dir_path = args
-                        .src
-                        .markdown_src_dir_path
-                        .unwrap_or(PathBuf::from("./src/"))
-                        .canonicalize()?;
-                    let refdef_dest_path = args
-                        .dest
-                        .file_path
-                        .unwrap_or(PathBuf::from("./book/temp/badge_refs.md"));
-                    println!(
-                        "Parsing markdown files found in {} and writing new (github badge) reference definitions to {}...",
-                        markdown_src_dir_path.display(),
-                        refdef_dest_path.display()
-                    );
-                    mdbook_utils::generate_badges(
-                        markdown_src_dir_path,
-                        refdef_dest_path,
-                    )?;
-                    println!("Done.");
-                } /* _ => {
-                   *     println!("NOT IMPLEMENTED");
-                   * } */
-            }
+            refdefs::run(subcmd)?;
         }
         Command::Links(subcmd) => {
-            match subcmd {
-                LinksSubCommand::WriteAll(args) => {
-                    let markdown_src_dir_path = args
-                        .src
-                        .markdown_src_dir_path
-                        .unwrap_or(PathBuf::from("./src/"))
-                        .canonicalize()?;
-                    let links_dest_path = args.dest.file_path.unwrap_or(
-                        PathBuf::from("/code/book/temp/all_links.md"),
-                    );
-                    println!(
-                        "Parsing markdown files found in {} and writing existing links to {}...",
-                        markdown_src_dir_path.display(),
-                        links_dest_path.display()
-                    );
-                    mdbook_utils::write_links(
-                        markdown_src_dir_path,
-                        links_dest_path,
-                    )?;
-                    println!("Done.");
-                }
-                LinksSubCommand::WriteInline(args) => {
-                    let markdown_src_dir_path = args
-                        .src
-                        .markdown_src_dir_path
-                        .unwrap_or(PathBuf::from("./src/"))
-                        .canonicalize()?;
-                    let links_dest_path = args.dest.file_path.unwrap_or(
-                        PathBuf::from("/code/book/temp/inline_links.md"),
-                    );
-                    println!(
-                        "Parsing markdown files found in {} and writing found inline / auto links to {}",
-                        markdown_src_dir_path.display(),
-                        links_dest_path.display()
-                    );
-                    mdbook_utils::write_inline_links(
-                        markdown_src_dir_path,
-                        links_dest_path,
-                    )?;
-                    println!("Done.");
-                } /* _ => {
-                   *     println!("NOT IMPLEMENTED");
-                   * } */
-            }
+            links::run(subcmd)?;
         }
-        Command::Markdown(subcmd) => match subcmd {
-            args::MarkdownSubCommand::ExtractCodeExamples(args) => {
-                let markdown_src_dir_path = args
-                    .src
-                    .markdown_src_dir_path
-                    .unwrap_or(PathBuf::from("./drafts/"))
-                    .canonicalize()?;
-                let code_dest_dir_path =
-                    args.dest_dir_path.unwrap_or(PathBuf::from("./temp/"));
-                println!(
-                    "Parsing Markdown files found in {} and copying found Rust code blocks to {}",
-                    markdown_src_dir_path.display(),
-                    code_dest_dir_path.display()
-                );
-                mdbook_utils::markdown::extract_code_from_all_markdown_files_in(
-                    markdown_src_dir_path,
-                    code_dest_dir_path,
-                )?;
-                println!("Done.");
-            }
-            args::MarkdownSubCommand::ReplaceCodeExamplesByIncludes(args) => {
-                let markdown_src_dir_path = args
-                    .markdown_src_dir_path
-                    .unwrap_or(PathBuf::from("./drafts/"))
-                    .canonicalize()?;
-                println!(
-                    "About to remove Rust code examples from Markdown files in {}, replacing them with {{#include ... }} statements...",
-                    markdown_src_dir_path.display()
-                );
-                let confirmation = Confirm::new()
-                    .with_prompt("Do you want to continue?")
-                    .default(false)
-                    .interact()?;
-                if confirmation {
-                    mdbook_utils::markdown::remove_code_from_all_markdown_files_in(
-                        markdown_src_dir_path,
-                    )?;
-                    println!("Done.");
-                } else {
-                    println!("Cancelled.");
-                }
-            }
-            args::MarkdownSubCommand::ReplaceIncludesByContents(args) => {
-                let markdown_src_dir_path = args
-                    .markdown_src_dir_path
-                    .unwrap_or(PathBuf::from("./drafts/"))
-                    .canonicalize()?;
-                println!(
-                    "About to parse Markdown files found in {} and replace any {{#include <file>.md}} statements by the corresponding file contents (excluding includes of *refs.md files)...",
-                    markdown_src_dir_path.display()
-                );
-                let confirmation = Confirm::new()
-                    .with_prompt("Do you want to continue?")
-                    .default(false)
-                    .interact()?;
-                if confirmation {
-                    mdbook_utils::markdown::include_in_all_markdown_files_in(
-                        markdown_src_dir_path,
-                    )?;
-                    println!("Done.");
-                } else {
-                    println!("Cancelled.");
-                }
-            } /* _ => {
-               *     println!("NOT IMPLEMENTED");
-               * } */
-        },
+        Command::Markdown(subcmd) => {
+            markdown::run(subcmd)?;
+        }
         Command::SiteMap(args) => {
             let markdown_src_dir_path = args
                 .src
@@ -235,20 +86,3 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
-// fn gen_ref_defs() -> Result<()> {
-//     let root_path = std::fs::canonicalize("..")?;
-//     let deps_path = root_path.join("deps/");
-//     if !deps_path.exists() {
-//         bail!("The folder {:?} does not exist.", deps_path);
-//     }
-//     let refdef_dest_path = "/code/book/temp/merged_ref_defs.md";
-
-//     mdbook_utils::generate_refdefs_to(
-//         &deps_path,
-//         "/code/src",
-//         refdef_dest_path,
-//     )?;
-
-//     Ok(())
-// }
