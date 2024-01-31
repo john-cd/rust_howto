@@ -19,7 +19,9 @@ fn is_hidden(entry: &DirEntry) -> bool {
 /// Locate Markdown files within a directory
 /// If root_dir_path is a file, then it is the first and only item
 /// yielded
-pub(crate) fn find_markdown_files_in<P>(root_dir_path: P) -> Result<Vec<PathBuf>>
+pub(crate) fn find_markdown_files_in<P>(
+    root_dir_path: P,
+) -> Result<Vec<PathBuf>>
 where
     P: AsRef<Path>,
 {

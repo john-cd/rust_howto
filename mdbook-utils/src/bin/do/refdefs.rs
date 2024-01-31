@@ -25,7 +25,7 @@ pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
         RefDefsSubCommand::Write(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let refdef_dest_path = args
@@ -46,7 +46,7 @@ pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
         RefDefsSubCommand::GenerateBadges(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let refdef_dest_path = args
@@ -65,26 +65,31 @@ pub(crate) fn run(subcmd: RefDefsSubCommand) -> Result<()> {
             println!("Done.");
         }
         RefDefsSubCommand::GenerateFromDependencies(args) => {
-            let manifest_dir_path = args
-                .manifest_dir_path
+            let markdown_src_dir_path = args
+                .src
+                .markdown_dir_path
+                .unwrap_or(PathBuf::from("./src/"))
+                .canonicalize()?;
+            let cargo_toml_dir_path = args
+                .manifest
+                .cargo_toml_dir_path
                 .unwrap_or(PathBuf::from("."))
                 .canonicalize()?;
-            let refdef_dest_path = args
+            let refdef_dest_file_path = args
                 .dest
                 .file_path
                 .unwrap_or(PathBuf::from("./book/temp/dependencies_refs.md"));
             println!(
-                "Creating reference definitions in {} from the manifest in {}...",
-                refdef_dest_path.display(),
-                manifest_dir_path.display()
+                "Creating reference definitions in {} from the manifest in {} and Markdown sources in {}...",
+                refdef_dest_file_path.display(),
+                cargo_toml_dir_path.display(),
+                markdown_src_dir_path.display()
             );
-            // TODO
-            //     mdbook_utils::generate_refdefs_to(
-            //         &deps_path,
-            //         "/code/src",
-            //         refdef_dest_path,
-            //     )?;
-            println!("NOT IMPLEMENTED");
+            mdbook_utils::generate_refdefs_to(
+                cargo_toml_dir_path,
+                markdown_src_dir_path,
+                refdef_dest_file_path,
+            )?;
             println!("Done.");
         } /* _ => {
            *     println!("NOT IMPLEMENTED");
