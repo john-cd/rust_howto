@@ -1,6 +1,7 @@
 # TODO
 
-- utils:
+- mdbook-utils:
+  - add to README
   - retest all commands / subcommands
   - review <https://docs.rs/markdown-gen/1.2.1/markdown_gen/markdown/index.html>
   - review <https://crates.io/crates/parse-hyperlinks>
@@ -15,15 +16,23 @@
   - auto derive
   - config, concerns
 
+- update main README
+
 - fix commented examples
 
 - review GA / GSC - issues with redirects??
 
 - Rename some of the link IDs in *refs.md - WIP
 
-test new sitemap with new website layout
+- test new sitemap with new SUMMARY.md
 
-- consider publishing the utils crate
+- finish new commands in mdbook-utils
+  - lib.rs generate_refdefs_to
+  - write_inline_links remove internal links
+  - fix TODOs
+  - add duplicate links
+  - add broken links
+  - publish the crate
 
 - pull request to little book of rust books
 
