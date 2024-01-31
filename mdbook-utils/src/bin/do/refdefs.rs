@@ -13,10 +13,13 @@ pub(crate) enum RefDefsSubCommand {
 
     // TODO merge with generation from dependencies?
     /// Generate badges (reference definitions) for e.g. Github links
+    #[command(name="badges")]
     GenerateBadges(MarkdownSrcDirAndDestFileArgs),
 
     /// Generate reference definitions
-    /// from code examples' dependencies
+    /// from the dependencies of the code examples
+    /// and merge them with those found in the Markdown source directory
+    #[command(name="from-dependencies")]
     GenerateFromDependencies(DependenciesDirAndDestFileArgs),
 }
 

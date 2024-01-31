@@ -6,6 +6,7 @@
 //! <https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html>
 //!
 //! <https://github.com/clap-rs/clap/tree/master/examples>
+#![allow(dead_code)]
 
 use clap::Parser;
 use clap::Subcommand;
@@ -38,7 +39,7 @@ pub(crate) struct Cli {
 #[derive(Debug, Subcommand)]
 pub(crate) enum Command {
     /// Manage reference definitions
-    #[command(subcommand)]
+    #[command(subcommand, name = "refdefs")]
     RefDefs(RefDefsSubCommand),
 
     /// Manage links
@@ -51,6 +52,7 @@ pub(crate) enum Command {
 
     /// Generate a sitemap.xml file from the list of Markdown files
     /// in a source directory
+    #[command(name = "sitemap")]
     SiteMap(MarkdownSrcDirUrlAndDestFileArgs),
 
     /// Parse the entire Markdown code as events
@@ -58,5 +60,6 @@ pub(crate) enum Command {
     Debug(MarkdownSrcDirAndDestFileArgs),
 
     /// Test Markdown parsing
+    #[command(skip)]
     Test,
 }
