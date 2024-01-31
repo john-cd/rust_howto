@@ -77,6 +77,16 @@ To add or edit the book, simply update or add a `.md` file in the appropriate `s
 
 Verify the markdown is properly rendered using `just serve` or `mdbook serve --open`. Pushing a commit to the `main` branch on GitHub will trigger a GitHub Action worfklow that checks formatting / linting, builds / tests all examples, then deploys the book to GitHub Pages.
 
+### `just` commands
+
+Link / reference / markdown management:
+
+```bash
+cargo run -p mdbook-utils --bin do -- <command>
+# or
+just do <command>
+```
+
 ## Dev Container and Docker
 
 The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install `mdbook` and rust tooling.
