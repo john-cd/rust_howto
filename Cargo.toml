@@ -5,10 +5,8 @@ members = [
     "deps",
     # examples independent from the book markdown
     "xmpl/*",
-    # utilities to build the book
-    "mdbook-utils"
     # crates.io placeholder
-,   "publish"]
+    "publish"]
 exclude = []
 # Only check / build the main crate by default (check / build all with `--workspace`)
 default-members = ["deps"]

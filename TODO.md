@@ -1,12 +1,5 @@
 # TODO
 
-- mdbook-utils:
-  - add to README
-  - retest all commands / subcommands
-  - review <https://docs.rs/markdown-gen/1.2.1/markdown_gen/markdown/index.html>
-  - review <https://crates.io/crates/parse-hyperlinks>
-  - align with CommonMark spec?
-
 - merge dev branch into main! just prep:
   - fix failing examples
   - fix clippy warnings
@@ -26,22 +19,13 @@
 
 - test new sitemap with new SUMMARY.md
 
-- finish new commands in mdbook-utils
-  - lib.rs generate_refdefs_to
-  - write_inline_links remove internal links
-  - fix TODOs
-  - add duplicate links
-  - add broken links
-  - publish the crate
-
 - pull request to little book of rust books
 
 - incorporate cwd.rs example + any other new examples
 
 - review generate.sh
 
-- finish generation of urls from dependencies + append + sort + dedupe - WIP
-  - update justfile
+- update justfile TODOs
 
 - review each new .md file in turn - see STATUS.md
 
@@ -56,20 +40,6 @@ finish improve_speed
 - finish links:
   - insert badges instead of (github) - see book/temp
   - create badge refdefs for links to crates.io, lib.rs, RBE book, etc
-
-- finish utils
-  - locate all autolink / inline references to external sites - WIP
-  - identify duplicate links / labels
-  - identify broken links
-  - suggest label names based on URL type - WIP
-  - generate categories.md
-  - generate crates.md
-  - autoreplace autolinks / inline links by ref links
-  - generate or merge into *-refs.md files - WIP
-  - identify .md files not in SUMMARY.md
-  - identify .rs examples not used
-  - review TODOs
-  - consider moving utils to a separate repo? or publish as a separate crate?
 
 - tower_http example polish; other examples have been checked against the rust playground
 

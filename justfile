@@ -92,7 +92,7 @@ _copystatic:
 
 # Generate the sitemap.xml file
 _sitemap:
-  cargo run -p mdbook-utils --bin do site-map
+  # TODO mdbook-utils sitemap
 
 # Test all examples in the book's Markdown
 test: _build-book
@@ -148,7 +148,7 @@ empty := ''
 
 # Manage links, ref definitions, etc...
 do cmd=help subcmd=empty:
-  cargo run -p mdbook-utils --bin do -- {{cmd}} {{subcmd}}
+  # TODO mdbook-utils {{cmd}} {{subcmd}}
 
 # Run a specific example (among those in `deps/examples`)
 run xmpl:
