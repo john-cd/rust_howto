@@ -19,8 +19,9 @@ pub(crate) enum MarkdownSubCommand {
     /// Replace {{#include file.md}} by the file contents
     ReplaceIncludesByContents(MarkdownDirArgs),
 
-    /// Generate a listing of crates.io dependencies and write to a Markdown file
-    GenerateCategories(DestFilePathArgs),
+    /// Generate a listing of crates.io dependencies and write to a
+    /// Markdown file
+    GenerateCategories(DestFileArgs),
 
     /// Generate a crate index and write to a Markdown file
     GenerateCrates(MarkdownSrcDirAndDestFileArgs),
@@ -32,11 +33,11 @@ pub(crate) fn run(subcmd: MarkdownSubCommand) -> Result<()> {
         MarkdownSubCommand::ExtractCodeExamples(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./drafts/"))
                 .canonicalize()?;
             let code_dest_dir_path =
-                args.dest_dir_path.unwrap_or(PathBuf::from("./temp/"));
+                args.dest.dir_path.unwrap_or(PathBuf::from("./temp/"));
             println!(
                 "Parsing Markdown files found in {} and copying found Rust code blocks to {}",
                 markdown_src_dir_path.display(),
@@ -50,7 +51,7 @@ pub(crate) fn run(subcmd: MarkdownSubCommand) -> Result<()> {
         }
         MarkdownSubCommand::ReplaceCodeExamplesByIncludes(args) => {
             let markdown_src_dir_path = args
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./drafts/"))
                 .canonicalize()?;
             println!(
@@ -72,7 +73,7 @@ pub(crate) fn run(subcmd: MarkdownSubCommand) -> Result<()> {
         }
         MarkdownSubCommand::ReplaceIncludesByContents(args) => {
             let markdown_src_dir_path = args
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./drafts/"))
                 .canonicalize()?;
             println!(

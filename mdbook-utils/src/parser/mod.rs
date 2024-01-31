@@ -40,8 +40,8 @@ fn get_options() -> Options {
 /// Callback function for broken references
 ///
 /// In case the parser encounters any potential links that have a
-/// broken reference (e.g \[foo\] when there is no \[foo\]:  entry at the
-/// bottom) the provided callback will be called with the
+/// broken reference (e.g \[foo\] when there is no \[foo\]:  entry at
+/// the bottom) the provided callback will be called with the
 /// reference name, and the returned pair will be used as the link
 /// name and title if it is not None.
 fn _callback<'input>(

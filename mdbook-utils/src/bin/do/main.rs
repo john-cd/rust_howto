@@ -33,12 +33,13 @@ fn main() -> Result<()> {
         Command::SiteMap(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
 
             let base_url = args
-                .base_url
+                .base
+                .url
                 .unwrap_or(url::Url::parse("https://john-cd.com/rust_howto/")?);
 
             let sitemap_dest_file_path = args
@@ -61,7 +62,7 @@ fn main() -> Result<()> {
         Command::Debug(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let log_dest_path = args

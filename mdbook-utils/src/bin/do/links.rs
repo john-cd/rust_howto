@@ -19,7 +19,8 @@ pub(crate) enum LinksSubCommand {
     /// Identify duplicate links / labels and write to a Markdown file
     DuplicateLinks(MarkdownSrcDirAndDestFileArgs),
 
-    /// Identify broken links (i.e. without reference definition) and write to a Markdown file
+    /// Identify broken links (i.e. without reference definition) and
+    /// write to a Markdown file
     BrokenLinks(MarkdownSrcDirAndDestFileArgs),
 }
 
@@ -28,7 +29,7 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
         LinksSubCommand::WriteAll(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let links_dest_path = args
@@ -46,7 +47,7 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
         LinksSubCommand::WriteInline(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let links_dest_path = args
@@ -67,7 +68,7 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
         LinksSubCommand::DuplicateLinks(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let links_dest_path = args
@@ -86,7 +87,7 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
         LinksSubCommand::BrokenLinks(args) => {
             let markdown_src_dir_path = args
                 .src
-                .markdown_src_dir_path
+                .markdown_dir_path
                 .unwrap_or(PathBuf::from("./src/"))
                 .canonicalize()?;
             let links_dest_path = args
