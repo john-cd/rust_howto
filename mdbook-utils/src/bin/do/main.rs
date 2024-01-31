@@ -6,9 +6,9 @@ use cli::*;
 
 mod args;
 mod cli;
-mod links;
-mod markdown;
-mod refdefs;
+mod links_commands;
+mod markdown_commands;
+mod refdefs_commands;
 
 fn main() -> Result<()> {
     let key = "RUST_LOG";
@@ -22,13 +22,13 @@ fn main() -> Result<()> {
 
     match cmd {
         Command::RefDefs(subcmd) => {
-            refdefs::run(subcmd)?;
+            refdefs_commands::run(subcmd)?;
         }
         Command::Links(subcmd) => {
-            links::run(subcmd)?;
+            links_commands::run(subcmd)?;
         }
         Command::Markdown(subcmd) => {
-            markdown::run(subcmd)?;
+            markdown_commands::run(subcmd)?;
         }
         Command::SiteMap(args) => {
             let markdown_src_dir_path = args
