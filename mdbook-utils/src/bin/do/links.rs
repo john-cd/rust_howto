@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::path::PathBuf;
 
 use anyhow::Result;
@@ -17,10 +19,12 @@ pub(crate) enum LinksSubCommand {
     WriteInline(MarkdownSrcDirAndDestFileArgs),
 
     /// Identify duplicate links / labels and write to a Markdown file
+    #[command(skip)]
     DuplicateLinks(MarkdownSrcDirAndDestFileArgs),
 
     /// Identify broken links (i.e. without reference definition) and
     /// write to a Markdown file
+    #[command(skip)]
     BrokenLinks(MarkdownSrcDirAndDestFileArgs),
 }
 
@@ -80,8 +84,10 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
                 markdown_src_dir_path.display(),
                 links_dest_path.display()
             );
-            // TODO
-            println!("NOT IMPLEMENTED");
+            mdbook_utils::write_duplicate_links(
+                markdown_src_dir_path,
+                links_dest_path,
+            )?;
             println!("Done.");
         }
         LinksSubCommand::BrokenLinks(args) => {
@@ -99,8 +105,10 @@ pub(crate) fn run(subcmd: LinksSubCommand) -> Result<()> {
                 markdown_src_dir_path.display(),
                 links_dest_path.display()
             );
-            // TODO
-            println!("NOT IMPLEMENTED");
+            mdbook_utils::write_broken_links(
+                markdown_src_dir_path,
+                links_dest_path,
+            )?;
             println!("Done.");
         } /* _ => {
            *     println!("NOT IMPLEMENTED");

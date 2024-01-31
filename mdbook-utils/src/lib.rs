@@ -194,6 +194,46 @@ where
     Ok(())
 }
 
+/// Parse Markdown from all .md files in a given source directory,
+/// write duplicated links found therein to a file
+///
+/// src_dir_path: path to the source directory
+///
+/// dest_file_path: path to the file to create and write into
+pub fn write_duplicate_links<P1, P2>(src_dir_path: P1, dest_file_path: P2) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(src_dir_path, dest_file_path, |parser, f| {
+        let links: Vec<link::Link> = parser::extract_links(parser);
+        // TODO ::write_duplicate_links_to(links, f)?;
+        Ok(())
+    })?;
+
+    Ok(())
+}
+
+/// Parse Markdown from all .md files in a given source directory,
+/// write duplicated links found therein to a file
+///
+/// src_dir_path: path to the source directory
+///
+/// dest_file_path: path to the file to create and write into
+pub fn write_broken_links<P1, P2>(src_dir_path: P1, dest_file_path: P2) -> Result<()>
+where
+    P1: AsRef<Path>,
+    P2: AsRef<Path>,
+{
+    helper(src_dir_path, dest_file_path, |parser, f| {
+        let links: Vec<link::Link> = parser::extract_links(parser);
+        // TODO ::write_broken_links_to(links, f)?;
+        Ok(())
+    })?;
+
+    Ok(())
+}
+
 // GENERATE REF DEFS FROM DEPENDENCIES
 
 /// Given a Cargo.toml path,
