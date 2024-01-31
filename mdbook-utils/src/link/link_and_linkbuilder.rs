@@ -104,7 +104,7 @@ impl<'a> LinkBuilder<'a> {
 
 // LINK -----------------------------
 
-#[derive(Debug, Default)]
+#[derive(Debug, Default, Clone)]
 pub(crate) struct Link<'a> {
     link_type: Option<LinkType>,
     text: Option<Cow<'a, str>>,  // [text](...)

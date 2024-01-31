@@ -216,28 +216,28 @@ where
     P2: AsRef<Path>,
     P3: AsRef<Path>,
 {
-    // fs::create_dir("/code/book/temp/")?;
-    // let mut f = File::create(refdef_dest_file_path)?;
-    // // Generate ref defs from dependencies
-    // let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
-    // // for (_, d) in &deps {
-    // //     tracing::info!("{:?}", d);
-    // // }
-    // let mut new_links = gen::generate_refdefs_from(deps);
+    // Generate ref defs from dependencies
+    let deps = dependencies::get_dependencies(&cargo_toml_dir_path)?;
+    // for (_, d) in &deps {
+    //     tracing::info!("{:?}", d);
+    // }
+    let mut new_links = gen::generate_refdefs_from(deps);
 
-    // // Read existing ref defs
-    // // TODO can we read just the *-refs.md files?
-    // let all_markdown =
-    //     fs::read_to_string_all_markdown_files_in(markdown_dir_path)?;
-    // let parser = parser::get_parser(all_markdown.as_ref());
-    // let sorted_linkdefs = parser::get_sorted_ref_defs(parser);
+    // TODO can we read just the *-refs.md files?
+    helper(
+        markdown_dir_path,
+        refdef_dest_file_path,
+       |parser, f| {
+            // Read existing ref defs
+            let sorted_linkdefs = parser::get_sorted_ref_defs(&parser);
+            // TODO
+            let existing_links = Vec::new();
 
-    // TODO
-    // let existing_links = Vec::new();
-
-    // let links = gen::merge_links(existing_links, new_links);
-    // link::write_ref_defs_to(links, &mut f)?;
-    // write links
+            let links = gen::merge_links(existing_links, &mut new_links);
+            link::write_ref_defs_to(links, f)?;
+            Ok(())
+        }
+    )?;
     Ok(())
 }
 
