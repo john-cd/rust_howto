@@ -12,9 +12,9 @@ use clap::Parser;
 use clap::Subcommand;
 
 use super::args::*;
-use crate::links::LinksSubCommand;
-use crate::markdown::MarkdownSubCommand;
-use crate::refdefs::RefDefsSubCommand;
+use crate::links_commands::LinksSubCommand;
+use crate::markdown_commands::MarkdownSubCommand;
+use crate::refdefs_commands::RefDefsSubCommand;
 
 /// Parse command-line arguments
 pub(crate) fn parse_arguments() -> Cli {
