@@ -75,11 +75,11 @@ _build-book:
 
 # Generate new reference definitions for all crate the book's examples depend on...
 _generate-refdefs:
-  # TODO
+  # TODO mdbook-utils refdefs
 
 # Generate the index and the category page.
 _generate-index-category:
-  # TODO
+  # TODO mdbook-utils
 
 # Add static assets to book output
 [unix]
@@ -151,5 +151,6 @@ do cmd=help subcmd=empty:
   # TODO mdbook-utils {{cmd}} {{subcmd}}
 
 # Run a specific example (among those in `deps/examples`)
-run xmpl:
-  cargo run -p deps --example {{xmpl}}
+run xmpl: _build-book
+  #cargo clean -p deps
+  cargo run -p deps --locked --example {{xmpl}}
