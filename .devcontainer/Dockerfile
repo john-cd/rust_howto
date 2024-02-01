@@ -86,6 +86,9 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
 
+## TODO Install the mdbook-utils tool that is a companion to the book.
+# RUN cargo install --locked mdbook-utils
+
 WORKDIR /code
 
 ## --------------------------------
@@ -102,6 +105,12 @@ FROM base as development
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
     && echo "$SNIPPET" >> "/root/.bashrc"
+
+## Git config
+ARG EMAIL
+ARG GIT_AUTHOR_NAME
+
+RUN git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
 
 ## For `mdbook serve --open`
 EXPOSE 3000

@@ -8,6 +8,9 @@ services:
     image: rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
     build:
       target: development
+      args:
+        EMAIL: ${EMAIL}
+        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME}
       cache_from:
         - johncd/rust_howto_dev:latest
     volumes:
