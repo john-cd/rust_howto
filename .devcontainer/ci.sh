@@ -46,10 +46,12 @@ cargo test --workspace --all-targets --locked --profile ci -- --show-output
 cp static/*.* book/html/
 
 ## `sitemap.xml` generator
-##  We used https://lib.rs/crates/mdbook-sitemap-generator but there is now custom code in `deps/bin`
-#mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
-#sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
-cargo run -p tools --bin sitemap
+##  We used https://lib.rs/crates/mdbook-sitemap-generator but there is now custom code in the mdbook-utils tool
+## that is a companion to the book
+# mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
+# sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
+
+# TODO mdbook-utils sitemap
 
 echo "----------"
 
