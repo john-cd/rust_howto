@@ -35,6 +35,8 @@ finish improve_speed
 
 - explanation text for language pages
 
+- <https://www.sheshbabu.com/posts/rust-module-system/>
+
 - finish to review ignore / no_run examples
 
 - finish links:
