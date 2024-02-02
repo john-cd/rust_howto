@@ -19,7 +19,7 @@ fn main() -> Result<()> {
 
     buffered
         .lines()
-        .filter_map(|line| line.ok())  // map_while(Result::ok)
+        .map_while(Result::ok)
         .filter(|line| set.is_match(line.as_str()))
         .for_each(|x| println!("{}", x));
 

@@ -22,7 +22,7 @@ fn main() -> Result<(), Error> {
 
     reader
         .lines()
-        .filter_map(|line| line.ok())
+        .map_while(Result::ok)
         .filter(|line| line.contains("usb"))
         .for_each(|line| println!("{}", line));
 
