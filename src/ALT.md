@@ -1,0 +1,198 @@
+# Rust How-to
+
+[Introduction](intro.md)
+[About](about.md)
+[Contributing](contributing.md)
+[Index](index.md)
+
+- [Language](lang.md)
+  - [Rust installation and first steps](lang/rust_install.md)
+  - [Main function](lang/main.md)
+  - [Simple data types](lang/simple_data_types.md)
+  - [Variables and constants](lang/variables_and_constants.md)
+  - [Ownership and borrowing](lang/ownership_borrowing.md)
+  - [Slices](lang/slices.md)
+  - [Functions](lang/functions.md)
+  - [Control flow](lang/control_flow.md)
+  - [Structs](lang/structs.md)
+  - [Enums](lang/enums.md)
+  - [Traits](lang/traits.md)
+  - [Trait objects](lang/trait_objects.md)
+  - [Attributes](lang/attributes.md)
+  - [Generics](lang/generics.md)
+  - [Lifetimes](lang/lifetimes.md)
+  - [Modules and `use` keyword](lang/modules.md)
+  - [Pattern matching, if / while let](lang/match.md)
+  - [Closures](lang/closures.md)
+  - [Iterators](lang/iterators.md)
+  - [Macros](lang/macros.md)
+
+- [Standard library](standard_library.md)
+  - [Option](standard_library/option.md)
+  - [Vectors](standard_library/vectors.md)
+  - [HashMap](standard_library/hashmaps.md)
+  - [Strings](standard_library/strings.md)
+  - [Smart pointers](standard_library/smart_pointers.md)
+
+- [Key crates](key_crates.md)
+
+- [Development tools](tools.md)
+  - [Cargo](tools/cargo.md)
+  - [Package layout](tools/cargo/package_layout.md)
+  - [Installation](tools/installing.md)
+    - [Rustup](tools/installing/rustup.md)
+  - [Code editing and formatting](tools/editing.md)
+  - [Compiling](tools/compiling.md)
+    - [Faster linking](tools/compiling/faster_linking.md)
+    - [Cross-compilation](tools/compiling/cross_compilation.md)
+  - [Build-time tooling](tools/build_tools.md)
+  - [Testing](tools/testing.md)
+  - [Performance profiling](tools/performance.md)
+  - [Miri](tools/other/miri.md)
+  - [Documentation](tools/documentation.md)
+    - [mdBook](tools/documenting/mdbook.md)
+  - [Other](tools/other.md)
+    - [Other tools](tools/other/other_tools.md)
+    - [Crate registries](tools/other/crates.md)
+    - [Just](tools/other/just.md)
+  - [Versioning](tools/versioning.md)
+
+---
+
+- [Algorithms](algorithms.md)
+  - [Generate Random Values](algorithms/randomness.md)
+  - [Sort a Vector](algorithms/sorting.md)
+
+- [Automatic trait derivation TODO](concerns/derive.md)
+
+- [Command-line applications](cli.md)
+  - [Argument Parsing](cli/arguments.md)
+  - [ANSI Terminal](cli/ansi_terminal.md)
+
+- [Compression](compression.md)
+  - [Working with Tarballs](compression/tar.md)
+
+- [Concurrency](concurrency.md)
+  - [Multi-threading](concurrency/multithreading.md)
+  - [Explicit threads](concurrency/threads.md)
+  - [Data parallelism](concurrency/parallel.md)
+  - [Message passing](concurrency/message_passing.md)
+  - [Shared-state concurrency](concurrency/shared_state.md)
+  - [Concurrent data structures](concurrency/shared_state/concurrent_data_structures.md)
+
+- [Concurrency - Async](concurrency/async.md)
+  - [Async and traits](async/async_traits.md)
+  - [Tokio async runtime](async/tokio.md)
+  - [Async channels](async/async_channels.md)
+  - [Streams](async/streams.md)
+  - [Futures crate](async/futures.md)
+  - [Mixing async and blocking code](async/async_and_blocking.md)
+
+- [Configuration TODO](concerns/configuration.md)
+
+- [Cross-cutting concerns TODO](cross_cutting_concerns.md)
+
+- [Cryptography](cryptography.md)
+  - [Hashing](cryptography/hashing.md)
+  - [Encryption](cryptography/encryption.md)
+
+- [Data structures](data_structures.md)
+  - [Bitfield](data_structures/bitfield.md)
+
+- [Databases](databases.md)
+  - [SQLite](databases/sqlite.md)
+  - [Postgres](databases/postgres.md)
+  - [Query builders and ORMS](databases/query_builders_orms.md)
+
+- [Date and time](datetime.md)
+  - [Duration and calculation](datetime/duration.md)
+  - [Parsing and displaying](datetime/parse.md)
+
+- [Encoding and Serialization](encoding.md)
+  - [Character sets](encoding/strings.md)
+  - [CSV processing](encoding/csv.md)
+  - [Structured data](encoding/complex.md)
+  - [Serde](encoding/serde.md)
+
+- [Error handling](errors.md)
+  - [Handle error variants](errors/handle.md)
+  - [Error handling](errors/error_handling.md)
+  - [Error customization](errors/error_customization.md)
+
+- [File system](file.md)
+  - [Read & write](file/read-write.md)
+  - [Directory traversal](file/dir.md)
+
+- [Hardware support](hardware.md)
+  - [Processor](hardware/processor.md)
+
+- [Logging](logging.md)
+  - [Tracing](logging/tracing.md)
+  - [Log messages](logging/log.md)
+  - [Configure logging](logging/config_log.md)
+
+- [Mathematics](mathematics.md)
+  - [Linear algebra](mathematics/linear_algebra.md)
+  - [Trigonometry](mathematics/trigonometry.md)
+  - [Complex numbers](mathematics/complex_numbers.md)
+  - [Statistics](mathematics/statistics.md)
+  - [Miscellaneous](mathematics/miscellaneous.md)
+
+- [Memory management](mem.md)
+  - [Global static](mem/global_static.md)
+  - [Lazy initialization TODO](mem/lazy_initialization.md)
+
+- [Network](net.md)
+  - [Server](net/server.md)
+
+- [Operating system](os.md)
+  - [External commands](os/external.md)
+
+- [Text processing](text.md)
+  - [Regular expressions](text/regex.md)
+    - [Longer regex example](text/regex2.md)
+  - [String parsing](text/string_parsing.md)
+
+- [Web programming](web.md)
+  - [Extracting links](web/scraping.md)
+  - [URL](web/url.md)
+  - [Media types](web/mime.md)
+  - [Web frameworks](web/server.md)
+    - [Axum](web/server/axum.md)
+    - [Actix](web/server/actix.md)
+    - [Other web frameworks](web/server/other_frameworks.md)
+    - [Middleware](web/server/middleware.md)
+    - [CORS](web/server/cors.md)
+  - [Static website generators](web/server/static_website_generators.md)
+  - [Web Clients](clients.md)
+    - [Making Requests](web/clients/requests.md)
+    - [Calling a Web API](web/clients/apis.md)
+    - [Downloads](web/clients/download.md)
+    - [Web Authentication](web/clients/authentication.md)
+
+---
+
+- [Other domains](domains.md)
+  - [WASM](domains/wasm.md)
+  - [GUI](domains/gui.md)
+  - [Cross-platform applications](domains/cross_platform.md)
+  - [Cloud](domains/cloud.md)
+  - [Data](domains/data.md)
+  - [ML](domains/ml.md)
+  - [Games](domains/games.md)
+  - [GPU programming](domains/gpu.md)
+  - [Robotics](domains/robotics.md)
+  - [Windows](domains/windows.md)
+
+- [Links](links.md)
+  - [Example code](links/example_code.md)
+  - [Cheat sheets](links/rust_cheatsheets.md)
+  - [Blogs](links/blogs.md)
+  - [Books](links/books.md)
+  - [Companies](links/companies.md)
+
+---
+
+[Crates (alphabetic)](misc/crates.md)
+[Crates (by category)](misc/categories.md)
+[Thanks](misc/thanks.md)
