@@ -86,8 +86,8 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
 
-## TODO Install the mdbook-utils tool that is a companion to the book.
-# RUN cargo install --locked mdbook-utils
+## Install the mdbook-utils tool that is a companion to the book.
+RUN cargo install --locked mdbook-utils
 
 WORKDIR /code
 
