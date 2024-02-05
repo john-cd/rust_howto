@@ -51,7 +51,7 @@ cp static/*.* book/html/
 # mdbook-sitemap-generator --domain john-cd.com/rust_howto/ --output book/sitemap.xml
 # sed -i -e 's/<urls>/<url>/g' -e 's/<\/urls>/<\/url>/g' book/sitemap.xml
 
-# TODO mdbook-utils sitemap
+mdbook-utils sitemap
 
 echo "----------"
 
