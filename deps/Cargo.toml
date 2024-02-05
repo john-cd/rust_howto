@@ -58,7 +58,7 @@ lazy_static = "1"
 log = "0.4"
 log4rs = "1"
 memmap = "0.7"
-miette = { version = "5", features = ["fancy"] }
+miette = { version = "7", features = ["fancy"] }
 mime = "0.3"
 nalgebra = { version = "0.32", features = ["serde-serialize"] }
 ndarray = { version = "0.15", features = ["approx"] }
