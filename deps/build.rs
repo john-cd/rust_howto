@@ -17,6 +17,7 @@ const REMOVED_TESTS: &[&str] = &[
 // every time, but rather check the expanded markdown sources exist.
 // See the `justfile`.
 fn main() -> Result<()> {
+    // Disable build.rs when building documentation at docs.rs
     // https://docs.rs/about/builds
     if std::env::var("DOCS_RS").is_ok() {
         return Ok(());
@@ -24,8 +25,8 @@ fn main() -> Result<()> {
 
     let root_path = std::fs::canonicalize("..")?;
 
-    // Check existence of expanded Markdown files (created by `mdbook
-    // build`)
+    // Check for the existence of expanded Markdown files
+    // (created by `mdbook build`).
     let expanded_markdown_path = root_path.join("book/markdown/");
     if !Path::new(&expanded_markdown_path).exists() {
         let msg =
@@ -33,6 +34,17 @@ fn main() -> Result<()> {
         println!("cargo:warning=ERROR: {}", msg);
         bail!("{}", msg);
     }
+
+    // Remove any leftover {{#include ../../deps/examples/*.rs}} from the
+    // expanded Markdown (to avoid skeptic errors) and warn about
+    // missing files.
+
+    mdbook_utils::markdown::remove_includes_in_all_markdown_files_in(expanded_markdown_path.clone())?;
+
+    // let msg = format!(
+    //     "Some {{#include }} statements did not resolve! Are you missing files or code examples?"
+    // );
+    // println!("cargo:warning=WARN: {}", msg);
 
     // Get the paths of all expanded Markdown files
     let paths = WalkDir::new(expanded_markdown_path).into_iter()
