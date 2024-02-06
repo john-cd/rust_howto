@@ -14,7 +14,7 @@
 
 ## Tools written in Rust
 
-[My terminal became more Rusty Community][My terminal became more Rusty Community]⮳
+[My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
 [open-rs][open-rs-github]⮳
 

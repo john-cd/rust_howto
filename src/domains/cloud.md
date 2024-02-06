@@ -2,7 +2,7 @@
 
 ## AWS
 
-[AWS Rust SDK][aws-sdk]⮳
+[AWS Rust SDK][aws-rust-sdk]⮳
 
 ## Dapr
 

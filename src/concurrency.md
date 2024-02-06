@@ -41,7 +41,7 @@ Here are the topics we’ll cover:
 
 ## See Also
 
-[![concurrency-rust-book-badge]][concurrency-rust-book]
+[![rust-book-concurrency-badge]][rust-book-concurrency]
 
 [ex-crossbeam-spawn]: concurrency/threads.md#spawn-a-short-lived-thread
 [ex-crossbeam-pipeline]: concurrency/threads.md#create-a-parallel-pipeline

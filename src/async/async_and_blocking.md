@@ -6,11 +6,11 @@
 - Don't carelessly mix async code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
 - If you have to block the thread because of expensive CPU-bound computation, call to a synchronous IO API, use the `spawn_blocking` function, use `rayon`, or spawn a dedicated thread.
 
-See [Async: What is blocking? blog post][what-is-blocking]⮳.
+See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
 ## Tokio spawn_blocking
 
-Use `[spawn_blocking][spawn-blocking]`⮳ to run a _small portion_ of synchronous code.
+Use `[spawn_blocking][tokio-spawn-blocking]`⮳ to run a _small portion_ of synchronous code.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/call_blocking_from_async_spawn_blocking.rs}}
@@ -32,7 +32,7 @@ If a blocking operation keeps running forever, you should run it on a dedicated 
 
 ## Call async code from blocking code
 
-[Bridging with sync code][bridging-with-sync-code]⮳
+[Bridging with sync code][tokio-bridging-with-sync-code]⮳
 
 In other cases, it may be easier to structure the application as largely synchronous, with smaller or logically distinct asynchronous portions. For instance, a GUI application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 

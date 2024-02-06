@@ -1,6 +1,6 @@
 # Rust Installation
 
-[Install Rust][install-rust]⮳
+[Install Rust][rust-install-rust]⮳
 
 ## Key Steps
 

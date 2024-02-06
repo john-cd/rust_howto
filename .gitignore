@@ -6,6 +6,7 @@ file1.txt
 *.log
 *.Identifier
 file.txt
+badge_refs.md
 
 # Windows ------------------------
 

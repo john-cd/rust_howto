@@ -80,6 +80,6 @@ See [Async](../concurrency/async.md)
 
 ## See also
 
-[Traits (blog)][traits-blog]⮳
+[Traits (blog)][blog-traits]⮳
 
 {{#include ../refs/link-refs.md}}

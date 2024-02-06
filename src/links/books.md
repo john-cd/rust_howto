@@ -1,11 +1,11 @@
 # Books
 
-[Effective Rust][effective-rust]⮳
+[Effective Rust][book-effective-rust]⮳
 
-[Programming Rust][programming-rust]⮳
+[Programming Rust][book-programming-rust]⮳
 
-[Programming Rust, 2nd edition][programming-rust-2nd-edition]⮳
+[Programming Rust, 2nd edition][book-programming-rust-2nd-edition]⮳
 
-[The Rust Programming Language, 2nd Edition][rust-programming-language]⮳
+[The Rust Programming Language, 2nd Edition][book-rust-programming-language]⮳
 
 {{#include ../refs/link-refs.md}}

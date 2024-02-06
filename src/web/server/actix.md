@@ -1,13 +1,13 @@
 # Actix
 
-[![actix-web-badge]][actix-web]!
+[![actix-web-badge]][actix-web]
 
-[Actix web][actix-web-website]⮳
+[Actix Web (website)][actix-web-website]⮳
 
-[Actix examples][actix-examples-github]⮳
+Actix examples: [![Actix examples][actix-examples-github-badge]][actix-examples-github]
 
-[Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][auth-web-microservice]⮳
+[Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][blog-auth-web-microservice]⮳
 
-[Practical Rust Web Development - API Rest][practical-rust]⮳
+[Practical Rust Web Development - API Rest][blog-practical-rust]⮳
 
 {{#include ../../refs/link-refs.md}}
