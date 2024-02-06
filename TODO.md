@@ -5,19 +5,87 @@
 
 - fix failing examples in drafts
 
-- polish extended SUMMARY.md
-  - auto derive
-  - config, concerns
+
+[![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github]
+[![bacon-github][bacon-github-badge]][bacon-github]
+[![bat-github][bat-github-badge]][bat-github]
+[![bevy-github][bevy-github-badge]][bevy-github]
+[![bonsai-bt-github][bonsai-bt-github-badge]][bonsai-bt-github]
+[![cargo-crates-github][cargo-crates-github-badge]][cargo-crates-github]
+[![cargo-edit-github][cargo-edit-github-badge]][cargo-edit-github]
+[![cargo-expand-github][cargo-expand-github-badge]][cargo-expand-github]
+[![cargo-hack-github][cargo-hack-github-badge]][cargo-hack-github]
+[![cargo-machete-github][cargo-machete-github-badge]][cargo-machete-github]
+[![cargo-make-github][cargo-make-github-badge]][cargo-make-github]
+[![cargo-xtask-github][cargo-xtask-github-badge]][cargo-xtask-github]
+[![clap-github][clap-github-badge]][clap-github]
+[![rust-howto-contributing][rust-howto-contributing-badge]][rust-howto-contributing]
+
+[![cross-toml-example][cross-toml-example-badge]][cross-toml-example]
+[![cross-github][cross-github-badge]][cross-github]
+[![cross-wiki][cross-wiki-badge]][cross-wiki]
+[![csv-sample][csv-sample-badge]][csv-sample]
+[![dapr-rust-examples][dapr-rust-examples-badge]][dapr-rust-examples]
+[![dapr-rust-sdk-github][dapr-rust-sdk-github-badge]][dapr-rust-sdk-github]
+[![rusqlite-documentation][rusqlite-documentation-badge]][rusqlite-documentation]
+[![rust-howto-drafts][rust-howto-drafts-badge]][rust-howto-drafts]
+[![druid-github][druid-github-badge]][druid-github]
+[![embassy-github][embassy-github-badge]][embassy-github]
+[![exa-github][exa-github-badge]][exa-github]
+[![mdbook-github][mdbook-github-badge]][mdbook-github]
+[![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]
+[![miri-github][miri-github-badge]][miri-github]
+[![monostate-github][monostate-github-badge]][monostate-github]
+[![native-windows-gui-github][native-windows-gui-github-badge]][native-windows-gui-github]
+[![open-rs-github][open-rs-github-badge]][open-rs-github]
+[![opencv-example][opencv-example-badge]][opencv-example]
+[![openrr-github][openrr-github-badge]][openrr-github]
+[![paste-github][paste-github-badge]][paste-github]
+[![polars-github][polars-github-badge]][polars-github]
+[![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
+[![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github]
+[![rayon-github][rayon-github-badge]][rayon-github]
+[![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]
+[![regex-github][regex-github-badge]][regex-github]
+[![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
+[![roogle-github][roogle-github-badge]][roogle-github]
+[![rust-gpu-github][rust-gpu-github-badge]][rust-gpu-github]
+[![rust-learning][rust-learning-badge]][rust-learning]
+[![rust-performance-book-github][rust-performance-book-github-badge]][rust-performance-book-github]
+[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
+[![rust-tokio-template][rust-tokio-template-badge]][rust-tokio-template]
+[![yew-realworld-example][yew-realworld-example-badge]][yew-realworld-example]
+[![rustfmt-github][rustfmt-github-badge]][rustfmt-github]
+[![salsa-github][salsa-github-badge]][salsa-github]
+[![serde-ignored-github][serde-ignored-github-badge]][serde-ignored-github]
+[![sqlx-github][sqlx-github-badge]][sqlx-github]
+[![starship-github][starship-github-badge]][starship-github]
+[![stdx][stdx-badge]][stdx]
+[![syn-github][syn-github-badge]][syn-github]
+[![tarpaulin-github][tarpaulin-github-badge]][tarpaulin-github]
+[![rust-howto-todo-github][rust-howto-todo-github-badge]][rust-howto-todo-github]
+[![tokio-examples][tokio-examples-badge]][tokio-examples]
+[![tokio-github][tokio-github-badge]][tokio-github]
+[![tokio-mini-redis][tokio-mini-redis-badge]][tokio-mini-redis]
+[![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
+[![tracing-github][tracing-github-badge]][tracing-github]
+[![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex]
+[![watchmaker][watchmaker-badge]][watchmaker]
+[![watchmaker-github][watchmaker-github-badge]][watchmaker-github]
+[![watt-github][watt-github-badge]][watt-github]
+[![windows-rs-github][windows-rs-github-badge]][windows-rs-github]
+[![zero-to-production-github][zero-to-production-github-badge]][zero-to-production-github]
+
 
 - update main README
 
-- fix commented examples
-
 - review GA / GSC - issues with redirects??
 
-- Rename some of the link IDs in *refs.md - WIP
-
 - pull request to little book of rust books
+
+- polish extended SUMMARY.md
+  - auto derive
+  - config, concerns
 
 - incorporate cwd.rs example + any other new examples
 
@@ -27,13 +95,11 @@
 
 - review each new .md file in turn - see STATUS.md
 
-finish cd_ci.md
+- finish cd_ci.md
 
-finish improve_speed
+- finish improve_speed
 
 - explanation text for language pages
-
-- <https://www.sheshbabu.com/posts/rust-module-system/>
 
 - finish to review ignore / no_run examples
 
@@ -50,6 +116,10 @@ finish improve_speed
 
 - contributing
   - Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in _ by you, shall be licensed as __, without any additional terms or conditions.
+
+- Make addt'l examples out of mdbook-utils
+
+- <https://www.sheshbabu.com/posts/rust-module-system/>
 
 Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
 
