@@ -5,7 +5,7 @@
 [![rusqlite-badge]][rusqlite] [![cat-database-badge]][cat-database]
 
 Use the `rusqlite` crate to open SQLite databases. See
-[crate][documentation] for compiling on Windows.
+[crate][rusqlite-documentation] for compiling on Windows.
 
 `[Connection::open]` will create the database if it doesn't already exist.
 
@@ -42,7 +42,7 @@ a duplicate color is made, the transaction rolls back.
 ```
 
 [Connection::open]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.open
-[documentation]: https://github.com/jgallagher/rusqlite#user-content-notes-on-building-rusqlite-and-libsqlite3-sys
+[rusqlite-documentation]: https://github.com/jgallagher/rusqlite#user-content-notes-on-building-rusqlite-and-libsqlite3-sys
 [prepare]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.prepare
 [statement]: https://docs.rs/rusqlite/*/rusqlite/struct.Statement.html
 [query_map]: https://docs.rs/rusqlite/*/rusqlite/struct.Statement.html#method.query_map

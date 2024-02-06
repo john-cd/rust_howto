@@ -1,6 +1,6 @@
 # CORS
 
-[CORS (mozilla)][cors-mozilla]⮳
+[CORS (mozilla)][mozilla-cors]⮳
 
 Using the Tower ecosystem:
 

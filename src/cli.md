@@ -13,7 +13,7 @@ Technics to help create command line interfaces, such as argument parsers, line-
 
 [![tui-rs-badge]][tui-rs]
 
-[![r3bl-tuify-badge]][r3bl-tuify] [(crates.io)][r3bl_tuify-crate] [(blog)][tuify]
+[![r3bl-tuify-badge]][r3bl-tuify] [(crates.io)][r3bl_tuify-crate] [(blog)][tuify-blog]
 
 [ex-clap-basic]: cli/arguments.md#parse-command-line-arguments
 [ex-ansi_term-basic]: cli/ansi_terminal.md#ansi-terminal

@@ -34,7 +34,7 @@ cargo add-dynamic polars --features csv-file,lazy,list,describe,rows,fmt,strings
 cargo build
 ```
 
-[Speeding up incremental Rust compilation with dylibs][Speeding up incremental Rust compilation with dylibs]⮳
+[Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳
 
 ## Incremental Compilation
 
@@ -42,6 +42,6 @@ From-scratch builds with incremental compilation enabled adds about 15–20% ove
 
 ## Reference
 
-[8 Solutions for Troubleshooting Your Rust Build Times][8 Solutions for Troubleshooting Your Rust Build Times]⮳
+[8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
 
 {{#include ../../refs/link-refs.md}}

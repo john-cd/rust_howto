@@ -10,6 +10,6 @@ Targeting WebAssembly or manipulating WebAssembly.
 
 [What is Yew?][yew-website]⮳
 
-[Example real world app built with Rust + Yew + WebAssembly][rust-yew-realworld-example]⮳
+[Example real world app built with Rust + Yew + WebAssembly][yew-realworld-example]⮳
 
 {{#include ../refs/link-refs.md}}

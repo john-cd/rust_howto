@@ -2,9 +2,9 @@
 
 This book is in its **early days** - it is intended to be easy for new Rust programmers to contribute to, and an easy way to get involved with the Rust community. It needs and welcomes help.
 
-Feel free to submit an issue or a pull request to the [repo][repo].
+Feel free to submit an issue or a pull request to the [repo][rust-howto-github].
 
-Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][drafts]. An informal (and very long) list of topics of interest is kept in the section below and in [TODO][todo]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pasteable into Rust code. Please read [CONTRIBUTING.md][contributing] for more details.
+Contributions, from small edits to whole chapters, are most welcome. Draft pages are kept in [this folder][rust-howto-drafts]. An informal (and very long) list of topics of interest is kept in the section below and in [TODO][rust-howto-todo-github]. Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground]⮳ or at least directly copy-pasteable into Rust code. Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 Its long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [blessed.rs][blessed-rs]⮳, the most downloaded libraries in [crates.io][crates-io]⮳, and 'high quality crates' per [lib.rs][lib-rs]⮳ [statistics][lib-rs-stats]⮳. Review [key crates](key_crates.md) for topic ideas.
 

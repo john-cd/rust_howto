@@ -8,7 +8,7 @@
 
 ## Box
 
-[![box-rust-book-badge]][box-rust-book]
+[![rust-book-box-badge]][rust-book-box]
 
 `Box<T>` allow you to store data on the heap rather than the stack. What remains on the stack is the pointer to the heap data.
 

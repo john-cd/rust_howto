@@ -18,7 +18,7 @@ before the @ symbol.
 Extracts, sorts, and deduplicates list of hashtags from text.
 
 The hashtag regex given here only catches Latin hashtags that start with a
-letter. The complete [twitter hashtag regex] is much more complicated.
+letter. The complete [twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
 {{#include ../../deps/examples/hashtags.rs}}
@@ -72,7 +72,7 @@ regex. See the [replacement string syntax] for examples and escaping detail.
 [regex::RegexSet]: https://docs.rs/regex/*/regex/struct.RegexSet.html
 [regex::RegexSetBuilder]: https://docs.rs/regex/*/regex/struct.RegexSetBuilder.html
 [raw string literals]: https://doc.rust-lang.org/reference/tokens.html#raw-string-literals
-[twitter hashtag regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
+[twitter-hashtag-regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
 [Regex::replace_all]: https://docs.rs/regex/*/regex/struct.Regex.html#method.replace_all
 [replacement string syntax]: https://docs.rs/regex/*/regex/struct.Regex.html#replacement-string-syntax
 {{#include ../refs/link-refs.md}}

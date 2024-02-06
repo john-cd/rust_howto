@@ -6,7 +6,7 @@
 - [Rust Cookbook (fork)][rust-cookbook-fork]⮳
 - [Rust Cookbook (old)][rust-cookbook]⮳
 - [Rust Design Patterns][rust-design-patterns]⮳
-- [Easy Rust][easy-rust]⮳
+- [Easy Rust][rust-easy-rust]⮳
 - [The Rustonomicon][rustonomicon-book]⮳
 
 ## Lists of Rust links
@@ -17,7 +17,7 @@
 ## Learn
 
 - [rust-learning][rust-learning]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust
-- [Learning Rust With Entirely Too Many Linked Lists][learning-rust-linked-lists]⮳
+- [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists]⮳
 - [Rust quizz][rust-quizz]⮳
 
 ## In this section

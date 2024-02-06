@@ -22,6 +22,6 @@ Actix [(github)][actix-github]⮳
 
 ## Reference
 
-[Actors with Tokio][actors-with-tokio]⮳
+[Actors with Tokio][blog-actors-with-tokio]⮳
 
 {{#include ../refs/link-refs.md}}

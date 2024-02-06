@@ -24,6 +24,6 @@ cross run --target aarch64-unknown-linux-gnu
 
 [cross Wiki][cross-wiki]⮳
 
-[Example Cross.toml file][cross-example-toml]⮳
+[Example Cross.toml file][cross-toml-example]⮳
 
 {{#include ../../refs/link-refs.md}}

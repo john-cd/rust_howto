@@ -18,7 +18,7 @@ To retrieve a single environment variable,
 {{#include ../../deps/examples/env.rs}}
 ```
 
-[Working with environment variables in Rust][working-with-env-variables]⮳
+[Working with environment variables in Rust][blog-working-with-env-variables]⮳
 
 ### Envy
 

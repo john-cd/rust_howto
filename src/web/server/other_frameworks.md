@@ -8,7 +8,7 @@
 
 ## Rocket
 
-[Rust + Rocket RealWorld framework implementation][rust-rocket-example]⮳
+[Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
 ## See also
 
