@@ -1666,9 +1666,8 @@ dependencies = [
 
 [[package]]
 name = "mdbook-utils"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6dc8a232b91ac9efbc5290087c18eb7a6c793d8209bc66d96fbb6ec9b95e0542"
+version = "0.1.3"
+source = "git+https://github.com/john-cd/mdbook-utils.git#eeabc1297f428d57063e47002ba63f365a77cc79"
 dependencies = [
  "anyhow",
  "cargo_toml",
