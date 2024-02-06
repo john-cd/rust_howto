@@ -96,7 +96,7 @@ _sitemap:
 
 # Test all examples in the book's Markdown
 test: _build-book
-  cargo test --package deps --tests --examples --locked -- --show-output
+  cargo test --package deps --tests --examples --locked -- --show-output | tee testing.log
 # This relies on skeptic to build doctests - see `build.rs`
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
 # when dealing with dependencies outside of the std library
