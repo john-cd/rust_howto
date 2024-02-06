@@ -107,12 +107,11 @@ syslog = "6"
 
 [build-dependencies]
 anyhow = "1"
-mdbook-utils = "0.1"
+#build-info-build = "0.0.34"
+# The git dependency will be used locally; when published to a registry like crates.io, it will use the registry version.
+mdbook-utils = { git = 'https://github.com/john-cd/mdbook-utils.git', version = "0.*" }
 skeptic = "0.13"
 walkdir = "2"
-#build-info-build = "0.0.34"
 
 [dev-dependencies]
-anyhow = "1"
 skeptic = "0.13"
-walkdir = "2"
