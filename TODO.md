@@ -5,6 +5,9 @@
 
 - fix failing examples in drafts
 
+- fix order of pages in Other domains
+
+- replace Githib links:
 
 [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github]
 [![bacon-github][bacon-github-badge]][bacon-github]
@@ -76,6 +79,7 @@
 [![windows-rs-github][windows-rs-github-badge]][windows-rs-github]
 [![zero-to-production-github][zero-to-production-github-badge]][zero-to-production-github]
 
+- fix not found in Crates.md (alphabetic list)
 
 - update main README
 
