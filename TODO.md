@@ -1,9 +1,9 @@
 # TODO
 
-- merge dev branch into main! just prep:
-  - fix failing examples
-  - fix clippy warnings
-  - create alternative SUMMARY.md
+- edit summary.md
+- merge dev branch into main!
+
+- fix failing examples in drafts
 
 - polish extended SUMMARY.md
   - auto derive
@@ -16,8 +16,6 @@
 - review GA / GSC - issues with redirects??
 
 - Rename some of the link IDs in *refs.md - WIP
-
-- test new sitemap with new SUMMARY.md
 
 - pull request to little book of rust books
 

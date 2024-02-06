@@ -57,6 +57,7 @@ http-body-util = "0.1"
 lazy_static = "1"
 log = "0.4"
 log4rs = "1"
+
 memmap = "0.7"
 miette = { version = "7", features = ["fancy"] }
 mime = "0.3"
@@ -106,6 +107,7 @@ syslog = "6"
 
 [build-dependencies]
 anyhow = "1"
+mdbook-utils = "0.1"
 skeptic = "0.13"
 walkdir = "2"
 #build-info-build = "0.0.34"
