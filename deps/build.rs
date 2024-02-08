@@ -48,7 +48,7 @@ fn main() -> Result<()> {
         .context("[build.rs] Failed to remove {{#include ...}} statements.")?;
 
     // ...and warn about the leftover includes / missing files.
-    if modified_files.len() > 0 {
+    if !modified_files.is_empty() {
         println!(
             "cargo:warning=WARN: Some {{#include ... }} statements were not resolved by `mdbook`! Are you missing include files or code examples?"
         );
