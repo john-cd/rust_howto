@@ -52,13 +52,12 @@ fn main() -> Result<()> {
         println!(
             "cargo:warning=WARN: Some {{#include ... }} statements were not resolved by `mdbook`! Are you missing include files or code examples?"
         );
-        modified_files
-            .iter()
-            .for_each(|f| {
-                println!("cargo:warning=Leftover {{#include ...}} in {} was removed.",
-                    f.display()
-                );
-            });
+        modified_files.iter().for_each(|f| {
+            println!(
+                "cargo:warning=Leftover {{#include ...}} in {} was removed.",
+                f.display()
+            );
+        });
     }
 
     // Get the paths of all expanded Markdown files
