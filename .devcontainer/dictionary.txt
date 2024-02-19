@@ -293,6 +293,7 @@ hashtags
 headders
 hexa
 hmac
+howto
 howtos
 href
 html
@@ -367,6 +368,7 @@ runnable
 rusqlite
 rustaceans
 rustc
+rustonomicon
 rustup
 semver
 serde
