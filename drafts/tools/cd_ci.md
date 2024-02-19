@@ -129,11 +129,4 @@ Example `.github/workflows/<name>.yml`
 
 <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>⮳
 
-[cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
-[continuous-integration-cargo-book]: https://doc.rust-lang.org/cargo/guide/continuous-integration.html
-[docker-github-action]: https://docs.docker.com/build/ci/github-actions/
-[docker-cache]: https://github.com/ScribeMD/docker-cache
-[install-action]: https://github.com/taiki-e/install-action
-[Optimizing CI/CD pipelines in your Rust projects]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
-[rust-cache]: https://github.com/marketplace/actions/rust-cache
 {{#include ../refs/link-refs.md}}

@@ -39,15 +39,5 @@ Gets the local time and displays it using [`offset::Local::now`][offset::Local::
 {{#include ../../deps/examples/timezone.rs}}
 ```
 
-[time::Duration]: https://doc.rust-lang.org/std/time/struct.Duration.html
-[time::Instant::elapsed]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.elapsed
-[time::Instant::now]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.now
-[time::Instant]:https://doc.rust-lang.org/std/time/struct.Instant.html
-[chrono::format::strftime]: https://docs.rs/chrono/*/chrono/format/strftime/index.html
-[DateTime::checked_add_signed]: https://docs.rs/chrono/*/chrono/struct.Date.html#method.checked_add_signed
-[DateTime::checked_sub_signed]: https://docs.rs/chrono/*/chrono/struct.Date.html#method.checked_sub_signed
-[DateTime::format]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.format
-[DateTime::from_utc]:https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.from_utc
-[offset::FixedOffset]: https://docs.rs/chrono/*/chrono/offset/struct.FixedOffset.html
-[offset::Local::now]: https://docs.rs/chrono/*/chrono/offset/struct.Local.html#method.now
+
 {{#include ../refs/link-refs.md}}

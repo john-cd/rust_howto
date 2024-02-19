@@ -37,5 +37,4 @@ functions, all of which can be found here: `[num::complex::Complex]`
 {{#include ../../deps/examples/mathematical-functions.rs}}
 ```
 
-[num::complex::Complex]: https://autumnai.github.io/cuticula/num/complex/struct.Complex.html
 {{#include ../refs/link-refs.md}}

@@ -149,13 +149,4 @@ void print_app_info() {
 {{#include ../../deps/examples/cc-defines1.rs}}
 ```
 
-[cc-build-cpp]: https://docs.rs/cc/*/cc/struct.Build.html#method.cpp
-[cc::Build::define]: https://docs.rs/cc/*/cc/struct.Build.html#method.define
-[Option]: https://doc.rust-lang.org/std/option/enum.Option.html
-[cc-build-compile]: https://docs.rs/cc/*/cc/struct.Build.html#method.compile
-[cc-build-flag]: https://docs.rs/cc/*/cc/struct.Build.html#method.flag
-[cc-build-include]: https://docs.rs/cc/*/cc/struct.Build.html#method.include
-[cc-build]: https://docs.rs/cc/*/cc/struct.Build.html
-[cargo-env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
-[build-script-docs]: http://doc.crates.io/build-script.html
 {{#include ../refs/link-refs.md}}

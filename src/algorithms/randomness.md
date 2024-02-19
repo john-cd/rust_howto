@@ -71,16 +71,4 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../deps/examples/rand-choose.rs}}
 ```
 
-[Alphanumeric]: https://docs.rs/rand/*/rand/distributions/struct.Alphanumeric.html
-[Distribution]: https://docs.rs/rand/*/rand/distributions/trait.Distribution.html
-[Distribution::sample]: https://docs.rs/rand/*/rand/distributions/trait.Distribution.html#tymethod.sample
-[gen_range]: https://docs.rs/rand/*/rand/trait.Rng.html#method.gen_range
-[Normal]: https://docs.rs/rand_distr/*/rand_distr/struct.Normal.html
-[rand-distributions]: https://docs.rs/rand_distr/*/rand_distr/index.html
-[rand::Rng]: https://docs.rs/rand/*/rand/trait.Rng.html
-[rand::thread_rng]: https://docs.rs/rand/*/rand/fn.thread_rng.html
-[Rng::gen_range]: https://doc.rust-lang.org/rand/*/rand/trait.Rng.html#method.gen_range
-[Standard]: https://docs.rs/rand/*/rand/distributions/struct.Standard.html
-[Uniform]: https://docs.rs/rand/*/rand/distributions/uniform/struct.Uniform.html
-[uniform distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)
 {{#include ../refs/link-refs.md}}

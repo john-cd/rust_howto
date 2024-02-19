@@ -76,21 +76,4 @@ then saves them in a new folder called `thumbnails`.
 {{#include ../../deps/examples/rayon-thumbnails.rs}}
 ```
 
-[par_sort_unstable]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort_unstable
-[multiple options]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html
-[stable sorting]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort
-[rayon::filter]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.filter
-[rayon::map]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.map
-[rayon::reduce]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.reduce
-[rayon::sum]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.sum
-[par_iter_mut]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
-[rayon::all]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.all
-[rayon::any]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.any
-[std::all]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all
-[std::any]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
-[rayon::find_any]: https://docs.rs/rayon/*/rayon/iter/trait.ParallelIterator.html#method.find_any
-[std::find]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
-[glob::glob_with]: https://docs.rs/glob/*/glob/fn.glob_with.html
-[par_iter]: https://docs.rs/rayon/*/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
-[DynamicImage::resize]: https://docs.rs/image/*/image/enum.DynamicImage.html#method.resize
 {{#include ../refs/link-refs.md}}

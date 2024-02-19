@@ -20,6 +20,4 @@ Creates a custom struct `RGB` and implements the `FromStr` trait to convert a pr
 {{#include ../../deps/examples/from_str.rs}}
 ```
 
-[UnicodeSegmentation::graphemes]: https://docs.rs/unicode-segmentation/*/unicode_segmentation/trait.UnicodeSegmentation.html#tymethod.graphemes
-[unicode-segmentation]: https://docs.rs/unicode-segmentation/1.2.1/unicode_segmentation/
 {{#include ../refs/link-refs.md}}

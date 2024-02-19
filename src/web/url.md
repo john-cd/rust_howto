@@ -65,11 +65,4 @@ Parses [`Url`][Url] and slices it with [`url::Position`][url::Position] to strip
 {{#include ../../deps/examples/fragment.rs}}
 ```
 
-[join]: https://docs.rs/url/*/url/struct.Url.html#method.join
-[origin]: https://docs.rs/url/*/url/struct.Url.html#method.origin
-[parse]: https://docs.rs/url/*/url/struct.Url.html#method.parse
-[Url]: https://docs.rs/url/*/url/struct.Url.html
-[PathSegmentsMut::clear]: https://docs.rs/url/*/url/struct.PathSegmentsMut.html#method.clear
-[Url::set_query]: https://docs.rs/url/*/url/struct.Url.html#method.set_query
-[url::Position]: https://docs.rs/url/*/url/enum.Position.html
 {{#include ../refs/link-refs.md}}

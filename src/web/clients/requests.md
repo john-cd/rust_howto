@@ -48,18 +48,4 @@ a JSON dict containing all request headers for easy verification.
 {{#include ../../../deps/examples/header.rs}}
 ```
 
-[header::Authorization]: https://doc.servo.org/hyper/header/struct.Authorization.html
-[header::UserAgent]: https://doc.servo.org/hyper/header/struct.UserAgent.html
-[hyper::header!]: https://doc.servo.org/hyper/macro.header.html
-[RequestBuilder::header]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.header
-[RequestBuilder::send]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.send
-[Url::parse_with_params]: https://docs.rs/url/*/url/struct.Url.html#method.parse_with_params
-[read_to_string]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string
-[reqwest::blocking::get]: https://docs.rs/reqwest/*/reqwest/blocking/fn.get.html
-[reqwest::blocking::Response]: https://docs.rs/reqwest/*/reqwest/blocking/struct.Response.html
-[reqwest::get]: https://docs.rs/reqwest/*/reqwest/fn.get.html
-[reqwest::Response]: https://docs.rs/reqwest/*/reqwest/struct.Response.html
-[String]: https://doc.rust-lang.org/std/string/struct.String.html
-[tokio]: https://docs.rs/crate/tokio/0.2.11
-[tokio::main]: https://tokio.rs/tokio/tutorial/hello-tokio#the-code
 {{#include ../../refs/link-refs.md}}

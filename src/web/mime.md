@@ -41,14 +41,4 @@ Note that the [`reqwest::header`][reqwest::header] module is exported from the [
 {{#include ../../deps/examples/request.rs}}
 ```
 
-[FromStrError]: https://docs.rs/mime/*/mime/struct.FromStrError.html
-[MIME]: https://docs.rs/mime/*/mime/struct.Mime.html
-[mime:Mime]: https://docs.rs/mime/*/mime/struct.Mime.html
-[http]: https://docs.rs/http/*/http/
-[mime::Mime]: https://docs.rs/mime/*/mime/struct.Mime.html
-[reqwest::header::HeaderMap::get]: https://docs.rs/reqwest/*/reqwest/header/struct.HeaderMap.html#method.get
-[reqwest::header::HeaderValue]: https://docs.rs/reqwest/*/reqwest/header/struct.HeaderValue.html
-[reqwest::header]: https://docs.rs/reqwest/*/reqwest/header/index.html
-[Content-Type]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type
-[MIME type]: https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 {{#include ../refs/link-refs.md}}

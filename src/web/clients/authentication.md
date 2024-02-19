@@ -10,5 +10,4 @@ Uses [`reqwest::RequestBuilder::basic_auth`][reqwest::RequestBuilder::basic_auth
 {{#include ../../../deps/examples/basic.rs}}
 ```
 
-[reqwest::RequestBuilder::basic_auth]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.basic_auth
 {{#include ../../refs/link-refs.md}}

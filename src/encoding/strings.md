@@ -55,13 +55,4 @@ and decodes it with `[decode]`.
 {{#include ../../deps/examples/base64.rs}}
 ```
 
-[form_urlencoded::byte_serialize]: https://docs.rs/url/*/url/form_urlencoded/fn.byte_serialize.html
-[form_urlencoded::parse]: https://docs.rs/url/*/url/form_urlencoded/fn.parse.html
-[application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
-[data_encoding]: https://docs.rs/data-encoding/*/data_encoding/
-[percent_decode]: https://docs.rs/percent-encoding/*/percent_encoding/fn.percent_decode.html
-[utf8_percent_encode]: https://docs.rs/percent-encoding/*/percent_encoding/fn.utf8_percent_encode.html
-[percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
-[decode]: https://docs.rs/base64/*/base64/fn.decode.html
-[encode]: https://docs.rs/base64/*/base64/fn.encode.html
 {{#include ../refs/link-refs.md}}

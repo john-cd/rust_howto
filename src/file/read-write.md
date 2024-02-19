@@ -54,16 +54,4 @@ or else a [race condition] occurs.
 {{#include ../../deps/examples/memmap.rs}}
 ```
 
-[same-file::Handle]: https://docs.rs/same-file/*/same_file/struct.Handle.html
-[BufRead::lines]: https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines
-[BufRead]: https://doc.rust-lang.org/std/io/trait.BufRead.html
-[BufReader]: https://doc.rust-lang.org/std/io/struct.BufReader.html
-[File::create]: https://doc.rust-lang.org/std/fs/struct.File.html#method.create
-[File::open]: https://doc.rust-lang.org/std/fs/struct.File.html#method.open
-[File]: https://doc.rust-lang.org/std/fs/struct.File.html
-[Lines]: https://doc.rust-lang.org/std/io/struct.Lines.html
-[Read]: https://doc.rust-lang.org/std/io/trait.Read.html
-[Mmap::map]: https://docs.rs/memmap/*/memmap/struct.Mmap.html#method.map
-[seek]: https://doc.rust-lang.org/std/fs/struct.File.html#method.seek
-[race condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
 {{#include ../refs/link-refs.md}}

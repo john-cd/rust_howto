@@ -84,15 +84,4 @@ See [`csv::Reader::deserialize`][csv::Reader::deserialize] `[serde::Deserialize]
 {{#include ../../deps/examples/transform.rs}}
 ```
 
-[csv::ByteRecord]: https://docs.rs/csv/*/csv/struct.ByteRecord.html
-[csv::Reader::deserialize]: https://docs.rs/csv/*/csv/struct.Reader.html#method.deserialize
-[csv::StringRecord]: https://docs.rs/csv/*/csv/struct.StringRecord.html
-[delimiter]: https://docs.rs/csv/1.0.0-beta.3/csv/struct.ReaderBuilder.html#method.delimiter
-[csv::Writer]: https://docs.rs/csv/*/csv/struct.Writer.html
-[flush]: https://docs.rs/csv/*/csv/struct.Writer.html#method.flush
-[serialize]: https://docs.rs/csv/*/csv/struct.Writer.html#method.serialize
-[write_record]: https://docs.rs/csv/*/csv/struct.Writer.html#method.write_record
-[csv::invalid_option]: https://docs.rs/csv/*/csv/fn.invalid_option.html
-[serde::Deserialize]: https://docs.rs/serde/\*/serde/trait.Deserialize.html
-[std::str::FromStr]: https://doc.rust-lang.org/std/str/trait.FromStr.html
 {{#include ../refs/link-refs.md}}

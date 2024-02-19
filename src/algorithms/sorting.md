@@ -31,13 +31,4 @@ order (By name and age). In order to make Person sortable you need four traits [
 {{#include ../../deps/examples/sort_struct.rs}}
 ```
 
-[vec::sort]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort
-[vec::sort_unstable]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_unstable
-[vec::sort_by]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by
-[PartialOrd::partial_cmp]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#tymethod.partial_cmp
-[Eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
-[PartialEq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
-[Ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
-[PartialOrd]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
-[vec:sort_by]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
 {{#include ../refs/link-refs.md}}

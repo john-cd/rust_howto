@@ -16,8 +16,4 @@ securely generated random numbers.
 {{#include ../../deps/examples/pbkdf2.rs}}
 ```
 
-[pbkdf2::derive]: https://briansmith.org/rustdoc/ring/pbkdf2/fn.derive.html
-[pbkdf2::verify]: https://briansmith.org/rustdoc/ring/pbkdf2/fn.verify.html
-[ring::pbkdf2]: https://briansmith.org/rustdoc/ring/pbkdf2/index.html
-[SecureRandom::fill]: https://briansmith.org/rustdoc/ring/rand/trait.SecureRandom.html#tymethod.fill
 {{#include ../refs/link-refs.md}}

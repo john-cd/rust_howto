@@ -80,12 +80,4 @@ Reads an environment variable via [std::env::var].
 {{#include ../../deps/examples/read-env-variable.rs}}
 ```
 
-[File::try_clone]: https://doc.rust-lang.org/std/fs/struct.File.html#method.try_clone
-[process::Stdio]: https://doc.rust-lang.org/std/process/struct.Stdio.html
-[BufReader]: https://doc.rust-lang.org/std/io/struct.BufReader.html
-[Command]: https://doc.rust-lang.org/std/process/struct.Command.html
-[Stdio::piped]: https://doc.rust-lang.org/std/process/struct.Stdio.html
-[Output]: https://doc.rust-lang.org/std/process/struct.Output.html
-[Regex]: https://docs.rs/regex/*/regex/struct.Regex.html
-[std::env::var]: https://doc.rust-lang.org/std/env/fn.var.html
 {{#include ../refs/link-refs.md}}

@@ -83,21 +83,4 @@ Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] 
 {{#include ../../deps/examples/log-custom.rs}}
 ```
 
-[env-logger::init]: https://docs.rs/env_logger/*/env_logger/fn.init.html
-[Builder]: https://docs.rs/env_logger/*/env_logger/struct.Builder.html
-[Builder::init]: https://docs.rs/env_logger/*/env_logger/struct.Builder.html#method.init
-[Builder::parse]: https://docs.rs/env_logger/*/env_logger/struct.Builder.html#method.parse
-[RUST_LOG]: https://docs.rs/env_logger/*/env_logger/#enabling-logging
-[DateTime::format]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.format
-[DateTime]: https://docs.rs/chrono/*/chrono/datetime/struct.DateTime.html
-[Local::now]: https://docs.rs/chrono/*/chrono/offset/struct.Local.html#method.now
-[Builder::format]: https://docs.rs/env_logger/*/env_logger/struct.Builder.html#method.format
-[Record::args]: https://docs.rs/log/*/log/struct.Record.html#method.args
-[Record::level]: https://docs.rs/log/*/log/struct.Record.html#method.level
-[strftime::specifiers]: https://docs.rs/chrono/*/chrono/format/strftime/index.html#specifiers
-[log::Level]: https://docs.rs/log/*/log/enum.Level.html
-[log4rs::append::file::FileAppender]: https://docs.rs/log4rs/*/log4rs/append/file/struct.FileAppender.html
-[log4rs::config::Config]: https://docs.rs/log4rs/*/log4rs/config/struct.Config.html
-[log4rs::encode::pattern]: https://docs.rs/log4rs/*/log4rs/encode/pattern/index.html
-[log::LevelFilter]: https://docs.rs/log/*/log/enum.LevelFilter.html
 {{#include ../refs/link-refs.md}}

@@ -110,23 +110,4 @@ A custom [`MatchOptions`][MatchOptions] struct is passed to the [`glob_with`][gl
 {{#include ../../deps/examples/ignore-case.rs}}
 ```
 
-[follow_links]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.follow_links
-[same-file::is_same_file]: https://docs.rs/same-file/*/same_file/fn.is_same_file.html
-[WalkDir::max_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.max_depth
-[WalkDir::min_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.min_depth
-[DirEntry::path]: https://doc.rust-lang.org/std/fs/struct.DirEntry.html#method.path
-[Duration::as_secs]: https://doc.rust-lang.org/std/time/struct.Duration.html#method.as_secs
-[env::current_dir]: https://doc.rust-lang.org/std/env/fn.current_dir.html
-[fs::Metadata]: https://doc.rust-lang.org/std/fs/struct.Metadata.html
-[fs::read_dir]: https://doc.rust-lang.org/std/fs/fn.read_dir.html
-[Metadata::is_file]: https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.is_file
-[Metadata::modified]: https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.modified
-[SystemTime::elapsed]: https://doc.rust-lang.org/std/time/struct.SystemTime.html#method.elapsed
-[filter_entry]: https://docs.rs/walkdir/*/walkdir/struct.IntoIter.html#method.filter_entry
-[Iterator::filter]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter
-[WalkDir::depth]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html#method.depth
-[WalkDir::DirEntry]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html
-[Default]: https://doc.rust-lang.org/std/default/trait.Default.html
-[glob_with]: https://docs.rs/glob/*/glob/fn.glob_with.html
-[MatchOptions]: https://docs.rs/glob/*/glob/struct.MatchOptions.html
 {{#include ../refs/link-refs.md}}

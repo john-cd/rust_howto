@@ -31,8 +31,4 @@ needs to construct `Style` struct. [`Style::new()`][Style::new()] creates the st
 {{#include ../../deps/examples/ansi_term-basic2.rs}}
 ```
 
-[ansi_term]: https://crates.io/crates/ansi_term
-[ANSIString]: https://docs.rs/ansi_term/*/ansi_term/type.ANSIString.html
-[Style]: https://docs.rs/ansi_term/*/ansi_term/struct.Style.html
-[Style::new()]: https://docs.rs/ansi_term/0.11.0/ansi_term/struct.Style.html#method.new
 {{#include ../refs/link-refs.md}}

@@ -11,6 +11,5 @@ Subsequently, shows basic bitwise operations and formatting.
 {{#include ../../deps/examples/bitfield.rs}}
 ```
 
-[bitflags!]: https://docs.rs/bitflags/*/bitflags/macro.bitflags.html
-[Display]: https://doc.rust-lang.org/std/fmt/trait.Display.html
+
 {{#include ../refs/link-refs.md}}

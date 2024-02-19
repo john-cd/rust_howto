@@ -74,15 +74,5 @@ and `Option<&str>` holds optional application name.
 {{#include ../../deps/examples/log-syslog.rs}}
 ```
 
-[log::error!]: https://docs.rs/log/*/log/macro.error.html
-[Builder::target]: https://docs.rs/env_logger/*/env_logger/struct.Builder.html#method.target
-[Target::Stdout]: https://docs.rs/env_logger/*/env_logger/fmt/enum.Target.html
-[log::Log]: https://docs.rs/log/*/log/trait.Log.html
-[log::set_logger]: https://docs.rs/log/*/log/fn.set_logger.html
-[log::debug!]: https://docs.rs/log/*/log/macro.debug.html
-[std::fmt]: https://doc.rust-lang.org/std/fmt/
-[log::LevelFilter]: https://docs.rs/log/*/log/enum.LevelFilter.html
-[syslog::Facility]: https://docs.rs/syslog/*/syslog/enum.Facility.html
-[syslog::init]: https://docs.rs/syslog/*/syslog/fn.init.html
-[UNIX syslog]: https://www.gnu.org/software/libc/manual/html_node/Overview-of-Syslog.html
+
 {{#include ../refs/link-refs.md}}

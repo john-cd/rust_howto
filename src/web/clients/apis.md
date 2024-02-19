@@ -78,27 +78,4 @@ If the response exceeds the rate limit, the example waits and retries.
 {{#include ../../../deps/examples/rate-limited.rs}}
 ```
 
-[hyper::header!]: https://doc.servo.org/hyper/header/index.html#defining-custom-headers
-[reqwest::StatusCode::Forbidden]: https://docs.rs/reqwest/*/reqwest/struct.StatusCode.html#associatedconstant.FORBIDDEN
-[ClientBuilder::build]: https://docs.rs/reqwest/*/reqwest/struct.ClientBuilder.html#method.build
-[Client::head]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.head
-[ClientBuilder::timeout]: https://docs.rs/reqwest/*/reqwest/struct.ClientBuilder.html#method.timeout
-[reqwest::Error]: https://docs.rs/reqwest/*/reqwest/struct.Error.html
-[reqwest::Result]:https://docs.rs/reqwest/*/reqwest/type.Result.html
-[Client::delete]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.delete
-[Client::post]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.post
-[RequestBuilder::basic_auth]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.basic_auth
-[RequestBuilder::json]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.json
-[RequestBuilder::send]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.send
-[reqwest::Client]: https://docs.rs/reqwest/*/reqwest/struct.Client.html
-[serde-json::json!]: https://docs.rs/serde_json/*/serde_json/macro.json.html
-[GitHub API]: https://developer.github.com/v3/auth/
-[HTTP Basic Auth]: https://tools.ietf.org/html/rfc2617
-[OAuth]: https://oauth.net/getting-started/
-[reqwest::get]: https://docs.rs/reqwest/*/reqwest/fn.get.html
-[reqwest::Response]: https://docs.rs/reqwest/*/reqwest/struct.Response.html
-[Response::json]: https://docs.rs/reqwest/*/reqwest/struct.Response.html#method.json
-[serde::Deserialize]: https://docs.rs/serde/*/serde/trait.Deserialize.html
-[GitHub API - Rate limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
-[tokio::main]: https://tokio.rs/tokio/tutorial/hello-tokio#the-code
 {{#include ../../refs/link-refs.md}}

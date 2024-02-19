@@ -99,28 +99,4 @@ Create [`ThreadPool`][ThreadPool] with thread count equal to number of cores wit
 {{#include ../../deps/examples/threadpool-fractal.rs}}
 ```
 
-[crossbeam-channel]: https://docs.rs/crate/crossbeam-channel/
-[ex-crossbeam-spawn]: #spawn-a-short-lived-thread
-[crossbeam::scope]: https://docs.rs/crossbeam/*/crossbeam/fn.scope.html
-[Scope::spawn]: https://docs.rs/crossbeam/*/crossbeam/thread/struct.Scope.html#method.spawn
-[crossbeam_channel::unbounded]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/fn.unbounded.html
-[Mutex]: https://doc.rust-lang.org/std/sync/struct.Mutex.html
-[MutexGuard]: https://doc.rust-lang.org/std/sync/struct.MutexGuard.html
-[RwLock]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
-[crossbeam_channel::bounded]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/fn.bounded.html
-[crossbeam_channel::Receiver::iter]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/struct.Receiver.html#method.iter
-[crossbeam_channel::Sender::send]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/struct.Sender.html#method.send
-[guide]: http://zguide.zeromq.org/page:all#Divide-and-Conquer
-[ImageBuffer::new]: https://docs.rs/image/*/image/struct.ImageBuffer.html#method.new
-[ImageBuffer::put_pixel]: https://docs.rs/image/*/image/struct.ImageBuffer.html#method.put_pixel
-[ImageBuffer::save]: https://docs.rs/image/*/image/struct.ImageBuffer.html#method.save
-[mpsc::channel]: https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html
-[num-cpus::get]: https://docs.rs/num-cpus/*/num-cpus/fn.get.html
-[Receiver::recv]: https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
-[Rgb::from_channels]: https://docs.rs/image/*/image/struct.Rgb.html#method.from_channels
-[ThreadPool]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html
-[ThreadPool::execute]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html#method.execute
-[execute]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html#method.execute
-[Walkdir::new]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.new
-[Julia set]: https://en.wikipedia.org/wiki/Julia_set
 {{#include ../refs/link-refs.md}}

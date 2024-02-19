@@ -65,11 +65,4 @@ Runs `git --version` using [`Command`][Command] then parses the version number i
 {{#include ../../deps/examples/semver-command.rs}}
 ```
 
-[is_prerelease]: https://docs.rs/semver/*/semver/struct.Version.html#method.is_prerelease
-[Version::parse]: https://docs.rs/semver/*/semver/struct.Version.html#method.parse
-[Semantic Versioning Specification]: http://semver.org/
-[Command]: https://doc.rust-lang.org/std/process/struct.Command.html
-[semver::Version]: https://docs.rs/semver/*/semver/struct.Version.html
-[semver::VersionReq]: https://docs.rs/semver/*/semver/struct.VersionReq.html
-[VersionReq::matches]: https://docs.rs/semver/*/semver/struct.VersionReq.html#method.matches
 {{#include ../refs/link-refs.md}}

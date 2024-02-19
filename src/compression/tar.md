@@ -33,14 +33,4 @@ Iterate over the `[Archive::entries]`. Use [`Path::strip_prefix`][Path::strip_pr
 {{#include ../../deps/examples/tar-strip-prefix.rs}}
 ```
 
-[Archive::unpack]: https://docs.rs/tar/*/tar/struct.Archive.html#method.unpack
-[GzDecoder]: https://docs.rs/flate2/*/flate2/read/struct.GzDecoder.html
-[Builder::append_dir_all]: https://docs.rs/tar/*/tar/struct.Builder.html#method.append_dir_all
-[File]: https://doc.rust-lang.org/std/fs/struct.File.html
-[GzEncoder]: https://docs.rs/flate2/*/flate2/write/struct.GzEncoder.html
-[tar::Builder]: https://docs.rs/tar/*/tar/struct.Builder.html
-[Archive::entries]: https://docs.rs/tar/*/tar/struct.Archive.html#method.entries
-[Entry::unpack]: https://docs.rs/tar/*/tar/struct.Entry.html#method.unpack
-[Path::strip_prefix]: https://doc.rust-lang.org/std/path/struct.Path.html#method.strip_prefix
-[tar::Entry]: https://docs.rs/tar/*/tar/struct.Entry.html
 {{#include ../refs/link-refs.md}}

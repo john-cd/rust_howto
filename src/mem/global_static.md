@@ -11,5 +11,4 @@ be evaluated once and stored behind a global static reference.
 {{#include ../../deps/examples/lazy-constant.rs}}
 ```
 
-[HashMap]: https://doc.rust-lang.org/std/collections/struct.HashMap.html
 {{#include ../refs/link-refs.md}}

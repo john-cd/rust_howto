@@ -45,7 +45,4 @@ received are from another system.
 {{#include ../../deps/examples/endian-byte.rs}}
 ```
 
-[from_str]: https://docs.serde.rs/serde_json/fn.from_str.html
-[json!]: https://docs.serde.rs/serde_json/macro.json.html
-[serde-json::Value]: https://docs.serde.rs/serde_json/enum.Value.html
 {{#include ../refs/link-refs.md}}

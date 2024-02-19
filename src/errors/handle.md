@@ -67,14 +67,4 @@ Error level - description
 
 Run the recipe with `RUST_BACKTRACE=1` to display a detailed [`backtrace`][backtrace] associated with this error.
 
-[error_chain!]: https://docs.rs/error-chain/*/error_chain/macro.error_chain.html
-[Error]: https://doc.rust-lang.org/std/error/trait.Error.html
-[foreign_links]: https://docs.rs/error-chain/*/error_chain/#foreign-links
-[std::io::Error]: https://doc.rust-lang.org/std/io/struct.Error.html
-[handle errors in Rust]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
-[ErrorKind]: https://docs.rs/error-chain/*/error_chain/example_generated/enum.ErrorKind.html
-[blocking]: https://docs.rs/reqwest/*/reqwest/blocking/index.html
-[Matching]:https://docs.rs/error-chain/*/error_chain/#matching-errors
-[backtrace]: https://docs.rs/error-chain/*/error_chain/trait.ChainedError.html#tymethod.backtrace
-[chain_err]: https://docs.rs/error-chain/*/error_chain/index.html#chaining-errors
 {{#include ../refs/link-refs.md}}

@@ -124,22 +124,4 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../deps/examples/deserialize-matrix.rs}}
 ```
 
-[approx]: https://docs.rs/approx/*/approx/index.html
-[assert_abs_diff_eq!]: https://docs.rs/approx/*/approx/macro.assert_abs_diff_eq.html
-[Binary Operators With Two Arrays]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#binary-operators-with-two-arrays
-[ndarray]: https://docs.rs/crate/ndarray/*
-[ndarray::Array]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html
-[Array1]: https://docs.rs/ndarray/*/ndarray/type.Array1.html
-[ArrayView1]: https://docs.rs/ndarray/*/ndarray/type.ArrayView1.html
-[dot]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.dot
-[fold]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.fold
-[l1]: http://mathworld.wolfram.com/L1-Norm.html
-[l2]: http://mathworld.wolfram.com/L2-Norm.html
-[nalgebra::Matrix3]: https://docs.rs/nalgebra/*/nalgebra/base/type.Matrix3.html
-[ndarray::arr2]: https://docs.rs/ndarray/*/ndarray/fn.arr2.html
-[ndarray::ArrayBase::dot]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.dot-1
-[ndarray::arr1]: https://docs.rs/ndarray/*/ndarray/fn.arr1.html
-[ndarray::Array2::dot]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.dot-1
-[serde-json::to_string]: https://docs.rs/serde_json/*/serde_json/fn.to_string.html
-[serde-json::from_str]: https://docs.rs/serde_json/*/serde_json/fn.from_str.html
 {{#include ../refs/link-refs.md}}

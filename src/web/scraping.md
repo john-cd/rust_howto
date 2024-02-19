@@ -45,20 +45,4 @@ MediaWiki link syntax is described [here][MediaWiki link syntax].
 {{#include ../../deps/examples/unique.rs}}
 ```
 
-[attr]: https://docs.rs/select/*/select/node/struct.Node.html#method.attr
-[Document::from_read]: https://docs.rs/select/*/select/document/struct.Document.html#method.from_read
-[filter_map]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
-[find]: https://docs.rs/select/*/select/document/struct.Document.html#method.find
-[Name]: https://docs.rs/select/*/select/predicate/struct.Name.html
-[reqwest::get]: https://docs.rs/reqwest/*/reqwest/fn.get.html
-[Selection]: https://docs.rs/select/*/select/selection/struct.Selection.html
-[Position::BeforePath]: https://docs.rs/url/*/url/enum.Position.html#variant.BeforePath
-[StatusCode]: https://docs.rs/reqwest/*/reqwest/struct.StatusCode.html
-[tokio::spawn]: https://docs.rs/tokio/*/tokio/fn.spawn.html
-[url::Parse]: https://docs.rs/url/*/url/struct.Url.html#method.parse
-[url::ParseOptions]: https://docs.rs/url/*/url/struct.ParseOptions.html
-[Cow]: https://doc.rust-lang.org/std/borrow/enum.Cow.html
-[Regex::captures_iter]: https://docs.rs/regex/*/regex/struct.Regex.html#method.captures_iter
-[String]: https://doc.rust-lang.org/std/string/struct.String.html
-[MediaWiki link syntax]: https://www.mediawiki.org/wiki/Help:Links
 {{#include ../refs/link-refs.md}}

@@ -39,11 +39,4 @@ distance.
 {{#include ../../deps/examples/latitude-longitude.rs}}
 ```
 
-[float methods]: https://doc.rust-lang.org/std/primitive.f64.html#methods
-[to_radians]: https://doc.rust-lang.org/std/primitive.f64.html#method.to_radians
-[sin]: https://doc.rust-lang.org/std/primitive.f64.html#method.sin
-[cos]: https://doc.rust-lang.org/std/primitive.f64.html#method.cos
-[powi]: https://doc.rust-lang.org/std/primitive.f64.html#method.powi
-[sqrt]: https://doc.rust-lang.org/std/primitive.f64.html#method.sqrt
-[Haversine formula]: https://en.wikipedia.org/wiki/Haversine_formula
 {{#include ../refs/link-refs.md}}

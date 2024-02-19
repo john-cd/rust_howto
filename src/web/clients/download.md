@@ -46,21 +46,5 @@ The Range header is defined in [RFC7233][HTTP Range RFC7233].
 {{#include ../../../deps/examples/partial.rs}}
 ```
 
-[Client::post]: https://docs.rs/reqwest/*/reqwest/struct.Client.html#method.post
-[read_to_string]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string
-[RequestBuilder::body]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.body
-[RequestBuilder::send]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html#method.send
-[reqwest::Client]: https://docs.rs/reqwest/*/reqwest/struct.Client.html
-[reqwest::RequestBuilder]: https://docs.rs/reqwest/*/reqwest/struct.RequestBuilder.html
-[File]: https://doc.rust-lang.org/std/fs/struct.File.html
-[io::copy]: https://doc.rust-lang.org/std/io/fn.copy.html
-[reqwest::get]: https://docs.rs/reqwest/*/reqwest/fn.get.html
-[Response::url]: https://docs.rs/reqwest/*/reqwest/struct.Response.html#method.url
-[tempfile::Builder]: https://docs.rs/tempfile/*/tempfile/struct.Builder.html
-[tempdir()]: https://docs.rs/tempfile/3.1.0/tempfile/struct.Builder.html#method.tempdir
-[reqwest::blocking::Client::get]: https://docs.rs/reqwest/*/reqwest/blocking/struct.Client.html#method.get
-[reqwest::blocking::Client::head]: https://docs.rs/reqwest/*/reqwest/blocking/struct.Client.html#method.head
-[Content-Length]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length
-[Range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
-[HTTP Range RFC7233]: https://tools.ietf.org/html/rfc7233#section-3.1
+
 {{#include ../../refs/link-refs.md}}

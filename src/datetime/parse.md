@@ -56,25 +56,4 @@ identifies a date and a time. For parsing dates and times without timezones use
 {{#include ../../deps/examples/string.rs}}
 ```
 
-[NaiveDate::from_ymd]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDate.html#method.from_ymd
-[NaiveDateTime::from_timestamp]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDateTime.html#method.from_timestamp
-[NaiveDateTime::timestamp]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDateTime.html#method.timestamp
-[NaiveTime::from_hms]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveTime.html#method.from_hms
-[UNIX timestamp]: https://en.wikipedia.org/wiki/Unix_time
-[Datelike]: https://docs.rs/chrono/*/chrono/trait.Datelike.html
-[Timelike]: https://docs.rs/chrono/*/chrono/trait.Timelike.html
-[Utc::now]: https://docs.rs/chrono/*/chrono/offset/struct.Utc.html#method.now
-[RFC 2822]: https://www.ietf.org/rfc/rfc2822.txt
-[RFC 3339]: https://www.ietf.org/rfc/rfc3339.txt
-[chrono::format::strftime]: https://docs.rs/chrono/*/chrono/format/strftime/index.html
-[DateTime::format]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.format
-[DateTime::parse_from_rfc2822]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.parse_from_rfc2822
-[DateTime::parse_from_rfc3339]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.parse_from_rfc3339
-[DateTime::parse_from_str]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.parse_from_str
-[DateTime::to_rfc2822]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.to_rfc2822
-[DateTime::to_rfc3339]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.to_rfc3339
-[DateTime]: https://docs.rs/chrono/*/chrono/struct.DateTime.html
-[NaiveDate]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDate.html
-[NaiveDateTime]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDateTime.html
-[NaiveTime]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveTime.html
 {{#include ../refs/link-refs.md}}
