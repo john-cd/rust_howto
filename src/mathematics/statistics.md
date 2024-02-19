@@ -18,7 +18,7 @@ The second example calculates the median using the quickselect algorithm, which 
 {{#include ../../deps/examples/central-tendency1.rs}}
 ```
 
-The final example calculates the  mode using a mutable [`HashMap`][HashMap] to collect counts of each distinct integer from the set, using a [`fold`][fold] and the [`entry`][entry] API. The most frequent value in the [`HashMap`][HashMap] surfaces with [`max_by_key`][max_by_key]
+The final example calculates the mode using a mutable [`HashMap`][HashMap] to collect counts of each distinct integer from the set, using a [`fold`][fold] and the [`entry`][entry] API. The most frequent value in the [`HashMap`][HashMap] surfaces with [`max_by_key`][max_by_key]
 
 ```rust,editable
 {{#include ../../deps/examples/central-tendency2.rs}}

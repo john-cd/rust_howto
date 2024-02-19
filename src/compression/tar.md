@@ -26,7 +26,7 @@ Creates a [`File`][File] wrapped in [`GzEncoder`][GzEncoder] and [`tar::Builder`
 
 [![flate2-badge]][flate2] [![tar-badge]][tar] [![cat-compression-badge]][cat-compression]
 
-Iterate over the [`Archive::entries`][Archive::entries]. Use [`Path::strip_prefix`][Path::strip_prefix] to remove the specified path prefix (`bundle/logs`).  Finally, extract the [`tar::Entry`][tar::Entry] via [`Entry::unpack`][Entry::unpack].
+Iterate over the [`Archive::entries`][Archive::entries]. Use [`Path::strip_prefix`][Path::strip_prefix] to remove the specified path prefix (`bundle/logs`). Finally, extract the [`tar::Entry`][tar::Entry] via [`Entry::unpack`][Entry::unpack].
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/tar-strip-prefix.rs}}

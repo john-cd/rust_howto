@@ -16,7 +16,7 @@ Validates that an email address is formatted correctly, and extracts everything 
 
 Extracts, sorts, and deduplicates list of hashtags from text.
 
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [twitter-hashtag-regex][twitter-hashtag-regex]  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
+The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [twitter-hashtag-regex][twitter-hashtag-regex] [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
 {{#include ../../deps/examples/hashtags.rs}}
@@ -26,7 +26,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 [![regex-badge]][regex] [![cat-text-processing-badge]][cat-text-processing]
 
-Processes a string of text using [`Regex::captures_iter`][Regex::captures_iter] to capture multiple phone numbers.  The example here is for US convention phone numbers.
+Processes a string of text using [`Regex::captures_iter`][Regex::captures_iter] to capture multiple phone numbers. The example here is for US convention phone numbers.
 
 ```rust,editable
 {{#include ../../deps/examples/phone.rs}}

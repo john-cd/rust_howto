@@ -37,7 +37,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std-badge]][std] [![cat-os-badge]][cat-os]
 
-Spawns a child process and redirects `stdout` and `stderr` to the same file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`process::Stdio`][process::Stdio] writes to a specified file.  [`File::try_clone`][File::try_clone] references the same file handle for `stdout` and `stderr`. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects `stdout` and `stderr` to the same file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`process::Stdio`][process::Stdio] writes to a specified file. [`File::try_clone`][File::try_clone] references the same file handle for `stdout` and `stderr`. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 

@@ -16,7 +16,7 @@ The following example shows how to parse a [`MIME`][MIME] type from a string usi
 
 [![mime-badge]][mime] [![cat-encoding-badge]][cat-encoding]
 
-The following example shows how to return the correct MIME type from a given filename using the [mime][mime] crate.  The program will check for file extensions and match against a known list.  The return value is [`mime:Mime`][mime:Mime]
+The following example shows how to return the correct MIME type from a given filename using the [mime][mime] crate. The program will check for file extensions and match against a known list. The return value is [`mime:Mime`][mime:Mime]
 
 ```rust,editable
 {{#include ../../deps/examples/filename.rs}}

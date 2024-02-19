@@ -15,7 +15,7 @@
 [ex-log-debug]: logging/log.md#log-a-debug-message-to-the-console
 [ex-log-error]: logging/log.md#log-an-error-message-to-the-console
 [ex-log-stdout]: logging/log.md#log-to-stdout-instead-of-stderr
-[ex-log-custom-logger]:  logging/log.md#log-messages-with-a-custom-logger
+[ex-log-custom-logger]: logging/log.md#log-messages-with-a-custom-logger
 [ex-log-syslog]: logging/log.md#log-to-the-unix-syslog
 [ex-log-mod]: logging/config_log.md#enable-log-levels-per-module
 [ex-log-env-variable]: logging/config_log.md#use-a-custom-environment-variable-to-set-up-logging

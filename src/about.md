@@ -14,7 +14,7 @@ This cookbook is intended for new Rust programmers, so that they may quickly get
 
 ## How to read this book
 
-The cookbook [index][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc.  The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
+The cookbook [index][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
 
 Within the index, each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand-badge]][rand], and which categories on [crates.io][crates.io] those crates belong to, like
 [![cat-science-badge]][cat-science].
@@ -69,7 +69,7 @@ The structure generally looks like:
 
 This is using the `error_chain!` macro to define a custom `Error` and `Result` type, along with automatic conversions from two standard library error types. The automatic conversions make the `?` operator work.
 
-For the sake of readability error handling boilerplate is hidden by default like below.  In order to read full contents click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the snippet.
+For the sake of readability error handling boilerplate is hidden by default like below. In order to read full contents click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the snippet.
 
 ```rust,editable
 {{#include ../deps/examples/about2.rs}}
@@ -85,4 +85,5 @@ At present the cookbook is focused on the standard library, and on "core" or "fo
 
 The cookbook is closely tied to the [Rust Libz Blitz][Rust Libz Blitz], a project to identify, and improve the quality of such crates, and so it largely defers crate selection to that project. Any crates that have already been evaluated as part of that process are in scope for the cookbook, as are crates that are pending evaluation.
 
-[index]: intro.md {{#include refs/link-refs.md}}
+[index]: intro.md
+{{#include refs/link-refs.md}}

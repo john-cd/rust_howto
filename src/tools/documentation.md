@@ -33,7 +33,7 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 ```rust,editable
 //! Fast and easy queue abstraction.
 //!
-//! Provides an abstraction over a queue.  When the abstraction is used
+//! Provides an abstraction over a queue. When the abstraction is used
 //! there are these advantages:
 //! - Fast
 //! - `[Easy]`

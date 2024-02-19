@@ -1,19 +1,19 @@
 # STATUS
 
-[Introduction](src/intro.md)  polish the intro
-[About](src/about.md)  rewrite
+[Introduction](src/intro.md) polish the intro
+[About](src/about.md) rewrite
 [Contributing](src/contributing.md) polish
 [Index](src/index.md) rethink
 
 - [Language](src/lang.md)
   - [Rust installation and first steps](src/lang/rust_install.md) polish
-  - [Main function](src/lang/main.md)  add description
-  - [Simple data types](src/lang/simple_data_types.md)  add description
-  - [Variables and constants](src/lang/variables_and_constants.md)  add description
-  - [Ownership and borrowing](src/lang/ownership_borrowing.md)    add description
-  - [Slices](src/lang/slices.md)    add description
-  - [Functions](src/lang/functions.md)    add description
-  - [Control flow](src/lang/control_flow.md)  add description
+  - [Main function](src/lang/main.md) add description
+  - [Simple data types](src/lang/simple_data_types.md) add description
+  - [Variables and constants](src/lang/variables_and_constants.md) add description
+  - [Ownership and borrowing](src/lang/ownership_borrowing.md)   add description
+  - [Slices](src/lang/slices.md)   add description
+  - [Functions](src/lang/functions.md)   add description
+  - [Control flow](src/lang/control_flow.md) add description
   - [Structs](src/lang/structs.md)
   - [Enums](src/lang/enums.md)
   - [Traits](src/lang/traits.md)
@@ -28,7 +28,7 @@
   - [Macros](src/lang/macros.md)
 
 - [Standard library](src/standard_library.md)
-  - [Option](src/standard_library/option.md)  finish Option page  map, unwrap_or
+  - [Option](src/standard_library/option.md) finish Option page map, unwrap_or
   - [Vectors](src/standard_library/vectors.md)
   - [HashMap](src/standard_library/hashmaps.md)
   - [Strings](src/standard_library/strings.md)
@@ -37,11 +37,11 @@
 - [Key crates](src/key_crates.md)
 
 - [Development tools](src/tools.md)
-  - [Cargo](src/tools/cargo.md)  finish Cargo Plugins / cargo.md
+  - [Cargo](src/tools/cargo.md) finish Cargo Plugins / cargo.md
   - [Package layout](src/tools/cargo/package_layout.md)
   - [Installation](src/tools/installing.md)
     - [Rustup](src/tools/installing/rustup.md)
-  - [Code editing and formatting](src/tools/editing.md)  add latest JetBrains tooling
+  - [Code editing and formatting](src/tools/editing.md) add latest JetBrains tooling
   - [Compiling](src/tools/compiling.md)
     - [Faster linking](src/tools/compiling/faster_linking.md)  finish faster linking
     - [Cross-compilation](src/tools/compiling/cross_compilation.md)
@@ -82,8 +82,8 @@
 
 - [Concurrency - Async](src/concurrency/async.md)
   - [Async and traits](src/async/async_traits.md)
-  - [Tokio async runtime](src/async/tokio.md)  add more to tokio.md
-  - [Async channels](src/async/async_channels.md)  add more to async_channels
+  - [Tokio async runtime](src/async/tokio.md) add more to tokio.md
+  - [Async channels](src/async/async_channels.md) add more to async_channels
   - [Streams](src/async/streams.md)
   - [Futures crate](src/async/futures.md)
   - [Mixing async and blocking code](src/async/async_and_blocking.md)
@@ -114,7 +114,7 @@
   - [Structured data](src/encoding/complex.md)
   - [Serde](src/encoding/serde.md)
 
-- [Error handling](src/errors.md)  errors: color-eyre, eyre
+- [Error handling](src/errors.md) errors: color-eyre, eyre
   - [Handle error variants](src/errors/handle.md)
   - [Error handling](src/errors/error_handling.md)
   - [Error customization](src/errors/error_customization.md)
@@ -194,5 +194,5 @@
 ---
 
 [Crates (src/alphabetic)](src/misc/crates.md)
-[Crates (src/by category)](src/misc/categories.md)  generate automatically
+[Crates (src/by category)](src/misc/categories.md) generate automatically
 [Thanks](src/misc/thanks.md)

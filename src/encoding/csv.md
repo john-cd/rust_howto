@@ -74,7 +74,7 @@ The following example shows how to serialize custom structs as CSV records using
 
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
-Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color.  Utilizes the [csv][csv] crate to read and write the csv file, and [serde][serde] to deserialize and serialize the rows to and from bytes.
+Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [csv][csv] crate to read and write the csv file, and [serde][serde] to deserialize and serialize the rows to and from bytes.
 
 See [`csv::Reader::deserialize`][csv::Reader::deserialize] [`serde::Deserialize`][serde::Deserialize] and [`std::str::FromStr`][std::str::FromStr]
 

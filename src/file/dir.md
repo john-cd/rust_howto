@@ -20,7 +20,7 @@ Use [`same-file::is_same_file`][same-file::is_same_file] to detect loops for a g
 
 ```bash
 mkdir -p /tmp/foo/bar/baz
-ln -s /tmp/foo/  /tmp/foo/bar/baz/qux
+ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
 ```
 
 The following would assert that a loop exists.

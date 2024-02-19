@@ -11,7 +11,7 @@ Interface with database management systems.
 | [Aggregate data][ex-postgres-aggregate-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
 
 [ex-sqlite-initialization]: databases/sqlite.md#create-a-sqlite-database
-[ex-sqlite-insert-select]:  databases/sqlite.md#insert-and-select-data
+[ex-sqlite-insert-select]: databases/sqlite.md#insert-and-select-data
 [ex-postgres-create-tables]: databases/postgres.md#create-tables-in-a-postgres-database
 [ex-postgres-insert-query-data]: databases/postgres.md#insert-and-query-data
 [ex-postgres-aggregate-data]: databases/postgres.md#aggregate-data

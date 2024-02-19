@@ -51,7 +51,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][semver::Vers
 
 Runs `git --version` using [`Command`][Command] then parses the version number into a
 [`semver::Version`][semver::Version] using [`Version::parse`][Version::parse] [`semver::VersionReq::matches`][semver::VersionReq::matches] compares
-[`semver::VersionReq`][semver::VersionReq] to the parsed version.  The command output resembles "git version x.y.z".
+[`semver::VersionReq`][semver::VersionReq] to the parsed version. The command output resembles "git version x.y.z".
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/semver-command.rs}}

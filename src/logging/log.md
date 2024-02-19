@@ -4,7 +4,7 @@
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-The `log` crate provides logging utilities. The `env_logger` crate configures logging via an environment variable.  The [`log::debug!`][log::debug!] macro works like other
+The `log` crate provides logging utilities. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug!] macro works like other
 [`std::fmt`][std::fmt] formatted strings.
 
 ```rust,editable
@@ -29,7 +29,7 @@ DEBUG:main: Executing query: DROP TABLE students
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-Proper error handling considers exceptions exceptional.  Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error!]
+Proper error handling considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error!]
 
 ```rust,editable
 {{#include ../../deps/examples/log-error.rs}}

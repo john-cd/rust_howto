@@ -69,7 +69,7 @@ stderr output will contain
 
 [log4rs][log4rs] configures log output to a custom location. [log4rs][log4rs] can use either an external YAML file or a builder configuration.
 
-Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An appender defines the logging destination.  The configuration continues with
+Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An appender defines the logging destination. The configuration continues with
 encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode::pattern] Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] and sets the default
 [`log::LevelFilter`][log::LevelFilter]
 

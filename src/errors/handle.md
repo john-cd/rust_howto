@@ -20,9 +20,9 @@ Other recipes in this book will hide the [error-chain][error-chain] boilerplate,
 
 [![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
 
-The  [error-chain][error-chain] crate makes [matching][matching] on different error types returned by a function possible and relatively compact. [`ErrorKind`][ErrorKind] determines the error type.
+The [error-chain][error-chain] crate makes [matching][matching] on different error types returned by a function possible and relatively compact. [`ErrorKind`][ErrorKind] determines the error type.
 
-Uses [reqwest]::[blocking][blocking] to query a random integer generator web service.  Converts the string response into an integer. The Rust standard library,
+Uses [reqwest]::[blocking][blocking] to query a random integer generator web service. Converts the string response into an integer. The Rust standard library,
 [reqwest], and the web service can all generate errors. Well defined Rust errors use [`foreign_links`][foreign_links] An additional [`ErrorKind`][ErrorKind] variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust,editable

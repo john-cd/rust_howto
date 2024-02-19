@@ -41,7 +41,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 
 This example will sort in parallel a vector of Strings.
 
-Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random values in parallel.  Although [multiple options]
+Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random values in parallel. Although [multiple options]
 exist to sort an enumerable data type, [`par_sort_unstable`][par_sort_unstable] is usually faster than [stable sorting][stable sorting] algorithms.
 
 ```rust,editable
@@ -66,7 +66,7 @@ This example uses [`rayon::filter`][rayon::filter] [`rayon::map`][rayon::map] an
 
 This example generates thumbnails for all .jpg files in the current directory then saves them in a new folder called `thumbnails`.
 
-[`glob::glob_with`][glob::glob_with] finds jpeg files in current directory. `rayon` resizes images in parallel using [`par_iter`][par_iter] calling  [`DynamicImage::resize`][DynamicImage::resize]
+[`glob::glob_with`][glob::glob_with] finds jpeg files in current directory. `rayon` resizes images in parallel using [`par_iter`][par_iter] calling [`DynamicImage::resize`][DynamicImage::resize]
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/rayon-thumbnails.rs}}

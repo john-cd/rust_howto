@@ -6,7 +6,7 @@
 
 ```bash
 cargo install mdbook
-cargo install mdbook-hide  # optional plugin; many others exist
+cargo install mdbook-hide # optional plugin; many others exist
 ```
 
 ```bash

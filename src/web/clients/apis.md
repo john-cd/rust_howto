@@ -54,7 +54,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 
 [![reqwest-badge]][reqwest] [![hyper-badge]][hyper] [![cat-network-programming-badge]][cat-network-programming]
 
-This example uses the [GitHub API - Rate limiting][GitHub API - Rate limiting], as an example of how to handle remote server errors.  This example uses the [`hyper::header!`][hyper::header!] macro to parse the response header and checks for [`reqwest::StatusCode::Forbidden`][reqwest::StatusCode::Forbidden] If the response exceeds the rate limit, the example waits and retries.
+This example uses the [GitHub API - Rate limiting][GitHub API - Rate limiting], as an example of how to handle remote server errors. This example uses the [`hyper::header!`][hyper::header!] macro to parse the response header and checks for [`reqwest::StatusCode::Forbidden`][reqwest::StatusCode::Forbidden] If the response exceeds the rate limit, the example waits and retries.
 
 ```rust,editable,no_run
 {{#include ../../../deps/examples/rate-limited.rs}}

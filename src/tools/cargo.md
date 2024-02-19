@@ -7,7 +7,7 @@
 ```sh
 cargo --version
 
-# Create a new project. Can add --bin  or --lib
+# Create a new project. Can add --bin or --lib
 cargo new hello_cargo
 
 # Creates an executable file in target/debug/hello_cargo

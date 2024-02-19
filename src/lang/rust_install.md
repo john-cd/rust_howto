@@ -30,7 +30,7 @@ rustup doc
 ```bash
 cargo new hello_world
 cd hello_world
-code .      # open VS Code (or your favorite editor) and edit the code as you wish
+code . # open VS Code (or your favorite editor) and edit the code as you wish
 ```
 
 - Build / run the code.

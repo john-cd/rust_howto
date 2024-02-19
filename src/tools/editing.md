@@ -54,7 +54,7 @@ format_code_in_doc_comments = true
 indent_style = "Visual"
 
 # Imports
-imports_granularity = "Item"  # or "Crate" or "Module"
+imports_granularity = "Item" # or "Crate" or "Module"
 imports_layout = "Vertical"
 group_imports = "StdExternalCrate"
 

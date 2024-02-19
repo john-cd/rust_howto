@@ -32,7 +32,7 @@ The [`data_encoding`][data_encoding] crate provides a `HEXUPPER::encode` method 
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 
-The example below coverts `&[u8]` data to hexadecimal equivalent.  Compares this value to the expected value.
+The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
 
 ```rust,editable
 {{#include ../../deps/examples/hex.rs}}
