@@ -1,6 +1,6 @@
 # Science
 
-Crates related to solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields.
+Crates related to solving problems involving physics, chemistry, biology, machine learning, geo-science, and other scientific fields.
 
 ## Geo
 

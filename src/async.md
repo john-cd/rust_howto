@@ -7,7 +7,7 @@ Helps you deal with events independently of the main program flow, using techniq
 - Involves context switching on a single thread or, most often, among a few threads (the pool of which is opaquely managed by the async runtime).
 - Achieves non-blocking I/O operations to improve responsiveness and efficiency.
 - Lower overhead compared to multithreading.
-- Multithreaded async programming also requires careful synchronization to prevent data races.
+- Multi-threaded async programming also requires careful synchronization to prevent data races.
 
 Key constructs in Rust:
 

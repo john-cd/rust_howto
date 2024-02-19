@@ -1,6 +1,6 @@
 # Command Line
 
-Technics to help create command line interfaces, such as argument parsers, line-editing, or output coloring and formatting
+Techniques to help create command line interfaces, such as argument parsers, line-editing, or output coloring and formatting
 
 [Command Line Applications in Rust (book)][rust-cli-book]⮳
 

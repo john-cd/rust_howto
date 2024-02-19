@@ -1,6 +1,6 @@
 # File System
 
-Dealing with files and filesystems.
+Dealing with files and file systems.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|

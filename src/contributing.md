@@ -34,12 +34,12 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 - `redis`, `mongodb`, `elasticsearch`
 - Cargo & project integration via `cargo-edit`
 - Zip files and other archives
-- Authentication / authorization: Oauth2, LDAP/AD, DNS lookups
+- Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits
 - GPU processing, CUDA
 - Machine learning, Tensorflow
 - Raft Consensus library
-- Network filesystems
+- Network file systems
 - Statistics, math, bignum libraries
 - Crypto, SSL, SSH, other public key encryption, X.509, RusTLS
 - Sound, graphics
