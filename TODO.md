@@ -1,18 +1,22 @@
 # TODO
 
+- finish contributing section; clean up README.md
+
+- rename index.md
+
 - edit summary.md
-- merge dev branch into main!
+
+- sort crates-refs.md
 
 - fix failing examples in drafts
 
 - fix order of pages in Other domains
 
-- replace Githib links:
+- replace Github links:
 
-[![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github]
-[![bacon-github][bacon-github-badge]][bacon-github]
-[![bat-github][bat-github-badge]][bat-github]
-[![bevy-github][bevy-github-badge]][bevy-github]
+
+
+
 [![bonsai-bt-github][bonsai-bt-github-badge]][bonsai-bt-github]
 [![cargo-crates-github][cargo-crates-github-badge]][cargo-crates-github]
 [![cargo-edit-github][cargo-edit-github-badge]][cargo-edit-github]
@@ -34,7 +38,7 @@
 [![rust-howto-drafts][rust-howto-drafts-badge]][rust-howto-drafts]
 [![druid-github][druid-github-badge]][druid-github]
 [![embassy-github][embassy-github-badge]][embassy-github]
-[![exa-github][exa-github-badge]][exa-github]
+
 [![mdbook-github][mdbook-github-badge]][mdbook-github]
 [![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]
 [![miri-github][miri-github-badge]][miri-github]

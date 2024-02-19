@@ -2,8 +2,16 @@
 
 [Introduction](intro.md)
 [About](about.md)
-[Contributing](contributing.md)
 [Index](index.md)
+
+- [Contributing](contributing.md)
+  - [Repository structure](./contributing/repo_structure.md)
+  - [Installation](./contributing/installation.md)
+  - [Development and editing](./contributing/development_editing.md)
+  - [Dev Containers and Docker](./contributing/dev_container_docker.md)
+  - [Optional preprocessors](./contributing/optional_preprocessors.md)
+  - [Documentation](./contributing/documentation.md)
+  - [Publish to crates.io](./contributing/publish.md)
 
 - [Language](lang.md)
   - [Rust installation and first steps](lang/rust_install.md)

@@ -518,3 +518,11 @@
 [zero-to-production-github-badge]: https://img.shields.io/badge/zero_to_production-navy?logo=github
 [zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production/
 [zola-website]: https://www.getzola.org/documentation/getting-started/overview/
+[dev-container-cli]: https://github.com/devcontainers/cli
+[dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+[docker-desktop]: https://www.docker.com/products/docker-desktop/
+[mdbook]: https://rust-lang.github.io/mdBook/index.html
+[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
+[mdbook-keeper]: https://crates.io/crates/mdbook-keeper
+[mdbook-linkcheck]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
+[stackoverflow]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
