@@ -1,6 +1,6 @@
 # Tokio
 
-[![tokio-badge]][tokio]
+[![tokio-badge]][tokio]  [![tokio-github][tokio-github-badge]][tokio-github]
 
 Tokio is an asynchronous runtime for the Rust programming language. It provides the building blocks needed for writing networking applications.
 Tokio provides a few major components:
@@ -11,12 +11,12 @@ Tokio provides a few major components:
 
 ## Key links
 
-- [Tokio][tokio]⮳
+- [Tokio][tokio]⮳  [![tokio-github][tokio-github-badge]][tokio-github]
 - [Tokio glossary][tokio-glossary]⮳
 - [Tokio tutorial][tokio-tutorial]⮳
-- [Tokio examples][tokio-examples]⮳
-- [Tokio mini-Redis example][tokio-mini-redis]⮳
-- Template for a tokio-rs app with logging & command line argument parser: [rust-tokio-template][rust-tokio-template]⮳
+- [![tokio-examples][tokio-examples-badge]][tokio-examples]
+- Tokio mini-Redis example: [![tokio-mini-redis][tokio-mini-redis-badge]][tokio-mini-redis]
+- Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template][rust-tokio-template-badge]][rust-tokio-template]
 
 ## Graceful shutdown
 

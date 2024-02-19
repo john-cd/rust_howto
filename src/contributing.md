@@ -53,4 +53,14 @@ Its long-term goal is the coverage of the 'most commonly used' Rust crates, as d
 - Social media APIs
 - Personal file sharing: OwnCloud, etc.
 
+## See also
+
+[![rust-howto-contributing][rust-howto-contributing-badge]][rust-howto-contributing]
+
+[![rust-howto-drafts][rust-howto-drafts-badge]][rust-howto-drafts]
+
+[![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
+
+[![rust-howto-todo-github][rust-howto-todo-github-badge]][rust-howto-todo-github]
+
 {{#include refs/link-refs.md}}

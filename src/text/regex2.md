@@ -1,6 +1,6 @@
 # Longer Regex Example
 
-[![regex-badge]][regex] [(github)][regex-github]⮳
+[![regex-badge]][regex]  [![regex-github][regex-github-badge]][regex-github]
 
 ```rust,editable
 {{#include ../../deps/examples/regex.rs}}

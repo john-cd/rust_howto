@@ -8,6 +8,8 @@
 
 ## Rocket
 
+[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
+
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
 ## See also

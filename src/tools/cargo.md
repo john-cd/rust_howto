@@ -84,9 +84,6 @@ If you’re building an end product, which are executable like command-line tool
 or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` into git.
 
 ```sh
-# Install if needed
-cargo install cargo-edit
-
 # Add dependencies to Cargo.toml from the command line
 cargo add actix-web@4.0.0
 ```
@@ -136,7 +133,7 @@ cargo fix
 
 ## Code coverage
 
-[Tarpaulin][tarpaulin-github]⮳
+[![tarpaulin-github][tarpaulin-github-badge]][tarpaulin-github]
 
 ## Security audit
 

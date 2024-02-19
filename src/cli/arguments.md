@@ -2,7 +2,7 @@
 
 ## Using `clap`'s builder API
 
-[![clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )
+[![clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![clap-github][clap-github-badge]][clap-github]
 
 This application describes the structure of its command-line interface using
 `clap`'s builder style. The [documentation][clap] gives two other possible ways to

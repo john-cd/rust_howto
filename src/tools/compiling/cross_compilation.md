@@ -2,6 +2,8 @@
 
 ## Cross
 
+[![cross-github][cross-github-badge]][cross-github]
+
 [cross][cross-github]⮳ builds your Rust project for different target operating systems and architectures.
 It requires `rustup` and `Docker` or `Podman`.
 
@@ -22,8 +24,8 @@ cross test --target mips64-unknown-linux-gnuabi64
 cross run --target aarch64-unknown-linux-gnu
 ```
 
-[cross Wiki][cross-wiki]⮳
+[![cross-wiki][cross-wiki-badge]][cross-wiki]
 
-[Example Cross.toml file][cross-toml-example]⮳
+Examples: [![cross-toml-example][cross-toml-example-badge]][cross-toml-example]
 
 {{#include ../../refs/link-refs.md}}

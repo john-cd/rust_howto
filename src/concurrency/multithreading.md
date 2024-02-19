@@ -22,9 +22,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Rayon - parallel processing
 
-[![rayon-badge]][rayon]
-
-[Rayon (github)][rayon-github]⮳
+[![rayon-badge]][rayon]  [![rayon-github][rayon-github-badge]][rayon-github]
 
 ### Parallel iteration
 

@@ -70,13 +70,7 @@ cd my-example
 
 Now, we also need to add the necessary crates to [Cargo.toml], as
 indicated by the crate badges, in this case just "rand". To do so,
-we'll use the `cargo add` command, which is provided by the
-[`cargo-edit`][cargo-edit-github] crate, which we need to install first:
-
-```sh
-cargo install cargo-edit
-cargo add rand
-```
+we'll use the `cargo add` command.
 
 Now you can replace `src/main.rs` with the full contents of the
 example and run it:
@@ -145,13 +139,4 @@ defers crate selection to that project. Any crates that have already
 been evaluated as part of that process are in scope for the cookbook,
 as are crates that are pending evaluation.
 
-[index]: intro.md
-[error-docs]: https://doc.rust-lang.org/book/error-handling.html
-[error-blog]: https://brson.github.io/2016/11/30/starting-with-error-chain
-[error-chain]: https://docs.rs/error-chain/
-[Rust Libz Blitz]: https://internals.rust-lang.org/t/rust-libz-blitz/5184
-[crates.io]: https://crates.io
-[docs.rs]: https://docs.rs
-[Cargo.toml]: http://doc.crates.io/manifest.html
-[cargo-edit-github]: https://github.com/killercup/cargo-edit
 {{#include refs/link-refs.md}}

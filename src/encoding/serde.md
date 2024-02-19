@@ -4,10 +4,10 @@
 
 ## See also
 
-[![serde-json-badge]][serde-json]
+[![serde-json][serde-json-badge]][serde-json]
 
-[Monostate for serde (github)][monostate-github]
+[![monostate-github][monostate-github-badge]][monostate-github]
 
-[Serde-ignored (github)][serde-ignored-github]
+[![serde-ignored-github][serde-ignored-github-badge]][serde-ignored-github]
 
 {{#include ../refs/link-refs.md}}

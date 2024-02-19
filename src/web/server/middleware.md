@@ -13,7 +13,7 @@ The `Layer` trait can be used to write reusable components that can be applied t
 
 A number of third-party libraries support `Tower` and the `Service` trait: [hyper][hyper-crate]⮳, [tonic (gRPC)][tonic-crate]⮳.
 
-[Building a Tower middleware from scratch][tower-middleware-from-scratch]⮳
+[![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
 
 ## Tower HTTP
 

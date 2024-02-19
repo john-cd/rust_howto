@@ -2,13 +2,12 @@
 
 ## Links
 
-[Rust Performance Book][rust-performance-book] [(GitHub)][rust-performance-book-github]⮳
+[Rust Performance Book][rust-performance-book] [![rust-performance-book-github][rust-performance-book-github-badge]][rust-performance-book-github]
 
 ## Incremental Computation
 
+[![salsa-github][salsa-github-badge]][salsa-github]
+
 [Salsa (GitHub)][salsa-github]⮳ is a framework for on-demand, incrementalized computation.
 
-[rust-performance-book]: https://nnethercote.github.io/perf-book/
-[rust-performance-book-github]: https://github.com/nnethercote/perf-book
-[salsa-github]: https://github.com/salsa-rs/salsa
 {{#include ../refs/link-refs.md}}

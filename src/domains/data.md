@@ -2,7 +2,7 @@
 
 ## Polars
 
-[![polars-badge]][polars]  [(book)][polars-book]  [(github)][polars-github]
+[![polars-badge]][polars]  [(book)][polars-book]  [![polars-github][polars-github-badge]][polars-github]
 
 ## Arrow
 

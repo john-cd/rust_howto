@@ -4,9 +4,7 @@
 
 ## API search
 
-[Roogle][roogle]⮳
-
-[Roogle (github)][roogle-github]⮳
+[Roogle][roogle]⮳  [![roogle-github][roogle-github-badge]][roogle-github]
 
 ## Deployment
 
@@ -16,14 +14,14 @@
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
-[open-rs][open-rs-github]⮳
+[![open-rs-github][open-rs-github-badge]][open-rs-github]
 
-[Starship][starship-github]⮳
+[![starship-github][starship-github-badge]][starship-github]
 
-[Bacon][bacon-github]⮳
+[![bacon-github][bacon-github-badge]][bacon-github]
 
-[Bat][bat-github]⮳
+[![bat-github][bat-github-badge]][bat-github]
 
-[Exa][exa-github]⮳
+[![exa-github][exa-github-badge]][exa-github]
 
 {{#include ../../refs/link-refs.md}}

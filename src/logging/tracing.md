@@ -1,6 +1,6 @@
 # Logs
 
-[![tracing-badge]][tracing] [(github)][tracing-github]
+[![tracing-badge]][tracing] [![tracing-github][tracing-github-badge]][tracing-github]
 
 [![tracing-subscriber-badge]][tracing-subscriber] [(crates.io)][tracing-subscriber-crate]
 

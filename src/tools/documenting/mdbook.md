@@ -1,5 +1,7 @@
 # mdBook
 
+[![mdbook-github][mdbook-github-badge]][mdbook-github]
+
 [mdBook][mdbook-github]⮳: a utility to create modern online books from Markdown files.
 
 ```bash
@@ -15,6 +17,6 @@ mdbook serve --open
 
 [mdBook documentation][mdbook-documentation]⮳
 
-[mdbook-hide][mdbook-hide-github]⮳
+[![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]
 
 {{#include ../../refs/link-refs.md}}
