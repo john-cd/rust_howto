@@ -3,6 +3,7 @@ use tokio::time::Duration;
 use tokio_graceful_shutdown::SubsystemBuilder;
 use tokio_graceful_shutdown::SubsystemHandle;
 use tokio_graceful_shutdown::Toplevel;
+// use tracing::Level;
 
 async fn countdown() {
     for i in (1..=5).rev() {
@@ -29,7 +30,7 @@ async fn countdown_subsystem(
 async fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     // Init logging
     tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::TRACE)
+        // .with_max_level(Level::TRACE)
         .init();
 
     // Setup and execute subsystem tree
