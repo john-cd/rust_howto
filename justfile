@@ -4,6 +4,7 @@ alias ca := clippyall
 alias s := serve
 alias t := test
 alias ta := testall
+alias nta := nextestall
 alias f := fmtall
 set windows-shell := ["cmd.exe", "/c"]
 
@@ -47,6 +48,11 @@ clippyall: _build-book
 testall: _build-book
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+# Test all code using nextest
+nextestall: _build-book
+  cargo nextest run
+  cargo test --doc
 
 # Run all examples
 [unix]
@@ -96,7 +102,8 @@ _sitemap:
 
 # Test all examples in the book's Markdown
 test: _build-book
-  cargo test --package deps --tests --examples --locked -- --show-output | tee testing.log
+  cargo test --package deps --tests --examples --locked -- --show-output
+# | tee testing.log
 # This relies on skeptic to build doctests - see `build.rs`
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
 # when dealing with dependencies outside of the std library
