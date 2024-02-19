@@ -3,7 +3,7 @@
 [Introduction](src/intro.md) polish the intro
 [About](src/about.md) rewrite
 [Contributing](src/contributing.md) polish
-[Index](src/index.md) rethink
+[Index](src/subject_index.md) rethink
 
 - [Language](src/lang.md)
   - [Rust installation and first steps](src/lang/rust_install.md) polish

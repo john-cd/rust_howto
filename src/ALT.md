@@ -3,7 +3,7 @@
 [Introduction](intro.md)
 [About](about.md)
 [Contributing](contributing.md)
-[Index](index.md)
+[Index](subject_index.md)
 
 - [Language](lang.md)
   - [Rust installation and first steps](lang/rust_install.md)

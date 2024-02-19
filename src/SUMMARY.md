@@ -2,7 +2,7 @@
 
 [Introduction](intro.md)
 [About](about.md)
-[Index](index.md)
+[Subject Index](subject_index.md)
 
 - [Contributing](contributing.md)
   - [Repository structure](./contributing/repo_structure.md)
