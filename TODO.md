@@ -14,8 +14,6 @@
 
 - replace Github links:
 
-
-
 - fix not found in Crates.md (alphabetic list)
 
 - update main README

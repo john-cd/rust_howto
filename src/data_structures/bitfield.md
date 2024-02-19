@@ -11,5 +11,4 @@ Subsequently, shows basic bitwise operations and formatting.
 {{#include ../../deps/examples/bitfield.rs}}
 ```
 
-
 {{#include ../refs/link-refs.md}}

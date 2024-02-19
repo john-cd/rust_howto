@@ -12,7 +12,9 @@
 
 ## Alternatives
 
-Actix [(github)][actix-github]⮳
+[![actix-github][actix-github-badge]][actix-github]
+
+[Actix][actix]⮳
 
 [ractor-crate][ractor-crate]⮳
 

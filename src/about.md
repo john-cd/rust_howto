@@ -18,7 +18,7 @@ common tasks.
 
 ## How to read this book
 
-The cookbook [index] contains the full list of recipes, organized into
+The cookbook [index][index] contains the full list of recipes, organized into
 a number of sections: "basics", "encoding", "concurrency", etc.  The
 sections themselves are more or less ordered in progression, with
 later sections being more advanced, and occasionally building on
@@ -28,7 +28,7 @@ Within the index, each section contains a list of recipes. The recipes
 are simple statements of a task to accomplish, like "generate random
 numbers in a range"; and each recipe is tagged with badges indicating
 which _crates_ they use, like [![rand-badge]][rand], and which
-categories on [crates.io] those crates belong to, like
+categories on [crates.io][crates.io] those crates belong to, like
 [![cat-science-badge]][cat-science].
 
 New Rust programmers should be comfortable reading from the first
@@ -68,7 +68,7 @@ cargo new my-example --bin
 cd my-example
 ```
 
-Now, we also need to add the necessary crates to [Cargo.toml], as
+Now, we also need to add the necessary crates to [Cargo.toml][Cargo.toml], as
 indicated by the crate badges, in this case just "rand". To do so,
 we'll use the `cargo add` command.
 
@@ -80,7 +80,7 @@ cargo run
 ```
 
 The crate badges that accompany the examples link to the crates' full
-documentation on [docs.rs], and is often the next documentation you
+documentation on [docs.rs][docs.rs], and is often the next documentation you
 should read after deciding which crate suites your purpose.
 
 ## A note about error handling
@@ -133,10 +133,9 @@ At present the cookbook is focused on the standard library, and on
 common programming tasks, and that the rest of the ecosystem builds
 off of.
 
-The cookbook is closely tied to the [Rust Libz Blitz], a project to
-identify, and improve the quality of such crates, and so it largely
-defers crate selection to that project. Any crates that have already
+The cookbook is closely tied to the [Rust Libz Blitz][Rust Libz Blitz], a project to identify, and improve the quality of such crates, and so it largely defers crate selection to that project. Any crates that have already
 been evaluated as part of that process are in scope for the cookbook,
 as are crates that are pending evaluation.
 
+[index]: intro.md
 {{#include refs/link-refs.md}}

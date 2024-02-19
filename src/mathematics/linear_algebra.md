@@ -16,7 +16,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
-Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix multiplication on them with `[ndarray::ArrayBase::dot]`
+Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][ndarray::ArrayBase::dot]
 
 ```rust,editable
 {{#include ../../deps/examples/multiply-matrices.rs}}
@@ -27,11 +27,11 @@ Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix m
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
 Creates a 1-D array (vector) with [`ndarray::arr1`][ndarray::arr1] and a 2-D array (matrix)
-with `[ndarray::arr2]`
+with [`ndarray::arr2`][ndarray::arr2]
 
 First, a scalar is multiplied by the vector to get
 another vector. Then, the matrix is multiplied by the new vector with
-`[ndarray::Array2::dot]` (Matrix multiplication is performed using `dot`, while
+[`ndarray::Array2::dot`][ndarray::Array2::dot] (Matrix multiplication is performed using `dot`, while
 the `*` operator performs element-wise multiplication.)
 
 In `ndarray`, 1-D arrays can be interpreted as either row or column vectors
@@ -48,20 +48,20 @@ vector.
 
 [![ndarray-badge]][ndarray]
 
-The [ndarray] crate supports a number of ways to create arrays -- this recipe creates
-`[ndarray::Array]` from `std::Vec` using `from`. Then, it sums the arrays element-wise.
+The [ndarray][ndarray] crate supports a number of ways to create arrays -- this recipe creates
+[`ndarray::Array`][ndarray::Array] from `std::Vec` using `from`. Then, it sums the arrays element-wise.
 
 This recipe contains an example of comparing two floating-point vectors element-wise.
 Floating-point numbers are often stored inexactly, making exact comparisons difficult.
 However, the [`assert_abs_diff_eq!`][assert_abs_diff_eq!] macro from the [`approx`][approx] crate allows for convenient
 element-wise comparisons. To use the `approx` crate with `ndarray`, the `approx`
 feature must be added to the `ndarray` dependency in `Cargo.toml`. For example,
-`ndarray = { version = "0.13", features = ["approx"] }`.
+`ndarray = { version = "0.13", features = ["approx"]["approx"] }`.
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes
 `a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing
-their modification later. See [Binary Operators With Two Arrays] for additional detail.
+their modification later. See [Binary Operators With Two Arrays][Binary Operators With Two Arrays] for additional detail.
 
 ```rust,editable
 {{#include ../../deps/examples/vector-comparison.rs}}
@@ -72,8 +72,7 @@ their modification later. See [Binary Operators With Two Arrays] for additional 
 [![ndarray-badge]][ndarray]
 
 This recipe demonstrates use of the [`Array1`][Array1] type, [`ArrayView1`][ArrayView1] type,
-`[fold]` method, and [`dot`][dot] method in computing the [l1] and [l2] norms of a
-given vector.
+[`fold`][ndarray-fold] method, and [`dot`][dot] method in computing the [l1][l1] and [l2][l2] norms of a given vector.
 
 + The `l2_norm` function is the simpler of the two, as it computes the
 square root of the dot product of a vector with itself.

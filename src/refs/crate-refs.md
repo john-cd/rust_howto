@@ -1,4 +1,3 @@
-
 [ANSIString]: https://docs.rs/ansi_term/*/ansi_term/type.ANSIString.html
 [Alphanumeric]: https://docs.rs/rand/*/rand/distributions/struct.Alphanumeric.html
 [Archive::entries]: https://docs.rs/tar/*/tar/struct.Archive.html#method.entries
@@ -38,7 +37,6 @@
 [DateTime::parse_from_str]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.parse_from_str
 [DateTime::to_rfc2822]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.to_rfc2822
 [DateTime::to_rfc3339]: https://docs.rs/chrono/*/chrono/struct.DateTime.html#method.to_rfc3339
-[DateTime]: https://docs.rs/chrono/*/chrono/datetime/struct.DateTime.html
 [DateTime]: https://docs.rs/chrono/*/chrono/struct.DateTime.html
 [Datelike]: https://docs.rs/chrono/*/chrono/trait.Datelike.html
 [Default]: https://doc.rust-lang.org/std/default/trait.Default.html
@@ -151,14 +149,16 @@
 [Url]: https://docs.rs/url/*/url/struct.Url.html
 [Utc::now]: https://docs.rs/chrono/*/chrono/offset/struct.Utc.html#method.now
 [Version::parse]: https://docs.rs/semver/*/semver/struct.Version.html#method.parse
-[VersionReq::matches]: https://docs.rs/semver/*/semver/struct.VersionReq.html#method.matches
-[WalkDir::DirEntry]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html
-[WalkDir::depth]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html#method.depth
-[WalkDir::max_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.max_depth
-[WalkDir::min_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.min_depth
-[Walkdir::new]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.new
+[semver::VersionReq::matches]: https://docs.rs/semver/*/semver/struct.VersionReq.html#method.matches
+[walkDir::WalkDir::DirEntry]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html
+[walkDir::WalkDir::depth]: https://docs.rs/walkdir/*/walkdir/struct.DirEntry.html#method.depth
+[walkDir::WalkDir::max_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.max_depth
+[walkDir::WalkDir::min_depth]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.min_depth
+[walkDir::Walkdir::new]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.new
 [actix-examples-github-badge]: https://img.shields.io/badge/actix_examples-navy?logo=github
 [actix-examples-github]: https://github.com/actix/examples
+[actix-github]: https://github.com/actix/actix
+[actix-github-badge]: https://img.shields.io/badge/actix-navy?logo=actix
 [actix-web-badge]: https://badge-cache.kominick.com/crates/v/actix-web.svg?label=actix-web
 [actix-web-website]: https://actix.rs/
 [actix-web]: https://docs.rs/actix-web/latest/actix_web/
@@ -306,6 +306,7 @@
 [crossbeam_channel::unbounded]: https://docs.rs/crossbeam-channel/*/crossbeam_channel/fn.unbounded.html
 [crux-badge]: https://badge-cache.kominick.com/crates/v/crux.svg?label=crux
 [crux-github]: https://redbadger.github.io/crux/
+[crux-github-badge]: https://img.shields.io/badge/crux-navy?logo=github
 [crux]: https://docs.rs/crux/
 [csv-badge]: https://badge-cache.kominick.com/crates/v/csv.svg?label=csv
 [csv-sample-badge]: https://img.shields.io/badge/csv_sample-navy?logo=github
@@ -383,9 +384,9 @@
 [error_chain!]: https://docs.rs/error-chain/*/error_chain/macro.error_chain.html
 [exa-github-badge]: https://img.shields.io/badge/exa-navy?logo=github
 [exa-github]: https://github.com/ogham/exa
-[execute]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.execute
-[execute]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.execute
-[execute]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html#method.execute
+[postgres-execute]: https://docs.rs/postgres/*/postgres/struct.Client.html#method.execute
+[rusqlite-execute]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.execute
+[threadpool-execute]: https://docs.rs/threadpool/*/threadpool/struct.ThreadPool.html#method.execute
 [eyre-badge]: https://badge-cache.kominick.com/crates/v/eyre.svg?label=eyre
 [eyre]: https://docs.rs/eyre/
 [filter_entry]: https://docs.rs/walkdir/*/walkdir/struct.IntoIter.html#method.filter_entry
@@ -396,7 +397,7 @@
 [float methods]: https://doc.rust-lang.org/std/primitive.f64.html#methods
 [flush]: https://docs.rs/csv/*/csv/struct.Writer.html#method.flush
 [fold]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold
-[fold]: https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.fold
+[ndarray-fold]: <https://docs.rs/ndarray/*/ndarray/struct.ArrayBase.html#method.fold>
 [follow_links]: https://docs.rs/walkdir/*/walkdir/struct.WalkDir.html#method.follow_links
 [foreign_links]: https://docs.rs/error-chain/*/error_chain/#foreign-links
 [form_urlencoded::byte_serialize]: https://docs.rs/url/*/url/form_urlencoded/fn.byte_serialize.html
@@ -428,10 +429,10 @@
 [hyper]: https://docs.rs/hyper/
 [iced-rs-badge]: https://badge-cache.kominick.com/crates/v/iced.svg?label=iced
 [iced-rs-github]: https://github.com/iced-rs/
+[iced-rs-github-badge]: https://img.shields.io/badge/iced-navy?logo=github
 [iced-rs]: https://docs.rs/iced/
 [image-badge]: https://badge-cache.kominick.com/crates/v/image.svg?label=image
 [image]: https://docs.rs/image/
-[index]: intro.md
 [install-action]: https://github.com/taiki-e/install-action
 [io::copy]: https://doc.rust-lang.org/std/io/fn.copy.html
 [is_prerelease]: https://docs.rs/semver/*/semver/struct.Version.html#method.is_prerelease
@@ -439,8 +440,6 @@
 [json!]: https://docs.serde.rs/serde_json/macro.json.html
 [just-programmer-manual]: https://just.systems/man/en/chapter_1.html
 [just-website]: https://just.systems/
-[l1]: http://mathworld.wolfram.com/L1-Norm.html
-[l2]: http://mathworld.wolfram.com/L2-Norm.html
 [last_insert_rowid]: https://docs.rs/rusqlite/*/rusqlite/struct.Connection.html#method.last_insert_rowid
 [lazy-static-badge]: https://badge-cache.kominick.com/crates/v/lazy-static.svg?label=lazy-static
 [lazy-static]: https://docs.rs/lazy-static/
@@ -476,7 +475,6 @@
 [mdbook-keeper]: https://crates.io/crates/mdbook-keeper
 [mdbook-linkcheck]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [mdbook]: https://rust-lang.github.io/mdBook/index.html
-[mean]: mathematics/statistics/central-tendency.html
 [memmap-badge]: https://badge-cache.kominick.com/crates/v/memmap.svg?label=memmap
 [memmap]: https://docs.rs/memmap/
 [miette-badge]: https://badge-cache.kominick.com/crates/v/miette.svg?label=miette
@@ -543,7 +541,7 @@
 [pbkdf2::verify]: https://briansmith.org/rustdoc/ring/pbkdf2/fn.verify.html
 [percent-encoding-badge]: https://badge-cache.kominick.com/crates/v/percent_encoding.svg?label=percent_encoding
 [percent-encoding]: https://docs.rs/percent_encoding/
-[percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
+[percent-encoding-wikipedia]: https://en.wikipedia.org/wiki/Percent-encoding
 [percent_decode]: https://docs.rs/percent-encoding/*/percent_encoding/fn.percent_decode.html
 [polars-badge]: https://badge-cache.kominick.com/crates/v/polars.svg?label=polars
 [polars-book]: https://pola-rs.github.io/polars-book/
@@ -749,7 +747,6 @@
 [serde-json::to_string]: https://docs.rs/serde_json/*/serde_json/fn.to_string.html
 [serde-json]: https://docs.rs/serde_json/
 [serde::Deserialize]: https://docs.rs/serde/*/serde/trait.Deserialize.html
-[serde::Deserialize]: https://docs.rs/serde/\*/serde/trait.Deserialize.html
 [serde]: https://docs.rs/serde/
 [serialize]: https://docs.rs/csv/*/csv/struct.Writer.html#method.serialize
 [shield-io]: https://shields.io/
@@ -769,8 +766,8 @@
 [sqlx-github]: https://github.com/launchbadge/sqlx/
 [sqlx-librs]: https://lib.rs/crates/sqlx/
 [sqlx]: https://docs.rs/sqlx/
-[sqrt]: https://doc.rust-lang.org/std/primitive.f32.html#method.sqrt
-[sqrt]: https://doc.rust-lang.org/std/primitive.f64.html#method.sqrt
+[f32-sqrt]: https://doc.rust-lang.org/std/primitive.f32.html#method.sqrt
+[f64-sqrt]: https://doc.rust-lang.org/std/primitive.f64.html#method.sqrt
 [stable sorting]: https://docs.rs/rayon/*/rayon/slice/trait.ParallelSliceMut.html#method.par_sort
 [stackoverflow]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [starship-github-badge]: https://img.shields.io/badge/starship-navy?logo=github
@@ -841,7 +838,6 @@
 [tokio-website]: https://tokio.rs/
 [tokio::main]: https://tokio.rs/tokio/tutorial/hello-tokio#the-code
 [tokio::spawn]: https://docs.rs/tokio/*/tokio/fn.spawn.html
-[tokio]: https://docs.rs/crate/tokio/0.2.11
 [tokio]: https://docs.rs/tokio/
 [toml-badge]: https://badge-cache.kominick.com/crates/v/toml.svg?label=toml
 [toml]: https://docs.rs/toml/
@@ -869,7 +865,6 @@
 [twitter-hashtag-badge]: https://img.shields.io/badge/twitter-text-navy?logo=github
 [twitter-hashtag-regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
 [unicode-segmentation-badge]: https://badge-cache.kominick.com/crates/v/unicode-segmentation.svg?label=unicode-segmentation
-[unicode-segmentation]: https://docs.rs/unicode-segmentation/1.2.1/unicode_segmentation/
 [unicode-segmentation]: https://docs.rs/unicode_segmentation/
 [uniform distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)
 [url-badge]: https://badge-cache.kominick.com/crates/v/url.svg?label=url
@@ -885,6 +880,7 @@
 [vs-code]: https://code.visualstudio.com/docs/languages/rust
 [walkdir-badge]: https://badge-cache.kominick.com/crates/v/walkdir.svg?label=walkdir
 [walkdir]: https://docs.rs/walkdir/
+[watchmaker-badge]: https://badge-cache.kominick.com/crates/v/watchmaker.svg?label=watchmaker
 [watchmaker-crate]: https://crates.io/crates/watchmaker/
 [watchmaker-github-badge]: https://img.shields.io/badge/watchmaker-navy?logo=github
 [watchmaker-github]: https://github.com/thomasbratt/watchmaker
@@ -893,7 +889,7 @@
 [watt-github-badge]: https://img.shields.io/badge/watt-navy?logo=github
 [watt-github]: https://github.com/dtolnay/watt
 [watt]: https://docs.rs/watt/
-[windows-rs-github-badge]: https://img.shields.io/badge/windows_rs-navy?logo=github
+[windows-rs-github-badge]: https://img.shields.io/badge/windows__rs-navy?logo=github
 [windows-rs-github]: https://github.com/microsoft/windows-rs
 [write_record]: https://docs.rs/csv/*/csv/struct.Writer.html#method.write_record
 [yew-badge]: https://badge-cache.kominick.com/crates/v/yew.svg?label=yew

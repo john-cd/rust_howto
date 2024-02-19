@@ -5,9 +5,9 @@
 [![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
 Parses the supplied URL and makes a synchronous HTTP GET request
-with [`reqwest::blocking::get`][reqwest::blocking::get] Prints obtained `[reqwest::blocking::Response]`
-status and headers. Reads HTTP response body into an allocated `[String]`
-using `[read_to_string]`
+with [`reqwest::blocking::get`][reqwest::blocking::get] Prints obtained [`reqwest::blocking::Response`][reqwest::blocking::Response]
+status and headers. Reads HTTP response body into an allocated [`String`][String]
+using [`read_to_string`][read_to_string]
 
 ```rust,editable,no_run
 {{#include ../../../deps/examples/get.rs}}
@@ -21,8 +21,8 @@ to make the main function asynchronous, retrieving the same information.
 In this example, [`tokio::main`][tokio::main] handles all the heavy executor setup
 and allows sequential code implemented without blocking until `.await`.
 
-Uses the asynchronous versions of [reqwest], both [`reqwest::get`][reqwest::get] and
-`[reqwest::Response]`
+Uses the asynchronous versions of [reqwest][reqwest], both [`reqwest::get`][reqwest::get] and
+[`reqwest::Response`][reqwest::Response]
 
 ```rust,no_run
 {{#include ../../../deps/examples/get1.rs}}
@@ -37,9 +37,9 @@ for a HTTP GET request. Creates a custom header of type `XPoweredBy`
 with [`hyper::header!`][hyper::header!] macro.
 
 Builds complex URL with [`Url::parse_with_params`][Url::parse_with_params] Sets standard headers
-`[header::UserAgent]` [`header::Authorization`][header::Authorization] and custom `XPoweredBy`
+[`header::UserAgent`][header::UserAgent] [`header::Authorization`][header::Authorization] and custom `XPoweredBy`
 with [`RequestBuilder::header`][RequestBuilder::header] then makes the request with
-`[RequestBuilder::send]`
+[`RequestBuilder::send`][RequestBuilder::send]
 
 The request targets <http://httpbin.org/headers> service which responds with
 a JSON dict containing all request headers for easy verification.

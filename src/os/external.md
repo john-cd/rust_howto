@@ -4,7 +4,7 @@
 
 [![regex-badge]][regex] [![cat-os-badge]][cat-os] [![cat-text-processing-badge]][cat-text-processing]
 
-Runs `git log --oneline` as an external [`Command`][Command] and inspects its `[Output]`
+Runs `git log --oneline` as an external [`Command`][Command] and inspects its [`Output`][Output]
 using [`Regex`][Regex] to get the hash and message of the last 5 commits.
 
 ```rust,editable,no_run
@@ -30,8 +30,8 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in
 the current working directory. It is equivalent to running: `du -ah. |
 sort -hr | head -n 10`.
 
-`[Command]` represent a process. Output of a child process is captured with a
-`[Stdio::piped]` between parent and child.
+[`Command`][Command] represent a process. Output of a child process is captured with a
+[`Stdio::piped`][Stdio::piped] between parent and child.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/piped.rs}}
@@ -42,7 +42,7 @@ sort -hr | head -n 10`.
 [![std-badge]][std] [![cat-os-badge]][cat-os]
 
 Spawns a child process and redirects `stdout` and `stderr` to the same
-file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however `[process::Stdio]`
+file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`process::Stdio`][process::Stdio]
 writes to a specified file.  [`File::try_clone`][File::try_clone] references the same file handle
 for `stdout` and `stderr`. It will ensure that both handles write with the same
 cursor position.
@@ -74,7 +74,7 @@ The below recipe is equivalent to the Unix shell command
 
 [![std-badge]][std] [![cat-os-badge]][cat-os]
 
-Reads an environment variable via [std::env::var].
+Reads an environment variable via [std::env::var][std::env::var].
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/read-env-variable.rs}}

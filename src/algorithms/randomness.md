@@ -5,7 +5,7 @@
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
 Generates random numbers with help of random-number
-generator [`rand::Rng`][rand::Rng] obtained via [`rand::thread_rng`][rand::Rng] obtained via [rand::thread_rng] Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
+generator [`rand::Rng`][rand::Rng] obtained via [`rand::thread_rng`][rand::Rng] obtained via [rand::thread_rng][rand::thread_rng] Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
 
 ```rust,editable
 {{#include ../../deps/examples/rand.rs}}
@@ -21,7 +21,7 @@ Generates a random value within half-open `[0, 10)` range (not including `10`) w
 {{#include ../../deps/examples/rand-range.rs}}
 ```
 
-[`Uniform`][Uniform] can obtain values with [uniform distribution].
+[`Uniform`][Uniform] can obtain values with [uniform distribution][uniform distribution].
 This has the same effect, but may be faster when repeatedly generating numbers in the same range.
 
 ```rust,editable
@@ -32,7 +32,7 @@ This has the same effect, but may be faster when repeatedly generating numbers i
 
 [![rand-distr-badge]][rand-distr] [![cat-science-badge]][cat-science]
 
-By default, random numbers in the `rand` crate have [uniform distribution]. The [`rand-distr`][rand-distr] crate provides
+By default, random numbers in the `rand` crate have [uniform distribution][uniform distribution]. The [`rand-distr`][rand-distr] crate provides
 other kinds of distributions. To use them, you instantiate a distribution, then sample from that distribution using[`Distribution::sample`][Distribution::sample] with help of a random-number generator [`rand::Rng`][rand::Rng].
 The [distributions available are documented here][rand-distributions]. An example using the [`Normal`][Normal] distribution is shown below.
 

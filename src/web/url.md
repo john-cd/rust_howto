@@ -5,7 +5,7 @@
 [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
 
 The [`parse`][parse] method from the `url` crate validates and parses a `&str` into a
-`[Url]` struct. The input string may be malformed so this method returns
+[`Url`][Url] struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
 Once the URL has been parsed, it can be used with all of the methods in the
@@ -49,7 +49,7 @@ it represents.
 {{#include ../../deps/examples/origin.rs}}
 ```
 
-`[origin]` produces the same result.
+[`origin`][origin] produces the same result.
 
 ```rust,editable
 {{#include ../../deps/examples/origin1.rs}}

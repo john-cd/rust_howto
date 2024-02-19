@@ -18,7 +18,7 @@ before the @ symbol.
 Extracts, sorts, and deduplicates list of hashtags from text.
 
 The hashtag regex given here only catches Latin hashtags that start with a
-letter. The complete [twitter-hashtag-regex]  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
+letter. The complete [twitter-hashtag-regex][twitter-hashtag-regex]  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
 {{#include ../../deps/examples/hashtags.rs}}
@@ -43,7 +43,7 @@ Reads a file named `application.log` and only outputs the lines
 containing “version X.X.X”, some IP address followed by port 443
 (e.g. “192.168.0.1:443”), or a specific warning.
 
-A [`regex::RegexSetBuilder`][regex::RegexSetBuilder] composes a `[regex::RegexSet]`
+A [`regex::RegexSetBuilder`][regex::RegexSetBuilder] composes a [`regex::RegexSet`][regex::RegexSet]
 Since backslashes are very common in regular expressions, using
 [raw string literals] makes them more readable.
 
@@ -62,7 +62,7 @@ For example `2013-01-15` becomes `01/15/2013`.
 The method [`Regex::replace_all`][Regex::replace_all] replaces all occurrences of the whole regex.
 `&str` implements the `Replacer` trait which allows variables like `$abcde` to
 refer to corresponding named capture groups `(?P<abcde>REGEX)` from the search
-regex. See the [replacement string syntax] for examples and escaping detail.
+regex. See the [replacement string syntax][replacement string syntax] for examples and escaping detail.
 
 ```rust,editable
 {{#include ../../deps/examples/replace.rs}}

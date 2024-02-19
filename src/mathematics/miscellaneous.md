@@ -4,7 +4,7 @@
 
 [![num-badge]][num] [![cat-science-badge]][cat-science]
 
-Calculation for integers exceeding 128 bits are possible with `[BigInt]`
+Calculation for integers exceeding 128 bits are possible with [`BigInt`][BigInt]
 
 ```rust,editable
 {{#include ../../deps/examples/big-integers.rs}}

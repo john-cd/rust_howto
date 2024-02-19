@@ -27,7 +27,7 @@ valid TOML data.
 {{#include ../../deps/examples/toml.rs}}
 ```
 
-Parse TOML into your own structs using [Serde].
+Parse TOML into your own structs using [Serde][Serde].
 
 ```rust,editable
 {{#include ../../deps/examples/toml1.rs}}

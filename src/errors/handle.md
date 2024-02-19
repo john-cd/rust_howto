@@ -5,8 +5,8 @@
 [![cat-rust-patterns-badge]][cat-rust-patterns]
 
 Handles error that occur when trying to open a file that does not
-exist. It is achieved by using [error-chain], a library that takes
-care of a lot of boilerplate code needed in order to [handle errors in Rust].
+exist. It is achieved by using [error-chain][error-chain], a library that takes
+care of a lot of boilerplate code needed in order to [handle errors in Rust][handle errors in Rust].
 
 `Io(std::io::Error)` inside [`foreign_links`][foreign_links] allows automatic
 conversion from [`std::io::Error`][std::io::Error] into [`error_chain!`][error_chain!] defined type implementing the [`Error`][Error] trait.
@@ -15,7 +15,7 @@ The below recipe will tell how long the system has been running by
 opening the Unix file `/proc/uptime` and parse the content to get the
 first number. Returns uptime unless there is an error.
 
-Other recipes in this book will hide the [error-chain] boilerplate, and can be
+Other recipes in this book will hide the [error-chain][error-chain] boilerplate, and can be
 seen by expanding the code with the ⤢ button.
 
 ```rust,editable
@@ -26,10 +26,10 @@ seen by expanding the code with the ⤢ button.
 
 [![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
 
-The  [error-chain] crate makes [matching] on different error types returned by a function possible and relatively compact. [`ErrorKind`][ErrorKind] determines the error
+The  [error-chain][error-chain] crate makes [matching][matching] on different error types returned by a function possible and relatively compact. [`ErrorKind`][ErrorKind] determines the error
 type.
 
-Uses [reqwest]::[blocking] to query a random integer generator web service.  Converts
+Uses [reqwest]::[blocking][blocking] to query a random integer generator web service.  Converts
 the string response into an integer. The Rust standard library,
 [reqwest], and the web service can all generate errors. Well defined Rust errors
 use [`foreign_links`][foreign_links] An additional [`ErrorKind`][ErrorKind] variant for the web service error uses `errors` block of the `error_chain!` macro.

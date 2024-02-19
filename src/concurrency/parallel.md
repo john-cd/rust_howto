@@ -15,7 +15,7 @@ The example uses the `rayon` crate, which is a data parallelism library for Rust
 
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
-This example demonstrates using the [`rayon::any`][rayon::any] and [`rayon::all`][rayon::all] methods, which are parallelized counterparts to [`std::any`][std::any] and `[std::all]`. [`rayon::any`][rayon::any] checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::all`][rayon::all] checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
+This example demonstrates using the [`rayon::any`][rayon::any] and [`rayon::all`][rayon::all] methods, which are parallelized counterparts to [`std::any`][std::any] and [`std::all`][std::all]. [`rayon::any`][rayon::any] checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::all`][rayon::all] checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
 ```rust,editable
 {{#include ../../deps/examples/rayon-any-all.rs}}
@@ -44,7 +44,7 @@ This example will sort in parallel a vector of Strings.
 
 Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random
 values in parallel.  Although [multiple options]
-exist to sort an enumerable data type, [`par_sort_unstable`][par_sort_unstable] is usually faster than [stable sorting] algorithms.
+exist to sort an enumerable data type, [`par_sort_unstable`][par_sort_unstable] is usually faster than [stable sorting][stable sorting] algorithms.
 
 ```rust,editable
 {{#include ../../deps/examples/rayon-parallel-sort.rs}}
@@ -54,9 +54,9 @@ exist to sort an enumerable data type, [`par_sort_unstable`][par_sort_unstable] 
 
 [![rayon-badge]][rayon] [![cat-concurrency-badge]][cat-concurrency]
 
-This example uses [`rayon::filter`][rayon::filter] `[rayon::map]` and [`rayon::reduce`][rayon::reduce] to calculate the average age of `Person` objects whose age is over 30.
+This example uses [`rayon::filter`][rayon::filter] [`rayon::map`][rayon::map] and [`rayon::reduce`][rayon::reduce] to calculate the average age of `Person` objects whose age is over 30.
 
-`[rayon::filter]` returns elements from a collection that satisfy the given predicate. [`rayon::map`][rayon::map] performs an operation on every element, creating a new iteration, and [`rayon::reduce`][rayon::reduce] performs an operation given the previous reduction and the current element. Also shows use of `[rayon::sum]`
+[`rayon::filter`][rayon::filter] returns elements from a collection that satisfy the given predicate. [`rayon::map`][rayon::map] performs an operation on every element, creating a new iteration, and [`rayon::reduce`][rayon::reduce] performs an operation given the previous reduction and the current element. Also shows use of [`rayon::sum`][rayon::sum]
 which has the same result as the reduce operation in this example.
 
 ```rust,editable
@@ -70,7 +70,7 @@ which has the same result as the reduce operation in this example.
 This example generates thumbnails for all .jpg files in the current directory
 then saves them in a new folder called `thumbnails`.
 
-`[glob::glob_with]` finds jpeg files in current directory. `rayon` resizes images in parallel using [`par_iter`][par_iter] calling  `[DynamicImage::resize]`
+[`glob::glob_with`][glob::glob_with] finds jpeg files in current directory. `rayon` resizes images in parallel using [`par_iter`][par_iter] calling  [`DynamicImage::resize`][DynamicImage::resize]
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/rayon-thumbnails.rs}}

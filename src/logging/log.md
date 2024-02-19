@@ -6,7 +6,7 @@
 
 The `log` crate provides logging utilities. The `env_logger` crate configures
 logging via an environment variable.  The [`log::debug!`][log::debug!] macro works like other
-`[std::fmt]` formatted strings.
+[`std::fmt`][std::fmt] formatted strings.
 
 ```rust,editable
 {{#include ../../deps/examples/log-debug.rs}}
@@ -33,7 +33,7 @@ DEBUG:main: Executing query: DROP TABLE students
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
 Proper error handling considers exceptions exceptional.  Here, an error logs
-to stderr with `log`'s convenience macro `[log::error!]`
+to stderr with `log`'s convenience macro [`log::error!`][log::error!]
 
 ```rust,editable
 {{#include ../../deps/examples/log-error.rs}}
@@ -43,7 +43,7 @@ to stderr with `log`'s convenience macro `[log::error!]`
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration using the [`Builder::target`][Builder::target] to set the target of the log output to `[Target::Stdout]`
+Creates a custom logger configuration using the [`Builder::target`][Builder::target] to set the target of the log output to [`Target::Stdout`][Target::Stdout]
 
 ```rust,editable
 {{#include ../../deps/examples/log-stdout.rs}}
@@ -65,14 +65,13 @@ the [`log::Log`][log::Log] trait and [`log::set_logger`][log::set_logger] instal
 
 [![log-badge]][log] [![syslog-badge]][syslog] [![cat-debugging-badge]][cat-debugging]
 
-Logs messages to [UNIX syslog]. Initializes logger backend
-with [`syslog::init`][syslog::init] `[syslog::Facility]` records the program submitting
+Logs messages to [UNIX syslog][UNIX syslog]. Initializes logger backend
+with [`syslog::init`][syslog::init] [`syslog::Facility`][syslog::Facility] records the program submitting
 the log entry's classification, [`log::LevelFilter`][log::LevelFilter] denotes allowed log verbosity
 and `Option<&str>` holds optional application name.
 
 ```rust,editable
 {{#include ../../deps/examples/log-syslog.rs}}
 ```
-
 
 {{#include ../refs/link-refs.md}}

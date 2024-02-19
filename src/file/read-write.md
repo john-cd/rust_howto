@@ -6,7 +6,7 @@
 
 Writes a three-line message to a file, then reads it back a line at a
 time with the [`Lines`][Lines] iterator created by
-`[BufRead::lines]` [`File`][File] implements [`Read`][Read] which provides `[BufReader]`
+[`BufRead::lines`][BufRead::lines] [`File`][File] implements [`Read`][Read] which provides [`BufReader`][BufReader]
 trait.  [`File::create`][File::create] opens a [`File`][File] for writing, [`File::open`][File::open] for
 reading.
 
@@ -42,13 +42,13 @@ errors because the two files are same.
 
 [![memmap-badge]][memmap] [![cat-filesystem-badge]][cat-filesystem]
 
-Creates a memory map of a file using [memmap] and simulates some non-sequential
+Creates a memory map of a file using [memmap][memmap] and simulates some non-sequential
 reads from the file. Using a memory map means you just index into a slice rather
 than dealing with [`seek`][seek] to navigate a File.
 
 The [`Mmap::map`][Mmap::map] function assumes the file
 behind the memory map is not being modified at the same time by another process
-or else a [race condition] occurs.
+or else a [race condition][race condition] occurs.
 
 ```rust,editable
 {{#include ../../deps/examples/memmap.rs}}

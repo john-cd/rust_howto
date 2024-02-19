@@ -4,7 +4,7 @@
 
 [![percent-encoding-badge]][percent-encoding] [![cat-encoding-badge]][cat-encoding]
 
-Encode an input string with [percent-encoding] using the [`utf8_percent_encode`][utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_decode] function.
+Encode an input string with [percent-encoding][percent-encoding-wikipedia] using the [`utf8_percent_encode`][utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_decode] function.
 
 ```rust,editable
 {{#include ../../deps/examples/percent-encode.rs}}
@@ -19,7 +19,7 @@ a `String`.
 
 [![url-badge]][url] [![cat-encoding-badge]][cat-encoding]
 
-Encodes a string into [application/x-www-form-urlencoded] syntax
+Encodes a string into [application/x-www-form-urlencoded][application/x-www-form-urlencoded] syntax
 using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize] and subsequently
 decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both functions return iterators that collect into a `String`.
 
@@ -48,8 +48,8 @@ value to the expected value.
 
 [![base64-badge]][base64] [![cat-encoding-badge]][cat-encoding]
 
-Encodes byte slice into `base64` String using `[encode]`
-and decodes it with `[decode]`.
+Encodes byte slice into `base64` String using [`encode`][encode]
+and decodes it with [`decode`][decode].
 
 ```rust,editable
 {{#include ../../deps/examples/base64.rs}}

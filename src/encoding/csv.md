@@ -6,14 +6,14 @@
 
 Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord] — a weakly typed
 data representation which expects valid UTF-8 rows. Alternatively,
-`[csv::ByteRecord]` makes no assumptions about UTF-8.
+[`csv::ByteRecord`][csv::ByteRecord] makes no assumptions about UTF-8.
 
 ```rust,editable
 {{#include ../../deps/examples/read.rs}}
 ```
 
 Serde deserializes data into strongly type structures. See the
-`[csv::Reader::deserialize]` method.
+[`csv::Reader::deserialize`][csv::Reader::deserialize] method.
 
 ```rust,editable
 {{#include ../../deps/examples/read1.rs}}
@@ -23,7 +23,7 @@ Serde deserializes data into strongly type structures. See the
 
 [![csv-badge]][csv] [![cat-encoding-badge]][cat-encoding]
 
-Reads CSV records with a tab `[delimiter]`.
+Reads CSV records with a tab [`delimiter`][delimiter].
 
 ```rust,editable
 {{#include ../../deps/examples/delimiter.rs}}
@@ -66,7 +66,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] s
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
 The following example shows how to serialize custom structs as CSV records using
-the [serde] crate.
+the [serde][serde] crate.
 
 ```rust,editable
 {{#include ../../deps/examples/serde-serialize.rs}}
@@ -76,9 +76,9 @@ the [serde] crate.
 
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
-Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color.  Utilizes the [csv] crate to read and write the csv file, and [serde] to deserialize and serialize the rows to and from bytes.
+Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color.  Utilizes the [csv][csv] crate to read and write the csv file, and [serde][serde] to deserialize and serialize the rows to and from bytes.
 
-See [`csv::Reader::deserialize`][csv::Reader::deserialize] `[serde::Deserialize]` and `[std::str::FromStr]`
+See [`csv::Reader::deserialize`][csv::Reader::deserialize] [`serde::Deserialize`][serde::Deserialize] and [`std::str::FromStr`][std::str::FromStr]
 
 ```rust,editable
 {{#include ../../deps/examples/transform.rs}}

@@ -11,7 +11,7 @@ controlled separately with [`RUST_LOG`][RUST_LOG] environmental variable.
 {{#include ../../deps/examples/log-mod.rs}}
 ```
 
-`[RUST_LOG]` environment variable controls [`env-logger] [env-logger`][env-logger] [env-logger] output.
+`[RUST_LOG]` environment variable controls [`env-logger`][env-logger] output.
 Module declarations take comma separated entries formatted like
 `path::to::module=log_level`. Run the `test` application as follows:
 
@@ -35,12 +35,12 @@ DEBUG:test::foo::bar: [bar] debug
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-`[Builder]` configures logging.
+[`Builder`][Builder] configures logging.
 
-`[Builder::parse]` parses `MY_APP_LOG`
+[`Builder::parse`][Builder::parse] parses `MY_APP_LOG`
 environment variable contents in the form of [`RUST_LOG`][RUST_LOG] syntax.
 Then, [`Builder::init`][Builder::init] initializes the logger.
-All these steps are normally done internally by `[env-logger::init]`.
+All these steps are normally done internally by [`env-logger::init`][env-logger::init].
 
 ```rust,editable
 {{#include ../../deps/examples/log-env-variable.rs}}
@@ -50,10 +50,10 @@ All these steps are normally done internally by `[env-logger::init]`.
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![chrono-badge]][chrono] [![cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration with `[Builder]`
+Creates a custom logger configuration with [`Builder`][Builder]
 Each log entry calls [`Local::now`][Local::now] to get the current [`DateTime`][DateTime] in local timezone and uses [`DateTime::format`][DateTime::format] with [`strftime::specifiers`][strftime::specifiers] to format a timestamp used in the final log.
 
-The example calls [`Builder::format`][Builder::format] to set a closure which formats each message text with timestamp, [`Record::level`][Record::level] and body (`[Record::args]`).
+The example calls [`Builder::format`][Builder::format] to set a closure which formats each message text with timestamp, [`Record::level`][Record::level] and body ([`Record::args`][Record::args]).
 
 ```rust,editable
 {{#include ../../deps/examples/log-timestamp.rs}}
@@ -70,14 +70,13 @@ stderr output will contain
 
 [![log-badge]][log] [![log4rs-badge]][log4rs] [![cat-debugging-badge]][cat-debugging]
 
-[log4rs] configures log output to a custom location. [log4rs] can use either an
-external YAML file or a builder configuration.
+[log4rs][log4rs] configures log output to a custom location. [log4rs][log4rs] can use either an external YAML file or a builder configuration.
 
 Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An
 appender defines the logging destination.  The configuration continues with
-encoding using a custom pattern from `[log4rs::encode::pattern]`
+encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode::pattern]
 Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] and sets the default
-`[log::LevelFilter]`
+[`log::LevelFilter`][log::LevelFilter]
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/log-custom.rs}}
