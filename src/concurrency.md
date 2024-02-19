@@ -9,6 +9,7 @@ This section covers concurrent programming, specifically parallel programming an
 - Important for CPU-heavy computations.
 - Often requires explicit management of threads and thread pools.
 - Requires careful synchronization to prevent data races (using mechanisms like Mutexes or atomics).
+
 - Overhead due to thread creation and switching.
 
 Key constructs in Rust:
