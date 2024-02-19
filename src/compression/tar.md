@@ -16,8 +16,7 @@ Decompress ([`GzDecoder`][GzDecoder]) and extract ([`Archive::unpack`][Archive::
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
-Creates a [`File`][File] wrapped in [`GzEncoder`][GzEncoder] and [`tar::Builder`][tar::Builder] </br>Adds contents of `/var/log` directory recursively into the archive
-under `backup/logs`path with [`Builder::append_dir_all`][Builder::append_dir_all]. [`GzEncoder`][GzEncoder] is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
+Creates a [`File`][File] wrapped in [`GzEncoder`][GzEncoder] and [`tar::Builder`][tar::Builder] </br>Adds contents of `/var/log` directory recursively into the archive under `backup/logs`path with [`Builder::append_dir_all`][Builder::append_dir_all]. [`GzEncoder`][GzEncoder] is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/tar-compress.rs}}

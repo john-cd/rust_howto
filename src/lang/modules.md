@@ -14,8 +14,7 @@ In any file other than the crate root, you can declare submodules. For example, 
 - In the file src/garden/vegetables.rs
 - In the file src/garden/vegetables/mod.rs (older style)
 
-In Rust, all items (functions, methods, structs, enums, modules, and constants) are private to parent modules by default.
-Items can access other items in the same module, even when private.
+In Rust, all items (functions, methods, structs, enums, modules, and constants) are private to parent modules by default. Items can access other items in the same module, even when private.
 
 Items in a parent module can’t use the private items inside child modules, but items in child modules can use the items in their ancestor modules.
 

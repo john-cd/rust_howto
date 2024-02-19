@@ -2,14 +2,12 @@
 
 The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking than the default Rust linker.
 
-The default linker does a good job, but there are faster alternatives depending on the operating
-system you are using:
+The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
 - `lld` on Windows and Linux, a linker developed by the LLVM project;
 - `zld` on MacOS.
 
-To speed up the linking phase you have to install the alternative linker on your machine and add
-this configuration file to the project:
+To speed up the linking phase you have to install the alternative linker on your machine and add this configuration file to the project:
 
 ```toml
 # .cargo/config.toml

@@ -4,23 +4,20 @@
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-Creates two modules `foo` and nested `foo::bar` with logging directives
-controlled separately with [`RUST_LOG`][RUST_LOG] environmental variable.
+Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][RUST_LOG] environmental variable.
 
 ```rust,editable
 {{#include ../../deps/examples/log-mod.rs}}
 ```
 
-`[RUST_LOG]` environment variable controls [`env-logger`][env-logger] output.
-Module declarations take comma separated entries formatted like
+`[RUST_LOG]` environment variable controls [`env-logger`][env-logger] output. Module declarations take comma separated entries formatted like
 `path::to::module=log_level`. Run the `test` application as follows:
 
 ```bash
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test
 ```
 
-Sets the default [`log::Level`][log::Level] to `warn`, module `foo` and module `foo::bar`
-to `info` and `debug`.
+Sets the default [`log::Level`][log::Level] to `warn`, module `foo` and module `foo::bar` to `info` and `debug`.
 
 ```bash
 WARN:test: [root] warn
@@ -72,10 +69,8 @@ stderr output will contain
 
 [log4rs][log4rs] configures log output to a custom location. [log4rs][log4rs] can use either an external YAML file or a builder configuration.
 
-Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An
-appender defines the logging destination.  The configuration continues with
-encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode::pattern]
-Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] and sets the default
+Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An appender defines the logging destination.  The configuration continues with
+encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode::pattern] Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] and sets the default
 [`log::LevelFilter`][log::LevelFilter]
 
 ```rust,editable,no_run

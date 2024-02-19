@@ -1,7 +1,6 @@
 # Custom Errors
 
-Use `Anyhow` if you don't care what error type your functions return, you just want it to be easy. This is common in application code.
-Use `thiserror` if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Use `Anyhow` if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use `thiserror` if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Anyhow
 

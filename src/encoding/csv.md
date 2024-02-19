@@ -4,8 +4,7 @@
 
 [![csv-badge]][csv] [![cat-encoding-badge]][cat-encoding]
 
-Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord] — a weakly typed
-data representation which expects valid UTF-8 rows. Alternatively,
+Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord] — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
 [`csv::ByteRecord`][csv::ByteRecord] makes no assumptions about UTF-8.
 
 ```rust,editable
@@ -65,8 +64,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] s
 
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
-The following example shows how to serialize custom structs as CSV records using
-the [serde][serde] crate.
+The following example shows how to serialize custom structs as CSV records using the [serde][serde] crate.
 
 ```rust,editable
 {{#include ../../deps/examples/serde-serialize.rs}}

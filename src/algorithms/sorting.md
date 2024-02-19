@@ -24,8 +24,7 @@ A Vector of f32 or f64 can be sorted with [`vec::sort_by`][vec::sort_by] and [`P
 
 [![std-badge]][std] [![cat-science-badge]][cat-science]
 
-Sorts a Vector of Person structs with properties `name` and `age` by its natural
-order (By name and age). In order to make Person sortable you need four traits [`Eq`][Eq], [`PartialEq`][PartialEq], [`Ord`][Ord] and [`PartialOrd`][PartialOrd]. These traits can be simply derived. You can also provide a custom comparator function using a [`vec:sort_by`][vec:sort_by] method and sort only by age.
+Sorts a Vector of Person structs with properties `name` and `age` by its natural order (By name and age). In order to make Person sortable you need four traits [`Eq`][Eq], [`PartialEq`][PartialEq], [`Ord`][Ord] and [`PartialOrd`][PartialOrd]. These traits can be simply derived. You can also provide a custom comparator function using a [`vec:sort_by`][vec:sort_by] method and sort only by age.
 
 ```rust,editable
 {{#include ../../deps/examples/sort_struct.rs}}

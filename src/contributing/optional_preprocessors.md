@@ -1,7 +1,6 @@
 ## Optional pre-processors
 
-- [mdbook-linkcheck][mdbook-linkcheck] is a backend for `mdbook` that will check links.
-Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
+- [mdbook-linkcheck][mdbook-linkcheck] is a backend for `mdbook` that will check links. Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
 - [mdbook-hide][mdbook-hide-github] hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
 ```xml

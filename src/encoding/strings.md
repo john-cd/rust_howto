@@ -12,16 +12,13 @@ Encode an input string with [percent-encoding][percent-encoding-wikipedia] using
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, `url` encodes `?` in a URL path but not in a query string.
 
-The return value of encoding is an iterator of `&str` slices which collect into
-a `String`.
+The return value of encoding is an iterator of `&str` slices which collect into a `String`.
 
 ## Encode a string as application/x-www-form-urlencoded
 
 [![url-badge]][url] [![cat-encoding-badge]][cat-encoding]
 
-Encodes a string into [application/x-www-form-urlencoded][application/x-www-form-urlencoded] syntax
-using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize] and subsequently
-decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both functions return iterators that collect into a `String`.
+Encodes a string into [application/x-www-form-urlencoded][application/x-www-form-urlencoded] syntax using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize] and subsequently decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both functions return iterators that collect into a `String`.
 
 ```rust,editable
 {{#include ../../deps/examples/url-encode.rs}}
@@ -31,14 +28,11 @@ decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both function
 
 [![data-encoding-badge]][data-encoding] [![cat-encoding-badge]][cat-encoding]
 
-The [`data_encoding`][data_encoding] crate provides a `HEXUPPER::encode` method which
-takes a `&[u8]` and returns a `String` containing the hexadecimal
-representation of the data.
+The [`data_encoding`][data_encoding] crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a `String` containing the hexadecimal representation of the data.
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 
-The example below coverts `&[u8]` data to hexadecimal equivalent.  Compares this
-value to the expected value.
+The example below coverts `&[u8]` data to hexadecimal equivalent.  Compares this value to the expected value.
 
 ```rust,editable
 {{#include ../../deps/examples/hex.rs}}
@@ -48,8 +42,7 @@ value to the expected value.
 
 [![base64-badge]][base64] [![cat-encoding-badge]][cat-encoding]
 
-Encodes byte slice into `base64` String using [`encode`][encode]
-and decodes it with [`decode`][decode].
+Encodes byte slice into `base64` String using [`encode`][encode] and decodes it with [`decode`][decode].
 
 ```rust,editable
 {{#include ../../deps/examples/base64.rs}}

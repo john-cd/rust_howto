@@ -19,10 +19,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
 
-A base URL includes a protocol and a domain.  Base URLs have no folders,
-files or query strings.  Each of those items are stripped out of the given
-URL.  [`PathSegmentsMut::clear`][PathSegmentsMut::clear] removes paths and [`Url::set_query`][Url::set_query] removes
-query string.
+A base URL includes a protocol and a domain.  Base URLs have no folders, files or query strings.  Each of those items are stripped out of the given URL.  [`PathSegmentsMut::clear`][PathSegmentsMut::clear] removes paths and [`Url::set_query`][Url::set_query] removes query string.
 
 ```rust,editable
 {{#include ../../deps/examples/base.rs}}
@@ -42,8 +39,7 @@ The [`join`][join] method creates a new URL from a base and relative path.
 
 [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
 
-The [`Url`][Url] struct exposes various methods to extract information about the URL
-it represents.
+The [`Url`][Url] struct exposes various methods to extract information about the URL it represents.
 
 ```rust,editable
 {{#include ../../deps/examples/origin.rs}}

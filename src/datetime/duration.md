@@ -6,8 +6,7 @@
 
 Measures [`time::Instant::elapsed`][time::Instant::elapsed] since [`time::Instant::now`][time::Instant::now]
 
-Calling [`time::Instant::elapsed`][time::Instant::elapsed] returns a [`time::Duration`][time::Duration] that we print at the end of the example.
-This method will not mutate or reset the [`time::Instant`][time::Instant] object.
+Calling [`time::Instant::elapsed`][time::Instant::elapsed] returns a [`time::Duration`][time::Duration] that we print at the end of the example. This method will not mutate or reset the [`time::Instant`][time::Instant] object.
 
 ```rust,editable
 {{#include ../../deps/examples/profile.rs}}
@@ -19,8 +18,7 @@ This method will not mutate or reset the [`time::Instant`][time::Instant] object
 
 Calculates and displays the date and time two weeks from now using
 [`DateTime::checked_add_signed`][DateTime::checked_add_signed] and the date of the day before that using
-[`DateTime::checked_sub_signed`][DateTime::checked_sub_signed] The methods return None if the date and time
-cannot be calculated.
+[`DateTime::checked_sub_signed`][DateTime::checked_sub_signed] The methods return None if the date and time cannot be calculated.
 
 Escape sequences that are available for the
 [`DateTime::format`][DateTime::format] can be found at [`chrono::format::strftime`][chrono::format::strftime]

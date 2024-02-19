@@ -12,8 +12,7 @@
 
 `Box<T>` allow you to store data on the heap rather than the stack. What remains on the stack is the pointer to the heap data.
 
-The `Box<T>` type is a smart pointer because it implements the Deref trait, which allows `Box<T>` values to be treated like references.
-Implementing the Deref trait allows you to customize the behavior of the dereference operator `*`.
+The `Box<T>` type is a smart pointer because it implements the Deref trait, which allows `Box<T>` values to be treated like references. Implementing the Deref trait allows you to customize the behavior of the dereference operator `*`.
 
 Use when
 

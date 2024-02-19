@@ -4,8 +4,7 @@
 
 [![cross-github][cross-github-badge]][cross-github]
 
-[cross][cross-github]⮳ builds your Rust project for different target operating systems and architectures.
-It requires `rustup` and `Docker` or `Podman`.
+[cross][cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires `rustup` and `Docker` or `Podman`.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross

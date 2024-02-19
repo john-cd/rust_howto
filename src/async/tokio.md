@@ -2,8 +2,7 @@
 
 [![tokio-badge]][tokio]  [![tokio-github][tokio-github-badge]][tokio-github]
 
-Tokio is an asynchronous runtime for the Rust programming language. It provides the building blocks needed for writing networking applications.
-Tokio provides a few major components:
+Tokio is an asynchronous runtime for the Rust programming language. It provides the building blocks needed for writing networking applications. Tokio provides a few major components:
 
 - Multiple variations of the runtime for executing asynchronous code. Everything from a multi-threaded, work-stealing runtime to a light-weight, single-threaded runtime.
 - An asynchronous version of the standard library.

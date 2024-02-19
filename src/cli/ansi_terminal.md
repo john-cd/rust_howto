@@ -16,8 +16,7 @@ There are two main data structures in [`ansi_term`][ansi_term]: [`ANSIString`][A
 
 ### Bold text in Terminal
 
-For anything more complex than plain foreground colour changes, the code
-needs to construct `Style` struct. [`Style::new()`][Style::new()] creates the struct, and properties chained.
+For anything more complex than plain foreground colour changes, the code needs to construct `Style` struct. [`Style::new()`][Style::new()] creates the struct, and properties chained.
 
 ```rust,editable
 {{#include ../../deps/examples/ansi_term-basic1.rs}}

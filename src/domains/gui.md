@@ -4,8 +4,7 @@ Tooling to help you create a graphical user interface.
 
 [Are we GUI yet?][are-we-gui-yet?]⮳
 
-GTK and Tauri are probably the only options which can be described as production-ready without caveats.
-The Rust native options are usable for simple projects but are all still quite incomplete.
+GTK and Tauri are probably the only options which can be described as production-ready without caveats. The Rust native options are usable for simple projects but are all still quite incomplete.
 
 See the relevant section in [blessed.rs][blessed-rs]⮳
 

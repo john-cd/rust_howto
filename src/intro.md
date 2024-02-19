@@ -26,7 +26,6 @@ This book intends to provide EXAMPLES to demonstrate the use of key Rust crates,
 
 [Rust by Example][rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates. The _Rust Cookbook_ is a collection of simple examples that demonstrate good practices to accomplish common
-programming tasks, using the crates of the Rust ecosystem.
+The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates. The _Rust Cookbook_ is a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
 
 {{#include refs/link-refs.md}}
