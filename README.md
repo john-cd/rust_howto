@@ -244,6 +244,7 @@ The `publish` folder contains a placeholder crate, so that the book could be loc
 [docker-desktop]: https://www.docker.com/products/docker-desktop/
 [mdbook]: https://rust-lang.github.io/mdBook/index.html
 [mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
+[mdbook-hide-github]: https://github.com/ankitrgadiya/mdbook-hide/
 [mdbook-keeper]: https://crates.io/crates/mdbook-keeper
 [mdbook-linkcheck]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [rust-playground]: https://play.rust-lang.org/
