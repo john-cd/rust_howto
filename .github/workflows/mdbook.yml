@@ -3,7 +3,7 @@
 ## To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
 ## See also https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 ##
-name: Deploy mdBook site to Pages
+name: Deploy mdBook site to GitHub Pages
 
 on:
   ## Runs on pushes targeting the default branch
@@ -12,6 +12,12 @@ on:
 
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      deploy_to_gh_pages:
+        description: 'If true, deploy the book to GitHub Pages'
+        type: boolean
+        required: true
+        default: false
 
 ## Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -24,6 +30,11 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
   ## Build job
@@ -44,24 +55,24 @@ jobs:
       #       ./.cache/
       #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       #     restore-keys: ${{ runner.os }}-cargo-
-      ## Rust
       - name: Build docker image
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml build
-      - name: Create book directory
+      - name: Create book/ directory
         run: mkdir book/
       - name: Build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
-      ## GitHub Pages
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: Upload artifact
+      - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./book/html/
 
   ## Deployment job
   deploy:
+    name: Deploy to GitHub Pages
+    if: ${{ inputs.deploy_to_gh_pages == 'true' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
