@@ -83,7 +83,5 @@ This cookbook is intended eventually to provide expansive coverage of the Rust c
 
 At present the cookbook is focused on the standard library, and on "core" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-The cookbook is closely tied to the [`Rust Libz Blitz`][Rust Libz Blitz], a project to identify, and improve the quality of such crates, and so it largely defers crate selection to that project. Any crates that have already been evaluated as part of that process are in scope for the cookbook, as are crates that are pending evaluation.
-
 [index]: intro.md
 {{#include refs/link-refs.md}}

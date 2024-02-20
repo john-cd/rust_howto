@@ -26,7 +26,7 @@ The following example shows how to return the correct MIME type from a given fil
 
 [![reqwest][reqwest-badge]][reqwest]  [![mime][mime-badge]][mime]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-When receiving a HTTP reponse from `reqwest` the [`MIME type`][MIME type] or media type may be found in the [`Content-Type`][Content-Type] header. [`reqwest::header::HeaderMap::get`][reqwest::header::HeaderMap::get] retrieves the header as a [`reqwest::header::HeaderValue`][reqwest::header::HeaderValue] which can be converted to a string. The `mime` crate can then parse that, yielding a [`mime::Mime`][mime::Mime] value.
+When receiving a HTTP reponse from `reqwest` the [`MIME type`][mozilla-mime-type] or media type may be found in the [`Content-Type`][mozilla-content-type] header. [`reqwest::header::HeaderMap::get`][reqwest::header::HeaderMap::get] retrieves the header as a [`reqwest::header::HeaderValue`][reqwest::header::HeaderValue] which can be converted to a string. The `mime` crate can then parse that, yielding a [`mime::Mime`][mime::Mime] value.
 
 The [`mime`][mime] crate also defines some commonly used MIME types.
 

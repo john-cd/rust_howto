@@ -57,6 +57,7 @@
 [blog-building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
 [blog-building-a-saas-with-rust-website]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
 [blog-error]: https://brson.github.io/2016/11/30/starting-with-error-chain
+[blog-optimizing-ci-cd-pipelines]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
 [blog-practical-rust]: https://dev.to/werner/practical-rust-web-development-api-rest-29g1
 [blog-rust-build-times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
 [blog-rusty-terminal]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l

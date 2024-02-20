@@ -4,7 +4,7 @@
 
 [![percent-encoding][percent-encoding-badge]][percent-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encode an input string with [percent-encoding][percent-encoding-wikipedia] using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode] function.
+Encode an input string with [percent-encoding][wikipedia-percent-encoding] using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode] function.
 
 ```rust,editable
 {{#include ../../deps/tests/percent-encode.rs}}

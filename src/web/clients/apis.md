@@ -38,7 +38,7 @@ The [`reqwest::Client`][reqwest::Client] is responsible for details of both requ
 {{#include ../../../deps/tests/rest-post.rs}}
 ```
 
-The example uses HTTP [Basic Auth`][HTTP Basic Auth] in order to authorize access to [`GitHub API`][GitHub API]. Typical use case would employ one of the much more complex [`OAuth`][OAuth] authorization flows.
+The example uses HTTP [Basic Auth`][http-basic-auth] in order to authorize access to [`GitHub API`][github-api]. Typical use case would employ one of the much more complex [`OAuth`][oauth] authorization flows.
 
 ## Consume a paginated RESTful API
 
@@ -54,7 +54,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 
 [![reqwest][reqwest-badge]][reqwest]  [![hyper][hyper-badge]][hyper]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-This example uses the [`GitHub API - Rate limiting`][GitHub API - Rate limiting], as an example of how to handle remote server errors. This example uses the [`hyper::header!`][hyper::header!] macro to parse the response header and checks for [`reqwest::StatusCode::Forbidden`][reqwest::StatusCode::FORBIDDEN] If the response exceeds the rate limit, the example waits and retries.
+This example uses the [`GitHub API - Rate limiting`][github-api-rate-limiting], as an example of how to handle remote server errors. This example uses the [`hyper::header!`][hyper::header!] macro to parse the response header and checks for [`reqwest::StatusCode::Forbidden`][reqwest::StatusCode::FORBIDDEN] If the response exceeds the rate limit, the example waits and retries.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rate-limited.rs}}

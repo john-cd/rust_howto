@@ -134,7 +134,7 @@ docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --b
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
 ```
 
-[Related Stackoverflow question][stackoverflow]
+[Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]
 
 ## Push image to Docker Hub
 
@@ -247,5 +247,5 @@ The `publish` folder contains a placeholder crate, so that the book could be loc
 [mdbook-keeper-crate]: https://crates.io/crates/mdbook-keeper
 [mdbook-linkcheck-github]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [rust-playground]: https://play.rust-lang.org/
-[stackoverflow]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
+[stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [vs-code]: https://code.visualstudio.com/

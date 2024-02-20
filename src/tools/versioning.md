@@ -6,7 +6,7 @@
 
 Constructs a [`semver::Version`][semver::Version] from a string literal using [`Version::parse`][semver::Version::parse] then increments it by patch, minor, and major version number one by one.
 
-Note that in accordance with the [`Semantic Versioning Specification`][Semantic Versioning Specification], incrementing the minor version number resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
+Note that in accordance with the [`Semantic Versioning Specification`][semver-spec], incrementing the minor version number resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
 
 ```rust,editable
 {{#include ../../deps/tests/semver-increment.rs}}
@@ -16,7 +16,7 @@ Note that in accordance with the [`Semantic Versioning Specification`][Semantic 
 
 [![semver][semver-badge]][semver]  [![cat-config][cat-config-badge]][cat-config]
 
-Constructs a [`semver::Version`][semver::Version] from a complex version string using [`Version::parse`][semver::Version::parse] The string contains pre-release and build metadata as defined in the [`Semantic Versioning Specification`][Semantic Versioning Specification].
+Constructs a [`semver::Version`][semver::Version] from a complex version string using [`Version::parse`][semver::Version::parse] The string contains pre-release and build metadata as defined in the [`Semantic Versioning Specification`][semver-spec].
 
 Note that, in accordance with the Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 

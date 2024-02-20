@@ -111,7 +111,7 @@ Example `.github/workflows/<name>.yml`
 
 ## See also
 
-[Optimizing CI/CD pipelines][Optimizing CI/CD pipelines in your Rust projects]⮳
+[Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines]⮳
 
 <https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>⮳
 <https://github.com/marketplace/actions/upload-a-build-artifact>⮳

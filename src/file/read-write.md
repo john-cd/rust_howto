@@ -37,7 +37,7 @@ errors because the two files are same.
 
 Creates a memory map of a file using [`memmap`][memmap] and simulates some non-sequential reads from the file. Using a memory map means you just index into a slice rather than dealing with [`seek`][std::fs::File::seek] to navigate a File.
 
-The [`Mmap::map`][memmap::Mmap::map] function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][race condition] occurs.
+The [`Mmap::map`][memmap::Mmap::map] function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition] occurs.
 
 ```rust,editable
 {{#include ../../deps/tests/memmap.rs}}

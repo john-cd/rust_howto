@@ -28,11 +28,11 @@ with a URL establishes the destination, [`RequestBuilder::body`][reqwest::Reques
 
 [![reqwest][reqwest-badge]][reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-Uses [`reqwest::blocking::Client::head`][reqwest::blocking::Client::head] to get the [`Content-Length`][Content-Length] of the response.
+Uses [`reqwest::blocking::Client::head`][reqwest::blocking::Client::head] to get the [`Content-Length`][mozilla-content-length] of the response.
 
-The code then uses [`reqwest::blocking::Client::get`][reqwest::blocking::Client::get] to download the content in chunks of 10240 bytes, while printing progress messages. This exmple uses the synchronous reqwest module. The [`Range`][Range] header specifies the chunk size and position.
+The code then uses [`reqwest::blocking::Client::get`][reqwest::blocking::Client::get] to download the content in chunks of 10240 bytes, while printing progress messages. This exmple uses the synchronous reqwest module. The [`Range`][mozilla-range] header specifies the chunk size and position.
 
-The Range header is defined in [`RFC7233`][HTTP Range RFC7233].
+The Range header is defined in [`RFC7233`][http-range-rfc7233].
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/partial.rs}}

@@ -32,7 +32,7 @@ Iterates through links in the document and creates a [`tokio::spawn`][tokio::tas
 Pull the source of a MediaWiki page using [`reqwest::get`][reqwest::get] and then look for all entries of internal and external links with
 [`Regex::captures_iter`][regex::Regex::captures_iter] Using [`Cow`][std::borrow::Cow] avoids excessive [`String`][std::string::String] allocations.
 
-MediaWiki link syntax is described [here][MediaWiki link syntax].
+MediaWiki link syntax is described [here][mediawiki-link-syntax].
 
 ```rust,editable,no_run
 {{#include ../../deps/tests/unique.rs}}

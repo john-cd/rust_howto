@@ -60,7 +60,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 [![ndarray][ndarray-badge]][ndarray]
 
 This recipe demonstrates use of the [`Array1`][ndarray::Array1] type, [`ArrayView1`][ndarray::ArrayView1] type,
-[`fold`][ndarray::ArrayBase::fold] method, and [`dot`][ndarray::ArrayBase::dot] method in computing the [`l1`][l1] and [`l2`][l2] norms of a given vector.
+[`fold`][ndarray::ArrayBase::fold] method, and [`dot`][ndarray::ArrayBase::dot] method in computing the [`l1`][l1-norm] and [`l2`][l2-norm] norms of a given vector.
 
 + The `l2_norm` function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. + The `l1_norm` function is computed by a `fold` operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
 
