@@ -2,7 +2,7 @@
 
 Targeting WebAssembly or manipulating WebAssembly.
 
-[Rust and WebAssembly (book)][rustwasm-book]⮳
+[Rust and WebAssembly (book)][book-rustwasm]⮳
 
 ## Yew
 

@@ -2,7 +2,7 @@
 
 ### Using VS Code
 
-Clone the repo and open the folder in [VS Code][vs-code]. Edit `.devcontainer/.env` if needed. VS Code should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
+Clone the repo and open the folder in [VS Code][rust-in-vs-code]. Edit `.devcontainer/.env` if needed. VS Code should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
 
 - [Dev Container extension][dev-container-extension]
 - [Docker Desktop][docker-desktop] (or at least the Docker engine).
@@ -11,7 +11,7 @@ Note that opening the code folder in VS Code may take a little while the first t
 
 ### Other
 
-If you are not using VS Code, install the [Dev Container CLI][dev-container-CLI] or simply install the required tools on your local machine:
+If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github] or simply install the required tools on your local machine:
 
 ```bash
 sudo apt-get update # or equivalent for other distros

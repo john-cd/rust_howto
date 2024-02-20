@@ -4,7 +4,7 @@
 
 ## See also
 
-[![serde-json][serde-json-badge]][serde-json]
+[![serde_json][serde_json-badge]][serde_json]
 
 [![monostate-github][monostate-github-badge]][monostate-github]
 

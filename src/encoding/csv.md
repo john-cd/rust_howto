@@ -22,7 +22,7 @@ Serde deserializes data into strongly type structures. See the
 
 [![csv-badge]][csv] [![cat-encoding-badge]][cat-encoding]
 
-Reads CSV records with a tab [`delimiter`][delimiter].
+Reads CSV records with a tab [`delimiter`][csv::ReaderBuilder::delimiter].
 
 ```rust,editable
 {{#include ../../deps/examples/delimiter.rs}}
@@ -54,7 +54,7 @@ CSV files often contain invalid data. For these cases, the `csv` crate provides 
 
 [![csv-badge]][csv] [![cat-encoding-badge]][cat-encoding]
 
-This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] supports automatic serialization from Rust types into CSV records. [`write_record`][write_record] writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`serialize`][serialize] Since CSV writer uses an internal buffer, always explicitly [`flush`][flush] when done.
+This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] supports automatic serialization from Rust types into CSV records. [`write_record`][csv::Writer::write_record] writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`serialize`][csv::Writer::serialize]. Since CSV writer uses an internal buffer, always explicitly [`flush`][csv::Writer::flush] when done.
 
 ```rust,editable
 {{#include ../../deps/examples/serialize.rs}}
@@ -64,7 +64,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] s
 
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
-The following example shows how to serialize custom structs as CSV records using the [serde][serde] crate.
+The following example shows how to serialize custom structs as CSV records using the [`serde`][serde] crate.
 
 ```rust,editable
 {{#include ../../deps/examples/serde-serialize.rs}}
@@ -74,7 +74,7 @@ The following example shows how to serialize custom structs as CSV records using
 
 [![csv-badge]][csv] [![serde-badge]][serde] [![cat-encoding-badge]][cat-encoding]
 
-Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [csv][csv] crate to read and write the csv file, and [serde][serde] to deserialize and serialize the rows to and from bytes.
+Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][csv] crate to read and write the csv file, and [`serde`][serde] to deserialize and serialize the rows to and from bytes.
 
 See [`csv::Reader::deserialize`][csv::Reader::deserialize] [`serde::Deserialize`][serde::Deserialize] and [`std::str::FromStr`][std::str::FromStr]
 

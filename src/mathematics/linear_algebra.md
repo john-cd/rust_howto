@@ -41,10 +41,10 @@ In `ndarray`, 1-D arrays can be interpreted as either row or column vectors depe
 
 [![ndarray-badge]][ndarray]
 
-The [ndarray][ndarray] crate supports a number of ways to create arrays -- this recipe creates
+The [`ndarray`][ndarray] crate supports a number of ways to create arrays -- this recipe creates
 [`ndarray::Array`][ndarray::Array] from `std::Vec` using `from`. Then, it sums the arrays element-wise.
 
-This recipe contains an example of comparing two floating-point vectors element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`assert_abs_diff_eq!`][assert_abs_diff_eq!] macro from the [`approx`][approx] crate allows for convenient element-wise comparisons. To use the `approx` crate with `ndarray`, the `approx` feature must be added to the `ndarray` dependency in `Cargo.toml`. For example,
+This recipe contains an example of comparing two floating-point vectors element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`assert_abs_diff_eq!`][approx::assert_abs_diff_eq] macro from the [`approx`][approx] crate allows for convenient element-wise comparisons. To use the `approx` crate with `ndarray`, the `approx` feature must be added to the `ndarray` dependency in `Cargo.toml`. For example,
 `ndarray = { version = "0.13", features = ["approx"]["approx"] }`.
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes
@@ -60,7 +60,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 [![ndarray-badge]][ndarray]
 
 This recipe demonstrates use of the [`Array1`][ndarray::Array1] type, [`ArrayView1`][ndarray::ArrayView1] type,
-[`fold`][ndarray-fold] method, and [`dot`][dot] method in computing the [l1][l1] and [l2][l2] norms of a given vector.
+[`fold`][ndarray::ArrayBase::fold] method, and [`dot`][ndarray::ArrayBase::dot] method in computing the [`l1`][l1] and [`l2`][l2] norms of a given vector.
 
 + The `l2_norm` function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. + The `l1_norm` function is computed by a `fold` operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
 
@@ -86,7 +86,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts i
 
 [![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
 
-Serialize and deserialize a matrix to and from JSON. Serialization is taken care of by [`serde_json::to_string`][serde-json::to_string] and [`serde_json::from_str`][serde-json::from_str] performs deserialization.
+Serialize and deserialize a matrix to and from JSON. Serialization is taken care of by [`serde_json::to_string`][serde_json::to_string] and [`serde_json::from_str`][serde_json::from_str] performs deserialization.
 
 Note that serialization followed by deserialization gives back the original matrix.
 

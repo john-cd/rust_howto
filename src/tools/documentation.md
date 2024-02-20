@@ -1,8 +1,8 @@
 # Documentation
 
-[The rustdoc book][rustdoc-book]⮳
+[The rustdoc book][book-rustdoc]⮳
 
-[docs.rs][docs-rs]⮳: open-source documentation host for Rust crates.
+[`docs.rs`][docs-rs]⮳: open-source documentation host for Rust crates.
 
 ## Documenting your code
 

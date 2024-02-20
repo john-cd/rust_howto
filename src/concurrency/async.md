@@ -4,7 +4,7 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 
 [Are we async yet?][are-we-async-yet?]⮳
 
-[Asynchronous Programming in Rust (book)][asynchronous-programming-in-rust-book]⮳
+[Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 
 ## Basic Example
 

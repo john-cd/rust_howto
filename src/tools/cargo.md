@@ -1,6 +1,6 @@
 # Cargo (package manager) and tools
 
-[The Cargo book][cargo-book]⮳
+[The Cargo book][book-cargo]⮳
 
 `cargo help` or `cargo <command> --help`
 

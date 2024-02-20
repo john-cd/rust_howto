@@ -6,7 +6,7 @@ Facilitate configuration management for applications.
 
 [![dotenvy-badge]][dotenvy]
 
-[dotenvy][dotenvy]⮳ supersedes [dotenv][dotenv]⮳.
+[`dotenvy`][dotenvy]⮳ supersedes [`dotenv`][dotenv]⮳.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/dotenvy.rs}}

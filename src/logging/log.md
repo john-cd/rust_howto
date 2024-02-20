@@ -2,9 +2,9 @@
 
 ## Log a debug message to the console
 
-[![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
+[![log-badge]][log] [![env_logger-badge]][env_logger] [![cat-debugging-badge]][cat-debugging]
 
-The `log` crate provides logging utilities. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug!] macro works like other
+The `log` crate provides logging utilities. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug] macro works like other
 [`std::fmt`][std::fmt] formatted strings.
 
 ```rust,editable
@@ -27,9 +27,9 @@ DEBUG:main: Executing query: DROP TABLE students
 
 ## Log an error message to the console
 
-[![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
+[![log-badge]][log] [![env_logger-badge]][env_logger] [![cat-debugging-badge]][cat-debugging]
 
-Proper error handling considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error!]
+Proper error handling considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error]
 
 ```rust,editable
 {{#include ../../deps/examples/log-error.rs}}
@@ -37,9 +37,9 @@ Proper error handling considers exceptions exceptional. Here, an error logs to s
 
 ## Log to stdout instead of stderr
 
-[![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
+[![log-badge]][log] [![env_logger-badge]][env_logger] [![cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration using the [`Builder::target`][env_logger::Builder::target] to set the target of the log output to [`Target::Stdout`][Target::Stdout]
+Creates a custom logger configuration using the [`Builder::target`][env_logger::Builder::target] to set the target of the log output to [`Target::Stdout`][env_logger::fmt::Target]
 
 ```rust,editable
 {{#include ../../deps/examples/log-stdout.rs}}
@@ -59,7 +59,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 
 [![log-badge]][log] [![syslog-badge]][syslog] [![cat-debugging-badge]][cat-debugging]
 
-Logs messages to [UNIX syslog][UNIX syslog]. Initializes logger backend with [`syslog::init`][syslog::init] [`syslog::Facility`][syslog::Facility] records the program submitting the log entry's classification, [`log::LevelFilter`][log::LevelFilter] denotes allowed log verbosity and `Option<&str>` holds optional application name.
+Logs messages to [UNIX `syslog`][UNIX syslog]. Initializes logger backend with [`syslog::init`][syslog::init] [`syslog::Facility`][syslog::Facility] records the program submitting the log entry's classification, [`log::LevelFilter`][log::LevelFilter] denotes allowed log verbosity and `Option<&str>` holds optional application name.
 
 ```rust,editable
 {{#include ../../deps/examples/log-syslog.rs}}

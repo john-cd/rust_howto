@@ -14,7 +14,7 @@ Next are [tools](tools.md), such as Cargo, Clippy, Rustfmt, as well as links and
 
 This book is intended both for new Rust programmers (to get an overview of the capabilities of the Rust ecosystem and pointers to other resources) and for experienced programmers (to find code examples and review best practices for common programming tasks).
 
-Readers should have already some basic familiarity with [Rust][rust]⮳ concepts. The [Rust book][rust-book]⮳ is an excellent resource for complete beginners to get started with.
+Readers should have already some basic familiarity with [`Rust`][rust]⮳ concepts. The [`Rust book`][book-rust]⮳ is an excellent resource for complete beginners to get started with.
 
 ## Why this book?
 
@@ -24,8 +24,8 @@ This book intends to provide EXAMPLES to demonstrate the use of key Rust crates,
 
 ## What other books should I consult?
 
-[Rust by Example][rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
+[Rust by Example][book-rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-The [Rust cookbook][rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates. The _Rust Cookbook_ is a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
+The [Rust cookbook][book-rust-cookbook]⮳ demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It focuses mainly on `std` and a few core crates. The _Rust Cookbook_ is a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.
 
 {{#include refs/link-refs.md}}

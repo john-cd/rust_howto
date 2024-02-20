@@ -18,6 +18,6 @@
 
 [Rust on Nails][rust-on-nails-website]⮳
 
-[Building a SaaS with Rust and Next.js][building-a-saas-with-rust-website]⮳
+[Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-website]⮳
 
 {{#include ../../refs/link-refs.md}}

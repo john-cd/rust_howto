@@ -7,7 +7,7 @@
 Use the `rusqlite` crate to open SQLite databases. See
 [crate][rusqlite-documentation] for compiling on Windows.
 
-[`Connection::open`][Connection::open] will create the database if it doesn't already exist.
+[`Connection::open`][rusqlite::Connection::open] will create the database if it doesn't already exist.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/initialization.rs}}
@@ -17,7 +17,7 @@ Use the `rusqlite` crate to open SQLite databases. See
 
 [![rusqlite-badge]][rusqlite] [![cat-database-badge]][cat-database]
 
-[`Connection::open`][Connection::open] will open the database `cats` created in the earlier recipe. This recipe inserts data into `cat_colors` and `cats` tables using the [`execute`][rusqlite-execute] method of `Connection`. First, the data is inserted into the `cat_colors` table. After a record for a color is inserted, [`last_insert_rowid`][last_insert_rowid] method of `Connection` is used to get `id` of the last color inserted. This `id` is used while inserting data into the `cats` table. Then, the select query is prepared using the [`prepare`][prepare] method which gives a [`statement`][statement] struct. Then, query is executed using [`query_map`][query_map] method of [`statement`][statement]
+[`Connection::open`][rusqlite::Connection::open] will open the database `cats` created in the earlier recipe. This recipe inserts data into `cat_colors` and `cats` tables using the [`execute`][rusqlite::Connection::execute] method of `Connection`. First, the data is inserted into the `cat_colors` table. After a record for a color is inserted, [`last_insert_rowid`][rusqlite::Connection::last_insert_rowid] method of `Connection` is used to get `id` of the last color inserted. This `id` is used while inserting data into the `cats` table. Then, the select query is prepared using the [`prepare`][rusqlite::Connection::prepare] method which gives a [`statement`][rusqlite::Statement] struct. Then, query is executed using [`query_map`][rusqlite::Statement::query_map] method of [`statement`][rusqlite::Statement]
 
 ```rust,no_run
 {{#include ../../deps/examples/insert_select.rs}}
@@ -27,9 +27,9 @@ Use the `rusqlite` crate to open SQLite databases. See
 
 [![rusqlite-badge]][rusqlite] [![cat-database-badge]][cat-database]
 
-[`Connection::open`][Connection::open] will open the `cats.db` database from the top recipe.
+[`Connection::open`][rusqlite::Connection::open] will open the `cats.db` database from the top recipe.
 
-Begin a transaction with [`Connection::transaction`][Connection::transaction] Transactions will roll back unless committed explicitly with [`Transaction::commit`][Transaction::commit]
+Begin a transaction with [`Connection::transaction`][rusqlite::Connection::transaction] Transactions will roll back unless committed explicitly with [`Transaction::commit`][rusqlite::Transaction::commit]
 
 In the following example, colors add to a table having a unique constraint on the color name. When an attempt to insert a duplicate color is made, the transaction rolls back.
 

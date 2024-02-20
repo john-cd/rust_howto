@@ -2,13 +2,13 @@
 
 ## Serialize and deserialize unstructured JSON
 
-[![serde-json-badge]][serde-json] [![cat-encoding-badge]][cat-encoding]
+[![serde_json-badge]][serde_json] [![cat-encoding-badge]][cat-encoding]
 
-The [`serde_json`][serde-json] crate provides a [`from_str`][from_str] function to parse a `&str` of JSON.
+The [`serde_json`][serde_json] crate provides a [`from_str`][serde_json::from_str] function to parse a `&str` of JSON.
 
-Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde-json::Value] type that is able to represent any valid JSON data.
+Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde_json::Value] type that is able to represent any valid JSON data.
 
-The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`json!`][json!] macro.
+The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`json!`][serde_json::json] macro.
 
 ```rust,editable
 {{#include ../../deps/examples/json.rs}}
@@ -24,7 +24,7 @@ Parse some TOML into a universal `toml::Value` that is able to represent any val
 {{#include ../../deps/examples/toml.rs}}
 ```
 
-Parse TOML into your own structs using [Serde][Serde].
+Parse TOML into your own structs using [`Serde`][serde].
 
 ```rust,editable
 {{#include ../../deps/examples/toml1.rs}}

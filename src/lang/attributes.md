@@ -51,7 +51,7 @@ See [Automatic derivation](../concerns/derive.md)
 
 ## Conditional Compilation
 
-[Conditional compilation][rust-reference-conditional-compilation]⮳
+[Conditional compilation][book-rust-reference-conditional-compilation]⮳
 
 ```rust,editable
 {{#include ../../deps/examples/conditional_compilation.rs}}
@@ -59,8 +59,8 @@ See [Automatic derivation](../concerns/derive.md)
 
 ## See Also
 
-[Attributes reference][rust-reference-attributes]⮳
+[Attributes reference][book-rust-reference-attributes]⮳
 
-[Rust by example - attributes][rust-by-example-attributes]⮳
+[Rust by example - attributes][book-rust-by-example-attributes]⮳
 
 {{#include ../refs/link-refs.md}}

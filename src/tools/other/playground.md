@@ -1,5 +1,5 @@
 # Playground
 
-[Playground (Rust by example)][rust-by-example-playground]⮳
+[Playground (Rust by example)][book-rust-by-example-playground]⮳
 
 {{#include ../../refs/link-refs.md}}

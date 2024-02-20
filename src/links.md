@@ -1,13 +1,13 @@
 # Essential Rust Links
 
-- "The Book": [The Rust Programming Language][rust-book]⮳
-- [Rust By Example][rust-by-example-book]⮳
-- [Rust by Practice][rust-by-practice-book]⮳
-- [Rust Cookbook (fork)][rust-cookbook-fork]⮳
-- [Rust Cookbook (old)][rust-cookbook]⮳
+- "The Book": [The Rust Programming Language][book-rust]⮳
+- [Rust By Example][book-rust-by-example-book]⮳
+- [Rust by Practice][book-rust-by-practice]⮳
+- [Rust Cookbook (fork)][book-rust-cookbook-fork]⮳
+- [Rust Cookbook (old)][book-rust-cookbook]⮳
 - [Rust Design Patterns][rust-design-patterns]⮳
 - [Easy Rust][rust-easy-rust]⮳
-- [The Rustonomicon][rustonomicon-book]⮳
+- [The Rustonomicon][book-rustonomicon]⮳
 
 ## Lists of Rust links
 
@@ -16,7 +16,7 @@
 
 ## Learn
 
-- [rust-learning][rust-learning]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-badge]][rust-learning]
+- [`Rust Learning`][rust-learning]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-badge]][rust-learning]
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists]⮳
 - [Rust quizz][rust-quizz]⮳
 

@@ -4,9 +4,9 @@
 
 [![std-badge]][std] [![cat-filesystem-badge]][cat-filesystem]
 
-Gets the current working directory by calling [`env::current_dir`][env::current_dir] then for each entries in [`fs::read_dir`][fs::read_dir] extracts the
-[`DirEntry::path`][DirEntry::path] and gets the metadata via [`fs::Metadata`][fs::Metadata] The
-[`Metadata::modified`][Metadata::modified] returns the [`SystemTime::elapsed`][SystemTime::elapsed] time since last modification. [`Duration::as_secs`][Duration::as_secs] converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`Metadata::is_file`][Metadata::is_file] filters out directories.
+Gets the current working directory by calling [`env::current_dir`][std::env::current_dir] then for each entries in [`fs::read_dir`][std::fs::read_dir] extracts the
+[`DirEntry::path`][std::fs::DirEntry::path] and gets the metadata via [`fs::Metadata`][std::fs::Metadata] The
+[`Metadata::modified`][std::fs::Metadata::modified] returns the [`SystemTime::elapsed`][std::time::SystemTime::elapsed] time since last modification. [`Duration::as_secs`][std::time::Duration::as_secs] converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`Metadata::is_file`][std::fs::Metadata::is_file] filters out directories.
 
 ```rust,editable
 {{#include ../../deps/examples/modified.rs}}
@@ -43,7 +43,7 @@ Find recursively in the current directory duplicate filenames, printing them onl
 
 [![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
 
-Find JSON files modified within the last day in the current directory. Using [`follow_links`][follow_links] ensures symbolic links are followed like they were normal directories and files.
+Find JSON files modified within the last day in the current directory. Using [`follow_links`][walkdir::WalkDir::follow_links] ensures symbolic links are followed like they were normal directories and files.
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/find-file.rs}}
@@ -53,9 +53,9 @@ Find JSON files modified within the last day in the current directory. Using [`f
 
 [![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
 
-Uses [`filter_entry`][filter_entry] to descend recursively into entries passing the
+Uses [`filter_entry`][walkdir::IntoIter::filter_entry] to descend recursively into entries passing the
 `is_not_hidden` predicate thus skipping hidden files and directories.
- [`Iterator::filter`][Iterator::filter] applies to each [`WalkDir::DirEntry`][walkdir::Walkdir::DirEntry] even if the parent
+ [`Iterator::filter`][std::iter::Iterator::filter] applies to each [`WalkDir::DirEntry`][walkdir::Walkdir::DirEntry] even if the parent
  is a hidden directory.
 
 Root dir `"."` yields through [`WalkDir::depth`][walkdir::WalkDir::depth] usage in `is_not_hidden` predicate.
@@ -92,7 +92,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
-A custom [`MatchOptions`][MatchOptions] struct is passed to the [`glob_with`][glob_with] function making the glob pattern case insensitive while keeping the other options [`Default`][Default]
+A custom [`MatchOptions`][glob::MatchOptions] struct is passed to the [`glob_with`][glob_with] function making the glob pattern case insensitive while keeping the other options [`Default`][std::default::Default]
 
 ```rust,editable,no_run
 {{#include ../../deps/examples/ignore-case.rs}}

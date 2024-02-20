@@ -20,6 +20,6 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 ## See Also
 
-[Pattern matching][rust-book-pattern-matching]⮳
+[Pattern matching][book-rust-pattern-matching]⮳
 
 {{#include ../refs/link-refs.md}}

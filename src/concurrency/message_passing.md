@@ -34,6 +34,6 @@ Example using specialized channels for tickers and timeout
 
 [![postage-badge]][postage]
 
-[Message Passing (rust book)][rust-book-message-passing]⮳
+[Message Passing (rust book)][book-rust-message-passing]⮳
 
 {{#include ../refs/link-refs.md}}

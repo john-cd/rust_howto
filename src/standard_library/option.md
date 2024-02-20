@@ -2,7 +2,7 @@
 
 [![std-badge]][std]
 
-Rust has no `null`. Instead, use [Option][std::option::Option]⮳:
+Rust has no `null`. Instead, use [`std::option::Option`][std::option::Option]⮳:
 
 ```rust,editable
 # #![allow(unused)]

@@ -14,9 +14,9 @@ This cookbook is intended for new Rust programmers, so that they may quickly get
 
 ## How to read this book
 
-The cookbook [index][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
+The cookbook [`index`][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
 
-Within the index, each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand-badge]][rand], and which categories on [crates.io][crates.io] those crates belong to, like
+Within the index, each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand-badge]][rand], and which categories on [`crates.io`][crates-io] those crates belong to, like
 [![cat-science-badge]][cat-science].
 
 New Rust programmers should be comfortable reading from the first section to the last, and doing so should give one a strong overview of the crate ecosystem. Click on the section header in the index, or in the sidebar to navigate to the page for that section of the book.
@@ -43,7 +43,7 @@ To work with it locally we can run the following commands to create a new cargo 
 cargo new my-example --bin cd my-example
 ```
 
-Now, we also need to add the necessary crates to [Cargo.toml][cargo-book-cargo-toml], as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
+Now, we also need to add the necessary crates to [Cargo.toml][book-cargo-cargo-toml], as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
 
 Now you can replace `src/main.rs` with the full contents of the example and run it:
 
@@ -51,7 +51,7 @@ Now you can replace `src/main.rs` with the full contents of the example and run 
 cargo run
 ```
 
-The crate badges that accompany the examples link to the crates' full documentation on [docs.rs][docs.rs], and is often the next documentation you should read after deciding which crate suites your purpose.
+The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs-rs], and is often the next documentation you should read after deciding which crate suites your purpose.
 
 ## A note about error handling
 
@@ -75,7 +75,7 @@ For the sake of readability error handling boilerplate is hidden by default like
 {{#include ../deps/examples/about2.rs}}
 ```
 
-For more background on error handling in Rust, read [this page of the Rust book][error-docs] and [this blog post][error-blog].
+For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling] and [this blog post][blog-error].
 
 ## A note about crate representation
 
@@ -83,7 +83,7 @@ This cookbook is intended eventually to provide expansive coverage of the Rust c
 
 At present the cookbook is focused on the standard library, and on "core" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-The cookbook is closely tied to the [Rust Libz Blitz][Rust Libz Blitz], a project to identify, and improve the quality of such crates, and so it largely defers crate selection to that project. Any crates that have already been evaluated as part of that process are in scope for the cookbook, as are crates that are pending evaluation.
+The cookbook is closely tied to the [`Rust Libz Blitz`][Rust Libz Blitz], a project to identify, and improve the quality of such crates, and so it largely defers crate selection to that project. Any crates that have already been evaluated as part of that process are in scope for the cookbook, as are crates that are pending evaluation.
 
 [index]: intro.md
 {{#include refs/link-refs.md}}

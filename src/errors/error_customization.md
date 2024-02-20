@@ -18,7 +18,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`, includ
 
 [![thiserror-badge]][thiserror]
 
-[thisError][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
+[`thisError`][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../deps/examples/thiserror.rs}}

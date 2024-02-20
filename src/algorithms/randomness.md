@@ -4,7 +4,7 @@
 
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
-Generates random numbers with help of random-number generator [`rand::Rng`][rand::Rng] obtained via [`rand::thread_rng`][rand::Rng] obtained via [rand::thread_rng][rand::thread_rng] Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
+Generates random numbers with help of the random-number generator [`rand::Rng`][rand::Rng]. Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
 
 ```rust,editable
 {{#include ../../deps/examples/rand.rs}}
@@ -14,13 +14,13 @@ Generates random numbers with help of random-number generator [`rand::Rng`][rand
 
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
-Generates a random value within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`][Rng::gen_range] range.
+Generates a random value within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`][rand::Rng::gen_range] range.
 
 ```rust,editable
 {{#include ../../deps/examples/rand-range.rs}}
 ```
 
-[`Uniform`][Uniform] can obtain values with [uniform distribution][uniform distribution]. This has the same effect, but may be faster when repeatedly generating numbers in the same range.
+[`Uniform`][rand::distributions::uniform::Uniform] can obtain values with [ uniform distribution][uniform distribution]. This has the same effect, but may be faster when repeatedly generating numbers in the same range.
 
 ```rust,editable
 {{#include ../../deps/examples/rand-range1.rs}}
@@ -28,9 +28,9 @@ Generates a random value within half-open `[0, 10)` range (not including `10`) w
 
 ## Generate random numbers with given distribution
 
-[![rand-distr-badge]][rand-distr] [![cat-science-badge]][cat-science]
+[![rand_distr-badge]][rand_distr] [![cat-science-badge]][cat-science]
 
-By default, random numbers in the `rand` crate have [uniform distribution][uniform distribution]. The [`rand-distr`][rand-distr] crate provides other kinds of distributions. To use them, you instantiate a distribution, then sample from that distribution using[`Distribution::sample`][Distribution::sample] with help of a random-number generator [`rand::Rng`][rand::Rng]. The [distributions available are documented here][rand-distributions]. An example using the [`Normal`][Normal] distribution is shown below.
+By default, random numbers in the `rand` crate have [ uniform distribution][uniform distribution]. The [`rand-distr`][rand_distr] crate provides other kinds of distributions. To use them, you instantiate a distribution, then sample from that distribution using[`Distribution::sample`][rand::distributions::Distribution::sample] with help of a random-number generator [`rand::Rng`][rand::Rng]. The [distributions available are documented here][rand_distr]. An example using the [`Normal`][rand_distr::Normal] distribution is shown below.
 
 ```rust,editable,ignore
 {{#include ../../deps/examples/rand-dist.rs}}
@@ -40,7 +40,7 @@ By default, random numbers in the `rand` crate have [uniform distribution][unifo
 
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
-Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`Distribution`][Distribution] trait on type Point for [`Standard`][Standard] trait in order to allow random generation.
+Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`Distribution`][rand::distributions::Distribution] trait on type Point for [`Standard`][rand::distributions::Standard] trait in order to allow random generation.
 
 ```rust,editable
 {{#include ../../deps/examples/rand-custom.rs}}
@@ -60,7 +60,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 
 [![rand-badge]][rand] [![cat-os-badge]][cat-os]
 
-Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with [`gen_range`][gen_range].
+Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with [`gen_range`][rand::Rng::gen_range].
 
 ```rust,editable
 {{#include ../../deps/examples/rand-choose.rs}}

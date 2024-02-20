@@ -161,3 +161,9 @@ do cmd=help subcmd=empty:
 run xmpl: _build-book
   #cargo clean -p deps
   cargo run -p deps --locked --example {{xmpl}}
+
+[unix]
+sortrefs:
+  sort -u ./src/refs/crate-refs.md -o /tmp/c.md
+  mv -f /tmp/c.md ./src/refs/crate-refs.md
+  rm -f /temp/c.md

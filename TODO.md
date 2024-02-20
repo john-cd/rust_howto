@@ -2,11 +2,9 @@
 
 - finish contributing section; clean up README.md
 
-- rename index.md
-
 - edit summary.md
 
-- sort crates-refs.md
+- chrono [chrono::Date::checked_sub_signed] or Date?
 
 - fix failing examples in drafts
 

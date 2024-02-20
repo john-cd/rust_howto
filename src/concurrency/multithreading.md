@@ -40,7 +40,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 ### Custom parallel tasks
 
-Rayon implements [join][rayon-join]⮳, [scope][rayon-scope]⮳, [spawn][rayon-spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon-threadpool]⮳.
+Rayon implements [`join`][rayon::join]⮳, [`scope`][rayon::scope]⮳, [`spawn`][rayon::spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon::ThreadPool]⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/examples/multithreading_rayon_custom.rs}}

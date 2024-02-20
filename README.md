@@ -37,7 +37,7 @@ Note that opening the code folder in VS Code may take a little while the first t
 
 ### Other
 
-If you are not using VS Code, install the [Dev Container CLI][dev-container-CLI] or simply install the required tools on your local machine:
+If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github] or simply install the required tools on your local machine:
 
 ```bash
 sudo apt-get update
@@ -159,7 +159,7 @@ docker push johncd/rust_howto_ci:latest
 
 ## Optional pre-processors
 
-- [mdbook-linkcheck][mdbook-linkcheck] is a backend for `mdbook` that will check links.
+- [`mdbook-linkcheck`][mdbook-linkcheck-github] is a backend for `mdbook` that will check links.
 Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
 - [mdbook-hide][mdbook-hide-github] hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
@@ -167,7 +167,7 @@ Install with `cargo install mdbook-linkcheck`. Uncomment the related section in 
 <!--hidden-->
 ```
 
-- [mdbook-keeper][mdbook-keeper]. Install with
+- [`mdbook-keeper`][mdbook-keeper-crate]. Install with
 
 ```bash
 cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>
@@ -237,16 +237,16 @@ The `publish` folder contains a placeholder crate, so that the book could be loc
 
 ## Reference
 
-[mdBook][mdbook]
+[`mdBook`][book-mdbook]
 
-[dev-container-CLI]: https://github.com/devcontainers/cli
+[dev-container-cli-github]: https://github.com/devcontainers/cli
 [dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 [docker-desktop]: https://www.docker.com/products/docker-desktop/
-[mdbook]: https://rust-lang.github.io/mdBook/index.html
+[book-mdbook]: https://rust-lang.github.io/mdBook/index.html
 [mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
 [mdbook-hide-github]: https://github.com/ankitrgadiya/mdbook-hide/
-[mdbook-keeper]: https://crates.io/crates/mdbook-keeper
-[mdbook-linkcheck]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
+[mdbook-keeper-crate]: https://crates.io/crates/mdbook-keeper
+[mdbook-linkcheck-github]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [rust-playground]: https://play.rust-lang.org/
 [stackoverflow]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [vs-code]: https://code.visualstudio.com/

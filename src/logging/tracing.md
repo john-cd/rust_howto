@@ -74,7 +74,7 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 
 ## See also
 
-[![env-logger-badge]][env-logger]
+[![env_logger-badge]][env_logger]
 
 [![log-badge]][log]
 

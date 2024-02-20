@@ -1,6 +1,6 @@
 # Build Time Tooling
 
-This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a **build.rs** file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See crates.io's [documentation on the matter][build-script-docs] for more information.
+This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a **build.rs** file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See crates.io's [documentation on the matter][book-cargo-build-script] for more information.
 
 ## Compile and link statically to a bundled C library
 
@@ -9,9 +9,9 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][cc] crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
 
 The following example has some bundled C code (**src/hello.c**) that will be used from rust. Before compiling rust source code, the "build" file (**build.rs**) specified in **Cargo.toml** runs. Using the [**cc**][cc] crate, a static library file will be produced (in this case, **libhello.a**, see
-[`compile` docs][cc-build-compile]) which can then be used from rust by declaring the external function signatures in an `extern` block.
+[`compile` docs][cc::Build::compile]) which can then be used from rust by declaring the external function signatures in an `extern` block.
 
-Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][cc-build]. For more complex build requirements, [`cc::Build`][cc-build] offers a full suite of builder methods for specifying [`include`][cc-build-include] paths and extra compiler [`flag`][cc-build-flag]s.
+Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][cc::Build]. For more complex build requirements, [`cc::Build`][cc::Build] offers a full suite of builder methods for specifying [`include`][cc::Build::include] paths and extra compiler [`flag`][cc::Build::flag]s.
 
 ### `Cargo.toml`
 
@@ -57,7 +57,7 @@ void greet(const char* name) {
 
 [![cc-badge]][cc] [![cat-development-tools-badge]][cat-development-tools]
 
-Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cpp(true)`][cc-build-cpp] and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
+Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cpp(true)`][cc::Build::cpp] and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
 ### `Cargo.toml` (static C++)
 
@@ -99,10 +99,10 @@ int multiply(int x, int y) {
 [![cc-badge]][cc] [![cat-development-tools-badge]][cat-development-tools]
 
 It is simple to build bundled C code with custom defines using [`cc::Build::define`][cc::Build::define]
-The method takes an [`Option`][Option] value, so it is possible to create defines such as `#define APP_NAME "foo"`
+The method takes an [`Option`][std::option::Option] value, so it is possible to create defines such as `#define APP_NAME "foo"`
 as well as `#define WELCOME` (pass `None` as the value for a value-less define). This example builds
 a bundled C file with dynamic defines set in `build.rs` and prints "**Welcome to foo - version 1.0.2**"
-when run. Cargo sets some [environment variables][cargo-env] which may be useful for some custom defines.
+when run. Cargo sets some [environment variables][book-cargo-env] which may be useful for some custom defines.
 
 ### `Cargo.toml` (custom defines)
 

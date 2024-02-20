@@ -14,7 +14,7 @@ Writes some data to a file, then calculates the SHA-256 [`digest::Digest`][diges
 
 [![ring-badge]][ring] [![cat-cryptography-badge]][cat-cryptography]
 
-Uses [`ring::hmac`][ring::hmac] to creates a [`hmac::Signature`][hmac::Signature] of a string then verifies the signature is correct.
+Uses [`ring::hmac`][ring::hmac] to creates a [`Signature`][ring::signature::Signature] of a string then verifies the signature is correct.
 
 ```rust,editable
 {{#include ../../deps/examples/hmac.rs}}

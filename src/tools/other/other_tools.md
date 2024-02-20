@@ -4,7 +4,7 @@
 
 ## API search
 
-[Roogle][roogle]⮳  [![roogle-github][roogle-github-badge]][roogle-github]
+[`Roogle`][Roogle]⮳  [![roogle-github][roogle-github-badge]][roogle-github]
 
 ## Deployment
 

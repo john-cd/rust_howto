@@ -1,6 +1,6 @@
 # Rust Cheatsheets
 
-[cheats.rs][cheats-rs]⮳
+[cheats.rs][cheats-rs-website]⮳
 
 [Rust for professionals][rust-for-professionals]⮳
 

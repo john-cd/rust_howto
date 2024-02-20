@@ -2,9 +2,9 @@
 
 ## IDEs
 
-[VS Code][vs-code]⮳
+[VS Code][rust-in-vs-code]⮳
 
-[Rust plugin for VS Code][rust-analyzer]⮳
+[Rust plugin for VS Code][rust-analyzer-plugin]⮳
 
 [rust-analyzer (home page)][rust-analyzer-website]⮳
 
