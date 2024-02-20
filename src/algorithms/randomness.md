@@ -50,7 +50,7 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 
 [![rand-badge]][rand] [![cat-os-badge]][cat-os]
 
-Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`][Alphanumeric] sample.
+Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`][rand::distributions::Alphanumeric] sample.
 
 ```rust,editable
 {{#include ../../deps/examples/rand-passwd.rs}}

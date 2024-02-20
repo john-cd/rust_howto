@@ -50,7 +50,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 [![std-badge]][std] [![cat-os-badge]][cat-os]
 
 In [Run an external command and process stdout](#run-an-external-command-and-process-stdout), processing doesn't start until external [`Command`][Command] is finished. The recipe below calls [`Stdio::piped`][Stdio::piped] to create a pipe, and reads
-`stdout` continuously as soon as the [`BufReader`][BufReader] is updated.
+`stdout` continuously as soon as the [`BufReader`][std::io::BufReader] is updated.
 
 The below recipe is equivalent to the Unix shell command
 `journalctl | grep usb`.

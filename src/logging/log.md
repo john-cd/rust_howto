@@ -39,7 +39,7 @@ Proper error handling considers exceptions exceptional. Here, an error logs to s
 
 [![log-badge]][log] [![env-logger-badge]][env-logger] [![cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration using the [`Builder::target`][Builder::target] to set the target of the log output to [`Target::Stdout`][Target::Stdout]
+Creates a custom logger configuration using the [`Builder::target`][env_logger::Builder::target] to set the target of the log output to [`Target::Stdout`][Target::Stdout]
 
 ```rust,editable
 {{#include ../../deps/examples/log-stdout.rs}}

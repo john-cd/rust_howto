@@ -43,7 +43,7 @@ To work with it locally we can run the following commands to create a new cargo 
 cargo new my-example --bin cd my-example
 ```
 
-Now, we also need to add the necessary crates to [Cargo.toml][Cargo.toml], as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
+Now, we also need to add the necessary crates to [Cargo.toml][cargo-book-cargo-toml], as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
 
 Now you can replace `src/main.rs` with the full contents of the example and run it:
 

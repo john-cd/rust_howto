@@ -5,7 +5,7 @@
 [![std-badge]][std] [![cat-filesystem-badge]][cat-filesystem]
 
 Writes a three-line message to a file, then reads it back a line at a time with the [`Lines`][Lines] iterator created by
-[`BufRead::lines`][BufRead::lines] [`File`][File] implements [`Read`][Read] which provides [`BufReader`][BufReader] trait. [`File::create`][File::create] opens a [`File`][File] for writing, [`File::open`][File::open] for reading.
+[`BufRead::lines`][std::io::BufRead::lines] [`File`][File] implements [`Read`][Read] which provides [`BufReader`][std::io::BufReader] trait. [`File::create`][File::create] opens a [`File`][File] for writing, [`File::open`][File::open] for reading.
 
 ```rust,editable
 {{#include ../../deps/examples/read-file.rs}}

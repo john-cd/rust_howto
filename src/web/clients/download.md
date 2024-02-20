@@ -17,7 +17,7 @@ Creates a target [`File`][File] with name obtained from [`Response::url`][Respon
 
 [![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
 
-[`reqwest::Client`][reqwest::Client] establishes a connection to <https://paste.rs> following the [`reqwest::RequestBuilder`][reqwest::RequestBuilder] pattern. Calling [`Client::post`][Client::post]
+[`reqwest::Client`][reqwest::Client] establishes a connection to <https://paste.rs> following the [`reqwest::RequestBuilder`][reqwest::RequestBuilder] pattern. Calling [`Client::post`][reqwest::Client::post]
 with a URL establishes the destination, [`RequestBuilder::body`][RequestBuilder::body] sets the content to send by reading the file, and [`RequestBuilder::send`][RequestBuilder::send] blocks until the file uploads and the response returns. [`read_to_string`][read_to_string] returns the response and displays in the console.
 
 ```rust,editable,no_run

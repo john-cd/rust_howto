@@ -49,7 +49,7 @@ This recipe contains an example of comparing two floating-point vectors element-
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes
 `a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
-`let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][Binary Operators With Two Arrays] for additional detail.
+`let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][ndarray::ArrayBase] for additional detail.
 
 ```rust,editable
 {{#include ../../deps/examples/vector-comparison.rs}}
@@ -59,12 +59,12 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 [![ndarray-badge]][ndarray]
 
-This recipe demonstrates use of the [`Array1`][Array1] type, [`ArrayView1`][ArrayView1] type,
+This recipe demonstrates use of the [`Array1`][ndarray::Array1] type, [`ArrayView1`][ndarray::ArrayView1] type,
 [`fold`][ndarray-fold] method, and [`dot`][dot] method in computing the [l1][l1] and [l2][l2] norms of a given vector.
 
 + The `l2_norm` function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. + The `l1_norm` function is computed by a `fold` operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
 
-Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ArrayView1] type. This recipe considers vector norms, so the norm functions only need to accept one-dimensional views (hence [`ArrayView1`][ArrayView1]. While the functions could take a parameter of type `&Array1<f64>` instead, that would require the caller to have a reference to an owned array, which is more restrictive than just having access to a view (since a view can be created from any array or view, not just an owned array).
+Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ndarray::ArrayView1] type. This recipe considers vector norms, so the norm functions only need to accept one-dimensional views (hence [`ArrayView1`][ndarray::ArrayView1]. While the functions could take a parameter of type `&Array1<f64>` instead, that would require the caller to have a reference to an owned array, which is more restrictive than just having access to a view (since a view can be created from any array or view, not just an owned array).
 
 `Array` and `ArrayView` are both type aliases for `ArrayBase`. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
 
