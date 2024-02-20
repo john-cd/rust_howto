@@ -13,3 +13,5 @@ High-level solutions for rendering on the screen.
 ## Graphics APIs
 
 Crates that provide direct access to the hardware's or the operating system's rendering capabilities.
+
+{{#include ../refs/link-refs.md}}

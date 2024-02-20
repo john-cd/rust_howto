@@ -17,3 +17,5 @@ Crates that process or build images.
 ## Video
 
 Crates that record, output, or process video.
+
+{{#include ../refs/link-refs.md}}

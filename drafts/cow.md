@@ -50,3 +50,5 @@ example.as_ref().to_owned();
 ```
 
 Adapted from this [StackOveflow discussion](https://stackoverflow.com/questions/47147844/how-do-i-get-a-str-or-string-from-stdborrowcowstr)
+
+{{#include ../refs/link-refs.md}}
