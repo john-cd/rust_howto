@@ -2,7 +2,7 @@
 
 ## File names that have been modified in the last 24 hours
 
-[![std-badge]][std] [![cat-filesystem-badge]][cat-filesystem]
+[![std-badge]][std]  [![cat-filesystem-badge]][cat-filesystem]
 
 Gets the current working directory by calling [`env::current_dir`][std::env::current_dir] then for each entries in [`fs::read_dir`][std::fs::read_dir] extracts the
 [`DirEntry::path`][std::fs::DirEntry::path] and gets the metadata via [`fs::Metadata`][std::fs::Metadata] The
@@ -14,7 +14,7 @@ Gets the current working directory by calling [`env::current_dir`][std::env::cur
 
 ## Find loops for a given path
 
-[![same-file-badge]][same-file] [![cat-filesystem-badge]][cat-filesystem]
+[![same-file-badge]][same-file]  [![cat-filesystem-badge]][cat-filesystem]
 
 Use [`same-file::is_same_file`][same-file::is_same_file] to detect loops for a given path. For example, a loop could be created on a Unix system via symlinks:
 
@@ -31,7 +31,7 @@ The following would assert that a loop exists.
 
 ## Recursively find duplicate file names
 
-[![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
+[![walkdir-badge]][walkdir]  [![cat-filesystem-badge]][cat-filesystem]
 
 Find recursively in the current directory duplicate filenames, printing them only once.
 
@@ -41,7 +41,7 @@ Find recursively in the current directory duplicate filenames, printing them onl
 
 ## Recursively find all files with given predicate
 
-[![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
+[![walkdir-badge]][walkdir]  [![cat-filesystem-badge]][cat-filesystem]
 
 Find JSON files modified within the last day in the current directory. Using [`follow_links`][walkdir::WalkDir::follow_links] ensures symbolic links are followed like they were normal directories and files.
 
@@ -51,7 +51,7 @@ Find JSON files modified within the last day in the current directory. Using [`f
 
 ## Traverse directories while skipping dotfiles
 
-[![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
+[![walkdir-badge]][walkdir]  [![cat-filesystem-badge]][cat-filesystem]
 
 Uses [`filter_entry`][walkdir::IntoIter::filter_entry] to descend recursively into entries passing the
 `is_not_hidden` predicate thus skipping hidden files and directories.
@@ -66,7 +66,7 @@ Root dir `"."` yields through [`WalkDir::depth`][walkdir::WalkDir::depth] usage 
 
 ## Recursively calculate file sizes at given depth
 
-[![walkdir-badge]][walkdir] [![cat-filesystem-badge]][cat-filesystem]
+[![walkdir-badge]][walkdir]  [![cat-filesystem-badge]][cat-filesystem]
 
 Recursion depth can be flexibly set by [`WalkDir::min_depth`][walkdir::Walkdir::min_depth] & [`WalkDir::max_depth`][walkdir::WalkDir::max_depth] methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
@@ -76,7 +76,7 @@ Recursion depth can be flexibly set by [`WalkDir::min_depth`][walkdir::Walkdir::
 
 ## Find all png files recursively
 
-[![glob-badge]][glob] [![cat-filesystem-badge]][cat-filesystem]
+[![glob-badge]][glob]  [![cat-filesystem-badge]][cat-filesystem]
 
 Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -88,7 +88,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find all files with given pattern ignoring filename case
 
-[![glob-badge]][glob] [![cat-filesystem-badge]][cat-filesystem]
+[![glob-badge]][glob]  [![cat-filesystem-badge]][cat-filesystem]
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 

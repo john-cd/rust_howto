@@ -15,9 +15,9 @@ Create applications for the web.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Extract all links from a webpage HTML][ex-extract-links-webpage] | [![reqwest-badge]][reqwest] [![select-badge]][select] | [![cat-network-programming-badge]][cat-network-programming] |
-| [Check webpage for broken links][ex-check-broken-links] | [![reqwest-badge]][reqwest] [![select-badge]][select] [![url-badge]][url] | [![cat-network-programming-badge]][cat-network-programming] |
-| [Extract all unique links from a MediaWiki markup][ex-extract-mediawiki-links] | [![reqwest-badge]][reqwest] [![regex-badge]][regex] | [![cat-network-programming-badge]][cat-network-programming] |
+| [Extract all links from a webpage HTML][ex-extract-links-webpage] | [![reqwest-badge]][reqwest]  [![select-badge]][select] | [![cat-network-programming-badge]][cat-network-programming] |
+| [Check webpage for broken links][ex-check-broken-links] | [![reqwest-badge]][reqwest]  [![select-badge]][select]  [![url-badge]][url] | [![cat-network-programming-badge]][cat-network-programming] |
+| [Extract all unique links from a MediaWiki markup][ex-extract-mediawiki-links] | [![reqwest-badge]][reqwest]  [![regex-badge]][regex] | [![cat-network-programming-badge]][cat-network-programming] |
 
 ## Uniform Resource Locations (URL)
 
@@ -35,18 +35,18 @@ Create applications for the web.
 |--------|--------|------------|
 | [Get MIME type from string][ex-mime-from-string] | [![mime-badge]][mime] | [![cat-encoding-badge]][cat-encoding] |
 | [Get MIME type from filename][ex-mime-from-filename] | [![mime-badge]][mime] | [![cat-encoding-badge]][cat-encoding] |
-| [Parse the MIME type of a HTTP response][ex-http-response-mime-type] | [![mime-badge]][mime] [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding] |
+| [Parse the MIME type of a HTTP response][ex-http-response-mime-type] | [![mime-badge]][mime]  [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming]  [![cat-encoding-badge]][cat-encoding] |
 
 ## Clients
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Make a HTTP GET request][ex-url-basic] | [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] |
-| [Query the GitHub API][ex-rest-get] | [![reqwest-badge]][reqwest] [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding] |
+| [Query the GitHub API][ex-rest-get] | [![reqwest-badge]][reqwest]  [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming]  [![cat-encoding-badge]][cat-encoding] |
 | [Check if an API resource exists][ex-rest-head] | [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] |
-| [Create and delete Gist with GitHub API][ex-rest-post] | [![reqwest-badge]][reqwest] [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding] |
-| [Consume a paginated RESTful API][ex-paginated-api] | [![reqwest-badge]][reqwest] [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming] [![cat-encoding-badge]][cat-encoding] |
-| [Download a file to a temporary directory][ex-url-download] | [![reqwest-badge]][reqwest] [![tempdir-badge]][tempdir] | [![cat-network-programming-badge]][cat-network-programming] [![cat-filesystem-badge]][cat-filesystem] |
+| [Create and delete Gist with GitHub API][ex-rest-post] | [![reqwest-badge]][reqwest]  [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming]  [![cat-encoding-badge]][cat-encoding] |
+| [Consume a paginated RESTful API][ex-paginated-api] | [![reqwest-badge]][reqwest]  [![serde-badge]][serde] | [![cat-network-programming-badge]][cat-network-programming]  [![cat-encoding-badge]][cat-encoding] |
+| [Download a file to a temporary directory][ex-url-download] | [![reqwest-badge]][reqwest]  [![tempdir-badge]][tempdir] | [![cat-network-programming-badge]][cat-network-programming]  [![cat-filesystem-badge]][cat-filesystem] |
 | [Make a partial download with HTTP range headers][ex-progress-with-range] | [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] |
 | [POST a file to paste-rs][ex-file-post] | [![reqwest-badge]][reqwest] | [![cat-network-programming-badge]][cat-network-programming] |
 

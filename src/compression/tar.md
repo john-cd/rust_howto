@@ -2,7 +2,7 @@
 
 ## Decompress a tarball
 
-[![flate2-badge]][flate2] [![tar-badge]][tar] [![cat-compression-badge]][cat-compression]
+[![flate2-badge]][flate2]  [![tar-badge]][tar]  [![cat-compression-badge]][cat-compression]
 
 Decompress ([`GzDecoder`][flate2::read::GzDecoder]) and extract ([`Archive::unpack`][tar::Archive::unpack]) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
 
@@ -12,7 +12,7 @@ Decompress ([`GzDecoder`][flate2::read::GzDecoder]) and extract ([`Archive::unpa
 
 ## Compress a directory into tarball
 
-[![flate2-badge]][flate2] [![tar-badge]][tar] [![cat-compression-badge]][cat-compression]
+[![flate2-badge]][flate2]  [![tar-badge]][tar]  [![cat-compression-badge]][cat-compression]
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
@@ -24,7 +24,7 @@ Creates a [`File`][std::fs::File] wrapped in [`GzEncoder`][flate2::write::GzEnco
 
 ## Decompress a tarball while removing a prefix from the paths
 
-[![flate2-badge]][flate2] [![tar-badge]][tar] [![cat-compression-badge]][cat-compression]
+[![flate2-badge]][flate2]  [![tar-badge]][tar]  [![cat-compression-badge]][cat-compression]
 
 Iterate over the [`Archive::entries`][tar::Archive::entries]. Use [`Path::strip_prefix`][std::path::Path::strip_prefix] to remove the specified path prefix (`bundle/logs`). Finally, extract the [`tar::Entry`][tar::Entry] via [`Entry::unpack`][tar::Entry::unpack].
 

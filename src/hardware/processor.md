@@ -2,7 +2,7 @@
 
 ## Check number of logical cpu cores
 
-[![num-cpus-badge]][num-cpus] [![cat-hardware-support-badge]][cat-hardware-support]
+[![num-cpus-badge]][num-cpus]  [![cat-hardware-support-badge]][cat-hardware-support]
 
 Shows the number of logical CPU cores in current machine using [`num-cpus::get`][num-cpus::get].
 

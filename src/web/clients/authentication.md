@@ -2,7 +2,7 @@
 
 ## Basic Authentication
 
-[![reqwest-badge]][reqwest] [![cat-network-programming-badge]][cat-network-programming]
+[![reqwest-badge]][reqwest]  [![cat-network-programming-badge]][cat-network-programming]
 
 Uses [`reqwest::RequestBuilder::basic_auth`][reqwest::RequestBuilder::basic_auth] to perform a basic HTTP authentication.
 

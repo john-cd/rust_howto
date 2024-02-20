@@ -2,7 +2,7 @@
 
 ## Collect Unicode Graphemes
 
-[![unicode-segmentation-badge]][unicode-segmentation] [![cat-text-processing-badge]][cat-text-processing]
+[![unicode-segmentation-badge]][unicode-segmentation]  [![cat-text-processing-badge]][cat-text-processing]
 
 Collect individual Unicode graphemes from UTF-8 string using the [`UnicodeSegmentation::graphemes`][unicode_segmentation::UnicodeSegmentation::graphemes] function from the [`unicode-segmentation`][unicode-segmentation] crate.
 
@@ -12,7 +12,7 @@ Collect individual Unicode graphemes from UTF-8 string using the [`UnicodeSegmen
 
 ## Implement the `FromStr` trait for a custom `struct`
 
-[![std-badge]][std] [![cat-text-processing-badge]][cat-text-processing]
+[![std-badge]][std]  [![cat-text-processing-badge]][cat-text-processing]
 
 Creates a custom struct `RGB` and implements the `FromStr` trait to convert a provided color hex code into its RGB color code.
 

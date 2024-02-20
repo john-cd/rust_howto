@@ -2,7 +2,7 @@
 
 ## Measures of central tendency
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 These examples calculate measures of central tendency for a data set contained within a Rust array. There may be no mean, median or mode to calculate for an empty set of data, so each function returns an [`Option`][std::option::Option] to be handled by the caller.
 
@@ -26,7 +26,7 @@ The final example calculates the mode using a mutable [`HashMap`][std::collectio
 
 ## Standard deviation
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 This example calculates the standard deviation and z-score of a set of measurements.
 

@@ -4,7 +4,7 @@ Use `Anyhow` if you don't care what error type your functions return, you just w
 
 ## Anyhow
 
-[![anyhow-badge]][anyhow] [(crates.io)][anyhow-crate]
+[![anyhow-badge]][anyhow]  [(crates.io)][anyhow-crate]
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
@@ -39,7 +39,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[![miette-badge]][miette] [(lib.rs)][miette-librs] prints fancy diagnostics upon error.
+[![miette-badge]][miette]  [(lib.rs)][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 {{#include ../../deps/tests/miette/mylib.rs}}

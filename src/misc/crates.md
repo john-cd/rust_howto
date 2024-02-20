@@ -4,7 +4,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## A
 
-[![actix-web-badge]][actix-web]  [![ansi-term-badge]][ansi-term]  [![anyhow-badge]][anyhow]  [![approx-badge]][approx]  [![arrow-rs-badge]][arrow-rs]  [![async-channel-badge]][async-channel] [![async-std-badge]][async-std] [![async-stream-badge]][async-stream]  [![async-trait-badge]][async-trait]
+[![actix-web-badge]][actix-web]  [![ansi-term-badge]][ansi-term]  [![anyhow-badge]][anyhow]  [![approx-badge]][approx]  [![arrow-rs-badge]][arrow-rs]  [![async-channel-badge]][async-channel]  [![async-std-badge]][async-std]  [![async-stream-badge]][async-stream]  [![async-trait-badge]][async-trait]
 
 ## B
 

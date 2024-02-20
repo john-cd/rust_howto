@@ -32,6 +32,6 @@ Another example:
 
 [![async-channel-badge]][async-channel]
 
-[![postage-badge]][postage] [(lib.rs)][postage-librs]
+[![postage-badge]][postage]  [(lib.rs)][postage-librs]
 
 {{#include ../refs/link-refs.md}}

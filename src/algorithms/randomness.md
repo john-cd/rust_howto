@@ -2,7 +2,7 @@
 
 ## Generate random numbers
 
-[![rand-badge]][rand] [![cat-science-badge]][cat-science]
+[![rand-badge]][rand]  [![cat-science-badge]][cat-science]
 
 Generates random numbers with help of the random-number generator [`rand::Rng`][rand::Rng]. Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
 
@@ -12,7 +12,7 @@ Generates random numbers with help of the random-number generator [`rand::Rng`][
 
 ## Generate random numbers within a range
 
-[![rand-badge]][rand] [![cat-science-badge]][cat-science]
+[![rand-badge]][rand]  [![cat-science-badge]][cat-science]
 
 Generates a random value within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`][rand::Rng::gen_range] range.
 
@@ -28,7 +28,7 @@ Generates a random value within half-open `[0, 10)` range (not including `10`) w
 
 ## Generate random numbers with given distribution
 
-[![rand_distr-badge]][rand_distr] [![cat-science-badge]][cat-science]
+[![rand_distr-badge]][rand_distr]  [![cat-science-badge]][cat-science]
 
 By default, random numbers in the `rand` crate have [ uniform distribution][uniform distribution]. The [`rand-distr`][rand_distr] crate provides other kinds of distributions. To use them, you instantiate a distribution, then sample from that distribution using[`Distribution::sample`][rand::distributions::Distribution::sample] with help of a random-number generator [`rand::Rng`][rand::Rng]. The [distributions available are documented here][rand_distr]. An example using the [`Normal`][rand_distr::Normal] distribution is shown below.
 
@@ -38,7 +38,7 @@ By default, random numbers in the `rand` crate have [ uniform distribution][unif
 
 ## Generate random values of a custom type
 
-[![rand-badge]][rand] [![cat-science-badge]][cat-science]
+[![rand-badge]][rand]  [![cat-science-badge]][cat-science]
 
 Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`Distribution`][rand::distributions::Distribution] trait on type Point for [`Standard`][rand::distributions::Standard] trait in order to allow random generation.
 
@@ -48,7 +48,7 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 
 ## Create random passwords from a set of alphanumeric characters
 
-[![rand-badge]][rand] [![cat-os-badge]][cat-os]
+[![rand-badge]][rand]  [![cat-os-badge]][cat-os]
 
 Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`][rand::distributions::Alphanumeric] sample.
 
@@ -58,7 +58,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 
 ## Create random passwords from a set of user-defined characters
 
-[![rand-badge]][rand] [![cat-os-badge]][cat-os]
+[![rand-badge]][rand]  [![cat-os-badge]][cat-os]
 
 Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with [`gen_range`][rand::Rng::gen_range].
 

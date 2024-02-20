@@ -2,7 +2,7 @@
 
 ## Percent-encode a string
 
-[![percent-encoding-badge]][percent-encoding] [![cat-encoding-badge]][cat-encoding]
+[![percent-encoding-badge]][percent-encoding]  [![cat-encoding-badge]][cat-encoding]
 
 Encode an input string with [percent-encoding][percent-encoding-wikipedia] using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode] function.
 
@@ -16,7 +16,7 @@ The return value of encoding is an iterator of `&str` slices which collect into 
 
 ## Encode a string as application/x-www-form-urlencoded
 
-[![url-badge]][url] [![cat-encoding-badge]][cat-encoding]
+[![url-badge]][url]  [![cat-encoding-badge]][cat-encoding]
 
 Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-form-urlencoded] syntax using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize] and subsequently decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both functions return iterators that collect into a `String`.
 
@@ -26,7 +26,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-fo
 
 ## Encode and decode hex
 
-[![data-encoding-badge]][data-encoding] [![cat-encoding-badge]][cat-encoding]
+[![data-encoding-badge]][data-encoding]  [![cat-encoding-badge]][cat-encoding]
 
 The [`data_encoding`][data-encoding] crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a `String` containing the hexadecimal representation of the data.
 
@@ -40,7 +40,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 ## Encode and decode base64
 
-[![base64-badge]][base64] [![cat-encoding-badge]][cat-encoding]
+[![base64-badge]][base64]  [![cat-encoding-badge]][cat-encoding]
 
 Encodes byte slice into `base64` String using [`encode`][base64::encode] and decodes it with [`decode`][base64::decode].
 

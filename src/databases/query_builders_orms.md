@@ -8,12 +8,12 @@
 
 ## SeaORM
 
-[![sea-orm-badge]][sea-orm] [(website)][sea-orm-website] [(cookbook)][sea-orm-cookbook]
+[![sea-orm-badge]][sea-orm]  [(website)][sea-orm-website]  [(cookbook)][sea-orm-cookbook]
 
 [Seaography GraphQL server][seography-website]⮳
 
 ## Diesel
 
-[![diesel-badge]][diesel] [(lib.rs)][diesel-librs]
+[![diesel-badge]][diesel]  [(lib.rs)][diesel-librs]
 
 {{#include ../refs/link-refs.md}}

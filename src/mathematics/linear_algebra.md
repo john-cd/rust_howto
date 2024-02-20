@@ -2,7 +2,7 @@
 
 ## Adding matrices
 
-[![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
+[![ndarray-badge]][ndarray]  [![cat-science-badge]][cat-science]
 
 Creates two 2-D matrices with [`ndarray::arr2`][ndarray::arr2] and sums them element-wise.
 
@@ -14,7 +14,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 
 ## Multiplying matrices
 
-[![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
+[![ndarray-badge]][ndarray]  [![cat-science-badge]][cat-science]
 
 Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][ndarray::ArrayBase::dot]
 
@@ -24,7 +24,7 @@ Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix m
 
 ## Multiply a scalar with a vector with a matrix
 
-[![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
+[![ndarray-badge]][ndarray]  [![cat-science-badge]][cat-science]
 
 Creates a 1-D array (vector) with [`ndarray::arr1`][ndarray::arr1] and a 2-D array (matrix) with [`ndarray::arr2`][ndarray::arr2]
 
@@ -74,7 +74,7 @@ Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ndarray::ArrayVie
 
 ## Invert matrix
 
-[![nalgebra-badge]][nalgebra] [![cat-science-badge]][cat-science]
+[![nalgebra-badge]][nalgebra]  [![cat-science-badge]][cat-science]
 
 Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts it, if possible.
 
@@ -84,7 +84,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts i
 
 ## (De)-Serialize a Matrix
 
-[![ndarray-badge]][ndarray] [![cat-science-badge]][cat-science]
+[![ndarray-badge]][ndarray]  [![cat-science-badge]][cat-science]
 
 Serialize and deserialize a matrix to and from JSON. Serialization is taken care of by [`serde_json::to_string`][serde_json::to_string] and [`serde_json::from_str`][serde_json::from_str] performs deserialization.
 

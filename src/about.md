@@ -31,7 +31,7 @@ All recipes in the cookbook are full, self contained programs, so that they may 
 
 Consider this example for "generate random numbers within a range":
 
-[![rand-badge]][rand] [![cat-science-badge]][cat-science]
+[![rand-badge]][rand]  [![cat-science-badge]][cat-science]
 
 ```rust,editable
 {{#include ../deps/tests/about.rs}}

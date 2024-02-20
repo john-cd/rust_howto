@@ -65,7 +65,7 @@ stderr output will contain
 
 ## Log messages to a custom location
 
-[![log-badge]][log] [![log4rs-badge]][log4rs] [![cat-debugging-badge]][cat-debugging]
+[![log-badge]][log]  [![log4rs-badge]][log4rs]  [![cat-debugging-badge]][cat-debugging]
 
 [`log4rs`][log4rs] configures log output to a custom location. [`log4rs`][log4rs] can use either an external YAML file or a builder configuration.
 

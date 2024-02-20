@@ -12,7 +12,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ## Older library
 
-[![once-cell-badge]][once-cell] [(lib.rs)][once-cell-librs]⮳
+[![once-cell-badge]][once-cell]  [(lib.rs)][once-cell-librs]⮳
 
 `once_cell` provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A OnceCell might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe.
 

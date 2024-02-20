@@ -2,7 +2,7 @@
 
 ## Extract all links from a webpage HTML
 
-[![reqwest-badge]][reqwest] [![select-badge]][select] [![cat-network-programming-badge]][cat-network-programming]
+[![reqwest-badge]][reqwest]  [![select-badge]][select]  [![cat-network-programming-badge]][cat-network-programming]
 
 Use [`reqwest::get`][reqwest::get] to perform a HTTP GET request and then use
 [`Document::from_read`][select::document::Document::from_read] to parse the response into a HTML document.
@@ -14,7 +14,7 @@ Use [`reqwest::get`][reqwest::get] to perform a HTTP GET request and then use
 
 ## Check a webpage for broken links
 
-[![reqwest-badge]][reqwest] [![select-badge]][select] [![url-badge]][url] [![cat-network-programming-badge]][cat-network-programming]
+[![reqwest-badge]][reqwest]  [![select-badge]][select]  [![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
 
 Call `get_base_url` to retrieve the base URL. If the document has a base tag, get the href [`attr`][select::node::Node::attr] from base tag. [`Position::BeforePath`][url::Position::BeforePath] of the original URL acts as a default.
 
@@ -27,7 +27,7 @@ Iterates through links in the document and creates a [`tokio::spawn`][tokio::tas
 
 ## Extract all unique links from a MediaWiki markup
 
-[![reqwest-badge]][reqwest] [![regex-badge]][regex] [![cat-network-programming-badge]][cat-network-programming]
+[![reqwest-badge]][reqwest]  [![regex-badge]][regex]  [![cat-network-programming-badge]][cat-network-programming]
 
 Pull the source of a MediaWiki page using [`reqwest::get`][reqwest::get] and then look for all entries of internal and external links with
 [`Regex::captures_iter`][regex::Regex::captures_iter] Using [`Cow`][std::borrow::Cow] avoids excessive [`String`][std::string::String] allocations.

@@ -1,8 +1,8 @@
 # Logs
 
-[![tracing-badge]][tracing] [![tracing-github][tracing-github-badge]][tracing-github]
+[![tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]
 
-[![tracing-subscriber-badge]][tracing-subscriber] [(crates.io)][tracing-subscriber-crate]
+[![tracing-subscriber-badge]][tracing-subscriber]  [(crates.io)][tracing-subscriber-crate]
 
 Add to `Cargo.toml`
 

@@ -42,9 +42,9 @@ In most cases, prefer the [Tokio](../async/tokio.md) runtime - see [The State of
 
 Alternatives to the Tokio async ecosystem include:
 
-- [![async-std-badge]][async-std] [async-std][async-std-crate]⮳: async version of the Rust standard library. No longer maintained?
-- [![smol-badge]][smol] [Smol][smol-crate]⮳
-- [![embassy-badge]][embassy] [Embassy][embassy-website]⮳ [![embassy-github][embassy-github-badge]][embassy-github] for embedded systems.
-- [![mio-badge]][mio] [Mio][mio-crate]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+- [![async-std-badge]][async-std]  [async-std][async-std-crate]⮳: async version of the Rust standard library. No longer maintained?
+- [![smol-badge]][smol]  [Smol][smol-crate]⮳
+- [![embassy-badge]][embassy]  [Embassy][embassy-website]⮳ [![embassy-github][embassy-github-badge]][embassy-github] for embedded systems.
+- [![mio-badge]][mio]  [Mio][mio-crate]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 {{#include ../refs/link-refs.md}}

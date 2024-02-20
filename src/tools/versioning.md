@@ -2,7 +2,7 @@
 
 ## Parse and increment a version string
 
-[![semver-badge]][semver] [![cat-config-badge]][cat-config]
+[![semver-badge]][semver]  [![cat-config-badge]][cat-config]
 
 Constructs a [`semver::Version`][semver::Version] from a string literal using [`Version::parse`][semver::Version::parse] then increments it by patch, minor, and major version number one by one.
 
@@ -14,7 +14,7 @@ Note that in accordance with the [`Semantic Versioning Specification`][Semantic 
 
 ## Parse a complex version string
 
-[![semver-badge]][semver] [![cat-config-badge]][cat-config]
+[![semver-badge]][semver]  [![cat-config-badge]][cat-config]
 
 Constructs a [`semver::Version`][semver::Version] from a complex version string using [`Version::parse`][semver::Version::parse] The string contains pre-release and build metadata as defined in the [`Semantic Versioning Specification`][Semantic Versioning Specification].
 
@@ -26,7 +26,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 
 ## Check if given version is pre-release
 
-[![semver-badge]][semver] [![cat-config-badge]][cat-config]
+[![semver-badge]][semver]  [![cat-config-badge]][cat-config]
 
 Given two versions, [`is_prerelease`][semver::Version] asserts that one is pre-release and the other is not.
 
@@ -36,7 +36,7 @@ Given two versions, [`is_prerelease`][semver::Version] asserts that one is pre-r
 
 ## Find the latest version satisfying given range
 
-[![semver-badge]][semver] [![cat-config-badge]][cat-config]
+[![semver-badge]][semver]  [![cat-config-badge]][cat-config]
 
 Given a list of version &strs, finds the latest [`semver::Version`][semver::Version]
 [`semver::VersionReq`][semver::VersionReq] filters the list with [`semver::VersionReq::matches`][semver::VersionReq::matches] Also demonstrates `semver` pre-release preferences.
@@ -47,10 +47,10 @@ Given a list of version &strs, finds the latest [`semver::Version`][semver::Vers
 
 ## Check external command version for compatibility
 
-[![semver-badge]][semver] [![cat-text-processing-badge]][cat-text-processing] [![cat-os-badge]][cat-os]
+[![semver-badge]][semver]  [![cat-text-processing-badge]][cat-text-processing]  [![cat-os-badge]][cat-os]
 
 Runs `git --version` using [`Command`][std::process::Command] then parses the version number into a
-[`semver::Version`][semver::Version] using [`Version::parse`][semver::Version::parse] [`semver::VersionReq::matches`][semver::VersionReq::matches] compares
+[`semver::Version`][semver::Version] using [`Version::parse`][semver::Version::parse]  [`semver::VersionReq::matches`][semver::VersionReq::matches] compares
 [`semver::VersionReq`][semver::VersionReq] to the parsed version. The command output resembles "git version x.y.z".
 
 ```rust,editable,no_run

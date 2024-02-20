@@ -2,7 +2,7 @@
 
 ## Calculating the side length of a triangle
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 Calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80.
 
@@ -12,7 +12,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 
 ## Verifying tan is equal to sin divided by cos
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 Verifies tan(x) is equal to sin(x)/cos(x) for x = 6.
 
@@ -26,7 +26,7 @@ Verifies tan(x) is equal to sin(x)/cos(x) for x = 6.
 
 By default, Rust provides mathematical [float methods][f64] such as trigonometric functions, square root, conversion functions between radians and degrees, and so forth.
 
-The following example computes the distance in kilometers between two points on the Earth with the [Haversine][Haversine formula] formula. Points are expressed as pairs of latitude and longitude in degrees. Then, [`to_radians`][f64::to_radians] converts them in radians. [`sin`][f64::sin] [`cos`][f64::cos] [`powi`][f64::powi] and [`sqrt`][f64::sqrt] compute the central angle. Finally, it's possible to calculate the distance.
+The following example computes the distance in kilometers between two points on the Earth with the [Haversine][Haversine formula] formula. Points are expressed as pairs of latitude and longitude in degrees. Then, [`to_radians`][f64::to_radians] converts them in radians. [`sin`][f64::sin]  [`cos`][f64::cos]  [`powi`][f64::powi] and [`sqrt`][f64::sqrt] compute the central angle. Finally, it's possible to calculate the distance.
 
 ```rust,editable
 {{#include ../../deps/tests/latitude-longitude.rs}}

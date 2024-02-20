@@ -18,7 +18,7 @@ Tools to help you verify the correctness of your code.
 
 ## See Also
 
-[![approx-badge]][approx] [`Approx`][Approx]⮳
+[![approx-badge]][approx]  [`Approx`][Approx]⮳
 
 [cargo-nextest][cargo-nextest-website]⮳: `cargo nextest run; cargo test --doc`
 

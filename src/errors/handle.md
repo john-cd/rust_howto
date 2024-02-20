@@ -18,7 +18,7 @@ Other recipes in this book will hide the [`error-chain`][error-chain] boilerplat
 
 ## Avoid discarding errors during error conversions
 
-[![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
+[![error-chain-badge]][error-chain]  [![cat-rust-patterns-badge]][cat-rust-patterns]
 
 The [`error-chain`][error-chain] crate makes [`matching`][error-chain-matching-error] on different error types returned by a function possible and relatively compact. [`ErrorKind`][error_chain::example_generated::ErrorKind] determines the error type.
 
@@ -31,7 +31,7 @@ Uses [`reqwest`][reqwest]::[blocking][reqwest::blocking] to query a random integ
 
 ## Obtain backtrace of complex error scenarios
 
-[![error-chain-badge]][error-chain] [![cat-rust-patterns-badge]][cat-rust-patterns]
+[![error-chain-badge]][error-chain]  [![cat-rust-patterns-badge]][cat-rust-patterns]
 
 This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on [`chain_err`][error-chain-chaining-errors] to extend errors by appending new errors. The error stack can be unwound, thus providing a better context to understand why an error was raised.
 

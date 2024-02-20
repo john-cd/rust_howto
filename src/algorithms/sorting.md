@@ -2,7 +2,7 @@
 
 ## Sort a Vector of Integers
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 This example sorts a Vector of integers via [`vec::sort`][std::vec::Vec::sort]. Alternative would be to use [`vec::sort_unstable`][std::vec::Vec::sort_unstable] which can be faster, but does not preserve the order of equal elements.
 
@@ -12,7 +12,7 @@ This example sorts a Vector of integers via [`vec::sort`][std::vec::Vec::sort]. 
 
 ## Sort a Vector of Floats
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 A Vector of f32 or f64 can be sorted with [`vec::sort_by`][slice::sort_by] and [`PartialOrd::partial_cmp`][std::cmp::PartialOrd::partial_cmp].
 
@@ -22,7 +22,7 @@ A Vector of f32 or f64 can be sorted with [`vec::sort_by`][slice::sort_by] and [
 
 ## Sort a Vector of Structs
 
-[![std-badge]][std] [![cat-science-badge]][cat-science]
+[![std-badge]][std]  [![cat-science-badge]][cat-science]
 
 Sorts a Vector of Person structs with properties `name` and `age` by its natural order (By name and age). In order to make Person sortable you need four traits [`Eq`][std::cmp::Eq], [`PartialEq`][std::cmp::PartialEq], [`Ord`][std::cmp::Ord] and [`PartialOrd`][std::cmp::PartialOrd]. These traits can be simply derived. You can also provide a custom comparator function using a [`vec:sort_by`][std::vec::Vec::sort_by] method and sort only by age.
 

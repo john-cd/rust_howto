@@ -2,7 +2,7 @@
 
 ## Create tables in a Postgres database
 
-[![postgres-badge]][postgres] [![cat-database-badge]][cat-database]
+[![postgres-badge]][postgres]  [![cat-database-badge]][cat-database]
 
 Use the [`postgres`][postgres] crate to create tables in a Postgres database.
 
@@ -14,7 +14,7 @@ Use the [`postgres`][postgres] crate to create tables in a Postgres database.
 
 ## Insert and Query data
 
-[![postgres-badge]][postgres] [![cat-database-badge]][cat-database]
+[![postgres-badge]][postgres]  [![cat-database-badge]][cat-database]
 
 The recipe inserts data into the `author` table using [`execute`][postgres-execute] method of `Client`. Then, displays the data from the `author` table using [`query`][postgres::Client::query] method of `Client`.
 
@@ -24,7 +24,7 @@ The recipe inserts data into the `author` table using [`execute`][postgres-execu
 
 ## Aggregate data
 
-[![postgres-badge]][postgres] [![cat-database-badge]][cat-database]  [![csv-sample][csv-sample-badge]][csv-sample]
+[![postgres-badge]][postgres]  [![cat-database-badge]][cat-database]  [![csv-sample][csv-sample-badge]][csv-sample]
 
 This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample] in descending order.
 

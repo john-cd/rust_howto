@@ -2,7 +2,7 @@
 
 [Are we learning yet?][are-we-learning-yet?]⮳
 
-[![linfa-badge]][linfa] [(crates.io)][linfa-crate] [(home page)][linfa-website]
+[![linfa-badge]][linfa]  [(crates.io)][linfa-crate]  [(home page)][linfa-website]
 
 [SmartCore][smartcore-website]⮳
 
