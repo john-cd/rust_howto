@@ -9,7 +9,7 @@ Use [`reqwest::get`][reqwest::get] to perform a HTTP GET request and then use
 [`find`][select::document::Document::find] with the criteria of [`Name`][select::predicate::Name] is "a" retrieves all links. Call [`filter_map`][std-core::iter::Iterator::filter_map] on the [`Selection`][select::selection::Selection] retrieves URLs from links that have the "href" [`attr`][select::node::Node::attr] (attribute).
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/extract-links.rs}}
+{{#include ../../deps/tests/extract-links.rs}}
 ```
 
 ## Check a webpage for broken links
@@ -22,7 +22,7 @@ Iterates through links in the document and creates a [`tokio::spawn`][tokio::tas
 [`StatusCode`][reqwest::StatusCode]. Then the tasks `await` completion before ending the program.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/broken.rs}}
+{{#include ../../deps/tests/broken.rs}}
 ```
 
 ## Extract all unique links from a MediaWiki markup
@@ -35,7 +35,7 @@ Pull the source of a MediaWiki page using [`reqwest::get`][reqwest::get] and the
 MediaWiki link syntax is described [here][MediaWiki link syntax].
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/unique.rs}}
+{{#include ../../deps/tests/unique.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

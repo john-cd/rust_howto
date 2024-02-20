@@ -9,7 +9,7 @@ The example uses the [`crossbeam`][crossbeam] crate, which provides data structu
 This example splits the array in half and performs the work in separate threads.
 
 ```rust,editable
-{{#include ../../deps/examples/crossbeam-spawn.rs}}
+{{#include ../../deps/tests/crossbeam-spawn.rs}}
 ```
 
 ## Create a parallel pipeline
@@ -26,7 +26,7 @@ Reading from the channels via the iterator
 [`crossbeam_channel::Receiver::iter`][crossbeam_channel::Receiver::iter] method will block, either waiting for new messages or until the channel is closed. Because the channels were created within the [`crossbeam::scope`][crossbeam::scope] we must manually close them via `drop` to prevent the entire program from blocking on the worker for-loops. You can think of the calls to `drop` as signaling that no more messages will be sent.
 
 ```rust
-{{#include ../../deps/examples/crossbeam-complex.rs}}
+{{#include ../../deps/tests/crossbeam-complex.rs}}
 ```
 
 ## Pass data between two threads
@@ -37,7 +37,7 @@ This example demonstrates the use of [`crossbeam-channel`][crossbeam-channel] in
 [`crossbeam::scope`][crossbeam::scope] and [`Scope::spawn`][crossbeam::thread::Scope::spawn] to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam_channel::unbounded`][crossbeam_channel::unbounded] channel, meaning there is no limit to the number of storeable messages. The producer thread sleeps for half a second in between messages.
 
 ```rust,editable
-{{#include ../../deps/examples/crossbeam-spsc.rs}}
+{{#include ../../deps/tests/crossbeam-spsc.rs}}
 ```
 
 ## Maintain global mutable state
@@ -49,7 +49,7 @@ creates a globally available `static ref` which requires a [`Mutex`][std::sync::
 []\
 
 ```rust,editable
-{{#include ../../deps/examples/global-mut-state.rs}}
+{{#include ../../deps/tests/global-mut-state.rs}}
 ```
 
 ## Calculate SHA256 sum of iso files concurrently
@@ -59,7 +59,7 @@ creates a globally available `static ref` which requires a [`Mutex`][std::sync::
 This example calculates the SHA256 for every file with iso extension in the current directory. A threadpool generates threads equal to the number of cores present in the system found with [`num-cpus::get`][num-cpus::get]. [`Walkdir::new`][walkdir::Walkdir::new] iterates the current directory and calls [`execute`][threadpool::ThreadPool::execute] to perform the operations of reading and computing SHA256 hash.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/threadpool-walk.rs}}
+{{#include ../../deps/tests/threadpool-walk.rs}}
 ```
 
 ## Draw fractal dispatching work to a thread pool
@@ -79,7 +79,7 @@ Allocate memory for output image of given width and height with [`ImageBuffer::n
 [`ImageBuffer::save`][image::ImageBuffer::save] writes the image to `output.png`.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/threadpool-fractal.rs}}
+{{#include ../../deps/tests/threadpool-fractal.rs}}
 ```
 
 [ex-crossbeam-spawn]: #spawn-a-short-lived-thread

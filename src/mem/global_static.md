@@ -7,7 +7,7 @@
 Declares a lazily evaluated constant [`HashMap`][std::collections::HashMap] The [`HashMap`][std::collections::HashMap] will be evaluated once and stored behind a global static reference.
 
 ```rust,editable
-{{#include ../../deps/examples/lazy-constant.rs}}
+{{#include ../../deps/tests/lazy-constant.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

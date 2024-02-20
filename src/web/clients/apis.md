@@ -10,7 +10,7 @@ Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/star
 [`tokio::main`][tokio-tutorial-hello-tokio] is used to set up the async executor and the process waits for [`reqwest::get`][reqwest::get] to complete before processing the response into User instances.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/rest-get.rs}}
+{{#include ../../../deps/tests/rest-get.rs}}
 ```
 
 ## Check if an API resource exists
@@ -22,7 +22,7 @@ Query the GitHub Users Endpoint using a HEAD request ([`Client::head`][reqwest::
 Due to both [`ClientBuilder::build`][reqwest::ClientBuilder::build] and [`RequestBuilder::send`][reqwest::RequestBuilder::send] returning [`reqwest::Error`][reqwest::Error] types, the shortcut [`reqwest::Result`][reqwest::Result] is used for the main function return type.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/rest-head.rs}}
+{{#include ../../../deps/tests/rest-head.rs}}
 ```
 
 ## Create and delete Gist with GitHub API
@@ -35,7 +35,7 @@ The [`reqwest::Client`][reqwest::Client] is responsible for details of both requ
 [`RequestBuilder::send`][reqwest::RequestBuilder::send] synchronously executes the requests.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/rest-post.rs}}
+{{#include ../../../deps/tests/rest-post.rs}}
 ```
 
 The example uses HTTP [Basic Auth`][HTTP Basic Auth] in order to authorize access to [`GitHub API`][GitHub API]. Typical use case would employ one of the much more complex [`OAuth`][OAuth] authorization flows.
@@ -47,7 +47,7 @@ The example uses HTTP [Basic Auth`][HTTP Basic Auth] in order to authorize acces
 Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fetches the next page of results from the remote server as it arrives at the end of each page.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/paginated.rs}}
+{{#include ../../../deps/tests/paginated.rs}}
 ```
 
 ## Handle a rate-limited API
@@ -57,7 +57,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 This example uses the [`GitHub API - Rate limiting`][GitHub API - Rate limiting], as an example of how to handle remote server errors. This example uses the [`hyper::header!`][hyper::header!] macro to parse the response header and checks for [`reqwest::StatusCode::Forbidden`][reqwest::StatusCode::FORBIDDEN] If the response exceeds the rate limit, the example waits and retries.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/rate-limited.rs}}
+{{#include ../../../deps/tests/rate-limited.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

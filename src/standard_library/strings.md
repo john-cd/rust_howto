@@ -5,13 +5,13 @@
 ## String type
 
 ```rust,editable
-{{#include ../../deps/examples/strings.rs}}
+{{#include ../../deps/tests/strings.rs}}
 ```
 
 ## Placeholders
 
 ```rust,editable
-{{#include ../../deps/examples/strings2.rs}}
+{{#include ../../deps/tests/strings2.rs}}
 ```
 
 Use `{:?}` to use the `Debug` output format (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print.
@@ -23,7 +23,7 @@ Also use `dbg!(&rect1);` for debug output (returns ownership of the expressionâ€
 Here are several common methods to concatenate Strings:
 
 ```rust,editable
-{{#include ../../deps/examples/strings3.rs}}
+{{#include ../../deps/tests/strings3.rs}}
 ```
 
 Examples from [concatenation_benchmarks-rs]( https://github.com/hoodie/concatenation_benchmarks-rs )

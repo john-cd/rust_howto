@@ -9,7 +9,7 @@ Measures [`time::Instant::elapsed`][std::time::Instant::elapsed] since [`time::I
 Calling [`time::Instant::elapsed`][std::time::Instant::elapsed] returns a [`time::Duration`][std::time::Duration] that we print at the end of the example. This method will not mutate or reset the [`time::Instant`][std::time::Instant] object.
 
 ```rust,editable
-{{#include ../../deps/examples/profile.rs}}
+{{#include ../../deps/tests/profile.rs}}
 ```
 
 ## Perform checked date and time calculations
@@ -24,7 +24,7 @@ Escape sequences that are available for the
 [`DateTime::format`][chrono::DateTime::format] can be found at [`chrono::format::strftime`][chrono::format::strftime]
 
 ```rust,editable
-{{#include ../../deps/examples/checked.rs}}
+{{#include ../../deps/tests/checked.rs}}
 ```
 
 ## Convert a local time to another timezone
@@ -34,7 +34,7 @@ Escape sequences that are available for the
 Gets the local time and displays it using [`offset::Local::now`][chrono::offset::Local::now] and then converts it to the UTC standard using the [`DateTime::from_utc`][chrono::DateTime::from_utc] struct method. A time is then converted using the [`offset::FixedOffset`][chrono::offset::FixedOffset] struct and the UTC time is then converted to UTC+8 and UTC-2.
 
 ```rust,editable
-{{#include ../../deps/examples/timezone.rs}}
+{{#include ../../deps/tests/timezone.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

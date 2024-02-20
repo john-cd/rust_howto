@@ -8,7 +8,8 @@ impl Actor for MyActor {
     }
 }
 
-fn main() {
+#[test]
+fn test() {
     let sys = SystemBuilder::new().name("my-app").create().unwrap();
     // Every actor has a name that is required to be unique among
     // its singlings (those actors sharing the same parent actor).

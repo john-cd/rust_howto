@@ -7,13 +7,13 @@ Tools to help you verify the correctness of your code.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust,editable
-{{#include ../../deps/examples/tests.rs}}
+{{#include ../../deps/tests/tests.rs}}
 ```
 
 ## Custom message
 
 ```rust,editable
-{{#include ../../deps/examples/tests_custom_message.rs}}
+{{#include ../../deps/tests/tests_custom_message.rs}}
 ```
 
 ## See Also

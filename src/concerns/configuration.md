@@ -9,13 +9,13 @@ Facilitate configuration management for applications.
 [`dotenvy`][dotenvy]⮳ supersedes [`dotenv`][dotenv]⮳.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/dotenvy.rs}}
+{{#include ../../deps/tests/dotenvy.rs}}
 ```
 
 To retrieve a single environment variable,
 
 ```rust,editable,should_panic
-{{#include ../../deps/examples/env.rs}}
+{{#include ../../deps/tests/env.rs}}
 ```
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳
@@ -33,7 +33,7 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ```rust,editable,should_panic,noplayground
-{{#include ../../deps/examples/envy.rs}}
+{{#include ../../deps/tests/envy.rs}}
 ```
 
 ## Config
@@ -47,7 +47,7 @@ serde = { version = "1.0", features = ["derive"] }
 [![confy-badge]][confy]
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/confy.rs}}
+{{#include ../../deps/tests/confy.rs}}
 ```
 
 ## See also

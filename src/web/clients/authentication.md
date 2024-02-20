@@ -7,7 +7,7 @@
 Uses [`reqwest::RequestBuilder::basic_auth`][reqwest::RequestBuilder::basic_auth] to perform a basic HTTP authentication.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/basic.rs}}
+{{#include ../../../deps/tests/basic.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

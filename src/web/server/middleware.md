@@ -21,7 +21,7 @@ A number of third-party libraries support `Tower` and the `Service` trait: [`hyp
 [`Tower HTTP`][tower-http]⮳ contains HTTP specific Tower utilities.
 
 ```rust,noplayground,ignore
-{{#include ../../../deps/examples/tower_http.rs}}
+{{#include ../../../deps/tests/tower_http.rs}}
 ```
 
 ## Alternatives

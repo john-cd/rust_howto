@@ -7,7 +7,7 @@
 Encode an input string with [percent-encoding][percent-encoding-wikipedia] using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode] function from the `percent-encoding` crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode] function.
 
 ```rust,editable
-{{#include ../../deps/examples/percent-encode.rs}}
+{{#include ../../deps/tests/percent-encode.rs}}
 ```
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, `url` encodes `?` in a URL path but not in a query string.
@@ -21,7 +21,7 @@ The return value of encoding is an iterator of `&str` slices which collect into 
 Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-form-urlencoded] syntax using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize] and subsequently decodes it with [`form_urlencoded::parse`][form_urlencoded::parse] Both functions return iterators that collect into a `String`.
 
 ```rust,editable
-{{#include ../../deps/examples/url-encode.rs}}
+{{#include ../../deps/tests/url-encode.rs}}
 ```
 
 ## Encode and decode hex
@@ -35,7 +35,7 @@ Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and ret
 The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
 
 ```rust,editable
-{{#include ../../deps/examples/hex.rs}}
+{{#include ../../deps/tests/hex.rs}}
 ```
 
 ## Encode and decode base64
@@ -45,7 +45,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 Encodes byte slice into `base64` String using [`encode`][base64::encode] and decodes it with [`decode`][base64::decode].
 
 ```rust,editable
-{{#include ../../deps/examples/base64.rs}}
+{{#include ../../deps/tests/base64.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

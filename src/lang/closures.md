@@ -1,13 +1,13 @@
 # Closures
 
 ```rust,editable
-{{#include ../../deps/examples/closures.rs}}
+{{#include ../../deps/tests/closures.rs}}
 ```
 
 ## Closure with type annotations
 
 ```rust,editable
-{{#include ../../deps/examples/closures_with_type_annotations.rs}}
+{{#include ../../deps/tests/closures_with_type_annotations.rs}}
 ```
 
 Closures can capture variables
@@ -21,13 +21,13 @@ They preferentially capture variables by reference and only go lower when requir
 To force a move:
 
 ```rust,editable
-{{#include ../../deps/examples/closures_move.rs}}
+{{#include ../../deps/tests/closures_move.rs}}
 ```
 
 ## Closures as input parameters
 
 ```rust,editable
-{{#include ../../deps/examples/closures_as_input_parameters.rs}}
+{{#include ../../deps/tests/closures_as_input_parameters.rs}}
 ```
 
 - `Fn`: the closure uses the captured value by reference (`&T`)

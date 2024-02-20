@@ -1,7 +1,7 @@
 # Iterators
 
 ```rust,editable
-{{#include ../../deps/examples/iterators.rs}}
+{{#include ../../deps/tests/iterators.rs}}
 ```
 
 ## See Also

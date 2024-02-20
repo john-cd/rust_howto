@@ -4,19 +4,17 @@
 use std::path::Path;
 
 use anyhow::bail;
-use anyhow::Context;
+// use anyhow::Context;
 use anyhow::Result;
 use walkdir::WalkDir;
 
 const REMOVED_TESTS: &[&str] = &[
-    // "/code/book/markdown/dir/file.md",
+    // "/code/src/dir/file.md",
 ];
 
-// NOTE: `skeptic` issues "cargo:rerun-if-changed={}" for all expanded
+// NOTE: `skeptic` issues "cargo:rerun-if-changed={}" for all
 // markdown files it processes. A full code rebuild will happen every
-// time `mdBook build` is run. Therefore don't build the book here
-// every time, but rather check the expanded markdown sources exist.
-// See the `justfile`.
+// time the markdown sources change.
 fn main() -> Result<()> {
     // Disable build.rs when building documentation at docs.rs
     // https://docs.rs/about/builds
@@ -26,42 +24,38 @@ fn main() -> Result<()> {
 
     let root_path = std::fs::canonicalize("..")?;
 
-    // Check for the existence of expanded Markdown files
-    // (created by `mdbook build`).
-    let expanded_markdown_path = root_path.join("book/markdown/");
-    if !Path::new(&expanded_markdown_path).exists() {
-        let msg =
-            format!("The folder {:?} does not exist.", expanded_markdown_path);
+    // Check for the existence of Markdown files.
+    let markdown_path = root_path.join("src/");
+    if !Path::new(&markdown_path).exists() {
+        let msg = format!("The folder {:?} does not exist.", markdown_path);
         println!("cargo:warning=ERROR: {}", msg);
         bail!("{}", msg);
     }
 
-    // Remove any leftover {{#include ../../deps/examples/*.rs}} from the
-    // expanded Markdown (and replace by a hard-coded string to avoid
-    // Skeptic errors)
-    let contents_to_insert = "// MISSING INCLUDE FILE\nfn main() {}";
-    let modified_files =
-        mdbook_utils::markdown::remove_includes_in_all_markdown_files_in(
-            expanded_markdown_path.clone(),
-            contents_to_insert,
-        )
-        .context("[build.rs] Failed to remove {{#include ...}} statements.")?;
+    //// We are only testing code that are in the Markdown,
+    //// not tests / examples that are in separate .rs files.
+    // Remove any {{#include ../../deps/**/*.rs}} from the Markdown
+    // (and replace by a hard-coded string to avoid Skeptic errors).
+    // let contents_to_insert = "fn main() {}";
+    // let modified_files =
+    //     mdbook_utils::markdown::remove_includes_in_all_markdown_files_in(
+    //         markdown_path.clone(),
+    //         contents_to_insert,
+    //     )
+    //     .context("[build.rs] Failed to remove {{#include ...}}
+    // statements.")?;
 
-    // ...and warn about the leftover includes / missing files.
-    if !modified_files.is_empty() {
-        println!(
-            "cargo:warning=WARN: Some {{#include ... }} statements were not resolved by `mdbook`! Are you missing include files or code examples?"
-        );
-        modified_files.iter().for_each(|f| {
-            println!(
-                "cargo:warning=Leftover {{#include ...}} in {} was removed.",
-                f.display()
-            );
-        });
-    }
+    // if !modified_files.is_empty() {
+    //     modified_files.iter().for_each(|f| {
+    //         println!(
+    //             "cargo:warning=INFO: ignored {{#include ...}} in {}.",
+    //             f.display()
+    //         );
+    //     });
+    // }
 
-    // Get the paths of all expanded Markdown files
-    let paths = WalkDir::new(expanded_markdown_path).into_iter()
+    // Get the paths of all Markdown files
+    let paths = WalkDir::new(markdown_path).into_iter()
         // convert DirEntry to String
         .map(|p| p.unwrap().path().to_string_lossy().into_owned())
         .filter(|p| p.ends_with(".md"))

@@ -29,19 +29,19 @@ Create a shortcut to a path with the `use` keyword once, and then use the shorte
 [![book-rust-by-example-use-badge]][book-rust-by-example-use]
 
 ```rust,editable
-{{#include ../../deps/examples/modules.rs}}
+{{#include ../../deps/tests/modules.rs}}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
 ```rust,editable
-{{#include ../../deps/examples/modules2.rs}}
+{{#include ../../deps/tests/modules2.rs}}
 ```
 
 On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path.
 
 ```rust,editable
-{{#include ../../deps/examples/modules3.rs}}
+{{#include ../../deps/tests/modules3.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

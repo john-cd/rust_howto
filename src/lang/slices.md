@@ -1,7 +1,7 @@
 # Slices
 
 ```rust,editable
-{{#include ../../deps/examples/slices.rs}}
+{{#include ../../deps/tests/slices.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

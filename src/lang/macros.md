@@ -7,7 +7,7 @@
 The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ```rust,editable
-{{#include ../../deps/examples/macros.rs}}
+{{#include ../../deps/tests/macros.rs}}
 ```
 
 ## Key crates

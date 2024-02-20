@@ -7,7 +7,7 @@
 Shows the number of logical CPU cores in current machine using [`num-cpus::get`][num-cpus::get].
 
 ```rust,editable
-{{#include ../../deps/examples/cpu-count.rs}}
+{{#include ../../deps/tests/cpu-count.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

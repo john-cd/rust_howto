@@ -1,13 +1,13 @@
 # Main function
 
 ```rust,editable
-{{#include ../../deps/examples/main.rs}}
+{{#include ../../deps/tests/main.rs}}
 ```
 
 ## Async Main Function
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async_main.rs}}
+{{#include ../../deps/tests/async_main.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

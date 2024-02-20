@@ -5,7 +5,7 @@
 Using the Tower ecosystem:
 
 ```rust,editable,noplayground,ignore
-{{#include ../../../deps/examples/cors.rs}}
+{{#include ../../../deps/tests/cors.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

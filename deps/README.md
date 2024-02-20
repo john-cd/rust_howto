@@ -1,6 +1,6 @@
 # Deps
 
-The `examples` folder contains Rust code examples that are embedded into the book.
+The `tests` and `examples` folders contain Rust code that is embedded into the book.
 
 Run `cargo add <crate>` (or edit `Cargo.toml`) in this folder to add new dependencies that these examples may require.
 
@@ -24,4 +24,4 @@ cargo test --tests --examples -- --show-output
 cargo run --example <name>
 ```
 
-To run all examples, use `just runall`.
+To run all examples (but not the tests), use `just runall`.

@@ -7,7 +7,7 @@
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ```rust,editable
-{{#include ../../deps/examples/once_cell.rs}}
+{{#include ../../deps/tests/once_cell.rs}}
 ```
 
 ## Older library
@@ -19,7 +19,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 once_cell also has a `Lazy<T>` type, build on top of `OnceCell`:
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/once_cell2.rs}}
+{{#include ../../deps/tests/once_cell2.rs}}
 ```
 
 ## See also

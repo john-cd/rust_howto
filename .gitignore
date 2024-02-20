@@ -7,6 +7,13 @@ file1.txt
 *.Identifier
 file.txt
 badge_refs.md
+lines.txt
+out.txt
+content.txt
+download.bin
+archive.tar.gz
+**/backup/logs
+output.png
 
 # Windows ------------------------
 

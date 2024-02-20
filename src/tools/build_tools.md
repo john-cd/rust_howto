@@ -30,7 +30,7 @@ error-chain = "0.11"
 ### `build.rs`
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/cc-bundled-static.rs}}
+{{#include ../../deps/tests/cc-bundled-static.rs}}
 ```
 
 ### `src/hello.c`
@@ -50,7 +50,7 @@ void greet(const char* name) {
 ### `src/main.rs`
 
 ```rust,editable,ignore
-{{#include ../../deps/examples/cc-bundled-static1.rs}}
+{{#include ../../deps/tests/cc-bundled-static1.rs}}
 ```
 
 ## Compile and link statically to a bundled C++ library
@@ -73,7 +73,7 @@ cc = "1"
 ### `build.rs` (static C++)
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/cc-bundled-cpp.rs}}
+{{#include ../../deps/tests/cc-bundled-cpp.rs}}
 ```
 
 ### `src/foo.cpp` (static C++)
@@ -91,7 +91,7 @@ int multiply(int x, int y) {
 ### `src/main.rs` (static C++)
 
 ```rust,editable,ignore
-{{#include ../../deps/examples/cc-bundled-cpp1.rs}}
+{{#include ../../deps/tests/cc-bundled-cpp1.rs}}
 ```
 
 ## Compile a C library while setting custom defines
@@ -119,7 +119,7 @@ cc = "1"
 ### `build.rs` (custom defines)
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/cc-defines.rs}}
+{{#include ../../deps/tests/cc-defines.rs}}
 ```
 
 ### `src/foo.c` (custom defines)
@@ -138,7 +138,7 @@ void print_app_info() {
 ### `src/main.rs` (custom defines)
 
 ```rust,editable,ignore
-{{#include ../../deps/examples/cc-defines1.rs}}
+{{#include ../../deps/tests/cc-defines1.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

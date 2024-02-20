@@ -17,7 +17,7 @@ fn main() {}
 `rustdoc` uses the CommonMark Markdown specification.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/rustdoc.rs}}
+{{#include ../../deps/tests/rustdoc.rs}}
 ```
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.

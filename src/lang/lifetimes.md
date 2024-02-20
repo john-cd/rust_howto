@@ -15,13 +15,13 @@ let _s: &'static str = "I have a static lifetime.";
 The generic lifetime `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
 
 ```rust,editable
-{{#include ../../deps/examples/generic_lifetime.rs}}
+{{#include ../../deps/tests/generic_lifetime.rs}}
 ```
 
 ## Lifetime Annotations in Struct Definitions and methods
 
 ```rust,editable
-{{#include ../../deps/examples/lifetime.rs}}
+{{#include ../../deps/tests/lifetime.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

@@ -3,7 +3,7 @@
 ## Generic Structs
 
 ```rust,editable
-{{#include ../../deps/examples/generic_structs.rs}}
+{{#include ../../deps/tests/generic_structs.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

@@ -9,7 +9,7 @@ Creates two 2-D matrices with [`ndarray::arr2`][ndarray::arr2] and sums them ele
 Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
 ```rust,editable
-{{#include ../../deps/examples/add-matrices.rs}}
+{{#include ../../deps/tests/add-matrices.rs}}
 ```
 
 ## Multiplying matrices
@@ -19,7 +19,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 Creates two matrices with [`ndarray::arr2`][ndarray::arr2] and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][ndarray::ArrayBase::dot]
 
 ```rust,editable
-{{#include ../../deps/examples/multiply-matrices.rs}}
+{{#include ../../deps/tests/multiply-matrices.rs}}
 ```
 
 ## Multiply a scalar with a vector with a matrix
@@ -34,7 +34,7 @@ First, a scalar is multiplied by the vector to get another vector. Then, the mat
 In `ndarray`, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so `dot` handles it as a column vector.
 
 ```rust,editable
-{{#include ../../deps/examples/multiply-scalar-vector-matrix.rs}}
+{{#include ../../deps/tests/multiply-scalar-vector-matrix.rs}}
 ```
 
 ## Vector comparison
@@ -52,7 +52,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][ndarray::ArrayBase] for additional detail.
 
 ```rust,editable
-{{#include ../../deps/examples/vector-comparison.rs}}
+{{#include ../../deps/tests/vector-comparison.rs}}
 ```
 
 ## Vector norm
@@ -69,7 +69,7 @@ Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ndarray::ArrayVie
 `Array` and `ArrayView` are both type aliases for `ArrayBase`. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
 
 ```rust,editable
-{{#include ../../deps/examples/vector-norm.rs}}
+{{#include ../../deps/tests/vector-norm.rs}}
 ```
 
 ## Invert matrix
@@ -79,7 +79,7 @@ Note that both `l1_norm` and `l2_norm` take the [`ArrayView1`][ndarray::ArrayVie
 Creates a 3x3 matrix with [`nalgebra::Matrix3`][nalgebra::Matrix3] and inverts it, if possible.
 
 ```rust,editable
-{{#include ../../deps/examples/invert-matrix.rs}}
+{{#include ../../deps/tests/invert-matrix.rs}}
 ```
 
 ## (De)-Serialize a Matrix
@@ -91,7 +91,7 @@ Serialize and deserialize a matrix to and from JSON. Serialization is taken care
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust
-{{#include ../../deps/examples/deserialize-matrix.rs}}
+{{#include ../../deps/tests/deserialize-matrix.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

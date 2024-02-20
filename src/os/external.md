@@ -7,7 +7,7 @@
 Runs `git log --oneline` as an external [`Command`][std::process::Command] and inspects its [`Output`][std::process::Output] using [`Regex`][regex::Regex] to get the hash and message of the last 5 commits.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/process-output.rs}}
+{{#include ../../deps/tests/process-output.rs}}
 ```
 
 ## Run an external command passing it stdin and check for an error code
@@ -17,7 +17,7 @@ Runs `git log --oneline` as an external [`Command`][std::process::Command] and i
 Opens the `python` interpreter using an external [`Command`][std::process::Command] and passes it a python statement for execution. [`Output`][std::process::Output] of statement is then parsed.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/send-input.rs}}
+{{#include ../../deps/tests/send-input.rs}}
 ```
 
 ## Run piped external commands
@@ -30,7 +30,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 [`Stdio::piped`][std::process::Stdio::piped] between parent and child.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/piped.rs}}
+{{#include ../../deps/tests/piped.rs}}
 ```
 
 ## Redirect both stdout and stderr of child process to the same file
@@ -42,7 +42,7 @@ Spawns a child process and redirects `stdout` and `stderr` to the same file. It 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/error-file.rs}}
+{{#include ../../deps/tests/error-file.rs}}
 ```
 
 ## Continuously process child process' outputs
@@ -56,7 +56,7 @@ The below recipe is equivalent to the Unix shell command
 `journalctl | grep usb`.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/continuous.rs}}
+{{#include ../../deps/tests/continuous.rs}}
 ```
 
 ## Read Environment Variable
@@ -66,7 +66,7 @@ The below recipe is equivalent to the Unix shell command
 Reads an environment variable via [`std::env::var`][std::env::var].
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/read-env-variable.rs}}
+{{#include ../../deps/tests/read-env-variable.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

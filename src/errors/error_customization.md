@@ -9,7 +9,7 @@ Use `Anyhow` if you don't care what error type your functions return, you just w
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
 ```rust,editable,no_run,mdbook-runnable
-{{#include ../../deps/examples/anyhow.rs}}
+{{#include ../../deps/tests/anyhow.rs}}
 ```
 
 Anyhow works with any error type that has an impl of `std::error::Error`, including ones defined in your crate e.g. using `thiserror`.
@@ -21,7 +21,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`, includ
 [`thisError`][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,no_run,mdbook-runnable
-{{#include ../../deps/examples/thiserror.rs}}
+{{#include ../../deps/tests/thiserror.rs}}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
@@ -34,7 +34,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 ```
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/thiserror2.rs}}
+{{#include ../../deps/tests/thiserror2.rs}}
 ```
 
 ## Miette
@@ -42,11 +42,11 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [![miette-badge]][miette] [(lib.rs)][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
-{{#include ../../deps/examples/miette/mylib.rs}}
+{{#include ../../deps/tests/miette/mylib.rs}}
 ```
 
 ```rust,editable,ignore
-{{#include ../../deps/examples/miette/main.rs}}
+{{#include ../../deps/tests/miette/main.rs}}
 ```
 
 ## See also

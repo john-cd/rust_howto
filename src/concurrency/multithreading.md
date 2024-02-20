@@ -5,7 +5,7 @@
 [![std-badge]][std]
 
 ```rust,editable
-{{#include ../../deps/examples/multithreading_spawn_join.rs}}
+{{#include ../../deps/tests/multithreading_spawn_join.rs}}
 ```
 
 When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running.
@@ -17,7 +17,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 [Scoped threads][std::thread::scope]⮳
 
 ```rust,editable
-{{#include ../../deps/examples/multithreading_scoped_threads.rs}}
+{{#include ../../deps/tests/multithreading_scoped_threads.rs}}
 ```
 
 ## Rayon - parallel processing
@@ -29,13 +29,13 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/multithreading_rayon.rs}}
+{{#include ../../deps/tests/multithreading_rayon.rs}}
 ```
 
 ### Parallel sorting
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/multithreading_rayon_parsort.rs}}
+{{#include ../../deps/tests/multithreading_rayon_parsort.rs}}
 ```
 
 ### Custom parallel tasks
@@ -43,7 +43,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 Rayon implements [`join`][rayon::join]⮳, [`scope`][rayon::scope]⮳, [`spawn`][rayon::spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon::ThreadPool]⮳.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/multithreading_rayon_custom.rs}}
+{{#include ../../deps/tests/multithreading_rayon_custom.rs}}
 ```
 
 ## See also

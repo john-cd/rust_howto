@@ -10,7 +10,7 @@ Creates a target [`File`][std::fs::File] with name obtained from [`Response::url
 [`tempdir()`][tempfile::Builder::tempdir] and copies downloaded data into it with [`io::copy`][std::io::copy] The temporary directory is automatically removed on program exit.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/basic.rs}}
+{{#include ../../../deps/tests/basic.rs}}
 ```
 
 ## POST a file to paste-rs
@@ -21,7 +21,7 @@ Creates a target [`File`][std::fs::File] with name obtained from [`Response::url
 with a URL establishes the destination, [`RequestBuilder::body`][reqwest::RequestBuilder::body] sets the content to send by reading the file, and [`RequestBuilder::send`][reqwest::RequestBuilder::send] blocks until the file uploads and the response returns. [`read_to_string`][std::io::Read::read_to_string] returns the response and displays in the console.
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/post-file.rs}}
+{{#include ../../../deps/tests/post-file.rs}}
 ```
 
 ## Make a partial download with HTTP range headers
@@ -35,7 +35,7 @@ The code then uses [`reqwest::blocking::Client::get`][reqwest::blocking::Client:
 The Range header is defined in [`RFC7233`][HTTP Range RFC7233].
 
 ```rust,editable,no_run
-{{#include ../../../deps/examples/partial.rs}}
+{{#include ../../../deps/tests/partial.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

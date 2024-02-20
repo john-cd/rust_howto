@@ -9,13 +9,13 @@
 `DashMap` tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,editable,noplayground
-{{#include ../../../deps/examples/dashmap.rs}}
+{{#include ../../../deps/tests/dashmap.rs}}
 ```
 
 ## Bounded Multi-producer Multi-consumer Queue
 
 ```rust,editable,mdbook-runnable
-{{#include ../../../deps/examples/crossbeam_queue.rs}}
+{{#include ../../../deps/tests/crossbeam_queue.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

@@ -34,7 +34,7 @@ Consider this example for "generate random numbers within a range":
 [![rand-badge]][rand] [![cat-science-badge]][cat-science]
 
 ```rust,editable
-{{#include ../deps/examples/about.rs}}
+{{#include ../deps/tests/about.rs}}
 ```
 
 To work with it locally we can run the following commands to create a new cargo project, and change to that directory:
@@ -64,7 +64,7 @@ The basic pattern we use is to have a `fn main() -> Result`.
 The structure generally looks like:
 
 ```rust,editable
-{{#include ../deps/examples/about1.rs}}
+{{#include ../deps/tests/about1.rs}}
 ```
 
 This is using the `error_chain!` macro to define a custom `Error` and `Result` type, along with automatic conversions from two standard library error types. The automatic conversions make the `?` operator work.
@@ -72,7 +72,7 @@ This is using the `error_chain!` macro to define a custom `Error` and `Result` t
 For the sake of readability error handling boilerplate is hidden by default like below. In order to read full contents click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the snippet.
 
 ```rust,editable
-{{#include ../deps/examples/about2.rs}}
+{{#include ../deps/tests/about2.rs}}
 ```
 
 For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling] and [this blog post][blog-error].

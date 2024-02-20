@@ -51,7 +51,7 @@ testall: _build-book
 
 # Test all code using nextest
 nextestall: _build-book
-  cargo nextest run
+  cargo nextest run --no-fail-fast
   cargo test --doc
 
 # Run all examples
@@ -103,11 +103,10 @@ _sitemap:
 # Test all examples in the book's Markdown
 test: _build-book
   cargo test --package deps --tests --examples --locked -- --show-output
-# | tee testing.log
 # This relies on skeptic to build doctests - see `build.rs`
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
-# when dealing with dependencies outside of the std library
-# see: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
+# when dealing with dependencies outside of the std library.
+# See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. link checking)
 serve: _build-book

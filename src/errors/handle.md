@@ -13,7 +13,7 @@ The below recipe will tell how long the system has been running by opening the U
 Other recipes in this book will hide the [`error-chain`][error-chain] boilerplate, and can be seen by expanding the code with the ⤢ button.
 
 ```rust,editable
-{{#include ../../deps/examples/main.rs}}
+{{#include ../../deps/tests/main.rs}}
 ```
 
 ## Avoid discarding errors during error conversions
@@ -26,7 +26,7 @@ Uses [`reqwest`][reqwest]::[blocking][reqwest::blocking] to query a random integ
 [`reqwest`][reqwest], and the web service can all generate errors. Well defined Rust errors use [`foreign_links`][error-chain-foreign_links] An additional [`ErrorKind`][error_chain::example_generated::ErrorKind] variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust,editable
-{{#include ../../deps/examples/retain.rs}}
+{{#include ../../deps/tests/retain.rs}}
 ```
 
 ## Obtain backtrace of complex error scenarios
@@ -39,7 +39,7 @@ The below recipes attempts to deserialize the value `256` into a
 `u8`. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust,editable
-{{#include ../../deps/examples/backtrace.rs}}
+{{#include ../../deps/tests/backtrace.rs}}
 ```
 
 Backtrace error rendered:

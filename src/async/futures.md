@@ -11,13 +11,13 @@ In most cases, you will use this crate directly only when writing async code int
 `Select` polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/futures.rs}}
+{{#include ../../deps/tests/futures.rs}}
 ```
 
 ## Joining futures
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/futures2.rs}}
+{{#include ../../deps/tests/futures2.rs}}
 ```
 
 ## Map, then, either, flatten
@@ -25,7 +25,7 @@ In most cases, you will use this crate directly only when writing async code int
 The `futures` crate provides an extension trait that provides a variety of convenient adapters.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/futures3.rs}}
+{{#include ../../deps/tests/futures3.rs}}
 ```
 
 ## See also

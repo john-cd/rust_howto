@@ -7,7 +7,7 @@
 [Riker (website)][riker-website]⮳
 
 ```rust,editable
-{{#include ../../deps/examples/actors.rs}}
+{{#include ../../deps/tests/actors.rs}}
 ```
 
 ## Alternatives

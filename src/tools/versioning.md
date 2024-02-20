@@ -9,7 +9,7 @@ Constructs a [`semver::Version`][semver::Version] from a string literal using [`
 Note that in accordance with the [`Semantic Versioning Specification`][Semantic Versioning Specification], incrementing the minor version number resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
 
 ```rust,editable
-{{#include ../../deps/examples/semver-increment.rs}}
+{{#include ../../deps/tests/semver-increment.rs}}
 ```
 
 ## Parse a complex version string
@@ -21,7 +21,7 @@ Constructs a [`semver::Version`][semver::Version] from a complex version string 
 Note that, in accordance with the Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 
 ```rust,editable
-{{#include ../../deps/examples/semver-complex.rs}}
+{{#include ../../deps/tests/semver-complex.rs}}
 ```
 
 ## Check if given version is pre-release
@@ -31,7 +31,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 Given two versions, [`is_prerelease`][semver::Version] asserts that one is pre-release and the other is not.
 
 ```rust,editable
-{{#include ../../deps/examples/semver-prerelease.rs}}
+{{#include ../../deps/tests/semver-prerelease.rs}}
 ```
 
 ## Find the latest version satisfying given range
@@ -42,7 +42,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][semver::Vers
 [`semver::VersionReq`][semver::VersionReq] filters the list with [`semver::VersionReq::matches`][semver::VersionReq::matches] Also demonstrates `semver` pre-release preferences.
 
 ```rust,editable
-{{#include ../../deps/examples/semver-latest.rs}}
+{{#include ../../deps/tests/semver-latest.rs}}
 ```
 
 ## Check external command version for compatibility
@@ -54,7 +54,7 @@ Runs `git --version` using [`Command`][std::process::Command] then parses the ve
 [`semver::VersionReq`][semver::VersionReq] to the parsed version. The command output resembles "git version x.y.z".
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/semver-command.rs}}
+{{#include ../../deps/tests/semver-command.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

@@ -7,7 +7,7 @@
 Calculation for integers exceeding 128 bits are possible with [`BigInt`][num::BigInt]
 
 ```rust,editable
-{{#include ../../deps/examples/big-integers.rs}}
+{{#include ../../deps/tests/big-integers.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

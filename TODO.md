@@ -6,11 +6,9 @@
 
 - chrono [chrono::Date::checked_sub_signed] or Date?
 
-- fix failing examples in drafts
+- fix failing examples in drafts - WIP
 
 - fix order of pages in Other domains
-
-- replace Github links:
 
 - fix not found in Crates.md (alphabetic list)
 

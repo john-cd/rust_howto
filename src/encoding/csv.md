@@ -8,14 +8,14 @@ Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord] — a w
 [`csv::ByteRecord`][csv::ByteRecord] makes no assumptions about UTF-8.
 
 ```rust,editable
-{{#include ../../deps/examples/read.rs}}
+{{#include ../../deps/tests/read.rs}}
 ```
 
 Serde deserializes data into strongly type structures. See the
 [`csv::Reader::deserialize`][csv::Reader::deserialize] method.
 
 ```rust,editable
-{{#include ../../deps/examples/read1.rs}}
+{{#include ../../deps/tests/read1.rs}}
 ```
 
 ## Read CSV records with different delimiter
@@ -25,7 +25,7 @@ Serde deserializes data into strongly type structures. See the
 Reads CSV records with a tab [`delimiter`][csv::ReaderBuilder::delimiter].
 
 ```rust,editable
-{{#include ../../deps/examples/delimiter.rs}}
+{{#include ../../deps/tests/delimiter.rs}}
 ```
 
 ## Filter CSV records matching a predicate
@@ -35,7 +35,7 @@ Reads CSV records with a tab [`delimiter`][csv::ReaderBuilder::delimiter].
 Returns _only_ the rows from `data` with a field that matches `query`.
 
 ```rust,editable
-{{#include ../../deps/examples/filter.rs}}
+{{#include ../../deps/tests/filter.rs}}
 ```
 
 _Disclaimer: this example has been adapted from [the csv crate tutorial](https://docs.rs/csv/*/csv/tutorial/index.html#filter-by-search)_.
@@ -47,7 +47,7 @@ _Disclaimer: this example has been adapted from [the csv crate tutorial](https:/
 CSV files often contain invalid data. For these cases, the `csv` crate provides a custom deserializer, [`csv::invalid_option`][csv::invalid_option] which automatically converts invalid data to None values.
 
 ```rust,editable
-{{#include ../../deps/examples/invalid.rs}}
+{{#include ../../deps/tests/invalid.rs}}
 ```
 
 ## Serialize records to CSV
@@ -57,7 +57,7 @@ CSV files often contain invalid data. For these cases, the `csv` crate provides 
 This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] supports automatic serialization from Rust types into CSV records. [`write_record`][csv::Writer::write_record] writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`serialize`][csv::Writer::serialize]. Since CSV writer uses an internal buffer, always explicitly [`flush`][csv::Writer::flush] when done.
 
 ```rust,editable
-{{#include ../../deps/examples/serialize.rs}}
+{{#include ../../deps/tests/serialize.rs}}
 ```
 
 ## Serialize records to CSV using Serde
@@ -67,7 +67,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] s
 The following example shows how to serialize custom structs as CSV records using the [`serde`][serde] crate.
 
 ```rust,editable
-{{#include ../../deps/examples/serde-serialize.rs}}
+{{#include ../../deps/tests/serde-serialize.rs}}
 ```
 
 ## Transform CSV column
@@ -79,7 +79,7 @@ Transform a CSV file containing a color name and a hex color into one with a col
 See [`csv::Reader::deserialize`][csv::Reader::deserialize] [`serde::Deserialize`][serde::Deserialize] and [`std::str::FromStr`][std::str::FromStr]
 
 ```rust,editable
-{{#include ../../deps/examples/transform.rs}}
+{{#include ../../deps/tests/transform.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

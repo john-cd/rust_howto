@@ -11,7 +11,7 @@ Uses [`ring::pbkdf2`][ring::pbkdf2] to hash a salted password using the PBKDF2 k
 [`SecureRandom::fill`][ring::rand::SecureRandom::fill] which fills the salt byte array with securely generated random numbers.
 
 ```rust,editable
-{{#include ../../deps/examples/pbkdf2.rs}}
+{{#include ../../deps/tests/pbkdf2.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

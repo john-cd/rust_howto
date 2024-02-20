@@ -24,7 +24,7 @@ Tokio is an asynchronous runtime for the Rust programming language. It provides 
 Example from [tokio_graceful_shutdown][tokio_graceful_shutdown]⮳:
 
 ```rust,editable,noplayground,no_run
-{{#include ../../deps/examples/tokio_graceful_shutdown.rs}}
+{{#include ../../deps/tests/tokio_graceful_shutdown.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

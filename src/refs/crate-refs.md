@@ -78,7 +78,6 @@
 [book-mdbook]: https://rust-lang.github.io/mdBook/index.html
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
 [book-programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274/
-[book-rust-raw-string-literals]: https://doc.rust-lang.org/reference/tokens.html#raw-string-literals
 [book-rust-badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
 [book-rust-box-badge]: https://img.shields.io/badge/Rust_Book-Box-blue?logo=mdbook
 [book-rust-box]: https://doc.rust-lang.org/book/ch15-01-box.html
@@ -113,6 +112,7 @@
 [book-rust-performance-github]: https://github.com/nnethercote/perf-book
 [book-rust-performance]: https://nnethercote.github.io/perf-book/
 [book-rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817/
+[book-rust-raw-string-literals]: https://doc.rust-lang.org/reference/tokens.html#raw-string-literals
 [book-rust-reference-attributes]: https://doc.rust-lang.org/reference/attributes.html
 [book-rust-reference-conditional-compilation]: https://doc.rust-lang.org/reference/conditional-compilation.html#the-cfg-attribute
 [book-rust-reference-macros]: https://doc.rust-lang.org/reference/macros.html

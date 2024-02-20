@@ -9,7 +9,7 @@ Gets the current working directory by calling [`env::current_dir`][std::env::cur
 [`Metadata::modified`][std::fs::Metadata::modified] returns the [`SystemTime::elapsed`][std::time::SystemTime::elapsed] time since last modification. [`Duration::as_secs`][std::time::Duration::as_secs] converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`Metadata::is_file`][std::fs::Metadata::is_file] filters out directories.
 
 ```rust,editable
-{{#include ../../deps/examples/modified.rs}}
+{{#include ../../deps/tests/modified.rs}}
 ```
 
 ## Find loops for a given path
@@ -26,7 +26,7 @@ ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
 The following would assert that a loop exists.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/loops.rs}}
+{{#include ../../deps/tests/loops.rs}}
 ```
 
 ## Recursively find duplicate file names
@@ -36,7 +36,7 @@ The following would assert that a loop exists.
 Find recursively in the current directory duplicate filenames, printing them only once.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/duplicate-name.rs}}
+{{#include ../../deps/tests/duplicate-name.rs}}
 ```
 
 ## Recursively find all files with given predicate
@@ -46,7 +46,7 @@ Find recursively in the current directory duplicate filenames, printing them onl
 Find JSON files modified within the last day in the current directory. Using [`follow_links`][walkdir::WalkDir::follow_links] ensures symbolic links are followed like they were normal directories and files.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/find-file.rs}}
+{{#include ../../deps/tests/find-file.rs}}
 ```
 
 ## Traverse directories while skipping dotfiles
@@ -61,7 +61,7 @@ Uses [`filter_entry`][walkdir::IntoIter::filter_entry] to descend recursively in
 Root dir `"."` yields through [`WalkDir::depth`][walkdir::WalkDir::depth] usage in `is_not_hidden` predicate.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/skip-dot.rs}}
+{{#include ../../deps/tests/skip-dot.rs}}
 ```
 
 ## Recursively calculate file sizes at given depth
@@ -71,7 +71,7 @@ Root dir `"."` yields through [`WalkDir::depth`][walkdir::WalkDir::depth] usage 
 Recursion depth can be flexibly set by [`WalkDir::min_depth`][walkdir::Walkdir::min_depth] & [`WalkDir::max_depth`][walkdir::WalkDir::max_depth] methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust,editable
-{{#include ../../deps/examples/sizes.rs}}
+{{#include ../../deps/tests/sizes.rs}}
 ```
 
 ## Find all png files recursively
@@ -83,7 +83,7 @@ Recursively find all PNG files in the current directory. In this case, the `**` 
 Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/png.rs}}
+{{#include ../../deps/tests/png.rs}}
 ```
 
 ## Find all files with given pattern ignoring filename case
@@ -95,7 +95,7 @@ Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.pn
 A custom [`MatchOptions`][glob::MatchOptions] struct is passed to the [`glob_with`][glob_with] function making the glob pattern case insensitive while keeping the other options [`Default`][std::default::Default]
 
 ```rust,editable,no_run
-{{#include ../../deps/examples/ignore-case.rs}}
+{{#include ../../deps/tests/ignore-case.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

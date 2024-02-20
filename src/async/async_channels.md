@@ -11,13 +11,13 @@ Tokio's `sync` module provides channels that work well with async code.
 `oneshot` sends a single value from a single producer to a single consumer. This channel is usually used to send the result of a computation to a waiter.
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async_channels_oneshot.rs}}
+{{#include ../../deps/tests/async_channels_oneshot.rs}}
 ```
 
 Another example:
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async_channels_oneshot2.rs}}
+{{#include ../../deps/tests/async_channels_oneshot2.rs}}
 ```
 
 ## Multiple Producer, Single Consumer
@@ -25,7 +25,7 @@ Another example:
 [![tokio-badge]][tokio]
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/async_channels_mpsc.rs}}
+{{#include ../../deps/tests/async_channels_mpsc.rs}}
 ```
 
 ## See also

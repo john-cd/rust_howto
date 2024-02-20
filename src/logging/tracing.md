@@ -17,55 +17,55 @@ tracing-subscriber = "0.3"
 ### Basic tracing
 
 ```rust,editable,noplayground
-{{#include ../../deps/examples/tracing_subscriber.rs}}
+{{#include ../../deps/tests/tracing_subscriber.rs}}
 ```
 
 ### Combine layers
 
 ```rust,editable,noplayground
-{{#include ../../deps/examples/tracing_subscriber2.rs}}
+{{#include ../../deps/tests/tracing_subscriber2.rs}}
 ```
 
 Or with a custom formatting layer
 
 ```rust,editable,noplayground
-{{#include ../../deps/examples/tracing_subscriber3.rs}}
+{{#include ../../deps/tests/tracing_subscriber3.rs}}
 ```
 
 ### Configure a custom event formatter
 
 ```rust,editable,noplayground
-{{#include ../../deps/examples/tracing_subscriber4.rs}}
+{{#include ../../deps/tests/tracing_subscriber4.rs}}
 ```
 
 ## Events
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/tracing.rs}}
+{{#include ../../deps/tests/tracing.rs}}
 ```
 
 ## Spans
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/tracing_spans.rs}}
+{{#include ../../deps/tests/tracing_spans.rs}}
 ```
 
 One-liner with `.entered()`:
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/tracing_span_entered.rs}}
+{{#include ../../deps/tests/tracing_span_entered.rs}}
 ```
 
 Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use `in_scope`
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/tracing_span_in_scope.rs}}
+{{#include ../../deps/tests/tracing_span_in_scope.rs}}
 ```
 
 ## Add tracing spans to functions
 
 ```rust,editable,mdbook-runnable
-{{#include ../../deps/examples/tracing_instrument.rs}}
+{{#include ../../deps/tests/tracing_instrument.rs}}
 ```
 
 ## OpenTelemetry

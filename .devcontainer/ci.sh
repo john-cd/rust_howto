@@ -38,7 +38,7 @@ cargo build --workspace --all-targets --locked --profile ci
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
-## Test all examples (unit tests in /deps/examples, skeptic tests in /deps/tests and any tests in /xmpl)
+## Test all examples (integration tests in /deps/tests, examples in /deps/examples, skeptic tests in /deps/tests and any tests in /xmpl)
 cargo test --workspace --all-targets --locked --profile ci -- --show-output
 ## NOTE supersedes: mdbook test
 

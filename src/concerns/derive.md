@@ -4,7 +4,7 @@ The `derive` attribute generates code that will implement a trait with its own d
 
 [Derivable traits][book-rust-derivable-traits]⮳
 
-{{#playground ../../deps/examples/derive.rs editable}}
+{{#playground ../../deps/tests/derive.rs editable}}
 
 You can use the `cargo-expand` utility to see the exact code that is generated for your specific type.
 
@@ -15,7 +15,7 @@ You can use the `cargo-expand` utility to see the exact code that is generated f
 [Derive More (crates)][derive-more-crate]⮳ derive lots of additional, commonly used traits and static methods for both structs and enums.
 
 ```rust,editable,noplayground
-{{#include ../../deps/examples/derive_more.rs}}
+{{#include ../../deps/tests/derive_more.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}
