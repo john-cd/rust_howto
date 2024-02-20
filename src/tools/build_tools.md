@@ -4,7 +4,7 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 ## Compile and link statically to a bundled C library
 
-[![cc-badge]][cc]  [![cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][cc] crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
 
@@ -55,7 +55,7 @@ void greet(const char* name) {
 
 ## Compile and link statically to a bundled C++ library
 
-[![cc-badge]][cc]  [![cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cpp(true)`][cc::Build::cpp] and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
@@ -96,7 +96,7 @@ int multiply(int x, int y) {
 
 ## Compile a C library while setting custom defines
 
-[![cc-badge]][cc]  [![cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 It is simple to build bundled C code with custom defines using [`cc::Build::define`][cc::Build::define]
 The method takes an [`Option`][std::option::Option] value, so it is possible to create defines such as `#define APP_NAME "foo"`

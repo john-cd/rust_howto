@@ -6,7 +6,7 @@ Targeting WebAssembly or manipulating WebAssembly.
 
 ## Yew
 
-[![yew-badge]][yew]
+[![yew][yew-badge]][yew]
 
 [What is Yew?][yew-website]⮳
 

@@ -1,6 +1,6 @@
 # Strings
 
-[![std-badge]][std]
+[![std][std-badge]][std]
 
 ## String type
 

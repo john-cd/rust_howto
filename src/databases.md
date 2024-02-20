@@ -4,11 +4,11 @@ Interface with database management systems.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Create a SQLite database][ex-sqlite-initialization] | [![rusqlite-badge]][rusqlite] | [![cat-database-badge]][cat-database] |
-| [Insert and Query data][ex-sqlite-insert-select] | [![rusqlite-badge]][rusqlite] | [![cat-database-badge]][cat-database] |
-| [Create tables in a Postgres database][ex-postgres-create-tables] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
-| [Insert and Query data][ex-postgres-insert-query-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
-| [Aggregate data][ex-postgres-aggregate-data] | [![postgres-badge]][postgres] | [![cat-database-badge]][cat-database] |
+| [Create a SQLite database][ex-sqlite-initialization] | [![rusqlite][rusqlite-badge]][rusqlite] | [![cat-database][cat-database-badge]][cat-database] |
+| [Insert and Query data][ex-sqlite-insert-select] | [![rusqlite][rusqlite-badge]][rusqlite] | [![cat-database][cat-database-badge]][cat-database] |
+| [Create tables in a Postgres database][ex-postgres-create-tables] | [![postgres][postgres-badge]][postgres] | [![cat-database][cat-database-badge]][cat-database] |
+| [Insert and Query data][ex-postgres-insert-query-data] | [![postgres][postgres-badge]][postgres] | [![cat-database][cat-database-badge]][cat-database] |
+| [Aggregate data][ex-postgres-aggregate-data] | [![postgres][postgres-badge]][postgres] | [![cat-database][cat-database-badge]][cat-database] |
 
 [ex-sqlite-initialization]: databases/sqlite.md#create-a-sqlite-database
 [ex-sqlite-insert-select]: databases/sqlite.md#insert-and-select-data

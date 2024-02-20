@@ -12,19 +12,19 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ## Key crates
 
-[![paste-badge]][paste]  [![paste-github][paste-github-badge]][paste-github]
+[![paste][paste-badge]][paste]  [![paste-github][paste-github-badge]][paste-github]
 
 [`Paste`][paste] provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
-[![proc-macro2-badge]][proc-macro2]  [(github)][proc-macro2-github]  [(workshop)][proc-macro-workshop]
+[![proc-macro2][proc-macro2-badge]][proc-macro2]  [(github)][proc-macro2-github]  [(workshop)][proc-macro-workshop]
 
 [`proc-macro2`][proc-macro2]⮳ [![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
-[![syn-badge]][syn]  [![syn-github][syn-github-badge]][syn-github]
+[![syn][syn-badge]][syn]  [![syn-github][syn-github-badge]][syn-github]
 
 [`Syn`][Syn] is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
-[![quote-badge]][quote]
+[![quote][quote-badge]][quote]
 
 [`Quote`][Quote] provides the `quote!` macro for turning Rust syntax tree data structures into tokens of source code.
 
@@ -36,6 +36,6 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
-[![watt-badge]][watt]  [![watt-github][watt-github-badge]][watt-github]
+[![watt][watt-badge]][watt]  [![watt-github][watt-github-badge]][watt-github]
 
 {{#include ../refs/link-refs.md}}

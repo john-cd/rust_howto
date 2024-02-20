@@ -1,8 +1,8 @@
 # Logs
 
-[![tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]
+[![tracing][tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]
 
-[![tracing-subscriber-badge]][tracing-subscriber]  [(crates.io)][tracing-subscriber-crate]
+[![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [(crates.io)][tracing-subscriber-crate]
 
 Add to `Cargo.toml`
 
@@ -74,10 +74,10 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 
 ## See also
 
-[![env_logger-badge]][env_logger]
+[![env_logger][env_logger-badge]][env_logger]
 
-[![log-badge]][log]
+[![log][log-badge]][log]
 
-[![log4rs-badge]][log4rs]
+[![log4rs][log4rs-badge]][log4rs]
 
 {{#include ../refs/link-refs.md}}

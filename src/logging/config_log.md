@@ -2,7 +2,7 @@
 
 ## Enable log levels per module
 
-[![log-badge]][log]  [![env_logger-badge]][env_logger]  [![cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][env_logger-RUST_LOG] environmental variable.
 
@@ -30,7 +30,7 @@ DEBUG:test::foo::bar: [bar] debug
 
 ## Use a custom environment variable to set up logging
 
-[![log-badge]][log]  [![env_logger-badge]][env_logger]  [![cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 [`Builder`][env_logger::Builder] configures logging.
 
@@ -45,7 +45,7 @@ All these steps are normally done internally by [`env_logger::init`][env_logger:
 
 ## Include timestamp in log messages
 
-[![log-badge]][log]  [![env_logger-badge]][env_logger]  [![chrono-badge]][chrono]  [![cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![chrono][chrono-badge]][chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates a custom logger configuration with [`Builder`][env_logger::Builder]
 Each log entry calls [`Local::now`][chrono::offset::Local::now] to get the current [`DateTime`][chrono::DateTime] in local timezone and uses [`DateTime::format`][chrono::DateTime::format] with [`strftime::specifiers`][chrono::format::strftime] to format a timestamp used in the final log.
@@ -65,7 +65,7 @@ stderr output will contain
 
 ## Log messages to a custom location
 
-[![log-badge]][log]  [![log4rs-badge]][log4rs]  [![cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][log]  [![log4rs][log4rs-badge]][log4rs]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 [`log4rs`][log4rs] configures log output to a custom location. [`log4rs`][log4rs] can use either an external YAML file or a builder configuration.
 

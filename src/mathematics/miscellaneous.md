@@ -2,7 +2,7 @@
 
 ## Big integers
 
-[![num-badge]][num]  [![cat-science-badge]][cat-science]
+[![num][num-badge]][num]  [![cat-science][cat-science-badge]][cat-science]
 
 Calculation for integers exceeding 128 bits are possible with [`BigInt`][num::BigInt]
 

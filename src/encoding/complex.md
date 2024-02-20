@@ -2,7 +2,7 @@
 
 ## Serialize and deserialize unstructured JSON
 
-[![serde_json-badge]][serde_json]  [![cat-encoding-badge]][cat-encoding]
+[![serde_json][serde_json-badge]][serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 The [`serde_json`][serde_json] crate provides a [`from_str`][serde_json::from_str] function to parse a `&str` of JSON.
 
@@ -16,7 +16,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 ## Deserialize a TOML configuration file
 
-[![toml-badge]][toml]  [![cat-encoding-badge]][cat-encoding]
+[![toml][toml-badge]][toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
@@ -32,7 +32,7 @@ Parse TOML into your own structs using [`Serde`][serde].
 
 ## Read and write integers in little-endian byte order
 
-[![byteorder-badge]][byteorder]  [![cat-encoding-badge]][cat-encoding]
+[![byteorder][byteorder-badge]][byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 `byteorder` can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 

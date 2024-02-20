@@ -1,6 +1,6 @@
 # Actix
 
-[![actix-web-badge]][actix-web]
+[![actix-web][actix-web-badge]][actix-web]
 
 [Actix Web (website)][actix-web-website]⮳
 

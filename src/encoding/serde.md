@@ -1,6 +1,6 @@
 # Serialization
 
-[![serde-badge]][serde]
+[![serde][serde-badge]][serde]
 
 ## See also
 

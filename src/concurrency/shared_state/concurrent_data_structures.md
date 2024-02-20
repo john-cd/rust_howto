@@ -2,7 +2,7 @@
 
 ## Dashmap
 
-[![dashmap-badge]][dashmap]
+[![dashmap][dashmap-badge]][dashmap]
 
 `Dashmap` is an implementation of a concurrent associative array/hashmap in Rust.
 

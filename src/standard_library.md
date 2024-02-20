@@ -1,6 +1,6 @@
 # Standard Library
 
-[![std-badge]][std]
+[![std][std-badge]][std]
 
 - [Option](standard_library/option.md)
 - [Vectors](standard_library/vectors.md)

@@ -2,7 +2,7 @@
 
 [Are we learning yet?][are-we-learning-yet?]⮳
 
-[![linfa-badge]][linfa]  [(crates.io)][linfa-crate]  [(home page)][linfa-website]
+[![linfa][linfa-badge]][linfa]  [(crates.io)][linfa-crate]  [(home page)][linfa-website]
 
 [SmartCore][smartcore-website]⮳
 
@@ -12,6 +12,6 @@
 
 ## Quant
 
-[![rustquant-badge]][rustquant]
+[![rustquant][rustquant-badge]][rustquant]
 
 {{#include ../refs/link-refs.md}}

@@ -1,6 +1,6 @@
 # Hashmaps
 
-[![std-badge]][std]
+[![std][std-badge]][std]
 
 All of the keys must have the same type as each other, and all of the values must have the same type.
 

@@ -18,11 +18,11 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Parse and increment a version string][ex-semver-increment] | [![semver-badge]][semver] | [![cat-config-badge]][cat-config] |
-| [Parse a complex version string][ex-semver-complex] | [![semver-badge]][semver] | [![cat-config-badge]][cat-config] |
-| [Check if given version is pre-release][ex-semver-prerelease] | [![semver-badge]][semver] | [![cat-config-badge]][cat-config] |
-| [Find the latest version satisfying given range][ex-semver-latest] | [![semver-badge]][semver] | [![cat-config-badge]][cat-config] |
-| [Check external command version for compatibility][ex-semver-command] | [![semver-badge]][semver] | [![cat-text-processing-badge]][cat-text-processing]  [![cat-os-badge]][cat-os] |
+| [Parse and increment a version string][ex-semver-increment] | [![semver][semver-badge]][semver] | [![cat-config][cat-config-badge]][cat-config] |
+| [Parse a complex version string][ex-semver-complex] | [![semver][semver-badge]][semver] | [![cat-config][cat-config-badge]][cat-config] |
+| [Check if given version is pre-release][ex-semver-prerelease] | [![semver][semver-badge]][semver] | [![cat-config][cat-config-badge]][cat-config] |
+| [Find the latest version satisfying given range][ex-semver-latest] | [![semver][semver-badge]][semver] | [![cat-config][cat-config-badge]][cat-config] |
+| [Check external command version for compatibility][ex-semver-command] | [![semver][semver-badge]][semver] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]  [![cat-os][cat-os-badge]][cat-os] |
 
 ## Build Time
 
@@ -30,9 +30,9 @@ Utilities for build scripts and other build time steps.
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Compile and link statically to a bundled C library][ex-cc-static-bundled] | [![cc-badge]][cc] | [![cat-development-tools-badge]][cat-development-tools] |
-| [Compile and link statically to a bundled C++ library][ex-cc-static-bundled-cpp] | [![cc-badge]][cc] | [![cat-development-tools-badge]][cat-development-tools] |
-| [Compile a C library while setting custom defines][ex-cc-custom-defines] | [![cc-badge]][cc] | [![cat-development-tools-badge]][cat-development-tools] |
+| [Compile and link statically to a bundled C library][ex-cc-static-bundled] | [![cc][cc-badge]][cc] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Compile and link statically to a bundled C++ library][ex-cc-static-bundled-cpp] | [![cc][cc-badge]][cc] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Compile a C library while setting custom defines][ex-cc-custom-defines] | [![cc][cc-badge]][cc] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 
 [ex-semver-increment]: tools/versioning.md#parse-and-increment-a-version-string
 [ex-semver-complex]: tools/versioning.md#parse-a-complex-version-string

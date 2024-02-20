@@ -2,7 +2,7 @@
 
 ## Spawn a short-lived thread
 
-[![crossbeam-badge]][crossbeam]  [![cat-concurrency-badge]][cat-concurrency]
+[![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 The example uses the [`crossbeam`][crossbeam] crate, which provides data structures and functions for concurrent and parallel programming. [`Scope::spawn`][crossbeam::thread::Scope::spawn] spawns a new scoped thread that is guaranteed to terminate before returning from the closure that passed into [`crossbeam::scope`][crossbeam::scope] function, meaning that you can reference data from the calling function.
 
@@ -14,7 +14,7 @@ This example splits the array in half and performs the work in separate threads.
 
 ## Create a parallel pipeline
 
-[![crossbeam-badge]][crossbeam]  [![cat-concurrency-badge]][cat-concurrency]
+[![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example uses the [`crossbeam`][crossbeam] and [`crossbeam-channel`][crossbeam-channel] crates to create a parallel pipeline, similar to that described in the ZeroMQ [guide][zero-mq-guide]. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
 
@@ -31,7 +31,7 @@ Reading from the channels via the iterator
 
 ## Pass data between two threads
 
-[![crossbeam-badge]][crossbeam]  [![cat-concurrency-badge]][cat-concurrency]
+[![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example demonstrates the use of [`crossbeam-channel`][crossbeam-channel] in a single producer, single consumer (SPSC) setting. We build off the [`crossbeam spawn`][ex-crossbeam-spawn] example by using
 [`crossbeam::scope`][crossbeam::scope] and [`Scope::spawn`][crossbeam::thread::Scope::spawn] to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam_channel::unbounded`][crossbeam_channel::unbounded] channel, meaning there is no limit to the number of storeable messages. The producer thread sleeps for half a second in between messages.
@@ -42,7 +42,7 @@ This example demonstrates the use of [`crossbeam-channel`][crossbeam-channel] in
 
 ## Maintain global mutable state
 
-[![lazy-static-badge]][lazy-static]  [![cat-rust-patterns-badge]][cat-rust-patterns]
+[![lazy-static][lazy-static-badge]][lazy-static]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Declare global state using [`lazy static`][lazy-static]. [`lazy static`][lazy-static]
 creates a globally available `static ref` which requires a [`Mutex`][std::sync::Mutex] to allow mutation (also see [`RwLock`][std::sync::RwLock]). The [`Mutex`][std::sync::Mutex] wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`MutexGuard`][std::sync::MutexGuard] must be acquired to read or mutate the value stored in a [`Mutex`][std::sync::Mutex]
@@ -54,7 +54,7 @@ creates a globally available `static ref` which requires a [`Mutex`][std::sync::
 
 ## Calculate SHA256 sum of iso files concurrently
 
-[![threadpool-badge]][threadpool]  [![num-cpus-badge]][num-cpus]  [![walkdir-badge]][walkdir]  [![ring-badge]][ring]  [![cat-concurrency-badge]][cat-concurrency][![cat-filesystem-badge]][cat-filesystem]
+[![threadpool][threadpool-badge]][threadpool]  [![num-cpus][num-cpus-badge]][num-cpus]  [![walkdir][walkdir-badge]][walkdir]  [![ring][ring-badge]][ring]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 This example calculates the SHA256 for every file with iso extension in the current directory. A threadpool generates threads equal to the number of cores present in the system found with [`num-cpus::get`][num-cpus::get]. [`Walkdir::new`][walkdir::Walkdir::new] iterates the current directory and calls [`execute`][threadpool::ThreadPool::execute] to perform the operations of reading and computing SHA256 hash.
 
@@ -64,7 +64,7 @@ This example calculates the SHA256 for every file with iso extension in the curr
 
 ## Draw fractal dispatching work to a thread pool
 
-[![threadpool-badge]][threadpool]  [![num-badge]][num]  [![num-cpus-badge]][num-cpus]  [![image-badge]][image]  [![cat-concurrency-badge]][cat-concurrency][![cat-science-badge]][cat-science][![cat-rendering-badge]][cat-rendering]
+[![threadpool][threadpool-badge]][threadpool]  [![num][num-badge]][num]  [![num-cpus][num-cpus-badge]][num-cpus]  [![image][image-badge]][image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-science][cat-science-badge]][cat-science][![cat-rendering][cat-rendering-badge]][cat-rendering]
 
 This example generates an image by drawing a fractal from the [Julia set][julia-set] with a thread pool for distributed computation.
 

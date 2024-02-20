@@ -1,6 +1,6 @@
 # Tokio
 
-[![tokio-badge]][tokio]  [![tokio-github][tokio-github-badge]][tokio-github]
+[![tokio][tokio-badge]][tokio]  [![tokio-github][tokio-github-badge]][tokio-github]
 
 Tokio is an asynchronous runtime for the Rust programming language. It provides the building blocks needed for writing networking applications. Tokio provides a few major components:
 
@@ -19,7 +19,7 @@ Tokio is an asynchronous runtime for the Rust programming language. It provides 
 
 ## Graceful shutdown
 
-[![tokio_graceful_shutdown-badge]][tokio_graceful_shutdown]
+[![tokio_graceful_shutdown][tokio_graceful_shutdown-badge]][tokio_graceful_shutdown]
 
 Example from [tokio_graceful_shutdown][tokio_graceful_shutdown]⮳:
 

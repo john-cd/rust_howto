@@ -2,7 +2,7 @@
 
 ## Tower
 
-[![tower-badge]][tower]
+[![tower][tower-badge]][tower]
 
 [`Tower`][tower]⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
@@ -16,7 +16,7 @@ A number of third-party libraries support `Tower` and the `Service` trait: [`hyp
 
 ## Tower HTTP
 
-[![tower-http-badge]][tower-http]
+[![tower-http][tower-http-badge]][tower-http]
 
 [`Tower HTTP`][tower-http]⮳ contains HTTP specific Tower utilities.
 

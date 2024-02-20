@@ -1,6 +1,6 @@
 # Futures crate
 
-[![futures-badge]][futures]  [(crates.io)][futures-crate]
+[![futures][futures-badge]][futures]  [(crates.io)][futures-crate]
 
 The [`futures`][futures]⮳ crate provides a number of core abstractions for writing asynchronous code.
 
@@ -30,6 +30,6 @@ The `futures` crate provides an extension trait that provides a variety of conve
 
 ## See also
 
-[![futures-executor-badge]][futures-executor]
+[![futures-executor][futures-executor-badge]][futures-executor]
 
 {{#include ../refs/link-refs.md}}

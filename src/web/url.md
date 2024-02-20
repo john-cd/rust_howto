@@ -2,7 +2,7 @@
 
 ## Parse a URL from a string to a `Url` type
 
-[![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
+[![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
 The [`parse`][url::Url::parse] method from the `url` crate validates and parses a `&str` into a
 [`Url`][url::Url] struct. The input string may be malformed so this method returns
@@ -17,7 +17,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 ## Create a base URL by removing path segments
 
-[![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
+[![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
 A base URL includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`PathSegmentsMut::clear`][url::PathSegmentsMut::clear] removes paths and [`Url::set_query`][url::Url::set_query] removes query string.
 
@@ -27,7 +27,7 @@ A base URL includes a protocol and a domain. Base URLs have no folders, files or
 
 ## Create new URLs from a base URL
 
-[![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
+[![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
 The [`join`][url::Url::join] method creates a new URL from a base and relative path.
 
@@ -37,7 +37,7 @@ The [`join`][url::Url::join] method creates a new URL from a base and relative p
 
 ## Extract the URL origin (scheme / host / port)
 
-[![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
+[![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
 The [`Url`][url::Url] struct exposes various methods to extract information about the URL it represents.
 
@@ -53,7 +53,7 @@ The [`Url`][url::Url] struct exposes various methods to extract information abou
 
 ## Remove fragment identifiers and query pairs from a URL
 
-[![url-badge]][url]  [![cat-network-programming-badge]][cat-network-programming]
+[![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
 Parses [`Url`][url::Url] and slices it with [`url::Position`][url::Position] to strip unneeded URL parts.
 

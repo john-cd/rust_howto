@@ -1,6 +1,6 @@
 # ANSI Terminal
 
-[![ansi-term-badge]][ansi-term]
+[![ansi-term][ansi-term-badge]][ansi-term]
 
 This program depicts the use of [`ansi_term`][ansi-term-crate] crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on ANSI terminals.
 

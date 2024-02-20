@@ -2,7 +2,7 @@
 
 ## Read lines of strings from a file
 
-[![std-badge]][std]  [![cat-filesystem-badge]][cat-filesystem]
+[![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Writes a three-line message to a file, then reads it back a line at a time with the [`Lines`][std::io::Lines] iterator created by
 [`BufRead::lines`][std::io::BufRead::lines]  [`File`][std::fs::File] implements [`Read`][std::io::Read] which provides [`BufReader`][std::io::BufReader] trait. [`File::create`][std::fs::File::create] opens a [`File`][std::fs::File] for writing, [`File::open`][std::fs::File::open] for reading.
@@ -13,7 +13,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 ## Avoid writing and reading from a same file
 
-[![same-file-badge]][same-file]  [![cat-filesystem-badge]][cat-filesystem]
+[![same-file][same-file-badge]][same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Use [`same-file::Handle`][same-file::Handle] to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
@@ -33,7 +33,7 @@ errors because the two files are same.
 
 ## Access a file randomly using a memory map
 
-[![memmap-badge]][memmap]  [![cat-filesystem-badge]][cat-filesystem]
+[![memmap][memmap-badge]][memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Creates a memory map of a file using [`memmap`][memmap] and simulates some non-sequential reads from the file. Using a memory map means you just index into a slice rather than dealing with [`seek`][std::fs::File::seek] to navigate a File.
 

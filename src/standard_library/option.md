@@ -1,6 +1,6 @@
 # Option
 
-[![std-badge]][std]
+[![std][std-badge]][std]
 
 Rust has no `null`. Instead, use [`std::option::Option`][std::option::Option]⮳:
 

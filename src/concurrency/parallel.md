@@ -2,7 +2,7 @@
 
 ## Mutate the elements of an array in parallel
 
-[![rayon-badge]][rayon]  [![cat-concurrency-badge]][cat-concurrency]
+[![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 The example uses the `rayon` crate, which is a data parallelism library for Rust.
 `rayon` provides the [`par_iter_mut`][rayon::iter::IntoParallelRefIterator::par_iter_mut] method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
@@ -13,7 +13,7 @@ The example uses the `rayon` crate, which is a data parallelism library for Rust
 
 ## Test in parallel if any or all elements of a collection match a given predicate
 
-[![rayon-badge]][rayon]  [![cat-concurrency-badge]][cat-concurrency]
+[![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example demonstrates using the [`rayon::any`][rayon::iter::ParallelIterator::any] and [`rayon::all`][rayon::iter::ParallelIterator::all] methods, which are parallelized counterparts to [`std::any`][std::iter::Iterator::any] and [`std::all`][std::iter::Iterator::all]. [`rayon::any`][rayon::iter::ParallelIterator::any] checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::all`][rayon::iter::ParallelIterator::all] checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
@@ -23,7 +23,7 @@ This example demonstrates using the [`rayon::any`][rayon::iter::ParallelIterator
 
 ## Search items using given predicate in parallel
 
-[![rayon-badge]][rayon]  [![cat-concurrency-badge]][cat-concurrency]
+[![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example uses [`rayon::find_any`][rayon::iter::ParallelIterator::find_any] and [`par_iter`][rayon::iter::IntoParallelRefIterator::par_iter] to search a vector in parallel for an element satisfying the predicate in the given closure.
 
@@ -37,7 +37,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 
 ## Sort a vector in parallel
 
-[![rayon-badge]][rayon]  [![rand-badge]][rand]  [![cat-concurrency-badge]][cat-concurrency]
+[![rayon][rayon-badge]][rayon]  [![rand][rand-badge]][rand]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example will sort in parallel a vector of Strings.
 
@@ -50,7 +50,7 @@ exist to sort an enumerable data type, [`par_sort_unstable`][rayon::slice::Paral
 
 ## Map-reduce in parallel
 
-[![rayon-badge]][rayon]  [![cat-concurrency-badge]][cat-concurrency]
+[![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 This example uses [`rayon::filter`][rayon::iter::ParallelIterator::filter]  [`rayon::map`][rayon::iter::ParallelIterator::map] and [`rayon::reduce`][rayon::iter::ParallelIterator::reduce] to calculate the average age of `Person` objects whose age is over 30.
 
@@ -62,7 +62,7 @@ This example uses [`rayon::filter`][rayon::iter::ParallelIterator::filter]  [`ra
 
 ## Generate jpg thumbnails in parallel
 
-[![rayon-badge]][rayon]  [![glob-badge]][glob]  [![image-badge]][image]  [![cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem-badge]][cat-filesystem]
+[![rayon][rayon-badge]][rayon]  [![glob][glob-badge]][glob]  [![image][image-badge]][image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 This example generates thumbnails for all .jpg files in the current directory then saves them in a new folder called `thumbnails`.
 

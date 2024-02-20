@@ -4,7 +4,7 @@ Facilitate configuration management for applications.
 
 ## Environment variables
 
-[![dotenvy-badge]][dotenvy]
+[![dotenvy][dotenvy-badge]][dotenvy]
 
 [`dotenvy`][dotenvy]⮳ supersedes [`dotenv`][dotenv]⮳.
 
@@ -22,7 +22,7 @@ To retrieve a single environment variable,
 
 ### Envy
 
-[![envy-badge]][envy]
+[![envy][envy-badge]][envy]
 
 Envy can deserialize environment variables into typesafe struct.
 
@@ -38,13 +38,13 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## Config
 
-[![config-badge]][config]
+[![config][config-badge]][config]
 
 `Config` is a layered configuration system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 
-[![confy-badge]][confy]
+[![confy][confy-badge]][confy]
 
 ```rust,editable,no_run
 {{#include ../../deps/tests/confy.rs}}
@@ -52,6 +52,6 @@ serde = { version = "1.0", features = ["derive"] }
 
 ## See also
 
-[![dotenv-badge]][dotenv]
+[![dotenv][dotenv-badge]][dotenv]
 
 {{#include ../refs/link-refs.md}}

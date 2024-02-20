@@ -18,7 +18,7 @@ Note that there are still caveats for public traits - see [Announcing `async fn`
 
 In addition, traits that use `-> impl Trait` and `async fn` are not object-safe, which means they lack support for dynamic dispatch. In the meanwhile, use the `async-trait` crate.
 
-[![async-trait-badge]][async-trait]  [![async-trait-github][async-trait-github-badge]][async-trait-github].
+[![async-trait][async-trait][async-trait-badge]][async-trait]  [![async-trait-github][async-trait-github-badge]][async-trait-github].
 
 ```rust,editable,mdbook-runnable
 {{#include ../../deps/tests/async_traits3.rs}}
