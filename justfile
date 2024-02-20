@@ -54,7 +54,7 @@ nextestall: _build-book
   cargo nextest run --no-fail-fast
   cargo test --doc
 
-# Run all examples
+# Run all examples (but not the tests)
 [unix]
 runall: _build-book
   #! /bin/bash
@@ -71,6 +71,11 @@ runall: _build-book
   # Also run additional examples in the xmpl folder, if any
   for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
 # TODO: this still repeatedly runs `build.rs` somehow.
+
+# Run a specific example (among those in `deps/examples`)
+run example: _build-book
+  #cargo clean -p deps
+  cargo run -p deps --locked --example {{example}}
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
 build: _generate-refdefs _generate-index-category _build-book && _sitemap _copystatic
@@ -100,7 +105,7 @@ _copystatic:
 _sitemap:
   mdbook-utils sitemap
 
-# Test all examples in the book's Markdown
+# Test the code used by the book
 test: _build-book
   cargo test --package deps --tests --examples --locked -- --show-output
 # This relies on skeptic to build doctests - see `build.rs`
@@ -156,13 +161,11 @@ empty := ''
 do cmd=help subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
 
-# Run a specific example (among those in `deps/examples`)
-run xmpl: _build-book
-  #cargo clean -p deps
-  cargo run -p deps --locked --example {{xmpl}}
-
 [unix]
 sortrefs:
   sort -u ./src/refs/crate-refs.md -o /tmp/c.md
   mv -f /tmp/c.md ./src/refs/crate-refs.md
   rm -f /temp/c.md
+  sort -u ./src/refs/link-refs.md -o /tmp/l.md
+  mv -f /tmp/l.md ./src/refs/link-refs.md
+  rm -f /temp/l.md
