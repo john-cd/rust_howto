@@ -171,7 +171,6 @@
 [chrono::Datelike]: https://docs.rs/chrono/*/chrono/trait.Datelike.html
 [chrono::Timelike]: https://docs.rs/chrono/*/chrono/trait.Timelike.html
 [chrono::format::strftime]: https://docs.rs/chrono/*/chrono/format/strftime/index.html
-[chrono::format::strftime]: https://docs.rs/chrono/*/chrono/format/strftime/index.html#specifiers
 [chrono::naive::NaiveDate::from_ymd]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDate.html#method.from_ymd
 [chrono::naive::NaiveDateTime::from_timestamp]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDateTime.html#method.from_timestamp
 [chrono::naive::NaiveDateTime::timestamp]: https://docs.rs/chrono/*/chrono/naive/struct.NaiveDateTime.html#method.timestamp
@@ -430,14 +429,14 @@
 [opencv-website]: https://opencv.org/
 [openrr-github-badge]: https://img.shields.io/badge/openrr-steelblue?logo=github
 [openrr-github]: https://github.com/openrr/openrr
-[parking-lot-badge]: https://img.shields.io/crates/v/parking__lot?label=parking_lot
+[parking-lot-badge]: https://img.shields.io/crates/v/parking_lot?label=parking_lot
 [parking-lot-crate]: https://crates.io/crates/parking_lot/
 [parking-lot]: https://docs.rs/parking_lot/
 [paste-badge]: https://img.shields.io/crates/v/paste?label=paste
 [paste-github-badge]: https://img.shields.io/badge/paste-steelblue?logo=github
 [paste-github]: https://github.com/dtolnay/paste
 [paste]: https://docs.rs/paste/
-[percent-encoding-badge]: https://img.shields.io/crates/v/percent--encoding?label=percent-encoding
+[percent-encoding-badge]: https://img.shields.io/crates/v/percent-encoding?label=percent-encoding
 [percent-encoding]: https://docs.rs/percent-encoding/
 [percent_encoding::percent_decode]: https://docs.rs/percent-encoding/*/percent_encoding/fn.percent_decode.html
 [percent_encoding::utf8_percent_encode]: https://docs.rs/percent-encoding/*/percent_encoding/fn.utf8_percent_encode.html
@@ -610,7 +609,7 @@
 [rustup-website]: https://rustup.rs/
 [salsa-github-badge]: https://img.shields.io/badge/salsa-steelblue?logo=github
 [salsa-github]: https://github.com/salsa-rs/salsa
-[same-file-badge]: https://img.shields.io/crates/v/same--file?label=same-file
+[same-file-badge]: https://img.shields.io/crates/v/same-file?label=same-file
 [same-file::Handle]: https://docs.rs/same-file/*/same_file/struct.Handle.html
 [same-file::is_same_file]: https://docs.rs/same-file/*/same_file/fn.is_same_file.html
 [same-file]: https://docs.rs/same_file/
