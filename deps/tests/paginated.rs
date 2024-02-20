@@ -43,8 +43,8 @@
 //             return Ok(Some(dep));
 //         }
 
-//         if self.page > 0 && self.page * self.per_page >= self.total {
-//             return Ok(None);
+//         if self.page > 0 && self.page * self.per_page >= self.total
+// {             return Ok(None);
 //         }
 
 //         self.page += 1;
@@ -53,10 +53,10 @@
 //             self.crate_id, self.page, self.per_page
 //         );
 
-//         let response = self.client.get(url).send()?.json::<ApiResponse>()?;
-//         self.dependencies = response.dependencies.into_iter();
-//         self.total = response.meta.total;
-//         Ok(self.dependencies.next())
+//         let response =
+// self.client.get(url).send()?.json::<ApiResponse>()?;         self.
+// dependencies = response.dependencies.into_iter();         self.
+// total = response.meta.total;         Ok(self.dependencies.next())
 //     }
 // }
 

@@ -12,9 +12,9 @@
 //     while path_buf.pop() {
 //         if is_same_file(&path_buf, path)? {
 //             return Ok(Some((path_buf, path.to_path_buf())));
-//         } else if let Some(looped_paths) = contains_loop(&path_buf)? {
-//             return Ok(Some(looped_paths));
-//         }
+//         } else if let Some(looped_paths) =
+// contains_loop(&path_buf)? {             return
+// Ok(Some(looped_paths));         }
 //     }
 //     Ok(None)
 // }
