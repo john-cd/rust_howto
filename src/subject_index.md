@@ -1,6 +1,6 @@
 # Index
 
-{{#include lang.md}}
+{{#include lang_index.md}}
 {{#include standard_library.md}}
 {{#include algorithms.md}}
 {{#include cli.md}}
@@ -23,3 +23,4 @@
 {{#include domains.md}}
 {{#include tools.md}}
 {{#include links.md}}
+{{#include refs/link-refs.md}}
