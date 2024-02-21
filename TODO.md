@@ -10,9 +10,7 @@
 
 - fix order of pages in Other domains
 
-- fix not found in Crates.md (alphabetic list)
-
-- update main README
+- update main README - WIP
 
 - review GA / GSC - issues with redirects??
 
@@ -23,10 +21,6 @@
   - config, concerns
 
 - incorporate cwd.rs example + any other new examples
-
-- review generate.sh
-
-- update justfile TODOs
 
 - review each new .md file in turn - see STATUS.md
 
