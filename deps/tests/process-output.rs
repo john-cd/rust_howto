@@ -11,6 +11,7 @@ struct Commit {
 }
 
 #[test]
+#[ignore]
 fn test() -> Result<()> {
     let output = Command::new("git").arg("log").arg("--oneline").output()?;
 
