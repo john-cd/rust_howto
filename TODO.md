@@ -1,8 +1,8 @@
 # TODO
 
-- finish contributing section; clean up README.md
-
 - edit summary.md
+
+- finish contributing section
 
 - chrono [chrono::Date::checked_sub_signed] or Date?
 
@@ -11,6 +11,10 @@
 - fix order of pages in Other domains
 
 - update main README - WIP
+
+- clean up README.md
+
+- fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown then remove #includes
 
 - review GA / GSC - issues with redirects??
 
