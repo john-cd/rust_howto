@@ -17,7 +17,7 @@ This cookbook is intended for new Rust programmers, so that they may quickly get
 The cookbook [`index`][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
 
 Within the index, each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][rand-badge]][rand], and which categories on [`crates.io`][crates-io] those crates belong to, like
-[![cat-science][cat-science-badge]][cat-science].
+[![cat-algorithms][cat-algorithms-badge]][cat-algorithms].
 
 New Rust programmers should be comfortable reading from the first section to the last, and doing so should give one a strong overview of the crate ecosystem. Click on the section header in the index, or in the sidebar to navigate to the page for that section of the book.
 
@@ -31,7 +31,7 @@ All recipes in the cookbook are full, self contained programs, so that they may 
 
 Consider this example for "generate random numbers within a range":
 
-[![rand][rand-badge]][rand]  [![cat-science][cat-science-badge]][cat-science]
+[![rand][rand-badge]][rand]  [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]
 
 ```rust,editable
 {{#include ../deps/tests/about.rs}}
