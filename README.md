@@ -1,251 +1,35 @@
-# Rust How-To
+# The Rust How-To Book
 
-**A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem.**
+**A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
+
+Point your browser to <https://john-cd.com/rust_howto> to read the [Rust How-to][rust-howto] book.
 
 ## Work In Progress
 
-This book is still _heavily edited_.
+This book is still going through _heavy edits_. Pardon the dust.
 
-## Web site
+## Contributing
 
-This book is deployed on <https://john-cd.com/rust_howto>
+Contributions are most welcome!
 
-GitHub repo: <https://john-cd.github.io/rust_howto>
+Please review the [contributing][rust-howto-contributing] section of the book and peruse the book's [GitHub repo][rust-howto-github].
 
-## Repo structure
+## Companion tool
 
-- The repo contains a book, which markdown sources are in the `src` folder.
-- After the book is built using `mdbook`, the resulting HTML and Javascript are found in `book/html`.
-- The intermediate (processed) Markdown is in `book/markdown`. The `mdbook` configuration is in `book.toml`; the templates and assets are in `theme` and `static` respectively.
-- The Rust code is organized as a `cargo` workspace:
-  - Examples that are embedded in the book are found in `deps/tests` and `deps/examples`. These are mostly single, short `.rs` files. The `deps/Cargo.toml` list all dependencies used by the embedded examples. Use `cargo add <crate> -F <feature>` while in the `deps` folder to add more as required. `deps/build.rs` creates the Skpetic tests that validate all embedded examples.
-  - Additional examples that are too long or complex to be inserted in the book itself will be added under `xmpl`.
-- The Dev Container and Docker (Compose) configuration files are found in `.devcontainer`.
+The [mdbook-utils][mdbook-utils-crates-io] utility ([(github)][mdbook-utils-github]  [(docs.rs)][mdbook-utils-docs-rs]  [(user guide)][mdbook-utils-user-guide]) helps manage links and code blocks in [`mdbook`][mdbook] source directories. It is the companion tool for this book.
 
-## Installation
+## Acknowledgments
 
-### Using VS Code
+This book is written by [S. John CD][john-cd]. It is the successor of and incorporates most of the [Rust Cookbook][rust-cookbook]. Thanks to its many contributors.
 
-Clone the repo and open the folder in [VS Code][vs-code]. Edit `.devcontainer/.env` if needed. VS Code should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
-
-- [Dev Container extension][dev-container-extension]
-- [Docker Desktop][docker-desktop] (or at least the Docker engine).
-
-Note that opening the code folder in VS Code may take a little while the first time around.
-
-### Other
-
-If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github] or simply install the required tools on your local machine:
-
-```bash
-sudo apt-get update
-sudo apt-get install fzf mold clang # or equivalent for other distros
-rustup update
-rustup component add clippy
-rustup component add rustfmt
-cargo install cargo-nextest
-cargo install mdbook
-cargo install just
-cargo install mdbook-linkcheck
-# for cargo +nightly fmt
-rustup toolchain install nightly
-rustup component add rustfmt --toolchain nightly
-```
-
-You may need `sudo apt-get install libsqlite3-dev` on WSL.
-
-Review `.devcontainer/Dockerfile` for other dependencies.
-
-## Development / Editing
-
-Type `just` (a tool similar to `make`) in your favorite shell to lists all commonly used recipes during book editing and example code development.
-
-Use `just serve` to preview the book by serving it locally on <http://localhost:3000/>.
-
-To add or edit the book, simply update or add a `.md` file in the appropriate `src` subfolder, then add a link in `SUMMARY.md`.
-
-- Add Rust code examples under `deps/examples`.
-  - Make sure to format your code (`just fmtall` or `cargo fmt --all`), lint it (`just clippyall` or `cargo clippy --examples`) and verify it compiles (`just buildall` or `cargo build --examples`) and runs correctly (`cargo run --example <name>`).
-  - Include your code in the Markdown via `{{#include /path/to/file.rs}}` within pairs of triple backticks.
-- You may write very short examples directly in the Markdown (but they won't be be formatted / linted automatically).
-- Test all examples within the book (embedded from `deps/examples` or in code blocks) with `just test`.
-- `rust` language code blocks in the Markdown will automatically get a _play_ button, which will execute the code in the [Rust Playground][rust-playground] and display the output just below the code block. `mdbook-runnable` forces the play button to be displayed when `ignore` is set.
-- The Rust playground only supports top 100 most downloaded libraries and libraries in the Rust cookbook. `noplayground` removes the play button if a code block does not work on the playground.
-- Example projects that are too complex to be inserted in the book itself (e.g. that include multiple modules) shoud be added as separate folders below `xmpl`. Use `cargo new/init` to create new packages as usual. Insert a link to the appropriate GitHub page in the markdown.
-
-Verify the markdown is properly rendered using `just serve` or `mdbook serve --open`. Pushing a commit to the `main` branch on GitHub will trigger a GitHub Action worfklow that checks formatting / linting, builds / tests all examples, then deploys the book to GitHub Pages.
-
-## Dev Container and Docker
-
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install `mdbook` and rust tooling.
-
-If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
-
-```bash
-docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-docker run --rm --detach --name rust_howto_dev1 --volume $(pwd):/code rust_howto_dev
-docker exec -it rust_howto_dev1 bash
-```
-
-To cache the crate and the target folders from run to run, add
-
-```bash
---mount type=volume,src=rust_howto_cargo_crate_cache,dst=/usr/local/cargo/registry/
---mount type=volume,src=rust_howto_cargo_target_cache,dst=/cargo-target-rust_howto/
-```
-
-To connect to the (host OS) docker engine from within the container, add
-
-```bash
---mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
-```
-
-## Docker Compose
-
-Test the docker compose setup used during developement (which Dev Container runs) with:
-
-```bash
-cd ./.devcontainer
-docker compose build # uses compose.yaml and compose.override.yaml
-docker compose up -d
-# or simply
-docker compose up --build -d
-```
-
-## Deployment to GitHub Pages
-
-The continuous integration worflow is found under `.github`.
-
-Test the docker compose setup used during CI using:
-
-```bash
-cd ./.devcontainer
-docker compose -f compose.yaml -f compose-ci.yaml build
-docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker compose -f compose.yaml -f compose-ci.yaml up
-```
-
-It uses the `ci` target in `.devcontainer/Dockerfile`.
-
-To test the `docker` image manually, use
-
-```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
-```
-
-[Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]
-
-## Push image to Docker Hub
-
-From the project root folder, use the following to build and push the `development` image:
-
-```bash
-docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-# or docker tag rust_howto_dev johncd/rust_howto_dev:latest
-docker login
-# or docker login -u "user" -p "password" docker.io
-docker push johncd/rust_howto_dev:latest
-```
-
-Use the following to build and push the CI image:
-
-```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-docker login
-docker push johncd/rust_howto_ci:latest
-```
-
-## Optional pre-processors
-
-- [`mdbook-linkcheck`][mdbook-linkcheck-github] is a backend for `mdbook` that will check links.
-Install with `cargo install mdbook-linkcheck`. Uncomment the related section in `book.toml`.
-- [mdbook-hide][mdbook-hide-github] hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
-
-```xml
-<!--hidden-->
-```
-
-- [`mdbook-keeper`][mdbook-keeper-crate]. Install with
-
-```bash
-cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>
-```
-
-## Generate Documentation
-
-Use `just doc` to generate the documentation for `docs.rs`.
-
-`cargo doc --open` does not seem to work when running from a Dev Container in VS Code; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` or live server to serve the files instead. See the `doc` recipe in `justfile`.
-
-### Using a Dev Container feature
-
-Alternatively, use the ["Desktop lite" Dev Container feature]( https://github.com/devcontainers/features/tree/main/src/desktop-lite ) to install a light GUI manager. Add the following to `devcontainer.json`:
-
-```json
-"features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {}
-},
-"forwardPorts": [
-    6080
-],
-"portsAttributes": {
-    "6080": {
-        "label": "desktop"
-    }
-},
-```
-
-and the following to the `Dockerfile`
-
-```Dockerfile
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr
-```
-
-Optionally `apt-get install xdg-utils` to check that Firefox is the default for `text/html`:
-
-```bash
-xdg-mime query default text/html
-# or for more details:
-XDG_UTILS_DEBUG_LEVEL=2 xdg-mime query default text/html
-
-xdg-settings --list
-xdg-settings get default-web-browser
-```
-
-Point your browser to `<http://localhost:6080>` and use `vscode` as the password. Open the HTML file of your choice with:
-
-```bash
-xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
-```
-
-### Other methods to preview the documentation HTML
-
-- Add the target directory e.g. `/cargo-target-rust_howto/target` to the VS Code Explorer view (`File` > `Add Folder to Workspace...`), then right-click the `/cargo-target-rust_howto/target/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
-- Or install the `Live Server` or MS `Live Preview` VS Code extensions.
-
-## Publish to crates.io
-
-The `publish` folder contains a placeholder crate, so that the book could be located when searching on `crates.io`.
-
-- Go to `crates.io`, sign in, and create an API token in `Account Settings` > `API Tokens`.
-- Use `cargo login` to save the token in `$CARGO_HOME/credentials.toml`.
-- `cd publish; cargo build; cargo clippy; cargo run; cargo doc; cargo package`
-- Review the packaging output in `/cargo-target-rust_howto/target/package`.
-- When ready, `cargo publish --dry-run; cargo publish`
-
-## Reference
-
-[`mdBook`][book-mdbook]
-
-[dev-container-cli-github]: https://github.com/devcontainers/cli
-[dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
-[docker-desktop]: https://www.docker.com/products/docker-desktop/
-[book-mdbook]: https://rust-lang.github.io/mdBook/index.html
-[mdbook-hide]: https://github.com/ankitrgadiya/mdbook-hide/
-[mdbook-hide-github]: https://github.com/ankitrgadiya/mdbook-hide/
-[mdbook-keeper-crate]: https://crates.io/crates/mdbook-keeper
-[mdbook-linkcheck-github]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
-[rust-playground]: https://play.rust-lang.org/
-[stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
-[vs-code]: https://code.visualstudio.com/
+[john-cd]: https://github.com/john-cd/
+[mdbook]: https://rust-lang.github.io/mdBook/
+[mdbook-utils-github]: https://github.com/john-cd/mdbook-utils/
+[mdbook-utils-docs-rs]: https://docs.rs/mdbook-utils/latest/mdbook_utils/
+[mdbook-utils-crates-io]: https://crates.io/crates/mdbook-utils/
+[mdbook-utils-user-guide]: https://john-cd.github.io/mdbook-utils/
+[rust-cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/
+[rust-howto]: https://john-cd.com/rust_howto/
+[rust-howto-contributing]: https://john-cd.com/rust_howto/contributing.html
+[rust-howto-github]: https://github.com/john-cd/rust_howto/
