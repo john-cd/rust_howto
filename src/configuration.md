@@ -24,7 +24,7 @@ To retrieve a single environment variable,
 
 [![envy][envy-badge]][envy]
 
-Envy can deserialize environment variables into typesafe struct.
+Envy can deserialize environment variables into type-safe structs.
 
 ```toml
 [dependencies]

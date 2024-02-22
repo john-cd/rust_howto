@@ -6,12 +6,12 @@
 
 - [Contributing](contributing.md)
   - [Repository structure](contributing/repo_structure.md)
-  - [Installation](contributing/installation.md)
-  - [Development and editing](contributing/development_editing.md)
+  - [Environment setup](contributing/dev_environment_setup.md)
+  - [Editing](contributing/development_editing.md)
   - [Dev Containers and Docker](contributing/dev_container_docker.md)
   - [Optional preprocessors](contributing/optional_preprocessors.md)
-  - [Documentation](contributing/documentation.md)
-  - [Publish to crates.io](contributing/publish.md)
+  - [API documentation](contributing/api_documentation.md)
+  - [Crate publication](contributing/publication.md)
 
 - [Language](lang.md)
   - [Rust installation and first steps](lang/rust_install.md)
@@ -41,6 +41,7 @@
   - [HashMap](standard_library/hashmaps.md)
   - [Strings](standard_library/strings.md)
   - [Smart pointers](standard_library/smart_pointers.md)
+  - [Automatic trait derivation](standard_library/derive.md)
 
 - [Key crates](key_crates.md)
 
@@ -71,8 +72,6 @@
   - [Generate Random Values](algorithms/randomness.md)
   - [Sort a Vector](algorithms/sorting.md)
 
-- [Automatic trait derivation TODO](concerns/derive.md)
-
 - [Command-line applications](cli.md)
   - [Argument Parsing](cli/arguments.md)
   - [ANSI Terminal](cli/ansi_terminal.md)
@@ -96,9 +95,7 @@
   - [Futures crate](async/futures.md)
   - [Mixing async and blocking code](async/async_and_blocking.md)
 
-- [Configuration TODO](concerns/configuration.md)
-
-- [Cross-cutting concerns TODO](cross_cutting_concerns.md)
+- [Configuration](configuration.md)
 
 - [Cryptography](cryptography.md)
   - [Hashing](cryptography/hashing.md)
@@ -107,10 +104,10 @@
 - [Data structures](data_structures.md)
   - [Bitfield](data_structures/bitfield.md)
 
-- [Databases](databases.md)
+- [Database access](databases.md)
   - [SQLite](databases/sqlite.md)
   - [Postgres](databases/postgres.md)
-  - [Query builders and ORMS](databases/query_builders_orms.md)
+  - [Query builders and ORMs](databases/query_builders_orms.md)
 
 - [Date and time](datetime.md)
   - [Duration and calculation](datetime/duration.md)
@@ -137,7 +134,7 @@
 - [Logging](logging.md)
   - [Tracing](logging/tracing.md)
   - [Log messages](logging/log.md)
-  - [Configure logging](logging/config_log.md)
+  - [Logging Configuration](logging/config_log.md)
 
 - [Mathematics](mathematics.md)
   - [Linear algebra](mathematics/linear_algebra.md)
@@ -148,7 +145,7 @@
 
 - [Memory management](mem.md)
   - [Global static](mem/global_static.md)
-  - [Lazy initialization TODO](mem/lazy_initialization.md)
+  - [Lazy initialization](mem/lazy_initialization.md)
 
 - [Network](net.md)
   - [Server](net/server.md)
@@ -181,15 +178,15 @@
 ---
 
 - [Other domains](domains.md)
-  - [WASM](domains/wasm.md)
-  - [GUI](domains/gui.md)
-  - [Cross-platform applications](domains/cross_platform.md)
   - [Cloud](domains/cloud.md)
+  - [Cross-platform applications](domains/cross_platform.md)
   - [Data](domains/data.md)
-  - [ML](domains/ml.md)
   - [Games](domains/games.md)
   - [GPU programming](domains/gpu.md)
+  - [GUI](domains/gui.md)
+  - [Machine Learning](domains/ml.md)
   - [Robotics](domains/robotics.md)
+  - [WASM](domains/wasm.md)
   - [Windows](domains/windows.md)
 
 - [Links](links.md)

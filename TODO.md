@@ -1,28 +1,18 @@
 # TODO
 
-- edit summary.md
+- edit summary.md  - WIP
 
-- finish contributing section
+- finish contributing section - WIP
 
 - chrono [chrono::Date::checked_sub_signed] or Date?
 
 - fix failing examples in drafts - WIP
-
-- fix order of pages in Other domains
-
-- update main README - WIP
-
-- clean up README.md
 
 - fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown then remove #includes
 
 - review GA / GSC - issues with redirects??
 
 - pull request to little book of rust books
-
-- polish extended SUMMARY.md
-  - auto derive
-  - config, concerns
 
 - incorporate cwd.rs example + any other new examples
 

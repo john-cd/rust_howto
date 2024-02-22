@@ -582,6 +582,9 @@
 [rust-howto-drafts-badge]: https://img.shields.io/badge/rust_howto_drafts-steelblue?logo=github
 [rust-howto-drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
 [rust-howto-github-badge]: https://img.shields.io/badge/rust_howto-steelblue?logo=github
+[rust-howto-github-deps-tests]: https://github.com/john-cd/rust_howto/tree/main/deps/tests/
+[rust-howto-github-src]: https://github.com/john-cd/rust_howto/tree/main/src/
+[rust-howto-github-summary]: https://github.com/john-cd/rust_howto/blob/main/src/SUMMARY.md
 [rust-howto-github]: https://github.com/john-cd/rust_howto
 [rust-howto-todo-github-badge]: https://img.shields.io/badge/rust_howto_TODO-steelblue?logo=github
 [rust-howto-todo-github]: https://github.com/john-cd/rust_howto/blob/main/TODO.md

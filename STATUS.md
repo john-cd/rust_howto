@@ -63,7 +63,7 @@
   - [Generate Random Values](src/algorithms/randomness.md)
   - [Sort a Vector](src/algorithms/sorting.md)
 
-- [Automatic trait derivation TODO](src/concerns/derive.md)
+- [Automatic trait derivation TODO](src/standard_library/derive.md)
 
 - [Command-line applications](src/cli.md)
   - [Argument Parsing](src/cli/arguments.md)
@@ -88,7 +88,7 @@
   - [Futures crate](src/async/futures.md)
   - [Mixing async and blocking code](src/async/async_and_blocking.md)
 
-- [Configuration TODO](src/concerns/configuration.md)
+- [Configuration TODO](src/configuration.md)
 
 - [Cross-cutting concerns TODO](src/cross_cutting_concerns.md)
 

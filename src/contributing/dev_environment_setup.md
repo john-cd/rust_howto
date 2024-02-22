@@ -1,8 +1,8 @@
-## Installation
+## Development Environment Setup
 
 ### Using VS Code
 
-Clone the repo and open the folder in [VS Code][rust-in-vs-code]. Edit `.devcontainer/.env` if needed. VS Code should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
+Clone the [repo][rust-howto-github] and open the folder in [VS Code][rust-in-vs-code]. Edit `.devcontainer/.env` if needed. VS Code should prompt you to open the code in a `docker` container, which installs `mdbook` and rust tooling automatically. Make sure you have previously installed
 
 - [Dev Container extension][dev-container-extension]
 - [Docker Desktop][docker-desktop] (or at least the Docker engine).
@@ -15,14 +15,15 @@ If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-
 
 ```bash
 sudo apt-get update # or equivalent for other distros
-sudo apt-get install fzf mold clang
+sudo apt-get install fzf
+sudo apt-get mold clang # if using
 rustup update
 rustup component add clippy
-rustup component add rustfmt
 cargo install cargo-nextest
 cargo install mdbook
 cargo install just
 cargo install mdbook-linkcheck
+cargo install mdbook-utils
 # for cargo +nightly fmt
 rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly

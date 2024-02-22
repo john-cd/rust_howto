@@ -35,7 +35,7 @@ List of lint checks: `rustc -W help`. `rustc` also recognizes the tool lints for
 
 ## Automatic trait derivation
 
-See [Automatic derivation](../concerns/derive.md)
+See [Automatic derivation](../standard_library/derive.md)
 
 ## Must Use
 
