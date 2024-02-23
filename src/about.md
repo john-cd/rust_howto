@@ -83,5 +83,5 @@ This cookbook is intended eventually to provide expansive coverage of the Rust c
 
 At present the cookbook is focused on the standard library, and on "core" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-[index]: intro.md
+[index]: index.md
 {{#include refs/link-refs.md}}

@@ -76,7 +76,7 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 ## Async and traits
 
-See [Async](../concurrency/async.md)
+See [Async](../categories/asynchronous/index.md)
 
 ## See also
 

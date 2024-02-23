@@ -4,9 +4,9 @@ Type [`just`][just-website] (a tool similar to `make`) in your favorite shell to
 
 Use `just serve` to preview the book by serving it locally on <http://localhost:3000/>.
 
-To add or edit the book, simply update or add a `.md` file in the appropriate [`src`][rust-howto-github-src] subfolder, then add a link in [`SUMMARY.md`][rust-howto-github-summary].
+To add or edit the book, simply update or add a `.md` file in the appropriate [`src`][rust-howto-src-github] subfolder, then add a link in [`SUMMARY.md`][rust-howto-summary-github].
 
-- Add Rust code examples under [`deps/tests`][rust-howto-github-deps-tests] (or sometimes under `deps/examples`).
+- Add Rust code examples under [`deps/tests`][rust-howto-deps-tests-github] (or sometimes under `deps/examples`).
   - Make sure to format your code (`just fmtall` or `cargo +nightly fmt --all`), check it compiles (`just buildall` or `cargo build --all-targets`), lint it (`just clippyall` or `cargo clippy --all-targets`), and test it (`just testall` or `cargo test --test <name>` for an individual example). You may also `cargo run --example <name>`.
   - Include your code example in the Markdown via `{{# include /path/to/file.rs}}` within pairs of triple backticks.
 - You may write very short examples directly in the Markdown (but they won't be be formatted / linted automatically).

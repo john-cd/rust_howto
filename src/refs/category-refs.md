@@ -1,3 +1,4 @@
+
 [cat-accessibility-badge]: https://img.shields.io/badge/accessibility-white
 [cat-accessibility]: https://crates.io/categories/accessibility/
 

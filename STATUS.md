@@ -1,11 +1,11 @@
 # STATUS
 
-[Introduction](src/intro.md) polish the intro
+[Introduction](src/index.md) polish the intro
 [About](src/about.md) rewrite
-[Contributing](src/contributing.md) polish
-[Index](src/subject_index.md) rethink
+[Contributing](src/contributing/index.md) polish
+[Index of Examples](src/examples_index.md) rethink
 
-- [Language](src/lang.md)
+- [Language](src/lang/index.md)
   - [Rust installation and first steps](src/lang/rust_install.md) polish
   - [Main function](src/lang/main.md) add description
   - [Simple data types](src/lang/simple_data_types.md) add description
@@ -27,7 +27,7 @@
   - [Iterators](src/lang/iterators.md)
   - [Macros](src/lang/macros.md)
 
-- [Standard library](src/standard_library.md)
+- [Standard library](src/standard_library/index.md)
   - [Option](src/standard_library/option.md) finish Option page map, unwrap_or
   - [Vectors](src/standard_library/vectors.md)
   - [HashMap](src/standard_library/hashmaps.md)
@@ -36,48 +36,48 @@
 
 - [Key crates](src/key_crates.md)
 
-- [Development tools](src/tools.md)
-  - [Cargo](src/tools/cargo.md) finish Cargo Plugins / cargo.md
-  - [Package layout](src/tools/cargo/package_layout.md)
-  - [Installation](src/tools/installing.md)
-    - [Rustup](src/tools/installing/rustup.md)
-  - [Code editing and formatting](src/tools/editing.md) add latest JetBrains tooling
-  - [Compiling](src/tools/compiling.md)
-    - [Faster linking](src/tools/compiling/faster_linking.md)  finish faster linking
-    - [Cross-compilation](src/tools/compiling/cross_compilation.md)
-  - [Build-time tooling](src/tools/build_tools.md)
-  - [Testing](src/tools/testing.md)
-  - [Performance profiling](src/tools/performance.md)
-  - [Miri](src/tools/other/miri.md)
-  - [Documentation](src/tools/documentation.md)
-    - [mdBook](src/tools/documenting/mdbook.md)
-  - [Other](src/tools/other.md)
-    - [Other tools](src/tools/other/other_tools.md)
-    - [Crate registries](src/tools/other/crates.md)
-    - [Just](src/tools/other/just.md)
-  - [Versioning](src/tools/versioning.md)
+- [Development tools](src/categories/development-tools/index.md)
+  - [Cargo](src/categories/development-tools/cargo/index.md) finish Cargo Plugins / cargo.md
+  - [Package layout](src/categories/development-tools/cargo/package_layout.md)
+  - [Installation](src/categories/development-tools/installation/index.md)
+    - [Rustup](src/categories/development-tools/installing/rustup.md)
+  - [Code editing and formatting](src/categories/development-tools/editing/index.md) add latest JetBrains tooling
+  - [Compiling](src/categories/compilers/index.md)
+    - [Faster linking](src/categories/compilers/faster_linking.md)  finish faster linking
+    - [Cross-compilation](src/categories/development-tools/compiling/cross_compilation.md)
+  - [Build-time tooling](src/categories/development-tools/build_tools.md)
+  - [Testing](src/categories/development-tools/testing.md)
+  - [Performance profiling](src/categories/development-tools/performance.md)
+  - [Miri](src/categories/development-tools/other/miri.md)
+  - [Documentation](src/categories/development-tools/documentation.md)
+    - [mdBook](src/categories/development-tools/documenting/mdbook.md)
+  - [Other](src/categories/development-tools/other.md)
+    - [Other tools](src/categories/development-tools/other/other_tools.md)
+    - [Crate registries](src/categories/development-tools/other/crates.md)
+    - [Just](src/categories/development-tools/other/just.md)
+  - [Versioning](src/categories/development-tools/versioning.md)
 
 ---
 
-- [Algorithms](src/algorithms.md)
-  - [Generate Random Values](src/algorithms/randomness.md)
-  - [Sort a Vector](src/algorithms/sorting.md)
+- [Algorithms](src/categories/algorithms/index.md)
+  - [Generate Random Values](src/categories/algorithms/randomness.md)
+  - [Sort a Vector](src/categories/algorithms/sorting.md)
 
 - [Automatic trait derivation TODO](src/standard_library/derive.md)
 
-- [Command-line applications](src/cli.md)
-  - [Argument Parsing](src/cli/arguments.md)
-  - [ANSI Terminal](src/cli/ansi_terminal.md)
+- [Command-line applications](src/categories/command-line-interface/index.md)
+  - [Argument Parsing](src/categories/command-line-interface/arguments.md)
+  - [ANSI Terminal](src/categories/command-line-interface/ansi_terminal.md)
 
-- [Compression](src/compression.md)
-  - [Working with Tarballs](src/compression/tar.md)
+- [Compression](src/categories/compression/index.md)
+  - [Working with Tarballs](src/categories/compression/tar.md)
 
-- [Concurrency](src/concurrency.md)
-  - [Multi-threading](src/concurrency/multithreading.md)
-  - [Explicit threads](src/concurrency/threads.md)
-  - [Data parallelism](src/concurrency/parallel.md)
-  - [Message passing](src/concurrency/message_passing.md)
-  - [Shared-state concurrency](src/concurrency/shared_state.md)
+- [Concurrency](src/categories/concurrency/index.md)
+  - [Multi-threading](src/categories/concurrency/multithreading.md)
+  - [Explicit threads](src/categories/concurrency/threads.md)
+  - [Data parallelism](src/categories/concurrency/parallel.md)
+  - [Message passing](src/categories/concurrency/message_passing.md)
+  - [Shared-state concurrency](src/categories/concurrency/shared_state/index.md)
   - [Concurrent data structures](src/concurrency/shared_state/concurrent_data_structures.md)
 
 - [Concurrency - Async](src/concurrency/async.md)
@@ -88,72 +88,72 @@
   - [Futures crate](src/async/futures.md)
   - [Mixing async and blocking code](src/async/async_and_blocking.md)
 
-- [Configuration TODO](src/configuration.md)
+- [Configuration TODO](src/categories/config/index.md)
 
 - [Cross-cutting concerns TODO](src/cross_cutting_concerns.md)
 
-- [Cryptography](src/cryptography.md)
-  - [Hashing](src/cryptography/hashing.md)
+- [Cryptography](src/categories/cryptography/index.md)
+  - [Hashing](src/categories/cryptography/hashing.md)
   - [Encryption](src/cryptography/encryption.md)
 
-- [Data structures](src/data_structures.md)
-  - [Bitfield](src/data_structures/bitfield.md)
+- [Data structures](src/categories/data-structures/index.md)
+  - [Bitfield](src/categories/data-structures/bitfield.md)
 
-- [Databases](src/databases.md)
-  - [SQLite](src/databases/sqlite.md)
-  - [Postgres](src/databases/postgres.md)
-  - [Query builders and ORMS](src/databases/query_builders_orms.md)
+- [Databases](src/categories/database/index.md)
+  - [SQLite](src/categories/database/sqlite.md)
+  - [Postgres](src/categories/database/postgres.md)
+  - [Query builders and ORMs](src/categories/database/query_builders_orms.md)
 
-- [Date and time](src/datetime.md)
-  - [Duration and calculation](src/datetime/duration.md)
-  - [Parsing and displaying](src/datetime/parse.md)
+- [Date and time](src/categories/date-and-time/index.md)
+  - [Duration and calculation](src/categories/date-and-time/duration.md)
+  - [Parsing and displaying](src/categories/date-and-time/parse.md)
 
-- [Encoding and Serialization](src/encoding.md)
-  - [Character sets](src/encoding/strings.md)
-  - [CSV processing](src/encoding/csv.md)
-  - [Structured data](src/encoding/complex.md)
-  - [Serde](src/encoding/serde.md)
+- [Encoding and Serialization](src/categories/encoding/index.md)
+  - [Character sets](src/categories/encoding/strings.md)
+  - [CSV processing](src/categories/encoding/csv.md)
+  - [Structured data](src/categories/encoding/complex.md)
+  - [Serde](src/categories/encoding/serde.md)
 
-- [Error handling](src/errors.md) errors: color-eyre, eyre
-  - [Handle error variants](src/errors/handle.md)
-  - [Error handling](src/errors/error_handling.md)
-  - [Error customization](src/errors/error_customization.md)
+- [Error handling](src/categories/rust-patterns/index.md) errors: color-eyre, eyre
+  - [Handle error variants](src/categories/rust-patterns/errors/handle.md)
+  - [Error handling](src/categories/rust-patterns/errors/error_handling.md)
+  - [Error customization](src/categories/rust-patterns/errors/error_customization.md)
 
-- [File system](src/file.md)
-  - [Read & write](src/file/read-write.md)
-  - [Directory traversal](src/file/dir.md)
+- [File system](src/categories/filesystem/index.md)
+  - [Read & write](src/categories/filesystem/read-write.md)
+  - [Directory traversal](src/categories/filesystem/dir.md)
 
-- [Hardware support](src/hardware.md)
-  - [Processor](src/hardware/processor.md)
+- [Hardware support](src/categories/hardware-support/index.md)
+  - [Processor](src/categories/hardware-support/processor.md)
 
-- [Logging](src/logging.md)
-  - [Tracing](src/logging/tracing.md)
-  - [Log messages](src/logging/log.md)
-  - [Configure logging](src/logging/config_log.md)
+- [Logging](src/categories/development-tools::debugging/index.md)
+  - [Tracing](src/categories/development-tools::debugging/tracing.md)
+  - [Log messages](src/categories/development-tools::debugging/log.md)
+  - [Configure logging](src/categories/development-tools::debugging/config_log.md)
 
-- [Mathematics](src/mathematics.md)
-  - [Linear algebra](src/mathematics/linear_algebra.md)
-  - [Trigonometry](src/mathematics/trigonometry.md)
-  - [Complex numbers](src/mathematics/complex_numbers.md)
-  - [Statistics](src/mathematics/statistics.md)
+- [Mathematics](src/categories/mathematics/index.md)
+  - [Linear algebra](src/categories/mathematics/linear_algebra.md)
+  - [Trigonometry](src/categories/mathematics/trigonometry.md)
+  - [Complex numbers](src/categories/mathematics/complex_numbers.md)
+  - [Statistics](src/categories/mathematics/statistics.md)
   - [Miscellaneous](src/mathematics/miscellaneous.md)
 
-- [Memory management](src/mem.md)
-  - [Global static](src/mem/global_static.md)
-  - [Lazy initialization TODO](src/mem/lazy_initialization.md)
+- [Memory management](src/categories/memory-management/index.md)
+  - [Global static](src/categories/memory-management/global_static.md)
+  - [Lazy initialization TODO](src/categories/mem/lazy_initialization.md)
 
-- [Network](src/net.md)
-  - [Server](src/net/server.md)
+- [Network](src/categories/network-programming/index.md)
+  - [Server](src/categories/network-programming/server.md)
 
-- [Operating system](src/os.md)
+- [Operating system](src/categories/os/index.md)
   - [External commands](src/os/external.md)
 
-- [Text processing](src/text.md)
+- [Text processing](src/categories/text-processing/index.md)
   - [Regular expressions](src/text/regex.md)
     - [Longer regex example](src/text/regex2.md)
   - [String parsing](src/text/string_parsing.md)
 
-- [Web programming](src/web.md)
+- [Web programming](src/categories/web-programming/index.md)
   - [Extracting links](src/web/scraping.md)
   - [URL](src/web/url.md)
   - [Media types](src/web/mime.md)
@@ -164,15 +164,15 @@
     - [Middleware](src/web/server/middleware.md)
     - [CORS](src/web/server/cors.md)
   - [Static website generators](src/web/server/static_website_generators.md)
-  - [Web Clients](src/clients.md)
-    - [Making Requests](src/web/clients/requests.md)
-    - [Calling a Web API](src/web/clients/apis.md)
-    - [Downloads](src/web/clients/download.md)
-    - [Web Authentication](src/web/clients/authentication.md)
+  - [Web Clients](src/web/clients.md)
+    - [Making Requests](src/clients/requests.md)
+    - [Calling a Web API](src/clients/apis.md)
+    - [Downloads](src/clients/download.md)
+    - [Web Authentication](src/clients/authentication.md)
 
 ---
 
-- [Other domains](src/domains.md)
+- [Other domains](src/other/domains.md)
   - [WASM](src/domains/wasm.md)
   - [GUI](src/domains/gui.md)
   - [Cross-platform applications](src/domains/cross_platform.md)
@@ -184,7 +184,7 @@
   - [Robotics](src/domains/robotics.md)
   - [Windows](src/domains/windows.md)
 
-- [Links](src/links.md)
+- [Links](src/links/index.md)
   - [Example code](src/links/example_code.md)
   - [Cheat sheets](src/links/rust_cheatsheets.md)
   - [Blogs](src/links/blogs.md)
@@ -193,6 +193,6 @@
 
 ---
 
-[Crates (src/alphabetic)](src/misc/crates.md)
-[Crates (src/by category)](src/misc/categories.md) generate automatically
-[Thanks](src/misc/thanks.md)
+[Crates (src/alphabetic)](src/crates.md)
+[Crates (src/by category)](src/categories.md) generate automatically
+[Thanks](src/thanks.md)
