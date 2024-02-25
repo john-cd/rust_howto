@@ -4,6 +4,8 @@
 
 ## Convert `Cow` to `&str`
 
+[![std][std-badge]][std]
+
 Use `Borrow`:
 
 ```rust,ignore
@@ -31,6 +33,8 @@ my_string.push_str(&example);
 ```
 
 ## Convert `Cow` to `String`
+
+[![std][std-badge]][std]
 
 Use `ToString`:
 
