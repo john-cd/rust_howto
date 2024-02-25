@@ -1,4 +1,4 @@
-# Cross-platform Applications
+# Cross-platform Development
 
 {{#include index.incl.md}}
 
