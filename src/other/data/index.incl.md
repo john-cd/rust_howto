@@ -1,2 +1,0 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
