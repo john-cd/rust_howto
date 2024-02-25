@@ -1,0 +1,44 @@
+# Topics of interest
+
+- Async: tokio, async-std and related, async_channels
+- CD / CI, rust-cache
+- Macros
+- `http` crate, `hyper`
+- Python interop: `pyo3`
+- AWS and other Cloud services
+- Advanced data structures
+- Basic and advanced TCP/IP networking
+- `notify`
+- `indicatif`
+- `ratatui`
+- File system traversal, `walkdir`
+- `time`, `chrono`
+- Errors: `color-eyre`, `eyre`
+- Testing: `approx`, `nextest`
+- `axum`
+- `loco`
+- shuttle.rs
+- `reqwest`
+- `tonic`
+- More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
+- `redis`, `mongodb`, `elasticsearch`
+- Cargo & project integration via `cargo-edit`
+- Zip files and other archives
+- Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
+- GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits
+- GPU processing, CUDA
+- Machine learning, Tensorflow
+- Raft Consensus library
+- Network file systems
+- Statistics, math, bignum libraries
+- Crypto, SSL, SSH, other public key encryption, X.509, RusTLS
+- Sound, graphics
+- Games: bevy
+- Search engines
+- Buffer pools, garbage collection, or other reference-counted examples
+- IPv6 address processing
+- Cloud stuff: LB, status reporting (Vigil), routing, orchestration, containers
+- Version control: libgit2: clone, change branches, create commits, push, pull
+- High-performance computing: OpenMP, etc.
+- Social media APIs
+- Personal file sharing: OwnCloud, etc.
