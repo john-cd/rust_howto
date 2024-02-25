@@ -1,5 +1,7 @@
 # Copy-on-Write
 
+{{#include cow.incl.md }}
+
 ## Convert `Cow` to `&str`
 
 Use `Borrow`:
