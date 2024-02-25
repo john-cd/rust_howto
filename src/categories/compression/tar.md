@@ -1,5 +1,7 @@
 # Working with Tarballs
 
+{{#include tar.incl.md}}
+
 ## Decompress a tarball
 
 [![flate2][flate2-badge]][flate2]  [![tar][tar-badge]][tar]  [![cat-compression][cat-compression-badge]][cat-compression]
@@ -32,4 +34,5 @@ Iterate over the [`Archive::entries`][tar::Archive::entries]. Use [`Path::strip_
 {{#include ../../../deps/tests/tar-strip-prefix.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
