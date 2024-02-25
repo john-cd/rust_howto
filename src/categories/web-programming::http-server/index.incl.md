@@ -1,8 +1,8 @@
 | |
 |---|
-| [Axum](axum.md) |
-| [Actix](actix.md) |
-| [Other web frameworks](other_frameworks.md) |
-| [Middleware](middleware.md) |
-| [CORS](cors.md) |
-| [Static website generators](static_website_generators.md) |
+| [Axum][ex-axum] |
+| [Actix][ex-actix] |
+| [Other web frameworks][ex-other-frameworks] |
+| [Middleware][ex-middleware] |
+| [CORS][ex-cors] |
+| [Static website generators][ex-static-website-generators] |

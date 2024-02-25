@@ -1,5 +1,7 @@
 # Middleware
 
+{{#include middleware.incl.md}}
+
 ## Tower
 
 [![tower][tower-badge]][tower]
@@ -28,4 +30,5 @@ A number of third-party libraries support `Tower` and the `Service` trait: [`hyp
 
 [`Trillium`][trillium-website]⮳
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
