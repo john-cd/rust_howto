@@ -1,5 +1,7 @@
 # Automatic trait derivation
 
+{{#include derive.incl.md }}
+
 The `derive` attribute generates code that will implement a trait with its own default implementation on the type you’ve annotated with the derive syntax.
 
 [Derivable traits][book-rust-derivable-traits]⮳
