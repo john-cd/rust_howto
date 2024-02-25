@@ -2,6 +2,8 @@
 
 Rust compile times can be long.
 
+{{#include reduce_compilation_duration.incl.md}}
+
 ## Measuring build times
 
 ```sh
@@ -44,4 +46,5 @@ From-scratch builds with incremental compilation enabled adds about 15–20% ove
 
 [8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

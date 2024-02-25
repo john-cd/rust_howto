@@ -1,5 +1,7 @@
 # Faster linking
 
+{{#include faster_linking.incl.md}}
+
 The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking than the default Rust linker.
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
@@ -52,4 +54,5 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 [Enable Fast Compiles (Bevy)][bevy-enable-fast-compiles]⮳
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

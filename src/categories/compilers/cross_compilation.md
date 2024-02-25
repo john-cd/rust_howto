@@ -1,5 +1,7 @@
 # Cross-compilation
 
+{{#include cross_compilation.incl.md}}
+
 ## Cross
 
 [![cross-github][cross-github-badge]][cross-github]
@@ -27,4 +29,5 @@ cross run --target aarch64-unknown-linux-gnu
 
 Examples: [![cross-toml-example][cross-toml-example-badge]][cross-toml-example]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
