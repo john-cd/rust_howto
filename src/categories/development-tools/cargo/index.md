@@ -1,6 +1,8 @@
-# Cargo (package manager) and tools
+# Cargo, the Rust Package Manager
 
 {{#include index.incl.md}}
+
+## Basic `cargo` usage
 
 [The Cargo book][book-cargo]⮳
 
