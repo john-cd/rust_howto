@@ -1,5 +1,7 @@
 # Essential Rust Links
 
+{{#include index.incl.md}}
+
 - "The Book": [The Rust Programming Language][book-rust]⮳
 - [Rust By Example][book-rust-by-example-book]⮳
 - [Rust by Practice][book-rust-by-practice]⮳
@@ -22,5 +24,4 @@
 
 ## In this section
 
-{{#include index.incl.md}}
 {{#include ../refs/link-refs.md}}
