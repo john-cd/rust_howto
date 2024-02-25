@@ -1,6 +1,6 @@
 # Media Types
 
-{{#include index.incl.md}}
+{{#include mime.incl.md}}
 
 ## Get MIME type from string
 
@@ -21,7 +21,7 @@ The following example shows how to parse a [`MIME`][mime::Mime] type from a stri
 The following example shows how to return the correct MIME type from a given filename using the [`mime`][mime] crate. The program will check for file extensions and match against a known list. The return value is [`mime:Mime`][mime::Mime].
 
 ```rust,editable
-{{#include ../../../../deps/tests/filename.rs}}
+{{#include ../../../deps/tests/filename.rs}}
 ```
 
 ## Parse the MIME type of a HTTP response
@@ -35,7 +35,8 @@ The [`mime`][mime] crate also defines some commonly used MIME types.
 Note that the [`reqwest::header`][reqwest::header] module is exported from the [`http`][http] crate.
 
 ```rust,editable,no_run
-{{#include ../../../../deps/tests/request.rs}}
+{{#include ../../../deps/tests/request.rs}}
 ```
 
-{{#include ../../../refs/link-refs.md}}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}

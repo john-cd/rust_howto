@@ -2,17 +2,7 @@
 
 Create applications for the web.
 
-## Server
-
-## Scraping Web Pages
-
-## Uniform Resource Locations (URL)
-
-## Media Types (MIME)
-
-## Clients
-
-## Web Authentication
+{{#include index.incl.md}}
 
 ## See also
 
@@ -20,4 +10,5 @@ Create applications for the web.
 
 [Building a crawler in Rust: Design and Associated Types][blog-building-a-crawler-in-rust]⮳
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
