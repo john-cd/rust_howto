@@ -1,5 +1,7 @@
 # Configuration
 
+{{#include configuration.incl.md}}
+
 ## Config
 
 [![config][config-badge]][config]
@@ -13,3 +15,6 @@
 ```rust,editable,no_run
 {{#include ../../../deps/tests/confy.rs}}
 ```
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}

@@ -2,10 +2,13 @@
 
 Facilitate configuration management for applications.
 
-{{#include index.incl.md}}
+## Configuration Management
 
-## See Also
+{{#include configuration.incl.md}}
 
-[![dotenv][dotenv-badge]][dotenv]
+## Environment Variables
 
+{{#include environment_variables.incl.md}}
+
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
