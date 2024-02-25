@@ -10,6 +10,8 @@ Embedded examples should be ideally _runnable_ on the [Rust playground][rust-pla
 
 This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs]⮳, the most downloaded libraries in [`crates.io`][crates-io]⮳, and 'high quality crates' per [`lib.rs`][lib-rs]⮳ [statistics][lib-rs-stats]⮳. Review [key crates](../key_crates.md) for topic ideas.
 
+Unless you explicitly state otherwise, any contribution you intentionally submit for inclusion in this book shall be licensed under the same terms than the rest of the book, without any additional restrictions or conditions.
+
 Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 ## See also
