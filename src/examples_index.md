@@ -1,95 +1,129 @@
-# Index
+# Index of Examples
 
 ## Rust language
 
-{{#include lang/index.incl.md}}
-
 ## Standard Library
-
-{{#include standard_library/index.incl.md}}
 
 ## Algorithms
 
-{{#include categories/algorithms/index.incl.md}}
+### Random Numbers
 
-## Command-line Interfaces
+{{#include categories/algorithms/randomness.incl.md}}
 
-{{#include categories/command-line-interface/index.incl.md}}
+[ex-rand]: categories/algorithms/randomness.md#generate-random-numbers
+[ex-rand-range]: categories/algorithms/randomness.md#generate-random-numbers-within-a-range
+[ex-rand-dist]: categories/algorithms/randomness.md#generate-random-numbers-with-given-distribution
+[ex-rand-custom]: categories/algorithms/randomness.md#generate-random-values-of-a-custom-type
+[ex-rand-passwd]: categories/algorithms/randomness.md#create-random-passwords-from-a-set-of-alphanumeric-characters
+[ex-rand-choose]: categories/algorithms/randomness.md#create-random-passwords-from-a-set-of-user-defined-characters
+
+### Sorting
+
+{{#include categories/algorithms/sorting.incl.md}}
+
+[ex-sort-integers]: categories/algorithms/sorting.md
+[ex-sort-floats]: categories/algorithms/sorting.md#sort-a-vector-of-floats
+[ex-sort-structs]: categories/algorithms/sorting.md#sort-a-vector-of-structs
+
+## Asynchronous
+
+## Authentication
+
+{{#include categories/authentication/index.incl.md}}
+
+[ex-basic-authentication]: categories/authentication/index.md#basic-authentication
+
+## Cloud
+
+## Command-line Interface
+
+{{#include categories/command-line-interface/arguments.incl.md}}
+
+{{#include categories/command-line-interface/ansi_terminal.incl.md}}
+
+[ex-clap-basic]: categories/command-line-interface/arguments.md
+[ex-ansi_term-basic]: categories/command-line-interface/ansi_terminal.md#ansi-terminal
+
+## Command-line Utilities
+
+## Compilers
 
 ## Compression
 
-{{#include categories/compression/index.incl.md}}
+{{#include categories/compression/tar.incl.md}}
+
+[ex-tar-decompress]: categories/compression/tar.md#decompress-a-tarball
+[ex-tar-compress]: categories/compression/tar.md#compress-a-directory-into-tarball
+[ex-tar-strip-prefix]: categories/compression/tar.md#decompress-a-tarball-while-removing-a-prefix-from-the-paths
+
+## Computer Vision
+
+{{#include categories/computer-vision/index.incl.md}}
+
+[ex-open-cv]: categories/computer-vision/index.md#open-cv
 
 ## Concurrency
 
-{{#include categories/concurrency/index.incl.md}}
+## Configuration
 
-## Crypto
+## Cross-platform Development
 
-{{#include categories/cryptography/index.incl.md}}
+## Cryptography
+
+## Data Processing
 
 ## Data Structures
 
-{{#include categories/data-structures/index.incl.md}}
-
 ## Database Access
-
-{{#include categories/database/index.incl.md}}
 
 ## Date and Time
 
-{{#include categories/date-and-time/index.incl.md}}
+## Development Tools
+
+### Development Tools - Build-time tooling
+
+### Development Tools - Cargo Plugins
+
+### Development Tools - Debugging
+
+### Development Tools - Profiling
+
+### Development Tools - Testing
 
 ## Encoding
 
-{{#include categories/encoding/index.incl.md}}
-
 ## Filesystem Management
 
-{{#include categories/filesystem/index.incl.md}}
+## Finance
 
 ## Hardware Support
 
-{{#include categories/hardware-support/index.incl.md}}
-
-## Debugging, Logging
-
-{{#include categories/development-tools::debugging/index.incl.md}}
-
 ## Mathematics
-
-{{#include categories/mathematics/index.incl.md}}
 
 ## Memory Management
 
-{{#include categories/memory-management/index.incl.md}}
-
-## Networking
-
-{{#include categories/network-programming/index.incl.md}}
+## Network Programming
 
 ## Operating Systems
 
-{{#include categories/os/index.incl.md}}
+### Operating Systems - Windows API
+
+## Rust Patterns
+
+## Science
+
+### Robotics
+
+## Text Editors
 
 ## Text Processing
 
-{{#include categories/text-processing/index.incl.md}}
+## Web Programming
 
-## Web Development
+### HTTP Clients
 
-{{#include categories/web-programming/index.incl.md}}
-
-## Other Domains
-
-{{#include other/index.incl.md}}
-
-## Development tools
-
-{{#include categories/development-tools/index.incl.md}}
+### HTTP Servers
 
 ## Links
-
-{{#include links/index.incl.md}}
 
 {{#include refs/link-refs.md}}

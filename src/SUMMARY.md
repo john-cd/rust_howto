@@ -2,8 +2,10 @@
 
 [Introduction](index.md)
 [About](about.md)
+[Index of examples](examples_index.md)
 
 - [Contributing](contributing/index.md)
+  - [Topics of interest](contributing/topics_of_interest.md)
   - [Repository structure](contributing/repo_structure.md)
   - [Environment setup](contributing/dev_environment_setup.md)
   - [Editing](contributing/development_editing.md)
@@ -11,6 +13,8 @@
   - [Optional preprocessors](contributing/optional_preprocessors.md)
   - [API documentation](contributing/api_documentation.md)
   - [Crate publication](contributing/publication.md)
+
+---
 
 - [Language](lang/index.md)
   - [Rust installation and first steps](lang/rust_install.md)
@@ -39,45 +43,47 @@
   - [Vectors](standard_library/vectors.md)
   - [HashMap](standard_library/hashmaps.md)
   - [Strings](standard_library/strings.md)
+  - [Copy-on-write](standard_library/cow.md)
   - [Smart pointers](standard_library/smart_pointers.md)
   - [Automatic trait derivation](standard_library/derive.md)
 
 - [Key crates](key_crates.md)
-
-- [Development tools](categories/development-tools/index.md)
-  - [Cargo](categories/development-tools/cargo/index.md)
-  - [Package layout](categories/development-tools/cargo/package_layout.md)
-  - [Installation](categories/development-tools/installation/index.md)
-    - [Rustup](categories/development-tools/installation/rustup.md)
-  - [Code editing and formatting](categories/text-editors/index.md)
-  - [Compiling](categories/compilers/index.md)
-    - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
-    - [Faster linking](categories/compilers/faster_linking.md)
-    - [Cross-compilation](categories/compilers/cross_compilation.md)
-  - [Build-time tooling](categories/development-tools::build-utils/index.md)
-  - [Testing](categories/development-tools::testing/index.md)
-  - [Performance profiling](categories/development-tools::profiling/index.md)
-  - [Miri](categories/development-tools/other/miri.md)
-  - [Documentation](categories/development-tools/documentation/index.md)
-    - [mdBook](categories/development-tools/documentation/mdbook.md)
-  - [Other](categories/development-tools/other/index.md)
-    - [Other tools](categories/development-tools/other/other_tools.md)
-    - [Crate registries](categories/development-tools/other/crates.md)
-    - [Just](categories/development-tools/other/just.md)
-  - [Versioning](categories/development-tools/versioning/index.md)
+  - [Crates (alphabetic)](crates.md)
+  - [Crates (by category)](categories.md)
 
 ---
 
 - [Algorithms](categories/algorithms/index.md)
-  - [Generate Random Values](categories/algorithms/randomness.md)
-  - [Sort a Vector](categories/algorithms/sorting.md)
+  - [Generate random values](categories/algorithms/randomness.md)
+  - [Sort a vector](categories/algorithms/sorting.md)
 
-- [Command-line applications](categories/command-line-interface/index.md)
-  - [Argument Parsing](categories/command-line-interface/arguments.md)
-  - [ANSI Terminal](categories/command-line-interface/ansi_terminal.md)
+- [Asynchronous](categories/asynchronous/index.md)
+  - [Async and traits](categories/asynchronous/async_traits.md)
+  - [Tokio async runtime](categories/asynchronous/tokio.md)
+  - [Async channels](categories/asynchronous/async_channels.md)
+  - [Streams](categories/asynchronous/streams.md)
+  - [Futures crate](categories/asynchronous/futures.md)
+  - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
+
+- [Authentication](categories/authentication/index.md)
+
+- [Cloud](other/cloud/index.md)
+
+- [Command-line interface](categories/command-line-interface/index.md)
+  - [Argument parsing](categories/command-line-interface/arguments.md)
+  - [ANSI terminal](categories/command-line-interface/ansi_terminal.md)
+
+- [Command-line utilities](categories/command-line-utilities/index.md)
+
+- [Compilers](categories/compilers/index.md)
+  - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
+  - [Faster linking](categories/compilers/faster_linking.md)
+  - [Cross-compilation](categories/compilers/cross_compilation.md)
 
 - [Compression](categories/compression/index.md)
-  - [Working with Tarballs](categories/compression/tar.md)
+  - [Working with tarballs](categories/compression/tar.md)
+
+- [Computer Vision](categories/computer-vision/index.md)
 
 - [Concurrency](categories/concurrency/index.md)
   - [Multi-threading](categories/concurrency/multithreading.md)
@@ -87,19 +93,17 @@
   - [Shared-state concurrency](categories/concurrency/shared_state/index.md)
   - [Concurrent data structures](categories/concurrency/shared_state/concurrent_data_structures.md)
 
-- [Concurrency - Async](categories/asynchronous/index.md)
-  - [Async and traits](categories/asynchronous/async_traits.md)
-  - [Tokio async runtime](categories/asynchronous/tokio.md)
-  - [Async channels](categories/asynchronous/async_channels.md)
-  - [Streams](categories/asynchronous/streams.md)
-  - [Futures crate](categories/asynchronous/futures.md)
-  - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
-
 - [Configuration](categories/config/index.md)
+  - [Environment variables](categories/config/environment_variables.md)
+  - [Configuration management](categories/config/configuration.md)
+
+- [Cross-platform Development](other/cross_platform/index.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Hashing](categories/cryptography/hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
+
+- [Data Processing](other/data_processing/index.md)
 
 - [Data structures](categories/data-structures/index.md)
   - [Bitfield](categories/data-structures/bitfield.md)
@@ -113,7 +117,37 @@
   - [Duration and calculation](categories/date-and-time/duration.md)
   - [Parsing and displaying](categories/date-and-time/parse.md)
 
-- [Encoding and Serialization](categories/encoding/index.md)
+- [Development tools](categories/development-tools/index.md)
+  - [Cargo](categories/development-tools/cargo/index.md)
+    - [Package layout](categories/development-tools/cargo/package_layout.md)
+    - [Crate registries](categories/development-tools/cargo/crates.md)
+  - [Rust and binary installation](categories/development-tools/installation/index.md)
+    - [Rustup](categories/development-tools/installation/rustup.md)
+  - [Code editing](categories/text-editors/index.md)
+  - [Code formatting](categories/development-tools/formatting/index.md)
+  - [Documentation](categories/development-tools/documentation/index.md)
+    - [mdBook](categories/development-tools/documentation/mdbook.md)
+    - [Badges](categories/development-tools/documentation/badges.md)
+    - [Rust playground](categories/development-tools/documentation/playground.md)
+  - [Versioning](categories/development-tools/versioning/index.md)
+  - [Other](categories/development-tools/other/index.md)
+    - [Miri](categories/development-tools/other/miri.md)
+    - [Just](categories/development-tools/other/just.md)
+
+- [Development tools - build-time tooling](categories/development-tools::build-utils/index.md)
+
+- [Development tools - cargo plugins](categories/development-tools::cargo-plugins/index.md)
+
+- [Development tools - debugging, logging](categories/development-tools::debugging/index.md)
+  - [Tracing](categories/development-tools::debugging/tracing.md)
+  - [Log messages](categories/development-tools::debugging/log.md)
+  - [Logging configuration](categories/development-tools::debugging/config_log.md)
+
+- [Development tools - performance profiling](categories/development-tools::profiling/index.md)
+
+- [Development tools - testing](categories/development-tools::testing/index.md)
+
+- [Encoding and serialization](categories/encoding/index.md)
   - [Character sets](categories/encoding/strings.md)
   - [CSV processing](categories/encoding/csv.md)
   - [Structured data](categories/encoding/complex.md)
@@ -128,13 +162,16 @@
   - [Read & write](categories/filesystem/read-write.md)
   - [Directory traversal](categories/filesystem/dir.md)
 
+- [Games](categories/game-engines/index.md)
+
+- [GPU programming](other/gpu/index.md)
+
+- [GUI](categories/gui/index.md)
+
 - [Hardware support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
 
-- [Logging](categories/development-tools::debugging/index.md)
-  - [Tracing](categories/development-tools::debugging/tracing.md)
-  - [Log messages](categories/development-tools::debugging/log.md)
-  - [Logging Configuration](categories/development-tools::debugging/config_log.md)
+- [Machine learning](categories/science/machine_learning/index.md)
 
 - [Mathematics](categories/mathematics/index.md)
   - [Linear algebra](categories/mathematics/linear_algebra.md)
@@ -153,41 +190,38 @@
 - [Operating systems](categories/os/index.md)
   - [External commands](categories/os/external.md)
 
+- [Robotics](categories/science::robotics/index.md)
+
+- [Text editors](categories/text-editors/index.md)
+
 - [Text processing](categories/text-processing/index.md)
   - [Regular expressions](categories/text-processing/regex.md)
     - [Longer regex example](categories/text-processing/regex2.md)
   - [String parsing](categories/text-processing/string_parsing.md)
 
+- [Web Assembly](categories/wasm/index.md)
+
 - [Web programming](categories/web-programming/index.md)
-  - [Extracting links](categories/web-programming/scraping/index.md)
-  - [URL](categories/web-programming/url/index.md)
-  - [Media types](categories/web-programming/mime/index.md)
-  - [Web frameworks](categories/web-programming::http-server/index.md)
-    - [Axum](categories/web-programming::http-server/axum.md)
-    - [Actix](categories/web-programming::http-server/actix.md)
-    - [Other web frameworks](categories/web-programming::http-server/other_frameworks.md)
-    - [Middleware](categories/web-programming::http-server/middleware.md)
-    - [CORS](categories/web-programming::http-server/cors.md)
+  - [Extracting links](categories/web-programming/scraping.md)
+  - [URL](categories/web-programming/url.md)
+  - [Media types](categories/web-programming/mime.md)
+
+- [Web programming - HTTP clients](categories/web-programming::http-client/index.md)
+  - [Making requests](categories/web-programming::http-client/requests.md)
+  - [Calling a web API](categories/web-programming::http-client/apis.md)
+  - [Downloads](categories/web-programming::http-client/download.md)
+
+- [Web programming - HTTP servers](categories/web-programming::http-server/index.md)
+  - [Axum](categories/web-programming::http-server/axum.md)
+  - [Actix](categories/web-programming::http-server/actix.md)
+  - [Other web frameworks](categories/web-programming::http-server/other_frameworks.md)
   - [Static website generators](categories/web-programming::http-server/static_website_generators.md)
-  - [Web Clients](categories/web-programming::http-client/index.md)
-    - [Making Requests](categories/web-programming::http-client/requests.md)
-    - [Calling a Web API](categories/web-programming::http-client/apis.md)
-    - [Downloads](categories/web-programming::http-client/download.md)
-    - [Web Authentication](categories/authentication/index.md)
+  - [Middleware](categories/web-programming::http-server/middleware.md)
+  - [CORS](categories/web-programming::http-server/cors.md)
+
+- [Windows](categories/os::windows-apis/index.md)
 
 ---
-
-- [Other domains](other/index.md)
-  - [Cloud](other/cloud/index.md)
-  - [Cross-platform applications](other/cross_platform/index.md)
-  - [Data](other/data/index.md)
-  - [Games](categories/game-engines/index.md)
-  - [GPU programming](other/gpu/index.md)
-  - [GUI](categories/gui/index.md)
-  - [Machine Learning](categories/science/machine_learning/index.md)
-  - [Robotics](categories/science::robotics/index.md)
-  - [WASM](categories/wasm/index.md)
-  - [Windows](categories/os::windows-apis/index.md)
 
 - [Links](links/index.md)
   - [Example code](links/example_code.md)
@@ -196,8 +230,4 @@
   - [Books](links/books.md)
   - [Companies](links/companies.md)
 
----
-
-[Crates (alphabetic)](crates.md)
-[Crates (by category)](categories.md)
 [Thanks](thanks.md)
