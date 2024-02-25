@@ -1,5 +1,7 @@
 # Command-line argument parsing
 
+{{#include arguments.incl.md}}
+
 ## Using `clap`'s builder API
 
 [![clap][clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![clap-github][clap-github-badge]][clap-github]
@@ -53,4 +55,5 @@ Your favorite number must be 256.
 {{#include ../../../deps/tests/clap.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

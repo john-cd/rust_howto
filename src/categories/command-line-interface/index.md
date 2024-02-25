@@ -2,11 +2,15 @@
 
 Techniques to help create command line interfaces, such as argument parsers, line-editing, or output coloring and formatting
 
-[Command Line Applications in Rust (book)][book-rust-cli]⮳
+{{#include arguments.incl.md}}
 
-{{#include index.incl.md}}
+{{#include ansi_terminal.incl.md}}
+
+{{#include refs.incl.md}}
 
 ## See also
+
+[Command Line Applications in Rust (book)][book-rust-cli]⮳
 
 [![tui-rs][tui-rs-badge]][tui-rs]
 
