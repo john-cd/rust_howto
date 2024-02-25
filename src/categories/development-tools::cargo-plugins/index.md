@@ -18,7 +18,7 @@ Subcommands that extend the capabilities of Cargo.
 
 [![cargo-xtask-github][cargo-xtask-github-badge]][cargo-xtask-github]
 
-## cargo-watch
+## Watch for changes
 
 ```sh
 cargo install cargo-watch
@@ -53,7 +53,7 @@ cargo clippy
 
 Mute a warning using the `#[allow(clippy::lint_name)]` attributes
 
-## Fix
+## Fix Compiler Warnings
 
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
 
