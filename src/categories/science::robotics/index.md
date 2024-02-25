@@ -1,5 +1,7 @@
 # Robotics
 
+Crates related to robotics.
+
 {{#include index.incl.md}}
 
 ## Links

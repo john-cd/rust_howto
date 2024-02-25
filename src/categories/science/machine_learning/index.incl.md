@@ -1,3 +1,5 @@
 | |
 |---|
-| [Machine Learning](index.md) |
+| [Machine Learning][ex-ml] |
+
+[ex-ml]: index.md
