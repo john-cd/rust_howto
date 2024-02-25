@@ -12,4 +12,5 @@ Uses [`reqwest::RequestBuilder::basic_auth`][reqwest::RequestBuilder::basic_auth
 {{#include ../../../deps/tests/basic.rs}}
 ```
 
+[ex-basic-authentication]: #basic-authentication
 {{#include ../../refs/link-refs.md}}
