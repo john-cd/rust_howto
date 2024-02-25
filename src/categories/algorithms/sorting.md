@@ -1,5 +1,7 @@
 # Sorting Vectors
 
+{{#include randomness.incl.md}}
+
 ## Sort a Vector of Integers
 
 [![std][std-badge]][std]  [![cat-science][cat-science-badge]][cat-science]
@@ -30,4 +32,5 @@ Sorts a Vector of Person structs with properties `name` and `age` by its natural
 {{#include ../../../deps/tests/sort_struct.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

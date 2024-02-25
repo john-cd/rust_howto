@@ -1,0 +1,9 @@
+[ex-rand]: randomness.md#generate-random-numbers
+[ex-rand-range]: randomness.md#generate-random-numbers-within-a-range
+[ex-rand-dist]: randomness.md#generate-random-numbers-with-given-distribution
+[ex-rand-custom]: randomness.md#generate-random-values-of-a-custom-type
+[ex-rand-passwd]: randomness.md#create-random-passwords-from-a-set-of-alphanumeric-characters
+[ex-rand-choose]: randomness.md#create-random-passwords-from-a-set-of-user-defined-characters
+[ex-sort-integers]: sorting.md
+[ex-sort-floats]: sorting.md#sort-a-vector-of-floats
+[ex-sort-structs]: sorting.md#sort-a-vector-of-structs

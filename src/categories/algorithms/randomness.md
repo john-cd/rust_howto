@@ -1,5 +1,7 @@
 # Generate Random Values
 
+{{#include randomness.incl.md}}
+
 ## Generate random numbers
 
 [![rand][rand-badge]][rand]  [![cat-science][cat-science-badge]][cat-science]
@@ -66,4 +68,5 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../../deps/tests/rand-choose.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
