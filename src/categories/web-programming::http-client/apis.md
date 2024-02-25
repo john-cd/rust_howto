@@ -1,5 +1,7 @@
 # Calling a Web API
 
+{{#include apis.incl.md}}
+
 ## Query the GitHub API
 
 [![reqwest][reqwest-badge]][reqwest]  [![serde][serde-badge]][serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
@@ -60,4 +62,5 @@ This example uses the [`GitHub API - Rate limiting`][github-api-rate-limiting], 
 {{#include ../../../deps/tests/rate-limited.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

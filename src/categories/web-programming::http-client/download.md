@@ -1,5 +1,7 @@
 # Downloads
 
+{{#include download.incl.md}}
+
 ## Download a file to a temporary directory
 
 [![reqwest][reqwest-badge]][reqwest]  [![tempdir][tempdir-badge]][tempdir]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
@@ -38,4 +40,5 @@ The Range header is defined in [`RFC7233`][http-range-rfc7233].
 {{#include ../../../deps/tests/partial.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

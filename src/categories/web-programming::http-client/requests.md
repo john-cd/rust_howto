@@ -1,5 +1,7 @@
 # Making Requests
 
+{{#include requests.incl.md}}
+
 ## Make a HTTP GET request
 
 [![reqwest][reqwest-badge]][reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
@@ -39,4 +41,5 @@ The request targets <http://httpbin.org/headers> service which responds with a J
 {{#include ../../../deps/tests/header.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

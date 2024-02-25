@@ -1,0 +1,10 @@
+[ex-rest-get]: apis.md#query-the-github-api
+[ex-rest-head]: apis.md#check-if-an-api-resource-exists
+[ex-rest-post]: apis.md#create-and-delete-gist-with-github-api
+[ex-paginated-api]: apis.md#consume-a-paginated-restful-api
+[ex-handle-rate-limited-api]: apis.md#handle-a-rate-limited-api
+[ex-url-download]: download.md#download-a-file-to-a-temporary-directory
+[ex-progress-with-range]: download.md#make-a-partial-download-with-http-range-headers
+[ex-file-post]: download.md#post-a-file-to-paste-rs
+[ex-url-basic]: requests.md#make-a-http-get-request
+[ex-rest-custom-params]: requests.md#set-custom-headers-and-url-parameters-for-a-rest-request
