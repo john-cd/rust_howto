@@ -4,6 +4,8 @@ The most common form of synchronization in an async program is message passing. 
 
 Tokio's `sync` module provides channels that work well with async code.
 
+{{#include async_channels.incl.md}}
+
 ## OneShot
 
 [![tokio][tokio-badge]][tokio]
@@ -34,4 +36,5 @@ Another example:
 
 [![postage][postage-badge]][postage]  [(lib.rs)][postage-librs]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

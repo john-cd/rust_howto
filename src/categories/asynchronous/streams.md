@@ -2,6 +2,8 @@
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a stream of values over time.
 
+{{#include streams.incl.md}}
+
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/streams.rs}}
 ```
@@ -20,4 +22,5 @@ See also Tokio `async-stream`.
 
 [![async-stream][async-stream-badge]][async-stream]  [![async-stream-github][async-stream-github-badge]][async-stream-github]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

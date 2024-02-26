@@ -1,5 +1,7 @@
 # Mixing Async and Blocking Code
 
+{{#include async_and_blocking.incl.md}}
+
 ## Calling blocking code from async code
 
 - Async code should never spend a long time without reaching an `.await`.
@@ -50,4 +52,5 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../../deps/tests/call_async_from_blocking_tokio_runtime.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

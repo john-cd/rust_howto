@@ -1,5 +1,7 @@
 # Async traits
 
+{{#include async_traits.incl.md}}
+
 As of Rust 1.75, it is possible to have `async` functions in traits:
 
 ```rust,editable,mdbook-runnable
@@ -24,4 +26,5 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe,
 {{#include ../../../deps/tests/async_traits3.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
