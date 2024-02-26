@@ -1,5 +1,7 @@
 # External Command
 
+{{#include external.incl.md}}
+
 ## Run an external command and process stdout
 
 [![regex][regex-badge]][regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
@@ -69,4 +71,5 @@ Reads an environment variable via [`std::env::var`][std::env::var].
 {{#include ../../../deps/tests/read-env-variable.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
