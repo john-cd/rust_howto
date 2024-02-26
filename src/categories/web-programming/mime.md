@@ -11,7 +11,7 @@ The following example shows how to parse a [`MIME`][mime::Mime] type from a stri
 `unwrap_or` clause.
 
 ```rust,editable
-{{#include ../../../../deps/tests/string.rs}}
+{{#include ../../../deps/tests/string.rs}}
 ```
 
 ## Get MIME type from filename
