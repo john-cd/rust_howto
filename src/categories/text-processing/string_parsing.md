@@ -1,5 +1,7 @@
 # String Parsing
 
+{{#include string_parsing.incl.md}}
+
 ## Collect Unicode Graphemes
 
 [![unicode-segmentation][unicode-segmentation-badge]][unicode-segmentation]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
@@ -20,4 +22,5 @@ Creates a custom struct `RGB` and implements the `FromStr` trait to convert a pr
 {{#include ../../../deps/tests/from_str.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,5 +1,7 @@
 # Regular Expressions
 
+{{#include regex.incl.md}}
+
 ## Verify and extract login from an email address
 
 [![regex][regex-badge]][regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
@@ -57,4 +59,5 @@ The method [`Regex::replace_all`][regex::Regex::replace_all] replaces all occurr
 {{#include ../../../deps/tests/replace.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
