@@ -1,5 +1,7 @@
 # Linear Algebra
 
+{{#include linear_algebra.incl.md}}
+
 ## Adding matrices
 
 [![ndarray][ndarray-badge]][ndarray]  [![cat-science][cat-science-badge]][cat-science]
@@ -94,4 +96,5 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../../deps/tests/deserialize-matrix.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

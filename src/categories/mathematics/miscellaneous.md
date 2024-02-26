@@ -1,8 +1,10 @@
 # Miscellaneous
 
+{{#include miscellaneous.incl.md}}
+
 ## Big integers
 
-[![num][num-badge]][num]  [![cat-science][cat-science-badge]][cat-science]
+[![num][num-badge]][num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
 
 Calculation for integers exceeding 128 bits are possible with [`BigInt`][num::BigInt]
 
@@ -10,4 +12,5 @@ Calculation for integers exceeding 128 bits are possible with [`BigInt`][num::Bi
 {{#include ../../../deps/tests/big-integers.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

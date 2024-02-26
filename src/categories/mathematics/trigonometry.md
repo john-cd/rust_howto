@@ -1,5 +1,7 @@
 # Trigonometry
 
+{{#include trigonometry.incl.md}}
+
 ## Calculating the side length of a triangle
 
 [![std][std-badge]][std]  [![cat-science][cat-science-badge]][cat-science]
@@ -32,4 +34,5 @@ The following example computes the distance in kilometers between two points on 
 {{#include ../../../deps/tests/latitude-longitude.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

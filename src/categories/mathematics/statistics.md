@@ -1,5 +1,7 @@
 # Statistics
 
+{{#include statistics.incl.md}}
+
 ## Measures of central tendency
 
 [![std][std-badge]][std]  [![cat-science][cat-science-badge]][cat-science]
@@ -38,4 +40,5 @@ The z-score is the number of standard deviations a single measurement spans away
 {{#include ../../../deps/tests/standard-deviation.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

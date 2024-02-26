@@ -1,0 +1,14 @@
+[ex-vector-norm]: linear_algebra.md#vector-norm
+[ex-add-matrices]: linear_algebra.md#adding-matrices
+[ex-multiply-matrices]: linear_algebra.md#multiplying-matrices
+[ex-multiply-scalar-vector-matrix]: linear_algebra.md#multiply-a-scalar-with-a-vector-with-a-matrix
+[ex-invert-matrix]: linear_algebra.md#invert-matrix
+[ex-side-length]: trigonometry.md#calculating-the-side-length-of-a-triangle
+[ex-tan-sin-cos]: trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[ex-latitude-longitude]: trigonometry.md#distance-between-two-points-on-the-earth
+[ex-create-complex]: complex_numbers.md#creating-complex-numbers
+[ex-add-complex]: complex_numbers.md#adding-complex-numbers
+[ex-mathematical-functions]: complex_numbers.md#mathematical-functions
+[ex-central-tendency]: statistics.md#measures-of-central-tendency
+[ex-standard-deviation]: statistics.md#standard-deviation
+[ex-big-integers]: miscellaneous.md#big-integers
