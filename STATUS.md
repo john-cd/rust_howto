@@ -2,8 +2,8 @@
 
 [Introduction](src/index.md) polish the intro
 [About](src/about.md) rewrite
-[Contributing](src/contributing/index.md) polish
-[Index of Examples](src/examples_index.md) rethink
+[Contributing](src/contributing/index.md)
+[Index of Examples](src/examples_index.md) finish
 
 - [Language](src/lang/index.md)
   - [Rust installation and first steps](src/lang/rust_install.md) polish
@@ -40,20 +40,20 @@
   - [Cargo](src/categories/development-tools/cargo/index.md) finish Cargo Plugins / cargo.md
   - [Package layout](src/categories/development-tools/cargo/package_layout.md)
   - [Installation](src/categories/development-tools/installation/index.md)
-    - [Rustup](src/categories/development-tools/installing/rustup.md)
+    - [Rustup](src/categories/development-tools/installation/rustup.md)
   - [Code editing and formatting](src/categories/development-tools/editing/index.md) add latest JetBrains tooling
   - [Compiling](src/categories/compilers/index.md)
     - [Faster linking](src/categories/compilers/faster_linking.md)  finish faster linking
-    - [Cross-compilation](src/categories/development-tools/compiling/cross_compilation.md)
+    - [Cross-compilation](src/categories/compilers/cross_compilation.md)
   - [Build-time tooling](src/categories/development-tools/build_tools.md)
   - [Testing](src/categories/development-tools/testing.md)
   - [Performance profiling](src/categories/development-tools/performance.md)
   - [Miri](src/categories/development-tools/other/miri.md)
-  - [Documentation](src/categories/development-tools/documentation.md)
+  - [Documentation](src/categories/development-tools/documentation/index.md)
     - [mdBook](src/categories/development-tools/documenting/mdbook.md)
   - [Other](src/categories/development-tools/other.md)
     - [Other tools](src/categories/development-tools/other/other_tools.md)
-    - [Crate registries](src/categories/development-tools/other/crates.md)
+    - [Crate registries](src/categories/development-tools/cargo/crates.md)
     - [Just](src/categories/development-tools/other/just.md)
   - [Versioning](src/categories/development-tools/versioning.md)
 
@@ -136,30 +136,30 @@
   - [Trigonometry](src/categories/mathematics/trigonometry.md)
   - [Complex numbers](src/categories/mathematics/complex_numbers.md)
   - [Statistics](src/categories/mathematics/statistics.md)
-  - [Miscellaneous](src/mathematics/miscellaneous.md)
+  - [Miscellaneous](src/categories/mathematics/miscellaneous.md)
 
 - [Memory management](src/categories/memory-management/index.md)
   - [Global static](src/categories/memory-management/global_static.md)
-  - [Lazy initialization TODO](src/categories/mem/lazy_initialization.md)
+  - [Lazy initialization TODO](src/categories/memory-management/lazy_initialization.md)
 
 - [Network](src/categories/network-programming/index.md)
   - [Server](src/categories/network-programming/server.md)
 
 - [Operating system](src/categories/os/index.md)
-  - [External commands](src/os/external.md)
+  - [External commands](src/categories/os/external.md)
 
 - [Text processing](src/categories/text-processing/index.md)
-  - [Regular expressions](src/text/regex.md)
-    - [Longer regex example](src/text/regex2.md)
-  - [String parsing](src/text/string_parsing.md)
+  - [Regular expressions](src/categories/text-processing/regex.md)
+    - [Longer regex example](src/categories/text-processing/regex2.md)
+  - [String parsing](src/categories/text-processing/string_parsing.md)
 
 - [Web programming](src/categories/web-programming/index.md)
-  - [Extracting links](src/web/scraping.md)
-  - [URL](src/web/url.md)
-  - [Media types](src/web/mime.md)
-  - [Web frameworks](src/web/server.md)
-    - [Axum](src/web/server/axum.md)
-    - [Actix](src/web/server/actix.md)
+  - [Extracting links](src/categories/web-programming/scraping.md)
+  - [URL](src/categories/web-programming/url.md)
+  - [Media types](src/categories/web-programming/mime.md)
+  - [Web frameworks](src/categories/web-programming/server.md)
+    - [Axum](src/categories/web-programming/server/axum.md)
+    - [Actix](src/categories/web-programming/actix.md)
     - [Other web frameworks](src/web/server/other_frameworks.md)
     - [Middleware](src/web/server/middleware.md)
     - [CORS](src/web/server/cors.md)

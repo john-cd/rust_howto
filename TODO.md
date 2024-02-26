@@ -1,34 +1,39 @@
 # TODO
 
-- edit summary.md  - WIP
+- edit summary.md - WIP
 
-- finish contributing section - WIP
+- finish index of examples
+
+- improve index for lang
 
 - chrono [chrono::Date::checked_sub_signed] or Date?
 
+- review each new .md file in turn - see STATUS.md
+
+- explanation text for language pages
+
 - fix failing examples in drafts - WIP
 
-- fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown then remove #includes
+- fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
 
-- review GA / GSC - issues with redirects??
+- finish links:
+  - create badge refdefs for links to crates.io, lib.rs, RBE book, etc
 
 - pull request to little book of rust books
 
+- review GA / GSC - issues with redirects??
+
 - incorporate cwd.rs example + any other new examples
 
-- review each new .md file in turn - see STATUS.md
+- add word index <https://github.com/daviddrysdale/mdbook-indexing>
 
 - finish cd_ci.md
 
 - finish improve_speed
 
-- explanation text for language pages
-
 - finish to review ignore / no_run examples
 
-- finish links:
-  - insert badges instead of (github) - see book/temp
-  - create badge refdefs for links to crates.io, lib.rs, RBE book, etc
+- Make addt'l examples out of mdbook-utils
 
 - tower_http example polish; other examples have been checked against the rust playground
 
@@ -37,10 +42,11 @@
 - update thanks
   - add licenses to thanks page ?
 
-- contributing
-  - Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in _ by you, shall be licensed as __, without any additional terms or conditions.
+- review [mdbook-private](https://github.com/RealAtix/mdbook-private/tree/master) or re-add mdbook-hide
 
-- Make addt'l examples out of mdbook-utils
+- [add page TOC ?](https://github.com/zjp-CN/mdbook-theme) or [alternative](https://github.com/slowsage/mdbook-pagetoc) or [mdbook-toc](https://github.com/badboy/mdbook-toc)
+
+- [better search?](https://github.com/ang-zeyu/infisearch)
 
 - <https://www.sheshbabu.com/posts/rust-module-system/>
 
