@@ -1,5 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Yew][ex-yew] | | |
-
-[ex-yew]: index.md#yew
+| [Yew][ex-yew] | [![yew][yew-badge]][yew] | [![cat-wasm][cat-wasm-badge]][cat-wasm] |
