@@ -2,7 +2,7 @@
 
 {{#include ansi_terminal.incl.md}}
 
-[![ansi-term][ansi-term-badge]][ansi-term]
+[![ansi-term][ansi-term-badge]][ansi-term]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 This program depicts the use of [`ansi_term`][ansi-term-crate] crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on ANSI terminals.
 
@@ -18,6 +18,8 @@ There are two main data structures in [`ansi_term`][ansi-term-crate]: [`ANSIStri
 
 ### Bold text in Terminal
 
+[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
+
 For anything more complex than plain foreground colour changes, the code needs to construct `Style` struct. [`Style::new()`][ansi_term::Style::new] creates the struct, and properties chained.
 
 ```rust,editable
@@ -25,6 +27,8 @@ For anything more complex than plain foreground colour changes, the code needs t
 ```
 
 ### Bold and colored text in terminal
+
+[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 `Colour` implements many similar functions as `Style` and can chain methods.
 

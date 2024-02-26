@@ -2,6 +2,8 @@
 
 {{#include index.incl.md}}
 
+[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]
+
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
 [![open-rs-github][open-rs-github-badge]][open-rs-github]
@@ -14,5 +16,5 @@
 
 [![exa-github][exa-github-badge]][exa-github]
 
-[ex-cli-in-rust]: index.md#command-line-utilities-written-in-rust
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,7 @@
 
 ## Using `clap`'s builder API
 
-[![clap][clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![clap-github][clap-github-badge]][clap-github]
+[![clap][clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![clap-github][clap-github-badge]][clap-github]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 This application describes the structure of its command-line interface using
 `clap`'s builder style. The [documentation][clap] gives two other possible ways to instantiate an application.
@@ -49,7 +49,7 @@ Your favorite number must be 256.
 
 ## Using `clap`'s derive API
 
-[![clap][clap-badge]][clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )
+[![clap][clap-badge]][clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/clap.rs}}
