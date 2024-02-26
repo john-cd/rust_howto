@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Robotics](index.md) |  |  |
+| [Robotics][ex-robotics] | [robotics.rs][robotics-rs-website] | [![cat-robotics][cat-robotics-badge]][cat-robotics]  |
