@@ -1,9 +1,5 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Basic Cargo Usage][ex-basic-cargo-usage] |  |  |
-| [Cargo.toml syntax][ex-cargo-toml] |  |  |
-| [Crates.io][ex-crates-io] |  |  |
-
-[ex-basic-cargo-usage]: index.md#basic-cargo-usage
-[ex-cargo-toml]: index.md#cargotoml-and-lock-files
-[ex-crates-io]: crates.md
+| [Basic Cargo Usage][ex-basic-cargo-usage] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Cargo.toml syntax][ex-cargo-toml] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Crates.io][ex-crates-io] | [`crates.io`][crates-io] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

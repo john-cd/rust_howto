@@ -1,6 +1,6 @@
 # mdBook
 
-[![mdbook-github][mdbook-github-badge]][mdbook-github]
+[![mdbook-github][mdbook-github-badge]][mdbook-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 [mdBook][mdbook-github]⮳: a utility to create modern online books from Markdown files.
 
@@ -17,6 +17,6 @@ mdbook serve --open
 
 [mdBook documentation][mdbook-documentation]⮳
 
-[![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]
+[![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include ../../../refs/link-refs.md}}

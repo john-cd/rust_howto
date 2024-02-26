@@ -1,8 +1,10 @@
 # Formatting and Linting
 
+{{#include index.incl.md}}
+
 ## Rustfmt
 
-[![rustfmt-github][rustfmt-github-badge]][rustfmt-github]
+[![rustfmt-github][rustfmt-github-badge]][rustfmt-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 Install with `rustup component add rustfmt`
 
@@ -71,4 +73,5 @@ rustfmt --help=config
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]` , `#[rustfmt::skip::macros(macro_name)]` , or `#![rustfmt::skip::attributes(custom_attribute)]`
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

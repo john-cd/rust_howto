@@ -1,9 +1,5 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Rustfmt][ex-formatting] |  |  |
-| [Rustfmt Configuration][ex-rustfmt-config] |  |  |
-| [Formatting Attributes][ex-formatting-attributes] |  |  |
-
-[ex-formatting]: index.md#rustfmt
-[ex-rustfmt-config]: index.md#rustfmt-configuration
-[ex-formatting-attributes]: index.md#formatting-attributes
+| [Rustfmt][ex-formatting] | [![rustfmt-github][rustfmt-github-badge]][rustfmt-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Rustfmt Configuration][ex-rustfmt-config] | [![rustfmt-github][rustfmt-github-badge]][rustfmt-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Formatting Attributes][ex-formatting-attributes] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

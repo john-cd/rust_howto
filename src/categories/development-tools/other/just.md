@@ -2,7 +2,7 @@
 
 `just` is a command runner / Make replacement.
 
-[https://just.systems/][just-website]⮳
+[https://just.systems/][just-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 [Just Programmer's Manual][just-programmer-manual]⮳
 
@@ -67,4 +67,5 @@ foo:
   echo "$hello from Bash!"
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

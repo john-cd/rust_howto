@@ -1,5 +1,7 @@
 # Log Messages
 
+{{#include log.incl.md}}
+
 ## Log a debug message to the console
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
@@ -65,4 +67,5 @@ Logs messages to [UNIX `syslog`][unix-syslog]. Initializes logger backend with [
 {{#include ../../../deps/tests/log-syslog.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

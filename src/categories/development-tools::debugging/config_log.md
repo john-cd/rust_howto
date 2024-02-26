@@ -1,5 +1,7 @@
 # Configure Logging
 
+{{#include config_log.incl.md}}
+
 ## Enable log levels per module
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
@@ -77,4 +79,5 @@ encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode:
 {{#include ../../../deps/tests/log-custom.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,5 +1,7 @@
 # Versioning
 
+{{#include index.incl.md}}
+
 ## Parse and increment a version string
 
 [![semver][semver-badge]][semver]  [![cat-config][cat-config-badge]][cat-config]
@@ -57,5 +59,5 @@ Runs `git --version` using [`Command`][std::process::Command] then parses the ve
 {{#include ../../../../deps/tests/semver-command.rs}}
 ```
 
-{{#include index.incl.md}}
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

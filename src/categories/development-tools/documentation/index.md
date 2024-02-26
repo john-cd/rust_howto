@@ -2,6 +2,8 @@
 
 {{#include index.incl.md}}
 
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+
 [The rustdoc book][book-rustdoc]⮳
 
 [`docs.rs`][docs-rs]⮳: open-source documentation host for Rust crates.
@@ -53,4 +55,5 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 # fn main() {}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

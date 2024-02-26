@@ -4,7 +4,7 @@
 
 ## Basic `cargo` usage
 
-[The Cargo book][book-cargo]⮳
+[The Cargo book][book-cargo]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 `cargo help` or `cargo <command> --help`
 
@@ -92,4 +92,5 @@ or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` i
 cargo add actix-web@4.0.0
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

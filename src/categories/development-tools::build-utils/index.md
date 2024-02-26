@@ -4,9 +4,11 @@ Utilities for build scripts and other build time steps.
 
 This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a **build.rs** file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See crates.io's [documentation on the matter][book-cargo-build-script] for more information.
 
+{{#include index.incl.md}}
+
 ## Compile and link statically to a bundled C library
 
-[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-build-utils][cat-build-utils-badge]][cat-build-utils]
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][cc] crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
 
@@ -143,4 +145,5 @@ void print_app_info() {
 {{#include ../../../deps/tests/cc-defines1.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

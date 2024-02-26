@@ -1,0 +1,9 @@
+[ex-log-debug]: log.md#log-a-debug-message-to-the-console
+[ex-log-error]: log.md#log-an-error-message-to-the-console
+[ex-log-stdout]: log.md#log-to-stdout-instead-of-stderr
+[ex-log-custom-logger]: log.md#log-messages-with-a-custom-logger
+[ex-log-syslog]: log.md#log-to-the-unix-syslog
+[ex-log-mod]: config_log.md#enable-log-levels-per-module
+[ex-log-env-variable]: config_log.md#use-a-custom-environment-variable-to-set-up-logging
+[ex-log-timestamp]: config_log.md#include-timestamp-in-log-messages
+[ex-log-custom]: config_log.md#log-messages-to-a-custom-location

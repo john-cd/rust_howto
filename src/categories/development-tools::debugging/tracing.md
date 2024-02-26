@@ -1,6 +1,8 @@
 # Logs
 
-[![tracing][tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]
+{{#include tracing.incl.md}}
+
+[![tracing][tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 [![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [(crates.io)][tracing-subscriber-crate]
 
@@ -74,10 +76,13 @@ Holding the drop guard returned by `Span::enter` across `.await` points will res
 
 ## See also
 
+[![cat-debugging][cat-debugging-badge]][cat-debugging]
+
 [![env_logger][env_logger-badge]][env_logger]
 
 [![log][log-badge]][log]
 
 [![log4rs][log4rs-badge]][log4rs]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

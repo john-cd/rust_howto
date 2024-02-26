@@ -1,19 +1,10 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Code coverage][ex-code-coverage] |  |  |
-| [Fix compiler warnings][ex-fix-compiler-warnings] |  |  |
-| [Format][ex-format] |  |  |
-| [Lint][ex-lint] |  |  |
-| [Security Audit][ex-security-audit] |  |  |
-| [Templates][ex-templates] |  |  |
-| [Unused dependencies][ex-unused-dependencies] |  |  |
-| [Watch for changes][ex-watch-for-changes] |  |  |
-
-[ex-code-coverage]: index.md#code-coverage
-[ex-fix-compiler-warnings]: index.md#fix-compiler-warnings
-[ex-format]: index.md#formatting
-[ex-lint]: index.md#linting
-[ex-security-audit]: index.md#security-audit
-[ex-templates]: index.md#templates
-[ex-unused-dependencies]: index.md#unused-dependencies
-[ex-watch-for-changes]: index.md#watch-for-changes
+| [Code coverage][ex-code-coverage] | [![tarpaulin-github][tarpaulin-github-badge]][tarpaulin-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Fix compiler warnings][ex-fix-compiler-warnings] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Format][ex-format] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Lint][ex-lint] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Security Audit][ex-security-audit] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Templates][ex-templates] | [Cargo Generate][cargo-generate-crate] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Unused dependencies][ex-unused-dependencies] | [udeps][cargo-udeps-crate] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Watch for changes][ex-watch-for-changes] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
