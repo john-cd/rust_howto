@@ -1,3 +1,3 @@
-| |
-|---|
-| [Robotics](index.md) |
+| Recipe | Crates | Categories |
+|---|---|---|
+| [Robotics](index.md) |  |  |

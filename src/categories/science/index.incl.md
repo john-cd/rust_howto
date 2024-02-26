@@ -1,5 +1,5 @@
-| |
-|---|
-| [Machine Learning][ex-ml] |
+| Recipe | Crates | Categories |
+|---|---|---|
+| [Machine Learning][ex-ml] |  |  |
 
 [ex-ml]: machine_learning/index.md

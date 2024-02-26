@@ -1,8 +1,8 @@
-|  |
-|---|
-| [rustup][ex-rustup] |
-| [Cargo install][ex-cargo-install] |
-| [Cargo binstall][ex-cargo-binstall] |
+| Recipe | Crates | Categories |
+|---|---|---|
+| [rustup][ex-rustup] |  |  |
+| [Cargo install][ex-cargo-install] |  |  |
+| [Cargo binstall][ex-cargo-binstall] |  |  |
 
 [ex-rustup]: rustup.md
 [ex-cargo-install]: index.md#cargo-install

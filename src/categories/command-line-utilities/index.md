@@ -14,4 +14,5 @@
 
 [![exa-github][exa-github-badge]][exa-github]
 
+[ex-cli-in-rust]: index.md#command-line-utilities-written-in-rust
 {{#include ../../refs/link-refs.md}}

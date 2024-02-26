@@ -1,9 +1,9 @@
-|  |
-|---|
-| [Mutexes][ex-mutex] |
-| [Parking Lot][ex-parking-lot] |
-| [Atomics][ex-atomics] |
-| [Concurrent data structures][ex-concurrent-data-structures] |
+| Recipe | Crates | Categories |
+|---|---|---|
+| [Mutexes][ex-mutex] |  |  |
+| [Parking Lot][ex-parking-lot] |  |  |
+| [Atomics][ex-atomics] |  |  |
+| [Concurrent data structures][ex-concurrent-data-structures] |  |  |
 
 [ex-mutex]: index.md#mutex
 [ex-parking-lot]: index.md#parking-lot

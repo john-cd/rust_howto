@@ -1,4 +1,4 @@
-|  | Crates | Categories |
+| Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Async traits][ex-async-traits] |  |  |
 | [Tokio async runtime][ex-tokio] |  |  |

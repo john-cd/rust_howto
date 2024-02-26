@@ -6,8 +6,6 @@ Techniques to help create command line interfaces, such as argument parsers, lin
 
 {{#include ansi_terminal.incl.md}}
 
-{{#include refs.incl.md}}
-
 ## See also
 
 [Command Line Applications in Rust (book)][book-rust-cli]⮳
@@ -16,4 +14,5 @@ Techniques to help create command line interfaces, such as argument parsers, lin
 
 [![r3bl-tuify][r3bl-tuify-badge]][r3bl-tuify]  [(crates.io)][r3bl_tuify-crate]  [(blog)][tuify-blog]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
