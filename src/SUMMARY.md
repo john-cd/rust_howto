@@ -199,7 +199,7 @@
     - [Longer regex example](categories/text-processing/regex2.md)
   - [String parsing](categories/text-processing/string_parsing.md)
 
-- [Web Assembly](categories/wasm/index.md)
+- [Web assembly](categories/wasm/index.md)
 
 - [Web programming](categories/web-programming/index.md)
   - [Extracting links](categories/web-programming/scraping.md)

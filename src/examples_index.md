@@ -101,6 +101,11 @@
 
 ## Cloud
 
+{{#include other/cloud/index.incl.md}}
+
+[ex-aws]: other/cloud/index.md#aws
+[ex-dapr]: other/cloud/index.md#dapr
+
 ## Command-line Interface
 
 {{#include categories/command-line-interface/arguments.incl.md}}
@@ -117,6 +122,26 @@
 [ex-cli-in-rust]: categories/command-line-utilities/index.md#command-line-utilities-written-in-rust
 
 ## Compilers
+
+### Cross-compilation
+
+{{#include categories/compilers/cross_compilation.incl.md}}
+
+### Faster linking
+
+{{#include categories/compilers/faster_linking.incl.md}}
+
+### Compilation duration reduction
+
+{{#include categories/compilers/reduce_compilation_duration.incl.md}}
+
+[ex-cross]: categories/compilers/cross_compilation.md#cross
+[ex-faster-linking]: categories/compilers/faster_linking.md
+[ex-mold]: categories/compilers/faster_linking.md#alternative---mold-linker
+[ex-dynamic-linking]: categories/compilers/reduce_compilation_duration.md#dynamic-linking
+[ex-incremental-compilation]: categories/compilers/reduce_compilation_duration.md#incremental-compilation
+[ex-measuring-build-times]: categories/compilers/reduce_compilation_duration.md#measuring-build-times
+[ex-optimization-levels]: categories/compilers/reduce_compilation_duration.md#optimization-levels
 
 ## Compression
 
@@ -136,13 +161,53 @@
 
 ## Configuration
 
+### Configuration Management
+
+{{#include categories/config/configuration.incl.md}}
+
+### Environment Variables
+
+{{#include categories/config/environment_variables.incl.md}}
+
+[ex-config]: categories/config/configuration.md#config
+[ex-confy]: categories/config/configuration.md#confy
+[ex-dotenvy]: categories/config/environment_variables.md#dotenvy
+[ex-env]: categories/config/environment_variables.md#stdenv
+[ex-envy]: categories/config/environment_variables.md#envy
+
 ## Cross-platform Development
+
+{{#include other/cross_platform/index.incl.md}}
+
+[ex-cross-platform]: other/cross_platform/index.md#crux
 
 ## Cryptography
 
+## Encryption
+
+{{#include categories/cryptography/encryption.incl.md}}
+
+## Hashing
+
+{{#include categories/cryptography/hashing.incl.md}}
+
+[ex-sha-digest]: categories/cryptography/hashing.md#calculate-the-sha-256-digest-of-a-file
+[ex-hmac]: categories/cryptography/hashing.md#sign-and-verify-a-message-with-hmac-digest
+[ex-pbkdf2]: categories/cryptography/encryption.md#salt-and-hash-a-password-with-pbkdf2
+
 ## Data Processing
 
+{{#include other/data_processing/index.incl.md}}
+
+[ex-polars]: other/data_processing/index.md#polars
+[ex-arrow]: other/data_processing/index.md#arrow
+[ex-datafusion]: other/data_processing/index.md#datafusion
+
 ## Data Structures
+
+{{#include categories/data-structures/bitfield.incl.md}}
+
+[ex-bitflags]: categories/data-structures/bitfield.md#define-and-operate-on-a-type-represented-as-a-bitfield
 
 ## Database Access
 
@@ -165,6 +230,12 @@
 ## Filesystem Management
 
 ## Finance
+
+## GPU Programming
+
+{{#include other/gpu/index.incl.md}}
+
+[ex-rust-gpu]: other/gpu/index.md#rust-gpu
 
 ## Hardware Support
 
@@ -190,9 +261,35 @@
 
 ## Web Programming
 
-### HTTP Clients
+### Uniform Resource Locations (URL)
 
-### HTTP Servers
+{{#include categories/web-programming/url.incl.md}}
+
+### Media Types (MIME)
+
+{{#include categories/web-programming/mime.incl.md}}
+
+### Scraping Web Pages
+
+{{#include categories/web-programming/scraping.incl.md}}
+
+[ex-mime-from-string]: categories/web-programming/mime.md#get-mime-type-from-string
+[ex-mime-from-filename]: categories/web-programming/mime.md#get-mime-type-from-filename
+[ex-http-response-mime-type]: categories/web-programming/mime.md#parse-the-mime-type-of-a-http-response
+
+[ex-extract-links-webpage]: categories/web-programming/scraping.md#extract-all-links-from-a-webpage-html
+[ex-check-broken-links]: categories/web-programming/scraping.md#check-a-webpage-for-broken-links
+[ex-extract-mediawiki-links]: categories/web-programming/scraping.md#extract-all-unique-links-from-a-mediawiki-markup
+
+[ex-url-parse]: categories/web-programming/url.md#parse-a-url-from-a-string-to-a-url-type
+[ex-url-base]: categories/web-programming/url.md#create-a-base-url-by-removing-path-segments
+[ex-url-new-from-base]: categories/web-programming/url.md#create-new-urls-from-a-base-url
+[ex-url-origin]: categories/web-programming/url.md#extract-the-url-origin-scheme--host--port
+[ex-url-rm-frag]: categories/web-programming/url.md#remove-fragment-identifiers-and-query-pairs-from-a-url
+
+## HTTP Clients
+
+## HTTP Servers
 
 ## Links
 
