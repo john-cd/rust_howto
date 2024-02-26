@@ -1,5 +1,7 @@
 # Working with Postgres
 
+{{#include postgres.incl.md}}
+
 ## Create tables in a Postgres database
 
 [![postgres][postgres-badge]][postgres]  [![cat-database][cat-database-badge]][cat-database]
@@ -32,4 +34,5 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 {{#include ../../../deps/tests/aggregate_data.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

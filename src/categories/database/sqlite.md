@@ -1,5 +1,7 @@
 # SQLite
 
+{{#include sqlite.incl.md}}
+
 ## Create a SQLite database
 
 [![rusqlite][rusqlite-badge]][rusqlite]  [![rusqlite-documentation][rusqlite-documentation-badge]][rusqlite-documentation]  [![cat-database][cat-database-badge]][cat-database]
@@ -37,4 +39,5 @@ In the following example, colors add to a table having a unique constraint on th
 {{#include ../../../deps/tests/transactions.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

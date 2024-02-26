@@ -1,18 +1,4 @@
-# Index
 
-{{#include categories/concurrency/index.incl.md}}
-
-## Crypto
-
-{{#include categories/cryptography/index.incl.md}}
-
-## Data Structures
-
-{{#include categories/data-structures/index.incl.md}}
-
-## Database Access
-
-{{#include categories/database/index.incl.md}}
 
 ## Date and Time
 

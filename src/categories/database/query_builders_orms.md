@@ -1,5 +1,7 @@
 # Query builders and ORMs
 
+{{#include query_builders_orms.incl.md}}
+
 ## Sqlx
 
 [![sqlx][sqlx-badge]][sqlx]  [![sqlx-github][sqlx-github-badge]][sqlx-github]  [(lib.rs)][sqlx-librs]
@@ -16,4 +18,5 @@
 
 [![diesel][diesel-badge]][diesel]  [(lib.rs)][diesel-librs]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
