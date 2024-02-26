@@ -1,5 +1,3 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Cross-platform development with Crux][ex-cross-platform] |  |  |
-
-[ex-cross-platform]: index.md#crux
+| [Cross-platform development with Crux][ex-cross-platform] | [![crux][crux-badge]][crux] |  |
