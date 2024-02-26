@@ -447,3 +447,6 @@ combinators
 hashmap
 hashmaps
 refcell
+dapr
+seaorm
+stdenv
