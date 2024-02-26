@@ -6,7 +6,9 @@ Comprehending the world from video or images.
 
 ## Open CV
 
+[![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]
+
 [OpenCV (example)][opencv-example]⮳
 
-[ex-open-cv]: index.md#open-cv
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
