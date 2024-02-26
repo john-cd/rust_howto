@@ -20,7 +20,5 @@
 
 [![csv][csv-badge]][csv]
 
-[ex-polars]: index.md#polars
-[ex-arrow]: index.md#arrow
-[ex-datafusion]: index.md#datafusion
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

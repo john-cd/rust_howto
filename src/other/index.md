@@ -1,12 +1,20 @@
 # Other Domains
 
-{{#include index.incl.md}}
+## Cloud
 
-[ex-aws]: cloud/index.md#aws
-[ex-dapr]: cloud/index.md#dapr
-[ex-cross-platform]: cross_platform/index.md#crux
-[ex-polars]: data_processing/index.md#polars
-[ex-arrow]: data_processing/index.md#arrow
-[ex-datafusion]: data_processing/index.md#datafusion
-[ex-rust-gpu]: gpu/index.md#rust-gpu
+{{#include other/cloud/index.incl.md}}
+
+## Cross-platform Applications
+
+{{#include other/cross_platform/index.incl.md}}
+
+## Data Processing
+
+{{#include other/data_processing/index.incl.md}}
+
+## GPU
+
+{{#include other/gpu/index.incl.md}}
+
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
