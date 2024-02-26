@@ -2,6 +2,8 @@
 
 {{#include faster_linking.incl.md}}
 
+[![cat-compilers][cat-compilers-badge]][cat-compilers]
+
 The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking than the default Rust linker.
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
@@ -39,6 +41,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 `cargo-binutils` packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
 
 ## Alternative - Mold linker
+
+[![cat-compilers][cat-compilers-badge]][cat-compilers]
 
 `mold` is up to 5× faster than `lld`, but with a few caveats like limited platform support and occasional stability issues. To install mold, run `sudo apt-get install mold clang` in Ubuntu.
 

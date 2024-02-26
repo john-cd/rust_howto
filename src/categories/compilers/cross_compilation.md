@@ -4,7 +4,7 @@
 
 ## Cross
 
-[![cross-github][cross-github-badge]][cross-github]
+[![cross-github][cross-github-badge]][cross-github]  [![cat-compilers][cat-compilers-badge]][cat-compilers]
 
 [cross][cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires `rustup` and `Docker` or `Podman`.
 
