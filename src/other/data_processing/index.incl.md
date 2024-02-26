@@ -1,9 +1,5 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Polars][ex-polars] | | |
-| [Arrow][ex-arrow] | | |
-| [Datafusion][ex-datafusion] | | |
-
-[ex-polars]: index.md#polars
-[ex-arrow]: index.md#arrow
-[ex-datafusion]: index.md#datafusion
+| [Polars][ex-polars] | [![polars][polars-badge]][polars] | |
+| [Arrow][ex-arrow] | [![arrow-rs][arrow-rs-badge]][arrow-rs] | |
+| [Datafusion][ex-datafusion] | [![datafusion][datafusion-badge]][datafusion] | |
