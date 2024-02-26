@@ -2,5 +2,13 @@
 
 Manage the complexity of dealing with the fourth dimension.
 
-{{#include index.incl.md}}
+## Duration and Calculation
+
+{{#include duration.incl.md}}
+
+## Parsing and Displaying
+
+{{#include parse.incl.md}}
+
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

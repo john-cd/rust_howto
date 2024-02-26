@@ -1,5 +1,7 @@
 # Parsing and Displaying
 
+{{#include parse.incl.md}}
+
 ## Examine the date and time
 
 [![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
@@ -46,4 +48,5 @@ Escape sequences that are available for the [`DateTime::parse_from_str`][chrono:
 {{#include ../../../deps/tests/string.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

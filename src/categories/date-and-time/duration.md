@@ -1,5 +1,7 @@
 # Duration and Calculation
 
+{{#include duration.incl.md}}
+
 ## Measure the elapsed time between two code sections
 
 [![std][std-badge]][std]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
@@ -37,4 +39,5 @@ Gets the local time and displays it using [`offset::Local::now`][chrono::offset:
 {{#include ../../../deps/tests/timezone.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
