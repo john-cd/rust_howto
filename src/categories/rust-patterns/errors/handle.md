@@ -1,5 +1,7 @@
 # Error Handling
 
+{{#include handle.incl.md}}
+
 ## Handle errors correctly in main
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
@@ -54,4 +56,5 @@ Error level - description
 
 Run the recipe with `RUST_BACKTRACE=1` to display a detailed [`backtrace`][error_chain::ChainedError::backtrace] associated with this error.
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

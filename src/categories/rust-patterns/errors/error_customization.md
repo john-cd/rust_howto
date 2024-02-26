@@ -1,10 +1,12 @@
 # Custom Errors
 
+{{#include error_customization.incl.md}}
+
 Use `Anyhow` if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use `thiserror` if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Anyhow
 
-[![anyhow][anyhow-badge]][anyhow]  [(crates.io)][anyhow-crate]
+[![anyhow][anyhow-badge]][anyhow]  [(crates.io)][anyhow-crate]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
 
@@ -57,4 +59,5 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 Do not use [Error Chain][error-chain]⮳, which is deprecated.
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
