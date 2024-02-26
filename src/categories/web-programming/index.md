@@ -2,6 +2,8 @@
 
 Create applications for the web.
 
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
+
 ## Uniform Resource Locations (URL)
 
 {{#include url.incl.md}}

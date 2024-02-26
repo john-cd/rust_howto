@@ -4,7 +4,7 @@
 
 ## Tower
 
-[![tower][tower-badge]][tower]
+[![tower][tower-badge]][tower]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`Tower`][tower]⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
@@ -18,7 +18,7 @@ A number of third-party libraries support `Tower` and the `Service` trait: [`hyp
 
 ## Tower HTTP
 
-[![tower-http][tower-http-badge]][tower-http]
+[![tower-http][tower-http-badge]][tower-http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`Tower HTTP`][tower-http]⮳ contains HTTP specific Tower utilities.
 
@@ -27,6 +27,8 @@ A number of third-party libraries support `Tower` and the `Service` trait: [`hyp
 ```
 
 ## Alternatives
+
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`Trillium`][trillium-website]⮳
 

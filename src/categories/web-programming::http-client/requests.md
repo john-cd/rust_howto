@@ -4,7 +4,7 @@
 
 ## Make a HTTP GET request
 
-[![reqwest][reqwest-badge]][reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
+[![reqwest][reqwest-badge]][reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]
 
 Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest::blocking::get`][reqwest::blocking::get] Prints obtained [`reqwest::blocking::Response`][reqwest::blocking::Response] status and headers. Reads HTTP response body into an allocated [`String`][std::string::String] using [`read_to_string`][std::io::Read::read_to_string]
 
@@ -27,7 +27,7 @@ Uses the asynchronous versions of [`reqwest`][reqwest], both [`reqwest::get`][re
 
 ## Set custom headers and URL parameters for a REST request
 
-[![reqwest][reqwest-badge]][reqwest]  [![hyper][hyper-badge]][hyper]  [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
+[![reqwest][reqwest-badge]][reqwest]  [![hyper][hyper-badge]][hyper]  [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 Sets both standard and custom HTTP headers as well as URL parameters for a HTTP GET request. Creates a custom header of type `XPoweredBy` with [`hyper::header!`][hyper::header!] macro.
 
