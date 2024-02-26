@@ -2,5 +2,21 @@
 
 Encoding and/or decoding data from one data format to another.
 
-{{#include index.incl.md}}
+## Character Sets
+
+{{#include strings.incl.md}}
+
+## CSV Processing
+
+{{#include csv.incl.md}}
+
+## Structured Data
+
+{{#include complex.incl.md}}
+
+## Serde
+
+{{#include serde.incl.md}}
+
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

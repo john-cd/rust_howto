@@ -1,5 +1,7 @@
 # Structured Data
 
+{{#include complex.incl.md}}
+
 ## Serialize and deserialize unstructured JSON
 
 [![serde_json][serde_json-badge]][serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
@@ -40,4 +42,5 @@ Parse TOML into your own structs using [`Serde`][serde].
 {{#include ../../../deps/tests/endian-byte.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

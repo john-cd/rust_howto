@@ -1,5 +1,7 @@
 # CSV processing
 
+{{#include csv.incl.md}}
+
 ## Read CSV records
 
 [![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
@@ -82,4 +84,5 @@ See [`csv::Reader::deserialize`][csv::Reader::deserialize]  [`serde::Deserialize
 {{#include ../../../deps/tests/transform.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

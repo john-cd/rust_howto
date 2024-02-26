@@ -1,5 +1,7 @@
 # Character Sets
 
+{{#include strings.incl.md}}
+
 ## Percent-encode a string
 
 [![percent-encoding][percent-encoding-badge]][percent-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
@@ -48,4 +50,5 @@ Encodes byte slice into `base64` String using [`encode`][base64::encode] and dec
 {{#include ../../../deps/tests/base64.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

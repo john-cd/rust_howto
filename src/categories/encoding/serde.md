@@ -1,5 +1,7 @@
 # Serialization
 
+{{#include serde.incl.md}}
+
 [![serde][serde-badge]][serde]
 
 ## See also
@@ -10,4 +12,5 @@
 
 [![serde-ignored-github][serde-ignored-github-badge]][serde-ignored-github]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
