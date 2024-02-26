@@ -234,9 +234,29 @@
 
 ## Date and Time
 
+### Duration and Calculation
+
+{{#include categories/date-and-time/duration.incl.md}}
+
+### Parsing and Displaying
+
+{{#include categories/date-and-time/parse.incl.md}}
+
+[ex-measure-elapsed-time]: categories/date-and-time/duration.md#measure-the-elapsed-time-between-two-code-sections
+[ex-datetime-arithmetic]: categories/date-and-time/duration.md#perform-checked-date-and-time-calculations
+[ex-convert-datetime-timezone]: categories/date-and-time/duration.md#convert-a-local-time-to-another-timezone
+[ex-examine-date-and-time]: categories/date-and-time/parse.md#examine-the-date-and-time
+[ex-convert-datetime-timestamp]: categories/date-and-time/parse.md#convert-date-to-unix-timestamp-and-vice-versa
+[ex-format-datetime]: categories/date-and-time/parse.md#display-formatted-date-and-time
+[ex-parse-datetime]: categories/date-and-time/parse.md#parse-string-into-datetime-struct
+
 ## Development Tools
 
 ### Development Tools - Build-time tooling
+
+[ex-cc-static-bundled]: categories/development-tools::build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library
+[ex-cc-static-bundled-cpp]: categories/development-tools::build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library-1
+[ex-cc-custom-defines]: categories/development-tools::build-utils/index.md#compile-a-c-library-while-setting-custom-defines
 
 ### Development Tools - Cargo Plugins
 
