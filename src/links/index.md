@@ -22,6 +22,5 @@
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists]⮳
 - [Rust quizz][rust-quizz]⮳
 
-## In this section
-
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
