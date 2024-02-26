@@ -1,5 +1,7 @@
 # Streams
 
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a stream of values over time.
 
 {{#include streams.incl.md}}

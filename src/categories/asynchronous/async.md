@@ -8,6 +8,8 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 
 ## Basic Example
 
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async.rs}}
 ```
@@ -37,6 +39,8 @@ Rust's implementation of `async` differs from most languages in a few ways:
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
+
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 In most cases, prefer the [Tokio](./tokio.md) runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 

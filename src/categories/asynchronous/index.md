@@ -24,6 +24,8 @@ Here are the topics we’ll cover:
 
 ## Basic Example
 
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async.rs}}
 ```
