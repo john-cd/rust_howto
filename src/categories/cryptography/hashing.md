@@ -1,5 +1,7 @@
 # Hashing
 
+{{#include hashing.incl.md}}
+
 ## Calculate the SHA-256 digest of a file
 
 [![ring][ring-badge]][ring]  [![data-encoding][data-encoding-badge]][data-encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
@@ -20,4 +22,5 @@ Uses [`ring::hmac`][ring::hmac] to creates a [`Signature`][ring::signature::Sign
 {{#include ../../../deps/tests/hmac.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

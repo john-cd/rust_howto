@@ -1,5 +1,7 @@
 # Encryption
 
+{{#include encryption.incl.md}}
+
 <a name="ex-pbkdf2"></a>
 
 ## Salt and hash a password with PBKDF2
@@ -14,4 +16,5 @@ Uses [`ring::pbkdf2`][ring::pbkdf2] to hash a salted password using the PBKDF2 k
 {{#include ../../../deps/tests/pbkdf2.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
