@@ -1,5 +1,7 @@
 # Option
 
+{{#include option.incl.md}}
+
 [![std][std-badge]][std]
 
 Rust has no `null`. Instead, use [`std::option::Option`][std::option::Option]⮳:
@@ -48,4 +50,5 @@ These methods extract the contained value in an `Option<T>` when it is the Some 
 {{#include ../../deps/tests/options3.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

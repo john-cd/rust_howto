@@ -1,8 +1,10 @@
 # Strings
 
-[![std][std-badge]][std]
+{{#include strings.incl.md}}
 
 ## String type
+
+[![std][std-badge]][std]
 
 ```rust,editable
 {{#include ../../deps/tests/strings.rs}}
@@ -28,4 +30,5 @@ Here are several common methods to concatenate Strings:
 
 Examples from [concatenation_benchmarks-rs]( https://github.com/hoodie/concatenation_benchmarks-rs )
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
