@@ -1,8 +1,10 @@
 # Multithreading
 
+{{#include multithreading.incl.md}}
+
 ## Spawn, join
 
-[![std][std-badge]][std]
+[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ```rust,editable
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
@@ -12,7 +14,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Scoped threads
 
-[![std][std-badge]][std]
+[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 [Scoped threads][std::thread::scope]⮳
 
@@ -22,7 +24,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ## Rayon - parallel processing
 
-[![rayon][rayon-badge]][rayon]  [![rayon-github][rayon-github-badge]][rayon-github]
+[![rayon][rayon-badge]][rayon]  [![rayon-github][rayon-github-badge]][rayon-github]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ### Parallel iteration
 
@@ -34,11 +36,15 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 ### Parallel sorting
 
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_parsort.rs}}
 ```
 
 ### Custom parallel tasks
+
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Rayon implements [`join`][rayon::join]⮳, [`scope`][rayon::scope]⮳, [`spawn`][rayon::spawn]⮳ that may run on the global or a custom [Rayon threadpool][rayon::ThreadPool]⮳.
 
@@ -50,4 +56,5 @@ Rayon implements [`join`][rayon::join]⮳, [`scope`][rayon::scope]⮳, [`spawn`]
 
 [![threadpool][threadpool-badge]][threadpool]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

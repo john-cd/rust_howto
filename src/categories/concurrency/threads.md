@@ -1,5 +1,7 @@
 # Threads
 
+{{#include threads.incl.md}}
+
 ## Spawn a short-lived thread
 
 [![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
@@ -42,7 +44,7 @@ This example demonstrates the use of [`crossbeam-channel`][crossbeam-channel] in
 
 ## Maintain global mutable state
 
-[![lazy-static][lazy-static-badge]][lazy-static]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![lazy-static][lazy-static-badge]][lazy-static]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Declare global state using [`lazy static`][lazy-static]. [`lazy static`][lazy-static]
 creates a globally available `static ref` which requires a [`Mutex`][std::sync::Mutex] to allow mutation (also see [`RwLock`][std::sync::RwLock]). The [`Mutex`][std::sync::Mutex] wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`MutexGuard`][std::sync::MutexGuard] must be acquired to read or mutate the value stored in a [`Mutex`][std::sync::Mutex]
@@ -82,5 +84,5 @@ Allocate memory for output image of given width and height with [`ImageBuffer::n
 {{#include ../../../deps/tests/threadpool-fractal.rs}}
 ```
 
-[ex-crossbeam-spawn]: #spawn-a-short-lived-thread
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

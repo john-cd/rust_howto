@@ -1,11 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Mutexes][ex-mutex] |  |  |
-| [Parking Lot][ex-parking-lot] |  |  |
-| [Atomics][ex-atomics] |  |  |
-| [Concurrent data structures][ex-concurrent-data-structures] |  |  |
-
-[ex-mutex]: index.md#mutex
-[ex-parking-lot]: index.md#parking-lot
-[ex-atomics]: index.md#atomics
-[ex-concurrent-data-structures]: concurrent_data_structures.md
+| [Mutexes][ex-mutex] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  |
+| [Parking Lot][ex-parking-lot] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  |
+| [Atomics][ex-atomics] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  |
+| [Concurrent data structures][ex-concurrent-data-structures] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  |

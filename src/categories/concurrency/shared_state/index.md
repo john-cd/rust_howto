@@ -6,9 +6,11 @@ The Rust standard library provides smart pointer types, such as `Mutex<T>` and `
 
 {{#include index.incl.md}}
 
+{{#include concurrent_data_structures.incl.md}}
+
 ## Mutex
 
-[![std][std-badge]][std]
+[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Allow access to data from one thread at a time.
 
@@ -18,7 +20,7 @@ Allow access to data from one thread at a time.
 
 ## Parking Lot
 
-[![parking-lot][parking-lot-badge]][parking-lot]  [(crates.io)][parking-lot-crate]
+[![parking-lot][parking-lot-badge]][parking-lot]  [(crates.io)][parking-lot-crate]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 [Parking Lot][parking-lot]⮳ provides implementations of `Mutex`, `RwLock`, `Condvar` and `Once` that are smaller, faster and more flexible than those in the Rust standard library. It also provides a `ReentrantMutex` type.
 
@@ -32,6 +34,23 @@ Allow access to data from one thread at a time.
 {{#include ../../../../deps/tests/shared_state_parking_lot2.rs}}
 ```
 
-{{#include atomics.incl.md}}
+## Atomics
 
+[![std][std-badge]][std]  [![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+
+Atomic types in [`std::sync::atomic`][std::sync::atomic]⮳ provide primitive shared-memory communication between threads, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including `AtomicBool`, `AtomicIsize`, `AtomicUsize`, `AtomicI8`, `AtomicU16`, etc.
+
+```rust,editable,mdbook-runnable
+{{#include ../../../../deps/tests/shared_state_atomics.rs}}
+```
+
+The most common way to share an atomic variable is to put it into an `Arc` (an atomically-reference-counted shared pointer).
+
+[`crossbeam`][crossbeam]⮳ also offers `AtomicCell`, a thread-safe mutable memory location. This type is equivalent to `Cell`, except it can also be shared among multiple threads.
+
+```rust,editable,mdbook-runnable
+{{#include ../../../../deps/tests/shared_state_crossbeam.rs}}
+```
+
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

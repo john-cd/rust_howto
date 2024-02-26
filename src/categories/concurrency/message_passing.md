@@ -4,9 +4,11 @@ One increasingly popular approach to ensuring safe concurrency is message passin
 
 Message passing in `async` programming is covered in a separate page: [async channels](../asynchronous/async_channels.md)
 
+{{#include message_passing.incl.md}}
+
 ## Multiple producers, single consumer
 
-[![std][std-badge]][std]
+[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ```rust,editable
 {{#include ../../../deps/tests/message_passing_mpsc.rs}}
@@ -14,7 +16,7 @@ Message passing in `async` programming is covered in a separate page: [async cha
 
 ## Crossbeam_channel
 
-[![crossbeam-channel][crossbeam-channel-badge]][crossbeam-channel]
+[![crossbeam-channel][crossbeam-channel-badge]][crossbeam-channel]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Multi-producer multi-consumer channels for message passing.
 
@@ -30,10 +32,13 @@ Example using specialized channels for tickers and timeout
 
 ## See also
 
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+
 [![crossbeam][crossbeam-badge]][crossbeam]
 
 [![postage][postage-badge]][postage]
 
 [Message Passing (rust book)][book-rust-message-passing]⮳
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

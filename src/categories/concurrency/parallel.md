@@ -1,5 +1,7 @@
 # Parallel Tasks
 
+{{#include parallel.incl.md}}
+
 ## Mutate the elements of an array in parallel
 
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
@@ -72,4 +74,5 @@ This example generates thumbnails for all .jpg files in the current directory th
 {{#include ../../../deps/tests/rayon-thumbnails.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

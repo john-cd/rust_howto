@@ -2,9 +2,17 @@
 
 This section covers concurrent, parallel programming.
 
-{{#include index.incl.md}}
+{{#include message_passing.incl.md}}
+
+{{#include multithreading.incl.md}}
+
+{{#include parallel.incl.md}}
+
+{{#include threads.incl.md}}
 
 ## Parallelism
+
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 - True simultaneous execution of multiple tasks on multiple cores or processors.
 - Mechanism: uses operating system threads.
@@ -31,4 +39,5 @@ Here are the topics we’ll cover:
 
 [![book-rust-concurrency][book-rust-concurrency-badge]][book-rust-concurrency]
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,0 +1,12 @@
+[ex-crossbeam-spawn]: threads.md#spawn-a-short-lived-thread
+[ex-crossbeam-pipeline]: threads.md#create-a-parallel-pipeline
+[ex-crossbeam-spsc]: threads.md#pass-data-between-two-threads
+[ex-global-mut-state]: threads.md#maintain-global-mutable-state
+[ex-threadpool-walk]: threads.md#calculate-sha256-sum-of-iso-files-concurrently
+[ex-threadpool-fractal]: threads.md#draw-fractal-dispatching-work-to-a-thread-pool
+[ex-rayon-iter-mut]: parallel.md#mutate-the-elements-of-an-array-in-parallel
+[ex-rayon-any-all]: parallel.md#test-in-parallel-if-any-or-all-elements-of-a-collection-match-a-given-predicate
+[ex-rayon-parallel-search]: parallel.md#search-items-using-given-predicate-in-parallel
+[ex-rayon-parallel-sort]: parallel.md#sort-a-vector-in-parallel
+[ex-rayon-map-reduce]: parallel.md#map-reduce-in-parallel
+[ex-rayon-thumbnails]: parallel.md#generate-jpg-thumbnails-in-parallel
