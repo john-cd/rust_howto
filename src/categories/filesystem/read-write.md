@@ -1,5 +1,7 @@
 # Read & Write
 
+{{#include read-write.incl.md}}
+
 ## Read lines of strings from a file
 
 [![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
@@ -43,4 +45,5 @@ The [`Mmap::map`][memmap::Mmap::map] function assumes the file behind the memory
 {{#include ../../../deps/tests/memmap.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,5 +1,7 @@
 # Directory Traversal
 
+{{#include dir.incl.md}}
+
 ## File names that have been modified in the last 24 hours
 
 [![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
@@ -98,4 +100,5 @@ A custom [`MatchOptions`][glob::MatchOptions] struct is passed to the [`glob_wit
 {{#include ../../../deps/tests/ignore-case.rs}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

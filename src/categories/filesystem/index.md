@@ -2,5 +2,9 @@
 
 Dealing with files and file systems.
 
-{{#include index.incl.md}}
+{{#include dir.incl.md}}
+
+{{#include read-write.incl.md}}
+
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
