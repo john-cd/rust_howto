@@ -1,4 +1,4 @@
-# WebAssembl (WASM)
+# WebAssembly (WASM)
 
 Tooling targeting WebAssembly or manipulating WebAssembly.
 
