@@ -134,8 +134,8 @@
 
 {{#include other/cloud/index.incl.md}}
 
-[ex-aws]: other/cloud/index.md#aws
-[ex-dapr]: other/cloud/index.md#dapr
+[ex-aws]: other/cloud/_index.md#aws
+[ex-dapr]: other/cloud/_index.md#dapr
 
 ## Command-line Interface
 
@@ -150,7 +150,7 @@
 
 {{#include categories/command-line-utilities/index.incl.md}}
 
-[ex-cli-in-rust]: categories/command-line-utilities/index.md#command-line-utilities-written-in-rust
+[ex-cli-in-rust]: categories/command-line-utilities/_index.md#command-line-utilities-written-in-rust
 
 ## Compilers
 
@@ -186,7 +186,7 @@
 
 {{#include categories/computer-vision/index.incl.md}}
 
-[ex-open-cv]: categories/computer-vision/index.md#open-cv
+[ex-open-cv]: categories/computer-vision/_index.md#open-cv
 
 ## Concurrency
 
@@ -267,9 +267,9 @@
 
 {{#include other/data_processing/index.incl.md}}
 
-[ex-polars]: other/data_processing/index.md#polars
-[ex-arrow]: other/data_processing/index.md#arrow
-[ex-datafusion]: other/data_processing/index.md#datafusion
+[ex-polars]: other/data_processing/_index.md#polars
+[ex-arrow]: other/data_processing/_index.md#arrow
+[ex-datafusion]: other/data_processing/_index.md#datafusion
 
 ## Data Structures
 
@@ -377,22 +377,22 @@
 
 {{#include  categories/development-tools_build-utils/index.incl.md}}
 
-[ex-cc-static-bundled]: categories/development-tools_build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library
-[ex-cc-static-bundled-cpp]: categories/development-tools_build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library-1
-[ex-cc-custom-defines]: categories/development-tools_build-utils/index.md#compile-a-c-library-while-setting-custom-defines
+[ex-cc-static-bundled]: categories/development-tools_build-utils/_index.md#compile-and-link-statically-to-a-bundled-c-library
+[ex-cc-static-bundled-cpp]: categories/development-tools_build-utils/_index.md#compile-and-link-statically-to-a-bundled-c-library-1
+[ex-cc-custom-defines]: categories/development-tools_build-utils/_index.md#compile-a-c-library-while-setting-custom-defines
 
 ## Development Tools - Cargo Plugins
 
 {{#include categories/development-tools_cargo-plugins/index.incl.md}}
 
-[ex-code-coverage]: categories/development-tools_cargo-plugins/index.md#code-coverage
-[ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/index.md#fix-compiler-warnings
-[ex-format]: categories/development-tools_cargo-plugins/index.md#formatting
-[ex-lint]: categories/development-tools_cargo-plugins/index.md#linting
-[ex-security-audit]: categories/development-tools_cargo-plugins/index.md#security-audit
-[ex-templates]: categories/development-tools_cargo-plugins/index.md#templates
-[ex-unused-dependencies]: categories/development-tools_cargo-plugins/index.md#unused-dependencies
-[ex-watch-for-changes]: categories/development-tools_cargo-plugins/index.md#watch-for-changes
+[ex-code-coverage]: categories/development-tools_cargo-plugins/_index.md#code-coverage
+[ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/_index.md#fix-compiler-warnings
+[ex-format]: categories/development-tools_cargo-plugins/_index.md#formatting
+[ex-lint]: categories/development-tools_cargo-plugins/_index.md#linting
+[ex-security-audit]: categories/development-tools_cargo-plugins/_index.md#security-audit
+[ex-templates]: categories/development-tools_cargo-plugins/_index.md#templates
+[ex-unused-dependencies]: categories/development-tools_cargo-plugins/_index.md#unused-dependencies
+[ex-watch-for-changes]: categories/development-tools_cargo-plugins/_index.md#watch-for-changes
 
 ## Development Tools - Debugging
 
@@ -416,7 +416,7 @@
 
 {{#include categories/development-tools_profiling/index.incl.md}}
 
-[ex-incremental-computation]: categories/development-tools_profiling/index.md#incremental-computation
+[ex-incremental-computation]: categories/development-tools_profiling/_index.md#incremental-computation
 
 ## Development Tools - Testing
 
@@ -480,13 +480,13 @@
 
 {{#include categories/finance/index.incl.md}}
 
-[ex-quant]: categories/finance/index.md#quant
+[ex-quant]: categories/finance/_index.md#quant
 
 ## GPU Programming
 
 {{#include other/gpu/index.incl.md}}
 
-[ex-rust-gpu]: other/gpu/index.md#rust-gpu
+[ex-rust-gpu]: other/gpu/_index.md#rust-gpu
 
 ## Hardware Support
 
@@ -560,7 +560,7 @@
 
 {{#include categories/os_windows-apis/index.incl.md}}
 
-[ex-windows]: categories/os_windows-apis/index.md#windows
+[ex-windows]: categories/os_windows-apis/_index.md#windows
 
 ## Rust Patterns
 
@@ -578,19 +578,19 @@
 
 {{#include categories/science/machine_learning/index.incl.md}}
 
-[ex-ml]: categories/science/machine_learning/index.md
+[ex-ml]: categories/science/machine_learning/_index.md
 
 ## Robotics
 
 {{#include categories/science_robotics/index.incl.md}}
 
-[ex-robotics]: categories/science_robotics/index.md
+[ex-robotics]: categories/science_robotics/_index.md
 
 ## Text Editors
 
 {{#include categories/text-editors/index.incl.md}}
 
-[ex-ides]: categories/text-editors/index.md#ides
+[ex-ides]: categories/text-editors/_index.md#ides
 
 ## Text Processing
 
@@ -611,7 +611,7 @@
 
 {{#include categories/wasm/index.incl.md}}
 
-[ex-yew]: categories/wasm/index.md#yew
+[ex-yew]: categories/wasm/_index.md#yew
 
 ## Web Programming
 

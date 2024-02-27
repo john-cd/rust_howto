@@ -1,3 +1,3 @@
-[ex-polars]: index.md#polars
-[ex-arrow]: index.md#arrow
-[ex-datafusion]: index.md#datafusion
+[ex-polars]: _index.md#polars
+[ex-arrow]: _index.md#arrow
+[ex-datafusion]: _index.md#datafusion

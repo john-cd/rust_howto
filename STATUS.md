@@ -1,9 +1,9 @@
 # STATUS
 
 [Introduction](src/index.md) polish the intro
-[About](src/about.md) rewrite
+[About](src/_about.md) rewrite
 [Contributing](src/contributing/index.md)
-[Index of Examples](src/examples_index.md) finish
+[Index of Examples](src/_examples_index.md) finish
 
 - [Language](src/lang/index.md)
   - [Rust installation and first steps](src/lang/rust_install.md) polish
@@ -42,7 +42,7 @@
   - [Installation](src/categories/development-tools/installation/index.md)
     - [Rustup](src/categories/development-tools/installation/rustup.md)
   - [Code editing and formatting](src/categories/development-tools/editing/index.md) add latest JetBrains tooling
-  - [Compiling](src/categories/compilers/index.md)
+  - [Compiling](src/categories/compilers/_index.md)
     - [Faster linking](src/categories/compilers/faster_linking.md)  finish faster linking
     - [Cross-compilation](src/categories/compilers/cross_compilation.md)
   - [Build-time tooling](src/categories/development-tools/build_tools.md)
@@ -69,7 +69,7 @@
   - [Argument Parsing](src/categories/command-line-interface/arguments.md)
   - [ANSI Terminal](src/categories/command-line-interface/ansi_terminal.md)
 
-- [Compression](src/categories/compression/index.md)
+- [Compression](src/categories/compression/_index.md)
   - [Working with Tarballs](src/categories/compression/tar.md)
 
 - [Concurrency](src/categories/concurrency/index.md)
@@ -96,10 +96,10 @@
   - [Hashing](src/categories/cryptography/hashing.md)
   - [Encryption](src/cryptography/encryption.md)
 
-- [Data structures](src/categories/data-structures/index.md)
+- [Data structures](src/categories/data-structures/_index.md)
   - [Bitfield](src/categories/data-structures/bitfield.md)
 
-- [Databases](src/categories/database/index.md)
+- [Databases](src/categories/database/_index.md)
   - [SQLite](src/categories/database/sqlite.md)
   - [Postgres](src/categories/database/postgres.md)
   - [Query builders and ORMs](src/categories/database/query_builders_orms.md)
@@ -114,7 +114,7 @@
   - [Structured data](src/categories/encoding/complex.md)
   - [Serde](src/categories/encoding/serde.md)
 
-- [Error handling](src/categories/rust-patterns/index.md) errors: color-eyre, eyre
+- [Error handling](src/categories/rust-patterns/_index.md) errors: color-eyre, eyre
   - [Handle error variants](src/categories/rust-patterns/errors/handle.md)
   - [Error handling](src/categories/rust-patterns/errors/error_handling.md)
   - [Error customization](src/categories/rust-patterns/errors/error_customization.md)
@@ -131,14 +131,14 @@
   - [Log messages](src/categories/development-tools_debugging/log.md)
   - [Configure logging](src/categories/development-tools_debugging/config_log.md)
 
-- [Mathematics](src/categories/mathematics/index.md)
+- [Mathematics](src/categories/mathematics/_index.md)
   - [Linear algebra](src/categories/mathematics/linear_algebra.md)
   - [Trigonometry](src/categories/mathematics/trigonometry.md)
   - [Complex numbers](src/categories/mathematics/complex_numbers.md)
   - [Statistics](src/categories/mathematics/statistics.md)
   - [Miscellaneous](src/categories/mathematics/miscellaneous.md)
 
-- [Memory management](src/categories/memory-management/index.md)
+- [Memory management](src/categories/memory-management/_index.md)
   - [Global static](src/categories/memory-management/global_static.md)
   - [Lazy initialization TODO](src/categories/memory-management/lazy_initialization.md)
 
@@ -194,5 +194,5 @@
 ---
 
 [Crates (src/alphabetic)](src/crates.md)
-[Crates (src/by category)](src/categories.md) generate automatically
+[Crates (src/by category)](src/_categories.md) generate automatically
 [Thanks](src/thanks.md)

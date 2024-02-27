@@ -47,11 +47,11 @@ ARG MDBOOK_VERSION
 ## Install cargo binstall (binary install)
 ## Install just from the binary release
 ## Install mdbook from the binary release
-## Install ripgrep
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
     && cargo binstall --no-confirm just \
     && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
     && cargo binstall --no-confirm mdbook-linkcheck \
+    && cargo binstall --no-confirm mdbook-private \
     && cargo binstall --no-confirm --secure cargo-nextest
 
 ## Alternative just install

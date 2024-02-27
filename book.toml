@@ -15,6 +15,12 @@ extra-watch-dirs = ["static", "theme", "deps"]             # directories to watc
 [rust]
 edition = "2021"
 
+[preprocessor.private]
+remove = true # Determines whether to remove or retain sections marked as private
+style = true  # Styles the private sections (when retained) using blockquote CSS.
+notice = "WORK IN PROGRESS" # Adds a notice to styled sections at the top right corner.
+chapter-prefix = "_" # If the remove option is active, chapters with filenames prefixed with this value will be excluded.
+
 # [preprocessor.hide]
 # hide = true                        # enables mdbook-hide
 
