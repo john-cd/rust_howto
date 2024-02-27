@@ -126,10 +126,10 @@
 - [Hardware support](src/categories/hardware-support/index.md)
   - [Processor](src/categories/hardware-support/processor.md)
 
-- [Logging](src/categories/development-tools::debugging/index.md)
-  - [Tracing](src/categories/development-tools::debugging/tracing.md)
-  - [Log messages](src/categories/development-tools::debugging/log.md)
-  - [Configure logging](src/categories/development-tools::debugging/config_log.md)
+- [Logging](src/categories/development-tools_debugging/index.md)
+  - [Tracing](src/categories/development-tools_debugging/tracing.md)
+  - [Log messages](src/categories/development-tools_debugging/log.md)
+  - [Configure logging](src/categories/development-tools_debugging/config_log.md)
 
 - [Mathematics](src/categories/mathematics/index.md)
   - [Linear algebra](src/categories/mathematics/linear_algebra.md)

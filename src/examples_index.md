@@ -93,6 +93,37 @@
 
 ## Asynchronous
 
+### Tokio
+
+{{#include categories/asynchronous/tokio.incl.md}}
+
+### Async channels
+
+{{#include categories/asynchronous/async_channels.incl.md}}
+
+### Async and traits
+
+{{#include categories/asynchronous/async_traits.incl.md}}
+
+### Streams
+
+{{#include categories/asynchronous/streams.incl.md}}
+
+### Futures crate
+
+{{#include categories/asynchronous/futures.incl.md}}
+
+### Mixing async and blocking code
+
+{{#include categories/asynchronous/async_and_blocking.incl.md}}
+
+[ex-async-traits]: categories/asynchronous/async_traits.md
+[ex-tokio]: categories/asynchronous/tokio.md
+[ex-async-channels]: categories/asynchronous/async_channels.md
+[ex-streams]: categories/asynchronous/streams.md
+[ex-futures]: categories/asynchronous/futures.md
+[ex-mix-async-and-blocking]: categories/asynchronous/async_and_blocking.md
+
 ## Authentication
 
 {{#include categories/authentication/index.incl.md}}
@@ -159,6 +190,43 @@
 
 ## Concurrency
 
+### Multi-threading
+
+{{#include categories/concurrency/multithreading.incl.md}}
+
+### Explicit threads
+
+{{#include categories/concurrency/threads.incl.md}}
+
+### Data parallelism
+
+{{#include categories/concurrency/parallel.incl.md}}
+
+### Message passing
+
+{{#include categories/concurrency/message_passing.incl.md}}
+
+### Shared-state concurrency
+
+{{#include categories/concurrency/shared_state/index.incl.md}}
+
+[ex-crossbeam-spawn]: categories/concurrency/threads.md#spawn-a-short-lived-thread
+[ex-crossbeam-pipeline]: categories/concurrency/threads.md#create-a-parallel-pipeline
+[ex-crossbeam-spsc]: categories/concurrency/threads.md#pass-data-between-two-threads
+[ex-global-mut-state]: categories/concurrency/threads.md#maintain-global-mutable-state
+[ex-threadpool-walk]: categories/concurrency/threads.md#calculate-sha256-sum-of-iso-files-concurrently
+[ex-threadpool-fractal]: categories/concurrency/threads.md#draw-fractal-dispatching-work-to-a-thread-pool
+[ex-rayon-iter-mut]: categories/concurrency/parallel.md#mutate-the-elements-of-an-array-in-parallel
+[ex-rayon-any-all]: categories/concurrency/parallel.md#test-in-parallel-if-any-or-all-elements-of-a-collection-match-a-given-predicate
+[ex-rayon-parallel-search]: categories/concurrency/parallel.md#search-items-using-given-predicate-in-parallel
+[ex-rayon-parallel-sort]: categories/concurrency/parallel.md#sort-a-vector-in-parallel
+[ex-rayon-map-reduce]: categories/concurrency/parallel.md#map-reduce-in-parallel
+[ex-rayon-thumbnails]: categories/concurrency/parallel.md#generate-jpg-thumbnails-in-parallel
+[ex-mutex]: categories/concurrency/shared_state/index.md#mutex
+[ex-parking-lot]: categories/concurrency/shared_state/index.md#parking-lot
+[ex-atomics]: categories/concurrency/shared_state/index.md#atomics
+[ex-concurrent-data-structures]: categories/concurrency/shared_state/concurrent_data_structures.md
+
 ## Configuration
 
 ### Configuration Management
@@ -183,11 +251,11 @@
 
 ## Cryptography
 
-## Encryption
+### Encryption
 
 {{#include categories/cryptography/encryption.incl.md}}
 
-## Hashing
+### Hashing
 
 {{#include categories/cryptography/hashing.incl.md}}
 
@@ -252,25 +320,167 @@
 
 ## Development Tools
 
-### Development Tools - Build-time tooling
+### Cargo
 
-[ex-cc-static-bundled]: categories/development-tools::build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library
-[ex-cc-static-bundled-cpp]: categories/development-tools::build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library-1
-[ex-cc-custom-defines]: categories/development-tools::build-utils/index.md#compile-a-c-library-while-setting-custom-defines
+{{#include categories/development-tools/cargo/index.incl.md}}
 
-### Development Tools - Cargo Plugins
+### Documentation
 
-### Development Tools - Debugging
+{{#include categories/development-tools/documentation/index.incl.md}}
 
-### Development Tools - Profiling
+### Formatting
 
-### Development Tools - Testing
+{{#include categories/development-tools/formatting/index.incl.md}}
+
+### Installation
+
+{{#include categories/development-tools/installation/index.incl.md}}
+
+### Other
+
+{{#include categories/development-tools/other/index.incl.md}}
+
+### Versioning
+
+{{#include categories/development-tools/versioning/index.incl.md}}
+
+[ex-basic-cargo-usage]: categories/development-tools/cargo/index.md#basic-cargo-usage
+[ex-cargo-toml]: categories/development-tools/cargo/index.md#cargotoml-and-lock-files
+[ex-crates-io]: categories/development-tools/cargo/crates.md
+
+[ex-documenting-your-code]: categories/development-tools/documentation/index.md#documenting-your-code
+[ex-module-or-crate-level-documentation]: categories/development-tools/documentation/index.md#module-or-crate-level-documentation
+[ex-mdbook]: categories/development-tools/documentation/mdbook.md
+[ex-playground]: categories/development-tools/documentation/playground.md
+[ex-badges]: categories/development-tools/documentation/badges.md
+
+[ex-formatting]: categories/development-tools/formatting/index.md#rustfmt
+[ex-rustfmt-config]: categories/development-tools/formatting/index.md#rustfmt-configuration
+[ex-formatting-attributes]: categories/development-tools/formatting/index.md#formatting-attributes
+
+[ex-rustup]: categories/development-tools/installation/rustup.md
+[ex-cargo-install]: categories/development-tools/installation/index.md#cargo-install
+[ex-cargo-binstall]: categories/development-tools/installation/index.md#cargo-binstall
+
+[ex-api-search]: categories/development-tools/other/index.md#api-search
+[ex-deployment]: categories/development-tools/other/index.md#deployment
+[ex-just]: categories/development-tools/other/just.md
+[ex-miri]: categories/development-tools/other/miri.md
+
+[ex-semver-increment]: categories/development-tools/versioning/index.md#parse-and-increment-a-version-string
+[ex-semver-complex]: categories/development-tools/versioning/index.md#parse-a-complex-version-string
+[ex-semver-prerelease]: categories/development-tools/versioning/index.md#check-if-given-version-is-pre-release
+[ex-semver-latest]: categories/development-tools/versioning/index.md#find-the-latest-version-satisfying-given-range
+[ex-semver-command]: categories/development-tools/versioning/index.md#check-external-command-version-for-compatibility
+
+## Development Tools - Build-time tooling
+
+{{#include  categories/development-tools_build-utils/index.incl.md}}
+
+[ex-cc-static-bundled]: categories/development-tools_build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library
+[ex-cc-static-bundled-cpp]: categories/development-tools_build-utils/index.md#compile-and-link-statically-to-a-bundled-c-library-1
+[ex-cc-custom-defines]: categories/development-tools_build-utils/index.md#compile-a-c-library-while-setting-custom-defines
+
+## Development Tools - Cargo Plugins
+
+{{#include categories/development-tools_cargo-plugins/index.incl.md}}
+
+[ex-code-coverage]: categories/development-tools_cargo-plugins/index.md#code-coverage
+[ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/index.md#fix-compiler-warnings
+[ex-format]: categories/development-tools_cargo-plugins/index.md#formatting
+[ex-lint]: categories/development-tools_cargo-plugins/index.md#linting
+[ex-security-audit]: categories/development-tools_cargo-plugins/index.md#security-audit
+[ex-templates]: categories/development-tools_cargo-plugins/index.md#templates
+[ex-unused-dependencies]: categories/development-tools_cargo-plugins/index.md#unused-dependencies
+[ex-watch-for-changes]: categories/development-tools_cargo-plugins/index.md#watch-for-changes
+
+## Development Tools - Debugging
+
+{{#include categories/development-tools_debugging/config_log.incl.md}}
+
+{{#include categories/development-tools_debugging/log.incl.md}}
+
+{{#include categories/development-tools_debugging/tracing.incl.md}}
+
+[ex-log-debug]: categories/development-tools_debugging/log.md#log-a-debug-message-to-the-console
+[ex-log-error]: categories/development-tools_debugging/log.md#log-an-error-message-to-the-console
+[ex-log-stdout]: categories/development-tools_debugging/log.md#log-to-stdout-instead-of-stderr
+[ex-log-custom-logger]: categories/development-tools_debugging/log.md#log-messages-with-a-custom-logger
+[ex-log-syslog]: categories/development-tools_debugging/log.md#log-to-the-unix-syslog
+[ex-log-mod]: categories/development-tools_debugging/config_log.md#enable-log-levels-per-module
+[ex-log-env-variable]: categories/development-tools_debugging/config_log.md#use-a-custom-environment-variable-to-set-up-logging
+[ex-log-timestamp]: categories/development-tools_debugging/config_log.md#include-timestamp-in-log-messages
+[ex-log-custom]: categories/development-tools_debugging/config_log.md#log-messages-to-a-custom-location
+
+## Development Tools - Profiling
+
+{{#include categories/development-tools_profiling/index.incl.md}}
+
+[ex-incremental-computation]: categories/development-tools_profiling/index.md#incremental-computation
+
+## Development Tools - Testing
+
+{{#include categories/development-tools_testing/index.incl.md}}
+
+[ex-test-your-code]: categories/development-tools_testing/index.md
+[ex-emit-custom-message]: categories/development-tools_testing/index.md#custom-message
 
 ## Encoding
 
+### Character Sets
+
+{{#include categories/encoding/strings.incl.md}}
+
+### CSV Processing
+
+{{#include categories/encoding/csv.incl.md}}
+
+### Structured Data
+
+{{#include categories/encoding/complex.incl.md}}
+
+### Serde
+
+{{#include categories/encoding/serde.incl.md}}
+
+[ex-percent-encode]: categories/encoding/strings.md#percent-encode-a-string
+[ex-urlencoded]: categories/encoding/strings.md#encode-a-string-as-applicationx-www-form-urlencoded
+[ex-hex-encode-decode]: categories/encoding/strings.md#encode-and-decode-hex
+[ex-base64]: categories/encoding/strings.md#encode-and-decode-base64
+[ex-csv-read]: categories/encoding/csv.md#read-csv-records
+[ex-csv-delimiter]: categories/encoding/csv.md#read-csv-records-with-different-delimiter
+[ex-csv-filter]: categories/encoding/csv.md#filter-csv-records-matching-a-predicate
+[ex-invalid-csv]: categories/encoding/csv.md#handle-invalid-csv-data-with-serde
+[ex-serialize-csv]: categories/encoding/csv.md#serialize-records-to-csv
+[ex-csv-serde]: categories/encoding/csv.md#serialize-records-to-csv-using-serde
+[ex-csv-transform-column]: categories/encoding/csv.md#transform-csv-column
+[ex-json-value]: categories/encoding/complex.md#serialize-and-deserialize-unstructured-json
+[ex-toml-config]: categories/encoding/complex.md#deserialize-a-toml-configuration-file
+[ex-byteorder-le]: categories/encoding/complex.md#read-and-write-integers-in-little-endian-byte-order
+
 ## Filesystem Management
 
+{{#include categories/filesystem/dir.incl.md}}
+
+{{#include categories/filesystem/read-write.incl.md}}
+
+[ex-std-read-lines]: categories/filesystem/read-write.md#read-lines-of-strings-from-a-file
+[ex-avoid-read-write]: categories/filesystem/read-write.md#avoid-writing-and-reading-from-a-same-file
+[ex-random-file-access]: categories/filesystem/read-write.md#access-a-file-randomly-using-a-memory-map
+[ex-file-24-hours-modified]: categories/filesystem/dir.md#file-names-that-have-been-modified-in-the-last-24-hours
+[ex-find-file-loops]: categories/filesystem/dir.md#find-loops-for-a-given-path
+[ex-dedup-filenames]: categories/filesystem/dir.md#recursively-find-duplicate-file-names
+[ex-file-predicate]: categories/filesystem/dir.md#recursively-find-all-files-with-given-predicate
+[ex-file-skip-dot]: categories/filesystem/dir.md#traverse-directories-while-skipping-dotfiles
+[ex-file-sizes]: categories/filesystem/dir.md#recursively-calculate-file-sizes-at-given-depth
+[ex-glob-recursive]: categories/filesystem/dir.md#find-all-png-files-recursively
+[ex-glob-with]: categories/filesystem/dir.md#find-all-files-with-given-pattern-ignoring-filename-case
+
 ## Finance
+
+{{#include categories/finance/index.incl.md}}
+
+[ex-quant]: categories/finance/index.md#quant
 
 ## GPU Programming
 
@@ -280,25 +490,128 @@
 
 ## Hardware Support
 
+{{#include categories/hardware-support/processor.incl.md}}
+
+[ex-check-cpu-cores]: categories/hardware-support/processor.md#check-number-of-logical-cpu-cores
+
 ## Mathematics
+
+### Linear algebra
+
+{{#include categories/mathematics/linear_algebra.incl.md}}
+
+### Trigonometry
+
+{{#include categories/mathematics/trigonometry.incl.md}}
+
+### Complex numbers
+
+{{#include categories/mathematics/complex_numbers.incl.md}}
+
+### Statistics
+
+{{#include categories/mathematics/statistics.incl.md}}
+
+### Miscellaneous
+
+{{#include categories/mathematics/miscellaneous.incl.md}}
+
+[ex-vector-norm]: categories/mathematics/linear_algebra.md#vector-norm
+[ex-add-matrices]: categories/mathematics/linear_algebra.md#adding-matrices
+[ex-multiply-matrices]: categories/mathematics/linear_algebra.md#multiplying-matrices
+[ex-multiply-scalar-vector-matrix]: categories/mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-with-a-matrix
+[ex-invert-matrix]: categories/mathematics/linear_algebra.md#invert-matrix
+[ex-side-length]: categories/mathematics/trigonometry.md#calculating-the-side-length-of-a-triangle
+[ex-tan-sin-cos]: categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[ex-latitude-longitude]: categories/mathematics/trigonometry.md#distance-between-two-points-on-the-earth
+[ex-create-complex]: categories/mathematics/complex_numbers.md#creating-complex-numbers
+[ex-add-complex]: categories/mathematics/complex_numbers.md#adding-complex-numbers
+[ex-mathematical-functions]: categories/mathematics/complex_numbers.md#mathematical-functions
+[ex-central-tendency]: categories/mathematics/statistics.md#measures-of-central-tendency
+[ex-standard-deviation]: categories/mathematics/statistics.md#standard-deviation
+[ex-big-integers]: categories/mathematics/miscellaneous.md#big-integers
 
 ## Memory Management
 
+{{#include categories/memory-management/global_static.incl.md}}
+
+{{#include categories/memory-management/lazy_initialization.incl.md}}
+
+[ex-lazy-constant]: categories/memory-management/global_static.md#declare-lazily-evaluated-constant
+
 ## Network Programming
+
+{{#include categories/network-programming/server.incl.md}}
+
+[ex-random-port-tcp]: categories/network-programming/server.md#listen-on-unused-port-tcpip
 
 ## Operating Systems
 
+{{#include categories/os/external.incl.md}}
+
+[ex-parse-subprocess-output]: categories/os/external.md#run-an-external-command-and-process-stdout
+[ex-parse-subprocess-input]: categories/os/external.md#run-an-external-command-passing-it-stdin-and-check-for-an-error-code
+[ex-run-piped-external-commands]: categories/os/external.md#run-piped-external-commands
+[ex-redirect-stdout-stderr-same-file]: categories/os/external.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
+[ex-continuous-process-output]: categories/os/external.md#continuously-process-child-process-outputs
+[ex-read-env-variable]: categories/os/external.md#read-environment-variable
+
 ### Operating Systems - Windows API
+
+{{#include categories/os_windows-apis/index.incl.md}}
+
+[ex-windows]: categories/os_windows-apis/index.md#windows
 
 ## Rust Patterns
 
+### Error Handling
+
+{{#include categories/rust-patterns/index.incl.md}}
+
+[ex-error-chain-simple-error-handling]: categories/rust-patterns/errors/handle.md#handle-errors-correctly-in-main
+[ex-error-chain-avoid-discarding]: categories/rust-patterns/errors/handle.md#avoid-discarding-errors-during-error-conversions
+[ex-error-chain-backtrace]: categories/rust-patterns/errors/handle.md#obtain-backtrace-of-complex-error-scenarios
+
 ## Science
 
-### Robotics
+### Machine Learning
+
+{{#include categories/science/machine_learning/index.incl.md}}
+
+[ex-ml]: categories/science/machine_learning/index.md
+
+## Robotics
+
+{{#include categories/science_robotics/index.incl.md}}
+
+[ex-robotics]: categories/science_robotics/index.md
 
 ## Text Editors
 
+{{#include categories/text-editors/index.incl.md}}
+
+[ex-ides]: categories/text-editors/index.md#ides
+
 ## Text Processing
+
+{{#include categories/text-processing/regex.incl.md}}
+
+{{#include categories/text-processing/string_parsing.incl.md}}
+
+[ex-verify-extract-email]: categories/text-processing/regex.md#verify-and-extract-login-from-an-email-address
+[ex-extract-hashtags]: categories/text-processing/regex.md#extract-a-list-of-unique-hashtags-from-a-text
+[ex-phone]: categories/text-processing/regex.md#extract-phone-numbers-from-text
+[ex-regex-filter-log]: categories/text-processing/regex.md#filter-a-log-file-by-matching-multiple-regular-expressions
+[ex-regex-replace-named]: categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
+
+[ex-unicode-graphemes]: categories/text-processing/string_parsing.md#collect-unicode-graphemes
+[string_parsing-from_str]: categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
+
+### WebAssembly
+
+{{#include categories/wasm/index.incl.md}}
+
+[ex-yew]: categories/wasm/index.md#yew
 
 ## Web Programming
 
@@ -330,8 +643,54 @@
 
 ## HTTP Clients
 
+### Requests
+
+{{#include categories/web-programming_http-client/requests.incl.md}}
+
+### APIs
+
+{{#include categories/web-programming_http-client/apis.incl.md}}
+
+### Downloads
+
+{{#include categories/web-programming_http-client/download.incl.md}}
+
+[ex-rest-get]: categories/web-programming_http-client/apis.md#query-the-github-api
+[ex-rest-head]: categories/web-programming_http-client/apis.md#check-if-an-api-resource-exists
+[ex-rest-post]: categories/web-programming_http-client/apis.md#create-and-delete-gist-with-github-api
+[ex-paginated-api]: categories/web-programming_http-client/apis.md#consume-a-paginated-restful-api
+[ex-handle-rate-limited-api]: categories/web-programming_http-client/apis.md#handle-a-rate-limited-api
+[ex-url-download]: categories/web-programming_http-client/download.md#download-a-file-to-a-temporary-directory
+[ex-progress-with-range]: categories/web-programming_http-client/download.md#make-a-partial-download-with-http-range-headers
+[ex-file-post]: categories/web-programming_http-client/download.md#post-a-file-to-paste-rs
+[ex-url-basic]: categories/web-programming_http-client/requests.md#make-a-http-get-request
+[ex-rest-custom-params]: categories/web-programming_http-client/requests.md#set-custom-headers-and-url-parameters-for-a-rest-request
+
 ## HTTP Servers
+
+{{#include categories/web-programming_http-server/index.incl.md}}
+
+### Middleware
+
+{{#include categories/web-programming_http-server/middleware.incl.md}}
+
+[ex-axum]: categories/web-programming_http-server/axum.md
+[ex-actix]: categories/web-programming_http-server/actix.md
+[ex-other-frameworks]: categories/web-programming_http-server/other_frameworks.md
+[ex-middleware]: categories/web-programming_http-server/middleware.md
+[ex-cors]: categories/web-programming_http-server/cors.md
+[ex-static-website-generators]: categories/web-programming_http-server/static_website_generators.md
+[ex-tower]: categories/web-programming_http-server/middleware.md#tower
+[ex-tower-http]: categories/web-programming_http-server/middleware.md#tower-http
+[ex-alternatives]: categories/web-programming_http-server/middleware.md#alternatives
 
 ## Links
 
+{{#include links/index.incl.md}}
+
+[ex-example-code]: links/example_code.md
+[ex-cheatsheets]: links/rust_cheatsheets.md
+[ex-blogs]: links/blogs.md
+[ex-books]: links/books.md
+[ex-companies]: links/companies.md
 {{#include refs/link-refs.md}}

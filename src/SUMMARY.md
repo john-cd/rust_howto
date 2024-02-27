@@ -134,18 +134,18 @@
     - [Miri](categories/development-tools/other/miri.md)
     - [Just](categories/development-tools/other/just.md)
 
-- [Development tools - build-time tooling](categories/development-tools::build-utils/index.md)
+- [Development tools - build-time tooling](categories/development-tools_build-utils/index.md)
 
-- [Development tools - cargo plugins](categories/development-tools::cargo-plugins/index.md)
+- [Development tools - cargo plugins](categories/development-tools_cargo-plugins/index.md)
 
-- [Development tools - debugging, logging](categories/development-tools::debugging/index.md)
-  - [Tracing](categories/development-tools::debugging/tracing.md)
-  - [Log messages](categories/development-tools::debugging/log.md)
-  - [Logging configuration](categories/development-tools::debugging/config_log.md)
+- [Development tools - debugging, logging](categories/development-tools_debugging/index.md)
+  - [Tracing](categories/development-tools_debugging/tracing.md)
+  - [Log messages](categories/development-tools_debugging/log.md)
+  - [Logging configuration](categories/development-tools_debugging/config_log.md)
 
-- [Development tools - performance profiling](categories/development-tools::profiling/index.md)
+- [Development tools - performance profiling](categories/development-tools_profiling/index.md)
 
-- [Development tools - testing](categories/development-tools::testing/index.md)
+- [Development tools - testing](categories/development-tools_testing/index.md)
 
 - [Encoding and serialization](categories/encoding/index.md)
   - [Character sets](categories/encoding/strings.md)
@@ -190,7 +190,7 @@
 - [Operating systems](categories/os/index.md)
   - [External commands](categories/os/external.md)
 
-- [Robotics](categories/science::robotics/index.md)
+- [Robotics](categories/science_robotics/index.md)
 
 - [Text editors](categories/text-editors/index.md)
 
@@ -206,20 +206,20 @@
   - [URL](categories/web-programming/url.md)
   - [Media types](categories/web-programming/mime.md)
 
-- [Web programming - HTTP clients](categories/web-programming::http-client/index.md)
-  - [Making requests](categories/web-programming::http-client/requests.md)
-  - [Calling a web API](categories/web-programming::http-client/apis.md)
-  - [Downloads](categories/web-programming::http-client/download.md)
+- [Web programming - HTTP clients](categories/web-programming_http-client/index.md)
+  - [Making requests](categories/web-programming_http-client/requests.md)
+  - [Calling a web API](categories/web-programming_http-client/apis.md)
+  - [Downloads](categories/web-programming_http-client/download.md)
 
-- [Web programming - HTTP servers](categories/web-programming::http-server/index.md)
-  - [Axum](categories/web-programming::http-server/axum.md)
-  - [Actix](categories/web-programming::http-server/actix.md)
-  - [Other web frameworks](categories/web-programming::http-server/other_frameworks.md)
-  - [Static website generators](categories/web-programming::http-server/static_website_generators.md)
-  - [Middleware](categories/web-programming::http-server/middleware.md)
-  - [CORS](categories/web-programming::http-server/cors.md)
+- [Web programming - HTTP servers](categories/web-programming_http-server/index.md)
+  - [Axum](categories/web-programming_http-server/axum.md)
+  - [Actix](categories/web-programming_http-server/actix.md)
+  - [Other web frameworks](categories/web-programming_http-server/other_frameworks.md)
+  - [Static website generators](categories/web-programming_http-server/static_website_generators.md)
+  - [Middleware](categories/web-programming_http-server/middleware.md)
+  - [CORS](categories/web-programming_http-server/cors.md)
 
-- [Windows](categories/os::windows-apis/index.md)
+- [Windows](categories/os_windows-apis/index.md)
 
 ---
 

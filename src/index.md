@@ -41,7 +41,7 @@ The [Rust cookbook][book-rust-cookbook]⮳ demonstrate good practices to accompl
 [error-customization]: categories/rust-patterns/errors/error_customization.md
 [lang]: lang/index.md
 [links]: links/index.md
-[logging]: categories/development-tools::debugging/index.md
+[logging]: categories/development-tools_debugging/index.md
 [standard-library]: standard_library/index.md
 [web-programming]: categories/web-programming/index.md
 {{#include refs/link-refs.md}}

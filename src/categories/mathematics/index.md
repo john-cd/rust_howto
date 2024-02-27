@@ -1,22 +1,22 @@
-## Mathematics
+# Mathematics
 
-### Linear algebra
+## Linear algebra
 
 {{#include linear_algebra.incl.md}}
 
-### Trigonometry
+## Trigonometry
 
 {{#include trigonometry.incl.md}}
 
-### Complex numbers
+## Complex numbers
 
 {{#include complex_numbers.incl.md}}
 
-### Statistics
+## Statistics
 
 {{#include statistics.incl.md}}
 
-### Miscellaneous
+## Miscellaneous
 
 {{#include miscellaneous.incl.md}}
 

@@ -2,13 +2,13 @@
 
 This section covers concurrent, parallel programming.
 
-{{#include message_passing.incl.md}}
-
 {{#include multithreading.incl.md}}
 
 {{#include parallel.incl.md}}
 
 {{#include threads.incl.md}}
+
+{{#include message_passing.incl.md}}
 
 ## Parallelism
 
