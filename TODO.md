@@ -1,16 +1,42 @@
 # TODO
 
-- edit summary.md - WIP
+- review each .md file in turn
 
-- finish index of examples
+[Introduction](src/index.md) polish the intro
 
-- improve index for lang
+- [Contributing](src/contributing/index.md)
 
-- chrono [chrono::Date::checked_sub_signed] or Date?
+- add explanation text for language pages
 
-- review each new .md file in turn - see STATUS.md
+[Rust installation and first steps](src/lang/rust_install.md) polish
 
-- explanation text for language pages
+- [Main function](src/lang/main.md) add description
+- [Simple data types](src/lang/simple_data_types.md) add description
+- [Variables and constants](src/lang/variables_and_constants.md) add description
+- [Ownership and borrowing](src/lang/ownership_borrowing.md)   add description
+- [Slices](src/lang/slices.md)   add description
+- [Functions](src/lang/functions.md)   add description
+- [Control flow](src/lang/control_flow.md) add description
+- [Structs](src/lang/structs.md)
+- [Enums](src/lang/enums.md)
+- [Traits](src/lang/traits.md)
+- [Trait objects](src/lang/trait_objects.md)
+- [Attributes](src/lang/attributes.md)
+- [Generics](src/lang/generics.md)
+- [Lifetimes](src/lang/lifetimes.md)
+- [Modules and `use` keyword](src/lang/modules.md)
+- [Pattern matching, if / while let](src/lang/match.md)
+- [Closures](src/lang/closures.md)
+- [Iterators](src/lang/iterators.md)
+- [Macros](src/lang/macros.md)
+
+- [Standard library](src/standard_library/index.md)
+- [Option](src/standard_library/option.md) finish Option page map, unwrap_or
+- [Smart pointers](src/standard_library/smart_pointers.md)
+
+- [Crates (by category)](src/_categories.md)
+
+[About](src/_about.md) rewrite
 
 - fix failing examples in drafts - WIP
 
@@ -25,7 +51,9 @@
 
 - incorporate cwd.rs example + any other new examples
 
-- add word index <https://github.com/daviddrysdale/mdbook-indexing>
+- add word index <https://github.com/daviddrysdale/mdbook-indexing>  [Index](src/_word_index.md)
+
+- reenable [Index of Examples](src/_examples_index.md)
 
 - finish cd_ci.md
 
@@ -36,6 +64,8 @@
 - Make addt'l examples out of mdbook-utils
 
 - tower_http example polish; other examples have been checked against the rust playground
+
+- add to each stub chapter in turn
 
 - license
 
