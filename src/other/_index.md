@@ -2,19 +2,19 @@
 
 ## Cloud
 
-{{#include other/cloud/index.incl.md}}
+{{#include cloud/index.incl.md}}
 
 ## Cross-platform Applications
 
-{{#include other/cross_platform/index.incl.md}}
+{{#include cross_platform/index.incl.md}}
 
 ## Data Processing
 
-{{#include other/data_processing/index.incl.md}}
+{{#include data_processing/index.incl.md}}
 
 ## GPU
 
-{{#include other/gpu/index.incl.md}}
+{{#include gpu/index.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
