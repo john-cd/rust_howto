@@ -450,3 +450,9 @@ refcell
 dapr
 seaorm
 stdenv
+mutex
+cargotoml
+rustfmt
+binstall
+WebAssembly
+quant

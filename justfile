@@ -123,7 +123,7 @@ serve: _build-book
 #   mdbook watch --open
 
 # Prepare for git push
-prep: fmtall clean build clippyall testall build serve
+prep: spell fmtall clean build clippyall testall build serve
 
 ## Documentation --------------------------------------
 
@@ -169,3 +169,6 @@ sortrefs:
   sort -u ./src/refs/link-refs.md -o /tmp/l.md
   mv -f /tmp/l.md ./src/refs/link-refs.md
   rm -f /temp/l.md
+
+spell:
+  .devcontainer/spellcheck.sh
