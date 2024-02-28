@@ -14,7 +14,7 @@
 
 ## `std::env`
 
-To retrieve a single environment variable,
+To retrieve a single {{i:environment variable}},
 
 ```rust,editable,should_panic
 {{#include ../../../deps/tests/env.rs}}

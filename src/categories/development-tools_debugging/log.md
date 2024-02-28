@@ -2,18 +2,18 @@
 
 {{#include log.incl.md}}
 
-## Log a debug message to the console
+## Log a {{i:debug message}} to the console
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-The `log` crate provides logging utilities. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug] macro works like other
+The `log` crate provides {{i:logging utilities}}. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug] macro works like other
 [`std::fmt`][std::fmt] formatted strings.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-debug.rs}}
 ```
 
-No output prints when running this code. By default, the log level is `error`, and any lower levels are dropped.
+No output prints when running this code. By default, the {{i:log level}} is `error`, and any lower levels are dropped.
 
 Set the `RUST_LOG` environment variable to print the message:
 
@@ -21,7 +21,7 @@ Set the `RUST_LOG` environment variable to print the message:
 RUST_LOG=debug cargo run
 ```
 
-Cargo prints debugging information then the following line at the very end of the output:
+Cargo prints {{i:debugging information}} then the following line at the very end of the output:
 
 ```bash
 DEBUG:main: Executing query: DROP TABLE students
@@ -31,7 +31,7 @@ DEBUG:main: Executing query: DROP TABLE students
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Proper error handling considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error]
+Proper {{i:error handling}} considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error]
 
 ```rust,editable
 {{#include ../../../deps/tests/log-error.rs}}
@@ -41,7 +41,7 @@ Proper error handling considers exceptions exceptional. Here, an error logs to s
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration using the [`Builder::target`][env_logger::Builder::target] to set the target of the log output to [`Target::Stdout`][env_logger::fmt::Target]
+Creates a {{i:custom logger configuration}} using the [`Builder::target`][env_logger::Builder::target] to set the target of the log output to [`Target::Stdout`][env_logger::fmt::Target]
 
 ```rust,editable
 {{#include ../../../deps/tests/log-stdout.rs}}
@@ -57,11 +57,11 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 {{#include ../../../deps/tests/log-custom-logger.rs}}
 ```
 
-## Log to the Unix syslog
+## Log to the Unix {{i:syslog}}
 
 [![log][log-badge]][log]  [![syslog][syslog-badge]][syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Logs messages to [UNIX `syslog`][unix-syslog]. Initializes logger backend with [`syslog::init`][syslog::init]  [`syslog::Facility`][syslog::Facility] records the program submitting the log entry's classification, [`log::LevelFilter`][log::LevelFilter] denotes allowed log verbosity and `Option<&str>` holds optional application name.
+Logs messages to [UNIX `syslog`][unix-syslog]. Initializes logger backend with [`syslog::init`][syslog::init]  [`syslog::Facility`][syslog::Facility] records the program submitting the log entry's classification, [`log::LevelFilter`][log::LevelFilter] denotes allowed {{i:log verbosity}} and `Option<&str>` holds optional application name.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-syslog.rs}}

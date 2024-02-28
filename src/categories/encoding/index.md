@@ -1,6 +1,6 @@
 # Encoding
 
-Encoding and/or decoding data from one data format to another.
+Encoding and/or {{i:decoding}} data from one data format to another.
 
 ## Character Sets
 

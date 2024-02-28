@@ -4,7 +4,7 @@
 {{#include ../../deps/tests/functions.rs}}
 ```
 
-The unit type `()` (`void` in some languages) is the default return type when no type is given for a function. It could be omitted: `fn log(message: &str) { ... }`
+The {{i:unit type}} {{i:`()`}} (`void` in some languages) is the default {{i:return type}} when no type is given for a function. It could be omitted: `fn log(message: &str) { ... }`
 
 ## Generic functions
 

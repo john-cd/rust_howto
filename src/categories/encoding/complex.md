@@ -2,11 +2,11 @@
 
 {{#include complex.incl.md}}
 
-## Serialize and deserialize unstructured JSON
+## Serialize and {{i:deserialize}} unstructured {{i:JSON}}
 
 [![serde_json][serde_json-badge]][serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`serde_json`][serde_json] crate provides a [`from_str`][serde_json::from_str] function to parse a `&str` of JSON.
+The [`serde_json`][serde_json] crate provides a [`from_str`][serde_json::from_str] function to {{i:parse}} a `&str` of JSON.
 
 Unstructured JSON can be parsed into a universal [`serde_json::Value`][serde_json::Value] type that is able to represent any valid JSON data.
 
@@ -16,7 +16,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 {{#include ../../../deps/tests/json.rs}}
 ```
 
-## Deserialize a TOML configuration file
+## Deserialize a {{i:TOML}} configuration file
 
 [![toml][toml-badge]][toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
@@ -32,7 +32,7 @@ Parse TOML into your own structs using [`Serde`][serde].
 {{#include ../../../deps/tests/toml1.rs}}
 ```
 
-## Read and write integers in little-endian byte order
+## Read and write integers in {{i:little-endian}} {{i:byte order}}
 
 [![byteorder][byteorder-badge]][byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 

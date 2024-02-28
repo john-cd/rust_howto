@@ -1,8 +1,8 @@
 ## Dev Container and Docker
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install `mdbook` and rust tooling.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install {{i:`mdbook`}} and {{i:rust tooling}}.
 
-If you don't want to use Dev Container, use the following from the project's root directory to manually build the `docker` image and run it.
+If you don't want to use {{i:Dev Container}}, use the following from the project's root directory to manually build the `docker` image and run it.
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
@@ -25,7 +25,7 @@ To connect to the (host OS) docker engine from within the container, add
 
 ### Docker Compose
 
-Test the docker compose setup used during developement (which Dev Container runs) with:
+Test the {{i:docker compose}} setup used during developement (which Dev Container runs) with:
 
 ```bash
 cd ./.devcontainer
@@ -37,7 +37,7 @@ docker compose up --build -d
 
 ## Deployment to GitHub Pages
 
-The continuous integration worflow is found under `.github`.
+The {{i:continuous integration worflow}} is found under `.github`.
 
 Test the docker compose setup used during CI using:
 

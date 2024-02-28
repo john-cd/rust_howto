@@ -15,7 +15,7 @@ cargo install cross --git https://github.com/cross-rs/cross
 cargo binstall cross
 ```
 
-`cross` has the exact same CLI as Cargo but relies on Docker or Podman.
+`cross` has the exact same CLI as `cargo` but relies on `docker` or `podman`.
 
 ```sh
 cross build --target aarch64-unknown-linux-gnu

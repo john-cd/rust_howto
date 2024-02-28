@@ -1,6 +1,6 @@
 # Channels for use in async code
 
-The most common form of synchronization in an async program is message passing. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of avoiding shared state. Message passing is implemented using channels.
+The most common form of {{i:synchronization}} in an async program is {{i:message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of {{i:avoiding shared state}}. Message passing is implemented using {{i:async channels}}.
 
 Tokio's `sync` module provides channels that work well with async code.
 
@@ -10,7 +10,7 @@ Tokio's `sync` module provides channels that work well with async code.
 
 [![tokio][tokio-badge]][tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-`oneshot` sends a single value from a single producer to a single consumer. This channel is usually used to send the result of a computation to a waiter.
+{{i:`oneshot`}} sends a single value from a single {{i:producer}} to a single {{i:consumer}}. This {{i:channel}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_oneshot.rs}}

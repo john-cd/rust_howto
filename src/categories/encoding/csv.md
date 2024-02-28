@@ -2,7 +2,7 @@
 
 {{#include csv.incl.md}}
 
-## Read CSV records
+## Read {{i:CSV}} records
 
 [![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
@@ -13,14 +13,14 @@ Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord] — a w
 {{#include ../../../deps/tests/read.rs}}
 ```
 
-Serde deserializes data into strongly type structures. See the
+{{i:`serde`}} deserializes data into strongly type structures. See the
 [`csv::Reader::deserialize`][csv::Reader::deserialize] method.
 
 ```rust,editable
 {{#include ../../../deps/tests/read1.rs}}
 ```
 
-## Read CSV records with different delimiter
+## Read CSV records with different {{i:delimiter}}
 
 [![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
@@ -46,7 +46,7 @@ _Disclaimer: this example has been adapted from [the csv crate tutorial](https:/
 
 [![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-CSV files often contain invalid data. For these cases, the `csv` crate provides a custom deserializer, [`csv::invalid_option`][csv::invalid_option] which automatically converts invalid data to None values.
+CSV files often contain {{i:invalid data}}. For these cases, the `csv` crate provides a {{i:custom deserializer}}, [`csv::invalid_option`][csv::invalid_option] which automatically converts invalid data to `None` values.
 
 ```rust,editable
 {{#include ../../../deps/tests/invalid.rs}}
@@ -56,7 +56,7 @@ CSV files often contain invalid data. For these cases, the `csv` crate provides 
 
 [![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] supports automatic serialization from Rust types into CSV records. [`write_record`][csv::Writer::write_record] writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`serialize`][csv::Writer::serialize]. Since CSV writer uses an internal buffer, always explicitly [`flush`][csv::Writer::flush] when done.
+This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] supports automatic {{i:serialization}} from Rust types into CSV records. [`write_record`][csv::Writer::write_record] writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`serialize`][csv::Writer::serialize]. Since CSV writer uses an internal buffer, always explicitly [`flush`][csv::Writer::flush] when done.
 
 ```rust,editable
 {{#include ../../../deps/tests/serialize.rs}}
@@ -66,7 +66,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][csv::writer] s
 
 [![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The following example shows how to serialize custom structs as CSV records using the [`serde`][serde] crate.
+The following example shows how to {{i:serialize custom structs}} as CSV records using the [`serde`][serde] crate.
 
 ```rust,editable
 {{#include ../../../deps/tests/serde-serialize.rs}}

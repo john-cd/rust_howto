@@ -6,27 +6,27 @@
 
 [![std][std-badge]][std]
 
-Use `Borrow`:
+Use {{i:`Borrow`}}:
 
 ```rust,ignore
 use std::borrow::Borrow;
 my_string.push_str(example.borrow());
 ```
 
-Use `AsRef`:
+Use {{i:`AsRef`}}:
 
 ```rust,ignore
 my_string.push_str(example.as_ref());
 ```
 
-Use `Deref` explicitly:
+Use {{i:`Deref`}} explicitly:
 
 ```rust,ignore
 use std::ops::Deref;
 my_string.push_str(example.deref());
 ```
 
-Use `Deref` implicitly through a coercion:
+Use `Deref` implicitly through a {{i:coercion}}:
 
 ```rust,ignore
 my_string.push_str(&example);
@@ -36,20 +36,20 @@ my_string.push_str(&example);
 
 [![std][std-badge]][std]
 
-Use `ToString`:
+Use {{i:`ToString`}}:
 
 ```rust,ignore
 example.to_string();
 ```
 
-Use `IntoOwned`:
+Use {{i:`IntoOwned`}}:
 
 ```rust,ignore
 Use Cow::into_owned:
 example.into_owned();
 ```
 
-Use any method to get a reference and then call `to_owned`:
+Use any method to get a reference and then call {{i:`to_owned`}}:
 
 ```rust,ignore
 example.as_ref().to_owned();

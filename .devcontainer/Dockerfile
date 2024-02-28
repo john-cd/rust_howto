@@ -52,6 +52,7 @@ RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/ca
     && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
     && cargo binstall --no-confirm mdbook-linkcheck \
     && cargo binstall --no-confirm mdbook-private \
+    && cargo binstall --no-confirm mdbook-indexing \
     && cargo binstall --no-confirm --secure cargo-nextest
 
 ## Alternative just install

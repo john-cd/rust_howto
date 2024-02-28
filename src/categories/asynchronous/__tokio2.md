@@ -4,7 +4,7 @@
 
 ## Basics
 
-- creating and running a runtime, spawning tasks, working with I/O and timers, and handling errors.
+- creating and running a {{i:runtime}}, {{i:spawning tasks}}, working with I/O and timers, and handling errors.
 
 ### Join
 

@@ -6,7 +6,7 @@
 
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-The example uses the `rayon` crate, which is a data parallelism library for Rust.
+The example uses the {{i:`rayon`}} crate, which is a {{i:data parallelism}} library for Rust.
 `rayon` provides the [`par_iter_mut`][rayon::iter::IntoParallelRefIterator::par_iter_mut] method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
@@ -41,7 +41,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 
 [![rayon][rayon-badge]][rayon]  [![rand][rand-badge]][rand]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example will sort in parallel a vector of Strings.
+This example will {{i:sort in parallel}} a vector of Strings.
 
 Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random values in parallel. Although [multiple options][rayon::slice::ParallelSliceMut]
 exist to sort an enumerable data type, [`par_sort_unstable`][rayon::slice::ParallelSliceMut::par_sort_unstable] is usually faster than [stable sort][rayon::slice::ParallelSliceMut::par_sort] algorithms.

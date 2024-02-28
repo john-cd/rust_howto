@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Basic `cargo` usage
+## Basic {{i:`cargo`}} usage
 
 [The Cargo book][book-cargo]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
@@ -67,7 +67,7 @@ regex = { git = "https://github.com/rust-lang/regex.git" }
 hello_utils = { path = "hello_utils", version = "0.1.0" }
 ```
 
-Examples of version requirements and the versions that would be allowed with them:
+Examples of {{i:version requirements}} and the versions that would be allowed with them:
 
 ```toml
 1.2.3  :=  >=1.2.3, <2.0.0
@@ -85,7 +85,7 @@ Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.ht
 If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
 
 If you’re building an end product, which are executable like command-line tool or an application,
-or a system library with crate-type of staticlib or cdylib, check `Cargo.lock` into git.
+or a system library with crate-type of `staticlib` or `cdylib`, check {{i:`Cargo.lock`}} into git.
 
 ```sh
 # Add dependencies to Cargo.toml from the command line

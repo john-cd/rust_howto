@@ -4,9 +4,9 @@
 
 [![futures][futures-badge]][futures]  [(crates.io)][futures-crate]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-The [`futures`][futures]⮳ crate provides a number of core abstractions for writing asynchronous code.
+The [`futures`][futures]⮳ crate provides a number of core abstractions for writing {{i:asynchronous code}}.
 
-In most cases, you will use this crate directly only when writing async code intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](tokio.md) for example.
+In most cases, you will use this crate directly only when writing {{i:async code}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](tokio.md) for example.
 
 ## Selecting futures
 

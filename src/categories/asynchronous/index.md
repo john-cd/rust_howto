@@ -1,11 +1,11 @@
 # Asynchronous programming
 
-Asynchronous programming, or async for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the `async`/`await` syntax. It helps you deal with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing.
+Asynchronous programming, or {{i:async}} for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of {{i:concurrent tasks}}, while preserving much of the look and feel of ordinary synchronous programming, through the `async`/`await` syntax. It helps you deal with events independently of the main program flow, using techniques like {{i:futures}}, {{i:promises}}, waiting, or eventing.
 
 - Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
 - Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
 - Involves context switching on a single thread or, most often, among a few threads (the pool of which is opaquely managed by the async runtime).
-- Achieves non-blocking I/O operations to improve responsiveness and efficiency.
+- Achieves {{i:non-blocking I/O operations}} to improve responsiveness and efficiency.
 - Lower overhead compared to multithreading.
 - Multi-threaded async programming also requires careful synchronization to prevent data races.
 
@@ -30,7 +30,7 @@ Here are the topics we’ll cover:
 {{#include ../../../deps/tests/async.rs}}
 ```
 
-As any form of cooperative multitasking, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
+As any form of {{i:cooperative multitasking}}, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with other languages
 
@@ -42,7 +42,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 {{#include ../../../deps/tests/async2.rs}}
 ```
 
-- Dropping a future stops it from making further progress.
+- Dropping a {{i:future stops}} it from making further progress.
 - Async is zero-cost in Rust. You can use `async` without heap allocations and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
 - Both single- and multithreaded runtimes are available.
@@ -56,7 +56,7 @@ Rust's implementation of `async` differs from most languages in a few ways:
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](tokio.md) runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
+In most cases, prefer the [Tokio](tokio.md) {{i:runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 

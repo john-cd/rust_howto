@@ -6,7 +6,7 @@
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`parse`][url::Url::parse] method from the `url` crate validates and parses a `&str` into a
+The [`parse`][url::Url::parse] method from the {{i:`url`}} crate validates and parses a `&str` into a
 [`Url`][url::Url] struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
@@ -21,7 +21,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-A base URL includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`PathSegmentsMut::clear`][url::PathSegmentsMut::clear] removes paths and [`Url::set_query`][url::Url::set_query] removes query string.
+A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`PathSegmentsMut::clear`][url::PathSegmentsMut::clear] removes paths and [`Url::set_query`][url::Url::set_query] removes query string.
 
 ```rust,editable
 {{#include ../../../deps/tests/base.rs}}
@@ -31,7 +31,7 @@ A base URL includes a protocol and a domain. Base URLs have no folders, files or
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`join`][url::Url::join] method creates a new URL from a base and relative path.
+The [`join`][url::Url::join] method creates a new URL from a base and {{i:relative path}}.
 
 ```rust,editable
 {{#include ../../../deps/tests/new.rs}}

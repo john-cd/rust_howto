@@ -4,7 +4,7 @@
 
 [![ansi-term][ansi-term-badge]][ansi-term]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-This program depicts the use of [`ansi_term`][ansi-term-crate] crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on ANSI terminals.
+This program depicts the use of [`ansi_term`][ansi-term-crate] crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on {{i:ANSI terminals}}.
 
 There are two main data structures in [`ansi_term`][ansi-term-crate]: [`ANSIString`][ansi_term::ANSIString] and [`Style`][ansi_term::Style]. A [`Style`][ansi_term::Style] holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Colour variants that represent simple foreground colour styles. An [`ANSIString`][ansi_term::ANSIString] is a string paired with a [`Style`][ansi_term::Style].
 

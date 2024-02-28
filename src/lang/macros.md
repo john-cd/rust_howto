@@ -26,7 +26,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [![quote][quote-badge]][quote]
 
-[`Quote`][Quote] provides the `quote!` macro for turning Rust syntax tree data structures into tokens of source code.
+[`Quote`][Quote] provides the `quote!` macro for turning Rust {{i:syntax tree}} data structures into {{i:tokens}} of source code.
 
 ## Tools
 

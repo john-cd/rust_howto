@@ -2,7 +2,7 @@
 
 {{#include config_log.incl.md}}
 
-## Enable log levels per module
+## Enable {{i:log levels}} per module
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
@@ -45,11 +45,11 @@ All these steps are normally done internally by [`env_logger::init`][env_logger:
 {{#include ../../../deps/tests/log-env-variable.rs}}
 ```
 
-## Include timestamp in log messages
+## Include {{i:timestamp}} in log messages
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![chrono][chrono-badge]][chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Creates a custom logger configuration with [`Builder`][env_logger::Builder]
+Creates a {{i:custom logger}} configuration with [`Builder`][env_logger::Builder]
 Each log entry calls [`Local::now`][chrono::offset::Local::now] to get the current [`DateTime`][chrono::DateTime] in local timezone and uses [`DateTime::format`][chrono::DateTime::format] with [`strftime::specifiers`][chrono::format::strftime] to format a timestamp used in the final log.
 
 The example calls [`Builder::format`][env_logger::Builder::format] to set a closure which formats each message text with timestamp, [`Record::level`][log::Record::level] and body ([`Record::args`][log::Record::args]).
@@ -69,9 +69,9 @@ stderr output will contain
 
 [![log][log-badge]][log]  [![log4rs][log4rs-badge]][log4rs]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[`log4rs`][log4rs] configures log output to a custom location. [`log4rs`][log4rs] can use either an external YAML file or a builder configuration.
+[`log4rs`][log4rs] configures {{i:log output to a custom location}}. [`log4rs`][log4rs] can use either an external YAML file or a builder configuration.
 
-Create the log configuration with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An appender defines the logging destination. The configuration continues with
+Create the {{i:log configuration}} with [`log4rs::append::file::FileAppender`][log4rs::append::file::FileAppender] An appender defines the logging destination. The configuration continues with
 encoding using a custom pattern from [`log4rs::encode::pattern`][log4rs::encode::pattern] Assigns the configuration to [`log4rs::config::Config`][log4rs::config::Config] and sets the default
 [`log::LevelFilter`][log::LevelFilter]
 

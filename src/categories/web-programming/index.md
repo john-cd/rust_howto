@@ -1,6 +1,6 @@
 # Web Programming
 
-Create applications for the web.
+Create applications for the {{i:web}}.
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 

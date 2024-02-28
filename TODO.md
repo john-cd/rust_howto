@@ -51,7 +51,7 @@
 
 - incorporate cwd.rs example + any other new examples
 
-- add word index <https://github.com/daviddrysdale/mdbook-indexing>  [Index](src/_word_index.md)
+- add word index <https://github.com/daviddrysdale/mdbook-indexing>  [Index](src/word_index.md)
 
 - reenable [Index of Examples](src/_examples_index.md)
 

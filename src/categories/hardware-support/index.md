@@ -1,6 +1,6 @@
 # Hardware Support
 
-Interface with specific CPU or other hardware features.
+Interface with specific {{i:CPU}} or other {{i:hardware}} features.
 
 {{#include processor.incl.md}}
 

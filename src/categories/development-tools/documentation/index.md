@@ -6,11 +6,11 @@
 
 [The rustdoc book][book-rustdoc]⮳
 
-[`docs.rs`][docs-rs]⮳: open-source documentation host for Rust crates.
+[`docs.rs`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
 
 ## Documenting your code
 
-- Add documentation comments to your code.
+- Add {{i:documentation comments}} to your code.
 
 ```rust,editable
 /// This is a doc comment. It is equivalent to the next line.
@@ -32,7 +32,7 @@ Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
 Use `//!` at the top of the file (instead of `///`) for module-level documentation.
 
-The first lines within `lib.rs` will compose the crate-level documentation front-page.
+The first lines within {{i:`lib.rs`}} will compose the crate-level documentation front-page.
 
 ```rust,editable
 //! Fast and easy queue abstraction.
@@ -47,7 +47,7 @@ The first lines within `lib.rs` will compose the crate-level documentation front
 # fn main() {}
 ```
 
-- To add a "run" button on your documentation (allowing its execution in the rust playground), use the following attribute:
+- To add a "run" button on your documentation (allowing its execution in the {{i:rust playground}}), use the following attribute:
 
 ```rust,editable
 #![doc(html_playground_url = "https://playground.example.com/")]

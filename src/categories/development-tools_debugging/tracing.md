@@ -16,7 +16,7 @@ tracing-subscriber = "0.3"
 
 ## Initialization
 
-### Basic tracing
+### Basic {{i:tracing}}
 
 ```rust,editable,noplayground
 {{#include ../../../deps/tests/tracing_subscriber.rs}}
@@ -34,7 +34,7 @@ Or with a custom formatting layer
 {{#include ../../../deps/tests/tracing_subscriber3.rs}}
 ```
 
-### Configure a custom event formatter
+### Configure a {{i:custom event formatter}}
 
 ```rust,editable,noplayground
 {{#include ../../../deps/tests/tracing_subscriber4.rs}}

@@ -4,7 +4,7 @@
 
 [![std][std-badge]][std]
 
-All of the keys must have the same type as each other, and all of the values must have the same type.
+All of the {{i:hashmap}} {{i:keys}} must have the same type as each other, and all of the {{i:values}} must have the same type.
 
 ```rust,editable
 {{#include ../../deps/tests/hashmaps.rs}}

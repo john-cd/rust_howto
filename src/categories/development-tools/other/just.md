@@ -1,6 +1,6 @@
 # Just
 
-`just` is a command runner / Make replacement.
+{{i:`just`}} is a {{i:command runner}} / Make replacement.
 
 [https://just.systems/][just-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

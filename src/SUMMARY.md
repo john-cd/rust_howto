@@ -276,6 +276,6 @@
   - [Books](links/books.md)
   - [Companies](links/companies.md)
 
-[Index](_word_index.md)
+[Index](word_index.md)
 
 [Thanks](thanks.md)

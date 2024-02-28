@@ -6,8 +6,8 @@
 
 [![reqwest][reqwest-badge]][reqwest]  [![select][select-badge]][select]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
-Use [`reqwest::get`][reqwest::get] to perform a HTTP GET request and then use
-[`Document::from_read`][select::document::Document::from_read] to parse the response into a HTML document.
+Use [`reqwest::get`][reqwest::get] to perform a {{i:HTTP GET request}} and then use
+[`Document::from_read`][select::document::Document::from_read] to parse the response into a {{i:HTML document}}.
 [`find`][select::document::Document::find] with the criteria of [`Name`][select::predicate::Name] is "a" retrieves all links. Call [`filter_map`][std-core::iter::Iterator::filter_map] on the [`Selection`][select::selection::Selection] retrieves URLs from links that have the "href" [`attr`][select::node::Node::attr] (attribute).
 
 ```rust,editable,no_run
@@ -18,9 +18,9 @@ Use [`reqwest::get`][reqwest::get] to perform a HTTP GET request and then use
 
 [![reqwest][reqwest-badge]][reqwest]  [![select][select-badge]][select]  [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
-Call `get_base_url` to retrieve the base URL. If the document has a base tag, get the href [`attr`][select::node::Node::attr] from base tag. [`Position::BeforePath`][url::Position::BeforePath] of the original URL acts as a default.
+Call `get_base_url` to retrieve the {{i:base URL}}. If the document has a base tag, get the {{i:href}} [`attr`][select::node::Node::attr] from base tag. [`Position::BeforePath`][url::Position::BeforePath] of the original URL acts as a default.
 
-Iterates through links in the document and creates a [`tokio::spawn`][tokio::task::spawn] task that will parse an individual link with [`url::ParseOptions`][url::ParseOptions] and [`Url::parse`][url::Url::parse]. The task makes a request to the links with [`reqwest`][reqwest] and verifies
+Iterates through {{i:links}} in the document and creates a [`tokio::spawn`][tokio::task::spawn] task that will parse an individual link with [`url::ParseOptions`][url::ParseOptions] and [`Url::parse`][url::Url::parse]. The task makes a request to the links with [`reqwest`][reqwest] and verifies
 [`StatusCode`][reqwest::StatusCode]. Then the tasks `await` completion before ending the program.
 
 ```rust,editable,no_run

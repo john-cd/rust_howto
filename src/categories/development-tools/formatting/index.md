@@ -6,7 +6,7 @@
 
 [![rustfmt-github][rustfmt-github-badge]][rustfmt-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-Install with `rustup component add rustfmt`
+Install with `rustup component add {{i:rustfmt}}`
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...
@@ -25,7 +25,7 @@ cargo fmt --all -- --check
 
 [Configuring Rustfmt][rustfmt-config]⮳
 
-Create a `rustfmt.toml` in the project root folder.
+Create a {{i:`rustfmt.toml`}} in the project root folder.
 For example,
 
 ```toml

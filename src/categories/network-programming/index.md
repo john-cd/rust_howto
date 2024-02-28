@@ -1,6 +1,6 @@
 # Networking
 
-Deal with higher-level network protocols such as FTP, HTTP, or SSH, or lower-level network protocols such as TCP or UDP.
+Deal with higher-level {{i:network protocols}} such as {{i:FTP}}, {{i:HTTP}}, or {{i:SSH}}, or lower-level network protocols such as {{i:TCP}} or {{i:UDP}}.
 
 {{#include server.incl.md}}
 

@@ -21,11 +21,23 @@ style = true  # Styles the private sections (when retained) using blockquote CSS
 notice = "WORK IN PROGRESS" # Adds a notice to styled sections at the top right corner.
 chapter-prefix = "_" # If the remove option is active, chapters with filenames prefixed with this value will be excluded.
 
+# https://github.com/daviddrysdale/mdbook-indexing/tree/main
+[preprocessor.indexing]
+# use_chapter_names = true
+
+[preprocessor.indexing.see_instead]
+# "unit type" = "`()`"  # index entries where the key should point to the value
+
+[preprocessor.indexing.nest_under]
+"generic type" = "generics"
+
 # [preprocessor.hide]
 # hide = true                        # enables mdbook-hide
 
+# default preprocessor
 #[preprocessor.index]
 
+# default preprocessor
 #[preprocessor.links]
 
 [output.markdown]

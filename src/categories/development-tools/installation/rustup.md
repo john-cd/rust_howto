@@ -2,7 +2,7 @@
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-`rustup` is a toolchain multiplexer. It installs and manages many Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The `rustc` and `cargo` executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
+{{i:`rustup`}} is a toolchain multiplexer. It installs and manages many Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The `rustc` and `cargo` executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
 
 This is similar to Python's `pyenv` or Node's `nvm`.
 

@@ -2,7 +2,7 @@
 
 {{#include multithreading.incl.md}}
 
-## Spawn, join
+## Spawn, {{i:join}}
 
 [![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
@@ -10,7 +10,7 @@
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
 ```
 
-When the main thread of a Rust program completes, all spawned threads are shut down, whether or not they have finished running.
+When the main thread of a Rust program completes, all {{i:spawned threads}} are shut down, whether or not they have finished running.
 
 ## Scoped threads
 
@@ -28,7 +28,7 @@ When the main thread of a Rust program completes, all spawned threads are shut d
 
 ### Parallel iteration
 
-Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel.
+Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to {{i:execute in parallel}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon.rs}}
@@ -42,7 +42,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 {{#include ../../../deps/tests/multithreading_rayon_parsort.rs}}
 ```
 
-### Custom parallel tasks
+### Custom {{i:parallel tasks}}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 

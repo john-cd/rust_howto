@@ -16,6 +16,6 @@
 {{#include ../../deps/tests/destructuring.rs}}
 ```
 
-Starting the name of a variable with an underscore silences unused variable warnings.
+Starting the name of a {{i:variable}} with an {{i:underscore}} silences {{i:unused variable}} warnings.
 
 {{#include ../refs/link-refs.md}}

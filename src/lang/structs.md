@@ -4,7 +4,7 @@
 {{#include ../../deps/tests/structs.rs}}
 ```
 
-Struct fields follow the general rule of everything being private by default unless annotated with `pub`.
+Struct {{i:fields}} follow the general rule of everything being {{i:private by default}} unless annotated with `pub`.
 
 ```rust,editable
 {{#include ../../deps/tests/structs2.rs}}

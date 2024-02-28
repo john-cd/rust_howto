@@ -1,6 +1,6 @@
 # Async
 
-Asynchronous programming, or async for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await syntax
+{{i:Asynchronous programming}}, or {{i:async}} for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the {{i:async/await}} syntax
 
 [Are we async yet?][are-we-async-yet?]⮳
 
@@ -14,7 +14,7 @@ Asynchronous programming, or async for short, is a concurrent programming model 
 {{#include ../../../deps/tests/async.rs}}
 ```
 
-As any form of cooperative multitasking, a future that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
+As any form of {{i:cooperative multitasking}}, a {{i:future}} that spends a long time without reaching an `await` "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with other languages
 
@@ -29,14 +29,14 @@ Rust's implementation of `async` differs from most languages in a few ways:
 - Dropping a future stops it from making further progress.
 - Async is zero-cost in Rust. You can use `async` without heap allocations and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
-- Both single- and multithreaded runtimes are available.
+- Both single- and {{i:multithreaded runtimes}} are available.
 
 ## Which crate provides what?
 
 - The `async`/`await` syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the `Future` trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the `futures` crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as `Tokio` and `async-std`. Most async applications, and some async crates, depend on a specific runtime.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as {{i:`Tokio`}} and {{i:`async-std`}}. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
 

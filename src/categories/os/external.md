@@ -2,7 +2,7 @@
 
 {{#include external.incl.md}}
 
-## Run an external command and process stdout
+## Run an {{i:external command}} and process {{i:stdout}}
 
 [![regex][regex-badge]][regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
@@ -12,7 +12,7 @@ Runs `git log --oneline` as an external [`Command`][std::process::Command] and i
 {{#include ../../../deps/tests/process-output.rs}}
 ```
 
-## Run an external command passing it stdin and check for an error code
+## Run an {{i:external command}} passing it stdin and check for an error code
 
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
@@ -22,13 +22,13 @@ Opens the `python` interpreter using an external [`Command`][std::process::Comma
 {{#include ../../../deps/tests/send-input.rs}}
 ```
 
-## Run piped external commands
+## Run {{i:piped external commands}}
 
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
 
-[`Command`][std::process::Command] represent a process. Output of a child process is captured with a
+[`Command`][std::process::Command] represent a {{i:process}}. Output of a child process is captured with a
 [`Stdio::piped`][std::process::Stdio::piped] between parent and child.
 
 ```rust,editable,no_run
@@ -39,7 +39,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
-Spawns a child process and redirects `stdout` and `stderr` to the same file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`process::Stdio`][std::process::Stdio] writes to a specified file. [`File::try_clone`][std::fs::File::try_clone] references the same file handle for `stdout` and `stderr`. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects {{i:`stdout`}} and {{i:`stderr`}} to the same file. It follows the same idea as [run piped external commands](#run-ipiped-external-commands), however [`process::Stdio`][std::process::Stdio] writes to a specified file. [`File::try_clone`][std::fs::File::try_clone] references the same file handle for `stdout` and `stderr`. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
@@ -65,7 +65,7 @@ The below recipe is equivalent to the Unix shell command
 
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
-Reads an environment variable via [`std::env::var`][std::env::var].
+Reads an {{i:environment variable}} via [`std::env::var`][std::env::var].
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/read-env-variable.rs}}
