@@ -6,6 +6,8 @@ Idiomatic wrappers of specific APIs for convenient access from Rust. Includes HT
 
 ## Interop
 
+[![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
+
 ### Python Interop
 
 [pyo3][pyo3-website]⮳

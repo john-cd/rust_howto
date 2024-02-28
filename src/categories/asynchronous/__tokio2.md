@@ -1,5 +1,7 @@
 # Tokio
 
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+
 ## Basics
 
 - creating and running a runtime, spawning tasks, working with I/O and timers, and handling errors.
