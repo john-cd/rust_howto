@@ -1,5 +1,7 @@
 # Authentication
 
+The process of confirming identities.
+
 {{#include index.incl.md}}
 
 ## Basic Authentication

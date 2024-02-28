@@ -1,5 +1,7 @@
 # Profiling and Performance
 
+Development tools to help you figure out the performance of your code.
+
 {{#include index.incl.md}}
 
 [![cat-profiling][cat-profiling-badge]][cat-profiling]

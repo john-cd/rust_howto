@@ -57,6 +57,8 @@
   - [Generate random values](categories/algorithms/randomness.md)
   - [Sort a vector](categories/algorithms/sorting.md)
 
+- [API Bindings](categories/api-bindings/_index.md)
+
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async and traits](categories/asynchronous/async_traits.md)
   - [Tokio async runtime](categories/asynchronous/tokio.md)
@@ -66,6 +68,8 @@
   - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
 
 - [Authentication](categories/authentication/index.md)
+
+- [Caching](categories/caching/_index.md)
 
 - [Cloud](other/cloud/_index.md)
 
@@ -113,6 +117,8 @@
   - [Postgres](categories/database/postgres.md)
   - [Query builders and ORMs](categories/database/query_builders_orms.md)
 
+- [Database implementations](categories/database-implementations/_index.md)
+
 - [Date and time](categories/date-and-time/index.md)
   - [Duration and calculation](categories/date-and-time/duration.md)
   - [Parsing and displaying](categories/date-and-time/parse.md)
@@ -143,9 +149,17 @@
   - [Log messages](categories/development-tools_debugging/log.md)
   - [Logging configuration](categories/development-tools_debugging/config_log.md)
 
-- [Development tools - performance profiling](categories/development-tools_profiling/_index.md)
+- [Development tools - FFI](categories/development-tools_ffi/_index.md)
+
+- [Development tools - procedural macro helpers](categories/development-tools_procedural-macro-helpers/_index.md)
+
+- [Development tools - performance, profiling](categories/development-tools_profiling/_index.md)
 
 - [Development tools - testing](categories/development-tools_testing/index.md)
+
+- [Email](categories/email/_index.md)
+
+- [Embedded development](categories/embedded/_index.md)
 
 - [Encoding and serialization](categories/encoding/index.md)
   - [Character sets](categories/encoding/strings.md)
@@ -164,7 +178,9 @@
 
 - [Finance](categories/finance/_index.md)
 
-- [Games](categories/game-engines/_index.md)
+- [Game engines](categories/game-engines/_index.md)
+
+- [Graphics](categories/graphics/_index.md)
 
 - [GPU programming](other/gpu/_index.md)
 
@@ -172,6 +188,10 @@
 
 - [Hardware support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
+
+- [Internationalization](categories/internationalization/_index.md)
+
+- [Localization](categories/localization/_index.md)
 
 - [Machine learning](categories/science/machine_learning/_index.md)
 
@@ -186,13 +206,31 @@
   - [Global static](categories/memory-management/global_static.md)
   - [Lazy initialization](categories/memory-management/lazy_initialization.md)
 
+- [Multimedia](categories/multimedia/_index.md)
+
 - [Network](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)
+
+- [No std](categories/no-std/_index.md)
 
 - [Operating systems](categories/os/index.md)
   - [External commands](categories/os/external.md)
 
+- [Other domains](other/_index.md)
+
+- [Parsing](categories/parsing/_index.md)
+
+- [Rendering](categories/rendering/_index.md)
+
 - [Robotics](categories/science_robotics/_index.md)
+
+- [Rust Patterns](categories/rust-patterns/_index.md)
+
+- [Science](categories/science/_index.md)
+
+- [Simulation](categories/simulation/_index.md)
+
+- [Template engines](categories/template-engine/_index.md)
 
 - [Text editors](categories/text-editors/_index.md)
 
@@ -200,6 +238,10 @@
   - [Regular expressions](categories/text-processing/regex.md)
     - [Longer regex example](categories/text-processing/regex2.md)
   - [String parsing](categories/text-processing/string_parsing.md)
+
+- [Virtualization](categories/virtualization/_index.md)
+
+- [Visualization](categories/visualization/_index.md)
 
 - [Web assembly](categories/wasm/_index.md)
 
@@ -221,6 +263,8 @@
   - [Middleware](categories/web-programming_http-server/middleware.md)
   - [CORS](categories/web-programming_http-server/cors.md)
 
+- [Web programming - websocket](categories/web-programming_websocket/_index.md)
+
 - [Windows](categories/os_windows-apis/_index.md)
 
 ---
@@ -231,5 +275,7 @@
   - [Blogs](links/blogs.md)
   - [Books](links/books.md)
   - [Companies](links/companies.md)
+
+[Index](_word_index.md)
 
 [Thanks](thanks.md)
