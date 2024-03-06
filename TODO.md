@@ -51,7 +51,7 @@
 
 - incorporate cwd.rs example + any other new examples
 
-- add word index <https://github.com/daviddrysdale/mdbook-indexing>  [Index](src/word_index.md)
+- finish word index
 
 - reenable [Index of Examples](src/_examples_index.md)
 
@@ -72,8 +72,6 @@
 - update thanks
   - add licenses to thanks page ?
 
-- review [mdbook-private](https://github.com/RealAtix/mdbook-private/tree/master) or re-add mdbook-hide
-
 - [add page TOC ?](https://github.com/zjp-CN/mdbook-theme) or [alternative](https://github.com/slowsage/mdbook-pagetoc) or [mdbook-toc](https://github.com/badboy/mdbook-toc)
 
 - [better search?](https://github.com/ang-zeyu/infisearch)
@@ -87,8 +85,6 @@ Review <https://github.com/rust-unofficial/patterns> - already in links.md
 <https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
 
 Link to <https://stevedonovan.github.io/rust-gentle-intro/>
-
-review Configuration page
 
 database access:
 
