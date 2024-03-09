@@ -3,7 +3,7 @@ use chrono::Duration;
 use chrono::Utc;
 
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
-    date_time.checked_sub_signed(Duration::days(1))
+    date_time.checked_sub_signed(Duration::try_days(1).unwrap())
 }
 
 #[test]
@@ -12,8 +12,8 @@ fn test() {
     println!("{}", now);
 
     let almost_three_weeks_from_now = now
-        .checked_add_signed(Duration::weeks(2))
-        .and_then(|in_2weeks| in_2weeks.checked_add_signed(Duration::weeks(1)))
+        .checked_add_signed(Duration::try_weeks(2).unwrap())
+        .and_then(|in_2weeks| in_2weeks.checked_add_signed(Duration::try_weeks(1).unwrap()))
         .and_then(day_earlier);
 
     match almost_three_weeks_from_now {

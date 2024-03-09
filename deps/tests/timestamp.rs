@@ -1,3 +1,4 @@
+use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;
 
@@ -11,11 +12,11 @@ fn test() {
         "Number of seconds between 1970-01-01 00:00:00 and {} is
     {}.",
         date_time,
-        date_time.timestamp()
+        date_time.and_utc().timestamp()
     );
 
     let date_time_after_a_billion_seconds =
-        NaiveDateTime::from_timestamp_opt(1_000_000_000, 0).unwrap();
+        DateTime::from_timestamp(1_000_000_000, 0).unwrap();
     println!(
         "Date after a billion seconds since 1970-01-01 00:00:00 was
     {}.",
