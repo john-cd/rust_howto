@@ -40,6 +40,8 @@
 
 - fix failing examples in drafts - WIP
 
+- integrate clap builder example
+
 - fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
 
 - finish links:
