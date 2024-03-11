@@ -23,10 +23,11 @@ fn cli() -> Command {
         // default .usage(styling::Effects::BOLD | styling::Effects::UNDERLINE)
         .literal(styling::AnsiColor::Blue.on_default() | styling::Effects::BOLD)
         .placeholder(styling::AnsiColor::Cyan.on_default());
-        // default .error(styling::AnsiColor::Red.on_default() |
-        // styling::Effects::BOLD)
-        // default .valid(styling::AnsiColor::Green.on_default())
-        // default .invalid(styling::AnsiColor::Yellow.on_default());
+    // Other styling options:
+    // .error(styling::AnsiColor::Red.on_default() |
+    // styling::Effects::BOLD) .valid(styling::AnsiColor::Green.
+    // on_default()) .invalid(styling::AnsiColor::Yellow.
+    // on_default());
 
     Command::new(env!("CARGO_CRATE_NAME")) // or use: crate_name!()
             .about("A CLI-based tool") // Sets the program's description for the short help (-h).
