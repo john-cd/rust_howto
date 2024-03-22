@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 // Tuple struct
 struct Color(i32, i32, i32);
 
