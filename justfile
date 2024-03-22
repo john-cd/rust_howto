@@ -51,8 +51,8 @@ testall: _build-book
 
 # Test all code using nextest
 nextestall: _build-book
-  cargo nextest run --no-fail-fast
-  cargo test --doc
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast
+  cargo test --doc --workspace
 
 # Run all examples (but not the tests)
 [unix]
