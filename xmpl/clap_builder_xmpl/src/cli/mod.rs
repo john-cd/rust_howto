@@ -78,8 +78,8 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
         },
     );
 
-    if opt_files.is_some() {
-        cmds.push(Cmd::Open(opt_files.unwrap()));
+    if let Some(files) = opt_files {
+        cmds.push(Cmd::Open(files));
     }
 
     let query = querycmd::get_args(&matches);
@@ -134,7 +134,7 @@ mod tests {
             assert_eq!(
                 cmd,
                 Cmd::Query(
-                    vec!["SELECT", "col", "FROM", "tbl",]
+                    ["SELECT", "col", "FROM", "tbl"]
                         .iter()
                         .map(ToString::to_string)
                         .collect()
@@ -180,7 +180,7 @@ mod tests {
         ]);
         let (_config, cmds) = parse_args(m);
         assert_eq!(
-            cmds.get(0),
+            cmds.first(),
             Some(&Cmd::Query(vec![
                 "SELECT".into(),
                 "col".into(),
