@@ -1,22 +1,6 @@
 #![warn(clippy::all, rust_2018_idioms)]
 
-use std::path::PathBuf;
-
 mod cli;
-
-/// The command passed as argument, if any
-#[derive(Default, Clone, Debug)]
-pub enum Cmd {
-    /// No (implicit or explicit) command was given
-    #[default]
-    None,
-    /// Explicit `open` command or implicit open (given a list of
-    /// files)
-    Open(Vec<PathBuf>),
-    /// `query` command, storing query words
-    Query(Vec<String>),
-    Test,
-}
 
 fn main() {
     let rust_log =
@@ -25,8 +9,10 @@ fn main() {
 
     env_logger::init(); // Log to stderr
 
-    let (config, cmd) = cli::get_args();
+    let (config, cmds) = cli::get_args();
 
+    // Demo use of the configuration and command(s) returned by
+    // `get_args`.
     match config.get_verbose() {
         0 => println!("Debug mode is off"),
         1 => println!("Debug mode is kind of on"),
@@ -35,21 +21,23 @@ fn main() {
     }
 
     if let Some(c) = config.get_config_file() {
-        println!("Value for config: {}", c.display());
+        println!("Value for config file: {}", c.display());
     }
 
-    match cmd {
-        Cmd::None => {
-            println!("none");
-        }
-        Cmd::Open(files) => {
-            println!("open {:?}", files);
-        }
-        Cmd::Query(query) => {
-            println!("query {:?}", query);
-        }
-        Cmd::Test => {
-            println!("test");
+    for cmd in cmds {
+        match cmd {
+            cli::Cmd::None => {
+                println!("Command: none");
+            }
+            cli::Cmd::Open(files) => {
+                println!("Command: open {:?}", files);
+            }
+            cli::Cmd::Query(query) => {
+                println!("Command: query {:?}", query);
+            }
+            cli::Cmd::Test => {
+                println!("Command: test");
+            }
         }
     }
 }

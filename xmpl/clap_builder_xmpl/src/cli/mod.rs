@@ -1,22 +1,24 @@
+#![allow(unused_imports)]
+
 use std::path::PathBuf;
 
+use args::*;
 use clap::builder::styling;
 use clap::crate_version;
-use clap::value_parser;
-use clap::Arg;
-use clap::ArgAction;
 use clap::ArgMatches;
 use clap::Command;
-use clap::ValueHint;
 
-use super::Cmd;
-
+mod args;
+mod cmd;
 mod config;
 mod opencmd;
 mod querycmd;
 mod testcmd;
-// pub(crate) use config::Config;
+pub(crate) use cmd::Cmd;
+pub(crate) use config::Config;
 
+/// Define the command tree and arguments that the command-line
+/// interface will accept.
 fn cli() -> Command {
     let styles = styling::Styles::styled()
         // default .header(styling::Effects::BOLD | styling::Effects::UNDERLINE)
@@ -30,270 +32,163 @@ fn cli() -> Command {
     // on_default());
 
     Command::new(env!("CARGO_CRATE_NAME")) // or use: crate_name!()
-            .about("A CLI-based tool") // Sets the program's description for the short help (-h).
-            .long_about("A tool that can open one or ore files and query data.") // Sets the program's description for the long help (--help).
+            .about("A demo CLI-based tool") // Sets the program's description for the short help (-h).
+            .long_about("A tool that can open one or more files or query data.") // Sets the program's description for the long help (--help).
             // optional: .after_help("Longer explanation to appear after the options when displaying the help information from --help or -h")
             .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
             .flatten_help(true) // Flatten subcommand help into the current command’s help
             .version(crate_version!()) // Sets the version for the short version (-V) and help messages.
             // optional: .propagate_version(true) // Specifies to use the version of the current command for all subcommands.
-            // optional: .author(clap::crate_authors!("\n")) // Set the authors. A custom help_template is needed for author to show up.
+            // optional: .author(clap::crate_authors!("\n")) // Set the authors. A custom help_template is needed for the author info to show up.
             .styles(styles)
-            .args( [arg_open(), arg_config(), arg_verbose()] )
+            .args( [arg_filepaths(), arg_config(), arg_verbose()] )
             .infer_subcommands(true) // Allow partial matches of subcommand names and their aliases. For example, to match a subcommand named test, one could use t, te, tes, and test.
-            .subcommand_precedence_over_arg(true) // Prevent subcommands from being consumed as an arguments value.
-            //.args_conflicts_with_subcommands(true) // if true, the use of an argument prevents the use of subcommands.
+            // We define three subcommands.
             .subcommand(opencmd::cmd())
             .subcommand(querycmd::cmd())
             .subcommand(testcmd::cmd())
 }
 
-pub(crate) fn get_args() -> (config::Config, Cmd) {
+pub(crate) fn get_args() -> (config::Config, Vec<Cmd>) {
+    // Parse [env::args_os], exiting on failure.
     let matches = cli().get_matches();
+    parse_args(matches)
+}
 
+fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
     let config = config::Config::builder()
         .set_verbose(get_arg_verbose(&matches))
         .set_config_file(get_arg_config(&matches));
 
-    let mut cmd = Cmd::default();
+    let mut cmds: Vec<Cmd> = Vec::new();
 
-    let mut files = get_arg_open(&matches);
-    if !files.is_empty() {
-        cmd = Cmd::Open(files);
-    }
+    // files passed directly as arguments
+    let mut opt_files = get_arg_filepaths(&matches);
 
-    files = opencmd::get_args(&matches);
-    if !files.is_empty() {
-        cmd = Cmd::Open(files);
+    // files passed after "open" command
+    opt_files = opt_files.map_or_else(
+        // If None
+        || opencmd::get_args(&matches),
+        // If Some, concatenate the filepaths vectors
+        |mut of| {
+            if let Some(mut addtl_files) = opencmd::get_args(&matches) {
+                of.append(&mut addtl_files);
+            };
+            Some(of)
+        },
+    );
+
+    if opt_files.is_some() {
+        cmds.push(Cmd::Open(opt_files.unwrap()));
     }
 
     let query = querycmd::get_args(&matches);
     if !query.is_empty() {
-        cmd = Cmd::Query(query);
+        cmds.push(Cmd::Query(query));
     }
 
     if testcmd::is_present(&matches) {
-        cmd = Cmd::Test;
+        cmds.push(Cmd::Test);
     }
 
-    (config.build(), cmd)
-}
+    if cmds.is_empty() {
+        cmds.push(Cmd::None);
+    }
 
-// (APP-LEVEL) ARGUMENTS -------------------------------
-
-/// global "--config FILE" flag
-///
-/// Example: `cargo r -- --conf config.toml`
-fn arg_config() -> Arg {
-    Arg::new("config")
-    .short('c')         // -c
-    .long("config")     // --config
-    .alias("conf")      // --conf (hidden alias - use `visible_alias` to show in the help message)
-    // default .num_args(1)
-    .value_name("FILE") // FILE, not <config>, is the placeholder for the argument's value in the help message / usage.
-    .value_parser(value_parser!(PathBuf))   // Parse and validate the FILE value before storing it into ArgMatches as the given type.
-    .value_hint(ValueHint::FilePath)        // Provide the shell a hint about how to complete this argument.
-    .help("Provides a custom config file")
-    // default .required(false) // The argument does not need to be present.
-    // default .action(ArgAction::Set)
-    .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
-    .global(true) // The --config flag can be passed to all child subcommands.
-}
-
-fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {
-    matches.get_one::<PathBuf>("config").cloned()
-}
-
-/// "filepath..." positional argument
-///
-/// Example: `cargo r -- file1.csv file2.csv`
-fn arg_open() -> Arg {
-    Arg::new("filepath")
-        .value_parser(value_parser!(PathBuf))
-        .help("File names or paths")
-        .action(ArgAction::Append) // Allow passing multiple filepaths
-}
-
-fn get_arg_open(matches: &ArgMatches) -> Vec<PathBuf> {
-    matches
-        .get_many::<PathBuf>("filepath")
-        .unwrap_or_default()
-        .cloned()
-        .collect::<Vec<_>>()
-}
-
-/// global `--verbose / -v` flag that can be added more than once
-///
-/// Example: `cargo r -- -vv`
-fn arg_verbose() -> Arg {
-    Arg::new("verbose")
-        .short('v') // -v
-        .long("verbose") // --verbose
-        .help("Verbose output")
-        .action(ArgAction::Count)
-        // .default_value("1")
-        .env("TOOL_VERBOSE") // example: NEXTCELL_VERBOSE=2 cargo run
-        .global(true)
-}
-
-fn get_arg_verbose(matches: &ArgMatches) -> u8 {
-    matches.get_count("verbose")
+    (config.build(), cmds)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[test]
-    fn verify_cmd() {
-        cli().debug_assert();
-    }
-    // See: https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert
 
     #[test]
-    fn test_arg_config_short() {
-        let m = cli().get_matches_from(vec!["prog", "-c", "config.toml"]);
-        assert_eq!(
-            get_arg_config(&m).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
-        );
+    fn test_parse_args_global_arguments_no_cmd() {
+        let m = cli().get_matches_from(vec!["foo", "-c", "config.toml", "-v"]);
+        let (config, cmds) = parse_args(m);
+        assert_eq!(config.get_verbose(), 1);
+        assert_eq!(config.get_config_file(), Some("config.toml".into()));
+        for cmd in cmds {
+            assert_eq!(cmd, Cmd::None);
+        }
     }
 
     #[test]
-    fn test_arg_config_long() {
-        let m = cli().get_matches_from(vec!["prog", "--config", "config.toml"]);
-        assert_eq!(
-            get_arg_config(&m).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
-        );
+    fn test_parse_args_test_cmd() {
+        let m =
+            cli().get_matches_from(vec!["foo", "-c", "config.toml", "test"]);
+        let (config, cmds) = parse_args(m);
+        assert_eq!(config.get_config_file(), Some("config.toml".into()));
+        for cmd in cmds {
+            assert_eq!(cmd, Cmd::Test);
+        }
     }
 
     #[test]
-    fn test_arg_config_alias() {
-        let m = cli().get_matches_from(vec!["prog", "--conf", "config.toml"]);
-        assert_eq!(
-            get_arg_config(&m).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
-        );
-    }
-
-    #[test]
-    fn test_arg_config_env() {
-        let key = "NEXTCELL_CONFIG_FILE";
-        std::env::set_var(key, "config.toml");
-        let m = cli().try_get_matches_from(vec!["prog"]);
-        // clean up the env variable
-        std::env::remove_var(key);
-        assert!(std::env::var(key).is_err());
-        assert_eq!(
-            get_arg_config(&m.unwrap()).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
-        );
-    }
-
-    #[test]
-    fn test_arg_config_global() {
+    fn test_parse_args_query_cmd() {
         let m = cli().get_matches_from(vec![
-            "prog",
-            "open",
-            "--config",
-            "config.toml",
-            "abc.csv",
+            "foo", "query", "SELECT", "col", "FROM", "tbl",
         ]);
-        assert_eq!(
-            get_arg_config(&m).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
-        );
+        let (_config, cmds) = parse_args(m);
+        for cmd in cmds {
+            assert_eq!(
+                cmd,
+                Cmd::Query(
+                    vec!["SELECT", "col", "FROM", "tbl",]
+                        .iter()
+                        .map(ToString::to_string)
+                        .collect()
+                )
+            );
+        }
+    }
 
+    #[test]
+    fn test_parse_args_open_cmd() {
+        let m = cli().get_matches_from(vec!["foo", "-vv", "open", "a.csv"]);
+        let (config, cmds) = parse_args(m);
+        assert_eq!(config.get_verbose(), 2);
+        for cmd in cmds {
+            assert_eq!(cmd, Cmd::Open(vec!["a.csv".into()]));
+        }
+    }
+
+    // Test that we can't pass both filepath arguments and the open
+    // command. You can play with
+    //  .subcommand_precedence_over_arg(true) // If true, prevent
+    // subcommands from being consumed as an arguments value. and
+    // .args_conflicts_with_subcommands(true) // If true, the use of an
+    // argument prevents the use of subcommands, i.e. arguments can only
+    // follow the final subcommand.  to change that behavior.
+    #[test]
+    fn test_both_arg_filepaths_and_cmd_open() {
+        let m = cli().get_matches_from(vec!["foo", "a.csv", "open", "b.csv"]);
+        let (_config, cmds) = parse_args(m);
+        for cmd in cmds {
+            assert_eq!(
+                cmd,
+                Cmd::Open(vec!["a.csv".into(), "open".into(), "b.csv".into()])
+            );
+        }
+    }
+
+    // Passing multiple commands is not supported.
+    #[test]
+    fn test_multiple_cmds() {
         let m = cli().get_matches_from(vec![
-            "prog",
-            "open",
-            "abc.csv",
-            "--config",
-            "config.toml",
+            "foo", "query", "SELECT", "col", "FROM", "_file", "open", "a.csv",
         ]);
+        let (_config, cmds) = parse_args(m);
         assert_eq!(
-            get_arg_config(&m).map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
+            cmds.get(0),
+            Some(&Cmd::Query(vec![
+                "SELECT".into(),
+                "col".into(),
+                "FROM".into(),
+                "_file".into(),
+                "open".into(),
+                "a.csv".into()
+            ]))
         );
-    }
-
-    #[test]
-    fn test_arg_config_malformed() {
-        let m = cli().try_get_matches_from(vec!["prog", "--config"]); // no value provided
-        assert!(m.is_err());
-    }
-
-    #[test]
-    fn test_arg_open_empty() {
-        let m = cli().get_matches_from(vec!["prog"]);
-        assert_eq!(get_arg_open(&m), Vec::<PathBuf>::new());
-    }
-
-    #[test]
-    fn test_arg_open_multiple() {
-        let m = cli().get_matches_from(vec!["prog", "a.csv", "b.csv"]);
-        assert_eq!(
-            get_arg_open(&m),
-            vec![PathBuf::from("a.csv"), PathBuf::from("b.csv")]
-        );
-    }
-
-    #[test]
-    fn test_arg_verbose_none() {
-        let m = cli().get_matches_from(vec!["prog"]);
-        assert_eq!(get_arg_verbose(&m), 0);
-    }
-
-    #[test]
-    fn test_arg_verbose_multiple() {
-        let m = cli().get_matches_from(vec!["prog", "-vvv"]);
-        assert_eq!(get_arg_verbose(&m), 3);
-
-        let m = cli().get_matches_from(vec!["prog", "-v", "-v"]);
-        assert_eq!(get_arg_verbose(&m), 2);
-    }
-
-    #[test]
-    fn test_arg_verbose_env() {
-        let key = "NEXTCELL_VERBOSE";
-        std::env::set_var(key, "1");
-        let m = cli().try_get_matches_from(vec!["prog"]);
-        // clean up the env variable
-        std::env::remove_var(key);
-        assert!(std::env::var(key).is_err());
-        assert_eq!(get_arg_verbose(&m.unwrap()), 1);
-    }
-
-    #[test]
-    fn test_cmd_open() {
-        let m = cli().get_matches_from(vec!["foo", "open", "a.csv", "b.csv"]);
-        assert_eq!(
-            opencmd::get_args(&m),
-            vec![PathBuf::from("a.csv"), PathBuf::from("b.csv")]
-        );
-    }
-
-    #[test]
-    fn test_cmd_query() {
-        let m = cli().get_matches_from(vec![
-            "foo", "query", "SELECT", "col", "FROM", "tbl", "open", "data.csv",
-        ]);
-        assert_eq!(
-            querycmd::get_args(&m),
-            vec!["SELECT", "col", "FROM", "tbl"]
-        );
-        assert_eq!(opencmd::get_args(&m), vec![PathBuf::from("a.csv")]);
-    }
-
-    #[test]
-    fn test_cmd_test() {
-        let m = cli().get_matches_from(vec!["foo", "test"]);
-        assert!(testcmd::is_present(&m));
-    }
-
-    #[test]
-    fn test_cmd_test_infer() {
-        let m = cli().get_matches_from(vec!["foo", "te"]);
-        assert!(testcmd::is_present(&m));
     }
 }

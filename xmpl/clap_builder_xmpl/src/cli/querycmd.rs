@@ -10,7 +10,7 @@ pub(super) fn cmd() -> Command {
         arg!(<query> ... "query to run")
             .required(true)
             .value_parser(clap::builder::NonEmptyStringValueParser::new())
-            .trailing_var_arg(true) // everything that follows `query` should be captured
+            // .trailing_var_arg(true) // everything that follows `query` should be captured
             .allow_negative_numbers(true),
     )
 }
@@ -33,9 +33,38 @@ pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::cli::cli;
 
     #[test]
     fn verify_query_cmd() {
         cmd().debug_assert(); // https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert
+    }
+
+    #[test]
+    fn test_cmd_query() {
+        let m = cli().get_matches_from(vec![
+            "foo", "query", "SELECT", "col", "FROM", "tbl",
+        ]);
+        assert_eq!(get_args(&m), vec!["SELECT", "col", "FROM", "tbl"]);
+    }
+
+    #[test]
+    fn test_cmd_query_none() {
+        let m = cli().try_get_matches_from(vec!["foo", "query"]);
+        assert!(m.is_err());
+
+        // empty string
+        let m = cli().try_get_matches_from(vec!["foo", ""]);
+        assert!(m.is_err());
+    }
+
+    // Verify that we don't get confused by negative numbers (that look
+    // like flags).
+    #[test]
+    fn test_cmd_query_neg_numbers() {
+        let m = cli().get_matches_from(vec![
+            "foo", "query", "SELECT", "-1", "FROM", "tbl",
+        ]);
+        assert_eq!(get_args(&m), vec!["SELECT", "-1", "FROM", "tbl"]);
     }
 }

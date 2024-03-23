@@ -1,4 +1,7 @@
+//! Configuration struct and the associated builder.
+
 use std::path::PathBuf;
+
 pub(crate) struct ConfigBuilder {
     config: Config,
 }
