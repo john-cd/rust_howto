@@ -49,6 +49,8 @@
 
 - pull request to little book of rust books
 
+- Consider adding project to <https://goodfirstissue.dev/language/rust>
+
 - review GA / GSC - issues with redirects??
 
 - incorporate cwd.rs example + any other new examples
