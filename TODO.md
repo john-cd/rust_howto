@@ -1,5 +1,7 @@
 # TODO
 
+- fix leaky tests when using nextest on Windows
+
 - review each .md file in turn
 
 [Introduction](src/index.md) polish the intro

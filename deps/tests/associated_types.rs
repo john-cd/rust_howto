@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 trait Iterator {
     type Item; // <-- associated type
     // in Impl, use e.g. `Iterator<Item = u32>`
@@ -12,5 +14,6 @@ trait Add<Rhs = Self> {
     fn add(self, rhs: Rhs) -> Self::Output;
 }
 
+// TODO
 #[test]
 fn test() {}

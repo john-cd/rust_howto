@@ -1,3 +1,6 @@
+// TODO
+#![allow(dead_code)]
+
 trait Summary {
     fn summarize_author(&self) -> String;
 

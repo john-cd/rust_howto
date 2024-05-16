@@ -1,4 +1,6 @@
 #![allow(clippy::useless_vec)]
+#![allow(dead_code)]
+// TODO ^
 
 #[test]
 fn test() {

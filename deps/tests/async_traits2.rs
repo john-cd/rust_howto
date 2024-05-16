@@ -1,3 +1,6 @@
+// TODO
+#![allow(dead_code)]
+
 trait Container {
     fn items(&self) -> impl Iterator<Item = u8>; // <-- return Impl in a trait
 }

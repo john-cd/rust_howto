@@ -1,10 +1,11 @@
-use std::fs::File;
-use std::io::Error;
-use std::process::Command;
-use std::process::Stdio;
-
 #[test]
+#[cfg(target_family = "unix")]
 fn test() -> Result<(), Error> {
+    use std::fs::File;
+    use std::io::Error;
+    use std::process::Command;
+    use std::process::Stdio;
+
     let outputs = File::create("out.txt")?;
     let errors = outputs.try_clone()?;
 

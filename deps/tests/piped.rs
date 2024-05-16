@@ -1,10 +1,10 @@
-use std::process::Command;
-use std::process::Stdio;
-
-use anyhow::Result;
-
 #[test]
+#[cfg(target_family = "unix")]
 fn test() -> Result<()> {
+    use std::process::Command;
+    use std::process::Stdio;
+    use anyhow::Result;
+
     let directory = std::env::current_dir()?;
     let mut du_output_child = Command::new("du")
         .arg("-ah")
