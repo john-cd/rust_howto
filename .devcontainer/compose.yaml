@@ -1,5 +1,4 @@
 # Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
-version: "3.8"
 services:
   book:
     build:
