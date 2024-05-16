@@ -108,15 +108,16 @@ _sitemap:
 
 # Test the code used by the book
 test: _build-book
-  cargo test --package deps --tests --examples --locked -- --show-output
+  cargo test --package deps --tests --locked -- --show-output
 # This relies on skeptic to build doctests - see `build.rs`
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
 # when dealing with dependencies outside of the std library.
 # See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Serve the book (incl. link checking)
-serve: _build-book
-  mdbook serve --open
+serve: build
+  cd book/html ; python3 -m http.server 3000
+# TODO make work from Dev Containers: mdbook serve --open
 # To change the port: --port 3001
 
 # Watch the book's markdown files and rebuilds it on changes

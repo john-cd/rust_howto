@@ -33,12 +33,17 @@
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // 3000 for mdbook serve --open
     // 6080 for desktop lite - see https://github.com/devcontainers/features/tree/main/src/desktop-lite
-    "forwardPorts": [
-        3000 //, 6080
-    ],
+    // "forwardPorts": [
+    //     3000 //, 6080
+    // ],
     // "portsAttributes": {
     //     "6080": {
     //         "label": "desktop"
+    //     }
+    // },
+    // "portsAttributes": {
+    //     "3000": {
+    //         "label": "mdbook serve"
     //     }
     // },
     // Configure tool-specific properties.
