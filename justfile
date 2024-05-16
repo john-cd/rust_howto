@@ -60,12 +60,13 @@ runall: _build-book
   #! /bin/bash
   set -o pipefail
   set -e
-  # Run examples that are simple .rs files
-  examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
-  for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
-  # Run examples that are in a folder
-  examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
-  for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
+  ## Examples under the deps folder (removed)
+  ## Run examples that are simple .rs files
+  #examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
+  #for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
+  ## Run examples that are in a folder
+  #examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
+  #for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
   # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
   xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
   # Also run additional examples in the xmpl folder, if any
