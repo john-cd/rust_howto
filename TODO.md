@@ -2,6 +2,8 @@
 
 - fix leaky tests when using nextest on Windows
 
+- Warning: The index-preprocessor plugin was built against version 0.4.35 of mdbook, but we're being called from version 0.4.37
+
 - review each .md file in turn
 
 [Introduction](src/index.md) polish the intro
