@@ -1,8 +1,7 @@
 #[test]
 #[cfg(target_family = "unix")]
-fn test() -> Result<(), Error> {
+fn test() -> Result<(), std::io::Error> {
     use std::fs::File;
-    use std::io::Error;
     use std::process::Command;
     use std::process::Stdio;
 
