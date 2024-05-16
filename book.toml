@@ -2,18 +2,20 @@
 authors = ["S. John CD"]
 language = "en"
 multilingual = false
-#src = "src"
+# src = "src"  # the directory with the markdown sources, "src" by default
 title = "Rust How-to"
 description = "A compendium of links, code snippets, and recipes for the Rust language and ecosystem."
 
 [build]
-#build-dir = "book"                # the directory where the output is placed
+# build-dir = "book"                # the directory where the output is placed, "book" by default
 create-missing = false             # whether or not to create missing pages
-#use-default-preprocessors = true  # use the default preprocessors `links` and `index`
+# use-default-preprocessors = true  # use the default preprocessors `links` and `index`, true by default
 extra-watch-dirs = ["static", "theme", "deps"]             # directories to watch for triggering builds
 
 [rust]
 edition = "2021"
+
+## PREPROCESSORS -----------------------------------------------------
 
 [preprocessor.private]
 remove = true # Determines whether to remove or retain sections marked as private
@@ -21,7 +23,7 @@ style = true  # Styles the private sections (when retained) using blockquote CSS
 notice = "WORK IN PROGRESS" # Adds a notice to styled sections at the top right corner.
 chapter-prefix = "_" # If the remove option is active, chapters with filenames prefixed with this value will be excluded.
 
-# https://github.com/daviddrysdale/mdbook-indexing/tree/main
+# # https://github.com/daviddrysdale/mdbook-indexing/tree/main
 [preprocessor.indexing]
 # use_chapter_names = true
 
@@ -31,15 +33,25 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 [preprocessor.indexing.nest_under]
 "generic type" = "generics"
 
+# # Enables mdbook-hide, if needed
 # [preprocessor.hide]
-# hide = true                        # enables mdbook-hide
+# hide = true
 
-# default preprocessor
+# [preprocessor.keeper]
+# command = "mdbook-keeper"
+# # NOTE: the file Cargo.toml should exist at this path.
+# manifest_dir = "./deps"
+
+# # Default preprocessor: index
 #[preprocessor.index]
 
-# default preprocessor
+# # Default preprocessor: links
 #[preprocessor.links]
 
+## OUTPUTS --------------------------------------------------------
+
+# # Output as markdown (in addition to HTML) for debugging purposes
+# # May also be used by Skeptic tests (see `deps/build.rs`)
 [output.markdown]
 
 # # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html
@@ -93,14 +105,9 @@ editable = true            # allows editing the source code
 # heading-split-level = 3  # link results to heading levels
 # copy-js = true           # include Javascript code for search
 
-# [preprocessor.keeper]
-# command = "mdbook-keeper"
-# # NOTE: the file Cargo.toml should exist at this path.
-# manifest_dir = "./deps"
-
+# # Should we check links on the internet? Enabling this option adds a
+# # non-negligible performance impact
 [output.linkcheck]
-# Should we check links on the internet? Enabling this option adds a
-# non-negligible performance impact
 follow-web-links = false
 
 # # Are we allowed to link to files outside of the book's root directory? This
@@ -114,7 +121,7 @@ traverse-parent-directories = false
 # #
 # # Hint: you can use TOML's raw strings (single quote) to avoid needing to
 # # escape things twice.
-# #exclude = [ 'google\.com' ]
+# exclude = [ 'google\.com' ]
 
 # # The User-Agent to use when sending web requests
 # user-agent = "mdbook-linkcheck-0.4.0"
@@ -136,12 +143,12 @@ warning-policy = "error"
 # # This is a dictionary (map), with keys being regexes
 # # matching a set of web sites, and values being an array of
 # # the headers.
-# #[output.linkcheck.http-headers]
+# [output.linkcheck.http-headers]
 # # Any hyperlink that contains this regexp will be sent
 # # the "Accept: text/html" header
-# #'crates\.io' = ["Accept: text/html"]
+# 'crates\.io' = ["Accept: text/html"]
 
-# # mdbook-linkcheck will interpolate environment variables into your header via
+# # `mdbook-linkcheck` will interpolate environment variables into your header via
 # # $IDENT.
 # #
 # # If this is not what you want you must escape the `$` symbol, like `\$TOKEN`.
