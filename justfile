@@ -87,11 +87,11 @@ _build-book:
 
 # Generate new reference definitions for all crate the book's examples depend on...
 _generate-refdefs:
-  # TODO mdbook-utils refdefs
+# TODO mdbook-utils refdefs
 
 # Generate the index and the category page.
 _generate-index-category:
-  # TODO mdbook-utils
+# TODO mdbook-utils
 
 # Add static assets to book output
 [unix]
