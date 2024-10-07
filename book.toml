@@ -1,5 +1,5 @@
 [book]
-authors = ["S. John CD"]
+authors = ["John CD"]
 language = "en"
 multilingual = false
 # src = "src"  # the directory with the markdown sources, "src" by default

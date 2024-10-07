@@ -24,7 +24,8 @@ pub(super) fn arg_config() -> Arg {
     // default .required(false) // The argument does not need to be present.
     // default .action(ArgAction::Set)
     .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
-    .global(true) // The --config flag can be passed to all child subcommands.
+    .global(true) // The --config flag can be passed to all child
+                  // subcommands.
 }
 
 pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {

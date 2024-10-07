@@ -1,5 +1,5 @@
 [package]
-name = "deps" # All crate DEPendencies for the book's examples are stored below.
+name = "deps"                  # All crate DEPendencies for the book's examples are stored below.
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -25,7 +25,7 @@ ansi_term = "0.12"
 anyhow = "1"
 approx = "0.5"
 async-trait = "0.1"
-base64 = "0.21"
+base64 = "0.22.1"
 bitflags = "2"
 byteorder = "1"
 bytes = "1"
@@ -41,9 +41,9 @@ crossbeam-channel = "0.5"
 crossbeam-queue = "0.3"
 crossbeam-utils = "0.8"
 csv = "1"
-dashmap = "5"
+dashmap = "6"
 data-encoding = "2"
-derive_more = "0.99"
+derive_more = { version = "1", features = ["full"] }
 #doc-comment = "0.3"
 dotenvy = "0.15"
 env_logger = "0.11"
@@ -53,15 +53,15 @@ futures = "0.3"
 glob = "0.3"
 http = "1"
 http-body-util = "0.1"
-image = "0.24"
+image = "0.25"
 lazy_static = "1"
 log = "0.4"
 log4rs = "1"
 memmap = "0.7"
 miette = { version = "7", features = ["fancy"] }
 mime = "0.3"
-nalgebra = { version = "0.32", features = ["serde-serialize"] }
-ndarray = { version = "0.15", features = ["approx"] }
+nalgebra = { version = "0.33", features = ["serde-serialize"] }
+ndarray = { version = "0.16", features = ["approx"] }
 notify = "6"
 num = "0.4"
 num_cpus = "1"
@@ -75,9 +75,9 @@ rand = "0.8"
 rand_distr = "0.4"
 rayon = "1"
 regex = "1"
-reqwest = { version = "0.11", features = ["blocking", "json", "stream"] }
+reqwest = { version = "0.12", features = ["blocking", "json", "stream"] }
 ring = "0.17"
-rusqlite = { version = "0.31", features = ["chrono"] }
+rusqlite = { version = "0.32", features = ["chrono"] }
 same-file = "1"
 #sea-orm = "0.12"
 select = "0.6"
@@ -90,10 +90,10 @@ tempfile = "3"
 thiserror = "1"
 threadpool = "1"
 tokio = { version = "1", features = ["full"] }
-tokio-graceful-shutdown = "0.14"
+tokio-graceful-shutdown = "0.15"
 toml = "0.8"
-tower = { version = "0.4", features = ["util"] }
-tower-http = { version = "0.5", features = ["full", "auth"] }
+tower = { version = "0.5", features = ["util"] }
+tower-http = { version = "0.6", features = ["full", "auth"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 unicode-segmentation = "1"
@@ -102,7 +102,7 @@ walkdir = "2"
 #build-info = "0.0.34"
 
 [target.'cfg(target_os = "linux")'.dependencies]
-syslog = "6"
+syslog = "7"
 
 [build-dependencies]
 anyhow = "1"
@@ -114,3 +114,6 @@ walkdir = "2"
 
 [dev-dependencies]
 skeptic = "0.13"
+
+[features]
+full = []

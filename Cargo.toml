@@ -13,8 +13,8 @@ default-members = ["deps"]
 
 # Default values for packages in the workspace
 [workspace.package]
-version = "0.1.0"
-authors = ["John CD <johncd222@gmail.com>"]
+version = "0.1.2"
+authors = ["John CD"]
 edition = "2021"
 rust-version = "1.75"
 description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."

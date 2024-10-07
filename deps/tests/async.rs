@@ -11,7 +11,7 @@ async fn first_task() -> SomeStruct {
     SomeStruct
 }
 
-async fn second_task_1(_s: &SomeStruct) { /* ... */
+async fn second_task_1(_s: &SomeStruct) { // ...
 }
 
 // `async fn` is really syntaxic sugar for a function...

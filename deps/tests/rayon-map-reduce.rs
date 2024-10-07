@@ -28,6 +28,6 @@ fn test() {
     let avg_over_30 = sum_over_30 as f32 / num_over_30;
     let alt_avg_over_30 = alt_sum_30 as f32 / num_over_30;
 
-    assert!((avg_over_30 - alt_avg_over_30).abs() < std::f32::EPSILON);
+    assert!((avg_over_30 - alt_avg_over_30).abs() < f32::EPSILON);
     println!("The average age of people older than 30 is {}", avg_over_30);
 }
