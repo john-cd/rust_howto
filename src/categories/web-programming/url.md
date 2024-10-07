@@ -6,8 +6,7 @@
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`parse`][url::Url::parse] method from the {{i:`url`}} crate validates and parses a `&str` into a
-[`Url`][url::Url] struct. The input string may be malformed so this method returns
+The [`parse`][url::Url::parse]⮳ method from the {{i:`url`}} crate validates and parses a `&str` into a [`Url`][url::Url]⮳ struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
 Once the URL has been parsed, it can be used with all of the methods in the
@@ -21,7 +20,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`PathSegmentsMut::clear`][url::PathSegmentsMut::clear] removes paths and [`Url::set_query`][url::Url::set_query] removes query string.
+A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`PathSegmentsMut::clear`][url::PathSegmentsMut::clear]⮳ removes paths and [`Url::set_query`][url::Url::set_query]⮳ removes query string.
 
 ```rust,editable
 {{#include ../../../deps/tests/base.rs}}
@@ -31,7 +30,7 @@ A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, fi
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`join`][url::Url::join] method creates a new URL from a base and {{i:relative path}}.
+The [`join`][url::Url::join]⮳ method creates a new URL from a base and {{i:relative path}}.
 
 ```rust,editable
 {{#include ../../../deps/tests/new.rs}}
@@ -41,13 +40,13 @@ The [`join`][url::Url::join] method creates a new URL from a base and {{i:relati
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`Url`][url::Url] struct exposes various methods to extract information about the URL it represents.
+The [`Url`][url::Url]⮳ struct exposes various methods to extract information about the URL it represents.
 
 ```rust,editable
 {{#include ../../../deps/tests/origin.rs}}
 ```
 
-[`origin`][url::Url::origin] produces the same result.
+[`origin`][url::Url::origin]⮳ produces the same result.
 
 ```rust,editable
 {{#include ../../../deps/tests/origin1.rs}}
@@ -57,7 +56,7 @@ The [`Url`][url::Url] struct exposes various methods to extract information abou
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-Parses [`Url`][url::Url] and slices it with [`url::Position`][url::Position] to strip unneeded URL parts.
+Parses [`Url`][url::Url]⮳ and slices it with [`url::Position`][url::Position]⮳ to strip unneeded URL parts.
 
 ```rust,editable
 {{#include ../../../deps/tests/fragment.rs}}

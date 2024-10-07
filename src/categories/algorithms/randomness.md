@@ -32,7 +32,7 @@ Generates a {{i:random value}} within half-open `[0, 10)` range (not including `
 
 [![rand_distr][rand_distr-badge]][rand_distr]  [![cat-science][cat-science-badge]][cat-science]
 
-By default, {{i:random numbers}} in the `rand` crate have [uniform distribution][wikipedia-uniform-distribution]. The [`rand-distr`][rand_distr] crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`Distribution::sample`][rand::distributions::Distribution::sample] with help of a random-number generator [`rand::Rng`][rand::Rng]. The [distributions available are documented here][rand_distr]. An example using the [`Normal`][rand_distr::Normal] distribution is shown below.
+By default, {{i:random numbers}} in the `rand` crate have [uniform distribution][wikipedia-uniform-distribution]⮳. The [`rand-distr`][rand_distr]⮳ crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`Distribution::sample`][rand::distributions::Distribution::sample]⮳ with help of a random-number generator [`rand::Rng`][rand::Rng]⮳. The [distributions available are documented here][rand_distr]⮳. An example using the [`Normal`][rand_distr::Normal]⮳ distribution is shown below.
 
 ```rust,editable,ignore
 {{#include ../../../deps/tests/rand-dist.rs}}
@@ -42,7 +42,7 @@ By default, {{i:random numbers}} in the `rand` crate have [uniform distribution]
 
 [![rand][rand-badge]][rand]  [![cat-science][cat-science-badge]][cat-science]
 
-Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`Distribution`][rand::distributions::Distribution]trait on type Point for [`Standard`][rand::distributions::Standard] trait in order to allow random generation.
+Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`. Implements the [`Distribution`][rand::distributions::Distribution]⮳ trait on type Point for [`Standard`][rand::distributions::Standard]⮳ trait in order to allow random generation.
 
 ```rust,editable
 {{#include ../../../deps/tests/rand-custom.rs}}
@@ -52,7 +52,7 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 
 [![rand][rand-badge]][rand]  [![cat-os][cat-os-badge]][cat-os]
 
-Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`][rand::distributions::Alphanumeric] sample.
+Randomly generates a string of given length ASCII characters in the range `A-Z, a-z, 0-9`, with [`Alphanumeric`][rand::distributions::Alphanumeric]⮳ sample.
 
 ```rust,editable
 {{#include ../../../deps/tests/rand-passwd.rs}}

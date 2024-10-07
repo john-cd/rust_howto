@@ -14,7 +14,7 @@ Techniques to help create {{i:command line interfaces}}, such as {{i:argument pa
 
 [![tui-rs][tui-rs-badge]][tui-rs]
 
-[![r3bl-tuify][r3bl-tuify-badge]][r3bl-tuify]  [(crates.io)][r3bl_tuify-crate]  [(blog)][tuify-blog]
+[![r3bl-tuify][r3bl-tuify-badge]][r3bl-tuify]  [(crates.io)][r3bl_tuify-crate]⮳  [(blog)][tuify-blog]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

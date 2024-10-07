@@ -30,7 +30,7 @@ For example,
 
 ```toml
 edition = "2021"
-version = "Two"
+style_edition = "2021"
 unstable_features = true
 
 newline_style = "Unix"

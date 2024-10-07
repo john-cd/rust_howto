@@ -2,7 +2,7 @@
 
 Create applications for the {{i:web}}.
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]
 
 ## Uniform Resource Locations (URL)
 

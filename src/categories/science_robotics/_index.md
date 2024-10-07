@@ -16,7 +16,7 @@ Open Rust Robotics: [![openrr-github][openrr-github-badge]][openrr-github]
 
 ## Useful tools and libraries
 
-[OpenCV][opencv-website]  [![opencv-example][opencv-example-badge]][opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]
+[OpenCV][opencv-website]⮳  [![opencv-example][opencv-example-badge]][opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]
 
 [Zenoh][zenoh-website]⮳
 

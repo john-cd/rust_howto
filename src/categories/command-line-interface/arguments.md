@@ -6,8 +6,7 @@
 
 [![clap][clap-badge]][clap]  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![clap-github][clap-github-badge]][clap-github]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-This application describes the structure of its command-line interface using
-`clap`'s builder style. The [documentation][clap] gives two other possible ways to instantiate an application.
+This application describes the structure of its command-line interface using `clap`'s builder style. The [documentation][clap]⮳ gives two other possible ways to instantiate an application.
 
 In the builder style, `with_name` is the unique identifier that `value_of` will use to retrieve the value passed. The `short` and `long` options control the {{i:flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
 

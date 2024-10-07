@@ -43,7 +43,7 @@ To work with it locally we can run the following commands to create a new cargo 
 cargo new my-example --bin cd my-example
 ```
 
-Now, we also need to add the necessary crates to [Cargo.toml][book-cargo-cargo-toml], as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
+Now, we also need to add the necessary crates to [Cargo.toml][book-cargo-cargo-toml]⮳, as indicated by the crate badges, in this case just "rand". To do so, we'll use the `cargo add` command.
 
 Now you can replace `src/main.rs` with the full contents of the example and run it:
 
@@ -51,7 +51,7 @@ Now you can replace `src/main.rs` with the full contents of the example and run 
 cargo run
 ```
 
-The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs-rs], and is often the next documentation you should read after deciding which crate suites your purpose.
+The crate badges that accompany the examples link to the crates' full documentation on [`docs.rs`][docs-rs]⮳, and is often the next documentation you should read after deciding which crate suites your purpose.
 
 ## A note about error handling
 
@@ -75,7 +75,7 @@ For the sake of readability error handling boilerplate is hidden by default like
 {{#include ../deps/tests/about2.rs}}
 ```
 
-For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling] and [this blog post][blog-error].
+For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling]⮳ and [this blog post][blog-error]⮳.
 
 ## A note about crate representation
 

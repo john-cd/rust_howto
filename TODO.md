@@ -1,201 +1,126 @@
 # TODO
 
-- fix leaky tests when using nextest on Windows
-
-- Warning: The index-preprocessor plugin was built against version 0.4.35 of mdbook, but we're being called from version 0.4.37
-
-- review each .md file in turn
-
-[Introduction](src/index.md) polish the intro
-
-- [Contributing](src/contributing/index.md)
-
-- add explanation text for language pages
-
-[Rust installation and first steps](src/lang/rust_install.md) polish
-
-- [Main function](src/lang/main.md) add description
-- [Simple data types](src/lang/simple_data_types.md) add description
-- [Variables and constants](src/lang/variables_and_constants.md) add description
-- [Ownership and borrowing](src/lang/ownership_borrowing.md)   add description
-- [Slices](src/lang/slices.md)   add description
-- [Functions](src/lang/functions.md)   add description
-- [Control flow](src/lang/control_flow.md) add description
-- [Structs](src/lang/structs.md)
-- [Enums](src/lang/enums.md)
-- [Traits](src/lang/traits.md)
-- [Trait objects](src/lang/trait_objects.md)
-- [Attributes](src/lang/attributes.md)
-- [Generics](src/lang/generics.md)
-- [Lifetimes](src/lang/lifetimes.md)
-- [Modules and `use` keyword](src/lang/modules.md)
-- [Pattern matching, if / while let](src/lang/match.md)
-- [Closures](src/lang/closures.md)
-- [Iterators](src/lang/iterators.md)
-- [Macros](src/lang/macros.md)
-
-- [Standard library](src/standard_library/index.md)
-- [Option](src/standard_library/option.md) finish Option page map, unwrap_or
-- [Smart pointers](src/standard_library/smart_pointers.md)
-
-- [Crates (by category)](src/_categories.md)
-
-[About](src/_about.md) rewrite
-
-- fix failing examples in drafts - WIP
-
-- integrate clap builder example
-
-- fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
-
-- finish links:
-  - create badge refdefs for links to crates.io, lib.rs, RBE book, etc
-
-- pull request to little book of rust books
-
-- Consider adding project to <https://goodfirstissue.dev/language/rust>
-
-- review GA / GSC - issues with redirects??
-
-- incorporate cwd.rs example + any other new examples
-
-- finish word index
-
-- reenable [Index of Examples](src/_examples_index.md)
-
-- finish cd_ci.md
-
-- finish improve_speed
-
-- finish to review ignore / no_run examples
-
-- Make addt'l examples out of mdbook-utils
-
-- tower_http example polish; other examples have been checked against the rust playground
-
-- add to each stub chapter in turn
-
-- license
-
-- update thanks
-  - add licenses to thanks page ?
-
-- [add page TOC ?](https://github.com/zjp-CN/mdbook-theme) or [alternative](https://github.com/slowsage/mdbook-pagetoc) or [mdbook-toc](https://github.com/badboy/mdbook-toc)
-
-- [better search?](https://github.com/ang-zeyu/infisearch)
-
-- <https://www.sheshbabu.com/posts/rust-module-system/>
-
-Review <https://github.com/rust-unofficial/awesome-rust> - already in links.md
-
-Review <https://github.com/rust-unofficial/patterns> - already in links.md
-
-<https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
-
-Link to <https://stevedonovan.github.io/rust-gentle-intro/>
-
-database access:
-
-- sqlx
-- seaORM
-
-CI / CD: rust-cache
-
-cargo outdated / audit / license / deny
-
-<https://hoverbear.org/blog/rust-state-machine-pattern/>
-
-review deny.toml
-
-more details in the standard library section
-
-add more to tokio.md
-
-- async main
-- spawning
-- networking
-- 'static and Send constraints
-- I/O
-- Join, select
-- <https://tokio.rs/tokio/topics/tracing-next-steps>
-
-<https://ryhl.io/blog/async-what-is-blocking/>
-
-<https://ryhl.io/blog/actors-with-tokio/>
-
-<https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code>
-
-Tower
-
-add to Comparison to other languages
-
-AWS
-
-walkdir
-
-<https://docs.rs/flagset/latest/flagset/>
-
-notify
-
-indicatif, ratatui
-
-- time
-- chrono
-
-traits
-
-[dyn clone][dyn-clone]
-
-testing: Approx example
-
-[fuzzing][fuzzing-github]
-
-- axum
-- loco
-- reqwest
-- tonic
-
-- redis
-- mongodb
-- elasticsearch
-
-Macros
-
-egui
-
-Badges
-
-rust and Docker - multistage builds
-
-rust + docker compose
-
-rust + Mongo example
-
-add a rust axum example
-
-shuttle.rs example
-
-add to windows.md
-
-add to Data
-
-add to GPU.md
-
-add to interop / Python
-
-add to Books
-
-Languages
-
-finish actor.md
-
-Search within the book
-
-<https://endler.dev/2019/tinysearch/>
-<https://stork-search.net/>
-<https://github.com/lucaong/minisearch>
-<https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html>
-<https://github.com/typesense/typesense>
-<https://news.ycombinator.com/item?id=23473303>
-
-Algolia
+## Examples
+
+- [ ] fix leaky tests when using nextest on Windows
+- [ ] outputs of tests should go to a temporary folder
+- [ ] Warning: The index-preprocessor plugin was built against version 0.4.35 of mdbook, but we're being called from version 0.4.37
+- [ ] fix failing examples in drafts WIP
+- [ ] integrate clap builder example
+- [ ] fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
+
+## Markdown
+
+- [ ] review each .md file in turn
+- [ ] add explanation text for language pages
+- [ ] [Introduction](src/index.md) polish the intro
+- [ ] [Contributing](src/contributing/index.md)
+- [ ] [Rust installation and first steps](src/lang/rust_install.md) polish
+- [ ] [Main function](src/lang/main.md) add description
+- [ ] [Simple data types](src/lang/simple_data_types.md) add description
+- [ ] [Variables and constants](src/lang/variables_and_constants.md) add description
+- [ ] [Ownership and borrowing](src/lang/ownership_borrowing.md)   add description
+- [ ] [Slices](src/lang/slices.md)   add description
+- [ ] [Functions](src/lang/functions.md)   add description
+- [ ] [Control flow](src/lang/control_flow.md) add description
+- [ ] [Structs](src/lang/structs.md)
+- [ ] [Enums](src/lang/enums.md)
+- [ ] [Traits](src/lang/traits.md)
+- [ ] [Trait objects](src/lang/trait_objects.md)
+- [ ] [Attributes](src/lang/attributes.md)
+- [ ] [Generics](src/lang/generics.md)
+- [ ] [Lifetimes](src/lang/lifetimes.md)
+- [ ] [Modules and `use` keyword](src/lang/modules.md)
+- [ ] [Pattern matching, if / while let](src/lang/match.md)
+- [ ] [Closures](src/lang/closures.md)
+- [ ] [Iterators](src/lang/iterators.md)
+- [ ] [Macros](src/lang/macros.md)
+- [ ] [Standard library](src/standard_library/index.md)
+- [ ] [Option](src/standard_library/option.md) finish Option page map, unwrap_or
+- [ ] [Smart pointers](src/standard_library/smart_pointers.md)
+- [ ] [Crates (by category)](src/_categories.md)
+- [ ] [About](src/_about.md) rewrite
+- [ ] finish links:
+- [ ] create badge refdefs for links to crates.io, lib.rs, RBE book, etc
+- [ ] pull request to little book of rust books
+- [ ] Consider adding project to <https://goodfirstissue.dev/language/rust>
+- [ ] review GA / GSC - issues with redirects??
+- [ ] incorporate cwd.rs example + any other new examples
+- [ ] finish word index
+- [ ] reenable [Index of Examples](src/_examples_index.md)
+- [ ] finish cd_ci.md
+- [ ] finish improve_speed
+- [ ] finish to review ignore / no_run examples
+- [ ] Make addt'l examples out of mdbook-utils
+- [ ] tower_http example polish; other examples have been checked against the rust playground
+- [ ] add to each stub chapter in turn
+- [ ] license
+- [ ] update thanks
+- [ ] add licenses to thanks page ?
+- [ ] [add page TOC ?](https://github.com/zjp-CN/mdbook-theme) or [alternative](https://github.com/slowsage/mdbook-pagetoc) or [mdbook-toc](https://github.com/badboy/mdbook-toc)
+- [ ] [better search?](https://github.com/ang-zeyu/infisearch)
+- [ ] <https://www.sheshbabu.com/posts/rust-module-system/>
+- [ ] Review <https://github.com/rust-unofficial/awesome-rust> - [ ] already in links.md
+- [ ] Review <https://github.com/rust-unofficial/patterns> - [ ] already in links.md
+- [ ] <https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/>
+- [ ] Link to <https://stevedonovan.github.io/rust-gentle-intro/>
+- [ ] database access: sqlx, seaORM
+- [ ] CI / CD: rust-cache
+- [ ] cargo outdated / audit / license / deny
+- [ ] <https://hoverbear.org/blog/rust-state-machine-pattern/>
+- [ ] review deny.toml
+- [ ] more details in the standard library section
+- [ ] add more to tokio.md
+- [ ] async main
+- [ ] spawning
+- [ ] networking
+- [ ] 'static and Send constraints
+- [ ] I/O
+- [ ] Join, select
+- [ ] <https://tokio.rs/tokio/topics/tracing-next-steps>
+- [ ] <https://ryhl.io/blog/async-what-is-blocking/>
+- [ ] <https://ryhl.io/blog/actors-with-tokio/>
+- [ ] <https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code>
+- [ ] Tower
+- [ ] add to Comparison to other languages
+- [ ] AWS
+- [ ] walkdir
+- [ ] <https://docs.rs/flagset/latest/flagset/>
+- [ ] notify
+- [ ] indicatif, ratatui
+- [ ] time
+- [ ] chrono
+- [ ] traits
+- [ ] [dyn clone][dyn-clone]
+- [ ] testing: Approx example
+- [ ] [fuzzing][fuzzing-github]
+- [ ] axum
+- [ ] loco
+- [ ] reqwest
+- [ ] tonic
+- [ ] redis
+- [ ] mongodb
+- [ ] elasticsearch
+- [ ] Macros
+- [ ] egui
+- [ ] Badges
+- [ ] rust and Docker - [ ] multistage builds
+- [ ] rust + docker compose
+- [ ] rust + Mongo example
+- [ ] add a rust axum example
+- [ ] shuttle.rs example
+- [ ] add to windows.md
+- [ ] add to Data
+- [ ] add to GPU.md
+- [ ] add to interop / Python
+- [ ] add to Books
+- [ ] Languages
+- [ ] finish actor.md
+- [ ] Search within the book
+- [ ] <https://endler.dev/2019/tinysearch/>
+- [ ] <https://stork-search.net/>
+- [ ] <https://github.com/lucaong/minisearch>
+- [ ] <https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html>
+- [ ] <https://github.com/typesense/typesense>
+- [ ] <https://news.ycombinator.com/item?id=23473303>
+- [ ] Algolia

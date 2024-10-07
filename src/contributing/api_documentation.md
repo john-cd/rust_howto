@@ -6,7 +6,7 @@ Use `just doc` to generate the documentation for `docs.rs`.
 
 ### Using a Dev Container feature
 
-Alternatively, use the ["Desktop lite" Dev Container feature]( https://github.com/devcontainers/features/tree/main/src/desktop-lite ) to install a light {{i:GUI manager}}. Add the following to `devcontainer.json`:
+Alternatively, use the ["Desktop lite" Dev Container feature]( https://github.com/devcontainers/features/tree/main/src/desktop-lite )⮳ to install a light {{i:GUI manager}}. Add the following to `devcontainer.json`:
 
 ```json
 "features": {

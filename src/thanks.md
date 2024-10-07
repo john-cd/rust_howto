@@ -1,6 +1,6 @@
 # Thanks
 
-This reference guide is written by [John CD][john-cd-github].
+This reference guide is written and edited by [John CD][john-cd-github].
 
 It is the successor of and incorporates most of the [Rust Cookbook][book-rust-cookbook]. Thanks to its many contributors.
 

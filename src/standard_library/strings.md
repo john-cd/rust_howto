@@ -28,7 +28,7 @@ Here are several common methods to {{i:concatenate}} Strings:
 {{#include ../../deps/tests/strings3.rs}}
 ```
 
-Examples from [concatenation_benchmarks-rs]( https://github.com/hoodie/concatenation_benchmarks-rs )
+Examples from [concatenation_benchmarks-rs]( https://github.com/hoodie/concatenation_benchmarks-rs )⮳
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
