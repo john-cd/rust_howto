@@ -25,7 +25,7 @@ cargo fmt --all -- --check
 
 [Configuring Rustfmt][rustfmt-config]⮳
 
-Create a {{i:`rustfmt.toml`}} in the project root folder.
+Create a `{{i:rustfmt.toml}}` in the project root folder.
 For example,
 
 ```toml

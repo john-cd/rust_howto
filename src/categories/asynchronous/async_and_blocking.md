@@ -22,7 +22,7 @@ Use [`spawn_blocking`][tokio::task::spawn_blocking]⮳ to run a _small portion_ 
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
 ```
 
-## Using the {{i:`rayon`}} crate
+## Using the `{{i:rayon}}` crate
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 

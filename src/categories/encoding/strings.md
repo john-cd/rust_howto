@@ -6,7 +6,7 @@
 
 [![percent-encoding][percent-encoding-badge]][percent-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode]⮳ function from the {{i:`percent-encoding`}} crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode]⮳ function.
+Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ using the [`utf8_percent_encode`][percent_encoding::utf8_percent_encode]⮳ function from the `{{i:percent-encoding}}` crate. Then decode using the [`percent_decode`][percent_encoding::percent_decode]⮳ function.
 
 ```rust,editable
 {{#include ../../../deps/tests/percent-encode.rs}}
@@ -44,7 +44,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 [![base64][base64-badge]][base64]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encodes byte slice into {{i:`base64`}} String using [`encode`][base64::encode] and decodes it with [`decode`][base64::decode].
+Encodes byte slice into `{{i:base64}}` String using [`encode`][base64::encode] and decodes it with [`decode`][base64::decode].
 
 ```rust,editable
 {{#include ../../../deps/tests/base64.rs}}

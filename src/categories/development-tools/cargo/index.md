@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Basic {{i:`cargo`}} usage
+## Basic `{{i:cargo}}` usage
 
 [The Cargo book][book-cargo]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

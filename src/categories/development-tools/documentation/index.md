@@ -32,7 +32,7 @@ Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
 Use `//!` at the top of the file (instead of `///`) for module-level documentation.
 
-The first lines within {{i:`lib.rs`}} will compose the crate-level documentation front-page.
+The first lines within `{{i:lib.rs}}` will compose the crate-level documentation front-page.
 
 ```rust,editable
 //! Fast and easy queue abstraction.

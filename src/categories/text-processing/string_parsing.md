@@ -16,7 +16,7 @@ Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the [`U
 
 [![std][std-badge]][std]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Creates a custom struct `RGB` and implements the {{i:`FromStr`}} trait to convert a provided color hex code into its RGB color code.
+Creates a custom struct `RGB` and implements the `{{i:FromStr}}` trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
 {{#include ../../../deps/tests/from_str.rs}}

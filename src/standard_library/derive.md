@@ -8,7 +8,7 @@ The [`{{i:derive}}`][book-rust-reference-derive]⮳ {{i:attribute}} generates co
 
 {{#playground ../../deps/tests/derive.rs editable}}
 
-You can use the {{i:`cargo-expand`}} utility to see the exact code that is generated for your specific type.
+You can use the `{{i:cargo-expand}}` utility to see the exact code that is generated for your specific type.
 
 ## Derive More
 
