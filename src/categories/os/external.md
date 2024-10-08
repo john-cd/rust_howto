@@ -39,7 +39,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
-Spawns a child process and redirects {{i:`stdout`}} and {{i:`stderr`}} to the same file. It follows the same idea as [run piped external commands](#run-ipiped-external-commands), however [`process::Stdio`][std::process::Stdio]⮳ writes to a specified file. [`File::try_clone`][std::fs::File::try_clone]⮳ references the same file handle for `stdout` and `stderr`. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects [`{{i:stdout}}`][std::io::Stdout]⮳ and [`{{i:stderr}}`][std::io::Stderr]⮳ to the same file. It follows the same idea as [run piped external commands](#run-ipiped-external-commands), however [`process::Stdio`][std::process::Stdio]⮳ writes to a specified file. [`File::try_clone`][std::fs::File::try_clone]⮳ references the same file handle for [`stdout`][std::io::Stdout]⮳ and [`stderr`][std::io::Stderr]⮳. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
@@ -52,7 +52,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 [![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
 
 In [Run an external command and process stdout](#run-an-iexternal-command-and-process-istdout), processing doesn't start until external [`Command`][std::process::Command] is finished. The recipe below calls [`Stdio::piped`][std::process::Stdio::piped]⮳ to create a pipe, and reads
-`stdout` continuously as soon as the [`BufReader`][std::io::BufReader]⮳ is updated.
+[`stdout`][std::io::Stdout]⮳ continuously as soon as the [`BufReader`][std::io::BufReader]⮳ is updated.
 
 The below recipe is equivalent to the Unix shell command
 `journalctl | grep usb`.

@@ -3,26 +3,26 @@
 - Async: tokio, async-std and related, async_channels
 - CD / CI, rust-cache
 - Macros
-- `http` crate, `hyper`
-- Python interop: `pyo3`
+- [`http`][http]⮳ crate, [`hyper`][hyper]⮳
+- Python interop: [`pyo3`][pyo3]⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
-- `notify`
-- `indicatif`
-- `ratatui`
-- File system traversal, `walkdir`
-- `time`, `chrono`
-- Errors: `color-eyre`, `eyre`
-- Testing: `approx`, `nextest`
-- `axum`
-- `loco`
+- [`notify`][notify]⮳
+- [`indicatif`][indicatif]⮳
+- [`ratatui`][ratatui]⮳
+- File system traversal, [`walkdir`][walkdir]⮳
+- [`time`][time]⮳, [`chrono`][chrono]⮳
+- Errors: `color-eyre`, [`eyre`][eyre]⮳
+- Testing: [`approx`][approx]⮳, [`nextest`][nextest]⮳
+- [`axum`][axum]⮳
+- [`loco`][loco]⮳
 - shuttle.rs
-- `reqwest`
-- `tonic`
+- [`reqwest`][reqwest]⮳
+- [`tonic`][tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
-- `redis`, `mongodb`, `elasticsearch`
-- Cargo & project integration via `cargo-edit`
+- [`redis`][redis]⮳, [`mongodb`][mongodb]⮳, [`elasticsearch`][elasticsearch-github]⮳
+- Cargo & project integration via [`cargo-edit`][cargo-edit]
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits
@@ -42,3 +42,5 @@
 - High-performance computing: OpenMP, etc.
 - Social media APIs
 - Personal file sharing: OwnCloud, etc.
+
+{{#include ../refs/link-refs.md}}

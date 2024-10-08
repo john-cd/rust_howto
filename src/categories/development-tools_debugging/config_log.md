@@ -12,8 +12,7 @@ Creates two modules `foo` and nested `foo::bar` with logging directives controll
 {{#include ../../../deps/tests/log-mod.rs}}
 ```
 
-The `RUST_LOG` environment variable controls [`env-logger`][env_logger]⮳ output. Module declarations take comma separated entries formatted like
-`path::to::module=log_level`. Run the `test` application as follows:
+The [`RUST_LOG`][env_logger-RUST_LOG] environment variable controls [`env-logger`][env_logger]⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
 
 ```bash
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test

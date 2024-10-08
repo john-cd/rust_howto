@@ -13,7 +13,7 @@ Reads standard CSV records into [`csv::StringRecord`][csv::StringRecord]⮳ — 
 {{#include ../../../deps/tests/read.rs}}
 ```
 
-{{i:`serde`}} deserializes data into strongly type structures. See the [`csv::Reader::deserialize`][csv::Reader::deserialize]⮳ method.
+[`{{i:serde}}`][serde]⮳ deserializes data into strongly type structures. See the [`csv::Reader::deserialize`][csv::Reader::deserialize]⮳ method.
 
 ```rust,editable
 {{#include ../../../deps/tests/read1.rs}}
@@ -45,7 +45,7 @@ _Disclaimer: this example has been adapted from [the csv crate tutorial](https:/
 
 [![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-CSV files often contain {{i:invalid data}}. For these cases, the `csv` crate provides a {{i:custom deserializer}}, [`csv::invalid_option`][csv::invalid_option]⮳ which automatically converts invalid data to `None` values.
+CSV files often contain {{i:invalid data}}. For these cases, the [`csv`][csv]⮳ crate provides a {{i:custom deserializer}}, [`csv::invalid_option`][csv::invalid_option]⮳ which automatically converts invalid data to [`None`][std::option::Option::None]⮳ values.
 
 ```rust,editable
 {{#include ../../../deps/tests/invalid.rs}}

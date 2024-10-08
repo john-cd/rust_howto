@@ -6,7 +6,7 @@
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-The `log` crate provides {{i:logging utilities}}. The `env_logger` crate configures logging via an environment variable. The [`log::debug!`][log::debug]⮳ macro works like other
+The [`log`][log]⮳ crate provides {{i:logging utilities}}. The [`env_logger`][env_logger]⮳ crate configures logging via an environment variable. The [`log::debug!`][log::debug]⮳ macro works like other
 [`std::fmt`][std::fmt]⮳ formatted strings.
 
 ```rust,editable
@@ -15,7 +15,7 @@ The `log` crate provides {{i:logging utilities}}. The `env_logger` crate configu
 
 No output prints when running this code. By default, the {{i:log level}} is `error`, and any lower levels are dropped.
 
-Set the `RUST_LOG` environment variable to print the message:
+Set the [`RUST_LOG`][env_logger-RUST_LOG]⮳ environment variable to print the message:
 
 ```bash
 RUST_LOG=debug cargo run
@@ -31,7 +31,7 @@ DEBUG:main: Executing query: DROP TABLE students
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Proper {{i:error handling}} considers exceptions exceptional. Here, an error logs to stderr with `log`'s convenience macro [`log::error!`][log::error]⮳.
+Proper {{i:error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`log`][log]'s convenience macro [`log::error!`][log::error]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-error.rs}}

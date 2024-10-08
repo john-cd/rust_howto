@@ -8,7 +8,7 @@
 
 - Async code should never spend a long time without reaching an `.await`.
 - Don't carelessly mix async code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive CPU-bound computation, call to a synchronous IO API, use the `spawn_blocking` function, use `rayon`, or spawn a dedicated thread.
+- If you have to block the thread because of expensive CPU-bound computation, call to a synchronous IO API, use the [`spawn_blocking`][tokio::task::spawn_blocking]⮳ function, use [`rayon`][rayon]⮳, or spawn a dedicated thread.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 

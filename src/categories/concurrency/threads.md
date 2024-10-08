@@ -25,7 +25,7 @@ We use bounded channels with a capacity of one using
 [`crossbeam_channel::Sender::send`][crossbeam_channel::Sender::send]⮳ for half a second until one of the workers processes the data in the channel. Also note that the data in the channel is consumed by whichever worker calls receive first, so each message is delivered to a single worker rather than both workers.
 
 Reading from the channels via the iterator
-[`crossbeam_channel::Receiver::iter`][crossbeam_channel::Receiver::iter]⮳ method will block, either waiting for new messages or until the channel is closed. Because the channels were created within the [`crossbeam::scope`][crossbeam::scope]⮳ we must manually close them via `drop` to prevent the entire program from blocking on the worker for-loops. You can think of the calls to `drop` as signaling that no more messages will be sent.
+[`crossbeam_channel::Receiver::iter`][crossbeam_channel::Receiver::iter]⮳ method will block, either waiting for new messages or until the channel is closed. Because the channels were created within the [`crossbeam::scope`][crossbeam::scope]⮳ we must manually close them via [`drop`][std::ops::Drop]⮳ to prevent the entire program from blocking on the worker for-loops. You can think of the calls to [`drop`][std::ops::Drop]⮳ as signaling that no more messages will be sent.
 
 ```rust
 {{#include ../../../deps/tests/crossbeam-complex.rs}}

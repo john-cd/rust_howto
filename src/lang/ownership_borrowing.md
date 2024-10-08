@@ -16,13 +16,13 @@ When the owner goes {{i:out of scope}}, the value will be dropped.
 {{#include ../../deps/tests/ownership2.rs}}
 ```
 
-Rust will never automatically create “deep” copies of your data. Use {{i:`clone`}}
+Rust will never automatically create “deep” copies of your data. Use [`{{i:clone}}`][std::clone::Clone]⮳
 
 ```rust,editable
 {{#include ../../deps/tests/clone.rs}}
 ```
 
-If a type implements the {{i:`Copy`}} trait (stack-only, fixed-size values, like integers, floats, and tuples thereof), variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
+If a type implements the [`{{i:Copy}}`][std::marker::Copy]⮳ trait (stack-only, fixed-size values, like integers, floats, and tuples thereof), variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
 
 ```rust,editable
 {{#include ../../deps/tests/copy.rs}}

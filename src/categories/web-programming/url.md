@@ -6,11 +6,11 @@
 
 [![url][url-badge]][url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`parse`][url::Url::parse]⮳ method from the {{i:`url`}} crate validates and parses a `&str` into a [`Url`][url::Url]⮳ struct. The input string may be malformed so this method returns
+The [`{{i:parse}}`][url::Url::parse]⮳ method from the [`{{i:url}}`][url]⮳ crate validates and parses a `&str` into a [`Url`][url::Url]⮳ struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
 Once the URL has been parsed, it can be used with all of the methods in the
-`Url` type.
+[`Url`][url::Url]⮳ type.
 
 ```rust,editable
 {{#include ../../../deps/tests/parse.rs}}

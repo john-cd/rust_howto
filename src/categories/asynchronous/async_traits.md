@@ -2,7 +2,7 @@
 
 {{#include async_traits.incl.md}}
 
-As of Rust 1.75, it is possible to have {{i:`async` functions in traits}}:
+As of Rust 1.75, it is possible to have [`{{i:async}}`][book-rust-reference-async]⮳ functions in traits:
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async_traits.rs}}

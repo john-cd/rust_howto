@@ -6,9 +6,9 @@
 
 [![dashmap][dashmap-badge]][dashmap]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-`Dashmap` is an implementation of a concurrent associative array/hashmap in Rust.
+[`Dashmap`][dashmap]⮳ is an implementation of a concurrent associative array/hashmap in Rust.
 
-`DashMap` tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
+[`Dashmap`][dashmap]⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,editable,noplayground
 {{#include ../../../../deps/tests/dashmap.rs}}

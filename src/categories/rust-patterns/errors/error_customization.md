@@ -2,25 +2,25 @@
 
 {{#include error_customization.incl.md}}
 
-Use `Anyhow` if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use `thiserror` if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Use [`Anyhow`][anyhow]⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][thiserror]⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Anyhow
 
 [![anyhow][anyhow-badge]][anyhow]  [(crates.io)][anyhow-crate]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-Use `Result<T, anyhow::Error>` or equivalently `anyhow::Result<T>` as the return type of any fallible function.
+Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result<T>`][anyhow::Result]⮳ as the return type of any fallible function.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/anyhow.rs}}
 ```
 
-Anyhow works with any error type that has an impl of `std::error::Error`, including ones defined in your crate e.g. using `thiserror`.
+Anyhow works with any error type that has an impl of `std::error::Error`, including ones defined in your crate e.g. using [`thiserror`][thiserror]⮳.
 
 ## thisError
 
 [![thiserror][thiserror-badge]][thiserror]
 
-[`thisError`][thisError]⮳ provides a convenient `derive` macro for the standard library’s `std::error::Error` trait.
+[`thisError`][thisError]⮳ provides a convenient [`derive`][book-rust-reference-derive]⮳ macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/thiserror.rs}}

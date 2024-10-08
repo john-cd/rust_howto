@@ -31,7 +31,7 @@ You also apply these attributes to specific functions:
 {{#include ../../deps/tests/allow_dead_code.rs}}
 ```
 
-List of {{i:lint checks}}: `rustc -W help`. `rustc` also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
+List of {{i:lint checks}}: `rustc -W help`. [`rustc`][rustc]⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
 
 ## Automatic trait derivation
 

@@ -20,7 +20,7 @@ There are two main data structures in [`ansi_term`][ansi-term-crate]⮳: [`ANSIS
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-For anything more complex than plain foreground colour changes, the code needs to construct `Style` struct. [`Style::new()`][ansi_term::Style::new]⮳ creates the struct, and properties chained.
+For anything more complex than plain foreground colour changes, the code needs to construct [`Style`][ansi_term::Style]⮳ struct. [`Style::new()`][ansi_term::Style::new]⮳ creates the struct, and properties chained.
 
 ```rust,editable
 {{#include ../../../deps/tests/ansi_term-basic1.rs}}
@@ -30,7 +30,7 @@ For anything more complex than plain foreground colour changes, the code needs t
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-`Colour` implements many similar functions as `Style` and can chain methods.
+[`Color`][ansi_term::Color]⮳ implements many similar functions as [`Style`][ansi_term::Style]⮳ and can chain methods.
 
 ```rust,editable
 {{#include ../../../deps/tests/ansi_term-basic2.rs}}

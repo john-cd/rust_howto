@@ -53,7 +53,7 @@ A [`regex::RegexSetBuilder`][regex::RegexSetBuilder]⮳ composes a [`regex::Rege
 Replaces all occurrences of the standard {{i:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English {{i:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 
 The method [`Regex::replace_all`][regex::Regex::replace_all]⮳ replaces all occurrences of the whole {{i:regex}}.
-`&str` implements the `Replacer` trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
+`&str` implements the [`{{i:Replacer}}`][regex::Replacer]⮳ trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
 
 ```rust,editable
 {{#include ../../../deps/tests/replace.rs}}

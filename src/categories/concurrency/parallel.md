@@ -6,8 +6,8 @@
 
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-The example uses the {{i:`rayon`}} crate, which is a {{i:data parallelism}} library for Rust.
-`rayon` provides the [`par_iter_mut`][rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
+The example uses the [`{{i:rayon}}`][rayon]⮳ crate, which is a {{i:data parallelism}} library for Rust.
+[`rayon`][rayon]⮳ provides the [`par_iter_mut`][rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-iter-mut.rs}}
@@ -29,7 +29,7 @@ This example demonstrates using the [`rayon::any`][rayon::iter::ParallelIterator
 
 This example uses [`rayon::find_any`][rayon::iter::ParallelIterator::find_any]⮳ and [`par_iter`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ to search a vector in parallel for an element satisfying the predicate in the given closure.
 
-If there are multiple elements satisfying the predicate defined in the closure argument of [`rayon::find_any`][rayon::iter::ParallelIterator::find_any]⮳ `rayon` returns the first one found, not necessarily the first one.
+If there are multiple elements satisfying the predicate defined in the closure argument of [`rayon::find_any`][rayon::iter::ParallelIterator::find_any]⮳ [`rayon`][rayon]⮳ returns the first one found, not necessarily the first one.
 
 Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on [`std::find`][std::iter::Iterator::find]⮳ for additional details.
 
@@ -68,7 +68,7 @@ This example uses [`rayon::filter`][rayon::iter::ParallelIterator::filter]⮳ [`
 
 This example generates thumbnails for all .jpg files in the current directory then saves them in a new folder called `thumbnails`.
 
-[`glob::glob_with`][glob::glob_with]⮳ finds jpeg files in current directory. `rayon` resizes images in parallel using [`par_iter`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`DynamicImage::resize`][image::DynamicImage::resize]⮳
+[`glob::glob_with`][glob::glob_with]⮳ finds jpeg files in current directory. [`rayon`][rayon] resizes images in parallel using [`par_iter`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`DynamicImage::resize`][image::DynamicImage::resize]⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rayon-thumbnails.rs}}

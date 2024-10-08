@@ -41,7 +41,7 @@ Given two versions, [`is_prerelease`][semver::Version]⮳ asserts that one is pr
 [![semver][semver-badge]][semver]  [![cat-config][cat-config-badge]][cat-config]
 
 Given a list of version &strs, finds the latest [`semver::Version`][semver::Version]⮳
-[`semver::VersionReq`][semver::VersionReq]⮳ filters the list with [`semver::VersionReq::matches`][semver::VersionReq::matches]⮳ Also demonstrates `semver` pre-release preferences.
+[`semver::VersionReq`][semver::VersionReq]⮳ filters the list with [`semver::VersionReq::matches`][semver::VersionReq::matches]⮳ Also demonstrates [`semver`][semver]⮳ pre-release preferences.
 
 ```rust,editable
 {{#include ../../../../deps/tests/semver-latest.rs}}

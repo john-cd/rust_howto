@@ -255,7 +255,7 @@
   - [Calling a web API](categories/web-programming_http-client/apis.md)
   - [Downloads](categories/web-programming_http-client/download.md)
 
-- [Web programming - HTTP servers](categories/web-programming_http-server/_index.md)
+- [Web programming - HTTP servers](categories/web-programming_http-server/index.md)
   - [Axum](categories/web-programming_http-server/axum.md)
   - [Actix](categories/web-programming_http-server/actix.md)
   - [Other web frameworks](categories/web-programming_http-server/other_frameworks.md)

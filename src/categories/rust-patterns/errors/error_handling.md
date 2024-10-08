@@ -38,7 +38,7 @@ fn main() {
 
 If the value of the Result is an Ok, the value inside the Ok will get returned from this expression, and the program will continue. If the value is an Err, the Err will be returned from the whole function as if we had used the return keyword so the error value gets propagated to the calling code.
 
-This error points out that we’re only allowed to use the `?` operator in a function that returns Result, Option, or another type that implements `FromResidual`.
+This error points out that we’re only allowed to use the `?` operator in a function that returns Result, Option, or another type that implements [`FromResidual`][std::ops::FromResidual]⮳.
 
 Another example:
 

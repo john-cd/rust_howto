@@ -22,7 +22,7 @@ See the relevant section in [blessed.rs][blessed-rs]⮳
 
 [![egui][egui-badge]][egui]  [![cat-gui][cat-gui-badge]][cat-gui]
 
-[`egui`][egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. `egui` aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
+[`egui`][egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][egui]⮳ aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
 
 ## Other GUI frameworks
 

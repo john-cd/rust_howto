@@ -16,7 +16,7 @@
 {{#include ../../deps/tests/strings2.rs}}
 ```
 
-Use `{:?}` to use the `Debug` {{i:output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for {{i:pretty print}}.
+Use `{:?}` to use the [`Debug`][std::fmt::Debug]⮳ {{i:output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for {{i:pretty print}}.
 
 Also use `dbg!(&rect1);` for {{i:debug output}} (returns ownership of the expression’s value).
 

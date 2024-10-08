@@ -19,7 +19,7 @@ Use [`reqwest::get`][reqwest::get]⮳ to perform a {{i:HTTP GET request}} and th
 Call `get_base_url` to retrieve the {{i:base URL}}. If the document has a base tag, get the {{i:href}} [`attr`][select::node::Node::attr]⮳ from base tag. [`Position::BeforePath`][url::Position::BeforePath]⮳ of the original URL acts as a default.
 
 Iterates through {{i:links}} in the document and creates a [`tokio::spawn`][tokio::task::spawn]⮳ task that will parse an individual link with [`url::ParseOptions`][url::ParseOptions]⮳ and [`Url::parse`][url::Url::parse]⮳. The task makes a request to the links with [`reqwest`][reqwest]⮳ and verifies
-[`StatusCode`][reqwest::StatusCode]⮳. Then the tasks `await` completion before ending the program.
+[`StatusCode`][reqwest::StatusCode]⮳. Then the tasks [`await`][book-rust-reference-await]⮳ completion before ending the program.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/broken.rs}}

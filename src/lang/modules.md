@@ -24,7 +24,7 @@ Items in a parent module can’t use the {{i:private items}} inside child module
 
 ## Use keyword
 
-Create a shortcut to a path with the {{i:`use`}} keyword once, and then use the shorter name everywhere else in the scope.
+Create a shortcut to a path with the [`{{i:use}}`][book-rust-reference-use]⮳ keyword once, and then use the shorter name everywhere else in the scope.
 
 [![book-rust-by-example-use][book-rust-by-example-use-badge]][book-rust-by-example-use]
 

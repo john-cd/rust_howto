@@ -18,7 +18,7 @@
 fn main() {}
 ```
 
-`rustdoc` uses the CommonMark Markdown specification.
+[`rustdoc`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/rustdoc.rs}}

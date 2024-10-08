@@ -6,7 +6,7 @@
 
 [![std][std-badge]][std]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-In this example, the {{i:port}} is displayed on the console, and the program will listen until a request is made. `SocketAddrV4` assigns a random port when setting port to 0.
+In this example, the {{i:port}} is displayed on the console, and the program will listen until a request is made. [`SocketAddrV4`][std::net::SocketAddrV4]⮳ assigns a random port when setting port to 0.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/listen-unused.rs}}

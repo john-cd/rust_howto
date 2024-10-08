@@ -18,7 +18,7 @@ Use the [`postgres`][postgres]⮳ crate to create tables in a Postgres database.
 
 [![postgres][postgres-badge]][postgres]  [![cat-database][cat-database-badge]][cat-database]
 
-The recipe inserts data into the `author` table using [`execute`][postgres-execute]⮳ method of `Client`. Then, displays the data from the `author` table using [`query`][postgres::Client::query]⮳ method of `Client`.
+The recipe inserts data into the `author` table using [`execute`][postgres-execute]⮳ method of [`Client`][postgres::Client]⮳. Then, displays the data from the `author` table using [`query`][postgres::Client::query]⮳ method of [`Client`][postgres::Client]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/insert_query_data.rs}}

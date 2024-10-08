@@ -30,9 +30,9 @@ To force a move:
 {{#include ../../deps/tests/closures_as_input_parameters.rs}}
 ```
 
-- `Fn`: the closure uses the captured value by reference (`&T`)
-- `FnMut`: the closure uses the captured value by mutable reference (`&mut T`)
-- `FnOnce`: the closure uses the captured value by value (`T`)
+- [`{{i:Fn}}`][std::ops::Fn]⮳: the closure uses the captured value by reference (`&T`)
+- [`{{i:FnMut}}`][std::ops::FnMut]⮳: the closure uses the captured value by mutable reference (`&mut T`)
+- [`{{i:FnOnce}}`][std::ops::FnOnce]⮳: the closure uses the captured value by value (`T`)
 
 Functions may also be used as arguments.
 

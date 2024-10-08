@@ -16,7 +16,7 @@ Generates {{i:random numbers}} with help of the {{i:random-number generator}} [`
 
 [![rand][rand-badge]][rand]  [![cat-science][cat-science-badge]][cat-science]
 
-Generates a {{i:random value}} within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`][rand::Rng::gen_range] range.
+Generates a {{i:random value}} within half-open `[0, 10)` range (not including `10`) with [`Rng::gen_range`][rand::Rng::gen_range]⮳ range.
 
 ```rust,editable
 {{#include ../../../deps/tests/rand-range.rs}}
@@ -32,7 +32,7 @@ Generates a {{i:random value}} within half-open `[0, 10)` range (not including `
 
 [![rand_distr][rand_distr-badge]][rand_distr]  [![cat-science][cat-science-badge]][cat-science]
 
-By default, {{i:random numbers}} in the `rand` crate have [uniform distribution][wikipedia-uniform-distribution]⮳. The [`rand-distr`][rand_distr]⮳ crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`Distribution::sample`][rand::distributions::Distribution::sample]⮳ with help of a random-number generator [`rand::Rng`][rand::Rng]⮳. The [distributions available are documented here][rand_distr]⮳. An example using the [`Normal`][rand_distr::Normal]⮳ distribution is shown below.
+By default, {{i:random numbers}} in the [`rand`][rand]⮳ crate have [uniform distribution][wikipedia-uniform-distribution]⮳. The [`rand-distr`][rand_distr]⮳ crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`Distribution::sample`][rand::distributions::Distribution::sample]⮳ with help of a random-number generator [`rand::Rng`][rand::Rng]⮳. The [distributions available are documented here][rand_distr]⮳. An example using the [`Normal`][rand_distr::Normal]⮳ distribution is shown below.
 
 ```rust,editable,ignore
 {{#include ../../../deps/tests/rand-dist.rs}}

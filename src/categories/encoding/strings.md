@@ -14,13 +14,13 @@ Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ us
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, `url` encodes `?` in a URL path but not in a query string.
 
-The return value of encoding is an iterator of `&str` slices which collect into a `String`.
+The return value of encoding is an iterator of `&str` slices which collect into a [`String`][std::string::String]⮳.
 
 ## Encode a string as application/x-www-form-urlencoded
 
 [![url][url-badge]][url]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-form-urlencoded] syntax using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`form_urlencoded::parse`][form_urlencoded::parse]⮳. Both functions return iterators that collect into a `String`.
+Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-form-urlencoded] syntax using the [`form_urlencoded::byte_serialize`][form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`form_urlencoded::parse`][form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`String`][std::string::String]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/url-encode.rs}}
@@ -30,7 +30,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][application/x-www-fo
 
 [![data-encoding][data-encoding-badge]][data-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`data_encoding`][data-encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a `String` containing the {{i:hexadecimal representation}} of the data.
+The [`data_encoding`][data-encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`String`][std::string::String]⮳ containing the {{i:hexadecimal representation}} of the data.
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 

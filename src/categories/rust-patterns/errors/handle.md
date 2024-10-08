@@ -38,7 +38,7 @@ Uses [`reqwest`][reqwest]⮳::[blocking][reqwest::blocking]⮳ to query a random
 This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on [`chain_err`][error-chain-chaining-errors]⮳ to extend errors by appending new errors. The error stack can be unwound, thus providing a better context to understand why an error was raised.
 
 The below recipes attempts to deserialize the value `256` into a
-`u8`. An error will bubble up from Serde then csv and finally up to the user code.
+[`u8`][u8]⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust,editable
 {{#include ../../../../deps/tests/backtrace.rs}}

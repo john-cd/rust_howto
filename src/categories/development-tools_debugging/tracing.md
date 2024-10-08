@@ -58,7 +58,7 @@ One-liner with `.entered()`:
 {{#include ../../../deps/tests/tracing_span_entered.rs}}
 ```
 
-Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use `in_scope`
+Holding the drop guard returned by `Span::enter` across `.await` points will result in incorrect traces. Use [`in_scope`][tracing::span::Span::in_scope]⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/tracing_span_in_scope.rs}}
