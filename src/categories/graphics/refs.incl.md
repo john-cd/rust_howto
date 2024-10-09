@@ -1,1 +1,1 @@
-[ex-graphics]: _index.md
+[ex-graphics]: index.md

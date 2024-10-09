@@ -38,8 +38,8 @@
 - [ ] [Standard library](src/standard_library/index.md)
 - [ ] [Option](src/standard_library/option.md) finish Option page map, unwrap_or
 - [ ] [Smart pointers](src/standard_library/smart_pointers.md)
-- [ ] [Crates (by category)](src/_categories.md)
-- [ ] [About](src/_about.md) rewrite
+- [ ] [Crates (by category)](src/categories.md)
+- [ ] [About](src/about.md) rewrite
 - [ ] finish links:
 - [ ] create badge refdefs for links to crates.io, lib.rs, RBE book, etc
 - [ ] pull request to little book of rust books
@@ -47,7 +47,7 @@
 - [ ] review GA / GSC - issues with redirects??
 - [ ] incorporate cwd.rs example + any other new examples
 - [ ] finish word index
-- [ ] reenable [Index of Examples](src/_examples_index.md)
+- [ ] reenable [Index of Examples](src/examples_index.md)
 - [ ] finish cd_ci.md
 - [ ] finish improve_speed
 - [ ] finish to review ignore / no_run examples

@@ -1,1 +1,1 @@
-[ex-yew]: _index.md#yew
+[ex-yew]: index.md#yew

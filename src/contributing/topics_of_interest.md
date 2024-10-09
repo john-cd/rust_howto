@@ -4,7 +4,7 @@
 - CD / CI, rust-cache
 - Macros
 - [`{{i:http}}`][http]⮳ crate, [`{{i:hyper}}`][hyper]⮳
-- Python interop: [`{{i:pyo3}}`][pyo3]⮳
+- Python interop: [`{{i:pyo3}}`][pyo3-website]⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking

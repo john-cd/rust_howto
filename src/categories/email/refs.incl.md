@@ -1,1 +1,1 @@
-[ex-email]: _index.md
+[ex-email]: index.md

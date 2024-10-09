@@ -1,1 +1,1 @@
-[ex-template-engine]: _index.md
+[ex-template-engine]: index.md

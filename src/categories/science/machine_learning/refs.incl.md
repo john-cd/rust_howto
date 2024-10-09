@@ -1,1 +1,1 @@
-[ex-ml]: _index.md
+[ex-ml]: index.md

@@ -1,1 +1,1 @@
-[ex-database-impl]: _index.md
+[ex-database-impl]: index.md

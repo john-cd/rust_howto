@@ -22,7 +22,7 @@ Generates a {{i:random value}} within half-open `[0, 10)` range (not including `
 {{#include ../../../deps/tests/rand-range.rs}}
 ```
 
-[`{{i:Uniform}`][rand::distributions::uniform::Uniform] can obtain values with [{{i:uniform distribution}}][wikipedia-uniform-distribution]. This has the same effect, but may be faster when repeatedly generating numbers in the same range.
+[`{{i:Uniform}}`][rand::distributions::uniform::Uniform] can obtain values with [{{i:uniform distribution}}][wikipedia-uniform-distribution]. This has the same effect, but may be faster when repeatedly generating numbers in the same range.
 
 ```rust,editable
 {{#include ../../../deps/tests/rand-range1.rs}}
@@ -32,7 +32,7 @@ Generates a {{i:random value}} within half-open `[0, 10)` range (not including `
 
 [![rand_distr][rand_distr-badge]][rand_distr]  [![cat-science][cat-science-badge]][cat-science]
 
-By default, {{i:random numbers}} in the [`{{i:rand}}`][rand]⮳ crate have [{{i:uniform distribution}}][wikipedia-uniform-distribution]⮳. The [`{{i:rand-distr}}`][rand_distr]⮳ crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`{{i:Distribution::sample}}`][rand::distributions::Distribution::sample]⮳ with help of a random-number gene[`{{i:rand::Rng}}`]:Rng`][rand::Rng]⮳. The distributions available are documented [here][rand_distr]⮳. An example using the [`{{i:Normal}}`][rand_distr::Normal]⮳ distribution is shown below.
+By default, {{i:random numbers}} in the [`{{i:rand}}`][rand]⮳ crate have [{{i:uniform distribution}}][wikipedia-uniform-distribution]⮳. The [`{{i:rand-distr}}`][rand_distr]⮳ crate provides other kinds of {{i:distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`{{i:Distribution::sample}}`][rand::distributions::Distribution::sample]⮳ with help of a random-number generator [`{{i:rand::Rng}}`][rand::Rng]⮳. The distributions available are documented [here][rand_distr]⮳. An example using the [`{{i:Normal}}`][rand_distr::Normal]⮳ distribution is shown below.
 
 ```rust,editable,ignore
 {{#include ../../../deps/tests/rand-dist.rs}}

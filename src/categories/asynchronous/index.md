@@ -11,7 +11,7 @@ Asynchronous programming, or {{i:async}} for short, is a concurrent programming 
 
 Key constructs in Rust:
 
-- [`{{i:async}}`][book-rust-re[`{{i:await}}`]sync]⮳ / [`{{i:await}}`][book-rust-reference-await]⮳ keywords
+- [`{{i:async}}`][book-rust-reference-async]⮳ / [`{{i:await}}`][book-rust-reference-await]⮳ keywords
 - [`{{i:Future}}`][std::future::Future]⮳
 
 Here are the topics we’ll cover:
@@ -42,7 +42,7 @@ Rust's implementation of [`{{i:async}}`][book-rust-reference-async]⮳ differs f
 {{#include ../../../deps/tests/async2.rs}}
 ```
 
-- Dropping a {{i:future stops}} it from making further progress.
+- Dropping a {{i:future}} stops it from making further progress.
 - Async is {{i:zero-cost}} in Rust. You can use [`{{i:async}}`][book-rust-reference-async]⮳ without heap allocations and dynamic dispatch. This also lets you use async in constrained environments, such as {{i:embedded systems}}.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
 - Both single- and multithreaded runtimes are available.
@@ -56,7 +56,7 @@ Rust's implementation of [`{{i:async}}`][book-rust-reference-async]⮳ differs f
 
 ## Async runtimes
 
-In most cases, prefer the [Tokio](tokio.md) {{i:runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
+In most cases, prefer the [`{{i:Tokio}}`](tokio.md) {{i:runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 

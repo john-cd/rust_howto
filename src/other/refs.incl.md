@@ -1,7 +1,7 @@
-[ex-aws]: cloud/_index.md#aws
-[ex-dapr]: cloud/_index.md#dapr
+[ex-aws]: cloud/index.md#aws
+[ex-dapr]: cloud/index.md#dapr
 [ex-cross-platform]: cross_platform/index.md#crux
-[ex-polars]: data_processing/_index.md#polars
-[ex-arrow]: data_processing/_index.md#arrow
-[ex-datafusion]: data_processing/_index.md#datafusion
-[ex-rust-gpu]: gpu/_index.md#rust-gpu
+[ex-polars]: data_processing/index.md#polars
+[ex-arrow]: data_processing/index.md#arrow
+[ex-datafusion]: data_processing/index.md#datafusion
+[ex-rust-gpu]: gpu/index.md#rust-gpu

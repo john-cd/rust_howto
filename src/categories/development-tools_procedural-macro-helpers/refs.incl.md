@@ -1,1 +1,1 @@
-[ex-procedural-macro-helpers]: _index.md
+[ex-procedural-macro-helpers]: index.md

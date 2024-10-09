@@ -1,1 +1,1 @@
-[ex-open-cv]: _index.md#open-cv
+[ex-open-cv]: index.md#open-cv

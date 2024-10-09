@@ -50,7 +50,7 @@ In other cases, it may be easier to structure the application as largely {{i:syn
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`{{i:futures-executor}}`][futures-executor]⮳ includes a {{i:minimal executor}}[`{{i:block_on}}`]k_on`][futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`{{i:futures-executor}}`][futures-executor]⮳ includes a minimal executor [`{{i:block_on}}`][futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}

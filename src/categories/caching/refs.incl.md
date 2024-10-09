@@ -1,1 +1,1 @@
-[ex-caching]: _index.md
+[ex-caching]: index.md

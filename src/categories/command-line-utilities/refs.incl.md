@@ -1,1 +1,1 @@
-[ex-cli-in-rust]: _index.md#command-line-utilities-written-in-rust
+[ex-cli-in-rust]: index.md#command-line-utilities-written-in-rust

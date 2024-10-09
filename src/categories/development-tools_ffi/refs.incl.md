@@ -1,1 +1,1 @@
-[ex-ffi]: _index.md
+[ex-ffi]: index.md

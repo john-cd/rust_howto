@@ -1,1 +1,1 @@
-[ex-ml]: machine_learning/_index.md
+[ex-ml]: machine_learning/index.md

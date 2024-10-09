@@ -1,1 +1,1 @@
-[ex-robotics]: _index.md
+[ex-robotics]: index.md

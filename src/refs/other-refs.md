@@ -89,7 +89,7 @@
 [tower::ServiceBuilder]: https://docs.rs/tower/latest/tower/struct.ServiceBuilder.html
 [make]: https://www.gnu.org/software/make/
 [rust-code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
-[pyo3]: https://pyo3.rs
+[pyo3-website]: https://pyo3.rs
 [notify]: https://docs.rs/notify/latest/notify/
 [indicatif]: https://docs.rs/indicatif/latest/indicatif/
 [ratatui]: https://ratatui.rs/
@@ -144,3 +144,7 @@
 [gping]: https://github.com/orf/gping
 [broot-website]: https://dystroy.org/broot/
 [broot-github]: https://github.com/Canop/broot
+[rusqlite::Connection]: https://docs.rs/rusqlite/latest/rusqlite/struct.Connection.html
+[ruff-website]: https://docs.astral.sh/ruff/
+[pyoxidizer-github]: https://github.com/indygreg/PyOxidizer
+[ansi_term:Style]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html

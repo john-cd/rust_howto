@@ -1,2 +1,2 @@
-[ex-aws]: _index.md#aws
-[ex-dapr]: _index.md#dapr
+[ex-aws]: index.md#aws
+[ex-dapr]: index.md#dapr

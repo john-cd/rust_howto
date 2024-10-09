@@ -1,2 +1,2 @@
-[ex-python-interop]: _index.md#python-interop
-[ex-python-tools]: _index.md#rust-tools-for-python
+[ex-python-interop]: index.md#python-interop
+[ex-python-tools]: index.md#rust-tools-for-python

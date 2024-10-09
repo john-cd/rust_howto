@@ -1,1 +1,1 @@
-[ex-parsing]: _index.md
+[ex-parsing]: index.md
