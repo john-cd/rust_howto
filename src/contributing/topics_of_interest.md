@@ -3,26 +3,26 @@
 - Async: tokio, async-std and related, async_channels
 - CD / CI, rust-cache
 - Macros
-- [`http`][http]⮳ crate, [`hyper`][hyper]⮳
-- Python interop: [`pyo3`][pyo3]⮳
+- [`{{i:http}}`][http]⮳ crate, [`{{i:hyper}}`][hyper]⮳
+- Python interop: [`{{i:pyo3}}`][pyo3]⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
-- [`notify`][notify]⮳
-- [`indicatif`][indicatif]⮳
-- [`ratatui`][ratatui]⮳
-- File system traversal, [`walkdir`][walkdir]⮳
-- [`time`][time]⮳, [`chrono`][chrono]⮳
-- Errors: `color-eyre`, [`eyre`][eyre]⮳
-- Testing: [`approx`][approx]⮳, [`nextest`][nextest]⮳
-- [`axum`][axum]⮳
-- [`loco`][loco]⮳
+- [`{{i:notify}}`][notify]⮳
+- [`{{i:indicatif}}`][indicatif]⮳
+- [`{{i:ratatui}}`][ratatui]⮳
+- File system traversal, [`{{i:walkdir}}`][walkdir]⮳
+- [`{{i:time}}`][time]⮳, [`{{i:chrono}}`][chrono]⮳
+- Errors: `color-eyre`, [`{{i:eyre}}`][eyre]⮳
+- Testing: [`{{i:approx}}`][approx]⮳, [`{{i:nextest}}`][nextest]⮳
+- [`{{i:axum}}`][axum]⮳
+- [`{{i:loco}}`][loco]⮳
 - shuttle.rs
-- [`reqwest`][reqwest]⮳
-- [`tonic`][tonic]⮳
+- [`{{i:reqwest}}`][reqwest]⮳
+- [`{{i:tonic}}`][tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
-- [`redis`][redis]⮳, [`mongodb`][mongodb]⮳, [`elasticsearch`][elasticsearch-github]⮳
-- Cargo & project integration via [`cargo-edit`][cargo-edit]
+- [`{{i:redis}}`][redis]⮳, [`{{i:mongodb}}`][mongodb]⮳, [`{{i:elasticsearch}}`][elasticsearch-github]⮳
+- Cargo & project integration via [`{{i:cargo-edit}}`][cargo-edit]
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits

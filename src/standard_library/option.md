@@ -4,7 +4,7 @@
 
 [![std][std-badge]][std]
 
-Rust has no `{{i:null}}`. Instead, use [`std::option::Option`][std::option::Option]⮳:
+Rust has no `{{i:null}}`. Instead, use [`{{i:std::option::Option}}`][std::option::Option]⮳:
 
 ```rust,editable
 # #![allow(unused)]
@@ -36,12 +36,12 @@ It is often used with [`{{i:match}}`][book-rust-reference-match]⮳, [`{{i:if le
 
 ## Extracting the value contained in Option
 
-These methods extract the contained value in an [`Option<T>`][std::option::Option] when it is the `Some` variant. If the [`Option`][std::option::Option]⮳ is `None`:
+These methods extract the contained value in an [`{{i:Option<T>}}`][std::option::Option] when it is the `Some` variant. If the [`{{i:Option}}`][std::option::Option]⮳ is `None`:
 
 - [`{{i:expect}}`][std::option::Option::expect]⮳ panics with a provided custom message
 - [`{{i:unwrap}}`][std::option::Option::unwrap]⮳ panics with a generic message
 - [`{{i:unwrap_or}}`][std::option::Option::unwrap_or]⮳ returns the provided default value
-- [`{{i:unwrap_or_default}}`][std::option::Option::unwrap_or_default]⮳ returns the default value of the type T (which must implement the [`Default`][std::default::Default]⮳ trait)
+- [`{{i:unwrap_or_default}}`][std::option::Option::unwrap_or_default]⮳ returns the default value of the type T (which must implement the [`{{i:Default}}`][std::default::Default]⮳ trait)
 - [`{{i:unwrap_or_else}}`][std::option::Option::unwrap_or_else]⮳ returns the result of evaluating the provided function
 
 ## Combinators

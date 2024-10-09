@@ -26,7 +26,7 @@ use std::ops::Deref;
 my_string.push_str(example.deref());
 ```
 
-Use [`Deref`][std::ops::Deref]⮳ implicitly through a {{i:coercion}}:
+Use [`{{i:Deref}}`][std::ops::Deref]⮳ implicitly through a {{i:coercion}}:
 
 ```rust,ignore
 my_string.push_str(&example);

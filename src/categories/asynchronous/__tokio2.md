@@ -8,7 +8,7 @@
 
 ### Join
 
-By running all async expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn` and pass the join handle to join!.
+By running all {{i:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `{{i:tokio::spawn}}` and pass the join handle to `{{i:join!}}`.
 
 ### Spawning
 

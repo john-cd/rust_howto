@@ -4,9 +4,9 @@
 
 [![ansi-term][ansi-term-badge]][ansi-term]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-This program depicts the use of [`ansi_term`][ansi-term-crate]⮳ crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on {{i:ANSI terminals}}.
+This program depicts the use of [`{{i:ansi_term}}`][ansi-term-crate]⮳ crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on {{i:ANSI terminals}}.
 
-There are two main data structures in [`ansi_term`][ansi-term-crate]⮳: [`ANSIString`][ansi_term::ANSIString]⮳ and [`Style`][ansi_term::Style]⮳. A [`Style`][ansi_term::Style]⮳ holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Colour variants that represent simple foreground colour styles. An [`ANSIString`][ansi_term::ANSIString]⮳ is a string paired with a [`Style`][ansi_term::Style]⮳.
+There are two main data structures in [`{{i:ansi_term}}`][ansi-term-crate]⮳: [`{{i:ANSIString}}`][ansi_term::ANSIString]⮳ and [`{{i:Style}}`][ansi_term:Style]⮳. A [`{{i:Style}}`][ansi_term::Style]⮳ holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Colour variants that represent simple foreground colour styles. An [`{{i:ANSIString}}`][ansi_term::ANSIString]⮳ is a string paired with a [`{{i:Style}}`][ansi_term::Style]⮳.
 
 **Note:** British English uses *Colour* instead of *Color*.
 
@@ -20,7 +20,7 @@ There are two main data structures in [`ansi_term`][ansi-term-crate]⮳: [`ANSIS
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-For anything more complex than plain foreground colour changes, the code needs to construct [`Style`][ansi_term::Style]⮳ struct. [`Style::new()`][ansi_term::Style::new]⮳ creates the struct, and properties chained.
+For anything more complex than plain foreground colour changes, the code needs to construct [`{{i:Style}}`][ansi_term::Style]⮳ struct. [`{{i:Style::new()}}`][ansi_term::Style::new]⮳ creates the struct, and properties chained.
 
 ```rust,editable
 {{#include ../../../deps/tests/ansi_term-basic1.rs}}
@@ -30,7 +30,7 @@ For anything more complex than plain foreground colour changes, the code needs t
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-[`Color`][ansi_term::Color]⮳ implements many similar functions as [`Style`][ansi_term::Style]⮳ and can chain methods.
+[`{{i:Color}}`][ansi_term::Color]⮳ implements many similar functions as [`{{i:Style}}`][ansi_term::Style]⮳ and can chain methods.
 
 ```rust,editable
 {{#include ../../../deps/tests/ansi_term-basic2.rs}}

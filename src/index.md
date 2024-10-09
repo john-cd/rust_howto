@@ -18,7 +18,7 @@ Next are [tools][development-tools], such as Cargo, Clippy, Rustfmt, as well as 
 
 This book is intended both for new Rust programmers (to get an overview of the capabilities of the Rust ecosystem and pointers to other resources) and for experienced programmers (to find code examples and review best practices for common programming tasks).
 
-Readers should have already some basic familiarity with [`Rust`][rust]⮳ concepts. The [`Rust book`][book-rust]⮳ is an excellent resource for complete beginners to get started with.
+Readers should have already some basic familiarity with [`{{i:Rust}}`][rust]⮳ concepts. The [`{{i:Rust book}}`][book-rust]⮳ is an excellent resource for complete beginners to get started with.
 
 ## Why this book?
 

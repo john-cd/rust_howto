@@ -6,7 +6,7 @@
 
 [The rustdoc book][book-rustdoc]⮳
 
-[`docs.rs`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
+[`{{i:docs.rs}}`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
 
 ## Documenting your code
 
@@ -18,7 +18,7 @@
 fn main() {}
 ```
 
-[`rustdoc`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
+[`{{i:rustdoc}}`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/rustdoc.rs}}

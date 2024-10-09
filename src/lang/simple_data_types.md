@@ -1,10 +1,10 @@
 # Simple Data Types
 
-- Integers: [`i8`][i8]⮳, [`i16`][i16]⮳, [`i32`][i32]⮳, [`i64`][i64]⮳, [`i128`][i128]⮳, [`isize`][isize]⮳
-- Unsigned: [`u8`][u8]⮳, [`u16`][u16]⮳, [`u32`][u32]⮳, [`u128`][u128]⮳, [`usize`][usize]⮳
-  - [`usize`][usize]⮳ and [`isize`][isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
-- Floating point: [`f32`][f32]⮳, [`f64`][f64]⮳
-- Boolean: [`bool`][bool]⮳: `true`, `false`
+- Integers: [`{{i:i8}}`][i8]⮳, [`{{i:i16}}`][i16]⮳, [`{{i:i32}}`][i32]⮳, [`{{i:i64}}`][i64]⮳, [`{{i:i128}}`][i128]⮳, [`{{i:isize}}`][isize]⮳
+- Unsigned: [`{{i:u8}}`][u8]⮳, [`{{i:u16}}`][u16]⮳, [`{{i:u32}}`][u32]⮳, [`{{i:u128}}`][u128]⮳, [`{{i:usize}}`][usize]⮳
+  - [`{{i:usize}}`][usize]⮳ and [`{{i:isize}}`][isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
+- Floating point: [`{{i:f32}}`][f32]⮳, [`{{i:f64}}`][f64]⮳
+- Boolean: [`{{i:bool}}`][bool]⮳: `true`, `false`
 - Char: `let z: char = 'ℤ';` Unicode
 - Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);`
   - Access via `let five_hundred = x.0;`
@@ -16,8 +16,8 @@
 
 ## Overflow handling
 
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][u32::wrapping_add]⮳.
-- Return the [`None`][std::option::Option::None]⮳ value if there is overflow with the `checked_*` methods.
+- Wrap in all modes with the `wrapping_*` methods, such as [`{{i:wrapping_add}}`][u32::wrapping_add]⮳.
+- Return the [`{{i:None}}`][std::option::Option::None]⮳ value if there is overflow with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 

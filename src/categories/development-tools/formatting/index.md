@@ -15,7 +15,7 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs [`rustfmt`][rustfmt-config]⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs [`{{i:rustfmt}}`][rustfmt-config]⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check

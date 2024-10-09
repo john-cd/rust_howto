@@ -16,13 +16,13 @@ See the relevant section in [blessed.rs][blessed-rs]⮳
 
 [![tauri][tauri-badge]][tauri] [(website)][tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]
 
-[`Tauri`][Tauri]⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
+[`{{i:Tauri}}`][Tauri]⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
 
 ## egui
 
 [![egui][egui-badge]][egui]  [![cat-gui][cat-gui-badge]][cat-gui]
 
-[`egui`][egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][egui]⮳ aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
+[`{{i:egui}}`][egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`{{i:egui}}`][egui]⮳ aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
 
 ## Other GUI frameworks
 

@@ -34,7 +34,7 @@ If you’re building a non-end product, such as a rust library that other rust p
 
 - A {{i:package}} is a bundle of one or more crates - as defined by a `{{i:Cargo.toml}}` file
 - A {{i:crate}} is the smallest amount of code that the Rust compiler considers at a time.
-- A crate can come in one of two forms: a binary crate (must have a function called [`main`][book-rust-reference-main]⮳) or a library crate.
+- A crate can come in one of two forms: a binary crate (must have a function called [`{{i:main}}`][book-rust-reference-main]⮳) or a library crate.
 - A package can contain as many {{i:binary crate}}s as you like, but at most only one {{i:library crate}}.
 - If a package contains `{{i:src/main.rs}}` and `{{i:src/lib.rs}}`, it has two crates: a binary and a library, both with the same name as the package.
 

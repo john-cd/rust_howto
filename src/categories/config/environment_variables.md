@@ -6,7 +6,7 @@
 
 [![dotenvy][dotenvy-badge]][dotenvy]  [![cat-config][cat-config-badge]][cat-config]
 
-[`dotenvy`][dotenvy]⮳ supersedes [`dotenv`][dotenv]⮳.
+[`{{i:dotenvy}}`][dotenvy]⮳ supersedes [`{{i:dotenv}}`][dotenv]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/dotenvy.rs}}

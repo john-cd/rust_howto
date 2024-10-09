@@ -140,3 +140,7 @@
 [tokio::task::spawn_blocking]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
 [dockerfile]: https://docs.docker.com/reference/dockerfile/
 [justfile]: https://just.systems/man/en/
+[lsd-github]: https://github.com/lsd-rs/lsd
+[gping]: https://github.com/orf/gping
+[broot-website]: https://dystroy.org/broot/
+[broot-github]: https://github.com/Canop/broot

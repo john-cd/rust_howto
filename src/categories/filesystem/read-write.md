@@ -6,8 +6,8 @@
 
 [![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Writes a three-line message to a file, then reads it back a line at a time with the [`Lines`][std::io::Lines]⮳ iterator created by
-[`BufRead::lines`][std::io::BufRead::lines]⮳  [`File`][std::fs::File]⮳ implements [`Read`][std::io::Read]⮳ which provides [`BufReader`][std::io::BufReader]⮳ trait. [`File::create`][std::fs::File::create]⮳ opens a [`File`][std::fs::File]⮳ for writing, [`File::open`][std::fs::File::open]⮳ for reading.
+Writes a three-line message to a file, then reads it back a line at a time with the [`{{i:Lines}}`][std::io::Lines]⮳ iterator created by
+[`{{i:BufRead::lines}}`][std::io::BufRead::lines]⮳  [`{{i:File}}`][std::fs::File]⮳ implements [`{{i:Read}}`][std::io::Read]⮳ which provides [`{{i:BufReader}}`][std::io::BufReader]⮳ trait. [`{{i:File::create}}`][std::fs::File::create]⮳ opens a [`{{i:File}}`][std::fs::File]⮳ for writing, [`{{i:File::open}}`][std::fs::File::open]⮳ for reading.
 
 ```rust,editable
 {{#include ../../../deps/tests/read-file.rs}}
@@ -17,7 +17,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 [![same-file][same-file-badge]][same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Use [`same-file::Handle`][same-file::Handle]⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
+Use [`{{i:same-file::Handle}}`][same-file::Handle]⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/same-file.rs}}
@@ -39,9 +39,9 @@ errors because the two files are same.
 
 [![memmap][memmap-badge]][memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Creates a {{i:memory map}} of a file using [`memmap`][memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`seek`][std::fs::File::seek]⮳ to navigate a [`File`][std::fs::File]⮳.
+Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][std::fs::File]⮳.
 
-The [`Mmap::map`][memmap::Mmap::map]⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
+The [`{{i:Mmap::map}}`][memmap::Mmap::map]⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 
 ```rust,editable
 {{#include ../../../deps/tests/memmap.rs}}

@@ -26,7 +26,7 @@ Tools to help you verify the {{i:correctness}} of your code.
 
  [![cat-testing][cat-testing-badge]][cat-testing]
 
-[![approx][approx-badge]][approx]  [`Approx`][Approx]⮳
+[![approx][approx-badge]][approx]  [`{{i:Approx}}`][Approx]⮳
 
 [cargo-nextest][cargo-nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

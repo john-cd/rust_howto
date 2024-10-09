@@ -1,6 +1,6 @@
 # Computer Vision
 
-Comprehending the world from video or images.
+{{hi:computer vision}}Comprehending the world from {{i:video}} or {{i:images}}.
 
 {{#include index.incl.md}}
 

@@ -26,7 +26,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get autoremove -y && apt-get clean -y
 ```
 
-For Alpine, use [`apk`][apk-website]⮳:
+For Alpine, use [`{{i:apk}}`][apk-website]⮳:
 
 ```dockerfile
 ## Just: https://just.systems/man/en/chapter_1.html
@@ -35,7 +35,7 @@ RUN apk add just
 
 ## Example `justfile`
 
-Place it in the root folder of your project. Run [`just`][just-website] to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
+Place it in the root folder of your project. Run [`{{i:just}}`][just-website] to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
 # Load a .env file, if present.

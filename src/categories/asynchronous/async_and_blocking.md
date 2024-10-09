@@ -7,8 +7,8 @@
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 - Async code should never spend a long time without reaching an `.await`.
-- Don't carelessly mix async code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive CPU-bound computation, call to a synchronous IO API, use the [`spawn_blocking`][tokio::task::spawn_blocking]⮳ function, use [`rayon`][rayon]⮳, or spawn a dedicated thread.
+- Don't carelessly mix {{i:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
+- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the [`{{i:spawn_blocking}}`][tokio::task::spawn_blocking]⮳ function, use [`{{i:rayon}}`][rayon]⮳, or spawn a {{i:dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
@@ -16,7 +16,7 @@ See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-Use [`spawn_blocking`][tokio::task::spawn_blocking]⮳ to run a _small portion_ of {{i:synchronous code}}.
+Use [`{{i:spawn_blocking}}`][tokio::task::spawn_blocking]⮳ to run a _small portion_ of {{i:synchronous code}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
@@ -34,7 +34,7 @@ Use [`spawn_blocking`][tokio::task::spawn_blocking]⮳ to run a _small portion_ 
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-If a {{i:blocking operation}} keeps running forever, you should run it on a dedicated thread.
+If a {{i:blocking operation}} keeps running forever, you should run it on a {{i:dedicated thread}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_dedicated_thread.rs}}
@@ -44,13 +44,13 @@ If a {{i:blocking operation}} keeps running forever, you should run it on a dedi
 
 [Bridging with sync code][tokio-bridging-with-sync-code]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-In other cases, it may be easier to structure the application as largely {{i:synchronous}}, with smaller or logically distinct {{i:asynchronous}} portions. For instance, a GUI application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
+In other cases, it may be easier to structure the application as largely {{i:synchronous}}, with smaller or logically distinct {{i:asynchronous}} portions. For instance, a {{i:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
 ### Futures executor
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`futures-executor`][futures-executor]⮳ includes a {{i:minimal executor}}. The [`block_on`][futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`{{i:futures-executor}}`][futures-executor]⮳ includes a {{i:minimal executor}}[`{{i:block_on}}`]k_on`][futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}

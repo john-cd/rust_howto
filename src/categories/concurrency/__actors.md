@@ -14,16 +14,16 @@
 
 [![actix-github][actix-github-badge]][actix-github]
 
-[`Actix`][actix]⮳
+[`{{i:Actix}}`][actix]⮳
 
-[`ractor`][ractor-crate]⮳
+[`{{i:ractor}}`][ractor-crate]⮳
 
 ## Utilities
 
-[`Await tree`][await-tree-crate]⮳
+[`{{i:Await tree}}`][await-tree-crate]⮳
 
 ## Reference
 
-[Actors with `Tokio`][blog-actors-with-tokio]⮳
+[{{i:Actors}} with `Tokio`][blog-actors-with-tokio]⮳
 
 {{#include ../../refs/link-refs.md}}

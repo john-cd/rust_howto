@@ -1,8 +1,8 @@
 # Channels for use in async code
 
-The most common form of {{i:synchronization}} in an async program is {{i:message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of {{i:avoiding shared state}}. Message passing is implemented using {{i:async channels}}.
+The most common form of {{i:synchronization}} in an {{i:async}} program is {{i:message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of {{i:avoiding shared state}}. Message passing is implemented using {{i:async channels}}.
 
-Tokio's [`sync`][tokio-sync]⮳ module provides channels that work well with async code.
+Tokio's [`{{i:sync}}`][tokio-sync]⮳ module provides {{i:channels}} that work well with async code.
 
 {{#include async_channels.incl.md}}
 

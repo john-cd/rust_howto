@@ -1,6 +1,6 @@
 # API Bindings
 
-Idiomatic wrappers of specific APIs for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in External FFI bindings.
+Idiomatic wrappers of specific {{i:APIs}} for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in external FFI bindings.
 
 {{#include index.incl.md}}
 
