@@ -1,6 +1,6 @@
 ## Book Editing and Example Code Development
 
-Type [`{{i:just}}`][just-website]⮳ (a tool similar to [`{{i:make}}`][c-make]⮳) in your favorite shell to lists all commonly used recipes during book editing and example code development.
+Type [`{{i:just}}`][c-just-website]⮳ (a tool similar to [`{{i:make}}`][c-make]⮳) in your favorite shell to lists all commonly used recipes during book editing and example code development.
 
 Use `just serve` to preview the book by serving it locally on <http://localhost:3000/>⮳.
 

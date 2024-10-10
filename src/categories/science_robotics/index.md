@@ -10,15 +10,15 @@ Crates related to robotics.
 
 [robotics.rs][robotics-rs-website]⮳
 
-Open Rust Robotics: [![openrr-github][openrr-github-badge]][openrr-github]
+Open Rust Robotics: [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 
-[![bonsai-bt-github][bonsai-bt-github-badge]][bonsai-bt-github] is a Rust implementation of behavior trees.
+[![bonsai-bt-github][c-bonsai-bt-github-badge]][c-bonsai-bt-github] is a Rust implementation of behavior trees.
 
 ## Useful tools and libraries
 
-[OpenCV][opencv-website]⮳  [![opencv-example][opencv-example-badge]][opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]
+[OpenCV][c-opencv-website]⮳  [![opencv-example][c-opencv-example-badge]][c-opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]
 
-[Zenoh][zenoh-website]⮳
+[Zenoh][c-zenoh-website]⮳
 
 <div class="hidden">
 <https://www.tangramvision.com/blog/why-rust-for-robots>⮳

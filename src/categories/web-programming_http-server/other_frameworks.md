@@ -6,17 +6,17 @@
 
 [Loco.rs]( https://loco.rs/ )⮳
 
-[Loco article][loco-article]⮳
+[Loco article][c-loco-article]⮳
 
 ## Rocket
 
-[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
+[![rocket-realworld-example][c-rocket-realworld-example-badge]][rocket-realworld-example]
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
 ## See also
 
-[![hyper][hyper-badge]][c-hyper]  [![tonic][tonic-badge]][c-tonic]
+[![hyper][c-hyper-badge]][c-hyper]  [![tonic][c-tonic-badge]][c-tonic]
 
 [Rust on Nails][rust-on-nails-website]⮳
 

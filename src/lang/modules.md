@@ -18,7 +18,7 @@ In Rust, all items (functions, methods, structs, enums, modules, and constants) 
 
 Items in a parent module can’t use the {{i:private items}} inside child modules, but items in child modules can use the items in their ancestor modules.
 
-[![book-rust-by-example-visibility-rules][book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
+[![book-rust-by-example-visibility-rules][c-book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
 
 [A clear explanation of Rust’s module system][rust-module-system]⮳
 
@@ -26,7 +26,7 @@ Items in a parent module can’t use the {{i:private items}} inside child module
 
 Create a shortcut to a path with the [`{{i:use}}`][book-rust-reference-use]⮳ keyword once, and then use the shorter name everywhere else in the scope.
 
-[![book-rust-by-example-use][book-rust-by-example-use-badge]][book-rust-by-example-use]
+[![book-rust-by-example-use][c-book-rust-by-example-use-badge]][book-rust-by-example-use]
 
 ```rust,editable
 {{#include ../../deps/tests/modules.rs}}

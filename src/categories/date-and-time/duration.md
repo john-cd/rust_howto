@@ -16,7 +16,7 @@ Calling [`{{i:time::Instant::elapsed}}`][c-std::time::Instant::elapsed]⮳ retur
 
 ## Perform checked date and time calculations
 
-[![chrono][chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
 Calculates and displays the {{i:date and time}} two weeks from now using [`{{i:DateTime::checked_add_signed}}`][c-chrono::Date::checked_add_signed]⮳ and the date of the day before that using [`{{i:DateTime::checked_sub_signed}}`][c-chrono::Date::checked_sub_signed]⮳
 
@@ -31,7 +31,7 @@ Escape sequences that are available for the
 
 ## Convert a local time to another timezone
 
-[![chrono][chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
 Gets the local {{i:time}} and displays it using [`{{i:offset::Local::now}}`][c-chrono::offset::Local::now]⮳ and then converts it to the {{i:UTC}} standard using the [`{{i:DateTime::from_utc}}`][c-chrono::DateTime::from_utc]⮳ struct method. A time is then converted using the [`{{i:offset::FixedOffset}}`][c-chrono::offset::FixedOffset]⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
 

@@ -4,7 +4,7 @@
 
 ## Define and operate on a type represented as a bitfield
 
-[![bitflags][bitflags-badge]][c-bitflags]  [![cat-no-std][cat-no-std-badge]][cat-no-std]  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
+[![bitflags][c-bitflags-badge]][c-bitflags]  [![cat-no-std][cat-no-std-badge]][cat-no-std]  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
 Creates type-safe {{i:bitfield}} type `MyFlags` with help of [`{{i:bitflags!}}`][c-bitflags::bitflags]⮳ macro and implements elementary `clear` operation as well as [`{{i:Display}}`][c-std::fmt::Display]⮳ trait for it. Subsequently, shows basic {{i:bitwise operations}} and formatting.
 

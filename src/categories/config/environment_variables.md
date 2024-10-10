@@ -4,7 +4,7 @@
 
 ## Dotenvy
 
-[![dotenvy][dotenvy-badge]][c-dotenvy]  [![cat-config][cat-config-badge]][cat-config]
+[![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![cat-config][cat-config-badge]][cat-config]
 
 [`{{i:dotenvy}}`][c-dotenvy]⮳ supersedes [`{{i:dotenv}}`][c-dotenv]⮳.
 
@@ -24,7 +24,7 @@ To retrieve a single {{i:environment variable}},
 
 ## Envy
 
-[![envy][envy-badge]][c-envy]  [![cat-config][cat-config-badge]][cat-config]
+[![envy][c-envy-badge]][c-envy]  [![cat-config][cat-config-badge]][cat-config]
 
 `Envy` can deserialize environment variables into type-safe structs.
 
@@ -42,7 +42,7 @@ serde = { version = "1.0", features = ["derive"] }
 
 [![cat-config][cat-config-badge]][cat-config]
 
-[![dotenv][dotenv-badge]][c-dotenv]
+[![dotenv][c-dotenv-badge]][c-dotenv]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

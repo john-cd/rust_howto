@@ -32,9 +32,9 @@ Another example:
 
 ## See also
 
-[![async-channel][async-channel-badge]][async-channel]
+[![async-channel][c-async-channel-badge]][c-async-channel]
 
-[![postage][postage-badge]][c-postage]  [![postage-librs][postage-librs-badge]][postage-librs]
+[![postage][c-postage-badge]][c-postage]  [![postage-librs][c-postage-librs-badge]][c-postage-librs]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

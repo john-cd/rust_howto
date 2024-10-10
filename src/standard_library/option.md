@@ -2,7 +2,7 @@
 
 {{#include option.incl.md}}
 
-[![std][std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 Rust has no `{{i:null}}`. Instead, use [`{{i:std::option::Option}}`][c-std::option::Option]⮳:
 

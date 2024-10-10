@@ -18,7 +18,7 @@ Anyhow works with any error type that has an impl of `std::error::{{i:Error}}`, 
 
 ## thisError
 
-[![thiserror][thiserror-badge]][c-thiserror]
+[![thiserror][c-thiserror-badge]][c-thiserror]
 
 [`{{i:thisError}}`][c-thisError]⮳ provides a convenient [`{{i:derive}}`][book-rust-reference-derive]⮳ macro for the standard library’s `std::error::Error` trait.
 
@@ -41,7 +41,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[![miette][miette-badge]][c-miette]  [![miette-librs][miette-librs-badge]][miette-librs] prints fancy diagnostics upon error.
+[![miette][c-miette-badge]][c-miette]  [![miette-librs][c-miette-librs-badge]][c-miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 {{#include ../../../../deps/tests/miette/mylib.rs}}
@@ -53,11 +53,11 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## See also
 
-[![eyre][eyre-badge]][c-eyre]
+[![eyre][c-eyre-badge]][c-eyre]
 
-[![error-chain][error-chain-badge]][error-chain]
+[![error-chain][c-error-chain-badge]][c-error-chain]
 
-Do not use [Error Chain][error-chain]⮳, which is deprecated.
+Do not use [Error Chain][c-error-chain]⮳, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

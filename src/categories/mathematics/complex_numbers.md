@@ -4,7 +4,7 @@
 
 ## Creating complex numbers
 
-[![num][num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
+[![num][c-num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
 
 Creates complex numbers of type [`{{i:num::complex::Complex}}`][c-num::complex::Complex]⮳. Both the real and imaginary part of the complex number must be of the same type.
 
@@ -14,7 +14,7 @@ Creates complex numbers of type [`{{i:num::complex::Complex}}`][c-num::complex::
 
 ## Adding complex numbers
 
-[![num][num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
+[![num][c-num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
 
 Performing mathematical operations on complex numbers is the same as on built in types: the numbers in question must be of the same type (i.e. floats or integers).
 
@@ -24,7 +24,7 @@ Performing mathematical operations on complex numbers is the same as on built in
 
 ## Mathematical functions
 
-[![num][num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
+[![num][c-num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
 
 Complex numbers have a range of interesting properties when it comes to how they interact with other mathematical functions, most notibly the family of sine functions as well as the number e. To use these functions with complex numbers, the Complex type has a few built in functions, all of which can be found here: [`{{i:num::complex::Complex}}`][c-num::complex::Complex]⮳.
 

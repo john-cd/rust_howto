@@ -4,21 +4,21 @@
 
 ## Polars
 
-[![polars][polars-badge]][c-polars]  [![polars-book][polars-book-badge]][polars-book]  [![polars-github][polars-github-badge]][polars-github]
+[![polars][c-polars-badge]][c-polars]  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]
 
 ## Arrow
 
-[![arrow-rs][arrow-rs-badge]][arrow-rs]  [![arrow-rs-github][arrow-rs-github-badge]][arrow-rs-github]
+[![arrow-rs][c-arrow-rs-badge]][c-arrow-rs]  [![arrow-rs-github][c-arrow-rs-github-badge]][c-arrow-rs-github]
 
 `Arrow-rs` is the official Rust implementation of `Apache Arrow`
 
 ## Datafusion
 
-[![datafusion][datafusion-badge]][c-datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
+[![datafusion][c-datafusion-badge]][c-datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
 
 ## See also
 
-[![csv][csv-badge]][c-csv]
+[![csv][c-csv-badge]][c-csv]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

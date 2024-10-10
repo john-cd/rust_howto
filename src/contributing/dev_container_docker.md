@@ -1,6 +1,6 @@
 ## Dev Container and Docker
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`{{i:mdbook}}`][mdbook-documentation]⮳ and {{i:rust tooling}}.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`{{i:mdbook}}`][c-mdbook-documentation]⮳ and {{i:rust tooling}}.
 
 If you don't want to use {{i:Dev Container}}, use the following from the project's root directory to manually build the [`{{i:docker}}`][c-docker]⮳ image and run it.
 

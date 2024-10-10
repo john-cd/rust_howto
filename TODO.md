@@ -91,9 +91,9 @@
 - [ ] time
 - [ ] chrono
 - [ ] traits
-- [ ] [dyn clone][dyn-clone]
+- [ ] [dyn clone][c-dyn-clone]
 - [ ] testing: Approx example
-- [ ] [fuzzing][fuzzing-github]
+- [ ] [fuzzing][c-fuzzing-github]
 - [ ] axum
 - [ ] loco
 - [ ] reqwest

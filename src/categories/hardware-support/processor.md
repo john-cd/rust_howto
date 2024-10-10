@@ -4,7 +4,7 @@
 
 ## Check number of {{i:logical cpu cores}}
 
-[![num-cpus][num-cpus-badge]][num-cpus]  [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]
+[![num-cpus][c-num-cpus-badge]][c-num-cpus]  [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]
 
 Shows the number of logical {{i:CPU cores}} in current machine using [`{{i:num-cpus::get}}`][num-cpus::get]⮳.
 

@@ -1,8 +1,8 @@
 # mdBook
 
-[![mdbook-github][mdbook-github-badge]][mdbook-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[mdBook][mdbook-github]⮳: a utility to create modern {{i:online books}} from Markdown files.
+[mdBook][c-mdbook-github]⮳: a utility to create modern {{i:online books}} from Markdown files.
 
 ```bash
 cargo install {{i:mdbook}}
@@ -15,8 +15,8 @@ mdbook serve --open
 
 ## See also
 
-[mdBook documentation][mdbook-documentation]⮳
+[mdBook documentation][c-mdbook-documentation]⮳
 
-[![mdbook-hide-github][mdbook-hide-github-badge]][mdbook-hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook-hide-github][c-mdbook-hide-github-badge]][c-mdbook-hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include ../../../refs/link-refs.md}}

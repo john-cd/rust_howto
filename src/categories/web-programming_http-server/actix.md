@@ -6,7 +6,7 @@
 
 [Actix Web (website)][c-actix-web-website]⮳
 
-Actix examples: [![Actix examples][actix-examples-github-badge]][actix-examples-github]
+Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examples-github]
 
 [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][blog-auth-web-microservice]⮳
 

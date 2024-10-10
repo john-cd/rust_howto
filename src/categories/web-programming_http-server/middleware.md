@@ -4,7 +4,7 @@
 
 ## Tower
 
-[![tower][tower-badge]][c-tower]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![tower][c-tower-badge]][c-tower]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`{{i:Tower}}`][c-tower]⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
@@ -12,15 +12,15 @@ Tower provides a simple core abstraction, the [`{{i:Service}}`][c-tower::Service
 
 An additional abstraction, the [`{{i:Layer}}`][c-tower::Layer]⮳ trait, is used to compose middleware with Services. A [`{{i:Layer}}`][c-tower::Layer]⮳ is a function taking a Service of one type and returning a Service of a different type. The [`{{i:ServiceBuilder}}`][c-tower::ServiceBuilder]⮳ type is used to add middleware to a service by composing it with multiple Layers. The [`{{i:Layer}}`][c-tower::Layer]⮳ trait can be used to write reusable components that can be applied to very different kinds of services; for example, it can be applied to services operating on different protocols, and to both the client and server side of a network transaction.
 
-A number of third-party libraries support [`{{i:Tower}}`][c-tower]⮳ and the [`{{i:Service}}`][c-tower::Service]⮳ trait: [`{{i:hyper}}`][hyper-crates-io]⮳, [`{{i:tonic}}`][c-tonic-crates-io]⮳ ({{i:gRPC}}).
+A number of third-party libraries support [`{{i:Tower}}`][c-tower]⮳ and the [`{{i:Service}}`][c-tower::Service]⮳ trait: [`{{i:hyper}}`][c-hyper-crates-io]⮳, [`{{i:tonic}}`][c-tonic-crates-io]⮳ ({{i:gRPC}}).
 
-[![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
+[![tower-middleware-from-scratch][c-tower-middleware-from-scratch-badge]][c-tower-middleware-from-scratch]
 
 ## Tower HTTP
 
-[![tower-http][tower-http-badge]][tower-http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![tower-http][c-tower-http-badge]][c-tower-http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
-[`{{i:Tower HTTP}}`][tower-http]⮳ contains HTTP specific Tower utilities.
+[`{{i:Tower HTTP}}`][c-tower-http]⮳ contains HTTP specific Tower utilities.
 
 ```rust,noplayground,ignore
 {{#include ../../../deps/tests/tower_http.rs}}
@@ -30,7 +30,7 @@ A number of third-party libraries support [`{{i:Tower}}`][c-tower]⮳ and the [`
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
-[`{{i:Trillium}}`][trillium-website]⮳
+[`{{i:Trillium}}`][c-trillium-website]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

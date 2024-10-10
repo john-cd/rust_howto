@@ -4,7 +4,7 @@
 
 ## Declare lazily evaluated constant
 
-[![lazy-static][lazy-static-badge]][lazy-static]  [![cat-caching][cat-caching-badge]][cat-caching]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![lazy-static][c-lazy-static-badge]][c-lazy-static]  [![cat-caching][cat-caching-badge]][cat-caching]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
 
 Declares a lazily evaluated constant [`{{i:HashMap}}`][c-std::collections::HashMap]⮳. The [`{{i:HashMap}}`][c-std::collections::HashMap]⮳ will be evaluated once and stored behind a global static reference.
 

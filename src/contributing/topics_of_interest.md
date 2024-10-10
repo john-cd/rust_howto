@@ -4,24 +4,24 @@
 - CD / CI, rust-cache
 - Macros
 - [`{{i:http}}`][c-http]⮳ crate, [`{{i:hyper}}`][c-hyper]⮳
-- Python interop: [`{{i:pyo3}}`][pyo3-website]⮳
+- Python interop: [`{{i:pyo3}}`][c-pyo3-website]⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
 - [`{{i:notify}}`][c-notify]⮳
 - [`{{i:indicatif}}`][c-indicatif]⮳
-- [`{{i:ratatui}}`][ratatui-website]⮳
+- [`{{i:ratatui}}`][c-ratatui-website]⮳
 - File system traversal, [`{{i:walkdir}}`][c-walkdir]⮳
 - [`{{i:time}}`][c-std::time]⮳, [`{{i:chrono}}`][c-chrono]⮳
 - Errors: `color-eyre`, [`{{i:eyre}}`][c-eyre]⮳
-- Testing: [`{{i:approx}}`][c-approx]⮳, [`{{i:nextest}}`][nextest-website]⮳
+- Testing: [`{{i:approx}}`][c-approx]⮳, [`{{i:nextest}}`][c-nextest-website]⮳
 - [`{{i:axum}}`][c-axum]⮳
 - [`{{i:loco}}`][c-loco]⮳
 - shuttle.rs
 - [`{{i:reqwest}}`][c-reqwest]⮳
 - [`{{i:tonic}}`][c-tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
-- [`{{i:redis}}`][c-redis]⮳, [`{{i:mongodb}}`][c-mongodb]⮳, [`{{i:elasticsearch}}`][elasticsearch-github]⮳
+- [`{{i:redis}}`][c-redis]⮳, [`{{i:mongodb}}`][c-mongodb]⮳, [`{{i:elasticsearch}}`][c-elasticsearch-github]⮳
 - Cargo & project integration via [`{{i:cargo-edit}}`][cargo-edit]
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups

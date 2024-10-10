@@ -2,15 +2,15 @@
 
 {{#include serde.incl.md}}
 
-[![serde][serde-badge]][c-serde]
+[![serde][c-serde-badge]][c-serde]
 
 ## See also
 
-[![serde_json][serde_json-badge]][c-serde_json]
+[![serde_json][c-serde_json-badge]][c-serde_json]
 
-[![monostate-github][monostate-github-badge]][monostate-github]
+[![monostate-github][c-monostate-github-badge]][c-monostate-github]
 
-[![serde-ignored-github][serde-ignored-github-badge]][serde-ignored-github]
+[![serde-ignored-github][c-serde-ignored-github-badge]][c-serde-ignored-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

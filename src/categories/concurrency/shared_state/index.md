@@ -20,9 +20,9 @@ Allow access to data from one thread at a time.
 
 ## Parking Lot
 
-[![parking-lot][parking-lot-badge]][parking-lot]  [![parking-lot-crates-io][parking-lot-crate-badge]][parking-lot-crates-io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![parking-lot][c-parking-lot-badge]][c-parking-lot]  [![parking-lot-crates-io][c-parking-lot-crate-badge]][c-parking-lot-crates-io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[`{{i:Parking Lot}}`][parking-lot]⮳ provides implementations of [`{{i:Mutex}}`][parking_lot::Mutex]⮳, [`{{i:RwLock}}`][parking_lot::RwLock]⮳, [`{{i:Condvar}}`][parking_lot::Condvar]⮳ and [`{{i:Once}}`][parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`{{i:ReentrantMutex}}`][parking_lot::ReentrantMutex]⮳ type.
+[`{{i:Parking Lot}}`][c-parking-lot]⮳ provides implementations of [`{{i:Mutex}}`][parking_lot::Mutex]⮳, [`{{i:RwLock}}`][parking_lot::RwLock]⮳, [`{{i:Condvar}}`][parking_lot::Condvar]⮳ and [`{{i:Once}}`][parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`{{i:ReentrantMutex}}`][parking_lot::ReentrantMutex]⮳ type.
 
 `{{i:std::sync::Mutex}}` works fine, but `{{i:Parking Lot}}` is faster.
 
@@ -36,7 +36,7 @@ Allow access to data from one thread at a time.
 
 ## Atomics
 
-[![std][c-std-badge]][c-std]  [![crossbeam][crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 {{i:Atomic types}} in [`{{i:std::sync::atomic}}`][c-std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`{{i:AtomicBool}}`][c-std::sync::atomic::AtomicBool]⮳, [`{{i:AtomicIsize}}`][c-std::sync::atomic::AtomicIsize]⮳, [`{{i:AtomicUsize}}`][c-std::sync::atomic::AtomicUsize]⮳, [`{{i:AtomicI8}}`][c-std::sync::atomic::AtomicI8]⮳, [`{{i:AtomicU16}}`][c-std::sync::atomic::AtomicU16]⮳, etc.
 

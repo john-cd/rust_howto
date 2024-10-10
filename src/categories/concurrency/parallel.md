@@ -64,7 +64,7 @@ This example uses [`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]
 
 ## Generate jpg thumbnails in parallel
 
-[![rayon][c-rayon-badge]][c-rayon]  [![glob][glob-badge]][c-glob]  [![image][image-badge]][c-image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![rayon][c-rayon-badge]][c-rayon]  [![glob][c-glob-badge]][c-glob]  [![image][c-image-badge]][c-image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 This example generates thumbnails for all `{{i:jpg}}` files in the current directory then saves them in a new folder called `thumbnails`.
 

@@ -75,7 +75,7 @@ cargo fix
 
 ## Code coverage
 
-[![tarpaulin-github][tarpaulin-github-badge]][tarpaulin-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![tarpaulin-github][c-tarpaulin-github-badge]][c-tarpaulin-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ## Security audit
 

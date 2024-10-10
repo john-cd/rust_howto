@@ -24,7 +24,7 @@ Verifies `tan(x)` is equal to `sin(x)/cos(x)` for x = 6.
 
 ## Distance between two points on the Earth
 
-[![std][std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 By default, Rust provides mathematical [float methods][c-f64]⮳ such as trigonometric functions, square root, conversion functions between radians and degrees, and so forth.
 

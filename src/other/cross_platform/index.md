@@ -4,7 +4,7 @@
 
 ## Crux
 
-[![crux][crux-badge]][c-crux]  [![crux-github][crux-github-badge]][crux-github]
+[![crux][c-crux-badge]][c-crux]  [![crux-github][crux-github-badge]][crux-github]
 
 [`{{i:Crux}}`][c-Crux]⮳ is an experimental approach to building {{i:cross-platform}} applications.
 

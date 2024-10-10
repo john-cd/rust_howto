@@ -6,7 +6,7 @@
 
 ## Salt and hash a password with PBKDF2
 
-[![ring][ring-badge]][c-ring]  [![data-encoding][data-encoding-badge]][data-encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
+[![ring][c-ring-badge]][c-ring]  [![data-encoding][c-data-encoding-badge]][c-data-encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
 
 Uses [`{{i:ring::pbkdf2}}`][c-ring::pbkdf2]⮳ to hash a {{i:salted password}} using the {{i:PBKDF2}} key derivation function [`{{i:pbkdf2::derive}}`][c-ring::pbkdf2::derive]⮳
 Verifies the {{i:hash}} is correct with [`{{i:pbkdf2::verify}}`][c-ring::pbkdf2::verify]⮳

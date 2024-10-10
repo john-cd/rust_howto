@@ -4,7 +4,7 @@
 
 ## `rust-gpu`
 
-[![rust-gpu-github][rust-gpu-github-badge]][rust-gpu-github]
+[![rust-gpu-github][c-rust-gpu-github-badge]][c-rust-gpu-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

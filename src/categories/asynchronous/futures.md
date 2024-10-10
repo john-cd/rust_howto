@@ -2,7 +2,7 @@
 
 {{#include futures.incl.md}}
 
-[![futures][futures-badge]][c-futures]  [![futures-crates-io][futures-crate-badge]][futures-crates-io]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][c-futures-badge]][c-futures]  [![futures-crates-io][c-futures-crate-badge]][c-futures-crates-io]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 The [`{{i:futures}}`][c-futures]⮳ crate provides a number of core abstractions for writing {{i:asynchronous code}}.
 
@@ -38,7 +38,7 @@ The [`{{i:futures}}`][c-futures]⮳ crate provides an extension trait that provi
 
 ## See also
 
-[![futures-executor][futures-executor-badge]][futures-executor]
+[![futures-executor][c-futures-executor-badge]][c-futures-executor]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

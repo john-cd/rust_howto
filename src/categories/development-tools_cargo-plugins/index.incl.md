@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Code coverage][ex-code-coverage] | [![tarpaulin-github][tarpaulin-github-badge]][tarpaulin-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
+| [Code coverage][ex-code-coverage] | [![tarpaulin-github][c-tarpaulin-github-badge]][c-tarpaulin-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
 | [Fix compiler warnings][ex-fix-compiler-warnings] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Format][ex-format] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins] |
 | [Lint][ex-lint] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

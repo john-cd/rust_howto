@@ -6,16 +6,16 @@
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
-[![open-rs-github][open-rs-github-badge]][open-rs-github]
+[![open-rs-github][c-open-rs-github-badge]][open-rs-github]
 
-[![starship-github][starship-github-badge]][starship-github]
+[![starship-github][c-starship-github-badge]][c-starship-github]
 
-[![bacon-github][bacon-github-badge]][bacon-github]
+[![bacon-github][c-bacon-github-badge]][c-bacon-github]
 
 ## `bat`
 
 `{{i:bat}}` is a fast `cat` clone with syntax highlighting and {{i:Git}} integration.
-[![bat-github][bat-github-badge]][bat-github]
+[![bat-github][c-bat-github-badge]][c-bat-github]
 
 ```sh
 bat README.md
@@ -29,7 +29,7 @@ bat -A /etc/hosts
 
 ## `lsd`
 
-[`{{i:lsd}}`][lsd-github] is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.
+[`{{i:lsd}}`][c-lsd-github] is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.
 
 ```sh
 apt install lsd
@@ -37,7 +37,7 @@ apt install lsd
 
 ## `broot`
 
-[`{{i:broot}}`][broot-website] [![broot-github][broot-github-badge]][broot-github] is a new way to see and navigate directory trees.
+[`{{i:broot}}`][c-broot-website] [![broot-github][c-broot-github-badge]][c-broot-github] is a new way to see and navigate directory trees.
 
 ## `gping`
 
@@ -49,7 +49,7 @@ apt install gping
 
 ## `exa`
 
-[![exa-github][exa-github-badge]][exa-github]
+[![exa-github][c-exa-github-badge]][c-exa-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

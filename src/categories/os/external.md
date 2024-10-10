@@ -4,7 +4,7 @@
 
 ## Run an {{i:external command}} and process {{i:stdout}}
 
-[![regex][regex-badge]][c-regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][c-regex-badge]][c-regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Runs `git log --oneline` as an external [`{{i:Command}}`][c-std::process::Command]⮳ and inspects its [`{{i:Output}}`][c-std::process::Output]⮳ using [`{{i:Regex}}`][c-regex::Regex]⮳ to get the hash and message of the last 5 commits.
 

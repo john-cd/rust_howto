@@ -4,7 +4,7 @@
 
 ## Query the GitHub API
 
-[![reqwest][reqwest-badge]][c-reqwest]  [![serde][serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]  [![serde][c-serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/starring/#list-stargazers)⮳ with [`{{i:reqwest::get}}`][c-reqwest::get]⮳ to get list of all users who have marked a GitHub project with a star. [`{{i:reqwest::Response}}`][c-reqwest::Response]⮳ is deserialized with [`{{i:Response::json}}`][c-reqwest::Response::json]⮳ into `User` objects implementing [`{{i:serde::Deserialize}}`][c-serde::Deserialize]⮳.
 
@@ -16,7 +16,7 @@ Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/star
 
 ## Check if an API resource exists
 
-[![reqwest][reqwest-badge]][c-reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 Query the GitHub Users Endpoint using a HEAD request [`{{i:Client::head}}`][c-reqwest::Client::head]⮳ and then inspect the response code to determine success. This is a quick way to query a rest resource without needing to receive a body. [`{{i:reqwest::Client}}`][c-reqwest::Client]⮳ configured with [`{{i:ClientBuilder::timeout}}`][c-reqwest::ClientBuilder::timeout]⮳ ensures a request will not last longer than a timeout.
 
@@ -28,7 +28,7 @@ Due to both [`{{i:ClientBuilder::build}}`][c-reqwest::ClientBuilder::build]⮳ a
 
 ## Create and delete Gist with GitHub API
 
-[![reqwest][reqwest-badge]][c-reqwest]  [![serde][serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]  [![serde][c-serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 Creates a gist with POST request to GitHub [gists API v3](https://developer.github.com/v3/gists/)⮳ using [`{{i:Client::post}}`][c-reqwest::Client::post]⮳ and removes it with DELETE request using [`{{i:Client::delete}}`][c-reqwest::Client::post]⮳.
 
@@ -42,7 +42,7 @@ The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize a
 
 ## Consume a paginated RESTful API
 
-[![reqwest][reqwest-badge]][c-reqwest]  [![serde][serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]  [![serde][c-serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fetches the next page of results from the remote server as it arrives at the end of each page.
 
@@ -52,7 +52,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 
 ## Handle a rate-limited API
 
-[![reqwest][reqwest-badge]][c-reqwest]  [![hyper][hyper-badge]][c-hyper]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]  [![hyper][c-hyper-badge]][c-hyper]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
 This example uses the [`{{i:GitHub API - Rate limiting}}`][github-api-rate-limiting]⮳, as an example of how to handle remote server errors. This example uses the [`{{i:hyper::header!}}`][c-hyper::header!]⮳ macro to parse the response header and checks for [`{{i:reqwest::StatusCode::Forbidden}}`][c-reqwest::StatusCode::FORBIDDEN]⮳ If the response exceeds the rate limit, the example waits and retries.
 

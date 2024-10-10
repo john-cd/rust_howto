@@ -4,7 +4,7 @@
 
 ## Serialize and {{i:deserialize}} unstructured {{i:JSON}}
 
-[![serde_json][serde_json-badge]][c-serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![serde_json][c-serde_json-badge]][c-serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 The [`{{i:serde_json}}`][c-serde_json]⮳ crate provides a [`{{i:from_str}}`][c-serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
 
@@ -18,7 +18,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 ## Deserialize a {{i:TOML}} configuration file
 
-[![toml][toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![toml][c-toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
@@ -34,7 +34,7 @@ Parse TOML into your own structs using [`{{i:Serde}}`][c-serde]⮳.
 
 ## Read and write integers in {{i:little-endian}} {{i:byte order}}
 
-[![byteorder][byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![byteorder][c-byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 [`{{i:byteorder}}`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 

@@ -15,7 +15,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 ## Avoid writing and reading from a same file
 
-[![same-file][same-file-badge]][same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Use [`{{i:same-file::Handle}}`][same-file::Handle]⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
@@ -37,7 +37,7 @@ errors because the two files are same.
 
 ## Access a file randomly using a memory map
 
-[![memmap][memmap-badge]][c-memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![memmap][c-memmap-badge]][c-memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][c-memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][c-std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][c-std::fs::File]⮳.
 

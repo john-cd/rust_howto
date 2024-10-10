@@ -4,7 +4,7 @@
 
 ## Big integers
 
-[![num][num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
+[![num][c-num-badge]][c-num]  [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]  [![cat-science][cat-science-badge]][cat-science]
 
 Calculation for integers exceeding 128 bits are possible with [`{{i:BigInt}}`][c-num::BigInt]⮳.
 

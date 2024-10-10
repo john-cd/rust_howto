@@ -2,9 +2,9 @@
 
 {{#include tracing.incl.md}}
 
-[![tracing][tracing-badge]][c-tracing]  [![tracing-github][tracing-github-badge]][tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![tracing][c-tracing-badge]][c-tracing]  [![tracing-github][c-tracing-github-badge]][c-tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [![tracing-subscriber-crates-io][tracing-subscriber-crate-badge]][tracing-subscriber-crates-io]
+[![tracing-subscriber][c-tracing-subscriber-badge]][c-tracing-subscriber]  [![tracing-subscriber-crates-io][c-tracing-subscriber-crate-badge]][c-tracing-subscriber-crates-io]
 
 Add to `Cargo.toml`
 
@@ -78,11 +78,11 @@ Holding the drop guard returned by `{{i:Span::enter}}` across `.await` points wi
 
 [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[![env_logger][env_logger-badge]][c-env_logger]
+[![env_logger][c-env_logger-badge]][c-env_logger]
 
-[![log][log-badge]][c-log]
+[![log][c-log-badge]][c-log]
 
-[![log4rs][log4rs-badge]][c-log4rs]
+[![log4rs][c-log4rs-badge]][c-log4rs]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

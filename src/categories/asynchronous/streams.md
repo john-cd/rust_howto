@@ -22,7 +22,7 @@ To process multiple items from a {{i:stream}} concurrently, use the [`{{i:for_ea
 
 See also Tokio `{{i:async-stream}}`.
 
-[![async-stream][async-stream-badge]][async-stream]  [![async-stream-github][async-stream-github-badge]][async-stream-github]
+[![async-stream][c-async-stream-badge]][c-async-stream]  [![async-stream-github][c-async-stream-github-badge]][c-async-stream-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
