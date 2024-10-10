@@ -10,7 +10,7 @@ The Rust standard library provides smart pointer types, such as `{{i:Mutex}}<T>`
 
 ## Mutex
 
-[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Allow access to data from one thread at a time.
 
@@ -36,7 +36,7 @@ Allow access to data from one thread at a time.
 
 ## Atomics
 
-[![std][std-badge]][std]  [![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 {{i:Atomic types}} in [`{{i:std::sync::atomic}}`][c-std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`{{i:AtomicBool}}`][c-std::sync::atomic::AtomicBool]⮳, [`{{i:AtomicIsize}}`][c-std::sync::atomic::AtomicIsize]⮳, [`{{i:AtomicUsize}}`][c-std::sync::atomic::AtomicUsize]⮳, [`{{i:AtomicI8}}`][c-std::sync::atomic::AtomicI8]⮳, [`{{i:AtomicU16}}`][c-std::sync::atomic::AtomicU16]⮳, etc.
 

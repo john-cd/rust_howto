@@ -2,7 +2,7 @@
 
 {{#include lazy_initialization.incl.md}}
 
-[![std][std-badge]][std]  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![std][c-std-badge]][c-std]  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
 
 [OnceCell][std-core::cell::OnceCell]⮳ is a cell which can be written to only once.
 

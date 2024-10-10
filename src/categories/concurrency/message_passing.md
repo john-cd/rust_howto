@@ -8,7 +8,7 @@ Message passing in [`{{i:async}}`][book-rust-reference-async]⮳ programming is 
 
 ## Multiple producers, single consumer
 
-[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ```rust,editable
 {{#include ../../../deps/tests/message_passing_mpsc.rs}}

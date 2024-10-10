@@ -48,15 +48,15 @@ Crates mentioned in this book, by alphabetic order.
 
 ## R
 
-[![rand][rand-badge]][rand]  [![rand_distr][rand_distr-badge]][rand_distr]  [![rayon][rayon-badge]][rayon]  [![regex][regex-badge]][regex]  [![reqwest][reqwest-badge]][reqwest]  [![ring][ring-badge]][ring]  [![rusqlite][rusqlite-badge]][rusqlite]  [![rustquant][rustquant-badge]][rustquant]
+[![rand][c-rand-badge]][c-rand]  [![rand_distr][c-rand_distr-badge]][c-rand_distr]  [![rayon][c-rayon-badge]][c-rayon]  [![regex][regex-badge]][regex]  [![reqwest][reqwest-badge]][reqwest]  [![ring][ring-badge]][ring]  [![rusqlite][rusqlite-badge]][rusqlite]  [![rustquant][rustquant-badge]][rustquant]
 
 ## S
 
-[![same-file][same-file-badge]][same-file]  [![sea-orm][sea-orm-badge]][sea-orm]  [![select][select-badge]][select]  [![semver][semver-badge]][semver]  [![serde][serde-badge]][serde]  [![serde_json][serde_json-badge]][serde_json]  [![slint][slint-badge]][slint]  [![smol][smol-badge]][smol]  [![sqlx][sqlx-badge]][sqlx]  [![std][std-badge]][std]  [![syslog][syslog-badge]][syslog]
+[![same-file][same-file-badge]][same-file]  [![sea-orm][sea-orm-badge]][sea-orm]  [![select][select-badge]][select]  [![semver][semver-badge]][semver]  [![serde][serde-badge]][serde]  [![serde_json][serde_json-badge]][serde_json]  [![slint][slint-badge]][slint]  [![smol][smol-badge]][smol]  [![sqlx][sqlx-badge]][sqlx]  [![std][c-std-badge]][c-std]  [![syslog][syslog-badge]][syslog]
 
 ## T
 
-[![tar][tar-badge]][tar]  [![tauri][tauri-badge]][tauri]  [![tempdir][tempdir-badge]][tempdir]  [![thiserror][thiserror-badge]][thiserror]  [![threadpool][threadpool-badge]][threadpool]  [![tokio][tokio-badge]][tokio]  [![tokio_graceful_shutdown][tokio_graceful_shutdown-badge]][tokio_graceful_shutdown]  [![toml][toml-badge]][toml]  [![tower][tower-badge]][tower]  [![tower-http][tower-http-badge]][tower-http]  [![tonic][tonic-badge]][tonic]  [![tracing][tracing-badge]][tracing]  [![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]
+[![tar][tar-badge]][tar]  [![tauri][tauri-badge]][tauri]  [![tempdir][tempdir-badge]][tempdir]  [![thiserror][thiserror-badge]][thiserror]  [![threadpool][threadpool-badge]][threadpool]  [![tokio][c-tokio-badge]][c-tokio]  [![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]  [![toml][toml-badge]][toml]  [![tower][tower-badge]][tower]  [![tower-http][tower-http-badge]][tower-http]  [![tonic][tonic-badge]][tonic]  [![tracing][tracing-badge]][tracing]  [![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]
 
 ## U
 

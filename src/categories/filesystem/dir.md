@@ -4,7 +4,7 @@
 
 ## File names that have been modified in the last 24 hours
 
-[![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![std][c-std-badge]][c-std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Gets the {{i:current working directory}} by calling [`{{i:env::current_dir}}`][c-std::env::current_dir]⮳ then for each entries in [`{{i:fs::read_dir}}`][c-std::fs::read_dir]⮳ extracts the
 [`{{i:DirEntry::path}}`][c-std::fs::DirEntry::path]⮳ and gets the metadata via [`{{i:fs::Metadata}}`][c-std::fs::Metadata]⮳. The

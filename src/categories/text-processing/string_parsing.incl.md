@@ -6,4 +6,4 @@
 | [Extract phone numbers from text][ex-phone] | [![regex][regex-badge]][regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 | [Filter a log file by matching multiple regular expressions][ex-regex-filter-log] | [![regex][regex-badge]][regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 | [Replace all occurrences of one text pattern with another pattern.][ex-regex-replace-named] | [![regex][regex-badge]][regex]  [![lazy-static][lazy-static-badge]][lazy-static] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
-| [Implement the `FromStr` trait for a custom `struct`][string_parsing-from_str] | [![std][std-badge]][std] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Implement the `FromStr` trait for a custom `struct`][string_parsing-from_str] | [![std][c-std-badge]][c-std] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |

@@ -2,13 +2,13 @@
 
 The most common form of {{i:synchronization}} in an {{i:async}} program is {{i:message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of {{i:avoiding shared state}}. Message passing is implemented using {{i:async channels}}.
 
-Tokio's [`{{i:sync}}`][tokio-sync]⮳ module provides {{i:channels}} that work well with async code.
+Tokio's [`{{i:sync}}`][c-tokio-sync]⮳ module provides {{i:channels}} that work well with async code.
 
 {{#include async_channels.incl.md}}
 
 ## OneShot
 
-[![tokio][tokio-badge]][tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![tokio][c-tokio-badge]][c-tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 [`{{i:oneshot}}`][c-tokio::sync::oneshot]⮳ sends a single value from a single {{i:producer}} to a single {{i:consumer}}. This {{i:channel}} is usually used to send the result of a computation to a waiter.
 
@@ -24,7 +24,7 @@ Another example:
 
 ## Multiple Producer, Single Consumer
 
-[![tokio][tokio-badge]][tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![tokio][c-tokio-badge]][c-tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_mpsc.rs}}

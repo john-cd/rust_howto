@@ -16,7 +16,7 @@ By running all {{i:async}} expressions on the current task, the expressions are 
 
 - The I/O section of the website explains how to read and write data asynchronously with Tokio, using streams, codecs, and futures. It also shows how to handle errors and timeouts.
 
-[Current thread runtime][tokio-current-thread-runtime]⮳
+[Current thread runtime][c-tokio-current-thread-runtime]⮳
 
 equivalent to
 

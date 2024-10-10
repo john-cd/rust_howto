@@ -8,7 +8,7 @@
 
 - Async code should never spend a long time without reaching an `.await`.
 - Don't carelessly mix {{i:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the [`{{i:spawn_blocking}}`][c-tokio::task::spawn_blocking]⮳ function, use [`{{i:rayon}}`][rayon]⮳, or spawn a {{i:dedicated thread}}.
+- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the [`{{i:spawn_blocking}}`][c-tokio::task::spawn_blocking]⮳ function, use [`{{i:rayon}}`][c-rayon]⮳, or spawn a {{i:dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
@@ -42,7 +42,7 @@ If a {{i:blocking operation}} keeps running forever, you should run it on a {{i:
 
 ## Call async code from blocking code
 
-[Bridging with sync code][tokio-bridging-with-sync-code]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[Bridging with sync code][c-tokio-bridging-with-sync-code]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 In other cases, it may be easier to structure the application as largely {{i:synchronous}}, with smaller or logically distinct {{i:asynchronous}} portions. For instance, a {{i:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 

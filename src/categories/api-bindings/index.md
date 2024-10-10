@@ -10,13 +10,13 @@ Idiomatic wrappers of specific {{i:APIs}} for convenient access from Rust. Inclu
 
 ### Python Interop
 
-[pyo3][pyo3-website]⮳
+[pyo3][c-pyo3-website]⮳
 
 ### Rust tools for Python
 
-[pyOxidizer][pyoxidizer-github]⮳
+[pyOxidizer][c-pyoxidizer-github]⮳
 
-[Ruff][ruff-website]⮳
+[Ruff][c-ruff-website]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

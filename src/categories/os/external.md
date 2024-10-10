@@ -14,7 +14,7 @@ Runs `git log --oneline` as an external [`{{i:Command}}`][c-std::process::Comman
 
 ## Run an {{i:external command}} passing it stdin and check for an error code
 
-[![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
 Opens the `python` interpreter using an external [`{{i:Command}}`][c-std::process::Command]⮳ and passes it a python statement for execution. [`{{i:Output}}`][c-std::process::Output]⮳ of statement is then parsed.
 
@@ -24,7 +24,7 @@ Opens the `python` interpreter using an external [`{{i:Command}}`][c-std::proces
 
 ## Run {{i:piped external commands}}
 
-[![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
 
@@ -37,7 +37,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 ## Redirect both stdout and stderr of child process to the same file
 
-[![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
 Spawns a child process and redirects [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳ to the same file. It follows the same idea as [run piped external commands](#run-ipiped-external-commands), however [`{{i:process::Stdio}}`][c-std::process::Stdio]⮳ writes to a specified file. [`{{i:File::try_clone}}`][c-std::fs::File::try_clone]⮳ references the same file handle for [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳. It will ensure that both handles write with the same cursor position.
 
@@ -49,7 +49,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 
 ## Continuously process child process' outputs
 
-[![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
 In [Run an external command and process stdout](#run-an-iexternal-command-and-process-istdout), processing doesn't start until external [`{{i:Command}}`][c-std::process::Command] is finished. The recipe below calls [`{{i:Stdio::piped}}`][c-std::process::Stdio::piped]⮳ to create a pipe, and reads
 [`{{i:stdout}}`][c-std::io::Stdout]⮳ continuously as soon as the [`{{i:BufReader}}`][c-std::io::BufReader]⮳ is updated.
@@ -63,7 +63,7 @@ The below recipe is equivalent to the Unix shell command
 
 ## Read Environment Variable
 
-[![std][std-badge]][std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
 Reads an {{i:environment variable}} via [`{{i:std::env::var}}`][c-std::env::var]⮳.
 

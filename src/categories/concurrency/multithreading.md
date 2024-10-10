@@ -4,7 +4,7 @@
 
 ## Spawn, {{i:join}}
 
-[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ```rust,editable
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
@@ -14,7 +14,7 @@ When the main thread of a Rust program completes, all {{i:spawned threads}} are 
 
 ## Scoped threads
 
-[![std][std-badge]][std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 [Scoped threads][c-std::thread::scope]⮳
 
@@ -24,7 +24,7 @@ When the main thread of a Rust program completes, all {{i:spawned threads}} are 
 
 ## Rayon - parallel processing
 
-[![rayon][rayon-badge]][rayon]  [![rayon-github][rayon-github-badge]][rayon-github]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![rayon][c-rayon-badge]][c-rayon]  [![rayon-github][c-rayon-github-badge]][rayon-github]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 ### Parallel iteration
 

@@ -8,7 +8,7 @@
 
 Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/starring/#list-stargazers)⮳ with [`{{i:reqwest::get}}`][c-reqwest::get]⮳ to get list of all users who have marked a GitHub project with a star. [`{{i:reqwest::Response}}`][c-reqwest::Response]⮳ is deserialized with [`{{i:Response::json}}`][c-reqwest::Response::json]⮳ into `User` objects implementing [`{{i:serde::Deserialize}}`][c-serde::Deserialize]⮳.
 
-[`{{i:tokio::main}}`][tokio-tutorial-hello-tokio] is used to set up the async executor and the process waits for [`{{i:reqwest::get}}`][c-reqwest::get] to complete before processing the response into User instances.
+[`{{i:tokio::main}}`][c-tokio-tutorial-hello-tokio] is used to set up the async executor and the process waits for [`{{i:reqwest::get}}`][c-reqwest::get] to complete before processing the response into User instances.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rest-get.rs}}

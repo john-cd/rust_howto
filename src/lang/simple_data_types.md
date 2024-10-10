@@ -4,7 +4,7 @@
 - Unsigned: [`{{i:u8}}`][u8]⮳, [`{{i:u16}}`][u16]⮳, [`{{i:u32}}`][u32]⮳, [`{{i:u128}}`][u128]⮳, [`{{i:usize}}`][primitive-usize]⮳
   - [`{{i:usize}}`][primitive-usize]⮳ and [`{{i:isize}}`][isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
 - Floating point: [`{{i:f32}}`][f32]⮳, [`{{i:f64}}`][f64]⮳
-- Boolean: [`{{i:bool}}`][bool]⮳: `true`, `false`
+- Boolean: [`{{i:bool}}`][primitive-bool]⮳: `true`, `false`
 - Char: `let z: char = 'ℤ';` Unicode
 - Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);`
   - Access via `let five_hundred = x.0;`

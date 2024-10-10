@@ -14,9 +14,9 @@ Parses the supplied URL and makes a synchronous HTTP GET request with [`{{i:reqw
 
 ## Async
 
-A similar approach can be used by including the [`{{i:tokio}}`][tokio]⮳ executor to make the main function asynchronous, retrieving the same information.
+A similar approach can be used by including the [`{{i:tokio}}`][c-tokio]⮳ executor to make the main function asynchronous, retrieving the same information.
 
-In this example, [`{{i:tokio::main}}`][tokio-tutorial-hello-tokio]⮳ handles all the heavy executor setup and allows sequential code implemented without blocking until `.await`.
+In this example, [`{{i:tokio::main}}`][c-tokio-tutorial-hello-tokio]⮳ handles all the heavy executor setup and allows sequential code implemented without blocking until `.await`.
 
 Uses the asynchronous versions of [`{{i:reqwest}}`][reqwest]⮳, both [`{{i:reqwest::get}}`][c-reqwest::get]⮳ and
 [`{{i:reqwest::Response}}`][c-reqwest::Response]⮳.

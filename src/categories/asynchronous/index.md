@@ -52,7 +52,7 @@ Rust's implementation of [`{{i:async}}`][book-rust-reference-async]⮳ differs f
 - The [`{{i:async}}`][book-rust-reference-async]⮳ / [`{{i:await}}`][book-rust-reference-await]⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`{{i:Future}}`][c-std::future::Future]⮳ trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the [`{{i:futures}}`][futures]⮳ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`{{i:Tokio}}`][tokio]⮳ and `{{i:async-std}}`. Most async applications, and some async crates, depend on a specific runtime.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`{{i:Tokio}}`][c-tokio]⮳ and `{{i:async-std}}`. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
 

@@ -2,7 +2,7 @@
 
 {{#include tokio.incl.md}}
 
-[![tokio][tokio-badge]][tokio]  [![tokio-github][tokio-github-badge]][tokio-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![tokio][c-tokio-badge]][c-tokio]  [![tokio-github][c-tokio-github-badge]][c-tokio-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 {{i:Tokio}} is an {{i:asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing {{i:networking applications}}. Tokio provides a few major components:
 
@@ -12,18 +12,18 @@
 
 ## Key links
 
-- [`{{i:Tokio}}`][tokio]⮳  [![tokio-github][tokio-github-badge]][tokio-github]
-- [`Tokio` glossary][tokio-glossary]⮳
-- [`Tokio` tutorial][tokio-tutorial]⮳
-- [![tokio-examples][tokio-examples-badge]][tokio-examples]
-- Tokio mini-Redis example: [![tokio-mini-redis][tokio-mini-redis-badge]][tokio-mini-redis]
+- [`{{i:Tokio}}`][c-tokio]⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
+- [`Tokio` glossary][c-tokio-glossary]⮳
+- [`Tokio` tutorial][c-tokio-tutorial]⮳
+- [![tokio-examples][c-tokio-examples-badge]][c-tokio-examples]
+- Tokio mini-Redis example: [![tokio-mini-redis][c-tokio-mini-redis-badge]][c-tokio-mini-redis]
 - Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template-github][rust-tokio-template-github-badge]][rust-tokio-template-github]
 
 ## Graceful shutdown
 
-[![tokio_graceful_shutdown][tokio_graceful_shutdown-badge]][tokio_graceful_shutdown]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-Example from [tokio_graceful_shutdown][tokio_graceful_shutdown]⮳:
+Example from [c-tokio_graceful_shutdown][c-tokio_graceful_shutdown]⮳:
 
 ```rust,editable,noplayground,no_run
 {{#include ../../../deps/tests/tokio_graceful_shutdown.rs}}

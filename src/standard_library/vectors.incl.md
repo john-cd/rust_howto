@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Vec][ex-vec] | [![std][std-badge]][std] |  |
+| [Vec][ex-vec] | [![std][c-std-badge]][c-std] |  |

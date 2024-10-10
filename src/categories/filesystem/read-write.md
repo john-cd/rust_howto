@@ -4,7 +4,7 @@
 
 ## Read lines of strings from a file
 
-[![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![std][c-std-badge]][c-std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Writes a three-line message to a file, then reads it back a line at a time with the [`{{i:Lines}}`][c-std::io::Lines]⮳ iterator created by
 [`{{i:BufRead::lines}}`][c-std::io::BufRead::lines]⮳  [`{{i:File}}`][c-std::fs::File]⮳ implements [`{{i:Read}}`][c-std::io::Read]⮳ which provides [`{{i:BufReader}}`][c-std::io::BufReader]⮳ trait. [`{{i:File::create}}`][c-std::fs::File::create]⮳ opens a [`{{i:File}}`][c-std::fs::File]⮳ for writing, [`{{i:File::open}}`][c-std::fs::File::open]⮳ for reading.
