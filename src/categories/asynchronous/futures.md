@@ -2,9 +2,9 @@
 
 {{#include futures.incl.md}}
 
-[![futures][futures-badge]][futures]  [![futures-crates-io][futures-crate-badge]][futures-crates-io]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][futures-badge]][c-futures]  [![futures-crates-io][futures-crate-badge]][futures-crates-io]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-The [`{{i:futures}}`][futures]⮳ crate provides a number of core abstractions for writing {{i:asynchronous code}}.
+The [`{{i:futures}}`][c-futures]⮳ crate provides a number of core abstractions for writing {{i:asynchronous code}}.
 
 In most cases, you will use this crate directly only when writing {{i:async code}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio](tokio.md) for example.
 
@@ -30,7 +30,7 @@ In most cases, you will use this crate directly only when writing {{i:async code
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-The [`{{i:futures}}`][futures]⮳ crate provides an extension trait that provides a variety of convenient adapters.
+The [`{{i:futures}}`][c-futures]⮳ crate provides an extension trait that provides a variety of convenient adapters.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/futures3.rs}}

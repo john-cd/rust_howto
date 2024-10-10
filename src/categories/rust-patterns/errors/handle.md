@@ -24,8 +24,8 @@ Other recipes in this book will hide the [`{{i:error-chain}}`][error-chain]⮳ b
 
 The [`{{i:error-chain}}`][error-chain]⮳ crate makes [`{{i:matching}}`][error-chain-matching-error]⮳ on different error types returned by a function possible and relatively compact. [`{{i:ErrorKind}}`][c-error_chain::example_generated::ErrorKind]⮳ determines the error type.
 
-Uses [`{{i:reqwest}}`][reqwest]⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer. The Rust standard library,
-[`{{i:reqwest}}`][reqwest]⮳, and the web service can all generate errors. Well defined Rust errors use [`{{i:foreign_links}}`][error-chain-foreign_links]⮳ An additional [`{{i:ErrorKind}}`][c-error_chain::example_generated::ErrorKind]⮳ variant for the web service error uses `errors` block of the `error_chain!` macro.
+Uses [`{{i:reqwest}}`][c-reqwest]⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer. The Rust standard library,
+[`{{i:reqwest}}`][c-reqwest]⮳, and the web service can all generate errors. Well defined Rust errors use [`{{i:foreign_links}}`][error-chain-foreign_links]⮳ An additional [`{{i:ErrorKind}}`][c-error_chain::example_generated::ErrorKind]⮳ variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust,editable
 {{#include ../../../../deps/tests/retain.rs}}
@@ -38,7 +38,7 @@ Uses [`{{i:reqwest}}`][reqwest]⮳::[blocking][c-reqwest::blocking]⮳ to query 
 This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on [`{{i:chain_err}}`][error-chain-chaining-errors]⮳ to extend errors by appending new errors. The error stack can be unwound, thus providing a better context to understand why an error was raised.
 
 The below recipes attempts to deserialize the value `256` into a
-[`{{i:u8}}`][u8]⮳. An error will bubble up from Serde then csv and finally up to the user code.
+[`{{i:u8}}`][c-u8]⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust,editable
 {{#include ../../../../deps/tests/backtrace.rs}}

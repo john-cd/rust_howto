@@ -18,7 +18,7 @@ The return value of encoding is an iterator of `&str` slices which collect into 
 
 ## Encode a string as application/x-www-form-urlencoded
 
-[![url][url-badge]][url]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![url][url-badge]][c-url]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-application/x-www-form-urlencoded] syntax using the [`{{i:form_urlencoded::byte_serialize}}`][c-form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`{{i:form_urlencoded::parse}}`][c-form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`{{i:String}}`][c-std::string::String]⮳.
 
@@ -42,7 +42,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 ## Encode and decode base64
 
-[![base64][base64-badge]][base64]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![base64][base64-badge]][c-base64]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Encodes byte slice into `{{i:base64}}` String using [`{{i:encode}}`][c-base64::encode] and decodes it with [`{{i:decode}}`][c-base64::decode].
 

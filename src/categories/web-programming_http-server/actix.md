@@ -2,9 +2,9 @@
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
-[![actix-web][actix-web-badge]][actix-web]
+[![actix-web][c-actix-web-badge]][c-actix-web]
 
-[Actix Web (website)][actix-web-website]⮳
+[Actix Web (website)][c-actix-web-website]⮳
 
 Actix examples: [![Actix examples][actix-examples-github-badge]][actix-examples-github]
 

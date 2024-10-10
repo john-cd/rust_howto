@@ -4,7 +4,7 @@
 
 ## Polars
 
-[![polars][polars-badge]][polars]  [![polars-book][polars-book-badge]][polars-book]  [![polars-github][polars-github-badge]][polars-github]
+[![polars][polars-badge]][c-polars]  [![polars-book][polars-book-badge]][polars-book]  [![polars-github][polars-github-badge]][polars-github]
 
 ## Arrow
 
@@ -14,11 +14,11 @@
 
 ## Datafusion
 
-[![datafusion][datafusion-badge]][datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
+[![datafusion][datafusion-badge]][c-datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
 
 ## See also
 
-[![csv][csv-badge]][csv]
+[![csv][csv-badge]][c-csv]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

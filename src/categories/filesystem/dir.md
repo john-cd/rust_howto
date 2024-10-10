@@ -33,7 +33,7 @@ The following would assert that a loop exists.
 
 ## Recursively find duplicate file names
 
-[![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Find recursively in the current directory {{i:duplicate filenames}}, printing them only once.
 
@@ -43,7 +43,7 @@ Find recursively in the current directory {{i:duplicate filenames}}, printing th
 
 ## Recursively find all files with given predicate
 
-[![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Find JSON files modified within the last day in the current directory. Using [`{{i:follow_links}}`][c-walkdir::WalkDir::follow_links]⮳ ensures {{i:symbolic links}} are followed like they were normal directories and files.
 
@@ -53,7 +53,7 @@ Find JSON files modified within the last day in the current directory. Using [`{
 
 ## Traverse directories while {{i:skipping dotfiles}}
 
-[![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Uses [`{{i:filter_entry}}`][c-walkdir::IntoIter::filter_entry]⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`{{i:Iterator::filter}}`][c-std::iter::Iterator::filter]⮳ applies to each [`{{i:WalkDir::DirEntry}}`][c-walkdir::IntoIter::filter_entry]⮳ even if the parent is a hidden directory.
 
@@ -65,7 +65,7 @@ Root dir `"."` yields through [`{{i:WalkDir::depth}}`][c-walkdir::WalkDir::depth
 
 ## Recursively calculate {{i:file sizes}} at given depth
 
-[![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Recursion depth can be flexibly set by [`{{i:WalkDir::min_depth}}`][c-walkdir::Walkdir::min_depth]⮳ & [`{{i:WalkDir::max_depth}}`][c-walkdir::WalkDir::max_depth]⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
@@ -75,7 +75,7 @@ Recursion depth can be flexibly set by [`{{i:WalkDir::min_depth}}`][c-walkdir::W
 
 ## Find all png files recursively
 
-[![glob][glob-badge]][glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![glob][glob-badge]][c-glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -87,11 +87,11 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find all files with given pattern ignoring filename case
 
-[![glob][glob-badge]][glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![glob][glob-badge]][c-glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
-A custom [`{{i:MatchOptions}}`][c-glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][c-std::default::Default]⮳.
+A custom [`{{i:MatchOptions}}`][c-glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][c-glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][c-std::default::Default]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/ignore-case.rs}}

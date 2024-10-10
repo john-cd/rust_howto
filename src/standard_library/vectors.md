@@ -4,7 +4,7 @@
 
 ## Vec
 
-[![std][std-badge]][std]
+[![std][std-badge]][c-std]
 
 Vectors can only store values that are the same type.
 

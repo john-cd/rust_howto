@@ -4,7 +4,7 @@
 
 ## Convert `Cow` to `&str`
 
-[![std][std-badge]][std]
+[![std][std-badge]][c-std]
 
 Use [`{{i:Borrow}}`][c-std::borrow::Borrow]⮳:
 
@@ -34,7 +34,7 @@ my_string.push_str(&example);
 
 ## Convert `Cow` to `String`
 
-[![std][std-badge]][std]
+[![std][std-badge]][c-std]
 
 Use [`{{i:ToString}}`][c-std::string::ToString]⮳:
 

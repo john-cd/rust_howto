@@ -2,11 +2,11 @@
 
 {{#include error_customization.incl.md}}
 
-Use [`{{i:Anyhow}}`][anyhow]⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`{{i:thiserror}}`][thiserror]⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Use [`{{i:Anyhow}}`][c-anyhow]⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`{{i:thiserror}}`][c-thiserror]⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Anyhow
 
-[![anyhow][anyhow-badge]][anyhow]  [![anyhow-crates-io][anyhow-crate-badge]][anyhow-crates-io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![anyhow][c-anyhow-badge]][c-anyhow]  [![anyhow-crates-io][c-anyhow-crate-badge]][c-anyhow-crates-io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -14,13 +14,13 @@ Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][c-any
 {{#include ../../../../deps/tests/anyhow.rs}}
 ```
 
-Anyhow works with any error type that has an impl of `std::error::{{i:Error}}`, including ones defined in your crate e.g. using [`{{i:thiserror}}`][thiserror]⮳.
+Anyhow works with any error type that has an impl of `std::error::{{i:Error}}`, including ones defined in your crate e.g. using [`{{i:thiserror}}`][c-thiserror]⮳.
 
 ## thisError
 
-[![thiserror][thiserror-badge]][thiserror]
+[![thiserror][thiserror-badge]][c-thiserror]
 
-[`{{i:thisError}}`][thisError]⮳ provides a convenient [`{{i:derive}}`][book-rust-reference-derive]⮳ macro for the standard library’s `std::error::Error` trait.
+[`{{i:thisError}}`][c-thisError]⮳ provides a convenient [`{{i:derive}}`][book-rust-reference-derive]⮳ macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/thiserror.rs}}
@@ -41,7 +41,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[![miette][miette-badge]][miette]  [![miette-librs][miette-librs-badge]][miette-librs] prints fancy diagnostics upon error.
+[![miette][miette-badge]][c-miette]  [![miette-librs][miette-librs-badge]][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 {{#include ../../../../deps/tests/miette/mylib.rs}}
@@ -53,7 +53,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## See also
 
-[![eyre][eyre-badge]][eyre]
+[![eyre][eyre-badge]][c-eyre]
 
 [![error-chain][error-chain-badge]][error-chain]
 

@@ -4,9 +4,9 @@
 
 ## Serialize and {{i:deserialize}} unstructured {{i:JSON}}
 
-[![serde_json][serde_json-badge]][serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![serde_json][serde_json-badge]][c-serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`{{i:serde_json}}`][serde_json]⮳ crate provides a [`{{i:from_str}}`][c-serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
+The [`{{i:serde_json}}`][c-serde_json]⮳ crate provides a [`{{i:from_str}}`][c-serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
 
 Unstructured JSON can be parsed into a universal [`{{i:serde_json::Value}}`][c-serde_json::Value]⮳ type that is able to represent any valid JSON data.
 
@@ -18,7 +18,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 ## Deserialize a {{i:TOML}} configuration file
 
-[![toml][toml-badge]][toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![toml][toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
@@ -26,7 +26,7 @@ Parse some TOML into a universal `toml::Value` that is able to represent any val
 {{#include ../../../deps/tests/toml.rs}}
 ```
 
-Parse TOML into your own structs using [`{{i:Serde}}`][serde]⮳.
+Parse TOML into your own structs using [`{{i:Serde}}`][c-serde]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/toml1.rs}}
@@ -34,9 +34,9 @@ Parse TOML into your own structs using [`{{i:Serde}}`][serde]⮳.
 
 ## Read and write integers in {{i:little-endian}} {{i:byte order}}
 
-[![byteorder][byteorder-badge]][byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![byteorder][byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-[`{{i:byteorder}}`][byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
+[`{{i:byteorder}}`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 
 ```rust,editable
 {{#include ../../../deps/tests/endian-byte.rs}}

@@ -46,7 +46,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 [`{{i:mold}}`][mold-github]⮳ is up to 5× faster than [`{{i:lld}}`][lld-website]⮳, but with a few caveats like limited platform support and occasional stability issues. To install `mold`, run `sudo apt-get install mold clang` in Ubuntu.
 
-You will also need to add the following to your [`{{i:cargo}}`][cargo]⮳ config at `.cargo/config.toml`:
+You will also need to add the following to your [`{{i:cargo}}`][c-cargo]⮳ config at `.cargo/config.toml`:
 
 ```toml
 [target.x86_64-unknown-linux-gnu]

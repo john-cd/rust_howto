@@ -4,7 +4,7 @@
 
 ## String type
 
-[![std][std-badge]][std]
+[![std][std-badge]][c-std]
 
 ```rust,editable
 {{#include ../../deps/tests/strings.rs}}

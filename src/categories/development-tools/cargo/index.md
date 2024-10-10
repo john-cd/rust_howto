@@ -84,7 +84,7 @@ Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.ht
 
 If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
 
-If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`{{i:staticlib}}`][staticlib]⮳ or [`{{i:cdylib}}`][cdylib]⮳, check `{{i:Cargo.lock}}` into git.
+If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`{{i:staticlib}}`][c-staticlib]⮳ or [`{{i:cdylib}}`][c-cdylib]⮳, check `{{i:Cargo.lock}}` into git.
 
 ```sh
 # Add dependencies to Cargo.toml from the command line

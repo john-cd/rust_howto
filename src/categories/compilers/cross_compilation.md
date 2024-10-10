@@ -6,7 +6,7 @@
 
 [![cross-github][cross-github-badge]][cross-github]  [![cat-compilers][cat-compilers-badge]][cat-compilers]
 
-[`{{i:cross}}`][cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires [`{{i:rustup}}`][rustup-website]⮳ and [`{{i:Docker}}`][docker]⮳ or [`{{i:Podman}}`][podman-website]⮳.
+[`{{i:cross}}`][cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires [`{{i:rustup}}`][rustup-website]⮳ and [`{{i:Docker}}`][c-docker]⮳ or [`{{i:Podman}}`][podman-website]⮳.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross
@@ -15,7 +15,7 @@ cargo install cross --git https://github.com/cross-rs/cross
 cargo binstall cross
 ```
 
-[`{{i:cross}}`][cross]⮳ has the exact same CLI as [`{{i:cargo}}`][cargo]⮳ but relies on [`{{i:docker}}`][docker]⮳ or [`{{i:podman}}`][podman-website]⮳.
+[`{{i:cross}}`][c-cross]⮳ has the exact same CLI as [`{{i:cargo}}`][c-cargo]⮳ but relies on [`{{i:docker}}`][c-docker]⮳ or [`{{i:podman}}`][podman-website]⮳.
 
 ```sh
 cross build --target aarch64-unknown-linux-gnu

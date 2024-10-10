@@ -4,7 +4,7 @@
 
 ## Examine the {{i:date and time}}
 
-[![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
 Gets the current UTC [`{{i:DateTime}}`][chrono::DateTime]⮳ and its {{i:hour/minute/second}} via [`{{i:Timelike}}`][chrono::Timelike]⮳ and its {{i:year/month/day/weekday}} via [`{{i:Datelike}}`][c-chrono::Datelike]⮳
 
@@ -26,7 +26,7 @@ Then it calculates what was the date after one billion seconds since January 1, 
 
 ## Display formatted date and time
 
-[![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
 Gets and displays the {{i:current time}} in UTC using [`{{i:Utc::now}}`][c-chrono::offset::Utc::now]⮳.
 
@@ -38,7 +38,7 @@ Formats the current time in the well-known [{{i:RFC 2822 format}}][rfc-2822]⮳ 
 
 ## Parse string into DateTime struct
 
-[![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
 Parses a [`{{i:DateTime}}`][c-chrono::DateTime]⮳ struct from strings representing the well-known
 [RFC 2822 format][rfc-2822]⮳ and [{{i:RFC 3339 format}}][rfc-3339]⮳, and a custom format, using

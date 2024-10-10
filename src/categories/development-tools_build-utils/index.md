@@ -8,11 +8,11 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 ## Compile and link statically to a bundled C library
 
-[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-build-utils][cat-build-utils-badge]][cat-build-utils]
+[![cc][cc-badge]][c-cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-build-utils][cat-build-utils-badge]][cat-build-utils]
 
-To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][cc]⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
+To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][c-cc]⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
 
-The following example has some bundled C code (**src/hello.c**) that will be used from rust. Before compiling rust source code, the "build" file (**build.rs**) specified in **Cargo.toml** runs. Using the [**cc**][cc]⮳ crate, a static library file will be produced (in this case, **libhello.a**, see [`{{i:compile}}` docs][c-cc::Build::compile]⮳) which can then be used from rust by declaring the external function signatures in an [`{{i:extern}}`][extern-blocks]⮳ block.
+The following example has some bundled C code (**src/hello.c**) that will be used from rust. Before compiling rust source code, the "build" file (**build.rs**) specified in **Cargo.toml** runs. Using the [**cc**][c-cc]⮳ crate, a static library file will be produced (in this case, **libhello.a**, see [`{{i:compile}}` docs][c-cc::Build::compile]⮳) which can then be used from rust by declaring the external function signatures in an [`{{i:extern}}`][extern-blocks]⮳ block.
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`{{i:cc::Build}}`][c-cc::Build]⮳. For more complex build requirements, [`{{i:cc::Build}}`][c-cc::Build]⮳ offers a full suite of builder methods for specifying [`{{i:include}}`][c-cc::Build::include]⮳ paths and extra compiler [`{{i:flag}}`][c-cc::Build::flag]s⮳.
 
@@ -58,7 +58,7 @@ void greet(const char* name) {
 
 ## Compile and link statically to a bundled C++ library
 
-[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][c-cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`{{i:cpp(true)}}`][c-cc::Build::cpp]⮳ and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
@@ -99,7 +99,7 @@ int multiply(int x, int y) {
 
 ## Compile a C library while setting custom defines
 
-[![cc][cc-badge]][cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cc][cc-badge]][c-cc]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 It is simple to build bundled C code with custom defines using [`{{i:cc::Build::define}}`][c-cc::Build::define]⮳
 The method takes an [`{{i:Option}}`][c-std::option::Option]⮳ value, so it is possible to create defines such as `#define APP_NAME "foo"`

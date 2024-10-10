@@ -2,7 +2,7 @@
 
 {{#include tracing.incl.md}}
 
-[![tracing][tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![tracing][tracing-badge]][c-tracing]  [![tracing-github][tracing-github-badge]][tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 [![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [![tracing-subscriber-crates-io][tracing-subscriber-crate-badge]][tracing-subscriber-crates-io]
 
@@ -78,11 +78,11 @@ Holding the drop guard returned by `{{i:Span::enter}}` across `.await` points wi
 
 [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[![env_logger][env_logger-badge]][env_logger]
+[![env_logger][env_logger-badge]][c-env_logger]
 
-[![log][log-badge]][log]
+[![log][log-badge]][c-log]
 
-[![log4rs][log4rs-badge]][log4rs]
+[![log4rs][log4rs-badge]][c-log4rs]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

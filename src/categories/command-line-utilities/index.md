@@ -41,7 +41,7 @@ apt install lsd
 
 ## `gping`
 
-Ping, but with a graph [`{{i:gping}}`][gping]
+Ping, but with a graph [`{{i:gping}}`][c-gping]
 
 ```sh
 apt install gping

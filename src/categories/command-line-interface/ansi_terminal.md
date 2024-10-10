@@ -2,11 +2,11 @@
 
 {{#include ansi_terminal.incl.md}}
 
-[![ansi-term][ansi-term-badge]][ansi-term]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
+[![ansi-term][c-ansi-term-badge]][c-ansi-term]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-This program depicts the use of [`{{i:ansi_term}}`][ansi-term-crates-io]⮳ crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on {{i:ANSI terminals}}.
+This program depicts the use of [`{{i:ansi_term}}`][c-ansi-term-crates-io]⮳ crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on {{i:ANSI terminals}}.
 
-There are two main data structures in [`{{i:ansi_term}}`][ansi-term-crates-io]⮳: [`{{i:ANSIString}}`][c-ansi_term::ANSIString]⮳ and [`{{i:Style}}`][ansi_term:Style]⮳. A `{{i:Style}}` holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Colour variants that represent simple foreground colour styles. An [`{{i:ANSIString}}`][c-ansi_term::ANSIString]⮳ is a string paired with a [`{{i:Style}}`][c-ansi_term::Style]⮳.
+There are two main data structures in [`{{i:ansi_term}}`][c-ansi-term-crates-io]⮳: [`{{i:ANSIString}}`][c-ansi_term::ANSIString]⮳ and [`{{i:Style}}`][ansi_term:Style]⮳. A `{{i:Style}}` holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Colour variants that represent simple foreground colour styles. An [`{{i:ANSIString}}`][c-ansi_term::ANSIString]⮳ is a string paired with a [`{{i:Style}}`][c-ansi_term::Style]⮳.
 
 **Note:** British English uses *Colour* instead of *Color*.
 

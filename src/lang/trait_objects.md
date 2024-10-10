@@ -8,7 +8,7 @@ A type like `&ClickCallback` or `Box<dyn ClickCallback>` where `ClickCallback` i
 {{#include ../../deps/tests/trait_objects.rs}}
 ```
 
-The set of traits after [`{{i:dyn}}`][dyn] is made up of an [object-safe-reference][book-rust-reference-object-safe]⮳ base trait plus any number of {{i:autotraits}} (one of [`{{i:Send}}`][c-std::marker::Send]⮳, [`{{i:Sync}}`][c-std::marker::Sync]⮳, [`{{i:Unpin}}`][c-std::marker::Unpin]⮳, [`{{i:UnwindSafe}}`][c-std::panic::UnwindSafe]⮳, and [`{{i:RefUnwindSafe}}`][c-std::panic::RefUnwindSafe]⮳ - see [special traits][book-rust-reference-special-traits]⮳).
+The set of traits after [`{{i:dyn}}`][c-dyn] is made up of an [object-safe-reference][book-rust-reference-object-safe]⮳ base trait plus any number of {{i:autotraits}} (one of [`{{i:Send}}`][c-std::marker::Send]⮳, [`{{i:Sync}}`][c-std::marker::Sync]⮳, [`{{i:Unpin}}`][c-std::marker::Unpin]⮳, [`{{i:UnwindSafe}}`][c-std::panic::UnwindSafe]⮳, and [`{{i:RefUnwindSafe}}`][c-std::panic::RefUnwindSafe]⮳ - see [special traits][book-rust-reference-special-traits]⮳).
 
 ```rust,editable,ignore
 dyn Trait

@@ -4,9 +4,9 @@
 
 ## Create a SQLite database
 
-[![rusqlite][rusqlite-badge]][rusqlite]  [![rusqlite-documentation][rusqlite-documentation-badge]][rusqlite-documentation]  [![cat-database][cat-database-badge]][cat-database]
+[![rusqlite][rusqlite-badge]][c-rusqlite]  [![rusqlite-documentation][rusqlite-documentation-badge]][rusqlite-documentation]  [![cat-database][cat-database-badge]][cat-database]
 
-Use the [`{{i:rusqlite}}`][rusqlite]⮳ crate to open SQLite databases. See
+Use the [`{{i:rusqlite}}`][c-rusqlite]⮳ crate to open SQLite databases. See
 the [documentation][rusqlite-documentation]⮳ for compiling on Windows.
 
 [`{{i:Connection::open}}`][c-rusqlite::Connection::open]⮳ will create the database if it doesn't already exist.
@@ -17,7 +17,7 @@ the [documentation][rusqlite-documentation]⮳ for compiling on Windows.
 
 ## Insert and Select data
 
-[![rusqlite][rusqlite-badge]][rusqlite]  [![cat-database][cat-database-badge]][cat-database]
+[![rusqlite][rusqlite-badge]][c-rusqlite]  [![cat-database][cat-database-badge]][cat-database]
 
 [`{{i:Connection::open}}`][c-rusqlite::Connection::open]⮳ will open the database `cats` created in the earlier recipe. This recipe inserts data into `cat_colors` and `cats` tables using the [`{{i:execute}}`][c-rusqlite::Connection::execute]⮳ method of [`{{i:Connection}}`][rusqlite::Connection]⮳. First, the data is inserted into the `cat_colors` table. After a record for a color is inserted, [`{{i:last_insert_rowid}}`][c-rusqlite::Connection::last_insert_rowid]⮳ method of [`{{i:Connection}}`][c-rusqlite::Connection]⮳ is used to get `id` of the last color inserted. This `id` is used while inserting data into the `cats` table. Then, the select query is prepared using the [`{{i:prepare}}`][c-rusqlite::Connection::prepare]⮳ method which gives a [`{{i:statement}}`][c-rusqlite::Statement]⮳ struct. Then, query is executed using [`{{i:query_map}}`][c-rusqlite::Statement::query_map]⮳ method of [`{{i:statement}}`][rusqlite::Statement]⮳
 
@@ -27,7 +27,7 @@ the [documentation][rusqlite-documentation]⮳ for compiling on Windows.
 
 ## Using transactions
 
-[![rusqlite][rusqlite-badge]][rusqlite]  [![cat-database][cat-database-badge]][cat-database]
+[![rusqlite][rusqlite-badge]][c-rusqlite]  [![cat-database][cat-database-badge]][cat-database]
 
 [`{{i:Connection::open}}`][c-rusqlite::Connection::open]⮳ will open the `cats.db` database from the top recipe.
 

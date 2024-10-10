@@ -6,7 +6,7 @@ The process of confirming identities.
 
 ## Basic Authentication
 
-[![reqwest][reqwest-badge]][reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-authentication][cat-authentication-badge]][cat-authentication]
+[![reqwest][reqwest-badge]][c-reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-authentication][cat-authentication-badge]][cat-authentication]
 
 Uses [`reqwest::RequestBuilder::{{i:basic_auth}}`][c-reqwest::RequestBuilder::basic_auth] to perform a basic HTTP {{i:authentication}}.
 

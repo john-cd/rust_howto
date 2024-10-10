@@ -4,7 +4,7 @@
 
 ## Enable {{i:log levels}} per module
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`{{i:RUST_LOG}}`][env_logger-RUST_LOG]⮳ environmental variable.
 
@@ -12,7 +12,7 @@ Creates two modules `foo` and nested `foo::bar` with logging directives controll
 {{#include ../../../deps/tests/log-mod.rs}}
 ```
 
-The [`{{i:RUST_LOG}}`][env_logger-RUST_LOG] environment variable controls [`{{i:env-logger}}`][env_logger]⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
+The [`{{i:RUST_LOG}}`][env_logger-RUST_LOG] environment variable controls [`{{i:env-logger}}`][c-env_logger]⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
 
 ```bash
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test
@@ -31,7 +31,7 @@ DEBUG:test::foo::bar: [bar] debug
 
 ## Use a custom environment variable to set up logging
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 [`{{i:Builder}}`][c-env_logger::Builder]⮳ configures logging.
 
@@ -46,7 +46,7 @@ All these steps are normally done internally by [`{{i:env_logger::init}}`][c-env
 
 ## Include {{i:timestamp}} in log messages
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![chrono][chrono-badge]][chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![chrono][chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates a {{i:custom logger}} configuration with [`{{i:Builder}}`][c-env_logger::Builder]⮳
 Each log entry calls [`{{i:Local::now}}`][chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][c-chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][c-chrono::format::strftime]⮳ to format a timestamp used in the final log.
@@ -66,9 +66,9 @@ stderr output will contain
 
 ## Log messages to a custom location
 
-[![log][log-badge]][log]  [![log4rs][log4rs-badge]][log4rs]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![log4rs][log4rs-badge]][c-log4rs]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[`{{i:log4rs}}`][log4rs]⮳ configures {{i:log output to a custom location}}. [`{{i:log4rs}}`][log4rs]⮳ can use either an external YAML file or a builder configuration.
+[`{{i:log4rs}}`][c-log4rs]⮳ configures {{i:log output to a custom location}}. [`{{i:log4rs}}`][c-log4rs]⮳ can use either an external YAML file or a builder configuration.
 
 Create the {{i:log configuration}} with [`{{i:log4rs::append::file::FileAppender}}`][c-log4rs::append::file::FileAppender]⮳ An appender defines the logging destination. The configuration continues with
 encoding using a custom pattern from [`{{i:log4rs::encode::pattern}}`][log4rs::encode::pattern]⮳ Assigns the configuration to [`{{i:log4rs::config::Config}}`][c-log4rs::config::Config]⮳ and sets the default [`{{i:log::LevelFilter}}`][c-log::LevelFilter]⮳

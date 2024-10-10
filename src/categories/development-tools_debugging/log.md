@@ -4,9 +4,9 @@
 
 ## Log a {{i:debug message}} to the console
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-The [`{{i:log}}`][log]⮳ crate provides {{i:logging utilities}}. The [`{{i:env_logger}}`][env_logger]⮳ crate configures logging via an environment variable. The [`{{i:log::debug!}}`][c-log::debug]⮳ macro works like other
+The [`{{i:log}}`][c-log]⮳ crate provides {{i:logging utilities}}. The [`{{i:env_logger}}`][c-env_logger]⮳ crate configures logging via an environment variable. The [`{{i:log::debug!}}`][c-log::debug]⮳ macro works like other
 [`{{i:std::fmt}}`][c-std::fmt]⮳ formatted strings.
 
 ```rust,editable
@@ -29,9 +29,9 @@ DEBUG:main: Executing query: DROP TABLE students
 
 ## Log an error message to the console
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Proper {{i:error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`{{i:log}}`][log]'s convenience macro [`{{i:log::error!}}`][c-log::error]⮳.
+Proper {{i:error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`{{i:log}}`][c-log]'s convenience macro [`{{i:log::error!}}`][c-log::error]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-error.rs}}
@@ -39,7 +39,7 @@ Proper {{i:error handling}} considers exceptions exceptional. Here, an error log
 
 ## Log to stdout instead of stderr
 
-[![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![env_logger][env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates a {{i:custom logger configuration}} using the [`{{i:Builder::target}}`][c-env_logger::Builder::target]⮳ to set the target of the log output to [`{{i:Target::Stdout}}`][c-env_logger::fmt::Target]⮳
 
@@ -49,7 +49,7 @@ Creates a {{i:custom logger configuration}} using the [`{{i:Builder::target}}`][
 
 ## Log messages with a custom logger
 
-[![log][log-badge]][log]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Implements a custom logger `ConsoleLogger` which prints to stdout. In order to use the logging macros, `ConsoleLogger` implements the [`{{i:log::Log}}`][c-log::Log]⮳ trait and [`{{i:log::set_logger}}`][c-log::Log]⮳ installs it.
 
@@ -59,7 +59,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 
 ## Log to the Unix {{i:syslog}}
 
-[![log][log-badge]][log]  [![syslog][syslog-badge]][syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][log-badge]][c-log]  [![syslog][syslog-badge]][c-syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`{{i:syslog::init}}`][c-syslog::init]⮳  [`{{i:syslog::Facility}}`][c-syslog::init]⮳ records the program submitting the log entry's classification, [`{{i:log::LevelFilter}}`][c-syslog::init]⮳ denotes allowed {{i:log verbosity}} and `Option<&str>` holds optional application name.
 

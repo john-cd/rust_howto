@@ -54,7 +54,7 @@ Rayon implements [`{{i:join}}`][c-rayon::join]⮳, [`{{i:scope}}`][c-rayon::join
 
 ## See also
 
-[![threadpool][threadpool-badge]][threadpool]
+[![threadpool][threadpool-badge]][c-threadpool]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

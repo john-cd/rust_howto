@@ -34,9 +34,9 @@ Example using specialized channels for {{i:tickers}} and {{i:timeout}}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[![crossbeam][crossbeam-badge]][crossbeam]
+[![crossbeam][crossbeam-badge]][c-crossbeam]
 
-[![postage][postage-badge]][postage]
+[![postage][postage-badge]][c-postage]
 
 [Message Passing (rust book)][book-rust-message-passing]⮳
 

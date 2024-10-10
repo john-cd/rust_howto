@@ -4,7 +4,7 @@
 
 ## Verify and extract login from an email address
 
-[![regex][regex-badge]][regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][regex-badge]][c-regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Validates that an {{i:email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
@@ -14,7 +14,7 @@ Validates that an {{i:email address}} is formatted correctly, and extracts every
 
 ## Extract a list of unique #Hashtags from a text
 
-[![regex][regex-badge]][regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][regex-badge]][c-regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Extracts, sorts, and deduplicates list of {{i:hashtags}} from text.
 
@@ -26,7 +26,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 ## Extract phone numbers from text
 
-[![regex][regex-badge]][regex]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][regex-badge]][c-regex]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Processes a string of text using [`{{i:Regex::captures_iter}}`][c-regex::Regex::captures_iter]⮳ to capture multiple {{i:phone numbers}}. The example here is for US convention phone numbers.
 
@@ -36,7 +36,7 @@ Processes a string of text using [`{{i:Regex::captures_iter}}`][c-regex::Regex::
 
 ## Filter a log file by matching multiple regular expressions
 
-[![regex][regex-badge]][regex]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][regex-badge]][c-regex]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Reads a file named `application.log` and only outputs the lines containing “version X.X.X”, some IP address followed by port 443 (e.g. “192.168.0.1:443”), or a specific warning.
 
@@ -48,7 +48,7 @@ A [`{{i:regex::RegexSetBuilder}}`][c-regex::RegexSetBuilder]⮳ composes a [`{{i
 
 ## Replace all occurrences of one text pattern with another pattern
 
-[![regex][regex-badge]][regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][regex-badge]][c-regex]  [![lazy-static][lazy-static-badge]][lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Replaces all occurrences of the standard {{i:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English {{i:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 

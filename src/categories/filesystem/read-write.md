@@ -37,9 +37,9 @@ errors because the two files are same.
 
 ## Access a file randomly using a memory map
 
-[![memmap][memmap-badge]][memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![memmap][memmap-badge]][c-memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][c-std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][c-std::fs::File]⮳.
+Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][c-memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][c-std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][c-std::fs::File]⮳.
 
 The [`{{i:Mmap::map}}`][c-memmap::Mmap::map]⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 

@@ -12,21 +12,21 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ## Key crates
 
-[![paste][paste-badge]][paste]  [![paste-github][paste-github-badge]][paste-github]
+[![paste][paste-badge]][c-paste]  [![paste-github][paste-github-badge]][paste-github]
 
-[`{{i:Paste}}`][paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
+[`{{i:Paste}}`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
 [![proc-macro2][proc-macro2-badge]][proc-macro2]  [![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github]  [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
 [`{{i:proc-macro2}}`][proc-macro2]⮳ [![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
-[![syn][syn-badge]][syn]  [![syn-github][syn-github-badge]][syn-github]
+[![syn][syn-badge]][c-syn]  [![syn-github][syn-github-badge]][syn-github]
 
-[`{{i:Syn}}`][Syn]⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
+[`{{i:Syn}}`][c-Syn]⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
-[![quote][quote-badge]][quote]
+[![quote][quote-badge]][c-quote]
 
-[`{{i:Quote}}`][Quote]⮳ provides the `quote!` macro for turning Rust {{i:syntax tree}} data structures into {{i:tokens}} of source code.
+[`{{i:Quote}}`][c-Quote]⮳ provides the `quote!` macro for turning Rust {{i:syntax tree}} data structures into {{i:tokens}} of source code.
 
 ## Tools
 
@@ -36,6 +36,6 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
-[![watt][watt-badge]][watt]  [![watt-github][watt-github-badge]][watt-github]
+[![watt][watt-badge]][c-watt]  [![watt-github][watt-github-badge]][watt-github]
 
 {{#include ../refs/link-refs.md}}

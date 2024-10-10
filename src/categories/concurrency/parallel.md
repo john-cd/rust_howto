@@ -6,8 +6,8 @@
 
 [![rayon][c-rayon-badge]][c-rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-The example uses the [`{{i:rayon}}`][rayon]⮳ crate, which is a {{i:data parallelism}} library for Rust.
-[`{{i:rayon}}`][rayon]⮳ provides the [`{{i:par_iter_mut}}`][c-rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
+The example uses the [`{{i:rayon}}`][c-rayon]⮳ crate, which is a {{i:data parallelism}} library for Rust.
+[`{{i:rayon}}`][c-rayon]⮳ provides the [`{{i:par_iter_mut}}`][c-rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-iter-mut.rs}}
@@ -29,7 +29,7 @@ This example demonstrates using the [`{{i:rayon::any}}`][c-rayon::iter::Parallel
 
 This example uses [`{{i:rayon::find_any}}`][c-rayon::iter::ParallelIterator::find_any]⮳ and [`{{i:par_iter}}`][c-rayon::iter::ParallelIterator::find_any]⮳ to search a vector in parallel for an element satisfying the predicate in the given closure.
 
-If there are multiple elements satisfying the predicate defined in the closure argument of [`{{i:rayon::find_any}}`][c-rayon::iter::ParallelIterator::find_any]⮳ [`{{i:rayon}}`][rayon]⮳ returns the first one found, not necessarily the first one.
+If there are multiple elements satisfying the predicate defined in the closure argument of [`{{i:rayon::find_any}}`][c-rayon::iter::ParallelIterator::find_any]⮳ [`{{i:rayon}}`][c-rayon]⮳ returns the first one found, not necessarily the first one.
 
 Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on [`{{i:std::find}}`][c-std::iter::Iterator::find]⮳ for additional details.
 
@@ -64,7 +64,7 @@ This example uses [`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]
 
 ## Generate jpg thumbnails in parallel
 
-[![rayon][c-rayon-badge]][c-rayon]  [![glob][glob-badge]][glob]  [![image][image-badge]][image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![rayon][c-rayon-badge]][c-rayon]  [![glob][glob-badge]][c-glob]  [![image][image-badge]][c-image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
 This example generates thumbnails for all `{{i:jpg}}` files in the current directory then saves them in a new folder called `thumbnails`.
 

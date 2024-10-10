@@ -16,7 +16,7 @@
 
 ## See also
 
-[![hyper][hyper-badge]][hyper]  [![tonic][tonic-badge]][tonic]
+[![hyper][hyper-badge]][c-hyper]  [![tonic][tonic-badge]][c-tonic]
 
 [Rust on Nails][rust-on-nails-website]⮳
 

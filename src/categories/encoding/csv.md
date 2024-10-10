@@ -4,7 +4,7 @@
 
 ## Read {{i:CSV}} records
 
-[![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Reads standard CSV records into [`{{i:csv::StringRecord}}`][c-csv::StringRecord]⮳ — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
 [`{{i:csv::ByteRecord}}`][c-csv::ByteRecord]⮳ makes no assumptions about UTF-8.
@@ -13,7 +13,7 @@ Reads standard CSV records into [`{{i:csv::StringRecord}}`][c-csv::StringRecord]
 {{#include ../../../deps/tests/read.rs}}
 ```
 
-[`{{i:serde}}`][serde]⮳ deserializes data into strongly type structures. See the [`{{i:csv::Reader::deserialize}}`][c-csv::Reader::deserialize]⮳ method.
+[`{{i:serde}}`][c-serde]⮳ deserializes data into strongly type structures. See the [`{{i:csv::Reader::deserialize}}`][c-csv::Reader::deserialize]⮳ method.
 
 ```rust,editable
 {{#include ../../../deps/tests/read1.rs}}
@@ -21,7 +21,7 @@ Reads standard CSV records into [`{{i:csv::StringRecord}}`][c-csv::StringRecord]
 
 ## Read CSV records with different {{i:delimiter}}
 
-[![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Reads CSV records with a tab [`{{i:delimiter}}`][c-csv::ReaderBuilder::delimiter]⮳.
 
@@ -31,7 +31,7 @@ Reads CSV records with a tab [`{{i:delimiter}}`][c-csv::ReaderBuilder::delimiter
 
 ## Filter CSV records matching a predicate
 
-[![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 Returns _only_ the rows from `data` with a field that matches `query`.
 
@@ -43,9 +43,9 @@ _Disclaimer: this example has been adapted from [the csv crate tutorial](https:/
 
 ## Handle invalid CSV data with Serde
 
-[![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![serde][serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-CSV files often contain {{i:invalid data}}. For these cases, the [`{{i:csv}}`][csv]⮳ crate provides a {{i:custom deserializer}}, [`{{i:csv::invalid_option}}`][c-csv::invalid_option]⮳ which automatically converts invalid data to [`{{i:None}}`][c-std::option::Option::None]⮳ values.
+CSV files often contain {{i:invalid data}}. For these cases, the [`{{i:csv}}`][c-csv]⮳ crate provides a {{i:custom deserializer}}, [`{{i:csv::invalid_option}}`][c-csv::invalid_option]⮳ which automatically converts invalid data to [`{{i:None}}`][c-std::option::Option::None]⮳ values.
 
 ```rust,editable
 {{#include ../../../deps/tests/invalid.rs}}
@@ -53,7 +53,7 @@ CSV files often contain {{i:invalid data}}. For these cases, the [`{{i:csv}}`][c
 
 ## Serialize records to CSV
 
-[![csv][csv-badge]][csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
 This example shows how to serialize a Rust tuple. [`{{i:csv::writer}}`][c-csv::writer]⮳ supports automatic {{i:serialization}} from Rust types into CSV records. [`{{i:write_record}}`][c-csv::Writer::write_record]⮳ writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`{{i:serialize}}`][c-csv::Writer::serialize]⮳. Since CSV writer uses an internal buffer, always explicitly [`{{i:flush}}`][c-csv::Writer::flush]⮳ when done.
 
@@ -63,9 +63,9 @@ This example shows how to serialize a Rust tuple. [`{{i:csv::writer}}`][c-csv::w
 
 ## Serialize records to CSV using Serde
 
-[![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![serde][serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The following example shows how to {{i:serialize custom structs}} as CSV records using the [`{{i:serde}}`][serde]⮳ crate.
+The following example shows how to {{i:serialize custom structs}} as CSV records using the [`{{i:serde}}`][c-serde]⮳ crate.
 
 ```rust,editable
 {{#include ../../../deps/tests/serde-serialize.rs}}
@@ -73,9 +73,9 @@ The following example shows how to {{i:serialize custom structs}} as CSV records
 
 ## Transform CSV column
 
-[![csv][csv-badge]][csv]  [![serde][serde-badge]][serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][csv-badge]][c-csv]  [![serde][serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`{{i:csv}}`][csv]⮳ crate to read and write the csv file, and [`{{i:serde}}`][serde]⮳ to deserialize and serialize the rows to and from bytes.
+Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`{{i:csv}}`][c-csv]⮳ crate to read and write the csv file, and [`{{i:serde}}`][c-serde]⮳ to deserialize and serialize the rows to and from bytes.
 
 See [`{{i:csv::Reader::deserialize}}`][c-csv::Reader::deserialize]⮳, [`{{i:serde::Deserialize}}`][c-serde::Deserialize]⮳ and [`{{i:std::str::FromStr}}`][c-std::str::FromStr]⮳.
 

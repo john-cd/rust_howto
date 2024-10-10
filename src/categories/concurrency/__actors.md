@@ -14,7 +14,7 @@
 
 [![actix-github][actix-github-badge]][actix-github]
 
-[`{{i:Actix}}`][actix]⮳
+[`{{i:Actix}}`][c-actix]⮳
 
 [`{{i:ractor}}`][ractor-crates-io]⮳
 
