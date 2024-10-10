@@ -14,7 +14,7 @@ An additional abstraction, the [`{{i:Layer}}`][c-tower::Layer]⮳ trait, is used
 
 A number of third-party libraries support [`{{i:Tower}}`][c-tower]⮳ and the [`{{i:Service}}`][c-tower::Service]⮳ trait: [`{{i:hyper}}`][c-hyper-crates-io]⮳, [`{{i:tonic}}`][c-tonic-crates-io]⮳ ({{i:gRPC}}).
 
-[![tower-middleware-from-scratch][c-tower-middleware-from-scratch-badge]][c-tower-middleware-from-scratch]
+[![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
 
 ## Tower HTTP
 

@@ -168,6 +168,9 @@ sortrefs:
   sort -u ./src/refs/crate-refs.md -o /tmp/c.md
   mv -f /tmp/c.md ./src/refs/crate-refs.md
   rm -f /temp/c.md
+  sort -u ./src/refs/other-refs.md -o /tmp/o.md
+  mv -f /tmp/o.md ./src/refs/other-refs.md
+  rm -f /temp/o.md
   sort -u ./src/refs/link-refs.md -o /tmp/l.md
   mv -f /tmp/l.md ./src/refs/link-refs.md
   rm -f /temp/l.md

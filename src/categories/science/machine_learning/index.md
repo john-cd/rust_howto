@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-[Are we learning yet?][are-we-learning-yet?]⮳
+[Are we learning yet?][are-we-learning-yet?-website]⮳
 
 [![linfa][c-linfa-badge]][c-linfa]  [![linfa-crates-io][c-linfa-crate-badge]][c-linfa-crates-io]  [![linfa-website][c-linfa-website-badge]][c-linfa-website]  [![cat-science][cat-science-badge]][cat-science]
 

@@ -6,7 +6,7 @@
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![select][c-select-badge]][c-select]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
-Use [`{{i:reqwest::get}}`][c-reqwest::get]⮳ to perform a {{i:HTTP GET request}} and then use [`{{i:Document::from_read}}`][c-select::document::Document::from_read]⮳ to parse the response into a {{i:HTML document}}. [`{{i:find}}`][c-select::document::Document::find]⮳ with the criteria of [`{{i:Name}}`][select::predicate::Name]⮳ is "a" retrieves all links. Call [`{{i:filter_map}}`][c-std-core::iter::Iterator::filter_map]⮳ on the [`{{i:Selection}}`][c-select::selection::Selection]⮳ retrieves URLs from links that have the "href" [`{{i:attr}}`][c-select::node::Node::attr]⮳ (attribute).
+Use [`{{i:reqwest::get}}`][c-reqwest::get]⮳ to perform a {{i:HTTP GET request}} and then use [`{{i:Document::from_read}}`][c-select::document::Document::from_read]⮳ to parse the response into a {{i:HTML document}}. [`{{i:find}}`][c-select::document::Document::find]⮳ with the criteria of [`{{i:Name}}`][c-select::predicate::Name]⮳ is "a" retrieves all links. Call [`{{i:filter_map}}`][c-std-core::iter::Iterator::filter_map]⮳ on the [`{{i:Selection}}`][c-select::selection::Selection]⮳ retrieves URLs from links that have the "href" [`{{i:attr}}`][c-select::node::Node::attr]⮳ (attribute).
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/extract-links.rs}}

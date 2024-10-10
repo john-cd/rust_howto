@@ -7,19 +7,19 @@
 - [Rust by Practice][book-rust-by-practice]⮳
 - [Rust Cookbook (fork)][book-rust-cookbook-fork]⮳
 - [Rust Cookbook (old)][book-rust-cookbook]⮳
-- [Rust Design Patterns][rust-design-patterns]⮳
-- [Easy Rust][rust-easy-rust]⮳
+- [Rust Design Patterns][book-rust-design-patterns]⮳
+- [Easy Rust][book-easy-rust]⮳
 - [The Rustonomicon][book-rustonomicon]⮳
 
 ## Lists of Rust links
 
 - [The Rust Starter Pack][rust-starter-pack]⮳
-- [![awesome-rust-github][c-awesome-rust-github-badge]][awesome-rust-github] a curated list of Rust code and resources.
+- [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github] a curated list of Rust code and resources.
 
 ## Learn
 
-- [`{{i:Rust Learning}}`][rust-learning]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][c-rust-learning-badge]][rust-learning]
-- [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists]⮳
+- [`{{i:Rust Learning}}`][rust-learning-github]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-github-badge]][rust-learning-github]
+- [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists-website]⮳
 - [Rust quizz][rust-quizz]⮳
 
 {{#include refs.incl.md}}

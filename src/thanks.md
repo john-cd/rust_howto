@@ -14,10 +14,10 @@ It is also inspired from online websites, blogs, and documentation, including:
 - [`docs.rs`][docs-rs]⮳
 - [https://www.lpalmieri.com/][lpalmieri-website]⮳
 - [https://codevoweb.com/][codevoweb-website]⮳
-- [Rust for professionals][rust-for-professionals]⮳
+- [Rust for professionals][rust-for-professionals-website]⮳
 - [Rust Cookbook (fork)][book-rust-cookbook-fork]⮳
-- [Rust Design Patterns][rust-design-patterns]⮳
-- [Easy Rust][rust-easy-rust]⮳
+- [Rust Design Patterns][book-rust-design-patterns]⮳
+- [Easy Rust][book-easy-rust]⮳
 - [The Rustonomicon][book-rustonomicon]⮳
 
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.

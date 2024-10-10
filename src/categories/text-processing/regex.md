@@ -18,7 +18,7 @@ Validates that an {{i:email address}} is formatted correctly, and extracts every
 
 Extracts, sorts, and deduplicates list of {{i:hashtags}} from text.
 
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳  [![twitter-hashtag-regex][c-twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
+The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
 {{#include ../../../deps/tests/hashtags.rs}}
@@ -53,7 +53,7 @@ A [`{{i:regex::RegexSetBuilder}}`][c-regex::RegexSetBuilder]⮳ composes a [`{{i
 Replaces all occurrences of the standard {{i:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English {{i:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 
 The method [`{{i:Regex::replace_all}}`][c-regex::Regex::replace_all]⮳ replaces all occurrences of the whole {{i:regex}}.
-`&str` implements the [`{{i:Replacer}}`][c-regex::Replacer]⮳ trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`{{i:replacement string syntax}}`][regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
+`&str` implements the [`{{i:Replacer}}`][c-regex::Replacer]⮳ trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`{{i:replacement string syntax}}`][c-regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
 
 ```rust,editable
 {{#include ../../../deps/tests/replace.rs}}

@@ -4,13 +4,13 @@
 
 ## Loco
 
-[Loco.rs]( https://loco.rs/ )⮳
+[Loco.rs][c-loco-website]⮳
 
-[Loco article][c-loco-article]⮳
+[Loco article][c-loco-blog]⮳
 
 ## Rocket
 
-[![rocket-realworld-example][c-rocket-realworld-example-badge]][rocket-realworld-example]
+[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 

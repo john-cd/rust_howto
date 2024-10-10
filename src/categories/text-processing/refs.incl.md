@@ -5,4 +5,4 @@
 [ex-regex-replace-named]: regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 
 [ex-unicode-graphemes]: string_parsing.md#collect-unicode-graphemes
-[string_parsing-from_str]: string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
+[ex-string_parsing-from_str]: string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct

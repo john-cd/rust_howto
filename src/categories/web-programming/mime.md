@@ -26,7 +26,7 @@ The following example shows how to return the correct {{i:MIME}} type from a giv
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![mime][c-mime-badge]][c-mime]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
-When receiving a {{i:HTTP response}} from [`{{i:reqwest}}`][c-reqwest]⮳ the [`{{i:MIME type}}`][mozilla-mime-type]⮳ or media type may be found in the [`{{i:Content-Type}}`][mozilla-content-type]⮳ header. [`{{i:reqwest::header::HeaderMap::get}}`][reqwest::header::HeaderMap::get]⮳ retrieves the {{i:header}} as a [`{{i:reqwest::header::HeaderValue}}`][reqwest::header::HeaderValue]⮳ which can be converted to a string. The [`{{i:mime}}`][c-mime]⮳ crate can then parse that, yielding a [`{{i:mime::Mime}}`][c-mime::Mime]⮳ value.
+When receiving a {{i:HTTP response}} from [`{{i:reqwest}}`][c-reqwest]⮳ the [`{{i:MIME type}}`][mozilla-mime-type]⮳ or media type may be found in the [`{{i:Content-Type}}`][mozilla-content-type]⮳ header. [`{{i:reqwest::header::HeaderMap::get}}`][c-reqwest::header::HeaderMap::get]⮳ retrieves the {{i:header}} as a [`{{i:reqwest::header::HeaderValue}}`][c-reqwest::header::HeaderValue]⮳ which can be converted to a string. The [`{{i:mime}}`][c-mime]⮳ crate can then parse that, yielding a [`{{i:mime::Mime}}`][c-mime::Mime]⮳ value.
 
 The [`{{i:mime}}`][c-mime]⮳ crate also defines some commonly used MIME types.
 

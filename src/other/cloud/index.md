@@ -4,7 +4,7 @@
 
 ## AWS
 
-[AWS Rust SDK][aws-rust-sdk]⮳
+[AWS Rust SDK][aws-rust-sdk-website]⮳
 
 <https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html>⮳
 

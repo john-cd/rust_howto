@@ -20,7 +20,7 @@ Items in a parent module can’t use the {{i:private items}} inside child module
 
 [![book-rust-by-example-visibility-rules][c-book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
 
-[A clear explanation of Rust’s module system][rust-module-system]⮳
+[A clear explanation of Rust’s module system][rust-module-system-website]⮳
 
 ## Use keyword
 

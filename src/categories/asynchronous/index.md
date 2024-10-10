@@ -18,7 +18,7 @@ Here are the topics we’ll cover:
 
 {{#include index.incl.md}}
 
-[Are we async yet?][are-we-async-yet?]⮳
+[Are we async yet?][are-we-async-yet?-website]⮳
 
 [Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 

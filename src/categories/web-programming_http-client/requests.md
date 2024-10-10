@@ -29,7 +29,7 @@ Uses the asynchronous versions of [`{{i:reqwest}}`][c-reqwest]⮳, both [`{{i:re
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![hyper][c-hyper-badge]][c-hyper]  [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
-Sets both standard and custom HTTP headers as well as URL parameters for a HTTP GET request. Creates a custom header of type `XPoweredBy` with [`{{i:hyper::header!}}`][hyper::header!]⮳ macro.
+Sets both standard and custom HTTP headers as well as URL parameters for a HTTP GET request. Creates a custom header of type `XPoweredBy` with [`{{i:hyper::header!}}`][c-hyper::header!]⮳ macro.
 
 Builds complex URL with [`{{i:Url::parse_with_params}}`][c-url::Url::parse_with_params]⮳. Sets standard headers
 [`{{i:header::UserAgent}}`][c-hyper::header::USER_AGENT]⮳  [`{{i:header::Authorization}}`][c-hyper::header::AUTHORIZATION]⮳ and custom `XPoweredBy` with [`{{i:RequestBuilder::header}}`][c-reqwest::RequestBuilder::header]⮳, then makes the request with

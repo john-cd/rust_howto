@@ -19,7 +19,7 @@ Creates a target [`{{i:File}}`][c-std::fs::File]⮳ with name obtained from [`{{
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
-[`{{i:reqwest::Client}}`][reqwest::Client]⮳ establishes a connection to <https://paste.rs> following the [`{{i:reqwest::RequestBuilder}}`][reqwest::RequestBuilder]⮳ pattern. Calling [`{{i:Client::post}}`][c-reqwest::Client::post]⮳ with a URL establishes the destination, [`{{i:RequestBuilder::body}}`][c-reqwest::RequestBuilder::body]⮳ sets the content to send by reading the file, and [`{{i:RequestBuilder::send}}`][c-reqwest::RequestBuilder::send]⮳ blocks until the file uploads and the response returns. [`{{i:read_to_string}}`][c-std::io::Read::read_to_string]⮳ returns the response and displays in the console.
+[`{{i:reqwest::Client}}`][c-reqwest::Client]⮳ establishes a connection to <https://paste.rs> following the [`{{i:reqwest::RequestBuilder}}`][c-reqwest::RequestBuilder]⮳ pattern. Calling [`{{i:Client::post}}`][c-reqwest::Client::post]⮳ with a URL establishes the destination, [`{{i:RequestBuilder::body}}`][c-reqwest::RequestBuilder::body]⮳ sets the content to send by reading the file, and [`{{i:RequestBuilder::send}}`][c-reqwest::RequestBuilder::send]⮳ blocks until the file uploads and the response returns. [`{{i:read_to_string}}`][c-std::io::Read::read_to_string]⮳ returns the response and displays in the console.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/post-file.rs}}

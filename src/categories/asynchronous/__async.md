@@ -2,7 +2,7 @@
 
 {{i:Asynchronous programming}}, or {{i:async}} for short, is a {{i:concurrent}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the {{i:async/await}} syntax
 
-[Are we async yet?][are-we-async-yet?]⮳
+[Are we async yet?][are-we-async-yet?-website]⮳
 
 [Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 
