@@ -4,7 +4,7 @@
 
 ## Using clap's builder API
 
-[![clap][clap-badge]][clap]  [(examples)][clap-examples]  [![clap-github][clap-github-badge]][clap-github]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
+[![clap][clap-badge]][clap]  [![clap-examples][clap-examples-badge]][clap-examples]  [![clap-github][clap-github-badge]][clap-github]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 This application describes the structure of its command-line interface using [`{{i:clap}}`][clap]⮳'s builder style. The [documentation][clap]⮳ gives two other possible ways to instantiate an application.
 

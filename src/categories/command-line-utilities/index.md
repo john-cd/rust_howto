@@ -37,7 +37,7 @@ apt install lsd
 
 ## `broot`
 
-[`{{i:broot}}`][broot-website] [(github)][broot-github] is a new way to see and navigate directory trees.
+[`{{i:broot}}`][broot-website] [![broot-github][broot-github-badge]][broot-github] is a new way to see and navigate directory trees.
 
 ## `gping`
 

@@ -2,7 +2,7 @@
 
 {{#include futures.incl.md}}
 
-[![futures][futures-badge]][futures]  [(crates.io)][futures-crate]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][futures-badge]][futures]  [![futures-crates-io][futures-crate-badge]][futures-crates-io]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 The [`{{i:futures}}`][futures]⮳ crate provides a number of core abstractions for writing {{i:asynchronous code}}.
 

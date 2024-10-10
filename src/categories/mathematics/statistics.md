@@ -8,7 +8,7 @@
 
 These examples calculate measures of central tendency for a data set contained within a Rust array. There may be no mean, median or mode to calculate for an empty set of data, so each function returns an [`{{i:Option}}`][std::option::Option]⮳ to be handled by the caller.
 
-The first example calculates the mean (the sum of all measurements divided by the number of measurements in the set) by producing an iterator of references over the data, and using [`{{i:sum}}`][sum]⮳ and [`{{i:len}}`][slice::len]⮳ to determine the total value and count of values respectively.
+The first example calculates the mean (the sum of all measurements divided by the number of measurements in the set) by producing an iterator of references over the data, and using [`{{i:sum}}`][std::iter::Iterator::sum]⮳ and [`{{i:len}}`][slice::len]⮳ to determine the total value and count of values respectively.
 
 ```rust,editable
 {{#include ../../../deps/tests/central-tendency.rs}}
@@ -32,7 +32,7 @@ The final example calculates the mode using a mutable [`{{i:HashMap}}`][std::col
 
 This example calculates the standard deviation and z-score of a set of measurements.
 
-The standard deviation is defined as the square root of the variance (here calculated with f32's [`{{i:sqrt}}`][f32::sqrt]⮳ where the variance is the [`{{i:sum}}`][sum]⮳ of the squared difference between each measurement and the `mean` divided by the number of measurements).
+The standard deviation is defined as the square root of the variance (here calculated with f32's [`{{i:sqrt}}`][f32::sqrt]⮳ where the variance is the [`{{i:sum}}`][std::iter::Iterator::sum]⮳ of the squared difference between each measurement and the `mean` divided by the number of measurements).
 
 The z-score is the number of standard deviations a single measurement spans away from the `mean` of the data set.
 

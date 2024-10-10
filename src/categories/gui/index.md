@@ -10,11 +10,11 @@ Tooling to help you create a graphical user interface.
 
 GTK and Tauri are probably the only options which can be described as production-ready without caveats. The Rust native options are usable for simple projects but are all still quite incomplete.
 
-See the relevant section in [blessed.rs][blessed-rs]⮳
+See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 ## Tauri
 
-[![tauri][tauri-badge]][tauri] [(website)][tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]
+[![tauri][tauri-badge]][tauri] [![tauri-website][tauri-website-badge]][tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]
 
 [`{{i:Tauri}}`][Tauri]⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
 
@@ -26,7 +26,7 @@ See the relevant section in [blessed.rs][blessed-rs]⮳
 
 ## Other GUI frameworks
 
-[![slint][slint-badge]][slint]  [(website)][slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]
+[![slint][slint-badge]][slint]  [![slint-website][slint-website-badge]][slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]
 
 [![iced-rs][iced-rs-badge]][iced-rs]  [![iced-rs-github][iced-rs-github-badge]][iced-rs-github] is a cross-platform GUI library for Rust, inspired by Elm.
 

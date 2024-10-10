@@ -16,7 +16,7 @@ Gets the current UTC [`{{i:DateTime}}`][chrono::DateTime]⮳ and its {{i:hour/mi
 
 [![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Converts a {{i:date}} given by [`{{i:NaiveDate::from_ymd}}`][chrono::naive::NaiveDate::from_ymd]⮳ and [`{{i:NaiveTime::from_hms}}`][chrono::naive::NaiveTime::from_hms]⮳ to [UNIX time stamp][unix-timestamp]⮳ using [`{{i:NaiveDateTime::timestamp}}`][chrono::naive::NaiveDateTime::timestamp]⮳
+Converts a {{i:date}} given by [`{{i:NaiveDate::from_ymd}}`][chrono::naive::NaiveDate::from_ymd]⮳ and [`{{i:NaiveTime::from_hms}}`][chrono::naive::NaiveTime::from_hms]⮳ to [UNIX time stamp][wikipedia-unix-timestamp]⮳ using [`{{i:NaiveDateTime::timestamp}}`][chrono::naive::NaiveDateTime::timestamp]⮳
 
 Then it calculates what was the date after one billion seconds since January 1, 1970 0:00:00 UTC, using [`{{i:NaiveDateTime::from_timestamp}}`][chrono::naive::NaiveDateTime::from_timestamp]⮳.
 

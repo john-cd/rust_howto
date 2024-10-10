@@ -10,11 +10,11 @@
 - Basic and advanced TCP/IP networking
 - [`{{i:notify}}`][notify]⮳
 - [`{{i:indicatif}}`][indicatif]⮳
-- [`{{i:ratatui}}`][ratatui]⮳
+- [`{{i:ratatui}}`][ratatui-website]⮳
 - File system traversal, [`{{i:walkdir}}`][walkdir]⮳
-- [`{{i:time}}`][time]⮳, [`{{i:chrono}}`][chrono]⮳
+- [`{{i:time}}`][std::time]⮳, [`{{i:chrono}}`][chrono]⮳
 - Errors: `color-eyre`, [`{{i:eyre}}`][eyre]⮳
-- Testing: [`{{i:approx}}`][approx]⮳, [`{{i:nextest}}`][nextest]⮳
+- Testing: [`{{i:approx}}`][approx]⮳, [`{{i:nextest}}`][nextest-website]⮳
 - [`{{i:axum}}`][axum]⮳
 - [`{{i:loco}}`][loco]⮳
 - shuttle.rs

@@ -4,7 +4,7 @@
 
 [![tracing][tracing-badge]][tracing]  [![tracing-github][tracing-github-badge]][tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [(crates.io)][tracing-subscriber-crate]
+[![tracing-subscriber][tracing-subscriber-badge]][tracing-subscriber]  [![tracing-subscriber-crates-io][tracing-subscriber-crate-badge]][tracing-subscriber-crates-io]
 
 Add to `Cargo.toml`
 

@@ -7,7 +7,7 @@
 <!--hidden-->
 ```
 
-- [`{{i:mdbook-keeper}}`][mdbook-keeper-crate]⮳. Install with
+- [`{{i:mdbook-keeper}}`][mdbook-keeper-crates-io]⮳. Install with
 
 ```bash
 cargo install mdbook-keeper --git <https://github.com/tfpk/mdbook-keeper.git>

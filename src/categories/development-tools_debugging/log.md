@@ -61,7 +61,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 
 [![log][log-badge]][log]  [![syslog][syslog-badge]][syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Logs messages to [UNIX `syslog`][unix-syslog]⮳. Initializes logger backend with [`{{i:syslog::init}}`][syslog::init]⮳  [`{{i:syslog::Facility}}`][syslog::Facility]⮳ records the program submitting the log entry's classification, [`{{i:log::LevelFilter}}`][log::LevelFilter]⮳ denotes allowed {{i:log verbosity}} and `Option<&str>` holds optional application name.
+Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`{{i:syslog::init}}`][syslog::init]⮳  [`{{i:syslog::Facility}}`][syslog::Facility]⮳ records the program submitting the log entry's classification, [`{{i:log::LevelFilter}}`][log::LevelFilter]⮳ denotes allowed {{i:log verbosity}} and `Option<&str>` holds optional application name.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-syslog.rs}}

@@ -4,7 +4,7 @@
 
 ## Polars
 
-[![polars][polars-badge]][polars]  [(book)][polars-book]  [![polars-github][polars-github-badge]][polars-github]
+[![polars][polars-badge]][polars]  [![polars-book][polars-book-badge]][polars-book]  [![polars-github][polars-github-badge]][polars-github]
 
 ## Arrow
 

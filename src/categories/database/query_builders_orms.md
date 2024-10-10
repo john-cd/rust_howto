@@ -4,19 +4,19 @@
 
 ## Sqlx
 
-[![sqlx][sqlx-badge]][sqlx]  [![sqlx-github][sqlx-github-badge]][sqlx-github]  [(lib.rs)][sqlx-librs]  [![cat-database][cat-database-badge]][cat-database]
+[![sqlx][sqlx-badge]][sqlx]  [![sqlx-github][sqlx-github-badge]][sqlx-github]  [![sqlx-librs][sqlx-librs-badge]][sqlx-librs]  [![cat-database][cat-database-badge]][cat-database]
 
-[`{{i:Sqlx}}`][sqlx]⮳ is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, SQLite, and MSSQL.
+[`{{i:Sqlx}}`][sqlx]⮳ is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports {{i:PostgreSQL}}, {{i:MySQL}}, {{i:SQLite}}, and {{i:MSSQL}}.
 
 ## SeaORM
 
-[![sea-orm][sea-orm-badge]][sea-orm]  [(website)][sea-orm-website]  [(cookbook)][sea-orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]
+[![sea-orm][sea-orm-badge]][sea-orm]  [![sea-orm-website][sea-orm-website-badge]][sea-orm-website]  [![sea-orm-cookbook][sea-orm-cookbook-badge]][sea-orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]
 
 [Seaography GraphQL server][seography-website]⮳
 
 ## Diesel
 
-[![diesel][diesel-badge]][diesel]  [(lib.rs)][diesel-librs]  [![cat-database][cat-database-badge]][cat-database]
+[![diesel][diesel-badge]][diesel]  [![diesel-librs][diesel-librs-badge]][diesel-librs]  [![cat-database][cat-database-badge]][cat-database]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

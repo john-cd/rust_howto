@@ -12,7 +12,7 @@ Tower provides a simple core abstraction, the [`{{i:Service}}`][tower::Service]�
 
 An additional abstraction, the [`{{i:Layer}}`][tower::Layer]⮳ trait, is used to compose middleware with Services. A [`{{i:Layer}}`][tower::Layer]⮳ is a function taking a Service of one type and returning a Service of a different type. The [`{{i:ServiceBuilder}}`][tower::ServiceBuilder]⮳ type is used to add middleware to a service by composing it with multiple Layers. The [`{{i:Layer}}`][tower::Layer]⮳ trait can be used to write reusable components that can be applied to very different kinds of services; for example, it can be applied to services operating on different protocols, and to both the client and server side of a network transaction.
 
-A number of third-party libraries support [`{{i:Tower}}`][tower]⮳ and the [`{{i:Service}}`][tower::Service]⮳ trait: [`{{i:hyper}}`][hyper-crate]⮳, [`{{i:tonic}}`][tonic-crate]⮳ ({{i:gRPC}}).
+A number of third-party libraries support [`{{i:Tower}}`][tower]⮳ and the [`{{i:Service}}`][tower::Service]⮳ trait: [`{{i:hyper}}`][hyper-crates-io]⮳, [`{{i:tonic}}`][tonic-crates-io]⮳ ({{i:gRPC}}).
 
 [![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
 

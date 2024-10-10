@@ -20,7 +20,7 @@ The return value of encoding is an iterator of `&str` slices which collect into 
 
 [![url][url-badge]][url]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][application/x-www-form-urlencoded] syntax using the [`{{i:form_urlencoded::byte_serialize}}`][form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`{{i:form_urlencoded::parse}}`][form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`{{i:String}}`][std::string::String]⮳.
+Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-application/x-www-form-urlencoded] syntax using the [`{{i:form_urlencoded::byte_serialize}}`][form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`{{i:form_urlencoded::parse}}`][form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`{{i:String}}`][std::string::String]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/url-encode.rs}}

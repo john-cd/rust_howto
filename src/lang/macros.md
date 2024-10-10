@@ -16,7 +16,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [`{{i:Paste}}`][paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
-[![proc-macro2][proc-macro2-badge]][proc-macro2]  [(github)][proc-macro2-github]  [(workshop)][proc-macro-workshop]
+[![proc-macro2][proc-macro2-badge]][proc-macro2]  [![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github]  [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
 [`{{i:proc-macro2}}`][proc-macro2]⮳ [![proc-macro2-github][proc-macro2-github-badge]][proc-macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
@@ -30,7 +30,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ## Tools
 
-[Cargo expand][cargo-expand-crate]⮳ [(github)][cargo-expand-github]⮳
+[Cargo expand][cargo-expand-crates-io]⮳ [![cargo-expand-github][cargo-expand-github-badge]][cargo-expand-github]⮳
 
 ## See also
 

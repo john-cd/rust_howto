@@ -22,7 +22,7 @@ Readers should have already some basic familiarity with [`{{i:Rust}}`][rust]⮳ 
 
 ## Why this book?
 
-Per the curated list of Rust crates [blessed.rs][blessed-rs]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with ~~almost~~ _more than_ 100 thousand crates to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are (not yet) dominant frameworks or platforms like `Rails`, `Django`, `Spring` or `Node` in the Rust world.
+Per the curated list of Rust crates [blessed.rs][blessed-rs-website]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with ~~almost~~ _more than_ 100 thousand crates to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are (not yet) dominant frameworks or platforms like `Rails`, `Django`, `Spring` or `Node` in the Rust world.
 
 This book intends to provide EXAMPLES to demonstrate the use of key Rust crates, examples which are absent from or scattered in the [reference docs][docs-rs]⮳, and hopes to become a "cheat sheet on steroid" for the Rust ecosystem (_not just_ for the Rust language).
 

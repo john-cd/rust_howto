@@ -1,8 +1,8 @@
 # Simple Data Types
 
 - Integers: [`{{i:i8}}`][i8]⮳, [`{{i:i16}}`][i16]⮳, [`{{i:i32}}`][i32]⮳, [`{{i:i64}}`][i64]⮳, [`{{i:i128}}`][i128]⮳, [`{{i:isize}}`][isize]⮳
-- Unsigned: [`{{i:u8}}`][u8]⮳, [`{{i:u16}}`][u16]⮳, [`{{i:u32}}`][u32]⮳, [`{{i:u128}}`][u128]⮳, [`{{i:usize}}`][usize]⮳
-  - [`{{i:usize}}`][usize]⮳ and [`{{i:isize}}`][isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
+- Unsigned: [`{{i:u8}}`][u8]⮳, [`{{i:u16}}`][u16]⮳, [`{{i:u32}}`][u32]⮳, [`{{i:u128}}`][u128]⮳, [`{{i:usize}}`][primitive-usize]⮳
+  - [`{{i:usize}}`][primitive-usize]⮳ and [`{{i:isize}}`][isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
 - Floating point: [`{{i:f32}}`][f32]⮳, [`{{i:f64}}`][f64]⮳
 - Boolean: [`{{i:bool}}`][bool]⮳: `true`, `false`
 - Char: `let z: char = 'ℤ';` Unicode

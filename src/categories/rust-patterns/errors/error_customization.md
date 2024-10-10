@@ -6,7 +6,7 @@ Use [`{{i:Anyhow}}`][anyhow]⮳ if you don't care what error type your functions
 
 ## Anyhow
 
-[![anyhow][anyhow-badge]][anyhow]  [(crates.io)][anyhow-crate]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![anyhow][anyhow-badge]][anyhow]  [![anyhow-crates-io][anyhow-crate-badge]][anyhow-crates-io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -41,7 +41,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[![miette][miette-badge]][miette]  [(lib.rs)][miette-librs] prints fancy diagnostics upon error.
+[![miette][miette-badge]][miette]  [![miette-librs][miette-librs-badge]][miette-librs] prints fancy diagnostics upon error.
 
 ```rust,editable,ignore
 {{#include ../../../../deps/tests/miette/mylib.rs}}

@@ -38,7 +38,7 @@ The [`{{i:reqwest::Client}}`][reqwest::Client]⮳ is responsible for details of 
 {{#include ../../../deps/tests/rest-post.rs}}
 ```
 
-The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize access to [`{{i:GitHub API}}`][github-api]⮳. Typical use case would employ one of the much more complex [`{{i:OAuth}}`][oauth]⮳ authorization flows.
+The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize access to [`{{i:GitHub API}}`][github-api]⮳. Typical use case would employ one of the much more complex [`{{i:OAuth}}`][oauth-website]⮳ authorization flows.
 
 ## Consume a paginated RESTful API
 
