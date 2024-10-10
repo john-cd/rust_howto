@@ -4,9 +4,9 @@
 
 ## Collect Unicode Graphemes
 
-[![unicode-segmentation][unicode-segmentation-badge]][unicode-segmentation]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![unicode-segmentation][unicode-segmentation-badge]][c-unicode-segmentation]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the [`{{i:UnicodeSegmentation::graphemes}}`][unicode_segmentation::UnicodeSegmentation::graphemes]⮳ function from the [`{{i:unicode-segmentation}}`][unicode-segmentation]⮳ crate.
+Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the [`{{i:UnicodeSegmentation::graphemes}}`][c-unicode_segmentation::UnicodeSegmentation::graphemes]⮳ function from the [`{{i:unicode-segmentation}}`][c-unicode-segmentation]⮳ crate.
 
 ```rust,editable
 {{#include ../../../deps/tests/graphemes.rs}}

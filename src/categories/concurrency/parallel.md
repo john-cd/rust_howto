@@ -7,7 +7,7 @@
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 The example uses the [`{{i:rayon}}`][rayon]⮳ crate, which is a {{i:data parallelism}} library for Rust.
-[`{{i:rayon}}`][rayon]⮳ provides the [`{{i:par_iter_mut}}`][rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
+[`{{i:rayon}}`][rayon]⮳ provides the [`{{i:par_iter_mut}}`][c-rayon::iter::IntoParallelRefIterator::par_iter_mut]⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-iter-mut.rs}}
@@ -17,7 +17,7 @@ The example uses the [`{{i:rayon}}`][rayon]⮳ crate, which is a {{i:data parall
 
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example demonstrates using the [`{{i:rayon::any}}`][rayon::iter::ParallelIterator::any]⮳ and [`{{i:rayon::all}}`][rayon::iter::ParallelIterator::all]⮳ methods, which are parallelized counterparts to [`{{i:std::any}}`][std::iter::Iterator::any]⮳ and [`{{i:std::all}}`][std::iter::Iterator::all]⮳. [`{{i:rayon::any}}`][rayon::iter::ParallelIterator::any]⮳ checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`{{i:rayon::all}}`][rayon::iter::ParallelIterator::all]⮳ checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
+This example demonstrates using the [`{{i:rayon::any}}`][c-rayon::iter::ParallelIterator::any]⮳ and [`{{i:rayon::all}}`][c-rayon::iter::ParallelIterator::any]⮳ methods, which are parallelized counterparts to [`{{i:std::any}}`][c-std::iter::Iterator::any]⮳ and [`{{i:std::all}}`][c-std::iter::Iterator::all]⮳. [`{{i:rayon::any}}`][c-rayon::iter::ParallelIterator::any]⮳ checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`{{i:rayon::all}}`][c-rayon::iter::ParallelIterator::any]⮳ checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-any-all.rs}}
@@ -27,11 +27,11 @@ This example demonstrates using the [`{{i:rayon::any}}`][rayon::iter::ParallelIt
 
 [![rayon][rayon-badge]][rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example uses [`{{i:rayon::find_any}}`][rayon::iter::ParallelIterator::find_any]⮳ and [`{{i:par_iter}}`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ to search a vector in parallel for an element satisfying the predicate in the given closure.
+This example uses [`{{i:rayon::find_any}}`][c-rayon::iter::ParallelIterator::find_any]⮳ and [`{{i:par_iter}}`][c-rayon::iter::ParallelIterator::find_any]⮳ to search a vector in parallel for an element satisfying the predicate in the given closure.
 
-If there are multiple elements satisfying the predicate defined in the closure argument of [`{{i:rayon::find_any}}`][rayon::iter::ParallelIterator::find_any]⮳ [`{{i:rayon}}`][rayon]⮳ returns the first one found, not necessarily the first one.
+If there are multiple elements satisfying the predicate defined in the closure argument of [`{{i:rayon::find_any}}`][c-rayon::iter::ParallelIterator::find_any]⮳ [`{{i:rayon}}`][rayon]⮳ returns the first one found, not necessarily the first one.
 
-Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on [`{{i:std::find}}`][std::iter::Iterator::find]⮳ for additional details.
+Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on [`{{i:std::find}}`][c-std::iter::Iterator::find]⮳ for additional details.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-parallel-search.rs}}
@@ -68,7 +68,7 @@ This example uses [`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]
 
 This example generates thumbnails for all `{{i:jpg}}` files in the current directory then saves them in a new folder called `thumbnails`.
 
-[`glob::{{i:glob_with}}`][glob::glob_with]⮳ finds jpeg files in current directory. [`{{i:rayon}}`][rayon] resizes images in parallel using [`{{i:par_iter}}`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`{{i:DynamicImage::resize}}`][image::DynamicImage::resize]⮳
+[`glob::{{i:glob_with}}`][c-glob::glob_with]⮳ finds jpeg files in current directory. [`{{i:rayon}}`][rayon] resizes images in parallel using [`{{i:par_iter}}`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`{{i:DynamicImage::resize}}`][image::DynamicImage::resize]⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rayon-thumbnails.rs}}

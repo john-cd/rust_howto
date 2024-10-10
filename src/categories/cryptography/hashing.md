@@ -6,7 +6,7 @@
 
 [![ring][ring-badge]][ring]  [![data-encoding][data-encoding-badge]][data-encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
 
-Writes some data to a file, then calculates the {{i:SHA-256}} [`{{i:digest::Digest}}`][digest::Digest]⮳ of the file's contents using [`{{i:digest::Context}}`][digest::Context]⮳
+Writes some data to a file, then calculates the {{i:SHA-256}} [`{{i:digest::Digest}}`][c-digest::Digest]⮳ of the file's contents using [`{{i:digest::Context}}`][c-digest::Context]⮳
 
 ```rust,editable
 {{#include ../../../deps/tests/sha-digest.rs}}
@@ -16,7 +16,7 @@ Writes some data to a file, then calculates the {{i:SHA-256}} [`{{i:digest::Dige
 
 [![ring][ring-badge]][ring]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
 
-Uses [`{{i:ring::hmac}}`][ring::hmac]⮳ to creates a [`{{i:Signature}}`][ring::signature::Signature]⮳ of a string then verifies the {{i:signature}} is correct.
+Uses [`{{i:ring::hmac}}`][c-ring::hmac]⮳ to creates a [`{{i:Signature}}`][c-ring::signature::Signature]⮳ of a string then verifies the {{i:signature}} is correct.
 
 ```rust,editable
 {{#include ../../../deps/tests/hmac.rs}}

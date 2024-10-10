@@ -16,8 +16,8 @@
 
 ## Overflow handling
 
-- Wrap in all modes with the `wrapping_*` methods, such as [`{{i:wrapping_add}}`][u32::wrapping_add]⮳.
-- Return the [`{{i:None}}`][std::option::Option::None]⮳ value if there is overflow with the `checked_*` methods.
+- Wrap in all modes with the `wrapping_*` methods, such as [`{{i:wrapping_add}}`][primitive-u32::wrapping_add]⮳.
+- Return the [`{{i:None}}`][c-std::option::Option::None]⮳ value if there is overflow with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 

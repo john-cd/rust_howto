@@ -6,27 +6,27 @@
 
 [![std][std-badge]][std]
 
-Use [`{{i:Borrow}}`][std::borrow::Borrow]⮳:
+Use [`{{i:Borrow}}`][c-std::borrow::Borrow]⮳:
 
 ```rust,ignore
 use std::borrow::Borrow;
 my_string.push_str(example.borrow());
 ```
 
-Use [`{{i:AsRef}}`][std::convert::AsRef]⮳:
+Use [`{{i:AsRef}}`][c-std::convert::AsRef]⮳:
 
 ```rust,ignore
 my_string.push_str(example.as_ref());
 ```
 
-Use [`{{i:Deref}}`][std::ops::Deref]⮳ explicitly:
+Use [`{{i:Deref}}`][c-std::ops::Deref]⮳ explicitly:
 
 ```rust,ignore
 use std::ops::Deref;
 my_string.push_str(example.deref());
 ```
 
-Use [`{{i:Deref}}`][std::ops::Deref]⮳ implicitly through a {{i:coercion}}:
+Use [`{{i:Deref}}`][c-std::ops::Deref]⮳ implicitly through a {{i:coercion}}:
 
 ```rust,ignore
 my_string.push_str(&example);
@@ -36,20 +36,20 @@ my_string.push_str(&example);
 
 [![std][std-badge]][std]
 
-Use [`{{i:ToString}}`][std::string::ToString]⮳:
+Use [`{{i:ToString}}`][c-std::string::ToString]⮳:
 
 ```rust,ignore
 example.to_string();
 ```
 
-Use [`{{i:IntoOwned}}`][std::borrow::Cow::into_owned]⮳:
+Use [`{{i:IntoOwned}}`][c-std::borrow::Cow::into_owned]⮳:
 
 ```rust,ignore
 Use Cow::into_owned:
 example.into_owned();
 ```
 
-Use any method to get a reference and then call [`{{i:to_owned}}`][std::borrow::ToOwned]⮳:
+Use any method to get a reference and then call [`{{i:to_owned}}`][c-std::borrow::ToOwned]⮳:
 
 ```rust,ignore
 example.as_ref().to_owned();

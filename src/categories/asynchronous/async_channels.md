@@ -10,7 +10,7 @@ Tokio's [`{{i:sync}}`][tokio-sync]⮳ module provides {{i:channels}} that work w
 
 [![tokio][tokio-badge]][tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`{{i:oneshot}}`][tokio::sync::oneshot]⮳ sends a single value from a single {{i:producer}} to a single {{i:consumer}}. This {{i:channel}} is usually used to send the result of a computation to a waiter.
+[`{{i:oneshot}}`][c-tokio::sync::oneshot]⮳ sends a single value from a single {{i:producer}} to a single {{i:consumer}}. This {{i:channel}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_oneshot.rs}}

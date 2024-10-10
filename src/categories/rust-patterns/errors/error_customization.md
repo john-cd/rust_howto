@@ -8,7 +8,7 @@ Use [`{{i:Anyhow}}`][anyhow]⮳ if you don't care what error type your functions
 
 [![anyhow][anyhow-badge]][anyhow]  [![anyhow-crates-io][anyhow-crate-badge]][anyhow-crates-io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][anyhow::Result]⮳ as the return type of any fallible function.
+Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/anyhow.rs}}

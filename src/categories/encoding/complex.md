@@ -6,11 +6,11 @@
 
 [![serde_json][serde_json-badge]][serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`{{i:serde_json}}`][serde_json]⮳ crate provides a [`{{i:from_str}}`][serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
+The [`{{i:serde_json}}`][serde_json]⮳ crate provides a [`{{i:from_str}}`][c-serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
 
-Unstructured JSON can be parsed into a universal [`{{i:serde_json::Value}}`][serde_json::Value]⮳ type that is able to represent any valid JSON data.
+Unstructured JSON can be parsed into a universal [`{{i:serde_json::Value}}`][c-serde_json::Value]⮳ type that is able to represent any valid JSON data.
 
-The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`{{i:json!}}`][serde_json::json]⮳ macro.
+The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`{{i:json!}}`][c-serde_json::json]⮳ macro.
 
 ```rust,editable
 {{#include ../../../deps/tests/json.rs}}

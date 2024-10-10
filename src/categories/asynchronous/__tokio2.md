@@ -24,7 +24,7 @@ equivalent to
 {{#include ../../../deps/tests/tokio2.rs}}
 ```
 
-[LocalSet][tokio::task::LocalSet]⮳
+[LocalSet][c-tokio::task::LocalSet]⮳
 
 In some cases, it is necessary to run one or more futures that do not implement Send and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more !Send futures to run together on the same thread.
 

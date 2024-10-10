@@ -38,15 +38,15 @@ Allow access to data from one thread at a time.
 
 [![std][std-badge]][std]  [![crossbeam][crossbeam-badge]][crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-{{i:Atomic types}} in [`{{i:std::sync::atomic}}`][std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`{{i:AtomicBool}}`][std::sync::atomic::AtomicBool]⮳, [`{{i:AtomicIsize}}`][std::sync::atomic::AtomicIsize]⮳, [`{{i:AtomicUsize}}`][std::sync::atomic::AtomicUsize]⮳, [`{{i:AtomicI8}}`][std::sync::atomic::AtomicI8]⮳, [`{{i:AtomicU16}}`][std::sync::atomic::AtomicU16]⮳, etc.
+{{i:Atomic types}} in [`{{i:std::sync::atomic}}`][c-std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`{{i:AtomicBool}}`][c-std::sync::atomic::AtomicBool]⮳, [`{{i:AtomicIsize}}`][c-std::sync::atomic::AtomicIsize]⮳, [`{{i:AtomicUsize}}`][c-std::sync::atomic::AtomicUsize]⮳, [`{{i:AtomicI8}}`][c-std::sync::atomic::AtomicI8]⮳, [`{{i:AtomicU16}}`][c-std::sync::atomic::AtomicU16]⮳, etc.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_atomics.rs}}
 ```
 
-The most common way to share an atomic variable is to put it into an [`{{i:Arc}}`][std::sync::Arc]⮳ (an atomically-reference-counted shared pointer).
+The most common way to share an atomic variable is to put it into an [`{{i:Arc}}`][c-std::sync::Arc]⮳ (an atomically-reference-counted shared pointer).
 
-[`{{i:crossbeam}}`][crossbeam]⮳ also offers [`{{i:AtomicCell}}`][crossbeam::atomic::AtomicCell]⮳, a thread-safe mutable memory location. This type is equivalent to [`{{i:Cell}}`][std::cell::Cell]⮳, except it can also be shared among multiple threads.
+[`{{i:crossbeam}}`][crossbeam]⮳ also offers [`{{i:AtomicCell}}`][c-crossbeam::atomic::AtomicCell]⮳, a thread-safe mutable memory location. This type is equivalent to [`{{i:Cell}}`][c-std::cell::Cell]⮳, except it can also be shared among multiple threads.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_crossbeam.rs}}

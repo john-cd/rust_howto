@@ -6,8 +6,8 @@
 
 [![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Writes a three-line message to a file, then reads it back a line at a time with the [`{{i:Lines}}`][std::io::Lines]⮳ iterator created by
-[`{{i:BufRead::lines}}`][std::io::BufRead::lines]⮳  [`{{i:File}}`][std::fs::File]⮳ implements [`{{i:Read}}`][std::io::Read]⮳ which provides [`{{i:BufReader}}`][std::io::BufReader]⮳ trait. [`{{i:File::create}}`][std::fs::File::create]⮳ opens a [`{{i:File}}`][std::fs::File]⮳ for writing, [`{{i:File::open}}`][std::fs::File::open]⮳ for reading.
+Writes a three-line message to a file, then reads it back a line at a time with the [`{{i:Lines}}`][c-std::io::Lines]⮳ iterator created by
+[`{{i:BufRead::lines}}`][c-std::io::BufRead::lines]⮳  [`{{i:File}}`][c-std::fs::File]⮳ implements [`{{i:Read}}`][c-std::io::Read]⮳ which provides [`{{i:BufReader}}`][c-std::io::BufReader]⮳ trait. [`{{i:File::create}}`][c-std::fs::File::create]⮳ opens a [`{{i:File}}`][c-std::fs::File]⮳ for writing, [`{{i:File::open}}`][c-std::fs::File::open]⮳ for reading.
 
 ```rust,editable
 {{#include ../../../deps/tests/read-file.rs}}
@@ -39,9 +39,9 @@ errors because the two files are same.
 
 [![memmap][memmap-badge]][memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][std::fs::File]⮳.
+Creates a {{i:memory map}} of a file using [`{{i:memmap}}`][memmap]⮳ and simulates some {{i:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`{{i:seek}}`][c-std::fs::File::seek]⮳ to navigate a [`{{i:File}}`][c-std::fs::File]⮳.
 
-The [`{{i:Mmap::map}}`][memmap::Mmap::map]⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
+The [`{{i:Mmap::map}}`][c-memmap::Mmap::map]⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 
 ```rust,editable
 {{#include ../../../deps/tests/memmap.rs}}

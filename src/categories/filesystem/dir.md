@@ -6,9 +6,9 @@
 
 [![std][std-badge]][std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Gets the {{i:current working directory}} by calling [`{{i:env::current_dir}}`][std::env::current_dir]⮳ then for each entries in [`{{i:fs::read_dir}}`][std::fs::read_dir]⮳ extracts the
-[`{{i:DirEntry::path}}`][std::fs::DirEntry::path]⮳ and gets the metadata via [`{{i:fs::Metadata}}`][std::fs::Metadata]⮳. The
-[`{{i:Metadata::modified}}`][std::fs::Metadata::modified]⮳ returns the [`{{i:SystemTime::elapsed}}`][std::time::SystemTime::elapsed]⮳ {{i:time since last modification}}. [`{{i:Duration::as_secs}}`][std::time::Duration::as_secs]⮳ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`{{i:Metadata::is_file}}`][std::fs::Metadata::is_file]⮳ filters out directories.
+Gets the {{i:current working directory}} by calling [`{{i:env::current_dir}}`][c-std::env::current_dir]⮳ then for each entries in [`{{i:fs::read_dir}}`][c-std::fs::read_dir]⮳ extracts the
+[`{{i:DirEntry::path}}`][c-std::fs::DirEntry::path]⮳ and gets the metadata via [`{{i:fs::Metadata}}`][c-std::fs::Metadata]⮳. The
+[`{{i:Metadata::modified}}`][c-std::fs::Metadata::modified]⮳ returns the [`{{i:SystemTime::elapsed}}`][c-std::time::SystemTime::elapsed]⮳ {{i:time since last modification}}. [`{{i:Duration::as_secs}}`][c-std::time::Duration::as_secs]⮳ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`{{i:Metadata::is_file}}`][c-std::fs::Metadata::is_file]⮳ filters out directories.
 
 ```rust,editable
 {{#include ../../../deps/tests/modified.rs}}
@@ -45,7 +45,7 @@ Find recursively in the current directory {{i:duplicate filenames}}, printing th
 
 [![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Find JSON files modified within the last day in the current directory. Using [`{{i:follow_links}}`][walkdir::WalkDir::follow_links]⮳ ensures {{i:symbolic links}} are followed like they were normal directories and files.
+Find JSON files modified within the last day in the current directory. Using [`{{i:follow_links}}`][c-walkdir::WalkDir::follow_links]⮳ ensures {{i:symbolic links}} are followed like they were normal directories and files.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/find-file.rs}}
@@ -55,9 +55,9 @@ Find JSON files modified within the last day in the current directory. Using [`{
 
 [![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Uses [`{{i:filter_entry}}`][walkdir::IntoIter::filter_entry]⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`{{i:Iterator::filter}}`][std::iter::Iterator::filter]⮳ applies to each [`{{i:WalkDir::DirEntry}}`][walkdir::Walkdir::DirEntry]⮳ even if the parent is a hidden directory.
+Uses [`{{i:filter_entry}}`][c-walkdir::IntoIter::filter_entry]⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`{{i:Iterator::filter}}`][c-std::iter::Iterator::filter]⮳ applies to each [`{{i:WalkDir::DirEntry}}`][c-walkdir::IntoIter::filter_entry]⮳ even if the parent is a hidden directory.
 
-Root dir `"."` yields through [`{{i:WalkDir::depth}}`][walkdir::WalkDir::depth]⮳ usage in `is_not_hidden` predicate.
+Root dir `"."` yields through [`{{i:WalkDir::depth}}`][c-walkdir::WalkDir::depth]⮳ usage in `is_not_hidden` predicate.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/skip-dot.rs}}
@@ -67,7 +67,7 @@ Root dir `"."` yields through [`{{i:WalkDir::depth}}`][walkdir::WalkDir::depth]�
 
 [![walkdir][walkdir-badge]][walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Recursion depth can be flexibly set by [`{{i:WalkDir::min_depth}}`][walkdir::Walkdir::min_depth]⮳ & [`{{i:WalkDir::max_depth}}`][walkdir::WalkDir::max_depth]⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
+Recursion depth can be flexibly set by [`{{i:WalkDir::min_depth}}`][c-walkdir::Walkdir::min_depth]⮳ & [`{{i:WalkDir::max_depth}}`][c-walkdir::WalkDir::max_depth]⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust,editable
 {{#include ../../../deps/tests/sizes.rs}}
@@ -91,7 +91,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
-A custom [`{{i:MatchOptions}}`][glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][std::default::Default]⮳.
+A custom [`{{i:MatchOptions}}`][c-glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][c-std::default::Default]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/ignore-case.rs}}

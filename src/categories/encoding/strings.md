@@ -6,7 +6,7 @@
 
 [![percent-encoding][percent-encoding-badge]][percent-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ using the [`{{i:utf8_percent_encode}}`][percent_encoding::utf8_percent_encode]⮳ function from the `{{i:percent-encoding}}` crate. Then decode using the [`{{i:percent_decode}}`][percent_encoding::percent_decode]⮳ function.
+Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ using the [`{{i:utf8_percent_encode}}`][c-percent_encoding::utf8_percent_encode]⮳ function from the `{{i:percent-encoding}}` crate. Then decode using the [`{{i:percent_decode}}`][c-percent_encoding::percent_decode]⮳ function.
 
 ```rust,editable
 {{#include ../../../deps/tests/percent-encode.rs}}
@@ -14,13 +14,13 @@ Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ us
 
 The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, `url` encodes `?` in a URL path but not in a query string.
 
-The return value of encoding is an iterator of `&str` slices which collect into a [`{{i:String}}`][std::string::String]⮳.
+The return value of encoding is an iterator of `&str` slices which collect into a [`{{i:String}}`][c-std::string::String]⮳.
 
 ## Encode a string as application/x-www-form-urlencoded
 
 [![url][url-badge]][url]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-application/x-www-form-urlencoded] syntax using the [`{{i:form_urlencoded::byte_serialize}}`][form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`{{i:form_urlencoded::parse}}`][form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`{{i:String}}`][std::string::String]⮳.
+Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-application/x-www-form-urlencoded] syntax using the [`{{i:form_urlencoded::byte_serialize}}`][c-form_urlencoded::byte_serialize]⮳ and subsequently decodes it with [`{{i:form_urlencoded::parse}}`][c-form_urlencoded::parse]⮳. Both functions return iterators that collect into a [`{{i:String}}`][c-std::string::String]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/url-encode.rs}}
@@ -30,7 +30,7 @@ Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-applicatio
 
 [![data-encoding][data-encoding-badge]][data-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`{{i:data_encoding}}`][data-encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`{{i:String}}`][std::string::String]⮳ containing the {{i:hexadecimal representation}} of the data.
+The [`{{i:data_encoding}}`][data-encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`{{i:String}}`][c-std::string::String]⮳ containing the {{i:hexadecimal representation}} of the data.
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 
@@ -44,7 +44,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 [![base64][base64-badge]][base64]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encodes byte slice into `{{i:base64}}` String using [`{{i:encode}}`][base64::encode] and decodes it with [`{{i:decode}}`][base64::decode].
+Encodes byte slice into `{{i:base64}}` String using [`{{i:encode}}`][c-base64::encode] and decodes it with [`{{i:decode}}`][c-base64::decode].
 
 ```rust,editable
 {{#include ../../../deps/tests/base64.rs}}

@@ -6,9 +6,9 @@
 
 [![std][std-badge]][std]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Measures [`{{i:time::Instant::elapsed}}`][std::time::Instant::elapsed]⮳ since [`{{i:time::Instant::now}}`][std::time::Instant::now]⮳
+Measures [`{{i:time::Instant::elapsed}}`][c-std::time::Instant::elapsed]⮳ since [`{{i:time::Instant::now}}`][c-std::time::Instant::now]⮳
 
-Calling [`{{i:time::Instant::elapsed}}`][std::time::Instant::elapsed]⮳ returns a [`{{i:time::Duration}}`][std::time::Duration]⮳ that we print at the end of the example. This method will not mutate or reset the [`{{i:time::Instant}}`][std::time::Instant]⮳ object.
+Calling [`{{i:time::Instant::elapsed}}`][c-std::time::Instant::elapsed]⮳ returns a [`{{i:time::Duration}}`][c-std::time::Duration]⮳ that we print at the end of the example. This method will not mutate or reset the [`{{i:time::Instant}}`][c-std::time::Instant]⮳ object.
 
 ```rust,editable
 {{#include ../../../deps/tests/profile.rs}}
@@ -18,12 +18,12 @@ Calling [`{{i:time::Instant::elapsed}}`][std::time::Instant::elapsed]⮳ returns
 
 [![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Calculates and displays the {{i:date and time}} two weeks from now using [`{{i:DateTime::checked_add_signed}}`][chrono::Date::checked_add_signed]⮳ and the date of the day before that using [`{{i:DateTime::checked_sub_signed}}`][chrono::Date::checked_sub_signed]⮳
+Calculates and displays the {{i:date and time}} two weeks from now using [`{{i:DateTime::checked_add_signed}}`][c-chrono::Date::checked_add_signed]⮳ and the date of the day before that using [`{{i:DateTime::checked_sub_signed}}`][c-chrono::Date::checked_sub_signed]⮳
 
 The methods return None if the date and time cannot be calculated.
 
 Escape sequences that are available for the
-[`{{i:DateTime::format}}`][chrono::DateTime::format]⮳ can be found at [`{{i:chrono::format::strftime}}`][chrono::format::strftime]⮳.
+[`{{i:DateTime::format}}`][chrono::DateTime::format]⮳ can be found at [`{{i:chrono::format::strftime}}`][c-chrono::format::strftime]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/checked.rs}}
@@ -33,7 +33,7 @@ Escape sequences that are available for the
 
 [![chrono][chrono-badge]][chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Gets the local {{i:time}} and displays it using [`{{i:offset::Local::now}}`][chrono::offset::Local::now]⮳ and then converts it to the {{i:UTC}} standard using the [`{{i:DateTime::from_utc}}`][chrono::DateTime::from_utc]⮳ struct method. A time is then converted using the [`{{i:offset::FixedOffset}}`][chrono::offset::FixedOffset]⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
+Gets the local {{i:time}} and displays it using [`{{i:offset::Local::now}}`][c-chrono::offset::Local::now]⮳ and then converts it to the {{i:UTC}} standard using the [`{{i:DateTime::from_utc}}`][c-chrono::DateTime::from_utc]⮳ struct method. A time is then converted using the [`{{i:offset::FixedOffset}}`][c-chrono::offset::FixedOffset]⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
 
 ```rust,editable
 {{#include ../../../deps/tests/timezone.rs}}

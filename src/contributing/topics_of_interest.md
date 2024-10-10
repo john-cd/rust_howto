@@ -12,14 +12,14 @@
 - [`{{i:indicatif}}`][indicatif]⮳
 - [`{{i:ratatui}}`][ratatui-website]⮳
 - File system traversal, [`{{i:walkdir}}`][walkdir]⮳
-- [`{{i:time}}`][std::time]⮳, [`{{i:chrono}}`][chrono]⮳
-- Errors: `color-eyre`, [`{{i:eyre}}`][eyre]⮳
+- [`{{i:time}}`][c-std::time]⮳, [`{{i:chrono}}`][c-chrono]⮳
+- Errors: `color-eyre`, [`{{i:eyre}}`][c-eyre]⮳
 - Testing: [`{{i:approx}}`][approx]⮳, [`{{i:nextest}}`][nextest-website]⮳
-- [`{{i:axum}}`][axum]⮳
-- [`{{i:loco}}`][loco]⮳
+- [`{{i:axum}}`][c-axum]⮳
+- [`{{i:loco}}`][c-loco]⮳
 - shuttle.rs
-- [`{{i:reqwest}}`][reqwest]⮳
-- [`{{i:tonic}}`][tonic]⮳
+- [`{{i:reqwest}}`][c-reqwest]⮳
+- [`{{i:tonic}}`][c-tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
 - [`{{i:redis}}`][redis]⮳, [`{{i:mongodb}}`][mongodb]⮳, [`{{i:elasticsearch}}`][elasticsearch-github]⮳
 - Cargo & project integration via [`{{i:cargo-edit}}`][cargo-edit]

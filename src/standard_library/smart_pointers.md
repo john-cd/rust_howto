@@ -12,7 +12,7 @@
 
 `Box<T>` allow you to store data on the {{i:heap}} rather than the {{i:stack}}. What remains on the stack is the pointer to the heap data.
 
-The `{{i:Box}}<T>` type is a {{i:smart pointer}} because it implements the [`{{i:Deref}}`][std::ops::Deref]⮳ trait, which allows `Box<T>` values to be treated like references. Implementing the [`{{i:Deref}}`][std::ops::Deref]⮳ trait allows you to customize the behavior of the {{i:dereference operator}} `{{i:*}}`.
+The `{{i:Box}}<T>` type is a {{i:smart pointer}} because it implements the [`{{i:Deref}}`][c-std::ops::Deref]⮳ trait, which allows `Box<T>` values to be treated like references. Implementing the [`{{i:Deref}}`][c-std::ops::Deref]⮳ trait allows you to customize the behavior of the {{i:dereference operator}} `{{i:*}}`.
 
 Use when
 

@@ -18,7 +18,7 @@ The [`{{i:RUST_LOG}}`][env_logger-RUST_LOG] environment variable controls [`{{i:
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test
 ```
 
-Sets the default [`{{i:log::Level}}`][log::Level]⮳ to `warn`, module `foo` and module `foo::bar` to `info` and `debug`.
+Sets the default [`{{i:log::Level}}`][c-log::Level]⮳ to `warn`, module `foo` and module `foo::bar` to `info` and `debug`.
 
 ```bash
 WARN:test: [root] warn
@@ -33,12 +33,12 @@ DEBUG:test::foo::bar: [bar] debug
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-[`{{i:Builder}}`][env_logger::Builder]⮳ configures logging.
+[`{{i:Builder}}`][c-env_logger::Builder]⮳ configures logging.
 
-[`{{i:Builder::parse}}`][env_logger::Builder::parse]⮳ parses `MY_APP_LOG`
+[`{{i:Builder::parse}}`][c-env_logger::Builder::parse]⮳ parses `MY_APP_LOG`
 environment variable contents in the form of [`{{i:RUST_LOG}}`][env_logger-RUST_LOG]⮳ syntax.
-Then, [`{{i:Builder::init}}`][env_logger::Builder::init]⮳ initializes the logger.
-All these steps are normally done internally by [`{{i:env_logger::init}}`][env_logger::init]⮳.
+Then, [`{{i:Builder::init}}`][c-env_logger::Builder::init]⮳ initializes the logger.
+All these steps are normally done internally by [`{{i:env_logger::init}}`][c-env_logger::init]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-env-variable.rs}}
@@ -48,8 +48,8 @@ All these steps are normally done internally by [`{{i:env_logger::init}}`][env_l
 
 [![log][log-badge]][log]  [![env_logger][env_logger-badge]][env_logger]  [![chrono][chrono-badge]][chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Creates a {{i:custom logger}} configuration with [`{{i:Builder}}`][env_logger::Builder]⮳
-Each log entry calls [`{{i:Local::now}}`][chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][chrono::format::strftime]⮳ to format a timestamp used in the final log.
+Creates a {{i:custom logger}} configuration with [`{{i:Builder}}`][c-env_logger::Builder]⮳
+Each log entry calls [`{{i:Local::now}}`][chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][c-chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][c-chrono::format::strftime]⮳ to format a timestamp used in the final log.
 
 The example calls [`{{i:Builder::format}}`][env_logger::Builder::format]⮳ to set a closure which formats each message text with timestamp, [`{{i:Record::level}}`][log::Record::level]⮳ and body ([`{{i:Record::args}}`][log::Record::args]⮳).
 
@@ -70,8 +70,8 @@ stderr output will contain
 
 [`{{i:log4rs}}`][log4rs]⮳ configures {{i:log output to a custom location}}. [`{{i:log4rs}}`][log4rs]⮳ can use either an external YAML file or a builder configuration.
 
-Create the {{i:log configuration}} with [`{{i:log4rs::append::file::FileAppender}}`][log4rs::append::file::FileAppender]⮳ An appender defines the logging destination. The configuration continues with
-encoding using a custom pattern from [`{{i:log4rs::encode::pattern}}`][log4rs::encode::pattern]⮳ Assigns the configuration to [`{{i:log4rs::config::Config}}`][log4rs::config::Config]⮳ and sets the default [`{{i:log::LevelFilter}}`][log::LevelFilter]⮳
+Create the {{i:log configuration}} with [`{{i:log4rs::append::file::FileAppender}}`][c-log4rs::append::file::FileAppender]⮳ An appender defines the logging destination. The configuration continues with
+encoding using a custom pattern from [`{{i:log4rs::encode::pattern}}`][log4rs::encode::pattern]⮳ Assigns the configuration to [`{{i:log4rs::config::Config}}`][c-log4rs::config::Config]⮳ and sets the default [`{{i:log::LevelFilter}}`][c-log::LevelFilter]⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/log-custom.rs}}
