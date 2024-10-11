@@ -16,11 +16,11 @@
 
 [`{{i:Actix}}`][c-actix]⮳
 
-[`{{i:ractor}}`][c-ractor-crates-io]⮳
+[`{{i:ractor}}`][c-ractor-crates.io]⮳
 
 ## Utilities
 
-[`{{i:Await tree}}`][c-await-tree-crates-io]⮳
+[`{{i:Await tree}}`][c-await-tree-crates.io]⮳
 
 ## Reference
 

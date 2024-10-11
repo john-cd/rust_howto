@@ -6,7 +6,7 @@ Use [`{{i:Anyhow}}`][c-anyhow]⮳ if you don't care what error type your functio
 
 ## Anyhow
 
-[![anyhow][c-anyhow-badge]][c-anyhow]  [![anyhow-crates-io][c-anyhow-crates-io-badge]][c-anyhow-crates-io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![anyhow][c-anyhow-badge]][c-anyhow]  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 

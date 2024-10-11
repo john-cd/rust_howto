@@ -1,6 +1,6 @@
 [ex-basic-cargo-usage]: cargo/index.md#basic-cargo-usage
 [ex-cargo-toml]: cargo/index.md#cargotoml-and-lock-files
-[ex-crates-io]: cargo/crates.md
+[ex-crates.io]: cargo/crates.md
 
 [ex-documenting-your-code]: documentation/index.md#documenting-your-code
 [ex-module-or-crate-level-documentation]: documentation/index.md#module-or-crate-level-documentation

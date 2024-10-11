@@ -175,10 +175,10 @@
 [cheats-rs-website]: https://cheats.rs/
 [codevoweb-website-badge]: https://img.shields.io/badge/codevocoral
 [codevoweb-website]: https://codevoweb.com/
-[crates-io-example-source-code-badge]: https://img.shields.io/badge/crates.io-steelblue?logo=github
-[crates-io-example-source-code]: https://github.com/rust-lang/crates.io/tree/main
-[crates-io-most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
-[crates-io]: https://crates.io/
+[crates.io-example-source-code-badge]: https://img.shields.io/badge/crates.io-steelblue?logo=github
+[crates.io-example-source-code]: https://github.com/rust-lang/crates.io/tree/main
+[crates.io-most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
+[crates.io]: https://crates.io/
 [csv-sample-badge]: https://img.shields.io/badge/csv_sample-steelblue?logo=github
 [csv-sample]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
 [dapr-rust-examples-badge]: https://img.shields.io/badge/dapr_rust_sdk_examples-steelblue?logo=github

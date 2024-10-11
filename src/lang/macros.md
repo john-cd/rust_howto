@@ -30,7 +30,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ## Tools
 
-[Cargo expand][c-cargo-expand-crates-io]⮳ [![cargo-expand-github][c-cargo-expand-github-badge]][c-cargo-expand-github]⮳
+[Cargo expand][c-cargo-expand-crates.io]⮳ [![cargo-expand-github][c-cargo-expand-github-badge]][c-cargo-expand-github]⮳
 
 ## See also
 

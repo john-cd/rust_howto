@@ -88,7 +88,7 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps][c-cargo-udeps-crates-io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[udeps][c-cargo-udeps-crates.io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 or (simpler) [Machete][blog-cargo-machete]⮳
 
@@ -101,7 +101,7 @@ cargo machete
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
-[Cargo Generate][c-cargo-generate-crates-io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][c-cargo-generate-crates.io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

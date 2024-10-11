@@ -346,7 +346,7 @@
 
 [ex-basic-cargo-usage]: categories/development-tools/cargo/index.md#basic-cargo-usage
 [ex-cargo-toml]: categories/development-tools/cargo/index.md#cargotoml-and-lock-files
-[ex-crates-io]: categories/development-tools/cargo/crates.md
+[ex-crates.io]: categories/development-tools/cargo/crates.md
 
 [ex-documenting-your-code]: categories/development-tools/documentation/index.md#documenting-your-code
 [ex-module-or-crate-level-documentation]: categories/development-tools/documentation/index.md#module-or-crate-level-documentation
