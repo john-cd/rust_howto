@@ -6,7 +6,7 @@ Crates related to robotics.
 
 ## Links
 
-[Robotics (lib.rs)][robotics-librs]⮳  [![cat-robotics][cat-robotics-badge]][cat-robotics]
+[Robotics (lib.rs)][robotics-lib.rs]⮳  [![cat-robotics][cat-robotics-badge]][cat-robotics]
 
 [robotics.rs][robotics-rs-website]⮳
 

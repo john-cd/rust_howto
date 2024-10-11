@@ -34,7 +34,7 @@ Another example:
 
 [![async-channel][c-async-channel-badge]][c-async-channel]
 
-[![postage][c-postage-badge]][c-postage]  [![postage-librs][c-postage-librs-badge]][c-postage-librs]
+[![postage][c-postage-badge]][c-postage]  [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

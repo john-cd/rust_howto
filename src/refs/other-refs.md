@@ -261,7 +261,7 @@
 [realworld-example-apps]: https://github.com/gothinkster/realworld
 [rfc-2822]: https://www.ietf.org/rfc/rfc2822.txt
 [rfc-3339]: https://www.ietf.org/rfc/rfc3339.txt
-[robotics-librs]: https://lib.rs/science/robotics
+[robotics-lib.rs]: https://lib.rs/science/robotics
 [robotics-rs-website-badge]: https://img.shields.io/badge/robotics.rs-coral
 [robotics-rs-website]: https://robotics.rs/
 [rocket-realworld-example-badge]: https://img.shields.io/badge/realworld_rocket_example-steelblue?logo=github
