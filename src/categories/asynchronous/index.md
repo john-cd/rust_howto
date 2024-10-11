@@ -1,6 +1,6 @@
 # Asynchronous programming
 
-Asynchronous programming, or async{{hi:async}} for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks{{hi:concurrent tasks}}, while preserving much of the look and feel of ordinary synchronous programming, through the [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntax. It helps you deal with events independently of the main program flow, using techniques like futures{{hi:futures}}, promises{{hi:promises}}, waiting, or eventing.
+Asynchronous programming, or async{{hi:async}} for short, is a concurrent programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks{{hi:concurrent tasks}}, while preserving much of the look and feel of ordinary synchronous programming, through the [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntax. It helps you deal with events independently of the main program flow, using techniques like futures{{hi:Future}}, promises{{hi:Promises}}, waiting, or eventing.
 
 - Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
 - Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
@@ -51,12 +51,12 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
-- Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`Tokio`][c-tokio]{{hi:Tokio}}⮳ and `async_std`{{hi:async_std}}. Most async applications, and some async crates, depend on a specific runtime.
+- Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:Future}}⮳ crate. They can be used in any async Rust application.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async_std}}. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
 
-In most cases, prefer the [`Tokio`](tokio.md){{hi:Tokio}} runtime{{hi:runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
+In most cases, prefer the [`tokio`](tokio.md){{hi:tokio}} runtime{{hi:Runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 

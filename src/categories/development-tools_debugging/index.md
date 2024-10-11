@@ -1,6 +1,6 @@
 # Debugging, Logging
 
-Help you figure out what is going on with your code such as logging{{hi:logging}}, tracing{{hi:tracing}}, or assertions{{hi:assertions}}.
+Help you figure out what is going on with your code such as logging{{hi:Logging}}, tracing{{hi:Tracing}}, or assertions{{hi:Assertions}}.
 
 {{#include config_log.incl.md}}
 

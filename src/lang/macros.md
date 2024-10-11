@@ -14,7 +14,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [![paste][c-paste-badge]][c-paste]  [![paste-github][c-paste-github-badge]][c-paste-github]
 
-[`Paste`][c-paste]{{hi:Paste}}⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
+[`paste`][c-paste]{{hi:paste}}⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
 [![proc_macro2][c-proc_macro2-badge]][c-proc_macro2]  [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github]  [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
@@ -22,11 +22,11 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [![syn][c-syn-badge]][c-syn]  [![syn-github][c-syn-github-badge]][c-syn-github]
 
-[`Syn`][c-Syn]{{hi:Syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
+[`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
 [![quote][c-quote-badge]][c-quote]
 
-[`Quote`][c-Quote]{{hi:Quote}}⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:syntax tree}} data structures into tokens{{hi:tokens}} of source code.
+[`quote`][c-Quote]{{hi:quote}}⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
 ## Tools
 

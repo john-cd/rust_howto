@@ -16,7 +16,7 @@ Validates that an email address{{hi:email address}} is formatted correctly, and 
 
 [![regex][c-regex-badge]][c-regex]  [![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Extracts, sorts, and deduplicates list of hashtags{{hi:hashtags}} from text.
+Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 
 The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
@@ -50,9 +50,9 @@ A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilde
 
 [![regex][c-regex-badge]][c-regex]  [![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English date{{hi:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
+Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English date{{hi:Date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 
-The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex::Regex::replace_all}}⮳ replaces all occurrences of the whole regex{{hi:regex}}.
+The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex::Regex::replace_all}}⮳ replaces all occurrences of the whole regex{{hi:Regex}}.
 `&str` implements the [`regex::Replacer`][c-regex::Replacer]{{hi:regex::Replacer}}⮳ trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c-regex::Regex-replacement-string-syntax]{{hi:replacement string syntax}}⮳ for examples and escaping detail.
 
 ```rust,editable

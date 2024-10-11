@@ -14,7 +14,7 @@
 
 ## `std::env`
 
-To retrieve a single environment variable{{hi:environment variable}},
+To retrieve a single environment variable{{hi:Environment variables}},
 
 ```rust,editable,should_panic
 {{#include ../../../deps/tests/env.rs}}
@@ -26,7 +26,7 @@ To retrieve a single environment variable{{hi:environment variable}},
 
 [![envy][c-envy-badge]][c-envy]  [![cat-config][cat-config-badge]][cat-config]
 
-`Envy` can deserialize environment variables into type-safe structs.
+`envy` can deserialize environment variables into type-safe structs.
 
 ```toml
 [dependencies]

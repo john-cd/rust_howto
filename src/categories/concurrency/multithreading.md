@@ -2,9 +2,9 @@
 
 {{#include multithreading.incl.md}}
 
-## Spawn, join{{hi:join}}
+## Spawn, join
 
-[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] {{hi:Join}}
 
 ```rust,editable
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
@@ -46,7 +46,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Rayon threadpool}}⮳.
+Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Threadpool}}⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_custom.rs}}

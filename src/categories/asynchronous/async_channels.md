@@ -1,8 +1,8 @@
 # Channels for use in async code
 
-The most common form of synchronization{{hi:synchronization}} in an async{{hi:async}} program is message passing{{hi:message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of avoiding shared state{{hi:avoiding shared state}}. Message passing is implemented using async channels{{hi:async channels}}.
+The most common form of synchronization{{hi:Synchronization}} in an async{{hi:async}} program is message passing{{hi:Message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of avoiding shared state{{hi:Shared state}}. Message passing is implemented using async channels{{hi:Async channels}}.
 
-Tokio's [`sync`][c-tokio-sync]{{hi:sync}}⮳ module provides channels{{hi:channels}} that work well with async code.
+Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channel}} that work well with async code.
 
 {{#include async_channels.incl.md}}
 
@@ -10,7 +10,7 @@ Tokio's [`sync`][c-tokio-sync]{{hi:sync}}⮳ module provides channels{{hi:channe
 
 [![tokio][c-tokio-badge]][c-tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`tokio::sync::oneshot`][c-tokio::sync::oneshot]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:producer}} to a single consumer{{hi:consumer}}. This channel{{hi:channel}} is usually used to send the result of a computation to a waiter.
+[`tokio::sync::oneshot`][c-tokio::sync::oneshot]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_oneshot.rs}}

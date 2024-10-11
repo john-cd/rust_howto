@@ -54,7 +54,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![hyper][c-hyper-badge]][c-hyper]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
-This example uses the [`GitHub API - Rate limiting`][github-api-rate-limiting]{{hi:GitHub API - Rate limiting}}⮳, as an example of how to handle remote server errors. This example uses the [`hyper::header!`][c-hyper::header!]{{hi:hyper::header!}}⮳ macro to parse the response header and checks for [`reqwest::StatusCode::FORBIDDEN`][c-reqwest::StatusCode::FORBIDDEN]{{hi:reqwest::StatusCode::FORBIDDEN}}⮳ If the response exceeds the rate limit, the example waits and retries.
+This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]{{hi:GitHub API - Rate limiting}}⮳, as an example of how to handle remote server errors. This example uses the [`hyper::header!`][c-hyper::header!]{{hi:hyper::header!}}⮳ macro to parse the response header and checks for [`reqwest::StatusCode::FORBIDDEN`][c-reqwest::StatusCode::FORBIDDEN]{{hi:reqwest::StatusCode::FORBIDDEN}}⮳ If the response exceeds the rate limit, the example waits and retries.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rate-limited.rs}}

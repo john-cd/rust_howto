@@ -28,7 +28,7 @@ Opens the `python` interpreter using an external [`std::process::Command`][c-std
 
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
 
-[`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:process}}. Output of a child process is captured with a
+[`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:Process}}. Output of a child process is captured with a
 [`std::process::Stdio::piped`][c-std::process::Stdio::piped]{{hi:std::process::Stdio::piped}}⮳ between parent and child.
 
 ```rust,editable,no_run

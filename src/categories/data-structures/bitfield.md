@@ -6,7 +6,7 @@
 
 [![bitflags][c-bitflags-badge]][c-bitflags]  [![cat-no-std][cat-no-std-badge]][cat-no-std]  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
-Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear` operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:bitwise operations}} and formatting.
+Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear` operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
 {{#include ../../../deps/tests/bitfield.rs}}

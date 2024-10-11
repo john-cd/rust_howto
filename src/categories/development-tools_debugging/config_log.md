@@ -46,7 +46,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 
 ## Include timestamp in log messages
 
-[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:timestamp}}
+[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:Timestamp}}
 
 Creates a custom logger{{hi:custom logger}} configuration with [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳
 Each log entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ to get the current [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ in local timezone and uses [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ with [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳ to format a timestamp used in the final log.

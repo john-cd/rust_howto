@@ -2,7 +2,7 @@
 
 Channels{{hi:Channels}} are similar to single ownership, because once you transfer a value down a channel, you should no longer use that value. Shared memory concurrency{{hi:Shared memory concurrency}} is like multiple ownership: multiple threads can access the same memory location at the same time.
 
-The Rust standard library provides smart pointer types, such as `Mutex{{hi:Mutex}}<T>` and `Arc{{hi:Arc}}<T>`, that are safe to use in concurrent contexts.
+The Rust standard library provides smart pointer types, such as `Mutex<T>`{{hi:Mutex}} and `Arc<T>`{{hi:Arc}}, that are safe to use in concurrent contexts.
 
 {{#include index.incl.md}}
 
@@ -22,9 +22,9 @@ Allow access to data from one thread at a time.
 
 [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![parking_lot-crates.io][c-parking_lot-crates.io-badge]][c-parking_lot-crates.io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[`Parking Lot`][c-parking_lot]{{hi:Parking Lot}}⮳ provides implementations of [`parking_lot::Mutex`][c-parking_lot::Mutex]{{hi:parking_lot::Mutex}}⮳, [`parking_lot::RwLock`][c-parking_lot::RwLock]{{hi:parking_lot::RwLock}}⮳, [`parking_lot::Condvar`][c-parking_lot::Condvar]{{hi:parking_lot::Condvar}}⮳ and [`parking_lot::Once`][c-parking_lot::Once]{{hi:parking_lot::Once}}⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]{{hi:parking_lot::ReentrantMutex}}⮳ type.
+[`parking_lot`][c-parking_lot]{{hi:parking_lot}}⮳ provides implementations of [`parking_lot::Mutex`][c-parking_lot::Mutex]{{hi:parking_lot::Mutex}}⮳, [`parking_lot::RwLock`][c-parking_lot::RwLock]{{hi:parking_lot::RwLock}}⮳, [`parking_lot::Condvar`][c-parking_lot::Condvar]{{hi:parking_lot::Condvar}}⮳ and [`parking_lot::Once`][c-parking_lot::Once]{{hi:parking_lot::Once}}⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]{{hi:parking_lot::ReentrantMutex}}⮳ type.
 
-`std::sync::Mutex`{{hi:std::sync::Mutex}} works fine, but `Parking Lot`{{hi:Parking Lot}} is faster.
+`std::sync::Mutex`{{hi:std::sync::Mutex}} works fine, but `parking_lot`{{hi:parking_lot}} is faster.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_parking_lot.rs}}
@@ -38,7 +38,7 @@ Allow access to data from one thread at a time.
 
 [![std][c-std-badge]][c-std]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c-std::sync::atomic]{{hi:std::sync::atomic}}⮳ provide primitive shared-memory communication between threads{{hi:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`std::sync::atomic::AtomicBool`][c-std::sync::atomic::AtomicBool]{{hi:std::sync::atomic::AtomicBool}}⮳, [`std::sync::atomic::AtomicIsize`][c-std::sync::atomic::AtomicIsize]{{hi:std::sync::atomic::AtomicIsize}}⮳, [`std::sync::atomic::AtomicUsize`][c-std::sync::atomic::AtomicUsize]{{hi:std::sync::atomic::AtomicUsize}}⮳, [`std::sync::atomic::AtomicI8`][c-std::sync::atomic::AtomicI8]{{hi:std::sync::atomic::AtomicI8}}⮳, [`std::sync::atomic::AtomicU16`][c-std::sync::atomic::AtomicU16]{{hi:std::sync::atomic::AtomicU16}}⮳, etc.
+Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c-std::sync::atomic]{{hi:std::sync::atomic}}⮳ provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`std::sync::atomic::AtomicBool`][c-std::sync::atomic::AtomicBool]{{hi:std::sync::atomic::AtomicBool}}⮳, [`std::sync::atomic::AtomicIsize`][c-std::sync::atomic::AtomicIsize]{{hi:std::sync::atomic::AtomicIsize}}⮳, [`std::sync::atomic::AtomicUsize`][c-std::sync::atomic::AtomicUsize]{{hi:std::sync::atomic::AtomicUsize}}⮳, [`std::sync::atomic::AtomicI8`][c-std::sync::atomic::AtomicI8]{{hi:std::sync::atomic::AtomicI8}}⮳, [`std::sync::atomic::AtomicU16`][c-std::sync::atomic::AtomicU16]{{hi:std::sync::atomic::AtomicU16}}⮳, etc.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_atomics.rs}}

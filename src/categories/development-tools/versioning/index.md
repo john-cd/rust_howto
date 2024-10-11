@@ -8,7 +8,7 @@
 
 Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a string literal using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳ then increments it by patch, minor, and major version number one by one.
 
-Note that in accordance with the [`Semantic Versioning Specification`][c-semver-spec]{{hi:Semantic Versioning Specification}}⮳, incrementing the minor version{{hi:version}} number resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
+Note that in accordance with the [semantic versioning specification`][c-semver-spec]{{hi:Semantic Versioning Specification}}⮳, incrementing the minor version number{{hi:Version number}} resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
 
 ```rust,editable
 {{#include ../../../../deps/tests/semver-increment.rs}}
@@ -18,7 +18,7 @@ Note that in accordance with the [`Semantic Versioning Specification`][c-semver-
 
 [![semver][c-semver-badge]][c-semver]  [![cat-config][cat-config-badge]][cat-config]
 
-Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a complex version string using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳ The string contains pre-release{{hi:pre-release}} and build metadata{{hi:build metadata}} as defined in the [`Semantic Versioning Specification`][c-semver-spec]{{hi:Semantic Versioning Specification}}⮳.
+Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a complex version string using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳ The string contains pre-release{{hi:pre-release}} and build metadata{{hi:Build metadata}} as defined in the [semantic versioning specification`][c-semver-spec]{{hi:Semantic versioning specification}}⮳.
 
 Note that, in accordance with the Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 

@@ -6,11 +6,11 @@
 
 [The rustdoc book][book-rustdoc]⮳
 
-[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:documentation}} host for Rust crates.
+[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
 
 ## Documenting your code
 
-- Add documentation comments{{hi:documentation comments}} to your code.
+- Add documentation comments{{hi:Documentation comments}} to your code.
 
 ```rust,editable
 /// This is a doc comment. It is equivalent to the next line.

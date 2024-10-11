@@ -35,7 +35,7 @@ Reading from the channels via the iterator
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ in a single producer, single consumer{{hi:single producer, single consumer}} (SPSC) setting. We build off the [`crossbeam spawn`][ex-crossbeam-spawn]{{hi:crossbeam spawn}}⮳ example by using [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ and [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ channel, meaning there is no limit to the number of storable messages{{hi:messages}}. The producer thread sleeps for half a second in between messages.
+This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ in a single producer, single consumer{{hi:single producer, single consumer}} (SPSC) setting. We build off the [`crossbeam spawn`][ex-crossbeam-spawn]{{hi:crossbeam spawn}}⮳ example by using [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ and [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ channel, meaning there is no limit to the number of storable messages{{hi:Messages}}. The producer thread sleeps for half a second in between messages.
 
 ```rust,editable
 {{#include ../../../deps/tests/crossbeam-spsc.rs}}
@@ -55,7 +55,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy static}}. [`l
 
 [![threadpool][c-threadpool-badge]][c-threadpool]  [![num_cpus][c-num_cpus-badge]][c-num_cpus]  [![walkdir][c-walkdir-badge]][c-walkdir]  [![ring][c-ring-badge]][c-ring]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:threadpool}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ iterates the current directory and calls [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
+This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Threadpool}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ iterates the current directory and calls [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/threadpool-walk.rs}}

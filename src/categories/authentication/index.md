@@ -8,7 +8,7 @@ The process of confirming identities.
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-authentication][cat-authentication-badge]][cat-authentication]
 
-Uses [`reqwest::RequestBuilder::basic_auth{{hi:basic_auth}}`][c-reqwest::RequestBuilder::basic_auth] to perform a basic HTTP authentication{{hi:authentication}}.
+Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_auth]{{hi:reqwest::RequestBuilder::basic_auth}} to perform a basic HTTP authentication{{hi:HTTP authentication}}.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/basic.rs}}

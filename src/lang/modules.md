@@ -1,14 +1,14 @@
 # Modules
 
-Crates can contain modules{{hi:modules}}.
+Crates can contain modules{{hi:Modules}}.
 
-Declaring modules: In the crate root file{{hi:crate root file}} (`main.rs` or `lib.rs`), you can declare new modules; say, you declare a “garden” module with `mod garden;` (or `pub mod garden;` for public); The compiler will look for the module’s code in these places:
+Declaring modules: In the crate root file{{hi:Crate root file}} (`main.rs` or `lib.rs`), you can declare new modules; say, you declare a “garden” module with `mod garden;` (or `pub mod garden;` for public); The compiler will look for the module’s code in these places:
 
 - Inline, within curly brackets that replace the semicolon following mod garden
 - In the file src/garden.rs
 - In the file src/garden/mod.rs (older style)
 
-In any file other than the crate root, you can declare submodules{{hi:submodules}}. For example, you might declare `mod vegetables;` in ``src/garden.rs`. The compiler will look for the submodule’s code within the directory named for the parent module{{hi:parent module}} in these places:
+In any file other than the crate root, you can declare submodules{{hi:Submodules}}. For example, you might declare `mod vegetables;` in ``src/garden.rs`. The compiler will look for the submodule’s code within the directory named for the parent module{{hi:parent module}} in these places:
 
 - Inline, directly following `mod vegetables`, within curly brackets instead of the semicolon
 - In the file src/garden/vegetables.rs

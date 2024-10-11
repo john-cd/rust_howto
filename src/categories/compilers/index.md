@@ -1,6 +1,6 @@
 # Compilers
 
-Compiler{{hi:Compiler}} implementations, including interpreters{{hi:interpreters}} and transpilers{{hi:transpilers}}.
+Compiler{{hi:Compiler}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
 
 ## Cross-compilation
 
@@ -14,7 +14,7 @@ Compiler{{hi:Compiler}} implementations, including interpreters{{hi:interpreters
 
 {{#include reduce_compilation_duration.incl.md}}
 
-`Cargo build`
+`cargo build`
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

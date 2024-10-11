@@ -1,12 +1,12 @@
 # Tests
 
-Tools to help you verify the correctness{{hi:correctness}} of your code.
+Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 {{#include index.incl.md}}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]   [![cat-testing][cat-testing-badge]][cat-testing]
 
-`cargo test` to run all tests{{hi:tests}}.
+`cargo test` to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
@@ -26,7 +26,7 @@ Tools to help you verify the correctness{{hi:correctness}} of your code.
 
 [![cat-testing][cat-testing-badge]][cat-testing]
 
-[![approx][c-approx-badge]][c-approx]  [`Approx`][c-approx]{{hi:Approx}}⮳
+[![approx][c-approx-badge]][c-approx]  [`approx`][c-approx]{{hi:approx}}⮳
 
 [cargo-nextest][c-cargo_nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

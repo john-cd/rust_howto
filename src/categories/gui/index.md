@@ -16,7 +16,7 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 [![tauri][c-tauri-badge]][c-tauri] [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]
 
-[`Tauri`][c-Tauri]{{hi:Tauri}}⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to `Electron`.
+[`tauri`][c-tauri]{{hi:tauri}}⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to Electron.
 
 ## egui
 

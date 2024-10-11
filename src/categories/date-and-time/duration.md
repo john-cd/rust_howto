@@ -33,7 +33,7 @@ Escape sequences that are available for the
 
 [![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Gets the local time{{hi:time}} and displays it using [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ and then converts it to the UTC{{hi:UTC}} standard using the [`chrono::DateTime::from_utc`][c-chrono::DateTime::from_utc]{{hi:chrono::DateTime::from_utc}}⮳ struct method. A time is then converted using the [`chrono::offset::FixedOffset`][c-chrono::offset::FixedOffset]{{hi:chrono::offset::FixedOffset}}⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
+Gets the local time{{hi:Time}} and displays it using [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ and then converts it to the UTC{{hi:UTC}} standard using the [`chrono::DateTime::from_utc`][c-chrono::DateTime::from_utc]{{hi:chrono::DateTime::from_utc}}⮳ struct method. A time is then converted using the [`chrono::offset::FixedOffset`][c-chrono::offset::FixedOffset]{{hi:chrono::offset::FixedOffset}}⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
 
 ```rust,editable
 {{#include ../../../deps/tests/timezone.rs}}

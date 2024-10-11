@@ -1,6 +1,6 @@
 # Async
 
-Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:concurrent}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await{{hi:async/await}} syntax
+Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await{{hi:async/await}} syntax
 
 [Are we async yet?][are-we-async-yet?-website]⮳
 
@@ -14,13 +14,13 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 {{#include ../../../deps/tests/async.rs}}
 ```
 
-As any form of cooperative multitasking{{hi:cooperative multitasking}}, a future{{hi:future}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
+As any form of cooperative multitasking{{hi:cooperative multitasking}}, a future{{hi:Future}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with other languages
 
 Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ differs from most languages in a few ways:
 
-- Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
+- Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Future}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/async2.rs}}
@@ -36,13 +36,13 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`Tokio`][c-tokio]{{hi:Tokio}}⮳ and `async_std`{{hi:async_std}}. Most async applications, and some async crates, depend on a specific runtime.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async_std}}. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-In most cases, prefer the [`Tokio`](./tokio.md){{hi:Tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
+In most cases, prefer the [`tokio`](./tokio.md){{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 

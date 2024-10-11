@@ -8,8 +8,8 @@
 
 [![ring][c-ring-badge]][c-ring]  [![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
 
-Uses [`ring::pbkdf2`][c-ring::pbkdf2]{{hi:ring::pbkdf2}}⮳ to hash a salted password{{hi:salted password}} using the PBKDF2{{hi:PBKDF2}} key derivation function [`ring::pbkdf2::derive`][c-ring::pbkdf2::derive]{{hi:ring::pbkdf2::derive}}⮳
-Verifies the hash{{hi:hash}} is correct with [`ring::pbkdf2::verify`][c-ring::pbkdf2::verify]{{hi:ring::pbkdf2::verify}}⮳
+Uses [`ring::pbkdf2`][c-ring::pbkdf2]{{hi:ring::pbkdf2}}⮳ to hash a salted password{{hi:Salted passwords}} using the PBKDF2{{hi:PBKDF2}} key derivation function [`ring::pbkdf2::derive`][c-ring::pbkdf2::derive]{{hi:ring::pbkdf2::derive}}⮳
+Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c-ring::pbkdf2::verify]{{hi:ring::pbkdf2::verify}}⮳
 The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::SecureRandom::fill]{{hi:ring::rand::SecureRandom::fill}}⮳ which fills the salt byte array with securely generated random numbers.
 
 ```rust,editable

@@ -6,7 +6,7 @@
 
 [![unicode_segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Collect individual Unicode graphemes{{hi:graphemes}} from UTF-8{{hi:UTF-8}} string using the [`unicode_segmentation::UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]{{hi:unicode_segmentation::UnicodeSegmentation::graphemes}}⮳ function from the [`unicode_segmentation`][c-unicode_segmentation]{{hi:unicode_segmentation}}⮳ crate.
+Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} string using the [`unicode_segmentation::UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]{{hi:unicode_segmentation::UnicodeSegmentation::graphemes}}⮳ function from the [`unicode_segmentation`][c-unicode_segmentation]{{hi:unicode_segmentation}}⮳ crate.
 
 ```rust,editable
 {{#include ../../../deps/tests/graphemes.rs}}

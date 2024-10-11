@@ -30,7 +30,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:relative path}}.
+The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:Relative path}}.
 
 ```rust,editable
 {{#include ../../../deps/tests/new.rs}}

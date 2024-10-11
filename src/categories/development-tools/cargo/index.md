@@ -67,7 +67,7 @@ regex = { git = "https://github.com/rust-lang/regex.git" }
 hello_utils = { path = "hello_utils", version = "0.1.0" }
 ```
 
-Examples of version requirements{{hi:version requirements}} and the versions that would be allowed with them:
+Examples of version requirements{{hi:Version requirements}} and the versions that would be allowed with them:
 
 ```toml
 1.2.3  :=  >=1.2.3, <2.0.0

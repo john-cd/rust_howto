@@ -18,7 +18,7 @@ Gets the current working directory{{hi:current working directory}} by calling [`
 
 [![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Use [`same-file::is_same_file`][c-same-file::is_same_file]{{hi:same-file::is_same_file}}⮳ to detect loops for a given path{{hi:detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
+Use [`same-file::is_same_file`][c-same-file::is_same_file]{{hi:same-file::is_same_file}}⮳ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
 ```bash
 mkdir -p /tmp/foo/bar/baz

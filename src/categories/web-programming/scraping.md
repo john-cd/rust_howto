@@ -16,9 +16,9 @@ Use [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to perform a HTTP GET
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![select][c-select-badge]][c-select]  [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
-Call `get_base_url` to retrieve the base URL{{hi:base URL}}. If the document has a base tag, get the href{{hi:href}} [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ from base tag. [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ of the original URL acts as a default.
+Call `get_base_url` to retrieve the base URL{{hi:Base URL}}. If the document has a base tag, get the href{{hi:href}} [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ from base tag. [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ of the original URL acts as a default.
 
-Iterates through links{{hi:links}} in the document and creates a [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳ task that will parse an individual link with [`url::ParseOptions`][c-url::ParseOptions]{{hi:url::ParseOptions}}⮳ and [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳. The task makes a request to the links with [`reqwest`][c-reqwest]{{hi:reqwest}}⮳ and verifies
+Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳ task that will parse an individual link with [`url::ParseOptions`][c-url::ParseOptions]{{hi:url::ParseOptions}}⮳ and [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳. The task makes a request to the links with [`reqwest`][c-reqwest]{{hi:reqwest}}⮳ and verifies
 [`reqwest::StatusCode`][c-reqwest::StatusCode]{{hi:reqwest::StatusCode}}⮳. Then the tasks [`await`][book-rust-reference-await]{{hi:await}}⮳ completion before ending the program.
 
 ```rust,editable,no_run

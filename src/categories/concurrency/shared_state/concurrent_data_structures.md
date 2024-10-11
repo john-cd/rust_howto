@@ -6,9 +6,9 @@
 
 [![dashmap][c-dashmap-badge]][c-dashmap]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[`Dashmap`][c-dashmap]{{hi:Dashmap}}⮳ is an implementation of a concurrent associative array{{hi:concurrent associative array}} / hashmap in Rust.
+[`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is an implementation of a concurrent associative array{{hi:concurrent associative array}} / hashmap in Rust.
 
-[`Dashmap`][c-dashmap]{{hi:Dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
+[`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,editable,noplayground
 {{#include ../../../../deps/tests/dashmap.rs}}

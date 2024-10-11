@@ -10,7 +10,7 @@
 {{#include ../../deps/tests/closures_with_type_annotations.rs}}
 ```
 
-Closures can capture variables{{hi:capture variables}}
+Closures can capture variables{{hi:Capture of variables}}
 
 - by reference: &T
 - by mutable reference: &mut T

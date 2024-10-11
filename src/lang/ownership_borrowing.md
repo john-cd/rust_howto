@@ -3,14 +3,14 @@
 ## Ownership
 
 - No garbage collector. Ownership instead.
-- Each value in Rust has an owner{{hi:owner}}.
+- Each value in Rust has an owner{{hi:Ownership}}.
 - There can only be one owner at a time.
 
 ```rust,editable
 {{#include ../../deps/tests/ownership.rs}}
 ```
 
-When the owner goes out of scope{{hi:out of scope}}, the value will be dropped.
+When the owner goes out of scope{{hi:Scope}}, the value will be dropped.
 
 ```rust,editable
 {{#include ../../deps/tests/ownership2.rs}}
@@ -42,6 +42,6 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 {{#include ../../deps/tests/borrowing_mutable.rs}}
 ```
 
-If you have a mutable reference to a value, you can have no other simultaneous references{{hi:simultaneous references}} to that value! Functions like a read/write lock{{hi:read/write lock}}.
+If you have a mutable reference to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
 
 {{#include ../refs/link-refs.md}}

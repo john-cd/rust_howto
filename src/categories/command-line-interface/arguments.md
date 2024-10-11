@@ -8,7 +8,7 @@
 
 This application describes the structure of its command-line interface using [`clap`][c-clap]{{hi:clap}}⮳'s builder style. The [documentation][c-clap]⮳ gives two other possible ways to instantiate an application.
 
-In the builder style, `with_name` is the unique identifier that `value_of` will use to retrieve the value passed. The [`clap::Arg::short`][c-clap::Arg::short]{{hi:clap::Arg::short}}⮳ and [`clap::Arg::long`][c-clap::Arg::long]{{hi:clap::Arg::long}}⮳ options control the flag{{hi:flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
+In the builder style, `with_name` is the unique identifier that `value_of` will use to retrieve the value passed. The [`clap::Arg::short`][c-clap::Arg::short]{{hi:clap::Arg::short}}⮳ and [`clap::Arg::long`][c-clap::Arg::long]{{hi:clap::Arg::long}}⮳ options control the flag{{hi:Flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
 
 ```rust,editable
 {{#include ../../../deps/tests/clap-basic.rs}}
@@ -46,7 +46,7 @@ The file passed is: myfile.txt
 Your favorite number must be 256.
 ```
 
-## Using `clap`'s derive{{hi:derive}} API
+## Using `clap`'s derive API
 
 [![clap][c-clap-badge]][c-clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 

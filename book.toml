@@ -9,7 +9,7 @@ description = "A compendium of links, code snippets, and recipes for the Rust la
 [build]
 # build-dir = "book"                # the directory where the output is placed, "book" by default
 create-missing = false             # whether or not to create missing pages
-# use-default-preprocessors = true  # use the default preprocessors `links` and `index`, true by default
+# use-default-preprocessors = true  # use the default preprocessors  and `index`, true by default
 extra-watch-dirs = ["static", "theme", "deps"]             # directories to watch for triggering builds
 
 [rust]

@@ -33,7 +33,7 @@ Uses [`reqwest::blocking::Client::head`][c-reqwest::blocking::Client::head]{{hi:
 
 The code then uses [`reqwest::blocking::Client::get`][c-reqwest::blocking::Client::get]{{hi:reqwest::blocking::Client::get}}⮳ to download the content in chunks of 10240 bytes, while printing progress messages. This exmple uses the synchronous reqwest module. The [`Range`][mozilla-range]{{hi:Range}}⮳ header specifies the chunk size and position.
 
-The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC7233}}⮳.
+The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC-7233}}⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/partial.rs}}

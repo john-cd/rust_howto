@@ -8,7 +8,7 @@
 
 Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a Postgres database.
 
-[`postgres::Client::connect`][c-postgres::Client::connect]{{hi:postgres::Client::connect}}⮳ helps in connecting to an existing database{{hi:database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
+[`postgres::Client::connect`][c-postgres::Client::connect]{{hi:postgres::Client::connect}}⮳ helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/create_tables.rs}}

@@ -6,7 +6,7 @@ Consult the following sites for crate recommendations:
 - [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 - [`lib.rs` stats][lib-rs-stats]⮳
 - The Rust community's official crate registry: [`crates.io`][crates.io]{{hi:crates.io}}⮳
-- [`Crates.io`'s most (recent) downloads][crates.io-most-recent-downloads]⮳
+- [`crates.io`'s most (recent) downloads][crates.io-most-recent-downloads]⮳
 
 or older resources, such as:
 

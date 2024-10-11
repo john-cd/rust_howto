@@ -2,7 +2,7 @@
 
 [https://just.systems/][c-just-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-`just`{{hi:just}} is a command runner{{hi:command runner}} / Make replacement.
+`just`{{hi:just}} is a command runner{{hi:Command runner}} / Make replacement.
 
 [Just Programmer's Manual][c-just-programmer-manual]⮳
 

@@ -55,7 +55,7 @@ CSV files often contain invalid data{{hi:invalid data}}. For these cases, the [`
 
 [![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::writer]{{hi:csv::writer}}⮳ supports automatic serialization{{hi:serialization}} from Rust types into CSV records. [`csv::Writer::write_record`][c-csv::Writer::write_record]{{hi:csv::Writer::write_record}}⮳ writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`csv::Writer::serialize`][c-csv::Writer::serialize]{{hi:csv::Writer::serialize}}⮳. Since CSV writer uses an internal buffer, always explicitly [`csv::Writer::flush`][c-csv::Writer::flush]{{hi:csv::Writer::flush}}⮳ when done.
+This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::writer]{{hi:csv::writer}}⮳ supports automatic serialization{{hi:Serialization}} from Rust types into CSV records. [`csv::Writer::write_record`][c-csv::Writer::write_record]{{hi:csv::Writer::write_record}}⮳ writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`csv::Writer::serialize`][c-csv::Writer::serialize]{{hi:csv::Writer::serialize}}⮳. Since CSV writer uses an internal buffer, always explicitly [`csv::Writer::flush`][c-csv::Writer::flush]{{hi:csv::Writer::flush}}⮳ when done.
 
 ```rust,editable
 {{#include ../../../deps/tests/serialize.rs}}

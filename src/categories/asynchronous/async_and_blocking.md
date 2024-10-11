@@ -2,19 +2,19 @@
 
 {{#include async_and_blocking.incl.md}}
 
-## Calling blocking code{{hi:blocking code}} from async code
+## Calling blocking code from async code
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] {{hi:Blocking code}}
 
 - Async code should never spend a long time without reaching an `.await`.
 - Don't carelessly mix async{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive CPU-bound{{hi:CPU-bound}} computation, call to a synchronous{{hi:synchronous}} IO API, use the [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ function, use [`rayon`][c-rayon]{{hi:rayon}}⮳, or spawn a dedicated thread{{hi:dedicated thread}}.
+- If you have to block the thread because of expensive CPU-bound{{hi:CPU-bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ function, use [`rayon`][c-rayon]{{hi:rayon}}⮳, or spawn a dedicated thread{{hi:dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
-## Tokio spawn_blocking{{hi:spawn_blocking}}
+## Tokio spawn_blocking
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] {{hi:spawn_blocking}}
 
 Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ to run a _small portion_ of synchronous code{{hi:synchronous code}}.
 
@@ -22,19 +22,19 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
 ```
 
-## Using the `rayon`{{hi:rayon}} crate
+## Using the `rayon` crate
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] {{hi:rayon}}
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_rayon.rs}}
 ```
 
-### Spawn a dedicated thread{{hi:dedicated thread}}
+### Spawn a dedicated thread
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] {{hi:dedicated thread}}
 
-If a blocking operation{{hi:blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:dedicated thread}}.
+If a blocking operation{{hi:Blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:dedicated thread}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_dedicated_thread.rs}}
@@ -44,7 +44,7 @@ If a blocking operation{{hi:blocking operation}} keeps running forever, you shou
 
 [Bridging with sync code][c-tokio_bridging_with_sync_code-website]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-In other cases, it may be easier to structure the application as largely synchronous{{hi:synchronous}}, with smaller or logically distinct asynchronous{{hi:asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
+In other cases, it may be easier to structure the application as largely synchronous{{hi:Synchronous}}, with smaller or logically distinct asynchronous{{hi:Asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
 ### Futures executor
 

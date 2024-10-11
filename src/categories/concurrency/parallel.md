@@ -66,9 +66,9 @@ This example uses [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::Paral
 
 [![rayon][c-rayon-badge]][c-rayon]  [![glob][c-glob-badge]][c-glob]  [![image][c-image-badge]][c-image]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-This example generates thumbnails for all `jpg`{{hi:jpg}} files in the current directory then saves them in a new folder called `thumbnails`.
+This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current directory then saves them in a new folder called `thumbnails`.
 
-[`glob::glob_with{{hi:glob_with}}`][c-glob::glob_with]⮳ finds jpeg files in current directory. [`rayon`][c-rayon]{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c-rayon::iter::IntoParallelRefIterator::par_iter]{{hi:rayon::iter::IntoParallelRefIterator::par_iter}}⮳ calling [`image::DynamicImage::resize`][c-image::DynamicImage::resize]{{hi:image::DynamicImage::resize}}⮳
+[`glob::glob_with::glob_with`][c-glob::glob_with]{{hi:glob::glob_with::glob_with}}⮳ finds jpeg files in current directory. [`rayon`][c-rayon]{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c-rayon::iter::IntoParallelRefIterator::par_iter]{{hi:rayon::iter::IntoParallelRefIterator::par_iter}}⮳ calling [`image::DynamicImage::resize`][c-image::DynamicImage::resize]{{hi:image::DynamicImage::resize}}⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rayon-thumbnails.rs}}

@@ -3,16 +3,16 @@
 {{#include smart_pointers.incl.md}}
 
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
-- `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:borrows checked at runtime}}.
+- `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 
 ## Box
 
 [![book-rust-box][book-rust-box-badge]][book-rust-box]  [![std][c-std-badge]][c-std]
 
-`Box<T>` allow you to store data on the heap{{hi:heap}} rather than the stack{{hi:stack}}. What remains on the stack is the pointer to the heap data.
+`Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
 
-The `Box}}<T>` type is a smart pointer{{hi:smart pointer}} because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like references. Implementing the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait allows you to customize the behavior of the dereference operator{{hi:dereference operator}} `*`{{hi:Box{{hi:*`{{hi:Box}}<T>`type is a smart pointer{{hi:smart pointer}} because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows`Box<T>`values to be treated like references. Implementing the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait allows you to customize the behavior of the dereference operator{{hi:dereference operator}}`*{{hi:*}}.
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}} because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like references. Implementing the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait allows you to customize the behavior of the dereference operator{{hi:Dereference operator}} `*`{{hi:*}}.
 
 Use when
 

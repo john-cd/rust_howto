@@ -1,6 +1,6 @@
 # Lifetimes
 
-Prevent dangling references{{hi:dangling references}}.
+Prevent dangling references{{hi:Dangling references}}.
 
 `&i32`        a reference
 `&'a i32`     a reference with an explicit lifetime
@@ -12,7 +12,7 @@ let _s: &'static str = "I have a static lifetime.";
 # }
 ```
 
-The generic lifetime{{hi:lifetime}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
+The generic lifetime{{hi:Lifetime}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
 
 ```rust,editable
 {{#include ../../deps/tests/generic_lifetime.rs}}

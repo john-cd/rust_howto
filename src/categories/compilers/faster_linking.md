@@ -4,7 +4,7 @@
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]
 
-The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking{{hi:linking}} than the default Rust linker.
+The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking{{hi:Linking}} than the default Rust linker.
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
