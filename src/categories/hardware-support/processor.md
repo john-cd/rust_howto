@@ -6,7 +6,7 @@
 
 [![num-cpus][c-num-cpus-badge]][c-num-cpus]  [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]
 
-Shows the number of logical {{i:CPU cores}} in current machine using [`{{i:num-cpus::get}}`][num-cpus::get]⮳.
+Shows the number of logical {{i:CPU cores}} in current machine using [`{{i:num-cpus::get}}`][c-num-cpus::get]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/cpu-count.rs}}

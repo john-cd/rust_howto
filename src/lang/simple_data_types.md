@@ -1,9 +1,9 @@
 # Simple Data Types
 
-- Integers: [`{{i:i8}}`][c-i8]⮳, [`{{i:i16}}`][c-i16]⮳, [`{{i:i32}}`][c-i32]⮳, [`{{i:i64}}`][c-i64]⮳, [`{{i:i128}}`][c-i128]⮳, [`{{i:isize}}`][c-isize]⮳
-- Unsigned: [`{{i:u8}}`][c-u8]⮳, [`{{i:u16}}`][c-u16]⮳, [`{{i:u32}}`][c-u32]⮳, [`{{i:u128}}`][c-u128]⮳, [`{{i:usize}}`][primitive-usize]⮳
-  - [`{{i:usize}}`][primitive-usize]⮳ and [`{{i:isize}}`][c-isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
-- Floating point: [`{{i:f32}}`][c-f32]⮳, [`{{i:f64}}`][c-f64]⮳
+- Integers: [`{{i:i8}}`][primitive-i8]⮳, [`{{i:i16}}`][primitive-i16]⮳, [`{{i:i32}}`][primitive-i32]⮳, [`{{i:i64}}`][primitive-i64]⮳, [`{{i:i128}}`][primitive-i128]⮳, [`{{i:isize}}`][primitive-isize]⮳
+- Unsigned: [`{{i:u8}}`][primitive-u8]⮳, [`{{i:u16}}`][primitive-u16]⮳, [`{{i:u32}}`][primitive-u32]⮳, [`{{i:u128}}`][primitive-u128]⮳, [`{{i:usize}}`][primitive-usize]⮳
+  - [`{{i:usize}}`][primitive-usize]⮳ and [`{{i:isize}}`][primitive-isize]⮳ are 32 or 64 bits, depending on the architecture of the computer.
+- Floating point: [`{{i:f32}}`][primitive-f32]⮳, [`{{i:f64}}`][primitive-f64]⮳
 - Boolean: [`{{i:bool}}`][primitive-bool]⮳: `true`, `false`
 - Char: `let z: char = 'ℤ';` Unicode
 - Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);`

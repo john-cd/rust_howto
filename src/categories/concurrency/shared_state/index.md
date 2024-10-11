@@ -22,7 +22,7 @@ Allow access to data from one thread at a time.
 
 [![parking-lot][c-parking-lot-badge]][c-parking-lot]  [![parking-lot-crates-io][c-parking-lot-crate-badge]][c-parking-lot-crates-io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[`{{i:Parking Lot}}`][c-parking-lot]⮳ provides implementations of [`{{i:Mutex}}`][parking_lot::Mutex]⮳, [`{{i:RwLock}}`][parking_lot::RwLock]⮳, [`{{i:Condvar}}`][parking_lot::Condvar]⮳ and [`{{i:Once}}`][parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`{{i:ReentrantMutex}}`][parking_lot::ReentrantMutex]⮳ type.
+[`{{i:Parking Lot}}`][c-parking-lot]⮳ provides implementations of [`{{i:Mutex}}`][c-parking_lot::Mutex]⮳, [`{{i:RwLock}}`][c-parking_lot::RwLock]⮳, [`{{i:Condvar}}`][c-parking_lot::Condvar]⮳ and [`{{i:Once}}`][c-parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`{{i:ReentrantMutex}}`][c-parking_lot::ReentrantMutex]⮳ type.
 
 `{{i:std::sync::Mutex}}` works fine, but `{{i:Parking Lot}}` is faster.
 

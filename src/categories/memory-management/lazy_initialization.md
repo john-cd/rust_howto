@@ -4,7 +4,7 @@
 
 [![std][c-std-badge]][c-std]  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
 
-[OnceCell][std-core::cell::OnceCell]⮳ is a cell which can be written to only once.
+[OnceCell][c-std-core::cell::OnceCell]⮳ is a cell which can be written to only once.
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 

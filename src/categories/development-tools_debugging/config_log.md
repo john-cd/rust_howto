@@ -6,13 +6,13 @@
 
 [![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
-Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`{{i:RUST_LOG}}`][env_logger-RUST_LOG]⮳ environmental variable.
+Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`{{i:RUST_LOG}}`][c-env_logger-RUST_LOG]⮳ environmental variable.
 
 ```rust,editable
 {{#include ../../../deps/tests/log-mod.rs}}
 ```
 
-The [`{{i:RUST_LOG}}`][env_logger-RUST_LOG] environment variable controls [`{{i:env-logger}}`][c-env_logger]⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
+The [`{{i:RUST_LOG}}`][c-env_logger-RUST_LOG] environment variable controls [`{{i:env-logger}}`][c-env_logger]⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
 
 ```bash
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test
@@ -36,7 +36,7 @@ DEBUG:test::foo::bar: [bar] debug
 [`{{i:Builder}}`][c-env_logger::Builder]⮳ configures logging.
 
 [`{{i:Builder::parse}}`][c-env_logger::Builder::parse]⮳ parses `MY_APP_LOG`
-environment variable contents in the form of [`{{i:RUST_LOG}}`][env_logger-RUST_LOG]⮳ syntax.
+environment variable contents in the form of [`{{i:RUST_LOG}}`][c-env_logger-RUST_LOG]⮳ syntax.
 Then, [`{{i:Builder::init}}`][c-env_logger::Builder::init]⮳ initializes the logger.
 All these steps are normally done internally by [`{{i:env_logger::init}}`][c-env_logger::init]⮳.
 
@@ -49,9 +49,9 @@ All these steps are normally done internally by [`{{i:env_logger::init}}`][c-env
 [![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
 
 Creates a {{i:custom logger}} configuration with [`{{i:Builder}}`][c-env_logger::Builder]⮳
-Each log entry calls [`{{i:Local::now}}`][chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][c-chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][c-chrono::format::strftime]⮳ to format a timestamp used in the final log.
+Each log entry calls [`{{i:Local::now}}`][c-chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][c-chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][c-chrono::format::strftime]⮳ to format a timestamp used in the final log.
 
-The example calls [`{{i:Builder::format}}`][env_logger::Builder::format]⮳ to set a closure which formats each message text with timestamp, [`{{i:Record::level}}`][log::Record::level]⮳ and body ([`{{i:Record::args}}`][log::Record::args]⮳).
+The example calls [`{{i:Builder::format}}`][c-env_logger::Builder::format]⮳ to set a closure which formats each message text with timestamp, [`{{i:Record::level}}`][c-log::Record::level]⮳ and body ([`{{i:Record::args}}`][c-log::Record::args]⮳).
 
 ```rust,editable
 {{#include ../../../deps/tests/log-timestamp.rs}}
@@ -70,8 +70,7 @@ stderr output will contain
 
 [`{{i:log4rs}}`][c-log4rs]⮳ configures {{i:log output to a custom location}}. [`{{i:log4rs}}`][c-log4rs]⮳ can use either an external YAML file or a builder configuration.
 
-Create the {{i:log configuration}} with [`{{i:log4rs::append::file::FileAppender}}`][c-log4rs::append::file::FileAppender]⮳ An appender defines the logging destination. The configuration continues with
-encoding using a custom pattern from [`{{i:log4rs::encode::pattern}}`][log4rs::encode::pattern]⮳ Assigns the configuration to [`{{i:log4rs::config::Config}}`][c-log4rs::config::Config]⮳ and sets the default [`{{i:log::LevelFilter}}`][c-log::LevelFilter]⮳
+Create the {{i:log configuration}} with [`{{i:log4rs::append::file::FileAppender}}`][c-log4rs::append::file::FileAppender]⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`{{i:log4rs::encode::pattern}}`][c-log4rs::encode::pattern]⮳ Assigns the configuration to [`{{i:log4rs::config::Config}}`][c-log4rs::config::Config]⮳ and sets the default [`{{i:log::LevelFilter}}`][c-log::LevelFilter]⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/log-custom.rs}}

@@ -1,6 +1,6 @@
 # Crates
 
-In Rust, a library or executable program is called a {{i:crate}}. Crates are compiled using the Rust compiler, [`{{i:rustc}}`][c-rustc]⮳.
+In Rust, a library or executable program is called a {{i:crate}}. Crates are compiled using the Rust compiler, [`{{i:rustc}}`][rustc]⮳.
 
 ## Crate Registries
 

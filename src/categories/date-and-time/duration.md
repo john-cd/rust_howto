@@ -23,7 +23,7 @@ Calculates and displays the {{i:date and time}} two weeks from now using [`{{i:D
 The methods return None if the date and time cannot be calculated.
 
 Escape sequences that are available for the
-[`{{i:DateTime::format}}`][chrono::DateTime::format]⮳ can be found at [`{{i:chrono::format::strftime}}`][c-chrono::format::strftime]⮳.
+[`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ can be found at [`{{i:chrono::format::strftime}}`][c-chrono::format::strftime]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/checked.rs}}

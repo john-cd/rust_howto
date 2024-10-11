@@ -4,7 +4,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## A
 
-[![actix-web][c-actix-web-badge]][c-actix-web]  [![ansi-term][c-ansi-term-badge]][c-ansi-term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow-rs][c-arrow-rs-badge]][arrow-rs]  [![async-channel][c-async-channel-badge]][async-channel]  [![async-std][c-async-std-badge]][async-std]  [![async-stream][c-async-stream-badge]][c-async-stream]  [![async-trait][c-async-trait-badge]][c-async-trait]
+[![actix-web][c-actix-web-badge]][c-actix-web]  [![ansi-term][c-ansi-term-badge]][c-ansi-term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow-rs][c-arrow-rs-badge]][c-arrow-rs]  [![async-channel][c-async-channel-badge]][async-channel]  [![async-std][c-async-std-badge]][async-std]  [![async-stream][c-async-stream-badge]][c-async-stream]  [![async-trait][c-async-trait-badge]][c-async-trait]
 
 ## B
 
@@ -16,11 +16,11 @@ Crates mentioned in this book, by alphabetic order.
 
 ## D
 
-[![data-encoding][c-data-encoding-badge]][data-encoding]  [![datafusion][c-datafusion-badge]][c-datafusion]  [![dashmap][c-dashmap-badge]][c-dashmap]  [![derive-more][c-derive-more-badge]][c-derive-more]  [![diesel][c-diesel-badge]][c-diesel]  [![dotenv][c-dotenv-badge]][c-dotenv]  [![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![druid][c-druid-badge]][c-druid]
+[![data-encoding][c-data-encoding-badge]][c-data-encoding]  [![datafusion][c-datafusion-badge]][c-datafusion]  [![dashmap][c-dashmap-badge]][c-dashmap]  [![derive-more][c-derive-more-badge]][c-derive-more]  [![diesel][c-diesel-badge]][c-diesel]  [![dotenv][c-dotenv-badge]][c-dotenv]  [![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![druid][c-druid-badge]][c-druid]
 
 ## E
 
-[![egui][c-egui-badge]][c-egui]  [![embassy][c-embassy-badge]][c-embassy]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![envy][c-envy-badge]][c-envy]  [![error-chain][c-error-chain-badge]][error-chain]  [![eyre][c-eyre-badge]][c-eyre]
+[![egui][c-egui-badge]][c-egui]  [![embassy][c-embassy-badge]][c-embassy]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![envy][c-envy-badge]][c-envy]  [![error-chain][c-error-chain-badge]][c-error-chain]  [![eyre][c-eyre-badge]][c-eyre]
 
 ## F
 

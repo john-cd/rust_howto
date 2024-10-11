@@ -8,19 +8,19 @@ Subcommands that extend the capabilities of Cargo.
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[![cargo-crates-github][cargo-crates-github-badge]][cargo-crates-github]
+[![cargo-crates-github][c-cargo-crates-github-badge]][c-cargo-crates-github]
 
-[![cargo-edit-github][cargo-edit-github-badge]][cargo-edit-github]
+[![cargo-edit-github][c-cargo-edit-github-badge]][c-cargo-edit-github]
 
-[![cargo-expand-github][cargo-expand-github-badge]][cargo-expand-github]
+[![cargo-expand-github][c-cargo-expand-github-badge]][c-cargo-expand-github]
 
-[![cargo-hack-github][cargo-hack-github-badge]][cargo-hack-github]
+[![cargo-hack-github][c-cargo-hack-github-badge]][c-cargo-hack-github]
 
-[![cargo-machete-github][cargo-machete-github-badge]][cargo-machete-github]
+[![cargo-machete-github][c-cargo-machete-github-badge]][c-cargo-machete-github]
 
-[![cargo-make-github][cargo-make-github-badge]][cargo-make-github]
+[![cargo-make-github][c-cargo-make-github-badge]][c-cargo-make-github]
 
-[![cargo-xtask-github][cargo-xtask-github-badge]][cargo-xtask-github]
+[![cargo-xtask-github][c-cargo-xtask-github-badge]][c-cargo-xtask-github]
 
 ## Watch for changes
 
@@ -88,7 +88,7 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps][cargo-udeps-crates-io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[udeps][c-cargo-udeps-crates-io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 or (simpler) [Machete][blog-cargo-machete]⮳
 
@@ -101,7 +101,7 @@ cargo machete
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
-[Cargo Generate][cargo-generate-crates-io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][c-cargo-generate-crates-io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

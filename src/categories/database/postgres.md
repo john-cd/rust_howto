@@ -18,7 +18,7 @@ Use the [`{{i:postgres}}`][c-postgres]⮳ crate to create tables in a Postgres d
 
 [![postgres][c-postgres-badge]][c-postgres]  [![cat-database][cat-database-badge]][cat-database]
 
-The recipe inserts data into the `author` table using [`{{i:execute}}`][postgres::Client::execute]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳. Then, displays the data from the `author` table using [`{{i:query}}`][postgres::Client::query]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳.
+The recipe inserts data into the `author` table using [`{{i:execute}}`][c-postgres::Client::execute]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳. Then, displays the data from the `author` table using [`{{i:query}}`][c-postgres::Client::query]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/insert_query_data.rs}}

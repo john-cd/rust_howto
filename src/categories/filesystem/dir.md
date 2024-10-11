@@ -18,7 +18,7 @@ Gets the {{i:current working directory}} by calling [`{{i:env::current_dir}}`][c
 
 [![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Use [`{{i:same-file::is_same_file}}`][same-file::is_same_file]⮳ to {{i:detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
+Use [`{{i:same-file::is_same_file}}`][c-same-file::is_same_file]⮳ to {{i:detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
 ```bash
 mkdir -p /tmp/foo/bar/baz
@@ -91,7 +91,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 
-A custom [`{{i:MatchOptions}}`][c-glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][c-glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][c-std::default::Default]⮳.
+A custom [`{{i:MatchOptions}}`][c-glob::MatchOptions]⮳ struct is passed to the [`{{i:glob_with}}`][c-glob::glob_with]⮳ function making the {{i:glob}} pattern case insensitive while keeping the other options [`{{i:Default}}`][c-std::default::Default]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/ignore-case.rs}}

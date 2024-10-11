@@ -17,7 +17,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 [![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-Use [`{{i:same-file::Handle}}`][same-file::Handle]⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
+Use [`{{i:same-file::Handle}}`][c-same-file::Handle]⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/same-file.rs}}

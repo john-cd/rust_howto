@@ -12,7 +12,7 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [**cc**][c-cc]⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (**.a**) that can be statically linked to by **rustc**.
 
-The following example has some bundled C code (**src/hello.c**) that will be used from rust. Before compiling rust source code, the "build" file (**build.rs**) specified in **Cargo.toml** runs. Using the [**cc**][c-cc]⮳ crate, a static library file will be produced (in this case, **libhello.a**, see [`{{i:compile}}` docs][c-cc::Build::compile]⮳) which can then be used from rust by declaring the external function signatures in an [`{{i:extern}}`][extern-blocks]⮳ block.
+The following example has some bundled C code (**src/hello.c**) that will be used from rust. Before compiling rust source code, the "build" file (**build.rs**) specified in **Cargo.toml** runs. Using the [**cc**][c-cc]⮳ crate, a static library file will be produced (in this case, **libhello.a**, see [`{{i:compile}}` docs][c-cc::Build::compile]⮳) which can then be used from rust by declaring the external function signatures in an [`{{i:extern}}`][book-rust-reference-extern-blocks]⮳ block.
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`{{i:cc::Build}}`][c-cc::Build]⮳. For more complex build requirements, [`{{i:cc::Build}}`][c-cc::Build]⮳ offers a full suite of builder methods for specifying [`{{i:include}}`][c-cc::Build::include]⮳ paths and extra compiler [`{{i:flag}}`][c-cc::Build::flag]s⮳.
 

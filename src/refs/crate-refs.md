@@ -56,8 +56,6 @@
 [c-bitflags]: https://docs.rs/bitflags/
 [c-bonsai-bt-github-badge]: https://img.shields.io/badge/bonsai__bt-steelblue?logo=github
 [c-bonsai-bt-github]: https://github.com/Sollimann/bonsai
-[c-book-rust-performance-github-badge]: https://img.shields.io/badge/Performance_book-steelblue?logo=github
-[c-book-rust-performance-github]: https://github.com/nnethercote/perf-book
 [c-broot-crates-io]: https://crates.io/crates/broot
 [c-broot-github-badge]: https://img.shields.io/badge/broot-steelblue?logo=github
 [c-broot-github]: https://github.com/Canop/broot
@@ -65,7 +63,31 @@
 [c-broot-website]: https://dystroy.org/broot/
 [c-byteorder-badge]: https://img.shields.io/crates/v/byteorder?label=byteorder
 [c-byteorder]: https://docs.rs/byteorder/
+[c-cargo-badge]: https://img.shields.io/crates/v/cargo?label=cargo
+[c-cargo-crates-github-badge]: https://img.shields.io/badge/cargo--crates-steelblue?logo=github
+[c-cargo-crates-github]: https://github.com/ThePuzzlemaker/cargo-crates
+[c-cargo-edit-badge]: https://img.shields.io/crates/v/cargo-edit?label=cargo-edit
+[c-cargo-edit-github-badge]: https://img.shields.io/badge/cargo--edit-steelblue?logo=github
+[c-cargo-edit-github]: https://github.com/killercup/cargo-edit
+[c-cargo-edit]: https://docs.rs/crate/cargo-edit/latest
+[c-cargo-expand-crates-io]: https://crates.io/crates/cargo-expand
+[c-cargo-expand-github-badge]: https://img.shields.io/badge/cargo--expand-steelblue?logo=github
+[c-cargo-expand-github]: https://github.com/dtolnay/cargo-expand
+[c-cargo-generate-crates-io-badge]: https://img.shields.io/badge/cargo--generate-crates.io-green
+[c-cargo-generate-crates-io]: https://crates.io/crates/cargo-generate
 [c-cargo-hack-github-badge]: https://img.shields.io/badge/cargo--hack-steelblue?logo=github
+[c-cargo-hack-github]: https://github.com/taiki-e/cargo-hack
+[c-cargo-machete-github-badge]: https://img.shields.io/badge/cargo--machete-steelblue?logo=github
+[c-cargo-machete-github]: https://github.com/bnjbvr/cargo-machete
+[c-cargo-make-github-badge]: https://img.shields.io/badge/cargo--make-steelblue?logo=github
+[c-cargo-make-github]: https://github.com/sagiegurari/cargo-make
+[c-cargo-nextest-website-badge]: https://img.shields.io/badge/cargo--nextest-coral
+[c-cargo-nextest-website]: https://nexte.st/
+[c-cargo-udeps-crates-io-badge]: https://img.shields.io/badge/cargo--udeps-crates.io-green
+[c-cargo-udeps-crates-io]: https://crates.io/crates/cargo-udeps
+[c-cargo-xtask-github-badge]: https://img.shields.io/badge/cargo--xtask-steelblue?logo=github
+[c-cargo-xtask-github]: https://github.com/matklad/cargo-xtask
+[c-cargo]: https://doc.rust-lang.org/stable/cargo/
 [c-cc-badge]: https://img.shields.io/crates/v/cc?label=cc
 [c-cc::Build::compile]: https://docs.rs/cc/latest/cc/struct.Build.html#method.compile
 [c-cc::Build::cpp]: https://docs.rs/cc/latest/cc/struct.Build.html#method.cpp
@@ -157,6 +179,7 @@
 [c-derive-more-crates-io]: https://crates.io/crates/derive_more/
 [c-derive-more]: https://docs.rs/derive_more/
 [c-diesel-badge]: https://img.shields.io/crates/v/diesel?label=diesel
+[c-diesel-librs-badge]: https://img.shields.io/badge/lib.rs-diesel-yellow
 [c-diesel-librs]: https://lib.rs/crates/diesel/
 [c-diesel]: https://docs.rs/diesel/
 [c-digest::Context]: https://docs.rs/ring/latest/ring/digest/struct.Context.html
@@ -256,18 +279,23 @@
 [c-image]: https://docs.rs/image/
 [c-indicatif]: https://docs.rs/indicatif/latest/indicatif/
 [c-install-action]: https://github.com/taiki-e/install-action
+[c-just-programmer-manual]: https://just.systems/man/en/chapter_1.html
+[c-just-website-badge]: https://img.shields.io/badge/just-coral
+[c-just-website]: https://just.systems/
+[c-justfile]: https://just.systems/man/en/
 [c-lazy-static-badge]: https://img.shields.io/crates/v/lazy_static?label=lazy_static
 [c-lazy-static]: https://docs.rs/lazy_static/
 [c-linfa-badge]: https://img.shields.io/crates/v/linfa?label=linfa
+[c-linfa-crates-io-badge]: https://img.shields.io/badge/crates.io-linfa-crimson
 [c-linfa-crates-io]: https://crates.io/crates/linfa/
 [c-linfa-website-badge]: https://img.shields.io/badge/linfa-coral
 [c-linfa-website]: https://rust-ml.github.io/linfa/
 [c-linfa]: https://docs.rs/linfa/
-[c-loco-blog]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
-[c-loco-website]: https://loco.rs/
 [c-loco-badge]: https://img.shields.io/crates/v/loco?label=loco
-[c-loco]: https://docs.rs/loco-rs
+[c-loco-blog]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
 [c-loco-website-badge]: https://img.shields.io/badge/loco--rs-coral
+[c-loco-website]: https://loco.rs/
+[c-loco]: https://docs.rs/loco-rs
 [c-log-badge]: https://img.shields.io/crates/v/log?label=log
 [c-log4rs-badge]: https://img.shields.io/crates/v/log4rs?label=log4rs
 [c-log4rs::append::file::FileAppender]: https://docs.rs/log4rs/latest/log4rs/append/file/struct.FileAppender.html
@@ -296,6 +324,7 @@
 [c-memmap::Mmap::map]: https://docs.rs/memmap/latest/memmap/struct.Mmap.html#method.map
 [c-memmap]: https://docs.rs/memmap/
 [c-miette-badge]: https://img.shields.io/crates/v/miette?label=miette
+[c-miette-librs-badge]: https://img.shields.io/badge/lib.rs-miette-yellow
 [c-miette-librs]: https://lib.rs/crates/miette/
 [c-miette]: https://docs.rs/miette/
 [c-mime-badge]: https://img.shields.io/crates/v/mime?label=mime
@@ -338,8 +367,8 @@
 [c-num::BigInt]: https://docs.rs/num/latest/num/struct.BigInt.html
 [c-num::complex::Complex]: https://docs.rs/num/latest/num/complex/struct.Complex.html
 [c-num]: https://docs.rs/num/
-[c-nvm-github]: https://github.com/nvm-sh/nvm
 [c-once-cell-badge]: https://img.shields.io/crates/v/once_cell?label=once_cell
+[c-once-cell-librs-badge]: https://img.shields.io/badge/lib.rs-once--cell-yellow
 [c-once-cell-librs]: https://lib.rs/crates/once_cell/
 [c-once-cell]: https://docs.rs/once_cell/
 [c-once_cell::sync::Lazy]: https://docs.rs/once_cell/latest/once_cell/sync/struct.Lazy.html
@@ -374,6 +403,7 @@
 [c-polars-github]: https://github.com/pola-rs/polars/
 [c-polars]: https://docs.rs/polars/
 [c-postage-badge]: https://img.shields.io/crates/v/postage?label=postage
+[c-postage-librs-badge]: https://img.shields.io/badge/lib.rs-postage-yellow
 [c-postage-librs]: https://lib.rs/crates/postage/
 [c-postage]: https://docs.rs/postage/
 [c-postgres-badge]: https://img.shields.io/crates/v/postgres?label=postgres
@@ -505,6 +535,7 @@
 [c-rustfmt-github-badge]: https://img.shields.io/badge/rustfmt-steelblue?logo=github
 [c-rustfmt-github]: https://github.com/rust-lang/rustfmt
 [c-rustquant-badge]: https://img.shields.io/crates/v/rustquant?label=rustquant
+[c-rustquant-librs-badge]: https://img.shields.io/badge/lib.rs-rustquant-yellow
 [c-rustquant-librs]: https://lib.rs/crates/rustquant/
 [c-rustquant]: https://docs.rs/rustquant/
 [c-salsa-github-badge]: https://img.shields.io/badge/salsa-steelblue?logo=github
@@ -556,6 +587,7 @@
 [c-sqlx-badge]: https://img.shields.io/crates/v/sqlx?label=sqlx
 [c-sqlx-github-badge]: https://img.shields.io/badge/sqlx-steelblue?logo=github
 [c-sqlx-github]: https://github.com/launchbadge/sqlx/
+[c-sqlx-librs-badge]: https://img.shields.io/badge/lib.rs-sqlx-yellow
 [c-sqlx-librs]: https://lib.rs/crates/sqlx/
 [c-sqlx]: https://docs.rs/sqlx/
 [c-starship-github-badge]: https://img.shields.io/badge/starship-steelblue?logo=github
@@ -675,8 +707,6 @@
 [c-std]: https://doc.rust-lang.org/std/
 [c-stdx-github-badge]: https://img.shields.io/badge/stdx-steelblue?logo=github
 [c-stdx-github]: https://github.com/brson/stdx/
-
-
 [c-syn-badge]: https://img.shields.io/crates/v/syn?label=syn
 [c-syn-github-badge]: https://img.shields.io/badge/syn-steelblue?logo=github
 [c-syn-github]: https://github.com/dtolnay/syn
@@ -749,6 +779,7 @@
 [c-tracing-github-badge]: https://img.shields.io/badge/tracing-steelblue?logo=github
 [c-tracing-github]: https://github.com/tokio-rs/tracing/
 [c-tracing-subscriber-badge]: https://img.shields.io/crates/v/tracing-subscriber?label=tracing-subscriber
+[c-tracing-subscriber-crates-io-badge]: https://img.shields.io/badge/crates.io-tracing_subscriber-crimson
 [c-tracing-subscriber-crates-io]: https://crates.io/crates/tracing-subscriber/
 [c-tracing-subscriber]: https://docs.rs/tracing-subscriber/
 [c-tracing-website-badge]: https://img.shields.io/badge/tracing-coral
@@ -785,6 +816,7 @@
 [c-walkdir::WalkDir::follow_links]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.follow_links
 [c-walkdir]: https://docs.rs/walkdir/
 [c-watchmaker-badge]: https://img.shields.io/crates/v/watchmaker?label=watchmaker
+[c-watchmaker-crates-io-badge]: https://img.shields.io/badge/crates.io-watchmaker-crimson
 [c-watchmaker-crates-io]: https://crates.io/crates/watchmaker/
 [c-watchmaker-github-badge]: https://img.shields.io/badge/watchmaker-steelblue?logo=github
 [c-watchmaker-github]: https://github.com/thomasbratt/watchmaker

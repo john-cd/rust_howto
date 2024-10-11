@@ -6,7 +6,7 @@ Development tools to help you figure out the performance of your code.
 
 [![cat-profiling][cat-profiling-badge]][cat-profiling]
 
-[Rust Performance Book][book-rust-performance]  [![book-rust-performance-github][c-book-rust-performance-github-badge]][book-rust-performance-github]
+[Rust Performance Book][book-rust-performance]  [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]
 
 ## Incremental Computation
 

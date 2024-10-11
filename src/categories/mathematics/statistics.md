@@ -14,7 +14,7 @@ The first example calculates the mean (the sum of all measurements divided by th
 {{#include ../../../deps/tests/central-tendency.rs}}
 ```
 
-The second example calculates the median using the quickselect algorithm, which avoids a full [`{{i:sort}}`][c-slice::sort]⮳ by sorting only partitions of the data set known to possibly contain the median. This uses [`{{i:cmp}}`][c-std::cmp::Ord::cmp]⮳ and [`{{i:Ordering}}`][c-std::cmp::Ordering]⮳ to succinctly decide the next partition to examine, and [`{{i:split_at}}`][primitive-slice::sort]⮳ to choose an arbitrary pivot for the next partition at each step.
+The second example calculates the median using the quickselect algorithm, which avoids a full [`{{i:sort}}`][primitive-slice::sort]⮳ by sorting only partitions of the data set known to possibly contain the median. This uses [`{{i:cmp}}`][c-std::cmp::Ord::cmp]⮳ and [`{{i:Ordering}}`][c-std::cmp::Ordering]⮳ to succinctly decide the next partition to examine, and [`{{i:split_at}}`][primitive-slice::sort]⮳ to choose an arbitrary pivot for the next partition at each step.
 
 ```rust,editable
 {{#include ../../../deps/tests/central-tendency1.rs}}
@@ -32,7 +32,7 @@ The final example calculates the mode using a mutable [`{{i:HashMap}}`][c-std::c
 
 This example calculates the standard deviation and z-score of a set of measurements.
 
-The standard deviation is defined as the square root of the variance (here calculated with f32's [`{{i:sqrt}}`][c-f32::sqrt]⮳ where the variance is the [`{{i:sum}}`][c-std::iter::Iterator::sum]⮳ of the squared difference between each measurement and the `mean` divided by the number of measurements).
+The standard deviation is defined as the square root of the variance (here calculated with f32's [`{{i:sqrt}}`][primitive-f32::sqrt]⮳ where the variance is the [`{{i:sum}}`][c-std::iter::Iterator::sum]⮳ of the squared difference between each measurement and the `mean` divided by the number of measurements).
 
 The z-score is the number of standard deviations a single measurement spans away from the `mean` of the data set.
 

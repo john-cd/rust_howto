@@ -118,6 +118,8 @@
 [book-rust-pattern-matching-badge]: https://img.shields.io/badge/Rust_Book-pattern_matching-blue?logo=mdbook
 [book-rust-pattern-matching]: https://doc.rust-lang.org/book/ch18-00-patterns.html
 [book-rust-performance-badge]: https://img.shields.io/badge/Rust_performance-peru?logo=mdbook
+[book-rust-performance-github-badge]: https://img.shields.io/badge/Performance_book-steelblue?logo=github
+[book-rust-performance-github]: https://github.com/nnethercote/perf-book
 [book-rust-performance]: https://nnethercote.github.io/perf-book/
 [book-rust-programming-language-badge]: https://img.shields.io/badge/Rust_programming_language-peru?logo=mdbook
 [book-rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817/
@@ -169,30 +171,6 @@
 [book-zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
 [cached-docker-images-badge]: https://img.shields.io/badge/Cached_docker_images-steelblue?logo=github
 [cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
-[cargo-badge]: https://img.shields.io/crates/v/cargo?label=cargo
-[cargo-crates-github-badge]: https://img.shields.io/badge/cargo--crates-steelblue?logo=github
-[cargo-crates-github]: https://github.com/ThePuzzlemaker/cargo-crates
-[cargo-edit-badge]: https://img.shields.io/crates/v/cargo-edit?label=cargo-edit
-[cargo-edit-github-badge]: https://img.shields.io/badge/cargo--edit-steelblue?logo=github
-[cargo-edit-github]: https://github.com/killercup/cargo-edit
-[cargo-edit]: https://docs.rs/crate/cargo-edit/latest
-[cargo-expand-crates-io]: https://crates.io/crates/cargo-expand
-[cargo-expand-github-badge]: https://img.shields.io/badge/cargo--expand-steelblue?logo=github
-[cargo-expand-github]: https://github.com/dtolnay/cargo-expand
-[cargo-generate-crates-io-badge]: https://img.shields.io/badge/cargo--generate-crates.io-green
-[cargo-generate-crates-io]: https://crates.io/crates/cargo-generate
-[cargo-hack-github]: https://github.com/taiki-e/cargo-hack
-[cargo-machete-github-badge]: https://img.shields.io/badge/cargo--machete-steelblue?logo=github
-[cargo-machete-github]: https://github.com/bnjbvr/cargo-machete
-[cargo-make-github-badge]: https://img.shields.io/badge/cargo--make-steelblue?logo=github
-[cargo-make-github]: https://github.com/sagiegurari/cargo-make
-[cargo-nextest-website-badge]: https://img.shields.io/badge/cargo--nextest-coral
-[cargo-nextest-website]: https://nexte.st/
-[cargo-udeps-crates-io-badge]: https://img.shields.io/badge/cargo--udeps-crates.io-green
-[cargo-udeps-crates-io]: https://crates.io/crates/cargo-udeps
-[cargo-xtask-github-badge]: https://img.shields.io/badge/cargo--xtask-steelblue?logo=github
-[cargo-xtask-github]: https://github.com/matklad/cargo-xtask
-[cargo]: https://doc.rust-lang.org/stable/cargo/
 [cheats-rs-website-badge]: https://img.shields.io/badge/cheats.rs-coral
 [cheats-rs-website]: https://cheats.rs/
 [codevoweb-website-badge]: https://img.shields.io/badge/codevocoral
@@ -225,10 +203,6 @@
 [http-range-rfc7233]: https://tools.ietf.org/html/rfc7233#section-3.1
 [john-cd-github]: https://github.com/john-cd/
 [julia-set]: https://en.wikipedia.org/wiki/Julia_set
-[just-programmer-manual]: https://just.systems/man/en/chapter_1.html
-[just-website-badge]: https://img.shields.io/badge/just-coral
-[just-website]: https://just.systems/
-[justfile]: https://just.systems/man/en/
 [keyword-dyn]: https://doc.rust-lang.org/std/keyword.dyn.html
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
@@ -247,6 +221,7 @@
 [mozilla-cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [mozilla-mime-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 [mozilla-range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
+[nvm-github]: https://github.com/nvm-sh/nvm
 [oauth-website]: https://oauth.net/getting-started/
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust/
 [podman-website]: https://podman.io/
@@ -325,7 +300,7 @@
 [rust-tools-badge]: https://img.shields.io/badge/Rust_tools-tan
 [rust-tools]: https://www.rust-lang.org/tools
 [rust]: https://www.rust-lang.org/
-[rustc-badge]:https://img.shields.io/badge/Rustc-tan
+[rustc-badge]:https://img.shields.io/badge/rustc-tan
 [rustc]: https://doc.rust-lang.org/rustc/index.html
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup/

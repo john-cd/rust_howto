@@ -43,8 +43,8 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 
 This example will {{i:sort in parallel}} a vector of Strings.
 
-Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random values in parallel. Although [multiple options][rayon::slice::ParallelSliceMut]⮳
-exist to sort an enumerable data type, [`{{i:par_sort_unstable}}`][c-rayon::slice::ParallelSliceMut::par_sort_unstable]⮳ is usually faster than [stable sort][rayon::slice::ParallelSliceMut::par_sort] ⮳ algorithms.
+Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random values in parallel. Although [multiple options][c-rayon::slice::ParallelSliceMut]⮳
+exist to sort an enumerable data type, [`{{i:par_sort_unstable}}`][c-rayon::slice::ParallelSliceMut::par_sort_unstable]⮳ is usually faster than [stable sort][c-rayon::slice::ParallelSliceMut::par_sort] ⮳ algorithms.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-parallel-sort.rs}}
@@ -54,9 +54,9 @@ exist to sort an enumerable data type, [`{{i:par_sort_unstable}}`][c-rayon::slic
 
 [![rayon][c-rayon-badge]][c-rayon]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example uses [`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]⮳ [`{{i:rayon::map}}`][rayon::iter::ParallelIterator::map]⮳ and [`{{i:rayon::reduce}}`][rayon::iter::ParallelIterator::reduce]⮳ to calculate the average age of `Person` objects whose age is over 30.
+This example uses [`{{i:rayon::filter}}`][c-rayon::iter::ParallelIterator::filter]⮳ [`{{i:rayon::map}}`][c-rayon::iter::ParallelIterator::map]⮳ and [`{{i:rayon::reduce}}`][c-rayon::iter::ParallelIterator::reduce]⮳ to calculate the average age of `Person` objects whose age is over 30.
 
-[`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]⮳ returns elements from a collection that satisfy the given predicate. [`{{i:rayon::map}}`][rayon::iter::ParallelIterator::map]⮳ performs an operation on every element, creating a new iteration, and [`{{i:rayon::reduce}}`][rayon::iter::ParallelIterator::reduce]⮳ performs an operation given the previous reduction and the current element. Also shows use of [`{{i:rayon::sum}}`][rayon::iter::ParallelIterator::sum]⮳ which has the same result as the reduce operation in this example.
+[`{{i:rayon::filter}}`][c-rayon::iter::ParallelIterator::filter]⮳ returns elements from a collection that satisfy the given predicate. [`{{i:rayon::map}}`][c-rayon::iter::ParallelIterator::map]⮳ performs an operation on every element, creating a new iteration, and [`{{i:rayon::reduce}}`][c-rayon::iter::ParallelIterator::reduce]⮳ performs an operation given the previous reduction and the current element. Also shows use of [`{{i:rayon::sum}}`][c-rayon::iter::ParallelIterator::sum]⮳ which has the same result as the reduce operation in this example.
 
 ```rust,editable
 {{#include ../../../deps/tests/rayon-map-reduce.rs}}
@@ -68,7 +68,7 @@ This example uses [`{{i:rayon::filter}}`][rayon::iter::ParallelIterator::filter]
 
 This example generates thumbnails for all `{{i:jpg}}` files in the current directory then saves them in a new folder called `thumbnails`.
 
-[`glob::{{i:glob_with}}`][c-glob::glob_with]⮳ finds jpeg files in current directory. [`{{i:rayon}}`][c-rayon] resizes images in parallel using [`{{i:par_iter}}`][rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`{{i:DynamicImage::resize}}`][image::DynamicImage::resize]⮳
+[`glob::{{i:glob_with}}`][c-glob::glob_with]⮳ finds jpeg files in current directory. [`{{i:rayon}}`][c-rayon] resizes images in parallel using [`{{i:par_iter}}`][c-rayon::iter::IntoParallelRefIterator::par_iter]⮳ calling [`{{i:DynamicImage::resize}}`][c-image::DynamicImage::resize]⮳
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rayon-thumbnails.rs}}

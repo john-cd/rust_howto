@@ -6,7 +6,7 @@
 
 [![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Gets the current UTC [`{{i:DateTime}}`][chrono::DateTime]⮳ and its {{i:hour/minute/second}} via [`{{i:Timelike}}`][chrono::Timelike]⮳ and its {{i:year/month/day/weekday}} via [`{{i:Datelike}}`][c-chrono::Datelike]⮳
+Gets the current UTC [`{{i:DateTime}}`][c-chrono::DateTime]⮳ and its {{i:hour/minute/second}} via [`{{i:Timelike}}`][chrono::Timelike]⮳ and its {{i:year/month/day/weekday}} via [`{{i:Datelike}}`][c-chrono::Datelike]⮳
 
 ```rust,editable
 {{#include ../../../deps/tests/current.rs}}
@@ -45,7 +45,7 @@ Parses a [`{{i:DateTime}}`][c-chrono::DateTime]⮳ struct from strings represent
 [`{{i:DateTime::parse_from_rfc2822}}`][c-chrono::DateTime::parse_from_rfc2822]⮳  [`{{i:DateTime::parse_from_rfc3339}}`][c-chrono::DateTime::parse_from_rfc2822]⮳ and
 [`{{i:DateTime::parse_from_str}}`][c-chrono::DateTime::parse_from_str]⮳ respectively.
 
-Escape sequences that are available for the [`{{i:DateTime::parse_from_str}}`][chrono::DateTime::parse_from_str]⮳ can be found at [`{{i:chrono::format::strftime}}`][chrono::format::strftime]⮳. Note that the [`{{i:DateTime::parse_from_str}}`][c-chrono::DateTime::parse_from_str]⮳ requires that such a {{i:DateTime}} struct must be creatable that it uniquely identifies a date and a time. For parsing dates and times without {{i:timezones}} use [`{{i:NaiveDate}}`][c-chrono::naive::NaiveDate]⮳  [`{{i:NaiveTime}}`][c-chrono::naive::NaiveTime]⮳ and [`{{i:NaiveDateTime}}`][c-chrono::naive::NaiveDateTime]⮳.
+Escape sequences that are available for the [`{{i:DateTime::parse_from_str}}`][c-chrono::DateTime::parse_from_str]⮳ can be found at [`{{i:chrono::format::strftime}}`][chrono::format::strftime]⮳. Note that the [`{{i:DateTime::parse_from_str}}`][c-chrono::DateTime::parse_from_str]⮳ requires that such a {{i:DateTime}} struct must be creatable that it uniquely identifies a date and a time. For parsing dates and times without {{i:timezones}} use [`{{i:NaiveDate}}`][c-chrono::naive::NaiveDate]⮳  [`{{i:NaiveTime}}`][c-chrono::naive::NaiveTime]⮳ and [`{{i:NaiveDateTime}}`][c-chrono::naive::NaiveDateTime]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/string.rs}}

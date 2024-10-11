@@ -15,7 +15,7 @@ The [`{{i:log}}`][c-log]⮳ crate provides {{i:logging utilities}}. The [`{{i:en
 
 No output prints when running this code. By default, the {{i:log level}} is `error`, and any lower levels are dropped.
 
-Set the [`{{i:RUST_LOG}}`][env_logger-RUST_LOG]⮳ environment variable to print the message:
+Set the [`{{i:RUST_LOG}}`][c-env_logger-RUST_LOG]⮳ environment variable to print the message:
 
 ```bash
 RUST_LOG=debug cargo run
