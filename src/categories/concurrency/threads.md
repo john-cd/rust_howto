@@ -18,7 +18,7 @@ This example splits the array in half and performs the work in separate threads.
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example uses the [`{{i:crossbeam}}`][c-crossbeam]⮳ and [`{{i:crossbeam-channel}}`][crossbeam-channel]⮳ crates to create a {{i:parallel pipeline}}, similar to that described in the ZeroMQ [guide][zero-mq-guide]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
+This example uses the [`{{i:crossbeam}}`][c-crossbeam]⮳ and [`{{i:crossbeam-channel}}`][c-crossbeam-channel]⮳ crates to create a {{i:parallel pipeline}}, similar to that described in the ZeroMQ [guide][zero-mq-guide-website]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
 
 We use bounded channels with a capacity of one using
 [`{{i:crossbeam_channel::bounded}}`][c-crossbeam_channel::bounded]⮳. The producer must be on its own thread because it produces messages faster than the workers can process them (since they sleep for half a second) - this means the producer blocks on the call to
@@ -35,7 +35,7 @@ Reading from the channels via the iterator
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-This example demonstrates the use of [`{{i:crossbeam-channel}}`][crossbeam-channel]⮳ in a {{i:single producer, single consumer}} (SPSC) setting. We build off the [`{{i:crossbeam spawn}}`][ex-crossbeam-spawn]⮳ example by using [`{{i:crossbeam::scope}}`][c-crossbeam::scope]⮳ and [`{{i:Scope::spawn}}`][c-crossbeam::thread::Scope::spawn]⮳ to manage the producer thread. Data is exchanged between the two threads using a [`{{i:crossbeam_channel::unbounded}}`][c-crossbeam::scope]⮳ channel, meaning there is no limit to the number of storable {{i:messages}}. The producer thread sleeps for half a second in between messages.
+This example demonstrates the use of [`{{i:crossbeam-channel}}`][c-crossbeam-channel]⮳ in a {{i:single producer, single consumer}} (SPSC) setting. We build off the [`{{i:crossbeam spawn}}`][ex-crossbeam-spawn]⮳ example by using [`{{i:crossbeam::scope}}`][c-crossbeam::scope]⮳ and [`{{i:Scope::spawn}}`][c-crossbeam::thread::Scope::spawn]⮳ to manage the producer thread. Data is exchanged between the two threads using a [`{{i:crossbeam_channel::unbounded}}`][c-crossbeam::scope]⮳ channel, meaning there is no limit to the number of storable {{i:messages}}. The producer thread sleeps for half a second in between messages.
 
 ```rust,editable
 {{#include ../../../deps/tests/crossbeam-spsc.rs}}
@@ -55,7 +55,7 @@ Declare global state using [`{{i:lazy static}}`][c-lazy-static]. [`{{i:lazy stat
 
 [![threadpool][c-threadpool-badge]][c-threadpool]  [![num-cpus][c-num-cpus-badge]][c-num-cpus]  [![walkdir][c-walkdir-badge]][c-walkdir]  [![ring][c-ring-badge]][c-ring]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
 
-This example calculates the {{i:SHA256}} for every file with iso extension in the current directory. A {{i:threadpool}} generates threads equal to the number of cores present in the system found with [`{{i:num-cpus::get}}`][num-cpus::get]⮳. [`{{i:Walkdir::new}}`][c-walkdir::Walkdir::new]⮳ iterates the current directory and calls [`{{i:execute}}`][c-walkdir::Walkdir::new]⮳ to perform the operations of reading and computing SHA256 hash.
+This example calculates the {{i:SHA256}} for every file with iso extension in the current directory. A {{i:threadpool}} generates threads equal to the number of cores present in the system found with [`{{i:num-cpus::get}}`][c-num-cpus::get]⮳. [`{{i:Walkdir::new}}`][c-walkdir::Walkdir::new]⮳ iterates the current directory and calls [`{{i:execute}}`][c-walkdir::Walkdir::new]⮳ to perform the operations of reading and computing SHA256 hash.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/threadpool-walk.rs}}
@@ -70,7 +70,7 @@ This example generates an image by drawing a fractal from the [Julia set][julia-
 [![julia-set]( https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png )]( https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png )
 
 Allocate memory for output image of given width and height with [`{{i:ImageBuffer::new}}`][c-image::ImageBuffer::new]⮳.
-[`{{i:Rgb::from_channels}}`][c-image::Rgb::from_channels]⮳ calculates RGB pixel values. Create [`{{i:ThreadPool}}`][c-threadpool::ThreadPool]⮳ with thread count equal to number of cores with [`{{i:num-cpus::get}}`][num-cpus::get]⮳.
+[`{{i:Rgb::from_channels}}`][c-image::Rgb::from_channels]⮳ calculates RGB pixel values. Create [`{{i:ThreadPool}}`][c-threadpool::ThreadPool]⮳ with thread count equal to number of cores with [`{{i:num-cpus::get}}`][c-num-cpus::get]⮳.
 [`{{i:ThreadPool::execute}}`][c-threadpool::ThreadPool::execute]⮳ receives each pixel as a separate job.
 
 [`{{i:mpsc::channel}}`][c-mpsc::channel]⮳ receives the jobs and [`{{i:Receiver::recv}}`][c-std::sync::mpsc::Receiver::recv]⮳ retrieves them.

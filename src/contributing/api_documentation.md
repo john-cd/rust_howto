@@ -22,7 +22,7 @@ Alternatively, use the ["Desktop lite" Dev Container feature]( https://github.co
 },
 ```
 
-and the following to the [`{{i:Dockerfile}}`][c-dockerfile]⮳
+and the following to the [`{{i:Dockerfile}}`][dockerfile]⮳
 
 ```Dockerfile
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr

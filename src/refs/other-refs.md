@@ -190,11 +190,11 @@
 [dev-container-cli-github]: https://github.com/devcontainers/cli
 [dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 [docker-cache-github]: https://github.com/ScribeMD/docker-cache
-[docker-desktop]: https://www.docker.com/products/docker-desktop/
+[docker-desktop-website]: https://www.docker.com/products/docker-desktop/
 [docker-getting-started]: https://docs.docker.com/go/get-started-sharing/
 [docker-github-action]: https://docs.docker.com/build/ci/github-actions/
 [docker-rust-guide]: https://docs.docker.com/language/rust/
-[docker]: https://www.docker.com/
+[docker-website]: https://www.docker.com/
 [dockerfile]: https://docs.docker.com/reference/dockerfile/
 [docs-rs]: https://docs.rs/
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
@@ -296,6 +296,7 @@
 [rust-quizz]: https://dtolnay.github.io/rust-quiz/
 [rust-starter-pack-badge]: https://img.shields.io/badge/Rust_starter_pack-tan
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack/
+[rust-tokio-template-github-badge]: https://img.shields.io/badge/rust--tokio--template-steelblue?logo=github
 [rust-tokio-template-github]: https://github.com/Finomnis/rust-tokio-template/tree/main
 [rust-tools-badge]: https://img.shields.io/badge/Rust_tools-tan
 [rust-tools]: https://www.rust-lang.org/tools

@@ -4,9 +4,9 @@
 
 ## Cross
 
-[![cross-github][cross-github-badge]][cross-github]  [![cat-compilers][cat-compilers-badge]][cat-compilers]
+[![cross-github][c-cross-github-badge]][c-cross-github]  [![cat-compilers][cat-compilers-badge]][cat-compilers]
 
-[`{{i:cross}}`][cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires [`{{i:rustup}}`][rustup-website]⮳ and [`{{i:Docker}}`][c-docker]⮳ or [`{{i:Podman}}`][podman-website]⮳.
+[`{{i:cross}}`][c-cross-github]⮳ builds your Rust project for different target operating systems and architectures. It requires [`{{i:rustup}}`][rustup-website]⮳ and [`{{i:Docker}}`][docker-website]⮳ or [`{{i:Podman}}`][podman-website]⮳.
 
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross

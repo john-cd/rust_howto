@@ -645,6 +645,7 @@
 [c-percent_encoding::percent_decode]: https://docs.rs/percent-encoding/latest/percent_encoding/fn.percent_decode.html
 [c-percent_encoding::utf8_percent_encode]: https://docs.rs/percent-encoding/latest/percent_encoding/fn.utf8_percent_encode.html
 [c-polars-badge]: https://img.shields.io/crates/v/polars?label=polars
+[c-polars-book-badge]: https://img.shields.io/badge/polars_book-coral
 [c-polars-book]: https://pola-rs.github.io/polars-book/
 [c-polars-crates.io-badge]: https://img.shields.io/badge/crates.io-polars-crimson
 [c-polars-crates.io]: https://crates.io/crates/polars
@@ -691,6 +692,7 @@
 [c-r3bl-tuify-lib.rs-badge]: https://img.shields.io/badge/lib.rs-r3bl__tuify-yellow
 [c-r3bl-tuify-lib.rs]: https://lib.rs/crates/r3bl-tuify
 [c-r3bl-tuify]: https://docs.rs/r3bl_tuify/
+[c-r3bl_tuify-crates.io-badge]: https://img.shields.io/badge/crates.io-r3bl__tuify-crimson
 [c-r3bl_tuify-crates.io]: https://crates.io/crates/r3bl_tuify
 [c-rand-badge]: https://img.shields.io/crates/v/rand?label=rand
 [c-rand-crates.io-badge]: https://img.shields.io/badge/crates.io-rand-crimson
@@ -831,7 +833,7 @@
 [c-rust-cache-github]: https://github.com/marketplace/actions/rust-cache
 [c-rust-gpu-github-badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
 [c-rust-gpu-github]: https://github.com/EmbarkStudios/rust-gpu
-[c-rust-tokio-template-github-badge]: https://img.shields.io/badge/rust--tokio--template-steelblue?logo=github
+
 [c-rustfmt-config]: https://rust-lang.github.io/rustfmt/
 [c-rustfmt-github-badge]: https://img.shields.io/badge/rustfmt-steelblue?logo=github
 [c-rustfmt-github]: https://github.com/rust-lang/rustfmt
@@ -852,7 +854,7 @@
 [c-same-file::is_same_file]: https://docs.rs/same-file/latest/same_file/fn.is_same_file.html
 [c-same-file]: https://docs.rs/same_file/
 [c-sea-orm-badge]: https://img.shields.io/crates/v/sea_orm?label=sea_orm
-[c-sea-orm-cookbook-badge]: https://img.shields.io/badge/sea_orm_cookbook-coral
+[c-sea-orm-cookbook-badge]: https://img.shields.io/badge/sea__orm_cookbook-coral
 [c-sea-orm-cookbook]: https://www.sea-ql.org/sea-orm-cookbook/000-sea-orm-cookbook.html
 [c-sea-orm-crates.io-badge]: https://img.shields.io/badge/crates.io-sea__orm-crimson
 [c-sea-orm-crates.io]: https://crates.io/crates/sea-orm

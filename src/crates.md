@@ -4,7 +4,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## A
 
-[![actix-web][c-actix-web-badge]][c-actix-web]  [![ansi-term][c-ansi-term-badge]][c-ansi-term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow-rs][c-arrow-rs-badge]][c-arrow-rs]  [![async-channel][c-async-channel-badge]][async-channel]  [![async-std][c-async-std-badge]][async-std]  [![async-stream][c-async-stream-badge]][c-async-stream]  [![async-trait][c-async-trait-badge]][c-async-trait]
+[![actix-web][c-actix-web-badge]][c-actix-web]  [![ansi-term][c-ansi-term-badge]][c-ansi-term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow-rs][c-arrow-rs-badge]][c-arrow-rs]  [![async-channel][c-async-channel-badge]][c-async-channel]  [![async-std][c-async-std-badge]][c-async-std]  [![async-stream][c-async-stream-badge]][c-async-stream]  [![async-trait][c-async-trait-badge]][c-async-trait]
 
 ## B
 
@@ -12,7 +12,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## C
 
-[![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam-channel][c-crossbeam-channel-badge]][crossbeam-channel]  [![crux][c-crux-badge]][c-crux]  [![csv][c-csv-badge]][c-csv]
+[![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam-channel][c-crossbeam-channel-badge]][c-crossbeam-channel]  [![crux][c-crux-badge]][c-crux]  [![csv][c-csv-badge]][c-csv]
 
 ## D
 
@@ -28,7 +28,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## G - K
 
-[![glob][c-glob-badge]][c-glob]  [![hyper][c-hyper-badge]][c-hyper]  [![iced-rs][c-iced-rs-badge]][iced-rs]  [![image][c-image-badge]][c-image]
+[![glob][c-glob-badge]][c-glob]  [![hyper][c-hyper-badge]][c-hyper]  [![iced-rs][c-iced-rs-badge]][c-iced-rs]  [![image][c-image-badge]][c-image]
 
 ## L
 

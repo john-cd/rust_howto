@@ -11,6 +11,6 @@ Consult the following sites for crate recommendations:
 or older resources, such as:
 
 - [Rust starter pack][rust-starter-pack]⮳
-- [![stdx][c-stdx-badge]][c-stdx]
+- [![stdx][c-stdx-github-badge]][c-stdx-github]
 
 {{#include refs/link-refs.md}}

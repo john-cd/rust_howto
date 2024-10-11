@@ -6,7 +6,7 @@
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
-[![open-rs-github][c-open-rs-github-badge]][open-rs-github]
+[![open-rs-github][c-open-rs-github-badge]][c-open-rs-github]
 
 [![starship-github][c-starship-github-badge]][c-starship-github]
 
@@ -41,7 +41,7 @@ apt install lsd
 
 ## `gping`
 
-Ping, but with a graph [`{{i:gping}}`][c-gping]
+Ping, but with a graph [`{{i:gping}}`][c-gping-github]
 
 ```sh
 apt install gping
