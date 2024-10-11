@@ -15,7 +15,7 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs [`{{i:rustfmt}}`][c-rustfmt-config]⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs {{hi:rustfmt}}[`rustfmt`][c-rustfmt-config]⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check
@@ -25,7 +25,7 @@ cargo fmt --all -- --check
 
 [Configuring Rustfmt][c-rustfmt-config]⮳
 
-Create a `{{i:rustfmt.toml}}` in the project root folder.
+Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,
 
 ```toml

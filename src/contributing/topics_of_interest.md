@@ -3,26 +3,26 @@
 - Async: tokio, async_std and related, async_channels
 - CD / CI, rust_cache
 - Macros
-- [`{{i:http}}`][c-http]⮳ crate, [`{{i:hyper}}`][c-hyper]⮳
-- Python interop: [`{{i:pyo3}}`][c-pyo3-website]⮳
+- {{hi:http}}[`http`][c-http]⮳ crate, {{hi:hyper}}[`hyper`][c-hyper]⮳
+- Python interop: {{hi:pyo3}}[`pyo3`][c-pyo3-website]⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
-- [`{{i:notify}}`][c-notify]⮳
-- [`{{i:indicatif}}`][c-indicatif]⮳
-- [`{{i:ratatui}}`][c-ratatui-website]⮳
-- File system traversal, [`{{i:walkdir}}`][c-walkdir]⮳
-- [`{{i:time}}`][c-std::time]⮳, [`{{i:chrono}}`][c-chrono]⮳
-- Errors: `color-eyre`, [`{{i:eyre}}`][c-eyre]⮳
-- Testing: [`{{i:approx}}`][c-approx]⮳, [`{{i:nextest}}`][c-nextest-website]⮳
-- [`{{i:axum}}`][c-axum]⮳
-- [`{{i:loco}}`][c-loco]⮳
+- {{hi:notify}}[`notify`][c-notify]⮳
+- {{hi:indicatif}}[`indicatif`][c-indicatif]⮳
+- {{hi:ratatui}}[`ratatui`][c-ratatui-website]⮳
+- File system traversal, {{hi:walkdir}}[`walkdir`][c-walkdir]⮳
+- {{hi:time}}[`time`][c-std::time]⮳, {{hi:chrono}}[`chrono`][c-chrono]⮳
+- Errors: `color-eyre`, {{hi:eyre}}[`eyre`][c-eyre]⮳
+- Testing: {{hi:approx}}[`approx`][c-approx]⮳, {{hi:nextest}}[`nextest`][c-nextest-website]⮳
+- {{hi:axum}}[`axum`][c-axum]⮳
+- {{hi:loco}}[`loco`][c-loco]⮳
 - shuttle.rs
-- [`{{i:reqwest}}`][c-reqwest]⮳
-- [`{{i:tonic}}`][c-tonic]⮳
+- {{hi:reqwest}}[`reqwest`][c-reqwest]⮳
+- {{hi:tonic}}[`tonic`][c-tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
-- [`{{i:redis}}`][c-redis]⮳, [`{{i:mongodb}}`][c-mongodb]⮳, [`{{i:elasticsearch}}`][c-elasticsearch-github]⮳
-- Cargo & project integration via [`{{i:cargo_edit}}`][c-cargo_edit]
+- {{hi:redis}}[`redis`][c-redis]⮳, {{hi:mongodb}}[`mongodb`][c-mongodb]⮳, {{hi:elasticsearch}}[`elasticsearch`][c-elasticsearch-github]⮳
+- Cargo & project integration via {{hi:cargo_edit}}[`cargo_edit`][c-cargo_edit]
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits

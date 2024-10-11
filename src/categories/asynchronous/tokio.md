@@ -12,7 +12,7 @@
 
 ## Key links
 
-- [`{{i:Tokio}}`][c-tokio]⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
+- {{hi:Tokio}}[`Tokio`][c-tokio]⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
 - [`Tokio` glossary][c-tokio_glossary-website]⮳
 - [`Tokio` tutorial][c-tokio_tutorial]⮳
 - [![tokio_examples][c-tokio_examples-badge]][c-tokio_examples]

@@ -2,13 +2,13 @@
 
 {{#include derive.incl.md }}
 
-The [`{{i:derive}}`][book-rust-reference-derive]⮳ {{i:attribute}} generates code that will implement a trait with its own {{i:default implementation}} on the type you’ve annotated with the derive syntax.
+The {{hi:derive}}[`derive`][book-rust-reference-derive]⮳ {{i:attribute}} generates code that will implement a trait with its own {{i:default implementation}} on the type you’ve annotated with the derive syntax.
 
 [Derivable traits][book-rust-derivable-traits]⮳
 
 {{#playground ../../deps/tests/derive.rs editable}}
 
-You can use the `{{i:cargo_expand}}` utility to see the exact code that is generated for your specific type.
+You can use the `cargo_expand`{{hi:cargo_expand}} utility to see the exact code that is generated for your specific type.
 
 ## Derive More
 

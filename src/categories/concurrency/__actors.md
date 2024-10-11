@@ -14,13 +14,13 @@
 
 [![actix-github][c-actix-github-badge]][c-actix-github]
 
-[`{{i:Actix}}`][c-actix]⮳
+{{hi:Actix}}[`Actix`][c-actix]⮳
 
-[`{{i:ractor}}`][c-ractor-crates.io]⮳
+{{hi:ractor}}[`ractor`][c-ractor-crates.io]⮳
 
 ## Utilities
 
-[`{{i:Await tree}}`][c-await-tree-crates.io]⮳
+{{hi:Await tree}}[`Await tree`][c-await-tree-crates.io]⮳
 
 ## Reference
 

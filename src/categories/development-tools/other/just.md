@@ -2,7 +2,7 @@
 
 [https://just.systems/][c-just-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-`{{i:just}}` is a {{i:command runner}} / Make replacement.
+`just`{{hi:just}} is a {{i:command runner}} / Make replacement.
 
 [Just Programmer's Manual][c-just-programmer-manual]⮳
 
@@ -26,7 +26,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get autoremove -y && apt-get clean -y
 ```
 
-For Alpine, use [`{{i:apk}}`][apk-website]⮳:
+For Alpine, use {{hi:apk}}[`apk`][apk-website]⮳:
 
 ```dockerfile
 ## Just: https://just.systems/man/en/chapter_1.html
@@ -35,7 +35,7 @@ RUN apk add just
 
 ## Example `justfile`
 
-Place it in the root folder of your project. Run [`{{i:just}}`][c-just-website] to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
+Place it in the root folder of your project. Run {{hi:just}}[`just`][c-just-website] to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
 # Load a .env file, if present.

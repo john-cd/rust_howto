@@ -6,7 +6,7 @@
 
 [![crux][c-crux-badge]][c-crux]  [![crux-github][c-crux-github-badge]][c-crux-github]
 
-[`{{i:Crux}}`][c-crux]⮳ is an experimental approach to building {{i:cross-platform}} applications.
+{{hi:Crux}}[`Crux`][c-crux]⮳ is an experimental approach to building {{i:cross-platform}} applications.
 
  It splits the application into two distinct parts, a Core built in Rust, which drives as much of the business logic as possible, and a Shell, built in the platform native language (Swift, Kotlin, TypeScript), which provides all interfaces with the external world, including the human user, and acts as a platform on which the core runs.
 

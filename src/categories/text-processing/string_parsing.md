@@ -6,7 +6,7 @@
 
 [![unicode_segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the [`{{i:UnicodeSegmentation::graphemes}}`][c-unicode_segmentation::UnicodeSegmentation::graphemes]⮳ function from the [`{{i:unicode_segmentation}}`][c-unicode_segmentation]⮳ crate.
+Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the {{hi:UnicodeSegmentation::graphemes}}[`UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]⮳ function from the {{hi:unicode_segmentation}}[`unicode_segmentation`][c-unicode_segmentation]⮳ crate.
 
 ```rust,editable
 {{#include ../../../deps/tests/graphemes.rs}}
@@ -16,7 +16,7 @@ Collect individual Unicode {{i:graphemes}} from {{i:UTF-8}} string using the [`{
 
 [![std][c-std-badge]][c-std]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Creates a custom struct `RGB` and implements the `{{i:FromStr}}` trait to convert a provided color hex code into its RGB color code.
+Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
 {{#include ../../../deps/tests/from_str.rs}}

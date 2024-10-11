@@ -22,9 +22,9 @@ Allow access to data from one thread at a time.
 
 [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![parking_lot-crates.io][c-parking_lot-crates.io-badge]][c-parking_lot-crates.io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-[`{{i:Parking Lot}}`][c-parking_lot]⮳ provides implementations of [`{{i:Mutex}}`][c-parking_lot::Mutex]⮳, [`{{i:RwLock}}`][c-parking_lot::RwLock]⮳, [`{{i:Condvar}}`][c-parking_lot::Condvar]⮳ and [`{{i:Once}}`][c-parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`{{i:ReentrantMutex}}`][c-parking_lot::ReentrantMutex]⮳ type.
+{{hi:Parking Lot}}[`Parking Lot`][c-parking_lot]⮳ provides implementations of {{hi:Mutex}}[`Mutex`][c-parking_lot::Mutex]⮳, {{hi:RwLock}}[`RwLock`][c-parking_lot::RwLock]⮳, {{hi:Condvar}}[`Condvar`][c-parking_lot::Condvar]⮳ and {{hi:Once}}[`Once`][c-parking_lot::Once]⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a {{hi:ReentrantMutex}}[`ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳ type.
 
-`{{i:std::sync::Mutex}}` works fine, but `{{i:Parking Lot}}` is faster.
+`std::sync::Mutex`{{hi:std::sync::Mutex}} works fine, but `Parking Lot`{{hi:Parking Lot}} is faster.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_parking_lot.rs}}
@@ -38,15 +38,15 @@ Allow access to data from one thread at a time.
 
 [![std][c-std-badge]][c-std]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-{{i:Atomic types}} in [`{{i:std::sync::atomic}}`][c-std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`{{i:AtomicBool}}`][c-std::sync::atomic::AtomicBool]⮳, [`{{i:AtomicIsize}}`][c-std::sync::atomic::AtomicIsize]⮳, [`{{i:AtomicUsize}}`][c-std::sync::atomic::AtomicUsize]⮳, [`{{i:AtomicI8}}`][c-std::sync::atomic::AtomicI8]⮳, [`{{i:AtomicU16}}`][c-std::sync::atomic::AtomicU16]⮳, etc.
+{{i:Atomic types}} in {{hi:std::sync::atomic}}[`std::sync::atomic`][c-std::sync::atomic]⮳ provide primitive shared-memory communication between {{i:threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including {{hi:AtomicBool}}[`AtomicBool`][c-std::sync::atomic::AtomicBool]⮳, {{hi:AtomicIsize}}[`AtomicIsize`][c-std::sync::atomic::AtomicIsize]⮳, {{hi:AtomicUsize}}[`AtomicUsize`][c-std::sync::atomic::AtomicUsize]⮳, {{hi:AtomicI8}}[`AtomicI8`][c-std::sync::atomic::AtomicI8]⮳, {{hi:AtomicU16}}[`AtomicU16`][c-std::sync::atomic::AtomicU16]⮳, etc.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_atomics.rs}}
 ```
 
-The most common way to share an atomic variable is to put it into an [`{{i:Arc}}`][c-std::sync::Arc]⮳ (an atomically-reference-counted shared pointer).
+The most common way to share an atomic variable is to put it into an {{hi:Arc}}[`Arc`][c-std::sync::Arc]⮳ (an atomically-reference-counted shared pointer).
 
-[`{{i:crossbeam}}`][c-crossbeam]⮳ also offers [`{{i:AtomicCell}}`][c-crossbeam::atomic::AtomicCell]⮳, a thread-safe mutable memory location. This type is equivalent to [`{{i:Cell}}`][c-std::cell::Cell]⮳, except it can also be shared among multiple threads.
+{{hi:crossbeam}}[`crossbeam`][c-crossbeam]⮳ also offers {{hi:AtomicCell}}[`AtomicCell`][c-crossbeam::atomic::AtomicCell]⮳, a thread-safe mutable memory location. This type is equivalent to {{hi:Cell}}[`Cell`][c-std::cell::Cell]⮳, except it can also be shared among multiple threads.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/shared_state_crossbeam.rs}}

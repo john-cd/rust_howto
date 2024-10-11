@@ -6,9 +6,9 @@
 
 [![postgres][c-postgres-badge]][c-postgres]  [![cat-database][cat-database-badge]][cat-database]
 
-Use the [`{{i:postgres}}`][c-postgres]⮳ crate to create tables in a Postgres database.
+Use the {{hi:postgres}}[`postgres`][c-postgres]⮳ crate to create tables in a Postgres database.
 
-[`{{i:Client::connect}}`][c-postgres::Client::connect]⮳ helps in connecting to an existing {{i:database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
+{{hi:Client::connect}}[`Client::connect`][c-postgres::Client::connect]⮳ helps in connecting to an existing {{i:database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/create_tables.rs}}
@@ -18,7 +18,7 @@ Use the [`{{i:postgres}}`][c-postgres]⮳ crate to create tables in a Postgres d
 
 [![postgres][c-postgres-badge]][c-postgres]  [![cat-database][cat-database-badge]][cat-database]
 
-The recipe inserts data into the `author` table using [`{{i:execute}}`][c-postgres::Client::execute]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳. Then, displays the data from the `author` table using [`{{i:query}}`][c-postgres::Client::query]⮳ method of [`{{i:Client}}`][c-postgres::Client]⮳.
+The recipe inserts data into the `author` table using {{hi:execute}}[`execute`][c-postgres::Client::execute]⮳ method of {{hi:Client}}[`Client`][c-postgres::Client]⮳. Then, displays the data from the `author` table using {{hi:query}}[`query`][c-postgres::Client::query]⮳ method of {{hi:Client}}[`Client`][c-postgres::Client]⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/insert_query_data.rs}}

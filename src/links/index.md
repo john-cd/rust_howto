@@ -18,7 +18,7 @@
 
 ## Learn
 
-- [`{{i:Rust Learning}}`][rust-learning-github]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-github-badge]][rust-learning-github]
+- {{hi:Rust Learning}}[`Rust Learning`][rust-learning-github]⮳: a bunch of links to blog posts, articles, videos, etc for learning Rust [![rust-learning][rust-learning-github-badge]][rust-learning-github]
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists-website]⮳
 - [Rust quizz][rust-quizz]⮳
 

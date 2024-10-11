@@ -30,12 +30,12 @@
         └── test_module.rs
 ```
 
-If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `{{i:Cargo.lock}}` in your `{{i:.gitignore}}`.
+If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock`{{hi:Cargo.lock}} in your `.gitignore`{{hi:.gitignore}}.
 
-- A {{i:package}} is a bundle of one or more crates - as defined by a `{{i:Cargo.toml}}` file
+- A {{i:package}} is a bundle of one or more crates - as defined by a `Cargo.toml`{{hi:Cargo.toml}} file
 - A {{i:crate}} is the smallest amount of code that the Rust compiler considers at a time.
-- A crate can come in one of two forms: a binary crate (must have a function called [`{{i:main}}`][book-rust-reference-main]⮳) or a library crate.
+- A crate can come in one of two forms: a binary crate (must have a function called {{hi:main}}[`main`][book-rust-reference-main]⮳) or a library crate.
 - A package can contain as many {{i:binary crate}}s as you like, but at most only one {{i:library crate}}.
-- If a package contains `{{i:src/main.rs}}` and `{{i:src/lib.rs}}`, it has two crates: a binary and a library, both with the same name as the package.
+- If a package contains `src/main.rs`{{hi:src/main.rs}} and `src/lib.rs`{{hi:src/lib.rs}}, it has two crates: a binary and a library, both with the same name as the package.
 
 {{#include ../../../refs/link-refs.md}}

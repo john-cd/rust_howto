@@ -46,7 +46,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-Rayon implements [`{{i:join}}`][c-rayon::join]⮳, [`{{i:scope}}`][c-rayon::join]⮳, [`{{i:spawn}}`][c-rayon::spawn]⮳ that may run on the global or a custom [{{i:Rayon threadpool}}][c-rayon::join]⮳.
+Rayon implements {{hi:join}}[`join`][c-rayon::join]⮳, {{hi:scope}}[`scope`][c-rayon::join]⮳, {{hi:spawn}}[`spawn`][c-rayon::spawn]⮳ that may run on the global or a custom [{{i:Rayon threadpool}}][c-rayon::join]⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_custom.rs}}

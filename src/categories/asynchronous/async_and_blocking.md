@@ -8,7 +8,7 @@
 
 - Async code should never spend a long time without reaching an `.await`.
 - Don't carelessly mix {{i:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the [`{{i:spawn_blocking}}`][c-tokio::task::spawn_blocking]⮳ function, use [`{{i:rayon}}`][c-rayon]⮳, or spawn a {{i:dedicated thread}}.
+- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the {{hi:spawn_blocking}}[`spawn_blocking`][c-tokio::task::spawn_blocking]⮳ function, use {{hi:rayon}}[`rayon`][c-rayon]⮳, or spawn a {{i:dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
@@ -16,13 +16,13 @@ See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-Use [`{{i:spawn_blocking}}`][c-tokio::task::spawn_blocking]⮳ to run a _small portion_ of {{i:synchronous code}}.
+Use {{hi:spawn_blocking}}[`spawn_blocking`][c-tokio::task::spawn_blocking]⮳ to run a _small portion_ of {{i:synchronous code}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
 ```
 
-## Using the `{{i:rayon}}` crate
+## Using the `rayon`{{hi:rayon}} crate
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
@@ -50,7 +50,7 @@ In other cases, it may be easier to structure the application as largely {{i:syn
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`{{i:futures_executor}}`][c-futures_executor]⮳ includes a minimal executor [`{{i:block_on}}`][c-futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+{{hi:futures_executor}}[`futures_executor`][c-futures_executor]⮳ includes a minimal executor {{hi:block_on}}[`block_on`][c-futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}

@@ -24,11 +24,11 @@ Tools to help you verify the {{i:correctness}} of your code.
 
 ## See Also
 
- [![cat-testing][cat-testing-badge]][cat-testing]
+[![cat-testing][cat-testing-badge]][cat-testing]
 
-[![approx][c-approx-badge]][c-approx]  [`{{i:Approx}}`][c-Approx]⮳
+[![approx][c-approx-badge]][c-approx]  {{hi:Approx}}[`Approx`][c-approx]⮳
 
-[cargo_nextest][cargo_nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[cargo-nextest][c-cargo_nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

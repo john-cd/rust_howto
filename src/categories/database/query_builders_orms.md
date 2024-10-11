@@ -6,7 +6,7 @@
 
 [![sqlx][c-sqlx-badge]][c-sqlx]  [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github]  [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs]  [![cat-database][cat-database-badge]][cat-database]
 
-[`{{i:Sqlx}}`][c-sqlx]⮳ is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports {{i:PostgreSQL}}, {{i:MySQL}}, {{i:SQLite}}, and {{i:MSSQL}}.
+{{hi:Sqlx}}[`Sqlx`][c-sqlx]⮳ is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports {{i:PostgreSQL}}, {{i:MySQL}}, {{i:SQLite}}, and {{i:MSSQL}}.
 
 ## SeaORM
 

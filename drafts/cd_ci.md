@@ -24,7 +24,7 @@
         cargo pants
 ```
 
-[`{{i:install-action}}`][install-action]⮳ is a GitHub Action for installing development tools (mainly from GitHub Releases).
+{{hi:install-action}}[`install-action`][install-action]⮳ is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -34,7 +34,7 @@
 
 ### Compilation caching
 
-[`{{i:rust_cache}}`][c-rust_cache-github]⮳
+{{hi:rust_cache}}[`rust_cache`][c-rust_cache-github]⮳
 
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 
@@ -116,7 +116,7 @@ Example `.github/workflows/<name>.yml`
 <https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>⮳
 <https://github.com/marketplace/actions/upload-a-build-artifact>⮳
 
-[`{{i:docker-cache}}`][docker-cache-github]⮳
+{{hi:docker-cache}}[`docker-cache`][docker-cache-github]⮳
 
 [Cached Docker images][cached-docker-images]⮳
 

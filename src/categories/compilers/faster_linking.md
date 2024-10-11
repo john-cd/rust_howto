@@ -8,8 +8,8 @@ The Rust compiler spends a lot of time in the "link" step. LLD is much faster at
 
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
-- [`{{i:lld}}`][lld-website]⮳ on Windows and Linux, a linker developed by the {{i:LLVM}} project;
-- [`{{i:zld}}`][zld-github]⮳ on MacOS.
+- {{hi:lld}}[`lld`][lld-website]⮳ on Windows and Linux, a linker developed by the {{i:LLVM}} project;
+- {{hi:zld}}[`zld`][zld-github]⮳ on MacOS.
 
 To speed up the linking phase you have to install the alternative linker on your machine and add this configuration file to the project:
 
@@ -38,15 +38,15 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 ```
 
-`{{i:cargo-binutils}}` packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
+`cargo-binutils`{{hi:cargo-binutils}} packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
 
 ## Alternative - Mold linker
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]
 
-[`{{i:mold}}`][mold-github]⮳ is up to 5× faster than [`{{i:lld}}`][lld-website]⮳, but with a few caveats like limited platform support and occasional stability issues. To install `mold`, run `sudo apt-get install mold clang` in Ubuntu.
+{{hi:mold}}[`mold`][mold-github]⮳ is up to 5× faster than {{hi:lld}}[`lld`][lld-website]⮳, but with a few caveats like limited platform support and occasional stability issues. To install `mold`, run `sudo apt-get install mold clang` in Ubuntu.
 
-You will also need to add the following to your [`{{i:cargo}}`][c-cargo]⮳ config at `.cargo/config.toml`:
+You will also need to add the following to your {{hi:cargo}}[`cargo`][c-cargo]⮳ config at `.cargo/config.toml`:
 
 ```toml
 [target.x86_64-unknown-linux-gnu]

@@ -16,11 +16,11 @@ Subcommands that extend the capabilities of Cargo.
 
 [![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]
 
-[![cargo_machete-github][cargo_machete-github-badge]][cargo_machete-github]
+[![cargo_machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
 
-[![cargo_make-github][cargo_make-github-badge]][cargo_make-github]
+[![cargo_make-github][c-cargo_make-github-badge]][c-cargo_make-github]
 
-[![cargo_xtask-github][cargo_xtask-github-badge]][cargo_xtask-github]
+[![cargo_xtask-github][c-cargo_xtask-github-badge]][c-cargo_xtask-github]
 
 ## Watch for changes
 

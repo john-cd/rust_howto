@@ -28,7 +28,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 [![regex][c-regex-badge]][c-regex]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-Processes a string of text using [`{{i:Regex::captures_iter}}`][c-regex::Regex::captures_iter]⮳ to capture multiple {{i:phone numbers}}. The example here is for US convention phone numbers.
+Processes a string of text using {{hi:Regex::captures_iter}}[`Regex::captures_iter`][c-regex::Regex::captures_iter]⮳ to capture multiple {{i:phone numbers}}. The example here is for US convention phone numbers.
 
 ```rust,editable
 {{#include ../../../deps/tests/phone.rs}}
@@ -40,7 +40,7 @@ Processes a string of text using [`{{i:Regex::captures_iter}}`][c-regex::Regex::
 
 Reads a file named `application.log` and only outputs the lines containing “version X.X.X”, some IP address followed by port 443 (e.g. “192.168.0.1:443”), or a specific warning.
 
-A [`{{i:regex::RegexSetBuilder}}`][c-regex::RegexSetBuilder]⮳ composes a [`{{i:regex::RegexSet}}`][c-regex::RegexSetBuilder]⮳ Since backslashes are very common in {{i:regular expressions}}, using [raw string literals][book-rust-raw-string-literals]⮳ makes them more readable.
+A {{hi:regex::RegexSetBuilder}}[`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]⮳ composes a {{hi:regex::RegexSet}}[`regex::RegexSet`][c-regex::RegexSetBuilder]⮳ Since backslashes are very common in {{i:regular expressions}}, using [raw string literals][book-rust-raw-string-literals]⮳ makes them more readable.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/filter-log.rs}}
@@ -52,8 +52,8 @@ A [`{{i:regex::RegexSetBuilder}}`][c-regex::RegexSetBuilder]⮳ composes a [`{{i
 
 Replaces all occurrences of the standard {{i:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English {{i:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 
-The method [`{{i:Regex::replace_all}}`][c-regex::Regex::replace_all]⮳ replaces all occurrences of the whole {{i:regex}}.
-`&str` implements the [`{{i:Replacer}}`][c-regex::Replacer]⮳ trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`{{i:replacement string syntax}}`][c-regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
+The method {{hi:Regex::replace_all}}[`Regex::replace_all`][c-regex::Regex::replace_all]⮳ replaces all occurrences of the whole {{i:regex}}.
+`&str` implements the {{hi:Replacer}}[`Replacer`][c-regex::Replacer]⮳ trait which allows variables like `$abcde` to refer to corresponding {{i:named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the {{hi:replacement string syntax}}[`replacement string syntax`][c-regex::Regex-replacement-string-syntax]⮳ for examples and escaping detail.
 
 ```rust,editable
 {{#include ../../../deps/tests/replace.rs}}

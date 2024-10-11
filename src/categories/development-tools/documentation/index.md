@@ -6,7 +6,7 @@
 
 [The rustdoc book][book-rustdoc]⮳
 
-[`{{i:docs.rs}}`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
+{{hi:docs.rs}}[`docs.rs`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
 
 ## Documenting your code
 
@@ -18,7 +18,7 @@
 fn main() {}
 ```
 
-[`{{i:rustdoc}}`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
+{{hi:rustdoc}}[`rustdoc`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/rustdoc.rs}}
@@ -32,7 +32,7 @@ Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
 Use `//!` at the top of the file (instead of `///`) for module-level documentation.
 
-The first lines within `{{i:lib.rs}}` will compose the crate-level documentation front-page.
+The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level documentation front-page.
 
 ```rust,editable
 //! Fast and easy queue abstraction.
