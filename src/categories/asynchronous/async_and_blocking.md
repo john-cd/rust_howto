@@ -2,21 +2,21 @@
 
 {{#include async_and_blocking.incl.md}}
 
-## Calling {{i:blocking code}} from async code
+## Calling blocking code{{hi:blocking code}} from async code
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 - Async code should never spend a long time without reaching an `.await`.
-- Don't carelessly mix {{i:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
-- If you have to block the thread because of expensive {{i:CPU-bound}} computation, call to a {{i:synchronous}} IO API, use the {{hi:spawn_blocking}}[`spawn_blocking`][c-tokio::task::spawn_blocking]⮳ function, use {{hi:rayon}}[`rayon`][c-rayon]⮳, or spawn a {{i:dedicated thread}}.
+- Don't carelessly mix async{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
+- If you have to block the thread because of expensive CPU-bound{{hi:CPU-bound}} computation, call to a synchronous{{hi:synchronous}} IO API, use the [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ function, use [`rayon`][c-rayon]{{hi:rayon}}⮳, or spawn a dedicated thread{{hi:dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-what-is-blocking]⮳.
 
-## Tokio {{i:spawn_blocking}}
+## Tokio spawn_blocking{{hi:spawn_blocking}}
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-Use {{hi:spawn_blocking}}[`spawn_blocking`][c-tokio::task::spawn_blocking]⮳ to run a _small portion_ of {{i:synchronous code}}.
+Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ to run a _small portion_ of synchronous code{{hi:synchronous code}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
@@ -30,11 +30,11 @@ Use {{hi:spawn_blocking}}[`spawn_blocking`][c-tokio::task::spawn_blocking]⮳ to
 {{#include ../../../deps/tests/call_blocking_from_async_rayon.rs}}
 ```
 
-### Spawn a {{i:dedicated thread}}
+### Spawn a dedicated thread{{hi:dedicated thread}}
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-If a {{i:blocking operation}} keeps running forever, you should run it on a {{i:dedicated thread}}.
+If a blocking operation{{hi:blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:dedicated thread}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_dedicated_thread.rs}}
@@ -44,13 +44,13 @@ If a {{i:blocking operation}} keeps running forever, you should run it on a {{i:
 
 [Bridging with sync code][c-tokio_bridging_with_sync_code-website]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-In other cases, it may be easier to structure the application as largely {{i:synchronous}}, with smaller or logically distinct {{i:asynchronous}} portions. For instance, a {{i:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
+In other cases, it may be easier to structure the application as largely synchronous{{hi:synchronous}}, with smaller or logically distinct asynchronous{{hi:asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
 ### Futures executor
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-{{hi:futures_executor}}[`futures_executor`][c-futures_executor]⮳ includes a minimal executor {{hi:block_on}}[`block_on`][c-futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`futures_executor`][c-futures_executor]{{hi:futures_executor}}⮳ includes a minimal executor [`futures_executor::block_on`][c-futures_executor::block_on]{{hi:futures_executor::block_on}}⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}

@@ -6,7 +6,7 @@
 
 [![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![cat-config][cat-config-badge]][cat-config]
 
-{{hi:dotenvy}}[`dotenvy`][c-dotenvy]⮳ supersedes {{hi:dotenv}}[`dotenv`][c-dotenv]⮳.
+[`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/dotenvy.rs}}
@@ -14,7 +14,7 @@
 
 ## `std::env`
 
-To retrieve a single {{i:environment variable}},
+To retrieve a single environment variable{{hi:environment variable}},
 
 ```rust,editable,should_panic
 {{#include ../../../deps/tests/env.rs}}

@@ -16,7 +16,7 @@ tracing-subscriber = "0.3"
 
 ## Initialization
 
-### Basic {{i:tracing}}
+### Basic tracing{{hi:tracing}}
 
 ```rust,editable,noplayground
 {{#include ../../../deps/tests/tracing_subscriber.rs}}
@@ -34,7 +34,7 @@ Or with a custom formatting layer
 {{#include ../../../deps/tests/tracing_subscriber3.rs}}
 ```
 
-### Configure a {{i:custom event formatter}}
+### Configure a custom event formatter{{hi:custom event formatter}}
 
 ```rust,editable,noplayground
 {{#include ../../../deps/tests/tracing_subscriber4.rs}}
@@ -58,7 +58,7 @@ One-liner with `.entered()`:
 {{#include ../../../deps/tests/tracing_span_entered.rs}}
 ```
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use {{hi:in_scope}}[`in_scope`][c-tracing::span::Span::in_scope]⮳.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/tracing_span_in_scope.rs}}

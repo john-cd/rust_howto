@@ -2,7 +2,7 @@
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-Futures are about a single value that will eventually be produced, but many event sources naturally produce a {{hi:Stream}}[`Stream`][c-futures::stream::Stream] of values over time.
+Futures are about a single value that will eventually be produced, but many event sources naturally produce a [`futures::stream::Stream`][c-futures::stream::Stream]{{hi:futures::stream::Stream}} of values over time.
 
 {{#include streams.incl.md}}
 
@@ -10,9 +10,9 @@ Futures are about a single value that will eventually be produced, but many even
 {{#include ../../../deps/tests/streams.rs}}
 ```
 
-There are combinator-style methods such as {{hi:map}}[`map`][c-futures::prelude::stream::StreamExt::map]⮳, {{hi:filter}}[`filter`][c-futures::prelude::stream::StreamExt::filter]⮳, and {{hi:fold}}[`fold`][c-futures::prelude::stream::StreamExt::fold]⮳, and their early-exit-on-error cousins {{hi:try_filter}}[`try_filter`][c-futures::prelude::stream::TryStreamExt::try_filter]⮳, and {{hi:try_fold}}[`try_fold`][c-futures::prelude::stream::TryStreamExt::try_fold]⮳.
+There are combinator-style methods such as [`futures::prelude::stream::StreamExt::map`][c-futures::prelude::stream::StreamExt::map]{{hi:futures::prelude::stream::StreamExt::map}}⮳, [`futures::prelude::stream::StreamExt::filter`][c-futures::prelude::stream::StreamExt::filter]{{hi:futures::prelude::stream::StreamExt::filter}}⮳, and [`futures::prelude::stream::StreamExt::fold`][c-futures::prelude::stream::StreamExt::fold]{{hi:futures::prelude::stream::StreamExt::fold}}⮳, and their early-exit-on-error cousins [`futures::prelude::stream::TryStreamExt::try_filter`][c-futures::prelude::stream::TryStreamExt::try_filter]{{hi:futures::prelude::stream::TryStreamExt::try_filter}}⮳, and [`futures::prelude::stream::TryStreamExt::try_fold`][c-futures::prelude::stream::TryStreamExt::try_fold]{{hi:futures::prelude::stream::TryStreamExt::try_fold}}⮳.
 
-To process multiple items from a {{i:stream}} concurrently, use the {{hi:for_each_concurrent}}[`for_each_concurrent`][c-futures::prelude::stream::StreamExt::for_each_concurrent]⮳ and {{hi:try_for_each_concurrent}}[`try_for_each_concurrent`][c-futures::prelude::stream::TryStreamExt::try_for_each_concurrent]⮳ methods:
+To process multiple items from a stream{{hi:stream}} concurrently, use the [`futures::prelude::stream::StreamExt::for_each_concurrent`][c-futures::prelude::stream::StreamExt::for_each_concurrent]{{hi:futures::prelude::stream::StreamExt::for_each_concurrent}}⮳ and [`futures::prelude::stream::TryStreamExt::try_for_each_concurrent`][c-futures::prelude::stream::TryStreamExt::try_for_each_concurrent]{{hi:futures::prelude::stream::TryStreamExt::try_for_each_concurrent}}⮳ methods:
 
 ```rust,editable,noplayground,no_run
 {{#include ../../../deps/tests/streams2.rs}}

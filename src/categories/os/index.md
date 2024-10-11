@@ -1,6 +1,6 @@
 # Operating System
 
-Bindings to {{i:operating system-specific APIs}}.
+Bindings to operating system-specific APIs{{hi:operating system-specific APIs}}.
 
 {{#include external.incl.md}}
 

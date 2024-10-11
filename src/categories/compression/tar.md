@@ -6,7 +6,7 @@
 
 [![flate2][c-flate2-badge]][c-flate2]  [![tar][c-tar-badge]][c-tar]  [![cat-compression][cat-compression-badge]][cat-compression] {{hi:Compression}}
 
-Decompress ({{hi:GzDecoder}}[`GzDecoder`][c-flate2::read::GzDecoder]⮳) and extract ({{hi:Archive::unpack}}[`Archive::unpack`][c-tar::Archive::unpack]⮳) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
+Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::read::GzDecoder}}⮳) and extract ([`tar::Archive::unpack`][c-tar::Archive::unpack]{{hi:tar::Archive::unpack}}⮳) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/tar-decompress.rs}}
@@ -18,9 +18,9 @@ Decompress ({{hi:GzDecoder}}[`GzDecoder`][c-flate2::read::GzDecoder]⮳) and ext
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
-Creates a {{hi:File}}[`File`][c-std::fs::File]⮳ wrapped in {{hi:GzEncoder}}[`GzEncoder`][c-flate2::write::GzEncoder]⮳ and {{hi:tar::Builder}}[`tar::Builder`][c-tar::Builder]⮳
+Creates a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ wrapped in [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ and [`tar::Builder`][c-tar::Builder]{{hi:tar::Builder}}⮳
 
-Adds contents of `/var/log` directory recursively into the archive under `backup/logs`path with {{hi:Builder::append_dir_all}}[`Builder::append_dir_all`][c-tar::Builder::append_dir_all]⮳. {{hi:GzEncoder}}[`GzEncoder`][c-flate2::write::GzEncoder]⮳ is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
+Adds contents of `/var/log` directory recursively into the archive under `backup/logs`path with [`tar::Builder::append_dir_all`][c-tar::Builder::append_dir_all]{{hi:tar::Builder::append_dir_all}}⮳. [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/tar-compress.rs}}
@@ -30,7 +30,7 @@ Adds contents of `/var/log` directory recursively into the archive under `backup
 
 [![flate2][c-flate2-badge]][c-flate2]  [![tar][c-tar-badge]][c-tar]  [![cat-compression][cat-compression-badge]][cat-compression]
 
-Iterate over the {{hi:Archive::entries}}[`Archive::entries`][c-tar::Archive::entries]⮳. Use {{hi:Path::strip_prefix}}[`Path::strip_prefix`][c-std::path::Path::strip_prefix]⮳ to remove the specified path prefix (`bundle/logs`). Finally, extract the {{hi:tar::Entry}}[`tar::Entry`][c-tar::Entry]⮳ via {{hi:Entry::unpack}}[`Entry::unpack`][c-tar::Entry::unpack]⮳.
+Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Archive::entries}}⮳. Use [`std::path::Path::strip_prefix`][c-std::path::Path::strip_prefix]{{hi:std::path::Path::strip_prefix}}⮳ to remove the specified path prefix (`bundle/logs`). Finally, extract the [`tar::Entry`][c-tar::Entry]{{hi:tar::Entry}}⮳ via [`tar::Entry::unpack`][c-tar::Entry::unpack]{{hi:tar::Entry::unpack}}⮳.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/tar-strip-prefix.rs}}

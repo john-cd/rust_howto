@@ -6,7 +6,7 @@
 
 [![config][c-config-badge]][c-config]  [![cat-config][cat-config-badge]][cat-config]
 
-{{hi:Config}}[`Config`][c-config]⮳ is a layered {{i:configuration}} system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
+[`Config`][c-config]{{hi:Config}}⮳ is a layered configuration{{hi:configuration}} system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 

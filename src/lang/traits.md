@@ -4,7 +4,7 @@
 {{#include ../../deps/tests/traits.rs}}
 ```
 
-Trait {{i:methods}} are in scope only when their trait is.
+Trait methods{{hi:methods}} are in scope only when their trait is.
 
 ## Default implementation
 
@@ -20,13 +20,13 @@ Trait {{i:methods}} are in scope only when their trait is.
 
 ## Newtype pattern
 
-Unlike {{i:interfaces}} in languages like Java, C# or Scala, new {{i:traits}} can be implemented for _existing_ types.
+Unlike interfaces{{hi:interfaces}} in languages like Java, C# or Scala, new traits{{hi:traits}} can be implemented for _existing_ types.
 
 ```rust,editable
 {{#include ../../deps/tests/traits4.rs}}
 ```
 
-One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate. If neither are, use the {{i:newtype pattern}}:
+One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate. If neither are, use the newtype pattern{{hi:newtype pattern}}:
 
 ```rust,editable
 {{#include ../../deps/tests/newtype.rs}}

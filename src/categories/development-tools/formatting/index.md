@@ -6,7 +6,7 @@
 
 [![rustfmt-github][c-rustfmt-github-badge]][c-rustfmt-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-Install with `rustup component add {{i:rustfmt}}`
+Install with `rustup component add rustfmt{{hi:rustfmt}}`
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...
@@ -15,7 +15,7 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs {{hi:rustfmt}}[`rustfmt`][c-rustfmt-config]⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs [`rustfmt`][c-rustfmt-config]{{hi:rustfmt}}⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check

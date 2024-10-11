@@ -14,9 +14,9 @@
 
 [![actix-github][c-actix-github-badge]][c-actix-github]
 
-{{hi:Actix}}[`Actix`][c-actix]⮳
+[`Actix`][c-actix]{{hi:Actix}}⮳
 
-{{hi:ractor}}[`ractor`][c-ractor-crates.io]⮳
+[`ractor`][c-ractor-crates.io]{{hi:ractor}}⮳
 
 ## Utilities
 
@@ -24,6 +24,6 @@
 
 ## Reference
 
-[{{i:Actors}} with `Tokio`][blog-actors-with-tokio]⮳
+[Actors{{hi:Actors}} with `Tokio`][blog-actors-with-tokio]⮳
 
 {{#include ../../refs/link-refs.md}}

@@ -2,25 +2,25 @@
 
 {{#include error_customization.incl.md}}
 
-Use {{hi:Anyhow}}[`Anyhow`][c-anyhow]⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use {{hi:thiserror}}[`thiserror`][c-thiserror]⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Use [`Anyhow`][c-anyhow]{{hi:Anyhow}}⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
 ## Anyhow
 
 [![anyhow][c-anyhow-badge]][c-anyhow]  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-Use `Result<T, anyhow::Error>` or equivalently [`{{i:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
+Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/anyhow.rs}}
 ```
 
-Anyhow works with any error type that has an impl of `std::error::{{i:Error}}`, including ones defined in your crate e.g. using {{hi:thiserror}}[`thiserror`][c-thiserror]⮳.
+Anyhow works with any error type that has an impl of `std::error::Error{{hi:Error}}`, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
 
 ## thisError
 
 [![thiserror][c-thiserror-badge]][c-thiserror]
 
-{{hi:thisError}}[`thisError`][c-thisError]⮳ provides a convenient {{hi:derive}}[`derive`][book-rust-reference-derive]⮳ macro for the standard library’s `std::error::Error` trait.
+[`thisError`][c-thisError]{{hi:thisError}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable,no_run,mdbook-runnable
 {{#include ../../../../deps/tests/thiserror.rs}}

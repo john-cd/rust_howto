@@ -6,11 +6,11 @@
 
 [The rustdoc book][book-rustdoc]⮳
 
-{{hi:docs.rs}}[`docs.rs`][docs-rs]⮳: open-source {{i:documentation}} host for Rust crates.
+[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:documentation}} host for Rust crates.
 
 ## Documenting your code
 
-- Add {{i:documentation comments}} to your code.
+- Add documentation comments{{hi:documentation comments}} to your code.
 
 ```rust,editable
 /// This is a doc comment. It is equivalent to the next line.
@@ -18,7 +18,7 @@
 fn main() {}
 ```
 
-{{hi:rustdoc}}[`rustdoc`][book-rustdoc]⮳ uses the CommonMark Markdown specification.
+[`rustdoc`][book-rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../../deps/tests/rustdoc.rs}}
@@ -47,7 +47,7 @@ The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level docume
 # fn main() {}
 ```
 
-- To add a "run" button on your documentation (allowing its execution in the {{i:rust playground}}), use the following attribute:
+- To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:rust playground}}), use the following attribute:
 
 ```rust,editable
 #![doc(html_playground_url = "https://playground.example.com/")]

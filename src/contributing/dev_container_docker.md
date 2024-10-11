@@ -1,8 +1,8 @@
 ## Dev Container and Docker
 
-The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install {{hi:mdbook}}[`mdbook`][c-mdbook-documentation]⮳ and {{i:rust tooling}}.
+The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳ and rust tooling{{hi:rust tooling}}.
 
-If you don't want to use {{i:Dev Container}}, use the following from the project's root directory to manually build the {{hi:docker}}[`docker`][docker-website]⮳ image and run it.
+If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker-website]{{hi:docker}}⮳ image and run it.
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag rust_howto_dev --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
@@ -25,7 +25,7 @@ To connect to the (host OS) docker engine from within the container, add
 
 ### Docker Compose
 
-Test the {{i:docker compose}} setup used during developement (which Dev Container runs) with:
+Test the docker compose{{hi:docker compose}} setup used during developement (which Dev Container runs) with:
 
 ```bash
 cd ./.devcontainer
@@ -37,7 +37,7 @@ docker compose up --build -d
 
 ## Deployment to GitHub Pages
 
-The {{i:continuous integration worflow}} is found under `.github`.
+The continuous integration worflow{{hi:continuous integration worflow}} is found under `.github`.
 
 Test the docker compose setup used during CI using:
 
@@ -49,7 +49,7 @@ docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker co
 
 It uses the `ci` target in `.devcontainer/Dockerfile`.
 
-To test the {{hi:docker}}[`docker`][docker-website]⮳ image manually, use
+To test the [`docker`][docker-website]{{hi:docker}}⮳ image manually, use
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .

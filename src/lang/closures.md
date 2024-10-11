@@ -10,7 +10,7 @@
 {{#include ../../deps/tests/closures_with_type_annotations.rs}}
 ```
 
-Closures can {{i:capture variables}}
+Closures can capture variables{{hi:capture variables}}
 
 - by reference: &T
 - by mutable reference: &mut T
@@ -30,9 +30,9 @@ To force a move:
 {{#include ../../deps/tests/closures_as_input_parameters.rs}}
 ```
 
-- {{hi:Fn}}[`Fn`][c-std::ops::Fn]⮳: the closure uses the captured value by reference (`&T`)
-- {{hi:FnMut}}[`FnMut`][c-std::ops::FnMut]⮳: the closure uses the captured value by mutable reference (`&mut T`)
-- {{hi:FnOnce}}[`FnOnce`][c-std::ops::FnOnce]⮳: the closure uses the captured value by value (`T`)
+- [`std::ops::Fn`][c-std::ops::Fn]{{hi:std::ops::Fn}}⮳: the closure uses the captured value by reference (`&T`)
+- [`std::ops::FnMut`][c-std::ops::FnMut]{{hi:std::ops::FnMut}}⮳: the closure uses the captured value by mutable reference (`&mut T`)
+- [`std::ops::FnOnce`][c-std::ops::FnOnce]{{hi:std::ops::FnOnce}}⮳: the closure uses the captured value by value (`T`)
 
 Functions may also be used as arguments.
 

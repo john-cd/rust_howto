@@ -9,7 +9,7 @@ Attributes can take arguments with different syntaxes:
 #[attribute(value, value2)]
 ```
 
-Inner {{i:attributes}} `#![attr]` apply to the item that the attribute is declared within.
+Inner attributes{{hi:attributes}} `#![attr]` apply to the item that the attribute is declared within.
 
 ## Lint attributes
 
@@ -19,7 +19,7 @@ During early development, place the following attributes at the top of `main.rs`
 {{#include ../../deps/tests/attributes_debug.rs}}
 ```
 
-For {{i:production-ready code}}, replace the above by the following, for example.
+For production-ready code{{hi:production-ready code}}, replace the above by the following, for example.
 
 ```rust,editable
 {{#include ../../deps/tests/attributes_production.rs}}
@@ -31,7 +31,7 @@ You also apply these attributes to specific functions:
 {{#include ../../deps/tests/allow_dead_code.rs}}
 ```
 
-List of {{i:lint checks}}: `rustc -W help`. {{hi:rustc}}[`rustc`][rustc]⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
+List of lint checks{{hi:lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
 
 ## Automatic trait derivation
 

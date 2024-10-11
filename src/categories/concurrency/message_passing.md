@@ -1,8 +1,8 @@
 # Message passing
 
-One increasingly popular approach to ensuring safe concurrency is {{i:message passing}}, where threads communicate by sending each other {{i:messages}} containing data. The Rust standard library provides {{i:channels}} for message passing that are safe to use in {{i:concurrent contexts}}.
+One increasingly popular approach to ensuring safe concurrency is message passing{{hi:message passing}}, where threads communicate by sending each other messages{{hi:messages}} containing data. The Rust standard library provides channels{{hi:channels}} for message passing that are safe to use in concurrent contexts{{hi:concurrent contexts}}.
 
-Message passing in {{hi:async}}[`async`][book-rust-reference-async]⮳ programming is covered in a separate page: [{{i:async channels}}](../asynchronous/async_channels.md)
+Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programming is covered in a separate page: [async channels](../asynchronous/async_channels.md){{hi:async channels}}
 
 {{#include message_passing.incl.md}}
 
@@ -18,13 +18,13 @@ Message passing in {{hi:async}}[`async`][book-rust-reference-async]⮳ programmi
 
 [![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-Multi-producer {{i:multi-consumer channels}} for message passing.
+Multi-producer multi-consumer channels{{hi:multi-consumer channels}} for message passing.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/message_passing_crossbeam_channel.rs}}
 ```
 
-Example using specialized channels for {{i:tickers}} and {{i:timeout}}
+Example using specialized channels for tickers{{hi:tickers}} and timeout{{hi:timeout}}
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/message_passing_crossbeam_channel_after_tick.rs}}

@@ -6,11 +6,11 @@
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The {{hi:parse}}[`parse`][c-url::Url::parse]⮳ method from the {{hi:url}}[`url`][c-url]⮳ crate validates and parses a `&str` into a {{hi:Url}}[`Url`][c-url::Url]⮳ struct. The input string may be malformed so this method returns
+The [`url::Url::parse`][c-url::Url::parse]{{hi:url::Url::parse}}⮳ method from the [`url`][c-url]{{hi:url}}⮳ crate validates and parses a `&str` into a [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct. The input string may be malformed so this method returns
 `Result<Url, ParseError>`.
 
 Once the URL has been parsed, it can be used with all of the methods in the
-{{hi:Url}}[`Url`][c-url::Url]⮳ type.
+[`url::Url`][c-url::Url]{{hi:url::Url}}⮳ type.
 
 ```rust,editable
 {{#include ../../../deps/tests/parse.rs}}
@@ -20,7 +20,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. {{hi:PathSegmentsMut::clear}}[`PathSegmentsMut::clear`][c-url::PathSegmentsMut::clear]⮳ removes paths and {{hi:Url::set_query}}[`Url::set_query`][c-url::Url::set_query]⮳ removes query string.
+A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c-url::PathSegmentsMut::clear]{{hi:url::PathSegmentsMut::clear}}⮳ removes paths and [`url::Url::set_query`][c-url::Url::set_query]{{hi:url::Url::set_query}}⮳ removes query string.
 
 ```rust,editable
 {{#include ../../../deps/tests/base.rs}}
@@ -30,7 +30,7 @@ A base {{i:URL}} includes a protocol and a domain. Base URLs have no folders, fi
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The {{hi:join}}[`join`][c-url::Url::join]⮳ method creates a new URL from a base and {{i:relative path}}.
+The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:relative path}}.
 
 ```rust,editable
 {{#include ../../../deps/tests/new.rs}}
@@ -40,13 +40,13 @@ The {{hi:join}}[`join`][c-url::Url::join]⮳ method creates a new URL from a bas
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-The {{hi:Url}}[`Url`][c-url::Url]⮳ struct exposes various methods to extract information about the URL it represents.
+The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to extract information about the URL it represents.
 
 ```rust,editable
 {{#include ../../../deps/tests/origin.rs}}
 ```
 
-{{hi:origin}}[`origin`][c-url::Url::origin]⮳ produces the same result.
+[`url::Url::origin`][c-url::Url::origin]{{hi:url::Url::origin}}⮳ produces the same result.
 
 ```rust,editable
 {{#include ../../../deps/tests/origin1.rs}}
@@ -56,7 +56,7 @@ The {{hi:Url}}[`Url`][c-url::Url]⮳ struct exposes various methods to extract i
 
 [![url][c-url-badge]][c-url]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
 
-Parses {{hi:Url}}[`Url`][c-url::Url]⮳ and slices it with {{hi:url::Position}}[`url::Position`][c-url::Position]⮳ to strip unneeded URL parts.
+Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Position`][c-url::Position]{{hi:url::Position}}⮳ to strip unneeded URL parts.
 
 ```rust,editable
 {{#include ../../../deps/tests/fragment.rs}}

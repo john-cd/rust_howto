@@ -206,6 +206,7 @@
 [c-confy-lib.rs-badge]: https://img.shields.io/badge/lib.rs-confy-yellow
 [c-confy-lib.rs]: https://lib.rs/crates/confy
 [c-confy]: https://docs.rs/confy
+[c-cross-badge]: https://img.shields.io/crates/v/cross?label=cross
 [c-cross-crates.io-badge]: https://img.shields.io/badge/crates.io-cross-crimson
 [c-cross-crates.io]: https://crates.io/crates/cross
 [c-cross-github-badge]: https://img.shields.io/badge/cross-steelblue?logo=github

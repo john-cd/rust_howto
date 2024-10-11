@@ -1,6 +1,6 @@
 # File System
 
-Dealing with {{i:files}} and {{i:file systems}}.
+Dealing with files{{hi:files}} and file systems{{hi:file systems}}.
 
 {{#include dir.incl.md}}
 

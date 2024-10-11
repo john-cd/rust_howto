@@ -4,15 +4,15 @@
 
 [![tokio][c-tokio-badge]][c-tokio]  [![tokio-github][c-tokio-github-badge]][c-tokio-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-{{i:Tokio}} is an {{i:asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing {{i:networking applications}}. Tokio provides a few major components:
+Tokio{{hi:Tokio}} is an asynchronous runtime{{hi:asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing networking applications{{hi:networking applications}}. Tokio provides a few major components:
 
-- Multiple variations of the runtime for executing asynchronous code. Everything from a {{i:multi-threaded}}, {{i:work-stealing runtime}} to a light-weight, {{i:single-threaded runtime}}.
-- An {{i:asynchronous version}} of the standard library.
+- Multiple variations of the runtime for executing asynchronous code. Everything from a multi-threaded{{hi:multi-threaded}}, work-stealing runtime{{hi:work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:single-threaded runtime}}.
+- An asynchronous version{{hi:asynchronous version}} of the standard library.
 - A large ecosystem of libraries.
 
 ## Key links
 
-- {{hi:Tokio}}[`Tokio`][c-tokio]⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
+- [`Tokio`][c-tokio]{{hi:Tokio}}⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
 - [`Tokio` glossary][c-tokio_glossary-website]⮳
 - [`Tokio` tutorial][c-tokio_tutorial]⮳
 - [![tokio_examples][c-tokio_examples-badge]][c-tokio_examples]

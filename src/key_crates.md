@@ -2,10 +2,10 @@
 
 Consult the following sites for crate recommendations:
 
-- {{hi:blessed.rs}}[`blessed.rs`][blessed-rs-website]⮳
-- {{hi:lib.rs}}[`lib.rs`][lib-rs]⮳
+- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳
+- [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 - [`lib.rs` stats][lib-rs-stats]⮳
-- The Rust community's official crate registry: {{hi:crates.io}}[`crates.io`][crates.io]⮳
+- The Rust community's official crate registry: [`crates.io`][crates.io]{{hi:crates.io}}⮳
 - [`Crates.io`'s most (recent) downloads][crates.io-most-recent-downloads]⮳
 
 or older resources, such as:

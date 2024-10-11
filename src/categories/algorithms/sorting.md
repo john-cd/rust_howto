@@ -6,7 +6,7 @@
 
 [![std][c-std-badge]][c-std]  [![cat-science][cat-science-badge]][cat-science]
 
-This example will {{i:sort}} a Vector of integers via {{hi:vec::sort}}[`vec::sort`][c-std::vec::Vec::sort]⮳. Alternative would be to use {{hi:vec::sort_unstable}}[`vec::sort_unstable`][c-std::vec::Vec::sort_unstable]⮳ which can be faster, but does not preserve the order of equal elements.
+This example will sort{{hi:Sort}} a Vector of integers via [`std::vec::Vec::sort`][c-std::vec::Vec::sort]{{hi:std::vec::Vec::sort}}⮳. Alternative would be to use [`std::vec::Vec::sort_unstable`][c-std::vec::Vec::sort_unstable]{{hi:std::vec::Vec::sort_unstable}}⮳ which can be faster, but does not preserve the order of equal elements.
 
 ```rust,editable
 {{#include ../../../deps/tests/sort.rs}}
@@ -16,7 +16,7 @@ This example will {{i:sort}} a Vector of integers via {{hi:vec::sort}}[`vec::sor
 
 [![std][c-std-badge]][c-std]  [![cat-science][cat-science-badge]][cat-science]
 
-A {{i:vector}} of f32 or f64 can be sorted with {{hi:vec::sort_by}}[`vec::sort_by`][primitive-slice::sort_by] and {{hi:PartialOrd::partial_cmp}}[`PartialOrd::partial_cmp`][c-std::cmp::PartialOrd::partial_cmp]⮳.
+A vector{{hi:vector}} of f32 or f64 can be sorted with [`std::vec::sort_by`][c-std::vec::sort_by]{{hi:std::vec::sort_by}} and [`std::cmp::PartialOrd::partial_cmp`][c-std::cmp::PartialOrd::partial_cmp]{{hi:std::cmp::PartialOrd::partial_cmp}}⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/sort_float.rs}}
@@ -26,7 +26,7 @@ A {{i:vector}} of f32 or f64 can be sorted with {{hi:vec::sort_by}}[`vec::sort_b
 
 [![std][c-std-badge]][c-std]  [![cat-science][cat-science-badge]][cat-science]
 
-Sorts a {{i:vector}} of Person structs with properties `name` and `age` by its natural order (By name and age). In order to make `Person` {{i:sortable}} you need four traits {{hi:Eq}}[`Eq`][c-std::cmp::Eq]⮳, {{hi:PartialEq}}[`PartialEq`][c-std::cmp::PartialEq]⮳, {{hi:Ord}}[`Ord`][c-std::cmp::Ord]⮳ and {{hi:PartialOrd}}[`PartialOrd`][c-std::cmp::PartialOrd]⮳. These traits can be simply derived. You can also provide a custom comparator function using a {{hi:vec:sort_by}}[`vec:sort_by`][c-std::vec::Vec::sort_by]⮳ method and sort only by age.
+Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` by its natural order (by name and age). In order to make `Person` sortable{{hi:Sortable}} you need four traits [`std::cmp::Eq`][c-std::cmp::Eq]{{hi:std::cmp::Eq}}⮳, [`std::cmp::PartialEq`][c-std::cmp::PartialEq]{{hi:std::cmp::PartialEq}}⮳, [`std::cmp::Ord`][c-std::cmp::Ord]{{hi:std::cmp::Ord}}⮳ and [`std::cmp::PartialOrd`][c-std::cmp::PartialOrd]{{hi:std::cmp::PartialOrd}}⮳. These traits can be simply derived. You can also provide a custom comparator function using a [`std::vec::Vec::sort_by`][c-std::vec::Vec::sort_by]{{hi:std::vec::Vec::sort_by}}⮳ method and sort only by age.
 
 ```rust,editable
 {{#include ../../../deps/tests/sort_struct.rs}}

@@ -1,6 +1,6 @@
 # Databases
 
-Interface with {{i:database management systems}}.
+Interface with database management systems{{hi:database management systems}}.
 
 ## SQLite
 

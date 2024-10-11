@@ -14,7 +14,7 @@
 
 ## `bat`
 
-`bat`{{hi:bat}} is a fast `cat` clone with syntax highlighting and {{i:Git}} integration.
+`bat`{{hi:bat}} is a fast `cat` clone with syntax highlighting and Git{{hi:Git}} integration.
 [![bat-github][c-bat-github-badge]][c-bat-github]
 
 ```sh
@@ -29,7 +29,7 @@ bat -A /etc/hosts
 
 ## `lsd`
 
-{{hi:lsd}}[`lsd`][c-lsd-github] is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.
+[`lsd`][c-lsd-github]{{hi:lsd}} is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.
 
 ```sh
 apt install lsd
@@ -37,11 +37,11 @@ apt install lsd
 
 ## `broot`
 
-{{hi:broot}}[`broot`][c-broot-website] [![broot-github][c-broot-github-badge]][c-broot-github] is a new way to see and navigate directory trees.
+[`broot`][c-broot-website]{{hi:broot}} [![broot-github][c-broot-github-badge]][c-broot-github] is a new way to see and navigate directory trees.
 
 ## `gping`
 
-Ping, but with a graph {{hi:gping}}[`gping`][c-gping-github]
+Ping, but with a graph [`gping`][c-gping-github]{{hi:gping}}
 
 ```sh
 apt install gping

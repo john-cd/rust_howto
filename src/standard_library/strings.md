@@ -16,13 +16,13 @@
 {{#include ../../deps/tests/strings2.rs}}
 ```
 
-Use `{:?}` to use the {{hi:Debug}}[`Debug`][c-std::fmt::Debug]⮳ {{i:output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for {{i:pretty print}}.
+Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output format{{hi:output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print{{hi:pretty print}}.
 
-Also use `dbg!(&rect1);` for {{i:debug output}} (returns ownership of the expression’s value).
+Also use `dbg!(&rect1);` for debug output{{hi:debug output}} (returns ownership of the expression’s value).
 
 ## String concatenation
 
-Here are several common methods to {{i:concatenate}} Strings:
+Here are several common methods to concatenate{{hi:concatenate}} Strings:
 
 ```rust,editable
 {{#include ../../deps/tests/strings3.rs}}

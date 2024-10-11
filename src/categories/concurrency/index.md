@@ -1,6 +1,6 @@
 # Concurrency
 
-This section covers concurrent and {{i:parallel programming}}.
+This section covers concurrent and parallel programming{{hi:parallel programming}}.
 
 {{#include multithreading.incl.md}}
 
@@ -15,18 +15,18 @@ This section covers concurrent and {{i:parallel programming}}.
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 - True simultaneous execution of multiple tasks on multiple cores or processors.
-- Mechanism: uses {{i:operating system threads}}.
-- Important for {{i:CPU-heavy computations}}.
-- Often requires explicit management of threads and {{i:thread pools}}.
+- Mechanism: uses operating system threads{{hi:operating system threads}}.
+- Important for CPU-heavy computations{{hi:CPU-heavy computations}}.
+- Often requires explicit management of threads and thread pools{{hi:thread pools}}.
 - Requires careful synchronization to prevent data races (using mechanisms like Mutexes or atomics).
 
 - Overhead due to thread creation and switching.
 
 Key constructs in Rust:
 
-- {{i:Threads}} are independent units of execution that can be spawned using e.g. `std::thread::{{i:spawn}}`.
-- Mutexes e.g. `std::sync::{{i:Mutex}}` protect shared data from race conditions.
-- {{i:Channels}} e.g. `std::sync::mpsc` allow threads to communicate and exchange data.
+- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. `std::thread::spawn{{hi:spawn}}`.
+- Mutexes e.g. `std::sync::Mutex{{hi:Mutex}}` protect shared data from race conditions.
+- Channels{{hi:Channels}} e.g. `std::sync::mpsc` allow threads to communicate and exchange data.
 
 Here are the topics we’ll cover:
 

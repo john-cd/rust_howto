@@ -1,6 +1,6 @@
 # Algorithms
 
-Rust implementations of core {{i:algorithms}} such as {{i:hashing}}, {{i:sorting}}, {{i:searching}}, and more.
+Rust implementations of core algorithms{{hi:Algorithms}} such as hashing{{hi:Hashing}}, sorting{{hi:Sorting}}, searching{{hi:Searching}}, and more.
 
 ## Random Numbers
 

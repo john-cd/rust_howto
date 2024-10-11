@@ -4,11 +4,11 @@
 
 ## Basics
 
-- creating and running a {{i:runtime}}, {{i:spawning tasks}}, working with I/O and timers, and handling errors.
+- creating and running a runtime{{hi:runtime}}, spawning tasks{{hi:spawning tasks}}, working with I/O and timers, and handling errors.
 
 ### Join
 
-By running all {{i:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn`{{hi:tokio::spawn}} and pass the join handle to `join!`{{hi:join!}}.
+By running all async{{hi:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn`{{hi:tokio::spawn}} and pass the join handle to `join!`{{hi:join!}}.
 
 ### Spawning
 

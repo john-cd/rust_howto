@@ -2,7 +2,7 @@
 
 {{#include multithreading.incl.md}}
 
-## Spawn, {{i:join}}
+## Spawn, join{{hi:join}}
 
 [![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
@@ -10,7 +10,7 @@
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
 ```
 
-When the main thread of a Rust program completes, all {{i:spawned threads}} are shut down, whether or not they have finished running.
+When the main thread of a Rust program completes, all spawned threads{{hi:spawned threads}} are shut down, whether or not they have finished running.
 
 ## Scoped threads
 
@@ -28,7 +28,7 @@ When the main thread of a Rust program completes, all {{i:spawned threads}} are 
 
 ### Parallel iteration
 
-Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to {{i:execute in parallel}}.
+Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:execute in parallel}}.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon.rs}}
@@ -42,11 +42,11 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 {{#include ../../../deps/tests/multithreading_rayon_parsort.rs}}
 ```
 
-### Custom {{i:parallel tasks}}
+### Custom parallel tasks{{hi:parallel tasks}}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-Rayon implements {{hi:join}}[`join`][c-rayon::join]⮳, {{hi:scope}}[`scope`][c-rayon::join]⮳, {{hi:spawn}}[`spawn`][c-rayon::spawn]⮳ that may run on the global or a custom [{{i:Rayon threadpool}}][c-rayon::join]⮳.
+Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Rayon threadpool}}⮳.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_custom.rs}}

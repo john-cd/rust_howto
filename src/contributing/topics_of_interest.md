@@ -3,26 +3,26 @@
 - Async: tokio, async_std and related, async_channels
 - CD / CI, rust_cache
 - Macros
-- {{hi:http}}[`http`][c-http]⮳ crate, {{hi:hyper}}[`hyper`][c-hyper]⮳
-- Python interop: {{hi:pyo3}}[`pyo3`][c-pyo3-website]⮳
+- [`http`][c-http]{{hi:http}}⮳ crate, [`hyper`][c-hyper]{{hi:hyper}}⮳
+- Python interop: [`pyo3`][c-pyo3-website]{{hi:pyo3}}⮳
 - AWS and other Cloud services
 - Advanced data structures
 - Basic and advanced TCP/IP networking
-- {{hi:notify}}[`notify`][c-notify]⮳
-- {{hi:indicatif}}[`indicatif`][c-indicatif]⮳
-- {{hi:ratatui}}[`ratatui`][c-ratatui-website]⮳
-- File system traversal, {{hi:walkdir}}[`walkdir`][c-walkdir]⮳
-- {{hi:time}}[`time`][c-std::time]⮳, {{hi:chrono}}[`chrono`][c-chrono]⮳
-- Errors: `color-eyre`, {{hi:eyre}}[`eyre`][c-eyre]⮳
-- Testing: {{hi:approx}}[`approx`][c-approx]⮳, {{hi:nextest}}[`nextest`][c-nextest-website]⮳
-- {{hi:axum}}[`axum`][c-axum]⮳
-- {{hi:loco}}[`loco`][c-loco]⮳
+- [`notify`][c-notify]{{hi:notify}}⮳
+- [`indicatif`][c-indicatif]{{hi:indicatif}}⮳
+- [`ratatui`][c-ratatui-website]{{hi:ratatui}}⮳
+- File system traversal, [`walkdir`][c-walkdir]{{hi:walkdir}}⮳
+- [`std::time`][c-std::time]{{hi:std::time}}⮳, [`chrono`][c-chrono]{{hi:chrono}}⮳
+- Errors: `color-eyre`, [`eyre`][c-eyre]{{hi:eyre}}⮳
+- Testing: [`approx`][c-approx]{{hi:approx}}⮳, [`nextest`][c-nextest-website]{{hi:nextest}}⮳
+- [`axum`][c-axum]{{hi:axum}}⮳
+- [`loco`][c-loco]{{hi:loco}}⮳
 - shuttle.rs
-- {{hi:reqwest}}[`reqwest`][c-reqwest]⮳
-- {{hi:tonic}}[`tonic`][c-tonic]⮳
+- [`reqwest`][c-reqwest]{{hi:reqwest}}⮳
+- [`tonic`][c-tonic]{{hi:tonic}}⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
-- {{hi:redis}}[`redis`][c-redis]⮳, {{hi:mongodb}}[`mongodb`][c-mongodb]⮳, {{hi:elasticsearch}}[`elasticsearch`][c-elasticsearch-github]⮳
-- Cargo & project integration via {{hi:cargo_edit}}[`cargo_edit`][c-cargo_edit]
+- [`redis`][c-redis]{{hi:redis}}⮳, [`mongodb`][c-mongodb]{{hi:mongodb}}⮳, [`elasticsearch`][c-elasticsearch-github]{{hi:elasticsearch}}⮳
+- Cargo & project integration via [`cargo_edit`][c-cargo_edit]{{hi:cargo_edit}}
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits
