@@ -447,7 +447,7 @@
 [ex-urlencoded]: categories/encoding/strings.md#encode-a-string-as-applicationx-www-form-urlencoded
 [ex-hex-encode-decode]: categories/encoding/strings.md#encode-and-decode-hex
 [ex-base64]: categories/encoding/strings.md#encode-and-decode-base64
-[ex-csv-read]: categories/encoding/csv.md#read-csv-records
+[ex-csv-read]: categories/encoding/csv.md#read-icsv-records
 [ex-csv-delimiter]: categories/encoding/csv.md#read-csv-records-with-different-delimiter
 [ex-csv-filter]: categories/encoding/csv.md#filter-csv-records-matching-a-predicate
 [ex-invalid-csv]: categories/encoding/csv.md#handle-invalid-csv-data-with-serde
@@ -605,7 +605,7 @@
 [ex-regex-replace-named]: categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 
 [ex-unicode-graphemes]: categories/text-processing/string_parsing.md#collect-unicode-graphemes
-[string_parsing-from_str]: categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
+[ex-string_parsing-from_str]: categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
 
 ### WebAssembly
 
