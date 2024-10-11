@@ -6,7 +6,7 @@
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
-[![open-rs-github][c-open-rs-github-badge]][c-open-rs-github]
+[![open-github][c-open-github-badge]][c-open-github]
 
 [![starship-github][c-starship-github-badge]][c-starship-github]
 

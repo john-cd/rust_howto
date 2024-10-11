@@ -3,7 +3,7 @@
 [ex-convert-cow-to-string]: cow.md#convert-cow-to-string
 
 [ex-derive]: derive.md#automatic-trait-derivation
-[ex-derive-more]: derive.md#derive-more
+[ex-derive_more]: derive.md#derive-more
 
 [ex-hashmap]: hashmaps.md
 

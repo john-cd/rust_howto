@@ -2,9 +2,9 @@
 
 {{#include log.incl.md}}
 
-## Log a {{i:debug message}} to the console
+## Log a debug message to the console
 
-[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:debug message}}
 
 The [`{{i:log}}`][c-log]⮳ crate provides {{i:logging utilities}}. The [`{{i:env_logger}}`][c-env_logger]⮳ crate configures logging via an environment variable. The [`{{i:log::debug!}}`][c-log::debug]⮳ macro works like other
 [`{{i:std::fmt}}`][c-std::fmt]⮳ formatted strings.
@@ -57,9 +57,9 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 {{#include ../../../deps/tests/log-custom-logger.rs}}
 ```
 
-## Log to the Unix {{i:syslog}}
+## Log to the Unix syslog
 
-[![log][c-log-badge]][c-log]  [![syslog][c-syslog-badge]][c-syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][c-log-badge]][c-log]  [![syslog][c-syslog-badge]][c-syslog]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:syslog}}
 
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`{{i:syslog::init}}`][c-syslog::init]⮳  [`{{i:syslog::Facility}}`][c-syslog::init]⮳ records the program submitting the log entry's classification, [`{{i:log::LevelFilter}}`][c-syslog::init]⮳ denotes allowed {{i:log verbosity}} and `Option<&str>` holds optional application name.
 

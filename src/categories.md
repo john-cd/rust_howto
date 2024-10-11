@@ -11,7 +11,7 @@
 | [![cat-unmanned-aerial-vehicles][cat-unmanned-aerial-vehicles-badge]][cat-unmanned-aerial-vehicles] | | |
 | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] | [![rand][c-rand-badge]][c-rand] | |
 | [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings] | | |
-| [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] | [![actix-web][c-actix-web-badge]][c-actix-web] | |
+| [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] | [![actix_web][c-actix_web-badge]][c-actix_web] | |
 | [![cat-authentication][cat-authentication-badge]][cat-authentication] | | |
 | [![cat-caching][cat-caching-badge]][cat-caching] | | |
 | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] | | |
@@ -57,7 +57,7 @@
 | [![cat-images][cat-images-badge]][cat-images] | | |
 | [![cat-audio][cat-audio-badge]][cat-audio] | | |
 | [![cat-multimedia-encoding][cat-multimedia-encoding-badge]][cat-multimedia-encoding] | | |
-| [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] | [![actix-web][c-actix-web-badge]][c-actix-web] | |
+| [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] | [![actix_web][c-actix_web-badge]][c-actix_web] | |
 | [![cat-no-std][cat-no-std-badge]][cat-no-std] | | |
 | [![cat-no-alloc][cat-no-alloc-badge]][cat-no-alloc] | | |
 | [![cat-os][cat-os-badge]][cat-os] | | |
@@ -85,8 +85,8 @@
 | [![cat-visualization][cat-visualization-badge]][cat-visualization] | | |
 | [![cat-wasm][cat-wasm-badge]][cat-wasm] | | |
 | [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] | | |
-| [![cat-http-client][cat-http-client-badge]][cat-http-client] | [![actix-web][c-actix-web-badge]][c-actix-web] | |
-| [![cat-websocket][cat-websocket-badge]][cat-websocket] | [![actix-web][c-actix-web-badge]][c-actix-web] | |
+| [![cat-http-client][cat-http-client-badge]][cat-http-client] | [![actix_web][c-actix_web-badge]][c-actix_web] | |
+| [![cat-websocket][cat-websocket-badge]][cat-websocket] | [![actix_web][c-actix_web-badge]][c-actix_web] | |
 | [![cat-http-server][cat-http-server-badge]][cat-http-server] | | |
 
 [All Valid Categories]( https://crates.io/category_slugs )

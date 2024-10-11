@@ -2,9 +2,9 @@
 
 {{#include duration.incl.md}}
 
-## Measure the {{i:elapsed time}} between two code sections
+## Measure the elapsed time between two code sections
 
-[![std][c-std-badge]][c-std]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![std][c-std-badge]][c-std]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time] {{hi:elapsed time}}
 
 Measures [`{{i:time::Instant::elapsed}}`][c-std::time::Instant::elapsed]⮳ since [`{{i:time::Instant::now}}`][c-std::time::Instant::now]⮳
 

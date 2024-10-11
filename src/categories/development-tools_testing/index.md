@@ -28,7 +28,7 @@ Tools to help you verify the {{i:correctness}} of your code.
 
 [![approx][c-approx-badge]][c-approx]  [`{{i:Approx}}`][c-Approx]⮳
 
-[cargo-nextest][c-cargo-nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[cargo_nextest][cargo_nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

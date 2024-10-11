@@ -4,7 +4,7 @@
 
 ## Verify and extract login from an email address
 
-[![regex][c-regex-badge]][c-regex]  [![lazy-static][c-lazy-static-badge]][c-lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][c-regex-badge]][c-regex]  [![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Validates that an {{i:email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
@@ -14,7 +14,7 @@ Validates that an {{i:email address}} is formatted correctly, and extracts every
 
 ## Extract a list of unique #Hashtags from a text
 
-[![regex][c-regex-badge]][c-regex]  [![lazy-static][c-lazy-static-badge]][c-lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][c-regex-badge]][c-regex]  [![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Extracts, sorts, and deduplicates list of {{i:hashtags}} from text.
 
@@ -48,7 +48,7 @@ A [`{{i:regex::RegexSetBuilder}}`][c-regex::RegexSetBuilder]⮳ composes a [`{{i
 
 ## Replace all occurrences of one text pattern with another pattern
 
-[![regex][c-regex-badge]][c-regex]  [![lazy-static][c-lazy-static-badge]][c-lazy-static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][c-regex-badge]][c-regex]  [![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
 Replaces all occurrences of the standard {{i:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English {{i:date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 

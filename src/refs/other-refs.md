@@ -319,7 +319,7 @@
 [unix-syslog-website]: https://www.gnu.org/software/libc/manual/html_node/Overview-of-Syslog.html
 [web-application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 [wikipedia-haversine-formula]: https://en.wikipedia.org/wiki/Haversine_formula
-[wikipedia-percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
+[wikipedia-percent_encoding]: https://en.wikipedia.org/wiki/percent-encoding
 [wikipedia-race-condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
 [wikipedia-uniform-distribution]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)
 [wikipedia-unix-timestamp]: https://en.wikipedia.org/wiki/Unix_time

@@ -2,9 +2,9 @@
 
 {{#include csv.incl.md}}
 
-## Read {{i:CSV}} records
+## Read CSV records
 
-[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:csv}}
 
 Reads standard CSV records into [`{{i:csv::StringRecord}}`][c-csv::StringRecord]⮳ — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
 [`{{i:csv::ByteRecord}}`][c-csv::ByteRecord]⮳ makes no assumptions about UTF-8.
@@ -19,9 +19,9 @@ Reads standard CSV records into [`{{i:csv::StringRecord}}`][c-csv::StringRecord]
 {{#include ../../../deps/tests/read1.rs}}
 ```
 
-## Read CSV records with different {{i:delimiter}}
+## Read CSV records with different delimiter
 
-[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi: delimiter}}
 
 Reads CSV records with a tab [`{{i:delimiter}}`][c-csv::ReaderBuilder::delimiter]⮳.
 

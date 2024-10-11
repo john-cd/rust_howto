@@ -51,9 +51,9 @@ Find JSON files modified within the last day in the current directory. Using [`{
 {{#include ../../../deps/tests/find-file.rs}}
 ```
 
-## Traverse directories while {{i:skipping dotfiles}}
+## Traverse directories while skipping dotfiles
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] {{hi:skipping dotfiles}}
 
 Uses [`{{i:filter_entry}}`][c-walkdir::IntoIter::filter_entry]⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`{{i:Iterator::filter}}`][c-std::iter::Iterator::filter]⮳ applies to each [`{{i:WalkDir::DirEntry}}`][c-walkdir::IntoIter::filter_entry]⮳ even if the parent is a hidden directory.
 
@@ -63,9 +63,9 @@ Root dir `"."` yields through [`{{i:WalkDir::depth}}`][c-walkdir::WalkDir::depth
 {{#include ../../../deps/tests/skip-dot.rs}}
 ```
 
-## Recursively calculate {{i:file sizes}} at given depth
+## Recursively calculate file sizes at given depth
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] {{hi:file sizes}}
 
 Recursion depth can be flexibly set by [`{{i:WalkDir::min_depth}}`][c-walkdir::Walkdir::min_depth]⮳ & [`{{i:WalkDir::max_depth}}`][c-walkdir::WalkDir::max_depth]⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 

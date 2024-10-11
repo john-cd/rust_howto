@@ -2,9 +2,9 @@
 
 {{#include config_log.incl.md}}
 
-## Enable {{i:log levels}} per module
+## Enable log levels per module
 
-[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:log levels}}
 
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`{{i:RUST_LOG}}`][c-env_logger-RUST_LOG]⮳ environmental variable.
 
@@ -44,9 +44,9 @@ All these steps are normally done internally by [`{{i:env_logger::init}}`][c-env
 {{#include ../../../deps/tests/log-env-variable.rs}}
 ```
 
-## Include {{i:timestamp}} in log messages
+## Include timestamp in log messages
 
-[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono]  [![cat-debugging][cat-debugging-badge]][cat-debugging] {{hi:timestamp}}
 
 Creates a {{i:custom logger}} configuration with [`{{i:Builder}}`][c-env_logger::Builder]⮳
 Each log entry calls [`{{i:Local::now}}`][c-chrono::offset::Local::now]⮳ to get the current [`{{i:DateTime}}`][c-chrono::DateTime]⮳ in local timezone and uses [`{{i:DateTime::format}}`][c-chrono::DateTime::format]⮳ with [`{{i:strftime::specifiers}}`][c-chrono::format::strftime]⮳ to format a timestamp used in the final log.

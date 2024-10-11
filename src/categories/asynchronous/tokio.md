@@ -13,10 +13,10 @@
 ## Key links
 
 - [`{{i:Tokio}}`][c-tokio]⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
-- [`Tokio` glossary][c-tokio-glossary]⮳
-- [`Tokio` tutorial][c-tokio-tutorial]⮳
-- [![tokio-examples][c-tokio-examples-badge]][c-tokio-examples]
-- Tokio mini-Redis example: [![tokio-mini-redis][c-tokio-mini-redis-badge]][c-tokio-mini-redis]
+- [`Tokio` glossary][c-tokio_glossary-website]⮳
+- [`Tokio` tutorial][c-tokio_tutorial]⮳
+- [![tokio_examples][c-tokio_examples-badge]][c-tokio_examples]
+- Tokio mini-Redis example: [![tokio-mini-redis][c-tokio_mini_redis-github-badge]][c-tokio_mini_redis-github]
 - Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template-github][rust-tokio-template-github-badge]][rust-tokio-template-github]
 
 ## Graceful shutdown

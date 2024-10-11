@@ -28,7 +28,7 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 [![slint][c-slint-badge]][c-slint]  [![slint-website][c-slint-website-badge]][c-slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]
 
-[![iced-rs][c-iced-rs-badge]][c-iced-rs]  [![iced-rs-github][c-iced-rs-github-badge]][c-iced-rs-github] is a cross-platform GUI library for Rust, inspired by Elm.
+[![iced][c-iced-badge]][c-iced]  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
 
 [![druid][c-druid-badge]][c-druid]  [![druid-github][c-druid-github-badge]][c-druid-github] is a data-first Rust-native UI design toolkit (experimental).
 

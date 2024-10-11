@@ -38,7 +38,7 @@ The [`{{i:futures}}`][c-futures]⮳ crate provides an extension trait that provi
 
 ## See also
 
-[![futures-executor][c-futures-executor-badge]][c-futures-executor]
+[![futures_executor][c-futures_executor-badge]][c-futures_executor]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

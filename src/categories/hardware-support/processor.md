@@ -2,11 +2,11 @@
 
 {{#include processor.incl.md}}
 
-## Check number of {{i:logical cpu cores}}
+## Check number of logical cpu cores
 
-[![num-cpus][c-num-cpus-badge]][c-num-cpus]  [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]
+[![num_cpus][c-num_cpus-badge]][c-num_cpus]  [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support] {{hi:logical cpu cores}}
 
-Shows the number of logical {{i:CPU cores}} in current machine using [`{{i:num-cpus::get}}`][c-num-cpus::get]⮳.
+Shows the number of logical {{i:CPU cores}} in current machine using [`{{i:num_cpus::get}}`][c-num_cpus::get]⮳.
 
 ```rust,editable
 {{#include ../../../deps/tests/cpu-count.rs}}

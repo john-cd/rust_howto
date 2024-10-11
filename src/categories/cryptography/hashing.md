@@ -4,7 +4,7 @@
 
 ## Calculate the SHA-256 digest of a file
 
-[![ring][c-ring-badge]][c-ring]  [![data-encoding][c-data-encoding-badge]][c-data-encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
+[![ring][c-ring-badge]][c-ring]  [![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
 
 Writes some data to a file, then calculates the {{i:SHA-256}} [`{{i:digest::Digest}}`][c-digest::Digest]⮳ of the file's contents using [`{{i:digest::Context}}`][c-digest::Context]⮳
 

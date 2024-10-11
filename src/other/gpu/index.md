@@ -2,9 +2,9 @@
 
 {{#include index.incl.md}}
 
-## `rust-gpu`
+## `rust_gpu`
 
-[![rust-gpu-github][c-rust-gpu-github-badge]][c-rust-gpu-github]
+[![rust_gpu-github][c-rust_gpu-github-badge]][c-rust_gpu-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

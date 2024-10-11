@@ -18,9 +18,9 @@ A number of third-party libraries support [`{{i:Tower}}`][c-tower]⮳ and the [`
 
 ## Tower HTTP
 
-[![tower-http][c-tower-http-badge]][c-tower-http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![tower_http][c-tower_http-badge]][c-tower_http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
-[`{{i:Tower HTTP}}`][c-tower-http]⮳ contains HTTP specific Tower utilities.
+[`{{i:Tower HTTP}}`][c-tower_http]⮳ contains HTTP specific Tower utilities.
 
 ```rust,noplayground,ignore
 {{#include ../../../deps/tests/tower_http.rs}}

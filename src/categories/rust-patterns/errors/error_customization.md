@@ -55,9 +55,9 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [![eyre][c-eyre-badge]][c-eyre]
 
-[![error-chain][c-error-chain-badge]][c-error-chain]
+[![error_chain][c-error_chain-badge]][c-error_chain]
 
-Do not use [Error Chain][c-error-chain]⮳, which is deprecated.
+Do not use [Error Chain][c-error_chain]⮳, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

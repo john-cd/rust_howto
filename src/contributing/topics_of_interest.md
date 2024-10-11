@@ -1,7 +1,7 @@
 # Topics of interest
 
-- Async: tokio, async-std and related, async_channels
-- CD / CI, rust-cache
+- Async: tokio, async_std and related, async_channels
+- CD / CI, rust_cache
 - Macros
 - [`{{i:http}}`][c-http]⮳ crate, [`{{i:hyper}}`][c-hyper]⮳
 - Python interop: [`{{i:pyo3}}`][c-pyo3-website]⮳
@@ -22,7 +22,7 @@
 - [`{{i:tonic}}`][c-tonic]⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
 - [`{{i:redis}}`][c-redis]⮳, [`{{i:mongodb}}`][c-mongodb]⮳, [`{{i:elasticsearch}}`][c-elasticsearch-github]⮳
-- Cargo & project integration via [`{{i:cargo-edit}}`][c-cargo-edit]
+- Cargo & project integration via [`{{i:cargo_edit}}`][c-cargo_edit]
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits

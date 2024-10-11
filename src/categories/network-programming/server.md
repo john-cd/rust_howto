@@ -2,9 +2,9 @@
 
 {{#include server.incl.md}}
 
-## Listen on unused port {{i:TCP/IP}}
+## Listen on unused port TCP/IP
 
-[![std][c-std-badge]][c-std]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]
+[![std][c-std-badge]][c-std]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] {{hi:TCP/IP}}
 
 In this example, the {{i:port}} is displayed on the console, and the program will listen until a request is made. [`{{i:SocketAddrV4}}`][c-std::net::SocketAddrV4]⮳ assigns a random port when setting port to 0.
 

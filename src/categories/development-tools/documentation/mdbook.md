@@ -17,6 +17,6 @@ mdbook serve --open
 
 [mdBook documentation][c-mdbook-documentation]⮳
 
-[![mdbook-hide-github][c-mdbook-hide-github-badge]][c-mdbook-hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include ../../../refs/link-refs.md}}

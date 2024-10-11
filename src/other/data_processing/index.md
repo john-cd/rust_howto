@@ -8,9 +8,9 @@
 
 ## Arrow
 
-[![arrow-rs][c-arrow-rs-badge]][c-arrow-rs]  [![arrow-rs-github][c-arrow-rs-github-badge]][c-arrow-rs-github]
+[![arrow][c-arrow-badge]][c-arrow]  [![arrow-github][c-arrow-github-badge]][c-arrow-github]
 
-`Arrow-rs` is the official Rust implementation of `Apache Arrow`
+`arrow` is the official Rust implementation of `Apache Arrow`
 
 ## Datafusion
 

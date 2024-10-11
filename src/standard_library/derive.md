@@ -8,13 +8,13 @@ The [`{{i:derive}}`][book-rust-reference-derive]⮳ {{i:attribute}} generates co
 
 {{#playground ../../deps/tests/derive.rs editable}}
 
-You can use the `{{i:cargo-expand}}` utility to see the exact code that is generated for your specific type.
+You can use the `{{i:cargo_expand}}` utility to see the exact code that is generated for your specific type.
 
 ## Derive More
 
-[![derive-more][c-derive-more-badge]][c-derive-more]
+[![derive_more][c-derive_more-badge]][c-derive_more]
 
-[Derive More (crates)][c-derive-more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both {{i:structs}} and {{i:enums}}.
+[Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both {{i:structs}} and {{i:enums}}.
 
 ```rust,editable,noplayground
 {{#include ../../deps/tests/derive_more.rs}}

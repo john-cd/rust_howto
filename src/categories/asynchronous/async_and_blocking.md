@@ -42,7 +42,7 @@ If a {{i:blocking operation}} keeps running forever, you should run it on a {{i:
 
 ## Call async code from blocking code
 
-[Bridging with sync code][c-tokio-bridging-with-sync-code]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[Bridging with sync code][c-tokio_bridging_with_sync_code-website]⮳  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 In other cases, it may be easier to structure the application as largely {{i:synchronous}}, with smaller or logically distinct {{i:asynchronous}} portions. For instance, a {{i:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
@@ -50,7 +50,7 @@ In other cases, it may be easier to structure the application as largely {{i:syn
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-[`{{i:futures-executor}}`][c-futures-executor]⮳ includes a minimal executor [`{{i:block_on}}`][c-futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`{{i:futures_executor}}`][c-futures_executor]⮳ includes a minimal executor [`{{i:block_on}}`][c-futures_executor::block_on]⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}

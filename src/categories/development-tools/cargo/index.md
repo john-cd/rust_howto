@@ -2,9 +2,9 @@
 
 {{#include index.incl.md}}
 
-## Basic `{{i:cargo}}` usage
+## Basic cargo usage
 
-[The Cargo book][book-cargo]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[The Cargo book][book-cargo]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] {{hi:cargo}}
 
 `cargo help` or `cargo <command> --help`
 

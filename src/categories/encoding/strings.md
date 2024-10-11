@@ -4,9 +4,9 @@
 
 ## Percent-encode a string
 
-[![percent-encoding][c-percent-encoding-badge]][c-percent-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-Encode an input string with [percent-encoding][wikipedia-percent-encoding]⮳ using the [`{{i:utf8_percent_encode}}`][c-percent_encoding::utf8_percent_encode]⮳ function from the `{{i:percent-encoding}}` crate. Then decode using the [`{{i:percent_decode}}`][c-percent_encoding::percent_decode]⮳ function.
+Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ using the [`{{i:utf8_percent_encode}}`][c-percent_encoding::utf8_percent_encode]⮳ function from the `{{i:percent_encoding}}` crate. Then decode using the [`{{i:percent_decode}}`][c-percent_encoding::percent_decode]⮳ function.
 
 ```rust,editable
 {{#include ../../../deps/tests/percent-encode.rs}}
@@ -28,9 +28,9 @@ Encodes a string into [`{{i:application/x-www-form-urlencoded}}`][web-applicatio
 
 ## Encode and decode hex
 
-[![data-encoding][c-data-encoding-badge]][c-data-encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
 
-The [`{{i:data_encoding}}`][c-data-encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`{{i:String}}`][c-std::string::String]⮳ containing the {{i:hexadecimal representation}} of the data.
+The [`{{i:data_encoding}}`][c-data_encoding]⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`{{i:String}}`][c-std::string::String]⮳ containing the {{i:hexadecimal representation}} of the data.
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 

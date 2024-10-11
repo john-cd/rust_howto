@@ -2,9 +2,9 @@
 
 {{#include external.incl.md}}
 
-## Run an {{i:external command}} and process {{i:stdout}}
+## Run an external command and process stdout
 
-[![regex][c-regex-badge]][c-regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
+[![regex][c-regex-badge]][c-regex]  [![cat-os][cat-os-badge]][cat-os]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] {{hi:external command}}{{hi:stdout}}
 
 Runs `git log --oneline` as an external [`{{i:Command}}`][c-std::process::Command]⮳ and inspects its [`{{i:Output}}`][c-std::process::Output]⮳ using [`{{i:Regex}}`][c-regex::Regex]⮳ to get the hash and message of the last 5 commits.
 
@@ -12,9 +12,9 @@ Runs `git log --oneline` as an external [`{{i:Command}}`][c-std::process::Comman
 {{#include ../../../deps/tests/process-output.rs}}
 ```
 
-## Run an {{i:external command}} passing it stdin and check for an error code
+## Run an external command passing it stdin and check for an error code
 
-[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os] {{hi:external command}}
 
 Opens the `python` interpreter using an external [`{{i:Command}}`][c-std::process::Command]⮳ and passes it a python statement for execution. [`{{i:Output}}`][c-std::process::Output]⮳ of statement is then parsed.
 
@@ -22,9 +22,9 @@ Opens the `python` interpreter using an external [`{{i:Command}}`][c-std::proces
 {{#include ../../../deps/tests/send-input.rs}}
 ```
 
-## Run {{i:piped external commands}}
+## Run piped external commands
 
-[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
+[![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os] {{hi:piped external commands}}
 
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
 
@@ -39,7 +39,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
-Spawns a child process and redirects [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳ to the same file. It follows the same idea as [run piped external commands](#run-ipiped-external-commands), however [`{{i:process::Stdio}}`][c-std::process::Stdio]⮳ writes to a specified file. [`{{i:File::try_clone}}`][c-std::fs::File::try_clone]⮳ references the same file handle for [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳ to the same file. It follows the same idea as [run piped external commands](#run-piped-external-commands), however [`{{i:process::Stdio}}`][c-std::process::Stdio]⮳ writes to a specified file. [`{{i:File::try_clone}}`][c-std::fs::File::try_clone]⮳ references the same file handle for [`{{i:stdout}}`][c-std::io::Stdout]⮳ and [`{{i:stderr}}`][c-std::io::Stderr]⮳. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
@@ -51,7 +51,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 
 [![std][c-std-badge]][c-std]  [![cat-os][cat-os-badge]][cat-os]
 
-In [Run an external command and process stdout](#run-an-iexternal-command-and-process-istdout), processing doesn't start until external [`{{i:Command}}`][c-std::process::Command] is finished. The recipe below calls [`{{i:Stdio::piped}}`][c-std::process::Stdio::piped]⮳ to create a pipe, and reads
+In [Run an external command and process stdout](#run-an-external-command-and-process-stdout), processing doesn't start until external [`{{i:Command}}`][c-std::process::Command] is finished. The recipe below calls [`{{i:Stdio::piped}}`][c-std::process::Stdio::piped]⮳ to create a pipe, and reads
 [`{{i:stdout}}`][c-std::io::Stdout]⮳ continuously as soon as the [`{{i:BufReader}}`][c-std::io::BufReader]⮳ is updated.
 
 The below recipe is equivalent to the Unix shell command

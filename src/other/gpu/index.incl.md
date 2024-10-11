@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [rust-gpu][ex-rust-gpu] | [![rust-gpu-github][c-rust-gpu-github-badge]][c-rust-gpu-github] | |
+| [rust_gpu][ex-rust_gpu] | [![rust_gpu-github][c-rust_gpu-github-badge]][c-rust_gpu-github] | |

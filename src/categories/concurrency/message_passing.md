@@ -16,7 +16,7 @@ Message passing in [`{{i:async}}`][book-rust-reference-async]⮳ programming is 
 
 ## Crossbeam_channel
 
-[![crossbeam-channel][c-crossbeam-channel-badge]][c-crossbeam-channel]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
 Multi-producer {{i:multi-consumer channels}} for message passing.
 

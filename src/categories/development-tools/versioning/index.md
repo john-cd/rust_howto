@@ -2,9 +2,9 @@
 
 {{#include index.incl.md}}
 
-## Parse and increment a {{i:version string}}
+## Parse and increment a version string
 
-[![semver][c-semver-badge]][c-semver]  [![cat-config][cat-config-badge]][cat-config]
+[![semver][c-semver-badge]][c-semver]  [![cat-config][cat-config-badge]][cat-config] {{i:version string}}
 
 Constructs a [`{{i:semver::Version}}`][c-semver::Version]⮳ from a string literal using [`{{i:Version::parse}}`][c-semver::Version::parse]⮳ then increments it by patch, minor, and major version number one by one.
 

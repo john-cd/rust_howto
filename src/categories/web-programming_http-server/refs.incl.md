@@ -5,5 +5,5 @@
 [ex-cors]: cors.md
 [ex-static-website-generators]: static_website_generators.md
 [ex-tower]: middleware.md#tower
-[ex-tower-http]: middleware.md#tower-http
+[ex-tower_http]: middleware.md#tower_http
 [ex-alternatives]: middleware.md#alternatives

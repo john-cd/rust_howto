@@ -2,9 +2,9 @@
 
 {{#include parse.incl.md}}
 
-## Examine the {{i:date and time}}
+## Examine the date and time
 
-[![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
+[![chrono][c-chrono-badge]][c-chrono]  [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time] {{hi:date and time}}
 
 Gets the current UTC [`{{i:DateTime}}`][c-chrono::DateTime]⮳ and its {{i:hour/minute/second}} via [`{{i:Timelike}}`][c-chrono::Timelike]⮳ and its {{i:year/month/day/weekday}} via [`{{i:Datelike}}`][c-chrono::Datelike]⮳
 

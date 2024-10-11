@@ -34,7 +34,7 @@
 
 ### Compilation caching
 
-[`{{i:rust-cache}}`][c-rust-cache-github]⮳
+[`{{i:rust_cache}}`][c-rust_cache-github]⮳
 
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 

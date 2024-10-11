@@ -4,4 +4,4 @@
 [ex-polars]: data_processing/index.md#polars
 [ex-arrow]: data_processing/index.md#arrow
 [ex-datafusion]: data_processing/index.md#datafusion
-[ex-rust-gpu]: gpu/index.md#rust-gpu
+[ex-rust_gpu]: gpu/index.md#rust_gpu

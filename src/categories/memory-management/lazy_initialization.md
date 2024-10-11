@@ -14,9 +14,9 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ## Older library
 
-[![once-cell][c-once-cell-badge]][c-once-cell]  [![once-cell-lib.rs][c-once-cell-lib.rs-badge]][c-once-cell-lib.rs]⮳  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![once_cell][c-once_cell-badge]][c-once_cell]  [![once_cell-lib.rs][c-once_cell-lib.rs-badge]][c-once_cell-lib.rs]⮳  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
 
-[`{{i:once_cell}}`][c-once-cell]⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A OnceCell might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. `once_cell` also has a [`{{i:Lazy}}<T>`][c-once_cell::sync::Lazy]⮳ type, build on top of [`{{i:OnceCell}}`][c-once_cell::sync::OnceCell]⮳:
+[`{{i:once_cell}}`][c-once_cell]⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A OnceCell might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. `once_cell` also has a [`{{i:Lazy}}<T>`][c-once_cell::sync::Lazy]⮳ type, build on top of [`{{i:OnceCell}}`][c-once_cell::sync::OnceCell]⮳:
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/once_cell2.rs}}
@@ -26,7 +26,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
 
-[![lazy-static][c-lazy-static-badge]][c-lazy-static]
+[![lazy_static][c-lazy_static-badge]][c-lazy_static]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

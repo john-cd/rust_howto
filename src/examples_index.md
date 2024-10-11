@@ -57,7 +57,7 @@
 [ex-convert-cow-to-str]: standard_library/cow.md#convert-cow-to-str
 [ex-convert-cow-to-string]: standard_library/cow.md#convert-cow-to-string
 [ex-derive]: standard_library/derive.md#automatic-trait-derivation
-[ex-derive-more]: standard_library/derive.md#derive-more
+[ex-derive_more]: standard_library/derive.md#derive-more
 [ex-hashmap]: standard_library/hashmaps.md
 [ex-option-adapters]: standard_library/option.md#adapters-for-working-with-references
 [ex-combinators]: standard_library/option.md#combinators
@@ -117,9 +117,9 @@
 
 {{#include categories/asynchronous/async_and_blocking.incl.md}}
 
-[ex-async-traits]: categories/asynchronous/async_traits.md
+[ex-async_traits]: categories/asynchronous/async_traits.md
 [ex-tokio]: categories/asynchronous/tokio.md
-[ex-async-channels]: categories/asynchronous/async_channels.md
+[ex-async_channels]: categories/asynchronous/async_channels.md
 [ex-streams]: categories/asynchronous/streams.md
 [ex-futures]: categories/asynchronous/futures.md
 [ex-mix-async-and-blocking]: categories/asynchronous/async_and_blocking.md
@@ -223,7 +223,7 @@
 [ex-rayon-map-reduce]: categories/concurrency/parallel.md#map-reduce-in-parallel
 [ex-rayon-thumbnails]: categories/concurrency/parallel.md#generate-jpg-thumbnails-in-parallel
 [ex-mutex]: categories/concurrency/shared_state/index.md#mutex
-[ex-parking-lot]: categories/concurrency/shared_state/index.md#parking-lot
+[ex-parking_lot]: categories/concurrency/shared_state/index.md#parking-lot
 [ex-atomics]: categories/concurrency/shared_state/index.md#atomics
 [ex-concurrent-data-structures]: categories/concurrency/shared_state/concurrent_data_structures.md
 
@@ -447,7 +447,7 @@
 [ex-urlencoded]: categories/encoding/strings.md#encode-a-string-as-applicationx-www-form-urlencoded
 [ex-hex-encode-decode]: categories/encoding/strings.md#encode-and-decode-hex
 [ex-base64]: categories/encoding/strings.md#encode-and-decode-base64
-[ex-csv-read]: categories/encoding/csv.md#read-icsv-records
+[ex-csv-read]: categories/encoding/csv.md#read-csv-records
 [ex-csv-delimiter]: categories/encoding/csv.md#read-csv-records-with-different-delimiter
 [ex-csv-filter]: categories/encoding/csv.md#filter-csv-records-matching-a-predicate
 [ex-invalid-csv]: categories/encoding/csv.md#handle-invalid-csv-data-with-serde
@@ -486,7 +486,7 @@
 
 {{#include other/gpu/index.incl.md}}
 
-[ex-rust-gpu]: other/gpu/index.md#rust-gpu
+[ex-rust_gpu]: other/gpu/index.md#rust_gpu
 
 ## Hardware Support
 
@@ -568,9 +568,9 @@
 
 {{#include categories/rust-patterns/index.incl.md}}
 
-[ex-error-chain-simple-error-handling]: categories/rust-patterns/errors/handle.md#handle-errors-correctly-in-main
-[ex-error-chain-avoid-discarding]: categories/rust-patterns/errors/handle.md#avoid-discarding-errors-during-error-conversions
-[ex-error-chain-backtrace]: categories/rust-patterns/errors/handle.md#obtain-backtrace-of-complex-error-scenarios
+[ex-error_chain-simple-error-handling]: categories/rust-patterns/errors/handle.md#handle-errors-correctly-in-main
+[ex-error_chain-avoid-discarding]: categories/rust-patterns/errors/handle.md#avoid-discarding-errors-during-error-conversions
+[ex-error_chain-backtrace]: categories/rust-patterns/errors/handle.md#obtain-backtrace-of-complex-error-scenarios
 
 ## Science
 
@@ -681,7 +681,7 @@
 [ex-cors]: categories/web-programming_http-server/cors.md
 [ex-static-website-generators]: categories/web-programming_http-server/static_website_generators.md
 [ex-tower]: categories/web-programming_http-server/middleware.md#tower
-[ex-tower-http]: categories/web-programming_http-server/middleware.md#tower-http
+[ex-tower_http]: categories/web-programming_http-server/middleware.md#tower-http
 [ex-alternatives]: categories/web-programming_http-server/middleware.md#alternatives
 
 ## Links

@@ -1,8 +1,8 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Percent-encode a string][ex-percent-encode] | [![url][c-percent-encoding-badge]][c-url] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
+| [Percent-encode a string][ex-percent-encode] | [![url][c-percent_encoding-badge]][c-url] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Encode a string as application/x-www-form-urlencoded][ex-urlencoded] | [![url][c-url-badge]][c-url] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
-| [Encode and decode hex][ex-hex-encode-decode] | [![data-encoding][c-data-encoding-badge]][c-data-encoding] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
+| [Encode and decode hex][ex-hex-encode-decode] | [![data_encoding][c-data_encoding-badge]][c-data_encoding] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Encode and decode base64][ex-base64] | [![base64][c-base64-badge]][c-base64] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Read CSV records][ex-csv-read] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Read CSV records with different delimiter][ex-csv-delimiter] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |

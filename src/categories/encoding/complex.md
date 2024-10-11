@@ -2,9 +2,9 @@
 
 {{#include complex.incl.md}}
 
-## Serialize and {{i:deserialize}} unstructured {{i:JSON}}
+## Serialize and deserialize unstructured JSON
 
-[![serde_json][c-serde_json-badge]][c-serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![serde_json][c-serde_json-badge]][c-serde_json]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:deserialize}}{{hi:JSON}}
 
 The [`{{i:serde_json}}`][c-serde_json]⮳ crate provides a [`{{i:from_str}}`][c-serde_json::from_str]⮳ function to {{i:parse}} a `&str` of JSON.
 
@@ -16,9 +16,9 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 {{#include ../../../deps/tests/json.rs}}
 ```
 
-## Deserialize a {{i:TOML}} configuration file
+## Deserialize a TOML configuration file
 
-[![toml][c-toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![toml][c-toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:TOML}}
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
@@ -32,9 +32,9 @@ Parse TOML into your own structs using [`{{i:Serde}}`][c-serde]⮳.
 {{#include ../../../deps/tests/toml1.rs}}
 ```
 
-## Read and write integers in {{i:little-endian}} {{i:byte order}}
+## Read and write integers in little-endian byte order
 
-[![byteorder][c-byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![byteorder][c-byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding] {{hi:little-endian}}{{hi:byte order}}
 
 [`{{i:byteorder}}`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 

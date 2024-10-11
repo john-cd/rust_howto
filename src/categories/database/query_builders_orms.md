@@ -10,7 +10,7 @@
 
 ## SeaORM
 
-[![sea-orm][c-sea-orm-badge]][c-sea-orm]  [![sea-orm-website][c-sea-orm-website-badge]][c-sea-orm-website]  [![sea-orm-cookbook][c-sea-orm-cookbook-badge]][c-sea-orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]
+[![sea_orm][c-sea_orm-badge]][c-sea_orm]  [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website]  [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]
 
 [Seaography GraphQL server][c-seography-website]⮳
 
