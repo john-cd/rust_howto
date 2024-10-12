@@ -1,14 +1,14 @@
-# $category
+# $category$
 
-$category-description
+$category-description$
 
-## $section1
+## $section1$
 
 {{#include $section1.incl.md}}
 
-## $section2
+## $section2$
 
-{{#include $section2.incl.md}}
+{{#include $section2$.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
