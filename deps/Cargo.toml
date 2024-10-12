@@ -57,6 +57,7 @@ image = "0.25"
 lazy_static = "1"
 log = "0.4"
 log4rs = "1"
+lru = "0.12.5"
 memmap = "0.7"
 miette = { version = "7", features = ["fancy"] }
 mime = "0.3"
