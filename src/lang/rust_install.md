@@ -47,3 +47,6 @@ cargo run # run the executable
 `cargo run` builds the code if `cargo build` has not been invoked before or the code has changed.
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO: expand
+</div>

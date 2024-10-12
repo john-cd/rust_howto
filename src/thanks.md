@@ -23,3 +23,6 @@ It is also inspired from online websites, blogs, and documentation, including:
 This site is not affiliated with the [Rust Foundation][rust-foundation]⮳.
 
 {{#include refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

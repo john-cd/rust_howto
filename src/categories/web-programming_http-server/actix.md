@@ -13,3 +13,6 @@ Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examp
 [Practical Rust Web Development - API Rest][blog-practical-rust]⮳
 
 {{#include ../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

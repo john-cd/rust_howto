@@ -22,3 +22,6 @@ Binstall works by fetching the crate information from crates.io and searching th
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

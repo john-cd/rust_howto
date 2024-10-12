@@ -64,3 +64,6 @@ See [Automatic derivation](../standard_library/derive.md).
 [Rust by example - attributes][book-rust-by-example-attributes]⮳
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

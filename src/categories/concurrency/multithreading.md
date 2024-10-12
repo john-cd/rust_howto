@@ -58,3 +58,6 @@ Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::j
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

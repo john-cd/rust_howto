@@ -10,3 +10,6 @@ Shared solutions for particular situations specific to programming in Rust.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

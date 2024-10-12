@@ -8,3 +8,6 @@ Tooling to help adapting internationalized software to specific languages and re
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

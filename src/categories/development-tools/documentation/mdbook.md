@@ -20,3 +20,6 @@ mdbook serve --open
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include ../../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

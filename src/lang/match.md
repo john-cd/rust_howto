@@ -23,3 +23,6 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 [Pattern matching][book-rust-pattern-matching]⮳
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

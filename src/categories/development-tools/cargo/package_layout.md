@@ -39,3 +39,6 @@ If you’re building a non-end product, such as a rust library that other rust p
 - If a package contains `src/main.rs`{{hi:src/main.rs}} and `src/lib.rs`{{hi:src/lib.rs}}, it has two crates: a binary and a library, both with the same name as the package.
 
 {{#include ../../../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

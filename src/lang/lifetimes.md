@@ -25,3 +25,6 @@ The generic lifetime{{hi:Lifetime}} `'a` will get the concrete lifetime that is 
 ```
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+</div>

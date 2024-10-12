@@ -67,3 +67,6 @@ Crates mentioned in this book, by alphabetic order.
 [![walkdir][c-walkdir-badge]][c-walkdir]  [![watt][c-watt-badge]][c-watt]  [![yew][c-yew-badge]][c-yew]
 
 {{#include refs/link-refs.md}}
+<div class="hidden">
+TODO: add lru, pyo3, pyoxidizer...
+</div>
