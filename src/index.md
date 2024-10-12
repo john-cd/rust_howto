@@ -45,3 +45,6 @@ The [Rust cookbook][book-rust-cookbook]⮳ demonstrate good practices to accompl
 [standard-library]: standard_library/index.md
 [web-programming]: categories/web-programming/index.md
 {{#include refs/link-refs.md}}
+<div class="hidden">
+TODO: rewrite the intro
+</div>

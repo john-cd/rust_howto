@@ -694,3 +694,10 @@
 [ex-books]: links/books.md
 [ex-companies]: links/companies.md
 {{#include refs/link-refs.md}}
+<div class="hidden">
+TODO
+
+- [ ] add lru
+- [ ] make sure the list of examples is complete
+
+</div>

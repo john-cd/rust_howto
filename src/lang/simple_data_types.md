@@ -22,3 +22,10 @@
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+
+- [ ] table?
+- [ ] add examples
+
+</div>

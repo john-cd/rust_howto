@@ -1,6 +1,9 @@
 # Rust Installation
 
 [Install Rust][rust-install-rust]⮳
+<div class="hidden">
+TODO: header
+</div>
 
 ## Key Steps
 

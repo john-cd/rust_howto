@@ -272,16 +272,16 @@
 [rust-badge]:https://img.shields.io/badge/Rust-tan
 [rust-for-professionals-website]: https://overexact.com/rust-for-professionals/
 [rust-foundation]: https://foundation.rust-lang.org/
-[rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust_how_to-steelblue?logo=github
+[rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
 [rust-howto-deps-tests-github]: https://github.com/john-cd/rust_howto/tree/main/deps/tests/
-[rust-howto-drafts-badge]: https://img.shields.io/badge/rust_how_to_drafts-steelblue?logo=github
+[rust-howto-drafts-badge]: https://img.shields.io/badge/rust__howto_drafts-steelblue?logo=github
 [rust-howto-drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
-[rust-howto-github-badge]: https://img.shields.io/badge/rust_how_to-steelblue?logo=github
+[rust-howto-github-badge]: https://img.shields.io/badge/rust__howto-steelblue?logo=github
 [rust-howto-github]: https://github.com/john-cd/rust_howto
 [rust-howto-src-github]: https://github.com/john-cd/rust_howto/tree/main/src/
 [rust-howto-summary-github]: https://github.com/john-cd/rust_howto/blob/main/src/SUMMARY.md
-[rust-howto-todo-github-badge]: https://img.shields.io/badge/rust_how_to_TODO-steelblue?logo=github
+[rust-howto-todo-github-badge]: https://img.shields.io/badge/rust__howto_TODO-steelblue?logo=github
 [rust-howto-todo-github]: https://github.com/john-cd/rust_howto/blob/main/TODO.md
 [rust-in-vs-code]: https://code.visualstudio.com/docs/languages/rust
 [rust-install-rust]: https://www.rust-lang.org/tools/install

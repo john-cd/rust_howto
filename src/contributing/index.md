@@ -16,14 +16,12 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 ## See also
 
-[Rust Howto's TODO][rust-howto-todo-github]⮳
+[![rust-howto-todo-github][rust-howto-todo-github-badge]][rust-howto-todo-github]
 
 [![rust-howto-contributing][rust-howto-contributing-badge]][rust-howto-contributing]
 
 [![rust-howto-drafts][rust-howto-drafts-badge]][rust-howto-drafts]
 
 [![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
-
-[![rust-howto-todo-github][rust-howto-todo-github-badge]][rust-howto-todo-github]
 
 {{#include ../refs/link-refs.md}}

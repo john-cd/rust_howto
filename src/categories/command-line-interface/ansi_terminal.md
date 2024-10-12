@@ -20,7 +20,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-For anything more complex than plain foreground colour changes, the code needs to construct [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ struct. [`ansi_term::Style::new`][c-ansi_term::Style::new]{{hi:ansi_term::Style::new}}⮳ creates the struct, and properties chained.
+For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ struct. [`ansi_term::Style::new`][c-ansi_term::Style::new]{{hi:ansi_term::Style::new}}⮳ creates the struct, and properties chained.
 
 ```rust,editable
 {{#include ../../../deps/tests/ansi_term-basic1.rs}}

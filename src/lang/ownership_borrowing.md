@@ -45,3 +45,6 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 If you have a mutable reference to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO: add text
+</div>

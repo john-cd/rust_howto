@@ -85,3 +85,6 @@ At present the cookbook is focused on the standard library, and on "core" or "fo
 
 [index]: index.md
 {{#include refs/link-refs.md}}
+<div class="hidden">
+TODO: rewrite
+</div>
