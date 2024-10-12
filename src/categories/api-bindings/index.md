@@ -10,11 +10,15 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 ### Python Interop
 
-[pyo3][c-pyo3-website]⮳
+[![pyo3][c-pyo3-badge]][c-pyo3]  [pyo3 website][c-pyo3-website]⮳  [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
+
+```rust,editable
+{{#include ../../../deps/tests/pyo3.rs}}
+```
 
 ### Rust tools for Python
 
-[pyOxidizer][c-pyoxidizer-github]⮳
+[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]⮳
 
 [Ruff][c-ruff-website]⮳
 
