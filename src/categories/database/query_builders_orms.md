@@ -12,7 +12,7 @@
 
 [![sea_orm][c-sea_orm-badge]][c-sea_orm]  [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website]  [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]
 
-[Seaography GraphQL server][c-seography-website]⮳
+[Seaography GraphQL server][c-seaography-website]⮳
 
 ## Diesel
 

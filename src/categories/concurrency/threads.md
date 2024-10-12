@@ -73,7 +73,7 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 [`image::Rgb::from_channels`][c-image::Rgb::from_channels]{{hi:image::Rgb::from_channels}}⮳ calculates RGB pixel values. Create [`threadpool::ThreadPool`][c-threadpool::ThreadPool]{{hi:threadpool::ThreadPool}}⮳ with thread count equal to number of cores with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
 [`threadpool::ThreadPool::execute`][c-threadpool::ThreadPool::execute]{{hi:threadpool::ThreadPool::execute}}⮳ receives each pixel as a separate job.
 
-[`mpsc::channel`][c-mpsc::channel]{{hi:mpsc::channel}}⮳ receives the jobs and [`std::sync::mpsc::Receiver::recv`][c-std::sync::mpsc::Receiver::recv]{{hi:std::sync::mpsc::Receiver::recv}}⮳ retrieves them.
+[`std::sync::mpsc::channel`][c-std::sync::mpsc::channel]{{hi:std::sync::mpsc::channel}}⮳ receives the jobs and [`std::sync::mpsc::Receiver::recv`][c-std::sync::mpsc::Receiver::recv]{{hi:std::sync::mpsc::Receiver::recv}}⮳ retrieves them.
 [`image::ImageBuffer::put_pixel`][c-image::ImageBuffer::put_pixel]{{hi:image::ImageBuffer::put_pixel}}⮳ uses the data to set the pixel color.
 [`image::ImageBuffer::save`][c-image::ImageBuffer::save]{{hi:image::ImageBuffer::save}}⮳ writes the image to `output.png`.
 
