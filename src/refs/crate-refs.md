@@ -1421,6 +1421,14 @@
 [c-watt-lib.rs-badge]: https://img.shields.io/badge/lib.rs-watt-yellow
 [c-watt-lib.rs]: https://lib.rs/crates/watt
 [c-watt]: https://docs.rs/watt
+[c-lru]: https://docs.rs/lru
+[c-lru-badge]: https://img.shields.io/crates/v/lru?label=lru
+[c-lru-crates.io-badge]: https://img.shields.io/badge/crates.io-lru-crimson
+[c-lru-crates.io]: https://crates.io/crates/lru
+[c-lru-github-badge]: https://img.shields.io/badge/lru-steelblue?logo=github
+[c-lru-github]: https://github.com/jeromefroe/lru-rs
+[c-lru-lib.rs-badge]: https://img.shields.io/badge/lib.rs-lru-yellow
+[c-lru-lib.rs]: https://lib.rs/crates/lru
 [c-windows-badge]: https://img.shields.io/crates/v/windows?label=windows
 [c-windows-crates.io-badge]: https://img.shields.io/badge/crates.io-windows-crimson
 [c-windows-crates.io]: https://crates.io/crates/windows

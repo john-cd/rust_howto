@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  |  | [![cat-caching][cat-caching-badge]][cat-caching] |
+| [LRU cache][ex-lru-cache] | [![lru][c-lru-badge]][c-lru] | [![cat-caching][cat-caching-badge]][cat-caching] |
