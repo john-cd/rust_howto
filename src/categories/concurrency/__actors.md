@@ -29,4 +29,15 @@
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Actors on Rust
+
+- [riker.rs](https://riker.rs/actors/)
+
+A lightweight low-level single-threaded actor runtime [stakker](https://github.com/uazu/stakker)
+
+## Crossbeam
+
+- [crossbeam](https://github.com/crossbeam-rs/crossbeam)
+
 </div>

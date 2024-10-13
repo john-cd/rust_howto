@@ -36,4 +36,9 @@ Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` b
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Sorting + Rust
+
+- A Rust implementation of Glidesort, my stable adaptive quicksort/mergesort hybrid sorting algorithm. [glidesort](https://github.com/orlp/glidesort)
+
 </div>

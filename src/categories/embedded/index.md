@@ -10,4 +10,11 @@ Crates that are primarily useful on embedded devices or without an operating sys
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Embedded Rust
+
+- [rust-lang.org/governance/wgs/embedded](https://www.rust-lang.org/governance/wgs/embedded)
+- [github.com/rust-embedded/rust-raspberrypi-OS-tutorials](https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials)
+- Embassy
+
 </div>

@@ -58,4 +58,14 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Salsa
+
+- [Salsa](https://salsa-rs.github.io/salsa/overview.html)
+
+## Rust compile duration
+
+- [how-i-improved-my-rust-compile-times-by-seventy-five-percent](https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent)
+- [rust-compilation-time](https://www.williballenthin.com/post/rust-compilation-time/)
+
 </div>

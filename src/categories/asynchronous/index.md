@@ -69,4 +69,19 @@ Alternatives to the Tokio async ecosystem include:
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Async Rust
+
+Asynchronous Programming in Rust book [rust-lang.github.io/async-book/01_getting_started/01_chapter.html](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html)
+
+## Kanal
+
+- [Kanal](https://github.com/fereidani/kanal)
+
+## Tokio
+
+- [tokio.rs](https://tokio.rs/)
+- [tokio examples](https://github.com/tokio-rs/tokio/tree/master/examples)
+- [tokio-rs async-stream](https://github.com/tokio-rs/async-stream)
+- [tokio-rs mio](https://github.com/tokio-rs/mio)
 </div>

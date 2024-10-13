@@ -5,3 +5,4 @@
 [ex-arrow]: data_processing/index.md#arrow
 [ex-datafusion]: data_processing/index.md#datafusion
 [ex-rust_gpu]: gpu/index.md#rust_gpu
+[ex-rhai]: scripting/index.md

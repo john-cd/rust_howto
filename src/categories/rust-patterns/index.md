@@ -12,4 +12,13 @@ Shared solutions for particular situations specific to programming in Rust.
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Design Patterns
+
+- [abstract-factory in rust](https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0)
+
+[lens-rs][c-lens]
+
+[c-lens]: https://crates.io/crates/lens-rs
+
 </div>

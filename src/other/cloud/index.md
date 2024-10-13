@@ -24,4 +24,18 @@ Dapr Rust SDK example: [![dapr-rust-examples][dapr-rust-examples-badge]][dapr-ru
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Serverless Rust
+
+- [serverless rust](https://www.serverless.com/plugins/serverless-rust)
+
+## AWS + Rust
+
+- [AWS rust](https://aws.amazon.com/blogs/opensource/sustainability-with-rust/)
+
+## Shuttle
+
+- [docs.shuttle.rs](https://docs.shuttle.rs/introduction/welcome)
+- [shuttle-examples](https://github.com/shuttle-hq/shuttle-examples)
+
 </div>

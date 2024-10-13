@@ -26,4 +26,8 @@ If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrain
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+- Zed
+- [helix-editor.com](https://helix-editor.com/)
+- [analyticsindiamag.com/6-ides-built-for-rust](https://analyticsindiamag.com/6-ides-built-for-rust/)
+
 </div>

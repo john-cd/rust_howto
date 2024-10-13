@@ -16,6 +16,10 @@
 
 {{#include gpu/index.incl.md}}
 
+## Scripting in Rust
+
+{{#include scripting/index.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">

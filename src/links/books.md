@@ -11,4 +11,9 @@
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- [The Little Book of Rust Books](https://lborb.github.io/book/title-page.html#the-little-book-of-rust-books)
+
+Writing Interpreters in Rust: a Guide [rust-hosted-langs/book](https://github.com/rust-hosted-langs/book)
+
 </div>

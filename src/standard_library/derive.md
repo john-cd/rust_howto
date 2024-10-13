@@ -24,4 +24,7 @@ You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code 
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+Derive - The Rust Reference
+<https://doc.rust-lang.org/reference/attributes/derive.html>
 </div>

@@ -456,3 +456,4 @@ rustfmt
 binstall
 WebAssembly
 quant
+pyoxidizer

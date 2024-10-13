@@ -22,4 +22,7 @@
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- [SeaORM](https://www.sea-ql.org/SeaORM/docs/introduction/sea-orm/)
+
 </div>

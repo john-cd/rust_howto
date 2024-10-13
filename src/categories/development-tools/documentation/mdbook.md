@@ -22,4 +22,13 @@ mdbook serve --open
 {{#include ../../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- [mdbook third-party plugins](https://github.com/rust-lang/mdBook/wiki/Third-party-plugins)
+- [mdbook-private](https://github.com/RealAtix/mdbook-private)
+- [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck)
+- [About GitHub Actions for mdBook (rust-lang/mdBook)](https://github.com/peaceiris/actions-mdbook)
+
+Byron-termbook- A runner for `mdbooks` to keep your documentation tested-
+<https://github.com/Byron/termbook>
+
 </div>

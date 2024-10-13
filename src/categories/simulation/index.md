@@ -10,4 +10,7 @@ Crates used to model or construct models for some activity, e.g. to.simulate a n
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- High-performance asynchronous computation framework for system simulation [Asynchronics](https://github.com/asynchronics)
+
 </div>

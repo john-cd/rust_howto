@@ -129,3 +129,13 @@ Example `.github/workflows/<name>.yml`
 <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>⮳
 
 {{#include ../refs/link-refs.md}}
+<div class="hidden">
+TODO:
+
+- [Optimizing CI/CD pipelines in your Rust projects](https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/)
+- [install-action](https://github.com/taiki-e/install-action/) GitHub Action for installing development tools (mainly from GitHub Releases)
+
+Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum
+<https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408>
+
+</div>

@@ -34,6 +34,40 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
+## UI
+
+- A cross-platform GUI library for Rust, inspired by Elm [github.com/iced-rs/iced](https://github.com/iced-rs/iced)
+- Turn any webpage into a desktop app with Rust. [github.com/tw93/Pake](https://github.com/tw93/Pake)
+
+### Slint
+
+- [slint.dev](https://slint.dev/)
+- [Slint (github)](https://github.com/slint-ui/slint/)
+- [madewithslint.com](https://madewithslint.com/)
+
+### GPUI
+
+- [gpui.rs](https://www.gpui.rs/) A fast, productive UI framework for Rust from the creators of [Zed](https://zed.dev/).
+
+### egui 2
+
+- [egui.rs](https://www.egui.rs)
+- [egui_demo_lib](https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs)
+- [docs.rs/egui/latest/egui/widgets/index.html#structs](https://docs.rs/egui/latest/egui/widgets/index.html#structs)
+- [docs.rs/egui/latest/egui/containers](https://docs.rs/egui/latest/egui/containers/index.html)
+- [docs.rs/egui/latest/egui/struct.Ui.html](https://docs.rs/egui/latest/egui/struct.Ui.html#method.checkbox)
+
+### Floem
+
+- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem](https://github.com/linebender/xilem), [Leptos](https://github.com/leptos-rs/leptos) and [rui](https://github.com/audulus/rui), Floem aims to be a high performance declarative UI library requiring minimal user effort.
+- [Floem (github)](https://github.com/lapce/floem)
+- [Floem (docs)](https://docs.rs/floem)
+
+Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development
+<https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development/>
+
 </div>

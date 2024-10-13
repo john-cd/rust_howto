@@ -7,4 +7,7 @@
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- [AdiDoks is a mordern documentation theme](https://adidoks.netlify.app/)
+
 </div>

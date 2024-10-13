@@ -20,4 +20,12 @@ Techniques to help create command line interfaces{{hi:Command line interfaces}},
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+- [Command line apps in Rust](https://rust-cli.github.io/book/index.html#command-line-apps-in-rust)
+- Code for Command-Line Rust (O'Reilly, 2022, ISBN 9781098109417) [command-line-rust](https://github.com/kyclark/command-line-rust/tree/main)
+
+## Ratatui
+
+- [ratatui](https://github.com/ratatui-org/ratatui)
+
 </div>

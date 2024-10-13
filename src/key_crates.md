@@ -14,6 +14,12 @@ or older resources, such as:
 - [![stdx][c-stdx-github-badge]][c-stdx-github]
 
 {{#include refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
+[Best of Rust crates][best-of-rust-crates]
+
+[best-of-rust-crates]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates>
+
 </div>

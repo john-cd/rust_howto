@@ -18,4 +18,8 @@ Interface with database management systems{{hi:Database management systems}}.
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
 TODO:
+
+## Cornucopia for postgres
+
+Generate type-checked Rust from your PostgreSQL: [cornucopia-rs](https://github.com/cornucopia-rs/cornucopi)
 </div>
