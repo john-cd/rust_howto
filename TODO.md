@@ -1,5 +1,11 @@
 # TODO
 
+- [ ] enable / disable linkcheck on demand - need manipulating book.toml? second book.toml? https://www.michaelfbryan.com/mdbook-linkcheck/mdbook_linkcheck/index.html
+- [ ] consider https://github.com/FauconFan/mdbook-cmdrun  A mdbook preprocessor for runnning arbitrary (shell) commands in a markdown file
+- [ ] consider https://benfalk.github.io/mdbook-journal/ or https://github.com/avitex/mdbook-tera for templating
+- [ ] review https://github.com/EngosSoftware/yapp A mdbook preprocessor that simply replaces text in chapters.
+- [ ] review https://github.com/badboy/mdbook-toc  A preprocessor for mdbook to add inline Table of Contents support.
+
 ## Examples
 
 - [ ] fix leaky tests when using nextest on Windows
