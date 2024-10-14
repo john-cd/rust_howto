@@ -17,18 +17,22 @@ TODO:
 
 ## Binary minimizer
 
-How to minimize Rust binary size [min-sized-rust](https://github.com/johnthagen/min-sized-rust)
+How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
 ## Code generators
 
-- [top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers](https://www.marktechpost.com/2024/03/14/top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers/)
+- [top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers][ai-tools-that-can-generate-code]⮳
 
 ## Code verifier
 
-Kani Rust Verifier [kani](https://github.com/model-checking/kani)
+Kani Rust Verifier [kani][kani-github]⮳
 
 ## Formal Methods + Rust
 
-- [rust-formal-methods.github.io](https://rust-formal-methods.github.io/tools.html)
+- [rust-formal-methods.github.io][rust-formal-methods]⮳
 
+[ai-tools-that-can-generate-code]: https://www.marktechpost.com/2024/03/14/top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers/
+[kani-github]: https://github.com/model-checking/kani
+[rust-formal-methods]: https://rust-formal-methods.github.io/tools.html
+[min-sized-rust-github]: https://github.com/johnthagen/min-sized-rust
 </div>

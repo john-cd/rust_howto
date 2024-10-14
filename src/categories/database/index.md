@@ -21,5 +21,7 @@ TODO:
 
 ## Cornucopia for postgres
 
-Generate type-checked Rust from your PostgreSQL: [cornucopia-rs](https://github.com/cornucopia-rs/cornucopi)
+Generate type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
+
+[c-cornucopia-github]: https://github.com/cornucopia-rs/cornucopia
 </div>

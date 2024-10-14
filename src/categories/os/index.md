@@ -4,14 +4,18 @@ Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 
 {{#include external.incl.md}}
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-<div class="hidden">
-TODO:
-
 ## Rust OSes
 
-- An operating system designed for hosting containers [bottlerocket](https://github.com/bottlerocket-os/bottlerocket)
-- Redox: A Rust Operating System [redox](https://github.com/redox-os/redox)
+- An operating system designed for hosting containers [bottlerocket][bottlerocket-github]⮳
+- Redox: A Rust Operating System [redox][redox-github]⮳
+
+[bottlerocket-github]: https://github.com/bottlerocket-os/bottlerocket
+[redox-github]: https://github.com/redox-os/redox
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO:
 
 </div>

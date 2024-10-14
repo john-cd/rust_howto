@@ -56,16 +56,20 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
 ## Salsa
 
-- [Salsa](https://salsa-rs.github.io/salsa/overview.html)
+- [Salsa][salsa-website]⮳
 
 ## Rust compile duration
 
-- [how-i-improved-my-rust-compile-times-by-seventy-five-percent](https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent)
-- [rust-compilation-time](https://www.williballenthin.com/post/rust-compilation-time/)
+- [how-i-improved-my-rust-compile-times-by-seventy-five-percent][how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
+- [rust-compilation-time][rust-compilation-time]⮳
 
+[salsa-website]: https://salsa-rs.github.io/salsa/overview.html
+[how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
+[rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time/
 </div>

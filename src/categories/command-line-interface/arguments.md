@@ -48,7 +48,7 @@ Your favorite number must be 256.
 
 ## Using `clap`'s derive API
 
-[![clap][c-clap-badge]][c-clap]  [(tutorial)]( https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html )  [(cookbook)]( https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html )  [(examples)]( https://github.com/clap-rs/clap/tree/master/examples )  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
+[![clap][c-clap-badge]][c-clap]  [(tutorial)][c-clap-tutorial]  [(cookbook)][c-clap-cookbook]  [![clap examples][c-clap-examples-badge]][c-clap-examples]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/clap.rs}}
@@ -56,6 +56,8 @@ Your favorite number must be 256.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
 </div>

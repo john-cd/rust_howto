@@ -27,17 +27,24 @@
 [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳
 
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
 ## Actors on Rust
 
-- [riker.rs](https://riker.rs/actors/)
+- [riker.rs][c-riker-website]
 
-A lightweight low-level single-threaded actor runtime [stakker](https://github.com/uazu/stakker)
+[c-riker-website]: https://riker.rs/actors
+
+A lightweight low-level single-threaded actor runtime [stakker][stakker-github]
+
+[stakker-github]: https://github.com/uazu/stakker
 
 ## Crossbeam
 
-- [crossbeam](https://github.com/crossbeam-rs/crossbeam)
+- [crossbeam][c-crossbeam-github]
+
+[c-crossbeam-github]: https://github.com/crossbeam-rs/crossbeam
 
 </div>

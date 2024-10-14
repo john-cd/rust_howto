@@ -2,4 +2,5 @@
 
 ## Rhai
 
-- [rhai](https://docs.rs/rhai/latest/rhai/)
+- [rhai][c-rhai]⮳
+[c-rhai]: https://docs.rs/rhai

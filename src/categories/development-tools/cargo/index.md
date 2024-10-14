@@ -80,7 +80,7 @@ Examples of version requirements{{hi:Version requirements}} and the versions tha
 0      :=  >=0.0.0, <1.0.0
 ```
 
-Details in <https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html>⮳
+Details in [Specifying Dependencies][book-cargo-specifying-dependencies]⮳
 
 If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
 

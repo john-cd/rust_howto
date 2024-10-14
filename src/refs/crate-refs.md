@@ -221,6 +221,7 @@
 [c-chrono::offset::Utc::now]: https://docs.rs/chrono/latest/chrono/offset/struct.Utc.html#method.now
 [c-chrono]: https://docs.rs/chrono
 [c-clap-badge]: https://img.shields.io/crates/v/clap?label=clap
+[c-clap-cookbook]: https://docs.rs/clap/latest/clap/_derive/_cookbook/index.html
 [c-clap-crates.io-badge]: https://img.shields.io/badge/crates.io-clap-crimson
 [c-clap-crates.io]: https://crates.io/crates/clap
 [c-clap-examples-badge]: https://img.shields.io/badge/examples-clap-silver
@@ -229,6 +230,7 @@
 [c-clap-github]: https://github.com/clap-rs/clap
 [c-clap-lib.rs-badge]: https://img.shields.io/badge/lib.rs-clap-yellow
 [c-clap-lib.rs]: https://lib.rs/crates/clap
+[c-clap-tutorial]: https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html
 [c-clap::Arg::long]: https://docs.rs/clap/latest/clap/struct.Arg.html#method.long
 [c-clap::Arg::short]: https://docs.rs/clap/latest/clap/struct.Arg.html#method.short
 [c-clap]: https://docs.rs/clap

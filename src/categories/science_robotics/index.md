@@ -20,13 +20,15 @@ Open Rust Robotics: [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 
 [Zenoh][c-zenoh-website]⮳
 
-<div class="hidden">
-<https://www.tangramvision.com/blog/why-rust-for-robots>⮳
-<https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community/>⮳
-</div>
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
+[why-rust-for-robots][why-rust-for-robots]⮳
+[linux-embracing-rust-will-boost-robotics-community][linux-embracing-rust-will-boost-robotics-community]⮳
+
+[linux-embracing-rust-will-boost-robotics-community]: https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community/
+[why-rust-for-robots]: https://www.tangramvision.com/blog/why-rust-for-robots
 </div>

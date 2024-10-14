@@ -12,6 +12,7 @@ Dealing with money: accounting, trading, investments, taxes, banking and payment
 TODO:
 ## RustQuant
 
-- [rustquant](https://lib.rs/crates/rustquant)
+- [rustquant][c-rustquant-lib.rs]⮳
+[c-rustquant-lib.rs]: https://lib.rs/crates/rustquant
 
 </div>

@@ -40,34 +40,58 @@ TODO:
 
 ## UI
 
-- A cross-platform GUI library for Rust, inspired by Elm [github.com/iced-rs/iced](https://github.com/iced-rs/iced)
-- Turn any webpage into a desktop app with Rust. [github.com/tw93/Pake](https://github.com/tw93/Pake)
+- A cross-platform GUI library for Rust, inspired by Elm [iced-rs][c-iced-github]⮳
+- Turn any webpage into a desktop app with Rust [Pake][c-pake-github]⮳
+
+[c-pake-github]: https://github.com/tw93/Pake
+[c-iced-github]: https://github.com/iced-rs/iced
 
 ### Slint
 
-- [slint.dev](https://slint.dev/)
-- [Slint (github)](https://github.com/slint-ui/slint/)
-- [madewithslint.com](https://madewithslint.com/)
+- [slint.dev][c-slint-website]⮳
+- [Slint (github)][c-slint-github]⮳
+- [madewithslint.com][c-slint-madewithslint-website]⮳
+
+[c-slint-github]: https://github.com/slint-ui/slint
+[c-slint-website]: https://slint.dev
+[c-slint-madewithslint-website]: https://madewithslint.com
 
 ### GPUI
 
-- [gpui.rs](https://www.gpui.rs/) A fast, productive UI framework for Rust from the creators of [Zed](https://zed.dev/).
+- [gpui.rs][gpui.rs]⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
+
+[c-zed-website]: https://zed.dev
+[gpui.rs]: https://www.gpui.rs
 
 ### egui 2
 
-- [egui.rs](https://www.egui.rs)
-- [egui_demo_lib](https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs)
-- [docs.rs/egui/latest/egui/widgets/index.html#structs](https://docs.rs/egui/latest/egui/widgets/index.html#structs)
-- [docs.rs/egui/latest/egui/containers](https://docs.rs/egui/latest/egui/containers/index.html)
-- [docs.rs/egui/latest/egui/struct.Ui.html](https://docs.rs/egui/latest/egui/struct.Ui.html#method.checkbox)
+- [egui.rs][c-egui-website]⮳
+- [egui_demo_lib][c-egui_demo_lib-github]⮳
+- [widgets][c-egui-widgets]⮳
+- [egui containers][c-egui-containers]⮳
+- [egui struct.Ui][c-egui::Ui]⮳
+
+[c-egui-containers]: https://docs.rs/egui/latest/egui/containers
+[c-egui::Ui]: https://docs.rs/egui/latest/egui/struct.Ui.html
+[c-egui-website]: https://www.egui.rs
+[c-egui-widgets]: https://docs.rs/egui/latest/egui/widgets/index.html#structs
+[c-egui_demo_lib-github]: https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs
 
 ### Floem
 
-- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem](https://github.com/linebender/xilem), [Leptos](https://github.com/leptos-rs/leptos) and [rui](https://github.com/audulus/rui), Floem aims to be a high performance declarative UI library requiring minimal user effort.
-- [Floem (github)](https://github.com/lapce/floem)
-- [Floem (docs)](https://docs.rs/floem)
+- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem][c-xilem-github]⮳, [Leptos][c-leptos-github]⮳
+and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI library requiring minimal user effort.
+- [Floem (github)][c-floem-github]⮳
+- [Floem (docs)][c-floem]⮳
 
-Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development
-<https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development/>
+[c-rui-github]: https://github.com/audulus/rui
+[c-leptos-github]: https://github.com/leptos-rs/leptos
+[c-floem-github]: https://github.com/lapce/floem
+[c-floem]: https://docs.rs/floem
+[c-xilem-github]: https://github.com/linebender/xilem
+
+[Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][client-side-server-with-rust]⮳
+
+[client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
 
 </div>

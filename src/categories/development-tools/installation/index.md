@@ -4,7 +4,7 @@
 
 ## Rustup
 
-[Rustup](rustup.md)  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[Rustup][p-rustup]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 ## Cargo install
 
@@ -20,8 +20,11 @@ Binstall provides a low-complexity mechanism for installing Rust binaries{{hi:Ru
 
 Binstall works by fetching the crate information from crates.io and searching the linked repository for matching releases and artifacts, falling back to the quickinstall{{hi:quickinstall}} third-party artifact host, to alternate targets as supported, and finally to `cargo install` as a last resort.
 
+[p-rustup]: rustup.md
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
 </div>

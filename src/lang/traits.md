@@ -76,13 +76,15 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 ## Async and traits
 
-See [Async](../categories/asynchronous/index.md)
+See [Async][p-async]⮳
 
 ## See also
 
 [Traits (blog)][blog-traits]⮳
 
+[p-async]: ../categories/asynchronous/index.md
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

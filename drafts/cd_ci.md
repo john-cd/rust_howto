@@ -113,8 +113,13 @@ Example `.github/workflows/<name>.yml`
 
 [Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines]⮳
 
-<https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action>⮳
-<https://github.com/marketplace/actions/upload-a-build-artifact>⮳
+[Creating a docker container action][creating-a-docker-container-action-website]⮳
+
+[creating-a-docker-container-action-website]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+
+["Upload a Build Artifact" Github Action][upload-a-build-artifact-website]⮳
+
+[upload-a-build-artifact-website]: https://github.com/marketplace/actions/upload-a-build-artifact
 
 [`docker-cache`][docker-cache-github]{{hi:docker-cache}}⮳
 
@@ -122,20 +127,30 @@ Example `.github/workflows/<name>.yml`
 
 [Docker GitHub Action][docker-gitHub-action]⮳
 
-<https://docs.docker.com/build/cache/backends/>⮳
+[Cache storage backends][cache-storage-backends]⮳
+[cache-storage-backends]: https://docs.docker.com/build/cache/backends
 
-<https://docs.docker.com/build/ci/github-actions/cache/>⮳
+[Cache management with GitHub Actions][cache-management-with-gitHub-actions-website]⮳
+[cache-management-with-gitHub-actions-website]: https://docs.docker.com/build/ci/github-actions/cache/
 
-<https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action>⮳
+[How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳
+[stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
-- [Optimizing CI/CD pipelines in your Rust projects](https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/)
-- [install-action](https://github.com/taiki-e/install-action/) GitHub Action for installing development tools (mainly from GitHub Releases)
+- [Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳
 
-Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum
-<https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408>
+[blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
+
+- [GitHub Action for installing development tools (mainly from GitHub Releases)][install-action]⮳
+
+[install-action]: https://github.com/taiki-e/install-action/
+
+[Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum][deploying-mdbook-on-github-using-github-action]⮳
+
+[deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
 
 </div>

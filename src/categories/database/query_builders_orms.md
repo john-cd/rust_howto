@@ -23,6 +23,8 @@
 <div class="hidden">
 TODO:
 
-- [SeaORM](https://www.sea-ql.org/SeaORM/docs/introduction/sea-orm/)
+- [SeaORM][seaorm]⮳
+
+[seaorm]: https://www.sea-ql.org/SeaORM/docs/introduction/sea-orm
 
 </div>

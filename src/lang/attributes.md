@@ -35,7 +35,7 @@ List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rus
 
 ## Automatic trait derivation
 
-See [Automatic derivation](../standard_library/derive.md).
+See [Automatic derivation][automatic-derivation].
 
 ## Must Use
 
@@ -63,6 +63,7 @@ See [Automatic derivation](../standard_library/derive.md).
 
 [Rust by example - attributes][book-rust-by-example-attributes]⮳
 
+[automatic-derivation]: ../standard_library/derive.md
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
 TODO:

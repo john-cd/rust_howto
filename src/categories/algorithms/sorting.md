@@ -39,6 +39,7 @@ TODO:
 
 ## Sorting + Rust
 
-- A Rust implementation of Glidesort, my stable adaptive quicksort/mergesort hybrid sorting algorithm. [glidesort](https://github.com/orlp/glidesort)
+- A Rust implementation of Glidesort,a stable adaptive quicksort/mergesort hybrid sorting algorithm: [glidesort][glidesort-github]⮳
 
+[glidesort-github]: https://github.com/orlp/glidesort
 </div>

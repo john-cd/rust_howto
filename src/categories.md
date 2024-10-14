@@ -89,9 +89,11 @@
 | [![cat-websocket][cat-websocket-badge]][cat-websocket] | [![actix_web][c-actix_web-badge]][c-actix_web] | |
 | [![cat-http-server][cat-http-server-badge]][cat-http-server] | | |
 
-[All Valid Categories]( https://crates.io/category_slugs )
+[All Valid Categories][crates.io-category_slugs]⮳
 
+[crates.io-category_slugs]: https://crates.io/category_slugs
 {{#include refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

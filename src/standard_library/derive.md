@@ -25,6 +25,8 @@ You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code 
 <div class="hidden">
 TODO:
 
-Derive - The Rust Reference
-<https://doc.rust-lang.org/reference/attributes/derive.html>
+[Derive][book-rust-reference-derive]⮳
+
+[book-rust-reference-derive]: https://doc.rust-lang.org/reference/attributes/derive.html
+
 </div>

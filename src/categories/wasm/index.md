@@ -22,13 +22,20 @@ TODO:
 
 ## WASM + Rust
 
-- [wasmer.io](https://wasmer.io/)
-- [wasmtime](https://github.com/bytecodealliance/wasmtime)
-- [docs.wasmtime.dev](https://docs.wasmtime.dev/introduction.html)
-- [rustwasm.github.io](https://rustwasm.github.io/docs/book/reference/deploying-to-production.html)
+- [wasmer.io][wasmer-website]⮳
+- [wasmtime][c-wasmtime-github]⮳
+- [docs.wasmtime.dev][c-wasmtime-docs]⮳
+- [rustwasm.github.io][c-rustwasm-website]⮳
+
+[c-rustwasm-website]: https://rustwasm.github.io/docs/book/reference/deploying-to-production.html
+[c-wasmtime-github]: https://github.com/bytecodealliance/wasmtime
+[wasmer-website]: https://wasmer.io
+[c-wasmtime-docs]: https://docs.wasmtime.dev/introduction.html
 
 ## Rust WASM example code
 
-- [rust-yew-realworld-example-app](https://github.com/jetli/rust-yew-realworld-example-app)
+- [rust-yew-realworld-example-app][rust-yew-realworld-example-app-github]⮳
+
+[rust-yew-realworld-example-app-github]: https://github.com/jetli/rust-yew-realworld-example-app
 
 </div>

@@ -6,13 +6,15 @@
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![serde][c-serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
-Queries GitHub [stargazers API v3](https://developer.github.com/v3/activity/starring/#list-stargazers)⮳ with [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to get list of all users who have marked a GitHub project with a star. [`reqwest::Response`][c-reqwest::Response]{{hi:reqwest::Response}}⮳ is deserialized with [`reqwest::Response::json`][c-reqwest::Response::json]{{hi:reqwest::Response::json}}⮳ into `User` objects implementing [`serde::Deserialize`][c-serde::Deserialize]{{hi:serde::Deserialize}}⮳.
+Queries GitHub [stargazers API v3][stargazers]⮳ with [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to get list of all users who have marked a GitHub project with a star. [`reqwest::Response`][c-reqwest::Response]{{hi:reqwest::Response}}⮳ is deserialized with [`reqwest::Response::json`][c-reqwest::Response::json]{{hi:reqwest::Response::json}}⮳ into `User` objects implementing [`serde::Deserialize`][c-serde::Deserialize]{{hi:serde::Deserialize}}⮳.
 
 [`tokio::main`][c-tokio_tutorial_hello_tokio-website]{{hi:tokio::main}} is used to set up the async executor and the process waits for [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}} to complete before processing the response into User instances.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/rest-get.rs}}
 ```
+
+[stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
 
 ## Check if an API resource exists
 
@@ -30,7 +32,7 @@ Due to both [`reqwest::ClientBuilder::build`][c-reqwest::ClientBuilder::build]{{
 
 [![reqwest][c-reqwest-badge]][c-reqwest]  [![serde][c-serde-badge]][c-serde]  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]  [![cat-encoding][cat-encoding-badge]][cat-encoding]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-client][cat-http-client-badge]][cat-http-client]
 
-Creates a gist with POST request to GitHub [gists API v3](https://developer.github.com/v3/gists/)⮳ using [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳ and removes it with DELETE request using [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳.
+Creates a gist with POST request to GitHub [gists API v3][gist-api]⮳ using [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳ and removes it with DELETE request using [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳.
 
 The [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ is responsible for details of both requests including URL, body and authentication. The POST body from [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ macro provides arbitrary JSON body. Call to [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ sets the request body. [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ handles authentication. The call to [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ synchronously executes the requests.
 
@@ -60,8 +62,10 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]{{
 {{#include ../../../deps/tests/rate-limited.rs}}
 ```
 
+[gist-api]: https://developer.github.com/v3/gists
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

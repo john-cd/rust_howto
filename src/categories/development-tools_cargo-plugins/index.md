@@ -118,33 +118,33 @@ cargo install --force cargo-make
 cargo make --version
 ```
 
-- [automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics](https://medium.com/@sagiegurari/automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics-b19ced7e7057)
+- [automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics][c-cargo-make-blog]⮳
 
 ## Cargo plugins
 
-GitHub Action for installing development tools (mainly from GitHub Releases). List of tools: [cargo plugins](https://github.com/taiki-e/install-action)
+GitHub Action for installing development tools (mainly from GitHub Releases). List of tools: [cargo plugins][cargo-plugins]⮳
 
 ## Cargo auditable
 
-Make production Rust binaries auditable [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable)
+Make production Rust binaries auditable [cargo-auditable][c-cargo-auditable-github]⮳
 
 ## Cargo limit
 
-Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit](https://crates.io/crates/cargo-limit)
+Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit][c-cargo-limit-crates.io]⮳
 
 ## Cargo cache
 
-- [`cargo cache`](https://github.com/matthiaskrgr/cargo-cache)
+- [`cargo cache`][c-cargo-cache-github]⮳
 
 ## Cargo Husky
 
-[cargo-husky](https://github.com/rhysd/cargo-husky) Setup Git hooks automatically for cargo projects with 🐶
+[cargo-husky][c-cargo-husky-github]⮳ Setup Git hooks automatically for cargo projects with 🐶
 
-See also: Git hook scripts are useful for identifying simple issues before submission to code review [pre-commit.com](https://pre-commit.com/index.html) A framework for managing and maintaining multi-language pre-commit hooks.
+See also: Git hook scripts are useful for identifying simple issues before submission to code review [pre-commit.com][pre-commit.com-website]⮳ A framework for managing and maintaining multi-language pre-commit hooks.
 
 ## Cargo xtask
 
-[cargo-xtask](https://github.com/matklad/cargo-xtask) cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
+[cargo-xtask][c-cargo-xtask-github]⮳ cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
 
 The two distinguishing features of xtask are:
 
@@ -153,24 +153,38 @@ The two distinguishing features of xtask are:
 
 ### Devx
 
-[devx](https://github.com/elastio/devx) Collection of utilities for writing your own dev scripts
+[devx][c-devx-github]⮳ Collection of utilities for writing your own dev scripts
 
-Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)](https://github.com/matklad/cargo-xtask).
+Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)][c-cargo-xtask-github]⮳
 
 ### xshell: Making Rust a Better Bash
 
-`xshell` provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts. [github.com/matklad/xshell](https://github.com/matklad/xshell)
+`xshell` provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts. [github.com/matklad/xshell][c-xshell-github]⮳
 
 ### Duct
 
-[duct.rs](https://github.com/oconnor663/duct.rs) Duct is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies](https://github.com/oconnor663/duct.py/blob/master/gotchas.md) are handled for you the Right Way™.
+[duct.rs][c-duct-github]⮳ Duct is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you the Right Way™.
 
 ## Cargo hakari
 
-[cargo-hakari](https://crates.io/crates/cargo-hakari) Manage workspace-hack packages to speed up builds in large workspaces.
+[cargo-hakari][c-cargo-hakari-crates.io]⮳ Manage workspace-hack packages to speed up builds in large workspaces.
 
 ## Cargo wizard
 
-Cargo subcommand for configuring Cargo projects for best performance. [github.com/Kobzol/cargo-wizard](https://github.com/Kobzol/cargo-wizard)
+Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo-wizard-github]⮳
 
+[cargo-plugins]: https://github.com/taiki-e/install-action
+[c-cargo-limit-crates.io]: https://crates.io/crates/cargo-limit
+[c-cargo-auditable-github]: https://github.com/rust-secure-code/cargo-auditable
+[c-cargo-cache-github]: https://github.com/matthiaskrgr/cargo-cache
+[c-cargo-husky-github]: https://github.com/rhysd/cargo-husky
+[pre-commit.com-website]: https://pre-commit.com/index.html
+[c-cargo-xtask-github]: https://github.com/matklad/cargo-xtask
+[c-devx-github]: https://github.com/elastio/devx
+[c-xshell-github]: https://github.com/matklad/xshell
+[c-duct-github]: https://github.com/oconnor663/duct.rs
+[c-duct-gotchas-github]: https://github.com/oconnor663/duct.py/blob/master/gotchas.md
+[c-cargo-hakari-crates.io]: https://crates.io/crates/cargo-hakari
+[c-cargo-wizard-github]: https://github.com/Kobzol/cargo-wizard
+[c-cargo-make-blog]: https://medium.com/@sagiegurari/automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics-b19ced7e7057
 </div>

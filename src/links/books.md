@@ -9,11 +9,16 @@
 [The Rust Programming Language, 2nd Edition][book-rust-programming-language]⮳
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
-- [The Little Book of Rust Books](https://lborb.github.io/book/title-page.html#the-little-book-of-rust-books)
+- [The Little Book of Rust Books][book-the-little-book-of-rust-books]⮳
 
-Writing Interpreters in Rust: a Guide [rust-hosted-langs/book](https://github.com/rust-hosted-langs/book)
+[book-the-little-book-of-rust-books]: https://lborb.github.io/book/title-page.html#the-little-book-of-rust-books
+
+[Writing Interpreters in Rust: a Guide][writing-interpreters-in-rust]⮳
+
+[writing-interpreters-in-rust]: https://github.com/rust-hosted-langs/book
 
 </div>

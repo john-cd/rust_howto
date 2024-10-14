@@ -23,6 +23,8 @@ Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 <div class="hidden">
 TODO:
 
-- [serde](https://github.com/serde-rs/serde)
+- [serde][c-serde-github]⮳
+
+[c-serde-github]: https://github.com/serde-rs/serde
 
 </div>

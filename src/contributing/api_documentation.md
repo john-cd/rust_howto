@@ -6,7 +6,7 @@ Use `just doc` to generate the documentation for `docs.rs`.
 
 ### Using a Dev Container feature
 
-Alternatively, use the ["Desktop lite" Dev Container feature]( https://github.com/devcontainers/features/tree/main/src/desktop-lite )⮳ to install a light GUI manager{{hi:GUI manager}}. Add the following to `devcontainer.json`:
+Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite-github]⮳ to install a light GUI manager{{hi:GUI manager}}. Add the following to `devcontainer.json`:
 
 ```json
 "features": {
@@ -39,7 +39,7 @@ xdg-settings --list
 xdg-settings get default-web-browser
 ```
 
-Point your browser to `<http://localhost:6080>` and use `vscode` as the password. Open the HTML file of your choice with:
+Point your browser to [http://localhost:6080][locahost:6080] and use `vscode` as the password. Open the HTML file of your choice with:
 
 ```bash
 xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
@@ -50,7 +50,11 @@ xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
 - Add the target directory e.g. `/cargo-target-rust_howto/target` to the VS Code Explorer view (`File` > `Add Folder to Workspace...`), then right-click the `/cargo-target-rust_howto/target/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
 - Or install the `Live Server` or MS `Live Preview` VS Code extensions.
 
+[desktop-lite-github]: https://github.com/devcontainers/features/tree/main/src/desktop-lite
+[locahost:6080]: http://localhost:6080
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
+
 </div>

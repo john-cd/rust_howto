@@ -13,11 +13,14 @@ TODO:
 
 ## Sled
 
-An embedded database [sled](https://github.com/spacejam/sled)
+An embedded database [sled][c-sled-github]⮳
 
 ## Search
 
-- A lightning-fast search API that fits effortlessly into your apps, websites, and workflow: [meilisearch](https://github.com/meilisearch/meilisearch)
-- Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust [tantivy](https://github.com/quickwit-oss/tantivy)
+- A lightning-fast search API that fits effortlessly into your apps, websites, and workflow: [meilisearch][c-meilisearch-github]⮳
+- Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust [tantivy][c-tantivy-github]⮳
 
+[c-tantivy-github]: https://github.com/quickwit-oss/tantivy
+[c-sled-github]: https://github.com/spacejam/sled
+[c-meilisearch-github]: https://github.com/meilisearch/meilisearch
 </div>

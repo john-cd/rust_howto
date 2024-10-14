@@ -8,6 +8,8 @@
 <div class="hidden">
 TODO:
 
-- [AdiDoks is a mordern documentation theme](https://adidoks.netlify.app/)
+- [AdiDoks][adidoks-website] is a mordern documentation theme
+
+[adidoks-website]: https://adidoks.netlify.app
 
 </div>

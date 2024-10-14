@@ -2,11 +2,11 @@
 
 ## Table of contents
 
-- [Who this book is for](#who-this-book-is-for)
-- [How to read this book](#how-to-read-this-book)
-- [How to use the recipes](#how-to-use-the-recipes)
-- [A note about error handling](#a-note-about-error-handling)
-- [A note about crate representation](#a-note-about-crate-representation)
+- [Who this book is for][who-this-book-is-for]⮳
+- [How to read this book][how-to-read-this-book]⮳
+- [How to use the recipes][how-to-use-the-recipes]⮳
+- [A note about error handling][a-note-about-error-handling]⮳
+- [A note about crate representation][a-note-about-crate-representation]⮳
 
 ## Who this book is for
 
@@ -83,8 +83,15 @@ This cookbook is intended eventually to provide expansive coverage of the Rust c
 
 At present the cookbook is focused on the standard library, and on "core" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
+[a-note-about-crate-representation]: #a-note-about-crate-representation
+[a-note-about-error-handling]: #a-note-about-error-handling
+[how-to-use-the-recipes]: #how-to-use-the-recipes
+[how-to-read-this-book]: #how-to-read-this-book
+[who-this-book-is-for]: #who-this-book-is-for
 [index]: index.md
+
 {{#include refs/link-refs.md}}
+
 <div class="hidden">
 TODO: rewrite
 </div>

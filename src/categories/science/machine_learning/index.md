@@ -12,12 +12,16 @@
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
 ## Candle
 
-- [meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use](https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use/?amp)
-- [Candle Documentation](https://candle.dev/docs/wick/introduction/)
+- [meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use][blog-candle]⮳
+- [Candle Documentation][c-candle-docs]⮳
+
+[c-candle-docs]: https://candle.dev/docs/wick/introduction
+[blog-candle]: https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
 
 </div>

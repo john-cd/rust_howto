@@ -6,7 +6,7 @@
 
 [![polars][c-polars-badge]][c-polars]  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]
 
-- [docs.pola.rs](https://docs.pola.rs/)
+- [docs.pola.rs][c-polars-docs]⮳
 
 ## Arrow
 
@@ -24,27 +24,34 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
 ## Data engineering + Rust
 
-Rust Data Engineering course By [Alfredo Deza](https://learning.oreilly.com/search/?query=author%3A%22Alfredo%20Deza%22&sort=relevance&highlight=true), [Noah Gift](https://learning.oreilly.com/search/?query=author%3A%22Noah%20Gift%22&sort=relevance&highlight=true)
+Rust Data Engineering course By Alfredo Deza et al., O'Reilly
 
 ## Databend
 
-𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend](https://github.com/datafuselabs/databend)
+𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][c-databend-github]⮳
 
 ## Plotly.rs
 
-Plotly.rs is a plotting library powered by [Plotly.js](https://plot.ly/javascript/). The aim is to bring over to Rust all the functionality that `Python` users have come to rely on; with the added benefit of type safety and speed.
+`Plotly.rs` is a plotting library powered by [Plotly.js][plotly.js]⮳. The aim is to bring over to Rust all the functionality that `Python` users have come to rely on; with the added benefit of type safety and speed.
 
-- [plotly_rs](https://igiagkiozis.github.io/plotly/content/plotly_rs.html)
+- [plotly_rs][c-plotly-github]⮳
 
 ## CSV
 
-A fast CSV command line toolkit written in Rust. [xsv](https://github.com/BurntSushi/xsv)
+A fast CSV command line toolkit written in Rust. [xsv][c-xsv-github]⮳
 
 xsv is a command line program for indexing, slicing, analyzing, splitting and joining CSV files.
+
+[c-polars-docs]: https://docs.pola.rs
+[c-xsv-github]: https://github.com/BurntSushi/xsv
+[c-databend-github]: https://github.com/datafuselabs/databend
+[plotly.js]: https://plot.ly/javascript
+[c-plotly-github]: https://igiagkiozis.github.io/plotly/content/plotly_rs.html
 
 </div>

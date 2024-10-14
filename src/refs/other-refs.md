@@ -62,6 +62,7 @@
 [book-cargo-continuous-integration]: https://doc.rust-lang.org/cargo/guide/continuous-integration.html
 [book-cargo-env-badge]: https://img.shields.io/badge/cargo_env-peru?logo=mdbook
 [book-cargo-env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
+[book-cargo-specifying-dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [book-cargo]: https://doc.rust-lang.org/cargo/index.html
 [book-easy-rust-badge]: https://img.shields.io/badge/Easy_rust-peru?logo=mdbook
 [book-easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html

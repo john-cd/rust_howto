@@ -20,15 +20,21 @@ mdbook serve --open
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 
-- [mdbook third-party plugins](https://github.com/rust-lang/mdBook/wiki/Third-party-plugins)
-- [mdbook-private](https://github.com/RealAtix/mdbook-private)
-- [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck)
-- [About GitHub Actions for mdBook (rust-lang/mdBook)](https://github.com/peaceiris/actions-mdbook)
+- [mdbook third-party plugins][third-party-plugins]
+- [mdbook-private][c-mdbook-private-github]
+- [mdbook-linkcheck][c-mdbook-linkcheck-github]
+- [About GitHub Actions for mdBook (rust-lang/mdBook)][actions-mdbook-github]
 
-Byron-termbook- A runner for `mdbooks` to keep your documentation tested-
-<https://github.com/Byron/termbook>
+[c-mdbook-linkcheck-github]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
+[third-party-plugins]: https://github.com/rust-lang/mdBook/wiki/Third-party-plugins
+[c-mdbook-private-github]: https://github.com/RealAtix/mdbook-private
+[actions-mdbook-github]: https://github.com/peaceiris/actions-mdbook
 
+A runner for `mdbooks` to keep your documentation tested: [Byron-termbook][c-termbook-github]
+
+[c-termbook-github]: https://github.com/Byron/termbook
 </div>

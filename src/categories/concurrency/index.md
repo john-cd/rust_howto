@@ -30,17 +30,22 @@ Key constructs in Rust:
 
 Here are the topics we’ll cover:
 
-- [Multithreading](multithreading.md)
-- [Message passing](message_passing.md)
-- [Shared-state concurrency](shared_state/index.md)
-- [Concurrent data structures](shared_state/concurrent_data_structures.md)
+- [Multithreading][p-multithreading]⮳
+- [Message passing][p-message_passing]⮳
+- [Shared-state concurrency][p-shared_state]⮳
+- [Concurrent data structures][p-concurrent_data_structures]⮳
 
 ## See Also
 
 [![book-rust-concurrency][book-rust-concurrency-badge]][book-rust-concurrency]
 
+[p-message_passing]: message_passing.md
+[p-shared_state]: shared_state/index.md
+[p-concurrent_data_structures]: shared_state/concurrent_data_structures.md
+[p-multithreading]: multithreading.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

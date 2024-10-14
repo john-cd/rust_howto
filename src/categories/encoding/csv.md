@@ -39,7 +39,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 {{#include ../../../deps/tests/filter.rs}}
 ```
 
-_Disclaimer: this example has been adapted from [the csv crate tutorial](https://docs.rs/csv/*/csv/tutorial/index.html#filter-by-search)⮳_.
+This example has been adapted from [the csv crate tutorial][c-csv-crate-tutorial]⮳
 
 ## Handle invalid CSV data with Serde
 
@@ -83,8 +83,10 @@ See [`csv::Reader::deserialize`][c-csv::Reader::deserialize]{{hi:csv::Reader::de
 {{#include ../../../deps/tests/transform.rs}}
 ```
 
+[c-csv-crate-tutorial]: https://docs.rs/csv/*/csv/tutorial/index.html#filter-by-search
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>
