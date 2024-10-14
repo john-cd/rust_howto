@@ -1,6 +1,6 @@
 # Streams
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][c-futures-badge]][c-futures]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a [`futures::stream::Stream`][c-futures::stream::Stream]{{hi:futures::stream::Stream}} of values over time.
 
@@ -26,6 +26,7 @@ See also Tokio `async_stream`{{hi:async_stream}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

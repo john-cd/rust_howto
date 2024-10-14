@@ -18,12 +18,15 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 ### Rust tools for Python
 
+  [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
+
 [![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]⮳
 
 [Ruff][c-ruff-website]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

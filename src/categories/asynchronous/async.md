@@ -29,7 +29,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - Dropping a future stops it from making further progress.
 - Async is zero-cost in Rust. You can use [`async`][book-rust-reference-async]{{hi:async}}⮳ without heap allocations{{hi:heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
-- Both single- and multithreaded runtimes{{hi:multithreaded runtimes}} are available.
+- Both single- and multi-threaded runtimes{{hi:multithreaded runtimes}} are available.
 
 ## Which crate provides what?
 
@@ -40,7 +40,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 ## Async runtimes
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![async_std][c-async_std-badge]][c-async_std]  [![smol][c-smol-badge]][c-smol]  [![embassy][c-embassy-badge]][c-embassy]  [![mio][c-mio-badge]][c-mio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 In most cases, prefer the [`tokio`](./tokio.md){{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
@@ -53,6 +53,7 @@ Alternatives to the Tokio async ecosystem include:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>

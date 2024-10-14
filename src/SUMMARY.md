@@ -70,7 +70,6 @@
 - [Authentication](categories/authentication/index.md)
 
 - [Caching](categories/caching/index.md)
-  - [LRU caching](categories/caching/lru.md)
 
 - [Cloud](other/cloud/index.md)
 

@@ -1,6 +1,6 @@
 # Tokio
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![tokio][c-tokio-badge]][c-tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 ## Basics
 
@@ -33,6 +33,7 @@ In some cases, it is necessary to run one or more futures that do not implement 
 ```
 
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: merge with tokio.md
 </div>

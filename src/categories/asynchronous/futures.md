@@ -10,7 +10,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Selecting futures
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][c-futures-badge]][c-futures]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 [`futures::future::Select`][c-futures::future::Select]{{hi:futures::future::Select}}⮳ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
@@ -20,7 +20,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Joining futures
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][c-futures-badge]][c-futures]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 ```rust,editable,mdbook-runnable
 {{#include ../../../deps/tests/futures2.rs}}
@@ -28,7 +28,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Map, then, either, flatten
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![futures][c-futures-badge]][c-futures]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait that provides a variety of convenient adapters.
 
@@ -42,6 +42,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO:
 </div>
