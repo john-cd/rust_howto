@@ -117,12 +117,14 @@ test: _build-book
 # Serve the book (incl. link checking)
 serve: build
   cd book/html ; python3 -m http.server 3000
-# TODO make work from Dev Containers: mdbook serve --open
+# TODO make work from Dev Containers: mdbook serve --open (-o)
 # To change the port: --port 3001
+# -p 8000 -n 127.0.0.1
+
 
 # Watch the book's markdown files and rebuilds it on changes
 # watch: _build-book
-#   mdbook watch --open
+#   mdbook watch --open --watcher=poll / native
 
 # Prepare for git push
 prep: spell fmtall clean build clippyall testall build serve
