@@ -76,6 +76,6 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

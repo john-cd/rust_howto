@@ -4,6 +4,8 @@
 
 [![serde][c-serde-badge]][c-serde]
 
+[serde][c-serde-github]⮳
+
 ## See also
 
 [![serde_json][c-serde_json-badge]][c-serde_json]
@@ -14,6 +16,6 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

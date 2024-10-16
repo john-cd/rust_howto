@@ -10,17 +10,4 @@ Rust prefers snake case for variables and functions, so a method would be called
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-## Try Catch
-
-- [what-is-the-rust-equivalent-to-a-try-catch-statement][stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]⮳
-
-## Memory Safety
-
-- [rust-re-borrowing-and-memory-safety][rust-re-borrowing-and-memory-safety]⮳
-
-[stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]: https://stackoverflow.com/questions/55755552/what-is-the-rust-equivalent-to-a-try-catch-statement
-[rust-re-borrowing-and-memory-safety]: https://felipemeriga.hashnode.dev/rust-re-borrowing-and-memory-safety?source=weekly
-
 </div>

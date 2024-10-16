@@ -20,11 +20,6 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
-
-- [SeaORM][seaorm]⮳
-
-[seaorm]: https://www.sea-ql.org/SeaORM/docs/introduction/sea-orm
-
 </div>

@@ -13,28 +13,23 @@ cargo install mdbook-hide # optional plugin; many others exist
 mdbook serve --open
 ```
 
-## See also
-
 [mdBook documentation][c-mdbook-documentation]⮳
 
+## `mdbook` plugins
+
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+
+- [mdbook third-party plugins][c-mdbook-third-party-plugins-wiki]
+- [mdbook-private][c-mdbook-private-github]
+- [mdbook-linkcheck][c-mdbook-linkcheck-github]
+- A runner for `mdbook`s to keep your documentation tested: [Byron-termbook][c-termbook-github]
+
+## CD / CI
+
+[GitHub Actions for mdBook][actions-mdbook-github]
 
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-- [mdbook third-party plugins][third-party-plugins]
-- [mdbook-private][c-mdbook-private-github]
-- [mdbook-linkcheck][c-mdbook-linkcheck-github]
-- [About GitHub Actions for mdBook (rust-lang/mdBook)][actions-mdbook-github]
-
-[c-mdbook-linkcheck-github]: https://github.com/Michael-F-Bryan/mdbook-linkcheck
-[third-party-plugins]: https://github.com/rust-lang/mdBook/wiki/Third-party-plugins
-[c-mdbook-private-github]: https://github.com/RealAtix/mdbook-private
-[actions-mdbook-github]: https://github.com/peaceiris/actions-mdbook
-
-A runner for `mdbooks` to keep your documentation tested: [Byron-termbook][c-termbook-github]
-
-[c-termbook-github]: https://github.com/Byron/termbook
+TODO: organize, expand
 </div>

@@ -4,12 +4,9 @@
 
 [Zola][c-zola-website]⮳
 
+[AdiDoks][adidoks-website] is a mordern documentation theme
+
 {{#include ../../refs/link-refs.md}}
 <div class="hidden">
-TODO:
-
-- [AdiDoks][adidoks-website] is a mordern documentation theme
-
-[adidoks-website]: https://adidoks.netlify.app
-
+TODO: write
 </div>

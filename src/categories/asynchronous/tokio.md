@@ -31,6 +31,11 @@ Example from [c-tokio_graceful_shutdown][c-tokio_graceful_shutdown]⮳:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: - [tokio.rs][tokio-rs]
+- [tokio examples][tokio-examples]
+- [tokio-rs async-stream][tokio-async-stream]
+- [tokio-rs mio][mio-github]
+
 </div>

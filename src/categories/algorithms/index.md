@@ -14,6 +14,4 @@ Rust implementations of core algorithms{{hi:Algorithms}} such as hashing{{hi:Has
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
 </div>

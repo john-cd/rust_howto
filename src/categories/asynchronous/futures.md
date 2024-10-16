@@ -44,5 +44,5 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: cover future-utils ?
 </div>

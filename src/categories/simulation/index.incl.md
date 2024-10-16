@@ -2,5 +2,5 @@
 |--------|--------|------------|
 |  |  | [![cat-simulation][cat-simulation-badge]][cat-simulation] |
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

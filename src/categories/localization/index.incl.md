@@ -2,5 +2,5 @@
 |--------|--------|------------|
 |  |  | [![cat-localization][cat-localization-badge]][cat-localization] |
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

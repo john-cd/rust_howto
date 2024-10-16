@@ -12,6 +12,6 @@ Manage the complexity of dealing with the fourth dimension.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

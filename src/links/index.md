@@ -22,14 +22,6 @@
 - [Learning Rust With Entirely Too Many Linked Lists][rust-learning-linked-lists-website]⮳
 - [Rust quizz][rust-quizz]⮳
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-TODO:
-
-[rustacean-station][rustacean-station]
-
 ## Rust Learning
 
 - Rust language main site [rust-lang.org][rust]
@@ -38,37 +30,23 @@ TODO:
 - free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like generics and error handling. [comprehensive-rust][comprehensive-rust]⮳
 - Rust for professionals [rust-for-professionals][rust-for-professionals]⮳
 - A half-hour to learn Rust [a-half-hour-to-learn-rust][a-half-hour-to-learn-rust]⮳
-- [awesome-rust][awesome-rust]⮳
+- [awesome-rust][awesome-rust-github]⮳
 A curated list of Rust code and resources.
 - Top 15 Rust Projects To Elevate Your Skills [rust-practice-projects][rust-practice-projects]⮳
 - Rust mastery exercises. Become your team's resident Rust expert. [app.codecrafters.io/tracks/rust][app.codecrafters.io/tracks/rust]⮳
-
-## Rust Maven training site
-
 - [rust.code-maven.com][code-maven]
 
 ## Rust Courses
 
 - open source training courses about distributed database and distributed systems [talent-plan][talent-plan-github]⮳
-- Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects. [rust-by-practice][rust-by-practice]⮳
+- Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects. [rust-by-practice][rust-by-practice-github]⮳
 - A bunch of links to blog posts, articles, videos, etc for learning Rust [rust-learning][rust-learning]
-- Rust Language Bible [rust-course][rust-course]
+- Rust Language Bible [rust-course][rust-course-github]
 - [How to learn modern Rust][how_to_learn_modern_rust-github]
 
-[awesome-rust]: https://github.com/rust-unofficial/awesome-rust
-[rust-for-professionals]: https://overexact.com/rust-for-professionals/
-[rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
-[practice.course.rs]: https://practice.course.rs/why-exercise.html
-[comprehensive-rust]: https://google.github.io/comprehensive-rust/
-[a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
-[rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects/
-[app.codecrafters.io/tracks/rust]: https://app.codecrafters.io/tracks/rust
-[talent-plan-github]: https://github.com/pingcap/talent-plan
-[rust-by-practice]: https://github.com/sunface/rust-by-practice
-[rust-learning]: https://github.com/ctjhoa/rust-learning
-[how_to_learn_modern_rust-github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
-[rustacean-station]: https://rustacean-station.org
-[rust]: https://www.rust-lang.org
-[code-maven]: https://rust.code-maven.com
-[rust-course]: https://github.com/sunface/rust-course
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+TODO: organize
 </div>

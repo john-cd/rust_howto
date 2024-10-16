@@ -3,5 +3,5 @@
 |  |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

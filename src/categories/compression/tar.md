@@ -38,6 +38,7 @@ Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Arc
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: review
 </div>

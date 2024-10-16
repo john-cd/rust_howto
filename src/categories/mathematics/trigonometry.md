@@ -36,6 +36,6 @@ The following example computes the distance in kilometers between two points on 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

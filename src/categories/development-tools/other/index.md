@@ -10,29 +10,25 @@
 
 [shuttle.rs][shuttle-rs-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-{{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
-<div class="hidden">
-TODO:
-
 ## Binary minimizer
 
 How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
 ## Code generators
 
-- [top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers][ai-tools-that-can-generate-code]⮳
+[top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers][blog-ai-tools-that-can-generate-code]⮳
 
 ## Code verifier
 
-Kani Rust Verifier [kani][kani-github]⮳
+Kani Rust Verifier: [kani][c-kani-github]⮳
 
-## Formal Methods + Rust
+## Formal Methods
 
-- [rust-formal-methods.github.io][rust-formal-methods]⮳
+[rust-formal-methods.github.io][rust-formal-methods-website]⮳
 
-[ai-tools-that-can-generate-code]: https://www.marktechpost.com/2024/03/14/top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers/
-[kani-github]: https://github.com/model-checking/kani
-[rust-formal-methods]: https://rust-formal-methods.github.io/tools.html
-[min-sized-rust-github]: https://github.com/johnthagen/min-sized-rust
+{{#include refs.incl.md}}
+{{#include ../../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO: expand
 </div>

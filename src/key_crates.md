@@ -13,13 +13,10 @@ or older resources, such as:
 - [Rust starter pack][rust-starter-pack]⮳
 - [![stdx][c-stdx-github-badge]][c-stdx-github]
 
+[Best of Rust crates][best-of-rust-crates-github]
+
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-[Best of Rust crates][best-of-rust-crates]
-
-[best-of-rust-crates]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates>
-
+TODO: organize
 </div>

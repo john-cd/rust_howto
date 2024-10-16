@@ -30,6 +30,6 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

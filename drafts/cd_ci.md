@@ -24,7 +24,7 @@
         cargo pants
 ```
 
-[`install-action`][install-action]{{hi:install-action}}⮳ is a GitHub Action for installing development tools (mainly from GitHub Releases).
+[`install-action`][install_action-github]{{hi:install-action}}⮳ is a GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ```yaml
 - uses: taiki-e/install-action@v2
@@ -136,21 +136,14 @@ Example `.github/workflows/<name>.yml`
 [How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳
 [stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
 
+[Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳
+
+[GitHub Action for installing development tools (mainly from GitHub Releases)][install_action-github]⮳
+
+[Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳
+
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-- [Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳
-
-[blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
-
-- [GitHub Action for installing development tools (mainly from GitHub Releases)][install-action]⮳
-
-[install-action]: https://github.com/taiki-e/install-action/
-
-[Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum][deploying-mdbook-on-github-using-github-action]⮳
-
-[deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
-
+TODO: organize see also
 </div>

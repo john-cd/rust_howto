@@ -16,6 +16,5 @@ Store the results of previous computations in order to reuse the results.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
+TODO: expand caching, add moka
 </div>

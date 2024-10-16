@@ -18,6 +18,8 @@
 
 [`ractor`][c-ractor-crates.io]{{hi:ractor}}⮳
 
+A lightweight low-level single-threaded actor runtime [stakker][c-stakker-github]
+
 ## Utilities
 
 {{hi:Await tree}}[`Await tree`][c-await-tree-crates.io]⮳
@@ -29,22 +31,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-## Actors on Rust
-
-- [riker.rs][c-riker-website]
-
-[c-riker-website]: https://riker.rs/actors
-
-A lightweight low-level single-threaded actor runtime [stakker][stakker-github]
-
-[stakker-github]: https://github.com/uazu/stakker
-
-## Crossbeam
-
-- [crossbeam][c-crossbeam-github]
-
-[c-crossbeam-github]: https://github.com/crossbeam-rs/crossbeam
-
+TODO: organize
 </div>

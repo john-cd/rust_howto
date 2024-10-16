@@ -6,14 +6,13 @@ Crates used to model or construct models for some activity, e.g. to.simulate a n
 
 [![cat-simulation][cat-simulation-badge]][cat-simulation]
 
+## See also
+
+- High-performance asynchronous computation framework for system simulation [Asynchronics][asynchronics-github]⮳
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-- High-performance asynchronous computation framework for system simulation [Asynchronics][asynchronics-github]⮳
-
-[asynchronics-github]: https://github.com/asynchronics
-
+TODO: write
 </div>

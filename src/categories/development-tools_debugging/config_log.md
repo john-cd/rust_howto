@@ -78,6 +78,6 @@ Create the log configuration{{hi:log configuration}} with [`log4rs::append::file
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

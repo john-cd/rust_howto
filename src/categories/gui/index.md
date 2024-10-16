@@ -24,58 +24,19 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 [`egui`][c-egui]{{hi:egui}}⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][c-egui]{{hi:egui}}⮳ aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
 
-## Other GUI frameworks
+- [egui.rs][c-egui-website]⮳
+- [egui_demo_lib][c-egui_demo_lib-github]⮳
+- [egui widgets][c-egui-widgets]⮳
+- [egui containers][c-egui-containers]⮳
+- [egui struct.Ui][c-egui::Ui]⮳
+
+## Slint
 
 [![slint][c-slint-badge]][c-slint]  [![slint-website][c-slint-website-badge]][c-slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]
-
-[![iced][c-iced-badge]][c-iced]  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
-
-[![druid][c-druid-badge]][c-druid]  [![druid-github][c-druid-github-badge]][c-druid-github] is a data-first Rust-native UI design toolkit (experimental).
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO:
-
-## UI
-
-- A cross-platform GUI library for Rust, inspired by Elm [iced-rs][c-iced-github]⮳
-- Turn any webpage into a desktop app with Rust [Pake][c-pake-github]⮳
-
-[c-pake-github]: https://github.com/tw93/Pake
-[c-iced-github]: https://github.com/iced-rs/iced
-
-### Slint
 
 - [slint.dev][c-slint-website]⮳
 - [Slint (github)][c-slint-github]⮳
 - [madewithslint.com][c-slint-madewithslint-website]⮳
-
-[c-slint-github]: https://github.com/slint-ui/slint
-[c-slint-website]: https://slint.dev
-[c-slint-madewithslint-website]: https://madewithslint.com
-
-### GPUI
-
-- [gpui.rs][gpui.rs]⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
-
-[c-zed-website]: https://zed.dev
-[gpui.rs]: https://www.gpui.rs
-
-### egui 2
-
-- [egui.rs][c-egui-website]⮳
-- [egui_demo_lib][c-egui_demo_lib-github]⮳
-- [widgets][c-egui-widgets]⮳
-- [egui containers][c-egui-containers]⮳
-- [egui struct.Ui][c-egui::Ui]⮳
-
-[c-egui-containers]: https://docs.rs/egui/latest/egui/containers
-[c-egui::Ui]: https://docs.rs/egui/latest/egui/struct.Ui.html
-[c-egui-website]: https://www.egui.rs
-[c-egui-widgets]: https://docs.rs/egui/latest/egui/widgets/index.html#structs
-[c-egui_demo_lib-github]: https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs
 
 ### Floem
 
@@ -84,14 +45,24 @@ and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI 
 - [Floem (github)][c-floem-github]⮳
 - [Floem (docs)][c-floem]⮳
 
-[c-rui-github]: https://github.com/audulus/rui
-[c-leptos-github]: https://github.com/leptos-rs/leptos
-[c-floem-github]: https://github.com/lapce/floem
-[c-floem]: https://docs.rs/floem
-[c-xilem-github]: https://github.com/linebender/xilem
+### GPUI
+
+- [gpui.rs][gpui.rs]⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
+
+## Other GUI frameworks
+
+[![iced][c-iced-badge]][c-iced]  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
+
+[![druid][c-druid-badge]][c-druid]  [![druid-github][c-druid-github-badge]][c-druid-github] is a data-first Rust-native UI design toolkit (experimental).
+
+## See also
+
+Turn any webpage into a desktop app with Rust [Pake][c-pake-github]⮳
 
 [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][client-side-server-with-rust]⮳
 
-[client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
+<div class="hidden">
 </div>

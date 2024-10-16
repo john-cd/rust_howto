@@ -34,8 +34,13 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 {{#include ../../../deps/tests/aggregate_data.rs}}
 ```
 
+## Cornucopia for postgres
+
+Generate type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: cornucopia
 </div>

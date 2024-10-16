@@ -75,6 +75,6 @@ For things you do not want rustfmt to mangle, use `#[rustfmt::skip]` , `#[rustfm
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

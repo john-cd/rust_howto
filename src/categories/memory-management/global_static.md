@@ -14,6 +14,6 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

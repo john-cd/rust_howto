@@ -3,5 +3,5 @@
 |  |  | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO:
+TODO: add recipe and crate links
 </div>

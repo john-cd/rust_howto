@@ -39,6 +39,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 [![watt][c-watt-badge]][c-watt]  [![watt-github][c-watt-github-badge]][c-watt-github]
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: add more / edit
 </div>

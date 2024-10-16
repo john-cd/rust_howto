@@ -2,5 +2,5 @@
 |--------|--------|------------|
 |  |  | [![cat-internationalization][cat-internationalization-badge]][cat-internationalization] |
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

@@ -14,24 +14,15 @@ Techniques to help create command line interfaces{{hi:Command line interfaces}},
 
 [![tui][c-tui-badge]][c-tui]
 
+[ratatui][c-ratatui-github]⮳
+
 [![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]  [![r3bl_tuify-crates.io][c-r3bl_tuify-crates.io-badge]][c-r3bl_tuify-crates.io]⮳  [![blog-tuify][blog-tuify-badge]][blog-tuify]⮳
+
+[Code][book-command-line-rust-github]⮳ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417)
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-- [Command line apps in Rust][command-line-apps-in-rust]⮳
-- [Code for Command-Line Rust][command-line-rust]⮳ (O'Reilly, 2022, ISBN 9781098109417)
-
-[command-line-rust]: https://github.com/kyclark/command-line-rust/tree/main
-[command-line-apps-in-rust]: https://rust-cli.github.io/book/index.html#command-line-apps-in-rust
-
-## Ratatui
-
-- [ratatui][ratatui-github]⮳
-
-[ratatui-github]: https://github.com/ratatui-org/ratatui
-
+TODO: cover ratatui
 </div>

@@ -12,7 +12,13 @@ Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examp
 
 [Practical Rust Web Development - API Rest][blog-practical-rust]⮳
 
+- [actix][c-actix-github]⮳
+- [realworld-actix-fullstack][realworld-actix-fullstack-github]⮳
+- [realworld-v1-rust-actix-web-diesel][realworld-v1-rust-actix-web-diesel-github]⮳
+- [auth-microservice-rust-actix-web1.0-diesel-complete-tutorial][auth-microservice-rust-actix-web]⮳
+
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: organize
 </div>

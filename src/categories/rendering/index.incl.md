@@ -5,5 +5,5 @@
 |  |  | [![cat-rendering-data-formats][cat-rendering-data-formats-badge]][cat-rendering-data-formats] |
 |  |  | [![cat-rendering-graphics-api][cat-rendering-graphics-api-badge]][cat-rendering-graphics-api] |
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

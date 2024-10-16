@@ -2,8 +2,6 @@
 
 {{#include encryption.incl.md}}
 
-<a name="ex-pbkdf2"></a>
-
 ## Salt and hash a password with PBKDF2
 
 [![ring][c-ring-badge]][c-ring]  [![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]
@@ -18,6 +16,6 @@ The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::Sec
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

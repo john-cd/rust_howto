@@ -54,6 +54,6 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

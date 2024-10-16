@@ -14,6 +14,6 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

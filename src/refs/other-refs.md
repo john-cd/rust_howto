@@ -13,6 +13,7 @@
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust/
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust/
+[best-of-rust-crates-github]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates/
 [blog-actors-with-tokio-badge]: https://img.shields.io/badge/blog-actors_with_tokio-beige
@@ -29,12 +30,15 @@
 [blog-cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete/
 [blog-error-badge]: https://img.shields.io/badge/blog-error-beige
 [blog-error]: https://brson.github.io/2016/11/30/starting-with-error-chain
+[blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
 [blog-optimizing-ci-cd-pipelines-badge]: https://img.shields.io/badge/blog-optimizing_ci_cd_pipelines-beige
+[blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
 [blog-optimizing-ci-cd-pipelines]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects/
 [blog-practical-rust-badge]: https://img.shields.io/badge/blog-practical_rust-beige
 [blog-practical-rust]: https://dev.to/werner/practical-rust-development-api-rest-29g1
 [blog-rust-build-times-badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
 [blog-rust-build-times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
+[blog-rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time/
 [blog-rusty-terminal-badge]: https://img.shields.io/badge/blog-rusty_terminal-beige
 [blog-rusty-terminal]: https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
 [blog-speeding-up-incremental-rust-compilation-badge]: https://img.shields.io/badge/blog-speeding_up_incremental_rust_compilation-beige
@@ -51,6 +55,7 @@
 [blog-what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking/
 [blog-working-with-env-variables-badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
 [blog-working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
+[book-async-prog-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [book-asynchronous-programming-in-rust-badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
 [book-asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [book-cargo-badge]: https://img.shields.io/badge/Cargo-peru?logo=mdbook
@@ -64,6 +69,7 @@
 [book-cargo-env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
 [book-cargo-specifying-dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [book-cargo]: https://doc.rust-lang.org/cargo/index.html
+[book-command-line-rust-github]: https://github.com/kyclark/command-line-rust/tree/main
 [book-easy-rust-badge]: https://img.shields.io/badge/Easy_rust-peru?logo=mdbook
 [book-easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [book-effective-rust-badge]: https://img.shields.io/badge/Effective_rust-peru?logo=mdbook
@@ -198,10 +204,12 @@
 [docker-website]: https://www.docker.com/
 [dockerfile]: https://docs.docker.com/reference/dockerfile/
 [docs-rs]: https://docs.rs/
+[forum-deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
 [github-api]: https://developer.github.com/v3/auth/
 [http-basic-auth]: https://tools.ietf.org/html/rfc2617
 [http-range-rfc7233]: https://tools.ietf.org/html/rfc7233#section-3.1
+[install_action-github]: https://github.com/taiki-e/install-action/
 [john-cd-github]: https://github.com/john-cd/
 [julia-set]: https://en.wikipedia.org/wiki/Julia_set
 [keyword-dyn]: https://doc.rust-lang.org/std/keyword.dyn.html

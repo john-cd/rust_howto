@@ -47,4 +47,9 @@ If you have a mutable reference to a value, you can have no other simultaneous r
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
 TODO: add text
+
+## Memory Safety
+
+- [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳
+
 </div>

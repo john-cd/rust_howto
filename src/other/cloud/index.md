@@ -38,11 +38,9 @@ Dapr Rust SDK example: [![dapr-rust-examples][dapr-rust-examples-badge]][dapr-ru
 - [docs.shuttle.rs][docs-shuttle-rs]
 - [shuttle-examples][shuttle-examples-github]
 
-[docs-shuttle-rs]: https://docs.shuttle.rs/introduction/welcome
-[shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: edit
 </div>

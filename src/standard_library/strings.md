@@ -28,11 +28,10 @@ Here are several common methods to concatenate{{hi:Concatenation}} Strings:
 {{#include ../../deps/tests/strings3.rs}}
 ```
 
-Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-rs]⮳
+Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳
 
-[concatenation_benchmarks-rs]: https://github.com/hoodie/concatenation_benchmarks-rs
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
-TODO:
+TODO: review
 </div>

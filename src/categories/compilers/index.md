@@ -14,11 +14,8 @@ Compiler{{hi:Compiler}} implementations, including interpreters{{hi:Interpreters
 
 {{#include reduce_compilation_duration.incl.md}}
 
-`cargo build`
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
 </div>

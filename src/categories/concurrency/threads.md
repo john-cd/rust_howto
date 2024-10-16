@@ -85,6 +85,6 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

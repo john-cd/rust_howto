@@ -57,10 +57,9 @@ example.as_ref().to_owned();
 
 Adapted from this [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳
 
-[stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]: https://stackoverflow.com/questions/47147844/how-do-i-get-a-str-or-string-from-stdborrowcowstr
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: review
 </div>

@@ -10,6 +10,10 @@ The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attribu
 
 You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code that is generated for your specific type.
 
+See also:
+
+- [Derive][book-rust-reference-derive]⮳
+
 ## Derive More
 
 [![derive_more][c-derive_more-badge]][c-derive_more]
@@ -23,10 +27,5 @@ You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
-TODO:
-
-[Derive][book-rust-reference-derive]⮳
-
-[book-rust-reference-derive]: https://doc.rust-lang.org/reference/attributes/derive.html
-
+TODO: review
 </div>

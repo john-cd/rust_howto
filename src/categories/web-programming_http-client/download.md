@@ -41,6 +41,6 @@ The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC-7233}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

@@ -50,26 +50,27 @@ cargo build
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be extremely unusual for there to be a later incremental build within the same job. The jobs are not making changes to source code and rebuilding. However, workflows that cache the target directory across runs might be benefiting from incremental compilation.
 
+### Incremental Computation
+
+### Salsa
+
+[![salsa-github][c-salsa-github-badge]][c-salsa-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+
+[Salsa][c-salsa-website]⮳
+
+[Salsa (GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
+
+Salsa is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
+
 ## Reference
 
-[8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
+- [8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
+- [how-i-improved-my-rust-compile-times-by-seventy-five-percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
+- [rust-compilation-time][blog-rust-compilation-time]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-## Salsa
-
-- [Salsa][salsa-website]⮳
-
-## Rust compile duration
-
-- [how-i-improved-my-rust-compile-times-by-seventy-five-percent][how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
-- [rust-compilation-time][rust-compilation-time]⮳
-
-[salsa-website]: https://salsa-rs.github.io/salsa/overview.html
-[how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
-[rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time/
+TODO: fix reference section
 </div>

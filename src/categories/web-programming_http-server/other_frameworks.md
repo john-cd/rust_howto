@@ -2,9 +2,13 @@
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
+[Rust web framework comparison][rust-web-framework-comparison-github]⮳
+
 ## Loco
 
-[Loco.rs][c-loco-website]⮳
+[loco.rs][c-loco-docs]⮳
+
+[loco-rs (github)][c-loco-github]⮳
 
 [Loco article][c-loco-blog]⮳
 
@@ -13,6 +17,10 @@
 [![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
+
+## Leptos
+
+[leptos][c-leptos-github]⮳
 
 ## See also
 
@@ -23,6 +31,7 @@
 [Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust]⮳
 
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: organize
 </div>

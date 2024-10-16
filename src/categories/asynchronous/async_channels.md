@@ -36,9 +36,11 @@ Another example:
 
 [![postage][c-postage-badge]][c-postage]  [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
+Fast sync and async channel: [Kanal][c-kanal-github]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: organize see also
 </div>

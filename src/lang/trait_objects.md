@@ -22,6 +22,7 @@ dyn Trait + 'static
 [Trait Objects (docs)][book-rust-trait-objects]⮳
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: review
 </div>

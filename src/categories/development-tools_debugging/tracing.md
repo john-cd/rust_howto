@@ -86,8 +86,10 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 [![log4rs][c-log4rs-badge]][c-log4rs]
 
+Support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving structured information: [tracing_journald][c-tracing_journald]⮳
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

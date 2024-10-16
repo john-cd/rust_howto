@@ -83,10 +83,8 @@ See [`csv::Reader::deserialize`][c-csv::Reader::deserialize]{{hi:csv::Reader::de
 {{#include ../../../deps/tests/transform.rs}}
 ```
 
-[c-csv-crate-tutorial]: https://docs.rs/csv/*/csv/tutorial/index.html#filter-by-search
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
 </div>

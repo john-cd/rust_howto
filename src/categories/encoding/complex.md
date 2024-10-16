@@ -44,6 +44,6 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

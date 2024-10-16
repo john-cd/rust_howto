@@ -79,6 +79,7 @@ docker push johncd/rust_howto_ci:latest
 ```
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: review
 </div>

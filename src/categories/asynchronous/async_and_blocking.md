@@ -68,5 +68,4 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
 </div>

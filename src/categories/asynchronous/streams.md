@@ -28,5 +28,5 @@ See also Tokio `async_stream`{{hi:async_stream}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: add more?
 </div>

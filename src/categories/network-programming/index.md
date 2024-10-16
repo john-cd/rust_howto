@@ -6,6 +6,6 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

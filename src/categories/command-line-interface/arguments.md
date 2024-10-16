@@ -58,6 +58,4 @@ Your favorite number must be 256.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
 </div>

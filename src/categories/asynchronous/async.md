@@ -55,5 +55,4 @@ Alternatives to the Tokio async ecosystem include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
 </div>

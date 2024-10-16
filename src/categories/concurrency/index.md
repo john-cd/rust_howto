@@ -47,5 +47,11 @@ Here are the topics we’ll cover:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: add crossbeam
+
+## Crossbeam
+
+[crossbeam][c-crossbeam-github]
+
+
 </div>

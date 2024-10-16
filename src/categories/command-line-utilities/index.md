@@ -55,6 +55,5 @@ apt install gping
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
+TODO: organize
 </div>

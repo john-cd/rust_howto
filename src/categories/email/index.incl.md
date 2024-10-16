@@ -2,5 +2,5 @@
 |--------|--------|------------|
 |  |  | [![cat-email][cat-email-badge]][cat-email] |
 <div class="hidden">
-TODO:
+TODO: add links
 </div>

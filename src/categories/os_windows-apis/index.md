@@ -10,6 +10,6 @@ Native Windows GUI: [![native_windows_gui-github][c-native_windows_gui-github-ba
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

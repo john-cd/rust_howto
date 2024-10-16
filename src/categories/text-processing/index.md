@@ -12,18 +12,14 @@ Deal with the complexities of human language when expressed in textual form.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
+TODO: add to separate file
 
 ## String benchmark
 
 - [concat benchmark][concat-benchmark-github]⮳
 
-[concat-benchmark-github]: https://github.com/hoodie/concatenation_benchmarks-rs/blob/master/benches/lib.rs
-
-## Cosmic-text
+## See also
 
 - Pure Rust multi-line text handling: [Pure Rust multi-line text handling][c-cosmic-text-github]⮳
-
-[c-cosmic-text-github]: https://github.com/pop-os/cosmic-text
 
 </div>

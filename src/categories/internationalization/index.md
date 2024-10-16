@@ -8,6 +8,7 @@ Tools to help develop software capable of adapting to various languages and regi
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: write
 </div>

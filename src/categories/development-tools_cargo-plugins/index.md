@@ -103,12 +103,6 @@ cargo machete
 
 [Cargo Generate][c-cargo_generate-crates.io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO:
-
 ## Cargo Make
 
 Install with
@@ -118,11 +112,7 @@ cargo install --force cargo-make
 cargo make --version
 ```
 
-- [automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics][c-cargo-make-blog]⮳
-
-## Cargo plugins
-
-GitHub Action for installing development tools (mainly from GitHub Releases). List of tools: [cargo plugins][cargo-plugins]⮳
+[automating-your-rust-workflows-with-cargo-make][c-cargo-make-blog]⮳
 
 ## Cargo auditable
 
@@ -136,7 +126,7 @@ Cargo with less noise: warnings are skipped until errors are fixed, Neovim integ
 
 - [`cargo cache`][c-cargo-cache-github]⮳
 
-## Cargo Husky
+## Cargo husky
 
 [cargo-husky][c-cargo-husky-github]⮳ Setup Git hooks automatically for cargo projects with 🐶
 
@@ -173,18 +163,13 @@ Devx is a collection of utilities for writing your own dev scripts in Rust. The 
 
 Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo-wizard-github]⮳
 
-[cargo-plugins]: https://github.com/taiki-e/install-action
-[c-cargo-limit-crates.io]: https://crates.io/crates/cargo-limit
-[c-cargo-auditable-github]: https://github.com/rust-secure-code/cargo-auditable
-[c-cargo-cache-github]: https://github.com/matthiaskrgr/cargo-cache
-[c-cargo-husky-github]: https://github.com/rhysd/cargo-husky
-[pre-commit.com-website]: https://pre-commit.com/index.html
-[c-cargo-xtask-github]: https://github.com/matklad/cargo-xtask
-[c-devx-github]: https://github.com/elastio/devx
-[c-xshell-github]: https://github.com/matklad/xshell
-[c-duct-github]: https://github.com/oconnor663/duct.rs
-[c-duct-gotchas-github]: https://github.com/oconnor663/duct.py/blob/master/gotchas.md
-[c-cargo-hakari-crates.io]: https://crates.io/crates/cargo-hakari
-[c-cargo-wizard-github]: https://github.com/Kobzol/cargo-wizard
-[c-cargo-make-blog]: https://medium.com/@sagiegurari/automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics-b19ced7e7057
+## GitHub action for cargo plugins
+
+GitHub Action for installing development tools (mainly from GitHub Releases). List of tools: [cargo plugins][cargo_plugins_install_action-github]⮳
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO: expand
 </div>

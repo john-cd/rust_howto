@@ -11,6 +11,7 @@ Using the Tower ecosystem:
 ```
 
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: write
 </div>

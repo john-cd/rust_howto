@@ -43,6 +43,6 @@ The request targets <http://httpbin.org/headers> service which responds with a J
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

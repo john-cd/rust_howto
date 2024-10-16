@@ -34,6 +34,6 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

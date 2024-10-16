@@ -9,6 +9,7 @@ The `publish` folder contains a placeholder crate, so that the book could be loc
 - When ready, `cargo publish --dry-run; cargo publish`
 
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: edit
 </div>

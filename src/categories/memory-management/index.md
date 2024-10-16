@@ -8,6 +8,6 @@ Deal with allocation, memory mapping, garbage collection, reference counting, or
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>

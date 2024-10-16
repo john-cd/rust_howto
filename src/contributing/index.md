@@ -30,5 +30,4 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 <div class="hidden">
 TODO: edit
-
 </div>

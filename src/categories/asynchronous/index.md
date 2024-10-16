@@ -65,31 +65,12 @@ Alternatives to the Tokio async ecosystem include:
 - [![embassy][c-embassy-badge]][c-embassy]  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
 - [![mio][c-mio-badge]][c-mio]  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
+## See also
+
+[Asynchronous Programming in Rust][book-async-prog-rust]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO:
-
-## Async Rust
-
-[Asynchronous Programming in Rust][book-async-prog-rust]
-
-## Kanal
-
-- Fast sync and async channel [Kanal][kanal-github]
-
-## Tokio
-
-- [tokio.rs][tokio-rs]
-- [tokio examples][tokio-examples]
-- [tokio-rs async-stream][tokio-async-stream]
-- [tokio-rs mio][mio-github]
-
-[book-async-prog-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
-[kanal-github]: https://github.com/fereidani/kanal
-[tokio-rs]: https://tokio.rs
-[tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
-[tokio-async-stream]: https://github.com/tokio-rs/async-stream
-[mio-github]: https://github.com/tokio-rs/mio
 </div>

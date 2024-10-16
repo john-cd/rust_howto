@@ -32,6 +32,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
+TODO: expand: approx, nextest
 </div>

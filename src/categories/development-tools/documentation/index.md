@@ -57,6 +57,6 @@ The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level docume
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
+
 <div class="hidden">
-TODO:
 </div>
