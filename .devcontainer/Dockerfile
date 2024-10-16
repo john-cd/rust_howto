@@ -47,13 +47,24 @@ ARG MDBOOK_VERSION
 ## Install cargo binstall (binary install)
 ## Install just from the binary release
 ## Install mdbook from the binary release
-RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
+RUN <<EOF
+    set -e
+    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
     && cargo binstall --no-confirm just \
-    && cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook \
     && cargo binstall --no-confirm mdbook-linkcheck \
     && cargo binstall --no-confirm mdbook-private \
     && cargo binstall --no-confirm mdbook-indexing \
     && cargo binstall --no-confirm --secure cargo-nextest
+    if [ ! hash mdbook 2>/dev/null ]; then
+        cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
+    fi
+    if [[ $(mdbook -V) != "mdbook v${MDBOOK_VERSION}" ]]; then
+        cargo binstall --version ${MDBOOK_VERSION} --no-confirm --force mdbook
+    fi
+EOF
+
+# Optional:
+#   && cargo binstall --no-confirm toml2json
 
 ## Alternative just install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html

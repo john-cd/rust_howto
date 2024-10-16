@@ -20,8 +20,6 @@ services:
       - cargo_home_cache:/usr/local/cargo/ # https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache
       - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml
       - command_history:/command_history
-    ports:
-      - "3000:3000"
     ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:
       - SYS_PTRACE

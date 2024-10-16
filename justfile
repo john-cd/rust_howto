@@ -1,11 +1,12 @@
 alias b := build
 alias ba := buildall
 alias ca := clippyall
+alias f := fmtall
+alias q := quick
 alias s := serve
 alias t := test
 alias ta := testall
 alias nta := nextestall
-alias f := fmtall
 set windows-shell := ["cmd.exe", "/c"]
 
 default:
@@ -116,15 +117,34 @@ test: _build-book
 
 # Serve the book (incl. link checking)
 serve: build
-  cd book/html ; python3 -m http.server 3000
-# TODO make work from Dev Containers: mdbook serve --open (-o)
-# To change the port: --port 3001
-# -p 8000 -n 127.0.0.1
+  mdbook serve -p 3000 -n 127.0.0.1 --open
+  ## NOTE: conflicts with "port" / EXPOSE in the Docker / Docker compose configuration
+  ## Or use: cd book/html ; python3 -m http.server 3000
 
+# Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
+[unix]
+quick:
+  #! /bin/bash
+  set -o pipefail
+  set -e
+  # function called by trap
+  cleanup() {
+    cp -f ./book.toml.bak ./book.toml
+    exit
+  }
+  trap cleanup 1 2 3 6
+  if [ -f ./book.toml ]; then
+    mv -f ./book.toml ./book.toml.bak
+  fi
+  MDBOOK_BOOK='{"title": "QUICK SERVE"}' mdbook serve -p 3001 -n 127.0.0.1 --open
+# Doc on overriding mdbook config: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
+# Using the env variable MDBOOK_* only seems to override existing values, not erase them.
+# Examples:
+# MDBOOK_BOOK="$(toml2json ./book-dev.toml)" mdbook build
+# MDBOOK_OUTPUT__LINKCHECK='{"warning-policy": "ignore"}' MDBOOK_PREPROCESSOR__INDEXING='{"skip_renderer": "html,markdown,linkcheck"}'
+#
+# note: mdbook watch --open --watcher=poll / native does not have -p -n options.
 
-# Watch the book's markdown files and rebuilds it on changes
-# watch: _build-book
-#   mdbook watch --open --watcher=poll / native
 
 # Prepare for git push
 prep: spell fmtall clean build clippyall testall build serve

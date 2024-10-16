@@ -1,6 +1,5 @@
 # TODO
 
-- [ ] enable / disable linkcheck on demand - need manipulating book.toml? second book.toml? https://www.michaelfbryan.com/mdbook-linkcheck/mdbook_linkcheck/index.html
 - [ ] consider https://github.com/FauconFan/mdbook-cmdrun  A mdbook preprocessor for runnning arbitrary (shell) commands in a markdown file
 - [ ] consider https://benfalk.github.io/mdbook-journal/ or https://github.com/avitex/mdbook-tera for templating
 - [ ] review https://github.com/EngosSoftware/yapp A mdbook preprocessor that simply replaces text in chapters.
@@ -8,9 +7,9 @@
 
 ## Examples
 
+- [] fix commented examples
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] outputs of tests should go to a temporary folder
-- [ ] Warning: The index-preprocessor plugin was built against version 0.4.35 of mdbook, but we're being called from version 0.4.37
 - [ ] fix failing examples in drafts WIP
 - [ ] integrate clap builder example
 - [ ] fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
