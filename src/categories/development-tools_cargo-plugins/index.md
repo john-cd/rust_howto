@@ -112,29 +112,29 @@ cargo install --force cargo-make
 cargo make --version
 ```
 
-[automating-your-rust-workflows-with-cargo-make][c-cargo-make-blog]⮳
+[automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]⮳
 
 ## Cargo auditable
 
-Make production Rust binaries auditable [cargo-auditable][c-cargo-auditable-github]⮳
+Make production Rust binaries auditable [cargo-auditable][c-cargo_auditable-github]⮳
 
 ## Cargo limit
 
-Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit][c-cargo-limit-crates.io]⮳
+Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit][c-cargo_limit-crates.io]⮳
 
 ## Cargo cache
 
-- [`cargo cache`][c-cargo-cache-github]⮳
+- [`cargo cache`][c-cargo_cache-github]⮳
 
 ## Cargo husky
 
-[cargo-husky][c-cargo-husky-github]⮳ Setup Git hooks automatically for cargo projects with 🐶
+[cargo-husky][c-cargo_husky-github]⮳ Setup Git hooks automatically for cargo projects with 🐶
 
 See also: Git hook scripts are useful for identifying simple issues before submission to code review [pre-commit.com][pre-commit.com-website]⮳ A framework for managing and maintaining multi-language pre-commit hooks.
 
 ## Cargo xtask
 
-[cargo-xtask][c-cargo-xtask-github]⮳ cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
+[cargo-xtask][c-cargo_xtask-github]⮳ cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
 
 The two distinguishing features of xtask are:
 
@@ -145,7 +145,7 @@ The two distinguishing features of xtask are:
 
 [devx][c-devx-github]⮳ Collection of utilities for writing your own dev scripts
 
-Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)][c-cargo-xtask-github]⮳
+Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)][c-cargo_xtask-github]⮳
 
 ### xshell: Making Rust a Better Bash
 
@@ -157,11 +157,11 @@ Devx is a collection of utilities for writing your own dev scripts in Rust. The 
 
 ## Cargo hakari
 
-[cargo-hakari][c-cargo-hakari-crates.io]⮳ Manage workspace-hack packages to speed up builds in large workspaces.
+[cargo-hakari][c-cargo_hakari-crates.io]⮳ Manage workspace-hack packages to speed up builds in large workspaces.
 
 ## Cargo wizard
 
-Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo-wizard-github]⮳
+Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo_wizard-github]⮳
 
 ## GitHub action for cargo plugins
 

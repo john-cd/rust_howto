@@ -20,6 +20,6 @@ TODO: add to separate file
 
 ## See also
 
-- Pure Rust multi-line text handling: [Pure Rust multi-line text handling][c-cosmic-text-github]⮳
+- Pure Rust multi-line text handling: [Pure Rust multi-line text handling][c-cosmic_text-github]⮳
 
 </div>

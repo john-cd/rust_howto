@@ -157,7 +157,7 @@
 [c-candle-lib.rs-badge]: https://img.shields.io/badge/lib.rs-candle-yellow
 [c-candle-lib.rs]: https://lib.rs/crates/candle
 [c-candle]: https://docs.rs/candle
-[c-cargo-auditable-github]: https://github.com/rust-secure-code/cargo-auditable
+[c-cargo_auditable-github]: https://github.com/rust-secure-code/cargo-auditable
 [c-cargo-badge]: https://img.shields.io/crates/v/cargo?label=cargo
 [c-cargo]: https://doc.rust-lang.org/stable/cargo
 [c-cargo_auditable-badge]: https://img.shields.io/crates/v/cargo_auditable?label=cargo-auditable

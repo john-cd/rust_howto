@@ -20,8 +20,8 @@ mdbook serve --open
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 - [mdbook third-party plugins][c-mdbook-third-party-plugins-wiki]
-- [mdbook-private][c-mdbook-private-github]
-- [mdbook-linkcheck][c-mdbook-linkcheck-github]
+- [mdbook-private][c-mdbook_private-github]
+- [mdbook-linkcheck][c-mdbook_linkcheck-github]
 - A runner for `mdbook`s to keep your documentation tested: [Byron-termbook][c-termbook-github]
 
 ## CD / CI
