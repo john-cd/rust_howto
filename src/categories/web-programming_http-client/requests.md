@@ -35,7 +35,7 @@ Builds complex URL with [`url::Url::parse_with_params`][c-url::Url::parse_with_p
 [`hyper::header::USER_AGENT`][c-hyper::header::USER_AGENT]{{hi:hyper::header::USER_AGENT}}⮳  [`hyper::header::AUTHORIZATION`][c-hyper::header::AUTHORIZATION]{{hi:hyper::header::AUTHORIZATION}}⮳ and custom `XPoweredBy` with [`reqwest::RequestBuilder::header`][c-reqwest::RequestBuilder::header]{{hi:reqwest::RequestBuilder::header}}⮳, then makes the request with
 [`reqwest::RequestBuilder::send`][c-reqwest::RequestBuilder::send]{{hi:reqwest::RequestBuilder::send}}⮳.
 
-The request targets <http://httpbin.org/headers> service which responds with a JSON dict containing all request headers for easy verification.
+The request targets [http://httpbin.org/headers][httpbin.org-headers] service which responds with a JSON dict containing all request headers for easy verification.
 
 ```rust,editable,no_run
 {{#include ../../../deps/tests/header.rs}}

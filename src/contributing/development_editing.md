@@ -2,7 +2,7 @@
 
 Type [`just`][c-just-website]{{hi:just}}⮳ (a tool similar to [`make`][make-website]{{hi:make}}⮳) in your favorite shell to lists all commonly used recipes during book editing and example code development.
 
-Use `just serve` to preview the book by serving it locally on <http://localhost:3000/>⮳.
+Use `just serve` to preview the book by serving it locally on [http://localhost:3000][localhost:3000]⮳.
 
 To add or edit the book, simply update or add a `.md` file in the appropriate [`src`][rust-howto-src-github]{{hi:src}}⮳ subfolder, then add a link in [`SUMMARY.md`][rust-howto-summary-github]{{hi:SUMMARY.md}}⮳.
 

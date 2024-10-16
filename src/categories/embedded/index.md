@@ -6,14 +6,12 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 [![cat-embedded][cat-embedded-badge]][cat-embedded]
 
-### Embassy
+## Embassy
 
-
-
-### See also
+## See also
 
 - [Embedded devices working group][embedded-devices-working-group]⮳
-- [rust-raspberrypi-OS-tutorials][rust-raspberrypi-OS-tutorials]⮳
+- [rust-raspberrypi-OS-tutorials][rust-raspberrypi-OS-tutorials-github]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

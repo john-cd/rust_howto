@@ -40,7 +40,7 @@ A curated list of Rust code and resources.
 
 - open source training courses about distributed database and distributed systems [talent-plan][talent-plan-github]⮳
 - Learning Rust By Practice, narrowing the gap between beginner and skilled-dev through challenging examples, exercises and projects. [rust-by-practice][rust-by-practice-github]⮳
-- A bunch of links to blog posts, articles, videos, etc for learning Rust [rust-learning][rust-learning]
+- A bunch of links to blog posts, articles, videos, etc for learning Rust [rust-learning][rust-learning-github]
 - Rust Language Bible [rust-course][rust-course-github]
 - [How to learn modern Rust][how_to_learn_modern_rust-github]
 

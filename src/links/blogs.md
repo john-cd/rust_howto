@@ -1,4 +1,4 @@
-# Blogs, Podcasts, Meetups...
+# Blogs, Podcasts, Meetups
 
 - [A learning journal][lpalmieri-website]⮳
 

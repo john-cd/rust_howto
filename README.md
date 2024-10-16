@@ -3,7 +3,7 @@
 **A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
 
-Point your browser to <https://john-cd.com/rust_howto> to read the [Rust How-to][rust-howto]⮳ book.
+Point your browser to [https://john-cd.com/rust_howto][rust-howto]⮳ to read the [Rust How-to][rust-howto]⮳ book.
 
 ## Work In Progress
 
@@ -21,7 +21,7 @@ The [mdbook-utils][mdbook-utils-crates.io] utility ([(github)][mdbook-utils-gith
 
 ## Acknowledgments
 
-This book is written by [S. John CD][john-cd]⮳. It is the successor of and incorporates most of the [Rust Cookbook][rust-cookbook]⮳. Thanks to its many contributors.
+This book is written by [John CD][john-cd]⮳. It is the successor of and incorporates most of the [Rust Cookbook][rust-cookbook]⮳. Thanks to its many contributors.
 
 [john-cd]: https://github.com/john-cd/
 [mdbook]: https://rust-lang.github.io/mdBook/

@@ -1,1 +1,1 @@
-[ex-incremental-computation]: index.md#incremental-computation
+[ex-??]: index.md
