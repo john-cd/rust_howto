@@ -1069,7 +1069,7 @@
 [c-pest-github-badge]: https://img.shields.io/badge/pest-steelblue?logo=github
 [c-pest-lib.rs-badge]: https://img.shields.io/badge/lib.rs-pest-yellow
 [c-pest-lib.rs]: https://lib.rs/crates/pest
-[c-pest-website]: https://pest.rs/
+[c-pest-website]: https://pest.rs
 [c-pest]: https://docs.rs/pest
 [c-plotly-badge]: https://img.shields.io/crates/v/plotly?label=plotly
 [c-plotly-crates.io-badge]: https://img.shields.io/badge/crates.io-plotly-crimson
@@ -1950,4 +1950,4 @@
 [c-zola-lib.rs]: https://lib.rs/crates/zola
 [c-zola-website-badge]: https://img.shields.io/badge/zola-coral
 [c-zola-website]: https://www.getzola.org/documentation/getting-started/overview
-[c-zola]: https://www.getzola.org/documentation/getting-started/overview/
+[c-zola]: https://www.getzola.org/documentation/getting-started/overview

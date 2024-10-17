@@ -84,6 +84,11 @@ build: _generate-refdefs _generate-index-category _build-book && _sitemap _copys
 
 # Generate the expanded markdown (input for skeptic) and the book's HTML / JS
 _build-book:
+  #! /bin/bash
+  set -e
+  if [ ! -f ./book.toml ]; then
+    cp -f ./book.toml.bak ./book.toml
+  fi
   mdbook build
 
 # Generate new reference definitions for all crate the book's examples depend on...
@@ -185,8 +190,9 @@ empty := ''
 do cmd=help subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
 
+# Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]
-sortrefs:
+sortrefs: removelastslash
   sort -u ./src/refs/crate-refs.md -o /tmp/c.md
   mv -f /tmp/c.md ./src/refs/crate-refs.md
   rm -f /temp/c.md
@@ -197,5 +203,17 @@ sortrefs:
   mv -f /tmp/l.md ./src/refs/link-refs.md
   rm -f /temp/l.md
 
+# Remove the last / from URLs in the reference definition files
+[unix]
+removelastslash:
+   sed -i 's/[/]$//g' ./src/refs/crate-refs.md
+   sed -i 's/[/]$//g' ./src/refs/other-refs.md
+   sed -i 's/[/]$//g' ./src/refs/link-refs.md
+
+# Check spelling in markdown
+[unix]
 spell:
   .devcontainer/spellcheck.sh
+
+# Hide sections
+#hide:
