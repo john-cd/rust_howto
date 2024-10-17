@@ -2,34 +2,46 @@
 
 {{#include cow.incl.md }}
 
-## Convert `Cow` to `&str`
+The type [`std::borrow::Cow`][c-std::borrow::Cow]  is a smart pointer providing clone-on-write functionality.
 
-[![std][c-std-badge]][c-std]
+## Convert `Cow` to `&str`
 
 Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
 
-```rust,ignore
+```rust, editable
 use std::borrow::Borrow;
+# let mut my_string = String::new();
+let example = std::borrow::Cow::from("example");
 my_string.push_str(example.borrow());
+# println!("{}", my_string);
 ```
 
 Use [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳:
 
-```rust,ignore
+```rust
+# let mut my_string = String::new();
+let example = std::borrow::Cow::from("example");
 my_string.push_str(example.as_ref());
+# println!("{}", my_string);
 ```
 
 Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ explicitly:
 
-```rust,ignore
+```rust
 use std::ops::Deref;
+# let mut my_string = String::new();
+let example = std::borrow::Cow::from("example");
 my_string.push_str(example.deref());
+# println!("{}", my_string);
 ```
 
 Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly through a coercion{{hi:Coercion}}:
 
-```rust,ignore
+```rust
+# let mut my_string = String::new();
+let example = std::borrow::Cow::from("example");
 my_string.push_str(&example);
+# println!("{}", my_string);
 ```
 
 ## Convert `Cow` to `String`
@@ -38,28 +50,30 @@ my_string.push_str(&example);
 
 Use [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳:
 
-```rust,ignore
-example.to_string();
+```rust
+let example = std::borrow::Cow::from("example");
+println!("{}", example.to_string());
 ```
 
 Use [`std::borrow::Cow::into_owned`][c-std::borrow::Cow::into_owned]{{hi:std::borrow::Cow::into_owned}}⮳:
 
-```rust,ignore
-Use Cow::into_owned:
-example.into_owned();
+```rust
+let example = std::borrow::Cow::from("example");
+println!("{}", example.into_owned());
 ```
 
 Use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::borrow::ToOwned]{{hi:std::borrow::ToOwned}}⮳:
 
-```rust,ignore
-example.as_ref().to_owned();
+```rust
+let example = std::borrow::Cow::from("example");
+println!("{}", example.as_ref().to_owned());
 ```
 
-Adapted from this [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳
+These examples were adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: review
+TODO: add more
 </div>

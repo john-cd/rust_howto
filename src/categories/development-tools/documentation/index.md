@@ -12,15 +12,22 @@
 
 - Add documentation comments{{hi:Documentation comments}} to your code.
 
-```rust,editable
-/// This is a doc comment. It is equivalent to the next line.
-#[doc = r" This is a doc comment."]
-fn main() {}
+```rust
+/// This is a doc comment (it is equivalent to the next line).
+#[doc = r" This is a doc comment"]
+fn main() {
+  println!("Function with doc comment.");
+}
+```
+
+```rust
+#[doc = include_str!("../../README.md")]
+fn function_including_external_files_as_documentation() { }
 ```
 
 [`rustdoc`][book-rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
 
-```rust,editable,mdbook-runnable
+```rust
 {{#include ../../../../deps/tests/rustdoc.rs}}
 ```
 
@@ -34,7 +41,7 @@ Use `//!` at the top of the file (instead of `///`) for module-level documentati
 
 The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level documentation front-page.
 
-```rust,editable
+```rust
 //! Fast and easy queue abstraction.
 //!
 //! Provides an abstraction over a queue. When the abstraction is used
@@ -43,15 +50,13 @@ The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level docume
 //! - `[Easy]`
 //!
 //! [Easy]: http://thatwaseasy.example.com
-
 # fn main() {}
 ```
 
 - To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:rust playground}}), use the following attribute:
 
-```rust,editable
+```rust
 #![doc(html_playground_url = "https://playground.example.com/")]
-
 # fn main() {}
 ```
 
