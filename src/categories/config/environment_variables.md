@@ -8,7 +8,7 @@
 
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/dotenvy.rs}}
 ```
 
@@ -16,7 +16,7 @@
 
 To retrieve a single environment variable{{hi:Environment variables}},
 
-```rust,editable,should_panic
+```rust,should_panic
 {{#include ../../../deps/tests/env.rs}}
 ```
 
@@ -34,7 +34,7 @@ envy = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 ```
 
-```rust,editable,should_panic,noplayground
+```rust,should_panic,noplayground
 {{#include ../../../deps/tests/envy.rs}}
 ```
 

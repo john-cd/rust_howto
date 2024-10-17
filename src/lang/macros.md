@@ -6,7 +6,7 @@
 
 The [Little Book of Rust Macros][book-rust-macros]⮳
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/macros.rs}}
 ```
 

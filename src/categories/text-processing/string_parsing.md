@@ -8,7 +8,7 @@
 
 Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} string using the [`unicode_segmentation::UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]{{hi:unicode_segmentation::UnicodeSegmentation::graphemes}}⮳ function from the [`unicode_segmentation`][c-unicode_segmentation]{{hi:unicode_segmentation}}⮳ crate.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/graphemes.rs}}
 ```
 
@@ -18,7 +18,7 @@ Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} stri
 
 Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/from_str.rs}}
 ```
 

@@ -6,13 +6,13 @@
 
 [![std][c-std-badge]][c-std]
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/strings.rs}}
 ```
 
 ## Placeholders
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/strings2.rs}}
 ```
 
@@ -24,7 +24,7 @@ Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership 
 
 Here are several common methods to concatenate{{hi:Concatenation}} Strings:
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/strings3.rs}}
 ```
 

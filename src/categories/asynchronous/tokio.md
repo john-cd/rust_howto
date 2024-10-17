@@ -25,7 +25,7 @@ Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the 
 
 Example from [c-tokio_graceful_shutdown][c-tokio_graceful_shutdown]⮳:
 
-```rust,editable,noplayground,no_run
+```rust,noplayground,no_run
 {{#include ../../../deps/tests/tokio_graceful_shutdown.rs}}
 ```
 

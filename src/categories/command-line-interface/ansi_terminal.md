@@ -12,7 +12,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 
 ## Printing colored text to the Terminal
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/ansi_term-basic.rs}}
 ```
 
@@ -22,7 +22,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 
 For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ struct. [`ansi_term::Style::new`][c-ansi_term::Style::new]{{hi:ansi_term::Style::new}}⮳ creates the struct, and properties chained.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/ansi_term-basic1.rs}}
 ```
 
@@ -32,7 +32,7 @@ For anything more complex than plain foreground color changes, the code needs to
 
 [`ansi_term::Color`][c-ansi_term::Color]{{hi:ansi_term::Color}}⮳ implements many similar functions as [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ and can chain methods.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/ansi_term-basic2.rs}}
 ```
 

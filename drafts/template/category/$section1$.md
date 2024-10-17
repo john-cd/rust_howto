@@ -8,7 +8,7 @@
 
 $description1$
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/$crate1$.rs}}
 ```
 

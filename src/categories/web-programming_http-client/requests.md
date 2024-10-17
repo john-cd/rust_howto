@@ -8,7 +8,7 @@
 
 Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest::blocking::get`][c-reqwest::blocking::get]{{hi:reqwest::blocking::get}}⮳ Prints obtained [`reqwest::blocking::Response`][c-reqwest::blocking::Response]{{hi:reqwest::blocking::Response}}⮳ status and headers. Reads HTTP response body into an allocated [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ using [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/get.rs}}
 ```
 
@@ -37,7 +37,7 @@ Builds complex URL with [`url::Url::parse_with_params`][c-url::Url::parse_with_p
 
 The request targets [http://httpbin.org/headers][httpbin.org-headers] service which responds with a JSON dict containing all request headers for easy verification.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/header.rs}}
 ```
 

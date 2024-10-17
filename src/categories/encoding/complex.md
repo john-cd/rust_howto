@@ -12,7 +12,7 @@ Unstructured JSON can be parsed into a universal [`serde_json::Value`][c-serde_j
 
 The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/json.rs}}
 ```
 
@@ -22,13 +22,13 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/toml.rs}}
 ```
 
 Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/toml1.rs}}
 ```
 
@@ -38,7 +38,7 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 [`byteorder`][c-byteorder]{{hi:byteorder}}⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/endian-byte.rs}}
 ```
 

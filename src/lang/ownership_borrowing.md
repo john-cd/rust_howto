@@ -6,25 +6,25 @@
 - Each value in Rust has an owner{{hi:Ownership}}.
 - There can only be one owner at a time.
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/ownership.rs}}
 ```
 
 When the owner goes out of scope{{hi:Scope}}, the value will be dropped.
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/ownership2.rs}}
 ```
 
 Rust will never automatically create “deep” copies of your data. Use [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/clone.rs}}
 ```
 
 If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::marker::Copy}}⮳ trait (stack-only, fixed-size values, like integers, floats, and tuples thereof), variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/copy.rs}}
 ```
 
@@ -32,13 +32,13 @@ If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::mar
 
 Passing a variable to a function will move or copy, just as assignment does. To avoid passing a value along, borrow the value:
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/borrowing.rs}}
 ```
 
 ### Mutable reference
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/borrowing_mutable.rs}}
 ```
 

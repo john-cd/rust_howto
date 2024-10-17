@@ -2,7 +2,7 @@
 
 Attributes can take arguments with different syntaxes:
 
-```rust,editable,ignore
+```rust,ignore
 #[attribute = "value"]
 #[attribute(key = "value")]
 #[attribute(value)]
@@ -15,19 +15,19 @@ Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribut
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/attributes_debug.rs}}
 ```
 
 For production-ready code{{hi:Production-ready code}}, replace the above by the following, for example.
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/attributes_production.rs}}
 ```
 
 You also apply these attributes to specific functions:
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/allow_dead_code.rs}}
 ```
 
@@ -39,13 +39,13 @@ See [Automatic derivation][p-automatic-derivation].
 
 ## Must Use
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/attributes_must_use.rs}}
 ```
 
 ## Deprecated
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/attributes_deprecated.rs}}
 ```
 
@@ -53,7 +53,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 [Conditional compilation][book-rust-reference-conditional-compilation]⮳
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/conditional_compilation.rs}}
 ```
 

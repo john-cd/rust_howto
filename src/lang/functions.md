@@ -1,6 +1,6 @@
 # Functions
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/functions.rs}}
 ```
 
@@ -8,17 +8,17 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 ## Generic functions
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/generic_functions.rs}}
 ```
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/generic_functions2.rs}}
 ```
 
 ## Function pointers
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/function_pointers.rs}}
 ```
 
@@ -26,7 +26,7 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 Diverging functions never return.
 
-```rust,editable,should_panic
+```rust,should_panic
 {{#include ../../deps/tests/diverging_functions.rs}}
 ```
 

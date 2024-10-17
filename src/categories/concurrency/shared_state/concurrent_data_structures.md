@@ -10,7 +10,7 @@
 
 [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../../deps/tests/dashmap.rs}}
 ```
 
@@ -18,7 +18,7 @@
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../../deps/tests/crossbeam_queue.rs}}
 ```
 

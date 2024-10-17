@@ -10,7 +10,7 @@ Uses [`ring::pbkdf2`][c-ring::pbkdf2]{{hi:ring::pbkdf2}}⮳ to hash a salted pas
 Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c-ring::pbkdf2::verify]{{hi:ring::pbkdf2::verify}}⮳
 The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::SecureRandom::fill]{{hi:ring::rand::SecureRandom::fill}}⮳ which fills the salt byte array with securely generated random numbers.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/pbkdf2.rs}}
 ```
 

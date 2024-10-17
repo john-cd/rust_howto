@@ -20,19 +20,19 @@ tracing-subscriber = "0.3"
 
 {{hi:Tracing}}
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../deps/tests/tracing_subscriber.rs}}
 ```
 
 ### Combine layers
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../deps/tests/tracing_subscriber2.rs}}
 ```
 
 Or with a custom formatting layer
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../deps/tests/tracing_subscriber3.rs}}
 ```
 
@@ -40,37 +40,37 @@ Or with a custom formatting layer
 
 {{hi:Custom event formatter}}
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../deps/tests/tracing_subscriber4.rs}}
 ```
 
 ## Events
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/tracing.rs}}
 ```
 
 ## Spans
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/tracing_spans.rs}}
 ```
 
 One-liner with `.entered()`:
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/tracing_span_entered.rs}}
 ```
 
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳.
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/tracing_span_in_scope.rs}}
 ```
 
 ## Add tracing spans to functions
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/tracing_instrument.rs}}
 ```
 

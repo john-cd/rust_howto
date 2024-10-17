@@ -10,7 +10,7 @@ Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ fro
 
 Note that in accordance with the [semantic versioning specification`][c-semver-spec]{{hi:Semantic Versioning Specification}}⮳, incrementing the minor version number{{hi:Version number}} resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/semver-increment.rs}}
 ```
 
@@ -22,7 +22,7 @@ Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ fro
 
 Note that, in accordance with the Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/semver-complex.rs}}
 ```
 
@@ -32,7 +32,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 
 Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ asserts that one is pre-release and the other is not.
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/semver-prerelease.rs}}
 ```
 
@@ -43,7 +43,7 @@ Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}
 Given a list of version &strs, finds the latest [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳
 [`semver::VersionReq`][c-semver::VersionReq]{{hi:semver::VersionReq}}⮳ filters the list with [`semver::VersionReq::matches`][c-semver::VersionReq::matches]{{hi:semver::VersionReq::matches}}⮳ Also demonstrates [`semver`][c-semver]{{hi:semver}}⮳ pre-release preferences.
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/semver-latest.rs}}
 ```
 
@@ -55,7 +55,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳  [`semver::VersionReq::matches`][c-semver::VersionReq::matches]{{hi:semver::VersionReq::matches}}⮳ compares
 [`semver::VersionReq`][c-semver::VersionReq]{{hi:semver::VersionReq}} to the parsed version. The command output resembles "git version x.y.z".
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../../deps/tests/semver-command.rs}}
 ```
 

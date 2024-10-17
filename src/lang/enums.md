@@ -1,6 +1,6 @@
 # Enums
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/enums.rs}}
 ```
 

@@ -11,7 +11,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on Windows.
 
 [`rusqlite::Connection::open`][c-rusqlite::Connection::open]{{hi:rusqlite::Connection::open}}⮳ will create the database if it doesn't already exist.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/initialization.rs}}
 ```
 
@@ -35,7 +35,7 @@ Begin a transaction with [`rusqlite::Connection::transaction`][c-rusqlite::Conne
 
 In the following example, colors add to a table having a unique constraint on the color name. When an attempt to insert a duplicate color is made, the transaction rolls back.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/transactions.rs}}
 ```
 

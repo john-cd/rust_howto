@@ -4,7 +4,7 @@
 
 [![regex][c-regex-badge]][c-regex]  [![regex-github][c-regex-github-badge]][c-regex-github]  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/regex.rs}}
 ```
 

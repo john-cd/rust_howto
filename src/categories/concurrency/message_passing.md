@@ -10,7 +10,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 [![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/message_passing_mpsc.rs}}
 ```
 
@@ -20,13 +20,13 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing.
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/message_passing_crossbeam_channel.rs}}
 ```
 
 Example using specialized channels for tickers{{hi:Tickers}} and timeout{{hi:Timeouts}}
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/message_passing_crossbeam_channel_after_tick.rs}}
 ```
 

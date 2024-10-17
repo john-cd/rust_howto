@@ -8,7 +8,7 @@
 
 Calculates the length of the hypotenuse of a right-angle triangle with an angle of 2 radians and opposite side length of 80.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/side-length.rs}}
 ```
 
@@ -18,7 +18,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 
 Verifies `tan(x)` is equal to `sin(x)/cos(x)` for x = 6.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/tan-sin-cos.rs}}
 ```
 
@@ -30,7 +30,7 @@ By default, Rust provides mathematical [float methods][primitive-f64]⮳ such as
 
 The following example computes the distance in kilometers between two points on the Earth with the [Haversine][wikipedia-haversine-formula]⮳ formula. Points are expressed as pairs of latitude and longitude in degrees. Then, [`to_radians`][primitive-f64::to_radians]{{hi:to_radians}}⮳ converts them in radians. [`sin`][primitive-f64::to_radians]{{hi:sin}}⮳  [`cos`][primitive-f64::to_radians]{{hi:cos}}⮳  [`powi`][primitive-f64::to_radians]{{hi:powi}}⮳ and [`sqrt`][primitive-f64::to_radians]{{hi:sqrt}}⮳ compute the central angle. Finally, it's possible to calculate the distance.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/latitude-longitude.rs}}
 ```
 

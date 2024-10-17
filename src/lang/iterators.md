@@ -1,6 +1,6 @@
 # Iterators
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/iterators.rs}}
 ```
 

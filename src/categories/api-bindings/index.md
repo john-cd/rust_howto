@@ -12,7 +12,7 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 [![pyo3][c-pyo3-badge]][c-pyo3]  [pyo3 website][c-pyo3-website]⮳  [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/pyo3.rs}}
 ```
 

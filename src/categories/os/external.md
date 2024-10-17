@@ -8,7 +8,7 @@
 
 Runs `git log --oneline` as an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and inspects its [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ using [`regex::Regex`][c-regex::Regex]{{hi:regex::Regex}}⮳ to get the hash and message of the last 5 commits.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/process-output.rs}}
 ```
 
@@ -18,7 +18,7 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 
 Opens the `python` interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/send-input.rs}}
 ```
 
@@ -31,7 +31,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:Process}}. Output of a child process is captured with a
 [`std::process::Stdio::piped`][c-std::process::Stdio::piped]{{hi:std::process::Stdio::piped}}⮳ between parent and child.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/piped.rs}}
 ```
 
@@ -43,7 +43,7 @@ Spawns a child process and redirects [`std::io::Stdout`][c-std::io::Stdout]{{hi:
 
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/error-file.rs}}
 ```
 
@@ -57,7 +57,7 @@ In [Run an external command and process stdout](#run-an-external-command-and-pro
 The below recipe is equivalent to the Unix shell command
 `journalctl | grep usb`.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/continuous.rs}}
 ```
 
@@ -67,7 +67,7 @@ The below recipe is equivalent to the Unix shell command
 
 Reads an environment variable{{hi:environment variable}} via [`std::env::var`][c-std::env::var]{{hi:std::env::var}}⮳.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/read-env-variable.rs}}
 ```
 

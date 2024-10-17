@@ -8,7 +8,7 @@
 
 The following example shows how to parse a [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}} type from a string using the [mime][c-mime]⮳ crate. [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ produces a default [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ type in an [`std::result::Result::unwrap_or`][c-std::result::Result::unwrap_or]{{hi:std::result::Result::unwrap_or}}⮳ clause.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/string.rs}}
 ```
 
@@ -18,7 +18,7 @@ The following example shows how to parse a [`mime::Mime`][c-mime::Mime]{{hi:mime
 
 The following example shows how to return the correct MIME{{hi:MIME type}} type from a given filename using the [`mime`][c-mime]{{hi:mime}}⮳ crate. The program will check for file extensions and match against a known list. The return value is [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/filename.rs}}
 ```
 
@@ -32,7 +32,7 @@ The [`mime`][c-mime]{{hi:mime}}⮳ crate also defines some commonly used MIME ty
 
 Note that the [`reqwest::header`][c-reqwest::header]{{hi:reqwest::header}}⮳ module is exported from the [`http`][c-http]{{hi:http}}⮳ crate.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/request.rs}}
 ```
 

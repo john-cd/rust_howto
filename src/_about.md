@@ -33,7 +33,7 @@ Consider this example for "generate random numbers within a range":
 
 [![rand][c-rand-badge]][c-rand]{{hi:rand}}  [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]
 
-```rust,editable
+```rust
 {{#include ../deps/tests/about.rs}}
 ```
 
@@ -63,7 +63,7 @@ The basic pattern we use is to have a `fn main() -> Result`.
 
 The structure generally looks like:
 
-```rust,editable
+```rust
 {{#include ../deps/tests/about1.rs}}
 ```
 
@@ -71,7 +71,7 @@ This is using the `error_chain!` macro to define a custom `Error` and `Result` t
 
 For the sake of readability error handling boilerplate is hidden by default like below. In order to read full contents click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the snippet.
 
-```rust,editable
+```rust
 {{#include ../deps/tests/about2.rs}}
 ```
 

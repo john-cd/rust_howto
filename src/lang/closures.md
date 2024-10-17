@@ -1,12 +1,12 @@
 # Closures
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/closures.rs}}
 ```
 
 ## Closure with type annotations
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/closures_with_type_annotations.rs}}
 ```
 
@@ -20,13 +20,13 @@ They preferentially capture variables by reference and only go lower when requir
 
 To force a move:
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/closures_move.rs}}
 ```
 
 ## Closures as input parameters
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/closures_as_input_parameters.rs}}
 ```
 

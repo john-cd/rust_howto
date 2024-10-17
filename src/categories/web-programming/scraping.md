@@ -8,7 +8,7 @@
 
 Use [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to perform a HTTP GET request{{hi:HTTP GET request}} and then use [`select::document::Document::from_read`][c-select::document::Document::from_read]{{hi:select::document::Document::from_read}}⮳ to parse the response into a HTML document{{hi:HTML document}}. [`select::document::Document::find`][c-select::document::Document::find]{{hi:select::document::Document::find}}⮳ with the criteria of [`select::predicate::Name`][c-select::predicate::Name]{{hi:select::predicate::Name}}⮳ is "a" retrieves all links. Call [`std-core::iter::Iterator::filter_map`][c-std-core::iter::Iterator::filter_map]{{hi:std-core::iter::Iterator::filter_map}}⮳ on the [`select::selection::Selection`][c-select::selection::Selection]{{hi:select::selection::Selection}}⮳ retrieves URLs from links that have the "href" [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ (attribute).
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/extract-links.rs}}
 ```
 
@@ -21,7 +21,7 @@ Call `get_base_url` to retrieve the base URL{{hi:Base URL}}. If the document has
 Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳ task that will parse an individual link with [`url::ParseOptions`][c-url::ParseOptions]{{hi:url::ParseOptions}}⮳ and [`tokio::task::spawn`][c-tokio::task::spawn]{{hi:tokio::task::spawn}}⮳. The task makes a request to the links with [`reqwest`][c-reqwest]{{hi:reqwest}}⮳ and verifies
 [`reqwest::StatusCode`][c-reqwest::StatusCode]{{hi:reqwest::StatusCode}}⮳. Then the tasks [`await`][book-rust-reference-await]{{hi:await}}⮳ completion before ending the program.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/broken.rs}}
 ```
 
@@ -33,7 +33,7 @@ Pull the source of a MediaWiki page using [`reqwest::get`][c-reqwest::get]{{hi:r
 
 MediaWiki link syntax is described [here][mediawiki-link-syntax]⮳.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/unique.rs}}
 ```
 

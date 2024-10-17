@@ -8,7 +8,7 @@
 
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environmental variable.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-mod.rs}}
 ```
 
@@ -40,7 +40,7 @@ environment variable contents in the form of [`RUST_LOG`][c-env_logger-RUST_LOG]
 Then, [`env_logger::Builder::init`][c-env_logger::Builder::init]{{hi:env_logger::Builder::init}}⮳ initializes the logger.
 All these steps are normally done internally by [`env_logger::init`][c-env_logger::init]{{hi:env_logger::init}}⮳.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-env-variable.rs}}
 ```
 
@@ -53,7 +53,7 @@ Each log entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now
 
 The example calls [`env_logger::Builder::format`][c-env_logger::Builder::format]{{hi:env_logger::Builder::format}}⮳ to set a closure which formats each message text with timestamp, [`log::Record::level`][c-log::Record::level]{{hi:log::Record::level}}⮳ and body ([`log::Record::args`][c-log::Record::args]{{hi:log::Record::args}}⮳).
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-timestamp.rs}}
 ```
 
@@ -72,7 +72,7 @@ stderr output will contain
 
 Create the log configuration{{hi:log configuration}} with [`log4rs::append::file::FileAppender`][c-log4rs::append::file::FileAppender]{{hi:log4rs::append::file::FileAppender}}⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`log4rs::encode::pattern`][c-log4rs::encode::pattern]{{hi:log4rs::encode::pattern}}⮳ Assigns the configuration to [`log4rs::config::Config`][c-log4rs::config::Config]{{hi:log4rs::config::Config}}⮳ and sets the default [`log::LevelFilter`][c-log::LevelFilter]{{hi:log::LevelFilter}}⮳
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/log-custom.rs}}
 ```
 

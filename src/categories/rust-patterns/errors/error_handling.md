@@ -6,7 +6,7 @@
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-```rust,editable,should_panic
+```rust,should_panic
 fn main() {
     panic!("crash and burn");
 }
@@ -16,7 +16,7 @@ fn main() {
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-```rust,editable,should_panic
+```rust,should_panic
 {{#include ../../../../deps/tests/error_handling.rs}}
 ```
 
@@ -24,7 +24,7 @@ fn main() {
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/unwrap_or_else.rs}}
 ```
 
@@ -32,7 +32,7 @@ fn main() {
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/question_mark.rs}}
 ```
 
@@ -42,7 +42,7 @@ This error points out that we’re only allowed to use the `?` operator in a fun
 
 Another example:
 
-```rust,editable
+```rust
 {{#include ../../../../deps/tests/question_mark2.rs}}
 ```
 

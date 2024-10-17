@@ -10,7 +10,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/tests.rs}}
 ```
 
@@ -18,7 +18,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]   [![cat-testing][cat-testing-badge]][cat-testing]
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/tests_custom_message.rs}}
 ```
 

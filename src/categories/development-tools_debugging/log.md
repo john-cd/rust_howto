@@ -9,7 +9,7 @@
 The [`log`][c-log]{{hi:log}}⮳ crate provides logging utilities{{hi:logging utilities}}. The [`env_logger`][c-env_logger]{{hi:env_logger}}⮳ crate configures logging via an environment variable. The [`log::debug`][c-log::debug]{{hi:log::debug}}⮳ macro works like other
 [`std::fmt`][c-std::fmt]{{hi:std::fmt}}⮳ formatted strings.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-debug.rs}}
 ```
 
@@ -33,7 +33,7 @@ DEBUG:main: Executing query: DROP TABLE students
 
 Proper error handling{{hi:error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`log`][c-log]{{hi:log}}'s convenience macro [`log::error`][c-log::error]{{hi:log::error}}⮳.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-error.rs}}
 ```
 
@@ -43,7 +43,7 @@ Proper error handling{{hi:error handling}} considers exceptions exceptional. Her
 
 Creates a custom logger configuration{{hi:custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-stdout.rs}}
 ```
 
@@ -53,7 +53,7 @@ Creates a custom logger configuration{{hi:custom logger configuration}} using th
 
 Implements a custom logger `ConsoleLogger` which prints to stdout. In order to use the logging macros, `ConsoleLogger` implements the [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ trait and [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ installs it.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-custom-logger.rs}}
 ```
 
@@ -63,7 +63,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳  [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ records the program submitting the log entry's classification, [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ denotes allowed log verbosity{{hi:log verbosity}} and `Option<&str>` holds optional application name.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/log-syslog.rs}}
 ```
 

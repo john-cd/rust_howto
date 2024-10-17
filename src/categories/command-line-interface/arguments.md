@@ -10,7 +10,7 @@ This application describes the structure of its command-line interface using [`c
 
 In the builder style, `with_name` is the unique identifier that `value_of` will use to retrieve the value passed. The [`clap::Arg::short`][c-clap::Arg::short]{{hi:clap::Arg::short}}⮳ and [`clap::Arg::long`][c-clap::Arg::long]{{hi:clap::Arg::long}}⮳ options control the flag{{hi:Flag}} the user will be expected to type; short flags look like `-f` and long flags look like `--file`.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/clap-basic.rs}}
 ```
 
@@ -50,7 +50,7 @@ Your favorite number must be 256.
 
 [![clap][c-clap-badge]][c-clap]  [(tutorial)][c-clap-tutorial]  [(cookbook)][c-clap-cookbook]  [![clap examples][c-clap-examples-badge]][c-clap-examples]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/clap.rs}}
 ```
 

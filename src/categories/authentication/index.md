@@ -10,7 +10,7 @@ The process of confirming identities.
 
 Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_auth]{{hi:reqwest::RequestBuilder::basic_auth}} to perform a basic HTTP authentication{{hi:HTTP authentication}}.
 
-```rust,editable,no_run
+```rust,no_run
 {{#include ../../../deps/tests/basic.rs}}
 ```
 

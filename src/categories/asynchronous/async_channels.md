@@ -12,13 +12,13 @@ Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channel}} that wo
 
 [`tokio::sync::oneshot`][c-tokio::sync::oneshot]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_oneshot.rs}}
 ```
 
 Another example:
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_oneshot2.rs}}
 ```
 
@@ -26,7 +26,7 @@ Another example:
 
 [![tokio][c-tokio-badge]][c-tokio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/async_channels_mpsc.rs}}
 ```
 

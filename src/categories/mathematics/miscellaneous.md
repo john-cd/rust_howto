@@ -8,7 +8,7 @@
 
 Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-num::BigInt]{{hi:num::BigInt}}⮳.
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/big-integers.rs}}
 ```
 

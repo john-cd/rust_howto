@@ -6,7 +6,7 @@
 
 [Riker (website)][c-riker-website]⮳
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/actors.rs}}
 ```
 

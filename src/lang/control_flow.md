@@ -2,7 +2,7 @@
 
 ## If else
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/if_else.rs}}
 ```
 
@@ -10,19 +10,19 @@ Also `else if <cond> { ... }`
 
 ## Loop
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/loop.rs}}
 ```
 
 ## While
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/while.rs}}
 ```
 
 ## For
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/for.rs}}
 ```
 

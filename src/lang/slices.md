@@ -1,6 +1,6 @@
 # Slices
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/slices.rs}}
 ```
 

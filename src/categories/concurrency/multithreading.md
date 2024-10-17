@@ -6,7 +6,7 @@
 
 [![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] {{hi:Join}}
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/multithreading_spawn_join.rs}}
 ```
 
@@ -18,7 +18,7 @@ When the main thread of a Rust program completes, all spawned threads{{hi:spawne
 
 [Scoped threads][c-std::thread::scope]⮳
 
-```rust,editable
+```rust
 {{#include ../../../deps/tests/multithreading_scoped_threads.rs}}
 ```
 
@@ -30,7 +30,7 @@ When the main thread of a Rust program completes, all spawned threads{{hi:spawne
 
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:execute in parallel}}.
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon.rs}}
 ```
 
@@ -38,7 +38,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_parsort.rs}}
 ```
 
@@ -48,7 +48,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 
 Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Threadpool}}⮳.
 
-```rust,editable,mdbook-runnable
+```rust,mdbook-runnable
 {{#include ../../../deps/tests/multithreading_rayon_custom.rs}}
 ```
 

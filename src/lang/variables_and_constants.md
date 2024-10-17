@@ -1,18 +1,18 @@
 # Variables and Constants
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/vars_and_consts.rs}}
 ```
 
 ## Shadowing
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/shadowing.rs}}
 ```
 
 ## Destructuring
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/destructuring.rs}}
 ```
 

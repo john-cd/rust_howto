@@ -20,7 +20,7 @@ See also:
 
 [Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}.
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../deps/tests/derive_more.rs}}
 ```
 

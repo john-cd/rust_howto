@@ -2,7 +2,7 @@
 
 ## Generic Structs
 
-```rust,editable
+```rust
 {{#include ../../deps/tests/generic_structs.rs}}
 ```
 
