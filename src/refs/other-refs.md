@@ -18,6 +18,7 @@
 [auth-microservice-rust-actix-web]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust
+[awesome-rust]: https://github.com/rust-unofficial/awesome-rust
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [best-of-rust-crates-github]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates
@@ -29,6 +30,7 @@
 [blog-ai-tools-that-can-generate-code]: https://www.marktechpost.com/2024/03/14/top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers
 [blog-announcing-async-fn-badge]: https://img.shields.io/badge/blog-announcing_async_fn-beige
 [blog-announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
+[blog-async-what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking
 [blog-auth-web-microservice-badge]: https://img.shields.io/badge/blog_auth_microservice-beige
 [blog-auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [blog-building-a-crawler-in-rust-badge]: https://img.shields.io/badge/blog-building_a_crawler_in_rust-beige
@@ -198,6 +200,7 @@
 [code-maven]: https://rust.code-maven.com
 [codevoweb-website-badge]: https://img.shields.io/badge/codevocoral
 [codevoweb-website]: https://codevoweb.com
+[communicating-between-sync-and-async-code-website]: https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
 [comprehensive-rust]: https://google.github.io/comprehensive-rust
 [concat-benchmark-github]: https://github.com/hoodie/concatenation_benchmarks-rs/blob/master/benches/lib.rs
 [concatenation_benchmarks-github]: https://github.com/hoodie/concatenation_benchmarks-rs
@@ -229,6 +232,7 @@
 [forum-deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
 [github-api]: https://developer.github.com/v3/auth
+[goodfirstissue-website]: https://goodfirstissue.dev/language/rust
 [gpui.rs]: https://www.gpui.rs
 [helix-editor-website]: https://helix-editor.com
 [how_to_learn_modern_rust-github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
@@ -330,6 +334,7 @@
 [rust-for-professionals]: https://overexact.com/rust-for-professionals
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation]: https://foundation.rust-lang.org
+[rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
 [rust-howto-deps-tests-github]: https://github.com/john-cd/rust_howto/tree/main/deps/tests
@@ -348,6 +353,7 @@
 [rust-learning-linked-lists-website]: https://rust-unofficial.github.io/too-many-lists/index.html
 [rust-linz.at]: https://rust-linz.at
 [rust-module-system-website]: https://www.sheshbabu.com/posts/rust-module-system
+[rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system
 [rust-on-nails-website-badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-on-nails-website]: https://rust-on-nails.com
 [rust-playground-website]: https://play.rust-lang.org
@@ -357,13 +363,16 @@
 [rust-raspberrypi-OS-tutorials-github]: https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials
 [rust-starter-pack-badge]: https://img.shields.io/badge/Rust_starter_pack-tan
 [rust-starter-pack]: https://opheron.github.io/rust-starter-pack
+[rust-state-machine-pattern]: https://hoverbear.org/blog/rust-state-machine-pattern
 [rust-tokio-template-github-badge]: https://img.shields.io/badge/rust--tokio--template-steelblue?logo=github
 [rust-tokio-template-github]: https://github.com/Finomnis/rust-tokio-template/tree/main
 [rust-tools-badge]: https://img.shields.io/badge/Rust_tools-tan
 [rust-tools]: https://www.rust-lang.org/tools
+[rust-unofficial-patterns-github]: https://github.com/rust-unofficial/patterns
 [rust-web-framework-comparison-github]: https://github.com/flosse/rust-web-framework-comparison
 [rust-yew-realworld-example-app-github]: https://github.com/jetli/rust-yew-realworld-example-app
 [rust]: https://www.rust-lang.org
+[rust_tutorial_that_actually_teaches_rust]: https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
 [rustacean-station]: https://rustacean-station.org
 [rustc-badge]:https://img.shields.io/badge/rustc-tan
 [rustc]: https://doc.rust-lang.org/rustc/index.html
