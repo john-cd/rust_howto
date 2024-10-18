@@ -7,9 +7,7 @@
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 ```rust,should_panic
-fn main() {
-    panic!("crash and burn");
-}
+{{#include ../../../../deps/tests/panic.rs}}
 ```
 
 ## Recoverable errors with `Result`
