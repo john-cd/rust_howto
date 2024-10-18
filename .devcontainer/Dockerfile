@@ -54,10 +54,13 @@ RUN <<EOF
     && cargo binstall --no-confirm mdbook-linkcheck \
     && cargo binstall --no-confirm mdbook-private \
     && cargo binstall --no-confirm mdbook-indexing \
+    && cargo binstall --no-confirm mdbook-keeper \
     && cargo binstall --no-confirm --secure cargo-nextest
+    # mdbook not installed
     if [ ! hash mdbook 2>/dev/null ]; then
         cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
     fi
+    # mdbook installed but old version - force the installation of the new version
     if [[ $(mdbook -V) != "mdbook v${MDBOOK_VERSION}" ]]; then
         cargo binstall --version ${MDBOOK_VERSION} --no-confirm --force mdbook
     fi
