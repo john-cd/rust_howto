@@ -214,6 +214,3 @@ removelastslash:
 [unix]
 spell:
   .devcontainer/spellcheck.sh
-
-# Hide sections
-#hide:
