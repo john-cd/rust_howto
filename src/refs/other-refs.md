@@ -19,6 +19,9 @@
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust
 [awesome-rust]: https://github.com/rust-unofficial/awesome-rust
+[aws-create-lambda-functions-with-rust]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
+[aws-doc-sdk-examples-github]: https://github.com/awsdocs/aws-doc-sdk-examples
+[aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [best-of-rust-crates-github]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates
@@ -35,6 +38,7 @@
 [blog-auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [blog-building-a-crawler-in-rust-badge]: https://img.shields.io/badge/blog-building_a_crawler_in_rust-beige
 [blog-building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
+[blog-building-a-saas-with-rust-and-next-js]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust
 [blog-building-a-saas-with-rust-badge]: https://img.shields.io/badge/blog-building_a_saas_with_rust-beige
 [blog-building-a-saas-with-rust]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust
 [blog-candle]: https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
@@ -60,6 +64,7 @@
 [blog-stabilizing-async-fn-in-traits]: https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html
 [blog-state-of-async-rust-badge]: https://img.shields.io/badge/blog-state_of_async_rust-beige
 [blog-state-of-async-rust]: https://corrode.dev/blog/async
+[blog-sustainability-with-rust]: https://aws.amazon.com/blogs/opensource/sustainability-with-rust
 [blog-traits-badge]: https://img.shields.io/badge/blog-traits-beige
 [blog-traits]: https://blog.rust-lang.org/2015/05/11/traits.html
 [blog-tuify-badge]: https://img.shields.io/badge/blog-tuify-beige
@@ -191,6 +196,8 @@
 [book-zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production
 [book-zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword
 [bottlerocket-github]: https://github.com/bottlerocket-os/bottlerocket
+[cache-management-with-gitHub-actions-website]: https://docs.docker.com/build/ci/github-actions/cache
+[cache-storage-backends]: https://docs.docker.com/build/cache/backends
 [cached-docker-images-badge]: https://img.shields.io/badge/Cached_docker_images-steelblue?logo=github
 [cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
 [cargo_plugins_install_action-github]: https://github.com/taiki-e/install-action
@@ -204,10 +211,13 @@
 [comprehensive-rust]: https://google.github.io/comprehensive-rust
 [concat-benchmark-github]: https://github.com/hoodie/concatenation_benchmarks-rs/blob/master/benches/lib.rs
 [concatenation_benchmarks-github]: https://github.com/hoodie/concatenation_benchmarks-rs
+[crates.io-category_slugs]: https://crates.io/category_slugs
 [crates.io-example-source-code-badge]: https://img.shields.io/badge/crates.io-steelblue?logo=github
 [crates.io-example-source-code]: https://github.com/rust-lang/crates.io/tree/main
 [crates.io-most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
+[crates.io-website]: https://crates.io
 [crates.io]: https://crates.io
+[creating-a-docker-container-action-website]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
 [csv-sample-badge]: https://img.shields.io/badge/csv_sample-steelblue?logo=github
 [csv-sample]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
 [dapr-rust-examples-badge]: https://img.shields.io/badge/dapr_rust_sdk_examples-steelblue?logo=github
@@ -216,6 +226,7 @@
 [dapr-rust-sdk-github]: https://github.com/dapr/rust-sdk
 [dapr-website-badge]: https://img.shields.io/badge/dapr-coral
 [dapr-website]: https://dapr.io
+[deps-rs-website]: https://deps.rs
 [desktop-lite-github]: https://github.com/devcontainers/features/tree/main/src/desktop-lite
 [dev-container-cli-github]: https://github.com/devcontainers/cli
 [dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
@@ -234,6 +245,7 @@
 [github-api]: https://developer.github.com/v3/auth
 [goodfirstissue-website]: https://goodfirstissue.dev/language/rust
 [gpui.rs]: https://www.gpui.rs
+[guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [helix-editor-website]: https://helix-editor.com
 [how_to_learn_modern_rust-github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 [http-basic-auth]: https://tools.ietf.org/html/rfc2617
@@ -246,7 +258,9 @@
 [keyword-dyn]: https://doc.rust-lang.org/std/keyword.dyn.html
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
+[lapce-github]: https://github.com/lapce/lapce
 [launchpad-shuttle.rs]: https://www.shuttle.rs/launchpad
+[lemmy-github]: https://github.com/LemmyNet/lemmy
 [lib-rs-stats]: https://lib.rs/stats
 [lib-rs]: https://lib.rs
 [linux-embracing-rust-will-boost-robotics-community]: https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community
@@ -267,10 +281,16 @@
 [mozilla-cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [mozilla-mime-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 [mozilla-range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
+[nginx-proxy-manager]: https://nginxproxymanager.com
+[ngrok-rust-github]: https://github.com/ngrok/ngrok-rust
+[ngrok-website]: https://ngrok.com
 [nvm-github]: https://github.com/nvm-sh/nvm
 [oauth-website]: https://oauth.net/getting-started
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust
+[pantsbuild-website]: https://www.pantsbuild.org
 [paste.rs]: https://paste.rs
+[pingora-github]: https://github.com/cloudflare/pingora/tree/main
+[pingora-quick-start-github]: https://github.com/cloudflare/pingora/blob/main/docs/quick_start.md
 [plotly.js]: https://plot.ly/javascript
 [podman-website]: https://podman.io
 [practical-rust-web-projects-github]: https://github.com/Apress/practical-rust-web-projects/tree/main
@@ -308,6 +328,7 @@
 [proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
 [pyenv-github-badge]: https://img.shields.io/badge/pyenv-steelblue?logo=github
 [pyenv-github]: https://github.com/pyenv/pyenv
+[rathole-github]: https://github.com/rapiz1/rathole
 [realworld-actix-fullstack-github]: https://github.com/Bechma/realworld-actix-fullstack
 [realworld-example-apps-badge]: https://img.shields.io/badge/realworld_examples-steelblue?logo=github
 [realworld-example-apps]: https://github.com/gothinkster/realworld
@@ -330,6 +351,7 @@
 [rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice-github]: https://github.com/sunface/rust-by-practice
 [rust-course-github]: https://github.com/sunface/rust-course
+[rust-digger-website]: https://rust-digger.code-maven.com
 [rust-for-professionals-website]: https://overexact.com/rust-for-professionals
 [rust-for-professionals]: https://overexact.com/rust-for-professionals
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
@@ -377,18 +399,23 @@
 [rustc-badge]:https://img.shields.io/badge/rustc-tan
 [rustc]: https://doc.rust-lang.org/rustc/index.html
 [rustmagazine.org]: https://rustmagazine.org
+[rustpython-github]: https://github.com/RustPython/RustPython
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup
 [rustup-website-badge]: https://img.shields.io/badge/rustup-coral
 [rustup-website]: https://rustup.rs
+[serverless-rust-website]: https://www.serverless.com/plugins/serverless-rust
 [shield-io-website]: https://shields.io
 [shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle-rs-website]: https://www.shuttle.rs
 [smartcore-website-badge]: https://img.shields.io/badge/smartcore-coral
 [smartcore-website]: https://smartcorelib.org
+[stackoverflow-asref]: https://stackoverflow.com/questions/66026309/when-and-why-to-use-asreft-instead-of-t
 [stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]: https://stackoverflow.com/questions/47147844/how-do-i-get-a-str-or-string-from-stdborrowcowstr
+[stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
 [stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]: https://stackoverflow.com/questions/55755552/what-is-the-rust-equivalent-to-a-try-catch-statement
+[swc-github]: https://github.com/swc-project/swc
 [talent-plan-github]: https://github.com/pingcap/talent-plan
 [tokio-async-stream]: https://github.com/tokio-rs/async-stream
 [tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
@@ -400,6 +427,7 @@
 [twitter-hashtag-badge]: https://img.shields.io/badge/twitter--text-steelblue?logo=github
 [twitter-hashtag-regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
 [unix-syslog-website]: https://www.gnu.org/software/libc/manual/html_node/Overview-of-Syslog.html
+[upload-a-build-artifact-website]: https://github.com/marketplace/actions/upload-a-build-artifact
 [wasmer-website]: https://wasmer.io
 [web-application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 [webgpu-website]: https://gpuweb.github.io/gpuweb

@@ -91,7 +91,6 @@
 
 [All Valid Categories][crates.io-category_slugs]⮳
 
-[crates.io-category_slugs]: https://crates.io/category_slugs
 {{#include refs/link-refs.md}}
 
 <div class="hidden">

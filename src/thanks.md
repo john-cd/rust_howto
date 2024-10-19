@@ -12,8 +12,8 @@ It is also inspired from online websites, blogs, and documentation, including:
 - [Asynchronous Programming in Rust][book-asynchronous-programming-in-rust]⮳
 - The [rustdoc book][book-rustdoc]⮳
 - [`docs.rs`][docs-rs]⮳
-- [https://www.lpalmieri.com/][lpalmieri-website]⮳
-- [https://codevoweb.com/][codevoweb-website]⮳
+- [lpalmieri.com][lpalmieri-website]⮳
+- [Codevoweb.com][codevoweb-website]⮳
 - [Rust for professionals][rust-for-professionals-website]⮳
 - [Rust Cookbook (fork)][book-rust-cookbook-fork]⮳
 - [Rust Design Patterns][book-rust-design-patterns]⮳

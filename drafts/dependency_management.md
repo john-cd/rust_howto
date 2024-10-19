@@ -10,8 +10,4 @@ Deps.rs uses semantic versioning to detect outdated or insecure dependencies in 
 
 ## Rust Digger
 
-We are collecting data about [Rust Crates][crates.io]⮳ to find the common practices of Open Source Rust developers and trying to improve the Rust ecosystem. [rust-digger.code-maven.com][rust-digger]⮳
-
-[rust-digger]: https://rust-digger.code-maven.com/
-[crates.io]: https://crates.io/
-[deps-rs-website]: https://deps.rs
+We are collecting data about [Rust Crates][crates.io-website]⮳ to find the common practices of Open Source Rust developers and trying to improve the Rust ecosystem. [rust-digger.code-maven.com][rust-digger-website]⮳

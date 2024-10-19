@@ -6,24 +6,17 @@
 
 [AWS Rust SDK][aws-rust-sdk-website]⮳
 
-[Create Lambda functions with Rust][create-lambda-functions-with-rust]⮳
+[Create Lambda functions with Rust][aws-create-lambda-functions-with-rust]⮳
 
-[aws-lambda-rust-runtime-examples][aws-lambda-rust-runtime-examples]⮳
+[aws-lambda-rust-runtime-examples][aws-lambda-rust-runtime-examples-github]⮳
 
-[aws-doc-sdk-examples][aws-doc-sdk-examples]⮳
+[aws-doc-sdk-examples][aws-doc-sdk-examples-github]⮳
 
-[AWS rust][sustainability-with-rust]
-
-[create-lambda-functions-with-rust]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
-[sustainability-with-rust]: https://aws.amazon.com/blogs/opensource/sustainability-with-rust/
-[aws-lambda-rust-runtime-examples]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
-[aws-doc-sdk-examples]: https://github.com/awsdocs/aws-doc-sdk-examples
+[AWS rust][blog-sustainability-with-rust]
 
 ## Serverless Rust
 
-- [serverless rust][serverless-rust]⮳
-
-[serverless-rust]: https://www.serverless.com/plugins/serverless-rust
+- [serverless rust][serverless-rust-website]⮳
 
 ## Dapr
 

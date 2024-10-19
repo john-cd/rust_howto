@@ -115,11 +115,7 @@ Example `.github/workflows/<name>.yml`
 
 [Creating a docker container action][creating-a-docker-container-action-website]⮳
 
-[creating-a-docker-container-action-website]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
-
 ["Upload a Build Artifact" Github Action][upload-a-build-artifact-website]⮳
-
-[upload-a-build-artifact-website]: https://github.com/marketplace/actions/upload-a-build-artifact
 
 [`docker-cache`][docker-cache-github]{{hi:docker-cache}}⮳
 
@@ -128,13 +124,10 @@ Example `.github/workflows/<name>.yml`
 [Docker GitHub Action][docker-gitHub-action]⮳
 
 [Cache storage backends][cache-storage-backends]⮳
-[cache-storage-backends]: https://docs.docker.com/build/cache/backends
 
 [Cache management with GitHub Actions][cache-management-with-gitHub-actions-website]⮳
-[cache-management-with-gitHub-actions-website]: https://docs.docker.com/build/ci/github-actions/cache/
 
 [How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳
-[stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
 
 [Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳
 

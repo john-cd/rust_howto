@@ -3,4 +3,3 @@
 ## Rhai
 
 - [rhai][c-rhai]⮳
-[c-rhai]: https://docs.rs/rhai
