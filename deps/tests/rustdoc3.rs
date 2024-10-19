@@ -9,5 +9,5 @@
 
 #[test]
 fn test() {
-  println!("//! ... are `inner` comments that apply to the containing module (or crate).");
+    println!("//! ... are `inner` comments that apply to the containing module (or crate).");
 }

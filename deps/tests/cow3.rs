@@ -2,9 +2,9 @@ use std::ops::Deref;
 
 #[test]
 fn test() {
-  let mut my_string = String::new();
-  let example = std::borrow::Cow::from("example");
+    let mut my_string = String::new();
+    let example = std::borrow::Cow::from("example");
 
-  my_string.push_str(example.deref());
-  println!("{}", my_string);
+    my_string.push_str(example.deref());
+    println!("{}", my_string);
 }
