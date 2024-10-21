@@ -1,21 +1,40 @@
-// use reqwest::Result;
+// TODO fix - the API no longer returns a crate_id - need to get
+// version_id then join version_id and Version.id ro retrieve crate
+// name Consider a simpler API for example purposes
+
+// #![allow(dead_code)]
+
+// use anyhow::Result;
 // use serde::Deserialize;
+
+// // Structs used to deserialize the JSON produced by the API
 
 // #[derive(Deserialize)]
 // struct ApiResponse {
 //     dependencies: Vec<Dependency>,
 //     meta: Meta,
+//     versions: Vec<Version>,
 // }
 
+// // https://github.com/rust-lang/crates.io/issues/856
 // #[derive(Deserialize)]
 // struct Dependency {
-//     crate_id: String,
+//     version_id: String,
 // }
 
 // #[derive(Deserialize)]
 // struct Meta {
 //     total: u32,
 // }
+
+// #[derive(Deserialize)]
+// struct Version {
+//     id: String,
+//     #[serde(alias = "crate")]
+//     crate_id: String,
+// }
+
+// // Main struct
 
 // struct ReverseDependencies {
 //     crate_id: String,
@@ -28,10 +47,13 @@
 
 // impl ReverseDependencies {
 //     fn of(crate_id: &str) -> Result<Self> {
+//         let client = reqwest::blocking::Client::builder()
+//             .user_agent("Rust-test")
+//             .build()?;
 //         Ok(ReverseDependencies {
 //             crate_id: crate_id.to_owned(),
 //             dependencies: vec![].into_iter(),
-//             client: reqwest::blocking::Client::new(),
+//             client,
 //             page: 0,
 //             per_page: 100,
 //             total: 0,
@@ -52,11 +74,15 @@
 //             "https://crates.io/api/v1/crates/{}/reverse_dependencies?page={}&per_page={}",
 //             self.crate_id, self.page, self.per_page
 //         );
-
-//         let response =
-// self.client.get(url).send()?.json::<ApiResponse>()?;         self.
-// dependencies = response.dependencies.into_iter();         self.
-// total = response.meta.total;         Ok(self.dependencies.next())
+//         println!("Calling {}", url);
+//         let resp = self.client.get(url).send()?;
+//         //println!("{:#?}", resp);
+//         //let text = resp.text()?;
+//         //println!("{:#?}", text);
+//         let json = resp.json::<ApiResponse>()?;
+//         self.dependencies = json.dependencies.into_iter();
+//         self.total = json.meta.total;
+//         Ok(self.dependencies.next())
 //     }
 // }
 
@@ -74,7 +100,7 @@
 
 // #[test]
 // fn test() -> Result<()> {
-//     for dep in ReverseDependencies::of("serde")? {
+//     for dep in ReverseDependencies::of("bit-vec")? {
 //         println!("reverse dependency: {}", dep?.crate_id);
 //     }
 //     Ok(())

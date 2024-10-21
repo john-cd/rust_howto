@@ -1,48 +1,47 @@
-// TODO
-// use clap::Arg;
+// use std::path::PathBuf;
 
-// #[test]
-// fn test() {
-//     let matches = App::new("My Test Program")
+// use clap::arg;
+// use clap::value_parser;
+// use clap::Arg;
+// use clap::Command;
+
+// // TODO fix *  The terminal process "cargo 'test', '--package',
+// 'deps', '--test', 'clap-basic', '--', 'test', '--exact',
+// '--show-output'" terminated with exit code: 2.
+
+// fn cli() -> Command {
+//     clap::Command::new("My Test Program")
+//         .bin_name("test_app")
 //         .version("0.1.0")
 //         .author("Hackerman Jones <hckrmnjones@hack.gov>")
 //         .about("Teaches argument parsing")
 //         .arg(
-//             Arg::with_name("file")
-//                 .short("f")
-//                 .long("file")
-//                 .takes_value(true)
-//                 .help("A cool file"),
-//         )
+//             Arg::new("num")
+//                 .short('n')     // -n argument
+//                 .long("number") // --number long-form argument
+//                 .value_name("NUMBER") // placeholder for the
+// argument's value in the help message / usage.                 
+// .required(false)                 .help("Enter your favorite
+// number")         )
+//         .arg(arg!(--value <VALUE>)) // Use the arg! macro
 //         .arg(
-//             Arg::with_name("num")
-//                 .short("n")
-//                 .long("number")
-//                 .takes_value(true)
-//                 .help("Five less than your favorite number"),
+//             Arg::new("file")
+//                 .short('f')
+//                 .long("file")
+//                 .value_parser(value_parser!(PathBuf))
+//                 .help("Enter the path of a file")
 //         )
-//         .get_matches();
+// }
 
-//     let myfile = matches.value_of("file").unwrap_or("input.txt");
-//     println!("The file passed is: {}", myfile);
+// #[test]
+// fn test() {
+//     let matches = cli().get_matches();
 
-//     let num_str = matches.value_of("num");
-//     match num_str {
-//         None => println!(
-//             "No idea what your favorite number
-//     is."
-//         ),
-//         Some(s) => match s.parse::<i32>() {
-//             Ok(n) => println!(
-//                 "Your favorite number must be
-//     {}.",
-//                 n + 5
-//             ),
-//             Err(_) => println!(
-//                 "That's not a
-//     number! {}",
-//                 s
-//             ),
-//         },
+//     if let Some(num) = matches.get_one::<i64>("num") {
+//         println!("Value for num: {num}");
+//     }
+
+//     if let Some(file_path) = matches.get_one::<PathBuf>("file") {
+//         println!("Value for file: {}", file_path.display());
 //     }
 // }

@@ -1,7 +1,8 @@
-// TODO
+// // TODO Error: SqliteFailure(Error { code: Unknown, extended_code:
+// 1 }, Some("no such table: cat_colors"))
+
 // use rusqlite::Connection;
 // use rusqlite::Result;
-// use rusqlite::NO_PARAMS;
 
 // #[test]
 // fn test() -> Result<()> {
@@ -18,13 +19,10 @@
 // fn successful_tx(conn: &mut Connection) -> Result<()> {
 //     let tx = conn.transaction()?;
 
-//     tx.execute("delete from cat_colors", NO_PARAMS)?;
+//     tx.execute("delete from cat_colors", ())?;
 //     tx.execute("insert into cat_colors (name) values (?1)",
-// &[&"lavender"])?;     tx.execute(
-//         "insert into cat_colors (name)
-// values (?1)",
-//         &[&"blue"],
-//     )?;
+// &[&"lavender"])?;     tx.execute("insert into cat_colors (name)
+// values (?1)", &[&"blue"])?;
 
 //     tx.commit()
 // }
@@ -32,16 +30,14 @@
 // fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
 //     let tx = conn.transaction()?;
 
-//     tx.execute("delete from cat_colors", NO_PARAMS)?;
+//     tx.execute("delete from cat_colors", ())?;
 //     tx.execute("insert into cat_colors (name) values (?1)",
 // &[&"lavender"])?;     tx.execute(
-//         "insert into cat_colors (name)
-// values (?1)",
+//         "insert into cat_colors (name) values (?1)",
 //         &[&"blue"],
 //     )?;
 //     tx.execute(
-//         "insert into cat_colors
-// (name) values (?1)",
+//         "insert into cat_colors (name) values (?1)",
 //         &[&"lavender"],
 //     )?;
 

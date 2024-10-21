@@ -1,6 +1,6 @@
 #[test]
 #[should_panic]
-fn custom_message() {
+fn test() {
     let result = "Carl";
 
     assert!(
@@ -9,6 +9,3 @@ fn custom_message() {
         result
     );
 }
-
-#[test]
-fn test() {}

@@ -9,11 +9,11 @@ use tracing::Level;
 #[test]
 fn test() {
     event!(Level::INFO, "something happened");
-    error!("!");
-    warn!("!");
-    info!("!");
-    debug!("!");
-    trace!("!");
+    error!("error!");
+    warn!("warning!");
+    info!("info!");
+    debug!("debug info!");
+    trace!("trace info!");
 
     event!(target: "app_events", Level::TRACE, "something has happened!");
 

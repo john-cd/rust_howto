@@ -1,46 +1,55 @@
-// use std::collections::HashMap;
+use std::collections::HashMap;
 
-// use anyhow::Result;
-// use reqwest::Client;
-// use serde::Deserialize;
-// use tower_http::auth::require_authorization::Bearer;
-// use url::Url;
+use anyhow::Result;
+use reqwest::header;
+use serde::Deserialize;
 
-// header! { (XPoweredBy, "X-Powered-By") => [String] }
+// TODO improve
 
-// #[derive(Deserialize, Debug)]
-// pub struct HeadersEcho {
-//     pub headers: HashMap<String, String>,
-// }
+#[derive(Deserialize, Debug)]
+pub struct HeadersEcho {
+    pub headers: HashMap<String, String>,
+}
 
-// #[test]
-// fn test() -> Result<()> {
-//     let url = Url::parse_with_params(
-//         "http://httpbin.org/headers",
-//         &[("lang", "rust"), ("browser", "servo")],
-//     )?;
+#[test]
+fn test() -> Result<()> {
+    let url = url::Url::parse_with_params(
+        "http://httpbin.org/headers",
+        &[("lang", "rust"), ("browser", "servo")],
+    )?;
 
-//     let mut response = Client::new()
-//         .get(url)
-//         .header(UserAgent::new("Rust-test"))
-//         .header(Authorization(Bearer {
-//             token: "DEadBEEfc001cAFeEDEcafBAd".to_owned(),
-//         }))
-//         .header(XPoweredBy("Guybrush Threepwood".to_owned()))
-//         .send()?;
+    let mut default_headers = header::HeaderMap::new();
+    default_headers
+        .insert("X-MY-HEADER", header::HeaderValue::from_static("value"));
 
-//     let out: HeadersEcho = response.json()?;
-//     assert_eq!(
-//         out.headers["Authorization"],
-//         "Bearer DEadBEEfc001cAFeEDEcafBAd"
-//     );
-//     assert_eq!(out.headers["User-Agent"], "Rust-test");
-//     assert_eq!(out.headers["X-Powered-By"], "Guybrush Threepwood");
-//     assert_eq!(
-//         response.url().as_str(),
-//         "http://httpbin.org/headers?lang=rust&browser=servo"
-//     );
+    let client = reqwest::blocking::Client::builder()
+        .user_agent("Rust-test")
+        .default_headers(default_headers)
+        .build()?;
 
-//     println!("{:?}", out);
-//     Ok(())
-// }
+    let mut headers = header::HeaderMap::new();
+    headers.insert(
+        reqwest::header::CONTENT_TYPE,
+        header::HeaderValue::from_static("image/png"),
+    );
+
+    let response = client.get(url)
+        .headers(headers)
+        .bearer_auth("DEadBEEfc001cAFeEDEcafBAd") // Enable HTTP bearer authentication.
+        .send()?;
+
+    assert_eq!(
+        response.url().as_str(),
+        "http://httpbin.org/headers?lang=rust&browser=servo"
+    );
+
+    let out: HeadersEcho = response.json()?;
+    assert_eq!(
+        out.headers["Authorization"],
+        "Bearer DEadBEEfc001cAFeEDEcafBAd"
+    );
+    assert_eq!(out.headers["User-Agent"], "Rust-test");
+    // assert_eq!(out.headers["X-MY-HEADER"], "value");
+    println!("{:?}", out);
+    Ok(())
+}

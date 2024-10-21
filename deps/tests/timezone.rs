@@ -1,27 +1,32 @@
-#[cfg(feature = "full")]
+use chrono::DateTime;
+use chrono::FixedOffset;
+use chrono::Local;
+use chrono::TimeZone;
+
 #[test]
 fn test() {
-    use chrono::DateTime;
-    use chrono::FixedOffset;
-    use chrono::Local;
-    use chrono::Utc;
+    let local_time = chrono::Local::now();
+    // Separate into components
+    let utc_time = local_time.naive_utc();
+    let offset = *local_time.offset();
+    // Serialize, pass through FFI... and recreate the `DateTime`:
+    let local_time_new =
+        DateTime::<Local>::from_naive_utc_and_offset(utc_time, offset);
+    assert_eq!(local_time, local_time_new);
 
-    let local_time = Local::now();
-    let utc_time = DateTime::<Utc>::from_utc(local_time.naive_utc(), Utc);
-    let china_timezone = FixedOffset::east(8 * 3600);
-    let rio_timezone = FixedOffset::west(2 * 3600);
+    // there is also
+    let _utc_time = chrono::Utc::now();
+
+    let china_timezone = FixedOffset::east_opt(8 * 3600).unwrap();
+    let rio_timezone = FixedOffset::west_opt(2 * 3600).unwrap();
     println!("Local time now is {}", local_time);
     println!("UTC time now is {}", utc_time);
     println!(
         "Time in Hong Kong now is {}",
-        utc_time.with_timezone(&china_timezone)
+        china_timezone.from_utc_datetime(&utc_time)
     );
     println!(
         "Time in Rio de Janeiro now is {}",
-        utc_time.with_timezone(&rio_timezone)
+        rio_timezone.from_utc_datetime(&utc_time)
     );
 }
-
-#[cfg(not(feature = "full"))]
-#[test]
-fn test() {}

@@ -1,6 +1,9 @@
-// TODO
+// TODO rewrite
+
 // use std::fmt;
 
+// use anyhow::anyhow;
+// use anyhow::Context;
 // use anyhow::Result;
 // use serde::Deserialize;
 
@@ -13,11 +16,11 @@
 
 // impl Rgb {
 //     fn from_reader(csv_data: &[u8]) -> Result<Rgb> {
-//         let color: Rgb = csv::Reader::from_reader(csv_data)
+//         let c = csv::Reader::from_reader(csv_data)
 //             .deserialize()
 //             .nth(0)
-//             .ok_or("Cannot deserialize the first CSV record")?;
-//         //.chain_err(|| "Cannot deserialize RGB color")?;
+//             .ok_or(anyhow!(""))?;
+//         let color = c.context("")?;
 
 //         Ok(color)
 //     }
@@ -32,36 +35,13 @@
 //     }
 // }
 
-// fn run() -> Result<()> {
+// #[test]
+// fn test() -> Result<()> {
 //     let csv = "red,blue,green
 // 102,256,204";
 
-//     let rgb = Rgb::from_reader(csv.as_bytes()).chain_err(|| {
-//         "Cannot
-// read CSV data"
-//     })?;
+//     let rgb = Rgb::from_reader(csv.as_bytes())?;
 //     println!("{:?} to hexadecimal #{:X}", rgb, rgb);
 
 //     Ok(())
-// }
-
-// #[test]
-// fn test() {
-//     if let Err(ref errors) = run() {
-//         // TODO
-//         // eprintln!("Error level - description");
-//         // errors
-//         //     .iter()
-//         //     .enumerate()
-//         //     .for_each(|(index, error)| eprintln!("└> {} - {}",
-// index,         // error));
-
-//         if let Some(backtrace) = errors.backtrace() {
-//             eprintln!("{:?}", backtrace);
-//         }
-
-//         // In a real use case, errors should handled. For
-//         // example:
-//         // ::std::process::exit(1);
-//     }
 // }

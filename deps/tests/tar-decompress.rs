@@ -1,16 +1,19 @@
-// use std::fs::File;
+use std::fs::File;
 
-// use flate2::read::GzDecoder;
-// use tar::Archive;
+use flate2::read::GzDecoder;
+use tar::Archive;
 
-// #[test]
-// fn test() -> Result<(), std::io::Error> {
-//     let path = "archive.tar.gz";
+#[test]
+#[ignore]
+fn test() -> Result<(), std::io::Error> {
+    let path = "archive.tar.gz";
 
-//     let tar_gz = File::open(path)?;
-//     let tar = GzDecoder::new(tar_gz);
-//     let mut archive = Archive::new(tar);
-//     archive.unpack(".")?;
+    let tar_gz = File::open(path)?;
+    let tar = GzDecoder::new(tar_gz);
+    let mut archive = Archive::new(tar);
+    archive.unpack(".")?;
 
-//     Ok(())
-// }
+    Ok(())
+}
+
+// TODO remove dependency on tar.gz file

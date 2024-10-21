@@ -17,7 +17,8 @@ fn test() -> Result<(), Box<dyn Error>> {
         }
     );
 
-    // TODO
+    // TODO increment_*() no longer exist; remove example?
+
     // parsed_version.increment_patch();
     // assert_eq!(parsed_version.to_string(), "0.2.7");
     // println!("New patch release: v{}", parsed_version);

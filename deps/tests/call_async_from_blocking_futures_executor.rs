@@ -1,4 +1,6 @@
-async fn do_something() {}
+async fn do_something() {
+    println!("hello, world!");
+}
 
 #[test]
 fn test() {

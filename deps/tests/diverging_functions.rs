@@ -1,5 +1,5 @@
 fn foo() -> ! {
-    // <-- empty type
+    // ! is the Never type
     panic!("This call never returns.");
 }
 
