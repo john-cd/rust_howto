@@ -1,6 +1,6 @@
 # Sorting Vectors
 
-{{#include randomness.incl.md}}
+{{#include sorting.incl.md}}
 
 ## Sort a Vector of Integers
 

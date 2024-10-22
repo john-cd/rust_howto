@@ -4,15 +4,15 @@ Crates mentioned in this book, by alphabetic order.
 
 ## A
 
-[![actix_web][c-actix_web-badge]][c-actix_web]  [![ansi_term][c-ansi_term-badge]][c-ansi_term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow][c-arrow-badge]][c-arrow]  [![async_channel][c-async_channel-badge]][c-async_channel]  [![async_std][c-async_std-badge]][c-async_std]  [![async_stream][c-async_stream-badge]][c-async_stream]  [![async_trait][c-async_trait-badge]][c-async_trait]
+[![actix_web][c-actix_web-badge]][c-actix_web]  [![ansi_term][c-ansi_term-badge]][c-ansi_term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow][c-arrow-badge]][c-arrow]  [![async_channel][c-async_channel-badge]][c-async_channel]  [![async_std][c-async_std-badge]][c-async_std]  [![async_stream][c-async_stream-badge]][c-async_stream]  [![async_trait][c-async_trait-badge]][c-async_trait] [![axum][c-axum-badge]][c-axum]
 
 ## B
 
-[![base64][c-base64-badge]][c-base64]  [![bitflags][c-bitflags-badge]][c-bitflags]  [![byteorder][c-byteorder-badge]][c-byteorder]
+[![bacon][c-bacon-badge]][c-bacon]  [![bat][c-bat-badge]][c-bat]  [![base64][c-base64-badge]][c-base64]  [![bevy][c-bevy-badge]][c-bevy]  [![bitflags][c-bitflags-badge]][c-bitflags]  [![bonsai-bt][c-bonsai_bt-badge]][c-bonsai_bt]  [![broot][c-broot-badge]][c-broot]  [![byteorder][c-byteorder-badge]][c-byteorder]
 
 ## C
 
-[![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![crux][c-crux-badge]][c-crux]  [![csv][c-csv-badge]][c-csv]
+[![candle][c-candle-badge]][c-candle]  [![cargo][c-cargo-badge]][c-cargo]  [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]  [![cargo-cache][c-cargo_cache-badge]][c-cargo_cache]  [![cargo-crates][c-cargo_crates-badge]][c-cargo_crates]  [![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![crux][c-crux-badge]][c-crux]  [![csv][c-csv-badge]][c-csv]
 
 ## D
 
