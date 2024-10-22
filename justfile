@@ -31,33 +31,42 @@ fmtall:
   cargo +nightly fmt --all
 
 # Check all code
-checkall: _build-book
+checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Build all code
-buildall: _build-book
+buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
 # Scan all code for common mistakes
-clippyall: _build-book
+clippyall:
   cargo clippy --workspace --all-targets --locked
 
+# Test the code used by the book (`deps` crate only)
+test:
+  cargo test --package deps --tests --locked -- --show-output
+# Only the code in the `deps` package is tested.
+# This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
+# NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
+# when dealing with dependencies outside of the std library.
+# See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
+
 # Test all code
-testall: _build-book
+testall:
   cargo test --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Test all code using nextest
-nextestall: _build-book
+nextestall:
   cargo nextest run --workspace --all-targets --locked --no-fail-fast
-  cargo test --doc --workspace
+  cargo test --doc --workspace # nextest does not handle doctests
 
 # Run all examples (but not the tests)
 [unix]
-runall: _build-book
+runall:
   #! /bin/bash
   set -o pipefail
   set -e
@@ -72,12 +81,18 @@ runall: _build-book
   xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
   # Also run additional examples in the xmpl folder, if any
   for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
-# TODO: this still repeatedly runs `build.rs` somehow.
 
 # Run a specific example (among those in `deps/examples`)
-run example: _build-book
+run example:
   #cargo clean -p deps
   cargo run -p deps --locked --example {{example}}
+
+# Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
+[confirm]
+update:
+  cargo update
+
+## ---- BOOK BUILDING -------
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
 build: _generate-refdefs _generate-index-category _build-book && _sitemap _copystatic
@@ -112,14 +127,6 @@ _copystatic:
 _sitemap:
   mdbook-utils sitemap
 
-# Test the code used by the book
-test: _build-book
-  cargo test --package deps --tests --locked -- --show-output
-# This relies on skeptic to build doctests - see `build.rs`
-# NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
-# when dealing with dependencies outside of the std library.
-# See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
-
 # Serve the book (incl. link checking)
 serve: build
   mdbook serve -p 3000 -n 127.0.0.1 --open
@@ -152,7 +159,7 @@ quick:
 
 
 # Prepare for git push
-prep: spell fmtall clean build clippyall testall build serve
+prep: spell fmtall clean clippyall testall build serve
 
 ## Documentation --------------------------------------
 
@@ -177,11 +184,6 @@ docall:
   # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
 
 ## Utilities --------------------------------------
-
-# Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
-[confirm]
-update:
-  cargo update
 
 help := 'help'
 empty := ''

@@ -14,7 +14,7 @@ repository.workspace = true
 keywords.workspace = true
 categories.workspace = true
 workspace = ".."
-build = "build.rs"
+build = false # disable build.rs script detection; use: build = "build.rs" or build = "custom.rs" otherwise
 #exclude.workspace = true
 #include.workspace = true
 publish = false
