@@ -68,6 +68,7 @@ EOF
 
 # Optional:
 #   && cargo binstall --no-confirm toml2json
+#   && cargo install --locked bacon
 
 ## Alternative just install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
