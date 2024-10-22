@@ -97,7 +97,7 @@ runall:
 #   #cargo clean -p deps
 #   cargo run -p deps --locked --example {{example}}
 
-# Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
+# Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `xmpl`)
 [confirm]
 update:
   cargo update

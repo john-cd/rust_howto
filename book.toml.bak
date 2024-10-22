@@ -48,9 +48,13 @@ after = [ "private" ]
 # # mdBook-keeper adds more testing features to mdBook, specifically support for third-party crates, and testing while compiling.
 # # https://github.com/tfpk/mdbook-keeper/
 # [preprocessor.keeper]
-# command = "mdbook-keeper"
+# # command = "mdbook-keeper"
 # # NOTE: the file Cargo.toml should exist at this path.
 # manifest_dir = "./deps"
+# # NOTE: the `debug` folder should exist at this path.
+# target_dir = "./target/"
+# is_workspace = true
+# # build_features = ["first", "second"]
 
 # # Default preprocessor: index
 # Convert all chapter files named README.md into index.md. That is to say, all README.md would be rendered to an index file index.html in the rendered book.
@@ -64,8 +68,8 @@ after = ["private"]
 ## OUTPUTS --------------------------------------------------------
 
 # # Output as markdown (in addition to HTML) for debugging purposes
-# # May also be used by Skeptic tests (see `deps/build.rs`)
-[output.markdown]
+# # Enable it as well if you want to use Skeptic for testing (see `deps/build.rs` and `build` in deps/Cargo.toml )
+#[output.markdown]
 
 # # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html
 [output.html]
@@ -96,10 +100,10 @@ level = 0         # the depth to start folding
 
 [output.html.playground]
 editable = true            # allows editing the source code
-# copyable = true          # include the copy button for copying code snippets
+# copyable = true          # include the copy button for copying code snippets; default: true
 # copy-js = true           # includes the JavaScript for the code editor
 # line-numbers = false     # displays line numbers for editable code
-# runnable = true          # displays a run button for rust code
+# runnable = true          # displays a run button for rust code; default: true
 
 # [output.html.code]
 # # A prefix string per language (one or more chars).

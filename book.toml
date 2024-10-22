@@ -68,8 +68,8 @@ after = ["private"]
 ## OUTPUTS --------------------------------------------------------
 
 # # Output as markdown (in addition to HTML) for debugging purposes
-# # May also be used by Skeptic tests (see `deps/build.rs`)
-[output.markdown]
+# # Enable it as well if you want to use Skeptic for testing (see `deps/build.rs` and `build` in deps/Cargo.toml )
+#[output.markdown]
 
 # # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html
 [output.html]

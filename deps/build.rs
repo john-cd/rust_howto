@@ -1,3 +1,5 @@
+//! NO LONGER IN USE - all book examples are currently under `deps/tests`
+//!
 //! Generate tests from the Markdown
 //! See https://crates.io/crates/skeptic
 
