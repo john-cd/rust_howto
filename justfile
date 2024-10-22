@@ -1,12 +1,15 @@
 alias b := build
 alias ba := buildall
+alias bb := buildbook
 alias ca := clippyall
 alias f := fmtall
+alias fa := fmtall
+alias nta := nextestall
 alias q := quick
 alias s := serve
 alias t := test
 alias ta := testall
-alias nta := nextestall
+
 set windows-shell := ["cmd.exe", "/c"]
 
 default:
@@ -34,6 +37,10 @@ fmtall:
 checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+# Build the code used by the book (`deps` crate only`)
+build:
+  cargo build --package deps --tests --locked
 
 # Build all code
 buildall:
@@ -64,41 +71,45 @@ nextestall:
   cargo nextest run --workspace --all-targets --locked --no-fail-fast
   cargo test --doc --workspace # nextest does not handle doctests
 
-# Run all examples (but not the tests)
+# Run additional examples (under the `xmpl` folder)
 [unix]
 runall:
   #! /bin/bash
   set -o pipefail
   set -e
-  ## Examples under the deps folder (removed)
-  ## Run examples that are simple .rs files
-  #examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
-  #for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
-  ## Run examples that are in a folder
-  #examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
-  #for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
   # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
   xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
-  # Also run additional examples in the xmpl folder, if any
+  # Run additional examples in the xmpl folder, if any
   for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
 
-# Run a specific example (among those in `deps/examples`)
-run example:
-  #cargo clean -p deps
-  cargo run -p deps --locked --example {{example}}
+## The examples under the deps folder have been replaced by tests.
+## Should you want to add examples again, add the following to `runall`:
+## Run examples that are simple .rs files in deps/examples
+#examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
+#for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
+## Run examples that are in a subfolder of deps/examples
+#examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
+#for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
+
+## The examples under the deps folder have been replaced by tests.
+# # Run a specific example (among those in `deps/examples`)
+# run example:
+#   #cargo clean -p deps
+#   cargo run -p deps --locked --example {{example}}
 
 # Update Cargo.lock dependencies for all projects (incl. dependencies used by the book's examples and additional examples in the xmpl folder)
 [confirm]
 update:
   cargo update
 
-## ---- BOOK BUILDING -------
+## ---- BOOK BUILDING -----------------------------------
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-build: _generate-refdefs _generate-index-category _build-book && _sitemap _copystatic
+buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
 
 # Generate the expanded markdown (input for skeptic) and the book's HTML / JS
-_build-book:
+[unix]
+_mdbook-build-book:
   #! /bin/bash
   set -e
   if [ ! -f ./book.toml ]; then
@@ -149,17 +160,13 @@ quick:
     mv -f ./book.toml ./book.toml.bak
   fi
   MDBOOK_BOOK='{"title": "QUICK SERVE"}' mdbook serve -p 3001 -n 127.0.0.1 --open
-# Doc on overriding mdbook config: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
-# Using the env variable MDBOOK_* only seems to override existing values, not erase them.
+# Note1: Using the env variable MDBOOK_* only seems to override existing values, not erase them.
 # Examples:
-# MDBOOK_BOOK="$(toml2json ./book-dev.toml)" mdbook build
-# MDBOOK_OUTPUT__LINKCHECK='{"warning-policy": "ignore"}' MDBOOK_PREPROCESSOR__INDEXING='{"skip_renderer": "html,markdown,linkcheck"}'
+#   MDBOOK_BOOK="$(toml2json ./book-dev.toml)" mdbook build
+#   MDBOOK_OUTPUT__LINKCHECK='{"warning-policy": "ignore"}' MDBOOK_PREPROCESSOR__INDEXING='{"skip_renderer": "html,markdown,linkcheck"}'
+# See the doc on overriding mdbook config: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
 #
-# note: mdbook watch --open --watcher=poll / native does not have -p -n options.
-
-
-# Prepare for git push
-prep: spell fmtall clean clippyall testall build serve
+# Note2: mdbook watch --open --watcher=poll / native does not have -p -n options.
 
 ## Documentation --------------------------------------
 
@@ -185,16 +192,23 @@ docall:
 
 ## Utilities --------------------------------------
 
+# Prepare for git push
+prep: spell sortrefs fmtall clean clippyall testall buildbook serve
+
 help := 'help'
 empty := ''
 
-# Manage links, ref definitions, etc...
-do cmd=help subcmd=empty:
+# Call mdbook-utils to manage links, ref definitions, etc...
+utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
+
+# Run the (local) templating tool to create badges and reference definitions
+templ cmd=help *subcmd=empty:
+ cargo run -p templ -- {{cmd}} {{subcmd}}
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]
-sortrefs: removelastslash
+sortrefs: _removelastslash
   sort -u ./src/refs/crate-refs.md -o /tmp/c.md
   mv -f /tmp/c.md ./src/refs/crate-refs.md
   rm -f /temp/c.md
@@ -207,7 +221,7 @@ sortrefs: removelastslash
 
 # Remove the last / from URLs in the reference definition files
 [unix]
-removelastslash:
+_removelastslash:
    sed -i 's/[/]$//g' ./src/refs/crate-refs.md
    sed -i 's/[/]$//g' ./src/refs/other-refs.md
    sed -i 's/[/]$//g' ./src/refs/link-refs.md

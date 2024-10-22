@@ -20,7 +20,7 @@
 //                 .short('n')     // -n argument
 //                 .long("number") // --number long-form argument
 //                 .value_name("NUMBER") // placeholder for the
-// argument's value in the help message / usage.                 
+// argument's value in the help message / usage.
 // .required(false)                 .help("Enter your favorite
 // number")         )
 //         .arg(arg!(--value <VALUE>)) // Use the arg! macro
