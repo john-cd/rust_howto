@@ -10,7 +10,7 @@ use log4rs::encode::pattern::PatternEncoder;
 fn test() -> Result<()> {
     let logfile = FileAppender::builder()
         .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
-        .build("log/output.log")?;
+        .build("temp/log/output.log")?;
 
     let config = Config::builder()
         .appender(Appender::builder().build("logfile", Box::new(logfile)))

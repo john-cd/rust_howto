@@ -7,8 +7,9 @@
 /target
 /book
 /doctest_cache
-hello.txt
-file1.txt
+/deps/temp
+/deps/target
 **/.DS_Store
 **/.git
 *.log
+/book

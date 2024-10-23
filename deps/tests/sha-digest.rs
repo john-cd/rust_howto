@@ -26,7 +26,7 @@ fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
 
 #[test]
 fn test() -> Result<()> {
-    let path = "file.txt";
+    let path = "temp/file.txt";
 
     let mut output = File::create(path)?;
     write!(output, "We will generate a digest of this text")?;

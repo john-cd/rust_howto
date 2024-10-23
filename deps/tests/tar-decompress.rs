@@ -6,7 +6,7 @@ use tar::Archive;
 #[test]
 #[ignore]
 fn test() -> Result<(), std::io::Error> {
-    let path = "archive.tar.gz";
+    let path = "temp/archive.tar.gz";
 
     let tar_gz = File::open(path)?;
     let tar = GzDecoder::new(tar_gz);

@@ -91,6 +91,6 @@ fn test() -> Result<()> {
         let (x, y, pixel) = rx.recv()?;
         img.put_pixel(x, y, pixel);
     }
-    img.save("output.png")?;
+    img.save("temp/output.png")?;
     Ok(())
 }

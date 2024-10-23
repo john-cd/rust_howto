@@ -5,7 +5,6 @@
 ## Examples
 
 - [ ] fix commented examples - remaining
-- [ ] outputs of tests should go to a temporary folder
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] fix failing examples in drafts
 - [ ] integrate clap builder example

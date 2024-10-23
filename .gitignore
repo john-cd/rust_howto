@@ -1,19 +1,6 @@
 /book
 /doctest_cache/
 *.url
-hello.txt
-file1.txt
-*.log
-*.Identifier
-file.txt
-badge_refs.md
-lines.txt
-out.txt
-content.txt
-download.bin
-archive.tar.gz
-**/backup/logs
-output.png
 
 # Windows ------------------------
 

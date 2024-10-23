@@ -8,7 +8,7 @@ use regex::RegexSetBuilder;
 #[test]
 #[ignore]
 fn test() -> Result<()> {
-    let log_path = "application.log";
+    let log_path = "temp/application.log";
     let buffered = BufReader::new(File::open(log_path)?);
 
     let set = RegexSetBuilder::new([

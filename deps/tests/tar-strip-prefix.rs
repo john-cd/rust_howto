@@ -7,7 +7,7 @@ use tar::Archive;
 
 #[test]
 fn test() -> Result<()> {
-    let file = File::open("archive.tar.gz")?;
+    let file = File::open("temp/archive.tar.gz")?;
     let mut archive = Archive::new(GzDecoder::new(file));
     let prefix = "bundle/logs";
 

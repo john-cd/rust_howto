@@ -68,7 +68,7 @@ fn test() -> Result<()> {
     let length = u64::from_str(length.to_str()?)
         .map_err(|_| anyhow!("invalid Content-Length header"))?;
 
-    let mut output_file = File::create("download.bin")?;
+    let mut output_file = File::create("temp/download.bin")?;
 
     println!("starting download...");
     for range in PartialRangeIter::new(0, length - 1, CHUNK_SIZE)? {

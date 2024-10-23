@@ -6,7 +6,7 @@ use std::io::Write;
 
 #[test]
 fn test() -> Result<(), Error> {
-    let path = "lines.txt";
+    let path = "temp/lines.txt";
 
     let mut output = File::create(path)?;
     write!(output, "Rust\n💖\nFun")?;

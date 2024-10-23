@@ -5,7 +5,7 @@ fn test() -> Result<(), std::io::Error> {
     use std::process::Command;
     use std::process::Stdio;
 
-    let outputs = File::create("out.txt")?;
+    let outputs = File::create("temp/out.txt")?;
     let errors = outputs.try_clone()?;
 
     Command::new("ls")

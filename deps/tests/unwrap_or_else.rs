@@ -3,9 +3,9 @@ use std::io::ErrorKind;
 
 #[test]
 fn test() {
-    let _greeting_file = File::open("hello.txt").unwrap_or_else(|error| {
+    let _greeting_file = File::open("temp/hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
-            File::create("hello.txt").unwrap_or_else(|error| {
+            File::create("temp/hello.txt").unwrap_or_else(|error| {
                 panic!("Problem creating the file: {:?}", error);
             })
         } else {

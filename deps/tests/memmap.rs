@@ -7,10 +7,10 @@ use memmap::Mmap;
 #[test]
 fn test() -> Result<(), Error> {
     write!(
-        File::create("content.txt")?,
+        File::create("temp/content.txt")?,
         "My hovercraft is full of eels!"
     )?;
-    let file = File::open("content.txt")?;
+    let file = File::open("temp/content.txt")?;
     let map = unsafe { Mmap::map(&file)? };
 
     let random_indexes = [0, 1, 2, 19, 22, 10, 11, 29];
