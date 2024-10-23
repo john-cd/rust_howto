@@ -21,7 +21,7 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 - [wasmer.io][wasmer-website]⮳
 - [wasmtime][c-wasmtime-github]⮳
 - [docs.wasmtime.dev][c-wasmtime-docs]⮳
-- [rustwasm.github.io][c-rustwasm-website]⮳
+- [rustwasm.github.io][rustwasm-website]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

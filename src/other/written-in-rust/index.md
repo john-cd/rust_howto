@@ -7,7 +7,7 @@
 ## Social
 
 - A link aggregator and forum for the fediverse [lemmy][lemmy-github]⮳
-- Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust. [spacedrive][c-spacedrive-github]⮳
+- Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust. [spacedrive][spacedrive-github]⮳
 
 ## Compiler
 
@@ -28,12 +28,12 @@
 
 ## email
 
-- [postsack][c-postsack-github]⮳ Visually cluster your emails by sender, domain, and more to identify waste
+- [postsack][postsack-github]⮳ Visually cluster your emails by sender, domain, and more to identify waste
 
 ## news
 
-- [headlines][c-headlines-github]⮳ A simple news reading GUI app built in Rust
+- [headlines][headlines-github]⮳ A simple news reading GUI app built in Rust
 
 ## payments
 
-- An open source payments switch written in Rust to make payments fast, reliable and affordable [hyperswitch][c-hyperswitch-github]⮳
+- An open source payments switch written in Rust to make payments fast, reliable and affordable [hyperswitch][hyperswitch-github]⮳

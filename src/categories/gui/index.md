@@ -57,7 +57,7 @@ and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI 
 
 ## See also
 
-Turn any webpage into a desktop app with Rust [Pake][c-pake-github]⮳
+Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
 
 [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][client-side-server-with-rust]⮳
 

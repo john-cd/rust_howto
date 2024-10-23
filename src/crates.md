@@ -16,7 +16,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## D
 
-[![dashmap][c-dashmap-badge]][c-dashmap]  [![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![databend][c-databend-badge]][c-databend]  [![datafusion][c-datafusion-badge]][c-datafusion]  [![dashmap][c-dashmap-badge]][c-dashmap]  [![derive_more][c-derive_more-badge]][c-derive_more]  [![devx][c-devx-badge]][c-devx]  [![diesel][c-diesel-badge]][c-diesel]  [![digest][c-digest-badge]][c-digest]  [![dotenv][c-dotenv-badge]][c-dotenv]  [![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![druid][c-druid-badge]][c-druid]  [![duct][c-duct-badge]][c-duct]  [![dyn][c-dyn-badge]][c-dyn]
+[![dashmap][c-dashmap-badge]][c-dashmap]  [![data_encoding][c-data_encoding-badge]][c-data_encoding]  [![datafusion][c-datafusion-badge]][c-datafusion]  [![derive_more][c-derive_more-badge]][c-derive_more]  [![diesel][c-diesel-badge]][c-diesel]  [![digest][c-digest-badge]][c-digest]  [![dotenv][c-dotenv-badge]][c-dotenv]  [![dotenvy][c-dotenvy-badge]][c-dotenvy]  [![druid][c-druid-badge]][c-druid]  [![duct][c-duct-badge]][c-duct]  [![dyn-clone][c-dyn_clone-badge]][c-dyn_clone]
 
 ## E
 
@@ -28,7 +28,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## G - K
 
-[![glidesort][c-glidesort-badge]][c-glidesort]  [![glob][c-glob-badge]][c-glob]  [![gping][c-gping-badge]][c-gping]  [![headlines][c-headlines-badge]][c-headlines]  [![http][c-http-badge]][c-http]  [![hyper][c-hyper-badge]][c-hyper]  [![hyperswitch][c-hyperswitch-badge]][c-hyperswitch]  [![iced][c-iced-badge]][c-iced]  [![image][c-image-badge]][c-image]  [![indicatif][c-indicatif-badge]][c-indicatif]  [![infisearch][c-infisearch-badge]][c-infisearch]  [![just][c-just-badge]][c-just]  [![kanal][c-kanal-badge]][c-kanal]  [![kani][c-kani-badge]][c-kani]
+[![glidesort][c-glidesort-badge]][c-glidesort]  [![glob][c-glob-badge]][c-glob]  [![gping][c-gping-badge]][c-gping]  [![http][c-http-badge]][c-http]  [![hyper][c-hyper-badge]][c-hyper]  [![iced][c-iced-badge]][c-iced]  [![image][c-image-badge]][c-image]  [![indicatif][c-indicatif-badge]][c-indicatif]  [![infisearch][c-infisearch-badge]][c-infisearch]  [![just][c-just-badge]][c-just]  [![kanal][c-kanal-badge]][c-kanal]  [![kani][c-kani-badge]][c-kani]
 
 ## L
 
@@ -40,19 +40,19 @@ Crates mentioned in this book, by alphabetic order.
 
 ## N
 
-[![nalgebra][c-nalgebra-badge]][c-nalgebra]  [![native-windows-gui][c-native_windows_gui-badge]][c-native_windows_gui]  [![ndarray][c-ndarray-badge]][c-ndarray]  [![nextest][c-nextest-badge]][c-nextest]  [![nom][c-nom-badge]][c-nom]  [![notify][c-notify-badge]][c-notify]  [![num][c-num-badge]][c-num]  [![num_cpus][c-num_cpus-badge]][c-num_cpus]
+[![nalgebra][c-nalgebra-badge]][c-nalgebra]  [![native-windows-gui][c-native_windows_gui-badge]][c-native_windows_gui]  [![ndarray][c-ndarray-badge]][c-ndarray]  [![nom][c-nom-badge]][c-nom]  [![notify][c-notify-badge]][c-notify]  [![num][c-num-badge]][c-num]  [![num_cpus][c-num_cpus-badge]][c-num_cpus]
 
 ## O - Q
 
-[![once_cell][c-once_cell-badge]][c-once_cell]  [![open][c-open-badge]][c-open]  [![opencv][c-opencv-badge]][c-opencv]  [![openobserve][c-openobserve-badge]][c-openobserve]  [![openrr][c-openrr-badge]][c-openrr]  [![pake][c-pake-badge]][c-pake]  [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![paste][c-paste-badge]][c-paste]  [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]  [![pest][c-pest-badge]][c-pest]  [![plotly][c-plotly-badge]][c-plotly]  [![polars][c-polars-badge]][c-polars]  [![postage][c-postage-badge]][c-postage]  [![postgres][c-postgres-badge]][c-postgres]  [![postsack][c-postsack-badge]][c-postsack]  [![proc-macro2][c-proc_macro2-badge]][c-proc_macro2]  [![pyo3][c-pyo3-badge]][c-pyo3]  [![pyoxidizer][c-pyoxidizer-badge]][c-pyoxidizer]  [![quote][c-quote-badge]][c-quote]
+[![once_cell][c-once_cell-badge]][c-once_cell]  [![open][c-open-badge]][c-open]  [![opencv][c-opencv-badge]][c-opencv]  [![openrr][c-openrr-badge]][c-openrr]  [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![paste][c-paste-badge]][c-paste]  [![parking_lot][c-parking_lot-badge]][c-parking_lot]  [![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]  [![pest][c-pest-badge]][c-pest]  [![plotly][c-plotly-badge]][c-plotly]  [![polars][c-polars-badge]][c-polars]  [![postage][c-postage-badge]][c-postage]  [![postgres][c-postgres-badge]][c-postgres]  [![proc-macro2][c-proc_macro2-badge]][c-proc_macro2]  [![pyo3][c-pyo3-badge]][c-pyo3]  [![pyoxidizer][c-pyoxidizer-badge]][c-pyoxidizer]  [![quote][c-quote-badge]][c-quote]
 
 ## R
 
-[![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]  [![rand][c-rand-badge]][c-rand]  [![rand_distr][c-rand_distr-badge]][c-rand_distr]  [![ratatui][c-ratatui-badge]][c-ratatui]  [![rayon][c-rayon-badge]][c-rayon]  [![redis][c-redis-badge]][c-redis]  [![regex][c-regex-badge]][c-regex]  [![reqwest][c-reqwest-badge]][c-reqwest]  [![rhai][c-rhai-badge]][c-rhai]  [![riker][c-riker-badge]][c-riker]  [![ring][c-ring-badge]][c-ring]  [![roogle][c-roogle-badge]][c-roogle]  [![ruff][c-ruff-badge]][c-ruff]  [![rui][c-rui-badge]][c-rui]  [![rusqlite][c-rusqlite-badge]][c-rusqlite]  [![rust_cache][c-rust_cache-badge]][c-rust_cache]  [![rust_gpu][c-rust_gpu-badge]][c-rust_gpu]  [![rust-rest][c-rust_rest-badge]][c-rust_rest]  [![rustdesk][c-rustdesk-badge]][c-rustdesk]  [![rustfmt][c-rustfmt-badge]][c-rustfmt]  [![rustquant][c-rustquant-badge]][c-rustquant]  [![rustwasm][c-rustwasm-badge]][c-rustwasm]
+[![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]  [![rand][c-rand-badge]][c-rand]  [![rand_distr][c-rand_distr-badge]][c-rand_distr]  [![ratatui][c-ratatui-badge]][c-ratatui]  [![rayon][c-rayon-badge]][c-rayon]  [![redis][c-redis-badge]][c-redis]  [![regex][c-regex-badge]][c-regex]  [![reqwest][c-reqwest-badge]][c-reqwest]  [![rhai][c-rhai-badge]][c-rhai]  [![riker][c-riker-badge]][c-riker]  [![ring][c-ring-badge]][c-ring]  [![roogle][c-roogle-badge]][c-roogle]  [![ruff][c-ruff-badge]][c-ruff]  [![rui][c-rui-badge]][c-rui]  [![rusqlite][c-rusqlite-badge]][c-rusqlite]  [![rust_cache][c-rust_cache-badge]][c-rust_cache]  [![rustdesk][c-rustdesk-badge]][c-rustdesk]  [![rustfmt][c-rustfmt-badge]][c-rustfmt]  [![rustquant][c-rustquant-badge]][c-rustquant]
 
 ## S
 
-[![salsa][c-salsa-badge]][c-salsa]  [![same-file][c-same-file-badge]][c-same-file]  [![sea_orm][c-sea_orm-badge]][c-sea_orm]  [![seaography][c-seaography-badge]][c-seaography]  [![select][c-select-badge]][c-select]  [![semver][c-semver-badge]][c-semver]  [![serde][c-serde-badge]][c-serde]  [![serde_json][c-serde_json-badge]][c-serde_json]  [![sled][c-sled-badge]][c-sled]  [![slint][c-slint-badge]][c-slint]  [![slotmap][c-slotmap-badge]][c-slotmap]  [![smol][c-smol-badge]][c-smol]  [![spacedrive][c-spacedrive-badge]][c-spacedrive]  [![sqlx][c-sqlx-badge]][c-sqlx]  [![stakker][c-stakker-badge]][c-stakker]  [![starship][c-starship-badge]][c-starship]  [![std][c-std-badge]][c-std]  [![stork-search][c-stork_search-badge]][c-stork_search]  [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser]  [![syn][c-syn-badge]][c-syn]  [![syslog][c-syslog-badge]][c-syslog]
+[![salsa][c-salsa-badge]][c-salsa]  [![same-file][c-same-file-badge]][c-same-file]  [![sea_orm][c-sea_orm-badge]][c-sea_orm]  [![seaography][c-seaography-badge]][c-seaography]  [![select][c-select-badge]][c-select]  [![semver][c-semver-badge]][c-semver]  [![serde][c-serde-badge]][c-serde]  [![serde_json][c-serde_json-badge]][c-serde_json]  [![sled][c-sled-badge]][c-sled]  [![slint][c-slint-badge]][c-slint]  [![slotmap][c-slotmap-badge]][c-slotmap]  [![smol][c-smol-badge]][c-smol]  [![sqlx][c-sqlx-badge]][c-sqlx]  [![stakker][c-stakker-badge]][c-stakker]  [![starship][c-starship-badge]][c-starship]  [![std][c-std-badge]][c-std]  [![stork-search][c-stork_search-badge]][c-stork_search]  [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser]  [![syn][c-syn-badge]][c-syn]  [![syslog][c-syslog-badge]][c-syslog]
 
 ## T
 
@@ -64,7 +64,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## V - Z
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![wasmtime][c-wasmtime-badge]][c-wasmtime]  [![watchmaker][c-watchmaker-badge]][c-watchmaker]  [![watt][c-watt-badge]][c-watt]  [![wgpu][c-wgpu-badge]][c-wgpu]  [![windows][c-windows-badge]][c-windows]  [![xilem][c-xilem-badge]][c-xilem]  [![xshell][c-xshell-badge]][c-xshell]  [![xsv][c-xsv-badge]][c-xsv]  [![yapp][c-yapp-badge]][c-yapp]  [![yew][c-yew-badge]][c-yew]  [![zed][c-zed-badge]][c-zed]  [![zenoh][c-zenoh-badge]][c-zenoh]  [![zola][c-zola-badge]][c-zola]
+[![walkdir][c-walkdir-badge]][c-walkdir]  [![wasmtime][c-wasmtime-badge]][c-wasmtime]  [![watchmaker][c-watchmaker-badge]][c-watchmaker]  [![watt][c-watt-badge]][c-watt]  [![wgpu][c-wgpu-badge]][c-wgpu]  [![windows][c-windows-badge]][c-windows]  [![xilem][c-xilem-badge]][c-xilem]  [![xshell][c-xshell-badge]][c-xshell]  [![xsv][c-xsv-badge]][c-xsv]  [![yapp][c-yapp-badge]][c-yapp]  [![yew][c-yew-badge]][c-yew]  [![zed][c-zed-badge]][c-zed]  [![zenoh][c-zenoh-badge]][c-zenoh]
 
 {{#include refs/link-refs.md}}
 

@@ -14,7 +14,7 @@
 - File system traversal, [`walkdir`][c-walkdir]{{hi:walkdir}}⮳
 - [`std::time`][c-std::time]{{hi:std::time}}⮳, [`chrono`][c-chrono]{{hi:chrono}}⮳
 - Errors: `color-eyre`, [`eyre`][c-eyre]{{hi:eyre}}⮳
-- Testing: [`approx`][c-approx]{{hi:approx}}⮳, [`nextest`][c-nextest-website]{{hi:nextest}}⮳
+- Testing: [`approx`][c-approx]{{hi:approx}}⮳, [`nextest`][c-cargo_nextest-website]{{hi:nextest}}⮳
 - [`axum`][c-axum]{{hi:axum}}⮳
 - [`loco`][c-loco]{{hi:loco}}⮳
 - shuttle.rs

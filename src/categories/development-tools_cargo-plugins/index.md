@@ -143,7 +143,7 @@ The two distinguishing features of xtask are:
 
 ### Devx
 
-[devx][c-devx-github]⮳ Collection of utilities for writing your own dev scripts
+[devx][devx-github]⮳ Collection of utilities for writing your own dev scripts
 
 Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)][c-cargo_xtask-github]⮳
 
