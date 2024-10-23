@@ -1,28 +1,30 @@
 # TODO
 
+- [ ] review each .md file in turn
+
+## Examples
+
+- [ ] fix commented examples - remaining
+- [ ] outputs of tests should go to a temporary folder
+- [ ] fix leaky tests when using nextest on Windows
+- [ ] fix failing examples in drafts
+- [ ] integrate clap builder example
+
+## mdbook plugins
+
 - [ ] consider [mdbook_cmdrun][c-mdbook_cmdrun-github] A mdbook preprocessor for runnning arbitrary (shell) commands in a markdown file
 - [ ] consider [mdbook-journal][c-mdbook_journal-website] or [mdbook-tera][c-mdbook_tera-github] for templating
 - [ ] review [yapp][c-yapp-github] A mdbook preprocessor that simply replaces text in chapters.
 - [ ] review [c-mdbook_toc-github] A preprocessor for mdbook to add inline Table of Contents support.
 
-## Examples
-
-- [ ] fix build.rs (and skeptic.rs in drafts); create a copy of the Markdown, then remove #includes to only test directly-embedded examples
-- [ ] fix commented examples
-- [ ] fix leaky tests when using nextest on Windows
-- [ ] outputs of tests should go to a temporary folder
-- [ ] fix failing examples in drafts WIP
-- [ ] integrate clap builder example
-
 ## Markdown
 
-- [ ] review each .md file in turn
 - [ ] create badge refdefs for links to RBE book
 - [ ] pull request to little book of rust books
 - [ ] Consider adding project to [goodfirstissue.dev][goodfirstissue-website]
 - [ ] review GA / GSC - issues with redirects??
 - [ ] incorporate cwd.rs example + any other new examples
-- [ ] finish word index
+- [ ] finish word index WIP
 - [ ] finish cd_ci.md
 - [ ] finish improve_speed
 - [ ] finish to review ignore / no_run examples
