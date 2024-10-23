@@ -9,7 +9,7 @@
 | [![cat-aerospace-simulation][cat-aerospace-simulation-badge]][cat-aerospace-simulation] | | |
 | [![cat-space-protocols][cat-space-protocols-badge]][cat-space-protocols] | | |
 | [![cat-unmanned-aerial-vehicles][cat-unmanned-aerial-vehicles-badge]][cat-unmanned-aerial-vehicles] | | |
-| [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] | [![rand][c-rand-badge]][c-rand] [![candle][c-$-badge]][c-$] | |
+| [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] | [![rand][c-rand-badge]][c-rand] [![candle][c-candle-badge]][c-candle] | |
 | [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings] | | |
 | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] | [![actix_web][c-actix_web-badge]][c-actix_web] [![async_channel][c-async_channel-badge]][c-async_channel] [![async_std][c-async_std-badge]][c-async_std] [![async_stream][c-async_stream-badge]][c-async_stream] [![async_trait][c-async_trait-badge]][c-async_trait] | |
 | [![cat-authentication][cat-authentication-badge]][cat-authentication] | | |

@@ -802,7 +802,6 @@
 [c-mdbook-github-badge]: https://img.shields.io/badge/mdBook-steelblue?logo=github
 [c-mdbook-github]: https://github.com/rust-lang/mdBook
 [c-mdbook-third-party-plugins-wiki]: https://github.com/rust-lang/mdBook/wiki/Third-party-plugins
-[c-mdbook__linkcheck-lib.rs]: https://lib.rs/crates/mdbook-linkcheck
 [c-mdbook_cmdrun-badge]: https://img.shields.io/crates/v/mdbook_cmdrun?label=mdbook-cmdrun
 [c-mdbook_cmdrun-crates.io-badge]: https://img.shields.io/badge/crates.io-mdbook--cmdrun-crimson
 [c-mdbook_cmdrun-crates.io]: https://crates.io/crates/mdbook_cmdrun
@@ -1680,13 +1679,13 @@
 [c-syslog::Facility]: https://docs.rs/syslog/latest/syslog/enum.Facility.html
 [c-syslog::init]: https://docs.rs/syslog/latest/syslog/fn.init.html
 [c-syslog]: https://docs.rs/syslog
-[c-tantitvy-badge]: https://img.shields.io/crates/v/tantitvy?label=tantitvy
-[c-tantitvy-crates.io-badge]: https://img.shields.io/badge/crates.io-tantitvy-crimson
-[c-tantitvy-crates.io]: https://crates.io/crates/tantitvy
-[c-tantitvy-github-badge]: https://img.shields.io/badge/tantitvy-steelblue?logo=github
-[c-tantitvy-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tantitvy-yellow
-[c-tantitvy-lib.rs]: https://lib.rs/crates/tantitvy
-[c-tantitvy]: https://docs.rs/tantitvy
+[c-tantivy-badge]: https://img.shields.io/crates/v/tantivy?label=tantivy
+[c-tantivy-crates.io-badge]: https://img.shields.io/badge/crates.io-tantivy-crimson
+[c-tantivy-crates.io]: https://crates.io/crates/tantivy
+[c-tantivy-github-badge]: https://img.shields.io/badge/tantivy-steelblue?logo=github
+[c-tantivy-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tantivy-yellow
+[c-tantivy-lib.rs]: https://lib.rs/crates/tantivy
+[c-tantivy]: https://docs.rs/tantivy
 [c-tantivy-github]: https://github.com/quickwit-oss/tantivy
 [c-tar-badge]: https://img.shields.io/crates/v/tar?label=tar
 [c-tar-crates.io-badge]: https://img.shields.io/badge/crates.io-tar-crimson
@@ -1700,7 +1699,6 @@
 [c-tar::Entry::unpack]: https://docs.rs/tar/latest/tar/struct.Entry.html#method.unpack
 [c-tar::Entry]: https://docs.rs/tar/latest/tar/struct.Entry.html
 [c-tar]: https://docs.rs/tar
-[c-tarpaulin]: https://docs.rs/tarpaulin
 [c-tauri-badge]: https://img.shields.io/crates/v/tauri?label=tauri
 [c-tauri-crates.io-badge]: https://img.shields.io/badge/crates.io-tauri-crimson
 [c-tauri-crates.io]: https://crates.io/crates/tauri
