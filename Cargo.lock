@@ -3052,6 +3052,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_howto_tools"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "serde",
+ "tinytemplate",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3578,18 +3590,6 @@ dependencies = [
  "once_cell",
  "rustix",
  "windows-sys 0.59.0",
-]
-
-[[package]]
-name = "templ"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "clap",
- "serde",
- "tinytemplate",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]

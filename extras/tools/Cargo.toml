@@ -1,5 +1,5 @@
 [package]
-name = "templ"
+name = "rust_howto_tools"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true

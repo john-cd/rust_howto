@@ -202,9 +202,9 @@ empty := ''
 utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
 
-# Run the (local) templating tool to create badges and reference definitions
-templ cmd=help *subcmd=empty:
- cargo run -p templ -- {{cmd}} {{subcmd}}
+# Run the (local) tools e.g to create badges and reference definitions
+tools cmd=help *subcmd=empty:
+  cargo run -p rust_howto_tools -- {{cmd}} {{subcmd}}
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]

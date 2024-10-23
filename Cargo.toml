@@ -7,7 +7,7 @@ members = [
     "xmpl/*",
     # crates.io placeholder
     "publish",
-    "tools/templ"]
+    "extras/tools"]
 exclude = []
 # Only check / build the main crate by default (check / build all with `--workspace`)
 default-members = ["deps"]
