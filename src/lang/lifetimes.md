@@ -1,5 +1,7 @@
 # Lifetimes
 
+[![Rust by example - Lifetimes][book-rust-by-example-lifetimes-badge]][book-rust-by-example-lifetimes]
+
 Prevent dangling references{{hi:Dangling references}}.
 
 `&i32`        a reference

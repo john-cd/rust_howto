@@ -1,5 +1,7 @@
 # Functions
 
+[![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]
+
 ```rust
 {{#include ../../deps/tests/functions.rs}}
 ```

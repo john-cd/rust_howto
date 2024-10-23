@@ -1,5 +1,7 @@
 # Structs
 
+[![Rust by example - Structs][book-rust-by-example-structs-badge]][book-rust-by-example-structs]
+
 ```rust
 {{#include ../../deps/tests/structs.rs}}
 ```

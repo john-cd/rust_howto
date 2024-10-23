@@ -1,5 +1,7 @@
 # Enums
 
+[![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]
+
 ```rust
 {{#include ../../deps/tests/enums.rs}}
 ```

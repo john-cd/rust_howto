@@ -2,7 +2,7 @@
 
 [Rust reference - Macros][book-rust-reference-macros]⮳
 
-[Rust by example - Macros][book-rust-by-example-macros]⮳
+[Rust by example - Macros][book-rust-by-example-macros]⮳  [![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]
 
 The [Little Book of Rust Macros][book-rust-macros]⮳
 

@@ -1,5 +1,7 @@
 # Modules
 
+[![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]
+
 Crates can contain modules{{hi:Modules}}.
 
 Declaring modules: In the crate root file{{hi:Crate root file}} (`main.rs` or `lib.rs`), you can declare new modules; say, you declare a “garden” module with `mod garden;` (or `pub mod garden;` for public); The compiler will look for the module’s code in these places:

@@ -2,6 +2,8 @@
 
 ## Ownership
 
+[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]
+
 - No garbage collector. Ownership instead.
 - Each value in Rust has an owner{{hi:Ownership}}.
 - There can only be one owner at a time.

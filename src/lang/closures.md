@@ -1,5 +1,7 @@
 # Closures
 
+[![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
+
 ```rust
 {{#include ../../deps/tests/closures.rs}}
 ```

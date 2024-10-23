@@ -1,5 +1,7 @@
 # Variables and Constants
 
+[![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]  [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]
+
 ```rust
 {{#include ../../deps/tests/vars_and_consts.rs}}
 ```

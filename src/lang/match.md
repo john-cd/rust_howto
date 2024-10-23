@@ -1,5 +1,7 @@
 # Match, if let, while let
 
+[![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]
+
 ```rust
 {{#include ../../deps/tests/match.rs}}
 ```

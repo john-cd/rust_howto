@@ -1,5 +1,8 @@
 # Control Flow
 
+[![Rust by example - Control flow][book-rust-by-example-flow_control-badge]][book-rust-by-example-flow_control]
+
+
 ## If else
 
 ```rust
