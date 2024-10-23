@@ -52,12 +52,20 @@ fn cli() -> Command {
 
 fn badge() -> Command {
     Command::new("badge")
+        .visible_alias("b")
         .about("Create the markdown for a crate badge")
+        .display_order(0)
         .arg(
             Arg::new("crate_name")
+                .required(true)
                 .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
                 //.value_parser(value_parser!(...))
                 .action(clap::ArgAction::Append)
                 .help("Enter the crate name(s)"),
         )
+}
+
+#[test]
+fn test_app() {
+    cli().debug_assert();
 }
