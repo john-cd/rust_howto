@@ -3,7 +3,8 @@ use clap::Command;
 
 /// Define a hidden `test` command that takes no arguments.
 pub(super) fn cmd() -> Command {
-    Command::new("test").about("Test command").hide(true) // hidden from the help message.
+    Command::new("test").about("Test command").hide(true)
+    // not displayed in the help message.
 }
 
 pub(super) fn is_present(matches: &ArgMatches) -> bool {

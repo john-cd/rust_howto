@@ -1,5 +1,6 @@
 temp/
 target/
+log/
 *.log
 *.Identifier
 **/backup/logs

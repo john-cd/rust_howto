@@ -19,3 +19,10 @@ cargo clippy --tests
 # or
 cargo test -- --show-output
 ```
+
+## Folders
+
+`tests` contains the current book examples, written as tests.
+`drafts` contains WIP book examples.
+`src` contains a stub `lib.rs` file
+`temp` contains the outputs of the tests.

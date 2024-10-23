@@ -26,8 +26,7 @@ pub(super) fn run() -> (Config, Cmd) {
     let matches = cli().get_matches(); // Parse [env::args_os], exiting on failure.
                                        // Check for the existence of subcommands
     let conf = config::get_config(&matches);
-    let cmd;
-    cmd = if let Some(b) = badge::get_cmd(&matches) {
+    let cmd = if let Some(b) = badge::get_cmd(&matches) {
         Cmd::Badges(b)
     } else if let Some(r) = rbe::get_cmd(&matches) {
         Cmd::Rbe(r)
