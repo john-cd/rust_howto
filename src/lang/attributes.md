@@ -61,7 +61,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 [Attributes reference][book-rust-reference-attributes]⮳
 
-[Rust by example - attributes][book-rust-by-example-attributes]⮳
+[![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
 [p-automatic-derivation]: ../standard_library/derive.md
 {{#include ../refs/link-refs.md}}
