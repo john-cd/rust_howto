@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]
+[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
