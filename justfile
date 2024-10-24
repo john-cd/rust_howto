@@ -102,6 +102,10 @@ runall:
 update:
   cargo update
 
+# Get info about a crate (Rust 1.82+)
+info crate:
+  cargo info {{crate}}
+
 ## ---- BOOK BUILDING -----------------------------------
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
