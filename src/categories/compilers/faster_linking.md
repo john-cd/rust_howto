@@ -2,7 +2,7 @@
 
 {{#include faster_linking.incl.md}}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]
+[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking{{hi:Linking}} than the default Rust linker.
 
@@ -42,7 +42,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 ## Alternative - Mold linker
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]
+[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 [`mold`][mold-github]{{hi:mold}}⮳ is up to 5× faster than [`lld`][lld-website]{{hi:lld}}⮳, but with a few caveats like limited platform support and occasional stability issues. To install `mold`, run `sudo apt-get install mold clang` in Ubuntu.
 

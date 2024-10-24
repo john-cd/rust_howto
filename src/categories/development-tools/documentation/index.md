@@ -36,7 +36,7 @@ The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level docume
 {{#include ../../../../deps/tests/rustdoc3.rs}}
 ```
 
-To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:rust playground}}), use the following attribute:
+To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:Rust playground}}), use the following attribute:
 
 ```rust
 {{#include ../../../../deps/tests/rustdoc4.rs}}

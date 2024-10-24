@@ -4,7 +4,7 @@
 
 ## Tower
 
-[![tower][c-tower-badge]][c-tower]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![tower][c-tower-badge]][c-tower]{{hi:tower}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`tower`][c-tower]{{hi:tower}}⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
@@ -18,9 +18,9 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 ## Tower HTTP
 
-[![tower_http][c-tower_http-badge]][c-tower_http]  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![tower_http][c-tower_http-badge]][c-tower_http]{{hi:tower_http}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
-[`Tower HTTP`][c-tower_http]{{hi:Tower HTTP}}⮳ contains HTTP specific Tower utilities.
+[`Tower HTTP`][c-tower_http]{{hi:tower_http}}⮳ contains HTTP specific Tower utilities.
 
 ```rust,noplayground,ignore
 {{#include ../../../deps/tests/tower_http.rs}}
@@ -28,7 +28,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 ## Alternatives
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [`trillium`][c-trillium-website]{{hi:trillium}}⮳
 

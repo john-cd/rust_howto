@@ -6,7 +6,7 @@ Store the results of previous computations in order to reuse the results.
 
 ## LRU caching
 
-[![lru][c-lru-badge]][c-lru]  [![cat-caching][cat-caching-badge]][cat-caching]
+[![lru][c-lru-badge]][c-lru]{{hi:lru}}  [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
 ```rust,no_run
 {{#include ../../../deps/tests/lru.rs}}

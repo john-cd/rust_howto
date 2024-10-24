@@ -4,7 +4,7 @@ Dealing with money: accounting, trading, investments, taxes, banking and payment
 
 ## Quant
 
-[![rustquant][c-rustquant-badge]][c-rustquant] [![cat-finance][cat-finance-badge]][cat-finance]
+[![rustquant][c-rustquant-badge]][c-rustquant]{{hi:rustquant}} [![cat-finance][cat-finance-badge]][cat-finance]{{hi:Finance}}
 
 [rustquant][c-rustquant-lib.rs]⮳
 

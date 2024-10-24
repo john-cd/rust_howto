@@ -4,7 +4,7 @@ Crates related to solving problems involving physics, chemistry, biology, machin
 
 {{#include machine_learning/index.incl.md}}
 
-[![cat-science][cat-science-badge]][cat-science]
+[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 ## Geo
 
@@ -16,7 +16,7 @@ Processing of spatial information, maps, navigation data, and geographic informa
 
 Crates for research tools and processing of data related to the brain and nervous system.
 
-[![cat-neuroscience][cat-neuroscience-badge]][cat-neuroscience]
+[![cat-neuroscience][cat-neuroscience-badge]][cat-neuroscience]{{hi:Neuroscience}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

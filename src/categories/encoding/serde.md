@@ -2,13 +2,13 @@
 
 {{#include serde.incl.md}}
 
-[![serde][c-serde-badge]][c-serde]
+[![serde][c-serde-badge]][c-serde]{{hi:serde}}
 
 [serde][c-serde-github]⮳
 
 ## See also
 
-[![serde_json][c-serde_json-badge]][c-serde_json]
+[![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 
 [![monostate-github][c-monostate-github-badge]][c-monostate-github]
 

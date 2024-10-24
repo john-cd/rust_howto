@@ -2,9 +2,9 @@
 
 {{#include tracing.incl.md}}
 
-[![tracing][c-tracing-badge]][c-tracing]  [![tracing-github][c-tracing-github-badge]][c-tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}}  [![tracing-github][c-tracing-github-badge]][c-tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}
 
-[![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]  [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
+[![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}}  [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
 Add to `Cargo.toml`
 
@@ -80,15 +80,15 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 ## See also
 
-[![cat-debugging][cat-debugging-badge]][cat-debugging]
+[![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}
 
-[![env_logger][c-env_logger-badge]][c-env_logger]
+[![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}
 
-[![log][c-log-badge]][c-log]
+[![log][c-log-badge]][c-log]{{hi:log}}
 
-[![log4rs][c-log4rs-badge]][c-log4rs]
+[![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}}
 
-Support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving structured information: [tracing_journald][c-tracing_journald]⮳
+Support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving structured information: [tracing_journald][c-tracing_journald]{{hi:tracing_journald}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

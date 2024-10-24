@@ -11,7 +11,7 @@ Shared solutions for particular situations specific to programming in Rust.
 ## Design Patterns
 
 - [abstract-factory in rust][abstract-factory-in-rust-website]⮳
-- [lens-rs][c-lens]
+- [lens-rs][c-lens]{{hi:lens}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

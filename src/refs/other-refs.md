@@ -1,4 +1,3 @@
-
 [a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [abstract-factory-in-rust-website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [actions-mdbook-github]: https://github.com/peaceiris/actions-mdbook

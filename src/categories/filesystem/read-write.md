@@ -4,7 +4,7 @@
 
 ## Read lines of strings from a file
 
-[![std][c-std-badge]][c-std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Writes a three-line message to a file, then reads it back a line at a time with the [`std::io::Lines`][c-std::io::Lines]{{hi:std::io::Lines}}⮳ iterator created by
 [`std::io::BufRead::lines`][c-std::io::BufRead::lines]{{hi:std::io::BufRead::lines}}⮳  [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ implements [`std::io::Read`][c-std::io::Read]{{hi:std::io::Read}}⮳ which provides [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ trait. [`std::fs::File::create`][c-std::fs::File::create]{{hi:std::fs::File::create}}⮳ opens a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ for writing, [`std::fs::File::open`][c-std::fs::File::open]{{hi:std::fs::File::open}}⮳ for reading.
@@ -15,7 +15,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 ## Avoid writing and reading from a same file
 
-[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Use [`same-file::Handle`][c-same-file::Handle]{{hi:same-file::Handle}}⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
@@ -37,9 +37,9 @@ errors because the two files are same.
 
 ## Access a file randomly using a memory map
 
-[![memmap][c-memmap-badge]][c-memmap]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![memmap][c-memmap-badge]][c-memmap]{{hi:memmap}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-Creates a memory map{{hi:memory map}} of a file using [`memmap`][c-memmap]{{hi:memmap}}⮳ and simulates some non-sequential reads{{hi:non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`std::fs::File::seek`][c-std::fs::File::seek]{{hi:std::fs::File::seek}}⮳ to navigate a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳.
+Creates a memory map{{hi:Memory map}} of a file using [`memmap`][c-memmap]{{hi:memmap}}⮳ and simulates some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`std::fs::File::seek`][c-std::fs::File::seek]{{hi:std::fs::File::seek}}⮳ to navigate a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳.
 
 The [`memmap::Mmap::map`][c-memmap::Mmap::map]{{hi:memmap::Mmap::map}}⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 

@@ -4,7 +4,7 @@
 
 ## String type
 
-[![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]{{hi:std}}
 
 ```rust
 {{#include ../../deps/tests/strings.rs}}
@@ -16,7 +16,7 @@
 {{#include ../../deps/tests/strings2.rs}}
 ```
 
-Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output format{{hi:output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print{{hi:Pretty print}}.
+Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output format{{hi:Output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print{{hi:Pretty print}}.
 
 Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression’s value).
 

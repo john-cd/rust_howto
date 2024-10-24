@@ -8,7 +8,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 ## Multiple producers, single consumer
 
-[![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust
 {{#include ../../../deps/tests/message_passing_mpsc.rs}}
@@ -16,7 +16,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 ## Crossbeam_channel
 
-[![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam_channel}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing.
 
@@ -32,11 +32,11 @@ Example using specialized channels for tickers{{hi:Tickers}} and timeout{{hi:Tim
 
 ## See also
 
-[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-[![crossbeam][c-crossbeam-badge]][c-crossbeam]
+[![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}
 
-[![postage][c-postage-badge]][c-postage]
+[![postage][c-postage-badge]][c-postage]{{hi:postage}}
 
 [Message Passing (rust book)][book-rust-message-passing]⮳
 

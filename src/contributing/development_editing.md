@@ -6,9 +6,9 @@ Use `just serve` to preview the book by serving it locally on [http://localhost:
 
 To add or edit the book, simply update or add a `.md` file in the appropriate [`src`][rust-howto-src-github]{{hi:src}}⮳ subfolder, then add a link in [`SUMMARY.md`][rust-howto-summary-github]{{hi:SUMMARY.md}}⮳.
 
-- Add Rust code examples{{hi:Rust code examples}} under [`deps/tests`][rust-howto-deps-tests-github]{{hi:deps/tests}}⮳.
+- Add Rust code examples{{hi:Rust code examples}} under [`deps/tests`][rust-howto-deps-tests-github]⮳.
   - Make sure to format your code (`just fmtall` or `cargo +nightly fmt --all`), check it compiles (`just buildall` or `cargo build --all-targets`), lint it (`just clippyall` or `cargo clippy --all-targets`), and test it (`just testall` or `cargo test --test <name>` for an individual example). You may also `cargo run --example <name>`.
-  - Include your code example{{hi:code example}} in the Markdown via `{{# include /path/to/file.rs}}` within pairs of triple backticks.
+  - Include your code example{{hi:Code example}} in the Markdown via `{{# include /path/to/file.rs}}` within pairs of triple backticks.
 - You may write very short examples directly in the Markdown (but they won't be be formatted / linted automatically).
 - `rust` language code blocks in the Markdown will automatically get a _play_ button, which will execute the code in the [Rust Playground][rust-playground-website]{{hi:Rust Playground}}⮳ and display the output just below the code block. Adding the `mdbook-runnable` attribute forces the _play_ button to be displayed when [`ignore`][book-rust-code-block-attributes]{{hi:ignore}}⮳ is set.
 - The Rust playground{{hi:Rust playground}} only supports the top 100 most downloaded libraries and libraries used by the Rust Cookbook. [`noplayground`][book-rust-code-block-attributes]{{hi:noplayground}}⮳ removes the play button if a code block does not work on the playground.

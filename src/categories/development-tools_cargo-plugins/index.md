@@ -24,7 +24,7 @@ Subcommands that extend the capabilities of Cargo.
 
 ## Watch for changes
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ```sh
 cargo install cargo-watch
@@ -40,7 +40,7 @@ cargo watch -x check -x test -x run
 
 ## Formatting
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ```sh
 # Install `rustfmt` if needed
@@ -54,7 +54,7 @@ cargo fmt -- --check
 
 ## Linting
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ```sh
 rustup component add clippy # install if needed
@@ -65,7 +65,7 @@ Mute a warning using the `#[allow(clippy::lint_name)]` attributes
 
 ## Fix Compiler Warnings
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
 
@@ -75,11 +75,11 @@ cargo fix
 
 ## Code coverage
 
-[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ## Security audit
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 ```sh
 cargo install cargo-audit
@@ -88,7 +88,7 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps][c-cargo_udeps-crates.io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[udeps][c-cargo_udeps-crates.io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 or (simpler) [Machete][blog-cargo-machete]⮳
 
@@ -99,7 +99,7 @@ cargo machete
 
 ## Templates
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-cargo-plugins][cat-cargo-plugins-badge]][cat-cargo-plugins]
 
 [Cargo Generate][c-cargo_generate-crates.io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 

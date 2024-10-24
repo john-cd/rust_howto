@@ -4,7 +4,7 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 {{#include index.incl.md}}
 
-[![cat-embedded][cat-embedded-badge]][cat-embedded]
+[![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded systems}}
 
 ## Embassy
 

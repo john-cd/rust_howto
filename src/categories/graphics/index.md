@@ -6,7 +6,7 @@ Crates for graphics libraries and applications, including raster and vector grap
 
 ## RGB
 
-[![cat-graphics][cat-graphics-badge]][cat-graphics]
+[![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
 ## Wgpu
 

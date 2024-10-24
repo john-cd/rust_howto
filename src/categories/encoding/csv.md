@@ -21,7 +21,7 @@ Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:c
 
 ## Read CSV records with different delimiter
 
-[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi: delimiter}}
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi: delimiter}}
 
 Reads CSV records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::ReaderBuilder::delimiter]{{hi:csv::ReaderBuilder::delimiter}}⮳.
 
@@ -31,7 +31,7 @@ Reads CSV records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::ReaderBuil
 
 ## Filter CSV records matching a predicate
 
-[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 Returns _only_ the rows from `data` with a field that matches `query`.
 
@@ -43,9 +43,9 @@ This example has been adapted from [the csv crate tutorial][c-csv-tutorial]⮳
 
 ## Handle invalid CSV data with Serde
 
-[![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-CSV files often contain invalid data{{hi:invalid data}}. For these cases, the [`csv`][c-csv]{{hi:csv}}⮳ crate provides a custom deserializer{{hi:custom deserializer}}, [`csv::invalid_option`][c-csv::invalid_option]{{hi:csv::invalid_option}}⮳ which automatically converts invalid data to [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ values.
+CSV files often contain invalid data{{hi:Invalid data}}. For these cases, the [`csv`][c-csv]{{hi:csv}}⮳ crate provides a custom deserializer{{hi:Custom deserializer}}, [`csv::invalid_option`][c-csv::invalid_option]{{hi:csv::invalid_option}}⮳ which automatically converts invalid data to [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ values.
 
 ```rust
 {{#include ../../../deps/tests/invalid.rs}}
@@ -53,7 +53,7 @@ CSV files often contain invalid data{{hi:invalid data}}. For these cases, the [`
 
 ## Serialize records to CSV
 
-[![csv][c-csv-badge]][c-csv]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::writer]{{hi:csv::writer}}⮳ supports automatic serialization{{hi:Serialization}} from Rust types into CSV records. [`csv::Writer::write_record`][c-csv::Writer::write_record]{{hi:csv::Writer::write_record}}⮳ writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`csv::Writer::serialize`][c-csv::Writer::serialize]{{hi:csv::Writer::serialize}}⮳. Since CSV writer uses an internal buffer, always explicitly [`csv::Writer::flush`][c-csv::Writer::flush]{{hi:csv::Writer::flush}}⮳ when done.
 
@@ -63,9 +63,9 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::writer]
 
 ## Serialize records to CSV using Serde
 
-[![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-The following example shows how to serialize custom structs{{hi:serialize custom structs}} as CSV records using the [`serde`][c-serde]{{hi:serde}}⮳ crate.
+The following example shows how to serialize custom structs{{hi:Serialize custom structs}} as CSV records using the [`serde`][c-serde]{{hi:serde}}⮳ crate.
 
 ```rust
 {{#include ../../../deps/tests/serde-serialize.rs}}
@@ -73,7 +73,7 @@ The following example shows how to serialize custom structs{{hi:serialize custom
 
 ## Transform CSV column
 
-[![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]
+[![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][c-csv]{{hi:csv}}⮳ crate to read and write the csv file, and [`serde`][c-serde]{{hi:serde}}⮳ to deserialize and serialize the rows to and from bytes.
 

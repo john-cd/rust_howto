@@ -4,13 +4,13 @@
 
 ## Config
 
-[![config][c-config-badge]][c-config]  [![cat-config][cat-config-badge]][cat-config]
+[![config][c-config-badge]][c-config]{{hi:config}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 [`config`][c-config]{{hi:config}}⮳ is a layered configuration{{hi:Configuration}} system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ## Confy
 
-[![confy][c-confy-badge]][c-confy]  [![cat-config][cat-config-badge]][cat-config]
+[![confy][c-confy-badge]][c-confy]{{hi:confy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 ```rust,no_run
 {{#include ../../../deps/tests/confy.rs}}

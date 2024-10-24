@@ -2,7 +2,7 @@
 
 [![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[mdBook][c-mdbook-github]⮳: a utility to create modern online books{{hi:online books}} from Markdown files.
+[mdBook][c-mdbook-github]⮳: a utility to create modern online books{{hi:Online books}} from Markdown files.
 
 ```bash
 cargo install mdbook{{hi:mdbook}}

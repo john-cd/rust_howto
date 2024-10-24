@@ -6,7 +6,7 @@
 
 [![rustfmt-github][c-rustfmt-github-badge]][c-rustfmt-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-Install with `rustup component add rustfmt{{hi:rustfmt}}`
+Install with `rustup component add rustfmt`{{hi:rustfmt}}
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...

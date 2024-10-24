@@ -1,6 +1,6 @@
 # Other Web Frameworks
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [Rust web framework comparison][rust-web-framework-comparison-github]⮳
 
@@ -24,7 +24,7 @@
 
 ## See also
 
-[![hyper][c-hyper-badge]][c-hyper]  [![tonic][c-tonic-badge]][c-tonic]
+[![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![tonic][c-tonic-badge]][c-tonic]{{hi:tonic}}
 
 [Rust on Nails][rust-on-nails-website]⮳
 

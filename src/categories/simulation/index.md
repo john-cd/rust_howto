@@ -4,7 +4,7 @@ Crates used to model or construct models for some activity, e.g. to.simulate a n
 
 {{#include index.incl.md}}
 
-[![cat-simulation][cat-simulation-badge]][cat-simulation]
+[![cat-simulation][cat-simulation-badge]][cat-simulation]{{hi:Simulation}}
 
 ## See also
 

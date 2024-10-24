@@ -6,7 +6,7 @@ Crates related to robotics.
 
 ## Links
 
-[Robotics (lib.rs)][robotics-lib.rs]⮳  [![cat-robotics][cat-robotics-badge]][cat-robotics]
+[Robotics (lib.rs)][robotics-lib.rs]⮳  [![cat-robotics][cat-robotics-badge]][cat-robotics]{{hi:Robotics}}
 
 [robotics.rs][robotics-rs-website]⮳
 
@@ -16,7 +16,7 @@ Open Rust Robotics: [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 
 ## Useful tools and libraries
 
-[OpenCV][c-opencv-website]⮳  [![opencv-example][c-opencv-example-badge]][c-opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]
+[OpenCV][c-opencv-website]⮳  [![opencv-example][c-opencv-example-badge]][c-opencv-example]  [![cat-robotics][cat-robotics-badge]][cat-robotics]{{hi:Robotics}}
 
 [Zenoh][c-zenoh-website]⮳
 

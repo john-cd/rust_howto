@@ -4,7 +4,7 @@
 
 ## Adding matrices
 
-[![ndarray][c-ndarray-badge]][c-ndarray]  [![cat-science][cat-science-badge]][cat-science]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 Creates two 2-D matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳ and sums them element-wise.
 
@@ -16,7 +16,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 
 ## Multiplying matrices
 
-[![ndarray][c-ndarray-badge]][c-ndarray]  [![cat-science][cat-science-badge]][cat-science]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳ and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c-ndarray::ArrayBase::dot]{{hi:ndarray::ArrayBase::dot}}⮳.
 
@@ -26,7 +26,7 @@ Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}
 
 ## Multiply a scalar with a vector with a matrix
 
-[![ndarray][c-ndarray-badge]][c-ndarray]  [![cat-science][cat-science-badge]][cat-science]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 Creates a 1-D array (vector) with [`ndarray::arr1`][c-ndarray::arr1]{{hi:ndarray::arr1}}⮳ and a 2-D array (matrix) with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳
 
@@ -41,7 +41,7 @@ In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as eit
 
 ## Vector comparison
 
-[![ndarray][c-ndarray-badge]][c-ndarray]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 
 The [`ndarray`][c-ndarray]{{hi:ndarray}}⮳ crate supports a number of ways to create arrays -- this recipe creates
 [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ from `std::Vec` using [`std::convert::From`][c-std::convert::From]{{hi:std::convert::From}}⮳. Then, it sums the arrays element-wise.
@@ -59,7 +59,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 ## Vector norm
 
-[![ndarray][c-ndarray-badge]][c-ndarray]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 
 This recipe demonstrates use of the [`ndarray::Array1`][c-ndarray::Array1]{{hi:ndarray::Array1}}⮳ type, [`ndarray::Array1`][c-ndarray::Array1]{{hi:ndarray::Array1}}⮳ type,
 [`ndarray::ArrayBase::fold`][c-ndarray::ArrayBase::fold]{{hi:ndarray::ArrayBase::fold}} method, and [`ndarray::ArrayBase::dot`][c-ndarray::ArrayBase::dot]{{hi:ndarray::ArrayBase::dot}}⮳ method in computing the [`l1`][l1-norm]{{hi:L1 norm}}⮳ and [`l2`][l2-norm]{{hi:L2 norm}}⮳ norms of a given vector.
@@ -76,7 +76,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 
 ## Invert matrix
 
-[![nalgebra][c-nalgebra-badge]][c-nalgebra]  [![cat-science][cat-science-badge]][cat-science]
+[![nalgebra][c-nalgebra-badge]][c-nalgebra]{{hi:nalgebra}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 Creates a 3x3 matrix with [`nalgebra::Matrix3`][c-nalgebra::Matrix3]{{hi:nalgebra::Matrix3}}⮳ and inverts it, if possible.
 
@@ -86,7 +86,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c-nalgebra::Matrix3]{{hi:nalgebr
 
 ## (De)-Serialize a Matrix
 
-[![ndarray][c-ndarray-badge]][c-ndarray]  [![cat-science][cat-science-badge]][cat-science]
+[![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 Serialize and deserialize a matrix to and from JSON. Serialization is taken care of by [`serde_json::to_string`][c-serde_json::to_string]{{hi:serde_json::to_string}}⮳ and [`serde_json::to_string`][c-serde_json::to_string]{{hi:serde_json::to_string}}⮳ performs deserialization.
 

@@ -16,7 +16,7 @@ See also:
 
 ## Derive More
 
-[![derive_more][c-derive_more-badge]][c-derive_more]
+[![derive_more][c-derive_more-badge]][c-derive_more]{{hi:derive_more}}
 
 [Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}.
 

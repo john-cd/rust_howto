@@ -4,19 +4,19 @@
 
 ## Polars
 
-[![polars][c-polars-badge]][c-polars]  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]
+[![polars][c-polars-badge]][c-polars]{{hi:polars}}  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]
 
 - [docs.pola.rs][c-polars-docs]⮳
 
 ## Arrow
 
-[![arrow][c-arrow-badge]][c-arrow]  [![arrow-github][c-arrow-github-badge]][c-arrow-github]
+[![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}  [![arrow-github][c-arrow-github-badge]][c-arrow-github]
 
 `arrow` is the official Rust implementation of `Apache Arrow`
 
 ## Datafusion
 
-[![datafusion][c-datafusion-badge]][c-datafusion] is the `Apache Arrow DataFusion` SQL Query Engine.
+[![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}} is the `Apache Arrow DataFusion` SQL Query Engine.
 
 ## Databend
 
@@ -34,7 +34,7 @@ A fast CSV command line toolkit written in Rust. [xsv][c-xsv-github]⮳
 
 xsv is a command line program for indexing, slicing, analyzing, splitting and joining CSV files.
 
-[![csv][c-csv-badge]][c-csv]
+[![csv][c-csv-badge]][c-csv]{{hi:csv}}
 
 ## See also
 

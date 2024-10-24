@@ -1,4 +1,3 @@
-
 [c-actix-badge]: https://img.shields.io/crates/v/actix?label=actix
 [c-actix-crates.io-badge]: https://img.shields.io/badge/crates.io-actix-crimson
 [c-actix-crates.io]: https://crates.io/crates/actix

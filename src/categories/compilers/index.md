@@ -1,6 +1,6 @@
 # Compilers
 
-Compiler{{hi:Compiler}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
+Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
 
 ## Cross-compilation
 

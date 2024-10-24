@@ -4,7 +4,7 @@ Tooling to help adapting internationalized software to specific languages and re
 
 {{#include index.incl.md}}
 
-[![cat-localization][cat-localization-badge]][cat-localization]
+[![cat-localization][cat-localization-badge]][cat-localization]{{hi:Localization}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

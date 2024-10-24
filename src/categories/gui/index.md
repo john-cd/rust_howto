@@ -4,7 +4,7 @@ Tooling to help you create a graphical user interface.
 
 {{#include index.incl.md}}
 
-[![cat-gui][cat-gui-badge]][cat-gui]
+[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
 [Are we GUI yet?][are-we-gui-yet?-website]⮳
 
@@ -14,13 +14,13 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 ## Tauri
 
-[![tauri][c-tauri-badge]][c-tauri] [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]
+[![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}} [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
 [`tauri`][c-tauri]{{hi:tauri}}⮳ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. It is similar to Electron.
 
 ## egui
 
-[![egui][c-egui-badge]][c-egui]  [![cat-gui][cat-gui-badge]][cat-gui]
+[![egui][c-egui-badge]][c-egui]{{hi:egui}}  [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
 [`egui`][c-egui]{{hi:egui}}⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][c-egui]{{hi:egui}}⮳ aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
 
@@ -32,7 +32,7 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 ## Slint
 
-[![slint][c-slint-badge]][c-slint]  [![slint-website][c-slint-website-badge]][c-slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]
+[![slint][c-slint-badge]][c-slint]{{hi:slint}}  [![slint-website][c-slint-website-badge]][c-slint-website]  [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
 - [slint.dev][c-slint-website]⮳
 - [Slint (github)][c-slint-github]⮳
@@ -43,7 +43,7 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 - A native Rust UI library with fine-grained reactivity. Inspired by [Xilem][c-xilem-github]⮳, [Leptos][c-leptos-github]⮳
 and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI library requiring minimal user effort.
 - [Floem (github)][c-floem-github]⮳
-- [Floem (docs)][c-floem]⮳
+- [Floem (docs)][c-floem]{{hi:floem}}⮳
 
 ### GPUI
 
@@ -51,9 +51,9 @@ and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI 
 
 ## Other GUI frameworks
 
-[![iced][c-iced-badge]][c-iced]  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
+[![iced][c-iced-badge]][c-iced]{{hi:iced}}  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
 
-[![druid][c-druid-badge]][c-druid]  [![druid-github][c-druid-github-badge]][c-druid-github] is a data-first Rust-native UI design toolkit (experimental).
+[![druid][c-druid-badge]][c-druid]{{hi:druid}}  [![druid-github][c-druid-github-badge]][c-druid-github] is a data-first Rust-native UI design toolkit (experimental).
 
 ## See also
 

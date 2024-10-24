@@ -1,6 +1,6 @@
 ## Static Website Generators
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]  [![cat-http-server][cat-http-server-badge]][cat-http-server]
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-server][cat-http-server-badge]][cat-http-server]
 
 [Zola][zola-website]⮳
 

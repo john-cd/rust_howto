@@ -4,7 +4,7 @@ Real-time or offline rendering of 2D or 3D graphics, usually with the help of a 
 
 {{#include index.incl.md}}
 
-| [![cat-rendering][cat-rendering-badge]][cat-rendering] | | |
+| [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}} | | |
 
 ## Data formats
 

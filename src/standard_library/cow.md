@@ -32,7 +32,7 @@ Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly t
 
 ## Convert `Cow` to `String`
 
-[![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]{{hi:std}}
 
 Use [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳:
 

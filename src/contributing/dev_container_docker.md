@@ -37,7 +37,7 @@ docker compose up --build -d
 
 ## Deployment to GitHub Pages
 
-The continuous integration worflow{{hi:continuous integration worflow}} is found under `.github`.
+The continuous integration worflow{{hi:Continuous integration worflow}} is found under `.github`.
 
 Test the docker compose setup used during CI using:
 

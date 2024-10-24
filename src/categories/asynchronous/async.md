@@ -8,28 +8,28 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 
 ## Basic Example
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,mdbook-runnable
 {{#include ../../../deps/tests/async.rs}}
 ```
 
-As any form of cooperative multitasking{{hi:cooperative multitasking}}, a future{{hi:Future}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
+As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with other languages
 
 Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ differs from most languages in a few ways:
 
-- Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Future}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
+- Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
 
 ```rust,mdbook-runnable
 {{#include ../../../deps/tests/async2.rs}}
 ```
 
 - Dropping a future stops it from making further progress.
-- Async is zero-cost in Rust. You can use [`async`][book-rust-reference-async]{{hi:async}}⮳ without heap allocations{{hi:heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
+- Async is zero-cost in Rust. You can use [`async`][book-rust-reference-async]{{hi:async}}⮳ without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
-- Both single- and multi-threaded runtimes{{hi:multithreaded runtimes}} are available.
+- Both single- and multi-threaded runtimes{{hi:Multithreaded runtimes}} are available.
 
 ## Which crate provides what?
 
@@ -40,16 +40,16 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 ## Async runtimes
 
-[![async_std][c-async_std-badge]][c-async_std]  [![smol][c-smol-badge]][c-smol]  [![embassy][c-embassy-badge]][c-embassy]  [![mio][c-mio-badge]][c-mio]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]
+[![async_std][c-async_std-badge]][c-async_std]{{hi:async_std}}  [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 In most cases, prefer the [`tokio`](./tokio.md){{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 
-- [![async_std][c-async_std-badge]][c-async_std]  [![async_std-crates.io][c-async_std-crates.io-badge]][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
-- [![smol][c-smol-badge]][c-smol]  [Smol][c-smol-crates.io]⮳
-- [![embassy][c-embassy-badge]][c-embassy]  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
-- [![mio][c-mio-badge]][c-mio]  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+- [![async_std][c-async_std-badge]][c-async_std]{{hi:async_std}}  [![async_std-crates.io][c-async_std-crates.io-badge]][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
+- [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [Smol][c-smol-crates.io]⮳
+- [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
+- [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

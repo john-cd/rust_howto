@@ -14,7 +14,7 @@ Parsers implemented for particular formats or languages.
 
 Crates to help create parsers of binary and text formats. Format-specific parsers belong in other, more specific categories.
 
-[![cat-parsing][cat-parsing-badge]][cat-parsing]
+[![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing}}
 
 ## Nom
 

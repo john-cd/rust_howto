@@ -4,11 +4,11 @@
 
 ## File names that have been modified in the last 24 hours
 
-[![std][c-std-badge]][c-std]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-Gets the current working directory{{hi:current working directory}} by calling [`std::env::current_dir`][c-std::env::current_dir]{{hi:std::env::current_dir}}⮳ then for each entries in [`std::fs::read_dir`][c-std::fs::read_dir]{{hi:std::fs::read_dir}}⮳ extracts the
+Gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c-std::env::current_dir]{{hi:std::env::current_dir}}⮳ then for each entries in [`std::fs::read_dir`][c-std::fs::read_dir]{{hi:std::fs::read_dir}}⮳ extracts the
 [`std::fs::DirEntry::path`][c-std::fs::DirEntry::path]{{hi:std::fs::DirEntry::path}}⮳ and gets the metadata via [`std::fs::Metadata`][c-std::fs::Metadata]{{hi:std::fs::Metadata}}⮳. The
-[`std::fs::Metadata::modified`][c-std::fs::Metadata::modified]{{hi:std::fs::Metadata::modified}}⮳ returns the [`std::time::SystemTime::elapsed`][c-std::time::SystemTime::elapsed]{{hi:std::time::SystemTime::elapsed}}⮳ time since last modification{{hi:time since last modification}}. [`std::time::Duration::as_secs`][c-std::time::Duration::as_secs]{{hi:std::time::Duration::as_secs}}⮳ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c-std::fs::Metadata::is_file]{{hi:std::fs::Metadata::is_file}}⮳ filters out directories.
+[`std::fs::Metadata::modified`][c-std::fs::Metadata::modified]{{hi:std::fs::Metadata::modified}}⮳ returns the [`std::time::SystemTime::elapsed`][c-std::time::SystemTime::elapsed]{{hi:std::time::SystemTime::elapsed}}⮳ time since last modification{{hi:Time since last modification}}. [`std::time::Duration::as_secs`][c-std::time::Duration::as_secs]{{hi:std::time::Duration::as_secs}}⮳ converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c-std::fs::Metadata::is_file]{{hi:std::fs::Metadata::is_file}}⮳ filters out directories.
 
 ```rust
 {{#include ../../../deps/tests/modified.rs}}
@@ -16,7 +16,7 @@ Gets the current working directory{{hi:current working directory}} by calling [`
 
 ## Find loops for a given path
 
-[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Use [`same-file::is_same_file`][c-same-file::is_same_file]{{hi:same-file::is_same_file}}⮳ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
@@ -33,9 +33,9 @@ The following would assert that a loop exists.
 
 ## Recursively find duplicate file names
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-Find recursively in the current directory duplicate filenames{{hi:duplicate filenames}}, printing them only once.
+Find recursively in the current directory duplicate filenames{{hi:Duplicate filenames}}, printing them only once.
 
 ```rust,no_run
 {{#include ../../../deps/tests/duplicate-name.rs}}
@@ -43,9 +43,9 @@ Find recursively in the current directory duplicate filenames{{hi:duplicate file
 
 ## Recursively find all files with given predicate
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-Find JSON files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c-walkdir::WalkDir::follow_links]{{hi:walkdir::WalkDir::follow_links}}⮳ ensures symbolic links{{hi:symbolic links}} are followed like they were normal directories and files.
+Find JSON files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c-walkdir::WalkDir::follow_links]{{hi:walkdir::WalkDir::follow_links}}⮳ ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
 ```rust,no_run
 {{#include ../../../deps/tests/find-file.rs}}
@@ -53,7 +53,7 @@ Find JSON files modified within the last day in the current directory. Using [`w
 
 ## Traverse directories while skipping dotfiles
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] {{hi:skipping dotfiles}}
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:Skipping dotfiles}}
 
 Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c-std::iter::Iterator::filter]{{hi:std::iter::Iterator::filter}}⮳ applies to each [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ even if the parent is a hidden directory.
 
@@ -65,7 +65,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::de
 
 ## Recursively calculate file sizes at given depth
 
-[![walkdir][c-walkdir-badge]][c-walkdir]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] {{hi:file sizes}}
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
 Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir::Walkdir::min_depth]{{hi:walkdir::Walkdir::min_depth}}⮳ & [`walkdir::WalkDir::max_depth`][c-walkdir::WalkDir::max_depth]{{hi:walkdir::WalkDir::max_depth}}⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
@@ -75,7 +75,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir
 
 ## Find all png files recursively
 
-[![glob][c-glob-badge]][c-glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -87,7 +87,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find all files with given pattern ignoring filename case
 
-[![glob][c-glob-badge]][c-glob]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]
+[![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 

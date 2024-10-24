@@ -6,7 +6,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 ## Anyhow
 
-[![anyhow][c-anyhow-badge]][c-anyhow]  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}}  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -18,7 +18,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 ## thisError
 
-[![thiserror][c-thiserror-badge]][c-thiserror]
+[![thiserror][c-thiserror-badge]][c-thiserror]{{hi:thiserror}}
 
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
@@ -41,7 +41,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## Miette
 
-[![miette][c-miette-badge]][c-miette]  [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
+[![miette][c-miette-badge]][c-miette]{{hi:miette}}  [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
 ```rust,ignore
 {{#include ../../../../deps/tests/miette/mylib.rs}}
@@ -53,11 +53,11 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## See also
 
-[![eyre][c-eyre-badge]][c-eyre]
+[![eyre][c-eyre-badge]][c-eyre]{{hi:eyre}}
 
-[![error_chain][c-error_chain-badge]][c-error_chain]
+[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}
 
-Do not use [Error Chain][c-error_chain]⮳, which is deprecated.
+Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

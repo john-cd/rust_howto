@@ -2,7 +2,7 @@
 
 {{#include hashmaps.incl.md}}
 
-[![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]{{hi:std}}
 
 All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each other, and all of the values{{hi:Values}} must have the same type.
 

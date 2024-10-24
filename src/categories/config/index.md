@@ -1,6 +1,6 @@
 # Configuration
 
-Facilitate configuration management{{hi:configuration management}} for applications.
+Facilitate configuration management{{hi:Configuration management}} for applications.
 
 ## Configuration Management
 

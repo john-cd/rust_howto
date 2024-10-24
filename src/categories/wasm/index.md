@@ -8,7 +8,7 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 ## Yew
 
-[![yew][c-yew-badge]][c-yew]  [![cat-wasm][cat-wasm-badge]][cat-wasm]
+[![yew][c-yew-badge]][c-yew]{{hi:yew}}  [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WASM}}
 
 [What is Yew?][c-yew-website]⮳
 

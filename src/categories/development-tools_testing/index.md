@@ -4,7 +4,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 {{#include index.incl.md}}
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]   [![cat-testing][cat-testing-badge]][cat-testing]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-testing][cat-testing-badge]][cat-testing]{{hi:Testing}}
 
 `cargo test` to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
@@ -16,7 +16,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 ## Custom message
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]   [![cat-testing][cat-testing-badge]][cat-testing]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-testing][cat-testing-badge]][cat-testing]{{hi:Testing}}
 
 ```rust
 {{#include ../../../deps/tests/tests_custom_message.rs}}
@@ -24,9 +24,9 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 ## See Also
 
-[![cat-testing][cat-testing-badge]][cat-testing]
+[![cat-testing][cat-testing-badge]][cat-testing]{{hi:Testing}}
 
-[![approx][c-approx-badge]][c-approx]  [`approx`][c-approx]{{hi:approx}}⮳
+[![approx][c-approx-badge]][c-approx]{{hi:approx}}  [`approx`][c-approx]{{hi:approx}}⮳
 
 [cargo-nextest][c-cargo_nextest-website]⮳: `cargo nextest run; cargo test --doc`  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

@@ -2,13 +2,13 @@
 
 {{#include smart_pointers.incl.md}}
 
-- `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
+- `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 
 ## Box
 
-[![book-rust-box][book-rust-box-badge]][book-rust-box]  [![std][c-std-badge]][c-std]
+[![book-rust-box][book-rust-box-badge]][book-rust-box]  [![std][c-std-badge]][c-std]{{hi:std}}
 
 `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
 
@@ -21,15 +21,15 @@ Use when
 
 ## Rc
 
-[![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]{{hi:std}}
 
-The `Rc<T>` type keeps track of the number of references to data on the heap so that data can have multiple owners{{hi:multiple owners}}.
+The `Rc<T>` type keeps track of the number of references to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
 
 ## RefCell
 
-[![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]{{hi:std}}
 
-The `RefCell<T>` type with its interior mutability{{hi:interior mutability}} gives us a type that we can use when we need an immutable type{{hi:immutable type}} but need to change an inner value{{hi:inner value}} of that type; it also enforces the borrowing rules at runtime instead of at compile time.
+The `RefCell<T>` type with its interior mutability{{hi:Interior mutability}} gives us a type that we can use when we need an immutable type{{hi:Immutable type}} but need to change an inner value{{hi:Inner value}} of that type; it also enforces the borrowing rules at runtime instead of at compile time.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

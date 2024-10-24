@@ -2,4 +2,4 @@
 
 ## Rhai
 
-- [rhai][c-rhai]⮳
+- [rhai][c-rhai]{{hi:rhai}}⮳
