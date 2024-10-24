@@ -191,7 +191,7 @@
 
 - [Internationalization](categories/internationalization/index.md)
 
-- [Localization](categories/localization/_index.md)
+- [Localization](categories/localization/index.md)
 
 - [Machine learning](categories/science/machine_learning/index.md)
 
