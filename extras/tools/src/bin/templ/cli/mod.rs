@@ -5,10 +5,12 @@ use clap::Command;
 
 mod badge;
 mod config;
+mod info;
 mod rbe;
 
 use badge::*;
 use config::*;
+use info::*;
 use rbe::*;
 
 /// The command that the end user selected
@@ -16,6 +18,7 @@ use rbe::*;
 pub(super) enum Cmd {
     Badges(BadgeCmdArgs),
     Rbe(RbeCmdArgs),
+    Info(InfoCmdArgs),
     #[default]
     None,
 }
@@ -30,6 +33,8 @@ pub(super) fn run() -> (Config, Cmd) {
         Cmd::Badges(b)
     } else if let Some(r) = rbe::get_cmd(&matches) {
         Cmd::Rbe(r)
+    } else if let Some(i) = info::get_cmd(&matches) {
+        Cmd::Info(i)
     } else {
         Cmd::None
     };
@@ -45,6 +50,7 @@ fn cli() -> Command {
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(badge::subcommand_badge())
         .subcommand(rbe::subcommand_rbe())
+        .subcommand(info::subcommand_info())
         .arg(config::arg_verbose())
 }
 

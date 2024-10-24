@@ -22,6 +22,11 @@ fn main() -> anyhow::Result<()> {
                 create_rbe_badge(&c)?;
             }
         }
+        Cmd::Info(i) => {
+            for n in i.names {
+                list_categories(&n)?;
+            }
+        }
         _ => return Err(anyhow!("You did not enter a command!")),
     }
     Ok(())
