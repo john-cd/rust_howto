@@ -1,9 +1,10 @@
 mod cli;
 
 use std::collections::HashMap;
+
 use anyhow::Result;
-use rust_howto_tools::*;
 use itertools::Itertools;
+use rust_howto_tools::*;
 
 fn main() -> anyhow::Result<()> {
     match cli::get_cmd()? {

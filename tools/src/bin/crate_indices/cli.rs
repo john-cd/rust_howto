@@ -67,6 +67,7 @@ fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
     if !stdin.is_terminal() {
         let handle = stdin.lock();
         for l in handle.lines() {
+            println!("{:?}", l);
             args.push(l?.into());
         }
     }
