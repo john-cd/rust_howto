@@ -25,7 +25,7 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 [![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
 
 [p-topics_of_interest]: topics_of_interest.md
-[p-key_crates]: ../key_crates.md
+[p-key_crates]: ../key_crates/key_crates.md
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

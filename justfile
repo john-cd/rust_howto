@@ -210,6 +210,10 @@ utils cmd=help *subcmd=empty:
 templ cmd=help *subcmd=empty:
   cargo run -p rust_howto_tools --bin templ -- {{cmd}} {{subcmd}}
 
+# Creates the `crates by category` page
+crate_indices cmd=help *subcmd=empty:
+  cargo run -p rust_howto_tools --bin crate_indices -- {{cmd}} {{subcmd}}
+
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]
 sortrefs: _removelastslash

@@ -24,7 +24,7 @@ static CRATE_REFDEFS: &str = "
 /// create_badge
 ///
 /// crate_id: name of the crate (per lib.rs)
-pub fn create_badge(crate_id: &str) -> Result<()> {
+pub fn create_badge(crate_id: &str) -> Result<String> {
     #[derive(Serialize)]
     struct Context {
         crate_id: String,
@@ -37,7 +37,6 @@ pub fn create_badge(crate_id: &str) -> Result<()> {
     };
     let rendered = tt.render("CRATE_BADGE", &context)?
         + tt.render("CRATE_REFDEFS", &context)?.as_str();
-    println!("{}", rendered);
 
-    Ok(())
+    Ok(rendered)
 }

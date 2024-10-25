@@ -818,6 +818,7 @@ dependencies = [
  "http",
  "http-body-util",
  "image",
+ "itertools 0.13.0",
  "lazy_static",
  "log",
  "log4rs",
@@ -826,6 +827,7 @@ dependencies = [
  "memmap",
  "miette",
  "mime",
+ "multimap",
  "nalgebra",
  "ndarray",
  "notify",
@@ -1730,6 +1732,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "itertools"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186"
+dependencies = [
+ "either",
+]
+
+[[package]]
 name = "itoa"
 version = "1.0.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2129,6 +2140,15 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "multimap"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "defc4c55412d89136f966bbb339008b474350e5e6e78d2714439c386b3137a03"
+dependencies = [
+ "serde",
 ]
 
 [[package]]
@@ -2855,7 +2875,7 @@ dependencies = [
  "built",
  "cfg-if",
  "interpolate_name",
- "itertools",
+ "itertools 0.12.1",
  "libc",
  "libfuzzer-sys",
  "log",
@@ -3074,8 +3094,10 @@ name = "rust_howto_tools"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "cargo_toml",
  "clap",
  "crates_io_api",
+ "itertools 0.13.0",
  "serde",
  "tinytemplate",
  "tracing",

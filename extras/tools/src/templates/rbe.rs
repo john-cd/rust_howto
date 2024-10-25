@@ -11,7 +11,7 @@ static RBE: &str = "
 ///
 /// concept: name of the language element / Rust By Example book
 /// chapter e.g. "attributes"
-pub fn create_rbe_badge(concept: &str) -> Result<()> {
+pub fn create_rbe_badge(concept: &str) -> Result<String> {
     #[derive(Serialize)]
     struct RbeContext {
         concept: String,
@@ -23,7 +23,5 @@ pub fn create_rbe_badge(concept: &str) -> Result<()> {
         concept: concept.to_string(),
     };
     let rendered = tt.render("RBE", &context)?;
-    println!("{}", rendered);
-
-    Ok(())
+    Ok(rendered)
 }

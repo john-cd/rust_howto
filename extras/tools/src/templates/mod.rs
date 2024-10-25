@@ -1,11 +1,13 @@
-#![allow(unused)]
+//! Build badges, index of the book, etc... using a template engine
+
 use anyhow::Result;
-use serde::Serialize;
 use tinytemplate::TinyTemplate;
 use tracing::info;
 
+mod category;
 mod crates;
 mod rbe;
+pub use category::*;
 pub use crates::*;
 pub use rbe::*;
 

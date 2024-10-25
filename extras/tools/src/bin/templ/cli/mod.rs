@@ -1,6 +1,9 @@
 //! The `cli` module is the command line argument parser for the
 //! application
 
+use std::env;
+
+use anyhow::Result;
 use clap::Command;
 
 mod badge;
@@ -8,26 +11,19 @@ mod config;
 mod info;
 mod rbe;
 
-use badge::*;
-use config::*;
-use info::*;
-use rbe::*;
+pub(crate) use badge::*;
+pub(crate) use config::*;
+pub(crate) use info::*;
+pub(crate) use rbe::*;
 
-/// The command that the end user selected
-#[derive(Default, Debug)]
-pub(super) enum Cmd {
-    Badges(BadgeCmdArgs),
-    Rbe(RbeCmdArgs),
-    Info(InfoCmdArgs),
-    #[default]
-    None,
-}
+use super::Cmd;
 
 /// `run` returns the configuration and command that the end user
 /// selected.
-pub(super) fn run() -> (Config, Cmd) {
-    let matches = cli().get_matches(); // Parse [env::args_os], exiting on failure.
-                                       // Check for the existence of subcommands
+pub(super) fn run() -> Result<(Config, Cmd)> {
+    // Parse [env::args_os], exiting on failure.
+    let matches = cli().get_matches();
+    // Check for the existence of subcommands
     let conf = config::get_config(&matches);
     let cmd = if let Some(b) = badge::get_cmd(&matches) {
         Cmd::Badges(b)
@@ -38,7 +34,7 @@ pub(super) fn run() -> (Config, Cmd) {
     } else {
         Cmd::None
     };
-    (conf, cmd)
+    Ok((conf, cmd))
 }
 
 /// Builds the CLI user interface

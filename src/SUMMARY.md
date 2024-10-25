@@ -47,9 +47,9 @@
   - [Smart pointers](standard_library/smart_pointers.md)
   - [Automatic trait derivation](standard_library/derive.md)
 
-- [Key crates](key_crates.md)
-  - [Crates (alphabetic)](crates.md)
-  - [Crates (by category)](categories.md)
+- [Key crates](key_crates/key_crates.md)
+  - [Crates (alphabetic)](key_crates/crates_alpabetical.md)
+  - [Crates (by category)](key_crates/crates_by_category.md)
 
 ---
 
