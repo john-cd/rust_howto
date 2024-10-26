@@ -57,7 +57,7 @@
   - [Generate random values](categories/algorithms/randomness.md)
   - [Sort a vector](categories/algorithms/sorting.md)
 
-- [API Bindings](categories/api-bindings/index.md)
+- [API bindings](categories/api-bindings/index.md)
 
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async and traits](categories/asynchronous/async_traits.md)
@@ -87,7 +87,7 @@
 - [Compression](categories/compression/index.md)
   - [Working with tarballs](categories/compression/tar.md)
 
-- [Computer Vision](categories/computer-vision/index.md)
+- [Computer vision](categories/computer-vision/index.md)
 
 - [Concurrency](categories/concurrency/index.md)
   - [Multi-threading](categories/concurrency/multithreading.md)
@@ -107,7 +107,7 @@
   - [Hashing](categories/cryptography/hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
 
-- [Data Processing](other/data_processing/index.md)
+- [Data processing](other/data_processing/index.md)
 
 - [Data structures](categories/data-structures/index.md)
   - [Bitfield](categories/data-structures/bitfield.md)

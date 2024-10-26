@@ -66,7 +66,7 @@ Crates mentioned in this book, by alphabetic order.
 
 [![walkdir][c-walkdir-badge]][c-walkdir]  [![wasmtime][c-wasmtime-badge]][c-wasmtime]  [![watchmaker][c-watchmaker-badge]][c-watchmaker]  [![watt][c-watt-badge]][c-watt]  [![wgpu][c-wgpu-badge]][c-wgpu]  [![windows][c-windows-badge]][c-windows]  [![xilem][c-xilem-badge]][c-xilem]  [![xshell][c-xshell-badge]][c-xshell]  [![xsv][c-xsv-badge]][c-xsv]  [![yapp][c-yapp-badge]][c-yapp]  [![yew][c-yew-badge]][c-yew]  [![zed][c-zed-badge]][c-zed]  [![zenoh][c-zenoh-badge]][c-zenoh]
 
-{{#include refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 </div>

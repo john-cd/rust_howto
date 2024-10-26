@@ -15,7 +15,7 @@ or older resources, such as:
 
 [Best of Rust crates][best-of-rust-crates-github]
 
-{{#include refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 TODO: organize

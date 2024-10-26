@@ -10,7 +10,7 @@ Crates that provide audio, video, and image processing or rendering engines.
 
 Crates that record, output, or process audio.
 
-[![cat-audio][cat-audio-badge]][cat-audio]{{hi:Audio}}
+[![cat-multimedia::audio][cat-multimedia::audio-badge]][cat-multimedia::audio]{{hi:Audio}}
 
 ## Encoding
 
@@ -26,7 +26,7 @@ Crates that process or build images.
 
 ## Video
 
-[![cat-video][cat-video-badge]][cat-video]{{hi:Video}}
+[![cat-multimedia::video][cat-multimedia::video-badge]][cat-multimedia::video]{{hi:Video}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

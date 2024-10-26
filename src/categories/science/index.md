@@ -10,13 +10,13 @@ Crates related to solving problems involving physics, chemistry, biology, machin
 
 Processing of spatial information, maps, navigation data, and geographic information systems.
 
-[![cat-science-geo][cat-science-geo-badge]][cat-science-geo]
+[![cat-science::geo][cat-science::geo-badge]][cat-science::geo]
 
 ## Neuroscience
 
 Crates for research tools and processing of data related to the brain and nervous system.
 
-[![cat-neuroscience][cat-neuroscience-badge]][cat-neuroscience]{{hi:Neuroscience}}
+[![cat-science::neuroscience][cat-science::neuroscience-badge]][cat-science::neuroscience]{{hi:Neuroscience}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
