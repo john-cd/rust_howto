@@ -4,7 +4,7 @@ Development tools to help you figure out the performance of your code.
 
 {{#include index.incl.md}}
 
-[![cat-profiling][cat-profiling-badge]][cat-profiling]{{hi:Profiling}}
+[![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
 [Rust Performance Book][book-rust-performance]  [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]
 

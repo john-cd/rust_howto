@@ -27,7 +27,7 @@ Uses the asynchronous versions of [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, both 
 
 ## Set custom headers and URL parameters for a REST request
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-http-client][cat-http-client-badge]][cat-http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
 Sets both standard and custom HTTP headers as well as URL parameters for a HTTP GET request. Creates a custom header of type `XPoweredBy` with [`hyper::header!`][c-hyper::header!]{{hi:hyper::header!}}⮳ macro.
 

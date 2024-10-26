@@ -16,7 +16,7 @@ Loading and parsing of data formats related to 2D or 3D rendering, like 3D model
 
 High-level solutions for rendering on the screen.
 
-[![cat-rendering-engine][cat-rendering-engine-badge]][cat-rendering-engine]
+[![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]
 
 ## Graphics APIs
 

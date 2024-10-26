@@ -77,26 +77,26 @@
 [cat-development-tools-badge]: https://img.shields.io/badge/development_tools-white
 [cat-development-tools]: https://crates.io/categories/development-tools/
 
-[cat-cargo-plugins-badge]: https://img.shields.io/badge/cargo_plugins-white
-[cat-cargo-plugins]: https://crates.io/categories/development-tools::cargo-plugins/
+[cat-development-tools::cargo-plugins-badge]: https://img.shields.io/badge/cargo_plugins-white
+[cat-development-tools::cargo-plugins]: https://crates.io/categories/development-tools::cargo-plugins/
 
-[cat-build-utils-badge]: https://img.shields.io/badge/build_utils-white
-[cat-build-utils]: https://crates.io/categories/development-tools::build-utils/
+[cat-development-tools::build-utils-badge]: https://img.shields.io/badge/build_utils-white
+[cat-development-tools::build-utils]: https://crates.io/categories/development-tools::build-utils/
 
-[cat-ffi-badge]: https://img.shields.io/badge/ffi-white
-[cat-ffi]: https://crates.io/categories/development-tools::ffi/
+[cat-development-tools::ffi-badge]: https://img.shields.io/badge/ffi-white
+[cat-development-tools::ffi]: https://crates.io/categories/development-tools::ffi/
 
-[cat-debugging-badge]: https://img.shields.io/badge/debugging-white
-[cat-debugging]: https://crates.io/categories/development-tools::debugging/
+[cat-development-tools::debugging-badge]: https://img.shields.io/badge/debugging-white
+[cat-development-tools::debugging]: https://crates.io/categories/development-tools::debugging/
 
-[cat-procedural-macro-helpers-badge]: https://img.shields.io/badge/procedural_macro_helpers-white
-[cat-procedural-macro-helpers]: https://crates.io/categories/development-tools::procedural-macro-helpers/
+[cat-development-tools::procedural-macro-helpers-badge]: https://img.shields.io/badge/procedural_macro_helpers-white
+[cat-development-tools::procedural-macro-helpers]: https://crates.io/categories/development-tools::procedural-macro-helpers/
 
-[cat-testing-badge]: https://img.shields.io/badge/testing-white
-[cat-testing]: https://crates.io/categories/development-tools::testing/
+[cat-development-tools::testing-badge]: https://img.shields.io/badge/testing-white
+[cat-development-tools::testing]: https://crates.io/categories/development-tools::testing/
 
-[cat-profiling-badge]: https://img.shields.io/badge/profiling-white
-[cat-profiling]: https://crates.io/categories/development-tools::profiling/
+[cat-development-tools::profiling-badge]: https://img.shields.io/badge/profiling-white
+[cat-development-tools::profiling]: https://crates.io/categories/development-tools::profiling/
 
 [cat-email-badge]: https://img.shields.io/badge/email-white
 [cat-email]: https://crates.io/categories/email/
@@ -155,14 +155,14 @@
 [cat-video-badge]: https://img.shields.io/badge/video-white
 [cat-video]: https://crates.io/categories/multimedia::video/
 
-[cat-images-badge]: https://img.shields.io/badge/images-white
-[cat-images]: https://crates.io/categories/multimedia::images/
+[cat-multimedia::images-badge]: https://img.shields.io/badge/images-white
+[cat-multimedia::images]: https://crates.io/categories/multimedia::images/
 
 [cat-audio-badge]: https://img.shields.io/badge/audio-white
 [cat-audio]: https://crates.io/categories/multimedia::audio/
 
-[cat-multimedia-encoding-badge]: https://img.shields.io/badge/multimedia_encoding-white
-[cat-multimedia-encoding]: https://crates.io/categories/multimedia::encoding/
+[cat-multimedia::encoding-badge]: https://img.shields.io/badge/multimedia_encoding-white
+[cat-multimedia::encoding]: https://crates.io/categories/multimedia::encoding/
 
 [cat-network-programming-badge]: https://img.shields.io/badge/network_programming-white
 [cat-network-programming]: https://crates.io/categories/network-programming/
@@ -170,8 +170,8 @@
 [cat-no-std-badge]: https://img.shields.io/badge/no_std-white
 [cat-no-std]: https://crates.io/categories/no-std/
 
-[cat-no-alloc-badge]: https://img.shields.io/badge/no_alloc-white
-[cat-no-alloc]: https://crates.io/categories/no-std::no-alloc/
+[cat-no-std::no-alloc-badge]: https://img.shields.io/badge/no_alloc-white
+[cat-no-std::no-alloc]: https://crates.io/categories/no-std::no-alloc/
 
 [cat-os-badge]: https://img.shields.io/badge/OS-white
 [cat-os]: https://crates.io/categories/os/
@@ -188,8 +188,8 @@
 [cat-unix-apis-badge]: https://img.shields.io/badge/unix_apis-white
 [cat-unix-apis]: https://crates.io/categories/os::unix-apis/
 
-[cat-windows-apis-badge]: https://img.shields.io/badge/windows_apis-white
-[cat-windows-apis]: https://crates.io/categories/os::windows-apis/
+[cat-os::windows-apis-badge]: https://img.shields.io/badge/windows_apis-white
+[cat-os::windows-apis]: https://crates.io/categories/os::windows-apis/
 
 [cat-parser-implementations-badge]: https://img.shields.io/badge/parser_implementations-white
 [cat-parser-implementations]: https://crates.io/categories/parser-implementations/
@@ -200,8 +200,8 @@
 [cat-rendering-badge]: https://img.shields.io/badge/rendering-white
 [cat-rendering]: https://crates.io/categories/rendering/
 
-[cat-rendering-engine-badge]: https://img.shields.io/badge/rendering_engine-white
-[cat-rendering-engine]: https://crates.io/categories/rendering::engine/
+[cat-rendering::engine-badge]: https://img.shields.io/badge/rendering_engine-white
+[cat-rendering::engine]: https://crates.io/categories/rendering::engine/
 
 [cat-rendering-data-formats-badge]: https://img.shields.io/badge/rendering_data_formats-white
 [cat-rendering-data-formats]: https://crates.io/categories/rendering::data-formats/
@@ -221,8 +221,8 @@
 [cat-neuroscience-badge]: https://img.shields.io/badge/neuroscience-white
 [cat-neuroscience]: https://crates.io/categories/science::neuroscience/
 
-[cat-robotics-badge]: https://img.shields.io/badge/robotics-white
-[cat-robotics]: https://crates.io/categories/science::robotics/
+[cat-science::robotics-badge]: https://img.shields.io/badge/robotics-white
+[cat-science::robotics]: https://crates.io/categories/science::robotics/
 
 [cat-simulation-badge]: https://img.shields.io/badge/simulation-white
 [cat-simulation]: https://crates.io/categories/simulation/
@@ -248,11 +248,11 @@
 [cat-web-programming-badge]: https://img.shields.io/badge/web_programming-white
 [cat-web-programming]: https://crates.io/categories/web-programming/
 
-[cat-http-client-badge]: https://img.shields.io/badge/http_client-white
-[cat-http-client]: https://crates.io/categories/web-programming::http-client/
+[cat-web-programming::http-client-badge]: https://img.shields.io/badge/http_client-white
+[cat-web-programming::http-client]: https://crates.io/categories/web-programming::http-client/
 
-[cat-websocket-badge]: https://img.shields.io/badge/websocket-white
-[cat-websocket]: https://crates.io/categories/web-programming::websocket/
+[cat-web-programming::websocket-badge]: https://img.shields.io/badge/websocket-white
+[cat-web-programming::websocket]: https://crates.io/categories/web-programming::websocket/
 
-[cat-http-server-badge]: https://img.shields.io/badge/http_server-white
-[cat-http-server]: https://crates.io/categories/web-programming::http-server/
+[cat-web-programming::http-server-badge]: https://img.shields.io/badge/http_server-white
+[cat-web-programming::http-server]: https://crates.io/categories/web-programming::http-server/

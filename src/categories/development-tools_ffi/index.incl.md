@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  |  | [![cat-ffi][cat-ffi-badge]][cat-ffi] |
+|  |  | [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi] |
 
 <div class="hidden">
 TODO: add recipe and crate links

@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  |  | [![cat-websocket][cat-websocket-badge]][cat-websocket] |
+|  |  | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
 
 <div class="hidden">
 TODO: add links

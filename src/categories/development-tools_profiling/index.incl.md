@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-|  |  | [![cat-profiling][cat-profiling-badge]][cat-profiling] |
+|  |  | [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling] |

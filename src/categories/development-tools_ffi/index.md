@@ -4,7 +4,7 @@ Tools to help you better interface with other languages. This includes binding g
 
 {{#include index.incl.md}}
 
-[![cat-ffi][cat-ffi-badge]][cat-ffi]{{hi:FFI}}
+[![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -16,13 +16,13 @@ Crates that record, output, or process audio.
 
 Crates that encode or decode binary data in multimedia formats.
 
-[![cat-multimedia-encoding][cat-multimedia-encoding-badge]][cat-multimedia-encoding]
+[![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding]
 
 ## Images
 
 Crates that process or build images.
 
-[![cat-images][cat-images-badge]][cat-images]{{hi:Images}}
+[![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}}
 
 ## Video
 

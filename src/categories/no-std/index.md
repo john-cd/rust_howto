@@ -10,7 +10,7 @@ Crates that are able to function without the Rust standard library.
 
 Crates that are able to function without the Rust alloc crate.
 
-[![cat-no-alloc][cat-no-alloc-badge]][cat-no-alloc]
+[![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,7 @@
 
 ## Enable log levels per module
 
-[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}{{hi:Log levels}}
+[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Log levels}}
 
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environmental variable.
 
@@ -31,7 +31,7 @@ DEBUG:test::foo::bar: [bar] debug
 
 ## Use a custom environment variable to set up logging
 
-[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}
+[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
 [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳ configures logging.
 
@@ -46,7 +46,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 
 ## Include timestamp in log messages
 
-[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}}  [![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}{{hi:Timestamp}}
+[![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 
 Creates a custom logger{{hi:Custom logger}} configuration with [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳
 Each log entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ to get the current [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ in local timezone and uses [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ with [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳ to format a timestamp used in the final log.
@@ -66,7 +66,7 @@ stderr output will contain
 
 ## Log messages to a custom location
 
-[![log][c-log-badge]][c-log]{{hi:log}}  [![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}}  [![cat-debugging][cat-debugging-badge]][cat-debugging]{{hi:Debugging}}
+[![log][c-log-badge]][c-log]{{hi:log}}  [![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
 [`log4rs`][c-log4rs]{{hi:log4rs}}⮳ configures log output to a custom location{{hi:Log output to a custom location}}. [`log4rs`][c-log4rs]{{hi:log4rs}}⮳ can use either an external YAML file or a builder configuration.
 
