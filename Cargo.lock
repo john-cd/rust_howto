@@ -801,6 +801,7 @@ dependencies = [
  "concat-string",
  "concat_strs",
  "confy",
+ "crates_io_api",
  "crossbeam",
  "crossbeam-channel",
  "crossbeam-queue",
