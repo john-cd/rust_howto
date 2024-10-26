@@ -10,7 +10,7 @@
 - [`mdbook_keeper`][c-mdbook_keeper-crates.io]{{hi:mdbook_keeper}}⮳. Install with
 
 ```bash
-cargo install mdbook_keeper --git <https://github.com/tfpk/mdbook_keeper.git>
+cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
 ```
 
 {{#include ../refs/link-refs.md}}

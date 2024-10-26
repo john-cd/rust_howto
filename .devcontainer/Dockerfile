@@ -23,11 +23,16 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends fzf mold clang \
+    && apt-get install -y --no-install-recommends fzf \
                                                   aspell aspell-en \
+    && apt install -y --no-install-recommends gcc pkg-config libc6-dev libssl-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+
+## gcc pkg-config libc6-dev libssl-dev required for https://docs.rs/crate/lychee/latest
+
+## Also consider: mold clang
 ## Alternatively, use `lld` instead of the `mold` linker
 ## Configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
@@ -54,7 +59,6 @@ RUN <<EOF
     && cargo binstall --no-confirm mdbook-linkcheck \
     && cargo binstall --no-confirm mdbook-private \
     && cargo binstall --no-confirm mdbook-indexing \
-    && cargo binstall --no-confirm mdbook-keeper \
     && cargo binstall --no-confirm --secure cargo-nextest
     # mdbook not installed
     if [ ! hash mdbook 2>/dev/null ]; then
@@ -66,9 +70,10 @@ RUN <<EOF
     fi
 EOF
 
-# Optional:
-#   && cargo binstall --no-confirm toml2json
-#   && cargo install --locked bacon
+## Optional:
+#   && cargo binstall --no-confirm mdbook-keeper \
+#   && cargo binstall --no-confirm toml2json \
+#   && cargo install --locked bacon \
 
 ## Alternative just install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
@@ -101,6 +106,9 @@ EOF
 # RUN cargo install --locked cargo-udeps || true
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
+
+# Link checker
+RUN cargo install lychee
 
 ## Install the mdbook-utils tool that is a companion to the book.
 RUN cargo install --locked mdbook-utils

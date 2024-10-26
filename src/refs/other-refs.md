@@ -11,7 +11,7 @@
 [are-we-gui-yet?-website]: https://www.areweguiyet.com
 [are-we-learning-yet?-badge]: https://img.shields.io/badge/are_we_learning_yet-coral
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
-[are-we-web-yet?-website?-badge]: https://img.shields.io/badge/web_are_we_web_yet?-coral
+[are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website?]: https://www.arewewebyet.org
 [asynchronics-github]: https://github.com/asynchronics
 [auth-microservice-rust-actix-web]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
@@ -23,7 +23,7 @@
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
-[best-of-rust-crates-github]: https://github.com/stars/ErichDonGubler/lists/best-of-rust-crates
+[best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates/
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates
 [blog-6-ides-built-for-rust]: https://analyticsindiamag.com/6-ides-built-for-rust
@@ -50,7 +50,7 @@
 [blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
 [blog-optimizing-ci-cd-pipelines]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
 [blog-practical-rust-badge]: https://img.shields.io/badge/blog-practical_rust-beige
-[blog-practical-rust]: https://dev.to/werner/practical-rust-development-api-rest-29g1
+[blog-practical-rust]: https://dev.to/werner
 [blog-rust-build-times-badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
 [blog-rust-build-times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
 [blog-rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time
@@ -155,7 +155,7 @@
 [book-rust-design-patterns]: https://rust-unofficial.github.io/patterns
 [book-rust-error-handling-badge]: https://img.shields.io/badge/Rust_Book-error_handling-blue?logo=mdbook
 [book-rust-error-handling]: https://doc.rust-lang.org/book/ch09-00-error-handling.html
-[book-rust-for-C#-developers-badge]: https://img.shields.io/badge/Rust_for_C#_developers-peru?logo=mdbook
+[book-rust-for-C#-developers-badge]: https://img.shields.io/badge/Rust_for_C_sharp_developers-peru?logo=mdbook
 [book-rust-for-C#-developers]: https://microsoft.github.io/rust-for-dotnet-devs/latest
 [book-rust-handle-errors-in-Rust-badge]: https://img.shields.io/badge/Rust_Book-Handle_errors_in_Rust-blue?logo=mdbook
 [book-rust-handle-errors-in-Rust]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
@@ -230,7 +230,7 @@
 [cheats-rs-website]: https://cheats.rs
 [client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
 [code-maven]: https://rust.code-maven.com
-[codevoweb-website-badge]: https://img.shields.io/badge/codevocoral
+[codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
 [codevoweb-website]: https://codevoweb.com
 [communicating-between-sync-and-async-code-website]: https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
 [comprehensive-rust]: https://google.github.io/comprehensive-rust

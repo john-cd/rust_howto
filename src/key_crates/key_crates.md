@@ -13,7 +13,7 @@ or older resources, such as:
 - [Rust starter pack][rust-starter-pack]⮳
 - [![stdx][c-stdx-github-badge]][c-stdx-github]
 
-[Best of Rust crates][best-of-rust-crates-github]
+[Best of Rust crates][best-of-rust-crates]
 
 {{#include ../refs/link-refs.md}}
 

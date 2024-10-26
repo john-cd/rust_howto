@@ -238,3 +238,9 @@ _removelastslash:
 [unix]
 spell:
   .devcontainer/spellcheck.sh
+
+check_links:
+  -lychee --exclude-all-private --no-ignore --hidden --format detailed "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed -- -
+# Somehow lychee ignores links in markdown reference definitions... thus the use of sed
+# You could also check ".devcontainer/*" "./**/*.sh"

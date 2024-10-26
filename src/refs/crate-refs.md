@@ -151,7 +151,7 @@
 [c-candle-badge]: https://img.shields.io/crates/v/candle?label=candle
 [c-candle-crates.io-badge]: https://img.shields.io/badge/crates.io-candle-crimson
 [c-candle-crates.io]: https://crates.io/crates/candle-core
-[c-candle-docs]: https://candle.dev/docs/wick/introduction
+[c-candle-docs]: https://huggingface.github.io/candle
 [c-candle-github-badge]: https://img.shields.io/badge/candle-steelblue?logo=github
 [c-candle-lib.rs-badge]: https://img.shields.io/badge/lib.rs-candle-yellow
 [c-candle-lib.rs]: https://lib.rs/crates/candle-core
@@ -189,7 +189,7 @@
 [c-cargo_edit-github]: https://github.com/killercup/cargo-edit
 [c-cargo_edit-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo__edit-yellow
 [c-cargo_edit-lib.rs]: https://lib.rs/crates/cargo-edit
-[c-cargo_edit]: https://docs.rs/crate/cargo_edit
+[c-cargo_edit]: https://docs.rs/crate/cargo-edit
 [c-cargo_expand-badge]: https://img.shields.io/crates/v/cargo-expand?label=cargo-expand
 [c-cargo_expand-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--expand-crimson
 [c-cargo_expand-crates.io]: https://crates.io/crates/cargo_expand
@@ -612,7 +612,7 @@
 [c-form_urlencoded-crates.io]: https://crates.io/crates/form_urlencoded
 [c-form_urlencoded-github-badge]: https://img.shields.io/badge/form--urlencoded-steelblue?logo=github
 [c-form_urlencoded-lib.rs-badge]: https://img.shields.io/badge/lib.rs-form--urlencoded-yellow
-[c-form_urlencoded-lib.rs]: https://lib.rs/crates/form-urlencoded
+[c-form_urlencoded-lib.rs]: https://lib.rs/crates/form_urlencoded
 [c-form_urlencoded::byte_serialize]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.byte_serialize.html
 [c-form_urlencoded::parse]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.parse.html
 [c-form_urlencoded]: https://docs.rs/form_urlencoded
@@ -789,7 +789,7 @@
 [c-log4rs-lib.rs-badge]: https://img.shields.io/badge/lib.rs-log4rs-yellow
 [c-log4rs-lib.rs]: https://lib.rs/crates/log4rs
 [c-log4rs::append::file::FileAppender]: https://docs.rs/log4rs/latest/log4rs/append/file/struct.FileAppender.html
-[c-log4rs::config::Config]: https://docs.rs/log4rs/latest/log4rs/config/struct.Config.html
+[c-log4rs::config::Config]: https://docs.rs/log4rs/latest/log4rs/config/runtime/struct.Config.html
 [c-log4rs::encode::pattern]: https://docs.rs/log4rs/latest/log4rs/encode/pattern/index.html
 [c-log4rs]: https://docs.rs/log4rs
 [c-log::LevelFilter]: https://docs.rs/log/latest/log/enum.LevelFilter.html
@@ -833,7 +833,7 @@
 [c-mdbook_cmdrun-github-badge]: https://img.shields.io/badge/mdbook--cmdrun-steelblue?logo=github
 [c-mdbook_cmdrun-github]: https://github.com/FauconFan/mdbook-cmdrun
 [c-mdbook_cmdrun-lib.rs-badge]: https://img.shields.io/badge/lib.rs-mdbook--cmdrun-yellow
-[c-mdbook_cmdrun-lib.rs]: https://lib.rs/crates/mdbook_cmdrun
+[c-mdbook_cmdrun-lib.rs]: https://lib.rs/crates/mdbook-cmdrun
 [c-mdbook_cmdrun]: https://docs.rs/mdbook_cmdrun
 [c-mdbook_hide-badge]: https://img.shields.io/crates/v/mdbook_hide?label=mdbook_hide
 [c-mdbook_hide-crates.io-badge]: https://img.shields.io/badge/crates.io-mdbook__hide-crimson
@@ -871,7 +871,7 @@
 [c-mdbook_pagetoc-github-badge]: https://img.shields.io/badge/mdbook--pagetoc-steelblue?logo=github
 [c-mdbook_pagetoc-github]: https://github.com/slowsage/mdbook-pagetoc
 [c-mdbook_pagetoc-lib.rs-badge]: https://img.shields.io/badge/lib.rs-mdbook--pagetoc-yellow
-[c-mdbook_pagetoc-lib.rs]: https://lib.rs/crates/mdbook_pagetoc
+[c-mdbook_pagetoc-lib.rs]: https://lib.rs/crates/mdbook-pagetoc
 [c-mdbook_pagetoc]: https://docs.rs/mdbook_pagetoc
 [c-mdbook_private-badge]: https://img.shields.io/crates/v/mdbook_private?label=mdbook-private
 [c-mdbook_private-crates.io-badge]: https://img.shields.io/badge/crates.io-mdbook--private-crimson
@@ -958,7 +958,7 @@
 [c-miri-github]: https://github.com/rust-lang/miri
 [c-miri-lib.rs-badge]: https://img.shields.io/badge/lib.rs-miri-yellow
 [c-miri-lib.rs]: https://lib.rs/crates/miri
-[c-miri]: https://docs.rs/miri
+[c-miri]: https://github.com/rust-lang/miri
 [c-mongodb-badge]: https://img.shields.io/crates/v/mongodb?label=mongodb
 [c-mongodb-crates.io-badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
 [c-mongodb-crates.io]: https://crates.io/crates/mongodb
@@ -981,12 +981,12 @@
 [c-nalgebra-lib.rs]: https://lib.rs/crates/nalgebra
 [c-nalgebra::Matrix3]: https://docs.rs/nalgebra/latest/nalgebra/base/type.Matrix3.html
 [c-nalgebra]: https://docs.rs/nalgebra
-[c-native_windows_gui-badge]: https://img.shields.io/crates/v/native_windows_gui?label=native_windows_gui
-[c-native_windows_gui-crates.io-badge]: https://img.shields.io/badge/crates.io-native__windows__gui-crimson
+[c-native_windows_gui-badge]: https://img.shields.io/crates/v/native_windows_gui?label=native-windows-gui
+[c-native_windows_gui-crates.io-badge]: https://img.shields.io/badge/crates.io-native--windows--gui-crimson
 [c-native_windows_gui-crates.io]: https://crates.io/crates/native_windows_gui
-[c-native_windows_gui-github-badge]: https://img.shields.io/badge/native__windows__gui-steelblue?logo=github
-[c-native_windows_gui-github]: https://github.com/gabdube/native_windows_gui
-[c-native_windows_gui-lib.rs-badge]: https://img.shields.io/badge/lib.rs-native__windows__gui-yellow
+[c-native_windows_gui-github-badge]: https://img.shields.io/badge/native--windows--gui-steelblue?logo=github
+[c-native_windows_gui-github]: https://github.com/gabdube/native-windows-gui
+[c-native_windows_gui-lib.rs-badge]: https://img.shields.io/badge/lib.rs-native--windows--gui-yellow
 [c-native_windows_gui-lib.rs]: https://lib.rs/crates/native-windows-gui
 [c-native_windows_gui]: https://docs.rs/native_windows_gui
 [c-ndarray-badge]: https://img.shields.io/crates/v/ndarray?label=ndarray
@@ -1108,7 +1108,7 @@
 [c-plotly-crates.io-badge]: https://img.shields.io/badge/crates.io-plotly-crimson
 [c-plotly-crates.io]: https://crates.io/crates/plotly
 [c-plotly-github-badge]: https://img.shields.io/badge/plotly-steelblue?logo=github
-[c-plotly-github]: https://igiagkiozis.github.io/plotly/content/plotly_rs.html
+[c-plotly-github]: https://github.com/plotly/plotly.rs
 [c-plotly-lib.rs-badge]: https://img.shields.io/badge/lib.rs-plotly-yellow
 [c-plotly-lib.rs]: https://lib.rs/crates/plotly
 [c-plotly]: https://docs.rs/plotly
@@ -1356,7 +1356,7 @@
 [c-rust_cache-badge]: https://img.shields.io/crates/v/rust_cache?label=rust_cache
 [c-rust_cache-crates.io-badge]: https://img.shields.io/badge/crates.io-rust__cache-crimson
 [c-rust_cache-crates.io]: https://crates.io/crates/rust_cache
-[c-rust_cache-github]: https://github.com/marketplace/actions/rust_cache
+[c-rust_cache-github]: https://github.com/marketplace/actions/rust-cache
 [c-rust_cache-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rust__cache-yellow
 [c-rust_cache-lib.rs]: https://lib.rs/crates/rust_cache
 [c-rust_cache]: https://docs.rs/rust_cache
@@ -1403,7 +1403,7 @@
 [c-same-file]: https://docs.rs/same_file
 [c-sea_orm-badge]: https://img.shields.io/crates/v/sea_orm?label=sea_orm
 [c-sea_orm-cookbook-badge]: https://img.shields.io/badge/sea__orm_cookbook-coral
-[c-sea_orm-cookbook]: https://www.sea-ql.org/sea_orm-cookbook/000-sea_orm-cookbook.html
+[c-sea_orm-cookbook]: https://www.sea-ql.org/sea-orm-cookbook
 [c-sea_orm-crates.io-badge]: https://img.shields.io/badge/crates.io-sea__orm-crimson
 [c-sea_orm-crates.io]: https://crates.io/crates/sea_orm
 [c-sea_orm-lib.rs-badge]: https://img.shields.io/badge/lib.rs-sea__orm-yellow
@@ -1644,7 +1644,7 @@
 [c-stork_search-crates.io]: https://crates.io/crates/stork_search
 [c-stork_search-github-badge]: https://img.shields.io/badge/stork--search-steelblue?logo=github
 [c-stork_search-lib.rs-badge]: https://img.shields.io/badge/lib.rs-stork--search-yellow
-[c-stork_search-lib.rs]: https://lib.rs/crates/stork_search
+[c-stork_search-lib.rs]: https://lib.rs/crates/stork-search
 [c-stork_search-website]: https://stork-search.net
 [c-stork_search]: https://docs.rs/stork-search
 [c-swc_ecma_parser-badge]: https://img.shields.io/crates/v/swc_ecma_parser?label=swc_ecma_parser
@@ -1751,7 +1751,7 @@
 [c-tokio-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tokio-yellow
 [c-tokio-lib.rs]: https://lib.rs/crates/tokio
 [c-tokio-sync-crates.io]: https://crates.io/crates/tokio-sync
-[c-tokio-sync-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tokio-sync-yellow
+[c-tokio-sync-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tokio--sync-yellow
 [c-tokio-sync-lib.rs]: https://lib.rs/crates/tokio-sync
 [c-tokio-sync]: https://docs.rs/tokio/latest/tokio/sync
 [c-tokio-website-badge]: https://img.shields.io/badge/tokio-coral
@@ -1821,7 +1821,7 @@
 [c-tracing_journald-crates.io]: https://crates.io/crates/tracing_journald
 [c-tracing_journald-github-badge]: https://img.shields.io/badge/tracing__journald-steelblue?logo=github
 [c-tracing_journald-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tracing__journald-yellow
-[c-tracing_journald-lib.rs]: https://lib.rs/crates/tracing_journald
+[c-tracing_journald-lib.rs]: https://lib.rs/crates/tracing-journald
 [c-tracing_journald]: https://docs.rs/tracing_journald
 [c-tracing_subscriber-badge]: https://img.shields.io/crates/v/tracing_subscriber?label=tracing_subscriber
 [c-tracing_subscriber-crates.io-badge]: https://img.shields.io/badge/crates.io-tracing__subscriber-crimson
@@ -1897,13 +1897,6 @@
 [c-wasmtime-lib.rs-badge]: https://img.shields.io/badge/lib.rs-wasmtime-yellow
 [c-wasmtime-lib.rs]: https://lib.rs/crates/wasmtime
 [c-wasmtime]: https://docs.rs/wasmtime
-[c-wastime-badge]: https://img.shields.io/crates/v/wastime?label=wastime
-[c-wastime-crates.io-badge]: https://img.shields.io/badge/crates.io-wastime-crimson
-[c-wastime-crates.io]: https://crates.io/crates/wastime
-[c-wastime-github-badge]: https://img.shields.io/badge/wastime-steelblue?logo=github
-[c-wastime-lib.rs-badge]: https://img.shields.io/badge/lib.rs-wastime-yellow
-[c-wastime-lib.rs]: https://lib.rs/crates/wastime
-[c-wastime]: https://docs.rs/wastime
 [c-watchmaker-badge]: https://img.shields.io/crates/v/watchmaker?label=watchmaker
 [c-watchmaker-crates.io-badge]: https://img.shields.io/badge/crates.io-watchmaker-crimson
 [c-watchmaker-crates.io]: https://crates.io/crates/watchmaker

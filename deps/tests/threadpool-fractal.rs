@@ -7,7 +7,6 @@ use num::complex::Complex;
 use threadpool::ThreadPool;
 
 // Function converting intensity values to RGB
-// Based on http://www.efg2.com/Lab/ScienceAndEngineering/Spectra.htm
 fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
     let wave = wavelength as f32;
     let (r, g, b) = match wavelength {
