@@ -29,9 +29,9 @@ pub fn create_category_and_crates(
     let mut tt = super::build_template_engine()?;
     tt.add_template("CATEGORY", CATEGORY)?;
     let context = Context {
-        category,
-        slug,
-        description,
+        category: category.trim(),
+        slug: slug.trim(),
+        description: description.trim(),
         crate_names,
     };
     let rendered = tt.render("CATEGORY", &context)?;

@@ -4,7 +4,7 @@
 
 To generate `crates_by_category.md`,
 
-- extract all crates listed in `crates.md`
+Extract all crates listed in `crates.md`
 
 ```sh
 grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./extras/tools/crate_indices/crates.txt
@@ -14,8 +14,18 @@ grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./extr
 `-P` for Perl regular expressions.
 `-o` to return only the matching part, not the whole line.
 
-- or extract all crates currently used in the book examples from `deps/Cargo.toml`
+Or extract all crates currently used in the book examples from `deps/Cargo.toml`
 
-- `cat ./extras/tools/crate_indices/crates.txt | just templ c`
+Then call the tool:
+
+```sh
+cat ./tools/src/bin/crate_indices/crates.txt | just crate_indices c > output.md
+```
+
+`just` calls `cargo run -p rust_howto_tools --bin crate_indices --`
+
+You can merge with the existing table in `crates_by_category.md` using `sort -u temp.md > temp2.md`
 
 ## Alpahabetical list of crates used in the book
+
+<TODO>

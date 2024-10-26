@@ -1,6 +1,7 @@
 use anyhow::Result;
 use crates_io_api::CrateResponse;
 use crates_io_api::SyncClient;
+use tracing::warn;
 
 use super::cat::Cat;
 
@@ -16,6 +17,7 @@ fn get_client() -> Result<SyncClient> {
 /// Returns information for a crate, given its name
 pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
+    warn!("Calling crates.io API for {crate_name}");
     let crt = client.get_crate(crate_name)?;
     Ok(crt)
 }
@@ -23,6 +25,7 @@ pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
 /// Returns a list of categories for a crate, given its name
 pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Cat>> {
     let client = get_client()?;
+    warn!("Calling crates.io API for {crate_name}");
     let crt = client.get_crate(crate_name)?;
     // println!("Categories: {:?}", crt.categories);
     Ok(crt.categories.into_iter().map(Cat::new).collect())
