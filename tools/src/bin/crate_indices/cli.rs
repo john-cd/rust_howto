@@ -61,7 +61,7 @@ fn subcommand_category_page() -> Command {
 
 /// Read from Stdin e.g. if called with `cat file.txt | my_app `
 fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
-    let mut args: Vec<OsString> = std::env::args_os().map(|x| x).collect();
+    let mut args: Vec<OsString> = std::env::args_os().collect();
     let stdin = io::stdin();
     // Are you or are you not a tty?
     if !stdin.is_terminal() {
