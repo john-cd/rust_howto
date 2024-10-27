@@ -51,4 +51,11 @@ The [`memmap::Mmap::map`][c-memmap::Mmap::map]{{hi:memmap::Mmap::map}}⮳ functi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO change to memmap2
+The older memmap crate is unmaintained.
+
+[![memmap2][c-memmap2-badge]][c-memmap2]
+[![memmap2-crates.io][c-memmap2-crates.io-badge]][c-memmap2-crates.io]
+[![memmap2-github][c-memmap2-github-badge]][c-memmap2-github]
+[![memmap2-lib.rs][c-memmap2-lib.rs-badge]][c-memmap2-lib.rs]
 </div>

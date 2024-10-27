@@ -41,4 +41,6 @@ Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Arc
 
 <div class="hidden">
 TODO: review
+
+`flate2` uses a pure-Rust implementation by default. Use feature flags to opt in to system zlib.
 </div>

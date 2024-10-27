@@ -45,4 +45,15 @@ Rust Data Engineering course By Alfredo Deza et al., O'Reilly
 
 <div class="hidden">
 TODO: organize / edit
+
+## DataFrames
+
+### polars
+
+Similar to the Pandas library in Python but in pure Rust. Uses the Apache Arrow Columnar Format as the memory model.
+
+### datafusion
+
+Apache DataFusion is an in-memory query engine that uses Apache Arrow as the memory model
+
 </div>

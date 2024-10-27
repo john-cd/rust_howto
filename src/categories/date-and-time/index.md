@@ -19,7 +19,6 @@ TODO cover https://crates.io/crates/time - see blessed.rs
 [![time][c-time-badge]][c-time]
 [![time-crates.io][c-time-crates.io-badge]][c-time-crates.io]
 [![time-github][c-time-github-badge]][c-time-github]
-[![time-lib.rs][c-time-lib.rs-badge]][c-time-lib.rs]
 
 Unfortunately there is no clear answer as to which is best between time and chrono.
 Evaluate for yourself between these two, but be resassured that both are trusted and well-maintained.

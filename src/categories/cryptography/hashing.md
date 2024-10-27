@@ -26,4 +26,71 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO review password_hashing.md
+
+review below from https://blessed.rs/crates
+
+## General Purpose Hashing
+
+For more algorithms, see Rust Crypto Hashes.
+
+sha2
+
+sha1
+
+md-5
+
+## AEAD Encryption
+
+For more algorithms, see Rust Crypto AEADs.
+
+aes-gcm-siv
+
+aes-gcm
+
+chacha20poly1305
+
+## RSA
+
+rsa
+
+## Digital Signatures
+
+For more algorithms, see Rust Crypto Signatures.
+
+ed25519
+Use in conjunction with the ed25519-dalek crate.
+
+ecdsa
+
+dsa
+
+## Certificate Formats
+
+For more formats, see Rust Crypto Formats.
+
+der
+
+pem-rfc7468
+
+pkcs8
+
+x509-cert
+
+## TLS / SSL
+
+rustls
+A portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and higher.
+
+native-tls
+Delegates to the system TLS implementations on windows and macOS, and uses OpenSSL on linux.
+
+## Utilities
+
+subtle
+Utilities for writing constant-time algorithms
+
+zeroize
+Securely erase memory
+
 </div>

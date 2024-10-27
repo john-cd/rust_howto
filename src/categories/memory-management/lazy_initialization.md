@@ -33,4 +33,12 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 <div class="hidden">
 TODO: review
+
+The core functionality of once_cell is now included in the standard library with the remaining parts on track to be stabilised in future.
+
+once_cell
+Newer crate with more ergonomic API. Should be preferred for all new projects.
+
+lazy_static
+Older crate. API is less convenient, but crate is stable and maintained.
 </div>
