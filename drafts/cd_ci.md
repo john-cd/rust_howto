@@ -135,7 +135,11 @@ Example `.github/workflows/<name>.yml`
 
 [Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳
 
-{{#include ../refs/link-refs.md}}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>
 
 <div class="hidden">
 TODO: organize see also

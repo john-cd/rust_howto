@@ -49,4 +49,6 @@ A curated list of Rust code and resources.
 
 <div class="hidden">
 TODO: organize
+- add [rust_tutorial_that_actually_teaches_rust][rust_tutorial_that_actually_teaches_rust]
+- Link to [rust-gentle-intro][rust-gentle-intro]
 </div>

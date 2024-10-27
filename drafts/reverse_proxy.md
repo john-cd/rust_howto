@@ -19,3 +19,9 @@ A library for building fast, reliable and evolvable network services.
 
 - [Pingora (github)][pingora-github]{{hi:pingora}}⮳
 - [Pingora quick start][pingora-quick-start-github]⮳
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>

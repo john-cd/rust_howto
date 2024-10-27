@@ -56,12 +56,14 @@ cargo fmt -- --check
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
 
+Clippy is the official Rust linter. It catches common mistakes and improves your Rust code.
+
 ```sh
 rustup component add clippy # install if needed
 cargo clippy
 ```
 
-Mute a warning using the `#[allow(clippy::lint_name)]` attributes
+Mute a warning using the `#[allow(clippy::lint_name)]` attributes.
 
 ## Fix Compiler Warnings
 
@@ -172,4 +174,5 @@ GitHub Action for installing development tools (mainly from GitHub Releases). Li
 
 <div class="hidden">
 TODO: expand
+- [ ] cargo outdated / audit / license / deny
 </div>

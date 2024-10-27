@@ -22,4 +22,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+Cover https://tokio.rs/blog/2024-10-23-announcing-toasty
 </div>

@@ -23,7 +23,7 @@
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
-[best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates/
+[best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates
 [blog-6-ides-built-for-rust]: https://analyticsindiamag.com/6-ides-built-for-rust
@@ -270,6 +270,7 @@
 [docs-shuttle-rs]: https://docs.shuttle.rs/introduction/welcome
 [embedded-devices-working-group]: https://www.rust-lang.org/governance/wgs/embedded
 [forum-deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
+[gist-api]: https://developer.github.com/v3/gists
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
 [github-api]: https://developer.github.com/v3/auth
 [goodfirstissue-website]: https://goodfirstissue.dev/language/rust
@@ -461,6 +462,7 @@
 [stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
 [stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]: https://stackoverflow.com/questions/55755552/what-is-the-rust-equivalent-to-a-try-catch-statement
+[stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
 [swc-github]: https://github.com/swc-project/swc
 [talent-plan-github]: https://github.com/pingcap/talent-plan
 [tokio-async-stream]: https://github.com/tokio-rs/async-stream

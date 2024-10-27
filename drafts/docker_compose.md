@@ -16,4 +16,8 @@ docker init
 - Docker's [getting started][docker-getting-started]⮳ docs.
 - [Docker's Rust guide][docker-rust-guide]⮳
 
-{{#include ../refs/link-refs.md}}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>

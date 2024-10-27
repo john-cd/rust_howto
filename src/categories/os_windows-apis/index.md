@@ -12,4 +12,5 @@ Native Windows GUI: [![native_windows_gui-github][c-native_windows_gui-github-ba
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO: add examples for `windows`
 </div>

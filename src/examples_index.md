@@ -696,7 +696,7 @@
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO - [ ] add lru
+TODO - [ ] add lru, multimap
 - [ ] make sure the list of examples is complete
 
 </div>

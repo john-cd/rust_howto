@@ -94,4 +94,5 @@ Support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [jo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO: [tracing-next-steps][c-tracing-next-steps]
 </div>

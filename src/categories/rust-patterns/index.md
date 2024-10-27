@@ -18,4 +18,7 @@ Shared solutions for particular situations specific to programming in Rust.
 
 <div class="hidden">
 TODO: organize / write
+
+Add  [rust-unofficial-patterns][rust-unofficial-patterns-github]
+
 </div>

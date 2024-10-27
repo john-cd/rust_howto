@@ -32,4 +32,13 @@ mdbook serve --open
 
 <div class="hidden">
 TODO: organize, expand
+
+- [ ] consider [mdbook-cmdrun][c-mdbook_cmdrun-github] A mdbook preprocessor for runnning arbitrary (shell) commands in a markdown file
+- [ ] consider [mdbook-journal][c-mdbook_journal-website] or [mdbook-tera][c-mdbook_tera-github] for templating
+- [ ] review [yapp][c-yapp-github] A mdbook preprocessor that simply replaces text in chapters.
+- [ ] review [c-mdbook_toc-github] A preprocessor for mdbook to add inline Table of Contents support.
+- [ ] add page TOC ? [mdbook-theme][c-mdbook_theme-github]
+- [ ] [alternative][c-mdbook_pagetoc-github]
+- [ ] [mdbook-toc][c-mdbook_toc-github]
+
 </div>
