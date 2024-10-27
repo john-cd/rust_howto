@@ -63,4 +63,17 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO cover fancy-regex
+
+regex
+De facto standard regex library. Very fast, but does not support fancier features such as backtracking.
+
+fancy-regex
+
+[![fancy-regex][c-fancy_regex-badge]][c-fancy_regex]
+[![fancy-regex-crates.io][c-fancy_regex-crates.io-badge]][c-fancy_regex-crates.io]
+[![fancy-regex-github][c-fancy_regex-github-badge]][c-fancy_regex-github]
+[![fancy-regex-lib.rs][c-fancy_regex-lib.rs-badge]][c-fancy_regex-lib.rs]
+
+Use if need features such as backtracking which regex doesn't support
 </div>

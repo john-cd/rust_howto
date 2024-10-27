@@ -11,7 +11,7 @@
 - [ ] review each .md file in turn
 - [ ] hide sections that won't be worked on for a while
 - [ ] finish WIP drafts
-- [ ] finish to review blessed.rs for crates that should be covered; create stubs in drafts
+- [ ] finish to review blessed.rs for crates that should be covered; create stubs in drafts WIP
 
 ## Examples
 

@@ -2,20 +2,46 @@
 
 {{#include serde.incl.md}}
 
+[![serde][c-serde-badge]][c-serde]
+[![serde-crates.io][c-serde-crates.io-badge]][c-serde-crates.io]
+[![serde-github][c-serde-github-badge]][c-serde-github]
+[![serde-lib.rs][c-serde-lib.rs-badge]][c-serde-lib.rs]
+
 [![serde][c-serde-badge]][c-serde]{{hi:serde}}
 
 [serde][c-serde-github]⮳
 
-## See also
+De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
+
+## JSON
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
+[![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]
+[![serde_json-github][c-serde_json-github-badge]][c-serde_json-github]
+[![serde_json-lib.rs][c-serde_json-lib.rs-badge]][c-serde_json-lib.rs]
+
+## See also
 
 [![monostate-github][c-monostate-github-badge]][c-monostate-github]
 
+[![monostate][c-monostate-badge]][c-monostate]
+[![monostate-crates.io][c-monostate-crates.io-badge]][c-monostate-crates.io]
+[![monostate-github][c-monostate-github-badge]][c-monostate-github]
+[![monostate-lib.rs][c-monostate-lib.rs-badge]][c-monostate-lib.rs]
+
+This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
+
 [![serde-ignored-github][c-serde-ignored-github-badge]][c-serde-ignored-github]
+
+[![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]
+[![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
+[![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
+[![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO write
+Supported formats: https://docs.rs/serde/latest/serde/#data-formats
 </div>

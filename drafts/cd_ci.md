@@ -36,6 +36,11 @@
 
 [`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳
 
+[![rust-cache][c-rust_cache-badge]][c-rust_cache]
+[![rust-cache-crates.io][c-rust_cache-crates.io-badge]][c-rust_cache-crates.io]
+[![rust-cache-github][c-rust_cache-github-badge]][c-rust_cache-github]
+[![rust-cache-lib.rs][c-rust_cache-lib.rs-badge]][c-rust_cache-lib.rs]
+
 `Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 
 Example `.github/workflows/<name>.yml`
@@ -139,8 +144,15 @@ Example `.github/workflows/<name>.yml`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-</div>
-
-<div class="hidden">
 TODO: organize see also
+TODO cover the following - see blessed.rs
+
+rust-toolchain (github action)
+Github action to install Rust components via rustup
+
+rust-cache (github action)
+Github action to cache compilation artifacts and speed up subsequent runs.
+
+install-action (github action)
+GitHub Action for installing development tools (mainly from GitHub Releases).
 </div>

@@ -32,6 +32,8 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [Cargo expand][c-cargo_expand-crates.io]⮳ [![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]⮳
 
+Allows you to inspect the code that macros expand to. Rust Analyzer also allows you to expand macros directly in your editor.
+
 ## See also
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]

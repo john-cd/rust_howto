@@ -1,0 +1,25 @@
+# Release automation
+
+## cargo-release
+
+Helper for publishing new crate versions.
+
+[![cargo-release][c-cargo_release-badge]][c-cargo_release]
+[![cargo-release-crates.io][c-cargo_release-crates.io-badge]][c-cargo_release-crates.io]
+[![cargo-release-github][c-cargo_release-github-badge]][c-cargo_release-github]
+[![cargo-release-lib.rs][c-cargo_release-lib.rs-badge]][c-cargo_release-lib.rs]
+
+## Release-plz
+
+[![release-plz][c-release_plz-badge]][c-release_plz]
+[![release-plz-crates.io][c-release_plz-crates.io-badge]][c-release_plz-crates.io]
+[![release-plz-github][c-release_plz-github-badge]][c-release_plz-github]
+[![release-plz-lib.rs][c-release_plz-lib.rs-badge]][c-release_plz-lib.rs]
+
+Release Rust crates from CI with a Release PR.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>
