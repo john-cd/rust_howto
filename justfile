@@ -239,8 +239,24 @@ _removelastslash:
 spell:
   .devcontainer/spellcheck.sh
 
+# Check that all links to e.g. external websites are valid
 check_links:
   -lychee --exclude-all-private --no-ignore --hidden --format detailed "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed -- -
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed
 # You could also check ".devcontainer/*" "./**/*.sh"
+
+# List links without corresponding reference definitions and vice versa
+refdefs:
+  #! /bin/bash
+  # labels followed by : in the "refs" folder
+  grep -Proh '\[[^\[\]]+?\](?=:)' ./src/refs | sort -u > /tmp/defined_refdefs.txt
+  # labels preceded by ]
+  grep -Proh '(?<=\])\[[^ \[\]]+?\]' ./src ./drafts | sort -u > /tmp/used_refdefs.txt
+  comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
+  # Counts
+  comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l
+  cat  /tmp/defined_refdefs.txt | wc -l
+  cat  /tmp/used_refdefs.txt | wc -l
+# grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
+# [a-zA-Z0-9\._:-]
