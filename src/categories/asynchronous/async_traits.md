@@ -30,5 +30,7 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add to with new Rust features
+TODO: review new Rust features
+
+async-trait = Provides a workaround for the lack of language support for async functions in traits
 </div>

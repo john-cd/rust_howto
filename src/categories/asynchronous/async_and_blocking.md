@@ -68,4 +68,7 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+futures-executor
+
+A minimal executor. In particular, the block_on function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 </div>

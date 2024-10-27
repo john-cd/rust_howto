@@ -76,6 +76,14 @@
 [c-async_channel-lib.rs-badge]: https://img.shields.io/badge/lib.rs-async__channel-yellow
 [c-async_channel-lib.rs]: https://lib.rs/crates/async-channel
 [c-async_channel]: https://docs.rs/async_channel
+[c-async_graphql-badge]: https://img.shields.io/crates/v/async-graphql?label=async-graphql
+[c-async_graphql-crates.io-badge]: https://img.shields.io/badge/crates.io-async--graphql-crimson
+[c-async_graphql-crates.io]: https://crates.io/crates/async_graphql
+[c-async_graphql-github-badge]: https://img.shields.io/badge/async--graphql-steelblue?logo=github
+[c-async_graphql-github]: https://github.com/async-graphql/async-graphql
+[c-async_graphql-lib.rs-badge]: https://img.shields.io/badge/lib.rs-async--graphql-yellow
+[c-async_graphql-lib.rs]: https://lib.rs/crates/async-graphql
+[c-async_graphql]: https://docs.rs/async_graphql
 [c-async_std-badge]: https://img.shields.io/crates/v/async_std?label=async_std
 [c-async_std-crates.io-badge]: https://img.shields.io/badge/crates.io-async__std-crimson
 [c-async_std-crates.io]: https://crates.io/crates/async_std
@@ -806,6 +814,14 @@
 [c-glob::MatchOptions]: https://docs.rs/glob/latest/glob/struct.MatchOptions.html
 [c-glob::glob_with]: https://docs.rs/glob/latest/glob/fn.glob_with.html
 [c-glob]: https://docs.rs/glob
+[c-glommio-badge]: https://img.shields.io/crates/v/glommio?label=glommio
+[c-glommio-crates.io-badge]: https://img.shields.io/badge/crates.io-glommio-crimson
+[c-glommio-crates.io]: https://crates.io/crates/glommio
+[c-glommio-github-badge]: https://img.shields.io/badge/glommio-steelblue?logo=github
+[c-glommio-github]: https://github.com/DataDog/glommio
+[c-glommio-lib.rs-badge]: https://img.shields.io/badge/lib.rs-glommio-yellow
+[c-glommio-lib.rs]: https://lib.rs/crates/glommio
+[c-glommio]: https://docs.rs/glommio
 [c-gping-badge]: https://img.shields.io/crates/v/gping?label=gping
 [c-gping-crates.io-badge]: https://img.shields.io/badge/crates.io-gping-crimson
 [c-gping-crates.io]: https://crates.io/crates/gping
@@ -823,6 +839,7 @@
 [c-hyper-badge]: https://img.shields.io/crates/v/hyper?label=hyper
 [c-hyper-crates.io-badge]: https://img.shields.io/badge/crates.io-hyper-crimson
 [c-hyper-crates.io]: https://crates.io/crates/hyper
+[c-hyper-github-badge]: https://img.shields.io/badge/hyper-steelblue?logo=github
 [c-hyper-lib.rs-badge]: https://img.shields.io/badge/lib.rs-hyper-yellow
 [c-hyper-lib.rs]: https://lib.rs/crates/hyper
 [c-hyper::header!]: https://docs.rs/hyper/latest/hyper/header/index.html
@@ -1499,6 +1516,8 @@
 [c-reqwest-badge]: https://img.shields.io/crates/v/reqwest?label=reqwest
 [c-reqwest-crates.io-badge]: https://img.shields.io/badge/crates.io-reqwest-crimson
 [c-reqwest-crates.io]: https://crates.io/crates/reqwest
+[c-reqwest-github-badge]: https://img.shields.io/badge/reqwest-steelblue?logo=github
+[c-reqwest-github]: https://github.com/seanmonstar/reqwest
 [c-reqwest-lib.rs-badge]: https://img.shields.io/badge/lib.rs-reqwest-yellow
 [c-reqwest-lib.rs]: https://lib.rs/crates/reqwest
 [c-reqwest::Client::delete]: https://docs.rs/reqwest/latest/reqwest/struct.Client.html#method.delete

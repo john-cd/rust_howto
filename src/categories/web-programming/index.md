@@ -27,4 +27,15 @@ Create applications for the web{{hi:Web programming}}.
 
 <div class="hidden">
 TODO: organize
+TODO cover http crate
+
+## HTTP Types & Interfaces
+
+[![http][c-http-badge]][c-http]
+[![http-crates.io][c-http-crates.io-badge]][c-http-crates.io]
+[![http-github][c-http-github-badge]][c-http-github]
+[![http-lib.rs][c-http-lib.rs-badge]][c-http-lib.rs]
+
+The `http` crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
+
 </div>

@@ -9,6 +9,8 @@
 - [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-website]⮳ see also [realworld.how][realworld.how]⮳
 - [Axum examples][c-axum-examples]⮳
 
+A minimal and ergonomic framework. An official part of the tokio project. Recommend for most new projects.
+
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
