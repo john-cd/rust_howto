@@ -15,7 +15,7 @@ It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and W
 
 See also:
 
-- [WebGPU][wikipedia-webgpu]⮳
+- [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

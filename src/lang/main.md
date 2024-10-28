@@ -10,6 +10,7 @@
 {{#include ../../deps/tests/async_main.rs}}
 ```
 
+{{hi:main()}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
 TODO: add text

@@ -4,7 +4,7 @@
 
 ## Dashmap
 
-[![dashmap][c-dashmap-badge]][c-dashmap]{{hi:dashmap}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![dashmap][c-dashmap-badge]][c-dashmap]{{hi:dashmap}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is an implementation of a concurrent associative array{{hi:Concurrent associative array}} / hashmap in Rust.
 
@@ -16,7 +16,7 @@
 
 ## Bounded Multi-producer Multi-consumer Queue
 
-[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust,mdbook-runnable
 {{#include ../../../../deps/tests/crossbeam_queue.rs}}

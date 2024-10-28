@@ -16,7 +16,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 ## Find loops for a given path
 
-[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![same-file][c-same-file-badge]][c-same-file]{{hi:same-file}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Use [`same-file::is_same_file`][c-same-file::is_same_file]{{hi:same-file::is_same_file}}⮳ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
@@ -33,9 +33,9 @@ The following would assert that a loop exists.
 
 ## Recursively find duplicate file names
 
-[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-[![walkdir][c-walkdir-badge]][c-walkdir]
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}
 [![walkdir-crates.io][c-walkdir-crates.io-badge]][c-walkdir-crates.io]
 [![walkdir-github][c-walkdir-github-badge]][c-walkdir-github]
 [![walkdir-lib.rs][c-walkdir-lib.rs-badge]][c-walkdir-lib.rs]
@@ -62,7 +62,7 @@ Find JSON files modified within the last day in the current directory. Using [`w
 
 Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c-std::iter::Iterator::filter]{{hi:std::iter::Iterator::filter}}⮳ applies to each [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ even if the parent is a hidden directory.
 
-Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkDir::WalkDir::depth]{{hi:walkdir::WalkDir::depth}}⮳ usage in `is_not_hidden` predicate.
+Root dir `"."` yields through `walkdir::WalkDir::depth` usage in `is_not_hidden` predicate.
 
 ```rust,no_run
 {{#include ../../../deps/tests/skip-dot.rs}}
@@ -72,7 +72,7 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkDir::WalkDir::de
 
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
-Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir::Walkdir::min_depth]{{hi:walkdir::Walkdir::min_depth}}⮳ & [`walkdir::WalkDir::max_depth`][c-walkdir::WalkDir::max_depth]{{hi:walkdir::WalkDir::max_depth}}⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
+Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir::WalkDir::min_depth]{{hi:walkdir::WalkDir::min_depth}}⮳ & [`walkdir::WalkDir::max_depth`][c-walkdir::WalkDir::max_depth]{{hi:walkdir::WalkDir::max_depth}}⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
 ```rust
 {{#include ../../../deps/tests/sizes.rs}}
@@ -109,7 +109,7 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}�
 TODO cleanup badges
 TODO cover globset
 
-[![globset][c-globset-badge]][c-globset]
+[![globset][c-globset-badge]][c-globset]{{hi:globset}}
 [![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io]
 [![globset-github][c-globset-github-badge]][c-globset-github]
 [![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]
@@ -118,7 +118,7 @@ High-performance globbing that allows multiple globs to be evaluated at once
 
 TODO cover ignore
 
-[![ignore][c-ignore-badge]][c-ignore]
+[![ignore][c-ignore-badge]][c-ignore]{{hi:ignore}}
 [![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io]
 [![ignore-github][c-ignore-github-badge]][c-ignore-github]
 [![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]

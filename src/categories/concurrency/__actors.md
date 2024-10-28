@@ -2,7 +2,7 @@
 
 ## Stakker
 
-[![stakker][c-stakker-badge]][c-stakker]
+[![stakker][c-stakker-badge]][c-stakker]{{hi:stakker}}
 [![stakker-crates.io][c-stakker-crates.io-badge]][c-stakker-crates.io]
 [![stakker-github][c-stakker-github-badge]][c-stakker-github]
 [![stakker-lib.rs][c-stakker-lib.rs-badge]][c-stakker-lib.rs]
@@ -11,7 +11,7 @@ A lightweight low-level single-threaded actor runtime
 
 ## Riker
 
-[Riker (website)][c-riker-website]⮳
+[Riker (website)][c-riker-website]{{hi:riker}}⮳
 
 ```rust
 {{#include ../../deps/tests/actors.rs}}

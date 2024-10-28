@@ -4,7 +4,7 @@
 
 ## Handle errors correctly in main
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 Handles error that occur when trying to open a file that does not exist. It is achieved by using [`error_chain`][c-error_chain]{{hi:error_chain}}⮳, a library that takes care of a lot of boilerplate code needed in order to [handle errors in Rust][book-rust-handle-errors-in-Rust]⮳.
 
@@ -20,7 +20,7 @@ Other recipes in this book will hide the [`error_chain`][c-error_chain]{{hi:erro
 
 ## Avoid discarding errors during error conversions
 
-[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 The [`error_chain`][c-error_chain]{{hi:error_chain}}⮳ crate makes [`matching`][c-error_chain-matching-error]{{hi:matching}}⮳ on different error types returned by a function possible and relatively compact. [`error_chain::example_generated::ErrorKind`][c-error_chain::example_generated::ErrorKind]{{hi:error_chain::example_generated::ErrorKind}}⮳ determines the error type.
 
@@ -33,7 +33,7 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 
 ## Obtain backtrace of complex error scenarios
 
-[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on [`chain_err`][c-error_chain-chaining-errors]⮳ to extend errors by appending new errors. The error stack can be unwound, thus providing a better context to understand why an error was raised.
 

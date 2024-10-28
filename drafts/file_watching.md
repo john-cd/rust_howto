@@ -1,6 +1,6 @@
 ## File watching
 
-[![notify][c-notify-badge]][c-notify]
+[![notify][c-notify-badge]][c-notify]{{hi:notify}}
 [![notify-crates.io][c-notify-crates.io-badge]][c-notify-crates.io]
 [![notify-github][c-notify-github-badge]][c-notify-github]
 [![notify-lib.rs][c-notify-lib.rs-badge]][c-notify-lib.rs]

@@ -4,19 +4,19 @@
 
 ## Rustup
 
-[Rustup][p-rustup]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[Rustup][p-rustup]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Rustup installs, manages, and upgrades versions of rustc, cargo, clippy, rustfmt, etc.
 
 ## Cargo install
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 This command manages Cargo’s local set of installed binary crates. Only packages which have executable{{hi:Executables}} `[[bin]]` or `[[example]]` targets can be installed, and all executables are installed into the installation root’s bin folder. By default only binaries, not examples, are installed.
 
 ## Cargo binstall
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Binstall provides a low-complexity mechanism for installing Rust binaries{{hi:Rust binaries installation}} as an alternative to building from source (via cargo install) or manually downloading packages. This is intended to work with existing CI artifacts and infrastructure, and with minimal overhead for package maintainers.
 

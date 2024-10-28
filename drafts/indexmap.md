@@ -2,7 +2,7 @@
 
 ## Insertion-ordered map
 
-[![indexmap][c-indexmap-badge]][c-indexmap]
+[![indexmap][c-indexmap-badge]][c-indexmap]{{hi:indexmap}}
 [![indexmap-crates.io][c-indexmap-crates.io-badge]][c-indexmap-crates.io]
 [![indexmap-github][c-indexmap-github-badge]][c-indexmap-github]
 [![indexmap-lib.rs][c-indexmap-lib.rs-badge]][c-indexmap-lib.rs]

@@ -4,7 +4,7 @@ Crates designed to combine templates with data to produce result documents, usua
 
 {{#include index.incl.md}}
 
-[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]
+[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engines}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

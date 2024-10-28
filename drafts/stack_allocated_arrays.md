@@ -2,7 +2,7 @@
 
 ## arrayvec
 
-[![arrayvec][c-arrayvec-badge]][c-arrayvec]
+[![arrayvec][c-arrayvec-badge]][c-arrayvec]{{hi:arrayvec}}
 [![arrayvec-crates.io][c-arrayvec-crates.io-badge]][c-arrayvec-crates.io]
 [![arrayvec-github][c-arrayvec-github-badge]][c-arrayvec-github]
 [![arrayvec-lib.rs][c-arrayvec-lib.rs-badge]][c-arrayvec-lib.rs]
@@ -11,7 +11,7 @@ Arrays that are ONLY stack-allocated with fixed capacity
 
 ## smallvec
 
-[![smallvec][c-smallvec-badge]][c-smallvec]
+[![smallvec][c-smallvec-badge]][c-smallvec]{{hi:smallvec}}
 [![smallvec-crates.io][c-smallvec-crates.io-badge]][c-smallvec-crates.io]
 [![smallvec-github][c-smallvec-github-badge]][c-smallvec-github]
 [![smallvec-lib.rs][c-smallvec-lib.rs-badge]][c-smallvec-lib.rs]
@@ -20,7 +20,7 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 
 ## tinyvec
 
-[![tinyvec][c-tinyvec-badge]][c-tinyvec]
+[![tinyvec][c-tinyvec-badge]][c-tinyvec]{{hi:tinyvec}}
 [![tinyvec-crates.io][c-tinyvec-crates.io-badge]][c-tinyvec-crates.io]
 [![tinyvec-github][c-tinyvec-github-badge]][c-tinyvec-github]
 [![tinyvec-lib.rs][c-tinyvec-lib.rs-badge]][c-tinyvec-lib.rs]

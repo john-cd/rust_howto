@@ -4,7 +4,7 @@
 
 ## Make a HTTP GET request
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
 Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest::blocking::get`][c-reqwest::blocking::get]{{hi:reqwest::blocking::get}}⮳ Prints obtained [`reqwest::blocking::Response`][c-reqwest::blocking::Response]{{hi:reqwest::blocking::Response}}⮳ status and headers. Reads HTTP response body into an allocated [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ using [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳.
 
@@ -27,7 +27,7 @@ Uses the asynchronous versions of [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, both 
 
 ## Set custom headers and URL parameters for a REST request
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
 Sets both standard and custom HTTP headers as well as URL parameters for a HTTP GET request. Creates a custom header of type `XPoweredBy` with [`hyper::header!`][c-hyper::header!]{{hi:hyper::header!}}⮳ macro.
 

@@ -4,7 +4,7 @@
 
 ## String type
 
-[![std][c-std-badge]][c-std]{{hi:std}}
+[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
 
 ```rust
 {{#include ../../deps/tests/strings.rs}}

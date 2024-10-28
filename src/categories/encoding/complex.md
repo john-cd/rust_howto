@@ -18,7 +18,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 ## Deserialize a TOML configuration file
 
-[![toml][c-toml-badge]][c-toml]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
+[![toml][c-toml-badge]][c-toml]{{hi:toml}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
@@ -34,9 +34,9 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ## Read and write integers in little-endian byte order
 
-[![byteorder][c-byteorder-badge]][c-byteorder]  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Little endian}}{{hi:Byte order}}
+[![byteorder][c-byteorder-badge]][c-byteorder]{{hi:byteorder}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Little endian}}{{hi:Byte order}}
 
-[`byteorder`][c-byteorder]{{hi:byteorder}}⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
+[`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 
 ```rust
 {{#include ../../../deps/tests/endian-byte.rs}}

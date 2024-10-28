@@ -20,6 +20,7 @@
 - [rust-linz.at][rust-linz.at]
 - [linz.coderdojo.net][linz.coderdojo.net]
 
+{{hi:Blogs}}{{hi:Podcasts}}{{hi:Meetups}}{{hi:Newsletter}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

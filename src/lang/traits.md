@@ -4,7 +4,7 @@
 {{#include ../../deps/tests/traits.rs}}
 ```
 
-Trait methods{{hi:Methods}} are in scope only when their trait is.
+{{i:Trait}} methods{{hi:Methods}} are in scope only when their trait is.
 
 ## Default implementation
 

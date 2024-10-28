@@ -1,6 +1,6 @@
 ## MongoDB
 
-[![mongodb][c-mongodb-badge]][c-mongodb]
+[![mongodb][c-mongodb-badge]][c-mongodb]{{hi:mongodb}}
 [![mongodb-crates.io][c-mongodb-crates.io-badge]][c-mongodb-crates.io]
 [![mongodb-github][c-mongodb-github-badge]][c-mongodb-github]
 [![mongodb-lib.rs][c-mongodb-lib.rs-badge]][c-mongodb-lib.rs]

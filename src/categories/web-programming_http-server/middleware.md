@@ -4,7 +4,7 @@
 
 ## Tower
 
-[![tower][c-tower-badge]][c-tower]{{hi:tower}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]
+[![tower][c-tower-badge]][c-tower]{{hi:tower}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [`tower`][c-tower]{{hi:tower}}⮳ is a library of modular and reusable components for building robust networking clients and servers.
 
@@ -18,7 +18,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 ## Tower HTTP
 
-[![tower_http][c-tower_http-badge]][c-tower_http]{{hi:tower_http}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]
+[![tower_http][c-tower_http-badge]][c-tower_http]{{hi:tower_http}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [`Tower HTTP`][c-tower_http]{{hi:tower_http}}⮳ contains HTTP specific Tower utilities.
 
@@ -28,7 +28,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 ## Alternatives
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [`trillium`][c-trillium-website]{{hi:trillium}}⮳
 

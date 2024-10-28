@@ -55,7 +55,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][{{hi:concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ iterates the current directory and calls [`walkdir::Walkdir::new`][c-walkdir::Walkdir::new]{{hi:walkdir::Walkdir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
+This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ iterates the current directory and calls [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
 
 ```rust,no_run
 {{#include ../../../deps/tests/threadpool-walk.rs}}

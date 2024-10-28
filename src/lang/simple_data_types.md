@@ -1,6 +1,6 @@
 # Simple Data Types
 
-[![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]
+[![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
 - Integers: [`i8`][primitive-i8]{{hi:i8}}⮳, [`i16`][primitive-i16]{{hi:i16}}⮳, [`i32`][primitive-i32]{{hi:i32}}⮳, [`i64`][primitive-i64]{{hi:i64}}⮳, [`i128`][primitive-i128]{{hi:i128}}⮳, [`isize`][primitive-isize]{{hi:isize}}⮳
 - Unsigned: [`u8`][primitive-u8]{{hi:u8}}⮳, [`u16`][primitive-u16]{{hi:u16}}⮳, [`u32`][primitive-u32]{{hi:u32}}⮳, [`u128`][primitive-u128]{{hi:u128}}⮳, [`usize`][primitive-usize]{{hi:usize}}⮳
@@ -19,7 +19,7 @@
 ## Overflow handling
 
 - Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
-- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow with the `checked_*` methods.
+- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 

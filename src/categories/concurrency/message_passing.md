@@ -2,7 +2,7 @@
 
 One increasingly popular approach to ensuring safe concurrency is message passing{{hi:Message passing}}, where threads communicate by sending each other messages{{hi:Messages}} containing data. The Rust standard library provides channels{{hi:Channels}} for message passing that are safe to use in concurrent contexts{{hi:Concurrent contexts}}.
 
-Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programming is covered in a separate page: [async channels](../asynchronous/async_channels.md){{hi:Async channels}}
+Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programming is covered in a separate page: [async channels][p-async-channels]{{hi:Async channels}}
 
 {{#include message_passing.incl.md}}
 
@@ -38,8 +38,9 @@ Example using specialized channels for tickers{{hi:Tickers}} and timeout{{hi:Tim
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 
-[Message Passing (rust book)][book-rust-message-passing]⮳
+[Message Passing (rust book)][book-rust-message-passing]{{hi:Message Passing}}⮳
 
+[p-async-channels]: ../asynchronous/async_channels.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

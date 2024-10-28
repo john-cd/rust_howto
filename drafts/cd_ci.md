@@ -36,7 +36,7 @@
 
 [`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳
 
-[![rust-cache][c-rust_cache-badge]][c-rust_cache]
+[![rust-cache][c-rust_cache-badge]][c-rust_cache]{{hi:rust-cache}}
 [![rust-cache-crates.io][c-rust_cache-crates.io-badge]][c-rust_cache-crates.io]
 [![rust-cache-github][c-rust_cache-github-badge]][c-rust_cache-github]
 [![rust-cache-lib.rs][c-rust_cache-lib.rs-badge]][c-rust_cache-lib.rs]
@@ -126,7 +126,7 @@ Example `.github/workflows/<name>.yml`
 
 [Cached Docker images][cached-docker-images]⮳
 
-[Docker GitHub Action][docker-gitHub-action]⮳
+[Docker GitHub Action][docker-github-action]⮳
 
 [Cache storage backends][cache-storage-backends]⮳
 

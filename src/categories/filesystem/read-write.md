@@ -15,7 +15,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 ## Avoid writing and reading from a same file
 
-[![same-file][c-same-file-badge]][c-same-file]  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![same-file][c-same-file-badge]][c-same-file]{{hi:same-file}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Use [`same-file::Handle`][c-same-file::Handle]{{hi:same-file::Handle}}⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
@@ -54,7 +54,7 @@ The [`memmap::Mmap::map`][c-memmap::Mmap::map]{{hi:memmap::Mmap::map}}⮳ functi
 TODO change to memmap2
 The older memmap crate is unmaintained.
 
-[![memmap2][c-memmap2-badge]][c-memmap2]
+[![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}
 [![memmap2-crates.io][c-memmap2-crates.io-badge]][c-memmap2-crates.io]
 [![memmap2-github][c-memmap2-github-badge]][c-memmap2-github]
 [![memmap2-lib.rs][c-memmap2-lib.rs-badge]][c-memmap2-lib.rs]

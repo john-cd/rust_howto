@@ -1,7 +1,6 @@
 # Control Flow
 
-[![Rust by example - Control flow][book-rust-by-example-flow_control-badge]][book-rust-by-example-flow_control]
-
+[![Rust by example - Control flow][book-rust-by-example-flow_control-badge]][book-rust-by-example-flow_control]{{hi:Control flow}}
 
 ## If else
 

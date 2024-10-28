@@ -1,6 +1,6 @@
 # Example code
 
-[![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]
+[![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]{{hi:Example code}}
 
 [Zero To Production In Rust (book)][book-zero-to-production]⮳
 

@@ -2,7 +2,7 @@
 
 ## Snapshot testing
 
-[![insta][c-insta-badge]][c-insta]
+[![insta][c-insta-badge]][c-insta]{{hi:insta}}
 [![insta-crates.io][c-insta-crates.io-badge]][c-insta-crates.io]
 [![insta-github][c-insta-github-badge]][c-insta-github]
 [![insta-lib.rs][c-insta-lib.rs-badge]][c-insta-lib.rs]

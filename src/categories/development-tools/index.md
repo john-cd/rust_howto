@@ -2,7 +2,7 @@
 
 Tools that provide developer-facing features such as testing, debugging, linting, performance profiling, autocompletion, formatting, and more.
 
-[Rust tools][rust-tools]⮳
+[Rust tools][rust-tools]{{hi:Rust tools}}⮳
 
 ## Cargo
 

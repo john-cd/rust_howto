@@ -1,6 +1,6 @@
 # Match, if let, while let
 
-[![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]
+[![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
 
 ```rust
 {{#include ../../deps/tests/match.rs}}
@@ -22,7 +22,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 ## See Also
 
-[Pattern matching][book-rust-pattern-matching]⮳
+[Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳
 
 {{#include ../refs/link-refs.md}}
 

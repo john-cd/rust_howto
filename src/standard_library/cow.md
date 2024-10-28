@@ -2,7 +2,7 @@
 
 {{#include cow.incl.md }}
 
-The type [`std::borrow::Cow`][c-std::borrow::Cow]  is a smart pointer providing clone-on-write functionality.
+The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write{{hi:Clone-on-write}} functionality.
 
 ## Convert `Cow` to `&str`
 

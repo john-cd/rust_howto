@@ -2,7 +2,7 @@
 
 [fuzzing][c-fuzzing-github]
 
-[![afl][c-afl-badge]][c-afl]
+[![afl][c-afl-badge]][c-afl]{{hi:afl}}
 [![afl-crates.io][c-afl-crates.io-badge]][c-afl-crates.io]
 [![afl-github][c-afl-github-badge]][c-afl-github]
 [![afl-lib.rs][c-afl-lib.rs-badge]][c-afl-lib.rs]

@@ -6,9 +6,9 @@
 
 ## Open CV
 
-[![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]
+[![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
 
-[OpenCV (example)][c-opencv-example]⮳
+[OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

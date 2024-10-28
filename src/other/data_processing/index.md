@@ -4,7 +4,7 @@
 
 ## Polars
 
-[![polars][c-polars-badge]][c-polars]{{hi:polars}}  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]
+[![polars][c-polars-badge]][c-polars]{{hi:polars}}  [![polars-book][c-polars-book-badge]][c-polars-book]  [![polars-github][c-polars-github-badge]][c-polars-github]{{hi:Dataframes}}
 
 - [docs.pola.rs][c-polars-docs]⮳
 
@@ -12,33 +12,33 @@
 
 [![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}  [![arrow-github][c-arrow-github-badge]][c-arrow-github]
 
-`arrow` is the official Rust implementation of `Apache Arrow`
+`arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
 ## Datafusion
 
-[![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}} is the `Apache Arrow DataFusion` SQL Query Engine.
+[![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
 
 ## Databend
 
-𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳
+𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 
 ## Plotly.rs
 
-`Plotly.rs` is a plotting library powered by [Plotly.js][plotly.js]⮳. The aim is to bring over to Rust all the functionality that `Python` users have come to rely on; with the added benefit of type safety and speed.
+`Plotly.rs` is a plotting library powered by [Plotly.js][plotly.js]⮳. The aim is to bring over to Rust all the functionality that `Python` users have come to rely on; with the added benefit of type safety and speed.{{hi:Visualization}}
 
-- [plotly_rs][c-plotly-github]⮳
+- [plotly.rs][c-plotly-github]{{hi:plotly.rs}}⮳
 
 ## CSV
 
-A fast CSV command line toolkit written in Rust. [xsv][c-xsv-github]⮳
+A fast {{i:CSV}} command line toolkit written in Rust. [xsv][c-xsv-github]{{hi:xsv}}⮳
 
-xsv is a command line program for indexing, slicing, analyzing, splitting and joining CSV files.
+`xsv` is a command line program for indexing, slicing, analyzing, splitting and joining CSV files.
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}
 
 ## See also
 
-Rust Data Engineering course By Alfredo Deza et al., O'Reilly
+Rust {{i:Data Engineering}} course By Alfredo Deza et al., O'Reilly
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -50,10 +50,10 @@ TODO: organize / edit
 
 ### polars
 
-Similar to the Pandas library in Python but in pure Rust. Uses the Apache Arrow Columnar Format as the memory model.
+Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Arrow}} Columnar Format as the memory model.
 
 ### datafusion
 
-Apache DataFusion is an in-memory query engine that uses Apache Arrow as the memory model
+{{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
 
 </div>

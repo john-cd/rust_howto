@@ -4,7 +4,7 @@
 
 Shared solutions for particular situations specific to programming in Rust.
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ## Error Handling
 
@@ -19,6 +19,6 @@ Shared solutions for particular situations specific to programming in Rust.
 <div class="hidden">
 TODO: organize / write
 
-Add  [rust-unofficial-patterns][rust-unofficial-patterns-github]
+Add  [rust-unofficial-patterns][rust-unofficial-patterns-github]{{hi:Rust patterns}}
 
 </div>

@@ -2,9 +2,9 @@
 
 ## Ownership
 
-[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]
+[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:move}}
 
-- No garbage collector. Ownership instead.
+- No garbage collector{{hi:Garbage collector}}. {{i:Ownership}} instead.
 - Each value in Rust has an owner{{hi:Ownership}}.
 - There can only be one owner at a time.
 
@@ -32,7 +32,7 @@ If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::mar
 
 ### Borrowing
 
-Passing a variable to a function will move or copy, just as assignment does. To avoid passing a value along, borrow the value:
+Passing a variable to a function will move or copy, just as assignment does. To avoid passing a value along, borrow the value:{{hi:Borrowing}}
 
 ```rust
 {{#include ../../deps/tests/borrowing.rs}}
@@ -44,7 +44,7 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 {{#include ../../deps/tests/borrowing_mutable.rs}}
 ```
 
-If you have a mutable reference to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
+If you have a mutable reference{{hi:Mutable references}} to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
 
 {{#include ../refs/link-refs.md}}
 <div class="hidden">

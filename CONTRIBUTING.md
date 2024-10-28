@@ -2,7 +2,7 @@
 
 First off, thanks for taking the time to contribute! ❤️
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+All types of contributions are encouraged and valued. See the [Table of Contents][table-of-contents] for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
 >
@@ -13,21 +13,21 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
-- [I Have a Question](#i-have-a-question)
-- [I Want To Contribute](#i-want-to-contribute)
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Enhancements](#suggesting-enhancements)
-- [Your First Code Contribution](#your-first-code-contribution)
-- [Improving The Documentation](#improving-the-documentation)
-- [Styleguides](#styleguides)
-- [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
+- [Code of Conduct][code-of-conduct]
+- [I Have a Question][i-have-a-question]
+- [I Want To Contribute][i-want-to-contribute]
+- [Reporting Bugs][reporting-bugs]
+- [Suggesting Enhancements][suggesting-enhancements]
+- [Your First Code Contribution][your-first-code-contribution]
+- [Improving The Documentation][improving-the-documentation]
+- [Styleguides][styleguides] [styleguides]: #styleguides
+- [Commit Messages][commit-messages]
+- [Join The Project Team][join-the-project-team]
 
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
+[Code of Conduct][Code of Conduct] [Code of Conduct]: CODE_OF_CONDUCT.md. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
 
 ## I Have a Question
 
@@ -56,7 +56,7 @@ We will then take care of the issue as soon as possible.
 A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 
 - Make sure that you are using the latest version.
-- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation][documentation]. If you are looking for support, you might want to check [this section](#i-have-a-question).
+- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation][documentation]. If you are looking for support, you might want to check [this section][i-have-a-question].
 - To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker][issues].
 - Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
 - Collect information about the bug:
@@ -81,7 +81,7 @@ Once it's filed:
 
 - The project team will label the issue accordingly.
 - A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
-- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone](#your-first-code-contribution).
+- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone][implemented by someone] [implemented by someone]: #your-first-code-contribution.
 
 ### Suggesting Enhancements
 
@@ -101,7 +101,7 @@ Enhancement suggestions are tracked as [GitHub issues][issues].
 - Use a **clear and descriptive title** for the issue to identify the suggestion.
 - Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
 - **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) on Linux.
+- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool][licecap] to record GIFs on macOS and Windows, and [this tool][silentcast] on Linux.
 - **Explain why this enhancement would be useful** to most CONTRIBUTING.md users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 ### Your First Code Contribution
@@ -118,7 +118,19 @@ Enhancement suggestions are tracked as [GitHub issues][issues].
 
 This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 
+[code-of-conduct]: #code-of-conduct
+[commit-messages]: #commit-messages
+[improving-the-documentation]: #improving-the-documentation
+[i-have-a-question]: #i-have-a-question
+[i-want-to-contribute]: #i-want-to-contribute
+[join-the-project-team]: #join-the-project-team
+[reporting-bugs]: #reporting-bugs
+[suggesting-enhancements]: #suggesting-enhancements
+[table-of-contents]: #table-of-contents
+[your-first-code-contribution]: #your-first-code-contribution
 [documentation]: https://github.com/john-cd/rust_howto/blob/main/README.md
 [issues]: https://github.com/john-cd/rust_howto/issues
-[make-your-own]: https://contributing.md/
+[make-your-own]: https://contributing.md
 [new-issue]: https://github.com/john-cd/rust_howto/issues/new/choose
+[licecap]: https://www.cockos.com/licecap
+[silentcast]:https://github.com/colinkeenan/silentcast

@@ -16,7 +16,7 @@ Manage the complexity of dealing with the fourth dimension.
 <div class="hidden">
 TODO cover https://crates.io/crates/time - see blessed.rs
 
-[![time][c-time-badge]][c-time]
+[![time][c-time-badge]][c-time]{{hi:time}}
 [![time-crates.io][c-time-crates.io-badge]][c-time-crates.io]
 [![time-github][c-time-github-badge]][c-time-github]
 

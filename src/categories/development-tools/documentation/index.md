@@ -2,9 +2,9 @@
 
 {{#include index.incl.md}}
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[The rustdoc book][book-rustdoc]⮳
+[The rustdoc book][book-rustdoc]{{hi:rustdoc}}⮳
 
 [`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
 

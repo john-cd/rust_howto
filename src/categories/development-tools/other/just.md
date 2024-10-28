@@ -1,6 +1,6 @@
 # Just
 
-[https://just.systems/][c-just-website]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[https://just.systems/][c-just-website]{{hi:just}}⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 `just`{{hi:just}} is a command runner{{hi:Command runner}} / Make replacement.
 

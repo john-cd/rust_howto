@@ -6,7 +6,7 @@
 
 ## See Also
 
-[Iterators][book-rust-iterators]⮳
+[Iterators][book-rust-iterators]{{hi:iterators}}⮳
 
 {{#include ../refs/link-refs.md}}
 

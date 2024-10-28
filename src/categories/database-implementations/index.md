@@ -6,7 +6,7 @@
 
 ## Sled
 
-An embedded database [sled][c-sled-github]⮳
+An embedded database [sled][c-sled-github]{{hi:sled}}⮳
 
 ## Search
 

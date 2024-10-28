@@ -56,7 +56,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 [![salsa-github][c-salsa-github-badge]][c-salsa-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[Salsa][c-salsa-website]⮳
+[Salsa][c-salsa-website]{{hi:salsa}}⮳
 
 [Salsa (GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
 

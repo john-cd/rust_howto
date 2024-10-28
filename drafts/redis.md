@@ -2,7 +2,7 @@
 
 ## Do something with Redis
 
-[![redis][c-redis-badge]][c-redis]
+[![redis][c-redis-badge]][c-redis]{{hi:redis}}
 [![redis-crates.io][c-redis-crates.io-badge]][c-redis-crates.io]
 [![redis-github][c-redis-github-badge]][c-redis-github]
 [![redis-lib.rs][c-redis-lib.rs-badge]][c-redis-lib.rs]

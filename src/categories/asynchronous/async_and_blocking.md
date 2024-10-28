@@ -50,7 +50,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-[`futures_executor`][c-futures_executor]{{hi:futures_executor}}⮳ includes a minimal executor [`futures_executor::block_on`][c-futures_executor::block_on]{{hi:futures_executor::block_on}}⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
+[`futures_executor`][c-futures_executor]{{hi:futures_executor}}⮳ includes a minimal executor. The [`futures_executor::block_on`][c-futures_executor::block_on]{{hi:futures_executor::block_on}}⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
 ```rust,mdbook-runnable
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}
@@ -68,7 +68,4 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-futures-executor
-
-A minimal executor. In particular, the block_on function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 </div>

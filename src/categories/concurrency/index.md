@@ -51,6 +51,6 @@ TODO: add crossbeam
 
 ## Crossbeam
 
-[crossbeam][c-crossbeam-github]
+[crossbeam][c-crossbeam-github]{{hi:crossbeam}}
 
 </div>

@@ -1,6 +1,6 @@
 # Attributes
 
-Attributes can take arguments with different syntaxes:
+{{i:Attributes}} can take arguments with different syntaxes:
 
 ```rust,ignore
 #[attribute = "value"]

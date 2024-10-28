@@ -2,7 +2,7 @@
 
 This reference guide is written and edited by [John CD][john-cd-github].
 
-It is the successor of and incorporates most of the [Rust Cookbook][book-rust-cookbook]. Thanks to its many contributors.
+It is the successor of and incorporates most of the [Rust Cookbook][book-rust-cookbook]{{hi:Rust cookbook}}. Thanks to its many contributors.
 
 It is also inspired from online websites, blogs, and documentation, including:
 

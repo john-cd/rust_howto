@@ -14,7 +14,7 @@ Techniques to help create command line interfaces{{hi:Command line interface}}, 
 
 [ratatui][c-ratatui-github]⮳
 
-[![ratatui][c-ratatui-badge]][c-ratatui]
+[![ratatui][c-ratatui-badge]][c-ratatui]{{hi:ratatui}}
 [![ratatui-crates.io][c-ratatui-crates.io-badge]][c-ratatui-crates.io]
 [![ratatui-github][c-ratatui-github-badge]][c-ratatui-github]
 [![ratatui-lib.rs][c-ratatui-lib.rs-badge]][c-ratatui-lib.rs]
@@ -23,7 +23,7 @@ A high-level TUI library with widgets, layout, etc.
 
 ### crossterm
 
-[![crossterm][c-crossterm-badge]][c-crossterm]
+[![crossterm][c-crossterm-badge]][c-crossterm]{{hi:crossterm}}
 [![crossterm-crates.io][c-crossterm-crates.io-badge]][c-crossterm-crates.io]
 [![crossterm-github][c-crossterm-github-badge]][c-crossterm-github]
 [![crossterm-lib.rs][c-crossterm-lib.rs-badge]][c-crossterm-lib.rs]
@@ -32,7 +32,7 @@ Low-level cross-platform terminal rendering and event handling
 
 ### Ask for confirmation, selection, text input
 
-[![inquire][c-inquire-badge]][c-inquire]
+[![inquire][c-inquire-badge]][c-inquire]{{hi:inquire}}
 [![inquire-crates.io][c-inquire-crates.io-badge]][c-inquire-crates.io]
 [![inquire-github][c-inquire-github-badge]][c-inquire-github]
 [![inquire-lib.rs][c-inquire-lib.rs-badge]][c-inquire-lib.rs]

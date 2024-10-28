@@ -1,6 +1,6 @@
 # Books
 
-[The Little Book of Rust Books][book-the-little-book-of-rust-books]⮳
+[The Little Book of Rust Books][book-the-little-book-of-rust-books]{{hi:Books}}⮳
 
 [Effective Rust][book-effective-rust]⮳
 
@@ -10,7 +10,7 @@
 
 [The Rust Programming Language, 2nd Edition][book-rust-programming-language]⮳
 
-[Writing Interpreters in Rust: a Guide][writing-interpreters-in-rust]⮳
+[Writing Interpreters in Rust: a Guide][writing-interpreters-in-rust]{{hi:Interpreters}}⮳
 
 {{#include ../refs/link-refs.md}}
 

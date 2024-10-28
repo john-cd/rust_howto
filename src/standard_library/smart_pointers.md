@@ -4,11 +4,11 @@
 
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
-- Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
+- Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.{{hi:Smart Pointers}}
 
 ## Box
 
-[![book-rust-box][book-rust-box-badge]][book-rust-box]  [![std][c-std-badge]][c-std]{{hi:std}}
+[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}}  [![std][c-std-badge]][c-std]{{hi:std}}
 
 `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
 
@@ -23,7 +23,7 @@ Use when
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
-The `Rc<T>` type keeps track of the number of references to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
+The `Rc<T>` type keeps track of the number of references{{hi:References}} to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
 
 ## RefCell
 

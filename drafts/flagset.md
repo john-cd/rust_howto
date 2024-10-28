@@ -1,6 +1,6 @@
 ## Flagset
 
-[![flagset][c-flagset-badge]][c-flagset]
+[![flagset][c-flagset-badge]][c-flagset]{{hi:flagset}}
 [![flagset-crates.io][c-flagset-crates.io-badge]][c-flagset-crates.io]
 [![flagset-github][c-flagset-github-badge]][c-flagset-github]
 [![flagset-lib.rs][c-flagset-lib.rs-badge]][c-flagset-lib.rs]

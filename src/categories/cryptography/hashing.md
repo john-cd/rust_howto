@@ -34,63 +34,63 @@ review below from https://blessed.rs/crates
 
 For more algorithms, see Rust Crypto Hashes.
 
-sha2
+sha2{{hi:sha2}}
 
-sha1
+sha1{{hi:sha1}}
 
-md-5
+md-5{{hi:md-5}}
 
 ## AEAD Encryption
 
 For more algorithms, see Rust Crypto AEADs.
 
-aes-gcm-siv
+aes-gcm-siv{{hi:aes-gcm-siv}}
 
-aes-gcm
+aes-gcm{{hi:aes-gcm}}
 
-chacha20poly1305
+chacha20poly1305{{hi:chacha20poly1305}}
 
 ## RSA
 
-rsa
+rsa{{hi:rsa}}
 
 ## Digital Signatures
 
 For more algorithms, see Rust Crypto Signatures.
 
-ed25519
+ed25519{{hi:ed25519}}
 Use in conjunction with the ed25519-dalek crate.
 
-ecdsa
+ecdsa{{hi:ecdsa}}
 
-dsa
+dsa{{hi:dsa}}
 
 ## Certificate Formats
 
 For more formats, see Rust Crypto Formats.
 
-der
+der{{hi:der}}
 
-pem-rfc7468
+pem-rfc7468{{hi:pem-rfc7468}}
 
-pkcs8
+pkcs8{{hi:pkcs8}}
 
-x509-cert
+x509-cert{{hi:x509-cert}}
 
 ## TLS / SSL
 
-rustls
+rustls{{hi:rustls}}
 A portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and higher.
 
-native-tls
+native-tls{{hi:native-tls}}
 Delegates to the system TLS implementations on windows and macOS, and uses OpenSSL on linux.
 
 ## Utilities
 
-subtle
+subtle{{hi:subtle}}
 Utilities for writing constant-time algorithms
 
-zeroize
+zeroize{{hi:zeroize}}
 Securely erase memory
 
 </div>

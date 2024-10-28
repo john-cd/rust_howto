@@ -40,14 +40,13 @@ See the relevant section in [blessed.rs][blessed-rs-website]⮳
 
 ### Floem
 
-- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem][c-xilem-github]⮳, [Leptos][c-leptos-github]⮳
-and [rui][c-rui-github]⮳. Floem aims to be a high performance declarative UI library requiring minimal user effort.
+- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem][c-xilem-github]{{hi:xilem}}⮳, [Leptos][c-leptos-github]{{hi:leptos}}⮳ and [rui][c-rui-github]{{hi:rui}}⮳. Floem aims to be a high performance declarative UI library requiring minimal user effort.
 - [Floem (github)][c-floem-github]⮳
 - [Floem (docs)][c-floem]{{hi:floem}}⮳
 
 ### GPUI
 
-- [gpui.rs][gpui.rs]⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
+- [gpui.rs][gpui.rs]{{hi:gpui.rs}}⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
 
 ## Other GUI frameworks
 

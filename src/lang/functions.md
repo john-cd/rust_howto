@@ -1,6 +1,6 @@
 # Functions
 
-[![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]
+[![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
 
 ```rust
 {{#include ../../deps/tests/functions.rs}}
@@ -26,7 +26,7 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 ## Diverging functions
 
-Diverging functions never return.
+{{i:Diverging functions}} never return.
 
 ```rust,should_panic
 {{#include ../../deps/tests/diverging_functions.rs}}

@@ -6,7 +6,7 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 ## Interop
 
-[![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
+[![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}}
 
 ### Python Interop
 
@@ -22,9 +22,9 @@ Supports both calling python code from Rust and exposing Rust code to Python
 
   [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
 
-[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]⮳
+[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
 
-[Ruff][c-ruff-website]⮳
+[Ruff][c-ruff-website]{{hi:ruff}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -2,13 +2,13 @@
 
 Utilities for build scripts and other build time steps.
 
-This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs` file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See crates.io's [documentation on the matter][book-cargo-build-script]⮳ for more information.
+This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See crates.io's [documentation on the matter][book-cargo-build-script]⮳ for more information.
 
 {{#include index.incl.md}}
 
 ## Compile and link statically to a bundled C library
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]  [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]
+[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build utils}}
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [`cc`][c-cc]{{hi:cc}}⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (`.a`) that can be statically linked to by [`rustc`][rustc].
 
@@ -58,7 +58,7 @@ void greet(const char* name) {
 
 ## Compile and link statically to a bundled C++ library
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cc::Build::cpp`][c-cc::Build::cpp]{{hi:cc::Build::cpp}}⮳ and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
@@ -99,7 +99,7 @@ int multiply(int x, int y) {
 
 ## Compile a C library while setting custom defines
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 It is simple to build bundled C code with custom defines using [`cc::Build::define`][c-cc::Build::define]{{hi:cc::Build::define}}⮳
 The method takes an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ value, so it is possible to create defines such as `#define APP_NAME "foo"`

@@ -13,7 +13,7 @@ docker init
 
 ## References
 
-- Docker's [getting started][docker-getting-started]⮳ docs.
+- Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}
 - [Docker's Rust guide][docker-rust-guide]⮳
 
 {{#include refs.incl.md}}

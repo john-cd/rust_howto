@@ -45,7 +45,7 @@ Generate type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-gi
 TODO: cornucopia
 
 TODO: cover tokio-postgres
-[![tokio-postgres][c-tokio_postgres-badge]][c-tokio_postgres]
+[![tokio-postgres][c-tokio_postgres-badge]][c-tokio_postgres]{{hi:tokio_postgres}}
 [![tokio-postgres-crates.io][c-tokio_postgres-crates.io-badge]][c-tokio_postgres-crates.io]
 [![tokio-postgres-github][c-tokio_postgres-github-badge]][c-tokio_postgres-github]
 [![tokio-postgres-lib.rs][c-tokio_postgres-lib.rs-badge]][c-tokio_postgres-lib.rs]

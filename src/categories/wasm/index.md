@@ -4,7 +4,7 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 {{#include index.incl.md}}
 
-[Rust and WebAssembly (book)][book-rustwasm]⮳
+[Rust and WebAssembly (book)][book-rustwasm]{{hi:WASM}}⮳
 
 ## Yew
 
@@ -18,10 +18,10 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 ## Others
 
-- [wasmer.io][wasmer-website]⮳
-- [wasmtime][c-wasmtime-github]⮳
+- [wasmer.io][wasmer-website]{{hi:wasmer.io}}⮳
+- [wasmtime][c-wasmtime-github]{{hi:wasmtime}}⮳
 - [docs.wasmtime.dev][c-wasmtime-docs]⮳
-- [rustwasm.github.io][rustwasm-website]⮳
+- [rustwasm.github.io][rustwasm-website]{{hi:rustwasm}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

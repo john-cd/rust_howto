@@ -1,6 +1,6 @@
 # Enums
 
-[![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]
+[![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]{{hi:Enums}}
 
 ```rust
 {{#include ../../deps/tests/enums.rs}}

@@ -2,7 +2,7 @@
 
 ## itertools
 
-[![itertools][c-itertools-badge]][c-itertools]
+[![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}
 [![itertools-crates.io][c-itertools-crates.io-badge]][c-itertools-crates.io]
 [![itertools-github][c-itertools-github-badge]][c-itertools-github]
 [![itertools-lib.rs][c-itertools-lib.rs-badge]][c-itertools-lib.rs]

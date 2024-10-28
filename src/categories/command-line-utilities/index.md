@@ -6,16 +6,16 @@
 
 [My terminal became more Rusty Community][blog-rusty-terminal]⮳
 
-[![open-github][c-open-github-badge]][c-open-github]
+[![open-github][c-open-github-badge]][c-open-github]{{hi:open}}
 
-[![starship-github][c-starship-github-badge]][c-starship-github]
+[![starship-github][c-starship-github-badge]][c-starship-github]{{hi:starship}}
 
-[![bacon-github][c-bacon-github-badge]][c-bacon-github]
+[![bacon-github][c-bacon-github-badge]][c-bacon-github]{{hi:bacon}}
 
 ## `bat`
 
 `bat`{{hi:bat}} is a fast `cat` clone with syntax highlighting and Git{{hi:Git}} integration.
-[![bat-github][c-bat-github-badge]][c-bat-github]
+[![bat-github][c-bat-github-badge]][c-bat-github]{{hi:bat}}
 
 ```sh
 bat README.md
@@ -49,7 +49,7 @@ apt install gping
 
 ## `exa`
 
-[![exa-github][c-exa-github-badge]][c-exa-github]
+[![exa-github][c-exa-github-badge]][c-exa-github]{{hi:exa}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

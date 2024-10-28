@@ -1,13 +1,13 @@
 # Rust Installation
 
-[Install Rust][rust-install-rust]⮳
+[Install Rust][rust-install-rust]{{hi:Rust installation}}⮳
 <div class="hidden">
 TODO: header
 </div>
 
 ## Key Steps
 
-- Install [Rustup][rustup-website]⮳
+- Install [Rustup][rustup-website]{{hi:rustup}}⮳
 
 On WSL / Unix:
 

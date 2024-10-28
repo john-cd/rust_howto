@@ -2,9 +2,9 @@
 
 {{#include lazy_initialization.incl.md}}
 
-[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
-[OnceCell][c-std-core::cell::OnceCell]⮳ is a cell which can be written to only once.
+[OnceCell][c-std-core::cell::OnceCell]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
 
 The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
@@ -14,7 +14,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ## Older library
 
-[![once_cell][c-once_cell-badge]][c-once_cell]{{hi:once_cell}}  [![once_cell-lib.rs][c-once_cell-lib.rs-badge]][c-once_cell-lib.rs]⮳  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![once_cell][c-once_cell-badge]][c-once_cell]{{hi:once_cell}}  [![once_cell-lib.rs][c-once_cell-lib.rs-badge]][c-once_cell-lib.rs]⮳  [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
 [`once_cell`][c-once_cell]{{hi:once_cell}}⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. `once_cell` also has a [`once_cell::sync::Lazy`][c-once_cell::sync::Lazy]{{hi:once_cell::sync::Lazy}}⮳ type, build on top of [`OnceCell`][c-once_cell::sync::OnceCell]⮳:
 
@@ -24,7 +24,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 
 ## See also
 
-[![cat-memory-management][cat-memory-management-badge]][cat-memory-management]
+[![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
 

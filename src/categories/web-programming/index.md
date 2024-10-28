@@ -31,7 +31,7 @@ TODO cover http crate
 
 ## HTTP Types & Interfaces
 
-[![http][c-http-badge]][c-http]
+[![http][c-http-badge]][c-http]{{hi:http}}
 [![http-crates.io][c-http-crates.io-badge]][c-http-crates.io]
 [![http-github][c-http-github-badge]][c-http-github]
 [![http-lib.rs][c-http-lib.rs-badge]][c-http-lib.rs]

@@ -102,11 +102,11 @@ Note that serialization followed by deserialization gives back the original matr
 <div class="hidden">
 TODO review; cover more of nalgebra
 
-nalgebra
+nalgebra{{hi:nalgebra}}
 
 General-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices. However it supports only vectors (1d) and matrices (2d) and not higher-dimensional tensors.
 
-ndarray
+ndarray{{hi:ndarray}}
 
 Less featureful than nalgebra but supports arbitrarily dimensioned arrays
 </div>

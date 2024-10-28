@@ -48,7 +48,7 @@
   - [Automatic trait derivation](standard_library/derive.md)
 
 - [Key crates](key_crates/key_crates.md)
-  - [Crates (alphabetic)](key_crates/crates_alpabetical.md)
+  - [Crates (alphabetic)](key_crates/crates_alphabetical.md)
   - [Crates (by category)](key_crates/crates_by_category.md)
 
 ---

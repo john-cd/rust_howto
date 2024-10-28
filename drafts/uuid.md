@@ -1,6 +1,6 @@
 # UUID
 
-[![uuid][c-uuid-badge]][c-uuid]
+[![uuid][c-uuid-badge]][c-uuid]{{hi:uuid}}
 [![uuid-crates.io][c-uuid-crates.io-badge]][c-uuid-crates.io]
 [![uuid-github][c-uuid-github-badge]][c-uuid-github]
 [![uuid-lib.rs][c-uuid-lib.rs-badge]][c-uuid-lib.rs]

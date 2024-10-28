@@ -1,12 +1,14 @@
 # Other Web Frameworks
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]
+[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [Rust web framework comparison][rust-web-framework-comparison-github]⮳
 
 ## Loco
 
-[loco.rs][c-loco-docs]⮳
+{{hi:HTTP server}}
+
+[loco.rs][c-loco-docs]{{hi:loco}}⮳
 
 [loco-rs (github)][c-loco-github]⮳
 
@@ -14,19 +16,25 @@
 
 ## Rocket
 
-[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]
+{{hi:HTTP server}}
+
+[![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]{{hi:rocket}}
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
 ## Leptos
 
-[leptos][c-leptos-github]⮳
+{{hi:HTTP server}}
+
+[leptos][c-leptos-github]{{hi:leptos}}⮳
 
 ## See also
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}
 
-[Rust on Nails][rust-on-nails-website]⮳
+{{hi:HTTP server}}
+
+[Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳
 
 [Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust]⮳
 

@@ -10,7 +10,7 @@ Crates related to solving problems involving physics, chemistry, biology, machin
 
 Processing of spatial information, maps, navigation data, and geographic information systems.
 
-[![cat-science::geo][cat-science::geo-badge]][cat-science::geo]
+[![cat-science::geo][cat-science::geo-badge]][cat-science::geo]{{hi:Geoscience}}
 
 ## Neuroscience
 

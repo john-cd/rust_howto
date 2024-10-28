@@ -4,7 +4,7 @@
 
 ## Irrecoverable panics
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,should_panic
 {{#include ../../../../deps/tests/panic.rs}}
@@ -12,7 +12,7 @@
 
 ## Recoverable errors with `Result`
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,should_panic
 {{#include ../../../../deps/tests/error_handling.rs}}
@@ -20,7 +20,7 @@
 
 ### unwrap_or_else
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}
 
 ```rust
 {{#include ../../../../deps/tests/unwrap_or_else.rs}}
@@ -28,7 +28,7 @@
 
 ## A Shortcut for Propagating Errors: the ? Operator
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust
 {{#include ../../../../deps/tests/question_mark.rs}}

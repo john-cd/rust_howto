@@ -1,6 +1,6 @@
 # dyn-clone
 
-[![dyn-clone][c-dyn_clone-badge]][c-dyn_clone]
+[![dyn-clone][c-dyn_clone-badge]][c-dyn_clone]{{hi:dyn-clone}}
 [![dyn-clone-crates.io][c-dyn_clone-crates.io-badge]][c-dyn_clone-crates.io]
 [![dyn-clone-github][c-dyn_clone-github-badge]][c-dyn_clone-github]
 [![dyn-clone-lib.rs][c-dyn_clone-lib.rs-badge]][c-dyn_clone-lib.rs]

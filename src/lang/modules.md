@@ -1,6 +1,6 @@
 # Modules
 
-[![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]
+[![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]{{hi:mod}}
 
 Crates can contain modules{{hi:Modules}}.
 

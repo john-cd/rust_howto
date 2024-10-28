@@ -4,7 +4,7 @@
 
 ## Rustfmt
 
-[![rustfmt-github][c-rustfmt-github-badge]][c-rustfmt-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![rustfmt-github][c-rustfmt-github-badge]][c-rustfmt-github]{{hi:rustfmt}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Install with `rustup component add rustfmt`{{hi:rustfmt}}
 
@@ -23,7 +23,7 @@ cargo fmt --all -- --check
 
 ### Rustfmt Configuration
 
-[Configuring Rustfmt][c-rustfmt-config]⮳
+[Configuring Rustfmt][c-rustfmt-config]{{hi:rustfmt}}⮳
 
 Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,
@@ -71,7 +71,7 @@ rustfmt --help=config
 
 ### Formatting attributes
 
-For things you do not want rustfmt to mangle, use `#[rustfmt::skip]` , `#[rustfmt::skip::macros(macro_name)]` , or `#![rustfmt::skip::attributes(custom_attribute)]`
+For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

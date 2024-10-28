@@ -56,7 +56,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 ## Async runtimes
 
-In most cases, prefer the [`tokio`](tokio.md){{hi:tokio}} runtime{{hi:Runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
+In most cases, prefer the [`tokio`][p-tokio]{{hi:tokio}} runtime{{hi:Runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 
@@ -69,10 +69,11 @@ Alternatives to the Tokio async ecosystem include:
 
 [Asynchronous Programming in Rust][book-async-prog-rust]
 
+[p-tokio]: tokio.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO - [ ] [async-what-is-blocking][blog-async-what-is-blocking]
-- [ ] [communicating-between-sync-and-async-code-website][communicating-between-sync-and-async-code]
+- [ ] [communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
 </div>

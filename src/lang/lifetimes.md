@@ -1,6 +1,6 @@
 # Lifetimes
 
-[![Rust by example - Lifetimes][book-rust-by-example-lifetimes-badge]][book-rust-by-example-lifetimes]
+[![Rust by example - Lifetimes][book-rust-by-example-lifetimes-badge]][book-rust-by-example-lifetimes]{{hi:Lifetimes}}
 
 Prevent dangling references{{hi:Dangling references}}.
 
@@ -12,7 +12,7 @@ Prevent dangling references{{hi:Dangling references}}.
 {{#include ../../deps/tests/static_lifetime.rs}}
 ```
 
-The generic lifetime{{hi:Lifetime}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
+The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
 
 ```rust
 {{#include ../../deps/tests/generic_lifetime.rs}}

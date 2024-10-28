@@ -51,6 +51,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
+{{hi:Options}}
 <div class="hidden">
 TODO: finish Option page map, unwrap_or
 </div>

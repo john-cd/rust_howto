@@ -4,27 +4,27 @@ Subcommands that extend the capabilities of Cargo.
 
 {{#include index.incl.md}}
 
-[![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[![cargo_crates-github][c-cargo_crates-github-badge]][c-cargo_crates-github]
+[![cargo_crates-github][c-cargo_crates-github-badge]][c-cargo_crates-github]{{hi:cargo-crates}}
 
-[![cargo_edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github]
+[![cargo_edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github]{{hi:cargo-edit}}
 
-[![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]
+[![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
 
-[![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]
+[![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
 
-[![cargo_machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
+[![cargo_machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]{{hi:cargo-machete}}
 
-[![cargo_make-github][c-cargo_make-github-badge]][c-cargo_make-github]
+[![cargo_make-github][c-cargo_make-github-badge]][c-cargo_make-github]{{hi:cargo-make}}
 
-[![cargo_xtask-github][c-cargo_xtask-github-badge]][c-cargo_xtask-github]
+[![cargo_xtask-github][c-cargo_xtask-github-badge]][c-cargo_xtask-github]{{hi:cargo-xtask}}
 
 ## Watch for changes
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 cargo install cargo-watch
@@ -40,7 +40,7 @@ cargo watch -x check -x test -x run
 
 ## Formatting
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 # Install `rustfmt` if needed
@@ -54,7 +54,7 @@ cargo fmt -- --check
 
 ## Linting
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Clippy is the official Rust linter. It catches common mistakes and improves your Rust code.
 
@@ -67,7 +67,7 @@ Mute a warning using the `#[allow(clippy::lint_name)]` attributes.
 
 ## Fix Compiler Warnings
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
 
@@ -77,11 +77,11 @@ cargo fix
 
 ## Code coverage
 
-[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ## Security audit
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 cargo install cargo-audit
@@ -90,9 +90,9 @@ cargo audit
 
 ## Unused dependencies
 
-[udeps][c-cargo_udeps-crates.io]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[udeps][c-cargo_udeps-crates.io]{{hi:udeps}}⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-or (simpler) [Machete][blog-cargo-machete]⮳
+or (simpler) [Machete][blog-cargo-machete]{{hi:cargo-machete}}⮳
 
 ```sh
 cargo install cargo-machete
@@ -101,9 +101,9 @@ cargo machete
 
 ## Templates
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:cargo plugins}}
 
-[Cargo Generate][c-cargo_generate-crates.io]⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
+[Cargo Generate][c-cargo_generate-crates.io]{{hi:cargo-generate}}⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
 ## Cargo Make
 
@@ -114,29 +114,29 @@ cargo install --force cargo-make
 cargo make --version
 ```
 
-[automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]⮳
+[automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]{{hi:cargo-make}}⮳
 
 ## Cargo auditable
 
-Make production Rust binaries auditable [cargo-auditable][c-cargo_auditable-github]⮳
+Make production Rust binaries auditable [cargo-auditable][c-cargo_auditable-github]{{hi:cargo-auditable}}⮳
 
 ## Cargo limit
 
-Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit][c-cargo_limit-crates.io]⮳
+Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc [crates.io/crates/cargo-limit][c-cargo_limit-crates.io]{{hi:cargo-limit}}⮳
 
 ## Cargo cache
 
-- [`cargo cache`][c-cargo_cache-github]⮳
+- [`cargo cache`][c-cargo_cache-github]{{hi:cargo-cache}}⮳
 
 ## Cargo husky
 
-[cargo-husky][c-cargo_husky-github]⮳ Setup Git hooks automatically for cargo projects with 🐶
+[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ Setup Git hooks automatically for cargo projects with 🐶
 
 See also: Git hook scripts are useful for identifying simple issues before submission to code review [pre-commit.com][pre-commit.com-website]⮳ A framework for managing and maintaining multi-language pre-commit hooks.
 
 ## Cargo xtask
 
-[cargo-xtask][c-cargo_xtask-github]⮳ cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
+[cargo-xtask][c-cargo_xtask-github]{{hi:cargo-xtask}}⮳ cargo-xtask is a way to add free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
 
 The two distinguishing features of xtask are:
 
@@ -145,25 +145,25 @@ The two distinguishing features of xtask are:
 
 ### Devx
 
-[devx][devx-github]⮳ Collection of utilities for writing your own dev scripts
+[devx][devx-github]{{hi:devx}}⮳ Collection of utilities for writing your own dev scripts
 
 Devx is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask` idioms (you are highly encouraged to study them first)][c-cargo_xtask-github]⮳
 
 ### xshell: Making Rust a Better Bash
 
-`xshell` provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts. [github.com/matklad/xshell][c-xshell-github]⮳
+`xshell`{{hi:xshell}} provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts. [github.com/matklad/xshell][c-xshell-github]⮳
 
 ### Duct
 
-[duct.rs][c-duct-github]⮳ Duct is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you the Right Way™.
+[duct.rs][c-duct-github]{{hi:duct}}⮳ Duct is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you the Right Way™.
 
 ## Cargo hakari
 
-[cargo-hakari][c-cargo_hakari-crates.io]⮳ Manage workspace-hack packages to speed up builds in large workspaces.
+[cargo-hakari][c-cargo_hakari-crates.io]{{hi:cargo-hakari}}⮳ Manage workspace-hack packages to speed up builds in large workspaces.
 
 ## Cargo wizard
 
-Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo_wizard-github]⮳
+Cargo subcommand for configuring Cargo projects for best performance. [cargo-wizard][c-cargo_wizard-github]{{hi:cargo-wizard}}⮳
 
 ## GitHub action for cargo plugins
 

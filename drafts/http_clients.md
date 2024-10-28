@@ -1,6 +1,6 @@
 ## ureq
 
-[![ureq][c-ureq-badge]][c-ureq]
+[![ureq][c-ureq-badge]][c-ureq]{{hi:ureq}}
 [![ureq-crates.io][c-ureq-crates.io-badge]][c-ureq-crates.io]
 [![ureq-github][c-ureq-github-badge]][c-ureq-github]
 [![ureq-lib.rs][c-ureq-lib.rs-badge]][c-ureq-lib.rs]
