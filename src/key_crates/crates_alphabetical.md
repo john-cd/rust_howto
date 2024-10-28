@@ -4,7 +4,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## A
 
-[![actix_web][c-actix_web-badge]][c-actix_web]  [![ansi_term][c-ansi_term-badge]][c-ansi_term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow][c-arrow-badge]][c-arrow]  [![async_channel][c-async_channel-badge]][c-async_channel]  [![async_std][c-async_std-badge]][c-async_std]  [![async_stream][c-async_stream-badge]][c-async_stream]  [![async_trait][c-async_trait-badge]][c-async_trait] [![axum][c-axum-badge]][c-axum]
+[![actix-web][c-actix_web-badge]][c-actix_web]  [![ansi_term][c-ansi_term-badge]][c-ansi_term]  [![anyhow][c-anyhow-badge]][c-anyhow]  [![approx][c-approx-badge]][c-approx]  [![arrow][c-arrow-badge]][c-arrow]  [![async-channel][c-async_channel-badge]][c-async_channel]  [![async_std][c-async_std-badge]][c-async_std]  [![async-stream][c-async_stream-badge]][c-async_stream]  [![async-trait][c-async_trait-badge]][c-async_trait] [![axum][c-axum-badge]][c-axum]
 
 ## B
 

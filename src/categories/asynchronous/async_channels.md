@@ -32,7 +32,7 @@ Another example:
 
 ## See also
 
-[![async_channel][c-async_channel-badge]][c-async_channel]{{hi:async_channel}}
+[![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}  [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 

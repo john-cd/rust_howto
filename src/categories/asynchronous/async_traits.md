@@ -18,9 +18,9 @@ This is in turn enabled by return-position `impl Trait` in traits{{hi:Return-pos
 
 Note that there are still caveats for public traits - see [Announcing `async fn` and return-position `impl Trait` in traits][blog-announcing-async-fn]⮳.
 
-In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the `async_trait`{{hi:async_trait}} crate.
+In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the `async-trait`{{hi:async-trait}} crate.
 
-[![async_trait][c-async_trait-badge]][c-async_trait]{{hi:async_trait}}  [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![async-trait][c-async_trait-badge]][c-async_trait]{{hi:async-trait}}  [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,mdbook-runnable
 {{#include ../../../deps/tests/async_traits3.rs}}

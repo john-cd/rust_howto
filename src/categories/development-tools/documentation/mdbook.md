@@ -17,11 +17,11 @@ mdbook serve --open
 
 ## `mdbook` plugins
 
-[![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook_hide}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook-hide}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 - [mdbook third-party plugins][c-mdbook-third-party-plugins-wiki]
-- [mdbook-private][c-mdbook_private-github]{{hi:mdbook_private}}
-- [mdbook-linkcheck][c-mdbook_linkcheck-github]{{hi:mdbook_linkcheck}}
+- [mdbook-private][c-mdbook_private-github]{{hi:mdbook-private}}
+- [mdbook-linkcheck][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}
 - A runner for `mdbook`s to keep your documentation tested: [Byron-termbook][c-termbook-github]{{hi:termbook}}
 
 ## CD / CI

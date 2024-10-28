@@ -40,7 +40,7 @@ The binary representation consists of a 96 bit integer number, a scaling factor 
 
 ## Sortable Floats
 
-[![ordered-float][c-ordered_float-badge]][c-ordered_float]{{hi:ordered_float}}
+[![ordered-float][c-ordered_float-badge]][c-ordered_float]{{hi:ordered-float}}
 [![ordered-float-crates.io][c-ordered_float-crates.io-badge]][c-ordered_float-crates.io]
 [![ordered-float-github][c-ordered_float-github-badge]][c-ordered_float-github]
 [![ordered-float-lib.rs][c-ordered_float-lib.rs-badge]][c-ordered_float-lib.rs]

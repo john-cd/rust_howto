@@ -22,7 +22,7 @@
 - [`tonic`][c-tonic]{{hi:tonic}}⮳
 - More database examples, including object databases, graph databases, BonsaiDB, SurrealDB
 - [`redis`][c-redis]{{hi:redis}}⮳, [`mongodb`][c-mongodb]{{hi:mongodb}}⮳, [`elasticsearch`][c-elasticsearch-github]{{hi:elasticsearch}}⮳
-- Cargo & project integration via [`cargo_edit`][c-cargo_edit]{{hi:cargo_edit}}
+- Cargo & project integration via [`cargo-edit`][c-cargo_edit]{{hi:cargo-edit}}
 - Zip files and other archives
 - Authentication / authorization: OAuth2, LDAP/AD, DNS lookups
 - GTK, Qt, FLTK, Bevy + eGUI, other UI toolkits

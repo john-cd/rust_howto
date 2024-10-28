@@ -69,7 +69,7 @@ Fast compile times, fast runtime, pedantic about correctness. API is less ergono
 
 Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
 
-[![pico-args][c-pico_args-badge]][c-pico_args]{{hi:pico_args}}
+[![pico-args][c-pico_args-badge]][c-pico_args]{{hi:pico-args}}
 [![pico-args-crates.io][c-pico_args-crates.io-badge]][c-pico_args-crates.io]
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]

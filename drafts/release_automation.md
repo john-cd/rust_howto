@@ -11,7 +11,7 @@ Helper for publishing new crate versions.
 
 ## Release-plz
 
-[![release-plz][c-release_plz-badge]][c-release_plz]{{hi:release_plz}}
+[![release-plz][c-release_plz-badge]][c-release_plz]{{hi:release-plz}}
 [![release-plz-crates.io][c-release_plz-crates.io-badge]][c-release_plz-crates.io]
 [![release-plz-github][c-release_plz-github-badge]][c-release_plz-github]
 [![release-plz-lib.rs][c-release_plz-lib.rs-badge]][c-release_plz-lib.rs]

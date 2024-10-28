@@ -25,7 +25,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 
 This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
-[![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde_ignored}}
+[![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
 [![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
 [![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
 [![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]

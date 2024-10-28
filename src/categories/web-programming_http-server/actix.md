@@ -2,7 +2,7 @@
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
-[![actix_web][c-actix_web-badge]][c-actix_web]{{hi:actix_web}}
+[![actix-web][c-actix_web-badge]][c-actix_web]{{hi:actix-web}}
 
 [Actix Web (website)][c-actix_web-website]⮳
 
