@@ -206,7 +206,7 @@ empty := ''
 utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
 
-# Run the (local) tools e.g to create badges and reference definitions
+# Run the templating tool e.g to create badges and reference definitions
 templ cmd=help *subcmd=empty:
   cargo run -p rust_howto_tools --bin templ -- {{cmd}} {{subcmd}}
 
@@ -239,12 +239,13 @@ _removelastslash:
 spell:
   .devcontainer/spellcheck.sh
 
-# Check that all links to e.g. external websites are valid
-check_links:
+# Check that URLs (to external websites) are valid and working
+check_urls:
   -lychee --exclude-all-private --no-ignore --hidden --format detailed "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
+  # We could also check ".devcontainer/*" "./**/*.sh"
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed -- -
-# Somehow lychee ignores links in markdown reference definitions... thus the use of sed
-# You could also check ".devcontainer/*" "./**/*.sh"
+# Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
+# This does not check whether the reference definitions are used - see below.
 
 # List links without corresponding reference definitions and vice versa
 refdefs:
