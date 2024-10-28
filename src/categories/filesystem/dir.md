@@ -62,7 +62,7 @@ Find JSON files modified within the last day in the current directory. Using [`w
 
 Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c-std::iter::Iterator::filter]{{hi:std::iter::Iterator::filter}}⮳ applies to each [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ even if the parent is a hidden directory.
 
-Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::depth]{{hi:walkdir::WalkDir::depth}}⮳ usage in `is_not_hidden` predicate.
+Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkDir::WalkDir::depth]{{hi:walkdir::WalkDir::depth}}⮳ usage in `is_not_hidden` predicate.
 
 ```rust,no_run
 {{#include ../../../deps/tests/skip-dot.rs}}

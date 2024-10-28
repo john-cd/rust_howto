@@ -2,11 +2,11 @@
 
 ## Table of contents
 
-- [Who this book is for][who-this-book-is-for]⮳
-- [How to read this book][how-to-read-this-book]⮳
-- [How to use the recipes][how-to-use-the-recipes]⮳
-- [A note about error handling][a-note-about-error-handling]⮳
-- [A note about crate representation][a-note-about-crate-representation]⮳
+- [Who this book is for][p-who-this-book-is-for]⮳
+- [How to read this book][p-how-to-read-this-book]⮳
+- [How to use the recipes][p-how-to-use-the-recipes]⮳
+- [A note about error handling][p-a-note-about-error-handling]⮳
+- [A note about crate representation][p-a-note-about-crate-representation]⮳
 
 ## Who this book is for
 
@@ -14,7 +14,7 @@ This cookbook is intended for new Rust programmers, so that they may quickly get
 
 ## How to read this book
 
-The cookbook [`index`][index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
+The cookbook [`index`][p-index] contains the full list of recipes, organized into a number of sections: "basics", "encoding", "concurrency", etc. The sections themselves are more or less ordered in progression, with later sections being more advanced, and occasionally building on concepts from earlier sections.
 
 Within the index, each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c-rand-badge]][c-rand], and which categories on [`crates.io`][crates.io]{{hi:crates.io}} those crates belong to, like
 [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}.
@@ -83,12 +83,12 @@ This cookbook is intended eventually to provide expansive coverage of the Rust c
 
 At present the cookbook is focused on the standard library, and on "core" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-[a-note-about-crate-representation]: #a-note-about-crate-representation
-[a-note-about-error-handling]: #a-note-about-error-handling
-[how-to-use-the-recipes]: #how-to-use-the-recipes
-[how-to-read-this-book]: #how-to-read-this-book
-[who-this-book-is-for]: #who-this-book-is-for
-[index]: index.md
+[p-a-note-about-crate-representation]: #a-note-about-crate-representation
+[p-a-note-about-error-handling]: #a-note-about-error-handling
+[p-how-to-use-the-recipes]: #how-to-use-the-recipes
+[p-how-to-read-this-book]: #how-to-read-this-book
+[p-who-this-book-is-for]: #who-this-book-is-for
+[p-index]: index.md
 
 {{#include refs/link-refs.md}}
 

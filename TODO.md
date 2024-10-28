@@ -7,6 +7,7 @@
 - [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
 - [ ] check (broken) links without corresponding reference definitions; uxe just script - WIP
 - [ ] review unused reference definitions (without links); add links / badges whereever it is needed - WIP
+- [ ] use mdbook-utils to replace inline links by ref-style links everywhere
 
 ## Markdown
 

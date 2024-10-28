@@ -1,3 +1,6 @@
+
+
+
 [c-actix-badge]: https://img.shields.io/crates/v/actix?label=actix
 [c-actix-crates.io-badge]: https://img.shields.io/badge/crates.io-actix-crimson
 [c-actix-crates.io]: https://crates.io/crates/actix
@@ -106,6 +109,14 @@
 [c-async_trait-lib.rs-badge]: https://img.shields.io/badge/lib.rs-async__trait-yellow
 [c-async_trait-lib.rs]: https://lib.rs/crates/async-trait
 [c-async_trait]: https://docs.rs/async_trait
+[c-await_tree-badge]: https://img.shields.io/crates/v/await-tree?label=await-tree
+[c-await_tree-crates.io-badge]: https://img.shields.io/badge/crates.io-await--tree-crimson
+[c-await_tree-crates.io]: https://crates.io/crates/await_tree
+[c-await_tree-github-badge]: https://img.shields.io/badge/await--tree-steelblue?logo=github
+[c-await_tree-github]: https://github.com/risingwavelabs/await-tree
+[c-await_tree-lib.rs-badge]: https://img.shields.io/badge/lib.rs-await--tree-yellow
+[c-await_tree-lib.rs]: https://lib.rs/crates/await-tree
+[c-await_tree]: https://docs.rs/await_tree
 [c-axum-badge]: https://img.shields.io/crates/v/axum?label=axum
 [c-axum-crates.io-badge]: https://img.shields.io/badge/crates.io-axum-crimson
 [c-axum-crates.io]: https://crates.io/crates/axum
@@ -933,6 +944,7 @@
 [c-indicatif-crates.io-badge]: https://img.shields.io/badge/crates.io-indicatif-crimson
 [c-indicatif-crates.io]: https://crates.io/crates/indicatif
 [c-indicatif-github-badge]: https://img.shields.io/badge/indicatif-steelblue?logo=github
+[c-indicatif-github]: https://github.com/console-rs/indicatif
 [c-indicatif-lib.rs-badge]: https://img.shields.io/badge/lib.rs-indicatif-yellow
 [c-indicatif-lib.rs]: https://lib.rs/crates/indicatif
 [c-indicatif]: https://docs.rs/indicatif
@@ -1248,6 +1260,7 @@
 [c-mongodb-crates.io-badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
 [c-mongodb-crates.io]: https://crates.io/crates/mongodb
 [c-mongodb-github-badge]: https://img.shields.io/badge/mongodb-steelblue?logo=github
+[c-mongodb-github]: https://github.com/mongodb/mongo-rust-driver
 [c-mongodb-lib.rs-badge]: https://img.shields.io/badge/lib.rs-mongodb-yellow
 [c-mongodb-lib.rs]: https://lib.rs/crates/mongodb
 [c-mongodb]: https://docs.rs/mongodb
@@ -1317,6 +1330,7 @@
 [c-notify-crates.io-badge]: https://img.shields.io/badge/crates.io-notify-crimson
 [c-notify-crates.io]: https://crates.io/crates/notify
 [c-notify-github-badge]: https://img.shields.io/badge/notify-steelblue?logo=github
+[c-notify-github]: https://github.com/notify-rs/notify
 [c-notify-lib.rs-badge]: https://img.shields.io/badge/lib.rs-notify-yellow
 [c-notify-lib.rs]: https://lib.rs/crates/notify
 [c-notify]: https://docs.rs/notify/latest/notify
@@ -1504,6 +1518,14 @@
 [c-r3bl_tuify-lib.rs-badge]: https://img.shields.io/badge/lib.rs-r3bl__tuify-yellow
 [c-r3bl_tuify-lib.rs]: https://lib.rs/crates/r3bl_tuify
 [c-r3bl_tuify]: https://docs.rs/r3bl_tuify
+[c-ractor-badge]: https://img.shields.io/crates/v/ractor?label=ractor
+[c-ractor-crates.io-badge]: https://img.shields.io/badge/crates.io-ractor-crimson
+[c-ractor-crates.io]: https://crates.io/crates/ractor
+[c-ractor-github-badge]: https://img.shields.io/badge/ractor-steelblue?logo=github
+[c-ractor-github]: https://github.com/slawlor/ractor
+[c-ractor-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ractor-yellow
+[c-ractor-lib.rs]: https://lib.rs/crates/ractor
+[c-ractor]: https://docs.rs/ractor
 [c-rand-badge]: https://img.shields.io/crates/v/rand?label=rand
 [c-rand-crates.io-badge]: https://img.shields.io/badge/crates.io-rand-crimson
 [c-rand-crates.io]: https://crates.io/crates/rand
@@ -1562,6 +1584,7 @@
 [c-redis-crates.io-badge]: https://img.shields.io/badge/crates.io-redis-crimson
 [c-redis-crates.io]: https://crates.io/crates/redis
 [c-redis-github-badge]: https://img.shields.io/badge/redis-steelblue?logo=github
+[c-redis-github]: https://github.com/redis-rs/redis-rs
 [c-redis-lib.rs-badge]: https://img.shields.io/badge/lib.rs-redis-yellow
 [c-redis-lib.rs]: https://lib.rs/crates/redis
 [c-redis]: https://docs.rs/redis
@@ -2038,6 +2061,7 @@
 [c-stork_search-crates.io-badge]: https://img.shields.io/badge/crates.io-stork--search-crimson
 [c-stork_search-crates.io]: https://crates.io/crates/stork_search
 [c-stork_search-github-badge]: https://img.shields.io/badge/stork--search-steelblue?logo=github
+[c-stork_search-github]: https://github.com/jameslittle230/stork
 [c-stork_search-lib.rs-badge]: https://img.shields.io/badge/lib.rs-stork--search-yellow
 [c-stork_search-lib.rs]: https://lib.rs/crates/stork-search
 [c-stork_search-website]: https://stork-search.net
@@ -2141,6 +2165,7 @@
 [c-tinysearch-crates.io-badge]: https://img.shields.io/badge/crates.io-tinysearch-crimson
 [c-tinysearch-crates.io]: https://crates.io/crates/tinysearch
 [c-tinysearch-github-badge]: https://img.shields.io/badge/tinysearch-steelblue?logo=github
+[c-tinysearch-github]: https://github.com/tinysearch/tinysearch
 [c-tinysearch-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tinysearch-yellow
 [c-tinysearch-lib.rs]: https://lib.rs/crates/tinysearch
 [c-tinysearch-website]: https://endler.dev/2019/tinysearch
@@ -2324,10 +2349,6 @@
 [c-uuid-lib.rs-badge]: https://img.shields.io/badge/lib.rs-uuid-yellow
 [c-uuid-lib.rs]: https://lib.rs/crates/uuid
 [c-uuid]: https://docs.rs/uuid
-[c-walkDir::WalkDir::DirEntry]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html
-[c-walkDir::WalkDir::depth]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html#method.depth
-[c-walkDir::WalkDir::max_depth]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.max_depth
-[c-walkDir::WalkDir::min_depth]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.min_depth
 [c-walkDir::Walkdir::new]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.new
 [c-walkdir-badge]: https://img.shields.io/crates/v/walkdir?label=walkdir
 [c-walkdir-crates.io-badge]: https://img.shields.io/badge/crates.io-walkdir-crimson
@@ -2337,7 +2358,11 @@
 [c-walkdir-lib.rs-badge]: https://img.shields.io/badge/lib.rs-walkdir-yellow
 [c-walkdir-lib.rs]: https://lib.rs/crates/walkdir
 [c-walkdir::IntoIter::filter_entry]: https://docs.rs/walkdir/latest/walkdir/struct.IntoIter.html#method.filter_entry
+[c-walkdir::WalkDir::DirEntry]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html
+[c-walkdir::WalkDir::depth]: https://docs.rs/walkdir/latest/walkdir/struct.DirEntry.html#method.depth
 [c-walkdir::WalkDir::follow_links]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.follow_links
+[c-walkdir::WalkDir::max_depth]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.max_depth
+[c-walkdir::WalkDir::min_depth]: https://docs.rs/walkdir/latest/walkdir/struct.WalkDir.html#method.min_depth
 [c-walkdir]: https://docs.rs/walkdir
 [c-wasmtime-badge]: https://img.shields.io/crates/v/wasmtime?label=wasmtime
 [c-wasmtime-crates.io-badge]: https://img.shields.io/badge/crates.io-wasmtime-crimson

@@ -256,8 +256,8 @@ refdefs:
   grep -Proh '(?<=\])\[[^ \[\]]+?\]' ./src ./drafts | sort -u > /tmp/used_refdefs.txt
   comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
   # Counts
-  comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l
-  cat  /tmp/defined_refdefs.txt | wc -l
-  cat  /tmp/used_refdefs.txt | wc -l
+  echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l)
+  echo "Count of reference definitions defined in the refs folder:" $(cat  /tmp/defined_refdefs.txt | wc -l)
+  echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]

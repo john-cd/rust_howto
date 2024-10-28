@@ -6,13 +6,13 @@ This book is still going through _heavy edits_. Pardon the dust.
 
 This book is **a compendium of Rust ecosystem examples, recipes, and links**. It is intended to be **everything you need for day-to-day Rust coding, in one place**.
 
-It quickly summarizes the basics of the [language][lang] and often-used elements of the [standard library][standard-library].
+It quickly summarizes the basics of the [language][p-lang] and often-used elements of the [standard library][p-standard-library].
 
-It then focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][errors], [error customization][error-customization], [configuration][config], [logging][logging]...
+It then focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [p-debugging][p-debugging]...
 
-[Concurrency][concurrency], including [asynchronous programming][asynchronous], are covered in details.
+[p-concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], are covered in details.
 
-Next are [tools][development-tools], such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming domains such as [CLI][cli] and [Web][web-programming] development. The [links][links] section provides pointers to notable Rust websites, books, and code examples.
+Next are [tools][p-development-tools], such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming domains such as [p-cli][p-cli] and [Web][p-web-programming] development. The [p-links][p-links] section provides pointers to notable Rust websites, books, and code examples.
 
 ## Who should read this book?
 
@@ -32,18 +32,18 @@ The [Rust cookbook][book-rust-cookbook]⮳ demonstrate good practices to accompl
 
 [Rust by Example][book-rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-[asynchronous]: categories/asynchronous/index.md
-[cli]: categories/command-line-interface/index.md
-[concurrency]: categories/concurrency/index.md
-[config]: categories/rust-patterns/errors/error_customization.md
-[development-tools]: categories/development-tools/index.md
-[errors]: categories/rust-patterns/errors/index.md
-[error-customization]: categories/rust-patterns/errors/error_customization.md
-[lang]: lang/index.md
-[links]: links/index.md
-[logging]: categories/development-tools_debugging/index.md
-[standard-library]: standard_library/index.md
-[web-programming]: categories/web-programming/index.md
+[p-asynchronous]: categories/asynchronous/index.md
+[p-cli]: categories/command-line-interface/index.md
+[p-concurrency]: categories/concurrency/index.md
+[p-config]: categories/config/index.md
+[p-development-tools]: categories/development-tools/index.md
+[p-errors]: categories/rust-patterns/errors/index.md
+[p-error-customization]: categories/rust-patterns/errors/error_customization.md
+[p-lang]: lang/index.md
+[p-links]: links/index.md
+[p-debugging]: categories/development-tools_debugging/index.md
+[p-standard-library]: standard_library/index.md
+[p-web-programming]: categories/web-programming/index.md
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
