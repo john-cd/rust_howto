@@ -24,7 +24,7 @@
 
 ## See also
 
-[![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![tonic][c-tonic-badge]][c-tonic]{{hi:tonic}}
+[![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}
 
 [Rust on Nails][rust-on-nails-website]⮳
 
@@ -34,4 +34,5 @@
 
 <div class="hidden">
 TODO: organize
+link to gRPC page
 </div>

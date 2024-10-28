@@ -54,8 +54,29 @@ Your favorite number must be 256.
 {{#include ../../../deps/tests/clap.rs}}
 ```
 
+## See also
+
+### lexopt
+
+[![lexopt][c-lexopt-badge]][c-lexopt]
+[![lexopt-crates.io][c-lexopt-crates.io-badge]][c-lexopt-crates.io]
+[![lexopt-github][c-lexopt-github-badge]][c-lexopt-github]
+[![lexopt-lib.rs][c-lexopt-lib.rs-badge]][c-lexopt-lib.rs]
+
+Fast compile times, fast runtime, pedantic about correctness. API is less ergonomic
+
+### pico-args
+
+Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
+
+[![pico-args][c-pico_args-badge]][c-pico_args]
+[![pico-args-crates.io][c-pico_args-crates.io-badge]][c-pico_args-crates.io]
+[![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
+[![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO mention lexopt and pico-args
 </div>

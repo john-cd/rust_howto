@@ -35,6 +35,11 @@ The following would assert that a loop exists.
 
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
+[![walkdir][c-walkdir-badge]][c-walkdir]
+[![walkdir-crates.io][c-walkdir-crates.io-badge]][c-walkdir-crates.io]
+[![walkdir-github][c-walkdir-github-badge]][c-walkdir-github]
+[![walkdir-lib.rs][c-walkdir-lib.rs-badge]][c-walkdir-lib.rs]
+
 Find recursively in the current directory duplicate filenames{{hi:Duplicate filenames}}, printing them only once.
 
 ```rust,no_run
@@ -101,4 +106,23 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}то
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO cleanup badges
+TODO cover globset
+
+[![globset][c-globset-badge]][c-globset]
+[![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io]
+[![globset-github][c-globset-github-badge]][c-globset-github]
+[![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]
+
+High-performance globbing that allows multiple globs to be evaluated at once
+
+TODO cover ignore
+
+[![ignore][c-ignore-badge]][c-ignore]
+[![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io]
+[![ignore-github][c-ignore-github-badge]][c-ignore-github]
+[![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]
+
+Recursive filesystem walking that respects ignore files (like .gitignore)
+
 </div>

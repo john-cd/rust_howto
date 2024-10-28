@@ -43,4 +43,5 @@ In the following example, colors add to a table having a unique constraint on th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+`rusqlite` provides a sync API to SQLite + provides access to advanced sqlite features.
 </div>

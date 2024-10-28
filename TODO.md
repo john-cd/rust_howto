@@ -1,9 +1,11 @@
 # TODO
 
+- [ ] finish to review blessed.rs for crates that should be covered; create stubs in drafts WIP - done to Concurrency
+
 ## Links
 
-- [ ] create badge refdefs for links to RBE book - WIP
-- [ ] check (broken) links without corresponding reference definitions - WIP
+- [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
+- [ ] check (broken) links without corresponding reference definitions; uxe just script - WIP
 - [ ] review unused reference definitions (without links); add links / badges whereever it is needed - WIP
 
 ## Markdown
@@ -11,7 +13,6 @@
 - [ ] review each .md file in turn
 - [ ] hide sections that won't be worked on for a while
 - [ ] finish WIP drafts
-- [ ] finish to review blessed.rs for crates that should be covered; create stubs in drafts WIP
 
 ## Examples
 
