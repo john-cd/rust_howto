@@ -5,9 +5,11 @@ use tinytemplate::TinyTemplate;
 use tracing::info;
 
 mod crates;
+mod crates_alphabetical;
 mod crates_by_category;
 mod rbe;
 pub use crates::*;
+pub use crates_alphabetical::*;
 pub use crates_by_category::*;
 pub use rbe::*;
 
