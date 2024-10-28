@@ -4,11 +4,11 @@ use anyhow::Result;
 use tinytemplate::TinyTemplate;
 use tracing::info;
 
-mod category;
 mod crates;
+mod crates_by_category;
 mod rbe;
-pub use category::*;
 pub use crates::*;
+pub use crates_by_category::*;
 pub use rbe::*;
 
 fn build_template_engine<'a>() -> Result<TinyTemplate<'a>> {

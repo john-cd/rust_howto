@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-static CATEGORY: &str = r"| [![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]\{\{hi:{name | underscored}}} {{ endfor }}|";
+static CATEGORY_ROW: &str = r"| [![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]\{\{hi:{name}}} {{ endfor }}|";
 
 #[derive(Serialize)]
 struct Context<'a> {
@@ -27,13 +27,13 @@ pub fn create_category_and_crates(
     crate_names: Vec<&str>,
 ) -> Result<String> {
     let mut tt = super::build_template_engine()?;
-    tt.add_template("CATEGORY", CATEGORY)?;
+    tt.add_template("CATEGORY_ROW", CATEGORY_ROW)?;
     let context = Context {
         category: category.trim(),
         slug: slug.trim(),
         description: description.trim(),
         crate_names,
     };
-    let rendered = tt.render("CATEGORY", &context)?;
+    let rendered = tt.render("CATEGORY_ROW", &context)?;
     Ok(rendered)
 }
