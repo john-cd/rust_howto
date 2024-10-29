@@ -241,9 +241,9 @@ spell:
 
 # Check that URLs (to external websites) are valid and working
 check_urls:
-  -lychee --exclude-all-private --no-ignore --hidden --format detailed "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
+  -lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
   # We could also check ".devcontainer/*" "./**/*.sh"
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed -- -
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -- -
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
 # This does not check whether the reference definitions are used - see below.
 
