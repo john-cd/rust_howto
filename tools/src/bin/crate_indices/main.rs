@@ -39,7 +39,9 @@ fn main() -> anyhow::Result<()> {
                     .sorted()           // needs Itertools
                     .into_group_map(); // needs Itertools
 
-            for (cat, crate_names) in category_and_crates.iter().sorted_by_key(|x| x.0) {
+            for (cat, crate_names) in
+                category_and_crates.iter().sorted_by_key(|x| x.0)
+            {
                 let markdown = rust_howto_tools::create_category_and_crates(
                     &cat.category,
                     &cat.slug,
