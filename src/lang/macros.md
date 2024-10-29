@@ -23,9 +23,9 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
-[![proc_macro2][c-proc_macro2-badge]][c-proc_macro2]{{hi:proc_macro2}}  [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github]  [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
+[![proc_macro2][c-proc_macro2-badge]][c-proc_macro2]{{hi:proc-macro2}}  [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github]  [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
-[`proc_macro2`][c-proc_macro2]{{hi:proc_macro2}}⮳ [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
+[`proc_macro2`][c-proc_macro2]{{hi:proc-macro2}}⮳ [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
 [![syn][c-syn-badge]][c-syn]{{hi:syn}}
 [![syn-crates.io][c-syn-crates.io-badge]][c-syn-crates.io]

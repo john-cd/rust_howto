@@ -14,7 +14,7 @@ Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the 
 
 - [`tokio`][c-tokio]{{hi:tokio}}⮳  [![tokio-github][c-tokio-github-badge]][c-tokio-github]
 - [`tokio` glossary][c-tokio_glossary-website]⮳
-- [`tokio` tutorial][c-tokio_tutorial]{{hi:Tokio}}⮳
+- [`tokio` tutorial][c-tokio_tutorial]{{hi:tokio}}⮳
 - [![tokio_examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}
 - Tokio mini-Redis example: [![tokio-mini-redis][c-tokio_mini_redis-github-badge]][c-tokio_mini_redis-github]
 - Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template-github][rust-tokio-template-github-badge]][rust-tokio-template-github]

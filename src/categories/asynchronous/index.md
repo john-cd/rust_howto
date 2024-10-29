@@ -52,7 +52,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async_std}}. Most async applications, and some async crates, depend on a specific runtime.
+- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async-std}}. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes
 
@@ -60,7 +60,7 @@ In most cases, prefer the [`tokio`][p-tokio]{{hi:tokio}} runtime{{hi:Runtime}} -
 
 Alternatives to the Tokio async ecosystem include:
 
-- [![async_std][c-async_std-badge]][c-async_std]{{hi:async_std}}  [async_std][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
+- [![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}}  [async-std][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
 - [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [Smol][c-smol-crates.io]⮳
 - [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
 - [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.

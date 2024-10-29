@@ -1,6 +1,6 @@
 # Memory Management
 
-Deal with {{i:allocation}}, {{i:memory mapping}}, {{i:garbage collection}}, {{i:reference counting}}, or interfaces to foreign memory managers.
+Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garbage collection{{hi:Garbage collection}}, reference counting{{hi:Reference counting}}, or interfaces to foreign memory managers.
 
 {{#include global_static.incl.md}}
 

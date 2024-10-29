@@ -28,9 +28,9 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 
 ## Encode and decode hex
 
-[![data_encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+[![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-The [`data_encoding`][c-data_encoding]{{hi:data_encoding}}⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ containing the hexadecimal representation{{hi:Hexadecimal representation}} of the data.
+The [`data_encoding`][c-data_encoding]{{hi:data-encoding}}⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ containing the hexadecimal representation{{hi:Hexadecimal representation}} of the data.
 
 Similarly, a `HEXUPPER::decode` method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
 

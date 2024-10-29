@@ -6,7 +6,7 @@
 
 ## Linfa
 
-[![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}}  [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io]  [![linfa-website][c-linfa-website-badge]][c-linfa-website]  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Macgine learning}}
+[![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}}  [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io]  [![linfa-website][c-linfa-website-badge]][c-linfa-website]  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Machine learning}}
 
 ## Candle
 

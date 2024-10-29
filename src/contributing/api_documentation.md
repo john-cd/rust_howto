@@ -2,7 +2,7 @@
 
 Use `just doc` to generate the documentation for `docs.rs`{{hi:docs.rs}}.
 
-`cargo doc --open` does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` or live server to serve the files instead. See the `doc` recipe in [`justfile`][c-just-programmer-manual]{{hi:just}}⮳.
+`cargo doc --open` does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` or live server to serve the files instead. See the `doc` recipe in [`justfile`][c-just-programmer-manual]{{hi:just}}⮳.
 
 ### Using a Dev Container feature
 

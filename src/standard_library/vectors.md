@@ -4,7 +4,7 @@
 
 ## Vec
 
-[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Vec}{{hi:Vectors}}}
+[![std][c-std-badge]][c-std]{{hi:std}}{{hi:Vec}}{{hi:Vectors}}
 
 Vectors can only store values that are the same type.
 

@@ -1,6 +1,6 @@
 # Command Line
 
-Techniques to help create command line interfaces{{hi:Command line interface}}, such as argument parsers{{hi:Argument parsers}}, line editing{{hi:Line editing}}, or output coloring and formatting{{hi:Output coloring and formatting}}
+Techniques to help create command line interfaces{{hi:Command-line interface}}, such as argument parsers{{hi:Argument parsers}}, line editing{{hi:Line editing}}, or output coloring and formatting{{hi:Output coloring and formatting}}
 
 {{#include arguments.incl.md}}
 

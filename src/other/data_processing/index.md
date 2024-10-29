@@ -38,7 +38,7 @@ A fast {{i:CSV}} command line toolkit written in Rust. [xsv][c-xsv-github]{{hi:x
 
 ## See also
 
-Rust {{i:Data Engineering}} course By Alfredo Deza et al., O'Reilly
+Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
