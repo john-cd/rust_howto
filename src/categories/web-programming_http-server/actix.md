@@ -15,7 +15,7 @@ Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examp
 - [actix][c-actix-github]⮳
 - [realworld-actix-fullstack][realworld-actix-fullstack-github]⮳
 - [realworld-v1-rust-actix-web-diesel][realworld-v1-rust-actix-web-diesel-github]⮳
-- [auth-microservice-rust-actix-web1.0-diesel-complete-tutorial][auth-microservice-rust-actix-web]⮳
+- [auth-microservice-rust-actix-web1.0-diesel-complete-tutorial][blog-auth-web-microservice]⮳
 
 A performance focussed framework. All Rust frameworks are fast, but choose actix-web if you need the absolutely maximum performance.
 

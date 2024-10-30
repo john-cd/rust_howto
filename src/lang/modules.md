@@ -50,5 +50,5 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 
 <div class="hidden">
 TODO: review
-add [rust-module-system][rust-module-system]
+add rust-module-system
 </div>

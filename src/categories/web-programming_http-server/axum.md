@@ -6,7 +6,7 @@
 
 [Crates.io example source code (using Axum)][crates.io-example-source-code]⮳
 
-- [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-website]⮳ see also [realworld.how][realworld.how]⮳
+- [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳ see also [realworld.how][realworld.how]⮳
 - [Axum examples][c-axum-examples]⮳
 
 {{hi:axum}}

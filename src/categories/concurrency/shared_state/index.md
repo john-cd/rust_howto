@@ -56,4 +56,8 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
+
+parking_lot
+
+Parking Lot is faster than `std::sync::Mutex`.
 </div>

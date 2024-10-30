@@ -35,9 +35,9 @@ Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_g
 <div class="hidden">
 TODO: add
 
-- [tokio.rs][tokio-rs]
-- [tokio examples][tokio-examples]
-- [tokio-rs async-stream][tokio-async-stream]
+- [tokio.rs][c-tokio-website]
+- [tokio examples][c-tokio_examples]
+- [tokio-rs async-stream][c-async_stream-github]
 - [tokio-rs mio][c-mio-github]
 
 </div>

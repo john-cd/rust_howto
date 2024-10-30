@@ -14,7 +14,7 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 [Example real world app built with Rust + Yew + WebAssembly][c-yew-realworld-example]⮳  [![yew-realworld-example][c-yew-realworld-example-badge]][c-yew-realworld-example]
 
-[rust-yew-realworld-example-app][rust-yew-realworld-example-app-github]⮳
+[rust-yew-realworld-example-app][c-yew-realworld-example]⮳
 
 ## Others
 

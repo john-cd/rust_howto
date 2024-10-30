@@ -36,7 +36,7 @@
 
 [Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳
 
-[Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust]⮳
+[Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-and-next-js]⮳
 
 {{#include ../../refs/link-refs.md}}
 

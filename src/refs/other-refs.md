@@ -14,10 +14,8 @@
 [are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website?]: https://www.arewewebyet.org
 [asynchronics-github]: https://github.com/asynchronics
-[auth-microservice-rust-actix-web]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust
-[awesome-rust]: https://github.com/rust-unofficial/awesome-rust
 [aws-create-lambda-functions-with-rust]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
 [aws-doc-sdk-examples-github]: https://github.com/awsdocs/aws-doc-sdk-examples
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
@@ -39,7 +37,6 @@
 [blog-building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
 [blog-building-a-saas-with-rust-and-next-js]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust
 [blog-building-a-saas-with-rust-badge]: https://img.shields.io/badge/blog-building_a_saas_with_rust-beige
-[blog-building-a-saas-with-rust]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust
 [blog-candle]: https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
 [blog-cargo-machete-badge]: https://img.shields.io/badge/blog-cargo_machete-beige
 [blog-cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete
@@ -48,7 +45,6 @@
 [blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
 [blog-optimizing-ci-cd-pipelines-badge]: https://img.shields.io/badge/blog-optimizing_ci_cd_pipelines-beige
 [blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
-[blog-optimizing-ci-cd-pipelines]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
 [blog-practical-rust-badge]: https://img.shields.io/badge/blog-practical_rust-beige
 [blog-practical-rust]: https://dev.to/werner
 [blog-rust-build-times-badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
@@ -69,10 +65,8 @@
 [blog-tuify-badge]: https://img.shields.io/badge/blog-tuify-beige
 [blog-tuify]: https://developerlife.com/2023/09/17/tuify-clap
 [blog-what-is-blocking-badge]: https://img.shields.io/badge/blog-what_is_blocking-beige
-[blog-what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking
 [blog-working-with-env-variables-badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
 [blog-working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust
-[book-async-prog-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [book-asynchronous-programming-in-rust-badge]: https://img.shields.io/badge/Asynchronous_programming_in_rust-peru?logo=mdbook
 [book-asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
 [book-cargo-badge]: https://img.shields.io/badge/Cargo-peru?logo=mdbook
@@ -92,7 +86,6 @@
 [book-effective-rust-badge]: https://img.shields.io/badge/Effective_rust-peru?logo=mdbook
 [book-effective-rust]: https://www.oreilly.com/library/view/effective-rust/9781098151393
 [book-mdbook-badge]: https://img.shields.io/badge/mdBook-peru?logo=mdbook
-[book-mdbook]: https://rust-lang.github.io/mdBook/index.html
 [book-programming-rust-2nd-edition-badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
 [book-programming-rust-badge]: https://img.shields.io/badge/Programming_Rust-peru?logo=mdbook
@@ -225,7 +218,6 @@
 [cache-storage-backends]: https://docs.docker.com/build/cache/backends
 [cached-docker-images-badge]: https://img.shields.io/badge/Cached_docker_images-steelblue?logo=github
 [cached-docker-images]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md#cached-docker-images
-[cargo_plugins_install_action-github]: https://github.com/taiki-e/install-action
 [cheats-rs-website-badge]: https://img.shields.io/badge/cheats.rs-coral
 [cheats-rs-website]: https://cheats.rs
 [client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
@@ -234,6 +226,7 @@
 [codevoweb-website]: https://codevoweb.com
 [communicating-between-sync-and-async-code-website]: https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
 [comprehensive-rust]: https://google.github.io/comprehensive-rust
+[conc-map-bench]: https://github.com/xacrimon/conc-map-bench
 [concat-benchmark-github]: https://github.com/hoodie/concatenation_benchmarks-rs/blob/master/benches/lib.rs
 [concatenation_benchmarks-github]: https://github.com/hoodie/concatenation_benchmarks-rs
 [crates.io-category_slugs]: https://crates.io/category_slugs
@@ -241,7 +234,6 @@
 [crates.io-example-source-code]: https://github.com/rust-lang/crates.io/tree/main
 [crates.io-most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
 [crates.io-website]: https://crates.io
-[crates.io]: https://crates.io
 [creating-a-docker-container-action-website]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
 [csv-sample-badge]: https://img.shields.io/badge/csv_sample-steelblue?logo=github
 [csv-sample]: https://github.com/MuseumofModernArt/collection/blob/master/Artists.csv
@@ -373,7 +365,6 @@
 [realworld-example-apps-badge]: https://img.shields.io/badge/realworld_examples-steelblue?logo=github
 [realworld-example-apps]: https://github.com/gothinkster/realworld
 [realworld-rust-axum-sqlx-github]: https://github.com/JoeyMckenzie/realworld-rust-axum-sqlx
-[realworld-rust-axum-sqlx-website]: https://github.com/JoeyMckenzie/realworld-rust-axum-sqlx
 [realworld-v1-rust-actix-web-diesel-github]: https://github.com/snamiki1212/realworld-v1-rust-actix-web-diesel
 [realworld.how]: https://www.realworld.how
 [redox-github]: https://github.com/redox-os/redox
@@ -393,7 +384,6 @@
 [rust-course-github]: https://github.com/sunface/rust-course
 [rust-digger-website]: https://rust-digger.code-maven.com
 [rust-for-professionals-website]: https://overexact.com/rust-for-professionals
-[rust-for-professionals]: https://overexact.com/rust-for-professionals
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
@@ -415,7 +405,6 @@
 [rust-learning-linked-lists-website]: https://rust-unofficial.github.io/too-many-lists/index.html
 [rust-linz.at]: https://rust-linz.at
 [rust-module-system-website]: https://www.sheshbabu.com/posts/rust-module-system
-[rust-module-system]: https://www.sheshbabu.com/posts/rust-module-system
 [rust-on-nails-website-badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-on-nails-website]: https://rust-on-nails.com
 [rust-playground-website]: https://play.rust-lang.org
@@ -432,7 +421,6 @@
 [rust-tools]: https://www.rust-lang.org/tools
 [rust-unofficial-patterns-github]: https://github.com/rust-unofficial/patterns
 [rust-web-framework-comparison-github]: https://github.com/flosse/rust-web-framework-comparison
-[rust-yew-realworld-example-app-github]: https://github.com/jetli/rust-yew-realworld-example-app
 [rust]: https://www.rust-lang.org
 [rust_gpu-github-badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
 [rust_gpu-github]: https://github.com/EmbarkStudios/rust-gpu
@@ -465,9 +453,6 @@
 [stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
 [swc-github]: https://github.com/swc-project/swc
 [talent-plan-github]: https://github.com/pingcap/talent-plan
-[tokio-async-stream]: https://github.com/tokio-rs/async-stream
-[tokio-examples]: https://github.com/tokio-rs/tokio/tree/master/examples
-[tokio-rs]: https://tokio.rs
 [tower-middleware-from-scratch-badge]: https://img.shields.io/badge/tower_middleware_from_scratch-steelblue?logo=github
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
 [tree-sitter-github]: https://github.com/tree-sitter/tree-sitter

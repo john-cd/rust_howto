@@ -59,7 +59,7 @@ fn main() -> anyhow::Result<()> {
                 .sorted()
                 .map(|n| {
                     let f: String =
-                        n.chars().nth(0).unwrap().to_uppercase().collect();
+                        n.chars().next().unwrap().to_uppercase().collect();
                     (f, n)
                 })
                 .into_group_map();
@@ -68,7 +68,7 @@ fn main() -> anyhow::Result<()> {
             {
                 let markdown =
                     rust_howto_tools::create_alphabetical_crate_page_section(
-                        &first_letter,
+                        first_letter,
                         crates.iter().map(AsRef::as_ref).collect(),
                     )?;
                 println!("{}", markdown);

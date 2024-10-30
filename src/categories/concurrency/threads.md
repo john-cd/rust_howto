@@ -18,7 +18,7 @@ This example splits the array in half and performs the work in separate threads.
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-This example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ and [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ crates to create a parallel pipeline{{hi:Parallel pipeline}}, similar to that described in the ZeroMQ [guide][zero-mq-guide-website]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
+This example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ and [`crossbeam-channel`][c-crossbeam_channel]{{hi:crossbeam-channel}}⮳ crates to create a parallel pipeline{{hi:Parallel pipeline}}, similar to that described in the ZeroMQ [guide][zero-mq-guide-website]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
 
 We use bounded channels with a capacity of one using
 [`crossbeam_channel::bounded`][c-crossbeam_channel::bounded]{{hi:crossbeam_channel::bounded}}⮳. The producer must be on its own thread because it produces messages faster than the workers can process them (since they sleep for half a second) - this means the producer blocks on the call to
@@ -87,4 +87,39 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO
+
+## Channels
+
+### crossbeam-channel
+
+[![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam-channel}}
+[![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io]
+[![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github]
+[![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]
+
+The absolute fastest channel implementation available. Implements Go-like 'select' feature.
+
+### flume
+
+[![flume][c-flume-badge]][c-flume]{{hi:flume}}
+[![flume-crates.io][c-flume-crates.io-badge]][c-flume-crates.io]
+[![flume-github][c-flume-github-badge]][c-flume-github]
+[![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
+
+Smaller and simpler than crossbeam-channel and almost as fast
+
+### tokio
+
+Tokio's sync module provides channels for using in async code
+
+### postage
+
+[![postage][c-postage-badge]][c-postage]{{hi:postage}}
+[![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
+[![postage-github][c-postage-github-badge]][c-postage-github]
+[![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
+
+Channels that integrate nicely with async code, with different options than Tokio
+
 </div>

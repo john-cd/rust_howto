@@ -116,7 +116,7 @@ Example `.github/workflows/<name>.yml`
 
 ## See also
 
-[Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines]⮳
+[Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines-rust-project]⮳
 
 [Creating a docker container action][creating-a-docker-container-action-website]⮳
 

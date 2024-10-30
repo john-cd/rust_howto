@@ -210,7 +210,7 @@ utils cmd=help *subcmd=empty:
 templ cmd=help *subcmd=empty:
   cargo run -p rust_howto_tools --bin templ -- {{cmd}} {{subcmd}}
 
-# Creates the `crates by category` page
+# Creates the `crates by category` and `crates (alphabetical)` pages
 crate_indices cmd=help *subcmd=empty:
   cargo run -p rust_howto_tools --bin crate_indices -- {{cmd}} {{subcmd}}
 
@@ -246,6 +246,11 @@ check_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -- -
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
 # This does not check whether the reference definitions are used - see below.
+
+# Identify duplicate URLs
+duplicated_urls:
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
+
 
 # List links without corresponding reference definitions and vice versa
 refdefs:

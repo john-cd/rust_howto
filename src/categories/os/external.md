@@ -29,7 +29,7 @@ Opens the `python` interpreter using an external [`std::process::Command`][c-std
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
 
 [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:Process}}. Output of a child process is captured with a
-[`std::process::Stdio::piped`][c-std::process::Stdio::piped]{{hi:std::process::Stdio::piped}}⮳ between parent and child.
+`std::process::Stdio::piped`⮳ between parent and child.
 
 ```rust,no_run
 {{#include ../../../deps/tests/piped.rs}}
@@ -51,7 +51,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
-In [Run an external command and process stdout][p-run-an-external-command-and-process-stdout], processing doesn't start until external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls [`std::process::Stdio::piped`][c-std::process::Stdio::piped]{{hi:std::process::Stdio::piped}}⮳ to create a pipe, and reads
+In [Run an external command and process stdout][p-run-an-external-command-and-process-stdout], processing doesn't start until external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
 [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ continuously as soon as the [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ is updated.
 
 The below recipe is equivalent to the Unix shell command

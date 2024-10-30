@@ -1,6 +1,6 @@
 # Fuzzing
 
-[fuzzing][c-fuzzing-github]
+[fuzzing][c-afl-github]
 
 [![afl][c-afl-badge]][c-afl]{{hi:afl}}
 [![afl-crates.io][c-afl-crates.io-badge]][c-afl-crates.io]

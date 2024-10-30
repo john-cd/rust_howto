@@ -28,9 +28,9 @@
 - Rust by Example [doc.rust-lang.org/rust-by-example][rust-by-example]⮳
 - Rust by practice [practice.course.rs][practice.course.rs]⮳
 - free Rust course developed by the Android team at Google. The course covers the full spectrum of Rust, from basic syntax to advanced topics like generics and error handling. [comprehensive-rust][comprehensive-rust]⮳
-- Rust for professionals [rust-for-professionals][rust-for-professionals]⮳
+- Rust for professionals [rust-for-professionals-website][rust-for-professionals-website]⮳
 - A half-hour to learn Rust [a-half-hour-to-learn-rust][a-half-hour-to-learn-rust]⮳
-- [awesome-rust][awesome-rust-github]⮳
+- [awesome-rust-github][awesome-rust-github]⮳
 A curated list of Rust code and resources.
 - Top 15 Rust Projects To Elevate Your Skills [rust-practice-projects][rust-practice-projects]⮳
 - Rust mastery exercises. Become your team's resident Rust expert. [app.codecrafters.io/tracks/rust][app.codecrafters.io/tracks/rust]⮳

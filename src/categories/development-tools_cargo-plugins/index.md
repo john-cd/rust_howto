@@ -167,7 +167,7 @@ Cargo subcommand for configuring Cargo projects for best performance. [cargo-wiz
 
 ## GitHub action for cargo plugins
 
-GitHub Action for installing development tools (mainly from GitHub Releases). List of tools: [cargo plugins][cargo_plugins_install_action-github]⮳
+GitHub Action for installing development tools (mainly from GitHub Releases).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

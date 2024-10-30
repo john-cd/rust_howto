@@ -67,7 +67,7 @@ Alternatives to the Tokio async ecosystem include:
 
 ## See also
 
-[Asynchronous Programming in Rust][book-async-prog-rust]
+[Asynchronous Programming in Rust][book-asynchronous-programming-in-rust]
 
 [p-tokio]: tokio.md
 {{#include refs.incl.md}}

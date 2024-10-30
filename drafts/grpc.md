@@ -8,3 +8,10 @@
 [![tonic-lib.rs][c-tonic-lib.rs-badge]][c-tonic-lib.rs]
 
 gRPC over HTTP/2 with full support for asynchronous code. Works with tokio
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
+</div>

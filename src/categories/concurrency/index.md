@@ -53,4 +53,13 @@ TODO: add crossbeam
 
 [crossbeam][c-crossbeam-github]{{hi:crossbeam}}
 
+## arc-swap
+
+[![arc-swap][c-arc_swap-badge]][c-arc_swap]{{hi:arc-swap}}
+[![arc-swap-crates.io][c-arc_swap-crates.io-badge]][c-arc_swap-crates.io]
+[![arc-swap-github][c-arc_swap-github-badge]][c-arc_swap-github]
+[![arc-swap-lib.rs][c-arc_swap-lib.rs-badge]][c-arc_swap-lib.rs]
+
+Atomically swappable Arc
+
 </div>

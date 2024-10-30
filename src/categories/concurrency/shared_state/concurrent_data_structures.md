@@ -27,4 +27,17 @@
 
 <div class="hidden">
 TODO: add crate badges
+TODO add flurry
+
+## flurry
+
+[![flurry][c-flurry-badge]][c-flurry]{{hi:flurry}}
+[![flurry-crates.io][c-flurry-crates.io-badge]][c-flurry-crates.io]
+[![flurry-github][c-flurry-github-badge]][c-flurry-github]
+[![flurry-lib.rs][c-flurry-lib.rs-badge]][c-flurry-lib.rs]
+
+Particularly good for read-heavy workloads.
+
+[conc map bench][conc-map-bench] comparative benchmarks of concurrent HashMaps.
+
 </div>
