@@ -8,7 +8,7 @@
 
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/dotenvy.rs}}
 ```
 

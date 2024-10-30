@@ -18,7 +18,7 @@ See [Async: What is blocking? blog post][blog-async-what-is-blocking]⮳.
 
 Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ to run a _small portion_ of synchronous code{{hi:Synchronous code}}.
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_blocking.rs}}
 ```
 
@@ -26,7 +26,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}{{hi:rayon}}
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/call_blocking_from_async_rayon.rs}}
 ```
 
@@ -36,7 +36,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 
 If a blocking operation{{hi:Blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:Dedicated thread}}.
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/call_blocking_from_async_spawn_dedicated_thread.rs}}
 ```
 
@@ -52,7 +52,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [`futures_executor`][c-futures_executor]{{hi:futures_executor}}⮳ includes a minimal executor. The [`futures_executor::block_on`][c-futures_executor::block_on]{{hi:futures_executor::block_on}}⮳ function is useful if you want to run an async function synchronously in codebase that is mostly synchronous.
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/call_async_from_blocking_futures_executor.rs}}
 ```
 
@@ -60,7 +60,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/call_async_from_blocking_tokio_runtime.rs}}
 ```
 

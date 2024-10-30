@@ -55,7 +55,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳  [`semver::VersionReq::matches`][c-semver::VersionReq::matches]{{hi:semver::VersionReq::matches}}⮳ compares
 [`semver::VersionReq`][c-semver::VersionReq]{{hi:semver::VersionReq}} to the parsed version. The command output resembles "git version x.y.z".
 
-```rust,no_run
+```rust
 {{#include ../../../../deps/tests/semver-command.rs}}
 ```
 

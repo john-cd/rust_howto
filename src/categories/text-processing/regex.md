@@ -42,7 +42,7 @@ Reads a file named `application.log` and only outputs the lines containing “ve
 
 A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ composes a [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ Since backslashes are very common in regular expressions{{hi:Regular expressions}}, using [raw string literals][book-rust-raw-string-literals]⮳ makes them more readable.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/filter-log.rs}}
 ```
 

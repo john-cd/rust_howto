@@ -19,7 +19,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 Use [`same_file::Handle`][c-same_file::Handle]{{hi:same_file::Handle}}⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/same-file.rs}}
 ```
 

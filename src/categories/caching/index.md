@@ -8,7 +8,7 @@ Store the results of previous computations in order to reuse the results.
 
 [![lru][c-lru-badge]][c-lru]{{hi:lru}}  [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/lru.rs}}
 ```
 

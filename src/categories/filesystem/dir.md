@@ -27,7 +27,7 @@ ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
 
 The following would assert that a loop exists.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/loops.rs}}
 ```
 
@@ -42,7 +42,7 @@ The following would assert that a loop exists.
 
 Find recursively in the current directory duplicate filenames{{hi:Duplicate filenames}}, printing them only once.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/duplicate-name.rs}}
 ```
 
@@ -52,7 +52,7 @@ Find recursively in the current directory duplicate filenames{{hi:Duplicate file
 
 Find JSON files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c-walkdir::WalkDir::follow_links]{{hi:walkdir::WalkDir::follow_links}}⮳ ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/find-file.rs}}
 ```
 
@@ -64,7 +64,7 @@ Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:
 
 Root dir `"."` yields through `walkdir::WalkDir::depth` usage in `is_not_hidden` predicate.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/skip-dot.rs}}
 ```
 
@@ -86,7 +86,7 @@ Recursively find all PNG files in the current directory. In this case, the `**` 
 
 Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/png.rs}}
 ```
 
@@ -98,7 +98,7 @@ Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.pn
 
 A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}⮳ struct is passed to the [`glob::glob_with`][c-glob::glob_with]{{hi:glob::glob_with}}⮳ function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c-std::default::Default]{{hi:std::default::Default}}⮳.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/ignore-case.rs}}
 ```
 

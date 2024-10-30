@@ -6,7 +6,7 @@
 
 Rust has no `null`{{hi:null}}. Instead, use [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳:
 
-```rust,ignore
+```rust
 enum Option<T> {
   None,
   Some(T),
@@ -44,7 +44,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 
 ## Combinators
 
-```rust,no_run
+```rust
 {{#include ../../deps/tests/options3.rs}}
 ```
 

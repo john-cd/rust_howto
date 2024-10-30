@@ -46,31 +46,31 @@ Or with a custom formatting layer
 
 ## Events
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/tracing.rs}}
 ```
 
 ## Spans
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/tracing_spans.rs}}
 ```
 
 One-liner with `.entered()`:
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/tracing_span_entered.rs}}
 ```
 
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳.
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/tracing_span_in_scope.rs}}
 ```
 
 ## Add tracing spans to functions
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/tracing_instrument.rs}}
 ```
 

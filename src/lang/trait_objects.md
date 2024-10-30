@@ -10,7 +10,7 @@ A type like `&ClickCallback` or `Box<dyn ClickCallback>` where `ClickCallback` i
 
 The set of traits after [`dyn`][keyword-dyn]{{hi:dyn}} is made up of an [object-safe-reference][book-rust-reference-object-safe]⮳ base trait plus any number of autotraits{{hi:Autotraits}} (one of [`std::marker::Send`][c-std::marker::Send]{{hi:std::marker::Send}}⮳, [`std::marker::Sync`][c-std::marker::Sync]{{hi:std::marker::Sync}}⮳, [`std::marker::Unpin`][c-std::marker::Unpin]{{hi:std::marker::Unpin}}⮳, [`std::panic::UnwindSafe`][c-std::panic::UnwindSafe]{{hi:std::panic::UnwindSafe}}⮳, and [`std::panic::RefUnwindSafe`][c-std::panic::RefUnwindSafe]{{hi:std::panic::RefUnwindSafe}}⮳ - see [special traits][book-rust-reference-special-traits]⮳).
 
-```rust,ignore
+```rust,compile_fail
 dyn Trait
 dyn Trait + Send
 dyn Trait + Send + Sync

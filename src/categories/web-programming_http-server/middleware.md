@@ -22,7 +22,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 [`Tower HTTP`][c-tower_http]{{hi:tower_http}}⮳ contains HTTP specific Tower utilities.
 
-```rust,noplayground,ignore
+```rust,noplayground
 {{#include ../../../deps/tests/tower_http.rs}}
 ```
 

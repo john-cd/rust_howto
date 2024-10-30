@@ -9,7 +9,7 @@ Crates to help with sending, receiving, formatting, and parsing email.
 [![lettre-github][c-lettre-github-badge]][c-lettre-github]
 [![lettre-lib.rs][c-lettre-lib.rs-badge]][c-lettre-lib.rs]
 
-```rust
+```rust,noplayground
 {{#include ../../../deps/tests/lettre.rs}}
 ```
 

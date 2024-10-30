@@ -20,13 +20,13 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for Message passing.
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/message_passing_crossbeam_channel.rs}}
 ```
 
 Example using specialized channels for tickers{{hi:Tickers}} and timeout{{hi:Timeouts}}
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../deps/tests/message_passing_crossbeam_channel_after_tick.rs}}
 ```
 

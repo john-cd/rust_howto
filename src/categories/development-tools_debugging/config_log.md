@@ -72,7 +72,7 @@ stderr output will contain
 
 Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file::FileAppender`][c-log4rs::append::file::FileAppender]{{hi:log4rs::append::file::FileAppender}}⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`log4rs::encode::pattern`][c-log4rs::encode::pattern]{{hi:log4rs::encode::pattern}}⮳ Assigns the configuration to [`log4rs::config::Config`][c-log4rs::config::Config]{{hi:log4rs::config::Config}}⮳ and sets the default [`log::LevelFilter`][c-log::LevelFilter]{{hi:log::LevelFilter}}⮳
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/log-custom.rs}}
 ```
 

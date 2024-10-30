@@ -2,7 +2,7 @@
 
 {{i:Attributes}} can take arguments with different syntaxes:
 
-```rust,ignore
+```rust,compile_fail
 #[attribute = "value"]
 #[attribute(key = "value")]
 #[attribute(value)]

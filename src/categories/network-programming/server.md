@@ -8,7 +8,7 @@
 
 In this example, the port{{hi:Port}} is displayed on the console, and the program will listen until a request is made. [`std::net::SocketAddrV4`][c-std::net::SocketAddrV4]{{hi:std::net::SocketAddrV4}}⮳ assigns a random port when setting port to 0.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/listen-unused.rs}}
 ```
 

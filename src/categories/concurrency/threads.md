@@ -57,7 +57,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 
 This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ iterates the current directory and calls [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/threadpool-walk.rs}}
 ```
 
@@ -79,7 +79,7 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 [`image::ImageBuffer::put_pixel`][c-image::ImageBuffer::put_pixel]{{hi:image::ImageBuffer::put_pixel}}⮳ uses the data to set the pixel color.
 [`image::ImageBuffer::save`][c-image::ImageBuffer::save]{{hi:image::ImageBuffer::save}}⮳ writes the image to `output.png`.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/threadpool-fractal.rs}}
 ```
 

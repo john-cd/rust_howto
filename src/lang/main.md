@@ -6,7 +6,7 @@
 
 ## Async Main Function
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../deps/tests/async_main.rs}}
 ```
 

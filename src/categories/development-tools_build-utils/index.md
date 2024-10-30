@@ -32,7 +32,7 @@ error-chain = "0.11"
 
 ### `build.rs`
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/cc-bundled-static.rs}}
 ```
 
@@ -52,7 +52,7 @@ void greet(const char* name) {
 
 ### `src/main.rs`
 
-```rust,ignore
+```rust
 {{#include ../../../deps/tests/cc-bundled-static1.rs}}
 ```
 
@@ -75,7 +75,7 @@ cc = "1"
 
 ### `build.rs` (static C++)
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/cc-bundled-cpp.rs}}
 ```
 
@@ -93,7 +93,7 @@ int multiply(int x, int y) {
 
 ### `src/main.rs` (static C++)
 
-```rust,ignore
+```rust
 {{#include ../../../deps/tests/cc-bundled-cpp1.rs}}
 ```
 
@@ -121,7 +121,7 @@ cc = "1"
 
 ### `build.rs` (custom defines)
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/cc-defines.rs}}
 ```
 
@@ -140,7 +140,7 @@ void print_app_info() {
 
 ### `src/main.rs` (custom defines)
 
-```rust,ignore
+```rust
 {{#include ../../../deps/tests/cc-defines1.rs}}
 ```
 

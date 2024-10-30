@@ -32,7 +32,7 @@ The [`mime`][c-mime]{{hi:mime}}⮳ crate also defines some commonly used MIME ty
 
 Note that the [`reqwest::header`][c-reqwest::header]{{hi:reqwest::header}}⮳ module is exported from the [`http`][c-http]{{hi:http}}⮳ crate.
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/request.rs}}
 ```
 

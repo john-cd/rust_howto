@@ -18,7 +18,7 @@
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-```rust,mdbook-runnable
+```rust
 {{#include ../../../../deps/tests/crossbeam_queue.rs}}
 ```
 

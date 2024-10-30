@@ -10,7 +10,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
-```rust,no_run,mdbook-runnable
+```rust
 {{#include ../../../../deps/tests/anyhow.rs}}
 ```
 
@@ -22,13 +22,13 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
-```rust,no_run,mdbook-runnable
+```rust
 {{#include ../../../../deps/tests/thiserror.rs}}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
-```rust,ignore
+```rust,compile_fail
 #[error("{var}")]   //⟶ write!("{}", self.var)
 #[error("{0}")]     //⟶ write!("{}", self.0)
 #[error("{var:?}")] //⟶ write!("{:?}", self.var)
@@ -43,11 +43,11 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}  [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
-```rust,ignore
+```rust
 {{#include ../../../../deps/tests/miette/mylib.rs}}
 ```
 
-```rust,ignore
+```rust
 {{#include ../../../../deps/tests/miette/main.rs}}
 ```
 

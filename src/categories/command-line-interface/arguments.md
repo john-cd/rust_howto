@@ -50,7 +50,7 @@ Your favorite number must be 256.
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}}  [(tutorial)][c-clap-tutorial]  [(cookbook)][c-clap-cookbook]  [![clap examples][c-clap-examples-badge]][c-clap-examples]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-```rust,no_run
+```rust
 {{#include ../../../deps/tests/clap.rs}}
 ```
 
