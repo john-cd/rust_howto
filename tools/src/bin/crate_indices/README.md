@@ -1,10 +1,13 @@
 # Index of crates
 
+The `crate_indices` tool creates indexes of crates e.g. by category and by alphabetical order.
+Run the tool via `just crate_indices`.
+
 ## 'crates by category' page
 
 To generate `crates_by_category.md`,
 
-Extract all crates listed in `crates.md`
+a. Extract all crates listed in `crates.md`
 
 ```sh
 grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tools/src/bin/crate_indices/crates.txt
@@ -14,14 +17,14 @@ grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tool
 `-P` for Perl regular expressions.
 `-o` to return only the matching part, not the whole line.
 
-Optionally, extract all crates currently used in the book examples from `deps/Cargo.toml`
+b. Optionally, extract all crates currently used in the book examples from `deps/Cargo.toml`
 
 ```sh
 just crate_indices l >> ./tools/src/bin/crate_indices/crates.txt
 sort -u ./tools/src/bin/crate_indices/crates.txt > ./tools/src/bin/crate_indices/crates.txt
 ```
 
-Then call the tool:
+c. Call the tool:
 
 ```sh
 cat ./tools/src/bin/crate_indices/crates.txt | just crate_indices c > output.md
@@ -31,7 +34,9 @@ cat ./tools/src/bin/crate_indices/crates.txt | just crate_indices c > output.md
 
 You can merge with the existing table in `crates_by_category.md` using `sort -u temp.md > temp2.md`
 
-## Alpahabetical list of crates used in the book
+## Alphabetical list of crates used in the book
+
+To generate the alphabetical index of crates, update `crates.txt` then use
 
 ```sh
 cat ./tools/src/bin/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
