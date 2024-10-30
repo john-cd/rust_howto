@@ -8,22 +8,7 @@
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like bitflags and enumflags without their downsides.
 
 ```rust
-use flagset::{FlagSet, flags};
-use std::os::raw::c_int;
-
-flags! {
-    enum FlagsA: u8 {
-        Foo,
-        Bar,
-        Baz,
-    }
-
-    enum FlagsB: c_int {
-        Foo,
-        Bar,
-        Baz,
-    }
-}
+{{#include ../../../deps/tests/flagset.rs}}
 ```
 
 {{#include refs.incl.md}}

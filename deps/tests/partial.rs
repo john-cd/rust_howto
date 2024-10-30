@@ -55,6 +55,7 @@ impl Iterator for PartialRangeIter {
 }
 
 #[test]
+#[ignore]
 fn test() -> Result<()> {
     let url = "https://httpbin.org/range/102400?duration=2";
     const CHUNK_SIZE: u32 = 10240;
