@@ -1,4 +1,4 @@
-mod async;
+mod async1;
 mod async2;
 mod async_channels_mpsc;
 mod async_channels_oneshot;

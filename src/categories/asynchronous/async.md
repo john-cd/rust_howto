@@ -11,7 +11,7 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/async.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/async1.rs}}
 ```
 
 As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
