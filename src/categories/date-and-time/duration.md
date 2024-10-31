@@ -11,7 +11,7 @@ Measures [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std:
 Calling [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::time::Instant::elapsed}}⮳ returns a [`std::time::Duration`][c-std::time::Duration]{{hi:std::time::Duration}}⮳ that we print at the end of the example. This method will not mutate or reset the [`std::time::Instant`][c-std::time::Instant]{{hi:std::time::Instant}}⮳ object.
 
 ```rust
-{{#include ../../../deps/tests/profile.rs}}
+{{#include ../../../deps/tests/cats/date_and_time/profile.rs}}
 ```
 
 ## Perform checked date and time calculations
@@ -26,7 +26,7 @@ Escape sequences that are available for the
 [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ can be found at [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/checked.rs}}
+{{#include ../../../deps/tests/cats/date_and_time/checked.rs}}
 ```
 
 ## Convert a local time to another timezone
@@ -36,7 +36,7 @@ Escape sequences that are available for the
 Gets the local time{{hi:Time}} and displays it using [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ and then converts it to the UTC{{hi:UTC}} standard using the [`chrono::DateTime::from_utc`][c-chrono::DateTime::from_utc]{{hi:chrono::DateTime::from_utc}}⮳ struct method. A time is then converted using the [`chrono::offset::FixedOffset`][c-chrono::offset::FixedOffset]{{hi:chrono::offset::FixedOffset}}⮳ struct and the UTC time is then converted to UTC+8 and UTC-2.
 
 ```rust
-{{#include ../../../deps/tests/timezone.rs}}
+{{#include ../../../deps/tests/cats/date_and_time/timezone.rs}}
 ```
 
 {{#include refs.incl.md}}

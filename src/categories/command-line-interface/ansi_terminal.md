@@ -13,7 +13,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 ## Printing colored text to the Terminal
 
 ```rust
-{{#include ../../../deps/tests/ansi_term_basic.rs}}
+{{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic.rs}}
 ```
 
 ### Bold text in Terminal
@@ -23,7 +23,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ struct. [`ansi_term::Style::new`][c-ansi_term::Style::new]{{hi:ansi_term::Style::new}}⮳ creates the struct, and properties chained.
 
 ```rust
-{{#include ../../../deps/tests/ansi_term_basic1.rs}}
+{{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic1.rs}}
 ```
 
 ### Bold and colored text in terminal
@@ -33,7 +33,7 @@ For anything more complex than plain foreground color changes, the code needs to
 [`ansi_term::Color`][c-ansi_term::Color]{{hi:ansi_term::Color}}⮳ implements many similar functions as [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ and can chain methods.
 
 ```rust
-{{#include ../../../deps/tests/ansi_term_basic2.rs}}
+{{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic2.rs}}
 ```
 
 {{#include refs.incl.md}}

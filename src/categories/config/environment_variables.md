@@ -9,7 +9,7 @@
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/dotenvy.rs}}
+{{#include ../../../deps/tests/cats/config/dotenvy.rs}}
 ```
 
 ## `std::env`
@@ -17,7 +17,7 @@
 To retrieve a single environment variable{{hi:Environment variables}},
 
 ```rust,should_panic
-{{#include ../../../deps/tests/env.rs}}
+{{#include ../../../deps/tests/cats/config/env.rs}}
 ```
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳
@@ -35,7 +35,7 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ```rust,should_panic,noplayground
-{{#include ../../../deps/tests/envy.rs}}
+{{#include ../../../deps/tests/cats/config/envy.rs}}
 ```
 
 ## See Also

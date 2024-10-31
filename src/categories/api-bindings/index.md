@@ -15,7 +15,7 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 Supports both calling python code from Rust and exposing Rust code to Python
 
 ```rust
-{{#include ../../../deps/tests/pyo3.rs}}
+{{#include ../../../deps/tests/cats/api_bindings/pyo3.rs}}
 ```
 
 ### Rust tools for Python

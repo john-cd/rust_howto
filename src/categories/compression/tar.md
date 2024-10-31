@@ -9,7 +9,7 @@
 Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::read::GzDecoder}}⮳) and extract ([`tar::Archive::unpack`][c-tar::Archive::unpack]{{hi:tar::Archive::unpack}}⮳) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
 
 ```rust
-{{#include ../../../deps/tests/tar_decompress.rs}}
+{{#include ../../../deps/tests/cats/compression/tar_decompress.rs}}
 ```
 
 ## Compress a directory into tarball
@@ -23,7 +23,7 @@ Creates a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ wrapped in [
 Adds contents of `/var/log` directory recursively into the archive under `backup/logs`path with [`tar::Builder::append_dir_all`][c-tar::Builder::append_dir_all]{{hi:tar::Builder::append_dir_all}}⮳. [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
 
 ```rust
-{{#include ../../../deps/tests/tar_compress.rs}}
+{{#include ../../../deps/tests/cats/compression/tar_compress.rs}}
 ```
 
 ## Decompress a tarball while removing a prefix from the paths
@@ -33,7 +33,7 @@ Adds contents of `/var/log` directory recursively into the archive under `backup
 Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Archive::entries}}⮳. Use [`std::path::Path::strip_prefix`][c-std::path::Path::strip_prefix]{{hi:std::path::Path::strip_prefix}}⮳ to remove the specified path prefix (`bundle/logs`). Finally, extract the [`tar::Entry`][c-tar::Entry]{{hi:tar::Entry}}⮳ via [`tar::Entry::unpack`][c-tar::Entry::unpack]{{hi:tar::Entry::unpack}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/tar_strip_prefix.rs}}
+{{#include ../../../deps/tests/cats/compression/tar_strip_prefix.rs}}
 ```
 
 {{#include refs.incl.md}}
