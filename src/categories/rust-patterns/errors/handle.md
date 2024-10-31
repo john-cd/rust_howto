@@ -28,7 +28,7 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, and the web service can all generate errors. Well defined Rust errors use [`foreign_links`][c-error_chain-foreign_links]⮳ An additional [`error_chain::example_generated::ErrorKind`][c-error_chain::example_generated::ErrorKind]{{hi:error_chain::example_generated::ErrorKind}}⮳ variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust
-{{#include ../../../../deps/tests/retain.rs}}
+{{#include ../../../../deps/tests/cats/rust_patterns/retain.rs}}
 ```
 
 ## Obtain backtrace of complex error scenarios
@@ -41,7 +41,7 @@ The below recipes attempts to deserialize the value `256` into a
 [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust
-{{#include ../../../../deps/tests/backtrace.rs}}
+{{#include ../../../../deps/tests/cats/rust_patterns/backtrace.rs}}
 ```
 
 Backtrace error rendered:

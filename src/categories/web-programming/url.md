@@ -13,7 +13,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ type.
 
 ```rust
-{{#include ../../../deps/tests/parse.rs}}
+{{#include ../../../deps/tests/cats/web_programming/parse.rs}}
 ```
 
 ## Create a base URL by removing path segments
@@ -23,7 +23,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c-url::PathSegmentsMut::clear]{{hi:url::PathSegmentsMut::clear}}⮳ removes paths and [`url::Url::set_query`][c-url::Url::set_query]{{hi:url::Url::set_query}}⮳ removes query string.
 
 ```rust
-{{#include ../../../deps/tests/base.rs}}
+{{#include ../../../deps/tests/cats/web_programming/base.rs}}
 ```
 
 ## Create new URLs from a base URL
@@ -33,7 +33,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:Relative path}}.
 
 ```rust
-{{#include ../../../deps/tests/new.rs}}
+{{#include ../../../deps/tests/cats/web_programming/new.rs}}
 ```
 
 ## Extract the URL origin (scheme / host / port)
@@ -43,13 +43,13 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to extract information about the URL it represents.
 
 ```rust
-{{#include ../../../deps/tests/origin.rs}}
+{{#include ../../../deps/tests/cats/web_programming/origin.rs}}
 ```
 
 [`url::Url::origin`][c-url::Url::origin]{{hi:url::Url::origin}}⮳ produces the same result.
 
 ```rust
-{{#include ../../../deps/tests/origin1.rs}}
+{{#include ../../../deps/tests/cats/web_programming/origin1.rs}}
 ```
 
 ## Remove fragment identifiers and query pairs from a URL
@@ -59,7 +59,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Position`][c-url::Position]{{hi:url::Position}}⮳ to strip unneeded URL parts.
 
 ```rust
-{{#include ../../../deps/tests/fragment.rs}}
+{{#include ../../../deps/tests/cats/web_programming/fragment.rs}}
 ```
 
 {{#include refs.incl.md}}

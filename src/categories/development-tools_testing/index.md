@@ -11,7 +11,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_testing/tests.rs}}
+{{#include ../../../deps/tests/cats/development_tools_testing/tests1.rs}}
 ```
 
 ## Custom message

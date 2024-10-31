@@ -7,7 +7,7 @@
 Using the Tower ecosystem:
 
 ```rust,noplayground
-{{#include ../../../deps/tests/cors.rs}}
+{{#include ../../../deps/tests/cats/web_programming_http_server/cors.rs}}
 ```
 
 {{#include ../../refs/link-refs.md}}

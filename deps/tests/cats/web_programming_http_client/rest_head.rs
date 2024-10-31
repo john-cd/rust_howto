@@ -1,10 +1,9 @@
 use std::time::Duration;
 
 use reqwest::ClientBuilder;
-use reqwest::Result;
 
 #[tokio::main]
-async fn main() -> Result<()> {
+async fn main() -> reqwest::Result<()> {
     let user = "ferris-the-crab";
     let request_url = format!("https://api.github.com/users/{}", user);
     println!("{}", request_url);
@@ -19,5 +18,11 @@ async fn main() -> Result<()> {
         println!("{} is not a user!", user);
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -9,7 +9,7 @@ fn parse_response(response: reqwest::blocking::Response) -> Result<u32> {
     Ok(b)
 }
 
-fn run() -> Result<()> {
+fn main() -> Result<()> {
     let url = "https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain".to_string();
     let response = reqwest::blocking::get(url)?;
     let random_value: u32 = parse_response(response)?;
@@ -17,6 +17,8 @@ fn run() -> Result<()> {
     Ok(())
 }
 
-fn main() -> Result<()> {
-    run()
+#[test]
+fn test() -> Result<()> {
+    main()?;
+    Ok(())
 }
