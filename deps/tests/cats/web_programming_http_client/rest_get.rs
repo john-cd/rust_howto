@@ -26,6 +26,7 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

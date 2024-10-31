@@ -18,7 +18,8 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
-// TODO
+// TODO test fails
+// requires network access
 #[test]
 #[ignore]
 fn test() -> anyhow::Result<()> {

@@ -32,7 +32,7 @@ fn main() {
     }
 }
 
-#[ignore]
+#[ignore = "requires SMTP credentials to run"]
 #[test]
 fn test() {
     main();

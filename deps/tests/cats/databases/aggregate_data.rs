@@ -33,7 +33,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-#[ignore]
+#[ignore = "requires a running postgres instance"]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

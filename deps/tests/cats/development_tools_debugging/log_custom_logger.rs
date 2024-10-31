@@ -33,7 +33,7 @@ fn main() -> Result<(), SetLoggerError> {
 }
 
 use rusty_fork::rusty_fork_test;
-
+// Runs in a separate process
 rusty_fork_test! {
 #[test]
 fn test() {

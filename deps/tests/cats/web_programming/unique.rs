@@ -43,6 +43,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
+// requires network access
 #[test]
 fn test() -> Result<()> {
     main()?;

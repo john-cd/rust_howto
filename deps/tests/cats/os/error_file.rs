@@ -1,4 +1,5 @@
-#[cfg(target_family = "unix")]
+#![cfg(target_family = "unix")]
+
 fn main() -> Result<(), std::io::Error> {
     use std::fs::File;
     use std::process::Command;
@@ -17,7 +18,6 @@ fn main() -> Result<(), std::io::Error> {
     Ok(())
 }
 
-#[cfg(target_family = "unix")]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

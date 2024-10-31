@@ -1,4 +1,5 @@
-#[cfg(target_family = "unix")]
+#![cfg(target_family = "unix")]
+
 fn main() -> anyhow::Result<()> {
     use std::process::Command;
     use std::process::Stdio;

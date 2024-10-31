@@ -55,6 +55,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+// requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

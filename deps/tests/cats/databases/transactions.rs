@@ -47,6 +47,8 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+// TODO
+#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

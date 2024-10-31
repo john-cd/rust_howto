@@ -18,7 +18,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-// TODO
+// TODO listens to a connection forever
 #[ignore]
 #[test]
 fn test() {

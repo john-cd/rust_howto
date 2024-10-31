@@ -32,7 +32,7 @@ fn main() -> Result<(), Error> {
 }
 
 // TODO
-#[ignore]
+#[ignore = "requires a running postgres instance"]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

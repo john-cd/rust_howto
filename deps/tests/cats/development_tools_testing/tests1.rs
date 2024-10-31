@@ -60,9 +60,9 @@ mod tests {
         }
     }
 
-    #[ignore]
+    #[ignore = "This test takes an hour to run. Only run it manually when needed"]
     #[test]
     fn expensive_test() {
-        // Code that takes an hour to run
+        // long-running code
     }
 }

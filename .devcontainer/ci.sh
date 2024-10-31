@@ -39,7 +39,8 @@ cargo build --workspace --all-targets --locked --profile ci
 cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
 ## Test all examples (integration tests in /deps/tests, examples in /deps/examples, skeptic tests in /deps/tests and any tests in /xmpl)
-cargo test --workspace --all-targets --locked --profile ci -- --show-output
+## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
+cargo nextest run --workspace --all-targets --locked --features ci --profile ci -- --show-output
 ## NOTE supersedes: mdbook test
 
 ## Add static assets

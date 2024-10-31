@@ -1,3 +1,5 @@
+#![cfg(target_family = "unix")]
+
 use std::collections::HashSet;
 use std::io::Write;
 use std::process::Command;

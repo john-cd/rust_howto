@@ -52,7 +52,7 @@ fn main() -> Result<()> {
 }
 
 // TODO
-#[ignore]
+#[ignore = "requires rusqlite DB"]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

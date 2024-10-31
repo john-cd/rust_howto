@@ -5,25 +5,24 @@ use serde::Deserialize;
 #[derive(Deserialize, Debug)]
 struct Configuration {
     port: u16,
-    items_per_page: u16,
 }
 
 fn main() {
     let c = envy::from_env::<Configuration>()
-        .expect("Please provide PORT and ITEMS_PER_PAGE env vars");
+        .expect("Please provide the PORT env variable");
 
     let c2 = envy::prefixed("MY_APP__")
         .from_env::<Configuration>()
-        .expect(
-            "Please provide MY_APP__PORT and MY_APP__ITEMS_PER_PAGE env vars",
-        );
+        .expect("Please provide MY_APP__PORT env variable");
 
     println!("c: {:?} c2: {:?}", c, c2);
 }
 
-// TODO
-#[ignore]
 #[test]
 fn test() {
+    unsafe {
+        std::env::set_var("PORT", "80");
+        std::env::set_var("MY_APP__PORT", "8080");
+    }
     main();
 }

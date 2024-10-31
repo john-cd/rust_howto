@@ -1,3 +1,5 @@
+#![cfg(target_family = "unix")]
+
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
@@ -5,7 +7,6 @@ use std::io::ErrorKind;
 use std::process::Command;
 use std::process::Stdio;
 
-#[cfg(target_family = "unix")]
 fn main() -> Result<(), Error> {
     // NOTE: `systemd` should be installed.
     let stdout = Command::new("journalctl")

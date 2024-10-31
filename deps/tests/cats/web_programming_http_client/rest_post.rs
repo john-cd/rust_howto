@@ -77,6 +77,7 @@ fn main() { println!("hello world!");}
     Ok(())
 }
 
+// requires network access
 #[test]
 fn test() {
     println!("{:?}", main());

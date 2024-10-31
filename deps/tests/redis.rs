@@ -22,7 +22,7 @@ fn main() -> Result<()> {
 }
 
 // TODO
-#[ignore]
+#[ignore = "requires a Redis instance"]
 #[test]
 fn test() -> Result<()> {
     let res = main();

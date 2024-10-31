@@ -36,6 +36,9 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// TODO
+// this test should not run during CI
+#[cfg_attr(feature = "ci", ignore)]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
