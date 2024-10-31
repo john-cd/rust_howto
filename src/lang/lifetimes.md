@@ -9,19 +9,19 @@ Prevent dangling references{{hi:Dangling references}}.
 `&'a mut i32` a mutable reference with an explicit lifetime
 
 ```rust
-{{#include ../../deps/tests/static_lifetime.rs}}
+{{#include ../../deps/tests/lang/static_lifetime.rs}}
 ```
 
 The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
 
 ```rust
-{{#include ../../deps/tests/generic_lifetime.rs}}
+{{#include ../../deps/tests/lang/generic_lifetime.rs}}
 ```
 
 ## Lifetime Annotations in Struct Definitions and methods
 
 ```rust
-{{#include ../../deps/tests/lifetime.rs}}
+{{#include ../../deps/tests/lang/lifetime.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

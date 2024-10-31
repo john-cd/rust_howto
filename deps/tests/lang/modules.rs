@@ -16,8 +16,8 @@ mod utils {
     pub fn insert_use() {}
 }
 // Absolute path - for code from the current crate, it starts with the
-// literal crate.
-use crate::utils::insert_use;
+// literal `crate`.
+use crate::modules::utils::insert_use;
 
 mod a {
     pub mod b {}
@@ -43,7 +43,7 @@ mod front_of_house {
 // root module, thus external code can use the path
 // `<crate>::hosting::add_to_waitlist()` instead of
 // `crate::front_of_house::hosting::add_to_waitlist()`.
-pub use crate::front_of_house::hosting;
+pub use front_of_house::hosting;
 
 fn main() {}
 

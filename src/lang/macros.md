@@ -7,7 +7,7 @@
 The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ```rust
-{{#include ../../deps/tests/macros.rs}}
+{{#include ../../deps/tests/lang/macros.rs}}
 ```
 
 ## Key crates

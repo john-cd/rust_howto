@@ -6,7 +6,7 @@ The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attribu
 
 [Derivable traits][book-rust-derivable-traits]{{hi:Derivable traits}}⮳
 
-{{#playground ../../deps/tests/derive.rs editable}}
+{{#playground ../../deps/tests/std/derive.rs editable}}
 
 You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code that is generated for your specific type.
 
@@ -21,7 +21,7 @@ See also:
 [Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}.
 
 ```rust,noplayground
-{{#include ../../deps/tests/derive_more.rs}}
+{{#include ../../deps/tests/std/derive_more.rs}}
 ```
 
 {{#include refs.incl.md}}

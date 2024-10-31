@@ -11,7 +11,7 @@
 
 /// This is the required documentation for S
 #[derive(Debug, Copy, Clone)]
-pub struct S;
+struct S;
 
 /// Here is the main test function!
 

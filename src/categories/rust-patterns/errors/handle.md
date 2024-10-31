@@ -15,7 +15,7 @@ The below recipe will tell how long the system has been running by opening the U
 Other recipes in this book will hide the [`error_chain`][c-error_chain]{{hi:error_chain}}⮳ boilerplate, and can be seen by expanding the code with the ⤢ button.
 
 ```rust
-{{#include ../../../../deps/tests/main.rs}}
+{{#include ../../../../deps/tests/lang/main_test.rs}}
 ```
 
 ## Avoid discarding errors during error conversions

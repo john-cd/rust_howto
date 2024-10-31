@@ -3,13 +3,13 @@
 [![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
 
 ```rust
-{{#include ../../deps/tests/closures.rs}}
+{{#include ../../deps/tests/lang/closures.rs}}
 ```
 
 ## Closure with type annotations
 
 ```rust
-{{#include ../../deps/tests/closures_with_type_annotations.rs}}
+{{#include ../../deps/tests/lang/closures_with_type_annotations.rs}}
 ```
 
 {{i:Closures}} can capture variables{{hi:Capture of variables}}
@@ -23,13 +23,13 @@ They preferentially capture variables by reference and only go lower when requir
 To force a move:
 
 ```rust
-{{#include ../../deps/tests/closures_move.rs}}
+{{#include ../../deps/tests/lang/closures_move.rs}}
 ```
 
 ## Closures as input parameters
 
 ```rust
-{{#include ../../deps/tests/closures_as_input_parameters.rs}}
+{{#include ../../deps/tests/lang/closures_as_input_parameters.rs}}
 ```
 
 - [`std::ops::Fn`][c-std::ops::Fn]{{hi:std::ops::Fn}}⮳: the closure uses the captured value by reference (`&T`)

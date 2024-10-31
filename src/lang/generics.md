@@ -5,7 +5,7 @@
 ## Generic Structs
 
 ```rust
-{{#include ../../deps/tests/generic_structs.rs}}
+{{#include ../../deps/tests/lang/generic_structs.rs}}
 ```
 
 {{#include ../refs/link-refs.md}}

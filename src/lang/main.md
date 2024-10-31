@@ -1,13 +1,13 @@
 # Main function
 
 ```rust
-{{#include ../../deps/tests/main.rs}}
+{{#include ../../deps/tests/lang/main_test.rs}}
 ```
 
 ## Async Main Function
 
 ```rust
-{{#include ../../deps/tests/async_main.rs}}
+{{#include ../../deps/tests/lang/async_main.rs}}
 ```
 
 {{hi:main()}}
