@@ -11,7 +11,7 @@ Queries GitHub [stargazers API v3][stargazers]⮳ with [`reqwest::get`][c-reqwes
 [`tokio::main`][c-tokio_tutorial_hello_tokio-website]{{hi:tokio::main}} is used to set up the async executor and the process waits for [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}} to complete before processing the response into User instances.
 
 ```rust
-{{#include ../../../deps/tests/rest-get.rs}}
+{{#include ../../../deps/tests/rest_get.rs}}
 ```
 
 ## Check if an API resource exists
@@ -23,7 +23,7 @@ Query the GitHub Users Endpoint using a HEAD request [`reqwest::Client::head`][c
 Due to both [`reqwest::ClientBuilder::build`][c-reqwest::ClientBuilder::build]{{hi:reqwest::ClientBuilder::build}}⮳ and [`reqwest::RequestBuilder::send`][c-reqwest::RequestBuilder::send]{{hi:reqwest::RequestBuilder::send}}⮳ returning [`reqwest::Error`][c-reqwest::Error]{{hi:reqwest::Error}}⮳ types, the shortcut [`reqwest::Result`][c-reqwest::Result]{{hi:reqwest::Result}}⮳ is used for the main function return type.
 
 ```rust
-{{#include ../../../deps/tests/rest-head.rs}}
+{{#include ../../../deps/tests/rest_head.rs}}
 ```
 
 ## Create and delete Gist with GitHub API
@@ -35,7 +35,7 @@ Creates a gist with POST request to GitHub [gists API v3][gist-api]⮳ using [`r
 The [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ is responsible for details of both requests including URL, body and authentication. The POST body from [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ macro provides arbitrary JSON body. Call to [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ sets the request body. [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ handles authentication. The call to [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ synchronously executes the requests.
 
 ```rust
-{{#include ../../../deps/tests/rest-post.rs}}
+{{#include ../../../deps/tests/rest_post.rs}}
 ```
 
 The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize access to [`GitHub API`][github-api]{{hi:GitHub API}}⮳. Typical use case would employ one of the much more complex [`OAuth`][oauth-website]{{hi:OAuth}}⮳ authorization flows.
@@ -57,7 +57,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]{{hi:GitHub API - Rate limiting}}⮳, as an example of how to handle remote server errors. This example uses the [`hyper::header!`][c-hyper::header!]{{hi:hyper::header!}}⮳ macro to parse the response header and checks for [`reqwest::StatusCode::FORBIDDEN`][c-reqwest::StatusCode::FORBIDDEN]{{hi:reqwest::StatusCode::FORBIDDEN}}⮳ If the response exceeds the rate limit, the example waits and retries.
 
 ```rust
-{{#include ../../../deps/tests/rate-limited.rs}}
+{{#include ../../../deps/tests/rate_limited.rs}}
 ```
 
 {{#include refs.incl.md}}

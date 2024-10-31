@@ -22,7 +22,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ establishes a connection to [https://paste.rs][paste.rs] following the [`reqwest::RequestBuilder`][c-reqwest::RequestBuilder]{{hi:reqwest::RequestBuilder}}⮳ pattern. Calling [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳ with a URL establishes the destination, [`reqwest::RequestBuilder::body`][c-reqwest::RequestBuilder::body]{{hi:reqwest::RequestBuilder::body}}⮳ sets the content to send by reading the file, and [`reqwest::RequestBuilder::send`][c-reqwest::RequestBuilder::send]{{hi:reqwest::RequestBuilder::send}}⮳ blocks until the file uploads and the response returns. [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳ returns the response and displays in the console.
 
 ```rust
-{{#include ../../../deps/tests/post-file.rs}}
+{{#include ../../../deps/tests/post_file.rs}}
 ```
 
 ## Make a partial download with HTTP range headers

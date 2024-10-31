@@ -33,7 +33,7 @@ error-chain = "0.11"
 ### `build.rs`
 
 ```rust
-{{#include ../../../deps/tests/cc-bundled-static.rs}}
+{{#include ../../../deps/tests/cc_bundled_static.rs}}
 ```
 
 ### `src/hello.c`
@@ -53,7 +53,7 @@ void greet(const char* name) {
 ### `src/main.rs`
 
 ```rust
-{{#include ../../../deps/tests/cc-bundled-static1.rs}}
+{{#include ../../../deps/tests/cc_bundled_static1.rs}}
 ```
 
 ## Compile and link statically to a bundled C++ library
@@ -76,7 +76,7 @@ cc = "1"
 ### `build.rs` (static C++)
 
 ```rust
-{{#include ../../../deps/tests/cc-bundled-cpp.rs}}
+{{#include ../../../deps/tests/cc_bundled_cpp.rs}}
 ```
 
 ### `src/foo.cpp` (static C++)
@@ -94,7 +94,7 @@ int multiply(int x, int y) {
 ### `src/main.rs` (static C++)
 
 ```rust
-{{#include ../../../deps/tests/cc-bundled-cpp1.rs}}
+{{#include ../../../deps/tests/cc_bundled_cpp1.rs}}
 ```
 
 ## Compile a C library while setting custom defines
@@ -122,7 +122,7 @@ cc = "1"
 ### `build.rs` (custom defines)
 
 ```rust
-{{#include ../../../deps/tests/cc-defines.rs}}
+{{#include ../../../deps/tests/cc_defines.rs}}
 ```
 
 ### `src/foo.c` (custom defines)
@@ -141,7 +141,7 @@ void print_app_info() {
 ### `src/main.rs` (custom defines)
 
 ```rust
-{{#include ../../../deps/tests/cc-defines1.rs}}
+{{#include ../../../deps/tests/cc_defines1.rs}}
 ```
 
 {{#include refs.incl.md}}

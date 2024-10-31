@@ -39,7 +39,7 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 [`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 
 ```rust
-{{#include ../../../deps/tests/endian-byte.rs}}
+{{#include ../../../deps/tests/endian_byte.rs}}
 ```
 
 {{#include refs.incl.md}}

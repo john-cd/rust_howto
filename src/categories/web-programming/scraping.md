@@ -9,7 +9,7 @@
 Use [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to perform a HTTP GET request{{hi:HTTP GET request}} and then use [`select::document::Document::from_read`][c-select::document::Document::from_read]{{hi:select::document::Document::from_read}}⮳ to parse the response into a HTML document{{hi:HTML document}}. [`select::document::Document::find`][c-select::document::Document::find]{{hi:select::document::Document::find}}⮳ with the criteria of [`select::predicate::Name`][c-select::predicate::Name]{{hi:select::predicate::Name}}⮳ is "a" retrieves all links. Call [`std-core::iter::Iterator::filter_map`][c-std-core::iter::Iterator::filter_map]{{hi:std-core::iter::Iterator::filter_map}}⮳ on the [`select::selection::Selection`][c-select::selection::Selection]{{hi:select::selection::Selection}}⮳ retrieves URLs from links that have the "href" [`select::node::Node::attr`][c-select::node::Node::attr]{{hi:select::node::Node::attr}}⮳ (attribute).
 
 ```rust
-{{#include ../../../deps/tests/extract-links.rs}}
+{{#include ../../../deps/tests/extract_links.rs}}
 ```
 
 ## Check a webpage for broken links

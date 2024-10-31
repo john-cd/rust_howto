@@ -68,7 +68,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 The following example shows how to serialize custom structs{{hi:Serialize custom structs}} as CSV records using the [`serde`][c-serde]{{hi:serde}}⮳ crate.
 
 ```rust
-{{#include ../../../deps/tests/serde-serialize.rs}}
+{{#include ../../../deps/tests/serde_serialize.rs}}
 ```
 
 ## Transform CSV column

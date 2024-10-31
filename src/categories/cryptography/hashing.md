@@ -9,7 +9,7 @@
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳
 
 ```rust
-{{#include ../../../deps/tests/sha-digest.rs}}
+{{#include ../../../deps/tests/sha_digest.rs}}
 ```
 
 ## Sign and verify a message with HMAC digest

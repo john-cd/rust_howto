@@ -9,7 +9,7 @@
 Runs `git log --oneline` as an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and inspects its [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ using [`regex::Regex`][c-regex::Regex]{{hi:regex::Regex}}⮳ to get the hash and message of the last 5 commits.
 
 ```rust
-{{#include ../../../deps/tests/process-output.rs}}
+{{#include ../../../deps/tests/process_output.rs}}
 ```
 
 ## Run an external command passing it stdin and check for an error code
@@ -19,7 +19,7 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 Opens the `python` interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
 
 ```rust
-{{#include ../../../deps/tests/send-input.rs}}
+{{#include ../../../deps/tests/send_input.rs}}
 ```
 
 ## Run piped external commands
@@ -44,7 +44,7 @@ Spawns a child process and redirects [`std::io::Stdout`][c-std::io::Stdout]{{hi:
 The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
 ```rust
-{{#include ../../../deps/tests/error-file.rs}}
+{{#include ../../../deps/tests/error_file.rs}}
 ```
 
 ## Continuously process child process' outputs
@@ -68,7 +68,7 @@ The below recipe is equivalent to the Unix shell command
 Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][c-std::env::var]{{hi:std::env::var}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/read-env-variable.rs}}
+{{#include ../../../deps/tests/read_env_variable.rs}}
 ```
 
 [p-run-an-external-command-and-process-stdout]: #run-an-external-command-and-process-stdout
