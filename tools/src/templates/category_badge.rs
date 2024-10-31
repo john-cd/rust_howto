@@ -2,7 +2,8 @@ use anyhow::Result;
 use serde::Serialize;
 
 /// Category badge
-pub static CAT_BADGE: &str = r"[![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} ";
+pub static CAT_BADGE: &str =
+    r"[![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} ";
 
 /// create_category_badge
 ///
