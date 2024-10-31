@@ -127,7 +127,7 @@ _generate-refdefs:
 
 # Generate the index and the category page.
 _generate-index-category:
-# TODO mdbook-utils
+# TODO
 
 # Add static assets to book output
 [unix]
@@ -143,7 +143,7 @@ _sitemap:
   mdbook-utils sitemap
 
 # Serve the book (incl. link checking)
-serve: build
+serve:
   mdbook serve -p 3000 -n 127.0.0.1 --open
   ## NOTE: conflicts with "port" / EXPOSE in the Docker / Docker compose configuration
   ## Or use: cd book/html ; python3 -m http.server 3000
@@ -163,7 +163,12 @@ quick:
   if [ -f ./book.toml ]; then
     mv -f ./book.toml ./book.toml.bak
   fi
-  MDBOOK_BOOK='{"title": "QUICK SERVE"}' mdbook serve -p 3001 -n 127.0.0.1 --open
+  # Make sure that the book builds in the same folder than `serve` - override
+  # [build]
+  # build-dir = "book/html"
+  # Also overwrite the title
+  MDBOOK_BUILD__BUILD_DIR="book/html" MDBOOK_BOOK='{"title": "QUICK SERVE"}' \
+  mdbook serve -p 3001 -n 127.0.0.1 --open
 # Note1: Using the env variable MDBOOK_* only seems to override existing values, not erase them.
 # Examples:
 #   MDBOOK_BOOK="$(toml2json ./book-dev.toml)" mdbook build
