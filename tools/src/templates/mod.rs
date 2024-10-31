@@ -1,19 +1,21 @@
 //! Build badges, index of the book, etc... using a template engine
 
-use anyhow::Result;
 use tinytemplate::TinyTemplate;
 use tracing::info;
 
+mod category_badge;
 mod crates;
 mod crates_alphabetical;
 mod crates_by_category;
 mod rbe;
+
+pub use category_badge::*;
 pub use crates::*;
 pub use crates_alphabetical::*;
 pub use crates_by_category::*;
 pub use rbe::*;
 
-fn build_template_engine<'a>() -> Result<TinyTemplate<'a>> {
+fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();
     // replace - by _ per the Rust convention for module names
     tt.add_formatter("underscored", |val, str| {
@@ -34,5 +36,20 @@ fn build_template_engine<'a>() -> Result<TinyTemplate<'a>> {
         }
         Ok(())
     });
+    tt.add_template("ALPHABETICAL_ROW", ALPHABETICAL_ROW)?;
+    tt.add_template("CAT_BADGE", CAT_BADGE)?;
+    tt.add_template("CATEGORY_ROW", CATEGORY_ROW)?;
+    tt.add_template("CRATE_BADGE", CRATE_BADGE)?;
+    tt.add_template("CRATE_REFDEFS", CRATE_REFDEFS)?;
+    tt.add_template("RBE", RBE)?;
     Ok(tt)
 }
+
+// problem: TinyTemplate is nor Sync + Send
+// can't do
+// use std::sync::OnceLock;
+// fn get_template_engine() -> &'static TinyTemplate<'static> {
+//   static INSTANCE: OnceLock<TinyTemplate<'static>> = OnceLock::new();
+//   let  t = INSTANCE.get_or_init(|| { build_template_engine() });
+//   t
+// }

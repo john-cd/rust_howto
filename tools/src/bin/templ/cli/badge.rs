@@ -1,6 +1,5 @@
 //! Handle the `badge` CLI subcommand
 
-use clap::Arg;
 use clap::ArgMatches;
 use clap::Command;
 
@@ -16,24 +15,14 @@ pub(super) fn subcommand_badge() -> Command {
         .visible_alias("b")
         .about("Create the markdown for a crate badge")
         .display_order(0)
-        .arg(
-            Arg::new("crate_name")
-                .required(true)
-                .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
-                .action(clap::ArgAction::Append)
-                .help("Enter the crate name(s)"),
-        )
+        .arg(super::arg_crate_name())
 }
 
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<BadgeCmdArgs> {
     let mut badge = None;
     if let Some(m) = matches.subcommand_matches("badge") {
         // "$ myapp badge" was run
-        let names = m
-            .get_many::<String>("crate_name")
-            .unwrap_or_default()
-            .map(|v| v.into())
-            .collect::<Vec<String>>();
+        let names = super::get_cmd_arg_crate_name(m);
         badge = Some(BadgeCmdArgs { names });
     }
     badge

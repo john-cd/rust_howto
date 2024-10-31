@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-static RBE: &str = "
+pub static RBE: &str = "
 [![Rust by example - {concept}][book-rust-by-example-{concept | underscored}-badge]][book-rust-by-example-{concept | underscored}]
 [book-rust-by-example-{concept | underscored}-badge]: https://img.shields.io/badge/Rust_By_Example-{concept | shielded}-violet?logo=mdbook
 [book-rust-by-example-{concept | underscored}]: https://doc.rust-lang.org/rust-by-example/{concept | underscored}.html
@@ -17,8 +17,7 @@ pub fn create_rbe_badge(concept: &str) -> Result<String> {
         concept: String,
     }
 
-    let mut tt = super::build_template_engine()?;
-    tt.add_template("RBE", RBE)?;
+    let tt = super::get_template_engine()?;
     let context = RbeContext {
         concept: concept.to_string(),
     };

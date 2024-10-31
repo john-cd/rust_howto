@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-static ALPHABETICAL_ROW: &str = r"## {first_letter}
+pub static ALPHABETICAL_ROW: &str = r"## {first_letter}
 
 {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]  {{ endfor }}
 ";
@@ -17,8 +17,7 @@ pub fn create_alphabetical_crate_page_section<'a>(
     first_letter: &'a str,
     crate_names: Vec<&'a str>,
 ) -> Result<String> {
-    let mut tt = super::build_template_engine()?;
-    tt.add_template("ALPHABETICAL_ROW", ALPHABETICAL_ROW)?;
+    let tt = super::get_template_engine()?;
     let context = Context {
         first_letter,
         crate_names,

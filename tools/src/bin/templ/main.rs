@@ -10,6 +10,7 @@ pub(crate) enum Cmd {
     None,
     Badges(BadgeCmdArgs),
     Rbe(RbeCmdArgs),
+    CategoryBadge(BadgeCmdArgs),
     Info(InfoCmdArgs),
 }
 
@@ -31,6 +32,16 @@ fn main() -> anyhow::Result<()> {
             for c in r.concepts {
                 let badge = create_rbe_badge(&c)?;
                 println!("{}", badge);
+            }
+        }
+        Cmd::CategoryBadge(c) => {
+            for n in c.names {
+                let name = n.trim();
+                for cat in rust_howto_tools::get_categories_for_crate(name)? {
+                    let markdown =
+                        create_category_badge(&cat.category, &cat.slug)?;
+                    println!("{}", markdown);
+                }
             }
         }
         Cmd::Info(i) => {

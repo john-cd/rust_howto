@@ -15,7 +15,7 @@ pub(super) fn subcommand_rbe() -> Command {
     Command::new("rbe")
         //.visible_alias("")
         .about("Create the markdown for a Rust By Example book badge")
-        .display_order(1)
+        .display_order(2)
         .arg(
             Arg::new("concept")
                 .required(true)
@@ -28,9 +28,9 @@ pub(super) fn subcommand_rbe() -> Command {
 
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<RbeCmdArgs> {
     let mut badge = None;
-    if let Some(matches) = matches.subcommand_matches("rbe") {
+    if let Some(m) = matches.subcommand_matches("rbe") {
         // "$ myapp rbe" was run
-        let concepts = matches
+        let concepts = m
             .get_many::<String>("concept")
             .unwrap_or_default()
             .map(|v| v.into())
