@@ -1,9 +1,15 @@
 # TODO
 
+- [ ] add autogeneration of category badge to templ
+- [ ] fix commented examples - remaining
+- [ ] move about*.rs to subfolder
+- [ ] incorporate new examples: cwd, dyn_clone, flagset, itertools, multimap, notify, redis, type_name...
+- [ ] add category badges to markdown example sections - partial
+- [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
+- [ ] move new drafts to src
+
 ## Links
 
-- [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
-- [ ] add autogeneration of category badge to templ
 - [ ] review unused reference definitions (without corresponding links in the markdown); add links / badges where it is needed - WIP
 
 ## Markdown
@@ -15,13 +21,11 @@
 
 ## Examples
 
-- [ ] fix commented examples - remaining
 - [ ] tower_http example polish; other examples have been checked against the rust playground
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] fix failing examples in drafts
 - [ ] finish to review ignore / no_run examples
 - [ ] integrate clap builder example
-- [ ] incorporate cwd.rs example + any other new examples
 - [ ] Make addt'l examples out of mdbook-utils, crate_indices, templ...
 - [ ] add shuttle.rs example
 

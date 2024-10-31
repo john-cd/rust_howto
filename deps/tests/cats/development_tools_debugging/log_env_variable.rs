@@ -37,7 +37,11 @@ fn init_logger() {
             .try_init();
 }
 
+use rusty_fork::rusty_fork_test;
+
+rusty_fork_test! {
 #[test]
 fn test() {
     main();
+}
 }

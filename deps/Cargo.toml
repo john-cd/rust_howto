@@ -207,6 +207,7 @@ cc = "1.0"
 #walkdir = "2"
 
 [dev-dependencies]
+rusty-fork = "0.3.0"
 ## we no longer use skeptic - see `build.rs`
 #skeptic = "0.13"
 

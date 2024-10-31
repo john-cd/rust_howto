@@ -22,8 +22,11 @@ fn main() {
     println!("So far, only Linux systems are supported.");
 }
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+use rusty_fork::rusty_fork_test;
+
+rusty_fork_test! {
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }

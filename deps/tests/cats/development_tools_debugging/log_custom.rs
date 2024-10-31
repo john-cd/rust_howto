@@ -22,8 +22,11 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+use rusty_fork::rusty_fork_test;
+
+rusty_fork_test! {
 #[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+fn test() {
+    main().unwrap();
+}
 }
