@@ -1,7 +1,11 @@
 use rand::Rng;
 
-#[test]
-fn test() {
+fn main() {
     let mut rng = rand::thread_rng();
     println!("Random f64: {}", rng.gen::<f64>());
+}
+
+#[test]
+fn test() {
+    main();
 }

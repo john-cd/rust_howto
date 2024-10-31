@@ -10,8 +10,7 @@ struct Record {
     id: Option<u64>,
 }
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let data = "name,place,id
 mark,sydney,46.5
 ashley,zurich,92
@@ -24,5 +23,11 @@ alisha,colombo,xyz";
         println!("{:?}", record);
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

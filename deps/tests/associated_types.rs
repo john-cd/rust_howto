@@ -15,5 +15,10 @@ trait Add<Rhs = Self> {
 }
 
 // TODO
+
+fn main() {}
+
 #[test]
-fn test() {}
+fn test() {
+    main();
+}

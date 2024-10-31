@@ -23,8 +23,7 @@ impl FromStr for Rgb {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let code: &str = r"#fa7268";
     match Rgb::from_str(code) {
         Ok(rgb) => {
@@ -47,4 +46,9 @@ fn test() {
             b: 104
         }
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

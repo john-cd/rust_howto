@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let x = 5; // x is immutable
 
     let x = x + 1; // redefines x
@@ -7,4 +6,9 @@ fn test() {
 
     let x = "example"; // the type can change
     println!("{x}");
+}
+
+#[test]
+fn test() {
+    main();
 }

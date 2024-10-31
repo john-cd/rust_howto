@@ -8,9 +8,13 @@ fn increment_all(input: &mut [i32]) {
     input.par_iter_mut().for_each(|p| *p += 1);
 }
 
-#[test]
-fn test() {
+fn main() {
     let mut v = [1, 2, 3];
     increment_all(&mut v[..]);
     println!("{}", sum_of_squares(&v[..]));
+}
+
+#[test]
+fn test() {
+    main();
 }

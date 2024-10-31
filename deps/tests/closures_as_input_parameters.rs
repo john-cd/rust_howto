@@ -20,7 +20,11 @@ where
     f(3)
 }
 
+fn main() {
+    apply(|| println!("applied"));
+}
+
 #[test]
 fn test() {
-    apply(|| println!("applied"));
+    main();
 }

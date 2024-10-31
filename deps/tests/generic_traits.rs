@@ -11,8 +11,12 @@ impl<T> Test<T> for SomeStruct {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     SomeStruct::test(1);
     SomeStruct::test(true);
+}
+
+#[test]
+fn test() {
+    main();
 }

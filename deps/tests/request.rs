@@ -4,8 +4,8 @@ use anyhow::Result;
 use mime::Mime;
 use reqwest::header::CONTENT_TYPE;
 
-#[tokio::test]
-async fn test() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let response =
         reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
             .await?;
@@ -30,5 +30,11 @@ async fn test() -> Result<()> {
         }
     };
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

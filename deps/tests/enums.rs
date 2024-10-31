@@ -14,7 +14,11 @@ impl Message {
     }
 }
 
+fn main() {
+    let _home = Message::ChangeColor(127, 0, 0); // <-- note the ::
+}
+
 #[test]
 fn test() {
-    let _home = Message::ChangeColor(127, 0, 0); // <-- note the ::
+    main();
 }

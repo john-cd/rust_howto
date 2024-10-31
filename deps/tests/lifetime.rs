@@ -9,8 +9,12 @@ impl<'a> ImportantExcerpt<'a> {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let ie = ImportantExcerpt { part: "a part" };
     println!("{}", ie.level());
+}
+
+#[test]
+fn test() {
+    main();
 }

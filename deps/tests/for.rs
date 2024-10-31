@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let a = [10, 20, 30, 40, 50];
 
     for element in a {
@@ -12,4 +11,9 @@ fn test() {
         // reverse enumeration
         println!("{number}!");
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

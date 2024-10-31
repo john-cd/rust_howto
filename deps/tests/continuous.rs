@@ -5,9 +5,7 @@ use std::io::ErrorKind;
 use std::process::Command;
 use std::process::Stdio;
 
-#[test]
-#[ignore]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let stdout = Command::new("journalctl")
         .stdout(Stdio::piped())
         .spawn()?
@@ -28,5 +26,12 @@ fn test() -> Result<(), Error> {
         .filter(|line| line.contains("usb"))
         .for_each(|line| println!("{}", line));
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -10,8 +10,7 @@ impl MyTrait for String {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let line = "The slithy structs did gyre and gimble the namespace";
 
     // Build a trait object holding a String.
@@ -24,4 +23,9 @@ fn test() {
     let x2 = dyn_clone::clone_box(&*x);
 
     x2.recite();
+}
+
+#[test]
+fn test() {
+    main();
 }

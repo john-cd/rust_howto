@@ -14,10 +14,14 @@ fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     match parse_port("123") {
         Ok(port) => println!("port: {}", port),
         Err(err) => panic!("{}", err),
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -1,8 +1,7 @@
 use tracing::span;
 use tracing::Level;
 
-#[test]
-fn test() {
+fn main() {
     let span = span!(Level::TRACE, "my_span");
     {
         // current lexical scope.
@@ -12,4 +11,9 @@ fn test() {
                                    // Any trace events that occur here
                                    // will occur within the span.
     } // Dropping the guard exits the span.
+}
+
+#[test]
+fn test() {
+    main();
 }

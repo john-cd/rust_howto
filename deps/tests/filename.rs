@@ -15,11 +15,15 @@ fn find_mimetype(filename: &str) -> Mime {
     res
 }
 
-#[test]
-fn test() {
+fn main() {
     let filenames = vec!["foobar.jpg", "foo.bar", "foobar.png"];
     for file in filenames {
         let mime = find_mimetype(file);
         println!("MIME for {}: {}", file, mime);
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

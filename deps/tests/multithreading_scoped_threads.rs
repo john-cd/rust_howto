@@ -10,8 +10,7 @@ fn read_contents<T: AsRef<Path>>(
     Ok(file.as_ref().to_string_lossy().into_owned())
 }
 
-#[test]
-fn test() {
+fn main() {
     // To share state between threads, consider using a channel
     let (tx, rx) = mpsc::channel();
 
@@ -38,4 +37,9 @@ fn test() {
     for received in rx {
         println!("Got: {:?}", received);
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

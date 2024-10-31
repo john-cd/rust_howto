@@ -15,8 +15,7 @@ impl<'a> fmt::Display for PhoneNumber<'a> {
     }
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let phone_text = "
     +1 505 881 9292 (v) +1 505 778 2212 (c) +1 505 881 9297 (f)
     (202) 991 9534
@@ -60,5 +59,11 @@ fn test() -> Result<()> {
         ]
     );
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -1,7 +1,6 @@
 use tracing_subscriber::fmt;
 
-#[test]
-fn test() {
+fn main() {
     // Configure a custom event formatter
     let format = fmt::format()
         .with_level(false) // Don't include levels in formatted output
@@ -16,3 +15,8 @@ fn test() {
 }
 
 // TODO
+
+#[test]
+fn test() {
+    main();
+}

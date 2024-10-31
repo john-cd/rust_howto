@@ -1,5 +1,5 @@
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     // This is running on Tokio. We may not block here.
 
     let blocking_task = tokio::task::spawn_blocking(|| {
@@ -8,4 +8,9 @@ async fn test() {
     });
 
     blocking_task.await.unwrap();
+}
+
+#[test]
+fn test() {
+    main();
 }

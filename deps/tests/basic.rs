@@ -4,8 +4,8 @@ use std::io::copy;
 use anyhow::Result;
 use tempfile::Builder;
 
-#[tokio::test]
-async fn test() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let tmp_dir = Builder::new().prefix("example").tempdir()?;
     let target = "https://www.rust-lang.org/logos/rust-logo-512x512.png";
     let response = reqwest::get(target).await?;
@@ -25,5 +25,11 @@ async fn test() -> Result<()> {
     };
     let content = response.text().await?;
     copy(&mut content.as_bytes(), &mut dest)?;
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

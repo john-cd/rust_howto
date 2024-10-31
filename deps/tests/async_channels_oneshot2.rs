@@ -38,8 +38,12 @@ async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-#[test]
-fn test() {
+fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(async { async_main().await }).unwrap();
+}
+
+#[test]
+fn test() {
+    main();
 }

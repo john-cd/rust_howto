@@ -8,8 +8,12 @@ impl MyHash for i64 {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let x = 1i64;
     println!("{}", x.myhash());
+}
+
+#[test]
+fn test() {
+    main();
 }

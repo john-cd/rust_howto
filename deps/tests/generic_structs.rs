@@ -31,9 +31,13 @@ impl<T: Display + PartialOrd> Point<T> {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let p = Point { x: 5, y: 10 };
 
     println!("p.x = {}", p.x());
+}
+
+#[test]
+fn test() {
+    main();
 }

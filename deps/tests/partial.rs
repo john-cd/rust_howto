@@ -54,9 +54,7 @@ impl Iterator for PartialRangeIter {
     }
 }
 
-#[test]
-#[ignore]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let url = "https://httpbin.org/range/102400?duration=2";
     const CHUNK_SIZE: u32 = 10240;
 
@@ -88,5 +86,12 @@ fn test() -> Result<()> {
     std::io::copy(&mut content.as_bytes(), &mut output_file)?;
 
     println!("Finished with success!");
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -6,7 +6,11 @@ fn my_string() -> &'static str {
     s
 }
 
+fn main() {
+    println!("{}", my_string());
+}
+
 #[test]
 fn test() {
-    println!("{}", my_string());
+    main();
 }

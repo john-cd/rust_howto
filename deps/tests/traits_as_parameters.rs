@@ -22,11 +22,15 @@ impl Summary for Article {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let a = Article {
         txt: String::from("some text"),
     };
     notify(&a);
     notify2(&a);
+}
+
+#[test]
+fn test() {
+    main();
 }

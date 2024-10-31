@@ -6,8 +6,7 @@ fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
     date_time.checked_sub_signed(Duration::try_days(1).unwrap())
 }
 
-#[test]
-fn test() {
+fn main() {
     let now = Utc::now();
     println!("{}", now);
 
@@ -29,4 +28,9 @@ fn test() {
             "We can't use chrono to tell the time for the Solar System to complete more than one full orbit around the galactic center."
         ),
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

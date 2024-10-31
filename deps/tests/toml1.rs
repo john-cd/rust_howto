@@ -16,8 +16,7 @@ struct Package {
     authors: Vec<String>,
 }
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let toml_content = r#"
           [package]
           name = "your_package"
@@ -35,5 +34,11 @@ fn test() -> Result<(), Error> {
     assert_eq!(package_info.package.authors, vec!["You! <you@example.org>"]);
     assert_eq!(package_info.dependencies["serde"], "1.0");
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

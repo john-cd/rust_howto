@@ -29,8 +29,7 @@ impl fmt::Display for MyFlags {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let e1 = MyFlags::FLAG_A | MyFlags::FLAG_C;
     let e2 = MyFlags::FLAG_B | MyFlags::FLAG_C;
     assert_eq!((e1 | e2), MyFlags::FLAG_ABC);
@@ -45,4 +44,9 @@ fn test() {
         format!("{:?}", MyFlags::FLAG_A | MyFlags::FLAG_B),
         "MyFlags(FLAG_A | FLAG_B)"
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

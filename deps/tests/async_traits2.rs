@@ -15,12 +15,16 @@ impl Container for MyContainer {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let c = MyContainer {
         items: vec![1, 2, 3],
     };
     for i in c.items {
         println!("{}", i);
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

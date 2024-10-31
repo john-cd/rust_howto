@@ -20,8 +20,7 @@ impl EventHandler for EventPrinter {
     }
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     // Automatically select the best implementation for your platform.
     let mut watcher = notify::recommended_watcher(EventPrinter)?;
 
@@ -29,5 +28,11 @@ fn test() -> Result<()> {
     // and below will be monitored for changes.
     watcher.watch(Path::new("."), RecursiveMode::Recursive)?;
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

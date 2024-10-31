@@ -11,8 +11,7 @@ pub struct HeadersEcho {
     pub headers: HashMap<String, String>,
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let url = url::Url::parse_with_params(
         "http://httpbin.org/headers",
         &[("lang", "rust"), ("browser", "servo")],
@@ -51,5 +50,11 @@ fn test() -> Result<()> {
     assert_eq!(out.headers["User-Agent"], "Rust-test");
     // assert_eq!(out.headers["X-MY-HEADER"], "value");
     println!("{:?}", out);
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

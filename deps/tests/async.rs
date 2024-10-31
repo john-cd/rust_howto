@@ -40,9 +40,14 @@ async fn do_something() {
 // ["full"] }` Technically, the #[tokio::main] attribute is a macro
 // that transforms it into a synchronous fn main() that initializes a
 // runtime instance and executes the async main function.
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     do_something().await;
     // note: `await` must be called or nothing is executing.
     // Futures are lazy
+}
+
+#[test]
+fn test() {
+    main();
 }

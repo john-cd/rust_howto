@@ -7,8 +7,7 @@ struct User {
     sign_in_count: u64,
 }
 
-#[test]
-fn test() {
+fn main() {
     // create an instance
     let _user1 = User {
         active: true,
@@ -16,4 +15,9 @@ fn test() {
         email: String::from("someone@example.com"),
         sign_in_count: 1,
     };
+}
+
+#[test]
+fn test() {
+    main();
 }

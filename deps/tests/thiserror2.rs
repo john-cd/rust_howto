@@ -32,8 +32,7 @@ fn example() -> Result<(), Box<dyn std::error::Error>> {
     }))
 }
 
-#[test]
-fn test() {
+fn main() {
     match example() {
         Ok(_) => {
             println!("Got OK");
@@ -42,4 +41,9 @@ fn test() {
             println!("Got {}", err);
         }
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

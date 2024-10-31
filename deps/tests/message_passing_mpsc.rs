@@ -2,8 +2,7 @@ use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
 
-#[test]
-fn test() {
+fn main() {
     let (tx, rx) = mpsc::channel();
     let tx2 = tx.clone();
     thread::spawn(move || {
@@ -27,4 +26,9 @@ fn test() {
     while let Ok(msg) = rx.recv() {
         println!("{msg}");
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

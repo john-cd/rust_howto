@@ -2,5 +2,9 @@
 #[allow(dead_code)]
 fn unused_function() {}
 
+fn main() {}
+
 #[test]
-fn test() {}
+fn test() {
+    main();
+}

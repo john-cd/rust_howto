@@ -7,8 +7,7 @@ use ring::pbkdf2;
 use ring::rand;
 use ring::rand::SecureRandom;
 
-#[test]
-fn test() -> Result<(), Unspecified> {
+fn main() -> Result<(), Unspecified> {
     const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
     let n_iter = NonZeroU32::new(100_000).unwrap();
     let rng = rand::SystemRandom::new();
@@ -48,4 +47,9 @@ fn test() -> Result<(), Unspecified> {
     assert!(should_fail.is_err());
 
     Ok(())
+}
+
+#[test]
+fn test() {
+    println!("{:?}", main());
 }

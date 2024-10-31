@@ -11,10 +11,14 @@ trait OutlinePrint: fmt::Display {
 // String implements Display. That would not work otherwise.
 impl OutlinePrint for String {}
 
-#[test]
-fn test() {
+fn main() {
     String::from("test").outline_print();
 }
 
 // BEWARE: supertrait are NOT inheritance!
 // TODO
+
+#[test]
+fn test() {
+    main();
+}

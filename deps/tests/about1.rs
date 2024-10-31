@@ -3,8 +3,7 @@ use std::str;
 
 use anyhow::Result;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let bytes = b"2001:db8::1";
 
     // Bytes to string.
@@ -14,5 +13,11 @@ fn test() -> Result<()> {
     let addr: IpAddr = s.parse()?;
 
     println!("{:?}", addr);
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
     Ok(())
 }

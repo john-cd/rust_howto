@@ -24,11 +24,15 @@ impl<A: Hash, B: Hash> Hash for Pair<A, B> {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let p = Pair {
         first: 1,
         second: "2",
     };
     print_hash(&p);
+}
+
+#[test]
+fn test() {
+    main();
 }

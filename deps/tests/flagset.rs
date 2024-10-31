@@ -17,5 +17,10 @@ flags! {
 }
 
 #[ignore]
+
+fn main() {}
+
 #[test]
-fn test() {}
+fn test() {
+    main();
+}

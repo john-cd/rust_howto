@@ -6,8 +6,7 @@ use tracing::trace;
 use tracing::warn;
 use tracing::Level;
 
-#[test]
-fn test() {
+fn main() {
     event!(Level::INFO, "something happened");
     error!("error!");
     warn!("warning!");
@@ -40,3 +39,8 @@ fn test() {
 
 #[derive(Debug)]
 struct S;
+
+#[test]
+fn test() {
+    main();
+}

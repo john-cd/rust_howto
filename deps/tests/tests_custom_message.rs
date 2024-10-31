@@ -1,6 +1,4 @@
-#[test]
-#[should_panic]
-fn test() {
+fn main() {
     let result = "Carl";
 
     assert!(
@@ -8,4 +6,10 @@ fn test() {
         "Greeting did not contain name, value was `{}`",
         result
     );
+}
+
+#[should_panic]
+#[test]
+fn test() {
+    main();
 }

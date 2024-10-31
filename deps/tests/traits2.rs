@@ -22,10 +22,14 @@ impl Summary for Blog {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let blog = Blog {
         author: "ferris".into(),
     };
     println!("{}", blog.summarize());
+}
+
+#[test]
+fn test() {
+    main();
 }

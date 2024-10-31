@@ -1,7 +1,6 @@
 use parking_lot::RwLock;
 
-#[test]
-fn test() {
+fn main() {
     let lock = RwLock::new(5);
 
     // many reader locks can be held at once
@@ -18,4 +17,9 @@ fn test() {
         *w += 1;
         assert_eq!(*w, 6);
     } // write lock is dropped here
+}
+
+#[test]
+fn test() {
+    main();
 }

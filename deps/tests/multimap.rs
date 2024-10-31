@@ -15,8 +15,7 @@ fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     Ok(crt.categories)
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let crate_names = vec!["toml", "config", "nom", "pest"];
 
     let mut m: MultiMap<String, &str> = MultiMap::new();
@@ -38,5 +37,11 @@ fn test() -> Result<()> {
     for (cat, names) in m.iter_all() {
         println!("Category: {:?}, names: {:?}", cat, names);
     }
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

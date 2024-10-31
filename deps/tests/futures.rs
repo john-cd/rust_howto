@@ -25,7 +25,12 @@ async fn race_tasks() {
     }
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     race_tasks().await;
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -46,8 +46,7 @@ impl<'de> Deserialize<'de> for HexColor {
     }
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let data = "color_name,color
 red,#ff0000
 green,#00ff00
@@ -73,5 +72,11 @@ magenta,#ff00ff"
     let written = String::from_utf8(out.into_inner()?)?;
     assert_eq!(Some("magenta,255,0,255"), written.lines().last());
     println!("{}", written);
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

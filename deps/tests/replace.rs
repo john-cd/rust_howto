@@ -11,9 +11,13 @@ fn reformat_dates(before: &str) -> Cow<str> {
     ISO8601_DATE_REGEX.replace_all(before, "$m/$d/$y")
 }
 
-#[test]
-fn test() {
+fn main() {
     let before = "2012-03-14, 2013-01-15 and 2014-07-05";
     let after = reformat_dates(before);
     assert_eq!(after, "03/14/2012, 01/15/2013 and 07/05/2014");
+}
+
+#[test]
+fn test() {
+    main();
 }

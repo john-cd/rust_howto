@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let mut stack = Vec::new();
 
     stack.push(1);
@@ -10,4 +9,9 @@ fn test() {
         // <-- while let
         println!("{}", top);
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

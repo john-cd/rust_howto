@@ -10,9 +10,7 @@ struct Cat {
     color: String,
 }
 
-#[test]
-#[ignore]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let conn = Connection::open("cats.db")?;
 
     let mut cat_colors = HashMap::new();
@@ -50,5 +48,12 @@ fn test() -> Result<()> {
         println!("Found cat {:?}", cat);
     }
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

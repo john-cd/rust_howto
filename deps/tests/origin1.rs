@@ -3,8 +3,7 @@ use url::Host;
 use url::Origin;
 use url::Url;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let s = "ftp://rust-lang.org/examples";
 
     let url = Url::parse(s)?;
@@ -18,5 +17,11 @@ fn test() -> Result<()> {
     assert_eq!(origin, expected);
     println!("The origin is as expected!");
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

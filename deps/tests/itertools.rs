@@ -1,8 +1,7 @@
 use itertools::chain;
 use itertools::Itertools;
 
-#[test]
-fn test() {
+fn main() {
     // assert_equal
     // PANIC assert_equal("exceed".split('c'), "excess".split('c'));
 
@@ -31,4 +30,9 @@ fn test() {
     assert_eq!(lookup.get(&1), None);
     assert_eq!(lookup[&2], vec![12, 42]);
     assert_eq!(lookup[&3], vec![13, 33])
+}
+
+#[test]
+fn test() {
+    main();
 }

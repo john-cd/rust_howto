@@ -1,8 +1,7 @@
 use toml::de::Error;
 use toml::Value;
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let toml_content = r#"
           [package]
           name = "your_package"
@@ -21,5 +20,11 @@ fn test() -> Result<(), Error> {
         Some("your_package")
     );
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

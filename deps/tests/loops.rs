@@ -19,9 +19,7 @@ fn contains_loop<P: AsRef<Path>>(
     Ok(None)
 }
 
-#[test]
-#[ignore]
-fn test() {
+fn main() {
     assert_eq!(
         contains_loop("/tmp/foo/bar/baz/qux/bar/baz").unwrap(),
         Some((
@@ -29,4 +27,10 @@ fn test() {
             PathBuf::from("/tmp/foo/bar/baz/qux")
         ))
     );
+}
+
+#[ignore]
+#[test]
+fn test() {
+    main();
 }

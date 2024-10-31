@@ -1,8 +1,7 @@
 use std::io;
 use std::io::BufRead;
 
-#[test]
-fn test() {
+fn main() {
     let mut cursor = io::Cursor::new(b"foo\nbar");
     let mut buf = String::new();
 
@@ -17,4 +16,9 @@ fn test() {
     // Alternative: `unwrap` panics if there is an error
     // let _greeting_file =
     // std::fs::File::open("temp/hello.txt").unwrap();
+}
+
+#[test]
+fn test() {
+    main();
 }

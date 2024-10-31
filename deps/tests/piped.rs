@@ -1,6 +1,5 @@
-#[test]
 #[cfg(target_family = "unix")]
-fn test() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     use std::process::Command;
     use std::process::Stdio;
 
@@ -39,5 +38,11 @@ fn test() -> anyhow::Result<()> {
         }
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

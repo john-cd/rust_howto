@@ -13,7 +13,12 @@ fn fetch_an_integer() -> redis::RedisResult<isize> {
 }
 
 #[ignore]
+
+fn main() {
+    let _ = fetch_an_integer();
+}
+
 #[test]
 fn test() {
-    let _ = fetch_an_integer();
+    main();
 }

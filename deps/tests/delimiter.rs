@@ -12,8 +12,7 @@ struct Record {
 
 use csv::ReaderBuilder;
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let data = "name\tplace\tid
   Mark\tMelbourne\t46
   Ashley\tZurich\t92";
@@ -25,5 +24,11 @@ fn test() -> Result<(), Error> {
         println!("{:?}", result?);
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

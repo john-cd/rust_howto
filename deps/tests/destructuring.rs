@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     // destructuring tuples
     let (_x, _y, _z) = (1, 2, 3);
 
@@ -13,4 +12,9 @@ fn test() {
     let Point { x: _a, y: _b } = p; // a = 0, b = 7
     let Point { x, y } = p; // simpler
     let _ = (x, y);
+}
+
+#[test]
+fn test() {
+    main();
 }

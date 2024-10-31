@@ -10,8 +10,7 @@ impl Person {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let mut people = vec![
         Person::new("Zoe".to_string(), 25),
         Person::new("Al".to_string(), 60),
@@ -41,4 +40,9 @@ fn test() {
             Person::new("John".to_string(), 1),
         ]
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

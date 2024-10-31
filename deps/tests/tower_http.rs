@@ -46,8 +46,8 @@ struct State {
     pool: DatabaseConnectionPool,
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     // Construct the shared state.
     let state = State {
         pool: DatabaseConnectionPool::new(),
@@ -86,3 +86,8 @@ async fn test() {
 }
 
 // TODO finish
+
+#[test]
+fn test() {
+    main();
+}

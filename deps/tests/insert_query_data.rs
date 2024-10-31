@@ -10,9 +10,7 @@ struct Author {
     country: String,
 }
 
-#[test]
-#[ignore]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let mut client = Client::connect(
         "postgresql://postgres:postgres@localhost/library",
         NoTls,
@@ -45,5 +43,12 @@ fn test() -> Result<(), Error> {
         println!("Author {} is from {}", author.name, author.country);
     }
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

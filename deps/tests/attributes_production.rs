@@ -14,7 +14,12 @@
 pub struct S;
 
 /// Here is the main test function!
+
+fn main() {
+    let _ = S;
+}
+
 #[test]
 fn test() {
-    let _ = S;
+    main();
 }

@@ -3,8 +3,7 @@ use chrono::FixedOffset;
 use chrono::Local;
 use chrono::TimeZone;
 
-#[test]
-fn test() {
+fn main() {
     let local_time = chrono::Local::now();
     // Separate into components
     let utc_time = local_time.naive_utc();
@@ -29,4 +28,9 @@ fn test() {
         "Time in Rio de Janeiro now is {}",
         rio_timezone.from_utc_datetime(&utc_time)
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

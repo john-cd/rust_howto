@@ -26,8 +26,8 @@ async fn countdown_subsystem(
     Ok(())
 }
 
-#[tokio::test]
-async fn test() -> std::result::Result<(), Box<dyn std::error::Error>> {
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
     // Init logging
     tracing_subscriber::fmt()
         // .with_max_level(Level::TRACE)
@@ -43,4 +43,10 @@ async fn test() -> std::result::Result<(), Box<dyn std::error::Error>> {
     .handle_shutdown_requests(Duration::from_millis(1000))
     .await
     .map_err(|e| e.into())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

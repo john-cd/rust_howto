@@ -1,0 +1,32 @@
+use std::fs::File;
+use std::path::PathBuf;
+
+use anyhow::Result;
+use flate2::read::GzDecoder;
+use tar::Archive;
+
+fn main() -> Result<()> {
+    let file = File::open("temp/archive.tar.gz")?;
+    let mut archive = Archive::new(GzDecoder::new(file));
+    let prefix = "bundle/logs";
+
+    println!("Extracted the following files:");
+    archive
+        .entries()?
+        .filter_map(|e| e.ok())
+        .map(|mut entry| -> Result<PathBuf> {
+            let path = entry.path()?.strip_prefix(prefix)?.to_owned();
+            entry.unpack(&path)?;
+            Ok(path)
+        })
+        .filter_map(|e| e.ok())
+        .for_each(|x| println!("> {}", x.display()));
+
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}

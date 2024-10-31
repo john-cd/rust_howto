@@ -11,8 +11,12 @@ fn documented_function() {
 #[doc = include_str!("../README.md")]
 fn function_including_external_file_as_documentation() {}
 
-#[test]
-fn test() {
+fn main() {
     documented_function();
     function_including_external_file_as_documentation();
+}
+
+#[test]
+fn test() {
+    main();
 }

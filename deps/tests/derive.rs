@@ -2,8 +2,12 @@
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
 struct S(i32);
 
-#[test]
-fn test() {
+fn main() {
     println!("{:?}", S(0));
     println!("{}", S(1) == S(1));
+}
+
+#[test]
+fn test() {
+    main();
 }

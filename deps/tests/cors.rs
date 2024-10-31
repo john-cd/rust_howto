@@ -1,6 +1,6 @@
 use std::convert::Infallible;
-use std::error::Error;
 
+use anyhow::Result;
 use bytes::Bytes;
 use http::header;
 use http::Method;
@@ -19,8 +19,8 @@ async fn handle(
     Ok(Response::new(Full::default()))
 }
 
-#[tokio::test]
-async fn test() -> Result<(), Box<dyn Error>> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let cors = CorsLayer::new()
         // allow `GET` and `POST` when accessing the resource
         .allow_methods([Method::GET, Method::POST])
@@ -43,5 +43,11 @@ async fn test() -> Result<(), Box<dyn Error>> {
             .unwrap(),
         "*",
     );
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
     Ok(())
 }

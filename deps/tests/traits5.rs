@@ -19,8 +19,12 @@ where
 #[derive(Debug, Clone)]
 struct S;
 
-#[test]
-fn test() {
+fn main() {
     let s = S;
     a_function(&s);
+}
+
+#[test]
+fn test() {
+    main();
 }

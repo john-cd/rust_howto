@@ -4,8 +4,7 @@
 // use rusqlite::Connection;
 // use rusqlite::Result;
 
-// #[test]
-// fn test() -> Result<()> {
+// fn main() -> Result<()> {
 //     let mut conn = Connection::open("cats.db")?;
 
 //     successful_tx(&mut conn)?;
@@ -43,3 +42,13 @@
 
 //     tx.commit()
 // }
+
+fn main() -> anyhow::Result<()> {
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}

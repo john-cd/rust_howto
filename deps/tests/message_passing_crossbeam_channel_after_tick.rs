@@ -5,8 +5,7 @@ use crossbeam_channel::after;
 use crossbeam_channel::select;
 use crossbeam_channel::tick;
 
-#[test]
-fn test() {
+fn main() {
     let start = Instant::now();
     // channel that delivers messages periodically.
     let ticker = tick(Duration::from_millis(50));
@@ -23,4 +22,9 @@ fn test() {
             // or use: default(Duration::from_millis(1000)) => break,
         }
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

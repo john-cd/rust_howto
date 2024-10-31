@@ -16,8 +16,7 @@ fn extract_login(input: &str) -> Option<&str> {
         .and_then(|cap| cap.name("login").map(|login| login.as_str()))
 }
 
-#[test]
-fn test() {
+fn main() {
     assert_eq!(extract_login(r"I❤email@example.com"), Some(r"I❤email"));
     assert_eq!(
         extract_login(r"sdf+sdsfsd.as.sdsd@jhkk.d.rl"),
@@ -25,4 +24,9 @@ fn test() {
     );
     assert_eq!(extract_login(r"More@Than@One@at.com"), None);
     assert_eq!(extract_login(r"Not an email@email"), None);
+}
+
+#[test]
+fn test() {
+    main();
 }

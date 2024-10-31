@@ -9,10 +9,14 @@ fn read_username_from_file() -> Result<String, io::Error> {
     Ok(username)
 }
 
-#[test]
-fn test() {
+fn main() {
     match read_username_from_file() {
         Ok(name) => println!("User name: {}", name),
         Err(err) => println!("Error: {}", err),
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

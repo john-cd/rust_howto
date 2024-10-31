@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 
-#[test]
-fn test() {
+fn main() {
     let mut scores = HashMap::new();
 
     scores.insert(String::from("Blue"), 10);
@@ -21,4 +20,9 @@ fn test() {
 
     // Adding a Key and Value Only If a Key Isn’t Present
     scores.entry(String::from("Yellow")).or_insert(50);
+}
+
+#[test]
+fn test() {
+    main();
 }

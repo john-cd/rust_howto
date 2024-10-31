@@ -1,7 +1,7 @@
 use std::borrow::Cow;
 use std::collections::HashSet;
-use std::error::Error;
 
+use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 
@@ -29,8 +29,8 @@ fn extract_links(content: &str) -> HashSet<Cow<str>> {
     links
 }
 
-#[tokio::test]
-async fn test() -> Result<(), Box<dyn Error>> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let content = reqwest::get(
     "https://en.wikipedia.org/w/index.php?title=Rust_(programming_language)&action=raw",
   )
@@ -40,5 +40,11 @@ async fn test() -> Result<(), Box<dyn Error>> {
 
     println!("{:#?}", extract_links(content.as_str()));
 
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
     Ok(())
 }

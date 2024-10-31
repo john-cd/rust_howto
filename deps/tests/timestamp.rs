@@ -2,8 +2,7 @@ use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;
 
-#[test]
-fn test() {
+fn main() {
     let date_time: NaiveDateTime = NaiveDate::from_ymd_opt(2017, 11, 12)
         .unwrap()
         .and_hms_opt(17, 33, 44)
@@ -22,4 +21,9 @@ fn test() {
     {}.",
         date_time_after_a_billion_seconds
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

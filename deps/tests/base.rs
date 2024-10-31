@@ -2,8 +2,7 @@ use anyhow::anyhow;
 use anyhow::Result;
 use url::Url;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let full = "https://github.com/rust-lang/cargo?asdf";
 
     let url = Url::parse(full)?;
@@ -28,4 +27,10 @@ fn base_url(mut url: Url) -> Result<Url> {
     url.set_query(None);
 
     Ok(url)
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
+    Ok(())
 }

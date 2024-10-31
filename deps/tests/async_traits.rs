@@ -24,8 +24,13 @@ async fn do_async_op() -> bool {
 
 async fn log_health_check_failure() {}
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     let hc = MyHealthChecker;
     do_health_check(hc).await;
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -20,7 +20,11 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 
+fn main() {
+    println!("{}", value_in_cents(Coin::Penny));
+}
+
 #[test]
 fn test() {
-    println!("{}", value_in_cents(Coin::Penny));
+    main();
 }

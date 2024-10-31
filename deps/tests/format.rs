@@ -1,8 +1,7 @@
 use chrono::DateTime;
 use chrono::Utc;
 
-#[test]
-fn test() {
+fn main() {
     let now: DateTime<Utc> = Utc::now();
 
     println!("UTC now is: {}", now);
@@ -12,4 +11,9 @@ fn test() {
         "UTC now in a custom format is: {}",
         now.format("%a %b %e %T %Y")
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

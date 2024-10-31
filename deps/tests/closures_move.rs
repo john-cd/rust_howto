@@ -1,7 +1,6 @@
 use std::thread;
 
-#[test]
-fn test() {
+fn main() {
     let list = vec![1, 2, 3];
     println!("Before defining closure: {:?}", list);
 
@@ -9,4 +8,9 @@ fn test() {
     thread::spawn(move || println!("From thread: {:?}", list))
         .join()
         .unwrap();
+}
+
+#[test]
+fn test() {
+    main();
 }

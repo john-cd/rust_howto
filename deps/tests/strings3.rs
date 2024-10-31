@@ -10,8 +10,7 @@ static DATE: &str = "2024-01-15";
 static T: &str = "T";
 static TIME: &str = "12:00:09Z";
 
-#[test]
-fn test() {
+fn main() {
     let _datetime = &[DATE, T, TIME].concat();
 
     let _datetime = &[DATE, TIME].join(T);
@@ -61,4 +60,9 @@ fn test() {
     let _datetime = concat_string!(DATE, T, TIME);
 
     let _datetime = &concat_strs!(DATE, T, TIME);
+}
+
+#[test]
+fn test() {
+    main();
 }

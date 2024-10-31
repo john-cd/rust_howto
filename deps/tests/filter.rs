@@ -2,8 +2,7 @@ use std::io;
 
 use anyhow::Result;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let query = "CA";
     let data = "\
 City,State,Population,Latitude,Longitude
@@ -25,5 +24,11 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
     }
 
     wtr.flush()?;
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

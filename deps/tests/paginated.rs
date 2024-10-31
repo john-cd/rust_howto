@@ -98,10 +98,19 @@
 //     }
 // }
 
-// #[test]
-// fn test() -> Result<()> {
+// fn main() -> Result<()> {
 //     for dep in ReverseDependencies::of("bit-vec")? {
 //         println!("reverse dependency: {}", dep?.crate_id);
 //     }
 //     Ok(())
 // }
+
+fn main() -> anyhow::Result<()> {
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}

@@ -1,11 +1,16 @@
 use anyhow::Result;
 use glob::glob;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     for entry in glob("**/*.png")? {
         println!("{}", entry?.display());
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

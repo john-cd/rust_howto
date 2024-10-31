@@ -2,8 +2,8 @@ async fn say_world() {
     println!("world");
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     // Calling `say_world()` does not execute the body of `say_world()`.
     let op = say_world();
 
@@ -17,3 +17,8 @@ async fn test() {
 // hello
 // world
 // Example from https://tokio.rs/tokio/tutorial/hello-tokio
+
+#[test]
+fn test() {
+    main();
+}

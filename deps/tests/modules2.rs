@@ -10,7 +10,11 @@ fn eat_at_restaurant() {
     hosting::add_to_waitlist();
 }
 
+fn main() {
+    eat_at_restaurant();
+}
+
 #[test]
 fn test() {
-    eat_at_restaurant();
+    main();
 }

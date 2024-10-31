@@ -1,8 +1,7 @@
 use tracing::span;
 use tracing::Level;
 
-#[test]
-fn test() {
+fn main() {
     let span = span!(Level::TRACE, "some span").entered();
 
     // code here is within the span
@@ -14,4 +13,9 @@ fn test() {
 
     // enter the span again
     let _span = span.entered();
+}
+
+#[test]
+fn test() {
+    main();
 }

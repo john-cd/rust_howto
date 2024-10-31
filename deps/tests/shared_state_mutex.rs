@@ -2,8 +2,7 @@ use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;
 
-#[test]
-fn test() {
+fn main() {
     // We wrap Mutex in Arc to allow for multiple owners.
     // Arc<T> is safe to use in concurrent situations.
     let counter = Arc::new(Mutex::new(0));
@@ -28,4 +27,9 @@ fn test() {
     }
 
     println!("Result: {}", *counter.lock().unwrap());
+}
+
+#[test]
+fn test() {
+    main();
 }

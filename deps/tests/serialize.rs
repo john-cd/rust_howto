@@ -2,8 +2,7 @@ use std::io;
 
 use anyhow::Result;
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let mut wtr = csv::Writer::from_writer(io::stdout());
 
     wtr.write_record(["Name", "Place", "ID"])?;
@@ -13,5 +12,11 @@ fn test() -> Result<()> {
     wtr.serialize(("Akshat", "Delhi", 11))?;
 
     wtr.flush()?;
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

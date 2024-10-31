@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .worker_threads(1)
         .enable_all()
@@ -34,4 +33,9 @@ async fn my_bg_task(i: u64) {
     tokio::time::sleep(tokio::time::Duration::from_millis(millis)).await;
 
     println!("Task {} stopping.", i);
+}
+
+#[test]
+fn test() {
+    main();
 }

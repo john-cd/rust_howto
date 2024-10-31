@@ -1,8 +1,8 @@
 use std::env;
-use std::error::Error;
 
-#[test]
-fn test() -> Result<(), Box<dyn Error>> {
+use anyhow::Result;
+
+fn main() -> Result<()> {
     // Load environment variables from .env file.
     // Fails if .env file not found, not readable or invalid.
     dotenvy::dotenv()?;
@@ -11,5 +11,11 @@ fn test() -> Result<(), Box<dyn Error>> {
         println!("{key}: {value}");
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
     Ok(())
 }

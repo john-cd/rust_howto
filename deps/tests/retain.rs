@@ -17,7 +17,6 @@ fn run() -> Result<()> {
     Ok(())
 }
 
-#[test]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     run()
 }

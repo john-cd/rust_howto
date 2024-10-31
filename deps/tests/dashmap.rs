@@ -3,8 +3,7 @@ use std::thread;
 
 use dashmap::DashMap;
 
-#[test]
-fn test() {
+fn main() {
     // Create a shared DashMap with an Arc
     let map: Arc<DashMap<&str, i32, _>> = Arc::new(DashMap::new());
     // or use: DashMap::with_capacity(20)
@@ -61,4 +60,9 @@ fn test() {
 
     // Access the final state of the map from the main thread
     println!("final count: {}", map.iter().count());
+}
+
+#[test]
+fn test() {
+    main();
 }

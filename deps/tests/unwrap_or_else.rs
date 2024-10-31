@@ -1,8 +1,7 @@
 use std::fs::File;
 use std::io::ErrorKind;
 
-#[test]
-fn test() {
+fn main() {
     let _greeting_file = File::open("temp/hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
             File::create("temp/hello.txt").unwrap_or_else(|error| {
@@ -12,4 +11,9 @@ fn test() {
             panic!("Problem opening the file: {:?}", error);
         }
     });
+}
+
+#[test]
+fn test() {
+    main();
 }

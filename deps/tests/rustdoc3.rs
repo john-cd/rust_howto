@@ -7,7 +7,11 @@
 //!
 //! [Easy]: http://thatwaseasy.example.com
 
+fn main() {
+    println!("//! ... are `inner` comments that apply to the containing module (or crate).");
+}
+
 #[test]
 fn test() {
-    println!("//! ... are `inner` comments that apply to the containing module (or crate).");
+    main();
 }

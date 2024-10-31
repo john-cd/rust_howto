@@ -40,8 +40,12 @@ impl Screen {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let s = Screen::new();
     s.run();
+}
+
+#[test]
+fn test() {
+    main();
 }

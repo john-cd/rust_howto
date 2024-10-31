@@ -2,9 +2,7 @@ use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;
 
-#[test]
-#[ignore]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let mut client = Client::connect(
         "postgresql://postgres:postgres@localhost/library",
         NoTls,
@@ -30,5 +28,12 @@ fn test() -> Result<(), Error> {
     ",
     )?;
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

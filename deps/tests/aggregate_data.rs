@@ -7,9 +7,7 @@ struct Nation {
     count: i64,
 }
 
-#[test]
-#[ignore]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let mut client = Client::connect(
         "postgresql://postgres:postgres@127.0.0.1/moma",
         NoTls,
@@ -32,5 +30,12 @@ fn test() -> Result<(), Error> {
         }
     }
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -2,8 +2,7 @@ use url::Host;
 use url::ParseError;
 use url::Url;
 
-#[test]
-fn test() -> Result<(), ParseError> {
+fn main() -> Result<(), ParseError> {
     let s = "ftp://rust-lang.org/examples";
 
     let url = Url::parse(s)?;
@@ -13,5 +12,11 @@ fn test() -> Result<(), ParseError> {
     assert_eq!(url.port_or_known_default(), Some(21));
     println!("The origin is as expected!");
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

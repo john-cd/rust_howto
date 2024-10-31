@@ -21,7 +21,12 @@ async fn one_shot() {
     println!("{}", res);
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     one_shot().await;
+}
+
+#[test]
+fn test() {
+    main();
 }

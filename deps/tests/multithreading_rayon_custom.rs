@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     // Build the threadpool
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(8)
@@ -20,4 +19,9 @@ fn fib(n: usize) -> usize {
     // one executing each of the two closures.
     let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`
     a + b
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -2,8 +2,7 @@ use serde_json::json;
 use serde_json::Error;
 use serde_json::Value;
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let j = r#"{
                  "userid": 103609,
                  "verified": true,
@@ -26,5 +25,11 @@ fn test() -> Result<(), Error> {
 
     assert_eq!(parsed, expected);
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

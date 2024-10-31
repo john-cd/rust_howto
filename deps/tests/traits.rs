@@ -16,8 +16,7 @@ impl Summary for NewsArticle {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let na = NewsArticle {
         headline: "headline".to_string(),
         location: "location".to_string(),
@@ -25,4 +24,9 @@ fn test() {
         content: "...".to_string(),
     };
     println!("Summary: {}", na.summarize());
+}
+
+#[test]
+fn test() {
+    main();
 }

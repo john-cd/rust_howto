@@ -7,8 +7,7 @@
 // // TODO fix
 // // Error: second time provided was later than self
 
-// #[test]
-// fn test() -> Result<()> {
+// fn main() -> Result<()> {
 //     let current_dir = env::current_dir()?;
 //     // println!("The current directory is {}",
 // current_dir.display());     println!(
@@ -37,3 +36,13 @@
 //     }
 //     Ok(())
 // }
+
+fn main() -> anyhow::Result<()> {
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}

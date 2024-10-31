@@ -11,10 +11,14 @@ impl fmt::Display for Wrapper {
 // If you want the new type to have every method the inner type has,
 // implement the `Deref` trait instead.
 
-#[test]
-fn test() {
+fn main() {
     println!(
         "{}",
         Wrapper(vec!["example".to_string(), "example 2".to_string()])
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

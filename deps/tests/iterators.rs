@@ -1,7 +1,6 @@
 #![allow(clippy::useless_vec)]
 
-#[test]
-fn test() {
+fn main() {
     let vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
 
@@ -12,4 +11,9 @@ fn test() {
     // `into_iter()` does move `vec2` and its elements, so they cannot be
     // used again
     println!("2 in vec2: {}", vec2.into_iter().any(|x| x == 2));
+}
+
+#[test]
+fn test() {
+    main();
 }

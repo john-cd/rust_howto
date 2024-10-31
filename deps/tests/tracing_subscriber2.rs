@@ -1,8 +1,7 @@
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
 
-#[test]
-fn test() {
+fn main() {
     tracing_subscriber::registry()
         .with(tracing_subscriber::fmt::layer())
         .with(tracing_subscriber::filter::EnvFilter::new(
@@ -14,3 +13,8 @@ fn test() {
 }
 
 // TODO
+
+#[test]
+fn test() {
+    main();
+}

@@ -7,7 +7,11 @@ fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
     f(arg) + f(arg)
 }
 
+fn main() {
+    println!("{}", do_twice(add_one, 1));
+}
+
 #[test]
 fn test() {
-    println!("{}", do_twice(add_one, 1));
+    main();
 }

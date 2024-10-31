@@ -16,8 +16,12 @@ fn env_extract() -> String {
     optional_value.unwrap_or("no shell set").to_string()
 }
 
-#[test]
-#[should_panic]
-fn test() {
+fn main() {
     println!("SHELL: {}", env_extract());
+}
+
+#[should_panic]
+#[test]
+fn test() {
+    main();
 }

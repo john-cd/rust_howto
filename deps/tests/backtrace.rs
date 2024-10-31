@@ -35,8 +35,7 @@
 //     }
 // }
 
-// #[test]
-// fn test() -> Result<()> {
+// fn main() -> Result<()> {
 //     let csv = "red,blue,green
 // 102,256,204";
 
@@ -45,3 +44,10 @@
 
 //     Ok(())
 // }
+
+fn main() {}
+
+#[test]
+fn test() {
+    main();
+}

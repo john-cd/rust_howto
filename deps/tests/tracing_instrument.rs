@@ -20,8 +20,13 @@ async fn my_async_function() {
 
 async fn some_other_async_function() {}
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     my_function(42);
     my_async_function().await;
+}
+
+#[test]
+fn test() {
+    main();
 }

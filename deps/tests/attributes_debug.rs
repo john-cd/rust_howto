@@ -17,8 +17,12 @@ fn required() -> u32 {
 
 fn dead_code() {}
 
-#[test]
-fn test() {
+fn main() {
     let x = 1;
     let mut m = 2;
+}
+
+#[test]
+fn test() {
+    main();
 }

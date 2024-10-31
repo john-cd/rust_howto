@@ -24,7 +24,11 @@ struct Person {
     name: String,
 }
 
+fn main() {
+    let _ = new("John");
+}
+
 #[test]
 fn test() {
-    let _ = new("John");
+    main();
 }

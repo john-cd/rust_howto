@@ -2,8 +2,7 @@ use std::num::NonZeroUsize;
 
 use lru::LruCache;
 
-#[test]
-fn test() {
+fn main() {
     let mut cache = LruCache::new(NonZeroUsize::new(2).unwrap()); //
     cache.put("apple", 3);
     cache.put("banana", 2);
@@ -25,4 +24,9 @@ fn test() {
     }
 
     assert_eq!(*cache.get(&"banana").unwrap(), 6);
+}
+
+#[test]
+fn test() {
+    main();
 }

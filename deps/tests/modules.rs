@@ -45,5 +45,9 @@ mod front_of_house {
 // `crate::front_of_house::hosting::add_to_waitlist()`.
 pub use crate::front_of_house::hosting;
 
+fn main() {}
+
 #[test]
-fn test() {}
+fn test() {
+    main();
+}

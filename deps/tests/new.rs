@@ -1,8 +1,7 @@
 use url::ParseError;
 use url::Url;
 
-#[test]
-fn test() -> Result<(), ParseError> {
+fn main() -> Result<(), ParseError> {
     let path = "/rust-lang/cargo";
 
     let gh = build_github_url(path)?;
@@ -20,4 +19,10 @@ fn build_github_url(path: &str) -> Result<Url, ParseError> {
     let joined = base.join(path)?;
 
     Ok(joined)
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }

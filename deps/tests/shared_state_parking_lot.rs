@@ -2,8 +2,7 @@ use parking_lot::Once;
 
 static START: Once = Once::new();
 
-#[test]
-fn test() {
+fn main() {
     // run a one-time initialization
     START.call_once(|| {
         // run initialization here
@@ -11,3 +10,8 @@ fn test() {
 }
 
 // TODO add more
+
+#[test]
+fn test() {
+    main();
+}

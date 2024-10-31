@@ -7,8 +7,12 @@ fn generic<T: ?Sized + Display>(t: &T) {
     println!("{}", t);
 }
 
-#[test]
-fn test() {
+fn main() {
     let s = String::from("hello");
     generic(&s[..]);
+}
+
+#[test]
+fn test() {
+    main();
 }

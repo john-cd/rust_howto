@@ -8,9 +8,7 @@ struct Configuration {
     items_per_page: u16,
 }
 
-#[test]
-#[ignore]
-fn test() {
+fn main() {
     let c = envy::from_env::<Configuration>()
         .expect("Please provide PORT and ITEMS_PER_PAGE env vars");
 
@@ -21,4 +19,10 @@ fn test() {
         );
 
     println!("c: {:?} c2: {:?}", c, c2);
+}
+
+#[ignore]
+#[test]
+fn test() {
+    main();
 }

@@ -1,5 +1,16 @@
 #![allow(dead_code)]
 
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn can_hold(&self, _another: &Rectangle) -> bool {
+        true
+    }
+}
+
 // Put unit tests in the same file than the main code
 
 #[cfg(test)] // only for unit tests
@@ -11,6 +22,7 @@ mod tests {
     // Test functions must be free, monomorphic functions that take no
     // arguments, and commonly return () or Result<T, E> where T:
     // Termination, E: Debug
+
     #[test]
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
@@ -29,13 +41,16 @@ mod tests {
 
     // This test passes if the code inside the function panics;
     // It fails if the code inside the function doesn’t panic.
-    #[test]
+
     #[should_panic]
+    #[test]
     fn another() {
         panic!("Make this test fail");
     }
 
     // With Result
+
+    #[allow(clippy::eq_op)]
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {
@@ -45,23 +60,9 @@ mod tests {
         }
     }
 
-    #[test]
     #[ignore]
+    #[test]
     fn expensive_test() {
         // Code that takes an hour to run
     }
 }
-
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {
-    fn can_hold(&self, _another: &Rectangle) -> bool {
-        true
-    }
-}
-
-#[test]
-fn test() {}

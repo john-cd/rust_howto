@@ -69,7 +69,7 @@ testall:
 # Test all code using nextest
 nextestall:
   cargo nextest run --workspace --all-targets --locked --no-fail-fast
-  cargo test --doc --workspace # nextest does not handle doctests
+  cargo test --doc --workspace --quiet # nextest does not handle doctests
 
 # Run additional examples (under the `xmpl` folder)
 [unix]

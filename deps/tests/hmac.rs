@@ -3,8 +3,7 @@ use ring::hmac;
 use ring::rand;
 use ring::rand::SecureRandom;
 
-#[test]
-fn test() -> Result<(), Unspecified> {
+fn main() -> Result<(), Unspecified> {
     let mut key_value = [0u8; 48];
     let rng = rand::SystemRandom::new();
     rng.fill(&mut key_value)?;
@@ -15,4 +14,9 @@ fn test() -> Result<(), Unspecified> {
     hmac::verify(&key, message.as_bytes(), signature.as_ref())?;
 
     Ok(())
+}
+
+#[test]
+fn test() {
+    println!("{:?}", main());
 }

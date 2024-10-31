@@ -2,7 +2,7 @@ use futures::StreamExt;
 use tokio::fs::File;
 use tokio::io;
 
-type Result = std::result::Result<(), Box<dyn std::error::Error>>;
+type Result = std::result::Result<(), anyhow::Error>;
 
 async fn download_file(url: &str, filename: &str) -> Result {
     let response = reqwest::get(url).await?;
@@ -12,8 +12,8 @@ async fn download_file(url: &str, filename: &str) -> Result {
     Ok(())
 }
 
-#[tokio::test]
-async fn test() -> Result {
+#[tokio::main]
+async fn main() -> Result {
     let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"]; // add more here...
     let filenames = ["temp/file1.txt"]; // add more here...
 
@@ -37,5 +37,11 @@ async fn test() -> Result {
     fut.await;
 
     println!("Downloaded files successfully!");
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -3,9 +3,13 @@ fn foo() -> ! {
     panic!("This call never returns.");
 }
 
-#[test]
-#[should_panic]
-fn test() {
+fn main() {
     println!("Will panic");
     foo();
+}
+
+#[should_panic]
+#[test]
+fn test() {
+    main();
 }

@@ -4,8 +4,7 @@ use crossbeam_channel::unbounded;
 use crossbeam_channel::RecvError;
 use crossbeam_channel::TryRecvError;
 
-#[test]
-fn test() {
+fn main() {
     // Create a channel of unbounded capacity.
     let (s1, r1) = unbounded();
 
@@ -54,4 +53,9 @@ fn test() {
     // After disconnection, calling `r1.recv()` does not block
     // Instead, `Err(RecvError)` is returned immediately.
     assert_eq!(r1.recv(), Err(RecvError));
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -1,7 +1,6 @@
 use csv::Error;
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let csv = "year,make,model,description
   1948,Porsche,356,Luxury sports car
   1967,Ford,Mustang fastback 1967,American car";
@@ -15,5 +14,11 @@ fn test() -> Result<(), Error> {
         );
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -24,7 +24,6 @@
 
 //     use super::*;
 
-//     #[test]
 //     fn test_my_function() -> PyResult<()> {
 //         let arg1 = "arg1";
 //         let arg2 = "arg2";
@@ -60,3 +59,10 @@
 //         })
 //     }
 // }
+
+fn main() {}
+
+#[test]
+fn test() {
+    main();
+}

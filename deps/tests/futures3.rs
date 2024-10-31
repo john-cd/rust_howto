@@ -1,8 +1,9 @@
 #![allow(clippy::async_yields_async)]
+use anyhow::Result;
 use futures::future::FutureExt;
 
-#[tokio::test]
-async fn test() -> Result<(), Box<dyn std::error::Error>> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let future_of_1 = async { 1 };
 
     // Map this future’s output to a (possibly) different type, returning
@@ -27,5 +28,11 @@ async fn test() -> Result<(), Box<dyn std::error::Error>> {
     let nested_future = async { async { 1 } };
     let future = nested_future.flatten();
     assert_eq!(future.await, 1);
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
     Ok(())
 }

@@ -26,7 +26,12 @@ impl Modal {
 
 async fn remind_user_to_join_mailing_list() {}
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     Modal.run().await;
+}
+
+#[test]
+fn test() {
+    main();
 }

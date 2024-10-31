@@ -3,8 +3,8 @@ use std::rc::Rc;
 use tokio::task;
 use tokio::time;
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     let nonsend_data = Rc::new("world");
     let local = task::LocalSet::new();
 
@@ -22,4 +22,9 @@ async fn test() {
     // ...
 
     local.await;
+}
+
+#[test]
+fn test() {
+    main();
 }

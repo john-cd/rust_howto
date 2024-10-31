@@ -4,9 +4,7 @@ use lettre::Message;
 use lettre::SmtpTransport;
 use lettre::Transport;
 
-#[test]
-#[ignore]
-fn test() {
+fn main() {
     let email = Message::builder()
         .from("NoBody <nobody@domain.tld>".parse().unwrap())
         .reply_to("Someone <someone@domain.tld>".parse().unwrap())
@@ -32,4 +30,10 @@ fn test() {
         Ok(_) => println!("Email sent successfully!"),
         Err(e) => panic!("Could not send email: {e:?}"),
     }
+}
+
+#[ignore]
+#[test]
+fn test() {
+    main();
 }

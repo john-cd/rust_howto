@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     // `String` is Unicode, not ASCII
     let mut s1 = String::from("hello");
     s1.push_str(", world!"); // `String` can be mutated
@@ -27,4 +26,9 @@ fn test() {
     for b in "Зд".bytes() {
         println!("{b}");
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -1,8 +1,7 @@
 use mime::Mime;
 use mime::APPLICATION_OCTET_STREAM;
 
-#[test]
-fn test() {
+fn main() {
     let invalid_mime_type = "i n v a l i d";
     let default_mime = invalid_mime_type
         .parse::<Mime>()
@@ -22,4 +21,9 @@ fn test() {
         "MIME for {:?} was parsed as {:?}",
         valid_mime_type, parsed_mime
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

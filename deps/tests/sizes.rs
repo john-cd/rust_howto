@@ -1,7 +1,6 @@
 use walkdir::WalkDir;
 
-#[test]
-fn test() {
+fn main() {
     let total_size = WalkDir::new(".")
         .min_depth(1)
         .max_depth(3)
@@ -12,4 +11,9 @@ fn test() {
         .fold(0, |acc, m| acc + m.len());
 
     println!("Total size: {} bytes.", total_size);
+}
+
+#[test]
+fn test() {
+    main();
 }

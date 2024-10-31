@@ -15,10 +15,15 @@ fn read_uptime() -> Result<u64> {
         .parse()?)
 }
 
-#[test]
-fn test() {
+fn main() {
     match read_uptime() {
         Ok(uptime) => println!("uptime: {} seconds", uptime),
         Err(err) => eprintln!("error: {}", err),
     };
+}
+
+//
+#[test]
+fn test_main() {
+    main();
 }

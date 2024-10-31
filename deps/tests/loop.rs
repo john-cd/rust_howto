@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let mut counter = 0;
 
     let result = loop {
@@ -12,4 +11,9 @@ fn test() {
         }
     };
     println!("{}", result);
+}
+
+#[test]
+fn test() {
+    main();
 }

@@ -6,8 +6,12 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let (x, y) = ("short", "looooooong");
     println!("{}", longest(x, y));
+}
+
+#[test]
+fn test() {
+    main();
 }

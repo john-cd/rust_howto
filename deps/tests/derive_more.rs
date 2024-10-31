@@ -21,12 +21,16 @@ enum MyEnum {
     Nothing,
 }
 
-#[test]
-fn test() {
+fn main() {
     assert!(MyInt(11) == MyInt(5) + 6.into());
     assert!((5, 6) == Point2D { x: 5, y: 6 }.into());
     assert!(MyEnum::Int(15) == (MyEnum::Int(8) + 7.into()).unwrap());
     assert!(MyEnum::Int(15).to_string() == "int: 15");
     assert!(MyEnum::Uint(42).to_string() == "42");
     assert!(MyEnum::Nothing.to_string() == "nothing");
+}
+
+#[test]
+fn test() {
+    main();
 }

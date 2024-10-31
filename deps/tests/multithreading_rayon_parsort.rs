@@ -1,8 +1,12 @@
 use rayon::prelude::*;
 
-#[test]
-fn test() {
+fn main() {
     let mut v = [-5, 4, 1, -3, 2];
     v.par_sort();
     println!("{:#?}", v);
+}
+
+#[test]
+fn test() {
+    main();
 }

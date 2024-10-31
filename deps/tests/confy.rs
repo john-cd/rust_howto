@@ -17,9 +17,14 @@ impl ::std::default::Default for MyConfig {
     }
 }
 
-#[test]
-fn test() -> Result<(), confy::ConfyError> {
+fn main() -> Result<(), confy::ConfyError> {
     let _cfg: MyConfig = confy::load("my-app-name", None)?;
     // confy::store("my-app-name", None, cfg)?;
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

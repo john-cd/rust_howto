@@ -1,5 +1,4 @@
-#[test]
-fn test() {
+fn main() {
     let s = String::from("hello world");
 
     let hello: &str = &s[0..5]; // or &s[..5];
@@ -7,4 +6,9 @@ fn test() {
 
     println!("{}", hello);
     println!("{}", world);
+}
+
+#[test]
+fn test() {
+    main();
 }

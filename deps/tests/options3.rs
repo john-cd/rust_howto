@@ -10,8 +10,7 @@ fn read_file(filename: &str) -> Option<String> {
     // `and_then` chains operations on `Some`
 }
 
-#[test]
-fn test() {
+fn main() {
     let contents = read_file("poem.txt");
 
     // Using `match` to process the returned Option.
@@ -19,4 +18,9 @@ fn test() {
         Some(poem) => println!("{}", poem),
         None => println!("Error reading file"),
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

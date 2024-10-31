@@ -2,8 +2,7 @@ use chrono::Datelike;
 use chrono::Timelike;
 use chrono::Utc;
 
-#[test]
-fn test() {
+fn main() {
     let now = Utc::now();
 
     let (is_pm, hour) = now.hour12();
@@ -32,4 +31,9 @@ fn test() {
         "And the Common Era began {} days ago",
         now.num_days_from_ce()
     );
+}
+
+#[test]
+fn test() {
+    main();
 }

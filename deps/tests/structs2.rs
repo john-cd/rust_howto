@@ -14,8 +14,7 @@ fn build_user(email: String, username: String) -> User {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let user1 = build_user("<user@example.com>".into(), "user".to_string());
 
     // struct update
@@ -24,4 +23,9 @@ fn test() {
         ..user1 /* the remaining fields not explicitly set should have the
                  * same value as the fields in the given instance. */
     };
+}
+
+#[test]
+fn test() {
+    main();
 }

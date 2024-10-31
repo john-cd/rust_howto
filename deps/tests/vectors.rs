@@ -1,7 +1,6 @@
 #![allow(clippy::vec_init_then_push)]
 
-#[test]
-fn test() {
+fn main() {
     let mut v: Vec<i32> = Vec::new();
     v.push(5);
     v.push(6);
@@ -19,4 +18,9 @@ fn test() {
     for i in &mut v {
         *i += 50; // dereference operator
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

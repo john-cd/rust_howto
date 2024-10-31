@@ -7,8 +7,7 @@ struct Record {
     description: String,
 }
 
-#[test]
-fn test() -> Result<(), csv::Error> {
+fn main() -> Result<(), csv::Error> {
     let csv = "year,make,model,description
 1948,Porsche,356,Luxury sports car
 1967,Ford,Mustang fastback 1967,American car";
@@ -23,5 +22,11 @@ fn test() -> Result<(), csv::Error> {
         );
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

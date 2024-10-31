@@ -11,8 +11,7 @@ fn are_you_on_linux() {
     println!("You are *not* running linux!");
 }
 
-#[test]
-fn test() {
+fn main() {
     are_you_on_linux();
 
     println!("Are you sure?");
@@ -22,4 +21,9 @@ fn test() {
     } else {
         println!("Yes. It's definitely *not* linux!");
     }
+}
+
+#[test]
+fn test() {
+    main();
 }

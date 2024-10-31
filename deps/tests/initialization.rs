@@ -1,9 +1,7 @@
 use rusqlite::Connection;
 use rusqlite::Result;
 
-#[test]
-#[ignore]
-fn test() -> Result<()> {
+fn main() -> Result<()> {
     let conn = Connection::open_in_memory()?;
     // or: let conn = Connection::open("cats.db")?;
 
@@ -23,5 +21,12 @@ cat_colors(id)              )",
         (),
     )?;
 
+    Ok(())
+}
+
+#[ignore]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

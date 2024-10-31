@@ -22,8 +22,12 @@ impl Rectangle {
     }
 }
 
-#[test]
-fn test() {
+fn main() {
     let sq = Rectangle::square(5);
     println!("area: {}", sq.area());
+}
+
+#[test]
+fn test() {
+    main();
 }

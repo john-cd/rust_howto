@@ -19,7 +19,12 @@ pub async fn multi_producer_single_receiver() {
     }
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     multi_producer_single_receiver().await;
+}
+
+#[test]
+fn test() {
+    main();
 }

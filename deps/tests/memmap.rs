@@ -4,8 +4,7 @@ use std::io::Write;
 
 use memmap::Mmap;
 
-#[test]
-fn test() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     write!(
         File::create("temp/content.txt")?,
         "My hovercraft is full of eels!"
@@ -18,5 +17,11 @@ fn test() -> Result<(), Error> {
     let random_bytes: Vec<u8> =
         random_indexes.iter().map(|&idx| map[idx]).collect();
     assert_eq!(&random_bytes[..], b"My loaf!");
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

@@ -20,8 +20,8 @@ async fn check_link(url: &Url) -> Result<bool> {
     Ok(res.status() != StatusCode::NOT_FOUND)
 }
 
-#[tokio::test]
-async fn test() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let url = Url::parse("https://www.rust-lang.org/en-US/")?;
     let res = reqwest::get(url.as_ref()).await?.text().await?;
     let document = Document::from(res.as_str());
@@ -48,5 +48,11 @@ async fn test() -> Result<()> {
         task.await?
     }
 
+    Ok(())
+}
+
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
     Ok(())
 }

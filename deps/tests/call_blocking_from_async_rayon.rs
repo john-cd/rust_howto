@@ -18,8 +18,13 @@ async fn parallel_sum(nums: Vec<i32>) -> i32 {
     rx.await.expect("Panic in rayon::spawn")
 }
 
-#[tokio::test]
-async fn test() {
+#[tokio::main]
+async fn main() {
     let nums = vec![1; 1024 * 1024];
     println!("{}", parallel_sum(nums).await);
+}
+
+#[test]
+fn test() {
+    main();
 }
