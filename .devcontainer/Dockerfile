@@ -10,12 +10,6 @@ FROM rust:${RUST_IMAGE_LABEL} as base
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
-## TODO consider switching to slim or Alpine image. Need to solve openssl install
-## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
-## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
-# ENV LC_CTYPE=en_US.UTF-8
-# ENV LC_ALL=en_US.UTF-8
-
 SHELL ["bash", "-c"]
 
 ## Install linker and other utilities
@@ -23,20 +17,19 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends fzf \
-                                                  aspell aspell-en \
+    && apt-get install -y --no-install-recommends aspell aspell-en \
                                                   systemd \
     && apt install -y --no-install-recommends gcc pkg-config libc6-dev libssl-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-## fzf = fast fuzzy search
 ## aspell* required for spell checking
 ## systemd required for one example using `journalctl`
 ## gcc pkg-config libc6-dev libssl-dev required for https://docs.rs/crate/lychee/latest
 
-## Also consider: mold clang
+## Also consider:
+# mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
 ## Configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
@@ -54,16 +47,13 @@ RUN rustup toolchain install nightly \
 ARG MDBOOK_VERSION
 
 ## Install cargo binstall (binary install)
-## Install just from the binary release
+## Install nextest
 ## Install mdbook from the binary release
+## Install mdbook preprocessors
 RUN <<EOF
     set -e
-    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
-    && cargo binstall --no-confirm just \
-    && cargo binstall --no-confirm mdbook-linkcheck \
-    && cargo binstall --no-confirm mdbook-private \
-    && cargo binstall --no-confirm mdbook-indexing \
-    && cargo binstall --no-confirm --secure cargo-nextest
+    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+    cargo binstall --no-confirm --secure cargo-nextest
     # mdbook not installed
     if [ ! hash mdbook 2>/dev/null ]; then
         cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
@@ -72,14 +62,33 @@ RUN <<EOF
     if [[ $(mdbook -V) != "mdbook v${MDBOOK_VERSION}" ]]; then
         cargo binstall --version ${MDBOOK_VERSION} --no-confirm --force mdbook
     fi
+    cargo binstall --no-confirm mdbook-linkcheck
+    cargo binstall --no-confirm mdbook-private
+    cargo binstall --no-confirm mdbook-indexing
 EOF
 
-## Optional:
+## Optional: install mdbook-hide and keeper (note the workaround to get the unreleased keeper)
+# RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
+#      cargo install --force mdbook-hide; \
+#      cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
+## Or:
 #   && cargo binstall --no-confirm mdbook-keeper \
 #   && cargo binstall --no-confirm toml2json \
-#   && cargo install --locked bacon \
 
-## Alternative just install
+## TODO CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
+## TODO https://lib.rs/crates/mdbook-open-on-gh
+# RUN cargo binstall --no-confirm mdbook-open-on-gh
+
+## TODO CONSIDER Install cargo other check tools
+# RUN cargo install --locked cargo-deny || true
+# RUN cargo install --locked cargo-outdated || true
+# RUN cargo install --locked cargo-udeps || true
+# RUN cargo install --locked cargo-audit || true
+# RUN cargo install --locked cargo-pants || true
+
+# ------------------------------
+
+## Alternative `just` install
 # # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
 # RUN <<EOF
 #   set -e
@@ -89,32 +98,16 @@ EOF
 #   apt-get -y install just
 # EOF
 
-## Alternative mdbook install
+## Alternative `mdbook` install
 # RUN <<EOF
 # set -e
 # wget -c https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
 # EOF
 
-## Optional: install mdbook-hide and keeper (note the workaround to get the unreleased keeper)
-# RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
-#      cargo install --force mdbook-hide; \
-#      cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
-
-## Optional: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
-## TODO https://lib.rs/crates/mdbook-open-on-gh
-# cargo binstall --no-confirm mdbook-open-on-gh
-
-## TODO Install cargo check tools
-# RUN cargo install --locked cargo-deny || true
-# RUN cargo install --locked cargo-outdated || true
-# RUN cargo install --locked cargo-udeps || true
-# RUN cargo install --locked cargo-audit || true
-# RUN cargo install --locked cargo-pants || true
-
-## Link checker
-RUN cargo install lychee
+# ------------------------------
 
 ## Install the mdbook-utils tool that is a companion to the book.
+## Installed last, because the tool is still in development
 RUN cargo install --locked mdbook-utils
 
 WORKDIR /code
@@ -124,11 +117,31 @@ WORKDIR /code
 FROM base as development
 
 ## Additional packages for developement only
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr
+## Install python3, pipx, pre-commit
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y python3 pipx \
+    && pipx install pre-commit \
+    && pipx ensurepath
+
+## If needed:
+## Fast fuzzy search:
+# fzf \
+# firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
 
-# RUN cargo binstall --no-confirm ripgrep
+## Install stable rustfmt (for rust-analyzer in VS code)
+RUN rustup component add rustfmt
+
+## Install `just` (from the binary release)
+## Install the link checker `lychee`
+RUN cargo binstall --no-confirm just \
+    && cargo install --locked lychee
+
+## Optional tools
+# RUN cargo binstall --no-confirm ripgrep \
+#   && cargo binstall --no-confirm toml2json \
+#   && cargo install --locked bacon
 
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
@@ -154,6 +167,12 @@ CMD [ "sleep", "infinity" ]
 ## --------------------------------
 ## Stage for Continuous Integration
 FROM base as ci
+
+## TODO consider switching to slim or Alpine image for CI. Need to solve openssl install
+## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
+## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
+# ENV LC_CTYPE=en_US.UTF-8
+# ENV LC_ALL=en_US.UTF-8
 
 ## Copy the code in the container (in WORKDIR), excluding what is in .dockerignore
 COPY . .

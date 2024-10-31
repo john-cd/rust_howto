@@ -15,8 +15,8 @@ If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-
 
 ```bash
 sudo apt-get update # or equivalent for other distros
-sudo apt-get install fzf
-sudo apt-get mold clang # if using
+# sudo apt-get install fzf # optional
+# sudo apt-get mold clang # if using
 rustup update
 rustup component add clippy
 cargo install cargo-nextest
