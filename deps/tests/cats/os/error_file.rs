@@ -16,3 +16,10 @@ fn main() -> Result<(), std::io::Error> {
 
     Ok(())
 }
+
+#[cfg(target_family = "unix")]
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}

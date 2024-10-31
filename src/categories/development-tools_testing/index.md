@@ -11,7 +11,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust
-{{#include ../../../deps/tests/tests.rs}}
+{{#include ../../../deps/tests/cats/development_tools_testing/tests.rs}}
 ```
 
 ## Custom message
@@ -19,7 +19,7 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
 ```rust
-{{#include ../../../deps/tests/tests_custom_message.rs}}
+{{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs}}
 ```
 
 ## See Also

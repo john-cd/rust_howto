@@ -10,7 +10,7 @@ Crates to help with sending, receiving, formatting, and parsing email.
 [![lettre-lib.rs][c-lettre-lib.rs-badge]][c-lettre-lib.rs]
 
 ```rust,noplayground
-{{#include ../../../deps/tests/lettre.rs}}
+{{#include ../../../deps/tests/cats/email/lettre.rs}}
 ```
 
 {{#include refs.incl.md}}
