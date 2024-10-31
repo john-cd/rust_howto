@@ -5,7 +5,9 @@ use std::io::ErrorKind;
 use std::process::Command;
 use std::process::Stdio;
 
+#[cfg(target_family = "unix")]
 fn main() -> Result<(), Error> {
+    // NOTE: `systemd` should be installed.
     let stdout = Command::new("journalctl")
         .stdout(Stdio::piped())
         .spawn()?
@@ -29,8 +31,8 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-#[ignore]
 #[test]
+#[cfg(target_family = "unix")]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())

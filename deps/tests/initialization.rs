@@ -24,7 +24,6 @@ cat_colors(id)              )",
     Ok(())
 }
 
-#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

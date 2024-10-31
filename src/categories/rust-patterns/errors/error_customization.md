@@ -44,11 +44,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}  [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
 ```rust
-{{#include ../../../../deps/tests/miette/mylib.rs}}
-```
-
-```rust
-{{#include ../../../../deps/tests/miette/main.rs}}
+{{#include ../../../../deps/tests/miette.rs}}
 ```
 
 ## See also

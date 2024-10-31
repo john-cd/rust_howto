@@ -8,8 +8,9 @@ use std::path::Path;
 use same_file::Handle;
 
 fn main() -> Result<(), Error> {
-    let path_to_read = Path::new("new.txt");
+    std::fs::write("temp/new.txt", b"Lorem ipsum")?;
 
+    let path_to_read = Path::new("temp/new.txt");
     let stdout_handle = Handle::stdout()?;
     let handle = Handle::from_path(path_to_read)?;
 
@@ -29,7 +30,6 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(clippy::eq_op)]
 
 struct Rectangle {
     width: u32,
@@ -50,7 +51,6 @@ mod tests {
 
     // With Result
 
-    #[allow(clippy::eq_op)]
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {

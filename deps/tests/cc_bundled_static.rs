@@ -1,10 +1,11 @@
-fn main() {
-    cc::Build::new().file("src/hello.c").compile("hello");
-    // outputs `libhello.a`
-}
+// fn main() {
+//     cc::Build::new().file("src/hello.c").compile("hello");
+//     // outputs `libhello.a`
+// }
 
-#[ignore]
-#[test]
-fn test() {
-    main();
-}
+// // TODO
+// #[ignore]
+// #[test]
+// fn test() {
+//     main();
+// }

@@ -197,6 +197,7 @@ lettre = "0.11.10"
 syslog = "7.0.0"
 
 [build-dependencies]
+cc = "1.0"
 ## we no longer use `skeptic` - see `build.rs` and package.build setting above.
 #anyhow = "1"
 #build-info-build = "0.0.34"

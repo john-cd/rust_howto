@@ -8,7 +8,7 @@ use anyhow::bail;
 use anyhow::Result;
 
 fn main() -> Result<()> {
-    let mut child = Command::new("python")
+    let mut child = Command::new("rev")
         .stdin(Stdio::piped())
         .stderr(Stdio::piped())
         .stdout(Stdio::piped())
@@ -18,7 +18,7 @@ fn main() -> Result<()> {
         .stdin
         .as_mut()
         .ok_or(anyhow!("Child process stdin has not been captured!"))?
-        .write_all(b"import this; copyright(); credits(); exit()")?;
+        .write_all(b"1234 56789")?;
 
     let output = child.wait_with_output()?;
 
@@ -37,7 +37,6 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,12 +1,13 @@
-fn main() {
-    cc::Build::new()
-        .cpp(true)
-        .file("src/foo.cpp")
-        .compile("foo");
-}
+// fn main() {
+//     cc::Build::new()
+//         .cpp(true)
+//         .file("src/foo.cpp")
+//         .compile("foo");
+// }
 
-#[ignore]
-#[test]
-fn test() {
-    main();
-}
+// // TODO
+// #[ignore]
+// #[test]
+// fn test() {
+//     main();
+// }

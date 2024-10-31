@@ -89,7 +89,6 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

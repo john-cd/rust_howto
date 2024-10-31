@@ -16,11 +16,4 @@ flags! {
     }
 }
 
-#[ignore]
-
-fn main() {}
-
-#[test]
-fn test() {
-    main();
-}
+// TODO

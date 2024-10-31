@@ -25,11 +25,15 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends fzf \
                                                   aspell aspell-en \
+                                                  systemd \
     && apt install -y --no-install-recommends gcc pkg-config libc6-dev libssl-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+## fzf = fast fuzzy search
+## aspell* required for spell checking
+## systemd required for one example using `journalctl`
 ## gcc pkg-config libc6-dev libssl-dev required for https://docs.rs/crate/lychee/latest
 
 ## Also consider: mold clang
@@ -107,7 +111,7 @@ EOF
 # RUN cargo install --locked cargo-audit || true
 # RUN cargo install --locked cargo-pants || true
 
-# Link checker
+## Link checker
 RUN cargo install lychee
 
 ## Install the mdbook-utils tool that is a companion to the book.
