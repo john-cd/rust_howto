@@ -11,6 +11,7 @@ echo "----------"
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
+## TODO
 ## Check dependencies
 # cargo deny check \
 #     && cargo outdated --exit-code 1 \
@@ -21,11 +22,6 @@ cargo +nightly fmt --all --check
 
 ## Fetch the dependencies
 cargo fetch
-
-## Build the book (html and fully processed markdown) into ./book/html and ./book/markdown
-mdbook build
-
-# NOTE: cargo build (specifically build.rs) requires that /code/book/markdown/ has been created
 
 ## Make sure all examples compile
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
@@ -38,10 +34,13 @@ cargo build --workspace --all-targets --locked --profile ci
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
-## Test all examples (integration tests in /deps/tests, examples in /deps/examples, skeptic tests in /deps/tests and any tests in /xmpl)
+## Test all examples (integration tests in /deps/tests and any tests in /xmpl)
 ## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
-cargo nextest run --workspace --all-targets --locked --features ci --profile ci -- --show-output
-## NOTE supersedes: mdbook test
+cargo test run --workspace --all-targets --locked --profile ci --features ci -- --show-output
+## NOTE supersedes: mdbook test / skeptic tests
+
+## Build the book (html)
+mdbook build
 
 ## Add static assets
 cp static/*.* book/html/
