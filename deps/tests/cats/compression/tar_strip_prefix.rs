@@ -6,7 +6,7 @@ use anyhow::Result;
 use flate2::read::GzDecoder;
 use tar::Archive;
 
-fn main() -> Result<()> {
+pub fn main() -> Result<()> {
     let file = File::open("temp/archive.tar.gz")?;
     let mut archive = Archive::new(GzDecoder::new(file));
     let prefix = "bundle/logs";
@@ -27,8 +27,3 @@ fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}

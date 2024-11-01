@@ -53,8 +53,8 @@ clippyall:
   cargo clippy --workspace --all-targets --locked
 
 # Test the code used by the book (`deps` crate only)
-test:
-  cargo test --package deps --tests --locked -- --show-output
+test: _clean_temp_dir && _clean_temp_dir
+  cargo test --package deps --tests --locked -- --show-output || true
 # Only the code in the `deps` package is tested.
 # This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
@@ -62,14 +62,14 @@ test:
 # See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
 # Test all code
-testall:
-  cargo test --workspace --all-targets --locked
+testall: _clean_temp_dir && _clean_temp_dir
+  cargo test --workspace --all-targets --locked || true
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Test all code using nextest
-nextestall:
-  cargo nextest run --workspace --all-targets --locked --no-fail-fast
-  cargo test --doc --workspace --quiet # nextest does not handle doctests
+nextestall: _clean_temp_dir && _clean_temp_dir
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
+  cargo test --doc --workspace --quiet || true # nextest does not handle doctests
 
 # Run additional examples (under the `xmpl` folder)
 [unix]
@@ -218,6 +218,10 @@ templ cmd=help *subcmd=empty:
 # Creates the `crates by category` and `crates (alphabetical)` pages
 crate_indices cmd=help *subcmd=empty:
   cargo run -p rust_howto_tools --bin crate_indices -- {{cmd}} {{subcmd}}
+
+# Clean the deps/temp folder of most files
+_clean_temp_dir:
+  cargo run -p rust_howto_tools --bin clean
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]

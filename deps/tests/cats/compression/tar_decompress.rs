@@ -4,7 +4,7 @@ use std::fs::File;
 use flate2::read::GzDecoder;
 use tar::Archive;
 
-fn main() -> Result<(), std::io::Error> {
+pub fn main() -> Result<(), std::io::Error> {
     let path = "temp/archive.tar.gz";
 
     let tar_gz = File::open(path)?;
@@ -16,10 +16,3 @@ fn main() -> Result<(), std::io::Error> {
 }
 
 // ANCHOR_END: example
-// TODO remove dependency on tar.gz file
-#[ignore]
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}

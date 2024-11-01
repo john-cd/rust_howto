@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(clippy::incompatible_msrv)]
+// ANCHOR: example
 
 use std::fs::create_dir;
 use std::fs::exists;
@@ -8,8 +8,7 @@ use std::fs::File;
 use flate2::write::GzEncoder;
 use flate2::Compression;
 
-#[cfg(target_family = "unix")]
-fn main() -> Result<(), std::io::Error> {
+pub fn main() -> Result<(), std::io::Error> {
     // Create a temporary folder
     if !exists("temp")? {
         create_dir("temp")?;
@@ -23,13 +22,8 @@ fn main() -> Result<(), std::io::Error> {
     let mut tar = tar::Builder::new(enc);
     // Archive the /var/log directory and all of its contents
     // (recursively), renaming it in the process
-    tar.append_dir_all("backup/var/log", "/var/log")?;
+    tar.append_dir_all("temp/backup/var/log", "/var/log")?;
     Ok(())
 }
 
 // ANCHOR_END: example
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}
