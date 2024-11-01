@@ -1,5 +1,6 @@
-use rust_howto_tools::*;
 use std::path::Path;
+
+use rust_howto_tools::*;
 
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()

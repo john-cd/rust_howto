@@ -12,7 +12,9 @@ pub fn clean_folder(dir: &Path) -> anyhow::Result<()> {
             let entry = entry?;
             let path = entry.path();
             // ignore e.g. .gitkeep in the base folder
-            if entry.path().is_file() && !entry.file_name().to_string_lossy().starts_with(".") {
+            if entry.path().is_file()
+                && !entry.file_name().to_string_lossy().starts_with(".")
+            {
                 fs::remove_file(path)?;
                 info!("Removed {:?}", entry.path());
             }
