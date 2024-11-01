@@ -4,6 +4,7 @@
 [![notify-crates.io][c-notify-crates.io-badge]][c-notify-crates.io]
 [![notify-github][c-notify-github-badge]][c-notify-github]
 [![notify-lib.rs][c-notify-lib.rs-badge]][c-notify-lib.rs]
+[![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Watch files or directories and execute a function when they change
 

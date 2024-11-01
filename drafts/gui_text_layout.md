@@ -15,6 +15,8 @@
 [![parley-crates.io][c-parley-crates.io-badge]][c-parley-crates.io]
 [![parley-github][c-parley-github-badge]][c-parley-github]
 [![parley-lib.rs][c-parley-lib.rs-badge]][c-parley-lib.rs]
+[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
+[![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
 "Another very accomplished text layout library used by Druid/Xilem."
 

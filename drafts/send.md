@@ -6,5 +6,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-- [ ] 'static and Send constraints
+TODO add 'static and Send constraints
+Send + Sync handling
 </div>

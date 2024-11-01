@@ -6,6 +6,7 @@
 [![criterion-crates.io][c-criterion-crates.io-badge]][c-criterion-crates.io]
 [![criterion-github][c-criterion-github-badge]][c-criterion-github]
 [![criterion-lib.rs][c-criterion-lib.rs-badge]][c-criterion-lib.rs]
+[![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
 Statistically accurate benchmarking tool for benchmarking libraries
 

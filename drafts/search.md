@@ -6,6 +6,7 @@
 [![infisearch-crates.io][c-infisearch-crates.io-badge]][c-infisearch-crates.io]
 [![infisearch-github][c-infisearch-github-badge]][c-infisearch-github]
 [![infisearch-lib.rs][c-infisearch-lib.rs-badge]][c-infisearch-lib.rs]
+[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
 ## Stork search
 
@@ -13,6 +14,7 @@
 [![stork-search-crates.io][c-stork_search-crates.io-badge]][c-stork_search-crates.io]
 [![stork-search-github][c-stork_search-github-badge]][c-stork_search-github]
 [![stork-search-lib.rs][c-stork_search-lib.rs-badge]][c-stork_search-lib.rs]
+[![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
 [stork-search.net][c-stork_search-website]
 
