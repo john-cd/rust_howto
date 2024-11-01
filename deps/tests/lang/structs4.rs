@@ -1,3 +1,4 @@
+// ANCHOR: example
 struct Rectangle {
     width: u32,
     height: u32,
@@ -27,6 +28,7 @@ fn main() {
     println!("area: {}", sq.area());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

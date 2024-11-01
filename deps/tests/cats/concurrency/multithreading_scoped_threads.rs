@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::error::Error;
 use std::path::Path;
 use std::sync::mpsc;
@@ -39,6 +40,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

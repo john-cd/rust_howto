@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::process::Command;
 
 use anyhow::bail;
@@ -35,6 +36,8 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // TODO
 // this test should not run during CI

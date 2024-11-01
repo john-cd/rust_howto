@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::distributions::Distribution;
 use rand::distributions::Standard;
 use rand::Rng;
@@ -27,6 +28,7 @@ fn main() {
     println!("Random Point: {:?}", rand_point);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,4 +1,5 @@
 #![allow(unused)]
+// ANCHOR: example
 
 fn main() {
     // `const` is set to a constant expression; the type must be annotated
@@ -9,6 +10,7 @@ fn main() {
     let mut guess = String::new(); // mutable variable
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

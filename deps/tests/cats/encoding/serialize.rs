@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io;
 
 use anyhow::Result;
@@ -15,6 +16,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

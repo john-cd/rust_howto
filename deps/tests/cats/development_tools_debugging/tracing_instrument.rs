@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing::event;
 use tracing::instrument;
 use tracing::Level;
@@ -26,6 +27,7 @@ async fn main() {
     my_async_function().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

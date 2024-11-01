@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let x: f64 = 6.0;
 
@@ -7,6 +8,7 @@ fn main() {
     assert_eq!(a, b);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

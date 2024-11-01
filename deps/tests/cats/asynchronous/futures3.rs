@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(clippy::async_yields_async)]
 use anyhow::Result;
 use futures::future::FutureExt;
@@ -31,6 +32,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> Result<()> {
     main()?;

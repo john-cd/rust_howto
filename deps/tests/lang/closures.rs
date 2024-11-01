@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn find_emails(list: Vec<String>) -> Vec<String> {
     list.into_iter()
         .filter(|s| s.contains('@')) // <-- closure
@@ -13,6 +14,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

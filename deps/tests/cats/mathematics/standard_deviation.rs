@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn mean(data: &[i32]) -> Option<f32> {
     let sum = data.iter().sum::<i32>() as f32;
     let count = data.len();
@@ -50,6 +51,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

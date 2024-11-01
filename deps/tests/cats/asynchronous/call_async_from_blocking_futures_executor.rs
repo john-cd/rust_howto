@@ -1,3 +1,4 @@
+// ANCHOR: example
 async fn do_something() {
     println!("hello, world!");
 }
@@ -15,6 +16,7 @@ fn main() {
     // `future` is run and "hello, world!" is printed
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     use rand::Rng;
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
@@ -16,6 +17,7 @@ fn main() {
     println!("{:?}", password);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

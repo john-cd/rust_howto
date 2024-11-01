@@ -1,3 +1,4 @@
+// ANCHOR: example
 /// This is a doc comment
 /// Note the three slashes
 /// The first line is equivalent to the next line.
@@ -16,6 +17,7 @@ fn main() {
     function_including_external_file_as_documentation();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 extern crate crossbeam;
 extern crate crossbeam_channel;
 
@@ -54,6 +55,7 @@ fn main() {
     .unwrap();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

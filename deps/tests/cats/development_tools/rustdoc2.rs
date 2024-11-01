@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 
 /// Returns a person with the name given them
@@ -28,6 +29,7 @@ fn main() {
     let _ = new("John");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 // // TODO Error: SqliteFailure(Error { code: Unknown, extended_code:
 // 1 }, Some("no such table: cat_colors"))
 
@@ -47,6 +48,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // TODO
 #[ignore]
 #[test]

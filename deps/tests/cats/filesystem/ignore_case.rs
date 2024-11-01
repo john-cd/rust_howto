@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use glob::glob_with;
 use glob::MatchOptions;
@@ -15,6 +16,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

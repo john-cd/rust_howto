@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -11,6 +12,7 @@ fn main() {
     println!("{}", longest(x, y));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::distributions::Distribution;
 use rand::distributions::Uniform;
 
@@ -14,6 +15,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

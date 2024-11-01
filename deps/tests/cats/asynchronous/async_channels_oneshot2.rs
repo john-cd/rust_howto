@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::time::Duration;
 
 use tokio::sync::oneshot;
@@ -43,6 +44,7 @@ fn main() {
     rt.block_on(async { async_main().await }).unwrap();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

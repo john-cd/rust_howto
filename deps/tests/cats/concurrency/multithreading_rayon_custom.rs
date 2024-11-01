@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     // Build the threadpool
     let pool = rayon::ThreadPoolBuilder::new()
@@ -21,6 +22,7 @@ fn fib(n: usize) -> usize {
     a + b
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

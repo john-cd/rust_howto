@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use semver::BuildMetadata;
 use semver::Prerelease;
@@ -24,6 +25,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

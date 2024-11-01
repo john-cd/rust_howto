@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 
 // A function which takes a closure as an argument and calls it.
@@ -24,6 +25,7 @@ fn main() {
     apply(|| println!("applied"));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

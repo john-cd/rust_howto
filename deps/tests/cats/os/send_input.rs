@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![cfg(target_family = "unix")]
 
 use std::collections::HashSet;
@@ -39,6 +40,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

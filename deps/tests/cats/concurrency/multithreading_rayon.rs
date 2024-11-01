@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rayon::prelude::*;
 
 fn sum_of_squares(input: &[i32]) -> i32 {
@@ -14,6 +15,7 @@ fn main() {
     println!("{}", sum_of_squares(&v[..]));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

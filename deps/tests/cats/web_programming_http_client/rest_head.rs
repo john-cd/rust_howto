@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::time::Duration;
 
 use reqwest::ClientBuilder;
@@ -20,6 +21,8 @@ async fn main() -> reqwest::Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

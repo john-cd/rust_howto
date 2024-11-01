@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::path::PathBuf;
 
 use anyhow::Result;
@@ -110,6 +111,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     println!("{:?}", main());

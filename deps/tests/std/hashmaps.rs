@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 fn main() {
@@ -22,6 +23,7 @@ fn main() {
     scores.entry(String::from("Yellow")).or_insert(50);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

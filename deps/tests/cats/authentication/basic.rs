@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::io::copy;
 
@@ -28,6 +29,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

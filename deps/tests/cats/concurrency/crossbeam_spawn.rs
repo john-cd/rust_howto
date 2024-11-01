@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let arr = &[1, 25, -4, 10];
     let max = find_max(arr);
@@ -26,6 +27,7 @@ fn find_max(arr: &[i32]) -> Option<i32> {
     .unwrap()
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

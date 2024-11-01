@@ -1,3 +1,4 @@
+// ANCHOR: example
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
     name: String,
@@ -42,6 +43,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

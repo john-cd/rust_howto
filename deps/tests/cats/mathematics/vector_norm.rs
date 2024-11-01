@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ndarray::array;
 use ndarray::Array1;
 use ndarray::ArrayView1;
@@ -23,6 +24,7 @@ fn main() {
     println!("Normalizing x yields {:?}", normalize(x));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

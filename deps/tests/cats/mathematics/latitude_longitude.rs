@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let earth_radius_kilometer = 6371.0_f64;
     let (paris_latitude_degrees, paris_longitude_degrees) =
@@ -27,6 +28,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tokio::time::sleep;
 use tokio::time::Duration;
 use tokio_graceful_shutdown::SubsystemBuilder;
@@ -45,6 +46,7 @@ async fn main() -> anyhow::Result<()> {
     .map_err(|e| e.into())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

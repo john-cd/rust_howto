@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 use rusqlite::Connection;
@@ -51,6 +52,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // TODO
 #[ignore = "requires rusqlite DB"]
 #[test]

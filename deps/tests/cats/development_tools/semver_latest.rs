@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use semver::Version;
 use semver::VersionReq;
@@ -41,6 +42,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

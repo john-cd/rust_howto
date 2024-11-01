@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 
 // TODO rewrite so that a username and password are not required?
@@ -76,6 +77,8 @@ fn main() { println!("hello world!");}
     );
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

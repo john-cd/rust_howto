@@ -1,6 +1,7 @@
 #![allow(clippy::useless_vec)]
 #![allow(dead_code)]
 // TODO ^
+// ANCHOR: example
 
 fn main() {
     // Used as an expression.
@@ -52,6 +53,7 @@ macro_rules! _example {
 // Outer macro `example` is expanded, then inner macro `println` is
 // expanded. example!();
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

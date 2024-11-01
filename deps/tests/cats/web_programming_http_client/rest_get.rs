@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 use reqwest::Error;
 use serde::Deserialize;
@@ -25,6 +26,8 @@ async fn main() -> Result<(), Error> {
     println!("{:?}", users);
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

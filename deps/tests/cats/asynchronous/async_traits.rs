@@ -1,3 +1,4 @@
+// ANCHOR: example
 struct MyHealthChecker;
 
 trait HealthCheck {
@@ -30,6 +31,7 @@ async fn main() {
     do_health_check(hc).await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use futures::join;
 
 async fn foo(i: u32) -> u32 {
@@ -17,6 +18,7 @@ async fn main() {
     assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

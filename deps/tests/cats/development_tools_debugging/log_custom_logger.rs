@@ -1,3 +1,4 @@
+// ANCHOR: example
 use log::Level;
 use log::LevelFilter;
 use log::Metadata;
@@ -32,11 +33,12 @@ fn main() -> Result<(), SetLoggerError> {
     Ok(())
 }
 
+// ANCHOR_END: example
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {
-#[test]
-fn test() {
-    main().unwrap();
-}
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }

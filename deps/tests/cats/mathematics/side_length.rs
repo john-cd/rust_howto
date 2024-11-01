@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let angle: f64 = 2.0;
     let side_length = 80.0;
@@ -7,6 +8,7 @@ fn main() {
     println!("Hypotenuse: {}", hypotenuse);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

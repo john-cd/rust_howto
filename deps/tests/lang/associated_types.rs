@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 
 trait Iterator {
@@ -18,6 +19,7 @@ trait Add<Rhs = Self> {
 
 fn main() {}
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

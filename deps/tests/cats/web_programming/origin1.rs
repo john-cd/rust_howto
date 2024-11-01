@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use url::Host;
 use url::Origin;
@@ -20,6 +21,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

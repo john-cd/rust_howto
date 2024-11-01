@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 use lazy_static::lazy_static;
@@ -23,6 +24,7 @@ fn main() {
     show_access("Jim");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

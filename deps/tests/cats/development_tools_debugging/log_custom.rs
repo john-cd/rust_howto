@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use log::LevelFilter;
 use log4rs::append::file::FileAppender;
@@ -22,11 +23,12 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 use rusty_fork::rusty_fork_test;
 // Runs in a seprate process
 rusty_fork_test! {
-#[test]
-fn test() {
-    main().unwrap();
-}
+    #[test]
+    fn test() {
+        main().unwrap();
+    }
 }

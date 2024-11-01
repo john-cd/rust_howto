@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let number = 3;
     let result = if number < 5 {
@@ -11,6 +12,7 @@ fn main() {
     println!("{}", result);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

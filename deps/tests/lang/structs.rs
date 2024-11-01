@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 struct User {
     active: bool,
@@ -17,6 +18,7 @@ fn main() {
     };
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

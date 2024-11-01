@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 use futures::{
     future::FutureExt, // for `.fuse()`
@@ -30,6 +31,7 @@ async fn main() {
     race_tasks().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

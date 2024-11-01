@@ -1,3 +1,4 @@
+// ANCHOR: example
 // TODO
 #![allow(dead_code)]
 
@@ -24,6 +25,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

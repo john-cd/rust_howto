@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fmt;
 
 use anyhow::Result;
@@ -62,6 +63,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

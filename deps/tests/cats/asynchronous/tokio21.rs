@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::rc::Rc;
 
 use tokio::task;
@@ -24,6 +25,7 @@ async fn main() {
     local.await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 mod mylib {
 
     //! library code: define unique error types and error wrappers
@@ -97,6 +98,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     assert!(main().is_err());

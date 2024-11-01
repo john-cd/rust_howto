@@ -1,3 +1,4 @@
+// ANCHOR: example
 use url::ParseError;
 use url::Url;
 
@@ -10,6 +11,7 @@ fn main() -> Result<(), ParseError> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::str::FromStr;
 
@@ -88,6 +89,8 @@ fn main() -> Result<()> {
     println!("Finished with success!");
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use futures::StreamExt;
 use tokio::fs::File;
 use tokio::io;
@@ -40,6 +41,7 @@ async fn main() -> Result {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

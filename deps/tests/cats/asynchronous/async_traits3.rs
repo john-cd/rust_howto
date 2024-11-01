@@ -1,3 +1,4 @@
+// ANCHOR: example
 use async_trait::async_trait;
 
 #[async_trait]
@@ -31,6 +32,7 @@ async fn main() {
     Modal.run().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

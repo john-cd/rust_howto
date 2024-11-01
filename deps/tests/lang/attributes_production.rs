@@ -1,3 +1,4 @@
+// ANCHOR: example
 //! Crate documentation
 #![warn(
     unused,
@@ -19,6 +20,7 @@ fn main() {
     let _ = S;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

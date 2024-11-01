@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 // Tuple struct
 struct Color(i32, i32, i32);
@@ -11,6 +12,7 @@ fn main() {
     let _s = AlwaysEqual;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

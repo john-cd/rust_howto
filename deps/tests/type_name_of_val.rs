@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn get_iter() -> impl Iterator<Item = i32> {
     [1, 2, 3].into_iter()
 }
@@ -10,6 +11,7 @@ fn main() {
     println!("The sum of the `{iter_name}` is {sum}.");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

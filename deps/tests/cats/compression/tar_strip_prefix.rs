@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::path::PathBuf;
 
@@ -25,6 +26,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

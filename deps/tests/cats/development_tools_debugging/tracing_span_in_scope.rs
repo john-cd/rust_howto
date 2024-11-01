@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing::debug_span;
 use tracing::info_span;
 use tracing::Instrument;
@@ -36,6 +37,7 @@ async fn main() {
     my_async_function().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::sync::atomic::AtomicUsize;
 use std::sync::atomic::Ordering;
 
@@ -8,6 +9,7 @@ fn main() {
     println!("live threads: {}", old_thread_count + 1);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

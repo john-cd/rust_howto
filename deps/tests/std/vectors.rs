@@ -1,4 +1,5 @@
 #![allow(clippy::vec_init_then_push)]
+// ANCHOR: example
 
 fn main() {
     let mut v: Vec<i32> = Vec::new();
@@ -20,6 +21,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

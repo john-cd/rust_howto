@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tokio::sync::mpsc;
 
 async fn some_computation(input: u32) -> String {
@@ -24,6 +25,7 @@ async fn main() {
     multi_producer_single_receiver().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

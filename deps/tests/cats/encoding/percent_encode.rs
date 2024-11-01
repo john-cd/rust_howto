@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::str::Utf8Error;
 
 use percent_encoding::percent_decode;
@@ -23,6 +24,7 @@ fn main() -> Result<(), Utf8Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

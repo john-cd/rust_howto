@@ -1,3 +1,4 @@
+// ANCHOR: example
 use chrono::Datelike;
 use chrono::Timelike;
 use chrono::Utc;
@@ -33,6 +34,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

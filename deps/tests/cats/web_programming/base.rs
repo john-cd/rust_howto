@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::anyhow;
 use anyhow::Result;
 use url::Url;
@@ -29,6 +30,7 @@ fn base_url(mut url: Url) -> Result<Url> {
     Ok(url)
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> Result<()> {
     main()?;

@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(unused_variables)]
 #![allow(unused_mut)]
 #![allow(unused_imports)]
@@ -22,6 +23,7 @@ fn main() {
     let mut m = 2;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

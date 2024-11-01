@@ -1,3 +1,4 @@
+// ANCHOR: example
 use serde_json::json;
 use serde_json::Error;
 use serde_json::Value;
@@ -28,6 +29,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

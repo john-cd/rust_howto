@@ -1,3 +1,4 @@
+// ANCHOR: example
 #[tokio::main]
 async fn main() {
     // This is running on Tokio. We may not block here.
@@ -10,6 +11,7 @@ async fn main() {
     blocking_task.await.unwrap();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

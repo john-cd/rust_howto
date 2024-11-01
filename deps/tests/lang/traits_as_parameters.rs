@@ -1,3 +1,4 @@
+// ANCHOR: example
 // Accepts any type that implements the specified trait:
 fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
@@ -30,6 +31,7 @@ fn main() {
     notify2(&a);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

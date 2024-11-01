@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 
 use std::iter::once;
@@ -84,6 +85,8 @@ async fn main() {
         // Wrap the `Service` in our middleware stack
         .service_fn(handler);
 }
+
+// ANCHOR_END: example
 
 // TODO finish
 

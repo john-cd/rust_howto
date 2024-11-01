@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
 
@@ -12,6 +13,7 @@ fn main() {
     println!("Mean of the data is {:?}", mean);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

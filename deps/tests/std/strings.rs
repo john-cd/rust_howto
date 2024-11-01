@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     // `String` is Unicode, not ASCII
     let mut s1 = String::from("hello");
@@ -28,6 +29,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

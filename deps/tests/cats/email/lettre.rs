@@ -1,3 +1,4 @@
+// ANCHOR: example
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 use lettre::Message;
@@ -32,6 +33,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[ignore = "requires SMTP credentials to run"]
 #[test]
 fn test() {

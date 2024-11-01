@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
@@ -25,6 +26,7 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
 // TODO
 #[ignore]

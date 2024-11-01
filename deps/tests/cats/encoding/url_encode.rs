@@ -1,3 +1,4 @@
+// ANCHOR: example
 use url::form_urlencoded::byte_serialize;
 use url::form_urlencoded::parse;
 
@@ -13,6 +14,7 @@ fn main() {
     println!("decoded:'{}'", decoded);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

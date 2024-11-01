@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::process::Command;
 
 use anyhow::anyhow;
@@ -35,6 +36,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -23,6 +24,7 @@ fn main() -> Result<(), confy::ConfyError> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

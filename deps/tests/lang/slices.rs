@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let s = String::from("hello world");
 
@@ -8,6 +9,7 @@ fn main() {
     println!("{}", world);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

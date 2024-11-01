@@ -1,3 +1,4 @@
+// ANCHOR: example
 // TODO solve
 // error: linking with `cc` failed: exit status: 1
 //   = note: /usr/bin/ld: cannot find -lpython3.11: No such file or
@@ -62,6 +63,7 @@
 
 fn main() {}
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

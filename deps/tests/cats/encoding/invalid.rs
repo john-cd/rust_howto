@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 use csv::Error;
 use serde::Deserialize;
@@ -26,6 +27,7 @@ alisha,colombo,xyz";
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

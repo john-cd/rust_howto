@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use redis::Commands;
 
@@ -20,6 +21,7 @@ fn main() -> Result<()> {
     println!("{}", my_int);
     Ok(())
 }
+// ANCHOR_END: example
 
 // TODO
 #[ignore = "requires a Redis instance"]

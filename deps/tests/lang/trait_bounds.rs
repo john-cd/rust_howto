@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::hash_map::DefaultHasher;
 use std::hash::Hash;
 use std::hash::Hasher;
@@ -32,6 +33,7 @@ fn main() {
     print_hash(&p);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

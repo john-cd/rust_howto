@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     tokio::runtime::Builder::new_current_thread()
         .enable_all()
@@ -8,6 +9,7 @@ fn main() {
         })
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

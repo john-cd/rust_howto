@@ -1,3 +1,4 @@
+// ANCHOR: example
 // TODO rewrite
 
 // use std::fmt;
@@ -47,6 +48,7 @@
 
 fn main() {}
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

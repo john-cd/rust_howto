@@ -1,3 +1,4 @@
+// ANCHOR: example
 trait MyHash {
     fn myhash(&self) -> u64;
 }
@@ -13,6 +14,7 @@ fn main() {
     println!("{}", x.myhash());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

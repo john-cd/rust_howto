@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::sync::Arc;
 use std::thread;
 
@@ -62,6 +63,7 @@ fn main() {
     println!("final count: {}", map.iter().count());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

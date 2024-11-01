@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use url::Position;
 use url::Url;
@@ -9,6 +10,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> Result<()> {
     main()?;

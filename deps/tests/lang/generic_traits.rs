@@ -1,3 +1,4 @@
+// ANCHOR: example
 trait Test<T> {
     fn test(_t: T);
 }
@@ -16,6 +17,7 @@ fn main() {
     SomeStruct::test(true);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

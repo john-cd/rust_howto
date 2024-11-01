@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::Rng;
 
 fn main() {
@@ -12,6 +13,7 @@ fn main() {
     println!("Random float: {}", rng.gen::<f64>());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

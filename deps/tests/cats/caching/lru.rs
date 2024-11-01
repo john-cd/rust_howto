@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::num::NonZeroUsize;
 
 use lru::LruCache;
@@ -26,6 +27,7 @@ fn main() {
     assert_eq!(*cache.get(&"banana").unwrap(), 6);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

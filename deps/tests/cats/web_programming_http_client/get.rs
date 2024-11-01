@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io::Read;
 
 use anyhow::Result;
@@ -14,6 +15,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // requires network access
 #[test]
 fn test() -> anyhow::Result<()> {

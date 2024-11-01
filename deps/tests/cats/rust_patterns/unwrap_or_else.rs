@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -13,6 +14,7 @@ fn main() {
     });
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

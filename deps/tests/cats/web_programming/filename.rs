@@ -1,3 +1,4 @@
+// ANCHOR: example
 use mime::Mime;
 
 fn find_mimetype(filename: &str) -> Mime {
@@ -23,6 +24,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

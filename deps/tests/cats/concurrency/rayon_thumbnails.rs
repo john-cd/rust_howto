@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::create_dir_all;
 use std::path::Path;
 
@@ -61,6 +62,7 @@ where
         .save(file_path)?)
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

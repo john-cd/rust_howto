@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::num::NonZeroU32;
 
 use data_encoding::HEXUPPER;
@@ -49,6 +50,7 @@ fn main() -> Result<(), Unspecified> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     println!("{:?}", main());

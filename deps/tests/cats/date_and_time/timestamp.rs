@@ -1,3 +1,4 @@
+// ANCHOR: example
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::NaiveDateTime;
@@ -23,6 +24,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

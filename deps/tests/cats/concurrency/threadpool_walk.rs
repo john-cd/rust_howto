@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Error;
@@ -59,6 +60,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

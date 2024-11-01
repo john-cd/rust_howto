@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rayon::prelude::*;
 
 fn main() {
@@ -6,6 +7,7 @@ fn main() {
     println!("{:?}", arr);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

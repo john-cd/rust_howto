@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io;
 use std::io::BufRead;
 
@@ -18,6 +19,7 @@ fn main() {
     // std::fs::File::open("temp/hello.txt").unwrap();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

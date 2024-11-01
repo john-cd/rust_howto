@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ring::error::Unspecified;
 use ring::hmac;
 use ring::rand;
@@ -16,6 +17,7 @@ fn main() -> Result<(), Unspecified> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     println!("{:?}", main());

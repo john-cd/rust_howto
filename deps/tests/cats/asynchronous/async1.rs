@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::future::Future;
 
 struct SomeStruct;
@@ -47,6 +48,7 @@ async fn main() {
     // Futures are lazy
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

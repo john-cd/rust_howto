@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ndarray::arr1;
 use ndarray::arr2;
 use ndarray::Array1;
@@ -16,6 +17,7 @@ fn main() {
     println!("{}", new_matrix);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

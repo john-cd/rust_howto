@@ -1,3 +1,4 @@
+// ANCHOR: example
 use num::bigint::BigInt;
 use num::bigint::ToBigInt;
 
@@ -16,6 +17,7 @@ fn main() {
     println!("{}! equals {}", 100, factorial(100));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

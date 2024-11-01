@@ -1,3 +1,4 @@
+// ANCHOR: example
 // TODO fix - the API no longer returns a crate_id - need to get
 // version_id then join version_id and Version.id ro retrieve crate
 // name Consider a simpler API for example purposes
@@ -108,6 +109,8 @@
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

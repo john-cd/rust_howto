@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fmt;
 
 // Tuple struct wrapping the type we want to add a non-local trait to.
@@ -18,6 +19,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use itertools::chain;
 use itertools::Itertools;
 
@@ -32,6 +33,7 @@ fn main() {
     assert_eq!(lookup[&3], vec![13, 33])
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

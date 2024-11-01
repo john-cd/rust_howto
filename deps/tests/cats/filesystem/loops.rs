@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io;
 use std::path::Path;
 use std::path::PathBuf;
@@ -29,6 +30,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 // TODO
 #[ignore]
 #[test]

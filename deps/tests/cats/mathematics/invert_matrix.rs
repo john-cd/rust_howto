@@ -1,3 +1,4 @@
+// ANCHOR: example
 use nalgebra::Matrix3;
 
 fn main() {
@@ -13,6 +14,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

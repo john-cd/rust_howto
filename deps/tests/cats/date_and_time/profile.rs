@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::thread;
 use std::time::Duration;
 use std::time::Instant;
@@ -14,6 +15,7 @@ fn main() {
     println!("Time elapsed in expensive_function() is: {:?}", duration);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

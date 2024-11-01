@@ -1,3 +1,4 @@
+// ANCHOR: example
 use lazy_static::lazy_static;
 use regex::Regex;
 
@@ -26,6 +27,7 @@ fn main() {
     assert_eq!(extract_login(r"Not an email@email"), None);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

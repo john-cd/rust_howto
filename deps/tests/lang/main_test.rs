@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 use std::io::Read;
 
@@ -22,7 +23,7 @@ fn main() {
     };
 }
 
-//
+// ANCHOR_END: example
 #[test]
 fn test_main() {
     main();

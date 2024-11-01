@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fmt;
 
 trait OutlinePrint: fmt::Display {
@@ -15,9 +16,10 @@ fn main() {
     String::from("test").outline_print();
 }
 
+// ANCHOR_END: example
+
 // BEWARE: supertrait are NOT inheritance!
 // TODO
-
 #[test]
 fn test() {
     main();

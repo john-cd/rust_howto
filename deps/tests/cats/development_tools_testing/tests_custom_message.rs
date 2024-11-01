@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let result = "Carl";
 
@@ -8,6 +9,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[should_panic]
 #[test]
 fn test() {

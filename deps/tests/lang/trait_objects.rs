@@ -1,3 +1,4 @@
+// ANCHOR: example
 trait Draw {
     fn draw(&self);
 }
@@ -45,6 +46,7 @@ fn main() {
     s.run();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

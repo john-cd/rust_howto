@@ -1,3 +1,4 @@
+// ANCHOR: example
 use chrono::DateTime;
 use chrono::FixedOffset;
 use chrono::Local;
@@ -30,6 +31,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

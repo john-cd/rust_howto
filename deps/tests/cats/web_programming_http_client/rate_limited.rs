@@ -1,3 +1,4 @@
+// ANCHOR: example
 // use std::thread;
 // use std::time::Duration;
 // use std::time::UNIX_EPOCH;
@@ -54,6 +55,8 @@
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

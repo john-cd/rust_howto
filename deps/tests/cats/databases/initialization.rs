@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rusqlite::Connection;
 use rusqlite::Result;
 
@@ -24,6 +25,7 @@ cat_colors(id)              )",
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

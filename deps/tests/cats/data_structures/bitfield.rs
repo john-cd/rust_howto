@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(unused)]
 
 use std::fmt;
@@ -46,6 +47,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

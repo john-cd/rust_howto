@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rayon::prelude::*;
 
 fn main() {
@@ -12,6 +13,7 @@ fn main() {
     assert!(f3 > Some(&8));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

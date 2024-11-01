@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 use postgres::Client;
@@ -46,6 +47,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // TODO
 #[ignore = "requires a running postgres instance"]
 #[test]

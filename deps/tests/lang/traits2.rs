@@ -1,5 +1,6 @@
 // TODO
 #![allow(dead_code)]
+// ANCHOR: example
 
 trait Summary {
     fn summarize_author(&self) -> String;
@@ -29,6 +30,7 @@ fn main() {
     println!("{}", blog.summarize());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

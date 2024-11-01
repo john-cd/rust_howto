@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ansi_term::Colour;
 
 fn main() {
@@ -9,6 +10,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

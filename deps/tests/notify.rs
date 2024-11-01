@@ -1,9 +1,10 @@
 #![allow(unused_imports)]
+// ANCHOR: example
+
 use std::path::Path;
 
 use notify::event::Event;
 use notify::EventHandler;
-use notify::RecommendedWatcher;
 use notify::RecursiveMode;
 use notify::Result;
 use notify::Watcher;
@@ -31,6 +32,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

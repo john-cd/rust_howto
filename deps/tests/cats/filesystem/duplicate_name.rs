@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 use walkdir::WalkDir;
@@ -20,6 +21,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

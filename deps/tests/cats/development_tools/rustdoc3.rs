@@ -1,3 +1,4 @@
+// ANCHOR: example
 //! Fast and easy queue abstraction.
 //!
 //! Provides an abstraction over a queue. When the abstraction is used
@@ -11,6 +12,7 @@ fn main() {
     println!("//! ... are `inner` comments that apply to the containing module (or crate).");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 // This function only gets compiled if the target OS is linux
 #[cfg(target_os = "linux")]
 fn are_you_on_linux() {
@@ -23,6 +24,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

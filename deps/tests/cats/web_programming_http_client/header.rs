@@ -1,10 +1,9 @@
+// ANCHOR: example
 use std::collections::HashMap;
 
 use anyhow::Result;
 use reqwest::header;
 use serde::Deserialize;
-
-// TODO improve
 
 #[derive(Deserialize, Debug)]
 pub struct HeadersEcho {
@@ -52,6 +51,10 @@ fn main() -> Result<()> {
     println!("{:?}", out);
     Ok(())
 }
+
+// ANCHOR_END: example
+
+// TODO improve
 
 // requires network access
 #[test]

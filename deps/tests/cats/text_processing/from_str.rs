@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::str::FromStr;
 
 #[derive(Debug, PartialEq)]
@@ -48,6 +49,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

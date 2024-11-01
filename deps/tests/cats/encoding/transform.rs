@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::str::FromStr;
 
 use anyhow::anyhow;
@@ -75,6 +76,7 @@ magenta,#ff00ff"
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

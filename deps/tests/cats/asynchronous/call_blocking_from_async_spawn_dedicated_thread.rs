@@ -1,3 +1,4 @@
+// ANCHOR: example
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();
 
@@ -20,6 +21,7 @@ async fn main() {
     println!("{}", parallel_sum(nums).await);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

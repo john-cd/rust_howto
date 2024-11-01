@@ -1,4 +1,6 @@
 #![allow(dead_code)]
+// ANCHOR: example
+
 struct ImportantExcerpt<'a> {
     part: &'a str,
 }
@@ -14,6 +16,7 @@ fn main() {
     println!("{}", ie.level());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

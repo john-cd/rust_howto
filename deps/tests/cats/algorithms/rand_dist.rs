@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::thread_rng;
 use rand_distr::Distribution;
 use rand_distr::Normal;
@@ -11,6 +12,7 @@ fn main() -> Result<(), NormalError> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::error::Error;
 
 fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
@@ -21,6 +22,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

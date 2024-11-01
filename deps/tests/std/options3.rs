@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(clippy::bind_instead_of_map)]
 
 use std::fs;
@@ -20,6 +21,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

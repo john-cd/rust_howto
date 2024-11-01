@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::convert::Infallible;
 
 use anyhow::Result;
@@ -46,6 +47,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> Result<()> {
     main()?;

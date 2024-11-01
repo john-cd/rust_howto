@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let s1 = String::from("hello");
 
@@ -9,6 +10,7 @@ fn main() {
       // ownership of what it refers to, s1 is not dropped.
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

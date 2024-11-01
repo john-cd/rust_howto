@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::ops::Deref;
 
 fn main() {
@@ -8,6 +9,7 @@ fn main() {
     println!("{}", my_string);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

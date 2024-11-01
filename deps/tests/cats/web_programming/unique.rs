@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::borrow::Cow;
 use std::collections::HashSet;
 
@@ -42,6 +43,8 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

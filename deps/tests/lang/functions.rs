@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn foo(x: i32, unit_label: char) -> i32 {
     let y = {
         let z = 3;
@@ -12,6 +13,7 @@ fn main() {
     println!("{}", foo(1, 'm'));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

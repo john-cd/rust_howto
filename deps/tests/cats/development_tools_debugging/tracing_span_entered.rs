@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing::span;
 use tracing::Level;
 
@@ -15,6 +16,7 @@ fn main() {
     let _span = span.entered();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::time::Duration;
 use std::time::Instant;
 
@@ -24,6 +25,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

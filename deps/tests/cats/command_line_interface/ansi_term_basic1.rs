@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ansi_term::Style;
 
 fn main() {
@@ -7,6 +8,7 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

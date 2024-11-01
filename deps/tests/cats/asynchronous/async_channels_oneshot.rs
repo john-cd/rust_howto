@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tokio::sync::oneshot;
 
 async fn some_computation(input: u32) -> String {
@@ -26,6 +27,7 @@ async fn main() {
     one_shot().await;
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

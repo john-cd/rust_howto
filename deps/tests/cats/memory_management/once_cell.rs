@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::cell::OnceCell;
 
 fn main() {
@@ -9,6 +10,7 @@ fn main() {
     assert!(cell.get().is_some());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

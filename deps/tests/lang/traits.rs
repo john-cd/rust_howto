@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 pub trait Summary {
     fn summarize(&self) -> String;
@@ -28,6 +29,7 @@ fn main() {
     println!("Summary: {}", na.summarize());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

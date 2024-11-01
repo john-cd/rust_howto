@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::f64::consts::PI;
 
 use num::complex::Complex;
@@ -8,6 +9,7 @@ fn main() {
     println!("e^(2i * pi) = {}", x.exp()); // =~1
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

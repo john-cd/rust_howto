@@ -1,3 +1,4 @@
+// ANCHOR: example
 async fn say_world() {
     println!("world");
 }
@@ -18,6 +19,7 @@ async fn main() {
 // world
 // Example from https://tokio.rs/tokio/tutorial/hello-tokio
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rayon::prelude::*;
 
 fn main() {
@@ -16,6 +17,7 @@ fn main() {
     assert!(!vec.par_iter().all(|n| *n <= 8));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

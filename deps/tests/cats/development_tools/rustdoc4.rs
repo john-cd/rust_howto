@@ -1,3 +1,4 @@
+// ANCHOR: example
 // #![doc(html_playground_url = "https://playground.example.com/")]
 
 // TODO
@@ -7,6 +8,7 @@ fn main() {
     println!("It should be place at the top of your crate.")
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

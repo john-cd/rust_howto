@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 use std::clone::Clone;
 use std::fmt::Debug;
@@ -24,6 +25,7 @@ fn main() {
     a_function(&s);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

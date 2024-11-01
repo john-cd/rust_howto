@@ -1,3 +1,4 @@
+// ANCHOR: example
 use derive_more::Add;
 use derive_more::Display;
 use derive_more::From;
@@ -30,6 +31,7 @@ fn main() {
     assert!(MyEnum::Nothing.to_string() == "nothing");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

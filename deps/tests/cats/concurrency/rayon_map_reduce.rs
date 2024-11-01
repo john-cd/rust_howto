@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rayon::prelude::*;
 
 struct Person {
@@ -31,6 +32,7 @@ fn main() {
     println!("The average age of people older than 30 is {}", avg_over_30);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

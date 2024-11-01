@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::thread;
 
 use crossbeam_channel::unbounded;
@@ -55,6 +56,7 @@ fn main() {
     assert_eq!(r1.recv(), Err(RecvError));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

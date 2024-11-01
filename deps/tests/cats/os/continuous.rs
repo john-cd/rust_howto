@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![cfg(target_family = "unix")]
 
 use std::io::BufRead;
@@ -32,6 +33,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 #[cfg(target_family = "unix")]
 fn test() -> anyhow::Result<()> {

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashSet;
 
 use anyhow::Result;
@@ -50,6 +51,8 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

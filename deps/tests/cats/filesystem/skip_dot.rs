@@ -1,3 +1,4 @@
+// ANCHOR: example
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
@@ -17,6 +18,7 @@ fn main() {
         .for_each(|x| println!("{}", x.path().display()));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

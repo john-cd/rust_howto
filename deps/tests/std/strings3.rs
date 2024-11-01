@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(clippy::vec_init_then_push)]
 
 // TODO
@@ -63,6 +64,7 @@ fn main() {
     let _datetime = &concat_strs!(DATE, T, TIME);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: example
     // destructuring tuples
     let (_x, _y, _z) = (1, 2, 3);
 
@@ -12,6 +13,7 @@ fn main() {
     let Point { x: _a, y: _b } = p; // a = 0, b = 7
     let Point { x, y } = p; // simpler
     let _ = (x, y);
+    // ANCHOR_END: example
 }
 
 #[test]

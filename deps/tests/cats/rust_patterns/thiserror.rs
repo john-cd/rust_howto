@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(dead_code)]
 use thiserror::Error;
 
@@ -30,6 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     assert!(main().is_err())

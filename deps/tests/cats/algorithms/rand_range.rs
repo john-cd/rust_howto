@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::Rng;
 
 fn main() {
@@ -6,6 +7,7 @@ fn main() {
     println!("Float: {}", rng.gen_range(0.0..10.0));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

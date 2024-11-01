@@ -1,3 +1,4 @@
+// ANCHOR: example
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -43,6 +44,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

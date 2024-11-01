@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use select::document::Document;
 use select::predicate::Name;
@@ -16,6 +17,8 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

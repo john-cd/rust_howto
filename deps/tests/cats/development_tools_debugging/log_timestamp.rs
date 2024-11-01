@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io::Write;
 
 use chrono::Local;
@@ -23,6 +24,7 @@ fn main() {
     log::debug!("debug");
 }
 
+// ANCHOR_END: example
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use ndarray::arr2;
 
 fn main() {
@@ -14,6 +15,7 @@ fn main() {
     println!("{}", sum);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

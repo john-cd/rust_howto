@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .worker_threads(1)
@@ -35,6 +36,7 @@ async fn my_bg_task(i: u64) {
     println!("Task {} stopping.", i);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

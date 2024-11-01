@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::str::FromStr;
 
 use anyhow::Result;
@@ -32,6 +33,8 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+
+// ANCHOR_END: example
 
 // requires network access
 #[test]

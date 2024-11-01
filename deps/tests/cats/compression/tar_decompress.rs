@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fs::File;
 
 use flate2::read::GzDecoder;
@@ -14,6 +15,7 @@ fn main() -> Result<(), std::io::Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // TODO remove dependency on tar.gz file
 #[ignore]
 #[test]

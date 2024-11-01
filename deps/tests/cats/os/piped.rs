@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![cfg(target_family = "unix")]
 
 fn main() -> anyhow::Result<()> {
@@ -42,6 +43,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

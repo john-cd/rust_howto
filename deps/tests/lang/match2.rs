@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::match_single_binding)]
+// ANCHOR: example
 
 // struct pattern matching
 struct Point {
@@ -17,6 +18,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let x = 5; // x is immutable
 
@@ -8,6 +9,7 @@ fn main() {
     println!("{x}");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

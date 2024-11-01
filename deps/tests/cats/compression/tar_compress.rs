@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![allow(clippy::incompatible_msrv)]
 
 use std::fs::create_dir;
@@ -26,6 +27,7 @@ fn main() -> Result<(), std::io::Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

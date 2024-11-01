@@ -1,3 +1,4 @@
+// ANCHOR: example
 use parking_lot::RwLock;
 
 fn main() {
@@ -19,6 +20,7 @@ fn main() {
     } // write lock is dropped here
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

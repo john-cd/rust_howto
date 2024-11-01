@@ -1,3 +1,4 @@
+// ANCHOR: example
 use front_of_house::hosting;
 
 mod front_of_house {
@@ -14,6 +15,7 @@ fn main() {
     eat_at_restaurant();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

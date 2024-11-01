@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::cmp::Ordering;
 
 fn partition(data: &[i32]) -> Option<(Vec<i32>, i32, Vec<i32>)> {
@@ -71,6 +72,7 @@ fn main() {
     println!("Median is {:?}", med);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

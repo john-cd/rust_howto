@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing::debug;
 use tracing::error;
 use tracing::event;
@@ -40,6 +41,7 @@ fn main() {
 #[derive(Debug)]
 struct S;
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

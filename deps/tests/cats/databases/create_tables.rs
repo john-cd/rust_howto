@@ -1,3 +1,4 @@
+// ANCHOR: example
 use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;
@@ -30,6 +31,7 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
 // TODO
 #[ignore = "requires a running postgres instance"]

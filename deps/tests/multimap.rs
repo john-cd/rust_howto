@@ -1,3 +1,4 @@
+// ANCHOR: example
 use anyhow::Result;
 use crates_io_api::Category;
 use crates_io_api::SyncClient;
@@ -40,6 +41,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

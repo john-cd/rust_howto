@@ -1,3 +1,4 @@
+// ANCHOR: example
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;
 
@@ -15,6 +16,7 @@ fn main() -> Result<(), DecodeError> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

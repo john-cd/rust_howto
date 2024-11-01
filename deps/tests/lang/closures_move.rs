@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::thread;
 
 fn main() {
@@ -10,6 +11,7 @@ fn main() {
         .unwrap();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

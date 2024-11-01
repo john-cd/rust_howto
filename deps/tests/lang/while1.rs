@@ -1,9 +1,11 @@
 fn main() {
+    // ANCHOR: example
     let mut number = 5;
     while number != 0 {
         println!("{number}!");
         number -= 1;
     }
+    // ANCHOR_END: example
 }
 
 #[test]

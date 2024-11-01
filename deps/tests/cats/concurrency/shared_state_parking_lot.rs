@@ -1,3 +1,4 @@
+// ANCHOR: example
 use parking_lot::Once;
 
 static START: Once = Once::new();
@@ -11,6 +12,7 @@ fn main() {
 
 // TODO add more
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

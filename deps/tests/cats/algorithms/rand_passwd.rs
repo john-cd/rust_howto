@@ -1,3 +1,4 @@
+// ANCHOR: example
 use rand::distributions::Alphanumeric;
 use rand::thread_rng;
 use rand::Rng;
@@ -12,6 +13,7 @@ fn main() {
     println!("{}", rand_string);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,4 +1,5 @@
 fn main() {
+    // ANCHOR: example
     let mut stack = Vec::new();
 
     stack.push(1);
@@ -9,6 +10,7 @@ fn main() {
         // <-- while let
         println!("{}", top);
     }
+    // ANCHOR_END: example
 }
 
 #[test]

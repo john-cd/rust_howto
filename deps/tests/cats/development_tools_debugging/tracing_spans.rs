@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing::span;
 use tracing::Level;
 
@@ -13,6 +14,7 @@ fn main() {
     } // Dropping the guard exits the span.
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

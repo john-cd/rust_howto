@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::net::IpAddr;
 use std::str;
 
@@ -15,6 +16,8 @@ fn main() -> Result<()> {
     println!("{:?}", addr);
     Ok(())
 }
+
+// ANCHOR_END: example
 
 #[test]
 fn test() -> Result<()> {

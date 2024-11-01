@@ -1,3 +1,4 @@
+// ANCHOR: example
 use unicode_segmentation::UnicodeSegmentation;
 
 fn main() {
@@ -7,6 +8,7 @@ fn main() {
     assert_eq!(graphemes[3], "é");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;
@@ -29,6 +30,7 @@ fn main() {
     println!("Result: {}", *counter.lock().unwrap());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

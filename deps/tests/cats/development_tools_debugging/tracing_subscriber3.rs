@@ -1,3 +1,4 @@
+// ANCHOR: example
 use tracing_subscriber::filter::EnvFilter;
 use tracing_subscriber::fmt;
 use tracing_subscriber::prelude::*;
@@ -14,6 +15,7 @@ fn main() {
         .init();
 }
 
+// ANCHOR_END: example
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {

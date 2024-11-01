@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::thread;
 use std::time::Duration;
 
@@ -17,6 +18,7 @@ fn main() {
     thread_two.join().expect("thread two panicked");
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

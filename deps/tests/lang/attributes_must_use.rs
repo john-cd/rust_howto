@@ -1,3 +1,4 @@
+// ANCHOR: example
 // Must use the results of the fn; also applies to traits, structs,
 // enums...
 #[must_use]
@@ -9,6 +10,7 @@ fn main() {
     println!("{}", add(1, 2));
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

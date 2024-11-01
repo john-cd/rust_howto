@@ -1,4 +1,5 @@
 #![allow(unused_imports, dead_code)]
+// ANCHOR: example
 
 // For code from an external crate, the absolute path begins with the
 // crate name Here, the standard `std` library
@@ -47,6 +48,7 @@ pub use front_of_house::hosting;
 
 fn main() {}
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 // 'static indicates that the data pointed to by the reference lives
 // for the _remaining_ lifetime of the running program. It can still
 // be coerced to a shorter lifetime.
@@ -10,6 +11,7 @@ fn main() {
     println!("{}", my_string());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

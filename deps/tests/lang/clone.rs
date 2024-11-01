@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn main() {
     let s2 = String::from("hello");
     let _s3 = s2.clone();
@@ -5,6 +6,7 @@ fn main() {
     // not just the stack data
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

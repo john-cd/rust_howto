@@ -1,3 +1,4 @@
+// ANCHOR: example
 fn generic<T>(_t: T) {
     println!("got t");
 }
@@ -9,6 +10,7 @@ fn main() {
     generic::<char>('a');
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

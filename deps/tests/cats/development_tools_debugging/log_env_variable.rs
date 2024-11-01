@@ -1,3 +1,4 @@
+// ANCHOR: example
 // env_logger is simple logger that can be configured via environment
 // variables. Example: RUST_LOG=info ./app
 
@@ -37,11 +38,12 @@ fn init_logger() {
             .try_init();
 }
 
+// ANCHOR_END: example
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {
-#[test]
-fn test() {
-    main();
-}
+    #[test]
+    fn test() {
+        main();
+    }
 }

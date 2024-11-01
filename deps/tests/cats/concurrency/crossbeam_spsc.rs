@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::thread;
 use std::time;
 
@@ -21,6 +22,7 @@ fn main() {
     }
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::io::Error;
 use std::io::Read;
 use std::net::Ipv4Addr;
@@ -18,6 +19,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 // TODO listens to a connection forever
 #[ignore]
 #[test]

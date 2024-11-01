@@ -1,3 +1,4 @@
+// ANCHOR: example
 use dyn_clone::DynClone;
 
 trait MyTrait: DynClone {
@@ -25,6 +26,7 @@ fn main() {
     x2.recite();
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

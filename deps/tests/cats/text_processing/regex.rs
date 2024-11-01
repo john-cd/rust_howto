@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::BTreeMap;
 
 use once_cell::sync::Lazy;
@@ -132,6 +133,7 @@ fn main() {
     search_with_all_regexes(get_test_markdown().as_str());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

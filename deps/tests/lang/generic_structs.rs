@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// ANCHOR: example
 
 use std::fmt::Display;
 
@@ -37,6 +38,7 @@ fn main() {
     println!("p.x = {}", p.x());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

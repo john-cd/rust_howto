@@ -1,3 +1,4 @@
+// ANCHOR: example
 use toml::de::Error;
 use toml::Value;
 
@@ -23,6 +24,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

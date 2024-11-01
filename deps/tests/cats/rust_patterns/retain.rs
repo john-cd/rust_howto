@@ -1,6 +1,5 @@
+// ANCHOR: example
 use anyhow::Result;
-
-// TODO rewrite
 
 fn parse_response(response: reqwest::blocking::Response) -> Result<u32> {
     let mut body = response.text()?;
@@ -16,6 +15,10 @@ fn main() -> Result<()> {
     println!("a random number between 0 and 10: {}", random_value);
     Ok(())
 }
+
+// ANCHOR_END: example
+
+// TODO rewrite
 
 #[test]
 fn test() -> Result<()> {

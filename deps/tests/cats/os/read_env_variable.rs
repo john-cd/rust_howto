@@ -1,3 +1,4 @@
+// ANCHOR: example
 #![cfg(target_family = "unix")]
 
 use std::env;
@@ -16,6 +17,7 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -1,3 +1,4 @@
+// ANCHOR: example
 trait Example {
     const CONST_NO_DEFAULT: i32;
     const CONST_WITH_DEFAULT: i32 = 99;
@@ -12,6 +13,7 @@ fn main() {
     println!("{} {}", S::CONST_NO_DEFAULT, S::CONST_WITH_DEFAULT);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

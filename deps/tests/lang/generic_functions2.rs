@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::fmt::Display;
 
 fn generic<T: ?Sized + Display>(t: &T) {
@@ -12,6 +13,7 @@ fn main() {
     generic(&s[..]);
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();

@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Mutex;
 
@@ -15,6 +16,7 @@ fn main() {
     println!("{:?}", GLOBAL_DATA.lock().unwrap());
 }
 
+// ANCHOR_END: example
 #[test]
 fn test() {
     main();
