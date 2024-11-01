@@ -12,6 +12,8 @@
 
 ## Placeholders
 
+![std][c-std-badge]][c-std]
+
 ```rust
 {{#include ../../deps/tests/std/strings2.rs:example}}
 ```
@@ -21,6 +23,8 @@ Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug
 Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression’s value).
 
 ## String concatenation
+
+![std][c-std-badge]][c-std]
 
 Here are several common methods to concatenate{{hi:Concatenation}} Strings:
 

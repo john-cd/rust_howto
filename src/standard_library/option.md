@@ -27,12 +27,16 @@ It is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if 
 
 ## Adapters for working with references
 
+![std][c-std-badge]][c-std]
+
 - [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳ converts from `&Option<T>` to `Option<&T>`
 - [`std::convert::AsMut`][c-std::convert::AsMut]{{hi:std::convert::AsMut}}⮳ converts from `&mut Option<T>` to `Option<&mut T>`
 - [`std::option::Option::as_deref`][c-std::option::Option::as_deref]{{hi:std::option::Option::as_deref}}⮳ converts from `&Option<T>` to `Option<&T::Target>`
 - [`std::option::Option::as_deref_mut`][c-std::option::Option::as_deref_mut]{{hi:std::option::Option::as_deref_mut}}⮳ converts from `&mut Option<T>` to `Option<&mut T::Target>`
 
 ## Extracting the value contained in Option
+
+![std][c-std-badge]][c-std]
 
 These methods extract the contained value in an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is `None`:
 
@@ -43,6 +47,8 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 - [`std::option::Option::unwrap_or_else`][c-std::option::Option::unwrap_or_else]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided function
 
 ## Combinators
+
+![std][c-std-badge]][c-std]
 
 ```rust
 {{#include ../../deps/tests/std/options3.rs:example}}

@@ -10,11 +10,19 @@
 
 ## Arrow
 
-[![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}  [![arrow-github][c-arrow-github-badge]][c-arrow-github]
+[![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}
+[![arrow-crates.io][c-arrow-crates.io-badge]][c-arrow-crates.io]
+[![arrow-github][c-arrow-github-badge]][c-arrow-github]
+[![arrow-lib.rs][c-arrow-lib.rs-badge]][c-arrow-lib.rs]
 
 `arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
 ## Datafusion
+
+[![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}}
+[![datafusion-crates.io][c-datafusion-crates.io-badge]][c-datafusion-crates.io]
+[![datafusion-github][c-datafusion-github-badge]][c-datafusion-github]
+[![datafusion-lib.rs][c-datafusion-lib.rs-badge]][c-datafusion-lib.rs]
 
 [![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
 

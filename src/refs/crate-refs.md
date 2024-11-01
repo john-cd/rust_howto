@@ -32,6 +32,7 @@
 [c-afl-lib.rs-badge]: https://img.shields.io/badge/lib.rs-afl-yellow
 [c-afl-lib.rs]: https://lib.rs/crates/afl
 [c-afl]: https://docs.rs/afl
+[c-rhai-github]: https://github.com/rhaiscript/rhai
 [c-ansi_term-badge]: https://img.shields.io/crates/v/ansi_term?label=ansi_term
 [c-ansi_term-crates.io-badge]: https://img.shields.io/badge/crates.io-ansi__term-crimson
 [c-ansi_term-crates.io]: https://crates.io/crates/ansi_term
@@ -683,6 +684,8 @@
 [c-datafusion-badge]: https://img.shields.io/crates/v/datafusion?label=datafusion
 [c-datafusion-crates.io-badge]: https://img.shields.io/badge/crates.io-datafusion-crimson
 [c-datafusion-crates.io]: https://crates.io/crates/datafusion
+[c-datafusion-github-badge]: https://img.shields.io/badge/datafusion-steelblue?logo=github
+[c-datafusion-github]: https://github.com/apache/datafusion
 [c-datafusion-lib.rs-badge]: https://img.shields.io/badge/lib.rs-datafusion-yellow
 [c-datafusion-lib.rs]: https://lib.rs/crates/datafusion
 [c-datafusion-website-badge]: https://img.shields.io/badge/datafusion-coral
@@ -944,6 +947,8 @@
 [c-futures_executor-badge]: https://img.shields.io/crates/v/futures_executor?label=futures_executor
 [c-futures_executor-crates.io-badge]: https://img.shields.io/badge/crates.io-futures__executor-crimson
 [c-futures_executor-crates.io]: https://crates.io/crates/futures_executor
+[c-futures_executor-github-badge]: https://img.shields.io/badge/futures__executor-steelblue?logo=github
+[c-futures_executor-github]: https://github.com/rust-lang/futures-rs
 [c-futures_executor-lib.rs-badge]: https://img.shields.io/badge/lib.rs-futures__executor-yellow
 [c-futures_executor-lib.rs]: https://lib.rs/crates/futures-executor
 [c-futures_executor::block_on]: https://docs.rs/futures_executor/latest/futures_executor/fn.block_on.html

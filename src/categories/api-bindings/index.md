@@ -10,7 +10,9 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 ### Python Interop
 
-[![pyo3][c-pyo3-badge]][c-pyo3]{{hi:pyo3}}  [pyo3 website][c-pyo3-website]⮳  [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
+[![pyo3][c-pyo3-badge]][c-pyo3]{{hi:pyo3}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
+
+[pyo3 website][c-pyo3-website]⮳
 
 Supports both calling python code from Rust and exposing Rust code to Python
 

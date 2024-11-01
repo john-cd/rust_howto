@@ -2,6 +2,11 @@
 
 ## Build
 
+[![pants][c-pants-badge]][c-pants]{{hi:pants}}
+[![pants-crates.io][c-pants-crates.io-badge]][c-pants-crates.io]
+[![pants-github][c-pants-github-badge]][c-pants-github]
+[![pants-lib.rs][c-pants-lib.rs-badge]][c-pants-lib.rs]
+
 - {{i:Pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker, with support for other languages and frameworks coming soon. [pantsbuild.org][pantsbuild-website]⮳
 
 ## Social
@@ -37,3 +42,12 @@
 ## payments
 
 - An open source payments switch written in Rust to make payments fast, reliable and affordable [hyperswitch][hyperswitch-github]{{hi:hyperswitch}}⮳
+
+[c-pants-badge]: https://img.shields.io/crates/v/pants?label=pants
+[c-pants-crates.io-badge]: https://img.shields.io/badge/crates.io-pants-crimson
+[c-pants-crates.io]: https://crates.io/crates/pants
+[c-pants-github-badge]: https://img.shields.io/badge/pants-steelblue?logo=github
+[c-pants-github]: https://github.com/_TODO
+[c-pants-lib.rs-badge]: https://img.shields.io/badge/lib.rs-pants-yellow
+[c-pants-lib.rs]: https://lib.rs/crates/pants
+[c-pants]: https://docs.rs/pants
