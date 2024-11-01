@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(clippy::vec_init_then_push)]
+// ANCHOR: example
 
 // TODO
 // #[macro_use(concat_string)]

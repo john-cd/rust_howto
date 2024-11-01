@@ -9,7 +9,7 @@
 $description1$
 
 ```rust
-{{#include ../../../deps/tests/$crate1$.rs}}
+{{#include ../../../deps/tests/$crate1$.rs:example}}
 ```
 
 {{#include refs.incl.md}}

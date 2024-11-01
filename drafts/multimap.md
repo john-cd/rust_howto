@@ -6,7 +6,7 @@
 [![multimap-lib.rs][c-multimap-lib.rs-badge]][c-multimap-lib.rs]
 
 ```rust
-{{#include ../../../deps/tests/multimap.rs}}
+{{#include ../../../deps/tests/multimap.rs:example}}
 ```
 
 {{#include refs.incl.md}}

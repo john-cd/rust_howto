@@ -9,7 +9,7 @@
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳
 
 ```rust
-{{#include ../../../deps/tests/cats/cryptography/sha_digest.rs}}
+{{#include ../../../deps/tests/cats/cryptography/sha_digest.rs:example}}
 ```
 
 ## Sign and verify a message with HMAC digest
@@ -19,7 +19,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signature::Signature`][c-ring::signature::Signature]{{hi:ring::signature::Signature}}⮳ of a string then verifies the signature{{hi:Signature}} is correct.
 
 ```rust
-{{#include ../../../deps/tests/cats/cryptography/hmac.rs}}
+{{#include ../../../deps/tests/cats/cryptography/hmac.rs:example}}
 ```
 
 {{#include refs.incl.md}}

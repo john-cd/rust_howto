@@ -4,7 +4,8 @@ fn main() {
     let y = x; // No MOVE
 
     println!("x = {}, y = {}", x, y); // OK
-                                      // ANCHOR_END: example
+
+    // ANCHOR_END: example
 }
 
 #[test]

@@ -11,7 +11,7 @@ Creates two 2-D matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::ar
 Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avoid consuming `a` and `b`, making them available later for display. A new array is created containing their sum.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/add_matrices.rs}}
+{{#include ../../../deps/tests/cats/mathematics/add_matrices.rs:example}}
 ```
 
 ## Multiplying matrices
@@ -21,7 +21,7 @@ Note the sum is computed as `let sum = &a + &b`. The `&` operator is used to avo
 Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳ and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c-ndarray::ArrayBase::dot]{{hi:ndarray::ArrayBase::dot}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/multiply_matrices.rs}}
+{{#include ../../../deps/tests/cats/mathematics/multiply_matrices.rs:example}}
 ```
 
 ## Multiply a scalar with a vector with a matrix
@@ -36,7 +36,7 @@ First, a scalar is multiplied by the vector to get another vector. Then, the mat
 In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so `ndarray::Array2::dot`⮳ handles it as a column vector.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/multiply_scalar_vector_matrix.rs}}
+{{#include ../../../deps/tests/cats/mathematics/multiply_scalar_vector_matrix.rs:example}}
 ```
 
 ## Vector comparison
@@ -54,7 +54,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][c-ndarray::ArrayBase]⮳ for additional detail.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/vector_comparison.rs}}
+{{#include ../../../deps/tests/cats/mathematics/vector_comparison.rs:example}}
 ```
 
 ## Vector norm
@@ -71,7 +71,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ and [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ are both type aliases for [`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳. So, the most general argument type for the caller would be `&ArrayBase<S, Ix1> where S: Data`, because then the caller could use `&array` or `&view` instead of `x.view()`. If the function is part of a public API, that may be a better choice for the benefit of users. For internal functions, the more concise `ArrayView1<f64>` may be preferable.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/vector_norm.rs}}
+{{#include ../../../deps/tests/cats/mathematics/vector_norm.rs:example}}
 ```
 
 ## Invert matrix
@@ -81,7 +81,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 Creates a 3x3 matrix with [`nalgebra::Matrix3`][c-nalgebra::Matrix3]{{hi:nalgebra::Matrix3}}⮳ and inverts it, if possible.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/invert_matrix.rs}}
+{{#include ../../../deps/tests/cats/mathematics/invert_matrix.rs:example}}
 ```
 
 ## (De)-Serialize a Matrix
@@ -93,7 +93,7 @@ Serialize and deserialize a matrix to and from JSON. Serialization is taken care
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust
-{{#include ../../../deps/tests/cats/mathematics/deserialize_matrix.rs}}
+{{#include ../../../deps/tests/cats/mathematics/deserialize_matrix.rs:example}}
 ```
 
 {{#include refs.incl.md}}

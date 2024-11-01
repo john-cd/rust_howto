@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
 ```rust
-{{#include ../../../deps/tests/cats/concurrency/multithreading_spawn_join.rs}}
+{{#include ../../../deps/tests/cats/concurrency/multithreading_spawn_join.rs:example}}
 ```
 
 When the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
@@ -19,7 +19,7 @@ When the main thread of a Rust program completes, all spawned threads{{hi:Spawne
 [Scoped threads][c-std::thread::scope]⮳
 
 ```rust
-{{#include ../../../deps/tests/cats/concurrency/multithreading_scoped_threads.rs}}
+{{#include ../../../deps/tests/cats/concurrency/multithreading_scoped_threads.rs:example}}
 ```
 
 ## Rayon - parallel processing
@@ -31,7 +31,7 @@ When the main thread of a Rust program completes, all spawned threads{{hi:Spawne
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:Parallel execution}}.
 
 ```rust
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon.rs}}
+{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon.rs:example}}
 ```
 
 ### Parallel sorting
@@ -39,7 +39,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_parsort.rs}}
+{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_parsort.rs:example}}
 ```
 
 ### Custom parallel tasks
@@ -49,7 +49,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Thread pools}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_custom.rs}}
+{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_custom.rs:example}}
 ```
 
 ## See also

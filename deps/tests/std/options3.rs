@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(clippy::bind_instead_of_map)]
+// ANCHOR: example
 
 use std::fs;
 

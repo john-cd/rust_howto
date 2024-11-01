@@ -1,7 +1,7 @@
 #![allow(clippy::useless_vec)]
-// ANCHOR: example
 
 fn main() {
+    // ANCHOR: example
     let vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
 
@@ -12,9 +12,9 @@ fn main() {
     // `into_iter()` does move `vec2` and its elements, so they cannot be
     // used again
     println!("2 in vec2: {}", vec2.into_iter().any(|x| x == 2));
+    // ANCHOR_END: example
 }
 
-// ANCHOR_END: example
 #[test]
 fn test() {
     main();

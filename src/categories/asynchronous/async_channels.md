@@ -13,13 +13,13 @@ Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channels}} that w
 [`tokio::sync::oneshot`][c-tokio::sync::oneshot]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/async_channels_oneshot.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/async_channels_oneshot.rs:example}}
 ```
 
 Another example:
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/async_channels_oneshot2.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/async_channels_oneshot2.rs:example}}
 ```
 
 ## Multiple Producer, Single Consumer
@@ -27,7 +27,7 @@ Another example:
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/async_channels_mpsc.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/async_channels_mpsc.rs:example}}
 ```
 
 ## See also

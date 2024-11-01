@@ -13,13 +13,13 @@
 - Add documentation comments{{hi:Documentation comments}} to your code.
 
 ```rust
-{{#include ../../../../deps/tests/cats/development_tools/rustdoc.rs}}
+{{#include ../../../../deps/tests/cats/development_tools/rustdoc.rs:example}}
 ```
 
 [`rustdoc`][book-rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
 
 ```rust
-{{#include ../../../../deps/tests/cats/development_tools/rustdoc2.rs}}
+{{#include ../../../../deps/tests/cats/development_tools/rustdoc2.rs:example}}
 ```
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
@@ -33,13 +33,13 @@ Use `//!` at the top of the file (instead of `///`) for module-level documentati
 The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level documentation front-page.
 
 ```rust
-{{#include ../../../../deps/tests/cats/development_tools/rustdoc3.rs}}
+{{#include ../../../../deps/tests/cats/development_tools/rustdoc3.rs:example}}
 ```
 
 To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:Rust playground}}), use the following attribute:
 
 ```rust
-{{#include ../../../../deps/tests/cats/development_tools/rustdoc4.rs}}
+{{#include ../../../../deps/tests/cats/development_tools/rustdoc4.rs:example}}
 ```
 
 {{#include refs.incl.md}}

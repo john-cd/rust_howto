@@ -15,7 +15,7 @@ The below recipe will tell how long the system has been running by opening the U
 Other recipes in this book will hide the [`error_chain`][c-error_chain]{{hi:error_chain}}⮳ boilerplate, and can be seen by expanding the code with the ⤢ button.
 
 ```rust
-{{#include ../../../../deps/tests/lang/main_test.rs}}
+{{#include ../../../../deps/tests/lang/main_test.rs:example}}
 ```
 
 ## Avoid discarding errors during error conversions
@@ -28,7 +28,7 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, and the web service can all generate errors. Well defined Rust errors use [`foreign_links`][c-error_chain-foreign_links]⮳ An additional [`error_chain::example_generated::ErrorKind`][c-error_chain::example_generated::ErrorKind]{{hi:error_chain::example_generated::ErrorKind}}⮳ variant for the web service error uses `errors` block of the `error_chain!` macro.
 
 ```rust
-{{#include ../../../../deps/tests/cats/rust_patterns/retain.rs}}
+{{#include ../../../../deps/tests/cats/rust_patterns/retain.rs:example}}
 ```
 
 ## Obtain backtrace of complex error scenarios
@@ -41,7 +41,7 @@ The below recipes attempts to deserialize the value `256` into a
 [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust
-{{#include ../../../../deps/tests/cats/rust_patterns/backtrace.rs}}
+{{#include ../../../../deps/tests/cats/rust_patterns/backtrace.rs:example}}
 ```
 
 Backtrace error rendered:

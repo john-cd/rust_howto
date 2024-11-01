@@ -1,8 +1,8 @@
 #![allow(clippy::useless_vec)]
 #![allow(dead_code)]
 // TODO ^
-// ANCHOR: example
 
+// ANCHOR: example
 fn main() {
     // Used as an expression.
     let _x = vec![1, 2, 3];

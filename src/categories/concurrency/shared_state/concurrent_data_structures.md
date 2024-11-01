@@ -11,7 +11,7 @@
 [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,noplayground
-{{#include ../../../../deps/tests/cats/concurrency/dashmap.rs}}
+{{#include ../../../../deps/tests/cats/concurrency/dashmap.rs:example}}
 ```
 
 ## Bounded Multi-producer Multi-consumer Queue
@@ -19,7 +19,7 @@
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust
-{{#include ../../../../deps/tests/cats/concurrency/crossbeam_queue.rs}}
+{{#include ../../../../deps/tests/cats/concurrency/crossbeam_queue.rs:example}}
 ```
 
 {{#include refs.incl.md}}

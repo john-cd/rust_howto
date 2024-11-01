@@ -1,8 +1,8 @@
-// ANCHOR: example
-use itertools::chain;
-use itertools::Itertools;
-
 fn main() {
+    // ANCHOR: example
+    use itertools::chain;
+    use itertools::Itertools;
+
     // assert_equal
     // PANIC assert_equal("exceed".split('c'), "excess".split('c'));
 
@@ -31,9 +31,9 @@ fn main() {
     assert_eq!(lookup.get(&1), None);
     assert_eq!(lookup[&2], vec![12, 42]);
     assert_eq!(lookup[&3], vec![13, 33])
+    // ANCHOR_END: example
 }
 
-// ANCHOR_END: example
 #[test]
 fn test() {
     main();

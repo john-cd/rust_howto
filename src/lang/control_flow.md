@@ -5,7 +5,7 @@
 ## If else
 
 ```rust
-{{#include ../../deps/tests/lang/if_else.rs}}
+{{#include ../../deps/tests/lang/if_else.rs:example}}
 ```
 
 Also `else if <cond> { ... }`
@@ -13,19 +13,19 @@ Also `else if <cond> { ... }`
 ## Loop
 
 ```rust
-{{#include ../../deps/tests/lang/loop1.rs}}
+{{#include ../../deps/tests/lang/loop1.rs:example}}
 ```
 
 ## While
 
 ```rust
-{{#include ../../deps/tests/lang/while1.rs}}
+{{#include ../../deps/tests/lang/while1.rs:example}}
 ```
 
 ## For
 
 ```rust
-{{#include ../../deps/tests/lang/for1.rs}}
+{{#include ../../deps/tests/lang/for1.rs:example}}
 ```
 
 {{#include ../refs/link-refs.md}}

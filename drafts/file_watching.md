@@ -9,7 +9,7 @@
 Watch files or directories and execute a function when they change
 
 ```rust
-{{#include ../../../deps/tests/notify.rs}}
+{{#include ../../../deps/tests/notify.rs:example}}
 ```
 
 {{#include refs.incl.md}}

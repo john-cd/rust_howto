@@ -21,19 +21,19 @@ tracing-subscriber = "0.3"
 {{hi:Tracing}}
 
 ```rust,noplayground
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber.rs:example}}
 ```
 
 ### Combine layers
 
 ```rust,noplayground
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber2.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber2.rs:example}}
 ```
 
 Or with a custom formatting layer
 
 ```rust,noplayground
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber3.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber3.rs:example}}
 ```
 
 ### Configure a custom event formatter
@@ -41,37 +41,37 @@ Or with a custom formatting layer
 {{hi:Custom event formatter}}
 
 ```rust,noplayground
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber4.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber4.rs:example}}
 ```
 
 ## Events
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing.rs:example}}
 ```
 
 ## Spans
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_spans.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_spans.rs:example}}
 ```
 
 One-liner with `.entered()`:
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_entered.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_entered.rs:example}}
 ```
 
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_in_scope.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_in_scope.rs:example}}
 ```
 
 ## Add tracing spans to functions
 
 ```rust
-{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_instrument.rs}}
+{{#include ../../../deps/tests/cats/development_tools_debugging/tracing_instrument.rs:example}}
 ```
 
 ## OpenTelemetry

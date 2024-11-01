@@ -13,7 +13,7 @@ Unstructured JSON can be parsed into a universal [`serde_json::Value`][c-serde_j
 The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
 
 ```rust
-{{#include ../../../deps/tests/cats/encoding/json.rs}}
+{{#include ../../../deps/tests/cats/encoding/json.rs:example}}
 ```
 
 ## Deserialize a TOML configuration file
@@ -23,13 +23,13 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
 ```rust
-{{#include ../../../deps/tests/cats/encoding/toml.rs}}
+{{#include ../../../deps/tests/cats/encoding/toml.rs:example}}
 ```
 
 Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/cats/encoding/toml1.rs}}
+{{#include ../../../deps/tests/cats/encoding/toml1.rs:example}}
 ```
 
 ## Read and write integers in little-endian byte order
@@ -39,7 +39,7 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 [`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
 
 ```rust
-{{#include ../../../deps/tests/cats/encoding/endian_byte.rs}}
+{{#include ../../../deps/tests/cats/encoding/endian_byte.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -14,7 +14,7 @@ A lightweight low-level single-threaded actor runtime
 [Riker (website)][c-riker-website]{{hi:riker}}⮳
 
 ```rust
-{{#include ../../deps/tests/cats/concurrency/actors.rs}}
+{{#include ../../deps/tests/cats/concurrency/actors.rs:example}}
 ```
 
 ## Alternatives

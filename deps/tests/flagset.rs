@@ -1,3 +1,4 @@
+// ANCHOR: example
 use std::os::raw::c_int;
 
 use flagset::flags;
@@ -15,5 +16,12 @@ flags! {
         Baz,
     }
 }
+// ANCHOR_END: example
 
 // TODO
+fn main() {}
+
+#[test]
+fn test() {
+    main();
+}

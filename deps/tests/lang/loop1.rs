@@ -1,5 +1,5 @@
-// ANCHOR: example
 fn main() {
+    // ANCHOR: example
     let mut counter = 0;
 
     let result = loop {
@@ -12,9 +12,9 @@ fn main() {
         }
     };
     println!("{}", result);
+    // ANCHOR_END: example
 }
 
-// ANCHOR_END: example
 #[test]
 fn test() {
     main();

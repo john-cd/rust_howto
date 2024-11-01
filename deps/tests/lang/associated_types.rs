@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(dead_code)]
+// ANCHOR: example
 
 trait Iterator {
     type Item; // <-- associated type
@@ -15,11 +15,12 @@ trait Add<Rhs = Self> {
     fn add(self, rhs: Rhs) -> Self::Output;
 }
 
-// TODO
-
 fn main() {}
 
 // ANCHOR_END: example
+
+// TODO
+
 #[test]
 fn test() {
     main();

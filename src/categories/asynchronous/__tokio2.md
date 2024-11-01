@@ -1,6 +1,7 @@
 # Tokio
 
-[![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
+[![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 ## Basics
 
@@ -21,7 +22,7 @@ By running all async{{hi:async}} expressions on the current task, the expression
 equivalent to
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/tokio2.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/tokio2.rs:example}}
 ```
 
 [LocalSet][c-tokio::task::LocalSet]{{hi:tokio::task::LocalSet}}⮳
@@ -29,7 +30,7 @@ equivalent to
 In some cases, it is necessary to run one or more futures that do not implement Send{{hi:Send}} and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more `!Send` futures to run together on the same thread.
 
 ```rust
-{{#include ../../../deps/tests/cats/asynchronous/tokio22.rs}}
+{{#include ../../../deps/tests/cats/asynchronous/tokio22.rs:example}}
 ```
 
 {{#include ../../refs/link-refs.md}}

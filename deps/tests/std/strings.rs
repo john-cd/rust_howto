@@ -1,5 +1,5 @@
-// ANCHOR: example
 fn main() {
+    // ANCHOR: example
     // `String` is Unicode, not ASCII
     let mut s1 = String::from("hello");
     s1.push_str(", world!"); // `String` can be mutated
@@ -27,9 +27,9 @@ fn main() {
     for b in "Зд".bytes() {
         println!("{b}");
     }
+    // ANCHOR_END: example
 }
 
-// ANCHOR_END: example
 #[test]
 fn test() {
     main();

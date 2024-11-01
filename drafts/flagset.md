@@ -8,7 +8,7 @@
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like bitflags and enumflags without their downsides.
 
 ```rust
-{{#include ../../../deps/tests/flagset.rs}}
+{{#include ../../../deps/tests/flagset.rs:example}}
 ```
 
 {{#include refs.incl.md}}

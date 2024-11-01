@@ -11,7 +11,7 @@ Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c-ring:
 The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::SecureRandom::fill]{{hi:ring::rand::SecureRandom::fill}}⮳ which fills the salt byte array with securely generated random numbers.
 
 ```rust
-{{#include ../../../deps/tests/cats/cryptography/pbkdf2.rs}}
+{{#include ../../../deps/tests/cats/cryptography/pbkdf2.rs:example}}
 ```
 
 {{#include refs.incl.md}}
