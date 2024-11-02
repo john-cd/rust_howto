@@ -1,1 +1,1 @@
-[ex-cross-platform]: index.md#crux
+[ex-cross-platform]: crux.md

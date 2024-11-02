@@ -1,1 +1,1 @@
-[ex-basic-authentication]: index.md#basic-authentication
+[ex-basic-authentication]: basic_authentication.md

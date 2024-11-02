@@ -236,6 +236,9 @@
 [cat-text-processing-badge]: https://img.shields.io/badge/Text_Processing-white
 [cat-text-processing]: https://crates.io/categories/text-processing
 
+[cat-value-formatting-badge]: https://img.shields.io/badge/Value_Formatting-white
+[cat-value-formatting]: https://crates.io/categories/value-formatting
+
 [cat-virtualization-badge]: https://img.shields.io/badge/Virtualization-white
 [cat-virtualization]: https://crates.io/categories/virtualization
 

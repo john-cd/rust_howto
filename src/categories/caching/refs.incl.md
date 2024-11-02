@@ -1,1 +1,1 @@
-[ex-lru-cache]: index.md
+[ex-lru-cache]: lru.md

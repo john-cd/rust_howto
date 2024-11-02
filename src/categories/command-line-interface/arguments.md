@@ -78,5 +78,5 @@ Fast compile times, fast runtime, more lax about correctness. API is more ergono
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO mention lexopt and pico-args
+TODO expand lexopt and pico-args
 </div>

@@ -1,1 +1,1 @@
-[ex-accesskit]: index.md
+[ex-accesskit]: screen_readers.md

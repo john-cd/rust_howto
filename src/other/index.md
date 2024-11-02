@@ -20,6 +20,10 @@
 
 {{#include scripting/index.incl.md}}
 
+## Written in Rust
+
+{{#include written-in-rust/index.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

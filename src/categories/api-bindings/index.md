@@ -2,31 +2,9 @@
 
 Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in external FFI bindings.
 
-{{#include index.incl.md}}
+## Python interop
 
-## Interop
-
-[![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}}
-
-### Python Interop
-
-[![pyo3][c-pyo3-badge]][c-pyo3]{{hi:pyo3}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
-
-[pyo3 website][c-pyo3-website]⮳
-
-Supports both calling python code from Rust and exposing Rust code to Python
-
-```rust
-{{#include ../../../deps/tests/cats/api_bindings/pyo3.rs:example}}
-```
-
-### Rust tools for Python
-
-[![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]
-
-[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
-
-[Ruff][c-ruff-website]{{hi:ruff}}⮳
+{{#include python_interop.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

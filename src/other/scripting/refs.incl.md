@@ -1,1 +1,1 @@
-[ex-rhai]: index.md
+[ex-rhai]: rhai.md

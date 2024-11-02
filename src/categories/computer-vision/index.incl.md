@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Open CV][ex-open-cv] | | [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision] |
+| [Analyze images with Open CV][ex-open-cv] | [![opencv][c-opencv-badge]][c-opencv] | [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision] |
 
 <div class="hidden">
-TODO: add crate badges
+TODO add recipes
 </div>

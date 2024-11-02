@@ -1,1 +1,1 @@
-[ex-rust_gpu]: index.md#rust_gpu
+[ex-rust_gpu]: gpu.md

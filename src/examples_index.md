@@ -134,8 +134,10 @@
 
 {{#include other/cloud/index.incl.md}}
 
-[ex-aws]: other/cloud/index.md#aws
-[ex-dapr]: other/cloud/index.md#dapr
+[ex-aws]: other/cloud/aws.md
+[ex-serverless]: other/cloud/serverless.md
+[ex-dapr]: other/cloud/serverless.md
+[ex-rust-native-cloud]: other/cloud/rust_native_cloud_development.md
 
 ## Command-line Interface
 
@@ -150,7 +152,9 @@
 
 {{#include categories/command-line-utilities/index.incl.md}}
 
-[ex-cli-in-rust]: categories/command-line-utilities/index.md#command-line-utilities-written-in-rust
+[ex-shell-cli]: categories/command-line-utilities/shells.md
+[ex-filesystem-cli]: categories/command-line-utilities/filesystem.md#
+[ex-networking-cli]: categories/command-line-utilities/networking.md
 
 ## Compilers
 
@@ -166,7 +170,7 @@
 
 {{#include categories/compilers/reduce_compilation_duration.incl.md}}
 
-[ex-cross]: categories/compilers/cross_compilation.md#cross
+[ex-cross]: categories/compilers/cross_compilation.md
 [ex-faster-linking]: categories/compilers/faster_linking.md
 [ex-mold]: categories/compilers/faster_linking.md#alternative---mold-linker
 [ex-dynamic-linking]: categories/compilers/reduce_compilation_duration.md#dynamic-linking
@@ -186,7 +190,7 @@
 
 {{#include categories/computer-vision/index.incl.md}}
 
-[ex-open-cv]: categories/computer-vision/index.md#open-cv
+[ex-open-cv]: categories/computer-vision/opencv.md
 
 ## Concurrency
 
@@ -247,7 +251,7 @@
 
 {{#include other/cross_platform/index.incl.md}}
 
-[ex-cross-platform]: other/cross_platform/index.md#crux
+[ex-cross-platform]: other/cross_platform/crux.md
 
 ## Cryptography
 
@@ -267,9 +271,11 @@
 
 {{#include other/data_processing/index.incl.md}}
 
-[ex-polars]: other/data_processing/index.md#polars
-[ex-arrow]: other/data_processing/index.md#arrow
-[ex-datafusion]: other/data_processing/index.md#datafusion
+[ex-polars]: other/data_processing/dataframes.md#manipulate-data-in-a-tabular-format
+[ex-read-and-write-csv-files]: other/data_processing/csv.md#read-and-write-csv-files
+[ex-manipulate-csv-files-from-the-command-line]: other/data_processing/csv.md#manipulate-csv-files-from-the-command-line
+[ex-arrow]: other/data_processing/data_engineering.md#develop-data-analytics-applications-that-process-columnar-data-with-arrow
+[ex-datafusion]: other/data_processing/data_engineering.md#query-in-memory-data-with-datafusion
 
 ## Data Structures
 
@@ -416,8 +422,6 @@
 
 {{#include categories/development-tools_profiling/index.incl.md}}
 
-[ex-incremental-computation]: categories/development-tools_profiling/index.md#incremental-computation
-
 ## Development Tools - Testing
 
 {{#include categories/development-tools_testing/index.incl.md}}
@@ -486,7 +490,7 @@
 
 {{#include other/gpu/index.incl.md}}
 
-[ex-rust_gpu]: other/gpu/index.md#rust_gpu
+[ex-rust_gpu]: other/gpu/gpu.md
 
 ## Hardware Support
 
@@ -580,11 +584,17 @@
 
 [ex-ml]: categories/science/machine_learning/index.md
 
-## Robotics
+### Robotics
 
 {{#include categories/science_robotics/index.incl.md}}
 
 [ex-robotics]: categories/science_robotics/index.md
+
+## Scripting
+
+{{#include other/scripting/index.incl.md}}
+
+[ex-rhai]: other/scripting/rhai.md
 
 ## Text Editors
 
@@ -684,6 +694,14 @@
 [ex-tower_http]: categories/web-programming_http-server/middleware.md#tower-http
 [ex-alternatives]: categories/web-programming_http-server/middleware.md#alternatives
 
+## Written in Rust
+
+{{#include other/written-in-rust/index.incl.md}}
+
+[ex-python-tools]: other/written-in-rust/python_tools.md
+[ex-dev-tools]: other/written-in-rust/development_tools.md
+[ex-others]: other/written-in-rust/others.md
+
 ## Links
 
 {{#include links/index.incl.md}}
@@ -696,7 +714,5 @@
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO - [ ] add lru, multimap
-- [ ] make sure the list of examples is complete
-
+TODO make sure the list of examples is complete
 </div>

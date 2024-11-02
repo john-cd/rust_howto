@@ -1,1 +1,3 @@
-[ex-cli-in-rust]: index.md#command-line-utilities-written-in-rust
+[ex-shell-cli]: shells.md
+[ex-filesystem-cli]: filesystem.md#
+[ex-networking-cli]: networking.md

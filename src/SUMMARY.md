@@ -53,11 +53,15 @@
 
 ---
 
+- [Accessibility](categories/accessibility/index.md)
+  - [Enable screen readers](categories/accessibility/screen_readers.md)
+
 - [Algorithms](categories/algorithms/index.md)
   - [Generate random values](categories/algorithms/randomness.md)
   - [Sort a vector](categories/algorithms/sorting.md)
 
 - [API bindings](categories/api-bindings/index.md)
+  - [Interop with Python](categories/api-bindings/python_interop.md)
 
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async and traits](categories/asynchronous/async_traits.md)
@@ -68,16 +72,26 @@
   - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
 
 - [Authentication](categories/authentication/index.md)
+  - [Basic Authentication](categories/authentication/basic_authentication.md)
 
 - [Caching](categories/caching/index.md)
+  - [LRU caching](categories/caching/lru.md)
 
 - [Cloud](other/cloud/index.md)
+  - [Rust on AWS](other/cloud/aws.md)
+  - [Serverless computing](other/cloud/serverless.md)
+  - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
 
 - [Command-line interface](categories/command-line-interface/index.md)
   - [Argument parsing](categories/command-line-interface/arguments.md)
   - [ANSI terminal](categories/command-line-interface/ansi_terminal.md)
+  - [Terminal user interfaces](categories/command-line-interface/tui.md)
+  - [User interaction](categories/command-line-interface/user_interaction.md)
 
 - [Command-line utilities](categories/command-line-utilities/index.md)
+  - [Filesystem](categories/command-line-utilities/filesystem.md)
+  - [Shells](categories/command-line-utilities/shells.md)
+  - [Networking](categories/command-line-utilities/networking.md)
 
 - [Compilers](categories/compilers/index.md)
   - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
@@ -88,6 +102,7 @@
   - [Working with tarballs](categories/compression/tar.md)
 
 - [Computer vision](categories/computer-vision/index.md)
+  - [Open CV](categories/computer-vision/opencv.md)
 
 - [Concurrency](categories/concurrency/index.md)
   - [Multi-threading](categories/concurrency/multithreading.md)
@@ -102,12 +117,17 @@
   - [Configuration management](categories/config/configuration.md)
 
 - [Cross-platform Development](other/cross_platform/index.md)
+  - [Crux](other/cross_platform/crux.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Hashing](categories/cryptography/hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
 
 - [Data processing](other/data_processing/index.md)
+  - [CSV](other/data_processing/csv.md)
+  - [Dataframes](other/data_processing/dataframes.md)
+  - [Data visualization](other/data_processing/data_visualization.md)
+  - [Data engineering](other/data_processing/data_engineering.md)
 
 - [Data structures](categories/data-structures/index.md)
   - [Bitfield](categories/data-structures/bitfield.md)
@@ -183,6 +203,7 @@
 - [Graphics](categories/graphics/index.md)
 
 - [GPU programming](other/gpu/index.md)
+  - [GPU](other/gpu/gpu.md)
 
 - [GUI](categories/gui/index.md)
 
@@ -228,6 +249,9 @@
 
 - [Science](categories/science/index.md)
 
+- [Scripting](other/scripting/index.md)
+  - [Rhai](other/scripting/rhai.md)
+
 - [Simulation](categories/simulation/index.md)
 
 - [Template engines](categories/template-engine/index.md)
@@ -266,6 +290,11 @@
 - [Web programming - websocket](categories/web-programming_websocket/index.md)
 
 - [Windows](categories/os_windows-apis/index.md)
+
+- [Written in Rust](other/written-in-rust/index.md)
+  - [Developement tools](other/written-in-rust/development_tools.md)
+  - [Python tools](other/written-in-rust/python_tools.md)
+  - [Others](other/written-in-rust/others.md)
 
 ---
 

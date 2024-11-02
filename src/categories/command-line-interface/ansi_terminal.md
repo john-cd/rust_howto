@@ -36,9 +36,28 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic2.rs:example}}
 ```
 
+## Manipulate the cursor, style the output, handle input events
+
+[![crossterm][c-crossterm-badge]][c-crossterm]{{hi:crossterm}}
+[![crossterm-crates.io][c-crossterm-crates.io-badge]][c-crossterm-crates.io]
+[![crossterm-github][c-crossterm-github-badge]][c-crossterm-github]
+[![crossterm-lib.rs][c-crossterm-lib.rs-badge]][c-crossterm-lib.rs]
+
+Low-level cross-platform terminal rendering and event handling.
+
+Crossterm is a pure-rust, terminal manipulation library that makes it possible to write cross-platform text-based interfaces. It supports all UNIX and Windows terminals down to Windows 7
+
+- Full control over writing and flushing output buffer
+- Is tty
+- Cursor manipulation
+- Styled output
+- Terminal handling
+- Events (key inputs, mouse...)
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO: ansi_term is archived?
+TODO  expand crossterm
 </div>
