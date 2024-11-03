@@ -16,21 +16,21 @@ fn main() -> anyhow::Result<()> {
             return Err(anyhow::anyhow!("You did not enter a command!"));
         }
         cli::Cmd::CategoryPage(c) => {
-            let crates_with_categories: Result<Vec<(String, Vec<Cat>)>> = c
-                .crate_names
-                .into_iter()
-                .filter(|name| name != "std")
-                .map(|n| {
-                    let name = n.trim();
-                    let cats =
-                        rust_howto_tools::get_categories_for_crate(name)?;
-                    Ok((name.into(), cats))
-                })
-                .collect();
+            let crates_with_categories: Result<Vec<(String, Vec<Category>)>> =
+                c.crate_names
+                    .into_iter()
+                    .filter(|name| name != "std")
+                    .map(|n| {
+                        let name = n.trim();
+                        let cats =
+                            rust_howto_tools::get_categories_for_crate(name)?;
+                        Ok((name.into(), cats))
+                    })
+                    .collect();
 
             // Flatten the Vec((String, Vec<Cat>)) into Vec<(Cat, String)>,
             // sort and group by category
-            let category_and_crates: HashMap<Cat, Vec<String>> =
+            let category_and_crates: HashMap<Category, Vec<String>> =
                 crates_with_categories?
                     .into_iter()
                     .flat_map(|(name, cats)| {
@@ -80,6 +80,7 @@ fn main() -> anyhow::Result<()> {
                 println!("{}", crt);
             }
         }
+        cli::Cmd::Section => {}
     }
     Ok(())
 }

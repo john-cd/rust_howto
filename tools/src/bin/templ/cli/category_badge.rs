@@ -3,7 +3,7 @@
 use clap::ArgMatches;
 use clap::Command;
 
-/// Builds the `badge` subcommand of the CLI user interface
+/// Builds the `category_badge` subcommand of the CLI user interface
 pub(super) fn subcommand_category_badge() -> Command {
     Command::new("category_badge")
         .visible_alias("c")

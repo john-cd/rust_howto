@@ -14,6 +14,7 @@ pub(crate) enum Cmd {
     CategoryPage(CmdArgs),
     AlphabeticalCratePage(CmdArgs),
     ListCrates,
+    Section,
 }
 
 // The command arguments
@@ -33,6 +34,8 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
         Ok(Cmd::AlphabeticalCratePage(CmdArgs {
             crate_names: get_crate_names(m),
         }))
+    } else if let Some(_m) = matches.subcommand_matches("section") {
+        Ok(Cmd::Section)
     } else if let Some(_m) = matches.subcommand_matches("list_crates") {
         Ok(Cmd::ListCrates)
     } else {
