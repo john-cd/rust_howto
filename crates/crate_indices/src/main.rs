@@ -1,10 +1,10 @@
+mod cargo_toml;
 mod cli;
-
 use std::collections::HashMap;
 
 use anyhow::Result;
 use itertools::Itertools;
-use rust_howto_tools::*;
+use tool_lib::Category;
 
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
@@ -22,8 +22,7 @@ fn main() -> anyhow::Result<()> {
                     .filter(|name| name != "std")
                     .map(|n| {
                         let name = n.trim();
-                        let cats =
-                            rust_howto_tools::get_categories_for_crate(name)?;
+                        let cats = tool_lib::get_categories_for_crate(name)?;
                         Ok((name.into(), cats))
                     })
                     .collect();
@@ -42,7 +41,7 @@ fn main() -> anyhow::Result<()> {
             for (cat, crate_names) in
                 category_and_crates.iter().sorted_by_key(|x| x.0)
             {
-                let markdown = rust_howto_tools::create_category_and_crates(
+                let markdown = tool_lib::create_category_and_crates(
                     &cat.category,
                     &cat.slug,
                     &cat.description,
@@ -67,7 +66,7 @@ fn main() -> anyhow::Result<()> {
             for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0)
             {
                 let markdown =
-                    rust_howto_tools::create_alphabetical_crate_page_section(
+                    tool_lib::create_alphabetical_crate_page_section(
                         first_letter,
                         crates.iter().map(AsRef::as_ref).collect(),
                     )?;
@@ -75,7 +74,7 @@ fn main() -> anyhow::Result<()> {
             }
         }
         cli::Cmd::ListCrates => {
-            let list = rust_howto_tools::get_dependencies()?;
+            let list = cargo_toml::get_dependencies()?;
             for crt in list {
                 println!("{}", crt);
             }

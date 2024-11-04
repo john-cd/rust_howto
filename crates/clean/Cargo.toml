@@ -1,0 +1,19 @@
+[package]
+name = "clean"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "A very simnple tool to clean `deps/temp` before and after testing."
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license-file.workspace = true
+keywords.workspace = true
+categories.workspace = true
+publish = false
+
+[dependencies]
+anyhow = "1.0.92"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"

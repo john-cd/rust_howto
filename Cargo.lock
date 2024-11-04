@@ -146,9 +146,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.91"
+version = "1.0.92"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c042108f3ed77fd83760a5fd79b53be043192bb3b9dba91d8c574c0ada7850c8"
+checksum = "74f37166d7d48a0284b99dd824694c26119c700b53bf0d1540cdb147dbdaaf13"
 
 [[package]]
 name = "approx"
@@ -235,6 +235,18 @@ name = "autocfg"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
+
+[[package]]
+name = "autogen"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "serde",
+ "tera",
+ "tool_lib",
+ "url",
+ "walkdir",
+]
 
 [[package]]
 name = "av1-grain"
@@ -551,6 +563,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1462739cb27611015575c0c11df5df7601141071f07518d56fcc1be504cbec97"
 
 [[package]]
+name = "clean"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "color_quant"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -644,6 +665,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "608697df725056feaccfa42cffdaeeec3fccc4ffc38358ecd19b243e716a78e0"
 dependencies = [
  "libc",
+]
+
+[[package]]
+name = "crate_indices"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "cargo_toml",
+ "clap",
+ "itertools 0.13.0",
+ "tool_lib",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -3347,24 +3381,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_howto_tools"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "cargo_toml",
- "clap",
- "crates_io_api",
- "itertools 0.13.0",
- "serde",
- "tera",
- "tinytemplate",
- "tracing",
- "tracing-subscriber",
- "url",
- "walkdir",
-]
-
-[[package]]
 name = "rustc-demangle"
 version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3938,6 +3954,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "templ"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "tool_lib",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "tendril"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4257,6 +4284,19 @@ dependencies = [
  "serde_spanned",
  "toml_datetime",
  "winnow",
+]
+
+[[package]]
+name = "tool_lib"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "crates_io_api",
+ "serde",
+ "tinytemplate",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

@@ -1,0 +1,23 @@
+[package]
+name = "crate_indices"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license-file.workspace = true
+keywords.workspace = true
+categories.workspace = true
+publish.workspace = true
+
+[dependencies]
+anyhow = "1.0.92"
+clap = "4.5.20"
+itertools = "0.13.0"
+tool_lib = { path = "../tool_lib" }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+cargo_toml = "0.20.5"

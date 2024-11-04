@@ -9,15 +9,15 @@ pub struct Category {
     pub description: String,
 }
 
-// impl Category {
-//     fn builder(category: String, slug: String, description: String) -> Self {
-//         Self {
-//             category,
-//             slug,
-//             description,
-//         }
-//     }
-// }
+impl Category {
+    fn builder(category: String, slug: String, description: String) -> Self {
+        Self {
+            category,
+            slug,
+            description,
+        }
+    }
+}
 
 #[derive(Serialize)]
 pub struct Crate {

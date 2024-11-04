@@ -8,10 +8,11 @@ The outputs can be copy-pasted into the book's markdown where needed.
 Run the tool via `just templ`.
 
 ```txt
-Tools & templates for the rust_howto book
+A simple CLI tool to generate markdown fragments, e.g. markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed.
 
 Usage: templ [OPTIONS]
        templ badge [OPTIONS] <CRATE_NAME>...
+       templ category_badge [OPTIONS] <CRATE_NAME>...
        templ rbe [OPTIONS] <CONCEPT>...
        templ info [OPTIONS] <CRATE_NAME>...
        templ help [COMMAND]...
@@ -23,6 +24,11 @@ Options:
 
 templ badge:
 Create the markdown for a crate badge
+  -h, --help           Print help
+  <CRATE_NAME>...  Enter the crate name(s)
+
+templ category_badge:
+Create the markdown for all category badges for (a) given crate name(s)
   -h, --help           Print help
   <CRATE_NAME>...  Enter the crate name(s)
 

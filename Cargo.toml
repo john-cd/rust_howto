@@ -5,7 +5,7 @@ members = [
     "deps",
     # crates.io placeholder
     "publish",
-    "tools",
+    "crates/*",
     # examples independent from the book markdown
     "xmpl/*"]
 exclude = []

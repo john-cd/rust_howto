@@ -213,15 +213,19 @@ utils cmd=help *subcmd=empty:
 
 # Run the templating tool e.g to create badges and reference definitions
 templ cmd=help *subcmd=empty:
-  cargo run -p rust_howto_tools --bin templ -- {{cmd}} {{subcmd}}
+  cargo run -p templ -- {{cmd}} {{subcmd}}
 
-# Creates the `crates by category` and `crates (alphabetical)` pages
+# Create the `crates by category` and `crates (alphabetical)` pages
 crate_indices cmd=help *subcmd=empty:
-  cargo run -p rust_howto_tools --bin crate_indices -- {{cmd}} {{subcmd}}
+  cargo run -p crate_indices -- {{cmd}} {{subcmd}}
+
+# Autogenerate a chapter (from template)
+autogen:
+    cargo run -p autogen
 
 # Clean the deps/temp folder of most files
 _clean_temp_dir:
-  cargo run -p rust_howto_tools --bin clean
+  cargo run -p clean
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]

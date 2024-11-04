@@ -1,5 +1,5 @@
 use anyhow::anyhow;
-use rust_howto_tools::*;
+use tool_lib::*;
 mod cli;
 use cli::*;
 
@@ -37,7 +37,7 @@ fn main() -> anyhow::Result<()> {
         Cmd::CategoryBadge(c) => {
             for n in c.names {
                 let name = n.trim();
-                for cat in rust_howto_tools::get_categories_for_crate(name)? {
+                for cat in tool_lib::get_categories_for_crate(name)? {
                     let markdown =
                         create_category_badge(&cat.category, &cat.slug)?;
                     println!("{}", markdown);
