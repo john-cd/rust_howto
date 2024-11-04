@@ -9,7 +9,7 @@
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Arrays that are ONLY stack-allocated with fixed capacity
+Arrays that are ONLY stack-allocated with fixed capacity.
 
 ## smallvec
 
@@ -19,7 +19,7 @@ Arrays that are ONLY stack-allocated with fixed capacity
 [![smallvec-lib.rs][c-smallvec-lib.rs-badge]][c-smallvec-lib.rs]
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Arrays that are stack-allocated with fallback to the heap if the fixed stack capacity is exceeded
+Arrays that are stack-allocated with fallback to the heap if the fixed stack capacity is exceeded.
 
 ## tinyvec
 
@@ -30,7 +30,7 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Stack allocated arrays in 100% safe Rust code but requires items to implement the Default trait.
+Stack-allocated arrays in 100% safe Rust code. `tinyvec` requires items to implement the Default trait.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

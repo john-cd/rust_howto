@@ -1,11 +1,11 @@
-## cargo-zigbuild
+# Cross-compile
+
+## Cross-compile using Zig as the linker
 
 [![cargo-zigbuild][c-cargo_zigbuild-badge]][c-cargo_zigbuild]{{hi:cargo-zigbuild}}
 [![cargo-zigbuild-crates.io][c-cargo_zigbuild-crates.io-badge]][c-cargo_zigbuild-crates.io]
 [![cargo-zigbuild-github][c-cargo_zigbuild-github-badge]][c-cargo_zigbuild-github]
 [![cargo-zigbuild-lib.rs][c-cargo_zigbuild-lib.rs-badge]][c-cargo_zigbuild-lib.rs]
-
-Easily cross-compile using Zig as the linker.
 
 ```sh
 cargo install --locked cargo-zigbuild

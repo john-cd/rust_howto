@@ -20,6 +20,7 @@
 [ex-deployment]: other/index.md#deployment
 [ex-just]: other/just.md
 [ex-miri]: other/miri.md
+[ex-background-code-checker]: other/index.md#background-code-checker
 
 [ex-semver-increment]: versioning/index.md#parse-and-increment-a-version-string
 [ex-semver-complex]: versioning/index.md#parse-a-complex-version-string

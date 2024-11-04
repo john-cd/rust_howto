@@ -71,6 +71,15 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 {{#include ../../../deps/tests/cats/os/read_env_variable.rs:example}}
 ```
 
+## Run child processes using `duct`
+
+[![duct][c-duct-badge]][c-duct]{{hi:duct}}
+[![duct-crates.io][c-duct-crates.io-badge]][c-duct-crates.io]
+[![duct-github][c-duct-github-badge]][c-duct-github]
+[![duct-lib.rs][c-duct-lib.rs-badge]][c-duct-lib.rs]
+
+[duct.rs][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
+
 [p-run-an-external-command-and-process-stdout]: #run-an-external-command-and-process-stdout
 [p-run-piped-external-commands]: #run-piped-external-commands
 {{#include refs.incl.md}}

@@ -6,3 +6,4 @@
 [ex-diesel]: query_builders_orms.md#diesel
 [ex-seaorm]: query_builders_orms.md#seaorm
 [ex-sqlx]: query_builders_orms.md#sqlx
+[ex-elasticsearch]: search.md#elasticsearch

@@ -2,6 +2,19 @@
 
 {{#include index.incl.md}}
 
+## Background code checker
+
+[![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
+[![bacon-crates.io][c-bacon-crates.io-badge]][c-bacon-crates.io]
+[![bacon-github][c-bacon-github-badge]][c-bacon-github]
+[![bacon-lib.rs][c-bacon-lib.rs-badge]][c-bacon-lib.rs]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
+
+`bacon` is a background rust code checker.
+
+It's designed for minimal interaction so that you can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
+
 ## API search
 
 [`Roogle`][c-roogle-website]{{hi:roogle}}⮳  [![roogle-github][c-roogle-github-badge]][c-roogle-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
@@ -20,7 +33,12 @@ How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
 ## Code verifier
 
-Kani Rust Verifier: [kani][c-kani-github]{{hi:kani}}⮳
+[![kani][c-kani-badge]][c-kani]{{hi:kani}}
+[![kani-crates.io][c-kani-crates.io-badge]][c-kani-crates.io]
+[![kani-github][c-kani-github-badge]][c-kani-github]
+[![kani-lib.rs][c-kani-lib.rs-badge]][c-kani-lib.rs]
+
+[kani][c-kani-github]{{hi:kani}}⮳ is a Rust verifier.
 
 ## Formal Methods
 
@@ -30,5 +48,5 @@ Kani Rust Verifier: [kani][c-kani-github]{{hi:kani}}⮳
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO: expand; revise refs.incl.md
 </div>

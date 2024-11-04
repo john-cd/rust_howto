@@ -10,6 +10,18 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include postgres.incl.md}}
 
+## Connection pools
+
+{{#include connection_pool.incl.md}}
+
+## NoSQL and friends
+
+{{#include nosql.incl.md}}
+
+## Seach
+
+{{#include search.incl.md}}
+
 ## Query Builders and ORMs
 
 {{#include query_builders_orms.incl.md}}

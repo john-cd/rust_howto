@@ -1,7 +1,5 @@
 # Custom
 
-{{#include bitfield.incl.md}}
-
 ## Define and operate on a type represented as a bitfield
 
 [![bitflags][c-bitflags-badge]][c-bitflags]{{hi:bitflags}}  [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No std}}  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
@@ -15,6 +13,19 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 
 ```rust
 {{#include ../../../deps/tests/cats/data_structures/bitfield.rs:example}}
+```
+
+## Flagset
+
+[![flagset][c-flagset-badge]][c-flagset]{{hi:flagset}}
+[![flagset-crates.io][c-flagset-crates.io-badge]][c-flagset-crates.io]
+[![flagset-github][c-flagset-github-badge]][c-flagset-github]
+[![flagset-lib.rs][c-flagset-lib.rs-badge]][c-flagset-lib.rs]
+
+FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
+
+```rust
+{{#include ../../../deps/tests/flagset.rs:example}}
 ```
 
 {{#include refs.incl.md}}

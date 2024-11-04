@@ -70,6 +70,12 @@
 [ex-string-concatenation]: standard_library/strings.md#string-concatenation
 [ex-vec]: standard_library/vectors.md#vec
 
+## Accessibility
+
+{{#include categories/accessibility/index.incl.md}}
+
+[ex-accesskit]: categories/accessibility/screen_readers.md
+
 ## Algorithms
 
 ### Random Numbers
@@ -130,6 +136,12 @@
 
 [ex-basic-authentication]: categories/authentication/index.md#basic-authentication
 
+## Caching
+
+{{#include categories/caching/index.incl.md}}
+
+[ex-lru-cache]: categories/caching/lru.md
+
 ## Cloud
 
 {{#include other/cloud/index.incl.md}}
@@ -180,7 +192,7 @@
 
 ## Compression
 
-{{#include categories/compression/tar.incl.md}}
+{{#include categories/compression/index.incl.md}}
 
 [ex-tar-decompress]: categories/compression/tar.md#decompress-a-tarball
 [ex-tar-compress]: categories/compression/tar.md#compress-a-directory-into-tarball
@@ -279,7 +291,7 @@
 
 ## Data Structures
 
-{{#include categories/data-structures/bitfield.incl.md}}
+{{#include categories/data-structures/index.incl.md}}
 
 [ex-bitflags]: categories/data-structures/bitfield.md#define-and-operate-on-a-type-represented-as-a-bitfield
 
@@ -305,6 +317,7 @@
 [ex-diesel]: categories/database/query_builders_orms.md#diesel
 [ex-seaorm]: categories/database/query_builders_orms.md#seaorm
 [ex-sqlx]: categories/database/query_builders_orms.md#sqlx
+[ex-elasticsearch]: categories/database/search.md#elasticsearch
 
 ## Date and Time
 
@@ -345,6 +358,8 @@
 ### Other
 
 {{#include categories/development-tools/other/index.incl.md}}
+
+[ex-background-code-checker]: categories/development-tools/other/index.md#background-code-checker
 
 ### Versioning
 
@@ -391,14 +406,14 @@
 
 {{#include categories/development-tools_cargo-plugins/index.incl.md}}
 
-[ex-code-coverage]: categories/development-tools_cargo-plugins/index.md#code-coverage
-[ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/index.md#fix-compiler-warnings
-[ex-format]: categories/development-tools_cargo-plugins/index.md#formatting
-[ex-lint]: categories/development-tools_cargo-plugins/index.md#linting
-[ex-security-audit]: categories/development-tools_cargo-plugins/index.md#security-audit
-[ex-templates]: categories/development-tools_cargo-plugins/index.md#templates
-[ex-unused-dependencies]: categories/development-tools_cargo-plugins/index.md#unused-dependencies
-[ex-watch-for-changes]: categories/development-tools_cargo-plugins/index.md#watch-for-changes
+[ex-code-coverage]: categories/development-tools_cargo-plugins/testing.md#code-coverage
+[ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/code_formatting_linting.md#fix-compiler-warnings-automatically
+[ex-format]: categories/development-tools_cargo-plugins/code_formatting_linting.md#format-your-code
+[ex-lint]: categories/development-tools_cargo-plugins/code_formatting_linting.md#lint-your-code
+[ex-security-audit]: categories/development-tools_cargo-plugins/auditing.md#audit-cargolock-files-for-crates-containing-security-vulnerabilities
+[ex-templates]: categories/development-tools_cargo-plugins/writing.md#generate-a-rust-project-from-a-template
+[ex-unused-dependencies]: categories/development-tools_cargo-plugins/maintenance.md#find-unused-dependencies
+[ex-watch-for-changes]: categories/development-tools_cargo-plugins/watching_for_changes.md#watching-for-changes
 
 ## Development Tools - Debugging
 

@@ -57,7 +57,16 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 <div class="hidden">
 
-parking_lot
+## arc-swap
 
-Parking Lot is faster than `std::sync::Mutex`.
+[![arc-swap][c-arc_swap-badge]][c-arc_swap]{{hi:arc-swap}}
+[![arc-swap-crates.io][c-arc_swap-crates.io-badge]][c-arc_swap-crates.io]
+[![arc-swap-github][c-arc_swap-github-badge]][c-arc_swap-github]
+[![arc-swap-lib.rs][c-arc_swap-lib.rs-badge]][c-arc_swap-lib.rs]
+
+The ArcSwap type is a container for an Arc that can be changed atomically. Semantically, it is similar to something like Atomic<Arc<T>> (if there was such a thing) or RwLock<Arc<T>> (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
+
+
+
+
 </div>

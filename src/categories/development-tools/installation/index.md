@@ -4,7 +4,7 @@
 
 ## Rustup
 
-[Rustup][p-rustup]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[Rustup][p-rustup]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Rustup installs, manages, and upgrades versions of rustc, cargo, clippy, rustfmt, etc.
 

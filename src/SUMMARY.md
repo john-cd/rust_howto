@@ -135,7 +135,10 @@
 - [Database access](categories/database/index.md)
   - [SQLite](categories/database/sqlite.md)
   - [Postgres](categories/database/postgres.md)
+  - [Connection pools](categories/database/connection_pool.md)
   - [Query builders and ORMs](categories/database/query_builders_orms.md)
+  - [NoSQL](categories/database/nosql.md)
+  - [Search](categories/database/search.md)
 
 - [Database implementations](categories/database-implementations/index.md)
 
@@ -163,6 +166,15 @@
 - [Development tools - build-time tooling](categories/development-tools_build-utils/index.md)
 
 - [Development tools - cargo plugins](categories/development-tools_cargo-plugins/index.md)
+  - [Writing](categories/development-tools_cargo-plugins/writing.md)
+  - [Formatting, linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)
+  - [Building](categories/development-tools_cargo-plugins/building.md)
+  - [Cross-compiling](categories/development-tools_cargo-plugins/cross_compiling.md)
+  - [Testing](categories/development-tools_cargo-plugins/testing.md)
+  - [Watching for changes](categories/development-tools_cargo-plugins/watching_for_changes.md)
+  - [Improving performance](categories/development-tools_cargo-plugins/performance.md)
+  - [Auditing](categories/development-tools_cargo-plugins/auditing.md)
+  - [Maintaining](categories/development-tools_cargo-plugins/maintenance.md)
 
 - [Development tools - debugging, logging](categories/development-tools_debugging/index.md)
   - [Tracing](categories/development-tools_debugging/tracing.md)

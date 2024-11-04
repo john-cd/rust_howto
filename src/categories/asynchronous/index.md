@@ -74,6 +74,6 @@ Alternatives to the Tokio async ecosystem include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO - [ ] [async-what-is-blocking][blog-async-what-is-blocking]
-- [ ] [communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
+TODO [async-what-is-blocking][blog-async-what-is-blocking]
+[communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
 </div>

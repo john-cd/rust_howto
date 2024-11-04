@@ -10,6 +10,8 @@
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
+Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
+
 ## scrypt
 
 [![scrypt][c-scrypt-badge]][c-scrypt]{{hi:scrypt}}
@@ -20,12 +22,16 @@
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
+The scrypt key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
+
 ## bcrypt
 
 [![bcrypt][c-bcrypt-badge]][c-bcrypt]{{hi:bcrypt}}
 [![bcrypt-crates.io][c-bcrypt-crates.io-badge]][c-bcrypt-crates.io]
 [![bcrypt-github][c-bcrypt-github-badge]][c-bcrypt-github]
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
+
+Hash and verify passwords.
 
 For more algorithms, see Rust Crypto Password Hashes: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 
@@ -34,4 +40,6 @@ For more algorithms, see Rust Crypto Password Hashes: https://github.com/RustCry
 
 <div class="hidden">
 TODO write
+
+https://en.wikipedia.org/wiki/Key_derivation_function
 </div>
