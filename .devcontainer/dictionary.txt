@@ -322,7 +322,7 @@ loopback
 mdBook
 mdbook
 mediawiki
-memmap
+memmap2
 metadata
 middleware
 miri

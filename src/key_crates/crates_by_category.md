@@ -125,7 +125,7 @@ TODO verify all crates are added to at least one category above
 [![mdbook-theme][c-mdbook_theme-badge]][c-mdbook_theme]{{hi:mdbook-theme}}
 [![mdbook-toc][c-mdbook_toc-badge]][c-mdbook_toc]{{hi:mdbook-toc}}
 [![meilisearch][c-meilisearch-badge]][c-meilisearch]{{hi:meilisearch}}
-[![memmap][c-memmap-badge]][c-memmap]{{hi:memmap}}
+[![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}
 [![minisearch][c-minisearch-badge]][c-minisearch]{{hi:minisearch}}
 [![mime][c-mime-badge]][c-mime]{{hi:mime}}

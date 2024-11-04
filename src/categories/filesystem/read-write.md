@@ -37,25 +37,18 @@ errors because the two files are same.
 
 ## Access a file randomly using a memory map
 
-[![memmap][c-memmap-badge]][c-memmap]{{hi:memmap}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-Creates a memory map{{hi:Memory map}} of a file using [`memmap`][c-memmap]{{hi:memmap}}⮳ and simulates some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`std::fs::File::seek`][c-std::fs::File::seek]{{hi:std::fs::File::seek}}⮳ to navigate a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳.
+Creates a memory map{{hi:Memory map}} of a file using [`memmap2`][c-memmap2]{{hi:memmap2}}⮳ and simulates some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map means you just index into a slice rather than dealing with [`std::fs::File::seek`][c-std::fs::File::seek]{{hi:std::fs::File::seek}}⮳ to navigate a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳.
 
-The [`memmap::Mmap::map`][c-memmap::Mmap::map]{{hi:memmap::Mmap::map}}⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
+The [`memmap2::Mmap::map`][c-memmap2::Mmap::map]{{hi:memmap2::Mmap::map}}⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 
 ```rust
-{{#include ../../../deps/tests/cats/filesystem/memmap.rs:example}}
+{{#include ../../../deps/tests/cats/filesystem/memmap2.rs:example}}
 ```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO change to memmap2
-The older memmap crate is unmaintained.
-
-[![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}
-[![memmap2-crates.io][c-memmap2-crates.io-badge]][c-memmap2-crates.io]
-[![memmap2-github][c-memmap2-github-badge]][c-memmap2-github]
-[![memmap2-lib.rs][c-memmap2-lib.rs-badge]][c-memmap2-lib.rs]
 </div>

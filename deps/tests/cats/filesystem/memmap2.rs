@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::Error;
 use std::io::Write;
 
-use memmap::Mmap;
+use memmap2::Mmap;
 
 fn main() -> Result<(), Error> {
     write!(

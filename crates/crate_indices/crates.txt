@@ -111,7 +111,7 @@ mdbook-tera
 mdbook-theme
 mdbook-toc
 meilisearch
-memmap
+memmap2
 miette
 mime
 minisearch
