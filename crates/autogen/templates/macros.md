@@ -1,0 +1,32 @@
+{# Returns a badge block for a given crate#}
+{% macro badges(crate_name) %}
+[![{{ crate_name }}][c-{{ crate_name | underscore }}-badge]][c-{{ crate_name | underscore }}]
+[![{{ crate_name }}-crates.io][c-{{ crate_name | underscore }}-crates.io-badge]][c-{{ crate_name | underscore }}-crates.io]
+[![{{ crate_name }}-github][c-{{ crate_name | underscore }}-github-badge]][c-{{ crate_name | underscore }}-github]
+[![{{ crate_name }}-lib.rs][c-{{ crate_name | underscore }}-lib.rs-badge]][c-{{ crate_name | underscore }}-lib.rs]
+{% endmacro badges %}
+
+{# Returns the reference definitions for links to docs.rs, lib.rs, crates.io... for a given crate #}
+{% macro crate-refs(crate_name) %}
+[c-{{ crate_name | underscore }}-badge]: https://img.shields.io/crates/v/{{ crate_name }}?label={{ crate_name }}
+[c-{{ crate_name | underscore }}-crates.io-badge]: https://img.shields.io/badge/crates.io-{{ crate_name | shielded }}-crimson
+[c-{{ crate_name | underscore }}-crates.io]: https://crates.io/crates/{{ crate_name | shielded }}
+[c-{{ crate_name | underscore }}-github-badge]: https://img.shields.io/badge/{{ crate_name | shielded }}-steelblue?logo=github
+[c-{{ crate_name | underscore }}-lib.rs-badge]: https://img.shields.io/badge/lib.rs-{{ crate_name | shielded }}-yellow
+[c-{{ crate_name | underscore }}-lib.rs]: https://lib.rs/crates/{{ crate_name }}
+[c-{{ crate_name | underscore }}]: https://docs.rs/{{ crate_name | underscore }}
+{% endmacro crate-refs %}
+
+{# Returns the badge for a given category #}
+{% macro category(slug, category) %}
+[![cat-{{slug}}][cat-{{slug}}-badge]][cat-{{slug}}]{% raw %}{{{% endraw %}hi:{{ category.name }}{% raw %}}}{% endraw %}
+{% endmacro category %}
+
+{# Returns a row of the alphabetical crate index#}
+{% macro alphabetical_crate_index_row(crate_names) %}
+| {{ for name in crate_names }}[![{name}][c-{{ name | underscore }}-badge]][c-{{ name | underscore }}]  {{ endfor }} |
+{% endmacro category %}
+
+{# Returns a row of the "crate by category" index#}
+
+{# Returns a row of the example index#}
