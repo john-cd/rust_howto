@@ -284,7 +284,6 @@
 [keyword-dyn]: https://doc.rust-lang.org/std/keyword.dyn.html
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
-[lapce-github]: https://github.com/lapce/lapce
 [launchpad-shuttle.rs]: https://www.shuttle.rs/launchpad
 [lemmy-github]: https://github.com/LemmyNet/lemmy
 [lib-rs-stats]: https://lib.rs/stats
@@ -308,8 +307,6 @@
 [mozilla-mime-type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 [mozilla-range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
 [nginx-proxy-manager]: https://nginxproxymanager.com
-[ngrok-rust-github]: https://github.com/ngrok/ngrok-rust
-[ngrok-website]: https://ngrok.com
 [nvm-github]: https://github.com/nvm-sh/nvm
 [oauth-website]: https://oauth.net/getting-started
 [openobserve-github-badge]: https://img.shields.io/badge/openobserve-steelblue?logo=github
@@ -319,8 +316,6 @@
 [pake-github]: https://github.com/tw93/Pake
 [pantsbuild-website]: https://www.pantsbuild.org
 [paste.rs]: https://paste.rs
-[pingora-github]: https://github.com/cloudflare/pingora/tree/main
-[pingora-quick-start-github]: https://github.com/cloudflare/pingora/blob/main/docs/quick_start.md
 [plotly.js]: https://plot.ly/javascript
 [podman-website]: https://podman.io
 [postsack-github-badge]: https://img.shields.io/badge/postsack-steelblue?logo=github
@@ -451,7 +446,6 @@
 [stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]: https://stackoverflow.com/questions/55755552/what-is-the-rust-equivalent-to-a-try-catch-statement
 [stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
-[swc-github]: https://github.com/swc-project/swc
 [talent-plan-github]: https://github.com/pingcap/talent-plan
 [tower-middleware-from-scratch-badge]: https://img.shields.io/badge/tower_middleware_from_scratch-steelblue?logo=github
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md

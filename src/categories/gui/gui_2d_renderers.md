@@ -54,46 +54,6 @@
 
 "OpenGL based. Mature with production usage in Firefox but documentation and OSS maintenance are lacking."
 
-[c-femtovg-badge]: https://img.shields.io/crates/v/femtovg?label=femtovg
-[c-femtovg-crates.io-badge]: https://img.shields.io/badge/crates.io-femtovg-crimson
-[c-femtovg-crates.io]: https://crates.io/crates/femtovg
-[c-femtovg-github-badge]: https://img.shields.io/badge/femtovg-steelblue?logo=github
-[c-femtovg-github]: https://github.com/_TODO
-[c-femtovg-lib.rs-badge]: https://img.shields.io/badge/lib.rs-femtovg-yellow
-[c-femtovg-lib.rs]: https://lib.rs/crates/femtovg
-[c-femtovg]: https://docs.rs/femtovg
-[c-skia_safe-badge]: https://img.shields.io/crates/v/skia-safe?label=skia-safe
-[c-skia_safe-crates.io-badge]: https://img.shields.io/badge/crates.io-skia--safe-crimson
-[c-skia_safe-crates.io]: https://crates.io/crates/skia_safe
-[c-skia_safe-github-badge]: https://img.shields.io/badge/skia--safe-steelblue?logo=github
-[c-skia_safe-github]: https://github.com/_TODO
-[c-skia_safe-lib.rs-badge]: https://img.shields.io/badge/lib.rs-skia--safe-yellow
-[c-skia_safe-lib.rs]: https://lib.rs/crates/skia-safe
-[c-skia_safe]: https://docs.rs/skia_safe
-[c-vello-badge]: https://img.shields.io/crates/v/vello?label=vello
-[c-vello-crates.io-badge]: https://img.shields.io/badge/crates.io-vello-crimson
-[c-vello-crates.io]: https://crates.io/crates/vello
-[c-vello-github-badge]: https://img.shields.io/badge/vello-steelblue?logo=github
-[c-vello-github]: https://github.com/_TODO
-[c-vello-lib.rs-badge]: https://img.shields.io/badge/lib.rs-vello-yellow
-[c-vello-lib.rs]: https://lib.rs/crates/vello
-[c-vello]: https://docs.rs/vello
-[c-vger-badge]: https://img.shields.io/crates/v/vger?label=vger
-[c-vger-crates.io-badge]: https://img.shields.io/badge/crates.io-vger-crimson
-[c-vger-crates.io]: https://crates.io/crates/vger
-[c-vger-github-badge]: https://img.shields.io/badge/vger-steelblue?logo=github
-[c-vger-github]: https://github.com/_TODO
-[c-vger-lib.rs-badge]: https://img.shields.io/badge/lib.rs-vger-yellow
-[c-vger-lib.rs]: https://lib.rs/crates/vger
-[c-vger]: https://docs.rs/vger
-[c-webrender-badge]: https://img.shields.io/crates/v/webrender?label=webrender
-[c-webrender-crates.io-badge]: https://img.shields.io/badge/crates.io-webrender-crimson
-[c-webrender-crates.io]: https://crates.io/crates/webrender
-[c-webrender-github-badge]: https://img.shields.io/badge/webrender-steelblue?logo=github
-[c-webrender-github]: https://github.com/_TODO
-[c-webrender-lib.rs-badge]: https://img.shields.io/badge/lib.rs-webrender-yellow
-[c-webrender-lib.rs]: https://lib.rs/crates/webrender
-[c-webrender]: https://docs.rs/webrender
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

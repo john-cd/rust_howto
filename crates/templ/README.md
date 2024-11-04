@@ -69,8 +69,8 @@ Print this message or the help of the given subcommand(s)
 
 [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
-[book-rust-by-example-attributes-badge]: https://img.shields.io/badge/Rust_By_Example-attributes-violet?logo=mdbook
-[book-rust-by-example-attributes]: https://doc.rust-lang.org/rust-by-example/attributes.html
+[book-rust-by-example-attribute-badge]: https://img.shields.io/badge/Rust_By_Example-attribute-violet?logo=mdbook
+[book-rust-by-example-attribute]: https://doc.rust-lang.org/rust-by-example/attribute.html
 
 `info` returns a JSON object from the crates.io API:
 

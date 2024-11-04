@@ -2,21 +2,27 @@
 
 ## Rathole
 
-A lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok. [Rathole][rathole-github]{{hi:rathole}}⮳
+[![rathole][c-rathole-badge]][c-rathole]{{hi:rathole}}
+[![rathole-crates.io][c-rathole-crates.io-badge]][c-rathole-crates.io]
+[![rathole-github][c-rathole-github-badge]][c-rathole-github]
+[![rathole-lib.rs][c-rathole-lib.rs-badge]][c-rathole-lib.rs]
 
-### ngrok
+[Rathole][rathole-github]{{hi:rathole}}⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok. A reverse proxy for NAT traversal.
 
-[![ngrok][c-ngrok-badge]][c-ngrok]{{hi:ngrok}}
+## ngrok
+
+[![ngrok][c-ngrok-badge]][c-ngrok]{{hi:ngrok}}{{hi:ngrok-rust}}
 [![ngrok-crates.io][c-ngrok-crates.io-badge]][c-ngrok-crates.io]
 [![ngrok-github][c-ngrok-github-badge]][c-ngrok-github]
 [![ngrok-lib.rs][c-ngrok-lib.rs-badge]][c-ngrok-lib.rs]
 
-- [ngrok secure ingress][ngrok-rust-github]{{hi:ngrok-rust}}⮳
-- [ngrok][ngrok-website]{{hi:ngrok}}⮳
+[ngrok secure ingress][c-ngrok-rust-github]⮳
 
-### nginx
+[ngrok][c-ngrok-website]⮳
 
-- [ngnix proxy manager][nginx-proxy-manager]{{hi:nginx proxy manager}}⮳
+## nginx
+
+[ngnix proxy manager][nginx-proxy-manager]{{hi:nginx proxy manager}}⮳
 
 ## Pingora
 
@@ -29,25 +35,9 @@ A lightweight and high-performance reverse proxy for NAT traversal, written in R
 
 A library for building fast, reliable and evolvable network services.
 
-- [Pingora (github)][pingora-github]{{hi:pingora}}⮳
-- [Pingora quick start][pingora-quick-start-github]⮳
+- [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳
+- [Pingora quick start][c-pingora-quick-start-github]⮳
 
-[c-ngrok-badge]: https://img.shields.io/crates/v/ngrok?label=ngrok
-[c-ngrok-crates.io-badge]: https://img.shields.io/badge/crates.io-ngrok-crimson
-[c-ngrok-crates.io]: https://crates.io/crates/ngrok
-[c-ngrok-github-badge]: https://img.shields.io/badge/ngrok-steelblue?logo=github
-[c-ngrok-github]: https://github.com/_TODO
-[c-ngrok-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ngrok-yellow
-[c-ngrok-lib.rs]: https://lib.rs/crates/ngrok
-[c-ngrok]: https://docs.rs/ngrok
-[c-pingora-badge]: https://img.shields.io/crates/v/pingora?label=pingora
-[c-pingora-crates.io-badge]: https://img.shields.io/badge/crates.io-pingora-crimson
-[c-pingora-crates.io]: https://crates.io/crates/pingora
-[c-pingora-github-badge]: https://img.shields.io/badge/pingora-steelblue?logo=github
-[c-pingora-github]: https://github.com/cloudflare/pingora
-[c-pingora-lib.rs-badge]: https://img.shields.io/badge/lib.rs-pingora-yellow
-[c-pingora-lib.rs]: https://lib.rs/crates/pingora
-[c-pingora]: https://docs.rs/pingora
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

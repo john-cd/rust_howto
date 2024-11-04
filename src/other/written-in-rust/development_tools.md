@@ -9,7 +9,7 @@
 [![swc-github][c-swc-github-badge]][c-swc-github]
 [![swc-lib.rs][c-swc-lib.rs-badge]][c-swc-lib.rs]
 
-[`swc`][swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
+[`swc`][c-swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
 
 ## Code editors
 
@@ -20,7 +20,7 @@
 [![lapce-github][c-lapce-github-badge]][c-lapce-github]
 [![lapce-lib.rs][c-lapce-lib.rs-badge]][c-lapce-lib.rs]
 
-[`lapce`][lapce-github]{{hi:lapce}}⮳ is a lightning-fast and Powerful Code Editor written in Rust.
+[`lapce`][c-lapce-github]{{hi:lapce}}⮳ is a lightning-fast and Powerful Code Editor written in Rust.
 
 ### Zed
 
