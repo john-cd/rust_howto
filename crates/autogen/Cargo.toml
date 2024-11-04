@@ -17,6 +17,6 @@ publish = false
 anyhow = "1.0.92"
 tool_lib = { path = "../tool_lib" }
 tera = "1.20.0"
-url = "2.5.2"
+#url = "2.5.2"
 walkdir = "2.5.0"
 serde = "1.0.214"
