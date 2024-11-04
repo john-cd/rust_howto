@@ -207,8 +207,9 @@ cc = "1.0"
 #walkdir = "2"
 
 [dev-dependencies]
+## Used for testing
 rusty-fork = "0.3.0"
-## we no longer use skeptic - see `build.rs`
+## We no longer use skeptic - see `build.rs`
 #skeptic = "0.13"
 
 ## `cargo-husky` handles git hook scripts

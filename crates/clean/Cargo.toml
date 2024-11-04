@@ -9,8 +9,8 @@ documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license-file.workspace = true
-keywords.workspace = true
-categories.workspace = true
+keywords = ["cleanup before / after testing"]
+categories = ["development-tools", "command-line-utilities"]
 publish = false
 
 [dependencies]

@@ -9,8 +9,8 @@ documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license-file.workspace = true
-keywords.workspace = true
-categories.workspace = true
+keywords = ["markdown generation"]
+categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
