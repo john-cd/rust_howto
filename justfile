@@ -264,7 +264,6 @@ check_urls:
 duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
 
-
 # List links without corresponding reference definitions and vice versa
 refdefs:
   #! /bin/bash
@@ -279,3 +278,8 @@ refdefs:
   echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]
+
+# Check for security advisories, etc
+crate_check:
+  cargo deny check  --hide-inclusion-graph
+# WIP

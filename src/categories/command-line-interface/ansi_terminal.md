@@ -58,6 +58,22 @@ Crossterm is a pure-rust, terminal manipulation library that makes it possible t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: ansi_term is archived?
 TODO  expand crossterm
+TODO: ansi_term is archived
+
+Most popular
+
+- termcolor
+- [anstyle](https://github.com/epage/anstyle)
+- anstream
+- [nu-ansi-term](https://crates.io/crates/nu-ansi-term)
+
+Others
+
+- [ansiterm](https://crates.io/crates/ansiterm)
+- [console](https://crates.io/crates/console)
+- [owo-colors](https://crates.io/crates/owo-colors)
+- [stylish](https://crates.io/crates/stylish)
+- [yansi](https://crates.io/crates/yansi)
+
 </div>
