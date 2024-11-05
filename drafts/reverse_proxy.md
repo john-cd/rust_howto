@@ -7,7 +7,7 @@
 [![rathole-github][c-rathole-github-badge]][c-rathole-github]
 [![rathole-lib.rs][c-rathole-lib.rs-badge]][c-rathole-lib.rs]
 
-[Rathole][rathole-github]{{hi:rathole}}⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok. A reverse proxy for NAT traversal.
+[Rathole][c-rathole-github]⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok. A reverse proxy for NAT traversal.
 
 ## ngrok
 
@@ -16,9 +16,8 @@
 [![ngrok-github][c-ngrok-github-badge]][c-ngrok-github]
 [![ngrok-lib.rs][c-ngrok-lib.rs-badge]][c-ngrok-lib.rs]
 
-[ngrok secure ingress][c-ngrok-rust-github]⮳
-
-[ngrok][c-ngrok-website]⮳
+[ngrok][c-ngrok-website]⮳ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps.
+`ngrok-rust` is the native and idiomatic crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
 
 ## nginx
 

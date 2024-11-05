@@ -74,21 +74,14 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_instrument.rs:example}}
 ```
 
-## OpenTelemetry
+## Related crates
 
-[OpenTelemetry Rust documentation][opentelemetry-rust]⮳
+[![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
+[![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]
+[![tracing_journald-github][c-tracing_journald-github-badge]][c-tracing_journald-github]
+[![tracing_journald-lib.rs][c-tracing_journald-lib.rs-badge]][c-tracing_journald-lib.rs]
 
-## See also
-
-[![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
-
-[![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}
-
-[![log][c-log-badge]][c-log]{{hi:log}}
-
-[![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}}
-
-Support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving structured information: [tracing_journald][c-tracing_journald]{{hi:tracing_journald}}⮳
+[tracing_journald][c-tracing_journald]⮳ provides support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving any structured information.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

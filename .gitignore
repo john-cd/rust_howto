@@ -2,6 +2,9 @@
 /doctest_cache/
 *.url
 
+# URL verificiation cache
+.lycheecache
+
 # Windows ------------------------
 
 # Windows thumbnail cache files

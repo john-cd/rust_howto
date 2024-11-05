@@ -72,7 +72,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## R
 
-[![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]  [![rand][c-rand-badge]][c-rand]  [![rand_distr][c-rand_distr-badge]][c-rand_distr]  [![ratatui][c-ratatui-badge]][c-ratatui]  [![rayon][c-rayon-badge]][c-rayon]  [![redis][c-redis-badge]][c-redis]  [![regex][c-regex-badge]][c-regex]  [![reqwest][c-reqwest-badge]][c-reqwest]  [![rhai][c-rhai-badge]][c-rhai]  [![riker][c-riker-badge]][c-riker]  [![ring][c-ring-badge]][c-ring]  [![roogle][c-roogle-badge]][c-roogle]  [![ruff][c-ruff-badge]][c-ruff]  [![rui][c-rui-badge]][c-rui]  [![rusqlite][c-rusqlite-badge]][c-rusqlite]  [![rustdesk][c-rustdesk-badge]][c-rustdesk]  [![rustfmt][c-rustfmt-badge]][c-rustfmt]  [![rustquant][c-rustquant-badge]][c-rustquant]
+[![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]  [![rand][c-rand-badge]][c-rand]  [![rand_distr][c-rand_distr-badge]][c-rand_distr]  [![ratatui][c-ratatui-badge]][c-ratatui]  [![rayon][c-rayon-badge]][c-rayon]  [![redis][c-redis-badge]][c-redis]  [![regex][c-regex-badge]][c-regex]  [![reqwest][c-reqwest-badge]][c-reqwest]  [![rhai][c-rhai-badge]][c-rhai]  [![riker][c-riker-badge]][c-riker]  [![ring][c-ring-badge]][c-ring]  [![roogle][c-roogle-badge]][c-roogle]  [![ruff][c-ruff-badge]][c-ruff]  [![rui][c-rui-badge]][c-rui]  [![rusqlite][c-rusqlite-badge]][c-rusqlite]  [![rustdesk][c-rustdesk-badge]][c-rustdesk] [![rustquant][c-rustquant-badge]][c-rustquant]
 
 ## S
 

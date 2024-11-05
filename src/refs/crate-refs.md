@@ -882,6 +882,8 @@
 [c-env_logger-badge]: https://img.shields.io/crates/v/env_logger?label=env_logger
 [c-env_logger-crates.io-badge]: https://img.shields.io/badge/crates.io-env__logger-crimson
 [c-env_logger-crates.io]: https://crates.io/crates/env_logger
+[c-env_logger-github-badge]: https://img.shields.io/badge/env__logger-steelblue?logo=github
+[c-env_logger-github]: https://github.com/rust-cli/env_logger
 [c-env_logger-lib.rs-badge]: https://img.shields.io/badge/lib.rs-env__logger-yellow
 [c-env_logger-lib.rs]: https://lib.rs/crates/env_logger
 [c-env_logger::Builder::format]: https://docs.rs/env_logger/latest/env_logger/struct.Builder.html#method.format
@@ -1306,6 +1308,8 @@
 [c-log4rs-badge]: https://img.shields.io/crates/v/log4rs?label=log4rs
 [c-log4rs-crates.io-badge]: https://img.shields.io/badge/crates.io-log4rs-crimson
 [c-log4rs-crates.io]: https://crates.io/crates/log4rs
+[c-log4rs-github-badge]: https://img.shields.io/badge/log4rs-steelblue?logo=github
+[c-log4rs-github]: https://github.com/estk/log4rs
 [c-log4rs-lib.rs-badge]: https://img.shields.io/badge/lib.rs-log4rs-yellow
 [c-log4rs-lib.rs]: https://lib.rs/crates/log4rs
 [c-log4rs::append::file::FileAppender]: https://docs.rs/log4rs/latest/log4rs/append/file/struct.FileAppender.html
@@ -2642,6 +2646,7 @@
 [c-tracing_journald-crates.io-badge]: https://img.shields.io/badge/crates.io-tracing__journald-crimson
 [c-tracing_journald-crates.io]: https://crates.io/crates/tracing_journald
 [c-tracing_journald-github-badge]: https://img.shields.io/badge/tracing__journald-steelblue?logo=github
+[c-tracing_journald-github]: https://github.com/tokio-rs/tracing/tree/master/tracing-journald
 [c-tracing_journald-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tracing__journald-yellow
 [c-tracing_journald-lib.rs]: https://lib.rs/crates/tracing-journald
 [c-tracing_journald]: https://docs.rs/tracing_journald

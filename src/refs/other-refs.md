@@ -355,7 +355,6 @@
 [proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
 [pyenv-github-badge]: https://img.shields.io/badge/pyenv-steelblue?logo=github
 [pyenv-github]: https://github.com/pyenv/pyenv
-[rathole-github]: https://github.com/rapiz1/rathole
 [realworld-actix-fullstack-github]: https://github.com/Bechma/realworld-actix-fullstack
 [realworld-example-apps-badge]: https://img.shields.io/badge/realworld_examples-steelblue?logo=github
 [realworld-example-apps]: https://github.com/gothinkster/realworld

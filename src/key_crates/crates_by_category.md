@@ -174,7 +174,6 @@ TODO verify all crates are added to at least one category above
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}
 [![rust_cache][c-rust_cache-badge]][c-rust_cache]{{hi:rust_cache}}
 [![rustdesk][c-rustdesk-badge]][c-rustdesk]{{hi:rustdesk}}
-[![rustfmt][c-rustfmt-badge]][c-rustfmt]{{hi:rustfmt}}
 [![rustquant][c-rustquant-badge]][c-rustquant]{{hi:rustquant}}
 [![salsa][c-salsa-badge]][c-salsa]{{hi:salsa}}
 [![same-file][c-same_file-badge]][c-same_file]

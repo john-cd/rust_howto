@@ -71,9 +71,4 @@ Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger bac
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO
-Tracing is now the go-to crate for logging.
-
-log
-An older and simpler crate if your needs are simple and you are not using any async code.
 </div>
