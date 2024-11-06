@@ -8,8 +8,8 @@ description = "Tools & templates for the rust_howto book"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
-keywords.workspace = true
-categories.workspace = true
+keywords = ["markdown generation"]
+categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 license = "MIT OR Apache-2.0"
 
