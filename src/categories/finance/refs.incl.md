@@ -1,1 +1,1 @@
-[ex-quant]: index.md#quant
+[ex-quant]: quant.md

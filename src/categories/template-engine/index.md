@@ -1,10 +1,10 @@
 # Template Engine
 
+[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engines}}
+
 Crates designed to combine templates with data to produce result documents, usually with an emphasis on processing tex
 
 {{#include index.incl.md}}
-
-[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engines}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,5 +1,55 @@
 # Testing
 
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+
+## `cargo test`
+
+[![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}
+[![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io]
+[![cargo-github][c-cargo-github-badge]][c-cargo-github]
+[![cargo-lib.rs][c-cargo-lib.rs-badge]][c-cargo-lib.rs]
+
+`cargo test` to run all tests.
+`cargo test test_prefix` to run all tests that start with the provided prefix.
+`cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
+
+```rust
+{{#include ../../../deps/tests/cats/development_tools_testing/tests1.rs:example}}
+```
+
+## Custom message
+
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+
+```rust
+{{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs:example}}
+```
+
+## `cargo nextest`
+
+[![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
+[![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]
+[![cargo-nextest-github][c-cargo_nextest-github-badge]][c-cargo_nextest-github]
+[![cargo-nextest-lib.rs][c-cargo_nextest-lib.rs-badge]][c-cargo_nextest-lib.rs]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+
+[`cargo-nextest`][c-cargo_nextest-website]⮳ is a new, faster test runner for Rust.
+
+```sh
+cargo nextest run
+cargo test --doc
+```
+
+## Approx
+
+[![approx][c-approx-badge]][c-approx]{{hi:approx}}
+[![approx-crates.io][c-approx-crates.io-badge]][c-approx-crates.io]
+[![approx-github][c-approx-github-badge]][c-approx-github]
+[![approx-lib.rs][c-approx-lib.rs-badge]][c-approx-lib.rs]
+[![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+
+[`approx`][c-approx]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
+
 ## Snapshot testing
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}

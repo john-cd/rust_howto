@@ -4,7 +4,7 @@
 
 ## Rustfmt
 
-[![rustfmt-github][c-rustfmt-github-badge]][c-rustfmt-github]{{hi:rustfmt}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Install with `rustup component add rustfmt`{{hi:rustfmt}}
 
@@ -15,15 +15,13 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs [`rustfmt`][c-rustfmt-config]{{hi:rustfmt}}⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs `rustfmt`{{hi:rustfmt}}⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check
 ```
 
 ### Rustfmt Configuration
-
-[Configuring Rustfmt][c-rustfmt-config]{{hi:rustfmt}}⮳
 
 Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,

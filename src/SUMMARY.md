@@ -188,6 +188,7 @@
 - [Development tools - performance, profiling](categories/development-tools_profiling/index.md)
 
 - [Development tools - testing](categories/development-tools_testing/index.md)
+  - [Testing](categories/development-tools_testing/testing.md)
 
 - [Email](categories/email/index.md)
 
@@ -200,7 +201,6 @@
   - [Serde](categories/encoding/serde.md)
 
 - [Error handling](categories/rust-patterns/errors/index.md)
-  - [Handle error variants](categories/rust-patterns/errors/handle.md)
   - [Error handling](categories/rust-patterns/errors/error_handling.md)
   - [Error customization](categories/rust-patterns/errors/error_customization.md)
 
@@ -209,8 +209,10 @@
   - [Directory traversal](categories/filesystem/dir.md)
 
 - [Finance](categories/finance/index.md)
+  - [Quant](categories/finance/quant.md)
 
 - [Game engines](categories/game-engines/index.md)
+  - [Game engines](categories/game-engines/game_engines.md)
 
 - [Graphics](categories/graphics/index.md)
 
@@ -257,7 +259,8 @@
 
 - [Robotics](categories/science_robotics/index.md)
 
-- [Rust Patterns](categories/rust-patterns/index.md)
+- [Rust patterns](categories/rust-patterns/index.md)
+  - [Design patterns](categories/rust-patterns/design_patterns.md)
 
 - [Science](categories/science/index.md)
 
@@ -269,6 +272,7 @@
 - [Template engines](categories/template-engine/index.md)
 
 - [Text editors](categories/text-editors/index.md)
+  - [IDEs](categories/text-editors/ides.md)
 
 - [Text processing](categories/text-processing/index.md)
   - [Regular expressions](categories/text-processing/regex.md)
@@ -280,6 +284,7 @@
 - [Visualization](categories/visualization/index.md)
 
 - [Web assembly](categories/wasm/index.md)
+  - [Yew](categories/wasm/yew.md)
 
 - [Web programming](categories/web-programming/index.md)
   - [Extracting links](categories/web-programming/scraping.md)
@@ -304,7 +309,7 @@
 - [Windows](categories/os_windows-apis/index.md)
 
 - [Written in Rust](other/written-in-rust/index.md)
-  - [Developement tools](other/written-in-rust/development_tools.md)
+  - [Development tools](other/written-in-rust/development_tools.md)
   - [Python tools](other/written-in-rust/python_tools.md)
   - [Others](other/written-in-rust/others.md)
 

@@ -1,7 +1,7 @@
 [ex-std-read-lines]: read-write.md#read-lines-of-strings-from-a-file
 [ex-avoid-read-write]: read-write.md#avoid-writing-and-reading-from-a-same-file
 [ex-random-file-access]: read-write.md#access-a-file-randomly-using-a-memory-map
-[ex-file-24-hours-modified]: dir.md#file-names-that-have-been-modified-in-the-last-24-hours
+[ex-file-24-hours-modified]: dir.md#find-files-that-have-been-modified-in-the-last-24-hours
 [ex-find-file-loops]: dir.md#find-loops-for-a-given-path
 [ex-dedup-filenames]: dir.md#recursively-find-duplicate-file-names
 [ex-file-predicate]: dir.md#recursively-find-all-files-with-given-predicate

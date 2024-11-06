@@ -441,8 +441,8 @@
 
 {{#include categories/development-tools_testing/index.incl.md}}
 
-[ex-test-your-code]: categories/development-tools_testing/index.md
-[ex-emit-custom-message]: categories/development-tools_testing/index.md#custom-message
+[ex-test-your-code]: categories/development-tools_testing/testing.md
+[ex-emit-custom-message]: categories/development-tools_testing/testing.md#custom-message
 
 ## Encoding
 
@@ -486,7 +486,7 @@
 [ex-std-read-lines]: categories/filesystem/read-write.md#read-lines-of-strings-from-a-file
 [ex-avoid-read-write]: categories/filesystem/read-write.md#avoid-writing-and-reading-from-a-same-file
 [ex-random-file-access]: categories/filesystem/read-write.md#access-a-file-randomly-using-a-memory-map
-[ex-file-24-hours-modified]: categories/filesystem/dir.md#file-names-that-have-been-modified-in-the-last-24-hours
+[ex-file-24-hours-modified]: categories/filesystem/dir.md#find-files-that-have-been-modified-in-the-last-24-hours
 [ex-find-file-loops]: categories/filesystem/dir.md#find-loops-for-a-given-path
 [ex-dedup-filenames]: categories/filesystem/dir.md#recursively-find-duplicate-file-names
 [ex-file-predicate]: categories/filesystem/dir.md#recursively-find-all-files-with-given-predicate
@@ -499,7 +499,7 @@
 
 {{#include categories/finance/index.incl.md}}
 
-[ex-quant]: categories/finance/index.md#quant
+[ex-quant]: categories/finance/index.md
 
 ## GPU Programming
 
@@ -548,7 +548,7 @@
 [ex-mathematical-functions]: categories/mathematics/complex_numbers.md#mathematical-functions
 [ex-central-tendency]: categories/mathematics/statistics.md#measures-of-central-tendency
 [ex-standard-deviation]: categories/mathematics/statistics.md#standard-deviation
-[ex-big-integers]: categories/mathematics/miscellaneous.md#big-integers
+[ex-big-integers]: categories/mathematics/additional_numeric_types.md
 
 ## Memory Management
 
@@ -587,9 +587,9 @@
 
 {{#include categories/rust-patterns/index.incl.md}}
 
-[ex-error_chain-simple-error-handling]: categories/rust-patterns/errors/handle.md#handle-errors-correctly-in-main
-[ex-error_chain-avoid-discarding]: categories/rust-patterns/errors/handle.md#avoid-discarding-errors-during-error-conversions
-[ex-error_chain-backtrace]: categories/rust-patterns/errors/handle.md#obtain-backtrace-of-complex-error-scenarios
+[ex-error_chain-simple-error-handling]: categories/rust-patterns/errors/error_handling.md#handle-errors-correctly-in-main
+[ex-error_chain-avoid-discarding]: categories/rust-patterns/errors/error_handling.md#avoid-discarding-errors-during-error-conversions
+[ex-error_chain-backtrace]: categories/rust-patterns/errors/error_handling.md#obtain-backtrace-of-complex-error-scenarios
 
 ## Science
 
@@ -615,7 +615,7 @@
 
 {{#include categories/text-editors/index.incl.md}}
 
-[ex-ides]: categories/text-editors/index.md#ides
+[ex-ides]: categories/text-editors/ides.md
 
 ## Text Processing
 
@@ -636,7 +636,7 @@
 
 {{#include categories/wasm/index.incl.md}}
 
-[ex-yew]: categories/wasm/index.md#yew
+[ex-yew]: categories/wasm/yew.md
 
 ## Web Programming
 

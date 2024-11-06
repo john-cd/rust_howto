@@ -1,6 +1,6 @@
-# Iterators, functional code
+# Functional programming
 
-## itertools
+## Compose iterators with `itertools`
 
 [![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}
 [![itertools-crates.io][c-itertools-crates.io-badge]][c-itertools-crates.io]
@@ -21,6 +21,5 @@ Extra iterator adaptors, functions and macros.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO incorporate in iterators / functional section
-cover the most useful functions
+TODO cover the most useful functions
 </div>

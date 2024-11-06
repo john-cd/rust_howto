@@ -16,6 +16,10 @@
 
 {{#include statistics.incl.md}}
 
+## Additional numeric types
+
+{{#include additional_numeric_types.incl.md}}
+
 ## Miscellaneous
 
 {{#include miscellaneous.incl.md}}

@@ -1,4 +1,4 @@
-# Numeric types
+# Additional numeric types
 
 ## Abstracting over different number types
 
@@ -13,6 +13,23 @@
 Traits like Number, Add, etc that allow you write functions that are generic over the specific numeric type
 
 ## Big Integers
+
+### `num`
+
+[![num][c-num-badge]][c-num]{{hi:num}}
+[![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
+[![num-github][c-num-github-badge]][c-num-github]
+[![num-lib.rs][c-num-lib.rs-badge]][c-num-lib.rs]
+[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
+[![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
+[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-num::BigInt]{{hi:num::BigInt}}⮳.
+
+```rust
+{{#include ../../../deps/tests/cats/mathematics/big_integers.rs:example}}
+```
 
 ### num-bigint
 

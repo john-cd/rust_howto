@@ -1,0 +1,12 @@
+# Audio
+
+[![cat-multimedia::audio][cat-multimedia::audio-badge]][cat-multimedia::audio]{{hi:Audio}}
+
+Crates that record, output, or process audio.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO: write
+</div>

@@ -12,14 +12,4 @@ Deal with the complexities of human language when expressed in textual form.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add to separate file
-
-## String benchmark
-
-- [concat benchmark][concat-benchmark-github]⮳
-
-## See also
-
-- Pure Rust multi-line text handling: [Pure Rust multi-line text handling][c-cosmic_text-github]⮳
-
 </div>

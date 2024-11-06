@@ -14,9 +14,8 @@
 
 ## Markdown
 
-- [ ] review each .md file in turn
+- [ ] review each .md file in turn - WIP
 - [ ] hide sections that won't be worked on for a while
-- [ ] move drafts to related section / category
 - [ ] finish drafts
 
 ## Examples

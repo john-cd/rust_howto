@@ -1,8 +1,6 @@
-# System
+# Low-level interaction with the operating system
 
-For low-level interaction with the underling platform / operating system
-
-## libc
+## Call `libc`
 
 [![libc][c-libc-badge]][c-libc]{{hi:libc}}
 [![libc-crates.io][c-libc-crates.io-badge]][c-libc-crates.io]

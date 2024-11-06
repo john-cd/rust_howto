@@ -270,6 +270,7 @@
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [headlines-github-badge]: https://img.shields.io/badge/headlines-steelblue?logo=github
 [headlines-github]: https://github.com/creativcoder/headlines
+[helix-editor-github]: https://github.com/helix-editor/helix
 [helix-editor-website]: https://helix-editor.com
 [how_to_learn_modern_rust-github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 [http-basic-auth]: https://tools.ietf.org/html/rfc2617
@@ -448,7 +449,6 @@
 [talent-plan-github]: https://github.com/pingcap/talent-plan
 [tower-middleware-from-scratch-badge]: https://img.shields.io/badge/tower_middleware_from_scratch-steelblue?logo=github
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
-[tree-sitter-github]: https://github.com/tree-sitter/tree-sitter
 [tree-sitter-website]: https://tree-sitter.github.io/tree-sitter
 [twitter-hashtag-badge]: https://img.shields.io/badge/twitter--text-steelblue?logo=github
 [twitter-hashtag-regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
@@ -471,7 +471,3 @@
 [zero-mq-guide-website]: http://zguide.zeromq.org/page:all#Divide-and-Conquer
 [zld-github-badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zld-github]: https://github.com/michaeleisel/zld
-[zola-lib.rs-badge]: https://img.shields.io/badge/lib.rs-zola-yellow
-[zola-lib.rs]: https://lib.rs/crates/zola
-[zola-website-badge]: https://img.shields.io/badge/zola-coral
-[zola-website]: https://www.getzola.org/documentation/getting-started/overview

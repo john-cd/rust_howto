@@ -1,6 +1,6 @@
 # Window creation
 
-## winit
+## `winit`
 
 [![winit][c-winit-badge]][c-winit]{{hi:winit}}
 [![winit-crates.io][c-winit-crates.io-badge]][c-winit-crates.io]
@@ -10,7 +10,7 @@
 
 "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice."
 
-## tao
+## `tao`
 
 [![tao][c-tao-badge]][c-tao]{{hi:tao}}
 [![tao-crates.io][c-tao-crates.io-badge]][c-tao-crates.io]

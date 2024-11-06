@@ -1,1 +1,1 @@
-[ex-ides]: index.md#ides
+[ex-ides]: ides.md

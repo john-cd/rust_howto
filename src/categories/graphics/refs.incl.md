@@ -1,1 +1,1 @@
-[ex-graphics]: index.md
+[ex-graphics]: webgpu.md

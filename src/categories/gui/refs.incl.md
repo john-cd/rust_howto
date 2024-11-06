@@ -1,3 +1,3 @@
-[ex-tauri]: index.md#tauri
-[ex-egui]: index.md#egui
-[ex-other-gui]: index.md#other-gui-frameworks
+[ex-tauri]: index.md
+[ex-egui]: index.md
+[ex-other-gui]: index.md

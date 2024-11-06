@@ -9,7 +9,7 @@ The Rust compiler spends a lot of time in the "link" step. LLD is much faster at
 The default linker does a good job, but there are faster alternatives depending on the operating system you are using:
 
 - [`lld`][lld-website]{{hi:lld}}⮳ on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
-- [`zld`][zld-github]{{hi:zld}}⮳ on MacOS. [![zld-github][c-zld-github-badge]][c-zld-github]
+- [`zld`][zld-github]{{hi:zld}}⮳ on MacOS. [![zld-github][zld-github-badge]][zld-github]
 
 To speed up the linking phase you have to install the alternative linker on your machine and add this configuration file to the project:
 

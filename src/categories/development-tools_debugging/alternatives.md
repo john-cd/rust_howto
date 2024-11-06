@@ -83,4 +83,5 @@ fn main() {
 
 <div class="hidden">
 TODO write / organize together with the old log content?
+incorporate into SUMMARY, etc
 </div>

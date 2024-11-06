@@ -2,7 +2,7 @@
 
 ## File managers
 
-Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust. [spacedrive][spacedrive-github]⮳
+Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust. [spacedrive][spacedrive-github]⮳ [![spacedrive-github][spacedrive-github-badge]][spacedrive-github]
 
 ## Remote desktops
 

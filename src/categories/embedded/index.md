@@ -1,12 +1,10 @@
 # Embedded
 
+[![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded systems}}
+
 Crates that are primarily useful on embedded devices or without an operating system.
 
 {{#include index.incl.md}}
-
-[![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded systems}}
-
-## Embassy
 
 ## See also
 
@@ -17,5 +15,11 @@ Crates that are primarily useful on embedded devices or without an operating sys
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add embassy, others
+TODO: write; cover:
+portable-atomic
+embedded-hal
+postcard
+strun
+smoltcp
+...
 </div>

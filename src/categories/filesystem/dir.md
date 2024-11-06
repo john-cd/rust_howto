@@ -2,9 +2,9 @@
 
 {{#include dir.incl.md}}
 
-## File names that have been modified in the last 24 hours
+## Find files that have been modified in the last 24 hours
 
-[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c-std::env::current_dir]{{hi:std::env::current_dir}}⮳ then for each entries in [`std::fs::read_dir`][c-std::fs::read_dir]{{hi:std::fs::read_dir}}⮳ extracts the
 [`std::fs::DirEntry::path`][c-std::fs::DirEntry::path]{{hi:std::fs::DirEntry::path}}⮳ and gets the metadata via [`std::fs::Metadata`][c-std::fs::Metadata]{{hi:std::fs::Metadata}}⮳. The
@@ -16,7 +16,11 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 ## Find loops for a given path
 
-[![same-file][c-same_file-badge]][c-same_file]{{hi:same-file}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![same-file][c-same_file-badge]][c-same_file]{{hi:same-file}}
+[![same-file-crates.io][c-same_file-crates.io-badge]][c-same_file-crates.io]
+[![same-file-github][c-same_file-github-badge]][c-same_file-github]
+[![same-file-lib.rs][c-same_file-lib.rs-badge]][c-same_file-lib.rs]
+[![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Use [`same_file::is_same_file`][c-same_file::is_same_file]{{hi:same_file::is_same_file}}⮳ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
@@ -115,14 +119,5 @@ TODO cover globset
 [![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]
 
 High-performance globbing that allows multiple globs to be evaluated at once
-
-TODO cover ignore
-
-[![ignore][c-ignore-badge]][c-ignore]{{hi:ignore}}
-[![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io]
-[![ignore-github][c-ignore-github-badge]][c-ignore-github]
-[![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]
-
-Recursive filesystem walking that respects ignore files (like .gitignore)
 
 </div>

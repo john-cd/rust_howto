@@ -322,7 +322,7 @@ loopback
 mdBook
 mdbook
 mediawiki
-memmap2
+memmap
 metadata
 middleware
 miri
@@ -517,3 +517,8 @@ lpalmieri
 Codevoweb
 codevoweb
 multimap
+Serverless
+serverless
+Dataframes
+dataframes
+NoSQL

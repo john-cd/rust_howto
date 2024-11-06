@@ -39,13 +39,23 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../deps/tests/cats/rust_patterns/thiserror2.rs:example}}
 ```
 
-## Miette
+## `miette`
 
-[![miette][c-miette-badge]][c-miette]{{hi:miette}}  [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
+[![miette][c-miette-badge]][c-miette]{{hi:miette}}
+[![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
 ```rust
 {{#include ../../../../deps/tests/cats/rust_patterns/miette.rs:example}}
 ```
+
+## `color-eyre`
+
+[![color-eyre][c-color_eyre-badge]][c-color_eyre]{{hi:color-eyre}}
+[![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io]
+[![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github]
+[![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]
+
+A fork of `anyhow` that gives you more control over the format of the generated error messages. Recommended if you intend to present error messages to end users. Otherwise `anyhow` is simpler.
 
 ## See also
 
