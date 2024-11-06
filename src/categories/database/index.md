@@ -18,7 +18,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include nosql.incl.md}}
 
-## Seach
+## Search
 
 {{#include search.incl.md}}
 

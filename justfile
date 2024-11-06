@@ -10,11 +10,13 @@ alias s := serve
 alias t := test
 alias ta := testall
 
-set windows-shell := ["cmd.exe", "/c"]
+set windows-shell := [ "cmd.exe", "/c" ]
 
 default:
   @just --list --unsorted
 # or: @just --choose
+
+## ---- CLEAN ------------------------------------------
 
 # Clean Cargo's `target` and mdbook's `book` directories
 clean: &&_clean
@@ -28,6 +30,8 @@ _clean:
 [windows]
 _clean:
   if exist .doctest_cache rmdir /s /q .doctest_cache
+
+## ---- CODE BUILDING -----------------------------------
 
 # Format all code
 fmtall:
@@ -50,7 +54,7 @@ buildall:
 
 # Scan all code for common mistakes
 clippyall:
-  cargo clippy --workspace --all-targets --locked
+  cargo clippy --workspace --all-targets --locked -- -D warnings
 
 # Test the code used by the book (`deps` crate only)
 test: _clean_temp_dir && _clean_temp_dir
@@ -70,6 +74,10 @@ testall: _clean_temp_dir && _clean_temp_dir
 nextestall: _clean_temp_dir && _clean_temp_dir
   cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
   cargo test --doc --workspace --quiet || true # nextest does not handle doctests
+
+# Clean the `deps/temp` folder of most files prior / after testing
+_clean_temp_dir:
+  cargo run -p clean --quiet
 
 # Run additional examples (under the `xmpl` folder)
 [unix]
@@ -91,20 +99,29 @@ runall:
 #examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
 #for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
 
-## The examples under the deps folder have been replaced by tests.
-# # Run a specific example (among those in `deps/examples`)
-# run example:
-#   #cargo clean -p deps
-#   cargo run -p deps --locked --example {{example}}
+## ---- CODE DOCUMENTATION -----------------------------------
 
-# Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `xmpl`)
-[confirm]
-update:
-  cargo update
+# Build and display the `cargo doc` documentation for a specific package (e.g. deps)
+[unix]
+doc pkg:
+  cargo clean --doc
+  cargo doc --no-deps --document-private-items --locked --package {{pkg}}
+  cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
 
-# Get info about a crate (Rust 1.82+)
-info crate:
-  cargo info {{crate}}
+_builddocall:
+  cargo clean --doc
+  cargo doc --no-deps --workspace --locked
+# optional: --bins --examples
+
+# Build and display the `cargo doc` documentation for all packages
+[unix]
+docall: _builddocall
+  # cargo doc --open does not seem to work when running from a Dev Container in VS Code;
+  # the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML.
+  cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
+  # We could also use `live server` for dynamic reloading.
+  # See README.md for other alternatives, such as:
+  # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
 
 ## ---- BOOK BUILDING -----------------------------------
 
@@ -145,7 +162,7 @@ _sitemap:
 # Serve the book (incl. link checking)
 serve:
   mdbook serve -p 3000 -n 127.0.0.1 --open
-  ## NOTE: conflicts with "port" / EXPOSE in the Docker / Docker compose configuration
+  ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
   ## Or use: cd book/html ; python3 -m http.server 3000
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
@@ -177,32 +194,12 @@ quick:
 #
 # Note2: mdbook watch --open --watcher=poll / native does not have -p -n options.
 
-## Documentation --------------------------------------
+## ---- UTILITIES -----------------------------------
 
-# Build and display the `cargo doc` documentation for a specific package (e.g. deps)
+# Check spelling in markdown
 [unix]
-doc pkg:
-  cargo clean --doc
-  cargo doc --no-deps --document-private-items --locked --package {{pkg}}
-  cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
-
-# Build and display the `cargo doc` documentation for all packages
-[unix]
-docall:
-  cargo clean --doc
-  cargo doc --no-deps --workspace --locked
-  # optional: --bins --examples
-  # cargo doc --open does not seem to work when running from a Dev Container in VS Code;
-  # the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML.
-  cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
-  # We could also use `live server` for dynamic reloading.
-  # See README.md for other alternatives, such as:
-  # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
-
-## Utilities --------------------------------------
-
-# Prepare for git push
-prep: spell sortrefs fmtall clean clippyall testall buildbook serve
+spell:
+  .devcontainer/spellcheck.sh
 
 help := 'help'
 empty := ''
@@ -223,9 +220,7 @@ crate_indices cmd=help *subcmd=empty:
 autogen:
     cargo run -p autogen
 
-# Clean the deps/temp folder of most files
-_clean_temp_dir:
-  cargo run -p clean
+## ---- LINK AND REFERENCE DEFINITION MANAGEMENT -----------------------------------
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]
@@ -247,25 +242,8 @@ _removelastslash:
    sed -i 's/[/]$//g' ./src/refs/other-refs.md
    sed -i 's/[/]$//g' ./src/refs/link-refs.md
 
-# Check spelling in markdown
-[unix]
-spell:
-  .devcontainer/spellcheck.sh
-
-# Check that URLs (to external websites) are valid and working
-check_urls:
-  -lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
-  # We could also check ".devcontainer/*" "./**/*.sh"
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -- -
-# Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
-# This does not check whether the reference definitions are used - see below.
-
-# Identify duplicate URLs
-duplicated_urls:
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
-
 # List links without corresponding reference definitions and vice versa
-refdefs:
+check_refdefs:
   #! /bin/bash
   # labels followed by : in the "refs" folder
   grep -Proh '\[[^\[\]]+?\](?=:)' ./src/refs | sort -u > /tmp/defined_refdefs.txt
@@ -279,7 +257,37 @@ refdefs:
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]
 
-# Check for security advisories, etc
+## ---- URL MANAGEMENT -----------------------------------
+
+# Check that URLs (to external websites) are valid and working
+check_urls:
+  -lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
+  # We could also check ".devcontainer/*" "./**/*.sh"
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -- -
+# Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
+# This does not check whether the reference definitions are used - see below.
+
+# Identify duplicate URLs
+duplicated_urls:
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
+
+## ---- CRATE MANAGEMENT -----------------------------------
+
+# Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `xmpl`)
+[confirm]
+update:
+  cargo update
+
+# Get info about a crate (Rust 1.82+)
+info crate:
+  cargo info {{crate}}
+
+# Check for security advisories, license issues, etc
 crate_check:
-  cargo deny check  --hide-inclusion-graph
+  cargo deny check --hide-inclusion-graph
 # WIP
+
+## ---- PRE-PUSH -----------------------------------
+
+# Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
+prep: spell sortrefs fmtall clean clippyall testall _builddocall buildbook

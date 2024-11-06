@@ -15,7 +15,7 @@
 
 ### Lapce
 
-[![lapce][c-lapce-badge]][c-lapce]{{hi:lapce}}
+[![lapce-website][c-lapce-website-badge]][c-lapce-website]{{hi:lapce}}
 [![lapce-crates.io][c-lapce-crates.io-badge]][c-lapce-crates.io]
 [![lapce-github][c-lapce-github-badge]][c-lapce-github]
 [![lapce-lib.rs][c-lapce-lib.rs-badge]][c-lapce-lib.rs]

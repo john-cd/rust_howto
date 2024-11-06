@@ -1239,14 +1239,14 @@
 [c-kani-lib.rs-badge]: https://img.shields.io/badge/lib.rs-kani-yellow
 [c-kani-lib.rs]: https://lib.rs/crates/kani
 [c-kani]: https://docs.rs/kani
-[c-lapce-badge]: https://img.shields.io/crates/v/lapce?label=lapce
 [c-lapce-crates.io-badge]: https://img.shields.io/badge/crates.io-lapce-crimson
 [c-lapce-crates.io]: https://crates.io/crates/lapce
 [c-lapce-github-badge]: https://img.shields.io/badge/lapce-steelblue?logo=github
 [c-lapce-github]: https://github.com/lapce/lapce
 [c-lapce-lib.rs-badge]: https://img.shields.io/badge/lib.rs-lapce-yellow
 [c-lapce-lib.rs]: https://lib.rs/gh/lapce/lapce/lapce
-[c-lapce]: https://lapce.dev
+[c-lapce-website-badge]: https://img.shields.io/badge/lapce-coral
+[c-lapce-website]: https://lapce.dev
 [c-lazy_static-badge]: https://img.shields.io/crates/v/lazy_static?label=lazy_static
 [c-lazy_static-crates.io-badge]: https://img.shields.io/badge/crates.io-lazy__static-crimson
 [c-lazy_static-crates.io]: https://crates.io/crates/lazy_static

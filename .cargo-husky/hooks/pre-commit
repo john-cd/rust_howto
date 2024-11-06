@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+echo '+just fmtall'
+just fmtall
+
+echo '+just clippyall'
+just clippyall
+
+echo '+just sortrefs'
+just sortrefs
+
+echo '+just buildbook'
+just buildbook

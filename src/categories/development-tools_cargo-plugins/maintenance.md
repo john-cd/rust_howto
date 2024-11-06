@@ -13,10 +13,6 @@ Currently available subcommands:
 - cargo upgrade
 - cargo set-version
 
-[![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
-
-[![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
-
 ## Find unused dependencies
 
 ### `cargo udeps`
@@ -105,4 +101,7 @@ $ cargo semver-checks
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO
+[![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
+[![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
 </div>

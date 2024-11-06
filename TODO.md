@@ -1,9 +1,8 @@
 # TODO
 
+- [ ] incorporate new examples: cwd, dyn_clone, flagset, itertools, multimap, notify, redis, type_name...
 - [ ] generate full badge block with github link and category
 - [ ] fix commented examples - remaining
-- [ ] incorporate new examples: cwd, dyn_clone, flagset, itertools, multimap, notify, redis, type_name...
-- [ ] add category badges to markdown example sections - partial
 - [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
 - [ ] move remaining drafts to src
 - [ ] finish pre-commit hook setup

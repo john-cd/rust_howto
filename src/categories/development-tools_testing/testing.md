@@ -66,6 +66,10 @@ cargo test --doc
 
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of assert_eq!. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
 
+## Code coverage
+
+[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -12,26 +12,46 @@ FROM rust:${RUST_IMAGE_LABEL} as base
 
 SHELL ["bash", "-c"]
 
-## Install linker and other utilities
+## Install
+## `aspell*` required for spell checking
+## `systemd` required for one example using `journalctl`
+## `gcc pkg-config libc6-dev libssl-dev` required for https://docs.rs/crate/lychee/latest
+## `wget` required for `cmake` install
+## `clang` required for `opencv`
+## `libudev-dev` required for `openrr`
+## `libasound2-dev` required for `alsa-sys` / `openrr`
+## `cmake`
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends aspell aspell-en \
-                                                  systemd \
-    && apt install -y --no-install-recommends gcc pkg-config libc6-dev libssl-dev \
+    && apt-get install -y --no-install-recommends \
+                                        aspell \
+                                        aspell-en \
+                                        systemd \
+                                        gcc \
+                                        pkg-config \
+                                        libc6-dev \
+                                        libssl-dev \
+                                        clang \
+                                        libudev-dev \
+                                        libasound2-dev \
+                                        wget \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && wget https://github.com/Kitware/CMake/releases/download/v3.31.0-rc3/cmake-3.31.0-rc3-linux-x86_64.sh \
+    -q -O /tmp/cmake-install.sh \
+    && chmod u+x /tmp/cmake-install.sh \
+    && mkdir /opt/cmake-3.31.0-rc3/ \
+    && /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.0-rc3/ \
+    && rm /tmp/cmake-install.sh \
+    && ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
 
-## aspell* required for spell checking
-## systemd required for one example using `journalctl`
-## gcc pkg-config libc6-dev libssl-dev required for https://docs.rs/crate/lychee/latest
-
-## Also consider:
+## Also consider: linker and other utilities
 # mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
-## Configuration in .cargo/config.toml
+## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
 
 ## Update Rust if needed (note: `rustup update stable && rustup default stable` is required for Rust 1.74 -> Rust 1.75 somehow)
@@ -39,10 +59,6 @@ RUN rustup update
 
 ## Install clippy if needed
 RUN rustup component add clippy
-
-## Install nightly fmt
-RUN rustup toolchain install nightly \
-    && rustup component add rustfmt --toolchain nightly
 
 ARG MDBOOK_VERSION
 
@@ -79,13 +95,6 @@ EOF
 ## TODO https://lib.rs/crates/mdbook-open-on-gh
 # RUN cargo binstall --no-confirm mdbook-open-on-gh
 
-## TODO CONSIDER Install cargo other check tools
-# RUN cargo install --locked cargo-deny || true
-# RUN cargo install --locked cargo-outdated || true
-# RUN cargo install --locked cargo-udeps || true
-# RUN cargo install --locked cargo-audit || true
-# RUN cargo install --locked cargo-pants || true
-
 # ------------------------------
 
 ## Alternative `just` install
@@ -107,8 +116,12 @@ EOF
 # ------------------------------
 
 ## Install the mdbook-utils tool that is a companion to the book.
-## Installed last, because the tool is still in development
+## Installed second to last, because the tool is still in development
 RUN cargo install --locked mdbook-utils
+
+## Install nightly fmt
+RUN rustup toolchain install nightly \
+    && rustup component add rustfmt --toolchain nightly
 
 WORKDIR /code
 
@@ -117,11 +130,14 @@ WORKDIR /code
 FROM base as development
 
 ## Additional packages for developement only
+
+## Install pre-commit
+## NOTE: `pre-commit` has been replaced by `cargo husky`
 ## Install python3, pipx, pre-commit
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y python3 pipx \
-    && pipx install pre-commit \
-    && pipx ensurepath
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get install -y python3 pipx \
+#     && pipx install pre-commit \
+#     && pipx ensurepath
 
 ## If needed:
 ## Fast fuzzy search:
@@ -134,11 +150,19 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN rustup component add rustfmt
 
 ## Install `just` (from the binary release)
+## Install cargo plugins
 ## Install the link checker `lychee`
 RUN cargo binstall --no-confirm just \
+    && cargo binstall --no-confirm cargo-deny \
     && cargo install --locked lychee
 
-## Optional tools
+## Install optional cargo plugins
+# RUN cargo install --locked cargo-outdated || true
+# RUN cargo install --locked cargo-udeps || true
+# RUN cargo install --locked cargo-audit || true
+# RUN cargo install --locked cargo-pants || true
+
+## Install optional tools
 # RUN cargo binstall --no-confirm ripgrep \
 #   && cargo binstall --no-confirm toml2json \
 #   && cargo install --locked bacon

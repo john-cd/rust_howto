@@ -245,6 +245,7 @@
 [dapr-website]: https://dapr.io
 [databend-github-badge]: https://img.shields.io/badge/databend-steelblue?logo=github
 [databend-github]: https://github.com/datafuselabs/databend
+[deps-rs-github]: https://github.com/deps-rs/deps.rs
 [deps-rs-website]: https://deps.rs
 [desktop-lite-github]: https://github.com/devcontainers/features/tree/main/src/desktop-lite
 [dev-container-cli-github]: https://github.com/devcontainers/cli
@@ -323,6 +324,7 @@
 [postsack-github]: https://github.com/terhechte/postsack
 [practical-rust-web-projects-github]: https://github.com/Apress/practical-rust-web-projects/tree/main
 [practice.course.rs]: https://practice.course.rs/why-exercise.html
+[pre-commit.com-hooks-website]: https://pre-commit.com/hooks.html
 [pre-commit.com-website]: https://pre-commit.com/index.html
 [primitive-bool]: https://doc.rust-lang.org/std/primitive.bool.html
 [primitive-char]: https://doc.rust-lang.org/std/primitive.char.html

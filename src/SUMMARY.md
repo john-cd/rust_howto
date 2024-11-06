@@ -318,7 +318,7 @@
 - [Links](links/index.md)
   - [Example code](links/example_code.md)
   - [Cheat sheets](links/rust_cheatsheets.md)
-  - [Blogs](links/blogs.md)
+  - [Blogs](links/blogs_podcasts_meetups.md)
   - [Books](links/books.md)
   - [Companies](links/companies.md)
 

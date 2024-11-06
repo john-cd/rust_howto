@@ -2,6 +2,6 @@
 |---|
 | [Example code][ex-example-code] |
 | [Cheatsheets][ex-cheatsheets] |
-| [Blogs][ex-blogs] |
+| [Blogs, Podcasts, Meetups][ex-blogs] |
 | [Books][ex-books] |
 | [Companies][ex-companies] |
