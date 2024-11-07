@@ -8,3 +8,9 @@
 [![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]
 
 Recursive filesystem walking that respects ignore files (like .gitignore)
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+</div>

@@ -4,13 +4,6 @@
 
 [abstract-factory in rust][abstract-factory-in-rust-website]⮳
 
-## Lens
-
-[![lens][c-lens-badge]][c-lens]{{hi:lens}}
-[![lens-crates.io][c-lens-crates.io-badge]][c-lens-crates.io]
-[![lens-github][c-lens-github-badge]][c-lens-github]
-[![lens-lib.rs][c-lens-lib.rs-badge]][c-lens-lib.rs]
-
 ## `dyn-clone`
 
 [![dyn-clone][c-dyn_clone-badge]][c-dyn_clone]{{hi:dyn-clone}}
@@ -31,4 +24,13 @@ This crate provides a `DynClone` trait that can be used in trait objects, and a 
 
 <div class="hidden">
 TODO rethink where that stuff should go
+
+TODO review - lens is not used that often:
+
+## Lens
+
+[![lens][c-lens-badge]][c-lens]{{hi:lens}}
+[![lens-crates.io][c-lens-crates.io-badge]][c-lens-crates.io]
+[![lens-github][c-lens-github-badge]][c-lens-github]
+[![lens-lib.rs][c-lens-lib.rs-badge]][c-lens-lib.rs]
 </div>

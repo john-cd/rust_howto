@@ -8,7 +8,9 @@ The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attribu
 
 [Derivable traits][book-rust-derivable-traits]{{hi:Derivable traits}}⮳
 
-{{#playground ../../deps/tests/std/derive.rs editable}}
+```rust,editable
+{{#include ../../deps/tests/std/derive.rs:example}}
+```
 
 You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code that is generated for your specific type.
 

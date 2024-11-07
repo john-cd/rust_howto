@@ -6,7 +6,10 @@ use tokio::time;
 
 #[tokio::main]
 async fn main() {
+    // Data that is not thread-safe:
     let nonsend_data = Rc::new("world");
+
+    // A set of tasks which are executed on the same thread:
     let local = task::LocalSet::new();
 
     let nonsend_data2 = nonsend_data.clone();

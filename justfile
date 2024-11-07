@@ -287,6 +287,17 @@ crate_check:
   cargo deny check --hide-inclusion-graph
 # WIP
 
+## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
+
+# List examples in `deps/tests` that are not in the markdown.
+examples:
+  #! /bin/bash
+  grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' ./src ./drafts | sed -E 's~\{\{#include .+/([._a-zA-Z0-9]+?\.rs)(:.+?)?\}\}~\1~' | sort -u > examples_in_markdown.txt
+  find ./deps/tests -type f -name "*.rs" -exec basename {} \; | sort -u > examples.txt
+  comm -13 examples_in_markdown.txt examples.txt
+# The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
+# then compare to the list of test files in deps
+
 ## ---- PRE-PUSH -----------------------------------
 
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook

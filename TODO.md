@@ -1,8 +1,8 @@
 # TODO
 
-- [ ] incorporate new examples: cwd, dyn_clone, flagset, itertools, multimap, notify, redis, type_name...
-- [ ] tools: generate full badge block with github link and category
-- [ ]
+- [ ] tools: generate full badge block with correct github link and category
+- [ ] autogen: generate chapters: index.md, index.incl.md, refs.incl.md, subchapters... for all categories
+- [ ] autogenerate index of examples with correct refdefs
 - [ ] fix commented examples - remaining
 - [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?
@@ -13,18 +13,18 @@
 
 ## Markdown
 
+- [ ] incorporate loose subchapters; add to their index.incl.md
 - [ ] review each .md file in turn - WIP
 - [ ] hide sections that won't be worked on for a while
-- [ ] finish drafts
 
 ## Examples
 
+- [ ] finish to review ignore / no_run examples - add noplayground if playground does not have the dependency
+- [ ] Make addt'l examples out of mdbook-utils, crate_indices, templ, clean, autogen...
+- [ ] integrate clap builder example
+- [ ] fix failing examples in deps/drafts
 - [ ] tower_http example polish; other examples have been checked against the rust playground
 - [ ] fix leaky tests when using nextest on Windows
-- [ ] fix failing examples in drafts
-- [ ] finish to review ignore / no_run examples
-- [ ] integrate clap builder example
-- [ ] Make addt'l examples out of mdbook-utils, crate_indices, templ...
 - [ ] add shuttle.rs example
 
 ## Others
