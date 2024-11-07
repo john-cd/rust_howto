@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/*",
+    "tools/*",
     # project that contains most code examples in the book - see `tests` and `examples` folders
     "deps",
     # crates.io placeholder
