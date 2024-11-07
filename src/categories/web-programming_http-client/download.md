@@ -4,7 +4,7 @@
 
 ## Download a file to a temporary directory
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![tempdir][c-tempdir-badge]][c-tempdir]{{hi:tempdir}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![tempfile][c-tempfile-badge]][c-tempfile]{{hi:tempfile}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
 Creates a temporary directory with [`tempfile::Builder`][c-tempfile::Builder]{{hi:tempfile::Builder}}⮳ and downloads a file over HTTP using [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ asynchronously.
 

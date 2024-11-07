@@ -2528,12 +2528,6 @@
 [c-tauri-website-badge]: https://img.shields.io/badge/tauri-coral
 [c-tauri-website]: https://tauri.app
 [c-tauri]: https://docs.rs/tauri
-[c-tempdir-badge]: https://img.shields.io/crates/v/tempdir?label=tempdir
-[c-tempdir-crates.io-badge]: https://img.shields.io/badge/crates.io-tempdir-crimson
-[c-tempdir-crates.io]: https://crates.io/crates/tempdir
-[c-tempdir-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tempdir-yellow
-[c-tempdir-lib.rs]: https://lib.rs/crates/tempdir
-[c-tempdir]: https://docs.rs/tempdir
 [c-tempfile-badge]: https://img.shields.io/crates/v/tempfile?label=tempfile
 [c-tempfile-crates.io-badge]: https://img.shields.io/badge/crates.io-tempfile-crimson
 [c-tempfile-crates.io]: https://crates.io/crates/tempfile

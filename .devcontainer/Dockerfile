@@ -17,10 +17,12 @@ SHELL ["bash", "-c"]
 ## `systemd` required for one example using `journalctl`
 ## `gcc pkg-config libc6-dev libssl-dev` required for https://docs.rs/crate/lychee/latest
 ## `wget` required for `cmake` install
-## `clang` required for `opencv`
-## `libudev-dev` required for `openrr`
-## `libasound2-dev` required for `alsa-sys` / `openrr`
 ## `cmake`
+## `libopencv-dev` `clang` `libclang-dev` for `opencv`
+## `llvm` for `llvm-config` required for `clang-sys`
+## `libudev-dev` required for `openrr`
+## `libasound2-dev` required for `alsa-sys`, for `openrr`
+## for Tauri: libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
@@ -33,10 +35,19 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
                                         pkg-config \
                                         libc6-dev \
                                         libssl-dev \
-                                        clang \
+                                        libopencv-dev clang libclang-dev \
                                         libudev-dev \
                                         libasound2-dev \
+                                        llvm \
+                                        libwebkit2gtk-4.1-dev \
+                                        build-essential \
+                                        curl \
                                         wget \
+                                        file \
+                                        libxdo-dev \
+                                        libssl-dev \
+                                        libayatana-appindicator3-dev \
+                                        librsvg2-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
@@ -48,6 +59,10 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && rm /tmp/cmake-install.sh \
     && ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
 
+
+
+
+
 ## Also consider: linker and other utilities
 # mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
@@ -58,7 +73,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 RUN rustup update
 
 ## Install clippy if needed
-RUN rustup component add clippy
+## Install stable rustfmt (for rust-analyzer in VS code)
+RUN rustup component add clippy rustfmt
 
 ARG MDBOOK_VERSION
 
@@ -114,12 +130,25 @@ EOF
 # EOF
 
 # ------------------------------
+## Technically this section is only required for development
+## but we want to cache these layers before `rustup nightly`,
+## which changes very often.
+
+## Install `just` (from the binary release)
+## Install cargo plugins
+RUN cargo binstall --no-confirm just \
+    && cargo binstall --no-confirm cargo-deny
+
+## Install the link checker `lychee`
+RUN cargo binstall --no-confirm lychee
+
+# ------------------------------
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed second to last, because the tool is still in development
 RUN cargo install --locked mdbook-utils
 
-## Install nightly fmt
+## Install nightly fmt - last, since it changes very often
 RUN rustup toolchain install nightly \
     && rustup component add rustfmt --toolchain nightly
 
@@ -145,16 +174,6 @@ FROM base as development
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
-
-## Install stable rustfmt (for rust-analyzer in VS code)
-RUN rustup component add rustfmt
-
-## Install `just` (from the binary release)
-## Install cargo plugins
-## Install the link checker `lychee`
-RUN cargo binstall --no-confirm just \
-    && cargo binstall --no-confirm cargo-deny \
-    && cargo install --locked lychee
 
 ## Install optional cargo plugins
 # RUN cargo install --locked cargo-outdated || true
