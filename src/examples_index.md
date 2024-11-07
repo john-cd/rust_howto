@@ -406,7 +406,7 @@
 
 {{#include categories/development-tools_cargo-plugins/index.incl.md}}
 
-[ex-code-coverage]: categories/development-tools_cargo-plugins/testing.md#code-coverage
+[ex-code-coverage]: categories/development-tools_cargo-plugins/testing.md
 [ex-fix-compiler-warnings]: categories/development-tools_cargo-plugins/code_formatting_linting.md#fix-compiler-warnings-automatically
 [ex-format]: categories/development-tools_cargo-plugins/code_formatting_linting.md#format-your-code
 [ex-lint]: categories/development-tools_cargo-plugins/code_formatting_linting.md#lint-your-code
@@ -709,6 +709,7 @@
 [ex-tower_http]: categories/web-programming_http-server/middleware.md#tower-http
 [ex-alternatives]: categories/web-programming_http-server/middleware.md#alternatives
 links/blogs_podcasts_meetups.md
+
 ## Written in Rust
 
 {{#include other/written-in-rust/index.incl.md}}
@@ -723,7 +724,7 @@ links/blogs_podcasts_meetups.md
 
 [ex-example-code]: links/example_code.md
 [ex-cheatsheets]: links/rust_cheatsheets.md
-[ex-blogs]: links/blogs.md
+[ex-blogs]: links/blogs_podcasts_meetups.md
 [ex-books]: links/books.md
 [ex-companies]: links/companies.md
 {{#include refs/link-refs.md}}

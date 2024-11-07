@@ -1,11 +1,11 @@
 # TODO
 
 - [ ] incorporate new examples: cwd, dyn_clone, flagset, itertools, multimap, notify, redis, type_name...
-- [ ] generate full badge block with github link and category
+- [ ] tools: generate full badge block with github link and category
+- [ ]
 - [ ] fix commented examples - remaining
 - [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
-- [ ] move remaining drafts to src
-- [ ] finish pre-commit hook setup
+- [ ] finish git hook setup with cargo husky - why are they not installed?
 
 ## Links
 
