@@ -51,8 +51,8 @@ fn main() -> Result<()> {
     println!("{:?}", out);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // TODO improve
 

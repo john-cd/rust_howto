@@ -89,7 +89,6 @@ fn main() -> Result<()> {
     println!("Finished with success!");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 // requires network access

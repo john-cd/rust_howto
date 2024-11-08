@@ -30,8 +30,8 @@ fn main() {
         rio_timezone.from_utc_datetime(&utc_time)
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

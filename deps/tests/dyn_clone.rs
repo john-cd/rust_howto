@@ -25,8 +25,8 @@ fn main() {
 
     x2.recite();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

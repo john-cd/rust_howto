@@ -45,8 +45,8 @@ fn main() {
     let s = Screen::new();
     s.run();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

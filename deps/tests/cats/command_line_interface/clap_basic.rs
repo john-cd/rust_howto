@@ -24,13 +24,15 @@ fn cli() -> Command {
                 .long("file")
                 .value_parser(value_parser!(PathBuf))
                 .help("Enter the path of a file"))
-        // You can also use the arg! macro: .arg(clap::arg!(-c --config <CONFIG> "Optionally sets a config file to use"))
+    // You can also use the arg! macro: .arg(clap::arg!(-c --config <CONFIG>
+    // "Optionally sets a config file to use"))
 }
 
 fn main() {
-    let matches = cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
-    // In a real program, use the following to retrieve arguments from the command line:
-    //let matches = cli().get_matches();
+    let matches =
+        cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
+    // In a real program, use the following to retrieve arguments from the
+    // command line: let matches = cli().get_matches();
 
     if let Some(num) = matches.get_one::<String>("num") {
         println!("Value for num: {num}");
@@ -40,8 +42,8 @@ fn main() {
         println!("Value for file: {}", file_path.display());
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

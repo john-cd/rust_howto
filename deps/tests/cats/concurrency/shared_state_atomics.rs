@@ -8,8 +8,8 @@ fn main() {
     let old_thread_count = GLOBAL_THREAD_COUNT.fetch_add(1, Ordering::SeqCst);
     println!("live threads: {}", old_thread_count + 1);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

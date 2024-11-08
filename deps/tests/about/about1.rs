@@ -16,7 +16,6 @@ fn main() -> Result<()> {
     println!("{:?}", addr);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 #[test]

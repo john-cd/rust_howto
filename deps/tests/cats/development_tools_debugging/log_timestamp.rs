@@ -23,8 +23,8 @@ fn main() {
     log::info!("info");
     log::debug!("debug");
 }
-
 // ANCHOR_END: example
+
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {

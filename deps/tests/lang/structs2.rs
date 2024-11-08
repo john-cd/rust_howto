@@ -25,8 +25,8 @@ fn main() {
                  * same value as the fields in the given instance. */
     };
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

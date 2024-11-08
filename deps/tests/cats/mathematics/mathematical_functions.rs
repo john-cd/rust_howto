@@ -8,8 +8,8 @@ fn main() {
 
     println!("e^(2i * pi) = {}", x.exp()); // =~1
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

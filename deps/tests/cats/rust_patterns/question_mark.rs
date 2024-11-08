@@ -16,8 +16,8 @@ fn main() {
         Err(err) => println!("Error: {}", err),
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -97,8 +97,8 @@ fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     assert!(main().is_err());

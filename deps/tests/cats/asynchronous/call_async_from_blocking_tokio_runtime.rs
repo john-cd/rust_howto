@@ -24,7 +24,7 @@ fn main() {
     }
 }
 
-// example async code to excute
+// Example async code to execute
 async fn my_bg_task(i: u64) {
     // By subtracting, the tasks with larger values of i sleep for a
     // shorter duration.
@@ -35,8 +35,8 @@ async fn my_bg_task(i: u64) {
 
     println!("Task {} stopping.", i);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

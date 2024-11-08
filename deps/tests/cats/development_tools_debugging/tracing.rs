@@ -40,8 +40,8 @@ fn main() {
 
 #[derive(Debug)]
 struct S;
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

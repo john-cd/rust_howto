@@ -10,8 +10,8 @@ fn my_string() -> &'static str {
 fn main() {
     println!("{}", my_string());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

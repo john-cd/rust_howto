@@ -27,8 +27,8 @@ fn main() {
     println!("Random tuple: {:?}", rand_tuple);
     println!("Random Point: {:?}", rand_point);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -14,8 +14,8 @@ fn main() {
     println!("=");
     println!("{}", sum);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -9,8 +9,8 @@ fn generic<T>(_t: T) {
 fn main() {
     generic::<char>('a');
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

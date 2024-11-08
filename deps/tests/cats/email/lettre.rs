@@ -32,8 +32,8 @@ fn main() {
         Err(e) => panic!("Could not send email: {e:?}"),
     }
 }
-
 // ANCHOR_END: example
+
 #[ignore = "requires SMTP credentials to run"]
 #[test]
 fn test() {

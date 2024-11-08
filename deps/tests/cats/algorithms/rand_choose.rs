@@ -16,8 +16,8 @@ fn main() {
 
     println!("{:?}", password);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

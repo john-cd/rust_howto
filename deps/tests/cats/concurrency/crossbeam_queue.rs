@@ -8,8 +8,8 @@ fn main() {
     assert_eq!(q.push('c'), Err('c'));
     assert_eq!(q.pop(), Some('a'));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -20,8 +20,8 @@ async fn main() {
     let nums = vec![1; 1024 * 1024];
     println!("{}", parallel_sum(nums).await);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

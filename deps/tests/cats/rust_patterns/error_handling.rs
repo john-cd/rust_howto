@@ -18,8 +18,8 @@ fn main() {
     // let _greeting_file =
     // std::fs::File::open("temp/hello.txt").unwrap();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

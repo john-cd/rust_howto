@@ -30,8 +30,8 @@ fn main() {
     assert!(MyEnum::Uint(42).to_string() == "42");
     assert!(MyEnum::Nothing.to_string() == "nothing");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

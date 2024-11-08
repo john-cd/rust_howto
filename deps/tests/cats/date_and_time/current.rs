@@ -33,8 +33,8 @@ fn main() {
         now.num_days_from_ce()
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -9,8 +9,8 @@ fn main() {
     } // Here, s goes out of scope. But because it does not have
       // ownership of what it refers to, s1 is not dropped.
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

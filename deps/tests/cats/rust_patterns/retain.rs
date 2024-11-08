@@ -15,7 +15,6 @@ fn main() -> Result<()> {
     println!("a random number between 0 and 10: {}", random_value);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 // TODO rewrite

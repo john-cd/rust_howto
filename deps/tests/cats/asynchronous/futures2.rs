@@ -17,8 +17,8 @@ async fn main() {
     let futures = vec![foo(1), foo(2), foo(3)];
     assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -21,8 +21,8 @@ async fn main() -> reqwest::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // requires network access
 #[test]

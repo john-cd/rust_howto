@@ -109,8 +109,8 @@
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // requires network access
 #[test]

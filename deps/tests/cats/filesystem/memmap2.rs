@@ -20,8 +20,8 @@ fn main() -> Result<(), Error> {
     assert_eq!(&random_bytes[..], b"My loaf!");
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

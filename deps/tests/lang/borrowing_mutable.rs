@@ -8,8 +8,8 @@ fn main() {
     let mut s = String::from("hello"); // note the `mut`
     change(&mut s);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

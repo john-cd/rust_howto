@@ -6,8 +6,8 @@ fn main() {
     println!("Integer: {}", rng.gen_range(0..10));
     println!("Float: {}", rng.gen_range(0.0..10.0));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

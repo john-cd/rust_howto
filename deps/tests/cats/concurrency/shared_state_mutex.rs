@@ -17,7 +17,7 @@ fn main() {
             move || {
                 let mut num = counter.lock().unwrap();
                 *num += 1;
-            }, /* releases the lock automatically when the MutexGuard
+            }, /* Releases the lock automatically when the MutexGuard
                 * goes out of scope. */
         );
         handles.push(handle);
@@ -29,8 +29,8 @@ fn main() {
 
     println!("Result: {}", *counter.lock().unwrap());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -28,8 +28,8 @@ async fn main() -> Result<()> {
     copy(&mut content.as_bytes(), &mut dest)?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

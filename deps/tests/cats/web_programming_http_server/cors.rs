@@ -46,8 +46,8 @@ async fn main() -> Result<()> {
     );
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> Result<()> {
     main()?;

@@ -23,8 +23,8 @@ fn main() {
 
     show_access("Jim");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

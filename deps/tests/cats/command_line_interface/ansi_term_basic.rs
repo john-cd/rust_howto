@@ -9,8 +9,8 @@ fn main() {
         Colour::Green.paint("green")
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

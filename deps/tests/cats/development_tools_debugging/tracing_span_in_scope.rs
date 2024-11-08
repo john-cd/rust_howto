@@ -36,8 +36,8 @@ async fn some_other_async_function() {}
 async fn main() {
     my_async_function().await;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

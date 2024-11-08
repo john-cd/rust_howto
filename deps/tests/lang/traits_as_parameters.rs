@@ -30,8 +30,8 @@ fn main() {
     notify(&a);
     notify2(&a);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

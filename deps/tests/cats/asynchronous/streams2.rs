@@ -40,8 +40,8 @@ async fn main() -> Result {
     println!("Downloaded files successfully!");
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

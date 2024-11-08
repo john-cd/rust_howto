@@ -11,14 +11,14 @@ fn main() {
     });
 
     let thread_two = thread::spawn(|| { /* ... */ });
-    // more stufff
+    // More stufff
 
     // Wait for both threads to complete.
     thread_one.join().expect("thread one panicked");
     thread_two.join().expect("thread two panicked");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

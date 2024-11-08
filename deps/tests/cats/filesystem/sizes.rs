@@ -13,8 +13,8 @@ fn main() {
 
     println!("Total size: {} bytes.", total_size);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

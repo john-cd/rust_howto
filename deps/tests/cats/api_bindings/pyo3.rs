@@ -59,8 +59,8 @@ fn main() {
     pyo3::prepare_freethreaded_python();
     println!("{:?}", test_my_function());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

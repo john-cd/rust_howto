@@ -18,8 +18,8 @@ fn main() -> Result<(), std::io::Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -16,8 +16,8 @@ fn main() {
 
     println!("Mode of the data is {:?}", mode);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

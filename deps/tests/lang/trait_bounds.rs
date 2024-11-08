@@ -32,8 +32,8 @@ fn main() {
     };
     print_hash(&p);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

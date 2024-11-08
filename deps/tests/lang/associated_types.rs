@@ -16,7 +16,6 @@ trait Add<Rhs = Self> {
 }
 
 fn main() {}
-
 // ANCHOR_END: example
 
 // TODO

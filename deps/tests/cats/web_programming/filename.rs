@@ -23,8 +23,8 @@ fn main() {
         println!("MIME for {}: {}", file, mime);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

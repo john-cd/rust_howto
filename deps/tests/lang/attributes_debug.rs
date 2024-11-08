@@ -22,8 +22,8 @@ fn main() {
     let x = 1;
     let mut m = 2;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

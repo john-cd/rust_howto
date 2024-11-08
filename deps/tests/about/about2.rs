@@ -9,8 +9,8 @@ fn main() -> Result<()> {
     println!("cleaned: {}", cleaned);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> Result<()> {
     main()?;

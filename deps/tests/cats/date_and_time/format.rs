@@ -13,8 +13,8 @@ fn main() {
         now.format("%a %b %e %T %Y")
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

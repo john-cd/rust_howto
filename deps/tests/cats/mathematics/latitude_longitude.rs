@@ -27,8 +27,8 @@ fn main() {
         distance
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

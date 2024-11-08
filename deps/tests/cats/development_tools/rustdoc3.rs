@@ -11,8 +11,8 @@
 fn main() {
     println!("//! ... are `inner` comments that apply to the containing module (or crate).");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

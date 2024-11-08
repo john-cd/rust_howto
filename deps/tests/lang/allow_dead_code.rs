@@ -4,8 +4,8 @@
 fn unused_function() {}
 
 fn main() {}
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

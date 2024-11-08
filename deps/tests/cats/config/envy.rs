@@ -18,8 +18,8 @@ fn main() {
 
     println!("c: {:?} c2: {:?}", c, c2);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     unsafe {

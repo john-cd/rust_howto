@@ -77,7 +77,6 @@ fn main() { println!("hello world!");}
     );
     Ok(())
 }
-
 // ANCHOR_END: example
 
 // requires network access

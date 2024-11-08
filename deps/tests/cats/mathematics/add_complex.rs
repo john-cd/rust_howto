@@ -7,8 +7,8 @@ fn main() {
 
     println!("Sum: {}", sum);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

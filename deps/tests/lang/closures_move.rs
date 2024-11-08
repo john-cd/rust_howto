@@ -10,8 +10,8 @@ fn main() {
         .join()
         .unwrap();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -20,8 +20,8 @@ fn main() {
         None => println!("Error reading file"),
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -7,8 +7,8 @@ fn main() {
 
     assert_eq!(v, 7);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -52,8 +52,8 @@ macro_rules! _example {
 
 // Outer macro `example` is expanded, then inner macro `println` is
 // expanded. example!();
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

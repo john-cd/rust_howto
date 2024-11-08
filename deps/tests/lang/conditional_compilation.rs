@@ -23,8 +23,8 @@ fn main() {
         println!("Yes. It's definitely *not* linux!");
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

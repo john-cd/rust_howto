@@ -18,8 +18,8 @@ async fn main() {
 // hello
 // world
 // Example from https://tokio.rs/tokio/tutorial/hello-tokio
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

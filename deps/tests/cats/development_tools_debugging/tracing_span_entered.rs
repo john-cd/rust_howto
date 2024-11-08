@@ -15,8 +15,8 @@ fn main() {
     // enter the span again
     let _span = span.entered();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

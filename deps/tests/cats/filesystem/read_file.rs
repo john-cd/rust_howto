@@ -20,8 +20,8 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

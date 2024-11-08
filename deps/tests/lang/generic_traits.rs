@@ -16,8 +16,8 @@ fn main() {
     SomeStruct::test(1);
     SomeStruct::test(true);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -30,8 +30,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Err(DataStoreError::Unknown)?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     assert!(main().is_err())

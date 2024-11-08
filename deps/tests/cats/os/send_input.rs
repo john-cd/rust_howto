@@ -39,8 +39,8 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

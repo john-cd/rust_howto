@@ -13,8 +13,8 @@ fn main() {
         println!("{}", s);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

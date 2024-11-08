@@ -12,8 +12,8 @@ fn main() {
     println!("Random i32: {}", rng.gen::<i32>());
     println!("Random float: {}", rng.gen::<f64>());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

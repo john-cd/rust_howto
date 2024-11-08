@@ -12,8 +12,8 @@ fn main() {
     println!("The sum of the `{iter_name}` is {sum}.");
     // prints: The sum of the `core::array::iter::IntoIter<i32, 3>` is 6.
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

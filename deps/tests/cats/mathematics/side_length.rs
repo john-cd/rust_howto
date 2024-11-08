@@ -7,8 +7,8 @@ fn main() {
 
     println!("Hypotenuse: {}", hypotenuse);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

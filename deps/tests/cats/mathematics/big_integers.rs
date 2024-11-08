@@ -16,8 +16,8 @@ fn factorial(x: i32) -> BigInt {
 fn main() {
     println!("{}! equals {}", 100, factorial(100));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

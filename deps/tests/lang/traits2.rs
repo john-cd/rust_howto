@@ -29,8 +29,8 @@ fn main() {
     };
     println!("{}", blog.summarize());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

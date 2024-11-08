@@ -9,8 +9,8 @@ fn main() {
 
     let mut guess = String::new(); // mutable variable
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

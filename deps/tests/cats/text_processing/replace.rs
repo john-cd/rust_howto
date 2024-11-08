@@ -17,8 +17,8 @@ fn main() {
     let after = reformat_dates(before);
     assert_eq!(after, "03/14/2012, 01/15/2013 and 07/05/2014");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

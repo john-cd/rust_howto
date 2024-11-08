@@ -13,8 +13,8 @@ fn main() {
     assert_eq!(decoded, "What is ❤?");
     println!("decoded:'{}'", decoded);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

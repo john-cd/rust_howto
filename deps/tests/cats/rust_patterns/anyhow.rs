@@ -15,8 +15,8 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     assert!(main().is_err())

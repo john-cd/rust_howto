@@ -61,8 +61,8 @@ where
         .resize(longest_edge, longest_edge, FilterType::Nearest)
         .save(file_path)?)
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

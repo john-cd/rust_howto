@@ -23,8 +23,8 @@ fn main() -> Result<(), confy::ConfyError> {
     // confy::store("my-app-name", None, cfg)?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -5,8 +5,8 @@ fn main() {
     // `clone` deeply copies the heap data of the `String`,
     // not just the stack data
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

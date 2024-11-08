@@ -8,8 +8,8 @@ fn main() {
         result
     );
 }
-
 // ANCHOR_END: example
+
 #[should_panic]
 #[test]
 fn test() {

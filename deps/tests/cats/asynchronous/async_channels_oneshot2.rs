@@ -43,8 +43,8 @@ fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
     rt.block_on(async { async_main().await }).unwrap();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

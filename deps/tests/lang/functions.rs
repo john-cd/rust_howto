@@ -12,8 +12,8 @@ fn foo(x: i32, unit_label: char) -> i32 {
 fn main() {
     println!("{}", foo(1, 'm'));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

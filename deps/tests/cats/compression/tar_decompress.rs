@@ -14,5 +14,4 @@ pub fn main() -> Result<(), std::io::Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example

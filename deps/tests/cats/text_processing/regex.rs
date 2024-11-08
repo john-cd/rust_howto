@@ -132,8 +132,8 @@ image_lbl6: image_url6
 fn main() {
     search_with_all_regexes(get_test_markdown().as_str());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

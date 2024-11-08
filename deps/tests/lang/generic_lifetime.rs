@@ -11,8 +11,8 @@ fn main() {
     let (x, y) = ("short", "looooooong");
     println!("{}", longest(x, y));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

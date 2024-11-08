@@ -37,8 +37,8 @@ fn main() -> Result<()> {
     insert("grape")?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

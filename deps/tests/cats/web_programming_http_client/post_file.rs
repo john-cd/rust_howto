@@ -18,8 +18,8 @@ async fn main() -> Result<()> {
     println!("Your paste is located at: {}", response_text);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // TODO test fails
 // requires network access

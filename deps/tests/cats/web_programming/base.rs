@@ -29,8 +29,8 @@ fn base_url(mut url: Url) -> Result<Url> {
 
     Ok(url)
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> Result<()> {
     main()?;

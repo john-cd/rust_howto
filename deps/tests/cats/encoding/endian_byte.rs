@@ -33,8 +33,8 @@ fn decode(mut bytes: &[u8]) -> Result<Payload, Error> {
     };
     Ok(payload)
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

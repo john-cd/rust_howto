@@ -9,11 +9,10 @@ fn main() {
         // run initialization here
     });
 }
-
-// TODO add more
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();
 }
+// TODO add more

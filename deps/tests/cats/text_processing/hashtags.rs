@@ -25,8 +25,8 @@ fn main() {
     );
     assert_eq!(tags.len(), 3);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

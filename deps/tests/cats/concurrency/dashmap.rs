@@ -62,8 +62,8 @@ fn main() {
     // Access the final state of the map from the main thread
     println!("final count: {}", map.iter().count());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

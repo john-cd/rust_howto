@@ -19,8 +19,8 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
 fn main() {
     bake_cake(Some("rainbow nonpareils"));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

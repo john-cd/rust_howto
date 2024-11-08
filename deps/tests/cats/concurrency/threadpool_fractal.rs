@@ -78,10 +78,7 @@ fn main() -> Result<()> {
             for x in 0..width {
                 let i = julia(c, x, y, width, height, iterations);
                 let pixel = wavelength_to_rgb(380 + i * 400 / iterations);
-                tx.send((x, y, pixel)).expect(
-                    "Could
-    not send data!",
-                );
+                tx.send((x, y, pixel)).expect("Could not send data!");
             }
         });
     }
@@ -93,8 +90,8 @@ fn main() -> Result<()> {
     img.save("temp/output.png")?;
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

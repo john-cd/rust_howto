@@ -15,8 +15,8 @@ fn main() {
     futures::executor::block_on(future);
     // `future` is run and "hello, world!" is printed
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

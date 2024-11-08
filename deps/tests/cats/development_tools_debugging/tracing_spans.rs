@@ -13,8 +13,8 @@ fn main() {
                                    // will occur within the span.
     } // Dropping the guard exits the span.
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

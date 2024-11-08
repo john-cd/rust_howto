@@ -8,8 +8,8 @@ fn main() {
     println!("Will panic");
     foo();
 }
-
 // ANCHOR_END: example
+
 
 #[should_panic]
 #[test]

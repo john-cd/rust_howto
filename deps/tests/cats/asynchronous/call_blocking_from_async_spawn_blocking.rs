@@ -10,8 +10,8 @@ async fn main() {
 
     blocking_task.await.unwrap();
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

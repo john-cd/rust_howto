@@ -6,8 +6,8 @@ fn main() {
 
     assert_eq!(vec, vec![1, 2, 5, 10, 15]);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

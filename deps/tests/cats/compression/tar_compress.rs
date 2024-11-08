@@ -25,5 +25,4 @@ pub fn main() -> Result<(), std::io::Error> {
     tar.append_dir_all("temp/backup/var/log", "/var/log")?;
     Ok(())
 }
-
 // ANCHOR_END: example

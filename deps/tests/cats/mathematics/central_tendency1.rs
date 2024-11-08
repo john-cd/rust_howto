@@ -71,8 +71,8 @@ fn main() {
     let med = median(&data);
     println!("Median is {:?}", med);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

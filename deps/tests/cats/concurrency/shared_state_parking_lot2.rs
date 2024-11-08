@@ -19,8 +19,8 @@ fn main() {
         assert_eq!(*w, 6);
     } // write lock is dropped here
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

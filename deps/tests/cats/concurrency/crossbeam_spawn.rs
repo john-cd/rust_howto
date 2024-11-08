@@ -26,8 +26,8 @@ fn find_max(arr: &[i32]) -> Option<i32> {
     })
     .unwrap()
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -24,8 +24,8 @@ where
 fn main() {
     apply(|| println!("applied"));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

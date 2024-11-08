@@ -11,8 +11,8 @@ fn main() -> Result<(), NormalError> {
     println!("{} is from a N(2, 9) distribution", v);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

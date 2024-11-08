@@ -7,8 +7,8 @@ fn main() {
         UnicodeSegmentation::graphemes(name, true).collect::<Vec<&str>>();
     assert_eq!(graphemes[3], "é");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

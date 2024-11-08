@@ -21,8 +21,8 @@ fn main() {
         println!("Received {}", msg);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

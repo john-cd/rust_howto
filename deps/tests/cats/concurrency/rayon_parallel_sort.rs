@@ -14,8 +14,8 @@ fn main() {
     vec.par_sort_unstable();
     println!("{:?}", vec);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

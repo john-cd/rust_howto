@@ -23,8 +23,8 @@ fn main() {
         date_time_after_a_billion_seconds
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

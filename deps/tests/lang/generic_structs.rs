@@ -37,8 +37,8 @@ fn main() {
 
     println!("p.x = {}", p.x());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

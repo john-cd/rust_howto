@@ -7,8 +7,8 @@ fn main() {
         Style::new().bold().paint("This is Bold")
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

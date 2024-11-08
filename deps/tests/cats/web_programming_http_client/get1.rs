@@ -11,8 +11,8 @@ async fn main() -> Result<()> {
     println!("Body:\n{}", body);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // requires network access
 #[test]

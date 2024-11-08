@@ -22,8 +22,8 @@ fn main() {
     // Adding a Key and Value Only If a Key Isn’t Present
     scores.entry(String::from("Yellow")).or_insert(50);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

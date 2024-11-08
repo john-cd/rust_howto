@@ -18,8 +18,8 @@ impl Message {
 fn main() {
     let _home = Message::ChangeColor(127, 0, 0); // <-- note the ::
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

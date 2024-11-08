@@ -23,8 +23,8 @@ fn main() {
         valid_mime_type, parsed_mime
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

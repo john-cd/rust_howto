@@ -24,8 +24,8 @@ fn main() {
     let s = S;
     a_function(&s);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -29,8 +29,8 @@ fn main() {
             tx2.send(contents).unwrap();
         });
     });
-    // No join; spawned threads get joined automatically once the scope
-    // ends!
+    // No join.
+    // Spawned threads get joined automatically once the scope ends!
 
     // Receive messages from the channel
     println!("hello from the main thread");
@@ -39,8 +39,8 @@ fn main() {
         println!("Got: {:?}", received);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

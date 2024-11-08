@@ -22,8 +22,8 @@ fn main() {
         Err(err) => eprintln!("error: {}", err),
     };
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test_main() {
     main();

@@ -110,8 +110,8 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     println!("{:?}", main());

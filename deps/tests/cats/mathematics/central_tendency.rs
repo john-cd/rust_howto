@@ -12,8 +12,8 @@ fn main() {
 
     println!("Mean of the data is {:?}", mean);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

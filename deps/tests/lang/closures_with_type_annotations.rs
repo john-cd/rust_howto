@@ -11,8 +11,8 @@ fn main() {
         num
     };
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

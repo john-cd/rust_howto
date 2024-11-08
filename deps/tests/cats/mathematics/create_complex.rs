@@ -6,8 +6,8 @@ fn main() {
     println!("Complex integer: {}", complex_integer);
     println!("Complex float: {}", complex_float);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

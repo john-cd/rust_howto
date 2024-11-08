@@ -17,8 +17,8 @@ fn main() {
         sign_in_count: 1,
     };
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

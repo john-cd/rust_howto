@@ -19,8 +19,8 @@ struct S;
 fn main() {
     let _ = S;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

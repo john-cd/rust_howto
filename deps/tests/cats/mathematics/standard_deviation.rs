@@ -50,8 +50,8 @@ fn main() {
         data[4], zscore
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

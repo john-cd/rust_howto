@@ -12,8 +12,8 @@ fn main() {
     assert_eq!(f2, Some(&8));
     assert!(f3 > Some(&8));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -23,8 +23,8 @@ fn main() -> Result<(), Utf8Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

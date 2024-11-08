@@ -26,8 +26,8 @@ async fn main() -> Result<(), Error> {
     println!("{:?}", users);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 
 // requires network access
 #[test]

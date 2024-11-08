@@ -24,8 +24,8 @@ pub async fn multi_producer_single_receiver() {
 async fn main() {
     multi_producer_single_receiver().await;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

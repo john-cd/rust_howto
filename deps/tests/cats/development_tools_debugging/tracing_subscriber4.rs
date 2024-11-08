@@ -14,8 +14,8 @@ fn main() {
     // set it as the default.
     tracing_subscriber::fmt().event_format(format).init();
 }
-
 // ANCHOR_END: example
+
 use rusty_fork::rusty_fork_test;
 // Runs in a separate process
 rusty_fork_test! {

@@ -36,7 +36,6 @@ fn main() -> Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 // TODO

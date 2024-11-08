@@ -21,8 +21,8 @@ fn fib(n: usize) -> usize {
     let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`
     a + b
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -12,8 +12,8 @@ fn main() {
     let s = String::from("hello");
     generic(&s[..]);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

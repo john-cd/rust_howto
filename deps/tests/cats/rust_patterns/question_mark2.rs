@@ -21,8 +21,8 @@ fn main() {
         Err(err) => panic!("{}", err),
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

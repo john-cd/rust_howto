@@ -16,8 +16,8 @@ fn main() -> Result<(), Unspecified> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     println!("{:?}", main());

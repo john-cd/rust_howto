@@ -21,8 +21,8 @@ fn build_github_url(path: &str) -> Result<Url, ParseError> {
 
     Ok(joined)
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -8,8 +8,8 @@ fn main() {
             println!("Hello world");
         })
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

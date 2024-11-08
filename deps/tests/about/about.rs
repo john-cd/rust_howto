@@ -5,6 +5,7 @@ fn main() {
     println!("Random f64: {}", rng.gen::<f64>());
 }
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

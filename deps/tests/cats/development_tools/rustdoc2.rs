@@ -28,8 +28,8 @@ struct Person {
 fn main() {
     let _ = new("John");
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

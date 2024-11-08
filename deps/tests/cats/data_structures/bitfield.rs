@@ -46,8 +46,8 @@ fn main() {
         "MyFlags(FLAG_A | FLAG_B)"
     );
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

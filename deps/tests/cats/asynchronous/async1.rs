@@ -47,8 +47,8 @@ async fn main() {
     // note: `await` must be called or nothing is executing.
     // Futures are lazy
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

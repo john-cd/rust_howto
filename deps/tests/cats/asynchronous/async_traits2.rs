@@ -24,8 +24,8 @@ fn main() {
         println!("{}", i);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

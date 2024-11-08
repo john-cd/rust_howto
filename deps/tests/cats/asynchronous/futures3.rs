@@ -31,8 +31,8 @@ async fn main() -> Result<()> {
     assert_eq!(future.await, 1);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> Result<()> {
     main()?;

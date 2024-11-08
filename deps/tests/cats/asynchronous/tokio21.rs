@@ -27,8 +27,8 @@ async fn main() {
 
     local.await;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

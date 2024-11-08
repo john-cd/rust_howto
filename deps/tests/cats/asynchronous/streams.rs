@@ -16,8 +16,8 @@ async fn main() {
         println!("{}", num);
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

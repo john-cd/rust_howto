@@ -31,8 +31,8 @@ async fn remind_user_to_join_mailing_list() {}
 async fn main() {
     Modal.run().await;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

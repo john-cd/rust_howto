@@ -18,8 +18,8 @@ fn main() -> Result<(), Error> {
     println!("{:?} says {}", addr, input);
     Ok(())
 }
-
 // ANCHOR_END: example
+
 // TODO listens to a connection forever
 #[ignore]
 #[test]

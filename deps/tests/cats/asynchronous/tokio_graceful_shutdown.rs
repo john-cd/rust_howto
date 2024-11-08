@@ -45,8 +45,8 @@ async fn main() -> anyhow::Result<()> {
     .await
     .map_err(|e| e.into())
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -22,8 +22,8 @@ fn main() -> Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
+
 use rusty_fork::rusty_fork_test;
 // Runs in a seprate process
 rusty_fork_test! {

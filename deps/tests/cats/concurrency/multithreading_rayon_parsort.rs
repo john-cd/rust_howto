@@ -6,8 +6,8 @@ fn main() {
     v.par_sort();
     println!("{:#?}", v);
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

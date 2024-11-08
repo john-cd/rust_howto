@@ -28,8 +28,8 @@ fn main() {
         println!("{msg}");
     }
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

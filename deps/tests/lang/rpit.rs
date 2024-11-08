@@ -7,8 +7,8 @@ fn main() {
     let f = returns_closure();
     println!("{}", f(1));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

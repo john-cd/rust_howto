@@ -8,8 +8,8 @@ fn main() {
 
     println!("{}", a.dot(&b));
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

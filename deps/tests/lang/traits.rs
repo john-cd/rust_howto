@@ -28,8 +28,8 @@ fn main() {
     };
     println!("Summary: {}", na.summarize());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

@@ -13,8 +13,8 @@ fn main() {
     let x = 1i64;
     println!("{}", x.myhash());
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();

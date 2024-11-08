@@ -11,8 +11,8 @@ fn main() {
     let _black = Color(0, 0, 0);
     let _s = AlwaysEqual;
 }
-
 // ANCHOR_END: example
+
 #[test]
 fn test() {
     main();
