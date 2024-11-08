@@ -20,7 +20,8 @@ fn main() -> Result<()> {
                 }
             }
         }
-        // You may also check for specific extensions: && f_name.ends_with(".json")
+        // You may also check for specific extensions:
+        // && f_name.ends_with(".json")
     }
 
     Ok(())
