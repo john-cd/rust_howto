@@ -1,9 +1,10 @@
+#![allow(dead_code)]
 // ANCHOR: example
 // TODO fix - the API no longer returns a crate_id - need to get
 // version_id then join version_id and Version.id ro retrieve crate
 // name Consider a simpler API for example purposes
 
-// #![allow(dead_code)]
+
 
 // use anyhow::Result;
 // use serde::Deserialize;
@@ -111,8 +112,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-
-// requires network access
+// Requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

@@ -6,8 +6,7 @@
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Debug message}}
 
-The [`log`][c-log]{{hi:log}}⮳ crate provides logging utilities{{hi:Logging utilities}}. The [`env_logger`][c-env_logger]{{hi:env_logger}}⮳ crate configures logging via an environment variable. The [`log::debug`][c-log::debug]{{hi:log::debug}}⮳ macro works like other
-[`std::fmt`][c-std::fmt]{{hi:std::fmt}}⮳ formatted strings.
+The [`log`][c-log]{{hi:log}}⮳ crate provides logging utilities{{hi:Logging utilities}}. The [`env_logger`][c-env_logger]{{hi:env_logger}}⮳ crate configures logging via an environment variable. The [`log::debug`][c-log::debug]{{hi:log::debug}}⮳ macro works like other [`std::fmt`][c-std::fmt]{{hi:std::fmt}}⮳ formatted strings.
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_debugging/log_debug.rs:example}}

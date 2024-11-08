@@ -53,12 +53,11 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-
-// TODO improve
-
-// requires network access
+// Requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// TODO improve

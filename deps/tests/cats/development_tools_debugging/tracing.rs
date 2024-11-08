@@ -7,6 +7,9 @@ use tracing::trace;
 use tracing::warn;
 use tracing::Level;
 
+#[derive(Debug)]
+struct S;
+
 fn main() {
     event!(Level::INFO, "something happened");
     error!("error!");
@@ -32,14 +35,11 @@ fn main() {
     let user = "ferris";
     event!(Level::TRACE, "login: {}", user);
 
-    // ?: `my_struct` will be recorded
+    // Note the `?`: `my_struct` will be recorded
     // using its `fmt::Debug` implementation.
     let my_struct = S;
     event!(Level::TRACE, greeting = ?my_struct);
 }
-
-#[derive(Debug)]
-struct S;
 // ANCHOR_END: example
 
 #[test]

@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(clippy::async_yields_async)]
+// ANCHOR: example
 use anyhow::Result;
 use futures::future::FutureExt;
 

@@ -1,6 +1,5 @@
-// ANCHOR: example
 #![cfg(target_family = "unix")]
-
+// ANCHOR: example
 use std::collections::HashSet;
 use std::io::Write;
 use std::process::Command;

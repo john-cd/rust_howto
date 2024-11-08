@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![allow(dead_code)]
+// ANCHOR: example
 
 // A function which takes a closure as an argument and calls it.
 // <F> denotes that F is a "Generic type parameter"

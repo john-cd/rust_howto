@@ -20,12 +20,12 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-
-// TODO test fails
-// requires network access
+// Requires network access
 #[test]
 #[ignore]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// TODO test fails

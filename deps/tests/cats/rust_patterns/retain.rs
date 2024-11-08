@@ -17,10 +17,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO rewrite
-
 #[test]
 fn test() -> Result<()> {
     main()?;
     Ok(())
 }
+
+// TODO rewrite

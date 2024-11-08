@@ -8,7 +8,7 @@ async fn my_async_function() {
 
     // Instrument synchronous code within an async functiom
     let _some_value = span.in_scope(|| {
-        // run some synchronous code inside the span...
+        // Run some synchronous code inside the span...
         42
     });
 

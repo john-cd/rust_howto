@@ -1,6 +1,5 @@
-// ANCHOR: example
 #![allow(dead_code)]
-
+// ANCHOR: example
 use std::iter::once;
 use std::sync::Arc;
 

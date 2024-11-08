@@ -2,9 +2,9 @@
 fn main() {
     panic!("crash and burn");
 }
+// ANCHOR_END: example
 
 #[should_panic]
-// ANCHOR_END: example
 #[test]
 fn test() {
     main();

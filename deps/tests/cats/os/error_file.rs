@@ -1,5 +1,5 @@
-// ANCHOR: example
 #![cfg(target_family = "unix")]
+// ANCHOR: example
 
 fn main() -> Result<(), std::io::Error> {
     use std::fs::File;

@@ -1,6 +1,5 @@
-// ANCHOR: example
 #![cfg(target_family = "unix")]
-
+// ANCHOR: example
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
@@ -9,7 +8,7 @@ use std::process::Command;
 use std::process::Stdio;
 
 fn main() -> Result<(), Error> {
-    // NOTE: `systemd` should be installed.
+    // NOTE: `systemd` should be installed for this example to work.
     let stdout = Command::new("journalctl")
         .stdout(Stdio::piped())
         .spawn()?

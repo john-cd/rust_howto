@@ -1,5 +1,6 @@
-// ANCHOR: example
 #![allow(dead_code)]
+// ANCHOR: example
+
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -21,12 +22,14 @@ pub enum DataStoreError {
     Unknown,
 
     #[error(transparent)]
-    //  forward the source and Display methods straight through to an
+    // Forward the source and Display methods straight through to an
     // underlying error without adding an additional message.
     Other(#[from] anyhow::Error),
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+
+    // Return an error:
     Err(DataStoreError::Unknown)?;
     Ok(())
 }

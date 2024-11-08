@@ -1,6 +1,5 @@
-// ANCHOR: example
 #![allow(unused)]
-
+// ANCHOR: example
 use std::fmt;
 
 use bitflags::bitflags;

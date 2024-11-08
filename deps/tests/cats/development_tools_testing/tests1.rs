@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
+// ANCHOR: example
 
 struct Rectangle {
     width: u32,
@@ -66,3 +67,4 @@ mod tests {
         // long-running code
     }
 }
+// ANCHOR_END: example

@@ -1,8 +1,9 @@
-// ANCHOR: example
 #![allow(dead_code)]
-
+// ANCHOR: example
 use csv::Error;
+use csv::ReaderBuilder;
 use serde::Deserialize;
+
 #[derive(Debug, Deserialize)]
 struct Record {
     name: String,
@@ -10,8 +11,6 @@ struct Record {
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
 }
-
-use csv::ReaderBuilder;
 
 fn main() -> Result<(), Error> {
     let data = "name\tplace\tid

@@ -1,27 +1,29 @@
 // ANCHOR: example
 mod mylib {
-
     //! library code: define unique error types and error wrappers
+
     use miette::Diagnostic;
     use miette::NamedSource;
     use miette::Result;
     use miette::SourceSpan;
+
     // You can derive a `Diagnostic` from any `std::error::Error` type.
     // `thiserror` plays nicely with `miette`
     use thiserror::Error;
 
     #[derive(Error, Diagnostic, Debug)]
     pub enum MyLibError {
+
         #[error("A bad thing happened!")] // provided by `thisError`
         #[diagnostic(
-    // Use `#[diagnostic(code(...))]` to set the unique code for this error.
-    code(my_lib::bad_thing),
-    // Set the URL that will be displayed as an actual link in supported terminals.
-    // `url(docsrs)` automatically create a link to this diagnostic on docs.rs
-    // or use a custom URL like `url("https://my_website.com/error_codes#{}", self.code)`
-    url(docsrs),
-    // Supply help text
-    help("try doing it better next time?"))]
+            // Use `#[diagnostic(code(...))]` to set the unique code for this error.
+            code(my_lib::bad_thing),
+            // Set the URL that will be displayed as an actual link in supported terminals.
+            // `url(docsrs)` automatically create a link to this diagnostic on docs.rs
+            // or use a custom URL like `url("https://my_website.com/error_codes#{}", self.code)`
+            url(docsrs),
+            // Supply help text
+            help("try doing it better next time?"))]
         BadThingHappened,
 
         #[error("Something went wrong!")]
@@ -65,8 +67,10 @@ mod mylib {
     #[derive(Error, Diagnostic, Debug)]
     #[error("another error")]
     pub struct AnotherError {
+
         #[label("here")]
         pub at: SourceSpan,
+    
     }
 
     pub fn this_fails() -> Result<()> {

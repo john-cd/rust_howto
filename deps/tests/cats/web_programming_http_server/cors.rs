@@ -23,9 +23,9 @@ async fn handle(
 #[tokio::main]
 async fn main() -> Result<()> {
     let cors = CorsLayer::new()
-        // allow `GET` and `POST` when accessing the resource
+        // Allow `GET` and `POST` when accessing the resource
         .allow_methods([Method::GET, Method::POST])
-        // allow requests from any origin
+        // Allow requests from any origin
         .allow_origin(Any);
 
     let mut service = ServiceBuilder::new().layer(cors).service_fn(handle);

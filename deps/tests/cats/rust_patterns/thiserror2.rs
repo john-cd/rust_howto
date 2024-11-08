@@ -4,6 +4,7 @@ use thiserror::Error;
 #[derive(Error, Debug)]
 pub struct MyError {
     msg: String,
+    
     // The Error trait’s source() method is implemented to return whichever
     // field has a #[source] attribute or is named source, if any. This is
     // for identifying the underlying lower level error that caused your

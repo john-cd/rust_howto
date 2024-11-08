@@ -11,7 +11,7 @@ fn my_function(my_arg: usize) {
     // ...
 }
 
-// used on an async function
+// Used on an async function
 #[instrument(level = "info")]
 async fn my_async_function() {
     // This is correct! If we yield here, the span will be exited,

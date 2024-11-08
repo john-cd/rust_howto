@@ -11,14 +11,14 @@ fn main() {
         log::error!("Failed to execute query: {}", err);
     }
 }
-
-use rusty_fork::rusty_fork_test;
-// Runs in a separate process
-rusty_fork_test! {
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
-}
+use rusty_fork::rusty_fork_test;
+
+// Runs in a separate process
+rusty_fork_test! {
+    #[test]
+    fn test() {
+        main();
+    }
 }

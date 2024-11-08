@@ -1,6 +1,5 @@
-// ANCHOR: example
 #![cfg(target_family = "unix")]
-
+// ANCHOR: example
 use std::env;
 use std::fs;
 use std::io::Error;

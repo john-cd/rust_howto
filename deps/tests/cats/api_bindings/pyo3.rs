@@ -1,11 +1,5 @@
-// ANCHOR: example
-// TODO solve
-// error: linking with `cc` failed: exit status: 1
-//   = note: /usr/bin/ld: cannot find -lpython3.11: No such file or
-// directory           collect2: error: ld returned 1 exit status
-
 #![allow(dead_code)]
-
+// ANCHOR: example
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;
 

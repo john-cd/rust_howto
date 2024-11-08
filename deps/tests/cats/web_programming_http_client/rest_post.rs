@@ -1,8 +1,5 @@
-// ANCHOR: example
 #![allow(dead_code)]
-
-// TODO rewrite so that a username and password are not required?
-
+// ANCHOR: example
 use std::collections::HashMap;
 use std::env;
 
@@ -79,8 +76,10 @@ fn main() { println!("hello world!");}
 }
 // ANCHOR_END: example
 
-// requires network access
+// Requires network access
 #[test]
 fn test() {
     println!("{:?}", main());
 }
+
+// TODO rewrite so that a username and password are not required?

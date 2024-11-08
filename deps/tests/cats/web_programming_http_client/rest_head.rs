@@ -23,8 +23,7 @@ async fn main() -> reqwest::Result<()> {
 }
 // ANCHOR_END: example
 
-
-// requires network access
+// Requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
