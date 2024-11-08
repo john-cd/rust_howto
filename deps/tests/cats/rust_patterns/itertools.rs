@@ -1,10 +1,11 @@
 fn main() {
     // ANCHOR: example
+    use itertools::assert_equal;
     use itertools::chain;
     use itertools::Itertools;
 
-    // assert_equal
-    // PANIC assert_equal("exceed".split('c'), "excess".split('c'));
+    // Assert that two iterables produce equal sequences
+    assert_equal("hello world".split(' '), "hello world".split(' '));
 
     // Chain
     let mut result: Vec<i32> = Vec::new();

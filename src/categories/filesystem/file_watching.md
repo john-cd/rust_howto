@@ -9,7 +9,7 @@
 [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 ```rust
-{{#include ../../../deps/tests/notify.rs:example}}
+{{#include ../../../deps/tests/cats/filesystem/notify.rs:example}}
 ```
 
 {{#include refs.incl.md}}

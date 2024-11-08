@@ -1,6 +1,8 @@
 mod anyhow;
 mod backtrace;
+mod dyn_clone;
 mod error_handling;
+mod itertools;
 mod miette;
 mod panic;
 mod question_mark;

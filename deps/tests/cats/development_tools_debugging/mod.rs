@@ -16,3 +16,4 @@ mod tracing_subscriber;
 mod tracing_subscriber2;
 mod tracing_subscriber3;
 mod tracing_subscriber4;
+mod type_name_of_val;

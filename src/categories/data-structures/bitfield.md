@@ -25,7 +25,7 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
 
 ```rust
-{{#include ../../../deps/tests/flagset.rs:example}}
+{{#include ../../../deps/tests/cats/data_structures/flagset.rs:example}}
 ```
 
 {{#include refs.incl.md}}
