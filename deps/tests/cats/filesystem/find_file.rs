@@ -9,11 +9,18 @@ fn main() -> Result<()> {
         .filter_map(|e| e.ok())
     {
         let f_name = entry.file_name().to_string_lossy();
-        let sec = entry.metadata()?.modified()?;
 
-        if f_name.ends_with(".json") && sec.elapsed()?.as_secs() < 86400 {
-            println!("{}", f_name);
+        // `metadata()` can return errors for path values that the program
+        // does not have permissions to access or if the path no longer exists.
+        if let Ok(metadata) = entry.metadata() {
+            let sec = metadata.modified()?;
+            if let Ok(elapsed) = sec.elapsed() {
+                if elapsed.as_secs() < 86400 {
+                    println!("{}", f_name);
+                }
+            }
         }
+        // You may also check for specific extensions: && f_name.ends_with(".json")
     }
 
     Ok(())
