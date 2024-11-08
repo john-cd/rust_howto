@@ -11,11 +11,13 @@ pub struct HeadersEcho {
 }
 
 fn main() -> Result<()> {
+    // Parse an absolute URL from a string and add params to its query string
     let url = url::Url::parse_with_params(
         "http://httpbin.org/headers",
         &[("lang", "rust"), ("browser", "servo")],
     )?;
 
+    // Define default headers for all requests
     let mut default_headers = header::HeaderMap::new();
     default_headers
         .insert("X-MY-HEADER", header::HeaderValue::from_static("value"));
@@ -25,6 +27,7 @@ fn main() -> Result<()> {
         .default_headers(default_headers)
         .build()?;
 
+    // Headers for this request only
     let mut headers = header::HeaderMap::new();
     headers.insert(
         reqwest::header::CONTENT_TYPE,
@@ -47,7 +50,7 @@ fn main() -> Result<()> {
         "Bearer DEadBEEfc001cAFeEDEcafBAd"
     );
     assert_eq!(out.headers["User-Agent"], "Rust-test");
-    // assert_eq!(out.headers["X-MY-HEADER"], "value");
+    assert_eq!(out.headers["X-My-Header"], "value");
     println!("{:?}", out);
     Ok(())
 }
@@ -59,5 +62,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
-// TODO improve
