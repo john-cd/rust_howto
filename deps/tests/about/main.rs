@@ -2,7 +2,7 @@
 //! separate files in deps/tests), we group all the tests in each section of the
 //! book in the same crate.
 //!
-//! all examples in this folder MUST be listed as module below or they won't be
+//! All examples in this folder MUST be listed as module below or they won't be
 //! discovered / run.
 
 mod about;
