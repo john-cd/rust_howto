@@ -1,5 +1,5 @@
 // ANCHOR: example
-// #![doc(html_playground_url = "https://playground.example.com/")]
+#![doc(html_playground_url = "https://playground.example.com/")]
 
 // TODO
 

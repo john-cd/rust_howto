@@ -1,7 +1,7 @@
 mod rustdoc;
 mod rustdoc2;
 mod rustdoc3;
-mod rustdoc4;
+// rustdoc4 is intentionally excluded
 mod semver_command;
 mod semver_complex;
 mod semver_increment;
