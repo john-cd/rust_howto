@@ -23,6 +23,7 @@ SHELL ["bash", "-c"]
 ## `libudev-dev` required for `openrr`
 ## `libasound2-dev` required for `alsa-sys`, for `openrr`
 ## for Tauri: libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
+## `python3` for `pyo3`
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
@@ -48,6 +49,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
                                         libssl-dev \
                                         libayatana-appindicator3-dev \
                                         librsvg2-dev \
+                                        python3 python3.11-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
@@ -58,10 +60,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.0-rc3/ \
     && rm /tmp/cmake-install.sh \
     && ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
-
-
-
-
 
 ## Also consider: linker and other utilities
 # mold clang \
@@ -160,20 +158,18 @@ FROM base as development
 
 ## Additional packages for developement only
 
-## Install pre-commit
-## NOTE: `pre-commit` has been replaced by `cargo husky`
-## Install python3, pipx, pre-commit
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get install -y python3 pipx \
-#     && pipx install pre-commit \
-#     && pipx ensurepath
-
+#    && apt-get install -y pipx\
 ## If needed:
 ## Fast fuzzy search:
 # fzf \
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
+
+## NOTE: `pre-commit` has been replaced by `cargo husky`
+# RUN pipx install pre-commit \
+#     && pipx ensurepath
 
 ## Install optional cargo plugins
 # RUN cargo install --locked cargo-outdated || true

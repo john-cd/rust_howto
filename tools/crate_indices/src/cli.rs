@@ -37,7 +37,7 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
         }))
     }
     // TODO
-    //else if let Some(_m) = matches.subcommand_matches("section") {
+    // else if let Some(_m) = matches.subcommand_matches("section") {
     //    Ok(Cmd::Section)
     //}
     else if let Some(_m) = matches.subcommand_matches("list_crates") {
