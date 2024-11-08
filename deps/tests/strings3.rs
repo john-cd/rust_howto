@@ -1,12 +1,12 @@
 #![allow(clippy::vec_init_then_push)]
+#![allow(clippy::useless_vec)]
 // ANCHOR: example
 
-// TODO
-// #[macro_use(concat_string)]
-// extern crate concat_string;
+#[macro_use(concat_string)]
+extern crate concat_string;
 
-// #[macro_use(concat_strs)]
-// extern crate concat_strs;
+#[macro_use(concat_strs)]
+extern crate concat_strs;
 
 static DATE: &str = "2024-01-15";
 static T: &str = "T";
@@ -25,7 +25,6 @@ fn main() {
     // let _datetime: String = list.iter().map(|x| *x).collect();
     let _datetime: String = list.iter().copied().collect();
 
-    #[allow(clippy::useless_vec)]
     let list = vec![DATE, T, TIME];
     // let _datetime: String = list.iter().map(|x| *x).collect();
     let _datetime: String = list.iter().copied().collect();

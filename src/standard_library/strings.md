@@ -29,7 +29,7 @@ Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership 
 Here are several common methods to concatenate{{hi:Concatenation}} Strings:
 
 ```rust
-{{#include ../../deps/tests/std/strings3.rs:example}}
+{{#include ../../deps/tests/strings3.rs:example}}
 ```
 
 Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳

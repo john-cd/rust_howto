@@ -39,7 +39,7 @@ The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level docume
 To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:Rust playground}}), use the following attribute:
 
 ```rust
-{{#include ../../../../deps/tests/cats/development_tools/rustdoc4.rs:example}}
+{{#include ../../../../deps/tests/rustdoc4.rs:example}}
 ```
 
 {{#include refs.incl.md}}
