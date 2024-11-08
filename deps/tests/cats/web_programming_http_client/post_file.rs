@@ -6,12 +6,11 @@ use anyhow::Result;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let paste_api = "https://paste.rs";
-    let mut file = File::open("message")?;
-
+    let mut file = File::open("temp/message")?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
 
+    let paste_api = "https://paste.rs";
     let client = reqwest::Client::new();
     let res = client.post(paste_api).body(contents).send().await?;
     let response_text = res.text().await?;
@@ -20,12 +19,13 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+use std::io::Write;
+
 // Requires network access
 #[test]
-#[ignore]
 fn test() -> anyhow::Result<()> {
+    let mut f = File::create("temp/message")?;
+    f.write_all(b"Hello")?;
     main()?;
     Ok(())
 }
-
-// TODO test fails
