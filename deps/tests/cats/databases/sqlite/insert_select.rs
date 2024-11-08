@@ -11,8 +11,8 @@ struct Cat {
     color: String,
 }
 
-fn main() -> Result<()> {
-    let conn = Connection::open("cats.db")?;
+pub fn main() -> Result<()> {
+    let conn = Connection::open("temp/cats.db")?;
 
     let mut cat_colors = HashMap::new();
     cat_colors.insert(String::from("Blue"), vec!["Tigger", "Sammy"]);
@@ -51,12 +51,4 @@ fn main() -> Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
-// TODO
-#[ignore = "requires rusqlite DB"]
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}

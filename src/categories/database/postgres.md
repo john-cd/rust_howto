@@ -11,7 +11,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 [`postgres::Client::connect`][c-postgres::Client::connect]{{hi:postgres::Client::connect}}⮳ helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
 
 ```rust
-{{#include ../../../deps/tests/cats/databases/create_tables.rs:example}}
+{{#include ../../../deps/tests/cats/databases/postgres/create_tables.rs:example}}
 ```
 
 ## Insert and Query data
@@ -21,7 +21,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 The recipe inserts data into the `author` table using [`postgres::Client::execute`][c-postgres::Client::execute]{{hi:postgres::Client::execute}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳. Then, displays the data from the `author` table using [`postgres::Client::query`][c-postgres::Client::query]{{hi:postgres::Client::query}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳.
 
 ```rust
-{{#include ../../../deps/tests/cats/databases/insert_query_data.rs:example}}
+{{#include ../../../deps/tests/cats/databases/postgres/insert_query_data.rs:example}}
 ```
 
 ## Aggregate data
@@ -31,7 +31,7 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample]⮳ in descending order.
 
 ```rust
-{{#include ../../../deps/tests/cats/databases/aggregate_data.rs:example}}
+{{#include ../../../deps/tests/cats/databases/postgres/aggregate_data.rs:example}}
 ```
 
 ## `tokio-postgres`

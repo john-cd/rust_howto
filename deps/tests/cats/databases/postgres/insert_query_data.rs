@@ -46,7 +46,6 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 // TODO
 #[ignore = "requires a running postgres instance"]
