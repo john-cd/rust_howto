@@ -6,14 +6,12 @@ mod mylib {
     use miette::NamedSource;
     use miette::Result;
     use miette::SourceSpan;
-
     // You can derive a `Diagnostic` from any `std::error::Error` type.
     // `thiserror` plays nicely with `miette`
     use thiserror::Error;
 
     #[derive(Error, Diagnostic, Debug)]
     pub enum MyLibError {
-
         #[error("A bad thing happened!")] // provided by `thisError`
         #[diagnostic(
             // Use `#[diagnostic(code(...))]` to set the unique code for this error.
@@ -67,10 +65,8 @@ mod mylib {
     #[derive(Error, Diagnostic, Debug)]
     #[error("another error")]
     pub struct AnotherError {
-
         #[label("here")]
         pub at: SourceSpan,
-    
     }
 
     pub fn this_fails() -> Result<()> {

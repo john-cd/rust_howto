@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     .build()?;
 
     buffered
-        .lines()
+        .lines()                // yield instances of io::Result<String>
         .map_while(Result::ok)
         .filter(|line| set.is_match(line.as_str()))
         .for_each(|x| println!("{}", x));
@@ -28,10 +28,19 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO
-#[ignore]
+use std::io::Write;
+
 #[test]
 fn test() -> Result<()> {
+    let mut file = File::create("temp/application.log")?;
+    file.write_all(EXAMPLE_TEXT.as_bytes())?;
     main()?;
     Ok(())
 }
+
+static EXAMPLE_TEXT: &str = r#"
+Lorem ipsum dolor sit amet version "0.1.2"
+127.0.0.1:443 consectetur adipisicing elit
+WARNING sunt in culpa qui officia TIMEOUT EXPIRED
+quis nostrud exercitation ullamco
+"#;

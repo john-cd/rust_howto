@@ -1,4 +1,3 @@
-// TODO
 #![allow(dead_code)]
 // ANCHOR: example
 

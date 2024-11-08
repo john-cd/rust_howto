@@ -3,7 +3,6 @@ use rusqlite::Connection;
 use rusqlite::Result;
 
 pub fn main() -> Result<()> {
-    //let conn = Connection::open_in_memory()?;
     let conn = Connection::open("temp/cats.db")?;
 
     conn.execute(

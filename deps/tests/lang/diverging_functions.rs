@@ -10,7 +10,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-
 #[should_panic]
 #[test]
 fn test() {

@@ -1,7 +1,4 @@
 #![allow(clippy::useless_vec)]
-#![allow(dead_code)]
-// TODO ^
-
 // ANCHOR: example
 fn main() {
     // Used as an expression.
@@ -39,19 +36,20 @@ macro_rules! const_maker {
     };
 }
 
+#[allow(dead_code)]
 trait T {
     const_maker! {i32, 7}
 }
 
 // Macro calls within macros.
+//
+// When used, the outer macro `example` is expanded,
+// then the inner macro `println` is expanded.
 macro_rules! _example {
     () => {
         println!("Macro call in a macro!")
     };
 }
-
-// Outer macro `example` is expanded, then inner macro `println` is
-// expanded. example!();
 // ANCHOR_END: example
 
 #[test]

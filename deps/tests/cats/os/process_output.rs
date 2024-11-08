@@ -20,8 +20,8 @@ fn main() -> Result<()> {
 
     let pattern = Regex::new(
         r"(?x)
-                               ([0-9a-fA-F]+) # commit hash
-                               (.*)           # The commit message",
+        ([0-9a-fA-F]+) # commit hash
+        (.*)           # The commit message",
     )?;
 
     String::from_utf8(output.stdout)?
@@ -38,8 +38,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO
-// this test should not run during CI
+// This test should not run during CI
 #[cfg_attr(feature = "ci", ignore)]
 #[test]
 fn test() -> anyhow::Result<()> {

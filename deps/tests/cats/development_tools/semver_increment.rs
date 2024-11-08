@@ -4,6 +4,7 @@ use semver::Version;
 
 fn main() -> Result<()> {
     let parsed_version = Version::parse("0.2.6")?;
+    // Note: a SemVer version must have exactly three components
 
     assert_eq!(
         parsed_version,

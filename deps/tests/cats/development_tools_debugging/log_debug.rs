@@ -4,6 +4,8 @@ fn execute_query(query: &str) {
 }
 
 fn main() {
+    // env_logger is simple logger that can be configured via environment
+    // variables. Example: RUST_LOG=info ./app
     env_logger::init();
 
     execute_query("DROP TABLE students");

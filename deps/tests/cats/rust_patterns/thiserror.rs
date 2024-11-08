@@ -28,7 +28,6 @@ pub enum DataStoreError {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-
     // Return an error:
     Err(DataStoreError::Unknown)?;
     Ok(())
