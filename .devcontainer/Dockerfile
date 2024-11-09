@@ -5,7 +5,7 @@
 # See also https://docs.docker.com/language/rust/
 
 ARG RUST_IMAGE_LABEL
-FROM rust:${RUST_IMAGE_LABEL} as base
+FROM rust:${RUST_IMAGE_LABEL} AS base
 ## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
@@ -154,7 +154,7 @@ WORKDIR /code
 
 ## --------------------------------
 ## Stage for development
-FROM base as development
+FROM base AS development
 
 ## Additional packages for developement only
 
@@ -205,7 +205,7 @@ CMD [ "sleep", "infinity" ]
 
 ## --------------------------------
 ## Stage for Continuous Integration
-FROM base as ci
+FROM base AS ci
 
 ## TODO consider switching to slim or Alpine image for CI. Need to solve openssl install
 ## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
