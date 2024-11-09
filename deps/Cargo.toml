@@ -188,7 +188,7 @@ ring = "0.17.8"
 # ruff = "0.0.1" # not a lib
 # rui = "0.6.1" # experimental at this point
 rusqlite = { version = "0.32.1", features = ["chrono"] }
-rustdesk = { version = "0.1.1", optional = true }
+# rustdesk = { version = "0.1.1", optional = true } # app
 rust_cache = { version = "0.3.0", optional = true }
 RustQuant = { version = "0.2.12", optional = true }
 salsa = { version = "0.16.1", optional = true }
@@ -288,7 +288,7 @@ unused = ["dep:accesskit", "dep:actix-web", "dep:axum", "dep:bevy", "dep:build-i
 "dep:minisearch", "dep:mio", "dep:mongodb", "dep:monostate", "dep:nom", "dep:opencv", "dep:openrr",
 "dep:paste", "dep:pest", "dep:petgraph", "dep:plotly", "dep:polars", "dep:postscript", "dep:postage",
 "dep:proc-macro2", "dep:pyoxidizer", "dep:quote", "dep:r3bl_tuify", "dep:remove_dir_all", "dep:rhai",
-"dep:riker", "dep:rust_cache", "dep:rustdesk", "dep:RustQuant", "dep:salsa",
+"dep:riker", "dep:rust_cache", "dep:RustQuant", "dep:salsa",
 "dep:sea-orm", "dep:seaography", "dep:sled", "dep:slint", "dep:slotmap", "dep:smol", "dep:stakker",
 "dep:starship", "dep:swc_ecma_parser", "dep:syn", "dep:tantivy", "dep:tauri",
 "dep:tinysearch", "dep:tonic", "dep:trillium", "dep:tungstenite", "dep:typesense", "dep:watchmaker",
