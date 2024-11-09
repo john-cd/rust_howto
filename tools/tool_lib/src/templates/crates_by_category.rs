@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-pub static CATEGORY_ROW: &str = r"| [![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]\{\{hi:{name}}} {{ endfor }}|";
+pub(super) static CATEGORY_ROW: &str = r"| [![cat-{slug}][cat-{slug}-badge]][cat-{slug}]\{\{hi:{category}}} | {description} | {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]\{\{hi:{name}}} {{ endfor }}|";
 
 #[derive(Serialize)]
 struct Context<'a> {

@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::Serialize;
 
-pub static ALPHABETICAL_ROW: &str = r"## {first_letter}
+pub(super) static ALPHABETICAL_ROW: &str = r"## {first_letter}
 
 {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}]  {{ endfor }}
 ";
