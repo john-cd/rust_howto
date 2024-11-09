@@ -1,11 +1,10 @@
 [package]
-# All crate DEPendencies for the book's examples are stored below.
-name = "deps"
+name = "dependencies"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description.workspace = true
+description = "All book code examples and their crate DEPendencieS"
 documentation.workspace = true
 readme = "README.md"
 homepage.workspace = true
@@ -14,9 +13,6 @@ license = "MIT OR Apache-2.0"
 keywords.workspace = true
 categories.workspace = true
 workspace = ".."
-build = false                  # disable build.rs script detection; use: build = "build.rs" or build = "custom.rs" otherwise
-#exclude.workspace = true
-#include.workspace = true
 publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -276,7 +272,7 @@ features = ["user-hooks"]
 
 [features]
 ## The `ci` feature should be turned "on" only during CI tests
-## It is used to ignore certain tests that can't run there - e.g. network acess is required.
+## It is used to ignore certain tests that can't run there.
 ci = []
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
@@ -293,10 +289,3 @@ unused = ["dep:accesskit", "dep:actix-web", "dep:axum", "dep:bevy", "dep:build-i
 "dep:starship", "dep:swc_ecma_parser", "dep:syn", "dep:tantivy", "dep:tauri",
 "dep:tinysearch", "dep:tonic", "dep:trillium", "dep:tungstenite", "dep:typesense", "dep:watchmaker",
 "dep:watt", "dep:windows", "dep:yapp", "dep:yew", "dep:zenoh" ]
-
-## Override the target name, since dependabot complains that
-## the binary target name `deps` is forbidden,
-## it conflicts with cargo's build directory names
-[lib]
-name = "book_dependencies"  # The name of the target.
-path = "src/lib.rs"         # The source file of the target.
