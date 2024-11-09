@@ -37,4 +37,9 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 
 <div class="hidden">
 TODO: review
+
+TODO windows install
+
+`winget install openssl`
+need Python
 </div>
