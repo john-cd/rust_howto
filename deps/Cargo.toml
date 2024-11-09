@@ -26,6 +26,7 @@ publish = false
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
+accesskit = { version = "0.17.0", optional = true }
 actix-web = { version = "4.9.0", optional = true }
 ansi_term = "0.12.1" # NOTE: unmaintained
 anyhow = "1.0.91"
@@ -35,11 +36,27 @@ async-channel = "2.3.1"
 async-std = "1.13.0"
 async-stream = "0.3.6"
 async-trait = "0.1.83"
+axum = { version = "0.7.7", optional = true }
+# bacon = { version = "3.2.0", optional = true }
 base64 = "0.22.1"
+# bat
+bevy = { version = "0.14.2", optional = true }
 bitflags = "2.6.0"
+# broot
 build-info = { version = "0.0.39", optional = true }
 byteorder = "1.5.0"
 bytes = "1.8.0"
+candle-core = { version = "0.7.2", optional = true }
+# cargo
+# cargo-auditable
+# cargo-cache
+# cargo-edit
+# cargo-hack
+# cargo-husky
+# cargo-make
+# cargo-nextest
+# cargo-tarpaulin
+# cargo-udeps
 cc = "1.1.31"
 chrono = "0.4.38"
 clap = { version = "4.5.20", features = ["derive"] }
@@ -47,6 +64,7 @@ clap-verbosity-flag = "2.1"
 concat-string = "1.0.1"
 concat_strs = "1.0.2"
 confy = "0.6.1"
+cornucopia = { version = "0.9.0", optional = true }
 cosmic-text = { version = "0.12.1", optional = true }
 crates_io_api = "0.11.0"
 cross = { version = "0.2.5", optional = true }
@@ -54,15 +72,18 @@ crossbeam = "0.8.4"
 crossbeam-channel = "0.5.13"
 crossbeam-queue = "0.3.11"
 crossbeam-utils = "0.8.20"
+crux_core = { version = "0.10.0", optional = true }
 csv = "1.3.0"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
+datafusion = { version = "43.0.0", optional = true }
 derive_more = { version = "1.0.0", features = ["full"] }
 diesel = { version = "2.2.4", optional = true }
 digest = "0.10.7"
 doc-comment = "0.3"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
+# druid = { version = "0.8.3", optional = true } # TODO review conflicts
 duct = { version = "0.13.7", optional  = true }
 dyn-clone = "1.0.17"
 egui = { version = "0.29.1", optional  = true }
@@ -70,6 +91,7 @@ elasticsearch = { version = "8.15.0-alpha.1", optional  = true } # NOTE: alpha v
 # embassy = { version = "0.0.0", optional  = true } # TODO review installation / required dependencies
 env_logger = "0.11.5"
 envy = "0.4.2"
+# exa = { version = "0.10.1", optional = true } # TODO review conflicts
 # eyre = "0.6.12" # outdated, see color-eyre
 flagset = "0.4.6"
 flate2 = "1.0.34"
@@ -79,6 +101,7 @@ futures = "0.3.31"
 futures-executor = "0.3.31"
 glidesort = { version = "0.1.2", optional  = true }
 glob = "0.3.1"
+globset = { version = "0.4.15", optional = true }
 gping = { version = "1.17.3", optional  = true }
 http = "1.1.0"
 http-body-util = "0.1.2"
@@ -89,18 +112,37 @@ indicatif = { version = "0.17.8", optional = true }
 infisearch = { version = "0.10.1", optional = true }
 itertools = "0.13.0"
 just = "1.36.0"
-kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
+# kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
 kani = { version = "0.0.1", optional = true }
 lazy_static = "1.5.0"
+# lens
 leptos = { version = "0.7.0-gamma3", optional = true }
 lettre = "0.11.10"
 linfa = { version = "0.7.0", optional = true }
+linked-hash-map = "0.5.6"
+loco = { version = "0.0.1", optional = true }
 log = "0.4.22"
 log4rs = "1.3.0"
 lru = "0.12.5"
+# lsd
+# mdbook
+# mdbook-cmdrun
+# mdbook-journal
+# mdbook-keeper
+# mdbook-linkcheck
+# mdbook-pagetoc
+# mdbook-private
+# mdbook-tera
+# mdbook-theme
+# mdbook-toc
+meilisearch = { version = "0.0.0", optional = true }
 memmap2 = "0.9.5"
 miette = { version = "7.2.0", features = ["fancy"] }
 mime = "0.3.17"
+minisearch = { version = "0.1.1", optional = true }
+mio = { version = "1.0.2", optional = true }
+# miri
+mongodb = { version = "3.1.0", optional = true }
 monostate = { version = "0.1.13", optional = true }
 multimap = "0.10.0"
 nalgebra = { version = "0.33.2", features = ["serde-serialize"] }
@@ -123,6 +165,7 @@ pest = { version = "2.7.14", optional = true }
 petgraph = { version = "0.6", optional = true }
 plotly = { version = "0.10.0", optional = true }
 polars = { version = "0.44", optional = true }
+postscript = { version = "0.18.2", optional = true }
 postage = { version = "0.5.0", optional = true }
 postgres = "0.19.9"
 proc-macro2 = { version = "1.0.89", optional = true }
@@ -136,6 +179,7 @@ ratatui = "0.29.0"
 rayon = "1.10.0"
 redis = "0.27.5"
 regex = "1.11.1"
+remove_dir_all = { version = "0.8.4", optional = true }
 reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
 rhai = { version = "1.19.0", optional = true }
 riker = { version = "0.4.2", optional = true }
@@ -144,6 +188,8 @@ ring = "0.17.8"
 # ruff = "0.0.1" # not a lib
 # rui = "0.6.1" # experimental at this point
 rusqlite = { version = "0.32.1", features = ["chrono"] }
+rustdesk = { version = "0.1.1", optional = true }
+rust_cache = { version = "0.3.0", optional = true }
 RustQuant = { version = "0.2.12", optional = true }
 salsa = { version = "0.16.1", optional = true }
 same-file = "1.0.6"
@@ -162,17 +208,18 @@ stakker = { version = "0.2.11", optional = true }
 starship = { version = "1.21.1", optional = true }
 # stork-search = "1.6.0" # not a lib
 swc_ecma_parser = { version = "5.0.0", optional = true }
-syn = { version = "2.0.85", optional = true }
+syn = { version = "2.0.87", optional = true }
 tantivy = { version = "0.22.0", optional = true }
 tar = "0.4.42"
 tauri = { version = "2.0.6", optional = true } # requires multiple libraries. See Dockerfile
 # tempdir = "0.3.7" # outdated, replaced by tempfile
-tempfile = "3.13.0"
+tempfile = "3.14.0"
 # termbook = "1.4.2" # requires mdbook; TODO review pre-requisites
-thiserror = "2.0.0"
+thiserror = "2.0.1"
 threadpool = "1.8.1"
+time = "0.3.36"
 tinysearch = { version = "0.8.2", optional = true }
-tokio = { version = "1.41.0", features = ["full"] }
+tokio = { version = "1.41.1", features = ["full"] }
 tokio-graceful-shutdown = "0.15.1"
 toml = "0.8.19"
 tonic = { version = "0.12.3", optional = true }
@@ -181,9 +228,10 @@ tower-http = { version = "0.6.1", features = ["full", "auth"] }
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 trillium = { version = "0.2.20", optional = true }
+tungstenite = { version = "0.24.0", optional = true }
 typesense = { version = "0.1.0", optional = true }
 unicode-segmentation = "1.12.0"
-url = "2.5.2"
+url = "2.5.3"
 walkdir = "2.5.0"
 wasmtime = "26.0.0"
 watchmaker = { version = "2.0.0", optional = true }
@@ -195,8 +243,8 @@ xshell = { version = "0.2.6", optional = true }
 # xsv = "0.13.0" # not a lib
 yapp = { version = "0.4.1", optional = true }
 yew = { version = "0.21.0", optional = true }
-zed = { version = "0.1.0", optional = true }
-zenoh = { version = "1.0.0", optional = true }
+# zed  # the `zed` crate is not the editor
+zenoh = { version = "1.0.2", optional = true }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 syslog = "7.0.0"
@@ -232,4 +280,23 @@ features = ["user-hooks"]
 ci = []
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-unused = ["dep:actix-web", "dep:build-info", "dep:cosmic-text", "dep:cross", "dep:diesel", "dep:duct", "dep:egui", "dep:elasticsearch", "dep:form_urlencoded", "dep:glidesort", "dep:gping", "dep:hyper", "dep:iced", "dep:indicatif", "dep:infisearch", "dep:kanal", "dep:kani", "dep:leptos", "dep:linfa", "dep:monostate", "dep:nom", "dep:opencv", "dep:openrr", "dep:paste", "dep:pest", "dep:petgraph", "dep:plotly", "dep:polars", "dep:postage", "dep:proc-macro2", "dep:pyoxidizer", "dep:quote", "dep:r3bl_tuify", "dep:rhai", "dep:riker", "dep:RustQuant", "dep:salsa", "dep:sea-orm", "dep:seaography", "dep:sled", "dep:slint", "dep:slotmap", "dep:smol", "dep:stakker", "dep:starship", "dep:swc_ecma_parser", "dep:syn", "dep:tantivy", "dep:tauri", "dep:tinysearch", "dep:tonic", "dep:trillium", "dep:typesense", "dep:watchmaker", "dep:watt", "dep:windows", "dep:yapp", "dep:yew", "dep:zed", "dep:zenoh" ]
+## You may check for conflicts with: cargo build --features unused
+unused = ["dep:accesskit", "dep:actix-web", "dep:axum", "dep:bevy", "dep:build-info", "dep:candle-core",
+"dep:cornucopia", "dep:cosmic-text", "dep:cross", "dep:crux_core", "dep:datafusion", "dep:diesel", "dep:duct",
+"dep:egui", "dep:elasticsearch", "dep:form_urlencoded", "dep:glidesort", "dep:globset", "dep:gping", "dep:hyper",
+"dep:iced", "dep:indicatif", "dep:infisearch", "dep:kani", "dep:leptos", "dep:linfa", "dep:loco", "dep:meilisearch",
+"dep:minisearch", "dep:mio", "dep:mongodb", "dep:monostate", "dep:nom", "dep:opencv", "dep:openrr",
+"dep:paste", "dep:pest", "dep:petgraph", "dep:plotly", "dep:polars", "dep:postscript", "dep:postage",
+"dep:proc-macro2", "dep:pyoxidizer", "dep:quote", "dep:r3bl_tuify", "dep:remove_dir_all", "dep:rhai",
+"dep:riker", "dep:rust_cache", "dep:rustdesk", "dep:RustQuant", "dep:salsa",
+"dep:sea-orm", "dep:seaography", "dep:sled", "dep:slint", "dep:slotmap", "dep:smol", "dep:stakker",
+"dep:starship", "dep:swc_ecma_parser", "dep:syn", "dep:tantivy", "dep:tauri",
+"dep:tinysearch", "dep:tonic", "dep:trillium", "dep:tungstenite", "dep:typesense", "dep:watchmaker",
+"dep:watt", "dep:windows", "dep:yapp", "dep:yew", "dep:zenoh" ]
+
+## Override the target name, since dependabot complains that
+## the binary target name `deps` is forbidden,
+## it conflicts with cargo's build directory names
+[lib]
+name = "book_dependencies"  # The name of the target.
+path = "src/lib.rs"         # The source file of the target.
