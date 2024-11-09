@@ -138,6 +138,10 @@ _mdbook-build-book:
   fi
   mdbook build
 
+[windows]
+_mdbook-build-book:
+  mdbook build
+
 # Generate new reference definitions for all crate the book's examples depend on...
 _generate-refdefs:
 # TODO mdbook-utils refdefs
@@ -194,12 +198,20 @@ quick:
 #
 # Note2: mdbook watch --open --watcher=poll / native does not have -p -n options.
 
+[windows]
+quick:
+  mdbook serve -p 3001 -n 127.0.0.1 --open
+
 ## ---- UTILITIES -----------------------------------
 
 # Check spelling in markdown
 [unix]
 spell:
   .devcontainer/spellcheck.sh
+
+[windows]
+spell:
+  echo "No spell check while in Windows!"
 
 help := 'help'
 empty := ''
@@ -234,6 +246,10 @@ sortrefs: _removelastslash
   sort -u ./src/refs/link-refs.md -o /tmp/l.md
   mv -f /tmp/l.md ./src/refs/link-refs.md
   rm -f /temp/l.md
+
+[windows]
+sortrefs:
+  echo "No sortrefs while in Windows!"
 
 # Remove the last / from URLs in the reference definition files
 [unix]
