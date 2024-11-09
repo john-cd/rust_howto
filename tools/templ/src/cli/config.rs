@@ -3,9 +3,7 @@
 use clap::Arg;
 use clap::ArgMatches;
 
-pub(crate) struct Config {
-    pub verbose: bool,
-}
+use crate::Config;
 
 pub(super) fn arg_verbose() -> Arg {
     Arg::new("verbose")

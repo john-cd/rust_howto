@@ -1,26 +1,19 @@
 use anyhow::anyhow;
 use tool_lib::*;
 mod cli;
-use cli::*;
-
-/// The command that the end user selected
-#[derive(Default, Debug)]
-pub(crate) enum Cmd {
-    #[default]
-    None,
-    Badges(BadgeCmdArgs),
-    Rbe(RbeCmdArgs),
-    CategoryBadge(BadgeCmdArgs),
-    Info(InfoCmdArgs),
-}
+mod cmd;
+pub(crate) use cmd::*;
 
 fn main() -> anyhow::Result<()> {
     let (config, cmd) = cli::run()?;
-    if config.verbose {
-        tracing_subscriber::fmt()
-            .with_max_level(tracing::Level::DEBUG)
-            .init();
-    }
+
+    let log_level = if config.verbose {
+        tracing::Level::DEBUG
+    } else {
+        tracing::Level::INFO
+    };
+    tracing_subscriber::fmt().with_max_level(log_level).init();
+
     match cmd {
         Cmd::Badges(b) => {
             for n in b.names {
@@ -34,7 +27,7 @@ fn main() -> anyhow::Result<()> {
                 println!("{}", badge);
             }
         }
-        Cmd::CategoryBadge(c) => {
+        Cmd::CategoriesForCrateBadge(c) => {
             for n in c.names {
                 let name = n.trim();
                 for cat in tool_lib::get_categories_for_crate(name)? {
@@ -43,6 +36,14 @@ fn main() -> anyhow::Result<()> {
                     println!("{}", markdown);
                 }
             }
+        }
+        Cmd::CategoryBadges(c) => {
+            // for c in c.categories {
+            //     let category_name = c.trim();
+            //     let cat = tool_lib::get_category(category_name)?;
+            //     let markdown = create_category_badge(&cat.category,
+            // &cat.slug)?;         println!("{}", markdown);
+            // }
         }
         Cmd::Info(i) => {
             for n in i.names {

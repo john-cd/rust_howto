@@ -7,18 +7,16 @@ use anyhow::Result;
 
 mod badge;
 mod category_badge;
+mod category_badges_for_crate;
 mod config;
 mod crate_name_arg;
 mod info;
 mod rbe;
 
-pub(crate) use badge::*;
-pub(crate) use config::*;
 use crate_name_arg::*;
-pub(crate) use info::*;
-pub(crate) use rbe::*;
 
 use super::Cmd;
+use super::Config;
 
 /// `run` returns the configuration and command that the end user
 /// selected.
@@ -29,8 +27,10 @@ pub(super) fn run() -> Result<(Config, Cmd)> {
     let conf = config::get_config(&matches);
     let cmd = if let Some(b) = badge::get_cmd(&matches) {
         Cmd::Badges(b)
+    } else if let Some(cc) = category_badges_for_crate::get_cmd(&matches) {
+        Cmd::CategoriesForCrateBadge(cc)
     } else if let Some(c) = category_badge::get_cmd(&matches) {
-        Cmd::CategoryBadge(c)
+        Cmd::CategoryBadges(c)
     } else if let Some(r) = rbe::get_cmd(&matches) {
         Cmd::Rbe(r)
     } else if let Some(i) = info::get_cmd(&matches) {
@@ -49,6 +49,7 @@ fn cli() -> clap::Command {
         .flatten_help(true) // Flatten subcommand help into the current command’s help
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(badge::subcommand_badge())
+        .subcommand(category_badges_for_crate::subcommand_category_badges_for_crate())
         .subcommand(category_badge::subcommand_category_badge())
         .subcommand(rbe::subcommand_rbe())
         .subcommand(info::subcommand_info())

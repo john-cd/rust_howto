@@ -7,17 +7,26 @@ use clap::Command;
 pub(super) fn subcommand_category_badge() -> Command {
     Command::new("category_badge")
         .visible_alias("c")
-        .about("Create the markdown for all category badges for (a) given crate name(s)")
-        //.display_order(1)
-        .arg(super::arg_crate_name())
+        .about("Create the markdown for category badge(s), given the category(ies)")
+        .display_order(2)
+        .arg(    clap::Arg::new("category")
+                .required(true)
+                .value_name("CATEGORY") // placeholder for the argument's value in the help message / usage.
+                .action(clap::ArgAction::Append)
+                .help("Enter the category name(s)"))
 }
 
-pub(super) fn get_cmd(matches: &ArgMatches) -> Option<super::BadgeCmdArgs> {
+pub(super) fn get_cmd(
+    matches: &ArgMatches,
+) -> Option<crate::CategoriesCmdArgs> {
     let mut badge = None;
     if let Some(m) = matches.subcommand_matches("category_badge") {
-        // "$ myapp category_badge" was run
-        let names = super::get_cmd_arg_crate_name(m);
-        badge = Some(super::BadgeCmdArgs { names });
+        let categories = m
+            .get_many::<String>("category")
+            .unwrap_or_default()
+            .map(|v| v.into())
+            .collect::<Vec<String>>();
+        badge = Some(crate::CategoriesCmdArgs { categories });
     }
     badge
 }
