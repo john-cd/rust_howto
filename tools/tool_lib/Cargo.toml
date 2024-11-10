@@ -19,3 +19,5 @@ serde = { version = "1.0.214", features = ["derive"] }
 anyhow = "1.0.91"
 tracing = "0.1.40"
 crates_io_api = "0.11.0"
+reqwest = "0.12.9"
+toml = "0.8.19"

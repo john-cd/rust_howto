@@ -15,12 +15,14 @@ fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt().with_max_level(log_level).init();
 
     match cmd {
+        // Generate badges for one or more crates
         Cmd::Badges(b) => {
             for n in b.names {
                 let badge = create_badge(&n)?;
                 println!("{}", badge);
             }
         }
+        // Generate badge(s) for the Rust-by-example book
         Cmd::Rbe(r) => {
             for c in r.concepts {
                 let badge = create_rbe_badge(&c)?;
@@ -37,13 +39,37 @@ fn main() -> anyhow::Result<()> {
                 }
             }
         }
-        Cmd::CategoryBadges(c) => {
-            // for c in c.categories {
-            //     let category_name = c.trim();
-            //     let cat = tool_lib::get_category(category_name)?;
-            //     let markdown = create_category_badge(&cat.category,
-            // &cat.slug)?;         println!("{}", markdown);
-            // }
+        // Generate possible category badges for one or more input strings
+        Cmd::CategoryBadges(cmdargs) => {
+            let all_categories = tool_lib::get_all_categories()?;
+            for cat in cmdargs.categories {
+                let possible_cat_name = cat.trim().to_lowercase();
+                let possible_slug = possible_cat_name.replace(&[' ', '_'], "-");
+                let matches: Vec<_> = all_categories
+                    .iter()
+                    .filter(|&c| {
+                        c.slug == possible_slug
+                            || c.category
+                                .to_lowercase()
+                                .contains(&possible_cat_name)
+                            || c.description
+                                .to_lowercase()
+                                .contains(&possible_cat_name)
+                    })
+                    .collect();
+                if matches.is_empty() {
+                    return Err(anyhow!(
+                        "Could not find the desired category!"
+                    ));
+                }
+                for cat in matches {
+                    let markdown =
+                        create_category_badge(&cat.category, &cat.slug)?;
+                    println!("{}", markdown);
+                }
+                println!();
+            }
+            // all_categories.iter().for_each( |c| println!("{:?}", c) )
         }
         Cmd::Info(i) => {
             for n in i.names {

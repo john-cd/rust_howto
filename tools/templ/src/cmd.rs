@@ -1,3 +1,5 @@
+//! The configuration and possible commands of the application
+
 pub(crate) struct Config {
     pub verbose: bool,
 }

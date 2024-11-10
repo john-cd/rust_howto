@@ -23314,8 +23314,10 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "crates_io_api",
+ "reqwest 0.12.9",
  "serde 1.0.214",
  "tinytemplate",
+ "toml 0.8.19",
  "tracing",
 ]
 
