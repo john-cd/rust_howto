@@ -5,6 +5,7 @@ use request::*;
 
 use super::Category;
 
+/// Returns a list of all cetagories that exist on crates.io
 pub fn get_all_categories() -> Result<Vec<Category>> {
     let toml_string = get_categories_toml_string()?;
     let toml: toml::value::Table = toml::from_str(&toml_string)
@@ -14,6 +15,10 @@ pub fn get_all_categories() -> Result<Vec<Category>> {
     Ok(categories)
 }
 
+// The categories TOML file stores child categories
+// in [slug.categories.subcategory-slug] tables.
+//
+// Inspired by code in the crates.io repo
 fn categories_from_toml(
     categories: &toml::value::Table,
     parent: Option<&Category>,
@@ -65,6 +70,7 @@ fn optional_string_from_toml<'a>(
 }
 
 impl Category {
+    // Format a child category as "parent::child"
     fn from_parent(
         slug: &str,
         category: &str,

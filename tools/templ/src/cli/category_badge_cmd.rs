@@ -3,6 +3,8 @@
 use clap::ArgMatches;
 use clap::Command;
 
+use crate::CmdArgs;
+
 /// Builds the `category_badge` subcommand of the CLI user interface
 pub(super) fn subcommand_category_badge() -> Command {
     Command::new("category_badge")
@@ -16,17 +18,15 @@ pub(super) fn subcommand_category_badge() -> Command {
                 .help("Enter the category name(s)"))
 }
 
-pub(super) fn get_cmd(
-    matches: &ArgMatches,
-) -> Option<crate::CategoriesCmdArgs> {
-    let mut badge = None;
+pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
+    let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("category_badge") {
         let categories = m
             .get_many::<String>("category")
             .unwrap_or_default()
             .map(|v| v.into())
             .collect::<Vec<String>>();
-        badge = Some(crate::CategoriesCmdArgs { categories });
+        cmdargs = Some(CmdArgs { args: categories });
     }
-    badge
+    cmdargs
 }

@@ -4,6 +4,8 @@ use clap::Arg;
 use clap::ArgMatches;
 use clap::Command;
 
+use crate::CmdArgs;
+
 /// Builds the `rbe` subcommand of the CLI user interface
 pub(super) fn subcommand_rbe() -> Command {
     Command::new("rbe")
@@ -20,7 +22,7 @@ pub(super) fn subcommand_rbe() -> Command {
         )
 }
 
-pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::ConceptsCmdArgs> {
+pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut badge = None;
     if let Some(m) = matches.subcommand_matches("rbe") {
         // "$ myapp rbe" was run
@@ -29,7 +31,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::ConceptsCmdArgs> {
             .unwrap_or_default()
             .map(|v| v.into())
             .collect::<Vec<String>>();
-        badge = Some(crate::ConceptsCmdArgs { concepts });
+        badge = Some(CmdArgs { args: concepts });
     }
     badge
 }

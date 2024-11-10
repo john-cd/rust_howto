@@ -3,6 +3,8 @@
 use clap::ArgMatches;
 use clap::Command;
 
+use crate::CmdArgs;
+
 /// Builds the `categories_badges_for_crate` subcommand of the CLI user
 /// interface
 pub(super) fn subcommand_category_badges_for_crate() -> Command {
@@ -13,11 +15,11 @@ pub(super) fn subcommand_category_badges_for_crate() -> Command {
         .arg(super::arg_crate_name())
 }
 
-pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CratesCmdArgs> {
-    let mut badge = None;
+pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
+    let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("categories_badges_for_crate") {
         let names = super::get_cmd_arg_crate_name(m);
-        badge = Some(crate::CratesCmdArgs { names });
+        cmdargs = Some(CmdArgs { args: names });
     }
-    badge
+    cmdargs
 }

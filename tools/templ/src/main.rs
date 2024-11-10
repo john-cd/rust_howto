@@ -1,8 +1,11 @@
 use anyhow::anyhow;
 use tool_lib::*;
 mod cli;
-mod cmd;
-pub(crate) use cmd::*;
+mod config_cmd;
+pub(crate) use config_cmd::Cmd;
+pub(crate) use config_cmd::CmdArgs;
+pub(crate) use config_cmd::Config;
+// mod create_badge;
 
 fn main() -> anyhow::Result<()> {
     let (config, cmd) = cli::run()?;
@@ -17,20 +20,20 @@ fn main() -> anyhow::Result<()> {
     match cmd {
         // Generate badges for one or more crates
         Cmd::Badges(b) => {
-            for n in b.names {
-                let badge = create_badge(&n)?;
+            for name in b.args {
+                let badge = create_badge(&name.trim())?;
                 println!("{}", badge);
             }
         }
         // Generate badge(s) for the Rust-by-example book
         Cmd::Rbe(r) => {
-            for c in r.concepts {
-                let badge = create_rbe_badge(&c)?;
+            for concept in r.args {
+                let badge = create_rbe_badge(&concept)?;
                 println!("{}", badge);
             }
         }
         Cmd::CategoriesForCrateBadge(c) => {
-            for n in c.names {
+            for n in c.args {
                 let name = n.trim();
                 for cat in tool_lib::get_categories_for_crate(name)? {
                     let markdown =
@@ -40,9 +43,9 @@ fn main() -> anyhow::Result<()> {
             }
         }
         // Generate possible category badges for one or more input strings
-        Cmd::CategoryBadges(cmdargs) => {
+        Cmd::CategoryBadges(cb) => {
             let all_categories = tool_lib::get_all_categories()?;
-            for cat in cmdargs.categories {
+            for cat in cb.args {
                 let possible_cat_name = cat.trim().to_lowercase();
                 let possible_slug = possible_cat_name.replace(&[' ', '_'], "-");
                 let matches: Vec<_> = all_categories
@@ -71,9 +74,11 @@ fn main() -> anyhow::Result<()> {
             }
             // all_categories.iter().for_each( |c| println!("{:?}", c) )
         }
+        // Returns crate information from the crates.io API for one or more
+        // crates
         Cmd::Info(i) => {
-            for n in i.names {
-                let info = get_info_for_crate(&n)?;
+            for name in i.args {
+                let info = get_info_for_crate(&name)?;
                 println!("{:#?}", info);
             }
         }
