@@ -3,13 +3,17 @@ use anyhow::Context;
 use anyhow::Result;
 use tool_lib::create_crate_badges_or_refdefs;
 
-pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<String> {
+pub(super) fn create_crate_badge_with_categories(
+    name: &str,
+) -> Result<(String, Vec<String>)> {
     let mut s = String::new();
     let info = tool_lib::get_info_for_crate(name)
         .with_context(|| format!("Unknown crate: {name}"))?;
-    // println!("{:#?}", info);
 
-    let badges = create_crate_badges_or_refdefs(&info.crate_data, tool_lib::GenerationMode::CrateBadges)?;
+    let badges = create_crate_badges_or_refdefs(
+        &info.crate_data,
+        tool_lib::GenerationMode::CrateBadges,
+    )?;
     s.push_str(&badges);
 
     // Add index entries for keywords
@@ -24,20 +28,30 @@ pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<String> {
 
     // Print category badges
     for cat in info.categories {
-        let markdown = tool_lib::create_category_badge(&cat.category, &cat.slug)?;
+        let markdown =
+            tool_lib::create_category_badge(&cat.category, &cat.slug)?;
         s.push_str(&markdown);
     }
     s.push_str("\n\n");
 
-    let desc = create_crate_badges_or_refdefs(&info.crate_data, tool_lib::GenerationMode::CrateDescription)?;
+    let desc = create_crate_badges_or_refdefs(
+        &info.crate_data,
+        tool_lib::GenerationMode::CrateDescription,
+    )?;
     if !desc.is_empty() {
         s.push_str(&(format!("{desc}\n\n")));
     }
 
-    let refdefs = create_crate_badges_or_refdefs(&info.crate_data, tool_lib::GenerationMode::CrateRefdefs)?;
+    let refdefs = create_crate_badges_or_refdefs(
+        &info.crate_data,
+        tool_lib::GenerationMode::CrateRefdefs,
+    )?;
     s.push_str(&refdefs);
 
-    Ok(s)
+    let vector_of_lines: Vec<String> =
+        refdefs.split('\n').map(|str| str.to_string()).collect();
+
+    Ok((s, vector_of_lines))
 }
 
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {

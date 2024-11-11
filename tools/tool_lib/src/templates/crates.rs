@@ -12,7 +12,8 @@ pub(super) static CRATE_BADGES: &str = concat!(
 "[![{crate_name}-github][c-{crate_name | underscored}-github-badge]][c-{crate_name | underscored}-github]",
 r"[![{crate_name}-lib.rs][c-{crate_name | underscored}-lib.rs-badge]][c-{crate_name | underscored}-lib.rs]\{\{hi:{crate_name}}}");
 
-pub(super) static CRATE_DESCRIPTION : &str = "{{- if description_defined }}{description}{{ endif -}}";
+pub(super) static CRATE_DESCRIPTION: &str =
+    "{{- if description_defined }}{description}{{ endif -}}";
 
 /// Reference definitions for the badges above
 pub(super) static CRATE_REFDEFS: &str = "\
@@ -40,34 +41,40 @@ pub fn create_crate_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
 ) -> Result<String> {
-
     #[derive(Serialize)]
     struct Context<'a> {
         crate_name: &'a str,
         description_defined: bool,
         description: &'a str,
         documentation_defined: bool,
-        documentation: String,         // URL e.g. https://docs.rs/{crate}
+        documentation: String, // URL e.g. https://docs.rs/{crate}
         homepage_defined: bool,
-        homepage: &'a str,             // URL e.g. https://github.com/sollimann/bonsai, https://serde.rs
+        homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
         repository_defined: bool,
-        repository: String,            // URL e.g. https://github.com/serde-rs/serde
+        repository: String, // URL e.g. https://github.com/serde-rs/serde
     }
     let tt = super::get_template_engine()?;
     let context = Context {
         crate_name: &crate_data.name,
         description_defined: crate_data.description.is_some(),
-        description: &crate_data.description.as_deref().unwrap_or_default(),
+        description: crate_data.description.as_deref().unwrap_or_default(),
         documentation_defined: crate_data.documentation.is_some(),
         documentation: crate_data.documentation.clone().unwrap_or_default(),
-        homepage_defined: crate_data.homepage.is_some() && (crate_data.homepage != crate_data.repository),
-        homepage: &crate_data.homepage.as_deref().unwrap_or_default(),
+        homepage_defined: crate_data.homepage.is_some()
+            && (crate_data.homepage != crate_data.repository),
+        homepage: crate_data.homepage.as_deref().unwrap_or_default(),
         repository_defined: crate_data.repository.is_some(),
-        repository: crate_data.repository.clone().unwrap_or_default().replace(".git", "")
+        repository: crate_data
+            .repository
+            .clone()
+            .unwrap_or_default()
+            .replace(".git", ""),
     };
     let mut rendered = match mode {
         GenerationMode::CrateBadges => tt.render("CRATE_BADGES", &context)?,
-        GenerationMode::CrateDescription => tt.render("CRATE_DESCRIPTION", &context)?,
+        GenerationMode::CrateDescription => {
+            tt.render("CRATE_DESCRIPTION", &context)?
+        }
         GenerationMode::CrateRefdefs => tt.render("CRATE_REFDEFS", &context)?,
     };
     rendered.trim_in_place();

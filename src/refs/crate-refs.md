@@ -21,7 +21,7 @@
 [c-actix_web-crates.io]: https://crates.io/crates/actix_web
 [c-actix_web-lib.rs-badge]: https://img.shields.io/badge/lib.rs-actix__web-yellow
 [c-actix_web-lib.rs]: https://lib.rs/crates/actix-web
-[c-actix_web-website-badge]: https://img.shields.io/badge/actix--coral
+[c-actix_web-website-badge]: https://img.shields.io/badge/actix__web-coral
 [c-actix_web-website]: https://actix.rs
 [c-actix_web]: https://docs.rs/actix_web
 [c-afl-badge]: https://img.shields.io/crates/v/afl?label=afl

@@ -2,9 +2,8 @@ use anyhow::anyhow;
 use tool_lib::*;
 mod cli;
 mod config_cmd;
-pub(crate) use config_cmd::Cmd;
-pub(crate) use config_cmd::CmdArgs;
-pub(crate) use config_cmd::Config;
+mod merge;
+pub(crate) use config_cmd::*;
 mod create_badge;
 use create_badge::*;
 
@@ -23,8 +22,13 @@ fn main() -> anyhow::Result<()> {
         // Include keywords, categories, description, refdefs
         Cmd::Badges(b) => {
             for name in b.args {
-                let badge = create_crate_badge_with_categories(name.trim())?;
-                println!("{}", badge);
+                let (badges, refdefs) =
+                    create_crate_badge_with_categories(name.trim())?;
+                println!("{}", badges);
+                // -m FILE (or simply -m) was passed as an argument
+                if let Some(ref pathbuf) = b.file {
+                    merge::merge(pathbuf, refdefs)?;
+                }
             }
         }
         // Generate badge(s) for the Rust-by-example book
@@ -49,7 +53,7 @@ fn main() -> anyhow::Result<()> {
             let all_categories = tool_lib::get_all_categories()?;
             for cat in cb.args {
                 let possible_cat_name = cat.trim().to_lowercase();
-                let possible_slug = possible_cat_name.replace(&[' ', '_'], "-");
+                let possible_slug = possible_cat_name.replace([' ', '_'], "-");
                 let matches: Vec<_> = all_categories
                     .iter()
                     .filter(|&c| {

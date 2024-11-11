@@ -22555,6 +22555,8 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap 4.5.20",
+ "clap_builder",
+ "itertools 0.13.0",
  "tool_lib",
  "tracing",
  "tracing-subscriber",

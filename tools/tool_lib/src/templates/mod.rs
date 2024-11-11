@@ -7,15 +7,15 @@ mod category_badge;
 mod crates;
 mod crates_alphabetical;
 mod crates_by_category;
-mod rbe;
 mod index_anchors;
+mod rbe;
 
 pub use category_badge::*;
 pub use crates::*;
 pub use crates_alphabetical::*;
 pub use crates_by_category::*;
-pub use rbe::*;
 pub use index_anchors::*;
+pub use rbe::*;
 
 fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();

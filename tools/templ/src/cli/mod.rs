@@ -1,8 +1,6 @@
 //! The `cli` module is the command line argument parser for the
 //! application
 
-use std::env;
-
 use anyhow::Result;
 
 mod badge_cmd;

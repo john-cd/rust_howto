@@ -1,4 +1,5 @@
 //! The configuration and possible commands of the application
+use std::path::PathBuf;
 
 pub(crate) struct Config {
     pub verbose: bool,
@@ -9,7 +10,7 @@ pub(crate) struct Config {
 pub(crate) enum Cmd {
     #[default]
     None,
-    Badges(CmdArgs),
+    Badges(CmdArgs2),
     Rbe(CmdArgs),
     CategoriesForCrateBadge(CmdArgs),
     CategoryBadges(CmdArgs),
@@ -21,4 +22,10 @@ pub(crate) enum Cmd {
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
     pub args: Vec<String>,
+}
+
+#[derive(Debug)]
+pub(crate) struct CmdArgs2 {
+    pub args: Vec<String>,
+    pub file: Option<PathBuf>,
 }

@@ -16,6 +16,8 @@ publish = false
 [dependencies]
 anyhow = "1.0.92"
 clap = { version = "4.5.20", features = ["cargo"] }
+clap_builder = "4.5.20"
+itertools = "0.13.0"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
