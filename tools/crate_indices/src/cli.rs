@@ -2,9 +2,11 @@ use std::ffi::OsString;
 use std::io;
 use std::io::BufRead;
 use std::io::IsTerminal;
+use std::path::PathBuf;
 
 use clap::Arg;
 use clap::Command;
+use clap_builder::builder::ValueHint;
 
 /// The command that the end user selected
 #[allow(dead_code)]
@@ -15,13 +17,19 @@ pub(crate) enum Cmd {
     CategoryPage(CmdArgs),
     AlphabeticalCratePage(CmdArgs),
     ListCrates,
-    Section,
+    UpdateRefDefs(CmdArgs2),
 }
 
 // The command arguments
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
     pub crate_names: Vec<String>,
+}
+
+#[derive(Debug)]
+pub(crate) struct CmdArgs2 {
+    pub crate_names: Vec<String>,
+    pub filepathbuf: PathBuf,
 }
 
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
@@ -35,12 +43,12 @@ pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
         Ok(Cmd::AlphabeticalCratePage(CmdArgs {
             crate_names: get_crate_names(m),
         }))
-    }
-    // TODO
-    // else if let Some(_m) = matches.subcommand_matches("section") {
-    //    Ok(Cmd::Section)
-    //}
-    else if let Some(_m) = matches.subcommand_matches("list_crates") {
+    } else if let Some(m) = matches.subcommand_matches("update_refdefs") {
+        Ok(Cmd::UpdateRefDefs(CmdArgs2 {
+            crate_names: get_crate_names(m),
+            filepathbuf: get_file_path(m),
+        }))
+    } else if let Some(_m) = matches.subcommand_matches("list_crates") {
         Ok(Cmd::ListCrates)
     } else {
         Ok(Cmd::None)
@@ -68,6 +76,12 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
         .collect::<Vec<String>>()
 }
 
+fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
+    m.get_one::<PathBuf>("file_path")
+        .expect("file_path has a default value")
+        .to_path_buf()
+}
+
 /// Builds the CLI user interface
 fn cli() -> Command {
     clap::command!() // reads name, version, author, and description from `Cargo.toml`
@@ -78,6 +92,7 @@ fn cli() -> Command {
         .subcommand(subcommand_category_page())
         .subcommand(subcommand_alphabetical_page())
         .subcommand(subcommand_list_crates())
+        .subcommand(subcommand_update_refdefs())
 }
 
 /// Builds the `category_page` subcommand of the CLI user interface
@@ -101,10 +116,31 @@ fn subcommand_list_crates() -> Command {
         .about("Returns the list of crates used in the book")
 }
 
+fn subcommand_update_refdefs() -> Command {
+    Command::new("update_refdefs")
+        .visible_alias("u")
+        .about("Update the book's master list of reference definitions, reading the list of crates to include from the file path passed in argument")
+        .arg(arg_crate_name())
+        .arg(arg_file_path())
+}
+
 fn arg_crate_name() -> clap::Arg {
     Arg::new("crate_name")
                 .required(true)
                 .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
                 .action(clap::ArgAction::Append)
                 .help("Enter the crate name(s)")
+}
+
+fn arg_file_path() -> clap::Arg {
+    Arg::new("file_path")
+                .long("file")
+                .short('f')
+                .required(false)
+                .action(clap::ArgAction::Set)
+                .value_name("FILE") // placeholder for the argument's value in the help message / usage.
+                .value_parser(clap::value_parser!(PathBuf))
+                .value_hint(ValueHint::FilePath)
+                .default_value("./src/refs/crate-refs.md")
+                .help("Enter the file path")
 }

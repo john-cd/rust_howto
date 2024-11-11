@@ -3,6 +3,7 @@ mod cli;
 
 use std::collections::HashMap;
 
+use anyhow::Context;
 use anyhow::Result;
 use itertools::Itertools;
 use tool_lib::Category;
@@ -80,7 +81,22 @@ fn main() -> anyhow::Result<()> {
                 println!("{}", crt);
             }
         }
-        cli::Cmd::Section => {}
+        cli::Cmd::UpdateRefDefs(cmdargs) => {
+            let mut all_refdefs = Vec::<String>::new();
+            for name in cmdargs.crate_names.iter().filter(|n| *n != "std") {
+                let info = tool_lib::get_info_for_crate(&name)
+                    .with_context(|| format!("Unknown crate: {name}"))?;
+                let refdefs = tool_lib::create_crate_badges_or_refdefs(
+                    &info.crate_data,
+                    tool_lib::GenerationMode::CrateRefdefs,
+                )?
+                .split('\n')
+                .map(|st| st.to_string())
+                .collect::<Vec<String>>();
+                all_refdefs.extend(refdefs);
+            }
+            tool_lib::merge(cmdargs.filepathbuf, all_refdefs)?;
+        }
     }
     Ok(())
 }

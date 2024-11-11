@@ -2,7 +2,6 @@ use anyhow::anyhow;
 use tool_lib::*;
 mod cli;
 mod config_cmd;
-mod merge;
 pub(crate) use config_cmd::*;
 mod create_badge;
 use create_badge::*;
@@ -27,7 +26,7 @@ fn main() -> anyhow::Result<()> {
                 println!("{}", badges);
                 // -m FILE (or simply -m) was passed as an argument
                 if let Some(ref pathbuf) = b.file {
-                    merge::merge(pathbuf, refdefs)?;
+                    tool_lib::merge(pathbuf, refdefs)?;
                 }
             }
         }

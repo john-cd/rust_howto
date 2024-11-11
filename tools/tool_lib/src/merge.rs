@@ -16,7 +16,7 @@ use itertools::Itertools;
 // - Create a backup copy of the source text file
 // - Sort and deduplicate the merged lines
 // - Write back to the same file
-pub(crate) fn merge<P: AsRef<Path>>(
+pub fn merge<P: AsRef<Path>>(
     filepath: P,
     new_lines: Vec<String>,
 ) -> Result<()> {

@@ -20,7 +20,6 @@ broot
 build-info
 byteorder
 bytes
-candle
 candle-core
 cargo
 cargo-auditable
@@ -81,7 +80,6 @@ flagset
 flate2
 floem
 form-urlencoded
-form_urlencoded
 futures
 futures-executor
 glidesort
@@ -100,12 +98,12 @@ just
 kanal
 kani
 lazy_static
-lens
+lens-rs
 leptos
 lettre
 linfa
 linked-hash-map
-loco
+loco-rs
 log
 log4rs
 lru
@@ -230,5 +228,4 @@ xshell
 xsv
 yapp
 yew
-zed
 zenoh

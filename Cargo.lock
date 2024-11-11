@@ -5611,6 +5611,7 @@ dependencies = [
  "anyhow",
  "cargo_toml 0.20.5",
  "clap 4.5.20",
+ "clap_builder",
  "itertools 0.13.0",
  "tool_lib",
  "tracing",
@@ -23316,6 +23317,9 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "crates_io_api",
+ "itertools 0.13.0",
+ "once_cell",
+ "regex",
  "reqwest 0.12.9",
  "serde 1.0.214",
  "tinytemplate",
