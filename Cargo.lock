@@ -23319,6 +23319,7 @@ dependencies = [
  "tinytemplate",
  "toml 0.8.19",
  "tracing",
+ "trim-in-place",
 ]
 
 [[package]]

@@ -5,7 +5,8 @@ mod config_cmd;
 pub(crate) use config_cmd::Cmd;
 pub(crate) use config_cmd::CmdArgs;
 pub(crate) use config_cmd::Config;
-// mod create_badge;
+mod create_badge;
+use create_badge::*;
 
 fn main() -> anyhow::Result<()> {
     let (config, cmd) = cli::run()?;
@@ -13,15 +14,16 @@ fn main() -> anyhow::Result<()> {
     let log_level = if config.verbose {
         tracing::Level::DEBUG
     } else {
-        tracing::Level::INFO
+        tracing::Level::ERROR
     };
     tracing_subscriber::fmt().with_max_level(log_level).init();
 
     match cmd {
         // Generate badges for one or more crates
+        // Include keywords, categories, description, refdefs
         Cmd::Badges(b) => {
             for name in b.args {
-                let badge = create_badge(&name.trim())?;
+                let badge = create_crate_badge_with_categories(name.trim())?;
                 println!("{}", badge);
             }
         }

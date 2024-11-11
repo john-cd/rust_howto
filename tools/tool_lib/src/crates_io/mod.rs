@@ -3,13 +3,11 @@
 
 mod categories_for_crate;
 mod info;
-// mod validate;
 
 use anyhow::Result;
 pub use categories_for_crate::*;
 use crates_io_api::SyncClient;
 pub use info::*;
-// pub use validate::*;
 
 /// Instantiate the crates.io API client.
 fn get_client() -> Result<SyncClient> {

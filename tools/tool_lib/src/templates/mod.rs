@@ -8,12 +8,14 @@ mod crates;
 mod crates_alphabetical;
 mod crates_by_category;
 mod rbe;
+mod index_anchors;
 
 pub use category_badge::*;
 pub use crates::*;
 pub use crates_alphabetical::*;
 pub use crates_by_category::*;
 pub use rbe::*;
+pub use index_anchors::*;
 
 fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();
@@ -39,9 +41,11 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     tt.add_template("ALPHABETICAL_ROW", ALPHABETICAL_ROW)?;
     tt.add_template("CAT_BADGE", CAT_BADGE)?;
     tt.add_template("CATEGORY_ROW", CATEGORY_ROW)?;
-    tt.add_template("CRATE_BADGE", CRATE_BADGE)?;
+    tt.add_template("CRATE_BADGES", CRATE_BADGES)?;
+    tt.add_template("CRATE_DESCRIPTION", CRATE_DESCRIPTION)?;
     tt.add_template("CRATE_REFDEFS", CRATE_REFDEFS)?;
     tt.add_template("RBE", RBE)?;
+    tt.add_template("INDEX_ANCHORS", INDEX_ANCHORS)?;
     Ok(tt)
 }
 
