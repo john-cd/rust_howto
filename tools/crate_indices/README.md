@@ -10,7 +10,7 @@ To generate `crates_by_category.md`,
 a. Extract all crates listed in `crates.md`
 
 ```sh
-grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./crates/crate_indices/crates.txt
+grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tools/crate_indices/crates.txt
 ```
 
 `(?<= )` and `(?= )` are non-capturing look-behind and look-ahead groups, respectively.
@@ -20,14 +20,14 @@ grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./crat
 b. Optionally, extract all crates currently used in the book examples from `deps/Cargo.toml`
 
 ```sh
-just crate_indices l >> ./crates/crate_indices/crates.txt
-sort -u ./crates/crate_indices/crates.txt > ./crates/crate_indices/crates.txt
+just crate_indices l >> ./tools/crate_indices/crates.txt
+sort -u -o ./tools/crate_indices/crates.txt ./tools/crate_indices/crates.txt
 ```
 
 c. Call the tool:
 
 ```sh
-cat ./crates/crate_indices/crates.txt | just crate_indices c > output.md
+cat ./tools/crate_indices/crates.txt | just crate_indices c > output.md
 ```
 
 `just` calls `cargo run -p crate_indices --`
@@ -39,5 +39,5 @@ You can merge with the existing table in `crates_by_category.md` using `sort -u 
 To generate the alphabetical index of crates, update `crates.txt` then use
 
 ```sh
-cat ./crates/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
+cat ./tools/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
 ```

@@ -1,4 +1,7 @@
+RustQuant
+accesskit
 actix-web
+ansi_term
 anyhow
 approx
 arrow
@@ -14,9 +17,11 @@ bevy
 bitflags
 bonsai-bt
 broot
+build-info
 byteorder
 bytes
 candle
+candle-core
 cargo
 cargo-auditable
 cargo-cache
@@ -38,6 +43,7 @@ cargo-xtask
 cc
 chrono
 clap
+clap-verbosity-flag
 concat-string
 concat_strs
 config
@@ -50,7 +56,7 @@ crossbeam
 crossbeam-channel
 crossbeam-queue
 crossbeam-utils
-crux
+crux_core
 csv
 dashmap
 data-encoding
@@ -58,6 +64,7 @@ datafusion
 derive_more
 diesel
 digest
+doc-comment
 dotenv
 dotenvy
 druid
@@ -74,10 +81,12 @@ flagset
 flate2
 floem
 form-urlencoded
+form_urlencoded
 futures
 futures-executor
 glidesort
 glob
+globset
 gping
 http
 http-body-util
@@ -93,7 +102,9 @@ kani
 lazy_static
 lens
 leptos
+lettre
 linfa
+linked-hash-map
 loco
 log
 log4rs
@@ -131,14 +142,17 @@ once_cell
 open
 opencv
 openrr
+openssl
 parking_lot
 paste
 percent-encoding
 pest
+petgraph
 plotly
 polars
 postage
 postgres
+postscript
 proc-macro2
 pyo3
 pyoxidizer
@@ -150,6 +164,7 @@ ratatui
 rayon
 redis
 regex
+remove_dir_all
 reqwest
 rhai
 riker
@@ -158,6 +173,7 @@ roogle
 ruff
 rui
 rusqlite
+rust_cache
 rustdesk
 rustfmt
 rustquant
@@ -188,6 +204,7 @@ tempfile
 termbook
 thiserror
 threadpool
+time
 tinysearch
 tokio
 tokio-graceful-shutdown
@@ -198,6 +215,7 @@ tower-http
 tracing
 tracing-subscriber
 trillium
+tungstenite
 typesense
 unicode-segmentation
 url
