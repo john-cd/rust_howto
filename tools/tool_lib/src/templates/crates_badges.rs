@@ -64,7 +64,6 @@ pub fn create_crate_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
 ) -> Result<String> {
-
     let tt = super::get_template_engine()?;
 
     // Normalize URL

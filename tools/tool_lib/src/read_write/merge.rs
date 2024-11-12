@@ -1,13 +1,11 @@
 //! Manipulate src/refs/*-refs.md files that contain all the reference
 //! definitions for the book.
 
-use std::fs;
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Write;
 use std::path::Path;
-use std::path::PathBuf;
 
 use anyhow::Result;
 use itertools::Itertools;
@@ -23,9 +21,7 @@ pub fn merge<P: AsRef<Path>>(
     let filepath = filepath.as_ref();
 
     // Create a backup copy of the file...
-    let mut backup = PathBuf::from(filepath);
-    backup.set_extension("bak");
-    fs::copy(filepath, backup)?;
+    super::backup(filepath)?;
 
     let merged_contents: Vec<String>;
     {
@@ -43,6 +39,7 @@ pub fn merge<P: AsRef<Path>>(
     Ok(())
 }
 
+// Vec<String> and &Vec<String> are both AsRef<[u8]>
 fn write_each(
     path: impl AsRef<Path>,
     items: impl IntoIterator<Item = impl AsRef<[u8]>>,

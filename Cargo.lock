@@ -23322,10 +23322,13 @@ dependencies = [
  "regex",
  "reqwest 0.12.9",
  "serde 1.0.214",
+ "similar",
+ "tera",
  "tinytemplate",
  "toml 0.8.19",
  "tracing",
  "trim-in-place",
+ "walkdir",
 ]
 
 [[package]]

@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 use serde::Serialize;
 
 #[derive(Eq, PartialEq, PartialOrd, Ord, Hash, Serialize, Debug)]
