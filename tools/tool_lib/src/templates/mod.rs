@@ -4,14 +4,14 @@ use tinytemplate::TinyTemplate;
 use tracing::info;
 
 mod category_badge;
-mod crates;
+mod crates_badges;
 mod crates_alphabetical;
 mod crates_by_category;
 mod index_anchors;
 mod rbe;
 
 pub use category_badge::*;
-pub use crates::*;
+pub use crates_badges::*;
 pub use crates_alphabetical::*;
 pub use crates_by_category::*;
 pub use index_anchors::*;

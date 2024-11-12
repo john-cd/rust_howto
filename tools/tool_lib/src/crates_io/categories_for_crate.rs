@@ -4,7 +4,7 @@ use tracing::warn;
 use crate::model;
 
 // crates_io_api::Category is not Hash / Ord / Eq,
-// thus we use a new struct that does.
+// thus we use a new struct.
 // Otherwise, we could define a newtype and impl Ord,
 // PartialOrd, PartialEq
 // https://doc.rust-lang.org/stable/core/cmp/trait.Ord.html

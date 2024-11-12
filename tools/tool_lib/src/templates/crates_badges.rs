@@ -44,6 +44,19 @@ pub enum GenerationMode {
     CrateRefdefs,
 }
 
+#[derive(Serialize)]
+struct Context<'a> {
+    crate_name: &'a str,
+    description_defined: bool,
+    description: &'a str,
+    documentation_defined: bool,
+    documentation: &'a str, // URL e.g. https://docs.rs/{crate}
+    homepage_defined: bool,
+    homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
+    repository_defined: bool,
+    repository: String, // URL e.g. https://github.com/serde-rs/serde
+}
+
 /// create_crate_badges_or_refdefs
 ///
 /// crate_name: name of the crate (per crates.io / lib.rs)
@@ -51,18 +64,7 @@ pub fn create_crate_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
 ) -> Result<String> {
-    #[derive(Serialize)]
-    struct Context<'a> {
-        crate_name: &'a str,
-        description_defined: bool,
-        description: &'a str,
-        documentation_defined: bool,
-        documentation: &'a str, // URL e.g. https://docs.rs/{crate}
-        homepage_defined: bool,
-        homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
-        repository_defined: bool,
-        repository: String, // URL e.g. https://github.com/serde-rs/serde
-    }
+
     let tt = super::get_template_engine()?;
 
     // Normalize URL
