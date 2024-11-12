@@ -2,9 +2,9 @@
 
 ## Develop across platforms with Crux
 
-[![crux][c-crux-badge]][c-crux]{{hi:crux}}  [![crux-github][c-crux-github-badge]][c-crux-github]{{hi:Cross-platform development}}
+[![crux_core][c-crux_core-badge]][c-crux_core]{{hi:crux}}  [![crux_core-github][c-crux_core-github-badge]][c-crux_core-github]{{hi:Cross-platform development}}
 
-[`crux`][c-crux]{{hi:crux}}⮳ is an experimental approach to building cross-platform{{hi:Cross-platform}} applications.
+[`crux`][c-crux_core]{{hi:crux_core}}⮳ is an experimental approach to building cross-platform{{hi:Cross-platform}} applications.
 
 It splits the application into two distinct parts, a Core built in Rust, which drives as much of the business logic as possible, and a Shell, built in the platform native language (Swift, Kotlin, TypeScript), which provides all interfaces with the external world, including the human user, and acts as a platform on which the core runs.
 

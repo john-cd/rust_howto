@@ -16,7 +16,7 @@
 This crate provides a `DynClone` trait that can be used in trait objects, and a `clone_box` function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library’s `std::clone::Clone` trait are automatically usable by a DynClone trait object.
 
 ```rust
-{{#include ../../../deps/tests/cats/rust-patterns/dyn_clone.rs:example}}
+{{#include ../../../deps/tests/cats/rust_patterns/dyn_clone.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -29,8 +29,8 @@ TODO review - lens is not used that often:
 
 ## Lens
 
-[![lens][c-lens-badge]][c-lens]{{hi:lens}}
-[![lens-crates.io][c-lens-crates.io-badge]][c-lens-crates.io]
-[![lens-github][c-lens-github-badge]][c-lens-github]
-[![lens-lib.rs][c-lens-lib.rs-badge]][c-lens-lib.rs]
+[![lens_rs][c-lens_rs-badge]][c-lens_rs]{{hi:lens_rs}}
+[![lens_rs-crates.io][c-lens_rs-crates.io-badge]][c-lens_rs-crates.io]
+[![lens_rs-github][c-lens_rs-github-badge]][c-lens_rs-github]
+[![lens_rs-lib.rs][c-lens_rs-lib.rs-badge]][c-lens_rs-lib.rs]
 </div>

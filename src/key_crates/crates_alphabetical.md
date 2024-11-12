@@ -12,7 +12,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## C
 
-[![candle][c-candle-badge]][c-candle]  [![cargo][c-cargo-badge]][c-cargo]  [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]  [![cargo-cache][c-cargo_cache-badge]][c-cargo_cache]  [![cargo-crates][c-cargo_crates-badge]][c-cargo_crates]  [![cargo-edit][c-cargo_edit-badge]][c-cargo_edit]  [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand]  [![cargo-generate][c-cargo_generate-badge]][c-cargo_generate]  [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack]  [![cargo-hakari][c-cargo_hakari-badge]][c-cargo_hakari]  [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]  [![cargo-limit][c-cargo_limit-badge]][c-cargo_limit]  [![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]  [![cargo-make][c-cargo_make-badge]][c-cargo_make]  [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]  [![cargo-tarpaulin][c-cargo_tarpaulin-badge]][c-cargo_tarpaulin]  [![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]  [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard]  [![cargo-xtask][c-cargo_xtask-badge]][c-cargo_xtask]  [![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![concat-string][c-concat_string-badge]][c-concat_string]  [![concat_strs][c-concat_strs-badge]][c-concat_strs]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![cornucopia][c-cornucopia-badge]][c-cornucopia]  [![cosmic-text][c-cosmic_text-badge]][c-cosmic_text]  [![crates_io_api][c-crates_io_api-badge]][c-crates_io_api]  [![cross][c-cross-badge]][c-cross]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![crossbeam-queue][c-crossbeam_queue-badge]][c-crossbeam_queue]  [![crossbeam-utils][c-crossbeam_utils-badge]][c-crossbeam_utils]  [![crux][c-crux-badge]][c-crux]  [![csv][c-csv-badge]][c-csv]
+[![candle_core][c-candle_core-badge]][c-candle_core]  [![cargo][c-cargo-badge]][c-cargo]  [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]  [![cargo-cache][c-cargo_cache-badge]][c-cargo_cache]  [![cargo-crates][c-cargo_crates-badge]][c-cargo_crates]  [![cargo-edit][c-cargo_edit-badge]][c-cargo_edit]  [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand]  [![cargo-generate][c-cargo_generate-badge]][c-cargo_generate]  [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack]  [![cargo-hakari][c-cargo_hakari-badge]][c-cargo_hakari]  [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]  [![cargo-limit][c-cargo_limit-badge]][c-cargo_limit]  [![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]  [![cargo-make][c-cargo_make-badge]][c-cargo_make]  [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]  [![cargo-tarpaulin][c-cargo_tarpaulin-badge]][c-cargo_tarpaulin]  [![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]  [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard]  [![cargo-xtask][c-cargo_xtask-badge]][c-cargo_xtask]  [![cc][c-cc-badge]][c-cc]  [![chrono][c-chrono-badge]][c-chrono]  [![clap][c-clap-badge]][c-clap]  [![concat-string][c-concat_string-badge]][c-concat_string]  [![concat_strs][c-concat_strs-badge]][c-concat_strs]  [![config][c-config-badge]][c-config]  [![confy][c-confy-badge]][c-confy]  [![cornucopia][c-cornucopia-badge]][c-cornucopia]  [![cosmic-text][c-cosmic_text-badge]][c-cosmic_text]  [![crates_io_api][c-crates_io_api-badge]][c-crates_io_api]  [![cross][c-cross-badge]][c-cross]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]  [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]  [![crossbeam-queue][c-crossbeam_queue-badge]][c-crossbeam_queue]  [![crossbeam-utils][c-crossbeam_utils-badge]][c-crossbeam_utils]  [![crux_core][c-crux_core-badge]][c-crux_core]  [![csv][c-csv-badge]][c-csv]
 
 ## D
 
@@ -48,7 +48,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## L
 
-[![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![lens][c-lens-badge]][c-lens]  [![leptos][c-leptos-badge]][c-leptos]  [![linfa][c-linfa-badge]][c-linfa]  [![loco][c-loco-badge]][c-loco]  [![log][c-log-badge]][c-log]  [![log4rs][c-log4rs-badge]][c-log4rs]  [![lru][c-lru-badge]][c-lru]  [![lsd][c-lsd-badge]][c-lsd]
+[![lazy_static][c-lazy_static-badge]][c-lazy_static]  [![lens][c-lens_rs-badge]][c-lens_rs]  [![leptos][c-leptos-badge]][c-leptos]  [![linfa][c-linfa-badge]][c-linfa]  [![loco_rs][c-loco_rs-badge]][c-loco_rs]  [![log][c-log-badge]][c-log]  [![log4rs][c-log4rs-badge]][c-log4rs]  [![lru][c-lru-badge]][c-lru]  [![lsd][c-lsd-badge]][c-lsd]
 
 ## M
 
@@ -100,7 +100,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## Z
 
-[![zed][c-zed-badge]][c-zed]  [![zenoh][c-zenoh-badge]][c-zenoh]
+[![zed][c-zed-badge]][c-zed-website]  [![zenoh][c-zenoh-badge]][c-zenoh]
 
 {{#include ../refs/link-refs.md}}
 

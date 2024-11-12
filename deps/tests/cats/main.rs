@@ -21,7 +21,7 @@ mod concurrency;
 mod config;
 mod cryptography;
 mod data_structures;
-mod databases;
+mod database;
 mod date_and_time;
 mod development_tools;
 mod development_tools_build_utils;

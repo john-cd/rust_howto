@@ -244,6 +244,7 @@
 [c-broot-lib.rs-badge]: https://img.shields.io/badge/lib.rs-broot-yellow
 [c-broot-lib.rs]: https://lib.rs/crates/broot
 [c-broot-website-badge]: https://img.shields.io/badge/broot-coral
+[c-broot-website]: https://dystroy.org/broot
 [c-broot]: https://dystroy.org/broot
 [c-build_info-badge]: https://img.shields.io/crates/v/build-info?label=build-info
 [c-build_info-crates.io-badge]: https://img.shields.io/badge/crates.io-build--info-crimson
@@ -1646,6 +1647,7 @@
 [c-miri-github]: https://github.com/rust-lang/miri
 [c-miri-lib.rs-badge]: https://img.shields.io/badge/lib.rs-miri-yellow
 [c-miri-lib.rs]: https://lib.rs/crates/miri
+[c-miri]: https://github.com/rust-lang/miri
 [c-mongodb-badge]: https://img.shields.io/crates/v/mongodb?label=mongodb
 [c-mongodb-crates.io-badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
 [c-mongodb-crates.io]: https://crates.io/crates/mongodb

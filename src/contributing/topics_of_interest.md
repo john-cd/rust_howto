@@ -16,7 +16,7 @@
 - Errors: `color-eyre`, [`eyre`][c-eyre]{{hi:eyre}}⮳
 - Testing: [`approx`][c-approx]{{hi:approx}}⮳, [`nextest`][c-cargo_nextest-website]{{hi:nextest}}⮳
 - [`axum`][c-axum]{{hi:axum}}⮳
-- [`loco`][c-loco]{{hi:loco}}⮳
+- [`loco`][c-loco_rs]{{hi:loco_rs}}⮳
 - shuttle.rs
 - [`reqwest`][c-reqwest]{{hi:reqwest}}⮳
 - [`tonic`][c-tonic]{{hi:tonic}}⮳

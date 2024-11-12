@@ -6,7 +6,7 @@
 
 ## Candle
 
-[Candle Documentation][c-candle-docs]{{hi:candle}}⮳
+[Candle Documentation][c-candle_core-docs]{{hi:candle}}⮳
 
 [meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use][blog-candle]⮳
 

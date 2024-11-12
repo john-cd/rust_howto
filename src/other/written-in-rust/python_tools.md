@@ -15,7 +15,7 @@
 
 ## Ruff
 
-[Ruff][c-ruff-website]{{hi:ruff}}⮳
+[Ruff][c-ruff]{{hi:ruff}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

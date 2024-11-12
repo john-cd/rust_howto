@@ -17,7 +17,7 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 
 ## Zed
 
-[![zed][c-zed-badge]][c-zed]{{hi:zed}}
+[![zed][c-zed-badge]][c-zed-website]{{hi:zed}}
 [![zed-crates.io][c-zed-crates.io-badge]][c-zed-crates.io]
 [![zed-github][c-zed-github-badge]][c-zed-github]
 [![zed-lib.rs][c-zed-lib.rs-badge]][c-zed-lib.rs]
