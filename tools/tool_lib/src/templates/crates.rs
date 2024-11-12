@@ -77,7 +77,7 @@ pub fn create_crate_badges_or_refdefs(
         description_defined: crate_data.description.is_some(),
         description: crate_data.description.as_deref().unwrap_or_default(),
         documentation_defined: crate_data.documentation.is_some(),
-        documentation: &documentation.trim_end_matches('/'),
+        documentation: documentation.trim_end_matches('/'),
         homepage_defined: crate_data.homepage.is_some()
             && (crate_data.homepage != crate_data.repository),
         homepage: crate_data
@@ -109,7 +109,7 @@ pub fn create_crate_badges_or_refdefs(
 // Normalize e.g. https://docs.rs/crate/termbook to https://docs.rs/termbook
 // Normalize e.g. https://docs.rs/tungstenite/0.24.0 to https://docs.rs/tungstenite
 // Normalize e.g. https://docs.rs/watchmaker/0.1.0/watchmaker/fn.solve.html to https://docs.rs/watchmaker
-fn normalize_docs_url<'h>(url: &'h str) -> std::borrow::Cow<'h, str> {
+fn normalize_docs_url(url: &str) -> std::borrow::Cow<str> {
     let re1: &Regex =
         regex!(r"http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
     // If no match is found, then the haystack is returned unchanged.

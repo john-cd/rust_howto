@@ -84,7 +84,7 @@ fn main() -> anyhow::Result<()> {
         cli::Cmd::UpdateRefDefs(cmdargs) => {
             let mut all_refdefs = Vec::<String>::new();
             for name in cmdargs.crate_names.iter().filter(|n| *n != "std") {
-                let info = tool_lib::get_info_for_crate(&name)
+                let info = tool_lib::get_info_for_crate(name)
                     .with_context(|| format!("Unknown crate: {name}"))?;
                 let refdefs = tool_lib::create_crate_badges_or_refdefs(
                     &info.crate_data,
