@@ -146,7 +146,6 @@ ignore = false
 # is only published to private registries, and ignore is true, the crate will
 # not have its license(s) checked
 registries = [
-    #"https://sekretz.com/registry
 ]
 
 # This section is considered when running `cargo deny check bans`.

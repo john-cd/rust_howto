@@ -283,7 +283,8 @@ check_urls:
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
 # This does not check whether the reference definitions are used - see below.
 
-# Identify duplicate URLs
+# Identify duplicated URLs
+# This can't always be avoided.
 duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
 

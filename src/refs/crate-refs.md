@@ -43,7 +43,7 @@
 [c-ansi_term-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ansi__term-yellow
 [c-ansi_term-lib.rs]: https://lib.rs/crates/ansi_term
 [c-ansi_term::ANSIString]: https://docs.rs/ansi_term/latest/ansi_term/type.ANSIString.html
-[c-ansi_term::Color]: https://docs.rs/ansi_term/latest/ansi_term/enum.Color.html
+[c-ansi_term::Color]: https://docs.rs/ansi_term/latest/ansi_term/enum.Colour.html
 [c-ansi_term::Style::new]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html#method.new
 [c-ansi_term::Style]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html
 [c-ansi_term]: https://docs.rs/ansi_term
@@ -226,8 +226,6 @@
 [c-bitflags-lib.rs]: https://lib.rs/crates/bitflags
 [c-bitflags::bitflags]: https://docs.rs/bitflags/latest/bitflags/macro.bitflags.html
 [c-bitflags]: https://docs.rs/bitflags
-[c-bonsai-bt-github-badge]: https://img.shields.io/badge/bonsai__bt-steelblue?logo=github
-[c-bonsai-bt-github]: https://github.com/Sollimann/bonsai
 [c-bonsai_bt-badge]: https://img.shields.io/crates/v/bonsai-bt?label=bonsai-bt
 [c-bonsai_bt-crates.io-badge]: https://img.shields.io/badge/crates.io-bonsai--bt-crimson
 [c-bonsai_bt-crates.io]: https://crates.io/crates/bonsai_bt
@@ -246,7 +244,6 @@
 [c-broot-lib.rs-badge]: https://img.shields.io/badge/lib.rs-broot-yellow
 [c-broot-lib.rs]: https://lib.rs/crates/broot
 [c-broot-website-badge]: https://img.shields.io/badge/broot-coral
-[c-broot-website]: https://dystroy.org/broot
 [c-broot]: https://dystroy.org/broot
 [c-build_info-badge]: https://img.shields.io/crates/v/build-info?label=build-info
 [c-build_info-crates.io-badge]: https://img.shields.io/badge/crates.io-build--info-crimson
@@ -280,15 +277,6 @@
 [c-bytes-lib.rs-badge]: https://img.shields.io/badge/lib.rs-bytes-yellow
 [c-bytes-lib.rs]: https://lib.rs/crates/bytes
 [c-bytes]: https://docs.rs/bytes
-[c-candle-badge]: https://img.shields.io/crates/v/candle?label=candle
-[c-candle-crates.io-badge]: https://img.shields.io/badge/crates.io-candle-crimson
-[c-candle-crates.io]: https://crates.io/crates/candle-core
-[c-candle-docs]: https://huggingface.github.io/candle
-[c-candle-github-badge]: https://img.shields.io/badge/candle-steelblue?logo=github
-[c-candle-github]: https://github.com/_TODO
-[c-candle-lib.rs-badge]: https://img.shields.io/badge/lib.rs-candle-yellow
-[c-candle-lib.rs]: https://lib.rs/crates/candle-core
-[c-candle]: https://docs.rs/candle_core
 [c-candle_core-badge]: https://img.shields.io/crates/v/candle-core?label=candle-core
 [c-candle_core-crates.io-badge]: https://img.shields.io/badge/crates.io-candle--core-crimson
 [c-candle_core-crates.io]: https://crates.io/crates/candle_core
@@ -301,7 +289,6 @@
 [c-cargo-book]: https://doc.rust-lang.org/stable/cargo
 [c-cargo-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo-crimson
 [c-cargo-crates.io]: https://crates.io/crates/cargo
-[c-cargo-docs.rs]: https://docs.rs/cargo
 [c-cargo-github-badge]: https://img.shields.io/badge/cargo-steelblue?logo=github
 [c-cargo-github]: https://github.com/rust-lang/cargo
 [c-cargo-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo-yellow
@@ -627,7 +614,7 @@
 [c-color_eyre-crates.io-badge]: https://img.shields.io/badge/crates.io-color--eyre-crimson
 [c-color_eyre-crates.io]: https://crates.io/crates/color_eyre
 [c-color_eyre-github-badge]: https://img.shields.io/badge/color--eyre-steelblue?logo=github
-[c-color_eyre-github]: https://github.com/eyre-rs/eyre
+[c-color_eyre-github]: https://github.com/eyre-rs/eyre/tree/master/color-eyre
 [c-color_eyre-lib.rs-badge]: https://img.shields.io/badge/lib.rs-color--eyre-yellow
 [c-color_eyre-lib.rs]: https://lib.rs/crates/color-eyre
 [c-color_eyre]: https://docs.rs/color_eyre
@@ -763,14 +750,6 @@
 [c-crossterm-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crossterm-yellow
 [c-crossterm-lib.rs]: https://lib.rs/crates/crossterm
 [c-crossterm]: https://docs.rs/crossterm
-[c-crux-badge]: https://img.shields.io/crates/v/crux_core?label=crux_core
-[c-crux-crates.io-badge]: https://img.shields.io/badge/crates.io-crux__core-crimson
-[c-crux-crates.io]: https://crates.io/crates/crux_core
-[c-crux-github-badge]: https://img.shields.io/badge/crux__core-steelblue?logo=github
-[c-crux-github]: https://redbadger.github.io/crux
-[c-crux-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crux__core-yellow
-[c-crux-lib.rs]: https://lib.rs/crates/crux_core
-[c-crux]: https://docs.rs/crux_core
 [c-crux_core-badge]: https://img.shields.io/crates/v/crux_core?label=crux_core
 [c-crux_core-crates.io-badge]: https://img.shields.io/badge/crates.io-crux__core-crimson
 [c-crux_core-crates.io]: https://crates.io/crates/crux_core
@@ -1450,18 +1429,6 @@
 [c-linked_hash_map-lib.rs-badge]: https://img.shields.io/badge/lib.rs-linked--hash--map-yellow
 [c-linked_hash_map-lib.rs]: https://lib.rs/crates/linked-hash-map
 [c-linked_hash_map]: https://docs.rs/linked-hash-map
-[c-loco-badge]: https://img.shields.io/crates/v/loco-rs?label=loco-rs
-[c-loco-blog]: https://www.shuttle.rs/blog/2023/12/28/using-loco-rust-rails
-[c-loco-crates.io-badge]: https://img.shields.io/badge/crates.io-loco--rs-crimson
-[c-loco-crates.io]: https://crates.io/crates/loco-rs
-[c-loco-docs]: https://loco.rs/docs/getting-started/guide
-[c-loco-github-badge]: https://img.shields.io/badge/loco-steelblue?logo=github
-[c-loco-github]: https://github.com/loco-rs/loco
-[c-loco-lib.rs-badge]: https://img.shields.io/badge/lib.rs-loco--rs-yellow
-[c-loco-lib.rs]: https://lib.rs/crates/loco-rs
-[c-loco-website-badge]: https://img.shields.io/badge/loco--rs-coral
-[c-loco-website]: https://loco.rs
-[c-loco]: https://docs.rs/loco-rs
 [c-loco_rs-badge]: https://img.shields.io/crates/v/loco-rs?label=loco-rs
 [c-loco_rs-crates.io-badge]: https://img.shields.io/badge/crates.io-loco--rs-crimson
 [c-loco_rs-crates.io]: https://crates.io/crates/loco_rs
@@ -1679,7 +1646,6 @@
 [c-miri-github]: https://github.com/rust-lang/miri
 [c-miri-lib.rs-badge]: https://img.shields.io/badge/lib.rs-miri-yellow
 [c-miri-lib.rs]: https://lib.rs/crates/miri
-[c-miri]: https://docs.rs/miri
 [c-mongodb-badge]: https://img.shields.io/crates/v/mongodb?label=mongodb
 [c-mongodb-crates.io-badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
 [c-mongodb-crates.io]: https://crates.io/crates/mongodb
@@ -2277,7 +2243,6 @@
 [c-ruff-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ruff-yellow
 [c-ruff-lib.rs]: https://lib.rs/crates/ruff
 [c-ruff-website-badge]: https://img.shields.io/badge/ruff-coral
-[c-ruff-website]: https://docs.astral.sh/ruff
 [c-ruff]: https://docs.astral.sh/ruff
 [c-rug-badge]: https://img.shields.io/crates/v/rug?label=rug
 [c-rug-crates.io-badge]: https://img.shields.io/badge/crates.io-rug-crimson
@@ -2833,7 +2798,7 @@
 [c-termbook-lib.rs-badge]: https://img.shields.io/badge/lib.rs-termbook-yellow
 [c-termbook-lib.rs]: https://lib.rs/crates/termbook
 [c-termbook-website-badge]: https://img.shields.io/badge/termbook-coral
-[c-termbook-website]: https://github.com/Byron/termbook/lib/termbook
+[c-termbook-website]: https://docs.rs/ansi_term/latest/ansi_term/enum.Colour.html
 [c-termbook]: https://docs.rs/termbook
 [c-thiserror-badge]: https://img.shields.io/crates/v/thiserror?label=thiserror
 [c-thiserror-crates.io-badge]: https://img.shields.io/badge/crates.io-thiserror-crimson
