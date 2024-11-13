@@ -9,14 +9,16 @@ use tera::Tera;
 use crate::model::book::Renderable;
 use crate::read_write;
 
+mod filters;
+use filters::*;
+
 static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     Tera::new("templates/**/*").map(|mut t| {
-        t.autoescape_on(vec![".html"]);
-        // TODO
-        // Filters are functions with the fn(Value, HashMap<String, Value>) ->
-        // Result<Value> definition t.register_filter("do_nothing",
-        // do_nothing_filter); t.register_filter("upper",
-        // string::upper);
+        // By default, Tera will auto-escape all content in files ending with
+        // ".html", ".htm" and ".xml". t.autoescape_on(vec![".html",
+        // ".xml"]);
+        t.register_filter("underscored", underscored);
+        t.register_filter("shielded", shielded);
         t
     })
 });
