@@ -1,2 +1,2 @@
-[ex-test-your-code]: index.md
-[ex-emit-custom-message]: index.md#custom-message
+[ex-test-your-code]: _index.md
+[ex-emit-custom-message]: _index.md#custom-message

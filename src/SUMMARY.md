@@ -53,14 +53,14 @@
 
 ---
 
-- [Accessibility](categories/accessibility/index.md)
+- [Accessibility](categories/accessibility/_index.md)
   - [Enable screen readers](categories/accessibility/screen_readers.md)
 
 - [Algorithms](categories/algorithms/index.md)
   - [Generate random values](categories/algorithms/randomness.md)
   - [Sort a vector](categories/algorithms/sorting.md)
 
-- [API bindings](categories/api-bindings/index.md)
+- [API bindings](categories/api-bindings/_index.md)
   - [Interop with Python](categories/api-bindings/python_interop.md)
 
 - [Asynchronous](categories/asynchronous/index.md)
@@ -74,7 +74,7 @@
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
 
-- [Caching](categories/caching/index.md)
+- [Caching](categories/caching/_index.md)
   - [LRU caching](categories/caching/lru.md)
 
 - [Cloud](other/cloud/index.md)
@@ -93,7 +93,7 @@
   - [Shells](categories/command-line-utilities/shells.md)
   - [Networking](categories/command-line-utilities/networking.md)
 
-- [Compilers](categories/compilers/index.md)
+- [Compilers](categories/compilers/_index.md)
   - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
   - [Faster linking](categories/compilers/faster_linking.md)
   - [Cross-compilation](categories/compilers/cross_compilation.md)
@@ -101,7 +101,7 @@
 - [Compression](categories/compression/index.md)
   - [Working with tarballs](categories/compression/tar.md)
 
-- [Computer vision](categories/computer-vision/index.md)
+- [Computer vision](categories/computer-vision/_index.md)
   - [Open CV](categories/computer-vision/opencv.md)
 
 - [Concurrency](categories/concurrency/index.md)
@@ -140,7 +140,7 @@
   - [NoSQL](categories/database/nosql.md)
   - [Search](categories/database/search.md)
 
-- [Database implementations](categories/database-implementations/index.md)
+- [Database implementations](categories/database-implementations/_index.md)
 
 - [Date and time](categories/date-and-time/index.md)
   - [Duration and calculation](categories/date-and-time/duration.md)
@@ -181,18 +181,18 @@
   - [Log messages](categories/development-tools_debugging/log.md)
   - [Logging configuration](categories/development-tools_debugging/config_log.md)
 
-- [Development tools - FFI](categories/development-tools_ffi/index.md)
+- [Development tools - FFI](categories/development-tools_ffi/_index.md)
 
-- [Development tools - procedural macro helpers](categories/development-tools_procedural-macro-helpers/index.md)
+- [Development tools - procedural macro helpers](categories/development-tools_procedural-macro-helpers/_index.md)
 
-- [Development tools - performance, profiling](categories/development-tools_profiling/index.md)
+- [Development tools - performance, profiling](categories/development-tools_profiling/_index.md)
 
-- [Development tools - testing](categories/development-tools_testing/index.md)
+- [Development tools - testing](categories/development-tools_testing/_index.md)
   - [Testing](categories/development-tools_testing/testing.md)
 
-- [Email](categories/email/index.md)
+- [Email](categories/email/_index.md)
 
-- [Embedded development](categories/embedded/index.md)
+- [Embedded development](categories/embedded/_index.md)
 
 - [Encoding and serialization](categories/encoding/index.md)
   - [Character sets](categories/encoding/strings.md)
@@ -208,25 +208,25 @@
   - [Read & write](categories/filesystem/read-write.md)
   - [Directory traversal](categories/filesystem/dir.md)
 
-- [Finance](categories/finance/index.md)
+- [Finance](categories/finance/_index.md)
   - [Quant](categories/finance/quant.md)
 
-- [Game engines](categories/game-engines/index.md)
+- [Game engines](categories/game-engines/_index.md)
   - [Game engines](categories/game-engines/game_engines.md)
 
-- [Graphics](categories/graphics/index.md)
+- [Graphics](categories/graphics/_index.md)
 
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
 
-- [GUI](categories/gui/index.md)
+- [GUI](categories/gui/_index.md)
 
 - [Hardware support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
 
-- [Internationalization](categories/internationalization/index.md)
+- [Internationalization](categories/internationalization/_index.md)
 
-- [Localization](categories/localization/index.md)
+- [Localization](categories/localization/_index.md)
 
 - [Machine learning](categories/science/machine_learning/index.md)
 
@@ -241,33 +241,33 @@
   - [Global static](categories/memory-management/global_static.md)
   - [Lazy initialization](categories/memory-management/lazy_initialization.md)
 
-- [Multimedia](categories/multimedia/index.md)
+- [Multimedia](categories/multimedia/_index.md)
 
-- [Network](categories/network-programming/index.md)
+- [Network](categories/network-programming/_index.md)
   - [Server](categories/network-programming/server.md)
 
-- [No std](categories/no-std/index.md)
+- [No std](categories/no-std/_index.md)
 
 - [Operating systems](categories/os/index.md)
   - [External commands](categories/os/external.md)
 
 - [Other domains](other/index.md)
 
-- [Parsing](categories/parsing/index.md)
+- [Parsing](categories/parsing/_index.md)
 
-- [Rendering](categories/rendering/index.md)
+- [Rendering](categories/rendering/_index.md)
 
-- [Robotics](categories/science_robotics/index.md)
+- [Robotics](categories/science_robotics/_index.md)
 
 - [Rust patterns](categories/rust-patterns/index.md)
   - [Design patterns](categories/rust-patterns/design_patterns.md)
 
-- [Science](categories/science/index.md)
+- [Science](categories/science/_index.md)
 
 - [Scripting](other/scripting/index.md)
   - [Rhai](other/scripting/rhai.md)
 
-- [Simulation](categories/simulation/index.md)
+- [Simulation](categories/simulation/_index.md)
 
 - [Template engines](categories/template-engine/index.md)
 
@@ -279,11 +279,11 @@
     - [Longer regex example](categories/text-processing/regex2.md)
   - [String parsing](categories/text-processing/string_parsing.md)
 
-- [Virtualization](categories/virtualization/index.md)
+- [Virtualization](categories/virtualization/_index.md)
 
-- [Visualization](categories/visualization/index.md)
+- [Visualization](categories/visualization/_index.md)
 
-- [Web assembly](categories/wasm/index.md)
+- [Web assembly](categories/wasm/_index.md)
   - [Yew](categories/wasm/yew.md)
 
 - [Web programming](categories/web-programming/index.md)
@@ -304,9 +304,9 @@
   - [Middleware](categories/web-programming_http-server/middleware.md)
   - [CORS](categories/web-programming_http-server/cors.md)
 
-- [Web programming - websocket](categories/web-programming_websocket/index.md)
+- [Web programming - websocket](categories/web-programming_websocket/_index.md)
 
-- [Windows](categories/os_windows-apis/index.md)
+- [Windows](categories/os_windows-apis/_index.md)
 
 - [Written in Rust](other/written-in-rust/index.md)
   - [Development tools](other/written-in-rust/development_tools.md)

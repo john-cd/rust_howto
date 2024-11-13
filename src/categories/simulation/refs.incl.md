@@ -1,1 +1,1 @@
-[ex-simulation]: index.md
+[ex-simulation]: _index.md

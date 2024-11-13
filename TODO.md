@@ -2,7 +2,7 @@
 
 - [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
 - [ ] rewrite rest_post.rs so that a username and password are not required?
-- [ ] autogen: generate chapters: index.md, index.incl.md, refs.incl.md, subchapters... for all categories
+- [ ] autogen: generate chapters: index.md, index.incl.md, refs.incl.md, subchapters... for all categories - WIP
 - [ ] autogenerate index of examples with correct refdefs
 - [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?

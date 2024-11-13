@@ -1,1 +1,1 @@
-[ex-windows]: index.md
+[ex-windows]: _index.md

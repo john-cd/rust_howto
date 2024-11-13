@@ -1,1 +1,1 @@
-[ex-localization]: index.md
+[ex-localization]: _index.md

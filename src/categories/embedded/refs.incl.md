@@ -1,1 +1,1 @@
-[ex-embedded]: index.md
+[ex-embedded]: _index.md

@@ -1,1 +1,1 @@
-[ex-multimedia]: index.md
+[ex-multimedia]: _index.md

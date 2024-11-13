@@ -1,1 +1,1 @@
-[ex-visualization]: index.md
+[ex-visualization]: _index.md

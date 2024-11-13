@@ -1,1 +1,1 @@
-[ex-??]: index.md
+[ex-??]: _index.md

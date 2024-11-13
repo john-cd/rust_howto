@@ -1,1 +1,1 @@
-[ex-no-std]: index.md
+[ex-no-std]: _index.md

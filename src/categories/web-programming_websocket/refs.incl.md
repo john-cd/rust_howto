@@ -1,1 +1,1 @@
-[ex-websocket]: index.md
+[ex-websocket]: _index.md

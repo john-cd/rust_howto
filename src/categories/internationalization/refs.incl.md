@@ -1,1 +1,1 @@
-[ex-internationalization]: index.md
+[ex-internationalization]: _index.md
