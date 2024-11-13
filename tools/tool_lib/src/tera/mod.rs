@@ -15,8 +15,8 @@ use filters::*;
 static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     Tera::new("templates/**/*").map(|mut t| {
         // By default, Tera will auto-escape all content in files ending with
-        // ".html", ".htm" and ".xml". t.autoescape_on(vec![".html",
-        // ".xml"]);
+        // ".html", ".htm" and ".xml".
+        // t.autoescape_on(vec![".html", ".xml"]);
         t.register_filter("underscored", underscored);
         t.register_filter("shielded", shielded);
         t
@@ -27,7 +27,7 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
 pub fn render(r: impl Renderable) -> Result<()> {
     let templ: &Result<Tera, tera::Error> = &TEMPLATES;
     if let Err(e) = templ {
-        bail!("Tera template engine failed to initialize: {}", e);
+        bail!("The Tera template engine failed to initialize: {}", e);
     }
     let context = Context::from_serialize(&r)?;
     render_one(r, &context)?;

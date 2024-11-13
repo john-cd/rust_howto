@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 
-// use std::collections::HashMap;
-
 use serde::Serialize;
 
 use super::*;
@@ -13,12 +11,13 @@ pub struct Chapter {
 }
 
 // impl Renderable for Chapter {
-//     fn get_templates() -> Vec<String> {
-//         vec![
-//             "chapter/index.md".into(),
-//             "chapter/index.incl.md".into(),
-//             "chapter/refs.incl.md".into(),
-//         ]
+//     fn get_what_to_render(&self) -> Vec<RenderInfo> {
+//         vec![ RenderInfo::new("chapter/index.md".into(),
+// "categories/{{chapter}}".into()),         RenderInfo::new("chapter/index.
+// incl.md".into(), "categories/{{chapter}}".into()),         RenderInfo::new("
+// chapter/refs.incl.md".into(), "categories/{{chapter}}".into()) ]     }
+//     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable> {
+//         self.subchapters.iter()
 //     }
 // }
 

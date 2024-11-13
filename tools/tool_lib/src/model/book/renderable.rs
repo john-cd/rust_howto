@@ -5,10 +5,19 @@ pub trait Renderable: Serialize {
     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable>;
 }
 
-// struct Render<T> {
-//   : String,
-//   data: T,
-// }
+// An empty implementation of the trait
+#[derive(Serialize, Debug)]
+pub struct Render;
+
+impl Renderable for Render {
+    fn get_what_to_render(&self) -> Vec<RenderInfo> {
+        vec![]
+    }
+
+    fn get_children(&self) -> impl IntoIterator<Item = impl Renderable> {
+        std::iter::empty::<Render>()
+    }
+}
 
 // All the information required to render a given chapter / subchapter / index
 #[derive(Serialize, Debug)]
@@ -20,7 +29,7 @@ pub struct RenderInfo {
 }
 
 impl RenderInfo {
-    fn new(template_name: String, dest_filepath_template: String) -> Self {
+    pub fn new(template_name: String, dest_filepath_template: String) -> Self {
         Self {
             template_name,
             dest_filepath_template,

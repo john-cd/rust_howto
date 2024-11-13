@@ -15,7 +15,3 @@ pub enum RenderableObjects {
     Subchapter(Subchapter),
     ExampleIndex(ExampleIndex),
 }
-
-// TODO
-// impl Renderable for RenderableObjects {
-// }
