@@ -3,8 +3,9 @@
 fn parse_response(
     response: reqwest::blocking::Response,
 ) -> anyhow::Result<u32> {
-    let mut body = response.text()?;
-    body.pop(); // Removes the last character from the string buffer
+    let body = response.text()?;
+    let body = body.trim();
+    // println!("{body}");
     let b = body.parse::<u32>()?;
     Ok(b)
 }

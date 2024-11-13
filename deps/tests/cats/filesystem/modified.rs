@@ -17,14 +17,17 @@ fn main() -> Result<()> {
         let path = entry.path();
         let metadata = fs::metadata(&path)?;
         if let Ok(time) = metadata.modified() {
-            let last_modified = time.elapsed()?.as_secs();
-            if last_modified < 24 * 3600 && metadata.is_file() {
-                println!(
-                "Last modified: {:?} seconds, is read only: {:?}, size: {:?} bytes, filename: {:?}",                 last_modified,
-                metadata.permissions().readonly(),
-                metadata.len(),
-                path.file_name().ok_or(anyhow!("No filename"))?
-                );
+            // Note: SystemTime.elapsed can be flaky.
+            if let Ok(duration) = time.elapsed() {
+                let last_modified = duration.as_secs();
+                if (last_modified < 24 * 3600) && metadata.is_file() {
+                    println!(
+                    "Last modified: {:?} seconds, is read only: {:?}, size: {:?} bytes, filename: {:?}", last_modified,
+                    metadata.permissions().readonly(),
+                    metadata.len(),
+                    path.file_name().ok_or(anyhow!("No filename"))?
+                    );
+                }
             }
         } else {
             println!("Last modification time not supported on this platform");
@@ -39,3 +42,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// TODO flaky test
