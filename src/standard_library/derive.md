@@ -18,7 +18,7 @@ See also:
 
 - [Derive][book-rust-reference-derive]⮳
 
-## Derive More
+## Derive More {#derive_more}
 
 [![derive_more][c-derive_more-badge]][c-derive_more]{{hi:derive_more}}
 

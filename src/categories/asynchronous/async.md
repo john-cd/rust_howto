@@ -6,7 +6,7 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 
 [Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 
-## Basic Example
+## Basic Example {#basic-example}
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -16,7 +16,7 @@ Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} fo
 
 As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
 
-## Differences with other languages
+## Differences with other languages {#diff-other-languages}
 
 Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ differs from most languages in a few ways:
 
@@ -31,14 +31,14 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
 - Both single- and multi-threaded runtimes{{hi:Multithreaded runtimes}} are available.
 
-## Which crate provides what?
+## Which crate provides what? {#which-crate-provides-what}
 
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async-std}}. Most async applications, and some async crates, depend on a specific runtime.
 
-## Async runtimes
+## Async runtimes {#async-runtimes}
 
 [![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}}  [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 

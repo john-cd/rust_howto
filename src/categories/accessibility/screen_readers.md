@@ -1,6 +1,6 @@
 # Screen Readers
 
-## Make a user interface accessible to screen readers
+## Make a user interface accessible to screen readers {#accesskit}
 
 [![accesskit][c-accesskit-badge]][c-accesskit]{{hi:accesskit}}
 [![accesskit-crates.io][c-accesskit-crates.io-badge]][c-accesskit-crates.io]

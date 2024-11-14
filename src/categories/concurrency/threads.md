@@ -2,7 +2,7 @@
 
 {{#include threads.incl.md}}
 
-## Spawn a short-lived thread
+## Spawn a short-lived thread {#spawn-a-short-lived-thread}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:short-lived thread}}
 
@@ -14,7 +14,7 @@ This example splits the array in half and performs the work in separate threads.
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_spawn.rs:example}}
 ```
 
-## Create a parallel pipeline
+## Create a parallel pipeline {#parallel-pipeline}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -31,7 +31,7 @@ Reading from the channels via the iterator
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_complex.rs:example}}
 ```
 
-## Pass data between two threads
+## Pass data between two threads {#pass-data-between-two-threads}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -41,7 +41,7 @@ This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_spsc.rs:example}}
 ```
 
-## Maintain global mutable state
+## Maintain global mutable state {#global-mutable-state}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Global mutable state}}
 
@@ -51,7 +51,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 {{#include ../../../deps/tests/cats/concurrency/global_mut_state.rs:example}}
 ```
 
-## Calculate SHA256 sum of iso files concurrently
+## Calculate SHA256 sum of iso files concurrently {#sha256-of-iso-files-concurrently}
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][{{hi:Concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -61,7 +61,7 @@ This example calculates the SHA256{{hi:SHA256}} for every file with iso extensio
 {{#include ../../../deps/tests/cats/concurrency/threadpool_walk.rs:example}}
 ```
 
-## Draw fractal dispatching work to a thread pool
+## Draw fractal dispatching work to a thread pool {#draw-fractal-threadpool}
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num][c-num-badge]][c-num]{{hi:num}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![image][c-image-badge]][c-image]{{hi:image}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-science][cat-science-badge]][cat-science]{{hi:science}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}}
 
@@ -89,9 +89,9 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 <div class="hidden">
 TODO
 
-## Channels
+## Channels {#channels}
 
-### crossbeam-channel
+### crossbeam-channel {#crossbeam-channel}
 
 [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam-channel}}
 [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io]
@@ -100,7 +100,7 @@ TODO
 
 The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
-### flume
+### flume {#flume}
 
 [![flume][c-flume-badge]][c-flume]{{hi:flume}}
 [![flume-crates.io][c-flume-crates.io-badge]][c-flume-crates.io]
@@ -109,11 +109,11 @@ The absolute fastest channel implementation available. Implements Go-like 'selec
 
 Smaller and simpler than crossbeam-channel and almost as fast
 
-### tokio
+### tokio {#tokio}
 
 Tokio's sync module provides channels for using in async code
 
-### postage
+### postage {#postage}
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]

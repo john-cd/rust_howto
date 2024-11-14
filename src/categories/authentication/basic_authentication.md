@@ -1,6 +1,6 @@
 # Basic Authentication
 
-## Perform a basic HTTP authentication
+## Perform a basic HTTP authentication {#basic-authentication}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-authentication][cat-authentication-badge]][cat-authentication]{{hi:Authentication}}
 

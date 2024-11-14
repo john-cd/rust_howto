@@ -8,7 +8,7 @@
 
 [`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
 
-## Documenting your code
+## Documenting your code {#documenting-your-code}
 
 - Add documentation comments{{hi:Documentation comments}} to your code.
 
@@ -26,7 +26,7 @@ Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
 Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using cargo), with a website inside.
 
-## Module or crate-level documentation
+## Module or crate-level documentation {#module-or-level-documentation}
 
 Use `//!` at the top of the file (instead of `///`) for module-level documentation.
 

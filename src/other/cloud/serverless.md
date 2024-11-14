@@ -1,10 +1,10 @@
 # Serverless Rust
 
-## Use Rust for serverless computing
+## Use Rust for serverless computing {serverless-computing}
 
 [serverless rust][serverless-rust-website]{{hi:Serverless}}⮳
 
-## Use the `dapr` distributed runtime
+## Use the `dapr` distributed runtime {#dapr}
 
 [Dapr][dapr-website]{{hi:dapr}}⮳ is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
 

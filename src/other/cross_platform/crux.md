@@ -1,6 +1,6 @@
 # Cross-platform development with Crux
 
-## Develop across platforms with Crux
+## Develop across platforms with Crux {#develop-across-platforms}
 
 [![crux_core][c-crux_core-badge]][c-crux_core]{{hi:crux}}  [![crux_core-github][c-crux_core-github-badge]][c-crux_core-github]{{hi:Cross-platform development}}
 

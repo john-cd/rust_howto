@@ -1,6 +1,6 @@
 # GraphQL
 
-## async-graphql
+## async-graphql {#async-graphql}
 
 A high-performance graphql server library that's fully specification compliant. Integrates with actix-web, axum, poem, rocket, tide, warp.
 

@@ -2,7 +2,7 @@
 
 {{#include external.incl.md}}
 
-## Run an external command and process stdout
+## Run an external command and process stdout {#run-an-external-command-and-process-stdout}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
 
@@ -12,7 +12,7 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 {{#include ../../../deps/tests/cats/os/process_output.rs:example}}
 ```
 
-## Run an external command passing it stdin and check for an error code
+## Run an external command passing it stdin and check for an error code {#run-an-external-command-passing-stdin-and-check-for-error-code}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:External command}}
 
@@ -22,7 +22,7 @@ Opens the `python` interpreter using an external [`std::process::Command`][c-std
 {{#include ../../../deps/tests/cats/os/send_input.rs:example}}
 ```
 
-## Run piped external commands
+## Run piped external commands {#run-piped-external-commands}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:Piped external commands}}
 
@@ -35,7 +35,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 {{#include ../../../deps/tests/cats/os/piped.rs:example}}
 ```
 
-## Redirect both stdout and stderr of child process to the same file
+## Redirect both stdout and stderr of child process to the same file {#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -47,7 +47,7 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 {{#include ../../../deps/tests/cats/os/error_file.rs:example}}
 ```
 
-## Continuously process child process' outputs
+## Continuously process child process' outputs {#continuously-process-child-process-outputs}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -61,7 +61,7 @@ The below recipe is equivalent to the Unix shell command
 {{#include ../../../deps/tests/cats/os/continuous.rs:example}}
 ```
 
-## Read Environment Variable
+## Read Environment Variable {#read-environment-variable}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -71,7 +71,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 {{#include ../../../deps/tests/cats/os/read_env_variable.rs:example}}
 ```
 
-## Run child processes using `duct`
+## Run child processes using `duct` {#run-child-processes-using-duct}
 
 [![duct][c-duct-badge]][c-duct]{{hi:duct}}
 [![duct-crates.io][c-duct-crates.io-badge]][c-duct-crates.io]

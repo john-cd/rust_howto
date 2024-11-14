@@ -2,7 +2,7 @@
 
 {{#include global_static.incl.md}}
 
-## Declare lazily evaluated constant
+## Declare lazily evaluated constant {#declare-lazily-evaluated-constant}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
 [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io]

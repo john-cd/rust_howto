@@ -6,7 +6,7 @@
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.{{hi:Smart pointers}}
 
-## Box
+## Box {#box}
 
 [![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}}  [![std][c-std-badge]][c-std]{{hi:std}}
 
@@ -19,13 +19,13 @@ Use when
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
 
-## Rc
+## Rc {#rc}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
 The `Rc<T>` type keeps track of the number of references{{hi:References}} to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
 
-## RefCell
+## RefCell {#refcell}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

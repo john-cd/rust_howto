@@ -2,7 +2,7 @@
 
 {{#include strings.incl.md}}
 
-## String type
+## String type {#string}
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
 
@@ -10,7 +10,7 @@
 {{#include ../../deps/tests/std/strings.rs:example}}
 ```
 
-## Placeholders
+## Placeholders {#placeholders}
 
 ![std][c-std-badge]][c-std]
 
@@ -22,7 +22,7 @@ Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug
 
 Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression’s value).
 
-## String concatenation
+## String concatenation {#string-concatenation}
 
 ![std][c-std-badge]][c-std]
 

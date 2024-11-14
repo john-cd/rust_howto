@@ -1,6 +1,6 @@
 # Shells and related utilities
 
-## `starship`
+## `starship` {#starship}
 
 [![starship][c-starship-badge]][c-starship]{{hi:starship}}
 [![starship-crates.io][c-starship-crates.io-badge]][c-starship-crates.io]
@@ -15,4 +15,5 @@
 
 <div class="hidden">
 TODO: expand
+nushell?
 </div>

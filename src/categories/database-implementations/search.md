@@ -1,6 +1,6 @@
 # Search engines written in Rust
 
-## Meilisearch
+## Meilisearch {#meilisearch}
 
 [![meilisearch][c-meilisearch-badge]][c-meilisearch]{{hi:meilisearch}}
 [![meilisearch-crates.io][c-meilisearch-crates.io-badge]][c-meilisearch-crates.io]
@@ -9,7 +9,7 @@
 
 [meilisearch][c-meilisearch-github]⮳ is a fast search API that fits into your apps, websites, and workflow.
 
-## Tantivy
+## Tantivy {#tantivy}
 
 [![tantivy][c-tantivy-badge]][c-tantivy]{{hi:tantivy}}
 [![tantivy-crates.io][c-tantivy-crates.io-badge]][c-tantivy-crates.io]

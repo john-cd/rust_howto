@@ -2,7 +2,7 @@
 
 {{#include middleware.incl.md}}
 
-## Tower
+## Tower {#tower}
 
 [![tower][c-tower-badge]][c-tower]{{hi:tower}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -16,7 +16,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 [![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
 
-## Tower HTTP
+## Tower HTTP {#tower-http}
 
 [![tower_http][c-tower_http-badge]][c-tower_http]{{hi:tower_http}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -26,7 +26,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 {{#include ../../../deps/tests/cats/web_programming_http_server/tower_http.rs:example}}
 ```
 
-## Alternatives
+## Alternatives {#alternatives}
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 

@@ -1,6 +1,6 @@
 # Clipboard
 
-## `arboard`
+## `arboard` {#arboard}
 
 [![arboard][c-arboard-badge]][c-arboard]{{hi:arboard}}
 [![arboard-crates.io][c-arboard-crates.io-badge]][c-arboard-crates.io]

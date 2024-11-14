@@ -1,6 +1,6 @@
 # UI layout
 
-## `taffy`
+## `taffy` {#taffy}
 
 [![taffy][c-taffy-badge]][c-taffy]{{hi:taffy}}
 [![taffy-crates.io][c-taffy-crates.io-badge]][c-taffy-crates.io]
@@ -10,7 +10,7 @@
 
 "Supports Flexbox and CSS Grid algorithms."
 
-## `morphorm`
+## `morphorm` {#morphorm}
 
 [![morphorm][c-morphorm-badge]][c-morphorm]{{hi:morphorm}}
 [![morphorm-crates.io][c-morphorm-crates.io-badge]][c-morphorm-crates.io]

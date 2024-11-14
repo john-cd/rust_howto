@@ -8,7 +8,7 @@ The Rust standard library provides smart pointer types, such as `Mutex<T>`{{hi:M
 
 {{#include concurrent_data_structures.incl.md}}
 
-## Mutex
+## Mutex {#mutex}
 
 [![std][c-std-badge]][c-std]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -18,7 +18,7 @@ Allow access to data from one thread at a time.
 {{#include ../../../../deps/tests/cats/concurrency/shared_state_mutex.rs:example}}
 ```
 
-## Parking Lot
+## Parking Lot {#parking-lot}
 
 [![parking_lot][c-parking_lot-badge]][c-parking_lot]{{hi:parking_lot}}  [![parking_lot-crates.io][c-parking_lot-crates.io-badge]][c-parking_lot-crates.io]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -34,7 +34,7 @@ Allow access to data from one thread at a time.
 {{#include ../../../../deps/tests/cats/concurrency/shared_state_parking_lot2.rs:example}}
 ```
 
-## Atomics
+## Atomics {#atomics}
 
 [![std][c-std-badge]][c-std]  [![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -52,7 +52,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 {{#include ../../../../deps/tests/cats/concurrency/shared_state_crossbeam.rs:example}}
 ```
 
-## `arc-swap`
+## `arc-swap` {#arc-swap}
 
 [![arc-swap][c-arc_swap-badge]][c-arc_swap]{{hi:arc-swap}}
 [![arc-swap-crates.io][c-arc_swap-crates.io-badge]][c-arc_swap-crates.io]

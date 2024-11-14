@@ -5,7 +5,7 @@
 TODO: header
 </div>
 
-## Key Steps
+## Key Steps {#key-steps}
 
 - Install [Rustup][rustup-website]{{hi:rustup}}⮳
 

@@ -1,5 +1,7 @@
 # Fuzzing
 
+## `afl` {#afl}
+
 [fuzzing][c-afl-github]
 
 [![afl][c-afl-badge]][c-afl]{{hi:afl}}

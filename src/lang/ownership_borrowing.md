@@ -1,6 +1,6 @@
 # Ownership and Borrowing
 
-## Ownership
+## Ownership {#ownership}
 
 [![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:move}}
 
@@ -30,7 +30,7 @@ If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::mar
 {{#include ../../deps/tests/lang/copy.rs:example}}
 ```
 
-### Borrowing
+### Borrowing {#borrowing}
 
 Passing a variable to a function will move or copy, just as assignment does. To avoid passing a value along, borrow the value:{{hi:Borrowing}}
 
@@ -38,7 +38,7 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 {{#include ../../deps/tests/lang/borrowing.rs:example}}
 ```
 
-### Mutable reference
+### Mutable reference {#mutable-reference}
 
 ```rust
 {{#include ../../deps/tests/lang/borrowing_mutable.rs:example}}
@@ -50,7 +50,7 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 <div class="hidden">
 TODO: add text
 
-## Memory Safety
+## Memory Safety {#memory-safety}
 
 - [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳
 

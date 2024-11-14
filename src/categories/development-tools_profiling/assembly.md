@@ -1,6 +1,6 @@
 # Low-level profiling tools
 
-## Inspect the generated assembly
+## Inspect the generated assembly {#cargo-show-asm}
 
 [![cargo-show-asm][c-cargo_show_asm-badge]][c-cargo_show_asm]{{hi:cargo-show-asm}}
 [![cargo-show-asm-crates.io][c-cargo_show_asm-crates.io-badge]][c-cargo_show_asm-crates.io]

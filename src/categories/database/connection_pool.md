@@ -1,6 +1,6 @@
 # Connection pool
 
-## Create a connection pool
+## Create a connection pool {#connection-pool}
 
 [![deadpool][c-deadpool-badge]][c-deadpool]{{hi:deadpool}}
 [![deadpool-crates.io][c-deadpool-crates.io-badge]][c-deadpool-crates.io]

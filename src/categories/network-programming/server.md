@@ -2,7 +2,7 @@
 
 {{#include server.incl.md}}
 
-## Listen on unused port TCP/IP
+## Listen on unused port TCP/IP {#listen-on-unused-port}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:TCP/IP}}
 
@@ -12,11 +12,11 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 {{#include ../../../deps/tests/cats/network_programming/listen_unused.rs:example}}
 ```
 
-## Perform asynchronous I/O operations on storage devices
+## Perform asynchronous I/O operations on storage devices {#perform-asynchronous-io-operations-on-storage-devices}
 
 `io_uring` is a Linux kernel system call interface for high-performance asynchronous I/O operations on storage devices. It works by creating two circular buffers, called "queue rings", for storage of submission and completion of I/O requests, respectively.
 
-### glommio
+### glommio {#glommio}
 
 [![glommio][c-glommio-badge]][c-glommio]{{hi:glommio}}
 [![glommio-crates.io][c-glommio-crates.io-badge]][c-glommio-crates.io]

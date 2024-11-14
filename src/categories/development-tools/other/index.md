@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Background code checker
+## Background code checker {#bacon}
 
 [![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
 [![bacon-crates.io][c-bacon-crates.io-badge]][c-bacon-crates.io]
@@ -15,23 +15,23 @@
 
 It's designed for minimal interaction so that you can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
 
-## API search
+## API search {#roogle}
 
 [`Roogle`][c-roogle-website]{{hi:roogle}}⮳  [![roogle-github][c-roogle-github-badge]][c-roogle-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-## Deployment
+## Deployment {#shuttle-rs}
 
 [shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-## Binary minimizer
+## Binary minimizer {#binary-minimizer}
 
 How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
-## Code generators
+## Code generators {#code-generators}
 
 [top-artificial-intelligence-ai-tools-that-can-generate-code-to-help-programmers][blog-ai-tools-that-can-generate-code]⮳
 
-## Code verifier
+## Code verifier {#code-verifiers}
 
 [![kani][c-kani-badge]][c-kani]{{hi:kani}}
 [![kani-crates.io][c-kani-crates.io-badge]][c-kani-crates.io]
@@ -40,7 +40,7 @@ How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
 [kani][c-kani-github]{{hi:kani}}⮳ is a Rust verifier.
 
-## Formal Methods
+## Formal Methods {#formal-methods}
 
 [rust-formal-methods.github.io][rust-formal-methods-website]{{hi:Formal methods}}⮳
 

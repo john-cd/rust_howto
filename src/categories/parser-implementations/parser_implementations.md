@@ -4,7 +4,7 @@
 
 Parsers implemented for particular formats or languages.
 
-## JavaScript
+## JavaScript {#javascript}
 
 [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser]{{hi:swc_ecma_parser}}
 [![swc_ecma_parser-crates.io][c-swc_ecma_parser-crates.io-badge]][c-swc_ecma_parser-crates.io]

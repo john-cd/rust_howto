@@ -1,6 +1,6 @@
 # Hyper
 
-## `hyper`
+## `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP server}}
 [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io]

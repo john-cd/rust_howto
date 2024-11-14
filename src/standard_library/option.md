@@ -25,16 +25,16 @@ It is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if 
 {{#include ../../deps/tests/std/options2.rs:example}}
 ```
 
-## Adapters for working with references
+## Adapters for working with references {#adapters-for-working-with-references}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 - [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳ converts from `&Option<T>` to `Option<&T>`
 - [`std::convert::AsMut`][c-std::convert::AsMut]{{hi:std::convert::AsMut}}⮳ converts from `&mut Option<T>` to `Option<&mut T>`
 - [`std::option::Option::as_deref`][c-std::option::Option::as_deref]{{hi:std::option::Option::as_deref}}⮳ converts from `&Option<T>` to `Option<&T::Target>`
 - [`std::option::Option::as_deref_mut`][c-std::option::Option::as_deref_mut]{{hi:std::option::Option::as_deref_mut}}⮳ converts from `&mut Option<T>` to `Option<&mut T::Target>`
 
-## Extracting the value contained in Option
+## Extracting the value contained in Option {#extracting-the-value-contained-in-option}
 
 ![std][c-std-badge]][c-std]
 
@@ -46,7 +46,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 - [`std::option::Option::unwrap_or_default`][c-std::option::Option::unwrap_or_default]{{hi:std::option::Option::unwrap_or_default}}⮳ returns the default value of the type T (which must implement the [`std::default::Default`][c-std::default::Default]{{hi:std::default::Default}}⮳ trait)
 - [`std::option::Option::unwrap_or_else`][c-std::option::Option::unwrap_or_else]{{hi:std::option::Option::unwrap_or_else}}⮳ returns the result of evaluating the provided function
 
-## Combinators
+## Combinators {#combinators}
 
 ![std][c-std-badge]][c-std]
 

@@ -1,6 +1,6 @@
 # Actors
 
-## Stakker
+## Stakker {#stakker}
 
 [![stakker][c-stakker-badge]][c-stakker]{{hi:stakker}}
 [![stakker-crates.io][c-stakker-crates.io-badge]][c-stakker-crates.io]
@@ -9,7 +9,7 @@
 
 A lightweight low-level single-threaded actor runtime
 
-## Riker
+## Riker {#riker}
 
 [Riker (website)][c-riker-website]{{hi:riker}}⮳
 
@@ -17,7 +17,7 @@ A lightweight low-level single-threaded actor runtime
 {{#include ../../deps/tests/cats/concurrency/actors.rs:example}}
 ```
 
-## Alternatives
+## Alternatives {#alternatives}
 
 [![actix][c-actix-badge]][c-actix]{{hi:actix}}
 [![actix-crates.io][c-actix-crates.io-badge]][c-actix-crates.io]
@@ -29,14 +29,14 @@ A lightweight low-level single-threaded actor runtime
 [![ractor-github][c-ractor-github-badge]][c-ractor-github]
 [![ractor-lib.rs][c-ractor-lib.rs-badge]][c-ractor-lib.rs]
 
-## Utilities
+## Utilities {#utilities}
 
 [![await-tree][c-await_tree-badge]][c-await_tree]{{hi:Await tree}}
 [![await-tree-crates.io][c-await_tree-crates.io-badge]][c-await_tree-crates.io]
 [![await-tree-github][c-await_tree-github-badge]][c-await_tree-github]
 [![await-tree-lib.rs][c-await_tree-lib.rs-badge]][c-await_tree-lib.rs]
 
-## Reference
+## Reference {#reference}
 
 [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳
 

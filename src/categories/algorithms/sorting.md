@@ -2,7 +2,7 @@
 
 {{#include sorting.incl.md}}
 
-## Sort a Vector of Integers
+## Sort a Vector of Integers {#sort-vector-integers}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -12,7 +12,7 @@ This example will sort{{hi:Sorting}} a Vector of integers via [`std::vec::Vec::s
 {{#include ../../../deps/tests/cats/algorithms/sort.rs:example}}
 ```
 
-## Sort a Vector of Floats
+## Sort a Vector of Floats {#sort-vector-floats}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -22,7 +22,7 @@ A vector{{hi:Vector}} of f32 or f64 can be sorted with `sort_by` and [`std::cmp:
 {{#include ../../../deps/tests/cats/algorithms/sort_float.rs:example}}
 ```
 
-## Sort a Vector of Structs
+## Sort a Vector of Structs {#sort-vector-structs}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -32,7 +32,7 @@ Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` b
 {{#include ../../../deps/tests/cats/algorithms/sort_struct.rs:example}}
 ```
 
-## See also
+## See also {#see-also}
 
 - A Rust implementation of Glidesort,a stable adaptive quicksort/mergesort hybrid sorting algorithm: [glidesort][c-glidesort-github]⮳
 

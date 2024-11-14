@@ -1,4 +1,4 @@
-## Rendering Engines
+# Rendering Engines
 
 [![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]{{hi:Rendering engine}}
 

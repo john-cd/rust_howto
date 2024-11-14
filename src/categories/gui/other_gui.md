@@ -1,6 +1,6 @@
 # Other GUI frameworks
 
-## `xilem`
+## `xilem` {#xilem}
 
 [![xilem][c-xilem-badge]][c-xilem]{{hi:xilem}}
 [![xilem-crates.io][c-xilem-crates.io-badge]][c-xilem-crates.io]
@@ -9,7 +9,7 @@
 
 The replacement for Druid based on the more interoperable Vello and Glazier crates. However, it's currently not complete enough to be usable.
 
-## `slint`
+## `slint` {#slint}
 
 [![slint][c-slint-badge]][c-slint]{{hi:slint}}
 [![slint-crates.io][c-slint-crates.io-badge]][c-slint-crates.io]
@@ -25,7 +25,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 - [Slint (github)][c-slint-github]⮳
 - [madewithslint.com][c-slint-madewithslint-website]⮳
 
-## GPUI
+## GPUI {#gpui}
 
 [![gpui][c-gpui-badge]][c-gpui]{{hi:gpui}}
 [![gpui-crates.io][c-gpui-crates.io-badge]][c-gpui-crates.io]
@@ -36,7 +36,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 
 High performance framework used in the Zed text editor. Now available on macOS and linux.
 
-## `druid`
+## `druid` {#druid}
 
 [![druid][c-druid-badge]][c-druid]{{hi:druid}}
 [![druid-crates.io][c-druid-crates.io-badge]][c-druid-crates.io]

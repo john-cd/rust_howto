@@ -2,7 +2,7 @@
 
 {{#include download.incl.md}}
 
-## Download a file to a temporary directory
+## Download a file to a temporary directory {#download}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![tempfile][c-tempfile-badge]][c-tempfile]{{hi:tempfile}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -16,7 +16,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 {{#include ../../../deps/tests/cats/authentication/basic.rs:example}}
 ```
 
-## POST a file to paste-rs
+## POST a file to paste-rs {#post-a-file-to-paste-rs}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
@@ -26,7 +26,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 {{#include ../../../deps/tests/cats/web_programming_http_client/post_file.rs:example}}
 ```
 
-## Make a partial download with HTTP range headers
+## Make a partial download with HTTP range headers {#partial-download-with-http-range-headers}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 

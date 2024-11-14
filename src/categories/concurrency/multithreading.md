@@ -2,7 +2,7 @@
 
 {{#include multithreading.incl.md}}
 
-## Spawn, join
+## Spawn, join {#spawn-join}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
@@ -12,7 +12,7 @@
 
 When the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
 
-## Scoped threads
+## Scoped threads {#scoped-threads}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -22,11 +22,11 @@ When the main thread of a Rust program completes, all spawned threads{{hi:Spawne
 {{#include ../../../deps/tests/cats/concurrency/multithreading_scoped_threads.rs:example}}
 ```
 
-## Rayon - parallel processing
+## Rayon - parallel processing {#rayon}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![rayon-github][c-rayon-github-badge]][c-rayon-github]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-### Parallel iteration
+### Parallel iteration {#par-iter}
 
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:Parallel execution}}.
 
@@ -34,7 +34,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 {{#include ../../../deps/tests/cats/concurrency/multithreading_rayon.rs:example}}
 ```
 
-### Parallel sorting
+### Parallel sorting {#parallel-sorting}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -42,7 +42,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 {{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_parsort.rs:example}}
 ```
 
-### Custom parallel tasks
+### Custom parallel tasks {#custom-parallel-tasks}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Parallel tasks}}
 
@@ -52,7 +52,7 @@ Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::j
 {{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_custom.rs:example}}
 ```
 
-## See also
+## See also {#see-also}
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}
 

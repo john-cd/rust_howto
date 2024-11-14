@@ -1,10 +1,10 @@
-## Design Patterns
+# Design Patterns
 
-## Abstract factory
+## Abstract factory {#abstract-factory}
 
 [abstract-factory in rust][abstract-factory-in-rust-website]⮳
 
-## `dyn-clone`
+## `dyn-clone` {#dyn-clone}
 
 [![dyn-clone][c-dyn_clone-badge]][c-dyn_clone]{{hi:dyn-clone}}
 [![dyn-clone-crates.io][c-dyn_clone-crates.io-badge]][c-dyn_clone-crates.io]
@@ -27,7 +27,7 @@ TODO rethink where that stuff should go
 
 TODO review - lens is not used that often:
 
-## Lens
+## Lens {#lens}
 
 [![lens_rs][c-lens_rs-badge]][c-lens_rs]{{hi:lens_rs}}
 [![lens_rs-crates.io][c-lens_rs-crates.io-badge]][c-lens_rs-crates.io]

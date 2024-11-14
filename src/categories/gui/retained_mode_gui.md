@@ -1,6 +1,6 @@
 # Retained Mode Native GUI
 
-## iced
+## iced {#iced}
 
 [![iced][c-iced-badge]][c-iced]{{hi:iced}}  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
 
@@ -11,7 +11,7 @@
 
 Retained mode UI with a nice API. It's useable for basic apps, but has a number of missing features including multiple windows, layers, and proper text rendering.
 
-## floem
+## floem {#floem}
 
 [![floem][c-floem-badge]][c-floem]{{hi:floem}}
 [![floem-crates.io][c-floem-crates.io-badge]][c-floem-crates.io]

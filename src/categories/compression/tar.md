@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Decompress a tarball
+## Decompress a tarball {#decompress-a-tarball}
 
 [![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
@@ -12,7 +12,7 @@ Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::r
 {{#include ../../../deps/tests/cats/compression/tar_decompress.rs:example}}
 ```
 
-## Compress a directory into tarball
+## Compress a directory into a tarball {#compress-a-directory-into-a-tarball}
 
 [![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
@@ -26,7 +26,7 @@ Adds contents of `/var/log` directory recursively into the archive under `backup
 {{#include ../../../deps/tests/cats/compression/tar_compress.rs:example}}
 ```
 
-## Decompress a tarball while removing a prefix from the paths
+## Decompress a tarball while removing a prefix from the paths {#decompress-a-tarball-removing-prefix}
 
 [![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 

@@ -3,4 +3,4 @@
 [ex-async_channels]: async_channels.md
 [ex-streams]: streams.md
 [ex-futures]: futures.md
-[ex-mix-async-and-blocking]: async_and_blocking.md
+[ex-async-and-blocking]: async_and_blocking.md

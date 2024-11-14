@@ -11,17 +11,17 @@ Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the 
 - An asynchronous version of the standard library.
 - A large ecosystem of libraries.
 
-## Basics
+## Basics {#basics}
 
 - creating and running a runtime{{hi:Runtime}}, spawning tasks{{hi:Spawning tasks}}, working with I/O and timers, and handling errors.
 
-### Join
+### Join {#join}
 
 By running all async{{hi:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn`{{hi:tokio::spawn}} and pass the join handle to `join!`{{hi:join!}}.
 
-### Spawning
+### Spawning {#spawning}
 
-## IO
+## IO {#io}
 
 - read and write data asynchronously with Tokio, using streams, codecs, and futures. It also shows how to handle errors and timeouts.
 
@@ -41,7 +41,7 @@ In some cases, it is necessary to run one or more futures that do not implement 
 {{#include ../../../deps/tests/cats/asynchronous/tokio21.rs:example}}
 ```
 
-## Graceful shutdown
+## Graceful shutdown {#graceful-shutdown}
 
 [![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -51,7 +51,7 @@ Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_g
 {{#include ../../../deps/tests/cats/asynchronous/tokio_graceful_shutdown.rs:example}}
 ```
 
-## Useful links
+## Useful links {#useful-links}
 
 - [`tokio.rs`][c-tokio-website]
 - [![tokio examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}

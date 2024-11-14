@@ -1,6 +1,6 @@
 # Additional numeric types
 
-## Abstracting over different number types
+## Abstracting over different number types {#abstracting-over-number-types}
 
 [![num-traits][c-num_traits-badge]][c-num_traits]{{hi:num-traits}}
 [![num-traits-crates.io][c-num_traits-crates.io-badge]][c-num_traits-crates.io]
@@ -12,9 +12,9 @@
 
 Traits like Number, Add, etc that allow you write functions that are generic over the specific numeric type
 
-## Big Integers
+## Big Integers {#big-integers}
 
-### `num`
+### `num` {#num}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -31,7 +31,7 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 {{#include ../../../deps/tests/cats/mathematics/big_integers.rs:example}}
 ```
 
-### num-bigint
+### num-bigint {#num-bigint}
 
 [![num-bigint][c-num_bigint-badge]][c-num_bigint]{{hi:num-bigint}}
 [![num-bigint-crates.io][c-num_bigint-crates.io-badge]][c-num_bigint-crates.io]
@@ -43,7 +43,7 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 
 It's not the fastest, but it's part of the trusted num library.
 
-### rug
+### rug {#rug}
 
 [![rug][c-rug-badge]][c-rug]{{hi:rug}}
 [![rug-crates.io][c-rug-crates.io-badge]][c-rug-crates.io]
@@ -54,7 +54,7 @@ It's not the fastest, but it's part of the trusted num library.
 
 LGPL licensed. Wrapper for GMP. Much faster than num-bigint
 
-## Big decimal
+## Big decimal {#big-decimal}
 
 [![rust_decimal][c-rust_decimal-badge]][c-rust_decimal]{{hi:rust_decimal}}
 [![rust_decimal-crates.io][c-rust_decimal-crates.io-badge]][c-rust_decimal-crates.io]
@@ -66,7 +66,7 @@ LGPL licensed. Wrapper for GMP. Much faster than num-bigint
 
 The binary representation consists of a 96 bit integer number, a scaling factor used to specify the decimal fraction and a 1 bit sign.
 
-## Sortable Floats
+## Sortable Floats {#sortable-floats}
 
 [![ordered-float][c-ordered_float-badge]][c-ordered_float]{{hi:ordered-float}}
 [![ordered-float-crates.io][c-ordered_float-crates.io-badge]][c-ordered_float-crates.io]

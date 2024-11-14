@@ -1,6 +1,6 @@
 # Send emails
 
-## Email client
+## Email client {#lettre}
 
 [![lettre][c-lettre-badge]][c-lettre]{{hi:lettre}} [![cat-email][cat-email-badge]][cat-email]{{hi:Email}}
 [![lettre-crates.io][c-lettre-crates.io-badge]][c-lettre-crates.io]

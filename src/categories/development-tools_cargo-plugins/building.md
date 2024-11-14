@@ -1,6 +1,6 @@
 # Build and run
 
-## Cargo Make
+## `cargo make` {#cargo-make}
 
 [![cargo-make][c-cargo_make-badge]][c-cargo_make]{{hi:cargo-make}}
 [![cargo-make-crates.io][c-cargo_make-crates.io-badge]][c-cargo_make-crates.io]
@@ -25,7 +25,7 @@ cargo make --version
 
 [automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]⮳
 
-## Cargo xtask
+## `cargo xtask` {cargo-xtask}
 
 [![cargo-xtask][c-cargo_xtask-badge]][c-cargo_xtask]{{hi:cargo-xtask}}
 [![cargo-xtask-crates.io][c-cargo_xtask-crates.io-badge]][c-cargo_xtask-crates.io]
@@ -39,11 +39,11 @@ The two distinguishing features of `xtask` are the following:
 - It doesn't require any other binaries besides `cargo` and `rustc`, it fully bootstraps from them
 - Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
 
-### Devx
+### Devx {#devx}
 
 [devx][devx-github]{{hi:devx}}⮳ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c-cargo_xtask-github]⮳ idioms.
 
-## xshell: Making Rust a Better Bash
+## xshell: Making Rust a Better Bash {#xshell}
 
 [![xshell][c-xshell-badge]][c-xshell]{{hi:xshell}}
 [![xshell-crates.io][c-xshell-crates.io-badge]][c-xshell-crates.io]

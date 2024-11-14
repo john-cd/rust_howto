@@ -1,6 +1,6 @@
 # Tools for Python written in Rust
 
-## rustpython
+## rustpython {#rustpython}
 
 [![rustpython][c-rustpython-badge]][c-rustpython]{{hi:rustpython}}
 [![rustpython-crates.io][c-rustpython-crates.io-badge]][c-rustpython-crates.io]
@@ -9,11 +9,11 @@
 
 [`RustPython`][rustpython-github]{{hi:RustPython}}⮳ is a Python Interpreter written in Rust
 
-## pyOxidizer
+## pyOxidizer {#pyoxidizer}
 
 [![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
 
-## Ruff
+## Ruff {#ruff}
 
 [Ruff][c-ruff]{{hi:ruff}}⮳
 
@@ -23,6 +23,6 @@
 <div class="hidden">
 TODO: write
 
-## uv
+## uv {#uv}
 
 </div>

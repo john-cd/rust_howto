@@ -2,7 +2,7 @@
 
 {{#include cross_compilation.incl.md}}
 
-## Cross-compile for multiple target OSes and architectures
+## Cross-compile for multiple target OSes and architectures {#cross-compilation}
 
 [![cross][c-cross-badge]][c-cross]{{hi:cross}} [![cross-github][c-cross-github-badge]][c-cross-github]  [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 

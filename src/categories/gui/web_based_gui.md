@@ -1,6 +1,6 @@
 # Web-based GUI
 
-## Tauri
+## Tauri {#tauri}
 
 [![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}}  [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 [![tauri-crates.io][c-tauri-crates.io-badge]][c-tauri-crates.io]
@@ -11,7 +11,7 @@
 
 Electron-like web-based UI. Except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than node.js
 
-## dioxus
+## dioxus {#dioxus}
 
 [![dioxus][c-dioxus-badge]][c-dioxus]{{hi:dioxus}}
 [![dioxus-crates.io][c-dioxus-crates.io-badge]][c-dioxus-crates.io]

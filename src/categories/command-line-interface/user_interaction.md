@@ -1,6 +1,6 @@
 # User interaction
 
-## Ask for confirmation, selection, text input
+## Ask for confirmation, selection, text input {#inquire}
 
 [![inquire][c-inquire-badge]][c-inquire]{{hi:inquire}}
 [![inquire-crates.io][c-inquire-crates.io-badge]][c-inquire-crates.io]
@@ -11,7 +11,7 @@
 
 `inquire` provides several different prompts in order to interactively ask the user for information via the CLI.
 
-## Display progress bars and spinners
+## Display progress bars and spinners {#indicatif}
 
 [![indicatif][c-indicatif-badge]][c-indicatif]{{hi:indicatif}}
 [![indicatif-crates.io][c-indicatif-crates.io-badge]][c-indicatif-crates.io]

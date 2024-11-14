@@ -4,16 +4,16 @@
 
 - [LukeMathWalker/zero-to-production: Code for \"Zero To Production In Rust\", a book on API development using Rust][book-zero-to-production]⮳  [![zero-to-production-github][book-zero-to-production-github-badge]][book-zero-to-production-github]
 
-## Rust Podcasts, Blogs, Meetups
+## Rust Podcasts, Blogs, Meetups {#podcasts-blogs-meetups}
 
 - [rustacean-station.org][rustacean-station]
 - [rustmagazine.org][rustmagazine.org]
 
-### Newsletters
+### Newsletters {#newsletters}
 
 - Master Rust easily with our engaging, tutorial-style lessons and real-world examples in our Launchpad newsletter: [shuttle.rs/launchpad][launchpad-shuttle.rs]
 
-## Meetups
+## Meetups {#meetups}
 
 ### Rust Meetup Linz
 

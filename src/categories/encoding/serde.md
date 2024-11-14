@@ -9,7 +9,7 @@
 
 De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
 
-## JSON
+## JSON {#serde-json}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 [![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]
@@ -18,12 +18,16 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 
 ## See also
 
+### monostate {#monostate}
+
 [![monostate][c-monostate-badge]][c-monostate]{{hi:monostate}}
 [![monostate-crates.io][c-monostate-crates.io-badge]][c-monostate-crates.io]
 [![monostate-github][c-monostate-github-badge]][c-monostate-github]
 [![monostate-lib.rs][c-monostate-lib.rs-badge]][c-monostate-lib.rs]
 
 This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
+
+### `serde-ignored` {#serde-ignored}
 
 [![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
 [![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]

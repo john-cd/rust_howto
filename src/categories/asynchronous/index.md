@@ -22,7 +22,7 @@ Here are the topics we’ll cover:
 
 [Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 
-## Basic Example
+## Basic Example {#basic-example}
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -32,7 +32,7 @@ Here are the topics we’ll cover:
 
 As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
 
-## Differences with other languages
+## Differences with other languages {#differences-with-other-languages}
 
 Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ differs from most languages in a few ways:
 
@@ -47,14 +47,14 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
 - Both single- and multithreaded runtimes are available.
 
-## Which crate provides what?
+## Which crate provides what? {#which-crate-provides-what}
 
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
 - Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and `async_std`{{hi:async-std}}. Most async applications, and some async crates, depend on a specific runtime.
 
-## Async runtimes
+## Async runtimes {#async-runtimes}
 
 In most cases, prefer the [`tokio`][p-tokio]{{hi:tokio}} runtime{{hi:Runtime}} - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
@@ -65,7 +65,7 @@ Alternatives to the Tokio async ecosystem include:
 - [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
 - [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
-## See also
+## See also {#see-also}
 
 [Asynchronous Programming in Rust][book-asynchronous-programming-in-rust]
 

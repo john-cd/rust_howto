@@ -2,7 +2,7 @@
 
 A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted as a hex string in five groups. UUIDs are used to assign unique identifiers to entities without requiring a central allocating authority. They are particularly useful in distributed systems, though can be used in disparate areas, such as databases and network protocols.
 
-## Generate and parse UUIDs
+## Generate and parse UUIDs {#generate-parse-uuid}
 
 [![uuid][c-uuid-badge]][c-uuid]{{hi:uuid}}
 [![uuid-crates.io][c-uuid-crates.io-badge]][c-uuid-crates.io]

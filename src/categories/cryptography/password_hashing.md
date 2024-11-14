@@ -1,6 +1,6 @@
 # Password Hashing
 
-## argon2
+## argon2 {#argon2}
 
 [![argon2][c-argon2-badge]][c-argon2]{{hi:argon2}}
 [![argon2-crates.io][c-argon2-crates.io-badge]][c-argon2-crates.io]
@@ -12,7 +12,7 @@
 
 Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
 
-## scrypt
+## scrypt {#scrypt}
 
 [![scrypt][c-scrypt-badge]][c-scrypt]{{hi:scrypt}}
 [![scrypt-crates.io][c-scrypt-crates.io-badge]][c-scrypt-crates.io]
@@ -24,7 +24,7 @@ Pure Rust implementation of the Argon2 password hashing function with support fo
 
 The scrypt key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
 
-## bcrypt
+## bcrypt {#bcrypt}
 
 [![bcrypt][c-bcrypt-badge]][c-bcrypt]{{hi:bcrypt}}
 [![bcrypt-crates.io][c-bcrypt-crates.io-badge]][c-bcrypt-crates.io]

@@ -4,7 +4,7 @@
 
 Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
-## Anyhow
+## Anyhow {#anyhow}
 
 [![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}}  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -16,7 +16,7 @@ Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Resu
 
 Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
 
-## thisError
+## thisError {#thiserror}
 
 [![thiserror][c-thiserror-badge]][c-thiserror]{{hi:thiserror}}
 
@@ -39,7 +39,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../deps/tests/cats/rust_patterns/thiserror2.rs:example}}
 ```
 
-## `miette`
+## `miette` {#miette}
 
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}
 [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
@@ -48,7 +48,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../deps/tests/cats/rust_patterns/miette.rs:example}}
 ```
 
-## `color-eyre`
+## `color-eyre` {#color-eyre}
 
 [![color-eyre][c-color_eyre-badge]][c-color_eyre]{{hi:color-eyre}}
 [![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io]

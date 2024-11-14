@@ -8,7 +8,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides a number of core abst
 
 In most cases, you will use this crate directly only when writing async code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p-tokio] for example.
 
-## Selecting futures
+## Selecting futures {#selecting-futures}
 
 [![futures][c-futures-badge]][c-futures]{{hi:futures}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -18,7 +18,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 {{#include ../../../deps/tests/cats/asynchronous/futures.rs:example}}
 ```
 
-## Joining futures
+## Joining futures {#joining-futures}
 
 [![futures][c-futures-badge]][c-futures]{{hi:futures}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -26,7 +26,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 {{#include ../../../deps/tests/cats/asynchronous/futures2.rs:example}}
 ```
 
-## Map, then, either, flatten
+## Map, then, either, flatten {#map-then-either-flatten}
 
 [![futures][c-futures-badge]][c-futures]{{hi:futures}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -36,7 +36,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 {{#include ../../../deps/tests/cats/asynchronous/futures3.rs:example}}
 ```
 
-## See also
+## See also {#see-also}
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 

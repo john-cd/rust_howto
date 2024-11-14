@@ -6,7 +6,7 @@
 
 This is similar to Python's [`pyenv`][pyenv-github]{{hi:pyenv}}⮳ or Node's [`nvm`][nvm-github]{{hi:nvm}}⮳.
 
-## Key commands
+## Key commands {#key-commands}
 
 ```sh
 rustup help

@@ -1,5 +1,7 @@
 # Quantitative financial analysis
 
+## RustQuant {#rustquant}
+
 [![rustquant][c-rustquant-badge]][c-rustquant]{{hi:rustquant}}
 [![rustquant-crates.io][c-rustquant-crates.io-badge]][c-rustquant-crates.io]
 [![rustquant-github][c-rustquant-github-badge]][c-rustquant-github]

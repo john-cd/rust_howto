@@ -4,7 +4,7 @@
 
 [Rust web framework comparison][rust-web-framework-comparison-github]⮳
 
-## Rocket
+## Rocket {#rocket}
 
 [![rocket][c-rocket-badge]][c-rocket]{{hi:rocket}}{{hi:HTTP server}}
 [![rocket-crates.io][c-rocket-crates.io-badge]][c-rocket-crates.io]
@@ -18,7 +18,7 @@ Web framework with a focus on usability, security, extensibility, and speed.
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
-## Leptos
+## Leptos {#leptos}
 
 [![leptos][c-leptos-badge]][c-leptos]{{hi:leptos}}{{hi:HTTP server}}
 [![leptos-crates.io][c-leptos-crates.io-badge]][c-leptos-crates.io]

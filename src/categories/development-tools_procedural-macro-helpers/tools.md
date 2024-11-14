@@ -1,6 +1,6 @@
 # Tools for macro development
 
-## `cargo expand`
+## `cargo expand` {#cargo-expand}
 
 [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand]{{hi:cargo-expand}}
 [![cargo-expand-crates.io][c-cargo_expand-crates.io-badge]][c-cargo_expand-crates.io]

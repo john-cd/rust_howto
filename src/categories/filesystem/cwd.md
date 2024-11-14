@@ -1,6 +1,6 @@
 # Directories
 
-## Get the current working directory
+## Get the current working directory {#cwd}
 
 ```rust
 {{#include ../../../deps/tests/cats/filesystem/cwd.rs:example}}

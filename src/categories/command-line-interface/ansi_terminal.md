@@ -10,13 +10,13 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 
 **Note:** British English uses *Colour* instead of *Color*.
 
-## Printing colored text to the Terminal
+## Printing colored text to the Terminal {#colored-text}
 
 ```rust
 {{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic.rs:example}}
 ```
 
-### Bold text in Terminal
+### Bold text in Terminal {#bold-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -26,7 +26,7 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic1.rs:example}}
 ```
 
-### Bold and colored text in terminal
+### Bold and colored text in terminal {#bold-colored-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -36,7 +36,7 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../deps/tests/cats/command_line_interface/ansi_term_basic2.rs:example}}
 ```
 
-## Manipulate the cursor, style the output, handle input events
+## Manipulate the cursor, style the output, handle input events {#crossterm}
 
 [![crossterm][c-crossterm-badge]][c-crossterm]{{hi:crossterm}}
 [![crossterm-crates.io][c-crossterm-crates.io-badge]][c-crossterm-crates.io]

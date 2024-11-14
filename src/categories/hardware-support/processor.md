@@ -2,7 +2,7 @@
 
 {{#include processor.incl.md}}
 
-## Check number of logical cpu cores
+## Check number of logical cpu cores {#check-number-of-logical-cpu-cores}
 
 [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}
 [![num_cpus-crates.io][c-num_cpus-crates.io-badge]][c-num_cpus-crates.io]

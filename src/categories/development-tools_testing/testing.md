@@ -2,7 +2,7 @@
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
-## `cargo test`
+## `cargo test` {#cargo-test}
 
 [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}
 [![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io]
@@ -17,7 +17,7 @@
 {{#include ../../../deps/tests/cats/development_tools_testing/tests1.rs:example}}
 ```
 
-## Custom message
+## Custom message {#custom-message}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
@@ -25,7 +25,7 @@
 {{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs:example}}
 ```
 
-## `cargo nextest`
+## `cargo nextest` {#cargo-nextest}
 
 [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
 [![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]
@@ -40,7 +40,7 @@ cargo nextest run
 cargo test --doc
 ```
 
-## Approx
+## Approx {#approx}
 
 [![approx][c-approx-badge]][c-approx]{{hi:approx}}
 [![approx-crates.io][c-approx-crates.io-badge]][c-approx-crates.io]
@@ -50,7 +50,7 @@ cargo test --doc
 
 [`approx`][c-approx]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
 
-## Snapshot testing
+## Snapshot testing {#insta}
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}
 [![insta-crates.io][c-insta-crates.io-badge]][c-insta-crates.io]
@@ -66,7 +66,7 @@ cargo test --doc
 
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of assert_eq!. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
 
-## Code coverage
+## Code coverage {#cargo-tarpaulin}
 
 [![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 

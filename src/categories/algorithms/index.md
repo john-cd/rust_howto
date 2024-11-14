@@ -2,11 +2,11 @@
 
 Rust implementations of core algorithms{{hi:Algorithms}}, such as hashing{{hi:Hashing}}, sorting{{hi:Sorting}}, searching{{hi:Searching}}, and more.
 
-## Random Numbers
+## Random Numbers {#random-numbers}
 
 {{#include randomness.incl.md}}
 
-## Sorting
+## Sorting {#sorting}
 
 {{#include sorting.incl.md}}
 

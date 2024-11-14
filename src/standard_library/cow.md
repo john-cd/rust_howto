@@ -6,7 +6,7 @@
 
 The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write{{hi:Clone-on-write}} functionality.
 
-## Convert `Cow` to `&str`
+## Convert `Cow` to `&str` {#conver-cow-to-str}
 
 Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
 
@@ -32,7 +32,7 @@ Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly t
 {{#include ../../deps/tests/std/cow4.rs:example}}
 ```
 
-## Convert `Cow` to `String`
+## Convert `Cow` to `String` {#convert-cow-to-string}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

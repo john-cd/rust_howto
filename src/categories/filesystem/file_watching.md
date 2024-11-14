@@ -1,6 +1,6 @@
 # File watching
 
-## Watch files or directories and execute a function when they change
+## Watch files or directories and execute a function when they change {#watch-files-or-dirs}
 
 [![notify][c-notify-badge]][c-notify]{{hi:notify}}
 [![notify-crates.io][c-notify-crates.io-badge]][c-notify-crates.io]

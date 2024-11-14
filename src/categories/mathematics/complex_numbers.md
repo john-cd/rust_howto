@@ -2,7 +2,7 @@
 
 {{#include complex_numbers.incl.md}}
 
-## Creating complex numbers
+## Creating complex numbers {#creating-complex-numbers}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -19,7 +19,7 @@ Creates complex numbers of type [`num::complex::Complex`][c-num::complex::Comple
 {{#include ../../../deps/tests/cats/mathematics/create_complex.rs:example}}
 ```
 
-## Adding complex numbers
+## Adding complex numbers {#adding-complex-numbers}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -36,7 +36,7 @@ Performing mathematical operations on complex numbers is the same as on built in
 {{#include ../../../deps/tests/cats/mathematics/add_complex.rs:example}}
 ```
 
-## Mathematical functions
+## Mathematical functions {#mathematical-functions}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]

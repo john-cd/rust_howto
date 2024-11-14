@@ -1,6 +1,6 @@
 # Memory usage
 
-## Profile heap memory
+## Profile heap memory {#dhat}
 
 [![dhat][c-dhat-badge]][c-dhat]{{hi:dhat}}
 [![dhat-crates.io][c-dhat-crates.io-badge]][c-dhat-crates.io]

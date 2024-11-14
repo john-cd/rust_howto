@@ -15,7 +15,7 @@ mdbook serve --open
 
 [mdBook documentation][c-mdbook-documentation]⮳
 
-## `mdbook` plugins
+## `mdbook` plugins {#mdbook-plugins}
 
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook-hide}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
@@ -24,7 +24,7 @@ mdbook serve --open
 - [mdbook-linkcheck][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}
 - A runner for `mdbook`s to keep your documentation tested: [Byron-termbook][c-termbook-github]{{hi:termbook}}
 
-## CD / CI
+## CD / CI {#cd-ci}
 
 [GitHub Actions for mdBook][actions-mdbook-github]{{hi:Github actions}}
 

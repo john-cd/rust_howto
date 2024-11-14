@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Parse and increment a version string
+## Parse and increment a version string {#parse-and-increment-a-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} version string{{hi:Version string}}
 
@@ -14,7 +14,7 @@ Note that in accordance with the [semantic versioning specification`][c-semver-s
 {{#include ../../../../deps/tests/cats/development_tools/semver_increment.rs:example}}
 ```
 
-## Parse a complex version string
+## Parse a complex version string {#parse-a-complex-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -26,7 +26,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 {{#include ../../../../deps/tests/cats/development_tools/semver_complex.rs:example}}
 ```
 
-## Check if given version is pre-release
+## Check if given version is pre-release {#check-if-pre-release}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -36,7 +36,7 @@ Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}
 {{#include ../../../../deps/tests/cats/development_tools/semver_prerelease.rs:example}}
 ```
 
-## Find the latest version satisfying given range
+## Find the latest version satisfying given range {#find-latest-version-within-range}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -47,7 +47,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][c-semver::Ve
 {{#include ../../../../deps/tests/cats/development_tools/semver_latest.rs:example}}
 ```
 
-## Check external command version for compatibility
+## Check external command version for compatibility {#check-external-command-version-for-compat}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 

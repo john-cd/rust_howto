@@ -1,5 +1,5 @@
 
-## Parse Rust source code
+## Parse Rust source code {#syn}
 
 [![syn][c-syn-badge]][c-syn]{{hi:syn}}
 [![syn-crates.io][c-syn-crates.io-badge]][c-syn-crates.io]
@@ -8,7 +8,7 @@
 
 [`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
-## `paste`
+## `paste` {#paste}
 
 [![paste][c-paste-badge]][c-paste]{{hi:paste}}{{hi:Macros}}
 [![paste-crates.io][c-paste-crates.io-badge]][c-paste-crates.io]
@@ -17,7 +17,7 @@
 
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
-## `quote`
+## `quote` {#quote}
 
 [![quote][c-quote-badge]][c-quote]{{hi:quote}}
 [![quote-crates.io][c-quote-crates.io-badge]][c-quote-crates.io]
@@ -26,7 +26,7 @@
 
 [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
-## `proc_macro2`
+## `proc-macro2` {#proc-macro2}
 
 [![proc-macro2][c-proc_macro2-badge]][c-proc_macro2]{{hi:proc-macro2}}
 [![proc-macro2-crates.io][c-proc_macro2-crates.io-badge]][c-proc_macro2-crates.io]
@@ -48,7 +48,7 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
-### darling
+### darling {#darling}
 
 [![darling][c-darling-badge]][c-darling]{{hi:darling}}
 [![darling-crates.io][c-darling-crates.io-badge]][c-darling-crates.io]

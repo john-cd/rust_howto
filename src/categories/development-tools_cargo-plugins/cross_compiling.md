@@ -1,6 +1,6 @@
 # Cross-compile
 
-## Cross-compile using Zig as the linker
+## Cross-compile using Zig as the linker {#zig}
 
 [![cargo-zigbuild][c-cargo_zigbuild-badge]][c-cargo_zigbuild]{{hi:cargo-zigbuild}}
 [![cargo-zigbuild-crates.io][c-cargo_zigbuild-crates.io-badge]][c-cargo_zigbuild-crates.io]

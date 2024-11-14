@@ -2,7 +2,7 @@
 
 {{#include apis.incl.md}}
 
-## Query the GitHub API
+## Query the GitHub API {#query-the-github-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
@@ -14,7 +14,7 @@ Queries GitHub [stargazers API v3][stargazers]⮳ with [`reqwest::get`][c-reqwes
 {{#include ../../../deps/tests/cats/web_programming_http_client/rest_get.rs:example}}
 ```
 
-## Check if an API resource exists
+## Check if an API resource exists {#check-if-an-api-resource-exists}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
@@ -26,7 +26,7 @@ Due to both [`reqwest::ClientBuilder::build`][c-reqwest::ClientBuilder::build]{{
 {{#include ../../../deps/tests/cats/web_programming_http_client/rest_head.rs:example}}
 ```
 
-## Create and delete Gist with GitHub API
+## Create and delete Gist with GitHub API {#create-and-delete-gist-with-github-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
@@ -40,7 +40,7 @@ The [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ is responsib
 
 The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize access to [`GitHub API`][github-api]{{hi:GitHub API}}⮳. Typical use case would employ one of the much more complex [`OAuth`][oauth-website]{{hi:OAuth}}⮳ authorization flows.
 
-## Consume a paginated RESTful API
+## Consume a paginated RESTful API {#consume-a-paginated-restful-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
@@ -50,7 +50,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 {{#include ../../../deps/tests/cats/web_programming_http_client/paginated.rs:example}}
 ```
 
-## Handle a rate-limited API
+## Handle a rate-limited API {#handle-a-rate-limited-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 

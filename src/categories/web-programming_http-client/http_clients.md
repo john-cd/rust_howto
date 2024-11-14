@@ -2,7 +2,7 @@
 
 {{#include http_clients.incl.md}}{{hi:HTTP client}}
 
-## `reqwest`
+## `reqwest` {#reqwest}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}
 [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io]
@@ -11,7 +11,7 @@
 
 Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Requires tokio runtime.
 
-## `ureq`
+## `ureq` {#ureq}
 
 [![ureq][c-ureq-badge]][c-ureq]{{hi:ureq}}
 [![ureq-crates.io][c-ureq-crates.io-badge]][c-ureq-crates.io]
@@ -21,7 +21,7 @@ Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Req
 
 Minimal synchronous HTTP client focussed on simplicity and minimising dependencies.
 
-## `hyper`
+## `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP client}}{{hi:HTTP server}}
 [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io]

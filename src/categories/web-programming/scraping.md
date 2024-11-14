@@ -2,7 +2,7 @@
 
 {{#include scraping.incl.md}}
 
-## Extract all links from a webpage HTML
+## Extract all links from a webpage HTML {#extract-all-links-from-a-webpage-html}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![select][c-select-badge]][c-select]{{hi:select}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -12,7 +12,7 @@ Use [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ to perform a HTTP GET
 {{#include ../../../deps/tests/cats/web_programming/extract_links.rs:example}}
 ```
 
-## Check a webpage for broken links
+## Check a webpage for broken links {#check-a-webpage-for-broken-links}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![select][c-select-badge]][c-select]{{hi:select}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -25,7 +25,7 @@ Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::
 {{#include ../../../deps/tests/cats/web_programming/broken.rs:example}}
 ```
 
-## Extract all unique links from a MediaWiki markup
+## Extract all unique links from a MediaWiki markup {#extract-all-unique-links-from-a-mediawiki-markup}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]
 

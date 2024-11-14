@@ -1,6 +1,6 @@
 # File Dialogs
 
-## `rfd`
+## `rfd` {#rfd}
 
 [![rfd][c-rfd-badge]][c-rfd]{{hi:rfd}}
 [![rfd-crates.io][c-rfd-crates.io-badge]][c-rfd-crates.io]

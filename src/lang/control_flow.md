@@ -2,7 +2,7 @@
 
 [![Rust by example - Control flow][book-rust-by-example-flow_control-badge]][book-rust-by-example-flow_control]{{hi:Control flow}}
 
-## If else
+## If else {#if-else}
 
 ```rust
 {{#include ../../deps/tests/lang/if_else.rs:example}}
@@ -10,19 +10,19 @@
 
 Also `else if <cond> { ... }`
 
-## Loop
+## Loop {#loop}
 
 ```rust
 {{#include ../../deps/tests/lang/loop1.rs:example}}
 ```
 
-## While
+## While {#while}
 
 ```rust
 {{#include ../../deps/tests/lang/while1.rs:example}}
 ```
 
-## For
+## For {#for}
 
 ```rust
 {{#include ../../deps/tests/lang/for1.rs:example}}

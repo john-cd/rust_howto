@@ -2,7 +2,7 @@
 
 {{#include query_builders_orms.incl.md}}
 
-## Sqlx
+## Sqlx {#sqlx}
 
 [![sqlx][c-sqlx-badge]][c-sqlx]{{hi:sqlx}}  [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github]  [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs]  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -11,7 +11,7 @@
 Works with Postgres, MySQL, SQLite, and MS SQL.
 Supports compile time checking of queries. Async: supports both tokio and async-std.
 
-## SeaORM
+## SeaORM {#sea-orm}
 
 [![sea-orm][c-sea_orm-badge]][c-sea_orm]{{hi:sea-orm}}  [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website]  [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook]  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -19,7 +19,7 @@ Supports compile time checking of queries. Async: supports both tokio and async-
 
 Built on top of sqlx (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 
-## Diesel
+## Diesel {#diesel}
 
 [![diesel][c-diesel-badge]][c-diesel]{{hi:diesel}}  [![diesel-lib.rs][c-diesel-lib.rs-badge]][c-diesel-lib.rs]  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -28,7 +28,7 @@ Has excellent performance and takes an approach of strict compile time guarantee
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-## Toasty
+## Toasty {#toasty}
 
 [![toasty][c-toasty-badge]][c-toasty]{{hi:toasty}}
 [![toasty-crates.io][c-toasty-crates.io-badge]][c-toasty-crates.io]

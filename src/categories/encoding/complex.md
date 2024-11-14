@@ -2,7 +2,7 @@
 
 {{#include complex.incl.md}}
 
-## Serialize and deserialize unstructured JSON
+## Serialize and deserialize unstructured JSON {#serde-json}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Deserialization}}{{hi:JSON}}
 
@@ -16,7 +16,7 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 {{#include ../../../deps/tests/cats/encoding/json.rs:example}}
 ```
 
-## Deserialize a TOML configuration file
+## Deserialize a TOML configuration file {#toml}
 
 [![toml][c-toml-badge]][c-toml]{{hi:toml}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
@@ -32,7 +32,7 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 {{#include ../../../deps/tests/cats/encoding/toml1.rs:example}}
 ```
 
-## Read and write integers in little-endian byte order
+## Read and write integers in little-endian byte order {#byteorder}
 
 [![byteorder][c-byteorder-badge]][c-byteorder]{{hi:byteorder}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Little endian}}{{hi:Byte order}}
 

@@ -1,6 +1,6 @@
 # Networking
 
-## `gping`
+## `gping` {#gping}
 
 Ping, but with a graph [`gping`][c-gping-github]{{hi:gping}}
 

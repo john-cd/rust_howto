@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Basic cargo usage
+## Basic cargo usage {#cargo}
 
 [The Cargo book][c-cargo-book]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:cargo}}
 
@@ -39,7 +39,7 @@ cargo update
 cargo update -p regex
 ```
 
-## `Cargo.toml` and lock files
+## `Cargo.toml` and lock files {#cargo-toml}
 
 ```toml
 # Configure the package

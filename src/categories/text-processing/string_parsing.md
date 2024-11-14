@@ -2,7 +2,7 @@
 
 {{#include string_parsing.incl.md}}
 
-## Collect Unicode Graphemes
+## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
 [![unicode_segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation]{{hi:unicode_segmentation}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -12,7 +12,7 @@ Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} stri
 {{#include ../../../deps/tests/cats/text_processing/graphemes.rs:example}}
 ```
 
-## Implement the `FromStr` trait for a custom `struct`
+## Implement the `FromStr` trait for a custom `struct` {#implement-the-fromstr-trait-for-a-custom-struct}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

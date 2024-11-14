@@ -4,7 +4,7 @@
 {{#include ../../deps/tests/lang/main_test.rs:example}}
 ```
 
-## Async Main Function
+## Async Main Function {#async-main-function}
 
 ```rust
 {{#include ../../deps/tests/lang/async_main.rs:example}}

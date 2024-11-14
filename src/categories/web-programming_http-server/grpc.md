@@ -1,6 +1,6 @@
 # gRPC
 
-## tonic
+## tonic {#tonic}
 
 [![tonic][c-tonic-badge]][c-tonic]{{hi:tonic}}
 [![tonic-crates.io][c-tonic-crates.io-badge]][c-tonic-crates.io]

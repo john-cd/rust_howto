@@ -1,6 +1,6 @@
 # Audit
 
-## Audit Cargo.lock files for crates containing security vulnerabilities
+## Audit Cargo.lock files for crates containing security vulnerabilities {#cargo-audit}
 
 [![cargo-audit][c-cargo_audit-badge]][c-cargo_audit]{{hi:cargo-audit}}
 [![cargo-audit-crates.io][c-cargo_audit-crates.io-badge]][c-cargo_audit-crates.io]
@@ -13,7 +13,7 @@ cargo install cargo-audit
 cargo audit
 ```
 
-## Embded the exact crate versions in your Rust executable for auditability
+## Embded the exact crate versions in your Rust executable for auditability {#cargo-auditable}
 
 [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]{{hi:cargo-auditable}}
 [![cargo-auditable-crates.io][c-cargo_auditable-crates.io-badge]][c-cargo_auditable-crates.io]
@@ -28,7 +28,7 @@ It audits binaries for known bugs or security vulnerabilities in production, at 
 
 This works by embedding data about the dependency tree in JSON format into a dedicated linker section of the compiled executable.
 
-## List the license(s) of dependencies
+## List the license(s) of dependencies {#cargo-license}
 
 [![cargo-license][c-cargo_license-badge]][c-cargo_license]{{hi:cargo-license}}
 [![cargo-license-crates.io][c-cargo_license-crates.io-badge]][c-cargo_license-crates.io]
@@ -40,7 +40,7 @@ Cargo subcommand to see license of dependencies.
 
 You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or `cargo-license`.
 
-## `cargo deny`
+## `cargo deny` {#cargo-deny}
 
 [![cargo-deny][c-cargo_deny-badge]][c-cargo_deny]{{hi:cargo-deny}}
 [![cargo-deny-crates.io][c-cargo_deny-crates.io-badge]][c-cargo_deny-crates.io]

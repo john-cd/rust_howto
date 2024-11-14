@@ -6,7 +6,7 @@
 
 [Just Programmer's Manual][c-just-programmer-manual]⮳
 
-## Installation in a dev container
+## Installation in a dev container {#installation-into-dev-container}
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye
@@ -33,7 +33,7 @@ For Alpine, use [`apk`][apk-website]{{hi:apk}}⮳:
 RUN apk add just
 ```
 
-## Example `justfile`
+## Example `justfile` {#example-justfile}
 
 Place it in the root folder of your project. Run [`just`][c-just-website]{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 

@@ -2,7 +2,7 @@
 
 {{#include read-write.incl.md}}
 
-## Read lines of strings from a file
+## Read lines of strings from a file {#read-lines-of-strings-from-a-file}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -13,7 +13,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 {{#include ../../../deps/tests/cats/filesystem/read_file.rs:example}}
 ```
 
-## Avoid writing and reading from a same file
+## Avoid writing and reading from the same file {#avoid-writing-and-reading-from-the-same-file}
 
 [![same-file][c-same_file-badge]][c-same_file]{{hi:same-file}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -35,7 +35,7 @@ cargo run >> new.txt
 
 errors because the two files are same.
 
-## Access a file randomly using a memory map
+## Access a file randomly using a memory map {#memory-map}
 
 [![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

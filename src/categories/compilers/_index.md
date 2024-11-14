@@ -2,15 +2,15 @@
 
 Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
 
-## Cross-compilation
+## Cross-compilation {#cross-compilation}
 
 {{#include cross_compilation.incl.md}}
 
-## Faster linking
+## Faster linking {#faster-linking}
 
 {{#include faster_linking.incl.md}}
 
-## Compilation duration reduction
+## Compilation duration reduction {#compilation-duration-reduction}
 
 {{#include reduce_compilation_duration.incl.md}}
 

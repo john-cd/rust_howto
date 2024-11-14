@@ -2,7 +2,7 @@
 
 ## Get platform-specific locations for configuration, cache, and other data
 
-### `dirs`
+### `dirs` {#dirs}
 
 [![dirs][c-dirs-badge]][c-dirs]{{hi:dirs}}
 [![dirs-crates.io][c-dirs-crates.io-badge]][c-dirs-crates.io]
@@ -12,7 +12,7 @@
 
 Provide platform-specific locations for configuration, cache, and other data
 
-### `directories`
+### `directories` {#directories}
 
 [![directories][c-directories-badge]][c-directories]{{hi:directories}}
 [![directories-crates.io][c-directories-crates.io-badge]][c-directories-crates.io]

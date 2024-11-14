@@ -4,7 +4,7 @@
 
 [Miri][c-miri-github]⮳ is an experimental interpreter{{hi:Interpreters}} for Rust's mid-level intermediate representation{{hi:Intermediate representation}} (MIR{{hi:MIR}}). It can run binaries and test suites of cargo projects and detect certain classes of undefined behavior. It can also perform cross-interpretation{{hi:Cross-interpretation}} for arbitrary foreign targets.
 
-## Installation
+## Installation {#miri-installation}
 
 ```bash
 rustup +nightly component add miri

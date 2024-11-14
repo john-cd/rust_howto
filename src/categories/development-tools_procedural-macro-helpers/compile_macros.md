@@ -1,5 +1,7 @@
 # Compile macros ahead of time
 
+## Watt {#watt}
+
 [![watt][c-watt-badge]][c-watt]{{hi:watt}}
 [![watt-crates.io][c-watt-crates.io-badge]][c-watt-crates.io]
 [![watt-github][c-watt-github-badge]][c-watt-github]

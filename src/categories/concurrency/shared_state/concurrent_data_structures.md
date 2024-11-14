@@ -2,7 +2,7 @@
 
 {{#include concurrent_data_structures.incl.md}}
 
-## Dashmap
+## Dashmap {#dashmap}
 
 [![dashmap][c-dashmap-badge]][c-dashmap]{{hi:dashmap}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -14,7 +14,7 @@
 {{#include ../../../../deps/tests/cats/concurrency/dashmap.rs:example}}
 ```
 
-## Bounded Multi-producer Multi-consumer Queue
+## Bounded Multi-producer Multi-consumer Queue {#crossbeam-queue}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -29,7 +29,7 @@
 TODO: add crate badges
 TODO add flurry
 
-## flurry
+## flurry {#flurry}
 
 [![flurry][c-flurry-badge]][c-flurry]{{hi:flurry}}
 [![flurry-crates.io][c-flurry-crates.io-badge]][c-flurry-crates.io]

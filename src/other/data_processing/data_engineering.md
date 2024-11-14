@@ -1,6 +1,6 @@
 # Data Engineering
 
-## Develop data analytics applications that process columnar data with Arrow
+## Develop data analytics applications that process columnar data with Arrow {#arrow}
 
 [![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}
 [![arrow-crates.io][c-arrow-crates.io-badge]][c-arrow-crates.io]
@@ -9,7 +9,7 @@
 
 `arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
-## Query in-memory data with datafusion
+## Query in-memory data with datafusion {#datafusion}
 
 [![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}}
 [![datafusion-crates.io][c-datafusion-crates.io-badge]][c-datafusion-crates.io]
@@ -22,7 +22,7 @@
 
 DataFusion offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
 
-## Databend
+## Databend {#databend}
 
 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 

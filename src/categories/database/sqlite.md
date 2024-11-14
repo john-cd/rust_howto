@@ -2,7 +2,7 @@
 
 {{#include sqlite.incl.md}}
 
-## Create a SQLite database
+## Create a SQLite database {#create-database-sqlite}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}  [![rusqlite-documentation][c-rusqlite-documentation-badge]][c-rusqlite-documentation]  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -15,7 +15,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on Windows.
 {{#include ../../../deps/tests/cats/database/sqlite/initialization.rs:example}}
 ```
 
-## Insert and Select data
+## Insert and Select data {#insert-select-data}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -25,7 +25,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on Windows.
 {{#include ../../../deps/tests/cats/database/sqlite/insert_select.rs:example}}
 ```
 
-## Using transactions
+## Using transactions {#transaction}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 

@@ -4,7 +4,7 @@
 
 Crates related to solving problems involving physics, chemistry, biology, machine learning, geo-science, and other scientific fields.
 
-## Machine Learning
+## Machine Learning {#machine-learning}
 
 {{#include machine_learning/index.incl.md}}
 

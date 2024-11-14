@@ -6,7 +6,7 @@ Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channels}} that w
 
 {{#include async_channels.incl.md}}
 
-## OneShot
+## OneShot {#oneshot}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -22,7 +22,7 @@ Another example:
 {{#include ../../../deps/tests/cats/asynchronous/async_channels_oneshot2.rs:example}}
 ```
 
-## Multiple Producer, Single Consumer
+## Multiple Producer, Single Consumer {#mpsc}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -30,7 +30,7 @@ Another example:
 {{#include ../../../deps/tests/cats/asynchronous/async_channels_mpsc.rs:example}}
 ```
 
-## See also
+## See also {#see-also}
 
 [![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
 

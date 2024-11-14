@@ -1,6 +1,6 @@
 # Static Website Generators
 
-## Zola
+## Zola {#zola}
 
 [![zola-github][c-zola-github-badge]][c-zola-github]
 [![zola-lib.rs][c-zola-lib.rs-badge]][c-zola-lib.rs]
@@ -8,7 +8,7 @@
 
 [Zola][c-zola-website]{{hi:zola}}⮳ is a fast static site generator in a single binary with everything built-in.
 
-### Themes
+### Themes {#themes}
 
 [AdiDoks][adidoks-website] is a modern documentation theme.
 

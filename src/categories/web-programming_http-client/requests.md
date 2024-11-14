@@ -2,7 +2,7 @@
 
 {{#include requests.incl.md}}
 
-## Make a HTTP GET request
+## Make a HTTP GET request {#make-a-http-get-request}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -12,7 +12,7 @@ Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest:
 {{#include ../../../deps/tests/cats/web_programming_http_client/get.rs:example}}
 ```
 
-## Async
+## Async {#async}
 
 A similar approach can be used by including the [`tokio`][c-tokio]{{hi:tokio}}⮳ executor to make the main function asynchronous, retrieving the same information.
 
@@ -25,7 +25,7 @@ Uses the asynchronous versions of [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, both 
 {{#include ../../../deps/tests/cats/web_programming_http_client/get1.rs:example}}
 ```
 
-## Set custom headers and URL parameters for a REST request
+## Set custom headers and URL parameters for a REST request {#custom-headers-and-url-parameters}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}  [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 

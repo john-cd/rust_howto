@@ -1,6 +1,6 @@
 # 2D Renderers
 
-## femtovg
+## femtovg {#femtovg}
 
 [![femtovg][c-femtovg-badge]][c-femtovg]{{hi:femtovg}}
 [![femtovg-crates.io][c-femtovg-crates.io-badge]][c-femtovg-crates.io]
@@ -10,7 +10,7 @@
 
 "OpenGL based. Offers a simple API. Probably the easiest to get started with."
 
-## skia-safe
+## skia-safe {#skia-safe}
 
 [![skia-safe][c-skia_safe-badge]][c-skia_safe]{{hi:skia-safe}}
 [![skia-safe-crates.io][c-skia_safe-crates.io-badge]][c-skia_safe-crates.io]
@@ -24,7 +24,7 @@
 
 "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile."
 
-## vello
+## vello {#vello}
 
 [![vello][c-vello-badge]][c-vello]{{hi:vello}}
 [![vello-crates.io][c-vello-crates.io-badge]][c-vello-crates.io]
@@ -35,7 +35,7 @@
 
 "WGPU based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release."
 
-## vger
+## vger {#vger}
 
 [![vger][c-vger-badge]][c-vger]{{hi:vger}}
 [![vger-crates.io][c-vger-crates.io-badge]][c-vger-crates.io]
@@ -45,7 +45,7 @@
 
 "A simpler WGPU based option which is less innovative but currently more stable than vello."
 
-## webrender
+## webrender {#webrender}
 
 [![webrender][c-webrender-badge]][c-webrender]{{hi:webrender}}
 [![webrender-crates.io][c-webrender-crates.io-badge]][c-webrender-crates.io]

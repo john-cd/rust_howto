@@ -1,6 +1,6 @@
 # Custom
 
-## Define and operate on a type represented as a bitfield
+## Define and operate on a type represented as a bitfield {#bitfield}
 
 [![bitflags][c-bitflags-badge]][c-bitflags]{{hi:bitflags}}  [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No std}}  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
@@ -15,7 +15,7 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 {{#include ../../../deps/tests/cats/data_structures/bitfield.rs:example}}
 ```
 
-## Flagset
+## Flagset {#flagset}
 
 [![flagset][c-flagset-badge]][c-flagset]{{hi:flagset}}
 [![flagset-crates.io][c-flagset-crates.io-badge]][c-flagset-crates.io]

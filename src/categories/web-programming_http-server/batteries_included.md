@@ -1,6 +1,6 @@
 # Batteries-included frameworks
 
-## Loco
+## Loco {#loco}
 
 [![loco_rs][c-loco_rs-badge]][c-loco_rs]{{hi:loco_rs}}{{hi:HTTP server}}
 [![loco_rs-crates.io][c-loco_rs-crates.io-badge]][c-loco_rs-crates.io]
@@ -12,7 +12,7 @@
 
 [Loco article][c-loco_rs-blog]⮳
 
-## Rust on Nails
+## Rust on Nails {#rust-on-nails}
 
 [Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳
 

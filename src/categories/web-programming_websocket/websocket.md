@@ -2,7 +2,7 @@
 
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:Websocket}}
 
-## Low-level
+## Low-level {#low-level}
 
 [![tungstenite][c-tungstenite-badge]][c-tungstenite]{{hi:tungstenite}}
 [![tungstenite-crates.io][c-tungstenite-crates.io-badge]][c-tungstenite-crates.io]
@@ -13,7 +13,7 @@
 
 Low-level crate that others build on.
 
-## General Purpose
+## General Purpose {#general-purpose}
 
 [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite]{{hi:tokio-tungstenite}}
 [![tokio-tungstenite-crates.io][c-tokio_tungstenite-crates.io-badge]][c-tokio_tungstenite-crates.io]

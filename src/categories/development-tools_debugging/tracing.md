@@ -14,9 +14,9 @@ tracing = "0.1"
 tracing-subscriber = "0.3"
 ```
 
-## Initialization
+## Initialization {#initialization}
 
-### Basic tracing
+### Basic tracing {#basic-tracing}
 
 {{hi:Tracing}}
 
@@ -24,7 +24,7 @@ tracing-subscriber = "0.3"
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber.rs:example}}
 ```
 
-### Combine layers
+### Combine layers {#combine-layers}
 
 ```rust,noplayground
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber2.rs:example}}
@@ -36,7 +36,7 @@ Or with a custom formatting layer
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber3.rs:example}}
 ```
 
-### Configure a custom event formatter
+### Configure a custom event formatter {#custom-event-formatter}
 
 {{hi:Custom event formatter}}
 
@@ -44,13 +44,13 @@ Or with a custom formatting layer
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber4.rs:example}}
 ```
 
-## Events
+## Events {#events}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing.rs:example}}
 ```
 
-## Spans
+## Spans {#spans}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_spans.rs:example}}
@@ -68,13 +68,13 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_in_scope.rs:example}}
 ```
 
-## Add tracing spans to functions
+## Add tracing spans to functions {#add-tracing-spans-to-fn}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_instrument.rs:example}}
 ```
 
-## Related crates
+## Related crates {#related-crates}
 
 [![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
 [![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]

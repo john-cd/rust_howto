@@ -1,6 +1,6 @@
 # Benchmarking
 
-## cargo-flamegraph
+## `cargo flamegraph` {#cargo-flamegraph}
 
 [![cargo-flamegraph][c-cargo_flamegraph-badge]][c-cargo_flamegraph]{{hi:cargo-flamegraph}}
 [![cargo-flamegraph-crates.io][c-cargo_flamegraph-crates.io-badge]][c-cargo_flamegraph-crates.io]
@@ -9,7 +9,7 @@
 
 Execution flamegraph generation.
 
-## Criterion
+## Criterion {#criterion}
 
 [![criterion][c-criterion-badge]][c-criterion]{{hi:criterion}}
 [![criterion-crates.io][c-criterion-crates.io-badge]][c-criterion-crates.io]
@@ -21,7 +21,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 
 `criterion.rs` helps you write fast code by detecting and measuring performance improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the performance of your code.
 
-## Divan
+## Divan {#divan}
 
 [![divan][c-divan-badge]][c-divan]{{hi:divan}}
 [![divan-crates.io][c-divan-crates.io-badge]][c-divan-crates.io]
@@ -31,7 +31,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 
 Simple yet powerful benchmarking library with allocation profiling
 
-## Hyperfine
+## Hyperfine {#hyperfine}
 
 [![hyperfine][c-hyperfine-badge]][c-hyperfine]{{hi:hyperfine}}
 [![hyperfine-crates.io][c-hyperfine-crates.io-badge]][c-hyperfine-crates.io]

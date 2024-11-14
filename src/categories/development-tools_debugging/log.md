@@ -2,7 +2,7 @@
 
 {{#include log.incl.md}}
 
-## Log a debug message to the console
+## Log a debug message to the console {#log-to-console}
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Debug message}}
 
@@ -26,7 +26,7 @@ Cargo prints debugging information{{hi:Debugging information}} then the followin
 DEBUG:main: Executing query: DROP TABLE students
 ```
 
-## Log an error message to the console
+## Log an error message to the console {#log-error-message-to-console}
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
@@ -36,7 +36,7 @@ Proper error handling{{hi:Error handling}} considers exceptions exceptional. Her
 {{#include ../../../deps/tests/cats/development_tools_debugging/log_error.rs:example}}
 ```
 
-## Log to stdout instead of stderr
+## Log to stdout instead of stderr {#log-to-stdout}
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
@@ -46,7 +46,7 @@ Creates a custom logger configuration{{hi:Custom logger configuration}} using th
 {{#include ../../../deps/tests/cats/development_tools_debugging/log_stdout.rs:example}}
 ```
 
-## Log messages with a custom logger
+## Log messages with a custom logger {#custom-logger}
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
@@ -56,7 +56,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 {{#include ../../../deps/tests/cats/development_tools_debugging/log_custom_logger.rs:example}}
 ```
 
-## Log to the Unix syslog
+## Log to the Unix syslog {#syslog}
 
 [![log][c-log-badge]][c-log]{{hi:log}}  [![syslog][c-syslog-badge]][c-syslog]{{hi:syslog}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:syslog}}
 

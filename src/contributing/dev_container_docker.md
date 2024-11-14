@@ -1,4 +1,4 @@
-## Dev Container and Docker
+# Dev Container and Docker
 
 The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}}.
 
@@ -23,7 +23,7 @@ To connect to the (host OS) docker engine from within the container, add
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
 ```
 
-### Docker Compose
+### Docker Compose {#docker-compose}
 
 Test the docker compose{{hi:docker compose}} setup used during developement (which Dev Container runs) with:
 
@@ -35,7 +35,7 @@ docker compose up -d
 docker compose up --build -d
 ```
 
-## Deployment to GitHub Pages
+## Deployment to GitHub Pages {#deployment-to-github-pages}
 
 The continuous integration worflow{{hi:Continuous integration worflow}} is found under `.github`.
 
@@ -58,7 +58,7 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_h
 
 [Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳
 
-### Push image to Docker Hub
+### Push image to Docker Hub {#push-image-to-docker-hub}
 
 From the project root folder, use the following to build and push the `development` image:
 

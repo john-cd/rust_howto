@@ -2,19 +2,19 @@
 
 {{#include index.incl.md}}
 
-## Rustup
+## Rustup {#rustup}
 
 [Rustup][p-rustup]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Rustup installs, manages, and upgrades versions of rustc, cargo, clippy, rustfmt, etc.
 
-## Cargo install
+## Cargo install {#cargo-install}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 This command manages Cargo’s local set of installed binary crates. Only packages which have executable{{hi:Executables}} `[[bin]]` or `[[example]]` targets can be installed, and all executables are installed into the installation root’s bin folder. By default only binaries, not examples, are installed.
 
-## Cargo binstall
+## Cargo binstall {#cargo-binstall}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

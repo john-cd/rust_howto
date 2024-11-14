@@ -1,6 +1,6 @@
 # Unix APIs
 
-## `rustix`
+## `rustix` {#rustix}
 
 [![rustix][c-rustix-badge]][c-rustix]{{hi:rustix}}
 [![rustix-crates.io][c-rustix-crates.io-badge]][c-rustix-crates.io]
@@ -13,7 +13,7 @@
 
 Efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, bitflags instead of bare integer flags, and several other conveniences.
 
-## `nix`
+## `nix` {#nix}
 
 [![nix][c-nix-badge]][c-nix]{{hi:nix}}
 [![nix-crates.io][c-nix-crates.io-badge]][c-nix-crates.io]

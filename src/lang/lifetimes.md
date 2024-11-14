@@ -18,7 +18,7 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../../deps/tests/lang/generic_lifetime.rs:example}}
 ```
 
-## Lifetime Annotations in Struct Definitions and methods
+## Lifetime Annotations in Struct Definitions and methods {#lifetime-annotations}
 
 ```rust
 {{#include ../../deps/tests/lang/lifetime.rs:example}}

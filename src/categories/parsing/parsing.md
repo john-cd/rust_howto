@@ -5,7 +5,7 @@
 
 Crates to help create parsers of binary and text formats. Format-specific parsers belong in other, more specific categories.
 
-## Nom
+## Nom {#nom}
 
 [![nom][c-nom-badge]][c-nom]{{hi:nom}}
 [![nom-crates.io][c-nom-crates.io-badge]][c-nom-crates.io]
@@ -17,7 +17,7 @@ Crates to help create parsers of binary and text formats. Format-specific parser
 
 See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
-## Pest
+## Pest {#pest}
 
 [![pest][c-pest-badge]][c-pest]{{hi:pest}}
 [![pest-crates.io][c-pest-crates.io-badge]][c-pest-crates.io]
@@ -29,7 +29,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
 Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
-### Tree sitter
+### Tree sitter {#tree-sitter}
 
 [![tree-sitter][c-tree_sitter-badge]][c-tree_sitter]{{hi:tree-sitter}}
 [![tree-sitter-crates.io][c-tree_sitter-crates.io-badge]][c-tree_sitter-crates.io]

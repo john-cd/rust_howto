@@ -1,6 +1,6 @@
 # Release automation
 
-## `cargo release`
+## `cargo release` {#cargo-release}
 
 Helper for publishing new crate versions.
 
@@ -10,7 +10,7 @@ Helper for publishing new crate versions.
 [![cargo-release-lib.rs][c-cargo_release-lib.rs-badge]][c-cargo_release-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-## `release-plz`
+## `release-plz` {#release-plz}
 
 [![release-plz][c-release_plz-badge]][c-release_plz]{{hi:release-plz}}
 [![release-plz-crates.io][c-release_plz-crates.io-badge]][c-release_plz-crates.io]

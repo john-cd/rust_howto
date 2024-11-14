@@ -9,7 +9,7 @@ Two key libraries:
 
 The core functionality of `once_cell` is now included in the standard library with the remaining parts on track to be stabilised in future.
 
-## `std`
+## `std` {#std}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
@@ -22,7 +22,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 {{#include ../../../deps/tests/cats/memory_management/once_cell.rs:example}}
 ```
 
-## `once_cell`
+## `once_cell` {#once_cell}
 
 [![once_cell][c-once_cell-badge]][c-once_cell]{{hi:once_cell}}
 [![once_cell-crates.io][c-once_cell-crates.io-badge]][c-once_cell-crates.io]
@@ -37,7 +37,7 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 {{#include ../../../deps/tests/cats/memory_management/once_cell2.rs:example}}
 ```
 
-## `lazy_static`
+## `lazy_static` {#lazy_static}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
 [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io]

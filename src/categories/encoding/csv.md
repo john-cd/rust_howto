@@ -2,7 +2,7 @@
 
 {{#include csv.incl.md}}
 
-## Read CSV records
+## Read CSV records {#csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -19,7 +19,7 @@ Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:c
 {{#include ../../../deps/tests/cats/encoding/read1.rs:example}}
 ```
 
-## Read CSV records with different delimiter
+## Read CSV records with different delimiter {#read-csv-different-delimiter}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi: Delimiter}}
 
@@ -29,7 +29,7 @@ Reads CSV records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::ReaderBuil
 {{#include ../../../deps/tests/cats/encoding/delimiter.rs:example}}
 ```
 
-## Filter CSV records matching a predicate
+## Filter CSV records matching a predicate {#filter-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -41,7 +41,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 
 This example has been adapted from [the csv crate tutorial][c-csv-tutorial]⮳
 
-## Handle invalid CSV data with Serde
+## Handle invalid CSV data with Serde {#handle-invalid-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -51,7 +51,7 @@ CSV files often contain invalid data{{hi:Invalid data}}. For these cases, the [`
 {{#include ../../../deps/tests/cats/encoding/invalid.rs:example}}
 ```
 
-## Serialize records to CSV
+## Serialize records to CSV {#serialize-to-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -61,7 +61,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 {{#include ../../../deps/tests/cats/encoding/serialize.rs:example}}
 ```
 
-## Serialize records to CSV using Serde
+## Serialize records to CSV using Serde {#serialize-toCsv-using-serde}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -71,7 +71,7 @@ The following example shows how to serialize custom structs{{hi:Serialize custom
 {{#include ../../../deps/tests/cats/encoding/serde_serialize.rs:example}}
 ```
 
-## Transform CSV column
+## Transform CSV column {#transform-csv-column}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

@@ -1,6 +1,6 @@
 # Useful tools and libraries for robotics
 
-## Open CV
+## Open CV {#opencv}
 
 [![opencv][c-opencv-badge]][c-opencv]{{hi:opencv}}
 [![opencv-crates.io][c-opencv-crates.io-badge]][c-opencv-crates.io]
@@ -12,7 +12,7 @@
 
 [![opencv-example][c-opencv-example-badge]][c-opencv-example]
 
-## `zenoh`
+## `zenoh` {#zenoh}
 
 [![zenoh][c-zenoh-badge]][c-zenoh]{{hi:zenoh}}
 [![zenoh-crates.io][c-zenoh-crates.io-badge]][c-zenoh-crates.io]
@@ -21,14 +21,14 @@
 
 [Zenoh][c-zenoh-website]{{hi:zenoh}}⮳ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
 
-## Open Rust Robotics
+## Open Rust Robotics {#open-rust-robotics}
 
 [![openrr][c-openrr-badge]][c-openrr]{{hi:openrr}}
 [![openrr-crates.io][c-openrr-crates.io-badge]][c-openrr-crates.io]
 [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 [![openrr-lib.rs][c-openrr-lib.rs-badge]][c-openrr-lib.rs]
 
-## `bonsai-bt`
+## `bonsai-bt` {#bonsai-bt}
 
 [![bonsai-bt][c-bonsai_bt-badge]][c-bonsai_bt]{{hi:bonsai-bt}}
 [![bonsai-bt-crates.io][c-bonsai_bt-crates.io-badge]][c-bonsai_bt-crates.io]

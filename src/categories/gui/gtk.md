@@ -1,6 +1,6 @@
 # GTK
 
-## gtk4
+## gtk4 {#gtk4}
 
 [![gtk4][c-gtk4-badge]][c-gtk4]{{hi:gtk4}}
 [![gtk4-crates.io][c-gtk4-crates.io-badge]][c-gtk4-crates.io]
@@ -9,7 +9,7 @@
 
 Rust bindings to GTK4. These are quite well supported, although you'll often need to use the C documentation.
 
-## relm4
+## relm4 {#relm4}
 
 [![relm4][c-relm4-badge]][c-relm4]{{hi:relm4}}
 [![relm4-crates.io][c-relm4-crates.io-badge]][c-relm4-crates.io]

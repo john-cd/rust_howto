@@ -1,6 +1,6 @@
 # File listing and display
 
-## `lsd`
+## `lsd` {#lsd`}
 
 [`lsd`][c-lsd-github]{{hi:lsd}} is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.
 
@@ -8,17 +8,17 @@
 apt install lsd
 ```
 
-## `exa`
+## `exa` {#exa}
 
 [![exa-github][c-exa-github-badge]][c-exa-github]{{hi:exa}}
 
 exa is a modern replacement for ls.
 
-## `broot`
+## `broot` {#broot}
 
 [`broot`][c-broot-website]{{hi:broot}} [![broot-github][c-broot-github-badge]][c-broot-github] is a new way to see and navigate directory trees.
 
-## `bat`
+## `bat` {#bat}
 
 `bat`{{hi:bat}} is a fast `cat` clone with syntax highlighting and Git{{hi:Git}} integration.
 [![bat-github][c-bat-github-badge]][c-bat-github]{{hi:bat}}
@@ -33,7 +33,7 @@ curl -s https://sh.rustup.rs | bat
 bat -A /etc/hosts
 ```
 
-## open
+## open {#open}
 
 [![open][c-open-badge]][c-open]{{hi:open}}
 [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io]

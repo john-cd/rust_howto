@@ -2,7 +2,7 @@
 
 {{#include trigonometry.incl.md}}
 
-## Calculating the side length of a triangle
+## Calculating the side length of a triangle {#calculating-the-side-length-of-a-triangle}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -12,7 +12,7 @@ Calculates the length of the hypotenuse of a right-angle triangle with an angle 
 {{#include ../../../deps/tests/cats/mathematics/side_length.rs:example}}
 ```
 
-## Verifying tan is equal to sin divided by cos
+## Verifying tan is equal to sin divided by cos {#verifying-tan-is-equal-to-sin-divided-by-cos}
 
 [![std][c-std-badge]][c-std]{{hi:std}}  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -22,7 +22,7 @@ Verifies `tan(x)` is equal to `sin(x)/cos(x)` for x = 6.
 {{#include ../../../deps/tests/cats/mathematics/tan_sin_cos.rs:example}}
 ```
 
-## Distance between two points on the Earth
+## Distance between two points on Earth {#distance-between-two-points-on-earth}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

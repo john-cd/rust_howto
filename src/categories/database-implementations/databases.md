@@ -1,6 +1,6 @@
 # Databases written in Rust
 
-## Sled
+## Sled {#sled}
 
 [![sled][c-sled-badge]][c-sled]{{hi:sled}}
 [![sled-crates.io][c-sled-crates.io-badge]][c-sled-crates.io]
@@ -14,7 +14,7 @@
 
 [sled][c-sled-github]{{hi:sled}}⮳ is an embedded database.
 
-## SurrealDB
+## SurrealDB {#surrealdb}
 
 [![surrealdb][c-surrealdb-badge]][c-surrealdb]{{hi:surrealdb}}
 [![surrealdb-crates.io][c-surrealdb-crates.io-badge]][c-surrealdb-crates.io]

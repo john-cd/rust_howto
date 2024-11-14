@@ -40,7 +40,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
 
 `cargo-binutils`{{hi:cargo-binutils}} packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
 
-## Alternative - Mold linker
+## Alternative - Mold linker {#mold-linker}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 

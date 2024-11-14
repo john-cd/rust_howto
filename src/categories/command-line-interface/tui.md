@@ -2,7 +2,7 @@
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
 
-## Build complex TUI
+## Build complex TUI {#ratatui}
 
 [![ratatui][c-ratatui-badge]][c-ratatui]{{hi:ratatui}}
 [![ratatui-crates.io][c-ratatui-crates.io-badge]][c-ratatui-crates.io]
@@ -11,7 +11,7 @@
 
 [ratatui][c-ratatui-github]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
-## See also
+## See also {#see-also}
 
 [![tui][c-tui-badge]][c-tui]{{hi:tui}}
 

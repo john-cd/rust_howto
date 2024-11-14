@@ -10,7 +10,7 @@ This section covers concurrent and parallel programming{{hi:Parallel programming
 
 {{#include message_passing.incl.md}}
 
-## Parallelism
+## Parallelism {#parallelism}
 
 [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -35,7 +35,7 @@ Here are the topics we’ll cover:
 - [Shared-state concurrency][p-shared_state]⮳
 - [Concurrent data structures][p-concurrent_data_structures]⮳
 
-## See Also
+## See Also {#see-also}
 
 [![book-rust-concurrency][book-rust-concurrency-badge]][book-rust-concurrency]
 
@@ -49,7 +49,7 @@ Here are the topics we’ll cover:
 <div class="hidden">
 TODO: add crossbeam
 
-## Crossbeam
+## Crossbeam {#crossbeam}
 
 [crossbeam][c-crossbeam-github]{{hi:crossbeam}}
 

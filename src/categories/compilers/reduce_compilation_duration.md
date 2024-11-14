@@ -4,7 +4,7 @@ Rust compile times{{hi:Compile times}} can be long.
 
 {{#include reduce_compilation_duration.incl.md}}
 
-## Measuring build times
+## Measuring build times {#build-time}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -16,7 +16,7 @@ time cargo build
 cargo build --timings
 ```
 
-## Optimization levels
+## Optimization levels {#optimization-level}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -32,7 +32,7 @@ opt-level = 1
 opt-level = 3
 ```
 
-## Dynamic linking
+## Dynamic linking {#dynamic-linking}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -44,13 +44,13 @@ cargo build
 
 [Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳
 
-## Incremental Compilation
+## Incremental Compilation {#incremental-compilation}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be extremely unusual for there to be a later incremental build within the same job. The jobs are not making changes to source code and rebuilding. However, workflows that cache the target directory across runs might be benefiting from incremental compilation.
 
-### Incremental Computation
+### Incremental Computation {#incremental-computation}
 
 ### Salsa
 

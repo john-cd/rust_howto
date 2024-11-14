@@ -2,7 +2,7 @@
 
 [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳
 
-## `wgpu`
+## `wgpu` {#wgpu}
 
 [![wgpu][c-wgpu-badge]][c-wgpu]{{hi:wgpu}}
 [![wgpu-crates.io][c-wgpu-crates.io-badge]][c-wgpu-crates.io]

@@ -1,6 +1,6 @@
 # Functional programming
 
-## Compose iterators with `itertools`
+## Compose iterators with `itertools` {#compose-iterators-with-itertools}
 
 [![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}
 [![itertools-crates.io][c-itertools-crates.io-badge]][c-itertools-crates.io]

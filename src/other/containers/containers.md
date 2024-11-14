@@ -1,13 +1,13 @@
 # Rust + containers
 
-## Docker
+## Docker {#docker}
 
-### References
+### References {#references}
 
 - Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}
 - [Docker's Rust guide][docker-rust-guide]⮳
 
-## Docker Compose
+## Docker Compose {#docker-compose}
 
 An easy way to get started is to run `docker init` in a new folder, select `Rust` as the project type, then edit the provided `compose.yaml` and `Dockerfile`.{{hi:docker compose}}
 

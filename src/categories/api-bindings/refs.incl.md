@@ -1,1 +1,1 @@
-[ex-python-interop]: python_interop.md
+[ex-python-interop]: python_interop.md#pyo3

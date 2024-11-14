@@ -2,7 +2,7 @@
 
 {{#include parallel.incl.md}}
 
-## Mutate the elements of an array in parallel
+## Mutate the elements of an array in parallel {#mutate-array-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -13,7 +13,7 @@ The example uses the [`rayon`][c-rayon]{{hi:rayon}}⮳ crate, which is a data pa
 {{#include ../../../deps/tests/cats/concurrency/rayon_iter_mut.rs:example}}
 ```
 
-## Test in parallel if any or all elements of a collection match a given predicate
+## Test in parallel if any or all elements of a collection match a given predicate {#any-or-all-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -23,7 +23,7 @@ This example demonstrates using the [`rayon::iter::ParallelIterator::any`][c-ray
 {{#include ../../../deps/tests/cats/concurrency/rayon_any_all.rs:example}}
 ```
 
-## Search items using given predicate in parallel
+## Search items using given predicate in parallel {#search-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -37,7 +37,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 {{#include ../../../deps/tests/cats/concurrency/rayon_parallel_search.rs:example}}
 ```
 
-## Sort a vector in parallel
+## Sort a vector in parallel {#sort-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![rand][c-rand-badge]][c-rand]{{hi:rand}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -50,7 +50,7 @@ exist to sort an enumerable data type, [`rayon::slice::ParallelSliceMut::par_sor
 {{#include ../../../deps/tests/cats/concurrency/rayon_parallel_sort.rs:example}}
 ```
 
-## Map-reduce in parallel
+## Map-reduce in parallel {#map-reduce-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -62,7 +62,7 @@ This example uses [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::Paral
 {{#include ../../../deps/tests/cats/concurrency/rayon_map_reduce.rs:example}}
 ```
 
-## Generate jpg thumbnails in parallel
+## Generate jpg thumbnails in parallel {#thumbnails-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![image][c-image-badge]][c-image]{{hi:image}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

@@ -1,6 +1,6 @@
-## Use GPUs with Rust
+# Use GPUs with Rust
 
-## `rust-gpu`
+## `rust-gpu` {#rust-gpu}
 
 [![rust_gpu-github][rust_gpu-github-badge]][rust_gpu-github]{{hi:rust_gpu}}
 

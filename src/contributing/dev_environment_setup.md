@@ -1,6 +1,6 @@
-## Development Environment Setup
+## Development Environment Setup {#Development Environment Setup}
 
-### Using VS Code
+### Using VS Code {#using-vs-code}
 
 Clone the [repo][rust-howto-github]⮳ and open the folder in [VS Code][rust-in-vs-code]⮳. Edit `.devcontainer/.env` if needed. VS Code{{hi:VS code}} should prompt you to open the code in a [`docker`][docker-website]{{hi:docker}}⮳ container, which installs [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}} automatically. Make sure you have previously installed
 
@@ -9,7 +9,7 @@ Clone the [repo][rust-howto-github]⮳ and open the folder in [VS Code][rust-in-
 
 Note that opening the code folder in VS Code may take a little while the first time around.
 
-### Other
+### Other {#other}
 
 If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github]⮳ or simply install the required tools on your local machine:
 

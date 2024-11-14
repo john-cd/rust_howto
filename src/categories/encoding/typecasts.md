@@ -1,6 +1,6 @@
 # Typecasts
 
-## bytemuck
+## bytemuck {#bytemuck}
 
 [![bytemuck][c-bytemuck-badge]][c-bytemuck]{{hi:bytemuck}}
 [![bytemuck-crates.io][c-bytemuck-crates.io-badge]][c-bytemuck-crates.io]
@@ -9,7 +9,7 @@
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-## zerocopy
+## zerocopy {#zerocopy}
 
 [![zerocopy][c-zerocopy-badge]][c-zerocopy]{{hi:zerocopy}}
 [![zerocopy-crates.io][c-zerocopy-crates.io-badge]][c-zerocopy-crates.io]

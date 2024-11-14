@@ -1,6 +1,6 @@
 # Maintain
 
-## Edit `Cargo.toml`
+## Edit `Cargo.toml` {#cargo-edit}
 
 [![cargo_edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github]{{hi:cargo-edit}}
 
@@ -13,9 +13,9 @@ Currently available subcommands:
 - cargo upgrade
 - cargo set-version
 
-## Find unused dependencies
+## Find unused dependencies {#find-unused-dependencies}
 
-### `cargo udeps`
+### `cargo udeps` {#cargo-udeps}
 
 [![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]{{hi:cargo-udeps}}
 [![cargo-udeps-crates.io][c-cargo_udeps-crates.io-badge]][c-cargo_udeps-crates.io]
@@ -28,7 +28,7 @@ Currently available subcommands:
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
-### `cargo machete`
+### `cargo machete` {#cargo-machete}
 
 [![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]{{hi:cargo-machete}}
 [![cargo-machete-crates.io][c-cargo_machete-crates.io-badge]][c-cargo_machete-crates.io]
@@ -46,7 +46,7 @@ cargo install cargo-machete
 cargo machete
 ```
 
-## Detect dependencies that are out of date
+## Detect dependencies that are out of date {#cargo-outdated}
 
 [![cargo-outdated][c-cargo_outdated-badge]][c-cargo_outdated]{{hi:cargo-outdated}}
 [![cargo-outdated-crates.io][c-cargo_outdated-crates.io-badge]][c-cargo_outdated-crates.io]
@@ -57,7 +57,7 @@ Cargo subcommand for displaying when dependencies are out of date.
 
 If you are using VS Code, also look into the `Dependi` VS Code plugin.
 
-## Lint your crate API changes for semver violations
+## Lint your crate API changes for semver violations {#cargo-semver-checks}
 
 [![cargo-semver-checks][c-cargo_semver_checks-badge]][c-cargo_semver_checks]
 [![cargo-semver-checks-crates.io][c-cargo_semver_checks-crates.io-badge]][c-cargo_semver_checks-crates.io]
@@ -79,7 +79,7 @@ $ cargo install cargo-semver-checks --locked
 $ cargo semver-checks
 ```
 
-## Manage the `cargo` cache
+## Manage the `cargo` cache {#cargo-cache}
 
 [![cargo-cache][c-cargo_cache-badge]][c-cargo_cache]{{hi:cargo-cache}}
 [![cargo-cache-crates.io][c-cargo_cache-crates.io-badge]][c-cargo_cache-crates.io]

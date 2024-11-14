@@ -2,7 +2,7 @@
 
 {{#include dir.incl.md}}
 
-## Find files that have been modified in the last 24 hours
+## Find files that have been modified in the last 24 hours {#find-files-modified-last-24-hours}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -14,7 +14,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 {{#include ../../../deps/tests/cats/filesystem/modified.rs:example}}
 ```
 
-## Find loops for a given path
+## Find loops for a given path {#find-loop-in-path}
 
 [![same-file][c-same_file-badge]][c-same_file]{{hi:same-file}}
 [![same-file-crates.io][c-same_file-crates.io-badge]][c-same_file-crates.io]
@@ -35,7 +35,7 @@ The following would assert that a loop exists.
 {{#include ../../../deps/tests/cats/filesystem/loops.rs:example}}
 ```
 
-## Recursively find duplicate file names
+## Recursively find duplicate file names {#recursively-find-duplicate-file-names}
 
 [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -50,7 +50,7 @@ Find recursively in the current directory duplicate filenames{{hi:Duplicate file
 {{#include ../../../deps/tests/cats/filesystem/duplicate_name.rs:example}}
 ```
 
-## Recursively find all files with given predicate
+## Recursively find all files with given predicate {#recursively-find-all-files-with-given-predicate}
 
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -60,7 +60,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 {{#include ../../../deps/tests/cats/filesystem/find_file.rs:example}}
 ```
 
-## Traverse directories while skipping dotfiles
+## Traverse directories while skipping dotfiles {#traverse-directories-while-skipping-dotfiles}
 
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:Skipping dotfiles}}
 
@@ -72,7 +72,7 @@ Root dir `"."` yields through `walkdir::WalkDir::depth` usage in `is_not_hidden`
 {{#include ../../../deps/tests/cats/filesystem/skip_dot.rs:example}}
 ```
 
-## Recursively calculate file sizes at given depth
+## Recursively calculate file sizes at given depth {#recursively-calculate-file-sizes-at-given-depth}
 
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
@@ -82,7 +82,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir
 {{#include ../../../deps/tests/cats/filesystem/sizes.rs:example}}
 ```
 
-## Find all png files recursively
+## Find all png files recursively {#find-all-png-files-recursively}
 
 [![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -94,7 +94,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 {{#include ../../../deps/tests/cats/filesystem/png.rs:example}}
 ```
 
-## Find all files with given pattern ignoring filename case
+## Find all files with given pattern ignoring filename case {#find-all-files-with-given-pattern-ignoring-filename-case}
 
 [![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

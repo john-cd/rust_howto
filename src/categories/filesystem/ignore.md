@@ -1,6 +1,6 @@
 # Walk the filesystem
 
-## Walk the filesystem while respecting ignore files
+## Walk the filesystem while respecting ignore files {#walk-the-filesystem-while-respecting-ignore-files}
 
 [![ignore][c-ignore-badge]][c-ignore]{{hi:ignore}}
 [![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io]

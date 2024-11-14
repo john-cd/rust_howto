@@ -2,7 +2,7 @@
 
 {{#include hashing.incl.md}}
 
-## Calculate the SHA-256 digest of a file
+## Calculate the SHA-256 digest of a file {#sha256}
 
 [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:data-encoding}}  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
@@ -12,7 +12,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 {{#include ../../../deps/tests/cats/cryptography/sha_digest.rs:example}}
 ```
 
-## Sign and verify a message with HMAC digest
+## Sign and verify a message with HMAC digest {#hmac}
 
 [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
@@ -30,7 +30,7 @@ TODO review password_hashing.md
 
 review below from https://blessed.rs/crates
 
-## General Purpose Hashing
+## General Purpose Hashing {#general-purpose-hashing}
 
 For more algorithms, see Rust Crypto Hashes.
 
@@ -40,7 +40,7 @@ sha1{{hi:sha1}}
 
 md-5{{hi:md-5}}
 
-## AEAD Encryption
+## AEAD Encryption {#aead-encryption}
 
 For more algorithms, see Rust Crypto AEADs.
 
@@ -50,11 +50,11 @@ aes-gcm{{hi:aes-gcm}}
 
 chacha20poly1305{{hi:chacha20poly1305}}
 
-## RSA
+## RSA {#rsa}
 
 rsa{{hi:rsa}}
 
-## Digital Signatures
+## Digital Signatures {#digital-signatures}
 
 For more algorithms, see Rust Crypto Signatures.
 
@@ -65,7 +65,7 @@ ecdsa{{hi:ecdsa}}
 
 dsa{{hi:dsa}}
 
-## Certificate Formats
+## Certificate Formats {#certificates}
 
 For more formats, see Rust Crypto Formats.
 
@@ -77,7 +77,7 @@ pkcs8{{hi:pkcs8}}
 
 x509-cert{{hi:x509-cert}}
 
-## TLS / SSL
+## TLS / SSL {#tls-ssl}
 
 rustls{{hi:rustls}}
 A portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and higher.
@@ -85,7 +85,7 @@ A portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and hi
 native-tls{{hi:native-tls}}
 Delegates to the system TLS implementations on windows and macOS, and uses OpenSSL on linux.
 
-## Utilities
+## Utilities {#utilities}
 
 subtle{{hi:subtle}}
 Utilities for writing constant-time algorithms

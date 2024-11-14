@@ -2,7 +2,7 @@
 
 {{#include environment_variables.incl.md}}
 
-## Dotenvy
+## Dotenvy {#dotenvy}
 
 [![dotenvy][c-dotenvy-badge]][c-dotenvy]{{hi:dotenvy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -12,7 +12,7 @@
 {{#include ../../../deps/tests/cats/config/dotenvy.rs:example}}
 ```
 
-## `std::env`
+## `std::env` {#env}
 
 To retrieve a single environment variable{{hi:Environment variables}},
 
@@ -22,7 +22,7 @@ To retrieve a single environment variable{{hi:Environment variables}},
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳
 
-## Envy
+## Envy {#envy}
 
 [![envy][c-envy-badge]][c-envy]{{hi:envy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -38,7 +38,7 @@ serde = { version = "1.0", features = ["derive"] }
 {{#include ../../../deps/tests/cats/config/envy.rs:example}}
 ```
 
-## See Also
+## See Also {#see-also}
 
 [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 

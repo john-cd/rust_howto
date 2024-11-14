@@ -1,6 +1,6 @@
 # Performance
 
-## Configure your Cargo project for maximum performance, fast compile times or minimal binary size
+## Configure your Cargo project for maximum performance, fast compile times or minimal binary size {#cargo-wizard}
 
 [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard]{{hi:cargo-wizard}}
 [![cargo-wizard-crates.io][c-cargo_wizard-crates.io-badge]][c-cargo_wizard-crates.io]
@@ -10,7 +10,7 @@
 
 [cargo-wizard][c-cargo_wizard-github]{{hi:cargo-wizard}}⮳ is a `cargo` subcommand for configuring Cargo projects. It applies profile and config templates to your Cargo project to configure it for maximum performance, fast compile times or minimal binary size.
 
-## Cargo hakari
+## `cargo hakari` {#cargo-hakari}
 
 [![cargo-hakari][c-cargo_hakari-badge]][c-cargo_hakari]{{hi:cargo-hakari}}
 [![cargo-hakari-crates.io][c-cargo_hakari-crates.io-badge]][c-cargo_hakari-crates.io]

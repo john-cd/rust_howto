@@ -1,6 +1,6 @@
 # Immediate Mode Native GUI
 
-## `egui`
+## `egui` {#egui}
 
 [![egui][c-egui-badge]][c-egui]{{hi:egui}}  [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 [![egui-crates.io][c-egui-crates.io-badge]][c-egui-crates.io]

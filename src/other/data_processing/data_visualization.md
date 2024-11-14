@@ -1,6 +1,6 @@
 # Data Visualization
 
-## Plot and graph data
+## Plot and graph data {#graph-data}
 
 [![plotly][c-plotly-badge]][c-plotly]{{hi:plotly}}
 [![plotly-crates.io][c-plotly-crates.io-badge]][c-plotly-crates.io]

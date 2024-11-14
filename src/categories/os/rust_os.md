@@ -1,10 +1,10 @@
 # Operating systems written in Rust
 
-## Bottlerocket
+## Bottlerocket {#bottlerocket}
 
 [bottlerocket][bottlerocket-github]{{hi:bottlerocket}}⮳ is an operating system designed for hosting containers.
 
-## Redox
+## Redox {#redox}
 
 [redox][redox-github]{{hi:redox}}⮳ is a Rust Operating System.
 

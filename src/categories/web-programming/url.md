@@ -2,7 +2,7 @@
 
 {{#include url.incl.md}}
 
-## Parse a URL from a string to a `Url` type
+## Parse a URL from a string to a `Url` type {#Parse a URL from a string to a `Url` type}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -16,7 +16,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 {{#include ../../../deps/tests/cats/web_programming/parse.rs:example}}
 ```
 
-## Create a base URL by removing path segments
+## Create a base URL by removing path segments {#create-a-base-url-by-removing-path-segments}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -26,7 +26,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 {{#include ../../../deps/tests/cats/web_programming/base.rs:example}}
 ```
 
-## Create new URLs from a base URL
+## Create new URLs from a base URL {#create-new-urls-from-a-base-url}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -36,7 +36,7 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 {{#include ../../../deps/tests/cats/web_programming/new.rs:example}}
 ```
 
-## Extract the URL origin (scheme / host / port)
+## Extract the URL origin (scheme / host / port) {#extract-the-url-origin}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -52,7 +52,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 {{#include ../../../deps/tests/cats/web_programming/origin1.rs:example}}
 ```
 
-## Remove fragment identifiers and query pairs from a URL
+## Remove fragment identifiers and query pairs from a URL {#remove-fragment-identifiers-and-query-pairs}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 

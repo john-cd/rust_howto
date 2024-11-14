@@ -1,6 +1,6 @@
 # Tera
 
-## Create HTML files from a template
+## Create HTML files from a template {#Create HTML files from a template}
 
 [![tera][c-tera-badge]][c-tera]{{hi:tera}}
 [![tera-crates.io][c-tera-crates.io-badge]][c-tera-crates.io]

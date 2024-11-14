@@ -1,6 +1,6 @@
 # Time
 
-## Use the `time` crate
+## Use the `time` crate {#time-crate}
 
 [![time][c-time-badge]][c-time]{{hi:time}}
 [![time-crates.io][c-time-crates.io-badge]][c-time-crates.io]

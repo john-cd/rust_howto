@@ -2,7 +2,7 @@
 
 {{#include index.incl.md}}
 
-## Rustfmt
+## Rustfmt {#rustfmt}
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
@@ -21,7 +21,7 @@ Using `--check` instructs `rustfmt`{{hi:rustfmt}}⮳ to exit with an error code 
 cargo fmt --all -- --check
 ```
 
-### Rustfmt Configuration
+### Rustfmt Configuration {#rustfmt-config}
 
 Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,
@@ -67,7 +67,7 @@ List config options with
 rustfmt --help=config
 ```
 
-### Formatting attributes
+### Formatting attributes {#formatting-attributes}
 
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 

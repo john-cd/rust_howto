@@ -1,6 +1,6 @@
 # Tinytemplate
 
-## `tinytemplate`
+## `tinytemplate` {#tinytemplate}
 
 [![tinytemplate][c-tinytemplate-badge]][c-tinytemplate]{{hi:tinytemplate}}
 [![tinytemplate-crates.io][c-tinytemplate-crates.io-badge]][c-tinytemplate-crates.io]

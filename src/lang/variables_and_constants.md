@@ -6,7 +6,7 @@
 {{#include ../../deps/tests/lang/vars_and_consts.rs:example}}
 ```
 
-## Shadowing
+## Shadowing {#shadowing}
 
 ```rust
 {{#include ../../deps/tests/lang/shadowing.rs:example}}
@@ -14,7 +14,7 @@
 
 {{hi:Shadowing}}
 
-## Destructuring
+## Destructuring {#destructuring}
 
 ```rust
 {{#include ../../deps/tests/lang/destructuring.rs:example}}

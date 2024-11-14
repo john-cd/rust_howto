@@ -2,7 +2,7 @@
 
 {{#include arguments.incl.md}}
 
-## Using clap's builder API
+## Using clap's builder API {#clap-builder}
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}}  [![clap-examples][c-clap-examples-badge]][c-clap-examples]  [![clap-github][c-clap-github-badge]][c-clap-github]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -46,7 +46,7 @@ The file passed is: myfile.txt
 Your favorite number must be 256.
 ```
 
-## Using `clap`'s derive API
+## Using `clap`'s derive API {#clap-derive}
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}}  [(tutorial)][c-clap-tutorial]  [(cookbook)][c-clap-cookbook]  [![clap examples][c-clap-examples-badge]][c-clap-examples]  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -56,7 +56,7 @@ Your favorite number must be 256.
 
 ## See also
 
-### lexopt
+### lexopt {#lexopt}
 
 [![lexopt][c-lexopt-badge]][c-lexopt]{{hi:lexopt}}
 [![lexopt-crates.io][c-lexopt-crates.io-badge]][c-lexopt-crates.io]
@@ -65,7 +65,7 @@ Your favorite number must be 256.
 
 Fast compile times, fast runtime, pedantic about correctness. API is less ergonomic
 
-### pico-args
+### pico-args {#pico-args}
 
 Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
 

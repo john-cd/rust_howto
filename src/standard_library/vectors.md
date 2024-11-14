@@ -2,7 +2,7 @@
 
 {{#include vectors.incl.md}}
 
-## Vec
+## Vec {#vec}
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Vec}}{{hi:Vectors}}
 

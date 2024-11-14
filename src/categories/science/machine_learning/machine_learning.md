@@ -1,16 +1,16 @@
 # Machine Learning
 
-## Linfa
+## Linfa {#linfa}
 
 [![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}}  [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io]  [![linfa-website][c-linfa-website-badge]][c-linfa-website]  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Machine learning}}
 
-## Candle
+## Candle {#candle}
 
 [Candle Documentation][c-candle_core-docs]{{hi:candle}}⮳
 
 [meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use][blog-candle]⮳
 
-## Others
+## Others {#others}
 
 [SmartCore][smartcore-website]{{hi:smartcore}}⮳  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 

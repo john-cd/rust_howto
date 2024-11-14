@@ -1,6 +1,6 @@
 # Hashmap's friends
 
-## Insertion-ordered map
+## Insertion-ordered map {#indexmap}
 
 [![indexmap][c-indexmap-badge]][c-indexmap]{{hi:indexmap}}
 [![indexmap-crates.io][c-indexmap-crates.io-badge]][c-indexmap-crates.io]
@@ -14,7 +14,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-## Multimap
+## Multimap {#multimap}
 
 [![multimap][c-multimap-badge]][c-multimap]{{hi:multimap}}
 [![multimap-crates.io][c-multimap-crates.io-badge]][c-multimap-crates.io]
@@ -27,7 +27,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 {{#include ../../../deps/tests/cats/data_structure/multimap.rs:example}}
 ```
 
-## Slotmap
+## Slotmap {#slotmap}
 
 [![slotmap][c-slotmap-badge]][c-slotmap]{{hi:slotmap}}
 [![slotmap-crates.io][c-slotmap-crates.io-badge]][c-slotmap-crates.io]

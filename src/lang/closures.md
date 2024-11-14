@@ -6,7 +6,7 @@
 {{#include ../../deps/tests/lang/closures.rs:example}}
 ```
 
-## Closure with type annotations
+## Closure with type annotations {#closure-with-type-annotations}
 
 ```rust
 {{#include ../../deps/tests/lang/closures_with_type_annotations.rs:example}}
@@ -26,7 +26,7 @@ To force a move:
 {{#include ../../deps/tests/lang/closures_move.rs:example}}
 ```
 
-## Closures as input parameters
+## Closures as input parameters {#Closures as input parameters}
 
 ```rust
 {{#include ../../deps/tests/lang/closures_as_input_parameters.rs:example}}

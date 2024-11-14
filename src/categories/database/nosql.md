@@ -1,6 +1,6 @@
 # NoSQL and friends
 
-## Connect to MongoDB
+## Connect to MongoDB {#mongodb}
 
 [![mongodb][c-mongodb-badge]][c-mongodb]{{hi:mongodb}}
 [![mongodb-crates.io][c-mongodb-crates.io-badge]][c-mongodb-crates.io]
@@ -15,7 +15,7 @@ This is the officially supported MongoDB Rust driver, a client side library that
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-## Connect to Redis
+## Connect to Redis {#redis}
 
 [![redis][c-redis-badge]][c-redis]{{hi:redis}}
 [![redis-crates.io][c-redis-crates.io-badge]][c-redis-crates.io]

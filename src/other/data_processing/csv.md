@@ -1,10 +1,10 @@
 # CSV files
 
-## Read and write CSV files
+## Read and write CSV files {#read-and-write-csv-files}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}
 
-## Manipulate CSV files from the command line
+## Manipulate CSV files from the command line {#manipulate-csv-files-from-the-command-line}
 
 [![xsv][c-xsv-badge]][c-xsv]{{hi:xsv}}
 [![xsv-crates.io][c-xsv-crates.io-badge]][c-xsv-crates.io]

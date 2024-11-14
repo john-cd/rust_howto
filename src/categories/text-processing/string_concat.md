@@ -1,6 +1,6 @@
 # String concatenation
 
-## Benchmark
+## Benchmark {#benchmark}
 
 - [concat benchmark][concat-benchmark-github]⮳
 

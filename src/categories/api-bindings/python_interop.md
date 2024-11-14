@@ -2,7 +2,7 @@
 
 {{#include python_interop.incl.md}}
 
-## pyo3
+## pyo3 {#pyo3}
 
 [![pyo3][c-pyo3-badge]][c-pyo3]{{hi:pyo3}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 

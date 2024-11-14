@@ -1,6 +1,6 @@
 # Game engines
 
-## `bevy`
+## `bevy` {#bevy}
 
 [![bevy][c-bevy-badge]][c-bevy]{{hi:bevy}}
 [![bevy-crates.io][c-bevy-crates.io-badge]][c-bevy-crates.io]
@@ -9,7 +9,7 @@
 
 "An ECS based game engine, good for 3D but also capable of 2D."
 
-### `fyrox`
+### `fyrox` {#fyrox}
 
 [![fyrox][c-fyrox-badge]][c-fyrox]{{hi:fyrox}}
 [![fyrox-crates.io][c-fyrox-crates.io-badge]][c-fyrox-crates.io]
@@ -18,7 +18,7 @@
 
 "An OOP-focused game engine with 3D and 2D support and a full GUI scene editor."
 
-### `ggez`
+### `ggez` {#ggez}
 
 [![ggez][c-ggez-badge]][c-ggez]{{hi:ggez}}
 [![ggez-crates.io][c-ggez-crates.io-badge]][c-ggez-crates.io]
@@ -27,7 +27,7 @@
 
 "A simpler option for 2d games only."
 
-### `macroquad`
+### `macroquad` {#macroquad}
 
 [![macroquad][c-macroquad-badge]][c-macroquad]{{hi:macroquad}}
 [![macroquad-crates.io][c-macroquad-crates.io-badge]][c-macroquad-crates.io]
@@ -36,7 +36,7 @@
 
 "A simple and easy to use 2d game library, great for beginners."
 
-### `glam`
+### `glam` {#glam}
 
 [![glam][c-glam-badge]][c-glam]{{hi:glam}}
 [![glam-crates.io][c-glam-crates.io-badge]][c-glam-crates.io]

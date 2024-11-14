@@ -1,6 +1,6 @@
 # Others
 
-## `wasmer`
+## `wasmer` {#wasmer}
 
 [![wasmer][c-wasmer-badge]][c-wasmer]{{hi:wasmer}}
 [![wasmer-crates.io][c-wasmer-crates.io-badge]][c-wasmer-crates.io]
@@ -10,7 +10,7 @@
 
 [wasmer.io][wasmer-website]{{hi:wasmer.io}}⮳ is a high-performance WebAssembly runtime.
 
-## `wasmtime`
+## `wasmtime` {#wasmtime}
 
 [![wasmtime][c-wasmtime-badge]][c-wasmtime]{{hi:wasmtime}}
 [![wasmtime-crates.io][c-wasmtime-crates.io-badge]][c-wasmtime-crates.io]

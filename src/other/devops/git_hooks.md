@@ -2,7 +2,7 @@
 
 Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor formatting of the code or configuration files, when commiting in `git`, prior to submission to code review or start of a CI workflow.
 
-## Check your code before committing it
+## Check your code before committing it {#check-your -code-before-committing}
 
 [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]{{hi:cargo-husky}}
 [![cargo-husky-crates.io][c-cargo_husky-crates.io-badge]][c-cargo_husky-crates.io]
@@ -25,13 +25,13 @@ Then run tests in your project directory.
 cargo test
 ```
 
-## pre-commit
+## pre-commit {#pre-commit}
 
 [`pre-commit`][pre-commit.com-website]⮳ is a Python framework for managing and maintaining multi-language pre-commit hooks.
 
 [`pre-commit` hooks][pre-commit.com-hooks-website]
 
-### Installation
+### Installation {#installation}
 
 `pre-commit` is written in Python. Include the following into your `Dockerfile` or run the commands by hand to install `pre-commit`:
 

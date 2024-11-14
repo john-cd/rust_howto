@@ -1,6 +1,6 @@
 # Windows API bindings
 
-## `windows`
+## `windows` {#windows}
 
 [![windows][c-windows-badge]][c-windows]{{hi:Windows}}
 [![windows-crates.io][c-windows-crates.io-badge]][c-windows-crates.io]
@@ -10,7 +10,7 @@
 
 The official Microsoft-provided crate for interacting with windows APIs
 
-## `winapi`
+## `winapi` {#winapi}
 
 [![winapi][c-winapi-badge]][c-winapi]{{hi:winapi}}
 [![winapi-crates.io][c-winapi-crates.io-badge]][c-winapi-crates.io]

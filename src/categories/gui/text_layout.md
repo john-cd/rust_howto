@@ -1,6 +1,6 @@
 # Text layout
 
-## `cosmic-text`
+## `cosmic-text` {#cosmic-text}
 
 [![cosmic-text][c-cosmic_text-badge]][c-cosmic_text]{{hi:cosmic-text}}
 [![cosmic-text-crates.io][c-cosmic_text-crates.io-badge]][c-cosmic_text-crates.io]
@@ -9,7 +9,7 @@
 
 "Full text layout including rich text and support for BiDi and non-latin scripts. The best option for now."
 
-## `parley`
+## `parley` {#parley}
 
 [![parley][c-parley-badge]][c-parley]{{hi:parley}}
 [![parley-crates.io][c-parley-crates.io-badge]][c-parley-crates.io]

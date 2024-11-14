@@ -1,4 +1,4 @@
-## Data formats
+# Data formats
 
 [![cat-rendering::data-formats][cat-rendering::data-formats-badge]][cat-rendering::data-formats]{{hi:Rendering data formats}}
 

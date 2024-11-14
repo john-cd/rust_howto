@@ -6,7 +6,7 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 {{#include index.incl.md}}
 
-## Compile and link statically to a bundled C library
+## Compile and link statically to a bundled C library {#cc}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build utils}}
 
@@ -16,7 +16,7 @@ The following example has some bundled C code (`src/hello.c`) that will be used 
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c-cc::Build]{{hi:cc::Build}}⮳. For more complex build requirements, [`cc::Build`][c-cc::Build]{{hi:cc::Build}}⮳ offers a full suite of builder methods for specifying [`cc::Build::include`][c-cc::Build::include]{{hi:cc::Build::include}}⮳ paths and extra compiler [`cc::Build::flag`][c-cc::Build::flag]{{hi:cc::Build::flag}}s⮳.
 
-### `Cargo.toml`
+### `Cargo.toml` {#cargo-toml}
 
 ```toml
 [package]
@@ -30,13 +30,13 @@ cc = "1"
 error-chain = "0.11"
 ```
 
-### `build.rs`
+### `build.rs` {#build.rs}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_static.rs:example}}
 ```
 
-### `src/hello.c`
+### `src/hello.c` {#src/hello.c}
 
 ```c
 #include <stdio.h>
@@ -50,19 +50,19 @@ void greet(const char* name) {
 }
 ```
 
-### `src/main.rs`
+### `src/main.rs` {#src/main.rs}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_static1.rs:example}}
 ```
 
-## Compile and link statically to a bundled C++ library
+## Compile and link statically to a bundled C++ library {#cpp}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cc::Build::cpp`][c-cc::Build::cpp]{{hi:cc::Build::cpp}}⮳ and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
-### `Cargo.toml` (static C++)
+### `Cargo.toml` (static C++) {#cargo-toml-static-C++}
 
 ```toml
 [package]
@@ -73,13 +73,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs` (static C++)
+### `build.rs` (static C++) {#build.rs` (static C++)}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_cpp.rs:example}}
 ```
 
-### `src/foo.cpp` (static C++)
+### `src/foo.cpp` (static C++) {#src/foo.cpp` (static C++)}
 
 ```cpp
 extern "C" {
@@ -91,13 +91,13 @@ int multiply(int x, int y) {
 }
 ```
 
-### `src/main.rs` (static C++)
+### `src/main.rs` (static C++) {#src/main.rs` (static C++)}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_cpp1.rs:example}}
 ```
 
-## Compile a C library while setting custom defines
+## Compile a C library while setting custom defines {#cc-custom-defines}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
@@ -107,7 +107,7 @@ as well as `#define WELCOME` (pass [`std::option::Option::None`][c-std::option::
 a bundled C file with dynamic defines set in `build.rs` and prints "`Welcome to foo - version 1.0.2`"
 when run. Cargo sets some [environment variables][book-cargo-env]⮳ which may be useful for some custom defines.
 
-### `Cargo.toml` (custom defines)
+### `Cargo.toml` (custom defines) {#cargo-toml-custom-defines}
 
 ```toml
 [package]
@@ -119,13 +119,13 @@ build = "build.rs"
 cc = "1"
 ```
 
-### `build.rs` (custom defines)
+### `build.rs` (custom defines) {#build.rs` (custom defines)}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_defines.rs:example}}
 ```
 
-### `src/foo.c` (custom defines)
+### `src/foo.c` (custom defines) {#src/foo.c` (custom defines)}
 
 ```c
 #include <stdio.h>
@@ -138,7 +138,7 @@ void print_app_info() {
 }
 ```
 
-### `src/main.rs` (custom defines)
+### `src/main.rs` (custom defines) {#src/main.rs` (custom defines)}
 
 ```rust
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_defines1.rs:example}}

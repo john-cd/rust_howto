@@ -2,7 +2,7 @@
 
 {{#include strings.incl.md}}
 
-## Percent-encode a string
+## Percent-encode a string {#percent-encoding}
 
 [![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]{{hi:percent_encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -16,7 +16,7 @@ The encode set defines which bytes (in addition to non-ASCII and controls) need 
 
 The return value of encoding is an iterator of `&str` slices which collect into a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳.
 
-## Encode a string as application/x-www-form-urlencoded
+## Encode a string as application/x-www-form-urlencoded {#url}
 
 [![url][c-url-badge]][c-url]{{hi:url}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -26,7 +26,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 {{#include ../../../deps/tests/cats/encoding/url_encode.rs:example}}
 ```
 
-## Encode and decode hex
+## Encode and decode hex {#data-encoding}
 
 [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -40,7 +40,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 {{#include ../../../deps/tests/cats/encoding/hex.rs:example}}
 ```
 
-## Encode and decode base64
+## Encode and decode base64 {#base64}
 
 [![base64][c-base64-badge]][c-base64]{{hi:base64}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

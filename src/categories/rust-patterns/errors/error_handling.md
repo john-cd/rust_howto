@@ -2,7 +2,7 @@
 
 {{#include error_handling.incl.md}}
 
-## Irrecoverable panics
+## Irrecoverable panics {#irrecoverable-panics}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -10,7 +10,7 @@
 {{#include ../../../../deps/tests/cats/rust_patterns/panic.rs:example}}
 ```
 
-## Recoverable errors with `Result`
+## Recoverable errors with `Result` {#recoverable-errors-with-result}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -18,7 +18,7 @@
 {{#include ../../../../deps/tests/cats/rust_patterns/error_handling.rs:example}}
 ```
 
-### unwrap_or_else
+### unwrap_or_else {#unwrap_or_else}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}
 
@@ -26,7 +26,7 @@
 {{#include ../../../../deps/tests/cats/rust_patterns/unwrap_or_else.rs:example}}
 ```
 
-## A Shortcut for propagating errors: the ? Operator
+## A Shortcut for propagating errors: the ? Operator {#question-mark-operator}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -46,7 +46,7 @@ Another example:
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
 
-## Handle errors correctly in main
+## Handle errors correctly in main {#handle-errors correctly-in main}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -62,7 +62,7 @@ Other recipes in this book will hide the [`error_chain`][c-error_chain]{{hi:erro
 {{#include ../../../../deps/tests/lang/main_test.rs:example}}
 ```
 
-## Avoid discarding errors during error conversions
+## Avoid discarding errors during error conversions {#avoid-discarding-errors-during-error-conversions}
 
 [![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -75,7 +75,7 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 {{#include ../../../../deps/tests/cats/rust_patterns/retain.rs:example}}
 ```
 
-## Obtain backtrace of complex error scenarios
+## Obtain backtrace of complex error scenarios {#obtain-backtrace}
 
 [![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 

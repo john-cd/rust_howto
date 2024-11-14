@@ -2,7 +2,7 @@
 
 [![Rust by example - Generics][book-rust-by-example-generics-badge]][book-rust-by-example-generics]{{hi:Generics}}
 
-## Generic Structs
+## Generic Structs {#generic-structs}
 
 ```rust
 {{#include ../../deps/tests/lang/generic_structs.rs:example}}

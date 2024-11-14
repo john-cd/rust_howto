@@ -2,7 +2,7 @@
 
 {{#include randomness.incl.md}}
 
-## Generate random numbers
+## Generate random numbers {#generate-random-numbers}
 
 [![rand][c-rand-badge]][c-rand] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -13,7 +13,7 @@ Generates random numbers{{hi:Random numbers}} with help of the random-number gen
 {{#include ../../../deps/tests/cats/algorithms/rand.rs:example}}
 ```
 
-## Generate random numbers within a range
+## Generate random numbers within a range {#generate-random-numbers-within-a-range}
 
 [![rand][c-rand-badge]][c-rand] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -30,7 +30,7 @@ Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (no
 {{#include ../../../deps/tests/cats/algorithms/rand_range1.rs:example}}
 ```
 
-## Generate random numbers with given distribution
+## Generate random numbers within a given distribution {#generate-random-numbers-within-a-given-distribution}
 
 [![rand_distr][c-rand_distr-badge]][c-rand_distr] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -40,7 +40,7 @@ By default, random numbers{{hi:Random numbers}} in the [`rand`][c-rand]{{hi:rand
 {{#include ../../../deps/tests/cats/algorithms/rand_dist.rs:example}}
 ```
 
-## Generate random values of a custom type
+## Generate random values of a custom type {#generate-random-values-custom-type}
 
 [![rand][c-rand-badge]][c-rand] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -51,7 +51,7 @@ Randomly generates a tuple `(i32, bool, f64)` and variable of user defined type 
 {{#include ../../../deps/tests/cats/algorithms/rand_custom.rs:example}}
 ```
 
-## Create random passwords from a set of alphanumeric characters
+## Create random passwords from a set of alphanumeric characters {#generate-random-values-from-set-alphanumeric}
 
 [![rand][c-rand-badge]][c-rand] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}{{hi:Random passwords}}
 
@@ -61,7 +61,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 {{#include ../../../deps/tests/cats/algorithms/rand_passwd.rs:example}}
 ```
 
-## Create random passwords from a set of user-defined characters
+## Create random passwords from a set of user-defined characters {#create-random-passwords-from-a-set-of-user-defined -characters}
 
 [![rand][c-rand-badge]][c-rand]  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
