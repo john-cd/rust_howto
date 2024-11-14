@@ -1,5 +1,7 @@
 # Quantitative financial analysis
 
+{{#include quant.incl.md}}
+
 ## RustQuant {#rustquant}
 
 [![rustquant][c-rustquant-badge]][c-rustquant]{{hi:rustquant}}

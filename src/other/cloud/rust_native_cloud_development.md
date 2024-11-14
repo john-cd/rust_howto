@@ -1,5 +1,7 @@
 # Rust-native cloud development
 
+{{#include rust_native_cloud_development.incl.md}}
+
 Cloud platforms that offer first-class support for Rust.
 
 ## Shuttle {#shuttle}

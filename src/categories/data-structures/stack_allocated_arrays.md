@@ -1,4 +1,6 @@
-## Stack-allocated arrays
+# Stack-allocated arrays
+
+{{#include stack_allocated_arrays.incl.md}}
 
 ## arrayvec {#arrayvec}
 

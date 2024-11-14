@@ -1,5 +1,7 @@
 # User interaction
 
+{{#include user_interaction.incl.md}}
+
 ## Ask for confirmation, selection, text input {#inquire}
 
 [![inquire][c-inquire-badge]][c-inquire]{{hi:inquire}}

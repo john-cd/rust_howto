@@ -1,4 +1,4 @@
-# Async traits
+# Async traits {#async-traits}
 
 {{#include async_traits.incl.md}}
 

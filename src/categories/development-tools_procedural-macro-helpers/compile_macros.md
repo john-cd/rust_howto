@@ -1,11 +1,14 @@
 # Compile macros ahead of time
 
+{{#include compile_macros.incl.md}}
+
 ## Watt {#watt}
 
 [![watt][c-watt-badge]][c-watt]{{hi:watt}}
 [![watt-crates.io][c-watt-crates.io-badge]][c-watt-crates.io]
 [![watt-github][c-watt-github-badge]][c-watt-github]
 [![watt-lib.rs][c-watt-lib.rs-badge]][c-watt-lib.rs]
+[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]
 
 Runtime for executing Rust procedural macros compiled as WebAssembly
 

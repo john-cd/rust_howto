@@ -1,5 +1,7 @@
 # Search engines written in Rust
 
+{{#include search.incl.md}}
+
 ## Meilisearch {#meilisearch}
 
 [![meilisearch][c-meilisearch-badge]][c-meilisearch]{{hi:meilisearch}}

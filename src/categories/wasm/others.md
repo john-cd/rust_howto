@@ -1,5 +1,7 @@
 # Others
 
+{{#include others.incl.md}}
+
 ## `wasmer` {#wasmer}
 
 [![wasmer][c-wasmer-badge]][c-wasmer]{{hi:wasmer}}
@@ -20,9 +22,6 @@
 [wasmtime][c-wasmtime-github]{{hi:wasmtime}}⮳ is a high-level API to expose the Wasmtime runtime.
 
 [docs.wasmtime.dev][c-wasmtime-docs]⮳
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
 
 ## See also
 

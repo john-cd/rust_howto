@@ -1,10 +1,15 @@
 # TODO
 
+- finish using `just list_missing_subchapter_includes`
+- finish scripting `list_missing_chapters_in_toc` justfile
+- clean up justfile
+- fix SUMMARY.md
+- fix any issues during "just bb"
+
+- [ ] finish autogen and tool_lib/src/tera --> generate index of examples - WIP
 - [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
 - [ ] rewrite rest_post.rs so that a username and password are not required?
-- [ ] autogen: generate chapters: index.md, index.incl.md, refs.incl.md, subchapters... for all categories - WIP
-- [ ] autogenerate index of examples with correct refdefs
-- [ ] create badge refdefs for links to RBE book; use `just templ` command - WIP
+- [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?
 
 ## Links

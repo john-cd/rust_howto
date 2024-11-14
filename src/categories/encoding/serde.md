@@ -9,7 +9,7 @@
 
 De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
 
-## JSON {#serde-json}
+## JSON {#serde-json2}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 [![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]
@@ -18,7 +18,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 
 ## See also
 
-### monostate {#monostate}
+### `monostate` {#monostate}
 
 [![monostate][c-monostate-badge]][c-monostate]{{hi:monostate}}
 [![monostate-crates.io][c-monostate-crates.io-badge]][c-monostate-crates.io]

@@ -1,3 +1,3 @@
-[ex-tar-decompress]: tar.md#decompress-a-tarball
-[ex-tar-compress]: tar.md#compress-a-directory-into-tarball
-[ex-tar-strip-prefix]: tar.md#decompress-a-tarball-while-removing-a-prefix-from-the-paths
+[ex-compress-a-directory-into-a-tarball]: tar.md#compress-a-directory-into-a-tarball
+[ex-decompress-a-tarball-removing-prefix]: tar.md#decompress-a-tarball-removing-prefix
+[ex-decompress-a-tarball]: tar.md#decompress-a-tarball

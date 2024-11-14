@@ -1,5 +1,7 @@
 # Hyper
 
+{{#include hyper.incl.md}}
+
 ## `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP server}}

@@ -1,6 +1,6 @@
 # Scripting in Rust
 
-{{#include index.incl.md}}
+{{#include rhai.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

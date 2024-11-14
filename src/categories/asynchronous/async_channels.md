@@ -1,10 +1,10 @@
 # Channels for use in async code
 
+{{#include async_channels.incl.md}}
+
 The most common form of synchronization{{hi:Synchronization}} in an async{{hi:async}} program is message passing{{hi:Message passing}}. Two tasks operate independently and send messages to each other to synchronize. Doing so has the advantage of avoiding shared state{{hi:Shared state}}. Message passing is implemented using async channels{{hi:Async channels}}.
 
 Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channels}} that work well with async code.
-
-{{#include async_channels.incl.md}}
 
 ## OneShot {#oneshot}
 
@@ -30,7 +30,7 @@ Another example:
 {{#include ../../../deps/tests/cats/asynchronous/async_channels_mpsc.rs:example}}
 ```
 
-## See also {#see-also}
+## See also
 
 [![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
 

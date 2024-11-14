@@ -4,7 +4,7 @@
 
 Communicate over the WebSocket protocol
 
-{{#include index.incl.md}}
+{{#include websocket.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

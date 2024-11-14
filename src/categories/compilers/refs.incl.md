@@ -1,6 +1,9 @@
-[ex-cross]: cross_compilation.md#cross-compile-for-multiple-target-oses-and-architectures
-[ex-faster-linking]: faster_linking.md
+[ex-build-time]: reduce_compilation_duration.md#build-time
+[ex-compilation-duration-reduction]: _index.md#compilation-duration-reduction
+[ex-cross-compilation]: cross_compilation.md#cross-compilation
 [ex-dynamic-linking]: reduce_compilation_duration.md#dynamic-linking
 [ex-incremental-compilation]: reduce_compilation_duration.md#incremental-compilation
+[ex-incremental-computation]: reduce_compilation_duration.md#incremental-computation
 [ex-measuring-build-times]: reduce_compilation_duration.md#measuring-build-times
+[ex-mold-linker]: faster_linking.md#mold-linker
 [ex-optimization-levels]: reduce_compilation_duration.md#optimization-levels

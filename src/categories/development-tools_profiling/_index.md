@@ -1,10 +1,20 @@
 # Profiling and Performance
 
-Development tools to help you figure out the performance of your code.
-
 [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
-{{#include index.incl.md}}
+Development tools to help you figure out the performance of your code.
+
+## Benchmarking
+
+{{#include benchmarking.incl.md}}
+
+## Memory usage analysis
+
+{{#include memory.incl.md}}
+
+## Low-level profiling tools
+
+{{#include assembly.incl.md}}
 
 ## See also
 

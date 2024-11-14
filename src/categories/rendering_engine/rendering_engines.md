@@ -1,8 +1,8 @@
 # Rendering Engines
 
-[![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]{{hi:Rendering engine}}
+{{#include rendering_engines.incl.md}}
 
-High-level solutions for rendering on the screen.
+## Render Engines {#render}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,5 +1,7 @@
 # gRPC
 
+{{#include grpc.incl.md}}
+
 ## tonic {#tonic}
 
 [![tonic][c-tonic-badge]][c-tonic]{{hi:tonic}}

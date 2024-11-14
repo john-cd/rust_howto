@@ -1,4 +1,6 @@
-# Continuous Deployment / Continuous Integration
+# Continuous Deployment / Continuous Integration {#cdci}
+
+{{#include cd_ci.incl.md}}
 
 [Continuous Integration (cargo book)][book-cargo-continuous-integration]⮳
 

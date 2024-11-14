@@ -1,5 +1,7 @@
 # Temporary files and directories
 
+{{#include tempfile.incl.md}}
+
 ## Create temporary files and temporary directories {#temporary-files-or-directories}
 
 [![tempfile][c-tempfile-badge]][c-tempfile]{{hi:tempfile}}

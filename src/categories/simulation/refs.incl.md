@@ -1,1 +1,1 @@
-[ex-simulation]: _index.md
+[ex-simul]: simulation.md#simul

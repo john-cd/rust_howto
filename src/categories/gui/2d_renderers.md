@@ -1,5 +1,7 @@
 # 2D Renderers
 
+{{#include 2d_renderers.incl.md}}
+
 ## femtovg {#femtovg}
 
 [![femtovg][c-femtovg-badge]][c-femtovg]{{hi:femtovg}}

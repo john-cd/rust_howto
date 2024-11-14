@@ -1,5 +1,7 @@
 # Cross-compile
 
+{{#include cross_compiling.incl.md}}
+
 ## Cross-compile using Zig as the linker {#zig}
 
 [![cargo-zigbuild][c-cargo_zigbuild-badge]][c-cargo_zigbuild]{{hi:cargo-zigbuild}}

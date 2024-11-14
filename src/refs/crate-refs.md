@@ -1,4 +1,3 @@
-
 [c-accesskit-badge]: https://img.shields.io/crates/v/accesskit?label=accesskit
 [c-accesskit-crates.io-badge]: https://img.shields.io/badge/crates.io-accesskit-crimson
 [c-accesskit-crates.io]: https://crates.io/crates/accesskit
@@ -236,6 +235,14 @@
 [c-bonsai_bt-website-badge]: https://img.shields.io/badge/bonsai--bt-coral
 [c-bonsai_bt-website]: https://github.com/sollimann/bonsai
 [c-bonsai_bt]: https://docs.rs/bonsai-bt
+[c-bottlerocket-badge]: https://img.shields.io/crates/v/bottlerocket?label=bottlerocket
+[c-bottlerocket-crates.io-badge]: https://img.shields.io/badge/crates.io-bottlerocket-crimson
+[c-bottlerocket-crates.io]: https://crates.io/crates/bottlerocket
+[c-bottlerocket-github-badge]: https://img.shields.io/badge/bottlerocket-steelblue?logo=github
+[c-bottlerocket-github]: https://github.com/bottlerocket-os/bottlerocket
+[c-bottlerocket-lib.rs-badge]: https://img.shields.io/badge/lib.rs-bottlerocket-yellow
+[c-bottlerocket-lib.rs]: https://lib.rs/crates/bottlerocket
+[c-bottlerocket]: https://docs.rs/bottlerocket
 [c-broot-badge]: https://img.shields.io/crates/v/broot?label=broot
 [c-broot-crates.io-badge]: https://img.shields.io/badge/crates.io-broot-crimson
 [c-broot-crates.io]: https://crates.io/crates/broot
@@ -245,7 +252,7 @@
 [c-broot-lib.rs]: https://lib.rs/crates/broot
 [c-broot-website-badge]: https://img.shields.io/badge/broot-coral
 [c-broot-website]: https://dystroy.org/broot
-[c-broot]: https://dystroy.org/broot
+[c-broot]: https://dystroy.org/broot/#get-an-overview-of-a-directory-even-a-big-one
 [c-build_info-badge]: https://img.shields.io/crates/v/build-info?label=build-info
 [c-build_info-crates.io-badge]: https://img.shields.io/badge/crates.io-build--info-crimson
 [c-build_info-crates.io]: https://crates.io/crates/build_info
@@ -1801,6 +1808,14 @@
 [c-once_cell::sync::Lazy]: https://docs.rs/once_cell/latest/once_cell/sync/struct.Lazy.html
 [c-once_cell::sync::OnceCell]: https://docs.rs/once_cell/latest/once_cell/sync/struct.OnceCell.html
 [c-once_cell]: https://docs.rs/once_cell
+[c-oneshot-badge]: https://img.shields.io/crates/v/oneshot?label=oneshot
+[c-oneshot-crates.io-badge]: https://img.shields.io/badge/crates.io-oneshot-crimson
+[c-oneshot-crates.io]: https://crates.io/crates/oneshot
+[c-oneshot-github-badge]: https://img.shields.io/badge/oneshot-steelblue?logo=github
+[c-oneshot-github]: https://github.com/faern/oneshot
+[c-oneshot-lib.rs-badge]: https://img.shields.io/badge/lib.rs-oneshot-yellow
+[c-oneshot-lib.rs]: https://lib.rs/crates/oneshot
+[c-oneshot]: https://docs.rs/oneshot
 [c-open-badge]: https://img.shields.io/crates/v/open?label=open
 [c-open-crates.io-badge]: https://img.shields.io/badge/crates.io-open-crimson
 [c-open-crates.io]: https://crates.io/crates/open
@@ -2512,6 +2527,16 @@
 [c-smallvec-lib.rs-badge]: https://img.shields.io/badge/lib.rs-smallvec-yellow
 [c-smallvec-lib.rs]: https://lib.rs/crates/smallvec
 [c-smallvec]: https://docs.rs/smallvec
+[c-smartcore-badge]: https://img.shields.io/crates/v/smartcore?label=smartcore
+[c-smartcore-crates.io-badge]: https://img.shields.io/badge/crates.io-smartcore-crimson
+[c-smartcore-crates.io]: https://crates.io/crates/smartcore
+[c-smartcore-github-badge]: https://img.shields.io/badge/smartcore-steelblue?logo=github
+[c-smartcore-github]: https://github.com/smartcorelib/smartcore
+[c-smartcore-lib.rs-badge]: https://img.shields.io/badge/lib.rs-smartcore-yellow
+[c-smartcore-lib.rs]: https://lib.rs/crates/smartcore
+[c-smartcore-website-badge]: https://img.shields.io/badge/smartcore-coral
+[c-smartcore-website]: https://smartcorelib.org
+[c-smartcore]: https://docs.rs/smartcore
 [c-smol-badge]: https://img.shields.io/crates/v/smol?label=smol
 [c-smol-crates.io-badge]: https://img.shields.io/badge/crates.io-smol-crimson
 [c-smol-crates.io]: https://crates.io/crates/smol

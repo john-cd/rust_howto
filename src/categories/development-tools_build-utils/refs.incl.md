@@ -1,3 +1,3 @@
-[ex-cc-static-bundled]: index.md#compile-and-link-statically-to-a-bundled-c-library
-[ex-cc-static-bundled-cpp]: index.md#compile-and-link-statically-to-a-bundled-c-library-1
-[ex-cc-custom-defines]: index.md#compile-a-c-library-while-setting-custom-defines
+[ex-cc-custom-defines]: build_utils.md#cc-custom-defines
+[ex-cc]: build_utils.md#cc
+[ex-cpp]: build_utils.md#cpp

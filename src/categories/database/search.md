@@ -1,5 +1,7 @@
 # Search
 
+{{#include search.incl.md}}
+
 ## Elasticsearch {#elasticsearch}
 
 [![elasticsearch][c-elasticsearch-badge]][c-elasticsearch]{{hi:elasticsearch}}

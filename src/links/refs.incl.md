@@ -1,5 +1,10 @@
-[ex-example-code]: example_code.md
-[ex-cheatsheets]: rust_cheatsheets.md
-[ex-blogs]: blogs_podcasts_meetups.md
-[ex-books]: books.md
-[ex-companies]: companies.md
+[ex-books]: books.md#books
+[ex-cheatsheets]: rust_cheatsheets.md#cheatsheets
+[ex-companies]: companies.md#companies
+[ex-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
+[ex-example-code]: example_code.md#example-code
+[ex-learning]: learning.md#learning
+[ex-links]: links.md#links
+[ex-meetups]: blogs_podcasts_meetups.md#meetups
+[ex-newsletters]: blogs_podcasts_meetups.md#newsletters
+[ex-podcasts-blogs]: blogs_podcasts_meetups.md#podcasts-blogs

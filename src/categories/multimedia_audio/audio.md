@@ -1,8 +1,8 @@
 # Audio
 
-[![cat-multimedia::audio][cat-multimedia::audio-badge]][cat-multimedia::audio]{{hi:Audio}}
+{{#include audio.incl.md}}
 
-Crates that record, output, or process audio.
+## Audio {#audio}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

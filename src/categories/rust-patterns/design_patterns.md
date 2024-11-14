@@ -1,5 +1,7 @@
 # Design Patterns
 
+{{#include design_patterns.incl.md}}
+
 ## Abstract factory {#abstract-factory}
 
 [abstract-factory in rust][abstract-factory-in-rust-website]⮳

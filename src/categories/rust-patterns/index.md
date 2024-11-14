@@ -4,7 +4,15 @@
 
 Shared solutions for particular situations specific to programming in Rust.
 
-{{#include index.incl.md}}
+{{#include error_customization.incl.md}}
+
+{{#include error_handling.incl.md}}
+
+{{#include design_patterns.incl.md}}
+
+{{#include functional_programming.incl.md}}
+
+{{#include rust_idioms.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

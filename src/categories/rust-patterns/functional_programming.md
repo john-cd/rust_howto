@@ -1,5 +1,7 @@
 # Functional programming
 
+{{#include functional_programming.incl.md}}
+
 ## Compose iterators with `itertools` {#compose-iterators-with-itertools}
 
 [![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}

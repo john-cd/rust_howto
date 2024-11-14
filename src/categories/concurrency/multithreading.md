@@ -52,7 +52,7 @@ Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::j
 {{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_custom.rs:example}}
 ```
 
-## See also {#see-also}
+## See also
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}
 

@@ -61,7 +61,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 {{#include ../../../deps/tests/cats/algorithms/rand_passwd.rs:example}}
 ```
 
-## Create random passwords from a set of user-defined characters {#create-random-passwords-from-a-set-of-user-defined -characters}
+## Create random passwords from a set of user-defined characters {#create-random-passwords-from-a-set-of-user-defined-characters}
 
 [![rand][c-rand-badge]][c-rand]  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 

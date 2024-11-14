@@ -1,5 +1,12 @@
-[ex-clap-basic]: arguments.md
 [ex-ansi_term-basic]: ansi_terminal.md#ansi-terminal
-[ex-ratatui]: tui.md
-[ex-inquire]: user_interaction.md#ask-for-confirmation-selection-text-input
-[ex-indicatif]: user_interaction.md#display-progress-bars-and-spinners
+[ex-bold-colored-text]: ansi_terminal.md#bold-colored-text
+[ex-bold-text]: ansi_terminal.md#bold-text
+[ex-clap-builder]: arguments.md#clap-builder
+[ex-clap-derive]: arguments.md#clap-derive
+[ex-colored-text]: ansi_terminal.md#colored-text
+[ex-crossterm]: ansi_terminal.md#crossterm
+[ex-indicatif]: user_interaction.md#indicatif
+[ex-inquire]: user_interaction.md#inquire
+[ex-lexopt]: arguments.md#lexopt
+[ex-pico-args]: arguments.md#pico-args
+[ex-ratatui]: tui.md#ratatui

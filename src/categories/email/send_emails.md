@@ -1,5 +1,7 @@
 # Send emails
 
+{{#include send_emails.incl.md}}
+
 ## Email client {#lettre}
 
 [![lettre][c-lettre-badge]][c-lettre]{{hi:lettre}} [![cat-email][cat-email-badge]][cat-email]{{hi:Email}}

@@ -1,1 +1,9 @@
-[ex-bitflags]: bitfield.md#define-and-operate-on-a-type-represented-as-a-bitfield
+[ex-arrayvec]: stack_allocated_arrays.md#arrayvec
+[ex-bitfield]: bitfield.md#bitfield
+[ex-flagset]: bitfield.md#flagset
+[ex-generate-parse-uuid]: uuid.md#generate-parse-uuid
+[ex-indexmap]: maps.md#indexmap
+[ex-multimap]: maps.md#multimap
+[ex-slotmap]: maps.md#slotmap
+[ex-smallvec]: stack_allocated_arrays.md#smallvec
+[ex-tinyvec]: stack_allocated_arrays.md#tinyvec

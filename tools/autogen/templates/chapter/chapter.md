@@ -1,8 +1,8 @@
-# {{ section }}
+# {{ subchapter }}
 
-{{#include index.incl.md}}
+{{#include {{ subchapter }}.incl.md}}
 
-## {{ example }}
+## {{ recipe }}
 
 [![{{ crate_name }}][c-{{ crate_name }}-badge]][c-{{ crate_name }}]  [![cat-{{ category_slug }}][cat-{{ category_slug }}-badge]][cat-{{ category_slug }}]
 

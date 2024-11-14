@@ -1,5 +1,7 @@
 # Time
 
+{{#include time.incl.md}}
+
 ## Use the `time` crate {#time-crate}
 
 [![time][c-time-badge]][c-time]{{hi:time}}

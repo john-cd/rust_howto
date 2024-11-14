@@ -1,5 +1,7 @@
 # Websocket
 
+{{#include websocket.incl.md}}
+
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:Websocket}}
 
 ## Low-level {#low-level}

@@ -1,5 +1,7 @@
 # Other GUI frameworks
 
+{{#include other_gui.incl.md}}
+
 ## `xilem` {#xilem}
 
 [![xilem][c-xilem-badge]][c-xilem]{{hi:xilem}}

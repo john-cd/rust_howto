@@ -1,5 +1,7 @@
 # Audit
 
+{{#include auditing.incl.md}}
+
 ## Audit Cargo.lock files for crates containing security vulnerabilities {#cargo-audit}
 
 [![cargo-audit][c-cargo_audit-badge]][c-cargo_audit]{{hi:cargo-audit}}

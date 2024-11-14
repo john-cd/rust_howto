@@ -1,1 +1,1 @@
-[ex-rhai]: rhai.md
+[ex-rust-scripting]: rhai.md#rust-scripting

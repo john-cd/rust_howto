@@ -1,6 +1,8 @@
 # Open CV
 
-## Analyze images {#opencv}
+{{#include opencv.incl.md}}
+
+## Analyze images with `opencv` {#opencv}
 
 [![opencv][c-opencv-badge]][c-opencv]{{hi:opencv}}
 [![opencv-crates.io][c-opencv-crates.io-badge]][c-opencv-crates.io]

@@ -22,13 +22,6 @@
 {{#include ../../../../deps/tests/cats/concurrency/crossbeam_queue.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO: add crate badges
-TODO add flurry
-
 ## flurry {#flurry}
 
 [![flurry][c-flurry-badge]][c-flurry]{{hi:flurry}}
@@ -40,4 +33,10 @@ Particularly good for read-heavy workloads.
 
 [conc map bench][conc-map-bench] comparative benchmarks of concurrent HashMaps.
 
+{{#include refs.incl.md}}
+{{#include ../../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO: add crate badges
+TODO add flurry
 </div>

@@ -1,6 +1,8 @@
 # Rust scripting
 
-## Embed Rust scripting in your application {#rust scripting}
+{{#include rhai.incl.md}}
+
+## Embed Rust scripting in your application {#rust-scripting}
 
 [![rhai][c-rhai-badge]][c-rhai]{{hi:rhai}}
 [![rhai-crates.io][c-rhai-crates.io-badge]][c-rhai-crates.io]

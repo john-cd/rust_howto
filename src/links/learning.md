@@ -1,4 +1,6 @@
-# Learn Rust
+# Learn Rust {#learning}
+
+{{#include learning.incl.md}}
 
 - Rust language main site: [rust-lang.org][rust]{{hi:Rust learning}}
 - [`Rust by Example`][rust-by-example]⮳

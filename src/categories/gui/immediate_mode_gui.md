@@ -1,5 +1,7 @@
 # Immediate Mode Native GUI
 
+{{#include immediate_mode_gui.incl.md}}
+
 ## `egui` {#egui}
 
 [![egui][c-egui-badge]][c-egui]{{hi:egui}}  [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}

@@ -1,0 +1,14 @@
+[ex-book-editing]: development_editing.md#book-editing
+[ex-deployment-to-github-pages]: dev_container_docker.md#deployment-to-github-pages
+[ex-dev-container-feature]: api_documentation.md#dev-container-feature
+[ex-dev-env-setup]: dev_environment_setup.md#dev-env-setup
+[ex-docker-compose]: dev_container_docker.md#docker-compose
+[ex-generate-the-documentation]: api_documentation.md#generate-the-documentation
+[ex-optional-preprocessors]: optional_preprocessors.md#optional-preprocessors
+[ex-other-methods-to-preview-the-documentation-html]: api_documentation.md#other-methods-to-preview-the-documentation-html
+[ex-other]: dev_environment_setup.md#other
+[ex-publish]: publication.md#publish
+[ex-push-image-to-docker-hub]: dev_container_docker.md#push-image-to-docker-hub
+[ex-repo-structure]: repo_structure.md#repo-structure
+[ex-topics-of-interest]: topics_of_interest.md#topics-of-interest
+[ex-using-vs-code]: dev_environment_setup.md#using-vs-code

@@ -1,5 +1,7 @@
 # DevOps + Rust
 
+{{#include devops.incl.md}}
+
 ## Daytona {#daytona}
 
 {{i:Daytona}} is a self-hosted and secure open source development environment manager. Daytona's support for {{i:Dev Containers}} standard enables developers to tailor their environments to exact specifications and share configurations for efficient collaboration

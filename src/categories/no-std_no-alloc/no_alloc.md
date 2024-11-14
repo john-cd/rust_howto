@@ -1,8 +1,8 @@
 # No-alloc
 
-[![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No alloc}}
+{{#include no_alloc.incl.md}}
 
-Crates that are able to function without the Rust alloc crate.
+## No alloc {#noalloc}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

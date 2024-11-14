@@ -8,6 +8,8 @@ Deal with the complexities of human language when expressed in textual form.
 
 {{#include string_parsing.incl.md}}
 
+{{#include string_concat.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

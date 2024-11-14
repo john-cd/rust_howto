@@ -1,6 +1,8 @@
 # Serverless Rust
 
-## Use Rust for serverless computing {serverless-computing}
+{{#include serverless.incl.md}}
+
+## Use Rust for serverless computing {#serverless-computing}
 
 [serverless rust][serverless-rust-website]{{hi:Serverless}}⮳
 
@@ -17,11 +19,4 @@ Dapr Rust SDK example: [![dapr-rust-examples][dapr-rust-examples-badge]][dapr-ru
 
 <div class="hidden">
 TODO: edit
-</div>
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO: write
 </div>

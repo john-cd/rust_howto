@@ -211,7 +211,7 @@ spell:
 
 [windows]
 spell:
-  echo "No spell check while in Windows!"
+  echo "Spell check is not implemented for Windows!"
 
 help := 'help'
 empty := ''
@@ -249,7 +249,7 @@ sortrefs: _removelastslash
 
 [windows]
 sortrefs:
-  echo "No sortrefs while in Windows!"
+  echo "Sortrefs is not implemented for Windows!"
 
 # Remove the last / from URLs in the reference definition files
 [unix]
@@ -261,9 +261,9 @@ _removelastslash:
 # List links without corresponding reference definitions and vice versa
 check_refdefs:
   #! /bin/bash
-  # labels followed by : in the "refs" folder
-  grep -Proh '\[[^\[\]]+?\](?=:)' ./src/refs | sort -u > /tmp/defined_refdefs.txt
-  # labels preceded by ]
+  # reference definitions e.g. [label]: http://xyz
+  grep -Proh '\[[^\[\]]+?\](?=:)' ./src ./drafts | sort -u > /tmp/defined_refdefs.txt
+  # labels preceded by ] e.g. [some_text][label]
   grep -Proh '(?<=\])\[[^ \[\]]+?\]' ./src ./drafts | sort -u > /tmp/used_refdefs.txt
   comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
   # Counts
@@ -272,6 +272,63 @@ check_refdefs:
   echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]
+
+# Add template rows to <subchapter>.incl.md files, using the contents of `refs.incl.md`
+[confirm]
+fix_tables:
+  #! /bin/bash
+  for file in $(find ./src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
+  do
+    base=$(basename $file)
+    dir=$(dirname $file)
+    if [ -f "${dir}/refs.incl.md" ]; then
+      # grab the labels of the refdefs for the current file
+      labels=$(sed -En 's/^\[ex-(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
+      # if not empty
+      if [ -n "$labels" ]; then
+        # if the dest file does not exist or label is not in it
+          #echo "${file} >>"
+          # add link in the corresponding .incl.md (manual editing of the table is still necessary)
+          for label in ${labels}
+          do
+            if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex-${label}\]" "${file%.md}.incl.md") -eq 0 ]
+            then
+              echo "[${label}][ex-${label}]" >> "${file%.md}.incl.md"
+            fi
+          done
+      fi
+    fi
+  done
+
+## ---- ANCHOR MANAGEMENT -----------------------------------
+
+# List headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
+list_missing_anchors:
+  #! /bin/bash
+  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" -not -wholename "./src/crates/*.md" \) )
+  do
+    # grab headings without {, ignoring "## See also", etc...
+    header=$(grep -P '^##[^{]+$' $file | sed 's/## See [aA]lso//g')
+    if [ -n "$header" ]; then
+      echo $file" --> "$header
+    fi
+  done
+
+# Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
+[confirm]
+generate_refdefs_from_anchors:
+  #! /bin/bash
+  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" -not -wholename "./src/crates/*.md" \) )
+  do
+    base=$(basename $file)
+    # grab all headings with an anchor; substitute the anchor \1 into a refdef
+    link=$(grep -Poh '^#[^{}]*\{#[\w-]+?\}$' $file | sed -E 's/^#.*\{#(.+?)\}$/[ex-\1]: '$base'#\1/')
+    if [ -n "$link" ]; then
+      echo "$link" >> "${file%/*}/refs.incl.md"
+      # sort and dedupe refdefs
+      sort -u -o "${file%/*}/refs.incl.md" "${file%/*}/refs.incl.md"
+    fi
+  done
 
 ## ---- URL MANAGEMENT -----------------------------------
 
@@ -283,8 +340,7 @@ check_urls:
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
 # This does not check whether the reference definitions are used - see below.
 
-# Identify duplicated URLs
-# This can't always be avoided.
+# Identify duplicated URLs (noting that they can't always be avoided).
 duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
 
@@ -314,6 +370,40 @@ examples:
   comm -13 examples_in_markdown.txt examples.txt
 # The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
 # then compare to the list of test files in deps
+
+## ---- INCLUDE MANAGEMENT -----------------------------------
+
+# Make sure that {{#include refs.incl.md}} (local references) is present in every file
+list_missing_local_ref_includes:
+  grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ./src
+# Only a few files (indices, TOC...) don't need local references
+
+# Make sure that one {{#include <subchapter>.incl.md}} is present in each subchapter
+list_missing_subchapter_includes:
+  #! /bin/bash
+  for file in $(find ./src -type f -name "*.md" -not -name "*index.md" -not -name '*.incl.md' -not -name "*refs.md" )
+  do
+    base=$(basename $file)
+    include=$(grep -Poh '(?<=\{\{#include )[_]?'${base%.md}'(?=\.incl\.md\}\})' $file)
+    if [ -z "$include" ]; then
+      echo $file" -- consider adding --> {{{{#include "${base%.md}".incl.md}}"
+    fi
+  done
+
+## ---- TOC MANAGEMENT -----------------------------------
+
+# List (sub)chapters that somehow were not added in SUMMARY.md
+list_missing_chapters_in_toc:
+  #! /bin/bash
+  for file in $(find ./src -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "SUMMARY.md")
+  do
+    rel=$(realpath --relative-to=./src $file)
+    in_toc=$(grep -Poh ${rel} ./src/SUMMARY.md)
+    if [ -z "$in_toc" ]; then
+      base=$(basename $file | awk 'BEGIN{split("a the to at in on with and but or",w); for(i in w)nocap[w[i]]}function cap(word){return toupper(substr(word,1,1)) tolower(substr(word,2))}{for(i=1;i<=NF;++i){printf "%s%s",(i==1||i==NF||!(tolower($i) in nocap)?cap($i):tolower($i)),(i==NF?"\n":" ")}}')
+      echo "- ["${base%.md}"]("$rel")"
+    fi
+  done
 
 ## ---- PRE-PUSH -----------------------------------
 

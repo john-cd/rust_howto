@@ -1,5 +1,7 @@
 # Hashmap's friends
 
+{{#include maps.incl.md}}
+
 ## Insertion-ordered map {#indexmap}
 
 [![indexmap][c-indexmap-badge]][c-indexmap]{{hi:indexmap}}
@@ -11,9 +13,6 @@
 
 A HashMap that seperately keeps track of insertion order and allows you to efficiently iterate over its elements in that order
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
 ## Multimap {#multimap}
 
 [![multimap][c-multimap-badge]][c-multimap]{{hi:multimap}}
@@ -24,7 +23,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 `multimap` is implemented as a thin wrapper around `std::collections::HashMap`. It allows multiple values for a given key.
 
 ```rust
-{{#include ../../../deps/tests/cats/data_structure/multimap.rs:example}}
+{{#include ../../../deps/tests/cats/data_structures/multimap.rs:example}}
 ```
 
 ## Slotmap {#slotmap}

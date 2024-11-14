@@ -1,5 +1,7 @@
 # Web-based GUI
 
+{{#include web_based_gui.incl.md}}
+
 ## Tauri {#tauri}
 
 [![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}}  [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}

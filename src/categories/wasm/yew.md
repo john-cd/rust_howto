@@ -1,5 +1,9 @@
 # Yew
 
+{{#include yew.incl.md}}
+
+## Yew {#yew}
+
 [![yew][c-yew-badge]][c-yew]{{hi:yew}}
 [![yew-crates.io][c-yew-crates.io-badge]][c-yew-crates.io]
 [![yew-github][c-yew-github-badge]][c-yew-github]

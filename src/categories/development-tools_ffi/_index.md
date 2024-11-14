@@ -4,7 +4,9 @@
 
 Tools to help you better interface with other languages. This includes binding generators and helpful language constructs.
 
-{{#include index.incl.md}}
+## Generate FFI bindings
+
+{{#include generate_ffi_bindings.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

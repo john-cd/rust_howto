@@ -1,5 +1,9 @@
 # Attributes
 
+{{#include attributes.incl.md}}
+
+## Attributes {#attributes}
+
 {{i:Attributes}} can take arguments with different syntaxes:
 
 ```rust,compile_fail,noplayground
@@ -57,13 +61,14 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../../deps/tests/lang/conditional_compilation.rs:example}}
 ```
 
-## See Also {#See Also}
+## See Also
 
 [Attributes reference][book-rust-reference-attributes]⮳
 
 [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
 [p-automatic-derivation]: ../standard_library/derive.md
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

@@ -1,1 +1,1 @@
-[ex-rendering]: _index.md
+[ex-render]: rendering.md#render

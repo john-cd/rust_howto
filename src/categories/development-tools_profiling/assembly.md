@@ -1,5 +1,7 @@
 # Low-level profiling tools
 
+{{#include assembly.incl.md}}
+
 ## Inspect the generated assembly {#cargo-show-asm}
 
 [![cargo-show-asm][c-cargo_show_asm-badge]][c-cargo_show_asm]{{hi:cargo-show-asm}}

@@ -1,4 +1,6 @@
-## Repo structure
+## Repo structure {#repo-structure}
+
+{{#include repo_structure.incl.md}}
 
 - The repo contains a book, which markdown sources are in the `src` folder.
 - After the book is built using [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳, the resulting HTML and Javascript are found in `book/html`.
@@ -9,7 +11,9 @@
   - `tools` contains utilities that e.g. generate the sitemap file and organize links.
 - The Dev Container and Docker (Compose) configuration files are found in `.devcontainer`.
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: edit
 </div>

@@ -1,1 +1,2 @@
-[ex-?]: _index.md
+[ex-nix]: unix.md#nix
+[ex-rustix]: unix.md#rustix

@@ -1,5 +1,7 @@
 # Performance
 
+{{#include performance.incl.md}}
+
 ## Configure your Cargo project for maximum performance, fast compile times or minimal binary size {#cargo-wizard}
 
 [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard]{{hi:cargo-wizard}}

@@ -1,5 +1,7 @@
 # Release automation
 
+{{#include release_automation.incl.md}}
+
 ## `cargo release` {#cargo-release}
 
 Helper for publishing new crate versions.

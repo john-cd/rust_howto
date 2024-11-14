@@ -2,11 +2,25 @@
 
 Serve data over HTTP.
 
-{{#include index.incl.md}}
+{{#include actix.incl.md}}
 
-## Middleware
+{{#include axum.incl.md}}
+
+{{#include batteries_included.incl.md}}
+
+{{#include cors.incl.md}}
+
+{{#include graphql.incl.md}}
+
+{{#include grpc.incl.md}}
+
+{{#include hyper.incl.md}}
 
 {{#include middleware.incl.md}}
+
+{{#include other_frameworks.incl.md}}
+
+{{#include static_website_generators.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

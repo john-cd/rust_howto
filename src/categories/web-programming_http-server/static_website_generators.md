@@ -1,5 +1,7 @@
 # Static Website Generators
 
+{{#include static_website_generators.incl.md}}
+
 ## Zola {#zola}
 
 [![zola-github][c-zola-github-badge]][c-zola-github]
@@ -12,7 +14,9 @@
 
 [AdiDoks][adidoks-website] is a modern documentation theme.
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: write
 </div>

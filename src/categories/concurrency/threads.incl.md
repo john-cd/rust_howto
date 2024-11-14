@@ -12,3 +12,19 @@
 | [Sort a vector in parallel][ex-rayon-parallel-sort] | [![rayon][c-rayon-badge]][c-rayon]  [![rand][c-rand-badge]][c-rand] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Map-reduce in parallel][ex-rayon-map-reduce] | [![rayon][c-rayon-badge]][c-rayon] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Generate jpg thumbnails in parallel][ex-rayon-thumbnails] | [![rayon][c-rayon-badge]][c-rayon]  [![glob][c-glob-badge]][c-glob]  [![image][c-image-badge]][c-image] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
+| [Spawn a short-lived thread][ex-spawn-a-short-lived-thread] |  |  |
+| [Create a parallel pipeline][ex-parallel-pipeline] |  |  |
+| [Pass data between two threads][ex-pass-data-between-two-threads] |  |  |
+| [Maintain global mutable state][ex-global-mutable-state] |  |  |
+| [Calculate SHA256 sum of iso files concurrently][ex-sha256-of-iso-files-concurrently] |  |  |
+| [Draw fractal dispatching work to a thread pool][ex-draw-fractal-threadpool] |  |  |
+| [Channels][ex-channels] |  |  |
+| [crossbeam-channel][ex-crossbeam-channel] |  |  |
+| [flume][ex-flume] |  |  |
+| [tokio][ex-tokio] |  |  |
+| [postage][ex-postage] |  |  |
+| [crossbeam-channel2][ex-crossbeam-channel2] |  |  |
+
+<div class="hidden">
+TODO
+</div>

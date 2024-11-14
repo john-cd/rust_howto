@@ -1,1 +1,1 @@
-[ex-cross-platform]: crux.md
+[ex-develop-across-platforms]: crux.md#develop-across-platforms

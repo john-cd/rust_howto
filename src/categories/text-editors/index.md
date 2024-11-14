@@ -4,7 +4,7 @@
 
 Applications for editing text.
 
-{{#include index.incl.md}}
+{{#include ides.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

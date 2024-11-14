@@ -1,6 +1,6 @@
 # Working with Tarballs
 
-{{#include index.incl.md}}
+{{#include tar.incl.md}}
 
 ## Decompress a tarball {#decompress-a-tarball}
 

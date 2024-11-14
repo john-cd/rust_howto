@@ -1,5 +1,10 @@
-[ex-background-code-checker]: index.md#background-code-checker
-[ex-api-search]: index.md#api-search
-[ex-deployment]: index.md#deployment
-[ex-just]: just.md
-[ex-miri]: miri.md
+[ex-bacon]: other.md#bacon
+[ex-binary-minimizer]: other.md#binary-minimizer
+[ex-code-generators]: other.md#code-generators
+[ex-code-verifiers]: other.md#code-verifiers
+[ex-example-justfile]: just.md#example-justfile
+[ex-formal-methods]: other.md#formal-methods
+[ex-installation-into-dev-container]: just.md#installation-into-dev-container
+[ex-miri-installation]: miri.md#miri-installation
+[ex-roogle]: other.md#roogle
+[ex-shuttle-rs]: other.md#shuttle-rs

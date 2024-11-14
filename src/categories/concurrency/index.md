@@ -1,5 +1,7 @@
 # Concurrency
 
+[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+
 This section covers concurrent and parallel programming{{hi:Parallel programming}}.
 
 {{#include multithreading.incl.md}}
@@ -10,9 +12,7 @@ This section covers concurrent and parallel programming{{hi:Parallel programming
 
 {{#include message_passing.incl.md}}
 
-## Parallelism {#parallelism}
-
-[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+## Parallelism
 
 - True simultaneous execution of multiple tasks on multiple cores or processors.
 - Mechanism: uses operating system threads{{hi:Operating system threads}}.
@@ -35,12 +35,12 @@ Here are the topics we’ll cover:
 - [Shared-state concurrency][p-shared_state]⮳
 - [Concurrent data structures][p-concurrent_data_structures]⮳
 
-## See Also {#see-also}
+## See Also
 
 [![book-rust-concurrency][book-rust-concurrency-badge]][book-rust-concurrency]
 
 [p-message_passing]: message_passing.md
-[p-shared_state]: shared_state/index.md
+[p-shared_state]: shared_state/shared_state.md
 [p-concurrent_data_structures]: shared_state/concurrent_data_structures.md
 [p-multithreading]: multithreading.md
 {{#include refs.incl.md}}

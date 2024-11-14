@@ -1,5 +1,9 @@
 # GitHub Actions
 
+{{#include github_actions.incl.md}}
+
+GitHub Action for installing development tools (mainly from GitHub Releases).
+
 ## Installation of development tools {#installation-of-development-tools}
 
 ```yaml

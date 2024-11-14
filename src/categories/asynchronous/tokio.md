@@ -2,6 +2,8 @@
 
 {{#include tokio.incl.md}}
 
+## Basics {#basics}
+
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -10,8 +12,6 @@ Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the 
 - Multiple variations of the runtime for executing asynchronous code. Everything from a multi-threaded{{hi:Multithreading}}, work-stealing runtime{{hi:Work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:Single-threaded runtime}}.
 - An asynchronous version of the standard library.
 - A large ecosystem of libraries.
-
-## Basics {#basics}
 
 - creating and running a runtime{{hi:Runtime}}, spawning tasks{{hi:Spawning tasks}}, working with I/O and timers, and handling errors.
 
@@ -51,7 +51,7 @@ Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_g
 {{#include ../../../deps/tests/cats/asynchronous/tokio_graceful_shutdown.rs:example}}
 ```
 
-## Useful links {#useful-links}
+## Useful links
 
 - [`tokio.rs`][c-tokio-website]
 - [![tokio examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}

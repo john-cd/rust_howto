@@ -1,5 +1,7 @@
 # Tools for Python written in Rust
 
+{{#include python_tools.incl.md}}
+
 ## rustpython {#rustpython}
 
 [![rustpython][c-rustpython-badge]][c-rustpython]{{hi:rustpython}}
@@ -20,9 +22,8 @@
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
-TODO: write
-
 ## uv {#uv}
 
+<div class="hidden">
+TODO: write
 </div>

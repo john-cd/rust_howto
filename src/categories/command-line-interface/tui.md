@@ -1,6 +1,6 @@
 # Terminal User Interfaces
 
-[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]
+{{#include tui.incl.md}}
 
 ## Build complex TUI {#ratatui}
 
@@ -11,7 +11,7 @@
 
 [ratatui][c-ratatui-github]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
-## See also {#see-also}
+## See also
 
 [![tui][c-tui-badge]][c-tui]{{hi:tui}}
 

@@ -1,5 +1,7 @@
 # Tinytemplate
 
+{{#include tinytemplate.incl.md}}
+
 ## `tinytemplate` {#tinytemplate}
 
 [![tinytemplate][c-tinytemplate-badge]][c-tinytemplate]{{hi:tinytemplate}}

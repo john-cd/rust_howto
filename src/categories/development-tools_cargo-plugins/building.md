@@ -1,5 +1,7 @@
 # Build and run
 
+{{#include building.incl.md}}
+
 ## `cargo make` {#cargo-make}
 
 [![cargo-make][c-cargo_make-badge]][c-cargo_make]{{hi:cargo-make}}

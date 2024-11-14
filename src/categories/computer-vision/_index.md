@@ -4,7 +4,7 @@
 
 Comprehend the world from video{{hi:Video}} or images{{hi:Images}}.
 
-{{#include index.incl.md}}
+{{#include opencv.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

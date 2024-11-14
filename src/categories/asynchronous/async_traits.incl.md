@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  |  | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
+| [Async traits][ex-async_traits] |  | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO: add link to recipe
+TODO
 </div>

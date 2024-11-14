@@ -4,7 +4,9 @@
 
 Crates that are primarily useful on embedded devices or without an operating system.
 
-{{#include index.incl.md}}
+## Embassy
+
+{{#include embassy.incl.md}}
 
 ## See also
 

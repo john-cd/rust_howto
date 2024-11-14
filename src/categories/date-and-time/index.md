@@ -1,5 +1,7 @@
 # Date and Time
 
+[![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}
+
 Manage the complexity of dealing with the fourth dimension.
 
 There are two key libraries:
@@ -8,7 +10,7 @@ There are two key libraries:
 
 - `chrono`: the most comprehensive and full-featured datetime library, but more complex because of it.
 
-Unfortunately there is no clear answer as to which is best between `time` and `chrono`. Evaluate for yourself between these two, but be resassured that both are trusted and well-maintained.
+Unfortunately there is no clear answer as to which is best between `time` and `chrono`. Evaluate for yourself between these two, but both are trusted and well-maintained.
 
 ## Duration and Calculation
 
@@ -17,6 +19,10 @@ Unfortunately there is no clear answer as to which is best between `time` and `c
 ## Parsing and Displaying
 
 {{#include parse.incl.md}}
+
+## Using the `time` crate
+
+{{#include time.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

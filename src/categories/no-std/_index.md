@@ -4,7 +4,7 @@
 
 Crates that are able to function without the Rust standard library.
 
-{{#include index.incl.md}}
+{{#include no_std.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

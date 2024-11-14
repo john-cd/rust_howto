@@ -25,9 +25,6 @@ Built on top of sqlx (see above). There is also a related sea-query crate that p
 
 Has excellent performance and takes an approach of strict compile time guarantees. The main crate is Sync only, but diesel-async provides an async connection implementation.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
 ## Toasty {#toasty}
 
 [![toasty][c-toasty-badge]][c-toasty]{{hi:toasty}}
@@ -38,6 +35,9 @@ Has excellent performance and takes an approach of strict compile time guarantee
 Toasty is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL datases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.
 
 It is currently in active development and not yet published to crates.io. You can try using it directly from Github.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 Cover https://tokio.rs/blog/2024-10-23-announcing-toasty

@@ -1,5 +1,7 @@
 # Walk the filesystem
 
+{{#include ignore.incl.md}}
+
 ## Walk the filesystem while respecting ignore files {#walk-the-filesystem-while-respecting-ignore-files}
 
 [![ignore][c-ignore-badge]][c-ignore]{{hi:ignore}}

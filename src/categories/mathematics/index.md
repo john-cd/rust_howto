@@ -1,5 +1,9 @@
 # Mathematics
 
+[![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}}
+
+Crates with a mathematical aspect.
+
 ## Linear algebra
 
 {{#include linear_algebra.incl.md}}
@@ -19,10 +23,6 @@
 ## Additional numeric types
 
 {{#include additional_numeric_types.incl.md}}
-
-## Miscellaneous
-
-{{#include miscellaneous.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,8 +1,8 @@
-## Encoding
+# Encoding
 
-[![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding]{{hi:Multimedia encoding}}
+{{#include encoding.incl.md}}
 
-Crates that encode or decode binary data in multimedia formats.
+## Encodings {#encoding}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

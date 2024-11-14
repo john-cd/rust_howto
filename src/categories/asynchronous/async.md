@@ -1,10 +1,20 @@
 # Async
 
-Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await{{hi:async/await}} syntax
+{{#include async.incl.md}}
 
-[Are we async yet?][are-we-async-yet?-website]⮳
+Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It lets you run a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async/await{{hi:async/await}} syntax. It helps you deal with events independently of the main program flow, using techniques like futures{{hi:Futures}}, promises{{hi:Promises}}, waiting, or eventing.
 
-[Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
+- Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
+- Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
+- Involves context switching on a single thread or, most often, among a few threads (the pool of which is opaquely managed by the async runtime).
+- Achieves non-blocking I/O operations{{hi:Non-blocking I/O operations}} to improve responsiveness and efficiency.
+- Lower overhead compared to multithreading.
+- Multi-threaded async programming also requires careful synchronization to prevent data races.
+
+Key constructs in Rust:
+
+- [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ keywords
+- [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳
 
 ## Basic Example {#basic-example}
 
@@ -51,9 +61,17 @@ Alternatives to the Tokio async ecosystem include:
 - [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
 - [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
+## See also
+
+[Are we async yet?][are-we-async-yet?-website]⮳
+
+[Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
+
 [p-tokio]: ./tokio.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO [async-what-is-blocking][blog-async-what-is-blocking]
+[communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
 </div>

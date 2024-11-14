@@ -1,10 +1,10 @@
-# Streams
+# Streams {#streams}
+
+{{#include streams.incl.md}}
 
 [![futures][c-futures-badge]][c-futures]{{hi:futures}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a [`futures::stream::Stream`][c-futures::stream::Stream]{{hi:futures::stream::Stream}} of values over time.
-
-{{#include streams.incl.md}}
 
 ```rust
 {{#include ../../../deps/tests/cats/asynchronous/streams.rs:example}}
@@ -18,7 +18,7 @@ To process multiple items from a stream{{hi:Stream}} concurrently, use the [`fut
 {{#include ../../../deps/tests/cats/asynchronous/streams2.rs:example}}
 ```
 
-## See also {#see-also}
+## See also
 
 See also Tokio `async-stream`{{hi:async-stream}}.
 

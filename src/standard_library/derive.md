@@ -1,6 +1,6 @@
 # Automatic trait derivation
 
-{{#include derive.incl.md }}
+{{#include derive.incl.md}}
 
 [![std][c-std-badge]][c-std]
 
@@ -18,7 +18,7 @@ See also:
 
 - [Derive][book-rust-reference-derive]⮳
 
-## Derive More {#derive_more}
+## Derive More {#derive-more}
 
 [![derive_more][c-derive_more-badge]][c-derive_more]{{hi:derive_more}}
 

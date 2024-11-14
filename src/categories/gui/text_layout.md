@@ -1,5 +1,7 @@
 # Text layout
 
+{{#include text_layout.incl.md}}
+
 ## `cosmic-text` {#cosmic-text}
 
 [![cosmic-text][c-cosmic_text-badge]][c-cosmic_text]{{hi:cosmic-text}}

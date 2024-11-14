@@ -1,5 +1,7 @@
 # Retained Mode Native GUI
 
+{{#include retained_mode_gui.incl.md}}
+
 ## iced {#iced}
 
 [![iced][c-iced-badge]][c-iced]{{hi:iced}}  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
@@ -23,3 +25,10 @@ Retained mode UI with a nice API. It's useable for basic apps, but has a number 
 - [Floem (docs)][c-floem]{{hi:floem}}⮳
 
 Inspired by Xilem, Leptos and rui, floem is currently more complete than any of them for native UI. Used by the `lapce` text editor.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO organize
+</div>

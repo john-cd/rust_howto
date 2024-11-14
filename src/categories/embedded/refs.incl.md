@@ -1,1 +1,1 @@
-[ex-embedded]: _index.md
+[ex-embassy]: embassy.md#embassy

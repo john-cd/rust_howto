@@ -1,5 +1,7 @@
 # User directories
 
+{{#include user_directories.incl.md}}
+
 ## Get platform-specific locations for configuration, cache, and other data
 
 ### `dirs` {#dirs}

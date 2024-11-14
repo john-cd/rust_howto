@@ -1,1 +1,1 @@
-[ex-check-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
+[ex-check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores

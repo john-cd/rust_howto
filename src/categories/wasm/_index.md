@@ -2,7 +2,13 @@
 
 Tooling targeting WebAssembly or manipulating WebAssembly.
 
-{{#include index.incl.md}}
+## `yew`
+
+{{#include yew.incl.md}}
+
+## Others
+
+{{#include others.incl.md}}
 
 ## See also
 

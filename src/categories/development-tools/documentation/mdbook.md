@@ -1,5 +1,9 @@
 # mdBook
 
+{{#include mdbook.incl.md}}
+
+## mdBook {#mdbook}
+
 [![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]{{hi:mdbook}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 [mdBook][c-mdbook-github]⮳: a utility to create modern online books{{hi:Online books}} from Markdown files.
@@ -15,6 +19,10 @@ mdbook serve --open
 
 [mdBook documentation][c-mdbook-documentation]⮳
 
+## Playground {#playground}
+
+[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳  [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+
 ## `mdbook` plugins {#mdbook-plugins}
 
 [![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook-hide}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
@@ -28,6 +36,7 @@ mdbook serve --open
 
 [GitHub Actions for mdBook][actions-mdbook-github]{{hi:Github actions}}
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">

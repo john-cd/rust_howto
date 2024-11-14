@@ -1,4 +1,6 @@
-# Functions
+# Functions {#functions}
+
+{{#include functions.incl.md}}
 
 [![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
 
@@ -32,7 +34,9 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 {{#include ../../deps/tests/lang/diverging_functions.rs:example}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: add desc
 </div>

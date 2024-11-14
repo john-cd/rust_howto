@@ -4,7 +4,7 @@
 
 Crates that provide audio, video, and image processing or rendering engines.
 
-{{#include index.incl.md}}
+{{#include multimedia.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

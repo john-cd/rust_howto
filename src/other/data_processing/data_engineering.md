@@ -1,5 +1,7 @@
 # Data Engineering
 
+{{#include data_engineering.incl.md}}
+
 ## Develop data analytics applications that process columnar data with Arrow {#arrow}
 
 [![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}

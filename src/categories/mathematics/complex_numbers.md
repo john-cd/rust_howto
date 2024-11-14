@@ -36,7 +36,7 @@ Performing mathematical operations on complex numbers is the same as on built in
 {{#include ../../../deps/tests/cats/mathematics/add_complex.rs:example}}
 ```
 
-## Mathematical functions {#mathematical-functions}
+## Mathematical functions on complex numbers {#mathematical-functions}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -57,4 +57,5 @@ Complex numbers have a range of interesting properties when it comes to how they
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO
 </div>

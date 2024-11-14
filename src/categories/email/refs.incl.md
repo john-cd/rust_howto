@@ -1,1 +1,1 @@
-[ex-email]: _index.md
+[ex-lettre]: send_emails.md#lettre

@@ -2,6 +2,8 @@
 
 {{#include option.incl.md}}
 
+## `Option` {#option}
+
 [![std][c-std-badge]][c-std]{{hi:std}}
 
 Rust has no `null`{{hi:null}}. Instead, use [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳:

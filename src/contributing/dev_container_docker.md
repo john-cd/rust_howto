@@ -1,5 +1,7 @@
 # Dev Container and Docker
 
+{{#include dev_container_docker.incl.md}}
+
 The `development` target of the multi-stage `.devcontainer\Dockerfile` is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}}.
 
 If you don't want to use Dev Container{{hi:Dev Container}}, use the following from the project's root directory to manually build the [`docker`][docker-website]{{hi:docker}}⮳ image and run it.
@@ -23,7 +25,7 @@ To connect to the (host OS) docker engine from within the container, add
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
 ```
 
-### Docker Compose {#docker-compose}
+## Docker Compose {#docker-compose}
 
 Test the docker compose{{hi:docker compose}} setup used during developement (which Dev Container runs) with:
 
@@ -78,6 +80,7 @@ docker login
 docker push johncd/rust_howto_ci:latest
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

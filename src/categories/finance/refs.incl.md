@@ -1,1 +1,1 @@
-[ex-quant]: quant.md
+[ex-rustquant]: quant.md#rustquant

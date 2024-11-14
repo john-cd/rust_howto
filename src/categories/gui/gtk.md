@@ -1,5 +1,7 @@
 # GTK
 
+{{#include gtk.incl.md}}
+
 ## gtk4 {#gtk4}
 
 [![gtk4][c-gtk4-badge]][c-gtk4]{{hi:gtk4}}

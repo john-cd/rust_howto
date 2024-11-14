@@ -1,5 +1,7 @@
 # Low-level interaction with the operating system
 
+{{#include low_level_system_calls.incl.md}}
+
 ## Call `libc` {#call-libc}
 
 [![libc][c-libc-badge]][c-libc]{{hi:libc}}

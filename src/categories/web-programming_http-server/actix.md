@@ -1,4 +1,6 @@
-# Actix
+# Actix {#actix}
+
+{{#include actix.incl.md}}
 
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -19,6 +21,7 @@ Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examp
 
 A performance focussed framework. All Rust frameworks are fast, but choose actix-web if you need the absolutely maximum performance.
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

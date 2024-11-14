@@ -1,6 +1,6 @@
 # Alternatives
 
-[![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
+{{#include alternatives.incl.md}}
 
 ## Older alternatives to `tracing` {#log-slog-log4rs}
 

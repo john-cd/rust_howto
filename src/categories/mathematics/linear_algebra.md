@@ -34,7 +34,7 @@ Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}
 {{#include ../../../deps/tests/cats/mathematics/multiply_matrices.rs:example}}
 ```
 
-## Multiply a scalar with a vector with a matrix {#multiply-a-scalar-with-a-vector-with-a-matrix}
+## Multiply a scalar with a vector and a matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -45,8 +45,7 @@ Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}
 
 Creates a 1-D array (vector) with [`ndarray::arr1`][c-ndarray::arr1]{{hi:ndarray::arr1}}⮳ and a 2-D array (matrix) with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳
 
-First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with
-`ndarray::Array2::dot`⮳ (Matrix multiplication is performed using `ndarray::Array2::dot`⮳, while the `*` operator performs element-wise multiplication.)
+First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with `ndarray::Array2::dot`⮳ (Matrix multiplication is performed using `ndarray::Array2::dot`⮳, while the `*` operator performs element-wise multiplication.)
 
 In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so `ndarray::Array2::dot`⮳ handles it as a column vector.
 

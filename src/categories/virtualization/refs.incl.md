@@ -1,1 +1,1 @@
-[ex-virtualization]: _index.md
+[ex-virt]: virtualization.md#virt

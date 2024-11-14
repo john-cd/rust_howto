@@ -1,5 +1,7 @@
 # Networking
 
+{{#include networking.incl.md}}
+
 ## `gping` {#gping}
 
 Ping, but with a graph [`gping`][c-gping-github]{{hi:gping}}

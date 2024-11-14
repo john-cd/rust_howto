@@ -1,5 +1,7 @@
 # File watching
 
+{{#include file_watching.incl.md}}
+
 ## Watch files or directories and execute a function when they change {#watch-files-or-dirs}
 
 [![notify][c-notify-badge]][c-notify]{{hi:notify}}

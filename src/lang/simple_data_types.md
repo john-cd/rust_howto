@@ -1,4 +1,6 @@
-# Simple Data Types
+# Simple Data Types {#simple-data-types}
+
+{{#include simple_data_types.incl.md}}
 
 [![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
@@ -23,7 +25,9 @@
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: edit
 

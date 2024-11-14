@@ -8,7 +8,7 @@ Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
 
-This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-key_crates]⮳{{hi:Key crates}} for topic ideas.
+This book's long-term goal is the coverage of the 'most commonly used' Rust crates, as defined by [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳, the most downloaded libraries in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and 'high quality crates' per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳. Review [key crates][p-crates]⮳{{hi:Key crates}} for topic ideas.
 
 Unless you explicitly state otherwise, any contribution you intentionally submit for inclusion in this book shall be licensed under the same terms than the rest of the book, without any additional restrictions or conditions.
 
@@ -25,7 +25,8 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 [![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
 
 [p-topics_of_interest]: topics_of_interest.md
-[p-key_crates]: ../key_crates/key_crates.md
+[p-crates]: ../crates/crates.md
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

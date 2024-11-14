@@ -1,5 +1,7 @@
 # Tools for macro development
 
+{{#include tools.incl.md}}
+
 ## `cargo expand` {#cargo-expand}
 
 [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand]{{hi:cargo-expand}}
@@ -9,7 +11,7 @@
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-Allows you to inspect the code that macros expand to. Rust Analyzer also allows you to expand macros directly in your editor.
+Allows you to inspect the code that macros expand to. `Rust Analyzer` also allows you to expand macros directly in your editor.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

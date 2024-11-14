@@ -1,8 +1,8 @@
 # Images
 
-[![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}}
+{{#include images.incl.md}}
 
-Crates that process or build images.
+## Image {#images}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

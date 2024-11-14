@@ -1,6 +1,8 @@
 # Cross-platform Development
 
-{{#include index.incl.md}}
+## Crux
+
+{{#include crux.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

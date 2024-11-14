@@ -1,4 +1,4 @@
-# Companies that use or contribute to Rust
+# Companies that use or contribute to Rust {#companies}
 
 [Accelerant.dev][accelerant-website]⮳
 
@@ -14,6 +14,7 @@
 
 [Mozilla][mozilla-website]⮳
 
+{{#include refs.incl.md}}
 {{#include ../refs/company-refs.md}}
 
 <div class="hidden">

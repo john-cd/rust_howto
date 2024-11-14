@@ -1,4 +1,4 @@
-# Structs
+# Structs {#structs}
 
 [![Rust by example - Structs][book-rust-by-example-structs-badge]][book-rust-by-example-structs]{{hi:Structs}}
 
@@ -20,7 +20,9 @@ Struct fields{{hi:Fields}} follow the general rule of everything being private b
 {{#include ../../deps/tests/lang/structs4.rs:example}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 TODO: add description
 </div>

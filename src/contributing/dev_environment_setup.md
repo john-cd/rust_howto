@@ -1,6 +1,8 @@
-## Development Environment Setup {#Development Environment Setup}
+# Development Environment Setup {#dev-env-setup}
 
-### Using VS Code {#using-vs-code}
+{{#include dev_environment_setup.incl.md}}
+
+## Using VS Code {#using-vs-code}
 
 Clone the [repo][rust-howto-github]⮳ and open the folder in [VS Code][rust-in-vs-code]⮳. Edit `.devcontainer/.env` if needed. VS Code{{hi:VS code}} should prompt you to open the code in a [`docker`][docker-website]{{hi:docker}}⮳ container, which installs [`mdbook`][c-mdbook-documentation]{{hi:mdbook}}⮳ and rust tooling{{hi:Rust tooling}} automatically. Make sure you have previously installed
 
@@ -9,7 +11,7 @@ Clone the [repo][rust-howto-github]⮳ and open the folder in [VS Code][rust-in-
 
 Note that opening the code folder in VS Code may take a little while the first time around.
 
-### Other {#other}
+## Other {#other}
 
 If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github]⮳ or simply install the required tools on your local machine:
 
@@ -33,6 +35,7 @@ You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review `.devcontainer/Dockerfile` for other dependencies.
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

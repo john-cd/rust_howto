@@ -1,5 +1,7 @@
 # Databases written in Rust
 
+{{#include databases.incl.md}}
+
 ## Sled {#sled}
 
 [![sled][c-sled-badge]][c-sled]{{hi:sled}}

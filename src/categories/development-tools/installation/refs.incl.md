@@ -1,3 +1,4 @@
-[ex-rustup]: rustup.md
-[ex-cargo-install]: index.md#cargo-install
-[ex-cargo-binstall]: index.md#cargo-binstall
+[ex-cargo-binstall]: install.md#cargo-binstall
+[ex-cargo-install]: install.md#cargo-install
+[ex-key-commands]: rustup.md#key-commands
+[ex-rustup]: install.md#rustup

@@ -1,5 +1,7 @@
 # Cryptography
 
+[![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
+
 Securing data.
 
 ## Encryption
@@ -9,6 +11,10 @@ Securing data.
 ## Hashing
 
 {{#include hashing.incl.md}}
+
+## Password Hashing
+
+{{#include password_hashing.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

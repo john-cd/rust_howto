@@ -65,11 +65,11 @@ This example calculates the SHA256{{hi:SHA256}} for every file with iso extensio
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num][c-num-badge]][c-num]{{hi:num}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![image][c-image-badge]][c-image]{{hi:image}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-science][cat-science-badge]][cat-science]{{hi:science}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}}
 
-This example generates an image by drawing a fractal from the [Julia set][julia-set]⮳ with a thread pool{{hi:Thread pools}} for distributed computation.
+This example generates an image by drawing a fractal from the [Julia set][web-julia-set]⮳ with a thread pool{{hi:Thread pools}} for distributed computation.
 
-[![julia-set][julia-set]][julia-set]
+[![julia-set][web-julia-set]][web-julia-set]
 
-[julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
+[web-julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
 
 Allocate memory for output image of given width and height with [`image::ImageBuffer::new`][c-image::ImageBuffer::new]{{hi:image::ImageBuffer::new}}⮳.
 [`image::Rgb::from_channels`][c-image::Rgb::from_channels]{{hi:image::Rgb::from_channels}}⮳ calculates RGB pixel values. Create [`threadpool::ThreadPool`][c-threadpool::ThreadPool]{{hi:threadpool::ThreadPool}}⮳ with thread count equal to number of cores with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
@@ -91,7 +91,7 @@ TODO
 
 ## Channels {#channels}
 
-### crossbeam-channel {#crossbeam-channel}
+### `crossbeam-channel` {#crossbeam-channel2}
 
 [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam-channel}}
 [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io]

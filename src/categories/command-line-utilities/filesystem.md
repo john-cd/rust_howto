@@ -1,5 +1,7 @@
 # File listing and display
 
+{{#include filesystem.incl.md}}
+
 ## `lsd` {#lsd`}
 
 [`lsd`][c-lsd-github]{{hi:lsd}} is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, additional formatting options.

@@ -1,5 +1,7 @@
 # Game engines
 
+{{#include game_engines.incl.md}}
+
 ## `bevy` {#bevy}
 
 [![bevy][c-bevy-badge]][c-bevy]{{hi:bevy}}

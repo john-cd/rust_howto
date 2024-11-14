@@ -1,5 +1,7 @@
 # Dependency management
 
+{{#include dependency_management.incl.md}}
+
 ## `deps.rs` {#deps-rs}
 
 [`deps.rs`][deps-rs-website]⮳ [(github)][deps-rs-github]⮳ uses semantic versioning to detect outdated or insecure dependencies in your project's`Cargo.toml`.

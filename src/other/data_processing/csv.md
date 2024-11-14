@@ -1,5 +1,7 @@
 # CSV files
 
+{{#include csv.incl.md}}
+
 ## Read and write CSV files {#read-and-write-csv-files}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}

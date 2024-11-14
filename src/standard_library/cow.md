@@ -1,12 +1,12 @@
 # Copy-on-Write
 
-{{#include cow.incl.md }}
+{{#include cow.incl.md}}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer providing clone-on-write{{hi:Clone-on-write}} functionality.
 
-## Convert `Cow` to `&str` {#conver-cow-to-str}
+## Convert `Cow` to `&str` {#convert-cow-to-str}
 
 Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
 

@@ -4,11 +4,7 @@
 
 Crates used to model or construct models for some activity, e.g. to.simulate a networking protocol.
 
-{{#include index.incl.md}}
-
-## See also
-
-[Asynchronics][asynchronics-github]⮳ is a high-performance asynchronous computation framework for system simulation.
+{{#include simulation.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

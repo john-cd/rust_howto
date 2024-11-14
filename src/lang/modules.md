@@ -1,4 +1,6 @@
-# Modules
+# Modules {#modules}
+
+{{#include modules.incl.md}}
 
 [![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]{{hi:mod}}
 
@@ -46,6 +48,7 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 {{#include ../../deps/tests/lang/modules3.rs:example}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

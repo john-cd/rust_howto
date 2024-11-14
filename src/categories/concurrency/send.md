@@ -1,5 +1,6 @@
 # Send, Sync traits
 
+{{#include send.incl.md}}
 {{hi:Send}}{{hi:Sync}{{hi:'static}}}
 
 ## Send {#send}

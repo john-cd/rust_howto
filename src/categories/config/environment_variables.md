@@ -38,7 +38,7 @@ serde = { version = "1.0", features = ["derive"] }
 {{#include ../../../deps/tests/cats/config/envy.rs:example}}
 ```
 
-## See Also {#see-also}
+## See Also
 
 [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 

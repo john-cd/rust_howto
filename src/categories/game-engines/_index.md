@@ -4,7 +4,7 @@
 
 Crates that try to provide a "one-stop-shop" for all of your game development needs.
 
-{{#include index.incl.md}}
+{{#include game_engines.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

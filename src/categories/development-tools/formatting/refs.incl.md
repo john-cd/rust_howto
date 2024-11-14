@@ -1,3 +1,3 @@
-[ex-formatting]: index.md#rustfmt
-[ex-rustfmt-config]: index.md#rustfmt-configuration
-[ex-formatting-attributes]: index.md#formatting-attributes
+[ex-formatting-attributes]: formatting.md#formatting-attributes
+[ex-rustfmt-config]: formatting.md#rustfmt-config
+[ex-rustfmt]: formatting.md#rustfmt

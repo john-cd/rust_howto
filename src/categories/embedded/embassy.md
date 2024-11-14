@@ -1,5 +1,7 @@
 # Embassy and friends
 
+{{#include embassy.incl.md}}
+
 ## Embassy {#embassy}
 
 [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}

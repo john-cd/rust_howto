@@ -1,12 +1,10 @@
 | Language Constructs |
 |--------|
-| [Main function][ex-main] |
+| [Main function][ex-main-function] |
 | [Simple data types][ex-simple-data-types] |
-| [Variables and constants][ex-variables-and-constants] |
-| [Ownership and borrowing][ex-ownership-borrowing] |
+| [Ownership and borrowing][ex-ownership] |
 | [Slices][ex-slices] |
 | [Functions][ex-functions] |
-| [Control flow][ex-control-flow] |
 | [Structs][ex-structs] |
 | [Enums][ex-enums] |
 | [Traits][ex-traits] |

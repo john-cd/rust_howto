@@ -9,3 +9,16 @@
 | [Use a custom environment variable to set up logging][ex-log-env-variable] | [![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 | [Include timestamp in log messages][ex-log-timestamp] | [![log][c-log-badge]][c-log]  [![env_logger][c-env_logger-badge]][c-env_logger]  [![chrono][c-chrono-badge]][c-chrono] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 | [Log messages to a custom location][ex-log-custom] | [![log][c-log-badge]][c-log]  [![log4rs][c-log4rs-badge]][c-log4rs] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
+
+| [Initialization][ex-initialization] |  |  |
+| [# Basic tracing][ex-basic-tracing] |  |  |
+| [# Combine layers][ex-combine-layers] |  |  |
+| [# Configure a custom event formatter][ex-custom-event-formatter] |  |  |
+| [Events][ex-events] |  |  |
+| [Spans][ex-spans] |  |  |
+| [Add tracing spans to functions][ex-add-tracing-spans-to-fn] |  |  |
+| [Related crates][ex-related-crates] |  |  |
+
+<div class="hidden">
+TODO
+</div>

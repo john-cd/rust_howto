@@ -1,5 +1,7 @@
 # Shells and related utilities
 
+{{#include shells.incl.md}}
+
 ## `starship` {#starship}
 
 [![starship][c-starship-badge]][c-starship]{{hi:starship}}

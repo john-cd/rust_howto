@@ -1,6 +1,8 @@
 # Generate FFI bindings to C or C++ code
 
-## bindgen {#bindgen}
+{{#include generate_ffi_bindings.incl.md}}
+
+## `bindgen` {#bindgen}
 
 [![bindgen][c-bindgen-badge]][c-bindgen]{{hi:bindgen}}
 [![bindgen-crates.io][c-bindgen-crates.io-badge]][c-bindgen-crates.io]
@@ -11,7 +13,7 @@
 
 Automatically generates Rust FFI bindings to C and C++ libraries.
 
-## cbindgen {#cbindgen}
+## `cbindgen` {#cbindgen}
 
 [![cbindgen][c-cbindgen-badge]][c-cbindgen]{{hi:cbindgen}}
 [![cbindgen-crates.io][c-cbindgen-crates.io-badge]][c-cbindgen-crates.io]
@@ -22,7 +24,7 @@ Automatically generates Rust FFI bindings to C and C++ libraries.
 
 Generate C bindings to Rust libraries
 
-## cxx {#cxx}
+## `cxx` {#cxx}
 
 [![cxx][c-cxx-badge]][c-cxx]{{hi:cxx}}
 [![cxx-crates.io][c-cxx-crates.io-badge]][c-cxx-crates.io]

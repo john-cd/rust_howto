@@ -12,3 +12,13 @@
 | [Sort a vector in parallel][ex-rayon-parallel-sort] | [![rayon][c-rayon-badge]][c-rayon]  [![rand][c-rand-badge]][c-rand] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Map-reduce in parallel][ex-rayon-map-reduce] | [![rayon][c-rayon-badge]][c-rayon] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Generate jpg thumbnails in parallel][ex-rayon-thumbnails] | [![rayon][c-rayon-badge]][c-rayon]  [![glob][c-glob-badge]][c-glob]  [![image][c-image-badge]][c-image] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
+| [Mutate the elements of an array in parallel][ex-mutate-array-in-parallel] |  |  |
+| [Test in parallel if any or all elements of a collection match a given predicate][ex-any-or-all-in-parallel] |  |  |
+| [Search items using given predicate in parallel][ex-search-in-parallel] |  |  |
+| [Sort a vector in parallel][ex-sort-in-parallel] |  |  |
+| [Map-reduce in parallel][ex-map-reduce-in-parallel] |  |  |
+| [Generate jpg thumbnails in parallel][ex-thumbnails-in-parallel] |  |  |
+
+<div class="hidden">
+TODO
+</div>

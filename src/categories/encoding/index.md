@@ -1,5 +1,7 @@
 # Encoding
 
+[![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+
 Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 
 ## Character Sets

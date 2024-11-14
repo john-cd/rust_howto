@@ -2,7 +2,11 @@
 
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-{{#include index.incl.md}}
+{{#include filesystem.incl.md}}
+
+{{#include networking.incl.md}}
+
+{{#include shells.incl.md}}
 
 ## See also
 

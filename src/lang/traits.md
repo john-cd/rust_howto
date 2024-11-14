@@ -1,4 +1,4 @@
-# Traits
+# Traits {#traits}
 
 ```rust
 {{#include ../../deps/tests/lang/traits.rs:example}}
@@ -83,6 +83,7 @@ See [Async][p-async]⮳
 [Traits (blog)][blog-traits]⮳
 
 [p-async]: ../categories/asynchronous/index.md
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

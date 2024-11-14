@@ -6,6 +6,7 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 
 [Shield.io][shield-io-website]{{hi:shields.io}}⮳
 
+{{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">

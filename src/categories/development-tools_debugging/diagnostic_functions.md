@@ -1,5 +1,7 @@
 # Diagnostic functions
 
+{{#include diagnostic_functions.incl.md}}
+
 ## Get the type name of the pointed-to value {#type-name-of-val}
 
 ```rust

@@ -1,20 +1,12 @@
 # Robotics
 
+[![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]
+
 Crates related to robotics.
 
-{{#include index.incl.md}}
+{{#include robotics.incl.md}}
 
-## Links
-
-[Robotics (lib.rs)][robotics-lib.rs]⮳  [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
-
-[robotics.rs][robotics-rs-website]⮳
-
-## See also
-
-[why-rust-for-robots][why-rust-for-robots]⮳
-
-[linux-embracing-rust-will-boost-robotics-community][linux-embracing-rust-will-boost-robotics-community]⮳
+{{#include useful_robotics_tools_and_libs.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  | [![deadpool][c-deadpool-badge]][c-deadpool] |  |
+| [Create a connection pool][ex-connection-pool] | [![deadpool][c-deadpool-badge]][c-deadpool] | [![cat-database][cat-database-badge]][cat-database] |

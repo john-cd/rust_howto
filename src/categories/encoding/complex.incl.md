@@ -14,3 +14,10 @@
 | [Serialize and deserialize unstructured JSON][ex-json-value] | [![serde_json][c-serde_json-badge]][c-serde_json] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Deserialize a TOML configuration file][ex-toml-config] | [![toml][c-toml-badge]][c-toml] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Read and write integers in little-endian byte order][ex-byteorder-le] | [![byteorder][c-byteorder-badge]][c-byteorder] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
+| [Serialize and deserialize unstructured JSON][ex-serde-json] |  |  |
+| [Deserialize a TOML configuration file][ex-toml] |  |  |
+| [Read and write integers in little-endian byte order][ex-byteorder] |  |  |
+
+<div class="hidden">
+TODO
+</div>

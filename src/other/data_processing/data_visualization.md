@@ -1,5 +1,7 @@
 # Data Visualization
 
+{{#include data_visualization.incl.md}}
+
 ## Plot and graph data {#graph-data}
 
 [![plotly][c-plotly-badge]][c-plotly]{{hi:plotly}}

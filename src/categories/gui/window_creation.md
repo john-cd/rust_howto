@@ -1,5 +1,7 @@
 # Window creation
 
+{{#include window_creation.incl.md}}
+
 ## `winit` {#winit}
 
 [![winit][c-winit-badge]][c-winit]{{hi:winit}}

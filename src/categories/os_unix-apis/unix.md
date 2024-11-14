@@ -1,5 +1,7 @@
 # Unix APIs
 
+{{#include unix.incl.md}}{{hi:Operating systems::Unix APIs}}
+
 ## `rustix` {#rustix}
 
 [![rustix][c-rustix-badge]][c-rustix]{{hi:rustix}}

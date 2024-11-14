@@ -2,7 +2,7 @@
 
 Facilitate configuration management{{hi:Configuration management}} for applications.
 
-## Configuration Management {#configuration-management}
+## Configuration Management
 
 {{#include configuration.incl.md}}
 

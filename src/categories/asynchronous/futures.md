@@ -36,7 +36,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 {{#include ../../../deps/tests/cats/asynchronous/futures3.rs:example}}
 ```
 
-## See also {#see-also}
+## See also
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 

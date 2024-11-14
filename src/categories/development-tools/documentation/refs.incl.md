@@ -1,5 +1,6 @@
-[ex-documenting-your-code]: index.md#documenting-your-code
-[ex-module-or-crate-level-documentation]: index.md#module-or-crate-level-documentation
-[ex-mdbook]: mdbook.md
-[ex-playground]: playground.md
-[ex-badges]: badges.md
+[ex-cd-ci]: mdbook.md#cd-ci
+[ex-documenting-your-code]: documentation.md#documenting-your-code
+[ex-mdbook-plugins]: mdbook.md#mdbook-plugins
+[ex-mdbook]: mdbook.md#mdbook
+[ex-module-or-crate-level-documentation]: documentation.md#module-or-crate-level-documentation
+[ex-playground]: mdbook.md#playground

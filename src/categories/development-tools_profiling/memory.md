@@ -1,4 +1,6 @@
-# Memory usage
+# Memory usage analysis
+
+{{#include memory.incl.md}}
 
 ## Profile heap memory {#dhat}
 

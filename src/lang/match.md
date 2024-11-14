@@ -1,4 +1,4 @@
-# Match, if let, while let
+# Match, if let, while let {#match}
 
 [![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
 
@@ -12,9 +12,13 @@
 
 Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` guards, @-binding `Message::Hello { id: id_variable @ 3..=7,}`.
 
+## `if let` {#if-let}
+
 ```rust
 {{#include ../../deps/tests/lang/if_let.rs:example}}
 ```
+
+## `while let` {#while-let}
 
 ```rust
 {{#include ../../deps/tests/lang/while_let.rs:example}}
@@ -24,6 +28,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 [Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

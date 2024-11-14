@@ -1,5 +1,7 @@
 # Windows API bindings
 
+{{#include windows.incl.md}}
+
 ## `windows` {#windows}
 
 [![windows][c-windows-badge]][c-windows]{{hi:Windows}}

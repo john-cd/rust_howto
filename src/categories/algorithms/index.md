@@ -1,12 +1,14 @@
 # Algorithms
 
+[![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
+
 Rust implementations of core algorithms{{hi:Algorithms}}, such as hashing{{hi:Hashing}}, sorting{{hi:Sorting}}, searching{{hi:Searching}}, and more.
 
-## Random Numbers {#random-numbers}
+## Random Numbers
 
 {{#include randomness.incl.md}}
 
-## Sorting {#sorting}
+## Sorting
 
 {{#include sorting.incl.md}}
 

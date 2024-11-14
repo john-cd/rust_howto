@@ -1,4 +1,6 @@
-# Directories
+# Current working directory
+
+{{#include cwd.incl.md}}
 
 ## Get the current working directory {#cwd}
 

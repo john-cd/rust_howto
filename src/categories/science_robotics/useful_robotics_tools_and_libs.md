@@ -1,5 +1,7 @@
 # Useful tools and libraries for robotics
 
+{{#include useful_robotics_tools_and_libs.incl.md}}
+
 ## Open CV {#opencv}
 
 [![opencv][c-opencv-badge]][c-opencv]{{hi:opencv}}

@@ -1,6 +1,6 @@
 # Testing
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+{{#include testing.incl.md}}
 
 ## `cargo test` {#cargo-test}
 

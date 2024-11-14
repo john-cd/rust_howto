@@ -4,7 +4,7 @@
 
 Real-time or offline rendering of 2D or 3D graphics, usually with the help of a graphics card.
 
-{{#include index.incl.md}}
+{{#include rendering.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

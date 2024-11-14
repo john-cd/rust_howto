@@ -1,5 +1,7 @@
 # File Dialogs
 
+{{#include file_dialogs.incl.md}}
+
 ## `rfd` {#rfd}
 
 [![rfd][c-rfd-badge]][c-rfd]{{hi:rfd}}

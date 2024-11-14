@@ -1,5 +1,7 @@
 # IDEs
 
+{{#include ides.incl.md}}
+
 ## VS Code {#vs-code}
 
 [VS Code][rust-in-vs-code]{{hi:VS code}}⮳
@@ -32,7 +34,7 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 
 [6 IDEs built for rust][blog-6-ides-built-for-rust]⮳
 
-{{#include index.incl.md}}
+{{#include ides.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

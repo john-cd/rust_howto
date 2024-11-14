@@ -1,9 +1,6 @@
-
 # Parsing utilities
 
-[![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing}}
-
-Crates to help create parsers of binary and text formats. Format-specific parsers belong in other, more specific categories.
+{{#include parsing.incl.md}}
 
 ## Nom {#nom}
 

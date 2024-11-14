@@ -1,5 +1,7 @@
 # Databases
 
+[![cat-database][cat-database-badge]][cat-database]
+
 Interface with database management systems{{hi:Database management systems}}.
 
 ## SQLite

@@ -1,5 +1,7 @@
 # Other Web Frameworks
 
+{{#include other_frameworks.incl.md}}
+
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [Rust web framework comparison][rust-web-framework-comparison-github]⮳
@@ -28,6 +30,7 @@ Web framework with a focus on usability, security, extensibility, and speed.
 
 [`leptos`][c-leptos-github]{{hi:leptos}}⮳ is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
 
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

@@ -2,7 +2,7 @@
 
 {{#include csv.incl.md}}
 
-## Read CSV records {#csv}
+## Read CSV records {#read-csv-records}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -61,7 +61,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 {{#include ../../../deps/tests/cats/encoding/serialize.rs:example}}
 ```
 
-## Serialize records to CSV using Serde {#serialize-toCsv-using-serde}
+## Serialize records to CSV using Serde {#serialize-to-csv-using-serde}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}  [![serde][c-serde-badge]][c-serde]{{hi:serde}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

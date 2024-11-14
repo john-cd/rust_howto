@@ -1,4 +1,6 @@
-# Lifetimes
+# Lifetimes {#lifetimes}
+
+{{#include lifetimes.incl.md}}
 
 [![Rust by example - Lifetimes][book-rust-by-example-lifetimes-badge]][book-rust-by-example-lifetimes]{{hi:Lifetimes}}
 
@@ -24,6 +26,7 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../../deps/tests/lang/lifetime.rs:example}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

@@ -1,5 +1,7 @@
 # Code formatting and linting
 
+{{#include code_formatting_linting.incl.md}}
+
 ## Format your code {#rustfmt}
 
 [![rustfmt-nightly][c-rustfmt_nightly-badge]][c-rustfmt_nightly]{{hi:rustfmt-nightly}}

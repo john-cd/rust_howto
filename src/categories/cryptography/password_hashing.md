@@ -1,5 +1,7 @@
 # Password Hashing
 
+{{#include password_hashing.incl.md}}
+
 ## argon2 {#argon2}
 
 [![argon2][c-argon2-badge]][c-argon2]{{hi:argon2}}

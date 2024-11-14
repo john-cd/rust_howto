@@ -1,5 +1,7 @@
 # Just
 
+{{#include just.incl.md}}
+
 [https://just.systems/][c-just-website]{{hi:just}}⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 `just`{{hi:just}} is a command runner{{hi:Command runner}} / Make replacement.
@@ -29,7 +31,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 For Alpine, use [`apk`][apk-website]{{hi:apk}}⮳:
 
 ```dockerfile
-## Just: https://just.systems/man/en/
+# Just: https://just.systems/man/en/
 RUN apk add just
 ```
 

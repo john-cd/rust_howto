@@ -1,5 +1,9 @@
 # Closures
 
+{{#include closures.incl.md}}
+
+## Closures {#closures}
+
 [![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
 
 ```rust
@@ -26,7 +30,7 @@ To force a move:
 {{#include ../../deps/tests/lang/closures_move.rs:example}}
 ```
 
-## Closures as input parameters {#Closures as input parameters}
+## Closures as input parameters {#closures-as-input-parameters}
 
 ```rust
 {{#include ../../deps/tests/lang/closures_as_input_parameters.rs:example}}
@@ -38,6 +42,7 @@ To force a move:
 
 Functions may also be used as arguments.
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

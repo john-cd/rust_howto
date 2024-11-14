@@ -1,5 +1,7 @@
 # Reverse Proxies, Ingress
 
+{{#include reverse_proxy.incl.md}}
+
 ## Rathole {#rathole}
 
 [![rathole][c-rathole-badge]][c-rathole]{{hi:rathole}}

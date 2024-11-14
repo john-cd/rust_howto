@@ -1,6 +1,10 @@
 # Hardware Support
 
+[![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]
+
 Interface with specific CPU{{hi:CPU}} or other hardware{{hi:Hardware}} features.
+
+## Processor
 
 {{#include processor.incl.md}}
 

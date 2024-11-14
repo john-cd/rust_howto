@@ -1,6 +1,8 @@
 # Typecasts
 
-## bytemuck {#bytemuck}
+{{#include typecasts.incl.md}}
+
+## `bytemuck` {#bytemuck}
 
 [![bytemuck][c-bytemuck-badge]][c-bytemuck]{{hi:bytemuck}}
 [![bytemuck-crates.io][c-bytemuck-crates.io-badge]][c-bytemuck-crates.io]
@@ -8,8 +10,9 @@
 [![bytemuck-lib.rs][c-bytemuck-lib.rs-badge]][c-bytemuck-lib.rs]
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-## zerocopy {#zerocopy}
+## `zerocopy` {#zerocopy}
 
 [![zerocopy][c-zerocopy-badge]][c-zerocopy]{{hi:zerocopy}}
 [![zerocopy-crates.io][c-zerocopy-crates.io-badge]][c-zerocopy-crates.io]
@@ -20,6 +23,7 @@
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}}
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
+[![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

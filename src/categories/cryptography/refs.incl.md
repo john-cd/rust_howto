@@ -1,3 +1,13 @@
-[ex-sha-digest]: hashing.md#calculate-the-sha-256-digest-of-a-file
-[ex-hmac]: hashing.md#sign-and-verify-a-message-with-hmac-digest
-[ex-pbkdf2]: encryption.md#salt-and-hash-a-password-with-pbkdf2
+[ex-aead-encryption]: hashing.md#aead-encryption
+[ex-argon2]: password_hashing.md#argon2
+[ex-bcrypt]: password_hashing.md#bcrypt
+[ex-certificates]: hashing.md#certificates
+[ex-digital-signatures]: hashing.md#digital-signatures
+[ex-general-purpose-hashing]: hashing.md#general-purpose-hashing
+[ex-hmac]: hashing.md#hmac
+[ex-pbkdf2]: encryption.md#pbkdf2
+[ex-rsa]: hashing.md#rsa
+[ex-scrypt]: password_hashing.md#scrypt
+[ex-sha256]: hashing.md#sha256
+[ex-tls-ssl]: hashing.md#tls-ssl
+[ex-utilities]: hashing.md#utilities

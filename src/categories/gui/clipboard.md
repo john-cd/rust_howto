@@ -1,5 +1,7 @@
 # Clipboard
 
+{{#include clipboard.incl.md}}
+
 ## `arboard` {#arboard}
 
 [![arboard][c-arboard-badge]][c-arboard]{{hi:arboard}}

@@ -1,8 +1,8 @@
 # Reduce compilation duration
 
-Rust compile times{{hi:Compile times}} can be long.
-
 {{#include reduce_compilation_duration.incl.md}}
+
+Rust compile times{{hi:Compile times}} can be long.
 
 ## Measuring build times {#build-time}
 
@@ -16,7 +16,7 @@ time cargo build
 cargo build --timings
 ```
 
-## Optimization levels {#optimization-level}
+## Optimization levels {#optimization-levels}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 

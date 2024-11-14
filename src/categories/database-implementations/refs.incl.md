@@ -1,2 +1,4 @@
-[ex-database-impl]: databases.md
-[ex-search-impl]: search.md
+[ex-meilisearch]: search.md#meilisearch
+[ex-sled]: databases.md#sled
+[ex-surrealdb]: databases.md#surrealdb
+[ex-tantivy]: search.md#tantivy

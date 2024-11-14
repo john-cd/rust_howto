@@ -1,5 +1,7 @@
 # Development tools written in Rust
 
+{{#include development_tools.incl.md}}
+
 ## Compilers {#compilers}
 
 ### swc {#swc}

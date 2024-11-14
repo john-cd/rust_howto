@@ -1,5 +1,7 @@
 # Write code
 
+{{#include writing.incl.md}}
+
 ## Generate a Rust project from a template {#cargo-generate}
 
 [![cargo-generate][c-cargo_generate-badge]][c-cargo_generate]{{hi:cargo-generate}}

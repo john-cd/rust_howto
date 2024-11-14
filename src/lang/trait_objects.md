@@ -1,4 +1,4 @@
-# Trait Objects
+# Trait Objects {#trait-objects}
 
 In Rust, traits{{hi:Traits}} are types, but they are "unsized"{{hi:Unsized}}, which roughly means that they are only allowed to show up behind a pointer like [`std::boxed::Box`][c-std::boxed::Box]{{hi:std::boxed::Box}}⮳ (which points onto the heap) or `&` (which can point anywhere).
 
@@ -21,6 +21,7 @@ dyn Trait + 'static
 
 [Trait Objects (docs)][book-rust-trait-objects]{{hi:Trait objects}}⮳
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

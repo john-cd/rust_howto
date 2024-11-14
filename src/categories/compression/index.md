@@ -2,7 +2,7 @@
 
 Algorithms for making data smaller.
 
-{{#include index.incl.md}}
+{{#include tar.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

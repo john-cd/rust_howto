@@ -1,5 +1,7 @@
 # Benchmarking
 
+{{#include benchmarking.incl.md}}
+
 ## `cargo flamegraph` {#cargo-flamegraph}
 
 [![cargo-flamegraph][c-cargo_flamegraph-badge]][c-cargo_flamegraph]{{hi:cargo-flamegraph}}

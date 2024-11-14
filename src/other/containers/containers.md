@@ -1,8 +1,10 @@
 # Rust + containers
 
+{{#include containers.incl.md}}
+
 ## Docker {#docker}
 
-### References {#references}
+### References
 
 - Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}
 - [Docker's Rust guide][docker-rust-guide]⮳

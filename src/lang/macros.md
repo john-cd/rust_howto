@@ -1,4 +1,6 @@
-# Macros
+# Macros {#macros}
+
+{{#include macros.incl.md}}
 
 [Rust reference - Macros][book-rust-reference-macros]⮳
 
@@ -10,6 +12,7 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 {{#include ../../deps/tests/lang/macros.rs:example}}
 ```
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

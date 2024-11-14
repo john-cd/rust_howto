@@ -1,1 +1,1 @@
-[ex-graphics]: webgpu.md
+[ex-wgpu]: webgpu.md#wgpu
