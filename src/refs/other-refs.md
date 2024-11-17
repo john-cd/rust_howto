@@ -13,6 +13,7 @@
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
 [are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website?]: https://www.arewewebyet.org
+[rustcrypto-password-hashes-github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 [asynchronics-github]: https://github.com/asynchronics
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust

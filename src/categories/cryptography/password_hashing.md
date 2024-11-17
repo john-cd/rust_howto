@@ -35,13 +35,13 @@ The scrypt key derivation function is designed to be far more secure against har
 
 Hash and verify passwords.
 
-For more algorithms, see Rust Crypto Password Hashes: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
+For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO write
-
-https://en.wikipedia.org/wiki/Key_derivation_function
+[Key derivation function][key_derivation_function]
+[key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
 </div>

@@ -28,7 +28,9 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 <div class="hidden">
 TODO review password_hashing.md
 
-review below from https://blessed.rs/crates
+review below from [blessed.rs][blessed.rs]
+
+[blessed.rs]: https://blessed.rs/crates
 
 ## General Purpose Hashing {#general-purpose-hashing}
 

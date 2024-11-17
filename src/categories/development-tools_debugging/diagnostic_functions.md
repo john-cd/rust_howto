@@ -14,6 +14,7 @@
 <div class="hidden">
 
 - move to proper location
-- cover https://doc.rust-lang.org/std/any/fn.type_name.html
+- cover [`std::any::type_name`][std::any::type_name]
 
+[std::any::type_name]: https://doc.rust-lang.org/std/any/fn.type_name.html
 </div>
