@@ -218,7 +218,7 @@
   - [Testing](categories/development-tools_testing/testing.md)
   - [Fuzzing](categories/development-tools_testing/fuzzing.md)
 
-- [Devops](other/devops/index.md)
+- [DevOps](other/devops/index.md)
   - [DevOps](other/devops/devops.md)
   - [Dependency Management](other/devops/dependency_management.md)
   - [Git Hooks](other/devops/git_hooks.md)
@@ -254,7 +254,7 @@
   - [Directory traversal](categories/filesystem/dir.md)
   - [Ignore files](categories/filesystem/ignore.md)
   - [File watching](categories/filesystem/file_watching.md)
-  - [Tempfiles and directories](categories/filesystem/tempfile.md)
+  - [Temporary files and directories](categories/filesystem/tempfile.md)
   - [User directories](categories/filesystem/user_directories.md)
 
 - [Finance](categories/finance/_index.md)
@@ -436,7 +436,7 @@
   - [CORS](categories/web-programming_http-server/cors.md)
   - [Batteries-included frameworks](categories/web-programming_http-server/batteries_included.md)
   - [GraphQL](categories/web-programming_http-server/graphql.md)
-  - [grpc](categories/web-programming_http-server/grpc.md)
+  - [gRPC](categories/web-programming_http-server/grpc.md)
   - [`hyper`](categories/web-programming_http-server/hyper.md)
 
 - [Web programming - websocket](categories/web-programming_websocket/_index.md)
