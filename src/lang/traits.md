@@ -1,5 +1,7 @@
 # Traits {#traits}
 
+{{#include traits.incl.md}}
+
 ```rust
 {{#include ../../deps/tests/lang/traits.rs:example}}
 ```

@@ -1,5 +1,7 @@
 # Books {#books}
 
+{{#include books.incl.md}}
+
 - [The Little Book of Rust Books][book-the-little-book-of-rust-books]{{hi:Books}}⮳
 - "The Book": [The Rust Programming Language][book-rust]⮳
 - [Rust By Example][book-rust-by-example-book]⮳

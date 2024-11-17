@@ -1,5 +1,7 @@
 # Structs {#structs}
 
+{{#include structs.incl.md}}
+
 [![Rust by example - Structs][book-rust-by-example-structs-badge]][book-rust-by-example-structs]{{hi:Structs}}
 
 ```rust

@@ -17,6 +17,7 @@
 [ex-log]: alternatives.md#log
 [ex-open-observe]: alternatives.md#open-observe
 [ex-open-telemetry]: alternatives.md#open-telemetry
+[ex-other-frameworks]: alternatives.md#other-frameworks
 [ex-related-crates]: tracing.md#related-crates
 [ex-slog]: alternatives.md#slog
 [ex-spans]: tracing.md#spans

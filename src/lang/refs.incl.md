@@ -30,7 +30,6 @@
 [ex-loop]: control_flow.md#loop
 [ex-macros]: macros.md#macros
 [ex-main-function]: main.md#main
-[ex-main]: main.md#main
 [ex-match]: match.md#match
 [ex-memory-safety]: ownership_borrowing.md#memory-safety
 [ex-modules]: modules.md#modules
@@ -52,5 +51,6 @@
 [ex-traits-as-parameters]: traits.md#traits-as-parameters
 [ex-traits]: traits.md#traits
 [ex-use-keyword]: modules.md#use-keyword
+[ex-variables-and-constants]: variables_and_constants.md#variables-and-constants
 [ex-while-let]: match.md#while-let
 [ex-while]: control_flow.md#while

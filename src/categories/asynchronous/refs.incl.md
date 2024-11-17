@@ -1,4 +1,5 @@
 [ex-async-runtimes]: async.md#async-runtimes
+[ex-async-traits]: async_traits.md#async-traits
 [ex-basic-example]: async.md#basic-example
 [ex-basics]: tokio.md#basics
 [ex-call-async-from-blocking]: async_and_blocking.md#call-async-from-blocking
@@ -17,5 +18,6 @@
 [ex-spawn-a-dedicated-thread]: async_and_blocking.md#spawn-a-dedicated-thread
 [ex-spawn-blocking]: async_and_blocking.md#spawn-blocking
 [ex-spawning]: tokio.md#spawning
+[ex-streams]: streams.md#streams
 [ex-tokio-runtime]: async_and_blocking.md#tokio-runtime
 [ex-which-crate-provides-what]: async.md#which-crate-provides-what

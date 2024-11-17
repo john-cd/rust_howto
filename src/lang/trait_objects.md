@@ -1,5 +1,7 @@
 # Trait Objects {#trait-objects}
 
+{{#include trait_objects.incl.md}}
+
 In Rust, traits{{hi:Traits}} are types, but they are "unsized"{{hi:Unsized}}, which roughly means that they are only allowed to show up behind a pointer like [`std::boxed::Box`][c-std::boxed::Box]{{hi:std::boxed::Box}}⮳ (which points onto the heap) or `&` (which can point anywhere).
 
 A type like `&ClickCallback` or `Box<dyn ClickCallback>` where `ClickCallback` is a Trait is called a "trait object", and includes a pointer to an instance of a type `T` implementing `ClickCallback`, and a vtable{{hi:Vtable}}: a pointer to `T`'s implementation of each method in the trait.

@@ -5,6 +5,7 @@
 [ex-example-justfile]: just.md#example-justfile
 [ex-formal-methods]: other.md#formal-methods
 [ex-installation-into-dev-container]: just.md#installation-into-dev-container
+[ex-miri]: miri.md#miri
 [ex-miri-installation]: miri.md#miri-installation
 [ex-roogle]: other.md#roogle
 [ex-shuttle-rs]: other.md#shuttle-rs

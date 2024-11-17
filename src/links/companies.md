@@ -1,5 +1,7 @@
 # Companies that use or contribute to Rust {#companies}
 
+{{#include companies.incl.md}}
+
 [Accelerant.dev][accelerant-website]⮳
 
 [Cloudflare][cloudflare-website]⮳

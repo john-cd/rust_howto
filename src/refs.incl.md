@@ -1,0 +1,13 @@
+[p-asynchronous]: categories/asynchronous/index.md
+[p-cli]: categories/command-line-interface/index.md
+[p-concurrency]: categories/concurrency/index.md
+[p-config]: categories/config/index.md
+[p-development-tools]: categories/development-tools/index.md
+[p-errors]: categories/rust-patterns/error_handling.md
+[p-error-customization]: categories/rust-patterns/error_customization.md
+[p-lang]: lang/index.md
+[p-links]: links/index.md
+[p-debugging]: categories/development-tools_debugging/index.md
+[p-standard-library]: standard_library/index.md
+[p-web-programming]: categories/web-programming/index.md
+[p-index]: index.md

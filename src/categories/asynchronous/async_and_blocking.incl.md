@@ -1,6 +1,5 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Async and blocking][ex-async-and-blocking] | [![tokio][c-tokio-badge]][c-tokio] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] |
 | [Calling blocking code from async code][ex-calling-blocking-from-async] | [![tokio][c-tokio-badge]][c-tokio] |  |
 | [Tokio `spawn_blocking`][ex-spawn-blocking] | [![tokio][c-tokio-badge]][c-tokio]  | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 | [Using the `rayon` crate][ex-rayon] |  | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |

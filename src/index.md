@@ -32,18 +32,7 @@ The [Rust cookbook][book-rust-cookbook]⮳ demonstrate good practices to accompl
 
 [Rust by Example][book-rust-by-example-book]⮳ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard libraries.
 
-[p-asynchronous]: categories/asynchronous/index.md
-[p-cli]: categories/command-line-interface/index.md
-[p-concurrency]: categories/concurrency/index.md
-[p-config]: categories/config/index.md
-[p-development-tools]: categories/development-tools/index.md
-[p-errors]: categories/rust-patterns/errors/index.md
-[p-error-customization]: categories/rust-patterns/error_customization.md
-[p-lang]: lang/index.md
-[p-links]: links/index.md
-[p-debugging]: categories/development-tools_debugging/index.md
-[p-standard-library]: standard_library/index.md
-[p-web-programming]: categories/web-programming/index.md
+{{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 
 <div class="hidden">

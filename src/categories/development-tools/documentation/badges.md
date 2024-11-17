@@ -1,4 +1,6 @@
-# Badges
+# Badges {#badges}
+
+{{#include badges.incl.md}}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

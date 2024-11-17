@@ -1,5 +1,7 @@
 # Match, if let, while let {#match}
 
+{{#include match.incl.md}}
+
 [![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
 
 ```rust

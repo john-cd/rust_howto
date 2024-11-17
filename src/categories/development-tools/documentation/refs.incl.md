@@ -4,3 +4,4 @@
 [ex-mdbook]: mdbook.md#mdbook
 [ex-module-or-crate-level-documentation]: documentation.md#module-or-crate-level-documentation
 [ex-playground]: mdbook.md#playground
+[ex-badges]: badges.md#badges

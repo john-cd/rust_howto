@@ -12,5 +12,4 @@
 [ex-tonic]: grpc.md#tonic
 [ex-tower-http]: middleware.md#tower-http
 [ex-tower]: middleware.md#tower
-[ex-tower_http]: middleware.md#tower-http
 [ex-zola]: static_website_generators.md#zola

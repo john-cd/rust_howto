@@ -88,8 +88,7 @@ At present the cookbook is focused on the standard library, and on "core" or "fo
 [p-how-to-use-the-recipes]: #how-to-use-the-recipes
 [p-how-to-read-this-book]: #how-to-read-this-book
 [p-who-this-book-is-for]: #who-this-book-is-for
-[p-index]: index.md
-
+{{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 
 <div class="hidden">

@@ -1,6 +1,6 @@
 # Blogs, Podcasts, Meetups
 
-{{hi:Blogs}}{{hi:Podcasts}}{{hi:Meetups}}{{hi:Newsletter}}
+{{#include blogs_podcasts_meetups.incl.md}}{{hi:Blogs}}{{hi:Podcasts}}{{hi:Meetups}}{{hi:Newsletter}}
 
 - [A learning journal][lpalmieri-website]⮳
 

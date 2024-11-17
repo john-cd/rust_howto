@@ -13,6 +13,5 @@
 [ex-refcell]: smart_pointers.md#refcell
 [ex-result]: result.md#result
 [ex-string-concatenation]: strings.md#string-concatenation
-[ex-string-placeholders]: strings.md#placeholders
 [ex-string]: strings.md#string
 [ex-vec]: vectors.md#vec

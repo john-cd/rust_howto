@@ -102,6 +102,7 @@ Crates mentioned in this book, by alphabetic order.
 
 [![zed][c-zed-badge]][c-zed-website]  [![zenoh][c-zenoh-badge]][c-zenoh]
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

@@ -62,6 +62,7 @@
 
 [All Valid Categories][crates.io-category_slugs]⮳
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

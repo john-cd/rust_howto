@@ -15,6 +15,7 @@ or older resources, such as:
 
 [Best of Rust crates][best-of-rust-crates]
 
+{{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">

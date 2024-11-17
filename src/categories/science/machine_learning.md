@@ -10,9 +10,9 @@
 
 ## Candle {#candle}
 
-[Candle Documentation][c-candle_core-docs]{{hi:candle}}⮳
+[![candle-core][c-candle_core-badge]][c-candle_core][![candle-core-crates.io][c-candle_core-crates.io-badge]][c-candle_core-crates.io][![candle-core-github][c-candle_core-github-badge]][c-candle_core-github][![candle-core-lib.rs][c-candle_core-lib.rs-badge]][c-candle_core-lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:Blas}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-[meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use][blog-candle]⮳
+[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳
 
 ## Others {#others}
 
