@@ -1,7 +1,6 @@
 [ex-book-editing]: development_editing.md#book-editing
 [ex-deployment-to-github-pages]: dev_container_docker.md#deployment-to-github-pages
 [ex-dev-container-feature]: api_documentation.md#dev-container-feature
-[ex-dev-env-setup]: dev_environment_setup.md#dev-env-setup
 [ex-docker-compose]: dev_container_docker.md#docker-compose
 [ex-generate-the-documentation]: api_documentation.md#generate-the-documentation
 [ex-optional-preprocessors]: optional_preprocessors.md#optional-preprocessors

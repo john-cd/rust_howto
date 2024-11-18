@@ -226,7 +226,6 @@ TODO verify all crates are added to at least one category above
 [![xilem][c-xilem-badge]][c-xilem]{{hi:xilem}}
 [![xshell][c-xshell-badge]][c-xshell]{{hi:xshell}}
 [![xsv][c-xsv-badge]][c-xsv]{{hi:xsv}}
-[![yapp][c-yapp-badge]][c-yapp]{{hi:yapp}}
 [![yew][c-yew-badge]][c-yew]{{hi:yew}}
 [![zed][c-zed-badge]][c-zed-website]{{hi:zed}}
 [![zenoh][c-zenoh-badge]][c-zenoh]{{hi:zenoh}}

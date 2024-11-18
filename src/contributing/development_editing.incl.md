@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [book-editing][ex-book-editing] |  |  |
+| Section |
+|--------|
+| [Book editing][ex-book-editing] |

@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [repo-structure][ex-repo-structure] |  |  |
+| Section |
+|--------|
+| [Repo structure][ex-repo-structure] |

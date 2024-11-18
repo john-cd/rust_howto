@@ -2,7 +2,7 @@
 
 {{#include crate_registries.incl.md}}
 
-In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates are compiled using the Rust compiler, [`rustc`][rustc]{{hi:rustc}}⮳.
+In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates are compiled using the Rust compiler, [![`rustc`][rustc-badge]][rustc] [`rustc`][rustc]{{hi:rustc}}⮳.
 
 ## Crate Registries {#crate-registries}
 
@@ -17,4 +17,6 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 
 <div class="hidden">
 TODO: expand
+
+
 </div>

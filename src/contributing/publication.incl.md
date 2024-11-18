@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [publish][ex-publish] |  |  |
+| Section |
+|--------|
+| [Publication][ex-publish] |

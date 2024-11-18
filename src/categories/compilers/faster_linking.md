@@ -1,4 +1,4 @@
-# Faster linking
+# Faster linking {#faster-linking}
 
 {{#include faster_linking.incl.md}}
 

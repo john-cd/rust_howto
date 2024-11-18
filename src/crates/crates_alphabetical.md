@@ -96,7 +96,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## Y
 
-[![yapp][c-yapp-badge]][c-yapp]  [![yew][c-yew-badge]][c-yew]
+[![yew][c-yew-badge]][c-yew]
 
 ## Z
 

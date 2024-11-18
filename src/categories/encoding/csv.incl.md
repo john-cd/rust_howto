@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Read CSV records][ex-csv] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
+| [Read CSV records][ex-read-csv-records] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Read CSV records with different delimiter][ex-read-csv-different-delimiter] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Filter CSV records matching a predicate][ex-filter-csv] | [![csv][c-csv-badge]][c-csv] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 | [Handle invalid CSV data with Serde][ex-handle-invalid-csv] | [![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |

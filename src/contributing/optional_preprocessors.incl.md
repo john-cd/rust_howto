@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [optional-preprocessors][ex-optional-preprocessors] |  |  |
+| Section |
+|--------|
+| [Optional pre-processors][ex-optional-preprocessors] |

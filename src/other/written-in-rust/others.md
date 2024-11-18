@@ -17,6 +17,8 @@ Spacedrive is an open source cross-platform file explorer, powered by a virtual 
 
 ## Email applications {#email-applications}
 
+[![postsack][postsack-github-badge]][postsack-github]
+
 [postsack][postsack-github]{{hi:postsack}}⮳ visually cluster your emails by sender, domain, and more to identify waste.
 
 ## News {#news}

@@ -7,7 +7,6 @@
 [ex-custom-parallel-tasks]: multithreading.md#custom-parallel-tasks
 [ex-draw-fractal-threadpool]: threads.md#draw-fractal-threadpool
 [ex-flume]: threads.md#flume
-[ex-global-mut-state]: threads.md#maintain-global-mutable-state
 [ex-global-mutable-state]: threads.md#global-mutable-state
 [ex-map-reduce-in-parallel]: parallel.md#map-reduce-in-parallel
 [ex-mpsc]: message_passing.md#mpsc

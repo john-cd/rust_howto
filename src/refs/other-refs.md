@@ -1,3 +1,4 @@
+
 [a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [abstract-factory-in-rust-website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [actions-mdbook-github]: https://github.com/peaceiris/actions-mdbook
@@ -13,7 +14,6 @@
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
 [are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website?]: https://www.arewewebyet.org
-[rustcrypto-password-hashes-github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 [asynchronics-github]: https://github.com/asynchronics
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust
@@ -427,6 +427,7 @@
 [rustacean-station]: https://rustacean-station.org
 [rustc-badge]:https://img.shields.io/badge/rustc-tan
 [rustc]: https://doc.rust-lang.org/rustc/index.html
+[rustcrypto-password-hashes-github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 [rustmagazine.org]: https://rustmagazine.org
 [rustpython-github]: https://github.com/RustPython/RustPython
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
@@ -438,8 +439,6 @@
 [shield-io-website]: https://shields.io
 [shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle-rs-website]: https://www.shuttle.rs
-[smartcore-website-badge]: https://img.shields.io/badge/smartcore-coral
-[smartcore-website]: https://smartcorelib.org
 [spacedrive-github-badge]: https://img.shields.io/badge/spacedrive-steelblue?logo=github
 [spacedrive-github]: https://github.com/spacedriveapp/spacedrive
 [stackoverflow-asref]: https://stackoverflow.com/questions/66026309/when-and-why-to-use-asreft-instead-of-t

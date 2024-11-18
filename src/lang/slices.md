@@ -13,4 +13,7 @@
 
 <div class="hidden">
 TODO: add text
+
+[`slice::sort_by`][primitive-slice::sort_by]
+[`slice::split_at`][primitive-slice::split_at]
 </div>

@@ -1,7 +1,6 @@
 [ex-base64]: strings.md#base64
 [ex-bytemuck]: typecasts.md#bytemuck
 [ex-byteorder]: complex.md#byteorder
-[ex-csv]: csv.md#csv
 [ex-data-encoding]: strings.md#data-encoding
 [ex-filter-csv]: csv.md#filter-csv
 [ex-handle-invalid-csv]: csv.md#handle-invalid-csv

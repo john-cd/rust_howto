@@ -34,4 +34,7 @@ TODO: edit
 - [ ] table?
 - [ ] add examples
 
+[`char`][primitive-char]
+[`never`][primitive-never]
+[`u64`][primitive-u64]
 </div>

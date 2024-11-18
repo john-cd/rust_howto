@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [topics-of-interest][ex-topics-of-interest] |  |  |
+| Section |
+|--------|
+| [Topics of interest][ex-topics-of-interest] |
