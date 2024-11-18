@@ -1,2 +1,3 @@
-| Recipe |
+| Section |
+|---|
 | [Books][ex-links-books] |

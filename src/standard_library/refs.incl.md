@@ -1,4 +1,5 @@
 [ex-standard_library-adapters-for-working-with-references]: option.md#adapters-for-working-with-references
+[ex-standard_library-asref]: asref.md#asref
 [ex-standard_library-box]: smart_pointers.md#box
 [ex-standard_library-combinators]: option.md#combinators
 [ex-standard_library-convert-cow-to-str]: cow.md#convert-cow-to-str

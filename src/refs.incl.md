@@ -528,6 +528,7 @@
 [ex-rust-patterns-obtain-backtrace]: categories/rust-patterns/error_handling.md#obtain-backtrace
 [ex-rust-patterns-question-mark-operator]: categories/rust-patterns/error_handling.md#question-mark-operator
 [ex-rust-patterns-recoverable-errors-with-result]: categories/rust-patterns/error_handling.md#recoverable-errors-with-result
+[ex-rust-patterns-rust-idioms]: categories/rust-patterns/rust_idioms.md#rust-idioms
 [ex-rust-patterns-thiserror]: categories/rust-patterns/error_customization.md#thiserror
 [ex-rust-patterns-unwrap-or-else]: categories/rust-patterns/error_handling.md#unwrap-or-else
 [ex-science-candle]: categories/science/machine_learning.md#candle
@@ -550,6 +551,7 @@
 [ex-shared_state-parking-lot]: categories/concurrency/shared_state/shared_state.md#parking-lot
 [ex-simulation-simul]: categories/simulation/simulation.md#simul
 [ex-standard_library-adapters-for-working-with-references]: standard_library/option.md#adapters-for-working-with-references
+[ex-standard_library-asref]: standard_library/asref.md#asref
 [ex-standard_library-box]: standard_library/smart_pointers.md#box
 [ex-standard_library-combinators]: standard_library/option.md#combinators
 [ex-standard_library-convert-cow-to-str]: standard_library/cow.md#convert-cow-to-str

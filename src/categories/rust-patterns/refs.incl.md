@@ -13,3 +13,4 @@
 [ex-rust-patterns-recoverable-errors-with-result]: error_handling.md#recoverable-errors-with-result
 [ex-rust-patterns-thiserror]: error_customization.md#thiserror
 [ex-rust-patterns-unwrap-or-else]: error_handling.md#unwrap-or-else
+[ex-rust-patterns-rust-idioms]: rust_idioms.md#rust-idioms

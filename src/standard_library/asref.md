@@ -1,4 +1,4 @@
-# AsRef and &T
+# AsRef and &T {#asref}
 
 {{#include asref.incl.md}}
 

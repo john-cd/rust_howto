@@ -1,4 +1,4 @@
-# Rust idioms and patterns
+# Rust idioms and patterns {#rust-idioms}
 
 {{#include rust_idioms.incl.md}}
 
