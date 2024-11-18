@@ -1,3 +1,4 @@
+
 [c-accesskit-badge]: https://img.shields.io/crates/v/accesskit?label=accesskit
 [c-accesskit-crates.io-badge]: https://img.shields.io/badge/crates.io-accesskit-crimson
 [c-accesskit-crates.io]: https://crates.io/crates/accesskit
@@ -3036,6 +3037,8 @@
 [c-tui-badge]: https://img.shields.io/crates/v/tui?label=tui
 [c-tui-crates.io-badge]: https://img.shields.io/badge/crates.io-tui-crimson
 [c-tui-crates.io]: https://crates.io/crates/tui
+[c-tui-github-badge]: https://img.shields.io/badge/tui-steelblue?logo=github
+[c-tui-github]: https://github.com/fdehau/tui-rs
 [c-tui-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tui-yellow
 [c-tui-lib.rs]: https://lib.rs/crates/tui
 [c-tui]: https://docs.rs/tui
