@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [links][ex-links] |  |  |
+| Section |
+|--------|
+| [Rust Links][ex-links] |

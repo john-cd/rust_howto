@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [learning][ex-learning] |  |  |
+| Section |
+|--------|
+| [Rust Learning][ex-learning] |

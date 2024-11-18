@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [companies][ex-companies] |  |  |
+| Section |
+|--------|
+| [Companies using or contributing to Rust][ex-companies] |

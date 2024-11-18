@@ -1,4 +1,4 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [cheatsheets][ex-cheatsheets] |  |  |
-| [comparison-to-other-languages][ex-comparison-to-other-languages] |  |  |
+| Section |
+|--------|
+| [Rust Cheatsheets][ex-cheatsheets] |
+| [Comparison to other languages][ex-comparison-to-other-languages] |

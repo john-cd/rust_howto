@@ -1,5 +1,5 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [meetups][ex-meetups] |  |  |
-| [newsletters][ex-newsletters] |  |  |
-| [podcasts-blogs][ex-podcasts-blogs] |  |  |
+| Section |
+|--------|
+| [Meetups][ex-meetups] |
+| [Newsletters][ex-newsletters] |
+| [Podcasts & blogs][ex-podcasts-blogs] |

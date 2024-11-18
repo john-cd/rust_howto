@@ -1,3 +1,2 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [books][ex-books] |  |  |
+| Recipe |
+| [Books][ex-books] |
