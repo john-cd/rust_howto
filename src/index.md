@@ -10,9 +10,9 @@ It quickly summarizes the basics of the [language][p-lang] and often-used elemen
 
 It then focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [p-debugging][p-debugging]...
 
-[p-concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], are covered in details.
+[Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details.
 
-Next are [tools][p-development-tools], such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming domains such as [p-cli][p-cli] and [Web][p-web-programming] development. The [p-links][p-links] section provides pointers to notable Rust websites, books, and code examples.
+Next are [tools][p-development-tools], such as Cargo, Clippy, Rustfmt, as well as links and examples specific to programming domains such as [CLI][p-cli] and [Web][p-web-programming] development. The [links][p-links] section provides pointers to notable Rust websites, books, and code examples.
 
 ## Who should read this book?
 

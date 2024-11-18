@@ -548,3 +548,5 @@ libs
 tinytemplate
 graphql
 benchmarking
+OpenCV
+Tempfiles
