@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] redo index of examples
+- [ ] add index of crates, pointing to the relavent recipes
 - [ ] review each .md file in turn - WIP
 - [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
 - [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
