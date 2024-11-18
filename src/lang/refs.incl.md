@@ -14,6 +14,7 @@
 [ex-destructuring]: variables_and_constants.md#destructuring
 [ex-diverging-functions]: functions.md#diverging-functions
 [ex-enums]: enums.md#enums
+[ex-control-flow]: control_flow.md#control-flow
 [ex-for]: control_flow.md#for
 [ex-function-pointers]: functions.md#function-pointers
 [ex-functions]: functions.md#functions

@@ -1,4 +1,4 @@
-# Control Flow
+# Control Flow {##control-flow}
 
 {{#include control_flow.incl.md}}
 

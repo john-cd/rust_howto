@@ -409,6 +409,19 @@ list_missing_chapters_in_toc:
     fi
   done
 
+## ---- INDICES MANAGEMENT -----------------------------------
+
+# Quick and dirty generation of lang/index.md; manual edit required
+generate_lang_index:
+  #! /bin/bash
+  clear
+  for file in $(find ./src/lang -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
+  do
+    base=$(basename $file)
+    title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
+    echo "| [$title][ex-${base%.md}] |"
+  done
+
 ## ---- PRE-PUSH -----------------------------------
 
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
