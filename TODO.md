@@ -1,15 +1,18 @@
 # TODO
 
-- [ ] redo index of examples
-- [ ] add index of crates, pointing to the relavent recipes
 - [ ] review each .md file in turn - WIP
+- [ ] add examples where needed - WIP
+- [ ] replace current badge markdown mess by a preprocessor command
 - [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
+- [ ] modify index of crates to point to the relevant recipes
 - [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
 
 ## Tools
 
-- [ ] finish autogen and tool_lib/src/tera --> generate index of examples - WIP
+- [ ] finish mdbook preprocessor - {#badge <crate_name> <extra_cat1>...}, {#categories <cat1>,<cat2>... }
+- [ ] finish autogen and tool_lib/src/tera --> generate index of examples? recipe tables? new subchapter? - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?
+- [ ] consolidate templ / crate_indices / autogen / mdbook-utils tools and respective libs
 
 ## Links
 
