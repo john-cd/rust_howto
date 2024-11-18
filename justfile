@@ -414,8 +414,8 @@ list_missing_chapters_in_toc:
 
 ## ---- INDICES MANAGEMENT -----------------------------------
 
-# Quick and dirty generation of lang/index.md; manual edit required
-list_lang_index:
+# Quick and dirty generation of lang/index.md; manual editing required
+generate_lang_index:
   #! /bin/bash
   clear
   for file in $(find ./src/lang -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
@@ -425,7 +425,7 @@ list_lang_index:
     echo "| [$title][ex-lang-${base%.md}] |"
   done
 
-# Quick and dirty generation of the index of examples `examples_index.md`
+# Quick and dirty generation of the index of examples `examples_index.md`; manual editing required
 generate_index_of_examples:
   #! /bin/bash
   clear
@@ -436,11 +436,11 @@ generate_index_of_examples:
   for dir in $(find ./src/* -type d -not -path "./src/refs" | sort -r | awk 'a!~"^"$0{a=$0;print}' | sort)
   do
     #echo ">> $dir"
-    last=$(basename $dir | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
+    last=$(basename $dir | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/-/ /g; s/_/: /g')
     echo "## ${last}"
     echo ""
     # for all subchapter TOCs
-    for file in $(find $dir -type f -name '*.incl.md' -not -name "refs.incl.md")
+    for file in $(find $dir -type f -name '*.incl.md' -not -name "refs.incl.md" -not -name "*index.md" )
     do
       incl=$(realpath --relative-to=./src $file)
       if [ $(grep -cF $incl ./src/examples_index.md) -eq 0 ]; then
@@ -460,7 +460,7 @@ generate_index_of_examples:
   {{{{#include refs/link-refs.md}}"
 
 # Create references for the index of examples `examples_index.md` - add them to `src/refs.incl.md`
-list_refdefs_for_index_examples:
+generate_refdefs_for_index_examples:
   #! /bin/bash
   clear
   for file in $(find ./src -type f -name "refs.incl.md")
@@ -468,18 +468,6 @@ list_refdefs_for_index_examples:
     rel=$(realpath --relative-to=./src $file | sed 's/refs.incl.md//');
     sed -nE 's~(^\[ex-.+?\]:)\s?([^#]+?)(#.+)?$~\1 '${rel}'\2\3~p' $file | sort -u -
   done
-
-# [confirm]
-# sub:
-#   #! /bin/bash
-#   clear
-#   for file in $(find ./src -type f -name "*.md")
-#   do
-#     last=$(dirname $file | xargs basename)
-#     echo $last
-#     echo ">>> ${file}"
-#     sed -Ei 's~(\[ex-)(.+?\])~\1'${last}'-\2~' $file
-#   done
 
 ## ---- PRE-PUSH -----------------------------------
 
