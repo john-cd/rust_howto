@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Rust installation][ex-lang-rust-install] |  |  |
+| Section |
+|--------|
+| [Rust installation][ex-lang-rust-install] |

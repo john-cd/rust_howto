@@ -1,5 +1,5 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [`match`][ex-lang-match] |  |  |
-| [`if let`][ex-lang-if-let] |  |  |
-| [`while let`][ex-lang-while-let] |  |  |
+| Section |
+|--------|
+| [`match`][ex-lang-match] |
+| [`if let`][ex-lang-if-let] |
+| [`while let`][ex-lang-while-let] |

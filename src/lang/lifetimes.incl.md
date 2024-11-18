@@ -1,4 +1,4 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Lifetimes][ex-lang-lifetimes] |  |  |
-| [Lifetime Annotations in Struct Definitions and methods][ex-lang-lifetime-annotations] |  |  |
+| Section |
+|--------|
+| [Lifetimes][ex-lang-lifetimes] |
+| [Lifetime Annotations in Struct Definitions and methods][ex-lang-lifetime-annotations] |

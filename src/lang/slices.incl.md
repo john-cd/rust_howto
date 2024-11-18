@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Slices][ex-lang-slices] |  |  |
+| Section |
+|--------|
+| [Slices][ex-lang-slices] |

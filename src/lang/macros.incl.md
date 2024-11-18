@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Macros][ex-lang-macros] |  |  |
+| Section |
+|--------|
+| [Macros][ex-lang-macros] |

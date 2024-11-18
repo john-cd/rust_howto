@@ -1,3 +1,3 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Structs][ex-lang-structs] |  |  |
+| Section |
+|--------|
+| [Structs][ex-lang-structs] |
