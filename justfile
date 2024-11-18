@@ -208,7 +208,7 @@ quick:
 # Check spelling in markdown
 [unix]
 spell:
-  .devcontainer/spellcheck.sh
+  .devcontainer/spellcheck.sh list
 
 [windows]
 spell:
@@ -247,7 +247,7 @@ sortrefs: _removelastslash
   mv -f /tmp/o.md ./src/refs/other-refs.md
   rm -f /temp/o.md
   sort -u ./src/refs/link-refs.md -o /tmp/l.md
-  mv -f /tmp/l.md ./src/refs/link-refs.md
+  mv -f /tmp/l.md ./src/refs/link-refs.mdf
   rm -f /temp/l.md
 
 [windows]
