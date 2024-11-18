@@ -200,6 +200,7 @@ quick:
 
 [windows]
 quick:
+  echo "No support for quick serving while in Windows!"
   mdbook serve -p 3001 -n 127.0.0.1 --open
 
 ## ---- UTILITIES -----------------------------------
@@ -219,6 +220,7 @@ empty := ''
 # Call mdbook-utils to manage links, ref definitions, etc...
 utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
+# TODO clarify
 
 # Run the templating tool e.g to create badges and reference definitions
 templ cmd=help *subcmd=empty:
@@ -231,6 +233,7 @@ crate_indices cmd=help *subcmd=empty:
 # Autogenerate a chapter (from template)
 autogen:
     cargo run -p autogen
+# TODO finish
 
 ## ---- LINK AND REFERENCE DEFINITION MANAGEMENT -----------------------------------
 
@@ -273,9 +276,9 @@ check_refdefs:
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]
 
-# Add template rows to <subchapter>.incl.md files, using the contents of `refs.incl.md`
+# Add links to recipes to `<subchapter>.incl.md` files, using the reference definitions in `refs.incl.md`
 [confirm]
-fix_tables:
+fix_recipe_tables:
   #! /bin/bash
   for file in $(find ./src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
   do
@@ -341,7 +344,7 @@ check_urls:
 # This does not check whether the reference definitions are used - see below.
 
 # Identify duplicated URLs (noting that they can't always be avoided).
-duplicated_urls:
+list_duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
 
 ## ---- CRATE MANAGEMENT -----------------------------------
@@ -356,20 +359,21 @@ info crate:
   cargo info {{crate}}
 
 # Check for security advisories, license issues, etc
-crate_check:
+check_crates:
   cargo deny check --hide-inclusion-graph
 # WIP
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
 # List examples in `deps/tests` that are not in the markdown.
-examples:
+list_examples_not_used_in_book:
   #! /bin/bash
   grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' ./src ./drafts | sed -E 's~\{\{#include .+/([._a-zA-Z0-9]+?\.rs)(:.+?)?\}\}~\1~' | sort -u > examples_in_markdown.txt
   find ./deps/tests -type f -name "*.rs" -exec basename {} \; | sort -u > examples.txt
   comm -13 examples_in_markdown.txt examples.txt
 # The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
 # then compare to the list of test files in deps
+# A few files e.g. main.rs and mod.rs are not true examples and should not be included into the book.
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
