@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [CD / CI][ex-cdci] |  |  |
+| [CD / CI][ex-devops-cdci] |  |  |

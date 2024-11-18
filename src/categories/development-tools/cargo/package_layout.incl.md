@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Package layout][ex-package-layout] |  |  |
+| [Package layout][ex-cargo-package-layout] |  |  |
 
 <div class="hidden">
 TODO

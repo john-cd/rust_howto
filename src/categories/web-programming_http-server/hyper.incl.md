@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`hyper`][ex-hyper] |  |  |
+| [`hyper`][ex-web-programming_http-server-hyper] |  |  |
 
 <div class="hidden">
 TODO

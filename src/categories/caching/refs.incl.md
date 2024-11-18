@@ -1,1 +1,1 @@
-[ex-lru-cache]: lru.md#lru-cache
+[ex-caching-lru-cache]: lru.md#lru-cache

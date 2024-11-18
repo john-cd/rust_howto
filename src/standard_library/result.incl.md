@@ -1,3 +1,3 @@
 | Recipe | Crates |
 |---|---|
-| [Result][ex-result] | [![std][c-std-badge]][c-std] |
+| [Result][ex-standard_library-result] | [![std][c-std-badge]][c-std] |

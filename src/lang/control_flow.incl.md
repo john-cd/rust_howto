@@ -1,9 +1,9 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [If else][ex-if-else] |  |  |
-| [Loop][ex-loop] |  |  |
-| [While][ex-while] |  |  |
-| [For][ex-for] |  |  |
+| [If else][ex-lang-if-else] |  |  |
+| [Loop][ex-lang-loop] |  |  |
+| [While][ex-lang-while] |  |  |
+| [For][ex-lang-for] |  |  |
 
 <div class="hidden">
 TODO

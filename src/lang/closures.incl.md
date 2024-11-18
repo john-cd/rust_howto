@@ -1,8 +1,8 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Closures][ex-closures] |  |  |
-| [Closure with type annotations][ex-closure-with-type-annotations] |  |  |
-| [Closures as input parameters][ex-closures-as-input-parameters] |  |  |
+| [Closures][ex-lang-closures] |  |  |
+| [Closure with type annotations][ex-lang-closure-with-type-annotations] |  |  |
+| [Closures as input parameters][ex-lang-closures-as-input-parameters] |  |  |
 
 <div class="hidden">
 TODO

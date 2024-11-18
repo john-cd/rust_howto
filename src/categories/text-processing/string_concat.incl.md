@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Benchmark][ex-benchmark] |  |  |
+| [Benchmark][ex-text-processing-benchmark] |  |  |
 
 <div class="hidden">
 TODO

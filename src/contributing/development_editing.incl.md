@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Book editing][ex-book-editing] |
+| [Book editing][ex-contributing-book-editing] |

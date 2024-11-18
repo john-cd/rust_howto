@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Topics of interest][ex-topics-of-interest] |
+| [Topics of interest][ex-contributing-topics-of-interest] |

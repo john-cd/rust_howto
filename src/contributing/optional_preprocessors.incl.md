@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Optional pre-processors][ex-optional-preprocessors] |
+| [Optional pre-processors][ex-contributing-optional-preprocessors] |

@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [trait-objects][ex-trait-objects] |  |  |
+| [trait-objects][ex-lang-trait-objects] |  |  |

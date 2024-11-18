@@ -1,12 +1,12 @@
 | Section |
 |---|
-| [Learning Rust][ex-learning] |
-| [Rust Cheatsheets][ex-cheatsheets] |
-| [Comparison to other languages][ex-comparison-to-other-languages] |
-| [Books][ex-books] |
-| [Example code][ex-example-code] |
-| [Rust Blogs & Podcasts][ex-podcasts-blogs] |
-| [Newsletters][ex-newsletters] |
-| [Meetups][ex-meetups] |
-| [Companies][ex-companies] |
-| [Lists of Rust links][ex-links] |
+| [Learning Rust][ex-links-learning] |
+| [Rust Cheatsheets][ex-links-cheatsheets] |
+| [Comparison to other languages][ex-links-comparison-to-other-languages] |
+| [Books][ex-links-books] |
+| [Example code][ex-links-example-code] |
+| [Rust Blogs & Podcasts][ex-links-podcasts-blogs] |
+| [Newsletters][ex-links-newsletters] |
+| [Meetups][ex-links-meetups] |
+| [Companies][ex-links-companies] |
+| [Lists of Rust links][ex-links-links] |

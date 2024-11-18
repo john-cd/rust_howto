@@ -1,1 +1,1 @@
-[ex-localization]: localization.md#localization
+[ex-localization-localization]: localization.md#localization

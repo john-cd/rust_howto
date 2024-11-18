@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Rust Learning][ex-learning] |
+| [Rust Learning][ex-links-learning] |

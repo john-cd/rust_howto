@@ -1,1 +1,1 @@
-[ex-internationalization]: internationalization.md#internationalization
+[ex-internationalization-internationalization]: internationalization.md#internationalization

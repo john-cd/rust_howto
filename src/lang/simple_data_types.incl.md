@@ -1,4 +1,4 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Simple data types][ex-simple-data-types] |  |  |
-| [Overflow handling][ex-overflow-handling] |  |  |
+| [Simple data types][ex-lang-simple-data-types] |  |  |
+| [Overflow handling][ex-lang-overflow-handling] |  |  |

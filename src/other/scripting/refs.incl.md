@@ -1,1 +1,1 @@
-[ex-rust-scripting]: rhai.md#rust-scripting
+[ex-scripting-rust-scripting]: rhai.md#rust-scripting

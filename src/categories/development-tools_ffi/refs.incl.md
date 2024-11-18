@@ -1,3 +1,3 @@
-[ex-bindgen]: generate_ffi_bindings.md#bindgen
-[ex-cbindgen]: generate_ffi_bindings.md#cbindgen
-[ex-cxx]: generate_ffi_bindings.md#cxx
+[ex-development-tools_ffi-bindgen]: generate_ffi_bindings.md#bindgen
+[ex-development-tools_ffi-cbindgen]: generate_ffi_bindings.md#cbindgen
+[ex-development-tools_ffi-cxx]: generate_ffi_bindings.md#cxx

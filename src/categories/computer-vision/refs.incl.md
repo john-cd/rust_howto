@@ -1,1 +1,1 @@
-[ex-opencv]: opencv.md#opencv
+[ex-computer-vision-opencv]: opencv.md#opencv

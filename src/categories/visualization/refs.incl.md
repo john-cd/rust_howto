@@ -1,1 +1,1 @@
-[ex-viz]: visualization.md#viz
+[ex-visualization-viz]: visualization.md#viz

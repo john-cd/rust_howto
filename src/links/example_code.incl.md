@@ -1,3 +1,3 @@
 | Recipe |
 |--------|
-| [example-code][ex-example-code] |
+| [example-code][ex-links-example-code] |

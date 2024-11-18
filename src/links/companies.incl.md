@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Companies using or contributing to Rust][ex-companies] |
+| [Companies using or contributing to Rust][ex-links-companies] |

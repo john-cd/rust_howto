@@ -1,1 +1,1 @@
-[ex-embassy]: embassy.md#embassy
+[ex-embedded-embassy]: embassy.md#embassy

@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Publication][ex-publish] |
+| [Publication][ex-contributing-publish] |

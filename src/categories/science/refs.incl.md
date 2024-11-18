@@ -1,3 +1,3 @@
-[ex-candle]: machine_learning.md#candle
-[ex-linfa]: machine_learning.md#linfa
-[ex-others]: machine_learning.md#others
+[ex-science-candle]: machine_learning.md#candle
+[ex-science-linfa]: machine_learning.md#linfa
+[ex-science-others]: machine_learning.md#others

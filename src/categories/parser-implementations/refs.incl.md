@@ -1,1 +1,1 @@
-[ex-javascript]: parser_implementations.md#javascript
+[ex-parser-implementations-javascript]: parser_implementations.md#javascript

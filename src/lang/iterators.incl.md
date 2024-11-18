@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Iterators][ex-iterators] |  |  |
+| [Iterators][ex-lang-iterators] |  |  |

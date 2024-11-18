@@ -1,3 +1,3 @@
 | Section |
 |--------|
-| [Repo structure][ex-repo-structure] |
+| [Repo structure][ex-contributing-repo-structure] |

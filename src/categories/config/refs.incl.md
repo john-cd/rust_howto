@@ -1,5 +1,5 @@
-[ex-config]: configuration.md#config
-[ex-confy]: configuration.md#confy
-[ex-dotenvy]: environment_variables.md#dotenvy
-[ex-env]: environment_variables.md#env
-[ex-envy]: environment_variables.md#envy
+[ex-config-config]: configuration.md#config
+[ex-config-confy]: configuration.md#confy
+[ex-config-dotenvy]: environment_variables.md#dotenvy
+[ex-config-env]: environment_variables.md#env
+[ex-config-envy]: environment_variables.md#envy

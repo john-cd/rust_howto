@@ -1,7 +1,7 @@
-[alternatives][ex-alternatives]
-[riker][ex-riker]
-[stakker][ex-stakker]
-[utilities][ex-utilities]
+[alternatives][ex-concurrency-alternatives]
+[riker][ex-concurrency-riker]
+[stakker][ex-concurrency-stakker]
+[utilities][ex-concurrency-utilities]
 
 <div class="hidden">
 TODO remove

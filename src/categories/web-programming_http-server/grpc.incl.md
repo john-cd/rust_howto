@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [tonic][ex-tonic] |  |  |
+| [tonic][ex-web-programming_http-server-tonic] |  |  |
 
 <div class="hidden">
 TODO

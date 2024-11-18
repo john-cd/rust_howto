@@ -1,1 +1,1 @@
-[ex-images]: images.md#images
+[ex-multimedia_images-images]: images.md#images

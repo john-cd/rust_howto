@@ -1,11 +1,11 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Spawn, join][ex-spawn-join] |  |  |
-| [Scoped threads][ex-scoped-threads] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Rayon - parallel processing][ex-rayon] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Parallel iteration][ex-par-iter] |  |  |
-| [Parallel sorting][ex-parallel-sorting] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Custom parallel tasks][ex-custom-parallel-tasks] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Spawn, join][ex-concurrency-spawn-join] |  |  |
+| [Scoped threads][ex-concurrency-scoped-threads] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Rayon - parallel processing][ex-concurrency-rayon] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Parallel iteration][ex-concurrency-par-iter] |  |  |
+| [Parallel sorting][ex-concurrency-parallel-sorting] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Custom parallel tasks][ex-concurrency-custom-parallel-tasks] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 
 <div class="hidden">
 TODO

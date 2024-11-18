@@ -1,8 +1,8 @@
-[ex-convert-local-time]: duration.md#convert-local-time
-[ex-display-formatted-date-time]: parse.md#display-formatted-date-time
-[ex-examine-date-and-time]: parse.md#examine-date-and-time
-[ex-measure-elapsed-time]: duration.md#measure-elapsed-time
-[ex-parse-string-into-datetime-struct]: parse.md#parse-string-into-datetime-struct
-[ex-perform-checked-date-time-calc]: duration.md#perform-checked-date-time-calc
-[ex-time-crate]: time.md#time-crate
-[ex-unix-timestamp]: parse.md#unix-timestamp
+[ex-date-and-time-convert-local-time]: duration.md#convert-local-time
+[ex-date-and-time-display-formatted-date-time]: parse.md#display-formatted-date-time
+[ex-date-and-time-examine-date-and-time]: parse.md#examine-date-and-time
+[ex-date-and-time-measure-elapsed-time]: duration.md#measure-elapsed-time
+[ex-date-and-time-parse-string-into-datetime-struct]: parse.md#parse-string-into-datetime-struct
+[ex-date-and-time-perform-checked-date-time-calc]: duration.md#perform-checked-date-time-calc
+[ex-date-and-time-time-crate]: time.md#time-crate
+[ex-date-and-time-unix-timestamp]: parse.md#unix-timestamp

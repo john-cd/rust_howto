@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Docker][ex-docker] |  |  |
-| [Docker Compose][ex-docker-compose] |  |  |
+| [Docker][ex-containers-docker] |  |  |
+| [Docker Compose][ex-containers-docker-compose] |  |  |
 
 <div class="hidden">
 TODO

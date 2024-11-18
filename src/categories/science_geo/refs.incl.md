@@ -1,1 +1,1 @@
-[ex-geo]: geo.md#geo
+[ex-science_geo-geo]: geo.md#geo

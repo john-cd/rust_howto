@@ -1,1 +1,1 @@
-[ex-neuro]: neuro.md#neuro
+[ex-science_neuroscience-neuro]: neuro.md#neuro

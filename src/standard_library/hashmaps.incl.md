@@ -1,3 +1,3 @@
 | Recipe | Crates |
 |---|---|
-| [Hashmaps][ex-hashmaps] | [![std][c-std-badge]][c-std] |
+| [Hashmaps][ex-standard_library-hashmaps] | [![std][c-std-badge]][c-std] |

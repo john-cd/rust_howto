@@ -1,5 +1,5 @@
 | Section |
 |--------|
-| [Meetups][ex-meetups] |
-| [Newsletters][ex-newsletters] |
-| [Podcasts & blogs][ex-podcasts-blogs] |
+| [Meetups][ex-links-meetups] |
+| [Newsletters][ex-links-newsletters] |
+| [Podcasts & blogs][ex-links-podcasts-blogs] |

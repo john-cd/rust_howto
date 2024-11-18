@@ -1,2 +1,2 @@
-[ex-winapi]: windows.md#winapi
-[ex-windows]: windows.md#windows
+[ex-os_windows-apis-winapi]: windows.md#winapi
+[ex-os_windows-apis-windows]: windows.md#windows

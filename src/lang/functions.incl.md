@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Functions][ex-functions] |  |  |
-| [Generic functions][ex-generic-functions] |  |  |
-| [Function pointers][ex-function-pointers] |  |  |
-| [Diverging functions][ex-diverging-functions] |  |  |
+| [Functions][ex-lang-functions] |  |  |
+| [Generic functions][ex-lang-generic-functions] |  |  |
+| [Function pointers][ex-lang-function-pointers] |  |  |
+| [Diverging functions][ex-lang-diverging-functions] |  |  |

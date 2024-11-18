@@ -1,1 +1,1 @@
-[ex-simul]: simulation.md#simul
+[ex-simulation-simul]: simulation.md#simul

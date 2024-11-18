@@ -321,11 +321,14 @@ list_missing_anchors:
 [confirm]
 generate_refdefs_from_anchors:
   #! /bin/bash
-  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" -not -wholename "./src/crates/*.md" \) )
+  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" \) )
   do
+    echo "> $file"
     base=$(basename $file)
+    # parent directory
+    parent=$(dirname $file | xargs basename)
     # grab all headings with an anchor; substitute the anchor \1 into a refdef
-    link=$(grep -Poh '^#[^{}]*\{#[\w-]+?\}$' $file | sed -E 's/^#.*\{#(.+?)\}$/[ex-\1]: '$base'#\1/')
+    link=$(sed -nE 's/^#.*\{#(.+?)\}\s*$/[ex-'${parent}'-\1]: '$base'#\1/p' $file)
     if [ -n "$link" ]; then
       echo "$link" >> "${file%/*}/refs.incl.md"
       # sort and dedupe refdefs
@@ -421,6 +424,45 @@ generate_lang_index:
     title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
     echo "| [$title][ex-${base%.md}] |"
   done
+
+generate_index_examples:
+  #! /bin/bash
+  clear
+  for file in $(find ./src -type f -name '*.incl.md' -not -name "refs.incl.md")
+  do
+    incl=$(realpath --relative-to=./src $file)
+    if [ $(grep -cF $incl ./src/examples_index.md) -eq 0 ]; then
+      base=$(basename $file)
+      title=$(echo ${base%.incl.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
+      echo "## ${title}"
+      echo ""
+      echo "{{{{#include ${incl}}}"
+      echo ""
+    fi
+  done
+
+gen:
+  #! /bin/bash
+  clear
+  for file in $(find ./src -type f -name "refs.incl.md")
+  do
+    rel=$(realpath --relative-to=./src $file | sed 's/refs.incl.md//');
+    sed -nE 's~(^\[ex-.+?\]:)\s?([^#]+?)(#.+)?$~\1 '${rel}'\2\3~p' $file | sort -u -
+  done
+
+
+[confirm]
+sub:
+  #! /bin/bash
+  clear
+  for file in $(find ./src -type f -name "*.md")
+  do
+    last=$(dirname $file | xargs basename)
+    echo $last
+    echo ">>> ${file}"
+    sed -Ei 's~(\[ex-)(.+?\])~\1'${last}'-\2~' $file
+  done
+
 
 ## ---- PRE-PUSH -----------------------------------
 

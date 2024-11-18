@@ -1,5 +1,5 @@
-[ex-bevy]: game_engines.md#bevy
-[ex-fyrox]: game_engines.md#fyrox
-[ex-ggez]: game_engines.md#ggez
-[ex-glam]: game_engines.md#glam
-[ex-macroquad]: game_engines.md#macroquad
+[ex-game-engines-bevy]: game_engines.md#bevy
+[ex-game-engines-fyrox]: game_engines.md#fyrox
+[ex-game-engines-ggez]: game_engines.md#ggez
+[ex-game-engines-glam]: game_engines.md#glam
+[ex-game-engines-macroquad]: game_engines.md#macroquad

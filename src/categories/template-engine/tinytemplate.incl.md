@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`tinytemplate`][ex-tinytemplate] |  | [![cat-template-engine][cat-template-engine-badge]][cat-template-engine] |
+| [`tinytemplate`][ex-template-engine-tinytemplate] |  | [![cat-template-engine][cat-template-engine-badge]][cat-template-engine] |
 
 <div class="hidden">
 TODO

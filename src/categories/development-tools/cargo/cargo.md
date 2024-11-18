@@ -2,7 +2,7 @@
 
 {{#include cargo.incl.md}}
 
-## Basic cargo usage {#cargo}
+## Basic cargo usage {#basic-cargo-usage}
 
 [The Cargo book][c-cargo-book]⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:cargo}}
 

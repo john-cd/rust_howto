@@ -1,3 +1,3 @@
 | Recipe | Crates |
 |---|---|
-| [Vec][ex-vec] | [![std][c-std-badge]][c-std] |
+| [Vec][ex-standard_library-vec] | [![std][c-std-badge]][c-std] |

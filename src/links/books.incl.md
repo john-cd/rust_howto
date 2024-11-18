@@ -1,2 +1,2 @@
 | Recipe |
-| [Books][ex-books] |
+| [Books][ex-links-books] |

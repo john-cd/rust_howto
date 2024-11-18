@@ -1,1 +1,1 @@
-[ex-graphics]: graphics_apis.md#graphics
+[ex-rendering_graphics-api-graphics]: graphics_apis.md#graphics

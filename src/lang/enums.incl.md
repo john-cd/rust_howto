@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Enums][ex-enums] |  |  |
+| [Enums][ex-lang-enums] |  |  |

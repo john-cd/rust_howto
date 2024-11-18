@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`wasmer`][ex-wasmer] |  |  |
-| [`wasmtime`][ex-wasmtime] |  |  |
+| [`wasmer`][ex-wasm-wasmer] |  |  |
+| [`wasmtime`][ex-wasm-wasmtime] |  |  |
 
 <div class="hidden">
 TODO

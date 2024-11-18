@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [iced][ex-iced] |  | [![cat-gui][cat-gui-badge]][cat-gui] |
-| [floem][ex-floem] |  | [![cat-gui][cat-gui-badge]][cat-gui] |
+| [iced][ex-gui-iced] |  | [![cat-gui][cat-gui-badge]][cat-gui] |
+| [floem][ex-gui-floem] |  | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
 TODO

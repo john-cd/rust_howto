@@ -1,4 +1,4 @@
-# Main function {#main}
+# Main function {#main-function}
 
 {{#include main.incl.md}}{{hi:main}}
 

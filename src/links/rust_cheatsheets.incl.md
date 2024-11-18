@@ -1,4 +1,4 @@
 | Section |
 |--------|
-| [Rust Cheatsheets][ex-cheatsheets] |
-| [Comparison to other languages][ex-comparison-to-other-languages] |
+| [Rust Cheatsheets][ex-links-cheatsheets] |
+| [Comparison to other languages][ex-links-comparison-to-other-languages] |

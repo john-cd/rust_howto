@@ -1,2 +1,2 @@
-[ex-docker-compose]: containers.md#docker-compose
-[ex-docker]: containers.md#docker
+[ex-containers-docker-compose]: containers.md#docker-compose
+[ex-containers-docker]: containers.md#docker
