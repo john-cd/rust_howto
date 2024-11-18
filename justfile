@@ -222,7 +222,7 @@ utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
 # TODO clarify
 
-# Run the templating tool e.g to create badges and reference definitions
+# Run the templating tool e.g to create badges and reference definitions for a given crate or category
 templ cmd=help *subcmd=empty:
   cargo run -p templ -- {{cmd}} {{subcmd}}
 
@@ -252,7 +252,7 @@ sortrefs: _removelastslash
 
 [windows]
 sortrefs:
-  echo "Sortrefs is not implemented for Windows!"
+  echo "`sortrefs` is not implemented while working in Windows!"
 
 # Remove the last / from URLs in the reference definition files
 [unix]
@@ -276,7 +276,7 @@ check_refdefs:
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 # [a-zA-Z0-9\._:-]
 
-# Add links to recipes to `<subchapter>.incl.md` files, using the reference definitions in `refs.incl.md`
+# (BEWARE: can be destructive) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
 [confirm]
 fix_recipe_tables:
   #! /bin/bash
@@ -289,13 +289,13 @@ fix_recipe_tables:
       labels=$(sed -En 's/^\[ex-(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
       # if not empty
       if [ -n "$labels" ]; then
-        # if the dest file does not exist or label is not in it
-          #echo "${file} >>"
-          # add link in the corresponding .incl.md (manual editing of the table is still necessary)
+          echo "> ${file}"
           for label in ${labels}
           do
+            # if the dest file does not exist or label is not in it
             if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex-${label}\]" "${file%.md}.incl.md") -eq 0 ]
             then
+              # add link in the corresponding .incl.md (manual editing of the table is still necessary)
               echo "[${label}][ex-${label}]" >> "${file%.md}.incl.md"
             fi
           done
@@ -317,7 +317,7 @@ list_missing_anchors:
     fi
   done
 
-# Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
+# (BEWARE: can be destructive) Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
 [confirm]
 generate_refdefs_from_anchors:
   #! /bin/bash
@@ -368,7 +368,7 @@ check_crates:
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
-# List examples in `deps/tests` that are not in the markdown.
+# List examples (.rs files) in `deps/tests` that are not included in the book markdown.
 list_examples_not_used_in_book:
   #! /bin/bash
   grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' ./src ./drafts | sed -E 's~\{\{#include .+/([._a-zA-Z0-9]+?\.rs)(:.+?)?\}\}~\1~' | sort -u > examples_in_markdown.txt
@@ -376,16 +376,16 @@ list_examples_not_used_in_book:
   comm -13 examples_in_markdown.txt examples.txt
 # The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
 # then compare to the list of test files in deps
-# A few files e.g. main.rs and mod.rs are not true examples and should not be included into the book.
+# A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
-# Make sure that {{#include refs.incl.md}} (local references) is present in every file
+# Make sure that the local references i.e. {{#include refs.incl.md}} are included in every file
 list_missing_local_ref_includes:
   grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ./src
 # Only a few files (indices, TOC...) don't need local references
 
-# Make sure that one {{#include <subchapter>.incl.md}} is present in each subchapter
+# Make sure that a local TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
 list_missing_subchapter_includes:
   #! /bin/bash
   for file in $(find ./src -type f -name "*.md" -not -name "*index.md" -not -name '*.incl.md' -not -name "*refs.md" )
@@ -397,7 +397,7 @@ list_missing_subchapter_includes:
     fi
   done
 
-## ---- TOC MANAGEMENT -----------------------------------
+## ---- MAIN TOC MANAGEMENT -----------------------------------
 
 # List (sub)chapters that somehow were not added in SUMMARY.md
 list_missing_chapters_in_toc:
@@ -415,17 +415,18 @@ list_missing_chapters_in_toc:
 ## ---- INDICES MANAGEMENT -----------------------------------
 
 # Quick and dirty generation of lang/index.md; manual edit required
-generate_lang_index:
+list_lang_index:
   #! /bin/bash
   clear
   for file in $(find ./src/lang -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
   do
     base=$(basename $file)
-    title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g')
-    echo "| [$title][ex-${base%.md}] |"
+    title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
+    echo "| [$title][ex-lang-${base%.md}] |"
   done
 
-generate_index_examples:
+# Quick and dirty generation of examples_index.md
+list_index_of_examples:
   #! /bin/bash
   clear
   for file in $(find ./src -type f -name '*.incl.md' -not -name "refs.incl.md")
@@ -441,7 +442,8 @@ generate_index_examples:
     fi
   done
 
-gen:
+# Create references for the index of examples `examples_index.md` - add them to `src/refs.incl.md`
+list_refdefs_for_index_examples:
   #! /bin/bash
   clear
   for file in $(find ./src -type f -name "refs.incl.md")
@@ -450,19 +452,17 @@ gen:
     sed -nE 's~(^\[ex-.+?\]:)\s?([^#]+?)(#.+)?$~\1 '${rel}'\2\3~p' $file | sort -u -
   done
 
-
-[confirm]
-sub:
-  #! /bin/bash
-  clear
-  for file in $(find ./src -type f -name "*.md")
-  do
-    last=$(dirname $file | xargs basename)
-    echo $last
-    echo ">>> ${file}"
-    sed -Ei 's~(\[ex-)(.+?\])~\1'${last}'-\2~' $file
-  done
-
+# [confirm]
+# sub:
+#   #! /bin/bash
+#   clear
+#   for file in $(find ./src -type f -name "*.md")
+#   do
+#     last=$(dirname $file | xargs basename)
+#     echo $last
+#     echo ">>> ${file}"
+#     sed -Ei 's~(\[ex-)(.+?\])~\1'${last}'-\2~' $file
+#   done
 
 ## ---- PRE-PUSH -----------------------------------
 
