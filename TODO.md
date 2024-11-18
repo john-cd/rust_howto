@@ -1,29 +1,22 @@
 # TODO
 
-- finish using `just list_missing_subchapter_includes`
-- finish scripting `list_missing_chapters_in_toc` justfile
-- clean up justfile
-- fix SUMMARY.md
-- fix any issues during "just bb"
+- [ ] review each .md file in turn - WIP
+- [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
+- [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
+
+## Tools
 
 - [ ] finish autogen and tool_lib/src/tera --> generate index of examples - WIP
-- [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
-- [ ] rewrite rest_post.rs so that a username and password are not required?
-- [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?
 
 ## Links
 
-- [ ] review unused reference definitions (without corresponding links in the markdown); add links / badges where it is needed - WIP
-
 ## Markdown
-
-- [ ] incorporate loose subchapters; add to their index.incl.md
-- [ ] review each .md file in turn - WIP
-- [ ] hide sections that won't be worked on for a while
 
 ## Examples
 
+- [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
+- [ ] rewrite rest_post.rs so that a username and password are not required?
 - [ ] finish to review ignore / no_run examples - add noplayground if playground does not have the dependency
 - [ ] Make addt'l examples out of mdbook-utils, crate_indices, templ, clean, autogen...
 - [ ] integrate clap builder example
