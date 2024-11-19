@@ -44,7 +44,7 @@ checkall:
 
 # Build the code used by the book (`deps` crate only`)
 build:
-  cargo build --package deps --tests --locked
+  cargo build --package dependencies --tests --locked
 
 # Build all code
 buildall:
