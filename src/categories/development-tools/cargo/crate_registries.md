@@ -18,5 +18,4 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 <div class="hidden">
 TODO: expand
 
-
 </div>
