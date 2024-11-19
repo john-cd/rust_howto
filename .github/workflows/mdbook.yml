@@ -72,7 +72,7 @@ jobs:
   ## Deployment job
   deploy:
     name: Deploy to GitHub Pages
-    if: ${{ inputs.deploy_to_gh_pages == 'true' }}
+    if: ${{ inputs.deploy_to_gh_pages }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
