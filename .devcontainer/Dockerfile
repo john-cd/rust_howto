@@ -4,7 +4,9 @@
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
 
-ARG RUST_IMAGE_LABEL
+# Default value, overriden by the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
+ARG RUST_IMAGE_LABEL=1.82.0-bookworm
+
 FROM rust:${RUST_IMAGE_LABEL} AS base
 ## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
@@ -74,7 +76,8 @@ RUN rustup update
 ## Install stable rustfmt (for rust-analyzer in VS code)
 RUN rustup component add clippy rustfmt
 
-ARG MDBOOK_VERSION
+# Default value, overriden by the corresponding env. variable in `.devcontainer/.env` file
+ARG MDBOOK_VERSION=0.4.35
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -156,17 +159,18 @@ WORKDIR /code
 ## Stage for development
 FROM base AS development
 
-## Additional packages for developement only
+## Additional packages for development only
 
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#    && apt-get install -y pipx\
-## If needed:
-## Fast fuzzy search:
-# fzf \
+#    && apt-get install -y ...\
+## For example:
+# fzf \ # fast fuzzy search
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
+# pipx \
 
+## Install `pre-commit` (requires python / pipx)
 ## NOTE: `pre-commit` has been replaced by `cargo husky`
 # RUN pipx install pre-commit \
 #     && pipx ensurepath
@@ -178,17 +182,19 @@ FROM base AS development
 # RUN cargo install --locked cargo-pants || true
 
 ## Install optional tools
-# RUN cargo binstall --no-confirm ripgrep \
+RUN cargo binstall --no-confirm ripgrep
+## Convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
+## Background code checker `bacon`
 #   && cargo install --locked bacon
 
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
     && echo "$SNIPPET" >> "/root/.bashrc"
 
-## Git config
-ARG EMAIL
-ARG GIT_AUTHOR_NAME
+## Git config default values, overriden by the corresponding env. variables in `.devcontainer/.env` file
+ARG EMAIL=nobody@users.noreply.github.com
+ARG GIT_AUTHOR_NAME=nemo
 
 RUN git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
 
