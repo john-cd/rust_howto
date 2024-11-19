@@ -473,3 +473,11 @@ generate_refdefs_for_index_examples:
 
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
 prep: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
+
+# Build the CI Docker image, then push it to DockerHub. The GitHub Action CI workflow will use the Dockerhub image as a cache.
+push_ci:
+  docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build
+  docker push johncd/rust_howto_ci:latest
+
+push_dev:
+  docker push johncd/rust_howto_dev:latest

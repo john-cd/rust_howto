@@ -2,10 +2,10 @@
 ##
 ## Override / merges with settings in compose.yaml
 ## Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
-name: rust_howto_devcontainer
+name: rust_howto_devcontainer # sets COMPOSE_PROJECT_NAME
 services:
   book:
-    image: rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
+    image: johncd/rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
     build:
       target: development
       args:
