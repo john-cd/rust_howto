@@ -92,6 +92,8 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 // Requires network access
+// TODO flaky test
+#[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
