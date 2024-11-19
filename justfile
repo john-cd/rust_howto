@@ -303,6 +303,15 @@ fix_recipe_tables:
     fi
   done
 
+# Search the references using a crate name or label fragment and return reference-style links (and URL)
+lnk pattern:
+  rg -IN -r'[`$2`][$1$2$3]⮳     $4' '\[(c-)?([^]]*{{pattern}}[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
+
+# Search the references using a crate name or label fragment and return refdefs / URLs
+url pattern:
+  rg -IN '\[(c-)?[^]]*{{pattern}}[^]]*\].*' ./src/refs
+
+
 ## ---- ANCHOR MANAGEMENT -----------------------------------
 
 # List headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
