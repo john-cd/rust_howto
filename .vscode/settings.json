@@ -1,6 +1,4 @@
 {
     "markdown.validate.ignoredLinks": [
-        "screen_readers.md#accesskit",
-        "python_interop.md#pyo3"
     ]
 }
