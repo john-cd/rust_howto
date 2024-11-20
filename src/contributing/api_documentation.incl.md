@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Generate the `docs.rs` Documentation][ex-contributing-generate-the-documentation] |
 | [Using a Dev Container feature][ex-contributing-dev-container-feature] |

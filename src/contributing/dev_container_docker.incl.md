@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Docker Compose][ex-contributing-docker-compose] |
 | [Deployment to GitHub Pages][ex-contributing-deployment-to-github-pages] |

@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Variables & constants][ex-lang-variables-and-constants] |
 | [Shadowing][ex-lang-shadowing] |

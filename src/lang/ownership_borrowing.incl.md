@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Ownership][ex-lang-ownership] |
 | [Borrowing][ex-lang-borrowing] |

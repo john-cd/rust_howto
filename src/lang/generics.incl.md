@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Generics][ex-lang-generics] |
 | [Generic Structs][ex-lang-generic-structs] |

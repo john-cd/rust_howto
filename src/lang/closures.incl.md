@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Closures][ex-lang-closures] |
 | [Closure with type annotations][ex-lang-closure-with-type-annotations] |

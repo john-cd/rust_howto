@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [`match`][ex-lang-match] |
 | [`if let`][ex-lang-if-let] |

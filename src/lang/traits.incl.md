@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Traits][ex-lang-traits] |
 | [Default implementation][ex-lang-default-implementation] |

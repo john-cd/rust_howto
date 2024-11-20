@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Functions][ex-lang-functions] |
 | [Generic functions][ex-lang-generic-functions] |

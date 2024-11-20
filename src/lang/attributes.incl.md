@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Attributes][ex-lang-attributes] |
 | [Lint attributes][ex-lang-lint-attributes] |

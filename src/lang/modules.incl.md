@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Modules][ex-lang-modules] |
 | [`use` keyword][ex-lang-use-keyword] |

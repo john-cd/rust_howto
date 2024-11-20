@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Control flow][ex-lang-control-flow] |
 | [If else][ex-lang-if-else] |
