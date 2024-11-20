@@ -1,17 +1,25 @@
 # Example code {#example-code}
 
-{{#include example_code.incl.md}}
+{{#include example_code.incl.md}}{{hi:Example code}}
 
-- [Zero To Production In Rust (book)][book-zero-to-production]⮳
-- [Zero To Production In Rust (code)][book-zero-to-production-github]⮳
-- Source Code for 'Practical Rust Web Projects' by Shing Lyu [practical-rust-web-projects][practical-rust-web-projects-github]⮳
-- [![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]{{hi:Example code}}
-- A fullstack RealWorld implementation using rust, axum, sqlx, and yew: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳
+Example codebases include:
+
 - A full template for a REST API written in Rust, engineered for maximum testability: [rust-rest][rust_rest-github]⮳
+
+## RealWorld
+
+[![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]
+
+- A fullstack RealWorld implementation using Rust, Axum, sqlx, and Yew: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳
+
+## Source code for Rust books
+
+- [code][book-zero-to-production-github]⮳ for [Zero To Production In Rust (book)][book-zero-to-production]⮳.
+- Source Code for ['Practical Rust Web Projects'][practical-rust-web-projects-github]⮳ by Shing Lyu.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize
+TODO: add more
 </div>

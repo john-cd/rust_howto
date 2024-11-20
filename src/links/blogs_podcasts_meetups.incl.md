@@ -1,4 +1,4 @@
-| Section |
+||
 |--------|
 | [Meetups][ex-links-meetups] |
 | [Newsletters][ex-links-newsletters] |

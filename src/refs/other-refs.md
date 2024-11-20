@@ -1,7 +1,7 @@
-
 [a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [abstract-factory-in-rust-website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [actions-mdbook-github]: https://github.com/peaceiris/actions-mdbook
+[adacore-blog]: https://blog.adacore.com
 [adidoks-website]: https://adidoks.netlify.app
 [apk-website-badge]: https://img.shields.io/badge/apk-coral
 [apk-website]: https://docs.alpinelinux.org/user-handbook/0.1a/Working/apk.html
@@ -14,6 +14,7 @@
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
 [are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website?]: https://www.arewewebyet.org
+[arm-website]: https://www.arm.com
 [asynchronics-github]: https://github.com/asynchronics
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
 [awesome-rust-github]: https://github.com/rust-unofficial/awesome-rust
@@ -22,6 +23,7 @@
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
+[bencher-github]: https://github.com/bencherdev/bencher
 [best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates
@@ -221,6 +223,7 @@
 [cheats-rs-website-badge]: https://img.shields.io/badge/cheats.rs-coral
 [cheats-rs-website]: https://cheats.rs
 [client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
+[cloudflare-blog]: https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet
 [code-maven]: https://rust.code-maven.com
 [codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
 [codevoweb-website]: https://codevoweb.com
@@ -262,10 +265,12 @@
 [docs-rs]: https://docs.rs
 [docs-shuttle-rs]: https://docs.shuttle.rs/introduction/welcome
 [embedded-devices-working-group]: https://www.rust-lang.org/governance/wgs/embedded
+[firecracker-microvm-website]: https://firecracker-microvm.github.io
 [forum-deploying-mdbook-on-github-using-github-action]: https://users.rust-lang.org/t/experience-about-deploying-mdbook-on-github-using-github-action/81408
 [gist-api]: https://developer.github.com/v3/gists
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
 [github-api]: https://developer.github.com/v3/auth
+[github-website]: https://github.com
 [goodfirstissue-website]: https://goodfirstissue.dev/language/rust
 [gpui.rs]: https://www.gpui.rs
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
@@ -376,12 +381,16 @@
 [rust-analyzer-website-badge]: https://img.shields.io/badge/rust_analyzer-coral
 [rust-analyzer-website]: https://rust-analyzer.github.io
 [rust-badge]:https://img.shields.io/badge/Rust-tan
+[rust-blog]: https://blog.rust-lang.org
 [rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice-github]: https://github.com/sunface/rust-by-practice
+[rust-companies-github]: https://github.com/omarabid/rust-companies
 [rust-course-github]: https://github.com/sunface/rust-course
 [rust-digger-website]: https://rust-digger.code-maven.com
+[rust-for-linux-github]: https://github.com/Rust-for-Linux
 [rust-for-professionals-website]: https://overexact.com/rust-for-professionals
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
+[rust-foundation-website]: https://foundation.rust-lang.org
 [rust-foundation]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github

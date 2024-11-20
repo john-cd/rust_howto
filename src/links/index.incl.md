@@ -1,4 +1,4 @@
-| Section |
+||
 |---|
 | [Learning Rust][ex-links-learning] |
 | [Rust Cheatsheets][ex-links-cheatsheets] |

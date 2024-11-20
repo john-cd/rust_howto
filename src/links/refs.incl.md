@@ -4,6 +4,7 @@
 [ex-links-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
 [ex-links-example-code]: example_code.md#example-code
 [ex-links-learning]: learning.md#learning
+[ex-links-key-websites]: links.md#key-websites
 [ex-links-links]: links.md#links
 [ex-links-meetups]: blogs_podcasts_meetups.md#meetups
 [ex-links-newsletters]: blogs_podcasts_meetups.md#newsletters

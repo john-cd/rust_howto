@@ -240,14 +240,18 @@ autogen:
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 [unix]
 sortrefs: _removelastslash
+  #! /bin/bash
   sort -u ./src/refs/crate-refs.md -o /tmp/c.md
   mv -f /tmp/c.md ./src/refs/crate-refs.md
   rm -f /temp/c.md
   sort -u ./src/refs/other-refs.md -o /tmp/o.md
   mv -f /tmp/o.md ./src/refs/other-refs.md
   rm -f /temp/o.md
+  sort -u ./src/refs/company-refs.md -o /tmp/co.md
+  mv -f /tmp/co.md ./src/refs/company-refs.md
+  rm -f /temp/co.md
   sort -u ./src/refs/link-refs.md -o /tmp/l.md
-  mv -f /tmp/l.md ./src/refs/link-refs.mdf
+  mv -f /tmp/l.md ./src/refs/link-refs.md
   rm -f /temp/l.md
 
 [windows]
@@ -257,6 +261,7 @@ sortrefs:
 # Remove the last / from URLs in the reference definition files
 [unix]
 _removelastslash:
+   #! /bin/bash
    sed -i 's/[/]$//g' ./src/refs/crate-refs.md
    sed -i 's/[/]$//g' ./src/refs/other-refs.md
    sed -i 's/[/]$//g' ./src/refs/link-refs.md
