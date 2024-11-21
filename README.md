@@ -3,7 +3,7 @@
 **A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
 
-Point your browser to [https://john-cd.com/rust_howto][rust-howto]⮳ to read the [Rust How-to][rust-howto]⮳ book.
+Point your browser to [`https://john-cd.com/rust_howto`][rust-howto]⮳ to read the [Rust How-to][rust-howto]⮳ book.
 
 ## Work In Progress
 
