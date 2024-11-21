@@ -75,5 +75,5 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 
 <div class="hidden">
 TODO
-https://insta.rs/
+[`insta`][insta-website]
 </div>

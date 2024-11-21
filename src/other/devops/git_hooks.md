@@ -71,9 +71,6 @@ pre-commit run --all-files
 
 [A pre-commit hook for commitlint][commitlint-pre-commit-hook-github]
 
-[rust-ci-tooling]: https://rodneylab.com/rust-ci-tooling/
-[pre-commit-rust-github]: https://github.com/doublify/pre-commit-rust
-[commitlint-pre-commit-hook-github]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
