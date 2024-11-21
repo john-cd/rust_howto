@@ -83,8 +83,8 @@
 [espressif-website]: https://www.espressif.com
 [evo-website]: https://evo.company
 [exonum-website]: https://exonum.com
-[faraday-website]: http://www.faraday.ai
 [faraday-github]: https://github.com/faradayio
+[faraday-website]: http://www.faraday.ai
 [fedi-website]: https://fedi.xyz
 [fermyon-website]: https://www.fermyon.com
 [ferrocene-website]: https://ferrocene.dev
@@ -109,15 +109,12 @@
 [hightec-rt-website]: https://hightec-rt.com
 [hove-github]: https://github.com/hove-io
 [hove-website]: https://hove.com
-[tracel-ai-github]: https://github.com/Tracel-AI
 [huawei-website]: https://www.huawei.com/en
 [hugging face-website]: https://huggingface.co
 [huggingface-github]: https://github.com/huggingface
 [huggingface-website]: http://www.huggingface.co
 [hyperswitch-website]: https://hyperswitch.io
 [iambot-website]: http://iambot.ai
-[lechevspace-website]: https://lechev.space
-[lechevspace-github]: https://github.com/LechevSpace
 [immunant-github]: https://github.com/immunant
 [immunant-website]: https://immunant.com
 [infinyon-website]: https://infinyon.com
@@ -133,6 +130,8 @@
 [krypt-website]: https://krypt.co
 [kryptco-github]: https://github.com/kryptco
 [lechev-website]: https://lechev.space
+[lechevspace-github]: https://github.com/LechevSpace
+[lechevspace-website]: https://lechev.space
 [libra-website]: https://libra.org
 [linebender-website]: https://linebender.org
 [linkerd-website]: https://linkerd.io
@@ -179,12 +178,14 @@
 [promotic-edu-website]: https://promotic-edu.org
 [pucpr-website]: https://www.pucpr.br
 [qdrant-github]: https://github.com/qdrant
+[qdrant-website]: https://qdrant.tech
 [qumulo-website]: https://qumulo.com
 [readyset-website]: https://readyset.io
 [red-badger-website]: https://red-badger.com
 [red-iron-website]: https://red-iron.eu
 [redhat-website]: https://www.redhat.com
 [rediron-github]: https://github.com/orgs/OCamlPro
+[rediron-website]: https://red-iron.eu
 [redjack-website]: https://www.redjack.com
 [redsift-github]: https://github.com/redsift
 [redsift-website]: https://redsift.com
@@ -236,6 +237,8 @@
 [tikv-github]: https://github.com/tikv
 [tikv-website]: https://tikv.org
 [tock-github]: https://github.com/tock/tock
+[tracel-ai-github]: https://github.com/Tracel-AI
+[tracel-ai-website]: https://tracel.ai
 [tracemachina-website]: https://tracemachina.com
 [treescale-website]: https://www.treescale.com
 [tremor-github]: https://github.com/tremor-rs/tremor-runtime
@@ -263,6 +266,3 @@
 [zama-website]: https://www.zama.ai
 [zeplin-website]: https://zeplin.io
 [zs-website]: https://www.zs.com
-[tracel-ai-website]: https://tracel.ai
-[qdrant-website]: https://qdrant.tech
-[rediron-website]: https://red-iron.eu
