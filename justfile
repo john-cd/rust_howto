@@ -264,6 +264,7 @@ _removelastslash:
    #! /bin/bash
    sed -i 's/[/]$//g' ./src/refs/crate-refs.md
    sed -i 's/[/]$//g' ./src/refs/other-refs.md
+   sed -i 's/[/]$//g' ./src/refs/company-refs.md
    sed -i 's/[/]$//g' ./src/refs/link-refs.md
 
 # List links without corresponding reference definitions and vice versa
@@ -308,14 +309,12 @@ fix_recipe_tables:
     fi
   done
 
-# Search the references using a crate name or label fragment and return reference-style links (and URL)
+# Search the references using a crate name or label fragment and return the  refdefs / URLs and reference-style links
 lnk pattern:
-  rg -IN -r'[`$2`][$1$2$3]⮳     $4' '\[(c-)?([^]]*{{pattern}}[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
-
-# Search the references using a crate name or label fragment and return refdefs / URLs
-url pattern:
+  #! /bin/bash
   rg -IN '\[(c-)?[^]]*{{pattern}}[^]]*\].*' ./src/refs
-
+  rg -IN -r'[`$2`][$1$2$3]⮳' '\[(c-)?([^]]*{{pattern}}[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
+#  -N = --no-line-number; -I = --no-filename
 
 ## ---- ANCHOR MANAGEMENT -----------------------------------
 
@@ -363,6 +362,15 @@ check_urls:
 # Identify duplicated URLs (noting that they can't always be avoided).
 list_duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
+# -r or -E = use extended regular expressions
+
+# Create a reference defintion for bare URLs in the markdown (manual review necessary)
+convert_bare_urls:
+  #! /bin/bash
+  rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \
+    -g '*.md' -g '!*refs.md' -g 'refs.incl.md' -r '[$2-website]: $1$2$3' | sort | sed 's~/$~~'
+  rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \
+    -g '*.md' -g '!*refs.md' -g 'refs.incl.md' -r '[`$2`][$2-website]' | sort | sed 's~/$~~'
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 

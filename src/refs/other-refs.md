@@ -227,6 +227,7 @@
 [code-maven]: https://rust.code-maven.com
 [codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
 [codevoweb-website]: https://codevoweb.com
+[commitlint-pre-commit-hook-github]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
 [communicating-between-sync-and-async-code-website]: https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html#communicating-between-sync-and-async-code
 [comprehensive-rust]: https://google.github.io/comprehensive-rust
 [conc-map-bench]: https://github.com/xacrimon/conc-map-bench
@@ -285,6 +286,7 @@
 [hyperswitch-github-badge]: https://img.shields.io/badge/hyperswitch-steelblue?logo=github
 [hyperswitch-github]: https://github.com/juspay/hyperswitch/tree/main
 [install_action-github]: https://github.com/taiki-e/install-action
+[jj-github]: https://github.com/martinvonz/jj
 [john-cd-github]: https://github.com/john-cd
 [journald]: https://www.freedesktop.org/software/systemd/man/systemd-journald.service.html
 [julia-set]: https://en.wikipedia.org/wiki/Julia_set
@@ -319,6 +321,7 @@
 [openobserve-github-badge]: https://img.shields.io/badge/openobserve-steelblue?logo=github
 [openobserve-github]: https://github.com/openobserve/openobserve
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust
+[openvas-github]: https://github.com/greenbone/openvas-scanner
 [pake-github-badge]: https://img.shields.io/badge/pake-steelblue?logo=github
 [pake-github]: https://github.com/tw93/Pake
 [pantsbuild-website]: https://www.pantsbuild.org
@@ -329,6 +332,7 @@
 [postsack-github]: https://github.com/terhechte/postsack
 [practical-rust-web-projects-github]: https://github.com/Apress/practical-rust-web-projects/tree/main
 [practice.course.rs]: https://practice.course.rs/why-exercise.html
+[pre-commit-rust-github]: https://github.com/doublify/pre-commit-rust
 [pre-commit.com-hooks-website]: https://pre-commit.com/hooks.html
 [pre-commit.com-website]: https://pre-commit.com/index.html
 [primitive-bool]: https://doc.rust-lang.org/std/primitive.bool.html
@@ -384,6 +388,7 @@
 [rust-blog]: https://blog.rust-lang.org
 [rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice-github]: https://github.com/sunface/rust-by-practice
+[rust-ci-tooling]: https://rodneylab.com/rust-ci-tooling
 [rust-companies-github]: https://github.com/omarabid/rust-companies
 [rust-course-github]: https://github.com/sunface/rust-course
 [rust-digger-website]: https://rust-digger.code-maven.com
@@ -464,6 +469,7 @@
 [twitter-hashtag-regex]: https://github.com/twitter/twitter-text/blob/c9fc09782efe59af4ee82855768cfaf36273e170/java/src/com/twitter/Regex.java#L255
 [unix-syslog-website]: https://www.gnu.org/software/libc/manual/html_node/Overview-of-Syslog.html
 [upload-a-build-artifact-website]: https://github.com/marketplace/actions/upload-a-build-artifact
+[uv-github]: https://github.com/astral-sh/uv
 [wasmer-website]: https://wasmer.io
 [web-application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 [webgpu-website]: https://gpuweb.github.io/gpuweb
