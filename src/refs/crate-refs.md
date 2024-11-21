@@ -47,7 +47,6 @@
 [c-ansi_term::Style::new]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html#method.new
 [c-ansi_term::Style]: https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html
 [c-ansi_term]: https://docs.rs/ansi_term
-[c-leptos-website]: https://leptos.dev
 [c-ansiterm-badge]: https://img.shields.io/crates/v/ansiterm?label=ansiterm
 [c-ansiterm-crates.io-badge]: https://img.shields.io/badge/crates.io-ansiterm-crimson
 [c-ansiterm-crates.io]: https://crates.io/crates/ansiterm
@@ -1449,6 +1448,7 @@
 [c-leptos-github]: https://github.com/leptos-rs/leptos
 [c-leptos-lib.rs-badge]: https://img.shields.io/badge/lib.rs-leptos-yellow
 [c-leptos-lib.rs]: https://lib.rs/crates/leptos
+[c-leptos-website]: https://leptos.dev
 [c-leptos]: https://docs.rs/leptos
 [c-lettre-badge]: https://img.shields.io/crates/v/lettre?label=lettre
 [c-lettre-crates.io-badge]: https://img.shields.io/badge/crates.io-lettre-crimson
