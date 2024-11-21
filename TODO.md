@@ -43,3 +43,110 @@
 - [ ] review deny.toml
 - Contributing
 - Code of conduct
+
+## Additions to consider
+
+reverse proxy
+[river](https://github.com/memorysafety/river/)
+[pingora](https://github.com/cloudflare/pingora)
+
+builder derives crates
+
+bon - compile-time-checked builders, named function arguments via builders (foo().arg(...).call()), fallible/async builders, method builders (self.foo(...).arg(...).call()). The newest crate built based on lessons learned from typed-builder and derive_builder (33K downloads/month, but gaining popularity, 1095 stars, 3 months old).
+typed-builder - compile-time-checked builders. The oldest crate for compile-time-checked builders that has (987K downloads/month, 916 stars, 7 years old)
+derive_builder - runtime-checked builders, works with &self, &mut self builder patterns. The oldest crate for runtime-checked builders overall (1,58M downloads/month, 1285 stars, 8 years old)
+
+sccache
+
+[fastrand](https://crates.io/crates/fastrand) - 200M downloads (vs 370M for rand)
+No dependency, non-cryptographically secure random numbers, lower complexity than rand
+
+[https://github.com/nicoburns/blessed-rs/issues/127](https://github.com/nicoburns/blessed-rs/issues/127)
+
+[https://github.com/nicoburns/blessed-rs/issues/120](https://github.com/nicoburns/blessed-rs/issues/120)
+
+Alongside arrayvec and tinyvec, heapless has stack-allocated arrays, but also includes:
+
+Arc – like std::sync::Arc but backed by a lock-free memory pool rather than #[global_allocator]
+Box – like std::boxed::Box but backed by a lock-free memory pool rather than #[global_allocator]
+BinaryHeap – priority queue
+IndexMap – hash table
+IndexSet – hash set
+LinearMap
+Object – objects managed by an object pool
+String
+Vec
+mpmc::Q* – multiple producer multiple consumer lock-free queue
+spsc::Queue – single producer single consumer lock-free queue
+
+[https://github.com/nicoburns/blessed-rs/issues/100](https://github.com/nicoburns/blessed-rs/issues/100)
+
+[https://github.com/nicoburns/blessed-rs/issues/97](https://github.com/nicoburns/blessed-rs/issues/97)
+
+[volvo](https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line)
+
+[reddit](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=iN53A04F7PNykANQyE5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853)
+
+[rust/jobs-report/sep-24](https://filtra.io/rust/jobs-report/sep-24)
+
+[comemo](https://github.com/typst/comemo)
+
+[announcing-toasty](https://tokio.rs/blog/2024-10-23-announcing-toasty)
+
+[roxygen](https://github.com/geo-ant/roxygen)
+
+[csborrow](https://em-tg.github.io/csborrow/)
+
+[why-rust-is-becoming-a-contender-in-ai-development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
+
+[parsing-arguments-rust-no-deps](https://ntietz.com/blog/parsing-arguments-rust-no-deps/)
+
+[`gh-workflow`](https://crates.io/crates/gh-workflow)
+
+[Television](https://crates.io/crates/television)
+
+[https://roadmap.sh/rust](https://roadmap.sh/rust)
+
+Hashset
+BinaryHeap
+LinkedList
+Stack
+Queue
+BTreeMap
+BTreeSet
+
+ring
+rust-crypto
+sodiumoxide
+
+json-rust
+
+structopt
+termion
+
+rppal
+nrf-hal
+embdedded-hal
+
+wasm-bindgen
+wasm-pack
+wasmer
+
+rust-gdb
+rust-lldb
+
+criterion.rs
+
+DSLs in Rust
+
+[5-non-llm-software-trends-to-be-excited](https://read.engineerscodex.com/p/5-non-llm-software-trends-to-be-excited)
+
+[fftw](https://www.fftw.org/)
+
+[atomics](https://marabos.nl/atomics/)
+
+[lakesail](https://lakesail.com/)
+
+[thecopenhagenbook](https://thecopenhagenbook.com/)
+
+[rerun](https://github.com/rerun-io/rerun)
