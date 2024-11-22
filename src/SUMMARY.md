@@ -2,16 +2,7 @@
 
 [Introduction](index.md)
 [Index of examples](examples_index.md)
-
-- [Contributing](contributing/index.md)
-  - [Topics of interest](contributing/topics_of_interest.md)
-  - [Repository structure](contributing/repo_structure.md)
-  - [Environment setup](contributing/dev_environment_setup.md)
-  - [Editing](contributing/development_editing.md)
-  - [Dev Containers and Docker](contributing/dev_container_docker.md)
-  - [Optional preprocessors](contributing/optional_preprocessors.md)
-  - [API documentation](contributing/api_documentation.md)
-  - [Crate publication](contributing/publication.md)
+[Index](word_index.md)
 
 ---
 
@@ -457,7 +448,15 @@
   - [Companies](links/companies.md)
   - [Learning](links/learning.md)
 
-[Index](word_index.md)
+- [Contributing](contributing/index.md)
+  - [Topics of interest](contributing/topics_of_interest.md)
+  - [Repository structure](contributing/repo_structure.md)
+  - [Environment setup](contributing/dev_environment_setup.md)
+  - [Editing](contributing/development_editing.md)
+  - [Dev Containers and Docker](contributing/dev_container_docker.md)
+  - [Optional preprocessors](contributing/optional_preprocessors.md)
+  - [API documentation](contributing/api_documentation.md)
+  - [Crate publication](contributing/publication.md)
 
 [Thanks](thanks.md)
 

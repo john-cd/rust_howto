@@ -656,6 +656,7 @@
 [p-cli]: categories/command-line-interface/index.md
 [p-concurrency]: categories/concurrency/index.md
 [p-config]: categories/config/index.md
+[p-contributing]: contributing/index.md
 [p-debugging]: categories/development-tools_debugging/index.md
 [p-development-tools]: categories/development-tools/index.md
 [p-error-customization]: categories/rust-patterns/error_customization.md
@@ -665,3 +666,5 @@
 [p-links]: links/index.md
 [p-standard-library]: standard_library/index.md
 [p-web-programming]: categories/web-programming/index.md
+[p-word-index]: word_index.md
+[rust-howto-xmpl-github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
