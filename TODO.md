@@ -46,9 +46,55 @@
 
 ## Additions to consider
 
-reverse proxy
-[river](https://github.com/memorysafety/river/)
-[pingora](https://github.com/cloudflare/pingora)
+Binary encoders
+
+- bincode
+- prost
+- protobuf
+- rmp-serde
+- ciborium
+
+XML
+
+- xml-rs
+- quick-xml
+- xmlparser
+- xml5ever
+
+JSON
+
+- serde_json
+- json5
+- simd-json
+
+TOML
+
+- toml
+- toml_edit
+- basic_toml
+
+Parser generators
+
+- nom
+- pest
+- combine
+- peg
+
+Markdown parsers
+
+- pulldown-cmark
+- markdown
+- comrak
+
+Tempfiles
+
+- tempfile
+- tempdir
+
+Reverse proxy
+
+- [river](https://github.com/memorysafety/river/)
+- [pingora](https://github.com/cloudflare/pingora)
 
 builder derives crates
 
