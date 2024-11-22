@@ -1,7 +1,6 @@
 # Rust How-to
 
 [Introduction](index.md)
-[About](_about.md)
 [Index of examples](examples_index.md)
 
 - [Contributing](contributing/index.md)
