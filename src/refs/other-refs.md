@@ -24,6 +24,7 @@
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [bencher-github]: https://github.com/bencherdev/bencher
+[rust-cookbook-contributors]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
 [best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates
@@ -396,7 +397,6 @@
 [rust-for-professionals-website]: https://overexact.com/rust-for-professionals
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation-website]: https://foundation.rust-lang.org
-[rust-foundation]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
