@@ -18,7 +18,7 @@
 
 ## Meetups {#meetups}
 
-### Rust Meetup Linz
+Rust Meetup Linz
 
 - [`rust-linz.at`][rust-linz.at]
 - [`linz.coderdojo.net`][linz.coderdojo.net]

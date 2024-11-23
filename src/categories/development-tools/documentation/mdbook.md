@@ -47,7 +47,7 @@ TODO: organize, expand
 - [ ] [alternative][c-mdbook_pagetoc-github]{{hi:mdbook-pagetoc}}
 - [ ] [mdbook-toc][c-mdbook_toc-github]{{hi:mdbook-toc}}
 
-## `yapp`
+## `yapp` {#yapp}
 
 [![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp][![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io][![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github][![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Preprocessor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

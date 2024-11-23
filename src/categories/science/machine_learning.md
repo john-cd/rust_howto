@@ -16,13 +16,13 @@
 
 ## Others {#others}
 
-### Smartcore
+### Smartcore {#smartcore}
 
 [![smartcore-website][c-smartcore-website-badge]][c-smartcore-website][![smartcore][c-smartcore-badge]][c-smartcore][![smartcore-crates.io][c-smartcore-crates.io-badge]][c-smartcore-crates.io][![smartcore-github][c-smartcore-github-badge]][c-smartcore-github][![smartcore-lib.rs][c-smartcore-lib.rs-badge]][c-smartcore-lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 [SmartCore][c-smartcore-website]{{hi:smartcore}}⮳ Machine Learning in Rust.
 
-### Watchmaker
+### Watchmaker {#watchmaker}
 
 [Watchmaker (genetic algos in Rust)][c-watchmaker]{{hi:watchmaker}}⮳  [![watchmaker][c-watchmaker-badge]][c-watchmaker]{{hi:watchmaker}}  [![watchmaker-github][c-watchmaker-github-badge]][c-watchmaker-github]  [![watchmaker-crates.io][c-watchmaker-crates.io-badge]][c-watchmaker-crates.io]  [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 

@@ -33,8 +33,6 @@ cargo test
 
 [`pre-commit` hooks][pre-commit.com-hooks-website]
 
-### Installation
-
 `pre-commit` is written in Python. Include the following into your `Dockerfile` or run the commands by hand to install `pre-commit`:
 
 ```sh

@@ -33,7 +33,7 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 {{#include ../../../deps/tests/cats/mathematics/big_integers.rs:example}}
 ```
 
-### `num-bigint`
+### `num-bigint` {#num-bigint}
 
 [![num-bigint][c-num_bigint-badge]][c-num_bigint]{{hi:num-bigint}}
 [![num-bigint-crates.io][c-num_bigint-crates.io-badge]][c-num_bigint-crates.io]
@@ -45,7 +45,7 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 
 It's not the fastest, but it's part of the trusted num library.
 
-### `rug`
+### `rug` {#rug}
 
 [![rug][c-rug-badge]][c-rug]{{hi:rug}}
 [![rug-crates.io][c-rug-crates.io-badge]][c-rug-crates.io]
