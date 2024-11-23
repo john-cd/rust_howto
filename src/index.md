@@ -94,19 +94,15 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 {{#include ../deps/tests/about/about1.rs:example}}
 ```
 
-In most examples, we have chosen to use `anyhow`'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom `Result` / `Error` types.
-
-```rust,editable,no_playground
-use anyhow::Result;
-```
-
-Within the code, we use the `?` operator to easily propagate any error that implements the `std::error::Error` trait.
-
-For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling]⮳ and [this blog post][blog-error]⮳.
-
 ```rust,editable
 {{#include ../deps/tests/about/about2.rs:example}}
 ```
+
+In most examples, we have chosen to use `anyhow`'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom `Result` / `Error` types.
+
+Within the code, we use the `?` operator to easily propagate any error that implements the `std::error::Error` trait.
+
+For more background on error handling in Rust, read [this page][book-rust-error-handling]⮳ of the Rust book.
 
 ## Additional examples
 
@@ -116,7 +112,11 @@ The [`xmpl`][rust-howto-xmpl-github] folder in the book's GitHub repo contains a
 
 This book is intended to provide expansive coverage of "key" or "foundational" crates - those crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-Key crates are identified by cross-referencing (i) [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources, (ii) most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and (iii) high-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
+Key crates are identified by cross-referencing:
+
+- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources,
+- most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳,
+- high-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
 

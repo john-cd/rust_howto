@@ -74,8 +74,6 @@
 [blog-candle]: https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
 [blog-cargo-machete-badge]: https://img.shields.io/badge/blog-cargo_machete-beige
 [blog-cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete
-[blog-error-badge]: https://img.shields.io/badge/blog-error-beige
-[blog-error]: https://brson.github.io/2016/11/30/starting-with-error-chain
 [blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
 [blog-optimizing-ci-cd-pipelines-badge]: https://img.shields.io/badge/blog-optimizing_ci_cd_pipelines-beige
 [blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
