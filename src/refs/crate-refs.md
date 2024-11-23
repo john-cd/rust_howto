@@ -63,7 +63,7 @@
 [c-anstream-lib.rs-badge]: https://img.shields.io/badge/lib.rs-anstream-yellow
 [c-anstream-lib.rs]: https://lib.rs/crates/anstream
 [c-anstream-website-badge]: https://img.shields.io/badge/anstream-coral
-[c-anstream-website]: https://github.com/rust-cli/anstyle/blob/main/README.md
+[c-anstream-website]: https://github.com/rust-cli/anstyle/blob/main/crates/anstream/README.md
 [c-anstream]: https://docs.rs/anstream
 [c-anstyle-badge]: https://img.shields.io/crates/v/anstyle?label=anstyle
 [c-anstyle-crates.io-badge]: https://img.shields.io/badge/crates.io-anstyle-crimson
@@ -481,7 +481,7 @@
 [c-cargo_make-lib.rs]: https://lib.rs/crates/cargo-make
 [c-cargo_make-website-badge]: https://img.shields.io/badge/cargo--make-coral
 [c-cargo_make-website]: https://sagiegurari.github.io/cargo-make
-[c-cargo_make]: https://sagiegurari.github.io/cargo-make
+[c-cargo_make]: https://docs.rs/cargo-make/latest/cli
 [c-cargo_nextest-badge]: https://img.shields.io/crates/v/cargo-nextest?label=cargo-nextest
 [c-cargo_nextest-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--nextest-crimson
 [c-cargo_nextest-crates.io]: https://crates.io/crates/cargo_nextest
@@ -490,7 +490,7 @@
 [c-cargo_nextest-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--nextest-yellow
 [c-cargo_nextest-lib.rs]: https://lib.rs/crates/cargo-nextest
 [c-cargo_nextest-website-badge]: https://img.shields.io/badge/cargo--nextest-coral
-[c-cargo_nextest-website]: https://nexte.st
+[c-cargo_nextest-website]: https://github.com/nextest-rs/nextest/blob/main/README.md
 [c-cargo_nextest]: https://nexte.st
 [c-cargo_outdated-badge]: https://img.shields.io/crates/v/cargo-outdated?label=cargo-outdated
 [c-cargo_outdated-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--outdated-crimson
@@ -769,7 +769,7 @@
 [c-crossbeam_channel-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crossbeam--channel-yellow
 [c-crossbeam_channel-lib.rs]: https://lib.rs/crates/crossbeam-channel
 [c-crossbeam_channel-website-badge]: https://img.shields.io/badge/crossbeam--channel-coral
-[c-crossbeam_channel-website]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-channel
+[c-crossbeam_channel-website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-channel/README.md
 [c-crossbeam_channel::Receiver::iter]: https://docs.rs/crossbeam_channel/latest/crossbeam_channel/struct.Receiver.html#method.iter
 [c-crossbeam_channel::Sender::send]: https://docs.rs/crossbeam_channel/latest/crossbeam_channel/struct.Sender.html#method.send
 [c-crossbeam_channel::bounded]: https://docs.rs/crossbeam_channel/latest/crossbeam_channel/fn.bounded.html
@@ -783,7 +783,7 @@
 [c-crossbeam_queue-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crossbeam--queue-yellow
 [c-crossbeam_queue-lib.rs]: https://lib.rs/crates/crossbeam-queue
 [c-crossbeam_queue-website-badge]: https://img.shields.io/badge/crossbeam--queue-coral
-[c-crossbeam_queue-website]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-queue
+[c-crossbeam_queue-website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-queue/README.md
 [c-crossbeam_queue]: https://docs.rs/crossbeam-queue
 [c-crossbeam_utils-badge]: https://img.shields.io/crates/v/crossbeam-utils?label=crossbeam-utils
 [c-crossbeam_utils-crates.io-badge]: https://img.shields.io/badge/crates.io-crossbeam--utils-crimson
@@ -793,7 +793,7 @@
 [c-crossbeam_utils-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crossbeam--utils-yellow
 [c-crossbeam_utils-lib.rs]: https://lib.rs/crates/crossbeam-utils
 [c-crossbeam_utils-website-badge]: https://img.shields.io/badge/crossbeam--utils-coral
-[c-crossbeam_utils-website]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils
+[c-crossbeam_utils-website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-utils/README.md
 [c-crossbeam_utils]: https://docs.rs/crossbeam-utils
 [c-crossterm-badge]: https://img.shields.io/crates/v/crossterm?label=crossterm
 [c-crossterm-crates.io-badge]: https://img.shields.io/badge/crates.io-crossterm-crimson
@@ -1146,7 +1146,7 @@
 [c-form_urlencoded-crates.io-badge]: https://img.shields.io/badge/crates.io-form__urlencoded-crimson
 [c-form_urlencoded-crates.io]: https://crates.io/crates/form_urlencoded
 [c-form_urlencoded-github-badge]: https://img.shields.io/badge/form__urlencoded-steelblue?logo=github
-[c-form_urlencoded-github]: https://github.com/servo/rust-url
+[c-form_urlencoded-github]: https://github.com/servo/rust-url/tree/main/form_urlencoded
 [c-form_urlencoded-lib.rs-badge]: https://img.shields.io/badge/lib.rs-form__urlencoded-yellow
 [c-form_urlencoded-lib.rs]: https://lib.rs/crates/form_urlencoded
 [c-form_urlencoded::byte_serialize]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.byte_serialize.html
@@ -2990,6 +2990,7 @@
 [c-tinyvec-lib.rs]: https://lib.rs/crates/tinyvec
 [c-tinyvec]: https://docs.rs/tinyvec
 [c-toasty-badge]: https://img.shields.io/crates/v/toasty?label=toasty
+[c-toasty-blog]: https://tokio.rs/blog/2024-10-23-announcing-toasty
 [c-toasty-crates.io-badge]: https://img.shields.io/badge/crates.io-toasty-crimson
 [c-toasty-crates.io]: https://crates.io/crates/toasty
 [c-toasty-github-badge]: https://img.shields.io/badge/toasty-steelblue?logo=github
@@ -2997,7 +2998,6 @@
 [c-toasty-lib.rs-badge]: https://img.shields.io/badge/lib.rs-toasty-yellow
 [c-toasty-lib.rs]: https://lib.rs/crates/toasty
 [c-toasty]: https://docs.rs/toasty
-[c-toasty-blog]: https://tokio.rs/blog/2024-10-23-announcing-toasty
 [c-tokio-badge]: https://img.shields.io/crates/v/tokio?label=tokio
 [c-tokio-crates.io-badge]: https://img.shields.io/badge/crates.io-tokio-crimson
 [c-tokio-crates.io]: https://crates.io/crates/tokio
@@ -3108,7 +3108,7 @@
 [c-tracing_subscriber-crates.io-badge]: https://img.shields.io/badge/crates.io-tracing--subscriber-crimson
 [c-tracing_subscriber-crates.io]: https://crates.io/crates/tracing_subscriber
 [c-tracing_subscriber-github-badge]: https://img.shields.io/badge/tracing--subscriber-steelblue?logo=github
-[c-tracing_subscriber-github]: https://github.com/tokio-rs/tracing
+[c-tracing_subscriber-github]: https://github.com/tokio-rs/tracing/tree/master/tracing-subscriber
 [c-tracing_subscriber-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tracing--subscriber-yellow
 [c-tracing_subscriber-lib.rs]: https://lib.rs/crates/tracing-subscriber
 [c-tracing_subscriber-website-badge]: https://img.shields.io/badge/tracing--subscriber-coral
