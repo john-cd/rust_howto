@@ -17,8 +17,6 @@ cargo install mdbook-hide # optional plugin; many others exist
 mdbook serve --open
 ```
 
-[mdBook documentation][c-mdbook-documentation]⮳
-
 ## Playground {#playground}
 
 [Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳  [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}

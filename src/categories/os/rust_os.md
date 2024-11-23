@@ -4,9 +4,9 @@
 
 ## Bottlerocket {#bottlerocket}
 
-[![bottlerocket][c-bottlerocket-badge]][c-bottlerocket][![bottlerocket-crates.io][c-bottlerocket-crates.io-badge]][c-bottlerocket-crates.io][![bottlerocket-github][c-bottlerocket-github-badge]][c-bottlerocket-github][![bottlerocket-lib.rs][c-bottlerocket-lib.rs-badge]][c-bottlerocket-lib.rs]{{hi:bottlerocket}}
+[![bottlerocket][c-bottlerocket-badge]][c-bottlerocket][![bottlerocket-crates.io][c-bottlerocket-crates.io-badge]][c-bottlerocket-crates.io][![c-bottlerocket-github][c-bottlerocket-github-badge]][c-bottlerocket-github][![bottlerocket-lib.rs][c-bottlerocket-lib.rs-badge]][c-bottlerocket-lib.rs]{{hi:bottlerocket}}
 
-[bottlerocket][bottlerocket-github]{{hi:bottlerocket}}⮳ is an operating system designed for hosting containers.
+[bottlerocket][c-bottlerocket-github]{{hi:bottlerocket}}⮳ is an operating system designed for hosting containers.
 
 ## Redox {#redox}
 

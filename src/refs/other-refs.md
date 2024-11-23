@@ -24,7 +24,6 @@
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [bencher-github]: https://github.com/bencherdev/bencher
-[rust-cookbook-contributors]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
 [best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates
 [blessed-rs-website-badge]: https://img.shields.io/badge/blessed.rs-coral
 [blessed-rs-website]: https://blessed.rs/crates
@@ -36,7 +35,6 @@
 [blog-announcing-async-fn]: https://blog.rust-lang.org/2023/12/21/async-fn-rpit-in-traits.html
 [blog-async-what-is-blocking]: https://ryhl.io/blog/async-what-is-blocking
 [blog-auth-web-microservice-badge]: https://img.shields.io/badge/blog_auth_microservice-beige
-[blog-auth-web-microservice]: https://gill.net.in/posts/auth-microservice-rust-actix-web1.0-diesel-complete-tutorial
 [blog-building-a-crawler-in-rust-badge]: https://img.shields.io/badge/blog-building_a_crawler_in_rust-beige
 [blog-building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
 [blog-building-a-saas-with-rust-and-next-js]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust
@@ -216,7 +214,6 @@
 [book-zero-to-production-github-badge]: https://img.shields.io/badge/zero_to_production-steelblue?logo=github
 [book-zero-to-production-github]: https://github.com/LukeMathWalker/zero-to-production
 [book-zero-to-production]: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword
-[bottlerocket-github]: https://github.com/bottlerocket-os/bottlerocket
 [cache-management-with-gitHub-actions-website]: https://docs.docker.com/build/ci/github-actions/cache
 [cache-storage-backends]: https://docs.docker.com/build/cache/backends
 [cached-docker-images-badge]: https://img.shields.io/badge/Cached_docker_images-steelblue?logo=github
@@ -278,8 +275,6 @@
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [headlines-github-badge]: https://img.shields.io/badge/headlines-steelblue?logo=github
 [headlines-github]: https://github.com/creativcoder/headlines
-[helix-editor-github]: https://github.com/helix-editor/helix
-[helix-editor-website]: https://helix-editor.com
 [how_to_learn_modern_rust-github]: https://github.com/joaocarvalhoopen/How_to_learn_modern_Rust
 [http-basic-auth]: https://tools.ietf.org/html/rfc2617
 [http-range-rfc7233]: https://tools.ietf.org/html/rfc7233#section-3.1
@@ -391,6 +386,7 @@
 [rust-by-practice-github]: https://github.com/sunface/rust-by-practice
 [rust-ci-tooling]: https://rodneylab.com/rust-ci-tooling
 [rust-companies-github]: https://github.com/omarabid/rust-companies
+[rust-cookbook-contributors]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
 [rust-course-github]: https://github.com/sunface/rust-course
 [rust-digger-website]: https://rust-digger.code-maven.com
 [rust-for-linux-github]: https://github.com/Rust-for-Linux

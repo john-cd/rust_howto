@@ -10,8 +10,6 @@
 
 Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examples-github]
 
-[Auth Web Microservice with rust using actix_web 4.0 - Complete Tutorial][blog-auth-web-microservice]⮳
-
 [Practical Rust Web Development - API Rest][blog-practical-rust]⮳
 
 - [actix][c-actix-github]⮳

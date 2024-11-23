@@ -1,3 +1,4 @@
+[1password-github]: https://github.com/1Password
 [1password-website]: https://1password.com
 [360dialog-website]: https://www.360dialog.com
 [49nord-website]: https://49nord.de/rust
@@ -11,7 +12,6 @@
 [airborne-engineering-website]: https://www.ael.co.uk
 [alchemy-website]: https://www.alchemy.com
 [algorithmia-github]: https://github.com/algorithmiaio
-[algorithmia-website]: https://algorithmia.com
 [amazon-website]: https://www.aboutamazon.com
 [anixe-website]: http://www.anixe.io
 [appflowy-website]: https://appflowy.io
@@ -25,6 +25,7 @@
 [attainoutcomes-website]: https://www.attainoutcomes.com
 [autumnai-github]: https://github.com/autumnai
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
+[azure-iot-edge-github]: https://github.com/Azure/iotedge
 [bencher-github]: https://github.com/bencherdev
 [bencher-website]: https://bencher.dev
 [bitfury-website]: http://bitfury.com
@@ -44,6 +45,7 @@
 [cash-app-website]: https://cash.app
 [ceph-rust-github]: https://github.com/ceph/ceph-rust
 [ceph-website]: https://ceph.io
+[chef-github]: https://github.com/chef/delivery-cli
 [chef-website]: https://www.chef.io
 [chroma-github]: https://github.com/chroma-core
 [chroma-website]: https://www.trychroma.com
@@ -60,7 +62,6 @@
 [cross-rs-github]: https://github.com/cross-rs
 [cryptape-website]: http://cryptape.com
 [cryptosat-github]: https://github.com/cryptosat
-[cryptosat-website]: https://cryptosat.io
 [currysoftware-github]: https://github.com/CurrySoftware
 [dailyedit-website]: https://dailyedit.com
 [datarobot-website]: http://www.datarobot.com
@@ -80,19 +81,21 @@
 [dungeonfog-website]: http://www.dungeonfog.com
 [embark-studios-website]: https://www.embark-studios.com
 [embecosm-website]: https://www.embecosm.com
+[espressif-github]: https://github.com/esp-rs
 [espressif-website]: https://www.espressif.com
 [evo-website]: https://evo.company
 [exonum-website]: https://exonum.com
 [faraday-github]: https://github.com/faradayio
 [faraday-website]: http://www.faraday.ai
 [fedi-website]: https://fedi.xyz
+[fedimint-github]: https://github.com/fedimint/fedimint
 [fermyon-website]: https://www.fermyon.com
 [ferrocene-website]: https://ferrocene.dev
 [ferrous-systems-github]: https://github.com/ferrous-systems
 [ferrous-systems-website]: https://ferrous-systems.com
 [figma-website]: https://www.figma.com
 [firosolutions-github]: https://github.com/firosolutions
-[firosolutions-website]: https://firosolutions.com
+[firosolutions-website]: http://firosolutions.com
 [flowdesk-website]: https://flodesk.com
 [fly-github]: https://github.com/superfly
 [fly-website]: https://fly.io
@@ -114,11 +117,11 @@
 [huggingface-github]: https://github.com/huggingface
 [huggingface-website]: http://www.huggingface.co
 [hyperswitch-website]: https://hyperswitch.io
-[iambot-website]: http://iambot.ai
 [immunant-github]: https://github.com/immunant
 [immunant-website]: https://immunant.com
 [infinyon-website]: https://infinyon.com
 [insta-website]: https://insta.rs
+[integer32-github]: https://github.com/integer32llc
 [integer32-website]: https://www.integer32.com
 [jetbrains-website]: https://www.jetbrains.com
 [jfrog-website]: https://jfrog.com
@@ -129,7 +132,6 @@
 [kraken-website]: https://kraken.com
 [krypt-website]: https://krypt.co
 [kryptco-github]: https://github.com/kryptco
-[lechev-website]: https://lechev.space
 [lechevspace-github]: https://github.com/LechevSpace
 [lechevspace-website]: https://lechev.space
 [libra-website]: https://libra.org
@@ -154,8 +156,8 @@
 [multimediallc-website]: https://multimediallc.com
 [nextroll-website]: https://www.nextroll.com
 [novonordisk-website]: https://novonordisk.com
-[npm-website]: http://www.npmjs.com
-[npmjs-website]: https://www.npmjs.com
+[npm-github]: https://github.com/npm
+[npm-website]: https://www.npmjs.com
 [nushell-github]: https://github.com/nushell
 [nushell-website]: https://www.nushell.sh
 [nvim-website]: https://neovim.io
@@ -167,7 +169,6 @@
 [ovh-website]: https://www.ovh.com
 [ovhcloud-website]: http://www.ovhcloud.com
 [oxidos-website]: https://oxidos.io
-[parallel-systems-website]: https://moveparallel.com
 [parity-website]: https://www.parity.io
 [paritytech-github]: https://github.com/paritytech
 [personio-website]: https://www.personio.com
@@ -182,7 +183,6 @@
 [qumulo-website]: https://qumulo.com
 [readyset-website]: https://readyset.io
 [red-badger-website]: https://red-badger.com
-[red-iron-website]: https://red-iron.eu
 [redhat-website]: https://www.redhat.com
 [rediron-github]: https://github.com/orgs/OCamlPro
 [rediron-website]: https://red-iron.eu
@@ -208,7 +208,6 @@
 [snips-website]: https://snips.ai
 [solana-website]: https://solana.com
 [spectralops-website]: https://spectralops.io
-[spoqa-website]: https://www.spoqa.com
 [sprinklenet-website]: https://sprinklenet.com
 [spruceid-website]: https://spruceid.com
 [square-website]: https://squareup.com
@@ -225,14 +224,11 @@
 [tailcall-website]: https://tailcall.run
 [tailcallhq-github]: https://github.com/tailcallhq
 [tarro-website]: https://www.tarro.com
-[tcell-website]: https://www.tcell.io
 [techfund-website]: https://techfund.jp
-[tenx-website]: https://tenx.tech
 [terminal-technologies-website]: https://terminaltechnology.com
 [tesla-website]: https://www.tesla.com
 [thehive-website]: https://thehive.ai
 [theirstack-rust-website]: https://theirstack.com/en/technology/rust
-[threatx-website]: https://threat-x.com
 [threema-website]: https://threema.ch/en
 [tikv-github]: https://github.com/tikv
 [tikv-website]: https://tikv.org
