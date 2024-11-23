@@ -4,7 +4,7 @@ This book is still going through _heavy edits_. Pardon the dust.
 
 ## What you will find here
 
-This book is **a compendium of Rust ecosystem examples and resources**. It is intended to be **everything you need for day-to-day Rust coding, in one place**. It demonstrates good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It summarizes the language and key features of the standard libray. It includes numerous links to Rust resources.
+This book is **a compendium of Rust ecosystem examples and resources**. It is intended to be **everything you need for day-to-day Rust coding, in one place**. It demonstrates good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. It summarizes the language and key features of the standard library. It includes numerous links to Rust resources.
 
 ## Who should read this book
 
@@ -13,7 +13,7 @@ This book is intended for
 - new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources,
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
-Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}}⮳ concepts. The [`Rust book`][book-rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are succintly summarized in this book's [language][p-lang] section.
+Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}}⮳ concepts. The [`Rust book`][book-rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are succinctly summarized in this book's [language][p-lang] section.
 
 ## Why this book
 
@@ -49,7 +49,7 @@ If you are simply looking for the solution to a simple task, the easiest ways to
 - scan the left-side bar for categories you are interested in,
 - scan the [Index of examples](examples_index.md), and from there, click on the name of the recipe to view it.
 - look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. `parking_lot::ReentrantMutex`).
-- consult the alphabetical and catgorical crates indices.
+- consult the alphabetical and categorical crates indices.
 
 ## How to use the recipes
 
@@ -131,7 +131,7 @@ This book is intended to provide expansive coverage of "key" or "foundational" c
 
 Key crates are identified by cross-referencing (i) [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources, (ii) most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, and (iii) high-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
 
-The selection process is necessarily opionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
+The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.
 
 ## What other books should I consult?
 
