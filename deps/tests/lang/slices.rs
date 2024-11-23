@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-
     let s = String::from("hello world");
 
     let hello: &str = &s[0..5]; // or &s[..5];
