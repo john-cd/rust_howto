@@ -29,6 +29,7 @@
 - [ ] tower_http example polish; other examples have been checked against the rust playground
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] add shuttle.rs example
+- [ ] review the cookbook's [issues](https://github.com/rust-lang-nursery/rust-cookbook/issues) and [PRs](https://github.com/rust-lang-nursery/rust-cookbook/pulls)
 
 ## Others
 
@@ -45,6 +46,26 @@
 - Code of conduct
 
 ## Additions to consider
+
+<https://github.com/ferrous-systems/rust-training>
+
+<https://github.com/ferrous-systems/rust-exercises>
+
+<https://github.com/ferrous-systems/why-rust>
+
+<https://github.com/ferrous-systems/wasm-training-2022>
+
+<https://github.com/ferrous-systems/mdslides>
+
+[c2rust transpiler][c2rust]
+
+[c2rust]: https://github.com/immunant/c2rust
+
+JavaScript tooling:
+
+- [Volta][volta-website]⮳[(github)][volta-github]⮳ | |
+- [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
+- Bun
 
 Binary encoders
 
