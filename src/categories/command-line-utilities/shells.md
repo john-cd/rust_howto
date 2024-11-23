@@ -12,10 +12,13 @@
 
 [![starship-github][c-starship-github-badge]][c-starship-github]{{hi:starship}} is a fast, highly customizable prompt for any shell.
 
+## `nushell` {#nushell}
+
+[Nushell][nushell-website]⮳[(github)][nushell-github]⮳
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO: expand
-nushell?
 </div>
