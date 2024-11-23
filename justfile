@@ -345,7 +345,7 @@ generate_refdefs_from_anchors:
 check_urls:
   -lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
   # We could also check ".devcontainer/*" "./**/*.sh"
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache --suggest -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" -- -
+  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" -- -
 # Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
 # This does not check whether the reference definitions are used - see below.
 
