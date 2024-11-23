@@ -1,5 +1,9 @@
 # TODO
 
+- [ ] polish the intro, add links
+- [ ] finish to polish the links section
+- [ ] review all examples and mark them as ```rust,noplayground  as needed
+- [ ] examples: make sure that there is an output when run in the playground
 - [ ] review each .md file in turn - WIP
 - [ ] add examples where needed - WIP
 - [ ] replace current badge markdown mess by a preprocessor command
@@ -18,6 +22,8 @@
 
 ## Markdown
 
+- [ ] review the cookbook's old pending [issues](https://github.com/rust-lang-nursery/rust-cookbook/issues) and [PRs](https://github.com/rust-lang-nursery/rust-cookbook/pulls)
+
 ## Examples
 
 - [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
@@ -29,7 +35,6 @@
 - [ ] tower_http example polish; other examples have been checked against the rust playground
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] add shuttle.rs example
-- [ ] review the cookbook's [issues](https://github.com/rust-lang-nursery/rust-cookbook/issues) and [PRs](https://github.com/rust-lang-nursery/rust-cookbook/pulls)
 
 ## Others
 
