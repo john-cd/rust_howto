@@ -137,8 +137,6 @@ spsc::Queue – single producer single consumer lock-free queue
 
 [comemo](https://github.com/typst/comemo)
 
-[announcing-toasty](https://tokio.rs/blog/2024-10-23-announcing-toasty)
-
 [roxygen](https://github.com/geo-ant/roxygen)
 
 [csborrow](https://em-tg.github.io/csborrow/)
@@ -196,3 +194,5 @@ DSLs in Rust
 [thecopenhagenbook](https://thecopenhagenbook.com/)
 
 [rerun](https://github.com/rerun-io/rerun)
+
+[typestate pattern](https://cliffle.com/blog/rust-typestate)
