@@ -42,5 +42,5 @@ This site is not affiliated with the [Rust Foundation][rust-foundation-website]â
 [rust-cookbook-contributors-website]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
 [rust-foundation-website]: https://foundation.rust-lang.org
 [rust-howto-website]: https://john-cd.com/rust_howto
-[rust-howto-contributing-website]: https://john-cd.com/rust_howto/contributing.html
+[rust-howto-contributing-website]: https://john-cd.com/rust_howto/contributing/index.html
 [rust-howto-github]: https://github.com/john-cd/rust_howto
