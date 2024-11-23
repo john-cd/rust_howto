@@ -38,7 +38,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Block][block-website]⮳ | |
 | [Brainport Digital Factory][brainportdigitalfactory-website]⮳ | |
 | [Braintree Payments][braintreepayments-website]⮳ | Uses Rust for command-line utilities and batch processing as part of their third-party payment merchant services. |
-| [Braun Embedded][braun-embedded-website]⮳ | Provides firmware development services for ARM Cortex-M microcontrollers. [(github)][braun-embedded-github] |
+| [Braun Embedded][braun-embedded-website]⮳[(github)][braun-embedded-github]⮳ | Provides firmware development services for ARM Cortex-M microcontrollers. |
 | [Brave][brave-website]⮳[(github)][brave-github]⮳ | Uses Rust for its browser's ad-blocking engine. |
 | [Buoyant][buoyant-website]⮳ | |
 | [Calyptech][calyptech-website]⮳ | Used for high performance embedded system components as an alternative to C. |
@@ -90,14 +90,12 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Grafbase][grafbase-website]⮳ | |
 | [Greenbone][greenbone-website]⮳ | |
 | [Gremlin][gremlin-website]⮳ | Safely and efficiently causing controlled chaos. |
-| [Helix editor][helix-editor-website]⮳[(github)][helix-editor-github]⮳ | |
 | [HighTec EDV Systeme][hightec-rt-website]⮳ | |
 | [Hive][thehive-website]⮳ | Offers pre-trained AI models for automating content moderation. Hive 2.0 is written in Rust. |
 | [Hove][hove-website]⮳[(github)][hove-github]⮳ | Navitia API provides ways to query public transport data, including a multi-criteria journey engine. |
 | [Huawei][huawei-website]⮳ | Develops telecommunication equipment and consumer electronics, in part via Rust. |
 | [HuggingFace][huggingface-website]⮳[(github)][huggingface-github]⮳ | Many components within the Hugging Face ecosystem for AI, including safetensors, tokenizer, and candle, are implemented using Rust. |
-| [Hyperfine (github)][c-hyperfine-github]⮳ | |
-| [Hyperswitch][hyperswitch-website]⮳[(github)][hyperswitch-github]⮳ | Their open-source payment switch that allows businesses to interact with multiple payment gateways is built with Rust. |
+| [Hyperswitch (Juspay.io)][hyperswitch-website]⮳[(github)][hyperswitch-github]⮳ | Their open-source payment switch that allows businesses to interact with multiple payment gateways is built with Rust. |
 | [Immunant][immunant-website]⮳[(github)][immunant-github]⮳ | Immunant specializes in translation from C to Rust and exposing legacy C/C++ through safe Rust interfaces. |
 | [Infinyon][infinyon-website]⮳ | |
 | [Integer32][integer32-website]⮳[(github)][integer32-github]⮳ | Integer 32 is a consultancy that delivers high-quality Rust code. |
@@ -108,7 +106,6 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Knoldus][knoldus-website]⮳ | |
 | [Kong][kong-website]⮳ | |
 | [Kraken][kraken-website]⮳ | Cryptocurrency exchange, based in the USA. |
-| [Krypt.co][krypt-website]⮳[(github)][kryptco-github]⮳ | Shared code between iOS and Android for SSH host signature verification as well as a PKCS11 shared library. |
 | [Lechev.space][lechevspace-website]⮳[(github)][lechevspace-github]⮳ | Building various aerospace-related projects including a Ground station service using Rust. |
 | [Leptos][c-leptos-website]⮳[(github)][c-leptos-github]⮳ | |
 | [Linebender][linebender-website]⮳ | See, for example, [Vello][c-vello-github]⮳ |
@@ -129,14 +126,13 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [NextRoll][nextroll-website]⮳ | |
 | [Novo Nordisk][novonordisk-website]⮳ | |
 | [Npm][npm-website]⮳[(github)][npm-github]⮳ | The package manager for JavaScript has components written in Rust. Also use Rust for their authorization service. |
-| [Nushell][nushell-website]⮳[(github)][nushell-github]⮳ | |
 | [Nvim][nvim-website]⮳ | Uses Rust for its powerful text editor. |
-| [OVHcloud][ovhcloud-website]⮳ [OVH][ovh-website]⮳ | Use Rust to build a high performance, highly available log management system. |
+| [OVHcloud][ovhcloud-website]⮳ | Use Rust to build a high performance, highly available log management system. |
 | [OneSignal][onesignal-website]⮳[(blog)][onesignal-blog]⮳ | High volume, cross platform push notification delivery. |
 | [OpenUK][openuk-website]⮳ | |
-| [Opensrcsec][opensrcsec-website]⮳ | |
-| [Os-sci][os-sci-website]⮳ | |
-| [Oxidos][oxidos-website]⮳ | |
+| [Open Source Security][opensrcsec-website]⮳ | |
+| [OpenSource Science (OS-Sci)][os-sci-website]⮳ | |
+| [OxidOS Automotive][oxidos-website]⮳ | |
 | [PUCPR][pucpr-website]⮳ | |
 | [Parity Technology][parity-website]⮳[(github)][paritytech-github]⮳ | Creates open-sourced networks, consensus protocols, and cryptography, entirely in Rust. |
 | [Personio][personio-website]⮳ | |
@@ -145,6 +141,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Postmates][postmates-website]⮳ | |
 | [Qdrant][qdrant-website]⮳[(github)][qdrant-github]⮳ | High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI |
 | [Qumulo][qumulo-website]⮳ | Offers a hybrid data storage for large file and object data. |
+| [Qwiet][qwiet-ai-website]⮳ | |
 | [Readyset][readyset-website]⮳ | |
 | [Red Badger][red-badger-website]⮳ | |
 | [Red Hat][redhat-website]⮳ | Engages with Rust in several projects, particularly in areas related to system programming and container technology. |
@@ -161,12 +158,11 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Scythe Robotics][scytherobotics-website]⮳ | |
 | [Sensirion][sensirion-website]⮳ | |
 | [Sentry][sentry-website]⮳ | Uses Rust for its performance-critical components. JavaScript, Java and iOS event processing and the command-line client for the Sentry API. |
-| [Shiftleft][shiftleft-website]⮳ | ShiftLeft is a Silicon Valley startup in the security space. Their bespoke runtime security agent is written in Rust. |
 | [Shopify][shopify-website]⮳ | |
 | [Slint][c-slint-website]⮳[(github)][c-slint-github]⮳ | |
 | [Slowtec][slowtec-website]⮳ | Their automation systems are entirely written in Rust. |
-| [SmartThings][smartthings-website]⮳ | Memory-safe embedded applications on our SmartThings Hub and supporting services in the cloud. |
-| [Snips][snips-website]⮳ | AI assistants that are private by design. |
+| [SmartThings (Samsung)][smartthings-website]⮳ | Memory-safe embedded applications on our SmartThings Hub and supporting services in the cloud. |
+| [Snips (Sonos)][snips-website]⮳ | AI assistants that are private by design. |
 | [Solana Labs][solana-website]⮳ | Use Rust as their main programming language for smart contracts. |
 | [SpectralOps][spectralops-website]⮳ | |
 | [Sprinklenet][sprinklenet-website]⮳ | |
@@ -177,28 +173,25 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Starry][starry-website]⮳ | Re-imagining broadband by engineering a new wireless access network. |
 | [Sui][sui-website]⮳ | |
 | [Svix][svix-website]⮳[(github)][svix-github]⮳ | Enterprise-grade webhooks service. |
-| [Svix][svix-website]⮳ | Offers a open-sourced, Rust-written webhook service that helps developers build webhook platforms. |
 | [System76][system76-website]⮳[(github)][system76-github]⮳ | Manufacturer of Linux computers and keyboards. As a Linux-based computer-manufacture, much of their infrastructure and desktop Linux projects are written in Rust. |
-| [Tag1consulting][tag1consulting-website]⮳ | |
+| [Tag1 Consulting][tag1consulting-website]⮳ | |
 | [Tailcall][tailcall-website]⮳[(github)][tailcallhq-github]⮳ | A cloud native solution to streamline API management across edge, middle, and service layers. |
 | [Tarro][tarro-website]⮳ | |
 | [Techfund][techfund-website]⮳ | |
 | [Terminal Technologies][terminal-technologies-website]⮳ | |
 | [Tesla][tesla-website]⮳ | |
-| [The Daily Edit][dailyedit-website]⮳ | A news aggregator that combines details from many sources into a single place. Our analysis engine and web backend are written in Rust. |
 | [Threema][threema-website]⮳ | |
 | [Tikv][tikv-website]⮳[(github)][tikv-github]⮳ | |
-| [Tock (github)][tock-github]⮳ | |
+| [TockOS][tock-website]⮳[(github)][tock-github]⮳ | |
 | [Trace Machina][tracemachina-website]⮳ | |
 | [Tracel.ai][tracel-ai-website]⮳[(github)][tracel-ai-github]⮳ | |
 | [TreeScale][treescale-website]⮳ | TreeScale implements distributed PubSub system using Rust and MIO |
 | [Tremor][tremor-website]⮳[(github)][tremor-github]⮳ | |
-| [Tsycapital][tsycapital-website]⮳ | |
+| [Tsy Capital][tsycapital-website]⮳ | |
 | [Tweede Golf][tweedegolf-website]⮳[(github)][tweedegolf-github]⮳ | Create safe internet infrastructure with Rust and secure connected devices with Embedded Rust. |
 | [Vail Systems][vailsys-website]⮳ | |
 | [Veecle][veecle-website]⮳ | |
 | [VersionEye][versioneye-website]⮳[(github)][versioneye-github]⮳ | Use Rust to implement a command line tool which can identify software dependencies by their SHA values. |
-| [Volta][volta-website]⮳[(github)][volta-github]⮳ | |
 | [Volvo][volvo-website]⮳ | |
 | [Warp][warp-website]⮳ | |
 | [Watchful][watchful-website]⮳ | |
@@ -214,3 +207,6 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+</div>

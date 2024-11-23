@@ -486,7 +486,6 @@
 [openuk-website]: https://openuk.uk
 [openvas-github]: https://github.com/greenbone/openvas-scanner
 [os-sci-website]: https://os-sci.com
-[ovh-website]: https://www.ovh.com
 [ovhcloud-website]: http://www.ovhcloud.com
 [oxidos-website]: https://oxidos.io
 [pake-github-badge]: https://img.shields.io/badge/pake-steelblue?logo=github
@@ -546,6 +545,7 @@
 [qdrant-github]: https://github.com/qdrant
 [qdrant-website]: https://qdrant.tech
 [qumulo-website]: https://qumulo.com
+[qwiet-ai-website]: https://qwiet.ai
 [readyset-website]: https://readyset.io
 [realworld-actix-fullstack-github]: https://github.com/Bechma/realworld-actix-fullstack
 [realworld-example-apps-badge]: https://img.shields.io/badge/realworld_examples-steelblue?logo=github
@@ -650,7 +650,6 @@
 [serverless-rust-website]: https://www.serverless.com/plugins/serverless-rust
 [servo-website]: https://servo.org
 [shield-io-website]: https://shields.io
-[shiftleft-website]: https://www.shiftleft.io
 [shopify-website]: https://www.shopify.com
 [shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle-rs-website]: https://www.shuttle.rs
@@ -693,6 +692,7 @@
 [tikv-github]: https://github.com/tikv
 [tikv-website]: https://tikv.org
 [tock-github]: https://github.com/tock/tock
+[tock-website]: https://tockos.org
 [tower-middleware-from-scratch-badge]: https://img.shields.io/badge/tower_middleware_from_scratch-steelblue?logo=github
 [tower-middleware-from-scratch]: https://github.com/tower-rs/tower/blob/master/guides/building-a-middleware-from-scratch.md
 [tracel-ai-github]: https://github.com/Tracel-AI
