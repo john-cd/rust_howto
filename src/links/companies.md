@@ -215,4 +215,3 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-{{#include ../refs/company-refs.md}}

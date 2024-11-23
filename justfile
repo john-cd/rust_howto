@@ -241,18 +241,9 @@ autogen:
 [unix]
 sortrefs: _removelastslash
   #! /bin/bash
-  sort -u ./src/refs/crate-refs.md -o /tmp/c.md
-  mv -f /tmp/c.md ./src/refs/crate-refs.md
-  rm -f /temp/c.md
-  sort -u ./src/refs/other-refs.md -o /tmp/o.md
-  mv -f /tmp/o.md ./src/refs/other-refs.md
-  rm -f /temp/o.md
-  sort -u ./src/refs/company-refs.md -o /tmp/co.md
-  mv -f /tmp/co.md ./src/refs/company-refs.md
-  rm -f /temp/co.md
-  sort -u ./src/refs/link-refs.md -o /tmp/l.md
-  mv -f /tmp/l.md ./src/refs/link-refs.md
-  rm -f /temp/l.md
+  sort -u -o ./src/refs/crate-refs.md ./src/refs/crate-refs.md
+  sort -u -o ./src/refs/other-refs.md ./src/refs/other-refs.md
+  sort -u -o ./src/refs/link-refs.md ./src/refs/link-refs.md
 
 [windows]
 sortrefs:
@@ -264,7 +255,6 @@ _removelastslash:
    #! /bin/bash
    sed -i 's/[/]$//g' ./src/refs/crate-refs.md
    sed -i 's/[/]$//g' ./src/refs/other-refs.md
-   sed -i 's/[/]$//g' ./src/refs/company-refs.md
    sed -i 's/[/]$//g' ./src/refs/link-refs.md
 
 # List links without corresponding reference definitions and vice versa
