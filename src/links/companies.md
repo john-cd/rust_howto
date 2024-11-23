@@ -57,7 +57,6 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Coursera][coursera-website]⮳ | Uses Rust for its learning platform. |
 | [Craft][craft-website]⮳ | Their core machine learning engine is written in Rust. |
 | [Cryptape][cryptape-website]⮳ | Their business intelligence platform built for blockchain is written in Rust. |
-| [Cryptosat.io][cryptosat-website]⮳[(github)][cryptosat-github]⮳ | Building the Trust Infrastructure for Web3, using satellites, in space. |
 | [CurrySoftware GmbH][currysoftware-github]⮳ | |
 | [DataRobot][datarobot-website]⮳[(github)][algorithmia-github]⮳ | Builds Machine Learning models that are implemented using Rust. |
 | [Deepgram][deepgram-website]⮳[(github)][deepgram-github]⮳ | Speech AI Platform for transcription and understanding. |
