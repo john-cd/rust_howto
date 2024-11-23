@@ -26,9 +26,7 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 
 ## Helix Editor {#helix}
 
-[helix-editor.com][helix-editor-website]{{hi:helix}}⮳
-
-[helix-editor-github][helix-editor-github]⮳
+[Helix editor][helix-editor-website]⮳[(github)][helix-editor-github]⮳{{hi:helix}}
 
 ## See also
 
@@ -41,4 +39,9 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 
 <div class="hidden">
 TODO: organize; update / review
+
+## Neovim
+
+[Neovim][nvim-website]⮳ is not written in Rust.
+
 </div>
