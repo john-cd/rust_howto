@@ -104,19 +104,6 @@ Within the code, we use the `?` operator to easily propagate any error that impl
 
 For more background on error handling in Rust, read [this page of the Rust book][book-rust-error-handling]⮳ and [this blog post][blog-error]⮳.
 
-## All examples are fully and continuously tested
-
-In order to make sure that all examples work, they are backed by tests, similar to the following:
-
-```rust,editable
-# [test]
-fn test() {
-    main();
-}
-```
-
-For the sake of readability, that boilerplate is hidden by default. In order to read the full contents, click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the code snippets.
-
 ```rust,editable
 {{#include ../deps/tests/about/about2.rs:example}}
 ```
@@ -144,4 +131,5 @@ Consult the links section and its books page for other recommendations.
 
 <div class="hidden">
 TODO polish
+review about2
 </div>

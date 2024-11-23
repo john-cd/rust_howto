@@ -16,4 +16,17 @@
 
 <div class="hidden">
 TODO: edit
+
+## All examples are fully and continuously tested
+
+In order to make sure that all examples work, they are backed by tests, similar to the following:
+
+```rust,editable
+# [test]
+fn test() {
+    main();
+}
+```
+
+For the sake of readability, that boilerplate is hidden by default. In order to read the full contents, click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the code snippets.
 </div>
