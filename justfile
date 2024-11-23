@@ -354,7 +354,7 @@ list_duplicated_urls:
   sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
 # -r or -E = use extended regular expressions
 
-# Create a reference defintion for bare URLs in the markdown (manual review necessary)
+# Create a reference definition for bare URLs in the markdown (manual review necessary)
 convert_bare_urls:
   #! /bin/bash
   rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \

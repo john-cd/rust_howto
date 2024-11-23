@@ -36,9 +36,66 @@ Toasty is an ORM for the Rust programming language that prioritizes ease-of-use.
 
 It is currently in active development and not yet published to crates.io. You can try using it directly from Github.
 
+Using the example in the [Toasty announcement blog][c-toasty-blog], projects that use Toasty start by creating a schema file to define the application's data model.
+
+```text
+model User {
+    #[key]
+    #[auto]
+    id: Id,
+
+    name: String,
+
+    #[unique]
+    email: String,
+
+    todos: [Todo],
+
+    moto: Option<String>,
+}
+
+model Todo {
+    #[key]
+    #[auto]
+    id: Id,
+
+    #[index]
+    user_id: Id<User>,
+
+    #[relation(key = user_id, references = id)]
+    user: User,
+
+    title: String,
+}
+```
+
+Use the Toasty CLI tool to generate all necessary Rust code for working with this data model.
+
+```rust,ignore
+// Create a new user and give them some todos.
+User::create()
+    .name("John Doe")
+    .email("john@example.com")
+    .todo(Todo::create().title("Make pizza"))
+    .todo(Todo::create().title("Finish Toasty"))
+    .todo(Todo::create().title("Sleep"))
+    .exec(&db)
+    .await?;
+
+// Load the user from the database
+let user = User::find_by_email("john@example.com").get(&db).await?
+
+// Load and iterate the user's todos
+let mut todos = user.todos().all(&db).await.unwrap();
+
+while let Some(todo) = todos.next().await {
+    let todo = todo.unwrap();
+    println!("{:#?}", todo);
+}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-Cover https://tokio.rs/blog/2024-10-23-announcing-toasty
 </div>

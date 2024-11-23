@@ -2997,6 +2997,7 @@
 [c-toasty-lib.rs-badge]: https://img.shields.io/badge/lib.rs-toasty-yellow
 [c-toasty-lib.rs]: https://lib.rs/crates/toasty
 [c-toasty]: https://docs.rs/toasty
+[c-toasty-blog]: https://tokio.rs/blog/2024-10-23-announcing-toasty
 [c-tokio-badge]: https://img.shields.io/crates/v/tokio?label=tokio
 [c-tokio-crates.io-badge]: https://img.shields.io/badge/crates.io-tokio-crimson
 [c-tokio-crates.io]: https://crates.io/crates/tokio
