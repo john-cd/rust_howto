@@ -1,5 +1,6 @@
+// ANCHOR: example
 fn main() {
-    // ANCHOR: example
+
     let number = 3;
     let result = if number < 5 {
         // condition must return a bool; `if` is an expression
@@ -10,8 +11,8 @@ fn main() {
         6
     };
     println!("{}", result);
-    // ANCHOR_END: example
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {

@@ -1,5 +1,6 @@
+// ANCHOR: example
 fn main() {
-    // ANCHOR: example
+
     let a = [10, 20, 30, 40, 50];
 
     for element in a {
@@ -12,8 +13,8 @@ fn main() {
         // reverse enumeration
         println!("{number}!");
     }
-    // ANCHOR_END: example
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {
