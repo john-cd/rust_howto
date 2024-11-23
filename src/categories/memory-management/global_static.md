@@ -14,7 +14,7 @@
 
 Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳. The [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳ will be evaluated once and stored behind a global static reference.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/memory_management/lazy_constant.rs:example}}
 ```
 

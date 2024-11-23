@@ -8,7 +8,7 @@
 
 Gets the current UTC [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ and its hour/minute/second{{hi:Hour/minute/second}} via [`chrono::Timelike`][c-chrono::Timelike]{{hi:chrono::Timelike}}⮳ and its year/month/day/weekday{{hi:year/month/day/weekday}} via [`chrono::Datelike`][c-chrono::Datelike]{{hi:chrono::Datelike}}⮳
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/date_and_time/current.rs:example}}
 ```
 
@@ -20,7 +20,7 @@ Converts a date{{hi:date}} given by [`chrono::naive::NaiveDate::from_ymd`][c-chr
 
 Then it calculates what was the date after one billion seconds since January 1, 1970 0:00:00 UTC, using [`chrono::naive::NaiveDateTime::from_timestamp`][c-chrono::naive::NaiveDateTime::from_timestamp]{{hi:chrono::naive::NaiveDateTime::from_timestamp}}⮳.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/date_and_time/timestamp.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ Gets and displays the current time{{hi:Current time}} in UTC using [`chrono::off
 
 Formats the current time in the well-known [RFC 2822 format][rfc-2822]{{hi:RFC-2822 format}}⮳ using [`chrono::DateTime::to_rfc2822`][c-chrono::DateTime::to_rfc2822]{{hi:chrono::DateTime::to_rfc2822}}⮳ and [`RFC 3339`][rfc-3339]{{hi:RFC-3339}}⮳ using [`chrono::DateTime::to_rfc3339`][c-chrono::DateTime::to_rfc3339]{{hi:chrono::DateTime::to_rfc3339}}⮳ and in a custom format using [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/date_and_time/format.rs:example}}
 ```
 
@@ -47,7 +47,7 @@ Parses a [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ stru
 
 Escape sequences that are available for the [`chrono::DateTime::parse_from_str`][c-chrono::DateTime::parse_from_str]{{hi:chrono::DateTime::parse_from_str}}⮳ can be found at [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳. Note that the [`chrono::DateTime::parse_from_str`][c-chrono::DateTime::parse_from_str]{{hi:chrono::DateTime::parse_from_str}}⮳ requires that such a DateTime{{hi:DateTime}} struct must be creatable that it uniquely identifies a date and a time. For parsing dates and times without timezones{{hi:timezones}} use [`chrono::naive::NaiveDate`][c-chrono::naive::NaiveDate]{{hi:chrono::naive::NaiveDate}}⮳  [`chrono::naive::NaiveTime`][c-chrono::naive::NaiveTime]{{hi:chrono::naive::NaiveTime}}⮳ and [`chrono::naive::NaiveDateTime`][c-chrono::naive::NaiveDateTime]{{hi:chrono::naive::NaiveDateTime}}⮳.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/date_and_time/string.rs:example}}
 ```
 

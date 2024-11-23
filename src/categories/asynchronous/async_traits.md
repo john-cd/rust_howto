@@ -4,7 +4,7 @@
 
 As of Rust 1.75, it is possible to have [`async`][book-rust-reference-async]{{hi:async}}⮳ functions in traits:
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async_traits.rs:example}}
 ```
 
@@ -12,7 +12,7 @@ As of Rust 1.75, it is possible to have [`async`][book-rust-reference-async]{{hi
 
 This is in turn enabled by return-position `impl Trait` in traits{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async_traits2.rs:example}}
 ```
 
@@ -22,7 +22,7 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{
 
 [![async-trait][c-async_trait-badge]][c-async_trait]{{hi:async-trait}}  [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github]  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async_traits3.rs:example}}
 ```
 

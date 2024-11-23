@@ -20,7 +20,7 @@ Key constructs in Rust:
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async1.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 - Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async2.rs:example}}
 ```
 

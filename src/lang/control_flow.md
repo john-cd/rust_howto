@@ -6,7 +6,7 @@
 
 ## If else {#if-else}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/if_else.rs:example}}
 ```
 
@@ -14,19 +14,19 @@ Also `else if <cond> { ... }`
 
 ## Loop {#loop}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/loop1.rs:example}}
 ```
 
 ## While {#while}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/while1.rs:example}}
 ```
 
 ## For {#for}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/for1.rs:example}}
 ```
 

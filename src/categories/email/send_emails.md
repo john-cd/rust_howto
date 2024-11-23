@@ -11,7 +11,7 @@
 [![cat-email][cat-email-badge]][cat-email]{{hi:Email}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/email/lettre.rs:example}}
 ```
 

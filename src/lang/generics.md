@@ -6,7 +6,7 @@
 
 ## Generic Structs {#generic-structs}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/generic_structs.rs:example}}
 ```
 

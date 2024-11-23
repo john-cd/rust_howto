@@ -10,7 +10,7 @@
 [![notify-lib.rs][c-notify-lib.rs-badge]][c-notify-lib.rs]
 [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/filesystem/notify.rs:example}}
 ```
 

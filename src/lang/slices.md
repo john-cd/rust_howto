@@ -4,7 +4,7 @@
 
 ## Slices {#slices}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/slices.rs:example}}
 ```
 

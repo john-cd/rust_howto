@@ -4,13 +4,13 @@
 
 [![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]{{hi:Variables}}  [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]{{hi:const}}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/vars_and_consts.rs:example}}
 ```
 
 ## Shadowing {#shadowing}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/shadowing.rs:example}}
 ```
 
@@ -18,7 +18,7 @@
 
 ## Destructuring {#destructuring}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/destructuring.rs:example}}
 ```
 

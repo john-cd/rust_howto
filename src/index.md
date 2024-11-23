@@ -59,7 +59,7 @@ Consider this example for "generate random numbers within a range":
 
 [![rand][c-rand-badge]][c-rand]{{hi:rand}}  [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
-```rust
+```rust,editable
 {{#include ../deps/tests/about/about.rs:example}}
 ```
 
@@ -90,13 +90,13 @@ Error handling in Rust is robust when done correctly, but can require a fair bit
 
 Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are `Result` types involved. The structure generally looks like:
 
-```rust
+```rust,editable
 {{#include ../deps/tests/about/about1.rs:example}}
 ```
 
 In most examples, we have chosen to use `anyhow`'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom `Result` / `Error` types.
 
-```rust
+```rust,editable
 use anyhow::Result;
 ```
 
@@ -108,7 +108,7 @@ For more background on error handling in Rust, read [this page of the Rust book]
 
 In order to make sure that all examples work, they are backed by tests, similar to the following:
 
-```rust
+```rust,editable
 # [test]
 fn test() {
     main();
@@ -117,7 +117,7 @@ fn test() {
 
 For the sake of readability, that boilerplate is hidden by default. In order to read the full contents, click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the code snippets.
 
-```rust
+```rust,editable
 {{#include ../deps/tests/about/about2.rs:example}}
 ```
 

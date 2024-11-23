@@ -12,7 +12,7 @@
 
 [![confy][c-confy-badge]][c-confy]{{hi:confy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/config/confy.rs:example}}
 ```
 

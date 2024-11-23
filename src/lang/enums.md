@@ -4,7 +4,7 @@
 
 [![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]{{hi:Enums}}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/enums.rs:example}}
 ```
 

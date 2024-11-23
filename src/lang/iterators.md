@@ -2,7 +2,7 @@
 
 {{#include iterators.incl.md}}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/iterators.rs:example}}
 ```
 

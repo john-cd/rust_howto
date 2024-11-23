@@ -20,19 +20,19 @@ tracing-subscriber = "0.3"
 
 {{hi:Tracing}}
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber.rs:example}}
 ```
 
 ### Combine layers {#combine-layers}
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber2.rs:example}}
 ```
 
 Or with a custom formatting layer
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber3.rs:example}}
 ```
 
@@ -40,37 +40,37 @@ Or with a custom formatting layer
 
 {{hi:Custom event formatter}}
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_subscriber4.rs:example}}
 ```
 
 ## Events {#events}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing.rs:example}}
 ```
 
 ## Spans {#spans}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_spans.rs:example}}
 ```
 
 One-liner with `.entered()`:
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_entered.rs:example}}
 ```
 
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_span_in_scope.rs:example}}
 ```
 
 ## Add tracing spans to functions {#add-tracing-spans-to-fn}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/tracing_instrument.rs:example}}
 ```
 

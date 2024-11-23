@@ -8,7 +8,7 @@
 
 $description1$
 
-```rust
+```rust,editable
 {% raw %}{{{% endraw %}#include ../../../deps/tests/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
 ```
 

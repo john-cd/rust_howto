@@ -6,13 +6,13 @@
 
 [![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/closures.rs:example}}
 ```
 
 ## Closure with type annotations {#closure-with-type-annotations}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/closures_with_type_annotations.rs:example}}
 ```
 
@@ -26,13 +26,13 @@ They preferentially capture variables by reference and only go lower when requir
 
 To force a move:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/closures_move.rs:example}}
 ```
 
 ## Closures as input parameters {#closures-as-input-parameters}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/closures_as_input_parameters.rs:example}}
 ```
 

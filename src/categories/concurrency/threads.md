@@ -10,7 +10,7 @@ The example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ crate, which 
 
 This example splits the array in half and performs the work in separate threads.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_spawn.rs:example}}
 ```
 
@@ -27,7 +27,7 @@ We use bounded channels with a capacity of one using
 Reading from the channels via the iterator
 [`crossbeam_channel::Receiver::iter`][c-crossbeam_channel::Receiver::iter]{{hi:crossbeam_channel::Receiver::iter}}⮳ method will block, either waiting for new messages or until the channel is closed. Because the channels were created within the [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ we must manually close them via [`std::ops::Drop`][c-std::ops::Drop]{{hi:std::ops::Drop}}⮳ to prevent the entire program from blocking on the worker for-loops. You can think of the calls to [`std::ops::Drop`][c-std::ops::Drop]{{hi:std::ops::Drop}}⮳ as signaling that no more messages will be sent.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_complex.rs:example}}
 ```
 
@@ -37,7 +37,7 @@ Reading from the channels via the iterator
 
 This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ in a single producer, single consumer{{hi:Single producer, single consumer}} (SPSC) setting. We build off the `crossbeam spawn`{{hi:crossbeam spawn}}⮳ example by using [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ and [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ channel, meaning there is no limit to the number of storable messages{{hi:Messages}}. The producer thread sleeps for half a second in between messages.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/crossbeam_spsc.rs:example}}
 ```
 
@@ -47,7 +47,7 @@ This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{
 
 Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c-lazy_static]{{hi:lazy_static}}⮳ creates a globally available `static ref` which requires a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ to allow mutation (also see [`std::sync::RwLock`][c-std::sync::RwLock]{{hi:std::sync::RwLock}}⮳). The [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c-std::sync::MutexGuard]{{hi:std::sync::MutexGuard}}⮳ must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/global_mut_state.rs:example}}
 ```
 
@@ -57,7 +57,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 
 This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ iterates the current directory and calls [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/threadpool_walk.rs:example}}
 ```
 
@@ -79,7 +79,7 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 [`image::ImageBuffer::put_pixel`][c-image::ImageBuffer::put_pixel]{{hi:image::ImageBuffer::put_pixel}}⮳ uses the data to set the pixel color.
 [`image::ImageBuffer::save`][c-image::ImageBuffer::save]{{hi:image::ImageBuffer::save}}⮳ writes the image to `output.png`.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/threadpool_fractal.rs:example}}
 ```
 

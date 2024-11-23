@@ -14,7 +14,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 [`futures::future::Select`][c-futures::future::Select]{{hi:futures::future::Select}}⮳ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/futures.rs:example}}
 ```
 
@@ -22,7 +22,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 [![futures][c-futures-badge]][c-futures]{{hi:futures}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/futures2.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait that provides a variety of convenient adapters.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/futures3.rs:example}}
 ```
 

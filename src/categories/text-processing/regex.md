@@ -8,7 +8,7 @@
 
 Validates that an email address{{hi:Email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/email.rs:example}}
 ```
 
@@ -20,7 +20,7 @@ Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 
 The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/hashtags.rs:example}}
 ```
 
@@ -30,7 +30,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 Processes a string of text using [`regex::Regex::captures_iter`][c-regex::Regex::captures_iter]{{hi:regex::Regex::captures_iter}}⮳ to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/phone.rs:example}}
 ```
 
@@ -42,7 +42,7 @@ Reads a file named `application.log` and only outputs the lines containing “ve
 
 A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ composes a [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilder}}⮳ Since backslashes are very common in regular expressions{{hi:Regular expressions}}, using [raw string literals][book-rust-raw-string-literals]⮳ makes them more readable.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/filter_log.rs:example}}
 ```
 
@@ -55,7 +55,7 @@ Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} *YYYY-MM-DD* da
 The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex::Regex::replace_all}}⮳ replaces all occurrences of the whole regex{{hi:regex}}.
 `&str` implements the [`regex::Replacer`][c-regex::Replacer]{{hi:regex::Replacer}}⮳ trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:Named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c-regex::Regex-replacement-string-syntax]{{hi:Replacement string syntax}}⮳ for examples and escaping detail.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/replace.rs:example}}
 ```
 

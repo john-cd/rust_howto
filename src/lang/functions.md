@@ -4,7 +4,7 @@
 
 [![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/functions.rs:example}}
 ```
 
@@ -12,17 +12,17 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 ## Generic functions {#generic-functions}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/generic_functions.rs:example}}
 ```
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/generic_functions2.rs:example}}
 ```
 
 ## Function pointers {#function-pointers}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/function_pointers.rs:example}}
 ```
 
@@ -30,7 +30,7 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 {{i:Diverging functions}} never return.
 
-```rust,should_panic
+```rust,editable,should_panic
 {{#include ../../deps/tests/lang/diverging_functions.rs:example}}
 ```
 

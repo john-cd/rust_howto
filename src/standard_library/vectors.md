@@ -8,7 +8,7 @@
 
 Vectors can only store values that are the same type.
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/vectors.rs:example}}
 ```
 

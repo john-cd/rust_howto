@@ -15,7 +15,7 @@
 
 Extra iterator adaptors, functions and macros.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/itertools.rs:example}}
 ```
 

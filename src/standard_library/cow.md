@@ -10,25 +10,25 @@ The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer p
 
 Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow1.rs:example}}
 ```
 
 Use [`std::convert::AsRef`][c-std::convert::AsRef]{{hi:std::convert::AsRef}}⮳:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow2.rs:example}}
 ```
 
 Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ explicitly:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow3.rs:example}}
 ```
 
 Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly through a coercion{{hi:Coercion}}:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow4.rs:example}}
 ```
 
@@ -38,19 +38,19 @@ Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly t
 
 Use [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow5.rs:example}}
 ```
 
 Use [`std::borrow::Cow::into_owned`][c-std::borrow::Cow::into_owned]{{hi:std::borrow::Cow::into_owned}}⮳:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow6.rs:example}}
 ```
 
 Use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::borrow::ToOwned]{{hi:std::borrow::ToOwned}}⮳:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/cow7.rs:example}}
 ```
 

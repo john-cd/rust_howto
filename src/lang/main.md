@@ -2,13 +2,13 @@
 
 {{#include main.incl.md}}{{hi:main}}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/main_test.rs:example}}
 ```
 
 ## Async Main Function {#async-main-function}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/async_main.rs:example}}
 ```
 

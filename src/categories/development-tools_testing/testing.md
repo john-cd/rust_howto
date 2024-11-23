@@ -13,7 +13,7 @@
 `cargo test test_prefix` to run all tests that start with the provided prefix.
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_testing/tests1.rs:example}}
 ```
 
@@ -21,7 +21,7 @@
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs:example}}
 ```
 

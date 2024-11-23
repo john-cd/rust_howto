@@ -6,7 +6,7 @@
 
 {{i:Attributes}} can take arguments with different syntaxes:
 
-```rust,compile_fail,noplayground
+```rust,editable,compile_fail,noplayground
 #[attribute = "value"]
 #[attribute(key = "value")]
 #[attribute(value)]
@@ -19,19 +19,19 @@ Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribut
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/attributes_debug.rs:example}}
 ```
 
 For production-ready code{{hi:Production-ready code}}, replace the above by the following, for example.
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/attributes_production.rs:example}}
 ```
 
 You also apply these attributes to specific functions:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/allow_dead_code.rs:example}}
 ```
 
@@ -43,13 +43,13 @@ See [Automatic derivation][p-automatic-derivation].
 
 ## Must Use {#must-use}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/attributes_must_use.rs:example}}
 ```
 
 ## Deprecated {#deprecated}
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/attributes_deprecated.rs:example}}
 ```
 
@@ -57,7 +57,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 [Conditional compilation][book-rust-reference-conditional-compilation]⮳
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/conditional_compilation.rs:example}}
 ```
 

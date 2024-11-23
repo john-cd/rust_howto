@@ -12,7 +12,7 @@ The [`url::Url::parse`][c-url::Url::parse]{{hi:url::Url::parse}}⮳ method from 
 Once the URL has been parsed, it can be used with all of the methods in the
 [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ type.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/parse.rs:example}}
 ```
 
@@ -22,7 +22,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c-url::PathSegmentsMut::clear]{{hi:url::PathSegmentsMut::clear}}⮳ removes paths and [`url::Url::set_query`][c-url::Url::set_query]{{hi:url::Url::set_query}}⮳ removes query string.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/base.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 
 The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:Relative path}}.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/new.rs:example}}
 ```
 
@@ -42,13 +42,13 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 
 The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to extract information about the URL it represents.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/origin.rs:example}}
 ```
 
 [`url::Url::origin`][c-url::Url::origin]{{hi:url::Url::origin}}⮳ produces the same result.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/origin1.rs:example}}
 ```
 
@@ -58,7 +58,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 
 Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Position`][c-url::Position]{{hi:url::Position}}⮳ to strip unneeded URL parts.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/web_programming/fragment.rs:example}}
 ```
 

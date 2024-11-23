@@ -30,7 +30,7 @@ error-chain = "0.11"
 
 ### `build.rs`
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_static.rs:example}}
 ```
 
@@ -50,7 +50,7 @@ void greet(const char* name) {
 
 ### `src/main.rs`
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_static1.rs:example}}
 ```
 
@@ -73,7 +73,7 @@ cc = "1"
 
 ### `build.rs` (static C++)
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_cpp.rs:example}}
 ```
 
@@ -91,7 +91,7 @@ int multiply(int x, int y) {
 
 ### `src/main.rs` (static C++)
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_bundled_cpp1.rs:example}}
 ```
 
@@ -119,7 +119,7 @@ cc = "1"
 
 ### `build.rs` (custom defines)
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_defines.rs:example}}
 ```
 
@@ -138,7 +138,7 @@ void print_app_info() {
 
 ### `src/main.rs` (custom defines)
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_build_utils/cc_defines1.rs:example}}
 ```
 

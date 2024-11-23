@@ -6,7 +6,7 @@
 
 [![lru][c-lru-badge]][c-lru]{{hi:lru}}  [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/caching/lru.rs:example}}
 ```
 

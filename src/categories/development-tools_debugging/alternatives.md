@@ -33,7 +33,7 @@ Structured, extensible, composable logging.
 
 A highly configurable multi-output logging implementation for the log facade.
 
-```rust
+```rust,editable
 use log::{error, info, warn};
 use log4rs;
 
@@ -56,7 +56,7 @@ fn main() {
 
 A logging implementation for log which is configured via an environment variable. `env_logger` makes sense when used in executables (binary projects). Libraries should use the log crate instead.
 
-```rust
+```rust,editable
 use log::info;
 
 fn main() {

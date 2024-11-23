@@ -9,7 +9,7 @@
 Writes a three-line message to a file, then reads it back a line at a time with the [`std::io::Lines`][c-std::io::Lines]{{hi:std::io::Lines}}⮳ iterator created by
 [`std::io::BufRead::lines`][c-std::io::BufRead::lines]{{hi:std::io::BufRead::lines}}⮳  [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ implements [`std::io::Read`][c-std::io::Read]{{hi:std::io::Read}}⮳ which provides [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ trait. [`std::fs::File::create`][c-std::fs::File::create]{{hi:std::fs::File::create}}⮳ opens a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ for writing, [`std::fs::File::open`][c-std::fs::File::open]{{hi:std::fs::File::open}}⮳ for reading.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/filesystem/read_file.rs:example}}
 ```
 
@@ -19,7 +19,7 @@ Writes a three-line message to a file, then reads it back a line at a time with 
 
 Use [`same_file::Handle`][c-same_file::Handle]{{hi:same_file::Handle}}⮳ to a file that can be tested for equality with other handles. In this example, the handles of file to be read from and to be written to are tested for equality.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/filesystem/same_file.rs:example}}
 ```
 
@@ -43,7 +43,7 @@ Creates a memory map{{hi:Memory map}} of a file using [`memmap2`][c-memmap2]{{hi
 
 The [`memmap2::Mmap::map`][c-memmap2::Mmap::map]{{hi:memmap2::Mmap::map}}⮳ function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia-race-condition]⮳ occurs.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/filesystem/memmap2.rs:example}}
 ```
 

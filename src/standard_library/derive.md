@@ -8,7 +8,7 @@ The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attribu
 
 [Derivable traits][book-rust-derivable-traits]{{hi:Derivable traits}}⮳
 
-```rust,editable
+```rust,editable,editable
 {{#include ../../deps/tests/std/derive.rs:example}}
 ```
 
@@ -24,7 +24,7 @@ See also:
 
 [Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}.
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../deps/tests/std/derive_more.rs:example}}
 ```
 

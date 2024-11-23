@@ -8,7 +8,7 @@
 
 Rust has no `null`{{hi:null}}. Instead, use [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳:
 
-```rust
+```rust,editable
 enum Option<T> {
   None,
   Some(T),
@@ -17,13 +17,13 @@ enum Option<T> {
 
 Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c-std::option::Option::Some]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳, and does not.
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/options1.rs:example}}
 ```
 
 It is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if let`][book-rust-reference-if]{{hi:if let}}, or [`while let`][book-rust-reference-while-let]{{hi:while let}}:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/options2.rs:example}}
 ```
 
@@ -52,7 +52,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 
 ![std][c-std-badge]][c-std]
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/std/options3.rs:example}}
 ```
 

@@ -4,7 +4,7 @@
 
 ## Get the type name of the pointed-to value {#type-name-of-val}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}}
 ```
 

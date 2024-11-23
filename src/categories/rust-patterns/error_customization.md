@@ -10,7 +10,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/anyhow.rs:example}}
 ```
 
@@ -22,20 +22,20 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/thiserror.rs:example}}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
-```rust,compile_fail
+```rust,editable,compile_fail
 #[error("{var}")]   //⟶ write!("{}", self.var)
 #[error("{0}")]     //⟶ write!("{}", self.0)
 #[error("{var:?}")] //⟶ write!("{:?}", self.var)
 #[error("{0:?}")]   //⟶ write!("{:?}", self.0)
 ```
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/thiserror2.rs:example}}
 ```
 
@@ -44,7 +44,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}
 [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/miette.rs:example}}
 ```
 

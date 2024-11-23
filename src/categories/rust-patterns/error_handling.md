@@ -6,7 +6,7 @@
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-```rust,should_panic
+```rust,editable,should_panic
 {{#include ../../../deps/tests/cats/rust_patterns/panic.rs:example}}
 ```
 
@@ -14,7 +14,7 @@
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-```rust,should_panic
+```rust,editable,should_panic
 {{#include ../../../deps/tests/cats/rust_patterns/error_handling.rs:example}}
 ```
 
@@ -22,7 +22,7 @@
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/unwrap_or_else.rs:example}}
 ```
 
@@ -30,7 +30,7 @@
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/question_mark.rs:example}}
 ```
 
@@ -40,7 +40,7 @@ This error points out that we’re only allowed to use the `?` operator in a fun
 
 Another example:
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/question_mark2.rs:example}}
 ```
 
@@ -58,7 +58,7 @@ The below recipe will tell how long the system has been running by opening the U
 
 Other recipes in this book will hide the [`error_chain`][c-error_chain]{{hi:error_chain}}⮳ boilerplate, and can be seen by expanding the code with the ⤢ button.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/lang/main_test.rs:example}}
 ```
 
@@ -71,7 +71,7 @@ The [`error_chain`][c-error_chain]{{hi:error_chain}}⮳ crate makes [`matching`]
 Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer. The Rust standard library,
 [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, and the web service can all generate errors. Well defined Rust errors use [`foreign_links`][c-error_chain-foreign_links]⮳ An additional [`error_chain::example_generated::ErrorKind`][c-error_chain::example_generated::ErrorKind]{{hi:error_chain::example_generated::ErrorKind}}⮳ variant for the web service error uses `errors` block of the `error_chain!` macro.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/retain.rs:example}}
 ```
 
@@ -84,7 +84,7 @@ This recipe shows how to handle a complex error scenario and then print a backtr
 The below recipes attempts to deserialize the value `256` into a
 [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/rust_patterns/backtrace.rs:example}}
 ```
 

@@ -32,19 +32,19 @@ Create a shortcut to a path with the [`use`][book-rust-reference-use]{{hi:use}}�
 
 [![book-rust-by-example-use][book-rust-by-example-use-badge]][book-rust-by-example-use]
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/modules.rs:example}}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/modules2.rs:example}}
 ```
 
 On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path.
 
-```rust
+```rust,editable
 {{#include ../../deps/tests/lang/modules3.rs:example}}
 ```
 

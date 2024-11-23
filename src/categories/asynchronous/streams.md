@@ -6,7 +6,7 @@
 
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a [`futures::stream::Stream`][c-futures::stream::Stream]{{hi:futures::stream::Stream}} of values over time.
 
-```rust
+```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/streams.rs:example}}
 ```
 
@@ -14,7 +14,7 @@ There are combinator-style methods such as [`futures::prelude::stream::StreamExt
 
 To process multiple items from a stream{{hi:Stream}} concurrently, use the [`futures::prelude::stream::StreamExt::for_each_concurrent`][c-futures::prelude::stream::StreamExt::for_each_concurrent]{{hi:futures::prelude::stream::StreamExt::for_each_concurrent}}⮳ and [`futures::prelude::stream::TryStreamExt::try_for_each_concurrent`][c-futures::prelude::stream::TryStreamExt::try_for_each_concurrent]{{hi:futures::prelude::stream::TryStreamExt::try_for_each_concurrent}}⮳ methods:
 
-```rust,noplayground
+```rust,editable,noplayground
 {{#include ../../../deps/tests/cats/asynchronous/streams2.rs:example}}
 ```
 
