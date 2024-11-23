@@ -2,7 +2,6 @@
 
 [Introduction](index.md)
 [Index of examples](examples_index.md)
-[Index](word_index.md)
 
 ---
 
@@ -457,6 +456,8 @@
   - [Optional preprocessors](contributing/optional_preprocessors.md)
   - [API documentation](contributing/api_documentation.md)
   - [Crate publication](contributing/publication.md)
+
+[Index](word_index.md)
 
 [Thanks](thanks.md)
 

@@ -27,7 +27,7 @@ The "Rust How-to" project started as a set of notes kept while the author was le
 
 ## How to read this book
 
-1) The left sidebar is organized by topic.
+The left sidebar is organized by topic.
 
 - The book first quickly summarizes the basics of the [language][p-lang] and often-used elements of the [standard library][p-standard-library].
 - The crates section provides pointers on how to locate key crates and provides alphabetical and categorical indices of crates used in the book.
@@ -37,9 +37,9 @@ The "Rust How-to" project started as a set of notes kept while the author was le
 - [Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details. So are [development tools][p-development-tools].
 - programming domains such as [CLI][p-cli] and [Web][p-web-programming] development.
 
-2) The [links][p-links] section provides pointers to notable Rust websites, learning resources, cheat sheets, books, and code examples...
+The [links][p-links] section provides pointers to notable Rust websites, learning resources, cheat sheets, books, and code examples...
 
-3) The [contributing][p-contributing] section details how to contribute to the book itself.
+The [contributing][p-contributing] section details how to contribute to the book itself.
 
 New Rust programmers should be comfortable reading from the first section to the last, and doing so should give one a strong overview of the crate ecosystem. Click on a topic in the sidebar to navigate to the page for that section of the book.
 
@@ -96,7 +96,7 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 
 In most examples, we have chosen to use `anyhow`'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom `Result` / `Error` types.
 
-```rust,editable
+```rust,editable,no_playground
 use anyhow::Result;
 ```
 
