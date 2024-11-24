@@ -29,6 +29,7 @@ fn main() {
             Person::new("Zoe".to_string(), 25),
         ]
     );
+    println!("{:?}", people);
 
     // Sort people by age
     people.sort_by(|a, b| b.age.cmp(&a.age));
@@ -41,6 +42,8 @@ fn main() {
             Person::new("John".to_string(), 1),
         ]
     );
+
+    println!("{:?}", people);
 }
 // ANCHOR_END: example
 
