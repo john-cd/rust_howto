@@ -2668,6 +2668,7 @@
 [c-std-badge]: https://img.shields.io/badge/std-firebrick?logo=rust
 [c-std-core::cell::OnceCell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
 [c-std-core::iter::Iterator::filter_map]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
+[c-std::panic]: https://doc.rust-lang.org/std/macro.panic.html
 [c-std::borrow::Borrow]: https://doc.rust-lang.org/std/borrow/trait.Borrow.html
 [c-std::borrow::Cow::into_owned]: https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.into_owned
 [c-std::borrow::Cow]: https://doc.rust-lang.org/std/borrow/enum.Cow.html

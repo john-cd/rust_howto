@@ -84,7 +84,6 @@ TODO verify all crates are added to at least one category above
 [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}
 [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}
 [![envy][c-envy-badge]][c-envy]{{hi:envy}}
-[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}
 [![exa][c-exa-badge]][c-exa]{{hi:exa}}
 [![eyre][c-eyre-badge]][c-eyre]{{hi:eyre}}
 [![flagset][c-flagset-badge]][c-flagset]{{hi:flagset}}

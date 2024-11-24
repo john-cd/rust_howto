@@ -33,7 +33,7 @@ The left sidebar is organized by topic.
 - The crates section provides pointers on how to locate key crates and provides alphabetical and categorical indices of crates used in the book.
 - The bulk of the book is divided in sections named after the `crates.io` [categories][crates.io-category_slugs]⮳ whenever possible.
 - Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c-rand-badge]][c-rand], and which categories on [`crates.io`][crates.io-website]{{hi:crates.io}} those crates belong to, like [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}.
-- The book focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [p-debugging][p-debugging]...
+- The book focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [debugging][p-debugging]...
 - [Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details. So are [development tools][p-development-tools].
 - programming domains such as [CLI][p-cli] and [Web][p-web-programming] development.
 

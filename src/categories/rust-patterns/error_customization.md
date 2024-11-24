@@ -4,7 +4,7 @@
 
 Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
-## Anyhow {#anyhow}
+## `anyhow` {#anyhow}
 
 [![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}}  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io]  [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -16,7 +16,7 @@ Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Resu
 
 Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
 
-## thisError {#thiserror}
+## `thisError` {#thiserror}
 
 [![thiserror][c-thiserror-badge]][c-thiserror]{{hi:thiserror}}
 
@@ -61,9 +61,11 @@ A fork of `anyhow` that gives you more control over the format of the generated 
 
 [![eyre][c-eyre-badge]][c-eyre]{{hi:eyre}}
 
-[![error_chain][c-error_chain-badge]][c-error_chain]{{hi:error_chain}}
-
 Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecated.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO
+</div>
