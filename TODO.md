@@ -2,6 +2,8 @@
 
 - [ ] polish the intro, add links
 - [ ] finish to polish the links section
+- [ ] fix error handling / customization section
+- [ ] add `println!` to all examples
 - [ ] review all examples and mark them as ```rust,noplayground  as needed
 - [ ] examples: make sure that there is an output when run in the playground
 - [ ] review each .md file in turn - WIP
