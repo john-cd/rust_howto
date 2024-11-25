@@ -531,9 +531,9 @@
 [ex-rust-patterns-rust-idioms]: categories/rust-patterns/rust_idioms.md#rust-idioms
 [ex-rust-patterns-thiserror]: categories/rust-patterns/error_customization.md#thiserror
 [ex-rust-patterns-unwrap-or-else]: categories/rust-patterns/error_handling.md#unwrap-or-else
-[ex-science-candle]: categories/science/machine_learning.md#candle
-[ex-science-linfa]: categories/science/machine_learning.md#linfa
-[ex-science-others]: categories/science/machine_learning.md#others
+[ex-science-candle]: categories/science/_machine_learning.md#candle
+[ex-science-linfa]: categories/science/_machine_learning.md#linfa
+[ex-science-others]: categories/science/_machine_learning.md#others
 [ex-science_geo-geo]: categories/science_geo/geo.md#geo
 [ex-science_neuroscience-neuro]: categories/science_neuroscience/neuro.md#neuro
 [ex-science_robotics-bonsai-bt]: categories/science_robotics/useful_robotics_tools_and_libs.md#bonsai-bt

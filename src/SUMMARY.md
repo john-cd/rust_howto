@@ -54,7 +54,8 @@
 - [API bindings](categories/api-bindings/_index.md)
   - [Interop with Python](categories/api-bindings/python_interop.md)
 
-- [Architecture](other/architecture/architecture.md)
+- [Architecture](other/architecture/_index.md)
+  - [Architecture](other/architecture/architecture.md)
 
 - [Audio](categories/multimedia_audio/_index.md)
   - [Audio](categories/multimedia_audio/audio.md)
@@ -74,7 +75,7 @@
 - [Caching](categories/caching/_index.md)
   - [LRU caching](categories/caching/lru.md)
 
-- [Cloud](other/cloud/index.md)
+- [Cloud](other/cloud/_index.md)
   - [Rust on AWS](other/cloud/aws.md)
   - [Serverless computing](other/cloud/serverless.md)
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
@@ -115,9 +116,10 @@
   - [Environment variables](categories/config/environment_variables.md)
   - [Configuration management](categories/config/configuration.md)
 
-- [Containers](other/containers/containers.md)
+- [Containers](other/containers/_index.md)
+  - [Containers](other/containers/containers.md)
 
-- [Cross-platform Development](other/cross_platform/index.md)
+- [Cross-platform Development](other/cross_platform/_index.md)
   - [Crux](other/cross_platform/crux.md)
 
 - [Cryptography](categories/cryptography/index.md)
@@ -125,7 +127,7 @@
   - [Password hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
 
-- [Data processing](other/data_processing/index.md)
+- [Data processing](other/data_processing/_index.md)
   - [CSV](other/data_processing/csv.md)
   - [Dataframes](other/data_processing/dataframes.md)
   - [Data visualization](other/data_processing/data_visualization.md)
@@ -207,7 +209,7 @@
   - [Testing](categories/development-tools_testing/testing.md)
   - [Fuzzing](categories/development-tools_testing/fuzzing.md)
 
-- [DevOps](other/devops/index.md)
+- [DevOps](other/devops/_index.md)
   - [DevOps](other/devops/devops.md)
   - [Dependency Management](other/devops/dependency_management.md)
   - [Git Hooks](other/devops/git_hooks.md)
@@ -258,7 +260,7 @@
 - [Graphics](categories/graphics/_index.md)
   - [WebGPU](categories/graphics/webgpu.md)
 
-- [GPU programming](other/gpu/index.md)
+- [GPU programming](other/gpu/_index.md)
   - [GPU](other/gpu/gpu.md)
 
 - [GUI](categories/gui/_index.md)
@@ -286,7 +288,7 @@
 - [Localization](categories/localization/_index.md)
   - [Localization](categories/localization/localization.md)
 
-- [Machine learning](categories/science/machine_learning.md)
+- [Machine learning](categories/science/_machine_learning.md)
 
 - [Mathematics](categories/mathematics/index.md)
   - [Linear algebra](categories/mathematics/linear_algebra.md)
@@ -370,7 +372,7 @@
 - [Science - Neuro](categories/science_neuroscience/_index.md)
   - [Neuro](categories/science_neuroscience/neuro.md)
 
-- [Scripting](other/scripting/index.md)
+- [Scripting](other/scripting/_index.md)
   - [Rhai](other/scripting/rhai.md)
 
 - [Simulation](categories/simulation/_index.md)
@@ -431,7 +433,7 @@
 - [Web programming - websocket](categories/web-programming_websocket/_index.md)
   - [Websocket](categories/web-programming_websocket/websocket.md)
 
-- [Written in Rust](other/written-in-rust/index.md)
+- [Written in Rust](other/written-in-rust/_index.md)
   - [Development tools](other/written-in-rust/development_tools.md)
   - [Python tools](other/written-in-rust/python_tools.md)
   - [Others](other/written-in-rust/others.md)
