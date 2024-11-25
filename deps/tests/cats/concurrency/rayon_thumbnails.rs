@@ -9,8 +9,6 @@ use glob::MatchOptions;
 use image::imageops::FilterType;
 use rayon::prelude::*;
 
-// TODO address the need for test jpg
-
 fn main() -> Result<()> {
     let options: MatchOptions = Default::default();
     let files: Vec<_> = glob_with("*.jpg", options)?
@@ -19,7 +17,7 @@ fn main() -> Result<()> {
 
     if files.is_empty() {
         println!("No .jpg files found in current directory");
-        return Ok(()); // or use anyhow::bail!()
+        return Ok(());
     }
 
     let thumb_dir = "thumbnails";
@@ -68,3 +66,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// TODO address the need for test jpg

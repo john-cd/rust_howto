@@ -6,9 +6,11 @@ pub fn main() -> Result<()> {
     let mut conn = Connection::open("temp/cats.db")?;
 
     successful_tx(&mut conn)?;
+    println!("Successful transaction.");
 
     let res = rolled_back_tx(&mut conn);
     assert!(res.is_err());
+    println!("Attempt to insert the same name in a unique column fails. The transaction was rolled-back.");
 
     Ok(())
 }

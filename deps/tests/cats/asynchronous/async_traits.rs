@@ -26,7 +26,7 @@ async fn do_async_op() -> bool {
 }
 
 async fn log_health_check_failure() {
-  println!("Health check failure");
+    println!("Health check failure");
 }
 
 #[tokio::main]

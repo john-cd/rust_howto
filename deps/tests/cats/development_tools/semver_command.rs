@@ -22,7 +22,7 @@ fn main() -> Result<()> {
         .split(" ")
         .last()
         .ok_or_else(|| anyhow!("Invalid command output"))?
-        .trim(); // remove any extraneous newlines
+        .trim(); // Remove any extraneous newlines
     let parsed_version =
         Version::parse(version).context(format!("version: {}", version))?;
 
@@ -32,7 +32,7 @@ fn main() -> Result<()> {
             version_constraint
         );
     }
-
+    println!("{:?}", parsed_version);
     Ok(())
 }
 // ANCHOR_END: example
@@ -42,3 +42,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// TODO

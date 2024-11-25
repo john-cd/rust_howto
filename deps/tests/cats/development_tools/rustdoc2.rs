@@ -21,12 +21,14 @@ fn new(name: &str) -> Person {
     }
 }
 
+#[derive(Debug)]
 struct Person {
     name: String,
 }
 
 fn main() {
-    let _ = new("John");
+    let john = new("John");
+    println!("{:?}", john);
 }
 // ANCHOR_END: example
 

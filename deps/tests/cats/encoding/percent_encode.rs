@@ -15,10 +15,12 @@ fn main() -> Result<(), Utf8Error> {
 
     let iter = utf8_percent_encode(input, FRAGMENT);
     let encoded: String = iter.collect();
+    println!("{}", encoded);
     assert_eq!(encoded, "confident,%20productive%20systems%20programming");
 
     let iter = percent_decode(encoded.as_bytes());
     let decoded = iter.decode_utf8()?;
+    println!("{}", decoded);
     assert_eq!(decoded, "confident, productive systems programming");
 
     Ok(())

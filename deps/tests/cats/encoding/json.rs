@@ -4,7 +4,7 @@ use serde_json::Error;
 use serde_json::Value;
 
 fn main() -> Result<(), Error> {
-    let j = r#"{
+    let j: &str = r#"{
                  "userid": 103609,
                  "verified": true,
                  "access_privileges": [
@@ -15,7 +15,7 @@ fn main() -> Result<(), Error> {
 
     let parsed: Value = serde_json::from_str(j)?;
 
-    let expected = json!({
+    let expected: Value = json!({
         "userid": 103609,
         "verified": true,
         "access_privileges": [
@@ -23,7 +23,7 @@ fn main() -> Result<(), Error> {
             "admin"
         ]
     });
-
+    println!("{}", expected);
     assert_eq!(parsed, expected);
 
     Ok(())

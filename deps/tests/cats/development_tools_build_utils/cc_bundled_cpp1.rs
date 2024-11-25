@@ -1,3 +1,4 @@
+// ANCHOR: example
 // extern "C" {
 //     fn multiply(x: i32, y: i32) -> i32;
 // }
@@ -7,6 +8,7 @@
 //         println!("{}", multiply(5, 7));
 //     }
 // }
+// ANCHOR_END: example
 
 // // TODO
 // #[test]

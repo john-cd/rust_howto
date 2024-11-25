@@ -6,6 +6,7 @@ fn main() {
     let v = a.into_inner();
 
     assert_eq!(v, 7);
+    println!("{}", v);
 }
 // ANCHOR_END: example
 

@@ -15,6 +15,8 @@ fn main() {
     assert!(!vec.par_iter().all(|n| (*n % 2) == 0));
     assert!(vec.par_iter().any(|n| *n > 8));
     assert!(!vec.par_iter().all(|n| *n <= 8));
+
+    println!("{:?}", vec);
 }
 // ANCHOR_END: example
 

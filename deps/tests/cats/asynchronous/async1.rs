@@ -13,7 +13,8 @@ async fn first_task() -> SomeStruct {
     SomeStruct
 }
 
-async fn second_task_1(_s: &SomeStruct) { // ...
+async fn second_task_1(_s: &SomeStruct) {
+    // ...
     println!("Second task, part 1");
 }
 

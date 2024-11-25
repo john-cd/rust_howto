@@ -29,8 +29,7 @@ async fn countdown_subsystem(
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Init logging
-    tracing_subscriber::fmt()
-        .init();
+    tracing_subscriber::fmt().init();
 
     // Setup and execute subsystem tree
     Toplevel::new(|s| async move {

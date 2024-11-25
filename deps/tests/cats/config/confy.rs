@@ -2,7 +2,7 @@
 use serde::Deserialize;
 use serde::Serialize;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 struct MyConfig {
     version: u8,
     api_key: String,
@@ -19,8 +19,9 @@ impl ::std::default::Default for MyConfig {
 }
 
 fn main() -> Result<(), confy::ConfyError> {
-    let _cfg: MyConfig = confy::load("my-app-name", None)?;
+    let cfg: MyConfig = confy::load("my-app-name", None)?;
     // confy::store("my-app-name", None, cfg)?;
+    println!("{:?}", cfg);
     Ok(())
 }
 // ANCHOR_END: example
@@ -30,3 +31,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// TODO

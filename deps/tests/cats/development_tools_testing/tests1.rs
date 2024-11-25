@@ -37,8 +37,8 @@ mod tests {
         };
 
         assert!(larger.can_hold(&smaller));
-        // or assert_eq!(result, some_const);
-        // or assert_ne!
+        // You may also use: assert_eq!(result, some_const);
+        // or assert_ne!(...)
     }
 
     // This test passes if the code inside the function panics;
@@ -64,7 +64,7 @@ mod tests {
     #[ignore = "This test takes an hour to run. Only run it manually when needed"]
     #[test]
     fn expensive_test() {
-        // long-running code
+        // Long-running code
     }
 }
 // ANCHOR_END: example

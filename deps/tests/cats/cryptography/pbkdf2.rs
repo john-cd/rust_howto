@@ -35,6 +35,8 @@ fn main() -> Result<(), Unspecified> {
         password.as_bytes(),
         &pbkdf2_hash,
     );
+    assert!(should_succeed.is_ok());
+
     let wrong_password = "Definitely not the correct password";
     let should_fail = pbkdf2::verify(
         pbkdf2::PBKDF2_HMAC_SHA512,
@@ -43,8 +45,6 @@ fn main() -> Result<(), Unspecified> {
         wrong_password.as_bytes(),
         &pbkdf2_hash,
     );
-
-    assert!(should_succeed.is_ok());
     assert!(should_fail.is_err());
 
     Ok(())
@@ -55,3 +55,4 @@ fn main() -> Result<(), Unspecified> {
 fn test() {
     println!("{:?}", main());
 }
+// TODO

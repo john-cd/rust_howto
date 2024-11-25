@@ -1,3 +1,4 @@
+// ANCHOR: example
 // use std::ffi::CString;
 // use std::os::raw::c_char;
 
@@ -22,8 +23,10 @@
 //     let name = prompt("What's your name? ")?;
 //     let c_name = CString::new(name)?;
 //     unsafe { greet(c_name.as_ptr()) }
+//     println!("");
 //     Ok(())
 // }
+// ANCHOR_END: example
 
 // // TODO
 // #[test]

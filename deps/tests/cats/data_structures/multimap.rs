@@ -9,7 +9,7 @@ use multimap::MultiMap;
 fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
-        std::time::Duration::from_millis(1000), // rate limit interval
+        std::time::Duration::from_millis(1000), // Rate limit interval
     )?;
     // Retrieve the crate's information
     let crt = client.get_crate(crate_name)?;

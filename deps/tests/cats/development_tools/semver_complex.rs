@@ -21,6 +21,7 @@ fn main() -> Result<()> {
 
     let serialized_version = parsed_version.to_string();
     assert_eq!(&serialized_version, version_str);
+    println!("{}", serialized_version);
 
     Ok(())
 }

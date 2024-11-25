@@ -3,6 +3,7 @@ fn main() {
     let arr = &[1, 25, -4, 10];
     let max = find_max(arr);
     assert_eq!(max, Some(25));
+    println!("The maximum is {:?}", max);
 }
 
 fn find_max(arr: &[i32]) -> Option<i32> {

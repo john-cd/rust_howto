@@ -1,3 +1,4 @@
+// ANCHOR: example
 // extern "C" {
 //     fn print_app_info();
 // }
@@ -6,7 +7,9 @@
 //     unsafe {
 //         print_app_info();
 //     }
+// println!("");
 // }
+// ANCHOR_END: example
 
 // // TODO
 // #[ignore]

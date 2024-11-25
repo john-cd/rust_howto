@@ -1,3 +1,4 @@
+// ANCHOR: example
 // fn main() {
 //     cc::Build::new()
 //         .define("APP_NAME", "\"foo\"")
@@ -8,7 +9,9 @@
 //         .define("WELCOME", None)
 //         .file("src/foo.c")
 //         .compile("foo");
+// println!("");
 // }
+// ANCHOR_END: example
 
 // // TODO
 // #[ignore]

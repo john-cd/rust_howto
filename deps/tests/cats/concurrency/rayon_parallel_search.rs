@@ -11,6 +11,7 @@ fn main() {
     assert_eq!(f1, Some(&9));
     assert_eq!(f2, Some(&8));
     assert!(f3 > Some(&8));
+    println!("{:?}", v);
 }
 // ANCHOR_END: example
 

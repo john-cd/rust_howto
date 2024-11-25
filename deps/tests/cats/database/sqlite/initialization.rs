@@ -10,7 +10,7 @@ pub fn main() -> Result<()> {
                  id integer primary key,
                  name text not null unique
              )",
-        (), // empty list of parameters.
+        (), // Empty list of parameters.
     )?;
     conn.execute(
         "create table if not exists cats (
@@ -18,9 +18,9 @@ pub fn main() -> Result<()> {
                  name text not null,
                  color_id integer not null references cat_colors(id)
                  )",
-        (), // empty list of parameters.
+        (), // Empty list of parameters.
     )?;
-
+    println!("Tables created.");
     Ok(())
 }
 // ANCHOR_END: example

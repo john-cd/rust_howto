@@ -16,10 +16,10 @@ flags! {
         Baz,
     }
 }
-// ANCHOR_END: example
 
 // TODO
 fn main() {}
+// ANCHOR_END: example
 
 #[test]
 fn test() {
