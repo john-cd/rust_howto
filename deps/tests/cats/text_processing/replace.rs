@@ -15,6 +15,7 @@ fn reformat_dates(before: &str) -> Cow<str> {
 fn main() {
     let before = "2012-03-14, 2013-01-15 and 2014-07-05";
     let after = reformat_dates(before);
+    println!("{}", after);
     assert_eq!(after, "03/14/2012, 01/15/2013 and 07/05/2014");
 }
 // ANCHOR_END: example

@@ -5,7 +5,7 @@ use std::fs;
 use std::io::Error;
 
 fn main() -> Result<(), Error> {
-    // read `config_path` from the environment variable `CONFIG`.
+    // Read `config_path` from the environment variable `CONFIG`.
     // If `CONFIG` isn't set, fall back to a default config path.
     let config_path =
         env::var("CONFIG").unwrap_or("/etc/subversion/config".to_string());

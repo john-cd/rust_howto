@@ -12,7 +12,7 @@ fn main() -> Result<(), Error> {
     )?;
     let file = File::open("temp/content.txt")?;
     let map = unsafe { Mmap::map(&file)? };
-
+    println!("{:?}", map);
     let random_indexes = [0, 1, 2, 19, 22, 10, 11, 29];
     assert_eq!(&map[3..13], b"hovercraft");
     let random_bytes: Vec<u8> =

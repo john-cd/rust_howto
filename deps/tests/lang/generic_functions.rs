@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn generic<T>(_t: T) {
-    println!("got t");
+    println!("In `generic`");
 }
 
 // Explicitly specified type parameter `char` to `generic()`.

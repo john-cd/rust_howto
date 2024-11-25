@@ -1,7 +1,9 @@
 // ANCHOR: example
+
+// Note the `&mut` in the function's signature.
 fn change(some_string: &mut String) {
-    // note the `&mut`
     some_string.push_str(", world");
+    println!("{some_string}");
 }
 
 fn main() {

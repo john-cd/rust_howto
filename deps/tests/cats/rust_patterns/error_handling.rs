@@ -15,8 +15,7 @@ fn main() {
         .expect("Failed to read line");
 
     // Alternative: `unwrap` panics if there is an error
-    // let _greeting_file =
-    // std::fs::File::open("temp/hello.txt").unwrap();
+    // let _greeting_file = std::fs::File::open("temp/hello.txt").unwrap();
 }
 // ANCHOR_END: example
 
@@ -24,3 +23,4 @@ fn main() {
 fn test() {
     main();
 }
+// TODO

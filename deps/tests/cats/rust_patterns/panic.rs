@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    panic!("crash and burn");
+    panic!("Crash and burn");
 }
 // ANCHOR_END: example
 

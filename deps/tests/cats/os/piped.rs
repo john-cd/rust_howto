@@ -1,5 +1,5 @@
-#![cfg(target_family = "unix")]
 // ANCHOR: example
+#![cfg(target_family = "unix")]
 
 fn main() -> anyhow::Result<()> {
     use std::process::Command;

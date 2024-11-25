@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     child
         .stdin
         .as_mut()
-        .ok_or(anyhow!("Child process stdin has not been captured!"))?
+        .ok_or(anyhow!("Child process' stdin has not been captured!"))?
         .write_all(b"1234 56789")?;
 
     let output = child.wait_with_output()?;

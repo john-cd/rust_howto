@@ -1,12 +1,12 @@
+// ANCHOR: example
 fn main() {
-    // ANCHOR: example
     use std::borrow::Borrow;
     let mut my_string = String::new();
-    let example = std::borrow::Cow::from("example");
+    let example = std::borrow::Cow::from("Example");
     my_string.push_str(example.borrow());
     println!("{}", my_string);
-    // ANCHOR_END: example
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {

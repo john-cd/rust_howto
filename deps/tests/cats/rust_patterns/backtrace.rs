@@ -5,7 +5,7 @@
 
 // use anyhow::anyhow;
 // use anyhow::Context;
-// use anyhow::Result;
+use anyhow::Result;
 // use serde::Deserialize;
 
 // #[derive(Debug, Deserialize)]
@@ -46,10 +46,14 @@
 //     Ok(())
 // }
 
-fn main() {}
+fn main() -> Result<()> {
+    Ok(())
+}
 // ANCHOR_END: example
 
 #[test]
 fn test() {
-    main();
+    let res = main();
+    println!("{:?}", res);
+    assert!(res.is_ok());
 }

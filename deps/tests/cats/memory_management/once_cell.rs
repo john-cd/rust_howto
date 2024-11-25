@@ -6,6 +6,7 @@ fn main() {
     assert!(cell.get().is_none());
 
     let value: &String = cell.get_or_init(|| "Hello, World!".to_string());
+    println!("{value}");
     assert_eq!(value, "Hello, World!");
     assert!(cell.get().is_some());
 }

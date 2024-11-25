@@ -1,5 +1,5 @@
 // ANCHOR: example
-// on structs
+// On structs
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
 struct S(i32);
 

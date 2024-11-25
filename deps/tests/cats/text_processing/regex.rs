@@ -11,9 +11,9 @@ struct Re(Regex, Vec<&'static str>);
 // a global static
 static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     println!("Initializing Regexes...\n");
-    // A sorted map
+    // A sorted map:
     let mut m = BTreeMap::new();
-    // A Markdown inline link
+    // A Markdown inline link:
     // (?<name>  ) is a named capture group.
     // \s is a whitespace. \S is a not-whitespace.
     // [^!] excludes !
@@ -48,7 +48,7 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
             vec!["text", "label"],
         ),
     );
-    // A Markdown reference definition (with optional title)
+    // A Markdown reference definition (with optional title):
     // (?:  ) is a non-capturing group.
     // (?m) flags multi-line mode. ^ and $ are the beginning and end of a
     // line, respectively.
@@ -63,16 +63,16 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
 #[allow(dead_code)]
 fn extract_inline_links(contents: &str) {
     for (_, [text, link]) in GLOBAL_REGEX["[text](http...)"]
-    .0
-    // `captures_iter` iterates through `Captures`, which stores the
-    // capture groups for each match.
-    .captures_iter(contents)
-    // `extract` returns a tuple where
-    // the first element corresponds to the full substring of the contents
-    // that matched the regex. The second element is an array of
-    // substrings, with each corresponding to the substring that matched
-    // for a particular capture group.
-    .map(|c| c.extract())
+        .0
+        // `captures_iter` iterates through `Captures`, which stores the
+        // capture groups for each match.
+        .captures_iter(contents)
+        // `extract` returns a tuple where
+        // the first element corresponds to the full substring of the contents
+        // that matched the regex. The second element is an array of
+        // substrings, with each corresponding to the substring that matched
+        // for a particular capture group.
+        .map(|c| c.extract())
     {
         println!("[{text}]({link})\n");
     }

@@ -5,6 +5,7 @@ fn main() {
     let a = x.tan();
     let b = x.sin() / x.cos();
 
+    println!("a: {a}, b: {b}");
     assert_eq!(a, b);
 }
 // ANCHOR_END: example

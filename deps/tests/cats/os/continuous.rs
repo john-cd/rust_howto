@@ -14,11 +14,7 @@ fn main() -> Result<(), Error> {
         .spawn()?
         .stdout
         .ok_or_else(|| {
-            Error::new(
-                ErrorKind::Other,
-                "Could not capture standard
-    output.",
-            )
+            Error::new(ErrorKind::Other, "Could not capture standard output.")
         })?;
 
     let reader = BufReader::new(stdout);

@@ -25,7 +25,7 @@ impl Rectangle {
 
 fn main() {
     let sq = Rectangle::square(5);
-    println!("area: {}", sq.area());
+    println!("Area: {}", sq.area());
 }
 // ANCHOR_END: example
 

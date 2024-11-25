@@ -9,7 +9,7 @@ struct User {
 }
 
 fn main() {
-    // create an instance
+    // Create an instance
     let _user1 = User {
         active: true,
         username: String::from("someusername123"),

@@ -2,11 +2,11 @@
 fn foo(x: i32, unit_label: char) -> i32 {
     let y = {
         let z = 3;
-        x + z // expression at the end of a block - no semi-colon
+        x + z // Expression at the end of a block - no semi-colon
     };
 
     println!("The value of y is: {y}{unit_label}");
-    y // returns y - no semi-colon
+    y // Returns y - no semi-colon
 }
 
 fn main() {

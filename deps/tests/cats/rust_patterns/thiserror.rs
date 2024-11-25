@@ -36,5 +36,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 #[test]
 fn test() {
-    assert!(main().is_err())
+    let res = main();
+    println!("{:?}", res);
+    assert!(res.is_err())
 }

@@ -4,6 +4,7 @@ use nalgebra::DMatrix;
 fn main() -> Result<(), std::io::Error> {
     let row_slice: Vec<i32> = (1..5001).collect();
     let matrix = DMatrix::from_row_slice(50, 100, &row_slice);
+    println!("{}", matrix);
 
     // serialize matrix
     let serialized_matrix = serde_json::to_string(&matrix)?;

@@ -1,7 +1,7 @@
 #![allow(clippy::vec_init_then_push)]
 
+// ANCHOR: example
 fn main() {
-    // ANCHOR: example
     let mut v: Vec<i32> = Vec::new();
     v.push(5);
     v.push(6);
@@ -19,8 +19,8 @@ fn main() {
     for i in &mut v {
         *i += 50; // dereference operator
     }
-    // ANCHOR_END: example
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {

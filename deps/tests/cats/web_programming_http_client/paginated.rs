@@ -113,6 +113,8 @@ fn main() -> anyhow::Result<()> {
 // Requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
-    main()?;
+    let res = main();
+    println!("{:?}", res);
+    res?;
     Ok(())
 }

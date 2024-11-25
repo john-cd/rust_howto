@@ -25,7 +25,7 @@ impl Summary for Article {
 
 fn main() {
     let a = Article {
-        txt: String::from("some text"),
+        txt: String::from("Some text"),
     };
     notify(&a);
     notify2(&a);

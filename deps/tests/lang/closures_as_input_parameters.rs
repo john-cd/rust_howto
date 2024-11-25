@@ -22,7 +22,7 @@ where
 }
 
 fn main() {
-    apply(|| println!("applied"));
+    apply(|| println!("Applied"));
 }
 // ANCHOR_END: example
 

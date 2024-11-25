@@ -9,7 +9,7 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test_async_main() -> Result<()> {
+fn test() -> Result<()> {
     main()?;
     Ok(())
 }

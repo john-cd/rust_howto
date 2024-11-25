@@ -8,7 +8,7 @@ fn main() -> Result<(), ParseError> {
         "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open",
     )?;
     let cleaned: &str = &parsed[..Position::AfterPath];
-    println!("cleaned: {}", cleaned);
+    println!("`cleaned`: {}", cleaned);
     Ok(())
 }
 // ANCHOR_END: example

@@ -1,8 +1,11 @@
 // ANCHOR: example
 #![allow(deprecated)] // Removes the warning.
 
+// Deprecated function
 #[deprecated(since = "5.2.0", note = "Use bar instead")]
-pub fn foo() {}
+pub fn foo() {
+    println!("foo");
+}
 
 fn main() {
     foo();

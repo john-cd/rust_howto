@@ -5,7 +5,7 @@ fn parse_response(
 ) -> anyhow::Result<u32> {
     let body = response.text()?;
     let body = body.trim();
-    // println!("{body}");
+    // println!("Body: {body}");
     let b = body.parse::<u32>()?;
     Ok(b)
 }

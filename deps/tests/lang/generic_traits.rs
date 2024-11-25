@@ -5,8 +5,8 @@ trait Test<T> {
 
 struct SomeStruct;
 
+// Note the <> in two places:
 impl<T> Test<T> for SomeStruct {
-    // note the <> in two places
     fn test(_t: T) {
         println!("test");
     }

@@ -101,5 +101,7 @@ fn main() -> Result<()> {
 
 #[test]
 fn test() {
-    assert!(main().is_err());
+    let res = main();
+    println!("{:?}", res);
+    assert!(res.is_err());
 }

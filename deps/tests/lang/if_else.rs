@@ -1,12 +1,11 @@
 // ANCHOR: example
 fn main() {
     let number = 3;
-    let result = if number < 5 {
-        // condition must return a bool; `if` is an expression
-        println!("condition was true");
-        5
+    let result: u8 = if number < 5 {
+        println!("Condition was true");
+        5 // `if` is an expression
     } else {
-        println!("condition was false");
+        println!("Condition was false");
         6
     };
     println!("{}", result);

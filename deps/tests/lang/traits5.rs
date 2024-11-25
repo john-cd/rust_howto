@@ -11,7 +11,7 @@ fn a_function(item: &(impl Debug + Clone)) {
 
 fn some_function<T, U>(_t: &T, _u: &U) -> i32
 where
-    T: Debug + Clone, // note the `+`
+    T: Debug + Clone, // Note the `+`
     U: Debug + Clone,
 {
     42
