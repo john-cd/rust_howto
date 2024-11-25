@@ -1,5 +1,7 @@
 # Key crates
 
+{{#include index.incl.md}}
+
 Consult the following sites for crate recommendations:
 
 - [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳

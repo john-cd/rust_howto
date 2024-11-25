@@ -38,7 +38,7 @@
   - [AsRef](standard_library/asref.md)
   - [Automatic trait derivation](standard_library/derive.md)
 
-- [Crates](crates/crates.md)
+- [Crates](crates/index.md)
   - [Crates (alphabetic)](crates/crates_alphabetical.md)
   - [Crates (by category)](crates/crates_by_category.md)
 
