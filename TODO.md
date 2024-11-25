@@ -1,24 +1,20 @@
 # TODO
 
 - [ ] polish the intro, add links WIP
-- [ ] temp. hide archictecture, cloud, containers, machine learning, scripting
-- [ ] mask examples in hidden sections in the index of examples
-- [ ] add index.md to sections in `other`: Architecture, Cloud, Containers...
-- [ ] rethink crates section
-- [ ] fix incl.md for cargo plugins; add ref to crates
-- [ ] fix tables for databases
-- [ ] remove error_chain from table in rust patterns
+- [ ] in the index of examples, mask examples in hidden sections
+- [ ] polish crates section
+- [ ] fix incl.md table for cargo plugins; add ref to crates
+- [ ] fix incl.md tables for databases
 - [ ] finish to polish the links section WIP
 - [ ] fix error handling / customization section WIP
-- [ ] fix examples marked TODO
+- [ ] fix examples marked TODO; make sure that there is an output when run in the playground
 - [ ] review all examples and mark them as ```rust,noplayground  as needed
-- [ ] examples: make sure that there is an output when run in the playground
-- [ ] review each .md file in turn - WIP
-- [ ] add examples where needed - WIP
-- [ ] replace current badge markdown mess by a preprocessor command
-- [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
-- [ ] modify index of crates to point to the relevant recipes
 - [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
+- [ ] review each .md file in turn - WIP
+- [ ] replace current badge markdown mess by a preprocessor command
+- [ ] modify index of crates to point to the relevant recipes
+- [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
+- [ ] add examples where needed - WIP
 
 ## Tools
 
