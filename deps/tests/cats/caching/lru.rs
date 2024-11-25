@@ -16,7 +16,7 @@ fn main() {
     assert_eq!(cache.put("pear", 5), None);
 
     assert_eq!(*cache.get(&"pear").unwrap(), 5);
-    assert_eq!(*cache.get(&"banana").unwrap(), 4);
+    assert_eq!(cache.get(&"banana"), Some(&4));
     assert!(cache.get(&"apple").is_none());
 
     {
@@ -25,6 +25,7 @@ fn main() {
     }
 
     assert_eq!(*cache.get(&"banana").unwrap(), 6);
+    println!("{}", cache.get(&"banana").unwrap());
 }
 // ANCHOR_END: example
 

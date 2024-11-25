@@ -34,7 +34,7 @@ pub struct Cli {
     debug: u8,
 
     // // Alternatively, use the
-    // // [clap-verbosity-flag](https://docs.rs/clap-verbosity-flag/) crate:
+    // // `clap-verbosity-flag` crate:
     // // It adds the following flags through the entire program:
     // // -q silences output
     // // -v show warnings

@@ -20,12 +20,18 @@ impl Advertisement for Modal {
 }
 
 impl Modal {
-    async fn render_fullscreen(&self) {}
+    async fn render_fullscreen(&self) {
+        println!("Render fullscreen");
+    }
 
-    async fn hide_for_now(&self) {}
+    async fn hide_for_now(&self) {
+        println!("Hide for now");
+    }
 }
 
-async fn remind_user_to_join_mailing_list() {}
+async fn remind_user_to_join_mailing_list() {
+    println!("Please join our mailing list");
+}
 
 #[tokio::main]
 async fn main() {

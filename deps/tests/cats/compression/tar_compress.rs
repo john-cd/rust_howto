@@ -23,6 +23,7 @@ pub fn main() -> Result<(), std::io::Error> {
     // Archive the /var/log directory and all of its contents
     // (recursively), renaming it in the process
     tar.append_dir_all("temp/backup/var/log", "/var/log")?;
+    println!("`archive.tar.gz` file created!");
     Ok(())
 }
 // ANCHOR_END: example

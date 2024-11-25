@@ -11,7 +11,7 @@ pub fn main() -> Result<(), std::io::Error> {
     let tar = GzDecoder::new(tar_gz);
     let mut archive = Archive::new(tar);
     archive.unpack(".")?;
-
+    println!("archive file unpacked!");
     Ok(())
 }
 // ANCHOR_END: example

@@ -16,6 +16,8 @@ async fn do_health_check(mut hc: impl HealthCheck) {
     if !hc.check().await {
         // use as normal
         log_health_check_failure().await;
+    } else {
+        println!("Health check was normal");
     }
 }
 
@@ -23,7 +25,9 @@ async fn do_async_op() -> bool {
     true
 }
 
-async fn log_health_check_failure() {}
+async fn log_health_check_failure() {
+  println!("Health check failure");
+}
 
 #[tokio::main]
 async fn main() {

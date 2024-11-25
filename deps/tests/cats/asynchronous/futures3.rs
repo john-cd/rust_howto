@@ -14,7 +14,9 @@ async fn main() -> Result<()> {
     // Chain on a computation for when a future finished, passing the
     // result of the future to the provided closure f.
     let future_of_7 = new_future.then(|x| async move { x + 3 });
-    assert_eq!(future_of_7.await, 7);
+    let seven = future_of_7.await;
+    println!("{}", seven);
+    assert_eq!(seven, 7);
 
     // Conditional `Either` future
     let x = 6;
@@ -23,12 +25,15 @@ async fn main() -> Result<()> {
     } else {
         async { false }.right_future()
     };
-    assert!(!(future.await));
+    let not_true: bool = future.await;
+    assert!(!not_true);
 
     // Flatten nested futures
     let nested_future = async { async { 1 } };
     let future = nested_future.flatten();
-    assert_eq!(future.await, 1);
+    let flat = future.await;
+    println!("{flat}");
+    assert_eq!(flat, 1);
     Ok(())
 }
 // ANCHOR_END: example

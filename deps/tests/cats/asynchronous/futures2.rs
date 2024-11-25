@@ -2,6 +2,7 @@
 use futures::join;
 
 async fn foo(i: u32) -> u32 {
+    println!("{i}");
     i
 }
 

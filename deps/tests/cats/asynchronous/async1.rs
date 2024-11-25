@@ -9,17 +9,21 @@ struct SomeStruct;
 // asynchronous computation that might not have finished yet.
 async fn first_task() -> SomeStruct {
     // ...
+    println!("First task");
     SomeStruct
 }
 
 async fn second_task_1(_s: &SomeStruct) { // ...
+    println!("Second task, part 1");
 }
 
 // `async fn` is really syntaxic sugar for a function...
 #[allow(clippy::manual_async_fn)]
 fn second_task_2() -> impl Future<Output = ()> {
     // ...that contains an `async` block.
-    async {} // returns `Future<Output = ()>`
+    async {
+        println!("Second task, part 2");
+    } // returns `Future<Output = ()>`
 }
 
 async fn do_something() {
