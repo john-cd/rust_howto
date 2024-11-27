@@ -1,4 +1,4 @@
-# No-std
+# No `std`
 
 {{#include no_std.incl.md}}
 

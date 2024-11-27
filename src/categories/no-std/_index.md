@@ -1,4 +1,4 @@
-# No-std
+# No Standard Library
 
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No std}}
 
