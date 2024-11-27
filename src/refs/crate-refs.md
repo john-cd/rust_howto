@@ -919,7 +919,6 @@
 [c-dioxus-crates.io-badge]: https://img.shields.io/badge/crates.io-dioxus-crimson
 [c-dioxus-crates.io]: https://crates.io/crates/dioxus
 [c-dioxus-github-badge]: https://img.shields.io/badge/dioxus-steelblue?logo=github
-[c-dioxus-github]: https://github.com/DioxusLabs/dioxus
 [c-dioxus-github]: https://github.com/dioxuslabs/dioxus
 [c-dioxus-lib.rs-badge]: https://img.shields.io/badge/lib.rs-dioxus-yellow
 [c-dioxus-lib.rs]: https://lib.rs/crates/dioxus
@@ -2668,7 +2667,6 @@
 [c-std-badge]: https://img.shields.io/badge/std-firebrick?logo=rust
 [c-std-core::cell::OnceCell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
 [c-std-core::iter::Iterator::filter_map]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
-[c-std::panic]: https://doc.rust-lang.org/std/macro.panic.html
 [c-std::borrow::Borrow]: https://doc.rust-lang.org/std/borrow/trait.Borrow.html
 [c-std::borrow::Cow::into_owned]: https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.into_owned
 [c-std::borrow::Cow]: https://doc.rust-lang.org/std/borrow/enum.Cow.html
@@ -2746,6 +2744,7 @@
 [c-std::option::Option]: https://doc.rust-lang.org/std/option
 [c-std::panic::RefUnwindSafe]: https://doc.rust-lang.org/std/panic/trait.RefUnwindSafe.html
 [c-std::panic::UnwindSafe]: https://doc.rust-lang.org/std/panic/trait.UnwindSafe.html
+[c-std::panic]: https://doc.rust-lang.org/std/macro.panic.html
 [c-std::path::Path::strip_prefix]: https://doc.rust-lang.org/std/path/struct.Path.html#method.strip_prefix
 [c-std::process::Command]: https://doc.rust-lang.org/std/process/struct.Command.html
 [c-std::process::Output]: https://doc.rust-lang.org/std/process/struct.Output.html
