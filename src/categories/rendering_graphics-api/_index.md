@@ -10,5 +10,5 @@ Crates that provide direct access to the hardware's or the operating system's re
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: locate crates
+TODO P2: locate crates
 </div>

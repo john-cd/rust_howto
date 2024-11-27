@@ -18,5 +18,5 @@ Shared solutions for particular situations specific to programming in Rust.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize / write
+TODO P1: organize / write
 </div>

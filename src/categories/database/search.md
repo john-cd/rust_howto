@@ -60,5 +60,5 @@ A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO expand
+TODO P2 expand
 </div>

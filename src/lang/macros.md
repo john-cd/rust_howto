@@ -16,6 +16,6 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P1: write
 link to dev tools > proc macros
 </div>

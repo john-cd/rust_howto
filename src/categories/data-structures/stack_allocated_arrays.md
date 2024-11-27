@@ -38,5 +38,5 @@ Stack-allocated arrays in 100% safe Rust code. `tinyvec` requires items to imple
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 </div>

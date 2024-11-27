@@ -58,8 +58,8 @@ Crossterm is a pure-rust, terminal manipulation library that makes it possible t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO  expand crossterm
-TODO: ansi_term is archived
+TODO P1 expand crossterm
+TODO P0 ansi_term is archived
 
 Most popular
 

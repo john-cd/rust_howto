@@ -48,5 +48,5 @@ serde = { version = "1.0", features = ["derive"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: interaction between config and env variables
+TODO P1 interaction between config and env variables
 </div>

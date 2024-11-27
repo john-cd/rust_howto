@@ -5,5 +5,5 @@
 | [Map, then, either, flatten][ex-asynchronous-map-then-either-flatten] | [![futures][c-futures-badge]][c-futures] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

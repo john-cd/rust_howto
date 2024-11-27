@@ -18,7 +18,7 @@ fn main() {
 // ANCHOR_END: example
 
 // BEWARE: supertrait are NOT inheritance!
-// TODO
+// TODO P1
 #[test]
 fn test() {
     main();

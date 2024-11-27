@@ -87,5 +87,5 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: [tracing-next-steps][c-tracing-next-steps]
+TODO P1 [tracing-next-steps][c-tracing-next-steps]
 </div>

@@ -80,20 +80,20 @@ digest = "0.10.7"
 doc-comment = "0.3"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
-# druid = { version = "0.8.3", optional = true } # TODO review conflicts
+# druid = { version = "0.8.3", optional = true } # TODO P3 review conflicts
 duct = { version = "0.13.7", optional = true }
 dyn-clone = "1.0.17"
 ed25519-dalek = "2.0"                                           # security update
 egui = { version = "0.29.1", optional = true }
 elasticsearch = { version = "8.15.0-alpha.1", optional = true } # NOTE: alpha version
-# embassy = { version = "0.0.0", optional  = true } # TODO review installation / required dependencies
+# embassy = { version = "0.0.0", optional  = true } # TODO P1 review installation / required dependencies
 env_logger = "0.11.5"
 envy = "0.4.2"
-# exa = { version = "0.10.1", optional = true } # TODO review conflicts
+# exa = { version = "0.10.1", optional = true } # TODO P3 review conflicts
 # eyre = "0.6.12" # outdated, see color-eyre
 flagset = "0.4.6"
 flate2 = "1.0.34"
-# floem = { version = "0.1.1", optional  = true } # TODO review requirements
+# floem = { version = "0.1.1", optional  = true } # TODO P3 review requirements
 form_urlencoded = { version = "1.2.1", optional = true }
 futures = "0.3.31"
 futures-executor = "0.3.31"
@@ -146,7 +146,7 @@ mongodb = { version = "3.1.0", optional = true }
 monostate = { version = "0.1.13", optional = true }
 multimap = "0.10.0"
 nalgebra = { version = "0.33.2", features = ["serde-serialize"] }
-# native-windows-gui = { version = "1.0.13", optional = true }   # TODO review pre-requisites
+# native-windows-gui = { version = "1.0.13", optional = true }   # TODO P3 review pre-requisites
 # native-windows-derive = { version = "1.0.3", optional = true } # Required only if the derive macro is used.
 ndarray = { version = "0.16.1", features = ["approx"] }
 nom = { version = "7.1.3", optional = true }
@@ -169,7 +169,7 @@ postscript = { version = "0.18.2", optional = true }
 postage = { version = "0.5.0", optional = true }
 postgres = "0.19.9"
 proc-macro2 = { version = "1.0.89", optional = true }
-pyo3 = "0.21"                                                             # pinned to 0.21 to avoid conflict with `polars`
+pyo3 = "0.21"                                                               # pinned to 0.21 to avoid conflict with `polars`
 pyoxidizer = { version = "0.24.0", optional = true }
 quote = { version = "1.0.37", optional = true }
 r3bl_tuify = { version = "0.2.0", optional = true }
@@ -214,7 +214,7 @@ tar = "0.4.42"
 tauri = { version = "2.0.6", optional = true }           # requires multiple libraries. See Dockerfile
 # tempdir = "0.3.7" # outdated, replaced by tempfile
 tempfile = "3.14.0"
-# termbook = "1.4.2" # requires mdbook; TODO review pre-requisites
+# termbook = "1.4.2" # requires mdbook; TODO P3 review pre-requisites
 thiserror = "2.0.1"
 threadpool = "1.8.1"
 time = "0.3.36"
@@ -236,9 +236,9 @@ walkdir = "2.5.0"
 wasmtime = "27.0.0"
 watchmaker = { version = "2.0.0", optional = true }
 watt = { version = "0.5.0", optional = true }
-# wgpu = { version = "23.0.0", optional = true } # TODO review prerequisites
+# wgpu = { version = "23.0.0", optional = true } # TODO P3 review prerequisites
 windows = { version = "0.58.0", optional = true }
-# xilem = { version = "0.1.0", optional = true } # TODO review prerequisites
+# xilem = { version = "0.1.0", optional = true } # TODO P3 review prerequisites
 xshell = { version = "0.2.6", optional = true }
 # xsv = "0.13.0" # not a lib
 yapp = { version = "0.4.1", optional = true }

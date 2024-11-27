@@ -12,5 +12,5 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P1 expand
 </div>

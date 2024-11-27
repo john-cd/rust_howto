@@ -1,5 +1,5 @@
 // ANCHOR: example
-// TODO rewrite
+// TODO P0 rewrite
 
 // use std::fmt;
 

@@ -40,5 +40,5 @@ Druid is a relatively mature alternative to Iced/Slint, however it has been disc
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO organize
+TODO P1 organize
 </div>

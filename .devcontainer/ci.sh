@@ -11,7 +11,7 @@ echo "----------"
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
-## TODO
+## TODO P2
 ## Check dependencies
 # cargo deny check \
 #     && cargo outdated --exit-code 1 \

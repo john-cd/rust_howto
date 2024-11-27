@@ -1,5 +1,4 @@
 // ANCHOR: example
-// TODO
 #![allow(dead_code)]
 
 trait Container {
@@ -30,3 +29,5 @@ fn main() {
 fn test() {
     main();
 }
+
+// TODO P1 deadcode?

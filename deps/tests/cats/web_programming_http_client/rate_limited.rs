@@ -7,8 +7,6 @@
 // use anyhow::Result;
 // use reqwest::StatusCode;
 
-// // TODO fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28
-
 // fn main() -> Result<()> {
 //     let url = "https://api.github.com/users/john-cd";
 //     let client = reqwest::blocking::Client::new();
@@ -65,4 +63,5 @@ fn test() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// TODO
+
+// TODO P0 fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28

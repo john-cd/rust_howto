@@ -4,5 +4,5 @@
 | [Use the `dapr` distributed runtime with Rust][ex-cloud-dapr] | [![dapr-rust-sdk-github][dapr-rust-sdk-github-badge]][dapr-rust-sdk-github] |  |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

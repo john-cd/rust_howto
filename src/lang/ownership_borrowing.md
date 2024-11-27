@@ -52,7 +52,7 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add text
+TODO P1: add text
 
 ## Memory Safety {#memory-safety}
 

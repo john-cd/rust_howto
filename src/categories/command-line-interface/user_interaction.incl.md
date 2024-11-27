@@ -4,5 +4,5 @@
 | [Display progress bars and spinners][ex-command-line-interface-indicatif] | [![indicatif][c-indicatif-badge]][c-indicatif] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

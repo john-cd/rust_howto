@@ -37,6 +37,6 @@ Particularly good for read-heavy workloads.
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add crate badges
-TODO add flurry
+TODO P1 add crate badges
+TODO P1 add flurry example
 </div>

@@ -4,7 +4,7 @@
 
 [Install Rust][rust-install-rust]{{hi:Rust installation}}⮳
 <div class="hidden">
-TODO: header
+TODO P1: header
 </div>
 
 ## Key Steps {#rust-install}
@@ -52,5 +52,5 @@ cargo run # run the executable
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P1: expand
 </div>

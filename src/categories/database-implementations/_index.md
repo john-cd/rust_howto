@@ -16,5 +16,5 @@ Databases allow clients to store and query large amounts of data in an efficient
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P2 expand
 </div>

@@ -48,7 +48,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-// TODO
+// TODO P2 docker compose?
 #[ignore = "requires a running postgres instance"]
 #[test]
 fn test() -> anyhow::Result<()> {

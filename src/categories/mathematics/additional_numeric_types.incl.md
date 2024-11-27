@@ -6,5 +6,5 @@
 | [Sortable Floats][ex-mathematics-sortable-floats] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

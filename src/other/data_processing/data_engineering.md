@@ -36,6 +36,6 @@ Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineer
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize / edit
+TODO P1: organize / edit
 cover ballista
 </div>

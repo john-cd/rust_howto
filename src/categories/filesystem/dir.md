@@ -110,8 +110,8 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}то
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO cleanup badges
-TODO cover globset
+TODO P1 cleanup badges
+TODO P1 cover globset
 
 [![globset][c-globset-badge]][c-globset]{{hi:globset}}
 [![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io]

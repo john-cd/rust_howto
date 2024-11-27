@@ -3,5 +3,5 @@
 | [multimedia][ex-multimedia-multimedia] |  | [![cat-multimedia][cat-multimedia-badge]][cat-multimedia] |
 
 <div class="hidden">
-TODO: add links
+TODO P2: add links
 </div>

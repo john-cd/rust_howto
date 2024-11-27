@@ -8,5 +8,5 @@
 | [Create random passwords from a set of user-defined characters][ex-algorithms-create-random-passwords-from-a-set-of-user-defined-characters] | [![rand][c-rand-badge]][c-rand] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] [![cat-os][cat-os-badge]][cat-os] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

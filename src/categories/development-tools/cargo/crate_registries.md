@@ -16,6 +16,6 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P1 expand
 
 </div>

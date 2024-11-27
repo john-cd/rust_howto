@@ -47,5 +47,5 @@ Example using specialized channels for tickers{{hi:Tickers}} and timeout{{hi:Tim
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize see also
+TODO P1 organize see also
 </div>

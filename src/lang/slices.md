@@ -12,7 +12,7 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add text
+TODO P1: add text
 
 [`slice::sort_by`][primitive-slice::sort_by]
 [`slice::split_at`][primitive-slice::split_at]

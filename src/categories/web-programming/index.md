@@ -26,8 +26,8 @@ Create applications for the web{{hi:Web programming}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize
-TODO cover http crate
+TODO P1: organize
+TODO P1 cover http crate
 
 ## HTTP Types & Interfaces
 

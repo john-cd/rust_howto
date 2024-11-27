@@ -108,8 +108,8 @@ EOF
 #   && cargo binstall --no-confirm mdbook-keeper \
 #   && cargo binstall --no-confirm toml2json \
 
-## TODO CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
-## TODO https://lib.rs/crates/mdbook-open-on-gh
+## TODO P3 CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
+## See https://lib.rs/crates/mdbook-open-on-gh
 # RUN cargo binstall --no-confirm mdbook-open-on-gh
 
 # ------------------------------
@@ -213,7 +213,7 @@ CMD [ "sleep", "infinity" ]
 ## Stage for Continuous Integration
 FROM base AS ci
 
-## TODO consider switching to slim or Alpine image for CI. Need to solve openssl install
+## TODO P4 consider switching to slim or Alpine image for CI. Need to solve openssl install
 ## https://stackoverflow.com/questions/70561544/rust-openssl-could-not-find-directory-of-openssl-installation
 ## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
 # ENV LC_CTYPE=en_US.UTF-8

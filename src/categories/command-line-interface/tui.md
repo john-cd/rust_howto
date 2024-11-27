@@ -23,5 +23,5 @@ A library to build rich terminal user interfaces or dashboards
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO expand
+TODO P1 expand
 </div>

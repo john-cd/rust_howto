@@ -19,5 +19,5 @@ cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add
+TODO P1: add
 </div>

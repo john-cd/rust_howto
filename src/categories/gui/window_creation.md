@@ -28,5 +28,5 @@ The TAO of cross-platform windowing. A library in Rust built for Tauri.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 </div>

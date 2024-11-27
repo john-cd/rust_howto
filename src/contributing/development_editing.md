@@ -22,5 +22,5 @@ Verify the markdown is properly rendered using `just serve` or `mdbook serve --o
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: review
+TODO P1: review
 </div>

@@ -38,7 +38,7 @@ mdbook serve --open
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize, expand
+TODO P1 organize, expand
 
 - [ ] consider [mdbook-cmdrun][c-mdbook_cmdrun-github]{{hi:mdbook-cmdrun}} A mdbook preprocessor for runnning arbitrary (shell) commands in a markdown file
 - [ ] consider [mdbook-journal][c-mdbook_journal-website]{{hi:mdbook-journal}} or [mdbook-tera][c-mdbook_tera-github]{{hi:mdbook-tera}} for templating

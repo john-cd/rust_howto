@@ -59,5 +59,5 @@ The basic premise is thus to:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: cornucopia
+TODO P2 cornucopia
 </div>

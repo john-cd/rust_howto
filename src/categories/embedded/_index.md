@@ -17,7 +17,7 @@ Crates that are primarily useful on embedded devices or without an operating sys
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write; cover:
+TODO P2 write; cover:
 portable-atomic
 embedded-hal
 postcard

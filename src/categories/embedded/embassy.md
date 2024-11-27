@@ -13,5 +13,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: add embassy, others
+TODO P2 add embassy, others
 </div>

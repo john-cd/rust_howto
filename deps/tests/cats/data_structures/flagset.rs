@@ -17,7 +17,6 @@ flags! {
     }
 }
 
-// TODO
 fn main() {}
 // ANCHOR_END: example
 
@@ -25,3 +24,5 @@ fn main() {}
 fn test() {
     main();
 }
+
+// TODO P1 main

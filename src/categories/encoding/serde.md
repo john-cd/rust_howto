@@ -38,6 +38,6 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 Supported formats: https://docs.rs/serde/latest/serde/#data-formats
 </div>

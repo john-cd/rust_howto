@@ -8,5 +8,5 @@ Store the results of previous computations in order to reuse the results.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO cover Moka, etc
+TODO P2 cover Moka, etc
 </div>

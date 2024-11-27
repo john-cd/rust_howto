@@ -84,6 +84,6 @@ docker push johncd/rust_howto_ci:latest
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: review
+TODO P1: review
 - [ ] rust and Docker; multistage builds
 </div>

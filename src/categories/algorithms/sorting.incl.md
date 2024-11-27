@@ -5,5 +5,5 @@
 | [Sort a Vector of Structs][ex-algorithms-sort-vector-structs] | [![std][c-std-badge]][c-std] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

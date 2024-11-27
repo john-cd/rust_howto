@@ -63,7 +63,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO cover fancy-regex
+TODO P2 cover fancy-regex
 
 regex
 De facto standard regex library. Very fast, but does not support fancier features such as backtracking.

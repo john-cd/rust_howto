@@ -19,7 +19,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO flaky test
+// TODO P1 flaky test
 #[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {

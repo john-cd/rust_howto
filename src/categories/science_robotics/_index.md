@@ -12,5 +12,5 @@ Crates related to robotics.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize
+TODO P2: organize
 </div>

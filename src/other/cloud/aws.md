@@ -26,5 +26,5 @@ Use the AWS SDK from within a Lambda function
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P1: write
 </div>

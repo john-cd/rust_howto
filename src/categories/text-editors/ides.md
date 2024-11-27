@@ -38,7 +38,7 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize; update / review
+TODO P1: organize; update / review
 
 ## Neovim
 

@@ -15,5 +15,5 @@ Print the generated assembly for a Rust function
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P2 write
 </div>

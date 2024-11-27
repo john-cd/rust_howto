@@ -25,9 +25,9 @@ This crate provides a `DynClone` trait that can be used in trait objects, and a 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO rethink where that stuff should go
+TODO P1 rethink where that stuff should go
 
-TODO review - lens is not used that often:
+TODO P1 review - lens is not used that often:
 
 ## Lens {#lens}
 

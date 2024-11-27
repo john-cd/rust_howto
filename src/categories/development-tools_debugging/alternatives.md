@@ -82,6 +82,6 @@ fn main() {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / organize together with the old log content?
+TODO P1 write / organize together with the old log content?
 incorporate into SUMMARY, etc
 </div>

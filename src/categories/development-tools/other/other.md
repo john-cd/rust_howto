@@ -48,5 +48,5 @@ How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand; revise refs.incl.md
+TODO P1 expand; revise refs.incl.md
 </div>

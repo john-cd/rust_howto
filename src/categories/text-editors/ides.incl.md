@@ -6,5 +6,5 @@
 | [Helix Editor][ex-text-editors-helix] |  | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

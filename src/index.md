@@ -130,6 +130,6 @@ Consult the links section and its books page for other recommendations.
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO polish
+TODO P0 polish
 review about2
 </div>

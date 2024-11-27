@@ -10,5 +10,5 @@ Real-time or offline rendering of 2D or 3D graphics, usually with the help of a 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P2: write
 </div>

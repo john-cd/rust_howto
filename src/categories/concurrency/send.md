@@ -11,6 +11,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO add 'static and Send constraints
+TODO P0 add 'static and Send constraints
 Send + Sync handling
 </div>

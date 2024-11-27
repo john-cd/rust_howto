@@ -41,7 +41,7 @@ For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashe
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 [Key derivation function][key_derivation_function]
 [key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
 </div>

@@ -39,5 +39,5 @@ Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-we
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write; examples
+TODO P2: write; examples
 </div>

@@ -10,5 +10,5 @@ The process of confirming identities.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: Oauth?
+TODO P2 add Oauth?
 </div>

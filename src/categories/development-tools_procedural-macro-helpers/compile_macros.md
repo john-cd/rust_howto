@@ -20,5 +20,5 @@ Instead, what they compile is a small self-contained Wasm runtime (~3 seconds, s
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P2 write
 </div>

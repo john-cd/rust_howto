@@ -23,5 +23,5 @@ Extra iterator adaptors, functions and macros.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO cover the most useful functions
+TODO P1 cover the most useful functions
 </div>

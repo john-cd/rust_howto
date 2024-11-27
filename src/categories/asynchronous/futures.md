@@ -45,7 +45,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: cover future-utils ?
+TODO P1 cover future-utils ?
 
 futures = Utility functions for working with Futures and Streams
 </div>

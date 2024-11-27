@@ -32,6 +32,6 @@ If you are using the tokio executor.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
-cover others e.g. async_std_tungstenite
+TODO P2: write
+P2 cover others e.g. async_std_tungstenite
 </div>

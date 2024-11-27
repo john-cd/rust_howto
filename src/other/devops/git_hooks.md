@@ -73,7 +73,7 @@ pre-commit run --all-files
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 identify useful hooks for Rust
 - cargo fmt
 - cargo check, clippy, test...

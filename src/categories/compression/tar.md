@@ -40,7 +40,7 @@ Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Arc
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: review
+TODO P1 review
 
 `flate2` uses a pure-Rust implementation by default. Use feature flags to opt in to system zlib.
 </div>

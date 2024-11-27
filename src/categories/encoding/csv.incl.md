@@ -9,5 +9,5 @@
 | [Transform one CSV column][ex-encoding-transform-csv-column] | [![csv][c-csv-badge]][c-csv]  [![serde][c-serde-badge]][c-serde] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

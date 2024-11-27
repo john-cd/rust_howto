@@ -30,5 +30,5 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: edit
+TODO P1: edit
 </div>

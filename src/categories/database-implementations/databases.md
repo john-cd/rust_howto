@@ -32,5 +32,5 @@ SurrealDB is a scalable, distributed, collaborative, document-graph database, fo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P2 expand
 </div>

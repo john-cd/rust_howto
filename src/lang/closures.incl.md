@@ -5,5 +5,5 @@
 | [Closures as input parameters][ex-lang-closures-as-input-parameters] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

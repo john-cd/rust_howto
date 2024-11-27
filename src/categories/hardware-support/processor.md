@@ -20,5 +20,5 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in current machine using [
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO expand
+TODO P1 expand
 </div>

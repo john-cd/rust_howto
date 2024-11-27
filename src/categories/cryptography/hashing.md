@@ -26,7 +26,7 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review password_hashing.md
+TODO P1 review password_hashing.md
 
 review below from [blessed.rs][blessed.rs]
 

@@ -43,5 +43,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: locate libs, organize, write
+TODO P2: locate libs, organize, write
 </div>

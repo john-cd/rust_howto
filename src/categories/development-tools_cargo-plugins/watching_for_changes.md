@@ -47,5 +47,5 @@ This tool is especially useful in combination with `cargo-watch`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand
+TODO P1 expand
 </div>

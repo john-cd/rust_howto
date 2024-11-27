@@ -5,5 +5,5 @@
 | [RefCell][ex-standard_library-refcell] | [![std][c-std-badge]][c-std] |
 
 <div class="hidden">
-TODO: edit recipe titles; add crate badges
+TODO P1: edit recipe titles; add crate badges
 </div>

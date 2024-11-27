@@ -17,6 +17,6 @@ A high-performance graphql server library that's fully specification compliant. 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO P1 write
 integrate in seography graphql section?
 </div>

@@ -27,5 +27,5 @@ Rust Meetup Linz
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize
+TODO P1: organize
 </div>

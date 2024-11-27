@@ -136,7 +136,7 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review; cover more of nalgebra
+TODO P1 review; cover more of nalgebra
 
 nalgebra{{hi:nalgebra}}
 

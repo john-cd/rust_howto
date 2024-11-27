@@ -5,5 +5,5 @@
 | [Decompress a tarball while removing a prefix from the paths][ex-compression-decompress-a-tarball-removing-prefix] | [![flate2][c-flate2-badge]][c-flate2]  [![tar][c-tar-badge]][c-tar] | [![cat-compression][cat-compression-badge]][cat-compression] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

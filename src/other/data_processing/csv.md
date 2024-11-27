@@ -21,5 +21,5 @@ A fast {{i:CSV}} command line toolkit written in Rust. [xsv][c-xsv-github]{{hi:x
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: organize / edit
+TODO P1: organize / edit
 </div>

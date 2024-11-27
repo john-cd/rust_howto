@@ -144,11 +144,11 @@ _mdbook-build-book:
 
 # Generate new reference definitions for all crate the book's examples depend on...
 _generate-refdefs:
-# TODO mdbook-utils refdefs
+# TODO P3 mdbook-utils refdefs
 
 # Generate the index and the category page.
 _generate-index-category:
-# TODO
+# TODO P2
 
 # Add static assets to book output
 [unix]
@@ -220,7 +220,7 @@ empty := ''
 # Call mdbook-utils to manage links, ref definitions, etc...
 utils cmd=help *subcmd=empty:
   mdbook-utils {{cmd}} {{subcmd}}
-# TODO clarify
+# TODO P2 clarify
 
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 templ cmd=help *subcmd=empty:
@@ -233,7 +233,7 @@ crate_indices cmd=help *subcmd=empty:
 # Autogenerate a chapter (from template)
 autogen:
     cargo run -p autogen
-# TODO finish
+# TODO P2 finish
 
 ## ---- LINK AND REFERENCE DEFINITION MANAGEMENT -----------------------------------
 

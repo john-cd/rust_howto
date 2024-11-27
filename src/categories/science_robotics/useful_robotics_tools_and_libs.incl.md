@@ -6,5 +6,5 @@
 | [`bonsai-bt`][ex-science_robotics-bonsai-bt] |  | [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics] |
 
 <div class="hidden">
-TODO
+TODO P2
 </div>

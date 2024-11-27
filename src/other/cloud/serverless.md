@@ -18,5 +18,5 @@ Dapr Rust SDK example: [![dapr-rust-examples][dapr-rust-examples-badge]][dapr-ru
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: edit
+TODO P1: edit
 </div>

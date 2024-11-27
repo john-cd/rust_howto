@@ -92,7 +92,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 // Requires network access
-// TODO flaky test
+// TODO P1 flaky test
 #[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {

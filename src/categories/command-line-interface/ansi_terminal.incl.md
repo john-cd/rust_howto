@@ -7,5 +7,5 @@
 | [Manipulate the cursor, style the output, handle input events][ex-command-line-interface-crossterm] |  |  |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

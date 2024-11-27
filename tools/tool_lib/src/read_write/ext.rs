@@ -56,6 +56,6 @@ fn test() {
     assert_eq!(
         extend_extension(&Path::new("file.a.md"), "new"),
         Path::new("file.a.new.md")
-    ); // TODO file_prefix is still unstable.
+    ); // TODO P1 file_prefix is still unstable.
     assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
 }

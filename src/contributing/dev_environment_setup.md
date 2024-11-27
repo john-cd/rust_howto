@@ -39,9 +39,9 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: review
+TODO P1: review
 
-TODO windows install
+TODO P1 windows install
 
 `winget install openssl`
 need Python

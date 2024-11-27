@@ -66,7 +66,7 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO verify all crates are added to at least one category above
+TODO P2 verify all crates are added to at least one category above
 
 [![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
 [![cornucopia][c-cornucopia-badge]][c-cornucopia]{{hi:cornucopia}}

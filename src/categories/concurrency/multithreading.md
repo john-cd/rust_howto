@@ -60,5 +60,5 @@ Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::j
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: expand - threadpool?
+TODO P1 expand - threadpool?
 </div>

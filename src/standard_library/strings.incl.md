@@ -5,5 +5,5 @@
 | [String concatenation][ex-standard_library-string-concatenation] | [![std][c-std-badge]][c-std] |
 
 <div class="hidden">
-TODO: review
+TODO P1: review
 </div>

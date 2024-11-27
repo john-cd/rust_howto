@@ -4,5 +4,5 @@
 | [Multiple Producer, Single Consumer][ex-asynchronous-mpsc] | [![tokio][c-tokio-badge]][c-tokio] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO
+TODO P1
 </div>

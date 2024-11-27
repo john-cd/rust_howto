@@ -30,5 +30,5 @@ Inspired by Xilem, Leptos and rui, floem is currently more complete than any of 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO organize
+TODO P1 organize
 </div>

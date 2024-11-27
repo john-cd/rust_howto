@@ -32,5 +32,5 @@ Native Windows GUI: [![native_windows_gui-github][c-native_windows_gui-github-ba
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write; add examples for `windows` and winapi
+TODO P2: write; add examples for `windows` and winapi
 </div>

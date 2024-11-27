@@ -3,5 +3,5 @@
 | [Localization][ex-localization-localization] |  | [![cat-localization][cat-localization-badge]][cat-localization] |
 
 <div class="hidden">
-TODO
+TODO P2
 </div>

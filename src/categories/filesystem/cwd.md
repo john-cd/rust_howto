@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO move to proper location
+TODO P1 move to proper location
 </div>

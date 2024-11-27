@@ -97,7 +97,7 @@ $ cargo semver-checks
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO
+TODO P1
 [![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
 [![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
 </div>

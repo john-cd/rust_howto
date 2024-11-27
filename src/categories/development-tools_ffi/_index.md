@@ -12,6 +12,6 @@ Tools to help you better interface with other languages. This includes binding g
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO: write
+TODO P2 write
 link to pyo3 file as well
 </div>
