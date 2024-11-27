@@ -1,4 +1,4 @@
 ||
 |---|
-| [Crates by alphabetical order][ex-crates-alphabetical] |
-| [Crates by category][ex-crates-categories] |
+| [Crates by alphabetical order][p-crates-alphabetical] |
+| [Crates by category][p-crates-categories] |
