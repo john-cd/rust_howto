@@ -53,7 +53,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 
 ## Calculate SHA256 sum of iso files concurrently {#sha256-of-iso-files-concurrently}
 
-[![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency][{{hi:Concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}  [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}}  [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [{{hi:Concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ iterates the current directory and calls [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
 

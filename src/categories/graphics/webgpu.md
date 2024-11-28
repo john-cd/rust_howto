@@ -4,7 +4,7 @@
 
 ## `wgpu` {#wgpu}
 
-[![wgpu-website][c-wgpu-website-badge]][c-wgpu-website][![wgpu][c-wgpu-badge]][c-wgpu][![wgpu-crates.io][c-wgpu-crates.io-badge]][c-wgpu-crates.io][![wgpu-github][c-wgpu-github-badge]][c-wgpu-github][![wgpu-lib.rs][c-wgpu-lib.rs-badge]][c-wgpu-lib.rs]{{hi:wgpu}}{{hi:Graphics}}
+[![wgpu-website][c-wgpu-website-badge]][c-wgpu-website] [![wgpu][c-wgpu-badge]][c-wgpu] [![wgpu-crates.io][c-wgpu-crates.io-badge]][c-wgpu-crates.io] [![wgpu-github][c-wgpu-github-badge]][c-wgpu-github] [![wgpu-lib.rs][c-wgpu-lib.rs-badge]][c-wgpu-lib.rs]{{hi:wgpu}}{{hi:Graphics}}
 [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
 Rusty WebGPU API wrapper.

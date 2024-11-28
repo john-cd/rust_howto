@@ -4,7 +4,7 @@
 
 ## Create a SQLite database {#create-database-sqlite}
 
-[![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}  [![rusqlite-documentation][c-rusqlite-documentation-badge]][c-rusqlite-documentation]  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
+[![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}}  [![rusqlite-documentation][c-rusqlite-documentation-badge]][c-rusqlite-documentation] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
 Use the [`rusqlite`][c-rusqlite]{{hi:rusqlite}}⮳ crate to open SQLite databases. See
 the [documentation][c-rusqlite-documentation]⮳ for compiling on Windows.

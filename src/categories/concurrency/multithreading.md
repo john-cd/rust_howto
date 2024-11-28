@@ -24,7 +24,7 @@ When the main thread of a Rust program completes, all spawned threads{{hi:Spawne
 
 ## Rayon - parallel processing {#rayon}
 
-[![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![rayon-github][c-rayon-github-badge]][c-rayon-github]  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}}  [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ### Parallel iteration {#par-iter}
 

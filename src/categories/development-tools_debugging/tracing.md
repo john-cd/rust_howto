@@ -2,7 +2,7 @@
 
 {{#include tracing.incl.md}}
 
-[![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}}  [![tracing-github][c-tracing-github-badge]][c-tracing-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
+[![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}}  [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}}  [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 

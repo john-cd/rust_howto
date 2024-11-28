@@ -65,53 +65,53 @@ Most popular
 
 ## termcolor {#termcolor}
 
-[![termcolor][c-termcolor-badge]][c-termcolor][![termcolor-crates.io][c-termcolor-crates.io-badge]][c-termcolor-crates.io][![termcolor-github][c-termcolor-github-badge]][c-termcolor-github][![termcolor-lib.rs][c-termcolor-lib.rs-badge]][c-termcolor-lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
+[![termcolor][c-termcolor-badge]][c-termcolor] [![termcolor-crates.io][c-termcolor-crates.io-badge]][c-termcolor-crates.io] [![termcolor-github][c-termcolor-github-badge]][c-termcolor-github] [![termcolor-lib.rs][c-termcolor-lib.rs-badge]][c-termcolor-lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
 
 A simple cross platform library for writing colored text to a terminal
 
 ## anstyle {#anstyle}
 
-[![anstyle-website][c-anstyle-website-badge]][c-anstyle-website][![anstyle][c-anstyle-badge]][c-anstyle][![anstyle-crates.io][c-anstyle-crates.io-badge]][c-anstyle-crates.io][![anstyle-github][c-anstyle-github-badge]][c-anstyle-github][![anstyle-lib.rs][c-anstyle-lib.rs-badge]][c-anstyle-lib.rs]{{hi:anstyle}}{{hi:Ansi}}{{hi:Color}}{{hi:No_std}}{{hi:Terminal}}[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+[![anstyle-website][c-anstyle-website-badge]][c-anstyle-website] [![anstyle][c-anstyle-badge]][c-anstyle] [![anstyle-crates.io][c-anstyle-crates.io-badge]][c-anstyle-crates.io] [![anstyle-github][c-anstyle-github-badge]][c-anstyle-github] [![anstyle-lib.rs][c-anstyle-lib.rs-badge]][c-anstyle-lib.rs]{{hi:anstyle}}{{hi:Ansi}}{{hi:Color}}{{hi:No_std}}{{hi:Terminal}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
 ANSI text styling
 
 ## anstream {#anstream}
 
-[![anstream-website][c-anstream-website-badge]][c-anstream-website][![anstream][c-anstream-badge]][c-anstream][![anstream-crates.io][c-anstream-crates.io-badge]][c-anstream-crates.io][![anstream-github][c-anstream-github-badge]][c-anstream-github][![anstream-lib.rs][c-anstream-lib.rs-badge]][c-anstream-lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}}[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+[![anstream-website][c-anstream-website-badge]][c-anstream-website] [![anstream][c-anstream-badge]][c-anstream] [![anstream-crates.io][c-anstream-crates.io-badge]][c-anstream-crates.io] [![anstream-github][c-anstream-github-badge]][c-anstream-github] [![anstream-lib.rs][c-anstream-lib.rs-badge]][c-anstream-lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
 A simple cross platform library for writing colored text to a terminal.
 
-[![nu-ansi-term][c-nu_ansi_term-badge]][c-nu_ansi_term][![nu-ansi-term-crates.io][c-nu_ansi_term-crates.io-badge]][c-nu_ansi_term-crates.io][![nu-ansi-term-github][c-nu_ansi_term-github-badge]][c-nu_ansi_term-github][![nu-ansi-term-lib.rs][c-nu_ansi_term-lib.rs-badge]][c-nu_ansi_term-lib.rs]{{hi:nu-ansi-term}}
+[![nu-ansi-term][c-nu_ansi_term-badge]][c-nu_ansi_term] [![nu-ansi-term-crates.io][c-nu_ansi_term-crates.io-badge]][c-nu_ansi_term-crates.io] [![nu-ansi-term-github][c-nu_ansi_term-github-badge]][c-nu_ansi_term-github] [![nu-ansi-term-lib.rs][c-nu_ansi_term-lib.rs-badge]][c-nu_ansi_term-lib.rs]{{hi:nu-ansi-term}}
 
 Library for ANSI terminal colors and styles (bold, underline)
 
 ## Ansiterm {#ansiterm}
 
-[![ansiterm][c-ansiterm-badge]][c-ansiterm][![ansiterm-crates.io][c-ansiterm-crates.io-badge]][c-ansiterm-crates.io][![ansiterm-github][c-ansiterm-github-badge]][c-ansiterm-github][![ansiterm-lib.rs][c-ansiterm-lib.rs-badge]][c-ansiterm-lib.rs]{{hi:ansiterm}}
+[![ansiterm][c-ansiterm-badge]][c-ansiterm] [![ansiterm-crates.io][c-ansiterm-crates.io-badge]][c-ansiterm-crates.io] [![ansiterm-github][c-ansiterm-github-badge]][c-ansiterm-github] [![ansiterm-lib.rs][c-ansiterm-lib.rs-badge]][c-ansiterm-lib.rs]{{hi:ansiterm}}
 
 Library for ANSI terminal colours and styles (bold, underline)
 
 ## Console {#console}
 
-[![console][c-console-badge]][c-console][![console-crates.io][c-console-crates.io-badge]][c-console-crates.io][![console-github][c-console-github-badge]][c-console-github][![console-lib.rs][c-console-lib.rs-badge]][c-console-lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
+[![console][c-console-badge]][c-console] [![console-crates.io][c-console-crates.io-badge]][c-console-crates.io] [![console-github][c-console-github-badge]][c-console-github] [![console-lib.rs][c-console-lib.rs-badge]][c-console-lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
 
 A terminal and console abstraction for Rust
 
 ## owo-colors {#owo-colors}
 
-[![owo-colors][c-owo_colors-badge]][c-owo_colors][![owo-colors-crates.io][c-owo_colors-crates.io-badge]][c-owo_colors-crates.io][![owo-colors-github][c-owo_colors-github-badge]][c-owo_colors-github][![owo-colors-lib.rs][c-owo_colors-lib.rs-badge]][c-owo_colors-lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+[![owo-colors][c-owo_colors-badge]][c-owo_colors] [![owo-colors-crates.io][c-owo_colors-crates.io-badge]][c-owo_colors-crates.io] [![owo-colors-github][c-owo_colors-github-badge]][c-owo_colors-github] [![owo-colors-lib.rs][c-owo_colors-lib.rs-badge]][c-owo_colors-lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
 Zero-allocation terminal colors that&#39;ll make people go owo
 
 ## Stylish {#stylish}
 
-[![stylish][c-stylish-badge]][c-stylish][![stylish-crates.io][c-stylish-crates.io-badge]][c-stylish-crates.io][![stylish-github][c-stylish-github-badge]][c-stylish-github][![stylish-lib.rs][c-stylish-lib.rs-badge]][c-stylish-lib.rs]{{hi:stylish}}
+[![stylish][c-stylish-badge]][c-stylish] [![stylish-crates.io][c-stylish-crates.io-badge]][c-stylish-crates.io] [![stylish-github][c-stylish-github-badge]][c-stylish-github] [![stylish-lib.rs][c-stylish-lib.rs-badge]][c-stylish-lib.rs]{{hi:stylish}}
 
 Yet another crate implementing colorized text
 
 ## yansi {#yansi}
 
-[![yansi][c-yansi-badge]][c-yansi][![yansi-crates.io][c-yansi-crates.io-badge]][c-yansi-crates.io][![yansi-github][c-yansi-github-badge]][c-yansi-github][![yansi-lib.rs][c-yansi-lib.rs-badge]][c-yansi-lib.rs]{{hi:yansi}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}}[![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+[![yansi][c-yansi-badge]][c-yansi] [![yansi-crates.io][c-yansi-crates.io-badge]][c-yansi-crates.io] [![yansi-github][c-yansi-github-badge]][c-yansi-github] [![yansi-lib.rs][c-yansi-lib.rs-badge]][c-yansi-lib.rs]{{hi:yansi}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
 A dead simple ANSI terminal color painting library.
 

@@ -19,7 +19,7 @@ mdbook serve --open
 
 ## Playground {#playground}
 
-[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳  [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳  [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 ## `mdbook` plugins {#mdbook-plugins}
 
@@ -49,7 +49,7 @@ TODO P1 organize, expand
 
 ## `yapp` {#yapp}
 
-[![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp][![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io][![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github][![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Preprocessor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] [![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io] [![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github] [![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Preprocessor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 A mdBook preprocessor for simple text replacements
 

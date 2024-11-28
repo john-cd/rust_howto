@@ -63,7 +63,7 @@ Randomly generates a string of given length ASCII characters in the range `A-Z, 
 
 ## Create random passwords from a set of user-defined characters {#create-random-passwords-from-a-set-of-user-defined-characters}
 
-[![rand][c-rand-badge]][c-rand]  [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
+[![rand][c-rand-badge]][c-rand] [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
 Randomly generates a string of given length ASCII characters with custom user-defined bytestring, with [`rand::Rng::gen_range`][c-rand::Rng::gen_range]{{hi:rand::Rng::gen_range}}.
 

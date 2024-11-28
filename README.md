@@ -17,7 +17,7 @@ Please review the [contributing][rust-howto-contributing-website]⮳ section of 
 
 ## Companion tool
 
-The [mdbook-utils][c-mdbook-utils-crates.io] utility ([(github)][c-mdbook-utils-github]  [(docs.rs)][c-mdbook-utils-docs-rs]  [(user guide)][c-mdbook-utils-user-guide]) helps manage links and code blocks in [`mdbook`][c-mdbook] source directories. It is the companion tool for this book.
+The [mdbook-utils][c-mdbook-utils-crates.io] utility ([(github)][c-mdbook-utils-github] [(docs.rs)][c-mdbook-utils-docs-rs] [(user guide)][c-mdbook-utils-user-guide]) helps manage links and code blocks in [`mdbook`][c-mdbook] source directories. It is the companion tool for this book.
 
 ## Acknowledgments
 

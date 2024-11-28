@@ -52,7 +52,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 ### Incremental Computation {#incremental-computation}
 
-[![salsa-github][c-salsa-github-badge]][c-salsa-github]  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![salsa-github][c-salsa-github-badge]][c-salsa-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 [Salsa][c-salsa-website]{{hi:salsa}}⮳
 

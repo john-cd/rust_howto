@@ -4,7 +4,7 @@
 
 ## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
-[![unicode-segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation][![unicode-segmentation-crates.io][c-unicode_segmentation-crates.io-badge]][c-unicode_segmentation-crates.io][![unicode-segmentation-github][c-unicode_segmentation-github-badge]][c-unicode_segmentation-github][![unicode-segmentation-lib.rs][c-unicode_segmentation-lib.rs-badge]][c-unicode_segmentation-lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![unicode-segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation] [![unicode-segmentation-crates.io][c-unicode_segmentation-crates.io-badge]][c-unicode_segmentation-crates.io] [![unicode-segmentation-github][c-unicode_segmentation-github-badge]][c-unicode_segmentation-github] [![unicode-segmentation-lib.rs][c-unicode_segmentation-lib.rs-badge]][c-unicode_segmentation-lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} string using the [`unicode_segmentation::UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]{{hi:unicode_segmentation::UnicodeSegmentation::graphemes}}⮳ function from the [`unicode_segmentation`][c-unicode_segmentation]{{hi:unicode_segmentation}}⮳ crate.
 

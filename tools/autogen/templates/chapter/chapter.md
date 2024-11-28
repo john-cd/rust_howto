@@ -4,7 +4,7 @@
 
 ## {{ recipe }}
 
-[![{{ crate_name }}][c-{{ crate_name }}-badge]][c-{{ crate_name }}]  [![cat-{{ category_slug }}][cat-{{ category_slug }}-badge]][cat-{{ category_slug }}]
+[![{{ crate_name }}][c-{{ crate_name }}-badge]][c-{{ crate_name }}] [![cat-{{ category_slug }}][cat-{{ category_slug }}-badge]][cat-{{ category_slug }}]
 
 $description1$
 
