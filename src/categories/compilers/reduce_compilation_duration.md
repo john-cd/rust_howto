@@ -70,5 +70,6 @@ Salsa is a Rust framework for writing incremental, on-demand programs -- these a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 fix reference section
+TODO P2 review
+P2 fix reference section
 </div>

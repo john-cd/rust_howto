@@ -4,5 +4,5 @@
 | [Alternative - Mold linker][ex-compilers-mold-linker] |  | [![cat-compilers][cat-compilers-badge]][cat-compilers] |
 
 <div class="hidden">
-TODO P1
+TODO P2 fix
 </div>
