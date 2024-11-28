@@ -2,14 +2,23 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Quick and dirty generation of the index of examples `examples_index.md`; manual editing required
+# Quick and dirty generation of the index of examples `examples_index.md`
+# Usage:
+# ./scripts/generate_index_of_examples.sh > src/examples_index.md
 
 clean() {
-    echo "$1" | sed -E 's/.*/\L&/; s/[a-z]*/\u&/g; s/(In|Of|And|With)/\L&/g; s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|ql|Tui)/\U&/g; s/-/ /g; s/Asref/AsRef/g; s/Grpc/gRPC/g'
+    echo "$1" | sed -E '
+    s/.*/\L&/;
+    s/[a-z]*/\u&/g;
+    s/\s(In|Of|And|With)\s/\L&/g;
+    s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|ql|Tui)/\U&/g;
+    s/Asref/`AsRef`/g;
+    s/Cow/`Cow`/g;
+    s/Grpc/gRPC/g;
+    s/Mdbook/mdBook/g;
+    s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper|Option|Result)/\L`&`/g'
 }
 
-
-clear
 echo $'# Index of Examples\n'
 
 # Leaf directories only
@@ -21,7 +30,8 @@ do
       continue
     fi
     # Last part of path, titlecased; FFI, OS... capitalized
-    last=$(basename $dir | sed 's/_/: /g')
+    # src/categories are crates.io slugs: replace - by ' ';  _ separates parent and child categories
+    last=$(basename $dir | sed 's/-/ /g; s/_/: /g')
     last=$(clean $last)
     echo -e "## ${last}\n"
     # Iterate all subchapter TOCs, ignoring hidden ones
@@ -38,8 +48,8 @@ do
         echo -e "{{#include ${incl}}}\n"
     done
 done
-echo << 'EOF'
 
+cat << 'EOF'
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
 

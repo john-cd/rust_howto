@@ -1,11 +1,5 @@
 # Index of Examples
 
-## Accessibility
-
-### Screen Readers
-
-{{#include categories/accessibility/screen_readers.incl.md}}
-
 ## Algorithms
 
 ### Randomness
@@ -15,12 +9,6 @@
 ### Sorting
 
 {{#include categories/algorithms/sorting.incl.md}}
-
-## API Bindings
-
-### Python Interop
-
-{{#include categories/api-bindings/python_interop.incl.md}}
 
 ## Asynchronous
 
@@ -58,12 +46,6 @@
 
 {{#include categories/authentication/basic_authentication.incl.md}}
 
-## Caching
-
-### LRU Caching
-
-{{#include categories/caching/lru.incl.md}}
-
 ## Command Line Interface
 
 ### ANSI Terminal
@@ -96,41 +78,21 @@
 
 {{#include categories/command-line-utilities/shells.incl.md}}
 
-## Compilers
-
-### Cross Compilation
-
-{{#include categories/compilers/cross_compilation.incl.md}}
-
-### Faster Linking
-
-{{#include categories/compilers/faster_linking.incl.md}}
-
-### Compilation Duration Reduction
-
-{{#include categories/compilers/reduce_compilation_duration.incl.md}}
-
 ## Compression
 
 ### `tar`
 
 {{#include categories/compression/tar.incl.md}}
 
-## Computer Vision
-
-### OpenCV
-
-{{#include categories/computer-vision/opencv.incl.md}}
-
 ## Shared State
 
 ### Concurrent Data Structures
 
-{{#include categories/concurrency/shared_state/concurrent_data_structures.incl.md}}
+{{#include categories/concurrency/shared-state/concurrent_data_structures.incl.md}}
 
 ### Shared State
 
-{{#include categories/concurrency/shared_state/shared_state.incl.md}}
+{{#include categories/concurrency/shared-state/shared_state.incl.md}}
 
 ## Config
 
@@ -166,23 +128,13 @@
 
 {{#include categories/data-structures/maps.incl.md}}
 
-### Stack-allocated Arrays
+### Stack Allocated Arrays
 
 {{#include categories/data-structures/stack_allocated_arrays.incl.md}}
 
-### UUIDs
+### UUID
 
 {{#include categories/data-structures/uuid.incl.md}}
-
-## Database Implementations
-
-### Databases
-
-{{#include categories/database-implementations/databases.incl.md}}
-
-### Search
-
-{{#include categories/database-implementations/search.incl.md}}
 
 ## Date and Time
 
@@ -198,7 +150,7 @@
 
 {{#include categories/date-and-time/time.incl.md}}
 
-## Cargo & Friends
+## Cargo
 
 ### Cargo
 
@@ -222,7 +174,7 @@
 
 {{#include categories/development-tools/documentation/documentation.incl.md}}
 
-### `mdbook`
+### mdBook
 
 {{#include categories/development-tools/documentation/mdbook.incl.md}}
 
@@ -234,11 +186,11 @@
 
 ## Installation
 
-### Installation
+### Install
 
 {{#include categories/development-tools/installation/install.incl.md}}
 
-### `rustup`
+### Rustup
 
 {{#include categories/development-tools/installation/rustup.incl.md}}
 
@@ -268,7 +220,7 @@
 
 {{#include categories/development-tools_build-utils/build_utils.incl.md}}
 
-## Development Tools: Cargo-Plugins
+## Development Tools: Cargo Plugins
 
 ### Auditing
 
@@ -278,11 +230,11 @@
 
 {{#include categories/development-tools_cargo-plugins/building.incl.md}}
 
-### Code Formatting and Linting
+### Code Formatting Linting
 
 {{#include categories/development-tools_cargo-plugins/code_formatting_linting.incl.md}}
 
-### Cross-Compiling
+### Cross Compiling
 
 {{#include categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
 
@@ -324,68 +276,6 @@
 
 {{#include categories/development-tools_debugging/tracing.incl.md}}
 
-## Development Tools: FFI
-
-### Generate FFI Bindings
-
-{{#include categories/development-tools_ffi/generate_ffi_bindings.incl.md}}
-
-## Development Tools: Procedural Macro-Helpers
-
-### Compile Macros
-
-{{#include categories/development-tools_procedural-macro-helpers/compile_macros.incl.md}}
-
-### Tools
-
-{{#include categories/development-tools_procedural-macro-helpers/tools.incl.md}}
-
-### Write Proc Macros
-
-{{#include categories/development-tools_procedural-macro-helpers/write_proc_macros.incl.md}}
-
-## Development Tools: Profiling
-
-### Assembly
-
-{{#include categories/development-tools_profiling/assembly.incl.md}}
-
-### Benchmarking
-
-{{#include categories/development-tools_profiling/benchmarking.incl.md}}
-
-### Memory
-
-{{#include categories/development-tools_profiling/memory.incl.md}}
-
-## Development Tools: Testing
-
-### Fuzzing
-
-{{#include categories/development-tools_testing/fuzzing.incl.md}}
-
-### Testing
-
-{{#include categories/development-tools_testing/testing.incl.md}}
-
-## Email
-
-### Send Emails
-
-{{#include categories/email/send_emails.incl.md}}
-
-## Embedded
-
-### Embassy
-
-{{#include categories/embedded/embassy.incl.md}}
-
-## Emulators
-
-### Emulators
-
-{{#include categories/emulators/emulators.incl.md}}
-
 ## Encoding
 
 ### Complex
@@ -408,19 +298,13 @@
 
 {{#include categories/encoding/typecasts.incl.md}}
 
-## External FFI Bindings
-
-### External FFI Bindings
-
-{{#include categories/external-ffi-bindings/external_ffi_bindings.incl.md}}
-
 ## Filesystem
 
 ### `cwd`
 
 {{#include categories/filesystem/cwd.incl.md}}
 
-### `dir`
+### Dir
 
 {{#include categories/filesystem/dir.incl.md}}
 
@@ -432,11 +316,11 @@
 
 {{#include categories/filesystem/ignore.incl.md}}
 
-### Read & Write Files
+### Read-Write
 
 {{#include categories/filesystem/read-write.incl.md}}
 
-### Tempfiles and Directories
+### Tempfile
 
 {{#include categories/filesystem/tempfile.incl.md}}
 
@@ -444,93 +328,11 @@
 
 {{#include categories/filesystem/user_directories.incl.md}}
 
-## Finance
-
-### Quant
-
-{{#include categories/finance/quant.incl.md}}
-
-## Game Development
-
-### Game Development
-
-{{#include categories/game-development/game_development.incl.md}}
-
-## Game Engines
-
-### Game Engines
-
-{{#include categories/game-engines/game_engines.incl.md}}
-
-## Graphics
-
-### Webgpu
-
-{{#include categories/graphics/webgpu.incl.md}}
-
-## GUI
-
-### 2D Renderers
-
-{{#include categories/gui/2d_renderers.incl.md}}
-
-### Clipboard
-
-{{#include categories/gui/clipboard.incl.md}}
-
-### File Dialogs
-
-{{#include categories/gui/file_dialogs.incl.md}}
-
-### GTK
-
-{{#include categories/gui/gtk.incl.md}}
-
-### Immediate Mode Gui
-
-{{#include categories/gui/immediate_mode_gui.incl.md}}
-
-### Other GUI
-
-{{#include categories/gui/other_gui.incl.md}}
-
-### Retained-mode GUI
-
-{{#include categories/gui/retained_mode_gui.incl.md}}
-
-### Text Layout
-
-{{#include categories/gui/text_layout.incl.md}}
-
-### UI Layout
-
-{{#include categories/gui/ui_layout.incl.md}}
-
-### Web-based GUI
-
-{{#include categories/gui/web_based_gui.incl.md}}
-
-### Window Creation
-
-{{#include categories/gui/window_creation.incl.md}}
-
 ## Hardware Support
 
 ### Processor
 
 {{#include categories/hardware-support/processor.incl.md}}
-
-## Internationalization
-
-### Internationalization
-
-{{#include categories/internationalization/internationalization.incl.md}}
-
-## Localization
-
-### Localization
-
-{{#include categories/localization/localization.incl.md}}
 
 ## Mathematics
 
@@ -564,106 +366,6 @@
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
 
-## Multimedia Audio
-
-### Audio
-
-{{#include categories/multimedia_audio/audio.incl.md}}
-
-## Multimedia Encoding
-
-### Encoding
-
-{{#include categories/multimedia_encoding/encoding.incl.md}}
-
-## Multimedia Images
-
-### Images
-
-{{#include categories/multimedia_images/images.incl.md}}
-
-## Multimedia Video
-
-### Video
-
-{{#include categories/multimedia_video/video.incl.md}}
-
-## Network Programming
-
-### Reverse Proxy
-
-{{#include categories/network-programming/reverse_proxy.incl.md}}
-
-### Server
-
-{{#include categories/network-programming/server.incl.md}}
-
-## No `alloc`
-
-### No `alloc`
-
-{{#include categories/no-std_no-alloc/no_alloc.incl.md}}
-
-## OS: FreeBSD APIs
-
-### FreeBSD
-
-{{#include categories/os_freebsd-apis/freebsd.incl.md}}
-
-## OS: Linux APIs
-
-### Linux
-
-{{#include categories/os_linux-apis/linux.incl.md}}
-
-## OS: macOS APIs
-
-### macOS
-
-{{#include categories/os_macos-apis/macos.incl.md}}
-
-## OS: Unix APIs
-
-### Unix
-
-{{#include categories/os_unix-apis/unix.incl.md}}
-
-## OS: Windows APIs
-
-### Windows
-
-{{#include categories/os_windows-apis/windows.incl.md}}
-
-## Parser Implementations
-
-### Parser Implementations
-
-{{#include categories/parser-implementations/parser_implementations.incl.md}}
-
-## Parsing
-
-### Parsing
-
-{{#include categories/parsing/parsing.incl.md}}
-
-## Rendering: Data Formats
-
-### Data Formats
-
-{{#include categories/rendering_data-formats/data_formats.incl.md}}
-
-## Rendering Engine
-
-### Rendering Engines
-
-{{#include categories/rendering_engine/rendering_engines.incl.md}}
-
-## Rendering: Graphics APIs
-
-### Graphics APIs
-
-{{#include categories/rendering_graphics-api/graphics_apis.incl.md}}
-
 ## Rust Patterns
 
 ### Design Patterns
@@ -686,41 +388,13 @@
 
 {{#include categories/rust-patterns/rust_idioms.incl.md}}
 
-## Science Geo
-
-### Geo
-
-{{#include categories/science_geo/geo.incl.md}}
-
-## Science Neuroscience
-
-### Neuro
-
-{{#include categories/science_neuroscience/neuro.incl.md}}
-
-## Science Robotics
-
-### Robotics
-
-{{#include categories/science_robotics/robotics.incl.md}}
-
-### Useful Robotics Tools And Libs
-
-{{#include categories/science_robotics/useful_robotics_tools_and_libs.incl.md}}
-
-## Simulation
-
-### Simulation
-
-{{#include categories/simulation/simulation.incl.md}}
-
 ## Template Engine
 
 ### Tera
 
 {{#include categories/template-engine/tera.incl.md}}
 
-### `tinytemplate`
+### Tinytemplate
 
 {{#include categories/template-engine/tinytemplate.incl.md}}
 
@@ -736,6 +410,8 @@
 
 {{#include categories/text-processing/regex.incl.md}}
 
+### Regex2
+
 {{#include categories/text-processing/regex2.incl.md}}
 
 ### String Concat
@@ -745,34 +421,6 @@
 ### String Parsing
 
 {{#include categories/text-processing/string_parsing.incl.md}}
-
-## Value Formatting
-
-### Value Formatting
-
-{{#include categories/value-formatting/value-formatting.incl.md}}
-
-## Virtualization
-
-### Virtualization
-
-{{#include categories/virtualization/virtualization.incl.md}}
-
-## Visualization
-
-### Visualization
-
-{{#include categories/visualization/visualization.incl.md}}
-
-## Wasm
-
-### Others
-
-{{#include categories/wasm/others.incl.md}}
-
-### Yew
-
-{{#include categories/wasm/yew.incl.md}}
 
 ## Web Programming: HTTP Client
 
@@ -792,7 +440,7 @@
 
 {{#include categories/web-programming_http-client/requests.incl.md}}
 
-## Web Pr: HTTP Server
+## Web Programming: HTTP Server
 
 ### `actix`
 
@@ -802,9 +450,9 @@
 
 {{#include categories/web-programming_http-server/axum.incl.md}}
 
-### Batteries-included frameworks
+### Batteries-Included Frameworks
 
-{{#include categories/web-programming_http-server/batteries_included.incl.md}}
+{{#include categories/web-programming_http-server/batteries-included_frameworks.incl.md}}
 
 ### CORS
 
@@ -834,12 +482,6 @@
 
 {{#include categories/web-programming_http-server/static_website_generators.incl.md}}
 
-## Web-Programming Websocket
-
-### Websocket
-
-{{#include categories/web-programming_websocket/websocket.incl.md}}
-
 ## Contributing
 
 ### API Documentation
@@ -858,7 +500,7 @@
 
 {{#include contributing/dev_environment_setup.incl.md}}
 
-### Optional Preprocessors
+### `option`al Preprocessors
 
 {{#include contributing/optional_preprocessors.incl.md}}
 
@@ -874,91 +516,97 @@
 
 {{#include contributing/topics_of_interest.incl.md}}
 
+## Crates
+
+{{#include crates/index.incl.md}}
+
 ## Language
 
 ### Attributes
 
-{{#include lang/attributes.incl.md}}
+{{#include language/attributes.incl.md}}
 
 ### Closures
 
-{{#include lang/closures.incl.md}}
+{{#include language/closures.incl.md}}
 
 ### Control Flow
 
-{{#include lang/control_flow.incl.md}}
+{{#include language/control_flow.incl.md}}
 
 ### Enums
 
-{{#include lang/enums.incl.md}}
+{{#include language/enums.incl.md}}
 
 ### Functions
 
-{{#include lang/functions.incl.md}}
+{{#include language/functions.incl.md}}
 
 ### Generics
 
-{{#include lang/generics.incl.md}}
+{{#include language/generics.incl.md}}
+
+{{#include language/index.incl.md}}
 
 ### Iterators
 
-{{#include lang/iterators.incl.md}}
+{{#include language/iterators.incl.md}}
 
 ### Lifetimes
 
-{{#include lang/lifetimes.incl.md}}
+{{#include language/lifetimes.incl.md}}
 
 ### Macros
 
-{{#include lang/macros.incl.md}}
+{{#include language/macros.incl.md}}
 
 ### Main
 
-{{#include lang/main.incl.md}}
+{{#include language/main.incl.md}}
 
 ### Match
 
-{{#include lang/match.incl.md}}
+{{#include language/match.incl.md}}
 
 ### Modules
 
-{{#include lang/modules.incl.md}}
+{{#include language/modules.incl.md}}
 
 ### Ownership Borrowing
 
-{{#include lang/ownership_borrowing.incl.md}}
+{{#include language/ownership_borrowing.incl.md}}
 
 ### Rust Install
 
-{{#include lang/rust_install.incl.md}}
+{{#include language/rust_install.incl.md}}
 
 ### Simple Data Types
 
-{{#include lang/simple_data_types.incl.md}}
+{{#include language/simple_data_types.incl.md}}
 
 ### Slices
 
-{{#include lang/slices.incl.md}}
+{{#include language/slices.incl.md}}
 
 ### Structs
 
-{{#include lang/structs.incl.md}}
+{{#include language/structs.incl.md}}
 
 ### Traits
 
-{{#include lang/traits.incl.md}}
+{{#include language/traits.incl.md}}
 
 ### Trait Objects
 
-{{#include lang/trait_objects.incl.md}}
+{{#include language/trait_objects.incl.md}}
 
 ### Variables and Constants
 
-{{#include lang/variables_and_constants.incl.md}}
+{{#include language/variables_and_constants.incl.md}}
 
 ## Links
 
-### Blogs, Podcasts, Meetups
+### Blogs Podcasts Meetups
 
 {{#include links/blogs_podcasts_meetups.incl.md}}
 
@@ -974,6 +622,8 @@
 
 {{#include links/example_code.incl.md}}
 
+{{#include links/index.incl.md}}
+
 ### Learning
 
 {{#include links/learning.incl.md}}
@@ -986,147 +636,45 @@
 
 {{#include links/rust_cheatsheets.incl.md}}
 
-## Architecture
-
-### Architecture
-
-{{#include other/architecture/architecture.incl.md}}
-
-## Cloud
-
-### AWS
-
-{{#include other/cloud/aws.incl.md}}
-
-### Rust-native Cloud Development
-
-{{#include other/cloud/rust_native_cloud_development.incl.md}}
-
-### Serverless
-
-{{#include other/cloud/serverless.incl.md}}
-
-## Containers
-
-### Containers
-
-{{#include other/containers/containers.incl.md}}
-
-## Cross Platform
-
-### Crux
-
-{{#include other/cross_platform/crux.incl.md}}
-
-## Data Processing
-
-### CSV
-
-{{#include other/data_processing/csv.incl.md}}
-
-### Dataframes
-
-{{#include other/data_processing/dataframes.incl.md}}
-
-### Data Engineering
-
-{{#include other/data_processing/data_engineering.incl.md}}
-
-### Data Visualization
-
-{{#include other/data_processing/data_visualization.incl.md}}
-
-## Devops
-
-### CD/CI
-
-{{#include other/devops/cd_ci.incl.md}}
-
-### Dependency Management
-
-{{#include other/devops/dependency_management.incl.md}}
-
-### DevOps
-
-{{#include other/devops/devops.incl.md}}
-
-### Github Actions
-
-{{#include other/devops/github_actions.incl.md}}
-
-### Git Hooks
-
-{{#include other/devops/git_hooks.incl.md}}
-
-### Release Automation
-
-{{#include other/devops/release_automation.incl.md}}
-
-## GPU
-
-### GPU
-
-{{#include other/gpu/gpu.incl.md}}
-
-## Scripting
-
-### `rhai`
-
-{{#include other/scripting/rhai.incl.md}}
-
-## Written in Rust
-
-### Development Tools
-
-{{#include other/written-in-rust/development_tools.incl.md}}
-
-### Others
-
-{{#include other/written-in-rust/others.incl.md}}
-
-### Python Tools
-
-{{#include other/written-in-rust/python_tools.incl.md}}
-
 ## Standard Library
 
-### `Asref`
+### `AsRef`
 
-{{#include standard_library/asref.incl.md}}
+{{#include standard-library/asref.incl.md}}
 
 ### `Cow`
 
-{{#include standard_library/cow.incl.md}}
+{{#include standard-library/cow.incl.md}}
 
 ### Derive
 
-{{#include standard_library/derive.incl.md}}
+{{#include standard-library/derive.incl.md}}
 
 ### Hashmaps
 
-{{#include standard_library/hashmaps.incl.md}}
+{{#include standard-library/hashmaps.incl.md}}
 
-### `Option`
+### `option`
 
-{{#include standard_library/option.incl.md}}
+{{#include standard-library/option.incl.md}}
 
-### `Result`
+### `result`
 
-{{#include standard_library/result.incl.md}}
+{{#include standard-library/result.incl.md}}
 
 ### Smart Pointers
 
-{{#include standard_library/smart_pointers.incl.md}}
+{{#include standard-library/smart_pointers.incl.md}}
 
 ### Strings
 
-{{#include standard_library/strings.incl.md}}
+{{#include standard-library/strings.incl.md}}
 
 ### Vectors
 
-{{#include standard_library/vectors.incl.md}}
-
-<div class=hidden></div>
+{{#include standard-library/vectors.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}
+
+<div class="hidden"></div>
