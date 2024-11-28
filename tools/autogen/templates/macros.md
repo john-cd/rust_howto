@@ -24,7 +24,7 @@
 
 {# Returns a row of the alphabetical crate index#}
 {% macro alphabetical_crate_index_row(crate_names) %}
-| {{ for name in crate_names }}[![{name}][c-{{ name | underscore }}-badge]][c-{{ name | underscore }}]  {{ endfor }} |
+| {{ for name in crate_names }}[![{name}][c-{{ name | underscore }}-badge]][c-{{ name | underscore }}] {{ endfor }} |
 {% endmacro category %}
 
 {# Returns a row of the "crate by category" index#}

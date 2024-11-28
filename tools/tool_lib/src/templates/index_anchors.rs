@@ -2,7 +2,7 @@ use anyhow::Result;
 use serde::Serialize;
 
 pub(super) static INDEX_ANCHORS: &str =
-    r"{{ for keyword in keywords }}\{\{hi:{keyword}}}{{ endfor }}";
+    r"{{ for keyword in keywords }}\{\{hi:{keyword}}}{{ endfor }} ";
 
 /// Returns {{hi:keyword1}}{{hi:keyword2}}... pseudo-markdown.
 /// For use with `mdbook-indexing`.
