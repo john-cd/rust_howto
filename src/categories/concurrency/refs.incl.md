@@ -30,3 +30,4 @@
 [ex-concurrency-thumbnails-in-parallel]: parallel.md#thumbnails-in-parallel
 [ex-concurrency-tokio]: threads.md#tokio
 [ex-concurrency-utilities]: _actors.md#utilities
+[p-async-channels]: ../asynchronous/async_channels.md

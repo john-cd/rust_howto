@@ -6,7 +6,3 @@
 | [Sort a vector in parallel][ex-concurrency-sort-in-parallel] | [![rayon][c-rayon-badge]][c-rayon] [![rand][c-rand-badge]][c-rand] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Map-reduce in parallel][ex-concurrency-map-reduce-in-parallel] | [![rayon][c-rayon-badge]][c-rayon] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 | [Generate jpg thumbnails in parallel][ex-concurrency-thumbnails-in-parallel]  | [![rayon][c-rayon-badge]][c-rayon] [![glob][c-glob-badge]][c-glob] [![image][c-image-badge]][c-image] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
-
-<div class="hidden">
-TODO P1
-</div>

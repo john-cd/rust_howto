@@ -4,7 +4,7 @@
 
 ## Spawn a short-lived thread {#spawn-a-short-lived-thread}
 
-[![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:short-lived thread}}
+[![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}{{hi:Short-lived thread}}
 
 The example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ crate, which provides data structures and functions for concurrent and parallel programming{{hi:Parallel programming}}. [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ spawns a new scoped thread that is guaranteed to terminate before returning from the closure that passed into [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ function, meaning that you can reference data from the calling function.
 
@@ -16,9 +16,11 @@ This example splits the array in half and performs the work in separate threads.
 
 ## Create a parallel pipeline {#parallel-pipeline}
 
-[![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-This example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ and [`crossbeam-channel`][c-crossbeam_channel]{{hi:crossbeam-channel}}⮳ crates to create a parallel pipeline{{hi:Parallel pipeline}}, similar to that described in the ZeroMQ [guide][zero-mq-guide-website]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
+[![crossbeam-channel-website][c-crossbeam_channel-website-badge]][c-crossbeam_channel-website] [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io] [![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github] [![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+This example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ and [`crossbeam-channel`][c-crossbeam_channel]{{hi:crossbeam-channel}}⮳ crates to create a parallel pipeline{{hi:Parallel pipeline}}, similar to that described in the [ZeroMQ guide][zero-mq-guide-website]⮳. There is a data source and a data sink, with data being processed by two worker threads in parallel on its way from the source to the sink.
 
 We use bounded channels with a capacity of one using
 [`crossbeam_channel::bounded`][c-crossbeam_channel::bounded]{{hi:crossbeam_channel::bounded}}⮳. The producer must be on its own thread because it produces messages faster than the workers can process them (since they sleep for half a second) - this means the producer blocks on the call to
@@ -33,7 +35,9 @@ Reading from the channels via the iterator
 
 ## Pass data between two threads {#pass-data-between-two-threads}
 
-[![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+[![crossbeam-channel-website][c-crossbeam_channel-website-badge]][c-crossbeam_channel-website] [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io] [![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github] [![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
 This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ in a single producer, single consumer{{hi:Single producer, single consumer}} (SPSC) setting. We build off the `crossbeam spawn`{{hi:crossbeam spawn}}⮳ example by using [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ and [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ channel, meaning there is no limit to the number of storable messages{{hi:Messages}}. The producer thread sleeps for half a second in between messages.
 
@@ -43,7 +47,7 @@ This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{
 
 ## Maintain global mutable state {#global-mutable-state}
 
-[![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Global mutable state}}
+[![lazy_static][c-lazy_static-badge]][c-lazy_static] [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io] [![lazy_static-github][c-lazy_static-github-badge]][c-lazy_static-github] [![lazy_static-lib.rs][c-lazy_static-lib.rs-badge]][c-lazy_static-lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}{{hi:Global mutable state}}
 
 Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c-lazy_static]{{hi:lazy_static}}⮳ creates a globally available `static ref` which requires a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ to allow mutation (also see [`std::sync::RwLock`][c-std::sync::RwLock]{{hi:std::sync::RwLock}}⮳). The [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c-std::sync::MutexGuard]{{hi:std::sync::MutexGuard}}⮳ must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳.
 
@@ -83,12 +87,6 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 {{#include ../../../deps/tests/cats/concurrency/threadpool_fractal.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO P1
-
 ## Channels {#channels}
 
 ### `crossbeam-channel` {#crossbeam-channel2}
@@ -100,26 +98,33 @@ TODO P1
 
 The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
-### flume {#flume}
+### `flume` {#flume}
 
 [![flume][c-flume-badge]][c-flume]{{hi:flume}}
 [![flume-crates.io][c-flume-crates.io-badge]][c-flume-crates.io]
 [![flume-github][c-flume-github-badge]][c-flume-github]
 [![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
 
-Smaller and simpler than crossbeam-channel and almost as fast
+Smaller and simpler than `crossbeam-channel` and almost as fast.
 
-### tokio {#tokio}
+### `tokio` {#tokio}
 
-Tokio's sync module provides channels for using in async code
+[![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-### postage {#postage}
+Tokio's `sync` module provides channels for using in async code.
+
+### `postage` {#postage}
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
 [![postage-github][c-postage-github-badge]][c-postage-github]
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
-Channels that integrate nicely with async code, with different options than Tokio
+Channels that integrate nicely with async code, with different options than Tokio.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO P1 cleanup
 </div>

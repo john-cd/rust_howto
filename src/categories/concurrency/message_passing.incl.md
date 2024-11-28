@@ -1,8 +1,4 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Multiple producers, single consumer][ex-concurrency-mpsc] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Crossbeam_channel][ex-concurrency-crossbeam-channel] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-
-<div class="hidden">
-TODO P1
-</div>
+| [Multiple producers, single consumer][ex-concurrency-mpsc] | [![std][c-std-badge]][c-std] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`crossbeam_channel`][ex-concurrency-crossbeam-channel] | [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |

@@ -6,13 +6,13 @@
 | [Maintain global mutable state][ex-concurrency-global-mutable-state] | [![lazy_static][c-lazy_static-badge]][c-lazy_static] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 | [Calculate SHA256 sum of *.iso files concurrently][ex-concurrency-sha256-of-iso-files-concurrently] | [![threadpool][c-threadpool-badge]][c-threadpool] [![walkdir][c-walkdir-badge]][c-walkdir] [![num_cpus][c-num_cpus-badge]][c-num_cpus] [![ring][c-ring-badge]][c-ring] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Draw fractal dispatching work to a thread pool][ex-concurrency-draw-fractal-threadpool] | [![threadpool][c-threadpool-badge]][c-threadpool] [![num][c-num-badge]][c-num] [![num_cpus][c-num_cpus-badge]][c-num_cpus] [![image][c-image-badge]][c-image] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [![cat-science][cat-science-badge]][cat-science] [![cat-rendering][cat-rendering-badge]][cat-rendering] |
-| [Channels][ex-concurrency-channels] |  |  |
-| [`crossbeam-channel`][ex-concurrency-crossbeam-channel] |  |  |
-| [`crossbeam-channel`][ex-concurrency-crossbeam-channel2] |  |  |
-| [`flume`][ex-concurrency-flume] |  |  |
-| [`tokio`][ex-concurrency-tokio] |  |  |
-| [`postage`][ex-concurrency-postage] |  |  |
+| [Channels][ex-concurrency-channels] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`crossbeam-channel`][ex-concurrency-crossbeam-channel] | [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`crossbeam-channel`][ex-concurrency-crossbeam-channel2] | [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`flume`][ex-concurrency-flume] | [![flume][c-flume-badge]][c-flume] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`tokio`][ex-concurrency-tokio] | [![tokio][c-tokio-badge]][c-tokio]  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`postage`][ex-concurrency-postage] | [![postage][c-postage-badge]][c-postage] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
 
 <div class="hidden">
-TODO P1
+TODO P1 cleanup
 </div>
