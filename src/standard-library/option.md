@@ -50,7 +50,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 
 ## Combinators {#combinators}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 ```rust,editable
 {{#include ../../deps/tests/std/options3.rs:example}}
