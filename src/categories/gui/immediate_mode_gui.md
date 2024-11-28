@@ -4,7 +4,7 @@
 
 ## `egui` {#egui}
 
-[![egui][c-egui-badge]][c-egui]{{hi:egui}}  [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
+[![egui][c-egui-badge]][c-egui]{{hi:egui}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 [![egui-crates.io][c-egui-crates.io-badge]][c-egui-crates.io]
 [![egui-github][c-egui-github-badge]][c-egui-github]
 [![egui-lib.rs][c-egui-lib.rs-badge]][c-egui-lib.rs]

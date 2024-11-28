@@ -8,7 +8,7 @@
 [![cargo-watch-crates.io][c-cargo_watch-crates.io-badge]][c-cargo_watch-crates.io]
 [![cargo-watch-github][c-cargo_watch-github-badge]][c-cargo_watch-github]
 [![cargo-watch-lib.rs][c-cargo_watch-lib.rs-badge]][c-cargo_watch-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 cargo install cargo-watch

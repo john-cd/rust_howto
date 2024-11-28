@@ -4,7 +4,7 @@
 
 ## Calculate the SHA-256 digest of a file {#sha256}
 
-[![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:data-encoding}}  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
+[![ring][c-ring-badge]][c-ring]{{hi:ring}} [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:data-encoding}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳
 
@@ -14,7 +14,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 
 ## Sign and verify a message with HMAC digest {#hmac}
 
-[![ring][c-ring-badge]][c-ring]{{hi:ring}}  [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
+[![ring][c-ring-badge]][c-ring]{{hi:ring}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
 Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signature::Signature`][c-ring::signature::Signature]{{hi:ring::signature::Signature}}⮳ of a string then verifies the signature{{hi:Signature}} is correct.
 

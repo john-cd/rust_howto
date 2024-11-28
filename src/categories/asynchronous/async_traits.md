@@ -20,7 +20,7 @@ Note that there are still caveats for public traits - see [Announcing `async fn`
 
 In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the `async-trait`{{hi:async-trait}} crate.
 
-[![async-trait][c-async_trait-badge]][c-async_trait]{{hi:async-trait}}  [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![async-trait][c-async_trait-badge]][c-async_trait]{{hi:async-trait}} [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
 {{#include ../../../deps/tests/cats/asynchronous/async_traits3.rs:example}}

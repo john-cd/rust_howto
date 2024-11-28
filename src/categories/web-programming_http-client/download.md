@@ -4,7 +4,7 @@
 
 ## Download a file to a temporary directory {#download}
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![tempfile][c-tempfile-badge]][c-tempfile]{{hi:tempfile}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![tempfile][c-tempfile-badge]][c-tempfile]{{hi:tempfile}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
 Creates a temporary directory with [`tempfile::Builder`][c-tempfile::Builder]{{hi:tempfile::Builder}}⮳ and downloads a file over HTTP using [`reqwest::get`][c-reqwest::get]{{hi:reqwest::get}}⮳ asynchronously.
 
@@ -18,7 +18,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 
 ## POST a file to paste-rs {#post-a-file-to-paste-rs}
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
 [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ establishes a connection to [https://paste.rs][paste.rs] following the [`reqwest::RequestBuilder`][c-reqwest::RequestBuilder]{{hi:reqwest::RequestBuilder}}⮳ pattern. Calling [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳ with a URL establishes the destination, [`reqwest::RequestBuilder::body`][c-reqwest::RequestBuilder::body]{{hi:reqwest::RequestBuilder::body}}⮳ sets the content to send by reading the file, and [`reqwest::RequestBuilder::send`][c-reqwest::RequestBuilder::send]{{hi:reqwest::RequestBuilder::send}}⮳ blocks until the file uploads and the response returns. [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳ returns the response and displays in the console.
 
@@ -28,7 +28,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 
 ## Make a partial download with HTTP range headers {#partial-download-with-http-range-headers}
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}  [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
 Uses [`reqwest::blocking::Client::head`][c-reqwest::blocking::Client::head]{{hi:reqwest::blocking::Client::head}}⮳ to get the [`Content-Length`][mozilla-content-length]{{hi:Content length}}⮳ of the response.
 

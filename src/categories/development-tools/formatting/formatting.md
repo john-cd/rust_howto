@@ -4,7 +4,7 @@
 
 ## Rustfmt {#rustfmt}
 
-[![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 Install with `rustup component add rustfmt`{{hi:rustfmt}}
 

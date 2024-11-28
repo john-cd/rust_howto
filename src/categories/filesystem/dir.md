@@ -52,7 +52,7 @@ Find recursively in the current directory duplicate filenames{{hi:Duplicate file
 
 ## Recursively find all files with given predicate {#recursively-find-all-files-with-given-predicate}
 
-[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Find files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c-walkdir::WalkDir::follow_links]{{hi:walkdir::WalkDir::follow_links}}⮳ ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
 
@@ -62,7 +62,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 ## Traverse directories while skipping dotfiles {#traverse-directories-while-skipping-dotfiles}
 
-[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:Skipping dotfiles}}
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:Skipping dotfiles}}
 
 Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c-std::iter::Iterator::filter]{{hi:std::iter::Iterator::filter}}⮳ applies to each [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ even if the parent is a hidden directory.
 
@@ -74,7 +74,7 @@ Root dir `"."` yields through `walkdir::WalkDir::depth` usage in `is_not_hidden`
 
 ## Recursively calculate file sizes at given depth {#recursively-calculate-file-sizes-at-given-depth}
 
-[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}
+[![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
 Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir::WalkDir::min_depth]{{hi:walkdir::WalkDir::min_depth}}⮳ & [`walkdir::WalkDir::max_depth`][c-walkdir::WalkDir::max_depth]{{hi:walkdir::WalkDir::max_depth}}⮳ methods. Calculates sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
 
@@ -84,7 +84,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c-walkdir
 
 ## Find all png files recursively {#find-all-png-files-recursively}
 
-[![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![glob][c-glob-badge]][c-glob]{{hi:glob}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Recursively find all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -96,7 +96,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find all files with given pattern ignoring filename case {#find-all-files-with-given-pattern-ignoring-filename-case}
 
-[![glob][c-glob-badge]][c-glob]{{hi:glob}}  [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![glob][c-glob-badge]][c-glob]{{hi:glob}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 Find all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
 

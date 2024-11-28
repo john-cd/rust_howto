@@ -4,7 +4,7 @@
 
 ## Create tables in a Postgres database {#create-tables-postgres}
 
-[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}}  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
+[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
 Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a Postgres database.
 
@@ -16,7 +16,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 
 ## Insert and Query data {#insert-query-data-postgres}
 
-[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}}  [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
+[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
 The recipe inserts data into the `author` table using [`postgres::Client::execute`][c-postgres::Client::execute]{{hi:postgres::Client::execute}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳. Then, displays the data from the `author` table using [`postgres::Client::query`][c-postgres::Client::query]{{hi:postgres::Client::query}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳.
 
@@ -26,7 +26,7 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 
 ## Aggregate data {#aggregate-data-postgres}
 
-[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}}  [![cat-database][cat-database-badge]][cat-database]{{hi:Database}}  [![csv-sample][csv-sample-badge]][csv-sample]
+[![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database}} [![csv-sample][csv-sample-badge]][csv-sample]
 
 This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample]⮳ in descending order.
 

@@ -4,7 +4,7 @@
 
 ## Robotics {#robots}
 
-[Robotics (lib.rs)][robotics-lib.rs]⮳  [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
+[Robotics (lib.rs)][robotics-lib.rs]⮳ [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
 
 [![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳
 

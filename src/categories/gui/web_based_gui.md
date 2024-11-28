@@ -4,7 +4,7 @@
 
 ## Tauri {#tauri}
 
-[![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}}  [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
+[![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}} [![tauri-website][c-tauri-website-badge]][c-tauri-website] [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 [![tauri-crates.io][c-tauri-crates.io-badge]][c-tauri-crates.io]
 [![tauri-github][c-tauri-github-badge]][c-tauri-github]
 [![tauri-lib.rs][c-tauri-lib.rs-badge]][c-tauri-lib.rs]

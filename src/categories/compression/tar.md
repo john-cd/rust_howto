@@ -4,7 +4,7 @@
 
 ## Decompress a tarball {#decompress-a-tarball}
 
-[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
+[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}} [![tar][c-tar-badge]][c-tar]{{hi:tar}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
 Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::read::GzDecoder}}⮳) and extract ([`tar::Archive::unpack`][c-tar::Archive::unpack]{{hi:tar::Archive::unpack}}⮳) all files from a compressed tarball named `archive.tar.gz` located in the current working directory to the same location.
 
@@ -14,7 +14,7 @@ Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::r
 
 ## Compress a directory into a tarball {#compress-a-directory-into-a-tarball}
 
-[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
+[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}} [![tar][c-tar-badge]][c-tar]{{hi:tar}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
@@ -28,7 +28,7 @@ Adds contents of `/var/log` directory recursively into the archive under `backup
 
 ## Decompress a tarball while removing a prefix from the paths {#decompress-a-tarball-removing-prefix}
 
-[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}}  [![tar][c-tar-badge]][c-tar]{{hi:tar}}  [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
+[![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}} [![tar][c-tar-badge]][c-tar]{{hi:tar}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
 Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Archive::entries}}⮳. Use [`std::path::Path::strip_prefix`][c-std::path::Path::strip_prefix]{{hi:std::path::Path::strip_prefix}}⮳ to remove the specified path prefix (`bundle/logs`). Finally, extract the [`tar::Entry`][c-tar::Entry]{{hi:tar::Entry}}⮳ via [`tar::Entry::unpack`][c-tar::Entry::unpack]{{hi:tar::Entry::unpack}}⮳.
 

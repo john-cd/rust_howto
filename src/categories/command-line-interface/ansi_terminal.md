@@ -2,7 +2,7 @@
 
 {{#include ansi_terminal.incl.md}}
 
-[![ansi_term][c-ansi_term-badge]][c-ansi_term]{{hi:ansi_term}}  [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+[![ansi_term][c-ansi_term-badge]][c-ansi_term]{{hi:ansi_term}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
 This program depicts the use of [`ansi_term`][c-ansi_term-crates.io]{{hi:ansi_term}}⮳ crate and how it is used for controlling colours and formatting, such as blue bold text or yellow underlined text, on ANSI terminals{{hi:ANSI terminals}}.
 

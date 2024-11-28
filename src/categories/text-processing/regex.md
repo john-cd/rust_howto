@@ -4,7 +4,7 @@
 
 ## Verify and extract login from an email address {#verify-and-extract-login-from-an-email-address}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Validates that an email address{{hi:Email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
@@ -14,11 +14,11 @@ Validates that an email address{{hi:Email address}} is formatted correctly, and 
 
 ## Extract a list of unique #Hashtags from a text {#extract-a-list-of-unique-hashtags-from-a-text}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
 
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳  [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
+The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter-hashtag-regex]⮳ [![twitter-hashtag-regex][twitter-hashtag-badge]][twitter-hashtag-regex] is much more complicated.
 
 ```rust,editable
 {{#include ../../../deps/tests/cats/text_processing/hashtags.rs:example}}
@@ -26,7 +26,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 
 ## Extract phone numbers from text {#extract-phone-numbers-from-text}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Processes a string of text using [`regex::Regex::captures_iter`][c-regex::Regex::captures_iter]{{hi:regex::Regex::captures_iter}}⮳ to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
 
@@ -36,7 +36,7 @@ Processes a string of text using [`regex::Regex::captures_iter`][c-regex::Regex:
 
 ## Filter a log file by matching multiple regular expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Reads a file named `application.log` and only outputs the lines containing “version X.X.X”, some IP address followed by port 443 (e.g. “192.168.0.1:443”), or a specific warning.
 
@@ -48,7 +48,7 @@ A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilde
 
 ## Replace all occurrences of one text pattern with another pattern {#replace-all-occurrences-of-one-text-pattern-with-another-pattern}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}}  [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} *YYYY-MM-DD* date pattern with the equivalent American English date{{hi:Date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
 

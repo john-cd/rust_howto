@@ -8,7 +8,7 @@
 [![cargo-audit-crates.io][c-cargo_audit-crates.io-badge]][c-cargo_audit-crates.io]
 [![cargo-audit-github][c-cargo_audit-github-badge]][c-cargo_audit-github]
 [![cargo-audit-lib.rs][c-cargo_audit-lib.rs-badge]][c-cargo_audit-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 cargo install cargo-audit

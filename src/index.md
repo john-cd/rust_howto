@@ -57,7 +57,7 @@ Recipes are designed to give you instant access to working code, along with a fu
 
 Consider this example for "generate random numbers within a range":
 
-[![rand][c-rand-badge]][c-rand]{{hi:rand}}  [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
+[![rand][c-rand-badge]][c-rand]{{hi:rand}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
 ```rust,editable
 {{#include ../deps/tests/about/about.rs:example}}

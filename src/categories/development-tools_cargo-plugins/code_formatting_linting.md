@@ -8,7 +8,7 @@
 [![rustfmt-nightly-crates.io][c-rustfmt_nightly-crates.io-badge]][c-rustfmt_nightly-crates.io]
 [![rustfmt-nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]
 [![rustfmt-nightly-lib.rs][c-rustfmt_nightly-lib.rs-badge]][c-rustfmt_nightly-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 ```sh
 # Install `rustfmt` if needed
@@ -26,7 +26,7 @@ cargo fmt -- --check
 [![clippy-crates.io][c-clippy-crates.io-badge]][c-clippy-crates.io]
 [![clippy-github][c-clippy-github-badge]][c-clippy-github]
 [![clippy-lib.rs][c-clippy-lib.rs-badge]][c-clippy-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Clippy is the official Rust linter. It catches common mistakes and improves your Rust code.
 
@@ -43,7 +43,7 @@ Mute a warning using the `#[allow(clippy::lint_name)]` attributes.
 [![rustfix-crates.io][c-rustfix-crates.io-badge]][c-rustfix-crates.io]
 [![rustfix-github][c-rustfix-github-badge]][c-rustfix-github]
 [![rustfix-lib.rs][c-rustfix-lib.rs-badge]][c-rustfix-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
 

@@ -4,7 +4,7 @@
 
 ## iced {#iced}
 
-[![iced][c-iced-badge]][c-iced]{{hi:iced}}  [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
+[![iced][c-iced-badge]][c-iced]{{hi:iced}} [![iced-github][c-iced-github-badge]][c-iced-github] is a cross-platform GUI library for Rust, inspired by Elm.
 
 [![iced][c-iced-badge]][c-iced]{{hi:iced}}
 [![iced-crates.io][c-iced-crates.io-badge]][c-iced-crates.io]

@@ -6,7 +6,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 ## `anyhow` {#anyhow}
 
-[![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}}  [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}} [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -29,10 +29,10 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
 ```rust,editable,compile_fail
-#[error("{var}")]   //⟶ write!("{}", self.var)
-#[error("{0}")]     //⟶ write!("{}", self.0)
+#[error("{var}")]  //⟶ write!("{}", self.var)
+#[error("{0}")]   //⟶ write!("{}", self.0)
 #[error("{var:?}")] //⟶ write!("{:?}", self.var)
-#[error("{0:?}")]   //⟶ write!("{:?}", self.0)
+#[error("{0:?}")]  //⟶ write!("{:?}", self.0)
 ```
 
 ```rust,editable

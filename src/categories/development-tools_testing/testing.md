@@ -19,7 +19,7 @@
 
 ## Custom message {#custom-message}
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}   [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
 ```rust,editable
 {{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs:example}}
@@ -68,7 +68,7 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 
 ## Code coverage {#cargo-tarpaulin}
 
-[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

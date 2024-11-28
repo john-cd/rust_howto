@@ -80,7 +80,7 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on  to extend errors by appending new errors.
+This recipe shows how to handle a complex error scenario and then print a backtrace. It relies on to extend errors by appending new errors.
 
 The below recipes attempts to deserialize the value `256` into a
 [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then csv and finally up to the user code.

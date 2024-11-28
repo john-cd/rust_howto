@@ -9,7 +9,7 @@
 [![cargo-generate-github][c-cargo_generate-github-badge]][c-cargo_generate-github]
 [![cargo-generate-lib.rs][c-cargo_generate-lib.rs-badge]][c-cargo_generate-lib.rs]
 
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:cargo plugins}}
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:cargo plugins}}
 
 [Cargo Generate][c-cargo_generate-crates.io]{{hi:cargo-generate}}⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 

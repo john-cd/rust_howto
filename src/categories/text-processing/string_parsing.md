@@ -14,7 +14,7 @@ Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} stri
 
 ## Implement the `FromStr` trait for a custom `struct` {#implement-the-fromstr-trait-for-a-custom-struct}
 
-[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+[![std][c-std-badge]][c-std]{{hi:std}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 

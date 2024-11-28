@@ -13,7 +13,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 |---|---|
 | [1Password][1password-website]⮳[(github)][1password-github]⮳ | All desktop and mobile apps share a single Rust codebase. |
 | [360Dialog][360dialog-website]⮳ | Uses Rust for most of their service consumers. |
-| [49Nord][49nord-website]⮳ |  Develops safe and secure industrial IoT hardware and applications using Rust. |
+| [49Nord][49nord-website]⮳ | Develops safe and secure industrial IoT hardware and applications using Rust. |
 | [9fin][9fin-website]⮳ | |
 | [ANIXE][anixe-website]⮳ | Builds their travel services trading platform in Rust. |
 | [ARM][arm-website]⮳ | |

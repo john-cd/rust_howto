@@ -4,7 +4,7 @@
 
 ## Dotenvy {#dotenvy}
 
-[![dotenvy][c-dotenvy-badge]][c-dotenvy]{{hi:dotenvy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
+[![dotenvy][c-dotenvy-badge]][c-dotenvy]{{hi:dotenvy}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
@@ -24,7 +24,7 @@ To retrieve a single environment variable{{hi:Environment variables}},
 
 ## Envy {#envy}
 
-[![envy][c-envy-badge]][c-envy]{{hi:envy}}  [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
+[![envy][c-envy-badge]][c-envy]{{hi:envy}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
 `envy` can deserialize environment variables into type-safe structs.
 

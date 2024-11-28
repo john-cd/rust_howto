@@ -4,7 +4,7 @@
 
 ## Use a LRU cache {#lru-cache}
 
-[![lru][c-lru-badge]][c-lru]{{hi:lru}}  [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
+[![lru][c-lru-badge]][c-lru]{{hi:lru}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
 ```rust,editable
 {{#include ../../../deps/tests/cats/caching/lru.rs:example}}

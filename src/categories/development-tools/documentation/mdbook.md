@@ -4,7 +4,7 @@
 
 ## mdBook {#mdbook}
 
-[![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]{{hi:mdbook}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]{{hi:mdbook}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 [mdBook][c-mdbook-github]⮳: a utility to create modern online books{{hi:Online books}} from Markdown files.
 
@@ -19,11 +19,11 @@ mdbook serve --open
 
 ## Playground {#playground}
 
-[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳  [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳ [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 ## `mdbook` plugins {#mdbook-plugins}
 
-[![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook-hide}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![mdbook_hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github]{{hi:mdbook-hide}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
 - [mdbook third-party plugins][c-mdbook-third-party-plugins-wiki]
 - [mdbook-private][c-mdbook_private-github]{{hi:mdbook-private}}

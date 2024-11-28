@@ -28,7 +28,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 
 ## Create new URLs from a base URL {#create-new-urls-from-a-base-url}
 
-[![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
+[![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:Relative path}}.
 
@@ -38,7 +38,7 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 
 ## Extract the URL origin (scheme / host / port) {#extract-the-url-origin}
 
-[![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
+[![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to extract information about the URL it represents.
 
@@ -54,7 +54,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 
 ## Remove fragment identifiers and query pairs from a URL {#remove-fragment-identifiers-and-query-pairs}
 
-[![url][c-url-badge]][c-url]{{hi:url}}  [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
+[![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Position`][c-url::Position]{{hi:url::Position}}⮳ to strip unneeded URL parts.
 

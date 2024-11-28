@@ -2,7 +2,7 @@
 
 {{#include variables_and_constants.incl.md}}
 
-[![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]{{hi:Variables}}  [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]{{hi:const}}
+[![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]{{hi:Variables}} [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]{{hi:const}}
 
 ```rust,editable
 {{#include ../../deps/tests/lang/vars_and_consts.rs:example}}

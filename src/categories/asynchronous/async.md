@@ -50,16 +50,16 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 ## Async runtimes {#async-runtimes}
 
-[![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}}  [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}} [![smol][c-smol-badge]][c-smol]{{hi:smol}} [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}} [![mio][c-mio-badge]][c-mio]{{hi:mio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 In most cases, prefer the [`tokio`][p-tokio]{{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
 Alternatives to the Tokio async ecosystem include:
 
-- [![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}}  [![async_std-crates.io][c-async_std-crates.io-badge]][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
-- [![smol][c-smol-badge]][c-smol]{{hi:smol}}  [Smol][c-smol-crates.io]⮳
-- [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}  [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
-- [![mio][c-mio-badge]][c-mio]{{hi:mio}}  [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+- [![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}} [![async_std-crates.io][c-async_std-crates.io-badge]][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
+- [![smol][c-smol-badge]][c-smol]{{hi:smol}} [Smol][c-smol-crates.io]⮳
+- [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}} [Embassy][c-embassy-website]⮳ [![embassy-github][c-embassy-github-badge]][c-embassy-github] for embedded systems.
+- [![mio][c-mio-badge]][c-mio]{{hi:mio}} [Mio][c-mio-crates.io]⮳ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
 
 ## See also
 

@@ -4,7 +4,7 @@
 
 ## Percent-encode a string {#percent-encoding}
 
-[![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]{{hi:percent_encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+[![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]{{hi:percent_encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ using the [`percent_encoding::utf8_percent_encode`][c-percent_encoding::utf8_percent_encode]{{hi:percent_encoding::utf8_percent_encode}}⮳ function from the `percent_encoding`{{hi:percent_encoding}} crate. Then decode using the [`percent_encoding::percent_decode`][c-percent_encoding::percent_decode]{{hi:percent_encoding::percent_decode}}⮳ function.
 
@@ -28,7 +28,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 
 ## Encode and decode hex {#data-encoding}
 
-[![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+[![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 The [`data_encoding`][c-data_encoding]{{hi:data-encoding}}⮳ crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ containing the hexadecimal representation{{hi:Hexadecimal representation}} of the data.
 
@@ -42,7 +42,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 ## Encode and decode base64 {#base64}
 
-[![base64][c-base64-badge]][c-base64]{{hi:base64}}  [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+[![base64][c-base64-badge]][c-base64]{{hi:base64}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 Encodes byte slice into `base64`{{hi:base64}} String using [`base64::encode`][c-base64::encode]{{hi:base64::encode}} and decodes it with [`base64::decode`][c-base64::decode]{{hi:base64::decode}}.
 

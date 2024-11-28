@@ -17,11 +17,11 @@ It's designed for minimal interaction so that you can just let it run, alongside
 
 ## API search {#roogle}
 
-[`Roogle`][c-roogle-website]{{hi:roogle}}⮳  [![roogle-github][c-roogle-github-badge]][c-roogle-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[`Roogle`][c-roogle-website]{{hi:roogle}}⮳ [![roogle-github][c-roogle-github-badge]][c-roogle-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 ## Deployment {#shuttle-rs}
 
-[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 ## Binary minimizer {#binary-minimizer}
 

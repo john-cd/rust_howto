@@ -43,7 +43,7 @@ In some cases, it is necessary to run one or more futures that do not implement 
 
 ## Graceful shutdown {#graceful-shutdown}
 
-[![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}⮳:
 

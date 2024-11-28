@@ -4,7 +4,7 @@
 
 ## Define and operate on a type represented as a bitfield {#bitfield}
 
-[![bitflags][c-bitflags-badge]][c-bitflags]{{hi:bitflags}}  [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No std}}  [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+[![bitflags][c-bitflags-badge]][c-bitflags]{{hi:bitflags}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No std}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
 [![bitflags][c-bitflags-badge]][c-bitflags]
 [![bitflags-crates.io][c-bitflags-crates.io-badge]][c-bitflags-crates.io]

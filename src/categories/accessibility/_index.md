@@ -10,5 +10,4 @@ Assistive technology that helps overcome disabilities and impairments to make so
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
 </div>

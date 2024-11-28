@@ -8,7 +8,7 @@
 
 ## Box {#box}
 
-[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}}  [![std][c-std-badge]][c-std]{{hi:std}}
+[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![std][c-std-badge]][c-std]{{hi:std}}
 
 `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
 

@@ -10,7 +10,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 ## Multiple producers, single consumer {#mpsc}
 
-[![std][c-std-badge]][c-std]{{hi:std}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust,editable
 {{#include ../../../deps/tests/cats/concurrency/message_passing_mpsc.rs:example}}
@@ -18,7 +18,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 ## Crossbeam_channel {#crossbeam-channel}
 
-[![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam_channel}}  [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![crossbeam_channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam_channel}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for Message passing.
 
