@@ -2,6 +2,8 @@
 
 {{#include tar.incl.md}}
 
+`flate2` uses a pure-Rust implementation by default. Use feature flags to opt in to system `zlib`.
+
 ## Decompress a tarball {#decompress-a-tarball}
 
 [![flate2][c-flate2-badge]][c-flate2]{{hi:flate2}} [![tar][c-tar-badge]][c-tar]{{hi:tar}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
@@ -41,6 +43,4 @@ Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Arc
 
 <div class="hidden">
 TODO P1 review
-
-`flate2` uses a pure-Rust implementation by default. Use feature flags to opt in to system zlib.
 </div>
