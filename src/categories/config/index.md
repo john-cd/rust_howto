@@ -1,5 +1,7 @@
 # Configuration
 
+[![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
+
 Facilitate configuration management{{hi:Configuration management}} for applications.
 
 ## Configuration Management
