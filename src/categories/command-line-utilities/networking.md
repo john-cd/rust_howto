@@ -14,5 +14,6 @@ apt install gping
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize
+TODO P1 write
+P2 add
 </div>

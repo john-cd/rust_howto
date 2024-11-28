@@ -5,3 +5,4 @@
 [ex-command-line-utilities-lsd]: filesystem.md#lsd
 [ex-command-line-utilities-open]: filesystem.md#open
 [ex-command-line-utilities-starship]: shells.md#starship
+[ex-command-line-utilities-nushell]: shells.md#nushell

@@ -61,6 +61,7 @@
 [ex-command-line-utilities-exa]: categories/command-line-utilities/filesystem.md#exa
 [ex-command-line-utilities-gping]: categories/command-line-utilities/networking.md#gping
 [ex-command-line-utilities-lsd]: categories/command-line-utilities/filesystem.md#lsd
+[ex-command-line-utilities-nushell]: categories/command-line-utilities/shells.md#nushell
 [ex-command-line-utilities-open]: categories/command-line-utilities/filesystem.md#open
 [ex-command-line-utilities-starship]: categories/command-line-utilities/shells.md#starship
 [ex-compilers-build-time]: categories/compilers/reduce_compilation_duration.md#build-time

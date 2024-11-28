@@ -2,19 +2,24 @@
 
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
+## Filesystem
+
 {{#include filesystem.incl.md}}
 
+## Networking
+
 {{#include networking.incl.md}}
+
+## Shells
 
 {{#include shells.incl.md}}
 
 ## See also
 
-[My terminal became more Rusty Community][blog-rusty-terminal]⮳
+[My terminal became more Rusty][blog-rusty-terminal]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize
 </div>

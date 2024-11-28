@@ -35,7 +35,7 @@ curl -s https://sh.rustup.rs | bat
 bat -A /etc/hosts
 ```
 
-## open {#open}
+## `open` {#open}
 
 [![open][c-open-badge]][c-open]{{hi:open}}
 [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io]
