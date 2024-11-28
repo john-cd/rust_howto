@@ -6,7 +6,7 @@ Serve data over HTTP.
 
 {{#include axum.incl.md}}
 
-{{#include batteries_included.incl.md}}
+{{#include batteries-included_frameworks.incl.md}}
 
 {{#include cors.incl.md}}
 

@@ -426,11 +426,11 @@ list_missing_chapters_in_toc:
 
 ## ---- INDICES MANAGEMENT -----------------------------------
 
-# Quick and dirty generation of lang/index.md; manual editing required
+# Quick and dirty generation of language/index.md; manual editing required
 generate_lang_index:
   #! /bin/bash
   clear
-  for file in $(find ./src/lang -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
+  for file in $(find ./src/language -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
   do
     base=$(basename $file)
     title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')

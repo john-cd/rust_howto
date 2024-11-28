@@ -32,7 +32,7 @@ Here are the topics we’ll cover:
 
 - [Multithreading][p-multithreading]⮳
 - [Message passing][p-message_passing]⮳
-- [Shared-state concurrency][p-shared_state]⮳
+- [Shared-state concurrency][p-shared-state]⮳
 - [Concurrent data structures][p-concurrent_data_structures]⮳
 
 ## See Also
@@ -40,8 +40,8 @@ Here are the topics we’ll cover:
 [![book-rust-concurrency][book-rust-concurrency-badge]][book-rust-concurrency]
 
 [p-message_passing]: message_passing.md
-[p-shared_state]: shared_state/shared_state.md
-[p-concurrent_data_structures]: shared_state/concurrent_data_structures.md
+[p-shared-state]: shared-state/shared_state.md
+[p-concurrent_data_structures]: shared-state/concurrent_data_structures.md
 [p-multithreading]: multithreading.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

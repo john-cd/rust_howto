@@ -1,6 +1,6 @@
 # Batteries-included frameworks
 
-{{#include batteries_included.incl.md}}
+{{#include batteries-included_frameworks.incl.md}}
 
 ## Loco {#loco}
 

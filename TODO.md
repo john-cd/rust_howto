@@ -9,7 +9,7 @@
 - [ ] fix error handling / customization section WIP
 - [ ] fix examples marked TODO; make sure that there is an output when run in the playground
 - [ ] review all examples and mark them as ```rust,noplayground  as needed
-- [ ] add badge refdefs for links to RBE book in lang / standard_lib; use `just templ rbe` command - WIP
+- [ ] add badge refdefs for links to RBE book in language / standard_lib; use `just templ rbe` command - WIP
 - [ ] review each .md file in turn - WIP
 - [ ] replace current badge markdown mess by a preprocessor command
 - [ ] modify index of crates to point to the relevant recipes

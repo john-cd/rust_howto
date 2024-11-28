@@ -9,7 +9,7 @@
 ./src/categories/compression/index.md
 ./src/categories/computer-vision/index.md
 ./src/categories/concurrency/index.md
-./src/categories/concurrency/shared_state/index.md
+./src/categories/concurrency/shared-state/index.md
 ./src/categories/config/index.md
 ./src/categories/cryptography/index.md
 ./src/categories/data-structures/index.md
@@ -66,13 +66,13 @@
 ./src/categories/web-programming_http-server/index.md
 ./src/categories/web-programming_websocket/index.md
 ./src/contributing/index.md
-./src/lang/index.md
+./src/language/index.md
 ./src/links/index.md
 ./src/other/cloud/index.md
 ./src/other/cross_platform/index.md
-./src/other/data_processing/index.md
+./src/other/data-processing/index.md
 ./src/other/gpu/index.md
 ./src/other/index.md
 ./src/other/scripting/index.md
 ./src/other/written-in-rust/index.md
-./src/standard_library/index.md
+./src/standard-library/index.md
