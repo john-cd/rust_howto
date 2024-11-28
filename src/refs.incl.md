@@ -432,6 +432,7 @@
 [ex-links-companies]: links/companies.md#companies
 [ex-links-comparison-to-other-languages]: links/rust_cheatsheets.md#comparison-to-other-languages
 [ex-links-example-code]: links/example_code.md#example-code
+[ex-links-key-websites]: links/links.md#key-websites
 [ex-links-learning]: links/learning.md#learning
 [ex-links-links]: links/links.md#links
 [ex-links-meetups]: links/blogs_podcasts_meetups.md#meetups

@@ -395,7 +395,7 @@ list_examples_not_used_in_book:
 # Make sure that the local references i.e. {{#include refs.incl.md}} are included in every file
 list_missing_local_ref_includes:
   grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ./src
-# Only a few files (indices, TOC...) don't need local references
+# NOTE: a few files (indices, TOC...) don't need local references
 
 # Make sure that a local TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
 list_missing_subchapter_includes:
@@ -435,50 +435,6 @@ generate_lang_index:
     base=$(basename $file)
     title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
     echo "| [$title][ex-lang-${base%.md}] |"
-  done
-
-# Quick and dirty generation of the index of examples `examples_index.md`; manual editing required
-generate_index_of_examples:
-  #! /bin/bash
-  clear
-  echo "# Index of Examples
-  "
-  # leaf directories only
-  # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories
-  for dir in $(find ./src/* -type d -not -path "./src/refs" | sort -r | awk 'a!~"^"$0{a=$0;print}' | sort)
-  do
-    #echo ">> $dir"
-    last=$(basename $dir | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/-/ /g; s/_/: /g')
-    echo "## ${last}"
-    echo ""
-    # for all subchapter TOCs
-    for file in $(find $dir -type f -name '*.incl.md' -not -name "refs.incl.md" -not -name "*index.md" )
-    do
-      incl=$(realpath --relative-to=./src $file)
-      if [ $(grep -cF $incl ./src/examples_index.md) -eq 0 ]; then
-        base=$(basename $file)
-        # titlecase and replace _ by space
-        title=$(echo ${base%.incl.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
-        echo "### ${title}"
-        echo ""
-        echo "{{{{#include ${incl}}}"
-        echo ""
-      fi
-    done
-  done
-  echo "<div class="hidden"></div>
-
-  {{{{#include refs.incl.md}}
-  {{{{#include refs/link-refs.md}}"
-
-# Create references for the index of examples `examples_index.md` - add them to `src/refs.incl.md`
-generate_refdefs_for_index_examples:
-  #! /bin/bash
-  clear
-  for file in $(find ./src -type f -name "refs.incl.md")
-  do
-    rel=$(realpath --relative-to=./src $file | sed 's/refs.incl.md//');
-    sed -nE 's~(^\[ex-.+?\]:)\s?([^#]+?)(#.+)?$~\1 '${rel}'\2\3~p' $file | sort -u -
   done
 
 ## ---- PRE-PUSH -----------------------------------
