@@ -119,8 +119,8 @@
 - [Containers](other/containers/_index.md)
   - [Containers](other/containers/containers.md)
 
-- [Cross-platform Development](other/cross_platform/_index.md)
-  - [Crux](other/cross_platform/crux.md)
+- [Cross-platform Development](other/cross-platform/_index.md)
+  - [Crux](other/cross-platform/crux.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Hashing](categories/cryptography/hashing.md)
@@ -425,7 +425,7 @@
   - [Static website generators](categories/web-programming_http-server/static_website_generators.md)
   - [Middleware](categories/web-programming_http-server/middleware.md)
   - [CORS](categories/web-programming_http-server/cors.md)
-  - [Batteries-included frameworks](categories/web-programming_http-server/batteries_included.md)
+  - [Batteries-included frameworks](categories/web-programming_http-server/batteries-included_frameworks.md)
   - [GraphQL](categories/web-programming_http-server/graphql.md)
   - [gRPC](categories/web-programming_http-server/grpc.md)
   - [`hyper`](categories/web-programming_http-server/hyper.md)

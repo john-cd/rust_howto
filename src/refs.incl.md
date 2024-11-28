@@ -128,7 +128,7 @@
 [ex-contributing-repo-structure]: contributing/repo_structure.md#repo-structure
 [ex-contributing-topics-of-interest]: contributing/topics_of_interest.md#topics-of-interest
 [ex-contributing-using-vs-code]: contributing/dev_environment_setup.md#using-vs-code
-[ex-cross_platform-develop-across-platforms]: other/cross_platform/crux.md#develop-across-platforms
+[ex-cross_platform-develop-across-platforms]: other/cross-platform/crux.md#develop-across-platforms
 [ex-cryptography-aead-encryption]: categories/cryptography/hashing.md#aead-encryption
 [ex-cryptography-argon2]: categories/cryptography/password_hashing.md#argon2
 [ex-cryptography-bcrypt]: categories/cryptography/password_hashing.md#bcrypt
@@ -627,9 +627,9 @@
 [ex-web-programming_http-server-cors]: categories/web-programming_http-server/cors.md#cors
 [ex-web-programming_http-server-hyper]: categories/web-programming_http-server/hyper.md#hyper
 [ex-web-programming_http-server-leptos]: categories/web-programming_http-server/other_frameworks.md#leptos
-[ex-web-programming_http-server-loco]: categories/web-programming_http-server/batteries_included.md#loco
+[ex-web-programming_http-server-loco]: categories/web-programming_http-server/batteries-included_frameworks.md#loco
 [ex-web-programming_http-server-rocket]: categories/web-programming_http-server/other_frameworks.md#rocket
-[ex-web-programming_http-server-rust-on-nails]: categories/web-programming_http-server/batteries_included.md#rust-on-nails
+[ex-web-programming_http-server-rust-on-nails]: categories/web-programming_http-server/batteries-included_frameworks.md#rust-on-nails
 [ex-web-programming_http-server-themes]: categories/web-programming_http-server/static_website_generators.md#themes
 [ex-web-programming_http-server-tonic]: categories/web-programming_http-server/grpc.md#tonic
 [ex-web-programming_http-server-tower-http]: categories/web-programming_http-server/middleware.md#tower-http

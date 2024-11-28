@@ -5,9 +5,9 @@
 [ex-web-programming_http-server-cors]: cors.md#cors
 [ex-web-programming_http-server-hyper]: hyper.md#hyper
 [ex-web-programming_http-server-leptos]: other_frameworks.md#leptos
-[ex-web-programming_http-server-loco]: batteries_included.md#loco
+[ex-web-programming_http-server-loco]: batteries-included_frameworks.md#loco
 [ex-web-programming_http-server-rocket]: other_frameworks.md#rocket
-[ex-web-programming_http-server-rust-on-nails]: batteries_included.md#rust-on-nails
+[ex-web-programming_http-server-rust-on-nails]: batteries-included_frameworks.md#rust-on-nails
 [ex-web-programming_http-server-themes]: static_website_generators.md#themes
 [ex-web-programming_http-server-tonic]: grpc.md#tonic
 [ex-web-programming_http-server-tower-http]: middleware.md#tower-http
