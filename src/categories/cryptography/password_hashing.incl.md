@@ -1,9 +1,8 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [argon2][ex-cryptography-argon2] |  | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
-| [scrypt][ex-cryptography-scrypt] |  | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
-| [bcrypt][ex-cryptography-bcrypt] |  | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [argon2][ex-cryptography-argon2] | [![argon2][c-argon2-badge]][c-argon2] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [scrypt][ex-cryptography-scrypt] | [![scrypt][c-scrypt-badge]][c-scrypt] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [bcrypt][ex-cryptography-bcrypt] | [![bcrypt][c-bcrypt-badge]][c-bcrypt] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 <div class="hidden">
-TODO P1
 </div>
