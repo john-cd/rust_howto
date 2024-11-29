@@ -5,7 +5,7 @@
 ## Get the current working directory {#cwd}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/filesystem/cwd.rs:example}}
+{{#include ../../../deps/tests/categories/filesystem/cwd.rs:example}}
 ```
 
 {{#include refs.incl.md}}

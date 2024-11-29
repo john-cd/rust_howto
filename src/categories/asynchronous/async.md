@@ -21,7 +21,7 @@ Key constructs in Rust:
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/asynchronous/async1.rs:example}}
+{{#include ../../../deps/tests/categories/asynchronous/async1.rs:example}}
 ```
 
 As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
@@ -33,7 +33,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - Rust's [`async`][book-rust-reference-async]{{hi:async}}⮳ operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c-std::task::Poll]{{hi:std::task::Poll}}⮳ method repeatedly to execute futures.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/asynchronous/async2.rs:example}}
+{{#include ../../../deps/tests/categories/asynchronous/async2.rs:example}}
 ```
 
 - Dropping a future stops it from making further progress.

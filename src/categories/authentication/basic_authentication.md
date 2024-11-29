@@ -9,7 +9,7 @@
 Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_auth]{{hi:reqwest::RequestBuilder::basic_auth}} to perform a basic HTTP authentication{{hi:HTTP authentication}}.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/authentication/basic.rs:example}}
+{{#include ../../../deps/tests/categories/authentication/basic.rs:example}}
 ```
 
 {{#include refs.incl.md}}

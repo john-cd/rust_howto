@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/concurrency/multithreading_spawn_join.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/multithreading_spawn_join.rs:example}}
 ```
 
 Note: when the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
@@ -19,7 +19,7 @@ Note: when the main thread of a Rust program completes, all spawned threads{{hi:
 [Scoped threads][c-std::thread::scope]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/concurrency/multithreading_scoped_threads.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/multithreading_scoped_threads.rs:example}}
 ```
 
 ## `rayon` {#rayon}
@@ -35,7 +35,7 @@ Simple work-stealing parallelism for Rust.
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:Parallel execution}}.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon.rs:example}}
 ```
 
 ### Parallel sorting {#parallel-sorting}
@@ -43,7 +43,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_parsort.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon_parsort.rs:example}}
 ```
 
 ### Custom parallel tasks {#custom-parallel-tasks}
@@ -53,7 +53,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Thread pools}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/concurrency/multithreading_rayon_custom.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon_custom.rs:example}}
 ```
 
 ## See also

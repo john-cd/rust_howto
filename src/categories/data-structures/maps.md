@@ -25,7 +25,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 `multimap` is implemented as a thin wrapper around `std::collections::HashMap`. It allows multiple values for a given key.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/data_structures/multimap.rs:example}}
+{{#include ../../../deps/tests/categories/data_structures/multimap.rs:example}}
 ```
 
 ## Slotmap {#slotmap}

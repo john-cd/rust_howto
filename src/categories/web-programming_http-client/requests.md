@@ -9,7 +9,7 @@
 Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest::blocking::get`][c-reqwest::blocking::get]{{hi:reqwest::blocking::get}}⮳ Prints obtained [`reqwest::blocking::Response`][c-reqwest::blocking::Response]{{hi:reqwest::blocking::Response}}⮳ status and headers. Reads HTTP response body into an allocated [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳ using [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/web_programming_http_client/get.rs:example}}
+{{#include ../../../deps/tests/categories/web_programming_http_client/get.rs:example}}
 ```
 
 ## Async {#async}
@@ -22,7 +22,7 @@ Uses the asynchronous versions of [`reqwest`][c-reqwest]{{hi:reqwest}}⮳, both 
 [`reqwest::Response`][c-reqwest::Response]{{hi:reqwest::Response}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/web_programming_http_client/get1.rs:example}}
+{{#include ../../../deps/tests/categories/web_programming_http_client/get1.rs:example}}
 ```
 
 ## Set custom headers and URL parameters for a REST request {#custom-headers-and-url-parameters}
@@ -38,7 +38,7 @@ Builds complex URL with [`url::Url::parse_with_params`][c-url::Url::parse_with_p
 The request targets [http://httpbin.org/headers][httpbin.org-headers] service which responds with a JSON dict containing all request headers for easy verification.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/web_programming_http_client/header.rs:example}}
+{{#include ../../../deps/tests/categories/web_programming_http_client/header.rs:example}}
 ```
 
 {{#include refs.incl.md}}

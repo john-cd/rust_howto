@@ -18,7 +18,7 @@
 This crate provides a `DynClone` trait that can be used in trait objects, and a `clone_box` function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library’s `std::clone::Clone` trait are automatically usable by a DynClone trait object.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/rust_patterns/dyn_clone.rs:example}}
+{{#include ../../../deps/tests/categories/rust_patterns/dyn_clone.rs:example}}
 ```
 
 {{#include refs.incl.md}}

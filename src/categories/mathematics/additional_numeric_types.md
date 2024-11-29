@@ -32,7 +32,7 @@ Traits like Number, Add, etc that allow you write functions that are generic ove
 Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-num::BigInt]{{hi:num::BigInt}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/mathematics/big_integers.rs:example}}
+{{#include ../../../deps/tests/categories/mathematics/big_integers.rs:example}}
 ```
 
 ### `num-bigint` {#num-bigint}

@@ -17,7 +17,7 @@ A lightweight low-level single-threaded actor runtime.
 An Actor Framework for Rust to build fast, highly concurrent and resilient applications.
 
 ```rust,editable
-{{#include ../../deps/tests/cats/concurrency/actors.rs:example}}
+{{#include ../../deps/tests/categories/concurrency/actors.rs:example}}
 ```
 
 ## Alternatives {#alternatives}

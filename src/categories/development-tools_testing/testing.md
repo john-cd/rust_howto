@@ -14,7 +14,7 @@
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/development_tools_testing/tests1.rs:example}}
+{{#include ../../../deps/tests/categories/development_tools_testing/tests1.rs:example}}
 ```
 
 ## Custom message {#custom-message}
@@ -22,7 +22,7 @@
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/development_tools_testing/tests_custom_message.rs:example}}
+{{#include ../../../deps/tests/categories/development_tools_testing/tests_custom_message.rs:example}}
 ```
 
 ## `cargo nextest` {#cargo-nextest}

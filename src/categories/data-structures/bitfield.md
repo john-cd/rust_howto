@@ -14,7 +14,7 @@
 Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear` operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/data_structures/bitfield.rs:example}}
+{{#include ../../../deps/tests/categories/data_structures/bitfield.rs:example}}
 ```
 
 ## Flagset {#flagset}
@@ -27,7 +27,7 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/data_structures/flagset.rs:example}}
+{{#include ../../../deps/tests/categories/data_structures/flagset.rs:example}}
 ```
 
 {{#include refs.incl.md}}

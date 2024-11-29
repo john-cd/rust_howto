@@ -11,7 +11,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/rust_patterns/anyhow.rs:example}}
+{{#include ../../../deps/tests/categories/rust_patterns/anyhow.rs:example}}
 ```
 
 Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
@@ -23,7 +23,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/rust_patterns/thiserror.rs:example}}
+{{#include ../../../deps/tests/categories/rust_patterns/thiserror.rs:example}}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
@@ -36,7 +36,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 ```
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/rust_patterns/thiserror2.rs:example}}
+{{#include ../../../deps/tests/categories/rust_patterns/thiserror2.rs:example}}
 ```
 
 ## `miette` {#miette}
@@ -45,7 +45,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/rust_patterns/miette.rs:example}}
+{{#include ../../../deps/tests/categories/rust_patterns/miette.rs:example}}
 ```
 
 ## `color-eyre` {#color-eyre}

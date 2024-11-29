@@ -11,7 +11,7 @@
 [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 ```rust,editable
-{{#include ../../../deps/tests/cats/filesystem/notify.rs:example}}
+{{#include ../../../deps/tests/categories/filesystem/notify.rs:example}}
 ```
 
 {{#include refs.incl.md}}
