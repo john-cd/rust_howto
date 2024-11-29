@@ -18,13 +18,13 @@ enum Option<T> {
 Every [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is either [`std::option::Option::Some`][c-std::option::Option::Some]{{hi:std::option::Option::Some}}⮳ and contains a value, or [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳, and does not.
 
 ```rust,editable
-{{#include ../../deps/tests/std/options1.rs:example}}
+{{#include ../../deps/tests/standard-library/options1.rs:example}}
 ```
 
 It is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if let`][book-rust-reference-if]{{hi:if let}}, or [`while let`][book-rust-reference-while-let]{{hi:while let}}:
 
 ```rust,editable
-{{#include ../../deps/tests/std/options2.rs:example}}
+{{#include ../../deps/tests/standard-library/options2.rs:example}}
 ```
 
 ## Adapters for working with references {#adapters-for-working-with-references}
@@ -53,7 +53,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 [![std][c-std-badge]][c-std]
 
 ```rust,editable
-{{#include ../../deps/tests/std/options3.rs:example}}
+{{#include ../../deps/tests/standard-library/options3.rs:example}}
 ```
 
 {{#include refs.incl.md}}
