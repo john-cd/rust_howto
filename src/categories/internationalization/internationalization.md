@@ -4,6 +4,8 @@
 
 ## Internationalized {#internationalization}
 
+{{#example internationalization}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

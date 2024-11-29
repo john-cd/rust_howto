@@ -9,6 +9,8 @@
 
 [Zola][c-zola-website]{{hi:zola}}⮳ is a fast static site generator in a single binary with everything built-in.
 
+{{#example zola}}
+
 ### Zola Themes {#themes}
 
 [AdiDoks][adidoks-website] is a modern documentation theme.

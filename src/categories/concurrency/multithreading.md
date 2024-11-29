@@ -60,6 +60,8 @@ Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::j
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}}
 
+{{#example threadpool}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -4,6 +4,8 @@
 
 ## Image {#images}
 
+{{#example images}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

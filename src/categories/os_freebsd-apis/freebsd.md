@@ -4,6 +4,8 @@
 
 ## FreeBSD {#freebsd}
 
+{{#example freebsd}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

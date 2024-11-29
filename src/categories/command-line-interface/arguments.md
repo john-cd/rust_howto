@@ -65,6 +65,8 @@ Your favorite number must be 256.
 
 Fast compile times, fast runtime, pedantic about correctness. API is less ergonomic
 
+{{#example lexopt}}
+
 ### pico-args {#pico-args}
 
 Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
@@ -73,6 +75,8 @@ Fast compile times, fast runtime, more lax about correctness. API is more ergono
 [![pico-args-crates.io][c-pico_args-crates.io-badge]][c-pico_args-crates.io]
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
+
+{{#example pico-args}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

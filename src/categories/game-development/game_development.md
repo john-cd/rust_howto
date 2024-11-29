@@ -4,6 +4,8 @@
 
 ## Game Developments {#game-development}
 
+{{#example game_development}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

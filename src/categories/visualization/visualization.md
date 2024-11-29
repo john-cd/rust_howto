@@ -4,6 +4,8 @@
 
 ## Visualization {#viz}
 
+{{#example visualization}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

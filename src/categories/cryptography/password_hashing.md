@@ -14,6 +14,8 @@
 
 Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
 
+{{#example argon2}}
+
 ## scrypt {#scrypt}
 
 [![scrypt][c-scrypt-badge]][c-scrypt]{{hi:scrypt}}
@@ -26,6 +28,8 @@ Pure Rust implementation of the Argon2 password hashing function with support fo
 
 The scrypt key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
 
+{{#example scrypt}}
+
 ## bcrypt {#bcrypt}
 
 [![bcrypt][c-bcrypt-badge]][c-bcrypt]{{hi:bcrypt}}
@@ -34,6 +38,8 @@ The scrypt key derivation function is designed to be far more secure against har
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
 Hash and verify passwords.
+
+{{#example bcrypt}}
 
 For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github]
 

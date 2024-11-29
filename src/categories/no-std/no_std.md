@@ -4,6 +4,8 @@
 
 ## No std {#no-std}
 
+{{#example no_std}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

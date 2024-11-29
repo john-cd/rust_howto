@@ -8,6 +8,8 @@
 
 - [concat benchmark][concat-benchmark-github]⮳
 
+{{#example string_concat}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

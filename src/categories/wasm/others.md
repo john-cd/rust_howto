@@ -12,6 +12,8 @@
 
 [wasmer.io][wasmer-website]{{hi:wasmer.io}}⮳ is a high-performance WebAssembly runtime.
 
+{{#example wasmer}}
+
 ## `wasmtime` {#wasmtime}
 
 [![wasmtime][c-wasmtime-badge]][c-wasmtime]{{hi:wasmtime}}
@@ -22,6 +24,8 @@
 [wasmtime][c-wasmtime-github]{{hi:wasmtime}}⮳ is a high-level API to expose the Wasmtime runtime.
 
 [docs.wasmtime.dev][c-wasmtime-docs]⮳
+
+{{#example wasmtime}}
 
 ## See also
 

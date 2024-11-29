@@ -12,6 +12,8 @@
 
 Template engine based on Jinja2/Django templates
 
+{{#example tera}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

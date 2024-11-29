@@ -13,4 +13,5 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 
 <div class="hidden">
 TODO P1 expand
+P2 add {{#example badges}}
 </div>

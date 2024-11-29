@@ -43,6 +43,8 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 
 Postgres-specific library. Performs better than SQLx.
 
+{{#example tokio_postgres}}
+
 ## Cornucopia for postgres {#cornucopia}
 
 Generate type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
@@ -54,6 +56,8 @@ The basic premise is thus to:
 - Write PostgreSQL queries.
 - Use Cornucopia to generate Rust code.
 - Use the generated code in your project.
+
+{{#example cornucopia}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

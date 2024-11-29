@@ -19,17 +19,23 @@ Use when
 - you have a type whose size can’t be known at compile time
 - you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
 
+{{#example box}}
+
 ## Rc {#rc}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
 The `Rc<T>` type keeps track of the number of references{{hi:References}} to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
 
+{{#example rc}}
+
 ## RefCell {#refcell}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
 The `RefCell<T>` type with its interior mutability{{hi:Interior mutability}} gives us a type that we can use when we need an immutable type{{hi:Immutable type}} but need to change an inner value{{hi:Inner value}} of that type; it also enforces the borrowing rules at runtime instead of at compile time.
+
+{{#example refcell}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -10,6 +10,8 @@
 [![loco_rs-lib.rs][c-loco_rs-lib.rs-badge]][c-loco_rs-lib.rs]
 [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
+{{#example loco}}
+
 ## Rust on Nails {#rust-on-nails}
 
 [Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳

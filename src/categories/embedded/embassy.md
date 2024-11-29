@@ -9,6 +9,8 @@
 [![embassy-github][c-embassy-github-badge]][c-embassy-github]
 [![embassy-lib.rs][c-embassy-lib.rs-badge]][c-embassy-lib.rs]
 
+{{#example embassy}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

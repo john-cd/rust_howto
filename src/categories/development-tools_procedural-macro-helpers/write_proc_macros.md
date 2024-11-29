@@ -8,17 +8,23 @@
 
 [`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
+{{#example syn}}
+
 ## `paste` {#paste}
 
 [![paste][c-paste-badge]][c-paste] [![paste-crates.io][c-paste-crates.io-badge]][c-paste-crates.io] [![paste-github][c-paste-github-badge]][c-paste-github] [![paste-lib.rs][c-paste-lib.rs-badge]][c-paste-lib.rs]{{hi:paste}}{{hi:Macros}}[![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
+{{#example paste}}
+
 ## `quote` {#quote}
 
 [![quote][c-quote-badge]][c-quote] [![quote-crates.io][c-quote-crates.io-badge]][c-quote-crates.io] [![quote-github][c-quote-github-badge]][c-quote-github] [![quote-lib.rs][c-quote-lib.rs-badge]][c-quote-lib.rs]{{hi:quote}}{{hi:Macros}}{{hi:Syn}}[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
 [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
+
+{{#example quote}}
 
 ## `proc-macro2` {#proc-macro2}
 
@@ -38,11 +44,15 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
+{{#example proc_macro2}}
+
 ### `darling` {#darling}
 
 [![darling][c-darling-badge]][c-darling] [![darling-crates.io][c-darling-crates.io-badge]][c-darling-crates.io] [![darling-github][c-darling-github-badge]][c-darling-github] [![darling-lib.rs][c-darling-lib.rs-badge]][c-darling-lib.rs]{{hi:darling}}
 
 Derive macro to easily parse derive macro inputs
+
+{{#example darling}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

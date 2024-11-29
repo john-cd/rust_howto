@@ -11,6 +11,8 @@
 
 [ratatui][c-ratatui-github]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
+{{#example ratatui}}
+
 ## See also
 
 [![tui][c-tui-badge]][c-tui] [![tui-crates.io][c-tui-crates.io-badge]][c-tui-crates.io] [![tui-github][c-tui-github-badge]][c-tui-github] [![tui-lib.rs][c-tui-lib.rs-badge]][c-tui-lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}

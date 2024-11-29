@@ -8,6 +8,8 @@
 
 The replacement for Druid based on the more interoperable Vello and Glazier crates. However, it's currently not complete enough to be usable.
 
+{{#example xilem}}
+
 ## `slint` {#slint}
 
 [![slint-website][c-slint-website-badge]][c-slint-website] [![slint][c-slint-badge]][c-slint] [![slint-crates.io][c-slint-crates.io-badge]][c-slint-crates.io] [![slint-github][c-slint-github-badge]][c-slint-github] [![slint-lib.rs][c-slint-lib.rs-badge]][c-slint-lib.rs]{{hi:slint}}{{hi:Design}}{{hi:Graphics}}{{hi:Gui}}{{hi:Toolkit}}{{hi:Ui}}[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}[![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]{{hi:Rendering engine}}
@@ -19,6 +21,8 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 - [Slint (github)][c-slint-github]⮳
 - [madewithslint.com][c-slint-madewithslint-website]⮳
 
+{{#example slint}}
+
 ## GPUI {#gpui}
 
 [![gpui][c-gpui-badge]][c-gpui] [![gpui-crates.io][c-gpui-crates.io-badge]][c-gpui-crates.io] [![gpui-github][c-gpui-github-badge]][c-gpui-github] [![gpui-lib.rs][c-gpui-lib.rs-badge]][c-gpui-lib.rs]{{hi:gpui}}
@@ -27,6 +31,8 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 - [gpui.rs][gpui.rs]{{hi:gpui.rs}}⮳ A fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳
 
 High performance framework used in the Zed text editor. Now available on macOS and linux.
+
+{{#example gpui}}
 
 ## `druid` {#druid}
 

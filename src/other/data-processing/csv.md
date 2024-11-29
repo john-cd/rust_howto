@@ -6,6 +6,8 @@
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}
 
+{{#example csv}}
+
 ## Manipulate CSV files from the command line {#manipulate-csv-files-from-the-command-line}
 
 [![xsv][c-xsv-badge]][c-xsv]{{hi:xsv}}

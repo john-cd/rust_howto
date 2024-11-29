@@ -11,6 +11,8 @@
 
 Rust bindings to GTK4. These are quite well supported, although you'll often need to use the C documentation.
 
+{{#example gtk4}}
+
 ## relm4 {#relm4}
 
 [![relm4][c-relm4-badge]][c-relm4]{{hi:relm4}}
@@ -19,6 +21,8 @@ Rust bindings to GTK4. These are quite well supported, although you'll often nee
 [![relm4-lib.rs][c-relm4-lib.rs-badge]][c-relm4-lib.rs]
 
 A higher-level library that sits on top of gtk4-rs.
+
+{{#example relm4}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

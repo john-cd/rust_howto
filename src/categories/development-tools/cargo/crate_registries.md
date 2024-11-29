@@ -17,5 +17,8 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 
 <div class="hidden">
 TODO P1 expand
+P2 add APi access to crates.io
+
+{{#example crates_io}}
 
 </div>

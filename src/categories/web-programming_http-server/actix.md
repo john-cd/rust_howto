@@ -18,6 +18,8 @@ Actix examples: [![Actix examples][c-actix-examples-github-badge]][c-actix-examp
 
 A performance focussed framework. All Rust frameworks are fast, but choose actix-web if you need the absolutely maximum performance.
 
+{{#example actix_web}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

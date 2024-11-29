@@ -13,6 +13,8 @@
 
 Allows you to export a semantic tree representing your UI to make accessible to screen readers and other assistive technologies
 
+{{#example accesskit}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

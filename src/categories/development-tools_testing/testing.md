@@ -50,6 +50,8 @@ cargo test --doc
 
 [`approx`][c-approx]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
 
+{{#example approx}}
+
 ## Snapshot testing {#insta}
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}
@@ -65,6 +67,8 @@ cargo test --doc
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of assert_eq!. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
+
+{{#example insta}}
 
 ## Code coverage {#cargo-tarpaulin}
 

@@ -11,6 +11,8 @@
 
 A fork of `rust-clipboard` that supports copy and pasting of both text and images on Linux (X11/Wayland), MacOS and Windows.
 
+{{#example arboard}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

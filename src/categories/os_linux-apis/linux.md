@@ -4,6 +4,8 @@
 
 ## Linux {#linux}
 
+{{#example linux}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

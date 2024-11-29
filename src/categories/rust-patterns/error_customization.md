@@ -57,6 +57,8 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 A fork of `anyhow` that gives you more control over the format of the generated error messages. Recommended if you intend to present error messages to end users. Otherwise `anyhow` is simpler.
 
+{{#example color_eyre}}
+
 ## See also
 
 [![eyre][c-eyre-badge]][c-eyre]{{hi:eyre}}

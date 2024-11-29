@@ -8,9 +8,11 @@
 
 `deadpool` is a simple async pool for connections and objects of any type.
 
+{{#example deadpool}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+TODO P1 expand; example
 </div>

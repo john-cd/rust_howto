@@ -17,6 +17,8 @@
 
 [rust-yew-realworld-example-app][c-yew-realworld-example]⮳
 
+{{#example yew}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

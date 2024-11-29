@@ -12,6 +12,8 @@
 
 The official Microsoft-provided crate for interacting with windows APIs
 
+{{#example windows}}
+
 ## `winapi` {#winapi}
 
 [![winapi][c-winapi-badge]][c-winapi]{{hi:winapi}}
@@ -23,6 +25,8 @@ The official Microsoft-provided crate for interacting with windows APIs
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 Older binding to the windows APIs. Unofficial, but more complete than windows-rs
+
+{{#example winapi}}
 
 ## See also
 

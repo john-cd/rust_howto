@@ -12,10 +12,11 @@
 
 [linux-embracing-rust-will-boost-robotics-community][linux-embracing-rust-will-boost-robotics-community]⮳
 
+{{#example robotics}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO P2: organize
-
 </div>

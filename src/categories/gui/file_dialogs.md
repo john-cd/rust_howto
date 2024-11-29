@@ -11,6 +11,8 @@
 
 "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries."
 
+{{#example rfd}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

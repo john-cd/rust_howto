@@ -11,6 +11,8 @@
 
 A library for heap profiling and ad hoc profiling with DHAT
 
+{{#example dhat}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

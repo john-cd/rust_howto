@@ -11,6 +11,8 @@
 
 Recursive filesystem walking that respects ignore files (like .gitignore)
 
+{{#example ignore}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

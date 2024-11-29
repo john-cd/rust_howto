@@ -4,6 +4,8 @@
 
 ## Geospatial {#geo}
 
+{{#example geo}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

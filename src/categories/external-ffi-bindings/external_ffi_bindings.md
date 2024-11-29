@@ -4,6 +4,8 @@
 
 ## FFI {#ffi}
 
+{{#example ffi}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

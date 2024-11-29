@@ -4,6 +4,8 @@
 
 ## Data format {#data-format}
 
+{{#example data_formats}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

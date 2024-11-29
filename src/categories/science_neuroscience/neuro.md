@@ -4,6 +4,8 @@
 
 ## Neuro {#neuro}
 
+{{#example neuro}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

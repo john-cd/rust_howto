@@ -15,6 +15,8 @@
 
 Low-level crate that others build on.
 
+{{#example tungstenite}}
+
 ## General Purpose {#general-purpose}
 
 [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite]{{hi:tokio-tungstenite}}
@@ -27,6 +29,8 @@ Low-level crate that others build on.
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:WebSocket}}
 
 If you are using the tokio executor.
+
+{{#example tokio-tungstenite}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

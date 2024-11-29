@@ -12,6 +12,8 @@
 
 [OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳
 
+{{#example opencv}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

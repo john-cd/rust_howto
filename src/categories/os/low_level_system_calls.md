@@ -14,6 +14,8 @@
 
 Bindings for directly calling libc functions.
 
+{{#example libc}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

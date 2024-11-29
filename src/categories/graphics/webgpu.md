@@ -13,6 +13,8 @@ Rusty WebGPU API wrapper.
 
 [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳
 
+{{#example wgpu}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

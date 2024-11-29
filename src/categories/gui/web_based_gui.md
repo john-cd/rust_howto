@@ -13,6 +13,8 @@
 
 Electron-like web-based UI. Except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than node.js
 
+{{#example tauri}}
+
 ## dioxus {#dioxus}
 
 [![dioxus][c-dioxus-badge]][c-dioxus]{{hi:dioxus}}
@@ -21,6 +23,8 @@ Electron-like web-based UI. Except it uses system webviews rather than shipping 
 [![dioxus-lib.rs][c-dioxus-lib.rs-badge]][c-dioxus-lib.rs]
 
 A very nice API layer that has Tauri, Web, and TUI renderers. A native renderer is coming soon.
+
+{{#example dioxus}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -14,6 +14,8 @@
 
 gRPC over HTTP/2 with full support for asynchronous code. Works with tokio
 
+{{#example tonic}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

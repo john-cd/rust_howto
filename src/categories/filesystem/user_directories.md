@@ -14,6 +14,8 @@ Get platform-specific locations for configuration, cache, and other data
 
 Provide platform-specific locations for configuration, cache, and other data
 
+{{#example dirs}}
+
 ## `directories` {#directories}
 
 [![directories][c-directories-badge]][c-directories]{{hi:directories}}
@@ -25,6 +27,8 @@ Provide platform-specific locations for configuration, cache, and other data
 A higher-level library that can also compute paths for applications
 
 A library that provides config/cache/data paths, following the respective conventions on Linux, macOS and Windows
+
+{{#example directories}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

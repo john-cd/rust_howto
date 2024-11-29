@@ -14,6 +14,8 @@
 
 See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
+{{#example nom}}
+
 ## Pest {#pest}
 
 [![pest][c-pest-badge]][c-pest]{{hi:pest}}
@@ -26,6 +28,8 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
 Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
+{{#example pest}}
+
 ### Tree sitter {#tree-sitter}
 
 [![tree-sitter][c-tree_sitter-badge]][c-tree_sitter]{{hi:tree-sitter}}
@@ -34,6 +38,8 @@ Grammars are saved in separate `.pest` files which are never mixed with proced
 [![tree-sitter-lib.rs][c-tree_sitter-lib.rs-badge]][c-tree_sitter-lib.rs]
 
 Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
+
+{{#example tree_sitter}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

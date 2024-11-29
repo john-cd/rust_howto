@@ -4,6 +4,8 @@
 
 ## Multimedias {#multimedia}
 
+{{#example multimedia}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

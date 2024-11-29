@@ -11,6 +11,8 @@
 
 Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Requires tokio runtime.
 
+{{#example reqwest}}
+
 ## `ureq` {#ureq}
 
 [![ureq][c-ureq-badge]][c-ureq]{{hi:ureq}}
@@ -21,6 +23,8 @@ Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Req
 
 Minimal synchronous HTTP client focussed on simplicity and minimising dependencies.
 
+{{#example ureq}}
+
 ## `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP client}}{{hi:HTTP server}}
@@ -29,6 +33,8 @@ Minimal synchronous HTTP client focussed on simplicity and minimising dependenci
 [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]
 
 A low-level HTTP implementation (both client and server). Implements HTTP/1, and HTTP/2. Works best with the tokio async runtime, but can support other runtimes.
+
+{{#example hyper}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

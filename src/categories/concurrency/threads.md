@@ -98,6 +98,8 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 
 The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
+{{#example crossbeam_channel}}
+
 ### `flume` {#flume}
 
 [![flume][c-flume-badge]][c-flume]{{hi:flume}}
@@ -107,11 +109,15 @@ The absolute fastest channel implementation available. Implements Go-like 'selec
 
 Smaller and simpler than `crossbeam-channel` and almost as fast.
 
+{{#example flume}}
+
 ### `tokio` {#tokio}
 
 [![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 Tokio's `sync` module provides channels for using in async code.
+
+{{#example tokio}}
 
 ### `postage` {#postage}
 
@@ -121,6 +127,8 @@ Tokio's `sync` module provides channels for using in async code.
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
 Channels that integrate nicely with async code, with different options than Tokio.
+
+{{#example postage}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

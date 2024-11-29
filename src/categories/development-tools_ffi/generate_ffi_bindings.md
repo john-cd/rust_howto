@@ -13,6 +13,8 @@
 
 Automatically generates Rust FFI bindings to C and C++ libraries.
 
+{{#example bindgen}}
+
 ## `cbindgen` {#cbindgen}
 
 [![cbindgen][c-cbindgen-badge]][c-cbindgen]{{hi:cbindgen}}
@@ -23,6 +25,8 @@ Automatically generates Rust FFI bindings to C and C++ libraries.
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
 Generate C bindings to Rust libraries
+
+{{#example cbindgen}}
 
 ## `cxx` {#cxx}
 
@@ -35,6 +39,8 @@ Generate C bindings to Rust libraries
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 Safe C++ <-> Rust interop by generating code for both sides.
+
+{{#example cxx}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

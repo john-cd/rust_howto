@@ -4,7 +4,11 @@
 
 ## Send {#send}
 
+{{#example send}}
+
 ## Sync {#sync}
+
+{{#example sync}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -12,6 +12,8 @@
 
 Supports both temporary files and temporary directories.
 
+{{#example tempfile}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

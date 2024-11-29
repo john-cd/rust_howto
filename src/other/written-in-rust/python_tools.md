@@ -11,9 +11,13 @@
 
 [`RustPython`][rustpython-github]{{hi:RustPython}}⮳ is a Python Interpreter written in Rust
 
+{{#example rustpython}}
+
 ## pyOxidizer {#pyoxidizer}
 
 [![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
+
+{{#example pyoxidizer}}
 
 ## Ruff {#ruff}
 

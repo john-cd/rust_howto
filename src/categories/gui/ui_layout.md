@@ -12,6 +12,8 @@
 
 "Supports Flexbox and CSS Grid algorithms."
 
+{{#example taffy}}
+
 ## `morphorm` {#morphorm}
 
 [![morphorm][c-morphorm-badge]][c-morphorm]{{hi:morphorm}}
@@ -21,6 +23,8 @@
 [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
 "Implements it's own layout algorithm based on Subform layout."
+
+{{#example morphorm}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

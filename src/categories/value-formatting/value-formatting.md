@@ -6,6 +6,8 @@
 
 ## Value formatting {#value-formatting}
 
+{{#example value_formatting}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -12,6 +12,8 @@
 
 Date and time library. Fully interoperable with the standard library. Mostly compatible with `#![no_std]`.
 
+{{#example time}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

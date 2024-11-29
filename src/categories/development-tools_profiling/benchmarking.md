@@ -23,6 +23,8 @@ Statistically accurate benchmarking tool for benchmarking libraries
 
 `criterion.rs` helps you write fast code by detecting and measuring performance improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the performance of your code.
 
+{{#example criterion}}
+
 ## Divan {#divan}
 
 [![divan][c-divan-badge]][c-divan]{{hi:divan}}
@@ -33,6 +35,8 @@ Statistically accurate benchmarking tool for benchmarking libraries
 
 Simple yet powerful benchmarking library with allocation profiling
 
+{{#example divan}}
+
 ## Hyperfine {#hyperfine}
 
 [![hyperfine][c-hyperfine-badge]][c-hyperfine]{{hi:hyperfine}}
@@ -42,6 +46,8 @@ Simple yet powerful benchmarking library with allocation profiling
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
 Tool for benchmarking compiled binaries (similar to unix time command but better).
+
+{{#example divan}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -15,6 +15,8 @@
 
 A minimal and ergonomic framework. An official part of the tokio project. Recommend for most new projects.
 
+{{#example axum}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

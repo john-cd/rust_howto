@@ -11,6 +11,8 @@
 
 `arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
+{{#example arrow}}
+
 ## Query in-memory data with datafusion {#datafusion}
 
 [![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}}
@@ -23,6 +25,8 @@
 {{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
 
 DataFusion offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
+
+{{#example datafusion}}
 
 ## Databend {#databend}
 

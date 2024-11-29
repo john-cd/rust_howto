@@ -4,6 +4,8 @@
 
 ## MacOS {#macos}
 
+{{#example macos}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

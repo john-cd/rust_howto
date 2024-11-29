@@ -10,6 +10,8 @@
 [![tinytemplate-lib.rs][c-tinytemplate-lib.rs-badge]][c-tinytemplate-lib.rs]
 [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}
 
+{{#example tinytemplate}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

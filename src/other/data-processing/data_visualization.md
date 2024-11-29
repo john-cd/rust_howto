@@ -13,6 +13,8 @@
 
 [plotly.rs][c-plotly-github]{{hi:plotly.rs}}⮳
 
+{{#example plotly}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

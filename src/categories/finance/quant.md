@@ -12,6 +12,8 @@
 
 [rustquant][c-rustquant-lib.rs]⮳
 
+{{#example rustquant}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -4,6 +4,8 @@
 
 ## No alloc {#noalloc}
 
+{{#example no_alloc}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

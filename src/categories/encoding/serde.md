@@ -9,12 +9,16 @@
 
 De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
 
+{{#example serde}}
+
 ## JSON {#serde-json2}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 [![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]
 [![serde_json-github][c-serde_json-github-badge]][c-serde_json-github]
 [![serde_json-lib.rs][c-serde_json-lib.rs-badge]][c-serde_json-lib.rs]
+
+{{#example serde_json}}
 
 ## See also
 
@@ -27,12 +31,16 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 
 This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
+{{#example monostate}}
+
 ### `serde-ignored` {#serde-ignored}
 
 [![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
 [![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
 [![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
 [![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
+
+{{#example serde_ignored}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

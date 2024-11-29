@@ -11,6 +11,8 @@
 
 [meilisearch][c-meilisearch-github]⮳ is a fast search API that fits into your apps, websites, and workflow.
 
+{{#example meilisearch}}
+
 ## Tantivy {#tantivy}
 
 [![tantivy][c-tantivy-badge]][c-tantivy]{{hi:tantivy}}
@@ -21,6 +23,8 @@
 [![cat-database-implementations][cat-database-implementations-badge]][cat-database-implementations]{{hi:Database implementations}}
 
 [tantivy][c-tantivy-github]⮳ is a full-text search engine library inspired by Apache Lucene.
+
+{{#example tantivy}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

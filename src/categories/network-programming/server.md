@@ -30,6 +30,8 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 
 Use `glommio` if you need {{i:io_uring support}}. Still somewhat experimental but rapidly maturing.
 
+{{#example glommio}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

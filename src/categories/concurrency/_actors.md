@@ -8,6 +8,8 @@
 
 A lightweight low-level single-threaded actor runtime.
 
+{{#example stakker}}
+
 ## `riker` {#riker}
 
 [![riker-website][c-riker-website-badge]][c-riker-website] [![riker][c-riker-badge]][c-riker] [![riker-crates.io][c-riker-crates.io-badge]][c-riker-crates.io] [![riker-github][c-riker-github-badge]][c-riker-github] [![riker-lib.rs][c-riker-lib.rs-badge]][c-riker-lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:Cqrs}}{{hi:Actor-model}}{{hi:Event_sourcing}}
@@ -27,6 +29,8 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![actix-github][c-actix-github-badge]][c-actix-github]
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
+{{#example actix}}
+
 ### `ractor` {#ractor}
 
 [![ractor][c-ractor-badge]][c-ractor]{{hi:ractor}}
@@ -34,12 +38,16 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![ractor-github][c-ractor-github-badge]][c-ractor-github]
 [![ractor-lib.rs][c-ractor-lib.rs-badge]][c-ractor-lib.rs]
 
+{{#example ractor}}
+
 ## Utilities {#utilities}
 
 [![await-tree][c-await_tree-badge]][c-await_tree]{{hi:Await tree}}
 [![await-tree-crates.io][c-await_tree-crates.io-badge]][c-await_tree-crates.io]
 [![await-tree-github][c-await_tree-github-badge]][c-await_tree-github]
 [![await-tree-lib.rs][c-await_tree-lib.rs-badge]][c-await_tree-lib.rs]
+
+{{#example await-tree}}
 
 ## Reference
 

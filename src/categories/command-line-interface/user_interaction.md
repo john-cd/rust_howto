@@ -13,6 +13,8 @@
 
 `inquire` provides several different prompts in order to interactively ask the user for information via the CLI.
 
+{{#example inquire}}
+
 ## Display progress bars and spinners {#indicatif}
 
 [![indicatif][c-indicatif-badge]][c-indicatif]{{hi:indicatif}}
@@ -24,6 +26,8 @@
 [`indicatif`][c-indicatif]{{hi:indicatif}}⮳ is a Rust library for indicating progress in command line applications to users.
 
 This currently primarily provides progress bars and spinners as well as basic color support.{{hi:Progress bars and spinners}}
+
+{{#example indicatif}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -12,6 +12,8 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
+{{#example bytemuck}}
+
 ## `zerocopy` {#zerocopy}
 
 [![zerocopy][c-zerocopy-badge]][c-zerocopy]{{hi:zerocopy}}
@@ -24,6 +26,8 @@
 [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}}
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
+
+{{#example zerocopy}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

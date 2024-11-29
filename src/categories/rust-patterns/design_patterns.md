@@ -35,4 +35,7 @@ TODO P1 review - lens is not used that often:
 [![lens_rs-crates.io][c-lens_rs-crates.io-badge]][c-lens_rs-crates.io]
 [![lens_rs-github][c-lens_rs-github-badge]][c-lens_rs-github]
 [![lens_rs-lib.rs][c-lens_rs-lib.rs-badge]][c-lens_rs-lib.rs]
+
+{{#example lens}}
+
 </div>

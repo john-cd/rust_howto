@@ -34,10 +34,14 @@ Another example:
 
 [![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
 
+{{#example async_channel}}
+
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
 [![postage-github][c-postage-github-badge]][c-postage-github]
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
+
+{{#example postage}}
 
 Fast sync and async channel:
 
@@ -45,6 +49,8 @@ Fast sync and async channel:
 [![kanal-crates.io][c-kanal-crates.io-badge]][c-kanal-crates.io]
 [![kanal-github][c-kanal-github-badge]][c-kanal-github]
 [![kanal-lib.rs][c-kanal-lib.rs-badge]][c-kanal-lib.rs]
+
+{{#example kanal}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

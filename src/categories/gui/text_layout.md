@@ -11,6 +11,8 @@
 
 "Full text layout including rich text and support for BiDi and non-latin scripts. The best option for now."
 
+{{#example cosmic_text}}
+
 ## `parley` {#parley}
 
 [![parley][c-parley-badge]][c-parley]{{hi:parley}}
@@ -21,6 +23,8 @@
 [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
 "Another very accomplished text layout library used by Druid/Xilem."
+
+{{#example parley}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -34,6 +34,14 @@ mdbook serve --open
 
 [GitHub Actions for mdBook][actions-mdbook-github]{{hi:Github actions}}
 
+## `yapp` {#yapp}
+
+[![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] [![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io] [![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github] [![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Preprocessor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+A mdBook preprocessor for simple text replacements
+
+{{#example yapp}}
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
@@ -46,11 +54,4 @@ TODO P1 organize, expand
 - [ ] add page TOC ? [mdbook-theme][c-mdbook_theme-github]{{hi:mdbook-theme}}
 - [ ] [alternative][c-mdbook_pagetoc-github]{{hi:mdbook-pagetoc}}
 - [ ] [mdbook-toc][c-mdbook_toc-github]{{hi:mdbook-toc}}
-
-## `yapp` {#yapp}
-
-[![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] [![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io] [![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github] [![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Preprocessor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
-
-A mdBook preprocessor for simple text replacements
-
 </div>

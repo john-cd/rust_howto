@@ -4,6 +4,8 @@
 
 ## Localized {#localization}
 
+{{#example localization}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
