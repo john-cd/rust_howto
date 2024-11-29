@@ -5,7 +5,7 @@
 ## Slices {#slices}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/slices.rs:example}}
+{{#include ../../deps/tests/language/slices.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -3,7 +3,7 @@
 {{#include iterators.incl.md}}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/iterators.rs:example}}
+{{#include ../../deps/tests/language/iterators.rs:example}}
 ```
 
 ## See Also

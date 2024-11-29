@@ -7,7 +7,7 @@
 ## If else {#if-else}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/if_else.rs:example}}
+{{#include ../../deps/tests/language/if_else.rs:example}}
 ```
 
 Also `else if <cond> { ... }`
@@ -15,19 +15,19 @@ Also `else if <cond> { ... }`
 ## Loop {#loop}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/loop1.rs:example}}
+{{#include ../../deps/tests/language/loop1.rs:example}}
 ```
 
 ## While {#while}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/while1.rs:example}}
+{{#include ../../deps/tests/language/while1.rs:example}}
 ```
 
 ## For {#for}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/for1.rs:example}}
+{{#include ../../deps/tests/language/for1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

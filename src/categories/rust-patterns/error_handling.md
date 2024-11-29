@@ -63,7 +63,7 @@ Another example:
 The below recipe will tell how long the system has been running by opening the Unix file `/proc/uptime` and parse the content to get the first number. It returns the uptime, unless there is an error.
 
 ```rust,editable
-{{#include ../../../deps/tests/lang/main_test.rs:example}}
+{{#include ../../../deps/tests/language/main_test.rs:example}}
 ```
 
 ## Avoid discarding errors during error conversions {#avoid-discarding-errors-during-error-conversions}

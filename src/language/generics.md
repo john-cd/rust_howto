@@ -7,7 +7,7 @@
 ## Generic Structs {#generic-structs}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/generic_structs.rs:example}}
+{{#include ../../deps/tests/language/generic_structs.rs:example}}
 ```
 
 {{#include refs.incl.md}}

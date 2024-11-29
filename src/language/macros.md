@@ -9,7 +9,7 @@
 The [Little Book of Rust Macros][book-rust-macros]⮳
 
 ```rust,editable
-{{#include ../../deps/tests/lang/macros.rs:example}}
+{{#include ../../deps/tests/language/macros.rs:example}}
 ```
 
 {{#include refs.incl.md}}

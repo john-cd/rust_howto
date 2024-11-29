@@ -3,13 +3,13 @@
 {{#include main.incl.md}}{{hi:main}}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/main_test.rs:example}}
+{{#include ../../deps/tests/language/main_test.rs:example}}
 ```
 
 ## Async Main Function {#async-main-function}
 
 ```rust,editable
-{{#include ../../deps/tests/lang/async_main.rs:example}}
+{{#include ../../deps/tests/language/async_main.rs:example}}
 ```
 
 {{#include refs.incl.md}}
