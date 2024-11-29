@@ -35,6 +35,14 @@
 [c-aes_gcm-lib.rs-badge]: https://img.shields.io/badge/lib.rs-aes--gcm-yellow
 [c-aes_gcm-lib.rs]: https://lib.rs/crates/aes-gcm
 [c-aes_gcm]: https://docs.rs/aes-gcm
+[c-aes_gcm_siv-badge]: https://img.shields.io/crates/v/aes-gcm-siv?label=aes-gcm-siv
+[c-aes_gcm_siv-crates.io-badge]: https://img.shields.io/badge/crates.io-aes--gcm--siv-crimson
+[c-aes_gcm_siv-crates.io]: https://crates.io/crates/aes_gcm_siv
+[c-aes_gcm_siv-github-badge]: https://img.shields.io/badge/aes--gcm--siv-steelblue?logo=github
+[c-aes_gcm_siv-github]: https://github.com/RustCrypto/AEADs
+[c-aes_gcm_siv-lib.rs-badge]: https://img.shields.io/badge/lib.rs-aes--gcm--siv-yellow
+[c-aes_gcm_siv-lib.rs]: https://lib.rs/crates/aes-gcm-siv
+[c-aes_gcm_siv]: https://docs.rs/aes-gcm-siv
 [c-afl-badge]: https://img.shields.io/crates/v/afl?label=afl
 [c-afl-crates.io-badge]: https://img.shields.io/badge/crates.io-afl-crimson
 [c-afl-crates.io]: https://crates.io/crates/afl
