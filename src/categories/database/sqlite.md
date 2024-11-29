@@ -2,6 +2,8 @@
 
 {{#include sqlite.incl.md}}
 
+`rusqlite` provides an API to SQLite and gives access to advanced SQlite features.
+
 ## Create a SQLite database {#create-database-sqlite}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}} [![rusqlite-documentation][c-rusqlite-documentation-badge]][c-rusqlite-documentation] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
@@ -43,5 +45,4 @@ In the following example, colors add to a table having a unique constraint on th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-`rusqlite` provides a sync API to SQLite + provides access to advanced sqlite features.
 </div>
