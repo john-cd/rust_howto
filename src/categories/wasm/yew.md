@@ -17,7 +17,9 @@
 
 [rust-yew-realworld-example-app][c-yew-realworld-example]⮳
 
-{{#example yew}}
+```rust,editable
+{{#include ../../../deps/tests/categories/wasm/yew.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -12,7 +12,9 @@
 
 Template engine based on Jinja2/Django templates
 
-{{#example tera}}
+```rust,editable
+{{#include ../../../deps/tests/categories/template_engine/tera.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

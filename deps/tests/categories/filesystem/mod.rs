@@ -1,6 +1,9 @@
 mod cwd;
+mod directories;
+mod dirs;
 mod duplicate_name;
 mod find_file;
+mod ignore;
 mod ignore_case;
 mod loops;
 mod memmap2;
@@ -11,3 +14,4 @@ mod read_file;
 mod same_file;
 mod sizes;
 mod skip_dot;
+mod tempfile;

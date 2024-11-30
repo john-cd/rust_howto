@@ -11,7 +11,9 @@
 
 [swc_ecma_parser][c-swc_ecma_parser-crates.io]{{hi:swc_ecma_parser}}⮳ is a feature-complete es2019 parser written in Rust.
 
-{{#example swc_ecma_parser}}
+```rust,editable
+{{#include ../../../deps/tests/categories/parser_implementations/swc_ecma_parser.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

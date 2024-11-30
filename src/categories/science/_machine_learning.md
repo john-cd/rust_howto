@@ -8,7 +8,9 @@
 
 [![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}} [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io] [![linfa-website][c-linfa-website-badge]][c-linfa-website] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Machine learning}}
 
-{{#example linfa}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science/linfa.rs:example}}
+```
 
 ## Candle {#candle}
 
@@ -16,7 +18,9 @@
 
 [Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳
 
-{{#example candle}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science/candle.rs:example}}
+```
 
 ## Others {#others}
 
@@ -26,13 +30,17 @@
 
 [SmartCore][c-smartcore-website]{{hi:smartcore}}⮳ Machine Learning in Rust.
 
-{{#example smartcore}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science/smartcore.rs:example}}
+```
 
 ### Watchmaker {#watchmaker}
 
 [Watchmaker (genetic algos in Rust)][c-watchmaker]{{hi:watchmaker}}⮳ [![watchmaker][c-watchmaker-badge]][c-watchmaker]{{hi:watchmaker}} [![watchmaker-github][c-watchmaker-github-badge]][c-watchmaker-github] [![watchmaker-crates.io][c-watchmaker-crates.io-badge]][c-watchmaker-crates.io] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-{{#example watchmaker}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science/watchmaker.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

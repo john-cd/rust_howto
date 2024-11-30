@@ -12,7 +12,9 @@
 
 [rustquant][c-rustquant-lib.rs]⮳
 
-{{#example rustquant}}
+```rust,editable
+{{#include ../../../deps/tests/categories/finance/rustquant.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

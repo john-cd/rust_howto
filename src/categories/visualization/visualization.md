@@ -4,7 +4,9 @@
 
 ## Visualization {#viz}
 
-{{#example visualization}}
+```rust,editable
+{{#include ../../../deps/tests/categories/visualization/visualization1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

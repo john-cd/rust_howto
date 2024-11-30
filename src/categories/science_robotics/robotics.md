@@ -12,7 +12,9 @@
 
 [linux-embracing-rust-will-boost-robotics-community][linux-embracing-rust-will-boost-robotics-community]⮳
 
-{{#example robotics}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science_robotics/robotics.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

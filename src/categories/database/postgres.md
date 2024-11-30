@@ -43,7 +43,9 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 
 Postgres-specific library. Performs better than SQLx.
 
-{{#example tokio_postgres}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/tokio_postgres.rs:example}}
+```
 
 ## Cornucopia for postgres {#cornucopia}
 
@@ -57,7 +59,9 @@ The basic premise is thus to:
 - Use Cornucopia to generate Rust code.
 - Use the generated code in your project.
 
-{{#example cornucopia}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/cornucopia.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

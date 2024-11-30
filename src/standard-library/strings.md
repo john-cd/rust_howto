@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
 
 ```rust,editable
-{{#include ../../deps/tests/standard-library/strings.rs:example}}
+{{#include ../../deps/tests/standard_library/strings.rs:example}}
 ```
 
 ## Placeholders {#placeholders}
@@ -15,7 +15,7 @@
 ![std][c-std-badge]][c-std]
 
 ```rust,editable
-{{#include ../../deps/tests/standard-library/strings2.rs:example}}
+{{#include ../../deps/tests/standard_library/strings2.rs:example}}
 ```
 
 Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug}}⮳ output format{{hi:Output format}} (annotate type with `#[derive(Debug)]` ) or `{:#?}` for pretty print{{hi:Pretty print}}.

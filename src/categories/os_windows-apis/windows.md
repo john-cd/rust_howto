@@ -12,7 +12,9 @@
 
 The official Microsoft-provided crate for interacting with windows APIs
 
-{{#example windows}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os_windows_apis/windows.rs:example}}
+```
 
 ## `winapi` {#winapi}
 
@@ -26,7 +28,9 @@ The official Microsoft-provided crate for interacting with windows APIs
 
 Older binding to the windows APIs. Unofficial, but more complete than windows-rs
 
-{{#example winapi}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os_windows_apis/winapi.rs:example}}
+```
 
 ## See also
 

@@ -4,7 +4,9 @@
 
 ## Localized {#localization}
 
-{{#example localization}}
+```rust,editable
+{{#include ../../../deps/tests/categories/localization/localization1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

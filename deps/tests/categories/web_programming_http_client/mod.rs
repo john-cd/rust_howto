@@ -1,10 +1,13 @@
 mod get;
 mod get1;
 mod header;
+mod hyper;
 mod paginated;
 mod partial;
 mod post_file;
 mod rate_limited;
+mod reqwest;
 mod rest_get;
 mod rest_head;
 mod rest_post;
+mod ureq;

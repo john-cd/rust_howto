@@ -8,7 +8,9 @@
 
 A lightweight low-level single-threaded actor runtime.
 
-{{#example stakker}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/stakker.rs:example}}
+```
 
 ## `riker` {#riker}
 
@@ -29,7 +31,9 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![actix-github][c-actix-github-badge]][c-actix-github]
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
-{{#example actix}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/actix.rs:example}}
+```
 
 ### `ractor` {#ractor}
 
@@ -38,7 +42,9 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![ractor-github][c-ractor-github-badge]][c-ractor-github]
 [![ractor-lib.rs][c-ractor-lib.rs-badge]][c-ractor-lib.rs]
 
-{{#example ractor}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/ractor.rs:example}}
+```
 
 ## Utilities {#utilities}
 
@@ -47,7 +53,9 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![await-tree-github][c-await_tree-github-badge]][c-await_tree-github]
 [![await-tree-lib.rs][c-await_tree-lib.rs-badge]][c-await_tree-lib.rs]
 
-{{#example await-tree}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/await_tree.rs:example}}
+```
 
 ## Reference
 

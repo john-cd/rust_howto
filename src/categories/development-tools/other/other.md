@@ -23,7 +23,9 @@ It's designed for minimal interaction so that you can just let it run, alongside
 
 [shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-{{#example shuttle}}
+```rust,editable
+{{#include ../../../../deps/tests/categories/development_tools/other/shuttle.rs:example}}
+```
 
 ## Binary minimizer {#binary-minimizer}
 
@@ -42,7 +44,9 @@ How to minimize Rust binary size [min-sized-rust][min-sized-rust-github]⮳
 
 [kani][c-kani-github]{{hi:kani}}⮳ is a Rust verifier.
 
-{{#example kani}}
+```rust,editable
+{{#include ../../../../deps/tests/categories/development_tools/other/kani.rs:example}}
+```
 
 ## Formal Methods {#formal-methods}
 

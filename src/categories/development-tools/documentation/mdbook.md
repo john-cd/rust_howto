@@ -40,7 +40,9 @@ mdbook serve --open
 
 A mdBook preprocessor for simple text replacements
 
-{{#example yapp}}
+```rust,editable
+{{#include ../../../../deps/tests/categories/development_tools/documentation/yapp.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

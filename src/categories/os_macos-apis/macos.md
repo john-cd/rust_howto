@@ -4,7 +4,9 @@
 
 ## MacOS {#macos}
 
-{{#example macos}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os_macos_apis/macos.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

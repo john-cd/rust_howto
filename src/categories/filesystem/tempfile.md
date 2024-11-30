@@ -12,7 +12,9 @@
 
 Supports both temporary files and temporary directories.
 
-{{#example tempfile}}
+```rust,editable
+{{#include ../../../deps/tests/categories/filesystem/tempfile.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -65,7 +65,9 @@ Your favorite number must be 256.
 
 Fast compile times, fast runtime, pedantic about correctness. API is less ergonomic
 
-{{#example lexopt}}
+```rust,editable
+{{#include ../../../deps/tests/categories/command_line_interface/lexopt.rs:example}}
+```
 
 ### pico-args {#pico-args}
 
@@ -76,7 +78,9 @@ Fast compile times, fast runtime, more lax about correctness. API is more ergono
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
 
-{{#example pico-args}}
+```rust,editable
+{{#include ../../../deps/tests/categories/command_line_interface/pico_args.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

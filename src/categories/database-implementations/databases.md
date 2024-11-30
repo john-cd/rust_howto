@@ -16,7 +16,9 @@
 
 [sled][c-sled-github]{{hi:sled}}⮳ is an embedded database.
 
-{{#example sled}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database_implementations/sled.rs:example}}
+```
 
 ## SurrealDB {#surrealdb}
 
@@ -30,7 +32,9 @@
 
 SurrealDB is a scalable, distributed, collaborative, document-graph database, for the realtime web.
 
-{{#example surrealdb}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database_implementations/surrealdb.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

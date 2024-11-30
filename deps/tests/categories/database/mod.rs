@@ -1,3 +1,16 @@
+mod cornucopia;
+mod deadpool;
+mod diesel;
+mod elasticsearch;
+mod infisearch;
+mod minisearch;
+mod mongodb;
 mod postgres;
 mod redis;
+mod sea_orm;
 mod sqlite;
+mod sqlx;
+mod stork_search;
+mod tinysearch;
+mod tokio_postgres;
+mod typesense;

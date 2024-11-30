@@ -9,7 +9,9 @@
 [![embassy-github][c-embassy-github-badge]][c-embassy-github]
 [![embassy-lib.rs][c-embassy-lib.rs-badge]][c-embassy-lib.rs]
 
-{{#example embassy}}
+```rust,editable
+{{#include ../../../deps/tests/categories/embedded/embassy.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

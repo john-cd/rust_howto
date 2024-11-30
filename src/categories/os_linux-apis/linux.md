@@ -4,7 +4,9 @@
 
 ## Linux {#linux}
 
-{{#example linux}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os_linux_apis/linux.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

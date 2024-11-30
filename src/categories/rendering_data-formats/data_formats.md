@@ -4,7 +4,9 @@
 
 ## Data format {#data-format}
 
-{{#example data_formats}}
+```rust,editable
+{{#include ../../../deps/tests/categories/rendering_data_formats/data_formats.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

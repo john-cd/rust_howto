@@ -11,7 +11,9 @@
 
 "An ECS based game engine, good for 3D but also capable of 2D."
 
-{{#example bevy}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_engines/bevy.rs:example}}
+```
 
 ### `fyrox` {#fyrox}
 
@@ -22,7 +24,9 @@
 
 "An OOP-focused game engine with 3D and 2D support and a full GUI scene editor."
 
-{{#example fyrox}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_engines/fyrox.rs:example}}
+```
 
 ### `ggez` {#ggez}
 
@@ -33,7 +37,9 @@
 
 "A simpler option for 2d games only."
 
-{{#example ggez}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_engines/ggez.rs:example}}
+```
 
 ### `macroquad` {#macroquad}
 
@@ -44,7 +50,9 @@
 
 "A simple and easy to use 2d game library, great for beginners."
 
-{{#example macroquad}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_engines/macroquad.rs:example}}
+```
 
 ### `glam` {#glam}
 
@@ -55,7 +63,9 @@
 
 "Fast math library optimised for game development use cases"
 
-{{#example glam}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_engines/glam.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

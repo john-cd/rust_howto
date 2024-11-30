@@ -15,7 +15,9 @@
 
 A minimal and ergonomic framework. An official part of the tokio project. Recommend for most new projects.
 
-{{#example axum}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/axum.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

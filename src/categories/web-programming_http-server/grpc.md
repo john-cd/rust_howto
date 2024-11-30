@@ -14,7 +14,9 @@
 
 gRPC over HTTP/2 with full support for asynchronous code. Works with tokio
 
-{{#example tonic}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/tonic.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

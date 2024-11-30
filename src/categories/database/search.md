@@ -11,7 +11,9 @@
 [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}}
 [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-{{#example elasticsearch}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/elasticsearch.rs:example}}
+```
 
 ## Infisearch {#infisearch}
 
@@ -21,7 +23,9 @@
 [![infisearch-lib.rs][c-infisearch-lib.rs-badge]][c-infisearch-lib.rs]
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-{{#example infisearch}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/infisearch.rs:example}}
+```
 
 ## Stork search {#stork-search}
 
@@ -33,7 +37,9 @@
 
 [stork-search.net][c-stork_search-website]
 
-{{#example stork-search}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/stork_search.rs:example}}
+```
 
 ## Minisearch {#minisearch}
 
@@ -44,7 +50,9 @@
 
 [minisearch-client-side-fulltext-search-engine][c-minisearch-client-side-fulltext-search-engine]
 
-{{#example minisearch}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/minisearch.rs:example}}
+```
 
 ## Typesense {#typesense}
 
@@ -53,7 +61,9 @@
 [![typesense-github][c-typesense-github-badge]][c-typesense-github]
 [![typesense-lib.rs][c-typesense-lib.rs-badge]][c-typesense-lib.rs]
 
-{{#example typesense}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/typesense.rs:example}}
+```
 
 ## Tinysearch {#tinysearch}
 
@@ -66,7 +76,9 @@
 
 A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly
 
-{{#example tinysearch}}
+```rust,editable
+{{#include ../../../deps/tests/categories/database/tinysearch.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

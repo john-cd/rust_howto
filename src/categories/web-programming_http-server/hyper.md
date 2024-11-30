@@ -11,7 +11,9 @@
 
 `hyper` is a low-level HTTP implementation (both client and server). Implements HTTP/1, and HTTP/2. Works best with the tokio async runtime, but can support other runtimes.
 
-{{#example hyper_server}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/hyper_server.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

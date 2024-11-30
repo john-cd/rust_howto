@@ -4,7 +4,9 @@
 
 ## Graphics {#graphics}
 
-{{#example graphics}}
+```rust,editable
+{{#include ../../../deps/tests/categories/rendering_graphics_api/graphics.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

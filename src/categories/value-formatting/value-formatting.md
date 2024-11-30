@@ -6,7 +6,9 @@
 
 ## Value formatting {#value-formatting}
 
-{{#example value_formatting}}
+```rust,editable
+{{#include ../../../deps/tests/categories/value_formatting/value_formatting1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

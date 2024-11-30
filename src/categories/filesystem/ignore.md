@@ -11,7 +11,9 @@
 
 Recursive filesystem walking that respects ignore files (like .gitignore)
 
-{{#example ignore}}
+```rust,editable
+{{#include ../../../deps/tests/categories/filesystem/ignore.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

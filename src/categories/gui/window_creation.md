@@ -12,7 +12,9 @@
 
 "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice."
 
-{{#example winit}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/winit.rs:example}}
+```
 
 ## `tao` {#tao}
 
@@ -26,7 +28,9 @@ The TAO of cross-platform windowing. A library in Rust built for Tauri.
 
 "A fork of winit by the Tauri project which adds support for things like system menus that desktop apps need."
 
-{{#example tao}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/tao.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,9 @@
 
 ## FreeBSD {#freebsd}
 
-{{#example freebsd}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os_freebsd_apis/freebsd.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

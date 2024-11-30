@@ -11,7 +11,9 @@
 
 "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries."
 
-{{#example rfd}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/rfd.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

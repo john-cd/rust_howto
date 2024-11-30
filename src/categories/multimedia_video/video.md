@@ -4,7 +4,9 @@
 
 ## Video {#video}
 
-{{#example video}}
+```rust,editable
+{{#include ../../../deps/tests/categories/multimedia_video/video.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

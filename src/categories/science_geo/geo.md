@@ -4,7 +4,9 @@
 
 ## Geospatial {#geo}
 
-{{#example geo}}
+```rust,editable
+{{#include ../../../deps/tests/categories/science_geo/geo.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

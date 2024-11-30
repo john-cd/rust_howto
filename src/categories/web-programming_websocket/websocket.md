@@ -15,7 +15,9 @@
 
 Low-level crate that others build on.
 
-{{#example tungstenite}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_websocket/tungstenite.rs:example}}
+```
 
 ## General Purpose {#general-purpose}
 
@@ -30,7 +32,9 @@ Low-level crate that others build on.
 
 If you are using the tokio executor.
 
-{{#example tokio-tungstenite}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_websocket/tokio_tungstenite.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

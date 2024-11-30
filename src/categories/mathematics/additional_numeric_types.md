@@ -14,7 +14,9 @@
 
 Traits like Number, Add, etc that allow you write functions that are generic over the specific numeric type
 
-{{#example num_traits}}
+```rust,editable
+{{#include ../../../deps/tests/categories/mathematics/num_traits.rs:example}}
+```
 
 ## Big Integers {#big-integers}
 
@@ -47,7 +49,9 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 
 "It's not the fastest, but it's part of the trusted num library."
 
-{{#example num_bigint}}
+```rust,editable
+{{#include ../../../deps/tests/categories/mathematics/num_bigint.rs:example}}
+```
 
 ### `rug` {#rug}
 
@@ -60,7 +64,9 @@ Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-
 
 LGPL licensed. Wrapper for GMP. Much faster than num-bigint
 
-{{#example rug}}
+```rust,editable
+{{#include ../../../deps/tests/categories/mathematics/rug.rs:example}}
+```
 
 ## Big decimal {#big-decimal}
 
@@ -74,7 +80,9 @@ LGPL licensed. Wrapper for GMP. Much faster than num-bigint
 
 The binary representation consists of a 96 bit integer number, a scaling factor used to specify the decimal fraction and a 1 bit sign.
 
-{{#example rust_decimal}}
+```rust,editable
+{{#include ../../../deps/tests/categories/mathematics/rust_decimal.rs:example}}
+```
 
 ## Sortable Floats {#sortable-floats}
 
@@ -88,7 +96,9 @@ The binary representation consists of a 96 bit integer number, a scaling factor 
 
 Float types that don't allow NaN and are therefore orderable. You can also use the total_cmp method from the standard library like .sort_by(|a, b| a.total_cmp(&b)).
 
-{{#example ordered_float}}
+```rust,editable
+{{#include ../../../deps/tests/categories/mathematics/ordered_float.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

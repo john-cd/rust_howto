@@ -4,7 +4,9 @@
 
 ## Render {#render}
 
-{{#example render}}
+```rust,editable
+{{#include ../../../deps/tests/categories/rendering/render.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

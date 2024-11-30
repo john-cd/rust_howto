@@ -11,7 +11,9 @@
 
 "Full text layout including rich text and support for BiDi and non-latin scripts. The best option for now."
 
-{{#example cosmic_text}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/cosmic_text.rs:example}}
+```
 
 ## `parley` {#parley}
 
@@ -24,7 +26,9 @@
 
 "Another very accomplished text layout library used by Druid/Xilem."
 
-{{#example parley}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/parley.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

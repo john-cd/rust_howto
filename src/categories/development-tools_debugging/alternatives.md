@@ -24,7 +24,9 @@ Structured, extensible, composable logging.
 
 `slog` remains a stable, featureful and battle-tested library, used in many important projects.
 
-{{#example slog}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_debugging/slog.rs:example}}
+```
 
 ### `log4rs` {#log4rs}
 
@@ -76,13 +78,17 @@ fn main() {
 
 [OpenTelemetry Rust documentation][opentelemetry-rust]⮳
 
-{{#example open-telemetry}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_debugging/open_telemetry.rs:example}}
+```
 
 ## OpenObserve {#open-observe}
 
 [openobserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 
-{{#example open_observe}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_debugging/open_observe.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

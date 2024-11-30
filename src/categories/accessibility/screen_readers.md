@@ -13,7 +13,9 @@
 
 Allows you to export a semantic tree representing your UI to make accessible to screen readers and other assistive technologies
 
-{{#example accesskit}}
+```rust,editable
+{{#include ../../../deps/tests/categories/accessibility/accesskit.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

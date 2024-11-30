@@ -4,7 +4,9 @@
 
 ## FFI {#ffi}
 
-{{#example ffi}}
+```rust,editable
+{{#include ../../../deps/tests/categories/external_ffi_bindings/ffi.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

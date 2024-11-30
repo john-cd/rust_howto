@@ -8,7 +8,9 @@
 
 [`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
-{{#example syn}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_procedural_macro_helpers/syn.rs:example}}
+```
 
 ## `paste` {#paste}
 
@@ -16,7 +18,9 @@
 
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
-{{#example paste}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_procedural_macro_helpers/paste.rs:example}}
+```
 
 ## `quote` {#quote}
 
@@ -24,7 +28,9 @@
 
 [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
-{{#example quote}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_procedural_macro_helpers/quote.rs:example}}
+```
 
 ## `proc-macro2` {#proc-macro2}
 
@@ -44,7 +50,9 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
-{{#example proc_macro2}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_procedural_macro_helpers/proc_macro2.rs:example}}
+```
 
 ### `darling` {#darling}
 
@@ -52,7 +60,9 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 Derive macro to easily parse derive macro inputs
 
-{{#example darling}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_procedural_macro_helpers/darling.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

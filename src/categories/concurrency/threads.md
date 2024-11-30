@@ -98,7 +98,9 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 
 The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
-{{#example crossbeam_channel}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/crossbeam_channel.rs:example}}
+```
 
 ### `flume` {#flume}
 
@@ -109,7 +111,9 @@ The absolute fastest channel implementation available. Implements Go-like 'selec
 
 Smaller and simpler than `crossbeam-channel` and almost as fast.
 
-{{#example flume}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/flume.rs:example}}
+```
 
 ### `tokio` {#tokio}
 
@@ -117,7 +121,9 @@ Smaller and simpler than `crossbeam-channel` and almost as fast.
 
 Tokio's `sync` module provides channels for using in async code.
 
-{{#example tokio}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/tokio.rs:example}}
+```
 
 ### `postage` {#postage}
 
@@ -128,7 +134,9 @@ Tokio's `sync` module provides channels for using in async code.
 
 Channels that integrate nicely with async code, with different options than Tokio.
 
-{{#example postage}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/postage.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

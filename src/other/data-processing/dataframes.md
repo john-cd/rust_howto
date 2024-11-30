@@ -10,7 +10,9 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 
 [docs.pola.rs][c-polars-docs]⮳
 
-{{#example polars}}
+```rust,editable
+{{#include ../../../deps/tests/other/data_processing/polars.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

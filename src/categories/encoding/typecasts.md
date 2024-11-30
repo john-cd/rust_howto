@@ -12,7 +12,9 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-{{#example bytemuck}}
+```rust,editable
+{{#include ../../../deps/tests/categories/encoding/bytemuck.rs:example}}
+```
 
 ## `zerocopy` {#zerocopy}
 
@@ -27,7 +29,9 @@
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-{{#example zerocopy}}
+```rust,editable
+{{#include ../../../deps/tests/categories/encoding/zerocopy.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -11,7 +11,9 @@
 
 [Rathole][c-rathole-github]⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to `frp` and `ngrok`.
 
-{{#example rathole}}
+```rust,editable
+{{#include ../../../deps/tests/categories/network_programming/rathole.rs:example}}
+```
 
 ## ngrok {#ngrok}
 
@@ -22,7 +24,9 @@
 
 [ngrok][c-ngrok-website]⮳ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the native and idiomatic crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
 
-{{#example ngrok}}
+```rust,editable
+{{#include ../../../deps/tests/categories/network_programming/ngrok.rs:example}}
+```
 
 ## `nginx` {#nginx}
 
@@ -42,7 +46,9 @@ A library for building fast, reliable and evolvable network services.
 - [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳
 - [Pingora quick start][c-pingora-quick-start-github]⮳
 
-{{#example pingora}}
+```rust,editable
+{{#include ../../../deps/tests/categories/network_programming/pingora.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

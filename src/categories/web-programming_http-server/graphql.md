@@ -13,7 +13,9 @@ A high-performance graphql server library that's fully specification compliant. 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-{{#example async-graphql}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/async_graphql.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

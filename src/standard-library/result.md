@@ -4,7 +4,9 @@
 
 ## Result {#result}
 
-{{#example result}}
+```rust,editable
+{{#include ../../deps/tests/standard_library/result.rs:example}}
+```
 
 ## See also
 

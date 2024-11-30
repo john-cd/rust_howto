@@ -9,7 +9,9 @@
 
 [Zola][c-zola-website]{{hi:zola}}⮳ is a fast static site generator in a single binary with everything built-in.
 
-{{#example zola}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/zola.rs:example}}
+```
 
 ### Zola Themes {#themes}
 

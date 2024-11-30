@@ -12,7 +12,9 @@
 
 "Supports Flexbox and CSS Grid algorithms."
 
-{{#example taffy}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/taffy.rs:example}}
+```
 
 ## `morphorm` {#morphorm}
 
@@ -24,7 +26,9 @@
 
 "Implements it's own layout algorithm based on Subform layout."
 
-{{#example morphorm}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/morphorm.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

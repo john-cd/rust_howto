@@ -12,7 +12,9 @@
 
 Date and time library. Fully interoperable with the standard library. Mostly compatible with `#![no_std]`.
 
-{{#example time}}
+```rust,editable
+{{#include ../../../deps/tests/categories/date_and_time/time.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,9 @@
 
 ## Virtualization {#virt}
 
-{{#example virtualization}}
+```rust,editable
+{{#include ../../../deps/tests/categories/virtualization/virtualization1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

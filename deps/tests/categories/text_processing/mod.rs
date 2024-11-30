@@ -6,3 +6,4 @@ mod hashtags;
 mod phone;
 mod regex;
 mod replace;
+mod string_concat;

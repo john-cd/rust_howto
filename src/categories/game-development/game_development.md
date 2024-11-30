@@ -4,7 +4,9 @@
 
 ## Game Developments {#game-development}
 
-{{#example game_development}}
+```rust,editable
+{{#include ../../../deps/tests/categories/game_development/game_development1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

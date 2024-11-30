@@ -4,7 +4,9 @@
 
 ## Render Engines {#render}
 
-{{#example render}}
+```rust,editable
+{{#include ../../../deps/tests/categories/rendering_engine/render.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

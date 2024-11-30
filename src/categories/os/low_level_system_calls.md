@@ -14,7 +14,9 @@
 
 Bindings for directly calling libc functions.
 
-{{#example libc}}
+```rust,editable
+{{#include ../../../deps/tests/categories/os/libc.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

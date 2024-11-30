@@ -4,7 +4,9 @@
 
 ## Multimedias {#multimedia}
 
-{{#example multimedia}}
+```rust,editable
+{{#include ../../../deps/tests/categories/multimedia/multimedia1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

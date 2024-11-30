@@ -1,5 +1,6 @@
 mod async1;
 mod async2;
+mod async_channel;
 mod async_channels_mpsc;
 mod async_channels_oneshot;
 mod async_channels_oneshot2;
@@ -14,6 +15,8 @@ mod call_blocking_from_async_spawn_dedicated_thread;
 mod futures;
 mod futures2;
 mod futures3;
+mod kanal;
+mod postage;
 mod streams;
 mod streams2;
 mod tokio2;

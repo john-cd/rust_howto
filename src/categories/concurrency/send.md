@@ -4,11 +4,15 @@
 
 ## Send {#send}
 
-{{#example send}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/send.rs:example}}
+```
 
 ## Sync {#sync}
 
-{{#example sync}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/sync.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

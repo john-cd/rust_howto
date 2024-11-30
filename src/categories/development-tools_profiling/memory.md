@@ -11,7 +11,9 @@
 
 A library for heap profiling and ad hoc profiling with DHAT
 
-{{#example dhat}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_profiling/dhat.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

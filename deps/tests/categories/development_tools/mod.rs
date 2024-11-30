@@ -2,6 +2,9 @@ mod rustdoc;
 mod rustdoc2;
 mod rustdoc3;
 // rustdoc4 is in the `tests` folder
+mod cargo;
+mod documentation;
+mod other;
 mod semver_command;
 mod semver_complex;
 mod semver_increment;

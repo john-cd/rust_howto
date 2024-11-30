@@ -12,7 +12,9 @@
 
 "OpenGL based. Offers a simple API. Probably the easiest to get started with."
 
-{{#example femtovg}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/femtovg.rs:example}}
+```
 
 ## skia-safe {#skia-safe}
 
@@ -27,7 +29,9 @@
 [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
 "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile."
-{{#example skia_safe}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/skia_safe.rs:example}}
+```
 
 ## vello {#vello}
 
@@ -40,7 +44,9 @@
 
 "WGPU based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release."
 
-{{#example vello}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/vello.rs:example}}
+```
 
 ## vger {#vger}
 
@@ -52,7 +58,9 @@
 
 "A simpler WGPU based option which is less innovative but currently more stable than vello."
 
-{{#example vger}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/vger.rs:example}}
+```
 
 ## webrender {#webrender}
 
@@ -63,7 +71,9 @@
 
 "OpenGL based. Mature with production usage in Firefox but documentation and OSS maintenance are lacking."
 
-{{#example webrender}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/webrender.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

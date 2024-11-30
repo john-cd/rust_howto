@@ -4,7 +4,9 @@
 
 ## Image {#images}
 
-{{#example images}}
+```rust,editable
+{{#include ../../../deps/tests/categories/multimedia_images/images.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

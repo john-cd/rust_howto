@@ -13,7 +13,9 @@
 
 Arrays that are ONLY stack-allocated with fixed capacity.
 
-{{#example arrayvec}}
+```rust,editable
+{{#include ../../../deps/tests/categories/data_structures/arrayvec.rs:example}}
+```
 
 ## smallvec {#smallvec}
 
@@ -25,7 +27,9 @@ Arrays that are ONLY stack-allocated with fixed capacity.
 
 Arrays that are stack-allocated with fallback to the heap if the fixed stack capacity is exceeded.
 
-{{#example smallvec}}
+```rust,editable
+{{#include ../../../deps/tests/categories/data_structures/smallvec.rs:example}}
+```
 
 ## tinyvec {#tinyvec}
 
@@ -38,7 +42,9 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 
 Stack-allocated arrays in 100% safe Rust code. `tinyvec` requires items to implement the Default trait.
 
-{{#example tinyvec}}
+```rust,editable
+{{#include ../../../deps/tests/categories/data_structures/tinyvec.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,9 @@
 
 ## Emulate {#emulators}
 
-{{#example emulator}}
+```rust,editable
+{{#include ../../../deps/tests/categories/emulators/emulator.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,9 @@
 
 ## Internationalized {#internationalization}
 
-{{#example internationalization}}
+```rust,editable
+{{#include ../../../deps/tests/categories/internationalization/internationalization1.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

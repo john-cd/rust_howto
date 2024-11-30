@@ -8,7 +8,9 @@
 
 - [concat benchmark][concat-benchmark-github]⮳
 
-{{#example string_concat}}
+```rust,editable
+{{#include ../../../deps/tests/categories/text_processing/string_concat.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

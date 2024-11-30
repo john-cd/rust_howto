@@ -20,7 +20,9 @@ Web framework with a focus on usability, security, extensibility, and speed.
 
 [Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
 
-{{#example rocket}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/rocket.rs:example}}
+```
 
 ## Leptos {#leptos}
 
@@ -32,7 +34,9 @@ Web framework with a focus on usability, security, extensibility, and speed.
 
 [`leptos`][c-leptos-github]{{hi:leptos}}⮳ is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
 
-{{#example leptos}}
+```rust,editable
+{{#include ../../../deps/tests/categories/web_programming_http_server/leptos.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

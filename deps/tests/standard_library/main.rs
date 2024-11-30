@@ -5,6 +5,8 @@
 //! All examples in this folder MUST be listed as module below or they won't be
 //! discovered / run.
 
+mod asref;
+mod box1;
 mod cow1;
 mod cow2;
 mod cow3;
@@ -18,7 +20,9 @@ mod hashmaps;
 mod options1;
 mod options2;
 mod options3;
+mod rc;
+mod refcell;
+mod result;
 mod strings;
 mod strings2;
-
 mod vectors;

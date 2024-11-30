@@ -13,7 +13,9 @@
 
 Automatically generates Rust FFI bindings to C and C++ libraries.
 
-{{#example bindgen}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_ffi/bindgen.rs:example}}
+```
 
 ## `cbindgen` {#cbindgen}
 
@@ -26,7 +28,9 @@ Automatically generates Rust FFI bindings to C and C++ libraries.
 
 Generate C bindings to Rust libraries
 
-{{#example cbindgen}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_ffi/cbindgen.rs:example}}
+```
 
 ## `cxx` {#cxx}
 
@@ -40,7 +44,9 @@ Generate C bindings to Rust libraries
 
 Safe C++ <-> Rust interop by generating code for both sides.
 
-{{#example cxx}}
+```rust,editable
+{{#include ../../../deps/tests/categories/development_tools_ffi/cxx.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -5,4 +5,9 @@
 //! All examples in this folder MUST be listed as module below or they won't be
 //! discovered / run.
 
+mod cloud;
 mod cross_platform;
+mod data_processing;
+mod gpu;
+mod scripting;
+mod written_in_rust;

@@ -8,7 +8,9 @@
 
 [`config`][c-config]{{hi:config}}⮳ is a layered configuration{{hi:Configuration}} system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
-{{#example config}}
+```rust,editable
+{{#include ../../../deps/tests/categories/config/config1.rs:example}}
+```
 
 ## Confy {#confy}
 

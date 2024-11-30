@@ -19,7 +19,9 @@ Immediate-mode UI. Lots of widgets. The most useable out of the box if your need
 - [egui containers][c-egui-containers]⮳
 - [egui struct.Ui][c-egui::Ui]⮳
 
-{{#example egui}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/egui.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

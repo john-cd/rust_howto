@@ -13,7 +13,9 @@
 
 A HashMap that seperately keeps track of insertion order and allows you to efficiently iterate over its elements in that order
 
-{{#example indexmap}}
+```rust,editable
+{{#include ../../../deps/tests/categories/data_structures/indexmap.rs:example}}
+```
 
 ## Multimap {#multimap}
 
@@ -39,7 +41,9 @@ Use to store collections of objects that need stable, safe references but have n
 
 `slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap` , `HopSlotMap` and `DenseSlotMap`. Upon insertion a key is returned that can be used to later access or remove the values. Insertion, deletion and access all take O(1) time with low overhead. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
 
-{{#example slotmap}}
+```rust,editable
+{{#include ../../../deps/tests/categories/data_structures/slotmap.rs:example}}
+```
 
 ## See also
 

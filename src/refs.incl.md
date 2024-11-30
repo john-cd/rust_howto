@@ -333,7 +333,7 @@
 [ex-formatting-formatting-attributes]: categories/development-tools/formatting/formatting.md#formatting-attributes
 [ex-formatting-rustfmt-config]: categories/development-tools/formatting/formatting.md#rustfmt-config
 [ex-formatting-rustfmt]: categories/development-tools/formatting/formatting.md#rustfmt
-[ex-game-development-game-development]: categories/game-development/game_development.md#game-development
+[ex-game-development-game-development]: categories/game-development/game_development1.md#game-development
 [ex-game-engines-bevy]: categories/game-engines/game_engines.md#bevy
 [ex-game-engines-fyrox]: categories/game-engines/game_engines.md#fyrox
 [ex-game-engines-ggez]: categories/game-engines/game_engines.md#ggez

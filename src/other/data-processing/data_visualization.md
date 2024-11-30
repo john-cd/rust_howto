@@ -13,7 +13,9 @@
 
 [plotly.rs][c-plotly-github]{{hi:plotly.rs}}⮳
 
-{{#example plotly}}
+```rust,editable
+{{#include ../../../deps/tests/other/data_processing/plotly.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

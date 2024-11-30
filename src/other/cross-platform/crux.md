@@ -14,7 +14,9 @@ The architecture is event-driven{{hi:Event-driven}}, based on event sourcing{{hi
 
 The user interface{{hi:User interface}} layer is built natively, with modern declarative UI frameworks such as Swift UI, Jetpack Compose and React/Vue or a WASM{{hi:WASM}} based framework on the web.
 
-{{#example crux}}
+```rust,editable
+{{#include ../../../deps/tests/other/cross_platform/crux.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

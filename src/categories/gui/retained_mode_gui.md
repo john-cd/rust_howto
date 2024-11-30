@@ -13,7 +13,9 @@
 
 Retained mode UI with a nice API. It's useable for basic apps, but has a number of missing features including multiple windows, layers, and proper text rendering.
 
-{{#example iced}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/iced.rs:example}}
+```
 
 ## floem {#floem}
 
@@ -28,7 +30,9 @@ Retained mode UI with a nice API. It's useable for basic apps, but has a number 
 
 Inspired by Xilem, Leptos and rui, floem is currently more complete than any of them for native UI. Used by the `lapce` text editor.
 
-{{#example floem}}
+```rust,editable
+{{#include ../../../deps/tests/categories/gui/floem.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

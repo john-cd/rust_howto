@@ -14,7 +14,9 @@
 
 See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
-{{#example nom}}
+```rust,editable
+{{#include ../../../deps/tests/categories/parsing/nom.rs:example}}
+```
 
 ## Pest {#pest}
 
@@ -28,7 +30,9 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
 Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
-{{#example pest}}
+```rust,editable
+{{#include ../../../deps/tests/categories/parsing/pest.rs:example}}
+```
 
 ### Tree sitter {#tree-sitter}
 
@@ -39,7 +43,9 @@ Grammars are saved in separate `.pest` files which are never mixed with proced
 
 Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
-{{#example tree_sitter}}
+```rust,editable
+{{#include ../../../deps/tests/categories/parsing/tree_sitter.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

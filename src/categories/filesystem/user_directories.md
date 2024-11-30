@@ -14,7 +14,9 @@ Get platform-specific locations for configuration, cache, and other data
 
 Provide platform-specific locations for configuration, cache, and other data
 
-{{#example dirs}}
+```rust,editable
+{{#include ../../../deps/tests/categories/filesystem/dirs.rs:example}}
+```
 
 ## `directories` {#directories}
 
@@ -28,7 +30,9 @@ A higher-level library that can also compute paths for applications
 
 A library that provides config/cache/data paths, following the respective conventions on Linux, macOS and Windows
 
-{{#example directories}}
+```rust,editable
+{{#include ../../../deps/tests/categories/filesystem/directories.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

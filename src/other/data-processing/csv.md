@@ -6,7 +6,9 @@
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}}
 
-{{#example csv}}
+```rust,editable
+{{#include ../../../deps/tests/other/data_processing/csv.rs:example}}
+```
 
 ## Manipulate CSV files from the command line {#manipulate-csv-files-from-the-command-line}
 

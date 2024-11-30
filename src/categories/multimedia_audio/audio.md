@@ -4,7 +4,9 @@
 
 ## Audio {#audio}
 
-{{#example audio}}
+```rust,editable
+{{#include ../../../deps/tests/categories/multimedia_audio/audio.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
