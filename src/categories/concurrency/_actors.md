@@ -1,6 +1,6 @@
 # Actors
 
-{{#include actors.incl.md}}
+{{#include _actors.incl.md}}
 
 ## `stakker` {#stakker}
 
