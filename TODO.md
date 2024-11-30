@@ -1,7 +1,6 @@
 # TODO
 
 - [ ] polish the intro, add links WIP
-- [ ] in the index of examples, mask examples in hidden sections
 - [ ] polish crates section
 - [ ] fix incl.md table for cargo plugins; add ref to crates
 - [ ] fix incl.md tables for databases
