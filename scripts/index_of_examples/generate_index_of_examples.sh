@@ -2,7 +2,10 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Quick and dirty generation of the index of examples `examples_index.md`
+# Quick and dirty script
+# Outputs the contents of index of examples `src/examples_index.md`
+# This script reads the local tables of content of all subchapters
+#
 # Usage:
 # ./scripts/index_of_examples/generate_index_of_examples.sh > src/examples_index.md
 
@@ -16,9 +19,11 @@ clean() {
     s/Cow/`Cow`/g;
     s/Grpc/gRPC/g;
     s/Mdbook/mdBook/g;
-    s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper|Option|Result)/\L`&`/g'
+    s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper)/\L`&`/g;
+    s/(Option|Result)/`&`/g'
 }
 
+# Print the header
 echo $'# Index of Examples\n'
 
 # Leaf directories only
@@ -29,8 +34,8 @@ do
     if [[ -f "$dir/_index.md" ]]; then
       continue
     fi
-    # Last part of path, titlecased; FFI, OS... capitalized
-    # src/categories are crates.io slugs: replace - by ' ';  _ separates parent and child categories
+    # Get last part of path, titlecased; abbreviations capitalized
+    # The folders in `src/categories` are based on `crates.io` slugs: replace - by ' ';  _ separates parent and child categories
     last=$(basename $dir | sed 's/-/ /g; s/_/: /g')
     last=$(clean $last)
     echo -e "## ${last}\n"
@@ -49,6 +54,7 @@ do
     done
 done
 
+# Print the footer
 cat << 'EOF'
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}

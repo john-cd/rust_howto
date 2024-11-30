@@ -82,22 +82,7 @@ _clean_temp_dir:
 # Run additional examples (under the `xmpl` folder)
 [unix]
 runall:
-  #! /bin/bash
-  set -o pipefail
-  set -e
-  # Create a list of the (last part of) folder names under the `xmpl` directory, space separated
-  xmpl=$(find ./xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
-  # Run additional examples in the xmpl folder, if any
-  for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
-
-## The examples under the deps folder have been replaced by tests.
-## Should you want to add examples again, add the following to `runall`:
-## Run examples that are simple .rs files in deps/examples
-#examples=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type f | xargs basename --suffix=.rs | tr '\n' ' ')
-#for e in $examples; do ( echo $e; cargo run --example $e --locked || true); done
-## Run examples that are in a subfolder of deps/examples
-#examples_in_dir=$(find ./deps/examples -mindepth 1 -maxdepth 1 -type d | xargs basename --multiple | tr '\n' ' ')
-#for e in $examples_in_dir; do ( echo $e; cargo run --example $e --locked || true ); done
+  ./scripts/runall.sh
 
 ## ---- CODE DOCUMENTATION -----------------------------------
 
@@ -128,19 +113,15 @@ docall: _builddocall
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
 buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
 
-# Generate the expanded markdown (input for skeptic) and the book's HTML / JS
+# Generate the book's HTML / JS
 [unix]
 _mdbook-build-book:
-  #! /bin/bash
-  set -e
-  if [ ! -f ./book.toml ]; then
-    cp -f ./book.toml.bak ./book.toml
-  fi
-  mdbook build
+  ./scripts/build_book.sh
 
 [windows]
 _mdbook-build-book:
   mdbook build
+# TODO P2
 
 # Generate new reference definitions for all crate the book's examples depend on...
 _generate-refdefs:
@@ -172,31 +153,7 @@ serve:
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 [unix]
 quick:
-  #! /bin/bash
-  set -o pipefail
-  set -e
-  # function called by trap
-  cleanup() {
-    cp -f ./book.toml.bak ./book.toml
-    exit
-  }
-  trap cleanup 1 2 3 6
-  if [ -f ./book.toml ]; then
-    mv -f ./book.toml ./book.toml.bak
-  fi
-  # Make sure that the book builds in the same folder than `serve` - override
-  # [build]
-  # build-dir = "book/html"
-  # Also overwrite the title
-  MDBOOK_BUILD__BUILD_DIR="book/html" MDBOOK_BOOK='{"title": "QUICK SERVE"}' \
-  mdbook serve -p 3001 -n 127.0.0.1 --open
-# Note1: Using the env variable MDBOOK_* only seems to override existing values, not erase them.
-# Examples:
-#   MDBOOK_BOOK="$(toml2json ./book-dev.toml)" mdbook build
-#   MDBOOK_OUTPUT__LINKCHECK='{"warning-policy": "ignore"}' MDBOOK_PREPROCESSOR__INDEXING='{"skip_renderer": "html,markdown,linkcheck"}'
-# See the doc on overriding mdbook config: https://rust-lang.github.io/mdBook/format/configuration/environment-variables.html
-#
-# Note2: mdbook watch --open --watcher=poll / native does not have -p -n options.
+  ./scripts/quick.sh
 
 [windows]
 quick:
@@ -225,10 +182,12 @@ utils cmd=help *subcmd=empty:
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 templ cmd=help *subcmd=empty:
   cargo run -p templ -- {{cmd}} {{subcmd}}
+# TODO P2 clarify
 
 # Create the `crates by category` and `crates (alphabetical)` pages
 crate_indices cmd=help *subcmd=empty:
   cargo run -p crate_indices -- {{cmd}} {{subcmd}}
+# TODO P2 clarify
 
 # Autogenerate a chapter (from template)
 autogen:
@@ -237,110 +196,53 @@ autogen:
 
 ## ---- LINK AND REFERENCE DEFINITION MANAGEMENT -----------------------------------
 
-# Sort and deduplicate reference definitions in the central `*-refs.md` files
+# Sort and deduplicate reference definitions in the central `*-refs.md` files; remove the last / from URLs
 [unix]
-sortrefs: _removelastslash
-  #! /bin/bash
-  sort -u -o ./src/refs/crate-refs.md ./src/refs/crate-refs.md
-  sort -u -o ./src/refs/other-refs.md ./src/refs/other-refs.md
-  sort -u -o ./src/refs/link-refs.md ./src/refs/link-refs.md
+sortrefs:
+  ./scripts/refdefs/sort_refdefs.sh
 
 [windows]
 sortrefs:
   echo "`sortrefs` is not implemented while working in Windows!"
 
-# Remove the last / from URLs in the reference definition files
-[unix]
-_removelastslash:
-   #! /bin/bash
-   sed -i 's/[/]$//g' ./src/refs/crate-refs.md
-   sed -i 's/[/]$//g' ./src/refs/other-refs.md
-   sed -i 's/[/]$//g' ./src/refs/link-refs.md
-
 # List links without corresponding reference definitions and vice versa
 check_refdefs:
-  #! /bin/bash
-  # reference definitions e.g. [label]: http://xyz
-  grep -Proh '\[[^\[\]]+?\](?=:)' ./src ./drafts | sort -u > /tmp/defined_refdefs.txt
-  # labels preceded by ] e.g. [some_text][label]
-  grep -Proh '(?<=\])\[[^ \[\]]+?\]' ./src ./drafts | sort -u > /tmp/used_refdefs.txt
-  echo ">>> Links w/o reference definition:"
-  comm -13 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
-  echo ">>> Reference definitions not used in links:"
-  comm -23 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort
-  # Counts
-  echo
-  echo "Count of reference definitions without links and vice versa:" $(comm -3 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt  | wc -l)
-  echo "Count of reference definitions defined in the refs folder:" $(cat  /tmp/defined_refdefs.txt | wc -l)
-  echo "Count of reference definitions used in the markdown:" $(cat  /tmp/used_refdefs.txt | wc -l)
-# grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
-# [a-zA-Z0-9\._:-]
+  ./scripts/refdefs/check_refdefs.sh
 
-# (BEWARE: can be destructive) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
+# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
 [confirm]
 fix_recipe_tables:
   ./scripts/recipe_tables/fix_recipe_tables.sh
 
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
 lnk pattern:
-  #! /bin/bash
-  # Look for [c-...pattern...] or [...pattern...] in the reference definitions
-  rg -IN '\[(c-)?[^]]*{{pattern}}[^]]*\].*' ./src/refs
-  # Generate possible links
-  rg -IN -r'[`$2`][$1$2$3]⮳' '\[(c-)?([^]]*{{pattern}}[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
-#  -N = --no-line-number; -I = --no-filename; -r = replace
+  ./scripts/refdefs/search.sh {{pattern}}
 
 ## ---- ANCHOR MANAGEMENT -----------------------------------
 
-# List headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
+# List book headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
 list_missing_anchors:
-  #! /bin/bash
-  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" -not -wholename "./src/crates/*.md" \) )
-  do
-    # grab headings without {, ignoring "## See also", etc...
-    header=$(grep -P '^##[^{]+$' $file | sed 's/## See [aA]lso//g')
-    if [ -n "$header" ]; then
-      echo $file" --> "$header
-    fi
-  done
+  ./scripts/anchors/list_missing_anchors.sh
 
-# (BEWARE: can be destructive) Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
+# (BEWARE: modifies files directly) Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
 [confirm]
 generate_refdefs_from_anchors:
-  #! /bin/bash
-  for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" \) )
-  do
-    echo "> $file"
-    base=$(basename $file)
-    # parent directory
-    parent=$(dirname $file | xargs basename)
-    # grab all headings with an anchor; substitute the anchor \1 into a refdef
-    link=$(sed -nE 's/^#.*\{#(.+?)\}\s*$/[ex-'${parent}'-\1]: '$base'#\1/p' $file)
-    if [ -n "$link" ]; then
-      echo "$link" >> "${file%/*}/refs.incl.md"
-      # sort and dedupe refdefs
-      sort -u -o "${file%/*}/refs.incl.md" "${file%/*}/refs.incl.md"
-    fi
-  done
+  ./scripts/anchors/generate_refdefs_from_anchors.sh
 
 ## ---- URL MANAGEMENT -----------------------------------
 
 # Check that URLs (to external websites) are valid and working
 check_urls:
-  -lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "./**/*.md" "./**/*.toml" "./**/*.yaml" "./**/*.yml"
-  # We could also check ".devcontainer/*" "./**/*.sh"
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | lychee --exclude-all-private --format=detailed --cache -u "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" -- -
-# Somehow lychee ignores links in markdown reference definitions... thus the use of sed to extract URLs
-# This does not check whether the reference definitions are used - see below.
+  ./scripts/urls/check_urls.sh
 
-# Identify duplicated URLs (noting that they can't always be avoided).
+# List duplicated URLs (noting that they can't always be avoided).
 list_duplicated_urls:
-  sed -r 's/\[.+?\]: (.+)$/\1/' ./src/refs/*.md | sort | uniq --repeated --count
-# -r or -E = use extended regular expressions
+  ./scripts/urls/list_duplicated_urls.sh
 
-# Create a reference definition for bare URLs in the markdown (manual review necessary)
-convert_bare_urls:
+# Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
+list_bare_urls:
   ./scripts/urls/convert_bare_urls.sh
+# TODO P2
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
@@ -370,10 +272,9 @@ list_examples_not_used_in_book:
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
-# Make sure that the local references i.e. {{#include refs.incl.md}} are included in every file
+# Make sure that the local references i.e. {{#include refs.incl.md}} are included in every markdown file; note that a few files (indices, TOC...) don't need local references
 list_missing_local_ref_includes:
-  grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ./src
-# NOTE: a few files (indices, TOC...) don't need local references
+  ./scripts/includes/list_missing_local_ref_includes.sh
 
 # Make sure that a local TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
 list_missing_subchapter_includes:
@@ -388,7 +289,7 @@ list_missing_chapters_in_toc:
 
 ## ---- INDICES MANAGEMENT -----------------------------------
 
-# Quick and dirty generation of the index of examples `examples_index.md`
+# Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)
 generate_index_of_examples:
   ./scripts/index_of_examples/generate_index_of_examples.sh
 # Usage: just generate_index_of_examples > src/examples_index.md

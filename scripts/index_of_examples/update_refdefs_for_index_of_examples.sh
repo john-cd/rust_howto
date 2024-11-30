@@ -27,4 +27,5 @@ done
 sort -u -o ./src/refs.incl.md ./src/refs.incl.md
 # Delete empty lines
 sed -i -E '/^\s*$/d' ./src/refs.incl.md
+
 echo "DONE"

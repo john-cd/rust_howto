@@ -9,15 +9,14 @@
 #
 # Usage: ./scripts/recipe_tables/fix_recipe_tables.sh
 
-
 for file in $(find ./src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do
 base=$(basename $file)
 dir=$(dirname $file)
 if [ -f "${dir}/refs.incl.md" ]; then
-    # grab the labels of the refdefs for the current file
+    # Grab the labels of the refdefs pointing to the current file from the local references
     labels=$(sed -En 's/^\[ex-(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
-    # if not empty
+    # If not empty...
     if [ -n "$labels" ]; then
         echo "> ${file}"
         for label in ${labels}
@@ -32,3 +31,5 @@ if [ -f "${dir}/refs.incl.md" ]; then
     fi
 fi
 done
+
+echo "DONE"

@@ -10,3 +10,5 @@ comm -13 /tmp/examples_in_markdown.txt /tmp/examples_in_deps.txt
 # The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
 # then compare to the list of test files in deps
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
+
+echo "DONE"

@@ -31,3 +31,5 @@ if [ -f $file ]; then
   find ./src -type f -name "*.md" -exec bash -c "process \"{}\" $file"  \;
 fi
 done
+
+echo "DONE"

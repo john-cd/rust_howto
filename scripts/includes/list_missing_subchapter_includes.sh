@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Make sure that a local TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
+# List subchapters that do not include a local TOC, i.e. {{#include <subchapter>.incl.md}} is missing.
 #
 # Usage: ./scripts/includes/list_missing_subchapter_includes.sh
 
@@ -12,3 +12,5 @@ do
     echo $file" -- consider adding --> {{#include "${base%.md}".incl.md}}"
   fi
 done
+
+echo "DONE"

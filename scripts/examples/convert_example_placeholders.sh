@@ -1,10 +1,15 @@
 #! /bin/bash
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
-# and create the necessary stubs
+# and create the necessary code stubs (in subfolders of deps/tests/)
+#
+# Usage: ./scripts/examples/convert_example_placeholders.sh
 
 for file in $(find /code/src -type f -name "*.md" -not -name "*.incl.md" )
 do
+  # Grab the name of the example(s) to create and iterate
+  # grep -P = Perl regex; -o = show only nonempty parts of lines that match; -h =  suppress the file name prefix on output
+  # read -r = do not allow backslashes to escape any characters
   grep -Poh '(?<=\{\{#example ).+?(?=\}\})' $file | tr '-' '_' | while read -r examplename ;
   do
     if [[ -n $examplename ]]; then
@@ -34,7 +39,7 @@ fn test() {
     main();
 }
 EOF
-      # Add the example file as a module
+      # Add the example file as a module to `mod.rs`
       if [[ -z $(grep -Foh "${examplename}" "$absoluteexampledir/mod.rs") ]]; then
         echo " Adding to $absoluteexampledir/mod.rs"
         cat >> "$absoluteexampledir/mod.rs" <<- EOF
@@ -44,3 +49,5 @@ EOF
     fi
   done
 done
+
+echo "DONE"
