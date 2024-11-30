@@ -764,3 +764,4 @@ dhat
 cdci
 xmpl
 ReentrantMutex
+nushell
