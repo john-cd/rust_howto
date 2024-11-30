@@ -18,7 +18,7 @@ Create applications for the web{{hi:Web programming}}.
 
 ## See also
 
-[Are we Web yet?][are-we-web-yet?-website?]⮳
+[Are we Web yet?][are-we-web-yet?-website]⮳
 
 [Building a crawler in Rust: Design and Associated Types][blog-building-a-crawler-in-rust]⮳
 

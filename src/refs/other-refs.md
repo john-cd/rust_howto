@@ -32,8 +32,8 @@
 [are-we-gui-yet?-website]: https://www.areweguiyet.com
 [are-we-learning-yet?-badge]: https://img.shields.io/badge/are_we_learning_yet-coral
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
-[are-we-web-yet?-website?-badge]: https://img.shields.io/badge/are_we_web_yet-coral
-[are-we-web-yet?-website?]: https://www.arewewebyet.org
+[are-we-web-yet?-website-badge]: https://img.shields.io/badge/are_we_web_yet-coral
+[are-we-web-yet?-website]: https://www.arewewebyet.org
 [arm-website]: https://www.arm.com
 [astral-github]: https://github.com/astral-sh
 [astral-website]: https://astral.sh
