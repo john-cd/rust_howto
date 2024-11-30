@@ -3,11 +3,15 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Quick and dirty script
-# Add all necessary references for the index of examples (in `examples_index.md`) to `src/refs.incl.md`
+# Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
+#
+# Usage: ./scripts/index_of_examples/update_refdefs_for_index_of_examples.sh
+#
+# This script is idempotent
 
 cd /code
 
-# Look into every refs.incl.md
+# Look into every refs.incl.md (in the subfolders)
 for file in $(find ./src -type f -name "refs.incl.md" -not -path "./src/refs.incl.md")
 do
     echo "Processing ${file}"

@@ -4,7 +4,7 @@ IFS=$'\n\t'
 
 # Quick and dirty generation of the index of examples `examples_index.md`
 # Usage:
-# ./scripts/generate_index_of_examples.sh > src/examples_index.md
+# ./scripts/index_of_examples/generate_index_of_examples.sh > src/examples_index.md
 
 clean() {
     echo "$1" | sed -E '

@@ -279,36 +279,16 @@ check_refdefs:
 # (BEWARE: can be destructive) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
 [confirm]
 fix_recipe_tables:
-  #! /bin/bash
-  for file in $(find ./src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
-  do
-    base=$(basename $file)
-    dir=$(dirname $file)
-    if [ -f "${dir}/refs.incl.md" ]; then
-      # grab the labels of the refdefs for the current file
-      labels=$(sed -En 's/^\[ex-(.*)\]:\s?'${base}'.*$/\1/p' ${dir}/refs.incl.md)
-      # if not empty
-      if [ -n "$labels" ]; then
-          echo "> ${file}"
-          for label in ${labels}
-          do
-            # if the dest file does not exist or label is not in it
-            if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex-${label}\]" "${file%.md}.incl.md") -eq 0 ]
-            then
-              # add link in the corresponding .incl.md (manual editing of the table is still necessary)
-              echo "[${label}][ex-${label}]" >> "${file%.md}.incl.md"
-            fi
-          done
-      fi
-    fi
-  done
+  ./scripts/recipe_tables/fix_recipe_tables.sh
 
-# Search the references using a crate name or label fragment and return the  refdefs / URLs and reference-style links
+# Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
 lnk pattern:
   #! /bin/bash
+  # Look for [c-...pattern...] or [...pattern...] in the reference definitions
   rg -IN '\[(c-)?[^]]*{{pattern}}[^]]*\].*' ./src/refs
+  # Generate possible links
   rg -IN -r'[`$2`][$1$2$3]⮳' '\[(c-)?([^]]*{{pattern}}[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
-#  -N = --no-line-number; -I = --no-filename
+#  -N = --no-line-number; -I = --no-filename; -r = replace
 
 ## ---- ANCHOR MANAGEMENT -----------------------------------
 
@@ -360,11 +340,7 @@ list_duplicated_urls:
 
 # Create a reference definition for bare URLs in the markdown (manual review necessary)
 convert_bare_urls:
-  #! /bin/bash
-  rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \
-    -g '*.md' -g '!*refs.md' -g 'refs.incl.md' -r '[$2-website]: $1$2$3' | sort | sed 's~/$~~'
-  rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \
-    -g '*.md' -g '!*refs.md' -g 'refs.incl.md' -r '[`$2`][$2-website]' | sort | sed 's~/$~~'
+  ./scripts/urls/convert_bare_urls.sh
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
@@ -386,12 +362,10 @@ check_crates:
 
 # List examples (.rs files) in `deps/tests` that are not included in the book markdown.
 list_examples_not_used_in_book:
-  #! /bin/bash
-  grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' ./src ./drafts | sed -E 's~\{\{#include .+/([._a-zA-Z0-9]+?\.rs)(:.+?)?\}\}~\1~' | sort -u > examples_in_markdown.txt
-  find ./deps/tests -type f -name "*.rs" -exec basename {} \; | sort -u > examples.txt
-  comm -13 examples_in_markdown.txt examples.txt
-# The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}} and extracts the file names
-# then compare to the list of test files in deps
+  ./scripts/examples/list_examples_not_used_in_book.sh
+# The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}}
+# and extracts the file names
+# then compare to the list of test files in `deps`
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
@@ -403,43 +377,33 @@ list_missing_local_ref_includes:
 
 # Make sure that a local TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
 list_missing_subchapter_includes:
-  #! /bin/bash
-  for file in $(find ./src -type f -name "*.md" -not -name "*index.md" -not -name '*.incl.md' -not -name "*refs.md" )
-  do
-    base=$(basename $file)
-    include=$(grep -Poh '(?<=\{\{#include )[_]?'${base%.md}'(?=\.incl\.md\}\})' $file)
-    if [ -z "$include" ]; then
-      echo $file" -- consider adding --> {{{{#include "${base%.md}".incl.md}}"
-    fi
-  done
+  ./scripts/includes/list_missing_subchapter_includes.sh
 
 ## ---- MAIN TOC MANAGEMENT -----------------------------------
 
-# List (sub)chapters that somehow were not added in SUMMARY.md
+# List (sub)chapters that somehow were not added in `SUMMARY.md`
 list_missing_chapters_in_toc:
-  #! /bin/bash
-  for file in $(find ./src -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "SUMMARY.md")
-  do
-    rel=$(realpath --relative-to=./src $file)
-    in_toc=$(grep -Poh ${rel} ./src/SUMMARY.md)
-    if [ -z "$in_toc" ]; then
-      base=$(basename $file | awk 'BEGIN{split("a the to at in on with and but or",w); for(i in w)nocap[w[i]]}function cap(word){return toupper(substr(word,1,1)) tolower(substr(word,2))}{for(i=1;i<=NF;++i){printf "%s%s",(i==1||i==NF||!(tolower($i) in nocap)?cap($i):tolower($i)),(i==NF?"\n":" ")}}')
-      echo "- ["${base%.md}"]("$rel")"
-    fi
-  done
+  ./scripts/main_table_of_contents/list_missing_chapters_in_toc.sh
+# Usage: just list_missing_chapters_in_toc >> ./src/SUMMARY.md
 
 ## ---- INDICES MANAGEMENT -----------------------------------
 
+# Quick and dirty generation of the index of examples `examples_index.md`
+generate_index_of_examples:
+  ./scripts/index_of_examples/generate_index_of_examples.sh
+# Usage: just generate_index_of_examples > src/examples_index.md
+
+# Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
+[confirm]
+update_refdefs_for_index_of_examples:
+  ./scripts/index_of_examples/update_refdefs_for_index_of_examples.sh
+# Usage: just update_refdefs_for_index_of_examples
+
 # Quick and dirty generation of language/index.md; manual editing required
-generate_lang_index:
-  #! /bin/bash
-  clear
-  for file in $(find ./src/language -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
-  do
-    base=$(basename $file)
-    title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g')
-    echo "| [$title][ex-lang-${base%.md}] |"
-  done
+generate_language_index:
+  ./scripts/language/generate_language_index.sh
+# Usage: generate_language_index >> src/language/index.incl.md
+
 
 ## ---- PRE-PUSH -----------------------------------
 
@@ -451,5 +415,6 @@ push_ci:
   docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build
   docker push johncd/rust_howto_ci:latest
 
+# Push the development Docker image to DockerHub.
 push_dev:
   docker push johncd/rust_howto_dev:latest
