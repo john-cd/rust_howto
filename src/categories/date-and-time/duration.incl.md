@@ -5,5 +5,4 @@
 | [Convert a local time to another timezone][ex-date-and-time-convert-local-time] | [![chrono][c-chrono-badge]][c-chrono] | [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time] |
 
 <div class="hidden">
-TODO P1
 </div>
