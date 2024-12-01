@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] review all TODOs in the markdown, addressing simple ones immediately
+- [ ] fix contributing section
 - [ ] polish the intro, add links WIP
 - [ ] polish crates section
 - [ ] fix incl.md table for cargo plugins; add ref to crates
