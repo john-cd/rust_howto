@@ -1,6 +1,6 @@
 # Machine Learning
 
-{{#include machine_learning.incl.md}}
+{{#include _machine_learning.incl.md}}
 
 [Are we learning yet?][are-we-learning-yet?-website]⮳
 
