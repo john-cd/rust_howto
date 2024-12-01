@@ -10,6 +10,7 @@
 [ex-documentation-mdbook]: documentation/mdbook.md#mdbook
 [ex-documentation-playground]: documentation/mdbook.md#playground
 [ex-documentation-badges]: documentation/badges.md#badges
+[ex-documentation-yapp]: documentation/mdbook.md#yapp
 
 [ex-formatting-formatting-attributes]: formatting/formatting.md#formatting-attributes
 [ex-formatting-rustfmt-config]: formatting/formatting.md#rustfmt-config

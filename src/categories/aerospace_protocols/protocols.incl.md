@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-|  |  | [![cat-aerospace::protocols][cat-aerospace::protocols-badge]][cat-aerospace::protocols] |
+| [Aerospace protocols][ex-aerospace_protocols-aerospace_protocols] |  | [![cat-aerospace::protocols][cat-aerospace::protocols-badge]][cat-aerospace::protocols] |
 
 <div class="hidden">
 TODO P3 write

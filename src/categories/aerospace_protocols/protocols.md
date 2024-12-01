@@ -4,7 +4,9 @@
 
 ## Aerospace Protocols {#aerospace_protocols}
 
-{{#example aero_protocols}}
+```rust,editable
+{{#include ../../../deps/tests/categories/aerospace_protocols/aero_protocols.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,7 +4,9 @@
 
 ## Aerospace Simulation {#aerospace_simulation}
 
-{{#example aero_simulation}}
+```rust,editable
+{{#include ../../../deps/tests/categories/aerospace_simulation/aero_simulation.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

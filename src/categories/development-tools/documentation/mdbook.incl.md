@@ -4,7 +4,8 @@
 | [`mdbook` plugins][ex-documentation-mdbook-plugins] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [CD / CI][ex-documentation-cd-ci] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Rust playground][ex-documentation-playground] |  |  |
+| [`yapp`][ex-documentation-yapp] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 
 <div class="hidden">
-TODO P1
+TODO P1 cleanup
 </div>

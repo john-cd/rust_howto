@@ -8,4 +8,13 @@
 
 <div class="hidden">
 TODO P1
+
+| [`ansiterm`][ex-command-line-interface-ansiterm] |  |  |
+| [`anstream`][ex-command-line-interface-anstream] |  |  |
+| [`anstyle`][ex-command-line-interface-anstyle] |  |  |
+| [`console`][ex-command-line-interface-console] |  |  |
+| [`owo-colors`][ex-command-line-interface-owo-colors] |  |  |
+| [`stylish`][ex-command-line-interface-stylish] |  |  |
+| [`termcolor`][ex-command-line-interface-termcolor] |  |  |
+| [`yansi`][ex-command-line-interface-yansi] |  |  |
 </div>

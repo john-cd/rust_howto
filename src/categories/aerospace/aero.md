@@ -4,7 +4,9 @@
 
 ## Aerospace {#aero}
 
-{{#example aero}}
+```rust,editable
+{{#include ../../../deps/tests/categories/aerospace/aero.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -7,4 +7,7 @@
 
 <div class="hidden">
 TODO P1
+| [`bigint`][ex-mathematics-num-bigint] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [`num`][ex-mathematics-num] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [`rug`][ex-mathematics-rug] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 </div>

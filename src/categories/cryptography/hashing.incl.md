@@ -12,4 +12,6 @@
 
 <div class="hidden">
 TODO P1 add crates
+| [`subtle`][ex-cryptography-subtle] |  | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [`zeroize`][ex-cryptography-zeroize] |  | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 </div>

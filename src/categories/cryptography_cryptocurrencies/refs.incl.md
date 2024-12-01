@@ -1,0 +1,1 @@
+[ex-cryptography_cryptocurrencies-cryptocurrencies]: cryptocurrencies.md#cryptocurrencies

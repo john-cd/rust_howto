@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-|  |  | [![cat-aerospace][cat-aerospace-badge]][cat-aerospace] |
+| [Aerospace][ex-aerospace-aero] |  | [![cat-aerospace][cat-aerospace-badge]][cat-aerospace] |
 
 <div class="hidden">
 TODO P3 links

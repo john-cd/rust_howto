@@ -4,7 +4,9 @@
 
 ## Space Protocols {#space-protocols}
 
-{{#example space_protocols}}
+```rust,editable
+{{#include ../../../deps/tests/categories/aerospace_space_protocols/space_protocols.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

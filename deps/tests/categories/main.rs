@@ -11,6 +11,12 @@
 //! macro.
 
 mod accessibility;
+mod aerospace;
+mod aerospace_drones;
+mod aerospace_protocols;
+mod aerospace_simulation;
+mod aerospace_space_protocols;
+mod aerospace_unmanned_aerial_vehicles;
 mod algorithms;
 mod api_bindings;
 mod asynchronous;
@@ -22,6 +28,7 @@ mod computer_vision;
 mod concurrency;
 mod config;
 mod cryptography;
+mod cryptography_cryptocurrencies;
 mod data_structures;
 mod database;
 mod database_implementations;

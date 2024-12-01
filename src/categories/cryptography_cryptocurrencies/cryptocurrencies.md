@@ -4,7 +4,9 @@
 
 ## Cryptocurrencies {#cryptocurrencies}
 
-{{#example cryptocurrencies}}
+```rust,editable
+{{#include ../../../deps/tests/categories/cryptography_cryptocurrencies/cryptocurrencies.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
