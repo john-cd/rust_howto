@@ -765,3 +765,13 @@ cdci
 xmpl
 ReentrantMutex
 nushell
+anstream
+anstyle
+termcolor
+ractor
+yansi
+zeroize
+realworld
+bigint
+smartcore
+neovim
