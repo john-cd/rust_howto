@@ -1,4 +1,5 @@
 #! /bin/bash
+
 set -e
 
 # `mdbook-private` is configured to hide markdown files starting with _ (and their children)

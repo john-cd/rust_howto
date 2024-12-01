@@ -1,9 +1,10 @@
 #! /bin/bash
 
-# Create a reference definition for bare URLs in the markdown (manual review necessary)
+# Create reference-style links and reference definitions, which can be used to replace bare URLs in the Markdown
+# Manual review necessary
 # Requires ripgrep
 #
-# Usage: ./scripts/urls/convert_bare_urls.sh
+# Usage: ./scripts/urls/list_bare_urls.sh
 
 # Look for http(s)://... and outputs references
 rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ./src \

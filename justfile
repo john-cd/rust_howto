@@ -241,7 +241,7 @@ list_duplicated_urls:
 
 # Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
 list_bare_urls:
-  ./scripts/urls/convert_bare_urls.sh
+  ./scripts/urls/list_bare_urls.sh
 # TODO P2
 
 ## ---- CRATE MANAGEMENT -----------------------------------
@@ -269,6 +269,10 @@ list_examples_not_used_in_book:
 # and extracts the file names
 # then compare to the list of test files in `deps`
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
+
+# Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of deps/tests/)
+convert_example_placeholders:
+  ./scripts/examples/convert_example_placeholders.sh
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
@@ -305,6 +309,17 @@ generate_language_index:
   ./scripts/language/generate_language_index.sh
 # Usage: generate_language_index >> src/language/index.incl.md
 
+## ---- CHAPTER MANAGEMENT -----------------------------------
+
+# Hides some markdown sections/ pages by adding a _ prefix to all filenames listed in `hiddenfiles.txt`
+[confirm]
+hide:
+  ./scripts/hide/hide.sh
+
+# Make all markdown sections / pages visible
+[confirm]
+unhide:
+  ./scripts/hide/unhide.sh
 
 ## ---- PRE-PUSH -----------------------------------
 
