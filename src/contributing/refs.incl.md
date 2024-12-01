@@ -3,6 +3,7 @@
 [ex-contributing-dev-container-feature]: api_documentation.md#dev-container-feature
 [ex-contributing-dev-env-setup]: dev_environment_setup.md#dev-env-setup
 [ex-contributing-docker-compose]: dev_container_docker.md#docker-compose
+[ex-contributing-examples-fully-tested]: repo_structure.md#examples-fully-tested
 [ex-contributing-generate-the-documentation]: api_documentation.md#generate-the-documentation
 [ex-contributing-optional-preprocessors]: optional_preprocessors.md#optional-preprocessors
 [ex-contributing-other-methods-to-preview-the-documentation-html]: api_documentation.md#other-methods-to-preview-the-documentation-html

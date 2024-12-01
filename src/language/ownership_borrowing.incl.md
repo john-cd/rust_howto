@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Ownership][ex-lang-ownership] |
-| [Borrowing][ex-lang-borrowing] |
-| [Mutable references][ex-lang-mutable-reference] |
-| [Memory safety][ex-lang-memory-safety] |
+| [Ownership][ex-language-ownership] |
+| [Borrowing][ex-language-borrowing] |
+| [Mutable references][ex-language-mutable-reference] |
+| [Memory safety][ex-language-memory-safety] |

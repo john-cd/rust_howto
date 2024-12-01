@@ -3,9 +3,11 @@
 [ex-links-companies]: companies.md#companies
 [ex-links-comparison-to-other-languages]: rust_cheatsheets.md#comparison-to-other-languages
 [ex-links-example-code]: example_code.md#example-code
-[ex-links-learning]: learning.md#learning
 [ex-links-key-websites]: links.md#key-websites
+[ex-links-learning]: learning.md#learning
 [ex-links-links]: links.md#links
 [ex-links-meetups]: blogs_podcasts_meetups.md#meetups
 [ex-links-newsletters]: blogs_podcasts_meetups.md#newsletters
 [ex-links-podcasts-blogs]: blogs_podcasts_meetups.md#podcasts-blogs
+[ex-links-realworld]: example_code.md#realworld
+[ex-links-rust-book-source-code]: example_code.md#rust-book-source-code

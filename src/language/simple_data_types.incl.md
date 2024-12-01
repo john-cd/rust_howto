@@ -1,4 +1,4 @@
 ||
 |--------|
-| [Simple data types][ex-lang-simple-data-types] |
-| [Overflow handling][ex-lang-overflow-handling] |
+| [Simple data types][ex-language-simple-data-types] |
+| [Overflow handling][ex-language-overflow-handling] |

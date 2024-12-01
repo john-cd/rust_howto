@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Structs][ex-lang-structs] |
+| [Structs][ex-language-structs] |

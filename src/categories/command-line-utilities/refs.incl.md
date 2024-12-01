@@ -3,6 +3,6 @@
 [ex-command-line-utilities-exa]: filesystem.md#exa
 [ex-command-line-utilities-gping]: networking.md#gping
 [ex-command-line-utilities-lsd]: filesystem.md#lsd
+[ex-command-line-utilities-nushell]: shells.md#nushell
 [ex-command-line-utilities-open]: filesystem.md#open
 [ex-command-line-utilities-starship]: shells.md#starship
-[ex-command-line-utilities-nushell]: shells.md#nushell

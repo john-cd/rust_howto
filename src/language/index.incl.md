@@ -1,22 +1,22 @@
 | Language Constructs |
 |--------|
-| [Rust installation][ex-lang-rust-install] |
-| [Main function][ex-lang-main-function] |
-| [Simple data types][ex-lang-simple-data-types] |
-| [Variables & Constants][ex-lang-variables-and-constants] |
-| [Ownership and borrowing][ex-lang-ownership] |
-| [Control Flow][ex-lang-control-flow] |
-| [Slices][ex-lang-slices] |
-| [Functions][ex-lang-functions] |
-| [Structs][ex-lang-structs] |
-| [Enums][ex-lang-enums] |
-| [Traits][ex-lang-traits] |
-| [Trait objects][ex-lang-trait-objects] |
-| [Attributes][ex-lang-attributes] |
-| [Generics][ex-lang-generics] |
-| [Lifetimes][ex-lang-lifetimes] |
-| [Modules and `use` keyword][ex-lang-modules] |
-| [Pattern matching, if / while let][ex-lang-match] |
-| [Closures][ex-lang-closures] |
-| [Iterators][ex-lang-iterators] |
-| [Macros][ex-lang-macros] |
+| [Rust installation][ex-language-rust-install] |
+| [Main function][ex-language-main-function] |
+| [Simple data types][ex-language-simple-data-types] |
+| [Variables & Constants][ex-language-variables-and-constants] |
+| [Ownership and borrowing][ex-language-ownership] |
+| [Control Flow][ex-language-control-flow] |
+| [Slices][ex-language-slices] |
+| [Functions][ex-language-functions] |
+| [Structs][ex-language-structs] |
+| [Enums][ex-language-enums] |
+| [Traits][ex-language-traits] |
+| [Trait objects][ex-language-trait-objects] |
+| [Attributes][ex-language-attributes] |
+| [Generics][ex-language-generics] |
+| [Lifetimes][ex-language-lifetimes] |
+| [Modules and `use` keyword][ex-language-modules] |
+| [Pattern matching, if / while let][ex-language-match] |
+| [Closures][ex-language-closures] |
+| [Iterators][ex-language-iterators] |
+| [Macros][ex-language-macros] |

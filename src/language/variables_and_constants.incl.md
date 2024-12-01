@@ -1,5 +1,5 @@
 ||
 |--------|
-| [Variables & constants][ex-lang-variables-and-constants] |
-| [Shadowing][ex-lang-shadowing] |
-| [Destructuring][ex-lang-destructuring] |
+| [Variables & constants][ex-language-variables-and-constants] |
+| [Shadowing][ex-language-shadowing] |
+| [Destructuring][ex-language-destructuring] |

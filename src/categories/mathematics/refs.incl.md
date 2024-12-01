@@ -12,6 +12,9 @@
 [ex-mathematics-measures-of-central-tendency]: statistics.md#measures-of-central-tendency
 [ex-mathematics-multiply-a-scalar-with-a-vector-and-a-matrix]: linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix
 [ex-mathematics-multiplying-matrices]: linear_algebra.md#multiplying-matrices
+[ex-mathematics-num-bigint]: additional_numeric_types.md#num-bigint
+[ex-mathematics-num]: additional_numeric_types.md#num
+[ex-mathematics-rug]: additional_numeric_types.md#rug
 [ex-mathematics-sortable-floats]: additional_numeric_types.md#sortable-floats
 [ex-mathematics-standard-deviation]: statistics.md#standard-deviation
 [ex-mathematics-vector-comparison]: linear_algebra.md#vector-comparison

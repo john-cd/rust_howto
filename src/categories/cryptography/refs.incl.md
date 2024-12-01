@@ -9,5 +9,7 @@
 [ex-cryptography-rsa]: hashing.md#rsa
 [ex-cryptography-scrypt]: password_hashing.md#scrypt
 [ex-cryptography-sha256]: hashing.md#sha256
+[ex-cryptography-subtle]: hashing.md#subtle
 [ex-cryptography-tls-ssl]: hashing.md#tls-ssl
 [ex-cryptography-utilities]: hashing.md#utilities
+[ex-cryptography-zeroize]: hashing.md#zeroize

@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Rust installation][ex-lang-rust-install] |
+| [Rust installation][ex-language-rust-install] |

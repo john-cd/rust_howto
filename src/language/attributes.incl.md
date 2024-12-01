@@ -1,11 +1,11 @@
 ||
 |--------|
-| [Attributes][ex-lang-attributes] |
-| [Lint attributes][ex-lang-lint-attributes] |
-| [Automatic trait derivation][ex-lang-automatic-trait-derivation] |
-| [Must Use][ex-lang-must-use] |
-| [Deprecated][ex-lang-deprecated] |
-| [Conditional Compilation][ex-lang-conditional-compilation] |
+| [Attributes][ex-language-attributes] |
+| [Lint attributes][ex-language-lint-attributes] |
+| [Automatic trait derivation][ex-language-automatic-trait-derivation] |
+| [Must Use][ex-language-must-use] |
+| [Deprecated][ex-language-deprecated] |
+| [Conditional Compilation][ex-language-conditional-compilation] |
 
 <div class="hidden">
 TODO P1

@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Slices][ex-lang-slices] |
+| [Slices][ex-language-slices] |

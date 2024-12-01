@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Enums][ex-lang-enums] |
+| [Enums][ex-language-enums] |

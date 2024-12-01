@@ -1,4 +1,5 @@
 
+[ex-concurrency-actix]: _actors.md#actix
 [ex-concurrency-alternatives]: _actors.md#alternatives
 [ex-concurrency-any-or-all-in-parallel]: parallel.md#any-or-all-in-parallel
 [ex-concurrency-channels]: threads.md#channels
@@ -16,6 +17,7 @@
 [ex-concurrency-parallel-sorting]: multithreading.md#parallel-sorting
 [ex-concurrency-pass-data-between-two-threads]: threads.md#pass-data-between-two-threads
 [ex-concurrency-postage]: threads.md#postage
+[ex-concurrency-ractor]: _actors.md#ractor
 [ex-concurrency-rayon]: multithreading.md#rayon
 [ex-concurrency-riker]: _actors.md#riker
 [ex-concurrency-scoped-threads]: multithreading.md#scoped-threads

@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Macros][ex-lang-macros] |
+| [Macros][ex-language-macros] |
