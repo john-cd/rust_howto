@@ -17,7 +17,7 @@
 <div class="hidden">
 TODO P1: edit
 
-## All examples are fully and continuously tested
+## All examples are fully and continuously tested {#examples-fully-tested}
 
 In order to make sure that all examples work, they are backed by tests, similar to the following:
 

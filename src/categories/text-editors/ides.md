@@ -40,7 +40,7 @@ If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for 
 <div class="hidden">
 TODO P1: organize; update / review
 
-## Neovim
+## Neovim {#neovim}
 
 [Neovim][nvim-website]⮳ is not written in Rust.
 

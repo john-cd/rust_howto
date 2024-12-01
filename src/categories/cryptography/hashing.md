@@ -182,7 +182,7 @@ A wrapper over a platform's native TLS implementation. Delegates to the system T
 
 ## Utilities {#utilities}
 
-### `subtle`
+### `subtle` {#subtle}
 
 [![subtle-website][c-subtle-website-badge]][c-subtle-website] [![subtle][c-subtle-badge]][c-subtle] [![subtle-crates.io][c-subtle-crates.io-badge]][c-subtle-crates.io] [![subtle-github][c-subtle-github-badge]][c-subtle-github] [![subtle-lib.rs][c-subtle-lib.rs-badge]][c-subtle-lib.rs]{{hi:subtle}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Utilities}}{{hi:Constant-time}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -192,7 +192,7 @@ Pure-Rust traits and utilities for constant-time cryptographic implementations.
 {{#include ../../../deps/tests/categories/cryptography/subtle.rs:example}}
 ```
 
-### `zeroize`
+### `zeroize` {#zeroize}
 
 [![zeroize][c-zeroize-badge]][c-zeroize] [![zeroize-crates.io][c-zeroize-crates.io-badge]][c-zeroize-crates.io] [![zeroize-github][c-zeroize-github-badge]][c-zeroize-github] [![zeroize-lib.rs][c-zeroize-lib.rs-badge]][c-zeroize-lib.rs]{{hi:zeroize}}{{hi:Memory}}{{hi:Volatile}}{{hi:Secure}}{{hi:Memset}}{{hi:Zero}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

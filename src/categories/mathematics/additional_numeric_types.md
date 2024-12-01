@@ -20,7 +20,7 @@ Traits like Number, Add, etc that allow you write functions that are generic ove
 
 ## Big Integers {#big-integers}
 
-### `num`
+### `num` {#num}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
