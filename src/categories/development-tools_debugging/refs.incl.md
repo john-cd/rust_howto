@@ -9,7 +9,6 @@
 [ex-development-tools_debugging-events]: tracing.md#events
 [ex-development-tools_debugging-initialization]: tracing.md#initialization
 [ex-development-tools_debugging-log-error-message-to-console]: log.md#log-error-message-to-console
-[ex-development-tools_debugging-log-slog-log4rs]: alternatives.md#log-slog-log4rs
 [ex-development-tools_debugging-log-to-console]: log.md#log-to-console
 [ex-development-tools_debugging-log-to-custom-location]: config_log.md#log-to-custom-location
 [ex-development-tools_debugging-log-to-stdout]: log.md#log-to-stdout
@@ -17,7 +16,6 @@
 [ex-development-tools_debugging-log]: alternatives.md#log
 [ex-development-tools_debugging-open-observe]: alternatives.md#open-observe
 [ex-development-tools_debugging-open-telemetry]: alternatives.md#open-telemetry
-[ex-development-tools_debugging-other-frameworks]: alternatives.md#other-frameworks
 [ex-development-tools_debugging-related-crates]: tracing.md#related-crates
 [ex-development-tools_debugging-slog]: alternatives.md#slog
 [ex-development-tools_debugging-spans]: tracing.md#spans

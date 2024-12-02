@@ -2,7 +2,7 @@
 
 {{#include auditing.incl.md}}
 
-## Audit Cargo.lock files for crates containing security vulnerabilities {#cargo-audit}
+## Audit `cargo.lock` files for crates containing security vulnerabilities {#cargo-audit}
 
 [![cargo-audit][c-cargo_audit-badge]][c-cargo_audit]{{hi:cargo-audit}}
 [![cargo-audit-crates.io][c-cargo_audit-crates.io-badge]][c-cargo_audit-crates.io]

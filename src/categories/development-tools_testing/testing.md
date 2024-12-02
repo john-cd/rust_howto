@@ -2,7 +2,7 @@
 
 {{#include testing.incl.md}}
 
-## `cargo test` {#cargo-test}
+## Test your code with `cargo test` {#cargo-test}
 
 [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}
 [![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io]
@@ -17,7 +17,7 @@
 {{#include ../../../deps/tests/categories/development_tools_testing/tests1.rs:example}}
 ```
 
-## Custom message {#custom-message}
+## Emit a custom message {#custom-message}
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
@@ -25,7 +25,7 @@
 {{#include ../../../deps/tests/categories/development_tools_testing/tests_custom_message.rs:example}}
 ```
 
-## `cargo nextest` {#cargo-nextest}
+## Test your code faster with `cargo nextest` {#cargo-nextest}
 
 [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
 [![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]
@@ -54,7 +54,7 @@ cargo test --doc
 {{#include ../../../deps/tests/categories/development_tools_testing/approx.rs:example}}
 ```
 
-## Snapshot testing {#insta}
+## Test your code against snapshots {#insta}
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}
 [![insta-crates.io][c-insta-crates.io-badge]][c-insta-crates.io]
@@ -68,13 +68,13 @@ cargo test --doc
 [![cargo-insta-lib.rs][c-cargo_insta-lib.rs-badge]][c-cargo_insta-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of assert_eq!. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
+Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of `assert_eq!`. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/development_tools_testing/insta.rs:example}}
 ```
 
-## Code coverage {#cargo-tarpaulin}
+## Measure your code coverage {#cargo-tarpaulin}
 
 [![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
@@ -82,6 +82,6 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 write
 [`insta`][insta-website]
 </div>

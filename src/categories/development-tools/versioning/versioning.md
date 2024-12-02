@@ -26,7 +26,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 {{#include ../../../../deps/tests/categories/development_tools/semver_complex.rs:example}}
 ```
 
-## Check if given version is pre-release {#check-if-pre-release}
+## Check if a given version is pre-release {#check-if-pre-release}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -36,7 +36,7 @@ Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}
 {{#include ../../../../deps/tests/categories/development_tools/semver_prerelease.rs:example}}
 ```
 
-## Find the latest version satisfying given range {#find-latest-version-within-range}
+## Find the latest version satisfying a given range {#find-latest-version-within-range}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 

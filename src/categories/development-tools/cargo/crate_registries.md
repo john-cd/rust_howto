@@ -17,7 +17,7 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 
 <div class="hidden">
 TODO P1 expand
-P2 add APi access to crates.io
+P2 add API access to crates.io
 
 ```rust,editable
 {{#include ../../../../deps/tests/categories/development_tools/cargo/crates_io.rs:example}}

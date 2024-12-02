@@ -41,18 +41,18 @@ The two distinguishing features of `xtask` are the following:
 - It doesn't require any other binaries besides `cargo` and `rustc`, it fully bootstraps from them
 - Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
 
-### Devx {#devx}
+### `devx` {#devx}
 
 [devx][devx-github]{{hi:devx}}⮳ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c-cargo_xtask-github]⮳ idioms.
 
-## xshell: Making Rust a Better Bash {#xshell}
+## `xshell`: making Rust a better `bash` {#xshell}
 
 [![xshell][c-xshell-badge]][c-xshell]{{hi:xshell}}
 [![xshell-crates.io][c-xshell-crates.io-badge]][c-xshell-crates.io]
 [![xshell-github][c-xshell-github-badge]][c-xshell-github]
 [![xshell-lib.rs][c-xshell-lib.rs-badge]][c-xshell-lib.rs]
 
-[`xshell`][c-xshell-github]⮳ {{hi:xshell}} provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts.
+[`xshell`][c-xshell-github]⮳{{hi:xshell}} provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -9,7 +9,7 @@
 [![cargo-show-asm-github][c-cargo_show_asm-github-badge]][c-cargo_show_asm-github]
 [![cargo-show-asm-lib.rs][c-cargo_show_asm-lib.rs-badge]][c-cargo_show_asm-lib.rs]
 
-Print the generated assembly for a Rust function
+Print the generated assembly code for a Rust function.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

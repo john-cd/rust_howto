@@ -2,7 +2,7 @@
 
 {{#include watching_for_changes.incl.md}}
 
-## Cargo watch {#cargo-watch}
+## `cargo watch` {#cargo-watch}
 
 [![cargo-watch][c-cargo_watch-badge]][c-cargo_watch]{{hi:cargo-watch}}
 [![cargo-watch-crates.io][c-cargo_watch-crates.io-badge]][c-cargo_watch-crates.io]
@@ -22,7 +22,7 @@ cargo watch -x check
 cargo watch -x check -x test -x run
 ```
 
-## Cargo limit {#cargo-limit}
+## `cargo limit` {#cargo-limit}
 
 [![cargo-limit][c-cargo_limit-badge]][c-cargo_limit]{{hi:cargo-limit}}
 [![cargo-limit-crates.io][c-cargo_limit-crates.io-badge]][c-cargo_limit-crates.io]

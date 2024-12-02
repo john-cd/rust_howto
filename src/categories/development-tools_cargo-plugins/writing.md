@@ -13,14 +13,14 @@
 
 [Cargo Generate][c-cargo_generate-crates.io]{{hi:cargo-generate}}⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
-## Quickly open the crates.io or docs.rs page for the latest version of a crate {#cargo-open}
+## Quickly open the `crates.io` or `docs.rs` page for the latest version of a crate {#cargo-open}
 
 [![cargo-crates][c-cargo_crates-badge]][c-cargo_crates]{{hi:cargo-crates}}
 [![cargo-crates-crates.io][c-cargo_crates-crates.io-badge]][c-cargo_crates-crates.io]
 [![cargo-crates-github][c-cargo_crates-github-badge]][c-cargo_crates-github]
 [![cargo-crates-lib.rs][c-cargo_crates-lib.rs-badge]][c-cargo_crates-lib.rs]
 
-`cargo crates` is a cargo command to quickly open the crates.io or docs.rs page for the latest version of a crate.
+`cargo crates` is a cargo command to quickly open the `crates.io` or `docs.rs` page for the latest version of a crate.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

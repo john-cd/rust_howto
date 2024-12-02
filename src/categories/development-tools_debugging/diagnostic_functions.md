@@ -4,6 +4,8 @@
 
 ## Get the type name of the pointed-to value {#type-name-of-val}
 
+[![std][c-std-badge]][c-std]{{hi:std}}
+
 ```rust,editable
 {{#include ../../../deps/tests/categories/development_tools_debugging/type_name_of_val.rs:example}}
 ```

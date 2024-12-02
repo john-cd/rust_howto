@@ -28,5 +28,5 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+TODO P1 reorganize; dedupe alternatives / log / config_log
 </div>

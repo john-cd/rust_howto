@@ -16,5 +16,5 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 expand
 </div>

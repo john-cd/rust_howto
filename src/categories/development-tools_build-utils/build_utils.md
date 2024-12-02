@@ -6,7 +6,7 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 ## Compile and link statically to a bundled C library {#cc}
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build utils}}
+[![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build utils}}
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [`cc`][c-cc]{{hi:cc}}⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (`.a`) that can be statically linked to by [`rustc`][rustc].
 

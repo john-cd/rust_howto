@@ -2,11 +2,11 @@
 
 {{#include just.incl.md}}
 
-[https://just.systems/][c-just-website]{{hi:just}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![just][c-just-badge]][c-just] [![just-crates.io][c-just-crates.io-badge]][c-just-crates.io] [![just-github][c-just-github-badge]][c-just-github] [![just-lib.rs][c-just-lib.rs-badge]][c-just-lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-`just`{{hi:just}} is a command runner{{hi:Command runner}} / Make replacement.
+`just`{{hi:just}} is a command runner{{hi:Command runner}}, i.e. a `make` replacement.
 
-[Just Programmer's Manual][c-just-programmer-manual]⮳
+Consult the [Just programmer's manual][c-just-programmer-manual]⮳.
 
 ## Installation in a dev container {#installation-into-dev-container}
 

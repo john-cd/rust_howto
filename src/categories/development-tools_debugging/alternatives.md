@@ -2,27 +2,21 @@
 
 {{#include alternatives.incl.md}}
 
-## Older alternatives to `tracing` {#log-slog-log4rs}
+## Older alternatives to `tracing`
 
-Tracing is now the "go-to" crate for logging.
+`tracing` is now the "go-to" crate for logging, but `log`, `slog` and `log4rs` are still in extensive use.
 
 ### `log` {#log}
 
-[![log][c-log-badge]][c-log]{{hi:log}}
+[![log][c-log-badge]][c-log] [![log-crates.io][c-log-crates.io-badge]][c-log-crates.io] [![log-github][c-log-github-badge]][c-log-github] [![log-lib.rs][c-log-lib.rs-badge]][c-log-lib.rs]{{hi:log}}{{hi:Logging}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-`log` is an older and simpler crate if your needs are simple and you are not using any async code.
+`log` is an older and simpler crate, if your needs are simple and you are not using any async code.
 
 ### `slog` {#slog}
 
-[![slog][c-slog-badge]][c-slog]{{hi:slog}}
-[![slog-crates.io][c-slog-crates.io-badge]][c-slog-crates.io]
-[![slog-github][c-slog-github-badge]][c-slog-github]
-[![slog-lib.rs][c-slog-lib.rs-badge]][c-slog-lib.rs]
-[![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
+[![slog][c-slog-badge]][c-slog] [![slog-crates.io][c-slog-crates.io-badge]][c-slog-crates.io] [![slog-github][c-slog-github-badge]][c-slog-github] [![slog-lib.rs][c-slog-lib.rs-badge]][c-slog-lib.rs]{{hi:slog}}{{hi:Structured}}{{hi:Log}}{{hi:Logging}}{{hi:Hierarchical}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-Structured, extensible, composable logging.
-
-`slog` remains a stable, featureful and battle-tested library, used in many important projects.
+Structured, extensible, composable logging. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/development_tools_debugging/slog.rs:example}}
@@ -30,12 +24,9 @@ Structured, extensible, composable logging.
 
 ### `log4rs` {#log4rs}
 
-[![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}}
-[![log4rs-crates.io][c-log4rs-crates.io-badge]][c-log4rs-crates.io]
-[![log4rs-github][c-log4rs-github-badge]][c-log4rs-github]
-[![log4rs-lib.rs][c-log4rs-lib.rs-badge]][c-log4rs-lib.rs]
+[![log4rs][c-log4rs-badge]][c-log4rs] [![log4rs-crates.io][c-log4rs-crates.io-badge]][c-log4rs-crates.io] [![log4rs-github][c-log4rs-github-badge]][c-log4rs-github] [![log4rs-lib.rs][c-log4rs-lib.rs-badge]][c-log4rs-lib.rs]{{hi:log4rs}}{{hi:Log4}}{{hi:Logger}}{{hi:Log}}{{hi:Logging}}
 
-A highly configurable multi-output logging implementation for the log facade.
+`log4rs` is a highly configurable multi-output logging implementation for the `log` facade.
 
 ```rust,editable
 use log::{error, info, warn};
@@ -50,13 +41,9 @@ fn main() {
 }
 ```
 
-### env_logger {#env-logger}
+### `env_logger` {#env-logger}
 
-[![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}}
-[![env_logger-crates.io][c-env_logger-crates.io-badge]][c-env_logger-crates.io]
-[![env_logger-github][c-env_logger-github-badge]][c-env_logger-github]
-[![env_logger-lib.rs][c-env_logger-lib.rs-badge]][c-env_logger-lib.rs]
-[![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
+[![env_logger][c-env_logger-badge]][c-env_logger] [![env_logger-crates.io][c-env_logger-crates.io-badge]][c-env_logger-crates.io] [![env_logger-github][c-env_logger-github-badge]][c-env_logger-github] [![env_logger-lib.rs][c-env_logger-lib.rs-badge]][c-env_logger-lib.rs]{{hi:env_logger}}{{hi:Log}}{{hi:Logger}}{{hi:Logging}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
 A logging implementation for log which is configured via an environment variable. `env_logger` makes sense when used in executables (binary projects). Libraries should use the log crate instead.
 
@@ -72,7 +59,7 @@ fn main() {
 }
 ```
 
-## Other frameworks {#other-frameworks}
+## Other frameworks
 
 ### OpenTelemetry {#open-telemetry}
 
@@ -82,9 +69,9 @@ fn main() {
 {{#include ../../../deps/tests/categories/development_tools_debugging/open_telemetry.rs:example}}
 ```
 
-## OpenObserve {#open-observe}
+## Open Observe {#open-observe}
 
-[openobserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
+[OpenObserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/development_tools_debugging/open_observe.rs:example}}

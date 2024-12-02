@@ -75,4 +75,5 @@ For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`{{hi:rustfmt
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 add link for formatting attributes
 </div>

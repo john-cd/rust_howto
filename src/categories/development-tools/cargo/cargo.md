@@ -53,7 +53,7 @@ edition = "2021"
 
 [dependencies]
 
-# Reference a crate to be  `crates.io`
+# Reference a crate to be pulled from `crates.io`
 time = "0.1.12"
 # This is equivalent to the ^0.1.12 SemVer version range.
 # `cargo update time` should update to version 0.1.13 if it is the latest 0.1.z release,

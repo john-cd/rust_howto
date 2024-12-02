@@ -4,11 +4,9 @@
 
 ## Edit `Cargo.toml` {#cargo-edit}
 
-[![cargo_edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github]{{hi:cargo-edit}}
+[![cargo-edit][c-cargo_edit-badge]][c-cargo_edit] [![cargo-edit-crates.io][c-cargo_edit-crates.io-badge]][c-cargo_edit-crates.io] [![cargo-edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github] [![cargo-edit-lib.rs][c-cargo_edit-lib.rs-badge]][c-cargo_edit-lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Cargo commands for modifying a `Cargo.toml` file
-
-This tool extends Cargo to allow you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
+`cargo edit` provides commands for modifying a `Cargo.toml` file. It allows you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
 
 Currently available subcommands:
 
@@ -98,6 +96,13 @@ $ cargo semver-checks
 
 <div class="hidden">
 TODO P1
+
+## `cargo expand` {#cargo-expand}
+
 [![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
+
+## `cargo hack` {#cargo-hack}
+
 [![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
+
 </div>
