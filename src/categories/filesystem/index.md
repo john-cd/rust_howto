@@ -36,5 +36,4 @@ Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
 </div>

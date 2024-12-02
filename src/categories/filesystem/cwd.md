@@ -4,6 +4,8 @@
 
 ## Get the current working directory {#cwd}
 
+[![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+
 ```rust,editable
 {{#include ../../../deps/tests/categories/filesystem/cwd.rs:example}}
 ```

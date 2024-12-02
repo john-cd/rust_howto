@@ -6,13 +6,9 @@ Get platform-specific locations for configuration, cache, and other data
 
 ## `dirs` {#dirs}
 
-[![dirs][c-dirs-badge]][c-dirs]{{hi:dirs}}
-[![dirs-crates.io][c-dirs-crates.io-badge]][c-dirs-crates.io]
-[![dirs-github][c-dirs-github-badge]][c-dirs-github]
-[![dirs-lib.rs][c-dirs-lib.rs-badge]][c-dirs-lib.rs]
-[![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![dirs][c-dirs-badge]][c-dirs] [![dirs-crates.io][c-dirs-crates.io-badge]][c-dirs-crates.io] [![dirs-github][c-dirs-github-badge]][c-dirs-github] [![dirs-lib.rs][c-dirs-lib.rs-badge]][c-dirs-lib.rs]{{hi:dirs}}{{hi:App_dirs}}{{hi:Xdg}}{{hi:Path}}{{hi:Folder}}{{hi:Basedir}}
 
-Provide platform-specific locations for configuration, cache, and other data
+`dirs` is a low-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/filesystem/dirs.rs:example}}
@@ -20,15 +16,11 @@ Provide platform-specific locations for configuration, cache, and other data
 
 ## `directories` {#directories}
 
-[![directories][c-directories-badge]][c-directories]{{hi:directories}}
-[![directories-crates.io][c-directories-crates.io-badge]][c-directories-crates.io]
-[![directories-github][c-directories-github-badge]][c-directories-github]
-[![directories-lib.rs][c-directories-lib.rs-badge]][c-directories-lib.rs]
-[![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
+[![directories][c-directories-badge]][c-directories] [![directories-crates.io][c-directories-crates.io-badge]][c-directories-crates.io] [![directories-github][c-directories-github-badge]][c-directories-github] [![directories-lib.rs][c-directories-lib.rs-badge]][c-directories-lib.rs]{{hi:directories}}{{hi:App_dirs}}{{hi:Xdg}}{{hi:Path}}{{hi:Folder}}{{hi:Basedir}}
 
-A higher-level library that can also compute paths for applications
+`directories` is a mid-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows and macOS by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.
 
-A library that provides config/cache/data paths, following the respective conventions on Linux, macOS and Windows
+`directories` is a higher-level library than `dirs` and can also compute paths for applications.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/filesystem/directories.rs:example}}
