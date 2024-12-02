@@ -4,12 +4,9 @@
 
 ## `rfd` {#rfd}
 
-[![rfd][c-rfd-badge]][c-rfd]{{hi:rfd}}
-[![rfd-crates.io][c-rfd-crates.io-badge]][c-rfd-crates.io]
-[![rfd-github][c-rfd-github-badge]][c-rfd-github]
-[![rfd-lib.rs][c-rfd-lib.rs-badge]][c-rfd-lib.rs]
+[![rfd][c-rfd-badge]][c-rfd] [![rfd-crates.io][c-rfd-crates.io-badge]][c-rfd-crates.io] [![rfd-github][c-rfd-github-badge]][c-rfd-github] [![rfd-lib.rs][c-rfd-lib.rs-badge]][c-rfd-lib.rs]{{hi:rfd}}{{hi:Dialog}}{{hi:File}}{{hi:Ui}}
 
-"Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries."
+Rusty File Dialog. "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries."
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/gui/rfd.rs:example}}
@@ -19,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO P2 write
 </div>
