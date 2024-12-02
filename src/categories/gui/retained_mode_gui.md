@@ -14,16 +14,11 @@
 
 ## `floem` {#floem}
 
-[![floem][c-floem-badge]][c-floem]{{hi:floem}}
-[![floem-crates.io][c-floem-crates.io-badge]][c-floem-crates.io]
-[![floem-github][c-floem-github-badge]][c-floem-github]
-[![floem-lib.rs][c-floem-lib.rs-badge]][c-floem-lib.rs]
+[![floem][c-floem-badge]][c-floem] [![floem-crates.io][c-floem-crates.io-badge]][c-floem-crates.io] [![floem-github][c-floem-github-badge]][c-floem-github] [![floem-lib.rs][c-floem-lib.rs-badge]][c-floem-lib.rs]{{hi:floem}}
 
-- A native Rust UI library with fine-grained reactivity. Inspired by [Xilem][c-xilem-github]{{hi:xilem}}⮳, [Leptos][c-leptos-github]{{hi:leptos}}⮳ and [rui][c-rui-github]{{hi:rui}}⮳. Floem aims to be a high performance declarative UI library requiring minimal user effort.
-- [Floem (github)][c-floem-github]⮳
-- [Floem (docs)][c-floem]{{hi:floem}}⮳
+`floem` is a native Rust UI library with fine-grained reactivity, and inspired by [`xilem`][c-xilem-github]{{hi:xilem}}⮳, [`leptos`][c-leptos-github]{{hi:leptos}}⮳ and [`rui`][c-rui-github]{{hi:rui}}⮳. `floem` aims to be a high performance declarative UI library requiring minimal user effort.
 
-Inspired by Xilem, Leptos and rui, floem is currently more complete than any of them for native UI. Used by the `lapce` text editor.
+`floem` is currently more complete than any of them for native UI. Used by the `lapce` text editor.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/gui/floem.rs:example}}

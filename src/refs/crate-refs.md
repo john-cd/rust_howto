@@ -113,7 +113,7 @@
 [c-arboard-crates.io-badge]: https://img.shields.io/badge/crates.io-arboard-crimson
 [c-arboard-crates.io]: https://crates.io/crates/arboard
 [c-arboard-github-badge]: https://img.shields.io/badge/arboard-steelblue?logo=github
-[c-arboard-github]: https://github.com/1password/arboard
+[c-arboard-github]: https://github.com/1Password/arboard
 [c-arboard-lib.rs-badge]: https://img.shields.io/badge/lib.rs-arboard-yellow
 [c-arboard-lib.rs]: https://lib.rs/crates/arboard
 [c-arboard]: https://docs.rs/arboard
@@ -945,7 +945,7 @@
 [c-dioxus-crates.io-badge]: https://img.shields.io/badge/crates.io-dioxus-crimson
 [c-dioxus-crates.io]: https://crates.io/crates/dioxus
 [c-dioxus-github-badge]: https://img.shields.io/badge/dioxus-steelblue?logo=github
-[c-dioxus-github]: https://github.com/dioxuslabs/dioxus
+[c-dioxus-github]: https://github.com/DioxusLabs/dioxus
 [c-dioxus-lib.rs-badge]: https://img.shields.io/badge/lib.rs-dioxus-yellow
 [c-dioxus-lib.rs]: https://lib.rs/crates/dioxus
 [c-dioxus-website-badge]: https://img.shields.io/badge/dioxus-coral
@@ -1336,7 +1336,10 @@
 [c-gtk4-github]: https://github.com/gtk-rs/gtk4-rs
 [c-gtk4-lib.rs-badge]: https://img.shields.io/badge/lib.rs-gtk4-yellow
 [c-gtk4-lib.rs]: https://lib.rs/crates/gtk4
+[c-gtk4-website-badge]: https://img.shields.io/badge/gtk4-coral
+[c-gtk4-website]: https://gtk-rs.org/gtk4-rs
 [c-gtk4]: https://docs.rs/gtk4
+[c-gtk4]: https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4
 [c-http-badge]: https://img.shields.io/crates/v/http?label=http
 [c-http-crates.io-badge]: https://img.shields.io/badge/crates.io-http-crimson
 [c-http-crates.io]: https://crates.io/crates/http
@@ -2325,9 +2328,11 @@
 [c-relm4-crates.io-badge]: https://img.shields.io/badge/crates.io-relm4-crimson
 [c-relm4-crates.io]: https://crates.io/crates/relm4
 [c-relm4-github-badge]: https://img.shields.io/badge/relm4-steelblue?logo=github
-[c-relm4-github]: https://github.com/relm4/relm4
+[c-relm4-github]: https://github.com/Relm4/Relm4
 [c-relm4-lib.rs-badge]: https://img.shields.io/badge/lib.rs-relm4-yellow
 [c-relm4-lib.rs]: https://lib.rs/crates/relm4
+[c-relm4-website-badge]: https://img.shields.io/badge/relm4-coral
+[c-relm4-website]: https://relm4.org
 [c-relm4]: https://docs.rs/relm4
 [c-remove_dir_all-badge]: https://img.shields.io/crates/v/remove_dir_all?label=remove_dir_all
 [c-remove_dir_all-crates.io-badge]: https://img.shields.io/badge/crates.io-remove__dir__all-crimson
@@ -2377,6 +2382,7 @@
 [c-rfd-crates.io-badge]: https://img.shields.io/badge/crates.io-rfd-crimson
 [c-rfd-crates.io]: https://crates.io/crates/rfd
 [c-rfd-github-badge]: https://img.shields.io/badge/rfd-steelblue?logo=github
+[c-rfd-github]: https://github.com/PolyMeilex/rfd
 [c-rfd-github]: https://github.com/polymeilex/rfd
 [c-rfd-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rfd-yellow
 [c-rfd-lib.rs]: https://lib.rs/crates/rfd
@@ -2696,7 +2702,7 @@
 [c-skia_safe-github]: https://github.com/rust-skia/rust-skia
 [c-skia_safe-lib.rs-badge]: https://img.shields.io/badge/lib.rs-skia--safe-yellow
 [c-skia_safe-lib.rs]: https://lib.rs/crates/skia-safe
-[c-skia_safe]: https://docs.rs/skia_safe
+[c-skia_safe]: https://rust-skia.github.io/doc/skia_safe
 [c-sled-badge]: https://img.shields.io/crates/v/sled?label=sled
 [c-sled-crates.io-badge]: https://img.shields.io/badge/crates.io-sled-crimson
 [c-sled-crates.io]: https://crates.io/crates/sled
@@ -2996,7 +3002,7 @@
 [c-taffy-crates.io-badge]: https://img.shields.io/badge/crates.io-taffy-crimson
 [c-taffy-crates.io]: https://crates.io/crates/taffy
 [c-taffy-github-badge]: https://img.shields.io/badge/taffy-steelblue?logo=github
-[c-taffy-github]: https://github.com/dioxuslabs/taffy
+[c-taffy-github]: https://github.com/DioxusLabs/taffy
 [c-taffy-lib.rs-badge]: https://img.shields.io/badge/lib.rs-taffy-yellow
 [c-taffy-lib.rs]: https://lib.rs/crates/taffy
 [c-taffy]: https://docs.rs/taffy
