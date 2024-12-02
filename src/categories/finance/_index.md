@@ -8,5 +8,5 @@ Dealing with money: accounting, trading, investments, taxes, banking and payment
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 write
 </div>
