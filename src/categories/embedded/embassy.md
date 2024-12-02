@@ -2,7 +2,7 @@
 
 {{#include embassy.incl.md}}
 
-## Embassy {#embassy}
+## `embassy` {#embassy}
 
 [![embassy][c-embassy-badge]][c-embassy]{{hi:embassy}}
 [![embassy-crates.io][c-embassy-crates.io-badge]][c-embassy-crates.io]

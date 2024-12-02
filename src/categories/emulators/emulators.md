@@ -2,7 +2,7 @@
 
 {{#include emulators.incl.md}}
 
-## Emulate {#emulators}
+## Emulators {#emulators}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/emulators/emulator.rs:example}}
@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 write
 </div>

@@ -36,7 +36,7 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 [![byteorder][c-byteorder-badge]][c-byteorder]{{hi:byteorder}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Little endian}}{{hi:Byte order}}
 
-[`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, such that bytes received are from another system.
+[`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, when bytes received are from another system.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/encoding/endian_byte.rs:example}}
@@ -46,4 +46,5 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 clean up toml
 </div>

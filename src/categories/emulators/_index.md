@@ -10,5 +10,5 @@ Emulators allow one computer to behave like another, often to allow running soft
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 write
 </div>

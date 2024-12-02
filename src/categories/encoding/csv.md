@@ -41,7 +41,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 
 This example has been adapted from [the csv crate tutorial][c-csv-tutorial]⮳
 
-## Handle invalid CSV data with Serde {#handle-invalid-csv}
+## Handle invalid CSV data with `serde` {#handle-invalid-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -61,7 +61,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 {{#include ../../../deps/tests/categories/encoding/serialize.rs:example}}
 ```
 
-## Serialize records to CSV using Serde {#serialize-to-csv-using-serde}
+## Serialize records to CSV using `serde` {#serialize-to-csv-using-serde}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

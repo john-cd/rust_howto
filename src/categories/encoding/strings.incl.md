@@ -6,5 +6,4 @@
 | [Encode and decode base64][ex-encoding-base64] | [![base64][c-base64-badge]][c-base64] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 
 <div class="hidden">
-TODO P1
 </div>
