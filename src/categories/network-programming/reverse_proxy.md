@@ -2,7 +2,7 @@
 
 {{#include reverse_proxy.incl.md}}
 
-## Rathole {#rathole}
+## `rathole` {#rathole}
 
 [![rathole][c-rathole-badge]][c-rathole]{{hi:rathole}}
 [![rathole-crates.io][c-rathole-crates.io-badge]][c-rathole-crates.io]
@@ -15,7 +15,7 @@
 {{#include ../../../deps/tests/categories/network_programming/rathole.rs:example}}
 ```
 
-## ngrok {#ngrok}
+## `ngrok` {#ngrok}
 
 [![ngrok][c-ngrok-badge]][c-ngrok]{{hi:ngrok}}{{hi:ngrok-rust}}
 [![ngrok-crates.io][c-ngrok-crates.io-badge]][c-ngrok-crates.io]
@@ -32,7 +32,7 @@
 
 [ngnix proxy manager][nginx-proxy-manager]{{hi:nginx proxy manager}}⮳
 
-## Pingora {#pingora}
+## `pingora` {#pingora}
 
 [![pingora][c-pingora-badge]][c-pingora]{{hi:pingora}}
 [![pingora-crates.io][c-pingora-crates.io-badge]][c-pingora-crates.io]

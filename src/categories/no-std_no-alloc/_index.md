@@ -2,7 +2,7 @@
 
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No alloc}}
 
-Crates that are able to function without the Rust alloc crate.
+Crates that are able to function without the Rust `alloc` crate.
 
 {{#include no_alloc.incl.md}}
 
@@ -10,5 +10,4 @@ Crates that are able to function without the Rust alloc crate.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
 </div>
