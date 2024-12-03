@@ -10,7 +10,7 @@ struct PhoneNumber<'a> {
     subscriber: &'a str,
 }
 
-impl<'a> fmt::Display for PhoneNumber<'a> {
+impl fmt::Display for PhoneNumber<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "1 ({}) {}-{}", self.area, self.exchange, self.subscriber)
     }

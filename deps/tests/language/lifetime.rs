@@ -5,7 +5,7 @@ struct ImportantExcerpt<'a> {
     part: &'a str,
 }
 
-impl<'a> ImportantExcerpt<'a> {
+impl ImportantExcerpt<'_> {
     fn level(&self) -> i32 {
         3
     }
