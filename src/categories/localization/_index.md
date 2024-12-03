@@ -10,5 +10,5 @@ Tooling to help adapting internationalized software to specific languages and re
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write
+TODO P2 write
 </div>
