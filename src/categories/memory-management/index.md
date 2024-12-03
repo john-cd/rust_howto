@@ -12,5 +12,5 @@ Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garb
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+TODO P1 organize
 </div>

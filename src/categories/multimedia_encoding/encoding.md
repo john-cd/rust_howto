@@ -2,7 +2,7 @@
 
 {{#include encoding.incl.md}}
 
-## Encodings {#encoding}
+## Multimedia encoding {#encoding}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/multimedia_encoding/encoding.rs:example}}
@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write
+TODO P2 write
 </div>

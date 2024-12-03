@@ -2,7 +2,7 @@
 
 {{#include global_static.incl.md}}
 
-## Declare lazily evaluated constant {#declare-lazily-evaluated-constant}
+## Declare lazily evaluated constants {#declare-lazily-evaluated-constant}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
 [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io]
@@ -22,5 +22,5 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+TODO P1 expand - once_cell crate and in std
 </div>

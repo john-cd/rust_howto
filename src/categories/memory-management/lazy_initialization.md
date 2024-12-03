@@ -55,5 +55,5 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+TODO P1 write, dedupe with global_static
 </div>

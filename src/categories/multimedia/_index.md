@@ -2,7 +2,7 @@
 
 [![cat-multimedia][cat-multimedia-badge]][cat-multimedia]{{hi:Multimedia}}
 
-Crates that provide audio, video, and image processing or rendering engines.
+Audio, video, and image processing or rendering engines.
 
 {{#include multimedia.incl.md}}
 
@@ -10,5 +10,4 @@ Crates that provide audio, video, and image processing or rendering engines.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write
 </div>

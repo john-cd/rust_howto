@@ -2,7 +2,7 @@
 
 {{#include video.incl.md}}
 
-## Video {#video}
+## Play video {#video}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/multimedia_video/video.rs:example}}
