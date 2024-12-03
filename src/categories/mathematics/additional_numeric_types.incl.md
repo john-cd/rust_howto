@@ -1,13 +1,9 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Abstracting over different number types][ex-mathematics-abstracting-over-number-types] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
-| [Big integers][ex-mathematics-big-integers] | [![num][c-num-badge]][c-num] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
-| [Big decimal][ex-mathematics-big-decimal] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
-| [Sortable Floats][ex-mathematics-sortable-floats] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [Abstract over different number types][ex-mathematics-abstracting-over-number-types] | [![num-traits][c-num_traits-badge]][c-num_traits] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [Use big integers][ex-mathematics-big-integers] | [![num][c-num-badge]][c-num] [![num-bigint][c-num_bigint-badge]][c-num_bigint] [![rug][c-rug-badge]][c-rug] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
+| [Use big decimals][ex-mathematics-big-decimal] | [![rust_decimal][c-rust_decimal-badge]][c-rust_decimal] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [Sort floats][ex-mathematics-sortable-floats] | [![ordered-float][c-ordered_float-badge]][c-ordered_float] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 
 <div class="hidden">
-TODO P1
-| [`bigint`][ex-mathematics-num-bigint] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
-| [`num`][ex-mathematics-num] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
-| [`rug`][ex-mathematics-rug] |  | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 </div>

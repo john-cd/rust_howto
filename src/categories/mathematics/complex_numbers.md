@@ -2,7 +2,7 @@
 
 {{#include complex_numbers.incl.md}}
 
-## Creating complex numbers {#creating-complex-numbers}
+## Create complex numbers {#creating-complex-numbers}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -19,7 +19,7 @@ Creates complex numbers of type [`num::complex::Complex`][c-num::complex::Comple
 {{#include ../../../deps/tests/categories/mathematics/create_complex.rs:example}}
 ```
 
-## Adding complex numbers {#adding-complex-numbers}
+## Add complex numbers {#adding-complex-numbers}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -30,13 +30,13 @@ Creates complex numbers of type [`num::complex::Complex`][c-num::complex::Comple
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Performing mathematical operations on complex numbers is the same as on built in types: the numbers in question must be of the same type (i.e. floats or integers).
+Performing mathematical operations on complex numbers is the same as on built-in types: the numbers in question must be of the same type (i.e. floats or integers).
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/mathematics/add_complex.rs:example}}
 ```
 
-## Mathematical functions on complex numbers {#mathematical-functions}
+## Use mathematical functions on complex numbers {#mathematical-functions}
 
 [![num][c-num-badge]][c-num]{{hi:num}}
 [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io]
@@ -57,5 +57,4 @@ Complex numbers have a range of interesting properties when it comes to how they
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
 </div>
