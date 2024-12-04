@@ -6,16 +6,13 @@ fn main() -> Result<()> {
     let parsed_version = Version::parse("0.2.6")?;
     // Note: a SemVer version must have exactly three components
 
-    assert_eq!(
-        parsed_version,
-        Version {
-            major: 0,
-            minor: 2,
-            patch: 6,
-            pre: semver::Prerelease::EMPTY,
-            build: semver::BuildMetadata::EMPTY,
-        }
-    );
+    assert_eq!(parsed_version, Version {
+        major: 0,
+        minor: 2,
+        patch: 6,
+        pre: semver::Prerelease::EMPTY,
+        build: semver::BuildMetadata::EMPTY,
+    });
 
     // TODO P0 increment_*() no longer exist; remove example?
 

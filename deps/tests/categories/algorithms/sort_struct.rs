@@ -21,27 +21,21 @@ fn main() {
     // Sort people by derived natural order (Name and age)
     people.sort();
 
-    assert_eq!(
-        people,
-        vec![
-            Person::new("Al".to_string(), 60),
-            Person::new("John".to_string(), 1),
-            Person::new("Zoe".to_string(), 25),
-        ]
-    );
+    assert_eq!(people, vec![
+        Person::new("Al".to_string(), 60),
+        Person::new("John".to_string(), 1),
+        Person::new("Zoe".to_string(), 25),
+    ]);
     println!("{:?}", people);
 
     // Sort people by age
     people.sort_by(|a, b| b.age.cmp(&a.age));
 
-    assert_eq!(
-        people,
-        vec![
-            Person::new("Al".to_string(), 60),
-            Person::new("Zoe".to_string(), 25),
-            Person::new("John".to_string(), 1),
-        ]
-    );
+    assert_eq!(people, vec![
+        Person::new("Al".to_string(), 60),
+        Person::new("Zoe".to_string(), 25),
+        Person::new("John".to_string(), 1),
+    ]);
 
     println!("{:?}", people);
 }

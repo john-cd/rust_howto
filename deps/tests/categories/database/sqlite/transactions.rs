@@ -10,7 +10,9 @@ pub fn main() -> Result<()> {
 
     let res = rolled_back_tx(&mut conn);
     assert!(res.is_err());
-    println!("Attempt to insert the same name in a unique column fails. The transaction was rolled-back.");
+    println!(
+        "Attempt to insert the same name in a unique column fails. The transaction was rolled-back."
+    );
 
     Ok(())
 }

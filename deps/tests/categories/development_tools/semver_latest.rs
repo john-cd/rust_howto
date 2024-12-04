@@ -26,16 +26,13 @@ fn main() -> Result<()> {
     );
 
     assert_eq!(
-        find_max_matching_version(
-            ">1.2.3-alpha.3",
-            vec![
-                "1.2.3-alpha.3",
-                "1.2.3-alpha.4",
-                "1.2.3-alpha.10",
-                "1.2.3-beta.4",
-                "3.4.5-alpha.9",
-            ]
-        )?,
+        find_max_matching_version(">1.2.3-alpha.3", vec![
+            "1.2.3-alpha.3",
+            "1.2.3-alpha.4",
+            "1.2.3-alpha.10",
+            "1.2.3-beta.4",
+            "3.4.5-alpha.9",
+        ])?,
         Some(Version::parse("1.2.3-beta.4")?)
     );
 

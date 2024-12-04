@@ -1,8 +1,8 @@
 // ANCHOR: example
 use std::process::Command;
 
-use anyhow::bail;
 use anyhow::Result;
+use anyhow::bail;
 use regex::Regex;
 
 #[derive(PartialEq, Default, Clone, Debug)]

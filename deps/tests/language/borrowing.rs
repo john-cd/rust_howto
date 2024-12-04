@@ -7,7 +7,7 @@ fn main() {
     fn calculate_length(s: &str) -> usize {
         s.len()
     } // Here, `s` goes out of scope. Because the function does not have
-      // ownership of what it refers to, `s1` is not dropped.
+    // ownership of what it refers to, `s1` is not dropped.
 
     println!("{s1}");
 }

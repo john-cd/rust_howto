@@ -12,10 +12,10 @@ pub struct HeadersEcho {
 
 fn main() -> Result<()> {
     // Parse an absolute URL from a string and add params to its query string
-    let url = url::Url::parse_with_params(
-        "http://httpbin.org/headers",
-        &[("lang", "rust"), ("browser", "servo")],
-    )?;
+    let url = url::Url::parse_with_params("http://httpbin.org/headers", &[
+        ("lang", "rust"),
+        ("browser", "servo"),
+    ])?;
 
     // Define default headers for all requests
     let mut default_headers = header::HeaderMap::new();

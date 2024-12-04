@@ -9,7 +9,9 @@
 //! [Easy]: http://thatwaseasy.example.com
 
 fn main() {
-    println!("//! ... are `inner` comments that apply to the containing module (or crate).");
+    println!(
+        "//! ... are `inner` comments that apply to the containing module (or crate)."
+    );
 }
 // ANCHOR_END: example
 

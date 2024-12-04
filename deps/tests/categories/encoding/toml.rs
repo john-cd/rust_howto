@@ -1,6 +1,6 @@
 // ANCHOR: example
-use toml::de::Error;
 use toml::Value;
+use toml::de::Error;
 
 fn main() -> Result<(), Error> {
     let toml_content = r#"

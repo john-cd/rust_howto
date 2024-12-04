@@ -1,6 +1,6 @@
 // ANCHOR: example
-use tracing::span;
 use tracing::Level;
+use tracing::span;
 
 fn main() {
     let span = span!(Level::TRACE, "some span").entered();

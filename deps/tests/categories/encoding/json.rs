@@ -1,7 +1,7 @@
 // ANCHOR: example
-use serde_json::json;
 use serde_json::Error;
 use serde_json::Value;
+use serde_json::json;
 
 fn main() -> Result<(), Error> {
     let j: &str = r#"{

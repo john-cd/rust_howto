@@ -1,7 +1,7 @@
 // ANCHOR: example
 use anyhow::Result;
-use glob::glob_with;
 use glob::MatchOptions;
+use glob::glob_with;
 
 fn main() -> Result<()> {
     let options = MatchOptions {

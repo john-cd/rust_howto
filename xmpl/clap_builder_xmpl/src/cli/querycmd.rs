@@ -1,6 +1,6 @@
-use clap::arg;
 use clap::ArgMatches;
 use clap::Command;
+use clap::arg;
 
 pub(super) fn cmd() -> Command {
     Command::new("query")

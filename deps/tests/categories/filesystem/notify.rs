@@ -3,11 +3,11 @@
 
 use std::path::Path;
 
-use notify::event::Event;
 use notify::EventHandler;
 use notify::RecursiveMode;
 use notify::Result;
 use notify::Watcher;
+use notify::event::Event;
 
 /// Prints received events
 struct EventPrinter;

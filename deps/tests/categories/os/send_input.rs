@@ -5,9 +5,9 @@ use std::io::Write;
 use std::process::Command;
 use std::process::Stdio;
 
+use anyhow::Result;
 use anyhow::anyhow;
 use anyhow::bail;
-use anyhow::Result;
 
 fn main() -> Result<()> {
     let mut child = Command::new("rev")

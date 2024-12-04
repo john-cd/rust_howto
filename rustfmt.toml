@@ -1,7 +1,11 @@
 unstable_features = true # Default: false
 
-edition = "2021" # Default: "2015"
-style_edition = "2021"
+# Specifies which edition is used by the parser.
+# Rustfmt is able to pick up the edition used by reading the Cargo.toml file if executed through the Cargo's formatting tool cargo fmt.
+# Otherwise, the edition needs to be specified in your config file
+edition = "2024" # Default: "2015"
+
+style_edition = "2024"
 
 newline_style = "Unix" # Default: "Auto"
 max_width = 80         # Default: 100

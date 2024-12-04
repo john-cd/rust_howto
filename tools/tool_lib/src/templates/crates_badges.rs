@@ -15,11 +15,12 @@ macro_rules! regex {
 /// linked to a website In this case, badges linked to docs.rs,
 /// crates.io, github, and lib.rs
 pub(super) static CRATE_BADGES: &str = concat!(
-"{{ if homepage_defined }}[![{crate_name}-website][c-{crate_name | underscored}-website-badge]][c-{crate_name | underscored}-website] {{ endif }}",
-"[![{crate_name}][c-{crate_name | underscored}-badge]][c-{crate_name | underscored}] ",
-"[![{crate_name}-crates.io][c-{crate_name | underscored}-crates.io-badge]][c-{crate_name | underscored}-crates.io] ",
-"[![{crate_name}-github][c-{crate_name | underscored}-github-badge]][c-{crate_name | underscored}-github] ",
-r"[![{crate_name}-lib.rs][c-{crate_name | underscored}-lib.rs-badge]][c-{crate_name | underscored}-lib.rs]\{\{hi:{crate_name}}} ");
+    "{{ if homepage_defined }}[![{crate_name}-website][c-{crate_name | underscored}-website-badge]][c-{crate_name | underscored}-website] {{ endif }}",
+    "[![{crate_name}][c-{crate_name | underscored}-badge]][c-{crate_name | underscored}] ",
+    "[![{crate_name}-crates.io][c-{crate_name | underscored}-crates.io-badge]][c-{crate_name | underscored}-crates.io] ",
+    "[![{crate_name}-github][c-{crate_name | underscored}-github-badge]][c-{crate_name | underscored}-github] ",
+    r"[![{crate_name}-lib.rs][c-{crate_name | underscored}-lib.rs-badge]][c-{crate_name | underscored}-lib.rs]\{\{hi:{crate_name}}} "
+);
 
 pub(super) static CRATE_DESCRIPTION: &str =
     "{{- if description_defined }}{description}{{ endif -}}";

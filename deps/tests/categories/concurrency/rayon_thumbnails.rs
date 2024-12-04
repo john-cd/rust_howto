@@ -4,8 +4,8 @@ use std::path::Path;
 
 use anyhow::Context;
 use anyhow::Result;
-use glob::glob_with;
 use glob::MatchOptions;
+use glob::glob_with;
 use image::imageops::FilterType;
 use rayon::prelude::*;
 

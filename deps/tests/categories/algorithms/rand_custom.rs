@@ -1,7 +1,7 @@
 // ANCHOR: example
+use rand::Rng;
 use rand::distributions::Distribution;
 use rand::distributions::Standard;
-use rand::Rng;
 
 #[derive(Debug)]
 #[allow(dead_code)]

@@ -19,10 +19,9 @@ pub fn main() -> Result<()> {
     cat_colors.insert(String::from("Black"), vec!["Oreo", "Biscuit"]);
 
     for (color, catnames) in &cat_colors {
-        conn.execute(
-            "INSERT INTO cat_colors (name) values (?1)",
-            [&color.to_string()],
-        )?;
+        conn.execute("INSERT INTO cat_colors (name) values (?1)", [
+            &color.to_string()
+        ])?;
         let last_id: String = conn.last_insert_rowid().to_string();
 
         for cat in catnames {

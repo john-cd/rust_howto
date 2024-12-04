@@ -1,8 +1,8 @@
 use std::path::PathBuf;
 use std::sync::LazyLock;
 
-use anyhow::bail;
 use anyhow::Result;
+use anyhow::bail;
 use tera::Context;
 use tera::Tera;
 

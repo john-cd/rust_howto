@@ -1,9 +1,9 @@
 // ANCHOR: example
-use lettre::message::header::ContentType;
-use lettre::transport::smtp::authentication::Credentials;
 use lettre::Message;
 use lettre::SmtpTransport;
 use lettre::Transport;
+use lettre::message::header::ContentType;
+use lettre::transport::smtp::authentication::Credentials;
 
 fn main() {
     let email = Message::builder()

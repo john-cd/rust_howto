@@ -1,10 +1,10 @@
 // ANCHOR: example
 use std::process::Command;
 
-use anyhow::anyhow;
-use anyhow::bail;
 use anyhow::Context;
 use anyhow::Result;
+use anyhow::anyhow;
+use anyhow::bail;
 use semver::Version;
 use semver::VersionReq;
 
@@ -27,7 +27,8 @@ fn main() -> Result<()> {
         Version::parse(version).context(format!("version: {}", version))?;
 
     if !version_test.matches(&parsed_version) {
-        bail!( "Command version lower than minimum supported version (found {}, need {})",
+        bail!(
+            "Command version lower than minimum supported version (found {}, need {})",
             parsed_version,
             version_constraint
         );

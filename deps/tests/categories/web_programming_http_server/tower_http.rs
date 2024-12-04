@@ -4,11 +4,11 @@ use std::iter::once;
 use std::sync::Arc;
 
 use bytes::Bytes;
-use http::header::HeaderName;
-use http::header::AUTHORIZATION;
-use http::header::CONTENT_TYPE;
 use http::Request;
 use http::Response;
+use http::header::AUTHORIZATION;
+use http::header::CONTENT_TYPE;
+use http::header::HeaderName;
 use http_body_util::Full;
 use tower::BoxError;
 use tower::ServiceBuilder;

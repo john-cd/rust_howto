@@ -1,6 +1,6 @@
 // ANCHOR: example
-use tokio::time::sleep;
 use tokio::time::Duration;
+use tokio::time::sleep;
 use tokio_graceful_shutdown::SubsystemBuilder;
 use tokio_graceful_shutdown::SubsystemHandle;
 use tokio_graceful_shutdown::Toplevel;

@@ -1,11 +1,11 @@
 // ANCHOR: example
+use tracing::Level;
 use tracing::debug;
 use tracing::error;
 use tracing::event;
 use tracing::info;
 use tracing::trace;
 use tracing::warn;
-use tracing::Level;
 
 #[derive(Debug)]
 struct S;

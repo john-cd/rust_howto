@@ -1,7 +1,7 @@
 // ANCHOR: example
+use futures::Stream;
 use futures::stream;
 use futures::stream::StreamExt;
-use futures::Stream;
 
 async fn count_to_five() -> impl Stream<Item = u32> {
     stream::iter(1..=5)

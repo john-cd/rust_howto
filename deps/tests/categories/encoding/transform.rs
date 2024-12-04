@@ -1,11 +1,11 @@
 // ANCHOR: example
 use std::str::FromStr;
 
-use anyhow::anyhow;
 use anyhow::Result;
-use serde::de;
+use anyhow::anyhow;
 use serde::Deserialize;
 use serde::Deserializer;
+use serde::de;
 
 #[derive(Debug, Deserialize)]
 struct Row {

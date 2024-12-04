@@ -1,7 +1,7 @@
 // ANCHOR: example
+use ndarray::Array1;
 use ndarray::arr1;
 use ndarray::arr2;
-use ndarray::Array1;
 
 fn main() {
     let scalar = 4;

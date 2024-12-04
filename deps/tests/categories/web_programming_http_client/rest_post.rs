@@ -37,14 +37,11 @@ async fn main() -> Result<()> {
         public: true,
         files: {
             let mut h = HashMap::new();
-            h.insert(
-                "main.rs",
-                Content {
-                    content: r#"
+            h.insert("main.rs", Content {
+                content: r#"
 fn main() { println!("hello world!");}
 "#,
-                },
-            );
+            });
             h
         },
     };

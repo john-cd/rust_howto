@@ -3,10 +3,10 @@
 use std::path::PathBuf;
 
 use args::*;
-use clap::builder::styling;
-use clap::crate_version;
 use clap::ArgMatches;
 use clap::Command;
+use clap::builder::styling;
+use clap::crate_version;
 
 mod args;
 mod cmd;

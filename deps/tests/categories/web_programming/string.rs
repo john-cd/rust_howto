@@ -1,6 +1,6 @@
 // ANCHOR: example
-use mime::Mime;
 use mime::APPLICATION_OCTET_STREAM;
+use mime::Mime;
 
 fn main() {
     let invalid_mime_type = "i n v a l i d";

@@ -1,8 +1,8 @@
 // ANCHOR: example
 use std::sync::Mutex;
 
-use anyhow::anyhow;
 use anyhow::Result;
+use anyhow::anyhow;
 use lazy_static::lazy_static;
 
 lazy_static! {

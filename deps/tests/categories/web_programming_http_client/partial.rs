@@ -2,13 +2,13 @@
 use std::fs::File;
 use std::str::FromStr;
 
+use anyhow::Result;
 use anyhow::anyhow;
 use anyhow::bail;
-use anyhow::Result;
-use reqwest::header::HeaderValue;
-use reqwest::header::CONTENT_LENGTH;
-use reqwest::header::RANGE;
 use reqwest::StatusCode;
+use reqwest::header::CONTENT_LENGTH;
+use reqwest::header::HeaderValue;
+use reqwest::header::RANGE;
 
 struct PartialRangeIter {
     start: u64,

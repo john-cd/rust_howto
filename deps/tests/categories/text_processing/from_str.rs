@@ -39,14 +39,11 @@ fn main() {
     }
 
     // test whether from_str performs as expected
-    assert_eq!(
-        Rgb::from_str(r"#fa7268").unwrap(),
-        Rgb {
-            r: 250,
-            g: 114,
-            b: 104
-        }
-    );
+    assert_eq!(Rgb::from_str(r"#fa7268").unwrap(), Rgb {
+        r: 250,
+        g: 114,
+        b: 104
+    });
 }
 // ANCHOR_END: example
 

@@ -2,8 +2,8 @@
 use std::fs::File;
 use std::io::Read;
 
-use anyhow::anyhow;
 use anyhow::Result;
+use anyhow::anyhow;
 
 fn read_uptime() -> Result<u64> {
     let mut uptime = String::new();

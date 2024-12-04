@@ -1,8 +1,8 @@
 // ANCHOR: example
 fn main() {
+    use itertools::Itertools;
     use itertools::assert_equal;
     use itertools::chain;
-    use itertools::Itertools;
 
     // Assert that two iterables produce equal sequences
     assert_equal("hello world".split(' '), "hello world".split(' '));

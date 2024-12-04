@@ -1,10 +1,10 @@
 use std::path::PathBuf;
 
-use clap::value_parser;
 use clap::Arg;
 use clap::ArgAction;
 use clap::ArgMatches;
 use clap::ValueHint;
+use clap::value_parser;
 
 // (APP-LEVEL) ARGUMENTS -------------------------------
 
@@ -25,7 +25,7 @@ pub(super) fn arg_config() -> Arg {
     // default .action(ArgAction::Set)
     .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
     .global(true) // The --config flag can be passed to all child
-                  // subcommands.
+    // subcommands.
 }
 
 pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {

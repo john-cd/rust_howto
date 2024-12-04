@@ -3,10 +3,10 @@ use std::convert::Infallible;
 
 use anyhow::Result;
 use bytes::Bytes;
-use http::header;
 use http::Method;
 use http::Request;
 use http::Response;
+use http::header;
 use http_body_util::Full;
 use tower::Service;
 use tower::ServiceBuilder;

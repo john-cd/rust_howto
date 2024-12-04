@@ -12,9 +12,9 @@ pub(super) fn cmd() -> Command {
             // We could also use: .short_flag('o') or .visible_alias("o")
             .about("Open one or more files")
             .arg(arg_filepaths().required(true)) // the main program's
-                                                 // argument is reused
-                                                 // here, but is
-                                                 // marked required.
+    // argument is reused
+    // here, but is
+    // marked required.
 }
 
 pub(super) fn get_args(matches: &ArgMatches) -> Option<Vec<PathBuf>> {

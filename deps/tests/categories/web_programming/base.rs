@@ -1,6 +1,6 @@
 // ANCHOR: example
-use anyhow::anyhow;
 use anyhow::Result;
+use anyhow::anyhow;
 use url::Url;
 
 fn base_url(mut url: Url) -> Result<Url> {

@@ -1,7 +1,7 @@
 // ANCHOR: example
+use rand::Rng;
 use rand::distributions::Alphanumeric;
 use rand::thread_rng;
-use rand::Rng;
 use rayon::prelude::*;
 
 fn main() {

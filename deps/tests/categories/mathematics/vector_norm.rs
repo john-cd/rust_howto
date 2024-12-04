@@ -1,7 +1,7 @@
 // ANCHOR: example
-use ndarray::array;
 use ndarray::Array1;
 use ndarray::ArrayView1;
+use ndarray::array;
 
 fn l1_norm(x: ArrayView1<f64>) -> f64 {
     x.fold(0., |acc, elem| acc + elem.abs())

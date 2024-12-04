@@ -1,9 +1,9 @@
 // ANCHOR: example
 use std::thread;
 
-use crossbeam_channel::unbounded;
 use crossbeam_channel::RecvError;
 use crossbeam_channel::TryRecvError;
+use crossbeam_channel::unbounded;
 
 fn main() {
     // Create a channel of unbounded capacity.
