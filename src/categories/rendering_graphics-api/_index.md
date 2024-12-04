@@ -2,7 +2,7 @@
 
 [![cat-rendering::graphics-api][cat-rendering::graphics-api-badge]][cat-rendering::graphics-api]{{hi:Rendering graphics api}}
 
-Crates that provide direct access to the hardware's or the operating system's rendering capabilities.
+Provide direct access to the hardware's or the operating system's rendering capabilities.
 
 {{#include graphics_apis.incl.md}}
 
@@ -10,5 +10,4 @@ Crates that provide direct access to the hardware's or the operating system's re
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: locate crates
 </div>

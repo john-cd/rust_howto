@@ -3,5 +3,5 @@
 | [Render][ex-rendering-render] |  | [![cat-rendering][cat-rendering-badge]][cat-rendering] |
 
 <div class="hidden">
-TODO P2
+TODO P2 crate; title
 </div>

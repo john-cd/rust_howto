@@ -10,5 +10,4 @@ High-level solutions for rendering on the screen.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: locate crates
 </div>
