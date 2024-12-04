@@ -64,7 +64,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Aerospace-related crates: drones, UAVs, space protocols, simulation...
 - Cryptocurrencies
 
-Please also consult the [`TODO P1.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.
+Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

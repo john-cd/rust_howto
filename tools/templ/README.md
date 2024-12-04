@@ -59,7 +59,7 @@ Print this message or the help of the given subcommand(s)
 [c-rand-crates.io-badge]: https://img.shields.io/badge/crates.io-rand-crimson
 [c-rand-crates.io]: https://crates.io/crates/rand
 [c-rand-github-badge]: https://img.shields.io/badge/rand-steelblue?logo=github
-[c-rand-github]: https://github.com/_TODO P1
+[c-rand-github]: https://github.com/_TODO
 [c-rand-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rand-yellow
 [c-rand-lib.rs]: https://lib.rs/crates/rand
 [c-rand]: https://docs.rs/rand
