@@ -26,11 +26,17 @@ async fn main() -> Result {
     let fut = futures::stream::iter(futures).for_each_concurrent(
         4,
         |fut| async move {
-            if let Err(e) = fut.await {
-                println!("Error: {}", e);
-                if let Some(source) = e.source() {
-                    println!("  Caused by: {}", source);
+            match fut.await {
+                Err(e) => {
+                    println!("Error: {}", e);
+                    match e.source() {
+                        Some(source) => {
+                            println!("  Caused by: {}", source);
+                        }
+                        _ => {}
+                    }
                 }
+                _ => {}
             }
         },
     );

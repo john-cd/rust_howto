@@ -25,24 +25,26 @@ fn main() {
                     map_clone.insert("key2", thread_id);
                     println!("Thread {} inserted key2", thread_id);
                 }
-                2 => {
-                    if let Some(value) = map_clone.get("key1") {
+                2 => match map_clone.get("key1") {
+                    Some(value) => {
                         println!("Thread {} read key1: {}", thread_id, *value);
-                    } else {
+                    }
+                    _ => {
                         println!("Thread {} couldn't find key1", thread_id);
                     }
-                }
-                3 => {
-                    if let Some(mut value) = map_clone.get_mut("key2") {
+                },
+                3 => match map_clone.get_mut("key2") {
+                    Some(mut value) => {
                         *value += 10;
                         println!(
                             "Thread {} incremented key2 value to {}",
                             thread_id, *value
                         );
-                    } else {
+                    }
+                    _ => {
                         println!("Thread {} couldn't find key2", thread_id);
                     }
-                }
+                },
                 _ => panic!("Unknown thread ID"),
             }
         }));

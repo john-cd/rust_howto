@@ -21,22 +21,25 @@ fn main() -> anyhow::Result<()> {
 
         du_output_child.wait()?;
 
-        if let Some(sort_output) = sort_output_child.stdout.take() {
-            let head_output_child = Command::new("head")
-                .args(["-n", "10"])
-                .stdin(sort_output)
-                .stdout(Stdio::piped())
-                .spawn()?;
+        match sort_output_child.stdout.take() {
+            Some(sort_output) => {
+                let head_output_child = Command::new("head")
+                    .args(["-n", "10"])
+                    .stdin(sort_output)
+                    .stdout(Stdio::piped())
+                    .spawn()?;
 
-            let head_stdout = head_output_child.wait_with_output()?;
+                let head_stdout = head_output_child.wait_with_output()?;
 
-            sort_output_child.wait()?;
+                sort_output_child.wait()?;
 
-            println!(
-                "Top 10 biggest files and directories in '{}':\n{}",
-                directory.display(),
-                String::from_utf8(head_stdout.stdout).unwrap()
-            );
+                println!(
+                    "Top 10 biggest files and directories in '{}':\n{}",
+                    directory.display(),
+                    String::from_utf8(head_stdout.stdout).unwrap()
+                );
+            }
+            _ => {}
         }
     }
 

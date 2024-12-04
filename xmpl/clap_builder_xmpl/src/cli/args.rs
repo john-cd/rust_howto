@@ -124,10 +124,14 @@ mod tests {
     #[test]
     fn test_arg_config_env() {
         let key = "TOOL_CONFIG_FILE";
-        std::env::set_var(key, "config.toml");
+        unsafe {
+            std::env::set_var(key, "config.toml");
+        }
         let m = cli().try_get_matches_from(vec!["prog"]);
         // Clean up the env variable
-        std::env::remove_var(key);
+        unsafe {
+            std::env::remove_var(key);
+        }
         assert!(std::env::var(key).is_err());
         assert_eq!(
             get_arg_config(&m.unwrap()).map(|pb| format!("{}", pb.display())),
@@ -201,10 +205,14 @@ mod tests {
     #[test]
     fn test_arg_verbose_env() {
         let key = "TOOL_VERBOSE";
-        std::env::set_var(key, "1");
+        unsafe {
+            std::env::set_var(key, "1");
+        }
         let m = cli().try_get_matches_from(vec!["prog"]);
         // clean up the env variable
-        std::env::remove_var(key);
+        unsafe {
+            std::env::remove_var(key);
+        }
         assert!(std::env::var(key).is_err());
         assert_eq!(get_arg_verbose(&m.unwrap()), 1);
     }
