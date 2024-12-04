@@ -150,8 +150,10 @@ RUN cargo binstall --no-confirm lychee
 RUN cargo install --locked mdbook-utils
 
 ## Install nightly fmt - last, since it changes very often
+## Rust edition 2024 preparation: make the `nightly` toolchain the default until release of Rust 1.85
 RUN rustup toolchain install nightly \
-    && rustup component add rustfmt --toolchain nightly
+    && rustup component add rustfmt clippy --toolchain nightly \
+    && rustup default nightly
 
 WORKDIR /code
 

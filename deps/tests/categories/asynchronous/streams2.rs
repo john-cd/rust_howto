@@ -1,3 +1,4 @@
+#![allow(clippy::single_match)]
 // ANCHOR: example
 use futures::StreamExt;
 use tokio::fs::File;

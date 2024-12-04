@@ -1,4 +1,5 @@
 // ANCHOR: example
+#![allow(clippy::single_match)]
 #![cfg(target_family = "unix")]
 
 fn main() -> anyhow::Result<()> {
