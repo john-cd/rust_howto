@@ -1,6 +1,5 @@
 # TODO
 
-- [ ] review all TODOs in the markdown, addressing simple ones immediately
 - [ ] fix contributing section
 - [ ] polish the intro, add links WIP
 - [ ] polish crates section
