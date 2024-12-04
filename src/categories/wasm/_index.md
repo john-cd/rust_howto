@@ -1,5 +1,7 @@
 # WebAssembly (WASM)
 
+[![cat-wasm][cat-wasm-badge]][cat-wasm]
+
 Tooling targeting WebAssembly or manipulating WebAssembly.
 
 ## `yew`
@@ -18,5 +20,4 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: organize
 </div>

@@ -22,6 +22,7 @@
 [![wasmtime-crates.io][c-wasmtime-crates.io-badge]][c-wasmtime-crates.io]
 [![wasmtime-github][c-wasmtime-github-badge]][c-wasmtime-github]
 [![wasmtime-lib.rs][c-wasmtime-lib.rs-badge]][c-wasmtime-lib.rs]
+[![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
 [wasmtime][c-wasmtime-github]{{hi:wasmtime}}⮳ is a high-level API to expose the Wasmtime runtime.
 
@@ -33,11 +34,11 @@
 
 ## See also
 
-- [rustwasm.github.io][rustwasm-website]{{hi:rustwasm}}⮳
+[rustwasm.github.io][rustwasm-website]{{hi:rustwasm}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: organize
+TODO P2 organize/write
 </div>
