@@ -6,7 +6,7 @@
 [ex-rust-patterns-dyn-clone]: design_patterns.md#dyn-clone
 [ex-rust-patterns-handle-errors-correctly-in-main]: error_handling.md#handle-errors-correctly-in-main
 [ex-rust-patterns-irrecoverable-panics]: error_handling.md#irrecoverable-panics
-[ex-rust-patterns-lens]: design_patterns.md#lens
+[ex-rust-patterns-lens]: functional_programming.md#lens
 [ex-rust-patterns-miette]: error_customization.md#miette
 [ex-rust-patterns-obtain-backtrace]: error_handling.md#obtain-backtrace
 [ex-rust-patterns-question-mark-operator]: error_handling.md#question-mark-operator

@@ -2,7 +2,7 @@
 
 {{#include functional_programming.incl.md}}
 
-## Compose iterators with `itertools` {#compose-iterators-with-itertools}
+## Compose iterators {#compose-iterators-with-itertools}
 
 [![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}
 [![itertools-crates.io][c-itertools-crates.io-badge]][c-itertools-crates.io]
@@ -13,7 +13,7 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 
-Extra iterator adaptors, functions and macros.
+`itertools` includes extra iterator adaptors, functions and macros.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/itertools.rs:example}}
@@ -24,4 +24,19 @@ Extra iterator adaptors, functions and macros.
 
 <div class="hidden">
 TODO P1 cover the most useful functions
+TODO P1 review - lens is not used that often
+
+## Lens {#lens}
+
+[![lens_rs][c-lens_rs-badge]][c-lens_rs]{{hi:lens_rs}}
+[![lens_rs-crates.io][c-lens_rs-crates.io-badge]][c-lens_rs-crates.io]
+[![lens_rs-github][c-lens_rs-github-badge]][c-lens_rs-github]
+[![lens_rs-lib.rs][c-lens_rs-lib.rs-badge]][c-lens_rs-lib.rs]
+
+This Rust library provides support for lenses, which are a mechanism in functional programming for focusing on a part of a complex data structure.
+
+```rust,editable
+{{#include ../../../deps/tests/categories/rust_patterns/lens.rs:example}}
+```
+
 </div>

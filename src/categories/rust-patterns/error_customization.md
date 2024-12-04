@@ -6,7 +6,9 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 ## `anyhow` {#anyhow}
 
-[![anyhow][c-anyhow-badge]][c-anyhow]{{hi:anyhow}} [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![anyhow][c-anyhow-badge]][c-anyhow] [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![anyhow-github][c-anyhow-github-badge]][c-anyhow-github] [![anyhow-lib.rs][c-anyhow-lib.rs-badge]][c-anyhow-lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+`anyhow` provides a flexible concrete Error type built on `std::error::Error`.
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -18,7 +20,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 ## `thisError` {#thiserror}
 
-[![thiserror][c-thiserror-badge]][c-thiserror]{{hi:thiserror}}
+[![thiserror][c-thiserror-badge]][c-thiserror] [![thiserror-crates.io][c-thiserror-crates.io-badge]][c-thiserror-crates.io] [![thiserror-github][c-thiserror-github-badge]][c-thiserror-github] [![thiserror-lib.rs][c-thiserror-lib.rs-badge]][c-thiserror-lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
 
@@ -41,8 +43,9 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## `miette` {#miette}
 
-[![miette][c-miette-badge]][c-miette]{{hi:miette}}
-[![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs] prints fancy diagnostics upon error.
+[![miette][c-miette-badge]][c-miette] [![miette-crates.io][c-miette-crates.io-badge]][c-miette-crates.io] [![miette-github][c-miette-github-badge]][c-miette-github] [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs]{{hi:miette}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+`miette` is a fancy diagnostic reporting library and protocol.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/miette.rs:example}}
@@ -50,12 +53,11 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 ## `color-eyre` {#color-eyre}
 
-[![color-eyre][c-color_eyre-badge]][c-color_eyre]{{hi:color-eyre}}
-[![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io]
-[![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github]
-[![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]
+[![color-eyre][c-color_eyre-badge]][c-color_eyre] [![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io] [![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github] [![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]{{hi:color-eyre}}
 
-A fork of `anyhow` that gives you more control over the format of the generated error messages. Recommended if you intend to present error messages to end users. Otherwise `anyhow` is simpler.
+`color-eyre` is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
+
+It is a fork of `anyhow` that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise `anyhow` is simpler.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/color_eyre.rs:example}}
@@ -71,5 +73,5 @@ Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecate
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+TODO P1 write / organize / titles
 </div>

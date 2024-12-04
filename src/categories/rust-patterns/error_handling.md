@@ -2,9 +2,9 @@
 
 {{#include error_handling.incl.md}}
 
-## Irrecoverable panics {#irrecoverable-panics}
+## Trigger and handle irrecoverable panics {#irrecoverable-panics}
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediately and provide feedback to the caller of the program.
 
@@ -18,25 +18,25 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 {{#include ../../../deps/tests/categories/rust_patterns/unwrap.rs:example}}
 ```
 
-## Recoverable errors with `Result` {#recoverable-errors-with-result}
+## Provide a fallback value with `unwrap_or_else` {#unwrap-or-else}
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
-
-```rust,editable,should_panic
-{{#include ../../../deps/tests/categories/rust_patterns/error_handling.rs:example}}
-```
-
-### `unwrap_or_else` {#unwrap-or-else}
-
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/unwrap_or_else.rs:example}}
 ```
 
-## A shortcut for propagating errors: the ? Operator {#question-mark-operator}
+## Return recoverable errors with `Result` {#recoverable-errors-with-result}
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+```rust,editable,should_panic
+{{#include ../../../deps/tests/categories/rust_patterns/error_handling.rs:example}}
+```
+
+## Propagate errors with the `?` operator {#question-mark-operator}
+
+[![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/question_mark.rs:example}}
@@ -68,15 +68,15 @@ The below recipe will tell how long the system has been running by opening the U
 
 ## Avoid discarding errors during error conversions {#avoid-discarding-errors-during-error-conversions}
 
-[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![reqwest][c-reqwest-badge]][c-reqwest] [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io] [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github] [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.
+Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">TODO P1 move somwhere else</div>
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/retain.rs:example}}
 ```
 
-## Obtain backtrace of complex error scenarios {#obtain-backtrace}
+## Obtain the backtrace in complex error scenarios {#obtain-backtrace}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -105,7 +105,7 @@ Run the recipe with `RUST_BACKTRACE=1` to display a detailed backtrace associate
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 fix
+TODO P1 fix / organize
 TODO P1 need examples for
 - unwrap
 </div>
