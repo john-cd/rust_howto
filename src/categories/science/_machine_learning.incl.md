@@ -1,11 +1,8 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Linfa][ex-science-linfa] | [![linfa][c-linfa-badge]][c-linfa] | [![cat-science][cat-science-badge]][cat-science] |
-| [Candle][ex-science-candle] | [![candle-core][c-candle_core-badge]][c-candle_core] | [![cat-science][cat-science-badge]][cat-science] |
-| [Others][ex-science-others] |  | [![cat-science][cat-science-badge]][cat-science] |
-| [Smartcore][ex-science-smartcore] |  | [![cat-science][cat-science-badge]][cat-science] |
-| [Watchmaker][ex-science-watchmaker] |  | [![cat-science][cat-science-badge]][cat-science] |
+| [Use classical machine learning algorithms][ex-science-linfa] | [![linfa][c-linfa-badge]][c-linfa] [![smartcore][c-smartcore-badge]][c-smartcore] | [![cat-science][cat-science-badge]][cat-science] |
+| [Implement deep learning algorithms][ex-science-candle] | [![candle-core][c-candle_core-badge]][c-candle_core] [![burn][c-burn-badge]][c-burn] | [![cat-science][cat-science-badge]][cat-science] |
+| [Use genetic algorithms][ex-science-watchmaker] | [![watchmaker][c-watchmaker-badge]][c-watchmaker] | [![cat-science][cat-science-badge]][cat-science] |
 
 <div class="hidden">
-TODO P2 crates
 </div>
