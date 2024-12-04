@@ -1,7 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`tinytemplate`][ex-template-engine-tinytemplate] |  | [![cat-template-engine][cat-template-engine-badge]][cat-template-engine] |
+| [Create markdown fragments from a template][ex-template-engine-tinytemplate] | [![tinytemplate][c-tinytemplate-badge]][c-tinytemplate] | [![cat-template-engine][cat-template-engine-badge]][cat-template-engine] |
 
 <div class="hidden">
-TODO P1
 </div>

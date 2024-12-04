@@ -2,13 +2,13 @@
 
 [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engines}}
 
-Crates designed to combine templates with data to produce result documents, usually with an emphasis on processing tex
+Crates designed to combine templates with data to produce result documents, usually with an emphasis on processing text.
 
-## Tera
+## Create HTML files from a template
 
 {{#include tera.incl.md}}
 
-## TinyTemplate
+## Create markdown fragments from a template
 
 {{#include tinytemplate.incl.md}}
 

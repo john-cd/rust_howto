@@ -3062,9 +3062,11 @@
 [c-tera-crates.io-badge]: https://img.shields.io/badge/crates.io-tera-crimson
 [c-tera-crates.io]: https://crates.io/crates/tera
 [c-tera-github-badge]: https://img.shields.io/badge/tera-steelblue?logo=github
-[c-tera-github]: https://github.com/keats/tera
+[c-tera-github]: https://github.com/Keats/tera
 [c-tera-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tera-yellow
 [c-tera-lib.rs]: https://lib.rs/crates/tera
+[c-tera-website-badge]: https://img.shields.io/badge/tera-coral
+[c-tera-website]: https://keats.github.io/tera
 [c-tera]: https://docs.rs/tera
 [c-termbook-badge]: https://img.shields.io/crates/v/termbook?label=termbook
 [c-termbook-crates.io-badge]: https://img.shields.io/badge/crates.io-termbook-crimson
@@ -3127,7 +3129,7 @@
 [c-tinytemplate-crates.io-badge]: https://img.shields.io/badge/crates.io-tinytemplate-crimson
 [c-tinytemplate-crates.io]: https://crates.io/crates/tinytemplate
 [c-tinytemplate-github-badge]: https://img.shields.io/badge/tinytemplate-steelblue?logo=github
-[c-tinytemplate-github]: https://github.com/bheisler/tinytemplate
+[c-tinytemplate-github]: https://github.com/bheisler/TinyTemplate
 [c-tinytemplate-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tinytemplate-yellow
 [c-tinytemplate-lib.rs]: https://lib.rs/crates/tinytemplate
 [c-tinytemplate]: https://docs.rs/tinytemplate

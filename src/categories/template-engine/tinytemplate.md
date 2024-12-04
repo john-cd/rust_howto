@@ -2,13 +2,11 @@
 
 {{#include tinytemplate.incl.md}}
 
-## `tinytemplate` {#tinytemplate}
+## Create markdown fragments from a template {#tinytemplate}
 
-[![tinytemplate][c-tinytemplate-badge]][c-tinytemplate]{{hi:tinytemplate}}
-[![tinytemplate-crates.io][c-tinytemplate-crates.io-badge]][c-tinytemplate-crates.io]
-[![tinytemplate-github][c-tinytemplate-github-badge]][c-tinytemplate-github]
-[![tinytemplate-lib.rs][c-tinytemplate-lib.rs-badge]][c-tinytemplate-lib.rs]
-[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}
+[![tinytemplate][c-tinytemplate-badge]][c-tinytemplate] [![tinytemplate-crates.io][c-tinytemplate-crates.io-badge]][c-tinytemplate-crates.io] [![tinytemplate-github][c-tinytemplate-github-badge]][c-tinytemplate-github] [![tinytemplate-lib.rs][c-tinytemplate-lib.rs-badge]][c-tinytemplate-lib.rs]{{hi:tinytemplate}}{{hi:Html}}{{hi:Template}} [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}
+
+`tinytemplate` is a simple, lightweight template engine.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/template_engine/tinytemplate.rs:example}}
