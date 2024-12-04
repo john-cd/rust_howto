@@ -2,7 +2,7 @@
 
 {{#include parsing.incl.md}}
 
-## Nom {#nom}
+## Create a parser with `nom` {#nom}
 
 [![nom][c-nom-badge]][c-nom]{{hi:nom}}
 [![nom-crates.io][c-nom-crates.io-badge]][c-nom-crates.io]
@@ -18,7 +18,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 {{#include ../../../deps/tests/categories/parsing/nom.rs:example}}
 ```
 
-## Pest {#pest}
+## Create a parser with `pest` {#pest}
 
 [![pest][c-pest-badge]][c-pest]{{hi:pest}}
 [![pest-crates.io][c-pest-crates.io-badge]][c-pest-crates.io]
@@ -26,7 +26,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 [![pest-lib.rs][c-pest-lib.rs-badge]][c-pest-lib.rs]
 [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-[`pest`][c-pest-website]{{hi:pest}}⮳ is a general purpose parser written in Rust with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia-parsing-expression-grammars]⮳ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
+[`pest`][c-pest-website]{{hi:pest}}⮳ is a general-purpose parser written in Rust, with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia-parsing-expression-grammars]⮳ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
 
 Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
@@ -34,7 +34,7 @@ Grammars are saved in separate `.pest` files which are never mixed with proced
 {{#include ../../../deps/tests/categories/parsing/pest.rs:example}}
 ```
 
-### Tree sitter {#tree-sitter}
+### Create a parser with `tree-sitter` {#tree-sitter}
 
 [![tree-sitter][c-tree_sitter-badge]][c-tree_sitter]{{hi:tree-sitter}}
 [![tree-sitter-crates.io][c-tree_sitter-crates.io-badge]][c-tree_sitter-crates.io]
