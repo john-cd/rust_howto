@@ -59,23 +59,17 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../../deps/tests/categories/text_processing/replace.rs:example}}
 ```
 
+## Use regular expressions with backreferences and lookarounds {#fancy-regex}
+
+[![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] [![fancy-regex-crates.io][c-fancy_regex-crates.io-badge]][c-fancy_regex-crates.io] [![fancy-regex-github][c-fancy_regex-github-badge]][c-fancy_regex-github] [![fancy-regex-lib.rs][c-fancy_regex-lib.rs-badge]][c-fancy_regex-lib.rs]{{hi:fancy-regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+`regex` is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use `fancy-regex` if you need features that `regex` doesn't support.
+
+{#example fancy-regex}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 cover fancy-regex
-
-regex
-De facto standard regex library. Very fast, but does not support fancier features such as backtracking.
-
-fancy-regex
-
-[![fancy-regex][c-fancy_regex-badge]][c-fancy_regex]{{hi:fancy_regex}}
-[![fancy-regex-crates.io][c-fancy_regex-crates.io-badge]][c-fancy_regex-crates.io]
-[![fancy-regex-github][c-fancy_regex-github-badge]][c-fancy_regex-github]
-[![fancy-regex-lib.rs][c-fancy_regex-lib.rs-badge]][c-fancy_regex-lib.rs]
-
-{{hi:Text processing}}
-
-Use if need features such as backtracking which regex doesn't support
+TODO P1 write
 </div>

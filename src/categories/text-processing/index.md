@@ -4,9 +4,15 @@ Deal with the complexities of human language when expressed in textual form.
 
 [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
+## Find, extract, and replace text using regular expressions
+
 {{#include regex.incl.md}}
 
+## Parse strings
+
 {{#include string_parsing.incl.md}}
+
+## Concatenate strings
 
 {{#include string_concat.incl.md}}
 

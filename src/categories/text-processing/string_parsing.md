@@ -2,7 +2,7 @@
 
 {{#include string_parsing.incl.md}}
 
-## Collect Unicode Graphemes {#collect-unicode-graphemes}
+## Collect unicode graphemes {#collect-unicode-graphemes}
 
 [![unicode-segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation] [![unicode-segmentation-crates.io][c-unicode_segmentation-crates.io-badge]][c-unicode_segmentation-crates.io] [![unicode-segmentation-github][c-unicode_segmentation-github-badge]][c-unicode_segmentation-github] [![unicode-segmentation-lib.rs][c-unicode_segmentation-lib.rs-badge]][c-unicode_segmentation-lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

@@ -1,7 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Benchmark][ex-text-processing-benchmark] |  |  |
+| [Comparison of string concatenation methods][ex-text-processing-benchmark] | [![std][c-std-badge]][c-std] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 
 <div class="hidden">
-TODO P1
 </div>

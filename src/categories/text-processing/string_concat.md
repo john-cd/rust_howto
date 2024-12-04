@@ -4,9 +4,9 @@
 
 {{#include string_concat.incl.md}}
 
-## Benchmark {#benchmark}
+## Comparison of string concatenation methods {#benchmark}
 
-- [concat benchmark][concat-benchmark-github]⮳
+[String concatenation benchmark][concat-benchmark-github]⮳
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/text_processing/string_concat.rs:example}}
