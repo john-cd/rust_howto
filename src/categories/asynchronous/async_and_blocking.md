@@ -53,7 +53,7 @@ If a blocking operation{{hi:Blocking operation}} keeps running forever, you shou
 
 In other cases, it may be easier to structure the application as largely synchronous{{hi:Synchronous code}}, with smaller or logically distinct asynchronous{{hi:Asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
-### Futures executor {#futures-executor}
+### Use the futures executor {#futures-executor}
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 [![futures_executor-crates.io][c-futures_executor-crates.io-badge]][c-futures_executor-crates.io]
@@ -79,4 +79,5 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 cleanup
 </div>

@@ -6,5 +6,5 @@
 | [Async runtimes][ex-asynchronous-async-runtimes] | [![async-std][c-async_std-badge]][c-async_std] [![mio][c-mio-badge]][c-mio] [![smol][c-smol-badge]][c-smol] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO P1
+TODO P1 cleanup
 </div>
