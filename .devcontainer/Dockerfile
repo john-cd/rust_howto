@@ -5,7 +5,7 @@
 # See also https://docs.docker.com/language/rust/
 
 # Default value, overriden by the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
-ARG RUST_IMAGE_LABEL=1.82.0-bookworm
+ARG RUST_IMAGE_LABEL=1.83.0-bookworm
 
 FROM rust:${RUST_IMAGE_LABEL} AS base
 ## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
@@ -187,6 +187,9 @@ RUN cargo binstall --no-confirm ripgrep
 #   && cargo binstall --no-confirm toml2json \
 ## Background code checker `bacon`
 #   && cargo install --locked bacon
+
+RUN mkdir -p ~/.local/share/bash-completion/completions \
+    && rustup completions bash > ~/.local/share/bash-completion/completions/rustup
 
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
