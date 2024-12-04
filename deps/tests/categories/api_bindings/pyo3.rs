@@ -1,4 +1,6 @@
 #![allow(dead_code)]
+#![allow(unsafe_op_in_unsafe_fn)]
+// TODO ^ edition 2024 migration
 // ANCHOR: example
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;

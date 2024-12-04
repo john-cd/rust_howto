@@ -12,7 +12,7 @@ struct Point {
 
 impl Distribution<Point> for Standard {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
-        let (rand_x, rand_y) = rng.gen();
+        let (rand_x, rand_y) = rng.r#gen();
         Point {
             x: rand_x,
             y: rand_y,
@@ -22,8 +22,8 @@ impl Distribution<Point> for Standard {
 
 fn main() {
     let mut rng = rand::thread_rng();
-    let rand_tuple = rng.gen::<(i32, bool, f64)>();
-    let rand_point: Point = rng.gen();
+    let rand_tuple = rng.r#gen::<(i32, bool, f64)>();
+    let rand_point: Point = rng.r#gen();
     println!("Random tuple: {:?}", rand_tuple);
     println!("Random Point: {:?}", rand_point);
 }
