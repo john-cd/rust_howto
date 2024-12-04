@@ -3,5 +3,4 @@
 | [Geoscience][ex-science_geo-geo] |  | [![cat-science::geo][cat-science::geo-badge]][cat-science::geo] |
 
 <div class="hidden">
-TODO P2
 </div>
