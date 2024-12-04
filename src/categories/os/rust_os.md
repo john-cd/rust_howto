@@ -10,11 +10,11 @@
 
 ## Redox {#redox}
 
-[redox][redox-github]{{hi:redox}}⮳ is a Rust Operating System.
+[Redox][redox-website]⮳[(github)][redox-github]{{hi:redox}}⮳ is an experimental, Unix-like, general-purpose, microkernel-based operating system written in Rust, aiming to bring Rust to a modern microkernel, a full set of programs, and be a complete alternative to Linux and BSD.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+TODO P1 write; move to written-in-rust?
 </div>

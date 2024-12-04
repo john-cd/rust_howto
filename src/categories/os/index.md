@@ -4,9 +4,15 @@
 
 Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 
+## External
+
 {{#include external.incl.md}}
 
+## Low-level system calls
+
 {{#include low_level_system_calls.incl.md}}
+
+## Operating Systems written in Rust
 
 {{#include rust_os.incl.md}}
 

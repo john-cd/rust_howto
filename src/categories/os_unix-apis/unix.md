@@ -2,7 +2,7 @@
 
 {{#include unix.incl.md}}{{hi:Operating systems::Unix APIs}}
 
-## `rustix` {#rustix}
+## Bind to Unix-specific APIs with `rustix` {#rustix}
 
 [![rustix][c-rustix-badge]][c-rustix]{{hi:rustix}}
 [![rustix-crates.io][c-rustix-crates.io-badge]][c-rustix-crates.io]
@@ -19,7 +19,7 @@ Efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic R
 {{#include ../../../deps/tests/categories/os_unix_apis/rustix.rs:example}}
 ```
 
-## `nix` {#nix}
+## Bind to Unix-specific APIs with `nix` {#nix}
 
 [![nix][c-nix-badge]][c-nix]{{hi:nix}}
 [![nix-crates.io][c-nix-crates.io-badge]][c-nix-crates.io]

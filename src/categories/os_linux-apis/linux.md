@@ -1,8 +1,8 @@
 # OS - Linux APIs
 
-{{#include linux.incl.md}}
+{{#include linux.incl.md}}{{hi:Linux APIs}}
 
-## Linux {#linux}
+## Bind to Linux APIs {#linux}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os_linux_apis/linux.rs:example}}
@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+TODO P2 write
 </div>

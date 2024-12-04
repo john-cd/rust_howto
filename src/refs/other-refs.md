@@ -555,7 +555,10 @@
 [rediron-github]: https://github.com/orgs/OCamlPro
 [rediron-website]: https://red-iron.eu
 [redjack-website]: https://www.redjack.com
+[redox-website]: https://www.redox-os.org
+[redox-website-badge]: https://img.shields.io/badge/redox-coral
 [redox-github]: https://github.com/redox-os/redox
+[redox-github-badge]: https://img.shields.io/badge/redox-steelblue?logo=github
 [redsift-github]: https://github.com/redsift
 [redsift-website]: https://redsift.com
 [renault-website]: https://www.renaultgroup.com

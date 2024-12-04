@@ -2,9 +2,9 @@
 
 {{#include external.incl.md}}
 
-## Run an external command and process stdout {#run-an-external-command-and-process-stdout}
+## Run an external command and process its `stdout` {#run-an-external-command-and-process-stdout}
 
-[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
+[![std][c-std-badge]][c-std] [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
 
 Runs `git log --oneline` as an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and inspects its [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ using [`regex::Regex`][c-regex::Regex]{{hi:regex::Regex}}⮳ to get the hash and message of the last 5 commits.
 
@@ -12,11 +12,11 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 {{#include ../../../deps/tests/categories/os/process_output.rs:example}}
 ```
 
-## Run an external command passing it stdin and check for an error code {#run-an-external-command-passing-stdin-and-check-for-error-code}
+## Run an external command, passing it `stdin`, then check for an error code {#run-an-external-command-passing-stdin-and-check-for-error-code}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:External command}}
 
-Opens the `python` interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
+Opens the `python` interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. The [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os/send_input.rs:example}}
@@ -26,16 +26,15 @@ Opens the `python` interpreter using an external [`std::process::Command`][c-std
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:Piped external commands}}
 
-Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah. | sort -hr | head -n 10`.
+Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah . | sort -hr | head -n 10`.
 
-[`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:Process}}. Output of a child process is captured with a
-`std::process::Stdio::piped`⮳ between parent and child.
+[`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ represent a process{{hi:Process}}. Output of a child process is captured with a `std::process::Stdio::piped`⮳ between parent and child.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os/piped.rs:example}}
 ```
 
-## Redirect both stdout and stderr of child process to the same file {#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file}
+## Redirect both the `stdout` and `stderr` of a child process to the same file {#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -47,21 +46,20 @@ The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt
 {{#include ../../../deps/tests/categories/os/error_file.rs:example}}
 ```
 
-## Continuously process child process' outputs {#continuously-process-child-process-outputs}
+## Continuously process the outputs of a child process {#continuously-process-child-process-outputs}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
-In [Run an external command and process stdout][p-run-an-external-command-and-process-stdout], processing doesn't start until external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
+In [Run an external command and process its `stdout`][p-run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
 [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ continuously as soon as the [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ is updated.
 
-The below recipe is equivalent to the Unix shell command
-`journalctl | grep usb`.
+The below recipe is equivalent to the Unix shell command `journalctl | grep usb`.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os/continuous.rs:example}}
 ```
 
-## Read Environment Variable {#read-environment-variable}
+## Read an environment variable {#read-environment-variable}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -78,7 +76,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 [![duct-github][c-duct-github-badge]][c-duct-github]
 [![duct-lib.rs][c-duct-lib.rs-badge]][c-duct-lib.rs]
 
-[duct.rs][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. Duct makes it easy to build pipelines and redirect IO like a shell. At the same time, Duct helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
+[`duct`][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. `duct` makes it easy to build pipelines and redirect I/O like a shell. At the same time, `duct` helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
 
 [p-run-an-external-command-and-process-stdout]: #run-an-external-command-and-process-stdout
 [p-run-piped-external-commands]: #run-piped-external-commands

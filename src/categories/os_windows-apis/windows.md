@@ -2,7 +2,7 @@
 
 {{#include windows.incl.md}}
 
-## `windows` {#windows}
+## Bind to Windows APIs with `windows` {#windows}
 
 [![windows][c-windows-badge]][c-windows]{{hi:Windows}}
 [![windows-crates.io][c-windows-crates.io-badge]][c-windows-crates.io]
@@ -16,7 +16,7 @@ The official Microsoft-provided crate for interacting with windows APIs
 {{#include ../../../deps/tests/categories/os_windows_apis/windows.rs:example}}
 ```
 
-## `winapi` {#winapi}
+## Bind to Windows APIs with `winapi` {#winapi}
 
 [![winapi][c-winapi-badge]][c-winapi]{{hi:winapi}}
 [![winapi-crates.io][c-winapi-crates.io-badge]][c-winapi-crates.io]

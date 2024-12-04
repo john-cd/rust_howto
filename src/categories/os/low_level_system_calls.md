@@ -2,7 +2,7 @@
 
 {{#include low_level_system_calls.incl.md}}
 
-## Call `libc` {#call-libc}
+## Call `libc`, the C standard library {#call-libc}
 
 [![libc][c-libc-badge]][c-libc]{{hi:libc}}
 [![libc-crates.io][c-libc-crates.io-badge]][c-libc-crates.io]
@@ -12,7 +12,7 @@
 [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Bindings for directly calling libc functions.
+Bindings for directly calling `libc` functions.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os/libc.rs:example}}
