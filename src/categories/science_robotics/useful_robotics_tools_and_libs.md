@@ -2,7 +2,7 @@
 
 {{#include useful_robotics_tools_and_libs.incl.md}}
 
-## Open CV {#opencv}
+## Computer Vision {#opencv}
 
 [![opencv][c-opencv-badge]][c-opencv]{{hi:opencv}}
 [![opencv-crates.io][c-opencv-crates.io-badge]][c-opencv-crates.io]

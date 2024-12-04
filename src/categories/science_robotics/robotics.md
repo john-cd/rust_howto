@@ -8,9 +8,9 @@
 
 [![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳
 
-[why-rust-for-robots][why-rust-for-robots]⮳
+[Why rust for robots][why-rust-for-robots]⮳
 
-[linux-embracing-rust-will-boost-robotics-community][linux-embracing-rust-will-boost-robotics-community]⮳
+[Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/science_robotics/robotics.rs:example}}
@@ -20,5 +20,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: organize
+TODO P2 organize
 </div>
