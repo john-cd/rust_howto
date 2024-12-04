@@ -14,5 +14,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+TODO P2 choose crates, write
 </div>

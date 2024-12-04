@@ -2,7 +2,7 @@
 
 [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}}
 
-Ways to view data, such as plotting or graphing.
+View, plot or graph data.
 
 {{#include visualization.incl.md}}
 
@@ -10,5 +10,4 @@ Ways to view data, such as plotting or graphing.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write
 </div>
