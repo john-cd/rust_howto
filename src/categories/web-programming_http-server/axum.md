@@ -1,27 +1,27 @@
-# Axum {#axum}
+# Axum
 
 {{#include axum.incl.md}}
 
-[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
+## Create a web server with `axum` {#axum}
 
-[![crates.io-example-source-code][crates.io-example-source-code-badge]][crates.io-example-source-code]
+[![axum][c-axum-badge]][c-axum] [![axum-crates.io][c-axum-crates.io-badge]][c-axum-crates.io] [![axum-github][c-axum-github-badge]][c-axum-github] [![axum-lib.rs][c-axum-lib.rs-badge]][c-axum-lib.rs]{{hi:axum}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
-[Crates.io example source code (using Axum)][crates.io-example-source-code]⮳
-
-- [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳ see also [realworld.how][realworld.how]⮳
-- [Axum examples][c-axum-examples]⮳
-
-{{hi:axum}}
-
-A minimal and ergonomic framework. An official part of the tokio project. Recommend for most new projects.
+`axum` is a web framework that focuses on ergonomics and modularity. It is an official part of the `tokio` project. `axum` is recommended for most new projects.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/web_programming_http_server/axum.rs:example}}
 ```
 
+## See also
+
+- [Axum examples][c-axum-examples]⮳
+- ["Real world" examples with `axum` and `sqlx`][realworld-rust-axum-sqlx-github]⮳
+- Explore [`realworld.how`][realworld.how]⮳ for additional examples.
+- [`crates.io` example source code (using Axum)][crates.io-example-source-code]⮳
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: write
+TODO P1 write
 </div>

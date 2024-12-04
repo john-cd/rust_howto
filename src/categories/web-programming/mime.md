@@ -2,7 +2,7 @@
 
 {{#include mime.incl.md}}
 
-## Get MIME type from string {#get-mime-type-from-string}
+## Get a MIME type from a string {#get-mime-type-from-string}
 
 [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -12,7 +12,7 @@ The following example shows how to parse a [`mime::Mime`][c-mime::Mime]{{hi:mime
 {{#include ../../../deps/tests/categories/web_programming/string.rs:example}}
 ```
 
-## Get MIME type from filename {#get-mimetype-from-filename}
+## Get a MIME type from a filename {#get-mimetype-from-filename}
 
 [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 

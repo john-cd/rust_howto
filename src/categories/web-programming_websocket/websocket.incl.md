@@ -1,8 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Low-level][ex-web-programming_websocket-low-level]  |  | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
-| [General Purpose][ex-web-programming_websocket-general-purpose] |  | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
+| [Implement Websocket using a low-level library ][ex-web-programming_websocket-low-level] | [![tungstenite][c-tungstenite-badge]][c-tungstenite]{{hi:tungstenite}} | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
+| [Implement Websocket while using `tokio`][ex-web-programming_websocket-general-purpose] | [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
 
 <div class="hidden">
-TODO P2
 </div>

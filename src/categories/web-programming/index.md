@@ -1,18 +1,18 @@
 # Web Programming
 
-Create applications for the web{{hi:Web programming}}.
-
 [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]
 
-## Uniform Resource Locations (URL)
+Create applications for the Web.
+
+## Manipulate Uniform Resource Locations (URLs)
 
 {{#include url.incl.md}}
 
-## Media Types (MIME)
+## Handle Media Types (MIME)
 
 {{#include mime.incl.md}}
 
-## Scraping Web Pages
+## Scrape Web Pages
 
 {{#include scraping.incl.md}}
 
@@ -20,7 +20,7 @@ Create applications for the web{{hi:Web programming}}.
 
 [Are we Web yet?][are-we-web-yet?-website]⮳
 
-[Building a crawler in Rust: Design and Associated Types][blog-building-a-crawler-in-rust]⮳
+[Building a crawler in Rust: design and associated types][blog-building-a-crawler-in-rust]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -9,7 +9,7 @@
 [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github]
 [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]
 
-Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Requires tokio runtime.
+`reqwest` is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the `tokio` runtime.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/web_programming_http_client/reqwest.rs:example}}
@@ -23,7 +23,7 @@ Full-fat HTTP client. Can be used in both synchronous and asynchronous code. Req
 [![ureq-lib.rs][c-ureq-lib.rs-badge]][c-ureq-lib.rs]
 [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
-Minimal synchronous HTTP client focussed on simplicity and minimising dependencies.
+`ureq` is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/web_programming_http_client/ureq.rs:example}}
@@ -36,7 +36,7 @@ Minimal synchronous HTTP client focussed on simplicity and minimising dependenci
 [![hyper-github][c-hyper-github-badge]][c-hyper-github]
 [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]
 
-A low-level HTTP implementation (both client and server). Implements HTTP/1, and HTTP/2. Works best with the tokio async runtime, but can support other runtimes.
+`hyper` is a low-level HTTP implementation (both client and server). It implements HTTP/1, and HTTP/2. It works best with the `tokio` async runtime, but can support other runtimes.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/web_programming_http_client/hyper.rs:example}}

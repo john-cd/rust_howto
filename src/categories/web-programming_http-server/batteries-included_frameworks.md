@@ -2,7 +2,7 @@
 
 {{#include batteries-included_frameworks.incl.md}}
 
-## Loco {#loco}
+## `loco` {#loco}
 
 [![loco_rs][c-loco_rs-badge]][c-loco_rs]{{hi:loco_rs}}{{hi:HTTP server}}
 [![loco_rs-crates.io][c-loco_rs-crates.io-badge]][c-loco_rs-crates.io]
@@ -26,5 +26,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: write
+TODO P1 write
 </div>

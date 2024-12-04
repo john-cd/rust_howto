@@ -8,7 +8,6 @@
 [ex-web-programming_http-server-loco]: batteries-included_frameworks.md#loco
 [ex-web-programming_http-server-rocket]: other_frameworks.md#rocket
 [ex-web-programming_http-server-rust-on-nails]: batteries-included_frameworks.md#rust-on-nails
-[ex-web-programming_http-server-themes]: static_website_generators.md#themes
 [ex-web-programming_http-server-tonic]: grpc.md#tonic
 [ex-web-programming_http-server-tower-http]: middleware.md#tower-http
 [ex-web-programming_http-server-tower]: middleware.md#tower

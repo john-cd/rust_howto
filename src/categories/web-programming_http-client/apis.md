@@ -1,4 +1,4 @@
-# Calling a Web API
+# Call an API
 
 {{#include apis.incl.md}}
 
@@ -26,7 +26,7 @@ Due to both [`reqwest::ClientBuilder::build`][c-reqwest::ClientBuilder::build]{{
 {{#include ../../../deps/tests/categories/web_programming_http_client/rest_head.rs:example}}
 ```
 
-## Create and delete Gist with GitHub API {#create-and-delete-gist-with-github-api}
+## Create and delete a Gist with the GitHub API {#create-and-delete-gist-with-github-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 

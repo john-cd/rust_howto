@@ -2,7 +2,7 @@
 
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:Websocket}}
 
-Communicate over the WebSocket protocol
+Communicate over the WebSocket protocol.
 
 {{#include websocket.incl.md}}
 
@@ -10,5 +10,4 @@ Communicate over the WebSocket protocol
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
 </div>

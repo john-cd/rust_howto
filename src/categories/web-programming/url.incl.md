@@ -7,5 +7,4 @@
 | [Remove fragment identifiers and query pairs from a URL][ex-web-programming-remove-fragment-identifiers-and-query-pairs]  | [![url][c-url-badge]][c-url] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] [![cat-web-programming][cat-web-programming-badge]][cat-web-programming] |
 
 <div class="hidden">
-TODO P1
 </div>

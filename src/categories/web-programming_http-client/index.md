@@ -8,15 +8,15 @@ Make HTTP network requests.
 
 {{#include http_clients.incl.md}}
 
-## Requests
+## Make HTTP requests
 
 {{#include requests.incl.md}}
 
-## APIs
+## Call an APIs
 
 {{#include apis.incl.md}}
 
-## Downloads
+## Download and upload
 
 {{#include download.incl.md}}
 
