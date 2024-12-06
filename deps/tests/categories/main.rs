@@ -49,6 +49,7 @@ mod filesystem;
 mod finance;
 mod game_development;
 mod game_engines;
+mod games;
 mod graphics;
 mod gui;
 mod hardware_support;

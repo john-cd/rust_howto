@@ -65,7 +65,9 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 
 `regex` is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use `fancy-regex` if you need features that `regex` doesn't support.
 
-{#example fancy-regex}
+```rust,editable
+{{#include ../../../deps/tests/categories/text_processing/fancy_regex.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

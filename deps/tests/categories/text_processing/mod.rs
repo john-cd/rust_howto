@@ -1,4 +1,5 @@
 mod email;
+mod fancy_regex;
 mod filter_log;
 mod from_str;
 mod graphemes;
