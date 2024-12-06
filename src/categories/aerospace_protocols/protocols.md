@@ -1,6 +1,6 @@
 # Aerospace Protocols
 
-{{#include aerospace.incl.md}}
+{{#include protocols.incl.md}}
 
 ## Aerospace Protocols {#aerospace_protocols}
 
