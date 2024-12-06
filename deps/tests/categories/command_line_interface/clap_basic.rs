@@ -1,9 +1,9 @@
 // ANCHOR: example
 use std::path::PathBuf;
 
-use clap::value_parser;
 use clap::Arg;
 use clap::Command;
+use clap::value_parser;
 
 fn cli() -> Command {
     clap::Command::new("My Test Program")

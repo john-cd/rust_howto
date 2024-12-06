@@ -7,6 +7,7 @@ mod hex;
 mod invalid;
 mod json;
 mod monostate;
+mod percent_encode;
 mod read;
 mod read1;
 mod serde;

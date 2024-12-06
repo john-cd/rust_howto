@@ -274,6 +274,13 @@ list_examples_not_used_in_book:
 convert_example_placeholders:
   ./scripts/examples/convert_example_placeholders.sh
 
+# List examples that were not included into a module somehow and that are not tested
+list_examples_not_in_tests:
+  #! /bin/bash
+  comm -1 -3 <(find ./deps/tests -type f \( -name "main.rs" -o -name "mod.rs" \) -exec sed -nE 's/mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
+          <(find ./deps/tests -mindepth 2 -type f -name "*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d' | sort -u)
+  echo "DONE"
+
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
 # Make sure that the local references i.e. {{#include refs.incl.md}} are included in every markdown file; note that a few files (indices, TOC...) don't need local references
