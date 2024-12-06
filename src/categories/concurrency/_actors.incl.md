@@ -1,8 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Stakker][ex-concurrency-stakker] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Riker][ex-concurrency-riker] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Alternatives][ex-concurrency-alternatives] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Utilities][ex-concurrency-utilities] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Actix][ex-concurrency-actix] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [Ractor][ex-concurrency-ractor] |  | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Stakker][ex-concurrency-stakker] | [![stakker][c-stakker-badge]][c-stakker] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Riker][ex-concurrency-riker] | [![riker][c-riker-badge]][c-riker] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Ractor][ex-concurrency-ractor] | [![ractor][c-ractor-badge]][c-ractor] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Actix][ex-concurrency-actix] | [![actix][c-actix-badge]][c-actix] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [Utilities][ex-concurrency-utilities] | [![await-tree][c-await_tree-badge]][c-await_tree] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |

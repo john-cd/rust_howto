@@ -47,6 +47,24 @@
 - [Accessibility](categories/accessibility/_index.md)
   - [Enable screen readers](categories/accessibility/screen_readers.md)
 
+- [Aerospace](categories/aerospace/_index.md)
+  - [Aerospace](categories/aerospace/aero.md)
+
+- [Aerospace - Drones](categories/aerospace_drones/_index.md)
+  - [Drones](categories/aerospace_drones/drones.md)
+
+- [Aerospace - Protocols](categories/aerospace_protocols/_index.md)
+  - [Protocols](categories/aerospace_protocols/protocols.md)
+
+- [Aerospace - Simulation](categories/aerospace_simulation/_index.md)
+  - [Simulation](categories/aerospace_simulation/simulation.md)
+
+- [Aerospace - Space Protocols](categories/aerospace_space-protocols/_index.md)
+  - [Space Protocols](categories/aerospace_space-protocols/space_protocols.md)
+
+- [Aerospace - Unmanned Aerial Vehicles](categories/aerospace_unmanned-aerial-vehicles/_index.md)
+  - [UAVs](categories/aerospace_unmanned-aerial-vehicles/uavs.md)
+
 - [Algorithms](categories/algorithms/index.md)
   - [Generate random values](categories/algorithms/randomness.md)
   - [Sort a vector](categories/algorithms/sorting.md)
@@ -103,13 +121,14 @@
   - [Open CV](categories/computer-vision/opencv.md)
 
 - [Concurrency](categories/concurrency/index.md)
+  - [Explicit threads](categories/concurrency/explicit_threads.md)
+  - [Threadpools](categories/concurrency/threadpool.md)
+  - [Multithreading with `crossbeam`](categories/concurrency/crossbeam.md)
+  - [Data parallelism](categories/concurrency/data_parallelism.md)
+  - [Message passing and Channels](categories/concurrency/message_passing.md)
+  - [Shared-state concurrency](categories/concurrency/shared_state.md)
+  - [Concurrent data structures](categories/concurrency/concurrent_data_structures.md)
   - [Send and Sync](categories/concurrency/send.md)
-  - [Multi-threading](categories/concurrency/multithreading.md)
-  - [Explicit threads](categories/concurrency/threads.md)
-  - [Data parallelism](categories/concurrency/parallel.md)
-  - [Message passing](categories/concurrency/message_passing.md)
-  - [Shared-state concurrency](categories/concurrency/shared-state/shared_state.md)
-  - [Concurrent data structures](categories/concurrency/shared-state/concurrent_data_structures.md)
   - [Actors](categories/concurrency/_actors.md)
 
 - [Configuration](categories/config/index.md)
@@ -121,6 +140,9 @@
 
 - [Cross-platform Development](other/cross-platform/_index.md)
   - [Crux](other/cross-platform/crux.md)
+
+- [Cryptocurrencies](categories/cryptography_cryptocurrencies/_index.md)
+  - [Cryptocurrencies](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Hashing](categories/cryptography/hashing.md)
@@ -250,6 +272,9 @@
 
 - [Finance](categories/finance/_index.md)
   - [Quant](categories/finance/quant.md)
+
+- [Games](categories/games/_index.md)
+  - [Games](categories/games/games.md)
 
 - [Game development](categories/game-development/_index.md)
   - [Game development](categories/game-development/game_development.md)

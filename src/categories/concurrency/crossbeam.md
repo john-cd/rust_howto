@@ -1,6 +1,6 @@
-# Threads
+# Multithreading with the `crossbeam` crate
 
-{{#include threads.incl.md}}
+{{#include crossbeam.incl.md}}
 
 ## Spawn a short-lived thread {#spawn-a-short-lived-thread}
 
@@ -43,99 +43,6 @@ This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/concurrency/crossbeam_spsc.rs:example}}
-```
-
-## Maintain global mutable state {#global-mutable-state}
-
-[![lazy_static][c-lazy_static-badge]][c-lazy_static] [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io] [![lazy_static-github][c-lazy_static-github-badge]][c-lazy_static-github] [![lazy_static-lib.rs][c-lazy_static-lib.rs-badge]][c-lazy_static-lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}{{hi:Global mutable state}}
-
-Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c-lazy_static]{{hi:lazy_static}}⮳ creates a globally available `static ref` which requires a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ to allow mutation (also see [`std::sync::RwLock`][c-std::sync::RwLock]{{hi:std::sync::RwLock}}⮳). The [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c-std::sync::MutexGuard]{{hi:std::sync::MutexGuard}}⮳ must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/global_mut_state.rs:example}}
-```
-
-## Calculate SHA256 sum of iso files concurrently {#sha256-of-iso-files-concurrently}
-
-[![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}} [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}} [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}} [![ring][c-ring-badge]][c-ring]{{hi:ring}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [{{hi:Concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
-
-This example calculates the SHA256{{hi:SHA256}} for every file with iso extension in the current directory. A threadpool{{hi:Thread pools}} generates threads equal to the number of cores present in the system found with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳. [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ iterates the current directory and calls [`walkdir::WalkDir::new`][c-walkdir::WalkDir::new]{{hi:walkdir::WalkDir::new}}⮳ to perform the operations of reading and computing SHA256 hash.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/threadpool_walk.rs:example}}
-```
-
-## Draw fractal dispatching work to a thread pool {#draw-fractal-threadpool}
-
-[![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}} [![num][c-num-badge]][c-num]{{hi:num}} [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}} [![image][c-image-badge]][c-image]{{hi:image}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-science][cat-science-badge]][cat-science]{{hi:science}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}}
-
-This example generates an image by drawing a fractal from the [Julia set][web-julia-set]⮳ with a thread pool{{hi:Thread pools}} for distributed computation.
-
-[![julia-set][web-julia-set]][web-julia-set]
-
-[web-julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
-
-Allocate memory for output image of given width and height with [`image::ImageBuffer::new`][c-image::ImageBuffer::new]{{hi:image::ImageBuffer::new}}⮳.
-[`image::Rgb::from_channels`][c-image::Rgb::from_channels]{{hi:image::Rgb::from_channels}}⮳ calculates RGB pixel values. Create [`threadpool::ThreadPool`][c-threadpool::ThreadPool]{{hi:threadpool::ThreadPool}}⮳ with thread count equal to number of cores with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
-[`threadpool::ThreadPool::execute`][c-threadpool::ThreadPool::execute]{{hi:threadpool::ThreadPool::execute}}⮳ receives each pixel as a separate job.
-
-[`std::sync::mpsc::channel`][c-std::sync::mpsc::channel]{{hi:std::sync::mpsc::channel}}⮳ receives the jobs and [`std::sync::mpsc::Receiver::recv`][c-std::sync::mpsc::Receiver::recv]{{hi:std::sync::mpsc::Receiver::recv}}⮳ retrieves them.
-[`image::ImageBuffer::put_pixel`][c-image::ImageBuffer::put_pixel]{{hi:image::ImageBuffer::put_pixel}}⮳ uses the data to set the pixel color.
-[`image::ImageBuffer::save`][c-image::ImageBuffer::save]{{hi:image::ImageBuffer::save}}⮳ writes the image to `output.png`.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/threadpool_fractal.rs:example}}
-```
-
-## Channels {#channels}
-
-### `crossbeam-channel` {#crossbeam-channel2}
-
-[![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel]{{hi:crossbeam-channel}}
-[![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io]
-[![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github]
-[![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]
-
-The absolute fastest channel implementation available. Implements Go-like 'select' feature.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/crossbeam_channel.rs:example}}
-```
-
-### `flume` {#flume}
-
-[![flume][c-flume-badge]][c-flume]{{hi:flume}}
-[![flume-crates.io][c-flume-crates.io-badge]][c-flume-crates.io]
-[![flume-github][c-flume-github-badge]][c-flume-github]
-[![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
-
-Smaller and simpler than `crossbeam-channel` and almost as fast.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/flume.rs:example}}
-```
-
-### `tokio` {#tokio}
-
-[![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
-
-Tokio's `sync` module provides channels for using in async code.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/tokio.rs:example}}
-```
-
-### `postage` {#postage}
-
-[![postage][c-postage-badge]][c-postage]{{hi:postage}}
-[![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
-[![postage-github][c-postage-github-badge]][c-postage-github]
-[![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
-
-Channels that integrate nicely with async code, with different options than Tokio.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/postage.rs:example}}
 ```
 
 {{#include refs.incl.md}}

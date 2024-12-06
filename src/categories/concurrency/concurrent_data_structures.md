@@ -11,7 +11,7 @@ Fast concurrent HashMap for Rust.
 [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is an implementation of a concurrent associative array{{hi:Concurrent associative array}} / hashmap in Rust. [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,editable,noplayground
-{{#include ../../../../deps/tests/categories/concurrency/dashmap.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/dashmap.rs:example}}
 ```
 
 ## Bounded Multi-producer Multi-consumer Queue {#crossbeam-queue}
@@ -21,7 +21,7 @@ Fast concurrent HashMap for Rust.
 Concurrent queues.
 
 ```rust,editable
-{{#include ../../../../deps/tests/categories/concurrency/crossbeam_queue.rs:example}}
+{{#include ../../../deps/tests/categories/concurrency/crossbeam_queue.rs:example}}
 ```
 
 ## `flurry` {#flurry}
@@ -33,7 +33,7 @@ Concurrent queues.
 Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳ as well.
 
 {{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO P1 add flurry example

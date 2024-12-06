@@ -1,4 +1,4 @@
-# Message passing
+# Message passing and channels
 
 {{#include message_passing.incl.md}}
 
@@ -18,10 +18,14 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 [![crossbeam-channel-website][c-crossbeam_channel-website-badge]][c-crossbeam_channel-website] [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io] [![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github] [![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing.
+Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/concurrency/message_passing_crossbeam_channel.rs:example}}
+```
+
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/crossbeam_channel.rs:example}}
 ```
 
 Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi:Timeouts}}
@@ -30,13 +34,43 @@ Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi
 {{#include ../../../deps/tests/categories/concurrency/message_passing_crossbeam_channel_after_tick.rs:example}}
 ```
 
-## See also
+### `flume` {#flume}
 
-[![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+[![flume][c-flume-badge]][c-flume]{{hi:flume}}
+[![flume-crates.io][c-flume-crates.io-badge]][c-flume-crates.io]
+[![flume-github][c-flume-github-badge]][c-flume-github]
+[![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
 
-[![crossbeam][c-crossbeam-badge]][c-crossbeam]{{hi:crossbeam}}
+Smaller and simpler than `crossbeam-channel` and almost as fast.
+
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/flume.rs:example}}
+```
+
+### `tokio` {#tokio}
+
+[![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
+
+Tokio's `sync` module provides channels for using in async code.
+
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/tokio.rs:example}}
+```
+
+### `postage` {#postage}
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
+[![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
+[![postage-github][c-postage-github-badge]][c-postage-github]
+[![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
+
+Channels that integrate nicely with async code, with different options than Tokio.
+
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/postage.rs:example}}
+```
+
+## See also
 
 [Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳
 
@@ -44,5 +78,5 @@ Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 polish; organize see also
+TODO P1 polish
 </div>

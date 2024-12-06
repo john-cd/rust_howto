@@ -84,15 +84,39 @@
 
 {{#include categories/compression/tar.incl.md}}
 
-## Shared State
+## Concurrency
 
 ### Concurrent Data Structures
 
-{{#include categories/concurrency/shared-state/concurrent_data_structures.incl.md}}
+{{#include categories/concurrency/concurrent_data_structures.incl.md}}
+
+### Crossbeam
+
+{{#include categories/concurrency/crossbeam.incl.md}}
+
+### Data Parallelism
+
+{{#include categories/concurrency/data_parallelism.incl.md}}
+
+### Explicit Threads
+
+{{#include categories/concurrency/explicit_threads.incl.md}}
+
+### Message Passing
+
+{{#include categories/concurrency/message_passing.incl.md}}
+
+### Send
+
+{{#include categories/concurrency/send.incl.md}}
 
 ### Shared State
 
-{{#include categories/concurrency/shared-state/shared_state.incl.md}}
+{{#include categories/concurrency/shared_state.incl.md}}
+
+### Threadpool
+
+{{#include categories/concurrency/threadpool.incl.md}}
 
 ## Config
 
@@ -114,10 +138,6 @@
 
 {{#include categories/cryptography/hashing.incl.md}}
 
-### Password Hashing
-
-{{#include categories/cryptography/_password_hashing.incl.md}}
-
 ## Data Structures
 
 ### Bitfield
@@ -135,6 +155,32 @@
 ### UUID
 
 {{#include categories/data-structures/uuid.incl.md}}
+
+## Database
+
+### Connection Pool
+
+{{#include categories/database/connection_pool.incl.md}}
+
+### NosQL
+
+{{#include categories/database/nosql.incl.md}}
+
+### Postgres
+
+{{#include categories/database/postgres.incl.md}}
+
+### Query Builders Orms
+
+{{#include categories/database/query_builders_orms.incl.md}}
+
+### Search
+
+{{#include categories/database/search.incl.md}}
+
+### SQLite
+
+{{#include categories/database/sqlite.incl.md}}
 
 ## Date and Time
 
@@ -366,6 +412,20 @@
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
 
+## OS
+
+### External
+
+{{#include categories/os/external.incl.md}}
+
+### Low Level System Calls
+
+{{#include categories/os/low_level_system_calls.incl.md}}
+
+### Rust OS
+
+{{#include categories/os/rust_os.incl.md}}
+
 ## Rust Patterns
 
 ### Design Patterns
@@ -421,6 +481,20 @@
 ### String Parsing
 
 {{#include categories/text-processing/string_parsing.incl.md}}
+
+## Web Programming
+
+### Mime
+
+{{#include categories/web-programming/mime.incl.md}}
+
+### Scraping
+
+{{#include categories/web-programming/scraping.incl.md}}
+
+### Url
+
+{{#include categories/web-programming/url.incl.md}}
 
 ## Web Programming: HTTP Client
 
@@ -500,7 +574,7 @@
 
 {{#include contributing/dev_environment_setup.incl.md}}
 
-### `option`al Preprocessors
+### Optional Preprocessors
 
 {{#include contributing/optional_preprocessors.incl.md}}
 
@@ -654,11 +728,11 @@
 
 {{#include standard-library/hashmaps.incl.md}}
 
-### `option`
+### `Option`
 
 {{#include standard-library/option.incl.md}}
 
-### `result`
+### `Result`
 
 {{#include standard-library/result.incl.md}}
 

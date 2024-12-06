@@ -22,20 +22,7 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 {{#include ../../deps/tests/categories/concurrency/actors.rs:example}}
 ```
 
-## Alternatives {#alternatives}
-
-### `actix` {#actix}
-
-[![actix][c-actix-badge]][c-actix]{{hi:actix}}
-[![actix-crates.io][c-actix-crates.io-badge]][c-actix-crates.io]
-[![actix-github][c-actix-github-badge]][c-actix-github]
-[![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/actix.rs:example}}
-```
-
-### `ractor` {#ractor}
+## `ractor` {#ractor}
 
 [![ractor][c-ractor-badge]][c-ractor]{{hi:ractor}}
 [![ractor-crates.io][c-ractor-crates.io-badge]][c-ractor-crates.io]
@@ -44,6 +31,17 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/concurrency/ractor.rs:example}}
+```
+
+## `actix` {#actix}
+
+[![actix][c-actix-badge]][c-actix]{{hi:actix}}
+[![actix-crates.io][c-actix-crates.io-badge]][c-actix-crates.io]
+[![actix-github][c-actix-github-badge]][c-actix-github]
+[![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
+
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/actix.rs:example}}
 ```
 
 ## Utilities {#utilities}
@@ -57,7 +55,7 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 {{#include ../../../deps/tests/categories/concurrency/await_tree.rs:example}}
 ```
 
-## Reference
+## See also
 
 [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳
 
