@@ -2,6 +2,8 @@
 
 {{#include async_traits.incl.md}}
 
+[![std][c-std-badge]][c-std] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+
 As of Rust 1.75, it is possible to have [`async`][book-rust-reference-async]{{hi:async}}⮳ functions in traits:
 
 ```rust,editable

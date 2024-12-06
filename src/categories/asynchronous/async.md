@@ -18,7 +18,7 @@ Key constructs in Rust:
 
 ## Basic Example {#basic-example}
 
-[![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![std][c-std-badge]][c-std] [![tokio][c-tokio-badge]][c-tokio] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/async1.rs:example}}
@@ -27,6 +27,8 @@ Key constructs in Rust:
 As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book-rust-reference-await]{{hi:await}}⮳ "blocks the thread", which may prevent other tasks from running.
 
 ## Differences with other languages {#diff-other-languages}
+
+[![std][c-std-badge]][c-std] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ differs from most languages in a few ways:
 
@@ -42,6 +44,8 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - Both single- and multi-threaded runtimes{{hi:Multithreaded runtimes}} are available.
 
 ## Which crate provides what? {#which-crate-provides-what}
+
+[![std][c-std-badge]][c-std] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
 - The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.

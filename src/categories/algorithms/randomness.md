@@ -32,7 +32,7 @@ Generates a random value{{hi:Random value}} within half-open `[0, 10)` range (no
 
 ## Generate random numbers within a given distribution {#generate-random-numbers-within-a-given-distribution}
 
-[![rand_distr][c-rand_distr-badge]][c-rand_distr] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+[![rand][c-rand-badge]][c-rand] [![rand_distr][c-rand_distr-badge]][c-rand_distr] [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 By default, random numbers{{hi:Random numbers}} in the [`rand`][c-rand]{{hi:rand}}⮳ crate have [uniform distribution][wikipedia-uniform-distribution]{{hi:Uniform distribution}}⮳. The [`rand_distr`][c-rand_distr]{{hi:rand_distr}}⮳ crate provides other kinds of distributions{{hi:Distributions}}. To use them, you instantiate a distribution, then sample from that distribution using [`rand::distributions::Distribution::sample`][c-rand::distributions::Distribution::sample]{{hi:rand::distributions::Distribution::sample}}⮳ with help of a random-number generator [`rand::Rng`][c-rand::Rng]{{hi:rand::Rng}}⮳. The distributions available are documented [here][c-rand_distr]⮳. An example using the [`rand_distr::Normal`][c-rand_distr::Normal]{{hi:rand_distr::Normal}}⮳ distribution is shown below.
 
