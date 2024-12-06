@@ -1,6 +1,6 @@
 # Password Hashing
 
-{{#include password_hashing.incl.md}}
+{{#include _password_hashing.incl.md}}
 
 ## argon2 {#argon2}
 

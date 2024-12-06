@@ -124,7 +124,7 @@
 
 - [Cryptography](categories/cryptography/index.md)
   - [Hashing](categories/cryptography/hashing.md)
-  - [Password hashing](categories/cryptography/password_hashing.md)
+  - [Password hashing](categories/cryptography/_password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
 
 - [Data processing](other/data-processing/_index.md)

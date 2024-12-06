@@ -116,7 +116,7 @@
 
 ### Password Hashing
 
-{{#include categories/cryptography/password_hashing.incl.md}}
+{{#include categories/cryptography/_password_hashing.incl.md}}
 
 ## Data Structures
 
