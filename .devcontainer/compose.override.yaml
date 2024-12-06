@@ -12,7 +12,7 @@ services:
         EMAIL: ${EMAIL}
         GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME}
       cache_from:
-        - johncd/rust_howto_dev:latest
+        - johncd/rust_howto_dev:${IMAGE_VERSION}
         - johncd/rust_howto_ci:latest
     volumes:
       - type: bind

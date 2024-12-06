@@ -81,7 +81,8 @@ ARG MDBOOK_VERSION=0.4.35
 ## Install nextest
 ## Install mdbook from the binary release
 ## Install mdbook preprocessors
-RUN <<EOF
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+<<EOF
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
     cargo binstall --no-confirm --secure cargo-nextest
@@ -96,29 +97,30 @@ RUN <<EOF
     cargo binstall --no-confirm mdbook-linkcheck
     cargo binstall --no-confirm mdbook-private
     cargo binstall --no-confirm mdbook-indexing
+
+    ## TODO P3 CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
+    ## See https://lib.rs/crates/mdbook-open-on-gh
+    # cargo binstall --no-confirm mdbook-open-on-gh
+
+    # ------------------------------
+    ## Technically the following section is only required for development
+    ## but we want to cache these layers before `rustup nightly`,
+    ## which changes very often.
+
+    ## Install `just` (from the binary release)
+    ## Install cargo plugins
+    ## Install the link checker `lychee`
+    cargo binstall --no-confirm just
+    cargo binstall --no-confirm cargo-deny
+    cargo binstall --no-confirm lychee
 EOF
-
-## TODO P3 CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
-## See https://lib.rs/crates/mdbook-open-on-gh
-# cargo binstall --no-confirm mdbook-open-on-gh
-
-# ------------------------------
-## Technically this section is only required for development
-## but we want to cache these layers before `rustup nightly`,
-## which changes very often.
-
-## Install `just` (from the binary release)
-## Install cargo plugins
-## Install the link checker `lychee`
-RUN cargo binstall --no-confirm just \
-    && cargo binstall --no-confirm cargo-deny \
-    && cargo binstall --no-confirm lychee
 
 # ------------------------------
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed second to last, because the tool is still in development
-RUN cargo install --locked mdbook-utils
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    cargo install --locked mdbook-utils
 
 ## Install nightly fmt - last, since it changes very often
 ## Rust edition 2024 preparation: make the `nightly` toolchain the default until release of Rust 1.85
@@ -134,8 +136,10 @@ FROM base AS development
 
 ## Additional packages for development only
 
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#    && apt-get install -y ...\
+# RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+#     --mount=type=cache,target=/var/lib/apt,sharing=locked \
+#     apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get install -y ...\
 ## For example:
 # fzf \ # fast fuzzy search
 # firefox-esr \
@@ -149,26 +153,33 @@ FROM base AS development
 #     && pipx ensurepath
 
 ## Install optional cargo plugins
-# RUN cargo install --locked cargo-outdated || true
-# RUN cargo install --locked cargo-udeps || true
-# RUN cargo install --locked cargo-audit || true
-# RUN cargo install --locked cargo-pants || true
+#RUN --mount=type=cache,target=/usr/local/cargo/registry \
+#<<EOF
+#  cargo install --locked cargo-outdated || true
+#  cargo install --locked cargo-udeps || true
+#  cargo install --locked cargo-audit || true
+#  cargo install --locked cargo-pants || true
+#EOF
 
-## Install optional tools
-RUN cargo binstall --no-confirm ripgrep
+## Install optional tools: ripgrep
+## caching: https://doc.rust-lang.org/cargo/guide/cargo-home.html
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    cargo binstall --no-confirm ripgrep
 ## Convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
 ## Background code checker `bacon`
 #   && cargo install --locked bacon
 
 ## `rustup` completions
-RUN mkdir -p ~/.local/share/bash-completion/completions \
-    && rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+## Command history - https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
+RUN <<EOF
+    set -e
+    mkdir -p ~/.local/share/bash-completion/completions
+    rustup completions bash > ~/.local/share/bash-completion/completions/rustup
 
-## Command history
-## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
-RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
-    && echo "$SNIPPET" >> "/root/.bashrc"
+    SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history"
+    echo "$SNIPPET" >> "/root/.bashrc"
+EOF
 
 ## Git config default values, overriden by the corresponding env. variables in `.devcontainer/.env` file
 ARG EMAIL=nobody@users.noreply.github.com
