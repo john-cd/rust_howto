@@ -69,12 +69,10 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
 
-## Update Rust if needed (note: `rustup update stable && rustup default stable` is required for Rust 1.74 -> Rust 1.75 somehow)
-RUN rustup update
-
-## Install clippy if needed
-## Install stable rustfmt (for rust-analyzer in VS code)
-RUN rustup component add clippy rustfmt
+## Update Rust if needed
+## Install clippy
+## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code)
+RUN rustup update && rustup component add clippy rustfmt
 
 # Default value, overriden by the corresponding env. variable in `.devcontainer/.env` file
 ARG MDBOOK_VERSION=0.4.35
@@ -100,35 +98,9 @@ RUN <<EOF
     cargo binstall --no-confirm mdbook-indexing
 EOF
 
-## Optional: install mdbook-hide and keeper (note the workaround to get the unreleased keeper)
-# RUN --mount=type=cache,target=/usr/local/cargo/registry/ \
-#      cargo install --force mdbook-hide; \
-#      cargo install --force mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
-## Or:
-#   && cargo binstall --no-confirm mdbook-keeper \
-#   && cargo binstall --no-confirm toml2json \
-
 ## TODO P3 CONSIDER: adds an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.
 ## See https://lib.rs/crates/mdbook-open-on-gh
-# RUN cargo binstall --no-confirm mdbook-open-on-gh
-
-# ------------------------------
-
-## Alternative `just` install
-# # Prereqs to install Just with apt: https://just.systems/man/en/chapter_4.html
-# RUN <<EOF
-#   set -e
-#   wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
-#   echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
-#   sudo apt update
-#   apt-get -y install just
-# EOF
-
-## Alternative `mdbook` install
-# RUN <<EOF
-# set -e
-# wget -c https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz -O - | sudo tar -xvz -C /usr/local/bin
-# EOF
+# cargo binstall --no-confirm mdbook-open-on-gh
 
 # ------------------------------
 ## Technically this section is only required for development
@@ -137,11 +109,10 @@ EOF
 
 ## Install `just` (from the binary release)
 ## Install cargo plugins
-RUN cargo binstall --no-confirm just \
-    && cargo binstall --no-confirm cargo-deny
-
 ## Install the link checker `lychee`
-RUN cargo binstall --no-confirm lychee
+RUN cargo binstall --no-confirm just \
+    && cargo binstall --no-confirm cargo-deny \
+    && cargo binstall --no-confirm lychee
 
 # ------------------------------
 
@@ -190,9 +161,11 @@ RUN cargo binstall --no-confirm ripgrep
 ## Background code checker `bacon`
 #   && cargo install --locked bacon
 
+## `rustup` completions
 RUN mkdir -p ~/.local/share/bash-completion/completions \
     && rustup completions bash > ~/.local/share/bash-completion/completions/rustup
 
+## Command history
 ## https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/command_history/.bash_history" \
     && echo "$SNIPPET" >> "/root/.bashrc"

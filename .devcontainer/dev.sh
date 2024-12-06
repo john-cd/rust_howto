@@ -27,12 +27,6 @@ just fmtall
 echo "Fetch the dependencies"
 cargo fetch
 
-#echo "Build code"
-#just buildall
-
-#echo "Build the book"
-#just buildbook
-
 echo "Toolchain info:"
 rustup check
 echo "-------------------------------------------"

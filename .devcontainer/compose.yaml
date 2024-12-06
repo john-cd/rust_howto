@@ -7,5 +7,3 @@ services:
       args:
         RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL}
         MDBOOK_VERSION: ${MDBOOK_VERSION}
-      cache_from:
-        - rust:${RUST_IMAGE_LABEL}
