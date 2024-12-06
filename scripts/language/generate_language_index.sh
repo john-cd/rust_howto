@@ -16,5 +16,5 @@ do
     base=$(basename $file)
     # Title case the filename, replace _ by space and keep conjunctions lowercase
     title=$(echo ${base%.md} | sed 's/.*/\L&/; s/[a-z]*/\u&/g; s/_/ /g; s/And/and/g')
-    echo "| [$title][ex-lang-${base%.md}] |"
+    echo "| [$title][ex-language-${base%.md}] |"
 done

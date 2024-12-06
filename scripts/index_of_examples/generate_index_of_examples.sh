@@ -20,7 +20,7 @@ clean() {
     s/Grpc/gRPC/g;
     s/Mdbook/mdBook/g;
     s/(Tar|Cwd|Miri|Just|Rhai|Actix|Axum|Hyper)/\L`&`/g;
-    s/(Option|Result)/`&`/g'
+    s/\b(Option|Result)\b/`&`/g'
 }
 
 # Print the header
@@ -28,7 +28,7 @@ echo $'# Index of Examples\n'
 
 # Leaf directories only
 # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories
-for dir in $(find ./src/* -type d -not -path "./src/refs" | sort -r | awk 'a!~"^"$0{a=$0;print}' | sort)
+for dir in $(find ./src/* -type d -not -path "./src/refs" -exec sh -c '(ls -p "{}"|grep />/dev/null)||echo "{}"' \;)
 do
     # Ignore chapters that are hidden
     if [[ -f "$dir/_index.md" ]]; then
