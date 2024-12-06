@@ -6,7 +6,7 @@ Rust compile times{{hi:Compile times}} can be long.
 
 ## Measuring build times {#build-time}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
+[![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 ```sh
 time cargo build
@@ -18,7 +18,7 @@ cargo build --timings
 
 ## Optimization levels {#optimization-levels}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
+[![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 In `config.toml`
 
@@ -34,7 +34,7 @@ opt-level = 3
 
 ## Dynamic linking {#dynamic-linking}
 
-[![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
+[![cargo-add-dynamic][c-cargo_add_dynamic-badge]][c-cargo_add_dynamic] [![cargo-add-dynamic-crates.io][c-cargo_add_dynamic-crates.io-badge]][c-cargo_add_dynamic-crates.io] [![cargo-add-dynamic-github][c-cargo_add_dynamic-github-badge]][c-cargo_add_dynamic-github] [![cargo-add-dynamic-lib.rs][c-cargo_add_dynamic-lib.rs-badge]][c-cargo_add_dynamic-lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
 ```sh
 cargo install cargo-add-dynamic
@@ -52,11 +52,9 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 ### Incremental Computation {#incremental-computation}
 
-[![salsa-github][c-salsa-github-badge]][c-salsa-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+[![salsa][c-salsa-badge]][c-salsa] [![salsa-crates.io][c-salsa-crates.io-badge]][c-salsa-crates.io] [![salsa-github][c-salsa-github-badge]][c-salsa-github] [![salsa-lib.rs][c-salsa-lib.rs-badge]][c-salsa-lib.rs]{{hi:salsa}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[Salsa][c-salsa-website]{{hi:salsa}}⮳
-
-[Salsa (GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
+[Salsa][c-salsa-website]{{hi:salsa}}⮳ [(gitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
 
 Salsa is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 

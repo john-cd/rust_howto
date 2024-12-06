@@ -357,6 +357,14 @@
 [c-cargo-website-badge]: https://img.shields.io/badge/cargo-coral
 [c-cargo-website]: https://doc.rust-lang.org/cargo/index.html
 [c-cargo]: https://docs.rs/cargo
+[c-cargo_add_dynamic-badge]: https://img.shields.io/crates/v/cargo-add-dynamic?label=cargo-add-dynamic
+[c-cargo_add_dynamic-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--add--dynamic-crimson
+[c-cargo_add_dynamic-crates.io]: https://crates.io/crates/cargo_add_dynamic
+[c-cargo_add_dynamic-github-badge]: https://img.shields.io/badge/cargo--add--dynamic-steelblue?logo=github
+[c-cargo_add_dynamic-github]: https://github.com/rksm/cargo-add-dynamic
+[c-cargo_add_dynamic-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--add--dynamic-yellow
+[c-cargo_add_dynamic-lib.rs]: https://lib.rs/crates/cargo-add-dynamic
+[c-cargo_add_dynamic]: https://docs.rs/cargo-add-dynamic
 [c-cargo_audit-badge]: https://img.shields.io/crates/v/cargo-audit?label=cargo-audit
 [c-cargo_audit-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--audit-crimson
 [c-cargo_audit-crates.io]: https://crates.io/crates/cargo_audit
