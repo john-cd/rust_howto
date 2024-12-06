@@ -95,7 +95,7 @@
 [ex-concurrency-any-or-all-in-parallel]: categories/concurrency/data_parallelism.md#any-or-all-in-parallel
 [ex-concurrency-crossbeam-channel]: categories/concurrency/message_passing.md#crossbeam-channel
 [ex-concurrency-custom-parallel-tasks]: categories/concurrency/data_parallelism.md#custom-parallel-tasks
-[ex-concurrency-draw-fractal-threadpool]: categories/concurrency/theradpool.md#draw-fractal-threadpool
+[ex-concurrency-draw-fractal-threadpool]: categories/concurrency/threadpool.md#draw-fractal-threadpool
 [ex-concurrency-flume]: categories/concurrency/message_passing.md#flume
 [ex-concurrency-global-mutable-state]: categories/concurrency/shared_state.md#global-mutable-state
 [ex-concurrency-map-reduce-in-parallel]: categories/concurrency/data_parallelism.md#map-reduce-in-parallel

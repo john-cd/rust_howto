@@ -162,7 +162,7 @@
 
 {{#include categories/database/connection_pool.incl.md}}
 
-### NosQL
+### NoSQL
 
 {{#include categories/database/nosql.incl.md}}
 

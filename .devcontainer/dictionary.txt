@@ -775,3 +775,8 @@ realworld
 bigint
 smartcore
 neovim
+aerospace
+aero
+UAVs
+Threadpools
+uavs
