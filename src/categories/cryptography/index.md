@@ -12,12 +12,9 @@ Securing data.
 
 {{#include hashing.incl.md}}
 
-## Password Hashing
-
-{{#include _password_hashing.incl.md}}
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+
 </div>
