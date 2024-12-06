@@ -45,4 +45,25 @@ TODO P1 windows install
 
 `winget install openssl`
 need Python
+
+```dockerfile
+## Alternative `just` install
+
+# # Prereqs to install Just with apt: <https://just.systems/man/en/chapter_4.html>
+
+# RUN <<EOF
+# set -e
+# wget -qO - '<https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub>' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
+# echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+# sudo apt update
+# apt-get -y install just
+# EOF
+
+## Alternative `mdbook` install
+# RUN <<EOF
+# set -e
+# wget -c <https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz> -O - | sudo tar -xvz -C /usr/local/bin
+# EOF
+```
+
 </div>
