@@ -97,7 +97,7 @@ flate2 = "1.0.34"
 form_urlencoded = { version = "1.2.1", optional = true }
 futures = "0.3.31"
 futures-executor = "0.3.31"
-git2 = "0.16.1"                                          # security update
+git2 = "0.16.1"                                          # security update, pinned to 0.16.1
 glidesort = { version = "0.1.2", optional = true }
 glob = "0.3.1"
 globset = { version = "0.4.15", optional = true }
@@ -163,7 +163,7 @@ paste = { version = "1.0.15", optional = true }
 percent-encoding = "2.3.1"
 pest = { version = "2.7.14", optional = true }
 petgraph = { version = "0.6", optional = true }
-plotly = { version = "0.10.0", optional = true }
+plotly = { version = "0.11.0", optional = true }
 polars = { version = "0.44.2", optional = true }
 postscript = { version = "0.18.2", optional = true }
 postage = { version = "0.5.0", optional = true }

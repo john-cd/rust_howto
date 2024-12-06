@@ -20,4 +20,4 @@ publish = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cargo_toml = "0.20.5"
+cargo_toml = "0.21.0"
