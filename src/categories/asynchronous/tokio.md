@@ -4,8 +4,7 @@
 
 ## Basics {#basics}
 
-[![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
-[![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
+[![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing networking applications{{hi:Networking applications}}. Tokio provides a few major components:
 
@@ -43,7 +42,7 @@ In some cases, it is necessary to run one or more futures that do not implement 
 
 ## Graceful shutdown {#graceful-shutdown}
 
-[![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![tokio-graceful-shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown] [![tokio-graceful-shutdown-crates.io][c-tokio_graceful_shutdown-crates.io-badge]][c-tokio_graceful_shutdown-crates.io] [![tokio-graceful-shutdown-github][c-tokio_graceful_shutdown-github-badge]][c-tokio_graceful_shutdown-github] [![tokio-graceful-shutdown-lib.rs][c-tokio_graceful_shutdown-lib.rs-badge]][c-tokio_graceful_shutdown-lib.rs]{{hi:tokio-graceful-shutdown}}{{hi:Shutdown}}{{hi:Tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}⮳:
 

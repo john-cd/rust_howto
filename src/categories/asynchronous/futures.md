@@ -2,7 +2,7 @@
 
 {{#include futures.incl.md}}
 
-[![futures][c-futures-badge]][c-futures]{{hi:futures}} [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides a number of core abstractions for writing asynchronous code{{hi:Asynchronous}}.
 
@@ -10,7 +10,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Selecting futures {#selecting-futures}
 
-[![futures][c-futures-badge]][c-futures]{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 [`futures::future::Select`][c-futures::future::Select]{{hi:futures::future::Select}}⮳ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
@@ -20,7 +20,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Joining futures {#joining-futures}
 
-[![futures][c-futures-badge]][c-futures]{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/futures2.rs:example}}
@@ -28,7 +28,7 @@ In most cases, you will use this crate directly only when writing async code{{hi
 
 ## Map, then, either, flatten {#map-then-either-flatten}
 
-[![futures][c-futures-badge]][c-futures]{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait that provides a variety of convenient adapters.
 
