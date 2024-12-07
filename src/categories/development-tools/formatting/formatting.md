@@ -69,6 +69,8 @@ rustfmt --help=config
 
 ### Formatting attributes {#formatting-attributes}
 
+[![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+
 For things you do not want rustfmt to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
 {{#include refs.incl.md}}
