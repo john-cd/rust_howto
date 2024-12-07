@@ -1,12 +1,12 @@
-# Just
+# Manage and build code
 
-{{#include just.incl.md}}
+{{#include code_build.incl.md}}
 
 ## Save and run project-specific commands with the `just` command runner {#just}
 
 [![just][c-just-badge]][c-just] [![just-crates.io][c-just-crates.io-badge]][c-just-crates.io] [![just-github][c-just-github-badge]][c-just-github] [![just-lib.rs][c-just-lib.rs-badge]][c-just-lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-`just`{{hi:just}} is a command runner{{hi:Command runner}}, i.e. a `make` replacement.
+`just`{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to `make` without the ability to detect file changes, but with significantly fewer syntactic warts.
 
 Consult the [Just programmer's manual][c-just-programmer-manual]⮳.
 
@@ -71,8 +71,31 @@ For Alpine, use [`apk`][apk-website]{{hi:apk}}⮳:
 RUN apk add just
 ```
 
+## Check your Rust code in the background {#bacon}
+
+[![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
+[![bacon-crates.io][c-bacon-crates.io-badge]][c-bacon-crates.io]
+[![bacon-github][c-bacon-github-badge]][c-bacon-github]
+[![bacon-lib.rs][c-bacon-lib.rs-badge]][c-bacon-lib.rs]
+[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
+
+`bacon` is a background rust code checker. It is designed for minimal interaction, so that you can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
+
+```sh
+# Install or update `bacon`
+cargo install --locked bacon
+
+# Check the current project
+bacon
+
+# Run clippy instead of cargo check
+bacon clippy
+```
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
+(See cargo-make if you want something with a bulkier syntax but more cross-platform portability)
 </div>

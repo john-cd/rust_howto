@@ -2,11 +2,13 @@
 
 {{#include rustup.incl.md}}
 
-## Install and manage Rust toolchains with `rustup` {#key-commands}
+## Install and manage Rust toolchains with `rustup` {#rustup}
 
 [![rustup][rustup-website-badge]][rustup-website] [Rustup documentation][rustup-documentation]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs and manages Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][rustc]{{hi:rustc}}⮳ and [`cargo`][c-cargo]{{hi:cargo}}⮳ executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
+[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs, manages, and upgrades versions of the rust compiler `rustc`, the Rust package manager `cargo`, the Rust linter `clippy`, the Rust code formatter `rustfmt`, etc.
+
+More precisely, `rustup` can install and manage multiple Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][rustc]{{hi:rustc}}⮳ and [`cargo`][c-cargo]{{hi:cargo}}⮳ executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
 
 `rustup` is similar to Python's [`pyenv`][pyenv-github]{{hi:pyenv}}⮳ or Node's [`nvm`][nvm-github]{{hi:nvm}}⮳.
 

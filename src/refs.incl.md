@@ -384,8 +384,7 @@
 [ex-hardware-support-check-number-of-logical-cpu-cores]: categories/hardware-support/processor.md#check-number-of-logical-cpu-cores
 [ex-installation-cargo-binstall]: categories/development-tools/installation/install.md#cargo-binstall
 [ex-installation-cargo-install]: categories/development-tools/installation/install.md#cargo-install
-[ex-installation-key-commands]: categories/development-tools/installation/rustup.md#key-commands
-[ex-installation-rustup]: categories/development-tools/installation/install.md#rustup
+[ex-installation-rustup]: categories/development-tools/installation/rustup.md#rustup
 [ex-internationalization-internationalization]: categories/internationalization/internationalization.md#internationalization
 [ex-language-associated-types]: language/traits.md#associated-types
 [ex-language-async-and-traits]: language/traits.md#async-and-traits
@@ -517,13 +516,11 @@
 [ex-os_unix-apis-rustix]: categories/os_unix-apis/unix.md#rustix
 [ex-os_windows-apis-winapi]: categories/os_windows-apis/windows.md#winapi
 [ex-os_windows-apis-windows]: categories/os_windows-apis/windows.md#windows
-[ex-other-bacon]: categories/development-tools/other/other.md#bacon
+[ex-other-bacon]: categories/development-tools/other/code_build.md#bacon
 [ex-other-binary-minimizer]: categories/development-tools/other/other.md#binary-minimizer
 [ex-other-code-generators]: categories/development-tools/other/other.md#code-generators
-[ex-other-code-verifiers]: categories/development-tools/other/other.md#code-verifiers
-[ex-other-example-justfile]: categories/development-tools/other/just.md#example-justfile
-[ex-other-formal-methods]: categories/development-tools/other/other.md#formal-methods
-[ex-other-installation-into-dev-container]: categories/development-tools/other/just.md#installation-into-dev-container
+[ex-other-code-verifiers]: categories/development-tools/other/code_verification.md#code-verifiers
+[ex-other-just]: categories/development-tools/other/code_build.md#just
 [ex-other-miri-installation]: categories/development-tools/other/miri.md#miri-installation
 [ex-other-miri]: categories/development-tools/other/miri.md#miri
 [ex-other-roogle]: categories/development-tools/other/other.md#roogle

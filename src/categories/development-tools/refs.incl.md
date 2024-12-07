@@ -2,37 +2,29 @@
 [ex-cargo-cargo-toml]: cargo/cargo.md#cargo-toml
 [ex-cargo-crate-registries]: cargo/crate_registries.md#crate-registries
 [ex-cargo-package-layout]: cargo/package_layout.md#package-layout
-
-[ex-documentation-documenting-your-code]: documentation/documentation.md#documenting-your-code
-[ex-documentation-module-or-crate-level-documentation]: documentation/documentation.md#module-or-crate-level-documentation
+[ex-documentation-badges]: documentation/badges.md#badges
 [ex-documentation-cd-ci]: documentation/mdbook.md#cd-ci
+[ex-documentation-documenting-your-code]: documentation/documentation.md#documenting-your-code
 [ex-documentation-mdbook-plugins]: documentation/mdbook.md#mdbook-plugins
 [ex-documentation-mdbook]: documentation/mdbook.md#mdbook
+[ex-documentation-module-or-crate-level-documentation]: documentation/documentation.md#module-or-crate-level-documentation
 [ex-documentation-playground]: documentation/mdbook.md#playground
-[ex-documentation-badges]: documentation/badges.md#badges
 [ex-documentation-yapp]: documentation/mdbook.md#yapp
-
 [ex-formatting-formatting-attributes]: formatting/formatting.md#formatting-attributes
 [ex-formatting-rustfmt-config]: formatting/formatting.md#rustfmt-config
 [ex-formatting-rustfmt]: formatting/formatting.md#rustfmt
-
-[ex-installation-cargo-install]: installation/install.md#cargo-install
 [ex-installation-cargo-binstall]: installation/install.md#cargo-binstall
-[ex-installation-key-commands]: installation/rustup.md#key-commands
-[ex-installation-rustup]: installation/install.md#rustup
-
-[ex-other-bacon]: other/other.md#bacon
+[ex-installation-cargo-install]: installation/install.md#cargo-install
+[ex-installation-rustup]: installation/rustup.md#rustup
+[ex-other-bacon]: other/code_build.md#bacon
 [ex-other-binary-minimizer]: other/other.md#binary-minimizer
 [ex-other-code-generators]: other/other.md#code-generators
-[ex-other-code-verifiers]: other/other.md#code-verifiers
-[ex-other-example-justfile]: other/just.md#example-justfile
-[ex-other-formal-methods]: other/other.md#formal-methods
-[ex-other-installation-into-dev-container]: other/just.md#installation-into-dev-container
-[ex-other-miri]: other/miri.md#miri
+[ex-other-code-verifiers]: other/code_verification.md#code-verifiers
+[ex-other-just]: other/code_build.md#just
 [ex-other-miri-installation]: other/miri.md#miri-installation
+[ex-other-miri]: other/miri.md#miri
 [ex-other-roogle]: other/other.md#roogle
 [ex-other-shuttle-rs]: other/other.md#shuttle-rs
-
 [ex-versioning-check-external-command-version-for-compat]: versioning/versioning.md#check-external-command-version-for-compat
 [ex-versioning-check-if-pre-release]: versioning/versioning.md#check-if-pre-release
 [ex-versioning-find-latest-version-within-range]: versioning/versioning.md#find-latest-version-within-range

@@ -242,9 +242,13 @@
 
 ## Other
 
-### `just`
+### Code Build
 
-{{#include categories/development-tools/other/just.incl.md}}
+{{#include categories/development-tools/other/code_build.incl.md}}
+
+### Code Verification
+
+{{#include categories/development-tools/other/code_verification.incl.md}}
 
 ### `miri`
 

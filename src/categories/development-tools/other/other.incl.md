@@ -1,9 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Check your Rust code in the background][ex-other-bacon] | [![bacon][c-bacon-badge]][c-bacon] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities] |
-| [API search][ex-other-roogle] | [roogle][c-roogle-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-| [Deployment on `shuttle.rs`][ex-other-shuttle-rs] | [shuttle.rs][shuttle-rs-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-| [Binary minimizer][ex-other-binary-minimizer] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-| [Code generators][ex-other-code-generators] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-| [Code verifier][ex-other-code-verifiers] | [![kani][c-kani-badge]][c-kani]{{hi:kani}} | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-| [Formal Methods][ex-other-formal-methods] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Search for APIs][ex-other-roogle] | [roogle][c-roogle-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Deploy your Rust code on `shuttle.rs`][ex-other-shuttle-rs] | [shuttle.rs][shuttle-rs-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Minimize binary sizes][ex-other-binary-minimizer] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Generate Rust code][ex-other-code-generators] |  | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

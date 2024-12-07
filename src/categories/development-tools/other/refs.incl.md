@@ -1,9 +1,8 @@
-[ex-other-bacon]: other.md#bacon
+[ex-other-bacon]: code_build.md#bacon
 [ex-other-binary-minimizer]: other.md#binary-minimizer
 [ex-other-code-generators]: other.md#code-generators
-[ex-other-code-verifiers]: other.md#code-verifiers
-[ex-other-just]: just.md#just
-[ex-other-formal-methods]: other.md#formal-methods
+[ex-other-code-verifiers]: code_verification.md#code-verifiers
+[ex-other-just]: code_build.md#just
 [ex-other-miri-installation]: miri.md#miri-installation
 [ex-other-miri]: miri.md#miri
 [ex-other-roogle]: other.md#roogle

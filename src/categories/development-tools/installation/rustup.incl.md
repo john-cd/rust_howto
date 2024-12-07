@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Install and manage Rust toolchains with `rustup`][ex-installation-key-commands] | [![rustup][rustup-website-badge]][rustup-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Install and manage Rust toolchains with `rustup`][ex-installation-rustup] | [![rustup][rustup-website-badge]][rustup-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 
 <div class="hidden">
 </div>

@@ -2,11 +2,11 @@
 
 {{#include formatting.incl.md}}
 
-## Rustfmt {#rustfmt}
+## Format your Rust code with `rustfmt` {#rustfmt}
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-Install with `rustup component add rustfmt`{{hi:rustfmt}}
+Install with `rustup component add rustfmt`
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...
@@ -21,7 +21,7 @@ Using `--check` instructs `rustfmt`{{hi:rustfmt}}⮳ to exit with an error code 
 cargo fmt --all -- --check
 ```
 
-### Rustfmt Configuration {#rustfmt-config}
+### Configure `rustfmt` {#rustfmt-config}
 
 Create a `rustfmt.toml`{{hi:rustfmt.toml}} in the project root folder.
 For example,
@@ -67,7 +67,7 @@ List config options with
 rustfmt --help=config
 ```
 
-### Formatting attributes {#formatting-attributes}
+### Use attributes to skip code formatting {#formatting-attributes}
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

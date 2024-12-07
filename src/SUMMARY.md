@@ -191,8 +191,9 @@
     - [Badges](categories/development-tools/documentation/badges.md)
   - [Versioning](categories/development-tools/versioning/versioning.md)
   - [Other](categories/development-tools/other/other.md)
+    - [Code building](categories/development-tools/other/code_build.md)
+    - [Code verification](categories/development-tools/other/code_verification.md)
     - [`miri`](categories/development-tools/other/miri.md)
-    - [`just`](categories/development-tools/other/just.md)
 
 - [Development tools - build-time tooling](categories/development-tools_build-utils/index.md)
   - [Build-time tools](categories/development-tools_build-utils/build_utils.md)
