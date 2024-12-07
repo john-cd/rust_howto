@@ -381,6 +381,14 @@
 [c-cargo_auditable-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--auditable-yellow
 [c-cargo_auditable-lib.rs]: https://lib.rs/crates/cargo-auditable
 [c-cargo_auditable]: https://docs.rs/cargo-auditable
+[c-cargo_binstall-badge]: https://img.shields.io/crates/v/cargo-binstall?label=cargo-binstall
+[c-cargo_binstall-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--binstall-crimson
+[c-cargo_binstall-crates.io]: https://crates.io/crates/cargo_binstall
+[c-cargo_binstall-github-badge]: https://img.shields.io/badge/cargo--binstall-steelblue?logo=github
+[c-cargo_binstall-github]: https://github.com/cargo-bins/cargo-binstall
+[c-cargo_binstall-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--binstall-yellow
+[c-cargo_binstall-lib.rs]: https://lib.rs/crates/cargo-binstall
+[c-cargo_binstall]: https://docs.rs/cargo-binstall
 [c-cargo_cache-badge]: https://img.shields.io/crates/v/cargo-cache?label=cargo-cache
 [c-cargo_cache-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--cache-crimson
 [c-cargo_cache-crates.io]: https://crates.io/crates/cargo_cache
@@ -1346,7 +1354,6 @@
 [c-gtk4-lib.rs]: https://lib.rs/crates/gtk4
 [c-gtk4-website-badge]: https://img.shields.io/badge/gtk4-coral
 [c-gtk4-website]: https://gtk-rs.org/gtk4-rs
-[c-gtk4]: https://docs.rs/gtk4
 [c-gtk4]: https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4
 [c-http-badge]: https://img.shields.io/crates/v/http?label=http
 [c-http-crates.io-badge]: https://img.shields.io/badge/crates.io-http-crimson
@@ -2391,7 +2398,6 @@
 [c-rfd-crates.io]: https://crates.io/crates/rfd
 [c-rfd-github-badge]: https://img.shields.io/badge/rfd-steelblue?logo=github
 [c-rfd-github]: https://github.com/PolyMeilex/rfd
-[c-rfd-github]: https://github.com/polymeilex/rfd
 [c-rfd-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rfd-yellow
 [c-rfd-lib.rs]: https://lib.rs/crates/rfd
 [c-rfd]: https://docs.rs/rfd

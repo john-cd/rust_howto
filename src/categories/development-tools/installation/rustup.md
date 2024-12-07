@@ -2,26 +2,28 @@
 
 {{#include rustup.incl.md}}
 
-[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs and manages many Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][rustc]{{hi:rustc}}⮳ and [`cargo`][c-cargo]{{hi:cargo}}⮳ executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
+## Install and manage Rust toolchains with `rustup` {#key-commands}
 
-This is similar to Python's [`pyenv`][pyenv-github]{{hi:pyenv}}⮳ or Node's [`nvm`][nvm-github]{{hi:nvm}}⮳.
+[![rustup][rustup-website-badge]][rustup-website] [Rustup documentation][rustup-documentation]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-## Key commands {#key-commands}
+[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs and manages Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][rustc]{{hi:rustc}}⮳ and [`cargo`][c-cargo]{{hi:cargo}}⮳ executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
+
+`rustup` is similar to Python's [`pyenv`][pyenv-github]{{hi:pyenv}}⮳ or Node's [`nvm`][nvm-github]{{hi:nvm}}⮳.
+
+Key [`rustup` commands][rustup-command-examples]⮳ include the following:
 
 ```sh
+# Rustup's help
 rustup help
 
-# Show the help page for a subcommand (like toolchain)
+# Show the help page for a subcommand (like `toolchain`)
 rustup toolchain help
-
-# Open the local documentation in your browser
-rustup doc
-
-# Update to a new version of Rust
-rustup update
 
 # Show which toolchain will be used in the current directory
 rustup show
+
+# Update to a new version of Rust
+rustup update
 
 # Show which toolchain will be used in the current directory
 rustup target list
@@ -33,14 +35,17 @@ rustup toolchain list
 rustup component list
 ```
 
-[Rustup command examples][rustup-command-examples]⮳
+Rustup also offers convenience commands:
 
-## See also
-
-[Rustup documentation][rustup-documentation]⮳
+```sh
+# Open the local documentation in your browser
+rustup doc
+# May require `rustup component add rust-docs`
+```
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 expand / clean up
 </div>
