@@ -12,7 +12,7 @@ IFS=$'\n\t'
 cd /code
 
 # Remove all references to examples
-sed -ibak -E '/^\[ex-.+?\]:.*$/d' ./src/refs.incl.md
+sed -i'.bak' -E '/^\[ex-.+?\]:.*$/d' ./src/refs.incl.md
 
 # Look into every refs.incl.md (in the subfolders)
 for file in $(find ./src -type f -name "refs.incl.md" -not -path "./src/refs.incl.md")
