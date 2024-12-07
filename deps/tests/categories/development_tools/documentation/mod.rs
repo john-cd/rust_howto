@@ -1,2 +1,1 @@
 mod badges;
-mod yapp;

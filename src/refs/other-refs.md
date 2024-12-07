@@ -608,6 +608,7 @@
 [rust-on-nails-website-badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-on-nails-website]: https://rust-on-nails.com
 [rust-playground-website]: https://play.rust-lang.org
+[rust-playground-website-badge]: https://img.shields.io/badge/rust_playground-coral
 [rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [rust-quizz-badge]: https://img.shields.io/badge/Rust_quizz-tan
 [rust-quizz]: https://dtolnay.github.io/rust-quiz
