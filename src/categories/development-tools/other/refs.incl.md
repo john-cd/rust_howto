@@ -2,9 +2,8 @@
 [ex-other-binary-minimizer]: other.md#binary-minimizer
 [ex-other-code-generators]: other.md#code-generators
 [ex-other-code-verifiers]: other.md#code-verifiers
-[ex-other-example-justfile]: just.md#example-justfile
+[ex-other-just]: just.md#just
 [ex-other-formal-methods]: other.md#formal-methods
-[ex-other-installation-into-dev-container]: just.md#installation-into-dev-container
 [ex-other-miri-installation]: miri.md#miri-installation
 [ex-other-miri]: miri.md#miri
 [ex-other-roogle]: other.md#roogle
