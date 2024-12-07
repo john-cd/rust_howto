@@ -5,11 +5,10 @@
 pattern=$1
 
 # Look for [c-...pattern...] or [...pattern...] in the global reference definitions
-rg -IN '\[(c-)?[^]]*'${pattern}'[^]]*\].*' ./src/refs
-#  -N = --no-line-number; -I = --no-filename
-
-# Generate possible links
-rg -IN -r'[`$2`][$1$2$3]⮳' '\[(c-)?([^]]*'${pattern}'[^]-]*)([^]]*)\]:\s?(.*)' ./src/refs
-#  -r = replace
+# excluding suffixes like -github, -badge, etc... (which start with a dash)
+rg -INi  '\[(c-)?([^]]*'${pattern}'[^-]*)\]:\s?(.*)' \
+   -r'[`$2`][$1$2]⮳  [![$2][$1$2-badge]][$1$2]  [$1$2]: $3' ./src/refs
+#  -N = --no-line-number; -I = --no-filename -r = replace -i = ignore case
+# To only avoid matching lines that contain -badge use (?:(?!-badge)[^]])* with the --pcre2 flag
 
 echo "DONE"
