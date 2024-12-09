@@ -7,9 +7,10 @@ services:
     build:
       target: ci
       cache_from:
+        - johncd/rust_howto_dev:latest
+        - johncd/rust_howto_ci:latest
         - type=gha,scope=rust_howto_ci  # GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         #- type=local,dest=./.cache
-        - johncd/rust_howto_dev:latest
       cache_to:
         #  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
         - type=gha,mode=max,scope=rust_howto_ci
