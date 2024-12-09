@@ -18,3 +18,7 @@ license = "CC0-1.0"
 [dependencies]
 clap = { version = "4.5.20", features = ["cargo", "env"] }
 env_logger = "0.11.5"
+
+[[bin]]
+name = "clap-builder-xmpl"
+path = "src/main.rs"

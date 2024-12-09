@@ -50,7 +50,7 @@
 - [ ] add licenses to thanks page ?
 - [ ] update thanks
 - [ ] Search within the book improvements - see search.md; Algolia
-- [ ] explore bacon / review bacon.toml
+- [ ] review bacon.toml
 - [ ] review deny.toml
 - Contributing
 - Code of conduct

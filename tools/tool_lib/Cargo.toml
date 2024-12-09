@@ -29,3 +29,6 @@ tracing = "0.1.40"
 trim-in-place = "0.1.7"
 #url = "2.5.2"
 walkdir = "2.5.0"
+
+[lib]
+path = "src/lib.rs"

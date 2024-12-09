@@ -21,3 +21,7 @@ tera = "1.20.0"
 walkdir = "2.5.0"
 serde = "1.0.214"
 pgp = "0.14.2"
+
+[[bin]]
+name = "autogen"
+path = "src/main.rs"

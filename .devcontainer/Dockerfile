@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1-labs
 
 # Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
@@ -120,7 +120,8 @@ EOF
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed second to last, because the tool is still in development
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo install --locked mdbook-utils
+    cargo install --locked mdbook-utils \
+    && cargo install --locked bacon
 
 ## Install nightly fmt - last, since it changes very often
 ## Rust edition 2024 preparation: make the `nightly` toolchain the default until release of Rust 1.85
@@ -208,12 +209,30 @@ FROM base AS ci
 # ENV LC_CTYPE=en_US.UTF-8
 # ENV LC_ALL=en_US.UTF-8
 
-## Copy the code in the container (in WORKDIR), excluding what is in .dockerignore
-COPY . .
-
 ENV CARGO_TARGET_DIR=./target/
+
+## The following is a bit of a hack to speed up CI: create separate docker layers for the dependencies and the code / examples
+## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.
+
+## Copy the Cargo.toml / lock and config.toml files
+## The --parents flag preserves parent directories for the source entries.
+COPY --parents .cargo/ Cargo.toml Cargo.lock deps/Cargo.toml publish/Cargo.toml tools/*/Cargo.toml xmpl/*/Cargo.toml ./
+
+## Copy the (empty) dep/src/lib.rs (no other code)
+COPY --parents deps/src/ ./
+
+## Bake the dependencies into the CI image
+RUN cargo fetch
+
+## Compile the book code example's dependencies (and dep/src/lib.rs)
+## Note that we do not compile deps/tests at this stage
+RUN cargo build -p dependencies --lib --locked --profile ci
+
+## Copy the rest of the code in the container, excluding what is in .dockerignore
+COPY . .
 
 ## Make sure the start scripts have permission to execute
 RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
 
+## Compilation of the whole code happens within that script
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]
