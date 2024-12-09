@@ -41,9 +41,13 @@ The two distinguishing features of `xtask` are the following:
 - It doesn't require any other binaries besides `cargo` and `rustc`, it fully bootstraps from them
 - Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
 
-### `devx` {#devx}
+### Use `devx` {#devx}
 
-[devx][devx-github]{{hi:devx}}⮳ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c-cargo_xtask-github]⮳ idioms.
+[![devx-cmd][c-devx_cmd-badge]][c-devx_cmd] [![devx-cmd-crates.io][c-devx_cmd-crates.io-badge]][c-devx_cmd-crates.io] [![devx-cmd-github][c-devx_cmd-github-badge]][c-devx_cmd-github] [![devx-cmd-lib.rs][c-devx_cmd-lib.rs-badge]][c-devx_cmd-lib.rs]{{hi:devx-cmd}}{{hi:Cmd}}{{hi:Bash}}{{hi:Shell}}{{hi:Process}} [![devx-pre-commit][c-devx_pre_commit-badge]][c-devx_pre_commit] [![devx-pre-commit-crates.io][c-devx_pre_commit-crates.io-badge]][c-devx_pre_commit-crates.io] [![devx-pre-commit-github][c-devx_pre_commit-github-badge]][c-devx_pre_commit-github] [![devx-pre-commit-lib.rs][c-devx_pre_commit-lib.rs-badge]][c-devx_pre_commit-lib.rs]{{hi:devx-pre-commit}}{{hi:Formatter}}{{hi:Hook}}{{hi:Pre-commit}}{{hi:Rustfmt}}{{hi:Git}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+
+[`devx`][devx-github]{{hi:devx}}⮳ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c-cargo_xtask-github]⮳ idioms.
+
+`devx-cmd` provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. `devx-pre-commit` creates git pre-commit hooks that enforce good practices.
 
 ## `xshell`: making Rust a better `bash` {#xshell}
 

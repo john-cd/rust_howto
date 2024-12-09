@@ -2,20 +2,18 @@
 
 {{#include other.incl.md}}
 
-## Search for APIs {#roogle}
+## Search for Rust APIs {#roogle}
 
 [`Roogle`][c-roogle-website]{{hi:roogle}}⮳ [![roogle-github][c-roogle-github-badge]][c-roogle-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-Roogle is a Rust API search engine, which allows you to search functions by names and type signatures.
-
-The query cab
+Roogle is a Rust API search engine, which allows you to search functions by names and type signatures. The query can be one of the following types:
 
 |||
 |---|---|
-| fn f(type) -> type |  |
+| fn f(type) -> type | fn f(&mut HashMap<K, V>, K, V) -> Option<V> |
 | fn (type) -> type | fn (&char) -> bool |
-| fn(type) -> type |  |
-| (type) -> type| (&mut Vec<T>, value: T) |
+| fn(type) -> type | fn(Option<Option<T>>) -> Option<T> |
+| (type) -> type | (&mut Vec<T>, value: T) |
 
 ## Deploy your Rust code on `shuttle.rs` {#shuttle-rs}
 
