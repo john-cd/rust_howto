@@ -358,3 +358,8 @@ unused = [
     "dep:yew",
     "dep:zenoh",
 ]
+
+# Technically defining a target is not required, because cargo autodiscovers it,
+# but useful during CI. See the Dockerfile.
+[lib]
+path = "src/lib.rs"

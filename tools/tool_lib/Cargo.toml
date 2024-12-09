@@ -30,5 +30,7 @@ trim-in-place = "0.1.7"
 #url = "2.5.2"
 walkdir = "2.5.0"
 
+# Technically defining a target is not required, because cargo autodiscovers it,
+# but useful during CI. See the Dockerfile.
 [lib]
 path = "src/lib.rs"

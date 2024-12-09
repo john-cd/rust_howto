@@ -23,14 +23,14 @@ cargo +nightly fmt --all --check
 ## Fetch the dependencies
 cargo fetch
 
-## Make sure all examples compile
+## Make sure all examples (and tools) compile
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
 ## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - see .cargo/config.toml for `ci` profile config.
+## - See .cargo/config.toml for the `ci` profile config. We removed optimizations since we will run / test the examples just once.
 cargo build --workspace --all-targets --locked --profile ci
 
-## Lint all examples
+## Make sure that all examples are linted
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
 cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 

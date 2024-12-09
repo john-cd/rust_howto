@@ -214,25 +214,26 @@ ENV CARGO_TARGET_DIR=./target/
 ## The following is a bit of a hack to speed up CI: create separate docker layers for the dependencies and the code / examples
 ## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.
 
-## Copy the Cargo.toml / lock and config.toml files
+## Copy all the Cargo.toml / lock (and config.toml files) of the workspace
 ## The --parents flag preserves parent directories for the source entries.
+## NOTE: [lib] or [[bin]] targets must be defined in all Cargo.toml, since the code is not present at this stage and autodiscovery won't work.
 COPY --parents .cargo/ Cargo.toml Cargo.lock deps/Cargo.toml publish/Cargo.toml tools/*/Cargo.toml xmpl/*/Cargo.toml ./
 
-## Copy the (empty) dep/src/lib.rs (no other code)
-COPY --parents deps/src/ ./
-
-## Bake the dependencies into the CI image
+## Bake the dependencies into (a separate layer of) the CI image (since they don't change often).
 RUN cargo fetch
 
-## Compile the book code example's dependencies (and dep/src/lib.rs)
-## Note that we do not compile deps/tests at this stage
-RUN cargo build -p dependencies --lib --locked --profile ci
+## OPTIONAL: pre-compile the dependencies but not the code of tools and examples (which change more often)
+## Disabled, because that takes a lot of space (cache in target/).
+## a) Copy the (empty) dep/src/lib.rs (no other code)
+# COPY --parents deps/src/ ./
+## b) Compile the dependencies (and dep/src/lib.rs)
+# RUN cargo build -p dependencies --lib --locked --profile ci
 
-## Copy the rest of the code in the container, excluding what is in .dockerignore
+## Copy the whole code in the container (excluding what is in .dockerignore)
 COPY . .
 
 ## Make sure the start scripts have permission to execute
 RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
 
-## Compilation of the whole code happens within that script
+## Compilation of the whole code happens within that script at runtime
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]

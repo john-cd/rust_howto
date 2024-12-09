@@ -1,8 +1,9 @@
 ## Workflow for building and deploying a mdBook site to GitHub Pages
 ##
 ## To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
-## See also https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 ##
+## Docker's official GitHub Actions: https://docs.docker.com/build/ci/github-actions/
+
 name: Build and deploy mdBook site to GitHub Pages
 
 on:
@@ -19,11 +20,8 @@ on:
         required: true
         default: false
 
-## Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 ## Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 ## However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -41,30 +39,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      #- name: Basic information
+      #- name: Get basic information (debug)
       #  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
       - name: Code checkout
         uses: actions/checkout@v4
-      ## Use the following in conjunction with cache_from/to type=local in compose-ci.yaml if type=gha caching does not work
-      ## See also https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
-      # - name: Set up cargo cache
-      #   uses: actions/cache@v3
-      #   continue-on-error: false
-      #   with:
-      #     path: |
-      #       ./.cache/
-      #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      #     restore-keys: ${{ runner.os }}-cargo-
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build docker image
-        run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml build
-      - name: Create book/ directory
+      # The default `docker` driver built in the docker daemon has limited support for advanced features like caching:
+      # https://docs.docker.com/build/builders/drivers/
+      # `setup-buildx-action` uses by default the `docker-container` driver, which supports caching:
+      # https://github.com/docker/setup-buildx-action
+      - name: Set up Docker Buildx
+        id: builder
+        uses: docker/setup-buildx-action@v3
+      - name: List Docker builders (debug)
+        run: docker buildx ls
+      - name: Build (and push) the docker image
+        run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml build --builder=${{ steps.builder.outputs.name }} --push
+      - name: List docker images (debug)
+        run: docker image ls
+      - name: Create the book/ directory on the CI machine
         run: mkdir book/
-      - name: Build the book
+      - name: Check that all the code builds; build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
         id: pages
@@ -75,15 +74,36 @@ jobs:
           path: ./book/html/
 
   ## Deployment job
+  ## https://github.com/actions/deploy-pages
   deploy:
     name: Deploy to GitHub Pages
     if: ${{ inputs.deploy_to_gh_pages }}
+    # Add a dependency to the build job
+    needs: build
+    ## Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write     # to deploy to Pages
+      id-token: write  # to verify the deployment originates from an appropriate source
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+## Advanced caching, if needed:
+## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
+## - https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
+## Add to steps:
+      ## Use the following step in conjunction with cache_from/to type=local in `compose-ci.yaml`
+      # - name: Set up cargo cache
+      #   uses: actions/cache@v3
+      #   continue-on-error: false
+      #   with:
+      #     path: |
+      #       ./.cache/
+      #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      #     restore-keys: ${{ runner.os }}-cargo-
+      ## Adjust the path and key

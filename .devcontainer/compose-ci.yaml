@@ -1,17 +1,21 @@
 name: rust_howto_ci
 services:
   book:
+    # When pull_policy is missing from the service definition, Compose attempts to pull the image first
+    # and then builds from source if the image isn't found in the registry or platform cache.
     image: johncd/rust_howto_ci:${IMAGE_VERSION}  # Name and tag of the image that will be built
     build:
       target: ci
       cache_from:
-        - type=gha                          # GitHub Action cache
+        - type=gha,scope=rust_howto_ci  # GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         #- type=local,dest=./.cache
         - johncd/rust_howto_dev:latest
       cache_to:
-        - type=gha,mode=max
+        #  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
+        - type=gha,mode=max,scope=rust_howto_ci
         #- type=local,dest=./.cache
     volumes:
+      # Mirror the folder containing the finished book into the CI machine
       - type: bind
-        source: ${BOOK_PATH}                # See .env file
+        source: ${BOOK_PATH}  # See .env file
         target: /code/book

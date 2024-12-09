@@ -347,8 +347,36 @@ prep: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
 
 # Build the CI Docker image, then push it to DockerHub. The GitHub Action CI workflow will use the Dockerhub image as a cache.
 push_ci:
-  docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build
+  #! /bin/bash
+  set -e
+  ## Align the Docker builder configuration with that of the GitHub Actions workflow:
+  ## The workflow uses the GitHub Actions cache, which is not supported with the default `docker` build driver.
+  ## 1) Create a custom builder with the `docker-container` driver, select it for use, and start it:
+  docker buildx create --name=container --driver=docker-container --use --bootstrap
+  ## 2) Build with the custom builder:
+  docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build --builder=container --push
+  ## 3) Push to DockerHub (or add --push above)
   docker push johncd/rust_howto_ci:latest
+  ## 4) Delete the custom builder
+  docker buildx rm container
+
+# TODO use the custom builder for all builds / avoid duplication of build cache?
+# TODO make sure that push_ci uses previous johncd/rust_howto_ci
+# TODO no need to load the image locally, push directly - use docker buildx build / bake
+
+## Helpers:
+## - Display the existing builders
+# docker buildx ls
+## - Create a custom build driver that behaves in a similar way to the default docker driver, and load images to the local image store by default.
+## https://docs.docker.com/build/builders/drivers/
+# docker buildx create --name=container --driver=docker-container --use --bootstrap --driver-opt default-load=true
+## - Remove the builder while persisting / caching its state:
+## https://docs.docker.com/build/builders/drivers/docker-container/
+# docker buildx rm --keep-state container
+## - Remove all inactive builders
+# docker buildx rm --all-inactive -f
+## - Build directly with the custom driver;  use --load to load the image to the local image store and --push to push to DockerHub
+# docker buildx build -f .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci:latest --builder=container --cache-from=type=registry,ref=johncd/rust_howto_ci:latest --push .
 
 # Push the development Docker image to DockerHub.
 push_dev:
