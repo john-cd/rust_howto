@@ -3,7 +3,7 @@
 ## To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
 ## See also https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 ##
-name: Deploy mdBook site to GitHub Pages
+name: Build and deploy mdBook site to GitHub Pages
 
 on:
   ## Runs on pushes targeting the default branch
@@ -41,8 +41,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Basic information
-        run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
+      #- name: Basic information
+      #  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
       - name: Code checkout
         uses: actions/checkout@v4
       ## Use the following in conjunction with cache_from/to type=local in compose-ci.yaml if type=gha caching does not work
@@ -55,6 +55,11 @@ jobs:
       #       ./.cache/
       #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       #     restore-keys: ${{ runner.os }}-cargo-
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build docker image
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml build
       - name: Create book/ directory

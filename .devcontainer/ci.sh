@@ -36,7 +36,7 @@ cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
 ## Test all examples (integration tests in /deps/tests and any tests in /xmpl)
 ## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
-cargo test run --workspace --all-targets --locked --profile ci --features ci -- --show-output
+cargo test --workspace --all-targets --locked --profile ci --features ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)
