@@ -26,4 +26,10 @@ The `dyn-clone` crate provides a `DynClone` trait that can be used in trait obje
 
 <div class="hidden">
 TODO P1 rethink where that stuff should go
+
+## Implement the typestate pattern
+
+The typestate pattern is an API design pattern that encodes information about an object’s run-time state in its compile-time type.
+[typestate pattern][blog-typestate-pattern]
+
 </div>
