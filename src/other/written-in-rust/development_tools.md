@@ -44,4 +44,14 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P2 organize
+
+TODO P2 find a spot for
+
+### JavaScript tooling
+
+- [Volta][volta-website]⮳[(github)][volta-github]⮳ | |
+- [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
+- Bun
+
 </div>
