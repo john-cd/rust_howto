@@ -50,14 +50,6 @@ cargo build
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be extremely unusual for there to be a later incremental build within the same job. The jobs are not making changes to source code and rebuilding. However, workflows that cache the target directory across runs might be benefiting from incremental compilation.
 
-### Incremental Computation {#incremental-computation}
-
-[![salsa][c-salsa-badge]][c-salsa] [![salsa-crates.io][c-salsa-crates.io-badge]][c-salsa-crates.io] [![salsa-github][c-salsa-github-badge]][c-salsa-github] [![salsa-lib.rs][c-salsa-lib.rs-badge]][c-salsa-lib.rs]{{hi:salsa}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
-
-[Salsa][c-salsa-website]{{hi:salsa}}⮳ [(gitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
-
-Salsa is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
-
 ## Reference
 
 - [8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
