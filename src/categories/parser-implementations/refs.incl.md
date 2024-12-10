@@ -1,1 +1,14 @@
+[ex-parser-implementations-basic-toml]: toml.md#basic-toml
+[ex-parser-implementations-comrak]: markdown.md#comrak
 [ex-parser-implementations-javascript]: parser_implementations.md#javascript
+[ex-parser-implementations-json5]: json.md#json5
+[ex-parser-implementations-markdown]: markdown.md#markdown
+[ex-parser-implementations-pulldown-cmark]: markdown.md#pulldown-cmark
+[ex-parser-implementations-quick-xml]: xml.md#quick-xml
+[ex-parser-implementations-serde-json]: json.md#serde-json
+[ex-parser-implementations-simd-json]: json.md#simd-json
+[ex-parser-implementations-toml-edit]: toml.md#toml-edit
+[ex-parser-implementations-toml]: toml.md#toml
+[ex-parser-implementations-xml-rs]: xml.md#xml-rs
+[ex-parser-implementations-xml5ever]: xml.md#xml5ever
+[ex-parser-implementations-xmlparser]: xml.md#xmlparser

@@ -1,4 +1,5 @@
 [ex-algorithms-create-random-passwords-from-a-set-of-user-defined-characters]: randomness.md#create-random-passwords-from-a-set-of-user-defined-characters
+[ex-algorithms-fastrand]: randomness.md#fastrand
 [ex-algorithms-generate-random-numbers-within-a-given-distribution]: randomness.md#generate-random-numbers-within-a-given-distribution
 [ex-algorithms-generate-random-numbers-within-a-range]: randomness.md#generate-random-numbers-within-a-range
 [ex-algorithms-generate-random-numbers]: randomness.md#generate-random-numbers

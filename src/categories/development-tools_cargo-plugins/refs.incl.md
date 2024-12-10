@@ -4,7 +4,9 @@
 [ex-development-tools_cargo-plugins-cargo-clippy]: code_formatting_linting.md#cargo-clippy
 [ex-development-tools_cargo-plugins-cargo-deny]: auditing.md#cargo-deny
 [ex-development-tools_cargo-plugins-cargo-edit]: maintaining.md#cargo-edit
+[ex-development-tools_cargo-plugins-cargo-expand]: maintaining.md#cargo-expand
 [ex-development-tools_cargo-plugins-cargo-generate]: writing.md#cargo-generate
+[ex-development-tools_cargo-plugins-cargo-hack]: maintaining.md#cargo-hack
 [ex-development-tools_cargo-plugins-cargo-hakari]: performance.md#cargo-hakari
 [ex-development-tools_cargo-plugins-cargo-husky]: code_formatting_linting.md#cargo-husky
 [ex-development-tools_cargo-plugins-cargo-license]: auditing.md#cargo-license

@@ -15,6 +15,8 @@
 [ex-command-line-interface-owo-colors]: ansi_terminal.md#owo-colors
 [ex-command-line-interface-pico-args]: arguments.md#pico-args
 [ex-command-line-interface-ratatui]: tui.md#ratatui
+[ex-command-line-interface-structopt]: arguments.md#structopt
 [ex-command-line-interface-stylish]: ansi_terminal.md#stylish
 [ex-command-line-interface-termcolor]: ansi_terminal.md#termcolor
+[ex-command-line-interface-termion]: ansi_terminal.md#termion
 [ex-command-line-interface-yansi]: ansi_terminal.md#yansi

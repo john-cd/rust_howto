@@ -3,6 +3,7 @@
 [ex-written-in-rust-compilers]: development_tools.md#compilers
 [ex-written-in-rust-email-applications]: others.md#email-applications
 [ex-written-in-rust-file-managers]: others.md#file-managers
+[ex-written-in-rust-javascript-tooling]: development_tools.md#javascript-tooling
 [ex-written-in-rust-lapce]: development_tools.md#lapce
 [ex-written-in-rust-news]: others.md#news
 [ex-written-in-rust-payments]: others.md#payments
@@ -12,5 +13,6 @@
 [ex-written-in-rust-rustpython]: python_tools.md#rustpython
 [ex-written-in-rust-social-media]: others.md#social-media
 [ex-written-in-rust-swc]: development_tools.md#swc
+[ex-written-in-rust-television]: others.md#television
 [ex-written-in-rust-uv]: python_tools.md#uv
 [ex-written-in-rust-zed]: development_tools.md#zed

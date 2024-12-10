@@ -6,6 +6,7 @@
 [ex-filesystem-find-all-png-files-recursively]: dir.md#find-all-png-files-recursively
 [ex-filesystem-find-files-modified-last-24-hours]: dir.md#find-files-modified-last-24-hours
 [ex-filesystem-find-loop-in-path]: dir.md#find-loop-in-path
+[ex-filesystem-globset]: dir.md#globset
 [ex-filesystem-memory-map]: read-write.md#memory-map
 [ex-filesystem-read-lines-of-strings-from-a-file]: read-write.md#read-lines-of-strings-from-a-file
 [ex-filesystem-recursively-calculate-file-sizes-at-given-depth]: dir.md#recursively-calculate-file-sizes-at-given-depth
