@@ -115,4 +115,12 @@ Yet another crate implementing colorized text
 
 A dead simple ANSI terminal color painting library.
 
+## `termion`
+
+[![termion][c-termion-badge]][c-termion] [![termion-crates.io][c-termion-crates.io-badge]][c-termion-crates.io] [![termion-github][c-termion-github-badge]][c-termion-github] [![termion-lib.rs][c-termion-lib.rs-badge]][c-termion-lib.rs]{{hi:termion}}{{hi:Color}}{{hi:Password}}{{hi:Terminal}}{{hi:Tty}}{{hi:Tui}}
+
+Termion is a pure Rust, bindless library for low-level handling, manipulating and reading information about terminals. This provides a full-featured alternative to Termbox.
+
+Termion aims to be simple and yet expressive. It is bindless, meaning that it is not a front-end to some other library (e.g., ncurses or termbox), but a standalone library directly talking to the TTY.
+
 </div>

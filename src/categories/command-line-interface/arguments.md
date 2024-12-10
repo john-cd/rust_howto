@@ -87,4 +87,17 @@ Fast compile times, fast runtime, more lax about correctness. API is more ergono
 
 <div class="hidden">
 TODO P1 expand lexopt and pico-args
+
+### structopt
+
+[![structopt][c-structopt-badge]][c-structopt] [![structopt-crates.io][c-structopt-crates.io-badge]][c-structopt-crates.io] [![structopt-github][c-structopt-github-badge]][c-structopt-github] [![structopt-lib.rs][c-structopt-lib.rs-badge]][c-structopt-lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+
+Parse command line argument by defining a struct.
+
+### Argument parsing
+
+[Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]
+
+[parsing-arguments-rust-no-dep-blog]: <https://ntietz.com/blog/parsing-arguments-rust-no-deps/>
+
 </div>
