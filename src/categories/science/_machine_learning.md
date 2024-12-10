@@ -60,12 +60,12 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 <div class="hidden">
 TODO P2 organize / write
 
-linfa and smartcore have emerged as two leading scikit-learn-analogous machine learning frameworks for Rust. Both provide access to a number of algorithms that form the backbone of machine learning analysis. https://cmccomb.com/smartcore_vs_linfa/
+linfa and smartcore have emerged as two leading scikit-learn-analogous machine learning frameworks for Rust. Both provide access to a number of algorithms that form the backbone of machine learning analysis. [cmccomb-website][cmccomb-website]
 
-Review tch-rs, burn, ort, rust-bert, tensorflow/rust, tract, cudarc, DFDX
-https://ossinsight.io/collections/ml-in-rust/?monthly-rankings=prs
+Review tch-rs, burn, ort, rust-bert, tensorflow/rust, tract, cudarc, DFDX [ML in Rust - Ranking][ml-in-rust-ossinsight-website]
 
 Candle is more focused on inference and provides more pre-trained models, while Burn is more focused on supporting the whole workflow from training to inference. Candle relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
 
-https://medium.com/@athan.seal/choosing-the-right-rust-machine-learning-framework-candle-burn-dfdx-or-tch-rs-17501f6cd765
+[Choosing the Right Rust Machine Learning Framework][blog-choosing-the-right-machine-learning-framework]
+
 </div>

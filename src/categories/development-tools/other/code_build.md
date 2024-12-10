@@ -67,7 +67,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 For Alpine, use [`apk`][apk-website]{{hi:apk}}⮳:
 
 ```dockerfile
-# Just: https://just.systems/man/en/
 RUN apk add just
 ```
 

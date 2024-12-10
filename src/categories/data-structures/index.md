@@ -36,8 +36,8 @@ BTreeSet
 
 Alongside arrayvec and tinyvec, `heapless` has stack-allocated arrays, but also includes:
 
-Arc – like std::sync::Arc but backed by a lock-free memory pool rather than #[global_allocator]
-Box – like std::boxed::Box but backed by a lock-free memory pool rather than #[global_allocator]
+Arc – like std::sync::Arc but backed by a lock-free memory pool rather than `#[global_allocator]`
+Box – like std::boxed::Box but backed by a lock-free memory pool rather than `#[global_allocator]`
 BinaryHeap – priority queue
 IndexMap – hash table
 IndexSet – hash set

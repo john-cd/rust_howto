@@ -73,6 +73,7 @@
 [blog-candle]: https://www.marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
 [blog-cargo-machete-badge]: https://img.shields.io/badge/blog-cargo_machete-beige
 [blog-cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete
+[blog-choosing-the-right-machine-learning-framework]: https://medium.com/@athan.seal/choosing-the-right-rust-machine-learning-framework-candle-burn-dfdx-or-tch-rs-17501f6cd765
 [blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
 [blog-optimizing-ci-cd-pipelines-badge]: https://img.shields.io/badge/blog-optimizing_ci_cd_pipelines-beige
 [blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
@@ -277,6 +278,7 @@
 [cloudflare-github]: https://github.com/cloudflare
 [cloudflare-website]: https://www.cloudflare.com
 [cloudflare-workers-website]: https://workers.cloudflare.com
+[cmccomb-website]: https://cmccomb.com/smartcore_vs_linfa
 [code-maven]: https://rust.code-maven.com
 [codeday-website]: https://www.codeday.org
 [codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
@@ -456,6 +458,7 @@
 [meta-website]: https://www.meta.com
 [microsoft-website]: https://www.microsoft.com
 [min-sized-rust-github]: https://github.com/johnthagen/min-sized-rust
+[ml-in-rust-ossinsight-website]: https://ossinsight.io/collections/ml-in-rust/?monthly-rankings=prs
 [mold-github-badge]: https://img.shields.io/badge/mold-steelblue?logo=github
 [mold-github]: https://github.com/rui314/mold
 [moveparallel-website]: https://moveparallel.com
@@ -493,6 +496,7 @@
 [pantsbuild-website]: https://www.pantsbuild.org
 [parity-website]: https://www.parity.io
 [paritytech-github]: https://github.com/paritytech
+[parsing-arguments-rust-no-dep-blog]: https://ntietz.com/blog/parsing-arguments-rust-no-deps
 [paste.rs]: https://paste.rs
 [personio-website]: https://www.personio.com
 [plotly.js]: https://plot.ly/javascript

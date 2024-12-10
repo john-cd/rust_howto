@@ -97,7 +97,4 @@ Parse command line argument by defining a struct.
 ### Argument parsing
 
 [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]
-
-[parsing-arguments-rust-no-dep-blog]: <https://ntietz.com/blog/parsing-arguments-rust-no-deps/>
-
 </div>

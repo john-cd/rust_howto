@@ -49,8 +49,6 @@ need Python
 ```dockerfile
 ## Alternative `just` install
 
-# # Prereqs to install Just with apt: <https://just.systems/man/en/chapter_4.html>
-
 # RUN <<EOF
 # set -e
 # wget -qO - '<https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub>' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
