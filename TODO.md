@@ -43,7 +43,7 @@
 
 ## CI
 
-- [ ] revisit Github Action workflow. Make it work with existing docker compose files + cache See <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action> try direct call to docker buildx bake - see justfile and ./scripts/docker/push_ci.sh
+- [ ] revisit Github Action workflow. Make it work with existing docker compose files + cache See [https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action](https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action) try direct call to docker buildx bake - see justfile and ./scripts/docker/push_ci.sh
 
 ## Others
 
@@ -61,173 +61,106 @@
 
 ## Additions to consider
 
-[Rust training](https://github.com/ferrous-systems/rust-training)
+### Ferrous systems
 
-[Rust exercises](https://github.com/ferrous-systems/rust-exercises)
+[Rust training][rust training]
 
-[Why rust](https://github.com/ferrous-systems/why-rust)
+[rust training]: https://github.com/ferrous-systems/rust-training
 
-[WASM training](https://github.com/ferrous-systems/wasm-training-2022)
+[Rust exercises][rust exercises]
 
-[https://github.com/ferrous-systems/mdslides](https://github.com/ferrous-systems/mdslides)
+[rust exercises]: https://github.com/ferrous-systems/rust-exercises
 
-[c2rust transpiler][c2rust]
+[Why rust][why rust]
 
-[c2rust]: https://github.com/immunant/c2rust
+[why rust]: https://github.com/ferrous-systems/why-rust
 
-JavaScript tooling:
+[WASM training][wasm training]
 
-- [Volta][volta-website]⮳[(github)][volta-github]⮳ | |
-- [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
-- Bun
+[wasm training]: https://github.com/ferrous-systems/wasm-training-2022
 
-Binary encoders
+[mdslides][mdslides]
 
-- bincode
-- prost
-- protobuf
-- rmp-serde
-- ciborium
+[mdslides]: https://github.com/ferrous-systems/mdslides
 
-XML
+### Debugging
 
-- xml-rs
-- quick-xml
-- xmlparser
-- xml5ever
+rust-gdb ??
+rust-lldb ??
 
-JSON
+### Companies
 
-- serde_json
-- json5
-- simd-json
+[Volvo][volvo]
 
-TOML
+[volvo]: <https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line>
 
-- toml
-- toml_edit
-- basic_toml
+### GPU
 
-Parser generators
+[Reddit][reddit]
 
-- nom
-- pest
-- combine
-- peg
+[reddit]: <https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=in53a04f7pnykanqye5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853>
 
-Markdown parsers
+### Jobs
 
-- pulldown-cmark
-- markdown
-- comrak
+[Rust jobs-report (Sep. 2024)][rust-jobs-report]
 
-Tempfiles
+[rust-jobs-report]: <https://filtra.io/rust/jobs-report/sep-24>
 
-- tempfile
-- tempdir
+### Other langs
 
-Reverse proxy
+[A comparison of Rust’s borrow checker to the one in C#][csborrow]
 
-- [River](https://github.com/memorysafety/river/)
-- [Pingora](https://github.com/cloudflare/pingora)
+[csborrow]: <https://em-tg.github.io/csborrow/>
 
-builder derives crates
+### AI
 
-bon - compile-time-checked builders, named function arguments via builders (foo().arg(...).call()), fallible/async builders, method builders (self.foo(...).arg(...).call()). The newest crate built based on lessons learned from typed-builder and derive_builder (33K downloads/month, but gaining popularity, 1095 stars, 3 months old).
-typed-builder - compile-time-checked builders. The oldest crate for compile-time-checked builders that has (987K downloads/month, 916 stars, 7 years old)
-derive_builder - runtime-checked builders, works with &self, &mut self builder patterns. The oldest crate for runtime-checked builders overall (1,58M downloads/month, 1285 stars, 8 years old)
+[Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]
 
-sccache
+[why rust is becoming a contender in ai development]: <https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development>
 
-[`fastrand`](https://crates.io/crates/fastrand) - 200M downloads (vs 370M for rand)
-No dependency, non-cryptographically secure random numbers, lower complexity than rand
+### CI
 
-[https://github.com/nicoburns/blessed-rs/issues/127](https://github.com/nicoburns/blessed-rs/issues/127)
+A type-safe GitHub Actions workflow generator [`gh-workflow`][gh-workflow]
 
-[https://github.com/nicoburns/blessed-rs/issues/120](https://github.com/nicoburns/blessed-rs/issues/120)
+[gh-workflow]: <https://crates.io/crates/gh-workflow>
 
-Alongside arrayvec and tinyvec, heapless has stack-allocated arrays, but also includes:
+### DSLs in Rust
 
-Arc – like std::sync::Arc but backed by a lock-free memory pool rather than #[global_allocator]
-Box – like std::boxed::Box but backed by a lock-free memory pool rather than #[global_allocator]
-BinaryHeap – priority queue
-IndexMap – hash table
-IndexSet – hash set
-LinearMap
-Object – objects managed by an object pool
-String
-Vec
-mpmc::Q* – multiple producer multiple consumer lock-free queue
-spsc::Queue – single producer single consumer lock-free queue
+### TO SORT
 
-[https://github.com/nicoburns/blessed-rs/issues/100](https://github.com/nicoburns/blessed-rs/issues/100)
+[5 non-LLM software trends to be excited about][software-trends]
 
-[https://github.com/nicoburns/blessed-rs/issues/97](https://github.com/nicoburns/blessed-rs/issues/97)
+[software-trends]: <https://read.engineerscodex.com/p/5-non-llm-software-trends-to-be-excited>
 
-[Volvo](https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line)
+[FFTW][fftw]
 
-[Reddit](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=iN53A04F7PNykANQyE5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853)
+[fftw]: https://www.fftw.org
 
-[Rust jobs-report (Sep. 2024)](https://filtra.io/rust/jobs-report/sep-24)
+Big Data Processing for the AI Era [LakeSail][lakesail]
 
-[`comemo`](https://github.com/typst/comemo)
+[lakesail]: <https://lakesail.com/>
 
-[`roxygen`](https://github.com/geo-ant/roxygen)
+See also: spice.ai
 
-[`csborrow`](https://em-tg.github.io/csborrow/)
+Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
+[`rerun`][rerun]
 
-[Why Rust is becoming a contender in AI development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
+[rerun]: <https://github.com/rerun-io/rerun>
 
-[Parsing arguments in Rust, without using dependencies](https://ntietz.com/blog/parsing-arguments-rust-no-deps/)
+### Review blessed suggestions
 
-[`gh-workflow`](https://crates.io/crates/gh-workflow)
+[127][127]
 
-[Television](https://crates.io/crates/television)
+[127]: <https://github.com/nicoburns/blessed-rs/issues/127>
 
-[`roadmap.sh` for Rust](https://roadmap.sh/rust)
+[120][120]
 
-Hashset
-BinaryHeap
-LinkedList
-Stack
-Queue
-BTreeMap
-BTreeSet
+[120]: <https://github.com/nicoburns/blessed-rs/issues/120>
 
-ring
-rust-crypto
-sodiumoxide
+[issue 100][100]
 
-json-rust
+[100]: <https://github.com/nicoburns/blessed-rs/issues/100>
 
-structopt
-termion
+[issue 97][97]
 
-rppal
-nrf-hal
-embdedded-hal
-
-wasm-bindgen
-wasm-pack
-wasmer
-
-rust-gdb
-rust-lldb
-
-criterion.rs
-
-DSLs in Rust
-
-[5 non-LLM software trends to be excited about](https://read.engineerscodex.com/p/5-non-llm-software-trends-to-be-excited)
-
-[FFTW](https://www.fftw.org/)
-
-[Rust Atomics](https://marabos.nl/atomics/)
-
-[LakeSail](https://lakesail.com/)
-
-The [Copenhagen Book](https://thecopenhagenbook.com/)
-
-[`rerun`](https://github.com/rerun-io/rerun)
-
-[typestate pattern](https://cliffle.com/blog/rust-typestate)
+[97]: <https://github.com/nicoburns/blessed-rs/issues/97>
