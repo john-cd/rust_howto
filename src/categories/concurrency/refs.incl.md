@@ -36,13 +36,6 @@
 [ex-concurrency-thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
 [ex-concurrency-tokio]: message_passing.md#tokio
 [ex-concurrency-utilities]: _actors.md#utilities
-[ex-shared-state-arc-swap]: shared_state.md#arc-swap
-[ex-shared-state-atomics]: shared_state.md#atomics
-[ex-shared-state-crossbeam-queue]: concurrent_data_structures.md#crossbeam-queue
-[ex-shared-state-dashmap]: concurrent_data_structures.md#dashmap
-[ex-shared-state-flurry]: concurrent_data_structures.md#flurry
-[ex-shared-state-mutex]: shared_state.md#mutex
-[ex-shared-state-parking-lot]: shared_state.md#parking-lot
 [p-async-channels]: ../asynchronous/async_channels.md
 [p-concurrent_data_structures]: concurrent_data_structures.md
 [p-message_passing]: message_passing.md

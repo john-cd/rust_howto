@@ -38,7 +38,7 @@ mdbook serve --open
 
 An mdbook preprocessor that controls visibility of private chapters and sections within them
 
-### Hide pages with `mdbook-hide` {#mdbook-private}
+### Hide pages with `mdbook-hide` {#mdbook-hide}
 
 [![mdbook-hide][c-mdbook_hide-badge]][c-mdbook_hide] [![mdbook-hide-crates.io][c-mdbook_hide-crates.io-badge]][c-mdbook_hide-crates.io] [![mdbook-hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github] [![mdbook-hide-lib.rs][c-mdbook_hide-lib.rs-badge]][c-mdbook_hide-lib.rs]{{hi:mdbook-hide}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 

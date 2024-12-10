@@ -207,6 +207,5 @@ Securely clear secrets from memory with a simple trait built on stable Rust prim
 
 <div class="hidden">
 TODO P1 improve
-review [blessed.rs][blessed.rs]
-[blessed.rs]: https://blessed.rs/crates
+review [blessed.rs][blessed-rs-website]
 </div>

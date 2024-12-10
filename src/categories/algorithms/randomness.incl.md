@@ -9,4 +9,7 @@
 
 <div class="hidden">
 TODO P1
+
+| [`fastrand`][ex-algorithms-fastrand] | [![fastrand][c-fastrand-badge]][c-fastrand] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] |
+
 </div>

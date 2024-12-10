@@ -4,9 +4,9 @@
 
 [Are we learning yet?][are-we-learning-yet?-website]⮳
 
-## Use classical machine learning algorithms
+## Use classical machine learning algorithms  {#classical-ml}
 
-### `linfa` {#linfa}
+### `linfa` {#skip1}
 
 [![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}} [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io] [![linfa-website][c-linfa-website-badge]][c-linfa-website] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Machine learning}}
 
@@ -16,7 +16,7 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 {{#include ../../../deps/tests/categories/science/linfa.rs:example}}
 ```
 
-### `smartcore` {#smartcore}
+### `smartcore` {#skip2}
 
 [![smartcore-website][c-smartcore-website-badge]][c-smartcore-website] [![smartcore][c-smartcore-badge]][c-smartcore] [![smartcore-crates.io][c-smartcore-crates.io-badge]][c-smartcore-crates.io] [![smartcore-github][c-smartcore-github-badge]][c-smartcore-github] [![smartcore-lib.rs][c-smartcore-lib.rs-badge]][c-smartcore-lib.rs]{{hi:smartcore}}{{hi:Statistical}}{{hi:Ai}}{{hi:Machine-learning}}{{hi:Optimization}}{{hi:Linear-algebra}}[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -26,9 +26,9 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 {{#include ../../../deps/tests/categories/science/smartcore.rs:example}}
 ```
 
-## Implement deep learning algorithms
+## Implement deep learning algorithms {#deep-learning}
 
-### `candle` {#candle}
+### `candle` {#skip3}
 
 [![candle-core][c-candle_core-badge]][c-candle_core] [![candle-core-crates.io][c-candle_core-crates.io-badge]][c-candle_core-crates.io] [![candle-core-github][c-candle_core-github-badge]][c-candle_core-github] [![candle-core-lib.rs][c-candle_core-lib.rs-badge]][c-candle_core-lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:Blas}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -40,7 +40,7 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 {{#include ../../../deps/tests/categories/science/candle.rs:example}}
 ```
 
-### `burn` {#burn}
+### `burn` {#skip4}
 
 [![burn][c-burn-badge]][c-burn] [![burn-crates.io][c-burn-crates.io-badge]][c-burn-crates.io] [![burn-github][c-burn-github-badge]][c-burn-github] [![burn-lib.rs][c-burn-lib.rs-badge]][c-burn-lib.rs]{{hi:burn}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:Pytorch}}{{hi:Tensor}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 

@@ -2,6 +2,7 @@
 [ex-documentation-cd-ci]: mdbook.md#cd-ci
 [ex-documentation-documenting-your-code]: documentation.md#documenting-your-code
 [ex-documentation-mdbook-cmdrun]: mdbook.md#mdbook-cmdrun
+[ex-documentation-mdbook-hide]: mdbook.md#mdbook-hide
 [ex-documentation-mdbook-journal]: mdbook.md#mdbook-journal
 [ex-documentation-mdbook-linkcheck]: mdbook.md#mdbook-linkcheck
 [ex-documentation-mdbook-pagetoc]: mdbook.md#mdbook-pagetoc

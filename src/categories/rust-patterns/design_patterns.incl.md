@@ -5,4 +5,7 @@
 
 <div class="hidden">
 TODO P1 review
+
+| [Typestate pattern][ex-rust-patterns-typestate-pattern] | | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
+
 </div>

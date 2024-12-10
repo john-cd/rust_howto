@@ -1,4 +1,4 @@
-# Incremental Computation {#incremental-computation}
+# Incremental Computation
 
 {{#include incremental_computation.incl.md}}
 

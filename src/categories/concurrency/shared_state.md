@@ -16,7 +16,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 {{#include ../../../deps/tests/categories/concurrency/global_mut_state.rs:example}}
 ```
 
-## Mutex {#mutex}
+## Mutexes {#mutex}
 
 [![std][c-std-badge]][c-std] [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Mutex}}
 

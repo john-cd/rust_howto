@@ -11,4 +11,8 @@
 | [Utilities][ex-cryptography-utilities] | [![subtle][c-subtle-badge]][c-subtle] [![zeroize][c-zeroize-badge]][c-zeroize] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 <div class="hidden">
+
+| [`subtle`][ex-cryptography-subtle] | [![subtle][c-subtle-badge]][c-subtle] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [`zeroize`][ex-cryptography-zeroize] | [![zeroize][c-zeroize-badge]][c-zeroize] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+
 </div>

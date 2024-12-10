@@ -7,4 +7,7 @@
 
 <div class="hidden">
 TODO P1
+
+| [`structopt`][ex-command-line-interface-structopt] | [![structopt][c-structopt-badge]][c-structopt] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
+
 </div>
