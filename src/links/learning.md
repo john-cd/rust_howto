@@ -26,4 +26,6 @@
 
 <div class="hidden">
 TODO P1: organize
+
+[`roadmap.sh` for Rust](https://roadmap.sh/rust)
 </div>

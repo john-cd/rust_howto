@@ -24,4 +24,5 @@
 
 <div class="hidden">
 TODO P1: add / review
+add [Rust Atomics][book-rust-atomics]
 </div>
