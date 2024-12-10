@@ -40,7 +40,7 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 {{#include ../../../deps/tests/categories/science/candle.rs:example}}
 ```
 
-### `burn`
+### `burn` {#burn}
 
 [![burn][c-burn-badge]][c-burn] [![burn-crates.io][c-burn-crates.io-badge]][c-burn-crates.io] [![burn-github][c-burn-github-badge]][c-burn-github] [![burn-lib.rs][c-burn-lib.rs-badge]][c-burn-lib.rs]{{hi:burn}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:Pytorch}}{{hi:Tensor}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 

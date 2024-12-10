@@ -1,4 +1,4 @@
-## Make HTTP requests
+# Make HTTP requests
 
 {{#include requests.incl.md}}
 
