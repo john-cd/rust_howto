@@ -20,6 +20,9 @@
 
 `comrak` is a 100% CommonMark-compatible GitHub Flavored Markdown parser and formatter.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 TODO P2 write; include in index.md / SUMMARY.md
 </div>

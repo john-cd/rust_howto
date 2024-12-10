@@ -1,6 +1,6 @@
 # Builder derive crates
 
-{{#include builder_patterns.incl.md}}
+{{#include builder_pattern.incl.md}}
 
 ## `typed-builder` {#typed-builder}
 
