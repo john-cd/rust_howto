@@ -51,7 +51,7 @@ Can automatically fix compiler warnings that have a clear way to correct the pro
 cargo fix
 ```
 
-## Check your code before committing it {#cargo-husky}
+## Format or lint your code before committing it {#cargo-husky}
 
 [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]{{hi:cargo-husky}}
 [![cargo-husky-crates.io][c-cargo_husky-crates.io-badge]][c-cargo_husky-crates.io]

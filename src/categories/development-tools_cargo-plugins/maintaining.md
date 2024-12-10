@@ -15,7 +15,7 @@ Currently available subcommands:
 
 ## Find unused dependencies {#find-unused-dependencies}
 
-### `cargo udeps` {#cargo-udeps}
+### `cargo udeps`
 
 [![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]{{hi:cargo-udeps}}
 [![cargo-udeps-crates.io][c-cargo_udeps-crates.io-badge]][c-cargo_udeps-crates.io]
@@ -28,16 +28,14 @@ Currently available subcommands:
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
-### `cargo machete` {#cargo-machete}
+### `cargo machete`
 
 [![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]{{hi:cargo-machete}}
 [![cargo-machete-crates.io][c-cargo_machete-crates.io-badge]][c-cargo_machete-crates.io]
 [![cargo-machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
 [![cargo-machete-lib.rs][c-cargo_machete-lib.rs-badge]][c-cargo_machete-lib.rs]
 
-`cargo-machete` is a Cargo tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
-
-[Machete][blog-cargo-machete]⮳
+[`cargo-machete`][blog-cargo-machete]⮳ is a Cargo tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
 
 Install and run with:
 
@@ -99,10 +97,14 @@ TODO P1
 
 ## `cargo expand` {#cargo-expand}
 
-[![cargo_expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github]{{hi:cargo-expand}}
+[![cargo-expand][c-cargo_expand-badge]][c-cargo_expand] [![cargo-expand-crates.io][c-cargo_expand-crates.io-badge]][c-cargo_expand-crates.io] [![cargo-expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github] [![cargo-expand-lib.rs][c-cargo_expand-lib.rs-badge]][c-cargo_expand-lib.rs]{{hi:cargo-expand}}{{hi:Cargo}}{{hi:Macros}}{{hi:Subcommand}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:cargo-expand}}
+
+Wrapper around `rustc -Zunpretty=expanded`. Shows the result of macro expansion and `#[derive]` expansion.
 
 ## `cargo hack` {#cargo-hack}
 
-[![cargo_hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github]{{hi:cargo-hack}}
+[![cargo-hack][c-cargo_hack-badge]][c-cargo_hack] [![cargo-hack-crates.io][c-cargo_hack-crates.io-badge]][c-cargo_hack-crates.io] [![cargo-hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github] [![cargo-hack-lib.rs][c-cargo_hack-lib.rs-badge]][c-cargo_hack-lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+
+Cargo subcommand to provide various options useful for testing and continuous integration.
 
 </div>
