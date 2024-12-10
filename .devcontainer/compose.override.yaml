@@ -2,23 +2,28 @@
 ##
 ## Override / merges with settings in compose.yaml
 ## Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
+##
 name: rust_howto_dev # sets COMPOSE_PROJECT_NAME
 services:
   book:
-    image: johncd/rust_howto_dev:${IMAGE_VERSION} # Name and tag of the image that will be built
+    image: johncd/rust_howto_dev:${IMAGE_VERSION:-latest} # Name and tag of the image that will be built
     build:
       target: development
       args:
-        EMAIL: ${EMAIL}
-        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME}
+        EMAIL: ${EMAIL:?email must be defined}
+        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME:?git author name must be defined}
       cache_from:
-        - johncd/rust_howto_dev:${IMAGE_VERSION}
-        - johncd/rust_howto_ci:latest
+        - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
+        - johncd/rust_howto_ci:${IMAGE_VERSION:-latest}
     volumes:
       - type: bind
         source: ..
         target: /code
-      - cargo_home_cache:/usr/local/cargo/ # https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache
+      # The Docker fs is ephemeral; we save the dependencies src and build caches in docker volumes, so that we don't need to redownload and rebuild them
+      # every time the container is restarted.
+      # Contains the dependencies (source) cache and installed bins https://doc.rust-lang.org/cargo/guide/cargo-home.html
+      - cargo_home_cache:/usr/local/cargo/
+      # Contains the compile cache:
       - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml
       - command_history:/command_history
     ## Required for ptrace-based debugger like C++, Go, and Rust.
@@ -30,9 +35,9 @@ services:
 # Create volumes in dev only, since the CI virtual machine is ephemeral
 volumes:
   cargo_home_cache:
-    name: "${COMPOSE_PROJECT_NAME}_cargo_home_cache_${RUST_VERSION}"
+    name: "${COMPOSE_PROJECT_NAME}_cargo_home_cache_${RUST_VERSION:?rust version must be defined}"
   cargo_target_cache:
-    name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION}"
+    name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION:?rust version must be defined}"
   command_history:
     name: "${COMPOSE_PROJECT_NAME}_command_history"
 ## Without custom names, the docker volumes will be prefixed by the compose project name + _

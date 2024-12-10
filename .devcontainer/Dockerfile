@@ -4,8 +4,9 @@
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
 
-# Default value, overriden by the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
-ARG RUST_IMAGE_LABEL=1.83.0-bookworm
+# The default value is overriden by the build arg passed by compose.yaml,
+# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
+ARG RUST_IMAGE_LABEL=invalid
 
 FROM rust:${RUST_IMAGE_LABEL} AS base
 ## Alternative: mcr.microsoft.com/devcontainers/rust:bookworm
@@ -74,8 +75,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code)
 RUN rustup update && rustup component add clippy rustfmt
 
-# Default value, overriden by the corresponding env. variable in `.devcontainer/.env` file
-ARG MDBOOK_VERSION=0.4.35
+# The default value is overriden by the build arg passed by compose.yaml,
+# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
+ARG MDBOOK_VERSION=invalid
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -182,7 +184,9 @@ RUN <<EOF
     echo "$SNIPPET" >> "/root/.bashrc"
 EOF
 
-## Git config default values, overriden by the corresponding env. variables in `.devcontainer/.env` file
+## Git config
+# The default values are overriden by the build arg passed by compose.override.yaml,
+# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
 ARG EMAIL=nobody@users.noreply.github.com
 ARG GIT_AUTHOR_NAME=nemo
 

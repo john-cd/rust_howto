@@ -3,12 +3,13 @@ services:
   book:
     # When pull_policy is missing from the service definition, Compose attempts to pull the image first
     # and then builds from source if the image isn't found in the registry or platform cache.
-    image: johncd/rust_howto_ci:${IMAGE_VERSION}  # Name and tag of the image that will be built
+    # IMAGE_VERSION = version of the Docker image to create e.g. 0.1.0
+    image: johncd/rust_howto_ci:${IMAGE_VERSION:-latest}  # Name and tag of the image that will be built
     build:
       target: ci
       cache_from:
-        - johncd/rust_howto_dev:latest
-        - johncd/rust_howto_ci:latest
+        - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
+        - johncd/rust_howto_ci:${IMAGE_VERSION:-latest}
         - type=gha,scope=rust_howto_ci  # GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         #- type=local,dest=./.cache
       cache_to:
@@ -16,7 +17,7 @@ services:
         - type=gha,mode=max,scope=rust_howto_ci
         #- type=local,dest=./.cache
     volumes:
-      # Mirror the folder containing the finished book into the CI machine
+      ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
-        source: ${BOOK_PATH}  # See .env file
+        source: ../book/
         target: /code/book
