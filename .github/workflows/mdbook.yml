@@ -71,10 +71,16 @@ jobs:
           call: check
           file: .devcontainer/Dockerfile
       ## Build and push
-      ## caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+      ## Uses GitHub Actions caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+      ## TODO P2 figure out how to use the exitsing compose files instead of hardcoding (see `bake` section below)
+      ## Directly call cd ./.devcontainer/; docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=.. ?
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          build-args: |
+            RUST_VERSION="1.83.0"
+            RUST_IMAGE_LABEL="1.83.0-bookworm"
+            MDBOOK_VERSION="0.4.35"
           push: true # push to registry
           load: true # also load in local image store for the next steps
           tags: ${{ steps.meta.outputs.tags }}
@@ -118,7 +124,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-## Alternative steps to build the image using the docker compose files
+## Alternative steps to bake the image (using the docker compose files)
 ## Issue: does not read .devcontainer/.env
       # - name: Get basic information (debug)
       #  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"

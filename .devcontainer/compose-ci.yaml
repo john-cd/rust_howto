@@ -10,10 +10,13 @@ services:
       cache_from:
         - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
         - johncd/rust_howto_ci:${IMAGE_VERSION:-latest}
-        - type=gha,scope=rust_howto_ci  # GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+        ## GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+        ## Only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
+        ## Ignored otherwise
+        - type=gha,scope=rust_howto_ci
         #- type=local,dest=./.cache
       cache_to:
-        #  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
+        ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
         - type=gha,mode=max,scope=rust_howto_ci
         #- type=local,dest=./.cache
     volumes:

@@ -345,14 +345,14 @@ unhide:
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
 prep: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
 
-# Build the CI Docker image, then push it to DockerHub. The GitHub Action CI workflow will use the Dockerhub image as a cache.
+# Build the CI Docker image, then push it to DockerHub.
 push_ci:
   #! /bin/bash
-  ## access private images in DockerHub
+  ## Access private images in DockerHub
   docker login
   cd ./.devcontainer/
   docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
-  # OR docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build --pull --push
+  ## OR: docker compose -f ./.devcontainer/compose.yaml -f ./.devcontainer/compose-ci.yaml build --pull --push
 
 # Push the development Docker image to DockerHub.
 push_dev:

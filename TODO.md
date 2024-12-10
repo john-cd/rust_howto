@@ -41,6 +41,10 @@
 - [ ] fix leaky tests when using nextest on Windows
 - [ ] add shuttle.rs example
 
+## CI
+
+- [ ] revisit Github Action workflow. Make it work with existing docker compose files + cache See <https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action> try direct call to docker buildx bake - see justfile and ./scripts/docker/push_ci.sh
+
 ## Others
 
 - [ ] pull request to little book of rust books
@@ -57,13 +61,13 @@
 
 ## Additions to consider
 
-[https://github.com/ferrous-systems/rust-training](https://github.com/ferrous-systems/rust-training)
+[Rust training](https://github.com/ferrous-systems/rust-training)
 
-[https://github.com/ferrous-systems/rust-exercises](https://github.com/ferrous-systems/rust-exercises)
+[Rust exercises](https://github.com/ferrous-systems/rust-exercises)
 
-[https://github.com/ferrous-systems/why-rust](https://github.com/ferrous-systems/why-rust)
+[Why rust](https://github.com/ferrous-systems/why-rust)
 
-[https://github.com/ferrous-systems/wasm-training-2022](https://github.com/ferrous-systems/wasm-training-2022)
+[WASM training](https://github.com/ferrous-systems/wasm-training-2022)
 
 [https://github.com/ferrous-systems/mdslides](https://github.com/ferrous-systems/mdslides)
 
@@ -124,8 +128,8 @@ Tempfiles
 
 Reverse proxy
 
-- [river](https://github.com/memorysafety/river/)
-- [pingora](https://github.com/cloudflare/pingora)
+- [River](https://github.com/memorysafety/river/)
+- [Pingora](https://github.com/cloudflare/pingora)
 
 builder derives crates
 
@@ -135,7 +139,7 @@ derive_builder - runtime-checked builders, works with &self, &mut self builder p
 
 sccache
 
-[fastrand](https://crates.io/crates/fastrand) - 200M downloads (vs 370M for rand)
+[`fastrand`](https://crates.io/crates/fastrand) - 200M downloads (vs 370M for rand)
 No dependency, non-cryptographically secure random numbers, lower complexity than rand
 
 [https://github.com/nicoburns/blessed-rs/issues/127](https://github.com/nicoburns/blessed-rs/issues/127)
@@ -160,27 +164,27 @@ spsc::Queue – single producer single consumer lock-free queue
 
 [https://github.com/nicoburns/blessed-rs/issues/97](https://github.com/nicoburns/blessed-rs/issues/97)
 
-[volvo](https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line)
+[Volvo](https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line)
 
-[reddit](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=iN53A04F7PNykANQyE5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853)
+[Reddit](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=iN53A04F7PNykANQyE5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853)
 
-[rust/jobs-report/sep-24](https://filtra.io/rust/jobs-report/sep-24)
+[Rust jobs-report (Sep. 2024)](https://filtra.io/rust/jobs-report/sep-24)
 
-[comemo](https://github.com/typst/comemo)
+[`comemo`](https://github.com/typst/comemo)
 
-[roxygen](https://github.com/geo-ant/roxygen)
+[`roxygen`](https://github.com/geo-ant/roxygen)
 
-[csborrow](https://em-tg.github.io/csborrow/)
+[`csborrow`](https://em-tg.github.io/csborrow/)
 
-[why-rust-is-becoming-a-contender-in-ai-development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
+[Why Rust is becoming a contender in AI development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
 
-[parsing-arguments-rust-no-deps](https://ntietz.com/blog/parsing-arguments-rust-no-deps/)
+[Parsing arguments in Rust, without using dependencies](https://ntietz.com/blog/parsing-arguments-rust-no-deps/)
 
 [`gh-workflow`](https://crates.io/crates/gh-workflow)
 
 [Television](https://crates.io/crates/television)
 
-[https://roadmap.sh/rust](https://roadmap.sh/rust)
+[`roadmap.sh` for Rust](https://roadmap.sh/rust)
 
 Hashset
 BinaryHeap
@@ -214,7 +218,7 @@ criterion.rs
 
 DSLs in Rust
 
-[5-non-llm-software-trends-to-be-excited](https://read.engineerscodex.com/p/5-non-llm-software-trends-to-be-excited)
+[5 non-LLM software trends to be excited about](https://read.engineerscodex.com/p/5-non-llm-software-trends-to-be-excited)
 
 [FFTW](https://www.fftw.org/)
 
@@ -222,8 +226,8 @@ DSLs in Rust
 
 [LakeSail](https://lakesail.com/)
 
-[the Copenhagen Book](https://thecopenhagenbook.com/)
+The [Copenhagen Book](https://thecopenhagenbook.com/)
 
-[rerun](https://github.com/rerun-io/rerun)
+[`rerun`](https://github.com/rerun-io/rerun)
 
 [typestate pattern](https://cliffle.com/blog/rust-typestate)
