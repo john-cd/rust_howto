@@ -47,7 +47,7 @@ If you are simply looking for the solution to a simple task, the easiest ways to
 
 - use the search button,
 - scan the left-side bar for categories you are interested in,
-- scan the [Index of examples](examples_index.md), and from there, click on the name of the recipe to view it.
+- scan the [Index of examples][p-index-examples], and from there, click on the name of the recipe to view it.
 - look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. `parking_lot::ReentrantMutex`).
 - consult the alphabetical and categorical crates indices.
 

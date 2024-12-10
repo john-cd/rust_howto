@@ -683,6 +683,7 @@
 [p-error-customization]: categories/rust-patterns/error_customization.md
 [p-errors]: categories/rust-patterns/error_handling.md
 [p-index]: index.md
+[p-index-examples]: examples_index.md
 [p-lang]: language/index.md
 [p-links]: links/index.md
 [p-standard-library]: standard-library/index.md
