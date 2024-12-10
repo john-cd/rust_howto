@@ -59,5 +59,5 @@ Key constructs in Rust:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
+TODO P1 add somewhere [Rust Atomics][book-rust-atomics] https://marabos.nl/atomics
 </div>
