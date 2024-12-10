@@ -24,4 +24,12 @@ postcard
 strun
 smoltcp
 ...
+
+## rppal
+
+Interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
+
+## embdedded-hal
+
+A Hardware Abstraction Layer (HAL) for embedded systems
 </div>
