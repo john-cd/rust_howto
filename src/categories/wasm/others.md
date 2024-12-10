@@ -41,4 +41,8 @@
 
 <div class="hidden">
 TODO P2 organize/write
+TODO P2 cover
+
+wasm-bindgen
+wasm-pack
 </div>
