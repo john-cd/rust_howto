@@ -218,6 +218,15 @@ fix_recipe_tables:
 lnk pattern:
   ./scripts/refdefs/search.sh {{pattern}}
 
+# (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
+convert_inline_links:
+  #! /bin/bash
+  for file in $(find . -type f \( -name "*.md" -not -name "SUMMARY.md" \) )
+  do
+    #echo ">> $file"
+    sed -E -i'.bak' 's~\[(`)?([^`]+?)(`)?\]\((.+?)\)~[\1\2\3][\L\2] \n[\2]: \4\n~g' $file
+  done
+
 ## ---- ANCHOR MANAGEMENT -----------------------------------
 
 # List book headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
