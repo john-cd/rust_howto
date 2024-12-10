@@ -46,4 +46,11 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P2 add
+
+### Add documentation to function arguments in Rust {#roxygen}
+
+[![roxygen][c-roxygen-badge]][c-roxygen] [![roxygen-crates.io][c-roxygen-crates.io-badge]][c-roxygen-crates.io] [![roxygen-github][c-roxygen-github-badge]][c-roxygen-github] [![roxygen-lib.rs][c-roxygen-lib.rs-badge]][c-roxygen-lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+Seamlessly document function parameters with rustdoc.
 </div>
