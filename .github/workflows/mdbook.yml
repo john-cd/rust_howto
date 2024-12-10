@@ -68,8 +68,8 @@ jobs:
         uses: docker/bake-action@v5
         with:
           files: |
-            compose.yaml
-            compose-ci.yaml
+            .devcontainer/compose.yaml
+            .devcontainer/compose-ci.yaml
           push: true # push to DockerHub
           load: true # load to local image storage
       - name: List docker images (debug)
