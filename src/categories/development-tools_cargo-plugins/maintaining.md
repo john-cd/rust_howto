@@ -15,7 +15,7 @@ Currently available subcommands:
 
 ## Find unused dependencies {#find-unused-dependencies}
 
-### `cargo udeps`
+### `cargo udeps` {#skip1}
 
 [![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]{{hi:cargo-udeps}}
 [![cargo-udeps-crates.io][c-cargo_udeps-crates.io-badge]][c-cargo_udeps-crates.io]
@@ -28,7 +28,7 @@ Currently available subcommands:
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
-### `cargo machete`
+### `cargo machete` {#skip2}
 
 [![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]{{hi:cargo-machete}}
 [![cargo-machete-crates.io][c-cargo_machete-crates.io-badge]][c-cargo_machete-crates.io]

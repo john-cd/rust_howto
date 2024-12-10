@@ -94,7 +94,7 @@ TODO P1 expand lexopt and pico-args
 
 Parse command line argument by defining a struct.
 
-### Argument parsing
+### Argument parsing {#skip1}
 
 [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]
 </div>

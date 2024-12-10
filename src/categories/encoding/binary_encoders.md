@@ -8,7 +8,7 @@
 
 A binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
-## ProtoBuf
+## ProtoBuf {#skip1}
 
 ### `prost` {#prost}
 

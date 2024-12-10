@@ -22,7 +22,7 @@ mdbook serve --open
 
 [Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳
 
-## Augment `mdbook` with plugins
+## Augment `mdbook` with plugins {#skip1}
 
 `mdbook` has a large number of [third-party plugins][c-mdbook-third-party-plugins-wiki]⮳.
 
@@ -97,7 +97,7 @@ TODO P1 organize, expand
 
 [Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for `mdbook`s to keep your documentation tested:
 
-## Add a table of contents to each page
+## Add a table of contents to each page {#skip1}
 
 ### `mdbook-toc` {#mdbook-toc}
 
@@ -117,7 +117,7 @@ A preprocessor and a backend to config theme for mdbook, especially creating a p
 
 A mdbook plugin that provides a table of contents for each page.
 
-## Templating
+## Templating {#skip2}
 
 ### Create pages from a template with `mdbook-tera` {#mdbook-tera}
 
@@ -137,7 +137,7 @@ A mdbook plugin that provides a table of contents for each page.
 
 Journal plugin for mdBook.
 
-## Other
+## Other {#skip3}
 
 ### `mdbook-cmdrun` {#mdbook-cmdrun}
 

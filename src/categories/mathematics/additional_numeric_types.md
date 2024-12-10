@@ -14,7 +14,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 
 ## Use big integers {#big-integers}
 
-### `num`
+### `num` {#skip1}
 
 [![num][c-num-badge]][c-num] [![num-crates.io][c-num-crates.io-badge]][c-num-crates.io] [![num-github][c-num-github-badge]][c-num-github] [![num-lib.rs][c-num-lib.rs-badge]][c-num-lib.rs]{{hi:num}}{{hi:Numerics}}{{hi:Bignum}}{{hi:Mathematics}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
@@ -24,7 +24,7 @@ A collection of numeric types and traits for Rust, including bigint, complex, ra
 {{#include ../../../deps/tests/categories/mathematics/big_integers.rs:example}}
 ```
 
-### `num-bigint`
+### `num-bigint` {#skip2}
 
 [![num-bigint][c-num_bigint-badge]][c-num_bigint] [![num-bigint-crates.io][c-num_bigint-crates.io-badge]][c-num_bigint-crates.io] [![num-bigint-github][c-num_bigint-github-badge]][c-num_bigint-github] [![num-bigint-lib.rs][c-num_bigint-lib.rs-badge]][c-num_bigint-lib.rs]{{hi:num-bigint}}{{hi:Bignum}}{{hi:Mathematics}}{{hi:Numerics}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
@@ -34,7 +34,7 @@ Big integer implementation for Rust. "It's not the fastest, but it's part of the
 {{#include ../../../deps/tests/categories/mathematics/num_bigint.rs:example}}
 ```
 
-### `rug`
+### `rug` {#skip3}
 
 [![rug][c-rug-badge]][c-rug] [![rug-crates.io][c-rug-crates.io-badge]][c-rug-crates.io] [![rug-github][c-rug-github-badge]][c-rug-github] [![rug-lib.rs][c-rug-lib.rs-badge]][c-rug-lib.rs]{{hi:rug}}{{hi:Bignum}}{{hi:Gmp}}{{hi:Math}}{{hi:Numerics}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}}
 

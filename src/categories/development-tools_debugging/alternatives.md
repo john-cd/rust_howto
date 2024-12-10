@@ -2,7 +2,7 @@
 
 {{#include alternatives.incl.md}}
 
-## Older alternatives to `tracing`
+## Older alternatives to `tracing` {#skip1}
 
 `tracing` is now the "go-to" crate for logging, but `log`, `slog` and `log4rs` are still in extensive use.
 
@@ -59,7 +59,7 @@ fn main() {
 }
 ```
 
-## Other frameworks
+## Other frameworks {#skip2}
 
 ### OpenTelemetry {#open-telemetry}
 

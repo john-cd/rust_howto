@@ -12,7 +12,7 @@
 {{#include ../../../deps/tests/categories/web_programming_http_server/zola.rs:example}}
 ```
 
-### Themes for `zola`
+### Themes for `zola` {#skip1}
 
 [AdiDoks][adidoks-website] is a modern documentation theme.
 

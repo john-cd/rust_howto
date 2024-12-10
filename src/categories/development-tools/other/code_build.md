@@ -10,7 +10,7 @@
 
 Consult the [Just programmer's manual][c-just-programmer-manual]⮳.
 
-### Example `justfile`
+### Example `justfile` {#skip1}
 
 Place it in the root folder of your project. Run [`just`][c-just-website]{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
@@ -44,7 +44,7 @@ foo:
  echo "$hello from Bash!"
 ```
 
-### Install `just` in a dev container
+### Install `just` in a dev container {#skip2}
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye
