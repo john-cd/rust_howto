@@ -55,4 +55,7 @@ A library for building fast, reliable and evolvable network services.
 
 <div class="hidden">
 TODO P1 write
+
+[River][river-github]
+[river-github]: https://github.com/memorysafety/river
 </div>
