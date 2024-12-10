@@ -40,25 +40,17 @@ env:
 jobs:
   ## Build job
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
-  ##
   build:
     runs-on: ubuntu-latest
     steps:
       #- name: Get basic information (debug)
       #  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
-      - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v4
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Extract Docker image metadata (extract image tags and annotations for the Docker build)
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-      ## The default `docker` driver built in the docker daemon has limited support for advanced features like caching:
+      ## The default legacy `docker` driver built in the docker daemon has limited support for advanced features like caching:
       ## https://docs.docker.com/build/builders/drivers/
       ## `setup-buildx-action` uses by default the `docker-container` driver, which supports caching:
       ## https://github.com/docker/setup-buildx-action
@@ -67,32 +59,24 @@ jobs:
         uses: docker/setup-buildx-action@v3
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
-      ## Validate: https://docs.docker.com/build/ci/github-actions/checks/
-      - name: Validate build configuration
-        uses: docker/build-push-action@v6
+      ## Build with bake: https://docs.docker.com/guides/compose-bake/
+      ## https://docs.docker.com/build/bake/compose-file/
+      ## See also https://github.com/marketplace/actions/docker-buildx-bake
+      - name: Build and push (via bake)
+        uses: docker/bake-action@v5
         with:
-          call: check
-          file: .devcontainer/Dockerfile
-      ## Build and push
-      ## caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true # push to registry
-          load: true # also load in local image store for the next steps
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          #provenance: true
-          #sbom: true
-          cache-from: |
-            type=gha
-          cache-to: |
-            type=gha,mode=max
-          file: .devcontainer/Dockerfile
-      # - name: List docker images (debug)
-      #   run: docker image ls
+          # Git context can be provided using the source input.
+          # This means that you don't need to use the actions/checkout action to check out the repository as BuildKit will do this directly.
+          source: "{{defaultContext}}:.devcontainer"
+          files: |
+            compose.yaml
+            compose-ci.yaml
+          push: true # push to DockerHub
+          load: true # load to local image storage
+      - name: List docker images (debug)
+        run: docker image ls
       - name: Create the book/ directory on the CI machine
-        run: mkdir book/
+        run: mkdir -p book/
       - name: Check that all the code builds and pass tests; build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
@@ -122,6 +106,38 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+## Alternative steps to build the image without using the docker compose files
+      # ## Clone the git repo on the CI machine
+      # - name: Code checkout (clones the Git repository)
+      #   uses: actions/checkout@v4
+      # ...
+      # - name: Extract Docker image metadata (extract image tags and annotations for the Docker build)
+      #   id: meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: ${{ env.IMAGE_NAME }}
+      # ## Validate: https://docs.docker.com/build/ci/github-actions/checks/
+      # - name: Validate the build configuration
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     call: check
+      #     file: .devcontainer/Dockerfile
+      # ## caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+      # - name: Build and push
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     push: true # push to registry
+      #     load: true # also load in local image store for the next steps
+      #     tags: ${{ steps.meta.outputs.tags }}
+      #     annotations: ${{ steps.meta.outputs.annotations }}
+      #     #provenance: true
+      #     #sbom: true
+      #     cache-from: |
+      #       type=gha
+      #     cache-to: |
+      #       type=gha,mode=max
+      #     file: .devcontainer/Dockerfile
 
 ## Advanced caching, if needed:
 ## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
