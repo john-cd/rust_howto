@@ -95,6 +95,7 @@
 [blog-traits]: https://blog.rust-lang.org/2015/05/11/traits.html
 [blog-tuify-badge]: https://img.shields.io/badge/blog-tuify-beige
 [blog-tuify]: https://developerlife.com/2023/09/17/tuify-clap
+[blog-typestate-pattern]: https://cliffle.com/blog/rust-typestate
 [blog-what-is-blocking-badge]: https://img.shields.io/badge/blog-what_is_blocking-beige
 [blog-working-with-env-variables-badge]: https://img.shields.io/badge/blog-working_with_env_variables-beige
 [blog-working-with-env-variables]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust
@@ -111,6 +112,7 @@
 [book-cargo-env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
 [book-cargo-specifying-dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [book-command-line-rust-github]: https://github.com/kyclark/command-line-rust/tree/main
+[book-copenhagen]: https://thecopenhagenbook.com
 [book-easy-rust-badge]: https://img.shields.io/badge/Easy_rust-peru?logo=mdbook
 [book-easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [book-effective-rust-badge]: https://img.shields.io/badge/Effective_rust-peru?logo=mdbook
@@ -120,6 +122,7 @@
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
 [book-programming-rust-badge]: https://img.shields.io/badge/Programming_Rust-peru?logo=mdbook
 [book-programming-rust]: https://www.oreilly.com/library/view/programming-rust/9781491927274
+[book-rust-atomics]: https://marabos.nl/atomics
 [book-rust-attributes-badge]: https://img.shields.io/badge/Rust_Book-Attributes-blue?logo=mdbook
 [book-rust-badge]: https://img.shields.io/badge/Rust_Book-blue?logo=mdbook
 [book-rust-box-badge]: https://img.shields.io/badge/Rust_Book-Box-blue?logo=mdbook
@@ -555,10 +558,10 @@
 [rediron-github]: https://github.com/orgs/OCamlPro
 [rediron-website]: https://red-iron.eu
 [redjack-website]: https://www.redjack.com
-[redox-website]: https://www.redox-os.org
-[redox-website-badge]: https://img.shields.io/badge/redox-coral
-[redox-github]: https://github.com/redox-os/redox
 [redox-github-badge]: https://img.shields.io/badge/redox-steelblue?logo=github
+[redox-github]: https://github.com/redox-os/redox
+[redox-website-badge]: https://img.shields.io/badge/redox-coral
+[redox-website]: https://www.redox-os.org
 [redsift-github]: https://github.com/redsift
 [redsift-website]: https://redsift.com
 [renault-website]: https://www.renaultgroup.com
@@ -607,8 +610,8 @@
 [rust-module-system-website]: https://www.sheshbabu.com/posts/rust-module-system
 [rust-on-nails-website-badge]: https://img.shields.io/badge/rust_on_nails-coral
 [rust-on-nails-website]: https://rust-on-nails.com
-[rust-playground-website]: https://play.rust-lang.org
 [rust-playground-website-badge]: https://img.shields.io/badge/rust_playground-coral
+[rust-playground-website]: https://play.rust-lang.org
 [rust-practice-projects]: https://zerotomastery.io/blog/rust-practice-projects
 [rust-quizz-badge]: https://img.shields.io/badge/Rust_quizz-tan
 [rust-quizz]: https://dtolnay.github.io/rust-quiz
