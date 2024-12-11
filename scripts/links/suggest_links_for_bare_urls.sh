@@ -18,3 +18,4 @@ rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?
 echo "DONE"
 
 # TODO improve; output [...-github] if https://github.com/...
+# TODO ignore base URLs within ```...```

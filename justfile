@@ -250,8 +250,8 @@ fix_recipe_tables:
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
 # Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
-list_bare_urls:
-  ./scripts/urls/list_bare_urls.sh
+suggest_links_for_bare_urls:
+  ./scripts/links/suggest_links_for_bare_urls.sh
 # TODO P2
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
