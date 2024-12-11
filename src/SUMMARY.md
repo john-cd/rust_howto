@@ -113,6 +113,7 @@
   - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
   - [Faster linking](categories/compilers/faster_linking.md)
   - [Cross-compilation](categories/compilers/cross_compilation.md)
+  - [Incremental computation](categories/compilers/incremental_computation.md)
 
 - [Compression](categories/compression/index.md)
   - [Working with tarballs](categories/compression/tar.md)
@@ -255,6 +256,7 @@
   - [Structured data](categories/encoding/complex.md)
   - [`serde`](categories/encoding/serde.md)
   - [Typecasting](categories/encoding/typecasts.md)
+  - [Binary encoders](categories/encoding/binary_encoders.md)
 
 - [External FFI bindings](categories/external-ffi-bindings/_index.md)
   - [External FFI bindings](categories/external-ffi-bindings/external_ffi_bindings.md)
@@ -365,6 +367,10 @@
 
 - [Parser implementations](categories/parser-implementations/_index.md)
   - [Parser implementations](categories/parser-implementations/parser_implementations.md)
+  - [JSON](categories/parser-implementations/json.md)
+  - [Markdown](categories/parser-implementations/markdown.md)
+  - [TOML](categories/parser-implementations/toml.md)
+  - [XML](categories/parser-implementations/xml.md)
 
 - [Parsing](categories/parsing/_index.md)
   - [Parsing](categories/parsing/parsing.md)
@@ -389,6 +395,7 @@
   - [Design patterns](categories/rust-patterns/design_patterns.md)
   - [Functional programming](categories/rust-patterns/functional_programming.md)
   - [Rust idioms](categories/rust-patterns/rust_idioms.md)
+  - [Builder pattern](categories/rust-patterns/builder_pattern.md)
 
 - [Science](categories/science/_index.md)
 

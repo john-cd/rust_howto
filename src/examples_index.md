@@ -328,6 +328,10 @@
 
 ## Encoding
 
+### Binary Encoders
+
+{{#include categories/encoding/binary_encoders.incl.md}}
+
 ### Complex
 
 {{#include categories/encoding/complex.incl.md}}
@@ -431,6 +435,10 @@
 {{#include categories/os/rust_os.incl.md}}
 
 ## Rust Patterns
+
+### Builder Pattern
+
+{{#include categories/rust-patterns/builder_pattern.incl.md}}
 
 ### Design Patterns
 
