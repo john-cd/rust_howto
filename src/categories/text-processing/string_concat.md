@@ -4,7 +4,7 @@
 
 {{#include string_concat.incl.md}}
 
-## Comparison of string concatenation methods {#benchmark}
+## Compare string concatenation methods {#benchmark}
 
 [String concatenation benchmark][concat-benchmark-github]⮳
 

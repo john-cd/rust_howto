@@ -36,7 +36,7 @@ Proper error handling{{hi:Error handling}} considers exceptions exceptional. Her
 {{#include ../../../deps/tests/categories/development_tools_debugging/log_error.rs:example}}
 ```
 
-## Log to stdout instead of stderr {#log-to-stdout}
+## Log to `stdout` instead of `stderr` {#log-to-stdout}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 

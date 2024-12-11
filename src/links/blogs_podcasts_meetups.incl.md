@@ -2,4 +2,4 @@
 |--------|
 | [Meetups][ex-links-meetups] |
 | [Newsletters][ex-links-newsletters] |
-| [Podcasts & blogs][ex-links-podcasts-blogs] |
+| [Rust podcasts][ex-links-podcasts-blogs] |

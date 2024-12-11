@@ -1,4 +1,4 @@
-# Package Layout {#package-layout}
+# Package layout {#package-layout}
 
 {{#include package_layout.incl.md}}
 

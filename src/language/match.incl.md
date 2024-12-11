@@ -1,5 +1,5 @@
 ||
 |--------|
-| [`match`][ex-language-match] |
+| [Match, if let, while let][ex-language-match] |
 | [`if let`][ex-language-if-let] |
 | [`while let`][ex-language-while-let] |

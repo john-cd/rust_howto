@@ -2,7 +2,7 @@
 
 {{#include environment_variables.incl.md}}
 
-## Dotenvy {#dotenvy}
+## `dotenvy` {#dotenvy}
 
 [![dotenvy][c-dotenvy-badge]][c-dotenvy] [![dotenvy-crates.io][c-dotenvy-crates.io-badge]][c-dotenvy-crates.io] [![dotenvy-github][c-dotenvy-github-badge]][c-dotenvy-github] [![dotenvy-lib.rs][c-dotenvy-lib.rs-badge]][c-dotenvy-lib.rs]{{hi:dotenvy}}{{hi:Environment}}{{hi:Env}}{{hi:Dotenv}}{{hi:Settings}}{{hi:Config}}
 
@@ -24,7 +24,7 @@ To retrieve a single environment variable{{hi:Environment variables}},
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳
 
-## Envy {#envy}
+## `envy` {#envy}
 
 [![envy][c-envy-badge]][c-envy] [![envy-crates.io][c-envy-crates.io-badge]][c-envy-crates.io] [![envy-github][c-envy-github-badge]][c-envy-github] [![envy-lib.rs][c-envy-lib.rs-badge]][c-envy-lib.rs]{{hi:envy}}{{hi:Env}}{{hi:Serde}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 

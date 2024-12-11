@@ -2,7 +2,7 @@
 
 {{#include compile_macros.incl.md}}
 
-## Watt {#watt}
+## `watt` {#watt}
 
 [![watt][c-watt-badge]][c-watt]{{hi:watt}}
 [![watt-crates.io][c-watt-crates.io-badge]][c-watt-crates.io]

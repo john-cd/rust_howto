@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Publication][ex-contributing-publish] |
+| [Publish to crates.io][ex-contributing-publish] |

@@ -2,7 +2,7 @@
 
 {{#include protocols.incl.md}}
 
-## Aerospace Protocols {#aerospace_protocols}
+## Aerospace protocols {#aerospace_protocols}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/aerospace_protocols/aero_protocols.rs:example}}

@@ -2,7 +2,7 @@
 
 {{#include visualization.incl.md}}
 
-## Visualization {#viz}
+## View, plot or graph data {#viz}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/visualization/visualization1.rs:example}}

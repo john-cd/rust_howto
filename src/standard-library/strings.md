@@ -2,7 +2,7 @@
 
 {{#include strings.incl.md}}
 
-## String type {#string}
+## `String` {#string}
 
 [![std][c-std-badge]][c-std]{{hi:std}}{{hi:Strings}}
 
@@ -22,9 +22,9 @@ Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug
 
 Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression’s value).
 
-## String concatenation {#string-concatenation}
+## Concatenate strings {#string-concatenation}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 Here are several common methods to concatenate{{hi:Concatenation}} Strings:
 

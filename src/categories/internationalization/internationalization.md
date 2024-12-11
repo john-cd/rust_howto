@@ -2,7 +2,7 @@
 
 {{#include internationalization.incl.md}}
 
-## Internationalized {#internationalization}
+## Internationalize your app {#internationalization}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/internationalization/internationalization1.rs:example}}

@@ -47,11 +47,11 @@ Key constructs in Rust:
 
 {{#include data_parallelism.incl.md}}
 
-## Send and Sync
+## `Send` and `Sync`
 
 {{#include send.incl.md}}
 
-## See Also
+## See also
 
 [![Rust concurrency book][book-rust-concurrency-badge]][book-rust-concurrency]⮳
 

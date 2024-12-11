@@ -1,4 +1,4 @@
-# Build Time Tooling
+# Build time tooling
 
 {{#include build_utils.incl.md}}
 

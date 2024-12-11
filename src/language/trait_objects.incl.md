@@ -1,3 +1,3 @@
 ||
 |--------|
-| [trait-objects][ex-language-trait-objects] |
+| [Trait objects][ex-language-trait-objects] |

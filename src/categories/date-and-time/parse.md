@@ -36,7 +36,7 @@ Formats the current time in the well-known [RFC 2822 format][rfc-2822]{{hi:RFC-2
 {{#include ../../../deps/tests/categories/date_and_time/format.rs:example}}
 ```
 
-## Parse string into DateTime struct {#parse-string-into-datetime-struct}
+## Parse string into `DateTime` struct {#parse-string-into-datetime-struct}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 

@@ -2,7 +2,7 @@
 
 {{#include configuration.incl.md}}
 
-## Config {#config}
+## `config` {#config}
 
 [![config][c-config-badge]][c-config] [![config-crates.io][c-config-crates.io-badge]][c-config-crates.io] [![config-github][c-config-github-badge]][c-config-github] [![config-lib.rs][c-config-lib.rs-badge]][c-config-lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -12,7 +12,7 @@
 {{#include ../../../deps/tests/categories/config/config1.rs:example}}
 ```
 
-## Confy {#confy}
+## `confy` {#confy}
 
 [![confy][c-confy-badge]][c-confy] [![confy-crates.io][c-confy-crates.io-badge]][c-confy-crates.io] [![confy-github][c-confy-github-badge]][c-confy-github] [![confy-lib.rs][c-confy-lib.rs-badge]][c-confy-lib.rs]{{hi:confy}}
 

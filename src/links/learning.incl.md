@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Rust Learning][ex-links-learning] |
+| [Learn Rust][ex-links-learning] |

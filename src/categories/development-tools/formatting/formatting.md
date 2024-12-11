@@ -67,7 +67,7 @@ List config options with
 rustfmt --help=config
 ```
 
-### Use attributes to skip code formatting {#formatting-attributes}
+### Use attributes to skip code formatting in your code {#formatting-attributes}
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

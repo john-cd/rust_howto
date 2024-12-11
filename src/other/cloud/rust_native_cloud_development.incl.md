@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Shuttle Cloud Platform][ex-cloud-shuttle] |  |  |
+| [`shuttle`][ex-cloud-shuttle] |  |  |
 
 <div class="hidden">
 TODO P1

@@ -25,11 +25,12 @@ strun
 smoltcp
 ...
 
-## rppal
+## `rppal`
 
 Interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
 
-## embdedded-hal
+## `embdedded-hal`
 
 A Hardware Abstraction Layer (HAL) for embedded systems
+
 </div>

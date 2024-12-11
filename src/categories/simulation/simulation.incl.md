@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Simulation][ex-simulation-simul] |  | [![cat-simulation][cat-simulation-badge]][cat-simulation] |
+| [Simulate][ex-simulation-simul] |  | [![cat-simulation][cat-simulation-badge]][cat-simulation] |

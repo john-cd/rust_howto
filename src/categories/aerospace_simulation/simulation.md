@@ -2,7 +2,7 @@
 
 {{#include simulation.incl.md}}
 
-## Aerospace Simulation {#aerospace_simulation}
+## Aerospace simulation {#aerospace_simulation}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/aerospace_simulation/aero_simulation.rs:example}}

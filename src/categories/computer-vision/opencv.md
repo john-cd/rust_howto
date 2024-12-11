@@ -1,4 +1,4 @@
-# Open CV
+# OpenCV
 
 {{#include opencv.incl.md}}
 

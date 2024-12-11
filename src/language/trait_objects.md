@@ -1,4 +1,4 @@
-# Trait Objects {#trait-objects}
+# Trait objects {#trait-objects}
 
 {{#include trait_objects.incl.md}}
 

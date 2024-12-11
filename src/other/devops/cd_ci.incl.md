@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [CD / CI][ex-devops-cdci] |  |  |
+| [Continuous Deployment / Continuous Integration][ex-devops-cdci] |  |  |

@@ -44,7 +44,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 {{#include ../../../deps/tests/categories/development_tools_debugging/log_env_variable.rs:example}}
 ```
 
-## Include timestamp in log messages {#timestamp-in-log-messages}
+## Include a timestamp in log messages {#timestamp-in-log-messages}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 

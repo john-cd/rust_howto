@@ -14,7 +14,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 {{#include ../../../deps/tests/categories/cryptography/sha_digest.rs:example}}
 ```
 
-## Sign and verify a message with HMAC digest {#hmac}
+## Sign and verify a message with a HMAC digest {#hmac}
 
 [![ring][c-ring-badge]][c-ring] [![ring-crates.io][c-ring-crates.io-badge]][c-ring-crates.io] [![ring-github][c-ring-github-badge]][c-ring-github] [![ring-lib.rs][c-ring-lib.rs-badge]][c-ring-lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:Ecc}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -24,7 +24,7 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 {{#include ../../../deps/tests/categories/cryptography/hmac.rs:example}}
 ```
 
-## General Purpose Hashing {#general-purpose-hashing}
+## Use general-purpose hashing algorithms {#general-purpose-hashing}
 
 For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
 
@@ -52,7 +52,7 @@ MD5 hash function
 {{#include ../../../deps/tests/categories/cryptography/md_5.rs:example}}
 ```
 
-## AEAD Encryption {#aead-encryption}
+## Encrypt with AEAD {#aead-encryption}
 
 For more algorithms, see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}
 
@@ -72,7 +72,7 @@ Pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encr
 {{#include ../../../deps/tests/categories/cryptography/aes_gcm.rs:example}}
 ```
 
-## RSA {#rsa}
+## Use the RSA algorithm {#rsa}
 
 [![rsa][c-rsa-badge]][c-rsa] [![rsa-crates.io][c-rsa-crates.io-badge]][c-rsa-crates.io] [![rsa-github][c-rsa-github-badge]][c-rsa-github] [![rsa-lib.rs][c-rsa-lib.rs-badge]][c-rsa-lib.rs]{{hi:rsa}}{{hi:Crypto}}{{hi:Security}}{{hi:Encryption}}{{hi:rsa}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
@@ -82,7 +82,7 @@ Pure Rust RSA implementation.
 {{#include ../../../deps/tests/categories/cryptography/rsa.rs:example}}
 ```
 
-## Digital Signatures {#digital-signatures}
+## Compute digital signatures {#digital-signatures}
 
 For more algorithms, see Rust Crypto Signatures:
 
@@ -119,7 +119,7 @@ signatures as well as support for added entropy.
 {{#include ../../../deps/tests/categories/cryptography/dsa.rs:example}}
 ```
 
-## Certificate Formats {#certificates}
+## Create certificates {#certificates}
 
 For more formats, see Rust Crypto Formats.
 
@@ -162,7 +162,7 @@ Pure Rust implementation of the X.509 Public Key Infrastructure Certificate form
 {{#include ../../../deps/tests/categories/cryptography/x509_cert.rs:example}}
 ```
 
-## TLS / SSL {#tls-ssl}
+## Use TLS / SSL {#tls-ssl}
 
 [![rustls][c-rustls-badge]][c-rustls] [![rustls-crates.io][c-rustls-crates.io-badge]][c-rustls-crates.io] [![rustls-github][c-rustls-github-badge]][c-rustls-github] [![rustls-lib.rs][c-rustls-lib.rs-badge]][c-rustls-lib.rs]{{hi:rustls}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 

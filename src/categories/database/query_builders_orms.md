@@ -2,7 +2,7 @@
 
 {{#include query_builders_orms.incl.md}}
 
-## Sqlx {#sqlx}
+## `sqlx` {#sqlx}
 
 [![sqlx][c-sqlx-badge]][c-sqlx]{{hi:sqlx}} [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github] [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -27,7 +27,7 @@ Built on top of sqlx (see above). There is also a related sea-query crate that p
 {{#include ../../../deps/tests/categories/database/sea_orm.rs:example}}
 ```
 
-## Diesel {#diesel}
+## `diesel` {#diesel}
 
 [![diesel][c-diesel-badge]][c-diesel]{{hi:diesel}} [![diesel-lib.rs][c-diesel-lib.rs-badge]][c-diesel-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -37,7 +37,7 @@ Has excellent performance and takes an approach of strict compile time guarantee
 {{#include ../../../deps/tests/categories/database/diesel.rs:example}}
 ```
 
-## Toasty {#toasty}
+## `toasty` {#toasty}
 
 [![toasty][c-toasty-badge]][c-toasty]{{hi:toasty}}
 [![toasty-crates.io][c-toasty-crates.io-badge]][c-toasty-crates.io]

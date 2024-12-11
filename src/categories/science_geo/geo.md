@@ -2,7 +2,7 @@
 
 {{#include geo.incl.md}}
 
-## Geospatial {#geo}
+## Process spatial information, maps, navigation data, and geographic information systems {#geo}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/science_geo/geo.rs:example}}

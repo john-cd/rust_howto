@@ -20,7 +20,7 @@
 {{#include ../../deps/tests/language/traits3.rs:example}}
 ```
 
-## Newtype pattern {#newtype-pattern}
+## "Newtype" pattern {#newtype-pattern}
 
 Unlike interfaces{{hi:Interfaces}} in languages like Java, C# or Scala, new traits{{hi:Traits}} can be implemented for _existing_ types.
 
@@ -46,7 +46,7 @@ One restriction to note is that we can implement a trait on a type only if at le
 {{#include ../../deps/tests/language/traits5.rs:example}}
 ```
 
-## Return-position impl Trait {#return-position-impl-trait}
+## Return-position `impl` Trait {#return-position-impl-trait}
 
 ```rust,editable
 {{#include ../../deps/tests/language/rpit.rs:example}}

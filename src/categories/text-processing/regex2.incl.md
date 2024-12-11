@@ -1,3 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Longer regex example][ex-text-processing-longer-regex-example] |  |  |
+| [Longer Regex Example][ex-text-processing-longer-regex-example] |  |  |

@@ -12,7 +12,7 @@ Validates that an email address{{hi:Email address}} is formatted correctly, and 
 {{#include ../../../deps/tests/categories/text_processing/email.rs:example}}
 ```
 
-## Extract a list of unique #Hashtags from a text {#extract-a-list-of-unique-hashtags-from-a-text}
+## Extract a list of unique #hashtags from a text {#extract-a-list-of-unique-hashtags-from-a-text}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

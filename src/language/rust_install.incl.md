@@ -1,3 +1,3 @@
 ||
 |--------|
-| [Rust installation][ex-language-rust-install] |
+| [Install Rust and create a first project][ex-language-rust-install] |

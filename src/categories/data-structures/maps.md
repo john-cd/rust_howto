@@ -2,7 +2,7 @@
 
 {{#include maps.incl.md}}
 
-## Insertion-ordered map {#indexmap}
+## Store data in an insertion-ordered map {#indexmap}
 
 [![indexmap][c-indexmap-badge]][c-indexmap]{{hi:indexmap}}
 [![indexmap-crates.io][c-indexmap-crates.io-badge]][c-indexmap-crates.io]
@@ -17,7 +17,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 {{#include ../../../deps/tests/categories/data_structures/indexmap.rs:example}}
 ```
 
-## Multimap {#multimap}
+## Store data in a multimap {#multimap}
 
 [![multimap][c-multimap-badge]][c-multimap]{{hi:multimap}}
 [![multimap-crates.io][c-multimap-crates.io-badge]][c-multimap-crates.io]
@@ -30,7 +30,7 @@ A HashMap that seperately keeps track of insertion order and allows you to effic
 {{#include ../../../deps/tests/categories/data_structures/multimap.rs:example}}
 ```
 
-## Slotmap {#slotmap}
+## `slotmap` {#slotmap}
 
 [![slotmap][c-slotmap-badge]][c-slotmap]{{hi:slotmap}}
 [![slotmap-crates.io][c-slotmap-crates.io-badge]][c-slotmap-crates.io]

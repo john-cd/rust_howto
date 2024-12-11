@@ -24,7 +24,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include search.incl.md}}
 
-## Query Builders and ORMs
+## Query builders and ORMs
 
 {{#include query_builders_orms.incl.md}}
 

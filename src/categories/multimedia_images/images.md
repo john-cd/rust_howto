@@ -2,7 +2,7 @@
 
 {{#include images.incl.md}}
 
-## Image {#images}
+## Process or create images {#images}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/multimedia_images/images.rs:example}}

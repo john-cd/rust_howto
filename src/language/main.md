@@ -6,7 +6,7 @@
 {{#include ../../deps/tests/language/main_test.rs:example}}
 ```
 
-## Async Main Function {#async-main-function}
+## Async main function {#async-main-function}
 
 ```rust,editable
 {{#include ../../deps/tests/language/async_main.rs:example}}

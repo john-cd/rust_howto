@@ -2,7 +2,7 @@
 
 {{#include explicit_threads.incl.md}}
 
-## Spawn, join {#spawn-join}
+## Use spawn & join {#spawn-join}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
@@ -12,7 +12,7 @@
 
 Note: when the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
 
-## Scoped threads {#scoped-threads}
+## Use scoped threads {#scoped-threads}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 

@@ -2,7 +2,7 @@
 
 {{#include freebsd.incl.md}}{{hi:Operating systems::FreeBSD APIs}}
 
-## FreeBSD {#freebsd}
+## Bind to FreeBSD APIs {#freebsd}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/os_freebsd_apis/freebsd.rs:example}}

@@ -2,13 +2,13 @@
 
 {{#include send.incl.md}}{{hi:Send}}{{hi:Sync}{{hi:'static}}}
 
-## Send {#send}
+## `Send` {#send}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/concurrency/send.rs:example}}
 ```
 
-## Sync {#sync}
+## `Sync` {#sync}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/concurrency/sync.rs:example}}

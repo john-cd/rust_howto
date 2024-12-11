@@ -10,9 +10,9 @@
 
 Consult the [Just programmer's manual][c-just-programmer-manual]⮳.
 
-### Example `justfile` {#skip1}
+### Create a `justfile` {#skip1}
 
-Place it in the root folder of your project. Run [`just`][c-just-website]{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
+Place the following example `justfile` in the root folder of your project. Run [`just`][c-just-website]{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
 # Load a .env file, if present.
@@ -44,7 +44,7 @@ foo:
  echo "$hello from Bash!"
 ```
 
-### Install `just` in a dev container {#skip2}
+### Install `just` in a Dev Container {#skip2}
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye

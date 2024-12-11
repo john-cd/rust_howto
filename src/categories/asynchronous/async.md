@@ -16,7 +16,7 @@ Key constructs in Rust:
 - [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ keywords
 - [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳
 
-## Basic Example {#basic-example}
+## Basic example {#basic-example}
 
 [![std][c-std-badge]][c-std] [![tokio][c-tokio-badge]][c-tokio] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 

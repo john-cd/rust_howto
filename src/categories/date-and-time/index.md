@@ -11,11 +11,11 @@ There are two key libraries:
 
 There is no clear answer as to which is best between `time` and `chrono`. Evaluate for yourself between these two, but both are trusted and well-maintained.
 
-## Duration and Calculation
+## Duration and calculation
 
 {{#include duration.incl.md}}
 
-## Parsing and Displaying
+## Parsing and displaying
 
 {{#include parse.incl.md}}
 

@@ -40,7 +40,7 @@ cargo nextest run
 cargo test --doc
 ```
 
-## Approx {#approx}
+## `approx` {#approx}
 
 [![approx][c-approx-badge]][c-approx]{{hi:approx}}
 [![approx-crates.io][c-approx-crates.io-badge]][c-approx-crates.io]

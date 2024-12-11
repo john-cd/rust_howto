@@ -17,7 +17,7 @@ Low-level crate that others build on.
 {{#include ../../../deps/tests/categories/web_programming_websocket/tungstenite.rs:example}}
 ```
 
-## Implement Websocket while using `tokio` {#general-purpose}
+## Implement Websocket while using the `tokio` async runtime {#general-purpose}
 
 [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite]{{hi:tokio-tungstenite}}
 [![tokio-tungstenite-crates.io][c-tokio_tungstenite-crates.io-badge]][c-tokio_tungstenite-crates.io]

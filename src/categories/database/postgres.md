@@ -14,7 +14,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 {{#include ../../../deps/tests/categories/database/postgres/create_tables.rs:example}}
 ```
 
-## Insert and Query data {#insert-query-data-postgres}
+## Insert and query data {#insert-query-data-postgres}
 
 [![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -47,7 +47,7 @@ Postgres-specific library. Performs better than SQLx.
 {{#include ../../../deps/tests/categories/database/tokio_postgres.rs:example}}
 ```
 
-## Cornucopia for postgres {#cornucopia}
+## `cornucopia` for postgres {#cornucopia}
 
 [![cornucopia-website][c-cornucopia-website-badge]][c-cornucopia-website] [![cornucopia][c-cornucopia-badge]][c-cornucopia] [![cornucopia-crates.io][c-cornucopia-crates.io-badge]][c-cornucopia-crates.io] [![cornucopia-github][c-cornucopia-github-badge]][c-cornucopia-github] [![cornucopia-lib.rs][c-cornucopia-lib.rs-badge]][c-cornucopia-lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 

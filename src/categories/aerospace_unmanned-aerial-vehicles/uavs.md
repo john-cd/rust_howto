@@ -2,7 +2,7 @@
 
 {{#include uavs.incl.md}}
 
-## Unmanned Aerial Vehicles {#uavs}
+## Unmanned aerial vehicles {#uavs}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/aerospace_unmanned_aerial_vehicles/uavs.rs:example}}

@@ -13,7 +13,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 {{#include ../../../deps/tests/categories/encoding/serde.rs:example}}
 ```
 
-## JSON {#serde-json2}
+## Serialize JSON {#serde-json2}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 [![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]

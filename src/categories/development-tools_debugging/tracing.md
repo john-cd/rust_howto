@@ -14,9 +14,9 @@ tracing = "0.1"
 tracing-subscriber = "0.3"
 ```
 
-## Initialization {#initialization}
+## Initialize the logger {#initialization}
 
-### Basic tracing {#basic-tracing}
+### Enable basic tracing {#basic-tracing}
 
 {{hi:Tracing}}
 
@@ -74,7 +74,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../../deps/tests/categories/development_tools_debugging/tracing_instrument.rs:example}}
 ```
 
-## Related crates {#related-crates}
+## See also {#related-crates}
 
 [![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
 [![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]

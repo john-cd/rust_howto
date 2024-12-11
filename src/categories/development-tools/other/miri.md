@@ -2,7 +2,7 @@
 
 {{#include miri.incl.md}}
 
-## Detect undefined behavior using the `miri` interpreter {#miri}
+## Detect undefined behavior with the `miri` interpreter {#miri}
 
 [![miri-github][c-miri-github-badge]][c-miri-github]{{hi:miri}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

@@ -12,7 +12,7 @@ Make HTTP network requests.
 
 {{#include requests.incl.md}}
 
-## Call an APIs
+## Call an API
 
 {{#include apis.incl.md}}
 

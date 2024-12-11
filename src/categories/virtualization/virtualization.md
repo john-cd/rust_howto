@@ -2,7 +2,7 @@
 
 {{#include virtualization.incl.md}}
 
-## Virtualization {#virt}
+## Implement virtualization {#virt}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/virtualization/virtualization1.rs:example}}

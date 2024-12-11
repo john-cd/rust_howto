@@ -13,7 +13,7 @@
 
 See [Async: What is blocking? blog post][blog-async-what-is-blocking]⮳.
 
-## Tokio `spawn_blocking` {#spawn-blocking}
+## Use `spawn_blocking` {#spawn-blocking}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}

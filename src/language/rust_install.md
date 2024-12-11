@@ -7,7 +7,7 @@
 TODO P1: header
 </div>
 
-## Key Steps {#rust-install}
+## Install Rust and create a first project {#rust-install}
 
 - Install [Rustup][rustup-website]{{hi:rustup}}⮳
 

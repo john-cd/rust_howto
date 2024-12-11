@@ -6,7 +6,7 @@
 {{#include ../../deps/tests/language/iterators.rs:example}}
 ```
 
-## See Also
+## See also
 
 [Iterators][book-rust-iterators]{{hi:iterators}}⮳
 

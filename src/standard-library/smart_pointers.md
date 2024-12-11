@@ -6,7 +6,7 @@
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
 - Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.{{hi:Smart pointers}}
 
-## Box {#box}
+## `Box` {#box}
 
 [![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![std][c-std-badge]][c-std]{{hi:std}}
 
@@ -23,7 +23,7 @@ Use when
 {{#include ../../deps/tests/standard_library/box1.rs:example}}
 ```
 
-## Rc {#rc}
+## `Rc` {#rc}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 
@@ -33,7 +33,7 @@ The `Rc<T>` type keeps track of the number of references{{hi:References}} to dat
 {{#include ../../deps/tests/standard_library/rc.rs:example}}
 ```
 
-## RefCell {#refcell}
+## `RefCell` {#refcell}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

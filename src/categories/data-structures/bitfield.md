@@ -17,7 +17,7 @@ Creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags
 {{#include ../../../deps/tests/categories/data_structures/bitfield.rs:example}}
 ```
 
-## Flagset {#flagset}
+## `flagset` {#flagset}
 
 [![flagset][c-flagset-badge]][c-flagset]{{hi:flagset}}
 [![flagset-crates.io][c-flagset-crates.io-badge]][c-flagset-crates.io]

@@ -17,7 +17,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on Windows.
 {{#include ../../../deps/tests/categories/database/sqlite/initialization.rs:example}}
 ```
 
-## Insert and Select data {#insert-select-data}
+## Insert and select data {#insert-select-data}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 

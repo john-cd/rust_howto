@@ -40,7 +40,7 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 {{#include ../../deps/tests/language/borrowing.rs:example}}
 ```
 
-### Mutable reference {#mutable-reference}
+### Mutable references {#mutable-reference}
 
 ```rust,editable
 {{#include ../../deps/tests/language/borrowing_mutable.rs:example}}
@@ -54,7 +54,7 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 <div class="hidden">
 TODO P1: add text
 
-## Memory Safety {#memory-safety}
+## Memory safety {#memory-safety}
 
 - [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳
 

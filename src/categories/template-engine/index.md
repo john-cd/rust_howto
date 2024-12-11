@@ -8,7 +8,7 @@ Crates designed to combine templates with data to produce result documents, usua
 
 {{#include tera.incl.md}}
 
-## Create markdown fragments from a template
+## Create Markdown fragments from a template
 
 {{#include tinytemplate.incl.md}}
 

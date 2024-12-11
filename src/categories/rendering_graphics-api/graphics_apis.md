@@ -2,7 +2,7 @@
 
 {{#include graphics_apis.incl.md}}
 
-## Graphics {#graphics}
+## Get direct access to the hardware's or the operating system's rendering capabilities {#graphics}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rendering_graphics_api/graphics.rs:example}}

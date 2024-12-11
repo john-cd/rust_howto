@@ -71,7 +71,7 @@ The following example shows how to serialize custom structs{{hi:Serialize custom
 {{#include ../../../deps/tests/categories/encoding/serde_serialize.rs:example}}
 ```
 
-## Transform CSV column {#transform-csv-column}
+## Transform a CSV column {#transform-csv-column}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

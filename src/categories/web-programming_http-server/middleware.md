@@ -2,7 +2,7 @@
 
 {{#include middleware.incl.md}}
 
-## Tower {#tower}
+## `tower` {#tower}
 
 [![tower][c-tower-badge]][c-tower]{{hi:tower}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -16,7 +16,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 [![tower-middleware-from-scratch][tower-middleware-from-scratch-badge]][tower-middleware-from-scratch]
 
-## Tower HTTP {#tower-http}
+## `tower-http` {#tower-http}
 
 [![tower_http][c-tower_http-badge]][c-tower_http]{{hi:tower_http}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -26,7 +26,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 {{#include ../../../deps/tests/categories/web_programming_http_server/tower_http.rs:example}}
 ```
 
-## Alternatives {#alternatives}
+## Investigate alternatives to `tower` {#alternatives}
 
 [![trillium][c-trillium-badge]][c-trillium] [![trillium-crates.io][c-trillium-crates.io-badge]][c-trillium-crates.io] [![trillium-github][c-trillium-github-badge]][c-trillium-github] [![trillium-lib.rs][c-trillium-lib.rs-badge]][c-trillium-lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}{{hi:HTTP server}}
 

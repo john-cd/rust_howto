@@ -4,7 +4,7 @@
 
 GitHub Action for installing development tools (mainly from GitHub Releases).
 
-## Installation of development tools {#installation-of-development-tools}
+## Install development tools {#installation-of-development-tools}
 
 ```yaml
     - name: Install cargo check tools
@@ -32,7 +32,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
     tool: cargo-binstall,just,mdbook,mdbook-lintcheck
 ```
 
-## Compilation caching {#compilation-caching}
+## Cache your compilation {#compilation-caching}
 
 [`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳
 

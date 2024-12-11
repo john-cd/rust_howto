@@ -26,7 +26,7 @@
 TODO P1 cover the most useful functions
 TODO P1 review - lens is not used that often
 
-## Lens {#lens}
+## Use `lens` {#lens}
 
 [![lens_rs][c-lens_rs-badge]][c-lens_rs]{{hi:lens_rs}}
 [![lens_rs-crates.io][c-lens_rs-crates.io-badge]][c-lens_rs-crates.io]

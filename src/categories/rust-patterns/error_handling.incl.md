@@ -5,8 +5,8 @@
 | [Return recoverable errors with `Result`][ex-rust-patterns-recoverable-errors-with-result] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 | [Propagate errors with the `?` operator][ex-rust-patterns-question-mark-operator] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 | [Avoid discarding errors during error conversions][ex-rust-patterns-avoid-discarding-errors-during-error-conversions] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
-| [Obtain a backtrace in complex error scenarios][ex-rust-patterns-obtain-backtrace] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
-| [Handle errors correctly in `main`][ex-rust-patterns-handle-errors-correctly-in-main] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
+| [Obtain the backtrace in complex error scenarios][ex-rust-patterns-obtain-backtrace] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
+| [Handle errors correctly in main][ex-rust-patterns-handle-errors-correctly-in-main] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 
 <div class="hidden">
 TODO P1 review further

@@ -4,7 +4,7 @@
 
 Rust compile times{{hi:Compile times}} can be long.
 
-## Measuring build times {#build-time}
+## Measure build times {#build-time}
 
 [![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -16,7 +16,7 @@ time cargo build
 cargo build --timings
 ```
 
-## Optimization levels {#optimization-levels}
+## Optimize compilation levels {#optimization-levels}
 
 [![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -32,7 +32,7 @@ opt-level = 1
 opt-level = 3
 ```
 
-## Dynamic linking {#dynamic-linking}
+## Use dynamic linking {#dynamic-linking}
 
 [![cargo-add-dynamic][c-cargo_add_dynamic-badge]][c-cargo_add_dynamic] [![cargo-add-dynamic-crates.io][c-cargo_add_dynamic-crates.io-badge]][c-cargo_add_dynamic-crates.io] [![cargo-add-dynamic-github][c-cargo_add_dynamic-github-badge]][c-cargo_add_dynamic-github] [![cargo-add-dynamic-lib.rs][c-cargo_add_dynamic-lib.rs-badge]][c-cargo_add_dynamic-lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -44,7 +44,7 @@ cargo build
 
 [Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳
 
-## Incremental Compilation {#incremental-compilation}
+## Compile incrementally {#incremental-compilation}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -52,9 +52,9 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 ## Reference
 
-- [8 Solutions for Troubleshooting Your Rust Build Times][blog-rust-build-times]⮳
-- [how-i-improved-my-rust-compile-times-by-seventy-five-percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
-- [rust-compilation-time][blog-rust-compilation-time]⮳
+- [Eight solutions for troubleshooting your Rust build times][blog-rust-build-times]⮳
+- [How I improved my Rust compile times by seventy-five percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
+- [Rust compilation time][blog-rust-compilation-time]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

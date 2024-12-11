@@ -23,7 +23,7 @@ Roogle is a Rust API search engine, which allows you to search functions by name
 {{#include ../../../../deps/tests/categories/development_tools/other/shuttle.rs:example}}
 ```
 
-## Minimize binary sizes {#binary-minimizer}
+## Minimize Rust binary sizes {#binary-minimizer}
 
 [How to minimize Rust binary size][min-sized-rust-github]⮳
 

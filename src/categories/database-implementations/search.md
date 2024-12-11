@@ -2,7 +2,7 @@
 
 {{#include search.incl.md}}
 
-## Meilisearch {#meilisearch}
+## `meilisearch` {#meilisearch}
 
 [![meilisearch][c-meilisearch-badge]][c-meilisearch]{{hi:meilisearch}}
 [![meilisearch-crates.io][c-meilisearch-crates.io-badge]][c-meilisearch-crates.io]
@@ -15,7 +15,7 @@
 {{#include ../../../deps/tests/categories/database_implementations/meilisearch.rs:example}}
 ```
 
-## Tantivy {#tantivy}
+## `tantivy` {#tantivy}
 
 [![tantivy][c-tantivy-badge]][c-tantivy]{{hi:tantivy}}
 [![tantivy-crates.io][c-tantivy-crates.io-badge]][c-tantivy-crates.io]

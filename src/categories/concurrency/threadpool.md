@@ -2,7 +2,7 @@
 
 {{#include threadpool.incl.md}}
 
-## Calculate SHA256 sum of iso files concurrently {#sha256-of-iso-files-concurrently}
+## Calculate the SHA256 of ISO files concurrently {#sha256-of-iso-files-concurrently}
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}} [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}} [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}} [![ring][c-ring-badge]][c-ring]{{hi:ring}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] [{{hi:Concurrency}}![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
@@ -12,7 +12,7 @@ This example calculates the SHA256{{hi:SHA256}} for every file with iso extensio
 {{#include ../../../deps/tests/categories/concurrency/threadpool_walk.rs:example}}
 ```
 
-## Draw fractal dispatching work to a thread pool {#draw-fractal-threadpool}
+## Draw a fractal, dispatching work to a thread pool {#draw-fractal-threadpool}
 
 [![threadpool][c-threadpool-badge]][c-threadpool]{{hi:threadpool}} [![num][c-num-badge]][c-num]{{hi:num}} [![num_cpus][c-num_cpus-badge]][c-num_cpus]{{hi:num_cpus}} [![image][c-image-badge]][c-image]{{hi:image}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-science][cat-science-badge]][cat-science]{{hi:science}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}}
 

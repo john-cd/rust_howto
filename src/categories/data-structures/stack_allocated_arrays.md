@@ -2,7 +2,7 @@
 
 {{#include stack_allocated_arrays.incl.md}}
 
-## arrayvec {#arrayvec}
+## `arrayvec` {#arrayvec}
 
 [![arrayvec][c-arrayvec-badge]][c-arrayvec]{{hi:arrayvec}}
 [![arrayvec-crates.io][c-arrayvec-crates.io-badge]][c-arrayvec-crates.io]
@@ -17,7 +17,7 @@ Arrays that are ONLY stack-allocated with fixed capacity.
 {{#include ../../../deps/tests/categories/data_structures/arrayvec.rs:example}}
 ```
 
-## smallvec {#smallvec}
+## `smallvec` {#smallvec}
 
 [![smallvec][c-smallvec-badge]][c-smallvec]{{hi:smallvec}}
 [![smallvec-crates.io][c-smallvec-crates.io-badge]][c-smallvec-crates.io]
@@ -31,7 +31,7 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 {{#include ../../../deps/tests/categories/data_structures/smallvec.rs:example}}
 ```
 
-## tinyvec {#tinyvec}
+## `tinyvec` {#tinyvec}
 
 [![tinyvec][c-tinyvec-badge]][c-tinyvec]{{hi:tinyvec}}
 [![tinyvec-crates.io][c-tinyvec-crates.io-badge]][c-tinyvec-crates.io]

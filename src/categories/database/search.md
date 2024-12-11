@@ -2,7 +2,7 @@
 
 {{#include search.incl.md}}
 
-## Elasticsearch {#elasticsearch}
+## Connect to Elasticsearch {#elasticsearch}
 
 [![elasticsearch][c-elasticsearch-badge]][c-elasticsearch]{{hi:elasticsearch}}
 [![elasticsearch-crates.io][c-elasticsearch-crates.io-badge]][c-elasticsearch-crates.io]
@@ -15,7 +15,7 @@
 {{#include ../../../deps/tests/categories/database/elasticsearch.rs:example}}
 ```
 
-## Infisearch {#infisearch}
+## `infisearch` {#infisearch}
 
 [![infisearch][c-infisearch-badge]][c-infisearch]{{hi:infisearch}}
 [![infisearch-crates.io][c-infisearch-crates.io-badge]][c-infisearch-crates.io]
@@ -27,7 +27,7 @@
 {{#include ../../../deps/tests/categories/database/infisearch.rs:example}}
 ```
 
-## Stork search {#stork-search}
+## `stork-search` {#stork-search}
 
 [![stork-search][c-stork_search-badge]][c-stork_search]{{hi:stork-search}}
 [![stork-search-crates.io][c-stork_search-crates.io-badge]][c-stork_search-crates.io]
@@ -41,7 +41,7 @@
 {{#include ../../../deps/tests/categories/database/stork_search.rs:example}}
 ```
 
-## Minisearch {#minisearch}
+## `minisearch` {#minisearch}
 
 [![minisearch][c-minisearch-badge]][c-minisearch]{{hi:minisearch}}
 [![minisearch-crates.io][c-minisearch-crates.io-badge]][c-minisearch-crates.io]
@@ -54,7 +54,7 @@
 {{#include ../../../deps/tests/categories/database/minisearch.rs:example}}
 ```
 
-## Typesense {#typesense}
+## `typesense` {#typesense}
 
 [![typesense][c-typesense-badge]][c-typesense]{{hi:typesense}}
 [![typesense-crates.io][c-typesense-crates.io-badge]][c-typesense-crates.io]
@@ -65,7 +65,7 @@
 {{#include ../../../deps/tests/categories/database/typesense.rs:example}}
 ```
 
-## Tinysearch {#tinysearch}
+## `tinysearch` {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}
 [![tinysearch-crates.io][c-tinysearch-crates.io-badge]][c-tinysearch-crates.io]

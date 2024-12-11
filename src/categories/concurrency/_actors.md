@@ -1,4 +1,4 @@
-# Actors
+# Actors in Rust
 
 {{#include _actors.incl.md}}
 

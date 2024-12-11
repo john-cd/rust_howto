@@ -2,7 +2,7 @@
 
 {{#include audio.incl.md}}
 
-## Audio {#audio}
+## Record, output, or process audio {#audio}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/multimedia_audio/audio.rs:example}}

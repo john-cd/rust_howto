@@ -2,7 +2,7 @@
 
 {{#include alternatives.incl.md}}
 
-## Older alternatives to `tracing` {#skip1}
+## Use older alternatives to `tracing` {#skip1}
 
 `tracing` is now the "go-to" crate for logging, but `log`, `slog` and `log4rs` are still in extensive use.
 
@@ -61,7 +61,7 @@ fn main() {
 
 ## Other frameworks {#skip2}
 
-### OpenTelemetry {#open-telemetry}
+### `OpenTelemetry` {#open-telemetry}
 
 [OpenTelemetry Rust documentation][opentelemetry-rust]⮳
 
@@ -69,7 +69,7 @@ fn main() {
 {{#include ../../../deps/tests/categories/development_tools_debugging/open_telemetry.rs:example}}
 ```
 
-## Open Observe {#open-observe}
+## `OpenObserve` {#open-observe}
 
 [OpenObserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 

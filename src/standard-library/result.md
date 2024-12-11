@@ -2,7 +2,7 @@
 
 {{#include result.incl.md}}
 
-## Result {#result}
+## `Result` {#result}
 
 ```rust,editable
 {{#include ../../deps/tests/standard_library/result.rs:example}}
@@ -10,7 +10,7 @@
 
 ## See also
 
-- [what-is-the-rust-equivalent-to-a-try-catch-statement][stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]⮳
+- [What is the Rust equivalent to a `try catch` statement][stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]⮳
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

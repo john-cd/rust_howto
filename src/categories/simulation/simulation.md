@@ -2,7 +2,7 @@
 
 {{#include simulation.incl.md}}
 
-## Simulation {#simul}
+## Simulate {#simul}
 
 [Asynchronics][asynchronics-github]⮳ is a high-performance asynchronous computation framework for system simulation.
 

@@ -11,7 +11,7 @@
 
 Execution flamegraph generation.
 
-## Criterion {#criterion}
+## `criterion` {#criterion}
 
 [![criterion][c-criterion-badge]][c-criterion]{{hi:criterion}}
 [![criterion-crates.io][c-criterion-crates.io-badge]][c-criterion-crates.io]
@@ -27,7 +27,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 {{#include ../../../deps/tests/categories/development_tools_profiling/criterion.rs:example}}
 ```
 
-## Divan {#divan}
+## `divan` {#divan}
 
 [![divan][c-divan-badge]][c-divan]{{hi:divan}}
 [![divan-crates.io][c-divan-crates.io-badge]][c-divan-crates.io]
@@ -41,7 +41,7 @@ Simple yet powerful benchmarking library with allocation profiling
 {{#include ../../../deps/tests/categories/development_tools_profiling/divan.rs:example}}
 ```
 
-## Hyperfine {#hyperfine}
+## `hyperfine` {#hyperfine}
 
 [![hyperfine][c-hyperfine-badge]][c-hyperfine]{{hi:hyperfine}}
 [![hyperfine-crates.io][c-hyperfine-crates.io-badge]][c-hyperfine-crates.io]

@@ -2,7 +2,7 @@
 
 {{#include rendering_engines.incl.md}}
 
-## Render Engines {#render}
+## Use a render engine {#render}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rendering_engine/render.rs:example}}

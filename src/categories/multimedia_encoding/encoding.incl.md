@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Multimedia encoding][ex-multimedia_encoding-encoding] | {{#crate }} | [![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding] |
+| [Encode your media][ex-multimedia_encoding-encoding] | {{#crate }} | [![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding] |
 
 <div class="hidden">
 TODO P2

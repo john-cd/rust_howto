@@ -10,13 +10,13 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 
 **Note:** British English uses *Colour* instead of *Color*.
 
-## Printing colored text to the Terminal {#colored-text}
+## Print colored text to the terminal {#colored-text}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/command_line_interface/ansi_term_basic.rs:example}}
 ```
 
-### Bold text in Terminal {#bold-text}
+### Print bold text to the terminal {#bold-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -26,7 +26,7 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../deps/tests/categories/command_line_interface/ansi_term_basic1.rs:example}}
 ```
 
-### Bold and colored text in terminal {#bold-colored-text}
+### Print bold and colored text to the terminal {#bold-colored-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 

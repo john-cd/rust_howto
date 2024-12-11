@@ -2,7 +2,7 @@
 
 {{#include databases.incl.md}}
 
-## Sled {#sled}
+## `sled` {#sled}
 
 [![sled][c-sled-badge]][c-sled]{{hi:sled}}
 [![sled-crates.io][c-sled-crates.io-badge]][c-sled-crates.io]

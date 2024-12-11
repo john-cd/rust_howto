@@ -37,23 +37,23 @@ You also apply these attributes to specific functions:
 
 List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
 
-## Automatic trait derivation {#automatic-trait-derivation}
+## Automatically derive common traits {#automatic-trait-derivation}
 
 See [Automatic derivation][p-automatic-derivation].
 
-## Must Use {#must-use}
+## Mark as `must use` {#must-use}
 
 ```rust,editable
 {{#include ../../deps/tests/language/attributes_must_use.rs:example}}
 ```
 
-## Deprecated {#deprecated}
+## Mark as deprecated {#deprecated}
 
 ```rust,editable
 {{#include ../../deps/tests/language/attributes_deprecated.rs:example}}
 ```
 
-## Conditional Compilation {#conditional-compilation}
+## Compile conditionally {#conditional-compilation}
 
 [Conditional compilation][book-rust-reference-conditional-compilation]⮳
 
@@ -61,7 +61,7 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../../deps/tests/language/conditional_compilation.rs:example}}
 ```
 
-## See Also
+## See also
 
 [Attributes reference][book-rust-reference-attributes]⮳
 

@@ -4,11 +4,11 @@
 
 Create applications for the Web.
 
-## Manipulate Uniform Resource Locations (URLs)
+## Manipulate uniform resource locations (URLs)
 
 {{#include url.incl.md}}
 
-## Handle Media Types (MIME)
+## Handle media types (MIME)
 
 {{#include mime.incl.md}}
 
@@ -29,7 +29,7 @@ Create applications for the Web.
 TODO P1: organize
 TODO P1 cover http crate
 
-## HTTP Types & Interfaces
+## HTTP types & interfaces
 
 [![http][c-http-badge]][c-http]{{hi:http}}
 [![http-crates.io][c-http-crates.io-badge]][c-http-crates.io]

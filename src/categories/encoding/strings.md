@@ -26,7 +26,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 {{#include ../../../deps/tests/categories/encoding/url_encode.rs:example}}
 ```
 
-## Encode and decode hex {#data-encoding}
+## Encode and decode hexadecimal {#data-encoding}
 
 [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

@@ -26,7 +26,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 {{#include ../../deps/tests/language/while_let.rs:example}}
 ```
 
-## See Also
+## See also
 
 [Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳
 

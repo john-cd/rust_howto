@@ -2,7 +2,7 @@
 
 {{#include localization.incl.md}}
 
-## Localized {#localization}
+## Localize your app {#localization}
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/localization/localization1.rs:example}}

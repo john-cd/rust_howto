@@ -2,7 +2,7 @@
 
 {{#include python_tools.incl.md}}
 
-## rustpython {#rustpython}
+## `rustpython` {#rustpython}
 
 [![rustpython][c-rustpython-badge]][c-rustpython]{{hi:rustpython}}
 [![rustpython-crates.io][c-rustpython-crates.io-badge]][c-rustpython-crates.io]
@@ -15,7 +15,7 @@
 {{#include ../../../deps/tests/other/written_in_rust/rustpython.rs:example}}
 ```
 
-## pyOxidizer {#pyoxidizer}
+## `pyOxidizer` {#pyoxidizer}
 
 [![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
 
@@ -23,14 +23,14 @@
 {{#include ../../../deps/tests/other/written_in_rust/pyoxidizer.rs:example}}
 ```
 
-## Ruff {#ruff}
+## `Ruff` {#ruff}
 
 [Ruff][c-ruff]{{hi:ruff}}⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-## uv {#uv}
+## `uv` {#uv}
 
 <div class="hidden">
 TODO P1: write

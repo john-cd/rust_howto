@@ -16,7 +16,7 @@ cargo install mdbook
 mdbook serve --open
 ```
 
-## Let readers execute sample code in the Rust playground {#playground}
+## Let readers execute your sample code in the Rust playground {#playground}
 
 [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
@@ -117,7 +117,7 @@ A preprocessor and a backend to config theme for mdbook, especially creating a p
 
 A mdbook plugin that provides a table of contents for each page.
 
-## Templating {#skip2}
+## Create pages from a template {#skip2}
 
 ### Create pages from a template with `mdbook-tera` {#mdbook-tera}
 

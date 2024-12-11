@@ -4,7 +4,7 @@
 
 ## Compilers {#compilers}
 
-### swc {#swc}
+### `swc` {#swc}
 
 [![swc][c-swc-badge]][c-swc]{{hi:swc}}
 [![swc-crates.io][c-swc-crates.io-badge]][c-swc-crates.io]
@@ -19,7 +19,7 @@
 
 ## Code editors {#code-editors}
 
-### Lapce {#lapce}
+### `lapce` {#lapce}
 
 [![lapce-website][c-lapce-website-badge]][c-lapce-website]{{hi:lapce}}
 [![lapce-github][c-lapce-github-badge]][c-lapce-github]
@@ -27,7 +27,7 @@
 
 [`lapce`][c-lapce-website]{{hi:lapce}}⮳ is a lightning-fast and Powerful Code Editor written in Rust.
 
-### Zed {#zed}
+### `zed` {#zed}
 
 {{hi:zed}}
 [![zed-crates.io][c-zed-crates.io-badge]][c-zed-crates.io]
