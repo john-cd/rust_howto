@@ -1,4 +1,3 @@
-
 [ex-concurrency-actix]: _actors.md#actix
 [ex-concurrency-any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel
 [ex-concurrency-arc-swap]: shared_state.md#arc-swap
