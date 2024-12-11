@@ -13,6 +13,7 @@ TODO P1 titles
 | [Check links with `mdbook-linkcheck`][ex-documentation-mdbook-linkcheck] | [![mdbook-linkcheck][c-mdbook_linkcheck-badge]][c-mdbook_linkcheck] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [`mdbook-pagetoc`][ex-documentation-mdbook-pagetoc] | [![mdbook-pagetoc][c-mdbook_pagetoc-badge]][c-mdbook_pagetoc] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Hide entire chapters with `mdbook-private`][ex-documentation-mdbook-private] | [![mdbook-private][c-mdbook_private-badge]][c-mdbook_private] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
+| [Hide pages with `mdbook-hide`][ex-documentation-mdbook-hide] | [![mdbook-hide][c-mdbook_hide-badge]][c-mdbook_hide] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Create pages from a template with `mdbook-tera`][ex-documentation-mdbook-tera] | [![mdbook-tera][c-mdbook_tera-badge]][c-mdbook_tera] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [`mdbook-theme`][ex-documentation-mdbook-theme] | [![mdbook-theme][c-mdbook_theme-badge]][c-mdbook_theme] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [`mdbook-toc`][ex-documentation-mdbook-toc] | [![mdbook-toc][c-mdbook_toc-badge]][c-mdbook_toc] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

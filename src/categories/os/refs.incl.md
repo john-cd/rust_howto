@@ -1,11 +1,8 @@
 [ex-os-bottlerocket]: rust_os.md#bottlerocket
 [ex-os-call-libc]: low_level_system_calls.md#call-libc
 [ex-os-continuously-process-child-process-outputs]: external.md#continuously-process-child-process-outputs
-[ex-os-parse-subprocess-input]: external.md#run-an-external-command-passing-it-stdin-and-check-for-an-error-code
-[ex-os-parse-subprocess-output]: external.md#run-an-external-command-and-process-stdout
 [ex-os-read-environment-variable]: external.md#read-environment-variable
 [ex-os-redirect-both-stdout-and-stderr-of-child-process-to-the-same-file]: external.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
-[ex-os-redirect-stdout-stderr-same-file]: external.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
 [ex-os-redox]: rust_os.md#redox
 [ex-os-run-an-external-command-and-process-stdout]: external.md#run-an-external-command-and-process-stdout
 [ex-os-run-an-external-command-passing-stdin-and-check-for-error-code]: external.md#run-an-external-command-passing-stdin-and-check-for-error-code

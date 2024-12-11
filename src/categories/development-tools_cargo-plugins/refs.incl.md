@@ -21,6 +21,5 @@
 [ex-development-tools_cargo-plugins-find-unused-dependencies]: maintaining.md#find-unused-dependencies
 [ex-development-tools_cargo-plugins-rustfix]: code_formatting_linting.md#rustfix
 [ex-development-tools_cargo-plugins-rustfmt]: code_formatting_linting.md#rustfmt
-[ex-development-tools_cargo-plugins-templates]: writing.md#generate-a-rust-project-from-a-template
 [ex-development-tools_cargo-plugins-xshell]: building.md#xshell
 [ex-development-tools_cargo-plugins-zig]: cross_compiling.md#zig
