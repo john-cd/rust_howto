@@ -4,12 +4,20 @@
 
 ## Docker {#docker}
 
+[Docker][docker-website]⮳
+
+[Docker Rust guide][docker-rust-guide]⮳
+
+[Docker Desktop][docker-desktop-website]⮳
+
 ### References
 
 - Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}
 - [Docker's Rust guide][docker-rust-guide]⮳
 
 ## Docker Compose {#docker-compose}
+
+[Docker Compose][docker-compose-website]⮳
 
 An easy way to get started is to run `docker init` in a new folder, select `Rust` as the project type, then edit the provided `compose.yaml` and `Dockerfile`.{{hi:docker compose}}
 

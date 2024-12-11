@@ -1,4 +1,4 @@
-| Recipe | Crates |
+| Recipe | Links |
 |--------|--------|
 | [Architect your Rust app][ex-architecture-architecture] | {{#crate }} |
 

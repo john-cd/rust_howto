@@ -7,5 +7,5 @@
 
 <div class="hidden">
 TODO P1
-| [Use `neovim`][ex-text-editors-neovim] |  | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
+| [Use `neovim`][ex-text-editors-neovim] | [Neovim][nvim-website]⮳ | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
 </div>

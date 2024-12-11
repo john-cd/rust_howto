@@ -3,7 +3,6 @@
 [360dialog-website]: https://www.360dialog.com
 [49nord-website]: https://49nord.de/rust
 [9fin-website]: https://9fin.com
-[rustrover-website]: https://www.jetbrains.com/rust
 [a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [abstract-factory-in-rust-website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [accelerant-website]: https://accelerant.dev
@@ -317,6 +316,7 @@
 [databend-github-badge]: https://img.shields.io/badge/databend-steelblue?logo=github
 [databend-github]: https://github.com/datafuselabs/databend
 [datarobot-website]: http://www.datarobot.com
+[daytona-website]: https://www.daytona.io
 [deepgram-github]: https://github.com/deepgram
 [deepgram-website]: https://deepgram.com
 [delimiter-website]: https://www.delimiter.com
@@ -335,6 +335,7 @@
 [disney-website]: https://www.disney.com
 [distil-networks-website]: https://www.distilnetworks.com
 [docker-cache-github]: https://github.com/ScribeMD/docker-cache
+[docker-compose-website]: https://docs.docker.com/compose
 [docker-desktop-website]: https://www.docker.com/products/docker-desktop
 [docker-getting-started]: https://docs.docker.com/go/get-started-sharing
 [docker-github-action]: https://docs.docker.com/build/ci/github-actions
@@ -384,7 +385,6 @@
 [grail-website]: https://grail.com
 [greenbone-website]: https://greenbone.github.io
 [gremlin-website]: https://www.gremlin.com
-[daytona-website]: https://www.daytona.io
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [headlines-github-badge]: https://img.shields.io/badge/headlines-steelblue?logo=github
 [headlines-github]: https://github.com/creativcoder/headlines
@@ -573,6 +573,7 @@
 [renault-website]: https://www.renaultgroup.com
 [rfc-2822]: https://www.ietf.org/rfc/rfc2822.txt
 [rfc-3339]: https://www.ietf.org/rfc/rfc3339.txt
+[river-github]: https://github.com/memorysafety/river
 [robotics-lib.rs]: https://lib.rs/science/robotics
 [robotics-rs-website-badge]: https://img.shields.io/badge/robotics.rs-coral
 [robotics-rs-website]: https://robotics.rs
@@ -646,6 +647,7 @@
 [rustmagazine.org]: https://rustmagazine.org
 [rustnl-website]: https://rustnl.org
 [rustpython-github]: https://github.com/RustPython/RustPython
+[rustrover-website]: https://www.jetbrains.com/rust
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup
 [rustup-website-badge]: https://img.shields.io/badge/rustup-coral
