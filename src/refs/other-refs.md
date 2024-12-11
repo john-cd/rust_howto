@@ -40,6 +40,7 @@
 [asynchronics-github]: https://github.com/asynchronics
 [ata-website]: https://www.ata.network
 [atlassian-website]: https://www.atlassian.com
+[atom-website]: https://atom-editor.cc
 [attainoutcomes-website]: https://www.attainoutcomes.com
 [autumnai-github]: https://github.com/autumnai
 [awesome-rust-github-badge]: https://img.shields.io/badge/awesome--rust-steelblue?logo=github
@@ -348,6 +349,9 @@
 [dropbox-website]: https://dropbox.com
 [dungeonfog-github]: https://github.com/dungeonfog
 [dungeonfog-website]: http://www.dungeonfog.com
+[eclipse-corrosion-website]: https://projects.eclipse.org/projects/tools.corrosion
+[emacs-rust-mode-github]: https://github.com/rust-lang/rust-mode
+[emacs-website]: https://www.gnu.org/software/emacs
 [embark-studios-website]: https://www.embark-studios.com
 [embecosm-website]: https://www.embecosm.com
 [embedded-devices-working-group]: https://www.rust-lang.org/governance/wgs/embedded
@@ -427,6 +431,7 @@
 [kryptco-github]: https://github.com/kryptco
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
+[lapce-website]: https://lap.dev/lapce
 [launchpad-shuttle.rs]: https://www.shuttle.rs/launchpad
 [lechevspace-github]: https://github.com/LechevSpace
 [lechevspace-website]: https://lechev.space
@@ -580,7 +585,9 @@
 [rocket-realworld-example-badge]: https://img.shields.io/badge/realworld_rocket_example-steelblue?logo=github
 [rocket-realworld-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
 [routific-website]: https://routific.com
+[rust-analyzer-helix-website]: https://rust-analyzer.github.io/manual.html#helix
 [rust-analyzer-plugin]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
+[rust-analyzer-visual-studio-website]: https://rust-analyzer.github.io/manual.html#visual-studio-2022
 [rust-analyzer-website-badge]: https://img.shields.io/badge/rust_analyzer-coral
 [rust-analyzer-website]: https://rust-analyzer.github.io
 [rust-badge]:https://img.shields.io/badge/Rust-tan
@@ -631,6 +638,7 @@
 [rust-tools-badge]: https://img.shields.io/badge/Rust_tools-tan
 [rust-tools]: https://www.rust-lang.org/tools
 [rust-unofficial-patterns-github]: https://github.com/rust-unofficial/patterns
+[rust-vim-github]: https://github.com/rust-lang/rust.vim
 [rust-web-framework-comparison-github]: https://github.com/flosse/rust-web-framework-comparison
 [rust]: https://www.rust-lang.org
 [rust_gpu-github-badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
@@ -671,6 +679,7 @@
 [solana-website]: https://solana.com
 [spacedrive-github-badge]: https://img.shields.io/badge/spacedrive-steelblue?logo=github
 [spacedrive-github]: https://github.com/spacedriveapp/spacedrive
+[spacemacs-website]: https://www.spacemacs.org
 [spectralops-website]: https://spectralops.io
 [sprinklenet-website]: https://sprinklenet.com
 [spruceid-website]: https://spruceid.com
@@ -685,6 +694,8 @@
 [stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
 [starlab-website]: https://starlab.io
 [starry-website]: https://starry.com
+[sublime-text-rust-enhanced-github]: https://github.com/rust-lang/rust-enhanced
+[sublime-text-website]: https://www.sublimetext.com
 [sui-website]: https://sui.io
 [svix-github]: https://github.com/svix/svix-webhooks
 [svix-website]: https://www.svix.com
@@ -727,6 +738,7 @@
 [vello-website]: https://linebender.org/vello
 [versioneye-github]: https://github.com/VersionEye
 [versioneye-website]: https://www.versioneye.com
+[visual-studio-website]: https://visualstudio.microsoft.com
 [volta-github]: https://github.com/volta-cli
 [volta-website]: https://volta.sh
 [volvo-website]: https://www.volvocars.com
@@ -748,6 +760,7 @@
 [writing-interpreters-in-rust]: https://github.com/rust-hosted-langs/book
 [wyeworks-website]: https://www.wyeworks.com
 [wyliodrin-website]: https://wyliodrin.com
+[xcode-website]: https://developer.apple.com/xcode
 [xfusion-website]: https://www.xfusion.com
 [yelp-website]: https://www.yelp.com
 [yomura-fiber-website]: https://yomurafiber.com

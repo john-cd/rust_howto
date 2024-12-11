@@ -621,9 +621,9 @@
 [ex-standard-library-vec]: standard-library/vectors.md#vec
 [ex-template-engine-create-html-from-template]: categories/template-engine/tera.md#create-html-from-template
 [ex-template-engine-tinytemplate]: categories/template-engine/tinytemplate.md#tinytemplate
-[ex-text-editors-helix]: categories/text-editors/ides.md#helix
-[ex-text-editors-intelliJ]: categories/text-editors/ides.md#intelliJ
-[ex-text-editors-neovim]: categories/text-editors/ides.md#neovim
+[ex-text-editors-helix]: categories/text-editors/ides.md
+[ex-text-editors-intelliJ]: categories/text-editors/ides.md
+[ex-text-editors-neovim]: categories/text-editors/ides.md
 [ex-text-editors-vs-code]: categories/text-editors/ides.md#vs-code
 [ex-text-editors-zed]: categories/text-editors/ides.md#zed
 [ex-text-processing-benchmark]: categories/text-processing/string_concat.md#benchmark
