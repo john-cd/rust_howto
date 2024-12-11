@@ -247,6 +247,10 @@ generate_refdefs_from_anchors:
 fix_recipe_tables:
   ./scripts/recipe_tables/fix_recipe_tables.sh
 
+# Make the titles in the recipe tables / local TOCs match the corresponding headings of the subchapters
+fix_recipe_titles:
+  ./scripts/recipe_tables/fix_recipe_titles.sh
+
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
 # Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
