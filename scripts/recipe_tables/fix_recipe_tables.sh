@@ -9,6 +9,7 @@
 #
 # Usage: ./scripts/recipe_tables/fix_recipe_tables.sh
 
+# Iterate through subchapters
 for file in $(find ./src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do
 base=$(basename $file)
@@ -21,11 +22,12 @@ if [ -f "${dir}/refs.incl.md" ]; then
         echo "> ${file}"
         for label in ${labels}
         do
-        # if the dest file does not exist or label is not in it
+        # If the destination (recipe table) file does not exist or label is not in it
         if [ ! -f "${file%.md}.incl.md" ] || [ $(grep -Pc "\[ex-${label}\]" "${file%.md}.incl.md") -eq 0 ]
         then
-            # Add link in the corresponding .incl.md
-            echo "[${label}][ex-${label}]" >> "${file%.md}.incl.md"
+            title=$(echo ${label} | tr '-' ' ')
+            # Add table row with link in the corresponding .incl.md
+            echo "| [${title}][ex-${label}] | {{#crate }} | {{#categories }} |" >> "${file%.md}.incl.md"
         fi
         done
     fi
