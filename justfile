@@ -194,65 +194,6 @@ autogen:
     cargo run -p autogen
 # TODO P2 finish
 
-## ---- LINK AND REFERENCE DEFINITION MANAGEMENT -----------------------------------
-
-# Sort and deduplicate reference definitions in the central `*-refs.md` files; remove the last / from URLs
-[unix]
-sortrefs:
-  ./scripts/refdefs/sort_refdefs.sh
-
-[windows]
-sortrefs:
-  echo "`sortrefs` is not implemented while working in Windows!"
-
-# List links without corresponding reference definitions and vice versa
-check_refdefs:
-  ./scripts/refdefs/check_refdefs.sh
-
-# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
-[confirm]
-fix_recipe_tables:
-  ./scripts/recipe_tables/fix_recipe_tables.sh
-
-# Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
-lnk pattern:
-  ./scripts/refdefs/search.sh {{pattern}}
-
-# (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
-convert_inline_links:
-  #! /bin/bash
-  for file in $(find . -type f \( -name "*.md" -not -name "SUMMARY.md" \) )
-  do
-    #echo ">> $file"
-    sed -E -i'.bak' 's~\[(`)?([^`]+?)(`)?\]\((.+?)\)~[\1\2\3][\L\2] \n[\2]: \4\n~g' $file
-  done
-
-## ---- ANCHOR MANAGEMENT -----------------------------------
-
-# List book headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
-list_missing_anchors:
-  ./scripts/anchors/list_missing_anchors.sh
-
-# (BEWARE: modifies files directly) Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
-[confirm]
-generate_refdefs_from_anchors:
-  ./scripts/anchors/generate_refdefs_from_anchors.sh
-
-## ---- URL MANAGEMENT -----------------------------------
-
-# Check that URLs (to external websites) are valid and working
-check_urls:
-  ./scripts/urls/check_urls.sh
-
-# List duplicated URLs (noting that they can't always be avoided).
-list_duplicated_urls:
-  ./scripts/urls/list_duplicated_urls.sh
-
-# Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
-list_bare_urls:
-  ./scripts/urls/list_bare_urls.sh
-# TODO P2
-
 ## ---- CRATE MANAGEMENT -----------------------------------
 
 # Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `xmpl`)
@@ -279,16 +220,73 @@ list_examples_not_used_in_book:
 # then compare to the list of test files in `deps`
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
-# Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of deps/tests/)
-convert_example_placeholders:
-  ./scripts/examples/convert_example_placeholders.sh
-
-# List examples that were not included into a module somehow and that are not tested
+# List examples (.rs files) in `deps/tests` that were not included into a module somehow and that are therefore not tested
 list_examples_not_in_tests:
   #! /bin/bash
   comm -1 -3 <(find ./deps/tests -type f \( -name "main.rs" -o -name "mod.rs" \) -exec sed -nE 's/mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
           <(find ./deps/tests -mindepth 2 -type f -name "*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d' | sort -u)
   echo "DONE"
+
+# Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of deps/tests/)
+convert_example_placeholders:
+  ./scripts/examples/convert_example_placeholders.sh
+
+## ---- ANCHOR AND RECIPE TABLE MANAGEMENT -----------------------------------
+
+# List book headings that do not have an anchor e.g. {#some-text}. Note that not all headers need one.
+list_missing_anchors:
+  ./scripts/anchors/list_missing_anchors.sh
+
+# (BEWARE: modifies files directly) Generate reference definitions from heading anchors e.g. {#some-text} and add them to `refs.incl.md`
+[confirm]
+generate_refdefs_from_anchors:
+  ./scripts/anchors/generate_refdefs_from_anchors.sh
+
+# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
+[confirm]
+fix_recipe_tables:
+  ./scripts/recipe_tables/fix_recipe_tables.sh
+
+## ---- LINK DEFINITION MANAGEMENT -----------------------------------
+
+# Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
+list_bare_urls:
+  ./scripts/urls/list_bare_urls.sh
+# TODO P2
+
+# (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
+replace_inline_links:
+  ./scripts/links/replace_inline_links.sh
+# TODO P2
+
+# Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
+lnk pattern:
+  ./scripts/refdefs/search.sh {{pattern}}
+
+## ---- REFERENCE DEFINITION MANAGEMENT -----------------------------------
+
+# Sort and deduplicate reference definitions in the central `*-refs.md` files; remove the last / from URLs
+[unix]
+sortrefs:
+  ./scripts/refdefs/sort_refdefs.sh
+
+[windows]
+sortrefs:
+  echo "`sortrefs` is not implemented while working in Windows!"
+
+# List links without corresponding reference definitions and vice versa
+check_refdefs:
+  ./scripts/refdefs/check_refdefs.sh
+
+## ---- URL MANAGEMENT -----------------------------------
+
+# Check that URLs (to external websites) are valid and working
+check_urls:
+  ./scripts/urls/check_urls.sh
+
+# List duplicated URLs (noting that they can't always be avoided).
+list_duplicated_urls:
+  ./scripts/urls/list_duplicated_urls.sh
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
