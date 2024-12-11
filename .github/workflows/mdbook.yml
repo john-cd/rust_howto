@@ -59,41 +59,17 @@ jobs:
         uses: docker/setup-buildx-action@v3
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
-      - name: Extract Docker image metadata (extract image tags and annotations for the Docker build)
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-      ## Validate: https://docs.docker.com/build/ci/github-actions/checks/
-      - name: Validate the build configuration
-        uses: docker/build-push-action@v6
-        with:
-          call: check
-          file: .devcontainer/Dockerfile
-      ## Build and push
-      ## Uses GitHub Actions caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
-      ## TODO P2 figure out how to use the exitsing compose files instead of hardcoding (see `bake` section below)
-      ## Directly call cd ./.devcontainer/; docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=.. ?
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          build-args: |
-            RUST_VERSION="1.83.0"
-            RUST_IMAGE_LABEL="1.83.0-bookworm"
-            MDBOOK_VERSION="0.4.35"
-          push: true # push to registry
-          load: true # also load in local image store for the next steps
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          cache-from: |
-            type=gha
-          cache-to: |
-            type=gha,mode=max
-          file: .devcontainer/Dockerfile
+      # - name: Display the workspace (debug)
+      #   run: echo ${{ github.workspace }}
+      ## Build and push using the CLI
+      - name: Build, load to local image store, push to DockerHub
+        run: docker buildx bake -f compose.yaml -f compose-ci.yaml --push --load --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
+        # Will read the .env file there:
+        working-directory: ./.devcontainer/
       - name: List docker images (debug)
         run: docker image ls
-      - name: Create the book/ directory on the CI machine
-        run: mkdir -p book/
+      - name: Create the "book" directory on the CI machine
+        run: mkdir -p ./book/
       - name: Check that all the code builds and pass tests; build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
@@ -124,7 +100,38 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-## Alternative steps to bake the image (using the docker compose files)
+## Alternative steps to build and push with docker/build-push-action
+      # - name: Extract Docker image metadata (extract image tags and annotations for the Docker build)
+      #   id: meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: ${{ env.IMAGE_NAME }}
+      # ## Validate: https://docs.docker.com/build/ci/github-actions/checks/
+      # - name: Validate the build configuration
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     call: check
+      #     file: .devcontainer/Dockerfile
+      ## Build and push
+      ## Uses GitHub Actions caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+      # - name: Build and push
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     build-args: |
+      #       RUST_VERSION="1.83.0"
+      #       RUST_IMAGE_LABEL="1.83.0-bookworm"
+      #       MDBOOK_VERSION="0.4.35"
+      #     push: true # push to registry
+      #     load: true # also load in local image store for the next steps
+      #     tags: ${{ steps.meta.outputs.tags }}
+      #     annotations: ${{ steps.meta.outputs.annotations }}
+      #     cache-from: |
+      #       type=gha
+      #     cache-to: |
+      #       type=gha,mode=max
+      #     file: .devcontainer/Dockerfile
+
+## Alternative steps to bake the image (using docker/bake-action and the docker compose files)
 ## Issue: does not read .devcontainer/.env
       # - name: Get basic information (debug)
       #  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
