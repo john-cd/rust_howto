@@ -1,4 +1,4 @@
-# Multithreading
+# Explicit threads
 
 {{#include explicit_threads.incl.md}}
 

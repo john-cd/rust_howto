@@ -3,6 +3,7 @@
 [360dialog-website]: https://www.360dialog.com
 [49nord-website]: https://49nord.de/rust
 [9fin-website]: https://9fin.com
+[rustrover-website]: https://www.jetbrains.com/rust
 [a-half-hour-to-learn-rust]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [abstract-factory-in-rust-website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [accelerant-website]: https://accelerant.dev
@@ -383,6 +384,7 @@
 [grail-website]: https://grail.com
 [greenbone-website]: https://greenbone.github.io
 [gremlin-website]: https://www.gremlin.com
+[daytona-website]: https://www.daytona.io
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [headlines-github-badge]: https://img.shields.io/badge/headlines-steelblue?logo=github
 [headlines-github]: https://github.com/creativcoder/headlines

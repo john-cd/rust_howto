@@ -32,6 +32,8 @@
 
 ## `uv` {#uv}
 
+[`uv`][uv-github]{{hi:uv}}⮳
+
 <div class="hidden">
 TODO P1: write
 </div>

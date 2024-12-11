@@ -1,6 +1,6 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [`daytona`][ex-devops-daytona] |  |  |
+| Recipe | Crates |
+|--------|--------|
+| [`daytona`][ex-devops-daytona] | [`daytona`][daytona-website]⮳ |
 
 <div class="hidden">
 TODO P1

@@ -10,9 +10,9 @@
 
 [rust-analyzer (home page)][rust-analyzer-website]⮳
 
-## Write Rust code with IntelliJ {#intelliJ}
+## Write Rust code with RustRover {#intelliJ}
 
-If you don’t have a {{i:JetBrains}} license, `IntelliJ` IDEA is available for free and supports IntelliJ Rust. If you have a JetBrains license, `CLion` is your go-to editor for Rust in JetBrains’ IDE suite.
+If you don’t have a {{i:JetBrains}} license, [`RustRover`][rustrover-website]⮳ is available for free for non-commercial use. If you have a JetBrains license, `CLion` is your go-to editor for Rust in JetBrains’ IDE suite.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

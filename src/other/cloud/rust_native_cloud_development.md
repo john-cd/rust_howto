@@ -7,7 +7,7 @@ Cloud platforms that offer first-class support for Rust.
 ## `shuttle` {#shuttle}
 
 [docs.shuttle.rs][docs-shuttle-rs]{{hi:shuttle.rs}}
-[shuttle-examples][shuttle-examples-github]
+[Shuttle examples][shuttle-examples-github]
 
 ```rust,editable
 {{#include ../../../deps/tests/other/cloud/shuttle.rs:example}}

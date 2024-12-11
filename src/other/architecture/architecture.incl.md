@@ -1,6 +1,6 @@
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Architect your Rust app][ex-architecture-architecture] | {{#crate }} | {{#categories }} |
+| Recipe | Crates |
+|--------|--------|
+| [Architect your Rust app][ex-architecture-architecture] | {{#crate }} |
 
 <div class="hidden">
 TODO P1
