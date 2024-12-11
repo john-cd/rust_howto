@@ -55,5 +55,6 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 
 <div class="hidden">
 TODO P1 write
+dedupe JSON with complex.md
 Supported formats: https://docs.rs/serde/latest/serde/#data-formats
 </div>
