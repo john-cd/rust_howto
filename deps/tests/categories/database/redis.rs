@@ -6,12 +6,12 @@ fn fetch_an_integer() -> redis::RedisResult<isize> {
     // `open` does not actually open a connection yet but it does perform some
     // basic checks on the URL that might make the operation fail.
     let client = redis::Client::open("redis://127.0.0.1/")?;
-    // actually connect to redis
+    // Actually connect to redis
     let mut con = client.get_connection()?;
-    // throw away the result, just make sure it does not fail
+    // Throw away the result, just make sure it does not fail
     let _: () = con.set("my_key", 42)?;
-    // read back the key and return it.  Because the return value
-    // from the function is a result for integer this will automatically
+    // Read back the key and return it.  Because the return value
+    // from the function is a result for integer, this will automatically
     // convert into one.
     con.get("my_key")
 }
