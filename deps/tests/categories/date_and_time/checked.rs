@@ -1,6 +1,7 @@
 // ANCHOR: example
 use chrono::DateTime;
 use chrono::Duration;
+use chrono::TimeDelta;
 use chrono::Utc;
 
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
@@ -23,7 +24,7 @@ fn main() {
         None => eprintln!("Almost three weeks from now overflows!"),
     }
 
-    match now.checked_add_signed(Duration::max_value()) {
+    match now.checked_add_signed(TimeDelta::MAX) {
         Some(x) => println!("{}", x),
         None => eprintln!(
             "We can't use chrono to tell the time for the Solar System to complete more than one full orbit around the galactic center."
