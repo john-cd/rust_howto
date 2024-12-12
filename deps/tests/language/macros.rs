@@ -41,7 +41,7 @@ fn print_tuple(tupl: T2) {
 fn use_thread_local() {
     use std::cell::RefCell;
     // Macro used as an item
-    thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+    thread_local!(static FOO: RefCell<u32> = const { RefCell::new(1) });
 }
 
 macro_rules! const_maker {
