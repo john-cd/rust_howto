@@ -35,7 +35,6 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[ignore = "requires a running postgres instance"]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
