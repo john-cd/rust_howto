@@ -21,7 +21,7 @@
 
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/data_structures/flagset.rs:example}}
 ```
 
@@ -30,4 +30,6 @@ FlagSet is a new, ergonomic approach to handling flags that combines the best of
 
 <div class="hidden">
 TODO P1 review
+
+The flagset crate is not available in the Rust Playground.
 </div>
