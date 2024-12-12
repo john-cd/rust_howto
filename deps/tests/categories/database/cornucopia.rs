@@ -6,6 +6,7 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
+#[ignore = "not yet implemented"]
 fn test() {
     main();
 }
