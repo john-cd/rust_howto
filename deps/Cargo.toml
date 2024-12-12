@@ -167,7 +167,7 @@ plotly = { version = "0.11.0", optional = true }
 polars = { version = "0.44.2", optional = true }
 postscript = { version = "0.18.2", optional = true }
 postage = { version = "0.5.0", optional = true }
-postgres = "0.19.9"
+postgres = { version = "0.19.9", optional = true }
 proc-macro2 = { version = "1.0.89", optional = true }
 pyo3 = "0.21"                                                               # pinned to 0.21 to avoid conflict with `polars`
 pyoxidizer = { version = "0.24.0", optional = true }
@@ -177,7 +177,7 @@ rand = "0.8.5"
 rand_distr = "0.4.3"
 ratatui = "0.29.0"
 rayon = "1.10.0"
-redis = "0.27.5"
+redis = { version = "0.27.5", optional = true }
 regex = "1.11.1"
 remove_dir_all = { version = "1.0.0", optional = true }
 reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
@@ -250,6 +250,7 @@ yapp = { version = "0.4.1", optional = true }
 yew = { version = "0.21.0", optional = true }
 # zed  # the `zed` crate is not the editor
 zenoh = { version = "1.0.2", optional = true }
+deadpool = { version = "0.12.1", optional = true }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 syslog = "7.0.0"
@@ -283,6 +284,13 @@ features = ["user-hooks"]
 ## The `ci` feature should be turned "on" only during CI tests
 ## It is used to ignore certain tests that can't run there.
 ci = []
+## Code examples that require an external service
+elasticsearch = ["dep:elasticsearch"]
+meilisearch = ["dep:meilisearch"]
+mongodb = ["dep:mongodb"]
+postgres = ["dep:postgres", "dep:cornucopia", "dep:diesel", "dep:sea-orm"]
+redis = ["dep:redis"]
+typesense = ["dep:typesense"]
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
 ## You may check for conflicts with: cargo build --features unused
@@ -363,6 +371,7 @@ unused = [
     "dep:yew",
     "dep:zenoh",
 ]
+deadpool = ["dep:deadpool"]
 
 # Technically defining a target is not required, because cargo autodiscovers it,
 # but useful during CI. See the Dockerfile.

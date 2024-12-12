@@ -23,8 +23,6 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO P2 docker compose
-#[ignore = "requires a Redis instance"]
 #[test]
 fn test() -> Result<()> {
     let res = main();
