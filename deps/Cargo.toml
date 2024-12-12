@@ -232,6 +232,11 @@ tungstenite = { version = "0.24.0", optional = true }
 typesense = { version = "0.1.0", optional = true }
 unicode-segmentation = "1.12.0"
 url = "2.5.3"
+uuid = {version = "1.11.0", features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+] }
 walkdir = "2.5.0"
 wasmtime = "27.0.0"
 watchmaker = { version = "2.0.0", optional = true }
