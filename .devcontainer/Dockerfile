@@ -204,7 +204,7 @@ ENTRYPOINT [ "./.devcontainer/dev.sh" ]
 CMD [ "sleep", "infinity" ]
 
 ## --------------------------------
-## Stage for Continuous Integration
+## Stage for Continuous Integration (book building)
 FROM base AS ci
 
 ## TODO P4 consider switching to slim or Alpine image for CI. Need to solve openssl install
@@ -221,10 +221,10 @@ ENV CARGO_TARGET_DIR=./target/
 ## Copy all the Cargo.toml / lock (and config.toml files) of the workspace
 ## The --parents flag preserves parent directories for the source entries.
 ## NOTE: [lib] or [[bin]] targets must be defined in all Cargo.toml, since the code is not present at this stage and autodiscovery won't work.
-COPY --parents .cargo/ Cargo.toml Cargo.lock deps/Cargo.toml publish/Cargo.toml tools/*/Cargo.toml xmpl/*/Cargo.toml ./
+#COPY --parents .cargo/ Cargo.toml Cargo.lock deps/Cargo.toml publish/Cargo.toml tools/*/Cargo.toml xmpl/*/Cargo.toml ./
 
 ## Bake the dependencies into (a separate layer of) the CI image (since they don't change often).
-RUN cargo fetch
+#RUN cargo fetch
 
 ## OPTIONAL: pre-compile the dependencies but not the code of tools and examples (which change more often)
 ## Disabled, because that takes a lot of space (cache in target/).
@@ -241,3 +241,13 @@ RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
 
 ## Compilation of the whole code happens within that script at runtime
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]
+
+## --------------------------------
+## Stage for Heavy Tests
+FROM base AS heavy_tests
+
+# Needed files will be brought by bind volumes
+
+# By default, enable the features
+# and run related tests
+# TODO CMD cargo nextest run --package deps --tests --locked --no-fail-fast --features redis postgres meilisearch typsense elasticsearch mongodb

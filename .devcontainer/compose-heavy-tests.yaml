@@ -1,0 +1,85 @@
+# Services for tests that require a database or external cache or search engines
+# Don't try to run everything at once!
+#
+# Sources:
+# https://github.com/docker/awesome-compose
+# https://awesome-docker-compose.com
+#
+name: rust_howto_heavy_tests
+services:
+  book:
+    build:
+      target: heavy_tests
+    environment:
+      - RUST_LOG=debug
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+
+  # https://hub.docker.com/_/redis
+  redis:
+    image: redis:alpine
+    restart: always
+    expose:
+      - 6379
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.10
+    ports:
+      - 7700:7700
+    environment:
+      - MEILI_MASTER_KEY='MASTER_KEY'\
+    volumes:
+      - ./meili_data:/meili_data
+    restart: unless-stopped
+
+  typesense:
+    image: typesense/typesense:27.1
+    ports:
+      - "8108:8108"
+    volumes:
+      - ./typesense-data:/data
+    command: '--data-dir /data --api-key=xyz --enable-cors'
+    restart: on-failure
+
+  elasticsearch:
+    image: elasticsearch:7.16.1
+    container_name: es
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+
+  # https://hub.docker.com/_/mongo
+  mongodb:
+      image: mongo
+      ports:
+          - '27017:27017'
+      restart: always
+      logging:
+          options:
+              max-size: 1g
+      environment:
+          - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+          - MONGO_INITDB_ROOT_PASSWORD=mysecretpassword
+
+
+volumes:
+  db_data: {}

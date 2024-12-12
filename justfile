@@ -368,3 +368,16 @@ push_ci:
 # Push the development Docker image to DockerHub.
 push_dev:
   docker push johncd/rust_howto_dev:latest
+
+## ---- HEAVY TESTS -----------------------------------
+
+heavy_tests:
+  #! /bin/bash
+  for feature in "redis"
+  do
+    echo ">> $feature"
+    docker compose -f .devcontainer/compose-heavy-tests.yaml up -d ${feature}
+    # TODO docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.override.yaml -f .devcontainer/compose-heavy-tests.yaml run book $feature
+    ## Remove named volumes declared in the "volumes" section of the Compose file and anonymous volumes attached to containers
+    docker compose -f .devcontainer/compose-heavy-tests.yaml down --volumes $feature
+  done
