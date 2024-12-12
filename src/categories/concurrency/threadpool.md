@@ -30,7 +30,7 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 [`image::ImageBuffer::put_pixel`][c-image::ImageBuffer::put_pixel]{{hi:image::ImageBuffer::put_pixel}}⮳ uses the data to set the pixel color.
 [`image::ImageBuffer::save`][c-image::ImageBuffer::save]{{hi:image::ImageBuffer::save}}⮳ writes the image to `output.png`.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/concurrency/threadpool_fractal.rs:example}}
 ```
 
@@ -39,4 +39,5 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 
 <div class="hidden">
 TODO P1 polish
+TODO P1 threadpool_fractal.rs is noplayground - linking with `cc` failed: exit status: 1 - fix? 
 </div>

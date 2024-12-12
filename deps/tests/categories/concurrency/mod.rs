@@ -1,6 +1,5 @@
 mod actix;
 mod await_tree;
-mod crossbeam_channel;
 mod crossbeam_complex;
 mod crossbeam_queue;
 mod crossbeam_spawn;

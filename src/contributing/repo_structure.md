@@ -21,7 +21,7 @@ TODO P1: edit
 
 In order to make sure that all examples work, they are backed by tests, similar to the following:
 
-```rust,editable
+```rust,editable,noplayground
 # [test]
 fn test() {
     main();

@@ -1,35 +1,49 @@
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
 fn main() {
-    // Used as an expression.
+    // Macro used as an expression
+    // Define a vector
     let _x = vec![1, 2, 3];
 
-    // Used as a statement.
+    // Macro used as a statement
+    // Print the string
     println!("Hello!");
 
-    // Used in a pattern.
+    // Macro definition
     macro_rules! pat {
         ($i:ident) => {
             Some($i)
         };
     }
 
+    // Macro used in a pattern
+    // Destructure an Option
     if let pat!(x) = Some(1) {
         assert_eq!(x, 1);
     }
+
+    print_tuple((1, 3));
+    use_thread_local();
 }
 
-// Used in a type.
 macro_rules! Tuple {
     { $A:ty, $B:ty } => { ($A, $B) };
 }
 
-type _N2 = Tuple!(i32, i32);
+// Macro used in a type
+// Define a tuple type
+type T2 = Tuple!(i32, i32);
 
-// Used as an item.
-// thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+fn print_tuple(tupl: T2) {
+    println!("{} {}", tupl.0, tupl.1);
+}
 
-// Used as an associated item.
+fn use_thread_local() {
+    use std::cell::RefCell;
+    // Macro used as an item
+    thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+}
+
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
         const CONST: $t = $v;
@@ -38,6 +52,7 @@ macro_rules! const_maker {
 
 #[allow(dead_code)]
 trait T {
+    // Macro used as an associated item
     const_maker! {i32, 7}
 }
 
@@ -56,4 +71,3 @@ macro_rules! _example {
 fn test() {
     main();
 }
-// TODO P1

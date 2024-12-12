@@ -1,11 +1,15 @@
 // ANCHOR: example
 fn main() {
-    let x = 5; // x is immutable
+    // `x`` is an immutable variable
+    let x = 5;
+    // ERROR: x = x +1;
 
-    let x = x + 1; // Redefines x
+    // But it can be redefined:
+    let x = x + 1;
     println!("{x}");
 
-    let x = "example"; // The type can change
+    // The type can change
+    let x = "example";
     println!("{x}");
 }
 // ANCHOR_END: example

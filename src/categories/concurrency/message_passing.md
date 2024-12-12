@@ -24,10 +24,6 @@ Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message
 {{#include ../../../deps/tests/categories/concurrency/message_passing_crossbeam_channel.rs:example}}
 ```
 
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/crossbeam_channel.rs:example}}
-```
-
 Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi:Timeouts}}
 
 ```rust,editable

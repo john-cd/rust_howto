@@ -104,7 +104,7 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 
 [`glob::glob_with::glob_with`][c-glob::glob_with]{{hi:glob::glob_with::glob_with}}⮳ finds jpeg files in current directory. [`rayon`][c-rayon]{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c-rayon::iter::IntoParallelRefIterator::par_iter]{{hi:rayon::iter::IntoParallelRefIterator::par_iter}}⮳ calling [`image::DynamicImage::resize`][c-image::DynamicImage::resize]{{hi:image::DynamicImage::resize}}⮳
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/concurrency/rayon_thumbnails.rs:example}}
 ```
 
@@ -113,4 +113,5 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 
 <div class="hidden">
 TODO P1 polish; dedupe with multithreading.md
+TODO P1 rayon_thumbnails.rs is noplayground - linking with `cc` failed: exit status: 1 - fix?
 </div>

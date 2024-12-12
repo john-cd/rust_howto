@@ -30,7 +30,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
 
-```rust,editable,compile_fail
+```rust,editable,compile_fail,noplayground
 #[error("{var}")]  //⟶ write!("{}", self.var)
 #[error("{0}")]   //⟶ write!("{}", self.0)
 #[error("{var:?}")] //⟶ write!("{:?}", self.var)

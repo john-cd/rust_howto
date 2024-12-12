@@ -1,14 +1,13 @@
 # TODO
 
+- [ ] review all examples and mark them as ```rust,noplayground as needed
+
 - [ ] fix contributing section
 - [ ] polish the intro, add links WIP
 - [ ] polish crates section
-- [ ] fix incl.md table for cargo plugins; add ref to crates
-- [ ] fix incl.md tables for databases
 - [ ] finish to polish the links section WIP
 - [ ] fix error handling / customization section WIP
 - [ ] fix examples marked TODO; make sure that there is an output when run in the playground
-- [ ] review all examples and mark them as ```rust,noplayground as needed
 - [ ] add badge refdefs for links to RBE book in language / standard_lib; use `just templ rbe` command - WIP
 - [ ] review each .md file in turn - WIP
 - [ ] replace current badge markdown mess by a preprocessor command

@@ -83,7 +83,7 @@ model Todo {
 
 Use the Toasty CLI tool to generate all necessary Rust code for working with this data model.
 
-```rust,editable,ignore
+```rust,editable,ignore,noplayground
 // Create a new user and give them some todos.
 User::create()
   .name("John Doe")

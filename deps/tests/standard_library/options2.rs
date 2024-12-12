@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn bake_cake(sprinkles: Option<&str>) -> String {
-    let mut cake = String::from("A delicious cake base...");
+    let mut cake = String::from("A delicious cake...");
 
     // Add required ingredients
 
@@ -17,7 +17,7 @@ fn bake_cake(sprinkles: Option<&str>) -> String {
 }
 
 fn main() {
-    bake_cake(Some("rainbow nonpareils"));
+    print!("{}", bake_cake(Some("rainbow nonpareils")));
 }
 // ANCHOR_END: example
 

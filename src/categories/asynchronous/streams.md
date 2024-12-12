@@ -29,4 +29,5 @@ See also Tokio `async-stream`{{hi:async-stream}}.
 
 <div class="hidden">
 TODO P1 add more?
+TODO P1 streams2.rs is noplayground because it requires a network. rewrite?
 </div>

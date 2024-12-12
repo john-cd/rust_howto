@@ -1,8 +1,9 @@
 // ANCHOR: example
 fn main() {
     {
-        let _s = String::from("hello");
-    } // Variable out of scope - Rust calls `drop`
+        let s = String::from("hello");
+        println!("{}", s);
+    } // The `s` variable is now out of scope - Rust calls `drop`
 
     // ERROR println!("{}", s);
 }

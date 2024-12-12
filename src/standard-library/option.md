@@ -8,7 +8,7 @@
 
 Rust has no `null`{{hi:null}}. Instead, use [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳:
 
-```rust,editable
+```rust,editable,noplayground
 enum Option<T> {
   None,
   Some(T),
@@ -38,7 +38,7 @@ It is often used with [`match`][book-rust-reference-match]{{hi:match}}⮳, [`if 
 
 ## Extract the value contained in Option {#extracting-the-value-contained-in-option}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 These methods extract the contained value in an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}} when it is the `Some` variant. If the [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ is `None`:
 

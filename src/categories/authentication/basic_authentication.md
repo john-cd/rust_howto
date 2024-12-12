@@ -8,7 +8,7 @@
 
 Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_auth]{{hi:reqwest::RequestBuilder::basic_auth}} to perform a basic HTTP authentication{{hi:HTTP authentication}}.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/authentication/basic.rs:example}}
 ```
 
@@ -17,4 +17,5 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 
 <div class="hidden">
 TODO P2 expand
+TODO P1 authentication/basic.rs is noplayground because of network use. rewrite? 
 </div>
