@@ -11,6 +11,9 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 
 fn main() {
+    if !std::fs::exists("temp").unwrap() {
+        std::fs::create_dir("temp").unwrap();
+    }
     match read_username_from_file() {
         Ok(name) => println!("User name: {}", name),
         Err(err) => println!("Error: {}", err),

@@ -12,6 +12,9 @@ fn read_file(filename: &str) -> Option<String> {
 }
 
 fn main() -> anyhow::Result<()> {
+    if !std::fs::exists("temp")? {
+        std::fs::create_dir("temp")?;
+    }
     fs::write("temp/poem.txt", b"Lorem ipsum")?;
     let contents = read_file("temp/poem.txt");
 

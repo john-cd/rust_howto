@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
@@ -7,6 +8,9 @@ use anyhow::Result;
 use regex::RegexSetBuilder;
 
 fn main() -> Result<()> {
+    if !fs::exists("temp").unwrap() {
+        fs::create_dir("temp").unwrap();
+    }
     let log_path = "temp/application.log";
     let buffered = BufReader::new(File::open(log_path)?);
 

@@ -68,6 +68,9 @@ fn main() -> Result<()> {
     let length = u64::from_str(length.to_str()?)
         .map_err(|_| anyhow!("invalid Content-Length header"))?;
 
+    if !std::fs::exists("temp")? {
+        std::fs::create_dir("temp")?;
+    }
     let mut output_file = File::create("temp/download.bin")?;
 
     println!("starting download...");

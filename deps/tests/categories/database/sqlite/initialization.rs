@@ -1,8 +1,12 @@
 // ANCHOR: example
-use rusqlite::Connection;
-use rusqlite::Result;
+use std::fs;
 
-pub fn main() -> Result<()> {
+use rusqlite::Connection;
+
+pub fn main() -> anyhow::Result<()> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     let conn = Connection::open("temp/cats.db")?;
 
     conn.execute(

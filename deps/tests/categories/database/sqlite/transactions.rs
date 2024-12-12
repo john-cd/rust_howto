@@ -1,8 +1,13 @@
 // ANCHOR: example
+use std::fs;
+
+use anyhow::Result;
 use rusqlite::Connection;
-use rusqlite::Result;
 
 pub fn main() -> Result<()> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     let mut conn = Connection::open("temp/cats.db")?;
 
     successful_tx(&mut conn)?;
@@ -22,7 +27,8 @@ fn successful_tx(conn: &mut Connection) -> Result<()> {
     tx.execute("delete from cat_colors", ())?;
     tx.execute("insert into cat_colors (name) values (?1)", [&"lavender"])?;
     tx.execute("insert into cat_colors (name) values (?1)", [&"blue"])?;
-    tx.commit()
+    tx.commit()?;
+    Ok(())
 }
 
 fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
@@ -31,6 +37,7 @@ fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
     tx.execute("insert into cat_colors (name) values (?1)", [&"lavender"])?;
     tx.execute("insert into cat_colors (name) values (?1)", [&"blue"])?;
     tx.execute("insert into cat_colors (name) values (?1)", [&"lavender"])?;
-    tx.commit()
+    tx.commit()?;
+    Ok(())
 }
 // ANCHOR_END: example

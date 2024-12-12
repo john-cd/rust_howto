@@ -10,11 +10,11 @@ fn main() {
         let r2 = lock.read();
         assert_eq!(*r1, 5);
         assert_eq!(*r2, 5);
-        print!("Read locks are dropped at this point");
+        println!("Read locks are dropped at this point");
     }
 
     {
-        print!("Only one write lock may be held, however");
+        println!("Only one write lock may be held, however");
         let mut w = lock.write();
         *w += 1;
         assert_eq!(*w, 6);

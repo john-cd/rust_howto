@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::sync::mpsc::channel;
 
 use anyhow::Result;
@@ -86,6 +87,9 @@ fn main() -> Result<()> {
     for _ in 0..(width * height) {
         let (x, y, pixel) = rx.recv()?;
         img.put_pixel(x, y, pixel);
+    }
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
     }
     img.save("temp/output.png")?;
     Ok(())

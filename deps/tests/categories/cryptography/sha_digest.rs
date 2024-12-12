@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Read;
@@ -26,6 +27,9 @@ fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
 }
 
 fn main() -> Result<()> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     let path = "temp/file.txt";
 
     let mut output = File::create(path)?;

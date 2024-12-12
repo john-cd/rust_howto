@@ -1,5 +1,7 @@
 #![allow(clippy::single_match)]
 // ANCHOR: example
+use std::fs;
+
 use futures::StreamExt;
 use tokio::fs::File;
 use tokio::io;
@@ -18,6 +20,9 @@ async fn download_file(url: &str, filename: &str) -> Result {
 async fn main() -> Result {
     let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"]; // add more here...
     let filenames = ["temp/file1.txt"]; // add more here...
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
 
     let futures = urls
         .iter()

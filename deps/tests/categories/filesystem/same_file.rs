@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
@@ -9,6 +10,9 @@ use std::path::Path;
 use same_file::Handle;
 
 fn main() -> Result<(), Error> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     std::fs::write("temp/new.txt", b"Lorem ipsum")?;
 
     let path_to_read = Path::new("temp/new.txt");

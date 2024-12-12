@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::fs::File;
 use std::io::Error;
 use std::io::Write;
@@ -6,6 +7,9 @@ use std::io::Write;
 use memmap2::Mmap;
 
 fn main() -> Result<(), Error> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     write!(
         File::create("temp/content.txt")?,
         "My hovercraft is full of eels!"

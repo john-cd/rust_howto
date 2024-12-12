@@ -24,6 +24,9 @@ use std::io::Write;
 // Requires network access
 #[test]
 fn test() -> anyhow::Result<()> {
+    if !std::fs::exists("temp")? {
+        std::fs::create_dir("temp")?;
+    }
     let mut f = File::create("temp/message")?;
     f.write_all(b"Hello")?;
     main()?;

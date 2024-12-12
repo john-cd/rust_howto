@@ -1,4 +1,5 @@
 // ANCHOR: example
+use std::fs;
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
@@ -6,6 +7,9 @@ use std::io::Error;
 use std::io::Write;
 
 fn main() -> Result<(), Error> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     let path = "temp/lines.txt";
 
     let mut output = File::create(path)?;

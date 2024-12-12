@@ -1,17 +1,16 @@
 #![allow(clippy::incompatible_msrv)]
 // ANCHOR: example
 
+use std::fs;
 use std::fs::File;
-use std::fs::create_dir;
-use std::fs::exists;
 
 use flate2::Compression;
 use flate2::write::GzEncoder;
 
 pub fn main() -> Result<(), std::io::Error> {
     // Create a temporary folder
-    if !exists("temp")? {
-        create_dir("temp")?;
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
     }
     // Create the archive file
     let tar_gz_file = File::create("temp/archive.tar.gz")?;

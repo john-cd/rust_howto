@@ -8,7 +8,7 @@
 
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ forks and supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/config/dotenvy.rs:example}}
 ```
 
