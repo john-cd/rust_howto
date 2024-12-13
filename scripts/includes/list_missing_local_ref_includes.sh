@@ -1,11 +1,13 @@
 #! /bin/bash
+set -euo pipefail
 
 # List files that do not include their local references i.e. {{#include refs.incl.md}} is missing
 # NOTE: a few files (indices, TOC...) don't need local references
 #
-# Usage: ./scripts/includes/list_missing_local_ref_includes.sh
+# Usage: /code/scripts/includes/list_missing_local_ref_includes.sh
 
-grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ./src
+root="/code/"
+grep -PrL --exclude=*.incl.md --exclude=*refs.md '\{\{#include refs.incl.md\}\}' ${root}src
 # -P = Perl regex; -r = recursive ; -L = print only names of FILEs with no selected lines
 
 echo "DONE"

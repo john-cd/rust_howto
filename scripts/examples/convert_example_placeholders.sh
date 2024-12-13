@@ -1,11 +1,14 @@
 #! /bin/bash
+set -euo pipefail
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
 # and create the necessary code stubs (in subfolders of deps/tests/)
 #
-# Usage: ./scripts/examples/convert_example_placeholders.sh
+# Usage: /code/scripts/examples/convert_example_placeholders.sh
 
-for file in $(find /code/src -type f -name "*.md" -not -name "*.incl.md" )
+root="/code/"
+
+for file in $(find ${root}src -type f -name "*.md" -not -name "*.incl.md" )
 do
   # Grab the name of the example(s) to create and iterate
   # grep -P = Perl regex; -o = show only nonempty parts of lines that match; -h =  suppress the file name prefix on output
@@ -15,14 +18,14 @@ do
     if [[ -n $examplename ]]; then
         echo "Processing example: $examplename"
         dir=$(dirname $file)
-        rel=$(realpath --relative-to=/code/src $dir | tr '-' '_')
+        rel=$(realpath --relative-to=${root}src $dir | tr '-' '_')
         # echo "rel: $rel"
-        exampledir=$(realpath --relative-to=$dir /code/deps/tests | tr '-' '_')"/$rel"
+        exampledir=$(realpath --relative-to=$dir "${root}deps/tests" | tr '-' '_')"/$rel"
         # echo "exampledir: $exampledir"
         examplefile="${exampledir}/${examplename}.rs"
         # echo "examplefile: $examplefile"
         sed -Ei 's~\{\{#example\s*?'${examplename}'\s*?\}\}~```rust,editable\n\{\{#include '$examplefile':example\}\}\n```~g' $file
-        absoluteexampledir="/code/deps/tests/${rel}"
+        absoluteexampledir="${root}deps/tests/${rel}"
         # Create the folder for the test, if missing
         mkdir -p $absoluteexampledir
         # Add a stub file for the example

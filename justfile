@@ -1,61 +1,112 @@
+#TODO
 set windows-shell := [ "cmd.exe", "/c" ]
 
 [no-exit-message]
 _default:
-  @just --choose
-#@just --list --unsorted --justfile {{justfile()}}
+  @just --list --unsorted --justfile {{justfile()}}
+#@just --choose
+
+# Alias for code build
+b:
+  @just code build
+
+# Alias for code buildall
+ba:
+  @just code buildall
+
+# Alias for code clippyall
+ca:
+  @just code clippyall
+
+# Alias for code fmtall
+f:
+  @just code fmtall
+
+# Alias for code fmtall
+fa:
+  @just code fmtall
+
+# Alias for code nextestall
+nta:
+  @just code nextestall
+
+# Alias for code test
+t:
+  @just code test
+
+# Alias for code testall
+ta:
+  @just code testall
 
 # Build and test the code examples
-mod code 'just/code.just'
-
-# Build and serve the book
-mod book 'just/book.just'
+mod code 'scripts/code'
 
 # Build the code documentation
-mod docs 'just/docs.just'
+mod docs 'scripts/docs'
+
+# Alias for book
+bb:
+  @just book buildbook
+
+# Alias for book quick
+q:
+  @just book quick
+
+# Alias for book serve
+s:
+  @just book serve
+
+# Build and serve the book
+mod book 'scripts/book'
 
 # Manage heading anchors
-mod anchors 'just/anchors.just'
+mod anchors 'scripts/anchors'
 
 # Manage recipe tables
-mod recipes 'just/recipes.just'
+mod recipes 'scripts/recipes'
 
-# Manage dependencies
-mod deps 'just/deps.just'
+# Manage crates / dependencies
+mod deps 'scripts/deps'
 
 # Manage include statements
-mod includes 'just/includes.just'
+mod includes 'scripts/includes'
 
 # Manage code examples
-mod examples 'just/examples.just'
+mod examples 'scripts/examples'
 
 # Manage reference definitions
-mod refdefs 'just/refdefs.just'
+mod refdefs 'scripts/refdefs'
 
 # Manage links
-mod links 'just/links.just'
+mod links 'scripts/links'
 
 # Manage external URLs
-mod urls 'just/urls.just'
+mod urls 'scripts/urls'
 
 # Manage indexes
-mod indices 'just/indices.just'
+mod indices 'scripts/indices'
 
 # Hide or unhide chapters
-mod chapters 'just/chapters.just'
+mod chapters 'scripts/chapters'
 
 # Manage the main table of contents
-mod toc 'just/toc.just'
+mod toc 'scripts/toc'
 
-# Manage heavy tests
-mod heavy 'just/heavy.just'
+# Alias for utils
+u *args='':
+  @just utils {{args}}
 
 # Utilities
-mod tools 'just/tools.just'
+mod utils 'scripts/utils'
 
-# Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
+spell:
+  @just utils spell
+
 lnk pattern:
-  {{justfile_directory()}}/scripts/refdefs/search.sh {{pattern}}
+  @just utils make_link {{pattern}}
+
+# Manage Docker Compose and DockerHub
+mod docker 'scripts/docker'
 
 ## ---- CLEAN ------------------------------------------
 

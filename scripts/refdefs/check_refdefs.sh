@@ -1,14 +1,16 @@
 #! /bin/bash
+set -euo pipefail
 
 # List links without corresponding reference definitions and vice versa
-# Usage: ./scripts/refdefs/check_refdefs.sh
+# Usage: /code/scripts/refdefs/check_refdefs.sh
 
+root="/code/"
 # Extract reference definitions e.g. [label]: http://xyz
-grep -Proh '\[[^\[\]]+?\](?=:)' ./src ./drafts | sort -u > /tmp/defined_refdefs.txt
+grep -Proh '\[[^\[\]]+?\](?=:)' ${root}src ${root}drafts | sort -u > /tmp/defined_refdefs.txt
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching
 
 # Extract labels preceded by ] e.g. [some_text][label]
-grep -Proh '(?<=\])\[[^ \[\]]+?\]' ./src ./drafts | sort -u > /tmp/used_refdefs.txt
+grep -Proh '(?<=\])\[[^ \[\]]+?\]' ${root}src ${root}drafts | sort -u > /tmp/used_refdefs.txt
 
 echo ">>> Links w/o reference definition:"
 comm -13 --check-order --output-delimiter="|" /tmp/defined_refdefs.txt /tmp/used_refdefs.txt | sort

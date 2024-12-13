@@ -1,10 +1,11 @@
 #! /bin/bash
+set -euo pipefail
 
 # List subchapters that do not include a local TOC, i.e. {{#include <subchapter>.incl.md}} is missing.
 #
-# Usage: ./scripts/includes/list_missing_subchapter_includes.sh
+# Usage: /code/scripts/includes/list_missing_subchapter_includes.sh
 
-for file in $(find ./src -type f -name "*.md" -not -name "*index.md" -not -name '*.incl.md' -not -name "*refs.md"  -not -path "./src/[^/]+.md" )
+for file in $(find ${root}src -type f -name "*.md" -not -name "*index.md" -not -name '*.incl.md' -not -name "*refs.md"  -not -path "${root}src/[^/]+.md" )
 do
   base=$(basename $file)
   include=$(grep -Poh '(?<=\{\{#include )_?'${base%.md}'(?=\.incl\.md\}\})' $file)

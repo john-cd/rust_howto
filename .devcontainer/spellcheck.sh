@@ -40,8 +40,9 @@ aspell --version
 
 shopt -s nullglob
 
-dict_filename=.devcontainer/dictionary.txt
-markdown_sources=(./src/*.md)
+root="/code/"
+dict_filename="${root}.devcontainer/dictionary.txt"
+markdown_sources=(${root}src/*.md)
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,

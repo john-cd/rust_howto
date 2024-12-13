@@ -1,10 +1,13 @@
 #! /bin/bash
+set -euo pipefail
 
 # (BEWARE: modifies files directly) Generate reference definitions from book heading anchors e.g. {#some-text} and add them to the local references in `refs.incl.md`
-# Usage: ./scripts/anchors/generate_refdefs_from_anchors.sh
+# Usage: /code/scripts/anchors/generate_refdefs_from_anchors.sh
+
+root="/code/"
 
 # Anchors should only appear in subchapters, where the examples live.
-for file in $(find ./src -type f \( -name "*.md" -not -name "*index.md" -not -name "*.incl.md" -not -name "*-refs.md" \) )
+for file in $(find "${root}src" -type f \( -name "*.md" -not -name "*index.md" -not -name "*.incl.md" -not -name "*-refs.md" \) )
 do
     echo ">> $file"
     base=$(basename $file)
