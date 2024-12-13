@@ -1,4 +1,8 @@
 {
     "markdown.validate.ignoredLinks": [
-    ]
+    ],
+    "search.exclude": {
+            "**/target": true
+    },
+    "lldb.verboseLogging": true
 }
