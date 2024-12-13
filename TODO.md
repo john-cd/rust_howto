@@ -21,6 +21,7 @@
 - [ ] finish autogen and tool_lib/src/tera --> generate index of examples? recipe tables? new subchapter? - WIP
 - [ ] finish git hook setup with cargo husky - why are they not installed?
 - [ ] consolidate templ / crate_indices / autogen / mdbook-utils tools and respective libs
+- [ ] documentation for all tools pub fn
 
 ## Links
 
