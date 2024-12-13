@@ -1,0 +1,14 @@
+_default:
+  @just --list recipes --unsorted --justfile {{justfile()}}
+#@just --choose
+
+## ---- RECIPE TABLE MANAGEMENT -----------------------------------
+
+# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`
+[confirm]
+fix_recipe_tables:
+  {{justfile_directory()}}/scripts/recipe_tables/fix_recipe_tables.sh
+
+# Make the titles in the recipe tables / local TOCs match the corresponding headings of the subchapters
+fix_recipe_titles:
+  {{justfile_directory()}}/scripts/recipe_tables/fix_recipe_titles.sh
