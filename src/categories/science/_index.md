@@ -6,7 +6,7 @@ Solving problems involving physics, chemistry, biology, machine learning, geosci
 
 ## Machine Learning
 
-{{#include machine_learning.incl.md}}
+{{#include _machine_learning.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
