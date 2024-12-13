@@ -32,6 +32,8 @@
 ## Examples
 
 - [ ] fix commented examples - listen_unused, backtrace, rate_limited, paginated
+- [ ] finish deadpool2.rs and include in the book
+- [ ] fix third postgres sample
 - [ ] rewrite rest_post.rs so that a username and password are not required?
 - [ ] finish to review ignore / no_run examples - add noplayground if playground does not have the dependency
 - [ ] Make addt'l examples out of mdbook-utils, crate_indices, templ, clean, autogen...
