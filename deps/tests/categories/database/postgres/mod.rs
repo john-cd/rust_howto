@@ -6,6 +6,7 @@ mod insert_query_data;
 fn test() -> anyhow::Result<()> {
     create_tables::main()?;
     insert_query_data::main()?;
-    // TODO aggregate_data::main()?;
+    // TODO
+    // aggregate_data::main()?;
     Ok(())
 }

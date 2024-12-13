@@ -1,6 +1,5 @@
 #[cfg(feature = "postgres")]
 mod cornucopia;
-#[cfg(feature = "postgres")]
 mod deadpool;
 #[cfg(feature = "postgres")]
 mod diesel;
