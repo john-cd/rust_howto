@@ -1,6 +1,6 @@
 _default:
   #@just --choose
-  @just --list tools --unsorted --justfile {{justfile()}}
+  @just --list utils --unsorted --justfile {{justfile()}}
 
 ## ---- UTILITIES -----------------------------------
 
@@ -9,7 +9,8 @@ _default:
 # Check spelling in markdown
 [unix]
 spell:
-  root={{justfile_directory()}}/ \
+  #! /bin/bash
+  root={{justfile_directory()}}/
   ${root}.devcontainer/spellcheck.sh list
 
 [windows]

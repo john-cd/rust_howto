@@ -1,10 +1,10 @@
+set unstable
+
 _default:
   @just --list book --unsorted --justfile {{justfile()}}
 #@just --choose
 
 ## ---- BOOK BUILDING -----------------------------------
-
-
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
 buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
@@ -29,8 +29,9 @@ _generate-index-category:
 
 # Add static assets to book output
 [unix]
+[script]
 _copystatic:
-  root={{justfile_directory()}}/ \
+  root="{{justfile_directory()}}/"
   cp ${root}static/*.* ${root}book/html/
 
 [windows]
@@ -39,18 +40,18 @@ _copystatic:
 
 # Generate the sitemap.xml file
 _sitemap:
-  mdbook-utils sitemap
+  cd {{justfile_directory()}} && mdbook-utils sitemap
 
 # Serve the book (incl. link checking)
 serve:
-  mdbook serve -p 3000 -n 127.0.0.1 --open
+  mdbook serve -p 3000 -n 127.0.0.1 --open {{justfile_directory()}}
   ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
-  ## Or use: cd book/html ; python3 -m http.server 3000
+  ## Or use: cd  {{justfile_directory()}}/book/html ; python3 -m http.server 3000
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 [unix]
 quick:
-  quick.sh
+  ./quick.sh
 
 [windows]
 quick:

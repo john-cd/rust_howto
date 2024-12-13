@@ -23,7 +23,7 @@ fi
 # Make sure that the book builds in the same folder than `serve`
 # Also overwrite the title
 MDBOOK_BUILD__BUILD_DIR="${root}book/html" MDBOOK_BOOK='{"title": "QUICK SERVE"}' \
-mdbook serve -p 3001 -n 127.0.0.1 --open
+mdbook serve -p 3001 -n 127.0.0.1 --open ${root}
 
 echo "DONE"
 
