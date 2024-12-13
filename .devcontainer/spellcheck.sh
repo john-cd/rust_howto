@@ -40,8 +40,7 @@ aspell --version
 
 shopt -s nullglob
 
-root="/code/"
-dict_filename="${root}.devcontainer/dictionary.txt"
+dict_filename="$(dirname "$0")/dictionary.txt"
 markdown_sources=(${root}src/*.md)
 mode="check"
 
