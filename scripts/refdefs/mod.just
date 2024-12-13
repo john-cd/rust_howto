@@ -6,13 +6,13 @@ _default:
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files; remove the last / from URLs
 [unix]
-sortrefs:
+sort:
   ./sort_refdefs.sh
 
 [windows]
-sortrefs:
+sort:
   echo "`sortrefs` is not implemented while working in Windows!"
 
 # List links without corresponding reference definitions and vice versa
-check_refdefs:
+check:
   ./check_refdefs.sh

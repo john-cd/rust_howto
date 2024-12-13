@@ -75,7 +75,7 @@ heavytestall:
   for feature in redis postgres # "elasticsearch" "meilisearch" "mongodb" "postgres" "redis" "typesense"
   do
     echo ">> $feature"
-    just heavy test ${feature}
+    just code heavy_test ${feature}
     echo "------------------------"
   done
 

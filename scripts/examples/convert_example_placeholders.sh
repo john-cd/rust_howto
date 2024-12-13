@@ -1,5 +1,5 @@
 #! /bin/bash
-set -euo pipefail
+set -eu
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
 # and create the necessary code stubs (in subfolders of deps/tests/)

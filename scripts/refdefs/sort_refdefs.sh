@@ -5,6 +5,7 @@ set -euo pipefail
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 
+root="/code/"
 sort -u -o ${root}src/refs/crate-refs.md ${root}src/refs/crate-refs.md
 sort -u -o ${root}src/refs/other-refs.md ${root}src/refs/other-refs.md
 sort -u -o ${root}src/refs/link-refs.md ${root}src/refs/link-refs.md

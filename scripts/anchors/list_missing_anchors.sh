@@ -1,5 +1,5 @@
 #! /bin/bash
-set -euo pipefail
+set -eu
 
 # List book headings that do not have an anchor (e.g. {#some-text} after the heading).
 # Note that not all headers need one.

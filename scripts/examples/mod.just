@@ -15,10 +15,9 @@ list_examples_not_used_in_book:
 # List examples (.rs files) in `deps/tests` that were not included into a module somehow and that are therefore not tested
 list_examples_not_in_tests:
   #! /bin/bash
-  set -euo pipefail
-  root="{{justfile_directory()}}\"
-  comm -1 -3 <(find ${root}deps/tests -type f \( -name "main.rs" -o -name "mod.rs" \) -exec sed -nE 's/mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
-          <(find ${root}deps/tests -mindepth 2 -type f -name "*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d' | sort -u)
+  root="{{justfile_directory()}}/"
+  comm -1 -3 <(find "${root}deps/tests" -type f \( -name "main.rs" -o -name "mod.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
+          <(find "${root}deps/tests" -mindepth 2 -type f -name "*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d' | sort -u)
   echo "DONE"
 
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of deps/tests/)
