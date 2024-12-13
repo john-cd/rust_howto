@@ -1,8 +1,11 @@
 // ANCHOR: example
-use mongodb::{Client, bson::doc};
-use serde::{Serialize, Deserialize};
-use dotenvy::dotenv;
 use std::env;
+
+use dotenvy::dotenv;
+use mongodb::Client;
+use mongodb::bson::doc;
+use serde::Deserialize;
+use serde::Serialize;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct User {
@@ -21,7 +24,10 @@ async fn main() -> anyhow::Result<()> {
     let db = client.database("test_db");
     let collection = db.collection::<User>("users");
 
-    let user = User { name: String::from("Alice"), age: 30 };
+    let user = User {
+        name: String::from("Alice"),
+        age: 30,
+    };
     collection.insert_one(user).await?;
 
     let filter = doc! { "name": "Alice" };
@@ -39,7 +45,10 @@ async fn main() -> anyhow::Result<()> {
 fn test() {
     unsafe {
         // Refer to the compose*.yaml files
-        env::set_var("MONGO_URI", "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/");
+        env::set_var(
+            "MONGO_URI",
+            "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/",
+        );
     }
     main().unwrap();
 }

@@ -23,3 +23,4 @@ rusty_fork_test! {
         main();
     }
 }
+// TODO P0 does it print?

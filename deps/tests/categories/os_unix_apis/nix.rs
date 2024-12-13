@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    // TODO
+    // TODO P2
     todo!();
 }
 // ANCHOR_END: example

@@ -42,3 +42,4 @@ async fn main() {
 fn test() {
     main();
 }
+// TODO P0 does it print?

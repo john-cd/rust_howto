@@ -92,6 +92,7 @@ fn main() -> Result<()> {
         fs::create_dir("temp")?;
     }
     img.save("temp/output.png")?;
+    println!("Image saved!");
     Ok(())
 }
 // ANCHOR_END: example

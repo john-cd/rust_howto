@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// TODO P1 fix - the API no longer returns a crate_id - need to get
+// TODO P0 fix - the API no longer returns a crate_id - need to get
 // version_id then join version_id and Version.id ro retrieve crate
 // name Consider a simpler API for example purposes
 

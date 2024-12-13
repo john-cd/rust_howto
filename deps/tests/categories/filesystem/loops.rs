@@ -31,7 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// TODO P1
+// TODO P0 print
 #[ignore]
 #[test]
 fn test() {

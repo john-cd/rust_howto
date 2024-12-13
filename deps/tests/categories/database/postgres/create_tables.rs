@@ -30,7 +30,7 @@ pub fn main() -> anyhow::Result<()> {
             )
     ",
     )?;
-
+    println!("Tables created!");
     Ok(())
 }
 // ANCHOR_END: example
