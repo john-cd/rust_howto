@@ -12,6 +12,6 @@ if [ ! -f ${root}book.toml ]; then
     cp -f ${root}book.toml.bak ${root}book.toml
 fi
 
-mdbook build
+mdbook build ${root}
 
 echo "DONE"

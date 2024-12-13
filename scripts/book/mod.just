@@ -16,7 +16,7 @@ _mdbook-build-book:
 
 [windows]
 _mdbook-build-book:
-  mdbook build
+  mdbook build {{justfile_directory()}}
 # TODO P2
 
 # Generate new reference definitions for all crate the book's examples depend on...

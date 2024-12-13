@@ -33,7 +33,7 @@ clippyall:
 
 # Test the code used by the book (`deps` crate only)
 test: _clean_temp_dir && _clean_temp_dir
-  cargo test --package deps --tests --locked -- --show-output || true
+  cargo test --package dependencies --tests --locked -- --show-output || true
 # Only the code in the `deps` package is tested.
 # This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
 # NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
