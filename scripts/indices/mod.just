@@ -24,7 +24,7 @@ generate_index_of_examples:
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
-update_refdefs_for_index_of_examples:
+update_refdefs_for_examples:
   ./update_refdefs_for_index_of_examples.sh
 # Usage: just indices update_refdefs_for_index_of_examples
 

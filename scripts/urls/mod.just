@@ -5,9 +5,9 @@ _default:
 ## ---- URL MANAGEMENT -----------------------------------
 
 # Check that URLs (to external websites) are valid and working
-check_urls:
+check:
   ./check_urls.sh
 
 # List duplicated URLs (noting that they can't always be avoided).
-list_duplicated_urls:
+list_duplicated:
   ./list_duplicated_urls.sh

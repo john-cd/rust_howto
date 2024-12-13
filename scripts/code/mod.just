@@ -59,7 +59,6 @@ _clean_temp_dir:
 runall:
   ./runall.sh
 
-
 ## ---- HEAVY TESTS -----------------------------------
 
 # Run tests using an external service: elasticsearch meilisearch mongodb postgres redis typesense
@@ -81,7 +80,7 @@ heavytestall:
 
 # Test the Redis connection
 [group('heavy tests')]
-test_redis_connection:
+test_redis_conn:
   #! /bin/bash
   set -euo pipefail
   d="{{justfile_directory()}}/.devcontainer/"

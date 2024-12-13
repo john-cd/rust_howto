@@ -4,8 +4,8 @@ _default:
 
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
-# Outputs reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
-suggest_links_for_bare_urls:
+# Suggest reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
+suggest:
   ./suggest_links_for_bare_urls.sh
 # TODO P2
 
