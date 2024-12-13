@@ -11,7 +11,7 @@
 Works with Postgres, MySQL, SQLite, and MS SQL.
 Supports compile time checking of queries. Async: supports both tokio and async-std.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/database/sqlx.rs:example}}
 ```
 
@@ -23,7 +23,7 @@ Supports compile time checking of queries. Async: supports both tokio and async-
 
 Built on top of sqlx (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/database/sea_orm.rs:example}}
 ```
 
@@ -33,7 +33,7 @@ Built on top of sqlx (see above). There is also a related sea-query crate that p
 
 Has excellent performance and takes an approach of strict compile time guarantees. The main crate is Sync only, but diesel-async provides an async connection implementation.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/database/diesel.rs:example}}
 ```
 
