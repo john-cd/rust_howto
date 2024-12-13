@@ -4,6 +4,8 @@ _default:
 
 ## ---- CODE BUILDING -----------------------------------
 
+alias f := fmtall
+
 # Format all code
 fmtall:
   cargo +nightly fmt --all
@@ -13,6 +15,8 @@ checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+alias b := build
+
 # Build the code used by the book (`deps` crate only`)
 build:
   cargo build --package dependencies --tests --locked
@@ -21,15 +25,21 @@ build:
 build_with_features:
   cargo build --package dependencies --tests --locked --features postgres,redis,elasticsearch,meilisearch,mongodb,typesense
 
+alias ba := buildall
+
 # Build all code
 buildall:
   cargo build --workspace --all-targets --locked
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
+alias ca := clippyall
+
 # Scan all code for common mistakes
 clippyall:
   cargo clippy --workspace --all-targets --locked -- -D warnings
+
+alias t := test
 
 # Test the code used by the book (`deps` crate only)
 test: _clean_temp_dir && _clean_temp_dir
@@ -40,10 +50,14 @@ test: _clean_temp_dir && _clean_temp_dir
 # when dealing with dependencies outside of the std library.
 # See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
+alias ta := testall
+
 # Test all code
 testall: _clean_temp_dir && _clean_temp_dir
   cargo test --workspace --all-targets --locked || true
 # `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+alias nta := nextestall
 
 # Test all code using nextest
 nextestall: _clean_temp_dir && _clean_temp_dir
@@ -61,10 +75,14 @@ runall:
 
 ## ---- HEAVY TESTS -----------------------------------
 
+alias h := heavy_test
+
 # Run tests using an external service: elasticsearch meilisearch mongodb postgres redis typesense
 [group('heavy tests')]
 heavy_test feature:
   ./heavy_test.sh {{ feature }}
+
+alias ha := heavytestall
 
 # Run all tests that require external services
 [group('heavy tests')]
