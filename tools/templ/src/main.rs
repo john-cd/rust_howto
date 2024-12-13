@@ -24,7 +24,7 @@ fn main() -> anyhow::Result<()> {
                 let (badges, refdefs) =
                     create_crate_badge_with_categories(name.trim())?;
                 println!("{}", badges);
-                // -m FILE (or simply -m) was passed as an argument
+                // -a FILE (or simply -a) was passed as an argument
                 if let Some(ref pathbuf) = b.file {
                     tool_lib::merge(pathbuf, refdefs)?;
                 }
