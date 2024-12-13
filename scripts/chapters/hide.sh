@@ -23,7 +23,7 @@ export -f process
 
 root="/code/"
 
-for file in `cat tools/hiddenfiles.txt`
+for file in `cat $(dirname $0)/hiddenfiles.txt`
 do
 if [ -f $file ]; then
   echo "Hiding " $file

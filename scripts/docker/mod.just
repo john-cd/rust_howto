@@ -1,5 +1,5 @@
 _default:
-  @just --list pre-push --unsorted --justfile {{justfile()}}
+  @just --list docker --unsorted --justfile {{justfile()}}
 #@just --choose
 
 # Build the CI Docker image, then push it to DockerHub.

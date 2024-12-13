@@ -26,6 +26,7 @@ clean() {
 # Print the header
 echo $'# Index of Examples\n'
 
+root="/code/"
 # Leaf directories only
 # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories
 for dir in $(find ${root}src/* -type d -not -path "${root}src/refs" -exec sh -c '(ls -p "{}"|grep />/dev/null)||echo "{}"' \;)

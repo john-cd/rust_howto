@@ -1,6 +1,6 @@
 _default:
-  #@just --choose
   @just --list toc --unsorted --justfile {{justfile()}}
+#@just --choose
 
 ## ---- MAIN TOC MANAGEMENT -----------------------------------
 

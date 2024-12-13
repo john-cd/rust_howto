@@ -19,7 +19,7 @@ crate_indices cmd=help *subcmd=empty:
 # Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)
 [group('index of examples')]
 generate_index_of_examples:
-  ./generate_index_of_examples.sh > src/examples_index.md
+  ./generate_index_of_examples.sh > {{justfile_directory()}}/src/examples_index.md
 # Usage: just generate_index_of_examples
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
@@ -33,7 +33,7 @@ update_refdefs_for_examples:
 # Quick and dirty generation of language/index.md; manual editing required
 generate_language_index:
   ./generate_language_index.sh
-# Usage: just indices generate_language_index >> src/language/index.incl.md
+# Usage: just indices generate_language_index >> ./src/language/index.incl.md
 
 # Generate the summary references for the dev tool category
 generate_dev_tools_refdefs:
