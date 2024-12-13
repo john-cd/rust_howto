@@ -1,6 +1,7 @@
 mod aggregate_data;
 mod create_tables;
 mod insert_query_data;
+// TODO mod deadpool2;
 
 #[test]
 fn test() -> anyhow::Result<()> {
