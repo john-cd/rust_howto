@@ -288,7 +288,6 @@ features = ["user-hooks"]
 ## It is used to ignore certain tests that can't run there.
 ci = []
 ## Features for code examples that require an external service / database / cache
-#default = ["elasticsearch", "meilisearch", "mongodb", "postgres", "redis", "typesense"]
 elasticsearch = ["dep:elasticsearch"]
 meilisearch = ["dep:meilisearch"]
 mongodb = ["dep:mongodb"]
@@ -304,6 +303,8 @@ postgres = [
 ]
 redis = ["dep:redis"]
 typesense = ["dep:typesense"]
+## Use the following compound feature for the rust-analyzer "features" Settings
+almost_all = ["elasticsearch", "meilisearch", "mongodb", "postgres", "redis", "typesense"]
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
 ## You may check for conflicts with: cargo build --features unused or cargo build --all-features

@@ -89,3 +89,16 @@ test_redis_conn:
     -f ${d}compose-heavy-tests.yaml \
     up --wait redis
   docker run -it --rm --network rust_howto_dev_default --name redis-cli redis:alpine redis-cli -h rust_howto_dev-redis-1 -p 6379
+
+# # Test the Mongo connection
+# [group('heavy tests')]
+# test_mongo_conn:
+#   #! /bin/bash
+#   set -euo pipefail
+#   d="{{justfile_directory()}}/.devcontainer/"
+#   docker compose -f ${d}compose.yaml \
+#     -f ${d}compose.override.yaml \
+#     -f ${d}compose-heavy-tests.yaml \
+#     up --wait mongodb
+#   docker run -it --rm --network rust_howto_dev_default --name mongo-cli mongo mongosh mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/
+# --host rust_howto_dev-mongodb-1 --username mongoadmin --password mysecretpassword
