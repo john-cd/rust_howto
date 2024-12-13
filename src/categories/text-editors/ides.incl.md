@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Write Rust code with VS Code][ex-text-editors-vs-code] | [VS Code][rust-in-vs-code]⮳ | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
-| [Use the `zed` editor][ex-text-editors-zed] | [![zed][c-zed-badge]][c-zed-website] | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
+| [Write Rust code with the `zed` editor][ex-text-editors-zed] | [![zed][c-zed-badge]][c-zed-website] | [![cat-text-editors][cat-text-editors-badge]][cat-text-editors] |
 
 <div class="hidden">
 TODO P1
