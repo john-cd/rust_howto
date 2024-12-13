@@ -15,6 +15,8 @@
 - [ ] review unused reference definitions (without corresponding links in the markdown) - WIP
 - [ ] add examples where needed - WIP
 
+- [ ] cargo build --all-features
+
 ## Tools
 
 - [ ] finish mdbook preprocessor - {#badge <crate_name> <extra_cat1>...}, {#categories <cat1>,<cat2>... }
