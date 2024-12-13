@@ -55,7 +55,8 @@
                 "DavidAnson.vscode-markdownlint",
                 "vadimcn.vscode-lldb",
                 "rust-lang.rust-analyzer",
-                "fill-labs.dependi"
+                "fill-labs.dependi",
+                "kameshkotwani.google-search"
             ]
         }
     },
