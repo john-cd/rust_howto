@@ -11,9 +11,12 @@ struct Author {
     country: String,
 }
 
-fn main() -> Result<(), Error> {
+pub fn main() -> Result<(), Error> {
+    // The connection URL is formatted as
+    // postgresql://<user>:<password>@<host>/<db>, for example postgresql://
+    // postgres:postgres@localhost/library
     let mut client = Client::connect(
-        "postgresql://postgres:postgres@localhost/library",
+        "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/library",
         NoTls,
     )?;
 
@@ -47,9 +50,3 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
-
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}

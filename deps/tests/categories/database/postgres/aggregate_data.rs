@@ -8,9 +8,13 @@ struct Nation {
     count: i64,
 }
 
-fn main() -> Result<(), Error> {
+// https://github.com/MuseumofModernArt/collection/tree/main
+pub fn main() -> Result<(), Error> {
+    // The connection URL is formatted as
+    // postgresql://<user>:<password>@<host>/<db>, for example postgresql://
+    // postgres:postgres@127.0.0.1/moma
     let mut client = Client::connect(
-        "postgresql://postgres:postgres@127.0.0.1/moma",
+        "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/moma",
         NoTls,
     )?;
 
@@ -34,9 +38,3 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
-
-#[test]
-fn test() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
-}

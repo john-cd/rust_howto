@@ -5,21 +5,13 @@
 # https://github.com/docker/awesome-compose
 # https://awesome-docker-compose.com
 #
-name: rust_howto_heavy_tests
 services:
-  book:
-    build:
-      target: heavy_tests
-    environment:
-      - RUST_LOG=debug
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=mysecretpassword
 
   # https://hub.docker.com/_/redis
   redis:
     image: redis:alpine
     restart: always
+    # command: redis-server --requirepass yourpassword # or edit redis.conf
     expose:
       - 6379
 
@@ -27,6 +19,7 @@ services:
     image: postgres:alpine
     environment:
       - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=library
     restart: always
     volumes:
       - db_data:/var/lib/postgresql/data

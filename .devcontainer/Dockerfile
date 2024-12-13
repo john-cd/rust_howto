@@ -139,12 +139,11 @@ FROM base AS development
 
 ## Additional packages for development only
 
-# RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-#     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-#     apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get install -y ...\
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y fzf  # fast fuzzy search used by `just`
 ## For example:
-# fzf \ # fast fuzzy search
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
@@ -241,13 +240,3 @@ RUN chmod +x ./.devcontainer/ci.sh; chmod +x ./.devcontainer/spellcheck.sh
 
 ## Compilation of the whole code happens within that script at runtime
 ENTRYPOINT [ "./.devcontainer/ci.sh" ]
-
-## --------------------------------
-## Stage for Heavy Tests
-FROM base AS heavy_tests
-
-# Needed files will be brought by bind volumes
-
-# By default, enable the features
-# and run related tests
-# TODO CMD cargo nextest run --package deps --tests --locked --no-fail-fast --features redis postgres meilisearch typsense elasticsearch mongodb

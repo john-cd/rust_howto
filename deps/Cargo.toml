@@ -164,7 +164,7 @@ percent-encoding = "2.3.1"
 pest = { version = "2.7.14", optional = true }
 petgraph = { version = "0.6", optional = true }
 plotly = { version = "0.11.0", optional = true }
-polars = { version = "0.44.2", optional = true }
+## TODO polars = { version = "0.45.1", optional = true }
 postscript = { version = "0.18.2", optional = true }
 postage = { version = "0.5.0", optional = true }
 postgres = { version = "0.19.9", optional = true }
@@ -194,7 +194,7 @@ RustQuant = { version = "0.3", optional = true }
 salsa = { version = "0.16.1", optional = true }
 same-file = "1.0.6"
 sea-orm = { version = "1.1.1", optional = true }
-seaography = { version = "1.1.0", optional = true }
+seaography = { version = "1.1.2", optional = true }
 select = "0.6.0"
 semver = "1.0.23"
 serde = { version = "1.0.214", features = ["derive"] }
@@ -203,7 +203,7 @@ sled = { version = "0.34.7", optional = true }
 slint = { version = "1.8.0", optional = true }
 slotmap = { version = "1.0.7", optional = true }
 smol = { version = "2.0.2", optional = true }
-sqlx = "0.8.2"
+sqlx = { version = "0.8.2", optional = true }
 stakker = { version = "0.2.11", optional = true }
 starship = { version = "1.21.1", optional = true }
 # stork-search = "1.6.0" # not a lib
@@ -232,7 +232,7 @@ tungstenite = { version = "0.24.0", optional = true }
 typesense = { version = "0.1.0", optional = true }
 unicode-segmentation = "1.12.0"
 url = "2.5.3"
-uuid = {version = "1.11.0", features = [
+uuid = { version = "1.11.0", features = [
     "v4",                # Lets you generate random UUIDs
     "fast-rng",          # Use a faster (but still sufficiently random) RNG
     "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
@@ -284,16 +284,24 @@ features = ["user-hooks"]
 ## The `ci` feature should be turned "on" only during CI tests
 ## It is used to ignore certain tests that can't run there.
 ci = []
-## Code examples that require an external service
+## Features for code examples that require an external service / database / cache
 elasticsearch = ["dep:elasticsearch"]
 meilisearch = ["dep:meilisearch"]
 mongodb = ["dep:mongodb"]
-postgres = ["dep:postgres", "dep:cornucopia", "dep:diesel", "dep:sea-orm"]
+postgres = [
+    "dep:cornucopia",
+    "dep:deadpool",
+    "dep:diesel",
+    "dep:postgres",
+    "dep:sea-orm",
+    "dep:seaography",
+    "dep:sqlx",
+]
 redis = ["dep:redis"]
 typesense = ["dep:typesense"]
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused
+## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
     "dep:accesskit",
     "dep:actix-web",
@@ -301,15 +309,12 @@ unused = [
     "dep:bevy",
     "dep:build-info",
     "dep:candle-core",
-    "dep:cornucopia",
     "dep:cosmic-text",
     "dep:cross",
     "dep:crux_core",
     "dep:datafusion",
-    "dep:diesel",
     "dep:duct",
     "dep:egui",
-    "dep:elasticsearch",
     "dep:form_urlencoded",
     "dep:glidesort",
     "dep:globset",
@@ -322,10 +327,8 @@ unused = [
     "dep:leptos",
     "dep:linfa",
     "dep:loco",
-    "dep:meilisearch",
     "dep:minisearch",
     "dep:mio",
-    "dep:mongodb",
     "dep:monostate",
     "dep:nom",
     "dep:opencv",
@@ -334,7 +337,7 @@ unused = [
     "dep:pest",
     "dep:petgraph",
     "dep:plotly",
-    "dep:polars",
+    # "dep:polars",
     "dep:postscript",
     "dep:postage",
     "dep:proc-macro2",
@@ -347,8 +350,6 @@ unused = [
     "dep:rust_cache",
     "dep:RustQuant",
     "dep:salsa",
-    "dep:sea-orm",
-    "dep:seaography",
     "dep:sled",
     "dep:slint",
     "dep:slotmap",
@@ -371,7 +372,6 @@ unused = [
     "dep:yew",
     "dep:zenoh",
 ]
-deadpool = ["dep:deadpool"]
 
 # Technically defining a target is not required, because cargo autodiscovers it,
 # but useful during CI. See the Dockerfile.
