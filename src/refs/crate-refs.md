@@ -1359,9 +1359,11 @@
 [c-fyrox-crates.io-badge]: https://img.shields.io/badge/crates.io-fyrox-crimson
 [c-fyrox-crates.io]: https://crates.io/crates/fyrox
 [c-fyrox-github-badge]: https://img.shields.io/badge/fyrox-steelblue?logo=github
-[c-fyrox-github]: https://github.com/fyroxengine/fyrox
+[c-fyrox-github]: https://github.com/FyroxEngine/Fyrox
 [c-fyrox-lib.rs-badge]: https://img.shields.io/badge/lib.rs-fyrox-yellow
 [c-fyrox-lib.rs]: https://lib.rs/crates/fyrox
+[c-fyrox-website-badge]: https://img.shields.io/badge/fyrox-coral
+[c-fyrox-website]: https://fyrox.rs
 [c-fyrox]: https://docs.rs/fyrox
 [c-ggez-badge]: https://img.shields.io/crates/v/ggez?label=ggez
 [c-ggez-crates.io-badge]: https://img.shields.io/badge/crates.io-ggez-crimson
@@ -1370,6 +1372,8 @@
 [c-ggez-github]: https://github.com/ggez/ggez
 [c-ggez-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ggez-yellow
 [c-ggez-lib.rs]: https://lib.rs/crates/ggez
+[c-ggez-website-badge]: https://img.shields.io/badge/ggez-coral
+[c-ggez-website]: https://ggez.rs
 [c-ggez]: https://docs.rs/ggez
 [c-gitoxide-badge]: https://img.shields.io/crates/v/gitoxide?label=gitoxide
 [c-gitoxide-crates.io-badge]: https://img.shields.io/badge/crates.io-gitoxide-crimson
