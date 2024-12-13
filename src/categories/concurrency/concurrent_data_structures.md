@@ -32,7 +32,9 @@ Concurrent queues.
 
 Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳ as well.
 
-{{#example flurry}}
+```rust,editable
+{{#include ../../../deps/tests/categories/concurrency/flurry.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
