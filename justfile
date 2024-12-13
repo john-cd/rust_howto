@@ -3,8 +3,7 @@ set windows-shell := [ "cmd.exe", "/c" ]
 [no-exit-message]
 _default:
   @just --choose
-  #@just --list --unsorted --justfile {{justfile()}}
-# or: @just --choose
+#@just --list --unsorted --justfile {{justfile()}}
 
 # Build and test the code examples
 mod code 'just/code.just'
@@ -49,10 +48,14 @@ mod chapters 'just/chapters.just'
 mod toc 'just/toc.just'
 
 # Manage heavy tests
-#mod heavy 'just/heavy.just'
+mod heavy 'just/heavy.just'
 
 # Utilities
 mod tools 'just/tools.just'
+
+# Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
+lnk pattern:
+  {{justfile_directory()}}/scripts/refdefs/search.sh {{pattern}}
 
 ## ---- CLEAN ------------------------------------------
 
