@@ -1608,6 +1608,14 @@
 [c-lapce-lib.rs]: https://lib.rs/gh/lapce/lapce/lapce
 [c-lapce-website-badge]: https://img.shields.io/badge/lapce-coral
 [c-lapce-website]: https://lapce.dev
+[c-lapin-badge]: https://img.shields.io/crates/v/lapin?label=lapin
+[c-lapin-crates.io-badge]: https://img.shields.io/badge/crates.io-lapin-crimson
+[c-lapin-crates.io]: https://crates.io/crates/lapin
+[c-lapin-github-badge]: https://img.shields.io/badge/lapin-steelblue?logo=github
+[c-lapin-github]: https://github.com/amqp-rs/lapin
+[c-lapin-lib.rs-badge]: https://img.shields.io/badge/lib.rs-lapin-yellow
+[c-lapin-lib.rs]: https://lib.rs/crates/lapin
+[c-lapin]: https://docs.rs/lapin
 [c-lazy_static-badge]: https://img.shields.io/crates/v/lazy_static?label=lazy_static
 [c-lazy_static-crates.io-badge]: https://img.shields.io/badge/crates.io-lazy__static-crimson
 [c-lazy_static-crates.io]: https://crates.io/crates/lazy_static
