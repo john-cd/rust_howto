@@ -2,14 +2,17 @@ table {
     width: 100%;
 }
 
+/*
 table td:first-child {
     width: 65%;
 }
+*/
 
 table td:nth-child(2) {
-    width: 20%;
+    /* width: 20%; */
     padding: 3px;
 }
+
 
 table td:nth-child(3) {
     padding: 3px;
