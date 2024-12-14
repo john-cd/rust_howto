@@ -41,7 +41,7 @@ cargo clippy --workspace --all-targets --locked --profile ci --features almost_a
 ## The "almost_all" feature is not present - we do not test the examples that require external services here.
 cargo nextest run --workspace --all-targets --locked --cargo-profile ci --features ci --no-fail-fast --color never --hide-progress-bar
 ## `nextest`` does not handle doctests.
-cargo test --doc --workspace --all-targets --locked --profile ci --features ci -- --show-output
+cargo test --workspace --doc --locked --profile ci --features ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)
