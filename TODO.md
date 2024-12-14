@@ -1,7 +1,7 @@
 # TODO
 
-- [ ] review all examples and mark them as ```rust,noplayground as needed
-
+- [ ] review all examples and mark them as ```rust,noplayground as needed - WIP
+- [ ] fix P0 esp. examples
 - [ ] fix contributing section
 - [ ] polish the intro, add links WIP
 - [ ] polish crates section
