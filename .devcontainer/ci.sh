@@ -28,15 +28,17 @@ cargo fetch
 ## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 ## - See .cargo/config.toml for the `ci` profile config. We removed optimizations since we will run / test the examples just once.
-cargo build --workspace --all-targets --locked --profile ci
+## - Some examples require external services e.g. Redis, Mongodb... and are normally hidden behind feature flags.
+## The "almost_all" feature compiles them all - with the exception of the "unused" feature at this point.
+cargo build --workspace --all-targets --locked --profile ci --features almost_all
 
 ## Make sure that all examples are linted
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
-cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
+cargo clippy --workspace --all-targets --locked --profile ci --features almost_all -- --deny warnings
 
 ## Test all examples (integration tests in /deps/tests and any tests in /xmpl)
 ## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
-cargo test --workspace --all-targets --locked --profile ci --features ci -- --show-output
+cargo test --workspace --all-targets --locked --profile ci --features almost_all --features ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)
