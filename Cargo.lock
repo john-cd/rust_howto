@@ -6996,6 +6996,7 @@ dependencies = [
  "concat_strs",
  "config 0.14.1",
  "confy",
+ "console",
  "cornucopia",
  "cosmic-text",
  "crates_io_api",
