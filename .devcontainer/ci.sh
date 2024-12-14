@@ -27,8 +27,8 @@ cargo fetch
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
 ## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
 ## - `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - See .cargo/config.toml for the `ci` profile config. We removed optimizations since we will run / test the examples just once.
-## - Some examples require external services e.g. Redis, Mongodb... and are normally hidden behind feature flags.
+## - See .cargo/config.toml for the `ci` profile config. We removed optimizations, since we will run / test the examples just once.
+## - Some examples require external services e.g. Redis, Mongodb... and are excluded from testing / hidden behind feature flags.
 ## The "almost_all" feature compiles them all - with the exception of the "unused" feature at this point.
 cargo build --workspace --all-targets --locked --profile ci --features almost_all
 
@@ -38,7 +38,10 @@ cargo clippy --workspace --all-targets --locked --profile ci --features almost_a
 
 ## Test all examples (integration tests in /deps/tests and any tests in /xmpl)
 ## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
-cargo test --workspace --all-targets --locked --profile ci --features almost_all --features ci -- --show-output
+## The "almost_all" feature is not present - we do not test the examples that require external services here.
+cargo nextest run --workspace --all-targets --locked --cargo-profile ci --features ci --no-fail-fast --color never --hide-progress-bar
+## `nextest`` does not handle doctests.
+cargo test --doc --workspace --all-targets --locked --profile ci --features ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)
