@@ -1,3 +1,5 @@
+#![cfg(feature = "linux_only")]
+
 mod initialization;
 mod insert_select;
 mod transactions;

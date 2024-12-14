@@ -1,7 +1,7 @@
 // ANCHOR: example
 
 #[cfg(target_os = "linux")]
-fn main() -> Result<(), syslog::Error> {
+fn main() -> anyhow::Result<()> {
     use syslog::Facility;
 
     syslog::init(
@@ -15,8 +15,9 @@ fn main() -> Result<(), syslog::Error> {
 }
 
 #[cfg(not(target_os = "linux"))]
-fn main() {
+fn main() -> anyhow::Result<()> {
     println!("So far, only Linux systems are supported.");
+    Ok(())
 }
 // ANCHOR_END: example
 
