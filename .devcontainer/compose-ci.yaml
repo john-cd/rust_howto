@@ -22,5 +22,21 @@ services:
     volumes:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
-        source: ../book/
+        source: ../book
         target: /code/book
+        bind:
+          create_host_path: true
+      ## Used by GitHub local caching
+      ## Contains the compiled binaries
+      - type: bind
+        source: ../cargo_target
+        target: /code/target  # See Dockerfile
+        bind:
+          create_host_path: true
+      ## Used by GitHub local caching
+      ## Contains the dependencies (source) cache and installed bins: https://doc.rust-lang.org/cargo/guide/cargo-home.html
+      - type: bind
+        source: ../cargo_home
+        target: /usr/local/cargo
+        bind:
+          create_host_path: true
