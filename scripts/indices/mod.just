@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list indices --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -18,12 +20,14 @@ crate_indices cmd=help *subcmd=empty:
 
 # Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)
 [group('index of examples')]
+[unix]
 generate_index_of_examples:
   ./generate_index_of_examples.sh > {{justfile_directory()}}/src/examples_index.md
 # Usage: just generate_index_of_examples
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
+[unix]
 update_refdefs_for_examples:
   ./update_refdefs_for_index_of_examples.sh
 # Usage: just indices update_refdefs_for_index_of_examples
@@ -31,11 +35,13 @@ update_refdefs_for_examples:
 ## ---- OTHERS --------------------------------
 
 # Quick and dirty generation of language/index.md; manual editing required
+[unix]
 generate_language_index:
   ./generate_language_index.sh
 # Usage: just indices generate_language_index >> ./src/language/index.incl.md
 
 # Generate the summary references for the dev tool category
+[unix]
 generate_dev_tools_refdefs:
   #! /bin/bash
   set -euo pipefail

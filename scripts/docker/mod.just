@@ -1,9 +1,12 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list docker --unsorted --justfile {{justfile()}}
 #@just --choose
 
 # Build the CI Docker image, then push it to DockerHub.
 [group('push')]
+[unix]
 push_ci:
   #! /bin/bash
   set -euo pipefail
@@ -20,6 +23,7 @@ push_dev:
   docker push johncd/rust_howto_dev:latest
 
 # List containers / Docker Compose services
+[unix]
 list_services:
   #! /bin/bash
   set -euo pipefail
@@ -29,6 +33,7 @@ list_services:
     -f ${d}compose-heavy-tests.yaml \
     ps --all
 
+#[unix]
 #down:
 #  #! /bin/bash
 #  set -euo pipefail
@@ -46,6 +51,7 @@ list_services:
 #  docker network inspect rust_howto_dev_default
 
 # Get IP addresses of containers
+#[unix]
 #get_ip:
 #  docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 

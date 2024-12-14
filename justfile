@@ -1,9 +1,10 @@
-#TODO
-set windows-shell := [ "cmd.exe", "/c" ]
+# Set shell for Windows OSs:
+# PowerShell Core has some of the Unix shell skills we need, such as || and &&
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{justfile()}}
+  @just --list --unsorted --justfile {{ justfile() }}
 #@just --choose
 
 # Alias for code build

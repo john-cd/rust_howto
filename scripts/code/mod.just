@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list code --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -75,17 +77,15 @@ runall:
 
 ## ---- HEAVY TESTS -----------------------------------
 
-alias h := heavy_test
-
 # Run tests using an external service: elasticsearch meilisearch mongodb postgres redis typesense
 [group('heavy tests')]
+[unix]
 heavy_test feature:
   ./heavy_test.sh {{ feature }}
 
-alias ha := heavytestall
-
 # Run all tests that require external services
 [group('heavy tests')]
+[unix]
 heavytestall:
   #! /bin/bash
   set -euo pipefail
@@ -98,6 +98,7 @@ heavytestall:
 
 # Test the Redis connection
 [group('heavy tests')]
+[unix]
 test_redis_conn:
   #! /bin/bash
   set -euo pipefail
@@ -110,6 +111,7 @@ test_redis_conn:
 
 # # Test the Mongo connection
 # [group('heavy tests')]
+# [unix]
 # test_mongo_conn:
 #   #! /bin/bash
 #   set -euo pipefail

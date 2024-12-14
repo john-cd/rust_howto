@@ -1,4 +1,5 @@
 set unstable
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 _default:
   @just --list book --unsorted --justfile {{justfile()}}

@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list docs --unsorted --justfile {{justfile()}}
 #@just --choose

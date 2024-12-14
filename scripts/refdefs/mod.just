@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list refdefs --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -14,5 +16,6 @@ sort:
   echo "`sortrefs` is not implemented while working in Windows!"
 
 # List links without corresponding reference definitions and vice versa
+[unix]
 check:
   ./check_refdefs.sh

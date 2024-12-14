@@ -1,3 +1,5 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
 _default:
   @just --list examples --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -5,6 +7,7 @@ _default:
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
 # List examples (.rs files) in `deps/tests` that are not included in the book markdown.
+[unix]
 list_not_used_in_book:
   ./list_examples_not_used_in_book.sh
 # The script matches e.g. {{#include ../../../deps/tests/cats/development_tools_debugging/type_name_of_val.rs:example}}
@@ -13,6 +16,7 @@ list_not_used_in_book:
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
 # List examples (.rs files) in `deps/tests` that were not included into a module somehow and that are therefore not tested
+[unix]
 list_not_tested:
   #! /bin/bash
   root="{{justfile_directory()}}/"
@@ -21,5 +25,6 @@ list_not_tested:
   echo "DONE"
 
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of deps/tests/)
+[unix]
 convert_example_placeholders:
   ./convert_example_placeholders.sh
