@@ -66,10 +66,8 @@ jobs:
         run: docker buildx bake -f compose.yaml -f compose-ci.yaml --push --load --allow=fs.read=.. --builder=${{ steps.builder.outputs.name }}
         # Will read the .env file there:
         working-directory: ./.devcontainer/
-      - name: List docker images (debug)
-        run: docker image ls
-      - name: Create the "book" directory on the CI machine
-        run: mkdir -p ./book/
+      # - name: List docker images (debug)
+      #   run: docker image ls
       - name: Check that all the code builds and pass tests; build the book
         run: docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run book
       - name: Setup GitHub Pages
@@ -151,17 +149,21 @@ jobs:
       #     push: true # push to DockerHub
       #     load: true # load to local image storage
 
-## Advanced caching, if needed:
-## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
-## - https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
-## Add to steps:
-      ## Use the following step in conjunction with cache_from/to type=local in `compose-ci.yaml`
-      # - name: Set up cargo cache
-      #   uses: actions/cache@v3
-      #   continue-on-error: false
-      #   with:
-      #     path: |
-      #       ./.cache/
-      #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      #     restore-keys: ${{ runner.os }}-cargo-
-      ## Adjust the path and key
+      ## Advanced caching
+      ## TODO consider using https://github.com/marketplace/actions/rust-cache
+      ## Once we stop using Nightly Rust! See also
+      ## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
+      ## - https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
+      ## - granular restore / save: https://github.com/actions/cache/blob/main/restore/README.md
+      ## Map the cargo home to a docker volume and export??
+      # - name: Set up the cache - cargo home
+      #   id: cache_home
+      # uses: actions/cache@v4
+      # with:
+      #   path: |
+      #     ~/.cargo/bin/
+      #     ~/.cargo/registry/index/
+      #     ~/.cargo/registry/cache/
+      #     ~/.cargo/git/db/
+      #     target/
+      #   key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}

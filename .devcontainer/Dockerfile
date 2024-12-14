@@ -27,6 +27,7 @@ SHELL ["bash", "-c"]
 ## `libasound2-dev` required for `alsa-sys`, for `openrr`
 ## for Tauri: libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
 ## `python3` for `pyo3`
+## Note: the following caching should only be useful for development.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
@@ -83,6 +84,7 @@ ARG MDBOOK_VERSION=invalid
 ## Install nextest
 ## Install mdbook from the binary release
 ## Install mdbook preprocessors
+## Note: cache the registry, not the bin folder! Only useful in development
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
 <<EOF
     set -e

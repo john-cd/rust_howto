@@ -8,17 +8,19 @@ services:
     build:
       target: ci
       cache_from:
+        ## Cache from sibling
         - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
-        - johncd/rust_howto_ci:${IMAGE_VERSION:-latest}
+        ## Registry cache: https://docs.docker.com/build/ci/github-actions/cache/#registry-cache
+        ## This cache storage backend is not supported with the default `docker` driver.
+        - type=registry,ref=johncd/rust_howto_ci:buildcache
         ## GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
-        ## Only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
+        ## As above, it only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
         ## Ignored otherwise
         - type=gha,scope=rust_howto_ci
-        #- type=local,dest=./.cache
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
+        - type=registry,ref=johncd/rust_howto_ci:buildcache,mode=max
         - type=gha,mode=max,scope=rust_howto_ci
-        #- type=local,dest=./.cache
     volumes:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
@@ -26,17 +28,4 @@ services:
         target: /code/book
         bind:
           create_host_path: true
-      ## Used by GitHub local caching
-      ## Contains the compiled binaries
-      - type: bind
-        source: ../cargo_target
-        target: /code/target  # See Dockerfile
-        bind:
-          create_host_path: true
-      ## Used by GitHub local caching
-      ## Contains the dependencies (source) cache and installed bins: https://doc.rust-lang.org/cargo/guide/cargo-home.html
-      - type: bind
-        source: ../cargo_home
-        target: /usr/local/cargo
-        bind:
-          create_host_path: true
+      ## bind mounts do not work when trying to cache /usr/local/cargo, since it obscures the pre-existing contents of the folder in the docker layer
