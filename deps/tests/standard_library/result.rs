@@ -41,7 +41,8 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
 // in case of an error. The following is equivalent to the previous function.
 fn read_file2(file_path: &str) -> Result<String, io::Error> {
     let mut file: File = File::open(file_path)?;
-    // Note that file is of type `File`, not `io::Result<File> = Result<File, io::Error>`
+    // Note that file is of type `File`, not `io::Result<File> = Result<File,
+    // io::Error>`
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     Ok(contents)
@@ -54,7 +55,7 @@ fn read_file2(file_path: &str) -> Result<String, io::Error> {
 fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
-    file.read_to_string(&mut contents)?;   // `read_to_string` returns `Result<_, io::Error>`
+    file.read_to_string(&mut contents)?; // `read_to_string` returns `Result<_, io::Error>`
     let number = contents.trim().parse()?; // `parse` returns `Result<_, std::num::ParseIntError>`
     Ok(number)
 }
@@ -103,10 +104,8 @@ fn read_and_parse_file2(
 }
 
 // ...but crates like `anyhow` can simplify error management a great deal...
-// `anyhow::Result<T>` is equivalent to `std::result::Result<T, anyhow::Error>`
-fn read_and_parse_file3(
-    file_path: &str,
-) -> anyhow::Result<i32> {
+// `anyhow::Result<T>` is equivalent to `std::result::Result<T, anyhow::Error>`.
+fn read_and_parse_file3(file_path: &str) -> anyhow::Result<i32> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
@@ -125,8 +124,9 @@ fn unit_return_value(file_path: &str) -> anyhow::Result<()> {
     Ok(())
 }
 
-// `main()` can return a `Result`, more precisely a `Result<T, E> where T: Termination, E: Debug)`.
-// `Result<(), Box<dyn std::error::Error>>`, `anyhow::Result<()>` are common choices.
+// `main()` can return a `Result`, more precisely a `Result<T, E> where T:
+// Termination, E: Debug)`. `Result<(), Box<dyn std::error::Error>>`,
+// `anyhow::Result<()>` are common choices.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file_path = "example.txt";
     open_file(file_path);
