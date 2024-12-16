@@ -3,6 +3,8 @@ use toml::Value;
 use toml::de::Error;
 
 fn main() -> Result<(), Error> {
+    // Note the use of a raw string,
+    // so that there is no need to escape the inner double quotes
     let toml_content = r#"
           [package]
           name = "your_package"
