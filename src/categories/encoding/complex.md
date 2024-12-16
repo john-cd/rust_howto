@@ -20,7 +20,8 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 [![toml][c-toml-badge]][c-toml]{{hi:toml}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
-Parse some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
+TOML is a simple, ergonomic, and readable configuration format that is often used by Rust's tooling - for example `cargo`.
+The following parses some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/encoding/toml.rs:example}}
@@ -34,9 +35,9 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ## Read and write integers in little-endian byte order {#byteorder}
 
-[![byteorder][c-byteorder-badge]][c-byteorder]{{hi:byteorder}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Little endian}}{{hi:Byte order}}
+[![byteorder][c-byteorder-badge]][c-byteorder] [![byteorder-crates.io][c-byteorder-crates.io-badge]][c-byteorder-crates.io] [![byteorder-github][c-byteorder-github-badge]][c-byteorder-github] [![byteorder-lib.rs][c-byteorder-lib.rs-badge]][c-byteorder-lib.rs]{{hi:byteorder}}{{hi:Little-endian}}{{hi:Big-endian}}{{hi:Endian}}{{hi:Byte}}{{hi:Binary}}{{hi:Encoding}}{{hi:Byte order}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-[`byteorder`][c-byteorder]⮳ can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, when bytes received are from another system.
+[`byteorder`][c-byteorder]⮳ is a library for reading/writing numbers in big-endian and little-endian. It can reverse the significant bytes of structured data. This may be necessary when receiving information over the network, when bytes received are from another system.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/encoding/endian_byte.rs:example}}
