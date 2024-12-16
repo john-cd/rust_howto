@@ -11,8 +11,8 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 }
 
 fn main() {
-    WalkDir::new(".")
-        .into_iter()
+    let w = WalkDir::new(".");
+    w.into_iter()
         .filter_entry(is_not_hidden)
         .filter_map(|v| v.ok())
         .for_each(|x| println!("{}", x.path().display()));

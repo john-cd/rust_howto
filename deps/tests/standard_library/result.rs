@@ -22,6 +22,7 @@ fn open_file(file_path: &str) {
 
 // ...but most often you'll want to return early when encountering an error,
 // and propagate the error up the call stack.
+#[allow(clippy::question_mark)]
 fn read_file(file_path: &str) -> Result<String, io::Error> {
     let mut file = match File::open(file_path) {
         Ok(file) => file,
@@ -138,7 +139,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = read_and_parse_file(file_path);
     let _ = read_and_parse_file2(file_path);
     let _ = read_and_parse_file3(file_path);
-    let _ = unit_return_value(&file_path);
+    let _ = unit_return_value(file_path);
     Ok(())
 }
 // ANCHOR_END: example
