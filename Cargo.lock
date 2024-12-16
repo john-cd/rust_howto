@@ -6974,6 +6974,7 @@ dependencies = [
  "ansi_term",
  "anyhow",
  "approx 0.5.1",
+ "arrayvec 0.7.6",
  "arrow",
  "async-channel 2.3.1",
  "async-std",
