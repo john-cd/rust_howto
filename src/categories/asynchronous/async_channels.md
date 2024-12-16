@@ -22,7 +22,7 @@ Another example:
 {{#include ../../../deps/tests/categories/asynchronous/async_channels_oneshot2.rs:example}}
 ```
 
-## Multiple Producer, Single Consumer {#mpsc}
+## Send messages from multiple producers to a single consumer {#mpsc}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -32,7 +32,7 @@ Another example:
 
 ## Send messages from multiple producers to one of multiple consumers
 
-[![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
+[![async-channel][c-async_channel-badge]][c-async_channel] [![async-channel-crates.io][c-async_channel-crates.io-badge]][c-async_channel-crates.io] [![async-channel-github][c-async_channel-github-badge]][c-async_channel-github] [![async-channel-lib.rs][c-async_channel-lib.rs-badge]][c-async_channel-lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 `async-channel` offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
 
@@ -47,16 +47,24 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../../deps/tests/categories/asynchronous/async_channel.rs:example}}
 ```
 
-## `postage`
+## Broadcast messages from multiple producers to multiple consumers
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
 [![postage-github][c-postage-github-badge]][c-postage-github]
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
+`postage` is a feature-rich, portable async channel library. `postage::broadcast` provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
+
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/postage.rs:example}}
 ```
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO P1 review
 
 ## `kanal`
 
@@ -71,9 +79,4 @@ Fast sync and async channel:
 {{#include ../../../deps/tests/categories/asynchronous/kanal.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO P1 review
 </div>

@@ -169,7 +169,7 @@ petgraph = { version = "0.6", optional = true }
 plotly = { version = "0.11.0", optional = true }
 ## TODO polars = { version = "0.45.1", optional = true }
 postscript = { version = "0.18.2", optional = true }
-postage = { version = "0.5.0", optional = true }
+postage = "0.5.0"
 postgres = { version = "0.19.9", optional = true }
 proc-macro2 = { version = "1.0.89", optional = true }
 pyo3 = { version = "0.21.0", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
@@ -350,7 +350,6 @@ unused = [
     "dep:plotly",
     # "dep:polars",
     "dep:postscript",
-    "dep:postage",
     "dep:proc-macro2",
     "dep:quote",
     "dep:r3bl_tuify",
