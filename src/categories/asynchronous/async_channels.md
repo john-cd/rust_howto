@@ -30,13 +30,24 @@ Another example:
 {{#include ../../../deps/tests/categories/asynchronous/async_channels_mpsc.rs:example}}
 ```
 
-## See also
+## Send messages from multiple producers to one of multiple consumers
 
 [![async-channel][c-async_channel-badge]][c-async_channel]{{hi:async-channel}}
+
+`async-channel` offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
+
+- Bounded channel with limited capacity,
+- Unbounded channel with unlimited capacity.
+
+The Sender and Receiver sides are cloneable and can be shared among multiple threads.
+
+When all Senders or all Receivers are dropped, the channel becomes closed. When a channel is closed, no more messages can be sent, but remaining messages can still be received. The channel can also be closed manually by calling `Sender::close()` or `Receiver::close()`.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/async_channel.rs:example}}
 ```
+
+## `postage`
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
@@ -46,6 +57,8 @@ Another example:
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/postage.rs:example}}
 ```
+
+## `kanal`
 
 Fast sync and async channel:
 
