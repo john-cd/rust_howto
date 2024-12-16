@@ -47,8 +47,8 @@ async fn main() {
     tokio::time::sleep(Duration::from_millis(50)).await;
 
     // We may also subscribe to the channel.
-    // The receiver will observe all messages sent _after the call to subscribe_.
-    // Messages currently in the buffer will not be received.
+    // The receiver will observe all messages sent _after the call to
+    // subscribe_. Messages currently in the buffer will not be received.
     let rx3 = tx.subscribe();
     task::spawn(receiver("C", rx3));
     let mut tx2 = tx.clone();
