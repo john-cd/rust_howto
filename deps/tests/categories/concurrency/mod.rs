@@ -16,7 +16,6 @@ mod multithreading_rayon_custom;
 mod multithreading_rayon_parsort;
 mod multithreading_scoped_threads;
 mod multithreading_spawn_join;
-mod postage;
 mod ractor;
 mod rayon_any_all;
 mod rayon_iter_mut;

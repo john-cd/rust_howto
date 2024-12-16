@@ -54,7 +54,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 [![postage-github][c-postage-github-badge]][c-postage-github]
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
-`postage` is a feature-rich, portable async channel library. `postage::broadcast` provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
+`postage` is a feature-rich, portable async channel library, with different options than Tokio. `postage::broadcast` provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/asynchronous/postage.rs:example}}
@@ -65,6 +65,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 
 <div class="hidden">
 TODO P1 review
+add other postage channels?
 
 ## `kanal`
 

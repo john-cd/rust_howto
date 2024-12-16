@@ -19,7 +19,6 @@
 [ex-concurrency-parallel-sorting]: data_parallelism.md#parallel-sorting
 [ex-concurrency-parking-lot]: shared_state.md#parking-lot
 [ex-concurrency-pass-data-between-two-threads]: crossbeam.md#pass-data-between-two-threads
-[ex-concurrency-postage]: message_passing.md#postage
 [ex-concurrency-ractor]: _actors.md#ractor
 [ex-concurrency-rayon]: data_parallelism.md#rayon
 [ex-concurrency-riker]: _actors.md#riker

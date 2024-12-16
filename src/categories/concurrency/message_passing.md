@@ -53,19 +53,6 @@ Tokio's `sync` module provides channels for using in async code.
 {{#include ../../../deps/tests/categories/concurrency/tokio.rs:example}}
 ```
 
-### `postage` {#postage}
-
-[![postage][c-postage-badge]][c-postage]{{hi:postage}}
-[![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
-[![postage-github][c-postage-github-badge]][c-postage-github]
-[![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
-
-Channels that integrate nicely with async code, with different options than Tokio.
-
-```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/postage.rs:example}}
-```
-
 ## See also
 
 [Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳
@@ -75,4 +62,5 @@ Channels that integrate nicely with async code, with different options than Toki
 
 <div class="hidden">
 TODO P1 polish
+add links to async channels
 </div>
