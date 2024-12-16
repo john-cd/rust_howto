@@ -12,7 +12,7 @@
 
 ## Placeholders {#placeholders}
 
-![std][c-std-badge]][c-std]
+[![std][c-std-badge]][c-std]
 
 ```rust,editable
 {{#include ../../deps/tests/standard_library/strings2.rs:example}}
