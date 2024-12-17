@@ -60,7 +60,9 @@ fn main() {
 
     let _datetime = concat_string!(DATE, T, TIME);
 
-    let _datetime = &concat_strs!(DATE, T, TIME);
+    let datetime = &concat_strs!(DATE, T, TIME);
+    
+    println!("{}", datetime);
 }
 // ANCHOR_END: example
 
@@ -68,4 +70,3 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P0 println!
