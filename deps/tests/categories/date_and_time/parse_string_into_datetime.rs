@@ -37,5 +37,5 @@ fn main() -> Result<(), ParseError> {
 
 #[test]
 fn test() {
-    main();
+    main().unwrap();
 }
