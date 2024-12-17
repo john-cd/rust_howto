@@ -23,6 +23,8 @@ alias b := build
 build:
   cargo build --package dependencies --tests --locked
 
+alias bf := build_with_features
+
 # Build code examples that are gated under features
 build_with_features:
   cargo build --package dependencies --tests --locked --features postgres,redis,elasticsearch,meilisearch,mongodb,typesense

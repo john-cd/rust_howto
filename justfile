@@ -109,6 +109,9 @@ lnk pattern:
 # Manage Docker Compose and DockerHub
 mod docker 'scripts/docker'
 
+# Manage GitHub
+mod gh 'scripts/gh'
+
 ## ---- CLEAN ------------------------------------------
 
 # Clean Cargo's `target` and mdbook's `book` directories
