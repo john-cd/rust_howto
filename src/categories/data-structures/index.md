@@ -24,7 +24,7 @@ Rust implementations of ways of organizing data suited for specific purposes.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[data-structures: expand (P1)](https://github.com/john-cd/rust_howto/issues/280)
 
 Hashset
 BinaryHeap

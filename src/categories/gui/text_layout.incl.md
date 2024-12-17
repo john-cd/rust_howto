@@ -4,5 +4,6 @@
 | [`parley`][ex-gui-parley] | [![parley][c-parley-badge]][c-parley] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[text_layout.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/390)
+
 </div>

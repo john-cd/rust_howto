@@ -37,5 +37,6 @@ Bindings to the various *nix system functions. (Unix, Linux, MacOS, etc.)
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[unix: write (P2)](https://github.com/john-cd/rust_howto/issues/436)
+
 </div>

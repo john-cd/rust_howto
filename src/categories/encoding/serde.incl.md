@@ -5,5 +5,6 @@
 | [`serde-ignored`][ex-encoding-serde-ignored] | [![serde-ignored][c-serde_ignored-badge]][c-serde_ignored] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 
 <div class="hidden">
-TODO P1 title
+[serde.incl: title (P1)](https://github.com/john-cd/rust_howto/issues/351)
+
 </div>

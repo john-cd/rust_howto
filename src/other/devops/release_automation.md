@@ -27,7 +27,7 @@ Release Rust crates from CI with a Release PR.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[release_automation: write (P1)](https://github.com/john-cd/rust_howto/issues/604)
 
 ## `cargo-dist`
 

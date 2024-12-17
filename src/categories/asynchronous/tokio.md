@@ -65,5 +65,5 @@ Example from [c-tokio_graceful_shutdown]{{hi:tokio_graceful_shutdown}}[c-tokio_g
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[tokio: review (P1)](https://github.com/john-cd/rust_howto/issues/223)
 </div>

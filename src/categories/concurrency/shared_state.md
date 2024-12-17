@@ -72,5 +72,5 @@ The `ArcSwap` type is a container for an `Arc` that can be changed atomically. S
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[shared_state: review (P1)](https://github.com/john-cd/rust_howto/issues/266)
 </div>

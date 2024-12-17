@@ -20,5 +20,5 @@ Date and time library. Fully interoperable with the standard library. Mostly com
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[time: write (P1)](https://github.com/john-cd/rust_howto/issues/293)
 </div>

@@ -38,6 +38,8 @@ Use `tokio-tungstenite` if you are using the `tokio` async executor.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
-TODO P2 cover others e.g. async_std_tungstenite
+[websocket: write (P2)](https://github.com/john-cd/rust_howto/issues/520)
+
+[websocket: cover others e.g. async_std_tungstenite (P2)](https://github.com/john-cd/rust_howto/issues/521)
+
 </div>

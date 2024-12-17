@@ -54,8 +54,7 @@ A library for building fast, reliable and evolvable network services.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[reverse_proxy: write (P1)](https://github.com/john-cd/rust_howto/issues/424)
 
 [River][river-github]
-
 </div>

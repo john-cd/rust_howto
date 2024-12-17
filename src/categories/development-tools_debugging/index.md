@@ -28,5 +28,5 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 reorganize; dedupe alternatives / log / config_log
+[index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 </div>

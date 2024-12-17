@@ -15,5 +15,6 @@ Print the generated assembly code for a Rust function.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[assembly: write (P2)](https://github.com/john-cd/rust_howto/issues/333)
+
 </div>

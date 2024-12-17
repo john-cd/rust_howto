@@ -26,5 +26,6 @@ A higher-level library that sits on top of gtk4-rs. An idiomatic GUI library ins
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[gtk: write (P2)](https://github.com/john-cd/rust_howto/issues/383)
+
 </div>

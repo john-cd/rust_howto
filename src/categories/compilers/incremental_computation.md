@@ -20,5 +20,5 @@ Salsa is a Rust framework for writing incremental, on-demand programs -- these a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write / add to index.md and summary
+[incremental_computation: write / add to index.md and summary (P2)](https://github.com/john-cd/rust_howto/issues/244)
 </div>

@@ -20,5 +20,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[performance: expand (P1)](https://github.com/john-cd/rust_howto/issues/314)
 </div>

@@ -27,5 +27,6 @@ Immediate-mode UI. Lots of widgets. The most useable out of the box if your need
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[immediate_mode_gui: write (P2)](https://github.com/john-cd/rust_howto/issues/385)
+
 </div>

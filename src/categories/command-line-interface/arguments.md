@@ -86,7 +86,7 @@ Fast compile times, fast runtime, more lax about correctness. API is more ergono
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand lexopt and pico-args
+[arguments: expand lexopt and pico-args (P1)](https://github.com/john-cd/rust_howto/issues/233)
 
 ### `structopt` {#structopt}
 

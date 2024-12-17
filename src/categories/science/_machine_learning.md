@@ -58,7 +58,7 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 organize / write
+[_machine_learning: organize / write (P2)](https://github.com/john-cd/rust_howto/issues/473)
 
 linfa and smartcore have emerged as two leading scikit-learn-analogous machine learning frameworks for Rust. Both provide access to a number of algorithms that form the backbone of machine learning analysis. [cmccomb-website][cmccomb-website]
 

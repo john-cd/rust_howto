@@ -7,5 +7,6 @@
 | [`webrender`][ex-gui-webrender] | [![webrender][c-webrender-badge]][c-webrender] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 title
+[2d_renderers.incl: title (P2)](https://github.com/john-cd/rust_howto/issues/376)
+
 </div>

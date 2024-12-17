@@ -50,7 +50,7 @@ Subcommands that extend the capabilities of Cargo.
 
 <div class="hidden">
 TODO P1 review
-P2 add
+TODO P2 add v
 
 cargo-afl for fuzzing
 

@@ -50,5 +50,6 @@ High performance framework used in the Zed text editor. Now available on macOS a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize; titles
+[other_gui: organize; titles (P1)](https://github.com/john-cd/rust_howto/issues/387)
+
 </div>

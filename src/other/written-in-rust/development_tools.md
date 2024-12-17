@@ -44,9 +44,9 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 organize
+[development_tools: organize (P2)](https://github.com/john-cd/rust_howto/issues/612)
 
-TODO P2 find a spot for
+[development_tools: find a spot for (P2)](https://github.com/john-cd/rust_howto/issues/613)
 
 ### JavaScript tooling {#javascript-tooling}
 

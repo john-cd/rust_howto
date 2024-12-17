@@ -49,5 +49,5 @@ rustup doc
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand / clean up
+[rustup: expand / clean up (P1)](https://github.com/john-cd/rust_howto/issues/302)
 </div>

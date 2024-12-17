@@ -38,5 +38,6 @@ Concise Binary Object Representation is a binary data serialization format loose
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write; add anchors; add examples; add table; add to index / SUMMARY
+[binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY (P2)](https://github.com/john-cd/rust_howto/issues/349)
+
 </div>

@@ -18,5 +18,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[cors: write (P1)](https://github.com/john-cd/rust_howto/issues/510)
 </div>

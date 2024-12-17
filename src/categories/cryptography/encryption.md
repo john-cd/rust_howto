@@ -18,5 +18,5 @@ The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::Sec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[encryption: expand (P2)](https://github.com/john-cd/rust_howto/issues/272)
 </div>

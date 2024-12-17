@@ -21,5 +21,5 @@ Allows you to export a semantic tree representing your UI to make accessible to 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[screen_readers: write (P2)](https://github.com/john-cd/rust_howto/issues/187)
 </div>

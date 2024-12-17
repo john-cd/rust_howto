@@ -6,5 +6,6 @@
 | [`hyperfine`][ex-development-tools_profiling-hyperfine] | [![hyperfine][c-hyperfine-badge]][c-hyperfine] | [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling] |
 
 <div class="hidden">
-TODO P2 titles
+[benchmarking.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/334)
+
 </div>

@@ -14,5 +14,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 move to proper location
+[cwd: move to proper location (P1)](https://github.com/john-cd/rust_howto/issues/357)
+
 </div>

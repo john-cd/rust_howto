@@ -68,5 +68,6 @@ Derive macro to easily parse derive macro inputs
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[write_proc_macros: write (P2)](https://github.com/john-cd/rust_howto/issues/331)
+
 </div>

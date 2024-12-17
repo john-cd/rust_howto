@@ -29,7 +29,6 @@ FlagSet is a new, ergonomic approach to handling flags that combines the best of
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
-
-The flagset crate is not available in the Rust Playground.
+[bitfield: review (P1)](https://github.com/john-cd/rust_howto/issues/279)
+TODO P0 The flagset crate is not available in the Rust Playground.
 </div>

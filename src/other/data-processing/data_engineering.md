@@ -44,9 +44,11 @@ Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineer
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize / edit
-TODO P3 cover ballista
-TODO P1 spice.ai
+[data_engineering: organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/589)
+
+[data_engineering: cover ballista (P3)](https://github.com/john-cd/rust_howto/issues/590)
+
+[data_engineering: spice.ai (P1)](https://github.com/john-cd/rust_howto/issues/591)
 
 Big Data Processing for the AI Era [LakeSail][lakesail]
 

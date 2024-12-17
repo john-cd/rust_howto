@@ -6,5 +6,6 @@
 | [`druid`][ex-gui-druid] | [![druid][c-druid-badge]][c-druid] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[other_gui.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/386)
+
 </div>

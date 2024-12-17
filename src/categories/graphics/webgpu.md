@@ -21,5 +21,6 @@ Rusty WebGPU API wrapper.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[webgpu: write (P2)](https://github.com/john-cd/rust_howto/issues/375)
+
 </div>

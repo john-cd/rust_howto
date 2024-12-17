@@ -51,9 +51,7 @@ Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-we
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write; examples
-
-TODO P2 review
+[parsing: write; examples (P2)](https://github.com/john-cd/rust_howto/issues/448)
 
 - combine
 - peg

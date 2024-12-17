@@ -79,5 +79,5 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 cleanup
+[async_and_blocking: cleanup (P1)](https://github.com/john-cd/rust_howto/issues/213)
 </div>

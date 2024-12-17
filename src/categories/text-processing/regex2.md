@@ -12,5 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 better title
+[regex2: better title (P1)](https://github.com/john-cd/rust_howto/issues/489)
+
 </div>

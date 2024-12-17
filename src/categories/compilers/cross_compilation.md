@@ -33,5 +33,5 @@ Examples: [![cross-toml-example][c-cross-toml-example-badge]][c-cross-toml-examp
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[cross_compilation: expand (P2)](https://github.com/john-cd/rust_howto/issues/240)
 </div>

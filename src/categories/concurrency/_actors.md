@@ -63,5 +63,5 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 organize
+[_actors: organize (P2)](https://github.com/john-cd/rust_howto/issues/269)
 </div>

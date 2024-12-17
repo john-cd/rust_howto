@@ -4,5 +4,6 @@
 | [`zerocopy`][ex-encoding-zerocopy] | [![zerocopy][c-zerocopy-badge]][c-zerocopy] | [![cat-encoding][cat-encoding-badge]][cat-encoding] |
 
 <div class="hidden">
-TODO P1 title
+[typecasts.incl: title (P1)](https://github.com/john-cd/rust_howto/issues/353)
+
 </div>

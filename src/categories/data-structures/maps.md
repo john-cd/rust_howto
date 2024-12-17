@@ -53,5 +53,5 @@ Use to store collections of objects that need stable, safe references but have n
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write / expand
+[maps: write / expand (P1)](https://github.com/john-cd/rust_howto/issues/281)
 </div>

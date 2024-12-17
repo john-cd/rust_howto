@@ -9,5 +9,6 @@
 | [Handle errors correctly in main][ex-rust-patterns-handle-errors-correctly-in-main] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 
 <div class="hidden">
-TODO P1 review further
+[error_handling.incl: review further (P1)](https://github.com/john-cd/rust_howto/issues/464)
+
 </div>

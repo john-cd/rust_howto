@@ -54,7 +54,9 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[serde: write (P1)](https://github.com/john-cd/rust_howto/issues/352)
+
 dedupe JSON with complex.md
-Supported formats: https://docs.rs/serde/latest/serde/#data-formats
+[Supported formats](https://docs.rs/serde/latest/serde/#data-formats)
+
 </div>

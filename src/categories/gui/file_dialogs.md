@@ -16,5 +16,6 @@ Rusty File Dialog. "Platform-native open/save file dialogs. Can be used in conju
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[file_dialogs: write (P2)](https://github.com/john-cd/rust_howto/issues/381)
+
 </div>

@@ -24,5 +24,5 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[uuid: write (P1)](https://github.com/john-cd/rust_howto/issues/283)
 </div>

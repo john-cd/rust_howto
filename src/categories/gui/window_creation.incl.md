@@ -4,5 +4,6 @@
 | [`tao`][ex-gui-tao] | [![tao][c-tao-badge]][c-tao] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[window_creation.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/395)
+
 </div>

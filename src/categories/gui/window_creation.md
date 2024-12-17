@@ -28,5 +28,6 @@ Cross-platform window manager library. The TAO of cross-platform windowing. A li
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[window_creation: write (P2)](https://github.com/john-cd/rust_howto/issues/396)
+
 </div>

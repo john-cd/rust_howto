@@ -5,5 +5,6 @@
 | [`cxx`][ex-development-tools_ffi-cxx] | [![cxx][c-cxx-badge]][c-cxx] | [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi] [![cat-no-std][cat-no-std-badge]][cat-no-std] |
 
 <div class="hidden">
-TODO P2 rename examples
+[generate_ffi_bindings.incl: rename examples (P2)](https://github.com/john-cd/rust_howto/issues/323)
+
 </div>

@@ -41,7 +41,7 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 <div class="hidden">
 TODO P1: review
 
-TODO P1 windows install
+[dev_environment_setup: windows install (P1)](https://github.com/john-cd/rust_howto/issues/528)
 
 `winget install openssl`
 need Python

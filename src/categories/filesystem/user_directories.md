@@ -30,5 +30,6 @@ Get platform-specific locations for configuration, cache, and other data
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[user_directories: write (P1)](https://github.com/john-cd/rust_howto/issues/362)
+
 </div>

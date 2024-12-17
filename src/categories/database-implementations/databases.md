@@ -40,7 +40,7 @@ SurrealDB is a scalable, distributed, collaborative, document-graph database, fo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand / write
+[databases: expand / write (P2)](https://github.com/john-cd/rust_howto/issues/290)
 
 ## RabbitMQ
 

@@ -27,5 +27,5 @@ A library to build rich terminal user interfaces or dashboards
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[tui: expand (P1)](https://github.com/john-cd/rust_howto/issues/234)
 </div>

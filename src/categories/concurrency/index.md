@@ -59,5 +59,5 @@ Key constructs in Rust:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 add somewhere [Rust Atomics][book-rust-atomics]
+[concurrency: add somewhere [Rust Atomics][book-rust-atomics] (P1)](https://github.com/john-cd/rust_howto/issues/263)root@1f41c0391f7d:/code#
 </div>

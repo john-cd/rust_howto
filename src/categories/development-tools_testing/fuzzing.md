@@ -16,5 +16,6 @@ Fuzz testing (or fuzzing) is a software testing technique used to find security 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review fuzzing crates
+[fuzzing: review fuzzing crates (P1)](https://github.com/john-cd/rust_howto/issues/339)
+
 </div>

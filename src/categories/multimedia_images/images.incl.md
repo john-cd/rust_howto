@@ -3,5 +3,6 @@
 | [Process or create images][ex-multimedia_images-images] | {{#crate }} | [![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images] |
 
 <div class="hidden">
-TODO P2 crates, title
+[images.incl: crates, title (P2)](https://github.com/john-cd/rust_howto/issues/419)
+
 </div>

@@ -62,5 +62,5 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review - some linkers are deprecated
+[faster_linking: review - some linkers are deprecated (P2)](https://github.com/john-cd/rust_howto/issues/242)
 </div>

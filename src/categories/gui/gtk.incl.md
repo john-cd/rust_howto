@@ -4,5 +4,6 @@
 | [`relm4`][ex-gui-relm4] | [![relm4][c-relm4-badge]][c-relm4] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[gtk.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/382)
+
 </div>

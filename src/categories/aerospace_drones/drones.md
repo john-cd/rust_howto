@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P3 write
+[drones: write (P3)](https://github.com/john-cd/rust_howto/issues/192)
 </div>

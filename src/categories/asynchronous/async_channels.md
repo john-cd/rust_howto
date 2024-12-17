@@ -64,8 +64,9 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
-add other postage channels?
+[async_channels: review (P1)](https://github.com/john-cd/rust_howto/issues/215)
+
+TODO P1 add other postage channels?
 
 ## `kanal`
 

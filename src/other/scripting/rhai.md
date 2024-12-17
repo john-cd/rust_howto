@@ -23,5 +23,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[rhai: write (P1)](https://github.com/john-cd/rust_howto/issues/610)
+
 </div>

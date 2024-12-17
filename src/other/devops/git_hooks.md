@@ -73,10 +73,14 @@ pre-commit run --all-files
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[git_hooks: write (P1)](https://github.com/john-cd/rust_howto/issues/602)
+
 identify useful hooks for Rust
+
 - cargo fmt
 - cargo check, clippy, test...
 - spell checks
+
 add a sample config
+
 </div>

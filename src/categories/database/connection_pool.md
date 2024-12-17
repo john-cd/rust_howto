@@ -16,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand; example
+[connection_pool: expand; example (P1)](https://github.com/john-cd/rust_howto/issues/284)
 </div>

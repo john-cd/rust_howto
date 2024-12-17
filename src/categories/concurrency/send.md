@@ -18,6 +18,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P0 add 'static and Send constraints
-Send + Sync handling
+[send: add 'static and Send constraints (P0)](https://github.com/john-cd/rust_howto/issues/265)
 </div>

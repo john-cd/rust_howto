@@ -8,5 +8,5 @@
 | [`OpenObserve`][ex-development-tools_debugging-open-observe] | [OpenObserve][openobserve-github]⮳ | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 
 <div class="hidden">
-TODO P1 open telemetry, open observe
+[alternatives.incl: open telemetry, open observe (P1)](https://github.com/john-cd/rust_howto/issues/316)
 </div>

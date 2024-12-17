@@ -17,5 +17,5 @@ Allows you to inspect the code that macros expand to. `Rust Analyzer` also allow
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[tools: write (P2)](https://github.com/john-cd/rust_howto/issues/329)
 </div>

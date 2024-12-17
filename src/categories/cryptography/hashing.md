@@ -206,6 +206,6 @@ Securely clear secrets from memory with a simple trait built on stable Rust prim
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 improve
-review [blessed.rs][blessed-rs-website]
+[hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273)
+TODO P1 review [blessed.rs][blessed-rs-website]
 </div>

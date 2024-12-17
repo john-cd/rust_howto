@@ -24,5 +24,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand; add text
+[configuration: expand; add text (P1)](https://github.com/john-cd/rust_howto/issues/270)
 </div>

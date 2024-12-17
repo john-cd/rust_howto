@@ -47,5 +47,5 @@ This tool is especially useful in combination with `cargo-watch`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[watching_for_changes: expand (P1)](https://github.com/john-cd/rust_howto/issues/315)
 </div>

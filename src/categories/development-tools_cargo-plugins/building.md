@@ -62,5 +62,5 @@ The two distinguishing features of `xtask` are the following:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[building: expand (P1)](https://github.com/john-cd/rust_howto/issues/309)
 </div>

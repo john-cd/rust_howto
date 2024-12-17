@@ -48,5 +48,5 @@ serde = { version = "1.0", features = ["derive"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 interaction between config and env variables
+[environment_variables: interaction between config and env variables (P1)](https://github.com/john-cd/rust_howto/issues/271)
 </div>

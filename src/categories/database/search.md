@@ -84,5 +84,5 @@ A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[database/search.md: expand (P2)](https://github.com/john-cd/rust_howto/issues/288)
 </div>

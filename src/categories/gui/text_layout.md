@@ -26,5 +26,6 @@ Parley provides an API for implementing rich text layout. "Another very accompli
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[text_layout: write (P2)](https://github.com/john-cd/rust_howto/issues/391)
+
 </div>

@@ -68,5 +68,6 @@ Wrappers for total ordering on floats. Float types that don't allow `NaN` and ar
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[additional_numeric_types: write (P1)](https://github.com/john-cd/rust_howto/issues/407)
+
 </div>

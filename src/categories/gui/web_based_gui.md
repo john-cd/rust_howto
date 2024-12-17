@@ -26,5 +26,6 @@ Portable, performant, and ergonomic framework for building cross-platform user i
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[web_based_gui: write (P2)](https://github.com/john-cd/rust_howto/issues/394)
+
 </div>

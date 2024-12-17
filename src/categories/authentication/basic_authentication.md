@@ -16,6 +16,7 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
-TODO P1 authentication/basic.rs is noplayground because of network use. rewrite? 
+[basic_authentication: expand (P2)](https://github.com/john-cd/rust_howto/issues/224)
+
+TODO P1 authentication/basic.rs is noplayground because of network use. rewrite?
 </div>

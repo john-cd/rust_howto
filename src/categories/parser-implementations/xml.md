@@ -30,5 +30,6 @@ Push based streaming parser for XML.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 include in index.md / SUMMARY.md; write
+[xml: include in index.md / SUMMARY.md; write (P2)](https://github.com/john-cd/rust_howto/issues/446)
+
 </div>

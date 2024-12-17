@@ -7,5 +7,5 @@
 | [`cornucopia` for postgres][ex-database-cornucopia] | [cornucopia-rs][c-cornucopia-github]⮳ | [![cat-database][cat-database-badge]][cat-database] |
 
 <div class="hidden">
-TODO P1 polish
+[postgres.incl: polish (P1)](https://github.com/john-cd/rust_howto/issues/285)
 </div>

@@ -38,6 +38,6 @@ Allocate memory for output image of given width and height with [`image::ImageBu
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 polish
-TODO P1 threadpool_fractal.rs is noplayground - linking with `cc` failed: exit status: 1 - fix? 
+[threadpool: polish (P1)](https://github.com/john-cd/rust_howto/issues/267)
+TODO P1 threadpool_fractal.rs is noplayground - linking with `cc` failed: exit status: 1 - fix?
 </div>

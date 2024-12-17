@@ -36,5 +36,5 @@ There are two main approaches to Rust program verification:
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand; revise refs.incl.md
+[code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
 </div>

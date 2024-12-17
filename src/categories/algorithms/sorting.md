@@ -40,5 +40,6 @@ Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` b
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize
+[sorting: organize (P1)](https://github.com/john-cd/rust_howto/issues/209)
+
 </div>

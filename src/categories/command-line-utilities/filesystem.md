@@ -48,5 +48,5 @@ Opens a path or URL using the program configured on the system.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize
+[filesystem: organize (P1)](https://github.com/john-cd/rust_howto/issues/237)
 </div>

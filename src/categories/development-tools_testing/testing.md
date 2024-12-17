@@ -82,6 +82,7 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
+
 [`insta`][insta-website]
 </div>

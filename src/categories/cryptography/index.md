@@ -16,7 +16,7 @@ Securing data.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review / incorporate
+[cryptography: review / incorporate (P2)](https://github.com/john-cd/rust_howto/issues/274)
 
 - ring
 - rust-crypto

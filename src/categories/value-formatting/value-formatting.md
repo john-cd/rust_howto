@@ -14,5 +14,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 choose crates, write
+[value-formatting: choose crates, write (P2)](https://github.com/john-cd/rust_howto/issues/490)
+
 </div>

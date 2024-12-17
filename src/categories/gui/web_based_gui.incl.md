@@ -4,5 +4,6 @@
 | [`dioxus`][ex-gui-dioxus] | [![dioxus][c-dioxus-badge]][c-dioxus] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[web_based_gui.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/393)
+
 </div>

@@ -59,5 +59,5 @@ Tool for benchmarking compiled binaries (similar to unix time command but better
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[benchmarking: write (P2)](https://github.com/john-cd/rust_howto/issues/335)
 </div>

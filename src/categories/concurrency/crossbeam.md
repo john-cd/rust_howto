@@ -49,5 +49,5 @@ This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 cleanup
+[crossbeam: cleanup (P1)](https://github.com/john-cd/rust_howto/issues/259)
 </div>

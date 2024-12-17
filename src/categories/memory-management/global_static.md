@@ -22,5 +22,6 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand - once_cell crate and in std
+[global_static: expand - once_cell crate and in std (P1)](https://github.com/john-cd/rust_howto/issues/409)
+
 </div>

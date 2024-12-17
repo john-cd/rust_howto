@@ -16,5 +16,6 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[processor: expand (P2)](https://github.com/john-cd/rust_howto/issues/399)
+
 </div>

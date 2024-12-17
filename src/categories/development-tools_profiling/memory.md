@@ -19,5 +19,5 @@ A library for heap profiling and ad hoc profiling with DHAT
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[memory: write (P2)](https://github.com/john-cd/rust_howto/issues/336)
 </div>

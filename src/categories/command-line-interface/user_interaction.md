@@ -37,5 +37,5 @@ This currently primarily provides progress bars and spinners as well as basic co
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[user_interaction: write (P1)](https://github.com/john-cd/rust_howto/issues/235)
 </div>

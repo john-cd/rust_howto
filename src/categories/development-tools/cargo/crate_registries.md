@@ -16,8 +16,9 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
-P2 add API access to crates.io
+[crate_registries: expand (P1)](https://github.com/john-cd/rust_howto/issues/294)
+
+TODO P2 add API access to crates.io
 
 ```rust,editable
 {{#include ../../../../deps/tests/categories/development_tools/cargo/crates_io.rs:example}}

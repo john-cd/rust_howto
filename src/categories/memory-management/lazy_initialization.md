@@ -55,5 +55,6 @@ The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write, dedupe with global_static
+[lazy_initialization: write, dedupe with global_static (P1)](https://github.com/john-cd/rust_howto/issues/411)
+
 </div>

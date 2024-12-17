@@ -25,7 +25,7 @@ The `dyn-clone` crate provides a `DynClone` trait that can be used in trait obje
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 rethink where that stuff should go
+[design_patterns: rethink where that stuff should go (P1)](https://github.com/john-cd/rust_howto/issues/461)
 
 ## Implement the typestate pattern in Rust {#typestate-pattern}
 

@@ -26,5 +26,5 @@ Note: when the main thread of a Rust program completes, all spawned threads{{hi:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 polish
+[explicit_threads: polish (P1)](https://github.com/john-cd/rust_howto/issues/262)
 </div>

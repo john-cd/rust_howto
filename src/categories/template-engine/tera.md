@@ -16,5 +16,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write; add sample from tools code
+[tera: write; add sample from tools code (P1)](https://github.com/john-cd/rust_howto/issues/483)
+
 </div>

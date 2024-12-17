@@ -22,6 +22,7 @@ A framework for creating reliable and efficient web applications
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write / organize
+[yew: write / organize (P2)](https://github.com/john-cd/rust_howto/issues/498)
+
 cover other WASM based frameworks
 </div>

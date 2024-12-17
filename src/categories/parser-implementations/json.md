@@ -24,5 +24,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 include in index.md / SUMMARY.md; write
+[json: include in index.md / SUMMARY.md; write (P2)](https://github.com/john-cd/rust_howto/issues/440)
 </div>

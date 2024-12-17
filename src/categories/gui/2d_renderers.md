@@ -58,5 +58,6 @@ A GPU accelerated 2D renderer for web content. "OpenGL-based. Mature with produc
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write; titles
+[2d_renderers: write; titles (P2)](https://github.com/john-cd/rust_howto/issues/377)
+
 </div>

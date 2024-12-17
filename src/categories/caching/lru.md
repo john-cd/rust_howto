@@ -14,5 +14,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[lru: expand (P2)](https://github.com/john-cd/rust_howto/issues/227)
 </div>

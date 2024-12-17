@@ -47,5 +47,6 @@ Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 clean up toml
+[complex: clean up toml (P1)](https://github.com/john-cd/rust_howto/issues/350)
+
 </div>

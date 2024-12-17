@@ -40,9 +40,12 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 organize/write
-TODO P2 cover
+[others: organize/write (P2)](https://github.com/john-cd/rust_howto/issues/496)
 
-wasm-bindgen
-wasm-pack
+[others: cover (P2)](https://github.com/john-cd/rust_howto/issues/497)
+[websocket: cover others e.g. async_std_tungstenite (P2)](https://github.com/john-cd/rust_howto/issues/521)
+
+- wasm-bindgen
+- wasm-pack
+
 </div>

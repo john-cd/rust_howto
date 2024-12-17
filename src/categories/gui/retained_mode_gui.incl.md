@@ -4,5 +4,6 @@
 | [`floem`][ex-gui-floem] | [![floem][c-floem-badge]][c-floem] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-TODO P2 titles
+[retained_mode_gui.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/388)
+
 </div>

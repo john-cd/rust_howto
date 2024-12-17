@@ -18,5 +18,6 @@ Recursive filesystem walking that respects ignore files (like .gitignore)
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[ignore: write (P1)](https://github.com/john-cd/rust_howto/issues/360)
+
 </div>

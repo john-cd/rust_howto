@@ -75,8 +75,7 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
-TODO P2 add fastrand
+[randomness: add fastrand (P2)](https://github.com/john-cd/rust_howto/issues/208)
 
 ## `fastrand` {#fastrand}
 

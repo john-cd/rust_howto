@@ -46,7 +46,7 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 add
+[documentation: add (P2)](https://github.com/john-cd/rust_howto/issues/297)
 
 ### Add documentation to function arguments in Rust {#roxygen}
 

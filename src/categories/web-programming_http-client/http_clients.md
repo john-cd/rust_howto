@@ -46,5 +46,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 expand
+[http_clients: expand (P1)](https://github.com/john-cd/rust_howto/issues/504)
+
 </div>

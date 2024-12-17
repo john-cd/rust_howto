@@ -17,5 +17,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 add embassy, others
+[embassy: add embassy, others (P2)](https://github.com/john-cd/rust_howto/issues/345)
+
 </div>

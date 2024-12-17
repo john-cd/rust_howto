@@ -136,7 +136,8 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review; cover more of nalgebra
+[linear_algebra: review; cover more of nalgebra (P1)](https://github.com/john-cd/rust_howto/issues/408)
+
 
 nalgebra{{hi:nalgebra}}
 
