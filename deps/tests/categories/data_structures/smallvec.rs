@@ -45,7 +45,6 @@ fn main() {
     // indexing and other methods to access its contents:
     small_vec2[0] = small_vec2[1] + small_vec2[2];
     small_vec2.sort();
-
 }
 // ANCHOR_END: example
 
