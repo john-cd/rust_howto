@@ -28,4 +28,11 @@ Release Rust crates from CI with a Release PR.
 
 <div class="hidden">
 TODO P1 write
+
+## `cargo-dist`
+
+[![cargo-dist-website][c-cargo_dist-website-badge]][c-cargo_dist-website] [![cargo-dist][c-cargo_dist-badge]][c-cargo_dist] [![cargo-dist-crates.io][c-cargo_dist-crates.io-badge]][c-cargo_dist-crates.io] [![cargo-dist-github][c-cargo_dist-github-badge]][c-cargo_dist-github] [![cargo-dist-lib.rs][c-cargo_dist-lib.rs-badge]][c-cargo_dist-lib.rs]{{hi:cargo-dist}}
+
+Shippable application packaging for Rust
+
 </div>

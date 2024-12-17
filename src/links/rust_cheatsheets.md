@@ -16,4 +16,8 @@
 
 <div class="hidden">
 TODO P1: add more
+
+[A comparison of Rust’s borrow checker to the one in C#][csborrow]
+
+[csborrow]: <https://em-tg.github.io/csborrow/>
 </div>

@@ -28,4 +28,22 @@
 TODO P1: organize
 
 [`roadmap.sh` for Rust](https://roadmap.sh/rust)
+
+## Ferrous systems
+
+[Rust training][rust training]
+
+[rust training]: https://github.com/ferrous-systems/rust-training
+
+[Rust exercises][rust exercises]
+
+[rust exercises]: https://github.com/ferrous-systems/rust-exercises
+
+[Why rust][why rust]
+
+[why rust]: https://github.com/ferrous-systems/why-rust
+
+[WASM training][wasm training]
+
+[wasm training]: https://github.com/ferrous-systems/wasm-training-2022
 </div>

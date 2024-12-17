@@ -41,4 +41,10 @@ SurrealDB is a scalable, distributed, collaborative, document-graph database, fo
 
 <div class="hidden">
 TODO P2 expand / write
+
+## RabbitMQ
+
+[![lapin][c-lapin-badge]][c-lapin] [![lapin-crates.io][c-lapin-crates.io-badge]][c-lapin-crates.io] [![lapin-github][c-lapin-github-badge]][c-lapin-github] [![lapin-lib.rs][c-lapin-lib.rs-badge]][c-lapin-lib.rs]{{hi:lapin}}{{hi:Amqp}}{{hi:Futures}}{{hi:Mio}}{{hi:Rabbitmq}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
+
+AMQP client library
 </div>

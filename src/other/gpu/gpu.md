@@ -15,4 +15,8 @@
 
 <div class="hidden">
 TODO P1: write
+
+[Reddit][reddit]
+
+[reddit]: <https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=in53a04f7pnykanqye5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853>
 </div>

@@ -93,6 +93,10 @@ jobs:
 <div class="hidden">
 TODO P1 organize, expand
 
+[mdslides][mdslides]
+
+[mdslides]: https://github.com/ferrous-systems/mdslides
+
 ## Test code in your `mdbook` {#termbook}
 
 [Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for `mdbook`s to keep your documentation tested:

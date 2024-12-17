@@ -449,6 +449,16 @@
 [c-cargo_deny-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--deny-yellow
 [c-cargo_deny-lib.rs]: https://lib.rs/crates/cargo-deny
 [c-cargo_deny]: https://docs.rs/cargo_deny
+[c-cargo_dist-badge]: https://img.shields.io/crates/v/cargo-dist?label=cargo-dist
+[c-cargo_dist-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--dist-crimson
+[c-cargo_dist-crates.io]: https://crates.io/crates/cargo_dist
+[c-cargo_dist-github-badge]: https://img.shields.io/badge/cargo--dist-steelblue?logo=github
+[c-cargo_dist-github]: https://github.com/axodotdev/cargo-dist
+[c-cargo_dist-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--dist-yellow
+[c-cargo_dist-lib.rs]: https://lib.rs/crates/cargo-dist
+[c-cargo_dist-website-badge]: https://img.shields.io/badge/cargo--dist-coral
+[c-cargo_dist-website]: https://opensource.axo.dev/cargo-dist
+[c-cargo_dist]: https://docs.rs/cargo-dist
 [c-cargo_edit-badge]: https://img.shields.io/crates/v/cargo-edit?label=cargo-edit
 [c-cargo_edit-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--edit-crimson
 [c-cargo_edit-crates.io]: https://crates.io/crates/cargo_edit

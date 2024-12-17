@@ -12,4 +12,9 @@ Solving problems involving physics, chemistry, biology, machine learning, geosci
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1
+
+[Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]
+
+[why rust is becoming a contender in ai development]: <https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development>
 </div>
