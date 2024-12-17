@@ -32,7 +32,7 @@ do
         cat > "$absoluteexampledir/${examplename}.rs" <<- 'EOF'
 // ANCHOR: example
 fn main() {
-    // TODO
+    // TODO P1
 }
 // ANCHOR_END: example
 
