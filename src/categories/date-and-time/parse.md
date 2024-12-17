@@ -48,7 +48,7 @@ Parses a [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ stru
 Escape sequences that are available for the [`chrono::DateTime::parse_from_str`][c-chrono::DateTime::parse_from_str]{{hi:chrono::DateTime::parse_from_str}}⮳ can be found at [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳. Note that the [`chrono::DateTime::parse_from_str`][c-chrono::DateTime::parse_from_str]{{hi:chrono::DateTime::parse_from_str}}⮳ requires that such a DateTime{{hi:DateTime}} struct must be creatable that it uniquely identifies a date and a time. For parsing dates and times without timezones{{hi:timezones}} use [`chrono::naive::NaiveDate`][c-chrono::naive::NaiveDate]{{hi:chrono::naive::NaiveDate}}⮳ [`chrono::naive::NaiveTime`][c-chrono::naive::NaiveTime]{{hi:chrono::naive::NaiveTime}}⮳ and [`chrono::naive::NaiveDateTime`][c-chrono::naive::NaiveDateTime]{{hi:chrono::naive::NaiveDateTime}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/date_and_time/string.rs:example}}
+{{#include ../../../deps/tests/categories/date_and_time/parse_string_into_datetime.rs:example}}
 ```
 
 {{#include refs.incl.md}}
