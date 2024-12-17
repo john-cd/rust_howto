@@ -116,7 +116,6 @@
 [ex-concurrency-parallel-sorting]: categories/concurrency/data_parallelism.md#parallel-sorting
 [ex-concurrency-parking-lot]: categories/concurrency/shared_state.md#parking-lot
 [ex-concurrency-pass-data-between-two-threads]: categories/concurrency/crossbeam.md#pass-data-between-two-threads
-[ex-concurrency-postage]: categories/concurrency/message_passing.md#postage
 [ex-concurrency-ractor]: categories/concurrency/_actors.md#ractor
 [ex-concurrency-rayon]: categories/concurrency/data_parallelism.md#rayon
 [ex-concurrency-riker]: categories/concurrency/_actors.md#riker
