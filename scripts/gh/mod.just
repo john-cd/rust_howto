@@ -11,6 +11,15 @@ _default:
 issue title:
   gh issue create --title {{title}} --body ''
 
+# Return a list of GitHub issues with the same title
+find_dupe_issues:
+  #! /bin/bash
+  set -euo pipefail
+  IFS=$'\t\n'
+  gh issue list -L 1000 --json title --jq '.[] | [.title]' | sed -E 's/\["(.*)(\(P[0-9]\))?"]/\1/g' | sort | uniq --repeated
+# --template '{{range .}}{{.number .title}}{{"\n"}}{{end}}
+# --jq '.[] | [.number, .title]'
+
 ## Create an GH issue for each TODO line in Markdown files
 #create_issues_for_markdown:
 #  #! /bin/bash
