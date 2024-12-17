@@ -5,22 +5,34 @@ use std::path::PathBuf;
 
 use same_file::is_same_file;
 
+// Returns the two paths that form a loop, if found
+// Returns None otherwise
+// P: AsRef<Path> accepts PathBuf, Path...
 fn contains_loop<P: AsRef<Path>>(
     path: P,
 ) -> io::Result<Option<(PathBuf, PathBuf)>> {
-    let path = path.as_ref();
-    let mut path_buf = path.to_path_buf();
+    let path: &Path = path.as_ref();
+    // Copy into a mutable PathBuf
+    let mut path_buf: PathBuf = path.to_path_buf();
+    // Truncate path_buf in succession: /stuff/much -> /stuff -> /
     while path_buf.pop() {
         if is_same_file(&path_buf, path)? {
             return Ok(Some((path_buf, path.to_path_buf())));
-        } else if let Some(looped_paths) = contains_loop(&path_buf)? {
-            return Ok(Some(looped_paths));
+            // Investigate the parent path against its own parents as well
+        } else if let Some((looped_path1, looped_path2)) =
+            contains_loop(&path_buf)?
+        {
+            return Ok(Some((looped_path1, looped_path2)));
         }
     }
     Ok(None)
 }
 
 fn main() {
+    // `is_same_file` returns true if the two file paths may correspond to the
+    // same file.
+    assert!(is_same_file("/tmp/foo", "/tmp/./foo").unwrap_or(false));
+
     assert_eq!(
         contains_loop("/tmp/foo/bar/baz/qux/bar/baz").unwrap(),
         Some((
@@ -28,12 +40,17 @@ fn main() {
             PathBuf::from("/tmp/foo/bar/baz/qux")
         ))
     );
+    println!("Loop found.");
 }
 // ANCHOR_END: example
 
-// TODO P0 print
-#[ignore]
+#[cfg(target_os = "linux")]
 #[test]
-fn test() {
+fn test() -> anyhow::Result<()> {
+    // mkdir -p /tmp/foo/bar/baz
+    std::fs::create_dir_all("/tmp/foo/bar/baz")?;
+    // ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
+    std::os::unix::fs::symlink("/tmp/foo/", "/tmp/foo/bar/baz/qux")?;
     main();
+    Ok(())
 }
