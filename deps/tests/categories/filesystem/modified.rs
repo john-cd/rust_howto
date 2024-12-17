@@ -43,5 +43,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
-// TODO P1 flaky test
+// [modified: flaky test (P1)](https://github.com/john-cd/rust_howto/issues/165)

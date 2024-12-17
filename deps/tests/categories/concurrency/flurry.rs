@@ -1,7 +1,5 @@
 // ANCHOR: example
-fn main() {
-    // TODO P1
-}
+fn main() {}
 // ANCHOR_END: example
 
 #[test]
@@ -9,3 +7,4 @@ fn main() {
 fn test() {
     main();
 }
+// [P1](https://github.com/john-cd/rust_howto/issues/684)

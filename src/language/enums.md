@@ -14,5 +14,6 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: edit
+[enums: edit (P1)](https://github.com/john-cd/rust_howto/issues/542)
+
 </div>

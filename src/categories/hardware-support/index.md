@@ -12,5 +12,6 @@ Interface with specific CPU{{hi:CPU}} or other hardware{{hi:Hardware}} features.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[expand hardware-support/](https://github.com/john-cd/rust_howto/issues/70)
+
 </div>

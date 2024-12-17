@@ -5,5 +5,6 @@
 | [Push image to Docker Hub][ex-contributing-push-image-to-docker-hub] |
 
 <div class="hidden">
-TODO P1
+[dev_container_docker.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/524)
+
 </div>

@@ -28,5 +28,6 @@ Starting the name of a variable{{hi:Variables}} with an underscore silences unus
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add text
+[variables_and_constants: add text (P1)](https://github.com/john-cd/rust_howto/issues/563)
+
 </div>

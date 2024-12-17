@@ -69,4 +69,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 println!("{}", );
+// [phone: println!("{}", ); (P1)](https://github.com/john-cd/rust_howto/issues/173)

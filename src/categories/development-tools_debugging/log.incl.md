@@ -7,5 +7,6 @@
 | [Log to the Unix syslog][ex-development-tools_debugging-syslog] | [![log][c-log-badge]][c-log] [![syslog][c-syslog-badge]][c-syslog] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 
 <div class="hidden">
-TODO P1
+[log.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/320)
+
 </div>

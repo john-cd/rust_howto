@@ -10,5 +10,6 @@ Emulators allow one computer to behave like another, often to allow running soft
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[emulators/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/348)
+
 </div>

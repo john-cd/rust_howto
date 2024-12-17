@@ -22,4 +22,5 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P1
+// [P1](https://github.com/john-cd/rust_howto/issues/876)
+// [structs3: example (P1)](https://github.com/john-cd/rust_howto/issues/182)

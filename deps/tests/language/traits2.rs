@@ -34,3 +34,4 @@ fn main() {
 fn test() {
     main();
 }
+// [async_traits2: deadcode? (P0)](https://github.com/john-cd/rust_howto/issues/144)

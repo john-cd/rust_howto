@@ -10,5 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[cryptocurrencies: write (P3)](https://github.com/john-cd/rust_howto/issues/278)
+
 </div>

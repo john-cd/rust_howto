@@ -29,7 +29,8 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: edit
+[simple_data_types: edit (P1)](https://github.com/john-cd/rust_howto/issues/557)
+
 
 - [ ] table?
 - [ ] add examples

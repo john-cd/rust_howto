@@ -56,6 +56,7 @@ fn test() {
     assert_eq!(
         extend_extension(&Path::new("file.a.md"), "new"),
         Path::new("file.a.new.md")
-    ); // TODO P1 file_prefix is still unstable.
+    );
     assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
 }
+// [P1 file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)

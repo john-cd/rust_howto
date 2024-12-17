@@ -25,4 +25,4 @@ rusty_fork_test! {
         main();
     }
 }
-// TODO P1
+// [development_tools_debugging: tracing_subscriber3:  example: (P1)](https://github.com/john-cd/rust_howto/issues/161)

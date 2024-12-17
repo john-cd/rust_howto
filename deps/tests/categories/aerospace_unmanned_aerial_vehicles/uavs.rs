@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-    // TODO
     todo!();
 }
 // ANCHOR_END: example
@@ -10,3 +9,5 @@ fn main() {
 fn test() {
     main();
 }
+
+// [add example in uavs.rs](https://github.com/john-cd/rust_howto/issues/65)

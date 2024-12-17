@@ -1,5 +1,4 @@
 // ANCHOR: example
-// TODO P0 rewrite
 
 // use std::fmt;
 
@@ -57,3 +56,5 @@ fn test() {
     println!("{:?}", res);
     assert!(res.is_ok());
 }
+
+// [backtrace: rewrite (P0)](https://github.com/john-cd/rust_howto/issues/168)

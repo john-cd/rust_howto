@@ -3,5 +3,6 @@
 | [`shuttle`][ex-cloud-shuttle] | [docs.shuttle.rs][docs-shuttle-rs]⮳ |
 
 <div class="hidden">
-TODO P1
+[rust_native_cloud_development.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/575)
+
 </div>

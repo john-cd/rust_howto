@@ -43,4 +43,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P0; fails on Windows
+// [semver_command: ; fails on Windows (P0)](https://github.com/john-cd/rust_howto/issues/155)

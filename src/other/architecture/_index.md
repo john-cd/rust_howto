@@ -6,5 +6,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+[architecture/_index: fix (P1)](https://github.com/john-cd/rust_howto/issues/573)
+
 </div>

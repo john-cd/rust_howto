@@ -38,5 +38,6 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add desc
+[functions: add desc (P1)](https://github.com/john-cd/rust_howto/issues/543)
+
 </div>

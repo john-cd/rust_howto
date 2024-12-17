@@ -186,7 +186,6 @@ mod tests {
         );
     }
 
-    // TODO P1 fix test
     // #[test]
     // fn test_arg_verbose_none() {
     //     let m = cli().get_matches_from(vec!["prog"]);
@@ -217,3 +216,4 @@ mod tests {
         assert_eq!(get_arg_verbose(&m.unwrap()), 1);
     }
 }
+// [P1 fix test](https://github.com/john-cd/rust_howto/issues/895)

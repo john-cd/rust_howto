@@ -35,3 +35,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// [basic_authentication: authentication/basic.rs is noplayground because of network use. rewrite?  (P1)](https://github.com/john-cd/rust_howto/issues/225)

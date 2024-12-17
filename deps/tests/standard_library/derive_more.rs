@@ -36,4 +36,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P1 println!("{}", );
+// [derive_more: println!("{}", ); (P1)](https://github.com/john-cd/rust_howto/issues/184)

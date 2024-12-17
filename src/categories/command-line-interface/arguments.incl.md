@@ -6,7 +6,8 @@
 | [pico-args][ex-command-line-interface-pico-args] | [![pico-args][c-pico_args-badge]][c-pico_args] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 
 <div class="hidden">
-TODO P1
+[arguments.incl:  (P1)](https://github.com/john-cd/rust_howto/issues/232)
+
 
 | [`structopt`][ex-command-line-interface-structopt] | [![structopt][c-structopt-badge]][c-structopt] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 

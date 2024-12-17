@@ -35,5 +35,6 @@
 [`uv`][uv-github]{{hi:uv}}⮳
 
 <div class="hidden">
-TODO P1: write
+[python_tools: write (P1)](https://github.com/john-cd/rust_howto/issues/617)
+
 </div>

@@ -27,4 +27,5 @@ fn main() -> Result<(), Unspecified> {
 fn test() {
     println!("{:?}", main());
 }
-// TODO P1
+
+// [hmac:  (P1)](https://github.com/john-cd/rust_howto/issues/150)

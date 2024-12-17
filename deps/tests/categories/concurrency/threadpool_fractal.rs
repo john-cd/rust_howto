@@ -102,3 +102,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+
+// [threadpool: threadpool_fractal.rs is noplayground - linking with cc - fix? fix (P1)](https://github.com/john-cd/rust_howto/issues/268)

@@ -20,9 +20,9 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-// TODO P1 listens to a connection forever
 #[ignore]
 #[test]
 fn test() {
     println!("{:?}", main());
 }
+// [listen_unused: listens to a connection forever (P1)](https://github.com/john-cd/rust_howto/issues/166)

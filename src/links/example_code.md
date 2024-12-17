@@ -21,5 +21,6 @@ Example codebases include:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add more
+[example_code: add more (P1)](https://github.com/john-cd/rust_howto/issues/566)
+
 </div>

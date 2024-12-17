@@ -12,5 +12,6 @@ Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garb
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 organize
+[memory-management/index: organize (P1)](https://github.com/john-cd/rust_howto/issues/410)
+
 </div>

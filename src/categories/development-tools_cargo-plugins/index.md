@@ -49,8 +49,7 @@ Subcommands that extend the capabilities of Cargo.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
-TODO P2 add v
+[development-tools_cargo-plugins/index: review (P1)](https://github.com/john-cd/rust_howto/issues/311)
 
 cargo-afl for fuzzing
 

@@ -62,6 +62,4 @@ Tokio's `sync` module provides channels for using in async code.
 
 <div class="hidden">
 [message_passing: polish (P1)](https://github.com/john-cd/rust_howto/issues/264)
-[polish concurrency > message_passing](https://github.com/john-cd/rust_howto/issues/76)
-TODO P1 add links to async channels
 </div>

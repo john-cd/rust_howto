@@ -8,5 +8,6 @@
 | [Compile conditionally][ex-language-conditional-compilation] |
 
 <div class="hidden">
-TODO P1
+[attributes.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/537)
+
 </div>

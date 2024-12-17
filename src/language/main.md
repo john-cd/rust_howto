@@ -16,6 +16,6 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add text
-async main
+[main: add text (P1)](https://github.com/john-cd/rust_howto/issues/550)
+
 </div>

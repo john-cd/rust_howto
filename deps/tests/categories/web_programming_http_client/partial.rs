@@ -95,10 +95,10 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 // Requires network access
-// TODO P1 flaky test
 #[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// [partial: flaky test (P1)](https://github.com/john-cd/rust_howto/issues/176)

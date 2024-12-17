@@ -10,5 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P3 write
+[aerospace_space-protocols/_index.md](https://github.com/john-cd/rust_howto/issues/202)
+
 </div>

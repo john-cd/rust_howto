@@ -29,4 +29,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 print
+// [error_file: print (P1)](https://github.com/john-cd/rust_howto/issues/167)

@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-    // TODO
     todo!();
 }
 // ANCHOR_END: example
@@ -10,3 +9,4 @@ fn main() {
 fn test() {
     main();
 }
+// [add example in space_protocols.rs](https://github.com/john-cd/rust_howto/issues/64)

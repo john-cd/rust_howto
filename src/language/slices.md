@@ -12,7 +12,8 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add text
+[slices: add text (P1)](https://github.com/john-cd/rust_howto/issues/558)
+
 
 [`slice::sort_by`][primitive-slice::sort_by]
 [`slice::split_at`][primitive-slice::split_at]

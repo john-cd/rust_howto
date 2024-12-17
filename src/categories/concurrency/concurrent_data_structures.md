@@ -41,5 +41,4 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳ 
 
 <div class="hidden">
 [concurrent_data_structures: add flurry example (P1)](https://github.com/john-cd/rust_howto/issues/258)
-TODO P0 dashmap crate is not available in the rust playground
 </div>

@@ -10,5 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[aerospace_unmanned-aerial-vehicles: write (P2)](https://github.com/john-cd/rust_howto/issues/205)
+
 </div>

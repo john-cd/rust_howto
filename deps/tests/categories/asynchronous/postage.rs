@@ -63,6 +63,6 @@ async fn main() {
 fn test() {
     main();
 }
-// TODO P0 fix
 // logging
 // stream, sink
+// [polish postage.rs example / add examples for other queues](https://github.com/john-cd/rust_howto/issues/80)

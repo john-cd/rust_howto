@@ -34,5 +34,6 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add more / edit
+[match: add more / edit (P1)](https://github.com/john-cd/rust_howto/issues/551)
+
 </div>

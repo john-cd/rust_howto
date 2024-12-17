@@ -40,4 +40,5 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P0 improve
+// [sync: improve (P0)](https://github.com/john-cd/rust_howto/issues/147)
+// [add example for Send / Sync](https://github.com/john-cd/rust_howto/issues/93)

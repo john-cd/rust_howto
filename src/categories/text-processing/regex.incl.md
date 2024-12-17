@@ -8,7 +8,8 @@
 | [Longer regex example][ex-text-processing-longer-regex-example] | [![regex][c-regex-badge]][c-regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 
 <div class="hidden">
-TODO P2
+[regex.incl: fix (P2)](https://github.com/john-cd/rust_howto/issues/487)
+
 
 | [Use regular expressions with backreferences and lookarounds][ex-text-processing-fancy-regex] | [![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 

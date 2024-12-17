@@ -58,5 +58,4 @@ rusty_fork_test! {
         main();
     }
 }
-
-// TODO P1 test fully and review vs text
+// [log_env_variable: test fully and review vs text (P1)](https://github.com/john-cd/rust_howto/issues/157)

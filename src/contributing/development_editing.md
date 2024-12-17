@@ -22,5 +22,6 @@ Verify the markdown is properly rendered using `just serve` or `mdbook serve --o
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+[development_editing: review (P1)](https://github.com/john-cd/rust_howto/issues/523)
+
 </div>

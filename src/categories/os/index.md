@@ -20,5 +20,6 @@ Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+[os/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/429)
+
 </div>

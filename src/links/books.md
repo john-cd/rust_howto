@@ -23,6 +23,7 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add / review
+[books: add / review (P1)](https://github.com/john-cd/rust_howto/issues/565)
+
 add [Rust Atomics][book-rust-atomics]
 </div>

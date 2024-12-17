@@ -47,5 +47,6 @@ The `RefCell<T>` type with its interior mutability{{hi:Interior mutability}} giv
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+[smart_pointers: review (P1)](https://github.com/john-cd/rust_howto/issues/628)
+
 </div>

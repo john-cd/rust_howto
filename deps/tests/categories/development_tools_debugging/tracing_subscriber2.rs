@@ -11,6 +11,8 @@ fn main() {
             }),
         ))
         .init();
+    tracing::info!("tracing configured!");
+    println!("Done.")
 }
 // ANCHOR_END: example
 
@@ -23,4 +25,4 @@ rusty_fork_test! {
         main();
     }
 }
-// TODO P0 does it print?
+// [tracing_subscriber2: does it print? (P0)](https://github.com/john-cd/rust_howto/issues/160)

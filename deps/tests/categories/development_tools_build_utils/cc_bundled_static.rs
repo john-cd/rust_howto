@@ -1,14 +1,14 @@
 // ANCHOR: example
-// fn main() {
-//     cc::Build::new().file("src/hello.c").compile("hello");
-//     // outputs `libhello.a`
-// println!("");
-// }
+fn main() {
+    cc::Build::new().file("src/hello.c").compile("hello");
+    // outputs `libhello.a`
+    println!("");
+}
 // ANCHOR_END: example
 
-// // TODO P1
-// #[ignore]
-// #[test]
-// fn test() {
-//     main();
-// }
+#[ignore]
+#[test]
+fn test() {
+    main();
+}
+// [P1 deal with cc](https://github.com/john-cd/rust_howto/issues/899)

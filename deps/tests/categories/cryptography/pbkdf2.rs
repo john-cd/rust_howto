@@ -55,4 +55,4 @@ fn main() -> Result<(), Unspecified> {
 fn test() {
     println!("{:?}", main());
 }
-// TODO P1
+// [pbkdf2:  (P1)](https://github.com/john-cd/rust_howto/issues/151)

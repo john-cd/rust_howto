@@ -28,6 +28,5 @@ See also Tokio `async-stream`{{hi:async-stream}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 add more?
-TODO P1 streams2.rs is noplayground because it requires a network. rewrite?
+[P1 add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
 </div>

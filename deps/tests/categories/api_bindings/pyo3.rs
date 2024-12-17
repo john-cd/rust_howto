@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unsafe_op_in_unsafe_fn)]
-// TODO ^ edition 2024 migration
 // ANCHOR: example
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;
@@ -61,3 +60,6 @@ fn main() {
 fn test() {
     main();
 }
+
+// [pyo3: ^ edition 2024 migration ()](https://github.com/john-cd/rust_howto/issues/143)
+// [fix pyo3.rs](https://github.com/john-cd/rust_howto/issues/78)

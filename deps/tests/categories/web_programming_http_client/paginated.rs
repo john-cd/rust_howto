@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-// TODO P0 fix - the API no longer returns a crate_id - need to get
 // version_id then join version_id and Version.id ro retrieve crate
 // name Consider a simpler API for example purposes
 
@@ -118,3 +117,5 @@ fn test() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
+// [P0 fix - the API no longer returns a crate_id - need to get](https://github.com/john-cd/rust_howto/issues/860)
+// [paginated: fix - the API no longer returns a crate_id - need to get (P0)](https://github.com/john-cd/rust_howto/issues/175)

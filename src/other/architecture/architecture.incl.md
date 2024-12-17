@@ -3,5 +3,6 @@
 | [Architect your Rust app][ex-architecture-architecture] | {{#crate }} |
 
 <div class="hidden">
-TODO P1
+[architecture.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/571)
+
 </div>

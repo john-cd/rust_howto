@@ -10,5 +10,6 @@ Crates that try to provide a "one-stop-shop" for all of your game development ne
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[game-engines/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/370)
+
 </div>

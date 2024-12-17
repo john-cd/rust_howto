@@ -63,5 +63,4 @@ fn test() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-
-// TODO P0 fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28
+// [rate_limited: fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 (P0)](https://github.com/john-cd/rust_howto/issues/177)

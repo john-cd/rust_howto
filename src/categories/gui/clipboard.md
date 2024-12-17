@@ -16,5 +16,5 @@ Image and text handling for the OS clipboard. A fork of `rust-clipboard` that su
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write; expand?
+[P2 write; expand](https://github.com/john-cd/rust_howto/issues/638)?
 </div>

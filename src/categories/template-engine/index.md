@@ -16,5 +16,6 @@ Crates designed to combine templates with data to produce result documents, usua
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: write
+[template-engine/index: write (P1)](https://github.com/john-cd/rust_howto/issues/482)
+
 </div>

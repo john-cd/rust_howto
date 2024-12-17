@@ -16,6 +16,11 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: write
-link to dev tools > proc macros
+[macros: write (P1)](https://github.com/john-cd/rust_howto/issues/548)
+[write_proc_macros: write (P2)](https://github.com/john-cd/rust_howto/issues/331)
+[compile_macros: write (P2)](https://github.com/john-cd/rust_howto/issues/327)
+[write_proc_macros.incl: examples' title (P2)](https://github.com/john-cd/rust_howto/issues/330)
+
+[macros: write (P1)](https://github.com/john-cd/rust_howto/issues/548)
+
 </div>

@@ -16,7 +16,6 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     // A Markdown inline link:
     // (?<name>  ) is a named capture group.
     // \s is a whitespace. \S is a not-whitespace.
-    // [^!] excludes !
     m.insert(
         "[text](http...)",
         Re(
@@ -31,7 +30,6 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
         Re(Regex::new(r"<(?<link>http.*?)>").unwrap(), vec!["link"]),
     );
     // A Markdown shortcut link
-    // [text] not preceded by ! or ], not followed by [ or <spaces>[ or (
     // or <spaces>( or :
     m.insert(
         "[text] ...",
@@ -138,3 +136,5 @@ fn main() {
 fn test() {
     main();
 }
+// [^!] excludes !
+// [text] not preceded by ! or ], not followed by [ or <spaces>[ or (

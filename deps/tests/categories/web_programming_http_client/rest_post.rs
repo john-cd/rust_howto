@@ -78,5 +78,4 @@ fn main() { println!("hello world!");}
 fn test() {
     println!("{:?}", main());
 }
-
-// TODO P1 rewrite so that a username and password are not required?
+// [rest_post: rewrite so that a username and password are not required? (P1)](https://github.com/john-cd/rust_howto/issues/178)

@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-    // TODO P1
     todo!();
 }
 // ANCHOR_END: example
@@ -10,3 +9,4 @@ fn main() {
 fn test() {
     main();
 }
+// [add stakker example](https://github.com/john-cd/rust_howto/issues/94)

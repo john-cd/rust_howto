@@ -16,5 +16,6 @@ Vectors can only store values that are the same type.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add
+[vectors: add (P1)](https://github.com/john-cd/rust_howto/issues/631)
+
 </div>

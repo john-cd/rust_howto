@@ -28,5 +28,6 @@ Shared solutions for particular situations specific to programming in Rust.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: organize / write
+[index: organize / write (P1)](https://github.com/john-cd/rust_howto/issues/469)
+
 </div>

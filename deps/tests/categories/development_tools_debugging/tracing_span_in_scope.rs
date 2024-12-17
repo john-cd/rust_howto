@@ -42,4 +42,4 @@ async fn main() {
 fn test() {
     main();
 }
-// TODO P0 does it print?
+// [tracing_span_in_scope: does it print? (P0)](https://github.com/john-cd/rust_howto/issues/158)

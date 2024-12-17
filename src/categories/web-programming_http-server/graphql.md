@@ -21,7 +21,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[graphql: write (P1)](https://github.com/john-cd/rust_howto/issues/511)
-
-TODO P2 integrate in seography graphql section?
+[graphql: write (P1)](https://github.com/john-cd/rust_howto/issues/511) integrate in seography graphql section?
 </div>

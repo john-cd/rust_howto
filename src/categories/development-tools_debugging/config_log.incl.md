@@ -6,5 +6,6 @@
 | [Log messages to a custom location][ex-development-tools_debugging-log-to-custom-location] | [![log][c-log-badge]][c-log] [![log4rs][c-log4rs-badge]][c-log4rs] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 
 <div class="hidden">
-TODO P1
+[config_log.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/318)
+
 </div>

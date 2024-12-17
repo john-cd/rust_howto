@@ -8,5 +8,6 @@ Dealing with money: accounting, trading, investments, taxes, banking and payment
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[finance/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/365)
+
 </div>

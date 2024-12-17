@@ -25,7 +25,7 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: organize
+[learning: organize (P1)](https://github.com/john-cd/rust_howto/issues/568)
 
 [`roadmap.sh` for Rust](https://roadmap.sh/rust)
 

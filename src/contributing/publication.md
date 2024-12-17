@@ -14,5 +14,6 @@ The `publish` folder contains a placeholder crate, so that the book could be loc
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: edit
+[publication: edit (P1)](https://github.com/john-cd/rust_howto/issues/531)
+
 </div>

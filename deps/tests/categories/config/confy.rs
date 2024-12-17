@@ -31,4 +31,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1
+// [confy:  (P1)](https://github.com/john-cd/rust_howto/issues/148)

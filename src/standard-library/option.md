@@ -61,5 +61,6 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 
 {{hi:Options}}
 <div class="hidden">
-TODO P1: finish Option page map, unwrap_or
+[option: finish Option page map, unwrap_or (P1)](https://github.com/john-cd/rust_howto/issues/625)
+
 </div>

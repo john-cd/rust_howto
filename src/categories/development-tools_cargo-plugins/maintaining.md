@@ -93,7 +93,8 @@ $ cargo semver-checks
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+[maintaining: fix (P1)](https://github.com/john-cd/rust_howto/issues/313)
+
 
 ## `cargo expand` {#cargo-expand}
 

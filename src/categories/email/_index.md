@@ -12,5 +12,6 @@ Crates to help with sending, receiving, formatting, and parsing email.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[email/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/343)
+
 </div>

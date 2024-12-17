@@ -12,5 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: locate crates
+[graphics_apis: locate crates (P2)](https://github.com/john-cd/rust_howto/issues/457)
+
 </div>

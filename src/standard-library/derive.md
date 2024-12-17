@@ -31,5 +31,6 @@ See also:
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
-TODO P1: review
+[derive: review (P1)](https://github.com/john-cd/rust_howto/issues/621)
+
 </div>

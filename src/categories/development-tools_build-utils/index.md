@@ -10,7 +10,8 @@ Utilities for build scripts and other build time steps.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 add
+[development-tools_build-utils/index: add (P2)](https://github.com/john-cd/rust_howto/issues/306)
+
 
 ## Use `sccache`
 

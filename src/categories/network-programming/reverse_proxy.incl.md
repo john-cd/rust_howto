@@ -6,5 +6,6 @@
 | [`pingora`][ex-network-programming-pingora] | [![pingora][c-pingora-badge]][c-pingora] | [![cat-network-programming][cat-network-programming-badge]][cat-network-programming] |
 
 <div class="hidden">
-TODO P1
+[reverse_proxy.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/423)
+
 </div>

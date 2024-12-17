@@ -21,5 +21,6 @@ or older resources, such as:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P0: organize
+[crates/index: organize (P0)](https://github.com/john-cd/rust_howto/issues/535)
+
 </div>

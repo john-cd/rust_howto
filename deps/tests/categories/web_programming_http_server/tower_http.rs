@@ -86,9 +86,9 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-// TODO P1 finish
-
 #[test]
 fn test() {
     main();
 }
+// [P1 finish](https://github.com/john-cd/rust_howto/issues/871)
+// [tower_http: finish (P1)](https://github.com/john-cd/rust_howto/issues/179)

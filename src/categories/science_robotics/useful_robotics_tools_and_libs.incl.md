@@ -6,5 +6,6 @@
 | [`bonsai-bt`][ex-science_robotics-bonsai-bt] | [![bonsai-bt][c-bonsai_bt-badge]][c-bonsai_bt] | [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics] |
 
 <div class="hidden">
-TODO P2
+[useful_robotics_tools_and_libs.incl: fix (P2)](https://github.com/john-cd/rust_howto/issues/478)
+
 </div>

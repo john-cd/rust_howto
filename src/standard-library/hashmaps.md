@@ -14,5 +14,6 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add
+[hashmaps: add (P1)](https://github.com/john-cd/rust_howto/issues/622)
+
 </div>

@@ -89,5 +89,7 @@ See [Async][p-async]⮳
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+[traits: review (P1)](https://github.com/john-cd/rust_howto/issues/561)
+[async_traits: review new Rust features (P1)](https://github.com/john-cd/rust_howto/issues/216)
+
 </div>

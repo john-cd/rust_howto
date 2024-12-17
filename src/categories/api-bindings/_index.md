@@ -12,5 +12,6 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 add other API bindings
+[api-bindings: add other API bindings (P2)](https://github.com/john-cd/rust_howto/issues/211)
+
 </div>

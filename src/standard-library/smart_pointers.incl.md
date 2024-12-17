@@ -5,5 +5,6 @@
 | [`RefCell`][ex-standard-library-refcell] | [![std][c-std-badge]][c-std] |
 
 <div class="hidden">
-TODO P1: edit recipe titles; add crate badges
+[smart_pointers.incl: edit recipe titles; add crate badges (P1)](https://github.com/john-cd/rust_howto/issues/627)
+
 </div>

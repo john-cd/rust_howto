@@ -14,5 +14,6 @@
 | [Async and traits][ex-language-async-and-traits] |
 
 <div class="hidden">
-TODO P1
+[traits.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/560)
+
 </div>

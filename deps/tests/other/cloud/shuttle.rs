@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-    // TODO P1
     todo!();
 }
 // ANCHOR_END: example
@@ -10,3 +9,4 @@ fn main() {
 fn test() {
     main();
 }
+// [add shuttle.rs example](https://github.com/john-cd/rust_howto/issues/49)

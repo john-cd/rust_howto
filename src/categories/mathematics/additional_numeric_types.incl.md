@@ -6,7 +6,8 @@
 | [Sort floats][ex-mathematics-sortable-floats] | [![ordered-float][c-ordered_float-badge]][c-ordered_float] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 
 <div class="hidden">
-TODO P1
+[additional_numeric_types.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/406)
+
 
 | [`num-bigint`][ex-mathematics-num-bigint] | [![num-bigint][c-num_bigint-badge]][c-num_bigint] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
 | [`num`][ex-mathematics-num] | [![num][c-num-badge]][c-num] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |

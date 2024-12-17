@@ -40,6 +40,8 @@ Web framework with a focus on usability, security, extensibility, and speed.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: organize
-link to gRPC page
+[other_frameworks: organize (P1)](https://github.com/john-cd/rust_howto/issues/518)
+
+[other_frameworks: organize (P1)](https://github.com/john-cd/rust_howto/issues/518)
+
 </div>

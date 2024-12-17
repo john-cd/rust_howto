@@ -59,5 +59,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: locate libs, organize, write
+[useful_robotics_tools_and_libs: locate libs, organize, write (P2)](https://github.com/john-cd/rust_howto/issues/479)
+
 </div>

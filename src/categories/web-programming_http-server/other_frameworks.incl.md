@@ -4,5 +4,6 @@
 | [`leptos`][ex-web-programming_http-server-leptos] | [![leptos][c-leptos-badge]][c-leptos] | [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server] |
 
 <div class="hidden">
-TODO P1
+[other_frameworks.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/517)
+
 </div>

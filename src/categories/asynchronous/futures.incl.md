@@ -5,5 +5,6 @@
 | [Map, then, either, flatten][ex-asynchronous-map-then-either-flatten] | [![futures][c-futures-badge]][c-futures] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-TODO P1
+[futures.incl:  fix (P1)](https://github.com/john-cd/rust_howto/issues/217)
+
 </div>

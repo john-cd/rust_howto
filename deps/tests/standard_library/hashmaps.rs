@@ -28,4 +28,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P1
+// [hashmaps:  example (P1)](https://github.com/john-cd/rust_howto/issues/185)

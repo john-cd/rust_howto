@@ -4,5 +4,6 @@
 | [`use` keyword][ex-language-use-keyword] |
 
 <div class="hidden">
-TODO P1
+[modules.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/552)
+
 </div>

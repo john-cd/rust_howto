@@ -79,4 +79,4 @@ fn main() -> anyhow::Result<()> {
     iterate();
     Ok(())
 }
-// TODO P0 improve
+// [progress: improve (P0)](https://github.com/john-cd/rust_howto/issues/142)

@@ -1,18 +1,18 @@
 // ANCHOR: example
-// extern "C" {
-//     fn multiply(x: i32, y: i32) -> i32;
-// }
+unsafe extern "C" {
+    fn multiply(x: i32, y: i32) -> i32;
+}
 
-// fn main() {
-//     unsafe {
-//         println!("{}", multiply(5, 7));
-//     }
-// }
+fn main() {
+    unsafe {
+        println!("{}", multiply(5, 7));
+    }
+}
 // ANCHOR_END: example
 
-// // TODO P1
-// #[test]
-// #[ignore]
-// fn test() {
-//     main();
-// }
+#[test]
+#[ignore]
+fn test() {
+    main();
+}
+// [P1  deal with extern](https://github.com/john-cd/rust_howto/issues/898)

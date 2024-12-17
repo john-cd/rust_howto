@@ -16,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write; move to written-in-rust?
+[P1 write; move to written-in-rust](https://github.com/john-cd/rust_howto/issues/639)?
 </div>

@@ -52,6 +52,7 @@ On the other hand, when bringing in structs, enums, and other items with use, it
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+[modules: review (P1)](https://github.com/john-cd/rust_howto/issues/553)
+
 add rust-module-system
 </div>

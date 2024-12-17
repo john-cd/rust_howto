@@ -7,7 +7,7 @@
 
 <div class="hidden">
 [mdbook.incl: titles (P1)](https://github.com/john-cd/rust_howto/issues/298)
-TODO P1 add
+
 | [`mdbook-cmdrun`][ex-documentation-mdbook-cmdrun] | [![mdbook-cmdrun][c-mdbook_cmdrun-badge]][c-mdbook_cmdrun] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Create a journal with `mdbook-journal`][ex-documentation-mdbook-journal] | [![mdbook-journal][c-mdbook_journal-badge]][c-mdbook_journal] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Check links with `mdbook-linkcheck`][ex-documentation-mdbook-linkcheck] | [![mdbook-linkcheck][c-mdbook_linkcheck-badge]][c-mdbook_linkcheck] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

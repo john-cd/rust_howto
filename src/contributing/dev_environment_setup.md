@@ -39,7 +39,7 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: review
+[dev_environment_setup: review (P1)](https://github.com/john-cd/rust_howto/issues/527)
 
 [dev_environment_setup: windows install (P1)](https://github.com/john-cd/rust_howto/issues/528)
 

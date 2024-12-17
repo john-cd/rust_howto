@@ -10,5 +10,6 @@
 | [See also][ex-development-tools_debugging-related-crates] | [![tracing][c-tracing-badge]][c-tracing] | [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging] |
 
 <div class="hidden">
-TODO P1
+[tracing.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/321)
+
 </div>

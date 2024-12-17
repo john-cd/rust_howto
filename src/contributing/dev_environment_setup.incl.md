@@ -5,5 +5,6 @@
 | [Other][ex-contributing-other] |
 
 <div class="hidden">
-TODO P1
+[dev_environment_setup.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/526)
+
 </div>

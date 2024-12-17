@@ -43,7 +43,6 @@ async fn do_something() {
 // We replace `fn main()` by `async fn main()` and declare which
 // executor runtime we'll use - in this case, Tokio. The runtime crate
 // must be added to `Cargo.toml`: `tokio = { version = "1", features =
-// ["full"] }` Technically, the #[tokio::main] attribute is a macro
 // that transforms it into a synchronous fn main() that initializes a
 // runtime instance and executes the async main function.
 #[tokio::main]
@@ -58,3 +57,4 @@ async fn main() {
 fn test() {
     main();
 }
+// ["full"] }` Technically, the #[tokio::main] attribute is a macro

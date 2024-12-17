@@ -54,3 +54,4 @@ fn test() -> anyhow::Result<()>{
     main()?;
     Ok(())
 }
+// [finish deadpool2.rs example and include in the book](https://github.com/john-cd/rust_howto/issues/46)

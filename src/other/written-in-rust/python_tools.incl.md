@@ -6,5 +6,6 @@
 | [`uv`][ex-written-in-rust-uv] | [`uv`][uv-github]⮳ |
 
 <div class="hidden">
-TODO P1
+[python_tools.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/616)
+
 </div>

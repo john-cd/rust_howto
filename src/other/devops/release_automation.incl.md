@@ -4,5 +4,6 @@
 | [`release-plz`][ex-devops-release-plz] | [![release-plz][c-release_plz-badge]][c-release_plz] |
 
 <div class="hidden">
-TODO P1
+[release_automation.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/603)
+
 </div>

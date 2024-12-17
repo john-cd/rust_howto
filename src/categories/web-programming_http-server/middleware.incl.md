@@ -5,5 +5,6 @@
 | [Investigate alternatives to `tower`][ex-web-programming_http-server-alternatives] | [![trillium][c-trillium-badge]][c-trillium] | [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server] |
 
 <div class="hidden">
-TODO P1
+[middleware.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/516)
+
 </div>

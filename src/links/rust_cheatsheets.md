@@ -15,7 +15,8 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add more
+[rust_cheatsheets: add more (P1)](https://github.com/john-cd/rust_howto/issues/570)
+
 
 [A comparison of Rust’s borrow checker to the one in C#][csborrow]
 

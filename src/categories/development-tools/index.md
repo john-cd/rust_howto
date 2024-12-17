@@ -50,8 +50,8 @@ Tools that provide developer-facing features such as testing, debugging, linting
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 add
 [development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
+[index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
 fd-find as a more human-friendly alternative to find which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
 

@@ -76,6 +76,6 @@ Alternatives to the Tokio async ecosystem include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 [async-what-is-blocking][blog-async-what-is-blocking]
+[P1 [async-what-is-blocking][blog-async-what-is-blocking]](https://github.com/john-cd/rust_howto/issues/633)
 [communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
 </div>

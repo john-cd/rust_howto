@@ -28,5 +28,5 @@ bon - compile-time-checked builders, named function arguments via builders (foo(
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write / add to index + SUMMARY
+[P2 write and add to index and SUMMARY](https://github.com/john-cd/rust_howto/issues/648)
 </div>

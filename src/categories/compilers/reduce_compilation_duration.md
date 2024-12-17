@@ -61,5 +61,5 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 <div class="hidden">
 [reduce_compilation_duration: review (P2)](https://github.com/john-cd/rust_howto/issues/245)
-TODO P2 fix reference section
+fix reference section
 </div>

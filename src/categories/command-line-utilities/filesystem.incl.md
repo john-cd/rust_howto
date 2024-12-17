@@ -7,5 +7,6 @@
 | [`open`][ex-command-line-utilities-open] | [![open][c-open-badge]][c-open] | [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities] |
 
 <div class="hidden">
-TODO P1
+[filesystem.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/236)
+
 </div>

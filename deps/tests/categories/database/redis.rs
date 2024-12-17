@@ -16,7 +16,6 @@ fn connect() -> Result<Connection> {
         Err(_) => "redis",
     };
     // The URL format is
-    // redis://[<username>][:<password>@]<hostname>[:port][/[<db>][?
     // protocol=<protocol>]] For example, "redis://127.0.0.1/"
     let redis_conn_url =
         format!("{}://:{}@{}", uri_scheme, redis_password, redis_host_name);
@@ -51,3 +50,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
+// redis://[<username>][:<password>@]<hostname>[:port][/[<db>][?

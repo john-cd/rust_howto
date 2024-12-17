@@ -130,6 +130,29 @@ Consult the links section and its books page for other recommendations.
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO P0 polish
+[index: polish (P0)](https://github.com/john-cd/rust_howto/issues/536)
+[index: organize (P1)](https://github.com/john-cd/rust_howto/issues/567)
+[crates/index: organize (P0)](https://github.com/john-cd/rust_howto/issues/535)
+[contributing/index: edit (P1)](https://github.com/john-cd/rust_howto/issues/529)
+[standard-library/index: review (P1)](https://github.com/john-cd/rust_howto/issues/623)
+[os/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/429)
+[cryptography: review / incorporate (P2)](https://github.com/john-cd/rust_howto/issues/274)
+[concurrency: add somewhere [Rust Atomics][book-rust-atomics] (P1)](https://github.com/john-cd/rust_howto/issues/263)
+[auth: add Oauth? (P2)](https://github.com/john-cd/rust_howto/issues/226)
+[web-programming/index: cover http crate (P1)](https://github.com/john-cd/rust_howto/issues/500)
+[web-programming/index: organize (P1)](https://github.com/john-cd/rust_howto/issues/499)
+[template-engine/index: write (P1)](https://github.com/john-cd/rust_howto/issues/482)
+[index: organize / write (P1)](https://github.com/john-cd/rust_howto/issues/469)
+[memory-management/index: organize (P1)](https://github.com/john-cd/rust_howto/issues/410)
+[index: expand (P2)](https://github.com/john-cd/rust_howto/issues/398)
+[development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
+[data-structures: expand (P1)](https://github.com/john-cd/rust_howto/issues/280)
+[index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
+[web-programming_http-client/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/505)
+[development-tools_cargo-plugins/index: review (P1)](https://github.com/john-cd/rust_howto/issues/311)
+[development-tools_build-utils/index: add (P2)](https://github.com/john-cd/rust_howto/issues/306)
+[polish the links section](https://github.com/john-cd/rust_howto/issues/32)
+[expand hardware-support/](https://github.com/john-cd/rust_howto/issues/70)
+
 review about2
 </div>

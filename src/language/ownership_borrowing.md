@@ -52,7 +52,8 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: add text
+[ownership_borrowing: add text (P1)](https://github.com/john-cd/rust_howto/issues/554)
+
 
 ## Memory safety {#memory-safety}
 

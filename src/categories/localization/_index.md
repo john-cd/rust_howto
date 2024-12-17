@@ -10,5 +10,6 @@ Tooling to help adapting internationalized software to specific languages and re
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[localization/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/405)
+
 </div>

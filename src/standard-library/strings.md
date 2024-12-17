@@ -37,5 +37,5 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 <div class="hidden">
-TODO P1: review
+[strings: review (P1)](https://github.com/john-cd/rust_howto/issues/630)
 </div>

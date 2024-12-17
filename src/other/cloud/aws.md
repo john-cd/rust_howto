@@ -36,5 +36,6 @@ Use the AWS SDK from within a Lambda function:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: write
+[aws: write (P1)](https://github.com/john-cd/rust_howto/issues/574)
+
 </div>

@@ -10,5 +10,6 @@ Crates that are able to function without the Rust standard library.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write
+[no-std/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/427)
+
 </div>

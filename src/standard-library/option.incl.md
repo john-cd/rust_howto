@@ -6,5 +6,6 @@
 | [Use combinators][ex-standard-library-combinators] | [![std][c-std-badge]][c-std] |
 
 <div class="hidden">
-TODO P1
+[option.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/624)
+
 </div>

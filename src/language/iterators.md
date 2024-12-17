@@ -14,5 +14,6 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: edit
+[iterators: edit (P1)](https://github.com/john-cd/rust_howto/issues/546)
+
 </div>

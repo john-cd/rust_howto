@@ -5,5 +5,6 @@
 | [`databend`][ex-data-processing-databend] | [datafuselabs databend][databend-github]⮳ |
 
 <div class="hidden">
-TODO P1
+[data_engineering.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/588)
+
 </div>

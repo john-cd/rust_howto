@@ -18,5 +18,6 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: organize / edit
+[dataframes: organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/587)
+
 </div>

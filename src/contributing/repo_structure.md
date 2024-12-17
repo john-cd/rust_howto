@@ -15,7 +15,8 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1: edit
+[repo_structure: edit (P1)](https://github.com/john-cd/rust_howto/issues/533)
+
 
 ## All examples are fully and continuously tested {#examples-fully-tested}
 

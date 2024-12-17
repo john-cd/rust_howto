@@ -40,5 +40,6 @@ Native Windows GUI: [![native_windows_gui-github][c-native_windows_gui-github-ba
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2: write; add examples for `windows` and winapi
+[windows: write; add examples for "windows" and winapi (P2)](https://github.com/john-cd/rust_howto/issues/438)
+
 </div>

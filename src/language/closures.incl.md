@@ -5,5 +5,6 @@
 | [Closures as input parameters][ex-language-closures-as-input-parameters] |
 
 <div class="hidden">
-TODO P1
+[closures.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/538)
+
 </div>

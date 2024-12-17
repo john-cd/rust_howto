@@ -32,4 +32,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P0 print
+// [toml: print (P0)](https://github.com/john-cd/rust_howto/issues/163)

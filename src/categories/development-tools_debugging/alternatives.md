@@ -81,6 +81,5 @@ fn main() {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write / organize together with the old log content?
-incorporate into SUMMARY, etc
+[P1 write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
 </div>

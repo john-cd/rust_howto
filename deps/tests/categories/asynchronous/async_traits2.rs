@@ -30,4 +30,4 @@ fn test() {
     main();
 }
 
-// TODO P0 deadcode?
+// [async_traits2: deadcode? (P0)](https://github.com/john-cd/rust_howto/issues/144)

@@ -10,5 +10,6 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[os_unix-apis/_index: review (P2)](https://github.com/john-cd/rust_howto/issues/437)
+
 </div>

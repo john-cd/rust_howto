@@ -23,4 +23,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P0 review
+// [error_handling: review (P0)](https://github.com/john-cd/rust_howto/issues/169)

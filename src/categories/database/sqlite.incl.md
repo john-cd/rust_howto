@@ -5,5 +5,6 @@
 | [Using transactions][ex-database-transaction] | [![rusqlite][c-rusqlite-badge]][c-rusqlite] | [![cat-database][cat-database-badge]][cat-database] |
 
 <div class="hidden">
-TODO P1
+[sqlite.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/289)
+
 </div>

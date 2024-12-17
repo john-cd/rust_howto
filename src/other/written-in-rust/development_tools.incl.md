@@ -8,7 +8,7 @@
 | [Build tools][ex-written-in-rust-build-tools] |
 
 <div class="hidden">
-TODO P1
+[development_tools.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/611)
 
 | [JavaScript tooling][ex-written-in-rust-javascript-tooling] |
 

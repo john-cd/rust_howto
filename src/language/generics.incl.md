@@ -4,5 +4,6 @@
 | [Generic structs][ex-language-generic-structs] |
 
 <div class="hidden">
-TODO P1
+[generics.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/544)
+
 </div>

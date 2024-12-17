@@ -18,8 +18,9 @@ fn main() {
 // ANCHOR_END: example
 
 // BEWARE: supertrait are NOT inheritance!
-// TODO P1
 #[test]
 fn test() {
     main();
 }
+// [P1](https://github.com/john-cd/rust_howto/issues/877)
+// [traits3: example  (P1)](https://github.com/john-cd/rust_howto/issues/183)

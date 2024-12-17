@@ -10,5 +10,6 @@ Encode or decode binary data in multimedia formats.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[multimedia_encoding/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/418)
+
 </div>

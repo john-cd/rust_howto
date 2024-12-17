@@ -10,5 +10,5 @@ Crates that focus on some individual part of accelerating the development of gam
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 expand
+[game-development/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/367)
 </div>

@@ -42,8 +42,5 @@ Iterate over the [`tar::Archive::entries`][c-tar::Archive::entries]{{hi:tar::Arc
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tar: review (P1)](https://github.com/john-cd/rust_howto/issues/253)
-TODO P1 tar_decompress.rs is noplayground - fix?
-TODO P1 tar_compress.rs is noplayground - fix?
-TODO P1 tar_strip_prefix.rs is noplayground - fix?
+[tar: review (P1)](https://github.com/john-cd/rust_howto/issues/253) tar_decompress.rs is noplayground - fix? tar_compress.rs is noplayground - fix? tar_strip_prefix.rs is noplayground - fix?
 </div>

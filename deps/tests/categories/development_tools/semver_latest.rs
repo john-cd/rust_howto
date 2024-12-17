@@ -45,4 +45,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P0 review - add println!("{}")
+// [semver_latest: review - add println!("{}") (P0)](https://github.com/john-cd/rust_howto/issues/156)

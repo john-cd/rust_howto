@@ -19,10 +19,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO P1 flaky test
 #[ignore]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// [P1 flaky test](https://github.com/john-cd/rust_howto/issues/834)
+// [retain: flaky test (P1)](https://github.com/john-cd/rust_howto/issues/171)

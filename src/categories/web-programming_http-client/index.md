@@ -24,5 +24,6 @@ Make HTTP network requests.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1
+[web-programming_http-client/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/505)
+
 </div>

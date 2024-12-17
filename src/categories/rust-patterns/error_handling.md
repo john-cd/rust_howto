@@ -70,7 +70,7 @@ The below recipe will tell how long the system has been running by opening the U
 
 [![reqwest][c-reqwest-badge]][c-reqwest] [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io] [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github] [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">TODO P1 move somwhere else</div>
+Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">[P1 move somwhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/rust_patterns/retain.rs:example}}

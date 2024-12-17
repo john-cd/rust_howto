@@ -4,5 +4,6 @@
 | [Cache your compilation][ex-devops-compilation-caching] | [`rust-cache`][c-rust_cache-github]⮳ |
 
 <div class="hidden">
-TODO P1
+[github_actions.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/599)
+
 </div>

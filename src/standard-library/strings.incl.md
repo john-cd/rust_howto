@@ -5,5 +5,6 @@
 | [Concatenate strings][ex-standard-library-string-concatenation] | [![std][c-std-badge]][c-std] |
 
 <div class="hidden">
-TODO P1: review
+[strings.incl: review (P1)](https://github.com/john-cd/rust_howto/issues/629)
+
 </div>

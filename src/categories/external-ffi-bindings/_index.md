@@ -8,5 +8,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2
+[external-ffi-bindings/_index: fix (P2)](https://github.com/john-cd/rust_howto/issues/356)
+
 </div>

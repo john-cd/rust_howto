@@ -14,7 +14,7 @@ fn main() -> Result<()> {
         build: semver::BuildMetadata::EMPTY,
     });
 
-    // TODO P0 increment_*() no longer exist; remove example?
+    // TODO P0 increment_*() no longer exist; remove example maybe
 
     // parsed_version.increment_patch();
     // assert_eq!(parsed_version.to_string(), "0.2.7");
