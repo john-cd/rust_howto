@@ -6,8 +6,8 @@ use std::cell::RefCell;
 // references to it. `RefCell` dynamically borrow checks at runtime,
 // unlike Rust's standard borrowing rules (checks at compile time).
 // Attempts to violate borrowing rules (like having multiple mutable borrows)
-// will cause a panic at runtime. `RefCell` is single-threaded. The
-// corresponding `Sync` version of `RefCell<T>` is `RwLock<T>`.
+// will cause a panic at runtime. `RefCell` is single-threaded.
+// The corresponding `Sync` version of `RefCell<T>` is `RwLock<T>`.
 fn main() {
     // Create a RefCell containing a vector of integers
     let data = RefCell::new(vec![1, 2, 3, 4, 5]);
