@@ -1,8 +1,8 @@
 // ANCHOR: example
-#![allow(dead_code)]
-
+#[allow(dead_code)]
 trait Container {
-    fn items(&self) -> impl Iterator<Item = u8>; // <-- return Impl in a trait
+    // Return `Impl` in a trait
+    fn items(&self) -> impl Iterator<Item = u8>;
 }
 
 struct MyContainer {
@@ -29,5 +29,3 @@ fn main() {
 fn test() {
     main();
 }
-
-// [async_traits2: deadcode? (P0)](https://github.com/john-cd/rust_howto/issues/144)
