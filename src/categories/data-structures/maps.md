@@ -11,7 +11,7 @@
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-A HashMap that seperately keeps track of insertion order and allows you to efficiently iterate over its elements in that order
+`indexmap` offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
 
 ```rust,editable
 {{#include ../../../deps/tests/categories/data_structures/indexmap.rs:example}}
