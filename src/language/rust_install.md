@@ -3,10 +3,6 @@
 {{#include rust_install.incl.md}}
 
 [Install Rust][rust-install-rust]{{hi:Rust installation}}⮳
-<div class="hidden">
-[rust_install: header (P1)](https://github.com/john-cd/rust_howto/issues/555)
-
-</div>
 
 ## Install Rust and create a first project {#rust-install}
 
@@ -53,6 +49,6 @@ cargo run # run the executable
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_install: expand (P1)](https://github.com/john-cd/rust_howto/issues/556)
+[rust_install](https://github.com/john-cd/rust_howto/issues/556)
 
 </div>
