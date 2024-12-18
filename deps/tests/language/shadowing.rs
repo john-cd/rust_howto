@@ -1,6 +1,6 @@
 // ANCHOR: example
 fn main() {
-    // `x`` is an immutable variable
+    // `x` is an immutable variable
     let x = 5;
     // ERROR: x = x +1;
 

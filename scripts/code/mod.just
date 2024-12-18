@@ -15,7 +15,7 @@ fmtall:
 # Check all code
 checkall:
   cargo check --workspace --all-targets --locked
-# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias b := build
 
@@ -34,7 +34,7 @@ alias ba := buildall
 # Build all code
 buildall:
   cargo build --workspace --all-targets --locked
-# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
 alias ca := clippyall
@@ -59,7 +59,7 @@ alias ta := testall
 # Test all code
 testall: _clean_temp_dir && _clean_temp_dir
   cargo test --workspace --all-targets --locked || true
-# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias nta := nextestall
 

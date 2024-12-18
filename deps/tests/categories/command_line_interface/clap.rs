@@ -76,7 +76,7 @@ fn main() -> Result<()> {
     println!("Path: {:?}", cli.path);
 
     // Use `unwrap_or` to set defaults for optional arguments
-    // (or use `default_value_t`` as above).
+    // (or use `default_value_t` as above).
     println!("Pattern: {:?}", cli.pattern.unwrap_or("".to_string()));
 
     // You can see how many times a particular flag or argument occurred
