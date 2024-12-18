@@ -131,34 +131,3 @@ _clean:
 
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
 # prep: spell sortrefs fmtall clean clippyall testall docs::_builddocall buildbook
-
-create_issues_for_examples:
-  #! /bin/bash
-  set -euo pipefail
-  IFS=$'\n\t'
-  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
-  do
-    base=$(basename $file)
-    rel=$(realpath --relative-to={{justfile_directory()}}/deps/tests $file)
-    echo ">> $rel"
-    for todo in $(sed -nE 's~^ *// *TODO(.*)$~\1~pg' $file)
-    do
-      todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
-      echo ">${todo}<"
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/deps/tests/${rel})" --label "code example,auto")
-      echo "$issue_url"
-      # Escape [ and ]
-      sed -E -i 's~TODO('${todo}')~[\1]('${issue_url}')~' $file
-      sleep 3
-    done
-  done
-
-moveline:
-  #! /bin/bash
-  set -euo pipefail
-  IFS=$'\n\t'
-  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
-  do
-   cat <(grep -vE '\s*//\s*\[.*' $file) <(grep -E '\s*//\s*\[.*' $file) > /tmp/temp.rs
-   mv -f /tmp/temp.rs $file
-  done

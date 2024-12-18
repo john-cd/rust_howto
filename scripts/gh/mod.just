@@ -43,24 +43,26 @@ create_issues_for_markdown:
     done
   done
 
-## Create an GH issue for each TODO line in Rust code (.rs) files
-# create_issues_for_examples:
-#   #! /bin/bash
-#   set -euo pipefail
-#   IFS=$'\n\t'
-#   for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
-#   do
-#     todos=$(sed -nE 's~^//\s*TODO\s*(P[0-9])?\s*(.*)$~\2 (\1)~pg' $file)
-#     for todo in $todos
-#     do
-#       base=$(basename $file '.rs')
-#       echo "${base}: ${todo}"
-#       gh issue create --title "${base}: ${todo}" --body "$file" --label "code example" --label "auto"
-#       echo "--------------------------"
-#       sleep 2
-#     done
-#   done
-# TODO: add the GitHub url back to the .rs file
+create_issues_for_examples:
+  #! /bin/bash
+  set -euo pipefail
+  IFS=$'\n\t'
+  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
+  do
+    base=$(basename $file)
+    rel=$(realpath --relative-to={{justfile_directory()}}/deps/tests $file)
+    echo ">> $rel"
+    for todo in $(sed -nE 's~^ *// *TODO(.*)$~\1~pg' $file)
+    do
+      todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
+      echo ">${todo}<"
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/deps/tests/${rel})" --label "code example,auto")
+      echo "$issue_url"
+      # Escape [ and ]
+      sed -E -i 's~TODO('${todo}')~[\1]('${issue_url}')~' $file
+      sleep 3
+    done
+  done
 
 ## Delete issues with --label "markdown,auto"
 # delete_issues:
@@ -120,6 +122,7 @@ add_gh_links_to_code:
     fi
   done
 
+## Deduplicate .rs file (no sort - dup. lines must be consecutive)
 #dedupe:
 #  #! /bin/bash
 #  set -euo pipefail
@@ -130,4 +133,15 @@ add_gh_links_to_code:
 #    #sed -nr '$!N;/^(.*)\n\1$/!P;D' $file > /tmp/temp.rs
 #    uniq $file > /tmp/temp.rs
 #    mv -f /tmp/temp.rs $file
+#  done
+
+## move // [...]... lines to the bottom of the file
+#moveline:
+#  #! /bin/bash
+#  set -euo pipefail
+#  IFS=$'\n\t'
+#  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
+#  do
+#   cat <(grep -vE '\s*//\s*\[.*' $file) <(grep -E '\s*//\s*\[.*' $file) > /tmp/temp.rs
+#   mv -f /tmp/temp.rs $file
 #  done
