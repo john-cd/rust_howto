@@ -1,4 +1,4 @@
-#![cfg(feature = "linux_only")]
+#![cfg(target_os = "linux")]
 
 mod initialization;
 mod insert_select;
