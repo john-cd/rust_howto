@@ -14,8 +14,6 @@ fn main() -> Result<()> {
         build: semver::BuildMetadata::EMPTY,
     });
 
-    // TODO P0 increment_*() no longer exist; remove example maybe
-
     // parsed_version.increment_patch();
     // assert_eq!(parsed_version.to_string(), "0.2.7");
     // println!("New patch release: v{}", parsed_version);
@@ -37,3 +35,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
+// [TODO P0 increment_*() no longer exist; remove example maybe](https://github.com/john-cd/rust_howto/issues/903)

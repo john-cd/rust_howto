@@ -21,10 +21,10 @@ unsafe extern "C" {
 }
 
 fn main() -> Result<()> {
-    //unsafe { hello() }
+    // unsafe { hello() }
     let name = prompt("What's your name? ")?;
     let c_name = CString::new(name)?;
-    //unsafe { greet(c_name.as_ptr()) }
+    // unsafe { greet(c_name.as_ptr()) }
     Ok(())
 }
 // ANCHOR_END: example
