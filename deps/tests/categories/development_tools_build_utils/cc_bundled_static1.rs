@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
 // ANCHOR: example
 use std::ffi::CString;
 use std::os::raw::c_char;
@@ -19,11 +21,10 @@ unsafe extern "C" {
 }
 
 fn main() -> Result<()> {
-    unsafe { hello() }
+    //unsafe { hello() }
     let name = prompt("What's your name? ")?;
     let c_name = CString::new(name)?;
-    unsafe { greet(c_name.as_ptr()) }
-    println!("");
+    //unsafe { greet(c_name.as_ptr()) }
     Ok(())
 }
 // ANCHOR_END: example
@@ -33,4 +34,4 @@ fn main() -> Result<()> {
 fn test() {
     println!("{:?}", main());
 }
-// [P1 not working](https://github.com/john-cd/rust_howto/issues/900)
+// [P1 deal with extern](https://github.com/john-cd/rust_howto/issues/900)

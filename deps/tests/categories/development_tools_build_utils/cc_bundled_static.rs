@@ -1,8 +1,7 @@
 // ANCHOR: example
 fn main() {
-    cc::Build::new().file("src/hello.c").compile("hello");
-    // outputs `libhello.a`
-    println!("");
+    // cc::Build::new().file("src/hello.c").compile("hello");
+    // // outputs `libhello.a`
 }
 // ANCHOR_END: example
 

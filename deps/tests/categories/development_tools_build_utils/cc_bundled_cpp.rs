@@ -1,10 +1,10 @@
 // ANCHOR: example
 fn main() {
-    cc::Build::new()
-        .cpp(true)
-        .file("src/foo.cpp")
-        .compile("foo");
-    println!("");
+    // cc::Build::new()
+    //     .cpp(true)
+    //     .file("src/foo.cpp")
+    //     .compile("foo");
+    // println!("");
 }
 // ANCHOR_END: example
 
