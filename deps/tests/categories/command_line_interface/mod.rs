@@ -4,6 +4,7 @@ mod ansi_term_basic2;
 mod clap;
 mod clap_basic;
 mod indicatif;
+mod indicatif2;
 mod inquire;
 mod lexopt;
 mod pico_args;

@@ -29,8 +29,12 @@
 
 This currently primarily provides progress bars and spinners as well as basic color support.{{hi:Progress bars and spinners}}
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/command_line_interface/indicatif.rs:example}}
+```
+
+```rust,editable,noplayground
+{{#include ../../../deps/tests/categories/command_line_interface/indicatif2.rs:example}}
 ```
 
 {{#include refs.incl.md}}
