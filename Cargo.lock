@@ -17048,6 +17048,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "playground"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "tracing",
+ "tracing-subscriber",
+ "walkdir",
+]
+
+[[package]]
 name = "plist"
 version = "1.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

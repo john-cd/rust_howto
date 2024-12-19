@@ -2,16 +2,16 @@
 //!
 //! We no longer use `skeptic` to test the code examples in the book.
 //!
-//! All book examples are currently written as tests and stored as separate .rs files under `deps/tests`,
-//! which are included in the markdown.
+//! All book examples are currently written as tests and stored as separate .rs
+//! files under `deps/tests`, which are included in the markdown.
 //!
 //! See https://crates.io/crates/skeptic and `deps/Cargo.toml` for configuration.
 
 use std::path::Path;
 
-use anyhow::bail;
 // use anyhow::Context;
 use anyhow::Result;
+use anyhow::bail;
 use walkdir::WalkDir;
 
 const REMOVED_TESTS: &[&str] = &[
