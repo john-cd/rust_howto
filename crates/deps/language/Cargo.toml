@@ -19,3 +19,5 @@ readme = "README.md"
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
+anyhow = "1.0.94"
+tokio = "1.42.0"

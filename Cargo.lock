@@ -13361,6 +13361,10 @@ dependencies = [
 [[package]]
 name = "language"
 version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "tokio",
+]
 
 [[package]]
 name = "language-tags"
