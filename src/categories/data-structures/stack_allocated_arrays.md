@@ -40,7 +40,7 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Stack-allocated arrays in 100% safe Rust code. `tinyvec` requires items to implement the Default trait.
+The `tinyvec` crate provides a way to work with vectors that can store a small number of elements inline, without heap allocation, and dynamically grow to the heap if necessary. It is in 100% safe Rust code. It's similar to `smallvec` but with a smaller feature set and no dependencies. `tinyvec` requires items to implement the `Default` trait.
 
 ```rust,editable,noplayground
 {{#include ../../../deps/tests/categories/data_structures/tinyvec.rs:example}}
@@ -51,4 +51,7 @@ Stack-allocated arrays in 100% safe Rust code. `tinyvec` requires items to imple
 
 <div class="hidden">
 [stack_allocated_arrays: write (P1)](https://github.com/john-cd/rust_howto/issues/282)
+
+- Review https://docs.rs/tinyvec/latest/tinyvec/
+
 </div>
