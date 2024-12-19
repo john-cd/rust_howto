@@ -19,3 +19,6 @@ readme = "README.md"
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
+anyhow = "1.0.94"
+rand = "0.8.5"
+url = "2.5.4"
