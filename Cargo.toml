@@ -7,7 +7,8 @@ members = [
     "crates/playground",
     "crates/publish",
     "crates/tools/*",
-    "crates/xmpl/*"
+    "crates/xmpl/*",
+    "crates/deps/*"
     ]
 exclude = []
 # Only check / build the main crate by default (check / build all with `--workspace`)
