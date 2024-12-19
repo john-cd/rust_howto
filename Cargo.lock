@@ -216,6 +216,24 @@ checksum = "8b5ace29ee3216de37c0546865ad08edef58b0f9e76838ed8959a84a990e58c5"
 [[package]]
 name = "ab"
 version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "async-channel 2.3.1",
+ "async-trait",
+ "futures",
+ "postage",
+ "pyo3",
+ "pyoxidizer",
+ "rand 0.8.5",
+ "rand_distr",
+ "rayon",
+ "reqwest 0.12.9",
+ "tempfile",
+ "tokio",
+ "tokio-graceful-shutdown",
+ "tracing",
+ "tracing-subscriber",
+]
 
 [[package]]
 name = "ab_glyph"
@@ -5216,9 +5234,9 @@ dependencies = [
 
 [[package]]
 name = "config"
-version = "0.15.2"
+version = "0.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87a6a7d8628236381296f45bc661db1e67d2f90fa2e00b7d2fc78e2ed0f6cde8"
+checksum = "d73c1a90f0e9b8aa27881dedf820679d851991c138a3371d6364a38ea0a59552"
 dependencies = [
  "async-trait",
  "convert_case 0.6.0",
@@ -6965,7 +6983,7 @@ dependencies = [
  "clap-verbosity-flag",
  "concat-string",
  "concat_strs",
- "config 0.15.2",
+ "config 0.15.3",
  "confy",
  "console",
  "cornucopia",

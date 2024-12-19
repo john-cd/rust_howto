@@ -19,3 +19,25 @@ readme = "README.md"
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
+anyhow = "1.0.94"
+async-channel = "2.3.1"
+async-trait = "0.1.83"
+futures = "0.3.31"
+postage = "0.5.0"
+pyo3 = { version = "0.21.0", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
+pyoxidizer = { version = "0.24.0", optional = true }
+rand = "0.8.5"
+rand_distr = "0.4.3"
+rayon = "1.10.0"
+reqwest = "0.12.9"
+tempfile = "3.14.0"
+tokio = { version = "1.42.0", features = ["full"] }
+tokio-graceful-shutdown = "0.15.2"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+
+[features]
+
+## Features for code examples that requires additional software installed e.g. python, perl...
+## Useful when using Windows
+python = ["dep:pyo3", "dep:pyoxidizer"]

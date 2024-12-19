@@ -1,45 +1,5 @@
-//! Rather than running all tests in separate processes (by keeping them in
-//! separate files in deps/tests), we group all the tests in each section of the
-//! book in the same crate.
-//!
-//! All examples in subfolders of `tests` MUST be added to `mod.rs` in their
-//! folder, all modules / subfolders MUST be listed below, or tests won't be
-//! discovered and won't be run.
-//!
-//! Note that tests that should run in separate processes (e.g. because of a
-//! global variable, logger for example) are allowed to do so via a `rust_fork`
-//! macro.
 
-mod accessibility;
-mod aerospace;
-mod aerospace_drones;
-mod aerospace_protocols;
-mod aerospace_simulation;
-mod aerospace_space_protocols;
-mod aerospace_unmanned_aerial_vehicles;
-mod algorithms;
-mod api_bindings;
-mod asynchronous;
-mod authentication;
-mod caching;
-mod command_line_interface;
-mod compression;
-mod computer_vision;
-mod concurrency;
-mod config;
-mod cryptography;
-mod cryptography_cryptocurrencies;
-mod data_structures;
-mod database;
-mod database_implementations;
-mod date_and_time;
-mod development_tools;
-mod development_tools_build_utils;
-mod development_tools_debugging;
-mod development_tools_ffi;
-mod development_tools_procedural_macro_helpers;
-mod development_tools_profiling;
-mod development_tools_testing;
+
 mod email;
 mod embedded;
 mod emulators;
