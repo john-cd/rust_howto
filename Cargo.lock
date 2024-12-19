@@ -22087,6 +22087,13 @@ dependencies = [
 [[package]]
 name = "standard_library"
 version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "concat-string",
+ "concat_strs",
+ "derive_more 1.0.0",
+ "thiserror 2.0.8",
+]
 
 [[package]]
 name = "starlark"

@@ -19,3 +19,8 @@ readme = "README.md"
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
+anyhow = "1.0.94"
+concat-string = "1.0.1"
+concat_strs = "1.0.2"
+derive_more = { version = "1.0.0", features = ["full"] }
+thiserror = "2.0.8"
