@@ -121,13 +121,13 @@
 [ex-concurrency-riker]: categories/concurrency/_actors.md#riker
 [ex-concurrency-scoped-threads]: categories/concurrency/explicit_threads.md#scoped-threads
 [ex-concurrency-search-in-parallel]: categories/concurrency/data_parallelism.md#search-in-parallel
-[ex-concurrency-send]: categories/concurrency/send.md#send
+[ex-concurrency-send]: categories/concurrency/send_sync.md#send
 [ex-concurrency-sha256-of-iso-files-concurrently]: categories/concurrency/threadpool.md#sha256-of-iso-files-concurrently
 [ex-concurrency-sort-in-parallel]: categories/concurrency/data_parallelism.md#sort-in-parallel
 [ex-concurrency-spawn-a-short-lived-thread]: categories/concurrency/crossbeam.md#spawn-a-short-lived-thread
 [ex-concurrency-spawn-join]: categories/concurrency/explicit_threads.md#spawn-join
 [ex-concurrency-stakker]: categories/concurrency/_actors.md#stakker
-[ex-concurrency-sync]: categories/concurrency/send.md#sync
+[ex-concurrency-sync]: categories/concurrency/send_sync.md#sync
 [ex-concurrency-thumbnails-in-parallel]: categories/concurrency/data_parallelism.md#thumbnails-in-parallel
 [ex-concurrency-tokio]: categories/concurrency/message_passing.md#tokio
 [ex-concurrency-utilities]: categories/concurrency/_actors.md#utilities

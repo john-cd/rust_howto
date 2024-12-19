@@ -24,13 +24,12 @@
 [ex-concurrency-riker]: _actors.md#riker
 [ex-concurrency-scoped-threads]: explicit_threads.md#scoped-threads
 [ex-concurrency-search-in-parallel]: data_parallelism.md#search-in-parallel
-[ex-concurrency-send]: send.md#send
+[ex-concurrency-send-sync]: send_sync.md#send-sync
 [ex-concurrency-sha256-of-iso-files-concurrently]: threadpool.md#sha256-of-iso-files-concurrently
 [ex-concurrency-sort-in-parallel]: data_parallelism.md#sort-in-parallel
 [ex-concurrency-spawn-a-short-lived-thread]: crossbeam.md#spawn-a-short-lived-thread
 [ex-concurrency-spawn-join]: explicit_threads.md#spawn-join
 [ex-concurrency-stakker]: _actors.md#stakker
-[ex-concurrency-sync]: send.md#sync
 [ex-concurrency-thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
 [ex-concurrency-tokio]: message_passing.md#tokio
 [ex-concurrency-utilities]: _actors.md#utilities

@@ -1,4 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`Send`][ex-concurrency-send] | [![std][c-std-badge]][c-std] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
-| [`Sync`][ex-concurrency-sync] | [![std][c-std-badge]][c-std] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |
+| [`Send` and `Sync` traits][ex-concurrency-send-sync] | [![std][c-std-badge]][c-std] | [![cat-concurrency][cat-concurrency-badge]][cat-concurrency] |

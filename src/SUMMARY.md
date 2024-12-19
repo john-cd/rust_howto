@@ -129,7 +129,7 @@
   - [Message passing and Channels](categories/concurrency/message_passing.md)
   - [Shared-state concurrency](categories/concurrency/shared_state.md)
   - [Concurrent data structures](categories/concurrency/concurrent_data_structures.md)
-  - [Send and Sync](categories/concurrency/send.md)
+  - [Send and Sync](categories/concurrency/send_sync.md)
   - [Actors](categories/concurrency/_actors.md)
 
 - [Configuration](categories/config/index.md)
