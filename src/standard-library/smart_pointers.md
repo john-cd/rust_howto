@@ -8,16 +8,27 @@
 
 ## `Box` {#box}
 
-[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![std][c-std-badge]][c-std]{{hi:std}}
+[![book-rust-box][book-rust-box-badge]][book-rust-box]{{hi:Box}} [![Rust by example - box][book-rust-by-example-box-badge]][book-rust-by-example-box] [![std][c-std-badge]][c-std]{{hi:std}}
 
-`Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
+All values in Rust are stack allocated by default. `Box<T>` allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data.
 
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}} because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like references. Implementing the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait allows you to customize the behavior of the dereference operator{{hi:Dereference operator}} `*`{{hi:*}}.
+Boxes provide ownership for this allocation, and drop their contents when they go out of scope. Boxes also ensure that they never allocate more than `isize::MAX` bytes.
 
-Use when
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like a reference. You can use the dereference operator{{hi:Dereference operator}} `*`{{hi:*}} or deref coercion with the `.` operator to retrieve its inner value.
 
-- you have a type whose size can’t be known at compile time
-- you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.
+```rust,editable
+let boxed: Box<u8> = Box::new(1);
+let _val: u8 = *boxed;
+let boxed = Box::new("example");
+// Deref coercion: equivalent to (*boxed.deref()).len()
+let _val = boxed.len();
+```
+
+Use `Box<T>` when
+
+- you have a dynamically sized type, whose size can’t be known at compile time,
+- you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type,
+- you don't want to rely on stack space.
 
 ```rust,editable
 {{#include ../../deps/tests/standard_library/box1.rs:example}}

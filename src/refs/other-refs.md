@@ -13,6 +13,8 @@
 [adacore-blog]: https://blog.adacore.com
 [adacore-website]: https://www.adacore.com
 [adidoks-website]: https://adidoks.netlify.app
+[book-rust-by-example-box-badge]: https://img.shields.io/badge/Rust_By_Example-box-violet?logo=mdbook
+[book-rust-by-example-box]: https://doc.rust-lang.org/stable/rust-by-example/std/box.html
 [afterpay-website]: https://afterpay.com
 [airborne-engineering-website]: https://www.ael.co.uk
 [alchemy-website]: https://www.alchemy.com
