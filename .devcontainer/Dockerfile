@@ -151,6 +151,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # nano \
 # pipx \
 
+## Install the GitHub CLI
+RUN curl -sS https://webi.sh/gh | sh
+
 ## Install `pre-commit` (requires python / pipx)
 ## NOTE: `pre-commit` has been replaced by `cargo husky`
 # RUN pipx install pre-commit \
