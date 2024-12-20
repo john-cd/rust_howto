@@ -1,57 +1,47 @@
 #![allow(dead_code)]
-#![allow(unsafe_op_in_unsafe_fn)]
 // ANCHOR: example
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;
-
-#[pyfunction]
-fn my_function(a: i64, b: i64) -> PyResult<i64> {
-    // Your actual function logic here
-    Ok(a + b)
-}
-
-#[pymodule]
-fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
-    module.add_function(wrap_pyfunction!(my_function, module)?)
-}
+use pyo3::ffi::c_str;
 
 fn test_my_function() -> PyResult<()> {
-    let arg1 = "arg1";
-    let arg2 = "arg2";
-    let arg3 = "arg3";
 
     Python::with_gil(|py| {
-        let fun: Py<PyAny> = PyModule::from_code_bound(
+        let fun: PyObject = PyModule::from_code(
             py,
-            "def example(*args, **kwargs):
+            c_str!("def example(*args, **kwargs):
                 if args != ():
                     print('called with args', args)
                 if kwargs != {}:
                     print('called with kwargs', kwargs)
                 if args == () and kwargs == {}:
-                    print('called with no arguments')",
-            "",
-            "",
+                    print('called with no arguments')"),
+            c_str!(""),
+            c_str!(""),
         )?
         .getattr("example")?
         .into();
 
-        // call object without any arguments
+        // Call object without any arguments
         fun.call0(py)?;
 
-        // pass object with Rust tuple of positional arguments
-        let args = (arg1, arg2, arg3);
-        fun.call1(py, args)?;
+        // Pass object with Python tuple of positional arguments
+        let elements: Vec<i32> = vec![0, 1, 2, 3, 4, 5];
+        let tuple = PyTuple::new(py, elements)?;
+        assert_eq!(format!("{:?}", tuple), "(0, 1, 2, 3, 4, 5)");
+        fun.call1(py, tuple)?;
 
-        // call object with Python tuple of positional arguments
-        let args = PyTuple::new_bound(py, [arg1, arg2, arg3]);
-        fun.call1(py, args)?;
         Ok(())
     })
 }
 
 fn main() {
+    // Prepares the use of Python in a free-threaded context
     pyo3::prepare_freethreaded_python();
+
+    // Run a Python script
+    println!("{:?}", Python::with_gil(|py| py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None)));
+
     println!("{:?}", test_my_function());
 }
 // ANCHOR_END: example
@@ -61,5 +51,4 @@ fn test() {
     main();
 }
 
-// [pyo3: ^ edition 2024 migration ()](https://github.com/john-cd/rust_howto/issues/143)
-// [fix pyo3.rs](https://github.com/john-cd/rust_howto/issues/78)
+// [fix py examples](https://github.com/john-cd/rust_howto/issues/78)

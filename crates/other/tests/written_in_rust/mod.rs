@@ -1,5 +1,5 @@
-#[cfg(feature = "python")]
+#[cfg(target_os = "linux")]
 mod pyoxidizer;
-#[cfg(feature = "python")]
+#[cfg(target_os = "linux")]
 mod rustpython;
 mod swc;

@@ -31,9 +31,7 @@ rand = "0.8.5"
 rand_distr = "0.4.3"
 
 ## API bindings
-# TODO
-pyo3 = { version = "*", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
-pyoxidizer = { version = "*", optional = true }
+## See below
 
 ## Async
 async-channel = "2.3.1"
@@ -60,11 +58,11 @@ anyhow = "1.0.94"
 tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
 
-[features]
+[target.'cfg(target_os = "linux")'.dependencies]
+# TODO P1 proper version number
+pyo3 = "*" # was pinned to 0.21 to avoid conflict with `polars`
 
-## Features for code examples that requires additional software installed e.g. python, perl...
-## Useful when using Windows
-python = ["dep:pyo3", "dep:pyoxidizer"]
+[features]
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
 ## You may check for conflicts with: cargo build --features unused or cargo build --all-features
