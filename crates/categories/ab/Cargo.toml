@@ -31,6 +31,7 @@ rand = "0.8.5"
 rand_distr = "0.4.3"
 
 ## API bindings
+# TODO
 pyo3 = { version = "*", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
 pyoxidizer = { version = "*", optional = true }
 
@@ -42,7 +43,7 @@ async-trait = "0.1.83"
 duct = { version = "0.13.7", optional = true }
 futures = "0.3.31"
 futures-executor = "0.3.31"
-# kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
+# TODO kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
 mio = { version = "1.0.2", optional = true }
 parking_lot = "0.12.3"
 postage = "0.5.0"
@@ -65,6 +66,8 @@ tracing-subscriber = "0.3.19"
 ## Useful when using Windows
 python = ["dep:pyo3", "dep:pyoxidizer"]
 
+## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
+## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
     "dep:accesskit",
     "dep:duct",

@@ -40,5 +40,8 @@ approx = "0.5.1"
 lazy_static = "1.5.0"
 
 [features]
+
+## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
+## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
 ]

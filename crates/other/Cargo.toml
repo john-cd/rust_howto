@@ -61,6 +61,8 @@ pyoxidizer = { version = "0.24.0", optional = true }
 ## Useful when using Windows
 python = []
 
+## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
+## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
     "dep:crux_core",
     "dep:datafusion",

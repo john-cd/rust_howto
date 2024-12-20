@@ -86,6 +86,9 @@ url = "2.5.4"
 ## Localization
 
 [features]
+
+## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
+## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
     "dep:bevy",
     "dep:cosmic-text",
