@@ -15,9 +15,6 @@ publish = false
 readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
-## in order to keep the compile speed decent.
-## Remove the optional flag as needed.
 [dependencies]
 
 ## Math
