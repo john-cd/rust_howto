@@ -9,7 +9,7 @@
 [`config`][c-config]{{hi:config}}⮳ is a layered configuration{{hi:Configuration}} system for Rust applications. It reads from JSON, TOML, YAML, INI, RON, JSON5 files.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/config/config1.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/config/config1.rs:example}}
 ```
 
 ## `confy` {#confy}
@@ -17,7 +17,7 @@
 [![confy][c-confy-badge]][c-confy] [![confy-crates.io][c-confy-crates.io-badge]][c-confy-crates.io] [![confy-github][c-confy-github-badge]][c-confy-github] [![confy-lib.rs][c-confy-lib.rs-badge]][c-confy-lib.rs]{{hi:confy}}
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/config/confy.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/config/confy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 [String concatenation benchmark][concat-benchmark-github]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/text_processing/string_concat.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/text_processing/string_concat.rs:example}}
 ```
 
 {{#include refs.incl.md}}

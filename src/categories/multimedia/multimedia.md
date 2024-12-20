@@ -5,7 +5,7 @@
 ## Multimedia {#multimedia}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/multimedia/multimedia1.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/multimedia/multimedia1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

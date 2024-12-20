@@ -19,7 +19,7 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 `T` is `Sync` if and only if `&T` is `Send`.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/sync_send.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/sync_send.rs:example}}
 ```
 
 ## Existing implementations of `Send` and `Sync` {#existing-impl-send-sync}
@@ -50,14 +50,14 @@ TODO P1
 
 - Credit [Understanding the Send trait](https://stackoverflow.com/questions/59428096/understanding-the-send-trait)
 
-- Reference https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
-https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/
+- Reference <https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html>
+<https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/>
 
 [nomicon/send-and-sync](https://doc.rust-lang.org/nomicon/send-and-sync.html)
 [extensible-concurrency-sync-and-send](https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html)
 Implementing Vec: [https://doc.rust-lang.org/nomicon/vec/vec.html](https://doc.rust-lang.org/nomicon/vec/vec.html)
-https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/
-https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
+<https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/>
+<https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html>
 
 - Need deep tech review
 
@@ -69,7 +69,7 @@ We spawn multiple threads to demonstrate that `MyStruct` is `Send` and `Sync`. E
 The data pointer remains valid and that the usage of `MyStruct` is thread-safe.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/sync_send_impl.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/sync_send_impl.rs:example}}
 ```
 
 </div>

@@ -9,7 +9,7 @@
 [`iced`][c-iced]⮳ is a cross-platform GUI library for Rust, inspired by Elm. Retained mode UI with a nice API. It's useable for basic apps, but has a number of missing features including multiple windows, layers, and proper text rendering.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/iced.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/iced.rs:example}}
 ```
 
 ## `floem` {#floem}
@@ -21,7 +21,7 @@
 `floem` is currently more complete than any of them for native UI. Used by the `lapce` text editor.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/floem.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/floem.rs:example}}
 ```
 
 {{#include refs.incl.md}}

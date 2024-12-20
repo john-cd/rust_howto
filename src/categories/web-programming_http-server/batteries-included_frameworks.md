@@ -11,7 +11,7 @@
 [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/web_programming_http_server/loco.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_server/loco.rs:example}}
 ```
 
 ## Rust on Nails {#rust-on-nails}

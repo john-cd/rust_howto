@@ -13,7 +13,7 @@
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/bytemuck.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/bytemuck.rs:example}}
 ```
 
 ## `zerocopy` {#zerocopy}
@@ -30,7 +30,7 @@
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/zerocopy.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/zerocopy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

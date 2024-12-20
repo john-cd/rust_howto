@@ -10,7 +10,7 @@
 [![embassy-lib.rs][c-embassy-lib.rs-badge]][c-embassy-lib.rs]
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/embedded/embassy.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/embedded/embassy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

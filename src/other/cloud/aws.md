@@ -15,7 +15,7 @@ Call AWS services using idiomatic Rust APIs.
 [AWS SDK examples][aws-doc-sdk-examples-github]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/other/cloud/aws_sdk.rs:example}}
+{{#include ../../../crates/ex/other/tests/cloud/aws_sdk.rs:example}}
 ```
 
 ## Implement Lambda functions in Rust {#lambda}
@@ -29,7 +29,7 @@ Use the AWS SDK from within a Lambda function:
 [AWS Lambda Rust runtime examples][aws-lambda-rust-runtime-examples-github]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/other/cloud/aws_lambda.rs:example}}
+{{#include ../../../crates/ex/other/tests/cloud/aws_lambda.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 Make tiny, secure apps for all desktop platforms with Tauri. [`tauri`][c-tauri]то│ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. Electron-like web-based UI, except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than `node.js`.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/tauri.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/tauri.rs:example}}
 ```
 
 ## `dioxus` {#dioxus}
@@ -19,7 +19,7 @@ Make tiny, secure apps for all desktop platforms with Tauri. [`tauri`][c-tauri]т
 Portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust. A very nice API layer that has Tauri, Web, and TUI renderers. A native renderer is coming soon.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/dioxus.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/dioxus.rs:example}}
 ```
 
 {{#include refs.incl.md}}

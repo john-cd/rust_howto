@@ -5,7 +5,7 @@
 ## View, plot or graph data {#viz}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/visualization/visualization1.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/visualization/visualization1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

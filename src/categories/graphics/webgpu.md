@@ -14,7 +14,7 @@ Rusty WebGPU API wrapper.
 [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/graphics/wgpu.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/graphics/wgpu.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -5,7 +5,7 @@
 ## Data format {#data-format}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/rendering_data_formats/data_formats.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/rendering_data_formats/data_formats.rs:example}}
 ```
 
 {{#include refs.incl.md}}

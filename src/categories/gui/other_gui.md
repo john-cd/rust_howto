@@ -9,7 +9,7 @@
 The replacement for Druid based on the more interoperable Vello and Glazier crates. However, it's currently not complete enough to be usable.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/xilem.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/xilem.rs:example}}
 ```
 
 ## `slint` {#slint}
@@ -24,7 +24,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 - [madewithslint.com][c-slint-madewithslint-website]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/slint.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/slint.rs:example}}
 ```
 
 ## GPUI {#gpui}
@@ -37,7 +37,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 High performance framework used in the Zed text editor. Now available on macOS and linux.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/gpui.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/gpui.rs:example}}
 ```
 
 ## `druid` {#druid}

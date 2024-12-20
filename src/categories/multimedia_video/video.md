@@ -5,7 +5,7 @@
 ## Play video {#video}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/multimedia_video/video.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/multimedia_video/video.rs:example}}
 ```
 
 {{#include refs.incl.md}}

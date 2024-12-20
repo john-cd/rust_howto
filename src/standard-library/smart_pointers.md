@@ -31,7 +31,7 @@ Use `Box<T>` when
 - you don't want to rely on stack space.
 
 ```rust,editable
-{{#include ../../deps/tests/standard_library/box1.rs:example}}
+{{#include ../../crates/ex/standard_library/tests/other/box1.rs:example}}
 ```
 
 ## `Rc` {#rc}
@@ -41,7 +41,7 @@ Use `Box<T>` when
 The `Rc<T>` type keeps track of the number of references{{hi:References}} to data on the heap so that data can have multiple owners{{hi:Multiple owners}}.
 
 ```rust,editable
-{{#include ../../deps/tests/standard_library/rc.rs:example}}
+{{#include ../../crates/ex/standard_library/tests/other/rc.rs:example}}
 ```
 
 ## `RefCell` {#refcell}
@@ -51,7 +51,7 @@ The `Rc<T>` type keeps track of the number of references{{hi:References}} to dat
 The `RefCell<T>` type with its interior mutability{{hi:Interior mutability}} gives us a type that we can use when we need an immutable type{{hi:Immutable type}} but need to change an inner value{{hi:Inner value}} of that type; it also enforces the borrowing rules at runtime instead of at compile time.
 
 ```rust,editable
-{{#include ../../deps/tests/standard_library/refcell.rs:example}}
+{{#include ../../crates/ex/standard_library/tests/other/refcell.rs:example}}
 ```
 
 {{#include refs.incl.md}}

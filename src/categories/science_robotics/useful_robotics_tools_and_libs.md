@@ -15,7 +15,7 @@
 [![opencv-example][c-opencv-example-badge]][c-opencv-example]
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science_robotics/opencv.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/opencv.rs:example}}
 ```
 
 ## `zenoh` {#zenoh}
@@ -28,7 +28,7 @@
 [Zenoh][c-zenoh-website]{{hi:zenoh}}⮳ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science_robotics/zenoh.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/zenoh.rs:example}}
 ```
 
 ## Open Rust Robotics {#open-rust-robotics}
@@ -39,7 +39,7 @@
 [![openrr-lib.rs][c-openrr-lib.rs-badge]][c-openrr-lib.rs]
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science_robotics/openrr.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/openrr.rs:example}}
 ```
 
 ## `bonsai-bt` {#bonsai-bt}
@@ -52,7 +52,7 @@
 `bonsai-bt` is a Rust implementation of behavior trees.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science_robotics/bonsai_bt.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/bonsai_bt.rs:example}}
 ```
 
 {{#include refs.incl.md}}

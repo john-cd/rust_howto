@@ -12,7 +12,7 @@
 [ratatui][c-ratatui-github]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/command_line_interface/ratatui.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/command_line_interface/ratatui.rs:example}}
 ```
 
 ## See also

@@ -15,7 +15,7 @@ Simple work-stealing parallelism for Rust.
 Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_iter_mut()` or `into_par_iter()` to execute in parallel{{hi:Parallel execution}}.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/multithreading_rayon.rs:example}}
 ```
 
 ### Sort in parallel {#parallel-sorting}
@@ -23,7 +23,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon_parsort.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/multithreading_rayon_parsort.rs:example}}
 ```
 
 ### Implement custom parallel tasks {#custom-parallel-tasks}
@@ -33,7 +33,7 @@ Convert `.iter()` or `iter_mut()` or `into_iter()` into `par_iter()` or `par_ite
 Rayon implements [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::join`][c-rayon::join]{{hi:rayon::join}}⮳, [`rayon::spawn`][c-rayon::spawn]{{hi:rayon::spawn}}⮳ that may run on the global or a custom [Rayon threadpool][c-rayon::join]{{hi:Thread pools}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/multithreading_rayon_custom.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/multithreading_rayon_custom.rs:example}}
 ```
 
 ## Mutate the elements of an array in parallel {#mutate-array-in-parallel}
@@ -44,7 +44,7 @@ The example uses the [`rayon`][c-rayon]{{hi:rayon}}⮳ crate, which is a data pa
 [`rayon`][c-rayon]{{hi:rayon}}⮳ provides the [`rayon::iter::IntoParallelRefIterator::par_iter_mut`][c-rayon::iter::IntoParallelRefIterator::par_iter_mut]{{hi:rayon::iter::IntoParallelRefIterator::par_iter_mut}}⮳ method for any parallel iterable data type. This is an iterator-like chain that potentially executes in parallel.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/rayon_iter_mut.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_iter_mut.rs:example}}
 ```
 
 ## Test in parallel if any or all elements of a collection match a given predicate {#any-or-all-in-parallel}
@@ -54,7 +54,7 @@ The example uses the [`rayon`][c-rayon]{{hi:rayon}}⮳ crate, which is a data pa
 This example demonstrates using the [`rayon::iter::ParallelIterator::any`][c-rayon::iter::ParallelIterator::any]{{hi:rayon::iter::ParallelIterator::any}}⮳ and [`rayon::iter::ParallelIterator::any`][c-rayon::iter::ParallelIterator::any]{{hi:rayon::iter::ParallelIterator::any}}⮳ methods, which are parallelized counterparts to [`std::iter::Iterator::any`][c-std::iter::Iterator::any]{{hi:std::iter::Iterator::any}}⮳ and [`std::iter::Iterator::all`][c-std::iter::Iterator::all]{{hi:std::iter::Iterator::all}}⮳. [`rayon::iter::ParallelIterator::any`][c-rayon::iter::ParallelIterator::any]{{hi:rayon::iter::ParallelIterator::any}}⮳ checks in parallel whether any element of the iterator matches the predicate, and returns as soon as one is found. [`rayon::iter::ParallelIterator::any`][c-rayon::iter::ParallelIterator::any]{{hi:rayon::iter::ParallelIterator::any}}⮳ checks in parallel whether all elements of the iterator match the predicate, and returns as soon as a non-matching element is found.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/rayon_any_all.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_any_all.rs:example}}
 ```
 
 ## Search items using a given predicate in parallel {#search-in-parallel}
@@ -68,7 +68,7 @@ If there are multiple elements satisfying the predicate defined in the closure a
 Also note that the argument to the closure is a reference to a reference (`&&x`). See the discussion on [`std::iter::Iterator::find`][c-std::iter::Iterator::find]{{hi:std::iter::Iterator::find}}⮳ for additional details.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/rayon_parallel_search.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_parallel_search.rs:example}}
 ```
 
 ## Sort a vector in parallel {#sort-in-parallel}
@@ -81,7 +81,7 @@ Allocate a vector of empty Strings. `par_iter_mut().for_each` populates random v
 exist to sort an enumerable data type, [`rayon::slice::ParallelSliceMut::par_sort_unstable`][c-rayon::slice::ParallelSliceMut::par_sort_unstable]{{hi:rayon::slice::ParallelSliceMut::par_sort_unstable}}⮳ is usually faster than [stable sort][c-rayon::slice::ParallelSliceMut::par_sort] ⮳ algorithms.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/rayon_parallel_sort.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_parallel_sort.rs:example}}
 ```
 
 ## Map-reduce in parallel {#map-reduce-in-parallel}
@@ -93,7 +93,7 @@ This example uses [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::Paral
 [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::ParallelIterator::filter]{{hi:rayon::iter::ParallelIterator::filter}}⮳ returns elements from a collection that satisfy the given predicate. [`rayon::iter::ParallelIterator::map`][c-rayon::iter::ParallelIterator::map]{{hi:rayon::iter::ParallelIterator::map}}⮳ performs an operation on every element, creating a new iteration, and [`rayon::iter::ParallelIterator::reduce`][c-rayon::iter::ParallelIterator::reduce]{{hi:rayon::iter::ParallelIterator::reduce}}⮳ performs an operation given the previous reduction and the current element. Also shows use of [`rayon::iter::ParallelIterator::sum`][c-rayon::iter::ParallelIterator::sum]{{hi:rayon::iter::ParallelIterator::sum}}⮳ which has the same result as the reduce operation in this example.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/rayon_map_reduce.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_map_reduce.rs:example}}
 ```
 
 ## Generate JPEG thumbnails in parallel {#thumbnails-in-parallel}
@@ -105,7 +105,7 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 [`glob::glob_with::glob_with`][c-glob::glob_with]{{hi:glob::glob_with::glob_with}}⮳ finds jpeg files in current directory. [`rayon`][c-rayon]{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c-rayon::iter::IntoParallelRefIterator::par_iter]{{hi:rayon::iter::IntoParallelRefIterator::par_iter}}⮳ calling [`image::DynamicImage::resize`][c-image::DynamicImage::resize]{{hi:image::DynamicImage::resize}}⮳
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/concurrency/rayon_thumbnails.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/rayon_thumbnails.rs:example}}
 ```
 
 {{#include refs.incl.md}}

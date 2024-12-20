@@ -7,7 +7,7 @@
 ## Format values for display to a user, potentially adapting the display to various languages and regions {#value-formatting}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/value_formatting/value_formatting1.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/value_formatting/value_formatting1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

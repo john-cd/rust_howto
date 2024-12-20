@@ -9,7 +9,7 @@
 `tempfile` supports both temporary files and temporary directories.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/filesystem/tempfile.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/filesystem/tempfile.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -17,7 +17,6 @@
 
 <div class="hidden">
 [tempfile: write (P1)](https://github.com/john-cd/rust_howto/issues/361)
-
 
 - tempdir
 

@@ -9,7 +9,7 @@
 `notify` is a cross-platform filesystem notification library.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/filesystem/notify.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/filesystem/notify.rs:example}}
 ```
 
 {{#include refs.incl.md}}

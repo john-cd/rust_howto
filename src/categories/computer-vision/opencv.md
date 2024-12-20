@@ -13,7 +13,7 @@
 [OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/computer_vision/opencv.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/computer_vision/opencv.rs:example}}
 ```
 
 {{#include refs.incl.md}}

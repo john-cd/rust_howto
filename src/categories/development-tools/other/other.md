@@ -20,7 +20,7 @@ Roogle is a Rust API search engine, which allows you to search functions by name
 [shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 ```rust,editable
-{{#include ../../../../deps/tests/categories/development_tools/other/shuttle.rs:example}}
+{{#include ../../../../crates/ex/categories/d/tests/development_tools/other/shuttle.rs:example}}
 ```
 
 ## Minimize Rust binary sizes {#binary-minimizer}

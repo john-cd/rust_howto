@@ -14,7 +14,7 @@
 `cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_testing/tests1.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_testing/tests1.rs:example}}
 ```
 
 ## Emit a custom message {#custom-message}
@@ -22,7 +22,7 @@
 [![std][c-std-badge]][c-std] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_testing/tests_custom_message.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_testing/tests_custom_message.rs:example}}
 ```
 
 ## Test your code faster with `cargo nextest` {#cargo-nextest}
@@ -51,7 +51,7 @@ cargo test --doc
 [`approx`][c-approx]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_testing/approx.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_testing/approx.rs:example}}
 ```
 
 ## Test your code against snapshots {#insta}
@@ -71,7 +71,7 @@ cargo test --doc
 Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of `assert_eq!`. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_testing/insta.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_testing/insta.rs:example}}
 ```
 
 ## Measure your code coverage {#cargo-tarpaulin}

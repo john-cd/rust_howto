@@ -5,7 +5,7 @@
 ## Game development {#game-development}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/game_development/game_development1.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/game_development/game_development1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

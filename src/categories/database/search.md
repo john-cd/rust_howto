@@ -12,7 +12,7 @@
 [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/elasticsearch.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/elasticsearch.rs:example}}
 ```
 
 ## `infisearch` {#infisearch}
@@ -24,7 +24,7 @@
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/infisearch.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/infisearch.rs:example}}
 ```
 
 ## `stork-search` {#stork-search}
@@ -38,7 +38,7 @@
 [stork-search.net][c-stork_search-website]
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/stork_search.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/stork_search.rs:example}}
 ```
 
 ## `minisearch` {#minisearch}
@@ -51,7 +51,7 @@
 [minisearch-client-side-fulltext-search-engine][c-minisearch-client-side-fulltext-search-engine]
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/minisearch.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/minisearch.rs:example}}
 ```
 
 ## `typesense` {#typesense}
@@ -62,7 +62,7 @@
 [![typesense-lib.rs][c-typesense-lib.rs-badge]][c-typesense-lib.rs]
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/typesense.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/typesense.rs:example}}
 ```
 
 ## `tinysearch` {#tinysearch}
@@ -77,7 +77,7 @@
 A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly
 
 ```rust,editable,noplayground
-{{#include ../../../deps/tests/categories/database/tinysearch.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/tinysearch.rs:example}}
 ```
 
 {{#include refs.incl.md}}

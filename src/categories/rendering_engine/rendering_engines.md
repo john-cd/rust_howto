@@ -5,7 +5,7 @@
 ## Use a render engine {#render}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/rendering_engine/render.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/rendering_engine/render.rs:example}}
 ```
 
 {{#include refs.incl.md}}

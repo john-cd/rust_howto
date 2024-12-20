@@ -11,7 +11,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:MPSC}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/message_passing_mpsc.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/message_passing_mpsc.rs:example}}
 ```
 
 ## `crossbeam-channel` {#crossbeam-channel}
@@ -21,13 +21,13 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 Multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/message_passing_crossbeam_channel.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/message_passing_crossbeam_channel.rs:example}}
 ```
 
 Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi:Timeouts}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/message_passing_crossbeam_channel_after_tick.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/message_passing_crossbeam_channel_after_tick.rs:example}}
 ```
 
 ### `flume` {#flume}
@@ -40,7 +40,7 @@ Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi
 Smaller and simpler than `crossbeam-channel` and almost as fast.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/flume.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/flume.rs:example}}
 ```
 
 ### `tokio` {#tokio}
@@ -50,7 +50,7 @@ Smaller and simpler than `crossbeam-channel` and almost as fast.
 Tokio's `sync` module provides channels for using in async code.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/concurrency/tokio.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/concurrency/tokio.rs:example}}
 ```
 
 ## See also

@@ -11,25 +11,25 @@
 - There can only be one owner at a time.
 
 ```rust,editable
-{{#include ../../deps/tests/language/ownership.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/ownership.rs:example}}
 ```
 
 When the owner goes out of scope{{hi:Scope}}, the value will be dropped.
 
 ```rust,editable
-{{#include ../../deps/tests/language/ownership2.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/ownership2.rs:example}}
 ```
 
 Rust will never automatically create “deep” copies of your data. Use [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳
 
 ```rust,editable
-{{#include ../../deps/tests/language/clone.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/clone.rs:example}}
 ```
 
 If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::marker::Copy}}⮳ trait (stack-only, fixed-size values, like integers, floats, and tuples thereof), variables that use it do not move, but rather are trivially copied, making them still valid after assignment to another variable.
 
 ```rust,editable
-{{#include ../../deps/tests/language/copy.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/copy.rs:example}}
 ```
 
 ### Borrowing {#borrowing}
@@ -37,13 +37,13 @@ If a type implements the [`std::marker::Copy`][c-std::marker::Copy]{{hi:std::mar
 Passing a variable to a function will move or copy, just as assignment does. To avoid passing a value along, borrow the value:{{hi:Borrowing}}
 
 ```rust,editable
-{{#include ../../deps/tests/language/borrowing.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/borrowing.rs:example}}
 ```
 
 ### Mutable references {#mutable-reference}
 
 ```rust,editable
-{{#include ../../deps/tests/language/borrowing_mutable.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/borrowing_mutable.rs:example}}
 ```
 
 If you have a mutable reference{{hi:Mutable references}} to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
@@ -53,7 +53,6 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 
 <div class="hidden">
 [ownership_borrowing: add text (P1)](https://github.com/john-cd/rust_howto/issues/554)
-
 
 ## Memory safety {#memory-safety}
 

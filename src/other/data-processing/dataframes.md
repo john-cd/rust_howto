@@ -11,7 +11,7 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 [docs.pola.rs][c-polars-docs]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/other/data_processing/polars.rs:example}}
+{{#include ../../../crates/ex/other/tests/data_processing/polars.rs:example}}
 ```
 
 {{#include refs.incl.md}}

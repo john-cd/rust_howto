@@ -12,7 +12,7 @@
 [meilisearch][c-meilisearch-github]⮳ is a fast search API that fits into your apps, websites, and workflow.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/database_implementations/meilisearch.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database_implementations/meilisearch.rs:example}}
 ```
 
 ## `tantivy` {#tantivy}
@@ -27,7 +27,7 @@
 [tantivy][c-tantivy-github]⮳ is a full-text search engine library inspired by Apache Lucene.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/database_implementations/tantivy.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database_implementations/tantivy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

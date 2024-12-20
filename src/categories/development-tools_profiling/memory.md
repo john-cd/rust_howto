@@ -12,7 +12,7 @@
 A library for heap profiling and ad hoc profiling with DHAT
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_profiling/dhat.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_profiling/dhat.rs:example}}
 ```
 
 {{#include refs.incl.md}}

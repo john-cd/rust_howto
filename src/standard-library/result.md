@@ -5,7 +5,7 @@
 ## `Result` {#result}
 
 ```rust,editable
-{{#include ../../deps/tests/standard_library/result.rs:example}}
+{{#include ../../crates/ex/standard_library/tests/other/result.rs:example}}
 ```
 
 ## See also

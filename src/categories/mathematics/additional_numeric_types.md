@@ -9,7 +9,7 @@
 Numeric traits for generic mathematics. Traits like Number, Add, etc that allow you write functions that are generic over the specific numeric type
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/num_traits.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/num_traits.rs:example}}
 ```
 
 ## Use big integers {#big-integers}
@@ -21,7 +21,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more! Calculation for integers exceeding 128 bits are possible with [`num::BigInt`][c-num::BigInt]{{hi:num::BigInt}}⮳.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/big_integers.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/big_integers.rs:example}}
 ```
 
 ### `num-bigint` {#skip2}
@@ -31,7 +31,7 @@ A collection of numeric types and traits for Rust, including bigint, complex, ra
 Big integer implementation for Rust. "It's not the fastest, but it's part of the trusted num library."
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/num_bigint.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/num_bigint.rs:example}}
 ```
 
 ### `rug` {#skip3}
@@ -41,7 +41,7 @@ Big integer implementation for Rust. "It's not the fastest, but it's part of the
 Arbitrary-precision integers, rational, floating-point and complex numbers based on GMP, MPFR and MPC. LGPL licensed. Wrapper for GMP. Much faster than `num-bigint`.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/rug.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/rug.rs:example}}
 ```
 
 ## Use big decimals {#big-decimal}
@@ -51,7 +51,7 @@ Arbitrary-precision integers, rational, floating-point and complex numbers based
 Decimal number implementation written in pure Rust suitable for financial and fixed-precision calculations. The binary representation consists of a 96 bit integer number, a scaling factor used to specify the decimal fraction and a 1 bit sign.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/rust_decimal.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/rust_decimal.rs:example}}
 ```
 
 ## Sort floats {#sortable-floats}
@@ -61,7 +61,7 @@ Decimal number implementation written in pure Rust suitable for financial and fi
 Wrappers for total ordering on floats. Float types that don't allow `NaN` and are therefore orderable. You can also use the `total_cmp` method from the standard library like `.sort_by(|a, b| a.total_cmp(&b))`.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/mathematics/ordered_float.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/mathematics/ordered_float.rs:example}}
 ```
 
 {{#include refs.incl.md}}

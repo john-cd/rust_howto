@@ -13,7 +13,7 @@
 [wasmer.io][wasmer-website]{{hi:wasmer.io}}⮳ is a high-performance WebAssembly runtime.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/wasm/wasmer.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/wasm/wasmer.rs:example}}
 ```
 
 ## `wasmtime` {#wasmtime}
@@ -29,7 +29,7 @@
 [docs.wasmtime.dev][c-wasmtime-docs]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/wasm/wasmtime.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/wasm/wasmtime.rs:example}}
 ```
 
 ## See also

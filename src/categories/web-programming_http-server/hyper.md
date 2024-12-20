@@ -12,7 +12,7 @@
 `hyper` is a low-level HTTP implementation (both client and server). It implements HTTP/1 and HTTP/2. It works best with the `tokio` async runtime, but can support other runtimes.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/web_programming_http_server/hyper_server.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_server/hyper_server.rs:example}}
 ```
 
 {{#include refs.incl.md}}

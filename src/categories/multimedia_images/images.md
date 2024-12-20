@@ -5,7 +5,7 @@
 ## Process or create images {#images}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/multimedia_images/images.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/multimedia_images/images.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 A flexible UI layout library. "Supports Flexbox and CSS Grid algorithms."
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/taffy.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/taffy.rs:example}}
 ```
 
 ## `morphorm` {#morphorm}
@@ -19,7 +19,7 @@ A flexible UI layout library. "Supports Flexbox and CSS Grid algorithms."
 A UI layout engine. "Implements its own layout algorithm based on Subform layout."
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/gui/morphorm.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/gui/morphorm.rs:example}}
 ```
 
 {{#include refs.incl.md}}

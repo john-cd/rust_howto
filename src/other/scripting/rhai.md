@@ -16,7 +16,7 @@
 [rhai][c-rhai]{{hi:rhai}}⮳ is an embedded scripting language and evaluation engine for Rust that gives a safe and easy way to add scripting to any application.{{hi:Scripting in Rust}}
 
 ```rust,editable
-{{#include ../../../deps/tests/other/scripting/rhai.rs:example}}
+{{#include ../../../crates/ex/other/tests/scripting/rhai.rs:example}}
 ```
 
 {{#include refs.incl.md}}

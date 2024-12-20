@@ -13,7 +13,7 @@
 Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing tasks and classical ML algorithms for everyday ML tasks. Provides a convenient, bundled approach to many machine learning algorithms.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science/linfa.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science/linfa.rs:example}}
 ```
 
 ### `smartcore` {#skip2}
@@ -23,7 +23,7 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 [SmartCore][c-smartcore-website]{{hi:smartcore}}⮳ is a comprehensive library for machine learning and numerical computing. The library provides a set of tools for linear algebra, numerical computing, optimization, and enables a generic, powerful yet still efficient approach to machine learning.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science/smartcore.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science/smartcore.rs:example}}
 ```
 
 ## Implement deep learning algorithms {#deep-learning}
@@ -37,7 +37,7 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 [Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science/candle.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science/candle.rs:example}}
 ```
 
 ### `burn` {#skip4}
@@ -51,7 +51,7 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 [Watchmaker (genetic algos in Rust)][c-watchmaker]{{hi:watchmaker}}⮳ [![watchmaker][c-watchmaker-badge]][c-watchmaker]{{hi:watchmaker}} [![watchmaker-github][c-watchmaker-github-badge]][c-watchmaker-github] [![watchmaker-crates.io][c-watchmaker-crates.io-badge]][c-watchmaker-crates.io] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/science/watchmaker.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/science/watchmaker.rs:example}}
 ```
 
 {{#include refs.incl.md}}

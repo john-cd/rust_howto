@@ -24,7 +24,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 `criterion.rs` helps you write fast code by detecting and measuring performance improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the performance of your code.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_profiling/criterion.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_profiling/criterion.rs:example}}
 ```
 
 ## `divan` {#divan}
@@ -38,7 +38,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 Simple yet powerful benchmarking library with allocation profiling
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_profiling/divan.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_profiling/divan.rs:example}}
 ```
 
 ## `hyperfine` {#hyperfine}
@@ -52,7 +52,7 @@ Simple yet powerful benchmarking library with allocation profiling
 Tool for benchmarking compiled binaries (similar to unix time command but better).
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/development_tools_profiling/divan.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/development_tools_profiling/divan.rs:example}}
 ```
 
 {{#include refs.incl.md}}

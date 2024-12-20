@@ -5,7 +5,7 @@
 ## Emulators {#emulators}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/emulators/emulator.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/emulators/emulator.rs:example}}
 ```
 
 {{#include refs.incl.md}}

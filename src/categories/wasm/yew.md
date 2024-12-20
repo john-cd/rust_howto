@@ -9,7 +9,7 @@
 A framework for creating reliable and efficient web applications
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/wasm/yew.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/wasm/yew.rs:example}}
 ```
 
 ### See also

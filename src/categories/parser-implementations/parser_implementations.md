@@ -12,7 +12,7 @@
 [swc_ecma_parser][c-swc_ecma_parser-crates.io]{{hi:swc_ecma_parser}}⮳ is a feature-complete EcmaScript / TypeScript parser written in Rust.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/parser_implementations/swc_ecma_parser.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/parser_implementations/swc_ecma_parser.rs:example}}
 ```
 
 {{#include refs.incl.md}}

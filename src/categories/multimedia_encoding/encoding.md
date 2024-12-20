@@ -5,7 +5,7 @@
 ## Encode your media {#encoding}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/multimedia_encoding/encoding.rs:example}}
+{{#include ../../../crates/ex/categories/mn/tests/multimedia_encoding/encoding.rs:example}}
 ```
 
 {{#include refs.incl.md}}

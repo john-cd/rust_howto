@@ -12,7 +12,7 @@
 `reqwest` is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the `tokio` runtime.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/web_programming_http_client/reqwest.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_client/reqwest.rs:example}}
 ```
 
 ## `ureq` {#ureq}
@@ -26,7 +26,7 @@
 `ureq` is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/web_programming_http_client/ureq.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_client/ureq.rs:example}}
 ```
 
 ## `hyper` {#hyper}
@@ -39,7 +39,7 @@
 `hyper` is a low-level HTTP implementation (both client and server). It implements HTTP/1, and HTTP/2. It works best with the `tokio` async runtime, but can support other runtimes.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/web_programming_http_client/hyper.rs:example}}
+{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_client/hyper.rs:example}}
 ```
 
 {{#include refs.incl.md}}

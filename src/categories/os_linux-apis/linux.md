@@ -5,7 +5,7 @@
 ## Bind to Linux APIs {#linux}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/os_linux_apis/linux.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/os_linux_apis/linux.rs:example}}
 ```
 
 {{#include refs.incl.md}}

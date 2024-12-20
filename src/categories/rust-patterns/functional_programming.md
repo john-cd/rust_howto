@@ -16,7 +16,7 @@
 `itertools` includes extra iterator adaptors, functions and macros.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/rust_patterns/itertools.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/rust_patterns/itertools.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -37,7 +37,7 @@
 This Rust library provides support for lenses, which are a mechanism in functional programming for focusing on a part of a complex data structure.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/rust_patterns/lens.rs:example}}
+{{#include ../../../crates/ex/categories/opqr/tests/rust_patterns/lens.rs:example}}
 ```
 
 </div>

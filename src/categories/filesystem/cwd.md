@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/filesystem/cwd.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/filesystem/cwd.rs:example}}
 ```
 
 {{#include refs.incl.md}}

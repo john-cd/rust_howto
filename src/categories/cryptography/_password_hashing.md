@@ -15,7 +15,7 @@
 Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/cryptography/argon2.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/cryptography/argon2.rs:example}}
 ```
 
 ## `scrypt` {#scrypt}
@@ -31,7 +31,7 @@ Pure Rust implementation of the Argon2 password hashing function with support fo
 The scrypt key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/cryptography/scrypt.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/cryptography/scrypt.rs:example}}
 ```
 
 ## `bcrypt` {#bcrypt}
@@ -44,7 +44,7 @@ The scrypt key derivation function is designed to be far more secure against har
 Hash and verify passwords.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/cryptography/bcrypt.rs:example}}
+{{#include ../../../crates/ex/categories/c/tests/cryptography/bcrypt.rs:example}}
 ```
 
 For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github]
@@ -56,5 +56,5 @@ For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashe
 [_password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
 
 [Key derivation function][key_derivation_function]
-[key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
+[key_derivation_function]: <https://en.wikipedia.org/wiki/Key_derivation_function>
 </div>

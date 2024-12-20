@@ -15,7 +15,7 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 [badges: expand (P1)](https://github.com/john-cd/rust_howto/issues/296)
 
 ```rust,editable
-{{#include ../../../../deps/tests/categories/development_tools/documentation/badges.rs:example}}
+{{#include ../../../../crates/ex/categories/d/tests/development_tools/documentation/badges.rs:example}}
 ```
 
 </div>

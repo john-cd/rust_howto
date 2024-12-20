@@ -5,7 +5,7 @@
 [When and why to use AsRef<T>instead of &T][stackoverflow-asref]⮳{{hi:asref}}
 
 ```rust,editable
-{{#include ../../deps/tests/standard_library/asref.rs:example}}
+{{#include ../../crates/ex/standard_library/tests/other/asref.rs:example}}
 ```
 
 {{#include refs.incl.md}}

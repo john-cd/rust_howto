@@ -9,7 +9,7 @@
 `tinytemplate` is a simple, lightweight template engine.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/template_engine/tinytemplate.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/template_engine/tinytemplate.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -10,7 +10,7 @@
 De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/serde.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/serde.rs:example}}
 ```
 
 ## Serialize JSON {#serde-json2}
@@ -21,7 +21,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![serde_json-lib.rs][c-serde_json-lib.rs-badge]][c-serde_json-lib.rs]
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/serde_json.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/serde_json.rs:example}}
 ```
 
 ## See also
@@ -36,7 +36,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/monostate.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/monostate.rs:example}}
 ```
 
 ### `serde-ignored` {#serde-ignored}
@@ -47,7 +47,7 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 [![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/encoding/serde_ignored.rs:example}}
+{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/serde_ignored.rs:example}}
 ```
 
 {{#include refs.incl.md}}

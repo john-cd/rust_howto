@@ -5,7 +5,7 @@
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![regex-github][c-regex-github-badge]][c-regex-github] [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/text_processing/regex.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/text_processing/regex.rs:example}}
 ```
 
 {{#include refs.incl.md}}

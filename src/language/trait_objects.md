@@ -7,7 +7,7 @@ In Rust, traits{{hi:Traits}} are types, but they are "unsized"{{hi:Unsized}}, wh
 A type like `&dyn ClickCallback` or `Box<dyn ClickCallback>` where `ClickCallback` is a Trait, is called a "trait object", and includes a pointer to an instance of a type `T` implementing `ClickCallback`, and a 'vtable'{{hi:Vtable}}: a pointer to `T`'s implementation of each method in the trait.
 
 ```rust,editable
-{{#include ../../deps/tests/language/trait_objects.rs:example}}
+{{#include ../../crates/ex/language/tests/feat/trait_objects.rs:example}}
 ```
 
 The set of traits after [`dyn`][keyword-dyn]{{hi:dyn}} can be made up of an [object-safe][book-rust-reference-object-safe]⮳ base trait plus any number of autotraits{{hi:Autotraits}} (one of [`std::marker::Send`][c-std::marker::Send]{{hi:std::marker::Send}}⮳, [`std::marker::Sync`][c-std::marker::Sync]{{hi:std::marker::Sync}}⮳, [`std::marker::Unpin`][c-std::marker::Unpin]{{hi:std::marker::Unpin}}⮳, [`std::panic::UnwindSafe`][c-std::panic::UnwindSafe]{{hi:std::panic::UnwindSafe}}⮳, and [`std::panic::RefUnwindSafe`][c-std::panic::RefUnwindSafe]{{hi:std::panic::RefUnwindSafe}}⮳ - see [special traits][book-rust-reference-special-traits]⮳).

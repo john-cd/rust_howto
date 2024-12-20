@@ -7,7 +7,7 @@
 [Asynchronics][asynchronics-github]⮳ is a high-performance asynchronous computation framework for system simulation.
 
 ```rust,editable
-{{#include ../../../deps/tests/categories/simulation/simulation1.rs:example}}
+{{#include ../../../crates/ex/categories/stuv/tests/simulation/simulation1.rs:example}}
 ```
 
 {{#include refs.incl.md}}
