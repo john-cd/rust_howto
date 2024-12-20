@@ -1,10 +1,3 @@
-//! Rather than running all tests in separate processes (by keeping them in
-//! separate files in deps/tests), we group all the tests in each section of the
-//! book in the same crate.
-//!
-//! All examples in this folder MUST be listed as module below or they won't be
-//! discovered / run.
-
 mod allow_dead_code;
 mod associated_types;
 mod async_main;
@@ -12,8 +5,8 @@ mod attributes_debug;
 mod attributes_deprecated;
 mod attributes_must_use;
 mod attributes_production;
-mod borrowing;
 mod borrowing_mutable;
+mod borrowing;
 mod clone;
 mod closures;
 mod closures_as_input_parameters;
@@ -58,12 +51,12 @@ mod structs3;
 mod structs4;
 mod trait_bounds;
 mod trait_objects;
+mod traits_as_parameters;
 mod traits;
 mod traits2;
 mod traits3;
 mod traits4;
 mod traits5;
-mod traits_as_parameters;
 mod vars_and_consts;
-mod while1;
 mod while_let;
+mod while1;
