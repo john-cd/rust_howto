@@ -39,9 +39,8 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 // This test should not run during CI
-#[cfg_attr(feature = "ci", ignore)]
 #[test]
-fn test() -> anyhow::Result<()> {
+fn ignore_in_ci() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }

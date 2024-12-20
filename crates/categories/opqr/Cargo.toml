@@ -46,9 +46,6 @@ regex = "1.11.1"
 reqwest = "0.12.9"
 
 [features]
-## The `ci` feature should be turned "on" only during CI tests
-## It is used to ignore certain tests that can't run there.
-ci = []
 
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
 ## You may check for conflicts with: cargo build --features unused or cargo build --all-features
