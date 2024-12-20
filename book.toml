@@ -10,7 +10,8 @@ description = "A compendium of links, code snippets, and recipes for the Rust la
 # build-dir = "book"                # the directory where the output is placed, "book" by default
 create-missing = false             # whether or not to create missing pages
 # use-default-preprocessors = true  # use the default preprocessors  and `index`, true by default
-extra-watch-dirs = ["static", "theme", "deps"]             # directories to watch for triggering builds
+# Directories to watch for triggering builds:
+extra-watch-dirs = ["static", "theme", "crates/about", "crates/categories", "crates/language", "crates/other", "crates/standard_library"]
 
 [rust]
 edition = "2021" # the default edition for code blocks. Default is "2015"
@@ -45,17 +46,6 @@ after = [ "private" ]
 [preprocessor.indexing.nest_under]
 # "generic type" = "generics"
 
-# # mdBook-keeper adds more testing features to mdBook, specifically support for third-party crates, and testing while compiling.
-# # https://github.com/tfpk/mdbook-keeper/
-# [preprocessor.keeper]
-# # command = "mdbook-keeper"
-# # NOTE: the file Cargo.toml should exist at this path.
-# manifest_dir = "./deps"
-# # NOTE: the `debug` folder should exist at this path.
-# target_dir = "./target/"
-# is_workspace = true
-# # build_features = ["first", "second"]
-
 # # Default preprocessor: index
 # Convert all chapter files named README.md into index.md. That is to say, all README.md would be rendered to an index file index.html in the rendered book.
 #[preprocessor.index]
@@ -68,7 +58,7 @@ after = ["private"]
 ## OUTPUTS --------------------------------------------------------
 
 # # Output as markdown (in addition to HTML) for debugging purposes
-# # Enable it as well if you want to use Skeptic for testing (see `deps/build.rs` and `build` in deps/Cargo.toml )
+# # Enable it as well if you want to use Skeptic for testing (see `build.rs`)
 #[output.markdown]
 
 # # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html

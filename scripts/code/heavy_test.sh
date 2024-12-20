@@ -15,7 +15,7 @@ docker compose -f ${d}compose.yaml \
                 up --wait $feature
 
 ## Run tests, which names include the feature name, ignoring the default filter that normally suppress "require_external_svc" tests.
-cargo nextest run --package dependencies --tests --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter -- $feature
+cargo nextest run --tests --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter -- $feature
 
 ## Removes stopped service containers. Stop the containers, if required, before removing
 docker compose -f ${d}compose.yaml \

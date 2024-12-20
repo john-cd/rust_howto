@@ -219,23 +219,25 @@ FROM base AS ci
 
 ENV CARGO_TARGET_DIR=./target/
 
-## The following is a bit of a hack to speed up CI: create separate docker layers for the dependencies and the code / examples
+## The following is a bit of a hack to try to speed up CI: create separate docker layers for the dependencies and the code / examples
 ## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.
+
+# TODO P2 reconsider when we can reliably use cached docker images in GitHub Actions; slow and takes space
 
 ## Copy all the Cargo.toml / lock (and config.toml files) of the workspace
 ## The --parents flag preserves parent directories for the source entries.
 ## NOTE: [lib] or [[bin]] targets must be defined in all Cargo.toml, since the code is not present at this stage and autodiscovery won't work.
-#COPY --parents .cargo/ Cargo.toml Cargo.lock deps/Cargo.toml publish/Cargo.toml tools/*/Cargo.toml xmpl/*/Cargo.toml ./
+#COPY --parents .cargo/ Cargo.toml Cargo.lock crates/about/Cargo.toml crates/categories/*/Cargo.toml crates/language/Cargo.toml crates/other/Cargo.toml \
+# crates/playground/Cargo.toml crates/publish/Cargo.toml crates/tools/*/Cargo.toml crates/xmpl/*/Cargo.toml ./
 
 ## Bake the dependencies into (a separate layer of) the CI image (since they don't change often).
 #RUN cargo fetch
 
-## OPTIONAL: pre-compile the dependencies but not the code of tools and examples (which change more often)
-## Disabled, because that takes a lot of space (cache in target/).
-## a) Copy the (empty) dep/src/lib.rs (no other code)
-# COPY --parents deps/src/ ./
-## b) Compile the dependencies (and dep/src/lib.rs)
-# RUN cargo build -p dependencies --lib --locked --profile ci
+## Optionally pre-compile the dependencies but not the code of tools and examples (which change more often)
+## a) Copy the (empty) src/lib.rs for default members of the workspace (no other code)
+# COPY --parents crates/about/src/ crates/categories/*/src/ crates/language/src crates/other/src crates/standard_library/src ./
+## b) Compile the dependencies (and src/lib.rs)
+# RUN cargo build --all-targets --locked --profile ci
 
 ## Copy the whole code in the container (excluding what is in .dockerignore)
 COPY . .

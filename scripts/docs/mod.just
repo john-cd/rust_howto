@@ -6,7 +6,7 @@ _default:
 
 ## ---- CODE DOCUMENTATION -----------------------------------
 
-# Build and display the `cargo doc` documentation for a specific package (e.g. deps)
+# Build and display the `cargo doc` documentation for a specific package
 [unix]
 doc pkg:
   cargo clean --doc
@@ -26,4 +26,4 @@ docall: _builddocall
   cd /cargo-target-rust_howto/target/doc/ ; python3 -m http.server 9000
   # We could also use `live server` for dynamic reloading.
   # See README.md for other alternatives, such as:
-  # xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
+  # xdg-open /cargo-target-rust_howto/target/doc/ab/index.html

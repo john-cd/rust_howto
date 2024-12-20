@@ -2,7 +2,7 @@
 set -eu
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
-# and create the necessary code stubs (in subfolders of deps/tests/)
+# and create the necessary code stubs (in subfolders of crates/**/tests/)
 #
 # Usage: /code/scripts/examples/convert_example_placeholders.sh
 

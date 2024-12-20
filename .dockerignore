@@ -1,4 +1,4 @@
-# Include any files or directories that you don't want to be copied to your
+# Include any files or directories that you don't want to be copied to the (CI)
 # container here (e.g., local build artifacts, temporary files, etc.).
 #
 # For more help, visit the .dockerignore file reference guide at
@@ -8,10 +8,10 @@
 /.github
 /.vscode
 /book
+/crates/categories/*/temp
+/crates/categories/*/target
+/crates/playground/drafts
 /doctest_cache
-/deps/drafts
-/deps/temp
-/deps/target
 /drafts
 /scripts
 /target

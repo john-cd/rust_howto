@@ -6,7 +6,7 @@ _default:
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
-# List examples (.rs files) in `deps/tests` that are not included in the book markdown.
+# List examples (.rs files) in `crates/**/tests` that are not included in the book markdown.
 [unix]
 list_not_used_in_book:
   ./list_examples_not_used_in_book.sh
@@ -15,7 +15,7 @@ list_not_used_in_book:
 # then compare to the list of test files in `deps`
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
-# List examples (.rs files) in `deps/tests` that were not included into a module somehow and that are therefore not tested
+# List examples (.rs files) in `crates/**/tests` that were not included into a module somehow and that are therefore not tested
 [unix]
 list_not_tested:
   #! /bin/bash

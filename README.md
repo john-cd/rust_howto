@@ -25,7 +25,7 @@ This book is written and edited by [John CD][john-cd]⮳. It is the successor of
 
 ## Legal
 
-Please refer to the LICENSE files. All code examples included in or linked from the book, under the `deps` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other software (e.g. under the `tools` folder) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
+Please refer to the LICENSE files. All code examples included in or linked from the book, under the `crates/categories` and `crates/xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other software (e.g. under the `crates/tools` folder) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repository by you, as defined in the license, shall be licensed as above, without any additional terms or conditions.
 

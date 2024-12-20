@@ -17,7 +17,7 @@ grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tool
 `-P` for Perl regular expressions.
 `-o` to return only the matching part, not the whole line.
 
-b. Optionally, extract all crates currently used in the book examples from `deps/Cargo.toml`
+b. Optionally, extract all crates currently used in the book examples from `crates/**/Cargo.toml`
 
 ```sh
 just crate_indices l >> ./tools/crate_indices/crates.txt

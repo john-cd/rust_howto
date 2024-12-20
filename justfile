@@ -27,17 +27,17 @@ f:
 fa:
   @just code fmtall
 
+# Alias for code nextest
+nt:
+  @just code nextest
+
 # Alias for code nextestall
 nta:
   @just code nextestall
 
-# Alias for code test
-t:
-  @just code test
-
-# Alias for code testall
-ta:
-  @just code testall
+# # Alias for code testall
+# ta:
+#   @just code testall
 
 # Build and test the code examples
 mod code 'scripts/code'

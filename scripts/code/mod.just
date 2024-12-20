@@ -21,11 +21,8 @@ alias b := build
 
 # Build the code used by the book
 build:
-  cargo build --package dependencies --tests --locked
-
-# Build all code with all features (incl. "unused")
-buildallfeat:
-  cargo build --workspace --all-targets --locked --all-features
+  cargo build --tests --locked
+# Build default members of the workspace
 
 alias ba := buildall
 
@@ -35,29 +32,40 @@ buildall:
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
+# Build all code with all features (incl. "unused")
+buildallfeat:
+  cargo build --workspace --all-targets --locked --all-features
+
 alias ca := clippyall
 
 # Scan all code for common mistakes
 clippyall:
   cargo clippy --workspace --all-targets --locked -- -D warnings
 
-alias t := test
+#alias t := test
 
-# Test the code used by the book (`deps` crate only)
-test: _clean_temp_dir && _clean_temp_dir
-  cargo test --package dependencies --tests --locked -- --show-output || true
-# Only the code in the `deps` package is tested.
-# This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
-# NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
-# when dealing with dependencies outside of the std library.
-# See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
+## Test the code used by the book
+#test: _clean_temp_dir && _clean_temp_dir
+##  cargo test --tests --locked -- --show-output || true
+## Only the code in default members of the workspace is tested.
+## This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
+## NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
+## when dealing with dependencies outside of the std library.
+## See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
 
-alias ta := testall
+#alias ta := testall
 
-# Test all code
-testall: _clean_temp_dir && _clean_temp_dir
-  cargo test --workspace --all-targets --locked || true
-# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+## Test all code
+#testall: _clean_temp_dir && _clean_temp_dir
+#  cargo test --workspace --all-targets --locked || true
+## `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+alias nt := nextest
+
+nextest: _clean_temp_dir && _clean_temp_dir
+  cargo nextest run --all-targets --locked --no-fail-fast || true
+  cargo test --doc --quiet || true
+# Test default members of the workspace
 
 alias nta := nextestall
 
@@ -66,7 +74,7 @@ nextestall: _clean_temp_dir && _clean_temp_dir
   cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
   cargo test --doc --workspace --quiet || true # nextest does not handle doctests
 
-# Clean the `deps/temp` folder of most files prior / after testing
+# Clean the `crates/**/temp` folders of most files prior / after testing
 _clean_temp_dir:
   cargo run -p clean --quiet
 
