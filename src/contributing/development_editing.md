@@ -14,7 +14,7 @@ To add or edit the book, simply update or add a `.md` file in the appropriate [`
 - You may write very short examples directly in the Markdown (but they won't be be formatted / linted automatically).
 - `rust` language code blocks in the Markdown will automatically get a _play_ button, which will execute the code in the [Rust Playground][rust-playground-website]{{hi:Rust playground}}⮳ and display the output just below the code block. Adding the `mdbook-runnable` attribute forces the _play_ button to be displayed when [`ignore`][book-rust-code-block-attributes]{{hi:ignore}}⮳ is set.
 - The Rust playground{{hi:Rust playground}} only supports the top 100 most downloaded libraries and libraries used by the Rust Cookbook. [`noplayground`][book-rust-code-block-attributes]{{hi:noplayground}}⮳ removes the play button if a code block does not work on the playground.
-- Example projects that are too complex to be inserted in the book itself (e.g. that include multiple modules) should be added as separate folders below `xmpl`. Use `cargo new` or `cargo init` to create packages as usual. Insert a link to the appropriate GitHub page in the markdown.
+- Example projects that are too complex to be inserted in the book itself (e.g. that include multiple modules) should be added as separate folders below `crates/xmpl`. Use `cargo new` or `cargo init` to create packages as usual. Insert a link to the appropriate GitHub page in the markdown.
 
 Verify the markdown is properly rendered using `just serve` or `mdbook serve --open`. Pushing a commit to the `main` branch on GitHub will trigger a GitHub Action workflow that checks formatting / linting, builds / tests all examples, then deploys the book to GitHub Pages.
 

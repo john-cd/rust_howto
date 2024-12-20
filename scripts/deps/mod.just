@@ -6,7 +6,7 @@ _default:
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
-# Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `xmpl`)
+# Update Cargo.lock dependencies for all projects (incl. the book's examples, tools, and additional examples in `crates/xmpl`)
 [confirm]
 update:
   cargo update

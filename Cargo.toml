@@ -1,18 +1,18 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/about",
-    "crates/categories/*",
-    "crates/language",
-    "crates/other",
+    "crates/ex/about",
+    "crates/ex/categories/*",
+    "crates/ex/language",
+    "crates/ex/other",
+    "crates/ex/standard_library",
     "crates/playground",
     "crates/publish", # crates.io placeholder
-    "crates/standard_library",
     "crates/tools/*",
     "crates/xmpl/*", # examples independent from the book markdown
     ]
 exclude = []
-default-members = ["crates/about", "crates/categories/*", "crates/language", "crates/other", "crates/standard_library",]
+default-members = ["crates/ex/about", "crates/ex/categories/*", "crates/ex/language", "crates/ex/other", "crates/ex/standard_library",]
 
 # Default values for packages in the workspace
 [workspace.package]

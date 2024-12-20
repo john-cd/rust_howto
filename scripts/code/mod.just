@@ -78,7 +78,7 @@ nextestall: _clean_temp_dir && _clean_temp_dir
 _clean_temp_dir:
   cargo run -p clean --quiet
 
-# Run additional examples (under the `xmpl` folder)
+# Run additional examples (under the `crates/xmpl` folder)
 [unix]
 runall:
   ./runall.sh

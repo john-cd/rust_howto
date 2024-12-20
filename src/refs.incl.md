@@ -723,4 +723,4 @@
 [p-standard-library]: standard-library/index.md
 [p-web-programming]: categories/web-programming/index.md
 [p-word-index]: word_index.md
-[rust-howto-xmpl-github]: https://github.com/john-cd/rust_howto/tree/main/xmpl
+[rust-howto-xmpl-github]: https://github.com/john-cd/rust_howto/tree/main/crates/xmpl

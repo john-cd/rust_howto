@@ -9,7 +9,7 @@ fn documented_function() {
 
 // Alternatively, you may use an external file
 
-#[doc = include_str!("../../../../../README.md")]
+#[doc = include_str!("../../../../README.md")]
 fn function_including_external_file_as_documentation() {}
 
 fn main() {

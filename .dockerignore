@@ -8,8 +8,8 @@
 /.github
 /.vscode
 /book
-/crates/categories/*/temp
-/crates/categories/*/target
+/crates/ex/**/temp
+/crates/**/target
 /crates/playground/drafts
 /doctest_cache
 /drafts
