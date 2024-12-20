@@ -3,7 +3,7 @@
 //! We no longer use `skeptic` to test the code examples in the book.
 //!
 //! All book examples are currently written as tests
-//!  under `crates/**/tests`, which are then included in the markdown.
+//!  under `crates/ex/**/tests`, which are then included in the markdown.
 //!
 //! See https://crates.io/crates/skeptic for configuration.
 
