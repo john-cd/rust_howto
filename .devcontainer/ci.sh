@@ -29,19 +29,16 @@ cargo fetch
 ## - `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 ## - See .cargo/config.toml for the `ci` profile config. We removed optimizations, since we will run / test the examples just once.
 ## - Some examples require external services e.g. Redis, Mongodb... and are excluded from testing / hidden behind feature flags.
-## The "almost_all" feature compiles them all - with the exception of the "unused" feature at this point.
-cargo build --workspace --all-targets --locked --profile ci --features almost_all
+cargo build --workspace --all-targets --locked --profile ci
 
 ## Make sure that all examples are linted
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
-cargo clippy --workspace --all-targets --locked --profile ci --features almost_all -- --deny warnings
+cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
 
-## Test all examples (integration tests in /deps/tests and any tests in /xmpl)
-## `--features ci` is used to ignore certain examples that should not run during CI. See `deps/Cargo.toml`.
-## The "almost_all" feature is not present - we do not test the examples that require external services here.
+## Test all code examples (except heavy tests and "ignore_in_ci" tests)
 cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
 ## `nextest` does not handle doctests.
-cargo test --workspace --doc --locked --profile ci --features ci -- --show-output
+cargo test --workspace --doc --locked --profile ci -- --show-output
 ## NOTE supersedes: mdbook test / skeptic tests
 
 ## Build the book (html)

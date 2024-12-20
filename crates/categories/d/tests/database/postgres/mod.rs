@@ -4,7 +4,7 @@ mod insert_query_data;
 // mod deadpool2;
 
 #[test]
-fn test() -> anyhow::Result<()> {
+fn require_external_svc() -> anyhow::Result<()> {
     create_tables::main()?;
     insert_query_data::main()?;
     // aggregate_data::main()?;

@@ -19,15 +19,13 @@ checkall:
 
 alias b := build
 
-# Build the code used by the book (`deps` crate only`)
+# Build the code used by the book
 build:
   cargo build --package dependencies --tests --locked
 
-alias bf := build_with_features
-
-# Build code examples that are gated under features
-build_with_features:
-  cargo build --package dependencies --tests --locked --features postgres,redis,elasticsearch,meilisearch,mongodb,typesense
+# Build all code with all features (incl. "unused")
+buildallfeat:
+  cargo build --workspace --all-targets --locked --all-features
 
 alias ba := buildall
 

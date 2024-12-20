@@ -7,7 +7,10 @@ dir = "target/nextest"
 # on top of the default profile.
 [profile.default]
 # The set of tests run by `cargo nextest run` by default.
-default-filter = "all()"
+#default-filter = "all()"
+
+# Do not run tests that require Postgres, elasticsearch, etc... by default
+default-filter = "not (test(require_external_svc))"
 
 # "retries" defines the number of times a test should be retried. If set to a
 # non-zero value, tests that succeed on a subsequent attempt will be marked as
@@ -129,7 +132,7 @@ store-failure-output = true
 [profile.default-miri]
 
 [profile.ci]
-default-filter = "not (test(ignore_in_ci))"
+default-filter = "not (test(ignore_in_ci) or test(require_external_svc))"
 
 # Do not cancel the test run on the first failure.
 fail-fast = false

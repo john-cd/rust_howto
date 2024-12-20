@@ -6,7 +6,7 @@ fn main() {
 
 #[test]
 #[ignore = "not yet implemented"]
-fn test() {
+fn require_external_svc() {
     main();
 }
 // [P1](https://github.com/john-cd/rust_howto/issues/721)

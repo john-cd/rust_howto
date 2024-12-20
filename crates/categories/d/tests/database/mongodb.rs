@@ -42,7 +42,7 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
+fn require_external_svc() {
     unsafe {
         // Refer to the compose*.yaml files
         env::set_var(

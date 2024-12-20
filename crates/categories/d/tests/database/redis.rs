@@ -42,7 +42,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test() -> Result<()> {
+fn require_external_svc() -> Result<()> {
     unsafe {
         // container name = $COMPOSE_PROJECT_NAME + service name + number
         env::set_var("REDIS_HOSTNAME", "rust_howto_dev-redis-1");
