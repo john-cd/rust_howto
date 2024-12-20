@@ -40,7 +40,7 @@ fn main() -> Result<()> {
 
     //// We are only testing code that are in the Markdown,
     //// not tests / examples that are in separate .rs files.
-    // Remove any {{#include ../../deps/**/*.rs}} from the Markdown
+    // Remove any {{#include ../../crates/ex/**/*.rs}} from the Markdown
     // (and replace by a hard-coded string to avoid Skeptic errors).
     // let contents_to_insert = "fn main() {}";
     // let modified_files =
