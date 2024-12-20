@@ -19,20 +19,43 @@ readme = "README.md"
 ## in order to keep the compile speed decent.
 ## Remove the optional flag as needed.
 [dependencies]
-anyhow = "1.0.94"
-async-channel = "2.3.1"
-async-trait = "0.1.83"
-futures = "0.3.31"
-postage = "0.5.0"
-pyo3 = { version = "0.21.0", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
-pyoxidizer = { version = "0.24.0", optional = true }
+
+## Accessibility
+accesskit = { version = "0.17.0", optional = true }
+
+## Aerospace and friends
+
+## Algorithms
+glidesort = { version = "0.1.2", optional = true }
 rand = "0.8.5"
 rand_distr = "0.4.3"
+
+## API bindings
+pyo3 = { version = "*", optional = true } # was pinned to 0.21 to avoid conflict with `polars`
+pyoxidizer = { version = "*", optional = true }
+
+## Async
+async-channel = "2.3.1"
+async-std = "1.13.0"
+async-stream = "0.3.6"
+async-trait = "0.1.83"
+duct = { version = "0.13.7", optional = true }
+futures = "0.3.31"
+futures-executor = "0.3.31"
+# kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
+mio = { version = "1.0.2", optional = true }
+parking_lot = "0.12.3"
+postage = "0.5.0"
 rayon = "1.10.0"
 reqwest = "0.12.9"
+smol = { version = "2.0.2", optional = true }
 tempfile = "3.14.0"
 tokio = { version = "1.42.0", features = ["full"] }
 tokio-graceful-shutdown = "0.15.2"
+
+## Authentication
+
+anyhow = "1.0.94"
 tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
 
@@ -41,3 +64,12 @@ tracing-subscriber = "0.3.19"
 ## Features for code examples that requires additional software installed e.g. python, perl...
 ## Useful when using Windows
 python = ["dep:pyo3", "dep:pyoxidizer"]
+
+unused = [
+    "dep:accesskit",
+    "dep:duct",
+    "dep:glidesort",
+    # "dep:kanal",
+    "dep:mio",
+    "dep:smol",
+]
