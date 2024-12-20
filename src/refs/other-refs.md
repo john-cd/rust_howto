@@ -608,7 +608,7 @@
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
-[rust-howto-deps-tests-github]: https://github.com/john-cd/rust_howto/tree/main/deps/tests
+[rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates/ex
 [rust-howto-drafts-badge]: https://img.shields.io/badge/rust__howto_drafts-steelblue?logo=github
 [rust-howto-drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
 [rust-howto-github-badge]: https://img.shields.io/badge/rust__howto-steelblue?logo=github

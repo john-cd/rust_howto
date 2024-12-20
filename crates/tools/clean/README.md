@@ -1,4 +1,4 @@
 # clean
 
-A very simnple tool to clean `deps/temp` before and after testing.
-Keeps the `.gitkeep` stub file.
+A very simnple tool to clean `temp` folders before and after testing.
+Keeps any `.gitkeep` stub file in these folders.

@@ -50,13 +50,13 @@ create_issues_for_examples:
   for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
   do
     base=$(basename $file)
-    rel=$(realpath --relative-to={{justfile_directory()}}/deps/tests $file)
+    rel=$(realpath --relative-to={{justfile_directory()}}/crates/ex $file)
     echo ">> $rel"
     for todo in $(sed -nE 's~^ *// *TODO(.*)$~\1~pg' $file)
     do
       todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
       echo ">${todo}<"
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/deps/tests/${rel})" --label "code example,auto")
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main//crates/ex/${rel})" --label "code example,auto")
       echo "$issue_url"
       # Escape [ and ]
       sed -E -i 's~TODO('${todo}')~[\1]('${issue_url}')~' $file

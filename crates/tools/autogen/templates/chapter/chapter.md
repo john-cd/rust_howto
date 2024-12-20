@@ -6,10 +6,10 @@
 
 [![{{ crate_name }}][c-{{ crate_name }}-badge]][c-{{ crate_name }}] [![cat-{{ category_slug }}][cat-{{ category_slug }}-badge]][cat-{{ category_slug }}]
 
-$description1$
+{{ description }}
 
 ```rust,editable
-{% raw %}{{{% endraw %}#include ../../../deps/tests/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
+{% raw %}{{{% endraw %}#include ../../../crates/ex/categories/{{ example_crate_name }}/tests/{{ category}}/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
 ```
 
 {% raw %}
