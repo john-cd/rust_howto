@@ -1,21 +1,22 @@
 #![allow(dead_code)]
 // ANCHOR: example
+use pyo3::ffi::c_str;
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;
-use pyo3::ffi::c_str;
 
 fn test_my_function() -> PyResult<()> {
-
     Python::with_gil(|py| {
         let fun: PyObject = PyModule::from_code(
             py,
-            c_str!("def example(*args, **kwargs):
+            c_str!(
+                "def example(*args, **kwargs):
                 if args != ():
                     print('called with args', args)
                 if kwargs != {}:
                     print('called with kwargs', kwargs)
                 if args == () and kwargs == {}:
-                    print('called with no arguments')"),
+                    print('called with no arguments')"
+            ),
             c_str!(""),
             c_str!(""),
         )?
@@ -40,7 +41,14 @@ fn main() {
     pyo3::prepare_freethreaded_python();
 
     // Run a Python script
-    println!("{:?}", Python::with_gil(|py| py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None)));
+    println!(
+        "{:?}",
+        Python::with_gil(|py| py.run(
+            pyo3::ffi::c_str!("print('Hello World')"),
+            None,
+            None
+        ))
+    );
 
     println!("{:?}", test_my_function());
 }

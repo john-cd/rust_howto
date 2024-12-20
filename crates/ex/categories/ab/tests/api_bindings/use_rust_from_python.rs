@@ -18,7 +18,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 }
 
 fn main() {
-// TODO P0
+    // TODO P0
 }
 
 // ANCHOR_END: example
