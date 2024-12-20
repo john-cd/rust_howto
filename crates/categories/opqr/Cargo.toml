@@ -1,0 +1,60 @@
+[package]
+name = "opqr"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories.workspace = true
+publish = false
+readme = "README.md"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
+## in order to keep the compile speed decent.
+## Remove the optional flag as needed.
+[dependencies]
+
+## OS and friends
+# native-windows-gui = { version = "1.0.13", optional = true }   # TODO P3 review pre-requisites
+# native-windows-derive = { version = "1.0.3", optional = true } # Required only if the derive macro is used.
+nix = { version = "0.29.0", optional = true }
+rustix = { version = "0.38.42", optional = true }
+windows = { version = "0.58.0", optional = true }
+
+## Parsing and friends
+nom = { version = "7.1.3", optional = true }
+pest = { version = "2.7.14", optional = true }
+postscript = { version = "0.18.2", optional = true }
+
+## Rendering and friends
+
+## Rust patterns
+dyn-clone = "1.0.17"
+# eyre = "0.6.12" # outdated, see color-eyre
+itertools = "0.13.0"
+miette = { version = "7.2.0", features = ["fancy"] }
+thiserror = "2.0.1"
+
+anyhow = "1.0.94"
+regex = "1.11.1"
+reqwest = "0.12.9"
+
+[features]
+## The `ci` feature should be turned "on" only during CI tests
+## It is used to ignore certain tests that can't run there.
+ci = []
+
+unused = [
+    "dep:nix",
+    "dep:nom",
+    "dep:pest",
+    "dep:postscript",
+    "dep:rustix",
+    "dep:windows",
+]
