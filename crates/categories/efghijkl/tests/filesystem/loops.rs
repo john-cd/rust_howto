@@ -1,4 +1,6 @@
 // ANCHOR: example
+#![cfg(target_os = "linux")]
+
 use std::io;
 use std::path::Path;
 use std::path::PathBuf;
@@ -44,7 +46,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(target_os = "linux")]
 #[test]
 fn test() -> anyhow::Result<()> {
     // mkdir -p /tmp/foo/bar/baz
