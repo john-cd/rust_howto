@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/about/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/about/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/ab/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/ab/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/c/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/c/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/d/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/d/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/efghijkl/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/efghijkl/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/mn/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/mn/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/opqr/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/opqr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/stuv/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/stuv/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/wxyz/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/categories/wxyz/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/language/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/language/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/other/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/other/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/standard_library/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/ex/standard_library/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/playground/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/playground/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/publish/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/tools/autogen/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/tools/clean/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/tools/crate_indices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/tools/templ/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/tools/tool_lib/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/xmpl/clap_builder_xmpl/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
