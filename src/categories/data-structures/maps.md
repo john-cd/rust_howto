@@ -30,16 +30,16 @@
 {{#include ../../../crates/ex/categories/d/tests/data_structures/multimap.rs:example}}
 ```
 
-## `slotmap` {#slotmap}
+## Store collections of objects that need stable, safe references {#slotmap}
 
 [![slotmap][c-slotmap-badge]][c-slotmap]{{hi:slotmap}}
 [![slotmap-crates.io][c-slotmap-crates.io-badge]][c-slotmap-crates.io]
 [![slotmap-github][c-slotmap-github-badge]][c-slotmap-github]
 [![slotmap-lib.rs][c-slotmap-lib.rs-badge]][c-slotmap-lib.rs]
 
-Use to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
+Use `slotmap` to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
 
-`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap` , `HopSlotMap` and `DenseSlotMap`. Upon insertion a key is returned that can be used to later access or remove the values. Insertion, deletion and access all take O(1) time with low overhead. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
+`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap` , `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/ex/categories/d/tests/data_structures/slotmap.rs:example}}

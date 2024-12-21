@@ -30,7 +30,7 @@ indexmap = "2.7.0"
 linked-hash-map = { version = "0.5.6", optional = true }
 multimap = "0.10.0"
 petgraph = { version = "0.6", optional = true }
-slotmap = { version = "1.0.7", optional = true }
+slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8"
 tinyvec = { version = "1.8.0", features = ["alloc"] }
 uuid = { version = "1.11.0", features = [
@@ -159,7 +159,6 @@ unused = [
     "dep:seaography",
     "dep:sea-orm",
     "dep:sled",
-    "dep:slotmap",
     "dep:sqlx",
     "dep:syn",
     "dep:tantivy",
