@@ -3967,6 +3967,7 @@ dependencies = [
  "crossbeam-channel",
  "crossbeam-queue",
  "crossbeam-utils",
+ "crossterm 0.28.1",
  "curve25519-dalek 4.1.3",
  "dashmap 6.1.0",
  "data-encoding",

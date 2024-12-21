@@ -45,7 +45,8 @@ For anything more complex than plain foreground color changes, the code needs to
 
 Low-level cross-platform terminal rendering and event handling.
 
-Crossterm is a pure-rust, terminal manipulation library that makes it possible to write cross-platform text-based interfaces. It supports all UNIX and Windows terminals down to Windows 7
+`crossterm` is a pure-Rust, terminal manipulation library used to write cross-platform text-based interfaces.
+It supports all UNIX and Windows terminals down to Windows 7.
 
 - Full control over writing and flushing output buffer
 - Is tty
@@ -54,11 +55,14 @@ Crossterm is a pure-rust, terminal manipulation library that makes it possible t
 - Terminal handling
 - Events (key inputs, mouse...)
 
+```rust,editable
+{{#include ../../../crates/ex/categories/c/tests/command_line_interface/crossterm.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ansi_terminal: expand crossterm (P1)](https://github.com/john-cd/rust_howto/issues/230)
 [ansi_terminal: ansi_term is archived (P0)](https://github.com/john-cd/rust_howto/issues/231)
 
 Most popular
