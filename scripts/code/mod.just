@@ -62,17 +62,17 @@ clippyall:
 
 alias nt := nextest
 
-nextest: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --all-targets --locked --no-fail-fast || true
-  cargo test --doc --quiet || true
 # Test default members of the workspace
+nextest: _clean_temp_dir && _clean_temp_dir
+  cargo test --doc --quiet || true
+  cargo nextest run --all-targets --locked --no-fail-fast || true
 
 alias nta := nextestall
 
-# Test all code using nextest
+# Test all code in the workspace
 nextestall: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
   cargo test --doc --workspace --quiet || true # nextest does not handle doctests
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 _clean_temp_dir:
