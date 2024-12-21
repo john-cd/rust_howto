@@ -8,9 +8,6 @@ use anyhow::Result;
 use regex::RegexSetBuilder;
 
 fn main() -> Result<()> {
-    if !fs::exists("temp").unwrap() {
-        fs::create_dir("temp").unwrap();
-    }
     let log_path = "temp/application.log";
     let buffered = BufReader::new(File::open(log_path)?);
 
@@ -36,6 +33,9 @@ use std::io::Write;
 
 #[test]
 fn test() -> Result<()> {
+    if !fs::exists("temp")? {
+        fs::create_dir("temp")?;
+    }
     let mut file = File::create("temp/application.log")?;
     file.write_all(EXAMPLE_TEXT.as_bytes())?;
     main()?;
