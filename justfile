@@ -19,9 +19,9 @@ ba:
 ca:
   @just code clippyall
 
-# Alias for code fmtall
+# Alias for code fmt
 f:
-  @just code fmtall
+  @just code fmt
 
 # Alias for code fmtall
 fa:

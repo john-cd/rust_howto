@@ -6,7 +6,14 @@ _default:
 
 ## ---- CODE BUILDING -----------------------------------
 
-alias f := fmtall
+alias f := fmt
+
+# Format all bin and lib files of the current crate using rustfmt
+[no-cd]
+fmt:
+  cargo +nightly fmt
+
+alias fa := fmtall
 
 # Format all code
 fmtall:
