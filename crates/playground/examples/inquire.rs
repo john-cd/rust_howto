@@ -1,14 +1,17 @@
+use inquire::Confirm;
 #[allow(dead_code)]
 // ANCHOR: example
-use inquire::{Text, Select};
-use inquire::Confirm;
+use inquire::Select;
+#[allow(dead_code)]
+// ANCHOR: example
+use inquire::Text;
 
 // The `inquire`` crate is used for creating interactive CLI prompts.
 fn main() {
-
     let ans = Confirm::new("Do you want to proceed?")
-    .with_default(false)
-    .prompt().expect("Failed to read input");
+        .with_default(false)
+        .prompt()
+        .expect("Failed to read input");
     println!("You answered: {:?}", ans);
 
     // Prompt for the user's name
@@ -25,6 +28,9 @@ fn main() {
 
     // Display the collected information
     println!("Hello, {}!", name);
-    println!("Your favorite programming language is {}.", favorite_language);
+    println!(
+        "Your favorite programming language is {}.",
+        favorite_language
+    );
 }
 // ANCHOR_END: example
