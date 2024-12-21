@@ -1,4 +1,4 @@
-#![allow(dead_code)]
+#[allow(dead_code)]
 // ANCHOR: example
 use inquire::{Text, Select};
 use inquire::Confirm;
@@ -28,5 +28,3 @@ fn main() {
     println!("Your favorite programming language is {}.", favorite_language);
 }
 // ANCHOR_END: example
-
-// No tests - this example requires use input

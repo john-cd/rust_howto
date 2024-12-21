@@ -16421,6 +16421,7 @@ name = "playground"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "inquire",
  "tracing",
  "tracing-subscriber",
  "walkdir",
