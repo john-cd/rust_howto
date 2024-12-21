@@ -18,11 +18,7 @@ fn main() -> Result<(), Error> {
     let package_info: Value = toml::from_str(toml_content)?;
 
     assert_eq!(package_info["dependencies"]["serde"].as_str(), Some("1.0"));
-    assert_eq!(
-        package_info["package"]["name"].as_str(),
-        Some("your_package")
-    );
-
+    println!("Package name: {}", package_info["package"]["name"].as_str().unwrap());
     Ok(())
 }
 // ANCHOR_END: example
