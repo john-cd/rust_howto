@@ -1,6 +1,5 @@
 #![allow(unused_imports)]
 // ANCHOR: example
-
 use std::path::Path;
 
 use notify::EventHandler;
