@@ -31,6 +31,7 @@ console = "0.15.10"
 crossterm = "0.28.1"
 indicatif = "0.17.9"
 inquire = "0.7.5"
+ratatui = "0.29.0"
 
 ## Command-line utilities
 starship = { version = "1.21.1", optional = true }
