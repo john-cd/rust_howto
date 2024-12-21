@@ -33,7 +33,7 @@ To retrieve a single environment variable{{hi:Environment variables}},
 ```toml
 [dependencies]
 envy = "0.4"
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0.216", features = ["derive"] }
 ```
 
 ```rust,editable,should_panic,noplayground

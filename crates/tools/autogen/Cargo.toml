@@ -19,7 +19,7 @@ tool_lib = { path = "../tool_lib" }
 tera = "1.20.0"
 #url = "2.5.2"
 walkdir = "2.5.0"
-serde = "1.0.214"
+serde = { version = "1.0.216", features = ["derive"] }
 pgp = "0.14.2"
 
 [[bin]]
