@@ -5556,6 +5556,7 @@ dependencies = [
  "tool_lib",
  "tracing",
  "tracing-subscriber",
+ "walkdir",
 ]
 
 [[package]]
