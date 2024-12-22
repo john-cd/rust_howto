@@ -7550,6 +7550,7 @@ dependencies = [
  "cosmic-text",
  "csv",
  "data-encoding",
+ "directories 5.0.1",
  "egui",
  "form_urlencoded",
  "glob",

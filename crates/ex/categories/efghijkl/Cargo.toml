@@ -41,6 +41,7 @@ toml = "0.8.19"
 ## External FFI
 
 ## Filesystem
+directories = "5.0.1"
 glob = "0.3.1"
 globset = { version = "0.4.15", optional = true }
 memmap2 = "0.9.5"
