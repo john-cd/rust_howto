@@ -16,7 +16,7 @@ The core functionality of `once_cell` is now included in the standard library wi
 
 [OnceCell][c-std-core::cell::OnceCell]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
 
-The corresponding Sync version of `OnceCell<T>` is `OnceLock<T>`.
+The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/mn/tests/memory_management/once_cell.rs:example}}
