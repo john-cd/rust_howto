@@ -54,6 +54,7 @@ enum Mode {
 }
 
 impl App {
+
     // The `run` function contains the main loop of the application.
     // It repeatedly draws the UI and handles input events.
     fn run(&mut self, mut terminal: DefaultTerminal) -> Result<()> {
