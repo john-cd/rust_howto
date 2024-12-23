@@ -9,10 +9,17 @@
 [![ratatui-github][c-ratatui-github-badge]][c-ratatui-github]
 [![ratatui-lib.rs][c-ratatui-lib.rs-badge]][c-ratatui-lib.rs]
 
-[ratatui][c-ratatui-github]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
+[`ratatui`][c-ratatui-website]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/command_line_interface/ratatui.rs:example}}
+```
+
+`ratatui` offers templates to get started. For example, to use the simple template, run the following commands:
+
+```bash
+cargo install cargo-generate
+cargo generate ratatui/templates simple
 ```
 
 ## See also
