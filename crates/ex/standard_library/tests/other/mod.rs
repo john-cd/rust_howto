@@ -1,5 +1,6 @@
 mod asref;
 mod box1;
+mod cell;
 mod derive;
 mod derive_more;
 mod hashmaps;
