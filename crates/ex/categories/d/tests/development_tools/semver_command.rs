@@ -1,3 +1,4 @@
+#![cfg(not(windows))]
 // ANCHOR: example
 use std::process::Command;
 
@@ -43,4 +44,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [semver_command: ; fails on Windows (P0)](https://github.com/john-cd/rust_howto/issues/155)
