@@ -43,16 +43,6 @@ Smaller and simpler than `crossbeam-channel` and almost as fast.
 {{#include ../../../crates/ex/categories/c/tests/concurrency/flume.rs:example}}
 ```
 
-### `tokio` {#tokio}
-
-[![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
-
-Tokio's `sync` module provides channels for using in async code.
-
-```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/tokio.rs:example}}
-```
-
 ## See also
 
 [Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳

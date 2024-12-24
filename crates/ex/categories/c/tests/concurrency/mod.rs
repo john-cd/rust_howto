@@ -32,4 +32,3 @@ mod stakker;
 mod sync_send;
 mod threadpool_fractal;
 mod threadpool_walk;
-mod tokio;
