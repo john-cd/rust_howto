@@ -23,4 +23,6 @@ Rusty WebGPU API wrapper.
 <div class="hidden">
 [webgpu: write (P2)](https://github.com/john-cd/rust_howto/issues/375)
 
+- review [rust-gpu-ecosystem-website]: https://rust-gpu.github.io/ecosystem
+
 </div>
