@@ -37,7 +37,7 @@ Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi
 [![flume-github][c-flume-github-badge]][c-flume-github]
 [![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
 
-Smaller and simpler than `crossbeam-channel` and almost as fast.
+The `flume` crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the `std::sync::mpsc` module, but with additional features and improved performance. It is smaller and simpler than `crossbeam-channel` and almost as fast.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/concurrency/flume.rs:example}}

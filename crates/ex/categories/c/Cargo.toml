@@ -51,6 +51,7 @@ crossbeam = "0.8.4"
 crossbeam-channel = "0.5.14"
 crossbeam-queue = "0.3.12"
 crossbeam-utils = "0.8.21"
+flume = {version = "0.11.1", features = ["select"] }
 rayon = "1.10.0"
 riker = { version = "0.4.2", optional = true }
 stakker = { version = "0.2.11", optional = true }
