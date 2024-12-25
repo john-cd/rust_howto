@@ -58,7 +58,7 @@ stakker = { version = "0.2.11", optional = true }
 threadpool = "1.8.1"
 
 ## Config
-config = { version = "0.15.3" , optional = true }
+config = "0.15.3"
 confy = "0.6.1"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
@@ -81,6 +81,7 @@ parking_lot = "0.12.3"
 rand = "0.8.5"
 serde = { version = "1.0.216", features = ["derive"] }
 walkdir = "2.5.0"
+serde_derive = "1.0.216"
 
 [features]
 
@@ -88,7 +89,6 @@ walkdir = "2.5.0"
 ## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
     "dep:clap-verbosity-flag",
-    "dep:config",
     "dep:curve25519-dalek",
     "dep:ed25519-dalek",
     "dep:opencv",

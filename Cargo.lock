@@ -3993,6 +3993,7 @@ dependencies = [
  "ring 0.17.8",
  "salsa",
  "serde 1.0.216",
+ "serde_derive",
  "stakker",
  "starship",
  "tar",
