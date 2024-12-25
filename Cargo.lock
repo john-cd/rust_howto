@@ -6048,6 +6048,7 @@ dependencies = [
  "seaography",
  "semver 1.0.24",
  "serde 1.0.216",
+ "serde_json",
  "sled",
  "slotmap",
  "smallvec 2.0.0-alpha.9",
@@ -7619,13 +7620,14 @@ dependencies = [
 
 [[package]]
 name = "elasticsearch"
-version = "8.15.0-alpha.1"
+version = "8.17.0-alpha.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d99147dd351d320432ec103a20804cbb593d3d08fd2eed0ee86f21a0f5137a3c"
+checksum = "52be486463ef0b89e45191803db146387d5f594c26a0c8790807bb3e988ec5f6"
 dependencies = [
  "base64 0.22.1",
  "bytes",
  "dyn-clone",
+ "flate2",
  "lazy_static",
  "percent-encoding",
  "reqwest 0.12.9",
