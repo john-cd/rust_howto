@@ -2,7 +2,15 @@
 
 {{#include _password_hashing.incl.md}}
 
-## `argon2` {#argon2}
+A key derivation function (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value such as a master key, a password, or a passphrase, using a pseudorandom function (which typically uses a cryptographic hash function or block cipher).
+
+The original use for a KDF is key derivation, the generation of multiple child keys from secret passwords or passphrases.
+
+Despite their original use for key derivation, KDFs are possibly better known for their use in password hashing (password verification by hash comparison), as used by the `passwd` file or shadow password file. Password hash functions should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
+
+In that role, key derivation functions take a password, a salt, and a cost factor as inputs, then generate a password hash. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive.
+
+## Hash a password, then verify a password against the hash {#argon2}
 
 [![argon2][c-argon2-badge]][c-argon2]{{hi:argon2}}
 [![argon2-crates.io][c-argon2-crates.io-badge]][c-argon2-crates.io]
@@ -12,7 +20,7 @@
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
+`argon2` is a pure-Rust implementation of the 'Argon2' key derivation function, which is commonly used for secure password hashing.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/argon2.rs:example}}
@@ -28,7 +36,7 @@ Pure Rust implementation of the Argon2 password hashing function with support fo
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-The scrypt key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
+The `scrypt` key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as `PBKDF2` or `bcrypt`.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/scrypt.rs:example}}
@@ -55,6 +63,8 @@ For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashe
 <div class="hidden">
 [_password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
 
-[Key derivation function][key_derivation_function]
+cite [argon2-wikipedia]: https://en.wikipedia.org/wiki/Argon2
+
+cite [Key derivation function][key_derivation_function]
 [key_derivation_function]: <https://en.wikipedia.org/wiki/Key_derivation_function>
 </div>
