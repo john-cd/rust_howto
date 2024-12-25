@@ -12556,6 +12556,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "joinery"
+version = "3.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "57d8bde02bbf44a562cf068a8ff4a68842df387e302a03a4de4a57fcf82ec377"
+
+[[package]]
 name = "jpeg-decoder"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -21010,6 +21016,8 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "candle-core",
+ "concat-string",
+ "joinery",
  "lazy_static",
  "linfa",
  "once_cell",

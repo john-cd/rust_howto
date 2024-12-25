@@ -32,6 +32,8 @@ zenoh = { version = "1.0.2", optional = true }
 ## Template engine
 
 ## Text processing
+concat-string = "1.0.1"
+joinery = "3.1.0"
 regex = "1.11.1"
 unicode-segmentation = "1.12.0"
 

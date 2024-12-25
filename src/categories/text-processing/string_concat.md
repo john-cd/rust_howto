@@ -4,13 +4,13 @@
 
 {{#include string_concat.incl.md}}
 
-## Compare string concatenation methods {#benchmark}
-
-[String concatenation benchmark][concat-benchmark-github]⮳
+## Concatenate strings {#benchmark}
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/stuv/tests/text_processing/string_concat.rs:example}}
 ```
+
+[String concatenation benchmark][concat-benchmark-github]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
