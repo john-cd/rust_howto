@@ -2524,6 +2524,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "bcrypt"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2b1866ecef4f2d06a0bb77880015fdf2b89e25a1c2e5addacb87e459c86dc67e"
+dependencies = [
+ "base64 0.22.1",
+ "blowfish",
+ "getrandom 0.2.15",
+ "subtle",
+ "zeroize",
+]
+
+[[package]]
 name = "better_scoped_tls"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3959,6 +3972,7 @@ dependencies = [
  "ansi_term",
  "anyhow",
  "argon2",
+ "bcrypt",
  "clap 4.5.23",
  "clap-verbosity-flag",
  "config 0.15.4",

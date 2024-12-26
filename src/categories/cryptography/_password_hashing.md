@@ -6,9 +6,9 @@ A key derivation function (KDF) is a cryptographic algorithm that derives one or
 
 The original use for a KDF is key derivation, the generation of multiple child keys from secret passwords or passphrases.
 
-Despite their original use for key derivation, KDFs are possibly better known for their use in password hashing (password verification by hash comparison), as used by the `passwd` file or shadow password file. Password hash functions should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
+Despite their original use for key derivation, KDFs are possibly better known for their use in password hashing (password verification by hash comparison), as used by the `passwd` file or `shadow` password file. Password hash functions should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
 
-In that role, key derivation functions take a password, a salt, and a cost factor as inputs, then generate a password hash. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive.
+In that role, key derivation functions take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive.
 
 ## Hash a password, then verify a password against the hash {#argon2}
 
@@ -49,7 +49,9 @@ The `scrypt` key derivation function is designed to be far more secure against h
 [![bcrypt-github][c-bcrypt-github-badge]][c-bcrypt-github]
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
-Hash and verify passwords.
+`bcrypt` is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, `bcrypt` is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
+
+`bcrypt` is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/bcrypt.rs:example}}
@@ -63,8 +65,10 @@ For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashe
 <div class="hidden">
 [_password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
 
-cite [argon2-wikipedia]: https://en.wikipedia.org/wiki/Argon2
+Cite [argon2-wikipedia]: https://en.wikipedia.org/wiki/Argon2
 
-cite [Key derivation function][key_derivation_function]
+Cite [Key derivation function][key_derivation_function]
 [key_derivation_function]: <https://en.wikipedia.org/wiki/Key_derivation_function>
+
+Cite [bcrypt-wikipedia]: https://en.wikipedia.org/wiki/Bcrypt
 </div>
