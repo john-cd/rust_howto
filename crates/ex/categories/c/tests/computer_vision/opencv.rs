@@ -1,12 +1,13 @@
 // ANCHOR: example
+use std::fs;
+
+use image::Rgb;
+use image::RgbImage;
 use opencv::core::Mat;
 use opencv::core::Vector;
 use opencv::imgcodecs;
 use opencv::imgproc;
 use opencv::prelude::*;
-use std::fs;
-use image::RgbImage;
-use image::Rgb;
 use rand::Rng;
 
 // This example demonstrates how to load an image, convert it to grayscale, and
@@ -15,7 +16,6 @@ use rand::Rng;
 // the same directory as the executable or adjust the path accordingly.
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-
     // Prep: create a temporary directory
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
@@ -55,6 +55,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 fn test() {
     main().unwrap();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/681)
-
-// TODO https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff
+// TODO expand example?
+// TODO review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff
