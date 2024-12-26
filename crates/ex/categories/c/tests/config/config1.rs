@@ -5,7 +5,7 @@ use std::fs;
 use anyhow::Context;
 use anyhow::Result;
 use config::Config;
-use config::Environment;
+// TODO use config::Environment;
 use serde_derive::Deserialize;
 
 // `Config` is prioritized configuration repository.
@@ -107,17 +107,19 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
+// TODO finish, move anchor
 #[test]
 fn test_config() -> Result<(), config::ConfigError> {
     // Alternate source for the environment.
     // This can be used when you want to test your own code using this source,
     // without the need to change the actual system environment variables.
-    let source = Environment::default().source(Some({
-        let mut env = HashMap::new();
-        env.insert("APP_LIST".into(), "my-value".into());
-        env
-    }));
+    // let source = Environment::default().source(Some({
+    //     let mut env = HashMap::new();
+    //     env.insert("APP_LIST".into(), "my-value".into());
+    //     env
+    // }));
 
     //   let config: MyConfig = Config::builder()
     //     .add_source(source)
@@ -127,7 +129,6 @@ fn test_config() -> Result<(), config::ConfigError> {
 
     Ok(())
 }
-// ANCHOR_END: example
 
 #[test]
 fn test() -> Result<()> {
