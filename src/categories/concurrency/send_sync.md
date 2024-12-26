@@ -44,7 +44,7 @@ Note that, by implementing the unsafe marker traits `Send` and `Sync`, you _guar
 
 <div class="hidden">
 
-[Send / Sync custom implementation: finish example in playground (P1 / P2)](https://github.com/john-cd/rust_howto/issues/265)
+[Send / Sync custom implementation: finish example in playground crate (P1 / P2)](https://github.com/john-cd/rust_howto/issues/265)
 
 TODO P1
 
@@ -67,9 +67,5 @@ In the following example, we define a struct with a raw pointer to some data.
 
 We spawn multiple threads to demonstrate that `MyStruct` is `Send` and `Sync`. Each thread prints the value of the data pointer.
 The data pointer remains valid and that the usage of `MyStruct` is thread-safe.
-
-```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/sync_send_impl.rs:example}}
-```
 
 </div>

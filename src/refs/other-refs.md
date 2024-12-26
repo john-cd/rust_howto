@@ -13,8 +13,6 @@
 [adacore-blog]: https://blog.adacore.com
 [adacore-website]: https://www.adacore.com
 [adidoks-website]: https://adidoks.netlify.app
-[book-rust-by-example-box-badge]: https://img.shields.io/badge/Rust_By_Example-box-violet?logo=mdbook
-[book-rust-by-example-box]: https://doc.rust-lang.org/stable/rust-by-example/std/box.html
 [afterpay-website]: https://afterpay.com
 [airborne-engineering-website]: https://www.ael.co.uk
 [alchemy-website]: https://www.alchemy.com
@@ -36,6 +34,7 @@
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
 [are-we-web-yet?-website-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website]: https://www.arewewebyet.org
+[argon2-wikipedia]: https://en.wikipedia.org/wiki/Argon2
 [arm-website]: https://www.arm.com
 [astral-github]: https://github.com/astral-sh
 [astral-website]: https://astral.sh
@@ -54,6 +53,7 @@
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
 [azure-iot-edge-github]: https://github.com/Azure/iotedge
+[bcrypt-wikipedia]: https://en.wikipedia.org/wiki/Bcrypt
 [bencher-github]: https://github.com/bencherdev/bencher
 [bencher-website]: https://bencher.dev
 [best-of-rust-crates]: https://www.reddit.com/r/rust/comments/ul66bh/curated_list_of_must_know_rust_crates
@@ -135,6 +135,8 @@
 [book-rust-by-example-attributes]: https://doc.rust-lang.org/rust-by-example/attribute.html
 [book-rust-by-example-book-badge]: https://img.shields.io/badge/Rust_By_Example-violet?logo=mdbook
 [book-rust-by-example-book]: https://doc.rust-lang.org/rust-by-example
+[book-rust-by-example-box-badge]: https://img.shields.io/badge/Rust_By_Example-box-violet?logo=mdbook
+[book-rust-by-example-box]: https://doc.rust-lang.org/stable/rust-by-example/std/box.html
 [book-rust-by-example-closures-badge]: https://img.shields.io/badge/Rust_By_Example-Closures-violet?logo=mdbook
 [book-rust-by-example-closures]: https://doc.rust-lang.org/rust-by-example/fn/closures.html
 [book-rust-by-example-constants-badge]: https://img.shields.io/badge/Rust_By_Example-Constants-violet?logo=mdbook
@@ -205,6 +207,10 @@
 [book-rust-programming-language]: https://www.oreilly.com/library/view/the-rust-programming/9781098156817
 [book-rust-raw-string-literals-badge]: https://img.shields.io/badge/Rust_Book-Raw_string_literals-blue?logo=mdbook
 [book-rust-raw-string-literals]: https://doc.rust-lang.org/reference/tokens.html#raw-string-literals
+[book-rust-rc-badge]: https://img.shields.io/badge/Rust_Book-Rc-blue?logo=mdbook
+[book-rust-rc]: https://doc.rust-lang.org/book/ch15-04-rc.html
+[book-rust-refcell-badge]: https://img.shields.io/badge/Rust_Book-RefCell-blue?logo=mdbook
+[book-rust-refcell]: https://doc.rust-lang.org/book/ch15-05-interior-mutability.html
 [book-rust-reference-async-badge]: https://img.shields.io/badge/Rust_reference-async-peru?logo=mdbook
 [book-rust-reference-async]: https://doc.rust-lang.org/reference/items/functions.html#async-functions
 [book-rust-reference-attributes-badge]: https://img.shields.io/badge/Rust_reference-Attributes-peru?logo=mdbook
@@ -424,6 +430,7 @@
 [journald]: https://www.freedesktop.org/software/systemd/man/systemd-journald.service.html
 [julia-set]: https://en.wikipedia.org/wiki/Julia_set
 [kdab-website]: https://www.kdab.com
+[key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
 [keyrock-website]: https://keyrock.com
 [keyword-dyn]: https://doc.rust-lang.org/std/keyword.dyn.html
 [knoldus-website]: https://www.knoldus.com
@@ -606,9 +613,9 @@
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation-website]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
+[rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates/ex
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
-[rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates/ex
 [rust-howto-drafts-badge]: https://img.shields.io/badge/rust__howto_drafts-steelblue?logo=github
 [rust-howto-drafts]: https://github.com/john-cd/rust_howto/tree/main/drafts
 [rust-howto-github-badge]: https://img.shields.io/badge/rust__howto-steelblue?logo=github

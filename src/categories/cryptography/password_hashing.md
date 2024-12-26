@@ -2,9 +2,9 @@
 
 {{#include password_hashing.incl.md}}
 
-A key derivation function (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value such as a master key, a password, or a passphrase, using a pseudorandom function (which typically uses a cryptographic hash function or block cipher).
+A [key derivation function][key_derivation_function]⮳ (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value, such as a master key, a password, or a passphrase, using a pseudorandom function (typically a cryptographic hash function or block cipher).
 
-The original use for a KDF is key derivation, the generation of multiple child keys from secret passwords or passphrases.
+The original use for a KDF is key derivation, the generation of multiple keys from secret passwords or passphrases.
 
 Despite their original use for key derivation, KDFs are possibly better known for their use in password hashing (password verification by hash comparison), as used by the `passwd` file or `shadow` password file. Password hash functions should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
 
@@ -20,7 +20,7 @@ In that role, key derivation functions take a password, a salt, (and sometimes a
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`argon2` is a pure-Rust implementation of the 'Argon2' key derivation function, which is commonly used for secure password hashing.
+`argon2` is a pure-Rust implementation of the ['Argon2'][argon2-wikipedia]⮳ key derivation function, which is commonly used for secure password hashing.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/argon2.rs:example}}
@@ -36,7 +36,7 @@ In that role, key derivation functions take a password, a salt, (and sometimes a
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-The `scrypt` key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as `PBKDF2` or `bcrypt`.
+The 'scrypt' key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as 'PBKDF2' or ['bcrypt'](#bcrypt).
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/scrypt.rs:example}}
@@ -49,26 +49,17 @@ The `scrypt` key derivation function is designed to be far more secure against h
 [![bcrypt-github][c-bcrypt-github-badge]][c-bcrypt-github]
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
-`bcrypt` is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, `bcrypt` is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
-
-`bcrypt` is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
+['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/bcrypt.rs:example}}
 ```
 
-For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github]
+For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[_password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
-
-Cite [argon2-wikipedia]: https://en.wikipedia.org/wiki/Argon2
-
-Cite [Key derivation function][key_derivation_function]
-[key_derivation_function]: <https://en.wikipedia.org/wiki/Key_derivation_function>
-
-Cite [bcrypt-wikipedia]: https://en.wikipedia.org/wiki/Bcrypt
+[password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
 </div>
