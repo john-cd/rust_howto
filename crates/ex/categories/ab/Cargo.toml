@@ -41,7 +41,7 @@ async-trait = "0.1.83"
 duct = { version = "0.13.7", optional = true }
 futures = "0.3.31"
 futures-executor = { version = "0.3.31", optional = true }
-# TODO kanal = { version = "0.1.0-pre8", optional = true } # NOTE: pre version
+kanal = "0.1.0-pre8" # NOTE: pre version
 mio = { version = "1.0.2", optional = true }
 parking_lot = { version = "0.12.3", optional = true }
 postage = "0.5.0"

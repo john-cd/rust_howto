@@ -32,6 +32,7 @@ dependencies = [
  "futures",
  "futures-executor",
  "glidesort",
+ "kanal",
  "mio 1.0.3",
  "parking_lot 0.12.3",
  "postage",
@@ -12719,6 +12720,16 @@ dependencies = [
  "once_cell",
  "sha2 0.10.8",
  "signature 2.2.0",
+]
+
+[[package]]
+name = "kanal"
+version = "0.1.0-pre8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b05d55519627edaf7fd0f29981f6dc03fb52df3f5b257130eb8d0bf2801ea1d7"
+dependencies = [
+ "futures-core",
+ "lock_api",
 ]
 
 [[package]]
