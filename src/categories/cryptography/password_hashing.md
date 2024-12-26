@@ -1,6 +1,6 @@
 # Password Hashing
 
-{{#include _password_hashing.incl.md}}
+{{#include password_hashing.incl.md}}
 
 A key derivation function (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value such as a master key, a password, or a passphrase, using a pseudorandom function (which typically uses a cryptographic hash function or block cipher).
 
