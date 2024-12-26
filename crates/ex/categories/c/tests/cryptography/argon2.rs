@@ -1,5 +1,4 @@
 // ANCHOR: example
-use argon2;
 use argon2::Argon2;
 use argon2::password_hash::Error;
 use argon2::password_hash::PasswordHash;
@@ -57,7 +56,7 @@ fn password_verification(
     phc_string: &str,
 ) -> Result<bool, Error> {
     // Parsed representation of a PHC string
-    let parsed_hash = PasswordHash::new(&phc_string)?;
+    let parsed_hash = PasswordHash::new(phc_string)?;
 
     // Verify the password
     Ok(Argon2::default()

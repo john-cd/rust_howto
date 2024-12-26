@@ -33,18 +33,18 @@ fn spinner() -> anyhow::Result<()> {
     );
     // Simulate different stages of the compilation process
     let stages = vec![
-        ("Parsing source files", 1),
-        ("Type checking", 3),
-        ("Optimizing code", 2),
-        ("Generating bytecode", 1),
-        ("Linking objects", 1),
-        ("Finalizing build", 1),
+        ("Parsing source files", 100),
+        ("Type checking", 300),
+        ("Optimizing code", 500),
+        ("Generating bytecode", 100),
+        ("Linking objects", 300),
+        ("Finalizing build", 100),
     ];
     // Spawns a background thread to tick the progress bar
-    pb.enable_steady_tick(Duration::from_millis(100));
+    pb.enable_steady_tick(Duration::from_millis(50));
     for (stage, duration) in stages {
         pb.set_message(stage);
-        thread::sleep(Duration::from_secs(duration));
+        thread::sleep(Duration::from_millis(duration));
     }
     pb.disable_steady_tick();
     pb.finish_with_message("Compilation complete!");

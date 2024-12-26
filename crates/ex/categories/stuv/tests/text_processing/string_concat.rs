@@ -3,9 +3,8 @@ fn concatenate_with_plus() {
     let a = String::from("hello");
     let b = " ";
     let c = String::from("world");
-    let result: String = a + &b + &c;
+    let result: String = a + b + &c;
     // Note that `a` is moved here and can no longer be used
-    // Note the & in front of b
     println!("{}", result);
 }
 
@@ -26,7 +25,7 @@ fn concatenate_with_push_str() {
 }
 
 fn concatenate_with_join() {
-    let words = vec!["hello", "world"];
+    let words = ["hello", "world"];
     let result: String = words.join(" ");
     println!("{}", result);
 }
@@ -60,6 +59,7 @@ fn concatenate_with_push() {
     println!("{}", a);
 }
 
+#[allow(clippy::string_extend_chars)]
 fn concatenate_with_extend() {
     let mut a = String::from("hello");
     let b = " world";
@@ -68,21 +68,21 @@ fn concatenate_with_extend() {
 }
 
 fn concatenate_with_collect() {
-    let words = vec!["hello", " ", "world"];
+    let words = ["hello", " ", "world"];
     let result: String = words.into_iter().collect();
     println!("{}", result);
 }
 
-fn concatenate_with_collect_from_array_to_string() {
+fn concatenate_with_collect_iter() {
     let words = ["hello", " world"];
-    let result: String = words.iter().map(|x| *x).collect();
+    let result: String = words.iter().copied().collect();
     println!("{}", result);
 }
 
 use joinery::JoinableIterator;
 
 fn concatenate_with_joinery() {
-    let words = vec!["hello", "world"];
+    let words = ["hello", "world"];
 
     // Join the words with a space separator
     let result = words.iter().join_with(" ").to_string();
@@ -93,8 +93,10 @@ fn concatenate_with_joinery() {
 use std::fmt::Write;
 
 fn concatenate_with_write_macro() {
+    let part1 = "hello";
+    let part2 = " world";
     let mut result = String::new();
-    write!(&mut result, "{} {}", "hello", "world").unwrap();
+    write!(&mut result, "{} {}", part1, part2).unwrap();
     println!("{}", result);
 }
 
@@ -116,7 +118,7 @@ fn main() {
     concatenate_with_push();
     concatenate_with_extend();
     concatenate_with_collect();
-    concatenate_with_collect_from_array_to_string();
+    concatenate_with_collect_iter();
     concatenate_with_joinery();
     concatenate_with_write_macro();
     concatenate_with_chain();

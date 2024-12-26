@@ -1,5 +1,4 @@
 // ANCHOR: example
-use md5;
 
 // WARNING: MD5 should be considered cryptographically broken and unsuitable for
 // further use. Collision attacks against MD5 are both practical and trivial.
