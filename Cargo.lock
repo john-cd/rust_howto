@@ -3725,6 +3725,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "bon"
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "97493a391b4b18ee918675fb8663e53646fd09321c58b46afa04e8ce2499c869"
+dependencies = [
+ "bon-macros",
+ "rustversion",
+]
+
+[[package]]
+name = "bon-macros"
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2a2af3eac944c12cdf4423eab70d310da0a8e5851a18ffb192c0a5e3f7ae1663"
+dependencies = [
+ "darling 0.20.10",
+ "ident_case",
+ "proc-macro2 1.0.92",
+ "quote 1.0.37",
+ "syn 2.0.91",
+]
+
+[[package]]
 name = "boolinator"
 version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4003,6 +4026,7 @@ dependencies = [
  "num_cpus",
  "opencv",
  "parking_lot 0.12.3",
+ "ractor",
  "rand 0.8.5",
  "ratatui",
  "rayon",
@@ -4017,6 +4041,7 @@ dependencies = [
  "starship",
  "tar",
  "threadpool",
+ "tokio",
  "walkdir",
 ]
 
@@ -17453,6 +17478,22 @@ dependencies = [
  "tracing-appender",
  "tracing-core",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "ractor"
+version = "0.14.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aeb2472c961aec135028ae83b64491243ef36402c4f93f04b4f29f9f5d8805a8"
+dependencies = [
+ "async-trait",
+ "bon",
+ "dashmap 6.1.0",
+ "futures",
+ "once_cell",
+ "strum",
+ "tokio",
+ "tracing",
 ]
 
 [[package]]
