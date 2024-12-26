@@ -19,14 +19,14 @@
 //         .add_source(config::File::with_name("temp/config.toml"))
 //         // Also read environment variables
 //         .add_source(
-//             // An environment source collects a dictionary of environment variables values
-//             // into a hierarchical config Value type.
-//             //  Here, we read only env vars that begin with the defined prefix.
-//             config::Environment::with_prefix("APP")
+//             // An environment source collects a dictionary of environment
+// variables values             // into a hierarchical config Value type.
+//             //  Here, we read only env vars that begin with the defined
+// prefix.             config::Environment::with_prefix("APP")
 //                 .try_parsing(true)
 //                 // Given a nested configuration such as `redis.password`,
-//                 // a separator of _ would allow an environment key of REDIS_PASSWORD to match.
-//                 .separator("_")
+//                 // a separator of _ would allow an environment key of
+// REDIS_PASSWORD to match.                 .separator("_")
 //                 // When set and `try_parsing` is true,
 //                 // then all environment variables will be parsed
 //                 // as Vec<String> instead of String.
@@ -111,9 +111,9 @@
 // #[test]
 // fn test_config() -> Result<(), config::ConfigError> {
 //     // Alternate source for the environment.
-//     // This can be used when you want to test your own code using this source,
-//     // without the need to change the actual system environment variables.
-//     // let source = Environment::default().source(Some({
+//     // This can be used when you want to test your own code using this
+// source,     // without the need to change the actual system environment
+// variables.     // let source = Environment::default().source(Some({
 //     //     let mut env = HashMap::new();
 //     //     env.insert("APP_LIST".into(), "my-value".into());
 //     //     env
