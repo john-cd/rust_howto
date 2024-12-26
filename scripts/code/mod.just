@@ -67,16 +67,19 @@ clippyall:
 #  cargo test --workspace --all-targets --locked || true
 ## `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+# Test any doctests in the workspace
+doctest:
+  cargo test --workspace --doc --locked
+
 alias nt := nextest
 
-# Test default members of the workspace
+# Test the code examples only (and no doctests)
 nextest: _clean_temp_dir && _clean_temp_dir
-  cargo test --doc --quiet || true
   cargo nextest run --all-targets --locked --no-fail-fast || true
 
 alias nta := nextestall
 
-# Test all code in the workspace
+# Test all code in the workspace (incl. doctests)
 nextestall: _clean_temp_dir && _clean_temp_dir
   cargo test --doc --workspace --quiet || true # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast || true
