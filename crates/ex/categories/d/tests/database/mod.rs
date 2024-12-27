@@ -11,6 +11,5 @@ mod sea_orm;
 mod sqlite;
 mod sqlx;
 mod stork_search;
-mod tinysearch;
 mod tokio_postgres;
 mod typesense;

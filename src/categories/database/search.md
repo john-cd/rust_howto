@@ -65,24 +65,23 @@
 {{#include ../../../crates/ex/categories/d/tests/database/typesense.rs:example}}
 ```
 
-## `tinysearch` {#tinysearch}
+## Add a full-text search engine to a static website {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}
 [![tinysearch-crates.io][c-tinysearch-crates.io-badge]][c-tinysearch-crates.io]
 [![tinysearch-github][c-tinysearch-github-badge]][c-tinysearch-github]
 [![tinysearch-lib.rs][c-tinysearch-lib.rs-badge]][c-tinysearch-lib.rs]
 
-[tinysearch][c-tinysearch-website]
+[`tinysearch`][c-tinysearch-website] is a lightweight, fast, full-text search engine. It is designed for static websites.
 
-A Tiny, Static, Full-Text Search Engine using Rust and WebAssembly
-
-```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/tinysearch.rs:example}}
-```
+`tinysearch` is compiled to WebAssembly to run in a browser. It can be used together with static site generators such as `Jekyll`, `Hugo`, `Zola`, `Cobalt`, or `Pelican`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+
+- tinysearch is not that popular
+
 [database/search.md: expand (P2)](https://github.com/john-cd/rust_howto/issues/288)
 </div>

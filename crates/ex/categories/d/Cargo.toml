@@ -51,7 +51,7 @@ minisearch = { version = "0.1.1", optional = true }
 mongodb = "3.1.0"
 postgres = "0.19.9"
 sqlx = { version = "0.8.2", optional = true }
-tinysearch = { version = "0.8.0", optional = true }
+# tinysearch = "0.8.2"
 tokio-postgres = "0.7"
 redis = "0.27.5"
 sea-orm = { version = "1.1.1", optional = true }
@@ -122,6 +122,7 @@ approx = { version = "0.5.1", optional = true}
 anyhow = "1.0.94"
 dotenvy = "0.15.7"
 
+## General
 serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.42.0", features = ["full"] }
 serde_json = "1.0.134"
@@ -164,7 +165,6 @@ unused = [
     "dep:syn",
     "dep:tantivy",
     "dep:time",
-    "dep:tinysearch",
     "dep:typesense",
     "dep:watt",
     "dep:xshell",
