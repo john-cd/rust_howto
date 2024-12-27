@@ -127,7 +127,6 @@
 [![meilisearch][c-meilisearch-badge]][c-meilisearch]{{hi:meilisearch}}
 [![memmap2][c-memmap2-badge]][c-memmap2]{{hi:memmap2}}
 [![miette][c-miette-badge]][c-miette]{{hi:miette}}
-[![minisearch][c-minisearch-badge]][c-minisearch]{{hi:minisearch}}
 [![mime][c-mime-badge]][c-mime]{{hi:mime}}
 [![mio][c-mio-badge]][c-mio]{{hi:mio}}
 [![miri][c-miri-badge]][c-miri]{{hi:miri}}

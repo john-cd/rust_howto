@@ -8,7 +8,6 @@
 [ex-database-infisearch]: search.md#infisearch
 [ex-database-insert-query-data-postgres]: postgres.md#insert-query-data-postgres
 [ex-database-insert-select-data]: sqlite.md#insert-select-data
-[ex-database-minisearch]: search.md#minisearch
 [ex-database-mongodb]: nosql.md#mongodb
 [ex-database-redis]: nosql.md#redis
 [ex-database-sea-orm]: query_builders_orms.md#sea-orm

@@ -41,19 +41,6 @@
 {{#include ../../../crates/ex/categories/d/tests/database/stork_search.rs:example}}
 ```
 
-## `minisearch` {#minisearch}
-
-[![minisearch][c-minisearch-badge]][c-minisearch]{{hi:minisearch}}
-[![minisearch-crates.io][c-minisearch-crates.io-badge]][c-minisearch-crates.io]
-[![minisearch-github][c-minisearch-github-badge]][c-minisearch-github]
-[![minisearch-lib.rs][c-minisearch-lib.rs-badge]][c-minisearch-lib.rs]
-
-[minisearch-client-side-fulltext-search-engine][c-minisearch-client-side-fulltext-search-engine]
-
-```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/minisearch.rs:example}}
-```
-
 ## `typesense` {#typesense}
 
 [![typesense][c-typesense-badge]][c-typesense]{{hi:typesense}}

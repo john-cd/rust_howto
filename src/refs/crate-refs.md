@@ -1915,15 +1915,6 @@
 [c-mime::FromStrError]: https://docs.rs/mime/latest/mime/struct.FromStrError.html
 [c-mime::Mime]: https://docs.rs/mime/latest/mime/struct.Mime.html
 [c-mime]: https://docs.rs/mime
-[c-minisearch-badge]: https://img.shields.io/crates/v/minisearch?label=minisearch
-[c-minisearch-client-side-fulltext-search-engine]: https://lucaongaro.eu/blog/2019/01/30/minisearch-client-side-fulltext-search-engine.html
-[c-minisearch-crates.io-badge]: https://img.shields.io/badge/crates.io-minisearch-crimson
-[c-minisearch-crates.io]: https://crates.io/crates/minisearch
-[c-minisearch-github-badge]: https://img.shields.io/badge/minisearch-steelblue?logo=github
-[c-minisearch-github]: https://github.com/enosuity/hacker-programs/tree/main/minisearch
-[c-minisearch-lib.rs-badge]: https://img.shields.io/badge/lib.rs-minisearch-yellow
-[c-minisearch-lib.rs]: https://lib.rs/crates/minisearch
-[c-minisearch]: https://docs.rs/minisearch
 [c-mio-badge]: https://img.shields.io/crates/v/mio?label=mio
 [c-mio-crates.io-badge]: https://img.shields.io/badge/crates.io-mio-crimson
 [c-mio-crates.io]: https://crates.io/crates/mio

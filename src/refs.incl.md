@@ -199,7 +199,6 @@
 [ex-database-infisearch]: categories/database/search.md#infisearch
 [ex-database-insert-query-data-postgres]: categories/database/postgres.md#insert-query-data-postgres
 [ex-database-insert-select-data]: categories/database/sqlite.md#insert-select-data
-[ex-database-minisearch]: categories/database/search.md#minisearch
 [ex-database-mongodb]: categories/database/nosql.md#mongodb
 [ex-database-redis]: categories/database/nosql.md#redis
 [ex-database-sea-orm]: categories/database/query_builders_orms.md#sea-orm
