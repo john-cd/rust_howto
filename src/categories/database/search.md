@@ -41,17 +41,6 @@
 {{#include ../../../crates/ex/categories/d/tests/database/stork_search.rs:example}}
 ```
 
-## `typesense` {#typesense}
-
-[![typesense][c-typesense-badge]][c-typesense]{{hi:typesense}}
-[![typesense-crates.io][c-typesense-crates.io-badge]][c-typesense-crates.io]
-[![typesense-github][c-typesense-github-badge]][c-typesense-github]
-[![typesense-lib.rs][c-typesense-lib.rs-badge]][c-typesense-lib.rs]
-
-```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/typesense.rs:example}}
-```
-
 ## Add a full-text search engine to a static website {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}

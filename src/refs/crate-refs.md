@@ -3547,14 +3547,6 @@
 [c-typed_builder-lib.rs-badge]: https://img.shields.io/badge/lib.rs-typed--builder-yellow
 [c-typed_builder-lib.rs]: https://lib.rs/crates/typed-builder
 [c-typed_builder]: https://idanarye.github.io/rust-typed-builder
-[c-typesense-badge]: https://img.shields.io/crates/v/typesense?label=typesense
-[c-typesense-crates.io-badge]: https://img.shields.io/badge/crates.io-typesense-crimson
-[c-typesense-crates.io]: https://crates.io/crates/typesense
-[c-typesense-github-badge]: https://img.shields.io/badge/typesense-steelblue?logo=github
-[c-typesense-github]: https://github.com/typesense/typesense
-[c-typesense-lib.rs-badge]: https://img.shields.io/badge/lib.rs-typesense-yellow
-[c-typesense-lib.rs]: https://lib.rs/crates/typesense
-[c-typesense]: https://docs.rs/typesense
 [c-unicode_segmentation-badge]: https://img.shields.io/crates/v/unicode-segmentation?label=unicode-segmentation
 [c-unicode_segmentation-crates.io-badge]: https://img.shields.io/badge/crates.io-unicode--segmentation-crimson
 [c-unicode_segmentation-crates.io]: https://crates.io/crates/unicode_segmentation

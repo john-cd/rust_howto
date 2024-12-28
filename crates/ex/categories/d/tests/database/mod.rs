@@ -11,4 +11,3 @@ mod sqlite;
 mod sqlx;
 mod stork_search;
 mod tokio_postgres;
-mod typesense;

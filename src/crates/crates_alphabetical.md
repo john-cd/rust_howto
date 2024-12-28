@@ -80,7 +80,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## T
 
-[![tantivy][c-tantivy-badge]][c-tantivy] [![tar][c-tar-badge]][c-tar] [![tauri][c-tauri-badge]][c-tauri] [![tempfile][c-tempfile-badge]][c-tempfile] [![termbook][c-termbook-badge]][c-termbook] [![thiserror][c-thiserror-badge]][c-thiserror] [![threadpool][c-threadpool-badge]][c-threadpool] [![tinysearch][c-tinysearch-badge]][c-tinysearch] [![tokio][c-tokio-badge]][c-tokio] [![tokio-graceful-shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown] [![toml][c-toml-badge]][c-toml] [![tonic][c-tonic-badge]][c-tonic] [![tower][c-tower-badge]][c-tower] [![tower-http][c-tower_http-badge]][c-tower_http] [![tracing][c-tracing-badge]][c-tracing] [![tracing-subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber] [![trillium][c-trillium-badge]][c-trillium] [![typesense][c-typesense-badge]][c-typesense]
+[![tantivy][c-tantivy-badge]][c-tantivy] [![tar][c-tar-badge]][c-tar] [![tauri][c-tauri-badge]][c-tauri] [![tempfile][c-tempfile-badge]][c-tempfile] [![termbook][c-termbook-badge]][c-termbook] [![thiserror][c-thiserror-badge]][c-thiserror] [![threadpool][c-threadpool-badge]][c-threadpool] [![tinysearch][c-tinysearch-badge]][c-tinysearch] [![tokio][c-tokio-badge]][c-tokio] [![tokio-graceful-shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown] [![toml][c-toml-badge]][c-toml] [![tonic][c-tonic-badge]][c-tonic] [![tower][c-tower-badge]][c-tower] [![tower-http][c-tower_http-badge]][c-tower_http] [![tracing][c-tracing-badge]][c-tracing] [![tracing-subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber] [![trillium][c-trillium-badge]][c-trillium]
 
 ## U
 

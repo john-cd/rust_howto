@@ -17,4 +17,3 @@
 [ex-database-toasty]: query_builders_orms.md#toasty
 [ex-database-tokio-postgres]: postgres.md#tokio-postgres
 [ex-database-transaction]: sqlite.md#transaction
-[ex-database-typesense]: search.md#typesense

@@ -208,7 +208,6 @@
 [ex-database-toasty]: categories/database/query_builders_orms.md#toasty
 [ex-database-tokio-postgres]: categories/database/postgres.md#tokio-postgres
 [ex-database-transaction]: categories/database/sqlite.md#transaction
-[ex-database-typesense]: categories/database/search.md#typesense
 [ex-date-and-time-convert-local-time]: categories/date-and-time/duration.md#convert-local-time
 [ex-date-and-time-display-formatted-date-time]: categories/date-and-time/parse.md#display-formatted-date-time
 [ex-date-and-time-examine-date-and-time]: categories/date-and-time/parse.md#examine-date-and-time

@@ -212,7 +212,6 @@
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}}
 [![trillium][c-trillium-badge]][c-trillium]{{hi:trillium}}
 [![tui][c-tui-badge]][c-tui]{{hi:tui}}
-[![typesense][c-typesense-badge]][c-typesense]{{hi:typesense}}
 [![unicode_segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation]{{hi:unicode_segmentation}}
 [![url][c-url-badge]][c-url]{{hi:url}}
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}
