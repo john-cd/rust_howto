@@ -727,7 +727,7 @@ dependencies = [
  "clap 4.5.23",
  "dirs 4.0.0",
  "env_logger 0.10.2",
- "jsonwebtoken",
+ "jsonwebtoken 8.3.0",
  "log",
  "pem",
  "rand 0.8.5",
@@ -6033,6 +6033,7 @@ dependencies = [
  "deadpool",
  "deadpool-postgres",
  "diesel",
+ "diesel_migrations",
  "doc-comment",
  "dotenvy",
  "elasticsearch",
@@ -6044,6 +6045,7 @@ dependencies = [
  "log",
  "log4rs",
  "meilisearch",
+ "meilisearch-sdk",
  "mongodb",
  "multimap",
  "openssl",
@@ -6997,6 +6999,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ccf1bedf64cdb9643204a36dd15b19a6ce8e7aa7f7b105868e9f1fad5ffa7d12"
 dependencies = [
  "diesel_derives",
+ "libsqlite3-sys",
+ "time",
 ]
 
 [[package]]
@@ -7010,6 +7014,17 @@ dependencies = [
  "proc-macro2 1.0.92",
  "quote 1.0.38",
  "syn 2.0.92",
+]
+
+[[package]]
+name = "diesel_migrations"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a73ce704bad4231f001bff3314d91dce4aba0770cee8b233991859abc15c1f6"
+dependencies = [
+ "diesel",
+ "migrations_internals",
+ "migrations_macros",
 ]
 
 [[package]]
@@ -11051,6 +11066,7 @@ dependencies = [
  "tokio",
  "tokio-rustls 0.26.1",
  "tower-service",
+ "webpki-roots 0.26.7",
 ]
 
 [[package]]
@@ -12199,6 +12215,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
 
 [[package]]
+name = "iso8601"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "924e5d73ea28f59011fec52a0d12185d496a9b075d360657aed2a5707f701153"
+dependencies = [
+ "nom 7.1.3",
+]
+
+[[package]]
 name = "iter-read"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12424,6 +12449,19 @@ dependencies = [
  "serde 1.0.217",
  "serde_json",
  "simple_asn1",
+]
+
+[[package]]
+name = "jsonwebtoken"
+version = "9.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9ae10193d25051e74945f1ea2d0b42e03cc3b890f7e4cc5faa44997d808193f"
+dependencies = [
+ "base64 0.21.7",
+ "js-sys",
+ "ring 0.17.8",
+ "serde 1.0.217",
+ "serde_json",
 ]
 
 [[package]]
@@ -13579,6 +13617,46 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "27e733686336031383219c687c30da9c7d979cd4a4f3c7501438e81529475fb4"
 
 [[package]]
+name = "meilisearch-index-setting-macro"
+version = "0.27.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "056e8c0652af81cc6525e0d9c0e1037ea7bcd77955dcd4aef1a1441be7ad7e55"
+dependencies = [
+ "convert_case 0.6.0",
+ "proc-macro2 1.0.92",
+ "quote 1.0.38",
+ "structmeta",
+ "syn 2.0.92",
+]
+
+[[package]]
+name = "meilisearch-sdk"
+version = "0.27.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "66958255878d712b4f2dece377a8661b41dc976ff15f564b91bfce8b4a619304"
+dependencies = [
+ "async-trait",
+ "bytes",
+ "either",
+ "futures",
+ "futures-io",
+ "iso8601",
+ "jsonwebtoken 9.3.0",
+ "log",
+ "meilisearch-index-setting-macro",
+ "pin-project-lite",
+ "reqwest 0.12.11",
+ "serde 1.0.217",
+ "serde_json",
+ "thiserror 1.0.69",
+ "time",
+ "uuid 1.11.0",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "yaup",
+]
+
+[[package]]
 name = "memchr"
 version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -13722,6 +13800,27 @@ dependencies = [
  "proc-macro2 1.0.92",
  "quote 1.0.38",
  "syn 2.0.92",
+]
+
+[[package]]
+name = "migrations_internals"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd01039851e82f8799046eabbb354056283fb265c8ec0996af940f4e85a380ff"
+dependencies = [
+ "serde 1.0.217",
+ "toml 0.8.19",
+]
+
+[[package]]
+name = "migrations_macros"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ffb161cc72176cb37aa47f1fc520d3ef02263d67d661f44f05d05a079e1237fd"
+dependencies = [
+ "migrations_internals",
+ "proc-macro2 1.0.92",
+ "quote 1.0.38",
 ]
 
 [[package]]
@@ -17856,7 +17955,10 @@ dependencies = [
  "once_cell",
  "percent-encoding",
  "pin-project-lite",
+ "quinn",
+ "rustls 0.23.20",
  "rustls-pemfile 2.2.0",
+ "rustls-pki-types",
  "serde 1.0.217",
  "serde_json",
  "serde_urlencoded",
@@ -17864,6 +17966,7 @@ dependencies = [
  "system-configuration 0.6.1",
  "tokio",
  "tokio-native-tls",
+ "tokio-rustls 0.26.1",
  "tokio-util",
  "tower 0.5.2",
  "tower-service",
@@ -17872,6 +17975,7 @@ dependencies = [
  "wasm-bindgen-futures",
  "wasm-streams",
  "web-sys",
+ "webpki-roots 0.26.7",
  "windows-registry",
 ]
 
@@ -20738,6 +20842,29 @@ name = "strsim"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
+
+[[package]]
+name = "structmeta"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2e1575d8d40908d70f6fd05537266b90ae71b15dbbe7a8b7dffa2b759306d329"
+dependencies = [
+ "proc-macro2 1.0.92",
+ "quote 1.0.38",
+ "structmeta-derive",
+ "syn 2.0.92",
+]
+
+[[package]]
+name = "structmeta-derive"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "152a0b65a590ff6c3da95cabe2353ee04e6167c896b28e3b14478c2636c922fc"
+dependencies = [
+ "proc-macro2 1.0.92",
+ "quote 1.0.38",
+ "syn 2.0.92",
+]
 
 [[package]]
 name = "strum"
@@ -23639,6 +23766,7 @@ dependencies = [
  "serde 1.0.217",
  "sha1_smol",
  "uuid-macro-internal",
+ "wasm-bindgen",
 ]
 
 [[package]]
@@ -25892,6 +26020,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e17bb3549cc1321ae1296b9cdc2698e2b6cb1992adfa19a8c72e5b7a738f44cd"
 dependencies = [
  "time",
+]
+
+[[package]]
+name = "yaup"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b0144f1a16a199846cb21024da74edd930b43443463292f536b7110b4855b5c6"
+dependencies = [
+ "form_urlencoded",
+ "serde 1.0.217",
+ "thiserror 1.0.69",
 ]
 
 [[package]]
