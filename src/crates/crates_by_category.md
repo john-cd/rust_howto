@@ -56,7 +56,7 @@
 | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}} | Crates to help you verify the correctness of your code. | [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack]{{hi:cargo-hack}} [![cargo-make][c-cargo_make-badge]][c-cargo_make]{{hi:cargo-make}} [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}} |
 | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}} | Crates to deal with the complexities of human language when expressed in textual form. | [![regex][c-regex-badge]][c-regex]{{hi:regex}} |
 | [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} | Crates to create applications for the web. | [![crates_io_api][c-crates_io_api-badge]][c-crates_io_api]{{hi:crates_io_api}} [![http][c-http-badge]][c-http]{{hi:http}} [![http-body-util][c-http_body_util-badge]][c-http_body_util]{{hi:http-body-util}} [![mongodb][c-mongodb-badge]][c-mongodb]{{hi:mongodb}} [![tauri][c-tauri-badge]][c-tauri]{{hi:tauri}} [![tonic][c-tonic-badge]][c-tonic]{{hi:tonic}} [![tower-http][c-tower_http-badge]][c-tower_http]{{hi:tower-http}} [![trillium][c-trillium-badge]][c-trillium]{{hi:trillium}} [![url][c-url-badge]][c-url]{{hi:url}} [![yew][c-yew-badge]][c-yew]{{hi:yew}} |
-| [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} | Crates for use when targeting WebAssembly, or for manipulating WebAssembly. | [![nalgebra][c-nalgebra-badge]][c-nalgebra]{{hi:nalgebra}} [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![rhai][c-rhai-badge]][c-rhai]{{hi:rhai}} [![stork-search][c-stork_search-badge]][c-stork_search]{{hi:stork-search}} [![watt][c-watt-badge]][c-watt]{{hi:watt}} [![yew][c-yew-badge]][c-yew]{{hi:yew}} |
+| [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} | Crates for use when targeting WebAssembly, or for manipulating WebAssembly. | [![nalgebra][c-nalgebra-badge]][c-nalgebra]{{hi:nalgebra}} [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![rhai][c-rhai-badge]][c-rhai]{{hi:rhai}} [![watt][c-watt-badge]][c-watt]{{hi:watt}} [![yew][c-yew-badge]][c-yew]{{hi:yew}} |
 | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:WebSocket}} | Crates to communicate over the WebSocket protocol. | [![actix-web][c-actix_web-badge]][c-actix_web]{{hi:actix-web}} |
 | [![cat-os::windows-apis][cat-os::windows-apis-badge]][cat-os::windows-apis]{{hi:Windows APIs}} | Bindings to Windows-specific APIs. | [![windows][c-windows-badge]][c-windows]{{hi:windows}} |
 
@@ -190,7 +190,6 @@
 [![stakker][c-stakker-badge]][c-stakker]{{hi:stakker}}
 [![starship][c-starship-badge]][c-starship]{{hi:starship}}
 [![std][c-std-badge]][c-std]{{hi:std}}
-[![stork-search][c-stork_search-badge]][c-stork_search]{{hi:stork-search}}
 [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser]{{hi:swc_ecma_parser}}
 [![syn][c-syn-badge]][c-syn]{{hi:syn}}
 [![syslog][c-syslog-badge]][c-syslog]{{hi:syslog}}

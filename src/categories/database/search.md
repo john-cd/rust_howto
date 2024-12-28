@@ -27,20 +27,6 @@
 {{#include ../../../crates/ex/categories/d/tests/database/infisearch.rs:example}}
 ```
 
-## `stork-search` {#stork-search}
-
-[![stork-search][c-stork_search-badge]][c-stork_search]{{hi:stork-search}}
-[![stork-search-crates.io][c-stork_search-crates.io-badge]][c-stork_search-crates.io]
-[![stork-search-github][c-stork_search-github-badge]][c-stork_search-github]
-[![stork-search-lib.rs][c-stork_search-lib.rs-badge]][c-stork_search-lib.rs]
-[![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
-
-[stork-search.net][c-stork_search-website]
-
-```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/stork_search.rs:example}}
-```
-
 ## Add a full-text search engine to a static website {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}

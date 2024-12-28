@@ -3133,17 +3133,6 @@
 [c-stdx-lib.rs-badge]: https://img.shields.io/badge/lib.rs-stdx-yellow
 [c-stdx-lib.rs]: https://lib.rs/crates/stdx
 [c-stdx]: https://docs.rs/stdx
-[c-stork_search-badge]: https://img.shields.io/crates/v/stork-search?label=stork-search
-[c-stork_search-crates.io-badge]: https://img.shields.io/badge/crates.io-stork--search-crimson
-[c-stork_search-crates.io]: https://crates.io/crates/stork_search
-[c-stork_search-docs.rs]: https://docs.rs/stork-search
-[c-stork_search-github-badge]: https://img.shields.io/badge/stork--search-steelblue?logo=github
-[c-stork_search-github]: https://github.com/jameslittle230/stork
-[c-stork_search-lib.rs-badge]: https://img.shields.io/badge/lib.rs-stork--search-yellow
-[c-stork_search-lib.rs]: https://lib.rs/crates/stork-search
-[c-stork_search-website-badge]: https://img.shields.io/badge/stork--search-coral
-[c-stork_search-website]: https://stork-search.net
-[c-stork_search]: https://stork-search.net/docs
 [c-structopt-badge]: https://img.shields.io/crates/v/structopt?label=structopt
 [c-structopt-crates.io-badge]: https://img.shields.io/badge/crates.io-structopt-crimson
 [c-structopt-crates.io]: https://crates.io/crates/structopt

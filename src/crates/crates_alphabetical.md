@@ -76,7 +76,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## S
 
-[![salsa][c-salsa-badge]][c-salsa] [![same-file][c-same_file-badge]][c-same_file] [![sea-orm][c-sea_orm-badge]][c-sea_orm] [![seaography][c-seaography-badge]][c-seaography] [![select][c-select-badge]][c-select] [![semver][c-semver-badge]][c-semver] [![serde][c-serde-badge]][c-serde] [![serde_json][c-serde_json-badge]][c-serde_json] [![sled][c-sled-badge]][c-sled] [![slint][c-slint-badge]][c-slint] [![slotmap][c-slotmap-badge]][c-slotmap] [![smol][c-smol-badge]][c-smol] [![sqlx][c-sqlx-badge]][c-sqlx] [![stakker][c-stakker-badge]][c-stakker] [![starship][c-starship-badge]][c-starship] [![std][c-std-badge]][c-std] [![stork-search][c-stork_search-badge]][c-stork_search] [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser] [![syn][c-syn-badge]][c-syn] [![syslog][c-syslog-badge]][c-syslog]
+[![salsa][c-salsa-badge]][c-salsa] [![same-file][c-same_file-badge]][c-same_file] [![sea-orm][c-sea_orm-badge]][c-sea_orm] [![seaography][c-seaography-badge]][c-seaography] [![select][c-select-badge]][c-select] [![semver][c-semver-badge]][c-semver] [![serde][c-serde-badge]][c-serde] [![serde_json][c-serde_json-badge]][c-serde_json] [![sled][c-sled-badge]][c-sled] [![slint][c-slint-badge]][c-slint] [![slotmap][c-slotmap-badge]][c-slotmap] [![smol][c-smol-badge]][c-smol] [![sqlx][c-sqlx-badge]][c-sqlx] [![stakker][c-stakker-badge]][c-stakker] [![starship][c-starship-badge]][c-starship] [![std][c-std-badge]][c-std] [![swc_ecma_parser][c-swc_ecma_parser-badge]][c-swc_ecma_parser] [![syn][c-syn-badge]][c-syn] [![syslog][c-syslog-badge]][c-syslog]
 
 ## T
 
