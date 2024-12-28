@@ -1,7 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Connect to Elasticsearch][ex-database-elasticsearch] | [![elasticsearch][c-elasticsearch-badge]][c-elasticsearch] | [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings] [![cat-database][cat-database-badge]][cat-database] |
-| [`infisearch`][ex-database-infisearch] | [![infisearch][c-infisearch-badge]][c-infisearch] | [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities] |
 | [`tinysearch`][ex-database-tinysearch] | [![tinysearch][c-tinysearch-badge]][c-tinysearch] | [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities] [![cat-database][cat-database-badge]][cat-database] |
 
 <div class="hidden">

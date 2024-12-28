@@ -95,7 +95,7 @@ runall:
 
 ## ---- HEAVY TESTS -----------------------------------
 
-# Run tests using an external service: elasticsearch meilisearch mongodb postgres redis typesense
+# Run tests using an external service: elasticsearch meilisearch mongodb postgres redis
 [group('heavy tests')]
 [unix]
 heavy_test feature:
@@ -107,7 +107,7 @@ heavy_test feature:
 heavytestall:
   #! /bin/bash
   set -euo pipefail
-  for feature in redis postgres # "elasticsearch" "meilisearch" "mongodb" "postgres" "redis" "typesense"
+  for feature in redis postgres # "elasticsearch" "meilisearch" "mongodb" "postgres" "redis"
   do
     echo ">> $feature"
     just code heavy_test ${feature}

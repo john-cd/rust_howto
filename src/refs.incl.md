@@ -196,14 +196,12 @@
 [ex-database-implementations-sled]: categories/database-implementations/databases.md#sled
 [ex-database-implementations-surrealdb]: categories/database-implementations/databases.md#surrealdb
 [ex-database-implementations-tantivy]: categories/database-implementations/search.md#tantivy
-[ex-database-infisearch]: categories/database/search.md#infisearch
 [ex-database-insert-query-data-postgres]: categories/database/postgres.md#insert-query-data-postgres
 [ex-database-insert-select-data]: categories/database/sqlite.md#insert-select-data
 [ex-database-mongodb]: categories/database/nosql.md#mongodb
 [ex-database-redis]: categories/database/nosql.md#redis
 [ex-database-sea-orm]: categories/database/query_builders_orms.md#sea-orm
 [ex-database-sqlx]: categories/database/query_builders_orms.md#sqlx
-[ex-database-stork-search]: categories/database/search.md#stork-search
 [ex-database-tinysearch]: categories/database/search.md#tinysearch
 [ex-database-toasty]: categories/database/query_builders_orms.md#toasty
 [ex-database-tokio-postgres]: categories/database/postgres.md#tokio-postgres

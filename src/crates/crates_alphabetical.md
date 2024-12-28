@@ -36,7 +36,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## I
 
-[![iced][c-iced-badge]][c-iced] [![image][c-image-badge]][c-image] [![indicatif][c-indicatif-badge]][c-indicatif] [![infisearch][c-infisearch-badge]][c-infisearch] [![itertools][c-itertools-badge]][c-itertools]
+[![iced][c-iced-badge]][c-iced] [![image][c-image-badge]][c-image] [![indicatif][c-indicatif-badge]][c-indicatif] [![itertools][c-itertools-badge]][c-itertools]
 
 ## J
 

@@ -92,7 +92,6 @@ hyper
 iced
 image
 indicatif
-infisearch
 itertools
 just
 kanal
@@ -123,7 +122,6 @@ meilisearch
 memmap2
 miette
 mime
-minisearch
 mio
 miri
 mongodb
@@ -191,7 +189,6 @@ sqlx
 stakker
 starship
 std
-stork-search
 swc_ecma_parser
 syn
 syslog
@@ -203,7 +200,6 @@ termbook
 thiserror
 threadpool
 time
-tinysearch
 tokio
 tokio-graceful-shutdown
 toml
@@ -214,7 +210,6 @@ tracing
 tracing-subscriber
 trillium
 tungstenite
-typesense
 unicode-segmentation
 url
 walkdir

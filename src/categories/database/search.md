@@ -15,18 +15,6 @@
 {{#include ../../../crates/ex/categories/d/tests/database/elasticsearch.rs:example}}
 ```
 
-## `infisearch` {#infisearch}
-
-[![infisearch][c-infisearch-badge]][c-infisearch]{{hi:infisearch}}
-[![infisearch-crates.io][c-infisearch-crates.io-badge]][c-infisearch-crates.io]
-[![infisearch-github][c-infisearch-github-badge]][c-infisearch-github]
-[![infisearch-lib.rs][c-infisearch-lib.rs-badge]][c-infisearch-lib.rs]
-[![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
-
-```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/infisearch.rs:example}}
-```
-
 ## Add a full-text search engine to a static website {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}

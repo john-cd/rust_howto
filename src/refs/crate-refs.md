@@ -1545,15 +1545,6 @@
 [c-indicatif-lib.rs-badge]: https://img.shields.io/badge/lib.rs-indicatif-yellow
 [c-indicatif-lib.rs]: https://lib.rs/crates/indicatif
 [c-indicatif]: https://docs.rs/indicatif
-[c-infisearch-badge]: https://img.shields.io/crates/v/infisearch?label=infisearch
-[c-infisearch-crates.io-badge]: https://img.shields.io/badge/crates.io-infisearch-crimson
-[c-infisearch-crates.io]: https://crates.io/crates/infisearch
-[c-infisearch-docs.rs]: https://docs.rs/infisearch
-[c-infisearch-github-badge]: https://img.shields.io/badge/infisearch-steelblue?logo=github
-[c-infisearch-github]: https://github.com/ang-zeyu/infisearch
-[c-infisearch-lib.rs-badge]: https://img.shields.io/badge/lib.rs-infisearch-yellow
-[c-infisearch-lib.rs]: https://lib.rs/crates/infisearch
-[c-infisearch]: https://infi-search.com/infisearch
 [c-inquire-badge]: https://img.shields.io/crates/v/inquire?label=inquire
 [c-inquire-crates.io-badge]: https://img.shields.io/badge/crates.io-inquire-crimson
 [c-inquire-crates.io]: https://crates.io/crates/inquire

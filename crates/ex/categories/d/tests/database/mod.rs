@@ -2,7 +2,6 @@ mod cornucopia;
 mod deadpool;
 mod diesel;
 mod elasticsearch;
-mod infisearch;
 mod mongodb;
 mod postgres;
 mod redis;

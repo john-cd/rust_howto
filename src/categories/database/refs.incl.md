@@ -5,14 +5,12 @@
 [ex-database-create-tables-postgres]: postgres.md#create-tables-postgres
 [ex-database-diesel]: query_builders_orms.md#diesel
 [ex-database-elasticsearch]: search.md#elasticsearch
-[ex-database-infisearch]: search.md#infisearch
 [ex-database-insert-query-data-postgres]: postgres.md#insert-query-data-postgres
 [ex-database-insert-select-data]: sqlite.md#insert-select-data
 [ex-database-mongodb]: nosql.md#mongodb
 [ex-database-redis]: nosql.md#redis
 [ex-database-sea-orm]: query_builders_orms.md#sea-orm
 [ex-database-sqlx]: query_builders_orms.md#sqlx
-[ex-database-stork-search]: search.md#stork-search
 [ex-database-tinysearch]: search.md#tinysearch
 [ex-database-toasty]: query_builders_orms.md#toasty
 [ex-database-tokio-postgres]: postgres.md#tokio-postgres
