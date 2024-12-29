@@ -8,7 +8,6 @@ use meilisearch_sdk::task_info::TaskInfo;
 use meilisearch_sdk::tasks::Task;
 use serde::Deserialize;
 use serde::Serialize;
-use tokio;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
