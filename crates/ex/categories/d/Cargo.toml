@@ -51,7 +51,7 @@ elasticsearch = "8.17.0-alpha.1" # NOTE: alpha version
 meilisearch = "0.0.0"
 mongodb = "3.1.1"
 postgres = "0.19.9"
-sqlx = { version = "0.8.2", optional = true }
+sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite", "macros" ] }
 tokio-postgres = "0.7.12"
 redis = "0.27.6"
 sea-orm = { version = "1.1.3", optional = true }
@@ -156,7 +156,6 @@ unused = [
     "dep:seaography",
     "dep:sea-orm",
     "dep:sled",
-    "dep:sqlx",
     #"dep:syn",
     "dep:tantivy",
     #"dep:time",

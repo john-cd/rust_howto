@@ -20412,6 +20412,8 @@ dependencies = [
  "sqlformat",
  "thiserror 1.0.69",
  "time",
+ "tokio",
+ "tokio-stream",
  "tracing",
  "url",
  "uuid 1.11.0",
@@ -20452,6 +20454,7 @@ dependencies = [
  "sqlx-sqlite",
  "syn 2.0.92",
  "tempfile",
+ "tokio",
  "url",
 ]
 

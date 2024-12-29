@@ -4,12 +4,9 @@
 
 ## `sqlx` {#sqlx}
 
-[![sqlx][c-sqlx-badge]][c-sqlx]{{hi:sqlx}} [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github] [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
+[![sqlx][c-sqlx-badge]][c-sqlx] [![sqlx-crates.io][c-sqlx-crates.io-badge]][c-sqlx-crates.io] [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github] [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs]{{hi:sqlx}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
-[`sqlx`][c-sqlx]{{hi:sqlx}}⮳ is the Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}.
-
-Works with Postgres, MySQL, SQLite, and MS SQL.
-Supports compile time checking of queries. Async: supports both tokio and async-std.
+[`sqlx`][c-sqlx]⮳ is a low-level, asynchronous SQL library for Rust. It supports various databases like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both `tokio` and `async-std` async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/ex/categories/d/tests/database/sqlx.rs:example}}
@@ -31,7 +28,7 @@ Built on top of sqlx (see above). There is also a related sea-query crate that p
 
 [![diesel][c-diesel-badge]][c-diesel]{{hi:diesel}} [![diesel-lib.rs][c-diesel-lib.rs-badge]][c-diesel-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
-Has excellent performance and takes an approach of strict compile time guarantees. The main crate is Sync only, but diesel-async provides an async connection implementation.
+`diesel` has excellent performance and takes an approach of strict compile time guarantees. The main crate is `Sync` only, but `diesel-async` provides an async connection implementation.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/ex/categories/d/tests/database/diesel.rs:example}}
@@ -110,4 +107,5 @@ while let Some(todo) = todos.next().await {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 write / move toasty example to a file
 </div>
