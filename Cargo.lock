@@ -4020,6 +4020,7 @@ dependencies = [
  "num_cpus",
  "opencv",
  "parking_lot 0.12.3",
+ "pico-args",
  "ractor",
  "rand 0.9.0-beta.1",
  "ratatui",

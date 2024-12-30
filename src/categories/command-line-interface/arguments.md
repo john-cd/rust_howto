@@ -69,14 +69,22 @@ Fast compile times, fast runtime, pedantic about correctness. API is less ergono
 {{#include ../../../crates/ex/categories/c/tests/command_line_interface/lexopt.rs:example}}
 ```
 
-### pico-args {#pico-args}
-
-Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
+### Parse command-line arguments with `pico-args` {#pico-args}
 
 [![pico-args][c-pico_args-badge]][c-pico_args]{{hi:pico-args}}
 [![pico-args-crates.io][c-pico_args-crates.io-badge]][c-pico_args-crates.io]
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
+
+The `pico-args` crate is a small and fast library for parsing command-line arguments in Rust.
+
+- No help generation
+- Only flags, options, free arguments and subcommands are supported
+- No combined flags (like -vvv or -abc)
+- Options can be separated by a space, = (with the `eq-separator` feature) or nothing.
+- Arguments can be in any order
+- Non UTF-8 arguments are supported
+- Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/command_line_interface/pico_args.rs:example}}
