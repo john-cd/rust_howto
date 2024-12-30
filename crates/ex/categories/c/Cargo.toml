@@ -54,7 +54,7 @@ flume = {version = "0.11.1", features = ["select"] }
 ractor = "0.14.2"
 rayon = "1.10.0"
 riker = { version = "0.4.2", optional = true }
-stakker = { version = "0.2.11", optional = true }
+stakker = "0.2.11"
 threadpool = "1.8.1"
 
 ## Config
@@ -108,6 +108,5 @@ unused = [
     "dep:ed25519-dalek",
     "dep:riker",
     "dep:salsa",
-    "dep:stakker",
     "dep:starship",
 ]
