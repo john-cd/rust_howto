@@ -9,8 +9,9 @@ fn main() -> anyhow::Result<()> {
 
     // Retrieve a value, if it exists
     assert_eq!(&db.get(b"key1")?.unwrap(), b"Hello, Sled!");
-    // Note: under the cover, `get` returns an `IVec`, which is a data structure that makes some things more efficient
-    // IVec implements `AsRef<[u8]>`, so we can use `&` above
+    // Note: under the cover, `get` returns an `IVec`, which is a data structure
+    // that makes some things more efficient. IVec implements `AsRef<[u8]>`,
+    // so we can use `&` above
     assert_eq!(db.get(b"key1")?, Some(sled::IVec::from(b"Hello, Sled!")));
 
     // `key2` does not exist
@@ -18,22 +19,21 @@ fn main() -> anyhow::Result<()> {
 
     // `sled` is fully thread-safe, and all operations are atomic
 
-    // Atomic compare-and-swap, capable of unique creation, conditional modification, or deletion
+    // Atomic compare-and-swap, capable of unique creation, conditional
+    // modification, or deletion
     // - If old is `None`, it will only set the value if it doesn't exist yet
     // - If new is `None`, it will delete the value if old is correct
-    // - If both old and new are `Some`, it will modify the value only if old is correct
+    // - If both old and new are `Some`, it will modify the value only if old is
+    //   correct
     db.compare_and_swap(
-        b"key1",      // key
+        b"key1",               // key
         Some(b"Hello, Sled!"), // old value
-        Some(b"Hey"), // new value, None for delete
+        Some(b"Hey"),          // new value, None for delete
     )??;
 
     // Remove the key-value pair
     let old_value = db.remove(b"key1")?;
-    assert_eq!(
-        old_value,
-        Some(sled::IVec::from(b"Hey")),
-        );
+    assert_eq!(old_value, Some(sled::IVec::from(b"Hey")),);
     assert_eq!(db.get(b"key1"), Ok(None));
 
     // Perform a multi-key serializable transaction:
@@ -47,18 +47,16 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(&db.get(b"key3")?.unwrap(), b"stuff");
     assert_eq!(&db.get(b"key4")?.unwrap(), b"much");
 
-    // Multiple Trees with isolated keyspaces are supported with the `Db::open_tree` method.
+    // Multiple Trees with isolated keyspaces are supported with the
+    // `Db::open_tree` method.
     let other_tree: sled::Tree = db.open_tree(b"another tree")?;
-    other_tree.insert(
-        b"k1",
-        &b"value"[..]
-    )?;
+    other_tree.insert(b"k1", &b"value"[..])?;
     db.drop_tree(b"another tree")?;
 
     // Synchronously flushes all dirty IO buffers and calls fsync.
-    // If this succeeds, it is guaranteed that all previous writes will be recovered if the system crashes.
-    // Returns the number of bytes flushed during this call.
-    // `flush_async` is also available.
+    // If this succeeds, it is guaranteed that all previous writes will be
+    // recovered if the system crashes. Returns the number of bytes flushed
+    // during this call. `flush_async` is also available.
     db.flush()?;
 
     print!("`sled` example ran successfully.");
