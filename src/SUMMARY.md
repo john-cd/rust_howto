@@ -86,6 +86,7 @@
   - [Streams](categories/asynchronous/streams.md)
   - [Futures crate](categories/asynchronous/futures.md)
   - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
+  - [Utilities](categories/asynchronous/utilities.md)
 
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)

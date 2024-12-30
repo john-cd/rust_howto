@@ -21,3 +21,4 @@
 [ex-asynchronous-streams]: streams.md#streams
 [ex-asynchronous-tokio-runtime]: async_and_blocking.md#tokio-runtime
 [ex-asynchronous-which-crate-provides-what]: async.md#which-crate-provides-what
+[ex-asynchronous-utilities]: utilities.md#utilities

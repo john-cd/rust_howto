@@ -31,7 +31,6 @@
 [ex-concurrency-spawn-join]: explicit_threads.md#spawn-join
 [ex-concurrency-stakker]: _actors.md#stakker
 [ex-concurrency-thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
-[ex-concurrency-utilities]: _actors.md#utilities
 [p-async-channels]: ../asynchronous/async_channels.md
 [p-concurrent_data_structures]: concurrent_data_structures.md
 [p-message_passing]: message_passing.md

@@ -8,5 +8,4 @@
 
 <div class="hidden">
 [tokio.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/222)
-
 </div>

@@ -44,17 +44,6 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 {{#include ../../../crates/ex/categories/c/tests/concurrency/actix.rs:example}}
 ```
 
-## Utilities {#utilities}
-
-[![await-tree][c-await_tree-badge]][c-await_tree]{{hi:Await tree}}
-[![await-tree-crates.io][c-await_tree-crates.io-badge]][c-await_tree-crates.io]
-[![await-tree-github][c-await_tree-github-badge]][c-await_tree-github]
-[![await-tree-lib.rs][c-await_tree-lib.rs-badge]][c-await_tree-lib.rs]
-
-```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/await_tree.rs:example}}
-```
-
 ## See also
 
 [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳

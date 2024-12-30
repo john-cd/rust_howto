@@ -40,6 +40,10 @@
 
 {{#include categories/asynchronous/tokio.incl.md}}
 
+### Utilities
+
+{{#include categories/asynchronous/utilities.incl.md}}
+
 ## Authentication
 
 ### Basic Authentication
@@ -137,6 +141,10 @@
 ### Hashing
 
 {{#include categories/cryptography/hashing.incl.md}}
+
+### Password Hashing
+
+{{#include categories/cryptography/password_hashing.incl.md}}
 
 ## Data Structures
 

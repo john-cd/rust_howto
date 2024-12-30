@@ -2035,6 +2035,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "await-tree"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c2d7aec54383fa38ac2f9c28435a02f7312f7174e470c7d5566d2b7e17f9a8d"
+dependencies = [
+ "coarsetime",
+ "derive_builder 0.20.2",
+ "flexstr",
+ "indextree",
+ "itertools 0.12.1",
+ "parking_lot 0.12.3",
+ "pin-project",
+ "tokio",
+ "tracing",
+ "weak-table",
+]
+
+[[package]]
 name = "aws-config"
 version = "0.52.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3988,6 +4006,7 @@ dependencies = [
  "anyhow",
  "argon2",
  "async-trait",
+ "await-tree",
  "bcrypt",
  "clap 4.5.23",
  "clap-verbosity-flag",
@@ -4008,10 +4027,12 @@ dependencies = [
  "envy",
  "flate2",
  "flume 0.11.1",
+ "futures",
  "glob",
  "image 0.25.5",
  "indicatif",
  "inquire",
+ "itertools 0.13.0",
  "lazy_static",
  "lexopt",
  "lru",
@@ -4695,6 +4716,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c682c223677e0e5b6b7f63a64b9351844c3f1b1678a68b7ee617e30fb082620e"
 dependencies = [
  "cc",
+]
+
+[[package]]
+name = "coarsetime"
+version = "0.1.35"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4252bf230cb600c19826a575b31c8c9c84c6f11acfab6dfcad2e941b10b6f8e2"
+dependencies = [
+ "libc",
+ "wasix",
+ "wasm-bindgen",
 ]
 
 [[package]]
@@ -8291,6 +8323,15 @@ dependencies = [
  "crc32fast",
  "libz-ng-sys",
  "miniz_oxide 0.8.2",
+]
+
+[[package]]
+name = "flexstr"
+version = "0.9.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4d50aef14619d336a54fca5a592d952eb39037b1a1e7e6afd9f91c892ac7ef65"
+dependencies = [
+ "static_assertions",
 ]
 
 [[package]]
@@ -11900,6 +11941,30 @@ dependencies = [
  "equivalent",
  "hashbrown 0.15.2",
  "serde 1.0.217",
+]
+
+[[package]]
+name = "indextree"
+version = "4.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "91f3e68a01402c3404bfb739079f38858325bc7ad775b07922278a8a415b1a3f"
+dependencies = [
+ "indextree-macros",
+]
+
+[[package]]
+name = "indextree-macros"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "477e2e7ec7379407656293ff74902caea786a1dda427ca1f84b923c4fdeb7659"
+dependencies = [
+ "either",
+ "itertools 0.13.0",
+ "proc-macro2 1.0.92",
+ "quote 1.0.38",
+ "strum",
+ "syn 2.0.92",
+ "thiserror 1.0.69",
 ]
 
 [[package]]
@@ -24011,6 +24076,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b8dad83b4f25e74f184f64c43b150b91efe7647395b42289f38e50566d82855b"
 
 [[package]]
+name = "wasix"
+version = "0.12.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1fbb4ef9bbca0c1170e0b00dd28abc9e3b68669821600cad1caaed606583c6d"
+dependencies = [
+ "wasi 0.11.0+wasi-snapshot-preview1",
+]
+
+[[package]]
 name = "wasm-bindgen"
 version = "0.2.99"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -24549,6 +24623,12 @@ dependencies = [
  "once_cell",
  "pkg-config",
 ]
+
+[[package]]
+name = "weak-table"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "323f4da9523e9a669e1eaf9c6e763892769b1d38c623913647bfdc1532fe4549"
 
 [[package]]
 name = "web-sys"

@@ -39,6 +39,7 @@
 [ex-asynchronous-spawning]: categories/asynchronous/tokio.md#spawning
 [ex-asynchronous-streams]: categories/asynchronous/streams.md#streams
 [ex-asynchronous-tokio-runtime]: categories/asynchronous/async_and_blocking.md#tokio-runtime
+[ex-asynchronous-utilities]: categories/asynchronous/utilities.md#utilities
 [ex-asynchronous-which-crate-provides-what]: categories/asynchronous/async.md#which-crate-provides-what
 [ex-authentication-basic-authentication]: categories/authentication/basic_authentication.md#basic-authentication
 [ex-caching-lru-cache]: categories/caching/lru.md#lru-cache
@@ -128,8 +129,6 @@
 [ex-concurrency-spawn-join]: categories/concurrency/explicit_threads.md#spawn-join
 [ex-concurrency-stakker]: categories/concurrency/_actors.md#stakker
 [ex-concurrency-thumbnails-in-parallel]: categories/concurrency/data_parallelism.md#thumbnails-in-parallel
-[ex-concurrency-tokio]: categories/concurrency/message_passing.md#tokio
-[ex-concurrency-utilities]: categories/concurrency/_actors.md#utilities
 [ex-config-config]: categories/config/configuration.md#config
 [ex-config-confy]: categories/config/configuration.md#confy
 [ex-config-dotenvy]: categories/config/environment_variables.md#dotenvy

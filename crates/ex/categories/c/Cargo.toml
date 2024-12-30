@@ -45,6 +45,7 @@ flate2 = "1.0.35"
 tar = "0.4.43"
 
 ## Concurrency
+await-tree = "0.2.1"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.14"
 crossbeam-queue = "0.3.12"
@@ -86,10 +87,11 @@ rand = "0.9.0-beta.1"
 serde = { version = "1.0.216", features = ["derive"] }
 walkdir = "2.5.0"
 serde_derive = "1.0.216"
-tokio = "1.42.0"
+tokio = { version = "1.42.0", features = ["full"] }
 async-trait = "0.1.83"
 lexopt = "0.3.0"
-
+futures = "0.3.31"
+itertools = "0.13.0"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 ## Computer vision
