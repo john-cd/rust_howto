@@ -28,10 +28,60 @@ Built on top of sqlx (see above). There is also a related sea-query crate that p
 
 [![diesel][c-diesel-badge]][c-diesel]{{hi:diesel}} [![diesel-lib.rs][c-diesel-lib.rs-badge]][c-diesel-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
-`diesel` has excellent performance and takes an approach of strict compile time guarantees. The main crate is `Sync` only, but `diesel-async` provides an async connection implementation.
+The `diesel` crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
+
+`diesel` supports PostgreSQL, MySQL, and SQLite. `diesel` has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but `diesel-async` provides an async connection implementation.
+
+To create a new `diesel` project targeting `sqlite`, follow these steps:
+
+- Add the necessary dependencies to your Cargo.toml file (update the versions as needed):
+
+```toml
+diesel = { version = "2.2.6", features = ["sqlite"] }
+diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
+dotenvy = "0.15.7"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.134"
+```
+
+- Run the following commands in your terminal to create a `.env` file with the database URL:
+set up your schema.rs file and migrations.
+
+```bash
+echo DATABASE_URL=sqlite::memory: > .env
+cargo install diesel_cli --no-default-features --features sqlite
+diesel setup
+diesel migration generate create_users
+```
+
+`DATABASE_URL` can be set to a file path, or `sqlite::memory:` for an in-memory database. For other databases, the URL format is `protocol://user:password@host/database`. For MySQL, the URL would be as follows:
+
+```bash
+echo DATABASE_URL=mysql://<username>:<password>@localhost/<database>  > .env
+```
+
+- Add the following SQL to the generated `up.sql` file:
+
+```sql
+{{#include ../../../crates/ex/categories/d/tests/database/diesel/migrations/2024-12-29-173417_create_users/up.sql}}
+```
+
+- Leave the `down.sql` file empty for simplicity.
+
+```sql
+{{#include ../../../crates/ex/categories/d/tests/database/diesel/migrations/2024-12-29-173417_create_users/down.sql}}
+```
+
+- Create a `schema.rs` file by running:
+
+```bash
+diesel print-schema > src/schema.rs
+```
+
+- Write the Rust code to interact with the database:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/d/tests/database/diesel.rs:example}}
+{{#include ../../../crates/ex/categories/d/tests/database/diesel/diesel1.rs:example}}
 ```
 
 ## `toasty` {#toasty}

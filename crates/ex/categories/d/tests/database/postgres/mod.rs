@@ -11,4 +11,3 @@ fn require_external_svc() -> anyhow::Result<()> {
     Ok(())
 }
 // [P0](https://github.com/john-cd/rust_howto/issues/713)
-// [P0](https://github.com/john-cd/rust_howto/issues/714)
