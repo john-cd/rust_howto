@@ -47,6 +47,12 @@ Postgres-specific library. Performs better than SQLx.
 {{#include ../../../crates/ex/categories/d/tests/database/tokio_postgres.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[postgres: cornucopia (P2)](https://github.com/john-cd/rust_howto/issues/286)
+
 ## `cornucopia` for postgres {#cornucopia}
 
 [![cornucopia-website][c-cornucopia-website-badge]][c-cornucopia-website] [![cornucopia][c-cornucopia-badge]][c-cornucopia] [![cornucopia-crates.io][c-cornucopia-crates.io-badge]][c-cornucopia-crates.io] [![cornucopia-github][c-cornucopia-github-badge]][c-cornucopia-github] [![cornucopia-lib.rs][c-cornucopia-lib.rs-badge]][c-cornucopia-lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
@@ -65,9 +71,4 @@ The basic premise is thus to:
 {{#include ../../../crates/ex/categories/d/tests/database/cornucopia.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[postgres: cornucopia (P2)](https://github.com/john-cd/rust_howto/issues/286)
 </div>
