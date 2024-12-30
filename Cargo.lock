@@ -4059,6 +4059,7 @@ dependencies = [
  "threadpool",
  "tokio",
  "walkdir",
+ "zeroize",
 ]
 
 [[package]]

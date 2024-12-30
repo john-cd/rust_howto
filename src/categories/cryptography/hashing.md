@@ -27,9 +27,6 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-
-
-
 <div class="hidden">
 
 ## Use general-purpose hashing algorithms {#general-purpose-hashing}
@@ -206,7 +203,7 @@ Pure-Rust traits and utilities for constant-time cryptographic implementations.
 
 [![zeroize][c-zeroize-badge]][c-zeroize] [![zeroize-crates.io][c-zeroize-crates.io-badge]][c-zeroize-crates.io] [![zeroize-github][c-zeroize-github-badge]][c-zeroize-github] [![zeroize-lib.rs][c-zeroize-lib.rs-badge]][c-zeroize-lib.rs]{{hi:zeroize}}{{hi:Memory}}{{hi:Volatile}}{{hi:Secure}}{{hi:Memset}}{{hi:Zero}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Securely clear secrets from memory with a simple trait built on stable Rust primitives which guarantee memory is zeroed using an operation that will not bee optimized away by the compiler. Uses a portable pure Rust implementation that works everywhere, even WASM.
+`zeroize` securely clear secrets from memory. It guarantees that memory is zeroed, using an operation that will not be optimized away by the compiler. It is a portable pure-Rust implementation that works everywhere, even with WASM.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/c/tests/cryptography/zeroize.rs:example}}
