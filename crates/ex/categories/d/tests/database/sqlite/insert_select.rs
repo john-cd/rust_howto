@@ -22,6 +22,7 @@ pub fn main() -> Result<()> {
         conn.execute("INSERT INTO cat_colors (name) values (?1)", [
             &color.to_string()
         ])?;
+        // Get the SQLite rowid of the most recent successful INSERT
         let last_id: String = conn.last_insert_rowid().to_string();
 
         for cat in catnames {
