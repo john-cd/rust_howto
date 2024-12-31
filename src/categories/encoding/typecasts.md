@@ -29,6 +29,14 @@
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
+`zerocopy` makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
+
+- No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
+- Performance: Eliminating data copying can significantly improve performance, especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).
+- Safety: The zerocopy crate provides mechanisms to ensure safe and correct zero-copy operations.
+
+Zero-copy is often used in network programming, where high performance and low memory overhead are critical.
+
 ```rust,editable
 {{#include ../../../crates/ex/categories/efghijkl/tests/encoding/zerocopy.rs:example}}
 ```
