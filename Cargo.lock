@@ -7758,6 +7758,7 @@ dependencies = [
  "anyhow",
  "base64 0.22.1",
  "bevy",
+ "bytemuck",
  "byteorder",
  "cosmic-text",
  "csv",
@@ -7788,6 +7789,7 @@ dependencies = [
  "toml 0.8.19",
  "url",
  "walkdir",
+ "zerocopy 0.8.14",
 ]
 
 [[package]]
