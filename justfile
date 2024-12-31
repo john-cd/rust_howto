@@ -7,6 +7,10 @@ _default:
   @just --list --unsorted --justfile {{ justfile() }}
 #@just --choose
 
+# Alias for code buildpkg
+bp pkg:
+  @just code buildpkg {{pkg}}
+
 # Alias for code build
 b:
   @just code build
