@@ -21,7 +21,7 @@ readme = "README.md"
 [dependencies]
 
 ## Accessibility
-accesskit = { version = "0.17.0", optional = true }
+accesskit = "0.17.0"
 
 ## Aerospace and friends
 
@@ -38,22 +38,23 @@ async-channel = "2.3.1"
 async-std = { version = "1.13.0", optional = true }
 async-stream = { version = "0.3.6" , optional = true }
 async-trait = "0.1.83"
-duct = { version = "0.13.7", optional = true }
+duct = "0.13.7"
 futures = "0.3.31"
-futures-executor = { version = "0.3.31", optional = true }
+futures-executor = "0.3.31"
 kanal = "0.1.0-pre8" # NOTE: pre version
-mio = { version = "1.0.2", optional = true }
-parking_lot = { version = "0.12.3", optional = true }
+mio = "1.0.2"
+parking_lot = "0.12.3"
 postage = "0.5.0"
 rayon = "1.10.0"
 reqwest = "0.12.9"
-smol = { version = "2.0.2", optional = true }
+smol = "2.0.2"
 tempfile = "3.14.0"
 tokio = { version = "1.42.0", features = ["full"] }
 tokio-graceful-shutdown = "0.15.2"
 
 ## Authentication
 
+## General
 anyhow = "1.0.94"
 tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
@@ -67,14 +68,8 @@ pyo3 = "*" # was pinned to 0.21 to avoid conflict with `polars`
 ## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
 ## You may check for conflicts with: cargo build --features unused or cargo build --all-features
 unused = [
-    "dep:async-std",
-    "dep:async-stream",
-    "dep:accesskit",
-    "dep:duct",
-    "dep:futures-executor",
-    "dep:glidesort",
-    # "dep:kanal",
-    "dep:mio",
-    "dep:parking_lot",
-    "dep:smol",
+    #"dep:async-std",
+    #"dep:async-stream",
+    #"dep:glidesort",
 ]
+# TODO

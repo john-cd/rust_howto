@@ -45,12 +45,15 @@ flate2 = "1.0.35"
 tar = "0.4.43"
 
 ## Concurrency
+actix = "0.13.5"
 await-tree = "0.2.1"
 crossbeam = "0.8.4"
 crossbeam-channel = "0.5.14"
 crossbeam-queue = "0.3.12"
 crossbeam-utils = "0.8.21"
 flume = {version = "0.11.1", features = ["select"] }
+futures = "0.3.31"
+parking_lot = "0.12.3"
 ractor = "0.14.2"
 rayon = "1.10.0"
 riker = { version = "0.4.2", optional = true }
@@ -63,36 +66,50 @@ confy = "0.6.1"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
 envy = "0.4.2"
+lexopt = "0.3.0"
 
 ## Crypto
+aes-gcm-siv = "0.11.1"
+aes-gcm = "0.10.3"
 argon2 = "0.5.3"
 bcrypt = "0.16.0"
 curve25519-dalek = { version = "4.1.3", optional = true }
 der = { version = "0.7.9", features = ["derive", "alloc"] }
+dsa = "0.6.3"
 ed25519-dalek = { version = "2.1.1", optional = true }
+ecdsa = "0.16.9"
 md5 = "0.7.0"
+native-tls = "0.2.12"
+p256 = "0.13.2"
+pkcs8 = "0.10.2"
 ring = "0.17.8"
+rsa = "0.9.7"
+rustls = "0.23.20"
 scrypt = "0.11.0"
 sha2 = "0.10.8"
+subtle = "2.6.1"
 zeroize = "1.8.1"
 
+
 anyhow = "1.0.94"
+async-trait = "0.1.83"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
 glob = "0.3.1"
+itertools = "0.13.0"
 lazy_static = "1.5.0"
 num = "0.4.3"
 num_cpus = "1.16.0"
-parking_lot = "0.12.3"
 rand = "0.9.0-beta.1"
 serde = { version = "1.0.216", features = ["derive"] }
-walkdir = "2.5.0"
 serde_derive = "1.0.216"
 tokio = { version = "1.42.0", features = ["full"] }
-async-trait = "0.1.83"
-lexopt = "0.3.0"
-futures = "0.3.31"
-itertools = "0.13.0"
+walkdir = "2.5.0"
+
+time = "0.3.37"
+crates-io = "0.40.6"
+hyper = "1.5.2"
+hyper-tls = "0.6.0"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 ## Computer vision
