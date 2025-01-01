@@ -1,12 +1,38 @@
-// ANCHOR: example
-fn main() {
-    todo!();
-}
-// ANCHOR_END: example
+// // ANCHOR: example
+// use aes_gcm_siv::{
+//     aead::{Aead, KeyInit, Payload},
+//     Aes256GcmSiv, Key, Nonce,
+// };
+// use rand::Rng;
 
-#[test]
-#[ignore = "not yet implemented"]
-fn test() {
-    main();
-}
-// [P1](https://github.com/john-cd/rust_howto/issues/688)
+// fn main() {
+//     // Generate a random 256-bit key
+//     let key = Key::<Aes256GcmSiv>::generate(&mut rand::thread_rng());
+
+//     // Generate a random 96-bit nonce
+//     let nonce = Nonce::from_slice(b"unique nonce");
+
+//     let cipher = Aes256GcmSiv::new(&key);
+
+//     let plaintext = b"Secret message";
+//     let ciphertext = cipher
+//         .encrypt(nonce, Payload::from(plaintext.as_ref()))
+//         .expect("encryption failure!");
+
+//     let decrypted_ciphertext = cipher
+//         .decrypt(nonce, Payload::from(ciphertext.as_ref()))
+//         .expect("decryption failure!");
+
+//     assert_eq!(plaintext, decrypted_ciphertext.as_slice());
+
+//     println!("Ciphertext: {:?}", ciphertext);
+//     println!("Decrypted Ciphertext: {:?}", decrypted_ciphertext);
+// }
+// // ANCHOR_END: example
+
+// #[test]
+// #[ignore = "not yet implemented"]
+// fn test() {
+//     main();
+// }
+// // [P1](https://github.com/john-cd/rust_howto/issues/688)
