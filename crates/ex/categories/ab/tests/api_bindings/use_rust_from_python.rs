@@ -1,12 +1,15 @@
 #![allow(dead_code)]
 #![allow(unsafe_op_in_unsafe_fn)]
+#![allow(clippy::useless_conversion)]
 // ANCHOR: example
+use std::result::Result;
+
 use pyo3::prelude::*;
 
 #[pyfunction]
-fn my_function(a: i64, b: i64) -> PyResult<i64> {
+fn my_function(a: i64, b: i64) -> Result<i64, pyo3::PyErr> {
     // Your actual function logic here
-    Ok(a + b)
+    Ok::<_, pyo3::PyErr>(a + b)
 }
 
 /// A Python module implemented in Rust. The name of this function must match
