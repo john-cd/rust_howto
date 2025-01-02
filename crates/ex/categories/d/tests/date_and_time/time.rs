@@ -1,12 +1,33 @@
 // ANCHOR: example
+use time::{OffsetDateTime, Date, Time, PrimitiveDateTime, Duration, format_description};
 fn main() {
-    todo!();
+    // Get the current date and time
+    let now = OffsetDateTime::now_utc();
+    println!("Current date and time (UTC): {}", now);
+
+    // Parse a date from a string
+    let date = Date::parse("2025-01-02", &format_description::parse("[year]-[month]-[day]").unwrap()).unwrap();
+    println!("Parsed date: {}", date);
+
+    // Create a specific time
+    let time = Time::from_hms(12, 30, 45).unwrap();
+    println!("Specific time: {}", time);
+
+    // Create a date and time
+    let datetime = PrimitiveDateTime::new(date, time);
+    println!("Specific date and time: {}", datetime);
+
+    // Add a duration to a date and time
+    let later = datetime + Duration::hours(5);
+    println!("Date and time after 5 hours: {}", later);
+
+    // Format a date and time as a string
+    let formatted = now.format(&format_description::parse("[year]-[month]-[day] [hour]:[minute]:[second]").unwrap()).unwrap();
+    println!("Formatted date and time: {}", formatted);
 }
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
 fn test() {
     main();
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/728)
