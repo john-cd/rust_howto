@@ -1,11 +1,24 @@
 // ANCHOR: example
+use quote::quote;
+use syn::Ident;
+use syn::parse_quote;
+
 fn main() {
-    todo!();
+    // Create an identifier
+    let ident: Ident = parse_quote! { my_variable };
+
+    // Use the quote macro to generate a piece of code
+    let tokens = quote! {
+        let #ident = 42;
+        println!("The value of {} is {}", stringify!(#ident), #ident);
+    };
+
+    // Print the generated code (for demonstration)
+    println!("{}", tokens);
 }
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
 fn test() {
     main();
 }
