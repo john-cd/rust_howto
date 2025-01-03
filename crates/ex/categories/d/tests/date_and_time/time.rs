@@ -1,12 +1,21 @@
 // ANCHOR: example
-use time::{OffsetDateTime, Date, Time, PrimitiveDateTime, Duration, format_description};
+use time::Date;
+use time::Duration;
+use time::OffsetDateTime;
+use time::PrimitiveDateTime;
+use time::Time;
+use time::format_description;
 fn main() {
     // Get the current date and time
     let now = OffsetDateTime::now_utc();
     println!("Current date and time (UTC): {}", now);
 
     // Parse a date from a string
-    let date = Date::parse("2025-01-02", &format_description::parse("[year]-[month]-[day]").unwrap()).unwrap();
+    let date = Date::parse(
+        "2025-01-02",
+        &format_description::parse("[year]-[month]-[day]").unwrap(),
+    )
+    .unwrap();
     println!("Parsed date: {}", date);
 
     // Create a specific time
@@ -22,7 +31,14 @@ fn main() {
     println!("Date and time after 5 hours: {}", later);
 
     // Format a date and time as a string
-    let formatted = now.format(&format_description::parse("[year]-[month]-[day] [hour]:[minute]:[second]").unwrap()).unwrap();
+    let formatted = now
+        .format(
+            &format_description::parse(
+                "[year]-[month]-[day] [hour]:[minute]:[second]",
+            )
+            .unwrap(),
+        )
+        .unwrap();
     println!("Formatted date and time: {}", formatted);
 }
 // ANCHOR_END: example

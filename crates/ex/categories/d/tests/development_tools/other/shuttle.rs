@@ -1,10 +1,12 @@
 // // ANCHOR: example
 // use shuttle_microservice::prelude::*;
 
-// // We use the shuttle_microservice crate to create a simple web application.
-// // We define an async init function with the shuttle_service attribute to initialize the application.
-// // Inside the init function, we create an instance of App and define a single route (/) that returns "Hello, Shuttle!" when accessed.
-// // We return an instance of ShuttleService with the initialized app.
+// We use the shuttle_microservice crate to create a simple web application.
+// We define an async init function with the shuttle_service attribute to
+// initialize the application. Inside the `init` function, we create an
+// instance of `App` and define a single route (/) that returns "Hello,
+// Shuttle!" when accessed. We return an instance of `ShuttleService` with the
+// initialized app.
 
 // #[shuttle_service]
 // async fn init() -> Result<ShuttleService, ShuttleError> {
