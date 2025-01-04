@@ -1,8 +1,8 @@
 // // ANCHOR: example
 
 // // `serde_ignored` is a crate that helps you handle unknown fields when
-// // deserializing with `serde`. It's useful when you want to ignore fields that are
-// // present in the input but not defined in your struct.
+// // deserializing with `serde`. It's useful when you want to ignore fields
+// // that are present in the input but not defined in your struct.
 
 // // In `Cargo.toml`:
 // // [dependencies]
