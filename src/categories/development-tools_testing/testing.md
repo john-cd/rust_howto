@@ -68,7 +68,9 @@ cargo test --doc
 [![cargo-insta-lib.rs][c-cargo_insta-lib.rs-badge]][c-cargo_insta-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of `assert_eq!`. It lets you compare a value against a reference value but unlike simple assertions the reference value is managed by insta for you.
+Snapshots tests (also sometimes called approval tests) are tests that assert values against a reference value (the snapshot). Think of it as a supercharged version of `assert_eq!`. [`insta`][insta-website] lets you compare the result of a test against a reference value but, unlike simple assertions, the reference value is managed by `insta` for you.
+
+First, install the CLI with `cargo install cargo-insta`. Second, create a test, run it a first time with `cargo test`. This creates a snapshot file (ending with `.snap`). Use `cargo insta review` to review and accept the snapshot. Running `cargo test` again now succeeds, until the value returned by the function under test changes.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/d/tests/development_tools_testing/insta.rs:example}}
@@ -84,5 +86,4 @@ Snapshots tests (also sometimes called approval tests) are tests that assert val
 <div class="hidden">
 [testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
 
-[`insta`][insta-website]
 </div>
