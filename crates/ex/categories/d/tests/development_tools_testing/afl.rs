@@ -1,10 +1,11 @@
 // // ANCHOR: example
-// // afl (American Fuzzy Lop) is a popular fuzz testing tool, and afl.rs is a
-// Rust crate that provides support for integrating AFL with Rust programs. // Below
-// is an example of how you can use afl.rs to fuzz a simple Rust function.
+// // `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
+// is a // Rust crate that provides support for integrating AFL with Rust
+// programs. // Below is an example of how you can use afl.rs to fuzz a simple
+// Rust function.
 
 // // `fuzz_me` is a simple function that checks if the first four bytes of the
-// input data are the bytes for "fuzz." If they are, it triggers a panic.
+// // input data are the bytes for "fuzz." If they are, it triggers a panic.
 // fn fuzz_me(data: &[u8]) {
 //     if data.len() < 4 {
 //         return;
@@ -22,13 +23,14 @@
 //         fuzz_me(data);
 //     });
 // }
-// // Install AFL
-// // Compile the program for fuzzing:
-// // cargo afl build --release
-// // Run the fuzzer:
-// // cargo afl fuzz -i input_directory -o output_directory
-// target/release/your_crate_name // AFL will try different inputs to find cases
-// that trigger the panic in the `fuzz_me` function. // ANCHOR_END: example
+// // 1) Install AFL.
+// // 2) Compile the program for fuzzing:
+// // `cargo afl build --release`
+// // 3) Run the fuzzer:
+// // `cargo afl fuzz -i input_directory -o output_directory
+// // target/release/your_crate_name`. AFL will try different inputs to find
+// cases // that trigger the panic in the `fuzz_me` function.
+// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
