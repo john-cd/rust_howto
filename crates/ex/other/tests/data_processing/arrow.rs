@@ -29,7 +29,7 @@ fn main() -> Result<()> {
     // Various properties of the array:
     assert_eq!(int_array.len(), 5);
     assert_eq!(int_array.value(0), 1);
-    assert_eq!(int_array.is_null(0), false);
+    assert!(! int_array.is_null(0));
 
     // Create a new Float64Array
     let float_array = Float64Array::from(vec![5.0, 4.0, 3.0, 2.0, 1.0]);
