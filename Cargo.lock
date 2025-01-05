@@ -14713,6 +14713,8 @@ dependencies = [
  "nalgebra 0.33.2",
  "ndarray 0.16.1",
  "num",
+ "num-bigint",
+ "num-traits 0.2.19",
  "once_cell",
  "serde_json",
 ]
