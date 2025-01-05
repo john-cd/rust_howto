@@ -1,12 +1,22 @@
 // ANCHOR: example
+use arboard::Clipboard;
+
+// The `arboard` crate interacts with the clipboard.
 fn main() {
-    todo!();
+    // Create a new Clipboard instance
+    let mut clipboard = Clipboard::new().unwrap();
+
+    // Set some text to the clipboard
+    clipboard.set_text("Hello, clipboard!").unwrap();
+    println!("Text copied to clipboard.");
+
+    // Get the text from the clipboard
+    let clipboard_text = clipboard.get_text().unwrap();
+    println!("Text from clipboard: {}", clipboard_text);
 }
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/773)
