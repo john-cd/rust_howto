@@ -30,9 +30,43 @@ fn cc_defines() {
         .compile("foo");
 }
 // ANCHOR_END: C_DEFINES
+// ANCHOR: BINDGEN
+use std::env;
+use std::path::PathBuf;
 
+fn bindgen() {
+    // The path to the header file
+    let header = "tests/development_tools_ffi/example.h";
+    // Generate bindings
+    let bindings = bindgen::Builder::default()
+        .header(header)
+        .generate()
+        .expect("Unable to generate bindings");
+
+    // Write the bindings to the $OUT_DIR/bindings.rs file.
+    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
+    bindings
+        .write_to_file(out_path.join("bindings.rs"))
+        .expect("Couldn't write bindings!");
+}
+// ANCHOR_END: BINDGEN
+// ANCHOR: CBINDGEN
+fn cbindgen() {
+    let crate_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
+    let out_dir = std::path::PathBuf::from(env::var("OUT_DIR").unwrap())
+        .join("bindings.h");
+    cbindgen::Builder::new()
+        .with_crate(crate_dir)
+        .generate()
+        .expect("Unable to generate bindings")
+        .write_to_file(out_dir);
+}
+// ANCHOR_END: CBINDGEN
 fn main() {
     // c();
     // cc_defines();
     // cpp();
+    bindgen();
+    cbindgen();
 }
+// TODO P0 fix

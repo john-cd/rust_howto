@@ -13,6 +13,7 @@ keywords.workspace = true
 categories.workspace = true
 publish = false
 readme = "README.md"
+build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 ## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
@@ -102,9 +103,7 @@ yapp = "0.4.1"
 xshell = { version = "0.2.7" }
 
 ## Dev. Tools FFI
-cxx = "1.0.136"
-bindgen = "0.71.1"
-cbindgen = "0.27.0"
+## See below
 
 ## Dev Tools: Debugging
 env_logger = "0.11.6"
@@ -147,30 +146,9 @@ syslog = "7.0.0"
 ## Used for testing
 rusty-fork = "0.3.0"
 
+## See build.rs
 [build-dependencies]
+bindgen = "0.71.1"
+cbindgen = "0.27.0"
 cc = "1.2.6"
-
-[features]
-
-## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused or cargo build --all-features
-unused = [
-    #"dep:cornucopia",
-    #"dep:dashmap",
-    #"dep:doc-comment",
-    #"dep:kani",
-    #"dep:linked-hash-map",
-    #"dep:paste",
-    #"dep:petgraph",
-    #"dep:proc-macro2",
-    #"dep:quote",
-    #"dep:seaography",
-    #"dep:sea-orm",
-    #"dep:syn",
-    #"dep:tantivy",
-    #"dep:time",
-    #"dep:watt",
-    #"dep:xshell",
-    #"dep:yapp",
-]
-# TODO
+#cxx = "1.0.136"

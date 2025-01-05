@@ -6450,51 +6450,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cxx"
-version = "1.0.136"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad7c7515609502d316ab9a24f67dc045132d93bfd3f00713389e90d9898bf30d"
-dependencies = [
- "cc",
- "cxxbridge-cmd",
- "cxxbridge-flags",
- "cxxbridge-macro",
- "foldhash",
- "link-cplusplus",
-]
-
-[[package]]
-name = "cxxbridge-cmd"
-version = "1.0.136"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c33fd49f5d956a1b7ee5f7a9768d58580c6752838d92e39d0d56439efdedc35"
-dependencies = [
- "clap 4.5.23",
- "codespan-reporting",
- "proc-macro2 1.0.92",
- "quote 1.0.38",
- "syn 2.0.94",
-]
-
-[[package]]
-name = "cxxbridge-flags"
-version = "1.0.136"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be0f1077278fac36299cce8446effd19fe93a95eedb10d39265f3bf67b3036c9"
-
-[[package]]
-name = "cxxbridge-macro"
-version = "1.0.136"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3da7e4d6e74af6b79031d264b2f13c3ea70af1978083741c41ffce9308f1f24f"
-dependencies = [
- "proc-macro2 1.0.92",
- "quote 1.0.38",
- "rustversion",
- "syn 2.0.94",
-]
-
-[[package]]
 name = "d"
 version = "0.1.2"
 dependencies = [
@@ -6512,7 +6467,6 @@ dependencies = [
  "crates_io_api",
  "criterion",
  "cross",
- "cxx",
  "darling 0.20.10",
  "dashmap 6.1.0",
  "deadpool",
@@ -13972,15 +13926,6 @@ dependencies = [
  "num-traits 0.2.19",
  "rand 0.8.5",
  "thiserror 1.0.69",
-]
-
-[[package]]
-name = "link-cplusplus"
-version = "1.0.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d240c6f7e1ba3a28b0249f774e6a9dd0175054b52dfbb61b16eb8505c3785c9"
-dependencies = [
- "cc",
 ]
 
 [[package]]
