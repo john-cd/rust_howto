@@ -29,13 +29,13 @@ macro_rules! create_structs {
 create_structs!(Foo, Bar, Baz);
 
 fn main() {
-    let foo = FooStruct::new(10);
-    let bar = BarStruct::new(20);
-    let baz = BazStruct::new(30);
+    let x = FooStruct::new(10);
+    let y = BarStruct::new(20);
+    let z = BazStruct::new(30);
 
-    println!("Foo: {}", foo.get_value());
-    println!("Bar: {}", bar.get_value());
-    println!("Baz: {}", baz.get_value());
+    println!("Foo: {}", x.get_value());
+    println!("Bar: {}", y.get_value());
+    println!("Baz: {}", z.get_value());
 }
 // ANCHOR_END: example
 
