@@ -16186,6 +16186,7 @@ dependencies = [
  "anyhow",
  "dyn-clone",
  "itertools 0.13.0",
+ "libc",
  "miette 7.4.0",
  "nix 0.29.0",
  "nom 7.1.3",
