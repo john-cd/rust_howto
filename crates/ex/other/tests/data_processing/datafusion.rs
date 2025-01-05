@@ -30,7 +30,7 @@
 //         Arc::new(schema.clone()),
 //         vec![
 //             Arc::new(data.iter().map(|r|
-// r[0].clone()).collect::<ArrayRef>()),             
+// r[0].clone()).collect::<ArrayRef>()),
 // Arc::new(data.iter().map(|r|
 // r[1].parse::<i32>().unwrap()).collect::<ArrayRef>()),         ],
 //     )?];
