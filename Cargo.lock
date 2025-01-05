@@ -16305,6 +16305,7 @@ dependencies = [
  "pyoxidizer",
  "rhai",
  "swc_ecma_parser",
+ "tokio",
 ]
 
 [[package]]
