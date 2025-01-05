@@ -29,9 +29,10 @@
 //     let record_batches = vec![RecordBatch::try_new(
 //         Arc::new(schema.clone()),
 //         vec![
-//             Arc::new(data.iter().map(|r| r[0].clone()).collect::<ArrayRef>()),
-//             Arc::new(data.iter().map(|r| r[1].parse::<i32>().unwrap()).collect::<ArrayRef>()),
-//         ],
+//             Arc::new(data.iter().map(|r|
+// r[0].clone()).collect::<ArrayRef>()),             
+// Arc::new(data.iter().map(|r|
+// r[1].parse::<i32>().unwrap()).collect::<ArrayRef>()),         ],
 //     )?];
 
 //     // Create a MemoryTable with the schema and data

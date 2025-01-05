@@ -1,6 +1,5 @@
 // ANCHOR: example
-fn main() {
-}
+fn main() {}
 // ANCHOR_END: example
 
 #[test]
