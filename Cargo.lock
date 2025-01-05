@@ -16300,7 +16300,6 @@ version = "0.1.2"
 dependencies = [
  "arrow",
  "crux_core",
- "csv",
  "datafusion",
  "just",
  "pyoxidizer",
