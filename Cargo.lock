@@ -14716,6 +14716,7 @@ dependencies = [
  "num-bigint",
  "num-traits 0.2.19",
  "once_cell",
+ "ordered-float 4.6.0",
  "serde_json",
 ]
 
@@ -16255,6 +16256,15 @@ name = "ordered-float"
 version = "3.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1e1c390732d15f1d48471625cd92d154e66db2c56645e29a9cd26f4699f72dc"
+dependencies = [
+ "num-traits 0.2.19",
+]
+
+[[package]]
+name = "ordered-float"
+version = "4.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7bb71e1b3fa6ca1c61f383464aaf2bb0e2f8e772a1f01d486832464de363b951"
 dependencies = [
  "num-traits 0.2.19",
 ]
