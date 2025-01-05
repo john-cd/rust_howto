@@ -1,6 +1,5 @@
 // ANCHOR: example
 fn main() {
-    todo!();
 }
 // ANCHOR_END: example
 
