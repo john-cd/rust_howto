@@ -1,4 +1,5 @@
 // ANCHOR: example
+#![allow(clippy::approx_constant)]
 use core::cmp::Ordering;
 
 use rug::Float;
@@ -54,8 +55,8 @@ fn main() {
     // Float is a multi-precision floating-point number
     // with arbitrarily large precision and correct rounding.
     // The primitive `f64` has a precision of 53.
-    let mut f1 = Float::with_val(53, 3.141592653589793238);
-    let f2 = Float::with_val(53, 2.718281828459045235);
+    let mut f1 = Float::with_val(53, 3.141_592_653_589_793);
+    let f2 = Float::with_val(53, 2.718_281_828_459_045);
 
     let dir = f1.div_assign_round(3.0, Round::Down);
     // The direction of the rounding is returned.

@@ -1,4 +1,5 @@
 // ANCHOR: example
+#![allow(clippy::approx_constant)]
 use std::collections::BTreeMap;
 
 use ordered_float::OrderedFloat;
