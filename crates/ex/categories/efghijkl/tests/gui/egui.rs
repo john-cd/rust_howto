@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: example
 use eframe::egui;
 
@@ -34,8 +35,7 @@ impl eframe::App for MyApp {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main().unwrap();
-}
+// Hard to test. Initializing the event loop outside of the main thread is a significant cross-platform compatibility hazard.
+
 // [P1](https://github.com/john-cd/rust_howto/issues/776)
+// TODO verify the code manually
