@@ -16672,6 +16672,7 @@ dependencies = [
  "reqwest 0.12.12",
  "rustix",
  "thiserror 2.0.9",
+ "winapi",
  "windows 0.58.0",
 ]
 
