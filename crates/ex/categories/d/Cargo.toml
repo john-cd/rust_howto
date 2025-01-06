@@ -32,7 +32,7 @@ linked-hash-map = "0.5.6"
 multimap = "0.10.0"
 #petgraph = "0.7.0" # TODO
 slotmap = "1.0.7"
-smallvec = "2.0.0-alpha.8"
+smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
 uuid = { version = "1.11.0", features = [
     "v4",                # Lets you generate random UUIDs
@@ -104,6 +104,7 @@ xshell = { version = "0.2.7" }
 
 ## Dev. Tools FFI
 ## See below
+cxx = "1.0.136"
 
 ## Dev Tools: Debugging
 env_logger = "0.11.6"
@@ -151,4 +152,4 @@ rusty-fork = "0.3.0"
 bindgen = "0.71.1"
 cbindgen = "0.27.0"
 cc = "1.2.6"
-#cxx = "1.0.136"
+cxx-build = "1.0.136"

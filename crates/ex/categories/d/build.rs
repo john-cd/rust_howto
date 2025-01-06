@@ -62,11 +62,33 @@ fn cbindgen() {
         .write_to_file(out_dir);
 }
 // ANCHOR_END: CBINDGEN
+// ANCHOR: CXX
+fn cxx() {
+    cxx_build::bridge(
+        "crates/ex/categories/d/tests/development_tools_ffi/cxx.rs",
+    )
+    .file("crates/ex/categories/d/tests/development_tools_ffi/hello.cc")
+    .flag_if_supported("-std=c++14")
+    .compile("cxxbridge-demo");
+
+    println!(
+        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/cxx.rs"
+    );
+    println!(
+        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/hello.h"
+    );
+    println!(
+        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/hello.cc"
+    );
+}
+// ANCHOR_END: CXX
+
 fn main() {
     // c();
     // cc_defines();
     // cpp();
     bindgen();
     cbindgen();
+    cxx();
 }
 // TODO P0 fix

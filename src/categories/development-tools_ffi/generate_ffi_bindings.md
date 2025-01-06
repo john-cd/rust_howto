@@ -11,7 +11,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-Automatically generates Rust FFI bindings to C and C++ libraries.
+`bindgen` automatically generates Rust FFI bindings to C and C++ libraries.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/d/tests/development_tools_ffi/bindgen.rs:example}}
@@ -26,13 +26,13 @@ Automatically generates Rust FFI bindings to C and C++ libraries.
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-Generate C bindings to Rust libraries
+`cbindgen` generates C bindings to Rust libraries.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/d/tests/development_tools_ffi/cbindgen.rs:example}}
 ```
 
-## `cxx` {#cxx}
+## Interop between C++ and Rust {#cxx}
 
 [![cxx][c-cxx-badge]][c-cxx]{{hi:cxx}}
 [![cxx-crates.io][c-cxx-crates.io-badge]][c-cxx-crates.io]
