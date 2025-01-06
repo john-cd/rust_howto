@@ -114,7 +114,7 @@ hyper-tls = "0.6.0"
 [target.'cfg(target_os = "linux")'.dependencies]
 ## Computer vision
 image = "0.25.5"
-opencv = "0.93.5" # requires `libopencv-dev` `clang` `libclang-dev`
+opencv = { version = "0.93.5", features = [ "clang-runtime" ] }  # requires `libopencv-dev` `clang` `libclang-dev`
 
 [features]
 
