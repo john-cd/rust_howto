@@ -5,7 +5,8 @@ use std::io::{self};
 
 use tempfile::NamedTempFile;
 
-// Create a named temporary file, write to it, read from it, and print its path and content using the tempfile crate in Rust.
+// Create a named temporary file, write to it, read from it, and print its path
+// and content using the tempfile crate in Rust.
 
 fn main() -> io::Result<()> {
     // Create a named temporary file
@@ -31,6 +32,6 @@ fn main() -> io::Result<()> {
 
 #[test]
 fn test() {
-    main();
+    main().unwrap();
 }
 // [P0](https://github.com/john-cd/rust_howto/issues/763)
