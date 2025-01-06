@@ -38,7 +38,7 @@ postscript = { version = "0.18.2", optional = true }
 ## Rust patterns
 dyn-clone = "1.0.17"
 # eyre = "0.6.12" # outdated, see color-eyre
-itertools = "0.13.0"
+itertools = "0.14.0"
 miette = { version = "7.2.0", features = ["fancy"] }
 thiserror = "2.0.1"
 

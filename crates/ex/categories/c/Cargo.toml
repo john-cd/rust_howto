@@ -96,11 +96,11 @@ async-trait = "0.1.83"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
 glob = "0.3.1"
-itertools = "0.13.0"
+itertools = "0.14.0"
 lazy_static = "1.5.0"
 num = "0.4.3"
 num_cpus = "1.16.0"
-rand = "0.9.0-beta.1"
+rand = "0.9.0-beta.1" # use beta
 serde = { version = "1.0.216", features = ["derive"] }
 serde_derive = "1.0.216"
 tokio = { version = "1.42.0", features = ["full"] }
@@ -114,7 +114,7 @@ hyper-tls = "0.6.0"
 [target.'cfg(target_os = "linux")'.dependencies]
 ## Computer vision
 image = "0.25.5"
-opencv = "0.93.3" # requires `libopencv-dev` `clang` `libclang-dev`
+opencv = "0.93.5" # requires `libopencv-dev` `clang` `libclang-dev`
 
 [features]
 

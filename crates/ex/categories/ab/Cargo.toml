@@ -21,7 +21,7 @@ readme = "README.md"
 [dependencies]
 
 ## Accessibility
-accesskit = "0.17.0"
+accesskit = "0.17.1"
 
 ## Aerospace and friends
 
@@ -62,14 +62,3 @@ tracing-subscriber = "0.3.19"
 [target.'cfg(target_os = "linux")'.dependencies]
 # TODO P1 proper version number
 pyo3 = "*" # was pinned to 0.21 to avoid conflict with `polars`
-
-[features]
-
-## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused or cargo build --all-features
-unused = [
-    #"dep:async-std",
-    #"dep:async-stream",
-    #"dep:glidesort",
-]
-# TODO

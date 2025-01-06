@@ -26,8 +26,8 @@ readme = "README.md"
 crux_core = "0.10.0"
 
 ## Data processing
-arrow = "53.2.0"
-datafusion = "43.0.0"
+arrow = { version = "54.0.0", features = [ "prettyprint" ] }
+datafusion = "44.0.0"
 
 ## GPU
 # wgpu = { version = "23.0.0", optional = true } # TODO P3 review prerequisites
