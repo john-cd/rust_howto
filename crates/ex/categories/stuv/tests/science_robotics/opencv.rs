@@ -10,3 +10,4 @@ fn test() {
     main();
 }
 // [P2](https://github.com/john-cd/rust_howto/issues/842)
+// TODO duplicate?
