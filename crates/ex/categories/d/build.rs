@@ -64,22 +64,14 @@ fn cbindgen() {
 // ANCHOR_END: CBINDGEN
 // ANCHOR: CXX
 fn cxx() {
-    cxx_build::bridge(
-        "crates/ex/categories/d/tests/development_tools_ffi/cxx.rs",
-    )
-    .file("crates/ex/categories/d/tests/development_tools_ffi/hello.cc")
-    .flag_if_supported("-std=c++14")
-    .compile("cxxbridge-demo");
+    cxx_build::bridge("tests/development_tools_ffi/cxx.rs")
+        .file("tests/development_tools_ffi/hello.cc")
+        .flag_if_supported("-std=c++14")
+        .compile("cxxbridge-demo");
 
-    println!(
-        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/cxx.rs"
-    );
-    println!(
-        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/hello.h"
-    );
-    println!(
-        "cargo:rerun-if-changed=crates/ex/categories/d/tests/development_tools_ffi/hello.cc"
-    );
+    println!("cargo:rerun-if-changed=tests/development_tools_ffi/cxx.rs");
+    println!("cargo:rerun-if-changed=tests/development_tools_ffi/hello.h");
+    println!("cargo:rerun-if-changed=tests/development_tools_ffi/hello.cc");
 }
 // ANCHOR_END: CXX
 
@@ -89,6 +81,6 @@ fn main() {
     // cpp();
     bindgen();
     cbindgen();
-    cxx();
+    //cxx();
 }
 // TODO P0 fix
