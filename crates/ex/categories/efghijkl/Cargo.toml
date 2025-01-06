@@ -52,7 +52,7 @@ open = { version = "5.3.0", optional = true }
 remove_dir_all = { version = "1.0.0", optional = true }
 same-file = "1.0.6"
 # tempdir = "0.3.7" # outdated, replaced by tempfile
-tempfile = { version = "3.14.0", optional = true }
+tempfile = "3.14.0"
 walkdir = "2.5.0"
 
 ## Finance
@@ -111,5 +111,4 @@ unused = [
     #"dep:RustQuant",
     "dep:slint",
     "dep:tauri",
-    "dep:tempfile",
 ]
