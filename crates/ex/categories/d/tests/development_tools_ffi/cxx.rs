@@ -1,25 +1,29 @@
-// ANCHOR: example
-use cxx::CxxString;
+// #![allow(unused_imports)]
+// // ANCHOR: example
+// use cxx::CxxString;
+// use cxx::let_cxx_string;
 
-// Call a C++ function from Rust using the `cxx` crate
+// // `cxx` provides a safe mechanism for calling C++ code from Rust and Rust code from C++.
 
-#[cxx::bridge]
-mod ffi {
-    unsafe extern "C++" {
-        include!("hello.h");
+// // Call a C++ function from Rust using the `cxx` crate
 
-        fn hello(name: &CxxString);
-    }
-}
+// #[cxx::bridge]
+// mod ffi {
+//     unsafe extern "C++" {
+//         include!("d/tests/development_tools_ffi/hello.h");
 
-fn main() {
-    let name = "Rust".into();
-    ffi::hello(name);
-}
-// ANCHOR_END: example
+//         fn hello(name: &CxxString);
+//     }
+// }
 
-#[test]
-fn test() {
-    main();
-}
-// [P1](https://github.com/john-cd/rust_howto/issues/738)
+// fn main() {
+//     let_cxx_string!(name = "Rust");
+//     ffi::hello(&name);
+// }
+// // ANCHOR_END: example
+
+// #[test]
+// fn test() {
+//     main();
+// }
+// // [P1](https://github.com/john-cd/rust_howto/issues/738)

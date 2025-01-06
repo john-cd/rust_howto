@@ -62,8 +62,15 @@ fn cbindgen() {
         .write_to_file(out_dir);
 }
 // ANCHOR_END: CBINDGEN
+
+// For `cxx.rs` example:
+
 // ANCHOR: CXX
+// Code generator for constructing and compiling C++ code.
 fn cxx() {
+    // `bridge` returns a `cc::Build` on which you should continue to set up any
+    // additional source files or compiler flags, and lastly call its
+    // `compile` method to execute the C++ build.
     cxx_build::bridge("tests/development_tools_ffi/cxx.rs")
         .file("tests/development_tools_ffi/hello.cc")
         .flag_if_supported("-std=c++14")
@@ -81,6 +88,6 @@ fn main() {
     // cpp();
     bindgen();
     cbindgen();
-    //cxx();
+    // cxx();
 }
 // TODO P0 fix
