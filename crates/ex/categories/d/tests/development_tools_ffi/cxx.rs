@@ -3,9 +3,10 @@
 // use cxx::CxxString;
 // use cxx::let_cxx_string;
 
-// // `cxx` provides a safe mechanism for calling C++ code from Rust and Rust code from C++.
+// // `cxx` provides a safe mechanism for calling C++ code from Rust and Rust
+// // code from C++.
 
-// // Call a C++ function from Rust using the `cxx` crate
+// // Call a C++ function from Rust:
 
 // #[cxx::bridge]
 // mod ffi {
