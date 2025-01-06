@@ -1,6 +1,6 @@
 // ANCHOR: example
-// `bindgen` allows you to generate Rust bindings for (existing) C (and some C++)
-// libraries.
+// `bindgen` allows you to generate Rust bindings for (existing) C
+// (and some C++) libraries.
 
 // 1) If needed, compile the C library
 // gcc -c -o example.o example.c
