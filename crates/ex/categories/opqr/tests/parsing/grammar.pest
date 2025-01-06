@@ -1,0 +1,8 @@
+expression = { term ~ (operator ~ term)* } // ~ matches the sequence
+term = { number }
+operator = { "+" | "-" | "*" | "/" } // | matches one of the four strings (either or)
+number = { ASCII_DIGIT+ } // + matches one or more times
+
+// This rule starts with a _ and is therefore silent
+// (it produces no tokens or error reports)
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
