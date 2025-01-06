@@ -1,12 +1,41 @@
 // ANCHOR: example
-fn main() {
-    todo!();
+use eframe::egui;
+
+// In `Cargo.toml`:
+// [dependencies]
+// egui = "0.17"
+// eframe = "0.17"
+
+fn main() -> Result<(), eframe::Error> {
+    let options = eframe::NativeOptions::default();
+    eframe::run_native(
+        "Hello egui",
+        options,
+        Box::new(|_cc| Ok(Box::new(MyApp::default()))),
+    )
+}
+
+#[derive(Default)]
+struct MyApp {
+    counter: i32,
+}
+
+// Simple GUI application with a button to increment a counter.
+impl eframe::App for MyApp {
+    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        egui::CentralPanel::default().show(ctx, |ui| {
+            ui.heading("Hello egui!");
+            if ui.button("Increment counter").clicked() {
+                self.counter += 1;
+            }
+            ui.label(format!("Counter: {}", self.counter));
+        });
+    }
 }
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
 fn test() {
-    main();
+    main().unwrap();
 }
 // [P1](https://github.com/john-cd/rust_howto/issues/776)

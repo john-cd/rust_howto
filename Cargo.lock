@@ -8338,6 +8338,7 @@ version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7d72e9c39f6e11a2e922d04a34ec5e7ef522ea3f5a1acfca7a19d16ad5fe50f5"
 dependencies = [
+ "bytemuck",
  "emath",
 ]
 
@@ -8419,6 +8420,7 @@ dependencies = [
  "csv",
  "data-encoding",
  "directories 5.0.1",
+ "eframe",
  "egui",
  "form_urlencoded",
  "glob",
@@ -8448,16 +8450,111 @@ dependencies = [
 ]
 
 [[package]]
+name = "eframe"
+version = "0.30.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b2f2d9e7ea2d11ec9e98a8683b6eb99f9d7d0448394ef6e0d6d91bd4eb817220"
+dependencies = [
+ "ahash 0.8.11",
+ "bytemuck",
+ "document-features",
+ "egui",
+ "egui-wgpu",
+ "egui-winit",
+ "egui_glow",
+ "glow 0.16.0",
+ "glutin",
+ "glutin-winit",
+ "image 0.25.5",
+ "js-sys",
+ "log",
+ "objc2",
+ "objc2-app-kit",
+ "objc2-foundation",
+ "parking_lot 0.12.3",
+ "percent-encoding",
+ "profiling",
+ "raw-window-handle",
+ "static_assertions",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "web-time",
+ "winapi",
+ "windows-sys 0.59.0",
+ "winit",
+]
+
+[[package]]
 name = "egui"
 version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "252d52224d35be1535d7fd1d6139ce071fb42c9097773e79f7665604f5596b5e"
 dependencies = [
+ "accesskit",
  "ahash 0.8.11",
  "emath",
  "epaint",
+ "log",
  "nohash-hasher",
  "profiling",
+]
+
+[[package]]
+name = "egui-wgpu"
+version = "0.30.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "26c1e821d2d8921ef6ce98b258c7e24d9d6aab2ca1f9cdf374eca997e7f67f59"
+dependencies = [
+ "ahash 0.8.11",
+ "bytemuck",
+ "document-features",
+ "egui",
+ "epaint",
+ "log",
+ "profiling",
+ "thiserror 1.0.69",
+ "type-map",
+ "web-time",
+ "wgpu 23.0.1",
+ "winit",
+]
+
+[[package]]
+name = "egui-winit"
+version = "0.30.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e84c2919cd9f3a38a91e8f84ac6a245c19251fd95226ed9fae61d5ea564fce3"
+dependencies = [
+ "accesskit_winit",
+ "ahash 0.8.11",
+ "arboard",
+ "egui",
+ "log",
+ "profiling",
+ "raw-window-handle",
+ "smithay-clipboard",
+ "web-time",
+ "webbrowser",
+ "winit",
+]
+
+[[package]]
+name = "egui_glow"
+version = "0.30.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3eaf6264cc7608e3e69a7d57a6175f438275f1b3889c1a551b418277721c95e6"
+dependencies = [
+ "ahash 0.8.11",
+ "bytemuck",
+ "egui",
+ "glow 0.16.0",
+ "log",
+ "memoffset",
+ "profiling",
+ "wasm-bindgen",
+ "web-sys",
+ "winit",
 ]
 
 [[package]]
@@ -8562,6 +8659,9 @@ name = "emath"
 version = "0.30.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c4fe73c1207b864ee40aa0b0c038d6092af1030744678c60188a05c28553515d"
+dependencies = [
+ "bytemuck",
+]
 
 [[package]]
 name = "embed-resource"
@@ -8749,9 +8849,11 @@ checksum = "5666f8d25236293c966fbb3635eac18b04ad1914e3bab55bc7d44b9980cafcac"
 dependencies = [
  "ab_glyph",
  "ahash 0.8.11",
+ "bytemuck",
  "ecolor",
  "emath",
  "epaint_default_fonts",
+ "log",
  "nohash-hasher",
  "parking_lot 0.12.3",
  "profiling",
@@ -11100,6 +11202,18 @@ name = "glow"
 version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e33cd8ff5e02c1a5463ec10a846c8f3166a3ae0382ec33de6a327ea6dd61c41d"
+dependencies = [
+ "js-sys",
+ "slotmap",
+ "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
+name = "glow"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c5e5ea60d70410161c8bf5da3fdfeaa1c72ed2c15f8bbb9d19fe3a4fad085f08"
 dependencies = [
  "js-sys",
  "slotmap",
@@ -24893,6 +25007,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "type-map"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "deb68604048ff8fa93347f02441e4487594adc20bb8a084f9e564d2b827a0a9f"
+dependencies = [
+ "rustc-hash 1.1.0",
+]
+
+[[package]]
 name = "typed-arena"
 version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -26291,6 +26414,24 @@ checksum = "5a6580f308b1fad9207618087a65c04e7a10bc77e02c8e84e9b00dd4b12fa0bb"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "webbrowser"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ea9fe1ebb156110ff855242c1101df158b822487e4957b0556d9ffce9db0f535"
+dependencies = [
+ "block2",
+ "core-foundation 0.10.0",
+ "home",
+ "jni 0.21.1",
+ "log",
+ "ndk-context",
+ "objc2",
+ "objc2-foundation",
+ "url",
+ "web-sys",
 ]
 
 [[package]]

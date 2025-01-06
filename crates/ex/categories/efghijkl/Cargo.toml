@@ -84,6 +84,7 @@ anyhow = "1.0.94"
 csv = "1.3.1"
 serde = { version = "1.0.216", features = ["derive"] }
 url = "2.5.4"
+eframe = "0.30.0"
 
 ## Internationalization
 ## TODO
