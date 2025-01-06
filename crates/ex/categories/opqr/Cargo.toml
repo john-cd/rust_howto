@@ -25,9 +25,9 @@ readme = "README.md"
 libc = "0.2.169"
 
 ## Parsing and friends
-nom = { version = "7.1.3", optional = true }
-pest = { version = "2.7.14", optional = true }
-postscript = { version = "0.18.2", optional = true }
+nom = "7.1.3"
+pest = "2.7.14"
+postscript = { version = "0.18.2", optional = true } # TODO
 swc_ecma_parser = "6.0.1"
 swc_ecma_ast = "5.0.1"
 swc_common = "5.0.0"
@@ -41,6 +41,7 @@ itertools = "0.14.0"
 miette = { version = "7.2.0", features = ["fancy"] }
 thiserror = "2.0.1"
 
+## General
 anyhow = "1.0.94"
 regex = "1.11.1"
 reqwest = { version = "0.12.12", features = [ "blocking" ] }
