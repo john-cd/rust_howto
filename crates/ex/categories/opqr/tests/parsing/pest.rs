@@ -15,15 +15,17 @@ use pest_derive::Parser;
 // [build-dependencies]
 // pest_generator = "2.7.15"
 
-// `pest` uses parsing expression grammars (or PEG) as its input, which are similar in
-// spirit to regular expressions, but which offer the enhanced expressivity
-// needed to parse complex languages. The grammar is stored in a separate file.
+// `pest` uses parsing expression grammars (or PEG) as its input, which are
+// similar in spirit to regular expressions, but which offer the enhanced
+// expressivity needed to parse complex languages.
+// The grammar is stored in a separate file.
 
 #[derive(Parser)]
 #[grammar = "../tests/parsing/grammar.pest"] // Path relative to `src`
 struct ArithmeticParser;
 
-// pest creates the function ArithmeticParser::parse and an enum called Rule with multiple variants:
+// `pest` creates the function `ArithmeticParser::parse` and an enum called
+// `Rule` with multiple variants:
 // #[allow(non_camel_case_types)]
 // enum Rule {
 //     expression,
