@@ -36,6 +36,7 @@ swc_common = "5.0.0"
 ## Rendering and friends
 
 ## Rust patterns
+color-eyre = "0.6.3"
 dyn-clone = "1.0.17"
 # eyre = "0.6.12" # outdated, see color-eyre
 itertools = "0.14.0"

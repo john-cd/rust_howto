@@ -5402,10 +5402,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "55146f5e46f237f7423d74111267d4597b59b0dad0ffaf7303bce9945d843ad5"
 dependencies = [
  "backtrace",
+ "color-spantrace",
  "eyre",
  "indenter",
  "once_cell",
  "owo-colors 3.5.0",
+ "tracing-error",
+]
+
+[[package]]
+name = "color-spantrace"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd6be1b2a7e382e2b98b43b2adcca6bb0e465af0bdd38123873ae61eb17a72c2"
+dependencies = [
+ "once_cell",
+ "owo-colors 3.5.0",
+ "tracing-core",
+ "tracing-error",
 ]
 
 [[package]]
@@ -15171,6 +15185,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "approx 0.5.1",
+ "hyper 1.5.2",
  "lazy_static",
  "nalgebra 0.33.2",
  "ndarray 0.16.1",
@@ -15183,6 +15198,7 @@ dependencies = [
  "rust_decimal",
  "rust_decimal_macros",
  "serde_json",
+ "tokio",
 ]
 
 [[package]]
@@ -16671,6 +16687,7 @@ name = "opqr"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "color-eyre",
  "dyn-clone",
  "itertools 0.14.0",
  "libc",
@@ -24515,6 +24532,16 @@ checksum = "e672c95779cf947c5311f83787af4fa8fffd12fb27e4993211a84bdfd9610f9c"
 dependencies = [
  "once_cell",
  "valuable",
+]
+
+[[package]]
+name = "tracing-error"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b1581020d7a273442f5b45074a6a57d5757ad0a47dac0e9f0bd57b81936f3db"
+dependencies = [
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
