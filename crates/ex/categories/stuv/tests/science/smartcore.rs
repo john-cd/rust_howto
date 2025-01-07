@@ -8,7 +8,8 @@
 // // use smartcore::metrics::distance::*;
 // use rand::Rng;
 
-// // `smartcore` provides various algorithms for clustering, classification, regression, and more.
+// // `smartcore` provides various algorithms for clustering, classification,
+// // regression, and more.
 
 // fn main() {
 //     // Generate a dataset using the `generate::make_blobs` function.
@@ -28,21 +29,23 @@
 //     println!("Mean Squared Error: {}", mse);
 // }
 
-// // The make_blobs function generates random samples around the specified cluster centers, creating a dataset with the specified number of samples and feature
+// // The make_blobs function generates random samples around the specified
+// // cluster centers, creating a dataset with the specified number of samples
+// // and feature
 // // n_samples is the number of samples to generate.
 // // n_features is the number of features for each sample.
 // // cluster_std is the standard deviation of the clusters.
 // // centers is a vector of the center points for the clusters.
-// pub fn make_blobs(n_samples: usize, n_features: usize, cluster_std: f64, centers: &Vec<f64>) -> DenseMatrix<f64> {
-//     let mut rng = rand::thread_rng();
-//     let n_centers = centers.len() / n_features;
+// pub fn make_blobs(n_samples: usize, n_features: usize, cluster_std: f64,
+// centers: &Vec<f64>) -> DenseMatrix<f64> {     let mut rng =
+// rand::thread_rng();     let n_centers = centers.len() / n_features;
 //     let mut data = vec![0.0; n_samples * n_features];
 
 //     for i in 0..n_samples {
-//         let center = &centers[(i % n_centers) * n_features..(i % n_centers + 1) * n_features];
-//         for j in 0..n_features {
-//             data[i * n_features + j] = rng.r#gen::<f64>() * cluster_std + center[j];
-//         }
+//         let center = &centers[(i % n_centers) * n_features..(i % n_centers +
+// 1) * n_features];         for j in 0..n_features { data[i * n_features + j] =
+//    rng.r#gen::<f64>() * cluster_std +
+// center[j];         }
 //     }
 
 //     DenseMatrix::from_array(n_samples, n_features, &data)

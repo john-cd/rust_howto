@@ -1,8 +1,8 @@
 // ANCHOR: example
 use linfa::dataset::Dataset;
+use linfa::prelude::Predict;
 use linfa::traits::Fit;
 use linfa_linear::LinearRegression;
-use linfa::prelude::Predict;
 
 // `linfa` is a Rust library for machine learning, providing tools for tasks,
 // such as clustering, regression, and classification.
