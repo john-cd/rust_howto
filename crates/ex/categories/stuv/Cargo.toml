@@ -4,7 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies"
+description = "Book code examples and their crate dependencies - categories S to V"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
@@ -34,6 +34,7 @@ zenoh = { version = "1.0.2", optional = true }
 
 ## Text processing
 concat-string = "1.0.1"
+fancy-regex = "0.14.0"
 joinery = "3.1.0"
 regex = "1.11.1"
 unicode-segmentation = "1.12.0"
@@ -51,16 +52,3 @@ plotly = { version = "0.12.1", optional = true }
 anyhow = "1.0.91"
 lazy_static = "1.5.0"
 once_cell = "1.20.2"
-
-[features]
-
-## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused or cargo build --all-features
-unused = [
-    "dep:candle-core",
-    "dep:linfa",
-    "dep:openrr",
-    "dep:plotly",
-    "dep:watchmaker",
-    "dep:zenoh",
-]
