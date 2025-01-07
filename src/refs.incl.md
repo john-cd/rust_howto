@@ -584,7 +584,6 @@
 [ex-rust-patterns-unwrap-or-else]: categories/rust-patterns/error_handling.md#unwrap-or-else
 [ex-science-classical-ml]: categories/science/_machine_learning.md#classical-ml
 [ex-science-deep-learning]: categories/science/_machine_learning.md#deep-learning
-[ex-science-watchmaker]: categories/science/_machine_learning.md#watchmaker
 [ex-science_geo-geo]: categories/science_geo/geo.md#geo
 [ex-science_neuroscience-neuro]: categories/science_neuroscience/neuro.md#neuro
 [ex-science_robotics-bonsai-bt]: categories/science_robotics/useful_robotics_tools_and_libs.md#bonsai-bt

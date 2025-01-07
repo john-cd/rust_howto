@@ -3618,14 +3618,6 @@
 [c-wasmtime-lib.rs-badge]: https://img.shields.io/badge/lib.rs-wasmtime-yellow
 [c-wasmtime-lib.rs]: https://lib.rs/crates/wasmtime
 [c-wasmtime]: https://docs.rs/wasmtime
-[c-watchmaker-badge]: https://img.shields.io/crates/v/watchmaker?label=watchmaker
-[c-watchmaker-crates.io-badge]: https://img.shields.io/badge/crates.io-watchmaker-crimson
-[c-watchmaker-crates.io]: https://crates.io/crates/watchmaker
-[c-watchmaker-github-badge]: https://img.shields.io/badge/watchmaker-steelblue?logo=github
-[c-watchmaker-github]: https://github.com/thomasbratt/watchmaker
-[c-watchmaker-lib.rs-badge]: https://img.shields.io/badge/lib.rs-watchmaker-yellow
-[c-watchmaker-lib.rs]: https://lib.rs/crates/watchmaker
-[c-watchmaker]: https://docs.rs/watchmaker
 [c-watt-badge]: https://img.shields.io/crates/v/watt?label=watt
 [c-watt-crates.io-badge]: https://img.shields.io/badge/crates.io-watt-crimson
 [c-watt-crates.io]: https://crates.io/crates/watt

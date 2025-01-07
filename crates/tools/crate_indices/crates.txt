@@ -214,7 +214,6 @@ unicode-segmentation
 url
 walkdir
 wasmtime
-watchmaker
 watt
 wgpu
 windows

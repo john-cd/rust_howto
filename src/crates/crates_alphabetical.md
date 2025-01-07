@@ -88,7 +88,7 @@ Crates mentioned in this book, by alphabetic order.
 
 ## W
 
-[![walkdir][c-walkdir-badge]][c-walkdir] [![wasmtime][c-wasmtime-badge]][c-wasmtime] [![watchmaker][c-watchmaker-badge]][c-watchmaker] [![watt][c-watt-badge]][c-watt] [![wgpu][c-wgpu-badge]][c-wgpu] [![windows][c-windows-badge]][c-windows]
+[![walkdir][c-walkdir-badge]][c-walkdir] [![wasmtime][c-wasmtime-badge]][c-wasmtime] [![watt][c-watt-badge]][c-watt] [![wgpu][c-wgpu-badge]][c-wgpu] [![windows][c-windows-badge]][c-windows]
 
 ## X
 

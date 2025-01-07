@@ -214,7 +214,6 @@
 [![url][c-url-badge]][c-url]{{hi:url}}
 [![walkdir][c-walkdir-badge]][c-walkdir]{{hi:walkdir}}
 [![wasmtime][c-wasmtime-badge]][c-wasmtime]{{hi:wasmtime}}
-[![watchmaker][c-watchmaker-badge]][c-watchmaker]{{hi:watchmaker}}
 [![watt][c-watt-badge]][c-watt]{{hi:watt}}
 [![wgpu][c-wgpu-badge]][c-wgpu]{{hi:wgpu}}
 [![windows][c-windows-badge]][c-windows]{{hi:windows}}

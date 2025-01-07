@@ -46,14 +46,6 @@ Kin in spirit to Python's `scikit-learn`, `linf` focuses on common preprocessing
 
 Burn is a comprehensive dynamic Deep Learning Framework built using Rust with flexibility, compute efficiency and portability as its primary goals.
 
-## Use genetic algorithms {#watchmaker}
-
-[Watchmaker (genetic algos in Rust)][c-watchmaker]{{hi:watchmaker}}⮳ [![watchmaker][c-watchmaker-badge]][c-watchmaker]{{hi:watchmaker}} [![watchmaker-github][c-watchmaker-github-badge]][c-watchmaker-github] [![watchmaker-crates.io][c-watchmaker-crates.io-badge]][c-watchmaker-crates.io] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
-
-```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science/watchmaker.rs:example}}
-```
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
