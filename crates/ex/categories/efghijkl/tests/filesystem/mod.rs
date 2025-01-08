@@ -10,6 +10,7 @@ mod loops;
 mod memmap2;
 mod modified;
 mod notify;
+mod open;
 mod png;
 mod read_file;
 mod same_file;
