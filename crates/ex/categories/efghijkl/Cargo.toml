@@ -4,7 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies"
+description = "Book code examples and their crate dependencies - categories E to L"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
@@ -33,8 +33,8 @@ base64 = "0.22.1"
 bytemuck = {version = "1.21.0", features = ["derive"] }
 byteorder = "1.5.0"
 data-encoding = "2.6.0"
-form_urlencoded = { version = "1.2.1", optional = true }
-monostate = { version = "0.1.13", optional = true }
+form_urlencoded = "1.2.1"
+monostate = "0.1.13"
 percent-encoding = "2.3.1"
 serde_json = "1.0.132"
 toml = "0.8.19"
@@ -45,11 +45,11 @@ zerocopy = { version = "0.8.14", features = ["derive"] }
 ## Filesystem
 directories = "5.0.1"
 glob = "0.3.1"
-globset = { version = "0.4.15", optional = true }
+globset = "0.4.15"
 memmap2 = "0.9.5"
 notify = "7.0.0"
-open = { version = "5.3.0", optional = true }
-remove_dir_all = { version = "1.0.0", optional = true }
+open = "5.3.0"
+remove_dir_all = "1.0.0"
 same-file = "1.0.6"
 # tempdir = "0.3.7" # outdated, replaced by tempfile
 tempfile = "3.14.0"
@@ -59,32 +59,27 @@ walkdir = "2.5.0"
 # RustQuant = { version = "0.3", optional = true } # TODO P3 review
 
 ## Game and friends
-bevy = { version = "0.15.0", optional = true }
+bevy = "0.15.1"
 
 ## Graphics
+wgpu = "23.0.1"
 
 ## GUI
 arboard = "3.4.1"
-cosmic-text = { version = "0.12.1", optional = true }
+cosmic-text = "0.12.1"
 # druid = { version = "0.8.3", optional = true } # TODO P3 review conflicts
-egui = { version = "0.30.0", optional = true }
+eframe = "0.30.0"
+egui = "0.30.0"
 # floem = { version = "0.1.1", optional  = true } # TODO P3 review requirements
-iced = { version = "0.13.1", optional = true }
-leptos = { version = "0.7.0-gamma3", optional = true }
-r3bl_tuify = { version = "0.2.0", optional = true }
-ratatui = { version = "0.29.0", optional = true }
-slint = { version = "1.8.0", optional = true }
-tauri = { version = "2.0.6", optional = true } # requires multiple libraries. See Dockerfile
+iced = "0.13.1"
+leptos = "0.7.3"
+r3bl_tuify = "0.2.0"
+slint = "1.8.0"
+tauri = "2.0.6" # requires multiple libraries. See Dockerfile
 # xilem = { version = "0.1.0", optional = true } # TODO P3 review prerequisites
 
 ## Hardware
 num_cpus = "1.16.0"
-
-anyhow = "1.0.94"
-csv = "1.3.1"
-serde = { version = "1.0.216", features = ["derive"] }
-url = "2.5.4"
-eframe = "0.30.0"
 
 ## Internationalization
 ## TODO
@@ -92,24 +87,8 @@ eframe = "0.30.0"
 ## Localization
 ## TODO
 
-[features]
-
-## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused or cargo build --all-features
-unused = [
-    "dep:bevy",
-    "dep:cosmic-text",
-    "dep:egui",
-    "dep:form_urlencoded",
-    "dep:globset",
-    "dep:iced",
-    "dep:leptos",
-    "dep:monostate",
-    "dep:open",
-    "dep:r3bl_tuify",
-    "dep:ratatui",
-    "dep:remove_dir_all",
-    #"dep:RustQuant",
-    "dep:slint",
-    "dep:tauri",
-]
+## General
+anyhow = "1.0.94"
+csv = "1.3.1"
+serde = { version = "1.0.216", features = ["derive"] }
+url = "2.5.4"
