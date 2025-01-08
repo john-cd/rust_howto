@@ -31,8 +31,10 @@ url = "2.5.3"
 select = "0.6.0"
 
 ## Web - client
-reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
 hyper = "1.5.0"
+reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
+ureq = "2.12.1"
+
 
 ## Web - server
 actix-web = "4.9.0"
@@ -57,4 +59,4 @@ tokio = { version = "1.41.1", features = ["full"] }
 regex = "1.11.1"
 
 [build-dependencies]
-tonic-build = "0.6"
+tonic-build = "0.12.3"
