@@ -15,9 +15,6 @@ publish = false
 readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
-## in order to keep the compile speed decent.
-## Remove the optional flag as needed.
 [dependencies]
 
 ## Caching
@@ -90,12 +87,13 @@ sha2 = "0.10.8"
 subtle = "2.6.1"
 zeroize = "1.8.1"
 
-
+## General
 anyhow = "1.0.94"
 async-trait = "0.1.83"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
 glob = "0.3.1"
+image = "0.25.5"
 itertools = "0.14.0"
 lazy_static = "1.5.0"
 num = "0.4.3"
