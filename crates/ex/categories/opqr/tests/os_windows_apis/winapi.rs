@@ -5,8 +5,8 @@ use winapi::shared::minwindef::LPARAM;
 use winapi::shared::minwindef::LRESULT;
 use winapi::shared::minwindef::UINT;
 use winapi::shared::minwindef::WPARAM;
-//use winapi::shared::windef::HBRUSH;
-//use winapi::shared::windef::HINSTANCE;
+// use winapi::shared::windef::HBRUSH;
+// use winapi::shared::windef::HINSTANCE;
 use winapi::shared::windef::HWND;
 use winapi::um::libloaderapi::GetModuleHandleW;
 use winapi::um::winuser::CS_HREDRAW;
@@ -15,10 +15,10 @@ use winapi::um::winuser::CreateWindowExW;
 use winapi::um::winuser::DefWindowProcW;
 use winapi::um::winuser::DispatchMessageW;
 use winapi::um::winuser::GetMessageW;
-//use winapi::um::winuser::MB_ICONINFORMATION;
-//use winapi::um::winuser::MB_OK;
+// use winapi::um::winuser::MB_ICONINFORMATION;
+// use winapi::um::winuser::MB_OK;
 use winapi::um::winuser::MSG;
-//use winapi::um::winuser::MessageBoxW;
+// use winapi::um::winuser::MessageBoxW;
 use winapi::um::winuser::RegisterClassW;
 use winapi::um::winuser::SW_SHOW;
 use winapi::um::winuser::ShowWindow;
@@ -36,19 +36,16 @@ unsafe extern "system" fn window_proc(
             unsafe {
                 winapi::um::winuser::PostQuitMessage(0);
             }
-            return 0;
+            0
         }
-        _ => unsafe { return DefWindowProcW(hwnd, msg, wparam, lparam) },
+        _ => unsafe { DefWindowProcW(hwnd, msg, wparam, lparam) },
     }
 }
 
 fn to_wstring(str: &str) -> Vec<u16> {
     use std::ffi::OsStr;
     use std::os::windows::ffi::OsStrExt;
-    OsStr::new(str)
-        .encode_wide()
-        .chain(Some(0).into_iter())
-        .collect()
+    OsStr::new(str).encode_wide().chain(Some(0)).collect()
 }
 
 // Basic Windows application with a message box.
