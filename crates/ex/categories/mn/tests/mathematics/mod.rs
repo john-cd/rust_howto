@@ -14,6 +14,7 @@ mod multiply_scalar_vector_matrix;
 mod num_bigint;
 mod num_traits;
 mod ordered_float;
+#[cfg(target_os = "linux")]
 mod rug;
 mod rust_decimal;
 mod side_length;

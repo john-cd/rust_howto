@@ -29,9 +29,9 @@ fn main() {
     println!("Sum of integers: {}", sum);
 
     // Most methods have three versions:
-    // The first method consumes the operand.
-    // The second method has a “_mut” suffix and mutates the operand.
-    // The third method has a “_ref” suffix and borrows the operand.
+    // - The first method consumes the operand.
+    // - The second method has a “_mut” suffix and mutates the operand.
+    // - The third method has a “_ref” suffix and borrows the operand.
     // The returned item is an incomplete-computation value that can be assigned
     // to an Integer.
     let a = Integer::from(-15);
@@ -42,8 +42,8 @@ fn main() {
     let r = c.abs_ref();
     let _abs_c = Integer::from(r);
 
-    // You can also mix Integer and primitive integer types; the result will be
-    // an Integer.
+    // You can also mix Integer and primitive integer types;
+    // the result will be an Integer.
 
     // Working with rationals:
     let r1 = Rational::from((1, 3));
@@ -60,7 +60,7 @@ fn main() {
 
     let dir = f1.div_assign_round(3.0, Round::Down);
     // The direction of the rounding is returned.
-    // Since we rounded down, direction is Ordering::Less
+    // Since we rounded down, direction is `Ordering::Less`
     assert_eq!(dir, Ordering::Less);
 
     let product_ref = &f1 * &f2;
