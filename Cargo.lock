@@ -8786,6 +8786,7 @@ dependencies = [
  "url",
  "walkdir",
  "wgpu 23.0.1",
+ "winit",
  "zerocopy 0.8.14",
 ]
 
