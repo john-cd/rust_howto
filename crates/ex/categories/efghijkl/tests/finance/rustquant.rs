@@ -1,6 +1,6 @@
 // ANCHOR: example
-use rustquant::prelude::*;
 use rustquant::models::black_scholes::BlackScholes;
+use rustquant::prelude::*;
 fn main() {
     // Parameters for the Black-Scholes model
     let spot_price = 100.0; // Current price of the underlying asset
@@ -10,7 +10,13 @@ fn main() {
     let risk_free_rate = 0.05; // Risk-free interest rate
 
     // Create a Black-Scholes model
-    let bs = BlackScholes::new(spot_price, strike_price, time_to_maturity, volatility, risk_free_rate);
+    let bs = BlackScholes::new(
+        spot_price,
+        strike_price,
+        time_to_maturity,
+        volatility,
+        risk_free_rate,
+    );
 
     // Calculate the price of a European call option
     let call_price = bs.call_price();
