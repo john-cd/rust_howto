@@ -4,7 +4,7 @@ version.workspace = true
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Book code examples and their crate dependencies"
+description = "Book code examples and their crate dependencies - categories W to Z"
 documentation.workspace = true
 homepage.workspace = true
 repository.workspace = true
@@ -21,8 +21,8 @@ readme = "README.md"
 [dependencies]
 
 ## WASM
-wasmtime = { version = "28.0.0", optional = true }
-yew = { version = "0.21.0", optional = true }
+wasmtime = "28.0.0"
+yew = "0.21.0"
 
 ## Web
 http = "1.1.0"
@@ -32,21 +32,23 @@ select = "0.6.0"
 
 ## Web - client
 reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
-hyper = { version = "1.5.0", optional = true }
+hyper = "1.5.0"
 
 ## Web - server
-actix-web = { version = "4.9.0", optional = true }
-axum = { version = "0.8.1", optional = true }
-mime = "0.3.17"
+actix-web = "4.9.0"
+axum = "0.8.1"
 loco = { version = "0.13.2", optional = true }
-tonic = { version = "0.12.3", optional = true }
+mime = "0.3.17"
+prost = "0.13.4"
+tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
 trillium = { version = "0.2.20", optional = true }
 
 ## Websocket
-tungstenite = { version = "0.26.0", optional = true }
+tungstenite = "0.26.0"
 
+## General
 anyhow = "1.0.91"
 bytes = "1.9.0"
 lazy_static = "1.5.0"
@@ -54,18 +56,5 @@ serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.41.1", features = ["full"] }
 regex = "1.11.1"
 
-[features]
-
-## Dependencies that are CURRENTLY unused in the examples (marked as optional above)
-## You may check for conflicts with: cargo build --features unused or cargo build --all-features
-unused = [
-    "dep:actix-web",
-    "dep:axum",
-    "dep:hyper",
-    "dep:loco",
-    "dep:tonic",
-    "dep:trillium",
-    "dep:tungstenite",
-    "dep:wasmtime",
-    "dep:yew",
-]
+[build-dependencies]
+tonic-build = "0.6"
