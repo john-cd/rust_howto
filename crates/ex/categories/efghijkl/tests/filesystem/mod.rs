@@ -13,6 +13,7 @@ mod notify;
 mod open;
 mod png;
 mod read_file;
+mod remove_dir_all;
 mod same_file;
 mod sizes;
 mod skip_dot;
