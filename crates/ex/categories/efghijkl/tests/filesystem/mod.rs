@@ -3,6 +3,7 @@ mod directories;
 mod dirs;
 mod duplicate_name;
 mod find_file;
+mod globset;
 mod ignore;
 mod ignore_case;
 mod loops;
