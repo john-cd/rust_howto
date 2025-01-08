@@ -57,7 +57,7 @@ tempfile = "3.14.0"
 walkdir = "2.5.0"
 
 ## Finance
-# RustQuant = { version = "0.3", optional = true } # TODO P3 review
+RustQuant = "0.3"
 
 ## Game and friends
 bevy = "0.15.1"
