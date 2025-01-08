@@ -1,12 +1,17 @@
-// ANCHOR: example
-fn main() {
-    todo!();
-}
-// ANCHOR_END: example
+// // ANCHOR: example
+// #[get("/")]
+// fn hello() -> &'static str {
+//     "Hello, world!"
+// }
 
-#[test]
-#[ignore = "not yet implemented"]
-fn test() {
-    main();
-}
-// [P1](https://github.com/john-cd/rust_howto/issues/869)
+// #[launch]
+// fn rocket() -> _ {
+//     rocket::build().mount("/", routes![hello])
+// }
+// // ANCHOR_END: example
+
+// #[test]
+// #[ignore = "WIP"]
+// fn test() {
+// }
+// // [P1](https://github.com/john-cd/rust_howto/issues/869)
