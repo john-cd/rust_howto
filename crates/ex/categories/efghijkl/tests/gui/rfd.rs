@@ -1,11 +1,21 @@
 // ANCHOR: example
+use rfd::FileDialog;
+
 fn main() {
-    todo!();
+    let file = FileDialog::new()
+        .add_filter("Text files", &["txt"])
+        .set_title("Choose a Text File")
+        .pick_file();
+
+    match file {
+        Some(path) => println!("Selected file: {:?}", path),
+        None => println!("No file selected"),
+    }
 }
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
+#[ignore = "WIP"]
 fn test() {
     main();
 }
