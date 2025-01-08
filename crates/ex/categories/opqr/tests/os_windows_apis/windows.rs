@@ -1,6 +1,6 @@
 // ANCHOR: example
 use windows::Win32::Foundation::HWND;
-use windows::Win32::Foundation::PWSTR;
+//use windows::Win32::Foundation::PWSTR;
 use windows::Win32::UI::WindowsAndMessaging::MB_OK;
 use windows::Win32::UI::WindowsAndMessaging::MessageBoxW;
 
