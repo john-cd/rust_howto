@@ -68,6 +68,9 @@ wgpu = "23.0.1"
 ## GUI
 arboard = "3.4.1"
 cosmic-text = "0.12.1"
+dioxus = "0.6.1"
+dioxus-web = "0.6.1"
+dioxus-desktop = "0.6.1"
 # druid = { version = "0.8.3", optional = true } # TODO P3 review conflicts
 eframe = "0.30.0"
 egui = "0.30.0"
