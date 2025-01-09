@@ -39,13 +39,13 @@ ureq = "2.12.1"
 ## Web - server
 actix-web = "4.9.0"
 axum = "0.8.1"
-loco = { version = "0.13.2", optional = true }
+loco = { version = "0.13.2", optional = true } # TODO
 mime = "0.3.17"
 prost = "0.13.4"
 tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
-trillium = { version = "0.2.20", optional = true }
+trillium = { version = "0.2.20", optional = true } # TODO
 
 ## Websocket
 tungstenite = "0.26.0"
