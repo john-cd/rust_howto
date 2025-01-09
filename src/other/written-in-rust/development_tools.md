@@ -13,10 +13,6 @@
 
 [`swc` (github)][c-swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
 
-```rust,editable
-{{#include ../../../crates/ex/other/tests/written_in_rust/swc.rs:example}}
-```
-
 ## Code editors {#code-editors}
 
 ### `lapce` {#lapce}
@@ -45,6 +41,8 @@
 
 <div class="hidden">
 [development_tools: organize (P2)](https://github.com/john-cd/rust_howto/issues/612)
+
+TODO P1 add link to swc_ecma_parser example
 
 [development_tools: find a spot for (P2)](https://github.com/john-cd/rust_howto/issues/613)
 
