@@ -16245,8 +16245,11 @@ version = "0.1.2"
 dependencies = [
  "arrow 54.0.0",
  "crux_core",
+ "crux_macros",
  "datafusion",
  "rhai",
+ "serde 1.0.217",
+ "serde_json",
 ]
 
 [[package]]
