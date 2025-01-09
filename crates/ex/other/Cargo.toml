@@ -21,9 +21,9 @@ readme = "README.md"
 [dependencies]
 
 ## Cloud
+aws-config = "1.5.13"
+aws-sdk-s3 = "1.68.0"
 lambda_runtime = "0.13.0"
-tracing = "0.1.41"
-tracing-subscriber = "0.3.19"
 
 ## Cross platform
 crux_core = "0.10.1"
@@ -34,11 +34,12 @@ arrow = { version = "54.0.0", features = [ "prettyprint" ] }
 datafusion = "44.0.0"
 
 ## GPU
+# TODO
 
 ## Scripting
 rhai = "1.19.0"
 
-## Written in Rust
+## Written in Rust TODO
 # bat
 # broot
 # exa = { version = "0.10.1", optional = true } # TODO P3 review conflicts
@@ -55,4 +56,6 @@ rhai = "1.19.0"
 ## General
 serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.135"
-tokio = "1.43.0"
+tokio = { version = "1.43.0", features = ["full"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
