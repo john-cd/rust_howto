@@ -3,8 +3,8 @@
 // use serde::Deserialize;
 // use serde::Serialize;
 
-// // Crux is a framework for writing Rust applications that can target both native
-// // and web platforms using a single codebase.
+// // Crux is a framework for writing Rust applications that can target both
+// // native and web platforms using a single codebase.
 // // Crux helps you share your app's business logic and behavior across mobile
 // // (iOS/Android) and web - as a single reusable core built with Rust.
 
@@ -21,8 +21,8 @@
 //     Decrement,
 // }
 
-// // Implement the App trait for the Counter struct to define how the state should
-// // be updated in response to messages.
+// // Implement the App trait for the Counter struct to define how the state
+// // should be updated in response to messages.
 // impl App for Counter {
 //     type Capabilities = ();
 //     type Event = Msg;
