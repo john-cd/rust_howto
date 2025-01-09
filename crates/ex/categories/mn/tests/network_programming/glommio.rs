@@ -30,27 +30,26 @@
 //         })
 //         .unwrap();
 
-//     // Although pinned threads are not required for use of glommio, by creating
-//     // N executors and binding each to a specific CPU one can use this crate to
-//     // implement a thread-per-core system where context switches essentially
-//     // never happen, allowing much higher efficiency. This will now never
-//     // leave CPU 0.
-
+// // Although pinned threads are not required for use of glommio, by
+// // creating N executors and binding each to a specific CPU one can use
+// // this crate to implement a thread-per-core system where context
+// // switches essentially never happen, allowing much higher efficiency.
+// // This will now never leave CPU 0.
 //     LocalExecutorBuilder::new(Placement::Fixed(0))
 //         .spawn(|| async move {
-//             // For a Thread-per-core system to work well, it is paramount that
-//             // some form of scheduling can happen within the thread.
-//             // Traditional applications use many threads to divide
-//             // the many aspects of its workload and rely on the
-//             // operating system and runtime to schedule these threads fairly and
-//             // switch between these as necessary. For a
-//             // thread-per-core system, each thread must handle its
-//             // own scheduling at the application level. This example
-//             // creates two task queues: tq1 has 2 shares, tq2 has 1 share. This
-//             // means that if both want to use the CPU to its maximum, tq1 will
-//             // have 2/3 of the CPU time (2 / (1 + 2)) and tq2 will have 1/3 of
-//             // the CPU time. Those shares are dynamic and can be changed at any
-//             // time.
+//  // For a Thread-per-core system to work well, it is paramount
+//  // that some form of scheduling can happen within the thread.
+//  // Traditional applications use many threads to divide
+//  // the many aspects of its workload and rely on the
+//  // operating system and runtime to schedule these threads fairly
+//  // and switch between these as necessary. For a
+//  // thread-per-core system, each thread must handle its
+//  // own scheduling at the application level. This example
+//  // creates two task queues: tq1 has 2 shares, tq2 has 1 share.
+//  // This means that if both want to use the CPU to its maximum,
+//  // tq1 will have 2/3 of the CPU time (2 / (1 + 2)) and tq2 will
+//  // have 1/3 of the CPU time. Those shares are dynamic and can be
+//  // changed at any time.
 //             let tq1 = executor().create_task_queue(
 //                 Shares::Static(2),
 //                 Latency::NotImportant,
