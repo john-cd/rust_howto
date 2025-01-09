@@ -21,7 +21,9 @@ readme = "README.md"
 [dependencies]
 
 ## Cloud
-# TODO
+lambda_runtime = "0.13.0"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
 
 ## Cross platform
 crux_core = "0.10.1"
@@ -51,5 +53,6 @@ rhai = "1.19.0"
 # zed  # the `zed` crate is not the editor
 
 ## General
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.135"
+tokio = "1.43.0"
