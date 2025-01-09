@@ -2241,6 +2241,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "async-graphql-axum"
+version = "7.0.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec8c1bb47161c37286e40e2fa58055e97b2a2b6cf1022a6686967e10636fa5d7"
+dependencies = [
+ "async-graphql",
+ "async-trait",
+ "axum 0.7.9",
+ "bytes",
+ "futures-util",
+ "serde_json",
+ "tokio",
+ "tokio-stream",
+ "tokio-util",
+ "tower-service",
+]
+
+[[package]]
 name = "async-graphql-derive"
 version = "7.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3050,11 +3068,14 @@ checksum = "edca88bc138befd0323b20752846e6587272d3b03b0343c8ea28a6f819e6e71f"
 dependencies = [
  "async-trait",
  "axum-core 0.4.5",
+ "base64 0.22.1",
  "bytes",
  "futures-util",
  "http 1.2.0",
  "http-body 1.0.1",
  "http-body-util",
+ "hyper 1.5.2",
+ "hyper-util",
  "itoa 1.0.14",
  "matchit 0.7.3",
  "memchr",
@@ -3063,10 +3084,17 @@ dependencies = [
  "pin-project-lite",
  "rustversion",
  "serde 1.0.217",
+ "serde_json",
+ "serde_path_to_error",
+ "serde_urlencoded",
+ "sha1",
  "sync_wrapper 1.0.2",
+ "tokio",
+ "tokio-tungstenite 0.24.0",
  "tower 0.5.2",
  "tower-layer",
  "tower-service",
+ "tracing",
 ]
 
 [[package]]
@@ -3121,6 +3149,7 @@ dependencies = [
  "sync_wrapper 1.0.2",
  "tower-layer",
  "tower-service",
+ "tracing",
 ]
 
 [[package]]
@@ -29248,6 +29277,8 @@ version = "0.1.2"
 dependencies = [
  "actix-web",
  "anyhow",
+ "async-graphql",
+ "async-graphql-axum",
  "axum 0.8.1",
  "bytes",
  "http 1.2.0",

@@ -38,6 +38,8 @@ ureq = "2.12.1"
 
 ## Web - server
 actix-web = "4.9.0"
+async-graphql = "7.0.13"
+async-graphql-axum = "7.0.13"
 axum = "0.8.1"
 loco = { version = "0.13.2", optional = true } # TODO
 mime = "0.3.17"
