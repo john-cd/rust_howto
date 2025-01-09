@@ -15028,9 +15028,9 @@ dependencies = [
 
 [[package]]
 name = "loco"
-version = "0.13.3"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bac3cb2c1ed9f6f10f67c65bfaf00c9364c4d8e7713e3e471655baaf2e5ff05e"
+checksum = "feed50fc39a043a412ff945677a462acc51cbb0cce8585623e613650eead7a3b"
 dependencies = [
  "clap 4.5.24",
  "colored",
@@ -25839,6 +25839,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "tokio-tungstenite"
+version = "0.26.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be4bf6fecd69fcdede0ec680aaf474cdab988f9de6bc73d3758f0160e3b7025a"
+dependencies = [
+ "futures-util",
+ "log",
+ "tokio",
+ "tungstenite 0.26.1",
+]
+
+[[package]]
 name = "tokio-util"
 version = "0.7.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -29367,6 +29379,7 @@ dependencies = [
  "select",
  "serde 1.0.217",
  "tokio",
+ "tokio-tungstenite 0.26.1",
  "tonic",
  "tonic-build",
  "tower 0.5.2",

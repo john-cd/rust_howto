@@ -41,7 +41,7 @@ actix-web = "4.9.0"
 async-graphql = "7.0.13"
 async-graphql-axum = "7.0.13"
 axum = "0.8.1"
-loco = { version = "0.13.2", optional = true } # TODO
+loco = { version = "0.14", optional = true } # TODO
 mime = "0.3.17"
 prost = "0.13.4"
 tonic = "0.12.3"
@@ -51,6 +51,7 @@ trillium = { version = "0.2.20", optional = true } # TODO
 
 ## Websocket
 tungstenite = "0.26.0"
+tokio-tungstenite = "0.26.1"
 
 ## General
 anyhow = "1.0.91"
@@ -59,6 +60,7 @@ lazy_static = "1.5.0"
 serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.41.1", features = ["full"] }
 regex = "1.11.1"
+
 
 [build-dependencies]
 tonic-build = "0.12.3"
