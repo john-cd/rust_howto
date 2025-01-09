@@ -1,9 +1,9 @@
 // ANCHOR: example
+use std::collections::HashMap;
 use std::sync::LazyLock;
 
 use anyhow::bail;
 use serde::Serialize;
-use std::collections::HashMap;
 
 static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
     tera::Tera::new("tests/template_engine/templates/*").map(|mut t| {

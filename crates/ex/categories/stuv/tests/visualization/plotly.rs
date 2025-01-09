@@ -1,7 +1,7 @@
 // ANCHOR: example
-use plotly::common::Mode;
 use plotly::Plot;
 use plotly::Scatter;
+use plotly::common::Mode;
 
 fn main() {
     // Create sample data
