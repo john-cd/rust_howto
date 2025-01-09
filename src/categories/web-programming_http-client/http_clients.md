@@ -11,10 +11,6 @@
 
 `reqwest` is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the `tokio` runtime.
 
-```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_client/reqwest.rs:example}}
-```
-
 ## `ureq` {#ureq}
 
 [![ureq][c-ureq-badge]][c-ureq]{{hi:ureq}}
