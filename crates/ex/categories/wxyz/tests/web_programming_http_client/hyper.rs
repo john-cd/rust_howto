@@ -1,44 +1,80 @@
 // // ANCHOR: example
-// use hyper::Client;
+// use http_body_util::BodyExt;
+// use http_body_util::Empty;
 // use hyper::Request;
-// use hyper::body::Body;
-// use hyper::http::response::Response;
+// // use hyper::body::Body;
+// use hyper::body::Bytes;
+// // use hyper::http::response::Response;
+// use hyper_util::rt::TokioIo;
+// use tokio::io;
+// use tokio::io::AsyncWriteExt as _;
+// use tokio::net::TcpStream;
+// use anyhow::Context;
 
-// async fn fetch_url(url: &str) -> Result<Response<Body>, hyper::Error> {
-//     let client = Client::new();
+// async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
+//     let host = url.host().context("uri has no host")?;
+//     let port = url.port_u16().unwrap_or(80);
+//     let addr = format!("{}:{}", host, port);
+
+//     let stream = TcpStream::connect(addr).await?;
+//     let io = TokioIo::new(stream);
+
+//     let (mut sender, conn) =
+// hyper::client::conn::http1::handshake(io).await?;
+//     tokio::task::spawn(async move {
+//         if let Err(err) = conn.await {
+//             println!("Connection failed: {:?}", err);
+//         }
+//     });
+
+//     let authority = url.authority()?.clone();
 
 //     // Build the request
+//     let path = url.path();
 //     let req = Request::builder()
 //         .method("GET")
-//         .uri(url)
-//         .header("User-Agent", "hyper")
-//         .body(Body::empty())
-//         .expect("Request::builder failed!");
+//         .uri(path)
+//         .header(hyper::header::HOST, authority.as_str())
+//         //.header("User-Agent", "hyper")
+//         .body(Empty::<Bytes>::new())?;
 
 //     // Send the request and wait for the response
-//     let res = client.request(req).await?;
+//     let mut res = sender.send_request(req).await?;
 
-//     Ok(res)
+//     println!("Response: {}", res.status());
+//     println!("Headers: {:#?}\n", res.headers());
+
+//     // Stream the body, writing each chunk to stdout as we get it
+//     // (instead of buffering and printing at the end).
+//     while let Some(next) = res.frame().await {
+//         let frame = next?;
+//         if let Some(chunk) = frame.data_ref() {
+//             io::stdout().write_all(chunk).await?;
+//         }
+//     }
+//     // Or asynchronously aggregate the chunks of the body
+//     // let body = res.collect().await?.aggregate();
+
+//     Ok(())
 // }
 
 // #[tokio::main]
-// async fn main() {
-//     let url = "http://example.com";
+// async fn main() -> anyhow::Result<()> {
+//     // Parse our URL...
+//     let url = "http://httpbin.org/ip".parse::<hyper::Uri>()?;
 
-//     match fetch_url(url).await {
-//         Ok(response) => {
-//             println!("Response: {:?}", response);
-//         }
-//         Err(e) => {
-//             eprintln!("Error: {:?}", e);
-//         }
-//     }
+//     fetch_url(url).await?;
+
+//     println!("\n\nDone!");
+//     Ok(())
 // }
 // // ANCHOR_END: example
 
 // #[test]
-// fn test() {
-//     main();
+// fn test() -> anyhow::Result<()> {
+//     main()?;
+//     Ok(())
 // }
 // // [P0](https://github.com/john-cd/rust_howto/issues/859)
 // // TODO https://hyper.rs/
+// // reference https://github.com/hyperium/hyper/blob/master/examples/client.rs

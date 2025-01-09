@@ -27236,6 +27236,7 @@ dependencies = [
  "http 1.2.0",
  "http-body-util",
  "hyper",
+ "hyper-util",
  "lazy_static",
  "loco",
  "mime",
