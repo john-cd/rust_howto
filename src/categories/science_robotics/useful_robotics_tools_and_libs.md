@@ -14,10 +14,6 @@
 
 [![opencv-example][c-opencv-example-badge]][c-opencv-example]
 
-```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/opencv.rs:example}}
-```
-
 ## `zenoh` {#zenoh}
 
 [![zenoh][c-zenoh-badge]][c-zenoh]{{hi:zenoh}}
@@ -61,4 +57,5 @@
 <div class="hidden">
 [useful_robotics_tools_and_libs: locate libs, organize, write (P2)](https://github.com/john-cd/rust_howto/issues/479)
 
+TODO P2 link to opencv example under computer vision
 </div>
