@@ -1,7 +1,6 @@
 // ANCHOR: example
-use ureq::Error;
 
-fn main() -> Result<(), Error> {
+fn main() -> anyhow::Result<()> {
     let url = "https://jsonplaceholder.typicode.com/posts/1";
     let response: String = ureq::get(url).call()?.into_string()?;
 
@@ -11,7 +10,7 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 #[test]
-fn test() -> Result<(), Error> {
+fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
