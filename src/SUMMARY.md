@@ -154,7 +154,6 @@
 - [Data processing](other/data-processing/_index.md)
   - [CSV](other/data-processing/csv.md)
   - [Dataframes](other/data-processing/dataframes.md)
-  - [Data visualization](other/data-processing/data_visualization.md)
   - [Data engineering](other/data-processing/data_engineering.md)
 
 - [Data structures](categories/data-structures/index.md)

@@ -48,7 +48,7 @@ unicode-segmentation = "1.12.0"
 # TODO
 
 ## Visualization
-plotly = { version = "0.12.1", optional = true } # TODO
+plotly = "0.12.1"
 
 ## General
 anyhow = "1.0.91"

@@ -172,7 +172,6 @@
 [ex-data-processing-databend]: other/data-processing/data_engineering.md#databend
 [ex-data-processing-dataframes]: other/data-processing/dataframes.md#dataframes
 [ex-data-processing-datafusion]: other/data-processing/data_engineering.md#datafusion
-[ex-data-processing-graph-data]: other/data-processing/data_visualization.md#graph-data
 [ex-data-processing-manipulate-csv-files-from-the-command-line]: other/data-processing/csv.md#manipulate-csv-files-from-the-command-line
 [ex-data-processing-read-and-write-csv-files]: other/data-processing/csv.md#read-and-write-csv-files
 [ex-data-structures-arrayvec]: categories/data-structures/stack_allocated_arrays.md#arrayvec

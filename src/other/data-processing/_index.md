@@ -12,10 +12,6 @@
 
 {{#include data_engineering.incl.md}}
 
-## Data Visualization
-
-{{#include data_visualization.incl.md}}
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
