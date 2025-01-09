@@ -60,6 +60,7 @@ lazy_static = "1.5.0"
 serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.41.1", features = ["full"] }
 regex = "1.11.1"
+futures-util = "0.3.31"
 
 
 [build-dependencies]

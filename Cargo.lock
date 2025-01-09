@@ -29367,6 +29367,7 @@ dependencies = [
  "async-graphql-axum",
  "axum 0.8.1",
  "bytes",
+ "futures-util",
  "http 1.2.0",
  "http-body-util",
  "hyper 1.5.2",
