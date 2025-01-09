@@ -9,10 +9,16 @@
 [![rustpython-github][c-rustpython-github-badge]][c-rustpython-github]
 [![rustpython-lib.rs][c-rustpython-lib.rs-badge]][c-rustpython-lib.rs]
 
-[`RustPython`][rustpython-github]{{hi:RustPython}}⮳ is a Python Interpreter written in Rust
+[`RustPython`][rustpython-github]{{hi:RustPython}}⮳ is an open-source Python Interpreter written in Rust.
 
-```rust,editable
-{{#include ../../../crates/ex/other/tests/written_in_rust/rustpython.rs:example}}
+RustPython supports Python 3 (CPython >= 3.11.0). RustPython can be embedded into Rust programs to use Python as a scripting language for your application, or it can be compiled to WebAssembly in order to run Python in the browser.
+
+```bash
+cargo install --git https://github.com/RustPython/RustPython rustpython
+# or
+wapm install rustpython
+# or
+conda install rustpython -c conda-forge
 ```
 
 ## `pyOxidizer` {#pyoxidizer}
