@@ -87,3 +87,4 @@
 //     main();
 // }
 // // [P2](https://github.com/john-cd/rust_howto/issues/810)
+// // review https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a
