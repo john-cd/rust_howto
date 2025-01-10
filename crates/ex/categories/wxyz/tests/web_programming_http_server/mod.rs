@@ -8,4 +8,3 @@ mod loco;
 mod rocket;
 mod tonic;
 mod tower_http;
-mod zola;
