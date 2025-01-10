@@ -35,7 +35,7 @@ once_cell = "1.20.2"
 # TODO
 
 ## Network Programming
-# TODO
+pingora = "0.4.0"
 
 ## No std and no alloc
 # TODO
