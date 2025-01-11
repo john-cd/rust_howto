@@ -4,10 +4,6 @@
 
 ## Games written in Rust {#games}
 
-```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/games/games1.rs:example}}
-```
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
