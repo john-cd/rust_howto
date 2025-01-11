@@ -35,13 +35,13 @@ fn main() {
     println!("Value for key 5: {:?}", cache.get(&5)); // Should print "Value for key 5: Some("five")"
 
     {
-        // Returns a mutable reference to the value of the key in the cache or `None``,
-        // if it is not present in the cache.
+        // Returns a mutable reference to the value of the key in the cache or
+        // `None``, if it is not present in the cache.
         // Moves the key to the head of the LRU list, if it exists.
         let v = cache.get_mut(&5).unwrap();
         *v = "new value";
         assert_eq!(cache.get_mut(&5), Some(&mut "new value"));
-        
+
         assert_eq!(cache.get_mut(&6), None);
     }
 }
