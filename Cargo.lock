@@ -4462,6 +4462,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "bonsai-bt"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6cb52ba57fe1d0c35973f15637e60b3d3b1b0f15367ae00a3ded6545224f6389"
+dependencies = [
+ "petgraph",
+]
+
+[[package]]
 name = "boolinator"
 version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -25656,6 +25665,7 @@ name = "stuv"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "bonsai-bt",
  "candle-core",
  "concat-string",
  "fancy-regex",

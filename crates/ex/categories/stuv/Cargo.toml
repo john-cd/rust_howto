@@ -27,8 +27,9 @@ linfa-linear = "0.7.0"
 smartcore = { version = "0.4.0", features = [ "datasets" ] }
 
 ## Science - Robotics
-openrr = { version = "0.1.0", optional = true } # requires `libudev-dev` TODO
-zenoh = { version = "1.0.2", optional = true } # TODO
+bonsai-bt = "0.8.0"
+openrr = "0.1.0" # requires `libudev-dev` TODO
+zenoh = "1.0.2"
 
 ## Template engine
 tera = "1.20.0"
