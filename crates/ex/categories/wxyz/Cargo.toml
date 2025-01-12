@@ -21,6 +21,7 @@ readme = "README.md"
 [dependencies]
 
 ## WASM
+wasmer = "5.0.4"
 wasmtime = "28.0.0"
 yew = "0.21.0"
 
@@ -61,7 +62,6 @@ serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.41.1", features = ["full"] }
 regex = "1.11.1"
 futures-util = "0.3.31"
-
 
 [build-dependencies]
 tonic-build = "0.12.3"

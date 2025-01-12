@@ -10,7 +10,15 @@
 [![wasmer-lib.rs][c-wasmer-lib.rs-badge]][c-wasmer-lib.rs]
 [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-[wasmer.io][wasmer-website]{{hi:wasmer.io}}⮳ is a high-performance WebAssembly runtime.
+[`wasmer`][wasmer-website]{{hi:wasmer.io}}⮳ is a runtime for executing WebAssembly on the server-side. It supports JIT (Just In Time), AOT (Ahead Of Time) compilation, an experimental interpreter, as well as pluggable compilers. Install with:
+
+```sh
+curl https://get.wasmer.io -sSfL | sh
+# Test with:
+wasmer run cowsay "hello world"
+```
+
+You can embed the Wasmer runtime in your code with the Wasmer SDK:
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/wxyz/tests/wasm/wasmer.rs:example}}
