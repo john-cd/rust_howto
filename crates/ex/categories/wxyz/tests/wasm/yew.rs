@@ -2,8 +2,9 @@
 // ANCHOR: example
 use yew::prelude::*;
 
-// The `function_component` attribute creates a function component from a normal Rust function.
-// Functions with this attribute must return Html and can optionally receive a reference to the props.
+// The `function_component` attribute creates a function component from a normal
+// Rust function. Functions with this attribute must return Html and can
+// optionally receive a reference to the props.
 #[function_component(App)]
 fn app() -> Html {
     let counter = use_state(|| 0);
@@ -38,7 +39,7 @@ fn app() -> Html {
 }
 
 fn main() {
-   yew::Renderer::<App>::new().render();
+    yew::Renderer::<App>::new().render();
 }
 // ANCHOR_END: example
 
@@ -47,4 +48,5 @@ fn main() {
 //     main();
 // }
 // [P1](https://github.com/john-cd/rust_howto/issues/856)
-// TODO figure out how to test - cannot access imported statics on non-wasm targets
+// TODO figure out how to test - cannot access imported statics on non-wasm
+// targets

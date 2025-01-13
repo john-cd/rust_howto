@@ -24,8 +24,6 @@
 // // session
 // use zenoh::session::Session;
 
-
-
 // // Demonstrate basic publish-subscribe functionality with Zenoh.
 // #[tokio::main]
 // async fn main() -> anyhow::Result<()> {
