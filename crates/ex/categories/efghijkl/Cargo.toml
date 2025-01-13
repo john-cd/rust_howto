@@ -41,7 +41,7 @@ zerocopy = { version = "0.8.14", features = ["derive"] }
 # TODO
 
 ## Filesystem
-directories = "5.0.1"
+directories = "6.0.0"
 glob = "0.3.1"
 globset = "0.4.15"
 memmap2 = "0.9.5"
@@ -82,7 +82,7 @@ leptos = "0.7"
 r3bl_tuify = "0.2.0"
 rfd = "0.15.2"
 slint = "1.9.1"
-tauri = "2.0.6" # Requires multiple libraries. See Dockerfile
+tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 # xilem = "0.1.0" # TODO P3 review prerequisites
 winit = "0.30.8"
 
