@@ -76,15 +76,18 @@ dioxus-desktop = "0.6.1"
 # druid = "0.8.3" # TODO P3 review conflicts
 eframe = "0.30.0"
 egui = "0.30.0"
+femtovg = "0.11.3"
 # floem = "0.1.1" # TODO P3 review requirements
 iced = "0.13.1"
 leptos = "0.7"
+minifb = "0.27.0"
 r3bl_tuify = "0.2.0"
 rfd = "0.15.2"
 slint = "1.9.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 # xilem = "0.1.0" # TODO P3 review prerequisites
 winit = "0.30.8"
+
 
 ## Hardware
 num_cpus = "1.16.0"
@@ -98,5 +101,6 @@ num_cpus = "1.16.0"
 ## General
 anyhow.workspace = true
 csv = "1.3.1"
+image = "0.25.5" # For image loading
 serde.workspace = true
 url.workspace = true
