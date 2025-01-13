@@ -15,9 +15,6 @@ publish = false
 readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
-## in order to keep the compile speed decent.
-## Remove the optional flag as needed.
 [dependencies]
 
 ## WASM
@@ -28,13 +25,13 @@ yew = "0.21.0"
 ## Web
 http = "1.1.0"
 http-body-util = "0.1.2"
-url = "2.5.3"
+url.workspace = true
 select = "0.6.0"
 
 ## Web - client
 hyper = "1.5.0"
 hyper-util = "0.1.10"
-reqwest = { version = "0.12.9", features = ["blocking", "json", "stream"] }
+reqwest = { workspace = true, features = ["blocking", "json", "stream"] }
 ureq = "2.12.1"
 
 ## Web - server
@@ -42,25 +39,25 @@ actix-web = "4.9.0"
 async-graphql = "7.0.13"
 async-graphql-axum = "7.0.13"
 axum = "0.8.1"
-loco = { version = "0.14", optional = true } # TODO
+loco = "0.14" # TODO
 mime = "0.3.17"
 prost = "0.13.4"
 tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
-trillium = { version = "0.2.20", optional = true } # TODO
+# trillium = "0.2.20" # TODO
 
 ## Websocket
 tungstenite = "0.26.0"
 tokio-tungstenite = "0.26.1"
 
 ## General
-anyhow = "1.0.91"
+anyhow.workspace = true
 bytes = "1.9.0"
-lazy_static = "1.5.0"
-serde = { version = "1.0.216", features = ["derive"] }
-tokio = { version = "1.41.1", features = ["full"] }
-regex = "1.11.1"
+lazy_static.workspace = true
+serde.workspace = true
+tokio.workspace = true
+regex.workspace = true
 futures-util = "0.3.31"
 
 [build-dependencies]

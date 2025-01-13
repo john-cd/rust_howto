@@ -23,7 +23,7 @@ lru = "0.12.5"
 ## Command-line interface
 ansi_term = "0.12.1" # NOTE: unmaintained
 clap = { version = "4.5.23", features = ["derive"] }
-clap-verbosity-flag = { version = "3.0.0" , optional = true } # TODO
+# clap-verbosity-flag = "3.0.0" # TODO
 console = "0.15.10"
 crossterm = "0.28.1"
 indicatif = "0.17.9"
@@ -32,10 +32,10 @@ pico-args = "0.5.0"
 ratatui = "0.29.0" # requires crossterm
 
 ## Command-line utilities
-starship = { version = "1.21.1", optional = true } # TODO
+# starship = "1.21.1" # TODO
 
 ## Compilers
-salsa = { version = "0.16.1", optional = true } # TODO
+# salsa = "0.16.1" # TODO
 
 ## Compression
 flate2 = "1.0.35"
@@ -53,7 +53,7 @@ futures = "0.3.31"
 parking_lot = "0.12.3"
 ractor = "0.14.2"
 rayon = "1.10.0"
-riker = { version = "0.4.2", optional = true } # TODO
+riker = "0.4.2"
 stakker = "0.2.11"
 threadpool = "1.8.1"
 
@@ -70,10 +70,10 @@ aes-gcm-siv = "0.11.1"
 aes-gcm = "0.10.3"
 argon2 = "0.5.3"
 bcrypt = "0.16.0"
-curve25519-dalek = { version = "4.1.3", optional = true } # TODO
+# curve25519-dalek = "4.1.3" # TODO
 der = { version = "0.7.9", features = ["derive", "alloc"] }
 dsa = "0.6.3"
-ed25519-dalek = { version = "2.1.1", optional = true } # TODO
+# ed25519-dalek = "2.1.1" # TODO
 ecdsa = "0.16.9"
 md5 = "0.7.0"
 native-tls = "0.2.12"
@@ -89,8 +89,7 @@ tokio-rustls = "0.26.1"
 zeroize = "1.8.1"
 
 ## General
-anyhow = "1.0.94"
-async-trait = "0.1.83"
+anyhow.workspace = true
 crates-io = "0.40.6"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
@@ -99,17 +98,17 @@ hyper = "1.5.2"
 hyper-tls = "0.6.0"
 image = "0.25.5"
 itertools = "0.14.0"
-lazy_static = "1.5.0"
+lazy_static.workspace = true
 num = "0.4.3"
 num_cpus = "1.16.0"
 rand = "0.9.0-beta.1" # use beta
-serde = { version = "1.0.216", features = ["derive"] }
+serde.workspace = true
 serde_derive = "1.0.216"
 time = "0.3.37"
-tokio = { version = "1.42.0", features = ["full"] }
-walkdir = "2.5.0"
+tokio.workspace = true
+walkdir.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
 ## Computer vision
 image = "0.25.5"
-opencv = { version = "0.93.5", features = [ "clang-runtime" ] }  # requires `libopencv-dev` `clang` `libclang-dev`
+opencv = { version = "0.94.1", features = [ "clang-runtime" ] }  # requires `libopencv-dev` `clang` `libclang-dev`

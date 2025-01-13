@@ -16,9 +16,6 @@ readme = "README.md"
 build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-## The dependencies that are NOT USED (YET) in examples are marked `optional = true`,
-## in order to keep the compile speed decent.
-## Remove the optional flag as needed.
 [dependencies]
 
 ## Data structures
@@ -67,7 +64,7 @@ chrono = "0.4.39"
 time = "0.3.37"
 
 ## Dev Tools
-# TODO bacon = { version = "3.2.0", optional = true }
+# TODO bacon ="3.2.0"
 crates_io_api = "0.11.0"
 cross = "0.2.5"
 doc-comment = "0.3.3"
@@ -112,8 +109,8 @@ log = "0.4.22"
 log4rs = "1.3.0"
 opentelemetry = "0.27.1"
 opentelemetry-jaeger = "0.22.0"
-tracing = "0.1.41"
-tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+tracing.workspace = true
+tracing-subscriber.workspace = true
 
 ## Dev Tools: Proc Macros
 darling = "0.20.10"
@@ -130,17 +127,16 @@ divan = "0.1.17"
 
 ## Dev Tools: Testing
 afl = "0.15.13"
-approx = "0.5.1"
-anyhow = "1.0.95"
+approx.workspace = true
+anyhow.workspace = true
 insta = "1.41.1"
 
 ## General
 axum = "0.8.1"
 dotenvy = "0.15.7"
-serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.134"
-tokio = { version = "1.42.0", features = ["full"] }
-
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
 openssl = { version = "0.10.68", features = ["vendored"] }
