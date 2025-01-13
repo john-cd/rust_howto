@@ -82,12 +82,12 @@ iced = "0.13.1"
 leptos = "0.7"
 minifb = "0.27.0"
 r3bl_tuify = "0.2.0"
+relm4 = "0.9.1"
 rfd = "0.15.2"
 slint = "1.9.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 # xilem = "0.1.0" # TODO P3 review prerequisites
 winit = "0.30.8"
-
 
 ## Hardware
 num_cpus = "1.16.0"
