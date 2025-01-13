@@ -4,7 +4,6 @@ mod color_eyre;
 mod dyn_clone;
 mod error_handling;
 mod itertools;
-mod lens;
 mod miette;
 mod panic;
 mod question_mark;

@@ -36,8 +36,4 @@
 
 This Rust library provides support for lenses, which are a mechanism in functional programming for focusing on a part of a complex data structure.
 
-```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/rust_patterns/lens.rs:example}}
-```
-
 </div>
