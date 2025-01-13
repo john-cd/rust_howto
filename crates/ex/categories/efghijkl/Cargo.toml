@@ -84,6 +84,7 @@ minifb = "0.27.0"
 r3bl_tuify = "0.2.0"
 relm4 = "0.9.1"
 rfd = "0.15.2"
+skia-safe = { version = "0.78", features = ["gl"] } # pin to 0.78 for slint
 slint = "1.9.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 # xilem = "0.1.0" # TODO P3 review prerequisites

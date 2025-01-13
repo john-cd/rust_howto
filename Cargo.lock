@@ -9245,6 +9245,7 @@ dependencies = [
  "same-file",
  "serde 1.0.217",
  "serde_json",
+ "skia-safe",
  "slint",
  "tauri",
  "tempfile",
