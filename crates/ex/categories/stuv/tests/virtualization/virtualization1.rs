@@ -8,5 +8,5 @@ fn test() {
     main();
 }
 // [P2](https://github.com/john-cd/rust_howto/issues/852)
-// TODO cover WASMI 
+// TODO cover WASMI
 // cargo add wasmi
