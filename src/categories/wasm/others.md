@@ -1,4 +1,4 @@
-# Others
+# WenAssembly Runtimes
 
 {{#include others.incl.md}}
 
@@ -32,9 +32,25 @@ You can embed the Wasmer runtime in your code with the Wasmer SDK:
 [![wasmtime-lib.rs][c-wasmtime-lib.rs-badge]][c-wasmtime-lib.rs]
 [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-[wasmtime][c-wasmtime-github]{{hi:wasmtime}}⮳ is a high-level API to expose the Wasmtime runtime.
+Wasmtime is a lightweight WebAssembly runtime that is fast, secure, and standards-compliant. Wasmtime runs WebAssembly code outside of the Web, and can be used both as a command-line utility or as a library embedded in a larger application.
+
+Install the `wasmtime` CLI with:
+
+```sh
+curl https://wasmtime.dev/install.sh -sSf | bash
+```
+
+Compile your Rust source code (here, `hello.rs`) to WASM, then execute it with `wasmtime`:
+
+```sh
+rustup target add wasm32-wasip1
+rustc hello.rs --target wasm32-wasip1
+wasmtime hello.wasm
+```
 
 [docs.wasmtime.dev][c-wasmtime-docs]⮳
+
+The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the Wasmtime runtime.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/wxyz/tests/wasm/wasmtime.rs:example}}
