@@ -14,7 +14,7 @@
 
 [![opencv-example][c-opencv-example-badge]][c-opencv-example]
 
-## `zenoh` {#zenoh}
+## Zero Overhead Pub/Sub/Query Protocol with `zenoh` {#zenoh}
 
 [![zenoh][c-zenoh-badge]][c-zenoh]{{hi:zenoh}}
 [![zenoh-crates.io][c-zenoh-crates.io-badge]][c-zenoh-crates.io]
@@ -22,6 +22,10 @@
 [![zenoh-lib.rs][c-zenoh-lib.rs-badge]][c-zenoh-lib.rs]
 
 [Zenoh][c-zenoh-website]{{hi:zenoh}}⮳ is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
+
+Zenoh is a great tool for data storage, query, and computations over geographically distributed systems.
+
+Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a Unix file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, JSON, raw bytes buffer…).
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/stuv/tests/science_robotics/zenoh.rs:example}}
@@ -60,4 +64,6 @@
 TODO P2 link to opencv example under computer vision
 
 [behavior-tree-wikipedia]:https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
+
+zenoh in network programming?
 </div>
