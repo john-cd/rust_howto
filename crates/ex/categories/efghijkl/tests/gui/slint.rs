@@ -1,5 +1,5 @@
+#![allow(dead_code)]
 // ANCHOR: example
-
 slint::slint! {
     export component HelloWorld inherits Window {
         Text {
