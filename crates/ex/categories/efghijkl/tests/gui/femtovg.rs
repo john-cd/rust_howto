@@ -21,21 +21,21 @@
 //     const HEIGHT: usize = 400;
 
 //     let mut window =
-//         Window::new("femtovg example", WIDTH, HEIGHT, WindowOptions::default())
-//             .unwrap();
+//         Window::new("femtovg example", WIDTH, HEIGHT,
+// WindowOptions::default())             .unwrap();
 
 //     let mut fb = vec![0u32; WIDTH * HEIGHT];
 
 //     let mut renderer = Renderer::new().unwrap();
 //     let mut canvas = Canvas::new(renderer);
 
-//     let font = include_bytes!("../assets/Roboto-Regular.ttf"); // Replace with your font path
-//     let font_id = canvas.add_font(font).unwrap();
+//     let font = include_bytes!("./Roboto-Regular.ttf"); // Replace
+// with your font path     let font_id = canvas.add_font(font).unwrap();
 
 //     let mut img: Option<ImageId> = None;
-//     let image_data = include_bytes!("../assets/rust-logo-512x512.png"); // Replace with your image path
-//     if let Ok(image) = image::load_from_memory(image_data) {
-//         let rgba = image.to_rgba8();
+//     let image_data = include_bytes!("./rust-logo-512x512.png"); //
+// Replace with your image path     if let Ok(image) =
+// image::load_from_memory(image_data) {         let rgba = image.to_rgba8();
 //         img = Some(
 //             canvas
 //                 .create_image(
