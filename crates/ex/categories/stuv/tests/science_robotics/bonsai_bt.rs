@@ -24,14 +24,14 @@
 
 // fn main() {
 //     // Define a simple action that increments a counter
-//     let increment_action = |_args: &mut UpdateArgs| -> Result<Event, String> {
-//         println!("Incrementing...");
+//     let increment_action = |_args: &mut UpdateArgs| -> Result<Event, String>
+// {         println!("Incrementing...");
 //         Ok(Event::Running)
 //     };
 
 //     // Define a simple action that decrements a counter
-//     let decrement_action = |_args: &mut UpdateArgs| -> Result<Event, String> {
-//         println!("Decrementing...");
+//     let decrement_action = |_args: &mut UpdateArgs| -> Result<Event, String>
+// {         println!("Decrementing...");
 //         Ok(Event::Success(Success::new()))
 //     };
 
