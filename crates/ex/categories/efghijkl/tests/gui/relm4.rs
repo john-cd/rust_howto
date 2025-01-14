@@ -1,153 +1,184 @@
-// // ANCHOR: example
-// use gtk::prelude::*;
-// use relm4::{
-//     gtk, Component, ComponentParts, ComponentSender, SimpleComponent,
-// WidgetPlus, };
+#![allow(dead_code)]
 
-// struct CounterModel {
-//     value: i32,
-// }
+// ANCHOR: example
+use gtk::glib::clone;
+use gtk::prelude::*;
+use relm4::ComponentParts;
+use relm4::ComponentSender;
+use relm4::RelmApp;
+use relm4::RelmWidgetExt;
+use relm4::SimpleComponent;
+use relm4::gtk;
 
-// #[derive(Debug)]
-// enum CounterInput {
-//     Increment,
-//     Decrement,
-// }
+// The model type that stores the application state.
+struct CounterModel {
+    data: CounterData,
+}
+struct CounterData {
+    value: i32,
+    //...
+}
 
-// #[derive(Debug)]
-// enum CounterOutput {}
+// The message types that describe which information can be sent to update the
+// model / sent from the component
+#[derive(Debug)]
+enum CounterInput {
+    Increment,
+    Decrement,
+}
 
-// struct Counter {
-//     model: CounterModel,
-// }
+#[derive(Debug)]
+enum CounterOutput {
+    CurrentValue(i32),
+}
 
-// impl SimpleComponent for Counter {
-//     type Init = ();
-//     type Input = CounterInput;
-//     type Output = CounterOutput;
-//     type Root = gtk::Box;
+// Cloning a widget doesn't create a new instance, but just increases the
+// reference count. Widgets are kept alive automatically. Dropping widgets that
+// are still used somewhere does not destroy them, but just decreases the
+// reference count. Widgets are not thread-safe. Widgets don't implement Send
+// and can only be used on the main thread.
+struct CounterWidgets {
+    // window: gtk::Window,
+    // vbox: gtk::Box,
+    // increment_button: gtk::Button,
+    // decrement_button: gtk::Button,
+    counter_label: gtk::Label,
+    conditional_label: gtk::Label,
+}
 
-//     fn init(
-//         _params: Self::Init,
-//         root: Self::Root,
-//         sender: ComponentSender<Self>,
-//     ) -> ComponentParts<Self> {
-//         let model = CounterModel { value: 0 };
+impl SimpleComponent for CounterModel {
+    /// The type of data with which this component will be initialized.
+    type Init = i32;
+    /// The type of the messages that this component can receive.
+    type Input = CounterInput;
+    /// The type of the messages that this component can send.
+    type Output = CounterOutput;
+    /// The root GTK widget that this component will create.
+    type Root = gtk::Window;
+    /// A data structure that contains the widgets that you will need to update.
+    type Widgets = CounterWidgets;
 
-//         let increment_button: gtk::Button =
-// root.child("increment_button").unwrap().downcast().unwrap();         let
-// decrement_button: gtk::Button =
-// root.child("decrement_button").unwrap().downcast().unwrap();         let
-// counter_label: gtk::Label =
-// root.child("counter_label").unwrap().downcast().unwrap();         let
-// conditional_label: gtk::Label =
-// root.child("conditional_label").unwrap().downcast().unwrap();
+    // The Root type is the outermost widget of the app. Components can choose
+    // this type freely, but the main component must use a Window.
+    fn init_root() -> Self::Root {
+        gtk::Window::builder()
+            .title("Simple app")
+            .default_width(300)
+            .default_height(100)
+            .build()
+    }
 
-//         increment_button.connect_clicked(move |_| {
-//             sender.input(CounterInput::Increment);
-//         });
+    fn init(
+        init_value: Self::Init,
+        window: Self::Root,
+        sender: ComponentSender<Self>,
+    ) -> ComponentParts<Self> {
+        let counter_model = CounterModel {
+            data: CounterData { value: init_value },
+        };
 
-//         decrement_button.connect_clicked(move |_| {
-//             sender.input(CounterInput::Decrement);
-//         });
+        let vbox = gtk::Box::builder()
+            .orientation(gtk::Orientation::Vertical)
+            .spacing(5)
+            .build();
 
-//         let component_parts = ComponentParts {
-//             model,
-//             widgets: CounterWidgets {
-//                 root,
-//                 increment_button,
-//                 decrement_button,
-//                 counter_label,
-//                 conditional_label,
-//             },
-//         };
+        let increment_button: gtk::Button =
+            gtk::Button::with_label("Increment");
+        let decrement_button: gtk::Button =
+            gtk::Button::with_label("Decrement");
 
-//         component_parts
-//     }
+        increment_button.connect_clicked(clone!(
+            #[strong]
+            sender,
+            move |_| {
+                sender.input(CounterInput::Increment);
+            }
+        ));
 
-//     fn update(&mut self, input: Self::Input, _sender: ComponentSender<Self>)
-// {         match input {
-//             CounterInput::Increment => self.model.value += 1,
-//             CounterInput::Decrement => self.model.value -= 1,
-//         }
-//     }
+        decrement_button.connect_clicked(clone!(
+            #[strong]
+            sender,
+            move |_| {
+                sender.input(CounterInput::Decrement);
+            }
+        ));
 
-//     fn view(&self, widgets: &mut CounterWidgets) {
-//         widgets.counter_label.set_label(&format!("Counter: {}",
-// self.model.value));
+        let counter_label: gtk::Label = gtk::Label::new(Some(&format!(
+            "Counter: {}",
+            counter_model.data.value
+        )));
+        counter_label.set_margin_all(5);
+        let conditional_label: gtk::Label = gtk::Label::new(None);
+        conditional_label.set_margin_all(5);
 
-//         if self.model.value % 2 == 0 {
-//             widgets.conditional_label.set_label("Counter is even!");
-//
-// widgets.conditional_label.override_background_color(gtk::StateFlags::NORMAL,
-// Some(&gtk::gdk::RGBA{ red: 0.56, green: 0.93, blue: 0.56, alpha: 1.0 })); //
-// Light Green         } else {
-//             widgets.conditional_label.set_label("Counter is odd!");
-//
-// widgets.conditional_label.override_background_color(gtk::StateFlags::NORMAL,
-// Some(&gtk::gdk::RGBA{ red: 1.0, green: 1.0, blue: 0.88, alpha: 1.0 })); //
-// Light Yellow         }
-//     }
-// }
+        window.set_child(Some(&vbox));
+        vbox.set_margin_all(5);
+        vbox.append(&increment_button);
+        vbox.append(&decrement_button);
+        vbox.append(&counter_label);
+        vbox.append(&conditional_label);
 
-// struct CounterWidgets {
-//     root: gtk::Box,
-//     increment_button: gtk::Button,
-//     decrement_button: gtk::Button,
-//     counter_label: gtk::Label,
-//     conditional_label: gtk::Label,
-// }
+        let component_parts = ComponentParts {
+            model: counter_model,
+            widgets: CounterWidgets {
+                // window,
+                // vbox,
+                // increment_button,
+                // decrement_button,
+                counter_label,
+                conditional_label,
+            },
+        };
 
-// fn main() {
-//     let application = gtk::Application::builder()
-//         .application_id("org.example.relm4_counter")
-//         .build();
+        component_parts
+    }
 
-//     application.connect_activate(|app| {
-//         let window = gtk::ApplicationWindow::builder()
-//             .application(app)
-//             .title("Relm4 Counter")
-//             .build();
+    // Process messages and update its model.
+    fn update(&mut self, input: Self::Input, sender: ComponentSender<Self>) {
+        match input {
+            CounterInput::Increment => {
+                self.data.value += 1;
+                sender
+                    .output(CounterOutput::CurrentValue(self.data.value))
+                    .unwrap();
+            }
+            CounterInput::Decrement => {
+                self.data.value -= 1;
+                sender
+                    .output(CounterOutput::CurrentValue(self.data.value))
+                    .unwrap();
+            }
+        }
+    }
 
-//         let main_box = gtk::Box::builder()
-//             .orientation(gtk::Orientation::Vertical)
-//             .margin_top(12)
-//             .margin_bottom(12)
-//             .margin_start(12)
-//             .margin_end(12)
-//             .spacing(12)
-//             .build();
+    // Update the view to represent the updated model.
+    fn update_view(
+        &self,
+        widgets: &mut CounterWidgets,
+        _sender: ComponentSender<Self>,
+    ) {
+        widgets
+            .counter_label
+            .set_label(&format!("Counter: {}", self.data.value));
 
-//         let counter_label = gtk::Label::builder().label("Counter:
-// 0").build();         counter_label.set_widget_name("counter_label");
-//         let conditional_label = gtk::Label::builder().label("").build();
-//         conditional_label.set_widget_name("conditional_label");
-//         let increment_button =
-// gtk::Button::builder().label("Increment").build();         increment_button.
-// set_widget_name("increment_button");         let decrement_button =
-// gtk::Button::builder().label("Decrement").build();         decrement_button.
-// set_widget_name("decrement_button");
+        if self.data.value % 2 == 0 {
+            widgets.conditional_label.set_label("Counter is even!");
+        } else {
+            widgets.conditional_label.set_label("Counter is odd!");
+        }
+    }
+}
 
-//         main_box.append(&counter_label);
-//         main_box.append(&increment_button);
-//         main_box.append(&decrement_button);
-//         main_box.append(&conditional_label);
-
-//         window.set_child(Some(&main_box));
-
-//         let component = relm4::Component::<Counter>::builder()
-//             .launch((), main_box)
-//             .forward(app, |output| match output {});
-
-//         window.show();
-//     });
-
-//     application.run();
-// }
-// // ANCHOR_END: example
+fn main() {
+    let app = RelmApp::new("relm4.example.simple_manual");
+    app.run::<CounterModel>(1);
+}
+// ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/784)
+// How to test?
+// [P1](https://github.com/john-cd/rust_howto/issues/784)
+// TODO https://relm4.org/book/stable/

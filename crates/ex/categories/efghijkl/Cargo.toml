@@ -105,9 +105,9 @@ image = "0.25.5" # For image loading
 serde.workspace = true
 url.workspace = true
 
-# [target.'cfg(target_os = "linux")'.dependencies] # TODO
-# relm4 = "0.9.1"
-# relm4-components = "0.9.1"
-# gtk = { version = "0.9.5", package = "gtk4" } # Make sure to use gtk4
+[target.'cfg(target_os = "linux")'.dependencies] # TODO
+relm4 = "0.9.1"
+relm4-components = "0.9.1"
+gtk = { version = "0.9.5", package = "gtk4" } # Make sure to use gtk4
 # # TODO https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
 # # TODO https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
