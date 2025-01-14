@@ -32,13 +32,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 [![gpui][c-gpui-badge]][c-gpui] [![gpui-crates.io][c-gpui-crates.io-badge]][c-gpui-crates.io] [![gpui-github][c-gpui-github-badge]][c-gpui-github] [![gpui-lib.rs][c-gpui-lib.rs-badge]][c-gpui-lib.rs]{{hi:gpui}}
 [![gpui][c-gpui-badge]][c-gpui]{{hi:gpui}}
 
-[gpui.rs][gpui.rs]⮳ is a fast, productive UI framework for Rust from the creators of [Zed][c-zed-website]⮳.
-
-High performance framework used in the Zed text editor. Now available on macOS and linux.
-
-```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/gpui.rs:example}}
-```
+[gpui.rs][gpui.rs]⮳ is a fast, productive UI framework for Rust from the creators of the [Zed][c-zed-website]⮳ text editor.
 
 ## `druid` {#druid}
 

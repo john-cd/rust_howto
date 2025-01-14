@@ -4,7 +4,6 @@ mod dioxus;
 mod egui;
 mod femtovg;
 mod floem;
-mod gpui;
 mod gtk4;
 mod iced;
 mod morphorm;
