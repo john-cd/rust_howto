@@ -1227,9 +1227,9 @@ dependencies = [
 
 [[package]]
 name = "argmin"
-version = "0.8.1"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "897c18cfe995220bdd94a27455e5afedc7c688cbf62ad2be88ce7552452aa1b2"
+checksum = "523c0b5258fa1fb9072748b7306fb0db1625cf235ec6da4d05de2560ef56f882"
 dependencies = [
  "anyhow",
  "argmin-math 0.3.0",
@@ -4744,7 +4744,7 @@ dependencies = [
  "pico-args",
  "pkcs8 0.10.2",
  "ractor",
- "rand 0.9.0-beta.1",
+ "rand 0.9.0-beta.3",
  "ratatui",
  "rayon",
  "riker",
@@ -9218,7 +9218,7 @@ dependencies = [
  "directories 6.0.0",
  "eframe",
  "egui",
- "femtovg",
+ "femtovg 0.12.0",
  "form_urlencoded",
  "fyrox",
  "fyrox-core",
@@ -10012,6 +10012,29 @@ dependencies = [
  "bytemuck",
  "fnv",
  "glow 0.15.0",
+ "image 0.25.5",
+ "imgref",
+ "log",
+ "lru",
+ "rgb",
+ "rustybuzz 0.20.1",
+ "slotmap",
+ "unicode-bidi",
+ "unicode-segmentation",
+ "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
+name = "femtovg"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9bec3fb78abd18f7bbbde01f22f467c47c5a9c043e791802f82da0cf16066d1"
+dependencies = [
+ "bitflags 2.7.0",
+ "bytemuck",
+ "fnv",
+ "glow 0.16.0",
  "image 0.25.5",
  "imgref",
  "log",
@@ -13489,7 +13512,7 @@ dependencies = [
  "core-text",
  "derive_more 1.0.0",
  "dwrote",
- "femtovg",
+ "femtovg 0.11.3",
  "glow 0.15.0",
  "i-slint-common",
  "i-slint-core",
@@ -15458,9 +15481,9 @@ checksum = "bfae20f6b19ad527b550c223fddc3077a547fc70cda94b9b566575423fd303ee"
 
 [[package]]
 name = "linfa"
-version = "0.7.0"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1cab423110bc374e4cfa915da88952e2c6a4a5a6300ac0a0e68022bff2ace0b3"
+checksum = "56f9097edc7c89d03d526efbacf6d90914e3a8fa53bd56c2d1489e3a90819370"
 dependencies = [
  "approx 0.4.0",
  "ndarray 0.15.6",
@@ -15484,11 +15507,11 @@ dependencies = [
 
 [[package]]
 name = "linfa-linear"
-version = "0.7.0"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6de3901a9283cb0f5403c9d6fc9b4045cef5c98df2ad9efcb13b5875b734e2df"
+checksum = "7be4e4dbd8c0bb7522438e3660a6f1c730b7093e61836573d0729b7dae3a7c9b"
 dependencies = [
- "argmin 0.8.1",
+ "argmin 0.9.0",
  "argmin-math 0.3.0",
  "linfa",
  "linfa-linalg",
@@ -20976,9 +20999,9 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.9.0-beta.1"
+version = "0.9.0-beta.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8478de76992f2825a1052cc2ae9d1401cdb62687761d4100ddd69a73dc3dc48"
+checksum = "6fccbfebb3972a41a31c605a59207d9fba5489b9a87d9d87024cb6df73a32ec7"
 dependencies = [
  "rand_chacha 0.9.0-beta.1",
  "rand_core 0.9.0-beta.1",
@@ -24483,11 +24506,11 @@ dependencies = [
 
 [[package]]
 name = "sprs"
-version = "0.11.2"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "704ef26d974e8a452313ed629828cd9d4e4fa34667ca1ad9d6b1fffa43c6e166"
+checksum = "88bab60b0a18fb9b3e0c26e92796b3c3a278bf5fa4880f5ad5cc3bdfb843d0b1"
 dependencies = [
- "ndarray 0.16.1",
+ "ndarray 0.15.6",
  "num-complex",
  "num-traits 0.2.19",
  "smallvec 1.13.2",
@@ -24914,9 +24937,9 @@ dependencies = [
 
 [[package]]
 name = "strip-ansi-escapes"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "55ff8ef943b384c414f54aefa961dd2bd853add74ec75e7ac74cf91dba62bcfa"
+checksum = "2a8f8038e7e7969abb3f1b7c2a811225e9296da208539e0f79c5251d6cac0025"
 dependencies = [
  "vte",
 ]
@@ -28133,22 +28156,11 @@ dependencies = [
 
 [[package]]
 name = "vte"
-version = "0.11.1"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5022b5fbf9407086c180e9557be968742d839e68346af7792b8592489732197"
+checksum = "231fdcd7ef3037e8330d8e17e61011a2c244126acc0a982f4040ac3f9f0bc077"
 dependencies = [
- "utf8parse",
- "vte_generate_state_changes",
-]
-
-[[package]]
-name = "vte_generate_state_changes"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e369bee1b05d510a7b4ed645f5faa90619e05437111783ea5848f28d97d3c2e"
-dependencies = [
- "proc-macro2 1.0.93",
- "quote 1.0.38",
+ "memchr",
 ]
 
 [[package]]
