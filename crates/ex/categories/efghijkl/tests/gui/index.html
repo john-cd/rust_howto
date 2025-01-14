@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tauri Counter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        #conditional-text {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tauri Counter</h1>
+
+    <p id="counter-value">Counter: 0</p>
+
+    <button id="increment-btn">Increment</button>
+    <button id="decrement-btn">Decrement</button>
+
+    <p id="conditional-text"></p>
+
+    <script type="module">
+        import { invoke } from '@tauri-apps/api/tauri'
+
+        async function updateCounter() {
+            const counterValue = await invoke('get_counter');
+            document.getElementById('counter-value').textContent = `Counter: ${counterValue}`;
+
+            const conditionalText = document.getElementById('conditional-text');
+            if (counterValue % 2 === 0) {
+                conditionalText.textContent = "Counter is even!";
+                conditionalText.style.backgroundColor = "lightgreen";
+            } else {
+                conditionalText.textContent = "Counter is odd!";
+                conditionalText.style.backgroundColor = "lightyellow";
+            }
+        }
+
+        document.getElementById('increment-btn').addEventListener('click', async () => {
+            await invoke('increment_counter');
+            updateCounter();
+        });
+
+        document.getElementById('decrement-btn').addEventListener('click', async () => {
+            await invoke('decrement_counter');
+            updateCounter();
+        });
+
+        updateCounter(); // Initial update
+
+    </script>
+</body>
+
+</html>
