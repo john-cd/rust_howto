@@ -27,6 +27,7 @@ SHELL ["bash", "-c"]
 ## `libasound2-dev` required for `alsa-sys`, for `openrr`
 ## for Tauri: libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
 ## `python3` for `pyo3`
+## libgtk-4-dev build-essential for relm4 gtk4
 ## Note: the following caching should only be useful for development.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -54,6 +55,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
                                         libayatana-appindicator3-dev \
                                         librsvg2-dev \
                                         python3 python3.11-dev \
+                                        libgtk-4-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
