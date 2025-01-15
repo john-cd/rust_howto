@@ -86,6 +86,7 @@ rfd = "0.15.2"
 skia-safe = { version = "0.78", features = ["gl"] } # pin to 0.78 for slint
 slint = "1.9.1"
 taffy = "0.7.5"
+tao = "0.31.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 # xilem = "0.1.0" # TODO P3 review prerequisites
 winit = "0.30.8"
