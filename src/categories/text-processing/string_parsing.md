@@ -26,4 +26,5 @@ Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 review
 </div>

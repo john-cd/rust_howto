@@ -17,7 +17,6 @@
 <div class="hidden">
 [rust_cheatsheets: add more (P1)](https://github.com/john-cd/rust_howto/issues/570)
 
-
 [A comparison of Rust’s borrow checker to the one in C#][csborrow]
 
 [csborrow]: <https://em-tg.github.io/csborrow/>

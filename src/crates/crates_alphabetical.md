@@ -106,4 +106,6 @@ Crates mentioned in this book, by alphabetic order.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+TODO P1 regenerate
+
 </div>

@@ -10,7 +10,6 @@
 <div class="hidden">
 [optional_preprocessors: add (P1)](https://github.com/john-cd/rust_howto/issues/530)
 
-
 - [`mdbook-hide`][c-mdbook_hide-github]{{hi:mdbook-hide}}⮳ hides chapters under construction. Install with `cargo install mdbook-hide`. Uncomment the related section in `book.toml`. To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
 
 ```xml

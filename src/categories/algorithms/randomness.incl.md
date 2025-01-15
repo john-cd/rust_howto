@@ -10,7 +10,6 @@
 <div class="hidden">
 [randomness.incl:  fix (P1)](https://github.com/john-cd/rust_howto/issues/206)
 
-
 | [`fastrand`][ex-algorithms-fastrand] | [![fastrand][c-fastrand-badge]][c-fastrand] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] |
 
 </div>

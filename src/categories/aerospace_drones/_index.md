@@ -10,6 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aerospace_drones/_index.md](https://github.com/john-cd/rust_howto/issues/193)
+[P3](https://github.com/john-cd/rust_howto/issues/193)
 
 </div>

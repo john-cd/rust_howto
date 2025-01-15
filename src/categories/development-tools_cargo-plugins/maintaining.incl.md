@@ -9,7 +9,6 @@
 <div class="hidden">
 [maintaining.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/312)
 
-
 | [`cargo expand`][ex-development-tools_cargo-plugins-cargo-expand] | [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand] | [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins] |
 | [`cargo hack`][ex-development-tools_cargo-plugins-cargo-hack] | [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack] | [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins] |
 

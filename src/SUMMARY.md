@@ -497,3 +497,6 @@
 [Thanks](thanks.md)
 
 {{#include refs.incl.md}}
+<div class="hidden">
+TODO P1 make sure all pages are included
+</div>

@@ -10,6 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aerospace_space-protocols/_index.md](https://github.com/john-cd/rust_howto/issues/202)
+[P3](https://github.com/john-cd/rust_howto/issues/202)
 
 </div>
