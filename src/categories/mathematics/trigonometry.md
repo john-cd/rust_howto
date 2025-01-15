@@ -38,5 +38,5 @@ The following example computes the distance in kilometers between two points on 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 final review
+[ P1 final review](https://github.com/john-cd/rust_howto/issues/938)
 </div>

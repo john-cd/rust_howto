@@ -209,7 +209,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 finish
+[P1 finish](https://github.com/john-cd/rust_howto/issues/987)
 
 [Volvo][volvo]
 

@@ -20,5 +20,5 @@ This command manages `cargo`’s local set of installed binary crates. Only pack
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/918)
 </div>

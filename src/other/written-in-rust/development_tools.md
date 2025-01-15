@@ -42,7 +42,7 @@
 <div class="hidden">
 [development_tools: organize (P2)](https://github.com/john-cd/rust_howto/issues/612)
 
-TODO P1 add link to swc_ecma_parser example
+[P1 add link to swc_ecma_parser example](https://github.com/john-cd/rust_howto/issues/992)
 
 [development_tools: find a spot for (P2)](https://github.com/john-cd/rust_howto/issues/613)
 

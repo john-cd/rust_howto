@@ -10,5 +10,5 @@ Crates used to model or construct models for some activity, e.g. to.simulate a n
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[P2 write](https://github.com/john-cd/rust_howto/issues/961)
 </div>

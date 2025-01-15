@@ -74,5 +74,5 @@ The `ArcSwap` type is a container for an `Arc` that can be changed atomically. S
 <div class="hidden">
 [shared_state: review (P1)](https://github.com/john-cd/rust_howto/issues/266)
 
-TODO P0 refer to the lazy_static.rs, lazy_constant.rs examples. refer to global_static.md and lazy_initialization.md
+[P0 refer to the lazy_static.rs, lazy_constant.rs examples. refer to global_static.md and lazy_initialization.md](https://github.com/john-cd/rust_howto/issues/910)
 </div>

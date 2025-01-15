@@ -131,5 +131,5 @@ Consult the links section and its books page for other recommendations.
 
 <div class="hidden">
 [index: polish (P0)](https://github.com/john-cd/rust_howto/issues/536)
-TODO review about2
+[review about2](https://github.com/john-cd/rust_howto/issues/984)
 </div>

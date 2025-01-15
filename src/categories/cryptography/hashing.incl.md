@@ -11,7 +11,7 @@
 | [Utilities][ex-cryptography-utilities] | [![subtle][c-subtle-badge]][c-subtle] [![zeroize][c-zeroize-badge]][c-zeroize] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 <div class="hidden">
-TODO P1
+[ P1](https://github.com/john-cd/rust_howto/issues/911)
 
 | [`subtle`][ex-cryptography-subtle] | [![subtle][c-subtle-badge]][c-subtle] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 | [`zeroize`][ex-cryptography-zeroize] | [![zeroize][c-zeroize-badge]][c-zeroize] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |

@@ -10,5 +10,5 @@ Create parsers for binary and text formats. Format-specific parsers belong in ot
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[ P2 review](https://github.com/john-cd/rust_howto/issues/952)
 </div>

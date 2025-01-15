@@ -22,5 +22,5 @@ Crates to help you deal with events independently of the main program flow, usin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 need titles
+[ P1 need titles](https://github.com/john-cd/rust_howto/issues/905)
 </div>

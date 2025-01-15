@@ -80,5 +80,5 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/925)
 </div>

@@ -55,5 +55,5 @@ Escape sequences that are available for the [`chrono::DateTime::parse_from_str`]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/914)
 </div>

@@ -4,8 +4,8 @@ _default:
   @just --list gh --unsorted --justfile {{justfile()}}
 #@just --choose
 
-#login:
-#  gh auth login
+login:
+  gh auth login
 
 # Create a GH issue with a title and an empty body
 issue title:
@@ -20,7 +20,7 @@ find_dupe_issues:
 # --template '{{range .}}{{.number .title}}{{"\n"}}{{end}}
 # --jq '.[] | [.number, .title]'
 
-## Create an GH issue for each TODO line in Markdown files
+# Create an GH issue for each TODO line in Markdown files
 create_issues_for_markdown:
   #! /bin/bash
   set -euo pipefail
@@ -29,7 +29,7 @@ create_issues_for_markdown:
   do
     base=$(basename $file '.md')
     rel=$(realpath --relative-to={{justfile_directory()}} $file)
-    #echo ">> $rel"
+    echo ">> $rel"
     ## extract TODO P0/1/2/3 ...
     for todo in $(grep -Eoh '\s*TODO\s*(P[0-9])?:?\s+.*$' $file)
     do

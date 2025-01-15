@@ -10,5 +10,5 @@ Record, output, or process audio.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 fix
+[ P2 fix](https://github.com/john-cd/rust_howto/issues/941)
 </div>

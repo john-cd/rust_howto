@@ -10,5 +10,5 @@ Bindings to FreeBSD-specific APIs.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[ P2 review](https://github.com/john-cd/rust_howto/issues/947)
 </div>

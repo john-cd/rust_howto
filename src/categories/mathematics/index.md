@@ -28,5 +28,5 @@ Crates with a mathematical aspect.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 final review
+[ P1 final review](https://github.com/john-cd/rust_howto/issues/936)
 </div>

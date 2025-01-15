@@ -66,6 +66,6 @@ Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Posi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[P1 review](https://github.com/john-cd/rust_howto/issues/973)
 
 </div>

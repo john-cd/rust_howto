@@ -63,5 +63,5 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/920)
 </div>

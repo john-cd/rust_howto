@@ -56,6 +56,6 @@ xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[P1 review](https://github.com/john-cd/rust_howto/issues/980)
 
 </div>

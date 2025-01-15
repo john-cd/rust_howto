@@ -20,5 +20,5 @@ Deal with the complexities of human language when expressed in textual form.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[P1 review](https://github.com/john-cd/rust_howto/issues/963)
 </div>

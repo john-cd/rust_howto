@@ -19,7 +19,7 @@ Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreter
 
 <div class="hidden">
 
-TODO P1 review
+[P1 review](https://github.com/john-cd/rust_howto/issues/908)
 
 ### Transpilers
 

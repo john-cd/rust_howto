@@ -46,18 +46,18 @@ Note that, by implementing the unsafe marker traits `Send` and `Sync`, you _guar
 
 [Send / Sync custom implementation: finish example in playground crate (P1 / P2)](https://github.com/john-cd/rust_howto/issues/265)
 
-TODO P1
+[P1](https://github.com/john-cd/rust_howto/issues/909)
 
 - Credit [Understanding the Send trait](https://stackoverflow.com/questions/59428096/understanding-the-send-trait)
 
-- Reference <https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html>
-<https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/>
+- Reference [https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html)
+[https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/](https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/)
 
 [nomicon/send-and-sync](https://doc.rust-lang.org/nomicon/send-and-sync.html)
 [extensible-concurrency-sync-and-send](https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html)
 Implementing Vec: [https://doc.rust-lang.org/nomicon/vec/vec.html](https://doc.rust-lang.org/nomicon/vec/vec.html)
-<https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/>
-<https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html>
+[https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/](https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/)
+[https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html)
 
 - Need deep tech review
 

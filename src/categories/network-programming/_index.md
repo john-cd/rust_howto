@@ -16,5 +16,5 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/944)
 </div>

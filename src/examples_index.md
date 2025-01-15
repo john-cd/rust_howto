@@ -772,5 +772,5 @@
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 regenerate
+[P1 regenerate](https://github.com/john-cd/rust_howto/issues/983)
 </div>

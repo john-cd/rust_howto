@@ -51,5 +51,5 @@ The [`memmap2::Mmap::map`][c-memmap2::Mmap::map]{{hi:memmap2::Mmap::map}}⮳ fun
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 final review
+[ P1 final review](https://github.com/john-cd/rust_howto/issues/932)
 </div>

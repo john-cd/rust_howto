@@ -14,7 +14,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/926)
 
 - move to proper location
 - cover [`std::any::type_name`][std::any::type_name]

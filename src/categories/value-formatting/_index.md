@@ -10,5 +10,5 @@ Format values for display to a user, potentially adapting the display to various
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[P2 review](https://github.com/john-cd/rust_howto/issues/967)
 </div>

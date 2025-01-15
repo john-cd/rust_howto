@@ -157,5 +157,5 @@ while let Some(todo) = todos.next().await {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write / move toasty example to a file
+[ P1 write / move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
 </div>

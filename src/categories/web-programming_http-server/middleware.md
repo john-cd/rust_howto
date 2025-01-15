@@ -36,6 +36,6 @@ A modular toolkit for building async web apps
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 review
+[P1 review](https://github.com/john-cd/rust_howto/issues/978)
 
 </div>

@@ -10,5 +10,5 @@ Loading and parsing of data formats related to 2D or 3D rendering, like 3D model
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[ P2 review](https://github.com/john-cd/rust_howto/issues/954)
 </div>

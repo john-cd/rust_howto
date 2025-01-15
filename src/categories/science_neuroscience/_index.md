@@ -10,5 +10,5 @@ Research tools and processing of data related to the brain and nervous system.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[P2 review](https://github.com/john-cd/rust_howto/issues/959)
 </div>

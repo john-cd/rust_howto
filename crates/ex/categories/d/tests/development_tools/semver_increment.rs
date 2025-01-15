@@ -35,4 +35,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [TODO P0 increment_*() no longer exist; remove example maybe](https://github.com/john-cd/rust_howto/issues/903)
+// [ P0 increment_*() no longer exist; remove example maybe](https://github.com/john-cd/rust_howto/issues/903)

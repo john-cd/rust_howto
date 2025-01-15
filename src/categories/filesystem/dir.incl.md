@@ -10,7 +10,7 @@
 | [Find all files with given pattern, ignoring filename case][ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case] | [![glob][c-glob-badge]][c-glob] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
 <div class="hidden">
-TODO P1 review
+[ P1 review](https://github.com/john-cd/rust_howto/issues/931)
 
 | [`globset`][ex-filesystem-globset] | [![globset][c-globset-badge]][c-globset] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 

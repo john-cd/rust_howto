@@ -10,5 +10,5 @@ Provide direct access to the hardware's or the operating system's rendering capa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[ P2 review](https://github.com/john-cd/rust_howto/issues/956)
 </div>

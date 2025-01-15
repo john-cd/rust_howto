@@ -54,5 +54,5 @@ Encodes byte slice into `base64`{{hi:base64}} String using [`base64::encode`][c-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 final review
+[ P1 final review](https://github.com/john-cd/rust_howto/issues/930)
 </div>

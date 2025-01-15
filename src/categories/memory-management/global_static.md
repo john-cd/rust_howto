@@ -24,5 +24,5 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 <div class="hidden">
 [global_static: expand - once_cell crate and in std (P1)](https://github.com/john-cd/rust_howto/issues/409)
 
-TODO P0 merge global_static.md and lazy_initialization.md; review lazy_constant.rs and lazy_static.rs and global_mut_state.rs
+[P0 merge global_static.md and lazy_initialization.md; review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)
 </div>

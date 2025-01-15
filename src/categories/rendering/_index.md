@@ -10,5 +10,5 @@ Real-time or offline rendering of 2D or 3D graphics, usually with the help of a 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 review
+[ P2 review](https://github.com/john-cd/rust_howto/issues/953)
 </div>

@@ -10,5 +10,5 @@ Record, output, or process video.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[ P2 write](https://github.com/john-cd/rust_howto/issues/943)
 </div>
