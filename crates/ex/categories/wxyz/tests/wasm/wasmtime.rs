@@ -1,5 +1,6 @@
 // ANCHOR: example
-use anyhow::{Context, Result};
+use anyhow::Context;
+use anyhow::Result;
 use wasmtime::*;
 
 // Simple example written in WAT (WebAssembly Text Format).
@@ -37,7 +38,6 @@ static WAT: &str = r#"(module
 )"#;
 
 fn main() -> Result<()> {
-
     // Create a WASM engine.
     let engine = Engine::default();
 
@@ -47,7 +47,8 @@ fn main() -> Result<()> {
     // Or load a module from a WASM file.
     // You may store the WAT into a file and compile it using `wat2wasm`.
     // Install that tool with e.g. `sudo apt-get install wabt`.
-    // let module = Module::from_file(&engine, "hello.wasm").context("Failed to create WASM module")?;
+    // let module = Module::from_file(&engine, "hello.wasm").context("Failed to
+    // create WASM module")?;
 
     // Host functionality can be arbitrary Rust functions and is provided
     // to guests through a `Linker`.
@@ -63,29 +64,38 @@ fn main() -> Result<()> {
     let mut store = Store::new(&engine, ());
 
     // Create an instance, linking the imports
-    let instance = linker.instantiate(&mut store, &module).context("failed to instantiate module")?;
+    let instance = linker
+        .instantiate(&mut store, &module)
+        .context("failed to instantiate module")?;
 
     // Without linker, you may also use:
-    //let instance = Instance::new(&mut store, &module, &[])
+    // let instance = Instance::new(&mut store, &module, &[])
     //    .context("Failed to create WASM instance")?;
 
     // Get the exported function "greet".
-    let greet = instance.get_export(&mut store, "greet").and_then(|ext: Extern| {
-        ext.into_func() // Returns the underlying Func, if this external is a function.
-    }).context("Failed to find `greet` function export")?;
+    let greet = instance
+        .get_export(&mut store, "greet")
+        .and_then(|ext: Extern| {
+            ext.into_func() // Returns the underlying Func, if this external is a function.
+        })
+        .context("Failed to find `greet` function export")?;
 
     // Or:
-    //let greet = instance.get_typed_func::<(), ()>(&mut store, "greet")?;
+    // let greet = instance.get_typed_func::<(), ()>(&mut store, "greet")?;
 
     // Call the "greet" function.
     greet.call(&mut store, &[], &mut []) // store, params, result
         .context("failed to call `greet` function")?;
 
-    //Example with arguments
-    let add = instance.get_export(&mut store, "add").and_then(|ext: Extern| ext.into_func()).context("failed to find `add` function")?;
+    // Example with arguments
+    let add = instance
+        .get_export(&mut store, "add")
+        .and_then(|ext: Extern| ext.into_func())
+        .context("failed to find `add` function")?;
 
     let mut results = [Val::I32(0)];
-    add.call(&mut store, &[Val::I32(10), Val::I32(20)], &mut results).context("failed to call `add` function")?;
+    add.call(&mut store, &[Val::I32(10), Val::I32(20)], &mut results)
+        .context("failed to call `add` function")?;
 
     println!("\nResult of add function: {}", results[0].unwrap_i32());
 
