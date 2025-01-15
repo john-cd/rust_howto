@@ -8,6 +8,18 @@
 // (inserts, // removes) require exclusive access. Cloning creates separate,
 // independent maps // that can be modified concurrently without data races.
 
+// How Flurry Works (Important Concepts):
+
+// Copy-on-Write (COW): Flurry uses a copy-on-write strategy. When a write
+// operation occurs, a copy of the underlying data structure is made, the write
+// is performed on the copy, and then an atomic pointer swap makes the new copy
+// the current version. This allows for concurrent reads without locks.
+// Read-Only Iterators: The iterators returned by map.iter() are read-only and
+// can be used concurrently. Cloning: Cloning a Flurry HashMap is a relatively
+// cheap operation because it doesn't perform a deep copy of the data
+// immediately. Instead, it shares the underlying data structure until a write
+// operation occurs on one of the clones
+
 // fn main() {
 //     // Create a new Flurry HashMap.
 //     let map = HashMap::new();
