@@ -48,5 +48,5 @@ fn main() {
 //     main();
 // }
 // [P1](https://github.com/john-cd/rust_howto/issues/856)
-// TODO figure out how to test - cannot access imported statics on non-wasm
+// figure out how to test - cannot access imported statics on non-wasm
 // targets

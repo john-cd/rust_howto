@@ -7,7 +7,7 @@
 // use anyhow::Context;
 // use anyhow::Result;
 // use config::Config;
-// // TODO use config::Environment;
+// // FIXME use config::Environment;
 // use serde_derive::Deserialize;
 
 // // `Config` is prioritized configuration repository.
@@ -108,7 +108,7 @@
 //     Ok(())
 // }
 
-// // TODO finish, move anchor
+// // TODO P0 finish
 // #[test]
 // fn test_config() -> Result<(), config::ConfigError> {
 //     // Alternate source for the environment.

@@ -77,5 +77,5 @@
 //     Ok(())
 // }
 // // [P0](https://github.com/john-cd/rust_howto/issues/859)
-// // TODO https://hyper.rs/
+// // review https://hyper.rs/
 // // reference https://github.com/hyperium/hyper/blob/master/examples/client.rs

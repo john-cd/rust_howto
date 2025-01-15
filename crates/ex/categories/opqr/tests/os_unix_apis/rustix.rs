@@ -58,5 +58,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/821)
-// // TODO P1 fix
+// // [P2](https://github.com/john-cd/rust_howto/issues/821) fix

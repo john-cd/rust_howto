@@ -38,5 +38,4 @@ impl eframe::App for MyApp {
 // Hard to test. Initializing the event loop outside of the main thread is a
 // significant cross-platform compatibility hazard.
 
-// [P1](https://github.com/john-cd/rust_howto/issues/776)
-// TODO verify the code manually
+// [P1](https://github.com/john-cd/rust_howto/issues/776) verify the code manually

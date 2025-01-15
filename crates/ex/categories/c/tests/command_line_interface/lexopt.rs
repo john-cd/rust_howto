@@ -42,5 +42,5 @@
 //     }
 //     main().unwrap();
 // }
-// // TODO finish
-// // [P1](https://github.com/john-cd/rust_howto/issues/678)
+//
+// // [P1](https://github.com/john-cd/rust_howto/issues/678) finish

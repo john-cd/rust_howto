@@ -1,4 +1,5 @@
 // ANCHOR: example
+// ANCHOR_END: example
 #![allow(dead_code)]
 
 mod my {
@@ -66,7 +67,7 @@ mod my {
 }
 
 fn main() {
-    // TODO P1
+    // FIXME
     // let value = 42;
     // // let reference = &value;
     // // println!("The addres of value is {reference:p}");
@@ -91,13 +92,12 @@ fn main() {
     //     handle.join().unwrap();
     // }
 }
-// ANCHOR_END: example
 
 #[test]
 fn test() {
     main();
 }
-// [add example for Send / Sync custom impl](https://github.com/john-cd/rust_howto/issues/93)
+// [P1 add example for Send / Sync custom impl](https://github.com/john-cd/rust_howto/issues/93)
 // Implement a simplified Mutex instead?
 // https://doc.rust-lang.org/src/std/sync/mutex.rs.html
 

@@ -109,5 +109,5 @@ fn test() -> anyhow::Result<()> {
     Ok(())
 }
 // [P1](https://github.com/john-cd/rust_howto/issues/855)
-// TODO review https://docs.wasmtime.dev/introduction.html
+// review https://docs.wasmtime.dev/introduction.html
 // https://docs.rs/wasmtime/latest/wasmtime/

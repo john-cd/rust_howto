@@ -54,5 +54,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/820)
-// // TODO P1 make sure temp folder exists
+// // [P2](https://github.com/john-cd/rust_howto/issues/820) make sure temp folder exists

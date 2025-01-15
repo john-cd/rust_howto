@@ -21,7 +21,7 @@
 //         RegionProviderChain::default_provider().or_else("us-west-2");
 //     let version: BehaviorVersion;
 //     let config = aws_config::load_defaults(version).await;
-//     // TODO .region(region_provider);
+//     // FIXME review .region(region_provider);
 //     let client = Client::new(&config);
 
 //     // List objects in the S3 bucket.

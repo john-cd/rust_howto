@@ -180,5 +180,4 @@ fn main() {
 //     main();
 // }
 // How to test?
-// [P1](https://github.com/john-cd/rust_howto/issues/784)
-// TODO https://relm4.org/book/stable/
+// [P1](https://github.com/john-cd/rust_howto/issues/784) review https://relm4.org/book/stable/

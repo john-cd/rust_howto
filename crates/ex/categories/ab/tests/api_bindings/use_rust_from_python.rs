@@ -2,6 +2,8 @@
 #![allow(unsafe_op_in_unsafe_fn)]
 #![allow(clippy::useless_conversion)]
 // ANCHOR: example
+// ANCHOR_END: example
+
 use std::result::Result;
 
 use pyo3::prelude::*;
@@ -21,10 +23,8 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 }
 
 fn main() {
-    // TODO P0
+    // TODO P0 fix
 }
-
-// ANCHOR_END: example
 
 #[test]
 fn test() {

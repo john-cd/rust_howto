@@ -94,6 +94,5 @@
 
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/835)
-// // TODO review https://huggingface.github.io/candle/index.html
+// // [P2](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
 // // https://github.com/ToluClassics/candle-tutorial

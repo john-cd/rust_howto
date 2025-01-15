@@ -52,4 +52,4 @@
 //     Ok(())
 // }
 // // [P1](https://github.com/john-cd/rust_howto/issues/873)
-// // TODO review https://github.com/snapview/tokio-tungstenite/tree/master/examples
+// // review https://github.com/snapview/tokio-tungstenite/tree/master/examples

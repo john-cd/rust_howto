@@ -25,9 +25,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "WIP"]
-fn test() {
-    main();
-}
+// #[test]
+// fn test() {
+//     main();
+// }
 // TODO P1 how to test properly?
