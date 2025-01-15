@@ -4003,7 +4003,7 @@ dependencies = [
  "derive_more 1.0.0",
  "nonmax",
  "smallvec 1.13.2",
- "taffy",
+ "taffy 0.5.2",
 ]
 
 [[package]]
@@ -9249,6 +9249,7 @@ dependencies = [
  "serde_json",
  "skia-safe",
  "slint",
+ "taffy 0.7.5",
  "tauri",
  "tempfile",
  "toml 0.8.19",
@@ -12484,6 +12485,12 @@ name = "grid"
 version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "be136d9dacc2a13cc70bb6c8f902b414fb2641f8db1314637c6b7933411a8f82"
+
+[[package]]
+name = "grid"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "36119f3a540b086b4e436bb2b588cf98a68863470e0e880f4d0842f112a3183a"
 
 [[package]]
 name = "group"
@@ -25704,8 +25711,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9cb893bff0f80ae17d3a57e030622a967b8dbc90e38284d9b4b1442e23873c94"
 dependencies = [
  "arrayvec 0.7.6",
- "grid",
+ "grid 0.14.0",
  "num-traits 0.2.19",
+ "serde 1.0.217",
+ "slotmap",
+]
+
+[[package]]
+name = "taffy"
+version = "0.7.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "944a2a0b6070d217b69afb819f65f84ba093c43d627571fdac1c46f03a14d326"
+dependencies = [
+ "arrayvec 0.7.6",
+ "grid 0.15.0",
  "serde 1.0.217",
  "slotmap",
 ]
