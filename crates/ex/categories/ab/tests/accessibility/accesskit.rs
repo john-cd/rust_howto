@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use accesskit::ActionHandler;
 // use accesskit::tree::{Node, NodeId, Role, Tree};
 
@@ -37,7 +39,6 @@
 //     println!("Tree structure: {:?}", tree);
 //     handler.do_action(button_id, "activate");
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "not yet implemented"]

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use taffy::prelude::*;
 // use taffy::style::AlignItems;
 // use taffy::style::JustifyContent;
@@ -122,10 +124,8 @@
 //     println!("Flex Grow Child 1 Layout: {:?}", child_flex_grow_1_layout);
 //     println!("Flex Grow Child 2 Layout: {:?}", child_flex_grow_2_layout);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

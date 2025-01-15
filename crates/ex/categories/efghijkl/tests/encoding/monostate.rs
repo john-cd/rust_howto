@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use monostate::MonoState;
 // use std::sync::Arc;
 
@@ -24,7 +26,6 @@
 //     println!("Instance 1: {:?}", instance1);
 //     println!("Instance 2: {:?}", instance2);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "not yet implemented"]

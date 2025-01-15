@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use smartcore::linalg::basic::matrix::DenseMatrix;
 // use smartcore::linear::linear_regression::LinearRegression;
 // use smartcore::metrics::mean_squared_error;
@@ -50,7 +52,6 @@
 
 //     DenseMatrix::from_array(n_samples, n_features, &data)
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

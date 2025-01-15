@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use hyper::Client;
 // use hyper::Uri;
 // use hyper_tls::HttpsConnector;
@@ -25,10 +27,8 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

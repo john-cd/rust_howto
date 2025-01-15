@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::env;
 
 // use diesel::prelude::*;
@@ -71,7 +73,6 @@
 //         );
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn require_external_svc() {

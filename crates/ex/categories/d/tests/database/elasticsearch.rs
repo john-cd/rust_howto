@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use elasticsearch::Elasticsearch;
 // use elasticsearch::Error;
 // use elasticsearch::IndexParts;
@@ -123,7 +125,6 @@
 //         .await?;
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // // #[tokio::test]
 // // async fn test() -> Result<(), Box<dyn std::error::Error>> {

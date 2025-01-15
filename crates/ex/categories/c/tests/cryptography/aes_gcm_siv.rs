@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use aes_gcm_siv::{
 //     aead::{Aead, KeyInit, Payload},
 //     Aes256GcmSiv, Key, Nonce,
@@ -28,10 +30,8 @@
 //     println!("Ciphertext: {:?}", ciphertext);
 //     println!("Decrypted Ciphertext: {:?}", decrypted_ciphertext);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

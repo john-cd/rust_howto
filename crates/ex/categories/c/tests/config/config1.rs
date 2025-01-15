@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::collections::HashMap;
 // use std::fs;
 
@@ -105,7 +107,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // // TODO finish, move anchor
 // #[test]

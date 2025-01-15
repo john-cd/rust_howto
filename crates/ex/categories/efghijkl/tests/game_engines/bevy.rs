@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use bevy::prelude::*;
 
 // // Sets up a basic Bevy application with a 2D camera and a simple system that
@@ -32,10 +34,8 @@
 //         transform.translation.x += 0.1;
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

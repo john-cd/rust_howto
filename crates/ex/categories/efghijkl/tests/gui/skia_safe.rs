@@ -1,5 +1,6 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // Skia Setup: Sets up the Skia context, surface, and canvas for drawing.
 // Uses // OpenGL as the backend.
@@ -159,10 +160,8 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 // // #[test]
-// // #[ignore = "not yet implemented"]
 // // fn test() {
 // //     main();
 // // }

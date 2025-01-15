@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // Here’s a basic example of how to use the tantivy crate, which is a
 // full-text search engine library written in Rust. This example will
@@ -60,7 +61,6 @@
 //     Ok(())
 // }
 
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "not yet implemented"]

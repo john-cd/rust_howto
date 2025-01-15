@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // `serde_ignored` is a crate that helps you handle unknown fields when
 // // deserializing with `serde`. It's useful when you want to ignore fields
@@ -54,7 +55,6 @@
 //         }
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

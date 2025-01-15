@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use tokio;
 // use tokio_postgres::Error;
 // use tokio_postgres::NoTls;
@@ -78,10 +80,8 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn require_external_svc() {
 //     main();
 // }

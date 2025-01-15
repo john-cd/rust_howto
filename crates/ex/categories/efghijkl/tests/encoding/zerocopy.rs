@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use zerocopy::FromBytes;
 // use zerocopy::FromZeros;
 // use zerocopy::Immutable;
@@ -122,10 +124,8 @@
 //     manipulate_zero_bytes();
 //     transmute();
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

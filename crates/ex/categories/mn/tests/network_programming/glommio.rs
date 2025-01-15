@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::fs::File;
 // use std::io::Write;
 
@@ -80,7 +82,6 @@
 //         })
 //         .unwrap();
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

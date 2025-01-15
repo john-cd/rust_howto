@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::io;
 // use std::sync::Arc;
 
@@ -58,10 +60,8 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // // use datafusion::prelude::*;
 // use datafusion::arrow::datatypes::{DataType, Field, Schema};
 // use datafusion::arrow::record_batch::RecordBatch;
@@ -55,7 +57,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use tonic::{transport::Server, Request, Response, Status};
 // use helloworld::greeter_server::{Greeter, GreeterServer};
 // use helloworld::{HelloRequest, HelloReply};
@@ -39,10 +41,8 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

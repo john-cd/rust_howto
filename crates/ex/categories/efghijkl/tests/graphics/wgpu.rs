@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use wgpu::util::DeviceExt;
 // use winit::event::*;
 // use winit::event_loop::ControlFlow;
@@ -143,10 +145,8 @@
 // fn main() {
 //     pollster::block_on(run());
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

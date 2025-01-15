@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::sync::Arc;
 
 // use zenoh::Config;
@@ -58,7 +60,6 @@
 //     session.close().await?;
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {

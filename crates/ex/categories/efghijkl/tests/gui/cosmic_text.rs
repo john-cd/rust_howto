@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use cosmic_text::Attrs;
 // use cosmic_text::Buffer;
 // use cosmic_text::BufferLine;
@@ -45,10 +47,8 @@
 //     // but for simplicity, we're just printing the buffer contents.
 //     println!("Buffer: {:?}", output);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

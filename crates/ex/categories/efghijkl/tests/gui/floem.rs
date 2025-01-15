@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use floem::Application;
 // use floem::reactive::Signal;
 // use floem::reactive::create_signal;
@@ -56,10 +58,8 @@
 // fn main() {
 //     Application::new().run(|_| app_view())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

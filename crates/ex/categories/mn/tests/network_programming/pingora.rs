@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use pingora::prelude::*;
 // use std::net::SocketAddr;
 // use pingora::server::Server;
@@ -20,7 +22,6 @@
 //     println!("Listening on http://{}", addr);
 //     server.await.expect("Server failed");
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use gtk::Application;
 // use gtk::ApplicationWindow;
 // use gtk::Button;
@@ -81,7 +83,6 @@
 //         label.set_label("Counter is odd!");
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use winit::event::Event;
 // use winit::event::WindowEvent;
 // use winit::event_loop::ControlFlow;
@@ -28,10 +30,8 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

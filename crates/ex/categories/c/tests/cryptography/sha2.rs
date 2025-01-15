@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::fs;
 // use std::io;
 // use base64ct::Base64;
@@ -52,7 +54,6 @@
 //     let n = io::copy(&mut file, &mut hasher)?;
 //     let hash = hasher.finalize();
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

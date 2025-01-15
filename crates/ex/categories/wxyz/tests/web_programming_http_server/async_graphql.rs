@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use async_graphql::Context;
 // use async_graphql::EmptyMutation;
 // use async_graphql::EmptySubscription;
@@ -46,10 +48,8 @@
 // ) -> GraphQLResponse {
 //     schema.execute(req.into_inner()).await.into()
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

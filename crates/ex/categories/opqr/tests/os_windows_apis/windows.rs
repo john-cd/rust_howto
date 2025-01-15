@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use windows::Win32::Foundation::HWND;
 // //use windows::Win32::Foundation::PWSTR;
 // use windows::Win32::UI::WindowsAndMessaging::MB_OK;
@@ -26,10 +28,8 @@
 //         );
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use dirs;
 
 // // The `dirs` crate provides a convenient way to get paths to
@@ -41,10 +43,8 @@
 //         println!("Executable directory could not be found.");
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

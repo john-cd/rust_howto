@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::convert::Infallible;
 // use std::net::SocketAddr;
 
@@ -29,10 +31,8 @@
 //         eprintln!("Server error: {}", e);
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

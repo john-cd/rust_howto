@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::collections::HashMap;
 
 // use bonsai_bt::Action;
@@ -66,7 +68,6 @@
 //         }
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use ignore::WalkBuilder;
 // use std::path::Path;
 
@@ -31,7 +33,6 @@
 //         }
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use candle_core::DType;
 // use candle_core::Device;
 // use candle_core::Tensor;
@@ -82,7 +84,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

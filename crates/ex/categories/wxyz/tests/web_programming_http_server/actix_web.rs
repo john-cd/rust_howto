@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use actix_web::App;
 // use actix_web::HttpResponse;
 // use actix_web::HttpServer;
@@ -16,7 +18,6 @@
 //         .run()
 //         .await
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "WIP"]

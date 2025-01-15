@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // fn main() {
 //     // Run registered benchmarks.
 //     divan::main();
@@ -22,10 +24,8 @@
 
 //     compute(divan::black_box(10))
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

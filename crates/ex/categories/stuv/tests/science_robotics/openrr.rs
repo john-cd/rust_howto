@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use openrr::JointTrajectoryClient;
 // use openrr::RobotClient;
 // use openrr::UrdfRobot;
@@ -88,10 +90,8 @@
 //         &self.urdf_robot
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

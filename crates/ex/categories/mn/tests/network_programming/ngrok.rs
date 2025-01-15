@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::convert::Infallible;
 
 // use hyper::Request;
@@ -29,10 +31,8 @@
 //         eprintln!("server error: {}", e);
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

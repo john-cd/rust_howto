@@ -1,5 +1,7 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use pyo3::ffi::c_str;
 // use pyo3::prelude::*;
 // use pyo3::types::PyTuple;
@@ -52,7 +54,6 @@
 
 //     println!("{:?}", test_my_function());
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use parley::buffer::Buffer;
 // use parley::layout::{Alignment, Layout};
 // use parley::render::{FontContext, TextRenderer};
@@ -81,10 +83,8 @@
 //     }
 //     println!("{}", rendered_text);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

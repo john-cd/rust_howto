@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use tungstenite::Message;
 // use tungstenite::connect;
 // use url::Url;
@@ -27,10 +29,8 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test()  -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::net::SocketAddr;
 
 // use axum::Router;
@@ -57,10 +59,8 @@
 //         .await
 //         .unwrap();
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

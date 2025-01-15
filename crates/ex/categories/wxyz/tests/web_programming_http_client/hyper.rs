@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use http_body_util::BodyExt;
 // use http_body_util::Empty;
 // use hyper::Request;
@@ -68,7 +70,6 @@
 //     println!("\n\nDone!");
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {

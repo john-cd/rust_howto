@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use sea_orm::prelude::*;
 // use sea_orm::{Database, EntityTrait, ModelTrait, Set};
 // use tokio::runtime::Runtime;
@@ -41,10 +43,8 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn require_external_svc() {
 //     main();
 // }

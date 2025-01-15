@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use dioxus::prelude::*;
 
 // fn main() {
@@ -25,7 +27,6 @@
 //         }
 //     })
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

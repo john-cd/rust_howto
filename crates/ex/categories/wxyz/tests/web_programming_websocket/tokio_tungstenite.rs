@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use futures_util::StreamExt;
 // use futures_util::SinkExt;
 // //use futures_util::future;
@@ -43,7 +45,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {

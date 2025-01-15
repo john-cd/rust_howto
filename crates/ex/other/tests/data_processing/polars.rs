@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // In `Cargo.toml`:
 // // [dependencies]
@@ -34,7 +35,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

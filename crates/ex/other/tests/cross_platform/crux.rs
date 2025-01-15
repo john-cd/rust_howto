@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use crux_core::App;
 // use serde::Deserialize;
 // use serde::Serialize;
@@ -49,7 +51,6 @@
 
 //     println!("Count: {}", app.count);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

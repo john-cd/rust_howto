@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use shuttle_microservice::prelude::*;
 
 // We use the shuttle_microservice crate to create a simple web application.
@@ -15,7 +17,6 @@
 
 //     Ok(ShuttleService::new(app))
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "not yet implemented"]

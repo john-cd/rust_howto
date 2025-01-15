@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use lambda_runtime::Context;
 // use lambda_runtime::Error;
 // // use lambda_runtime::LambdaEvent;
@@ -43,7 +45,6 @@
 //     lambda_runtime::run(func).await?;
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

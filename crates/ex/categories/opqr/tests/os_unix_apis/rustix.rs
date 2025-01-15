@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // `rustix` is a library that provides a safe and idiomatic Rust interface to
 // // low-level system calls.
@@ -52,7 +53,6 @@
 //     // Close the file
 //     rustix::fs::close(fd).unwrap();
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

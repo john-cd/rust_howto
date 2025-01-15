@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::os::fd::AsRawFd;
 
 // // File control options
@@ -47,10 +49,8 @@
 //     // Delete the file
 //     unlink(path).unwrap();
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

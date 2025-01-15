@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // (backend)
 
@@ -63,7 +64,6 @@
 //         .run(tauri::generate_context!())
 //         .expect("error while running tauri application");
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

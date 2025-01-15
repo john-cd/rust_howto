@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use RustQuant::prelude::*;
 
 // fn main() {
@@ -31,10 +33,8 @@
 //     let put_price = bs.put_price();
 //     println!("European Put Option Price: {:.2}", put_price);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

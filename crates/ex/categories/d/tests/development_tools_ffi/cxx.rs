@@ -1,5 +1,7 @@
 // #![allow(unused_imports)]
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use cxx::CxxString;
 // use cxx::let_cxx_string;
 
@@ -21,7 +23,6 @@
 //     let_cxx_string!(name = "Rust");
 //     ffi::hello(&name);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

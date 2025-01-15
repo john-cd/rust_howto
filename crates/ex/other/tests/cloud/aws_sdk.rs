@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use aws_config::meta::region::RegionProviderChain;
 // use aws_sdk_s3::Client;
 // use aws_sdk_s3::Error;
@@ -41,7 +43,6 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

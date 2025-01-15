@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use dhat::Dhat;
 // use dhat::DhatAlloc;
 
@@ -22,7 +24,6 @@
 //     // The profiling data will be saved in a file named `dhat-heap.json` in
 // the current directory.     // You can then use the `dhat` tool to analyze the
 // profiling data. }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

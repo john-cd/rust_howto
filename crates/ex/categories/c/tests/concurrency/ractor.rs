@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use ractor::Actor;
 // use ractor::ActorProcessingErr;
 // use ractor::ActorRef;
@@ -53,7 +55,6 @@
 //     // Stop the actor
 //     handle.stop().await.expect("Failed to stop Greeter");
 // }
-// // ANCHOR_END: example
 
 // #[cfg(test)]
 // mod tests {

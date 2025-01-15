@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 // use serde::Deserialize;
 // use serde::Serialize;
 // use surrealdb::RecordId;
@@ -90,7 +91,7 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
+
 
 // #[test]
 // fn test() -> Result<()> {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use std::path;
 
 // use ggez::Context;
@@ -57,7 +59,6 @@
 //     let mut state = MainState::new(&mut ctx)?;
 //     ggez::event::run(&mut ctx, &mut event_loop, &mut state)
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // // `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
 // is a // Rust crate that provides support for integrating AFL with Rust
 // programs. // Below is an example of how you can use afl.rs to fuzz a simple
@@ -29,8 +31,7 @@
 // // 3) Run the fuzzer:
 // // `cargo afl fuzz -i input_directory -o output_directory
 // // target/release/your_crate_name`. AFL will try different inputs to find
-// cases // that trigger the panic in the `fuzz_me` function.
-// // ANCHOR_END: example
+// // cases that trigger the panic in the `fuzz_me` function.
 
 // #[test]
 // fn test() {

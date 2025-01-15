@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use iced::Element;
 // use iced::Settings;
 // use iced::mouse::Button;
@@ -77,10 +79,8 @@
 // fn main() -> iced::Result {
 //     Counter::run(Settings::default())
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use fyrox::engine::Engine;
 // use fyrox::engine::EngineInitParams;
 // use fyrox::event_loop::EventLoop;
@@ -59,7 +61,6 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

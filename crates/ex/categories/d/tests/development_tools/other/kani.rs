@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // // Define a simple function to add two numbers
 // fn add(a: i32, b: i32) -> i32 {
 //     a + b
@@ -23,10 +25,8 @@
 // fn main() {
 //     println!("2 + 3 = {}", add(2, 3));
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

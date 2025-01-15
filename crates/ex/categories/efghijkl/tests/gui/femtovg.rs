@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use femtovg::Align;
 // use femtovg::Baseline;
 // use femtovg::Canvas;
@@ -109,10 +111,8 @@
 //         window.update_with_buffer(&fb, WIDTH, HEIGHT).unwrap();
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

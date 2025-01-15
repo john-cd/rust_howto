@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use p256::ecdsa::Signature;
 // use p256::ecdsa::SigningKey;
 // use p256::ecdsa::VerifyingKey;
@@ -26,10 +28,8 @@
 //     // Print the signature in hex format
 //     println!("Signature: {:x?}", signature);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

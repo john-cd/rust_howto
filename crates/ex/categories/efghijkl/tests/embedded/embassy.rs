@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // Embassy is an async runtime designed for embedded systems in Rust. It
 // // provides async capabilities to work with hardware, making it easier to
@@ -79,10 +80,8 @@
 //         // Set the LED pin low
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use glam::Mat4;
 // use glam::Vec2;
 // use glam::Vec3;
@@ -36,7 +38,6 @@
 //     let transformed_vector = mat.transform_point3(Vec3::new(1.0, 0.0, 0.0));
 //     println!("Transformed vector: {:?}", transformed_vector);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

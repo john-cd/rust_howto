@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use rand::rngs::OsRng;
 // use rsa::PaddingScheme;
 // use rsa::PublicKey;
@@ -60,7 +62,6 @@
 //         String::from_utf8(decrypted_message).unwrap()
 //     );
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // #[ignore = "not yet implemented"]

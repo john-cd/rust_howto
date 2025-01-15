@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use slog::Drain;
 // use slog::Logger;
 // use slog::o;
@@ -35,7 +37,6 @@
 //     slog::info!(logger, "Performing some work"; "task" => "example task");
 //     // More work...
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

@@ -1,6 +1,5 @@
 // // ANCHOR: example
-// extern crate aes_gcm;
-// extern crate rand;
+// // ANCHOR_END: example
 
 // use aes_gcm::{
 //     Aes256Gcm, // Use Aes128Gcm or Aes256Gcm, respectively
@@ -31,10 +30,8 @@
 //     println!("Ciphertext: {:?}", ciphertext);
 //     println!("Decrypted Ciphertext: {:?}", decrypted_ciphertext);
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }

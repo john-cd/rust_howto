@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
 
 // // Rhai is a lightweight scripting language.
 // // It allows to embed scripting capabilities in Rust applications.
@@ -31,7 +32,6 @@
 //         Err(e) => println!("Error evaluating the script: {:?}", e),
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {

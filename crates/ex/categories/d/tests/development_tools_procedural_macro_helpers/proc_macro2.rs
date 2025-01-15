@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // // `proc-macro2` is a library for working with Rust's procedural macros.
 // // We create below a simple procedural macro that
 // // generates code to implement the `Debug` trait for a struct.
@@ -39,10 +41,8 @@
 //     };
 //     expanded
 // }
-// // ANCHOR_END: example
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 // }
 // // [P1](https://github.com/john-cd/rust_howto/issues/741)

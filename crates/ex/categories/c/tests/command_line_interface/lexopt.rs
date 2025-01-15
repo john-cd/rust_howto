@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // ANCHOR_END: example
+
 // use lexopt::prelude::*;
 
 // fn main() -> anyhow::Result<()> {
@@ -40,6 +42,5 @@
 //     }
 //     main().unwrap();
 // }
-// // ANCHOR_END: example
 // // TODO finish
 // // [P1](https://github.com/john-cd/rust_howto/issues/678)
