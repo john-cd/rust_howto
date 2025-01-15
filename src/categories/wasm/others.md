@@ -1,4 +1,4 @@
-# WenAssembly Runtimes
+# WebAssembly Runtimes
 
 {{#include others.incl.md}}
 
@@ -14,7 +14,11 @@
 
 ```sh
 curl https://get.wasmer.io -sSfL | sh
-# Test with:
+```
+
+Test with:
+
+```sh
 wasmer run cowsay "hello world"
 ```
 
@@ -50,7 +54,7 @@ wasmtime hello.wasm
 
 [docs.wasmtime.dev][c-wasmtime-docs]⮳
 
-The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the Wasmtime runtime.
+The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/wxyz/tests/wasm/wasmtime.rs:example}}
