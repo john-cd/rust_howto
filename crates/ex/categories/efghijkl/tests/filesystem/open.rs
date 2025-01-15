@@ -29,4 +29,4 @@ fn main() {
 // fn test() {
 //     main();
 // }
-// TODO P1 how to test properly?
+// [ P1 how to test properly](https://github.com/john-cd/rust_howto/issues/1004)?

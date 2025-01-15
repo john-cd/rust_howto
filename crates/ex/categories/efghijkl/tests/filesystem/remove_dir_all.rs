@@ -31,4 +31,4 @@ fn test() -> io::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 review
+// [ P1 review](https://github.com/john-cd/rust_howto/issues/1005)

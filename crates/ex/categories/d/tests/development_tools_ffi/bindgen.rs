@@ -32,5 +32,4 @@ fn main() {
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/736)
-// TODO see build.rs, example.h, example.c
+// [P1 see build.rs, example.h, example.c](https://github.com/john-cd/rust_howto/issues/1001)

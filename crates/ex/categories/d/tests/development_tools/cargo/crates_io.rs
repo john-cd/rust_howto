@@ -73,5 +73,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/729)
-// TODO fix search?
+// [P0](https://github.com/john-cd/rust_howto/issues/729) fix search

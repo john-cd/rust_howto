@@ -12,7 +12,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// TODO P1 deal wth cc
+// [ P1 deal wth cc](https://github.com/john-cd/rust_howto/issues/1000)
 #[ignore]
 #[test]
 fn test() {

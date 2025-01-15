@@ -90,4 +90,4 @@ fn main() {
     cbindgen();
     // cxx();
 }
-// TODO P0 fix
+// [ P0 fix](https://github.com/john-cd/rust_howto/issues/998)

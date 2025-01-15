@@ -1,4 +1,5 @@
 // ANCHOR: example
+// ANCHOR_END: example
 
 // `cbindgen` is a useful tool for generating C headers from Rust code, which
 // can be very helpful when you want to create a C API from a Rust library.
@@ -39,7 +40,5 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
 // 4) Use `cargo build` to generate the bindings.
 // 5) The generated C header file (bindings.h) will be located in the
 //    target/debug/build/<project-name>-*/out/ directory.
-// ANCHOR_END: example
 
-// [P1](https://github.com/john-cd/rust_howto/issues/737)
-// TODO see build.rs
+// [P1 see build.rs](https://github.com/john-cd/rust_howto/issues/1002)

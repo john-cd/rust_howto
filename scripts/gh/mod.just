@@ -43,6 +43,7 @@ create_issues_for_markdown:
     done
   done
 
+# Create an GH issue for each TODO line in .rs files
 create_issues_for_examples:
   #! /bin/bash
   set -euo pipefail
