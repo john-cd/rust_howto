@@ -4861,6 +4861,7 @@ dependencies = [
  "scrypt",
  "serde 1.0.217",
  "serde_derive",
+ "sha1",
  "sha2",
  "stakker",
  "subtle",
