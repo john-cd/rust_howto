@@ -5,8 +5,8 @@
 // fn main() {
 //     // The basic building blocks of a Morphorm layout are nodes. Each node
 //     // represents an element in the UI.
-//     // Nodes are organized in a tree structure, where each node can have parent
-//     // and child nodes.
+//     // Nodes are organized in a tree structure, where each node can have
+// parent     // and child nodes.
 //     // Create a root node:
 //     let mut world = World::default();
 
@@ -61,7 +61,8 @@
 //     absolute_box.set_top(Units::Pixels(50.0));
 //     absolute_box.set_width(Units::Pixels(100.0));
 //     absolute_box.set_height(Units::Pixels(100.0));
-//     absolute_box.set_background_color(morphorm::Color::rgb(255, 255, 0)); // Yellow
+//     absolute_box.set_background_color(morphorm::Color::rgb(255, 255, 0)); //
+// Yellow
 
 //     root_absolute.add(&mut absolute_box);
 //     root_absolute.layout(500.0, 400.0);
@@ -79,7 +80,8 @@
 //     margin_box.set_height(Units::Pixels(50.0));
 //     margin_box.set_margin_left(Units::Pixels(20.0));
 //     margin_box.set_margin_top(Units::Pixels(10.0));
-//     margin_box.set_background_color(morphorm::Color::rgb(255, 165, 0)); // Orange
+//     margin_box.set_background_color(morphorm::Color::rgb(255, 165, 0)); //
+// Orange
 
 //     root_column.add(&mut margin_box);
 //     root_column.layout(300.0, 300.0);

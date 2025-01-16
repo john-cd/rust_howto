@@ -95,7 +95,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 // Requires network access
-#[ignore = "WIP" ]
+#[ignore = "WIP"]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;
