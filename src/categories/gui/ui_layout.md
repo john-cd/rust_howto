@@ -16,7 +16,16 @@ A flexible UI layout library. "Supports Flexbox and CSS Grid algorithms."
 
 [![morphorm][c-morphorm-badge]][c-morphorm] [![morphorm-crates.io][c-morphorm-crates.io-badge]][c-morphorm-crates.io] [![morphorm-github][c-morphorm-github-badge]][c-morphorm-github] [![morphorm-lib.rs][c-morphorm-lib.rs-badge]][c-morphorm-lib.rs]{{hi:morphorm}}{{hi:Flex}}{{hi:Gui}}{{hi:Layout}}{{hi:Ui}}
 
-A UI layout engine. "Implements its own layout algorithm based on Subform layout."
+"Implements its own layout algorithm based on Subform layout."
+
+`morphorm` is a UI layout engine written in Rust. It is designed to be used in UI frameworks that need to arrange elements on a screen or within a container. It takes a tree of elements (nodes) and calculates their positions and sizes based on a set of layout rules. It is heavily inspired by CSS Flexbox and Grid layout models. Morphorm is a standalone crate with no external dependencies.
+
+Morphorm is suitable for various use cases, including:
+
+- UI Frameworks,
+- Game Development,
+- Developing cross-platform desktop applications,
+- Layout in resource-constrained environments (embedded systems).
 
 ```rust,editable
 {{#include ../../../crates/ex/categories/efghijkl/tests/gui/morphorm.rs:example}}

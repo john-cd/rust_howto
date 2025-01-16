@@ -81,6 +81,7 @@ femtovg = "0.12.0"
 # gtk = { version = "0.9.5", package = "gtk4" } # Make sure to use gtk4; for relm4 / gtk4 examples
 iced = "0.13.1"
 minifb = "0.27.0"
+morphorm = "0.6.5"
 pollster = "0.4" # for vello example
 r3bl_tuify = "0.2.0"
 # relm4 = "0.9.1"
@@ -111,6 +112,6 @@ num_cpus = "1.16.0"
 ## General
 anyhow.workspace = true
 csv = "1.3.1"
-image = "0.25.5" # For image loading
+image = "0.25.5" # for image loading
 serde.workspace = true
 url.workspace = true
