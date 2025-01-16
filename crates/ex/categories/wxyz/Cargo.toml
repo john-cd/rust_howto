@@ -39,13 +39,14 @@ actix-web = "4.9.0"
 async-graphql = "7.0.13"
 async-graphql-axum = "7.0.13"
 axum = "0.8.1"
+leptos = "0.7"
 loco = "0.14" # TODO
 mime = "0.3.17"
 prost = "0.13.4"
 tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
-# trillium = "0.2.20" # TODO
+# trillium = "0.2.20" # TODO P2
 
 ## Websocket
 tungstenite = "0.26.0"
