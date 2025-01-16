@@ -94,8 +94,8 @@ taffy = "0.7.5"
 tao = "0.31.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 vello = "0.3.0"
-xilem = "0.1.0" # TODO P3 review prerequisites
-# OR xilem = { git = "https://github.com/linebender/xilem" } # Or a specific version
+xilem = "0.1.0"
+# webrender = "0.61.0" # TODO P2 conflicts with RustQuant - native library `freetype`
 winit = "0.30.8" # for vello, winit examples
 
 ## Hardware
