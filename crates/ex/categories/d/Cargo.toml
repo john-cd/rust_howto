@@ -150,6 +150,6 @@ rusty-fork = "0.3.0"
 ## See build.rs
 [build-dependencies]
 bindgen = "0.71.1"
-cbindgen = "0.27.0"
-cc = "1.2.6"
+cbindgen = "0.28.0"
+cc = "1.2"
 cxx-build = "1.0.136"

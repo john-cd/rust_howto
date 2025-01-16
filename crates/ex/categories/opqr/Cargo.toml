@@ -29,6 +29,8 @@ pest_derive = "2.7.15"
 swc_ecma_parser = "6.0.1"
 swc_ecma_ast = "5.0.1"
 swc_common = "5.0.0"
+tree-sitter = "0.24.7"
+tree-sitter-rust = "0.23.2"
 
 ## Rendering and friends
 
@@ -57,3 +59,4 @@ windows = { version = "0.59.0" }
 
 [build-dependencies]
 pest_generator = "2.7.15"
+cc = "1.2"
