@@ -90,14 +90,17 @@ target-dir="/cargo-target-rust_howto/target"
 # # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
 
 ## Defaults for profile.dev
-# [profile.dev]
+[profile.dev]
 # opt-level = 0
+opt-level = "s"
 # debug = true
 # split-debuginfo = '...'  # Platform-specific.
-# strip = false
+# strip = "none"
+strip = true
 # debug-assertions = true
 # overflow-checks = true
 # lto = false
+lto = "off"
 # panic = 'unwind'
 # incremental = true
 # codegen-units = 256
