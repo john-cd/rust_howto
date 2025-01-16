@@ -13,10 +13,4 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
-#[test]
-#[ignore = "WIP"]
-fn test() {
-    main();
-}
 // [P1](https://github.com/john-cd/rust_howto/issues/785)

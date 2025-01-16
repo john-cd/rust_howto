@@ -82,9 +82,3 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
-#[ignore = "requires user interaction"]
-#[test]
-fn test() {
-    main().unwrap();
-}

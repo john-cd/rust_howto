@@ -92,8 +92,5 @@
 // }
 // // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
+fn main() {}
 // // [P2](https://github.com/john-cd/rust_howto/issues/782)

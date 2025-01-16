@@ -33,9 +33,4 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
-#[ignore = "Requires valid SMTP credentials to run"]
-#[test]
-fn test() {
-    main();
-}
+// Requires valid SMTP credentials to run

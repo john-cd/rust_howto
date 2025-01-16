@@ -192,9 +192,3 @@ fn handle_key_event() -> io::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
-#[test]
-#[ignore = "requires user interaction"]
-fn test() {
-    main();
-}

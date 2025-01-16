@@ -125,8 +125,5 @@
 //     println!("Flex Grow Child 2 Layout: {:?}", child_flex_grow_2_layout);
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
+fn main() {}
 // // [P1](https://github.com/john-cd/rust_howto/issues/788)

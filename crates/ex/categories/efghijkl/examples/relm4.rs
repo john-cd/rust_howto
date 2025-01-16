@@ -175,9 +175,5 @@
 // }
 // // ANCHOR_END: example
 
-// // #[test]
-// // fn test() {
-// //     main();
-// // }
-// // How to test?
+fn main() {}
 // // [P1](https://github.com/john-cd/rust_howto/issues/784) review https://relm4.org/book/stable/

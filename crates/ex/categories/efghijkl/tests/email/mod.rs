@@ -1,1 +1,1 @@
-mod lettre;
+// See `examples` folder

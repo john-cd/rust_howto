@@ -59,8 +59,5 @@
 //     Application::new().run(|_| app_view())
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
+fn main() {}
 // // [P1](https://github.com/john-cd/rust_howto/issues/778)

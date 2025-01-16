@@ -84,8 +84,5 @@
 //     println!("{}", rendered_text);
 // }
 
-// #[test]
-// fn test() {
-//     main();
-// }
+fn main() {}
 // // [P2](https://github.com/john-cd/rust_howto/issues/783)

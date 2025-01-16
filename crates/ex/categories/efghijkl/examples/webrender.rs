@@ -105,9 +105,5 @@
 // }
 // // ANCHOR_END: example
 
-// #[test]
-// #[ignore = "not yet implemented"]
-// fn test() {
-//     main();
-// }
+fn main() {}
 // // [P1](https://github.com/john-cd/rust_howto/issues/793)
