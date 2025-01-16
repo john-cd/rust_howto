@@ -6,7 +6,6 @@
 // use std::sync::Arc;
 // use tracing::info;
 
-
 // OpenRR contains..
 
 // abstract robot interfaces (arci)
@@ -15,23 +14,27 @@
 // tools (openrr-apps)
 // libraries that have nothing to do with arci (openrr-planner, …)
 
-// // Ubuntu is supported for Linux. Partial functionality is available under macOS and Windows.
+// // Ubuntu is supported for Linux. Partial functionality is available under
+// macOS and Windows.
 
 // // Install the following libraries:
 // // cmake build-essential (openrr-planner (assimp-sys))
 // // libudev-dev (arci-gamepad-gilrs)
 // // xorg-dev libglu1-mesa-dev libxkbcommon-dev (openrr-gui (egui))
 // // libasound2-dev (arci-speak-audio)
-// // (Ubuntu) sudo apt install cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev
+// // (Ubuntu) sudo apt install cmake build-essential libudev-dev xorg-dev
+// libglu1-mesa-dev libasound2-dev libxkbcommon-dev
 
 // urdf-viz is a URDF visualization application.
 // cargo install urdf-viz
 
-// openrr-apps is an application that implements GUI, gamepad-based operations, etc. It can send commands, topics to ROS. Robots and real machines visualized by urdf-viz and gazebo can be operated in the same way.
-// git clone https://github.com/openrr/openrr
+// openrr-apps is an application that implements GUI, gamepad-based operations,
+// etc. It can send commands, topics to ROS. Robots and real machines visualized
+// by urdf-viz and gazebo can be operated in the same way. git clone https://github.com/openrr/openrr
 // cd openrr
 // cargo install --path openrr-apps # For Linux and macOS users.
-// cargo install --path openrr-apps --no-default-features --features gui,assimp # For Windows users.
+// cargo install --path openrr-apps --no-default-features --features gui,assimp
+// # For Windows users.
 
 // #[tokio::main]
 // async fn main() -> Result<(), Box<dyn std::error::Error>> {
