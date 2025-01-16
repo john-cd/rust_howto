@@ -1,5 +1,7 @@
 // ANCHOR: example
-fn main() {}
+fn main() {
+    todo!();
+}
 // ANCHOR_END: example
 
 #[test]

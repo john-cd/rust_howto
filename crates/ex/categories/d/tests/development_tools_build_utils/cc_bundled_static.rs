@@ -5,8 +5,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[ignore]
 #[test]
+#[ignore = "WIP" ]
 fn test() {
     main();
 }

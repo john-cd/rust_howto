@@ -20,7 +20,6 @@
 // }
 
 // #[test]
-// #[ignore = "WIP"]
 // fn test() -> std::io::Result<()> {
 //     main()?;
 //     Ok(())

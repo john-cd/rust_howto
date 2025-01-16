@@ -3,7 +3,7 @@ fn main() {}
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
+#[ignore = "later"]
 fn test() {
     main();
 }

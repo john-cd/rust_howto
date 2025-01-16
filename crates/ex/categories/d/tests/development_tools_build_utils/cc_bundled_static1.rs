@@ -30,7 +30,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 #[test]
-#[ignore]
+#[ignore = "WIP"]
 fn test() {
     println!("{:?}", main());
 }

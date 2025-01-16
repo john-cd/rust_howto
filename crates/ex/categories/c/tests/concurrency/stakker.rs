@@ -30,7 +30,6 @@
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not implemented"]
 fn test() {
     // main();
 }

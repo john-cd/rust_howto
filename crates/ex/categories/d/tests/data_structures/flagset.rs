@@ -25,4 +25,4 @@ fn test() {
     main();
 }
 
-// [flagset: main (P1)](https://github.com/john-cd/rust_howto/issues/153)
+// [flagset: main (P0)](https://github.com/john-cd/rust_howto/issues/153)

@@ -19,7 +19,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-#[ignore]
+#[ignore = "WIP" ]
 #[test]
 fn test() -> anyhow::Result<()> {
     main()?;

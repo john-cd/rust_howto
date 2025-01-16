@@ -45,7 +45,6 @@
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
 fn require_external_svc() {
     // main();
 }

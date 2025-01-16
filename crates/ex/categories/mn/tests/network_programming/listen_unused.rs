@@ -20,7 +20,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-#[ignore]
+#[ignore = "WIP"]
 #[test]
 fn test() {
     println!("{:?}", main());
