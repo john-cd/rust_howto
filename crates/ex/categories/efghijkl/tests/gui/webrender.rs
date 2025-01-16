@@ -47,8 +47,8 @@
 //                 WindowEvent::Resized(physical_size) => {
 //                     windowed_context.resize(physical_size);
 //                     let (width, height) =
-// windowed_context.window().inner_size().into();                     
-// renderer.resize(DeviceIntSize::new(width as i32, height as i32));            
+// windowed_context.window().inner_size().into();
+// renderer.resize(DeviceIntSize::new(width as i32, height as i32));
 // frame_builder = FrameBuilder::new(DeviceIntSize::new(width as i32, height as
 // i32));                 }
 //                 WindowEvent::CloseRequested => *control_flow =
