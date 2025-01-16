@@ -18,7 +18,7 @@ readme = "README.md"
 [dependencies]
 
 ## Email
-lettre = "0.11.10"
+lettre = { version = "0.11.11", features = [ "tokio1-native-tls" ] }
 
 ## Embedded
 # embassy = "0.0.0" # TODO P1 review installation / required dependencies
