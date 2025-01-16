@@ -33,8 +33,9 @@
 //                 let width = window.inner_size().width;
 //                 let height = window.inner_size().height;
 
-//                 // Use vello::SceneBuilder to create a scene containing a red rectangle with a blue stroke and a green circle.
-//                 let mut scene = vello::SceneBuilder::new();
+//                 // Use vello::SceneBuilder to create a scene containing a red
+// rectangle with a blue stroke and a green circle.                 let mut
+// scene = vello::SceneBuilder::new();
 
 //                 // Draw a red rectangle with a blue outline
 //                 scene.push_rect(
@@ -57,8 +58,8 @@
 
 //                 let scene = scene.build();
 
-//                 // Sets RenderParams including width, height, base color, and antialiasing.
-//                 let render_params = vello::RenderParams {
+//                 // Sets RenderParams including width, height, base color, and
+// antialiasing.                 let render_params = vello::RenderParams {
 //                     base_color: Color::WHITE,
 //                     width,
 //                     height,
@@ -79,8 +80,8 @@
 //                 ))
 //                 .unwrap();
 //             }
-//             Event::MainEventsCleared => window.request_redraw(), // See the RedrawRequested event above.
-//             _ => (),
+//             Event::MainEventsCleared => window.request_redraw(), // See the
+// RedrawRequested event above.             _ => (),
 //         }
 //     });
 // }

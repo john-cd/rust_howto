@@ -19,7 +19,8 @@
 //             canvas.draw_rect(red_rect, Color::RED);
 
 //             // Blue Circle
-//             canvas.draw_circle(bounds.center() + Point::new(150.0, -50.0), 50.0, Color::BLUE);
+//             canvas.draw_circle(bounds.center() + Point::new(150.0, -50.0),
+// 50.0, Color::BLUE);
 
 //             // Green Line
 //             canvas.draw_line(
@@ -30,22 +31,21 @@
 //             );
 
 //             // Text (requires a font, see below)
-//             // canvas.draw_text("Hello, Vger!", bounds.center(), Color::WHITE);
+//             // canvas.draw_text("Hello, Vger!", bounds.center(),
+// Color::WHITE);
 
-            // // Load a font (replace with your font path)
-            // let font_data = include_bytes!("../assets/Roboto-Regular.ttf"); // Example: embed the font
-            // let font = Font::new(font_data).unwrap();
+// // Load a font (replace with your font path)
+// let font_data = include_bytes!("../assets/Roboto-Regular.ttf"); // Example:
+// embed the font let font = Font::new(font_data).unwrap();
 
-            // // Draw text
-            // canvas.draw_text(
-            //     "Hello, Vger!",
-            //     bounds.center() + Point::new(0.0, -100.0), // Position
-            //     &font,                                  // The font
-            //     32.0,                                  // Font size
-            //     Color::WHITE,
-            // );
-
-
+// // Draw text
+// canvas.draw_text(
+//     "Hello, Vger!",
+//     bounds.center() + Point::new(0.0, -100.0), // Position
+//     &font,                                  // The font
+//     32.0,                                  // Font size
+//     Color::WHITE,
+// );
 
 //             // Path example (triangle)
 //             let path = vger::path::Path::new(vec![
