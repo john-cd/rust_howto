@@ -94,18 +94,19 @@ taffy = "0.7.5"
 tao = "0.31.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 vello = "0.3.0"
-xilem = "0.1.0"
+vger = "0.4.0"
 # webrender = "0.61.0" # TODO P2 conflicts with RustQuant - native library `freetype`
 winit = "0.30.8" # for vello, winit examples
+xilem = "0.1.0"
 
 ## Hardware
 num_cpus = "1.16.0"
 
 ## Internationalization
-## TODO
+## TODO P2
 
 ## Localization
-## TODO
+## TODO P2
 
 ## General
 anyhow.workspace = true
