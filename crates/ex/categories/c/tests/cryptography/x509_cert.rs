@@ -26,8 +26,8 @@
 //     // Create a new certificate builder
 //     let now = Utc::now();
 //     let not_before = Time::from(now);
-//     let not_after = Time::from(now + Duration::days(365)); // Valid for one year
-//     let serial_number = SerialNumber::random();
+//     let not_after = Time::from(now + Duration::days(365)); // Valid for one
+// year     let serial_number = SerialNumber::random();
 //     let subject = Name::build_common_name("example.com").unwrap();
 //     let issuer = subject.clone();
 
