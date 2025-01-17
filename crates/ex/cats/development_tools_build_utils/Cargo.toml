@@ -1,0 +1,22 @@
+[package]
+name = "development_tools_build_utils"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_build_utils"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "development_tools_build_utils" ]
+publish.workspace = true
+build = "build.rs"
+
+[dependencies]
+anyhow.workspace = true
+
+## See build.rs
+[build-dependencies]
+cc = "1.2"

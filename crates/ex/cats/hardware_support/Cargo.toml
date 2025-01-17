@@ -1,0 +1,18 @@
+[package]
+name = "hardware_support"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - hardware_support"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "hardware_support" ]
+publish.workspace = true
+
+[dependencies]
+## Hardware
+num_cpus = "1.16.0"

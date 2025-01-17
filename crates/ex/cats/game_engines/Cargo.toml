@@ -1,0 +1,23 @@
+[package]
+name = "game_engines"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - game_engines"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "game_engines" ]
+publish.workspace = true
+
+[dependencies]
+## Game and friends
+bevy = "0.15.1"
+fyrox = "0.34.1"
+fyrox-core = "0.28.1"
+ggez = "0.9.3"
+glam = "0.29.2"
+macroquad = "0.4.13"

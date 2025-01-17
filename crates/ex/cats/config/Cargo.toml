@@ -1,0 +1,28 @@
+[package]
+name = "config"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - config"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "config" ]
+publish.workspace = true
+
+[dependencies]
+## Config
+config = "0.15.3"
+confy = "0.6.1"
+# dotenv = "0.15.0" # outdated, replaced by dotenvy
+dotenvy = "0.15.7"
+envy = "0.4.2"
+lexopt = "0.3.0"
+
+## General
+anyhow.workspace = true
+serde.workspace = true
+serde_derive = "1.0.216"

@@ -1,0 +1,35 @@
+[package]
+name = "mathematics"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - mathematics"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "mathematics" ]
+publish.workspace = true
+
+[dependencies]
+## Math
+nalgebra = { version = "0.33.2", features = ["serde-serialize"] }
+ndarray = { workspace = true, features = ["approx"] }
+num = "0.4.3"
+num-bigint = "0.4.6"
+num-traits = "0.2.19"
+ordered-float = "4.6.0"
+rust_decimal = "1.36.0"
+rust_decimal_macros = "1.36.0"
+
+# General
+anyhow.workspace = true
+approx.workspace = true
+serde_json.workspace = true
+hyper = "1.5.2"
+tokio.workspace = true
+
+[target.'cfg(target_os = "linux")'.dependencies]
+rug = "1.26.1"

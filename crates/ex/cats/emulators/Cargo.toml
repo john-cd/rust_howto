@@ -1,0 +1,17 @@
+[package]
+name = "emulators"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - emulators"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "emulators" ]
+publish.workspace = true
+
+[dependencies]
+## Emulators

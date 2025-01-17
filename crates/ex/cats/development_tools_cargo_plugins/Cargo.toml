@@ -1,0 +1,29 @@
+[package]
+name = "cargo"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license-file.workspace = true
+keywords.workspace = true
+categories.workspace = true
+publish.workspace = true
+
+[dependencies]
+## Dev Tools: cargo plugins
+# TODO
+# cargo
+# cargo-auditable
+# cargo-cache
+# cargo-edit
+# cargo-hack
+# cargo-husky
+# cargo-make
+# cargo-nextest
+# cargo-tarpaulin
+# cargo-udeps
+xshell = { version = "0.2.7" }

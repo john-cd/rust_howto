@@ -1,0 +1,21 @@
+[package]
+name = "science_robotics"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - science_robotics"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "science_robotics" ]
+publish.workspace = true
+
+[dependencies]
+## Science - Robotics
+bonsai-bt = "0.8.0"
+# openrr = "0.1.0" # TODO P1 lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md
+urdf-rs = "0.9.0"
+zenoh = "1.1.0"

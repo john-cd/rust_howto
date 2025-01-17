@@ -1,0 +1,18 @@
+[package]
+name = "visualization"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - visualization"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "visualization" ]
+publish.workspace = true
+
+[dependencies]
+## Visualization
+plotly = "0.12.1"

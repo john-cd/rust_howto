@@ -1,0 +1,19 @@
+[package]
+name = "date_and_time"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - date_and_time"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "date_and_time" ]
+publish.workspace = true
+
+[dependencies]
+## Date and time
+chrono = "0.4.39"
+time = "0.3.37"

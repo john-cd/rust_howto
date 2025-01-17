@@ -1,0 +1,36 @@
+[package]
+name = "text_processing"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - text_processing"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "text_processing" ]
+publish.workspace = true
+
+[dependencies]
+
+## Text processing
+concat-string = "1.0.1"
+fancy-regex = "0.14.0"
+joinery = "3.1.0"
+regex.workspace = true
+unicode-segmentation = "1.12.0"
+
+## General
+anyhow.workspace = true
+async-trait.workspace = true
+lazy_static.workspace = true
+once_cell.workspace = true
+ndarray.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

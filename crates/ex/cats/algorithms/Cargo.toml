@@ -1,0 +1,23 @@
+[package]
+name = "algorithms"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - algorithms"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "algorithms" ]
+publish.workspace = true
+
+[dependencies]
+## Algorithms
+# glidesort = "0.1.2" # TODO
+rand.workspace = true
+# rand_distr = "0.4.3"
+
+## General
+anyhow.workspace = true

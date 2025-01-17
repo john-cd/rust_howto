@@ -1,0 +1,25 @@
+[package]
+name = "authentication"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - authentication"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "authentication" ]
+publish.workspace = true
+
+[dependencies]
+## Authentication
+
+## General
+anyhow.workspace = true
+reqwest.workspace = true
+tempfile = "3.15.0"
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

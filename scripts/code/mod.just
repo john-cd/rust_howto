@@ -34,7 +34,7 @@ alias b := build
 
 # Build just the code examples used by the book (tests only)
 build:
-  cargo build --tests --locked
+  cargo build --tests --examples --locked
 # Build default members of the workspace
 
 alias ba := buildall

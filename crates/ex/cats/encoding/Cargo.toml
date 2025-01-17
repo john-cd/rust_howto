@@ -1,0 +1,35 @@
+[package]
+name = "encoding"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - encoding"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "encoding" ]
+publish.workspace = true
+
+[dependencies]
+
+## Encoding
+base64 = "0.22.1"
+bytemuck = { version = "1.21.0", features = ["derive"] }
+byteorder = "1.5.0"
+data-encoding = "2.6.0"
+form_urlencoded = "1.2.1"
+monostate = "0.1.13"
+percent-encoding = "2.3.1"
+serde_json.workspace = true
+toml = "0.8.19"
+zerocopy = { version = "0.8.14", features = ["derive"] }
+
+## General
+anyhow.workspace = true
+csv = "1.3.1"
+image = "0.25.5" # for image loading
+serde.workspace = true
+url.workspace = true

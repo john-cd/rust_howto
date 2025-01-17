@@ -1,0 +1,18 @@
+[package]
+name = "network_programming"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - network_programming"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "network_programming" ]
+publish.workspace = true
+
+[dependencies]
+## Network Programming
+pingora = "0.4.0"

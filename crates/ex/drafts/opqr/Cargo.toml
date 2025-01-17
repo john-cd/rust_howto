@@ -1,0 +1,4 @@
+## General
+anyhow.workspace = true
+regex.workspace = true
+reqwest = { workspace = true, features = ["blocking"] }

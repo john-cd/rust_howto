@@ -1,0 +1,24 @@
+[package]
+name = "development_tools_ffi"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_ffi"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "development_tools_ffi" ]
+publish.workspace = true
+
+[dependencies]
+## Dev. Tools FFI
+## See below
+cxx = "1.0.136"
+
+[build-dependencies]
+bindgen = "0.71.1"
+cbindgen = "0.28.0"
+cxx-build = "1.0.136"

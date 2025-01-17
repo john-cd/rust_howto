@@ -1,0 +1,18 @@
+[package]
+name = "multimedia"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - multimedia"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "multimedia" ]
+publish.workspace = true
+
+[dependencies]
+## Multimedia and friends
+# TODO

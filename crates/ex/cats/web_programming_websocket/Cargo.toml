@@ -1,0 +1,19 @@
+[package]
+name = "web_programming_websocket"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - web_programming_websocket"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "web_programming_websocket" ]
+publish.workspace = true
+
+[dependencies]
+## Websocket
+tungstenite = "0.26.0"
+tokio-tungstenite = "0.26.1"

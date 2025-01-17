@@ -1,0 +1,19 @@
+[package]
+name = "aerospace_protocols"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - aerospace_protocols"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "aerospace_protocols" ]
+publish.workspace = true
+
+[dependencies]
+
+## General
+anyhow.workspace = true

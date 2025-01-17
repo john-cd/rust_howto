@@ -1,0 +1,23 @@
+[package]
+name = "development_tools_procedural_macro_helpers"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_procedural_macro_helpers"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "development_tools_procedural_macro_helpers" ]
+publish.workspace = true
+
+[dependencies]
+## Dev Tools: Proc Macros
+darling = "0.20.10"
+paste = "1.0.15"
+proc-macro2 = "1.0.92"
+quote = "1.0.38"
+syn = { version = "2.0.92", features = ["full"] }
+watt = "0.5.0"

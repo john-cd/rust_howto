@@ -1,0 +1,20 @@
+[package]
+name = "development_tools_profiling"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_profiling"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "development_tools_profiling" ]
+publish.workspace = true
+
+[dependencies]
+## Dev Tools: Profiling
+criterion = "0.5.1"
+dhat = "0.3.3"
+divan = "0.1.17"

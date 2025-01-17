@@ -1,0 +1,20 @@
+[package]
+name = "api_bindings"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - api_bindings"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "api_bindings" ]
+publish.workspace = true
+
+[dependencies]
+## API bindings
+
+[target.'cfg(target_os = "linux")'.dependencies]
+pyo3 = "0.21" # was pinned to 0.21 to avoid conflict with `polars`

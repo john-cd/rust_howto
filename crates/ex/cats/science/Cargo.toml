@@ -1,0 +1,24 @@
+[package]
+name = "science"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - science"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "science" ]
+publish.workspace = true
+
+[dependencies]
+
+## Science - Machine Learning
+candle-core = "0.8.2"
+candle-nn = "0.8.2"
+linfa = "0.7.0"
+linfa-linear = "0.7.0"
+ndarray.workspace = true
+smartcore = { version = "0.4.0", features = [ "datasets" ] }

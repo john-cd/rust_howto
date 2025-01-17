@@ -1,0 +1,16 @@
+[package]
+name = "os_macos_apis"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - os_macos_apis"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "os_macos_apis" ]
+publish.workspace = true
+
+[dependencies]

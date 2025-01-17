@@ -1,0 +1,21 @@
+[package]
+name = "development_tools_testing"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_testing"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "development_tools_testing" ]
+publish.workspace = true
+
+[dependencies]
+## Dev Tools: Testing
+afl = "0.15.13"
+approx.workspace = true
+anyhow.workspace = true
+insta = "1.41.1"

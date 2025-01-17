@@ -1,0 +1,25 @@
+[package]
+name = "rust_patterns"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - rust_patterns"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "rust_patterns" ]
+publish.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+## Rust patterns
+color-eyre = "0.6.3"
+dyn-clone = "1.0.17"
+# eyre = "0.6.12" # outdated, see color-eyre
+itertools = "0.14.0"
+miette = { version = "7.2.0", features = ["fancy"] }
+reqwest.workspace = true
+thiserror = "2.0.1"

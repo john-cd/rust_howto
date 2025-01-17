@@ -1,0 +1,46 @@
+[package]
+name = "web_programming_http_server"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - web_programming_http_server"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "CC0-1.0"
+keywords.workspace = true
+categories = [ "web_programming_http_server" ]
+publish.workspace = true
+
+[dependencies]
+## Web - server
+actix-web = "4.9.0"
+async-graphql = "7.0.13"
+async-graphql-axum = "7.0.13"
+axum = "0.8.1"
+leptos = "0.7"
+# loco = "0.14"
+# loco-rs = { git = "https://github.com/loco-rs/loco.git", branch = "main" } # or a specific version
+loco-rs = "0.14"
+mime = "0.3.17"
+prost = "0.13.4"
+tonic = "0.12.3"
+tower = { version = "0.5.1", features = ["util"] }
+tower-http = { version = "0.6.1", features = ["full", "auth"] }
+# trillium = "0.2.20" # TODO P2
+
+## General
+anyhow.workspace = true
+bytes = "1.9.0"
+lazy_static.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+regex.workspace = true
+futures-util = "0.3.31"
+http = "1.2.0"
+http-body-util = "0.1.2"
+
+[build-dependencies]
+tonic-build = "0.12.3"
