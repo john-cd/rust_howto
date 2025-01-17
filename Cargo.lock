@@ -4810,6 +4810,7 @@ dependencies = [
  "argon2",
  "await-tree",
  "bcrypt 0.16.0",
+ "chrono",
  "clap 4.5.26",
  "config 0.15.6",
  "confy",
@@ -4832,6 +4833,7 @@ dependencies = [
  "flurry",
  "futures",
  "glob",
+ "hex-literal",
  "hyper 1.5.2",
  "hyper-tls",
  "image 0.25.5",
@@ -4871,6 +4873,7 @@ dependencies = [
  "tokio",
  "tokio-rustls 0.26.1",
  "walkdir",
+ "x509-cert",
  "zeroize",
 ]
 
@@ -8119,6 +8122,7 @@ checksum = "f55bf8e7b65898637379c1b74eb1551107c8294ed26d855ceb9fd1a09cfc9bc0"
 dependencies = [
  "const-oid",
  "der_derive",
+ "flagset",
  "pem-rfc7468",
  "zeroize",
 ]
@@ -12842,6 +12846,12 @@ name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+
+[[package]]
+name = "hex-literal"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6fe2267d4ed49bc07b63801559be28c718ea06c4738b7a03c94df7386d2cde46"
 
 [[package]]
 name = "hexasphere"
@@ -26758,6 +26768,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "tls_codec"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5e78c9c330f8c85b2bae7c8368f2739157db9991235123aa1b15ef9502bfb6a"
+dependencies = [
+ "tls_codec_derive",
+ "zeroize",
+]
+
+[[package]]
+name = "tls_codec_derive"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8d9ef545650e79f30233c0003bcc2504d7efac6dad25fca40744de773fe2049c"
+dependencies = [
+ "proc-macro2 1.0.93",
+ "quote 1.0.38",
+ "syn 2.0.96",
+]
+
+[[package]]
 name = "token-cell"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -31043,6 +31074,18 @@ dependencies = [
  "ed448-goldilocks",
  "hex",
  "rand_core 0.5.1",
+]
+
+[[package]]
+name = "x509-cert"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1301e935010a701ae5f8655edc0ad17c44bad3ac5ce8c39185f75453b720ae94"
+dependencies = [
+ "const-oid",
+ "der 0.7.9",
+ "spki 0.7.3",
+ "tls_codec",
 ]
 
 [[package]]
