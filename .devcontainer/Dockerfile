@@ -23,39 +23,48 @@ SHELL ["bash", "-c"]
 ## `cmake`
 ## `libopencv-dev` `clang` `libclang-dev` for `opencv`
 ## `llvm` for `llvm-config` required for `clang-sys`
-## `libudev-dev` required for `openrr`
-## `libasound2-dev` required for `alsa-sys`, for `openrr`
-## for Tauri: libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
+## for Tauri: `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev`
 ## `python3` for `pyo3`
-## libgtk-4-dev build-essential for relm4 gtk4
+## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
+## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
+## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for openrr
 ## Note: the following caching should only be useful for development.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
-                                        aspell \
-                                        aspell-en \
-                                        systemd \
-                                        gcc \
-                                        pkg-config \
-                                        libc6-dev \
-                                        libssl-dev \
-                                        libopencv-dev clang libclang-dev \
-                                        libudev-dev \
-                                        libasound2-dev \
-                                        llvm \
-                                        libwebkit2gtk-4.1-dev \
-                                        build-essential \
-                                        curl \
-                                        wget \
-                                        file \
-                                        libxdo-dev \
-                                        libssl-dev \
-                                        libayatana-appindicator3-dev \
-                                        librsvg2-dev \
-                                        python3 python3.11-dev \
-                                        libgtk-4-dev \
+    aspell \
+    aspell-en \
+    build-essential \
+    clang \
+    cmake \
+    curl \
+    file \
+    gcc \
+    libasound2-dev \
+    libayatana-appindicator3-dev \
+    libc6-dev \
+    libclang-dev \
+    libglu1-mesa-dev \
+    libgtk-4-dev \
+    libopencv-dev \
+    librsvg2-dev \
+    libssl-dev \
+    libudev-dev \
+    libvulkan-dev \
+    libwayland-dev \
+    libwebkit2gtk-4.1-dev \
+    libxdo-dev \
+    libxkbcommon-dev \
+    libxkbcommon-x11-dev \
+    llvm \
+    pkg-config \
+    python3 \
+    python3.11-dev \
+    systemd \
+    wget \
+    xorg-dev \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
