@@ -109,7 +109,12 @@ log = "0.4.22"
 log4rs = "1.3.0"
 opentelemetry = "0.27.1"
 opentelemetry-jaeger = "0.22.0"
+opentelemetry-otlp = "0.27.0"
+opentelemetry_sdk = { version = "0.27.1", features = [ "metrics" ] }
+opentelemetry-semantic-conventions = "0.27.0"
+tonic = "0.12.3"
 tracing.workspace = true
+tracing-opentelemetry = "0.28.0"
 tracing-subscriber.workspace = true
 
 ## Dev Tools: Proc Macros
