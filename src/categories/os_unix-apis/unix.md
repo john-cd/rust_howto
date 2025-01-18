@@ -16,7 +16,7 @@
 Efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, bitflags instead of bare integer flags, and several other conveniences.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/os_unix_apis/rustix.rs:example}}
+{{#include ../../../crates/ex/cats/os_unix_apis/tests/rustix.rs:example}}
 ```
 
 ## Bind to Unix-specific APIs with `nix` {#nix}
@@ -30,7 +30,7 @@ Efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic R
 Bindings to the various *nix system functions. (Unix, Linux, MacOS, etc.)
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/os_unix_apis/nix.rs:example}}
+{{#include ../../../crates/ex/cats/os_unix_apis/tests/nix.rs:example}}
 ```
 
 {{#include refs.incl.md}}

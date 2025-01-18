@@ -5,7 +5,7 @@
 ## Aerospace simulation {#aerospace_simulation}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/aerospace_simulation/aero_simulation.rs:example}}
+{{#include ../../../crates/ex/cats/aerospace_simulation/tests/aero_simulation.rs:example}}
 ```
 
 {{#include refs.incl.md}}

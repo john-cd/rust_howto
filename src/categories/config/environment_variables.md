@@ -9,7 +9,7 @@
 [`dotenvy`][c-dotenvy]{{hi:dotenvy}}⮳ forks and supersedes [`dotenv`][c-dotenv]{{hi:dotenv}}⮳.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/c/tests/config/dotenvy.rs:example}}
+{{#include ../../../crates/ex/cats/config/tests/dotenvy.rs:example}}
 ```
 
 ## `std::env` {#env}
@@ -19,7 +19,7 @@
 To retrieve a single environment variable{{hi:Environment variables}},
 
 ```rust,editable,should_panic
-{{#include ../../../crates/ex/categories/c/tests/config/env.rs:example}}
+{{#include ../../../crates/ex/cats/config/tests/env.rs:example}}
 ```
 
 [Working with environment variables in Rust][blog-working-with-env-variables]⮳
@@ -37,7 +37,7 @@ serde = { version = "1.0.216", features = ["derive"] }
 ```
 
 ```rust,editable,should_panic,noplayground
-{{#include ../../../crates/ex/categories/c/tests/config/envy.rs:example}}
+{{#include ../../../crates/ex/cats/config/tests/envy.rs:example}}
 ```
 
 ## See Also

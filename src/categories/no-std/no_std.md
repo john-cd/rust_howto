@@ -5,7 +5,7 @@
 ## Crates that work with no `std` {#no-std}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/mn/tests/no_std/no_std1.rs:example}}
+{{#include ../../../crates/ex/cats/no_std/tests/no_std1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

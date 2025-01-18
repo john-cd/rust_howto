@@ -9,7 +9,7 @@
 Antialiased 2D vector drawing library. "OpenGL based. Offers a simple API. Probably the easiest to get started with."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/femtovg.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/femtovg.rs:example}}
 ```
 
 ## `skia-safe` {#skia-safe}
@@ -19,7 +19,7 @@ Antialiased 2D vector drawing library. "OpenGL based. Offers a simple API. Proba
 "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/skia_safe.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/skia_safe.rs:example}}
 ```
 
 ## `vello` {#vello}
@@ -29,7 +29,7 @@ Antialiased 2D vector drawing library. "OpenGL based. Offers a simple API. Proba
 A GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/vello.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/vello.rs:example}}
 ```
 
 ## `vger` {#vger}
@@ -41,7 +41,7 @@ A GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques 
 "A simpler WGPU-based option which is less innovative but currently more stable than vello."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/vger.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/vger.rs:example}}
 ```
 
 ## `webrender` {#webrender}
@@ -51,7 +51,7 @@ A GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques 
 A GPU accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in Firefox but documentation and OSS maintenance are lacking."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/webrender.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/webrender.rs:example}}
 ```
 
 {{#include refs.incl.md}}

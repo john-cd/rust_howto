@@ -9,7 +9,7 @@
 In this example, the port{{hi:Port}} is displayed on the console, and the program will listen until a request is made. [`std::net::SocketAddrV4`][c-std::net::SocketAddrV4]{{hi:std::net::SocketAddrV4}}⮳ assigns a random port when setting port to 0.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/mn/tests/network_programming/listen_unused.rs:example}}
+{{#include ../../../crates/ex/cats/network_programming/tests/listen_unused.rs:example}}
 ```
 
 ## Perform asynchronous I/O operations on storage devices {#perform-asynchronous-io-operations-on-storage-devices}
@@ -31,7 +31,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 Use `glommio` if you need {{i:io_uring support}}. Still somewhat experimental but rapidly maturing.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/mn/tests/network_programming/glommio.rs:example}}
+{{#include ../../../crates/ex/cats/network_programming/tests/glommio.rs:example}}
 ```
 
 {{#include refs.incl.md}}

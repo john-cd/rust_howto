@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_debugging/type_name_of_val.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_debugging/tests/type_name_of_val.rs:example}}
 ```
 
 {{#include refs.incl.md}}

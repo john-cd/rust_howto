@@ -13,7 +13,7 @@
 The official Microsoft-provided crate for interacting with windows APIs
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/os_windows_apis/windows.rs:example}}
+{{#include ../../../crates/ex/cats/os_windows_apis/tests/windows.rs:example}}
 ```
 
 ## Bind to Windows APIs with `winapi` {#winapi}
@@ -29,7 +29,7 @@ The official Microsoft-provided crate for interacting with windows APIs
 Older binding to the windows APIs. Unofficial, but more complete than windows-rs
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/os_windows_apis/winapi.rs:example}}
+{{#include ../../../crates/ex/cats/os_windows_apis/tests/winapi.rs:example}}
 ```
 
 ## See also

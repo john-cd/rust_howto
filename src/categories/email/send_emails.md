@@ -12,7 +12,7 @@
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/categories/efghijkl/tests/email/lettre.rs:example}}
+{{#include ../../../crates/ex/cats/email/tests/lettre.rs:example}}
 ```
 
 {{#include refs.incl.md}}

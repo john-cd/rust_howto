@@ -15,7 +15,7 @@ Key Features:
 - JavaScript Interoperability: Yew supports JavaScript integration, allowing the use of NPM packages and integrating smoothly with existing JavaScript projects.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/wasm/yew.rs:example}}
+{{#include ../../../crates/ex/cats/wasm/tests/yew.rs:example}}
 ```
 
 ### See also

@@ -9,7 +9,7 @@
 [`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_procedural_macro_helpers/syn.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_procedural_macro_helpers/tests/syn.rs:example}}
 ```
 
 ## `paste` {#paste}
@@ -19,7 +19,7 @@
 [`paste`][c-paste]⮳ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_procedural_macro_helpers/paste.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_procedural_macro_helpers/tests/paste.rs:example}}
 ```
 
 ## `quote` {#quote}
@@ -29,7 +29,7 @@
 [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_procedural_macro_helpers/quote.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_procedural_macro_helpers/tests/quote.rs:example}}
 ```
 
 ## `proc-macro2` {#proc-macro2}
@@ -51,7 +51,7 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_procedural_macro_helpers/proc_macro2.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_procedural_macro_helpers/tests/proc_macro2.rs:example}}
 ```
 
 ### `darling` {#darling}
@@ -61,7 +61,7 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 Derive macro to easily parse derive macro inputs
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_procedural_macro_helpers/darling.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}
 ```
 
 {{#include refs.incl.md}}

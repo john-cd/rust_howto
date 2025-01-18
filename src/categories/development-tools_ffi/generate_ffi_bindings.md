@@ -14,7 +14,7 @@
 `bindgen` automatically generates Rust FFI bindings to C and C++ libraries.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_ffi/bindgen.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_ffi/tests/bindgen.rs:example}}
 ```
 
 ## `cbindgen` {#cbindgen}
@@ -29,7 +29,7 @@
 `cbindgen` generates C bindings to Rust libraries.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_ffi/cbindgen.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_ffi/tests/cbindgen.rs:example}}
 ```
 
 ## Interop between C++ and Rust {#cxx}
@@ -45,7 +45,7 @@
 Safe C++ <-> Rust interop by generating code for both sides.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_ffi/cxx.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_ffi/tests/cxx.rs:example}}
 ```
 
 {{#include refs.incl.md}}

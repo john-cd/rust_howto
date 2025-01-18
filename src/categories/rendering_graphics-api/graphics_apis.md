@@ -5,7 +5,7 @@
 ## Get direct access to the hardware's or the operating system's rendering capabilities {#graphics}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/rendering_graphics_api/graphics.rs:example}}
+{{#include ../../../crates/ex/cats/rendering_graphics_api/tests/graphics.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -11,7 +11,7 @@
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/sha_digest.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sha_digest.rs:example}}
 ```
 
 ## Sign and verify a message with a HMAC digest {#hmac}
@@ -21,7 +21,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signature::Signature`][c-ring::signature::Signature]{{hi:ring::signature::Signature}}⮳ of a string then verifies the signature{{hi:Signature}} is correct.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/hmac.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hmac.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -38,7 +38,7 @@ For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, m
 Pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/sha2.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sha2.rs:example}}
 ```
 
 [![sha1][c-sha1-badge]][c-sha1] [![sha1-crates.io][c-sha1-crates.io-badge]][c-sha1-crates.io] [![sha1-github][c-sha1-github-badge]][c-sha1-github] [![sha1-lib.rs][c-sha1-lib.rs-badge]][c-sha1-lib.rs]{{hi:sha1}}{{hi:Hash}}{{hi:sha1}}{{hi:Crypto}}{{hi:Digest}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -46,7 +46,7 @@ Pure Rust implementation of the SHA-2 hash function family, including SHA-224, S
 SHA-1 hash function
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/sha1.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sha1.rs:example}}
 ```
 
 [![md-5][c-md_5-badge]][c-md_5] [![md-5-crates.io][c-md_5-crates.io-badge]][c-md_5-crates.io] [![md-5-github][c-md_5-github-badge]][c-md_5-github] [![md-5-lib.rs][c-md_5-lib.rs-badge]][c-md_5-lib.rs]{{hi:md-5}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -54,7 +54,7 @@ SHA-1 hash function
 MD5 hash function
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/md_5.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/md_5.rs:example}}
 ```
 
 ## Encrypt with AEAD {#aead-encryption}
@@ -66,7 +66,7 @@ For more algorithms, see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-g
 Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/aes_gcm_siv.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/aes_gcm_siv.rs:example}}
 ```
 
 [![aes-gcm][c-aes_gcm-badge]][c-aes_gcm] [![aes-gcm-crates.io][c-aes_gcm-crates.io-badge]][c-aes_gcm-crates.io] [![aes-gcm-github][c-aes_gcm-github-badge]][c-aes_gcm-github] [![aes-gcm-lib.rs][c-aes_gcm-lib.rs-badge]][c-aes_gcm-lib.rs]{{hi:aes-gcm}}{{hi:Aes}}{{hi:Encryption}}{{hi:Gcm}}{{hi:Aead}}{{hi:Ghash}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -74,7 +74,7 @@ Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encry
 Pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/aes_gcm.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/aes_gcm.rs:example}}
 ```
 
 ## Use the RSA algorithm {#rsa}
@@ -84,7 +84,7 @@ Pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encr
 Pure Rust RSA implementation.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/rsa.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/rsa.rs:example}}
 ```
 
 ## Compute digital signatures {#digital-signatures}
@@ -102,7 +102,7 @@ This crate is a support library for Edwards Digital Signature Algorithm (EdDSA) 
 It doesn’t contain an implementation of Ed25519, but instead contains an ed25519::Signature type which other crates can use in conjunction with the signature::Signer and signature::Verifier traits.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/ed25519.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/ed25519.rs:example}}
 ```
 
 [![ed25519-dalek-website][c-ed25519_dalek-website-badge]][c-ed25519_dalek-website] [![ed25519-dalek][c-ed25519_dalek-badge]][c-ed25519_dalek] [![ed25519-dalek-crates.io][c-ed25519_dalek-crates.io-badge]][c-ed25519_dalek-crates.io] [![ed25519-dalek-github][c-ed25519_dalek-github-badge]][c-ed25519_dalek-github] [![ed25519-dalek-lib.rs][c-ed25519_dalek-lib.rs-badge]][c-ed25519_dalek-lib.rs]{{hi:ed25519-dalek}}{{hi:Cryptography}}{{hi:Ed25519}}{{hi:Signature}}{{hi:Ecc}}{{hi:Curve25519}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -114,7 +114,7 @@ It doesn’t contain an implementation of Ed25519, but instead contains an ed255
 `ecdsa` contains a pure Rust implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/ecdsa.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/ecdsa.rs:example}}
 ```
 
 [![dsa-website][c-dsa-website-badge]][c-dsa-website] [![dsa][c-dsa-badge]][c-dsa] [![dsa-crates.io][c-dsa-crates.io-badge]][c-dsa-crates.io] [![dsa-github][c-dsa-github-badge]][c-dsa-github] [![dsa-lib.rs][c-dsa-lib.rs-badge]][c-dsa-lib.rs]{{hi:dsa}}{{hi:Crypto}}{{hi:Signature}}{{hi:Nist}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -123,7 +123,7 @@ Pure Rust implementation of the Digital Signature Algorithm (DSA) as specified i
 signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/dsa.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/dsa.rs:example}}
 ```
 
 ## Create certificates {#certificates}
@@ -140,7 +140,7 @@ For more formats, see Rust Crypto Formats.
 Pure Rust embedded-friendly implementation of the Distinguished Encoding Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std` targets.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/der.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/der.rs:example}}
 ```
 
 [![pem-rfc7468-website][c-pem_rfc7468-website-badge]][c-pem_rfc7468-website] [![pem-rfc7468][c-pem_rfc7468-badge]][c-pem_rfc7468] [![pem-rfc7468-crates.io][c-pem_rfc7468-crates.io-badge]][c-pem_rfc7468-crates.io] [![pem-rfc7468-github][c-pem_rfc7468-github-badge]][c-pem_rfc7468-github] [![pem-rfc7468-lib.rs][c-pem_rfc7468-lib.rs-badge]][c-pem_rfc7468-lib.rs]{{hi:pem-rfc7468}}{{hi:Crypto}}{{hi:Key}}{{hi:Rsa}}{{hi:Pem}}{{hi:Pkcs}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -149,7 +149,7 @@ PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a stric
 specifically for use with cryptographic keys, certificates, and other messages. Provides a no_std-friendly, constant-time implementation suitable for use with cryptographic private keys.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/pem_rfc7468.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/pem_rfc7468.rs:example}}
 ```
 
 [![pkcs8-website][c-pkcs8-website-badge]][c-pkcs8-website] [![pkcs8][c-pkcs8-badge]][c-pkcs8] [![pkcs8-crates.io][c-pkcs8-crates.io-badge]][c-pkcs8-crates.io] [![pkcs8-github][c-pkcs8-github-badge]][c-pkcs8-github] [![pkcs8-lib.rs][c-pkcs8-lib.rs-badge]][c-pkcs8-lib.rs]{{hi:pkcs8}}{{hi:Crypto}}{{hi:Key}}{{hi:Pkcs}}{{hi:Private}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -158,7 +158,7 @@ Pure Rust implementation of Public-Key Cryptography Standards (PKCS) #8: Private
 support for PKCS#8v2 asymmetric key packages (RFC 5958).
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/pkcs8.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/pkcs8.rs:example}}
 ```
 
 [![x509-cert-website][c-x509_cert-website-badge]][c-x509_cert-website] [![x509-cert][c-x509_cert-badge]][c-x509_cert] [![x509-cert-crates.io][c-x509_cert-crates.io-badge]][c-x509_cert-crates.io] [![x509-cert-github][c-x509_cert-github-badge]][c-x509_cert-github] [![x509-cert-lib.rs][c-x509_cert-lib.rs-badge]][c-x509_cert-lib.rs]{{hi:x509-cert}}{{hi:Crypto}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -166,7 +166,7 @@ support for PKCS#8v2 asymmetric key packages (RFC 5958).
 Pure Rust implementation of the X.509 Public Key Infrastructure Certificate format as described in RFC 5280.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/x509_cert.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/x509_cert.rs:example}}
 ```
 
 ## Use TLS / SSL {#tls-ssl}
@@ -176,7 +176,7 @@ Pure Rust implementation of the X.509 Public Key Infrastructure Certificate form
 Rustls is a portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and higher.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/rustls.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/rustls.rs:example}}
 ```
 
 [![native-tls][c-native_tls-badge]][c-native_tls] [![native-tls-crates.io][c-native_tls-crates.io-badge]][c-native_tls-crates.io] [![native-tls-github][c-native_tls-github-badge]][c-native_tls-github] [![native-tls-lib.rs][c-native_tls-lib.rs-badge]][c-native_tls-lib.rs]{{hi:native-tls}}
@@ -184,7 +184,7 @@ Rustls is a portable pure-rust high-level implementation of TLS. Implements TLS 
 A wrapper over a platform's native TLS implementation. Delegates to the system TLS implementations on windows and macOS, and uses OpenSSL on Linux.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/native_tls.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/native_tls.rs:example}}
 ```
 
 ## Utilities {#utilities}
@@ -196,7 +196,7 @@ A wrapper over a platform's native TLS implementation. Delegates to the system T
 Pure-Rust traits and utilities for constant-time cryptographic implementations.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/subtle.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/subtle.rs:example}}
 ```
 
 ### `zeroize` {#zeroize}
@@ -206,7 +206,7 @@ Pure-Rust traits and utilities for constant-time cryptographic implementations.
 `zeroize` securely clear secrets from memory. It guarantees that memory is zeroed, using an operation that will not be optimized away by the compiler. It is a portable pure-Rust implementation that works everywhere, even with WASM.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/cryptography/zeroize.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/zeroize.rs:example}}
 ```
 
 [hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273)  review [blessed.rs][blessed-rs-website]

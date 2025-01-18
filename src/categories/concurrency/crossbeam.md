@@ -11,7 +11,7 @@ The example uses the [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ crate, which 
 This example splits the array in half and performs the work in separate threads.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/crossbeam_spawn.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/crossbeam_spawn.rs:example}}
 ```
 
 ## Create a parallel pipeline {#parallel-pipeline}
@@ -30,7 +30,7 @@ Reading from the channels via the iterator
 [`crossbeam_channel::Receiver::iter`][c-crossbeam_channel::Receiver::iter]{{hi:crossbeam_channel::Receiver::iter}}⮳ method will block, either waiting for new messages or until the channel is closed. Because the channels were created within the [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ we must manually close them via [`std::ops::Drop`][c-std::ops::Drop]{{hi:std::ops::Drop}}⮳ to prevent the entire program from blocking on the worker for-loops. You can think of the calls to [`std::ops::Drop`][c-std::ops::Drop]{{hi:std::ops::Drop}}⮳ as signaling that no more messages will be sent.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/crossbeam_complex.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/crossbeam_complex.rs:example}}
 ```
 
 ## Pass data between two threads {#pass-data-between-two-threads}
@@ -42,7 +42,7 @@ Reading from the channels via the iterator
 This example demonstrates the use of [`crossbeam_channel`][c-crossbeam_channel]{{hi:crossbeam_channel}}⮳ in a single producer, single consumer{{hi:Single producer, single consumer}} (SPSC) setting. We build off the `crossbeam spawn`{{hi:crossbeam spawn}}⮳ example by using [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ and [`crossbeam::thread::Scope::spawn`][c-crossbeam::thread::Scope::spawn]{{hi:crossbeam::thread::Scope::spawn}}⮳ to manage the producer thread. Data is exchanged between the two threads using a [`crossbeam::scope`][c-crossbeam::scope]{{hi:crossbeam::scope}}⮳ channel, meaning there is no limit to the number of storable messages{{hi:Messages}}. The producer thread sleeps for half a second in between messages.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/crossbeam_spsc.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/crossbeam_spsc.rs:example}}
 ```
 
 {{#include refs.incl.md}}

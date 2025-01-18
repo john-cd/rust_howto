@@ -5,7 +5,7 @@
 ## Unmanned aerial vehicles {#uavs}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/aerospace_unmanned_aerial_vehicles/uavs.rs:example}}
+{{#include ../../../crates/ex/cats/aerospace_unmanned_aerial_vehicles/tests/uavs.rs:example}}
 ```
 
 {{#include refs.incl.md}}

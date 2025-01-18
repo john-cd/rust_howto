@@ -28,7 +28,7 @@ Zenoh is a great tool for data storage, query, and computations over geographica
 Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a Unix file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, JSON, raw bytes buffer…).
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/zenoh.rs:example}}
+{{#include ../../../crates/ex/cats/science_robotics/tests/zenoh.rs:example}}
 ```
 
 ## Open Rust Robotics {#open-rust-robotics}
@@ -39,7 +39,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 [![openrr-lib.rs][c-openrr-lib.rs-badge]][c-openrr-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/openrr.rs:example}}
+{{#include ../../../crates/ex/cats/science_robotics/tests/openrr.rs:example}}
 ```
 
 ## Create a behavior tree with `bonsai-bt` {#bonsai-bt}
@@ -52,7 +52,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 `bonsai-bt` is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree-wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior’s can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science_robotics/bonsai_bt.rs:example}}
+{{#include ../../../crates/ex/cats/science_robotics/tests/bonsai_bt.rs:example}}
 ```
 
 {{#include refs.incl.md}}

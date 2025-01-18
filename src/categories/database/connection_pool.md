@@ -9,7 +9,7 @@
 `deadpool` is a simple async pool for connections and objects of any type.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/database/deadpool.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/deadpool.rs:example}}
 ```
 
 {{#include refs.incl.md}}

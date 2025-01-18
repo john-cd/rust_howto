@@ -13,7 +13,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ type.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/parse.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/parse.rs:example}}
 ```
 
 ## Create a base URL by removing path segments {#create-a-base-url-by-removing-path-segments}
@@ -23,7 +23,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c-url::PathSegmentsMut::clear]{{hi:url::PathSegmentsMut::clear}}⮳ removes paths and [`url::Url::set_query`][c-url::Url::set_query]{{hi:url::Url::set_query}}⮳ removes query string.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/base.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/base.rs:example}}
 ```
 
 ## Create new URLs from a base URL {#create-new-urls-from-a-base-url}
@@ -33,7 +33,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates a new URL from a base and relative path{{hi:Relative path}}.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/new.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/new.rs:example}}
 ```
 
 ## Extract the URL origin (scheme / host / port) {#extract-the-url-origin}
@@ -43,13 +43,13 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to extract information about the URL it represents.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/origin.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/origin.rs:example}}
 ```
 
 [`url::Url::origin`][c-url::Url::origin]{{hi:url::Url::origin}}⮳ produces the same result.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/origin1.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/origin1.rs:example}}
 ```
 
 ## Remove fragment identifiers and query pairs from a URL {#remove-fragment-identifiers-and-query-pairs}
@@ -59,7 +59,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 Parses [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ and slices it with [`url::Position`][c-url::Position]{{hi:url::Position}}⮳ to strip unneeded URL parts.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming/fragment.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming/tests/fragment.rs:example}}
 ```
 
 {{#include refs.incl.md}}

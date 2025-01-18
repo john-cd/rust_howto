@@ -15,7 +15,7 @@
 Bindings for directly calling `libc` functions.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/opqr/tests/os/libc.rs:example}}
+{{#include ../../../crates/ex/cats/os/tests/libc.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 `tera` is a template engine based on Jinja2/Django templates.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/template_engine/tera.rs:example}}
+{{#include ../../../crates/ex/cats/template_engine/tests/tera.rs:example}}
 ```
 
 {{#include refs.incl.md}}

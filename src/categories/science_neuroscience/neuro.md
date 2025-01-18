@@ -5,7 +5,7 @@
 ## Neuro {#neuro}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/stuv/tests/science_neuroscience/neuro.rs:example}}
+{{#include ../../../crates/ex/cats/science_neuroscience/tests/neuro.rs:example}}
 ```
 
 {{#include refs.incl.md}}

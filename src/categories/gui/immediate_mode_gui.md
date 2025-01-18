@@ -20,7 +20,7 @@ Immediate-mode UI. Lots of widgets. The most useable out of the box if your need
 - [`egui` main struct Ui][c-egui::Ui]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/egui.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/egui.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -5,7 +5,7 @@
 ## Internationalize your app {#internationalization}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/internationalization/internationalization1.rs:example}}
+{{#include ../../../crates/ex/cats/internationalization/tests/internationalization1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

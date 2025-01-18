@@ -13,7 +13,7 @@ The Rust standard library provides smart pointer types, such as `Mutex<T>`{{hi:M
 Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:Lazy static}}. [`lazy static`][c-lazy_static]{{hi:lazy_static}}⮳ creates a globally available `static ref` which requires a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ to allow mutation (also see [`std::sync::RwLock`][c-std::sync::RwLock]{{hi:std::sync::RwLock}}⮳). The [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳ wrap ensures the state cannot be simultaneously accessed by multiple threads, preventing race conditions. A [`std::sync::MutexGuard`][c-std::sync::MutexGuard]{{hi:std::sync::MutexGuard}}⮳ must be acquired to read or mutate the value stored in a [`std::sync::Mutex`][c-std::sync::Mutex]{{hi:std::sync::Mutex}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/global_mut_state.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/global_mut_state.rs:example}}
 ```
 
 ## Mutexes {#mutex}
@@ -23,7 +23,7 @@ Declare global state using [`lazy static`][c-lazy_static]{{hi:lazy_static}}{{hi:
 Allow access to data from one thread at a time.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/shared_state_mutex.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/shared_state_mutex.rs:example}}
 ```
 
 ## `parking_lot` {#parking-lot}
@@ -37,11 +37,11 @@ More compact and efficient implementations of the standard synchronization primi
 `std::sync::Mutex`{{hi:std::sync::Mutex}} works fine, but `parking_lot`{{hi:parking_lot}} is faster.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/shared_state_parking_lot.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/shared_state_parking_lot.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/shared_state_parking_lot2.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/shared_state_parking_lot2.rs:example}}
 ```
 
 ## Atomics {#atomics}
@@ -51,7 +51,7 @@ More compact and efficient implementations of the standard synchronization primi
 Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c-std::sync::atomic]{{hi:std::sync::atomic}}⮳ provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types. It defines atomic versions of a select number of primitive types, including [`std::sync::atomic::AtomicBool`][c-std::sync::atomic::AtomicBool]{{hi:std::sync::atomic::AtomicBool}}⮳, [`std::sync::atomic::AtomicIsize`][c-std::sync::atomic::AtomicIsize]{{hi:std::sync::atomic::AtomicIsize}}⮳, [`std::sync::atomic::AtomicUsize`][c-std::sync::atomic::AtomicUsize]{{hi:std::sync::atomic::AtomicUsize}}⮳, [`std::sync::atomic::AtomicI8`][c-std::sync::atomic::AtomicI8]{{hi:std::sync::atomic::AtomicI8}}⮳, [`std::sync::atomic::AtomicU16`][c-std::sync::atomic::AtomicU16]{{hi:std::sync::atomic::AtomicU16}}⮳, etc.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/shared_state_atomics.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/shared_state_atomics.rs:example}}
 ```
 
 The most common way to share an atomic variable is to put it into an [`std::sync::Arc`][c-std::sync::Arc]{{hi:std::sync::Arc}}⮳ (an atomically-reference-counted shared pointer).
@@ -59,7 +59,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 [`crossbeam`][c-crossbeam]{{hi:crossbeam}}⮳ also offers [`crossbeam::atomic::AtomicCell`][c-crossbeam::atomic::AtomicCell]{{hi:crossbeam::atomic::AtomicCell}}⮳, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c-std::cell::Cell]{{hi:std::cell::Cell}}⮳, except it can also be shared among multiple threads.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/c/tests/concurrency/shared_state_crossbeam.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/shared_state_crossbeam.rs:example}}
 ```
 
 ## `arc-swap` {#arc-swap}

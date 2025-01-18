@@ -9,7 +9,7 @@
 Pure Rust multi-line text handling. "Full text layout including rich text and support for BiDi and non-latin scripts. The best option for now."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/cosmic_text.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/cosmic_text.rs:example}}
 ```
 
 ## `parley` {#parley}
@@ -19,7 +19,7 @@ Pure Rust multi-line text handling. "Full text layout including rich text and su
 Parley provides an API for implementing rich text layout. "Another very accomplished text layout library used by `druid` and `xilem`."
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/gui/parley.rs:example}}
+{{#include ../../../crates/ex/cats/gui/tests/parley.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -13,7 +13,7 @@
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/bytemuck.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/tests/bytemuck.rs:example}}
 ```
 
 ## `zerocopy` {#zerocopy}
@@ -38,7 +38,7 @@
 Zero-copy is often used in network programming, where high performance and low memory overhead are critical.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/efghijkl/tests/encoding/zerocopy.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/tests/zerocopy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

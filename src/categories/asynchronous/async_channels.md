@@ -15,13 +15,13 @@ Tokio's [`sync`][c-tokio-sync]⮳ module provides channels{{hi:Channels}} that w
 [`tokio::sync::oneshot`][c-tokio::sync::oneshot]{{hi:tokio::sync::oneshot}}⮳ sends a single value from a single producer{{hi:Producer}} to a single consumer{{hi:Consumer}}. This channel{{hi:Channels}} is usually used to send the result of a computation to a waiter.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/async_channels_oneshot.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/async_channels_oneshot.rs:example}}
 ```
 
 Another example:
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/async_channels_oneshot2.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/async_channels_oneshot2.rs:example}}
 ```
 
 ## Send messages from multiple producers to a single consumer {#mpsc}
@@ -29,7 +29,7 @@ Another example:
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/async_channels_mpsc.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/async_channels_mpsc.rs:example}}
 ```
 
 ## Send messages from multiple producers to one of multiple consumers
@@ -46,7 +46,7 @@ The Sender and Receiver sides are cloneable and can be shared among multiple thr
 When all Senders or all Receivers are dropped, the channel becomes closed. When a channel is closed, no more messages can be sent, but remaining messages can still be received. The channel can also be closed manually by calling `Sender::close()` or `Receiver::close()`.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/async_channel.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/async_channel.rs:example}}
 ```
 
 ## Broadcast messages from multiple producers to multiple consumers
@@ -59,7 +59,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 `postage` is a feature-rich, portable async channel library, with different options than Tokio. `postage::broadcast` provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/postage.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/postage.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -78,7 +78,7 @@ Fast sync and async channel:
 [![kanal-lib.rs][c-kanal-lib.rs-badge]][c-kanal-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/ab/tests/asynchronous/kanal.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/kanal.rs:example}}
 ```
 
 </div>

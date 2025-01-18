@@ -9,7 +9,7 @@
 Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. All Rust frameworks are fast, but choose `actix` if you need the absolutely maximum performance.
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/wxyz/tests/web_programming_http_server/actix_web.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming_http_server/tests/actix_web.rs:example}}
 ```
 
 ## See also

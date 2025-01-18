@@ -31,7 +31,7 @@ error-chain = "0.11"
 ### `build.rs` {#skip2}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_bundled_static.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_bundled_static.rs:example}}
 ```
 
 ### `src/hello.c` {#skip3}
@@ -51,7 +51,7 @@ void greet(const char* name) {
 ### `src/main.rs` {#skip4}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_bundled_static1.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_bundled_static1.rs:example}}
 ```
 
 ## Compile and link statically to a bundled C++ library {#cpp}
@@ -74,7 +74,7 @@ cc = "1"
 ### `build.rs` (static C++) {#skip6}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_bundled_cpp.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_bundled_cpp.rs:example}}
 ```
 
 ### `src/foo.cpp` (static C++) {#skip7}
@@ -92,7 +92,7 @@ int multiply(int x, int y) {
 ### `src/main.rs` (static C++) {#skip8}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_bundled_cpp1.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_bundled_cpp1.rs:example}}
 ```
 
 ## Compile a C library while setting custom defines {#cc-custom-defines}
@@ -120,7 +120,7 @@ cc = "1"
 ### `build.rs` (custom defines) {#skip10}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_defines.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_defines.rs:example}}
 ```
 
 ### `src/foo.c` (custom defines) {#skip11}
@@ -139,7 +139,7 @@ void print_app_info() {
 ### `src/main.rs` (custom defines) {#skip12}
 
 ```rust,editable
-{{#include ../../../crates/ex/categories/d/tests/development_tools_build_utils/cc_defines1.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_build_utils/tests/cc_defines1.rs:example}}
 ```
 
 {{#include refs.incl.md}}
