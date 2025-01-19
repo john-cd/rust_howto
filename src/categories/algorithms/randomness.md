@@ -10,15 +10,7 @@
 Generates random numbers{{hi:Random numbers}} with help of the random-number generator{{hi:Random-number generator}} [`rand::Rng`][c-rand::Rng]{{hi:rand::Rng}}. Each thread has an initialized generator. Integers are uniformly distributed over the range of the type, and floating point numbers are uniformly distributed from 0 up to but not including 1.
 
 ```rust,editable
-<<<<<<< Updated upstream
 {{#include ../../../crates/ex/cats/algorithms/tests/rand/rand1.rs:example}}
-=======
-<<<<<<< HEAD
-{{#include ../../../crates/ex/cats/algorithms/tests/rand/rand.rs:example}}
-=======
-{{#include ../../../crates/ex/cats/algorithms/tests/rand/rand1.rs:example}}
->>>>>>> 42e28678 (update example includes / move examples / formatting)
->>>>>>> Stashed changes
 ```
 
 ## Generate random numbers within a range {#generate-random-numbers-within-a-range}

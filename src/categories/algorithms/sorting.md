@@ -9,15 +9,7 @@
 This example will sort{{hi:Sorting}} a Vector of integers via [`std::vec::Vec::sort`][c-std::vec::Vec::sort]{{hi:std::vec::Vec::sort}}⮳. Alternative would be to use [`std::vec::Vec::sort_unstable`][c-std::vec::Vec::sort_unstable]{{hi:std::vec::Vec::sort_unstable}}⮳ which can be faster, but does not preserve the order of equal elements.
 
 ```rust,editable
-<<<<<<< Updated upstream
 {{#include ../../../crates/ex/cats/algorithms/tests/sort/sort1.rs:example}}
-=======
-<<<<<<< HEAD
-{{#include ../../../crates/ex/cats/algorithms/tests/sort/sort.rs:example}}
-=======
-{{#include ../../../crates/ex/cats/algorithms/tests/sort/sort1.rs:example}}
->>>>>>> 42e28678 (update example includes / move examples / formatting)
->>>>>>> Stashed changes
 ```
 
 ## Sort a vector of floats {#sort-vector-floats}

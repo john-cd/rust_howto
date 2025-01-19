@@ -81,15 +81,7 @@ diesel print-schema > src/schema.rs
 - Write the Rust code to interact with the database:
 
 ```rust,editable,noplayground
-<<<<<<< Updated upstream
 {{#include ../../../crates/ex/cats/database/tests/query_builders_orms/diesel1.rs:example}}
-=======
-<<<<<<< HEAD
-{{#include ../../../crates/ex/cats/database/diesel/tests/query_builders_orms/diesel1.rs:example}}
-=======
-{{#include ../../../crates/ex/cats/database/tests/query_builders_orms/diesel1.rs:example}}
->>>>>>> 42e28678 (update example includes / move examples / formatting)
->>>>>>> Stashed changes
 ```
 
 ## `toasty` {#toasty}
