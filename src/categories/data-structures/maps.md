@@ -14,7 +14,7 @@
 `indexmap` offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/data_structures/tests/indexmap.rs:example}}
+{{#include ../../../crates/ex/cats/data_structures/tests/maps/indexmap.rs:example}}
 ```
 
 ## Store data in a multimap {#multimap}
@@ -27,7 +27,7 @@
 `multimap` is implemented as a thin wrapper around `std::collections::HashMap`. It allows multiple values for a given key.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/multimap.rs:example}}
+{{#include ../../../crates/ex/cats/data_structures/tests/maps/multimap.rs:example}}
 ```
 
 ## Store collections of objects that need stable, safe references {#slotmap}
@@ -42,7 +42,7 @@ Use `slotmap` to store collections of objects that need stable, safe references 
 `slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap` , `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/slotmap.rs:example}}
+{{#include ../../../crates/ex/cats/data_structures/tests/maps/slotmap.rs:example}}
 ```
 
 ## See also

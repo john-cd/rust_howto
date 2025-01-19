@@ -2,7 +2,7 @@ mod aggregate_data;
 mod create_tables;
 mod insert_query_data;
 
-mod deadpool2;
+mod cornucopia;
 mod tokio_postgres;
 
 #[test]

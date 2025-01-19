@@ -23,7 +23,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 [`Tower HTTP`][c-tower_http]{{hi:tower_http}}⮳ contains HTTP specific Tower utilities.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/web_programming_http_server/tests/tower_http.rs:example}}
+{{#include ../../../crates/ex/cats/web_programming_http_server/tests/middleware/tower_http.rs:example}}
 ```
 
 ## Investigate alternatives to `tower` {#alternatives}

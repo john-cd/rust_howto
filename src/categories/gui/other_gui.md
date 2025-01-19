@@ -9,7 +9,7 @@
 The replacement for Druid based on the more interoperable Vello and Glazier crates. However, it's currently not complete enough to be usable.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/tests/xilem.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/xilem.rs:example}}
 ```
 
 ## `slint` {#slint}
@@ -24,7 +24,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 - [madewithslint.com][c-slint-madewithslint-website]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/tests/slint.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/slint.rs:example}}
 ```
 
 ## GPUI {#gpui}

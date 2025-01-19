@@ -31,7 +31,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/parsing/tests/pest.rs:example}}
+{{#include ../../../crates/ex/cats/parsing/tests/pest/pest.rs:example}}
 ```
 
 ### Create a parser with `tree-sitter` {#tree-sitter}

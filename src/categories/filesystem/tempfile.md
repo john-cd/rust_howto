@@ -9,7 +9,7 @@
 `tempfile` supports both temporary files and temporary directories.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/filesystem/tests/tempfile.rs:example}}
+{{#include ../../../crates/ex/cats/filesystem/tests/tempfile/tempfile.rs:example}}
 ```
 
 {{#include refs.incl.md}}

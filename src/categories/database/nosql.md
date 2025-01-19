@@ -15,7 +15,7 @@
 This is the officially supported MongoDB Rust driver, a client side library that can be used to interact with MongoDB deployments in Rust applications. It uses the bson crate for BSON support. The driver contains a fully async API that requires tokio. The driver also has a sync API that may be enabled via feature flags.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/mongodb.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/nosql/mongodb.rs:example}}
 ```
 
 ## Connect to Redis {#redis}
@@ -28,7 +28,7 @@ This is the officially supported MongoDB Rust driver, a client side library that
 Redis-rs is a high level redis library for Rust. It provides convenient access to all Redis functionality through a very flexible but low-level API. It uses a customizable type conversion trait so that any operation can return results in just the type you are expecting. This makes for a very pleasant development experience.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/redis.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/nosql/redis.rs:example}}
 ```
 
 {{#include refs.incl.md}}

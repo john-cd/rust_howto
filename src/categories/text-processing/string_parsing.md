@@ -9,7 +9,7 @@
 Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} string using the [`unicode_segmentation::UnicodeSegmentation::graphemes`][c-unicode_segmentation::UnicodeSegmentation::graphemes]{{hi:unicode_segmentation::UnicodeSegmentation::graphemes}}⮳ function from the [`unicode_segmentation`][c-unicode_segmentation]{{hi:unicode_segmentation}}⮳ crate.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/text_processing/tests/graphemes.rs:example}}
+{{#include ../../../crates/ex/cats/text_processing/tests/string_parsing/graphemes.rs:example}}
 ```
 
 ## Implement the `FromStr` trait for a custom `struct` {#implement-the-fromstr-trait-for-a-custom-struct}
@@ -19,7 +19,7 @@ Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} stri
 Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/text_processing/tests/from_str.rs:example}}
+{{#include ../../../crates/ex/cats/text_processing/tests/string_parsing/from_str.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -13,7 +13,7 @@ Unstructured JSON can be parsed into a universal [`serde_json::Value`][c-serde_j
 The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/json.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/tests/serde/json.rs:example}}
 ```
 
 ## Deserialize a TOML configuration file {#toml}
@@ -24,13 +24,13 @@ TOML is a simple, ergonomic, and readable configuration format that is often use
 The following parses some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/toml.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/tests/toml/toml.rs:example}}
 ```
 
 Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/toml1.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/tests/toml/toml1.rs:example}}
 ```
 
 ## Read and write integers in little-endian byte order {#byteorder}

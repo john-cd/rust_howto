@@ -9,7 +9,7 @@
 Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environmental variable.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log_mod.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log/log_mod.rs:example}}
 ```
 
 The [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}} environment variable controls [`env-logger`][c-env_logger]{{hi:env_logger}}{{hi:env_logger}}⮳ output. Module declarations take comma separated entries formatted like `path::to::module=log_level`. Run the `test` application as follows:
@@ -41,7 +41,7 @@ Then, [`env_logger::Builder::init`][c-env_logger::Builder::init]{{hi:env_logger:
 All these steps are normally done internally by [`env_logger::init`][c-env_logger::init]{{hi:env_logger::init}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log_env_variable.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log/log_env_variable.rs:example}}
 ```
 
 ## Include a timestamp in log messages {#timestamp-in-log-messages}
@@ -54,7 +54,7 @@ Each log entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now
 The example calls [`env_logger::Builder::format`][c-env_logger::Builder::format]{{hi:env_logger::Builder::format}}⮳ to set a closure which formats each message text with timestamp, [`log::Record::level`][c-log::Record::level]{{hi:log::Record::level}}⮳ and body ([`log::Record::args`][c-log::Record::args]{{hi:log::Record::args}}⮳).
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log_timestamp.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log/log_timestamp.rs:example}}
 ```
 
 stderr output will contain
@@ -73,7 +73,7 @@ stderr output will contain
 Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file::FileAppender`][c-log4rs::append::file::FileAppender]{{hi:log4rs::append::file::FileAppender}}⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`log4rs::encode::pattern`][c-log4rs::encode::pattern]{{hi:log4rs::encode::pattern}}⮳ Assigns the configuration to [`log4rs::config::Config`][c-log4rs::config::Config]{{hi:log4rs::config::Config}}⮳ and sets the default [`log::LevelFilter`][c-log::LevelFilter]{{hi:log::LevelFilter}}⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log_custom.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_debugging/tests/log/log_custom.rs:example}}
 ```
 
 {{#include refs.incl.md}}

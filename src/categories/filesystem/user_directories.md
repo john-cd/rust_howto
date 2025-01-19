@@ -11,7 +11,7 @@ Get platform-specific locations for configuration, cache, and other data
 `dirs` is a low-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/filesystem/tests/dirs.rs:example}}
+{{#include ../../../crates/ex/cats/filesystem/tests/user_directories/dirs.rs:example}}
 ```
 
 ## `directories` {#directories}
@@ -23,7 +23,7 @@ Get platform-specific locations for configuration, cache, and other data
 `directories` is a higher-level library than `dirs` and can also compute paths for applications.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/filesystem/tests/directories.rs:example}}
+{{#include ../../../crates/ex/cats/filesystem/tests/user_directories/directories.rs:example}}
 ```
 
 {{#include refs.incl.md}}

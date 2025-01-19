@@ -19,7 +19,7 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 `T` is `Sync` if and only if `&T` is `Send`.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/sync_send.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/send_sync/send_sync.rs:example}}
 ```
 
 ## Existing implementations of `Send` and `Sync` {#existing-impl-send-sync}

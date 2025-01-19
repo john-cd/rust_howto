@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/multithreading_spawn_join.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/explicit_threads/multithreading_spawn_join.rs:example}}
 ```
 
 Note: when the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
@@ -19,7 +19,7 @@ Note: when the main thread of a Rust program completes, all spawned threads{{hi:
 [Scoped threads][c-std::thread::scope]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/multithreading_scoped_threads.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/explicit_threads/multithreading_scoped_threads.rs:example}}
 ```
 
 {{#include refs.incl.md}}

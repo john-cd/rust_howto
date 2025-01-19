@@ -16,7 +16,7 @@
 `itertools` includes extra iterator adaptors, functions and macros.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/itertools.rs:example}}
+{{#include ../../../crates/ex/cats/rust_patterns/tests/rust_patterns/itertools.rs:example}}
 ```
 
 {{#include refs.incl.md}}

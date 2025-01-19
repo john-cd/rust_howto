@@ -1,5 +1,0 @@
-mod multithreading_rayon;
-mod multithreading_rayon_custom;
-mod multithreading_rayon_parsort;
-mod multithreading_scoped_threads;
-mod multithreading_spawn_join;

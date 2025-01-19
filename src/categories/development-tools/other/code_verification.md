@@ -29,7 +29,7 @@ There are two main approaches to Rust program verification:
 [kani][c-kani-github]{{hi:kani}}⮳ is a Rust verifier.
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/other/tests/kani.rs:example}}
+{{#include ../../../../crates/ex/cats/development_tools/tests/other/kani.rs:example}}
 ```
 
 {{#include refs.incl.md}}

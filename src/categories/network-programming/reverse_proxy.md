@@ -61,7 +61,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 [ngrok][c-ngrok-website]⮳ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the native and idiomatic crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/network_programming/tests/ngrok.rs:example}}
+{{#include ../../../crates/ex/cats/network_programming/tests/reverse_proxy/ngrok.rs:example}}
 ```
 
 ## `nginx` {#nginx}
@@ -83,7 +83,7 @@ A library for building fast, reliable and evolvable network services.
 - [Pingora quick start][c-pingora-quick-start-github]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/network_programming/tests/pingora.rs:example}}
+{{#include ../../../crates/ex/cats/network_programming/tests/reverse_proxy/pingora.rs:example}}
 ```
 
 {{#include refs.incl.md}}

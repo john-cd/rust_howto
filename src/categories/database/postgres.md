@@ -11,7 +11,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 [`postgres::Client::connect`][c-postgres::Client::connect]{{hi:postgres::Client::connect}}⮳ helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with `Client::connect`. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/postgres/tests/create_tables.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/postgres/create_tables.rs:example}}
 ```
 
 ## Insert and query data {#insert-query-data-postgres}
@@ -21,7 +21,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 The recipe inserts data into the `author` table using [`postgres::Client::execute`][c-postgres::Client::execute]{{hi:postgres::Client::execute}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳. Then, displays the data from the `author` table using [`postgres::Client::query`][c-postgres::Client::query]{{hi:postgres::Client::query}}⮳ method of [`postgres::Client`][c-postgres::Client]{{hi:postgres::Client}}⮳.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/postgres/tests/insert_query_data.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/postgres/insert_query_data.rs:example}}
 ```
 
 ## Aggregate data {#aggregate-data-postgres}
@@ -31,7 +31,7 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample]⮳ in descending order.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/postgres/tests/aggregate_data.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/postgres/aggregate_data.rs:example}}
 ```
 
 ## `tokio-postgres` {#tokio-postgres}
@@ -44,7 +44,7 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 Postgres-specific library. Performs better than SQLx.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/tokio_postgres.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/postgres/tokio_postgres.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -68,7 +68,7 @@ The basic premise is thus to:
 - Use the generated code in your project.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/cornucopia.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/postgres/cornucopia.rs:example}}
 ```
 
 </div>

@@ -12,7 +12,7 @@
 [`ratatui`][c-ratatui-website]⮳ is a lightweight, high-level library that provides a set of widgets, layouts, and utilities to build complex Rust TUIs.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/tests/ratatui.rs:example}}
+{{#include ../../../crates/ex/cats/command_line_interface/examples/ratatui.rs:example}}
 ```
 
 `ratatui` offers templates to get started. For example, to use the simple template, run the following commands:

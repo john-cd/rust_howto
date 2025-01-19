@@ -32,3 +32,4 @@ fn test() -> io::Result<()> {
     Ok(())
 }
 // [ P1 review](https://github.com/john-cd/rust_howto/issues/1005)
+// TODO P0 add example in .md

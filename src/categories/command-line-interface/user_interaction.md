@@ -14,7 +14,7 @@
 `inquire` provides several different prompts in order to interactively ask the user for information via the CLI.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/tests/inquire.rs:example}}
+{{#include ../../../crates/ex/cats/command_line_interface/tests/user_interaction/inquire.rs:example}}
 ```
 
 ## Display progress bars and spinners {#indicatif}
@@ -30,11 +30,11 @@
 This currently primarily provides progress bars and spinners as well as basic color support.{{hi:Progress bars and spinners}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/command_line_interface/tests/indicatif.rs:example}}
+{{#include ../../../crates/ex/cats/command_line_interface/tests/user_interaction/indicatif.rs:example}}
 ```
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/command_line_interface/tests/indicatif2.rs:example}}
+{{#include ../../../crates/ex/cats/command_line_interface/tests/user_interaction/indicatif2.rs:example}}
 ```
 
 {{#include refs.incl.md}}

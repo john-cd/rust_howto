@@ -12,7 +12,7 @@
 [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/elasticsearch.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/search/elasticsearch.rs:example}}
 ```
 
 ## Add a full-text search engine to a static website {#tinysearch}

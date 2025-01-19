@@ -7,7 +7,7 @@
 Futures are about a single value that will eventually be produced, but many event sources naturally produce a [`futures::stream::Stream`][c-futures::stream::Stream]{{hi:futures::stream::Stream}} of values over time.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/asynchronous/tests/streams.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/streams/streams.rs:example}}
 ```
 
 There are combinator-style methods such as [`futures::prelude::stream::StreamExt::map`][c-futures::prelude::stream::StreamExt::map]{{hi:futures::prelude::stream::StreamExt::map}}⮳, [`futures::prelude::stream::StreamExt::filter`][c-futures::prelude::stream::StreamExt::filter]{{hi:futures::prelude::stream::StreamExt::filter}}⮳, and [`futures::prelude::stream::StreamExt::fold`][c-futures::prelude::stream::StreamExt::fold]{{hi:futures::prelude::stream::StreamExt::fold}}⮳, and their early-exit-on-error cousins [`futures::prelude::stream::TryStreamExt::try_filter`][c-futures::prelude::stream::TryStreamExt::try_filter]{{hi:futures::prelude::stream::TryStreamExt::try_filter}}⮳, and [`futures::prelude::stream::TryStreamExt::try_fold`][c-futures::prelude::stream::TryStreamExt::try_fold]{{hi:futures::prelude::stream::TryStreamExt::try_fold}}⮳.
@@ -15,7 +15,7 @@ There are combinator-style methods such as [`futures::prelude::stream::StreamExt
 To process multiple items from a stream{{hi:Stream}} concurrently, use the [`futures::prelude::stream::StreamExt::for_each_concurrent`][c-futures::prelude::stream::StreamExt::for_each_concurrent]{{hi:futures::prelude::stream::StreamExt::for_each_concurrent}}⮳ and [`futures::prelude::stream::TryStreamExt::try_for_each_concurrent`][c-futures::prelude::stream::TryStreamExt::try_for_each_concurrent]{{hi:futures::prelude::stream::TryStreamExt::try_for_each_concurrent}}⮳ methods:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/asynchronous/tests/streams2.rs:example}}
+{{#include ../../../crates/ex/cats/asynchronous/tests/streams/streams2.rs:example}}
 ```
 
 ## See also

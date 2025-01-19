@@ -9,7 +9,7 @@
 A lightweight low-level single-threaded actor runtime.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/stakker.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/actors/stakker.rs:example}}
 ```
 
 ## `riker` {#riker}
@@ -19,7 +19,7 @@ A lightweight low-level single-threaded actor runtime.
 An Actor Framework for Rust to build fast, highly concurrent and resilient applications.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actors.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/actors/actors.rs:example}}
 ```
 
 ## `ractor` {#ractor}
@@ -30,7 +30,7 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![ractor-lib.rs][c-ractor-lib.rs-badge]][c-ractor-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/ractor.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/actors/ractor.rs:example}}
 ```
 
 ## `actix` {#actix}
@@ -41,7 +41,7 @@ An Actor Framework for Rust to build fast, highly concurrent and resilient appli
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actix.rs:example}}
+{{#include ../../../crates/ex/cats/concurrency/tests/actors/actix.rs:example}}
 ```
 
 ## See also
