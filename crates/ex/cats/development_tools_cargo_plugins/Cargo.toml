@@ -26,4 +26,4 @@ publish.workspace = true
 # cargo-nextest
 # cargo-tarpaulin
 # cargo-udeps
-xshell = { version = "0.2.7" }
+# xshell = { version = "0.2.7" }

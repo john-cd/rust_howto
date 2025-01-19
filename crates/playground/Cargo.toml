@@ -14,8 +14,8 @@ categories.workspace = true
 publish = false
 
 [dependencies]
-anyhow.workspace = true
+#anyhow.workspace = true
 inquire = "0.7.5"
 tracing.workspace = true
 tracing-subscriber.workspace = true
-walkdir.workspace = true
+#walkdir.workspace = true

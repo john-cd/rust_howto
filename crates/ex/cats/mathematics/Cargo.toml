@@ -27,9 +27,9 @@ rust_decimal_macros = "1.36.0"
 # General
 anyhow.workspace = true
 approx.workspace = true
+#hyper = "1.5.2"
 serde_json.workspace = true
-hyper = "1.5.2"
-tokio.workspace = true
+#tokio.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
 rug = "1.26.1"

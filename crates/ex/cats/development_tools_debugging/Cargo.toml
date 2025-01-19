@@ -29,35 +29,33 @@ tracing-opentelemetry = "0.28.0"
 tracing-subscriber.workspace = true
 
 ## General
-axum = "0.8.1"
-dotenvy = "0.15.7"
-serde_json.workspace = true
-
 anyhow.workspace = true
-crates-io = "0.40.6"
-dashmap = "6.1.0"
-data-encoding = "2.6.0"
-glob = "0.3.1"
-hex-literal = "0.4"
-hyper = "1.5.2"
-hyper-tls = "0.6.0"
-image = "0.25.5"
-itertools = "0.14.0"
-lazy_static.workspace = true
-num = "0.4.3"
-num_cpus = "1.16.0"
-rand.workspace = true        # use beta
-serde.workspace = true
-serde_derive = "1.0.216"
-time = "0.3.37"
-tokio.workspace = true
-walkdir.workspace = true
+#axum = "0.8.1"
 chrono = "0.4.39"
-
+#crates-io = "0.40.6"
+#data-encoding = "2.6.0"
+#dashmap = "6.1.0"
+#dotenvy = "0.15.7"
+#glob = "0.3.1"
+#hex-literal = "0.4"
+#hyper = "1.5.2"
+#hyper-tls = "0.6.0"
+#image = "0.25.5"
+#itertools = "0.14.0"
+#lazy_static.workspace = true
+#num = "0.4.3"
+#num_cpus = "1.16.0"
+#rand.workspace = true
+#serde.workspace = true
+#serde_derive = "1.0.216"
+serde_json.workspace = true
+#time = "0.3.37"
+tokio.workspace = true
+#walkdir.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
 openssl = { version = "0.10.68", features = ["vendored"] }
-rusqlite = { version = "0.32.1", features = ["chrono"] }
+rusqlite = { version = "0.32.1", features = ["chrono"] } # pinned
 syslog = "7.0.0"
 
 [dev-dependencies]

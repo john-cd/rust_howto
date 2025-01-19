@@ -24,6 +24,13 @@ checkall:
   cargo check --workspace --all-targets --locked
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+alias bc := buildcurrent
+
+# Build the package in the current directory (or the default packages of the workspace if in the root)
+[no-cd]
+buildcurrent:
+  cargo build --all-targets --locked
+
 alias bp := buildpkg
 
 # Build a specific package

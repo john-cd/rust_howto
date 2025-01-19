@@ -14,13 +14,13 @@ categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
-anyhow.workspace = true
+#anyhow.workspace = true
+#pgp = "0.14.2"
+#serde.workspace = true
+#tera = "1.20.0"
 tool_lib = { path = "../tool_lib" }
-tera = "1.20.0"
 #url.workspace = true # TODO
-walkdir.workspace = true
-serde.workspace = true
-pgp = "0.14.2"
+#walkdir.workspace = true
 
 [[bin]]
 name = "autogen"

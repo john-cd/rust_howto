@@ -20,7 +20,7 @@ once_cell.workspace = true
 
 # General
 anyhow.workspace = true
-approx.workspace = true
-serde_json.workspace = true
-hyper = "1.5.2"
-tokio.workspace = true
+#approx.workspace = true
+#hyper = "1.5.2"
+#serde_json.workspace = true
+#tokio.workspace = true

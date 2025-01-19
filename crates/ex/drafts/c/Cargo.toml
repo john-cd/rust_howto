@@ -1,26 +1,9 @@
-[package]
-name = "c"
-version.workspace = true
-authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies"
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-license = "CC0-1.0"
-keywords.workspace = true
-categories.workspace = true
-publish = false
-readme = "README.md"
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
 ## Command-line utilities
 # starship = "1.21.1" # TODO
 
 ## General
 anyhow.workspace = true
+chrono = "0.4.39"
 crates-io = "0.40.6"
 dashmap = "6.1.0"
 data-encoding = "2.6.0"
@@ -33,10 +16,9 @@ itertools = "0.14.0"
 lazy_static.workspace = true
 num = "0.4.3"
 num_cpus = "1.16.0"
-rand.workspace = true        # use beta
+rand.workspace = true
 serde.workspace = true
 serde_derive = "1.0.216"
 time = "0.3.37"
 tokio.workspace = true
 walkdir.workspace = true
-chrono = "0.4.39"

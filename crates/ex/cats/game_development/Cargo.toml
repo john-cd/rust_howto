@@ -14,10 +14,4 @@ categories = [ "game_development" ]
 publish.workspace = true
 
 [dependencies]
-## Game and friends
-bevy = "0.15.1"
-fyrox = "0.34.1"
-fyrox-core = "0.28.1"
-ggez = "0.9.3"
-glam = "0.29.2"
-macroquad = "0.4.13"
+# TODO P2

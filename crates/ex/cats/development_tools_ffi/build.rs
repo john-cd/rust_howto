@@ -3,6 +3,9 @@ use std::env;
 use std::path::PathBuf;
 
 fn bindgen() {
+    // outputs `libexample.a` in target/debug/build/development_tools_ffi-.../
+    cc::Build::new().file("tests/example.c").compile("example");
+
     // The path to the header file
     let header = "tests/example.h";
     // Generate bindings

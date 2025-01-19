@@ -23,7 +23,7 @@ flagset = "0.4.6"
 indexmap = "2.7.0"
 linked-hash-map = "0.5.6"
 multimap = "0.10.0"
-#petgraph = "0.7.0" # TODO
+#petgraph = "0.7.0" # TODO P2
 slotmap = "1.0.7"
 smallvec = "2.0.0-alpha.8" # alpha
 tinyvec = { version = "1.8.1", features = ["alloc"] }
@@ -34,10 +34,10 @@ uuid = { version = "1.11.0", features = [
 ] }
 
 ## General
-axum = "0.8.1"
-dotenvy = "0.15.7"
-serde.workspace = true
-serde_json.workspace = true
-tokio.workspace = true
 anyhow.workspace = true
+#axum = "0.8.1"
 crates_io_api = "0.11.0"
+#dotenvy = "0.15.7"
+#serde.workspace = true
+#serde_json.workspace = true
+#tokio.workspace = true

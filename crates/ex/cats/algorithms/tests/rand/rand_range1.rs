@@ -4,7 +4,7 @@ use rand::distr::Uniform;
 
 fn main() {
     let mut rng = rand::rng();
-    let die = Uniform::from(1..7);
+    let die = Uniform::try_from(1..7).unwrap();
 
     loop {
         let throw = die.sample(&mut rng);

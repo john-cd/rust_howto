@@ -17,7 +17,7 @@ publish.workspace = true
 ## Algorithms
 # glidesort = "0.1.2" # TODO
 rand.workspace = true
-# rand_distr = "0.4.3"
+#rand_distr = "0.4.0" # note: uses rand 0.8.5 
 
 ## General
 anyhow.workspace = true

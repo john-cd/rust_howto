@@ -1,7 +1,7 @@
 // ANCHOR: example
 use rand::Rng;
 use rand::distr::Distribution;
-use rand_distr::Standard;
+use rand::distr::StandardUniform;
 
 #[derive(Debug)]
 #[allow(dead_code)]
@@ -10,12 +10,16 @@ struct Point {
     y: i32,
 }
 
-impl Distribution<Point> for Standard {
+// Required by:
+// pub fn random<T>() -> T
+// where
+//     StandardUniform: Distribution<T>,
+impl Distribution<Point> for StandardUniform {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
-        let (rand_x, rand_y) = rng.random();
+        let (x, y) = rng.random::<(i32, i32)>();
         Point {
-            x: rand_x,
-            y: rand_y,
+            x,
+            y,
         }
     }
 }
@@ -23,8 +27,9 @@ impl Distribution<Point> for Standard {
 fn main() {
     let mut rng = rand::rng();
     let rand_tuple = rng.random::<(i32, bool, f64)>();
-    let rand_point: Point = rng.random();
     println!("Random tuple: {:?}", rand_tuple);
+
+    let rand_point: Point = rng.random();
     println!("Random Point: {:?}", rand_point);
 }
 // ANCHOR_END: example

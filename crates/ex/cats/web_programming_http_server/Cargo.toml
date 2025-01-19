@@ -19,6 +19,8 @@ actix-web = "4.9.0"
 async-graphql = "7.0.13"
 async-graphql-axum = "7.0.13"
 axum = "0.8.1"
+http = "1.2.0"
+http-body-util = "0.1.2"
 leptos = "0.7"
 # loco = "0.14"
 # loco-rs = { git = "https://github.com/loco-rs/loco.git", branch = "main" } # or a specific version
@@ -33,14 +35,12 @@ tower-http = { version = "0.6.1", features = ["full", "auth"] }
 ## General
 anyhow.workspace = true
 bytes = "1.9.0"
-lazy_static.workspace = true
-serde.workspace = true
-serde_json.workspace = true
+#futures-util = "0.3.31"
+#lazy_static.workspace = true
+#regex.workspace = true
+#serde.workspace = true
+#serde_json.workspace = true
 tokio.workspace = true
-regex.workspace = true
-futures-util = "0.3.31"
-http = "1.2.0"
-http-body-util = "0.1.2"
 
 [build-dependencies]
 tonic-build = "0.12.3"

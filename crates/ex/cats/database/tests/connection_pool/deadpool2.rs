@@ -46,7 +46,8 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test() -> anyhow::Result<()> {
+
+fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         std::env::set_var("PG__PASSWORD", "mysecretpassword");
         std::env::set_var("PG__DBNAME", "library");

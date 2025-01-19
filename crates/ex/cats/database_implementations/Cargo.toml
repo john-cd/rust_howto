@@ -16,12 +16,12 @@ publish.workspace = true
 [dependencies]
 #meilisearch = "0.0.0"
 meilisearch-sdk = "0.27.1"
-tantivy = "0.22.0"
 sled = "0.34.7"
 surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }
+tantivy = "0.22.0"
 
 ## General
-serde.workspace = true
-serde_json.workspace = true
-tokio.workspace = true
 anyhow.workspace = true
+serde.workspace = true
+#serde_json.workspace = true
+tokio.workspace = true
