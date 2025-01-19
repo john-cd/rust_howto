@@ -15,7 +15,15 @@ In most cases, you will use this crate directly only when writing async code{{hi
 [`futures::future::Select`][c-futures::future::Select]{{hi:futures::future::Select}}⮳ polls multiple futures and streams simultaneously, executing the branch for the future that finishes first. If multiple futures are ready, one will be pseudo-randomly selected at runtime.
 
 ```rust,editable
+<<<<<<< Updated upstream
 {{#include ../../../crates/ex/cats/asynchronous/tests/futures/futures1.rs:example}}
+=======
+<<<<<<< HEAD
+{{#include ../../../crates/ex/cats/asynchronous/tests/futures/futures.rs:example}}
+=======
+{{#include ../../../crates/ex/cats/asynchronous/tests/futures/futures1.rs:example}}
+>>>>>>> 42e28678 (update example includes / move examples / formatting)
+>>>>>>> Stashed changes
 ```
 
 ## Joining futures {#joining-futures}

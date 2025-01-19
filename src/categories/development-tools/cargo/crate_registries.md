@@ -19,7 +19,15 @@ Alternative to `crates.io`: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
 [crate_registries: expand (P1)](https://github.com/john-cd/rust_howto/issues/294)
 
 ```rust,editable
+<<<<<<< Updated upstream
 {{#include ../../../../crates/ex/cats/development_tools/tests/crate_registries/crates_io.rs:example}}
+=======
+<<<<<<< HEAD
+{{#include ../../../../crates/ex/cats/development_tools/cargo/tests/crate_registries/crates_io.rs:example}}
+=======
+{{#include ../../../../crates/ex/cats/development_tools/tests/crate_registries/crates_io.rs:example}}
+>>>>>>> 42e28678 (update example includes / move examples / formatting)
+>>>>>>> Stashed changes
 ```
 
 </div>
