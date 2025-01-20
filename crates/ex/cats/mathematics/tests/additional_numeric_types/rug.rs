@@ -1,5 +1,5 @@
-#![cfg(target_os = "linux")]
 // ANCHOR: example
+#![cfg(target_os = "linux")]
 #![allow(clippy::approx_constant)]
 use core::cmp::Ordering;
 
