@@ -17,10 +17,7 @@ struct Point {
 impl Distribution<Point> for StandardUniform {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
         let (x, y) = rng.random::<(i32, i32)>();
-        Point {
-            x,
-            y,
-        }
+        Point { x, y }
     }
 }
 
