@@ -1,0 +1,6 @@
+namespace MyGame;
+
+table Monster {
+  name: string;
+  hp: int;
+}

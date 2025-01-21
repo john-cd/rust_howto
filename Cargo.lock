@@ -5052,7 +5052,7 @@ version = "0.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fce8dd7fcfcbf3a0a87d8f515194b49d6135acab73e18bd380d1d93bb1a15eb"
 dependencies = [
- "clap 4.5.26",
+ "clap 4.5.27",
  "heck 0.4.1",
  "indexmap 2.7.1",
  "log",
@@ -5071,7 +5071,7 @@ version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eadd868a2ce9ca38de7eeafdcec9c7065ef89b42b32f0839278d55f35c54d1ff"
 dependencies = [
- "clap 4.5.26",
+ "clap 4.5.27",
  "heck 0.4.1",
  "indexmap 2.7.1",
  "log",
@@ -5403,9 +5403,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.26"
+version = "4.5.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a8eb5e908ef3a6efbe1ed62520fb7287959888c88485abe072543190ecc66783"
+checksum = "769b0145982b4b48713e01ec42d61614425f27b7058bda7180a3a41f30104796"
 dependencies = [
  "clap_builder",
  "clap_derive 4.5.24",
@@ -5413,9 +5413,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.26"
+version = "4.5.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96b01801b5fc6a0a232407abc821660c9c6d25a1cafc0d4f85f29fb8d9afc121"
+checksum = "1b26884eb4b57140e4d2d93652abfa49498b938b3c9179f9fc487b0acc3edad7"
 dependencies = [
  "anstream",
  "anstyle",
@@ -5428,7 +5428,7 @@ dependencies = [
 name = "clap_builder_xmpl"
 version = "0.1.2"
 dependencies = [
- "clap 4.5.26",
+ "clap 4.5.27",
  "env_logger",
 ]
 
@@ -5809,7 +5809,7 @@ version = "0.1.2"
 dependencies = [
  "ansi_term",
  "anyhow",
- "clap 4.5.26",
+ "clap 4.5.27",
  "console",
  "crossterm 0.28.1",
  "indicatif",
@@ -6356,7 +6356,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d21d8c5cf5940c13b1d82977fc5d4230714ce76d991c5c00b8a1c791c691dcf"
 dependencies = [
  "chumsky 0.8.0",
- "clap 4.5.26",
+ "clap 4.5.27",
  "codegen_template",
  "heck 0.4.1",
  "indexmap 1.9.3",
@@ -6701,7 +6701,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "cargo_toml",
- "clap 4.5.26",
+ "clap 4.5.27",
  "clap_builder",
  "itertools 0.14.0",
  "tool_lib",
@@ -6801,7 +6801,7 @@ dependencies = [
  "anes",
  "cast",
  "ciborium",
- "clap 4.5.26",
+ "clap 4.5.27",
  "criterion-plot",
  "is-terminal",
  "itertools 0.10.5",
@@ -7291,7 +7291,7 @@ version = "1.0.137"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e0d2cb64a95b4b5a381971482235c4db2e0208302a962acdbe314db03cbbe2fb"
 dependencies = [
- "clap 4.5.26",
+ "clap 4.5.27",
  "codespan-reporting",
  "proc-macro2 1.0.93",
  "quote 1.0.38",
@@ -8952,7 +8952,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e0583193020b29b03682d8d33bb53a5b0f50df6daacece12ca99b904cfdcb8c4"
 dependencies = [
  "cfg-if 1.0.0",
- "clap 4.5.26",
+ "clap 4.5.27",
  "condtype",
  "divan-macros",
  "libc",
@@ -9631,6 +9631,7 @@ dependencies = [
  "byteorder",
  "csv",
  "data-encoding",
+ "flatbuffers",
  "form_urlencoded",
  "monostate",
  "percent-encoding",
@@ -10898,7 +10899,7 @@ checksum = "4eba78b165c6d83dcc44fc7d08af939d1d3dcf4ca152cdc6d8669e2ec610a743"
 dependencies = [
  "base64 0.21.7",
  "bitflags 2.8.0",
- "clap 4.5.26",
+ "clap 4.5.27",
  "ddsfile",
  "fast_image_resize",
  "fxhash",
@@ -15601,7 +15602,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef868bd2df99c949018850b36fb700bba01b10001715f94390bcdb81f412f874"
 dependencies = [
  "chrono",
- "clap 4.5.26",
+ "clap 4.5.27",
  "colored",
  "cruet 0.14.0",
  "duct",
@@ -15630,7 +15631,7 @@ dependencies = [
  "bytes",
  "cfg-if 1.0.0",
  "chrono",
- "clap 4.5.26",
+ "clap 4.5.27",
  "colored",
  "cruet 0.13.3",
  "duct",
@@ -20976,7 +20977,7 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "997600a2c33a4dc7344c0fedf72bc160c0e233e1be6cecd4ea1052d8a78ebb83"
 dependencies = [
- "clap 4.5.26",
+ "clap 4.5.27",
  "crossterm 0.28.1",
  "r3bl_ansi_color",
  "r3bl_core",
@@ -23108,7 +23109,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0e6e0e741bfdf434e6f6aadab156ba4d439e78c9449048698d98fa377871224a"
 dependencies = [
  "chrono",
- "clap 4.5.26",
+ "clap 4.5.27",
  "dotenvy",
  "glob",
  "regex",
@@ -23140,7 +23141,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0bb76ba314552ce15e3a24778cf9c116fc1225fa406e48b0a36e5a3cdbc1e21"
 dependencies = [
  "async-trait",
- "clap 4.5.26",
+ "clap 4.5.27",
  "dotenvy",
  "futures",
  "sea-orm",
@@ -26424,7 +26425,7 @@ name = "templ"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "clap 4.5.26",
+ "clap 4.5.27",
  "clap_builder",
  "tool_lib",
  "tracing",
