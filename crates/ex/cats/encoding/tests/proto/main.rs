@@ -1,2 +1,2 @@
-
+mod capnp;
 mod flatbuffers;

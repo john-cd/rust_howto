@@ -2658,7 +2658,7 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3320,7 +3320,7 @@ dependencies = [
  "serde 1.0.217",
  "smallvec 1.13.2",
  "thread_local",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3373,7 +3373,7 @@ dependencies = [
  "ron",
  "serde 1.0.217",
  "stackfuture",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -3436,7 +3436,7 @@ dependencies = [
  "bevy_reflect",
  "bevy_tasks",
  "bevy_utils",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3843,7 +3843,7 @@ dependencies = [
  "bevy_utils",
  "bevy_window",
  "crossbeam-channel",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3871,7 +3871,7 @@ dependencies = [
  "serde 1.0.217",
  "smallvec 1.13.2",
  "smol_str 0.2.2",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3884,7 +3884,7 @@ dependencies = [
  "proc-macro2 1.0.93",
  "quote 1.0.38",
  "syn 2.0.96",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -3963,7 +3963,7 @@ dependencies = [
  "bevy_utils",
  "derive_more 1.0.0",
  "serde 1.0.217",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -4568,7 +4568,7 @@ checksum = "74f7971dbd9326d58187408ab83117d8ac1bb9c17b085fdacd1cf2f598719b6b"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
- "brotli-decompressor 4.0.1",
+ "brotli-decompressor 4.0.2",
 ]
 
 [[package]]
@@ -4579,7 +4579,7 @@ checksum = "cc97b8f16f944bba54f0433f07e30be199b6dc2bd25937444bbad560bcea29bd"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
- "brotli-decompressor 4.0.1",
+ "brotli-decompressor 4.0.2",
 ]
 
 [[package]]
@@ -4594,9 +4594,9 @@ dependencies = [
 
 [[package]]
 name = "brotli-decompressor"
-version = "4.0.1"
+version = "4.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9a45bd2e4095a8b518033b128020dd4a55aab1c0a381ba4404a472630f4bc362"
+checksum = "74fa05ad7d803d413eb8380983b092cbbaf9a85f151b871360e7b00cd7060b37"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
@@ -4620,7 +4620,7 @@ dependencies = [
  "serde_bytes",
  "serde_json",
  "time",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -4976,6 +4976,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "capnp"
+version = "0.20.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bce4e2d41c16cf9188f47ca4d59fdcdca1f33705af211bdb41f0afbd3442f8b5"
+dependencies = [
+ "embedded-io 0.6.1",
+]
+
+[[package]]
+name = "capnpc"
+version = "0.20.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1aa3d5f01e69ed11656d2c7c47bf34327ea9bfb5c85c7de787fcd7b6c5e45b61"
+dependencies = [
+ "capnp",
+]
+
+[[package]]
 name = "cargo"
 version = "0.1.2"
 
@@ -5181,7 +5199,7 @@ checksum = "d38f2da7a0a2c4ccf0065be06397cc26a81f4e528be095826eee9d4adbb8c60f"
 dependencies = [
  "byteorder",
  "fnv",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -7517,7 +7535,7 @@ dependencies = [
  "slotmap",
  "smallvec 2.0.0-alpha.10",
  "tinyvec",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -7605,7 +7623,7 @@ dependencies = [
  "tokio",
  "tokio-util",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "xz2",
  "zstd 0.13.2",
 ]
@@ -7744,7 +7762,7 @@ dependencies = [
  "regex",
  "sha2",
  "unicode-segmentation",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -8051,7 +8069,7 @@ version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef552e6f588e446098f6ba40d89ac146c8c7b64aade83c051ee00bb5d2bc18d"
 dependencies = [
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -9629,6 +9647,8 @@ dependencies = [
  "base64 0.22.1",
  "bytemuck",
  "byteorder",
+ "capnp",
+ "capnpc",
  "csv",
  "data-encoding",
  "flatbuffers",
@@ -9879,9 +9899,9 @@ dependencies = [
 
 [[package]]
 name = "etagere"
-version = "0.2.13"
+version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e2f1e3be19fb10f549be8c1bf013e8675b4066c445e36eb76d2ebb2f54ee495"
+checksum = "fc89bf99e5dc15954a60f707c1e09d7540e5cd9af85fa75caa0b510bc08c5342"
 dependencies = [
  "euclid",
  "svg_fmt",
@@ -10860,7 +10880,7 @@ dependencies = [
  "parking_lot 0.12.3",
  "rand 0.8.5",
  "serde 1.0.217",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -10946,7 +10966,7 @@ dependencies = [
  "nalgebra 0.32.6",
  "num-traits 0.2.19",
  "rectutils",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -10959,7 +10979,7 @@ dependencies = [
  "nalgebra 0.32.6",
  "num-traits 0.2.19",
  "rectutils",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -11491,7 +11511,7 @@ dependencies = [
  "fnv",
  "gilrs-core 0.5.15",
  "log",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "vec_map",
 ]
 
@@ -11504,7 +11524,7 @@ dependencies = [
  "fnv",
  "gilrs-core 0.6.1",
  "log",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "vec_map",
 ]
 
@@ -11522,7 +11542,7 @@ dependencies = [
  "libudev-sys",
  "log",
  "nix 0.29.0",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "vec_map",
  "wasm-bindgen",
  "web-sys",
@@ -11543,7 +11563,7 @@ dependencies = [
  "libudev-sys",
  "log",
  "nix 0.29.0",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "vec_map",
  "wasm-bindgen",
  "web-sys",
@@ -15141,7 +15161,7 @@ dependencies = [
  "rstml",
  "server_fn_macro 0.7.4",
  "syn 2.0.96",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -15597,9 +15617,9 @@ checksum = "9374ef4228402d4b7e403e5838cb880d9ee663314b0a900d5a6aabf0c213552e"
 
 [[package]]
 name = "loco-gen"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef868bd2df99c949018850b36fb700bba01b10001715f94390bcdb81f412f874"
+checksum = "0ec8762a66ade27c5157288ca46db51a77bbd95cb2d7ad87bcaada9621e3a4d9"
 dependencies = [
  "chrono",
  "clap 4.5.27",
@@ -15617,9 +15637,9 @@ dependencies = [
 
 [[package]]
 name = "loco-rs"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2250c89f0f996c3493ec3d2588a2d63e2861a48df7b9585cb28fbf6faf15a1a0"
+checksum = "19decee5529e36ffd3e22f83cf601c1fcb35a8932886fc33c19e8482bc1baf88"
 dependencies = [
  "argon2",
  "async-trait",
@@ -15674,7 +15694,7 @@ dependencies = [
  "tracing-appender",
  "tracing-subscriber",
  "ulid",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "validator",
 ]
 
@@ -16248,7 +16268,7 @@ dependencies = [
  "serde_json",
  "thiserror 1.0.69",
  "time",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "wasm-bindgen-futures",
  "web-sys",
  "yaup",
@@ -16610,7 +16630,7 @@ dependencies = [
  "smallvec 1.13.2",
  "tagptr",
  "thiserror 1.0.69",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -16658,7 +16678,7 @@ dependencies = [
  "tokio-rustls 0.24.1",
  "tokio-util",
  "typed-builder 0.10.0",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "webpki-roots 0.25.4",
 ]
 
@@ -18188,7 +18208,7 @@ dependencies = [
  "serde 1.0.217",
  "serde_json",
  "tokio",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -19953,7 +19973,7 @@ dependencies = [
  "polars-row",
  "polars-utils",
  "rayon",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "version_check",
 ]
 
@@ -21879,7 +21899,7 @@ dependencies = [
  "revision-derive",
  "roaring",
  "rust_decimal",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -22113,7 +22133,7 @@ dependencies = [
  "rkyv_derive 0.7.45",
  "seahash",
  "tinyvec",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -22132,7 +22152,7 @@ dependencies = [
  "rend 0.5.2",
  "rkyv_derive 0.8.9",
  "tinyvec",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -22903,7 +22923,7 @@ dependencies = [
  "serde 1.0.217",
  "serde_json",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -23099,7 +23119,7 @@ dependencies = [
  "time",
  "tracing",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -23165,7 +23185,7 @@ dependencies = [
  "sea-query-derive",
  "serde_json",
  "time",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -23181,7 +23201,7 @@ dependencies = [
  "serde_json",
  "sqlx",
  "time",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -24860,7 +24880,7 @@ dependencies = [
  "tokio-stream",
  "tracing",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "webpki-roots 0.26.7",
 ]
 
@@ -24946,7 +24966,7 @@ dependencies = [
  "thiserror 2.0.11",
  "time",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "whoami",
 ]
 
@@ -24989,7 +25009,7 @@ dependencies = [
  "thiserror 2.0.11",
  "time",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "whoami",
 ]
 
@@ -25016,7 +25036,7 @@ dependencies = [
  "time",
  "tracing",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -25356,7 +25376,7 @@ dependencies = [
  "tracing",
  "trice",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "wasm-bindgen-futures",
  "wasmtimer",
  "ws_stream_wasm",
@@ -25443,7 +25463,7 @@ dependencies = [
  "ulid",
  "unicase",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "vart",
  "wasm-bindgen-futures",
  "wasmtimer",
@@ -25983,7 +26003,7 @@ dependencies = [
  "tempfile",
  "thiserror 1.0.69",
  "time",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "winapi",
 ]
 
@@ -26290,7 +26310,7 @@ dependencies = [
  "thiserror 2.0.11",
  "time",
  "url",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "walkdir",
 ]
 
@@ -26386,7 +26406,7 @@ dependencies = [
  "toml 0.8.19",
  "url",
  "urlpattern",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "walkdir",
 ]
 
@@ -26908,7 +26928,7 @@ dependencies = [
  "num-traits 0.2.19",
  "tokio",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -27281,7 +27301,7 @@ dependencies = [
  "tower-layer",
  "tower-service",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -28203,9 +28223,9 @@ dependencies = [
 
 [[package]]
 name = "uuid"
-version = "1.12.0"
+version = "1.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "744018581f9a3454a9e15beb8a33b017183f1e7c0cd170232a2d1453b23a51c4"
+checksum = "b3758f5e68192bb96cc8f9b7e2c2cfdabb435499a28499a42f8f984092adad4b"
 dependencies = [
  "getrandom 0.2.15",
  "rand 0.8.5",
@@ -28216,9 +28236,9 @@ dependencies = [
 
 [[package]]
 name = "uuid-macro-internal"
-version = "1.12.0"
+version = "1.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "144b419c512fdd5eaa4c2998813e32aaab2b257746ee038de93985a99635501d"
+checksum = "f8a86d88347b61a0e17b9908a67efcc594130830bf1045653784358dd023e294"
 dependencies = [
  "proc-macro2 1.0.93",
  "quote 1.0.38",
@@ -32021,7 +32041,7 @@ dependencies = [
  "tokio",
  "tokio-util",
  "tracing",
- "uuid 1.12.0",
+ "uuid 1.12.1",
  "zenoh-core",
  "zenoh-link-commons",
  "zenoh-protocol",

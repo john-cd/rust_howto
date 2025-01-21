@@ -37,6 +37,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     aspell \
     aspell-en \
     build-essential \
+    capnproto \
     clang \
     cmake \
     curl \

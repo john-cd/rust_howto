@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "encoding" ]
 publish.workspace = true
+build = "build.rs"
 
 [dependencies]
 
@@ -19,6 +20,7 @@ publish.workspace = true
 base64 = "0.22.1"
 bytemuck = { version = "1.21.0", features = ["derive"] }
 byteorder = "1.5.0"
+capnp = "0.20.3"
 data-encoding = "2.6.0"
 flatbuffers = "24.12.23"
 form_urlencoded = "1.2.1"
@@ -34,3 +36,6 @@ csv = "1.3.1"
 #image = "0.25.5" # for image loading
 serde.workspace = true
 url.workspace = true
+
+[build-dependencies]
+capnpc = "0.20.1"

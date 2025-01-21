@@ -40,4 +40,43 @@ Concise Binary Object Representation is a binary data serialization format loose
 <div class="hidden">
 [binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY (P2)](https://github.com/john-cd/rust_howto/issues/349)
 
+## Flatbuffers {#flatbuffers}
+
+[![flatbuffers-website][c-flatbuffers-website-badge]][c-flatbuffers-website] [![flatbuffers][c-flatbuffers-badge]][c-flatbuffers] [![flatbuffers-crates.io][c-flatbuffers-crates.io-badge]][c-flatbuffers-crates.io] [![flatbuffers-github][c-flatbuffers-github-badge]][c-flatbuffers-github] [![flatbuffers-lib.rs][c-flatbuffers-lib.rs-badge]][c-flatbuffers-lib.rs]{{hi:flatbuffers}}{{hi:flatbuffers}}{{hi:Serialization}}{{hi:Zero-copy}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
+
+`flatbuffers` is the official FlatBuffers Rust runtime library.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/flatbuffers.rs:example}}
+```
+
+## Cap'n Proto {#capnp}
+
+[![capnp][c-capnp-badge]][c-capnp] [![capnp-crates.io][c-capnp-crates.io-badge]][c-capnp-crates.io] [![capnp-github][c-capnp-github-badge]][c-capnp-github] [![capnp-lib.rs][c-capnp-lib.rs-badge]][c-capnp-lib.rs]{{hi:capnp}} [![capnpc][c-capnpc-badge]][c-capnpc] [![capnpc-crates.io][c-capnpc-crates.io-badge]][c-capnpc-crates.io] [![capnpc-github][c-capnpc-github-badge]][c-capnpc-github] [![capnpc-lib.rs][c-capnpc-lib.rs-badge]][c-capnpc-lib.rs]{{hi:capnpc}}{{hi:Encoding}}{{hi:Protocol}}{{hi:Serialization}}
+
+`capnp` is the runtime library for Cap'n Proto data encoding. `capnpc` is used for Cap'n Proto code generation.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/capnp.rs:example}}
+```
+
+In `build.rs`:
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/build.rs:example}}
+```
+
+In `foo.capnp`:
+
+```txt
+{{#include ../../../crates/ex/cats/encoding/foo.capnp}}
+```
+
+Key Features of Cap'n Proto:
+
+Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
+Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.
+Language-agnostic: You can generate code in various programming languages from a single .capnp definition file.
+Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
+
 </div>
