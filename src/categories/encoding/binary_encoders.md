@@ -8,6 +8,10 @@
 
 `bincode` is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/bincode.rs:example}}
+```
+
 ## ProtoBuf {#skip1}
 
 ### `prost` {#prost}
@@ -52,12 +56,6 @@ This crate connects Rust MessagePack library with serde providing an ability to 
 
 Concise Binary Object Representation is a binary data serialization format loosely based on JSON. `ciborium` is a `serde` implementation of CBOR using ciborium-basic.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY (P2)](https://github.com/john-cd/rust_howto/issues/349)
-
 ## Flatbuffers {#flatbuffers}
 
 [![flatbuffers-website][c-flatbuffers-website-badge]][c-flatbuffers-website] [![flatbuffers][c-flatbuffers-badge]][c-flatbuffers] [![flatbuffers-crates.io][c-flatbuffers-crates.io-badge]][c-flatbuffers-crates.io] [![flatbuffers-github][c-flatbuffers-github-badge]][c-flatbuffers-github] [![flatbuffers-lib.rs][c-flatbuffers-lib.rs-badge]][c-flatbuffers-lib.rs]{{hi:flatbuffers}}{{hi:flatbuffers}}{{hi:Serialization}}{{hi:Zero-copy}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
@@ -87,7 +85,7 @@ In `build.rs`:
 In `foo.capnp`:
 
 ```txt
-{{#include ../../../crates/ex/cats/encoding/foo.capnp}}
+{{#include ../../../crates/ex/cats/encoding/tests/proto/foo.capnp}}
 ```
 
 ### Key Features of Cap'n Proto
@@ -96,5 +94,11 @@ In `foo.capnp`:
 - Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.
 - Language-agnostic: You can generate code in various programming languages from a single .capnp definition file.
 - Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY (P2)](https://github.com/john-cd/rust_howto/issues/349)
 
 </div>
