@@ -9658,6 +9658,7 @@ dependencies = [
  "prost",
  "prost-build",
  "prost-types",
+ "protobuf",
  "serde 1.0.217",
  "serde_json",
  "toml 0.8.19",

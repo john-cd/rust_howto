@@ -1,7 +1,7 @@
 // // ANCHOR: example
 
-// // This will serialize and then deserialize a Person protobuf message and print
-// // out its contents.
+// // This will serialize and then deserialize a Person protobuf message and
+// // print out its contents.
 
 // mod person {
 //     include!(concat!(env!("OUT_DIR"), "/tests/proto/person.rs"));

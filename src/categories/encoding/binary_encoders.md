@@ -44,6 +44,10 @@ In `build.rs`:
 
 `protobuf` is a Rust implementation of Google protocol buffers.
 
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/protobuf.rs:example}}
+```
+
 ## MessagePack with `rmp-serde` {#rmp-serde}
 
 [![rmp-serde][c-rmp_serde-badge]][c-rmp_serde] [![rmp-serde-crates.io][c-rmp_serde-crates.io-badge]][c-rmp_serde-crates.io] [![rmp-serde-github][c-rmp_serde-github-badge]][c-rmp_serde-github] [![rmp-serde-lib.rs][c-rmp_serde-lib.rs-badge]][c-rmp_serde-lib.rs]{{hi:rmp-serde}}{{hi:Messagepack}}{{hi:Msgpack}}{{hi:Serialization}}{{hi:Serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
