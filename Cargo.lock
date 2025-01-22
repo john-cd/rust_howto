@@ -9649,6 +9649,7 @@ dependencies = [
  "byteorder",
  "capnp",
  "capnpc",
+ "ciborium",
  "csv",
  "data-encoding",
  "flatbuffers",
