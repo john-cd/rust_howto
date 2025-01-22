@@ -6,7 +6,7 @@
 
 [![bincode][c-bincode-badge]][c-bincode] [![bincode-crates.io][c-bincode-crates.io-badge]][c-bincode-crates.io] [![bincode-github][c-bincode-github-badge]][c-bincode-github] [![bincode-lib.rs][c-bincode-lib.rs-badge]][c-bincode-lib.rs]{{hi:bincode}}{{hi:Deserialize}}{{hi:Serialize}}{{hi:Binary}}{{hi:Encode}}{{hi:Decode}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-A binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
+`bincode` is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
 ## ProtoBuf {#skip1}
 
@@ -15,6 +15,10 @@ A binary serialization / deserialization strategy for transforming structs into 
 [![prost][c-prost-badge]][c-prost] [![prost-crates.io][c-prost-crates.io-badge]][c-prost-crates.io] [![prost-github][c-prost-github-badge]][c-prost-github] [![prost-lib.rs][c-prost-lib.rs-badge]][c-prost-lib.rs]{{hi:prost}}{{hi:Protobuf}}{{hi:Serialization}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
 `prost` is a Protocol Buffers implementation for the Rust Language.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/prost.rs:example}}
+```
 
 ### `protobuf` {#protobuf}
 
@@ -44,7 +48,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 
 [![flatbuffers-website][c-flatbuffers-website-badge]][c-flatbuffers-website] [![flatbuffers][c-flatbuffers-badge]][c-flatbuffers] [![flatbuffers-crates.io][c-flatbuffers-crates.io-badge]][c-flatbuffers-crates.io] [![flatbuffers-github][c-flatbuffers-github-badge]][c-flatbuffers-github] [![flatbuffers-lib.rs][c-flatbuffers-lib.rs-badge]][c-flatbuffers-lib.rs]{{hi:flatbuffers}}{{hi:flatbuffers}}{{hi:Serialization}}{{hi:Zero-copy}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
-`flatbuffers` is the official FlatBuffers Rust runtime library.
+`flatbuffers` is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
 
 ```rust,editable
 {{#include ../../../crates/ex/cats/encoding/tests/proto/flatbuffers.rs:example}}
