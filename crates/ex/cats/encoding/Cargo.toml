@@ -26,6 +26,8 @@ flatbuffers = "24.12.23"
 form_urlencoded = "1.2.1"
 monostate = "0.1.13"
 percent-encoding = "2.3.1"
+prost = "0.13.4"
+prost-types = "0.13.4"
 serde_json.workspace = true
 toml = "0.8.19"
 zerocopy = { version = "0.8.14", features = ["derive"] }
@@ -39,3 +41,4 @@ url.workspace = true
 
 [build-dependencies]
 capnpc = "0.20.1"
+prost-build = "0.13.4"

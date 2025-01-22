@@ -1,7 +1,10 @@
-
 // // ANCHOR: example
+
+// // This will serialize and then deserialize a Person protobuf message and print
+// // out its contents.
+
 // mod person {
-//     include!(concat!(env!("OUT_DIR"), "/example.rs"));
+//     include!(concat!(env!("OUT_DIR"), "/tests/proto/person.rs"));
 // }
 
 // use person::Person;
@@ -26,6 +29,7 @@
 // // ANCHOR_END: example
 
 // #[test]
+// #[ignore = "WIP"]
 // fn test() {
 //     main();
 // }

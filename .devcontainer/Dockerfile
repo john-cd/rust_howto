@@ -61,6 +61,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libxkbcommon-x11-dev \
     llvm \
     pkg-config \
+    protobuf-compiler \
     python3 \
     python3.11-dev \
     systemd \

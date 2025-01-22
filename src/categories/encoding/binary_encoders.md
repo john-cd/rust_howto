@@ -16,8 +16,22 @@
 
 `prost` is a Protocol Buffers implementation for the Rust Language.
 
+In you `main.rs` file:
+
 ```rust,editable
 {{#include ../../../crates/ex/cats/encoding/tests/proto/prost.rs:example}}
+```
+
+In `person.proto`:
+
+```protobuf
+{{#include ../../../crates/ex/cats/encoding/tests/proto/person.proto}}
+```
+
+In `build.rs`:
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/build.rs:prost}}
 ```
 
 ### `protobuf` {#protobuf}
@@ -67,7 +81,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 In `build.rs`:
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/build.rs:example}}
+{{#include ../../../crates/ex/cats/encoding/build.rs:capnp}}
 ```
 
 In `foo.capnp`:
@@ -76,11 +90,11 @@ In `foo.capnp`:
 {{#include ../../../crates/ex/cats/encoding/foo.capnp}}
 ```
 
-Key Features of Cap'n Proto:
+### Key Features of Cap'n Proto
 
-Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
-Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.
-Language-agnostic: You can generate code in various programming languages from a single .capnp definition file.
-Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
+- Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
+- Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.
+- Language-agnostic: You can generate code in various programming languages from a single .capnp definition file.
+- Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
 
 </div>
