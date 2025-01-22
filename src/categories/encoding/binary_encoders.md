@@ -52,13 +52,21 @@ In `build.rs`:
 
 [![rmp-serde][c-rmp_serde-badge]][c-rmp_serde] [![rmp-serde-crates.io][c-rmp_serde-crates.io-badge]][c-rmp_serde-crates.io] [![rmp-serde-github][c-rmp_serde-github-badge]][c-rmp_serde-github] [![rmp-serde-lib.rs][c-rmp_serde-lib.rs-badge]][c-rmp_serde-lib.rs]{{hi:rmp-serde}}{{hi:Messagepack}}{{hi:Msgpack}}{{hi:Serialization}}{{hi:Serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-This crate connects Rust MessagePack library with serde providing an ability to easily serialize and deserialize both Rust built-in types, the standard library and custom data structures.
+`rmp-serde` connects the `MessagePack` library with `serde`, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/rmp_serde.rs:example}}
+```
 
 ## CBOR with `ciborium` {#ciborium}
 
 [![ciborium][c-ciborium-badge]][c-ciborium] [![ciborium-crates.io][c-ciborium-crates.io-badge]][c-ciborium-crates.io] [![ciborium-github][c-ciborium-github-badge]][c-ciborium-github] [![ciborium-lib.rs][c-ciborium-lib.rs-badge]][c-ciborium-lib.rs]{{hi:ciborium}}{{hi:Cbor}}{{hi:Serde}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
 Concise Binary Object Representation is a binary data serialization format loosely based on JSON. `ciborium` is a `serde` implementation of CBOR using ciborium-basic.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/proto/ciborium.rs:example}}
+```
 
 ## Flatbuffers {#flatbuffers}
 
