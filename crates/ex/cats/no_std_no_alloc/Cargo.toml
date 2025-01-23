@@ -15,4 +15,4 @@ publish.workspace = true
 
 [dependencies]
 ## No std and no alloc
-# TODO
+# TODO add deps

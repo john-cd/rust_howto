@@ -4,10 +4,12 @@ use std::path::PathBuf;
 
 fn bindgen() {
     // outputs `libexample.a` in target/debug/build/development_tools_ffi-.../
-    cc::Build::new().file("tests/example.c").compile("example");
+    cc::Build::new()
+        .file("tests/c/example.c")
+        .compile("example");
 
     // The path to the header file
-    let header = "tests/example.h";
+    let header = "tests/c/example.h";
     // Generate bindings
     let bindings = bindgen::Builder::default()
         .header(header)
@@ -43,14 +45,14 @@ fn cbindgen() {
 //     // `bridge` returns a `cc::Build` on which you should continue to set up
 // any     // additional source files or compiler flags, and lastly call its
 //     // `compile` method to execute the C++ build.
-//     cxx_build::bridge("tests/cxx.rs")
+//     cxx_build::bridge("tests/cpp/cxx.rs")
 //         .file("tests/hello.cc")
 //         .flag_if_supported("-std=c++14")
 //         .compile("cxxbridge-demo");
 
-//     println!("cargo:rerun-if-changed=tests/cxx.rs");
-//     println!("cargo:rerun-if-changed=tests/hello.h");
-//     println!("cargo:rerun-if-changed=tests/hello.cc");
+//     println!("cargo:rerun-if-changed=tests/cpp/cxx.rs");
+//     println!("cargo:rerun-if-changed=tests/cpp/hello.h");
+//     println!("cargo:rerun-if-changed=tests/cpp/hello.cc");
 // }
 // ANCHOR_END: CXX
 
@@ -59,4 +61,4 @@ fn main() {
     cbindgen();
     // cxx();
 }
-// TODO P0 fix
+// TODO P0 fix build.rs for ffi

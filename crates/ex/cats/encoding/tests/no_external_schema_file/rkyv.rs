@@ -1,4 +1,8 @@
 // ANCHOR: example
+
+// Fast zero-copy deserialization framework that allows arbitrary field types
+// and safe zero-copy mutation.
+
 fn main() {
     todo!();
 }
@@ -9,4 +13,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P1 write
+// TODO P1 write rkyv example

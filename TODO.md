@@ -1,4 +1,4 @@
-# TODO
+# TODOs
 
 ## `cargo-husky` handles git hook scripts
 

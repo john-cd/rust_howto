@@ -30,7 +30,7 @@ prost = "0.13.4"
 tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
-# trillium = "0.2.20" # TODO P2
+# trillium = "0.2.20" # TODO P2 do we need?
 
 ## General
 anyhow.workspace = true

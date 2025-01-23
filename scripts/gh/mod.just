@@ -65,6 +65,8 @@ create_issues_for_examples:
     done
   done
 
+## TODO
+
 ## Delete issues with --label "markdown,auto"
 # delete_issues:
 #   #! /bin/bash
@@ -74,6 +76,8 @@ create_issues_for_examples:
 #     gh issue delete $issue --yes
 #     sleep 2
 #   done
+
+## TODO
 
 ## HACK: Replace TODO lines in the markdown by a link to previously created GitHub Issues
 #add_gh_links:
@@ -102,6 +106,8 @@ create_issues_for_examples:
 #      fi
 #    done
 #  done
+
+## TODO
 
 # HACK
 add_gh_links_to_code:
@@ -135,6 +141,8 @@ add_gh_links_to_code:
 #    uniq $file > /tmp/temp.rs
 #    mv -f /tmp/temp.rs $file
 #  done
+
+## TODO
 
 ## move // [...]... lines to the bottom of the file
 #moveline:

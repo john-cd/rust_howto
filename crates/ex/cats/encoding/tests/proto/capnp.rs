@@ -60,7 +60,7 @@
 // fn test() {
 //     main();
 // }
-// // TODO P1 finish
+// // TODO P1 finish capnp example
 // // https://capnproto.org/
 // // https://capnproto.org/rust.html
 // // https://capnproto.org/install.html

@@ -32,7 +32,7 @@ fn to_from_bytes() {
     // Bytes: [42, 0, 0, 0, 1, 2, 3, 4] (on a little-endian machine)
     println!("Bytes: {:?}", bytes);
 
-    // TODO
+    // FIXME
     // Convert bytes back to `MyStruct`
     // Re-interprets &[u8] as &T, but only if T is `AnyBitPattern`, i.e. "plain
     // old data" types that are valid for any bit pattern. let recovered:

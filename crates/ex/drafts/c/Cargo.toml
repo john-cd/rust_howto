@@ -1,5 +1,5 @@
 ## Command-line utilities
-# starship = "1.21.1" # TODO
+# starship = "1.21.1" # TODO P2 do we need?
 
 ## General
 anyhow.workspace = true

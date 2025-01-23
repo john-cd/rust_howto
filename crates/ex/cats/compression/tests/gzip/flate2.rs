@@ -29,9 +29,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "not yet implemented"]
+#[ignore = "WIP"]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 write; read / write a file
+// TODO P1 write flate2 example; read / write a file

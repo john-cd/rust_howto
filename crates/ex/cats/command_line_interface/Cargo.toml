@@ -17,7 +17,7 @@ publish.workspace = true
 ## Command-line interface
 ansi_term = "0.12.1" # NOTE: unmaintained
 clap = { version = "4.5.23", features = ["derive"] }
-# clap-verbosity-flag = "3.0.0" # TODO
+# clap-verbosity-flag = "3.0.0" # TODO P2
 console = "0.15.10"
 crossterm = "0.28.1"
 indicatif = "0.17.9"
@@ -27,4 +27,3 @@ ratatui = "0.29.0" # requires crossterm
 
 ## General
 anyhow.workspace = true
-

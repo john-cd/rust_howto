@@ -55,7 +55,7 @@
 
 //     // Execute the query on the syntax tree
 
-// // TODO P1
+// // FIXME P1
 //     // println!("Variable declarations:");
 //     // for m in query_cursor.matches(&query, tree.root_node(),
 // code.as_bytes()) {     //     for capture in m.capture {

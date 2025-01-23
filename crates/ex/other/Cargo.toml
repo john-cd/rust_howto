@@ -23,7 +23,7 @@ aws-sdk-s3 = "1.68.0"
 lambda_runtime = "0.13.0"
 
 ## Cross platform
-crux_core = "0.10.1"
+crux_core = "0.11.1"
 crux_macros = "0.4.2"
 
 ## Data processing
@@ -31,17 +31,17 @@ arrow = { version = "54.0.0", features = [ "prettyprint" ] }
 datafusion = "44.0.0"
 
 ## GPU
-# TODO
+# TODO P2 add deps
 
 ## Scripting
 rhai = "1.19.0"
 
-## Written in Rust TODO
+## Written in Rust TODO P2
 # bat
 # broot
-# exa = "0.10.1" # TODO P3 review conflicts
+# exa = "0.10.1" # TODO P2 review conflicts
 # gping = "1.17.3" # not a lib
-# just = "1.36.0" # TODO
+# just = "1.36.0" # TODO P2
 # lsd
 # roogle # not a lib
 # ruff # not a lib
@@ -50,7 +50,7 @@ rhai = "1.19.0"
 # xsv = "0.13.0" # not a lib
 # zed  # the `zed` crate is not the editor
 
-## General
+## General TODO P2 remove 
 #serde.workspace = true
 #serde_json.workspace = true
 #tokio.workspace = true

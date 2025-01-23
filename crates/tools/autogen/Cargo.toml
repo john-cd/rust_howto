@@ -19,7 +19,7 @@ publish = false
 #serde.workspace = true
 #tera = "1.20.0"
 tool_lib = { path = "../tool_lib" }
-#url.workspace = true # TODO
+#url.workspace = true # TODO P1 clean up
 #walkdir.workspace = true
 
 [[bin]]

@@ -29,6 +29,5 @@
 // fn test() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/747)
-// // TODO rewrite example
+// // [P1](https://github.com/john-cd/rust_howto/issues/747) rewrite divan example
 // // https://nikolaivazquez.com/blog/divan/
