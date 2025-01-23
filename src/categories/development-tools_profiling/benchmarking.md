@@ -51,8 +51,30 @@ Simple yet powerful benchmarking library with allocation profiling
 
 Tool for benchmarking compiled binaries (similar to unix time command but better).
 
-```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_profiling/tests/divan.rs:example}}
+- Statistical analysis across multiple runs.
+- Support for arbitrary shell commands.
+- Constant feedback about the benchmark progress and current estimates.
+- Warmup runs can be executed before the actual benchmark.
+- Cache-clearing commands can be set up before each timing run.
+- Statistical outlier detection to detect interference from other programs and caching effects.
+- Export results to various formats: CSV, JSON, Markdown, AsciiDoc.
+- Parameterized benchmarks (e.g. vary the number of threads).
+- Cross-platform
+
+```sh
+cargo install --locked hyperfine
+# or
+apt install hyperfine
+```
+
+```sh
+hyperfine 'sleep 0.3'
+# Change the number of runs to perform
+hyperfine --runs 5 'sleep 0.3'
+# Compare the runtimes of different programs
+hyperfine 'hexdump file' 'xxd file'
+# Run the benchmark on a warm cache
+hyperfine --warmup 3 'grep -R TODO *'
 ```
 
 {{#include refs.incl.md}}
