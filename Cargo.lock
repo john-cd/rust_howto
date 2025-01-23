@@ -1540,7 +1540,7 @@ dependencies = [
  "arrow-cast 53.4.0",
  "arrow-data 53.4.0",
  "arrow-schema 53.4.0",
- "flatbuffers",
+ "flatbuffers 24.12.23",
  "lz4_flex",
 ]
 
@@ -1554,7 +1554,7 @@ dependencies = [
  "arrow-buffer 54.0.0",
  "arrow-data 54.0.0",
  "arrow-schema 54.0.0",
- "flatbuffers",
+ "flatbuffers 24.12.23",
 ]
 
 [[package]]
@@ -2338,6 +2338,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8d818003e740b63afc82337e3160717f4f63078720a810b7b903e70a5d1d2994"
 dependencies = [
  "bytemuck",
+]
+
+[[package]]
+name = "atomic-polyfill"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8cf2bce30dfe09ef0bfaef228b9d414faaf7e563035494d7fe092dba54b300f4"
+dependencies = [
+ "critical-section",
 ]
 
 [[package]]
@@ -9652,14 +9661,16 @@ dependencies = [
  "ciborium",
  "csv",
  "data-encoding",
- "flatbuffers",
+ "flatbuffers 25.1.21",
  "form_urlencoded",
+ "heapless 0.7.17",
  "monostate",
  "percent-encoding",
+ "postcard",
  "prost",
  "prost-build",
  "prost-types",
- "protobuf",
+ "protobuf 3.7.1",
  "serde 1.0.217",
  "serde_json",
  "toml 0.8.19",
@@ -10271,6 +10282,16 @@ name = "flatbuffers"
 version = "24.12.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4f1baf0dbf96932ec9a3038d57900329c015b0bfb7b63d904f3bc27e2b02a096"
+dependencies = [
+ "bitflags 1.3.2",
+ "rustc_version",
+]
+
+[[package]]
+name = "flatbuffers"
+version = "25.1.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "744fff4a025a51bc620d8427474693aa2af4534a3b3610aabfb07a3968dacaa9"
 dependencies = [
  "bitflags 1.3.2",
  "rustc_version",
@@ -12795,6 +12816,15 @@ dependencies = [
 
 [[package]]
 name = "hash32"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b0c35f58762feb77d74ebe43bdbc3210f09be9fe6742234d573bacc26ed92b67"
+dependencies = [
+ "byteorder",
+]
+
+[[package]]
+name = "hash32"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "47d60b12902ba28e2730cd37e95b8c9223af2808df9e902d4df49588d1470606"
@@ -12895,11 +12925,25 @@ dependencies = [
 
 [[package]]
 name = "heapless"
+version = "0.7.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdc6457c0eb62c71aac4bc17216026d8410337c4126773b9c5daba343f17964f"
+dependencies = [
+ "atomic-polyfill",
+ "hash32 0.2.1",
+ "rustc_version",
+ "serde 1.0.217",
+ "spin",
+ "stable_deref_trait",
+]
+
+[[package]]
+name = "heapless"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0bfb9eb618601c89945a70e254898da93b13be0388091d42117462b265bb3fad"
 dependencies = [
- "hash32",
+ "hash32 0.3.1",
  "stable_deref_trait",
 ]
 
@@ -20247,6 +20291,7 @@ dependencies = [
  "cobs",
  "embedded-io 0.4.0",
  "embedded-io 0.6.1",
+ "heapless 0.7.17",
  "serde 1.0.217",
 ]
 
@@ -20536,7 +20581,7 @@ dependencies = [
  "lazy_static",
  "memchr",
  "parking_lot 0.12.3",
- "protobuf",
+ "protobuf 2.28.0",
  "thiserror 1.0.69",
 ]
 
@@ -20597,6 +20642,26 @@ name = "protobuf"
 version = "2.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "106dd99e98437432fed6519dedecfade6a06a73bb7b2a1e019fdd2bee5778d94"
+
+[[package]]
+name = "protobuf"
+version = "3.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a3a7c64d9bf75b1b8d981124c14c179074e8caa7dfe7b6a12e6222ddcd0c8f72"
+dependencies = [
+ "once_cell",
+ "protobuf-support",
+ "thiserror 1.0.69",
+]
+
+[[package]]
+name = "protobuf-support"
+version = "3.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b088fd20b938a875ea00843b6faf48579462630015c3788d397ad6a786663252"
+dependencies = [
+ "thiserror 1.0.69",
+]
 
 [[package]]
 name = "psl-types"
@@ -22336,7 +22401,7 @@ version = "0.12.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "421400d13ccfd26dfa5858199c30a5d76f9c54e0dba7575273025b43c5175dbb"
 dependencies = [
- "heapless",
+ "heapless 0.8.0",
  "num-traits 0.2.19",
  "smallvec 1.13.2",
 ]
