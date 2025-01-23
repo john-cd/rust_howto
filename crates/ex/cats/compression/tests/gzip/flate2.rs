@@ -1,8 +1,9 @@
 // ANCHOR: example
 use std::io::prelude::*;
+
 use flate2::Compression;
-use flate2::write::ZlibEncoder;
 use flate2::read::GzDecoder;
+use flate2::write::ZlibEncoder;
 
 fn compress() -> anyhow::Result<()> {
     let mut e = ZlibEncoder::new(Vec::new(), Compression::default());
