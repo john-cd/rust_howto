@@ -1,7 +1,8 @@
 // ANCHOR: example
 
 // A fully typed LMDB (mdb.master) wrapper with minimum overhead
-// Lightning Memory-Mapped Database (LMDB) is an embedded transactional database in the form of a key-value store. 
+// Lightning Memory-Mapped Database (LMDB) is an embedded transactional database
+// in the form of a key-value store.
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
