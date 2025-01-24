@@ -30,13 +30,14 @@ rusqlite = "0.32.1" # pinned
 sea-orm = "1.1.3"
 seaography = "1.1.2"
 sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite", "macros" ] }
+tiberius = "0.12.3"
 tokio-postgres = "0.7.12"
 
 ## General
 anyhow.workspace = true
-#axum = "0.8.1"
+#axum = "0.8.1" # TODO P1 clean
 config = "0.15.3"
 dotenvy = "0.15.7"
 serde.workspace = true
-#serde_json.workspace = true
+#serde_json.workspace = true # TODO P1 clean
 tokio.workspace = true
