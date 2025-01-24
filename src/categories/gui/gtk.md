@@ -9,7 +9,7 @@
 Rust bindings of the GTK 4 library. These are quite well supported, although you'll often need to use the C documentation.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/gtk4.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/gtk/gtk4.rs:example}}
 ```
 
 ## `relm4` {#relm4}
@@ -19,7 +19,7 @@ Rust bindings of the GTK 4 library. These are quite well supported, although you
 A higher-level library that sits on top of gtk4-rs. An idiomatic GUI library inspired by Elm.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/relm4.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/gtk/relm4.rs:example}}
 ```
 
 {{#include refs.incl.md}}

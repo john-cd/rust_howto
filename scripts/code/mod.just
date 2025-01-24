@@ -52,7 +52,7 @@ buildall:
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
-# Build all code with all features (incl. "unused")
+# Build all code with all features
 buildallfeat:
   cargo build --workspace --all-targets --locked --all-features
 
@@ -100,6 +100,13 @@ nextestall: _clean_temp_dir && _clean_temp_dir
 # Clean the `crates/**/temp` folders of most files prior / after testing
 _clean_temp_dir:
   cargo run -p clean --quiet
+
+alias r := run
+
+# Run an example
+[no-cd]
+run exmpl:
+  cargo run --locked --example {{exmpl}}
 
 # Run additional examples (under the `crates/xmpl` folder)
 [unix]

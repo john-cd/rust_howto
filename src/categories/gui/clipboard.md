@@ -9,7 +9,7 @@
 Image and text handling for the OS clipboard. A fork of `rust-clipboard` that supports copy and pasting of both text and images on Linux (X11/Wayland), MacOS and Windows.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/arboard.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/clipboard/arboard.rs:example}}
 ```
 
 {{#include refs.incl.md}}
