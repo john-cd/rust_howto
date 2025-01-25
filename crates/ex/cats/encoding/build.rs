@@ -18,6 +18,7 @@ fn prost() {
 // ANCHOR_END: prost
 
 fn main() {
+    #[cfg(target_os = "linux")]
     capnp();
     // prost();
 }
