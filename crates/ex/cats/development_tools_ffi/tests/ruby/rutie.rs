@@ -1,12 +1,26 @@
-// ANCHOR: example
-fn main() {
-    todo!();
-}
-// ANCHOR_END: example
+// // ANCHOR: example
+// use rutie::*;
 
-#[test]
-#[ignore = "not yet implemented"]
-fn test() {
-    main();
-}
-// TODO P1 write; add to markdown
+// // Compile the Rust code: `cargo build --release`
+// // Run the Ruby script using a Ruby interpreter: `ruby script.rb`
+
+// // Mark the RustModule function as a Ruby module.
+// #[module]
+// fn RustModule(_cls: Class) -> anyhow::Result<()> {
+//     // Create a new Ruby class
+//     Class::new("RustClass", None).define(|cls| {
+//         // Define a class method
+//         cls.def("hello", hello)?;
+//         Ok(())
+//     })?;
+
+//     Ok(())
+// }
+
+// fn hello(_slf: Object) -> anyhow::Result<RString> {
+//     // Create a new Ruby string
+//     Ok(RString::new_utf8("Hello from Rust!"))
+// }
+// // ANCHOR_END: example
+
+// // TODO P1 write; add to markdown
