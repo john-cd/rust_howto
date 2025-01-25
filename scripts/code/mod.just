@@ -90,20 +90,20 @@ alias ntc := nextestcurrent
 # Test in the current directory (or the default packages of the workspace if in the root)
 [no-cd]
 nextestcurrent: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all || true
+  cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nt := nextest
 
 # Test the code examples only (and no doctests)
 nextest: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all || true
+  cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests)
 nextestall: _clean_temp_dir && _clean_temp_dir
   cargo test --doc --workspace --quiet || true # nextest does not handle doctests
-  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all || true
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 _clean_temp_dir:
