@@ -9,7 +9,8 @@
 // // ```sh
 // // protoc --rust_out=. person.proto
 // // ```
-// // This will generate a Rust module with the compiled code for the Person message.
+// // This will generate a Rust module with the compiled code for the Person
+// // message.
 
 // // Import the generated code for the Person message
 // // The generated code is in the person.rs file
@@ -31,7 +32,8 @@
 //     println!("Serialized data: {:?}", serialized_person);
 
 //     // Deserialize the byte array back into a Person message
-//     let deserialized_person = Person::parse_from_bytes(&serialized_person).unwrap();
+//     let deserialized_person =
+// Person::parse_from_bytes(&serialized_person).unwrap();
 
 //     // Print the deserialized Person message
 //     println!("Deserialized person: {:?}", deserialized_person);
