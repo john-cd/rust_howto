@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 // ANCHOR: BINDGEN
 use std::env;
 use std::path::PathBuf;
@@ -56,9 +57,23 @@ fn cbindgen() {
 // }
 // ANCHOR_END: CXX
 
+// ANCHOR: UNIFFI
+// fn uniffi() {
+//     // Generate FFI bindings for the specified Rust functions.
+//     // This will generate the FFI library in the target/debug directory
+// (e.g., libmy_library.so on Linux, libmy_library.dylib on macOS).
+//     uniffi::generate_bindings(
+//         "tests/uniffi.rs", // Path to the Rust library file
+//         "my_library", // Name of the generated FFI library
+//     )
+//     .unwrap();
+// }
+// ANCHOR_END: UNIFFI
+
 fn main() {
     bindgen();
     cbindgen();
     // cxx();
+    // uniffi();
 }
 // TODO P0 fix build.rs for ffi

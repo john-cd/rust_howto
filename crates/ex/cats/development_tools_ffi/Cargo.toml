@@ -17,9 +17,11 @@ publish.workspace = true
 ## Dev. Tools FFI
 ## See below
 cxx = "1.0.136"
+uniffi = "0.28.3"
 
 [build-dependencies]
 bindgen = "0.71.1"
 cbindgen = "0.28.0"
 cc = "1.2"
 cxx-build = "1.0.136"
+uniffi = "0.28.3"
