@@ -1,15 +1,25 @@
 // ANCHOR: example
+use neon::prelude::*;
 
-// Slower than napi, but also widely used and well-maintained
+// Slower than `napi`, but also widely used and well-maintained
 
-fn main() {
-    todo!();
+// Install the neon crate: `cargo install neon`
+// Create a new Neon project: `npm init neon my-neon-example``
+// Build the native module: `cargo build`
+// Run the JavaScript file: `node index.js`
+
+fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
+    // Create a JavaScript string
+    Ok(cx.string("hello from neon!"))
+}
+
+// Entry point of the Neon module.
+#[neon::main]
+fn main(mut cx: ModuleContext) -> NeonResult<()> {
+    // Expose the hello function to JavaScript
+    cx.export_function("hello", hello)?;
+    Ok(())
 }
 // ANCHOR_END: example
 
-#[test]
-#[ignore = "not yet implemented"]
-fn test() {
-    main();
-}
-// TODO P1 write; add to markdown
+// TODO P1 write; add to markdown; how to test?
