@@ -18,6 +18,7 @@ publish.workspace = true
 ## See below
 cxx = "1.0.136"
 uniffi = "0.28.3"
+rustler = "0.36.0"
 
 [build-dependencies]
 bindgen = "0.71.1"

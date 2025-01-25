@@ -8453,6 +8453,7 @@ dependencies = [
  "cc",
  "cxx",
  "cxx-build",
+ "rustler",
  "uniffi",
 ]
 
@@ -22898,6 +22899,31 @@ dependencies = [
  "libc",
  "linux-raw-sys 0.4.15",
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "rustler"
+version = "0.36.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f7b219d7473cf473409665a4898d66688b34736e51bb5791098b0d3390e4c98"
+dependencies = [
+ "inventory",
+ "libloading 0.8.6",
+ "regex-lite",
+ "rustler_codegen",
+]
+
+[[package]]
+name = "rustler_codegen"
+version = "0.36.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "743ec5267bd5f18fd88d89f7e729c0f43b97d9c2539959915fa1f234300bb621"
+dependencies = [
+ "heck 0.5.0",
+ "inventory",
+ "proc-macro2 1.0.93",
+ "quote 1.0.38",
+ "syn 2.0.96",
 ]
 
 [[package]]
