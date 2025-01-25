@@ -84,6 +84,14 @@ clippyall:
 doctest:
   cargo test --workspace --doc --locked
 
+alias tc := nextestcurrent
+alias ntc := nextestcurrent
+
+# Test in the current directory (or the default packages of the workspace if in the root)
+[no-cd]
+nextestcurrent: _clean_temp_dir && _clean_temp_dir
+  cargo nextest run --all-targets --locked --no-fail-fast --status-level all || true
+
 alias nt := nextest
 
 # Test the code examples only (and no doctests)

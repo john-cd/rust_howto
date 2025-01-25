@@ -43,6 +43,10 @@ nt:
 nta:
   @just code nextestall
 
+# Alias for code nextestcurrent
+ntc:
+  @just code nextestcurrent
+
 # # Alias for code testall
 # ta:
 #   @just code testall
