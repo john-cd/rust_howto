@@ -42,13 +42,6 @@
 
 // napi_module_init!(init);
 
-// fn main() {
-//     todo!();
-// }
 // // ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
 // // TODO P1 write; add to markdown; https://lib.rs/crates/napi; https://github.com/napi-rs/package-template
