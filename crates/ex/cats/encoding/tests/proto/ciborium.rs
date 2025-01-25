@@ -1,8 +1,8 @@
 // ANCHOR: example
 use std::io::Cursor;
-use std::io::Read;
-use std::io::Write;
 
+// use std::io::Read;
+// use std::io::Write;
 use ciborium::de::from_reader;
 use ciborium::ser::into_writer;
 use serde::Deserialize;
@@ -15,7 +15,7 @@ struct MyData {
     is_active: bool,
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> anyhow::Result<()> {
     // Create a sample data object
     let data = MyData {
         name: "Alice".to_string(),
@@ -39,7 +39,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
-    main();
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
 }
 // TODO P1 finish

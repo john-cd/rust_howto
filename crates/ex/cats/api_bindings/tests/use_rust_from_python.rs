@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 #![allow(unsafe_op_in_unsafe_fn)]
 #![allow(clippy::useless_conversion)]
-
 #![cfg(target_os = "linux")]
 // ANCHOR: example
 // ANCHOR_END: example
