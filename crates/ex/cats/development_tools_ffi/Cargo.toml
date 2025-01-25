@@ -10,13 +10,12 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools_ffi" ]
+categories = [ "development_tools_ffi" ] # TODO P1
 publish.workspace = true
 
 [dependencies]
-## Dev. Tools FFI
-## See below
 cxx = "1.0.136"
+jni = "0.21.1"
 uniffi = "0.28.3"
 rustler = "0.36.0"
 

@@ -8453,6 +8453,7 @@ dependencies = [
  "cc",
  "cxx",
  "cxx-build",
+ "jni 0.21.1",
  "rustler",
  "uniffi",
 ]
