@@ -42,4 +42,8 @@ Use `tokio-tungstenite` if you are using the `tokio` async executor.
 
 [websocket: cover others e.g. async_std_tungstenite (P2)](https://github.com/john-cd/rust_howto/issues/521)
 
+```rust,editable
+{{#include ../../../crates/ex/cats/web_programming_websocket/tests/async_tungstenite.rs:example}}
+```
+
 </div>

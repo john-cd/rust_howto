@@ -10,10 +10,15 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "web_programming_websocket" ]
+categories = ["web_programming_websocket"]
 publish.workspace = true
 
 [dependencies]
 ## Websocket
 tungstenite = "0.26.0"
 tokio-tungstenite = "0.26.1"
+async-tungstenite = { version = "0.28.2", features = ["tokio-runtime", "tokio-native-tls"] }
+
+## General
+tokio = { version = "1.43.0", features = ["full"] }
+futures-util = "0.3.31"
