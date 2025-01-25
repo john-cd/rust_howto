@@ -1,12 +1,45 @@
-// ANCHOR: example
-fn main() {
-    todo!();
-}
-// ANCHOR_END: example
+// // ANCHOR: example
 
-#[test]
-#[ignore = "not yet implemented"]
-fn test() {
-    main();
-}
-// TODO P1 write protobuf example
+// // In your `Cargo.toml`, add the `protobuf` crate as a dependency:
+// // [dependencies]
+// // protobuf = "3.7.1"
+
+// // Compile the .proto file to generate the Rust code.
+// // You can use the protoc compiler with the Rust plugin
+// // ```sh
+// // protoc --rust_out=. person.proto
+// // ```
+// // This will generate a Rust module with the compiled code for the Person message.
+
+// // Import the generated code for the Person message
+// // The generated code is in the person.rs file
+// mod person;
+
+// use person::Person;
+// use protobuf::Message;
+
+// fn main() {
+//     // Create an instance of the Person message
+//     let mut person = Person::new();
+//     person.set_name(String::from("Alice"));
+//     person.set_age(30);
+
+//     // Serialize the Person message to a byte array
+//     let serialized_person = person.write_to_bytes().unwrap();
+
+//     // Print the serialized data
+//     println!("Serialized data: {:?}", serialized_person);
+
+//     // Deserialize the byte array back into a Person message
+//     let deserialized_person = Person::parse_from_bytes(&serialized_person).unwrap();
+
+//     // Print the deserialized Person message
+//     println!("Deserialized person: {:?}", deserialized_person);
+// }
+// // ANCHOR_END: example
+
+// #[test]
+// fn test() {
+//     main();
+// }
+// // TODO P1 write protobuf example
