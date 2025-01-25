@@ -1,4 +1,5 @@
 // #![allow(dead_code)]
+// #![cfg(target_os = "linux")]
 // // ANCHOR: example
 // // ANCHOR_END: example
 
