@@ -66,7 +66,7 @@ clippyall:
 
 ## Test the code used by the book
 #test: _clean_temp_dir && _clean_temp_dir
-##  cargo test --tests --locked -- --show-output || true
+##  -cargo test --tests --locked -- --show-output
 ## Only the code in default members of the workspace is tested.
 ## This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
 ## NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
@@ -77,7 +77,7 @@ clippyall:
 
 ## Test all code
 #testall: _clean_temp_dir && _clean_temp_dir
-#  cargo test --workspace --all-targets --locked || true
+#  -cargo test --workspace --all-targets --locked
 ## `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 # Test any doctests in the workspace
@@ -102,7 +102,7 @@ alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests)
 nextestall: _clean_temp_dir && _clean_temp_dir
-  cargo test --doc --workspace --quiet || true # nextest does not handle doctests
+  -cargo test --doc --workspace --quiet # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
