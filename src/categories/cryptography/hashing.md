@@ -57,6 +57,14 @@ MD5 hash function
 {{#include ../../../crates/ex/cats/cryptography/tests/md_5.rs:example}}
 ```
 
+[![blake3][c-blake3-badge]][c-blake3] [![blake3-crates.io][c-blake3-crates.io-badge]][c-blake3-crates.io] [![blake3-github][c-blake3-github-badge]][c-blake3-github] [![blake3-lib.rs][c-blake3-lib.rs-badge]][c-blake3-lib.rs]{{hi:blake3}}
+
+`blake3` implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/cryptography/tests/blake3.rs:example}}
+```
+
 ## Encrypt with AEAD {#aead-encryption}
 
 For more algorithms, see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}
@@ -207,6 +215,18 @@ Pure-Rust traits and utilities for constant-time cryptographic implementations.
 
 ```rust,editable
 {{#include ../../../crates/ex/cats/cryptography/tests/zeroize.rs:example}}
+```
+
+## ChaCha20Poly1305
+
+[![chacha20poly1305-website][c-chacha20poly1305-website-badge]][c-chacha20poly1305-website] [![chacha20poly1305][c-chacha20poly1305-badge]][c-chacha20poly1305] [![chacha20poly1305-crates.io][c-chacha20poly1305-crates.io-badge]][c-chacha20poly1305-crates.io] [![chacha20poly1305-github][c-chacha20poly1305-github-badge]][c-chacha20poly1305-github] [![chacha20poly1305-lib.rs][c-chacha20poly1305-lib.rs-badge]][c-chacha20poly1305-lib.rs]{{hi:chacha20poly1305}}{{hi:Chacha20}}{{hi:Poly1305}}{{hi:Aead}}{{hi:Xchacha20}}{{hi:Xchacha20poly1305}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+Pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional architecture-specific
+hardware acceleration. Also contains implementations of the XChaCha20Poly1305 extended nonce variant of ChaCha20Poly1305, and the reduced-round
+ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/cryptography/tests/chacha20poly1305.rs:example}}
 ```
 
 [hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273)  review [blessed.rs][blessed-rs-website]
