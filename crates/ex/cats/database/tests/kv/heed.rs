@@ -1,15 +1,14 @@
 // // ANCHOR: example
 
-// // heed and heed3 are high-level wrappers of LMDB.
+// // `heed` and `heed3` are high-level wrappers of LMDB.
+// // Lightning Memory-Mapped Database (LMDB) is an embedded transactional
+// // database in the form of a key-value store.
 
-// // A fully typed LMDB (mdb.master) wrapper with minimum overhead
-// // Lightning Memory-Mapped Database (LMDB) is an embedded transactional database
-// // in the form of a key-value store.
-
-// // heed is a wrapper around LMDB on the mdb.master branch,
-// // heed3 derives from the heed wrapper but on the mdb.master3 branch.
-// // The heed3 crate will be stable once the LMDB version on the mdb.master3 branch will be officially released. It features encryption-at-rest and checksumming features that the heed crate doesn't.
-
+// // `heed` is a wrapper around LMDB on the mdb.master branch,
+// // `heed3` derives from the heed wrapper but on the mdb.master3 branch.
+// // The heed3 crate will be stable once the LMDB version on the mdb.master3
+// // branch will be officially released. It features encryption-at-rest and
+// // checksumming features that the heed crate doesn't.
 
 // use heed::types::*;
 // use heed::{Database, EnvOpenOptions};
@@ -25,7 +24,8 @@
 //     };
 
 //     // Create a database within the environment
-//     let db: Database<u32, String> = env.create_database(b"my_database", None)?;
+//     let db: Database<u32, String> = env.create_database(b"my_database",
+// None)?;
 
 //     // Write data to the database
 //     let mut wtxn = env.write_txn()?;
@@ -42,7 +42,7 @@
 // // ANCHOR_END: example
 
 // #[test]
-// fn test() -> anyhow::Result<()> {
+// fn require_external_svc() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
