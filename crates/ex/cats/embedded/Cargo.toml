@@ -14,5 +14,4 @@ categories = [ "embedded" ]
 publish.workspace = true
 
 [dependencies]
-## Embedded
 # embassy = "0.0.0" # TODO P1 review installation / required dependencies

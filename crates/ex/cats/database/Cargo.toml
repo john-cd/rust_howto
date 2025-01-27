@@ -46,7 +46,6 @@ config = "0.15.3"
 dotenvy = "0.15.7"
 futures = "0.3.31"
 serde.workspace = true
-#serde_json.workspace = true # TODO P1 clean
 tokio.workspace = true
 tokio-util = { version = "0.7.13", features = [ "compat" ] }
 uuid = { version = "1", features = ["v4"] }

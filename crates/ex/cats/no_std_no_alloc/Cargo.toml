@@ -14,5 +14,4 @@ categories = [ "no_std_no_alloc" ]
 publish.workspace = true
 
 [dependencies]
-## No std and no alloc
 # TODO add deps

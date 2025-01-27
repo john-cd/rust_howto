@@ -14,5 +14,4 @@ categories = [ "external_ffi_bindings" ]
 publish.workspace = true
 
 [dependencies]
-## External FFI
 # TODO P2

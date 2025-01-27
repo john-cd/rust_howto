@@ -14,5 +14,4 @@ categories = [ "internationalization" ]
 publish.workspace = true
 
 [dependencies]
-## Internationalization
-## TODO P2 add deps 
+## TODO P2 add deps

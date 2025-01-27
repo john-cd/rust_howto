@@ -14,5 +14,4 @@ categories = [ "multimedia" ]
 publish.workspace = true
 
 [dependencies]
-## Multimedia and friends
 # TODO P2 add deps

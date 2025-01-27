@@ -14,5 +14,4 @@ categories = [ "localization" ]
 publish.workspace = true
 
 [dependencies]
-## Localization
 ## TODO P2 add deps
