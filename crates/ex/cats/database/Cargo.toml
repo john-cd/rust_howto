@@ -24,6 +24,7 @@ diesel = { version = "2.2.6", features = ["sqlite"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
 elasticsearch = "8.17.0-alpha.1" # NOTE: alpha version
 heed = "0.21.0"
+lapin = "2.5.0"
 mongodb = "3.1.1"
 postgres = "0.19.9"
 redis = "0.28.0"
@@ -39,6 +40,7 @@ anyhow.workspace = true
 #axum = "0.8.1" # TODO P1 clean
 config = "0.15.3"
 dotenvy = "0.15.7"
+futures = "0.3.31"
 serde.workspace = true
 #serde_json.workspace = true # TODO P1 clean
 tokio.workspace = true
