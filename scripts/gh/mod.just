@@ -16,7 +16,7 @@ find_dupe_issues:
   #! /bin/bash
   set -euo pipefail
   IFS=$'\t\n'
-  gh issue list -L 1000 --json title --jq '.[] | [.title]' | sed -E 's/\["(.*)(\(P[0-9]\))?"]/\1/g' | sort | uniq --repeated
+  gh issue list -L 2000 --json title --jq '.[] | [.title]' | sed -E 's/\["(.*)(\(P[0-9]\))?"]/\1/g' | sort | uniq --repeated
 # --template '{{range .}}{{.number .title}}{{"\n"}}{{end}}
 # --jq '.[] | [.number, .title]'
 
