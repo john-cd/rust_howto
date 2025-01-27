@@ -9,7 +9,7 @@
 A flexible UI layout library. "Supports Flexbox and CSS Grid algorithms."
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/UI_layout/taffy.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/ui_layout/taffy.rs:example}}
 ```
 
 ## `morphorm` {#morphorm}
@@ -28,7 +28,7 @@ Morphorm is suitable for various use cases, including:
 - Layout in resource-constrained environments (embedded systems).
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/UI_layout/morphorm.rs:example}}
+{{#include ../../../crates/ex/cats/gui/examples/ui_layout/morphorm.rs:example}}
 ```
 
 {{#include refs.incl.md}}

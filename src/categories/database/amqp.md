@@ -9,7 +9,7 @@
 `lapin` is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/database/tests/AMQP/lapin.rs:example}}
+{{#include ../../../crates/ex/cats/database/tests/amqp/lapin.rs:example}}
 ```
 
 {{#include refs.incl.md}}
