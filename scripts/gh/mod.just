@@ -77,7 +77,7 @@ create_issues_for_examples:
 #     sleep 2
 #   done
 
-## TODO
+## TODO P1
 
 ## HACK: Replace TODO lines in the markdown by a link to previously created GitHub Issues
 #add_gh_links:
@@ -107,7 +107,7 @@ create_issues_for_examples:
 #    done
 #  done
 
-## TODO
+## TODO P1
 
 # HACK
 add_gh_links_to_code:

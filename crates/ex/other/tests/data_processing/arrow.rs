@@ -74,4 +74,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO P2 add more? read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html
+// TODO P2 add more; read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html
