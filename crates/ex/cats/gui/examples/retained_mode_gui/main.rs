@@ -8,7 +8,7 @@ fn main() -> anyhow::Result<()> {
     floem::main();
     iced::main();
     // slint::main()?; TODO P1 fix
-    vizia::main();
+    // vizia::main();
     xilem::main();
     Ok(())
 }
