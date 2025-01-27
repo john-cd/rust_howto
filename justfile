@@ -1,3 +1,5 @@
+set shell := ["bash", "-uc"]
+
 # Set shell for Windows OSs:
 # PowerShell Core has some of the Unix shell skills we need, such as || and &&
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
@@ -123,6 +125,9 @@ mod docker 'scripts/docker'
 
 # Manage GitHub
 mod gh 'scripts/gh'
+
+# Manage pre-commit
+mod? precommit 'scripts/precommit'
 
 ## ---- CLEAN ------------------------------------------
 
