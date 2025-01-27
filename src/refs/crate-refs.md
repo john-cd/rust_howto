@@ -1369,6 +1369,14 @@
 [c-flurry-lib.rs-badge]: https://img.shields.io/badge/lib.rs-flurry-yellow
 [c-flurry-lib.rs]: https://lib.rs/crates/flurry
 [c-flurry]: https://docs.rs/flurry
+[c-flutter_rust_bridge-badge]: https://img.shields.io/crates/v/flutter_rust_bridge?label=flutter_rust_bridge
+[c-flutter_rust_bridge-crates.io-badge]: https://img.shields.io/badge/crates.io-flutter__rust__bridge-crimson
+[c-flutter_rust_bridge-crates.io]: https://crates.io/crates/flutter_rust_bridge
+[c-flutter_rust_bridge-github-badge]: https://img.shields.io/badge/flutter__rust__bridge-steelblue?logo=github
+[c-flutter_rust_bridge-github]: https://github.com/fzyzcjy/flutter_rust_bridge
+[c-flutter_rust_bridge-lib.rs-badge]: https://img.shields.io/badge/lib.rs-flutter__rust__bridge-yellow
+[c-flutter_rust_bridge-lib.rs]: https://lib.rs/crates/flutter_rust_bridge
+[c-flutter_rust_bridge]: https://docs.rs/flutter_rust_bridge
 [c-form_urlencoded-badge]: https://img.shields.io/crates/v/form_urlencoded?label=form_urlencoded
 [c-form_urlencoded-crates.io-badge]: https://img.shields.io/badge/crates.io-form__urlencoded-crimson
 [c-form_urlencoded-crates.io]: https://crates.io/crates/form_urlencoded
