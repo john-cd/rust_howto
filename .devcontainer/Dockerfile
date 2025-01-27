@@ -50,6 +50,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libglu1-mesa-dev \
     libgtk-4-dev \
     libopencv-dev \
+    librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
     libudev-dev \
