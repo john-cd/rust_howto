@@ -3654,6 +3654,16 @@
 [c-unicode_segmentation-lib.rs]: https://lib.rs/crates/unicode-segmentation
 [c-unicode_segmentation::UnicodeSegmentation::graphemes]: https://docs.rs/unicode_segmentation/latest/unicode_segmentation/trait.UnicodeSegmentation.html#tymethod.graphemes
 [c-unicode_segmentation]: https://docs.rs/unicode-segmentation
+[c-uniffi-badge]: https://img.shields.io/crates/v/uniffi?label=uniffi
+[c-uniffi-crates.io-badge]: https://img.shields.io/badge/crates.io-uniffi-crimson
+[c-uniffi-crates.io]: https://crates.io/crates/uniffi
+[c-uniffi-github-badge]: https://img.shields.io/badge/uniffi-steelblue?logo=github
+[c-uniffi-github]: https://github.com/mozilla/uniffi-rs
+[c-uniffi-lib.rs-badge]: https://img.shields.io/badge/lib.rs-uniffi-yellow
+[c-uniffi-lib.rs]: https://lib.rs/crates/uniffi
+[c-uniffi-website-badge]: https://img.shields.io/badge/uniffi-coral
+[c-uniffi-website]: https://mozilla.github.io/uniffi-rs
+[c-uniffi]: https://mozilla.github.io/uniffi-rs
 [c-ureq-badge]: https://img.shields.io/crates/v/ureq?label=ureq
 [c-ureq-crates.io-badge]: https://img.shields.io/badge/crates.io-ureq-crimson
 [c-ureq-crates.io]: https://crates.io/crates/ureq

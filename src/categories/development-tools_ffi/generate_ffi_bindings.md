@@ -54,4 +54,14 @@ Safe C++ <-> Rust interop by generating code for both sides.
 <div class="hidden">
 [generate_ffi_bindings: write (P2)](https://github.com/john-cd/rust_howto/issues/324)
 
+## `uniffi` {#uniffi}
+
+[![uniffi-website][c-uniffi-website-badge]][c-uniffi-website] [![uniffi][c-uniffi-badge]][c-uniffi] [![uniffi-crates.io][c-uniffi-crates.io-badge]][c-uniffi-crates.io] [![uniffi-github][c-uniffi-github-badge]][c-uniffi-github] [![uniffi-lib.rs][c-uniffi-lib.rs-badge]][c-uniffi-lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
+
+a multi-language bindings generator for rust
+
+```rust,editable
+{{#include ../../../crates/ex/cats/development_tools_ffi/tests/uniffi.rs:example}}
+```
+
 </div>
