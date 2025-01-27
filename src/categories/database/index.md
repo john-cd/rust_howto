@@ -32,4 +32,23 @@ Interface with database management systems{{hi:Database management systems}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+
+TODO P1 organize
+
+## AMQP
+
+{{#include amqp.incl.md}}
+
+## Key-value stores
+
+{{#include kv.incl.md}}
+
+## MSSQL
+
+{{#include mssql.incl.md}}
+
+## Oracle
+
+{{#include oracle.incl.md}}
+
 </div>
