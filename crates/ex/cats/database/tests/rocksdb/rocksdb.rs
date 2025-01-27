@@ -9,39 +9,48 @@
 // Requirements: Clang and LLVM
 
 use rocksdb::DB;
-// use rocksdb::Error;
-// use rocksdb::Options;
+use rocksdb::Options;
 
 fn main() -> anyhow::Result<()> {
-    // Open a RocksDB database
-    // (this will create a new database if it doesn't exist)
-    let path = "my_rocksdb";
-    let db = DB::open_default(path)?;
+    // Create a new temporary directory to store the database,
+    // which will be deleted when tempdir goes out of scope
+    let tempdir = tempfile::Builder::new()
+        .prefix("rocksdb_storage")
+        .tempdir()
+        .expect("Failed to create temporary directory for rocksdb storage");
+    let path = tempdir.path();
+    // In real life, use e.g.: let path = "my_rocksdb_path";
+    {
+        // Open a RocksDB database
+        // (this will create a new database if it doesn't exist)
+        let db = DB::open_default(path)?;
 
-    // Insert some key-value pairs
-    db.put(b"key1", b"value1")?;
-    db.put(b"key2", b"value2")?;
+        // Insert some key-value pairs
+        db.put(b"key1", b"value1")?;
+        db.put(b"key2", b"value2")?;
 
-    // Retrieve a value by its key
-    match db.get(b"key1")? {
-        Some(value) => println!(
-            "Found key1 with value: {}",
-            String::from_utf8_lossy(&value)
-        ),
-        None => println!("key1 not found"),
+        // Retrieve a value by its key
+        match db.get(b"key1")? {
+            Some(value) => println!(
+                "Found key1 with value: {}",
+                String::from_utf8_lossy(&value)
+            ),
+            None => println!("key1 not found"),
+        }
+
+        // Delete a key-value pair
+        db.delete(b"key1")?;
+
+        // Try to get the deleted key
+        match db.get(b"key1")? {
+            Some(value) => println!(
+                "Found key1 with value: {}",
+                String::from_utf8_lossy(&value)
+            ),
+            None => println!("key1 not found after deletion"),
+        }
     }
-
-    // Delete a key-value pair
-    db.delete(b"key1")?;
-
-    // Try to get the deleted key
-    match db.get(b"key1")? {
-        Some(value) => println!(
-            "Found key1 with value: {}",
-            String::from_utf8_lossy(&value)
-        ),
-        None => println!("key1 not found after deletion"),
-    }
+    let _ = DB::destroy(&Options::default(), path);
 
     Ok(())
 }
