@@ -12,7 +12,7 @@
 // // use surrealdb::engine::local::RocksDb;
 
 // // SurrealDB is a scalable, distributed, collaborative, document-graph
-// database // for the realtime web.
+// // database for the realtime web.
 
 // #[derive(Debug, Serialize, Deserialize)]
 // struct Person {
@@ -97,3 +97,5 @@
 //     main()?;
 //     Ok(())
 // }
+
+// TODO P1 finish the example
