@@ -24,4 +24,4 @@ fn add(env: Env, a: i32, b: i32) -> NifResult<i32> {
 rustler::init!("Elixir.MyRustLibrary");
 // ANCHOR_END: example
 
-// TODO P1 write; add test; add to markdown
+// [ P1 write; add test; add to markdown](https://github.com/john-cd/rust_howto/issues/1080)
