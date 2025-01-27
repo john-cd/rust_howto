@@ -5,26 +5,33 @@
 // // API.
 
 // // To use Sibyl, you need to download the appropriate Instant Client packages
-// // for your Linux distribution and architecture (usually 64-bit) from the official Oracle website:
+// // for your Linux distribution and architecture (usually 64-bit) from the
+// // official Oracle website:
 // // https://www.oracle.com/database/technologies/instant-client/downloads.html
-// // Install the alien package: This tool is used to convert RPM packages (which Oracle provides) to Debian packages suitable for Ubuntu.
+// // Install the alien package: This tool is used to convert RPM packages
+// // (which Oracle provides) to Debian packages suitable for Ubuntu.
 // // sudo apt update
 // // sudo apt install alien libaio1
-// // Extract the downloaded ZIP files: Choose a suitable directory (e.g., /opt/oracle) and extract the downloaded ZIP files there.
+// // Extract the downloaded ZIP files: Choose a suitable directory (e.g.,
+// /opt/oracle) and extract the downloaded ZIP files there.
 // // sudo mkdir -p /opt/oracle
 // // sudo unzip instantclient-basic-linux.x64-<version>.zip -d /opt/oracle
-// // sudo unzip instantclient-sqlplus-linux.x64-<version>.zip -d /opt/oracle
-// // Convert RPM packages to DEB packages (if applicable): If you downloaded RPM packages, convert them to DEB using the alien command.
+// // sudo unzip instantclient-sqlplus-linux.x64-<version>.zip -d
+// // /opt/oracle
+// // Convert RPM packages to DEB packages (if applicable):
+// // If you downloaded RPM packages, convert them to DEB using the `alien`
+// // command.
 // // sudo alien -i oracle-instantclient-<version>-basic-<version>.rpm
 // // sudo alien -i oracle-instantclient-<version>-sqlplus-<version>.rpm
 // // Install the DEB packages (if applicable):
 // // sudo dpkg -i oracle-instantclient*.deb
 // // Update the library path:
-// // sudo sh -c 'echo /opt/oracle/instantclient_<version> > /etc/ld.so.conf.d/oracle-instantclient.conf'
-// // sudo ldconfig
+// // sudo sh -c 'echo /opt/oracle/instantclient_<version> >
+// // /etc/ld.so.conf.d/oracle-instantclient.conf' // sudo ldconfig
 // // Set environment variables (optional):
 // // export PATH=$PATH:/opt/oracle/instantclient_<version> (for `sqlplus`)
-// // export LD_LIBRARY_PATH=/opt/oracle/instantclient_<version>:$LD_LIBRARY_PATH
+// // export LD_LIBRARY_PATH=/opt/oracle/instantclient_<version>:
+// // $LD_LIBRARY_PATH
 // // Try connecting to your Oracle database using sqlplus:
 // // sqlplus <username>/<password>@<hostname>:<port>/<service_name>
 
@@ -45,15 +52,17 @@
 //     let dbuser = std::env::var("DBUSER").expect("user name");
 //     let dbpass = std::env::var("DBPASS").expect("password");
 
-//     // Establishes a connection to the database using the provided credentials
-//     let session = oracle.connect(&dbname, &dbuser, &dbpass)?;
+// // Establishes a connection to the database using the provided
+// // credentials
+// let session = oracle.connect(&dbname, &dbuser, &dbpass)?;
 
 //     // Prepare the SQL statement
 //     let stmt = session.prepare("SELECT first_name, last_name
 //                                 FROM hr.employees
 //                                 WHERE department_id = :department_id")?;
 
-//     // Executes the prepared statement with the department ID set to 10 and retrieves a Rows iterator
+//     // Executes the prepared statement with the department ID set to 10 and
+//     // retrieves a Rows iterator
 //     let rows = stmt.query(&10)?;
 
 //     while let Some(row) = rows.next()? {
