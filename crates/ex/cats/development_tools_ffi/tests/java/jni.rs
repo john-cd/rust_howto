@@ -50,7 +50,6 @@
 // // ANCHOR_END: example
 
 // // #[test]
-// // #[ignore = "not yet implemented"]
 // // fn test() {
 // // }
 // // TODO P1 write; add to markdown

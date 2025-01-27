@@ -1,4 +1,4 @@
-// ANCHOR: exampleuse core::ops::Deref;
+// ANCHOR: example
 use std::ops::Deref;
 
 use heapless::Vec;
@@ -49,7 +49,6 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-// #[ignore = "WIP"]
 fn test() {
     main();
 }

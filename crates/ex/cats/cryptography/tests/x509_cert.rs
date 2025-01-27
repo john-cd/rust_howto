@@ -56,7 +56,6 @@
 // // ANCHOR_END: example
 
 // #[test]
-// // #[ignore = "WIP"]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
