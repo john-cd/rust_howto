@@ -2825,6 +2825,14 @@
 [c-rustix-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rustix-yellow
 [c-rustix-lib.rs]: https://lib.rs/crates/rustix
 [c-rustix]: https://docs.rs/rustix
+[c-rustler-badge]: https://img.shields.io/crates/v/rustler?label=rustler
+[c-rustler-crates.io-badge]: https://img.shields.io/badge/crates.io-rustler-crimson
+[c-rustler-crates.io]: https://crates.io/crates/rustler
+[c-rustler-github-badge]: https://img.shields.io/badge/rustler-steelblue?logo=github
+[c-rustler-github]: https://github.com/rusterlium/rustler
+[c-rustler-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rustler-yellow
+[c-rustler-lib.rs]: https://lib.rs/crates/rustler
+[c-rustler]: https://docs.rs/rustler
 [c-rustls-badge]: https://img.shields.io/crates/v/rustls?label=rustls
 [c-rustls-crates.io-badge]: https://img.shields.io/badge/crates.io-rustls-crimson
 [c-rustls-crates.io]: https://crates.io/crates/rustls
