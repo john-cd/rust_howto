@@ -1974,6 +1974,14 @@
 [c-miri-lib.rs-badge]: https://img.shields.io/badge/lib.rs-miri-yellow
 [c-miri-lib.rs]: https://lib.rs/crates/miri
 [c-miri]: https://github.com/rust-lang/miri/blob/master/README.md
+[c-mlua-badge]: https://img.shields.io/crates/v/mlua?label=mlua
+[c-mlua-crates.io-badge]: https://img.shields.io/badge/crates.io-mlua-crimson
+[c-mlua-crates.io]: https://crates.io/crates/mlua
+[c-mlua-github-badge]: https://img.shields.io/badge/mlua-steelblue?logo=github
+[c-mlua-github]: https://github.com/khvzak/mlua
+[c-mlua-lib.rs-badge]: https://img.shields.io/badge/lib.rs-mlua-yellow
+[c-mlua-lib.rs]: https://lib.rs/crates/mlua
+[c-mlua]: https://docs.rs/mlua
 [c-mongodb-badge]: https://img.shields.io/crates/v/mongodb?label=mongodb
 [c-mongodb-crates.io-badge]: https://img.shields.io/badge/crates.io-mongodb-crimson
 [c-mongodb-crates.io]: https://crates.io/crates/mongodb
