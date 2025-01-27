@@ -32,4 +32,16 @@ Get platform-specific locations for configuration, cache, and other data
 <div class="hidden">
 [user_directories: write (P1)](https://github.com/john-cd/rust_howto/issues/362)
 
+- find a spot for the following:
+
+## `open` {#open}
+
+[![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
+
+Open a path or URL using the program configured on the system.
+
+```rust,editable
+{{#include ../../../crates/ex/cats/filesystem/tests/open.rs:example}}
+```
+
 </div>
