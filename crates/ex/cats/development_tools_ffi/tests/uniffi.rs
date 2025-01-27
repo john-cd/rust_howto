@@ -18,4 +18,4 @@
 // // fn test() {
 // //     main();
 // // }
-// // TODO P1 write; add to markdown; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml
+// [ P1 write; add to markdown; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037)

@@ -44,4 +44,4 @@
 // fn test() {
 //     main();
 // }
-// // TODO P1 write protobuf example
+// [ P1 write protobuf example](https://github.com/john-cd/rust_howto/issues/1045)

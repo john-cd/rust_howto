@@ -1,6 +1,6 @@
 mod arboard;
 
 fn main() {
-    // TODO P1
+    // [ P1](https://github.com/john-cd/rust_howto/issues/1048)
     arboard::main();
 }

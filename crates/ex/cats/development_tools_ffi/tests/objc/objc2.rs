@@ -27,4 +27,4 @@
 // fn test() {
 //     main();
 // }
-// // TODO P1 write; add to markdown; https://docs.rs/objc2/latest/objc2/
+// [ P1 write; add to markdown; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

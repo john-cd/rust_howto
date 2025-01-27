@@ -19,4 +19,4 @@
 //     app.run();
 // }
 
-// // TODO P1 create vizia example
+// [ P1 create vizia example](https://github.com/john-cd/rust_howto/issues/1052)

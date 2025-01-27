@@ -52,4 +52,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P2 write
+// [ P2 write](https://github.com/john-cd/rust_howto/issues/1024)

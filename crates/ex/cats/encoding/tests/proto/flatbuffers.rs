@@ -59,4 +59,4 @@
 //     main();
 // }
 // // https://flatbuffers.dev/languages/rust/
-// // TODO P1 finish flatbuffers example
+// [ P1 finish flatbuffers example](https://github.com/john-cd/rust_howto/issues/1043)

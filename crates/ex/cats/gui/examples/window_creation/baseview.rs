@@ -17,4 +17,4 @@ pub fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// TODO P2 write; add to markdown; https://github.com/RustAudio/baseview
+// [ P2 write; add to markdown; https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)

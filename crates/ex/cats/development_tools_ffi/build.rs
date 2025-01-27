@@ -76,4 +76,4 @@ fn main() {
     // cxx();
     // uniffi();
 }
-// TODO P0 fix build.rs for ffi
+// [ P0 fix build.rs for ffi](https://github.com/john-cd/rust_howto/issues/1026)

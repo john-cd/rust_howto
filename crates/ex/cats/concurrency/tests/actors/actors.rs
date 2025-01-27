@@ -21,4 +21,4 @@
 // }
 
 fn main() {}
-// TODO P2 write example
+// [ P2 write example](https://github.com/john-cd/rust_howto/issues/1011)

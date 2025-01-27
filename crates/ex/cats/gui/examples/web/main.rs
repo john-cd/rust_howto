@@ -2,7 +2,7 @@ mod dioxus;
 mod tauri;
 
 fn main() {
-    // TODO P1
+    // [ P1](https://github.com/john-cd/rust_howto/issues/1055)
     dioxus::main();
     tauri::main();
 }

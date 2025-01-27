@@ -49,4 +49,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // TODO P1 write bincode example
+// [ P1 write bincode example](https://github.com/john-cd/rust_howto/issues/1040)

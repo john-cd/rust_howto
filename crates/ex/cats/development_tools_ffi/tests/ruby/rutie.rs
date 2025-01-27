@@ -23,4 +23,4 @@
 // }
 // // ANCHOR_END: example
 
-// // TODO P1 write; add to markdown
+// [ P1 write; add to markdown](https://github.com/john-cd/rust_howto/issues/1036)

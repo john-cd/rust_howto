@@ -34,4 +34,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 write flate2 example; read / write a file
+// [ P1 write flate2 example; read / write a file](https://github.com/john-cd/rust_howto/issues/1009)

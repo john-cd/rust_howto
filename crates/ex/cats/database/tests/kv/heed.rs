@@ -47,4 +47,4 @@
 //     Ok(())
 // }
 
-// TODO P2 write heed example
+// [ P2 write heed example](https://github.com/john-cd/rust_howto/issues/1018)

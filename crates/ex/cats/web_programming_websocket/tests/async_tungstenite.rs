@@ -50,4 +50,4 @@
 // fn test() {
 //     main();
 // }
-// // TODO P1 write; add to markdown; echo.websocket.org has moved permanently
+// [ P1 write; add to markdown; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

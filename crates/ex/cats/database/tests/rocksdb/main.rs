@@ -1,3 +1,3 @@
 mod rocksdb;
 
-// TODO P1 move to kv ?
+// [ P1 move to kv ](https://github.com/john-cd/rust_howto/issues/1023)?

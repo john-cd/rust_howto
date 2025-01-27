@@ -54,4 +54,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P2 finish; add heavy test
+// [ P2 finish; add heavy test](https://github.com/john-cd/rust_howto/issues/1021)

@@ -43,4 +43,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 finish
+// [ P1 finish](https://github.com/john-cd/rust_howto/issues/1042)

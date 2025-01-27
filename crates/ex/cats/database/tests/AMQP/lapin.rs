@@ -83,4 +83,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P2 write; https://lib.rs/crates/lapin
+// [ P2 write; https://lib.rs/crates/lapin](https://github.com/john-cd/rust_howto/issues/1015)

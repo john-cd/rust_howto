@@ -46,4 +46,4 @@
 // }
 
 fn main() {}
-// TODO P2 review / convert into example?
+// [ P2 review / convert into example](https://github.com/john-cd/rust_howto/issues/1060)?

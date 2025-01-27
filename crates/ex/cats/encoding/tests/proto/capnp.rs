@@ -60,7 +60,4 @@
 // fn test() {
 //     main();
 // }
-// // TODO P1 finish capnp example
-// // https://capnproto.org/
-// // https://capnproto.org/rust.html
-// // https://capnproto.org/install.html
+// [ P1 finish capnp example; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041)

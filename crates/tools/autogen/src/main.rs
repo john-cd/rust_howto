@@ -2,4 +2,4 @@
 use tool_lib::*;
 
 fn main() {}
-// TODO P2 decide what to do
+// [ P2 decide what to do](https://github.com/john-cd/rust_howto/issues/1061)

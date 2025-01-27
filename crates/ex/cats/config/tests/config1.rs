@@ -108,7 +108,7 @@
 //     Ok(())
 // }
 
-// // TODO P0 finish
+// [ P0 finish](https://github.com/john-cd/rust_howto/issues/1012)
 // #[test]
 // fn test_config() -> Result<(), config::ConfigError> {
 //     // Alternate source for the environment.

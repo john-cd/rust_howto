@@ -17,4 +17,4 @@
 //     main()?;
 //     Ok(())
 // }
-// TODO P0 fix version conflict for rand_distr
+// [ P0 fix version conflict for rand_distr](https://github.com/john-cd/rust_howto/issues/1008)

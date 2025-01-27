@@ -77,4 +77,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // TODO P2 finish example; need heavy test
+// [ P2 finish example; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)

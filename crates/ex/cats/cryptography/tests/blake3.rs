@@ -54,4 +54,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO P1 add to markdown
+// [ P1 add to markdown](https://github.com/john-cd/rust_howto/issues/1013)

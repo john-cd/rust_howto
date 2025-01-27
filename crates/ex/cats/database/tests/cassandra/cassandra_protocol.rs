@@ -49,5 +49,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // TODO P2 write
-// https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html
+// [ P2 write; see also https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html](https://github.com/john-cd/rust_howto/issues/1016)

@@ -41,4 +41,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P1 write rkyv example
+// [ P1 write rkyv example](https://github.com/john-cd/rust_howto/issues/1039)
