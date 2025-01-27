@@ -16,5 +16,5 @@ Rust bindings to the JNI API.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[P2 write](https://github.com/john-cd/rust_howto/issues/1072)
 </div>

@@ -33,7 +33,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 <div class="hidden">
 
-TODO P1 organize
+[P1 organize](https://github.com/john-cd/rust_howto/issues/1065)
 
 ## AMQP
 

@@ -37,6 +37,6 @@ Oracle bindings for Rust. This crate provides a safe and ergonomic interface to 
 
 <div class="hidden">
 
-TODO P1 write
+[P1 write](https://github.com/john-cd/rust_howto/issues/1069)
 
 </div>

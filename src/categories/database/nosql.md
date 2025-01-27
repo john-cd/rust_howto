@@ -36,7 +36,7 @@ Redis-rs is a high level redis library for Rust. It provides convenient access t
 
 <div class="hidden">
 
-TODO P1 add the following
+[P1 add the following](https://github.com/john-cd/rust_howto/issues/1068)
 
 ## `cassandra_protocol` {#cassandra_protocol}
 

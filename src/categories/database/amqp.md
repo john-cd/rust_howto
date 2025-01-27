@@ -16,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 finish; add to SUMMARY
+[P1 finish; add to SUMMARY](https://github.com/john-cd/rust_howto/issues/1064)
 </div>

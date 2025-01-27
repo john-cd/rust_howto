@@ -26,5 +26,5 @@ A safe abstraction layer for Node.js.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[P2 write](https://github.com/john-cd/rust_howto/issues/1074)
 </div>

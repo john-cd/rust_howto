@@ -16,5 +16,5 @@ Safe Rust wrappers for creating Erlang NIF functions
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[P2 write](https://github.com/john-cd/rust_howto/issues/1070)
 </div>

@@ -22,5 +22,5 @@ Fast zero-copy deserialization framework that allows arbitrary field types and s
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+[P1 write](https://github.com/john-cd/rust_howto/issues/1078)
 </div>

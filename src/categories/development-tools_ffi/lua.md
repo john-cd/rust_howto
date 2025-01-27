@@ -20,5 +20,5 @@ High-level bindings to Lua 5.4/5.3/5.2/5.1 (including LuaJIT) and Roblox Luau wi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+[P2 write](https://github.com/john-cd/rust_howto/issues/1073)
 </div>

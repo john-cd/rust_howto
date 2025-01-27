@@ -17,6 +17,6 @@
 
 <div class="hidden">
 
-TODO P1 organize / write
+[P1 organize / write](https://github.com/john-cd/rust_howto/issues/1067)
 
 </div>

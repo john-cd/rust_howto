@@ -27,6 +27,6 @@ Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high perfo
 
 <div class="hidden">
 
-TODO P1 organize / write
+[P1 organize / write](https://github.com/john-cd/rust_howto/issues/1066)
 
 </div>
