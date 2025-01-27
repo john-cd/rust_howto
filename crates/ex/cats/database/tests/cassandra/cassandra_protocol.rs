@@ -31,8 +31,8 @@
 
 //     // Send a query message
 //     let query =
-//         Query::new("SELECT * FROM system.local", Consistency::One, None, None);
-//     transport.send(Frame::new(Opcode::Query, query)).await?;
+//         Query::new("SELECT * FROM system.local", Consistency::One, None,
+// None);     transport.send(Frame::new(Opcode::Query, query)).await?;
 
 //     // Receive the result message
 //     let frame = transport.receive().await?;
