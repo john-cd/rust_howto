@@ -7970,6 +7970,7 @@ dependencies = [
  "sea-orm",
  "seaography",
  "serde 1.0.217",
+ "sibyl",
  "sqlx",
  "tiberius",
  "tokio",
@@ -25184,6 +25185,17 @@ name = "shlex"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
+
+[[package]]
+name = "sibyl"
+version = "0.6.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7baef73cd153d6cbd579befded0fe5b219988b77a6a1119db971cf8fe6aab0e7"
+dependencies = [
+ "libc",
+ "once_cell",
+ "parking_lot 0.12.3",
+]
 
 [[package]]
 name = "signal-hook"
