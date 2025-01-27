@@ -3714,6 +3714,14 @@
 [c-vger-lib.rs-badge]: https://img.shields.io/badge/lib.rs-vger-yellow
 [c-vger-lib.rs]: https://lib.rs/crates/vger
 [c-vger]: https://docs.rs/vger
+[c-vizia-badge]: https://img.shields.io/crates/v/vizia?label=vizia
+[c-vizia-crates.io-badge]: https://img.shields.io/badge/crates.io-vizia-crimson
+[c-vizia-crates.io]: https://crates.io/crates/vizia
+[c-vizia-github-badge]: https://img.shields.io/badge/vizia-steelblue?logo=github
+[c-vizia-github]: https://github.com/vizia/vizia
+[c-vizia-lib.rs-badge]: https://img.shields.io/badge/lib.rs-vizia-yellow
+[c-vizia-lib.rs]: https://lib.rs/crates/vizia
+[c-vizia]: https://docs.rs/vizia
 [c-walkdir-badge]: https://img.shields.io/crates/v/walkdir?label=walkdir
 [c-walkdir-crates.io-badge]: https://img.shields.io/badge/crates.io-walkdir-crimson
 [c-walkdir-crates.io]: https://crates.io/crates/walkdir

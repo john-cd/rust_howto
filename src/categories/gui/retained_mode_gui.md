@@ -31,7 +31,17 @@
 [retained_mode_gui: organize (P2)](https://github.com/john-cd/rust_howto/issues/389)
 
 - slint
-- vizia
 - xilem
+- find a spot for vizia
+
+## `vizia` {#vizia}
+
+[![vizia][c-vizia-badge]][c-vizia] [![vizia-crates.io][c-vizia-crates.io-badge]][c-vizia-crates.io] [![vizia-github][c-vizia-github-badge]][c-vizia-github] [![vizia-lib.rs][c-vizia-lib.rs-badge]][c-vizia-lib.rs]{{hi:vizia}}
+
+A declarative desktop GUI framework
+
+```rust,editable
+{{#include ../../../crates/ex/cats/gui/examples/retained_mode_gui/vizia.rs:example}}
+```
 
 </div>

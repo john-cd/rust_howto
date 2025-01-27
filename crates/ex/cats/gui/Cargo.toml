@@ -44,6 +44,7 @@ tao = "0.31.1"
 tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
 vello = "0.4.0"
 vger = "0.4.0"
+# vizia = "0.2.0" # TODO P1 conflict with skia-safe
 # webrender = "0.61.0" # TODO P2 conflicts with RustQuant - native library `freetype`
 winit = "0.30.8" # for vello, winit examples
 xilem = "0.1.0"
