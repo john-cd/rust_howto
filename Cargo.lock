@@ -7954,6 +7954,7 @@ dependencies = [
  "deadpool",
  "deadpool-postgres",
  "diesel",
+ "diesel-oci",
  "diesel_migrations",
  "dotenvy",
  "elasticsearch",
@@ -8828,9 +8829,35 @@ version = "2.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ccf1bedf64cdb9643204a36dd15b19a6ce8e7aa7f7b105868e9f1fad5ffa7d12"
 dependencies = [
+ "chrono",
  "diesel_derives",
  "libsqlite3-sys",
+ "r2d2",
  "time",
+]
+
+[[package]]
+name = "diesel-dynamic-schema"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "061bbe2d02508364c50153226524b7fc224f56031a5e927b0bc5f1f2b48de6a6"
+dependencies = [
+ "diesel",
+]
+
+[[package]]
+name = "diesel-oci"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1df2bf135ea67a985b6ce0ebabc4b81e7343935e6320eba8b11be1dede0b1f07"
+dependencies = [
+ "chrono",
+ "diesel",
+ "diesel-dynamic-schema",
+ "diesel_derives",
+ "oracle",
+ "percent-encoding",
+ "url",
 ]
 
 [[package]]
@@ -19304,6 +19331,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3db40fe6e4df881b683691ade5ef1f7b1afd52aefa115581f7b92855524d7ec0"
 dependencies = [
  "cc",
+ "chrono",
  "odpic-sys",
  "once_cell",
  "oracle_procmacro",
@@ -21998,6 +22026,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "640c9bd8497b02465aeef5375144c26062e0dcd5939dfcbb0f5db76cb8c17c73"
 
 [[package]]
+name = "r2d2"
+version = "0.8.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "51de85fb3fb6524929c8a2eb85e6b6d363de4e8c48f9e2c2eac4944abc181c93"
+dependencies = [
+ "log",
+ "parking_lot 0.12.3",
+ "scheduled-thread-pool",
+]
+
+[[package]]
 name = "r3bl_ansi_color"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -24039,6 +24078,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1f29ebaa345f945cec9fbbc532eb307f0fdad8161f281b6369539c8d84876b3d"
 dependencies = [
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "scheduled-thread-pool"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3cbc66816425a074528352f5789333ecff06ca41b36b0b0efdfbb29edc391a19"
+dependencies = [
+ "parking_lot 0.12.3",
 ]
 
 [[package]]

@@ -23,6 +23,7 @@ deadpool-postgres = { version = "0.14.1", features = [
 ] }
 diesel = { version = "2.2.6", features = ["sqlite"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
+diesel-oci = "0.3.0"
 elasticsearch = "8.17.0-alpha.1" # NOTE: alpha version
 heed = "0.21.0"
 lapin = "2.5.0"
