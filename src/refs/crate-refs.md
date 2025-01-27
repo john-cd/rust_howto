@@ -2133,6 +2133,14 @@
 [c-num_traits-lib.rs-badge]: https://img.shields.io/badge/lib.rs-num--traits-yellow
 [c-num_traits-lib.rs]: https://lib.rs/crates/num-traits
 [c-num_traits]: https://docs.rs/num_traits
+[c-objc2-badge]: https://img.shields.io/crates/v/objc2?label=objc2
+[c-objc2-crates.io-badge]: https://img.shields.io/badge/crates.io-objc2-crimson
+[c-objc2-crates.io]: https://crates.io/crates/objc2
+[c-objc2-github-badge]: https://img.shields.io/badge/objc2-steelblue?logo=github
+[c-objc2-github]: https://github.com/madsmtm/objc2
+[c-objc2-lib.rs-badge]: https://img.shields.io/badge/lib.rs-objc2-yellow
+[c-objc2-lib.rs]: https://lib.rs/crates/objc2
+[c-objc2]: https://docs.rs/objc2
 [c-once_cell-badge]: https://img.shields.io/crates/v/once_cell?label=once_cell
 [c-once_cell-crates.io-badge]: https://img.shields.io/badge/crates.io-once__cell-crimson
 [c-once_cell-crates.io]: https://crates.io/crates/once_cell
