@@ -10,7 +10,6 @@ use lapin::ConnectionProperties;
 use lapin::Queue;
 use lapin::options::*;
 use lapin::types::FieldTable;
-use tokio;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
