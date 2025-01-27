@@ -38,3 +38,6 @@ do
 #     echo "${path} exists!"
 #   fi
 done
+
+
+# TODO P1 clean up

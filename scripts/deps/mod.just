@@ -18,4 +18,4 @@ info crate:
 # Check for security advisories, license issues, etc
 check_crates:
   cd {{justfile_directory()}} && cargo deny check --hide-inclusion-graph
-# WIP
+# TODO WIP
