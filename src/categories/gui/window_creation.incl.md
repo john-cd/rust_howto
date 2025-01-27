@@ -6,4 +6,5 @@
 <div class="hidden">
 [window_creation.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/395)
 
+| [`baseview`][ex-gui-baseview] |  | [![cat-gui][cat-gui-badge]][cat-gui] |
 </div>
