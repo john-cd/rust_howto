@@ -67,14 +67,14 @@
 //     // Create keyspace and table (if they don't exist)
 //     session
 //         .query(
-//             "CREATE KEYSPACE IF NOT EXISTS test_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};"
-//         )
+//             "CREATE KEYSPACE IF NOT EXISTS test_keyspace WITH replication =
+// {'class': 'SimpleStrategy', 'replication_factor': 1};"         )
 //         .await?;
 
 //     session
 //         .query(
-//             "CREATE TABLE IF NOT EXISTS test_keyspace.users (id UUID PRIMARY KEY, name TEXT, age INT);"
-//         )
+//             "CREATE TABLE IF NOT EXISTS test_keyspace.users (id UUID PRIMARY
+// KEY, name TEXT, age INT);"         )
 //         .await?;
 
 //     // Insert a row into the 'users' table
