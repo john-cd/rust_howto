@@ -5267,6 +5267,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "cassandra-protocol"
+version = "3.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f792501116fe2f54392f0449d653f4d2ad31c659ae9a095681fae507ceef373"
+dependencies = [
+ "arc-swap",
+ "bitflags 2.8.0",
+ "bytes",
+ "chrono",
+ "crc32fast",
+ "derivative",
+ "derive_more 1.0.0",
+ "float_eq",
+ "integer-encoding 4.0.2",
+ "itertools 0.13.0",
+ "lz4_flex",
+ "num-bigint",
+ "snap",
+ "thiserror 1.0.69",
+ "time",
+ "uuid 1.12.1",
+]
+
+[[package]]
 name = "cassowary"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5343,6 +5367,43 @@ dependencies = [
  "jobserver",
  "libc",
  "shlex",
+]
+
+[[package]]
+name = "cdrs-tokio"
+version = "8.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "35fa999539d7c5f3f86ecb9c215802514cf1457436610dd3205c326bf8226fc6"
+dependencies = [
+ "arc-swap",
+ "atomic 0.6.0",
+ "bytemuck",
+ "cassandra-protocol",
+ "cdrs-tokio-helpers-derive",
+ "derivative",
+ "derive_more 1.0.0",
+ "futures",
+ "fxhash",
+ "itertools 0.13.0",
+ "lazy_static",
+ "rand 0.8.5",
+ "serde_json",
+ "thiserror 2.0.11",
+ "tokio",
+ "tracing",
+ "uuid 1.12.1",
+]
+
+[[package]]
+name = "cdrs-tokio-helpers-derive"
+version = "5.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61cefbb7648a59bd7de42b0d8bdb5a39e029f429305190dec4e5ed56f98859cf"
+dependencies = [
+ "itertools 0.11.0",
+ "proc-macro2 1.0.93",
+ "quote 1.0.38",
+ "syn 2.0.96",
 ]
 
 [[package]]
@@ -7851,6 +7912,7 @@ name = "database"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "cdrs-tokio",
  "config 0.15.6",
  "cornucopia",
  "deadpool",
@@ -7873,6 +7935,7 @@ dependencies = [
  "tiberius",
  "tokio",
  "tokio-postgres",
+ "uuid 1.12.1",
 ]
 
 [[package]]
@@ -10718,6 +10781,12 @@ name = "float-ord"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ce81f49ae8a0482e4c55ea62ebbd7e5a686af544c00b9d090bba3ff9be97b3d"
+
+[[package]]
+name = "float_eq"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "28a80e3145d8ad11ba0995949bbcf48b9df2be62772b3d351ef017dff6ecb853"
 
 [[package]]
 name = "float_next_after"
@@ -14914,6 +14983,12 @@ name = "integer-encoding"
 version = "3.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8bb03732005da905c88227371639bf1ad885cc712789c011c31c5fb3ab3ccf02"
+
+[[package]]
+name = "integer-encoding"
+version = "4.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d762194228a2f1c11063e46e32e5acb96e66e906382b9eb5441f2e0504bbd5a"
 
 [[package]]
 name = "integer-sqrt"
@@ -27624,7 +27699,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7e54bc85fc7faa8bc175c4bab5b92ba8d9a3ce893d0e9f42cc455c8ab16a9e09"
 dependencies = [
  "byteorder",
- "integer-encoding",
+ "integer-encoding 3.0.4",
  "log",
  "ordered-float 2.10.1",
  "threadpool",

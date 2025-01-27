@@ -14,7 +14,7 @@ categories = [ "database" ]
 publish.workspace = true
 
 [dependencies]
-## Database and friends
+cdrs-tokio = { version = "8.1.4", features = [ "derive" ] }
 cornucopia = "0.9.0"
 deadpool = "0.12.1"
 deadpool-postgres = { version = "0.14.1", features = [
@@ -37,10 +37,10 @@ tokio-postgres = "0.7.12"
 
 ## General
 anyhow.workspace = true
-#axum = "0.8.1" # TODO P1 clean
 config = "0.15.3"
 dotenvy = "0.15.7"
 futures = "0.3.31"
 serde.workspace = true
 #serde_json.workspace = true # TODO P1 clean
 tokio.workspace = true
+uuid = { version = "1", features = ["v4"] }
