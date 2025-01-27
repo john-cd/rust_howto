@@ -1613,6 +1613,14 @@
 [c-itertools-lib.rs-badge]: https://img.shields.io/badge/lib.rs-itertools-yellow
 [c-itertools-lib.rs]: https://lib.rs/crates/itertools
 [c-itertools]: https://docs.rs/itertools
+[c-jni-badge]: https://img.shields.io/crates/v/jni?label=jni
+[c-jni-crates.io-badge]: https://img.shields.io/badge/crates.io-jni-crimson
+[c-jni-crates.io]: https://crates.io/crates/jni
+[c-jni-github-badge]: https://img.shields.io/badge/jni-steelblue?logo=github
+[c-jni-github]: https://github.com/jni-rs/jni-rs
+[c-jni-lib.rs-badge]: https://img.shields.io/badge/lib.rs-jni-yellow
+[c-jni-lib.rs]: https://lib.rs/crates/jni
+[c-jni]: https://docs.rs/jni
 [c-json5-badge]: https://img.shields.io/crates/v/json5?label=json5
 [c-json5-crates.io-badge]: https://img.shields.io/badge/crates.io-json5-crimson
 [c-json5-crates.io]: https://crates.io/crates/json5
