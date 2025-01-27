@@ -7973,6 +7973,7 @@ dependencies = [
  "tiberius",
  "tokio",
  "tokio-postgres",
+ "tokio-util",
  "uuid 1.12.1",
 ]
 
