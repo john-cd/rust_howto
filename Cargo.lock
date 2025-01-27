@@ -4716,12 +4716,9 @@ dependencies = [
 
 [[package]]
 name = "bonsai-bt"
-version = "0.8.1"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3cda6215ce5c0f4ca95a45a3fd6533195ec733f12c8bac5cbcf70a172500ac98"
-dependencies = [
- "petgraph",
-]
+checksum = "b98067c11d7731822a43718105f65e65377f80b043c28a749e3bd024d0e7ff02"
 
 [[package]]
 name = "boolinator"
@@ -7972,6 +7969,7 @@ dependencies = [
  "serde 1.0.217",
  "sibyl",
  "sqlx",
+ "tempfile",
  "tiberius",
  "tokio",
  "tokio-postgres",
@@ -26821,9 +26819,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_parser"
-version = "6.0.2"
+version = "7.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b92d3a25349d7f612c38d940f09f9c19c7b7aa3bf4d22fbe31ea44fd5354de02"
+checksum = "6d30d063070d3efceb1e3cb62721785a99ffd7444722b89c53327be113836266"
 dependencies = [
  "either",
  "new_debug_unreachable",
