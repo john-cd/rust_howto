@@ -3,9 +3,9 @@ use futures::stream::TryStreamExt;
 use tiberius::AuthMethod;
 use tiberius::Client;
 use tiberius::Config;
+use tiberius::QueryItem;
 use tiberius::QueryStream;
 use tokio_util::compat::TokioAsyncWriteCompatExt;
-use tiberius::QueryItem;
 
 // In your `Cargo.toml`, add the following dependencies:
 // [dependencies]
@@ -42,9 +42,12 @@ async fn main() -> anyhow::Result<()> {
                 // ...
             }
             QueryItem::Row(row) => {
-                // Retrieve a column value for a given column index, which can either be
-                // the zero-indexed position or the name of the column
-                let db_name: &str = row.get(0).ok_or_else(|| anyhow::anyhow!("row.get error"))?;
+                // Retrieve a column value for a given column index, which can
+                // either be the zero-indexed position or the
+                // name of the column
+                let db_name: &str = row
+                    .get(0)
+                    .ok_or_else(|| anyhow::anyhow!("row.get error"))?;
                 println!("Database name: {}", db_name);
             }
         }
