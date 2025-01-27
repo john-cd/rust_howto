@@ -2,10 +2,7 @@
 
 // AMQP client library
 
-// or: use futures_lite::stream::StreamExt;
-use std::future::Future;
-
-use futures::stream::StreamExt;
+use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;
 use lapin::Connection;
@@ -31,7 +28,7 @@ async fn main() -> anyhow::Result<()> {
     let channel: Channel = conn.create_channel().await?;
 
     // Declare a queue
-    let queue: Queue = channel
+    let _queue: Queue = channel
         .queue_declare(
             "my_queue",
             QueueDeclareOptions::default(),
@@ -67,7 +64,7 @@ async fn main() -> anyhow::Result<()> {
     // Process messages
     println!("Waiting for messages...");
     while let Some(delivery) = consumer.next().await {
-        let (delivery, _) = delivery?;
+        let delivery = delivery?;
         println!(
             "Received message: {:?}",
             String::from_utf8_lossy(&delivery.data)
@@ -82,7 +79,7 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test() -> anyhow::Result<()> {
+fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
