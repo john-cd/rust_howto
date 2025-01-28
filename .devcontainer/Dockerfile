@@ -28,10 +28,10 @@ SHELL ["bash", "-c"]
 ## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for openrr
-## Note: the following caching should only be useful for development.
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    apt-get update \
+## Note: the following caching should only be useful for development. Removed to save space on the GitHub Action runner
+## --mount=type=cache,target=/var/cache/apt,sharing=locked \
+## --mount=type=cache,target=/var/lib/apt,sharing=locked \
+RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
     aspell \
@@ -98,9 +98,10 @@ ARG MDBOOK_VERSION=invalid
 ## Install nextest
 ## Install mdbook from the binary release
 ## Install mdbook preprocessors
-## Note: cache the registry, not the bin folder! Only useful in development
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-<<EOF
+## Note: you can cache the registry (not the bin folder) Only useful in development
+## Disabled to save space on the GitHub Action runner
+## --mount=type=cache,target=/usr/local/cargo/registry \
+RUN <<EOF
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
     cargo binstall --no-confirm --secure cargo-nextest
@@ -137,8 +138,8 @@ EOF
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed second to last, because the tool is still in development
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo install --locked mdbook-utils \
+## You can cache with --mount=type=cache,target=/usr/local/cargo/registry \
+RUN cargo install --locked mdbook-utils \
     && cargo install --locked bacon
 
 ## Install nightly fmt - last, since it changes very often
@@ -154,10 +155,10 @@ WORKDIR /code
 FROM base AS development
 
 ## Additional packages for development only
-
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    apt-get update && export DEBIAN_FRONTEND=noninteractive \
+## You can cache with
+## --mount=type=cache,target=/var/cache/apt,sharing=locked \
+## --mount=type=cache,target=/var/lib/apt,sharing=locked \
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y fzf  # fast fuzzy search used by `just`
 ## For example:
 # firefox-esr \
@@ -183,9 +184,9 @@ RUN curl -sS https://webi.sh/gh | sh
 #EOF
 
 ## Install optional tools: ripgrep
-## caching: https://doc.rust-lang.org/cargo/guide/cargo-home.html
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo binstall --no-confirm ripgrep
+## Caching with: --mount=type=cache,target=/usr/local/cargo/registry \
+## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
+RUN cargo binstall --no-confirm ripgrep
 ## Convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
 ## Background code checker `bacon`
