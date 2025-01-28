@@ -48,7 +48,7 @@ alias ba := buildall
 
 # Build all code
 buildall:
-  cargo build --workspace --all-targets --locked
+  cargo build --workspace --all-targets --locked --timings
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 # optional: --timings
 
