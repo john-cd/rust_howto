@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // Define a simple function to add two numbers

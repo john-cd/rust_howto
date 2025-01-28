@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // `proc-macro2` is a library for working with Rust's procedural macros.

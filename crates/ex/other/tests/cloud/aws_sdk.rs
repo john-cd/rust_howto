@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // use aws_config::meta::region::RegionProviderChain;

@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // Embassy is an async runtime designed for embedded systems in Rust. It

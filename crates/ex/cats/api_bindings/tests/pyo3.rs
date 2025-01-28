@@ -1,6 +1,7 @@
 // #![allow(dead_code)]
 // #![cfg(target_os = "linux")]
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // use pyo3::ffi::c_str;

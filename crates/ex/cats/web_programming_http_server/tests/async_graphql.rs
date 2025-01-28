@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // use async_graphql::Context;

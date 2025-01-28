@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // Here’s a basic example of how to use the tantivy crate, which is a

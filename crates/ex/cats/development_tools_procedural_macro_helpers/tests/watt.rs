@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // Watt is a procedural macro library in Rust that allows you to write your

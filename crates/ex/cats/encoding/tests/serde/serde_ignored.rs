@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // `serde_ignored` is a crate that helps you handle unknown fields when

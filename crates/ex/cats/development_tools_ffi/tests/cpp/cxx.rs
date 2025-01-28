@@ -1,5 +1,6 @@
 // #![allow(unused_imports)]
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // use cxx::CxxString;

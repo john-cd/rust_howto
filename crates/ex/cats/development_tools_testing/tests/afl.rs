@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// COMING SOON
 // // ANCHOR_END: example
 
 // // `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
