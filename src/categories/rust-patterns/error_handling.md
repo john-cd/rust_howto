@@ -76,6 +76,11 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 {{#include ../../../crates/ex/cats/rust_patterns/tests/error/retain.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+
 ## Obtain the backtrace in complex error scenarios {#obtain-backtrace}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
@@ -101,10 +106,6 @@ Error level - description
 
 Run the recipe with `RUST_BACKTRACE=1` to display a detailed backtrace associated with this error.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
 [error_handling: fix / organize (P1)](https://github.com/john-cd/rust_howto/issues/465)
 
 [error_handling: need examples for (P1)](https://github.com/john-cd/rust_howto/issues/466)

@@ -24,6 +24,11 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 {{#include ../../../crates/ex/cats/encoding/tests/serde/serde_json.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+
 ## See also
 
 ### `monostate` {#monostate}
@@ -50,10 +55,6 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 {{#include ../../../crates/ex/cats/encoding/tests/serde/serde_ignored.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
 [serde: write (P1)](https://github.com/john-cd/rust_howto/issues/352)
 
 dedupe JSON with complex.md

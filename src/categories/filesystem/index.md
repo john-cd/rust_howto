@@ -26,7 +26,7 @@ Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
 
 ## Walk the Filesystem while Respecting Ignore Files
 
-{{#include ignore.incl.md}}
+{{#include _ignore.incl.md}}
 
 ## File Watching
 

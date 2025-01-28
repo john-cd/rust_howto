@@ -84,6 +84,10 @@
 
 ## Compression
 
+### Flate2
+
+{{#include categories/compression/flate2.incl.md}}
+
 ### `tar`
 
 {{#include categories/compression/tar.incl.md}}
@@ -166,13 +170,29 @@
 
 ## Database
 
+### AMQP
+
+{{#include categories/database/amqp.incl.md}}
+
 ### Connection Pool
 
 {{#include categories/database/connection_pool.incl.md}}
 
+### Kv
+
+{{#include categories/database/kv.incl.md}}
+
+### MSSQL
+
+{{#include categories/database/mssql.incl.md}}
+
 ### NoSQL
 
 {{#include categories/database/nosql.incl.md}}
+
+### Oracle
+
+{{#include categories/database/oracle.incl.md}}
 
 ### Postgres
 
@@ -336,10 +356,6 @@
 
 ## Encoding
 
-### Binary Encoders
-
-{{#include categories/encoding/binary_encoders.incl.md}}
-
 ### Complex
 
 {{#include categories/encoding/complex.incl.md}}
@@ -347,6 +363,10 @@
 ### CSV
 
 {{#include categories/encoding/csv.incl.md}}
+
+### No External Schema
+
+{{#include categories/encoding/no_external_schema.incl.md}}
 
 ### Serde
 
@@ -373,10 +393,6 @@
 ### File Watching
 
 {{#include categories/filesystem/file_watching.incl.md}}
-
-### Ignore
-
-{{#include categories/filesystem/ignore.incl.md}}
 
 ### Read-Write
 
@@ -444,10 +460,6 @@
 
 ## Rust Patterns
 
-### Builder Pattern
-
-{{#include categories/rust-patterns/builder_pattern.incl.md}}
-
 ### Design Patterns
 
 {{#include categories/rust-patterns/design_patterns.incl.md}}
@@ -463,10 +475,6 @@
 ### Functional Programming
 
 {{#include categories/rust-patterns/functional_programming.incl.md}}
-
-### Rust Idioms
-
-{{#include categories/rust-patterns/rust_idioms.incl.md}}
 
 ## Template Engine
 
@@ -536,33 +544,9 @@
 
 ## Web Programming: HTTP Server
 
-### `actix`
-
-{{#include categories/web-programming_http-server/actix.incl.md}}
-
-### `axum`
-
-{{#include categories/web-programming_http-server/axum.incl.md}}
-
-### Batteries-Included Frameworks
-
-{{#include categories/web-programming_http-server/batteries-included_frameworks.incl.md}}
-
 ### CORS
 
 {{#include categories/web-programming_http-server/cors.incl.md}}
-
-### GraphQL
-
-{{#include categories/web-programming_http-server/graphql.incl.md}}
-
-### gRPC
-
-{{#include categories/web-programming_http-server/grpc.incl.md}}
-
-### `hyper`
-
-{{#include categories/web-programming_http-server/hyper.incl.md}}
 
 ### Middleware
 

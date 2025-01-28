@@ -16,6 +16,11 @@
 {{#include ../../../crates/ex/cats/encoding/tests/typecasts/bytemuck.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+
 ## `zerocopy` {#zerocopy}
 
 [![zerocopy][c-zerocopy-badge]][c-zerocopy]{{hi:zerocopy}}
@@ -41,10 +46,6 @@ Zero-copy is often used in network programming, where high performance and low m
 {{#include ../../../crates/ex/cats/encoding/tests/typecasts/zerocopy.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
 [typecasts: write (P1)](https://github.com/john-cd/rust_howto/issues/354)
 
 </div>

@@ -15,14 +15,6 @@ Roogle is a Rust API search engine, which allows you to search functions by name
 | fn(type) -> type | fn(Option<Option<T>>) -> Option<T> |
 | (type) -> type | (&mut Vec<T>, value: T) |
 
-## Deploy your Rust code on `shuttle.rs` {#shuttle-rs}
-
-[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
-
-```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/tests/other/shuttle.rs:example}}
-```
-
 ## Minimize Rust binary sizes {#binary-minimizer}
 
 [How to minimize Rust binary size][min-sized-rust-github]⮳
@@ -42,4 +34,13 @@ cargo build --release
 
 <div class="hidden">
 [other: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/305)
+
+## Deploy your Rust code on `shuttle.rs` {#shuttle-rs}
+
+[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+
+```rust,editable
+{{#include ../../../../crates/ex/cats/development_tools/tests/other/shuttle.rs:example}}
+```
+
 </div>

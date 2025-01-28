@@ -19,6 +19,12 @@ There are two main approaches to Rust program verification:
 
 2. Dynamic verification: This involves running the program with different inputs and checking its behavior against expected results. Techniques like fuzz testing can be used to identify potential issues.
 
+{{#include refs.incl.md}}
+{{#include ../../../refs/link-refs.md}}
+
+<div class="hidden">
+[code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
+
 ## Verify your Rust code {#code-verifiers}
 
 [![kani][c-kani-badge]][c-kani]{{hi:kani}}
@@ -32,9 +38,4 @@ There are two main approaches to Rust program verification:
 {{#include ../../../../crates/ex/cats/development_tools/tests/other/kani.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
 </div>

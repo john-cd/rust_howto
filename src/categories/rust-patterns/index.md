@@ -22,12 +22,16 @@ Shared solutions for particular situations specific to programming in Rust.
 
 ## Rust idioms
 
-{{#include rust_idioms.incl.md}}
+{{#include _rust_idioms.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [index: organize / write (P1)](https://github.com/john-cd/rust_howto/issues/469)
+
+## Builder patterns
+
+{{#include _builder_patterns.incl.md}}
 
 </div>

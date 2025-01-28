@@ -20,9 +20,22 @@ Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 
 {{#include serde.incl.md}}
 
+## Typecasts
+
+{{#include typecasts.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/929)
+
+## Binary Encoders
+
+{{#include _binary_encoders.incl.md}}
+
+## No external schemas
+
+{{#include no_external_schemas.incl.md}}
+
+[P1 review](https://github.com/john-cd/rust_howto/issues/929)
 </div>

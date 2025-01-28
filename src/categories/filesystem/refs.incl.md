@@ -14,5 +14,5 @@
 [ex-filesystem-recursively-find-duplicate-file-names]: dir.md#recursively-find-duplicate-file-names
 [ex-filesystem-temporary-files-or-directories]: tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: dir.md#traverse-directories-while-skipping-dotfiles
-[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: ignore.md#walk-the-filesystem-while-respecting-ignore-files
+[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: _ignore.md#walk-the-filesystem-while-respecting-ignore-files
 [ex-filesystem-watch-files-or-dirs]: file_watching.md#watch-files-or-dirs

@@ -59,6 +59,12 @@ fn main() {
 }
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[P1 write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
+
 ## Other frameworks {#skip2}
 
 ### `OpenTelemetry` {#open-telemetry}
@@ -77,9 +83,4 @@ fn main() {
 {{#include ../../../crates/ex/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[P1 write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
 </div>

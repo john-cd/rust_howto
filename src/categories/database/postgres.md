@@ -34,6 +34,12 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 {{#include ../../../crates/ex/cats/database/tests/postgres/aggregate_data.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[postgres: cornucopia (P2)](https://github.com/john-cd/rust_howto/issues/286)
+
 ## `tokio-postgres` {#tokio-postgres}
 
 [![tokio-postgres][c-tokio_postgres-badge]][c-tokio_postgres]{{hi:tokio-postgres}}
@@ -46,12 +52,6 @@ Postgres-specific library. Performs better than SQLx.
 ```rust,editable,noplayground
 {{#include ../../../crates/ex/cats/database/tests/postgres/tokio_postgres.rs:example}}
 ```
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[postgres: cornucopia (P2)](https://github.com/john-cd/rust_howto/issues/286)
 
 ## `cornucopia` for postgres {#cornucopia}
 

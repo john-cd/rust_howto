@@ -25,6 +25,11 @@
 {{#include ../../../crates/ex/cats/web_programming_http_client/tests/other/ureq.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+
 ## `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP client}}{{hi:HTTP server}}
@@ -38,10 +43,6 @@
 {{#include ../../../crates/ex/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
 [http_clients: expand (P1)](https://github.com/john-cd/rust_howto/issues/504)
 
 </div>
