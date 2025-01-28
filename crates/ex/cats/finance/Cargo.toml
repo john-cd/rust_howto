@@ -14,5 +14,4 @@ categories = [ "finance" ]
 publish.workspace = true
 
 [dependencies]
-## Finance
-RustQuant = "0.3" # TODO P1 heavy build (polars, nalgebra, etc)
+#RustQuant = "0.3" # TODO P1 heavy build (polars, nalgebra, etc)
