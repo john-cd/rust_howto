@@ -1,5 +1,7 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := justfile_directory()
+
 _default:
   @just --list indices --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -22,7 +24,7 @@ crate_indices cmd=help *subcmd=empty:
 [group('index of examples')]
 [unix]
 generate_index_of_examples:
-  ./generate_index_of_examples.sh > {{justfile_directory()}}/src/examples_index.md
+  ./generate_index_of_examples.sh {{ root }}
 # Usage: just generate_index_of_examples
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
