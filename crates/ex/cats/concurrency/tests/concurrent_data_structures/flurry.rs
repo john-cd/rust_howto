@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// COMING SOON
+// // ANCHOR_END: example
 // use std::thread;
 
 // use flurry::HashMap;
@@ -94,7 +96,6 @@
 //     println!("\nChecking if key100 exists");
 //     println!("{}", map.contains_key(&"key100".to_string()));
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
