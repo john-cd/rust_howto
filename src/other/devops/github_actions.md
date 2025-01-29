@@ -129,7 +129,7 @@ Github action to cache compilation artifacts and speed up subsequent runs.
 install-action (github action)
 GitHub Action for installing development tools (mainly from GitHub Releases).
 
-### CI
+### CI {#ci}
 
 A type-safe GitHub Actions workflow generator [`gh-workflow`][gh-workflow]
 

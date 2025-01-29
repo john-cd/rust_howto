@@ -29,7 +29,7 @@
 
 [`roadmap.sh` for Rust](https://roadmap.sh/rust)
 
-## Ferrous systems
+## Ferrous systems {#ferrous-systems-training}
 
 [Rust training][rust training]
 

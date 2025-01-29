@@ -32,7 +32,7 @@ Another example:
 {{#include ../../../crates/ex/cats/asynchronous/tests/async_channels/async_channels_mpsc.rs:example}}
 ```
 
-## Send messages from multiple producers to one of multiple consumers
+## Send messages from multiple producers to one of multiple consumers {#mpmc}
 
 [![async-channel][c-async_channel-badge]][c-async_channel] [![async-channel-crates.io][c-async_channel-crates.io-badge]][c-async_channel-crates.io] [![async-channel-github][c-async_channel-github-badge]][c-async_channel-github] [![async-channel-lib.rs][c-async_channel-lib.rs-badge]][c-async_channel-lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -49,7 +49,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../../crates/ex/cats/asynchronous/tests/async_channels/async_channel.rs:example}}
 ```
 
-## Broadcast messages from multiple producers to multiple consumers
+## Broadcast messages from multiple producers to multiple consumers {#broadcast}
 
 [![postage][c-postage-badge]][c-postage]{{hi:postage}}
 [![postage-crates.io][c-postage-crates.io-badge]][c-postage-crates.io]
@@ -68,7 +68,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 <div class="hidden">
 [async_channels: review (P1)](https://github.com/john-cd/rust_howto/issues/215) add other postage channels?
 
-## `kanal`
+## `kanal` {#kanal}
 
 Fast sync and async channel:
 

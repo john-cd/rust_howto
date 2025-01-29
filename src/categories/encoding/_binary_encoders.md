@@ -100,7 +100,7 @@ In `foo.capnp`:
 {{#include ../../../crates/ex/cats/encoding/tests/proto/foo.capnp}}
 ```
 
-### Key Features of Cap'n Proto
+### Key Features of Cap'n Proto {#skip2}
 
 - Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
 - Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.

@@ -217,7 +217,7 @@ Pure-Rust traits and utilities for constant-time cryptographic implementations.
 {{#include ../../../crates/ex/cats/cryptography/tests/zeroize.rs:example}}
 ```
 
-## ChaCha20Poly1305
+## ChaCha20Poly1305 {#chacha20poly1305}
 
 [![chacha20poly1305-website][c-chacha20poly1305-website-badge]][c-chacha20poly1305-website] [![chacha20poly1305][c-chacha20poly1305-badge]][c-chacha20poly1305] [![chacha20poly1305-crates.io][c-chacha20poly1305-crates.io-badge]][c-chacha20poly1305-crates.io] [![chacha20poly1305-github][c-chacha20poly1305-github-badge]][c-chacha20poly1305-github] [![chacha20poly1305-lib.rs][c-chacha20poly1305-lib.rs-badge]][c-chacha20poly1305-lib.rs]{{hi:chacha20poly1305}}{{hi:Chacha20}}{{hi:Poly1305}}{{hi:Aead}}{{hi:Xchacha20}}{{hi:Xchacha20poly1305}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

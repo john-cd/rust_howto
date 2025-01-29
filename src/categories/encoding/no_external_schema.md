@@ -2,7 +2,7 @@
 
 {{#include no_external_schema.incl.md}}
 
-## `postcard`
+## `postcard` {#postcard}
 
 `no_std`-focused `serde` serializer/deserializer, aimed at constrained environments.
 
@@ -10,7 +10,7 @@
 {{#include ../../../crates/ex/cats/encoding/tests/no_external_schema_file/postcard.rs:example}}
 ```
 
-## `rkyv`
+## `rkyv` {#rkyv}
 
 Fast zero-copy deserialization framework that allows arbitrary field types and safe zero-copy mutation.
 

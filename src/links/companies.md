@@ -215,7 +215,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 [volvo]: <https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line>
 
-## Jobs
+## Jobs {#jobs}
 
 [Rust jobs-report (Sep. 2024)][rust-jobs-report]
 
