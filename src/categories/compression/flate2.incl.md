@@ -1,7 +1,3 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  | [![flate2][c-flate2-badge]][c-flate2] | [![cat-compression][cat-compression-badge]][cat-compression] |
-
-<div class="hidden">
-FIXME P1 add link
-</div>
+| [Compress then decompress][ex-compression-compress-decompress] | [![flate2][c-flate2-badge]][c-flate2] | [![cat-compression][cat-compression-badge]][cat-compression] |

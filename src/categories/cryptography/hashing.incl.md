@@ -15,5 +15,6 @@
 
 | [`subtle`][ex-cryptography-subtle] | [![subtle][c-subtle-badge]][c-subtle] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 | [`zeroize`][ex-cryptography-zeroize] | [![zeroize][c-zeroize-badge]][c-zeroize] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [ChaCha20Poly1305][ex-cryptography-chacha20poly1305] | [![chacha20poly1305][c-chacha20poly1305-badge]][c-chacha20poly1305] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 </div>
