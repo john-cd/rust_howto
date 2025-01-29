@@ -20,18 +20,19 @@ Shared solutions for particular situations specific to programming in Rust.
 
 {{#include functional_programming.incl.md}}
 
-## Rust idioms
-
-{{#include _rust_idioms.incl.md}}
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: organize / write (P1)](https://github.com/john-cd/rust_howto/issues/469)
+
+## Rust idioms
+
+{{#include _rust_idioms.incl.md}}
 
 ## Builder patterns
 
-{{#include _builder_patterns.incl.md}}
+{{#include _builder_pattern.incl.md}}
+
+[index: organize / write (P1)](https://github.com/john-cd/rust_howto/issues/469)
 
 </div>

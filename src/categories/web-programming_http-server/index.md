@@ -4,6 +4,8 @@
 
 Serve data over HTTP.
 
+<div class="hidden">
+
 ## Actix Web
 
 {{#include _actix.incl.md}}
@@ -47,7 +49,6 @@ Serve data over HTTP.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-<div class="hidden">
 [P1 review](https://github.com/john-cd/rust_howto/issues/977)
 
 </div>
