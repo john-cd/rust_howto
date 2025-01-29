@@ -49,7 +49,7 @@ Print this message or the help of the given subcommand(s)
 
 `badge` returns several badges that point to docs.rs, lib.rs, crates.io, etc..., given one or more crate names.
 
-```
+```txt
 [![rand-website][c-rand-website-badge]][c-rand-website] [![rand][c-rand-badge]][c-rand] [![rand-crates.io][c-rand-crates.io-badge]][c-rand-crates.io] [![rand-github][c-rand-github-badge]][c-rand-github] [![rand-lib.rs][c-rand-lib.rs-badge]][c-rand-lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 Random number generators and other randomness functionality.

@@ -95,8 +95,6 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 "`Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else."
 
-<https://doc.rust-lang.org/nightly/core/cell/index.html>
-
 ## `OnceCell` {#oncecell}
 
 - The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for scenarios where you want lazy initialization without the overhead of thread synchronization.
