@@ -4,6 +4,9 @@
 
 Serve data over HTTP.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 
 ## Actix Web
@@ -45,9 +48,6 @@ Serve data over HTTP.
 ## Static website generators
 
 {{#include static_website_generators.incl.md}}
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
 
 [P1 review](https://github.com/john-cd/rust_howto/issues/977)
 
