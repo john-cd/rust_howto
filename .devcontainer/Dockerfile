@@ -159,7 +159,7 @@ FROM base AS development
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y fzf  # fast fuzzy search used by `just`
+    && apt-get install -y jq fzf  # fast fuzzy search used by `just`
 ## For example:
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
