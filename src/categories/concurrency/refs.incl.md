@@ -7,9 +7,11 @@
 [ex-concurrency-custom-parallel-tasks]: data_parallelism.md#custom-parallel-tasks
 [ex-concurrency-dashmap]: concurrent_data_structures.md#dashmap
 [ex-concurrency-draw-fractal-threadpool]: threadpool.md#draw-fractal-threadpool
+[ex-concurrency-existing-impl-send-sync]: send_sync.md#existing-impl-send-sync
 [ex-concurrency-flume]: message_passing.md#flume
 [ex-concurrency-flurry]: concurrent_data_structures.md#flurry
 [ex-concurrency-global-mutable-state]: shared_state.md#global-mutable-state
+[ex-concurrency-implementing-send-sync]: send_sync.md#implementing-send-sync
 [ex-concurrency-map-reduce-in-parallel]: data_parallelism.md#map-reduce-in-parallel
 [ex-concurrency-mpsc]: message_passing.md#mpsc
 [ex-concurrency-mutate-array-in-parallel]: data_parallelism.md#mutate-array-in-parallel

@@ -19,6 +19,7 @@
 [ex-gui-tauri]: web_based_gui.md#tauri
 [ex-gui-vello]: 2d_renderers.md#vello
 [ex-gui-vger]: 2d_renderers.md#vger
+[ex-gui-vizia]: retained_mode_gui.md#vizia
 [ex-gui-webrender]: 2d_renderers.md#webrender
 [ex-gui-winit]: window_creation.md#winit
 [ex-gui-xilem]: other_gui.md#xilem

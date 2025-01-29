@@ -2,6 +2,7 @@
 [ex-asynchronous-async-traits]: async_traits.md#async-traits
 [ex-asynchronous-basic-example]: async.md#basic-example
 [ex-asynchronous-basics]: tokio.md#basics
+[ex-asynchronous-broadcast]: async_channels.md#broadcast
 [ex-asynchronous-call-async-from-blocking]: async_and_blocking.md#call-async-from-blocking
 [ex-asynchronous-calling-blocking-from-async]: async_and_blocking.md#calling-blocking-from-async
 [ex-asynchronous-diff-other-languages]: async.md#diff-other-languages
@@ -10,7 +11,9 @@
 [ex-asynchronous-io]: tokio.md#io
 [ex-asynchronous-join]: tokio.md#join
 [ex-asynchronous-joining-futures]: futures.md#joining-futures
+[ex-asynchronous-kanal]: async_channels.md#kanal
 [ex-asynchronous-map-then-either-flatten]: futures.md#map-then-either-flatten
+[ex-asynchronous-mpmc]: async_channels.md#mpmc
 [ex-asynchronous-mpsc]: async_channels.md#mpsc
 [ex-asynchronous-oneshot]: async_channels.md#oneshot
 [ex-asynchronous-rayon]: async_and_blocking.md#rayon
@@ -20,5 +23,6 @@
 [ex-asynchronous-spawning]: tokio.md#spawning
 [ex-asynchronous-streams]: streams.md#streams
 [ex-asynchronous-tokio-runtime]: async_and_blocking.md#tokio-runtime
-[ex-asynchronous-which-crate-provides-what]: async.md#which-crate-provides-what
+[ex-asynchronous-tokio]: async_channels.md#tokio
 [ex-asynchronous-utilities]: utilities.md#utilities
+[ex-asynchronous-which-crate-provides-what]: async.md#which-crate-provides-what

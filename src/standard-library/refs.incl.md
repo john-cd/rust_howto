@@ -1,6 +1,7 @@
 [ex-standard-library-adapters-for-working-with-references]: option.md#adapters-for-working-with-references
 [ex-standard-library-asref]: asref.md#asref
 [ex-standard-library-box]: smart_pointers.md#box
+[ex-standard-library-cell]: smart_pointers.md#cell
 [ex-standard-library-combinators]: option.md#combinators
 [ex-standard-library-convert-cow-to-str]: cow.md#convert-cow-to-str
 [ex-standard-library-convert-cow-to-string]: cow.md#convert-cow-to-string
@@ -8,6 +9,7 @@
 [ex-standard-library-derive]: derive.md#automatic-trait-derivation
 [ex-standard-library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
 [ex-standard-library-hashmaps]: hashmaps.md#hashmaps
+[ex-standard-library-oncecell]: smart_pointers.md#oncecell
 [ex-standard-library-option]: option.md#option
 [ex-standard-library-placeholders]: strings.md#placeholders
 [ex-standard-library-rc]: smart_pointers.md#rc

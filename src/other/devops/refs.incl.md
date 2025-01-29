@@ -1,6 +1,8 @@
+[ex-devops-cargo-dist]: release_automation.md#cargo-dist
 [ex-devops-cargo-release]: release_automation.md#cargo-release
 [ex-devops-cdci]: cd_ci.md#cdci
 [ex-devops-check-your-code-before-committing]: git_hooks.md#check-your-code-before-committing
+[ex-devops-ci]: github_actions.md#ci
 [ex-devops-compilation-caching]: github_actions.md#compilation-caching
 [ex-devops-daytona]: devops.md#daytona
 [ex-devops-deps-rs]: dependency_management.md#deps-rs

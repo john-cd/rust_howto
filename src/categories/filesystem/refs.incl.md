@@ -8,10 +8,12 @@
 [ex-filesystem-find-loop-in-path]: dir.md#find-loop-in-path
 [ex-filesystem-globset]: dir.md#globset
 [ex-filesystem-memory-map]: read-write.md#memory-map
+[ex-filesystem-open]: user_directories.md#open
 [ex-filesystem-read-lines-of-strings-from-a-file]: read-write.md#read-lines-of-strings-from-a-file
 [ex-filesystem-recursively-calculate-file-sizes-at-given-depth]: dir.md#recursively-calculate-file-sizes-at-given-depth
 [ex-filesystem-recursively-find-all-files-with-given-predicate]: dir.md#recursively-find-all-files-with-given-predicate
 [ex-filesystem-recursively-find-duplicate-file-names]: dir.md#recursively-find-duplicate-file-names
+[ex-filesystem-remove_dir_all]: cwd.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: dir.md#traverse-directories-while-skipping-dotfiles
 [ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: _ignore.md#walk-the-filesystem-while-respecting-ignore-files
