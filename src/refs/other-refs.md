@@ -53,6 +53,8 @@
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
 [azure-iot-edge-github]: https://github.com/Azure/iotedge
+[baseview-github-badge]: https://img.shields.io/badge/baseview-steelblue?logo=github
+[baseview-github]: https://github.com/RustAudio/baseview
 [bcrypt-wikipedia]: https://en.wikipedia.org/wiki/Bcrypt
 [bencher-github]: https://github.com/bencherdev/bencher
 [bencher-website]: https://bencher.dev

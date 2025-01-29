@@ -1,4 +1,5 @@
 [ex-gui-arboard]: clipboard.md#arboard
+[ex-gui-baseview]: window_creation.md#baseview
 [ex-gui-cosmic-text]: text_layout.md#cosmic-text
 [ex-gui-dioxus]: web_based_gui.md#dioxus
 [ex-gui-druid]: other_gui.md#druid

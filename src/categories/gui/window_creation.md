@@ -30,7 +30,11 @@ Cross-platform window manager library. The TAO of cross-platform windowing. A li
 <div class="hidden">
 [window_creation: write (P2)](https://github.com/john-cd/rust_howto/issues/396)
 
-<https://github.com/RustAudio/baseview>
+## `baseview` {#baseview}
+
+[![baseview-github][baseview-github-badge]][baseview-github]
+
+Low-level window system interface for audio plugin UIs.
 
 ```rust
 {{#include ../../../crates/ex/cats/gui/examples/window_creation/baseview.rs:example}}
