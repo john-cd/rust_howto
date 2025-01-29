@@ -118,6 +118,10 @@
 
 {{#include categories/concurrency/send.incl.md}}
 
+### Send Sync
+
+{{#include categories/concurrency/send_sync.incl.md}}
+
 ### Shared State
 
 {{#include categories/concurrency/shared_state.incl.md}}
