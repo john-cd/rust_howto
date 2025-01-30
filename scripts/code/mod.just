@@ -87,10 +87,11 @@ doctest:
 alias tc := nextestcurrent
 alias ntc := nextestcurrent
 
+current_crate := file_name(invocation_directory())
+
 # Test in the current directory (or the default packages of the workspace if in the root)
-[no-cd]
 nextestcurrent: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all
+  cargo nextest run --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})'
 
 alias nt := nextest
 

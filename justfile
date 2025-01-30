@@ -10,6 +10,7 @@ _default:
 #@just --choose
 
 # Alias for buildcurrent
+[no-cd]
 bc:
   @just code buildcurrent
 
@@ -46,6 +47,7 @@ nta:
   @just code nextestall
 
 # Alias for code nextestcurrent
+[no-cd]
 ntc:
   @just code nextestcurrent
 
