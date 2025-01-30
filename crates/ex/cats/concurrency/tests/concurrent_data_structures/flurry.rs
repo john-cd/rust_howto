@@ -1,6 +1,4 @@
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 use std::sync::Arc;
 use std::thread;
 
@@ -102,6 +100,7 @@ fn main() {
         println!("{}: {}", key, value);
     }
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {

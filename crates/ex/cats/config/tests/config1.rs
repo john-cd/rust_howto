@@ -25,16 +25,19 @@
 //     let config = Config::builder()
 //         // Add in (optional) `config.toml`
 //         // File::with_name(..) is shorthand for File::from(Path::new(..))
-//         // This could be a JSON, YAML, INI file, or even a file with a custom format
-//         .add_source(config::File::with_name("temp/config.toml").required(false))
-//         .add_source(
-//             // Add in settings from environment variables (with a prefix of APP)
-//             // Eg.. `APP_DEBUG=1 ./app` would set the `debug` key
+//         // This could be a JSON, YAML, INI file,
+//         // or even a file with a custom format
+//         .add_source(config::File::with_name("temp/config.toml")
+//              .required(false))
+//          .add_source(
+//          // Add in settings from environment variables (with a prefix of APP)
+//          // Eg.. `APP_DEBUG=1 ./app` would set the `debug` key
 //             config::Environment::with_prefix("APP")
 //                 // Try parsing the env. variables as bool, i64, and f64
 //                 .try_parsing(true)
 //                 // Given a nested configuration such as `redis.password`,
-//                 // a separator of _ would allow an environment key of REDIS_PASSWORD to match.
+//                 // a separator of _ would allow an environment key of
+//                 // REDIS_PASSWORD to match.
 //                 .separator("_")
 //                 // When set and `try_parsing` is true,
 //                 // then all environment variables are parsed
