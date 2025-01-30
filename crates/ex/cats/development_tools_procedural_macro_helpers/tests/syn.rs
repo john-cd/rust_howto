@@ -42,3 +42,4 @@ fn test() {
     main();
 }
 // [P1](https://github.com/john-cd/rust_howto/issues/743)
+// See https://github.com/dtolnay/syn/tree/master/examples
