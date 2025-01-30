@@ -1,44 +1,15 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// // HACK: the `config` package has the same name
+// // than the current crate, thus we renamed it `config1`
+// // See `Cargo.toml`
+// use config1 as config;
 
+// // ANCHOR: example
 // use std::collections::HashMap;
 // use std::fs;
 
 // use anyhow::Context;
-// use anyhow::Result;
 // use config::Config;
-// // FIXME use config::Environment;
-// use serde_derive::Deserialize;
-
-// // `Config` is prioritized configuration repository.
-// // It maintains a set of configuration sources,
-// // fetches values to populate those,
-// // and provides them according to the source’s priority.
-
-// fn read_config() -> Result<Config> {
-//     let config = Config::builder()
-//         // Add in `config.toml`
-//         .add_source(config::File::with_name("temp/config.toml"))
-//         // Also read environment variables
-//         .add_source(
-//             // An environment source collects a dictionary of environment
-// variables values             // into a hierarchical config Value type.
-//             //  Here, we read only env vars that begin with the defined
-// prefix.             config::Environment::with_prefix("APP")
-//                 .try_parsing(true)
-//                 // Given a nested configuration such as `redis.password`,
-//                 // a separator of _ would allow an environment key of
-// REDIS_PASSWORD to match.                 .separator("_")
-//                 // When set and `try_parsing` is true,
-//                 // then all environment variables will be parsed
-//                 // as Vec<String> instead of String.
-//                 .list_separator(" "),
-//         )
-//         .build()?;
-
-//     Ok(config)
-// }
+// use serde::Deserialize;
 
 // #[derive(Debug, Default, Deserialize, PartialEq, Eq)]
 // struct AppConfig {
@@ -50,10 +21,39 @@
 //     list: Vec<String>,
 // }
 
-// fn main() -> Result<()> {
-//     // Prep: set an environment variable
+// fn read_config() -> anyhow::Result<Config> {
+//     let config = Config::builder()
+//         // Add in (optional) `config.toml`
+//         // File::with_name(..) is shorthand for File::from(Path::new(..))
+//         // This could be a JSON, YAML, INI file, or even a file with a custom format
+//         .add_source(config::File::with_name("temp/config.toml").required(false))
+//         .add_source(
+//             // Add in settings from environment variables (with a prefix of APP)
+//             // Eg.. `APP_DEBUG=1 ./app` would set the `debug` key
+//             config::Environment::with_prefix("APP")
+//                 // Try parsing the env. variables as bool, i64, and f64
+//                 .try_parsing(true)
+//                 // Given a nested configuration such as `redis.password`,
+//                 // a separator of _ would allow an environment key of REDIS_PASSWORD to match.
+//                 .separator("_")
+//                 // When set and `try_parsing` is true,
+//                 // then all environment variables are parsed
+//                 // as Vec<String> instead of String...
+//                 .list_separator(" ")
+//                 // ...unless you provide the keys which should be Vec<String>
+//                 .with_list_parse_key("list")
+//         )
+//         // You may also programmatically change settings
+//         //.set_override("database.url", "postgres://")?
+//         .build()?;
+//     Ok(config)
+// }
+
+// fn main() -> anyhow::Result<()> {
+//     // Prep: set environment variables
 //     unsafe {
 //         std::env::set_var("APP_LIST", "Item1 Item2");
+//         std::env::set_var("APP_IP", "0.0.0.0");
 //     }
 
 //     // Prep: create a TOML config file
@@ -64,9 +64,11 @@
 //    github = 'xxxxxxxxxxxxxxxxx'
 //    travis = 'yyyyyyyyyyyyyyyyy'
 // "#;
+//     // Create the temp folder, if needed
 //     if !fs::exists("temp")? {
 //         fs::create_dir("temp")?;
 //     }
+//     // ...and create a TOML file
 //     std::fs::write("temp/config.toml", toml)?;
 
 //     // Read the configuration
@@ -76,7 +78,6 @@
 //     let github: String = config
 //         .get("keys.github")
 //         .context("Error getting 'keys.github'")?;
-
 //     println!("keys.github: {}", github);
 
 //     // Get an array of strings
@@ -93,7 +94,7 @@
 
 //     // Print the configuration
 //     println!(
-//         "\n{:?} \n\n-----------",
+//         "\n{:?}\n\n-----------",
 //         config.try_deserialize::<HashMap<String, String>>()?
 //     );
 
@@ -104,33 +105,16 @@
 
 //     unsafe {
 //         std::env::remove_var("APP_LIST");
+//         std::env::remove_var("APP_IP");
 //     }
 
 //     Ok(())
 // }
+// // ANCHOR_END: example
 
-// [ P0 finish](https://github.com/john-cd/rust_howto/issues/1012)
 // #[test]
-// fn test_config() -> Result<(), config::ConfigError> {
-//     // Alternate source for the environment.
-//     // This can be used when you want to test your own code using this
-// source,     // without the need to change the actual system environment
-// variables.     // let source = Environment::default().source(Some({
-//     //     let mut env = HashMap::new();
-//     //     env.insert("APP_LIST".into(), "my-value".into());
-//     //     env
-//     // }));
-
-//     //   let config: MyConfig = Config::builder()
-//     //     .add_source(source)
-//     //     .build()?
-//     //     .try_into()?;
-//     //   assert_eq!(config.my_string, "my-value");
-
+// fn test() -> anyhow::Result<()> {
+//     main()?;
 //     Ok(())
 // }
-
-// #[test]
-// fn test() -> Result<()> {
-//     main()
-// }
+// // https://github.com/rust-cli/config-rs/tree/main/examples

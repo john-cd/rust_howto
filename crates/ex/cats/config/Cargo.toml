@@ -14,8 +14,10 @@ categories = [ "config" ]
 publish.workspace = true
 
 [dependencies]
-## Config
-config = "0.15.3"
+# The config package has the same name than the current crate,
+# thus we rename it to config1
+# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
+config1 = { version = "0.15.6", package = "config" }
 confy = "0.6.1"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
@@ -25,4 +27,4 @@ lexopt = "0.3.0"
 ## General
 anyhow.workspace = true
 serde.workspace = true
-#serde_derive = "1.0.216"
+serde_derive = "1.0.217"

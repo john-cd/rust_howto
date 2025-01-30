@@ -6045,6 +6045,7 @@ dependencies = [
  "envy",
  "lexopt",
  "serde 1.0.217",
+ "serde_derive",
 ]
 
 [[package]]
