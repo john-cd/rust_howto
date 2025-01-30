@@ -2,6 +2,8 @@
 
 {{#include concurrent_data_structures.incl.md}}
 
+Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳.
+
 ## `dashmap` {#dashmap}
 
 [![dashmap][c-dashmap-badge]][c-dashmap] [![dashmap-crates.io][c-dashmap-crates.io-badge]][c-dashmap-crates.io] [![dashmap-github][c-dashmap-github-badge]][c-dashmap-github] [![dashmap-lib.rs][c-dashmap-lib.rs-badge]][c-dashmap-lib.rs]{{hi:dashmap}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}[![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
@@ -28,9 +30,7 @@ Concurrent queues.
 
 [![flurry][c-flurry-badge]][c-flurry] [![flurry-crates.io][c-flurry-crates.io-badge]][c-flurry-crates.io] [![flurry-github][c-flurry-github-badge]][c-flurry-github] [![flurry-lib.rs][c-flurry-lib.rs-badge]][c-flurry-lib.rs]{{hi:flurry}}{{hi:Map}}{{hi:Concurrent}}{{hi:Hashmap}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`flurry` is particularly good for read-heavy workloads.
-
-Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳ as well.
+Flurry is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to `std::collections::HashMap`. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c-flurry]).
 
 ```rust,editable
 {{#include ../../../crates/ex/cats/concurrency/tests/concurrent_data_structures/flurry.rs:example}}
@@ -40,5 +40,20 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳ 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[concurrent_data_structures: add flurry example (P1)](https://github.com/john-cd/rust_howto/issues/258)
+[concurrent_data_structures: finish (P1)](https://github.com/john-cd/rust_howto/issues/258)
+
+## `papaya` {#papaya}
+
+A fast and ergonomic concurrent hash-table for read-heavy workloads.
+
+- An ergonomic lock-free API — no more deadlocks!
+- Powerful atomic operations.
+- Seamless usage in async contexts.
+- Extremely scalable, low-latency reads (see performance).
+- Predictable latency across all operations.
+- Efficient memory usage, with garbage collection powered by seize.
+([doc][c-papaya])
+
+[c-papaya]: https://docs.rs/papaya/latest/papaya
+
 </div>
