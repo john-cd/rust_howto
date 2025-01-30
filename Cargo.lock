@@ -9926,6 +9926,7 @@ dependencies = [
  "rkyv 0.8.10",
  "rmp-serde",
  "serde 1.0.217",
+ "serde_ignored",
  "serde_json",
  "toml 0.8.19",
  "url",
