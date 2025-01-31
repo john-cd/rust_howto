@@ -1,35 +1,53 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+use monostate::MustBe;
+use serde::Deserialize;
 
-// use monostate::MonoState;
-// use std::sync::Arc;
+#[derive(Deserialize)]
+#[serde(untagged)]
+pub enum ApiResponse {
+    Success {
+        success: MustBe!(true),
+    },
+    Error {
+        success: MustBe!(false),
+        _message: String,
+    },
+}
 
-// monostate is a crate in Rust that allows you to create a singleton type which
-// is always the same value and thus can be used for types that need to be Send
-// and Sync without any synchronization.
+// The default representation for enums in Serde is called the externally tagged
+// enum representation: {"Success": {"success": "..."}}
+// In JSON and other self-describing formats, this externally tagged
+// representation is often not ideal for readability. That can be changed with
+// e.g. the #[serde(untagged)] attribute: the untagged JSON representation is
+// {"success": "..."} See https://serde.rs/enum-representations.html
 
-// // Define a struct with MonoState
-// #[derive(Debug, Default)]
-// struct MySingleton {
-//     state: MonoState,
-//     data: Arc<String>,
-// }
+// The `monostate` crate implements a macro that makes fields `serde`
+// deserializable only if they have one specific value. This can be helpful in
+// deserializing untagged enums:
+fn main() {
+    let success = "{\"success\":true}";
+    let response: ApiResponse = serde_json::from_str(success).unwrap();
+    match response {
+        ApiResponse::Success {
+            success: MustBe!(true),
+        } => {}
+        ApiResponse::Error { .. } => panic!(),
+    }
 
-// fn main() {
-//     let instance1 = MySingleton {
-//         state: MonoState::default(),
-//         data: Arc::new("Hello, MonoState!".to_string()),
-//     };
+    let error = "{\"success\":false,\"_message\":\"...\"}";
+    let response: ApiResponse = serde_json::from_str(error).unwrap();
+    match response {
+        ApiResponse::Error {
+            success: MustBe!(false),
+            ..
+        } => {}
+        ApiResponse::Success { .. } => panic!(),
+    }
+}
+// Example adapted from https://github.com/dtolnay/monostate/blob/master/tests/test.rs
+// ANCHOR_END: example
 
-//     let instance2 = instance1.clone();
-
-//     println!("Instance 1: {:?}", instance1);
-//     println!("Instance 2: {:?}", instance2);
-// }
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [P1](https://github.com/john-cd/rust_howto/issues/754)
+#[test]
+fn test() {
+    main();
+}

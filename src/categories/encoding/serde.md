@@ -2,6 +2,8 @@
 
 {{#include serde.incl.md}}
 
+## Serialization with `serde` {#serde}
+
 [![serde][c-serde-badge]][c-serde]{{hi:serde}}
 [![serde-crates.io][c-serde-crates.io-badge]][c-serde-crates.io]
 [![serde-github][c-serde-github-badge]][c-serde-github]
@@ -13,7 +15,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 {{#include ../../../crates/ex/cats/encoding/tests/serde/serde.rs:example}}
 ```
 
-## Serialize JSON {#serde-json2}
+## (De)serialize JSON {#serde-json2}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}}
 [![serde_json-crates.io][c-serde_json-crates.io-badge]][c-serde_json-crates.io]
@@ -24,14 +26,18 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 {{#include ../../../crates/ex/cats/encoding/tests/serde/serde_json.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+## Handle unknown fields when deserializing with `serde-ignored` {#serde-ignored}
 
-<div class="hidden">
+[![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
+[![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
+[![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
+[![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
 
-## See also
+```rust,editable
+{{#include ../../../crates/ex/cats/encoding/tests/serde/serde_ignored.rs:example}}
+```
 
-### `monostate` {#monostate}
+## `monostate` {#monostate}
 
 [![monostate][c-monostate-badge]][c-monostate]{{hi:monostate}}
 [![monostate-crates.io][c-monostate-crates.io-badge]][c-monostate-crates.io]
@@ -44,16 +50,10 @@ This library implements a type macro for a zero-sized type that is Serde deseria
 {{#include ../../../crates/ex/cats/encoding/tests/serde/monostate.rs:example}}
 ```
 
-### `serde-ignored` {#serde-ignored}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
-[![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
-[![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
-[![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
-[![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
-
-```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/serde/serde_ignored.rs:example}}
-```
+<div class="hidden">
 
 [serde: write (P1)](https://github.com/john-cd/rust_howto/issues/352)
 
