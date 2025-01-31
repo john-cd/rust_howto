@@ -19041,6 +19041,7 @@ dependencies = [
 name = "other"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "arrow 54.0.0",
  "aws-config",
  "aws-sdk-s3",

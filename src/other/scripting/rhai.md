@@ -13,7 +13,13 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-[rhai][c-rhai]{{hi:rhai}}⮳ is an embedded scripting language and evaluation engine for Rust that gives a safe and easy way to add scripting to any application.{{hi:Scripting in Rust}}
+[rhai][c-rhai-website]{{hi:rhai}}⮳ is an embedded scripting language and evaluation engine for Rust that gives a safe and easy way to add scripting to any application.{{hi:Scripting in Rust}}
+
+Features:
+
+- Similar to JavaScript+Rust with dynamic typing
+- Tight integration with native Rust functions and types
+- Sand-boxing - the scripting engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
 
 ```rust,editable
 {{#include ../../../crates/ex/other/tests/scripting/rhai.rs:example}}

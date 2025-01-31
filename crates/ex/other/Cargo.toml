@@ -27,14 +27,14 @@ crux_core = "0.11.1"
 crux_macros = "0.4.2"
 
 ## Data processing
-arrow = { version = "54.0.0", features = [ "prettyprint" ] }
+arrow = { version = "54.0.0", features = ["prettyprint"] }
 datafusion = "44.0.0"
 
 ## GPU
 # TODO P2 add deps
 
 ## Scripting
-rhai = "1.19.0"
+rhai = "1.21.0"
 
 ## Written in Rust TODO P2
 # bat
@@ -49,3 +49,6 @@ rhai = "1.19.0"
 # rustdesk = "0.1.1" # app
 # xsv = "0.13.0" # not a lib
 # zed  # the `zed` crate is not the editor
+
+## General
+anyhow.workspace = true
