@@ -25,7 +25,7 @@ fn test_config() -> anyhow::Result<(), config::ConfigError> {
         .try_deserialize::<HashMap<String, String>>()?;
 
     assert_eq!(
-        config.get(&"host".to_string()),
+        config.get("host"),
         Some(&"1.1.1.1".to_string())
     );
 
