@@ -1,57 +1,110 @@
 // // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
-
-// use crux_core::App;
+// use crux_core::{
+//     render::{render, Render},
+//     App, Command,
+// };
 // use serde::Deserialize;
 // use serde::Serialize;
 
-// // Crux is a framework for writing Rust applications that can target both
-// // native and web platforms using a single codebase.
-// // Crux helps you share your app's business logic and behavior across mobile
-// // (iOS/Android) and web - as a single reusable core built with Rust.
+// // The following only provides an example of the Core of a Crux app.
+// // Follow the steps in https://redbadger.github.io/crux/
+// // to install the toolchains and structure a complete project.
 
-// // Define a Counter struct that holds the state of the application.
-// #[derive(Crux, Default)]
-// struct Counter {
+// // Add the following to your `Cargo.toml`, as needed:
+// // crux_core - the main Crux crate
+// // crux_http - HTTP client capability
+// // crux_kv - Key-value store capability
+// // crux_time - Time capability
+
+// // Define a `Model` struct to hold the state of the application.
+// #[derive(Default)]
+// struct Model {
 //     count: i32,
 // }
 
-// // Define a Msg enum for the different messages the application can handle.
-// #[derive(Serialize, Deserialize)]
-// enum Msg {
+// //
+// #[derive(Serialize, Deserialize, Clone, Default)]
+// pub struct ViewModel {
+//     pub count: String,
+// }
+
+// // Define an `Event` enum for the different messages
+// // the application can handle.
+// #[derive(Serialize, Deserialize, Clone, Debug)]
+// enum Event {
 //     Increment,
 //     Decrement,
 // }
 
+// #[cfg_attr(feature = "typegen", derive(crux_core::macros::Export))]
+// #[derive(crux_core::macros::Effect)]
+// #[allow(unused)]
+// pub struct Capabilities {
+//     render: Render<Event>,
+// }
+
+// #[derive(Default)]
+// pub struct Counter;
+
 // // Implement the App trait for the Counter struct to define how the state
 // // should be updated in response to messages.
+// // The App is the the main module of the core containing the application
+// // logic, especially model // changes and side-effects triggered by events.
+// // Apps can be composed from modules, each resembling a smaller, simpler app.
 // impl App for Counter {
-//     type Capabilities = ();
-//     type Event = Msg;
-//     type Model = ();
+//     // Events are main input for the core, typically triggered by user
+//     // interaction in the UI
+//     type Event = Event;
+//     // Model is a data structure (typically tree-like)
+//     // holding the entire application state
+//     type Model = Model;
+//     // Data structure describing the current state of the user interface
+//     type ViewModel = ViewModel;
+//     // A user-friendly API used to request effects and provide events
+//     // that should be dispatched when the effect is completed. For example, a
+//     // HTTP client is a capability.
+//     type Capabilities = Capabilities;
+//     // A side-effect the core can request from the shell.
+//     // This is typically a form of I/O or similar interaction with the host
+//     // platform. Updating the UI is considered an effect.
+//     type Effect = Effect;
 
-//     fn update(&mut self, msg: Msg) -> Vec<()> {
-//         match msg {
-//             Msg::Increment => self.count += 1,
-//             Msg::Decrement => self.count -= 1,
-//         }
-//         vec![]
+//     // The job of the update function is to process an Event, update the
+//     // model accordingly, and potentially request some side-effects using
+//     // capabilities.
+//      fn update(
+//         &self,
+//         event: Self::Event,
+//         model: &mut Self::Model,
+//         _caps: &Self::Capabilities,
+//     ) -> Command<Effect, Event> {
+//         match event {
+//             Event::Increment => model.count += 1,
+//             Event::Decrement => model.count -= 1,
+//         };
+//         render()
 //     }
 
-//     fn view(&self, _: &<Self as App>::Model) -> <Self as App>::ViewModel {}
+//     fn view(&self, model: &Self::Model) -> Self::ViewModel {
+//         ViewModel {
+//             count: format!("Count is: {}", model.count),
+//         }
+//     }
 // }
 
+// // In the real world, the inner "Core" would be compiled and linked to the
+// // outer "Shell" on each platform as a library:
+// // - On iOS, as a native static library
+// // - On Android, as a dynamic library using Java Native Access
+// // - In a browser, as a WebAssembly module
 // fn main() {
-//     let mut app = Counter::default();
-
+//     let _app = Counter::default();
 //     // Simulate user interactions
-//     app.update(Msg::Increment);
-//     app.update(Msg::Increment);
-//     app.update(Msg::Decrement);
-
-//     println!("Count: {}", app.count);
+//     // app.update(Event::Increment);
+//     // app.update(Event::Increment);
+//     // app.update(Event::Decrement);
 // }
+// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
