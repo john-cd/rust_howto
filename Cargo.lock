@@ -10477,6 +10477,7 @@ dependencies = [
  "directories 6.0.0",
  "glob",
  "globset",
+ "ignore",
  "memmap2 0.9.5",
  "notify 8.0.0",
  "open",
