@@ -1,27 +1,25 @@
 // HACK: the `config` package has the same name
 // than the current crate, thus we renamed it `config1`
 // See `Cargo.toml`
-
 use config1 as config;
-// ANCHOR: example
-use std::sync::OnceLock;
 
+// ANCHOR: example
 fn config() -> &'static config::Config {
     // Get or initialize the configuration.
     // (`OnceLock` can be written to only once).
-    static CONFIG: OnceLock<config::Config> = OnceLock::new();
+    static CONFIG: std::sync::OnceLock<config::Config> = OnceLock::new();
     CONFIG.get_or_init(|| {
         config::Config::builder()
-            .add_source(
-                config::Environment::with_prefix("APP"),
-            )
+            .add_source(config::Environment::with_prefix("APP"))
             .build()
             .unwrap()
     })
 }
 
 /// Get a configuration value from the static configuration object
-fn get<'a, T: serde::Deserialize<'a>>(key: &str) -> Result<T, config::ConfigError> {
+fn get<'a, T: serde::Deserialize<'a>>(
+    key: &str,
+) -> Result<T, config::ConfigError> {
     config().get::<T>(key)
 }
 
