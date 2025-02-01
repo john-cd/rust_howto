@@ -8508,6 +8508,7 @@ name = "development_tools_debugging"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "axum 0.8.1",
  "chrono",
  "env_logger 0.11.6",
  "log",
