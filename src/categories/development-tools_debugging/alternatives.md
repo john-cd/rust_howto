@@ -16,7 +16,9 @@
 
 [![slog][c-slog-badge]][c-slog] [![slog-crates.io][c-slog-crates.io-badge]][c-slog-crates.io] [![slog-github][c-slog-github-badge]][c-slog-github] [![slog-lib.rs][c-slog-lib.rs-badge]][c-slog-lib.rs]{{hi:slog}}{{hi:Structured}}{{hi:Log}}{{hi:Logging}}{{hi:Hierarchical}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-Structured, extensible, composable logging. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
+`slog` provides structured, extensible, composable logging.
+
+Consider using `tracing` instead, especially if you need `async` support. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
 
 ```rust,editable
 {{#include ../../../crates/ex/cats/development_tools_debugging/tests/other/slog.rs:example}}
