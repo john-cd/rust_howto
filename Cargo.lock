@@ -3225,13 +3225,13 @@ dependencies = [
 
 [[package]]
 name = "bcrypt"
-version = "0.16.0"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b1866ecef4f2d06a0bb77880015fdf2b89e25a1c2e5addacb87e459c86dc67e"
+checksum = "92758ad6077e4c76a6cadbce5005f666df70d4f13b19976b1a8062eef880040f"
 dependencies = [
  "base64 0.22.1",
  "blowfish",
- "getrandom 0.2.15",
+ "getrandom 0.3.1",
  "subtle",
  "zeroize",
 ]
@@ -7204,7 +7204,7 @@ dependencies = [
  "aes-gcm-siv",
  "anyhow",
  "argon2",
- "bcrypt 0.16.0",
+ "bcrypt 0.17.0",
  "blake3",
  "chacha20poly1305",
  "data-encoding",
