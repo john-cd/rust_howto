@@ -11,8 +11,8 @@ fn test_config() -> anyhow::Result<(), config::ConfigError> {
     use std::collections::HashMap;
 
     // The `Environment::source` method can be used when you want to test
-    // your code, without the need to change the actual
-    // system environment variables.
+    // your code, without the need to change the actual system
+    // environment variables.
     let source = config::Environment::default().source(Some({
         let mut env = HashMap::new();
         env.insert("HOST".into(), "1.1.1.1".into());
@@ -24,10 +24,7 @@ fn test_config() -> anyhow::Result<(), config::ConfigError> {
         .build()?
         .try_deserialize::<HashMap<String, String>>()?;
 
-    assert_eq!(
-        config.get("host"),
-        Some(&"1.1.1.1".to_string())
-    );
+    assert_eq!(config.get("host"), Some(&"1.1.1.1".to_string()));
 
     Ok(())
 }

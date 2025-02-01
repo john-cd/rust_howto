@@ -1,6 +1,7 @@
 // ANCHOR: example
+use rhai::Engine;
+use rhai::EvalAltResult;
 use rhai::Scope;
-use rhai::{Engine, EvalAltResult};
 
 // Rhai is a lightweight, Rust-based scripting language.
 // It allows to embed scripting capabilities in Rust applications.
@@ -60,13 +61,12 @@ fn main() -> Result<(), Box<EvalAltResult>> {
     let mut scope = Scope::new();
     scope.push("x", 42_i64);
     scope.push_constant("SCALE", 10_i64);
-    let result: i64 = engine.eval_expression_with_scope(&mut scope,
-                        "(x + 1) * SCALE"
-                  )?;
+    let result: i64 =
+        engine.eval_expression_with_scope(&mut scope, "(x + 1) * SCALE")?;
     println!("{}", result);
 
-    // Rhai also allows calling a Rhai-scripted function from Rust via `Engine::call_fn`.
-    // Rhai has lots more features: check https://rhai.rs/ and the Rhai book!
+    // Rhai also allows calling a Rhai-scripted function from Rust via
+    // `Engine::call_fn`. Rhai has lots more features: check https://rhai.rs/ and the Rhai book!
 
     Ok(())
 }

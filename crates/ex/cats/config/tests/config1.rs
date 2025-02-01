@@ -2,13 +2,11 @@
 // // than the current crate, thus we renamed it `config1`
 // // See `Cargo.toml`
 // use config1 as config;
-
 // // ANCHOR: example
 // use std::collections::HashMap;
 // use std::fs;
 
 // use anyhow::Context;
-// use config::Config;
 // use serde::Deserialize;
 
 // #[derive(Debug, Default, Deserialize, PartialEq, Eq)]
@@ -21,8 +19,8 @@
 //     list: Vec<String>,
 // }
 
-// fn read_config() -> anyhow::Result<Config> {
-//     let config = Config::builder()
+// fn read_config() -> anyhow::Result<config::Config> {
+//     let config = config::Config::builder()
 //         // Add in (optional) `config.toml`
 //         // File::with_name(..) is shorthand for File::from(Path::new(..))
 //         // This could be a JSON, YAML, INI file,
