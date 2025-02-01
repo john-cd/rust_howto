@@ -8522,6 +8522,10 @@ dependencies = [
  "rusqlite",
  "rusty-fork",
  "serde_json",
+ "slog",
+ "slog-async",
+ "slog-scope",
+ "slog-term",
  "syslog",
  "tokio",
  "tonic",
@@ -24525,6 +24529,18 @@ name = "slog"
 version = "2.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8347046d4ebd943127157b94d63abb990fcf729dc4e9978927fdf4ac3c998d06"
+
+[[package]]
+name = "slog-async"
+version = "2.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72c8038f898a2c79507940990f05386455b3a317d8f18d4caea7cbc3d5096b84"
+dependencies = [
+ "crossbeam-channel",
+ "slog",
+ "take_mut",
+ "thread_local",
+]
 
 [[package]]
 name = "slog-scope"

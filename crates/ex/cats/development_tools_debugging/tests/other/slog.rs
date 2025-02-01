@@ -1,46 +1,58 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
 
-// use slog::Drain;
-// use slog::Logger;
-// use slog::o;
-// use slog_async;
-// use slog_term;
-// // `slog` is a structured, composable logging framework.
+// The Drain trait is responsible for handling logging statements (Records)
+// from Loggers: filtering, modifying, formatting and writing the log records
+// into given destination(s).
+use slog::Drain;
 
-// // slog = "2.7"
-// // slog-async = "2.7"
-// // slog-term = "2.8"
-// // slog-scope = "4.4"
+// Macro for building group of key-value pairs
+use slog::o;
 
-// fn main() {
-//     // Create a terminal decorator
-//     let decorator = slog_term::TermDecorator::new().build();
-//     // Create a terminal drain
-//     let drain = slog_term::CompactFormat::new(decorator).build().fuse();
-//     // Create an async drain
-//     let drain = slog_async::Async::new(drain).build().fuse();
-//     // Create a root logger
-//     let root_logger =
-//         Logger::root(drain, o!("version" => env!("CARGO_PKG_VERSION")));
+// `slog` is a structured, composable logging framework.
 
-//     // Log some messages
-//     slog::info!(root_logger, "Logging with slog"; "example" => "simple");
-//     slog::warn!(root_logger, "A warning message");
-//     slog::error!(root_logger, "An error occurred"; "code" => 500);
+// Add to your `Cargo.toml`, as needed:
+// slog = "2.7" # or latest
+// slog-async = "2.7"
+// slog-term = "2.8"
+// slog-scope = "4.4"
 
-//     // Do some work with logging
-//     perform_some_logging(root_logger.clone());
-// }
+fn main() {
+    // Create a terminal decorator
+    let decorator = slog_term::TermDecorator::new().build();
+    // Also try: let decorator = slog_term::PlainDecorator::new(file);
 
-// fn perform_some_logging(logger: Logger) {
-//     slog::info!(logger, "Performing some work"; "task" => "example task");
-//     // More work...
-// }
+    // Create a terminal drain
+    let drain = slog_term::CompactFormat::new(decorator).build().fuse();
+    // Also try: let drain = slog_term::FullFormat::new(decorator).build().fuse();
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [P1](https://github.com/john-cd/rust_howto/issues/735)
+    // Create an async drain
+    // Offloads processing to another thread.
+    let drain = slog_async::Async::new(drain).build().fuse();
+
+    // Create a root logger
+    let root_logger =
+        slog::Logger::root(drain, o!("version" => env!("CARGO_PKG_VERSION")));
+
+    // Log some messages
+    // messages behave like `format!`
+    // ; is used to separate message arguments and key value pairs.
+    slog::info!(root_logger, "Logging with slog"; "example" => "simple");
+    slog::warn!(root_logger, "A {} message", "warning");
+    slog::error!(root_logger, "An error occurred: {msg}", msg = "it failed!");
+
+    // Build a child logger.
+    // Child logger inherits all existing key-value pairs from its parent and supplements them with additional ones.
+    let child_logger = root_logger.new(o!("key" => "value"));
+    perform_some_logging(child_logger);
+}
+
+fn perform_some_logging(logger: slog::Logger) {
+    slog::info!(logger, "Performing some work"; "task" => "example task");
+    // More work...
+}
+// ANCHOR_END: example
+
+#[test]
+fn test() {
+    main();
+}

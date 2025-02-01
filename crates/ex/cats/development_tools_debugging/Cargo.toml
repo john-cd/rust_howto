@@ -22,6 +22,10 @@ opentelemetry-jaeger = "0.22.0"
 opentelemetry-otlp = "0.27.0"
 opentelemetry_sdk = { version = "0.27.1", features = ["metrics"] }
 opentelemetry-semantic-conventions = "0.27.0"
+slog = "2.7.0"
+slog-async = "2.8.0"
+slog-term = "2.9.1"
+slog-scope = "4.4.0"
 tonic = "0.12.3"
 tracing.workspace = true
 tracing-opentelemetry = "0.28.0"
