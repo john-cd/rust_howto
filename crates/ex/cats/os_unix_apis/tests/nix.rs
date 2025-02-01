@@ -1,59 +1,71 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
 #![cfg(target_family = "unix")]
+// Simple Rust example using the `nix` crate to handle Unix-like operating
+// system tasks: create a file, write to it, read from it, and delete it.
 
-// use std::os::fd::AsRawFd;
+// Raw file descriptor
+use std::os::fd::RawFd;
 
-// // File control options
-// use nix::fcntl::OFlag;
-// use nix::fcntl::open;
-// use nix::sys::stat::Mode;
-// // Safe wrappers around functions found in libc “unistd.h” header
-// use nix::unistd::close;
-// use nix::unistd::read;
-// use nix::unistd::unlink;
-// use nix::unistd::write;
+// Configuration options for opened files
+use nix::fcntl::OFlag;
+// Open or create a file for reading, writing or executing
+use nix::fcntl::open;
+// File mode / permissions flags
+use nix::sys::stat::Mode;
+// Safe wrappers around functions found in libc “unistd.h” header
+// Close a raw file descriptor
+use nix::unistd::close;
+// Read from a raw file descriptor
+use nix::unistd::read;
+// Remove a directory entry
+use nix::unistd::unlink;
+// Write to a raw file descriptor
+use nix::unistd::write;
 
-// // Simple Rust example using the `nix` crate to handle Unix-like operating
-// // system tasks: create a file, write to it, read from it, and delete it.
+fn main() -> nix::Result<()> {
+    let path = "temp/example.txt";
+    let data = b"Hello, nix!";
+    {
+        // Create and open a file
+        let rfd: RawFd = open(
+            path,
+            // Create the file if it does not exist. Only allow writing
+            OFlag::O_CREAT | OFlag::O_WRONLY,
+            // Read/write permissions for owner
+            Mode::S_IRUSR | Mode::S_IWUSR,
+        )?;
 
-// fn main() {
-//     // Create and open a file
-//     let path = "temp/example.txt";
-//     let fd = open(
-//         path,
-//         OFlag::O_CREAT | OFlag::O_WRONLY,
-//         Mode::S_IRUSR | Mode::S_IWUSR,
-//     )
-//     .unwrap();
+        // Write to the file
+        unsafe {
+            write(std::os::fd::BorrowedFd::borrow_raw(rfd), data)?;
+        }
 
-//     // Write to the file
-//     let data = b"Hello, nix!";
-//     write(fd.as_raw_fd(), data).unwrap();
+        // Close the file
+        close(rfd)?;
+    }
+    {
+        // Open the file for reading
+        let rfd2: RawFd = open(path, OFlag::O_RDONLY, Mode::empty())?;
 
-//     // Close the file
-//     close(fd.as_raw_fd()).unwrap();
+        // Read from the file
+        let mut buffer: Vec<u8> = vec![0; data.len()];
+        read(rfd2, &mut buffer)?;
 
-//     // Open the file for reading
-//     let fd = open(path, OFlag::O_RDONLY, Mode::empty()).unwrap();
+        // Print the content of the file
+        println!("{}", String::from_utf8_lossy(&buffer));
 
-//     // Read from the file
-//     let mut buffer = vec![0; data.len()];
-//     read(fd, &mut buffer).unwrap();
+        // Close the file
+        close(rfd2)?;
+    }
+    // Delete the file
+    unlink(path)?;
 
-//     // Print the content of the file
-//     println!("{}", String::from_utf8_lossy(&buffer));
+    Ok(())
+}
+// ANCHOR_END: example
 
-//     // Close the file
-//     close(fd).unwrap();
-
-//     // Delete the file
-//     unlink(path).unwrap();
-// }
-
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [P2](https://github.com/john-cd/rust_howto/issues/820) make sure temp folder exists
+#[test]
+fn test() -> nix::Result<()> {
+    main()?;
+    Ok(())
+}
