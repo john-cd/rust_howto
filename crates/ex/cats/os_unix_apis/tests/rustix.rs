@@ -1,63 +1,76 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
 #![cfg(target_family = "unix")]
 
-// // `rustix` is a library that provides a safe and idiomatic Rust interface to
-// // low-level system calls.
+// `rustix` is a library that provides a safe and idiomatic Rust interface to
+// low-level system calls.
 
-// use std::ffi::CString;
+// Add to your `Cargo.toml`:
+// rustix = { version = "0.38.42", features = ["fs"] }
 
-// use rustix::fs::AtFlags;
-// use rustix::fs::Mode;
-// use rustix::fs::OFlags;
-// use rustix::fs::openat;
-// use rustix::fs::read;
-// use rustix::fs::write;
-// use rustix::path::CStr;
+// C-compatible, nul-terminated string (for the file path)
+use std::ffi::CStr;
 
-// fn main() {
-//     // Create a CString for the file path
-//     let path = CString::new("example.txt").unwrap();
+// S_I* constants for use with openat, chmodat, and fchmod.
+use rustix::fs::Mode;
+// O_* constants for use with openat.
+use rustix::fs::OFlags;
+// Opens a file.
+use rustix::fs::openat;
+use rustix::fs::rename;
+use rustix::fs::unlink;
+use rustix::io::read;
+use rustix::io::write;
 
-//     // Open the file for writing
-//     let fd = openat(
-//         rustix::fs::CWD,
-//         &CStr::from_bytes_with_nul(b"example.txt\0").unwrap(),
-//         OFlags::CREATE | OFlags::WRONLY | OFlags::TRUNC,
-//         Mode::IRUSR | Mode::IWUSR,
-//     )
-//     .unwrap();
+fn main() -> anyhow::Result<()> {
+    let data = b"Hello, rustix!";
+    {
+        // Open the file for writing
+        let fd: rustix::fd::OwnedFd = openat(
+            rustix::fs::CWD, // Current working directory
+            CStr::from_bytes_with_nul(b"temp/example2.txt\0")?,
+            OFlags::CREATE | OFlags::WRONLY | OFlags::TRUNC,
+            Mode::RUSR | Mode::WUSR,
+        )?;
 
-//     // Write to the file
-//     let data = b"Hello, rustix!";
-//     write(fd, data).unwrap();
+        // Write to the file
+        let bytes_written = write(fd, data)?;
+        println!("Wrote {} bytes to the file.", bytes_written);
 
-//     // Close the file
-//     rustix::fs::close(fd).unwrap();
+        // Close the file
+    }
+    {
+        // Open the file for reading
+        let fd2 = openat(
+            rustix::fs::CWD,
+            CStr::from_bytes_with_nul(b"temp/example2.txt\0")?,
+            OFlags::RDONLY,
+            Mode::empty(),
+        )?;
 
-//     // Open the file for reading
-//     let fd = openat(
-//         rustix::fs::cwd(),
-//         &CStr::from_bytes_with_nul(b"example.txt\0").unwrap(),
-//         OFlags::RDONLY,
-//         Mode::empty(),
-//     )
-//     .unwrap();
+        // Read from the file
+        let mut buffer = vec![0; data.len()];
+        read(fd2, &mut buffer)?;
 
-//     // Read from the file
-//     let mut buffer = vec![0; data.len()];
-//     read(fd, &mut buffer).unwrap();
+        // Print the content of the file
+        println!("{}", String::from_utf8_lossy(&buffer));
 
-//     // Print the content of the file
-//     println!("{}", String::from_utf8_lossy(&buffer));
+        // Close the file
+    }
+    // Rename the file
+    let path = "temp/example2.txt";
+    let new_file_path = "temp/my_renamed_file";
+    rename(path, new_file_path)?;
+    println!("File renamed to: {}", new_file_path);
 
-//     // Close the file
-//     rustix::fs::close(fd).unwrap();
-// }
+    // Unlink (delete) the file
+    unlink(new_file_path)?;
+    println!("File deleted: {}", new_file_path);
+    Ok(())
+}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [P2](https://github.com/john-cd/rust_howto/issues/821) fix
+#[test]
+fn test() -> anyhow::Result<()> {
+    main()?;
+    Ok(())
+}
