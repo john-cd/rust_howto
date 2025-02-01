@@ -7,7 +7,8 @@ use config1 as config;
 fn config() -> &'static config::Config {
     // Get or initialize the configuration.
     // (`OnceLock` can be written to only once).
-    static CONFIG: std::sync::OnceLock<config::Config> = std::sync::OnceLock::new();
+    static CONFIG: std::sync::OnceLock<config::Config> =
+        std::sync::OnceLock::new();
     CONFIG.get_or_init(|| {
         config::Config::builder()
             .add_source(config::Environment::with_prefix("APP"))

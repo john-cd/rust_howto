@@ -4,7 +4,6 @@
 // from Loggers: filtering, modifying, formatting and writing the log records
 // into given destination(s).
 use slog::Drain;
-
 // Macro for building group of key-value pairs
 use slog::o;
 
@@ -23,7 +22,8 @@ fn main() {
 
     // Create a terminal drain
     let drain = slog_term::CompactFormat::new(decorator).build().fuse();
-    // Also try: let drain = slog_term::FullFormat::new(decorator).build().fuse();
+    // Also try: let drain =
+    // slog_term::FullFormat::new(decorator).build().fuse();
 
     // Create an async drain
     // Offloads processing to another thread.
@@ -41,7 +41,8 @@ fn main() {
     slog::error!(root_logger, "An error occurred: {msg}", msg = "it failed!");
 
     // Build a child logger.
-    // Child logger inherits all existing key-value pairs from its parent and supplements them with additional ones.
+    // Child logger inherits all existing key-value pairs from its parent and
+    // supplements them with additional ones.
     let child_logger = root_logger.new(o!("key" => "value"));
     perform_some_logging(child_logger);
 }
