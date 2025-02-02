@@ -26,12 +26,14 @@ fn get_args() -> anyhow::Result<Args> {
         match arg {
             // `Short` and `Long` indicate an option, here -a or --age
             Short('a') | Long("age") => {
-                // `value()` returns the value that belongs to the option as a standard `OsString`.
+                // `value()` returns the value that belongs to the option as a
+                // standard `OsString`.
                 age = parser.value()?.parse()?;
             }
             // Positional argument
             Value(val) => {
-                // `string()` converts the `OsString` into a `String` if it is valid Unicode.
+                // `string()` converts the `OsString` into a `String` if it is
+                // valid Unicode.
                 name = val.string()?;
             }
             Long("help") => {
