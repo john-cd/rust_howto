@@ -1,26 +1,20 @@
 // // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
 
-// use tokio;
-// use tokio_postgres::Error;
-// use tokio_postgres::NoTls;
-
-// // In this example:
-// // We connect to a PostgreSQL database using tokio_postgres::connect.
-// // We spawn the connection on a separate task using tokio::spawn.
-// // We create a table if it does not already exist.
-// // We insert a new row into the table.
-// // We query the table for rows and print the results.
-// // We update a row in the table.
-// // We delete a row from the table.
+// // In this example, we
+// // - connect to a PostgreSQL database using `tokio_postgres::connect`.
+// // - spawn the connection on a separate task using tokio::spawn.
+// // - create a table if it does not already exist.
+// // - insert a new row into the table.
+// // - query the table for rows and print the results.
+// // - update a row in the table.
+// // - delete a row from the table.
 
 // #[tokio::main]
-// async fn main() -> Result<(), Error> {
+// async fn main() -> Result<(), tokio_postgres::Error> {
 //     // Connect to the database
 //     let (client, connection) = tokio_postgres::connect(
 //         "host=localhost user=postgres password=yourpassword dbname=yourdb",
-//         NoTls,
+//         tokio_postgres::NoTls,
 //     )
 //     .await?;
 
@@ -81,9 +75,11 @@
 
 //     Ok(())
 // }
+// // ANCHOR_END: example
 
 // #[test]
-// fn require_external_svc() {
-//     main();
+// fn require_external_svc() -> anyhow::Result<()> {
+//     main()?;
+//     Ok(())
 // }
 // // [P0](https://github.com/john-cd/rust_howto/issues/719)
