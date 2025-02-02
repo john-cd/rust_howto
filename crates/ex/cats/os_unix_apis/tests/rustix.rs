@@ -7,9 +7,6 @@
 // Add to your `Cargo.toml`:
 // rustix = { version = "0.38.42", features = ["fs"] }
 
-// C-compatible, nul-terminated string (for the file path)
-use std::ffi::CStr;
-
 // S_I* constants for use with openat, chmodat, and fchmod.
 use rustix::fs::Mode;
 // O_* constants for use with openat.
@@ -27,7 +24,7 @@ fn main() -> anyhow::Result<()> {
         // Open the file for writing
         let fd: rustix::fd::OwnedFd = openat(
             rustix::fs::CWD, // Current working directory
-            CStr::from_bytes_with_nul(b"temp/example2.txt\0")?,
+            c"temp/example2.txt",
             OFlags::CREATE | OFlags::WRONLY | OFlags::TRUNC,
             Mode::RUSR | Mode::WUSR,
         )?;
@@ -42,7 +39,7 @@ fn main() -> anyhow::Result<()> {
         // Open the file for reading
         let fd2 = openat(
             rustix::fs::CWD,
-            CStr::from_bytes_with_nul(b"temp/example2.txt\0")?,
+            c"temp/example2.txt",
             OFlags::RDONLY,
             Mode::empty(),
         )?;
