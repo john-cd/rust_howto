@@ -1,32 +1,111 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+#![allow(dead_code)]
+#![allow(unused_variables)]
+// ANCHOR: example
+use std::collections::HashMap;
+use std::sync::Arc;
 
-// use std::net::SocketAddr;
+use axum::Router;
+use axum::extract::Json;
+use axum::extract::Path;
+use axum::extract::Query;
+use axum::extract::State;
+use axum::http::StatusCode;
+use axum::http::Uri;
+use axum::routing::get;
 
-// use axum::Router;
-// use axum::handler::get;
+// `axum` is a web application framework designed to work with `tokio`
+// and `hyper`. It doesn’t have its own middleware system but instead uses
+// `tower::Service`. This means `axum` gets timeouts, tracing, compression,
+// authorization, and more, for free.
 
-// async fn hello() -> &'static str {
-//     "Hello, world!"
-// }
+// Application state
+#[derive(Clone)]
+struct AppState {
+    request_count: u64,
+}
 
-// #[tokio::main]
-// async fn main() {
-//     // build our application with a route
-//     let app = Router::new().route("/", get(hello));
+// An Axum “handler” is an async function that accepts zero or more “extractors”
+// as arguments and returns something that can be converted into a response.
+async fn root() -> &'static str {
+    "Hello, world!"
+    // Anything that implements `IntoResponse` can be returned from handlers.
+    // `&'static str` becomes a `200 OK` with `content-type: text/plain;
+    // charset=utf-8`
+}
 
-//     // run it
-//     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-//     println!("Listening on {}", addr);
-//     axum::Server::bind(&addr)
-//         .serve(app.into_make_service())
-//         .await
-//         .unwrap();
-// }
+// The `Path` extractor gives you the path parameters (here `id` in
+// `/users/{id}`) and deserializes them.
+async fn get_user(Path(id): Path<u64>) {
+    // TODO
+}
 
+async fn post_user(Path(id): Path<u64>) {
+    // TODO
+}
+
+// The wildcard e.g. `/assets/{*path}` is passed as a String
+async fn serve_asset(Path(path): Path<String>) -> String {
+    path
+}
+
+// `Query` gives you the query parameters and deserializes them
+async fn query(Query(_params): Query<HashMap<String, String>>) {
+    // TODO
+}
+
+// Buffer the request body and deserialize it as JSON into a
+// `serde_json::Value`. `Json` supports any type that implements
+// `serde::Deserialize`.
+async fn json(Json(_payload): Json<serde_json::Value>) {
+    // TODO
+}
+
+// Access the application state via the `State` extractor
+async fn state(State(state): State<Arc<AppState>>) {
+    // TODO state.request_count
+}
+
+// Fallbacks apply to routes that aren’t matched by anything in the router
+async fn fallback(uri: Uri) -> (StatusCode, String) {
+    (StatusCode::NOT_FOUND, format!("No route for {uri}"))
+}
+
+#[tokio::main] // `tokio` macros and rt-multi-thread features should be enabled
+async fn main() -> anyhow::Result<()> {
+    // TODO
+    //  tracing_subscriber::registry()
+    //     .with(
+    //         tracing_subscriber::EnvFilter::try_from_default_env()
+    //             .unwrap_or_else(|_| format!("{}=debug",
+    // env!("CARGO_CRATE_NAME")).into()),     )
+    //     .with(tracing_subscriber::fmt::layer())
+    //     .init();
+
+    let shared_state = Arc::new(AppState { request_count: 0 });
+
+    // Build our application that routes requests to handlers
+    // The `path` is a string of path segments separated by /.
+    // Each segment can be either static, a capture, or a wildcard,
+    // e.g. /users/123 or /users/{id} or /assets/{*path}
+    let router = Router::new()
+        .route("/", get(root)) // Could be `get`, `post`, or `delete`...
+        .route("/users/{id}", get(get_user).post(post_user))
+        //TODO .route("/assets/{*path}", get(serve_asset)) // Note: doesn’t match empty segments i.e. /assets or /assets/
+        .fallback(fallback)
+        .with_state(shared_state);
+
+    // Run it
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await?;
+    // tracing::debug!("Listening on {}", listener.local_addr()?);
+    axum::serve(listener, router).await?;
+    Ok(())
+}
+// ANCHOR_END: example
+
+// TODO time limit
 // #[test]
-// fn test() {
-//     main();
+// fn test() -> anyhow::Result<()> {
+//     main()?;
+//     Ok(())
 // }
-// // [P0](https://github.com/john-cd/rust_howto/issues/865)
+// [P0](https://github.com/john-cd/rust_howto/issues/865)
