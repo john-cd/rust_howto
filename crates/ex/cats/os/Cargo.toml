@@ -14,10 +14,8 @@ categories = [ "os" ]
 publish.workspace = true
 
 [dependencies]
-## OS and friends
 libc = "0.2.169"
 
 ## General
 anyhow.workspace = true
 regex.workspace = true
-#reqwest = { workspace = true, features = ["blocking"] }

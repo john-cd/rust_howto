@@ -14,7 +14,6 @@ categories = ["science_robotics"]
 publish.workspace = true
 
 [dependencies]
-## Science - Robotics
 bonsai-bt = "0.9.0"
 # openrr = "0.1.0" # FIXME P1 lacks native static library `assimpd` on windows https://github.com/assimp/assimp/blob/master/Build.md
 urdf-rs = "0.9.0"

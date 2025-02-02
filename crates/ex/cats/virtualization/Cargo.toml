@@ -14,5 +14,4 @@ categories = [ "virtualization" ]
 publish.workspace = true
 
 [dependencies]
-## Virtualization
 # TODO P2 review  wasmi

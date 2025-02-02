@@ -14,6 +14,5 @@ categories = [ "date_and_time" ]
 publish.workspace = true
 
 [dependencies]
-## Date and time
 chrono = "0.4.39"
 time = "0.3.37"

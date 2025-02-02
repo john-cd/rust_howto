@@ -15,8 +15,6 @@ publish.workspace = true
 build = "build.rs"
 
 [dependencies]
-
-## Encoding
 base64 = "0.22.1"
 bincode = "1.3.3"
 bytemuck = { version = "1.21.0", features = ["derive"] }

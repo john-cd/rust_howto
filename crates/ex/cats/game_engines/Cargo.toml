@@ -14,7 +14,6 @@ categories = [ "game_engines" ]
 publish.workspace = true
 
 [dependencies]
-## Game and friends
 bevy = "0.15.1"
 fyrox = "0.34.1"
 fyrox-core = "0.28.1"

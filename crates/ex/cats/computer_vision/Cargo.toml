@@ -14,10 +14,9 @@ categories = ["computer_vision"]
 publish.workspace = true
 
 [dependencies]
-rand.workspace = true # use beta
+rand.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
-## Computer vision
 image = "0.25.5"
 opencv = { version = "0.94.1", features = [
     "clang-runtime",

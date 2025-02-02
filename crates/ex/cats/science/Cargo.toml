@@ -14,8 +14,7 @@ categories = [ "science" ]
 publish.workspace = true
 
 [dependencies]
-
-## Science - Machine Learning
+## Machine Learning
 candle-core = "0.8.2"
 # candle-datasets = "0.8.2"
 # candle-examples = "0.8.1"

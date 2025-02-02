@@ -14,5 +14,4 @@ categories = [ "email" ]
 publish.workspace = true
 
 [dependencies]
-## Email
 lettre = { version = "0.11.11", features = [ "tokio1-native-tls" ] }

@@ -14,6 +14,5 @@ categories = [ "rendering" ]
 publish.workspace = true
 
 [dependencies]
-## Rendering and friends
-
+# TODO P2
 

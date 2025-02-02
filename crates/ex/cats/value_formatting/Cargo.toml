@@ -14,5 +14,4 @@ categories = [ "value_formatting" ]
 publish.workspace = true
 
 [dependencies]
-## Value formatting
 # TODO P2 ad deps

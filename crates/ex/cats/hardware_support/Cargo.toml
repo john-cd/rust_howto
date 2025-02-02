@@ -14,5 +14,4 @@ categories = [ "hardware_support" ]
 publish.workspace = true
 
 [dependencies]
-## Hardware
 num_cpus = "1.16.0"
