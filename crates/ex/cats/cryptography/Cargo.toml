@@ -42,8 +42,11 @@ zeroize = "1.8.1"
 
 ## General
 anyhow.workspace = true
+base64ct = "1.6.0"
+base16ct = "0.2.0"
 data-encoding = "2.6.0"
 hyper = "1.5.2"
 hyper-tls = "0.6.0"
 rand = "0.8.5" # pinned because of ed25519
+tempfile = "3.16.0"
 tokio.workspace = true
