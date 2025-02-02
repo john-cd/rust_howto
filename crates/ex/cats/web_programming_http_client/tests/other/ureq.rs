@@ -2,10 +2,8 @@
 
 fn main() -> anyhow::Result<()> {
     let url = "https://jsonplaceholder.typicode.com/posts/1";
-    let response: String = ureq::get(url)
-        .call()?
-        .body_mut()
-        .read_to_string()?;
+    let response: String =
+        ureq::get(url).call()?.body_mut().read_to_string()?;
 
     println!("Response: {}", response);
     Ok(())
