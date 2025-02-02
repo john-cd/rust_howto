@@ -1,5 +1,4 @@
 // ANCHOR: example
-use lexopt::ValueExt;
 
 // Simple command line argument parser
 
@@ -13,35 +12,34 @@ fn get_args() -> anyhow::Result<Args> {
     // and adds convenience methods to OsString:
     use lexopt::prelude::*;
 
-    // Create a parser using `std::env::args_os`
-    let mut parser = lexopt::Parser::from_env();
+    let mut parser = lexopt::Parser::from_iter(&["myapp", "-a", "30", "John"]);
+    // In a real world app, create a parser using `std::env::args_os`
+    // let mut parser = lexopt::Parser::from_env();
     let mut name = String::new();
     let mut age = 0;
 
-    // Print the name of the command, as in the zeroth argument of the process
-    let bin_name = parser.bin_name().unwrap_or("unknown");
-    println!("{}", bin_name);
+    // Get the name of the command, as in the zeroth argument of the process
+    let bin_name: String = parser.bin_name().unwrap_or("unknown").into();
 
     // Loop the next option or positional argument
     while let Some(arg) = parser.next()? {
         match arg {
-            // -n or --name
-            Short('n') | Long("name") => {
-                // Convert the OsString into a String if it’s valid Unicode.
-                name = parser.string()?;
-            }
-            Long("age") => {
+            // `Short` and `Long` indicate an option, here -a or --age
+            Short('a') | Long("age") => {
+                // `value()` returns the value that belongs to the option as a standard `OsString`.
                 age = parser.value()?.parse()?;
             }
+            // Positional argument
+            Value(val) => {
+                // `string()` converts the `OsString` into a `String` if it is valid Unicode.
+                name = val.string()?;
+            }
             Long("help") => {
-                println!("Usage: myapp [-n|--name=NAME] AGE");
+                println!("Usage: {bin_name} [-a|--age=NUM] [NAME]");
                 std::process::exit(0);
             }
-            lexopt::Arg::Value(val) => {
-                anyhow::anyhow!("Unexpected argument: {:?}", val);
-            }
             _ => {
-                anyhow::anyhow!("Unexpected flag or option");
+                return Err(anyhow::anyhow!("Unexpected flag or option"));
             }
         }
     }
@@ -49,14 +47,6 @@ fn get_args() -> anyhow::Result<Args> {
 }
 
 fn main() -> anyhow::Result<()> {
-    // Simulate command-line arguments
-    unsafe {
-        std::env::set_var("CARGO_BIN_EXE_lexopt_example", "lexopt_example");
-        std::env::set_var(
-            "CARGO_BIN_EXE_lexopt_example",
-            "--name John --age 30",
-        );
-    }
     let args = get_args()?;
     println!("Name: {}", args.name);
     println!("Age: {}", args.age);
@@ -69,5 +59,3 @@ fn test() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
-// [P1](https://github.com/john-cd/rust_howto/issues/678) finish
