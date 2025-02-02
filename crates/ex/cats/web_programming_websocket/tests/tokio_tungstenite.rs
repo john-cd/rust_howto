@@ -16,7 +16,7 @@
 // //
 // // Connect to the WebSocket server, send the message "Hello WebSocket," and
 // // print the response from the server, which will be an echo of the message
-// you // sent.
+// // you sent.
 
 // #[tokio::main]
 // async fn main() -> anyhow::Result<()> {

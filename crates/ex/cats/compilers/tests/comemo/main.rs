@@ -16,19 +16,21 @@
 //     let tracked_input = Tracked::new(5);
 
 //     // First call: The function will be executed.
-//     let result1 = memo_context.memoize(|| expensive_function(*tracked_input));
-//     println!("Result 1: {}", result1);
+//     let result1 = memo_context.memoize(||
+// expensive_function(*tracked_input));     println!("Result 1: {}", result1);
 
 //     // Second call with the same input: The memoized value will be returned.
-//     let result2 = memo_context.memoize(|| expensive_function(*tracked_input));
-//     println!("Result 2: {}", result2); // "Calculating for 5" will NOT be printed
+//     let result2 = memo_context.memoize(||
+// expensive_function(*tracked_input));     println!("Result 2: {}", result2);
+// // "Calculating for 5" will NOT be printed
 
 //     // Change the tracked input.
 //     tracked_input.set(10);
 
 //     // Third call with the new input: The function will be executed again.
-//     let result3 = memo_context.memoize(|| expensive_function(*tracked_input));
-//     println!("Result 3: {}", result3); // "Calculating for 10" WILL be printed
+//     let result3 = memo_context.memoize(||
+// expensive_function(*tracked_input));     println!("Result 3: {}", result3);
+// // "Calculating for 10" WILL be printed
 
 //     // Example with a more complex struct:
 //     #[derive(Debug, PartialEq, Eq, Clone, Copy)]
@@ -37,7 +39,8 @@
 //         b: String,
 //     }
 
-//     let tracked_data = Tracked::new(MyData { a: 20, b: "hello".to_string() });
+//     let tracked_data = Tracked::new(MyData { a: 20, b: "hello".to_string()
+// });
 
 //     let memo_context2 = Memoized::new();
 
@@ -59,10 +62,11 @@
 //     println!("Result 5: {}", result5);
 
 //     // Example with cloning to avoid mutable borrow issues.
-//     // If you can't directly modify the Tracked value, you can clone it, modify the clone, and then set it.
+//     // If you can't directly modify the Tracked value, you can clone it,
+// modify the clone, and then set it.
 
-//     let tracked_data2 = Tracked::new(MyData { a: 30, b: "world".to_string() });
-//     let memo_context3 = Memoized::new();
+//     let tracked_data2 = Tracked::new(MyData { a: 30, b: "world".to_string()
+// });     let memo_context3 = Memoized::new();
 
 //     let result6 = memo_context3.memoize(|| {
 //         println!("Calculating with {:?}", *tracked_data2);

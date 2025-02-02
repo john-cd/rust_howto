@@ -1,5 +1,4 @@
 // // ANCHOR: example
-// COMING SOON
 // // ANCHOR_END: example
 
 // use pingora::prelude::*;
@@ -18,9 +17,12 @@
 // // Create a basic HTTP server that responds with "Hello, world!".
 // #[tokio::main]
 // async fn main() {
-//     let addr: SocketAddr = "127.0.0.1:8080".parse().expect("Unable to parse
-// socket address");     let server = Server::bind(&addr).serve(handle_request);
-//     println!("Listening on http://{}", addr);
+// let addr: SocketAddr = "127.0.0.1:8080".parse().expect("Unable to parse
+// socket address");
+// // The server object represents an entire pingora
+// // server process which may have multiple independent services
+// let server = Server::bind(&addr).serve(handle_request);
+// println!("Listening on http://{}", addr);
 //     server.await.expect("Server failed");
 // }
 
