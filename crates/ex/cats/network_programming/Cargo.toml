@@ -14,5 +14,8 @@ categories = [ "network_programming" ]
 publish.workspace = true
 
 [dependencies]
-## Network Programming
+glommio = "0.9.0"
+hyper = "1.6.0"
+ngrok = "0.13.1"
 pingora = "0.4.0"
+tokio.workspace = true
