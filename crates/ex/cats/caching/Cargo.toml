@@ -14,5 +14,4 @@ categories = [ "caching" ]
 publish.workspace = true
 
 [dependencies]
-## Caching
-lru = "0.12.5"
+lru = "0.13"
