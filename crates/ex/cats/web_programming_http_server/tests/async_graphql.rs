@@ -1,6 +1,4 @@
 // // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
 
 // use async_graphql::Context;
 // use async_graphql::EmptyMutation;
@@ -10,10 +8,8 @@
 // use async_graphql_axum::GraphQLRequest;
 // use async_graphql_axum::GraphQLResponse;
 // use axum::Router;
-// use axum::server::Server;
 // use axum::extract::Extension;
 // use axum::routing::post;
-// use tokio;
 
 // struct Query;
 
@@ -49,9 +45,11 @@
 // ) -> GraphQLResponse {
 //     schema.execute(req.into_inner()).await.into()
 // }
+// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
 // // [P1](https://github.com/john-cd/rust_howto/issues/864)
+// // https://github.com/async-graphql/examples
