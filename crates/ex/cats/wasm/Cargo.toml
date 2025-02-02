@@ -14,17 +14,9 @@ categories = [ "wasm" ]
 publish.workspace = true
 
 [dependencies]
-## WASM
 wasmer = "5.0.4"
-wasmtime = "28.0.0"
+wasmtime = "29.0.1"
 yew = { version = "0.21.0", features = [ "csr" ] }
 
 ## General
 anyhow.workspace = true
-#bytes = "1.9.0"
-#futures-util = "0.3.31"
-#lazy_static.workspace = true
-#regex.workspace = true
-#serde.workspace = true
-#serde_json.workspace = true
-#tokio.workspace = true
