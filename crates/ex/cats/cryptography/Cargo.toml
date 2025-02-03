@@ -45,6 +45,7 @@ anyhow.workspace = true
 base64ct = "1.6.0"
 base16ct = "0.2.0"
 data-encoding = "2.6.0"
+hex-literal = "0.4.1"
 hyper = "1.5.2"
 hyper-tls = "0.6.0"
 rand = "0.8.5" # pinned because of ed25519
