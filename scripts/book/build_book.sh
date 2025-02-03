@@ -4,7 +4,7 @@ set -euo pipefail
 # Generate the book's HTML / JS
 # Usage: /code/scripts/build_book.sh
 
-root="/code/"
+root="$(realpath $1)/"
 
 # Make sure that `book.toml` is available
 # See `quick.sh`

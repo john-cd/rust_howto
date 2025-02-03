@@ -6,7 +6,7 @@ set -euo pipefail
 set -o pipefail
 set -e
 
-root="/code/"
+root="$(realpath $1)/"
 
 # Function called by trap
 cleanup() {

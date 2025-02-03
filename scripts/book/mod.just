@@ -15,7 +15,7 @@ buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sit
 # Generate the book's HTML / JS
 [unix]
 _mdbook-build-book:
-  ./build_book.sh
+  ./build_book.sh {{justfile_directory()}}
 
 [windows]
 _mdbook-build-book:
@@ -58,9 +58,9 @@ alias q := quick
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 [unix]
 quick:
-  ./quick.sh
+  ./quick.sh {{justfile_directory()}}
 
 [windows]
 quick:
   echo "No support for quick serving while in Windows!"
-  mdbook serve -p 3001 -n 127.0.0.1 --open
+  mdbook serve -p 3001 -n 127.0.0.1 --open {{justfile_directory()}}
