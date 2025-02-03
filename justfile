@@ -30,13 +30,18 @@ ba:
 ca:
   @just code clippyall
 
-# Alias for code fmt
+# Format all bin and lib files using rustfmt
 f:
   @just code fmt
 
-# Alias for code fmtall
+# Format all packages, and also their local path-based dependencies
 fa:
   @just code fmtall
+
+# Format all bin and lib files of the current crate using rustfmt
+[no-cd]
+fc:
+  @just code fmtcurrent
 
 # Alias for code nextest
 nt:
