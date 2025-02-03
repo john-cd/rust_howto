@@ -24,7 +24,7 @@ fn main() -> anyhow::Result<()> {
         // Open the file for writing
         let fd: rustix::fd::OwnedFd = openat(
             rustix::fs::CWD, // Current working directory
-            c"temp/example2.txt",
+            c"example2.txt",
             OFlags::CREATE | OFlags::WRONLY | OFlags::TRUNC,
             Mode::RUSR | Mode::WUSR,
         )?;
@@ -39,7 +39,7 @@ fn main() -> anyhow::Result<()> {
         // Open the file for reading
         let fd2 = openat(
             rustix::fs::CWD,
-            c"temp/example2.txt",
+            c"example2.txt",
             OFlags::RDONLY,
             Mode::empty(),
         )?;
@@ -54,8 +54,8 @@ fn main() -> anyhow::Result<()> {
         // Close the file
     }
     // Rename the file
-    let path = "temp/example2.txt";
-    let new_file_path = "temp/my_renamed_file";
+    let path = "example2.txt";
+    let new_file_path = "my_renamed_file";
     rename(path, new_file_path)?;
     println!("File renamed to: {}", new_file_path);
 

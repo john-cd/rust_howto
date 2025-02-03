@@ -23,7 +23,7 @@ use nix::unistd::unlink;
 use nix::unistd::write;
 
 fn main() -> nix::Result<()> {
-    let path = "temp/example.txt";
+    let path = "example.txt";
     let data = b"Hello, nix!";
     {
         // Create and open a file
