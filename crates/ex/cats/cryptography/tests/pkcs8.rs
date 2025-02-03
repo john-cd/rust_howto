@@ -30,7 +30,7 @@ fn main() -> anyhow::Result<()> {
 
     // Save the PKCS#8 key to a file
     let mut file = File::create("private_key.pem")?;
-    file.write_all(&pkcs8_pem.as_bytes())?;
+    file.write_all(pkcs8_pem.as_bytes())?;
     file.flush()?;
 
     // Read the PKCS#8 key from the file
