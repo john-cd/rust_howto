@@ -92,7 +92,7 @@ fn encrypt_then_decrypt() {
 
     // --- Example using an incorrect tag ---
     {
-        let mut bad_tag = tag.clone();
+        let mut bad_tag = tag;
         bad_tag[0] ^= 1; // Corrupt the tag
 
         let cipher_bad = ChaCha20Poly1305::new(&key);
