@@ -8,16 +8,27 @@ _default:
 
 alias f := fmt
 
-# Format all bin and lib files of the current crate using rustfmt
-[no-cd]
+# Format all bin and lib files using rustfmt
 fmt:
+  #! /bin/bash
+  set -euo pipefail
+  cd {{justfile_directory()}}
+  echo "Formatting $(pwd)"
   cargo +nightly fmt
 
 alias fa := fmtall
 
-# Format all code
-fmtall:
+# Format all packages, and also their local path-based dependencies
+@fmtall:
   cargo +nightly fmt --all
+
+alias fc := fmtcurrent
+
+# Format all bin and lib files (of the current crate) using rustfmt
+[no-cd]
+@fmtcurrent:
+  echo "Formatting $(pwd)"
+  cargo +nightly fmt
 
 # Check all code
 checkall:
@@ -28,21 +39,25 @@ alias bc := buildcurrent
 
 # Build the package in the current directory (or the default packages of the workspace if in the root)
 [no-cd]
-buildcurrent:
+@buildcurrent:
+  echo "Building $(pwd)"
   cargo build --all-targets --locked
 
 alias bp := buildpkg
 
 # Build a specific package
-buildpkg pkg:
+@buildpkg pkg:
+  echo "Building {{pkg}}"
   cargo build --all-targets --locked --package {{pkg}}
 
 alias b := build
 
-# Build just the code examples used by the book (tests only)
+# Build just the code used by the book (tests / examples only)
 build:
+  #! /bin/bash
+  set -euo pipefail
+  cd {{justfile_directory()}}
   cargo build --tests --examples --locked
-# Build default members of the workspace
 
 alias ba := buildall
 
@@ -95,9 +110,9 @@ nextestcurrent: _clean_temp_dir && _clean_temp_dir
 
 alias nt := nextest
 
-# Test the code examples only (and no doctests)
+# Test the code used by the book (integration tests & examples only); no doctests
 nextest: _clean_temp_dir && _clean_temp_dir
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all
+  cargo nextest run --workspace --tests --examples --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
@@ -128,7 +143,7 @@ runall:
 [group('heavy tests')]
 [unix]
 heavy_test feature:
-  ./heavy_test.sh {{ feature }}
+  ./heavy_test.sh {{feature}}
 
 # Run all tests that require external services
 [group('heavy tests')]
