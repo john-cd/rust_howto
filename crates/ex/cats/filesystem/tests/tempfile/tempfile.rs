@@ -1,5 +1,4 @@
 // ANCHOR: example
-// src/main.rs
 use std::io::Write;
 use std::io::{self};
 
