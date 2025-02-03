@@ -30,6 +30,13 @@ alias fc := fmtcurrent
   echo "Formatting $(pwd)"
   cargo +nightly fmt
 
+alias c := check
+
+# Check code in the current crate
+[no-cd]
+check:
+  cargo check --all-targets --locked
+
 # Check all code
 checkall:
   cargo check --workspace --all-targets --locked

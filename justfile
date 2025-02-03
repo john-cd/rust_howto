@@ -9,7 +9,25 @@ _default:
   @just --list --unsorted --justfile {{ justfile() }}
 #@just --choose
 
-# Alias for buildcurrent
+# Format all bin and lib files using rustfmt
+f:
+  @just code fmt
+
+# Format all packages, and also their local path-based dependencies
+fa:
+  @just code fmtall
+
+# Format all bin and lib files of the current crate using rustfmt
+[no-cd]
+fc:
+  @just code fmtcurrent
+
+# Alias for code check
+[no-cd]
+c:
+  @just code check
+
+# Alias for code buildcurrent
 [no-cd]
 bc:
   @just code buildcurrent
@@ -29,19 +47,6 @@ ba:
 # Alias for code clippyall
 ca:
   @just code clippyall
-
-# Format all bin and lib files using rustfmt
-f:
-  @just code fmt
-
-# Format all packages, and also their local path-based dependencies
-fa:
-  @just code fmtall
-
-# Format all bin and lib files of the current crate using rustfmt
-[no-cd]
-fc:
-  @just code fmtcurrent
 
 # Alias for code nextest
 nt:
