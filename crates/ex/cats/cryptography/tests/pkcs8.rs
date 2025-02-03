@@ -1,8 +1,8 @@
 // ANCHOR: example
 use std::fs::File;
-use std::io::Read;
 use std::io::Write;
 
+use base64ct::LineEnding;
 // Trait to parse a private key from a PKCS#8 encoded document.
 use pkcs8::DecodePrivateKey;
 // Trait to serialize a private key to a PKCS#8 encoded document.
@@ -12,8 +12,6 @@ use rand::rngs::OsRng;
 use rsa::RsaPrivateKey;
 // Components of an RSA private key
 use rsa::traits::PrivateKeyParts;
-
-use base64ct::LineEnding;
 
 // Encoding and decoding private keys in PKCS#8 format.
 // PKCS #8 is a standard syntax for storing private key information.
