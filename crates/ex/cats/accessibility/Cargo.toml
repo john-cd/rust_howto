@@ -16,5 +16,6 @@ publish.workspace = true
 readme = "README.md"
 
 [dependencies]
-## Accessibility
 accesskit = "0.17.1"
+accesskit_winit = "0.23.1"
+winit = "0.30.8"
