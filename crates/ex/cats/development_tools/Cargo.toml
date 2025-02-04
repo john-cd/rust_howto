@@ -19,7 +19,6 @@ publish.workspace = true
 crates_io_api = "0.11.0"
 cross = "0.2.5"
 doc-comment = "0.3.3"
-kani = "0.0.1"
 # TODO P2
 # mdbook
 # mdbook-cmdrun

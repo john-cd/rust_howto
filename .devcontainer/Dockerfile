@@ -79,7 +79,7 @@ RUN apt-get update \
     && rm /tmp/cmake-install.sh \
     && ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
 
-## Also consider: linker and other utilities
+## Optionally install linker and other utilities
 # mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml
@@ -87,7 +87,7 @@ RUN apt-get update \
 
 ## Update Rust if needed
 ## Install clippy
-## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code)
+## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
 RUN rustup update && rustup component add clippy rustfmt
 
 # The default value is overriden by the build arg passed by compose.yaml,
@@ -101,6 +101,7 @@ ARG MDBOOK_VERSION=invalid
 ## Note: you can cache the registry (not the bin folder) Only useful in development
 ## Disabled to save space on the GitHub Action runner
 ## --mount=type=cache,target=/usr/local/cargo/registry \
+## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
 RUN <<EOF
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
@@ -138,9 +139,7 @@ EOF
 
 ## Install the mdbook-utils tool that is a companion to the book.
 ## Installed second to last, because the tool is still in development
-## You can cache with --mount=type=cache,target=/usr/local/cargo/registry \
-RUN cargo install --locked mdbook-utils \
-    && cargo install --locked bacon
+RUN cargo install --locked mdbook-utils
 
 ## Install nightly fmt - last, since it changes very often
 ## Rust edition 2024 preparation: make the `nightly` toolchain the default until release of Rust 1.85
@@ -159,8 +158,9 @@ FROM base AS development
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y jq fzf  # fast fuzzy search used by `just`
-## For example:
+    && apt-get install -y jq fzf
+# `fzf` is a fast fuzzy search used by `just`
+## Other optional tools:
 # firefox-esr \
 # locales xdg-utils desktop-file-utils \
 # nano \
@@ -175,22 +175,20 @@ RUN curl -sS https://webi.sh/gh | sh
 #     && pipx ensurepath
 
 ## Install optional cargo plugins
-#RUN --mount=type=cache,target=/usr/local/cargo/registry \
-#<<EOF
+## Install bacon tool
+RUN <<EOF
+cargo install --locked kani-verifier
+cargo install --locked bacon
+EOF
 #  cargo install --locked cargo-outdated || true
 #  cargo install --locked cargo-udeps || true
 #  cargo install --locked cargo-audit || true
 #  cargo install --locked cargo-pants || true
-#EOF
 
 ## Install optional tools: ripgrep
-## Caching with: --mount=type=cache,target=/usr/local/cargo/registry \
-## See https://doc.rust-lang.org/cargo/guide/cargo-home.html
 RUN cargo binstall --no-confirm ripgrep
-## Convert TOML to JSON
+## Optionally, install tool to convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
-## Background code checker `bacon`
-#   && cargo install --locked bacon
 
 ## `rustup` completions
 ## Command history - https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history

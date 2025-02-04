@@ -8582,7 +8582,6 @@ dependencies = [
  "crates_io_api",
  "cross",
  "doc-comment",
- "kani",
  "semver",
  "tracing",
  "yapp",
@@ -15304,12 +15303,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "kani"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b4b7234edbef8bfed0dd44c39b0cd344d4ef7fa2bcb5dec3c9c334874ed8744"
-
-[[package]]
 name = "keccak"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18887,9 +18880,9 @@ dependencies = [
 
 [[package]]
 name = "oneshot"
-version = "0.1.9"
+version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a746771e3a5eabec71e587114c13feade48a3c80f61dc4d4bbc6613fe43cfc2f"
+checksum = "79d72a7c0f743d2ebb0a2ad1d219db75fdc799092ed3a884c9144c42a31225bd"
 
 [[package]]
 name = "oorandom"
