@@ -14,12 +14,14 @@ buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sit
 
 # Generate the book's HTML / JS
 [unix]
+[no-cd]
 _mdbook-build-book:
-  ./build_book.sh {{justfile_directory()}}
+  cd {{justfile_directory()}}; {{source_directory()}}/build_book.sh {{justfile_directory()}}
 
 [windows]
+[no-cd]
 _mdbook-build-book:
-  mdbook build {{justfile_directory()}}
+  cd {{justfile_directory()}}; mdbook build {{justfile_directory()}}
 # TODO P2
 
 # Generate new reference definitions for all crate the book's examples depend on...

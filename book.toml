@@ -37,7 +37,7 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 # # - Remove includes of hidden files
 # # - Remove <div class="hidden"></div> sections from the markdown before rendering
 [preprocessor.purge]
-command = "/code/scripts/book/purge.sh"
+command = "./scripts/book/purge.sh"
 after = [ "private" ]
 
 # # Default preprocessor: index
