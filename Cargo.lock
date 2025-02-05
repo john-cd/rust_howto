@@ -10582,6 +10582,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "directories 6.0.0",
+ "dirs 6.0.0",
  "glob",
  "globset",
  "ignore",
