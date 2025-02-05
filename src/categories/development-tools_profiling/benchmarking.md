@@ -38,7 +38,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 Simple yet powerful benchmarking library with allocation profiling
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_profiling/tests/divan.rs:example}}
+{{#include ../../../crates/ex/cats/development_tools_profiling/benches/divan.rs:example}}
 ```
 
 ## `hyperfine` {#hyperfine}
