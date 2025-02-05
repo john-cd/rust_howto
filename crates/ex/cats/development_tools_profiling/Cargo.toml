@@ -16,4 +16,11 @@ publish.workspace = true
 [dependencies]
 criterion = "0.5.1"
 dhat = "0.3.3"
+
+[dev-dependencies]
 divan = "0.1.17"
+
+[[bench]]
+name = "divan"
+# When set to false, you are responsible for defining a main() function to run tests and benchmarks.
+harness = false
