@@ -24,8 +24,8 @@
 //     // a container for root certificates able to provide
 //     // a root-of-trust for connection authentication:
 //     let root_store = rustls::RootCertStore::from_iter(
-//         // Mozilla's root certificates for use with the webpki or rustls crates
-//         // https://github.com/rustls/webpki-roots
+//         // Mozilla's root certificates for use with the webpki or rustls
+//         // crates: https://github.com/rustls/webpki-roots
 //         webpki_roots::TLS_SERVER_ROOTS.iter().cloned(),
 //     );
 
@@ -34,9 +34,10 @@
 //     //   CryptoProvider and safe protocol version defaults.
 //     let config = ClientConfig::builder()
 //         .with_root_certificates(root_store)
-//         .with_no_client_auth(); // Disable client authentication (most common)
-//     // Create a wrapper around a rustls::ClientConfig, providing an async
-//     // connect method
+//         // Disable client authentication (most common)
+//         .with_no_client_auth();
+//         // Create a wrapper around a `rustls::ClientConfig`,
+//         // providing an async `connect` method
 //     let connector = tokio_rustls::TlsConnector::from(Arc::new(config));
 
 //     // Define the domain and server address
@@ -55,8 +56,7 @@
 //     // Send a HTTP GET request
 //     stream
 //         .write_all(
-//             b"GET / HTTP/1.1\r\nHost: example.com\r\nConnection:close\r\n\r\n",
-//         )
+// b"GET / HTTP/1.1\r\nHost:example.com\r\nConnection:close\r\n\r\n")
 //         .await?;
 
 //     // Read the response
