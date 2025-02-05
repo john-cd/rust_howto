@@ -2295,6 +2295,14 @@
 [c-owo_colors-lib.rs-badge]: https://img.shields.io/badge/lib.rs-owo--colors-yellow
 [c-owo_colors-lib.rs]: https://lib.rs/crates/owo-colors
 [c-owo_colors]: https://docs.rs/owo-colors
+[c-papaya-badge]: https://img.shields.io/crates/v/papaya?label=papaya
+[c-papaya-crates.io-badge]: https://img.shields.io/badge/crates.io-papaya-crimson
+[c-papaya-crates.io]: https://crates.io/crates/papaya
+[c-papaya-github-badge]: https://img.shields.io/badge/papaya-steelblue?logo=github
+[c-papaya-github]: https://github.com/ibraheemdev/papaya
+[c-papaya-lib.rs-badge]: https://img.shields.io/badge/lib.rs-papaya-yellow
+[c-papaya-lib.rs]: https://lib.rs/crates/papaya
+[c-papaya]: https://docs.rs/papaya
 [c-parking_lot-badge]: https://img.shields.io/crates/v/parking_lot?label=parking_lot
 [c-parking_lot-crates.io-badge]: https://img.shields.io/badge/crates.io-parking__lot-crimson
 [c-parking_lot-crates.io]: https://crates.io/crates/parking_lot

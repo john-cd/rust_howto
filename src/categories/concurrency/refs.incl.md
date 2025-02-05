@@ -16,6 +16,7 @@
 [ex-concurrency-mpsc]: message_passing.md#mpsc
 [ex-concurrency-mutate-array-in-parallel]: data_parallelism.md#mutate-array-in-parallel
 [ex-concurrency-mutex]: shared_state.md#mutex
+[ex-concurrency-papaya]: concurrent_data_structures.md#papaya
 [ex-concurrency-par-iter]: data_parallelism.md#par-iter
 [ex-concurrency-parallel-pipeline]: crossbeam.md#parallel-pipeline
 [ex-concurrency-parallel-sorting]: data_parallelism.md#parallel-sorting
