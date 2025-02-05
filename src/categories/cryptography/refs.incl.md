@@ -1,16 +1,4 @@
-[ex-cryptography-aead-encryption]: hashing.md#aead-encryption
 [ex-cryptography-argon2]: password_hashing.md#argon2
 [ex-cryptography-bcrypt]: password_hashing.md#bcrypt
-[ex-cryptography-certificates]: hashing.md#certificates
-[ex-cryptography-chacha20poly1305]: hashing.md#chacha20poly1305
-[ex-cryptography-digital-signatures]: hashing.md#digital-signatures
-[ex-cryptography-general-purpose-hashing]: hashing.md#general-purpose-hashing
-[ex-cryptography-hmac]: hashing.md#hmac
-[ex-cryptography-pbkdf2]: encryption.md#pbkdf2
-[ex-cryptography-rsa]: hashing.md#rsa
 [ex-cryptography-scrypt]: password_hashing.md#scrypt
 [ex-cryptography-sha256]: hashing.md#sha256
-[ex-cryptography-subtle]: hashing.md#subtle
-[ex-cryptography-tls-ssl]: hashing.md#tls-ssl
-[ex-cryptography-utilities]: hashing.md#utilities
-[ex-cryptography-zeroize]: hashing.md#zeroize

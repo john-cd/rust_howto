@@ -1,6 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Salt and hash a password with PBKDF2][ex-cryptography-pbkdf2] | [![ring][c-ring-badge]][c-ring] [![data-encoding][c-data_encoding-badge]][c-data_encoding] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [Use the RSA algorithm][ex-cryptography-rsa] | [![rsa][c-rsa-badge]][c-rsa] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 <div class="hidden">
+FIXME P1
 </div>
