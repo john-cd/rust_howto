@@ -10,7 +10,7 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 {{#include ../../../crates/ex/cats/cryptography/tests/hmac.rs:example}}
 ```
 
-## Compute digital signatures
+## Compute digital signatures {#skip1}
 
 For more algorithms, see Rust Crypto Signatures:
 
@@ -36,7 +36,9 @@ It doesn’t contain an implementation of Ed25519, but instead contains an ed255
 
 `ed25519-dalek` contains ed25519 EdDSA key generation, signing, and verification algorithms in pure Rust.
 
-{{#example ed25519-dalek}}
+```rust,editable
+{{#include ../../../crates/ex/cats/cryptography/tests/sign/ed25519_dalek.rs:example}}
+```
 
 ### `ecdsa` {#ecdsa}
 

@@ -1,4 +1,4 @@
-## Create certificates {#certificates}
+## Create certificates
 
 For more formats, see Rust Crypto Formats.
 
