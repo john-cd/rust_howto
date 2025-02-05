@@ -116,12 +116,15 @@ fn into_bytes() -> anyhow::Result<()> {
     // Note that `bytes` and `header` share the same memory
     bytes.reverse();
 
-    assert_eq!(header, PacketHeader {
-        src_port: [7, 6],
-        dst_port: [5, 4],
-        length: [3, 2],
-        checksum: [1, 0],
-    });
+    assert_eq!(
+        header,
+        PacketHeader {
+            src_port: [7, 6],
+            dst_port: [5, 4],
+            length: [3, 2],
+            checksum: [1, 0],
+        }
+    );
 
     // You can also write a copy to the destination byte array.
     // If too many or too few target bytes are provided, `write_to` returns

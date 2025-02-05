@@ -41,10 +41,13 @@ fn main() {
     );
 
     let out: RefStruct = from_bytes(output.deref()).unwrap();
-    assert_eq!(out, RefStruct {
-        bytes: &bytes,
-        str_s: message,
-    });
+    assert_eq!(
+        out,
+        RefStruct {
+            bytes: &bytes,
+            str_s: message,
+        }
+    );
 }
 // ANCHOR_END: example
 

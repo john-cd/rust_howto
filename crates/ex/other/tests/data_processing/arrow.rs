@@ -46,24 +46,24 @@ fn main() -> Result<()> {
 
     // Create a RecordBatch from the arrays and schema
     // It groups one or more columns together into a tabular representation.
-    let batch = RecordBatch::try_new(schema.clone(), vec![
-        Arc::new(int_array) as Arc<dyn Array>,
-        Arc::new(float_array.clone()) as Arc<dyn Array>,
-        Arc::new(string_array) as Arc<dyn Array>,
-    ])?;
+    let batch = RecordBatch::try_new(
+        schema.clone(),
+        vec![
+            Arc::new(int_array) as Arc<dyn Array>,
+            Arc::new(float_array.clone()) as Arc<dyn Array>,
+            Arc::new(string_array) as Arc<dyn Array>,
+        ],
+    )?;
 
     // Pretty print the record batch
     print_batches(&[batch])?;
 
     // Convert back to native types
     let collected: Vec<_> = float_array.iter().collect();
-    assert_eq!(collected, vec![
-        Some(5.0),
-        Some(4.0),
-        Some(3.0),
-        Some(2.0),
-        Some(1.0)
-    ]);
+    assert_eq!(
+        collected,
+        vec![Some(5.0), Some(4.0), Some(3.0), Some(2.0), Some(1.0)]
+    );
     assert_eq!(float_array.values(), &[5.0, 4.0, 3.0, 2.0, 1.0]);
     Ok(())
 }

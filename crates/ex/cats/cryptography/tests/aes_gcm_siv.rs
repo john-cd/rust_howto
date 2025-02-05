@@ -39,19 +39,25 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     // as a vector of bytes.
     let plaintext = b"Secret message";
     let associated_data = b"Header";
-    let ciphertext: Vec<u8> = cipher.encrypt(nonce, Payload {
-        msg: plaintext,
-        aad: associated_data, // AD stays unencrypted...
-    })?;
+    let ciphertext: Vec<u8> = cipher.encrypt(
+        nonce,
+        Payload {
+            msg: plaintext,
+            aad: associated_data, // AD stays unencrypted...
+        },
+    )?;
     println!("Ciphertext: {:?}", ciphertext);
 
     // Decrypt.
     // Failure to pass the same AD that was used during encryption will cause
     // decryption to fail
-    let decrypted_ciphertext = cipher.decrypt(nonce, Payload {
-        msg: ciphertext.as_ref(),
-        aad: associated_data,
-    })?;
+    let decrypted_ciphertext = cipher.decrypt(
+        nonce,
+        Payload {
+            msg: ciphertext.as_ref(),
+            aad: associated_data,
+        },
+    )?;
     println!(
         "Decrypted Ciphertext: {}",
         String::from_utf8(decrypted_ciphertext.clone()).unwrap()
