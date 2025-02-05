@@ -1,7 +1,5 @@
 // ANCHOR: example
 
-use dirs;
-
 // The `dirs` crate provides a convenient way to get paths to
 // standard directories on the file system, like the user's home directory,
 // the configuration directory, and more.
