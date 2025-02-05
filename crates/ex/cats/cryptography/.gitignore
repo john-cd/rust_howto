@@ -1,3 +1,4 @@
 temp/*
 !temp/.gitkeep
 target/
+private_key.pem
