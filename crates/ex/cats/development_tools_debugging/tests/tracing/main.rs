@@ -1,3 +1,4 @@
+mod tracing;
 mod tracing_instrument;
 mod tracing_span_entered;
 mod tracing_span_in_scope;

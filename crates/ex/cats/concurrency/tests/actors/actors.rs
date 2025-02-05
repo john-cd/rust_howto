@@ -20,5 +20,4 @@
 //     std::thread::sleep(Duration::from_millis(500));
 // }
 
-fn main() {}
 // [ P2 write example](https://github.com/john-cd/rust_howto/issues/1011)
