@@ -7322,6 +7322,7 @@ dependencies = [
  "tempfile",
  "tokio",
  "tokio-rustls 0.26.1",
+ "webpki-roots 0.26.8",
  "x509-cert",
  "zeroize",
 ]
