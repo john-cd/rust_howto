@@ -2,7 +2,7 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 _default:
-    @just --list examples --unsorted
+    @just --list examples --unsorted --justfile {{justfile()}}
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
@@ -16,7 +16,7 @@ _default:
 
 # List examples (.rs files) in `crates/**/tests` that were not included into a module somehow and that are therefore not tested
 [unix]
-@list_not_tested:
+list_not_tested:
     #! /bin/bash
     root="{{justfile_directory()}}/"
     comm -1 -3 <(find "${root}crates/ex" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
@@ -26,4 +26,4 @@ _default:
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates/ex)
 [unix]
 @convert_example_placeholders:
-    ./convert_example_placeholders.sh
+    ./convert_example_placeholders.sh {{justfile_directory()}}
