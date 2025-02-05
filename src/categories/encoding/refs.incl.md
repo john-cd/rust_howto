@@ -20,6 +20,7 @@
 [ex-encoding-serde-ignored]: serde.md#serde-ignored
 [ex-encoding-serde-json2]: serde.md#serde-json2
 [ex-encoding-serde-json]: complex.md#serde-json
+[ex-encoding-serde]: serde.md#serde
 [ex-encoding-serialize-to-csv-using-serde]: csv.md#serialize-to-csv-using-serde
 [ex-encoding-serialize-to-csv]: csv.md#serialize-to-csv
 [ex-encoding-toml]: complex.md#toml
