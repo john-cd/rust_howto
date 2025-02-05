@@ -1,21 +1,27 @@
 // ANCHOR: example
+// An error with absolutely no details (on purpose)
 use ring::error::Unspecified;
 use ring::hmac;
 use ring::rand;
 use ring::rand::SecureRandom;
 
 fn main() -> Result<(), Unspecified> {
-    // Create a key
+    // 1. Create a key
+    let key;
+    {
     let mut key_value = [0u8; 48];
     let rng = rand::SystemRandom::new();
     rng.fill(&mut key_value)?;
-    let key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
+    // Construct an HMAC signing key using the given digest algorithm and key value.
+    // key_value should be a value generated using a secure random number generator.
+    key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
+    }
 
-    // Sign a message
+    // 2. Sign a message
     let message = "Legitimate and important message.";
     let signature = hmac::sign(&key, message.as_bytes());
 
-    // Calculates the HMAC of data using the signing key key,
+    // 3. Calculates the HMAC of data using the signing key,
     // and verifies whether the resultant value equals the signature.
     hmac::verify(&key, message.as_bytes(), signature.as_ref())?;
     println!("Message verified.");
@@ -24,7 +30,7 @@ fn main() -> Result<(), Unspecified> {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
-    println!("{:?}", main());
+fn test() -> anyhow::Result<()> {
+    main().map_err(|_| anyhow::anyhow!("hmac.rs failure") ) ?;
+    Ok(())
 }
-// [hmac (P1)](https://github.com/john-cd/rust_howto/issues/150)
