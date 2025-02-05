@@ -17,6 +17,7 @@ publish.workspace = true
 criterion = "0.5.1"
 dhat = "0.3.3"
 
+## Config for `divan` example below:
 [dev-dependencies]
 divan = "0.1.17"
 
@@ -24,3 +25,12 @@ divan = "0.1.17"
 name = "divan"
 # When set to false, you are responsible for defining a main() function to run tests and benchmarks.
 harness = false
+
+## Config for dhat example below:
+## Profiles for the non root package are ignored.
+# [profile.release]
+# debug = 1
+
+[features]
+dhat-heap = []    # if you are doing heap profiling
+dhat-ad-hoc = []  # if you are doing ad hoc profiling
