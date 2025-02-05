@@ -9,12 +9,13 @@ fn main() -> Result<(), Unspecified> {
     // 1. Create a key
     let key;
     {
-    let mut key_value = [0u8; 48];
-    let rng = rand::SystemRandom::new();
-    rng.fill(&mut key_value)?;
-    // Construct an HMAC signing key using the given digest algorithm and key value.
-    // key_value should be a value generated using a secure random number generator.
-    key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
+        let mut key_value = [0u8; 48];
+        let rng = rand::SystemRandom::new();
+        rng.fill(&mut key_value)?;
+        // Construct an HMAC signing key using the given digest algorithm
+        // and key value. `key_value`` should be a value generated with
+        // a secure random number generator.
+        key = hmac::Key::new(hmac::HMAC_SHA256, &key_value);
     }
 
     // 2. Sign a message
@@ -31,6 +32,6 @@ fn main() -> Result<(), Unspecified> {
 
 #[test]
 fn test() -> anyhow::Result<()> {
-    main().map_err(|_| anyhow::anyhow!("hmac.rs failure") ) ?;
+    main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
     Ok(())
 }
