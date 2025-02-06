@@ -10,10 +10,10 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "aerospace_protocols" ]
+categories = ["aerospace_protocols"]
 publish.workspace = true
 
 [dependencies]
 
 ## General
-#anyhow.workspace = true
+#anyhow = "1.0.95"

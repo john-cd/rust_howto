@@ -51,7 +51,7 @@ rhai = "1.21.0"
 # zed  # the `zed` crate is not the editor
 
 ## General
-anyhow.workspace = true
+anyhow = "1.0.95"
 serde = { version = "1.0.217", features = ["derive"] }
 
 [features]

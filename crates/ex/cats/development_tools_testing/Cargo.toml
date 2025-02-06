@@ -10,12 +10,12 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools_testing" ]
+categories = ["development_tools_testing"]
 publish.workspace = true
 
 [dependencies]
 afl = "0.15.13"
-approx.workspace = true
+approx = "0.4.0" # pin
 insta = "1.41.1"
 
 ## General

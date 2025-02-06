@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "template_engine" ]
+categories = ["template_engine"]
 publish.workspace = true
 
 [dependencies]
@@ -18,5 +18,5 @@ tera = "1.20.0"
 tinytemplate = "1.2.1"
 
 ## General
-anyhow.workspace = true
-serde.workspace = true
+anyhow = "1.0.95"
+serde = { version = "1.0.217", features = ["derive"] }

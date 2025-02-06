@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "gui" ]
+categories = ["gui"]
 publish.workspace = true
 
 [dependencies]
@@ -29,7 +29,7 @@ femtovg = "0.12.0"
 iced = "0.13.1"
 minifb = "0.28.0"
 morphorm = "0.6.5"
-pollster = "0.4" # for vello example
+pollster = "0.4"     # for vello example
 r3bl_tuify = "0.2.0"
 # relm4 = "0.9.1"
 # relm4-components = "0.9.1"
@@ -40,11 +40,11 @@ skia-safe = { version = "0.78", features = ["gl"] } # pin to 0.78 for slint
 slint = "1.9.1"
 taffy = "0.7.5"
 tao = "0.31.1"
-tauri = "2.0.6"      # Requires multiple libraries. See Dockerfile
+tauri = "2.0.6"                                     # Requires multiple libraries. See Dockerfile
 vello = "0.4.0"
 vger = "0.4.0"
 # vizia = "0.2.0" # FIXME P1 conflict with skia-safe
 # webrender = "0.61.0" # FIXME P2 conflicts with RustQuant - native library `freetype`
-winit = "0.30.8" # for vello, winit examples
+winit = "0.30.8"  # for vello, winit examples
 xilem = "0.1.0"
-anyhow.workspace = true
+anyhow = "1.0.95"

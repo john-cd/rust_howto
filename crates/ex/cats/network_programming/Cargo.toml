@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "network_programming" ]
+categories = ["network_programming"]
 publish.workspace = true
 
 [dependencies]
@@ -18,4 +18,4 @@ glommio = "0.9.0"
 hyper = "1.6.0"
 ngrok = "0.13.1"
 pingora = "0.4.0"
-tokio.workspace = true
+tokio = { version = "1.43.0", features = ["full"] }

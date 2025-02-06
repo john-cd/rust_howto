@@ -10,13 +10,13 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "authentication" ]
+categories = ["authentication"]
 publish.workspace = true
 
 [dependencies]
 
 ## General
-anyhow.workspace = true
-reqwest.workspace = true
+anyhow = "1.0.95"
+reqwest = "0.12.12"
 tempfile = "3.15.0"
-tokio.workspace = true
+tokio = { version = "1.43.0", features = ["full"] }

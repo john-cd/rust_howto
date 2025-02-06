@@ -14,7 +14,7 @@ categories = ["computer_vision"]
 publish.workspace = true
 
 [dependencies]
-rand.workspace = true
+rand = { version = "0.9.0", features = ["thread_rng"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 image = "0.25.5"

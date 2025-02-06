@@ -10,11 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "command_line_interface" ]
+categories = ["command_line_interface"]
 publish.workspace = true
 
 [dependencies]
-ansi_term = "0.12.1" # NOTE: unmaintained
+ansi_term = "0.12.1"                                 # NOTE: unmaintained
 clap = { version = "4.5.23", features = ["derive"] }
 # clap-verbosity-flag = "3.0.0" # TODO P2
 console = "0.15.10"
@@ -23,7 +23,7 @@ indicatif = "0.17.9"
 inquire = "0.7.5"
 lexopt = "0.3.0"
 pico-args = "0.5.0"
-ratatui = "0.29.0" # requires crossterm
+ratatui = "0.29.0"   # requires crossterm
 
 ## General
-anyhow.workspace = true
+anyhow = "1.0.95"

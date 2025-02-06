@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools" ]
+categories = ["development_tools"]
 publish.workspace = true
 
 [dependencies]
@@ -36,5 +36,5 @@ semver = "1.0.24"
 yapp = "0.4.1"
 
 ## General
-anyhow.workspace = true
-tracing.workspace = true
+anyhow = "1.0.95"
+tracing = "0.1.41"

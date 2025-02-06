@@ -10,18 +10,18 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "web_programming_http_client" ]
+categories = ["web_programming_http_client"]
 publish.workspace = true
 
 [dependencies]
 hyper = "1.5.0"
 hyper-util = "0.1.10"
-reqwest = { workspace = true, features = ["blocking", "json", "stream"] }
+reqwest = { version = "0.12.12", features = ["blocking", "json", "stream"] }
 ureq = "3.0.3"
 
 ## General
-anyhow.workspace = true
+anyhow = "1.0.95"
 http-body-util = "0.1.2"
-serde.workspace = true
-tokio.workspace = true
-url.workspace = true
+serde = { version = "1.0.217", features = ["derive"] }
+tokio = { version = "1.43.0", features = ["full"] }
+url = "2.5.4"

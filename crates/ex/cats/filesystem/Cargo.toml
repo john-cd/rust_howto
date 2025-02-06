@@ -10,11 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "filesystem" ]
+categories = ["filesystem"]
 publish.workspace = true
 
 [dependencies]
-anyhow.workspace = true
+anyhow = "1.0.95"
 directories = "6.0.0"
 dirs = "6.0.0"
 glob = "0.3.1"
@@ -27,4 +27,4 @@ remove_dir_all = "1.0.0"
 same-file = "1.0.6"
 # tempdir = "0.3.7" # Outdated, replaced by tempfile
 tempfile = "3.14.0"
-walkdir.workspace = true
+walkdir = "2.5.0"

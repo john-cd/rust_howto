@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "config" ]
+categories = ["config"]
 publish.workspace = true
 
 [dependencies]
@@ -25,6 +25,6 @@ envy = "0.4.2"
 lexopt = "0.3.0"
 
 ## General
-anyhow.workspace = true
-serde.workspace = true
+anyhow = "1.0.95"
+serde = { version = "1.0.217", features = ["derive"] }
 serde_derive = "1.0.217"

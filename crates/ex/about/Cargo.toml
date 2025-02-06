@@ -16,6 +16,6 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow.workspace = true
-rand.workspace = true
-url.workspace = true
+anyhow = "1.0.95"
+rand = { version = "0.9.0", features = ["thread_rng"] }
+url = "2.5.4"

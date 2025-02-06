@@ -10,13 +10,13 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "wasm" ]
+categories = ["wasm"]
 publish.workspace = true
 
 [dependencies]
 wasmer = "5.0.4"
 wasmtime = "29.0.1"
-yew = { version = "0.21.0", features = [ "csr" ] }
+yew = { version = "0.21.0", features = ["csr"] }
 
 ## General
-anyhow.workspace = true
+anyhow = "1.0.95"

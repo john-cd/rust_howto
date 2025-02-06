@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "data_structures" ]
+categories = ["data_structures"]
 publish.workspace = true
 
 [dependencies]
@@ -33,5 +33,5 @@ uuid = { version = "1.11.0", features = [
 ] }
 
 ## General
-anyhow.workspace = true
+anyhow = "1.0.95"
 crates_io_api = "0.11.0"
