@@ -17,13 +17,16 @@ env:
 jobs:
   build-on-windows:
     name: Build on Windows
-    runs-on: windows-latest
+    runs-on: windows-2025 # required for winget
     steps:
 
       - name: Display directory tree (debug)
-        run: tree .
+        run: |
+          tree ~/.cargo/
+          tree /
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
+      # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
       - name: Cache Cargo registry and dependencies
         uses: actions/cache@v4
         with:
@@ -33,9 +36,9 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             /cargo-target-rust_howto/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: rusthowto-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cargo-
+            rusthowto-${{ runner.os }}-cargo-
 
       - name: Install `protoc`
         run: |
