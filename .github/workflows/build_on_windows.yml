@@ -20,21 +20,29 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      # # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
-      # - name: Cache Cargo registry and dependencies
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       ~/.cargo/bin/
-      #       ~/.cargo/registry/index/
-      #       ~/.cargo/registry/cache/
-      #       ~/.cargo/git/db/
-      #       /cargo-target-rust_howto/target
-      #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-cargo-
+      - name: Display directory tree (debug)
+        run: tree .
 
-      - name: Install cargo binstall
+      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
+      - name: Cache Cargo registry and dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            /cargo-target-rust_howto/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install `protoc`
+        run: |
+          winget install protobuf
+          protoc --version
+
+      - name: Install `cargo binstall`
         shell: pwsh
         run: Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1").Content
 
@@ -48,7 +56,7 @@ jobs:
       - name: Install Nextest
         run: cargo binstall --no-confirm --secure cargo-nextest
 
-      - name: Install mdbook-utils
+      - name: Install `mdbook-utils`
         run: cargo install --locked mdbook-utils
 
       - name: Install nightly Rust
@@ -57,7 +65,7 @@ jobs:
          rustup component add rustfmt clippy --toolchain nightly
          rustup default nightly
 
-      - name: Output rust version
+      - name: Output Rust version
         run: rustup --version
 
       # Checks out your repository under $GITHUB_WORKSPACE
