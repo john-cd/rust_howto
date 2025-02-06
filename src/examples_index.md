@@ -142,6 +142,14 @@
 
 ## Cryptography
 
+### AEAD
+
+{{#include categories/cryptography/aead.incl.md}}
+
+### Certs
+
+{{#include categories/cryptography/certs.incl.md}}
+
 ### Encryption
 
 {{#include categories/cryptography/encryption.incl.md}}
@@ -153,6 +161,18 @@
 ### Password Hashing
 
 {{#include categories/cryptography/password_hashing.incl.md}}
+
+### Sign
+
+{{#include categories/cryptography/sign.incl.md}}
+
+### TLS
+
+{{#include categories/cryptography/tls.incl.md}}
+
+### Utilities
+
+{{#include categories/cryptography/utilities.incl.md}}
 
 ## Data Structures
 
@@ -182,7 +202,7 @@
 
 {{#include categories/database/connection_pool.incl.md}}
 
-### Kv
+### KV
 
 {{#include categories/database/kv.incl.md}}
 
@@ -202,7 +222,7 @@
 
 {{#include categories/database/postgres.incl.md}}
 
-### Query Builders Orms
+### Query Builders ORMs
 
 {{#include categories/database/query_builders_orms.incl.md}}
 

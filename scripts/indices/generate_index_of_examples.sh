@@ -14,7 +14,7 @@ clean() {
     s/.*/\L&/;
     s/[a-z]*/\u&/g;
     s/\s(In|Of|And|With)\s/\L&/g;
-    s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp)/\U&/g;
+    s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm)/\U&/g;
     s/Asref/`AsRef`/g;
     s/Cow/`Cow`/g;
     s/Grpc/gRPC/g;
