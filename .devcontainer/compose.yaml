@@ -3,7 +3,7 @@ services:
   book:
     build:
       context: ..
-      dockerfile: .devcontainer/Dockerfile  # path relative to context
+      dockerfile: .devcontainer/Dockerfile # path relative to context
       args:
         RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL:?rust image label must be defined}
         MDBOOK_VERSION: ${MDBOOK_VERSION:?mdbook version must be defined}

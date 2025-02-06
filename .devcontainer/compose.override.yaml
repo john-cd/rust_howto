@@ -40,4 +40,5 @@ volumes:
     name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION:?rust version must be defined}"
   command_history:
     name: "${COMPOSE_PROJECT_NAME}_command_history"
+
 ## Without custom names, the docker volumes will be prefixed by the compose project name + _

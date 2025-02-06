@@ -4,7 +4,7 @@ services:
     # When pull_policy is missing from the service definition, Compose attempts to pull the image first
     # and then builds from source if the image isn't found in the registry or platform cache.
     # IMAGE_VERSION = version of the Docker image to create e.g. 0.1.0
-    image: johncd/rust_howto_ci:${IMAGE_VERSION:-latest}  # Name and tag of the image that will be built
+    image: johncd/rust_howto_ci:${IMAGE_VERSION:-latest} # Name and tag of the image that will be built
     build:
       target: ci
       cache_from:
