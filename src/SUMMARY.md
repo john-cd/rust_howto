@@ -151,6 +151,11 @@
   - [Hashing](categories/cryptography/hashing.md)
   - [Password hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
+  - [AEAD](categories/cryptography/aead.md)
+  - [Certs](categories/cryptography/certs.md)
+  - [Sign](categories/cryptography/sign.md)
+  - [TLS](categories/cryptography/tls.md)
+  - [Utilities](categories/cryptography/utilities.md)
 
 - [Data processing](other/data-processing/_index.md)
   - [CSV](other/data-processing/csv.md)
