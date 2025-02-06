@@ -42,7 +42,7 @@ jobs:
 
       - name: Install `protoc`
         run: |
-          winget install protobuf
+          winget install protobuf --force
           protoc --version
 
       - name: Install `cargo binstall`
