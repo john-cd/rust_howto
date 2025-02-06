@@ -60,7 +60,7 @@
 //     }
 // }
 
-fn main() -> anyhow::Result<()> {
+pub fn main() -> anyhow::Result<()> {
 //     let event_loop = EventLoop::new()?;
 
 //     // ControlFlow::Poll continuously runs the event loop, even if the OS hasn't
