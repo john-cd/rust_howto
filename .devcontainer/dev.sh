@@ -22,7 +22,7 @@ fi
 
 echo "-------------------------------------------"
 echo "Format the code"
-just fmtall
+just fa
 
 echo "Fetch the dependencies"
 cargo fetch
