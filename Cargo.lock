@@ -68,7 +68,7 @@ version = "0.1.2"
 dependencies = [
  "accesskit 0.17.1",
  "accesskit_winit 0.23.1",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -235,7 +235,7 @@ dependencies = [
  "accesskit_unix 0.10.1",
  "accesskit_windows 0.20.0",
  "raw-window-handle 0.6.2",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -249,7 +249,7 @@ dependencies = [
  "accesskit_unix 0.13.1",
  "accesskit_windows 0.24.1",
  "raw-window-handle 0.6.2",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -4208,7 +4208,7 @@ dependencies = [
  "wasm-bindgen",
  "web-sys",
  "wgpu-types 23.0.0",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -5195,9 +5195,9 @@ dependencies = [
 
 [[package]]
 name = "cdrs-tokio"
-version = "8.1.4"
+version = "8.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "35fa999539d7c5f3f86ecb9c215802514cf1457436610dd3205c326bf8226fc6"
+checksum = "40dd0fa6a6487167ce8b48d52d34e9c958c8d8f1206fef03e8d08f02e84538a6"
 dependencies = [
  "arc-swap",
  "atomic 0.6.0",
@@ -5205,12 +5205,12 @@ dependencies = [
  "cassandra-protocol",
  "cdrs-tokio-helpers-derive",
  "derivative",
- "derive_more 1.0.0",
+ "derive_more 2.0.1",
  "futures",
  "fxhash",
- "itertools 0.13.0",
+ "itertools 0.14.0",
  "lazy_static",
- "rand 0.8.5",
+ "rand 0.9.0",
  "serde_json",
  "thiserror 2.0.11",
  "tokio",
@@ -7476,9 +7476,9 @@ dependencies = [
 
 [[package]]
 name = "cxx"
-version = "1.0.137"
+version = "1.0.138"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0fc894913dccfed0f84106062c284fa021c3ba70cb1d78797d6f5165d4492e45"
+checksum = "3956d60afa98653c5a57f60d7056edd513bfe0307ef6fb06f6167400c3884459"
 dependencies = [
  "cc",
  "cxxbridge-cmd",
@@ -7490,9 +7490,9 @@ dependencies = [
 
 [[package]]
 name = "cxx-build"
-version = "1.0.137"
+version = "1.0.138"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "503b2bfb6b3e8ce7f95d865a67419451832083d3186958290cee6c53e39dfcfe"
+checksum = "9a4b7522f539fe056f1d6fc8577d8ab731451f6f33a89b1e5912e22b76c553e7"
 dependencies = [
  "cc",
  "codespan-reporting",
@@ -7504,9 +7504,9 @@ dependencies = [
 
 [[package]]
 name = "cxxbridge-cmd"
-version = "1.0.137"
+version = "1.0.138"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e0d2cb64a95b4b5a381971482235c4db2e0208302a962acdbe314db03cbbe2fb"
+checksum = "0f01e92ab4ce9fd4d16e3bb11b158d98cbdcca803c1417aa43130a6526fbf208"
 dependencies = [
  "clap 4.5.28",
  "codespan-reporting",
@@ -7517,15 +7517,15 @@ dependencies = [
 
 [[package]]
 name = "cxxbridge-flags"
-version = "1.0.137"
+version = "1.0.138"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f797b0206463c9c2a68ed605ab28892cca784f1ef066050f4942e3de26ad885"
+checksum = "8c41cbfab344869e70998b388923f7d1266588f56c8ca284abf259b1c1ffc695"
 
 [[package]]
 name = "cxxbridge-macro"
-version = "1.0.137"
+version = "1.0.138"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e79010a2093848e65a3e0f7062d3f02fb2ef27f866416dfe436fccfa73d3bb59"
+checksum = "88d82a2f759f0ad3eae43b96604efd42b1d4729a35a6f2dc7bdb797ae25d9284"
 dependencies = [
  "proc-macro2 1.0.93",
  "quote 1.0.38",
@@ -8521,7 +8521,16 @@ version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a9b99b9cbbe49445b21764dc0625032a89b145a2642e67603e1c936f5458d05"
 dependencies = [
- "derive_more-impl",
+ "derive_more-impl 1.0.0",
+]
+
+[[package]]
+name = "derive_more"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "093242cf7570c207c83073cf82f79706fe7b8317e98620a47d5be7c3d8497678"
+dependencies = [
+ "derive_more-impl 2.0.1",
 ]
 
 [[package]]
@@ -8531,6 +8540,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cb7330aeadfbe296029522e6c40f315320aba36fc43a5b3632f3795348f3bd22"
 dependencies = [
  "convert_case 0.6.0",
+ "proc-macro2 1.0.93",
+ "quote 1.0.38",
+ "syn 2.0.98",
+ "unicode-xid 0.2.6",
+]
+
+[[package]]
+name = "derive_more-impl"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bda628edc44c4bb645fbe0f758797143e4e07926f7ebf4e9bdfbd3d2ce621df3"
+dependencies = [
  "proc-macro2 1.0.93",
  "quote 1.0.38",
  "syn 2.0.98",
@@ -9725,7 +9746,7 @@ dependencies = [
  "web-time 1.1.0",
  "winapi",
  "windows-sys 0.59.0",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -9760,7 +9781,7 @@ dependencies = [
  "type-map",
  "web-time 1.1.0",
  "wgpu 23.0.1",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -9779,7 +9800,7 @@ dependencies = [
  "smithay-clipboard",
  "web-time 1.1.0",
  "webbrowser 1.0.3",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -9797,7 +9818,7 @@ dependencies = [
  "profiling",
  "wasm-bindgen",
  "web-sys",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -12735,7 +12756,7 @@ dependencies = [
  "cfg_aliases 0.2.1",
  "glutin 0.32.2",
  "raw-window-handle 0.6.2",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -13120,7 +13141,7 @@ dependencies = [
  "tauri",
  "vello 0.4.0",
  "vger",
- "winit 0.30.8",
+ "winit 0.30.9",
  "xilem",
 ]
 
@@ -13946,7 +13967,7 @@ dependencies = [
  "vtable",
  "wasm-bindgen",
  "web-sys",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -14309,7 +14330,7 @@ dependencies = [
  "web-sys",
  "winapi",
  "window_clipboard",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
@@ -16409,7 +16430,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b3a8e7962a5368d5f264d045a5a255e90f9aa3fc1941ae15a8d2940d42cac671"
 dependencies = [
  "cc",
- "which 7.0.1",
+ "which 7.0.2",
 ]
 
 [[package]]
@@ -16737,7 +16758,7 @@ dependencies = [
  "unicode-segmentation",
  "vello 0.1.0",
  "wgpu 0.19.4",
- "winit 0.30.8",
+ "winit 0.30.9",
  "xi-unicode",
 ]
 
@@ -21164,9 +21185,9 @@ dependencies = [
 
 [[package]]
 name = "quick_cache"
-version = "0.6.9"
+version = "0.6.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7d7c94f8935a9df96bb6380e8592c70edf497a643f94bd23b2f76b399385dbf4"
+checksum = "3f67cfc9c723c39f3615eb0840b00c4cb9e2b068d2fa761a30d845ec91730a59"
 dependencies = [
  "ahash 0.8.11",
  "equivalent",
@@ -25996,7 +26017,7 @@ dependencies = [
  "getrandom 0.2.15",
  "lru 0.12.5",
  "parking_lot 0.12.3",
- "quick_cache 0.6.9",
+ "quick_cache 0.6.10",
  "revision",
  "tokio",
  "vart",
@@ -27491,9 +27512,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-graceful-shutdown"
-version = "0.15.3"
+version = "0.15.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7d7def1c9cc8a5ecd76d0b24e29aceda2d7bdeb6cd678f9076fc96b2a88f6bfc"
+checksum = "dd7f403d0d4d3a3e1688c5650e733789ab8473d5fa53adc0b65d20096c2ae3c1"
 dependencies = [
  "async-trait",
  "atomic 0.6.0",
@@ -30919,9 +30940,9 @@ dependencies = [
 
 [[package]]
 name = "which"
-version = "7.0.1"
+version = "7.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb4a9e33648339dc1642b0e36e21b3385e6148e289226f657c809dee59df5028"
+checksum = "2774c861e1f072b3aadc02f8ba886c26ad6321567ecc294c935434cad06f1283"
 dependencies = [
  "either",
  "env_home",
@@ -31693,9 +31714,9 @@ dependencies = [
 
 [[package]]
 name = "winit"
-version = "0.30.8"
+version = "0.30.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5d74280aabb958072864bff6cfbcf9025cf8bfacdde5e32b5e12920ef703b0f"
+checksum = "a809eacf18c8eca8b6635091543f02a5a06ddf3dad846398795460e6e0ae3cc0"
 dependencies = [
  "ahash 0.8.11",
  "android-activity 0.6.0",
@@ -32104,7 +32125,7 @@ dependencies = [
  "smallvec 1.13.2",
  "tracing",
  "vello 0.1.0",
- "winit 0.30.8",
+ "winit 0.30.9",
 ]
 
 [[package]]
