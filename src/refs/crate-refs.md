@@ -402,7 +402,7 @@
 [c-capnpc-crates.io-badge]: https://img.shields.io/badge/crates.io-capnpc-crimson
 [c-capnpc-crates.io]: https://crates.io/crates/capnpc
 [c-capnpc-github-badge]: https://img.shields.io/badge/capnpc-steelblue?logo=github
-[c-capnpc-github]: https://github.com/capnproto/capnproto-rust
+[c-capnpc-github]: https://github.com/capnproto/capnproto-rust/tree/master/capnpc
 [c-capnpc-lib.rs-badge]: https://img.shields.io/badge/lib.rs-capnpc-yellow
 [c-capnpc-lib.rs]: https://lib.rs/crates/capnpc
 [c-capnpc]: https://docs.rs/capnpc
@@ -678,7 +678,7 @@
 [c-cassandra_protocol-crates.io-badge]: https://img.shields.io/badge/crates.io-cassandra--protocol-crimson
 [c-cassandra_protocol-crates.io]: https://crates.io/crates/cassandra_protocol
 [c-cassandra_protocol-github-badge]: https://img.shields.io/badge/cassandra--protocol-steelblue?logo=github
-[c-cassandra_protocol-github]: https://github.com/krojew/cdrs-tokio
+[c-cassandra_protocol-github]: https://github.com/krojew/cdrs-tokio/tree/master/cassandra-protocol
 [c-cassandra_protocol-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cassandra--protocol-yellow
 [c-cassandra_protocol-lib.rs]: https://lib.rs/crates/cassandra-protocol
 [c-cassandra_protocol]: https://docs.rs/cassandra-protocol
@@ -1438,7 +1438,7 @@
 [c-futures_executor-lib.rs-badge]: https://img.shields.io/badge/lib.rs-futures--executor-yellow
 [c-futures_executor-lib.rs]: https://lib.rs/crates/futures-executor
 [c-futures_executor-website-badge]: https://img.shields.io/badge/futures--executor-coral
-[c-futures_executor-website]: https://rust-lang.github.io/futures-rs
+[c-futures_executor-website]: https://github.com/rust-lang/futures-rs/blob/master/futures-executor/README.md
 [c-futures_executor::block_on]: https://docs.rs/futures_executor/latest/futures_executor/fn.block_on.html
 [c-futures_executor]: https://docs.rs/futures-executor
 [c-fyrox-badge]: https://img.shields.io/crates/v/fyrox?label=fyrox
@@ -1570,7 +1570,6 @@
 [c-hyper-lib.rs]: https://lib.rs/crates/hyper
 [c-hyper-website-badge]: https://img.shields.io/badge/hyper-coral
 [c-hyper-website]: https://hyper.rs
-[c-hyper::header!]: https://docs.rs/hyper
 [c-hyper::header::AUTHORIZATION]: https://docs.rs/http/1.1.0/http/header/constant.AUTHORIZATION.html
 [c-hyper::header::USER_AGENT]: https://docs.rs/http/1.1.0/http/header/constant.USER_AGENT.html
 [c-hyper]: https://docs.rs/hyper
@@ -3691,7 +3690,7 @@
 [c-tracing_subscriber-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tracing--subscriber-yellow
 [c-tracing_subscriber-lib.rs]: https://lib.rs/crates/tracing-subscriber
 [c-tracing_subscriber-website-badge]: https://img.shields.io/badge/tracing--subscriber-coral
-[c-tracing_subscriber-website]: https://tokio.rs
+[c-tracing_subscriber-website]: https://github.com/tokio-rs/tracing/blob/master/tracing-subscriber/README.md
 [c-tracing_subscriber]: https://docs.rs/tracing-subscriber
 [c-tree_sitter-badge]: https://img.shields.io/crates/v/tree-sitter?label=tree-sitter
 [c-tree_sitter-crates.io-badge]: https://img.shields.io/badge/crates.io-tree--sitter-crimson
@@ -3753,7 +3752,7 @@
 [c-uniffi-lib.rs]: https://lib.rs/crates/uniffi
 [c-uniffi-website-badge]: https://img.shields.io/badge/uniffi-coral
 [c-uniffi-website]: https://mozilla.github.io/uniffi-rs
-[c-uniffi]: https://mozilla.github.io/uniffi-rs
+[c-uniffi]: https://docs.rs/uniffi/latest/uniffi
 [c-ureq-badge]: https://img.shields.io/crates/v/ureq?label=ureq
 [c-ureq-crates.io-badge]: https://img.shields.io/badge/crates.io-ureq-crimson
 [c-ureq-crates.io]: https://crates.io/crates/ureq
