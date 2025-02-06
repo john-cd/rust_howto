@@ -23,6 +23,7 @@ jobs:
         run: |
           tree ~/.cargo/
           tree /
+        shell: bash
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
       # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
@@ -41,7 +42,7 @@ jobs:
 
       - name: Install `protoc`
         run: |
-          winget install protobuf --force --accept-package-agreements --accept-source-agreements
+          winget install protobuf --force --accept-package-agreements --accept-source-agreements --silent
 
       - name: Install `cargo binstall`
         shell: pwsh

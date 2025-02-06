@@ -1,5 +1,7 @@
 # The Rust How-To Book
 
+[![Build and deploy (Linux)](https://github.com/john-cd/rust_howto/actions/workflows/mdbook.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/mdbook.yml)[![(Windows)](https://github.com/john-cd/rust_howto/actions/workflows/build_on_windows.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/build_on_windows.yml)
+
 **A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
 **Everything you need for day-to-day Rust coding, all in one place.**
 
