@@ -11,7 +11,7 @@
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c-digest::Digest]{{hi:digest::Digest}}⮳ of the file's contents using [`digest::Context`][c-digest::Context]{{hi:digest::Context}}⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/sha_digest.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hashing/sha_digest.rs:example}}
 ```
 
 ## Use general-purpose hashing algorithms {#skip1}
@@ -25,7 +25,7 @@ For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, m
 `blake3` implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/blake3.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hashing/blake3.rs:example}}
 ```
 
 ### `sha2` {#sha2}
@@ -35,7 +35,7 @@ For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, m
 Pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/sha2.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hashing/sha2.rs:example}}
 ```
 
 ### `sha1` {#sha1}
@@ -45,7 +45,7 @@ Pure Rust implementation of the SHA-2 hash function family, including SHA-224, S
 SHA-1 hash function
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/sha1.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hashing/sha1.rs:example}}
 ```
 
 ### `md-5` {#md-5}
@@ -55,7 +55,7 @@ SHA-1 hash function
 MD5 hash function
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/md_5.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/hashing/md_5.rs:example}}
 ```
 
 {{#include refs.incl.md}}

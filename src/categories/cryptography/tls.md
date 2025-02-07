@@ -9,7 +9,7 @@
 Rustls is a portable pure-rust high-level implementation of TLS. Implements TLS 1.2 and higher.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/rustls.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/tls/rustls.rs:example}}
 ```
 
 ## `native-tls` {#native-tls}
@@ -19,7 +19,7 @@ Rustls is a portable pure-rust high-level implementation of TLS. Implements TLS 
 A wrapper over a platform's native TLS implementation. Delegates to the system TLS implementations on windows and macOS, and uses OpenSSL on Linux.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/native_tls.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/tls/native_tls.rs:example}}
 ```
 
 {{#include refs.incl.md}}

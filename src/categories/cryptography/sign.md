@@ -7,7 +7,7 @@
 Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signature::Signature`][c-ring::signature::Signature]{{hi:ring::signature::Signature}}⮳ of a string then verifies the signature{{hi:Signature}} is correct.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/hmac.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sign/hmac.rs:example}}
 ```
 
 ## Compute digital signatures {#skip1}
@@ -27,7 +27,7 @@ This crate is a support library for Edwards Digital Signature Algorithm (EdDSA) 
 It doesn’t contain an implementation of Ed25519, but instead contains an ed25519::Signature type which other crates can use in conjunction with the signature::Signer and signature::Verifier traits.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/ed25519.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sign/ed25519.rs:example}}
 ```
 
 ### `ed25519-dalek` {#ed25519-dalek}
@@ -47,7 +47,7 @@ It doesn’t contain an implementation of Ed25519, but instead contains an ed255
 `ecdsa` contains a pure Rust implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/ecdsa.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sign/ecdsa.rs:example}}
 ```
 
 ### `dsa` {#dsa}
@@ -58,7 +58,7 @@ Pure Rust implementation of the Digital Signature Algorithm (DSA) as specified i
 signatures as well as support for added entropy.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/dsa.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/sign/dsa.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -23,7 +23,7 @@ In that role, key derivation functions take a password, a salt, (and sometimes a
 `argon2` is a pure-Rust implementation of the ['Argon2'][argon2-wikipedia]⮳ key derivation function, which is commonly used for secure password hashing.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/argon2.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/password_hashing/argon2.rs:example}}
 ```
 
 ## `scrypt` {#scrypt}
@@ -39,7 +39,7 @@ In that role, key derivation functions take a password, a salt, (and sometimes a
 The 'scrypt' key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as 'PBKDF2' or ['bcrypt'](#bcrypt).
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/scrypt.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/password_hashing/scrypt.rs:example}}
 ```
 
 ## `bcrypt` {#bcrypt}
@@ -52,7 +52,7 @@ The 'scrypt' key derivation function is designed to be far more secure against h
 ['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/bcrypt.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/password_hashing/bcrypt.rs:example}}
 ```
 
 ## Salt and hash a password with PBKDF2 {#pbkdf2}
@@ -64,7 +64,7 @@ Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c-ring:
 The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::SecureRandom::fill]{{hi:ring::rand::SecureRandom::fill}}⮳ which fills the salt byte array with securely generated random numbers.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/pbkdf2.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/password_hashing/pbkdf2.rs:example}}
 ```
 
 For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github].

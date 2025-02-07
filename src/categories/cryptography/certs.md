@@ -14,7 +14,7 @@ For more formats, see Rust Crypto Formats.
 Pure Rust embedded-friendly implementation of the Distinguished Encoding Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std` targets.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/der.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/certs/der.rs:example}}
 ```
 
 ## `pem-rfc7468` {#pem-rfc7468}
@@ -25,7 +25,7 @@ PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a stric
 specifically for use with cryptographic keys, certificates, and other messages. Provides a no_std-friendly, constant-time implementation suitable for use with cryptographic private keys.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/pem_rfc7468.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/certs/pem_rfc7468.rs:example}}
 ```
 
 ## `pkcs8` {#pkcs8}
@@ -36,7 +36,7 @@ Pure Rust implementation of Public-Key Cryptography Standards (PKCS) #8: Private
 support for PKCS#8v2 asymmetric key packages (RFC 5958).
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/pkcs8.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/certs/pkcs8.rs:example}}
 ```
 
 ## `x509-cert` {#x509-cert}
@@ -46,7 +46,7 @@ support for PKCS#8v2 asymmetric key packages (RFC 5958).
 Pure Rust implementation of the X.509 Public Key Infrastructure Certificate format as described in RFC 5280.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/x509_cert.rs:example}}
+{{#include ../../../crates/ex/cats/cryptography/tests/certs/x509_cert.rs:example}}
 ```
 
 {{#include refs.incl.md}}

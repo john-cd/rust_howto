@@ -49,8 +49,8 @@
 //     // Create a new actor.
 //     let (counter_sender, counter_handle) = system.spawn(
 //         // The actor's initial state.
-//         Counter::new(counter_sender.clone()),  // Clone needed if actor sends back
-//                  // The actor's message handler.
+//         Counter::new(counter_sender.clone()),  // Clone needed if actor sends
+// back                  // The actor's message handler.
 //         |counter, message| counter.handle_message(message),
 //     );
 
