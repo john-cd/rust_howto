@@ -38,10 +38,16 @@ jobs:
           restore-keys: |
             rusthowto-${{ runner.os }}-cargo-
 
-      - name: Install `protoc`
+      # - name: Install `protoc` and `jq`
+      #   run: |
+      #     winget install protobuf --force --accept-package-agreements --accept-source-agreements --silent
+      #     winget install jqlang.jq --force --accept-package-agreements --accept-source-agreements --silent
+      #     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+      - name: Install `protoc` and `jq` (choco)
         run: |
-          winget install protobuf --force --accept-package-agreements --accept-source-agreements --silent
-          $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+          choco install jq protoc --confirm --no-progress
+        # --limit-output
 
       - name: Protoc version (debug)
         run: protoc --version
