@@ -21,9 +21,7 @@ jobs:
     steps:
       - name: Display directory tree (debug)
         run: |
-          tree ~/.cargo/
-          tree /
-        shell: bash
+          tree $env:userprofile\.cargo
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
       # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
