@@ -7304,6 +7304,7 @@ dependencies = [
  "der 0.7.9",
  "dsa",
  "ecdsa 0.16.9",
+ "ed25519",
  "ed25519-dalek",
  "hex-literal",
  "hyper 1.6.0",

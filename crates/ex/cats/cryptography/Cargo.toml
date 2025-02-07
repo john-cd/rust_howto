@@ -22,6 +22,7 @@ blake3 = "1.5.5"
 chacha20poly1305 = "0.10.1"
 der = { version = "0.7.9", features = ["derive", "alloc"] }
 dsa = "0.6.3"
+ed25519 = "2.2.3"
 ed25519-dalek = { version = "2", features = ["rand_core"] }
 ecdsa = "0.16.9"
 md5 = "0.7.0"
