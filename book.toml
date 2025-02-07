@@ -39,6 +39,7 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 [preprocessor.purge]
 command = "./scripts/book/purge.sh"
 after = [ "private" ]
+# TODO P1 rewrite the preprocessor in Rust to be able to run mdbook under Windows
 
 # # Default preprocessor: index
 # Convert all chapter files named README.md into index.md. That is to say, all README.md would be rendered to an index file index.html in the rendered book.
