@@ -40,7 +40,7 @@ Flurry is a concurrent hash table designed for high performance. It allows fully
 
 [![papaya][c-papaya-badge]][c-papaya] [![papaya-crates.io][c-papaya-crates.io-badge]][c-papaya-crates.io] [![papaya-github][c-papaya-github-badge]][c-papaya-github] [![papaya-lib.rs][c-papaya-lib.rs-badge]][c-papaya-lib.rs]{{hi:papaya}}{{hi:Atomic}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Lock-free}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-A fast and ergonomic concurrent hash-table for read-heavy workloads.
+`papaya` offers a fast and ergonomic concurrent hash-table for read-heavy workloads.
 
 - Ergonomic lock-free API — no more deadlocks!
 - Powerful atomic operations.
@@ -59,5 +59,4 @@ A fast and ergonomic concurrent hash-table for read-heavy workloads.
 
 <div class="hidden">
 [concurrent_data_structures: finish (P1)](https://github.com/john-cd/rust_howto/issues/258)
-
 </div>
