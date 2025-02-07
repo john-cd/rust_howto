@@ -1,70 +1,108 @@
-// // ANCHOR: example
-// COMING SOON
-// // ANCHOR_END: example
+// ANCHOR: example
+#![allow(unexpected_cfgs)]
 
-// use ractor::Actor;
-// use ractor::ActorProcessingErr;
-// use ractor::ActorRef;
-// use tokio::time::Duration;
-// use tokio::time::sleep;
+use ractor::Actor;
+use ractor::ActorProcessingErr;
+use ractor::ActorRef;
+use ractor::cast;
+use tokio::time::Duration;
+use tokio::time::sleep;
 
-// // `ractor` is a pure-Rust actor framework.
+// `ractor` is a pure-Rust actor framework, inspired from Erlang's gen_server.
+// https://slawlor.github.io/ractor/
 
-// // Define a message type
-// struct Greet;
+// `ractor` gives a set of generic primitives and helps automate the actor
+// supervision tree and management of actors along with traditional actor
+// message processing logic. It supports both the `tokio` and `async-std`
+// runtime.
 
-// // Define an actor
-// struct Greeter;
+// Add to your `Cargo.toml`:
+// [dependencies]
+// ractor = "0.14"
 
-// #[async_trait::async_trait]
-// impl ractor::Actor for Greeter {
-//     type Msg = Greet;
-//     type State = ();
+// Message type that the actor accepts
+#[derive(Debug, Clone)]
+struct Greet(String);
 
-//     async fn pre_start(&self, _ctx: &ractor::ActorContext<Self::Msg>) ->
-// Self::State {         println!("Greeter actor is starting");
-//         ()
-//     }
+#[cfg(feature = "cluster")]
+impl ractor::Message for Greet {}
 
-//     async fn handle(&self, _ctx: &ractor::ActorContext<Self::Msg>, _msg:
-// Self::Msg, _state: &mut Self::State) {         println!("Received a Greet
-// message");     }
+// Main actor struct
+struct Greeter;
 
-//     // async fn handle_rpc(&self, _ctx: &ractor::ActorContext<Self::Msg>,
-// _msg: Self::Msg, _state: &mut Self::State, reply: RpcReplyPort<String>) {
-//     //     reply.send("Hello from Greeter!".to_string()).unwrap();
-//     // }
+// Inner state of the actor
+struct GreeterState {
+    count: u64,
+}
 
-//     async fn post_stop(&self, _ctx: &ractor::ActorContext<Self::Msg>, _state:
-// &mut Self::State) {         println!("Greeter actor is stopping");
-//     }
-// }
+impl ractor::Actor for Greeter {
+    // Startup initialization args
+    type Arguments = ();
+    // Actor's message type
+    type Msg = Greet;
+    // Optional internal state
+    type State = GreeterState;
 
-// #[tokio::main]
-// async fn main() {
-//     // Create a Greeter actor
-//     let (greeter, handle) = Actor::spawn(None, Greeter).await.expect("Failed
-// to spawn Greeter");
+    // Invoked when an actor is being started by the system:
+    // creates the state, starts internal processing...
+    async fn pre_start(
+        &self,
+        myself: ActorRef<Self::Msg>,
+        _: (),
+    ) -> Result<Self::State, ActorProcessingErr> {
+        println!("Greeter actor is starting.");
 
-//     // Send a Greet message and wait for the reply
-//     let result = greeter.call(Greet).await.unwrap();
-//     println!("Greeter replied: {}", result);
+        // Startup the event processing:
+        // Actors communicate by passing messages to each other.
+        cast!(myself, Greet("Hello!".to_string()))?;
+        // Or: myself.send_message(Greet("Hello!".to_string()))?;
 
-//     // Sleep for a bit to let the actor finish any remaining work
-//     sleep(Duration::from_secs(1)).await;
+        // Create the initial state
+        Ok(GreeterState { count: 0 })
+    }
 
-//     // Stop the actor
-//     handle.stop().await.expect("Failed to stop Greeter");
-// }
+    // Handle incoming messages from the event processing loop.
+    async fn handle(
+        &self,
+        myself: ActorRef<Self::Msg>,
+        message: Self::Msg,
+        state: &mut Self::State,
+    ) -> Result<(), ActorProcessingErr> {
+        state.count += 1;
+        println!("Received a message: {}", message.0);
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
-//     use tokio_test::block_on;
+        // In this case, we stop the actor after just one message:
+        myself.stop(Some("Received greeting.".into()));
+        Ok(())
+    }
 
-//     #[test]
-//     fn test() {
-//         block_on(main());
-//     }
-// }
-// // [P1](https://github.com/john-cd/rust_howto/issues/685)
+    // Invoked after an actor has been stopped to perform final cleanup.
+    async fn post_stop(
+        &self,
+        _myself: ActorRef<Self::Msg>,
+        state: &mut Self::State,
+    ) -> Result<(), ActorProcessingErr> {
+        println!("Greeter actor is stopping. Count: {}", state.count);
+        Ok(())
+    }
+}
+
+#[tokio::main]
+async fn main() {
+    // Create a Greeter actor
+    let (_actor, handle) =
+        Actor::spawn(Some("Actor1".to_string()), Greeter, ())
+            .await
+            .expect("Failed to start the actor"); // panic in `pre_start()`
+
+    handle.await.expect("Actor failed to exit properly");
+
+    // Sleep for a bit to let the actor finish any remaining work
+    sleep(Duration::from_millis(50)).await;
+}
+
+#[test]
+fn test() {
+    main();
+}
+// ANCHOR_END: example

@@ -25,7 +25,7 @@ flume = { version = "0.11.1", features = ["select"] }
 flurry = "0.5.2"
 futures = "0.3.31"
 parking_lot = "0.12.3"
-ractor = "0.14.2"
+ractor = "0.14.7"
 rayon = "1.10.0"
 riker = "0.4.2"
 stakker = "0.2.11"
@@ -44,3 +44,4 @@ ring = "0.17.8"
 time = "0.3.37"
 tokio = { version = "1.43.0", features = ["full"] }
 walkdir = "2.5.0"
+async-trait = "0.1.86"

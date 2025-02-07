@@ -6072,6 +6072,7 @@ version = "0.1.2"
 dependencies = [
  "actix",
  "anyhow",
+ "async-trait",
  "await-tree",
  "crossbeam",
  "crossbeam-channel",
