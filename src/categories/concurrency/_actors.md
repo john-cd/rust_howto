@@ -2,7 +2,16 @@
 
 {{#include _actors.incl.md}}
 
-An actor is a lightweight, independent unit of computation that encapsulates state and behavior.  Actors communicate with each other asynchronously by exchanging messages, which are placed in the recipient's mailbox (a queue).  An actor processes messages sequentially, one at a time, from its mailbox. This message-passing paradigm simplifies concurrent programming by avoiding shared mutable state and complex locking mechanisms, enabling actors to run concurrently and potentially be distributed across multiple machines, making them well-suited for building scalable and resilient systems.
+An Actor is a computational entity that, in response
+to a message it receives, can concurrently:
+● send a finite number of messages to other Actors;
+● create a finite number of new Actors;
+● designate the behavior to be used for the next
+message it receives.”
+
+- Carl Hewitt 1973
+
+An actor is a lightweight, independent unit of computation that encapsulates state and behavior. Actors communicate with each other asynchronously by exchanging messages, which are placed in the recipient's mailbox (a queue). An actor processes messages sequentially, one at a time, from its mailbox. This message-passing paradigm simplifies concurrent programming by avoiding shared mutable state and complex locking mechanisms, enabling actors to run concurrently and potentially be distributed across multiple machines, making them well-suited for building scalable and resilient systems.
 
 Key Benefits of Using Actors:
 
@@ -74,4 +83,6 @@ Possible applications of actor frameworks:
 
 <div class="hidden">
 [_actors: organize (P2)](https://github.com/john-cd/rust_howto/issues/269)
+
+TODO P2 add [ractor blog](https://slawlor.github.io/ractor/)
 </div>
