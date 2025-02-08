@@ -1,5 +1,8 @@
 // ANCHOR: example
 
+// Add to your `Cargo.toml`:
+// reqwest = { version = "0.12.12", features = ["blocking"] }
+
 fn parse_response(
     response: reqwest::blocking::Response,
 ) -> anyhow::Result<u32> {
