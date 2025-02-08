@@ -21,3 +21,8 @@ tokio = { version = "1.43.0", features = ["full"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 glommio = "0.9.0"
+
+[features]
+default = []
+# ngrok = ["dep:ngrok"]
+# pingora = ["dep:pingora"]

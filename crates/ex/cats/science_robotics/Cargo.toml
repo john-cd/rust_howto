@@ -22,3 +22,4 @@ zenoh = "1.1.0"
 [features]
 #default = []
 #openrr = ["dep:openrr"]
+#zenoh = ["dep:zenoh"]

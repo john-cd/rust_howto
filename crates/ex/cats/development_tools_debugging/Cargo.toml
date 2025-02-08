@@ -46,3 +46,8 @@ syslog = "7.0.0"
 [dev-dependencies]
 ## Used for testing
 rusty-fork = "0.3.0"
+
+[features]
+# default = []
+# slog = ["dep:slog", "dep:slog-async", "dep:slog-term", "dep:slog-scope"]
+# opentelemetry = ["dep:opentelemetry", "dep:opentelemetry-jaeger", "dep:opentelemetry-otlp", "dep:opentelemetry_sdk", "dep:opentelemetry-semantic-conventions", "dep:tracing-opentelemetry"]

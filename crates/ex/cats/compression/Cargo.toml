@@ -16,6 +16,7 @@ publish.workspace = true
 [dependencies]
 flate2 = "1.0.35"
 tar = "0.4.43"
+# TODO P2 zip async_zip
 
 ## General
 anyhow = "1.0.95"

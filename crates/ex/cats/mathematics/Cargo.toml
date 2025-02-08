@@ -15,7 +15,7 @@ publish.workspace = true
 
 [dependencies]
 nalgebra = { version = "0.33.2", features = ["serde-serialize"] }
-ndarray = { version = "0.15.6", features = ["approx"] }
+ndarray = { version = "0.15.6", features = ["approx"] } # pinned to 0.15.6 for linfa
 num = "0.4.3"
 num-bigint = "0.4.6"
 num-traits = "0.2.19"

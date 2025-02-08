@@ -20,3 +20,7 @@ proc-macro2 = "1.0.92"
 quote = "1.0.38"
 syn = { version = "2.0.92", features = ["full"] }
 watt = "0.5.0"
+
+[features]
+# default = []
+# syn = ["dep:syn"]

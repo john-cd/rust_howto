@@ -37,3 +37,8 @@ cbindgen = "0.28.0"
 cc = "1.2"
 cxx-build = "1.0.136"
 uniffi = "0.29"
+
+[features]
+# default = []
+# objc2 = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
+# rutie = ["dep:rutie"]
