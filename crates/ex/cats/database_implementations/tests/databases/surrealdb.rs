@@ -1,3 +1,4 @@
+#![cfg(feature = "surrealdb")]
 // ANCHOR: example
 use serde::Deserialize;
 use serde::Serialize;

@@ -16,7 +16,7 @@ publish.workspace = true
 [dependencies]
 meilisearch-sdk = "0.27.1"
 sled = "0.34.7"
-surrealdb = { version = "2.1.4", features = ["kv-mem"] }
+surrealdb = { version = "2.1.4", features = ["kv-mem"], optional = true }
 tantivy = "0.22.0"
 
 ## General
@@ -26,4 +26,4 @@ tokio = { version = "1.43.0", features = ["full"] }
 
 [features]
 # default = []
-# surrealdb = ["dep:surrealdb"]
+surrealdb = ["dep:surrealdb"]
