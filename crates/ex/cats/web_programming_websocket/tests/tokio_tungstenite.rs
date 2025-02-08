@@ -1,23 +1,25 @@
 // ANCHOR: example
-// ANCHOR_END: example
-// Extension trait for Streams; defines `next()`
-use futures_util::StreamExt;
 // Extension trait for Sinks; defines `send()`
 use futures_util::SinkExt;
+// Extension trait for Streams; defines `next()`
+use futures_util::StreamExt;
 use tokio_tungstenite::connect_async;
-// An enum representing the various forms of a WebSocket message: text, binary...
-use tokio_tungstenite::tungstenite::protocol::Message;
 use tokio_tungstenite::tungstenite::client::IntoClientRequest;
+// An enum representing the various forms of a WebSocket message: text,
+// binary...
+use tokio_tungstenite::tungstenite::protocol::Message;
 
 // Create an asynchronous WebSocket client.
-// The WebSocket protocol provides a simultaneous two-way communication channel over a single TCP connection,
-// typically between a web browser and a web server.
+// The WebSocket protocol provides a simultaneous two-way communication channel
+// over a single TCP connection, typically between a web browser and a web
+// server.
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to a test WebSocket server, which will echo the message you sent.
     let request = "ws://echo.websocket.in".into_client_request()?;
-    // Add headers if needed: request.headers_mut().insert("api-key", "42".parse()?);
+    // Add headers if needed:
+    // request.headers_mut().insert("api-key", "42".parse()?);
     let (ws_stream, response) = connect_async(request).await?;
     println!("Connected to the server");
 
@@ -41,6 +43,7 @@ async fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
 #[test]
 fn require_network() -> anyhow::Result<()> {

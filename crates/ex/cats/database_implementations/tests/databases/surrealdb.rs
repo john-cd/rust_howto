@@ -1,9 +1,6 @@
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 use serde::Deserialize;
 use serde::Serialize;
-//use surrealdb::RecordId;
 use surrealdb::Result;
 // Database client instance for embedded or remote databases:
 use surrealdb::Surreal;
@@ -32,7 +29,6 @@ struct Person {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-
     // Initialize a SurrealDB in-memory instance.
     let db = Surreal::new::<Mem>(()).await?;
 
@@ -90,6 +86,7 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() -> Result<()> {
