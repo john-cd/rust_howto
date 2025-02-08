@@ -821,5 +821,5 @@ oncecell
 dalek
 blake
 ecdsa
-pkcs8
+pkcs
 rustls
