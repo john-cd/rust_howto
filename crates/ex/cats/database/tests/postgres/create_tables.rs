@@ -4,8 +4,8 @@ use postgres::NoTls;
 
 pub fn main() -> anyhow::Result<()> {
     // The connection URL is formatted as
-    // postgresql://<user>:<password>@<host>/<db>, for example "postgresql:/
-    // /postgres:postgres@localhost/library"
+    // postgresql://<user>:<password>@<host>/<db>, for example
+    // postgresql://postgres:postgres@localhost/library
     let mut client = Client::connect(
         "postgresql://postgres:mysecretpassword@rust_howto_dev-postgres-1/library",
         NoTls,
