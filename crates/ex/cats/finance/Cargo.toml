@@ -15,3 +15,7 @@ publish.workspace = true
 
 [dependencies]
 #RustQuant = "0.3" # TODO P2 heavy build (polars, nalgebra, etc)
+
+[features]
+#default = []
+#rustquant = ["dep:RustQuant"]

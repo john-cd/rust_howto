@@ -47,3 +47,7 @@ serde_ignored = "0.1.10"
 [build-dependencies]
 capnpc = "0.20.1"
 prost-build = "0.13.4"
+
+[features]
+#default = []
+#protobuf = ["dep:protobuf", "dep:prost", "dep:prost-types", "dep:prost-build"]

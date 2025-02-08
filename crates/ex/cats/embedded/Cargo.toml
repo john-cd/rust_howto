@@ -15,3 +15,6 @@ publish.workspace = true
 
 [dependencies]
 # embassy = "0.0.0" # TODO P1 review installation / required dependencies
+
+[features]
+#default = []

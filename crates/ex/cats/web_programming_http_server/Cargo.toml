@@ -21,8 +21,6 @@ axum = "0.7.9"                # pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
 leptos = "0.7"
-# loco = "0.14"
-# loco-rs = { git = "https://github.com/loco-rs/loco.git", branch = "main" } # or a specific version
 loco-rs = "0.14"
 mime = "0.3.17"
 prost = "0.13.4"
@@ -41,3 +39,7 @@ tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 
 [build-dependencies]
 tonic-build = "0.12.3"
+
+[features]
+# default = []
+# loco = ["dep:loco-rs"]

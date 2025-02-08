@@ -27,3 +27,7 @@ linfa-linear = "0.7.0"
 ndarray = "0.15.6"                                         # pinned to 0.15.6 for linfa
 rand = { version = "0.9.0", features = ["thread_rng"] }
 smartcore = { version = "0.4.0", features = ["datasets"] }
+
+[features]
+#default = []
+#candle = ["dep:candle-core", "dep:candle-nn"]

@@ -37,3 +37,6 @@ rand = { version = "0.9.0", features = ["thread_rng"] }
 time = "0.3.37"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+
+[features]
+# default = []

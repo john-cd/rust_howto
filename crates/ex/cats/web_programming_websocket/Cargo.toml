@@ -14,7 +14,7 @@ categories = ["web_programming_websocket"]
 publish.workspace = true
 
 [dependencies]
-async-tungstenite = { version = "0.28.2", features = ["tokio-runtime", "tokio-native-tls"] }
+async-tungstenite = { version = "0.28.2", features = ["tokio-runtime", "tokio-native-tls"] } # TODO P1 review
 tokio-tungstenite = "0.26.1"
 tungstenite = "0.26.0"
 

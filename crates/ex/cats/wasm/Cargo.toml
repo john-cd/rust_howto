@@ -20,3 +20,7 @@ yew = { version = "0.21.0", features = ["csr"] }
 
 ## General
 anyhow = "1.0.95"
+
+[features]
+#default = []
+#wasm = ["dep:wasmer", "dep:wasmtime", "dep:yew"]

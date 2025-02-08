@@ -21,3 +21,7 @@ image = "0.25.5"
 opencv = { version = "0.94.1", features = [
     "clang-runtime",
 ] } # requires `libopencv-dev` `clang` `libclang-dev`
+
+[features]
+# default = []
+# opencv = ["dep:opencv"]

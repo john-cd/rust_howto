@@ -23,3 +23,7 @@ tantivy = "0.22.0"
 anyhow = "1.0.95"
 serde = { version = "1.0.217", features = ["derive"] }
 tokio = { version = "1.43.0", features = ["full"] }
+
+[features]
+# default = []
+# surrealdb = ["dep:surrealdb"]

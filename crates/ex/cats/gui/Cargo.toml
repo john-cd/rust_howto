@@ -21,9 +21,9 @@ cosmic-text = "0.12.1"
 dioxus = "0.6.1"
 dioxus-web = "0.6.1"
 dioxus-desktop = "0.6.1"
-eframe = "0.30.0"
-egui = "0.30.0"
-femtovg = "0.12.0"
+eframe = "0.31.0"
+egui = "0.31.0"
+femtovg = "0.13.0"
 # floem = "0.1.1" # FIXME P3 review requirements
 # gtk = { version = "0.9.5", package = "gtk4" } # FIXME Make sure to use gtk4; for relm4 / gtk4 examples
 iced = "0.13.1"
@@ -48,3 +48,14 @@ vger = "0.4.0"
 winit = "0.30.8"  # for vello, winit examples
 xilem = "0.1.0"
 anyhow = "1.0.95"
+
+[features]
+#default = []
+#dioxus = ["dep:dioxus","dep:dioxus-web","dep:dioxus-desktop"]
+#egui = ["dep:eframe", "dep:egui"]
+#femtovg = ["dep:femtovg"]
+#gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
+#iced = ["dep:iced"]
+#slint = ["dep:slint"]
+#tauri = ["dep:tauri"]
+#xilem = ["dep:xilem"]

@@ -14,7 +14,10 @@ categories = [ "api_bindings" ]
 publish.workspace = true
 
 [dependencies]
-## API bindings
 
 [target.'cfg(target_os = "linux")'.dependencies]
 pyo3 = "0.21" # was pinned to 0.21 to avoid conflict with `polars`
+
+[features]
+# default = []
+# pyo3 = ["dep:pyo3"]
