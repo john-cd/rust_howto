@@ -1,12 +1,16 @@
 // ANCHOR: example
+use elasticsearch::BulkParts;
 use elasticsearch::Elasticsearch;
 use elasticsearch::Error;
 use elasticsearch::IndexParts;
 use elasticsearch::SearchParts;
 use elasticsearch::cat::CatIndicesParts;
+use elasticsearch::http::request::JsonBody;
+use elasticsearch::http::response::Response;
 use elasticsearch::http::transport::Transport;
 use serde::Deserialize;
 use serde::Serialize;
+use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
@@ -15,19 +19,19 @@ struct MyDocument {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
+async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client
     let transport = Transport::single_node("http://localhost:9200")?;
     let client = Elasticsearch::new(transport);
     // OR: let client = Elasticsearch::default();
 
-    let response = index_document(client).await?;
+    let response: Response = index_document(&client).await?;
     println!("Index response: {:?}", response);
 
-    let search_result = search_document(client).await?;
+    let search_result: serde_json::Value = search_document(&client).await?;
     println!("Search result: {:?}", search_result);
 
-    let bulk_response = bulk_documents(client).await?;
+    let bulk_response: bool = bulk_documents(&client).await?;
     println!("Bulk response: {:?}", bulk_response);
 
     cat_indices(client).await?;
@@ -35,8 +39,8 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 
-//
-async fn index_document(client: Elasticsearch) -> Result<Response, Error> {
+// Create (or update) a document in an index.
+async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
     // Define a document to index
     let doc = MyDocument {
         id: 1,
@@ -53,7 +57,7 @@ async fn index_document(client: Elasticsearch) -> Result<Response, Error> {
 
 //
 async fn search_document(
-    client: Elasticsearch,
+    client: &Elasticsearch,
 ) -> Result<serde_json::Value, Error> {
     // Search for the document
     let search_response = client
@@ -74,7 +78,7 @@ async fn search_document(
 }
 
 // Interact with an Elasticsearch client to perform bulk indexing operations.
-async fn bulk_documents(client: Elasticsearch) -> Result<bool, Error> {
+async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<bool> {
     let mut body: Vec<JsonBody<_>> = Vec::with_capacity(4);
 
     // Add the first operation and document
@@ -82,8 +86,8 @@ async fn bulk_documents(client: Elasticsearch) -> Result<bool, Error> {
     body.push(
         serde_json::json!({
             "id": 1,
-            "user": "kimchy",
-            "post_date": "2009-11-15T00:00:00Z",
+            "user": "user1",
+            "post_date": "2025-02-06T00:00:00Z",
             "message": "Trying out Elasticsearch"
         })
         .into(),
@@ -94,9 +98,9 @@ async fn bulk_documents(client: Elasticsearch) -> Result<bool, Error> {
     body.push(
         serde_json::json!({
             "id": 2,
-            "user": "forloop",
-            "post_date": "2020-01-08T00:00:00Z",
-            "message": "Bulk indexing with the rust client, yeah!"
+            "user": "user2",
+            "post_date": "2025-02-07T00:00:00Z",
+            "message": "Bulk indexing with the rust client!"
         })
         .into(),
     );
@@ -108,12 +112,15 @@ async fn bulk_documents(client: Elasticsearch) -> Result<bool, Error> {
         .await?;
 
     let response_body = response.json::<Value>().await?;
-    let successful = !response_body["errors"].as_bool()?;
+    let successful =
+        !(response_body["errors"].as_bool().ok_or(anyhow::anyhow!(
+            "bulk_documents: response could not be converted to bool"
+        ))?);
 
     Ok(successful)
 }
 
-async fn cat_indices(client: Elasticsearch) -> Result<(), Error> {
+async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
     // Call the `Cat` related APIs.
     let response = client
         .cat()
@@ -121,13 +128,13 @@ async fn cat_indices(client: Elasticsearch) -> Result<(), Error> {
         .format("json")
         .send()
         .await?;
-    Ok(())
+    Ok(response)
 }
 // ANCHOR_END: example
 
 #[test]
-fn require_external_svc() -> Result<(), Error> {
+fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/710)
+// [P0](https://github.com/john-cd/rust_howto/issues/710) validate full heavy test
