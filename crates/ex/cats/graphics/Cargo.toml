@@ -14,4 +14,4 @@ categories = [ "graphics" ]
 publish.workspace = true
 
 [dependencies]
-wgpu = "0.16.0" # pin for ggez
+wgpu = "24.0.1" # was pinned to 0.16.0 for ggez
