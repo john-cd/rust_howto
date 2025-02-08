@@ -99,8 +99,9 @@ jobs:
           cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
 
-      - name: Build the book
-        run: mdbook build; static/*.* book/html/; mdbook-utils sitemap
+      # TODO P2 make the custom mdbook preprocessor work while on Windows
+      # - name: Build the book
+      #   run: mdbook build; cp static/*.* book/html/; mdbook-utils sitemap
 ## ---------------------------------------------------------------------
 
 # - name: Upload artifacts (optional)
