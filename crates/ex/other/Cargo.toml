@@ -28,7 +28,7 @@ crux_macros = "0.4.4"
 
 ## Data processing
 arrow = { version = "54.0.0", features = ["prettyprint"] }
-datafusion = "44.0.0"
+datafusion = "45.0.0"
 #polars = "0.46.0"
 
 ## GPU
@@ -62,6 +62,7 @@ typegen = ["crux_core/typegen"]
 #default = []
 #datafusion = ["dep:datafusion"]
 #polars = ["dep:polars"]
+#arrow = ["dep:arrow"]
 
 [target.uniffi-bindgen.dependencies]
 uniffi = { version = "0.28.3", features = ["cli"] }
