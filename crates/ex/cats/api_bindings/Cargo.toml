@@ -16,7 +16,7 @@ publish.workspace = true
 [dependencies]
 
 [target.'cfg(target_os = "linux")'.dependencies]
-pyo3 = "0.21" # was pinned to 0.21 to avoid conflict with `polars`
+pyo3 = "0.23.4" # was pinned to 0.21 to avoid conflict with `polars`
 
 [features]
 # default = []
