@@ -4,7 +4,6 @@
 
 // use cassandra_protocol::consistency::Consistency;
 // use cassandra_protocol::frame::Opcode;
-// use tokio::net::TcpStream;
 
 // // Cassandra low-level protocol implementation, written in Rust.
 // // If you wish to use Cassandra without dealing with protocol-level details,
@@ -13,7 +12,7 @@
 // #[tokio::main]
 // async fn main() -> anyhow::Result<()> {
 //     // Create a TCP stream to the Cassandra node
-//     let stream = TcpStream::connect("127.0.0.1:9042").await?;
+//     let stream = tokio::net::TcpStream::connect("127.0.0.1:9042").await?;
 
 //     // Configure the transport
 //     let config = TransportConfig::default();
@@ -32,8 +31,8 @@
 
 //     // Send a query message
 //     let query =
-//         Query::new("SELECT * FROM system.local", Consistency::One, None,
-// None);     transport.send(Frame::new(Opcode::Query, query)).await?;
+//         Query::new("SELECT * FROM system.local", Consistency::One, None, None);
+//     transport.send(Frame::new(Opcode::Query, query)).await?;
 
 //     // Receive the result message
 //     let frame = transport.receive().await?;
@@ -50,4 +49,4 @@
 //     main()?;
 //     Ok(())
 // }
-// [ P2 write; see also https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html](https://github.com/john-cd/rust_howto/issues/1016)
+// // [P2 write; see also https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html](https://github.com/john-cd/rust_howto/issues/1016)
