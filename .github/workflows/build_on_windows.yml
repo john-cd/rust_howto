@@ -19,9 +19,14 @@ jobs:
     name: Build on Windows
     runs-on: windows-2025 # required for winget
     steps:
+
       # - name: Display directory tree (debug)
       #   run: |
       #     tree $env:userprofile\.cargo
+
+      # Checks out your repository under $GITHUB_WORKSPACE
+      - name: Code checkout (clones the Git repository)
+        uses: actions/checkout@v4
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/caching-dependencies-to-speed-up-workflows
       # Install paths for Rust / Cargo in https://github.com/actions/runner-images/blob/main/images/windows/scripts/build/Install-Rust.ps1
@@ -34,6 +39,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             /cargo-target-rust_howto/
+            target/
           key: rusthowto-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
             rusthowto-${{ runner.os }}-cargo-
@@ -67,7 +73,7 @@ jobs:
         run: cargo binstall --no-confirm --secure cargo-nextest
 
       - name: Install `mdbook-utils`
-        run: cargo install --locked mdbook-utils
+        run: cargo install --locked --force mdbook-utils
 
       - name: Install nightly Rust
         run: |
@@ -75,12 +81,8 @@ jobs:
           rustup component add rustfmt clippy --toolchain nightly
           rustup default nightly
 
-      - name: Output Rust version
+      - name: Output Rust version (debug)
         run: rustup --version
-
-      # Checks out your repository under $GITHUB_WORKSPACE
-      - name: Code checkout (clones the Git repository)
-        uses: actions/checkout@v4
 
       - name: Format
         run: cargo +nightly fmt --all --check
@@ -99,10 +101,12 @@ jobs:
           cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
 
-      # TODO P2 make the custom mdbook preprocessor work while on Windows
+      # TODO P2 make the custom mdbook preprocessor work while on Windows, then reenable
       # - name: Build the book
       #   run: mdbook build; cp static/*.* book/html/; mdbook-utils sitemap
 ## ---------------------------------------------------------------------
+
+# TODO P1 clean up the following:
 
 # - name: Upload artifacts (optional)
 #   uses: actions/upload-artifact@v3
@@ -127,17 +131,6 @@ jobs:
 
 ## ---------------------------------------------------------------------
 
-#- name: Powershell
-#   shell: pwsh
-#   run: |
-#     <pwsh commands here>
-
-## ---------------------------------------------------------------------
-
-#- run: gh version
-
-## ---------------------------------------------------------------------
-
 # - name: Set up Docker Buildx
 #   uses: docker/setup-buildx-action@v3
 # - name: Login to Docker Hub
@@ -153,7 +146,7 @@ jobs:
 #     cache-from: type=gha
 #     cache-to: type=gha,mode=max
 
-# TODO review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main
+# TODO P1 review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main
 # https://github.com/marketplace/actions/set-up-a-rust-toolchain
 # https://github.com/actions/starter-workflows/tree/main
 # https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-rust
