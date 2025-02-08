@@ -13,7 +13,6 @@
 /crates/playground/drafts
 /doctest_cache
 /drafts
-/scripts
 /target
 /*.md
 **/.DS_Store
