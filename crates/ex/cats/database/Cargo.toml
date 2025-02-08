@@ -25,7 +25,7 @@ diesel-oci = "0.3.0"
 elasticsearch = "8.17.0-alpha.1"  # NOTE: alpha version
 heed = "0.21.0"
 lapin = "2.5.0"
-mongodb = "3.1.1"
+mongodb = { version = "3.1.1", optional = true }
 oracle = "0.6.3"
 postgres = "0.19.9"
 redis = "0.28.0"
@@ -54,4 +54,4 @@ sibyl = { version = "0.6.18", features = ["blocking"] }
 
 [features]
 # default = []
-# 
+mongodb = ["dep:mongodb"]
