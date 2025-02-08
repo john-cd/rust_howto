@@ -21,9 +21,8 @@ async fn main() -> Result<()> {
 
 use std::io::Write;
 
-// Requires network access
 #[test]
-fn test() -> anyhow::Result<()> {
+fn require_network() -> anyhow::Result<()> {
     if !std::fs::exists("temp")? {
         std::fs::create_dir("temp")?;
     }

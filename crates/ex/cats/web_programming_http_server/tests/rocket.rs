@@ -13,6 +13,6 @@
 // }
 
 // #[test]
-// fn test() {
+// fn require_network() {
 // }
 // // [P1](https://github.com/john-cd/rust_howto/issues/869)

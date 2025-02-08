@@ -76,9 +76,8 @@ fn main() { println!("hello world!");}
 }
 // ANCHOR_END: example
 
-// Requires network access
 #[test]
-fn test() {
+fn require_network() {
     println!("{:?}", main());
 }
 // [rest_post: rewrite so that a username and password are not required? (P1)](https://github.com/john-cd/rust_howto/issues/178)

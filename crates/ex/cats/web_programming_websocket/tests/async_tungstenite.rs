@@ -47,7 +47,7 @@
 // // ANCHOR_END: example
 
 // #[test]
-// fn test() {
+// fn require_network() {
 //     main();
 // }
 // [ P1 write; add to markdown; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

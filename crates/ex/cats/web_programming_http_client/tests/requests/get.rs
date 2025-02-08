@@ -16,9 +16,8 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// Requires network access
 #[test]
-fn test() -> anyhow::Result<()> {
+fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }

@@ -30,5 +30,5 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/812)
+// // [P2](https://github.com/john-cd/rust_howto/issues/812); require network??
 // // https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs

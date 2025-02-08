@@ -55,9 +55,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// Requires network access
 #[test]
-fn test() -> anyhow::Result<()> {
+fn require_network() -> anyhow::Result<()> {
     let res = main();
     println!("{:?}", res);
     res?;

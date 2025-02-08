@@ -21,7 +21,7 @@
 // }
 
 // #[test]
-// fn test() -> std::io::Result<()> {
+// fn require_network() -> std::io::Result<()> {
 //     main()?;
 //     Ok(())
 // }

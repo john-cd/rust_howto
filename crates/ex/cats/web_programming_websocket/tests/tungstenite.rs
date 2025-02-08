@@ -32,7 +32,7 @@
 // }
 
 // #[test]
-// fn test()  -> anyhow::Result<()> {
+// fn require_network()  -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }

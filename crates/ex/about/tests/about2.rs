@@ -12,7 +12,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn test() -> Result<()> {
+fn require_network() -> Result<()> {
     main()?;
     Ok(())
 }

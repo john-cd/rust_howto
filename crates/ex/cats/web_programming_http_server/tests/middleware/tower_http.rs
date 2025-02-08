@@ -87,7 +87,7 @@ async fn main() {
 // ANCHOR_END: example
 
 #[test]
-fn test() {
+fn require_network() {
     main();
 }
 // [P1 finish](https://github.com/john-cd/rust_howto/issues/871)
