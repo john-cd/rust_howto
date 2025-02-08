@@ -17,11 +17,11 @@ publish.workspace = true
 rand = { version = "0.9.0", features = ["thread_rng"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-image = "0.25.5"
+image = { version = "0.25.5", optional = true }
 opencv = { version = "0.94.1", features = [
     "clang-runtime",
-] } # requires `libopencv-dev` `clang` `libclang-dev`
+], optional = true } # requires `libopencv-dev` `clang` `libclang-dev`
 
 [features]
 # default = []
-# opencv = ["dep:opencv"]
+opencv = ["dep:opencv", "dep:image"]

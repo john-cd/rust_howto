@@ -1,5 +1,5 @@
 // `OpenCV` requires `clang`, which is not installed by default on Windows
-#![cfg(target_os = "linux")]
+#![cfg(all(target_os = "linux", feature = "opencv"))]
 // ANCHOR: example
 use std::fs;
 
