@@ -14,16 +14,16 @@ categories = [ "game_engines" ]
 publish.workspace = true
 
 [dependencies]
-bevy = "0.15.1"
-fyrox = "0.34.1"
-fyrox-core = "0.28.1"
+bevy = { version = "0.15.1", optional = true }
+fyrox = "0.36.0"
+fyrox-core = "0.36.0"
 # ggez = "0.9.3" # TODO P1 conflict with wgpu
 glam = "0.29.2"
 macroquad = "0.4.13"
 
 [features]
-#default = []
-#bevy = ["dep:bevy"]
+default = []
+bevy = ["dep:bevy"]
 #fyrox = ["dep:fyrox", "dep:fyrox-core"]
 #ggez = ["dep:ggez"]
 #macroquad = ["dep:macroquad"]
