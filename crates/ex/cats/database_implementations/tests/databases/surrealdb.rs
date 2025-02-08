@@ -1,102 +1,99 @@
-// // ANCHOR: example
+// ANCHOR: example
 // COMING SOON
-// // ANCHOR_END: example
-// use serde::Deserialize;
-// use serde::Serialize;
-// use surrealdb::RecordId;
-// use surrealdb::Result;
-// use surrealdb::Surreal;
-// // For an in-memory database
-// use surrealdb::engine::local::Mem;
-// use tokio;
-// // For a RocksDB file
-// // use surrealdb::engine::local::RocksDb;
+// ANCHOR_END: example
+use serde::Deserialize;
+use serde::Serialize;
+//use surrealdb::RecordId;
+use surrealdb::Result;
+// Database client instance for embedded or remote databases:
+use surrealdb::Surreal;
+// For an in-memory database:
+use surrealdb::engine::local::Mem;
+// For a RocksDB file:
+// use surrealdb::engine::local::RocksDb;
 
-// // SurrealDB is a scalable, distributed, collaborative, document-graph
-// // database for the realtime web.
+// SurrealDB is a scalable, distributed, collaborative,
+// document-graph database for the realtime web.
 
-// #[derive(Debug, Serialize, Deserialize)]
-// struct Person {
-//     name: String,
-//     age: u16,
-// }
+// The `surrealdb` crate can be used to start an embedded in-memory
+// datastore, an embedded datastore persisted to disk,
+// a browser-based embedded datastore backed by IndexedDB,
+// or for connecting to a distributed TiKV key-value store.
 
-// #[derive(Debug, Deserialize)]
-// struct Record {
-//     #[allow(dead_code)]
-//     id: RecordId,
-// }
+// Add `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
+// to `Cargo.toml` for an in-memory datastore.
 
-// #[tokio::main]
-// async fn main() -> Result<()> {
-//     // Initialize the SurrealDB instance.
-//     // The `surrealdb` crate can be used to start an embedded in-memory
-//     // datastore, an embedded datastore persisted to disk,
-//     // a browser-based embedded datastore backed by IndexedDB,
-//     // or for connecting to a distributed TiKV key-value store.
-//     // We added `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
-//     // to `Cargo.toml` to get an in-memory datastore:
-//     let db = Surreal::new::<Mem>(()).await?;
+// The document to store in the database
+#[derive(Debug, Serialize, Deserialize)]
+struct Person {
+    name: String, // or: Cow<'static, str>
+    age: u16,
+}
 
-//     // Create database connection using RocksDB
-//     // let db = Surreal::new::<RocksDb>("path/to/database-folder").await?;
+#[tokio::main]
+async fn main() -> Result<()> {
 
-//     // Select a namespace and database.
-//     db.use_ns("test").use_db("test").await?;
+    // Initialize a SurrealDB in-memory instance.
+    let db = Surreal::new::<Mem>(()).await?;
 
-//     // Create a record with a random ID
-//     let person: Option<Person> = db.create("person").await?;
+    // Alternatively, connect to a local endpoint:
+    // let db = Surreal::new::<Ws>("localhost:8000").await?;
+    // Or create database connection using RocksDB:
+    // let db = Surreal::new::<RocksDb>("path/to/database-folder").await?;
 
-//     // Uses the content() method for creating records
-//     let created: Option<Person> = db
-//         .create(("person", "john"))
-//         .content(Person {
-//             name: "John Doe".to_string(),
-//             age: 42,
-//         })
-//         .await?;
+    // Select a namespace and database.
+    db.use_ns("test_namespace").use_db("test_db").await?;
 
-//     println!("Created person: {:?}", created);
+    // Create a record with a specific ID
+    let created: Option<Person> = db
+        .create(("person", "John Doe"))
+        .content(Person {
+            name: "J. Doe".to_string(),
+            age: 42,
+        })
+        .await?;
 
-//     // Select all person records.
-//     let people: Vec<Person> = db.select("person").await?;
-//     println!("All people: {:?}", people);
+    println!("Created person: {:?}", created);
 
-//     // Find a specific person by name using a WHERE clause.
-//     // Demonstrates how to use query() with bindings to prevent SQL injection
-//     // vulnerabilities. Note that the .query() method is able to hold more
-//     // than one statement.
-//     let specific_person = db
-//         .query("SELECT * FROM person WHERE name = $name")
-//         .bind(("name", "John Doe"))
-//         .await?;
-//     println!("Specific person: {:?}", specific_person);
+    // Select all person records.
+    let people: Vec<Person> = db.select("person").await?;
+    println!("All people: {:?}", people);
 
-//     // Update a person's age.
-//     db
-//         .update(("person", "John Doe".to_string())) // Assumes name is unique
-// for simplicity. In real applications, use a proper ID.
-//         .content(Person {
-//             name: "John Doe".to_string(),
-//             age: 43,
-//         })
-//         .await?;
+    // Find a specific person by name using a WHERE clause.
+    // Demonstrates how to use `query()` with bindings to prevent SQL injection
+    // vulnerabilities. Note that the `query()` method is able to hold more
+    // than one statement.
+    let mut result = db
+        .query("SELECT * FROM person WHERE name = $name")
+        .bind(("name", "J. Doe"))
+        .await?;
 
-//     // Delete a person.
-//     let deleted: Option<Person> = db.delete(("person", "John Doe")).await?;
-//     println!("Deleted person: {:?}", deleted);
+    let people: Vec<Person> = result.take(0)?;
+    println!("Specific person: {:?}", people);
 
-//     // Check if the person exists after deletion.
-//     let people_after_delete: Vec<Person> = db.select("person").await?;
-//     println!("People after delete: {:?}", people_after_delete);
+    // Update a person's age.
+    let _updated: Option<Person> = db.update(("person", "John Doe"))
+    // Assumes that the name is unique for simplicity. In real applications, use a proper ID.
+        .content(Person {
+            name: "J. Doe".to_string(),
+            age: 43,
+        })
+        .await?;
 
-//     Ok(())
-// }
+    // Delete a person.
+    let deleted: Option<Person> = db.delete(("person", "John Doe")).await?;
+    println!("Deleted person: {:?}", deleted);
 
-// #[test]
-// fn test() -> Result<()> {
-//     main()?;
-//     Ok(())
-// }
+    // Check if the person exists after deletion.
+    let people_after_delete: Vec<Person> = db.select("person").await?;
+    println!("People after delete: {:?}", people_after_delete);
 
-// [ P1 finish the example](https://github.com/john-cd/rust_howto/issues/1025)
+    Ok(())
+}
+
+#[test]
+fn test() -> Result<()> {
+    main()?;
+    Ok(())
+}
+// TODO P1 https://surrealdb.com/docs/
