@@ -30333,6 +30333,7 @@ dependencies = [
 name = "web_programming_websocket"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "async-tungstenite",
  "futures-util",
  "tokio",

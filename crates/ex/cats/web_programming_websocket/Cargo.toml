@@ -14,10 +14,11 @@ categories = ["web_programming_websocket"]
 publish.workspace = true
 
 [dependencies]
-tungstenite = "0.26.0"
-tokio-tungstenite = "0.26.1"
 async-tungstenite = { version = "0.28.2", features = ["tokio-runtime", "tokio-native-tls"] }
+tokio-tungstenite = "0.26.1"
+tungstenite = "0.26.0"
 
 ## General
-tokio = { version = "1.43.0", features = ["full"] }
+anyhow = "1.0.95"
 futures-util = "0.3.31"
+tokio = { version = "1.43.0", features = ["full"] }
