@@ -10,7 +10,7 @@ static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
         // By default, Tera will auto-escape all content in files ending with
         // ".html", ".htm" and ".xml". Change with `autoescape_on`:
         // t.autoescape_on(vec![".html"]);
-        // Add filters here, for example:
+        // Also add filters here, for example:
         t.register_filter("underscored", underscored);
         t
     })
@@ -18,7 +18,8 @@ static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
 
 // Filters are functions with the
 // fn(Value, HashMap<String, Value>) -> Result<Value>
-// definition. The following replaces dashes by underscores.
+// definition, which can be used within templates.
+// The following replaces dashes by underscores.
 pub fn underscored(
     val: &tera::Value,
     _context: &HashMap<String, tera::Value>,
@@ -68,4 +69,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/847)
