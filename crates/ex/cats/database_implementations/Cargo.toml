@@ -17,7 +17,7 @@ publish.workspace = true
 meilisearch-sdk = "0.27.1"
 sled = "0.34.7"
 surrealdb = { version = "2.1.4", features = ["kv-mem"], optional = true }
-tantivy = "0.22.0"
+tantivy = { version = "0.22.0", optional = true }
 
 ## General
 anyhow = "1.0.95"
@@ -27,3 +27,4 @@ tokio = { version = "1.43.0", features = ["full"] }
 [features]
 # default = []
 surrealdb = ["dep:surrealdb"]
+tantivy = ["dep:tantivy"]

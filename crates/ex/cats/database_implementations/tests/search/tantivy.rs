@@ -1,3 +1,4 @@
+#![cfg(feature = "tantivy")]
 // ANCHOR: example
 use tantivy::DocAddress;
 use tantivy::Index;
