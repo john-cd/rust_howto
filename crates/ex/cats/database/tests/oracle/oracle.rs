@@ -53,14 +53,8 @@ async fn main() -> Result<(), Error> {
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         // Refer to the compose*.yaml files
-        std::env::set_var(
-            "ORACLE_DB_USERNAME",
-            "sysdba",
-        );
-        std::env::set_var(
-            "ORACLE_DB_PASSWORD",
-            "Oracle_123",
-        );
+        std::env::set_var("ORACLE_DB_USERNAME", "sysdba");
+        std::env::set_var("ORACLE_DB_PASSWORD", "Oracle_123");
         std::env::set_var(
             "ORACLE_DB_URL",
             "rust_howto_dev-oracle-1:1521/ORCLCDB",

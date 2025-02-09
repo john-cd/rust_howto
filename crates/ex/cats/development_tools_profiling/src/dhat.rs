@@ -79,7 +79,6 @@ pub fn main() {
 // check that they allocated as much heap memory as you expected.
 #[test]
 fn heap_usage_testing() {
-
     // `testing()` allows the use of dhat::assert! and related macros,
     // and disables saving of profile data on Profiler drop.
     let _profiler = dhat::Profiler::builder().testing().build();

@@ -14,7 +14,8 @@ use tokio_util::compat::TokioAsyncWriteCompatExt;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let host = std::env::var("MSSQL_HOST").unwrap_or_else(|_| "localhost".into());
+    let host =
+        std::env::var("MSSQL_HOST").unwrap_or_else(|_| "localhost".into());
     // Configure connection to SQL Server
     let mut config = Config::new();
     config.host(host);
@@ -64,10 +65,7 @@ async fn main() -> anyhow::Result<()> {
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         // Refer to the compose*.yaml files
-        std::env::set_var(
-            "MSSQL_HOST",
-            "rust_howto_dev-mssql-1",
-        );
+        std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
     }
     main()?;
     Ok(())

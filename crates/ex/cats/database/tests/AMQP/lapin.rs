@@ -13,12 +13,10 @@ use lapin::types::FieldTable;
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to RabbitMQ server
-    let addr = std::env::var("AMQP_ADDR").unwrap_or_else(|_| "amqp://127.0.0.1:5672".into());
-    let conn = Connection::connect(
-        &addr,
-        ConnectionProperties::default(),
-    )
-    .await?;
+    let addr = std::env::var("AMQP_ADDR")
+        .unwrap_or_else(|_| "amqp://127.0.0.1:5672".into());
+    let conn =
+        Connection::connect(&addr, ConnectionProperties::default()).await?;
     // Main entry point for most AMQP operations.
     // Channel serves as a "lightweight connection"
     // and can be obtained from a Connection
@@ -28,7 +26,9 @@ async fn main() -> anyhow::Result<()> {
     let _queue: Queue = channel
         .queue_declare(
             "my_queue",
-            QueueDeclareOptions::default(), // Whether the queue is passive, durable, exclusive, auto_delete...
+            QueueDeclareOptions::default(), /* Whether the queue is passive,
+                                             * durable, exclusive,
+                                             * auto_delete... */
             FieldTable::default(), // a Map<String, AMQPValue>
         )
         .await?;
@@ -37,7 +37,7 @@ async fn main() -> anyhow::Result<()> {
     let message = "Hello from Rust!";
     channel
         .basic_publish(
-            "", // exchange
+            "",         // exchange
             "my_queue", // routing key
             BasicPublishOptions::default(),
             message.as_bytes(),

@@ -21,7 +21,8 @@ struct MyDocument {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client
-    let url = std::env::var("ELASTIC_URL").unwrap_or_else(|_| "http://localhost:9200".into());
+    let url = std::env::var("ELASTIC_URL")
+        .unwrap_or_else(|_| "http://localhost:9200".into());
     let transport = Transport::single_node(&url)?;
     let client = Elasticsearch::new(transport);
     // OR: let client = Elasticsearch::default();
