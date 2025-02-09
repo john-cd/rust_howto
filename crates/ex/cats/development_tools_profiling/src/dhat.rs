@@ -21,7 +21,6 @@
 // allocator and tracks all heap allocations.
 // We set `dhat::Alloc` as the global allocator
 // using the #[global_allocator] attribute.
-#[cfg(feature = "dhat-heap")]
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
 
@@ -80,9 +79,9 @@ pub fn main() {
 // check that they allocated as much heap memory as you expected.
 #[test]
 fn heap_usage_testing() {
-    #[global_allocator]
-    static ALLOC: dhat::Alloc = dhat::Alloc;
 
+    // `testing()` allows the use of dhat::assert! and related macros,
+    // and disables saving of profile data on Profiler drop.
     let _profiler = dhat::Profiler::builder().testing().build();
 
     let _v1: Vec<i32> = vec![1, 2, 3, 4];
