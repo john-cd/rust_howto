@@ -35,16 +35,22 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/
+            ~/.cargo/binstall/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
+            /usr/local/cargo/bin/
+            /usr/local/cargo/binstall/
+            /usr/local/cargo/registry/index/
+            /usr/local/cargo/registry/cache/
+            /usr/local/cargo/git/db/
             /cargo-target-rust_howto/
             target/
-          key: rusthowto-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: rust_howto-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            rusthowto-${{ runner.os }}-cargo-
+            rust_howto-${{ runner.os }}-cargo-
 
-      # - name: Install `protoc` and `jq`
+      # - name: Install `protoc` and `jq` (winget)
       #   run: |
       #     winget install protobuf --force --accept-package-agreements --accept-source-agreements --silent
       #     winget install jqlang.jq --force --accept-package-agreements --accept-source-agreements --silent
