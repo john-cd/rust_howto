@@ -1,3 +1,4 @@
+#![cfg(feature = "arrow")]
 // ANCHOR: example
 
 use std::sync::Arc;

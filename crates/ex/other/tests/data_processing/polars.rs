@@ -1,3 +1,4 @@
+// #![cfg(feature = "polars")]
 // // ANCHOR: example
 // COMING SOON
 // // ANCHOR_END: example
