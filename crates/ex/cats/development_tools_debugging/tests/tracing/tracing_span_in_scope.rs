@@ -9,7 +9,7 @@ use tracing_subscriber;
 
 async fn my_async_function() {
     // Constructs a span at the info level:
-    let span = info_span!("my_async_function");
+    let span = info_span!("my_async_function_scope");
     // The above is equivalent to:
     // span!(Level::INFO, "my_async_function");
 
@@ -35,19 +35,18 @@ async fn my_async_function() {
         // If we yield here, the span will be exited,
         // and re-entered when we resume.
         some_other_async_function().await;
+        info!("I'm still in the span!");
     }
     .instrument(span) // Instrument the async block with the span...
     .await; // ...and await it.
 
     // We can also instrument an async function call.
     let _some_value = some_other_async_function()
-        .instrument(debug_span!("some_other_async_function"))
+        .instrument(debug_span!("some_other_async_function_scope"))
         .await;
 }
 
-async fn some_other_async_function() {
-    info!("I'm in some_other_async_function!");
-}
+async fn some_other_async_function() {}
 
 #[tokio::main]
 async fn main() {
@@ -62,4 +61,3 @@ async fn main() {
 fn test() {
     main();
 }
-// [tracing_span_in_scope: does it print? (P0)](https://github.com/john-cd/rust_howto/issues/158)
