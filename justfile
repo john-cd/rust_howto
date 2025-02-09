@@ -9,59 +9,68 @@ _default:
   @just --list --unsorted --justfile {{ justfile() }}
 #@just --choose
 
-# Format all bin and lib files using rustfmt
+# Format all bin and lib files
 f:
   @just code fmt
 
-# Format all packages, and also their local path-based dependencies
+# Format all packages and their local path-based dependencies
 fa:
   @just code fmtall
 
-# Format all bin and lib files of the current crate using rustfmt
+# Format the current crate
 [no-cd]
 fc:
   @just code fmtcurrent
 
-# Alias for code check
+# Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
-c:
-  @just code check
+ckc:
+  @just code checkcurrent
 
-# Alias for code buildcurrent
+# Check all code (all packages, all features)
+[no-cd]
+cka:
+  @just code checkall
+
+# Build the package in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
 bc:
   @just code buildcurrent
 
-# Alias for code buildpkg
+# Build a specific package (all features)
 bp pkg:
   @just code buildpkg {{pkg}}
 
-# Alias for code build
+# Build just the code used by the book (default packages, default features)
 b:
   @just code build
 
-# Alias for code buildall
+# Build just the code used by the book (default packages, all features)
+bf:
+  @just code buildfeat
+
+# Build all packages (all features)
 ba:
   @just code buildall
 
-# Alias for code clippyall
+# Scan all code for common mistakes (all packages, all features)
 ca:
   @just code clippyall
 
-# Alias for code nextest
-nt:
-  @just code nextest
-
-# Alias for code nextestall
-nta:
-  @just code nextestall
-
-# Alias for code nextestcurrent
+# Test in the current directory (or the default packages of the workspace if in the root) (all features)
 [no-cd]
 ntc:
   @just code nextestcurrent
 
-# # Alias for code testall
+# Test the code used by the book (no doctests) (default packages, default features)
+nt:
+  @just code nextest
+
+# Test all code in the workspace (incl. doctests) (all features)
+nta:
+  @just code nextestall
+
+## Test all code (all packages, all features)
 # ta:
 #   @just code testall
 

@@ -2,14 +2,14 @@
 set -euo pipefail
 
 # Run additional examples (under the `crates/xmpl` folder)
-# Usage: /code/scripts/runall.sh
+# Usage: /code/scripts/runall.sh <root_folder>
 
 set -o pipefail
 set -e
 
-root="/code/"
+root="$(realpath $1)/"
 # Create a list of the (last part of) folder names under the `crates/xmpl` directory, space separated
-xmpl=$(find ${root}/crates/xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
+xmpl=$(find ${root}crates/xmpl -mindepth 1 -maxdepth 1 -type d | awk -F'/' '{print $(NF)}' | tr '\n' ' ')
 
 # Run additional examples in the xmpl folder, if any
 for d in $xmpl; do ( echo $d; cargo run --package $d --locked ); done
