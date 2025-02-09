@@ -6,32 +6,22 @@
 # https://awesome-docker-compose.com
 #
 services:
-  # https://hub.docker.com/_/redis
-  redis:
-    image: redis:alpine
-    restart: always
-    # command: redis-server --requirepass yourpassword # or edit redis.conf
-    expose:
-      - 6379
 
-  postgres:
-    image: postgres:alpine
+  amqp:
+    image: rabbitmq:management
     environment:
-      - POSTGRES_PASSWORD=mysecretpassword
-      - POSTGRES_DB=library
-    restart: always
-    volumes:
-      - db_data:/var/lib/postgresql/data
-    expose:
-      - 5432
-
-  meilisearch:
-    image: getmeili/meilisearch:v1.12.0
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
     ports:
-      - 7700:7700
-    volumes:
-      - ./meili_data:/meili_data
-    restart: unless-stopped
+      - "5672:5672"
+      - "15672:15672"
+
+  cassandra:
+    image: cassandra
+    ports:
+      - 9042:9042
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra_infra
 
   elasticsearch:
     image: elasticsearch:7.16.1
@@ -51,6 +41,14 @@ services:
       timeout: 10s
       retries: 3
 
+  meilisearch:
+    image: getmeili/meilisearch:v1.12.0
+    ports:
+      - 7700:7700
+    volumes:
+      - ./meili_data:/meili_data
+    restart: unless-stopped
+
   # https://hub.docker.com/_/mongo
   mongodb:
     image: mongo
@@ -63,6 +61,42 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
       - MONGO_INITDB_ROOT_PASSWORD=mysecretpassword
+
+  mssql:
+    image: "mcr.microsoft.com/mssql/server"
+    ports:
+        - 1433:1433
+    environment:
+        SA_PASSWORD: "password123!"
+        ACCEPT_EULA: "Y"
+
+  oracle:
+    image: container-registry.oracle.com/database/enterprise:latest
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_PWD=Oracle_123
+    ports:
+      - 1521:1521
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=library
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+  # https://hub.docker.com/_/redis
+  redis:
+    image: redis:alpine
+    restart: always
+    # command: redis-server --requirepass yourpassword # or edit redis.conf
+    expose:
+      - 6379
 
 volumes:
   db_data: {}

@@ -1,7 +1,4 @@
 // ANCHOR: example
-
-// AMQP client library
-
 use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;
@@ -11,26 +8,27 @@ use lapin::Queue;
 use lapin::options::*;
 use lapin::types::FieldTable;
 
+// AMQP client library for e.g. RabbitMQ
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to RabbitMQ server
-    // let addr = std::env::var("AMQP_ADDR").unwrap_or_else(|_|
-    // "amqp://127.0.0.1:5672/%2f".into());
+    let addr = std::env::var("AMQP_ADDR").unwrap_or_else(|_| "amqp://127.0.0.1:5672".into());
     let conn = Connection::connect(
-        "amqp://localhost/",
+        &addr,
         ConnectionProperties::default(),
     )
     .await?;
     // Main entry point for most AMQP operations.
-    // Channel serves as a "lightweight connection" and can be obtained from a
-    // Connection
+    // Channel serves as a "lightweight connection"
+    // and can be obtained from a Connection
     let channel: Channel = conn.create_channel().await?;
 
     // Declare a queue
     let _queue: Queue = channel
         .queue_declare(
             "my_queue",
-            QueueDeclareOptions::default(),
+            QueueDeclareOptions::default(), // Whether the queue is passive, durable, exclusive, auto_delete...
             FieldTable::default(), // a Map<String, AMQPValue>
         )
         .await?;
@@ -39,8 +37,8 @@ async fn main() -> anyhow::Result<()> {
     let message = "Hello from Rust!";
     channel
         .basic_publish(
-            "",
-            "my_queue",
+            "", // exchange
+            "my_queue", // routing key
             BasicPublishOptions::default(),
             message.as_bytes(),
             BasicProperties::default(),
@@ -71,6 +69,8 @@ async fn main() -> anyhow::Result<()> {
 
         // Acknowledge the message (i.e., the message is removed from the queue)
         delivery.ack(BasicAckOptions::default()).await?;
+        // In this exmample, we quit after the first and only message.
+        break;
     }
 
     Ok(())
@@ -79,6 +79,13 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the compose*.yaml files
+        std::env::set_var(
+            "AMQP_ADDR",
+            "amqp://guest:guest@rust_howto_dev-amqp-1:5672",
+        );
+    }
     main()?;
     Ok(())
 }

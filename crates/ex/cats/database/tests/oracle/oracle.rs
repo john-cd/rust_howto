@@ -51,7 +51,23 @@ async fn main() -> Result<(), Error> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the compose*.yaml files
+        std::env::set_var(
+            "ORACLE_DB_USERNAME",
+            "sysdba",
+        );
+        std::env::set_var(
+            "ORACLE_DB_PASSWORD",
+            "Oracle_123",
+        );
+        std::env::set_var(
+            "ORACLE_DB_URL",
+            "rust_howto_dev-oracle-1:1521/ORCLCDB",
+        );
+    }
     main()?;
     Ok(())
 }
-// [ P2 finish; add heavy test](https://github.com/john-cd/rust_howto/issues/1021)
+// [P2 need to fix heavy test](https://github.com/john-cd/rust_howto/issues/1021)
+// https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html

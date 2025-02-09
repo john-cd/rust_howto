@@ -21,7 +21,8 @@ struct MyDocument {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client
-    let transport = Transport::single_node("http://localhost:9200")?;
+    let url = std::env::var("ELASTIC_URL").unwrap_or_else(|_| "http://localhost:9200".into());
+    let transport = Transport::single_node(&url)?;
     let client = Elasticsearch::new(transport);
     // OR: let client = Elasticsearch::default();
 
@@ -134,7 +135,14 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the compose*.yaml files
+        std::env::set_var(
+            "ELASTIC_URL",
+            "http://rust_howto_dev-elasticsearch-1:9200",
+        );
+    }
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/710) validate full heavy test
+// [P0](https://github.com/john-cd/rust_howto/issues/710) fix heavy test; secure the connection;

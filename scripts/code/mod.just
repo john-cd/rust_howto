@@ -162,7 +162,7 @@ alias r := run
 
 ## ---- HEAVY TESTS -----------------------------------
 
-# Run tests using an external service: elasticsearch meilisearch mongodb postgres redis
+# Run tests using an external service: amqp cassandra elasticsearch meilisearch mongodb mssql postgres redis
 [group('heavy tests')]
 [unix]
 @heavy_test feature:
@@ -176,7 +176,7 @@ heavytestall:
   #! /bin/bash
   set -euo pipefail
   echo "Run all tests that require external services"
-  for feature in "redis" "postgres" "elasticsearch" "meilisearch" "mongodb"
+  for feature in "amqp" "cassandra" "elasticsearch" "meilisearch" "mongodb" "mssql" "postgres" "redis"
   do
     echo ">> $feature"
     just code heavy_test ${feature}

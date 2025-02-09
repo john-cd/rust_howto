@@ -43,7 +43,7 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-fn require_external_svc() {
+fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
         // Refer to the compose*.yaml files
         env::set_var(
@@ -51,5 +51,6 @@ fn require_external_svc() {
             "mongodb://mongoadmin:mysecretpassword@rust_howto_dev-mongodb-1:27017/",
         );
     }
-    main().unwrap();
+    main()?;
+    Ok(())
 }

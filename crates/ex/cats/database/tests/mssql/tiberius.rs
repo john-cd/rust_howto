@@ -14,11 +14,12 @@ use tokio_util::compat::TokioAsyncWriteCompatExt;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    let host = std::env::var("MSSQL_HOST").unwrap_or_else(|_| "localhost".into());
     // Configure connection to SQL Server
     let mut config = Config::new();
-    config.host("localhost"); // Change this to your SQL Server's host
-    // config.port(1433);
-    config.authentication(AuthMethod::sql_server("sa", "your_password"));
+    config.host(host);
+    config.port(1433);
+    config.authentication(AuthMethod::sql_server("sa", "password123!"));
     config.database("master"); // You can change this to your database name
 
     // Open a connection to SQL Server
@@ -61,7 +62,14 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        // Refer to the compose*.yaml files
+        std::env::set_var(
+            "MSSQL_HOST",
+            "rust_howto_dev-mssql-1",
+        );
+    }
     main()?;
     Ok(())
 }
-// [ P2 need heavy test](https://github.com/john-cd/rust_howto/issues/1019)
+// [P2 fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)
