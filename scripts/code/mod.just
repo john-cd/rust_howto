@@ -123,7 +123,7 @@ current_crate := file_name(invocation_directory())
 
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 @nextestcurrent: _clean_temp_dir && _clean_temp_dir
-  echo "Test in the current directory (or the default packages of the workspace if in the root) (all features)"
+  echo "Test in $(pwd) (all features)"
   cargo nextest run --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
 
 alias nt := nextest
@@ -132,8 +132,8 @@ alias nt := nextest
 nextest: _clean_temp_dir && _clean_temp_dir
   #! /bin/bash
   set -euo pipefail
-  echo "Test the code used by the book (no doctests) (default packages, default features)"
   cd {{justfile_directory()}}
+  echo "Test the code under $(pwd) (no doctests, default packages, default features)"
   cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
