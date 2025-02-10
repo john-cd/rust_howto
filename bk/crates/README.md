@@ -5,8 +5,6 @@ This folder contains the Rust example code that is embedded into the book.
 ## Layout
 
 crates
-|
-├── ex
     ├── about
     ├── categories
         ├── <crate named after the first letters of categories>
