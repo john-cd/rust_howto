@@ -1,0 +1,5 @@
+book/
+doctest_cache/
+
+# URL verification cache
+.lycheecache
