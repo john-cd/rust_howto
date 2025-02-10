@@ -60,7 +60,7 @@ async fn main() -> anyhow::Result<()> {
 
     // Process messages
     println!("Waiting for messages...");
-    while let Some(delivery) = consumer.next().await {
+    if let Some(delivery) = consumer.next().await {
         let delivery = delivery?;
         println!(
             "Received message: {:?}",
@@ -69,8 +69,8 @@ async fn main() -> anyhow::Result<()> {
 
         // Acknowledge the message (i.e., the message is removed from the queue)
         delivery.ack(BasicAckOptions::default()).await?;
-        // In this exmample, we quit after the first and only message.
-        break;
+        // In this example, we quit after the first and only message.
+        // In real life, use `while let`.
     }
 
     Ok(())
@@ -89,4 +89,3 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [ P2 write; https://lib.rs/crates/lapin](https://github.com/john-cd/rust_howto/issues/1015)

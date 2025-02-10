@@ -5,7 +5,6 @@ use tracing::Instrument;
 use tracing::debug_span;
 use tracing::info;
 use tracing::info_span;
-use tracing_subscriber;
 
 async fn my_async_function() {
     // Constructs a span at the info level:
