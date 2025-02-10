@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # Create reference-style links and reference definitions, which can be used to replace bare URLs in the Markdown

@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -eu
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks

@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...

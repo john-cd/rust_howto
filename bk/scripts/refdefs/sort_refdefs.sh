@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # Usage: ./scripts/refdefs/sort_refdefs.sh <root folder>

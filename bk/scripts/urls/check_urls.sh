@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).

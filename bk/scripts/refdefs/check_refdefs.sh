@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # List links without corresponding reference definitions and vice versa

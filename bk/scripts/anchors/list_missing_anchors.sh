@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -eu
 
 # List book headings that do not have an anchor (e.g. {#some-text} after the heading).

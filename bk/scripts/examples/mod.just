@@ -20,7 +20,7 @@ _default:
 # List examples (.rs files) in `crates/**/tests` that were not included into a module somehow and that are therefore not tested
 [unix]
 list_not_tested:
-    #! /bin/bash
+    #!/usr/bin/env bash
     root="{{root}}/"
     comm -1 -3 <(find "${root}crates/ex" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
           <(find "${root}crates/ex" -type f -wholename "*/tests/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)

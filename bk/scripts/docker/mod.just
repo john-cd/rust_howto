@@ -10,7 +10,7 @@ _default:
 [group('push')]
 [unix]
 push_ci:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   ## Access private images in DockerHub
   docker login
@@ -27,7 +27,7 @@ push_ci:
 # List containers / Docker Compose services
 [unix]
 list_services:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   d="{{root}}/.devcontainer/"
   docker compose -f ${d}compose.yaml \
@@ -37,7 +37,7 @@ list_services:
 
 #[unix]
 #down:
-#  #! /bin/bash
+#  #!/usr/bin/env bash
 #  set -euo pipefail
 #  d="{{root}}/.devcontainer/"
 #  docker compose -f ${d}compose.yaml \

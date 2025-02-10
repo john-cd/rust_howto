@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # Identify duplicated URLs (noting that they can't always be avoided).

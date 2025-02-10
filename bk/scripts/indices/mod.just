@@ -45,7 +45,7 @@ generate_language_index:
 # Generate the summary references for the dev tool category
 [unix]
 generate_dev_tools_refdefs:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   root="{{root}}/src/categories/development-tools/"
   mv -f ${root}refs.incl.md ${root}refs.incl.md.bak

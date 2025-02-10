@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -euo pipefail
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes

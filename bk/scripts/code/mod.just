@@ -12,7 +12,7 @@ alias f := fmt
 
 # Format all bin and lib files
 fmt:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   echo "Formatting {{root}}"
   cd {{root}}
@@ -68,7 +68,7 @@ alias b := build
 
 # Build just the code used by the book (default packages, default features)
 build:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   echo "Build default packages (default features) in $(pwd)"
   cd {{root}}
@@ -132,7 +132,7 @@ alias nt := nextest
 
 # Test the code used by the book (no doctests) (default packages, default features)
 nextest: _clean_temp_dir && _clean_temp_dir
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   cd {{root}}
   echo "Test the code under $(pwd) (no doctests, default packages, default features)"
@@ -175,7 +175,7 @@ alias r := run
 [group('heavy tests')]
 [unix]
 heavytestall:
-  #! /bin/bash
+  #!/usr/bin/env bash
   set -euo pipefail
   echo "Run all tests that require external services"
   for feature in "amqp" "cassandra" "elasticsearch" "meilisearch" "mongodb" "mssql" "postgres" "redis"
@@ -189,7 +189,7 @@ heavytestall:
 #[group('heavy tests')]
 #[unix]
 #test_redis_conn:
-#  #! /bin/bash
+#  #!/usr/bin/env bash
 #  set -euo pipefail
 #  echo "Test the Redis connection"
 #  d="{{root}}/.devcontainer/"
@@ -203,7 +203,7 @@ heavytestall:
 # [group('heavy tests')]
 # [unix]
 # test_mongo_conn:
-#   #! /bin/bash
+#   #!/usr/bin/env bash
 #   set -euo pipefail
 #   echo "Test the Mongo connection"
 #   d="{{root}}/.devcontainer/"

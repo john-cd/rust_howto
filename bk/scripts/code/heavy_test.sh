@@ -1,4 +1,4 @@
-#! /bin/bash
+ #!/usr/bin/env bash
 set -uo pipefail
 
 root="$(realpath $1)/"
