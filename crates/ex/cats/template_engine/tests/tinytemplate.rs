@@ -3,12 +3,25 @@ use std::collections::HashMap;
 
 use tinytemplate::TinyTemplate;
 
+// TinyTemplate is a minimal templating library.
+// It was designed with the assumption that the templates are available as
+// static strings, either using string literals or the `include_str!` macro.
+// Although it is possible to use TinyTemplate with template
+// strings loaded at runtime, this is not recommended.
+// TinyTemplate can only render templates into Strings, not socket or file.
+
 fn main() {
     // Create a new template engine
     let mut tt = TinyTemplate::new();
 
-    // Define a template string with placeholders
-    let template = "Hello, {name}! Welcome to {place}.";
+    // Define a template string with {placeholders}
+    let template = "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
+    // Syntax:
+    // Rendering values - { myvalue }
+    // Conditionals - {{ if foo }}Foo is true{{ else }}Foo is false{{ endif }}
+    // Loops - {{ for value in row }}{value}{{ endfor }}
+    // Customizable value formatters { value | my_formatter }
+    // Macros {{ call my_template with foo }}
 
     // Add the template to the engine with a name
     tt.add_template("greeting", template)
@@ -18,6 +31,7 @@ fn main() {
     let mut context = HashMap::new();
     context.insert("name", "Alice");
     context.insert("place", "Rustland");
+    context.insert("flag", "true");
 
     // Render the template with the context
     let rendered = tt
@@ -33,4 +47,3 @@ fn main() {
 fn test() {
     main();
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/848)
