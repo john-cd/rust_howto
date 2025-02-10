@@ -12,7 +12,7 @@ description = "A documentation summary and a compendium of snippets and recipes 
 documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/xmpl/"
-license-file = "../LICENSE"
+license = "CC0-1.0"
 keywords = [
     "patterns",
     "cookbook",

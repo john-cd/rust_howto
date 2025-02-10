@@ -11,6 +11,7 @@ repository = "https://github.com/john-cd/rust_howto/playground/"
 keywords = []
 categories = []
 publish = false
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 #anyhow = "1.0.95"
