@@ -1,14 +1,16 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := justfile_directory()
+
 _default:
   @just --list gh --unsorted --justfile {{justfile()}}
 #@just --choose
 
-login:
+@login:
   gh auth login
 
 # Create a GH issue with a title and an empty body
-issue title:
+@issue title:
   gh issue create --title {{title}} --body ''
 
 # Return a list of GitHub issues with the same title
@@ -25,10 +27,10 @@ create_issues_for_markdown:
   #! /bin/bash
   set -euo pipefail
   IFS=$'\n\t'
-  for file in $(find {{justfile_directory()}}/src {{justfile_directory()}}/drafts -type f -name "*.md" -not -name "*refs.md")
+  for file in $(find {{root}}/src {{root}}/drafts -type f -name "*.md" -not -name "*refs.md")
   do
     base=$(basename $file '.md')
-    rel=$(realpath --relative-to={{justfile_directory()}} $file)
+    rel=$(realpath --relative-to={{root}} $file)
     echo ">> $rel"
     ## extract TODO P0/1/2/3 ...
     for todo in $(grep -Eoh '\s*TODO\s*(P[0-9])?:?\s+.*$' $file)
@@ -48,10 +50,10 @@ create_issues_for_examples:
   #! /bin/bash
   set -euo pipefail
   IFS=$'\n\t'
-  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
+  for file in $(find {{root}} -type f -name "*.rs" )
   do
     base=$(basename $file)
-    rel=$(realpath --relative-to={{justfile_directory()}}/crates/ex $file)
+    rel=$(realpath --relative-to={{root}}/crates/ex $file)
     echo ">> $rel"
     for todo in $(sed -nE 's~^ *// *TODO(.*)$~\1~pg' $file)
     do
@@ -84,14 +86,14 @@ create_issues_for_examples:
 #  #! /bin/bash
 #  set -euo pipefail
 #  IFS=$'\t\n'
-#  for file in $(find {{justfile_directory()}} -type f -name "*.md")
+#  for file in $(find {{root}} -type f -name "*.md")
 #  do
 #    base=$(basename $file '.md')
 #    if [ $base == "_index" ] || [ $base == "index" ]; then
 #     echo ">> ${file} SKIP"
 #     continue
 #    fi
-#    rel=$(realpath --relative-to={{justfile_directory()}} $file )
+#    rel=$(realpath --relative-to={{root}} $file )
 #    echo ">> $rel"
 #    ## extract strings after TODO P0/1/2/3...
 #    for todo in $(sed -nE -e 's~^\s*TODO\s*(P[0-9])?:?\s*([^[]+?)$~\2~pg' $file )
@@ -114,10 +116,10 @@ add_gh_links_to_code:
   #! /bin/bash
   set -euo pipefail
   IFS=$'\t\n'
-  for file in $(find {{justfile_directory()}} -type f -name "*.rs")
+  for file in $(find {{root}} -type f -name "*.rs")
   do
     base=$(basename $file)
-    rel=$(realpath --relative-to={{justfile_directory()}} $file )
+    rel=$(realpath --relative-to={{root}} $file )
     echo ">> $rel"
     ## Search for GitHub issue(s) that match the string
     ## https://pkg.go.dev/text/template
@@ -134,7 +136,7 @@ add_gh_links_to_code:
 #  #! /bin/bash
 #  set -euo pipefail
 #  IFS=$'\t\n'
-#  for file in $(find {{justfile_directory()}} -type f -name "*.rs")
+#  for file in $(find {{root}} -type f -name "*.rs")
 #  do
 #    echo $file
 #    #sed -nr '$!N;/^(.*)\n\1$/!P;D' $file > /tmp/temp.rs
@@ -149,7 +151,7 @@ add_gh_links_to_code:
 #  #! /bin/bash
 #  set -euo pipefail
 #  IFS=$'\n\t'
-#  for file in $(find {{justfile_directory()}} -type f -name "*.rs" )
+#  for file in $(find {{root}} -type f -name "*.rs" )
 #  do
 #   cat <(grep -vE '\s*//\s*\[.*' $file) <(grep -E '\s*//\s*\[.*' $file) > /tmp/temp.rs
 #   mv -f /tmp/temp.rs $file

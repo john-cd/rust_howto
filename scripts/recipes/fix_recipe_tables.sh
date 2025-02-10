@@ -8,9 +8,9 @@ set -euo pipefail
 # Manual editing of the table is still necessary afterwards.
 # Use after updating `refs.incl.md`.
 #
-# Usage: /code/scripts/recipe_tables/fix_recipe_tables.sh
+# Usage: ./scripts/recipe_tables/fix_recipe_tables.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 # Iterate through subchapters
 for file in $(find ${root}src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do

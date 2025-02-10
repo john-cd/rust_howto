@@ -3,7 +3,9 @@ set -euo pipefail
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 
-for file in $(find . -type f \( -name "*.md" -not -name "SUMMARY.md" \) )
+root="$(realpath $1)/"
+
+for file in $(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" \) )
 do
   #echo ">> $file"
   sed -E -i 's~\[(`)?([^`]+?)(`)?\]\((.+?)\)~[\1\2\3][\L\2] \n[\2]: \4\n~g' $file

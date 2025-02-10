@@ -1,5 +1,7 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := justfile_directory()
+
 _default:
   @just --list docker --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -12,14 +14,14 @@ push_ci:
   set -euo pipefail
   ## Access private images in DockerHub
   docker login
-  d="{{justfile_directory()}}/.devcontainer/"
+  d="{{root}}/.devcontainer/"
   cd ${d}
   docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
   ## OR: docker compose -f compose.yaml -f compose-ci.yaml build --pull --push
 
 # Push the development Docker image to DockerHub.
 [group('push')]
-push_dev:
+@push_dev:
   docker push johncd/rust_howto_dev:latest
 
 # List containers / Docker Compose services
@@ -27,7 +29,7 @@ push_dev:
 list_services:
   #! /bin/bash
   set -euo pipefail
-  d="{{justfile_directory()}}/.devcontainer/"
+  d="{{root}}/.devcontainer/"
   docker compose -f ${d}compose.yaml \
     -f ${d}compose.override.yaml \
     -f ${d}compose-heavy-tests.yaml \
@@ -37,7 +39,7 @@ list_services:
 #down:
 #  #! /bin/bash
 #  set -euo pipefail
-#  d="{{justfile_directory()}}/.devcontainer/"
+#  d="{{root}}/.devcontainer/"
 #  docker compose -f ${d}compose.yaml \
 #    -f ${d}compose.override.yaml \
 #    -f ${d}compose-heavy-tests.yaml down

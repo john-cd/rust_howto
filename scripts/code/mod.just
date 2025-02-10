@@ -1,5 +1,7 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := justfile_directory()
+
 _default:
   @just --list code --unsorted --justfile {{justfile()}}
 #@just --choose
@@ -13,7 +15,7 @@ fmt:
   #! /bin/bash
   set -euo pipefail
   echo "Formatting $(pwd)"
-  cd {{justfile_directory()}}
+  cd {{root}}
   cargo +nightly fmt
 
 alias fa := fmtall
@@ -69,7 +71,7 @@ build:
   #! /bin/bash
   set -euo pipefail
   echo "Build default packages (default features)"
-  cd {{justfile_directory()}}
+  cd {{root}}
   cargo build --all-targets --locked --timings
 
 alias bf := buildfeat
@@ -132,7 +134,7 @@ alias nt := nextest
 nextest: _clean_temp_dir && _clean_temp_dir
   #! /bin/bash
   set -euo pipefail
-  cd {{justfile_directory()}}
+  cd {{root}}
   echo "Test the code under $(pwd) (no doctests, default packages, default features)"
   cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
@@ -158,7 +160,7 @@ alias r := run
 # Run additional examples (under the `crates/xmpl` folder)
 [unix]
 @runall:
-  ./runall.sh {{justfile_directory()}}
+  ./runall.sh {{root}}
 
 ## ---- HEAVY TESTS -----------------------------------
 
@@ -167,7 +169,7 @@ alias r := run
 [unix]
 @heavy_test feature:
   echo "Run tests using {{feature}}"
-  ./heavy_test.sh {{feature}} {{justfile_directory()}}
+  ./heavy_test.sh {{root}} {{feature}}
 
 # Run all tests that require external services
 [group('heavy tests')]
@@ -190,7 +192,7 @@ heavytestall:
 #  #! /bin/bash
 #  set -euo pipefail
 #  echo "Test the Redis connection"
-#  d="{{justfile_directory()}}/.devcontainer/"
+#  d="{{root}}/.devcontainer/"
 #  docker compose -f ${d}compose.yaml \
 #    -f ${d}compose.override.yaml \
 #    -f ${d}compose-heavy-tests.yaml \
@@ -204,7 +206,7 @@ heavytestall:
 #   #! /bin/bash
 #   set -euo pipefail
 #   echo "Test the Mongo connection"
-#   d="{{justfile_directory()}}/.devcontainer/"
+#   d="{{root}}/.devcontainer/"
 #   docker compose -f ${d}compose.yaml \
 #     -f ${d}compose.override.yaml \
 #     -f ${d}compose-heavy-tests.yaml \

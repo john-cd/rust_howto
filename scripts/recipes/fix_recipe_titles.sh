@@ -4,9 +4,9 @@ IFS=$'\n\t'
 
 # Make the titles in the recipe tables / local TOCs match the corresponding headings of the subchapters
 #
-# Usage: /code/scripts/recipe_tables/check_recipe_tables.sh
+# Usage: ./scripts/recipe_tables/check_recipe_tables.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 for file in $(find ${root}src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do
     echo ">>${file}"

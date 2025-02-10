@@ -21,7 +21,7 @@ function process() {
 # Export function so it can be used by `bash -c` https://www.baeldung.com/linux/find-exec-command
 export -f process
 
-root="/code/"
+root="$(realpath $1)/"
 
 for file in `cat $(dirname $0)/hiddenfiles.txt`
 do

@@ -24,14 +24,14 @@ crate_indices cmd=help *subcmd=empty:
 [group('index of examples')]
 [unix]
 generate_index_of_examples:
-  ./generate_index_of_examples.sh {{ root }}
+  ./generate_index_of_examples.sh {{root}}
 # Usage: just generate_index_of_examples
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
 [unix]
 update_refdefs_for_examples:
-  ./update_refdefs_for_index_of_examples.sh
+  ./update_refdefs_for_index_of_examples.sh {{root}}
 # Usage: just indices update_refdefs_for_index_of_examples
 
 ## ---- OTHERS --------------------------------
@@ -39,7 +39,7 @@ update_refdefs_for_examples:
 # Quick and dirty generation of language/index.md; manual editing required
 [unix]
 generate_language_index:
-  ./generate_language_index.sh
+  ./generate_language_index.sh {{root}}
 # Usage: just indices generate_language_index >> ./src/language/index.incl.md
 
 # Generate the summary references for the dev tool category
@@ -47,7 +47,7 @@ generate_language_index:
 generate_dev_tools_refdefs:
   #! /bin/bash
   set -euo pipefail
-  root="{{justfile_directory()}}/src/categories/development-tools/"
+  root="{{root}}/src/categories/development-tools/"
   mv -f ${root}refs.incl.md ${root}refs.incl.md.bak
   for file in $(find ${root} -mindepth 2 -type f -name "refs.incl.md")
   do

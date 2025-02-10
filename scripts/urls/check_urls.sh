@@ -4,9 +4,9 @@ set -euo pipefail
 # Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).
 # This script does NOT check whether reference definitions are used or not.
 #
-# Usage: /code/scripts/urls/check_urls.sh
+# Usage: ./scripts/urls/check_urls.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "${root}**/*.md" "${root}**/*.toml" "${root}**/*.yaml" "${root}**/*.yml"
 # We could also check "${root}.devcontainer/*" "${root}**/*.sh"
 

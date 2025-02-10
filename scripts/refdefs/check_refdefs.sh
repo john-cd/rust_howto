@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # List links without corresponding reference definitions and vice versa
-# Usage: /code/scripts/refdefs/check_refdefs.sh
+# Usage: ./scripts/refdefs/check_refdefs.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 # Extract reference definitions e.g. [label]: http://xyz
 grep -Proh '\[[^\[\]]+?\](?=:)' ${root}src ${root}drafts | sort -u > /tmp/defined_refdefs.txt
 # grep -r = recursive, h = no-filename, P = perl regex, o = only-matching

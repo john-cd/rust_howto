@@ -5,11 +5,11 @@ IFS=$'\n\t'
 # Quick and dirty script
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 #
-# Usage: /code/scripts/index_of_examples/update_refdefs_for_index_of_examples.sh
+# Usage: ./scripts/index_of_examples/update_refdefs_for_index_of_examples.sh <root folder>
 #
 # This script is idempotent
 
-root="/code/"
+root="$(realpath $1)/"
 
 # Remove all references to examples
 sed -i'.bak' -E '/^\[ex-.+?\]:.*$/d' ${root}src/refs.incl.md

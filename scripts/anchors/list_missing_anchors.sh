@@ -3,9 +3,9 @@ set -eu
 
 # List book headings that do not have an anchor (e.g. {#some-text} after the heading).
 # Note that not all headers need one.
-# Usage: /code/scripts/anchors/list_missing_anchors.sh
+# Usage: ./scripts/anchors/list_missing_anchors.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 
 for file in $(find ${root}src -type f \( -name "*.md" -not -name "*index.md" -not -wholename "${root}src/crates/*.md" \) )
 do

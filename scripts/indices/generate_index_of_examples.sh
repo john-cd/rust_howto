@@ -7,7 +7,7 @@ IFS=$'\n\t'
 # This script reads the local tables of content of all subchapters
 #
 # Usage:
-# /code/scripts/index_of_examples/generate_index_of_examples.sh /code
+# ./scripts/index_of_examples/generate_index_of_examples.sh <root folder>
 
 clean() {
     echo "$1" | sed -E '

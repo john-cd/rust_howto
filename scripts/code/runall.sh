@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Run additional examples (under the `crates/xmpl` folder)
-# Usage: /code/scripts/runall.sh <root_folder>
+# Usage: ./scripts/runall.sh <root_folder>
 
 set -o pipefail
 set -e

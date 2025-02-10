@@ -1,6 +1,8 @@
 #set shell := ["bash", "-uc"]
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := justfile_directory()
+
 _default:
     @just --list examples --unsorted --justfile {{justfile()}}
 
@@ -18,7 +20,7 @@ _default:
 [unix]
 list_not_tested:
     #! /bin/bash
-    root="{{justfile_directory()}}/"
+    root="{{root}}/"
     comm -1 -3 <(find "${root}crates/ex" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
           <(find "${root}crates/ex" -type f -wholename "*/tests/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
     echo "DONE"
@@ -26,4 +28,4 @@ list_not_tested:
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates/ex)
 [unix]
 @convert_example_placeholders:
-    ./convert_example_placeholders.sh {{justfile_directory()}}
+    ./convert_example_placeholders.sh {{root}}

@@ -3,8 +3,8 @@ set -euo pipefail
 
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
 
-pattern=$1
-root="/code/"
+root="$(realpath $1)/"
+pattern="$2"
 # Look for [c-...pattern...] or [...pattern...] in the global reference definitions
 # excluding suffixes like -github, -badge, etc... (which start with a dash)
 rg -INi  '\[(c-)?([^]]*'${pattern}'[^-]*)\]:\s?(.*)' \

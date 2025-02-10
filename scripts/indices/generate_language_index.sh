@@ -5,13 +5,13 @@ set -euo pipefail
 # Outputs a template for `language/index.md`
 # Manual editing required afterwards
 #
-# Usage: /code/scripts/language/generate_language_index.sh >> /code/src/language/index.incl.md
+# Usage: ./scripts/language/generate_language_index.sh /root-folder >> ./src/language/index.incl.md
 
 # Print header
 echo '| Language Constructs |
 |--------|'
 
-root="/code/"
+root="$(realpath $1)/"
 # Read the markdown files in the `language` section
 for file in $(find ${root}src/language -type f -name "*.md" -not -name '*.incl.md' -not -name "*refs.md" -not -name "index.md")
 do

@@ -14,9 +14,7 @@ use anyhow::Result;
 use anyhow::bail;
 use walkdir::WalkDir;
 
-const REMOVED_TESTS: &[&str] = &[
-    // "/code/src/dir/file.md",
-];
+const REMOVED_TESTS: &[&str] = &[];
 
 // NOTE: `skeptic` issues "cargo:rerun-if-changed={}" for all
 // markdown files it processes. A full code rebuild will happen every

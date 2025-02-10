@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-root="/code/"
+root="$(realpath $1)/"
 
 for dir in $(find ${root}crates/ex/drafts/ -type d -wholename "*/tests/*" )
 do
@@ -22,7 +22,7 @@ do
 # !temp/.gitkeep
 # target/
 # EOF
-#     cp /code/crates/ex/categories/ab/LICENSE ${path}/LICENSE
+#     cp ${root}crates/ex/categories/ab/LICENSE ${path}/LICENSE
 #     cat > ${path}/src/lib.rs <<-EOF
 # //! Should remain empty
 # EOF

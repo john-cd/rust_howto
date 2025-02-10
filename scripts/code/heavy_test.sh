@@ -1,9 +1,9 @@
 #! /bin/bash
 set -uo pipefail
 
-feature=$1
-root="$(realpath $2)/"
+root="$(realpath $1)/"
 d="${root}.devcontainer/"
+feature="$2"
 
 ## "feature" must be the name of a service in `compose-heavy-tests.yaml`
 ## and the name of a test or test module under `crates`.

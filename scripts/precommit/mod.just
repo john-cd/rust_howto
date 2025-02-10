@@ -1,16 +1,18 @@
 ## ---- DEFAULT -------------------------------------
 
+root := justfile_directory()
+
 _default:
     @just --list precommit --unsorted --justfile {{justfile()}}
 
 ## ---- GIT -----------------------------------------
 
 ## Commit, skipping pre-commit hooks
-#commit m:
+#@commit m:
 #    git commit --no-verify -m "{{m}}"
 
 ## Amend the last commit, skipping pre-commit hooks
-#amend:
+#@amend:
 #    git commit --amend --no-verify
 
 ## ---- PRE-COMMIT -----------------------------------
@@ -24,17 +26,17 @@ _default:
 # https://github.com/prettier/prettier (pre-commit hook)
 
 # WIP Fix auto-fixable lint issues in staged files
-fix:
+@fix:
     pre-commit run prettier    # fixes all Markdown (& other) lint issues
 
 # WIP Install/update code automation: pre-commit...
-install:
+@install:
     curl https://pre-commit.com/install-local.py | python3 -
 #npm i -g prettier
 # TODO move to Dockerfile
 
 # WIP Setup/update pre-commit hooks (optional)
-setup:
+@setup:
     pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
 ## ---- GIT TOWN -----------------------------------------

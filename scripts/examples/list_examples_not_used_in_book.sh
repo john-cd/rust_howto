@@ -2,11 +2,11 @@
 set -eu
 
 # List examples (.rs files) in `tests` that are not included in the book markdown.
-# Usage: /code/scripts/examples/list_examples_not_used_in_book.sh <root folder of the book>
+# Usage: ./scripts/examples/list_examples_not_used_in_book.sh <root folder of the book>
 
-root=$(realpath "${1:-/code}") # Removes the final / if it exists
-src="${root}/src"
-drafts="${root}/drafts"
+root="$(realpath $1)/" # Removes the final / if it exists
+src="${root}src"
+drafts="${root}drafts"
 
 grep -Proh '\{\{#include .+?\.rs(:.+?)?\}\}' "${src}" "${drafts}" | sed -E 's~\{\{#include [./]*([^.]+/[._a-zA-Z0-9]+?\.rs)(:.+?)?\}\}~\1~' | sort -u > /tmp/examples_in_markdown.txt
 find "${root}/crates/ex/" -type f -name "*.rs" -exec realpath --relative-to=${root} {} \; | sed '/lib.rs/d; /main.rs/d; /mod.rs/d; /build.rs/d; /cat.rs/d; /lang.rs/d; /std.rs/d; /topic.rs/d' | sort -u > /tmp/examples_in_crates_ex.txt

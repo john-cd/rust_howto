@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Generate the book's HTML / JS
-# Usage: /code/scripts/build_book.sh
+# Usage: ./scripts/build_book.sh
 
 root="$(realpath $1)/"
 

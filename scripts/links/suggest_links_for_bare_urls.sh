@@ -5,9 +5,9 @@ set -euo pipefail
 # Manual review necessary
 # Requires ripgrep
 #
-# Usage: /code/scripts/urls/list_bare_urls.sh
+# Usage: ./scripts/urls/list_bare_urls.sh <root folder>
 
-root="/code/"
+root="$(realpath $1)/"
 # Look for http(s)://... and outputs references
 rg --pcre2 --no-line-number --no-filename --only-matching '(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?' ${root}src \
 -g '*.md' -g '!*refs.md' -g 'refs.incl.md' -r '[$2-website]: $1$2$3' | sort | sed 's~/$~~'

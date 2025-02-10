@@ -3,7 +3,7 @@ set -euo pipefail
 
 ## Make all markdown sections / pages visible
 
-root="/code/"
+root="$(realpath $1)/"
 
 ## Rename <_file.md> to <file.md> within the `src` folder
 find ${root}src -type f -name "_*.md" -exec bash -c 'p={}; d=$(dirname $p); f=$(basename $p); mv -n -v -- $d/$f $d/${f/#_/}' \;
