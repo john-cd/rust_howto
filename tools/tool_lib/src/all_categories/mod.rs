@@ -8,8 +8,8 @@ use super::Category;
 /// Returns a list of all cetagories that exist on crates.io
 pub fn get_all_categories() -> Result<Vec<Category>> {
     let toml_string = get_categories_toml_string()?;
-    let toml: toml::value::Table = toml::from_str(&toml_string)
-        .context("Could not parse categories toml")?;
+    let toml: toml::value::Table =
+        toml::from_str(&toml_string).context("Could not parse categories toml")?;
 
     let categories = categories_from_toml(&toml, None)?;
     Ok(categories)
@@ -38,9 +38,9 @@ fn categories_from_toml(
         );
 
         if let Some(categories) = details.get("categories") {
-            let categories = categories.as_table().with_context(|| {
-                format!("child categories of {slug} were not a table")
-            })?;
+            let categories = categories
+                .as_table()
+                .with_context(|| format!("child categories of {slug} were not a table"))?;
 
             result.extend(categories_from_toml(categories, Some(&category))?);
         }
@@ -51,21 +51,13 @@ fn categories_from_toml(
     Ok(result)
 }
 
-fn required_string_from_toml<'a>(
-    toml: &'a toml::value::Table,
-    key: &str,
-) -> Result<&'a str> {
+fn required_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> Result<&'a str> {
     toml.get(key)
         .and_then(toml::Value::as_str)
-        .with_context(|| {
-            format!("Expected category TOML attribute '{key}' to be a String")
-        })
+        .with_context(|| format!("Expected category TOML attribute '{key}' to be a String"))
 }
 
-fn optional_string_from_toml<'a>(
-    toml: &'a toml::value::Table,
-    key: &str,
-) -> &'a str {
+fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a str {
     toml.get(key).and_then(toml::Value::as_str).unwrap_or("")
 }
 

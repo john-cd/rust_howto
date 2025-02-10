@@ -14,10 +14,7 @@ use itertools::Itertools;
 // - Create a backup copy of the source text file
 // - Sort and deduplicate the merged lines
 // - Write back to the same file
-pub fn merge<P: AsRef<Path>>(
-    filepath: P,
-    new_lines: Vec<String>,
-) -> Result<()> {
+pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> {
     let filepath = filepath.as_ref();
 
     // Create a backup copy of the file...

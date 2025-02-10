@@ -13,18 +13,18 @@ use clap::value_parser;
 /// Example: `cargo r -- --conf config.toml`
 pub(super) fn arg_config() -> Arg {
     Arg::new("config")
-    .short('c')         // -c
-    .long("config")     // --config
-    .alias("configuration")      // --configuration (hidden alias - use `visible_alias` to show in the help message)
-    // default .num_args(1)
-    .value_name("FILE") // FILE, not <config>, is the placeholder for the argument's value in the help message / usage.
-    .value_parser(value_parser!(PathBuf))   // Parse and validate the FILE value before storing it into ArgMatches as the given type.
-    .value_hint(ValueHint::FilePath)        // Provide the shell a hint about how to complete this argument.
-    .help("Provides a custom config file")
-    // default .required(false) // The argument does not need to be present.
-    // default .action(ArgAction::Set)
-    .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
-    .global(true) // The --config flag can be passed to all child
+        .short('c') // -c
+        .long("config") // --config
+        .alias("configuration") // --configuration (hidden alias - use `visible_alias` to show in the help message)
+        // default .num_args(1)
+        .value_name("FILE") // FILE, not <config>, is the placeholder for the argument's value in the help message / usage.
+        .value_parser(value_parser!(PathBuf)) // Parse and validate the FILE value before storing it into ArgMatches as the given type.
+        .value_hint(ValueHint::FilePath) // Provide the shell a hint about how to complete this argument.
+        .help("Provides a custom config file")
+        // default .required(false) // The argument does not need to be present.
+        // default .action(ArgAction::Set)
+        .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
+        .global(true) // The --config flag can be passed to all child
     // subcommands.
 }
 
@@ -109,11 +109,7 @@ mod tests {
     /// Test the global argument "config", alias form
     #[test]
     fn test_arg_config_alias() {
-        let m = cli().get_matches_from(vec![
-            "prog",
-            "--configuration",
-            "config.toml",
-        ]);
+        let m = cli().get_matches_from(vec!["prog", "--configuration", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
             Some("config.toml".into())
@@ -143,25 +139,13 @@ mod tests {
     /// e.g. after a subcommand
     #[test]
     fn test_arg_config_global() {
-        let m = cli().get_matches_from(vec![
-            "prog",
-            "open",
-            "--config",
-            "config.toml",
-            "abc.csv",
-        ]);
+        let m = cli().get_matches_from(vec!["prog", "open", "--config", "config.toml", "abc.csv"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
             Some("config.toml".into())
         );
 
-        let m = cli().get_matches_from(vec![
-            "prog",
-            "open",
-            "abc.csv",
-            "--config",
-            "config.toml",
-        ]);
+        let m = cli().get_matches_from(vec!["prog", "open", "abc.csv", "--config", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
             Some("config.toml".into())

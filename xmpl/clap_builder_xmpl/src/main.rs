@@ -3,8 +3,7 @@
 mod cli;
 
 fn main() {
-    let rust_log =
-        std::env::var("RUST_LOG").unwrap_or_else(|_| "info".to_owned());
+    let rust_log = std::env::var("RUST_LOG").unwrap_or_else(|_| "info".to_owned());
     unsafe {
         std::env::set_var("RUST_LOG", rust_log);
     }

@@ -12,10 +12,7 @@ impl ConfigBuilder {
         self
     }
 
-    pub(crate) fn set_config_file(
-        mut self,
-        config_file: Option<PathBuf>,
-    ) -> Self {
+    pub(crate) fn set_config_file(mut self, config_file: Option<PathBuf>) -> Self {
         self.config.config_file = config_file;
         self
     }

@@ -5,8 +5,7 @@ use trim_in_place::TrimInPlace;
 
 macro_rules! regex {
     ($re:literal $(,)?) => {{
-        static RE: once_cell::sync::OnceCell<regex::Regex> =
-            once_cell::sync::OnceCell::new();
+        static RE: once_cell::sync::OnceCell<regex::Regex> = once_cell::sync::OnceCell::new();
         RE.get_or_init(|| regex::Regex::new($re).unwrap())
     }};
 }
@@ -98,9 +97,7 @@ pub fn create_crate_badges_or_refdefs(
     };
     let mut rendered = match mode {
         GenerationMode::CrateBadges => tt.render("CRATE_BADGES", &context)?,
-        GenerationMode::CrateDescription => {
-            tt.render("CRATE_DESCRIPTION", &context)?
-        }
+        GenerationMode::CrateDescription => tt.render("CRATE_DESCRIPTION", &context)?,
         GenerationMode::CrateRefdefs => tt.render("CRATE_REFDEFS", &context)?,
     };
     rendered.trim_in_place();
@@ -112,8 +109,7 @@ pub fn create_crate_badges_or_refdefs(
 // Normalize e.g. https://docs.rs/tungstenite/0.24.0 to https://docs.rs/tungstenite
 // Normalize e.g. https://docs.rs/watchmaker/0.1.0/watchmaker/fn.solve.html to https://docs.rs/watchmaker
 fn normalize_docs_url(url: &str) -> std::borrow::Cow<str> {
-    let re1: &Regex =
-        regex!(r"http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
+    let re1: &Regex = regex!(r"http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
     // If no match is found, then the haystack is returned unchanged.
     re1.replace(url, "https://docs.rs/${crt}")
 }
@@ -149,9 +145,7 @@ fn test() {
         "https://docs.rs/quote"
     );
     assert_eq!(
-        normalize_docs_url(
-            "https://docs.rs/watchmaker/0.1.0/watchmaker/fn.solve.html"
-        ),
+        normalize_docs_url("https://docs.rs/watchmaker/0.1.0/watchmaker/fn.solve.html"),
         "https://docs.rs/watchmaker"
     );
 }

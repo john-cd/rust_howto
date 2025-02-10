@@ -126,21 +126,21 @@ fn subcommand_update_refdefs() -> Command {
 
 fn arg_crate_name() -> clap::Arg {
     Arg::new("crate_name")
-                .required(true)
-                .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
-                .action(clap::ArgAction::Append)
-                .help("Enter the crate name(s)")
+        .required(true)
+        .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
+        .action(clap::ArgAction::Append)
+        .help("Enter the crate name(s)")
 }
 
 fn arg_file_path() -> clap::Arg {
     Arg::new("file_path")
-                .long("file")
-                .short('f')
-                .required(false)
-                .action(clap::ArgAction::Set)
-                .value_name("FILE") // placeholder for the argument's value in the help message / usage.
-                .value_parser(clap::value_parser!(PathBuf))
-                .value_hint(ValueHint::FilePath)
-                .default_value("./src/refs/crate-refs.md")
-                .help("Enter the file path")
+        .long("file")
+        .short('f')
+        .required(false)
+        .action(clap::ArgAction::Set)
+        .value_name("FILE") // placeholder for the argument's value in the help message / usage.
+        .value_parser(clap::value_parser!(PathBuf))
+        .value_hint(ValueHint::FilePath)
+        .default_value("./src/refs/crate-refs.md")
+        .help("Enter the file path")
 }

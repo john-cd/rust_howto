@@ -11,11 +11,13 @@ pub(super) fn subcommand_category_badge() -> Command {
         .visible_alias("c")
         .about("Create the markdown for category badge(s), given the category(ies)")
         .display_order(2)
-        .arg(    clap::Arg::new("category")
+        .arg(
+            clap::Arg::new("category")
                 .required(true)
                 .value_name("CATEGORY") // placeholder for the argument's value in the help message / usage.
                 .action(clap::ArgAction::Append)
-                .help("Enter the category name(s)"))
+                .help("Enter the category name(s)"),
+        )
 }
 
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {

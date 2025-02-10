@@ -4,15 +4,15 @@ use clap::arg;
 
 pub(super) fn cmd() -> Command {
     Command::new("query")
-    // optional: .short_flag('q')
-    .about("Query a data source")
-    .arg(
-        arg!(<query> ... "query to run")
-            .required(true)
-            .value_parser(clap::builder::NonEmptyStringValueParser::new())
-            // .trailing_var_arg(true) // everything that follows `query` should be captured
-            .allow_negative_numbers(true),
-    )
+        // optional: .short_flag('q')
+        .about("Query a data source")
+        .arg(
+            arg!(<query> ... "query to run")
+                .required(true)
+                .value_parser(clap::builder::NonEmptyStringValueParser::new())
+                // .trailing_var_arg(true) // everything that follows `query` should be captured
+                .allow_negative_numbers(true),
+        )
 }
 // See: https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg
 
@@ -42,9 +42,7 @@ mod tests {
 
     #[test]
     fn test_cmd_query() {
-        let m = cli().get_matches_from(vec![
-            "foo", "query", "SELECT", "col", "FROM", "tbl",
-        ]);
+        let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "col", "FROM", "tbl"]);
         assert_eq!(get_args(&m), vec!["SELECT", "col", "FROM", "tbl"]);
     }
 
@@ -62,9 +60,7 @@ mod tests {
     // like flags).
     #[test]
     fn test_cmd_query_neg_numbers() {
-        let m = cli().get_matches_from(vec![
-            "foo", "query", "SELECT", "-1", "FROM", "tbl",
-        ]);
+        let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "-1", "FROM", "tbl"]);
         assert_eq!(get_args(&m), vec!["SELECT", "-1", "FROM", "tbl"]);
     }
 }

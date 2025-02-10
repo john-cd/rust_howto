@@ -14,10 +14,7 @@ pub use diff::*;
 pub use ext::*;
 pub use merge::*;
 
-pub fn write_if_not_exists<P: AsRef<Path>>(
-    filepath: P,
-    contents: String,
-) -> Result<()> {
+pub fn write_if_not_exists<P: AsRef<Path>>(filepath: P, contents: String) -> Result<()> {
     let filepath = filepath.as_ref();
     if !filepath.is_file() {
         anyhow::bail!("{:?} is not a regular file!", filepath);
@@ -29,10 +26,7 @@ pub fn write_if_not_exists<P: AsRef<Path>>(
         pathbuf = ext::extend_extension(&pathbuf, "new");
         c += 1;
         if c > 3 {
-            anyhow::bail!(
-                "Could not create an entirely new file. {:?}",
-                pathbuf
-            );
+            anyhow::bail!("Could not create an entirely new file. {:?}", pathbuf);
         }
     }
 
@@ -44,10 +38,7 @@ pub fn write_if_not_exists<P: AsRef<Path>>(
     Ok(())
 }
 
-pub fn backup_then_write_to<P: AsRef<Path>>(
-    filepath: P,
-    contents: String,
-) -> Result<()> {
+pub fn backup_then_write_to<P: AsRef<Path>>(filepath: P, contents: String) -> Result<()> {
     backup(&filepath)?;
 
     let filepath = filepath.as_ref();

@@ -21,9 +21,7 @@ pub fn get_dependencies() -> Result<Vec<String>> {
             // let some_fields_unavailable =
             // manifest.needs_workspace_inheritance();
 
-            dependencies.extend(
-                manifest.dependencies.keys().map(|k| String::from(k.trim())),
-            );
+            dependencies.extend(manifest.dependencies.keys().map(|k| String::from(k.trim())));
 
             dependencies.extend(
                 manifest
@@ -33,9 +31,7 @@ pub fn get_dependencies() -> Result<Vec<String>> {
             );
             let targets = manifest.target.values();
             for target in targets {
-                dependencies.extend(
-                    target.dependencies.keys().map(|k| String::from(k.trim())),
-                );
+                dependencies.extend(target.dependencies.keys().map(|k| String::from(k.trim())));
             }
         }
     }

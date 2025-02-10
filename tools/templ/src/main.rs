@@ -21,8 +21,7 @@ fn main() -> anyhow::Result<()> {
         // Include keywords, categories, description, refdefs
         Cmd::Badges(b) => {
             for name in b.args {
-                let (badges, refdefs) =
-                    create_crate_badge_with_categories(name.trim())?;
+                let (badges, refdefs) = create_crate_badge_with_categories(name.trim())?;
                 println!("{}", badges);
                 // -a FILE (or simply -a) was passed as an argument
                 if let Some(ref pathbuf) = b.file {
@@ -41,8 +40,7 @@ fn main() -> anyhow::Result<()> {
             for n in c.args {
                 let name = n.trim();
                 for cat in tool_lib::get_categories_for_crate(name)? {
-                    let markdown =
-                        create_category_badge(&cat.category, &cat.slug)?;
+                    let markdown = create_category_badge(&cat.category, &cat.slug)?;
                     println!("{}", markdown);
                 }
             }
@@ -57,22 +55,15 @@ fn main() -> anyhow::Result<()> {
                     .iter()
                     .filter(|&c| {
                         c.slug == possible_slug
-                            || c.category
-                                .to_lowercase()
-                                .contains(&possible_cat_name)
-                            || c.description
-                                .to_lowercase()
-                                .contains(&possible_cat_name)
+                            || c.category.to_lowercase().contains(&possible_cat_name)
+                            || c.description.to_lowercase().contains(&possible_cat_name)
                     })
                     .collect();
                 if matches.is_empty() {
-                    return Err(anyhow!(
-                        "Could not find the desired category!"
-                    ));
+                    return Err(anyhow!("Could not find the desired category!"));
                 }
                 for cat in matches {
-                    let markdown =
-                        create_category_badge(&cat.category, &cat.slug)?;
+                    let markdown = create_category_badge(&cat.category, &cat.slug)?;
                     println!("{}", markdown);
                 }
                 println!();
