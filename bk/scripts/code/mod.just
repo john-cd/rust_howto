@@ -157,11 +157,6 @@ alias r := run
 @run exmpl:
   cargo run --locked --example {{exmpl}}
 
-# Run additional examples (under the `crates/xmpl` folder)
-[unix]
-@runall:
-  ./runall.sh {{root}}
-
 ## ---- HEAVY TESTS -----------------------------------
 
 # Run tests using an external service: amqp cassandra elasticsearch meilisearch mongodb mssql postgres redis

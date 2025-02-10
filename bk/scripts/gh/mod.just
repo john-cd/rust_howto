@@ -15,7 +15,7 @@ _default:
 
 # Return a list of GitHub issues with the same title
 find_dupe_issues:
-   #!/usr/bin/env bash
+  #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\t\n'
   gh issue list -L 2000 --json title --jq '.[] | [.title]' | sed -E 's/\["(.*)(\(P[0-9]\))?"]/\1/g' | sort | uniq --repeated
@@ -24,7 +24,7 @@ find_dupe_issues:
 
 # Create an GH issue for each TODO line in Markdown files
 create_issues_for_markdown:
-   #!/usr/bin/env bash
+  #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
   for file in $(find {{root}}/src {{root}}/drafts -type f -name "*.md" -not -name "*refs.md")
@@ -47,7 +47,7 @@ create_issues_for_markdown:
 
 # Create an GH issue for each TODO line in .rs files
 create_issues_for_examples:
-   #!/usr/bin/env bash
+  #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
   for file in $(find {{root}} -type f -name "*.rs" )
@@ -83,7 +83,7 @@ create_issues_for_examples:
 
 ## HACK: Replace TODO lines in the markdown by a link to previously created GitHub Issues
 #add_gh_links:
-#   #!/usr/bin/env bash
+#  #!/usr/bin/env bash
 #  set -euo pipefail
 #  IFS=$'\t\n'
 #  for file in $(find {{root}} -type f -name "*.md")
@@ -113,7 +113,7 @@ create_issues_for_examples:
 
 # HACK
 add_gh_links_to_code:
-   #!/usr/bin/env bash
+  #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\t\n'
   for file in $(find {{root}} -type f -name "*.rs")
@@ -133,7 +133,7 @@ add_gh_links_to_code:
 
 ## Deduplicate .rs file (no sort - dup. lines must be consecutive)
 #dedupe:
-#   #!/usr/bin/env bash
+#  #!/usr/bin/env bash
 #  set -euo pipefail
 #  IFS=$'\t\n'
 #  for file in $(find {{root}} -type f -name "*.rs")
@@ -148,7 +148,7 @@ add_gh_links_to_code:
 
 ## move // [...]... lines to the bottom of the file
 #moveline:
-#   #!/usr/bin/env bash
+#  #!/usr/bin/env bash
 #  set -euo pipefail
 #  IFS=$'\n\t'
 #  for file in $(find {{root}} -type f -name "*.rs" )

@@ -13,24 +13,6 @@ documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/xmpl/"
 license = "CC0-1.0"
-keywords = [
-    "patterns",
-    "cookbook",
-    "howto",
-    "how-to",
-    "documentation",
-    "Rust bible",
-]
-categories = [
-    "algorithms",
-    "asynchronous",
-    "concurrency",
-    "web-programming",
-    "development-tools",
-    "api-bindings",
-    "caching",
-    "command-line-interface",
-    "compilers",
-    "compression",
-]
+keywords = []
+categories = []
 publish = false

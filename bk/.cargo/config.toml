@@ -17,7 +17,7 @@
 # target-dir = "target"         # path of where to place all generated artifacts
 ## The target directory is kept outside of /code to avoid bind mounting (which is slow and can be confusing if cargo build is run on the host OS).
 ## It is mounted on a separate volume.
-target-dir="/cargo-target-rust_howto/target"
+target-dir="/cargo-target-rust_howto/bk/"
 # rustflags = ["…", "…"]        # custom flags to pass to all compiler invocations
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 # rustdocflags = ["…", "…"]     # custom flags to pass to rustdoc
