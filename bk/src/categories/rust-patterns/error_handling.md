@@ -9,13 +9,13 @@
 The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediately and provide feedback to the caller of the program.
 
 ```rust,editable,should_panic
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/panic.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/panic.rs:example}}
 ```
 
 `panic!` is closely tied with the `unwrap` method of both `Option` and `Result` enums. Both implementations call `panic!` when they are set to `None` or `Err` variants.
 
 ```rust,editable,should_panic
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/unwrap.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/unwrap.rs:example}}
 ```
 
 ## Provide a fallback value with `unwrap_or_else` {#unwrap-or-else}
@@ -23,7 +23,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/unwrap_or_else.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/unwrap_or_else.rs:example}}
 ```
 
 ## Return recoverable errors with `Result` {#recoverable-errors-with-result}
@@ -31,7 +31,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable,should_panic
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/error_handling.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/error_handling.rs:example}}
 ```
 
 ## Propagate errors with the `?` operator {#question-mark-operator}
@@ -39,7 +39,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/question_mark.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/question_mark.rs:example}}
 ```
 
 If the value of the Result is an `Ok`, the value inside the `Ok` will get returned from this expression, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
@@ -49,7 +49,7 @@ This error points out that we’re only allowed to use the `?` operator in a fun
 Another example:
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/question_mark2.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/question_mark2.rs:example}}
 ```
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
@@ -63,7 +63,7 @@ Another example:
 The below recipe will tell how long the system has been running by opening the Unix file `/proc/uptime` and parse the content to get the first number. It returns the uptime, unless there is an error.
 
 ```rust,editable
-{{#include ../../../crates/ex/language/tests/feat/main_test.rs:example}}
+{{#include ../../../crates/language/tests/feat/main_test.rs:example}}
 ```
 
 ## Avoid discarding errors during error conversions {#avoid-discarding-errors-during-error-conversions}
@@ -73,7 +73,7 @@ The below recipe will tell how long the system has been running by opening the U
 Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">[P1 move somwhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/retain.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/retain.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -91,7 +91,7 @@ The below recipes attempts to deserialize the value `256` into a
 [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then csv and finally up to the user code.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rust_patterns/tests/error/backtrace.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/error/backtrace.rs:example}}
 ```
 
 Backtrace error rendered:

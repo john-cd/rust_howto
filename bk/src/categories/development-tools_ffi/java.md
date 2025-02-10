@@ -9,7 +9,7 @@
 Rust bindings to the JNI API.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/java/jni.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/java/jni.rs:example}}
 ```
 
 {{#include refs.incl.md}}

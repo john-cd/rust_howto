@@ -9,7 +9,7 @@
 Vectors can only store values that are the same type.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/vectors.rs:example}}
+{{#include ../../crates/standard_library/tests/other/vectors.rs:example}}
 ```
 
 {{#include refs.incl.md}}

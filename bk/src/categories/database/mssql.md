@@ -9,7 +9,7 @@
 `tiberius` is a TDS (MSSQL) driver. It is a fully asynchronous, pure Rust implementation of the TDS protocol. It is built on top of `tokio` and `futures`.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/mssql/tiberius.rs:example}}
+{{#include ../../../crates/cats/database/tests/mssql/tiberius.rs:example}}
 ```
 
 {{#include refs.incl.md}}

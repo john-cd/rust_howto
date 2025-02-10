@@ -33,19 +33,19 @@ Create a shortcut to a path with the [`use`][book-rust-reference-use]{{hi:use}}�
 [![book-rust-by-example-use][book-rust-by-example-use-badge]][book-rust-by-example-use]
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/modules.rs:example}}
+{{#include ../../crates/language/tests/feat/modules.rs:example}}
 ```
 
 Idiomatic - bringing the function’s parent module into scope, not the function itself:
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/modules2.rs:example}}
+{{#include ../../crates/language/tests/feat/modules2.rs:example}}
 ```
 
 On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path.
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/modules3.rs:example}}
+{{#include ../../crates/language/tests/feat/modules3.rs:example}}
 ```
 
 {{#include refs.incl.md}}

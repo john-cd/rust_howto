@@ -21,7 +21,7 @@
 Consider using `tracing` instead, especially if you need `async` support. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/other/slog.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/tests/other/slog.rs:example}}
 ```
 
 ### `log4rs` {#log4rs}
@@ -74,7 +74,7 @@ fn main() {
 [OpenTelemetry Rust documentation][opentelemetry-rust]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/other/open_telemetry.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_telemetry.rs:example}}
 ```
 
 ## `OpenObserve` {#open-observe}
@@ -82,7 +82,7 @@ fn main() {
 [OpenObserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
 ```
 
 </div>

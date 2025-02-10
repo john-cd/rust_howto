@@ -240,8 +240,8 @@ ENV CARGO_TARGET_DIR=./target/
 ## Copy all the Cargo.toml / lock (and config.toml files) of the workspace
 ## The --parents flag preserves parent directories for the source entries.
 ## NOTE: [lib] or [[bin]] targets must be defined in all Cargo.toml, since the code is not present at this stage and autodiscovery won't work.
-#COPY --parents .cargo/ Cargo.toml Cargo.lock crates/ex/about/Cargo.toml crates/ex/categories/*/Cargo.toml \
-#    crates/ex/language/Cargo.toml crates/ex/other/Cargo.toml crates/ex/standard_library/Cargo.toml \
+#COPY --parents .cargo/ Cargo.toml Cargo.lock crates/about/Cargo.toml crates/categories/*/Cargo.toml \
+#    crates/language/Cargo.toml crates/other/Cargo.toml crates/standard_library/Cargo.toml \
 #    crates/playground/Cargo.toml crates/publish/Cargo.toml crates/tools/*/Cargo.toml crates/xmpl/*/Cargo.toml ./
 
 ## Bake the dependencies into (a separate layer of) the CI image (since they don't change often).
@@ -249,7 +249,7 @@ ENV CARGO_TARGET_DIR=./target/
 
 ## Optionally pre-compile the dependencies but not the code of tools and examples (which change more often)
 ## a) Copy the (empty) src/lib.rs for default members of the workspace (no other code)
-# COPY --parents crates/ex/about/src/ crates/ex/categories/*/src/ crates/ex/language/src crates/ex/other/src crates/ex/standard_library/src ./
+# COPY --parents crates/about/src/ crates/categories/*/src/ crates/language/src crates/other/src crates/standard_library/src ./
 ## b) Compile the dependencies (and src/lib.rs)
 # RUN cargo build --all-targets --locked --profile ci
 

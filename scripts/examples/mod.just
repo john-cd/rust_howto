@@ -12,7 +12,7 @@ _default:
 [unix]
 @list_not_used_in_book:
     ./list_examples_not_used_in_book.sh {{ quote(justfile_directory()) }}
-# The script matches e.g. {{#include ../../../crates/ex/cats/development_tools_debugging/tests/<...>/type_name_of_val.rs:example}}
+# The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/tests/<...>/type_name_of_val.rs:example}}
 # and extracts the file names, then compare to the list of test files
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 

@@ -22,7 +22,7 @@
 `ureq` is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_http_client/tests/other/ureq.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/other/ureq.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -40,7 +40,7 @@
 `hyper` is a low-level HTTP implementation (both client and server). It implements HTTP/1, and HTTP/2. It works best with the `tokio` async runtime, but can support other runtimes.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_http_client/tests/other/hyper.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
 [http_clients: expand (P1)](https://github.com/john-cd/rust_howto/issues/504)

@@ -27,7 +27,7 @@
 - Uses modern b-tree techniques such as prefix encoding and suffix truncation for reducing the storage costs of long keys with shared prefixes. If keys are the same length and sequential then the system can avoid storing 99%+ of the key data in most cases, essentially acting like a learned index
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/database_implementations/tests/databases/sled.rs:example}}
+{{#include ../../../crates/cats/database_implementations/tests/databases/sled.rs:example}}
 ```
 
 ## SurrealDB {#surrealdb}
@@ -43,7 +43,7 @@
 SurrealDB is a scalable, distributed, collaborative, document-graph database, for the realtime web.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/database_implementations/tests/databases/surrealdb.rs:example}}
+{{#include ../../../crates/cats/database_implementations/tests/databases/surrealdb.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -22,7 +22,7 @@ Features:
 - Sand-boxing - the scripting engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
 
 ```rust,editable
-{{#include ../../../crates/ex/other/tests/scripting/rhai.rs:example}}
+{{#include ../../../crates/other/tests/scripting/rhai.rs:example}}
 ```
 
 {{#include refs.incl.md}}

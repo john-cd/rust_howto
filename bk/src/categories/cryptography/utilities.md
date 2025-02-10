@@ -9,7 +9,7 @@
 `zeroize` securely clear secrets from memory. It guarantees that memory is zeroed, using an operation that will not be optimized away by the compiler. It is a portable pure-Rust implementation that works everywhere, even with WASM.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/utilities/zeroize.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/utilities/zeroize.rs:example}}
 ```
 
 ## `subtle` {#subtle}
@@ -19,7 +19,7 @@
 Pure-Rust traits and utilities for constant-time cryptographic implementations.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/utilities/subtle.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/utilities/subtle.rs:example}}
 ```
 
 {{#include refs.incl.md}}

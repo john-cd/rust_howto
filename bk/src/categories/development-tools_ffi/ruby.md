@@ -9,7 +9,7 @@
 High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code from a Rust binary.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/ruby/magnus.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/ruby/magnus.rs:example}}
 ```
 
 ## Rutie {#rutie}
@@ -19,7 +19,7 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 The tie between Ruby and Rust.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/ruby/rutie.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/ruby/rutie.rs:example}}
 ```
 
 {{#include refs.incl.md}}

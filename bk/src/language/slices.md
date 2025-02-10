@@ -5,7 +5,7 @@
 ## Slices {#slices}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/slices.rs:example}}
+{{#include ../../crates/language/tests/feat/slices.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -37,7 +37,7 @@ Possible applications of actor frameworks:
 `stakker` is a lightweight low-level single-threaded actor runtime.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actors/stakker.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/actors/stakker.rs:example}}
 ```
 
 ## `riker` {#riker}
@@ -47,7 +47,7 @@ Possible applications of actor frameworks:
 `riker` is an actor framework for Rust to build fast, highly concurrent, and resilient applications.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actors/actors.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/actors/actors.rs:example}}
 ```
 
 ## `ractor` {#ractor}
@@ -60,7 +60,7 @@ Possible applications of actor frameworks:
 `ractor` is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actors/ractor.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/actors/ractor.rs:example}}
 ```
 
 ## `actix` {#actix}
@@ -71,7 +71,7 @@ Possible applications of actor frameworks:
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/actors/actix.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/actors/actix.rs:example}}
 ```
 
 ## See also

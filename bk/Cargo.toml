@@ -1,19 +1,19 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/ex/about",
-    "crates/ex/cats/*",
-    "crates/ex/language",
-    "crates/ex/other",
-    "crates/ex/standard_library",
+    "crates/about",
+    "crates/cats/*",
+    "crates/language",
+    "crates/other",
+    "crates/standard_library",
 ]
 exclude = []
 default-members = [
-    "crates/ex/about",
-    "crates/ex/cats/*",
-    "crates/ex/language",
-    "crates/ex/other",
-    "crates/ex/standard_library",
+    "crates/about",
+    "crates/cats/*",
+    "crates/language",
+    "crates/other",
+    "crates/standard_library",
 ]
 
 # Default values for packages in the workspace

@@ -9,7 +9,7 @@
 Fuzz testing (or fuzzing) is a software testing technique used to find security and stability issues by providing pseudo-random data as input to the software. AFLplusplus is a popular, effective, and modern fuzz testing tool based on AFL. `afl.rs` allows one to run AFLplusplus on code written in the Rust programming language.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_testing/tests/afl.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/tests/afl.rs:example}}
 ```
 
 {{#include refs.incl.md}}

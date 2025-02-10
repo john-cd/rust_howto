@@ -5,7 +5,7 @@
 ## FFI {#ffi}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/external_ffi_bindings/tests/ffi.rs:example}}
+{{#include ../../../crates/cats/external_ffi_bindings/tests/ffi.rs:example}}
 ```
 
 {{#include refs.incl.md}}

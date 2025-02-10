@@ -58,7 +58,7 @@ cargo kani [OPTIONS]
 Kani works like `cargo test` except that it will analyze "proof harnesses" instead of running test harnesses.
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/src/kani.rs:example}}
+{{#include ../../../../crates/cats/development_tools/src/kani.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -5,7 +5,7 @@
 ## Render {#render}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/rendering/tests/render.rs:example}}
+{{#include ../../../crates/cats/rendering/tests/render.rs:example}}
 ```
 
 {{#include refs.incl.md}}

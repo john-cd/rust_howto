@@ -9,7 +9,7 @@
 N-API bindings for Node.js.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/node/napi.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/node/napi.rs:example}}
 ```
 
 ## `neon` {#neon}
@@ -19,7 +19,7 @@ N-API bindings for Node.js.
 A safe abstraction layer for Node.js.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/node/neon.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/node/neon.rs:example}}
 ```
 
 {{#include refs.incl.md}}

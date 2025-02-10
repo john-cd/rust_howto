@@ -9,7 +9,7 @@
 `bincode` is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/bincode.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/bincode.rs:example}}
 ```
 
 ## ProtoBuf {#skip1}
@@ -23,19 +23,19 @@
 In you `main.rs` file:
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/prost.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/prost.rs:example}}
 ```
 
 In `person.proto`:
 
 ```protobuf
-{{#include ../../../crates/ex/cats/encoding/tests/proto/person.proto}}
+{{#include ../../../crates/cats/encoding/tests/proto/person.proto}}
 ```
 
 In `build.rs`:
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/build.rs:prost}}
+{{#include ../../../crates/cats/encoding/build.rs:prost}}
 ```
 
 ### `protobuf` {#protobuf}
@@ -45,7 +45,7 @@ In `build.rs`:
 `protobuf` is a Rust implementation of Google protocol buffers.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/protobuf.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/protobuf.rs:example}}
 ```
 
 ## MessagePack with `rmp-serde` {#rmp-serde}
@@ -55,7 +55,7 @@ In `build.rs`:
 `rmp-serde` connects the `MessagePack` library with `serde`, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/rmp_serde.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/rmp_serde.rs:example}}
 ```
 
 ## CBOR with `ciborium` {#ciborium}
@@ -65,7 +65,7 @@ In `build.rs`:
 Concise Binary Object Representation is a binary data serialization format loosely based on JSON. `ciborium` is a `serde` implementation of CBOR using ciborium-basic.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/ciborium.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/ciborium.rs:example}}
 ```
 
 ## Flatbuffers {#flatbuffers}
@@ -75,7 +75,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 `flatbuffers` is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/flatbuffers.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/flatbuffers.rs:example}}
 ```
 
 ## Cap'n Proto {#capnp}
@@ -85,19 +85,19 @@ Concise Binary Object Representation is a binary data serialization format loose
 `capnp` is the runtime library for Cap'n Proto data encoding. `capnpc` is used for Cap'n Proto code generation.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/proto/capnp.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/proto/capnp.rs:example}}
 ```
 
 In `build.rs`:
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/build.rs:capnp}}
+{{#include ../../../crates/cats/encoding/build.rs:capnp}}
 ```
 
 In `foo.capnp`:
 
 ```txt
-{{#include ../../../crates/ex/cats/encoding/tests/proto/foo.capnp}}
+{{#include ../../../crates/cats/encoding/tests/proto/foo.capnp}}
 ```
 
 ### Key Features of Cap'n Proto {#skip2}

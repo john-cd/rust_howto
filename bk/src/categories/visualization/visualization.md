@@ -14,7 +14,7 @@
 [plotly.rs][c-plotly-github]{{hi:plotly.rs}}⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/visualization/tests/plotly.rs:example}}
+{{#include ../../../crates/cats/visualization/tests/plotly.rs:example}}
 ```
 
 {{#include refs.incl.md}}

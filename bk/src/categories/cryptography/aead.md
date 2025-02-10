@@ -11,7 +11,7 @@ For more algorithms, see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-g
 Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/aead/aes_gcm_siv.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/aead/aes_gcm_siv.rs:example}}
 ```
 
 ## `aes-gcm` {#aes-gcm}
@@ -21,7 +21,7 @@ Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encry
 Pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/aead/aes_gcm.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/aead/aes_gcm.rs:example}}
 ```
 
 ## ChaCha20Poly1305 {#chacha20poly1305}
@@ -33,7 +33,7 @@ hardware acceleration. Also contains implementations of the XChaCha20Poly1305 ex
 ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/aead/chacha20poly1305.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/aead/chacha20poly1305.rs:example}}
 ```
 
 {{#include refs.incl.md}}

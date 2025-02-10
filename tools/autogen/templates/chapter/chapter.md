@@ -9,7 +9,7 @@
 {{ description }}
 
 ```rust,editable
-{% raw %}{{{% endraw %}#include ../../../crates/ex/categories/{{ example_crate_name }}/tests/{{ category}}/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
+{% raw %}{{{% endraw %}#include ../../../crates/categories/{{ example_crate_name }}/tests/{{ category}}/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
 ```
 
 {% raw %}

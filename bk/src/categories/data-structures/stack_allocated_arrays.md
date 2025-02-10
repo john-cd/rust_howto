@@ -14,7 +14,7 @@
 Arrays that are ONLY stack-allocated with fixed capacity.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/vec/arrayvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/vec/arrayvec.rs:example}}
 ```
 
 ## `smallvec` {#smallvec}
@@ -28,7 +28,7 @@ Arrays that are ONLY stack-allocated with fixed capacity.
 Arrays that are stack-allocated with fallback to the heap if the fixed stack capacity is exceeded.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/vec/smallvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/vec/smallvec.rs:example}}
 ```
 
 ## `tinyvec` {#tinyvec}
@@ -43,7 +43,7 @@ Arrays that are stack-allocated with fallback to the heap if the fixed stack cap
 The `tinyvec` crate provides a way to work with vectors that can store a small number of elements inline, without heap allocation, and dynamically grow to the heap if necessary. It is in 100% safe Rust code. It's similar to `smallvec` but with a smaller feature set and no dependencies. `tinyvec` requires items to implement the `Default` trait.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/vec/tinyvec.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/vec/tinyvec.rs:example}}
 ```
 
 {{#include refs.incl.md}}

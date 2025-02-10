@@ -5,7 +5,7 @@
 ## Localize your app {#localization}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/localization/tests/localization1.rs:example}}
+{{#include ../../../crates/cats/localization/tests/localization1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

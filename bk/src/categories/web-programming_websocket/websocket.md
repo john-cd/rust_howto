@@ -14,7 +14,7 @@
 Low-level crate that others build on.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_websocket/tests/tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/tests/tungstenite.rs:example}}
 ```
 
 ## Implement Websocket while using the `tokio` async runtime {#general-purpose}
@@ -31,7 +31,7 @@ Low-level crate that others build on.
 Use `tokio-tungstenite` if you are using the `tokio` async executor.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_websocket/tests/tokio_tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/tests/tokio_tungstenite.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -43,7 +43,7 @@ Use `tokio-tungstenite` if you are using the `tokio` async executor.
 [websocket: cover others e.g. async_std_tungstenite (P2)](https://github.com/john-cd/rust_howto/issues/521)
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_websocket/tests/async_tungstenite.rs:example}}
+{{#include ../../../crates/cats/web_programming_websocket/tests/async_tungstenite.rs:example}}
 ```
 
 </div>

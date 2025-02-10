@@ -9,7 +9,7 @@
 Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/hardware_support/tests/cpu_count.rs:example}}
+{{#include ../../../crates/cats/hardware_support/tests/cpu_count.rs:example}}
 ```
 
 {{#include refs.incl.md}}

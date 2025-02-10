@@ -28,7 +28,7 @@
 [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/search/elasticsearch.rs:example}}
+{{#include ../../../crates/cats/database/tests/search/elasticsearch.rs:example}}
 ```
 
 - tinysearch is not that popular

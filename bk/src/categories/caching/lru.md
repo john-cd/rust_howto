@@ -7,7 +7,7 @@
 [![lru][c-lru-badge]][c-lru]{{hi:lru}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/caching/tests/lru.rs:example}}
+{{#include ../../../crates/cats/caching/tests/lru.rs:example}}
 ```
 
 {{#include refs.incl.md}}

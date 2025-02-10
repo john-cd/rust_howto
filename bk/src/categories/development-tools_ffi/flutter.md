@@ -9,7 +9,7 @@
 Flutter/Dart and Rust binding generator.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/flutter/flutter_rust_bridge.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/flutter/flutter_rust_bridge.rs:example}}
 ```
 
 {{#include refs.incl.md}}

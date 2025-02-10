@@ -9,7 +9,7 @@
 Objective-C interface and runtime bindings
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/objc/objc2.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/objc/objc2.rs:example}}
 ```
 
 {{#include refs.incl.md}}

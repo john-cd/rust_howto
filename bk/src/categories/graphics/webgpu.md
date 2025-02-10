@@ -14,7 +14,7 @@ Rusty WebGPU API wrapper.
 [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/graphics/tests/wgpu.rs:example}}
+{{#include ../../../crates/cats/graphics/tests/wgpu.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -23,6 +23,6 @@ Rusty WebGPU API wrapper.
 <div class="hidden">
 [webgpu: write (P2)](https://github.com/john-cd/rust_howto/issues/375)
 
-- review [rust-gpu-ecosystem-website]: <https://rust-gpu.github.io/ecosystem>
+- review [rust-gpu-ecosystem-website]: [https://rust-gpu.github.io/ecosystem](https://rust-gpu.github.io/ecosystem)
 
 </div>

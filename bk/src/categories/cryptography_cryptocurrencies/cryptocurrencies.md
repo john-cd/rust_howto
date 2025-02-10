@@ -5,7 +5,7 @@
 ## Cryptocurrencies {#cryptocurrencies}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography_cryptocurrencies/tests/cryptocurrencies.rs:example}}
+{{#include ../../../crates/cats/cryptography_cryptocurrencies/tests/cryptocurrencies.rs:example}}
 ```
 
 {{#include refs.incl.md}}

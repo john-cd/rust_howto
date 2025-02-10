@@ -6,10 +6,10 @@ set -euo pipefail
 
 root="$(realpath $1)/"
 
-for dir in $(find ${root}crates/ex/drafts/ -type d -wholename "*/tests/*" )
+for dir in $(find ${root}crates/drafts/ -type d -wholename "*/tests/*" )
 do
   cat=$(basename $dir)
-  path="${root}crates/ex/cats/${cat}"
+  path="${root}crates/cats/${cat}"
   #if [ ! -d "${path}" ]; then
     echo ">> ${path}"
    # cargo new --lib ${path}
@@ -22,7 +22,7 @@ do
 # !temp/.gitkeep
 # target/
 # EOF
-#     cp ${root}crates/ex/categories/ab/LICENSE ${path}/LICENSE
+#     cp ${root}crates/categories/ab/LICENSE ${path}/LICENSE
 #     cat > ${path}/src/lib.rs <<-EOF
 # //! Should remain empty
 # EOF

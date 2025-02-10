@@ -13,7 +13,7 @@ Fast concurrent HashMap for Rust.
 [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is an implementation of a concurrent associative array{{hi:Concurrent associative array}} / hashmap in Rust. [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/concurrency/tests/concurrent_data_structures/dashmap.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/dashmap.rs:example}}
 ```
 
 ## Bounded multi-producer multi-consumer queue {#crossbeam-queue}
@@ -23,7 +23,7 @@ Fast concurrent HashMap for Rust.
 Concurrent queues.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/concurrent_data_structures/crossbeam_queue.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/crossbeam_queue.rs:example}}
 ```
 
 ## `flurry` {#flurry}
@@ -33,7 +33,7 @@ Concurrent queues.
 Flurry is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to `std::collections::HashMap`. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c-flurry]).
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/concurrent_data_structures/flurry.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/flurry.rs:example}}
 ```
 
 ## `papaya` {#papaya}
@@ -51,7 +51,7 @@ Flurry is a concurrent hash table designed for high performance. It allows fully
 ([doc][c-papaya])
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/concurrent_data_structures/papaya.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/papaya.rs:example}}
 ```
 
 {{#include refs.incl.md}}

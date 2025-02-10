@@ -55,7 +55,7 @@ do
     #       ;;
     #   esac
 
-      absoluteexampledir="${root}crates/ex/cats/${category}/tests/${folder_in_tests}"
+      absoluteexampledir="${root}crates/cats/${category}/tests/${folder_in_tests}"
       exampledir=$(realpath --relative-to=$current_file_dir "${absoluteexampledir}" | tr '-' '_')
       # echo "exampledir: $exampledir"
       examplefile="${exampledir}/${examplename}.rs"

@@ -11,7 +11,7 @@ A no_std + serde compatible message library for Rust.
 `no_std`-focused `serde` serializer/deserializer, aimed at constrained environments.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/no_external_schema_file/postcard.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/no_external_schema_file/postcard.rs:example}}
 ```
 
 ## `rkyv` {#rkyv}
@@ -21,7 +21,7 @@ A no_std + serde compatible message library for Rust.
 Fast zero-copy deserialization framework that allows arbitrary field types and safe zero-copy mutation.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/no_external_schema_file/rkyv.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/no_external_schema_file/rkyv.rs:example}}
 ```
 
 {{#include refs.incl.md}}

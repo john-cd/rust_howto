@@ -9,7 +9,7 @@
 `axum` is a web framework that focuses on ergonomics and modularity. It is an official part of the `tokio` project. `axum` is recommended for most new projects.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_http_server/tests/axum.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_server/tests/axum.rs:example}}
 ```
 
 ## See also

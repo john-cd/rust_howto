@@ -12,7 +12,7 @@
 `arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
 ```rust,editable
-{{#include ../../../crates/ex/other/tests/data_processing/arrow.rs:example}}
+{{#include ../../../crates/other/tests/data_processing/arrow.rs:example}}
 ```
 
 ## Query in-memory data with datafusion {#datafusion}
@@ -29,7 +29,7 @@
 DataFusion offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
 
 ```rust,editable
-{{#include ../../../crates/ex/other/tests/data_processing/datafusion.rs:example}}
+{{#include ../../../crates/other/tests/data_processing/datafusion.rs:example}}
 ```
 
 ## `databend` {#databend}

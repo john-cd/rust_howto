@@ -25,7 +25,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ establishes a connection to [https://paste.rs][paste.rs] following the [`reqwest::RequestBuilder`][c-reqwest::RequestBuilder]{{hi:reqwest::RequestBuilder}}⮳ pattern. Calling [`reqwest::Client::post`][c-reqwest::Client::post]{{hi:reqwest::Client::post}}⮳ with a URL establishes the destination, [`reqwest::RequestBuilder::body`][c-reqwest::RequestBuilder::body]{{hi:reqwest::RequestBuilder::body}}⮳ sets the content to send by reading the file, and [`reqwest::RequestBuilder::send`][c-reqwest::RequestBuilder::send]{{hi:reqwest::RequestBuilder::send}}⮳ blocks until the file uploads and the response returns. [`std::io::Read::read_to_string`][c-std::io::Read::read_to_string]{{hi:std::io::Read::read_to_string}}⮳ returns the response and displays in the console.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_http_client/tests/download/post_file.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/download/post_file.rs:example}}
 ```
 
 ## Make a partial download with HTTP range headers {#partial-download-with-http-range-headers}
@@ -39,7 +39,7 @@ The code then uses [`reqwest::blocking::Client::get`][c-reqwest::blocking::Clien
 The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC-7233}}⮳.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/web_programming_http_client/tests/download/partial.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/download/partial.rs:example}}
 ```
 
 {{#include refs.incl.md}}

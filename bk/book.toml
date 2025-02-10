@@ -11,7 +11,7 @@ description = "A compendium of links, code snippets, and recipes for the Rust la
 create-missing = false              # whether or not to create missing pages
 # use-default-preprocessors = true  # use the default preprocessors  and `index`, true by default
 # Directories to watch for triggering builds:
-extra-watch-dirs = ["static", "theme", "crates/ex/about", "crates/ex/cats", "crates/ex/language", "crates/ex/other", "crates/ex/standard_library"]
+extra-watch-dirs = ["static", "theme", "crates/about", "crates/cats", "crates/language", "crates/other", "crates/standard_library"]
 
 [rust]
 edition = "2021" # the default edition for code blocks. Default is "2015"

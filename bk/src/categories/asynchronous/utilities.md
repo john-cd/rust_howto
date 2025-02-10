@@ -15,7 +15,7 @@ The `await-tree` crate provides a convenient way to visualize the structure of a
 "The Futures in Async Rust can be arbitrarily composited or nested to achieve a variety of control flows. Assuming that the execution of each Future is represented as a node, then the asynchronous execution of an async task can be organized into a logical tree, which is constantly transformed over the polling, completion, and cancellation of Futures. `await-tree` allows developers to dump this execution tree at runtime, with the span of each `Future` annotated by `instrument_await`."
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/concurrency/tests/await_tree.rs:example}}
+{{#include ../../../crates/cats/concurrency/tests/await_tree.rs:example}}
 ```
 
 {{#include refs.incl.md}}

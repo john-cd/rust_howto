@@ -7,7 +7,7 @@
 ## If else {#if-else}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/if_else.rs:example}}
+{{#include ../../crates/language/tests/feat/if_else.rs:example}}
 ```
 
 Also `else if <cond> { ... }`
@@ -15,19 +15,19 @@ Also `else if <cond> { ... }`
 ## Loop {#loop}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/loop1.rs:example}}
+{{#include ../../crates/language/tests/feat/loop1.rs:example}}
 ```
 
 ## While {#while}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/while1.rs:example}}
+{{#include ../../crates/language/tests/feat/while1.rs:example}}
 ```
 
 ## For {#for}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/for1.rs:example}}
+{{#include ../../crates/language/tests/feat/for1.rs:example}}
 ```
 
 {{#include refs.incl.md}}

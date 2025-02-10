@@ -5,7 +5,7 @@
 ## Crates that work without `alloc` {#noalloc}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/no_std_no_alloc/tests/no_alloc.rs:example}}
+{{#include ../../../crates/cats/no_std_no_alloc/tests/no_alloc.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,13 +9,13 @@
 [`pyo3`][c-pyo3-website]⮳ supports both calling python code from Rust and exposing Rust code to Python.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/api_bindings/tests/pyo3.rs:example}}
+{{#include ../../../crates/cats/api_bindings/tests/pyo3.rs:example}}
 ```
 
 Use Rust from Python:
 
 ```rust
-{{#include ../../../crates/ex/cats/api_bindings/tests/use_rust_from_python.rs}}
+{{#include ../../../crates/cats/api_bindings/tests/use_rust_from_python.rs}}
 ```
 
 {{#include refs.incl.md}}

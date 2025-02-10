@@ -9,11 +9,11 @@
 High-level bindings to Lua 5.4/5.3/5.2/5.1 (including LuaJIT) and Roblox Luau with async/await features and support of writing native Lua modules in Rust.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/lua/mlua.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/lua/mlua.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/lua/mlua2.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/lua/mlua2.rs:example}}
 ```
 
 {{#include refs.incl.md}}

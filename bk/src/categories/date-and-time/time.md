@@ -13,7 +13,7 @@
 Date and time library. Fully interoperable with the standard library. Mostly compatible with `#![no_std]`.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/date_and_time/tests/time.rs:example}}
+{{#include ../../../crates/cats/date_and_time/tests/time.rs:example}}
 ```
 
 {{#include refs.incl.md}}

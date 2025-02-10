@@ -9,7 +9,7 @@
 Safe Rust wrappers for creating Erlang NIF functions
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/development_tools_ffi/tests/erlang_elixir/rustler.rs:example}}
+{{#include ../../../crates/cats/development_tools_ffi/tests/erlang_elixir/rustler.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -9,7 +9,7 @@
 Cross-platform window creation library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice."
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/window_creation/winit.rs:example}}
+{{#include ../../../crates/cats/gui/examples/window_creation/winit.rs:example}}
 ```
 
 ## `tao` {#tao}
@@ -21,7 +21,7 @@ Cross-platform window manager library. The TAO of cross-platform windowing. A li
 "A fork of winit by the Tauri project, which adds support for things like system menus that desktop apps need."
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/window_creation/tao.rs:example}}
+{{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -37,7 +37,7 @@ Cross-platform window manager library. The TAO of cross-platform windowing. A li
 Low-level window system interface for audio plugin UIs.
 
 ```rust
-{{#include ../../../crates/ex/cats/gui/examples/window_creation/baseview.rs:example}}
+{{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
 </div>

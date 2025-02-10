@@ -9,7 +9,7 @@
 `bitflags` offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear` operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/data_structures/tests/bits/bitfield.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/bits/bitfield.rs:example}}
 ```
 
 ## `flagset` {#flagset}
@@ -22,7 +22,7 @@
 FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/data_structures/tests/bits/flagset.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/bits/flagset.rs:example}}
 ```
 
 {{#include refs.incl.md}}

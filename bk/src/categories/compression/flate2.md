@@ -15,7 +15,7 @@ Supported formats:
 Compress, then decompress data:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/compression/tests/gzip/flate2.rs:example}}
+{{#include ../../../crates/cats/compression/tests/gzip/flate2.rs:example}}
 ```
 
 {{#include refs.incl.md}}

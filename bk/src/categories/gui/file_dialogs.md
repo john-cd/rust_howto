@@ -9,7 +9,7 @@
 Rusty File Dialog. "Platform-native open/save file dialogs. Can be used in conjunction with other UI libraries."
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/gui/examples/file_dialogs/rfd.rs:example}}
+{{#include ../../../crates/cats/gui/examples/file_dialogs/rfd.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -2,8 +2,8 @@
 # see https://diesel.rs/guides/configuring-diesel-cli
 
 [print_schema]
-file = "/code/crates/ex/categories/d/tests/database/diesel/schema.rs"
+file = "/code/crates/categories/d/tests/database/diesel/schema.rs"
 custom_type_derives = ["diesel::query_builder::QueryId", "Clone"]
 
 [migrations_directory]
-dir = "/code/crates/ex/categories/d/tests/database/diesel/migrations"
+dir = "/code/crates/categories/d/tests/database/diesel/migrations"

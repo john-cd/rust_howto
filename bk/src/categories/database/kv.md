@@ -9,7 +9,7 @@
 A fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value database library.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/kv/heed.rs:example}}
+{{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}
 ```
 
 ## `rocksdb` {#rocksdb}
@@ -19,7 +19,7 @@ A fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high pe
 Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high performance database for key-value data.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/rocksdb/rocksdb.rs:example}}
+{{#include ../../../crates/cats/database/tests/rocksdb/rocksdb.rs:example}}
 ```
 
 {{#include refs.incl.md}}

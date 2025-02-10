@@ -5,7 +5,7 @@
 ## Bind to Linux APIs {#linux}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/os_linux_apis/tests/linux.rs:example}}
+{{#include ../../../crates/cats/os_linux_apis/tests/linux.rs:example}}
 ```
 
 {{#include refs.incl.md}}

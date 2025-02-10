@@ -7,7 +7,7 @@
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/filesystem/tests/cwd/cwd.rs:example}}
+{{#include ../../../crates/cats/filesystem/tests/cwd/cwd.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -27,7 +27,7 @@
 A safe, reliable implementation of `remove_dir_all` for Windows
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/filesystem/tests/remove_dir_all.rs:example}}
+{{#include ../../../crates/cats/filesystem/tests/remove_dir_all.rs:example}}
 ```
 
 </div>

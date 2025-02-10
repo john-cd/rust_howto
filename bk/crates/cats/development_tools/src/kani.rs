@@ -77,8 +77,8 @@ mod verification {
     // Check 1: kani::estimate_size.assertion.1
     //          - Status: FAILURE
     //          - Description: "Oh no, a failing corner case!"
-    //          - Location: crates/ex/cats/development_tools/src/kani.rs:41:13
-    //            in function kani::estimate_size
+    //          - Location: crates/cats/development_tools/src/kani.rs:41:13 in
+    //            function kani::estimate_size
 
     // By default, Kani only reports failures, not how the failure happened.
     // Kani offers an (experimental) concrete playback feature that provides

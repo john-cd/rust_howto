@@ -7,7 +7,7 @@
 All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each other, and all of the values{{hi:Values}} must have the same type.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/hashmaps.rs:example}}
+{{#include ../../crates/standard_library/tests/other/hashmaps.rs:example}}
 ```
 
 {{#include refs.incl.md}}

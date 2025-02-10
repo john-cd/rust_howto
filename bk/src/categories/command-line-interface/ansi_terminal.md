@@ -13,7 +13,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 ## Print colored text to the terminal {#colored-text}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/tests/ansi_term/ansi_term_basic.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic.rs:example}}
 ```
 
 ### Print bold text to the terminal {#bold-text}
@@ -23,7 +23,7 @@ There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:a
 For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ struct. [`ansi_term::Style::new`][c-ansi_term::Style::new]{{hi:ansi_term::Style::new}}⮳ creates the struct, and properties chained.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/tests/ansi_term/ansi_term_basic1.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic1.rs:example}}
 ```
 
 ### Print bold and colored text to the terminal {#bold-colored-text}
@@ -33,7 +33,7 @@ For anything more complex than plain foreground color changes, the code needs to
 [`ansi_term::Color`][c-ansi_term::Color]{{hi:ansi_term::Color}}⮳ implements many similar functions as [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳ and can chain methods.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/tests/ansi_term/ansi_term_basic2.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic2.rs:example}}
 ```
 
 ## Manipulate the cursor, style the output, handle input events {#crossterm}
@@ -56,7 +56,7 @@ It supports all UNIX and Windows terminals down to Windows 7.
 - Events (key inputs, mouse...)
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/command_line_interface/examples/crossterm.rs:example}}
+{{#include ../../../crates/cats/command_line_interface/examples/crossterm.rs:example}}
 ```
 
 {{#include refs.incl.md}}

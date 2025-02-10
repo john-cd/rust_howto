@@ -5,7 +5,7 @@
 ## Process spatial information, maps, navigation data, and geographic information systems {#geo}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/science_geo/tests/geo.rs:example}}
+{{#include ../../../crates/cats/science_geo/tests/geo.rs:example}}
 ```
 
 {{#include refs.incl.md}}

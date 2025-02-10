@@ -7,13 +7,13 @@
 - Add documentation comments{{hi:Documentation comments}} to your code.
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/tests/documentation/rustdoc.rs:example}}
+{{#include ../../../../crates/cats/development_tools/tests/documentation/rustdoc.rs:example}}
 ```
 
 [`rustdoc`][book-rustdoc]{{hi:rustdoc}}⮳ uses the CommonMark Markdown specification.
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/tests/documentation/rustdoc2.rs:example}}
+{{#include ../../../../crates/cats/development_tools/tests/documentation/rustdoc2.rs:example}}
 ```
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
@@ -27,13 +27,13 @@ Use `//!` at the top of the file (instead of `///`) for module-level documentati
 The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level documentation front-page.
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/tests/documentation/rustdoc3.rs:example}}
+{{#include ../../../../crates/cats/development_tools/tests/documentation/rustdoc3.rs:example}}
 ```
 
 To add a "run" button on your documentation (allowing its execution in the rust playground{{hi:Rust playground}}), use the following attribute:
 
 ```rust,editable
-{{#include ../../../../crates/ex/cats/development_tools/tests/rustdoc4.rs:example}}
+{{#include ../../../../crates/cats/development_tools/tests/rustdoc4.rs:example}}
 ```
 
 ## See also

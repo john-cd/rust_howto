@@ -7,7 +7,7 @@ It provides a way to convert an object into a reference to another type.
 This trait is often used to allow functions to accept arguments in multiple forms.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/asref.rs:example}}
+{{#include ../../crates/standard_library/tests/other/asref.rs:example}}
 ```
 
 NOTES:

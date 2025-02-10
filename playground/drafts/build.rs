@@ -3,7 +3,7 @@
 //! We no longer use `skeptic` to test the code examples in the book.
 //!
 //! All book examples are currently written as tests
-//!  under `crates/ex/**/tests`, which are then included in the markdown.
+//!  under `crates/**/tests`, which are then included in the markdown.
 //!
 //! See https://crates.io/crates/skeptic for configuration.
 
@@ -38,7 +38,7 @@ fn main() -> Result<()> {
 
     //// We are only testing code that are in the Markdown,
     //// not tests / examples that are in separate .rs files.
-    // Remove any {{#include ../../crates/ex/**/*.rs}} from the Markdown
+    // Remove any {{#include ../../crates/**/*.rs}} from the Markdown
     // (and replace by a hard-coded string to avoid Skeptic errors).
     // let contents_to_insert = "fn main() {}";
     // let modified_files =
@@ -59,7 +59,8 @@ fn main() -> Result<()> {
     // }
 
     // Get the paths of all Markdown files
-    let paths = WalkDir::new(markdown_path).into_iter()
+    let paths = WalkDir::new(markdown_path)
+        .into_iter()
         // convert DirEntry to String
         .map(|p| p.unwrap().path().to_string_lossy().into_owned())
         .filter(|p| p.ends_with(".md"))

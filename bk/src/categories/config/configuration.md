@@ -17,15 +17,15 @@ Config lets you set a set of default parameters and then extend them via merging
 - Programmatic overrides.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/config/tests/config1.rs:example}}
+{{#include ../../../crates/cats/config/tests/config1.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/config/tests/config2.rs:example}}
+{{#include ../../../crates/cats/config/tests/config2.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/config/tests/config3.rs:example}}
+{{#include ../../../crates/cats/config/tests/config3.rs:example}}
 ```
 
 ## `confy` {#confy}
@@ -33,7 +33,7 @@ Config lets you set a set of default parameters and then extend them via merging
 [![confy][c-confy-badge]][c-confy] [![confy-crates.io][c-confy-crates.io-badge]][c-confy-crates.io] [![confy-github][c-confy-github-badge]][c-confy-github] [![confy-lib.rs][c-confy-lib.rs-badge]][c-confy-lib.rs]{{hi:confy}}
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/config/tests/confy.rs:example}}
+{{#include ../../../crates/cats/config/tests/confy.rs:example}}
 ```
 
 {{#include refs.incl.md}}

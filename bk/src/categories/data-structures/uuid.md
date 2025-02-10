@@ -17,7 +17,7 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 `uuid` generates and parses UUIDs and implements a number of utility functions.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/data_structures/tests/uuid.rs:example}}
+{{#include ../../../crates/cats/data_structures/tests/uuid.rs:example}}
 ```
 
 {{#include refs.incl.md}}

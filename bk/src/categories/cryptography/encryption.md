@@ -9,7 +9,7 @@
 Pure Rust RSA implementation.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/cryptography/tests/rsa.rs:example}}
+{{#include ../../../crates/cats/cryptography/tests/rsa.rs:example}}
 ```
 
 {{#include refs.incl.md}}

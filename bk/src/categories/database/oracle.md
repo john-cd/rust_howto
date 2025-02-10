@@ -9,7 +9,7 @@ Oracle Database is a multi-model database management system produced and markete
 A oci database adapter for diesel
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/oracle/diesel_oci.rs:example}}
+{{#include ../../../crates/cats/database/tests/oracle/diesel_oci.rs:example}}
 ```
 
 ## `oracle` {#oracle}
@@ -19,7 +19,7 @@ A oci database adapter for diesel
 Oracle bindings for Rust. This crate provides a safe and ergonomic interface to Oracle databases.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/oracle/oracle.rs:example}}
+{{#include ../../../crates/cats/database/tests/oracle/oracle.rs:example}}
 ```
 
 ## `sibyl` {#sibyl}
@@ -29,7 +29,7 @@ Oracle bindings for Rust. This crate provides a safe and ergonomic interface to 
 `sibyl` offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/ex/cats/database/tests/oracle/sibyl.rs:example}}
+{{#include ../../../crates/cats/database/tests/oracle/sibyl.rs:example}}
 ```
 
 {{#include refs.incl.md}}

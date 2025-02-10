@@ -12,7 +12,7 @@
 De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/serde/serde.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/serde/serde.rs:example}}
 ```
 
 ## (De)serialize JSON {#serde-json2}
@@ -23,7 +23,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![serde_json-lib.rs][c-serde_json-lib.rs-badge]][c-serde_json-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/serde/serde_json.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/serde/serde_json.rs:example}}
 ```
 
 ## Handle unknown fields when deserializing with `serde-ignored` {#serde-ignored}
@@ -34,7 +34,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/serde/serde_ignored.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/serde/serde_ignored.rs:example}}
 ```
 
 ## `monostate` {#monostate}
@@ -47,7 +47,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/encoding/tests/serde/monostate.rs:example}}
+{{#include ../../../crates/cats/encoding/tests/serde/monostate.rs:example}}
 ```
 
 {{#include refs.incl.md}}

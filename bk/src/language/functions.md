@@ -5,7 +5,7 @@
 [![Rust by example - Functions][book-rust-by-example-fn-badge]][book-rust-by-example-fn]{{hi:fn}}{{hi:Functions}}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/functions.rs:example}}
+{{#include ../../crates/language/tests/feat/functions.rs:example}}
 ```
 
 The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the default return type{{hi:Return type}} when no type is given for a function. It could be omitted: `fn log(message: &str) { ... }`
@@ -13,17 +13,17 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 ## Generic functions {#generic-functions}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/generic_functions.rs:example}}
+{{#include ../../crates/language/tests/feat/generic_functions.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/generic_functions2.rs:example}}
+{{#include ../../crates/language/tests/feat/generic_functions2.rs:example}}
 ```
 
 ## Function pointers {#function-pointers}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/function_pointers.rs:example}}
+{{#include ../../crates/language/tests/feat/function_pointers.rs:example}}
 ```
 
 ## Diverging functions {#diverging-functions}
@@ -31,7 +31,7 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 {{i:Diverging functions}} never return.
 
 ```rust,editable,should_panic
-{{#include ../../crates/ex/language/tests/feat/diverging_functions.rs:example}}
+{{#include ../../crates/language/tests/feat/diverging_functions.rs:example}}
 ```
 
 {{#include refs.incl.md}}

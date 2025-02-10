@@ -5,11 +5,11 @@
 [![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/match1.rs:example}}
+{{#include ../../crates/language/tests/feat/match1.rs:example}}
 ```
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/match2.rs:example}}
+{{#include ../../crates/language/tests/feat/match2.rs:example}}
 ```
 
 Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` guards, @-binding `Message::Hello { id: id_variable @ 3..=7,}`.
@@ -17,13 +17,13 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 ## `if let` {#if-let}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/if_let.rs:example}}
+{{#include ../../crates/language/tests/feat/if_let.rs:example}}
 ```
 
 ## `while let` {#while-let}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/while_let.rs:example}}
+{{#include ../../crates/language/tests/feat/while_let.rs:example}}
 ```
 
 ## See also

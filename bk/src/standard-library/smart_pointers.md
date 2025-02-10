@@ -31,7 +31,7 @@ Use `Box<T>` when
 - you don't want to rely on stack space.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/box1.rs:example}}
+{{#include ../../crates/standard_library/tests/other/box1.rs:example}}
 ```
 
 ## `Rc` {#rc}
@@ -48,7 +48,7 @@ The `Rc<T>` type (for "Reference Counted") enables shared ownership of a value.{
 Keep in mind that `Rc` is not thread-safe. For concurrent scenarios, you should use `Arc` (Atomic Reference Counted), which provides similar functionality with thread safety.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/rc.rs:example}}
+{{#include ../../crates/standard_library/tests/other/rc.rs:example}}
 ```
 
 Also of note: the `Weak` type, typically obtained via `Rc::downgrade`, allows for non-owning (weak) references to the data. This can help prevent reference cycles that could lead to memory leaks.
@@ -65,7 +65,7 @@ These types are used in scenarios involving shared state within a single thread,
 Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, `borrow_mut`, and `try_borrow`.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/refcell.rs:example}}
+{{#include ../../crates/standard_library/tests/other/refcell.rs:example}}
 ```
 
 - `RefCell<T>` (and `Cell<T>`, `OnceCell<T>`) do not implement `Sync` and are therefore _single-threaded_. The corresponding `Sync` version of `RefCell<T>` is `RwLock<T>`. Use `Mutex<T>`, `RwLock<T>`, `OnceLock<T>`, or atomic types when working with multiple threads.
@@ -90,7 +90,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 `Cell<T>` is a type that provides simple, byte-wise copyable mutability. It is commonly used for types that implement the `Copy` trait, like integers and booleans. `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`.
 
 ```rust,editable
-{{#include ../../crates/ex/standard_library/tests/other/cell.rs:example}}
+{{#include ../../crates/standard_library/tests/other/cell.rs:example}}
 ```
 
 "`Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else."

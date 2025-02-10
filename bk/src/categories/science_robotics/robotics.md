@@ -13,7 +13,7 @@
 [Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/science_robotics/tests/robotics.rs:example}}
+{{#include ../../../crates/cats/science_robotics/tests/robotics.rs:example}}
 ```
 
 {{#include refs.incl.md}}

@@ -7,7 +7,7 @@
 ## Concatenate strings {#benchmark}
 
 ```rust,editable
-{{#include ../../../crates/ex/cats/text_processing/tests/string_concat.rs:example}}
+{{#include ../../../crates/cats/text_processing/tests/string_concat.rs:example}}
 ```
 
 [String concatenation benchmark][concat-benchmark-github]⮳

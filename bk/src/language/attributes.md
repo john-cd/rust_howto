@@ -20,19 +20,19 @@ Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribut
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/attributes_debug.rs:example}}
+{{#include ../../crates/language/tests/feat/attributes_debug.rs:example}}
 ```
 
 For production-ready code{{hi:Production-ready code}}, replace the above by the following, for example.
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/attributes_production.rs:example}}
+{{#include ../../crates/language/tests/feat/attributes_production.rs:example}}
 ```
 
 You also apply these attributes to specific functions:
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/allow_dead_code.rs:example}}
+{{#include ../../crates/language/tests/feat/allow_dead_code.rs:example}}
 ```
 
 List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
@@ -44,13 +44,13 @@ See [Automatic derivation][p-automatic-derivation].
 ## Mark as `must use` {#must-use}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/attributes_must_use.rs:example}}
+{{#include ../../crates/language/tests/feat/attributes_must_use.rs:example}}
 ```
 
 ## Mark as deprecated {#deprecated}
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/attributes_deprecated.rs:example}}
+{{#include ../../crates/language/tests/feat/attributes_deprecated.rs:example}}
 ```
 
 ## Compile conditionally {#conditional-compilation}
@@ -58,7 +58,7 @@ See [Automatic derivation][p-automatic-derivation].
 [Conditional compilation][book-rust-reference-conditional-compilation]⮳
 
 ```rust,editable
-{{#include ../../crates/ex/language/tests/feat/conditional_compilation.rs:example}}
+{{#include ../../crates/language/tests/feat/conditional_compilation.rs:example}}
 ```
 
 ## See also
