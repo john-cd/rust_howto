@@ -2225,13 +2225,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
 
 [[package]]
-name = "autogen"
-version = "0.1.2"
-dependencies = [
- "tool_lib",
-]
-
-[[package]]
 name = "av1-grain"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5218,14 +5211,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "clap_builder_xmpl"
-version = "0.1.2"
-dependencies = [
- "clap 4.5.28",
- "env_logger 0.11.6",
-]
-
-[[package]]
 name = "clap_derive"
 version = "3.2.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5264,16 +5249,6 @@ name = "clap_lex"
 version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f46ad14479a25103f283c0f10005961cf086d8dc42205bb44c46ac563475dca6"
-
-[[package]]
-name = "clean"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "tracing",
- "tracing-subscriber",
- "walkdir",
-]
 
 [[package]]
 name = "clipboard-win"
@@ -6520,21 +6495,6 @@ dependencies = [
  "cranelift-codegen 0.116.1",
  "libc",
  "target-lexicon 0.13.2",
-]
-
-[[package]]
-name = "crate_indices"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "cargo_toml",
- "clap 4.5.28",
- "clap_builder",
- "itertools 0.14.0",
- "tool_lib",
- "tracing",
- "tracing-subscriber",
- "walkdir",
 ]
 
 [[package]]
@@ -19584,15 +19544,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b4596b6d070b27117e987119b4dac604f3c58cfb0b191112e24771b2faeac1a6"
 
 [[package]]
-name = "playground"
-version = "0.1.2"
-dependencies = [
- "inquire",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "plist"
 version = "1.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -22111,13 +22062,6 @@ checksum = "da991f231869f34268415a49724c6578e740ad697ba0999199d6f22b3949332c"
 dependencies = [
  "quote 1.0.38",
  "rust_decimal",
-]
-
-[[package]]
-name = "rust_howto"
-version = "0.1.2"
-dependencies = [
- "cargo_toml",
 ]
 
 [[package]]
@@ -26089,18 +26033,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "templ"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "clap 4.5.28",
- "clap_builder",
- "tool_lib",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "template_engine"
 version = "0.1.2"
 dependencies = [
@@ -26886,25 +26818,6 @@ dependencies = [
  "prost-types",
  "quote 1.0.38",
  "syn 2.0.98",
-]
-
-[[package]]
-name = "tool_lib"
-version = "0.1.2"
-dependencies = [
- "anyhow",
- "crates_io_api",
- "itertools 0.14.0",
- "once_cell",
- "regex",
- "reqwest",
- "serde 1.0.217",
- "similar",
- "tera",
- "tinytemplate",
- "toml 0.8.20",
- "tracing",
- "trim-in-place",
 ]
 
 [[package]]

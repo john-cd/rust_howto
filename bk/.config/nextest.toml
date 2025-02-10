@@ -68,7 +68,7 @@ failure-output = "immediate"
 
 # "success-output" controls production of standard output and standard error on success. This should
 # generally be set to "never".
-success-output = "never"
+success-output = "final"
 
 # Cancel the test run on the first failure. For CI runs, consider setting this
 # to false.

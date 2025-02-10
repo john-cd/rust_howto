@@ -6,13 +6,15 @@ members = [
     "crates/ex/language",
     "crates/ex/other",
     "crates/ex/standard_library",
-    "crates/playground",
-    "crates/publish", # crates.io placeholder
-    "crates/tools/*",
-    "crates/xmpl/*", # examples independent from the book markdown
-    ]
+]
 exclude = []
-default-members = ["crates/ex/about", "crates/ex/cats/*", "crates/ex/language", "crates/ex/other", "crates/ex/standard_library",]
+default-members = [
+    "crates/ex/about",
+    "crates/ex/cats/*",
+    "crates/ex/language",
+    "crates/ex/other",
+    "crates/ex/standard_library",
+]
 
 # Default values for packages in the workspace
 [workspace.package]
@@ -24,7 +26,25 @@ description = "A documentation summary and a compendium of snippets and recipes 
 documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
-license-file = "LICENSE"
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["algorithms", "asynchronous", "concurrency", "web-programming", "development-tools", "api-bindings", "caching", "command-line-interface", "compilers", "compression"]
+license-file = "../LICENSE"
+keywords = [
+    "patterns",
+    "cookbook",
+    "howto",
+    "how-to",
+    "documentation",
+    "Rust bible",
+]
+categories = [
+    "algorithms",
+    "asynchronous",
+    "concurrency",
+    "web-programming",
+    "development-tools",
+    "api-bindings",
+    "caching",
+    "command-line-interface",
+    "compilers",
+    "compression",
+]
 publish = false

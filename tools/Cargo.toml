@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = ["*"]
+
+# Default values for packages in the workspace
+[workspace.package]
+version = "0.1.2"
+authors = ["John CD"]
+edition = "2024"
+rust-version = "1.85"
+description = ""
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
+repository = "https://github.com/john-cd/rust_howto/tools/"
+keywords = []
+categories = []
+publish = false
