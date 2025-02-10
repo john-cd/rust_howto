@@ -3,18 +3,17 @@
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/go/build-context-dockerignore/
-/.cargo-husky
-/.git
-/.github
-/.vscode
-/book
-/crates/ex/**/temp
-/crates/**/target
-/crates/playground/drafts
-/doctest_cache
-/drafts
-/target
-/*.md
-**/.DS_Store
+.git/
+.github/
+.vscode/
+bk/.cargo-husky
+bk/book/
+bk/crates/*/temp/
+bk/crates/*/target/
+bk/drafts/
+bk/doctest_cache/
+bk/target/
+playground/
+publish/
 *.log
-README.md
+*.md
