@@ -70,15 +70,18 @@ alias b := build
 build:
   #!/usr/bin/env bash
   set -euo pipefail
-  echo "Build default packages (default features) in $(pwd)"
+  echo "Build default packages (default features) in {{root}}"
   cd {{root}}
   cargo build --all-targets --locked --timings
 
 alias bf := buildfeat
 
 # Build just the code used by the book (default packages, all features)
-@buildfeat:
-  echo "Build default packages (all features) in $(pwd)"
+buildfeat:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  echo "Build default packages (all features) in {{root}}"
+  cd {{root}}
   cargo build --all-targets --locked --all-features --timings
 
 alias ba := buildall
@@ -92,7 +95,7 @@ alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
 @clippyall:
-  echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
+  echo "Scan all code for common mistakes (all packages, all features) in {{root}}"
   cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 #alias t := test
@@ -111,13 +114,13 @@ alias ca := clippyall
 
 ## Test all code (all packages, all features)
 #@testall: _clean_temp_dir && _clean_temp_dir
-#  echo "Test all code (all packages, all features) in $(pwd)"
+#  echo "Test all code (all packages, all features) in {{root}}"
 #  -cargo test --workspace --all-targets --locked --all-features
 
 # Test any doctests in the workspace
 @doctest:
-  echo "Test any doctests in the workspace in $(pwd)"
-  cargo test --workspace --doc --locked
+  echo "Test any doctests in the workspace in {{root}}"
+  cd {{root}}; cargo test --workspace --doc --locked
 
 alias ntc := nextestcurrent
 
@@ -125,8 +128,8 @@ current_crate := file_name(invocation_directory())
 
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 @nextestcurrent: _clean_temp_dir && _clean_temp_dir
-  echo "Test in $(pwd) (all features)"
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
+  echo "Test {{current_crate}} (all features)"
+  cargo nextest run --all-targets --locked --no-fail-fast --status-level all -E 'package({{current_crate}})' --all-features
 
 alias nt := nextest
 
@@ -134,16 +137,19 @@ alias nt := nextest
 nextest: _clean_temp_dir && _clean_temp_dir
   #!/usr/bin/env bash
   set -euo pipefail
+  echo "Test the code under {{root}} (no doctests, default packages, default features)"
   cd {{root}}
-  echo "Test the code under $(pwd) (no doctests, default packages, default features)"
   cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests) (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
-  echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
-  -cargo test --doc --workspace --quiet # nextest does not handle doctests
+  #!/usr/bin/env bash
+  set -euo pipefail
+  echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
+  cd {{root}}
+  cargo test --doc --workspace --quiet # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
