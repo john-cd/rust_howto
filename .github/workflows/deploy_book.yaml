@@ -1,0 +1,63 @@
+name: Deploy the book to GitHub Pages
+
+on:
+  ## Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+## Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+## However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+    working-directory: '.\bk'
+
+jobs:
+  build:
+    name: Build the book
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout (clones the Git repository)
+        uses: actions/checkout@v4
+      - name: Install `cargo binstall`
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      - name: Install mdBook
+        run: |
+          cargo binstall --version "0.4.35" --no-confirm mdbook
+          cargo binstall --no-confirm mdbook-linkcheck
+          cargo binstall --no-confirm mdbook-private
+          cargo binstall --no-confirm mdbook-indexing
+      - name: Install `mdbook-utils`
+        run: cargo install --locked --force mdbook-utils
+      - name: Build the book
+        uses: |
+          mdbook build
+          cp ./static/*.* ./book/html/
+          mdbook-utils sitemap
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./book/html/
+  deploy:
+      name: Deploy to GitHub Pages
+      needs: build
+      runs-on: ubuntu-latest
+      permissions:
+        pages:
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
