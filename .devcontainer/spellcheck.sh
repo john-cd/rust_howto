@@ -8,6 +8,8 @@
 # option. This file may not be copied, modified, or distributed
 # except according to those terms.
 
+set -euo pipefail
+
 aspell --version
 
 # Checks project markdown files for spell errors
@@ -41,7 +43,7 @@ aspell --version
 shopt -s nullglob
 
 dict_filename="$(dirname "$0")/dictionary.txt"
-markdown_sources=(${root}src/*.md)
+markdown_sources="$(dirname ${0})/../bk/src/*.md"
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,

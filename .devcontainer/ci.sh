@@ -7,6 +7,8 @@ echo "----------"
 ## Spell checks
 .devcontainer/spellcheck.sh list
 
+cd ./bk
+
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check

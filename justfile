@@ -1,4 +1,7 @@
+set unstable
+
 set shell := ["bash", "-uc"]
+set script-interpreter := ["bash", "-eu"]
 
 # Set shell for Windows OSs:
 # PowerShell Core has some of the Unix shell skills we need, such as || and &&
@@ -8,8 +11,14 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
 
-#@faa:
-#  just bk fa
+[script]
+fa:
+  set -euo pipefail
+  for wkspace in "bk" "mdbook-scrub" "playground" "publish" "tools" "xmpl"
+  do
+    just $wkspace fa
+    echo "------------------------"
+  done
 
 # Book
 mod bk

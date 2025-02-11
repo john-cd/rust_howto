@@ -47,7 +47,7 @@ alias nta := nextestall
   -cargo test --doc --workspace --quiet # nextest does not handle doctests
   cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
-alias ra := runall
+#alias ra := runall
 
 # Run additional examples (under the `crates/xmpl` folder)
 [unix]
