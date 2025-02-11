@@ -134,7 +134,7 @@ u *args='':
 # Utilities
 mod utils 'scripts/utils'
 
-spell extra_param:
+spell extra_param='':
   @just utils spell {{extra_param}}
 
 lnk pattern:

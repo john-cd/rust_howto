@@ -12,11 +12,11 @@ _default:
 
 # Check spelling in markdown
 [unix]
-@spell extra_param:
+@spell extra_param='':
   {{root}}/../.devcontainer/spellcheck.sh {{extra_param}}
 
 [windows]
-@spell:
+@spell extra_param='':
   echo "Spell check is not implemented for Windows!"
 
 ## .... GET LINK ....
