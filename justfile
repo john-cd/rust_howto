@@ -11,8 +11,15 @@ _default:
 #@faa:
 #  just bk fa
 
+# Book
 mod bk
+# Playground
 mod playground
+# Placeholder crate on crates.io
 mod publish
+# `mdbook-scrub` preprocessor
+mod? scrub 'mdbook-scrub'
+# Tools
 mod tools
+# Additional examples
 mod xmpl
