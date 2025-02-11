@@ -38,7 +38,7 @@ cargo make --version
 
 The two distinguishing features of `xtask` are the following:
 
-- It doesn't require any other binaries besides�`cargo` and�`rustc`, it fully bootstraps from them
+- It doesn't require any other binaries besides `cargo` and `rustc`, it fully bootstraps from them
 - Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
 
 ### Use `devx` {#devx}
