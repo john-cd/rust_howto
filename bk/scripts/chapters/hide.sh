@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # `mdbook-private` is configured to hide markdown files starting with _ (and their children)

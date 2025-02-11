@@ -1,3 +1,5 @@
+set fallback
+
 [no-exit-message]
 _default:
   @just --list --unsorted --justfile {{source_file()}}

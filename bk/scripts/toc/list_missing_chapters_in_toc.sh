@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -uo pipefail
 
 # List (sub)chapters that somehow were not added in the main table of contents i.e. SUMMARY.md

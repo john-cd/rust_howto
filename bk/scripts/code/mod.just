@@ -143,8 +143,8 @@ nextest: _clean_temp_dir && _clean_temp_dir
 
 alias nta := nextestall
 
-# Test all code in the workspace (incl. doctests) (all features)
-@nextestall: _clean_temp_dir && _clean_temp_dir
+# Test all code in the workspace, including doctests (all features)
+nextestall: _clean_temp_dir && _clean_temp_dir
   #!/usr/bin/env bash
   set -euo pipefail
   echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
@@ -154,7 +154,8 @@ alias nta := nextestall
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
-  cargo run --manifest-path ../../../tools -p clean --quiet
+  cargo run --manifest-path {{justfile_directory()}}/../tools/Cargo.toml -p clean --quiet
+# TODO
 
 alias r := run
 

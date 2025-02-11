@@ -71,7 +71,7 @@ create_issues_for_examples:
 
 ## Delete issues with --label "markdown,auto"
 # delete_issues:
-#    #!/usr/bin/env bash
+#   #!/usr/bin/env bash
 #   issues=$(gh issue list --label "markdown,auto" --jq '.[].number' --json number)
 #   for issue in $issues
 #   do

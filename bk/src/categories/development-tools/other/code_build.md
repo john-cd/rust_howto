@@ -38,10 +38,10 @@ system-info:
 
 # Shebang script example
 foo:
- #!/usr/bin/env bash
- set -euxo pipefail
- hello='Yo'
- echo "$hello from Bash!"
+  #!/usr/bin/env bash
+  set -euxo pipefail
+  hello='Yo'
+  echo "$hello from Bash!"
 ```
 
 ### Install `just` in a Dev Container {#skip2}

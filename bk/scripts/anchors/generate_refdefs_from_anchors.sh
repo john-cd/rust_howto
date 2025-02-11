@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # (BEWARE: modifies files directly) Generate reference definitions from book heading anchors e.g. {#some-text} and add them to the local references in `refs.incl.md`

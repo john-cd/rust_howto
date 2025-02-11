@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links

@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # List files that do not include their local references i.e. {{#include refs.incl.md}} is missing

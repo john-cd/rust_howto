@@ -1,8 +1,8 @@
- #!/usr/bin/env bash
-set -uo pipefail
+#!/usr/bin/env bash
+set -ue
 
 root="$(realpath $1)/"
-d="${root}.devcontainer/"
+d="${root}/../.devcontainer/"
 feature="$2"
 
 ## "feature" must be the name of a service in `compose-heavy-tests.yaml`
@@ -16,7 +16,7 @@ docker compose -f ${d}compose.yaml \
 
 ## Run tests, which names include the feature name, ignoring the default filter that normally suppress "require_external_svc" tests.
 cd "$root"
-cargo nextest run --tests --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter --all-features -E "test(~${feature}) or binary_id(~${feature})"
+cargo nextest run --tests --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter --all-features -E "test(~${feature}) or binary_id(~${feature})" || true
 
 ## Removes stopped service containers. Stop the containers, if required, before removing
 docker compose -f ${d}compose.yaml \
