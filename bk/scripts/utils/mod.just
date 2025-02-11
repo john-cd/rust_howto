@@ -42,10 +42,10 @@ empty := ''
 
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 @templ cmd=help *subcmd=empty:
-  cargo run -p templ -- {{cmd}} {{subcmd}}
+  {{root}}/../bin/templ {{cmd}} {{subcmd}}
 # TODO P2 clarify
 
 # Autogenerate a chapter (from template)
 @autogen:
-  cargo run -p autogen
+  {{root}}/../bin/autogen
 # TODO P2 finish

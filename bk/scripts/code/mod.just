@@ -154,8 +154,8 @@ nextestall: _clean_temp_dir && _clean_temp_dir
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
-  cargo run --manifest-path {{justfile_directory()}}/../tools/Cargo.toml -p clean --quiet
-# TODO
+  {{root}}/../bin/clean
+#cargo run --manifest-path {{justfile_directory()}}/../tools/Cargo.toml -p clean --quiet
 
 alias r := run
 
