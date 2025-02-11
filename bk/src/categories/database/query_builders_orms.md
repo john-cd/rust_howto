@@ -29,7 +29,7 @@ diesel = { version = "2.2.6", features = ["sqlite"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
 dotenvy = "0.15.7"
 serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.134"
+serde_json = "1.0.138"
 ```
 
 - Run the following commands in your terminal to create a `.env` file with the database URL:

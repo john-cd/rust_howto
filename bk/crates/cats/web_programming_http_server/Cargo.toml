@@ -17,7 +17,7 @@ publish.workspace = true
 actix-web = "4.9.0"
 async-graphql = "7.0.13"
 async-graphql-axum = "7.0.13"
-axum = "0.7.9"                # pinned because of tonic
+axum = "0.7.9"                                                  # pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
 leptos = "0.7"
@@ -32,7 +32,7 @@ tower-http = { version = "0.6.1", features = ["full", "auth"] }
 ## General
 anyhow = "1.0.95"
 bytes = "1.9.0"
-serde_json = "1.0.135"
+serde_json = "1.0.138"
 tokio = { version = "1.43.0", features = ["full"] }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }

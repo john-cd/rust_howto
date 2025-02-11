@@ -24,7 +24,7 @@ serde = { version = "1.0.217", features = ["derive"] }
 similar = "2.6.0"
 tera = "1.20.0"
 tinytemplate = "1.2.1"
-toml = "0.8.19"
+toml = "0.8.20"
 tracing = "0.1.41"
 trim-in-place = "0.1.7"
 

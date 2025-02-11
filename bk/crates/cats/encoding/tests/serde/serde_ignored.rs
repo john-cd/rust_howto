@@ -9,7 +9,7 @@ use serde::Deserialize;
 // [dependencies]
 // serde = { version = "1.0.217", features = ["derive"] } # or latest
 // serde_ignored = "0.1.10"
-// serde_json = "1.0.135"
+// serde_json = "1.0.138"
 
 #[allow(dead_code)]
 #[derive(Deserialize, Debug)]

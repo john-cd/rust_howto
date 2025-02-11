@@ -10,7 +10,7 @@ Add to `Cargo.toml`
 
 ```toml
 [dependencies]
-tracing = "0.1"
+tracing = "0.1.41" # or latest version
 tracing-subscriber = "0.3"
 ```
 
