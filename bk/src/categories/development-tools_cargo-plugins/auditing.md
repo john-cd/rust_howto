@@ -15,7 +15,7 @@ cargo install cargo-audit
 cargo audit
 ```
 
-## Embded the exact crate versions in your Rust executable for auditability {#cargo-auditable}
+## Embed the exact crate versions in your Rust executable for auditability {#cargo-auditable}
 
 [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]{{hi:cargo-auditable}}
 [![cargo-auditable-crates.io][c-cargo_auditable-crates.io-badge]][c-cargo_auditable-crates.io]

@@ -60,7 +60,7 @@ impl App {
         while self.mode != Mode::Done {
             // `draw` must render the entire UI.
             // You should only call it once for each pass
-            // through your application’s main loop.
+            // through your application's main loop.
             terminal.draw(|frame| self.ui(frame))?;
             self.handle_events()?;
         }

@@ -73,7 +73,7 @@ cargo-outdated for listing packages that have newer versions than what your Carg
 
 cargo-tree to investigate dependencies (I like to use -d to list crates where more than one version is getting pulled in and what's pulling each version in.)
 
-cargo-update to provide a cargo install-update to check for and install new versions of cargo install'd commands.
+cargo-update to provide a cargo install-update to check for and install new versions of cargo install's commands.
 
 cargo-watch to re-run a command every time the source changes. (eg. cargo test)
 

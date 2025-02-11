@@ -2,7 +2,7 @@
 
 {{#include git_hooks.incl.md}}
 
-Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor formatting of the code or configuration files, when commiting in `git`, prior to submission to code review or start of a CI workflow.
+Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor formatting of the code or configuration files, when committing in `git`, prior to submission to code review or start of a CI workflow.
 
 ## Check your code before committing it {#check-your-code-before-committing}
 
@@ -29,7 +29,7 @@ cargo test
 
 ## `pre-commit` {#pre-commit}
 
-[`pre-commit`][pre-commit.com-website]⮳ is a Python framework for managing and maintaining multi-language pre-commit hooks.
+[`pre-commit`][pre-commit.com-website]⮳ is a Python framework for managing and maintaining multi-language pre-commit hooks.
 
 [`pre-commit` hooks][pre-commit.com-hooks-website]
 
@@ -63,7 +63,7 @@ pre-commit run --all-files
 
 ## Useful links
 
-[Rust CI Tooling: Clippy, commitlint, pre‑commit][rust-ci-tooling]
+[Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling]
 
 [`pre-commit-rust`][pre-commit-rust-github]
 

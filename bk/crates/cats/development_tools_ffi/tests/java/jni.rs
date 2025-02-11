@@ -19,7 +19,7 @@
 // // Build the Rust code as a dynamic library (e.g., a .so file for Linux, .dll
 // // for Windows): add a new `[lib]` section and under it, `crate_type =
 // ["cdylib"]`. // if you run cargo build from inside the crate directory, you
-// should see a `libmylib.so` // (if you’re on linux) or a `libmylib.dylib` (if
+// should see a `libmylib.so` // (if you're on Linux) or a `libmylib.dylib` (if
 // you are on OSX) in the `target/debug` directory. // Compile the java code
 // with the javac command: // `javac NativeLibrary.java`
 // // Get a NativeLibrary.h output to your directory with the following command:

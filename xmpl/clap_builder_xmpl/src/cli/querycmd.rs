@@ -17,7 +17,7 @@ pub(super) fn cmd() -> Command {
 // See: https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg
 
 /// Returns `ArgMatches` for the `query` subcommand. Returns empty Vec
-/// if the subcommand wasn’t present at runtime.
+/// if the subcommand wasn't present at runtime.
 pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
     if let Some(sub_m) = matches.subcommand_matches("query") {
         sub_m

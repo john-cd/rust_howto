@@ -11,7 +11,7 @@
 [![swc-github][c-swc-github-badge]][c-swc-github]
 [![swc-lib.rs][c-swc-lib.rs-badge]][c-swc-lib.rs]
 
-[`swc` (github)][c-swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
+[`swc` (github)][c-swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
 
 ## Code editors {#code-editors}
 

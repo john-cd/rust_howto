@@ -6,7 +6,7 @@
 
 [![cosmic-text][c-cosmic_text-badge]][c-cosmic_text] [![cosmic-text-crates.io][c-cosmic_text-crates.io-badge]][c-cosmic_text-crates.io] [![cosmic-text-github][c-cosmic_text-github-badge]][c-cosmic_text-github] [![cosmic-text-lib.rs][c-cosmic_text-lib.rs-badge]][c-cosmic_text-lib.rs]{{hi:cosmic-text}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-Pure Rust multi-line text handling. "Full text layout including rich text and support for BiDi and non-latin scripts. The best option for now."
+Pure Rust multi-line text handling. "Full text layout including rich text and support for BiDi and non-Latin scripts. The best option for now."
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/text_layout/cosmic_text.rs:example}}

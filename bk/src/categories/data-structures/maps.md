@@ -39,7 +39,7 @@
 
 Use `slotmap` to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
 
-`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap` , `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
+`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap`, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/maps/slotmap.rs:example}}

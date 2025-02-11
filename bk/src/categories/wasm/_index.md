@@ -13,7 +13,7 @@ WebAssembly was created primarily to address the limitations of JavaScript (perf
 - JavaScript, while versatile, can struggle with computationally intensive tasks. WebAssembly code is designed to be small and fast, running at near-native speeds within the browser.
 - WASM is a low-level, assembly-like language: It is designed to be a compilation target for other languages like C, C++, Rust. This means you can write code in these languages and compile it into WebAssembly for execution in the browser or outside of it. WASM allows developers to leverage their existing codebases and skills. This opens up the web to a wider range of developers and enables the reuse of existing libraries and tools.
 - WASM is designed to be platform-independent, running consistently across different browsers and operating systems.
-- WASM operates within a secure sandboxed environment, mitigating potential security risks.
+- WASM operates within a secure sand-boxed environment, mitigating potential security risks.
 
 In essence, WebAssembly bridges the gap between high-level programming languages and the Web, enabling developers to create powerful and performant web applications.
 
@@ -33,7 +33,7 @@ While WebAssembly (Wasm) was initially designed for the web, its benefits like p
 - Cross-Platform Development,
 - Plugin systems for e.g. desktop applications, extending their functionality with secure and isolated modules.
 
-WASM can be used to build virtual machines or emulators for other architectures, enabling execution of legacy software or providing sandboxed environments.
+WASM can be used to build virtual machines or emulators for other architectures, enabling execution of legacy software or providing sand-boxed environments.
 
 ## `yew`
 

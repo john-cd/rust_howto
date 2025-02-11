@@ -41,7 +41,7 @@ use zerocopy::Immutable;
 // above.
 use zerocopy::IntoBytes;
 // Marker trait that indicates that zerocopy can reason about certain
-// aspects of a type’s layout. This trait is required by many of zerocopy’s
+// aspects of a type's layout. This trait is required by many of zerocopy's
 // APIs.
 use zerocopy::KnownLayout;
 

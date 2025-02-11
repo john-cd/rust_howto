@@ -79,7 +79,7 @@ diesel print-schema > src/schema.rs
 [![toasty-github][c-toasty-github-badge]][c-toasty-github]
 [![toasty-lib.rs][c-toasty-lib.rs-badge]][c-toasty-lib.rs]
 
-Toasty is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL datases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.
+Toasty is an ORM for the Rust programming language that prioritizes ease-of-use. It supports both SQL databases as well as some NoSQL databases, including DynamoDB and Cassandra. Note that Toasty does not hide the database capabilities. Instead, Toasty exposes features based on the target database.
 
 It is currently in active development and not yet published to crates.io. You can try using it directly from Github.
 

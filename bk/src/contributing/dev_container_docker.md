@@ -27,7 +27,7 @@ To connect to the (host OS) docker engine from within the container, add
 
 ## Docker Compose {#docker-compose}
 
-Test the docker compose{{hi:docker compose}} setup used during developement (which Dev Container runs) with:
+Test the docker compose{{hi:docker compose}} setup used during development (which Dev Container runs) with:
 
 ```bash
 cd ./.devcontainer
@@ -39,7 +39,7 @@ docker compose up --build -d
 
 ## Deployment to GitHub Pages {#deployment-to-github-pages}
 
-The continuous integration worflow{{hi:Continuous integration worflow}} is found under `.github`.
+The continuous integration workflow{{hi:Continuous integration workflow}} is found under `.github`.
 
 Test the docker compose setup used during CI using:
 

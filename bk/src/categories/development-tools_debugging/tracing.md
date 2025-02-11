@@ -81,7 +81,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 [![tracing_journald-github][c-tracing_journald-github-badge]][c-tracing_journald-github]
 [![tracing_journald-lib.rs][c-tracing_journald-lib.rs-badge]][c-tracing_journald-lib.rs]
 
-[tracing_journald][c-tracing_journald]⮳ provides support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving any structured information.
+[tracing_journald][c-tracing_journald]⮳ provides support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving any structured information.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

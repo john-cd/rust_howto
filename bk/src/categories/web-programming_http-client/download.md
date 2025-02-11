@@ -34,7 +34,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 
 Uses [`reqwest::blocking::Client::head`][c-reqwest::blocking::Client::head]{{hi:reqwest::blocking::Client::head}}⮳ to get the [`Content-Length`][mozilla-content-length]{{hi:Content length}}⮳ of the response.
 
-The code then uses [`reqwest::blocking::Client::get`][c-reqwest::blocking::Client::get]{{hi:reqwest::blocking::Client::get}}⮳ to download the content in chunks of 10240 bytes, while printing progress messages. This exmple uses the synchronous reqwest module. The [`Range`][mozilla-range]{{hi:Range}}⮳ header specifies the chunk size and position.
+The code then uses [`reqwest::blocking::Client::get`][c-reqwest::blocking::Client::get]{{hi:reqwest::blocking::Client::get}}⮳ to download the content in chunks of 10240 bytes, while printing progress messages. This example uses the synchronous reqwest module. The [`Range`][mozilla-range]{{hi:Range}}⮳ header specifies the chunk size and position.
 
 The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC-7233}}⮳.
 

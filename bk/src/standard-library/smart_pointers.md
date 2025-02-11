@@ -14,7 +14,7 @@ All values in Rust are stack-allocated by default. `Box<T>` allow you to store d
 
 Boxes provide ownership for this allocation, and drop their contents when they go out of scope. Boxes also ensure that they never allocate more than `isize::MAX` bytes.
 
-The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like a reference. You can use the dereference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to retrieve its inner value.
+The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements the [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ trait, which allows `Box<T>` values to be treated like a reference. You can use the de-reference operator{{hi:Dereference operator}} `*`{{hi:*}} or 'deref coercion' with the `.` operator to retrieve its inner value.
 
 ```rust,editable
 let boxed: Box<u8> = Box::new(1);
@@ -26,8 +26,8 @@ let _val = boxed.len();
 
 Use `Box<T>` when
 
-- you have a dynamically sized type, whose size can’t be known at compile time,
-- you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type,
+- you have a dynamically sized type, whose size can't be known at compile time,
+- you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type,
 - you don't want to rely on stack space.
 
 ```rust,editable
@@ -42,7 +42,7 @@ The `Rc<T>` type (for "Reference Counted") enables shared ownership of a value.{
 
 - `Rc` maintains a reference count of the number of owners. You can create additional references to the data using the `clone` method. Cloning an `Rc` only increments the reference count without duplicating the data. When the last owner goes out of scope, the data is automatically cleaned up (dropped).
 - If you need mutability, put a `Cell` or `RefCell` inside the `Rc`.
-- `Rc` automatically dereferences to `T` (via the `Deref` trait), so you can call `T`’s methods on a value of type `Rc<T>`.
+- `Rc` automatically dereferences to `T` (via the `Deref` trait), so you can call `T`'s methods on a value of type `Rc<T>`.
 - `Rc` is commonly used in data structures, such as graphs and linked lists, where multiple nodes might need to share ownership of certain nodes or data.
 
 Keep in mind that `Rc` is not thread-safe. For concurrent scenarios, you should use `Arc` (Atomic Reference Counted), which provides similar functionality with thread safety.
@@ -87,7 +87,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 ## `Cell` {#cell}
 
-`Cell<T>` is a type that provides simple, byte-wise copyable mutability. It is commonly used for types that implement the `Copy` trait, like integers and booleans. `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`.
+`Cell<T>` is a type that provides simple, byte-wise copy-able mutability. It is commonly used for types that implement the `Copy` trait, like integers and booleans. `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/other/cell.rs:example}}

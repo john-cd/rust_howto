@@ -14,7 +14,7 @@ use axum::http::Uri;
 use axum::routing::get;
 
 // `axum` is a web application framework designed to work with `tokio`
-// and `hyper`. It doesn’t have its own middleware system but instead uses
+// and `hyper`. It doesn't have its own middleware system but instead uses
 // `tower::Service`. This means `axum` gets timeouts, tracing, compression,
 // authorization, and more, for free.
 
@@ -65,7 +65,7 @@ async fn state(State(state): State<Arc<AppState>>) {
     // TODO state.request_count
 }
 
-// Fallbacks apply to routes that aren’t matched by anything in the router
+// Fallbacks apply to routes that aren't matched by anything in the router
 async fn fallback(uri: Uri) -> (StatusCode, String) {
     (StatusCode::NOT_FOUND, format!("No route for {uri}"))
 }
@@ -90,7 +90,7 @@ async fn main() -> anyhow::Result<()> {
     let router = Router::new()
         .route("/", get(root)) // Could be `get`, `post`, or `delete`...
         .route("/users/{id}", get(get_user).post(post_user))
-        //TODO .route("/assets/{*path}", get(serve_asset)) // Note: doesn’t match empty segments i.e. /assets or /assets/
+        //TODO .route("/assets/{*path}", get(serve_asset)) // Note: doesn't match empty segments i.e. /assets or /assets/
         .fallback(fallback)
         .with_state(shared_state);
 

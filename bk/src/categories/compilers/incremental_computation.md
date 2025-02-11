@@ -6,7 +6,7 @@
 
 [![salsa][c-salsa-badge]][c-salsa] [![salsa-crates.io][c-salsa-crates.io-badge]][c-salsa-crates.io] [![salsa-github][c-salsa-github-badge]][c-salsa-github] [![salsa-lib.rs][c-salsa-lib.rs-badge]][c-salsa-lib.rs]{{hi:salsa}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[Salsa][c-salsa-website]{{hi:salsa}}⮳ [(gitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
+[Salsa][c-salsa-website]{{hi:salsa}}⮳ [(GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
 
 Salsa is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 

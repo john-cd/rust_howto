@@ -2,7 +2,7 @@
 
 // Divan is a Rust benchmarking framework.
 
-// Add the following to your project’s `Cargo.toml`:
+// Add the following to your project's `Cargo.toml`:
 // [dev-dependencies]
 // divan = "0.1.17"
 //

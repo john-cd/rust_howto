@@ -4,7 +4,7 @@
 
 ## `napi` {#napi}
 
-[![napi][c-napi-badge]][c-napi] [![napi-crates.io][c-napi-crates.io-badge]][c-napi-crates.io] [![napi-github][c-napi-github-badge]][c-napi-github] [![napi-lib.rs][c-napi-lib.rs-badge]][c-napi-lib.rs]{{hi:napi}}{{hi:Ffi}}{{hi:Node}}{{hi:Nodejs}}{{hi:N-api}}{{hi:napi}}
+[![napi][c-napi-badge]][c-napi] [![napi-crates.io][c-napi-crates.io-badge]][c-napi-crates.io] [![napi-github][c-napi-github-badge]][c-napi-github] [![napi-lib.rs][c-napi-lib.rs-badge]][c-napi-lib.rs]{{hi:napi}}{{hi:Ffi}}{{hi:Node}}{{hi:NodeJS}}{{hi:N-api}}{{hi:napi}}
 
 N-API bindings for Node.js.
 

@@ -21,12 +21,12 @@ fn capture_groups() {
     // Capture the word after "dolor" using a look-around. For reference,
     // (?=exp) : look-ahead, succeeds if exp matches to the right of the current
     // position
-    // (?!exp) : negative look-ahead, succeeds if exp doesn’t match
+    // (?!exp) : negative look-ahead, succeeds if exp doesn't match
     // to the right
     // (?<=exp) : look-behind, succeeds if exp matches to the
     // left of the current position
     // (?<!exp) : negative look-behind,
-    // succeeds if exp doesn’t match to the left
+    // succeeds if exp doesn't match to the left
     let pattern = r"(?<=dolor)\s*(\w+)";
 
     let re = Regex::new(pattern).expect("Error parsing the regex");

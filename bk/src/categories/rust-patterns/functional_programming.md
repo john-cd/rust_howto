@@ -13,7 +13,7 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 
-`itertools` includes extra iterator adaptors, functions and macros.
+`itertools` includes extra iterator adapters, functions and macros.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/rust_patterns/itertools.rs:example}}

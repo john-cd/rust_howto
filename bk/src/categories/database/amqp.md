@@ -4,7 +4,7 @@
 
 ## Lapin {#lapin}
 
-[![lapin][c-lapin-badge]][c-lapin] [![lapin-crates.io][c-lapin-crates.io-badge]][c-lapin-crates.io] [![lapin-github][c-lapin-github-badge]][c-lapin-github] [![lapin-lib.rs][c-lapin-lib.rs-badge]][c-lapin-lib.rs]{{hi:lapin}}{{hi:Rabbitmq}}{{hi:Amqp}}{{hi:Mio}}{{hi:Futures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
+[![lapin][c-lapin-badge]][c-lapin] [![lapin-crates.io][c-lapin-crates.io-badge]][c-lapin-crates.io] [![lapin-github][c-lapin-github-badge]][c-lapin-github] [![lapin-lib.rs][c-lapin-lib.rs-badge]][c-lapin-lib.rs]{{hi:lapin}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
 `lapin` is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
 

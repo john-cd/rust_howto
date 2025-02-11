@@ -81,7 +81,7 @@ impl From<ParseIntError> for MyError {
 }
 
 // The `thisError` crate provides a convenient derive macro
-// for the standard library’s `std::error::Error` trait.
+// for the standard library's `std::error::Error` trait.
 // Use when writing libraries.
 #[allow(dead_code)]
 #[derive(thiserror::Error, Debug)]

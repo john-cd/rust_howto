@@ -42,8 +42,10 @@ aspell --version
 
 shopt -s nullglob
 
+opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
-markdown_sources="$(dirname ${0})/../bk/src/*.md"
+markdown_source_dir="$(realpath $(dirname ${0})/../bk/src/)"
+markdown_sources=($(find ${markdown_source_dir} -type f -name "*.md" -not -name "refs.incl.md"))
 mode="check"
 
 # aspell repeatedly modifies personal dictionary for some purpose,
@@ -51,7 +53,7 @@ mode="check"
 mkdir -p "/tmp/.devcontainer/"
 dict_path="/tmp/.devcontainer/$(basename $dict_filename})"
 
-if [[ "$1" == "list" ]]; then
+if [[ "$opt" == "list" ]]; then
     mode="list"
 fi
 

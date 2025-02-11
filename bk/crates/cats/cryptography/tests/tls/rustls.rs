@@ -15,7 +15,7 @@
 // // and provides no unsafe features or obsolete cryptography by default.
 // // Rustls implements TLS1.2 and TLS1.3 for both clients and servers
 
-// // If you’re already using Tokio for an async runtime you may prefer to use
+// // If you're already using Tokio for an async runtime you may prefer to use
 // // `tokio-rustls` instead of interacting with `rustls` directly.
 
 // #[tokio::main]

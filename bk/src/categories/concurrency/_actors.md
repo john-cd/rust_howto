@@ -42,7 +42,7 @@ Possible applications of actor frameworks:
 
 ## `riker` {#riker}
 
-[![riker-website][c-riker-website-badge]][c-riker-website] [![riker][c-riker-badge]][c-riker] [![riker-crates.io][c-riker-crates.io-badge]][c-riker-crates.io] [![riker-github][c-riker-github-badge]][c-riker-github] [![riker-lib.rs][c-riker-lib.rs-badge]][c-riker-lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:Cqrs}}{{hi:Actor-model}}{{hi:Event_sourcing}}
+[![riker-website][c-riker-website-badge]][c-riker-website] [![riker][c-riker-badge]][c-riker] [![riker-crates.io][c-riker-crates.io-badge]][c-riker-crates.io] [![riker-github][c-riker-github-badge]][c-riker-github] [![riker-lib.rs][c-riker-lib.rs-badge]][c-riker-lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
 
 `riker` is an actor framework for Rust to build fast, highly concurrent, and resilient applications.
 

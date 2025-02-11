@@ -52,7 +52,7 @@
 
 `glam` is a 3D math library for games and graphics.
 
-"Fast math library optimised for game development use cases."
+"Fast math library optimized for game development use cases."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/glam.rs:example}}

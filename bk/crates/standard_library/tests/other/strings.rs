@@ -18,7 +18,7 @@ fn main() {
     // String slice -  contains the first 4 bytes of the string.
     let _s: &str = &s3[0..4];
     // Caution: If we were to try to slice only part of a unicode
-    // character’s bytes, Rust would panic at runtime.
+    // character's bytes, Rust would panic at runtime.
 
     // Iteration
     for c in "Зд".chars() {

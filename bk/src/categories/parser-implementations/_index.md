@@ -10,6 +10,6 @@ Parsers implemented for particular formats or languages.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[parser-implementations/_index: add other subchapters above (P2)](https://github.com/john-cd/rust_howto/issues/447)
+[parser-implementations/_index: add other sub-chapters above (P2)](https://github.com/john-cd/rust_howto/issues/447)
 
 </div>

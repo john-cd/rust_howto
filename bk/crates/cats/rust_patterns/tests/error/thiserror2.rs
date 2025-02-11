@@ -5,7 +5,7 @@ use thiserror::Error;
 pub struct MyError {
     msg: String,
 
-    // The Error trait’s source() method is implemented to return whichever
+    // The Error trait's source() method is implemented to return whichever
     // field has a #[source] attribute or is named source, if any. This is
     // for identifying the underlying lower level error that caused your
     // error. #[from] implies #[source]. Any error type that implements

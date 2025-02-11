@@ -15,7 +15,7 @@ fn main() {
     // OR: open::with("http://rust-lang.org", "firefox")?;
 
     // Depending on the platform and system configuration, launchers can block.
-    // If you want to be sure they don’t, use that_in_background() or
+    // If you want to be sure they don't, use that_in_background() or
     // that_detached instead.
 
     // Get the commands to try open the path with.

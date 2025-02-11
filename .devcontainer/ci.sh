@@ -27,7 +27,7 @@ cargo fetch
 
 ## Make sure all examples (and tools) compile
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
-## Some diagnostics and errors are only emitted during code generation, so they inherently won’t be reported with cargo check.
+## Some diagnostics and errors are only emitted during code generation, so they inherently won't be reported with cargo check.
 ## - `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 ## - See .cargo/config.toml for the `ci` profile config. We removed optimizations, since we will run / test the examples just once.
 ## - Some examples require external services e.g. Redis, Mongodb... and are excluded from testing / hidden behind feature flags.

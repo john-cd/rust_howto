@@ -54,7 +54,7 @@ Tool for benchmarking compiled binaries (similar to unix time command but better
 - Statistical analysis across multiple runs.
 - Support for arbitrary shell commands.
 - Constant feedback about the benchmark progress and current estimates.
-- Warmup runs can be executed before the actual benchmark.
+- Warm-up runs can be executed before the actual benchmark.
 - Cache-clearing commands can be set up before each timing run.
 - Statistical outlier detection to detect interference from other programs and caching effects.
 - Export results to various formats: CSV, JSON, Markdown, AsciiDoc.

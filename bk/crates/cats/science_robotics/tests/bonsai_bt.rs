@@ -22,7 +22,7 @@
 // use bonsai_bt::Wait;
 
 // // A Behavior Tree (BT) is a data structure in which we can set the rules of
-// how // certain behavior’s can occur, and the order in which they would
+// how // certain behavior's can occur, and the order in which they would
 // execute. // BTs are a very efficient way of creating complex systems that are
 // both // modular and reactive. These properties have led to the spread of BT
 // from // computer game programming to AI and Robotics.

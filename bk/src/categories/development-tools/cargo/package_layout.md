@@ -32,7 +32,7 @@
         └── test_module.rs
 ```
 
-If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock`{{hi:Cargo.lock}} in your `.gitignore`{{hi:.gitignore}}.
+If you're building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock`{{hi:Cargo.lock}} in your `.gitignore`{{hi:.gitignore}}.
 
 - A package{{hi:Package}} is a bundle of one or more crates - as defined by a `Cargo.toml`{{hi:Cargo.toml}} file
 - A crate{{hi:Crate}} is the smallest amount of code that the Rust compiler considers at a time.

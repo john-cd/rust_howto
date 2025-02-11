@@ -26,9 +26,9 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 [![pest-lib.rs][c-pest-lib.rs-badge]][c-pest-lib.rs]
 [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-[`pest`][c-pest-website]{{hi:pest}}⮳ is a general-purpose parser written in Rust, with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia-parsing-expression-grammars]⮳ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
+[`pest`][c-pest-website]{{hi:pest}}⮳ is a general-purpose parser written in Rust, with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia-parsing-expression-grammars]⮳ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
 
-Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
+Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
 ```rust,editable
 {{#include ../../../crates/cats/parsing/tests/pest/pest.rs:example}}

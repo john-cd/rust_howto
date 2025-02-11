@@ -7,7 +7,7 @@ use futures::future::FutureExt;
 async fn main() -> Result<()> {
     let future_of_1 = async { 1 };
 
-    // Map this future’s output to a (possibly) different type, returning
+    // Map this future's output to a (possibly) different type, returning
     // a new future of the resulting type.
     let new_future = future_of_1.map(|x| x + 3);
 

@@ -42,7 +42,7 @@ mod tests {
     }
 
     // This test passes if the code inside the function panics;
-    // It fails if the code inside the function doesn’t panic.
+    // It fails if the code inside the function doesn't panic.
 
     #[should_panic]
     #[test]

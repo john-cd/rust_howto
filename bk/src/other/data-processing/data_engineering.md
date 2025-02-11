@@ -54,7 +54,7 @@ Big Data Processing for the AI Era [LakeSail][lakesail]
 
 [lakesail]: <https://lakesail.com/>
 
-Visualize streams of multimodal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
+Visualize streams of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
 
 [`rerun`][rerun]
 

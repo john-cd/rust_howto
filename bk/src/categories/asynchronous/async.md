@@ -41,7 +41,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 - Dropping a future stops it from making further progress.
 - Async is zero-cost in Rust. You can use [`async`][book-rust-reference-async]{{hi:async}}⮳ without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
 - No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
-- Both single- and multi-threaded runtimes{{hi:Multithreaded runtimes}} are available.
+- Both single- and multi-threaded runtimes{{hi:Multi-threaded runtimes}} are available.
 
 ## Which crate provides what? {#which-crate-provides-what}
 

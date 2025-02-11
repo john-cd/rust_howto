@@ -11,7 +11,7 @@ use aes_gcm::Nonce;
 use aes_gcm::aead::Aead;
 // Trait that provides `generate_key`
 use aes_gcm::aead::KeyInit;
-// The operating-system’s random data source
+// The operating-system's random data source
 use aes_gcm::aead::OsRng;
 
 fn main() {

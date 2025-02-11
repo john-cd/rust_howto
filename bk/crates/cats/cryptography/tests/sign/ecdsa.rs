@@ -19,7 +19,7 @@
 // use p256::ecdsa::VerifyingKey;
 // use p256::ecdsa::signature::Signer;
 // use p256::ecdsa::signature::Verifier;
-// // An interface over the operating-system’s random data source
+// // An interface over the operating-system's random data source
 // use p256::elliptic_curve::rand_core::OsRng;
 
 // // Serialize a private key object to a PKCS#8 encoded document.

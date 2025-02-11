@@ -45,7 +45,7 @@ Mute a warning using the `#[allow(clippy::lint_name)]` attributes.
 [![rustfix-lib.rs][c-rustfix-lib.rs-badge]][c-rustfix-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Can automatically fix compiler warnings that have a clear way to correct the problem that’s likely what you want.
+Can automatically fix compiler warnings that have a clear way to correct the problem that's likely what you want.
 
 ```sh
 cargo fix
@@ -76,7 +76,7 @@ Then run tests in your project directory.
 cargo test
 ```
 
-See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework for managing and maintaining multi-language pre-commit hooks.
+See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework for managing and maintaining multi-language pre-commit hooks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

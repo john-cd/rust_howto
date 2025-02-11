@@ -44,7 +44,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 
 If the value of the Result is an `Ok`, the value inside the `Ok` will get returned from this expression, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
 
-This error points out that we’re only allowed to use the `?` operator in a function that returns `Result`, `Option`, or another type that implements [`std::ops::FromResidual`][c-std::ops::FromResidual]{{hi:std::ops::FromResidual}}⮳.
+This error points out that we're only allowed to use the `?` operator in a function that returns `Result`, `Option`, or another type that implements [`std::ops::FromResidual`][c-std::ops::FromResidual]{{hi:std::ops::FromResidual}}⮳.
 
 Another example:
 
@@ -70,7 +70,7 @@ The below recipe will tell how long the system has been running by opening the U
 
 [![reqwest][c-reqwest-badge]][c-reqwest] [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io] [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github] [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">[P1 move somwhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
+Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">[P1 move somewhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/retain.rs:example}}

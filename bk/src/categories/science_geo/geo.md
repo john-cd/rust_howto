@@ -1,4 +1,4 @@
-# Geospatial Science
+# Geo-spatial Science
 
 {{#include geo.incl.md}}
 

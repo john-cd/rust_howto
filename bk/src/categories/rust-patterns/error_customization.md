@@ -22,7 +22,7 @@ Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std
 
 [![thiserror][c-thiserror-badge]][c-thiserror] [![thiserror-crates.io][c-thiserror-crates.io-badge]][c-thiserror-crates.io] [![thiserror-github][c-thiserror-github-badge]][c-thiserror-github] [![thiserror-lib.rs][c-thiserror-lib.rs-badge]][c-thiserror-lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-[`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library’s `std::error::Error` trait.
+[`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library's `std::error::Error` trait.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/thiserror.rs:example}}

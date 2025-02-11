@@ -19,7 +19,7 @@ fn main() {
         println!("{key}: {value}");
     }
 
-    // Adding a Key and Value Only If a Key Isn’t Present
+    // Adding a Key and Value only if a Key isn't present
     scores.entry(String::from("Yellow")).or_insert(50);
 }
 // ANCHOR_END: example
@@ -28,4 +28,4 @@ fn main() {
 fn test() {
     main();
 }
-// [hashmaps:  example (P1)](https://github.com/john-cd/rust_howto/issues/185)
+// [hashmaps: example (P1)](https://github.com/john-cd/rust_howto/issues/185)

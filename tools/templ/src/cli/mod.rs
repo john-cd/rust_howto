@@ -44,7 +44,7 @@ fn cli() -> clap::Command {
     clap::command!() // reads name, version, author, and description from `Cargo.toml`
         //.about("")
         .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
-        .flatten_help(true) // Flatten subcommand help into the current command’s help
+        .flatten_help(true) // Flatten subcommand help into the current command's help
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(badge_cmd::subcommand_badge())
         .subcommand(category_badges_for_crate_cmd::subcommand_category_badges_for_crate())

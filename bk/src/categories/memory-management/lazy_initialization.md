@@ -7,7 +7,7 @@ Two key libraries:
 - `once_cell`: newer crate with more ergonomic API. Should be preferred for all new projects.
 - `lazy_static`: older crate. API is less convenient, but crate is stable and maintained.
 
-The core functionality of `once_cell` is now included in the standard library with the remaining parts on track to be stabilised in future.
+The core functionality of `once_cell` is now included in the standard library with the remaining parts on track to be stabilized in future.
 
 ## `std` {#std}
 

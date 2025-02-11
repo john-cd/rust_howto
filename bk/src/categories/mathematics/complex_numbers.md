@@ -47,7 +47,7 @@ Performing mathematical operations on complex numbers is the same as on built-in
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Complex numbers have a range of interesting properties when it comes to how they interact with other mathematical functions, most notibly the family of sine functions as well as the number e. To use these functions with complex numbers, the Complex type has a few built in functions, all of which can be found here: [`num::complex::Complex`][c-num::complex::Complex]{{hi:num::complex::Complex}}⮳.
+Complex numbers have a range of interesting properties when it comes to how they interact with other mathematical functions, most notably the family of sine functions as well as the number e. To use these functions with complex numbers, the Complex type has a few built in functions, all of which can be found here: [`num::complex::Complex`][c-num::complex::Complex]{{hi:num::complex::Complex}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/tests/complex_numbers/mathematical_functions.rs:example}}

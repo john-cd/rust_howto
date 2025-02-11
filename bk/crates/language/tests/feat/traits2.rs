@@ -12,7 +12,7 @@ trait Summary {
     fn summarize(&self) -> String {
         // The default implementation has a body.
         // Default implementations can call other methods in the same trait,
-        // even if those other methods don’t have a default implementation.
+        // even if those other methods don't have a default implementation.
         format!("(Read more from {}...)", self.summarize_author())
     }
 }
@@ -37,7 +37,7 @@ fn main() {
     };
     // ...and call the function implemented by default in the trait.
     println!("{}", blog.summarize());
-    // Because we’ve implemented `summarize_author` for `Blog`, the `Summary`
+    // Because we've implemented `summarize_author` for `Blog`, the `Summary`
     // trait has given us the behavior of the `summarize` method without
     // requiring us to write any more code.
 }

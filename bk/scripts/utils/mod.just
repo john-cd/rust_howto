@@ -13,7 +13,7 @@ _default:
 # Check spelling in markdown
 [unix]
 @spell:
-  {{root}}/.devcontainer/spellcheck.sh list
+  {{root}}/.devcontainer/spellcheck.sh
 
 [windows]
 @spell:

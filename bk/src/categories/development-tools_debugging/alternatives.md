@@ -79,7 +79,7 @@ fn main() {
 
 ## `OpenObserve` {#open-observe}
 
-[OpenObserve][openobserve-github]{{hi:openobserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/Datadog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
+[OpenObserve][openobserve-github]{{hi:OpenObserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/DataDog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/other/open_observe.rs:example}}

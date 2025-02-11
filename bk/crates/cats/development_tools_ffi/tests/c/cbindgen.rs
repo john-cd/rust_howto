@@ -11,7 +11,7 @@
 // 2) Define some functions and types that you want to expose to C:
 
 // The `no_mangle` attribute may be used on any item to disable standard symbol
-// name mangling. The symbol for the item will be the identifier of the item’s
+// name mangling. The symbol for the item will be the identifier of the item's
 // name. Additionally, the item will be publicly exported from the produced
 // library or object file, similar to the `used` attribute.
 #[unsafe(no_mangle)]

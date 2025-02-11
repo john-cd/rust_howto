@@ -15,7 +15,7 @@
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-The `dyn-clone` crate provides a `DynClone` trait that can be used in trait objects, and a `clone_box` function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library’s `std::clone::Clone` trait are automatically usable by a DynClone trait object.
+The `dyn-clone` crate provides a `DynClone` trait that can be used in trait objects, and a `clone_box` function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library's `std::clone::Clone` trait are automatically usable by a DynClone trait object.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/rust_patterns/dyn_clone.rs:example}}
@@ -29,7 +29,7 @@ The `dyn-clone` crate provides a `DynClone` trait that can be used in trait obje
 
 ## Implement the typestate pattern in Rust {#typestate-pattern}
 
-The typestate pattern is an API design pattern that encodes information about an object’s run-time state in its compile-time type.
+The typestate pattern is an API design pattern that encodes information about an object's run-time state in its compile-time type.
 [typestate pattern][blog-typestate-pattern]
 
 </div>

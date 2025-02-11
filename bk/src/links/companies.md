@@ -86,7 +86,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [GRAIL][grail-website]⮳ | |
 | [Gama Space][gamaspace-website]⮳ | |
 | [Gitoxide Labs (github)][gitoxidelabs-github]⮳ | |
-| [Google][google-website]⮳ | Uses Rust for ChromeOS, Google Fuchsia, and other projects. In Android 13, about 21% of all new native code (C/C++/Rust) is in Rust. There are approximately 1.5 million total lines of Rust code in Android across new functionality and components such as Keystore2, the new Ultra-wideband (UWB) stack, DNS-over-HTTP3, Android’s Virtualization framework (AVF), and various other components and their open source dependencies. |
+| [Google][google-website]⮳ | Uses Rust for ChromeOS, Google Fuchsia, and other projects. In Android 13, about 21% of all new native code (C/C++/Rust) is in Rust. There are approximately 1.5 million total lines of Rust code in Android across new functionality and components such as Keystore2, the new Ultra-wideband (UWB) stack, DNS-over-HTTP3, Android's Virtualization framework (AVF), and various other components and their open source dependencies. |
 | [Grafbase][grafbase-website]⮳ | |
 | [Greenbone][greenbone-website]⮳ | |
 | [Gremlin][gremlin-website]⮳ | Safely and efficiently causing controlled chaos. |
@@ -100,7 +100,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Infinyon][infinyon-website]⮳ | |
 | [Integer32][integer32-website]⮳[(github)][integer32-github]⮳ | Integer 32 is a consultancy that delivers high-quality Rust code. |
 | [JFrog][jfrog-website]⮳ | |
-| [Jetbrains][jetbrains-website]⮳ | |
+| [JetBrains][jetbrains-website]⮳ | |
 | [KDAB][kdab-website]⮳ | |
 | [Keyrock][keyrock-website]⮳ | |
 | [Knoldus][knoldus-website]⮳ | |

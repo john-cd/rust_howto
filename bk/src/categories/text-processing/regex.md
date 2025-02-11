@@ -59,7 +59,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../../crates/cats/text_processing/tests/regex/replace.rs:example}}
 ```
 
-## Use regular expressions with backreferences and lookarounds {#fancy-regex}
+## Use regular expressions with back-references and lookarounds {#fancy-regex}
 
 [![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] [![fancy-regex-crates.io][c-fancy_regex-crates.io-badge]][c-fancy_regex-crates.io] [![fancy-regex-github][c-fancy_regex-github-badge]][c-fancy_regex-github] [![fancy-regex-lib.rs][c-fancy_regex-lib.rs-badge]][c-fancy_regex-lib.rs]{{hi:fancy-regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

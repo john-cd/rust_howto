@@ -36,7 +36,7 @@ fn cli() -> Command {
         .long_about("A tool that can open one or more files or query data.") // Sets the program's description for the long help (--help).
         // optional: .after_help("Longer explanation to appear after the options when displaying the help information from --help or -h")
         .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
-        .flatten_help(true) // Flatten subcommand help into the current command’s help
+        .flatten_help(true) // Flatten subcommand help into the current command's help
         .version(crate_version!()) // Sets the version for the short version (-V) and help messages.
         // optional: .propagate_version(true) // Specifies to use the version of the current command for all subcommands.
         // optional: .author(clap::crate_authors!("\n")) // Set the authors. A custom help_template is needed for the author info to show up.

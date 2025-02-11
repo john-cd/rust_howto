@@ -6,11 +6,11 @@
 |---|---|
 | [VS Code][rust-in-vs-code]{{hi:VS code}}⮳ | Install the `rust-analyzer` extension. Also consider the `CodeLLDB`, `Dependi` and `Even Better TOML` |
 | [`RustRover`][rustrover-website]⮳ | It is available for free for non-commercial use. |
-| `IntelliJ` / `CLion` JetBrains IDE + Rust plugin | If you have a JetBrains license, `CLion` is your go-to editor for Rust in JetBrains’ IDE suite |
+| `IntelliJ` / `CLion` JetBrains IDE + Rust plugin | If you have a JetBrains license, `CLion` is your go-to editor for Rust in JetBrains' IDE suite |
 | [Zed][c-zed-website]⮳ | `zed` is available for macOS, Linux, and soon for Windows. Written in Rust. |
 | [Helix editor][helix-editor-website]⮳[(github)][helix-editor-github]⮳{{hi:helix}} | Install the [rust-analyzer binary][rust-analyzer-helix-website]⮳ |
 | `vi`, `vim`, or [Neovim][nvim-website]⮳ | Configure [Vim for Rust][rust-vim-github]⮳ |
-| [Emacs][emacs-website]⮳ (or derivatives like Doom Emacs, [Spacemacs][spacemacs-website]⮳, etc.) | Configure [emacs for Rust][emacs-rust-mode-github]⮳ |
+| [Emacs][emacs-website]⮳ (or derivatives like Doom Emacs, [Spacemacs][spacemacs-website]⮳, etc.) | Configure [Emacs for Rust][emacs-rust-mode-github]⮳ |
 | [Sublime Text][sublime-text-website]⮳ | ["Rust enhanced" package][sublime-text-rust-enhanced-github]⮳ |
 | [Visual Studio][visual-studio-website]⮳ | Configure [rust-analyzer for Visual Studio][rust-analyzer-visual-studio-website]⮳ |
 | [Lapce][lapce-website]⮳ | Open source, written in Rust |

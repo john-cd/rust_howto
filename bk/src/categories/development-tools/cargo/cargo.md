@@ -24,7 +24,7 @@ cargo run
 # Pass arguments to the program and collect output
 cargo run -- arg1 somefile.txt > output.txt
 
-# Quickly checks your code to make sure it compiles but doesn’t produce an executable
+# Quickly checks your code to make sure it compiles but doesn't produce an executable
 cargo check
 
 # Removes build artifacts
@@ -82,9 +82,9 @@ Examples of version requirements{{hi:Version requirements}} and the versions tha
 
 Details in [Specifying Dependencies][book-cargo-specifying-dependencies]⮳
 
-If you’re building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
+If you're building a non-end product, such as a rust library that other rust packages will depend on, put `Cargo.lock` in your `.gitignore`.
 
-If you’re building an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`staticlib`][book-rust-reference-linkage]{{hi:staticlib}}⮳ or [`cdylib`][book-rust-reference-linkage]{{hi:cdylib}}⮳, check `Cargo.lock`{{hi:Cargo.lock}} into git.
+If you're building an end product, which are executable like command-line tool or an application, or a system library with crate-type of [`staticlib`][book-rust-reference-linkage]{{hi:staticlib}}⮳ or [`cdylib`][book-rust-reference-linkage]{{hi:cdylib}}⮳, check `Cargo.lock`{{hi:Cargo.lock}} into git.
 
 ```sh
 # Add dependencies to Cargo.toml from the command line
