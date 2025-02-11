@@ -1,0 +1,86 @@
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
+[no-exit-message]
+_default:
+  @just --list --unsorted --justfile {{source_file()}}
+
+# Clean Cargo's `target` and mdbook's `book` folders
+@clean:
+  echo "Clean $(pwd)"
+  cargo clean
+  mdbook clean ./test_book/
+
+alias f := fmt
+alias fa := fmt
+
+# Format all code
+@fmt extra_params='':
+  echo "Format all code in $(pwd)"
+  cargo +nightly fmt --all {{extra_params}}
+
+alias ck := check
+alias cka := check
+
+# Check whether the code can compile
+@check:
+  echo "Check all code in $(pwd)"
+  cargo check --all-targets --locked
+
+alias b := build
+alias ba := build
+
+# Build all code and books
+@build:
+  echo "Build all code in $(pwd)"
+  cargo build --all-targets --locked --timings
+# `--all-targets`` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+alias c := clippy
+alias ca := clippy
+
+# Scan all code for common mistakes
+@clippy:
+  echo "Lint all code in $(pwd)"
+  cargo clippy --all-targets --locked
+
+alias nt := nextest
+alias nta := nextest
+
+# Test all code
+@nextest:
+  echo "Test all code in $(pwd)"
+  -cargo test --doc --workspace --quiet # nextest does not handle doctests
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+
+alias bb := buildbook
+
+# Build the test book
+@buildbook:
+  echo "Build the test book in $(pwd)/test_book/"
+  mdbook build ./test_book/
+
+alias s := serve
+
+# Display the test book
+@serve:
+  echo "Display the test book"
+  mdbook serve -p 3000 -n 127.0.0.1 --open ./test_book/
+
+alias d := doc
+
+# Build and display the `cargo doc` documentation
+@doc:
+  echo "Build and display the `cargo doc` documentation for $(pwd)"
+  cargo clean --doc
+  cargo doc --no-deps --locked # --document-private-items
+  cd ./target/doc/ ; python3 -m http.server 9000
+
+# Run all the steps required before pushing code to GitHub
+@prep: fmt clean build clippy nextest doc
+
+## Utilities --------------------------------------
+
+# Update Cargo.lock dependencies
+[confirm]
+@update:
+  cargo update
