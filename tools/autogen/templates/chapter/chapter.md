@@ -1,0 +1,20 @@
+# {{ subchapter }}
+
+{{#include {{ subchapter }}.incl.md}}
+
+## {{ recipe }}
+
+[![{{ crate_name }}][c-{{ crate_name }}-badge]][c-{{ crate_name }}] [![cat-{{ category_slug }}][cat-{{ category_slug }}-badge]][cat-{{ category_slug }}]
+
+{{ description }}
+
+```rust,editable
+{% raw %}{{{% endraw %}#include ../../../crates/categories/{{ example_crate_name }}/tests/{{ category}}/{{ crate_name }}.rs:example{% raw %}}}{% endraw %}
+```
+
+{% raw %}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+{% endraw %}
+<div class="hidden">
+</div>

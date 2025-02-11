@@ -1,0 +1,48 @@
+set shell := ["bash", "-uc"]
+
+# Set shell for Windows OSs:
+# PowerShell Core has some of the Unix shell skills we need, such as || and &&
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
+root := source_directory()
+
+[no-exit-message]
+_default:
+  @just --list --unsorted --justfile {{source_file()}}
+
+alias fa := fmtall
+
+# Format all packages and their local path-based dependencies
+@fmtall:
+  echo "Formatting all packages and their local path-based dependencies in $(pwd)"
+  cargo +nightly fmt --all
+
+alias cka := checkall
+
+# Check all code (all packages, all features)
+@checkall:
+  echo "Check all code (all packages, all features) in $(pwd)"
+  cargo check --workspace --all-targets --locked --all-features
+# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+
+alias ba := buildall
+
+# Build all packages (all features)
+@buildall:
+  echo "Build all packages, all features in $(pwd)"
+  cargo build --workspace --all-targets --locked --all-features --timings
+
+alias ca := clippyall
+
+# Scan all code for common mistakes (all packages, all features)
+@clippyall:
+  echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
+  cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+
+alias nta := nextestall
+
+# Test all code in the workspace (incl. doctests) (all features)
+@nextestall:
+  echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
+  -cargo test --doc --workspace --quiet # nextest does not handle doctests
+  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features

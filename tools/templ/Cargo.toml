@@ -1,0 +1,26 @@
+[package]
+name = "templ"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "A simple CLI tool to generate markdown fragments, e.g. markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed."
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license = "MIT OR Apache-2.0"
+keywords = ["markdown generation"]
+categories = ["development-tools", "command-line-utilities", "text-processing"]
+publish = false
+
+[dependencies]
+anyhow = "1.0.95"
+clap = { version = "4.5.28", features = ["cargo"] }
+clap_builder = "4.5.20"
+tool_lib = { path = "../tool_lib" }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+
+[[bin]]
+name = "templ"
+path = "src/main.rs"

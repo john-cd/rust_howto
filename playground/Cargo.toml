@@ -1,0 +1,21 @@
+[package]
+name = "playground"
+version = "0.1.2"
+authors = ["John CD"]
+edition = "2024"
+rust-version = "1.85"
+description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
+repository = "https://github.com/john-cd/rust_howto/playground/"
+keywords = []
+categories = []
+publish = false
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+#anyhow = "1.0.95"
+inquire = "0.7.5"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+#walkdir = "2.5.0"

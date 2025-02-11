@@ -1,0 +1,20 @@
+# This crate is a placeholder published to crates.io to make rust_howto searchable there.
+[package]
+name = "rust_howto"
+version = "0.1.2"
+authors = ["John CD"]
+edition = "2024"
+rust-version = "1.85"
+description = ""
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
+repository = "https://github.com/john-cd/rust_howto/publish/"
+keywords = []
+categories = []
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+publish = true
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo_toml = "0.21.0"

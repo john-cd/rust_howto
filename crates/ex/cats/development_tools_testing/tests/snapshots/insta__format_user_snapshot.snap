@@ -1,5 +1,0 @@
----
-source: crates/ex/cats/development_tools_testing/tests/insta.rs
-expression: formatted
----
-Name: Alice, Age: 30

@@ -3,9 +3,28 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
+# YAML cheat sheet: https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes
+
 version: 2
 updates:
   - package-ecosystem: "cargo" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directories:
+      - "/bk"
+      - "/playground"
+      - "/publish"
+      - "/tools"
+      - "/xmpl"
+    schedule:
+      interval: "monthly"
+    # Dependabot will update public Dev Container Features in `devcontainer.json`,
+    # keeping them up-to-date with the latest published versions.
+    # https://containers.dev/guide/dependabot
+  - package-ecosystem: "devcontainers"
+    directory: "/"
+    schedule:
+      interval: monthly
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    directory: "/"
     schedule:
       interval: "monthly"
