@@ -1,22 +1,30 @@
-name: Build Rust code on Windows
+name: Build book code on Windows
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'bk\**'
   pull_request:
     branches: [main]
+    paths:
+      - 'bk\**'
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
   CARGO_TERM_COLOR: always
 
+defaults:
+  run:
+    working-directory: '.\bk'
+
 ## ---------------------------------------------------------------------
 
 ## See `ci.sh` for equivalent steps when using Docker
 jobs:
-  build-on-windows:
-    name: Build on Windows
+  build-book-code-on-windows:
+    name: Build book code on Windows
     runs-on: windows-2025 # required for winget
     steps:
 
@@ -46,9 +54,9 @@ jobs:
             /usr/local/cargo/git/db/
             /cargo-target-rust_howto/
             target/
-          key: rust_howto-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: rust_howto-book-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            rust_howto-${{ runner.os }}-cargo-
+            rust_howto-book-${{ runner.os }}-cargo-
 
       # - name: Install `protoc` and `jq` (winget)
       #   run: |

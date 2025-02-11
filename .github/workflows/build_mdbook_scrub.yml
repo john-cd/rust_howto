@@ -1,19 +1,24 @@
-name: Build `mdbook` preprocessor
+name: Build `mdbook-scrub` preprocessor on Linux
 
 on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'mdbook-scrub/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'mdbook-scrub/**'
   workflow_dispatch:
-  # push:
-  #   branches: [ "master" ]
-  # pull_request:
-  #   branches: [ "master" ]
 
 concurrency:
-  group: "proc"
+  group: "mdbook-scrub"
   cancel-in-progress: true
 
 defaults:
   run:
     shell: bash
+    working-directory: ./mdbook-scrub
 
 env:
   CARGO_TERM_COLOR: always
@@ -25,6 +30,7 @@ jobs:
     # Checks out your repository under $GITHUB_WORKSPACE
     - name: Code checkout (clones the Git repository)
       uses: actions/checkout@v4
+
     - name: Cache Cargo registry and dependencies
       uses: actions/cache@v4
       with:
@@ -42,24 +48,33 @@ jobs:
         key: mdbook-scrub-${{ runner.os }}-cargo-${{ hashFiles('mdbook-scrub/Cargo.lock') }}
         restore-keys: |
           mdbook-scrub-${{ runner.os }}-cargo-
+
     - name: Install binstall
       run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
     - name: Install nextest
       run: cargo binstall --no-confirm --secure cargo-nextest
+
     - name: Install mdBook
       run: cargo binstall --version "0.4.35" --no-confirm mdbook
+
     - name: Install just
       run: cargo binstall --no-confirm just
+
     - name: Install nightly Rust
       run: |
         rustup toolchain install nightly
         rustup component add rustfmt clippy --toolchain nightly
         rustup default nightly
+
     - name: Check the format
-      run: just proc f --check
+      run: just f --check
+
     - name: Build
-      run: just proc ba
+      run: just ba
+
     - name: Clippy
-      run: just proc ca
+      run: just ca
+
     - name: Run tests
-      run: just proc nta
+      run: just nta
