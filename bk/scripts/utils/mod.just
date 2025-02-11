@@ -12,8 +12,8 @@ _default:
 
 # Check spelling in markdown
 [unix]
-@spell:
-  {{root}}/.devcontainer/spellcheck.sh
+@spell extra_param:
+  {{root}}/../.devcontainer/spellcheck.sh {{extra_param}}
 
 [windows]
 @spell:
