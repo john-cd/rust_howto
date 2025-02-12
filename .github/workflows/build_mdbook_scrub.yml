@@ -79,5 +79,5 @@ jobs:
     - name: Run tests
       run: just nta
 
-    - name: Run tests
+    - name: Run release
       run: just release
