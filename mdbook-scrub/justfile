@@ -1,5 +1,7 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+root := source_directory()
+
 [no-exit-message]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
@@ -77,6 +79,10 @@ alias d := doc
 
 # Run all the steps required before pushing code to GitHub
 @prep: fmt clean build clippy nextest doc
+
+@release: clippy nextest buildbook
+  echo "Build the pre-processor in $(pwd) in release mode and copy to {{root}}/../bin"
+  cargo build --bins --locked --release -Z unstable-options --artifact-dir "{{root}}/../bin"
 
 ## Utilities --------------------------------------
 
