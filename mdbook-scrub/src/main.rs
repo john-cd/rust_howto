@@ -1,7 +1,5 @@
-use std::fs::OpenOptions;
 use std::io;
 use std::process;
-use std::sync::Mutex;
 
 use clap::Arg;
 use clap::ArgMatches;
@@ -29,7 +27,7 @@ fn main() {
     let matches = make_app().get_matches();
 
     // // Logging
-    // let log_file = OpenOptions::new()
+    // let log_file = std::fs::OpenOptions::new()
     //     .append(true)
     //     .create(true)
     //     .open("mdbook-scrub.log")
@@ -38,7 +36,7 @@ fn main() {
     // tracing_subscriber::fmt()
     //     .with_max_level(tracing::Level::INFO)
     //     .json()
-    //     .with_writer(Mutex::new(log_file))
+    //     .with_writer(std::sync::Mutex::new(log_file))
     //     .init();
 
     let preprocessor = mdbook_scrub::Preproc::new();
