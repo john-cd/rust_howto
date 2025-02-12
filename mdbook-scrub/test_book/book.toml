@@ -6,19 +6,13 @@ src = "src"
 
 [preprocessor.scrub]
 command = "./target/debug/mdbook-scrub"
-## Check whether all links are valid; default: true
-check-links = true
-## Check whether external links (e.g. to http://...) are valid; default: false.
-## Has no effect if check_links = false
-## Beware of the performance penalty when on.
-check-external-links = true
-## If true (default), detect e.g. [ref]: http://example.com without a corresponding [some_text][ref]
-detect-unused-reference-definitions = true
-## Remove unused ref defs from the markdown, if true (default)
-delete-unused-reference-definitions = true
+
 ## The order in which preprocessors are run can be controlled with the before and after fields.
 ## See https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
-after = [
+before = [
     "links",
 ] # "links" expands the {{ #playground }}, {{ #include }}, and {{ #rustdoc_include }} handlebars helpers in a chapter to include the contents of a file.
 #before = []
+
+# Output as markdown (in addition to HTML) for debugging purposes
+[output.markdown]

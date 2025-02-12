@@ -14,35 +14,53 @@ THIS IS NOT SEEN.
 
 ### Include a file
 
-{{#include _hidden.md}}
+```rust
+{{#include _hidden.rs}}
+```
 
 ### Partially include a file - third line only
 
-{{#include _hidden.md:3}}
+```rust
+{{#include _hidden.rs:3}}
+```
 
-### Partially include a file - up to line 10
+### Partially include a file - up to line 5
 
-{{#include _hidden.md::10}}
+```rust
+{{#include _hidden.rs::5}}
+```
 
 ### Partially include a file - from line 2
 
-{{#include _hidden.md:2:}}
+```rust
+{{#include _hidden.rs:2:}}
+```
 
-### Partially include a file - between lines 2 and 10
+### Partially include a file - between lines 2 and 5
 
-{{#include _hidden.md:2:10}}
+```rust
+{{#include _hidden.rs:2:5}}
+```
 
 ### Partially include a file into your book using anchors
 
-{{#include _hidden.md:component}}
+```rust
+{{#include _hidden.rs:component}}
+```
 
 ### Including a file but initially hiding all except specified lines
 
-{{#rustdoc_include_hidden.md:2}}
+```rust
+{{#rustdoc_include  _hidden.rs:2}}
+```
 
 ### Inserting runnable Rust files
 
-{{#playground _hidden.md}}
+{{#playground _hidden.rs}}
+
+### Inserting runnable Rust files with attributes
+
+{{#playground _hidden.rs editable}}
 
 ## Code blocks
 

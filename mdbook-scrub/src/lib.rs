@@ -1,28 +1,14 @@
-#![allow(dead_code)]
-#![allow(unused_imports)]
-#![allow(unused_variables)]
-
 mod conf;
-mod hidden;
-mod links;
-mod refdefs;
+mod regexes;
 
-use hidden::*;
-use links::*;
-use refdefs::*;
-
-use anyhow::Context;
 use conf::PreprocConfig;
+use mdbook::BookItem;
 use mdbook::book::Book;
 use mdbook::errors::Error;
-use mdbook::preprocess::{Preprocessor, PreprocessorContext};
-use mdbook::{BookItem, Config};
-use std::borrow::Cow;
-use std::io::Write;
-use tracing::debug;
-use tracing::error;
+use mdbook::preprocess::Preprocessor;
+use mdbook::preprocess::PreprocessorContext;
+use regexes::*;
 use tracing::info;
-use tracing::trace;
 use tracing::warn;
 
 // Inspired from https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs
@@ -32,7 +18,8 @@ pub struct Preproc;
 
 impl Preproc {
     pub(crate) const NAME: &'static str = "scrub";
-    pub fn new() -> Preproc {
+
+    pub fn new() -> Self {
         Self
     }
 }
@@ -48,17 +35,32 @@ impl Preprocessor for Preproc {
         Self::NAME
     }
 
-    fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book, Error> {
+    fn run(
+        &self,
+        ctx: &PreprocessorContext,
+        mut book: Book,
+    ) -> Result<Book, Error> {
         info!("Running `mdbook-scrub` preprocessor");
 
-        let preprocconf: PreprocConfig = self.retrieve_config(&ctx.config);
+        let conf: PreprocConfig = self.retrieve_config(&ctx.config);
+        // Compile the replacement Regex(es) only once per book
+        let regexes = get_regexes(&conf);
 
-        book.for_each_mut(|item: &mut BookItem| {
-            if let BookItem::Chapter(ref mut chapter) = *item {
-                info!("Processing chapter '{}'", &chapter.name);
-                chapter.content = process(&preprocconf, &chapter.content);
-            };
-        });
+        // If the preprocessor configuration is fully disabled, return the
+        // orginal book
+        if !regexes.is_empty() {
+            book.for_each_mut(|item: &mut BookItem| {
+                if let BookItem::Chapter(ref mut chapter) = item {
+                    info!("Processing chapter '{}'", chapter.name);
+                    let content = &mut chapter.content;
+                    for re in regexes.iter() {
+                        // Remove all regex-matching sections
+                        *content = re.replace_all(content, "").into_owned();
+                        info!(content);
+                    }
+                };
+            });
+        }
         Ok(book)
     }
 
@@ -97,27 +99,6 @@ impl Preproc {
             }
         }
     }
-}
-
-fn process(conf: &PreprocConfig, content: &str) -> String {
-    let mut output = Cow::from(content);
-    if conf.remove_hidden_sections {
-        remove_hidden_sections(&mut output);
-    }
-    if conf.do_not_include_hidden_chapters {
-        remove_include_hidden_chapters(&mut output, conf.hidden_chapter_prefix.as_str());
-    }
-    // FUTURE
-    // if conf.check_urls {
-    //     check_links(content, conf.check_external_urls);
-    // }
-    // if conf.detect_unused_reference_definitions {
-    //     let unused_refs = detect_unused_reference_definitions(content);
-    //     if conf.delete_unused_reference_definitions {
-    //          delete_unused_reference_definitions(content, unused_refs);
-    //     }
-    // }
-    output.into_owned()
 }
 
 #[cfg(test)]
@@ -163,9 +144,11 @@ mod test {
             ]"##;
         let input_json = input_json.as_bytes();
 
-        let (ctx, book) = mdbook::preprocess::CmdPreprocessor::parse_input(input_json).unwrap();
+        let (ctx, book) =
+            mdbook::preprocess::CmdPreprocessor::parse_input(input_json)
+                .unwrap();
         // TODO P1
-        //let expected_book = book.clone();
+        // let expected_book = book.clone();
         let result = Preproc::new().run(&ctx, book);
         assert!(result.is_ok());
 

@@ -1,20 +1,25 @@
-use serde::{Deserialize, Serialize};
-use std::convert::{TryFrom, TryInto};
 use std::default::Default;
 
+use serde::Deserialize;
+use serde::Serialize;
+
 // Configuration struct for the preprocessor
-// When deserializing, any missing fields are filled in from the struct's implementation of Default. Only allowed on structs.
+// When deserializing, any missing fields are filled in from the struct's
+// implementation of Default. Only allowed on structs.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(default, rename_all = "kebab-case")]
 pub struct PreprocConfig {
-    // Remove all markdown within HTML tags with class `hidden` from the book (default = true)
+    // Remove all markdown within HTML tags with class `hidden` from the book
+    // (default = true)
     pub remove_hidden_sections: bool,
-    // Do not include hidden files i.e. files that start with  `hidden_chapter_prefix` (default = true)
+    // Do not include hidden files i.e. files that start with
+    // `hidden_chapter_prefix` (default = true)
     pub do_not_include_hidden_chapters: bool,
     // Define the prefix for hidden chapters (default = '_')
     pub hidden_chapter_prefix: String,
     // // FUTURE
-    // // Check internal URLs (and external URLs if check_external_urls = true) (default = true)
+    // // Check internal URLs (and external URLs if check_external_urls = true)
+    // // (default = true)
     // pub check_urls: bool,
     // // Check whether external URLs (e.g. to http://... or https://...) are valid; default: false.
     // // Has no effect if check_urls = false
