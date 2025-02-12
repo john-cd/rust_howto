@@ -5,14 +5,16 @@ multilingual = false
 src = "src"
 
 [preprocessor.scrub]
-command = "./target/debug/mdbook-scrub"
+command = "cargo run --manifest-path=Cargo.toml --locked"
 
 ## The order in which preprocessors are run can be controlled with the before and after fields.
 ## See https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
 before = [
     "links",
 ] # "links" expands the {{ #playground }}, {{ #include }}, and {{ #rustdoc_include }} handlebars helpers in a chapter to include the contents of a file.
-#before = []
+#after = []
 
 # Output as markdown (in addition to HTML) for debugging purposes
 [output.markdown]
+
+[output.html]

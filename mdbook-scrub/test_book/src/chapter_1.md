@@ -45,7 +45,7 @@ THIS IS NOT SEEN.
 ### Partially include a file into your book using anchors
 
 ```rust
-{{#include _hidden.rs:component}}
+{{ #include _hidden.rs:component }}
 ```
 
 ### Including a file but initially hiding all except specified lines
