@@ -35,7 +35,7 @@ cargo test
 
 # Updates all dependencies - respect the SemVer constraints in cargo.toml
 cargo update
-# Updates just “regex”
+# Updates just "regex"
 cargo update -p regex
 ```
 
