@@ -55,7 +55,7 @@ jobs:
       needs: build
       runs-on: ubuntu-latest
       permissions:
-        pages:
+        pages: write
         id-token: write
       environment:
         name: github-pages

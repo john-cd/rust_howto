@@ -1,4 +1,4 @@
-name: Build book code on Windows
+name: Build book code (and book) on Windows
 
 on:
   push:
