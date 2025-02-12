@@ -36,22 +36,25 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 # # Custom pre-processor
 # # - Remove includes of hidden files
 # # - Remove <div class="hidden"></div> sections from the markdown before rendering
-[preprocessor.purge]
-command = "./scripts/book/purge.sh"
+[preprocessor.scrub]
+command = "../bin/mdbook-scrub"
 after = [ "private" ]
-# TODO P1 rewrite the preprocessor in Rust to be able to run mdbook under Windows
+## Replaces "purge"
+# [preprocessor.purge]
+# command = "./scripts/book/purge.sh"
+# after = [ "private" ]
 
 # # Default preprocessor: index
 # Convert all chapter files named README.md into index.md. That is to say, all README.md would be rendered to an index file index.html in the rendered book.
 [preprocessor.index]
 #after = [ "private" ]
-after = [ "purge" ]
+after = [ "scrub" ]
 
 # # Default preprocessor: links
 # # Expands the {{ #playground }}, {{ #include }}, and {{ #rustdoc_include }} handlebars helpers in a chapter
 [preprocessor.links]
 #after = [ "private" ]
-after = [ "purge" ]
+after = [ "scrub" ]
 
 # # Build a word index via {{i:<text>}}, {{hi:<text>}}...
 # # https://github.com/daviddrysdale/mdbook-indexing/tree/main

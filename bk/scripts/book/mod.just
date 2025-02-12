@@ -12,7 +12,7 @@ _default:
 alias bb := buildbook
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-@buildbook: _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
+@buildbook: _release_mbdbook-scrub _generate-refdefs _generate-index-category _mdbook-build-book && _sitemap _copystatic
 
 # Generate the book's HTML / JS
 [unix]
@@ -36,10 +36,8 @@ alias bb := buildbook
 
 # Add static assets to book output
 [unix]
-[script]
 @_copystatic:
-  root="{{root}}/"
-  cp ${root}static/*.* ${root}book/html/
+  cp {{root}}/static/*.* {{root}}/book/html/
 
 [windows]
 @_copystatic:
@@ -49,11 +47,17 @@ alias bb := buildbook
 @_sitemap:
   cd {{root}} && mdbook-utils sitemap
 
+# Build / release the mdbook-scrub preprocessor, if needed
+@_release_mbdbook-scrub:
+  if [ ! -f {{root}}/../bin/mdbook-scrub ]; then just -f {{root}}/../mdbook-scrub/justfile release; fi
+
+## ---- BOOK SERVING -----------------------------------
+
 alias s := serve
 
 # Serve the book (incl. link checking)
 @serve:
-  mdbook serve -p 3000 -n 127.0.0.1 --open {{root}}
+  cd {{root}} && mdbook serve -p 3000 -n 127.0.0.1 --open {{root}}
   ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
   ## Or use: cd  {{root}}/book/html ; python3 -m http.server 3000
 
@@ -62,9 +66,9 @@ alias q := quick
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 [unix]
 @quick:
-  ./quick.sh {{root}}
+  cd {{root}} && ./quick.sh {{root}}
 
 [windows]
 @quick:
   echo "No support for quick serving while in Windows!"
-  mdbook serve -p 3001 -n 127.0.0.1 --open {{root}}
+  cd {{root}} && mdbook serve -p 3001 -n 127.0.0.1 --open {{root}}
