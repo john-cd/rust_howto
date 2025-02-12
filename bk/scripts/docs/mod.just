@@ -4,7 +4,7 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
 
-root := justfile_directory()
+root := clean(source_directory() + "/../..")
 
 ## ---- CODE DOCUMENTATION -----------------------------------
 

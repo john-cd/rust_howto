@@ -1,6 +1,6 @@
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
-root := justfile_directory()
+root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:

@@ -1,6 +1,6 @@
 ## ---- DEFAULT -------------------------------------
 
-root := justfile_directory()
+root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:
