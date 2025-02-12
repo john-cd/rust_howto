@@ -1,0 +1,119 @@
+
+# TODO P1 clean up the following:
+
+# - name: Upload artifacts (optional)
+#   uses: actions/upload-artifact@v3
+#   with:
+#     name: build-artifacts
+#     path: target/release/*.exe
+
+
+## ---------------------------------------------------------------------
+
+## https://github.com/marketplace/actions/sccache-action
+
+# env:
+#   SCCACHE_GHA_ENABLED: "true"
+#   RUSTC_WRAPPER: "sccache"
+
+#    steps:
+# - name: Run sccache-cache
+# uses: mozilla-actions/sccache-action@v0.0.7
+# - name: Run sccache stat for check
+# shell: pwsh
+# run: ${SCCACHE_PATH} --show-stats
+
+## ---------------------------------------------------------------------
+
+# - name: Set up Docker Buildx
+#   uses: docker/setup-buildx-action@v3
+# - name: Login to Docker Hub
+#   uses: docker/login-action@v3
+#   with:
+#     username: ${{ vars.DOCKERHUB_USERNAME }}
+#     password: ${{ secrets.DOCKERHUB_TOKEN }}
+# - name: Build and push
+#   uses: docker/build-push-action@v6
+#   with:
+#     push: true
+#     tags: user/app:latest
+#     cache-from: type=gha
+#     cache-to: type=gha,mode=max
+
+# TODO P1 review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main
+# https://github.com/marketplace/actions/set-up-a-rust-toolchain
+# https://github.com/actions/starter-workflows/tree/main
+# https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-rust
+
+
+# --------------------------------------------------
+
+## Alternative steps to build and push with docker/build-push-action
+# - name: Extract Docker image metadata (extract image tags and annotations for the Docker build)
+#   id: meta
+#   uses: docker/metadata-action@v5
+#   with:
+#     images: ${{ env.IMAGE_NAME }}
+# ## Validate: https://docs.docker.com/build/ci/github-actions/checks/
+# - name: Validate the build configuration
+#   uses: docker/build-push-action@v6
+#   with:
+#     call: check
+#     file: .devcontainer/Dockerfile
+## Build and push
+## Uses GitHub Actions caching: https://docs.docker.com/build/ci/github-actions/cache/#github-cache
+# - name: Build and push
+#   uses: docker/build-push-action@v6
+#   with:
+#     build-args: |
+#       RUST_VERSION="1.83.0"
+#       RUST_IMAGE_LABEL="1.83.0-bookworm"
+#       MDBOOK_VERSION="0.4.35"
+#     push: true # push to registry
+#     load: true # also load in local image store for the next steps
+#     tags: ${{ steps.meta.outputs.tags }}
+#     annotations: ${{ steps.meta.outputs.annotations }}
+#     cache-from: |
+#       type=gha
+#     cache-to: |
+#       type=gha,mode=max
+#     file: .devcontainer/Dockerfile
+
+## Alternative steps to bake the image (using docker/bake-action and the docker compose files)
+## Issue: does not read .devcontainer/.env
+# - name: Get basic information (debug)
+#  run: echo "The job was automatically triggered by a ${{ github.event_name }} event from @${{ github.actor }}. The OS is ${{ runner.os }}"
+# ## Clone the git repo on the CI machine
+# - name: Code checkout (clones the Git repository)
+#   uses: actions/checkout@v4
+# ...
+# ## Build with bake: https://docs.docker.com/guides/compose-bake/
+# ## https://docs.docker.com/build/bake/compose-file/
+# ## See also https://github.com/marketplace/actions/docker-buildx-bake
+# - name: Build and push (via bake)
+#   uses: docker/bake-action@v5
+#   with:
+#     files: |
+#       .devcontainer/compose.yaml
+#       .devcontainer/compose-ci.yaml
+#     push: true # push to DockerHub
+#     load: true # load to local image storage
+
+## Advanced caching
+## TODO consider using https://github.com/marketplace/actions/rust-cache
+## Once we stop using Nightly Rust! See also
+## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
+## - https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci
+## - granular restore / save: https://github.com/actions/cache/blob/main/restore/README.md
+## Map the cargo home to a docker volume and export??
+# - name: Set up the cache - cargo home
+#   id: cache_home
+# uses: actions/cache@v4
+# with:
+#   path: |
+#     ~/.cargo/bin/
+#     ~/.cargo/registry/index/
+#     ~/.cargo/registry/cache/
+#     ~/.cargo/git/db/
+#     target/
+#   key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}

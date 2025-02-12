@@ -1,4 +1,4 @@
-name: Deploy the book to GitHub Pages
+name: Deploy the book to GitHub Pages (Linux)
 
 on:
   ## Allows you to run this workflow manually from the Actions tab
@@ -16,7 +16,7 @@ concurrency:
 defaults:
   run:
     shell: bash
-    working-directory: '.\bk'
+    working-directory: './bk'
 
 jobs:
   build:
@@ -35,6 +35,9 @@ jobs:
           cargo binstall --no-confirm mdbook-indexing
       - name: Install `mdbook-utils`
         run: cargo install --locked --force mdbook-utils
+      - name: Build & release mdbook-scrub
+        run: cargo build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
+        working-directory: './mdbook-scrub'
       - name: Build the book
         run: |
           mdbook build
