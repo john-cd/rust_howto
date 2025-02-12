@@ -78,3 +78,6 @@ jobs:
 
     - name: Run tests
       run: just nta
+
+    - name: Run tests
+      run: just release
