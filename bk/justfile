@@ -152,17 +152,17 @@ mod? precommit 'scripts/precommit'
 ## ---- CLEAN ------------------------------------------
 
 # Clean Cargo's `target` and mdbook's `book` directories
-clean: &&_clean
+@clean: &&_clean
   cargo clean
   mdbook clean
 
 [unix]
-_clean:
+@_clean:
   rm --recursive --force ./doctest_cache/
 
 [windows]
-_clean:
-  if exist .doctest_cache rmdir /s /q .doctest_cache
+@_clean:
+  if ( Test-Path -Path .doctest_cache) { rmdir /s /q .doctest_cache }
 
 ## ---- PRE-PUSH -----------------------------------
 

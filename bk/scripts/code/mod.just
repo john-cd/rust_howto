@@ -17,6 +17,7 @@ fmt:
   echo "Formatting {{root}}"
   cd {{root}}
   cargo +nightly fmt
+# TODO P2 fix on Windows
 
 alias fa := fmtall
 
