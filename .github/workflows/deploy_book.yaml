@@ -36,7 +36,7 @@ jobs:
       - name: Install `mdbook-utils`
         run: cargo install --locked --force mdbook-utils
       - name: Build the book
-        uses: |
+        run: |
           mdbook build
           cp ./static/*.* ./book/html/
           mdbook-utils sitemap
