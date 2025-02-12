@@ -1,5 +1,4 @@
 use regex::Regex;
-use tracing::info;
 
 use super::conf::PreprocConfig;
 
@@ -23,7 +22,7 @@ pub fn get_regexes(conf: &PreprocConfig) -> Vec<Regex> {
         // We don't use format! here, since { and } are
         // special for format! and must be escaped with the same
         // character.
-        info!(re_string);
+        // tracing::debug!(re_string);
         re.push(Regex::new(&re_string).expect("Invalid regex"));
     }
     re

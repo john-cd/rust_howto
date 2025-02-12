@@ -28,17 +28,18 @@ pub fn make_app() -> Command {
 fn main() {
     let matches = make_app().get_matches();
 
-    let log_file = OpenOptions::new()
-        .append(true)
-        .create(true)
-        .open("mdbook-scrub.log")
-        .unwrap();
+    // // Logging
+    // let log_file = OpenOptions::new()
+    //     .append(true)
+    //     .create(true)
+    //     .open("mdbook-scrub.log")
+    //     .unwrap();
 
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::INFO)
-        .json()
-        .with_writer(Mutex::new(log_file))
-        .init();
+    // tracing_subscriber::fmt()
+    //     .with_max_level(tracing::Level::INFO)
+    //     .json()
+    //     .with_writer(Mutex::new(log_file))
+    //     .init();
 
     let preprocessor = mdbook_scrub::Preproc::new();
 

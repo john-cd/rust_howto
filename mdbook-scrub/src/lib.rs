@@ -56,7 +56,7 @@ impl Preprocessor for Preproc {
                     for re in regexes.iter() {
                         // Remove all regex-matching sections
                         *content = re.replace_all(content, "").into_owned();
-                        info!(content);
+                        // tracing::debug!(content);
                     }
                 };
             });
