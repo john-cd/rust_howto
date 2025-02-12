@@ -1,6 +1,6 @@
 [package]
 name = "mdbook-scrub"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "A mdbook preprocessor"
@@ -21,7 +21,7 @@ futures-util = "0.3.31"
 mdbook = "=0.4.35"                                    # pinned
 moka = { version = "0.12.10", features = ["future"] }
 # simd available for the x64 platform
-pulldown-cmark = { version = "0.12.2", default-features = false, features = [
+pulldown-cmark = { version = "0.13.0", default-features = false, features = [
     "simd",
 ] }
 regex = "1.11.1"
