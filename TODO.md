@@ -68,7 +68,7 @@ See splitting into separate CI steps or jobs above
 
 Add Windows build job to main workflow?
 
-Should we build in Docker via cargo build --target [<TRIPLE>] ?
+Should we build in Docker via `cargo build --target [<TRIPLE>]` ?
 Use cross?
 
 ---

@@ -68,10 +68,12 @@ Random number generators and other randomness functionality.
 
 `rbe` returns a badge that points to the `Rust by example` book, given a concept / chapter name:
 
+```markdown
 [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
 [book-rust-by-example-attribute-badge]: https://img.shields.io/badge/Rust_By_Example-attribute-violet?logo=mdbook
 [book-rust-by-example-attribute]: https://doc.rust-lang.org/rust-by-example/attribute.html
+```
 
 `info` returns a JSON object from the crates.io API:
 

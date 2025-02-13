@@ -20,14 +20,14 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [Suggesting Enhancements][suggesting-enhancements]
 - [Your First Code Contribution][your-first-code-contribution]
 - [Improving The Documentation][improving-the-documentation]
-- [Styleguides][styleguides] [styleguides]: #styleguides
+- [Styleguides][styleguides]
 - [Commit Messages][commit-messages]
 - [Join The Project Team][join-the-project-team]
 
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[Code of Conduct][Code of Conduct] [Code of Conduct]: CODE_OF_CONDUCT.md. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
+[Code of Conduct][Code of Conduct]. By participating, you are expected to uphold this code. Please report unacceptable behavior to the code owner.
 
 ## I Have a Question
 
@@ -81,7 +81,7 @@ Once it's filed:
 
 - The project team will label the issue accordingly.
 - A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
-- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone][implemented by someone] [implemented by someone]: #your-first-code-contribution.
+- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone][implemented by someone].
 
 ### Suggesting Enhancements
 
@@ -118,6 +118,7 @@ Enhancement suggestions are tracked as [GitHub issues][issues].
 
 This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 
+[implemented by someone]: #your-first-code-contribution
 [code-of-conduct]: #code-of-conduct
 [commit-messages]: #commit-messages
 [improving-the-documentation]: #improving-the-documentation
@@ -134,3 +135,5 @@ This guide is based on the **contributing.md**. [Make your own][make-your-own]!
 [new-issue]: https://github.com/john-cd/rust_howto/issues/new/choose
 [licecap]: https://www.cockos.com/licecap
 [silentcast]:https://github.com/colinkeenan/silentcast
+[Code of Conduct]: CODE_OF_CONDUCT.md
+[styleguides]: #styleguides
