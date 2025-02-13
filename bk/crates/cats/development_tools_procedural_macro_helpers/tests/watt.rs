@@ -1,13 +1,15 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
-
-// // Watt is a procedural macro library in Rust that allows you to write your
-// // procedural macros in Rust without the overhead of the proc_macro crate.
 // use quote::quote;
 // use syn::ItemFn;
 // use syn::parse_macro_input;
 // use watt::WasmMacro;
+
+// // Watt is a procedural macro library in Rust that allows you to write your
+// // procedural macros in Rust without the overhead of the `proc_macro` crate.
+// // Watt is a runtime for executing Rust procedural macros compiled as
+// // WebAssembly.
 
 // static MY_MACRO: WasmMacro = watt::proc_macro!(
 //     "
@@ -21,7 +23,7 @@
 // );
 
 // // Creates a procedural macro: my_macro that takes a function and prints
-// "Function called" when the function is called. #[proc_macro]
+// // "Function called" when the function is called. #[proc_macro]
 // pub fn my_macro(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 //     let input = parse_macro_input!(input as ItemFn);
 //     let func_name = input.sig.ident;
@@ -35,7 +37,7 @@
 //     proc_macro::TokenStream::from(expanded)
 // }
 
-////
+// //
 // use my_macro_crate::my_macro;
 
 // #[my_macro]

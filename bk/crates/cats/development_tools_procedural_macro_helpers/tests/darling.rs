@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // // darling is a crate in Rust that helps you write custom derive macros more

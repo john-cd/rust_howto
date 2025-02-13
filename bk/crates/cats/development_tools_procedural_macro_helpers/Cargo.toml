@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools_procedural_macro_helpers" ]
+categories = ["development_tools_procedural_macro_helpers"]
 publish.workspace = true
 
 [dependencies]
@@ -21,6 +21,14 @@ quote = "1.0.38"
 syn = { version = "2.0.92", features = ["full"] }
 watt = "0.5.0"
 
+## General
+anyhow = "1.0.95"
+#serde = { version = "1.0.217", features = ["derive"] }
+
 [features]
 # default = []
 # syn = ["dep:syn"]
+
+# See `lib.rs`
+[lib]
+proc-macro = true

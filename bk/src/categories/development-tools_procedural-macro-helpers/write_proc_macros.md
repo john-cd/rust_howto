@@ -1,12 +1,20 @@
-# Crates for macro development
+# Write procedural macros
 
 {{#include write_proc_macros.incl.md}}
 
-## Parse Rust source code {#syn}
+Procedural macro crates almost always will link to the compiler-provided `proc_macro` crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
+
+This crate primarily contains a TokenStream type. Procedural macros operate over token streams instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural macros to target. A token stream is roughly equivalent to Vec<TokenTree> where a TokenTree can roughly be thought of as lexical token. For example foo is an Ident token, . is a Punct token, and 1.2 is a Literal token. The TokenStream type, unlike Vec<TokenTree>, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
+
+## Parse Rust source code into an abstract syntax tree {#syn}
 
 [![syn][c-syn-badge]][c-syn] [![syn-crates.io][c-syn-crates.io-badge]][c-syn-crates.io] [![syn-github][c-syn-github-badge]][c-syn-github] [![syn-lib.rs][c-syn-lib.rs-badge]][c-syn-lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}}
 
-[`syn`][c-syn]{{hi:syn}}⮳ is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code.
+The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsing a stream of Rust tokens into an equivalent syntax tree. It's primarily used when working with procedural macros, but it can also be helpful for other code analysis or manipulation tasks, such as:
+
+- Static analysis: Building tools to check code for specific patterns or enforce coding standards.
+- Code generation: Creating tools that automatically generate Rust code based on some input or configuration.
+- Refactoring: Developing tools to automate code refactoring tasks.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/syn.rs:example}}
@@ -69,5 +77,9 @@ Derive macro to easily parse derive macro inputs
 
 <div class="hidden">
 [write_proc_macros: write (P2)](https://github.com/john-cd/rust_howto/issues/331)
+
+## Report errors from within a procedural macro
+
+Procedural macros have two ways of reporting errors. The first is to `panic`. The second is to emit a `compile_error` macro invocation.
 
 </div>
