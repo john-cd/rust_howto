@@ -29305,6 +29305,8 @@ dependencies = [
  "bytes",
  "http 1.2.0",
  "http-body-util",
+ "hyper 1.6.0",
+ "hyper-util",
  "leptos",
  "loco-rs",
  "mime",

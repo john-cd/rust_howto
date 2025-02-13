@@ -20,6 +20,8 @@ async-graphql-axum = "7.0.13"
 axum = "0.7.9"                                                  # pinned because of tonic
 http = "1.2.0"
 http-body-util = "0.1.2"
+hyper = { version = "1.6.0", features = ["full"] }
+hyper-util = { version = "0.1", features = ["full"] }
 leptos = "0.7"
 loco-rs = "0.14"
 mime = "0.3.17"
