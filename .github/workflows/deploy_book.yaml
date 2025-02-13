@@ -53,7 +53,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./book/html/
+          path: ./bk/book/html/
   deploy:
       name: Deploy to GitHub Pages
       needs: build
