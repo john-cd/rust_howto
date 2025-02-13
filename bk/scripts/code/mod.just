@@ -63,14 +63,14 @@ alias bp := buildpkg
 alias b := build
 
 # Build just the code used by the book (default packages, default features)
-build:
+@build:
   echo "Build default packages (default features) in {{root}}"
   cd {{root}}; cargo build --all-targets --locked --timings
 
 alias bf := buildfeat
 
 # Build just the code used by the book (default packages, all features)
-buildfeat:
+@buildfeat:
   echo "Build default packages (all features) in {{root}}"
   cd {{root}}; cargo build --all-targets --locked --all-features --timings
 
@@ -105,14 +105,14 @@ current_crate := file_name(invocation_directory())
 alias nt := nextest
 
 # Test the code used by the book (no doctests) (default packages, default features)
-nextest: _clean_temp_dir && _clean_temp_dir
+@nextest: _clean_temp_dir && _clean_temp_dir
   echo "Test the code under {{root}} (no doctests, default packages, default features)"
   cd {{root}}; cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace, including doctests (all features)
-nextestall: _clean_temp_dir && _clean_temp_dir
+@nextestall: _clean_temp_dir && _clean_temp_dir
   echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
   cd {{root}} ; cargo test --doc --workspace --quiet ; cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
