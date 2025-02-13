@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "just serve",
+            "label": "just bk book serve",
             "type": "shell",
-            "command": "just serve",
+            "command": "just bk book serve",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -16,10 +16,10 @@
             },
             "problemMatcher": [],
             "presentation": {
-                    "focus": true,      // Controls whether the terminal is taking input focus or not. Default is false.
-                    "reveal": "always", // The terminal panel is always brought to front. This is the default.
-                    "panel": "shared"   // The terminal is shared and the output of other task runs are added to the same terminal.
-                }
+                "focus": true, // Controls whether the terminal is taking input focus or not. Default is false.
+                "reveal": "always", // The terminal panel is always brought to front. This is the default.
+                "panel": "shared" // The terminal is shared and the output of other task runs are added to the same terminal.
+            }
         }
     ]
 }
