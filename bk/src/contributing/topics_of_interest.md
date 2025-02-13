@@ -66,7 +66,9 @@ The following are topics that deserve (additional) coverage and examples:
 
 Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.
 
-{{#include refs.incl.md}}
-[P1 review](https://github.com/john-cd/rust_howto/issues/981)
-
 {{#include ../refs/link-refs.md}}
+{{#include refs.incl.md}}
+
+<div class="hidden">
+[P1 review](https://github.com/john-cd/rust_howto/issues/981)
+</div>
