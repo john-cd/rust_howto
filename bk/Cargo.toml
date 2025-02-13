@@ -10,7 +10,7 @@ members = [
 exclude = []
 default-members = [
     "crates/about",
-    "crates/cats/*",
+    #"crates/cats/*", # Make the "whole workspace" compile much lighter
     "crates/language",
     "crates/other",
     "crates/standard_library",
