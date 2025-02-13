@@ -1,9 +1,5 @@
 # TODOs
 
-## Increase local build speed
-
-### Split code into several workspaces?
-
 ---
 
 ## Add git hooks to automate formatting / clippy check / fix before commit
@@ -54,7 +50,7 @@ Try local / inline caching as well
 
 ### Try to build directly on the host, not in a container?
 
-Write a .yml workflow file for Linux
+Write a .yml build workflow file for Linux
 
 ## Free further space on CI runner
 
@@ -70,8 +66,7 @@ See splitting into separate CI steps or jobs above
 
 ## Create CI build / tests on Windows
 
-Improve .yml file for Windows build on GitHub runner
-Then add build job to main workflow
+Add Windows build job to main workflow?
 
 Should we build in Docker via cargo build --target [<TRIPLE>] ?
 Use cross?
@@ -80,8 +75,7 @@ Use cross?
 
 ## Make the book build on Windows
 
-- rewrite the purge.sh preprocessor in Rust
-- make `just` commands work on Windows
+- make `just` commands fully work on Windows
   - use [script]?
   - make cygwin bash work on Windows
 - consider cargo make / xtask?
@@ -92,3 +86,7 @@ Use cross?
 
 Create a .yml file for MacOS build on GitHub runner?
 Add build job to main workflow
+
+---
+
+## Fix .github issue templates

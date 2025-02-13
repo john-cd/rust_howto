@@ -2,6 +2,12 @@
 set -eux
 set -o pipefail
 
+# Main script executed during the main CI workflow.
+#
+# See the `Dockerfile`.
+# Spellchecks, then check the format of the code; build the mdbook-scrub preprocessor
+# Build the book's code, lint it, test it, then build the book, copy the static files and build the sitemap.
+
 echo "----------"
 
 ## Spell checks

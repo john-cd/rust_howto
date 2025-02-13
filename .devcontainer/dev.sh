@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Script executed at the end of the development Docker image build.
+# Format the book code, then fetch the dependencies of the book code.
+
 # NO set -e on purpose
 set -x
 set -v
@@ -21,6 +24,9 @@ if [ ! -f /code/justfile ]; then
 fi
 
 echo "-------------------------------------------"
+
+cd ./bk
+
 echo "Format the code"
 just fa
 

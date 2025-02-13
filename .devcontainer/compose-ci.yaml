@@ -26,7 +26,7 @@ services:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
         source: ../book
-        target: /code/book
+        target: /code/bk/book
         bind:
           create_host_path: true
       ## bind mounts do not work when trying to cache /usr/local/cargo, since it obscures the pre-existing contents of the folder in the docker layer

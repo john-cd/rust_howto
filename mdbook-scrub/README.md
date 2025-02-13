@@ -34,9 +34,11 @@ do-not-include-hidden-chapters = true
 hidden-chapter-prefix = "_"
 # The order in which preprocessors are run can be controlled with the `before` and `after` fields.
 # https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
-after = [ "links" ]
-#before = [ "" ]
+before = [ "links" ]
+#after = [ "" ]
 ```
+
+Please review the `test_book\book.toml` for a complete example.
 
 ## Remove hidden sections
 
@@ -44,11 +46,14 @@ after = [ "links" ]
 <div class="hidden">This is not be seen.</div>
 ```
 
-mdBook hides the Markdown content within HTML tags with class `hidden`, but do not remove them from the output HTML. The hidden content remains searchable and can be read in the underlying HTML. If `remove-hidden-sections` is set to `true`, this preprocessor strips these sections from the Markdown before it is passed to `mdbook` renderers.
+mdBook hides the Markdown content within HTML tags with class `hidden`, but do not remove them from the output HTML.
+The hidden content remains searchable and can be read in the underlying HTML.
+If `remove-hidden-sections` is set to `true`, this preprocessor strips these sections from the Markdown before it is passed to `mdbook` renderers.
 
 ## Do not include hidden chapters
 
-The `links` mdBook preprocessor is built-in and included by default. It expands the `{{ #playground }}`, `{{ #include }}`, and `{{ #rustdoc_include }}` syntaxes:
+The `links` mdBook preprocessor is built-in and included by default.
+It expands the `{{ #playground }}`, `{{ #include }}`, and `{{ #rustdoc_include }}` syntaxes:
 
 ```md
 Include a file into your book:
@@ -79,7 +84,8 @@ The path to the file is relative from the current source file.
 
 [`mdbook-private`](https://github.com/RealAtix/mdbook-private) is a preprocessor for defining and optionally removing private sections and chapters in a mdbook. However, it does not remove included hidden files.
 
-When your `book.toml` uses this preprocessor and `do-not-include-hidden-chapters` is set to `true`, any `include`, `playground`, or `rustdoc_include` statements that refer to a file starting with `hidden-chapter-prefix` (typically `_`) are removed from the Markdown. For example, the following would be removed:
+When your `book.toml` uses this preprocessor and `do-not-include-hidden-chapters` is set to `true`, any `include`, `playground`, or `rustdoc_include` statements that refer to a file starting with `hidden-chapter-prefix` (typically `_`) are removed from the Markdown.
+For example, the following would be removed:
 
 ```markdown
 {{#include _hiddenfile.rs}}

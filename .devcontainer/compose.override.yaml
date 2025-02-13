@@ -24,7 +24,7 @@ services:
       # Contains the dependencies (source) cache and installed bins https://doc.rust-lang.org/cargo/guide/cargo-home.html
       - cargo_home_cache:/usr/local/cargo/
       # Contains the compile cache:
-      - cargo_target_cache:/cargo-target-rust_howto/ # See .cargo/config.toml
+      - cargo_target_cache:/cargo-target-rust_howto/ # See {bk, tool, ...}/.cargo/config.toml
       - command_history:/command_history
     ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:
