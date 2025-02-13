@@ -30,19 +30,23 @@
 
 <div class="hidden">
 
-## `hyper` {#hyper}
+## Build a HTTP client with `hyper` {#hyper}
 
 [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP client}}{{hi:HTTP server}}
 [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io]
 [![hyper-github][c-hyper-github-badge]][c-hyper-github]
 [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]
 
-`hyper` is a low-level HTTP implementation (both client and server). It implements HTTP/1, and HTTP/2. It works best with the `tokio` async runtime, but can support other runtimes.
+`hyper` is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the `tokio` async runtime, but can support other runtimes.
+
+`hyper` is meant to be a low-level building block and is indeed used by higher-level libraries such as `curl`, `reqwest`, and `aws-sdk`. You will likely reach for `hyper` to design such tools, , access to bleeding-edge features (like HTTP/3).
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
 [http_clients: expand (P1)](https://github.com/john-cd/rust_howto/issues/504)
-
+See hyper.md in server.
+[hyper.rs](http://hyper.rs/)
+[examples](https://github.com/hyperium/hyper/tree/master/examples)
 </div>
