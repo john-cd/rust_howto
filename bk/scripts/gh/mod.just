@@ -14,6 +14,7 @@ _default:
   gh issue create --title {{title}} --body ''
 
 # Return a list of GitHub issues with the same title
+[unix]
 find_dupe_issues:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -23,6 +24,7 @@ find_dupe_issues:
 # --jq '.[] | [.number, .title]'
 
 # Create an GH issue for each TODO line in Markdown files
+[unix]
 create_issues_for_markdown:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -46,6 +48,7 @@ create_issues_for_markdown:
   done
 
 # Create an GH issue for each TODO line in .rs files
+[unix]
 create_issues_for_examples:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -112,6 +115,7 @@ create_issues_for_examples:
 ## TODO P1
 
 # HACK
+[unix]
 add_gh_links_to_code:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -132,6 +136,7 @@ add_gh_links_to_code:
   done
 
 ## Deduplicate .rs file (no sort - dup. lines must be consecutive)
+#[unix]
 #dedupe:
 #  #!/usr/bin/env bash
 #  set -euo pipefail

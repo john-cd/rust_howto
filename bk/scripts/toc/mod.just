@@ -4,7 +4,7 @@ root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+    @just --list --unsorted --justfile {{source_file()}}
 
 ## ---- MAIN TOC MANAGEMENT -----------------------------------
 

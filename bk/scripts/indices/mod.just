@@ -16,7 +16,7 @@ empty := ''
 # Create the `crates by category` and `crates (alphabetical)` pages
 crate_indices cmd=help *subcmd=empty:
   {{root}}/../bin/crate_indices {{cmd}} {{subcmd}}
-#cargo run -p crate_indices -- {{cmd}} {{subcmd}}
+# or: cargo run -p crate_indices -- {{cmd}} {{subcmd}}
 
 ## ---- INDEX OF EXAMPLES --------------------------------
 

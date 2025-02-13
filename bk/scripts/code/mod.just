@@ -11,20 +11,15 @@ _default:
 alias f := fmt
 
 # Format all bin and lib files
-fmt:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  echo "Formatting {{root}}"
-  cd {{root}}
-  cargo +nightly fmt
-# TODO P2 fix on Windows
+@fmt:
+  echo "Formatting {{root}}"; cd {{root}}; cargo +nightly fmt
 
 alias fa := fmtall
 
 # Format all packages and their local path-based dependencies
 @fmtall:
   echo "Formatting all packages and their local path-based dependencies in {{root}}"
-  cargo +nightly fmt --all
+  cd {{root}}; cargo +nightly fmt --all
 
 alias fc := fmtcurrent
 
@@ -46,8 +41,8 @@ alias cka := checkall
 
 # Check all code (all packages, all features)
 @checkall:
-  echo "Check all code (all packages, all features) in $(pwd)"
-  cargo check --workspace --all-targets --locked --all-features
+  echo "Check all code (all packages, all features) in {{root}}"
+  cd {{root}}; cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias bc := buildcurrent
@@ -69,54 +64,29 @@ alias b := build
 
 # Build just the code used by the book (default packages, default features)
 build:
-  #!/usr/bin/env bash
-  set -euo pipefail
   echo "Build default packages (default features) in {{root}}"
-  cd {{root}}
-  cargo build --all-targets --locked --timings
+  cd {{root}}; cargo build --all-targets --locked --timings
 
 alias bf := buildfeat
 
 # Build just the code used by the book (default packages, all features)
 buildfeat:
-  #!/usr/bin/env bash
-  set -euo pipefail
   echo "Build default packages (all features) in {{root}}"
-  cd {{root}}
-  cargo build --all-targets --locked --all-features --timings
+  cd {{root}}; cargo build --all-targets --locked --all-features --timings
 
 alias ba := buildall
 
 # Build all packages (all features)
 @buildall:
   echo "Build all packages, all features in {{root}}"
-  cargo build --workspace --all-targets --locked --all-features --timings
+  cd {{root}}; cargo build --workspace --all-targets --locked --all-features --timings
 
 alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
 @clippyall:
   echo "Scan all code for common mistakes (all packages, all features) in {{root}}"
-  cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
-
-#alias t := test
-
-## Test the code used by the book (default packages, default features)
-#@test: _clean_temp_dir && _clean_temp_dir
-##  echo "Test the code used by the book (default packages, default features) in $(pwd)"
-##  -cargo test --all-targets --locked -- --show-output
-## Only the code in default members of the workspace is tested.
-## This used to rely on skeptic to build doctests - see `build.rs` - but skeptic is slow
-## NOTE: `mdbook test --library-path /cargo-target-rust_howto/target/debug/deps/` is not reliable
-## when dealing with dependencies outside of the std library.
-## See: https://doc.rust-lang.org/rustdoc/command-line-arguments.html#-l--library-path-where-to-look-for-dependencies
-
-#alias ta := testall
-
-## Test all code (all packages, all features)
-#@testall: _clean_temp_dir && _clean_temp_dir
-#  echo "Test all code (all packages, all features) in {{root}}"
-#  -cargo test --workspace --all-targets --locked --all-features
+  cd {{root}}; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 # Test any doctests in the workspace
 @doctest:
@@ -136,22 +106,15 @@ alias nt := nextest
 
 # Test the code used by the book (no doctests) (default packages, default features)
 nextest: _clean_temp_dir && _clean_temp_dir
-  #!/usr/bin/env bash
-  set -euo pipefail
   echo "Test the code under {{root}} (no doctests, default packages, default features)"
-  cd {{root}}
-  cargo nextest run --all-targets --locked --no-fail-fast --status-level all
+  cd {{root}}; cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace, including doctests (all features)
 nextestall: _clean_temp_dir && _clean_temp_dir
-  #!/usr/bin/env bash
-  set -euo pipefail
   echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
-  cd {{root}}
-  cargo test --doc --workspace --quiet # nextest does not handle doctests
-  cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{root}} ; cargo test --doc --workspace --quiet ; cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:

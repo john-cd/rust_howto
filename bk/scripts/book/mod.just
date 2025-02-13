@@ -16,15 +16,14 @@ alias bb := buildbook
 
 # Generate the book's HTML / JS
 [unix]
-[no-cd]
 @_mdbook-build-book:
+  echo "Build book in {{root}}"
   cd {{root}}; {{source_directory()}}/build_book.sh {{root}}
 
 [windows]
-[no-cd]
 @_mdbook-build-book:
+  echo "Build book in {{root}}"
   cd {{root}}; mdbook build {{root}}
-# TODO P2
 
 # Generate new reference definitions for all crate the book's examples depend on...
 @_generate-refdefs:
@@ -37,19 +36,31 @@ alias bb := buildbook
 # Add static assets to book output
 [unix]
 @_copystatic:
+  echo "Copy static files"
   cp {{root}}/static/*.* {{root}}/book/html/
 
 [windows]
 @_copystatic:
+  echo "Copy static files"
   copy {{root}}\static\*.* {{root}}\book\html\
 
 # Generate the sitemap.xml file
 @_sitemap:
+  echo "Install mdbook-utils if needed"
+  cargo install mdbook-utils
+  echo "Generate the sitemap"
   cd {{root}} && mdbook-utils sitemap
 
 # Build / release the mdbook-scrub preprocessor, if needed
+[unix]
 @_release_mbdbook-scrub:
+  echo "Build mdbook-scrub, if needed"
   if [ ! -f {{root}}/../bin/mdbook-scrub ]; then just -f {{root}}/../mdbook-scrub/justfile release; fi
+
+[windows]
+@_release_mbdbook-scrub:
+  echo "Build mdbook-scrub, if needed"
+  if (-Not (Test-Path -Path {{root}}\..\bin\mdbook-scrub.exe )) { just -f {{root}}\..\mdbook-scrub\justfile release }
 
 ## ---- BOOK SERVING -----------------------------------
 
@@ -57,6 +68,7 @@ alias s := serve
 
 # Serve the book (incl. link checking)
 @serve:
+  echo "Serve the book"
   cd {{root}} && mdbook serve -p 3000 -n 127.0.0.1 --open {{root}}
   ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
   ## Or use: cd  {{root}}/book/html ; python3 -m http.server 3000
@@ -66,9 +78,9 @@ alias q := quick
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 [unix]
 @quick:
+  echo "Serve the book (no link checking)"
   cd {{root}} && ./quick.sh {{root}}
 
 [windows]
-@quick:
+@quick: && serve
   echo "No support for quick serving while in Windows!"
-  cd {{root}} && mdbook serve -p 3001 -n 127.0.0.1 --open {{root}}
