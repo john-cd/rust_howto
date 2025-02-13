@@ -35,6 +35,10 @@ jobs:
           cargo binstall --no-confirm mdbook-indexing
       - name: Install `mdbook-utils`
         run: cargo install --locked --force mdbook-utils
+      - name: Install nightly Rust
+        run: |
+          rustup toolchain install nightly
+          rustup default nightly
       - name: Build & release mdbook-scrub
         run: cargo build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: './mdbook-scrub'
