@@ -21,7 +21,7 @@ impl<T> MyStruct<T> {
 
 impl<T: Copy> MyStruct<T> {
     fn get_value(&self) -> T {
-        // For types that implement `Copy``, the `get` method
+        // For types that implement `Copy`, the `get` method
         // retrieves the current interior value by duplicating it.
         self.value.get()
     }
