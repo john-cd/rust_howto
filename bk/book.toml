@@ -184,3 +184,31 @@ editable = true            # allows editing the source code
 # expand = true            # partial words will match longer terms
 # heading-split-level = 3  # link results to heading levels
 # copy-js = true           # include Javascript code for search
+
+###################################################################
+
+# [output.pandoc]
+# hosted-html = "https://john-cd.com/rust_howto/" # URL of a HTML version of the book
+
+# [output.pandoc.code]
+# # Display hidden lines in code blocks (e.g., lines in Rust blocks prefixed by '#').
+# # See https://rust-lang.github.io/mdBook/format/mdbook.html?highlight=hidden#hiding-code-lines
+# show-hidden-lines = false
+
+# [output.pandoc.profile.mybook] # options to pass to Pandoc (see https://pandoc.org/MANUAL.html#defaults-files)
+# output-file = "book.pdf" # output file (within the profile's build directory)
+# to = "latex" # output format
+
+# # PDF-specific settings
+# pdf-engine = "pdflatex" # engine to use to produce PDF output
+
+# # `mdbook-pandoc` overrides Pandoc's defaults for the following options to better support mdBooks
+# file-scope = true # parse each file individually before combining
+# number-sections = true # number sections headings
+# standalone = true # produce output with an appropriate header and footer
+# table-of-contents = true # include an automatically generated table of contents
+
+# # Arbitrary other Pandoc options can be specified as they would be in a Pandoc defaults file
+# # (see https://pandoc.org/MANUAL.html#defaults-files) but written in TOML instead of YAML...
+
+# TODO P1 generate PDF with https://crates.io/crates/mdbook-pandoc
