@@ -16,7 +16,7 @@ all cmd:
   set -euo pipefail
   for wkspace in "bk" "scrub" "playground" "publish" "tools" "xmpl"
   do
-    just ${wkspace} {{cmd}}
+    just ${wkspace} {{cmd}} || true
     echo "------------------------"
   done
 
