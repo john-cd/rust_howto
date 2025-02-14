@@ -73,12 +73,19 @@ Use cross?
 
 ---
 
-## Make the book build on Windows
+## Make `just` commands fully work on Windows
 
 - make `just` commands fully work on Windows
   - use [script]?
   - make cygwin bash work on Windows
 - consider cargo make / xtask?
+
+---
+
+## Review the need for rusty_fork
+
+since we use nextest exclusively
+See nextest execution model: <https://nexte.st/docs/design/how-it-works/>
 
 ---
 
