@@ -12,7 +12,7 @@
 [![rocket-lib.rs][c-rocket-lib.rs-badge]][c-rocket-lib.rs]
 [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
-`rocket` is a web framework with a focus on usability, security, extensibility, and speed.
+[`rocket`][c-rocket]⮳{{hi:rocket}} web framework with a focus on usability, security, extensibility, and speed.
 
 [![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]{{hi:rocket}}
 

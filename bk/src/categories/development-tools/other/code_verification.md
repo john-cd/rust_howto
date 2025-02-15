@@ -67,12 +67,12 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 <div class="hidden">
 [code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
 
-TODO P1 add [Model_checking](https://en.wikipedia.org/wiki/Model_checking)  [getting-started](https://model-checking.github.io/kani/getting-started.html)
+TODO P1 add [Model_checking](https://en.wikipedia.org/wiki/Model_checking) [getting-started](https://model-checking.github.io/kani/getting-started.html)
 [announcing-the-kani-rust-verifier-project](https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html)
 [using-the-kani-rust-verifier-on-a-firecracker-example](https://model-checking.github.io/kani-verifier-blog/2022/07/13/using-the-kani-rust-verifier-on-a-firecracker-example.html)
 [sing-the-kani-rust-verifier-on-a-rust-standard-library-cve](https://model-checking.github.io/kani-verifier-blog/2022/06/01/using-the-kani-rust-verifier-on-a-rust-standard-library-cve.html)
 
-TODO P2 cover [loom](https://github.com/tokio-rs/loom) and [shuttle](https://github.com/awslabs/shuttle)  for concurrency testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property testing).
+TODO P2 cover [loom](https://github.com/tokio-rs/loom) and [shuttle](https://github.com/awslabs/shuttle) for concurrency testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property testing).
 
 TODO P2 cover [MIRAI](https://github.com/endorlabs/MIRAI)
 

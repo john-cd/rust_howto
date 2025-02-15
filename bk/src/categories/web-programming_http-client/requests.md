@@ -14,7 +14,7 @@ Parses the supplied URL and makes a synchronous HTTP GET request with [`reqwest:
 
 ## Make a HTTP GET request asynchronously {#async}
 
-[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}  [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
+[![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 A similar approach can be used by including the [`tokio`][c-tokio]{{hi:tokio}}⮳ executor to make the main function asynchronous, retrieving the same information.
 

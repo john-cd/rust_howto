@@ -9,7 +9,7 @@
 [![arrow-github][c-arrow-github-badge]][c-arrow-github]
 [![arrow-lib.rs][c-arrow-lib.rs-badge]][c-arrow-lib.rs]
 
-`arrow` is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
+[`arrow`][c-arrow]⮳{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
 
 ```rust,editable
 {{#include ../../../crates/other/tests/data_processing/arrow.rs:example}}
@@ -26,7 +26,7 @@
 
 {{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
 
-`datafusion` offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
+[`datafusion`][c-datafusion]⮳{{hi:datafusion}} offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/data_processing/datafusion.rs:example}}

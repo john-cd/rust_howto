@@ -6,7 +6,7 @@ Cloud platforms that offer first-class support for Rust.
 
 ## `shuttle` {#shuttle}
 
-`shuttle`
+[`shuttle`][launchpad-shuttle.rs]⮳{{hi:shuttle}}
 
 [docs.shuttle.rs][docs-shuttle-rs]{{hi:shuttle.rs}}
 [Shuttle examples][shuttle-examples-github]

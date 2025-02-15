@@ -42,7 +42,7 @@ Box – like [`std::boxed::Box`][c-std::boxed::Box]⮳{{hi:std::boxed::Box}} but
 [`IndexMap`][c-indexmap]⮳{{hi:IndexMap}} – hash table
 `IndexSet` – hash set
 `LinearMap`
-`Object`{{hi:Object}}  – objects managed by an object pool
+`Object`{{hi:Object}} – objects managed by an object pool
 [`String`][c-std::string::String]⮳{{hi:String}}
 `Vec`
 mpmc::Q* – multiple producer multiple consumer lock-free queue

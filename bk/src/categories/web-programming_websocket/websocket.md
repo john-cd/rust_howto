@@ -10,8 +10,7 @@
 [![tungstenite-lib.rs][c-tungstenite-lib.rs-badge]][c-tungstenite-lib.rs]
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:WebSocket}}
-
-`tungstenite` is a low-level crate that others build on.
+[`tungstenite`][c-tungstenite]⮳{{hi:tungstenite}} is a low-level crate that others build on.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/tests/tungstenite.rs:example}}

@@ -40,7 +40,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 - Dropping a future stops it from making further progress.
 - Async is zero-cost in Rust. You can use [`async`][book-rust-reference-async]{{hi:async}}⮳ without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also lets you use async in constrained environments, such as embedded systems.
-- No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained crates.
+- No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained [crates][p-crates].
 - Both single- and multi-threaded runtimes{{hi:Multi-threaded runtimes}} are available.
 
 ## Which crate provides what? {#which-crate-provides-what}
@@ -48,8 +48,8 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 [![std][c-std-badge]][c-std] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
 - The [`async`][book-rust-reference-async]{{hi:async}}⮳ / [`await`][book-rust-reference-await]{{hi:await}}⮳ syntactic sugar is supported directly by the Rust compiler.
-- The most fundamental traits, types, and functions, such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
-- Many utility types, macros and functions are provided by the [`futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
+- The most fundamental [traits][p-traits], types, and [functions][p-functions], such as the [`std::future::Future`][c-std::future::Future]{{hi:std::future::Future}}⮳ trait, are provided by the standard library.
+- Many utility types, [macros][p-macros] and [functions][p-functions] are provided by the [`[futures`][c-futures]{{hi:futures}}⮳ crate. They can be used in any async Rust application.
 - Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c-tokio]{{hi:tokio}}⮳ and [`async_std`][c-async_std]{{hi:async-std}}⮳. Most async applications, and some async crates, depend on a specific runtime.
 
 ## Async runtimes {#async-runtimes}
@@ -58,7 +58,7 @@ Rust's implementation of [`async`][book-rust-reference-async]{{hi:async}}⮳ dif
 
 In most cases, prefer the [`tokio`][p-tokio]{{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog-state-of-async-rust]⮳.
 
-Alternatives to the Tokio async ecosystem include:
+Alternatives to the [Tokio][p-tokio] async ecosystem include:
 
 - [![async-std][c-async_std-badge]][c-async_std]{{hi:async-std}} [![async_std-crates.io][c-async_std-crates.io-badge]][c-async_std-crates.io]⮳: async version of the Rust standard library. No longer maintained?
 - [![smol][c-smol-badge]][c-smol]{{hi:smol}} [Smol][c-smol-crates.io]⮳

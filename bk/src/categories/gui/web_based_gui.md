@@ -16,7 +16,7 @@
 
 [![dioxus-website][c-dioxus-website-badge]][c-dioxus-website] [![dioxus][c-dioxus-badge]][c-dioxus] [![dioxus-crates.io][c-dioxus-crates.io-badge]][c-dioxus-crates.io] [![dioxus-github][c-dioxus-github-badge]][c-dioxus-github] [![dioxus-lib.rs][c-dioxus-lib.rs-badge]][c-dioxus-lib.rs]{{hi:dioxus}}{{hi:Dom}}{{hi:Gui}}{{hi:React}}{{hi:Ui}}{{hi:Wasm}}
 
-[`dioxus`][c-dioxus]⮳{{hi:dioxus}}  is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust. A very nice API layer that has [`tauri`][c-tauri]⮳{{hi:tauri}}, Web, and TUI renderers. A native renderer is coming soon.
+[`dioxus`][c-dioxus]⮳{{hi:dioxus}} is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust. A very nice API layer that has [`tauri`][c-tauri]⮳{{hi:tauri}}, Web, and TUI renderers. A native renderer is coming soon.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/dioxus.rs:example}}

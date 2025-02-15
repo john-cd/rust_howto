@@ -25,11 +25,11 @@ conda install rustpython -c conda-forge
 
 [![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
 
-`pyOxidizer` is a utility for producing binaries that embed Python.
+[`pyOxidizer`][c-pyoxidizer]⮳{{hi:pyOxidizer}} is a utility for producing binaries that embed Python.
 
-`pyOxidizer` is capable of producing a single file executable - with a copy of Python and all its dependencies statically linked and all resources (like `.pyc` files) embedded in the executable. You can copy a single executable file to another machine and run a Python application contained within.
+[`pyOxidizer`][c-pyoxidizer]⮳{{hi:pyOxidizer}} is capable of producing a single file executable - with a copy of Python and all its dependencies statically linked and all resources (like `.pyc` files) embedded in the executable. You can copy a single executable file to another machine and run a Python application contained within.
 
-`pyOxidizer` can also be used to (a) easily add a Python interpreter to any Rust project; (b) add Rust to Python.
+[`pyOxidizer`][c-pyoxidizer]⮳{{hi:pyOxidizer}} can also be used to (a) easily add a Python interpreter to any Rust project; (b) add Rust to Python.
 
 ## `Ruff` {#ruff}
 

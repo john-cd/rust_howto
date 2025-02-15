@@ -26,7 +26,7 @@ Oracle Database is a multi-model database management system produced and markete
 
 [![sibyl-website][c-sibyl-website-badge]][c-sibyl-website] [![sibyl][c-sibyl-badge]][c-sibyl] [![sibyl-crates.io][c-sibyl-crates.io-badge]][c-sibyl-crates.io] [![sibyl-github][c-sibyl-github-badge]][c-sibyl-github] [![sibyl-lib.rs][c-sibyl-lib.rs-badge]][c-sibyl-lib.rs]{{hi:sibyl}}{{hi:Database}}{{hi:Sql}}{{hi:Ffi}}{{hi:Async}}{{hi:Oracle}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`sibyl`][c-sibyl]⮳{{hi:sibyl}}  offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
+[`sibyl`][c-sibyl]⮳{{hi:sibyl}} offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/oracle/sibyl.rs:example}}

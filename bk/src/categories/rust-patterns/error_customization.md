@@ -8,7 +8,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 [![anyhow][c-anyhow-badge]][c-anyhow] [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![anyhow-github][c-anyhow-github-badge]][c-anyhow-github] [![anyhow-lib.rs][c-anyhow-lib.rs-badge]][c-anyhow-lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`anyhow` provides a flexible concrete Error type built on [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}.
+[`anyhow`][c-anyhow]⮳{{hi:anyhow}} provides a flexible concrete Error type built on [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}.
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -45,7 +45,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [![miette][c-miette-badge]][c-miette] [![miette-crates.io][c-miette-crates.io-badge]][c-miette-crates.io] [![miette-github][c-miette-github-badge]][c-miette-github] [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs]{{hi:miette}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`miette` is a fancy diagnostic reporting library and protocol.
+[`miette`][c-miette]⮳{{hi:miette}} is a fancy diagnostic reporting library and protocol.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/miette.rs:example}}
@@ -55,9 +55,9 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 [![color-eyre][c-color_eyre-badge]][c-color_eyre] [![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io] [![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github] [![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]{{hi:color-eyre}}
 
-`color-eyre` is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
+[`color-eyre`][c-color_eyre]⮳{{hi:color-eyre}} is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
 
-It is a fork of `anyhow` that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c-anyhow]⮳{{hi:anyhow}} is simpler.
+It is a fork of [`anyhow`][c-anyhow::Result]⮳{{hi:anyhow}} [`anyhow`][c-anyhow]⮳{{hi:anyhow}} that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c-anyhow]⮳{{hi:anyhow}} is simpler.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/color_eyre.rs:example}}

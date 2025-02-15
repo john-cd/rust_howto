@@ -2,7 +2,7 @@
 
 {{#include aead.incl.md}}
 
-For more algorithms, see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}
+For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}
 
 ## `aes-gcm-siv` {#aes-gcm-siv}
 

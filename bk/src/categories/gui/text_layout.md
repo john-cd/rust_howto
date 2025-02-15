@@ -16,7 +16,7 @@
 
 [![parley][c-parley-badge]][c-parley] [![parley-crates.io][c-parley-crates.io-badge]][c-parley-crates.io] [![parley-github][c-parley-github-badge]][c-parley-github] [![parley-lib.rs][c-parley-lib.rs-badge]][c-parley-lib.rs]{{hi:parley}}{{hi:Layout}}{{hi:Text}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-[`parley`][c-parley]⮳{{hi:parley}}  provides an API for implementing rich text layout. "Another very accomplished text layout library used by [`druid`][c-druid]⮳{{hi:druid}} and [`xilem`][c-xilem]⮳{{hi:xilem}}."
+[`parley`][c-parley]⮳{{hi:parley}} provides an API for implementing rich text layout. "Another very accomplished text layout library used by [`druid`][c-druid]⮳{{hi:druid}} and [`xilem`][c-xilem]⮳{{hi:xilem}}."
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/text_layout/parley.rs:example}}

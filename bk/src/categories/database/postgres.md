@@ -47,7 +47,7 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 [![tokio-postgres-github][c-tokio_postgres-github-badge]][c-tokio_postgres-github]
 [![tokio-postgres-lib.rs][c-tokio_postgres-lib.rs-badge]][c-tokio_postgres-lib.rs]
 
-[`tokio-postgres`][c-tokio_postgres]⮳{{hi:tokio-postgres}}  is a Postgres-specific library. Performs better than SQLx.
+[`tokio-postgres`][c-tokio_postgres]⮳{{hi:tokio-postgres}} is a Postgres-specific library. Performs better than SQLx.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/postgres/tokio_postgres.rs:example}}
@@ -57,7 +57,7 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 
 [![cornucopia-website][c-cornucopia-website-badge]][c-cornucopia-website] [![cornucopia][c-cornucopia-badge]][c-cornucopia] [![cornucopia-crates.io][c-cornucopia-crates.io-badge]][c-cornucopia-crates.io] [![cornucopia-github][c-cornucopia-github-badge]][c-cornucopia-github] [![cornucopia-lib.rs][c-cornucopia-lib.rs-badge]][c-cornucopia-lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`cornucopia`][c-cornucopia]⮳{{hi:cornucopia}}  generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
+[`cornucopia`][c-cornucopia]⮳{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
 
 Cornucopia is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual database and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
 

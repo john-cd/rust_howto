@@ -47,7 +47,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-[`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} 
+[`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}}
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_static.rs:example}}

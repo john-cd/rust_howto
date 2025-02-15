@@ -19,7 +19,7 @@
 
 ## Emit a custom message {#custom-message}
 
-[![std][c-std-badge]][c-std] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}  [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+[![std][c-std-badge]][c-std] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/tests/tests_custom_message.rs:example}}

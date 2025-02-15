@@ -18,7 +18,7 @@
 
 The [`diesel`][c-diesel]⮳{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
 
-[`diesel`][c-diesel]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c-diesel]⮳{{hi:diesel}}  has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but `diesel-async` provides an async connection implementation.
+[`diesel`][c-diesel]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c-diesel]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but `diesel-async` provides an async connection implementation.
 
 To create a new [`diesel`][c-diesel]⮳{{hi:diesel}} project targeting `sqlite`, follow these steps:
 
@@ -45,7 +45,7 @@ diesel migration generate create_users
 `DATABASE_URL` can be set to a file path, or `sqlite::memory:` for an in-memory database. For other databases, the URL format is `protocol://user:password@host/database`. For MySQL, the URL would be as follows:
 
 ```bash
-echo DATABASE_URL=mysql://<username>:<password>@localhost/<database>  > .env
+echo DATABASE_URL=mysql://<username>:<password>@localhost/<database> >> .env
 ```
 
 - Add the following SQL to the generated `up.sql` file:

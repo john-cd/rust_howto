@@ -13,3 +13,4 @@
 [ex-links-podcasts-blogs]: blogs_podcasts_meetups.md#podcasts-blogs
 [ex-links-realworld]: example_code.md#realworld
 [ex-links-rust-book-source-code]: example_code.md#rust-book-source-code
+[p-protocols]: ../categories/aerospace_protocols/protocols.md

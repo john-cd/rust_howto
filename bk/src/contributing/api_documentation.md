@@ -41,7 +41,7 @@ xdg-settings --list
 xdg-settings get default-web-browser
 ```
 
-Point your browser to [http://localhost:6080][locahost:6080] and use `vscode` as the password. Open the HTML file of your choice with:
+Point your browser to [http://localhost:6080][locahost:6080] and use [`vscode`][vscode]⮳{{hi:vscode}} as the password. Open the HTML file of your choice with:
 
 ```bash
 xdg-open /cargo-target-rust_howto/target/doc/deps/index.html

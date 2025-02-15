@@ -28,7 +28,7 @@ Consider using [`tracing`][c-tracing]⮳{{hi:tracing}} instead, especially if yo
 
 [![log4rs][c-log4rs-badge]][c-log4rs] [![log4rs-crates.io][c-log4rs-crates.io-badge]][c-log4rs-crates.io] [![log4rs-github][c-log4rs-github-badge]][c-log4rs-github] [![log4rs-lib.rs][c-log4rs-lib.rs-badge]][c-log4rs-lib.rs]{{hi:log4rs}}{{hi:Log4}}{{hi:Logger}}{{hi:Log}}{{hi:Logging}}
 
-[`log4rs`][c-log4rs::append::file::FileAppender]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::config::Config]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::encode::pattern]⮳{{hi:log4rs}} [`log4rs`][c-log4rs]⮳{{hi:log4rs}}  is a highly configurable multi-output logging implementation for the `log` facade.
+[`log4rs`][c-log4rs::append::file::FileAppender]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::config::Config]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::encode::pattern]⮳{{hi:log4rs}} [`log4rs`][c-log4rs]⮳{{hi:log4rs}} is a highly configurable multi-output logging implementation for the `log` facade.
 
 ```rust,editable
 use log::{error, info, warn};

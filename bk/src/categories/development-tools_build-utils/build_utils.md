@@ -60,7 +60,7 @@ void greet(const char* name) {
 
 ## Compile and link statically to a bundled C++ library {#cpp}
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 `cc`
 
@@ -103,7 +103,7 @@ int multiply(int x, int y) {
 
 ## Compile a C library while setting custom defines {#cc-custom-defines}
 
-[![cc][c-cc-badge]][c-cc]{{hi:cc}}  [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
+[![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 `cc`
 

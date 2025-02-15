@@ -8,7 +8,7 @@
 | [Create random passwords from a set of user-defined characters][ex-algorithms-create-random-passwords-from-a-set-of-user-defined-characters] | [![rand][c-rand-badge]][c-rand] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] [![cat-os][cat-os-badge]][cat-os] |
 
 <div class="hidden">
-[randomness.incl:  fix (P1)](https://github.com/john-cd/rust_howto/issues/206)
+[randomness.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/206)
 
 | [`fastrand`][ex-algorithms-fastrand] | [![fastrand][c-fastrand-badge]][c-fastrand] | [![cat-algorithms][cat-algorithms-badge]][cat-algorithms] |
 

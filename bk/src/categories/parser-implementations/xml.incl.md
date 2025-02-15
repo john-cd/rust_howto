@@ -6,5 +6,5 @@
 | [`xmlparser`][ex-parser-implementations-xmlparser] | [![xmlparser][c-xmlparser-badge]][c-xmlparser] | [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations] |
 
 <div class="hidden">
-[P2 add example link   crate badges](https://github.com/john-cd/rust_howto/issues/647)
+[P2 add example link crate badges](https://github.com/john-cd/rust_howto/issues/647)
 </div>

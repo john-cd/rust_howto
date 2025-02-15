@@ -77,7 +77,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-[`pingora`][c-pingora]⮳{{hi:pingora}}  is a library for building fast, reliable and evolvable network services.
+[`pingora`][c-pingora]⮳{{hi:pingora}} is a library for building fast, reliable and evolvable network services.
 
 - [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳
 - [Pingora quick start][c-pingora-quick-start-github]⮳

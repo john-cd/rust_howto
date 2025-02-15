@@ -13,3 +13,8 @@
 [ex-contributing-repo-structure]: repo_structure.md#repo-structure
 [ex-contributing-topics-of-interest]: topics_of_interest.md#topics-of-interest
 [ex-contributing-using-vs-code]: dev_environment_setup.md#using-vs-code
+[p-drones]: ../categories/aerospace_drones/drones.md
+[p-protocols]: ../categories/aerospace_protocols/protocols.md
+[p-simulation]: ../categories/aerospace_simulation/simulation.md
+[p-space-protocols]: ../categories/aerospace_space-protocols/space_protocols.md
+[p-uavs]: ../categories/aerospace_unmanned-aerial-vehicles/uavs.md

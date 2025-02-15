@@ -4,7 +4,7 @@
 
 ## `Result` {#result}
 
-[`Result`][c-std::result::Result::unwrap]⮳{{hi:Result}} [`Result`][c-anyhow::Result]⮳{{hi:Result}} [`Result`][c-reqwest::Result]⮳{{hi:Result}} [`Result`][c-std::result::Result::unwrap_or]⮳{{hi:Result}} 
+[`Result`][c-std::result::Result]⮳{{hi:Result}}
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/other/result.rs:example}}

@@ -48,7 +48,7 @@
 
 [![webrender][c-webrender-badge]][c-webrender] [![webrender-crates.io][c-webrender-crates.io-badge]][c-webrender-crates.io] [![webrender-github][c-webrender-github-badge]][c-webrender-github] [![webrender-lib.rs][c-webrender-lib.rs-badge]][c-webrender-lib.rs]{{hi:webrender}}
 
-[`webrender`][c-webrender]⮳{{hi:webrender}}  is a GPU accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking."
+[`webrender`][c-webrender]⮳{{hi:webrender}} is a GPU accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking."
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}

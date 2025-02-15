@@ -30,7 +30,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 [![trillium][c-trillium-badge]][c-trillium] [![trillium-crates.io][c-trillium-crates.io-badge]][c-trillium-crates.io] [![trillium-github][c-trillium-github-badge]][c-trillium-github] [![trillium-lib.rs][c-trillium-lib.rs-badge]][c-trillium-lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}{{hi:HTTP server}}
 
-`trillium` is a modular toolkit for building async web apps
+[`trillium`][c-trillium]⮳{{hi:trillium}} is a modular toolkit for building async web apps
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

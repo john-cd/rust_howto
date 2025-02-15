@@ -7,7 +7,7 @@
 | [Manipulate the cursor, style the output, handle input events][ex-command-line-interface-crossterm] | [![crossterm][c-crossterm-badge]][c-crossterm] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 
 <div class="hidden">
-[ansi_terminal.incl:  fix (P1)](https://github.com/john-cd/rust_howto/issues/229)
+[ansi_terminal.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/229)
 
 | [`ansiterm`][ex-command-line-interface-ansiterm] | [![ansiterm][c-ansiterm-badge]][c-ansiterm] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 | [`anstream`][ex-command-line-interface-anstream] | [![anstream][c-anstream-badge]][c-anstream] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |

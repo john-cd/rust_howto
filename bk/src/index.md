@@ -86,7 +86,7 @@ The crate badges that accompany the examples link to the crates' full documentat
 
 ## A note about error handling
 
-Error handling in Rust is robust when done correctly, but can require a fair bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c-std::result::Result::unwrap]⮳{{hi:unwrap}}  calls, instead of proper error handling.
+Error handling in Rust is robust when done correctly, but can require a fair bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c-std::result::Result::unwrap]⮳{{hi:unwrap}} calls, instead of proper error handling.
 
 Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c-std::result::Result]⮳{{hi:Result}} types involved. The structure generally looks like:
 

@@ -4,7 +4,7 @@
 
 [Are we learning yet?][are-we-learning-yet?-website]⮳
 
-## Use classical machine learning algorithms  {#classical-ml}
+## Use classical machine learning algorithms {#classical-ml}
 
 ### `linfa` {#skip1}
 
@@ -32,7 +32,7 @@ Kin in spirit to Python's `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focu
 
 [![candle-core][c-candle_core-badge]][c-candle_core] [![candle-core-crates.io][c-candle_core-crates.io-badge]][c-candle_core-crates.io] [![candle-core-github][c-candle_core-github-badge]][c-candle_core-github] [![candle-core-lib.rs][c-candle_core-lib.rs-badge]][c-candle_core-lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:BLAS}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-`candle` is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
+[`candle`][c-candle_core]⮳{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
 
 [Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳
 

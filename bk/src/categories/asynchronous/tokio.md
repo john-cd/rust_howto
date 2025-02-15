@@ -8,21 +8,21 @@
 
 Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing networking applications{{hi:Networking applications}}. Tokio provides a few major components:
 
-- Multiple variations of the runtime for executing asynchronous code. Everything from a multi-threaded{{hi:Multithreading}}, work-stealing runtime{{hi:Work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:Single-threaded runtime}}.
-- An asynchronous version of the standard library.
+- Multiple variations of the runtime for executing [asynchronous][p-asynchronous] code. Everything from a multi-threaded{{hi:Multithreading}}, work-stealing runtime{{hi:Work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:Single-threaded runtime}}.
+- An [asynchronous][p-asynchronous] version of the [standard library][p-standard-library].
 - A large ecosystem of libraries.
 
 - creating and running a runtime{{hi:Runtime}}, spawning tasks{{hi:Spawning tasks}}, working with I/O and timers, and handling errors.
 
 ### Join {#join}
 
-By running all async{{hi:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn`{{hi:tokio::spawn}} and pass the join handle to `join!`{{hi:join!}}.
+By running all [async][p-async]{{hi:async}} expressions on the current task, the expressions are able to run concurrently but not in parallel. This means all expressions are run on the same thread and if one branch blocks the thread, all other expressions will be unable to continue. If parallelism is required, spawn each async expression using `tokio::spawn`{{hi:tokio::spawn}} and pass the join handle to `join!`{{hi:join!}}.
 
 ### Spawning {#spawning}
 
 ## IO {#io}
 
-- read and write data asynchronously with Tokio, using streams, codecs, and futures. It also shows how to handle errors and timeouts.
+- read and write data asynchronously with Tokio, using [streams][p-streams], codecs, and [futures][p-futures]. It also shows how to handle errors and timeouts.
 
 [Current thread runtime][c-tokio::main::current-thread-runtime]{{hi:tokio::main::current-thread-runtime}}⮳
 
@@ -34,7 +34,7 @@ equivalent to
 
 [LocalSet][c-tokio::task::LocalSet]{{hi:tokio::task::LocalSet}}⮳
 
-In some cases, it is necessary to run one or more futures that do not implement Send{{hi:Send}} and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more `!Send` futures to run together on the same thread.
+In some cases, it is necessary to run one or more [futures][p-futures] that do not implement Send{{hi:Send}} and thus are unsafe to send between threads. In these cases, a local task set may be used to schedule one or more `!Send` futures to run together on the same thread.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/tokio/tokio21.rs:example}}

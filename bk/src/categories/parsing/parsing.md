@@ -28,7 +28,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 
 [`pest`][c-pest-website]{{hi:pest}}⮳ is a general-purpose parser written in Rust, with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia-parsing-expression-grammars]⮳ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
 
-Grammars are saved in separate `.pest` files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
+Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which are never mixed with procedural code. This results in an always up-to-date formalization of a language that is easy to read and maintain.
 
 ```rust,editable
 {{#include ../../../crates/cats/parsing/tests/pest/pest.rs:example}}
@@ -41,7 +41,7 @@ Grammars are saved in separate `.pest` files which are never mixed with procedu
 [![tree-sitter-github][c-tree_sitter-github-badge]][c-tree_sitter-github]
 [![tree-sitter-lib.rs][c-tree_sitter-lib.rs-badge]][c-tree_sitter-lib.rs]
 
-`tree-sitter` provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
+[`tree-sitter`][c-tree_sitter]⮳{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
 ```rust,editable
 {{#include ../../../crates/cats/parsing/tests/tree_sitter.rs:example}}

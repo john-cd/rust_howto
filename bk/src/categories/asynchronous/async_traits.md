@@ -12,15 +12,15 @@ As of Rust 1.75, it is possible to have [`async`][book-rust-reference-async]{{hi
 
 [Stabilizing async fn in traits in 2023][blog-stabilizing-async-fn-in-traits]⮳
 
-This is in turn enabled by return-position `impl Trait` in traits{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
+This is in turn enabled by return-position `impl Trait` in [traits][p-traits]{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_traits/async_traits2.rs:example}}
 ```
 
-Note that there are still caveats for public traits - see [Announcing `async fn` and return-position `impl Trait` in traits][blog-announcing-async-fn]⮳.
+Note that there are still caveats for public traits - see [Announcing `[async][p-async] fn` and return-position `impl Trait` in [traits][p-traits]][blog-announcing-async-fn]⮳.
 
-In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c-async_trait]⮳{{hi:async-trait}} crate.
+In addition, [traits][p-traits] that use `-> impl Trait` and `[async][p-async] fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c-async_trait]⮳{{hi:async-trait}} crate.
 
 [![async-trait][c-async_trait-badge]][c-async_trait]{{hi:async-trait}} [![async_trait-github][c-async_trait-github-badge]][c-async_trait-github] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -34,5 +34,5 @@ In addition, traits that use `-> impl Trait` and `async fn` are not object-safe{
 <div class="hidden">
 [async_traits: review new Rust features (P1)](https://github.com/john-cd/rust_howto/issues/216)
 
-async-trait = Provides a workaround for the lack of language support for async functions in traits
+async-trait = Provides a workaround for the lack of language support for [async][p-async] [functions][p-functions] in traits
 </div>

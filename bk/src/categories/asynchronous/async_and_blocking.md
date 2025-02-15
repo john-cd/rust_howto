@@ -7,8 +7,8 @@
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:Blocking code}}
 
-- Async code should never spend a long time without reaching an `.await`.
-- Don't carelessly mix async{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
+- [Async][p-async] code should never spend a long time without reaching an `.await`.
+- Don't carelessly mix [async][p-async]{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`
 - If you have to block the thread because of expensive CPU-bound{{hi:CPU bound}} computation, call to a synchronous IO API{{hi:Synchronous IO}}, use the [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::task::spawn_blocking}}⮳ function, use [`rayon`][c-rayon]{{hi:rayon}}⮳, or spawn a dedicated thread{{hi:Dedicated thread}}.
 
 See [Async: What is blocking? blog post][blog-async-what-is-blocking]⮳.
@@ -74,8 +74,6 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
-
-`tokio`
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}

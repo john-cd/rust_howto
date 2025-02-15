@@ -51,7 +51,7 @@ THIS IS NOT SEEN.
 ### Including a file but initially hiding all except specified lines
 
 ```rust
-{{#rustdoc_include  _hidden.rs:2}}
+{{#rustdoc_include _hidden.rs:2}}
 ```
 
 ### Inserting runnable Rust files

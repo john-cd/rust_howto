@@ -78,7 +78,7 @@ Fast compile times, fast runtime, pedantic about correctness. API is less ergono
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
 
-The [`pico-args`][c-pico_args]⮳{{hi:pico-args}}  crate is a small and fast library for parsing command-line arguments in Rust.
+The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
 
 - No help generation
 - Only flags, options, free arguments and subcommands are supported

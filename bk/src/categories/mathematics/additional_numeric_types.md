@@ -58,7 +58,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 
 [![ordered-float][c-ordered_float-badge]][c-ordered_float] [![ordered-float-crates.io][c-ordered_float-crates.io-badge]][c-ordered_float-crates.io] [![ordered-float-github][c-ordered_float-github-badge]][c-ordered_float-github] [![ordered-float-lib.rs][c-ordered_float-lib.rs-badge]][c-ordered_float-lib.rs]{{hi:ordered-float}}{{hi:F32}}{{hi:F64}}{{hi:No_std}}{{hi:Ord}}{{hi:Sort}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-[`ordered-float`][c-ordered_float]⮳{{hi:ordered-float}}  provides wrappers for total ordering on floats. Float types that don't allow `NaN` and are therefore orderable. You can also use the `total_cmp` method from the standard library like `sort_by(|a, b| a.total_cmp(&b))`.
+[`ordered-float`][c-ordered_float]⮳{{hi:ordered-float}} provides wrappers for total ordering on floats. Float types that don't allow `NaN` and are therefore orderable. You can also use the `total_cmp` method from the standard library like `sort_by(|a, b| a.total_cmp(&b))`.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/ordered_float.rs:example}}

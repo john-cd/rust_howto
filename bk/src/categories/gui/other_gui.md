@@ -16,7 +16,7 @@
 
 [![slint-website][c-slint-website-badge]][c-slint-website] [![slint][c-slint-badge]][c-slint] [![slint-crates.io][c-slint-crates.io-badge]][c-slint-crates.io] [![slint-github][c-slint-github-badge]][c-slint-github] [![slint-lib.rs][c-slint-lib.rs-badge]][c-slint-lib.rs]{{hi:slint}}{{hi:Design}}{{hi:Graphics}}{{hi:Gui}}{{hi:Toolkit}}{{hi:Ui}}[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}[![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]{{hi:Rendering engine}}
 
-[`slint`][c-slint]⮳{{hi:slint}}  is a GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications.
+[`slint`][c-slint]⮳{{hi:slint}} is a GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications.
 Possibly the most complete rust-native UI library. But note that it's dual GPL3/commercial licensed.
 
 - [slint.dev][c-slint-website]⮳
@@ -38,7 +38,7 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 
 [![druid][c-druid-badge]][c-druid] [![druid-crates.io][c-druid-crates.io-badge]][c-druid-crates.io] [![druid-github][c-druid-github-badge]][c-druid-github] [![druid-lib.rs][c-druid-lib.rs-badge]][c-druid-lib.rs]{{hi:druid}}{{hi:Toolkit}}{{hi:Gui}}{{hi:Ui}}[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-[`druid`][c-druid]⮳{{hi:druid}}  is a data-first Rust-native UI design toolkit (experimental). Druid is a relatively mature alternative to Iced / Slint, however it has been discontinued in favor of Xilem, so its use for new projects is discouraged.
+[`druid`][c-druid]⮳{{hi:druid}} is a data-first Rust-native UI design toolkit (experimental). Druid is a relatively mature alternative to Iced / Slint, however it has been discontinued in favor of Xilem, so its use for new projects is discouraged.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

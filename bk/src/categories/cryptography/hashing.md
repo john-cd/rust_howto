@@ -16,7 +16,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 
 ## Use general-purpose hashing algorithms {#skip1}
 
-For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
+For more [algorithms][p-algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
 
 ### `blake3` {#blake3}
 
@@ -63,6 +63,6 @@ For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, m
 
 <div class="hidden">
 
-[hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273)  review [blessed.rs][blessed-rs-website]
+[hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273) review [blessed.rs][blessed-rs-website]
 
 </div>

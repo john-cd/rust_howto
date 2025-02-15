@@ -62,7 +62,7 @@ need Python
 
 ## Alternative `mdbook` install {#skip2}
 
-`mdbook`
+[`mdbook`][c-mdbook]⮳{{hi:mdbook}}
 
 ```dockerfile
 # RUN <<EOF

@@ -24,7 +24,7 @@ Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a n
 
 Use `//!` at the top of the file (instead of `///`) for module-level documentation.
 
-The first lines within `lib.rs`{{hi:lib.rs}} will compose the crate-level documentation front-page.
+The first lines within `lib.rs` will compose the crate-level documentation front-page.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/tests/documentation/rustdoc3.rs:example}}

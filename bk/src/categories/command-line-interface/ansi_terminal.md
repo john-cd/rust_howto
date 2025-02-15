@@ -111,7 +111,7 @@ Most popular
 
 [![stylish][c-stylish-badge]][c-stylish] [![stylish-crates.io][c-stylish-crates.io-badge]][c-stylish-crates.io] [![stylish-github][c-stylish-github-badge]][c-stylish-github] [![stylish-lib.rs][c-stylish-lib.rs-badge]][c-stylish-lib.rs]{{hi:stylish}}
 
-[`stylish`][c-stylish]  is another crate implementing colorized text
+[`stylish`][c-stylish] is another crate implementing colorized text
 
 ## `yansi` {#yansi}
 

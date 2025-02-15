@@ -6,13 +6,13 @@
 
 [![typed-builder][c-typed_builder-badge]][c-typed_builder] [![typed-builder-crates.io][c-typed_builder-crates.io-badge]][c-typed_builder-crates.io] [![typed-builder-github][c-typed_builder-github-badge]][c-typed_builder-github] [![typed-builder-lib.rs][c-typed_builder-lib.rs-badge]][c-typed_builder-lib.rs]{{hi:typed-builder}}{{hi:Builder}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`typed-builder` lets you derive compile-time type-checked builders. The oldest crate for compile-time-checked builders that has (987K downloads/month, 916 stars, 7 years old)
+[`typed-builder`][c-typed_builder]⮳{{hi:typed-builder}} lets you derive compile-time type-checked builders. The oldest crate for compile-time-checked builders that has (987K downloads/month, 916 stars, 7 years old)
 
 ## `derive_builder` {#derive_builder}
 
 [![derive_builder][c-derive_builder-badge]][c-derive_builder] [![derive_builder-crates.io][c-derive_builder-crates.io-badge]][c-derive_builder-crates.io] [![derive_builder-github][c-derive_builder-github-badge]][c-derive_builder-github] [![derive_builder-lib.rs][c-derive_builder-lib.rs-badge]][c-derive_builder-lib.rs]{{hi:derive_builder}}{{hi:Builder}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}}{{hi:Struct}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`derive_builder` provides a Rust macro to automatically implement the builder pattern for arbitrary structs.
+[`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} provides a Rust macro to automatically implement the builder pattern for arbitrary structs.
 
 runtime-checked builders, works with &self, &mut self builder patterns. The oldest crate for runtime-checked builders overall (1,58M downloads/month, 1285 stars, 8 years old)
 

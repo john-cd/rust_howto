@@ -38,7 +38,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 [![openrr-lib.rs][c-openrr-lib.rs-badge]][c-openrr-lib.rs]
 
-`openrr`
+[`openrr`][c-openrr]⮳{{hi:openrr}}
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/tests/openrr.rs:example}}
@@ -51,7 +51,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 [![bonsai-bt-github][c-bonsai_bt-github-badge]][c-bonsai_bt-github]
 [![bonsai-bt-lib.rs][c-bonsai_bt-lib.rs-badge]][c-bonsai_bt-lib.rs]
 
-`bonsai-bt` is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree-wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
+[`bonsai-bt`][c-bonsai_bt]⮳{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree-wikipedia] (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/tests/bonsai_bt.rs:example}}
