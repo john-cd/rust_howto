@@ -70,6 +70,8 @@ Possible applications of actor frameworks:
 [![actix-github][c-actix-github-badge]][c-actix-github]
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
+`actix`
+
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/actix.rs:example}}
 ```

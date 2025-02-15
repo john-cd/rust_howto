@@ -10,6 +10,8 @@
 
 ## Install the `miri` interpreter {#miri-installation}
 
+`miri`
+
 ```bash
 rustup +nightly component add miri
 cargo clean

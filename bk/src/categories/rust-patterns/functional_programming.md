@@ -34,6 +34,6 @@
 [![lens_rs-github][c-lens_rs-github-badge]][c-lens_rs-github]
 [![lens_rs-lib.rs][c-lens_rs-lib.rs-badge]][c-lens_rs-lib.rs]
 
-This Rust library provides support for lenses, which are a mechanism in functional programming for focusing on a part of a complex data structure.
+The `lens` Rust library provides support for lenses, which are a mechanism in functional programming for focusing on a part of a complex data structure.
 
 </div>

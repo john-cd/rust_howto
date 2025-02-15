@@ -25,5 +25,5 @@ Securing data.
 
 [![sodiumoxide][c-sodiumoxide-badge]][c-sodiumoxide] [![sodiumoxide-crates.io][c-sodiumoxide-crates.io-badge]][c-sodiumoxide-crates.io] [![sodiumoxide-github][c-sodiumoxide-github-badge]][c-sodiumoxide-github] [![sodiumoxide-lib.rs][c-sodiumoxide-lib.rs-badge]][c-sodiumoxide-lib.rs]{{hi:sodiumoxide}}{{hi:NaCl}}{{hi:Libsodium}}{{hi:Crypto}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 
-Fast cryptographic library for Rust (bindings to libsodium)
+`sodiumoxide` is a fast cryptographic library for Rust (bindings to `libsodium`).
 </div>

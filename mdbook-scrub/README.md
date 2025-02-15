@@ -46,7 +46,7 @@ Please review the `test_book\book.toml` for a complete example.
 <div class="hidden">This is not be seen.</div>
 ```
 
-mdBook hides the Markdown content within HTML tags with class `hidden`, but do not remove them from the output HTML.
+`mdBook` hides the Markdown content within HTML tags with class `hidden`, but do not remove them from the output HTML.
 The hidden content remains searchable and can be read in the underlying HTML.
 If `remove-hidden-sections` is set to `true`, this preprocessor strips these sections from the Markdown before it is passed to `mdbook` renderers.
 

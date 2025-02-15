@@ -30,11 +30,11 @@
 [![zed-github][c-zed-github-badge]][c-zed-github]
 [![zed-lib.rs][c-zed-lib.rs-badge]][c-zed-lib.rs]
 
-[Zed][c-zed-github]{{hi:zed}}⮳ is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+[`zed`][c-zed-github]{{hi:zed}}⮳ is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 
 ## Build tools {#build-tools}
 
-[pantsbuild.org][pantsbuild-website]⮳ {{hi:pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker.
+[`pantsbuild.org`][pantsbuild-website]⮳ {{hi:pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

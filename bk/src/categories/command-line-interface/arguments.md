@@ -50,6 +50,8 @@ Your favorite number must be 256.
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}} [(tutorial)][c-clap-tutorial] [(cookbook)][c-clap-cookbook] [![clap examples][c-clap-examples-badge]][c-clap-examples] [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
+`clap`
+
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/clap.rs:example}}
 ```
@@ -100,7 +102,7 @@ The `pico-args` crate is a small and fast library for parsing command-line argum
 
 [![structopt][c-structopt-badge]][c-structopt] [![structopt-crates.io][c-structopt-crates.io-badge]][c-structopt-crates.io] [![structopt-github][c-structopt-github-badge]][c-structopt-github] [![structopt-lib.rs][c-structopt-lib.rs-badge]][c-structopt-lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-Parse command line argument by defining a struct.
+`structopt` parses command line arguments by defining a struct.
 
 ### Argument parsing {#skip1}
 

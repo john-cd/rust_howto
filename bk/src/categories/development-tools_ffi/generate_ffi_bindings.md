@@ -42,7 +42,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Safe C++ <-> Rust interop by generating code for both sides.
+`cxx` provides safe C++ <-> Rust interop by generating code for both sides.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/cpp/cxx.rs:example}}
@@ -58,7 +58,7 @@ Safe C++ <-> Rust interop by generating code for both sides.
 
 [![uniffi-website][c-uniffi-website-badge]][c-uniffi-website] [![uniffi][c-uniffi-badge]][c-uniffi] [![uniffi-crates.io][c-uniffi-crates.io-badge]][c-uniffi-crates.io] [![uniffi-github][c-uniffi-github-badge]][c-uniffi-github] [![uniffi-lib.rs][c-uniffi-lib.rs-badge]][c-uniffi-lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
 
-a multi-language bindings generator for rust
+`uniffi` is a multi-language bindings generator for Rust.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}

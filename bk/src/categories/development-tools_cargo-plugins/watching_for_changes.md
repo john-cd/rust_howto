@@ -10,6 +10,8 @@
 [![cargo-watch-lib.rs][c-cargo_watch-lib.rs-badge]][c-cargo_watch-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
+`cargo watch`
+
 ```sh
 cargo install cargo-watch
 

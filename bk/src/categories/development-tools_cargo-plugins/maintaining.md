@@ -24,7 +24,7 @@ Currently available subcommands:
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[udeps][c-cargo_udeps-crates.io]{{hi:udeps}}⮳ find unused dependencies in `Cargo.toml`.
+[`udeps`][c-cargo_udeps-crates.io]{{hi:udeps}}⮳ find unused dependencies in `Cargo.toml`.
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
@@ -35,7 +35,7 @@ While compilation of this tool also works on Rust stable, it needs Rust nightly 
 [![cargo-machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
 [![cargo-machete-lib.rs][c-cargo_machete-lib.rs-badge]][c-cargo_machete-lib.rs]
 
-[`cargo-machete`][blog-cargo-machete]⮳ is a Cargo tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
+[`cargo-machete`][blog-cargo-machete]⮳ is a `cargo` tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
 
 Install and run with:
 
@@ -51,7 +51,7 @@ cargo machete
 [![cargo-outdated-github][c-cargo_outdated-github-badge]][c-cargo_outdated-github]
 [![cargo-outdated-lib.rs][c-cargo_outdated-lib.rs-badge]][c-cargo_outdated-lib.rs]
 
-Cargo subcommand for displaying when dependencies are out of date.
+`cargo-outdated` is a `cargo` subcommand for displaying when dependencies are out of date.
 
 If you are using VS Code, also look into the `Dependi` VS Code plugin.
 
@@ -99,12 +99,12 @@ $ cargo semver-checks
 
 [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand] [![cargo-expand-crates.io][c-cargo_expand-crates.io-badge]][c-cargo_expand-crates.io] [![cargo-expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github] [![cargo-expand-lib.rs][c-cargo_expand-lib.rs-badge]][c-cargo_expand-lib.rs]{{hi:cargo-expand}}{{hi:Cargo}}{{hi:Macros}}{{hi:Subcommand}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:cargo-expand}}
 
-Wrapper around `rustc -Zunpretty=expanded`. Shows the result of macro expansion and `#[derive]` expansion.
+`cargo expand` is a wrapper around `rustc -Zunpretty=expanded`. Shows the result of macro expansion and `#[derive]` expansion.
 
 ## `cargo hack` {#cargo-hack}
 
 [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack] [![cargo-hack-crates.io][c-cargo_hack-crates.io-badge]][c-cargo_hack-crates.io] [![cargo-hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github] [![cargo-hack-lib.rs][c-cargo_hack-lib.rs-badge]][c-cargo_hack-lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
-Cargo subcommand to provide various options useful for testing and continuous integration.
+`cargo hack` is a `cargo` subcommand to provide various options useful for testing and continuous integration.
 
 </div>

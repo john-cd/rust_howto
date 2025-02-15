@@ -40,6 +40,10 @@ Proper error handling{{hi:Error handling}} considers exceptions exceptional. Her
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
+`log`
+
+`env_logger`
+
 Creates a custom logger configuration{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
 
 ```rust,editable
@@ -59,6 +63,8 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 ## Log to the Unix syslog {#syslog}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![syslog][c-syslog-badge]][c-syslog]{{hi:syslog}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:syslog}}
+
+`log`
 
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ records the program submitting the log entry's classification, [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ denotes allowed log verbosity{{hi:Log verbosity}} and `Option<&str>` holds optional application name.
 

@@ -8,7 +8,7 @@
 
 [Salsa][c-salsa-website]{{hi:salsa}}⮳ [(GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
 
-Salsa is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
+`salsa` is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 
 ## `comemo` {#comemo}
 

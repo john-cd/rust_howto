@@ -38,6 +38,8 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 [![openrr-github][c-openrr-github-badge]][c-openrr-github]
 [![openrr-lib.rs][c-openrr-lib.rs-badge]][c-openrr-lib.rs]
 
+`openrr`
+
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/tests/openrr.rs:example}}
 ```

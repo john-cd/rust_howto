@@ -16,11 +16,15 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 ## `if let` {#if-let}
 
+`if let`
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/if_let.rs:example}}
 ```
 
 ## `while let` {#while-let}
+
+`while let`
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/while_let.rs:example}}

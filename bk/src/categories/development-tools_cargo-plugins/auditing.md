@@ -10,6 +10,10 @@
 [![cargo-audit-lib.rs][c-cargo_audit-lib.rs-badge]][c-cargo_audit-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
+`cargo.lock`
+
+`cargo audit`
+
 ```sh
 cargo install cargo-audit
 cargo audit
@@ -38,7 +42,7 @@ This works by embedding data about the dependency tree in JSON format into a ded
 [![cargo-license-lib.rs][c-cargo_license-lib.rs-badge]][c-cargo_license-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Cargo subcommand to see license of dependencies.
+`cargo-license` is a `cargo` subcommand to see license of dependencies.
 
 You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or `cargo-license`.
 

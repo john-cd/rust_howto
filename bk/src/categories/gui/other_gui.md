@@ -6,7 +6,7 @@
 
 [![xilem-website][c-xilem-website-badge]][c-xilem-website] [![xilem][c-xilem-badge]][c-xilem] [![xilem-crates.io][c-xilem-crates.io-badge]][c-xilem-crates.io] [![xilem-github][c-xilem-github-badge]][c-xilem-github] [![xilem-lib.rs][c-xilem-lib.rs-badge]][c-xilem-lib.rs]{{hi:xilem}}{{hi:Gui}}{{hi:Ui}}{{hi:Native}}{{hi:Gpu}}{{hi:Performance}}[![cat-internationalization][cat-internationalization-badge]][cat-internationalization]{{hi:Internationalization (i18n)}}[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}[![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}[![cat-accessibility][cat-accessibility-badge]][cat-accessibility]{{hi:Accessibility}}
 
-The replacement for Druid based on the more interoperable Vello and Glazier crates. However, it's currently not complete enough to be usable.
+`xilem` is the replacement for `druid`, based on the more interoperable `vello` and `glazier` crates. However, it's currently not complete enough to be usable.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/xilem.rs:example}}
@@ -16,7 +16,7 @@ The replacement for Druid based on the more interoperable Vello and Glazier crat
 
 [![slint-website][c-slint-website-badge]][c-slint-website] [![slint][c-slint-badge]][c-slint] [![slint-crates.io][c-slint-crates.io-badge]][c-slint-crates.io] [![slint-github][c-slint-github-badge]][c-slint-github] [![slint-lib.rs][c-slint-lib.rs-badge]][c-slint-lib.rs]{{hi:slint}}{{hi:Design}}{{hi:Graphics}}{{hi:Gui}}{{hi:Toolkit}}{{hi:Ui}}[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}[![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine]{{hi:Rendering engine}}
 
-GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications
+`slint` is a GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications.
 Possibly the most complete rust-native UI library. But note that it's dual GPL3/commercial licensed.
 
 - [slint.dev][c-slint-website]⮳

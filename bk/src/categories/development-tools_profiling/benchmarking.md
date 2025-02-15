@@ -9,7 +9,7 @@
 [![cargo-flamegraph-github][c-cargo_flamegraph-github-badge]][c-cargo_flamegraph-github]
 [![cargo-flamegraph-lib.rs][c-cargo_flamegraph-lib.rs-badge]][c-cargo_flamegraph-lib.rs]
 
-Execution flamegraph generation.
+`cargo flamegraph` generates execution flamegraphs.
 
 ## `criterion` {#criterion}
 
@@ -19,7 +19,7 @@ Execution flamegraph generation.
 [![criterion-lib.rs][c-criterion-lib.rs-badge]][c-criterion-lib.rs]
 [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
-Statistically accurate benchmarking tool for benchmarking libraries
+`criterion` is a statistically accurate benchmarking tool.
 
 `criterion.rs` helps you write fast code by detecting and measuring performance improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the performance of your code.
 
@@ -35,7 +35,7 @@ Statistically accurate benchmarking tool for benchmarking libraries
 [![divan-lib.rs][c-divan-lib.rs-badge]][c-divan-lib.rs]
 [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
-Simple yet powerful benchmarking library with allocation profiling
+`divan` is a simple yet powerful benchmarking library with allocation profiling.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/benches/divan.rs:example}}
@@ -49,7 +49,7 @@ Simple yet powerful benchmarking library with allocation profiling
 [![hyperfine-lib.rs][c-hyperfine-lib.rs-badge]][c-hyperfine-lib.rs]
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-Tool for benchmarking compiled binaries (similar to unix time command but better).
+`hyperfine` is a tool for benchmarking compiled binaries (similar to unix time command but better).
 
 - Statistical analysis across multiple runs.
 - Support for arbitrary shell commands.

@@ -22,7 +22,7 @@ For more algorithms, see Rust Crypto Signatures:
 
 [![ed25519-website][c-ed25519-website-badge]][c-ed25519-website] [![ed25519][c-ed25519-badge]][c-ed25519] [![ed25519-crates.io][c-ed25519-crates.io-badge]][c-ed25519-crates.io] [![ed25519-github][c-ed25519-github-badge]][c-ed25519-github] [![ed25519-lib.rs][c-ed25519-lib.rs-badge]][c-ed25519-lib.rs]{{hi:ed25519}}{{hi:Crypto}}{{hi:Signature}}{{hi:ECC}}{{hi:Curve25519}}{{hi:Signing}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-This crate is a support library for Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032), providing signature type definitions and PKCS#8 private key decoding/encoding support.
+The `ed25519` crate is a support library for Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032), providing signature type definitions and PKCS#8 private key decoding/encoding support.
 
 It doesn't contain an implementation of Ed25519, but instead contains an ed25519::Signature type which other crates can use in conjunction with the signature::Signer and signature::Verifier traits.
 
@@ -54,7 +54,7 @@ It doesn't contain an implementation of Ed25519, but instead contains an ed25519
 
 [![dsa-website][c-dsa-website-badge]][c-dsa-website] [![dsa][c-dsa-badge]][c-dsa] [![dsa-crates.io][c-dsa-crates.io-badge]][c-dsa-crates.io] [![dsa-github][c-dsa-github-badge]][c-dsa-github] [![dsa-lib.rs][c-dsa-lib.rs-badge]][c-dsa-lib.rs]{{hi:dsa}}{{hi:Crypto}}{{hi:Signature}}{{hi:NIST}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Pure Rust implementation of the Digital Signature Algorithm (DSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic
+`dsa` is a pure Rust implementation of the Digital Signature Algorithm (DSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic
 signatures as well as support for added entropy.
 
 ```rust,editable

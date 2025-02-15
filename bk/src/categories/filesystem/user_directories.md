@@ -38,7 +38,7 @@ Get platform-specific locations for configuration, cache, and other data
 
 [![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
 
-Open a path or URL using the program configured on the system.
+`open` opens a path or URL using the program configured on the system.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/open.rs:example}}

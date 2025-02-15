@@ -14,7 +14,7 @@ The core functionality of `once_cell` is now included in the standard library wi
 [![std][c-std-badge]][c-std]{{hi:std}}
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
-[OnceCell][c-std-core::cell::OnceCell]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
+[`OnceCell`][c-std-core::cell::OnceCell]{{hi:OnceCell}}⮳ is a cell which can be written to only once.
 
 The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 
@@ -46,6 +46,8 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+`lazy_static`
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_static.rs:example}}

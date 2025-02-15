@@ -41,7 +41,7 @@ Grammars are saved in separate `.pest` files which are never mixed with procedu
 [![tree-sitter-github][c-tree_sitter-github-badge]][c-tree_sitter-github]
 [![tree-sitter-lib.rs][c-tree_sitter-lib.rs-badge]][c-tree_sitter-lib.rs]
 
-Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
+`tree-sitter` provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter-website]⮳ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
 ```rust,editable
 {{#include ../../../crates/cats/parsing/tests/tree_sitter.rs:example}}

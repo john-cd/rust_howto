@@ -9,7 +9,7 @@
 [![serde-github][c-serde-github-badge]][c-serde-github]
 [![serde-lib.rs][c-serde-lib.rs-badge]][c-serde-lib.rs]
 
-De facto standard serialization library. Use in conjunction with sub-crates like serde_json for the specific format that you are using.
+`serde` is the de facto standard serialization library. Use in conjunction with sub-crates like `serde_json` for the specific format that you are using.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/serde/serde.rs:example}}
@@ -22,6 +22,8 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![serde_json-github][c-serde_json-github-badge]][c-serde_json-github]
 [![serde_json-lib.rs][c-serde_json-lib.rs-badge]][c-serde_json-lib.rs]
 
+`serde-json`
+
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/serde/serde_json.rs:example}}
 ```
@@ -32,6 +34,8 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]
 [![serde-ignored-github][c-serde_ignored-github-badge]][c-serde_ignored-github]
 [![serde-ignored-lib.rs][c-serde_ignored-lib.rs-badge]][c-serde_ignored-lib.rs]
+
+`serde-ignored`
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/serde/serde_ignored.rs:example}}
@@ -44,7 +48,7 @@ De facto standard serialization library. Use in conjunction with sub-crates like
 [![monostate-github][c-monostate-github-badge]][c-monostate-github]
 [![monostate-lib.rs][c-monostate-lib.rs-badge]][c-monostate-lib.rs]
 
-This library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
+The `monostate` library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/serde/monostate.rs:example}}

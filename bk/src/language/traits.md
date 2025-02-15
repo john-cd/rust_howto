@@ -48,6 +48,8 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 ## Return-position `impl` Trait {#return-position-impl-trait}
 
+`impl`
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/rpit.rs:example}}
 ```

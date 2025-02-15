@@ -28,6 +28,8 @@ Another example:
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
+`tokio`
+
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/async_channels_mpsc.rs:example}}
 ```
@@ -70,12 +72,12 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 
 ## `kanal` {#kanal}
 
-Fast sync and async channel:
-
 [![kanal][c-kanal-badge]][c-kanal]{{hi:kanal}}
 [![kanal-crates.io][c-kanal-crates.io-badge]][c-kanal-crates.io]
 [![kanal-github][c-kanal-github-badge]][c-kanal-github]
 [![kanal-lib.rs][c-kanal-lib.rs-badge]][c-kanal-lib.rs]
+
+`kanal` offers fast sync and async channels:
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/kanal.rs:example}}

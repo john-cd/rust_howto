@@ -30,7 +30,7 @@
 
 [![ggez-website][c-ggez-website-badge]][c-ggez-website] [![ggez][c-ggez-badge]][c-ggez] [![ggez-crates.io][c-ggez-crates.io-badge]][c-ggez-crates.io] [![ggez-github][c-ggez-github-badge]][c-ggez-github] [![ggez-lib.rs][c-ggez-lib.rs-badge]][c-ggez-lib.rs]{{hi:ggez}}{{hi:Game}}{{hi:Graphics}}{{hi:2d}}{{hi:ggez}}{{hi:Engine}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}}
 
-"A simpler option for 2d games only."
+`ggez` is "a simpler option for 2d games only."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/ggez.rs:example}}
@@ -40,7 +40,7 @@
 
 [![macroquad][c-macroquad-badge]][c-macroquad] [![macroquad-crates.io][c-macroquad-crates.io-badge]][c-macroquad-crates.io] [![macroquad-github][c-macroquad-github-badge]][c-macroquad-github] [![macroquad-lib.rs][c-macroquad-lib.rs-badge]][c-macroquad-lib.rs]{{hi:macroquad}}
 
-"A simple and easy to use 2d game library, great for beginners."
+`macroquad` is "a simple and easy to use 2D game library, great for beginners."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/macroquad.rs:example}}

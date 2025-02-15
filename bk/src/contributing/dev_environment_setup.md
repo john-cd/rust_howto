@@ -48,6 +48,8 @@ need Python
 
 ## Alternative `just` install {#skip1}
 
+`just`
+
 ```dockerfile
 # RUN <<EOF
 # set -e
@@ -59,6 +61,8 @@ need Python
 ```
 
 ## Alternative `mdbook` install {#skip2}
+
+`mdbook`
 
 ```dockerfile
 # RUN <<EOF

@@ -14,7 +14,7 @@ apt install lsd
 
 [![exa-github][c-exa-github-badge]][c-exa-github]{{hi:exa}}
 
-exa is a modern replacement for ls.
+`exa` is a modern replacement for `ls`.
 
 ## `broot` {#broot}
 
@@ -42,7 +42,7 @@ bat -A /etc/hosts
 [![open-github][c-open-github-badge]][c-open-github]
 [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]
 
-Opens a path or URL using the program configured on the system.
+`open` opens a path or URL using the program configured on the system.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

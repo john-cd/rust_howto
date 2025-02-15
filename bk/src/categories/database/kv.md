@@ -6,7 +6,7 @@
 
 [![heed][c-heed-badge]][c-heed] [![heed-crates.io][c-heed-crates.io-badge]][c-heed-crates.io] [![heed-github][c-heed-github-badge]][c-heed-github] [![heed-lib.rs][c-heed-lib.rs-badge]][c-heed-lib.rs]{{hi:heed}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-A fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value database library.
+`heed` is a fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value database library.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}
@@ -16,7 +16,7 @@ A fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high pe
 
 [![rocksdb][c-rocksdb-badge]][c-rocksdb] [![rocksdb-crates.io][c-rocksdb-crates.io-badge]][c-rocksdb-crates.io] [![rocksdb-github][c-rocksdb-github-badge]][c-rocksdb-github] [![rocksdb-lib.rs][c-rocksdb-lib.rs-badge]][c-rocksdb-lib.rs]{{hi:rocksdb}}{{hi:Database}}{{hi:Embedded}}{{hi:Lsm-tree}}{{hi:Persistence}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high performance database for key-value data.
+`rocksdb` is a Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high performance database for key-value data.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/rocksdb/rocksdb.rs:example}}

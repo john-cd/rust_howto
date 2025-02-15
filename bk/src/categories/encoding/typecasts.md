@@ -12,6 +12,8 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
+`bytemuck`
+
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/typecasts/bytemuck.rs:example}}
 ```

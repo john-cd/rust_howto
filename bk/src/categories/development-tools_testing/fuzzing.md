@@ -31,8 +31,12 @@ TODO P2 cover property testing [proptest](https://github.com/proptest-rs/proptes
 proptest = "1.0.0"
 ```
 
-TODO P2 cover [bolero/](https://github.com/camshaft/bolero/)
+TODO P2 cover [bolero](https://github.com/camshaft/bolero/)
+
+`bolero`
 
 TODO P2 cover [valgrind](https://valgrind.org/)
+
+`valgrind`
 
 </div>

@@ -30,6 +30,8 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}{{hi:rayon}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
+`rayon`
+
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_rayon.rs:example}}
 ```
@@ -39,6 +41,8 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}} [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io]
 [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}{{hi:rayon}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Dedicated thread}}
+
+`rayon`
 
 If a blocking operation{{hi:Blocking operation}} keeps running forever, you should run it on a dedicated thread{{hi:Dedicated thread}}.
 
@@ -70,6 +74,8 @@ In other cases, it may be easier to structure the application as largely synchro
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
+
+`tokio`
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}

@@ -46,6 +46,8 @@ foo:
 
 ### Install `just` in a Dev Container {#skip2}
 
+`just`
+
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye
 # or perhaps mcr.microsoft.com/devcontainers/rust:bullseye if you want rust & cargo

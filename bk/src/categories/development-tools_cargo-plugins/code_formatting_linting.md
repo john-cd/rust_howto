@@ -10,6 +10,8 @@
 [![rustfmt-nightly-lib.rs][c-rustfmt_nightly-lib.rs-badge]][c-rustfmt_nightly-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
+`rustfmt`
+
 ```sh
 # Install `rustfmt` if needed
 rustup component add rustfmt
@@ -28,7 +30,7 @@ cargo fmt -- --check
 [![clippy-lib.rs][c-clippy-lib.rs-badge]][c-clippy-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-Clippy is the official Rust linter. It catches common mistakes and improves your Rust code.
+`cargo-clippy` is the official Rust linter. It catches common mistakes and improves your Rust code.
 
 ```sh
 rustup component add clippy # install if needed

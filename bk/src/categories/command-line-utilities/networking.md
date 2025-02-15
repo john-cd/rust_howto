@@ -4,7 +4,9 @@
 
 ## `gping` {#gping}
 
-Ping, but with a graph [`gping`][c-gping-github]{{hi:gping}}
+[`gping`][c-gping-github]{{hi:gping}}
+
+`gping` is like `ping`, but with a graph.
 
 ```sh
 apt install gping

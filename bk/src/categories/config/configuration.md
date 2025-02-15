@@ -32,6 +32,8 @@ Config lets you set a set of default parameters and then extend them via merging
 
 [![confy][c-confy-badge]][c-confy] [![confy-crates.io][c-confy-crates.io-badge]][c-confy-crates.io] [![confy-github][c-confy-github-badge]][c-confy-github] [![confy-lib.rs][c-confy-lib.rs-badge]][c-confy-lib.rs]{{hi:confy}}
 
+`confy`
+
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/config/tests/confy.rs:example}}
 ```

@@ -16,6 +16,8 @@
 
 [Nushell][nushell-website]⮳[(github)][nushell-github]⮳
 
+`nushell`
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

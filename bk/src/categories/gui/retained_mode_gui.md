@@ -38,7 +38,7 @@
 
 [![vizia][c-vizia-badge]][c-vizia] [![vizia-crates.io][c-vizia-crates.io-badge]][c-vizia-crates.io] [![vizia-github][c-vizia-github-badge]][c-vizia-github] [![vizia-lib.rs][c-vizia-lib.rs-badge]][c-vizia-lib.rs]{{hi:vizia}}
 
-A declarative desktop GUI framework
+`vizia` is a declarative desktop GUI framework
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/vizia.rs:example}}

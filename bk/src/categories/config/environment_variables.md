@@ -16,7 +16,7 @@
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
-To retrieve a single environment variable{{hi:Environment variables}},
+Use `std::env` to retrieve a single environment variable{{hi:Environment variables}},
 
 ```rust,editable,should_panic
 {{#include ../../../crates/cats/config/tests/env/env.rs:example}}

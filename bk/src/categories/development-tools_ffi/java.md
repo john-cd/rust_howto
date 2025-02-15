@@ -6,7 +6,7 @@
 
 [![jni][c-jni-badge]][c-jni] [![jni-crates.io][c-jni-crates.io-badge]][c-jni-crates.io] [![jni-github][c-jni-github-badge]][c-jni-github] [![jni-lib.rs][c-jni-lib.rs-badge]][c-jni-lib.rs]{{hi:jni}}{{hi:Ffi}}{{hi:Java}}{{hi:jni}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}}
 
-Rust bindings to the JNI API.
+`jni` provides Rust bindings to the `Java` JNI API.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/java/jni.rs:example}}

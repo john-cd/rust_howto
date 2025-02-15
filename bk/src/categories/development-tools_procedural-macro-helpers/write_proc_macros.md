@@ -66,7 +66,7 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 [![darling][c-darling-badge]][c-darling] [![darling-crates.io][c-darling-crates.io-badge]][c-darling-crates.io] [![darling-github][c-darling-github-badge]][c-darling-github] [![darling-lib.rs][c-darling-lib.rs-badge]][c-darling-lib.rs]{{hi:darling}}
 
-Derive macro to easily parse derive macro inputs
+`darling` provides derive macros to easily parse derive macro inputs.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}

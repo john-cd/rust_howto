@@ -10,7 +10,7 @@
 [![windows-lib.rs][c-windows-lib.rs-badge]][c-windows-lib.rs]
 [![cat-os::windows-apis][cat-os::windows-apis-badge]][cat-os::windows-apis]{{hi:Windows APIs}}
 
-The official Microsoft-provided crate for interacting with windows APIs
+`windows` is the official Microsoft-provided crate for interacting with Windows APIs.
 
 ```rust,editable
 {{#include ../../../crates/cats/os_windows_apis/tests/windows.rs:example}}
@@ -26,7 +26,7 @@ The official Microsoft-provided crate for interacting with windows APIs
 [![cat-os::windows-apis][cat-os::windows-apis-badge]][cat-os::windows-apis]{{hi:Windows APIs}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Older binding to the windows APIs. Unofficial, but more complete than windows-rs
+`winapi` provides older binding to the Windows APIs. Unofficial, but more complete than `windows-rs`.
 
 ```rust,editable
 {{#include ../../../crates/cats/os_windows_apis/tests/winapi.rs:example}}
@@ -35,6 +35,8 @@ Older binding to the windows APIs. Unofficial, but more complete than windows-rs
 ## See also
 
 Native Windows GUI: [![native_windows_gui-github][c-native_windows_gui-github-badge]][c-native_windows_gui-github]{{hi:native-windows-gui}}
+
+`native_windows_gui`
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,6 +4,8 @@
 
 ## `Result` {#result}
 
+`Result`
+
 ```rust,editable
 {{#include ../../crates/standard_library/tests/other/result.rs:example}}
 ```

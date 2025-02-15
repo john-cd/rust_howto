@@ -6,6 +6,8 @@
 
 [![rust_gpu-github][rust_gpu-github-badge]][rust_gpu-github]{{hi:rust_gpu}}
 
+`rust-gpu`
+
 ```rust,editable
 {{#include ../../../crates/other/tests/gpu/rust_gpu.rs:example}}
 ```

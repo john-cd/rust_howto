@@ -8,6 +8,9 @@ The type [`std::borrow::Cow`][c-std::borrow::Cow]{{hi:Cow}} is a smart pointer p
 
 ## Convert `Cow` to `&str` {#convert-cow-to-str}
 
+`Cow`
+`&str`
+
 Use [`std::borrow::Borrow`][c-std::borrow::Borrow]{{hi:std::borrow::Borrow}}⮳:
 
 ```rust,editable
@@ -35,6 +38,8 @@ Use [`std::ops::Deref`][c-std::ops::Deref]{{hi:std::ops::Deref}}⮳ implicitly t
 ## Convert `Cow` to `String` {#convert-cow-to-string}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
+
+`Cow`
 
 Use [`std::string::ToString`][c-std::string::ToString]{{hi:std::string::ToString}}⮳:
 

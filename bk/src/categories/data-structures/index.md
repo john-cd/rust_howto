@@ -26,25 +26,25 @@ Rust implementations of ways of organizing data suited for specific purposes.
 <div class="hidden">
 [data-structures: expand (P1)](https://github.com/john-cd/rust_howto/issues/280)
 
-Hashset
-BinaryHeap
-LinkedList
-Stack
-Queue
-BTreeMap
-BTreeSet
+`Hashset`
+`BinaryHeap`
+`LinkedList`
+`Stack`
+`Queue`
+`BTreeMap`
+`BTreeSet`
 
-Alongside arrayvec and tinyvec, `heapless` has stack-allocated arrays, but also includes:
+Alongside `arrayvec` and `tinyvec`, `heapless` has stack-allocated arrays, but also includes:
 
-Arc – like std::sync::Arc but backed by a lock-free memory pool rather than `#[global_allocator]`
-Box – like std::boxed::Box but backed by a lock-free memory pool rather than `#[global_allocator]`
-BinaryHeap – priority queue
-IndexMap – hash table
-IndexSet – hash set
-LinearMap
-Object – objects managed by an object pool
-String
-Vec
+Arc – like `std::sync::Arc` but backed by a lock-free memory pool rather than `#[global_allocator]`
+Box – like `std::boxed::Box` but backed by a lock-free memory pool rather than `#[global_allocator]`
+`BinaryHeap` – priority queue
+`IndexMap` – hash table
+`IndexSet` – hash set
+`LinearMap`
+`Object` – objects managed by an object pool
+`String`
+`Vec`
 mpmc::Q* – multiple producer multiple consumer lock-free queue
-spsc::Queue – single producer single consumer lock-free queue
+`spsc::Queue` – single producer single consumer lock-free queue
 </div>

@@ -19,19 +19,19 @@ Crates that are primarily useful on embedded devices or without an operating sys
 <div class="hidden">
 [embedded/_index: write; cover: (P2)](https://github.com/john-cd/rust_howto/issues/346)
 
-portable-atomic
-embedded-hal
-postcard
-strun
-smoltcp
+`portable-atomic`
+`embedded-hal`
+`postcard`
+`strun`
+`smoltcp`
 ...
 
 ## `rppal`
 
-Interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
+`rppal` is an interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
 
 ## `embdedded-hal`
 
-A Hardware Abstraction Layer (HAL) for embedded systems
+`embdedded-hal` is a Hardware Abstraction Layer (HAL) for embedded systems.
 
 </div>

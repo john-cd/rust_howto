@@ -32,6 +32,8 @@
 [![zed-github][c-zed-github-badge]][c-zed-github]
 [![zed-lib.rs][c-zed-lib.rs-badge]][c-zed-lib.rs]
 
+`zed`
+
 ## See also
 
 [Six IDEs built for Rust][blog-6-ides-built-for-rust]⮳

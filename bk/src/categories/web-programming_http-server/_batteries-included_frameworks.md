@@ -10,6 +10,8 @@
 [![loco_rs-lib.rs][c-loco_rs-lib.rs-badge]][c-loco_rs-lib.rs]
 [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
+`loco`
+
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/loco/main.rs:example}}
 ```

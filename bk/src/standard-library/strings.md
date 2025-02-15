@@ -26,7 +26,7 @@ Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership 
 
 [![std][c-std-badge]][c-std]
 
-Here are several common methods to concatenate{{hi:Concatenation}} Strings:
+Here are several common methods to concatenate{{hi:Concatenation}} `String`s:
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/strings3.rs:example}}

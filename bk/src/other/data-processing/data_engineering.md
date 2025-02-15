@@ -26,13 +26,15 @@
 
 {{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
 
-DataFusion offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
+`datafusion` offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/data_processing/datafusion.rs:example}}
 ```
 
 ## `databend` {#databend}
+
+`databend`
 
 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 

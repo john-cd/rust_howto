@@ -16,7 +16,7 @@
 
 [![subtle-website][c-subtle-website-badge]][c-subtle-website] [![subtle][c-subtle-badge]][c-subtle] [![subtle-crates.io][c-subtle-crates.io-badge]][c-subtle-crates.io] [![subtle-github][c-subtle-github-badge]][c-subtle-github] [![subtle-lib.rs][c-subtle-lib.rs-badge]][c-subtle-lib.rs]{{hi:subtle}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Utilities}}{{hi:Constant-time}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Pure-Rust traits and utilities for constant-time cryptographic implementations.
+`subtle` provides pure-Rust traits and utilities for constant-time cryptographic implementations.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/utilities/subtle.rs:example}}

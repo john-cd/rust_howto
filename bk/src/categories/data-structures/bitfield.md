@@ -19,7 +19,7 @@
 [![flagset-github][c-flagset-github-badge]][c-flagset-github]
 [![flagset-lib.rs][c-flagset-lib.rs-badge]][c-flagset-lib.rs]
 
-FlagSet is a new, ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
+`flagset` is a ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/bits/flagset.rs:example}}

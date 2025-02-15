@@ -36,7 +36,7 @@ In that role, key derivation functions take a password, a salt, (and sometimes a
 [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-The 'scrypt' key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as 'PBKDF2' or ['bcrypt'](#bcrypt).
+The `scrypt` key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as `PBKDF2` or ['bcrypt'](#bcrypt).
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/password_hashing/scrypt.rs:example}}
@@ -50,6 +50,8 @@ The 'scrypt' key derivation function is designed to be far more secure against h
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
 ['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
+
+`bcrypt`
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/password_hashing/bcrypt.rs:example}}
