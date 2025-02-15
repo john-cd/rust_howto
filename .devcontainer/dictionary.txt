@@ -1633,3 +1633,5 @@ TokenStream
 TokenTree
 Ident
 Punct
+fastly
+WebSockets
