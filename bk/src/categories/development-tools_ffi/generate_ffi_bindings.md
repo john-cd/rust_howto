@@ -11,7 +11,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-`bindgen` automatically generates Rust FFI bindings to C and C++ libraries.
+[`bindgen`][c-bindgen]⮳{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/bindgen.rs:example}}
@@ -26,7 +26,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-`cbindgen` generates C bindings to Rust libraries.
+[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} generates C bindings to Rust libraries.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/cbindgen.rs:example}}
@@ -58,7 +58,7 @@
 
 [![uniffi-website][c-uniffi-website-badge]][c-uniffi-website] [![uniffi][c-uniffi-badge]][c-uniffi] [![uniffi-crates.io][c-uniffi-crates.io-badge]][c-uniffi-crates.io] [![uniffi-github][c-uniffi-github-badge]][c-uniffi-github] [![uniffi-lib.rs][c-uniffi-lib.rs-badge]][c-uniffi-lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
 
-`uniffi` is a multi-language bindings generator for Rust.
+[`uniffi`][c-uniffi]⮳{{hi:uniffi}} is a multi-language bindings generator for Rust.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}

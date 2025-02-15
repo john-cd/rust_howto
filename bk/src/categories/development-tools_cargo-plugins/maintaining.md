@@ -6,7 +6,7 @@
 
 [![cargo-edit][c-cargo_edit-badge]][c-cargo_edit] [![cargo-edit-crates.io][c-cargo_edit-crates.io-badge]][c-cargo_edit-crates.io] [![cargo-edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github] [![cargo-edit-lib.rs][c-cargo_edit-lib.rs-badge]][c-cargo_edit-lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo edit` provides commands for modifying a `Cargo.toml` file. It allows you to add, remove, and upgrade dependencies by modifying your `Cargo.toml` file from the command line.
+`cargo edit` provides commands for modifying a [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} file. It allows you to add, remove, and upgrade dependencies by modifying your [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} file from the command line.
 
 Currently available subcommands:
 
@@ -24,7 +24,7 @@ Currently available subcommands:
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`udeps`][c-cargo_udeps-crates.io]{{hi:udeps}}⮳ find unused dependencies in `Cargo.toml`.
+[`udeps`][c-cargo_udeps-crates.io]{{hi:udeps}}⮳ find unused dependencies in [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} .
 
 While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
 
@@ -51,7 +51,7 @@ cargo machete
 [![cargo-outdated-github][c-cargo_outdated-github-badge]][c-cargo_outdated-github]
 [![cargo-outdated-lib.rs][c-cargo_outdated-lib.rs-badge]][c-cargo_outdated-lib.rs]
 
-`cargo-outdated` is a `cargo` subcommand for displaying when dependencies are out of date.
+[`cargo-outdated`][c-cargo_outdated]⮳{{hi:cargo-outdated}} is a `cargo` subcommand for displaying when dependencies are out of date.
 
 If you are using VS Code, also look into the `Dependi` VS Code plugin.
 
@@ -64,7 +64,7 @@ If you are using VS Code, also look into the `Dependi` VS Code plugin.
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo-semver-checks` scans your Rust crate for semver violations.
+[`cargo-semver-checks`][c-cargo_semver_checks]⮳{{hi:cargo-semver-checks}} scans your Rust crate for semver violations.
 
 ```sh
 # If you already use `cargo-binstall` for faster tool installations:

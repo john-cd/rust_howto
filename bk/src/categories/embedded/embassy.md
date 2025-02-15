@@ -9,7 +9,7 @@
 [![embassy-github][c-embassy-github-badge]][c-embassy-github]
 [![embassy-lib.rs][c-embassy-lib.rs-badge]][c-embassy-lib.rs]
 
-`embassy`
+[`embassy`][c-embassy]⮳{{hi:embassy}}
 
 ```rust,editable
 {{#include ../../../crates/cats/embedded/tests/embassy.rs:example}}

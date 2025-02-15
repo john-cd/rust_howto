@@ -34,7 +34,7 @@ Possible applications of actor frameworks:
 
 [![stakker-website][c-stakker-website-badge]][c-stakker-website] [![stakker][c-stakker-badge]][c-stakker] [![stakker-crates.io][c-stakker-crates.io-badge]][c-stakker-crates.io] [![stakker-github][c-stakker-github-badge]][c-stakker-github] [![stakker-lib.rs][c-stakker-lib.rs-badge]][c-stakker-lib.rs]{{hi:stakker}}{{hi:Runtime}}{{hi:Erlang}}{{hi:Async}}{{hi:Actor}}{{hi:Pony}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`stakker` is a lightweight low-level single-threaded actor runtime.
+[`stakker`][c-stakker]⮳{{hi:stakker}} is a lightweight low-level single-threaded actor runtime.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/stakker.rs:example}}
@@ -44,7 +44,7 @@ Possible applications of actor frameworks:
 
 [![riker-website][c-riker-website-badge]][c-riker-website] [![riker][c-riker-badge]][c-riker] [![riker-crates.io][c-riker-crates.io-badge]][c-riker-crates.io] [![riker-github][c-riker-github-badge]][c-riker-github] [![riker-lib.rs][c-riker-lib.rs-badge]][c-riker-lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
 
-`riker` is an actor framework for Rust to build fast, highly concurrent, and resilient applications.
+[`riker`][c-riker]⮳{{hi:riker}} is an actor framework for Rust to build fast, highly concurrent, and resilient applications.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/actors.rs:example}}
@@ -57,7 +57,7 @@ Possible applications of actor frameworks:
 [![ractor-github][c-ractor-github-badge]][c-ractor-github]
 [![ractor-lib.rs][c-ractor-lib.rs-badge]][c-ractor-lib.rs]
 
-`ractor` is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
+[`ractor`][c-ractor]⮳{{hi:ractor}} is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/ractor.rs:example}}
@@ -70,7 +70,7 @@ Possible applications of actor frameworks:
 [![actix-github][c-actix-github-badge]][c-actix-github]
 [![actix-lib.rs][c-actix-lib.rs-badge]][c-actix-lib.rs]
 
-`actix`
+[`actix`][c-actix]⮳{{hi:actix}}
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/actix.rs:example}}

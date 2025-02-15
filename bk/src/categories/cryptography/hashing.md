@@ -22,7 +22,7 @@ For more algorithms, see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, m
 
 [![blake3][c-blake3-badge]][c-blake3] [![blake3-crates.io][c-blake3-crates.io-badge]][c-blake3-crates.io] [![blake3-github][c-blake3-github-badge]][c-blake3-github] [![blake3-lib.rs][c-blake3-lib.rs-badge]][c-blake3-lib.rs]{{hi:blake3}}
 
-`blake3` implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3.
+[`blake3`][c-blake3]⮳{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/hashing/blake3.rs:example}}

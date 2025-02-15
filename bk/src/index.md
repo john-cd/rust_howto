@@ -17,7 +17,7 @@ Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}
 
 ## Why this book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs-website]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the `crates.io` ecosystem and the `Cargo` package manager. But with _more than 160 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs-website]⮳, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support ... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ ecosystem and the `Cargo` package manager. But with _more than 160 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust." There are no dominant frameworks or platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time.
 
 This book therefore intends to provide EXAMPLES to demonstrate the uses of KEY CRATES, that is libraries necessary for day-to-day Rust coding - examples which are absent from or scattered in the [reference documentation][docs-rs]⮳. It hopes to become a "cheat sheet on steroid" for the Rust ecosystem (_not just_ for the Rust language).
 
@@ -31,7 +31,7 @@ The left sidebar is organized by topic.
 
 - The book first quickly summarizes the basics of the [language][p-lang] and often-used elements of the [standard library][p-standard-library].
 - The crates section provides pointers on how to locate key crates and provides alphabetical and categorical indices of crates used in the book.
-- The bulk of the book is divided in sections named after the `crates.io` [categories][crates.io-category_slugs]⮳ whenever possible.
+- The bulk of the book is divided in sections named after the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ [categories][crates.io-category_slugs]⮳ whenever possible.
 - Each section contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c-rand-badge]][c-rand], and which categories on [`crates.io`][crates.io-website]{{hi:crates.io}} those crates belong to, like [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}.
 - The book focuses on cross-cutting concerns that affect most aspects of development e.g. [error handling][p-errors], [error customization][p-error-customization], [configuration][p-config], [debugging][p-debugging]...
 - [Concurrency][p-concurrency], including [asynchronous programming][p-asynchronous], is covered in details. So are [development tools][p-development-tools].
@@ -48,7 +48,7 @@ If you are simply looking for the solution to a simple task, the easiest ways to
 - use the search button,
 - scan the left-side bar for categories you are interested in,
 - scan the [Index of examples][p-index-examples], and from there, click on the name of the recipe to view it.
-- look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. `parking_lot::ReentrantMutex`).
+- look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳{{hi:parking_lot::ReentrantMutex}}).
 - consult the alphabetical and categorical crates indices.
 
 ## How to use the recipes
@@ -86,9 +86,9 @@ The crate badges that accompany the examples link to the crates' full documentat
 
 ## A note about error handling
 
-Error handling in Rust is robust when done correctly, but can require a fair bit of boilerplate. Because of this, one often sees Rust examples filled with `unwrap` calls, instead of proper error handling.
+Error handling in Rust is robust when done correctly, but can require a fair bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c-std::result::Result::unwrap]⮳{{hi:unwrap}}  calls, instead of proper error handling.
 
-Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are `Result` types involved. The structure generally looks like:
+Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c-std::result::Result]⮳{{hi:Result}} types involved. The structure generally looks like:
 
 ```rust,editable
 {{#include ../crates/about/tests/about1.rs:example}}
@@ -98,11 +98,11 @@ Since this book's recipes are intended to be reused as-is and encourage best pra
 {{#include ../crates/about/tests/about2.rs:example}}
 ```
 
-In most examples, we have chosen to use `anyhow`'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom `Result` / `Error` types.
+In most examples, we have chosen to use [`anyhow`][c-anyhow]⮳{{hi:anyhow}}'s [`Result`][c-anyhow::Result] as the return type of any fallible function, instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c-std::result::Result]⮳{{hi:Result}} / [`Error`][c-std::error::Error]⮳{{hi:Error}} types.
 
-Within the code, we use the `?` operator to easily propagate any error that implements the `std::error::Error` trait.
+Within the code, we use the `?` operator to easily propagate any error that implements the [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}} trait.
 
-For more background on error handling in Rust, read [this page][book-rust-error-handling]⮳ of the Rust book.
+For more background on error handling in Rust, read [this page][book-rust-error-handling]⮳ of the 'Rust book'.
 
 ## Additional examples
 

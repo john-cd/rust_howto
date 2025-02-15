@@ -38,13 +38,13 @@ You can embed the Wasmer runtime in your code with the Wasmer SDK:
 
 Wasmtime is a lightweight WebAssembly runtime that is fast, secure, and standards-compliant. Wasmtime runs WebAssembly code outside of the Web, and can be used both as a command-line utility or as a library embedded in a larger application.
 
-Install the `wasmtime` CLI with:
+Install the [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} CLI with:
 
 ```sh
 curl https://wasmtime.dev/install.sh -sSf | bash
 ```
 
-Compile your Rust source code (here, `hello.rs`) to WASM, then execute it with `wasmtime`:
+Compile your Rust source code (here, `hello.rs`) to WASM, then execute it with [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}:
 
 ```sh
 rustup target add wasm32-wasip1

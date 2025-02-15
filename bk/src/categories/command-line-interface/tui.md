@@ -15,7 +15,7 @@
 {{#include ../../../crates/cats/command_line_interface/examples/ratatui.rs:example}}
 ```
 
-`ratatui` offers templates to get started. For example, to use the simple template, run the following commands:
+[`ratatui`][c-ratatui]⮳{{hi:ratatui}} offers templates to get started. For example, to use the simple template, run the following commands:
 
 ```bash
 cargo install cargo-generate

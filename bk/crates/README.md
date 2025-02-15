@@ -19,7 +19,7 @@ crates
 - `about` contains the code examples in the book's introduction.
 - `categories` contain multiple crates that contain the code examples for all (crates.io) categories.
 - `language` contains the code examples for the Rust language per se.
-- `other` contains the code examples for the Rust ecosystem that can't be mapped to a `crates.io` category.
+- `other` contains the code examples for the Rust ecosystem that can't be mapped to a [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ category.
 - `standard_library` contains the code examples for the Rust standard library.
 
 ## In each crate

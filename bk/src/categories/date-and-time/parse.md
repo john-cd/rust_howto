@@ -40,7 +40,7 @@ Formats the current time in the well-known [RFC 2822 format][rfc-2822]{{hi:RFC-2
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-`chrono` parses a [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ struct from strings representing the well-known
+[`chrono`][c-chrono]⮳{{hi:chrono}} parses a [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ struct from strings representing the well-known
 [RFC 2822 format][rfc-2822]⮳ and [RFC 3339 format][rfc-3339]{{hi:RFC-3339 format}}⮳, and a custom format, using
 [`chrono::DateTime::parse_from_rfc2822`][c-chrono::DateTime::parse_from_rfc2822]{{hi:chrono::DateTime::parse_from_rfc2822}}⮳ [`chrono::DateTime::parse_from_rfc2822`][c-chrono::DateTime::parse_from_rfc2822]{{hi:chrono::DateTime::parse_from_rfc2822}}⮳ and
 [`chrono::DateTime::parse_from_str`][c-chrono::DateTime::parse_from_str]{{hi:chrono::DateTime::parse_from_str}}⮳ respectively.

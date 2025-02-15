@@ -16,7 +16,7 @@
 
 [![rocksdb][c-rocksdb-badge]][c-rocksdb] [![rocksdb-crates.io][c-rocksdb-crates.io-badge]][c-rocksdb-crates.io] [![rocksdb-github][c-rocksdb-github-badge]][c-rocksdb-github] [![rocksdb-lib.rs][c-rocksdb-lib.rs-badge]][c-rocksdb-lib.rs]{{hi:rocksdb}}{{hi:Database}}{{hi:Embedded}}{{hi:Lsm-tree}}{{hi:Persistence}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-`rocksdb` is a Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high performance database for key-value data.
+[`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}} is a Rust wrapper for Facebook's RocksDB embeddable database. RocksDB is a high performance database for key-value data.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/rocksdb/rocksdb.rs:example}}

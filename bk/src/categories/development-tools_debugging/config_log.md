@@ -18,7 +18,7 @@ The [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}} environment variable cont
 RUST_LOG="warn,test::foo=info,test::foo::bar=debug" test
 ```
 
-Sets the default [`log::Level`][c-log::Level]{{hi:log::Level}}⮳ to `warn`, module `foo` and module `foo::bar` to `info` and `debug`.
+Sets the default [`log::Level`][c-log::Level]{{hi:log::Level}}⮳ to `warn`, module `foo` and module `foo::bar` to `info` and [`debug`][c-log::debug]⮳{{hi:debug}}.
 
 ```bash
 WARN:test: [root] warn

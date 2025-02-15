@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 
-# Suggests crate links or cross-links between pages
+# Insert crate links or cross-links between pages
 #
 # Beware: modifies a lot of files.
 # Usage <script>.sh <root folder of book>
@@ -33,7 +33,7 @@ do
         links=$( sed -E -e 's#(\\|~|&)#\\\1#g' <<< "$links" ) # Escape \ ~ & and newlines
         echo "Links: ${links}"
         # Replace `<word>` by the links, but only if the line does not start with # (heading)
-        sed -E -n 's~^([^#].*[^\[`])`'"${in_backticks}"'`~\1'"${links}"'~gp' "${file}" # -i
+        sed -E -i 's~^([^#].*[^\[`])?`'"${in_backticks}"'`~\1'"${links}"'~g' "${file}" # -n   p
       else
         echo "[${in_backticks}]: " | sed -E -e 's/<T>//g' >> suggest.md
       fi

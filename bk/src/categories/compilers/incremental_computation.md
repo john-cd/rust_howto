@@ -8,13 +8,13 @@
 
 [Salsa][c-salsa-website]{{hi:salsa}}⮳ [(GitHub)][c-salsa-github]⮳ is a framework for on-demand, incremental computation.
 
-`salsa` is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
+[`salsa`][c-salsa]⮳{{hi:salsa}} is a Rust framework for writing incremental, on-demand programs -- these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 
 ## `comemo` {#comemo}
 
 [![comemo][c-comemo-badge]][c-comemo] [![comemo-crates.io][c-comemo-crates.io-badge]][c-comemo-crates.io] [![comemo-github][c-comemo-github-badge]][c-comemo-github] [![comemo-lib.rs][c-comemo-lib.rs-badge]][c-comemo-lib.rs]{{hi:comemo}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 
-`comemo` offers incremental computation through constrained memoization.
+[`comemo`][c-comemo]⮳{{hi:comemo}} offers incremental computation through constrained memoization.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

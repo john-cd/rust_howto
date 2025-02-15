@@ -34,16 +34,16 @@ Rust implementations of ways of organizing data suited for specific purposes.
 `BTreeMap`
 `BTreeSet`
 
-Alongside `arrayvec` and `tinyvec`, `heapless` has stack-allocated arrays, but also includes:
+Alongside [`arrayvec`][c-arrayvec]⮳{{hi:arrayvec}} and [`tinyvec`][c-tinyvec]⮳{{hi:tinyvec}}, `heapless` has stack-allocated arrays, but also includes:
 
-Arc – like `std::sync::Arc` but backed by a lock-free memory pool rather than `#[global_allocator]`
-Box – like `std::boxed::Box` but backed by a lock-free memory pool rather than `#[global_allocator]`
+Arc – like [`std::sync::Arc`][c-std::sync::Arc]⮳{{hi:std::sync::Arc}} but backed by a lock-free memory pool rather than `#[global_allocator]`
+Box – like [`std::boxed::Box`][c-std::boxed::Box]⮳{{hi:std::boxed::Box}} but backed by a lock-free memory pool rather than `#[global_allocator]`
 `BinaryHeap` – priority queue
-`IndexMap` – hash table
+[`IndexMap`][c-indexmap]⮳{{hi:IndexMap}} – hash table
 `IndexSet` – hash set
 `LinearMap`
-`Object` – objects managed by an object pool
-`String`
+`Object`{{hi:Object}}  – objects managed by an object pool
+[`String`][c-std::string::String]⮳{{hi:String}}
 `Vec`
 mpmc::Q* – multiple producer multiple consumer lock-free queue
 `spsc::Queue` – single producer single consumer lock-free queue

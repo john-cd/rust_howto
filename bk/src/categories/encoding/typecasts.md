@@ -12,7 +12,7 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-`bytemuck`
+[`bytemuck`][c-bytemuck]⮳{{hi:bytemuck}}
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/typecasts/bytemuck.rs:example}}
@@ -31,7 +31,7 @@
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-`zerocopy` makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
+[`zerocopy`][c-zerocopy]⮳{{hi:zerocopy}} makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
 
 - No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
 - Performance: Eliminating data copying can significantly improve performance, especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).

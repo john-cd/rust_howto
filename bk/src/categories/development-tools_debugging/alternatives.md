@@ -4,7 +4,7 @@
 
 ## Use older alternatives to `tracing` {#skip1}
 
-`tracing` is now the "go-to" crate for logging, but `log`, `slog` and `log4rs` are still in extensive use.
+[`tracing`][c-tracing]⮳{{hi:tracing}} is now the "go-to" crate for logging, but `log`, `slog` and [`log4rs`][c-log4rs]⮳{{hi:log4rs}} are still in extensive use.
 
 ### `log` {#log}
 
@@ -18,7 +18,7 @@
 
 `slog` provides structured, extensible, composable logging.
 
-Consider using `tracing` instead, especially if you need `async` support. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
+Consider using [`tracing`][c-tracing]⮳{{hi:tracing}} instead, especially if you need `async` support. `slog` remains a stable, featureful and battle-tested library, used in many important projects.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/other/slog.rs:example}}
@@ -28,7 +28,7 @@ Consider using `tracing` instead, especially if you need `async` support. `slog`
 
 [![log4rs][c-log4rs-badge]][c-log4rs] [![log4rs-crates.io][c-log4rs-crates.io-badge]][c-log4rs-crates.io] [![log4rs-github][c-log4rs-github-badge]][c-log4rs-github] [![log4rs-lib.rs][c-log4rs-lib.rs-badge]][c-log4rs-lib.rs]{{hi:log4rs}}{{hi:Log4}}{{hi:Logger}}{{hi:Log}}{{hi:Logging}}
 
-`log4rs` is a highly configurable multi-output logging implementation for the `log` facade.
+[`log4rs`][c-log4rs::append::file::FileAppender]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::config::Config]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::encode::pattern]⮳{{hi:log4rs}} [`log4rs`][c-log4rs]⮳{{hi:log4rs}}  is a highly configurable multi-output logging implementation for the `log` facade.
 
 ```rust,editable
 use log::{error, info, warn};
@@ -47,7 +47,7 @@ fn main() {
 
 [![env_logger][c-env_logger-badge]][c-env_logger] [![env_logger-crates.io][c-env_logger-crates.io-badge]][c-env_logger-crates.io] [![env_logger-github][c-env_logger-github-badge]][c-env_logger-github] [![env_logger-lib.rs][c-env_logger-lib.rs-badge]][c-env_logger-lib.rs]{{hi:env_logger}}{{hi:Log}}{{hi:Logger}}{{hi:Logging}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-`env_logger` is a logging implementation for log which is configured via an environment variable. `env_logger` makes sense when used in executables (binary projects). Libraries should use the log crate instead.
+[`env_logger`][c-env_logger]⮳{{hi:env_logger}} is a logging implementation for log which is configured via an environment variable. [`env_logger`][c-env_logger]⮳{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the `log` crate instead.
 
 ```rust,editable
 use log::info;

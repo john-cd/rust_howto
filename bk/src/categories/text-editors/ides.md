@@ -4,7 +4,7 @@
 
 |||
 |---|---|
-| [VS Code][rust-in-vs-code]{{hi:VS code}}⮳ | Install the `rust-analyzer` extension. Also consider the `CodeLLDB`, `Dependi` and `Even Better TOML` |
+| [VS Code][rust-in-vs-code]{{hi:VS code}}⮳ | Install the [`rust-analyzer`][rust-analyzer]⮳{{hi:rust-analyzer}} extension. Also consider the `CodeLLDB`, `Dependi` and `Even Better TOML` |
 | [`RustRover`][rustrover-website]⮳ | It is available for free for non-commercial use. |
 | `IntelliJ` / `CLion` JetBrains IDE + Rust plugin | If you have a JetBrains license, `CLion` is your go-to editor for Rust in JetBrains' IDE suite |
 | [Zed][c-zed-website]⮳ | `zed` is available for macOS, Linux, and soon for Windows. Written in Rust. |

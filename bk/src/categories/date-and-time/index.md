@@ -6,10 +6,10 @@ Manage the complexity of dealing with the fourth dimension.
 
 There are two key libraries:
 
-- `chrono`: a comprehensive, full-featured, yet complex date and time library,
+- [`chrono`][c-chrono]⮳{{hi:chrono}}: a comprehensive, full-featured, yet complex date and time library,
 - `time`: a smaller, simpler library with limited functionality.
 
-There is no clear answer as to which is best between `time` and `chrono`. Evaluate for yourself between these two, but both are trusted and well-maintained.
+There is no clear answer as to which is best between `time` and [`chrono`][c-chrono]⮳{{hi:chrono}}. Evaluate for yourself between these two, but both are trusted and well-maintained.
 
 ## Duration and calculation
 

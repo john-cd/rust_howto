@@ -11,7 +11,7 @@
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-`async-graphql` is a high-performance graphql server library that's fully specification compliant. It integrates with `actix-web`, `axum`, `poem`, `rocket`, `tide`, and `warp`.
+`async-graphql` is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, `axum`, `poem`, [`rocket`][c-rocket]⮳{{hi:rocket}}, `tide`, and `warp`.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/tests/async_graphql.rs:example}}

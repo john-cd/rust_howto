@@ -14,7 +14,7 @@
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build Utils}}
 
-`cargo make` is a Rust task runner and build tool. The `cargo-make` task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
+`cargo make` is a Rust task runner and build tool. The [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
 With a simple toml based configuration file, you can define a multi platform build script that can run build, test, generate documentation, run bench tests, run security validations and more, executed by running a single command.
 
 Install with
@@ -35,9 +35,9 @@ cargo make --version
 
 [cargo-xtask][c-cargo_xtask-github]{{hi:cargo-xtask}}⮳ adds free-form automation to a Rust project, a-la `make`, `npm run` or bespoke bash scripts.
 
-The two distinguishing features of `xtask` are the following:
+The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are the following:
 
-- It doesn't require any other binaries besides `cargo` and `rustc`, it fully bootstraps from them
+- It doesn't require any other binaries besides `cargo` and [`rustc`][rustc]⮳{{hi:rustc}}, it fully bootstraps from them
 - Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
 
 ### Use `devx` {#devx}
@@ -46,7 +46,7 @@ The two distinguishing features of `xtask` are the following:
 
 [`devx`][devx-github]{{hi:devx}}⮳ is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c-cargo_xtask-github]⮳ idioms.
 
-`devx-cmd` provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. `devx-pre-commit` creates git pre-commit hooks that enforce good practices.
+[`devx-cmd`][c-devx_cmd]⮳{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c-devx_pre_commit]⮳{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
 
 ## Make Rust a better `bash` with `xshell` {#xshell}
 

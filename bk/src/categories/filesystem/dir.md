@@ -18,7 +18,7 @@ Gets the current working directory{{hi:Current working directory}} by calling [`
 
 [![same-file][c-same_file-badge]][c-same_file] [![same-file-crates.io][c-same_file-crates.io-badge]][c-same_file-crates.io] [![same-file-github][c-same_file-github-badge]][c-same_file-github] [![same-file-lib.rs][c-same_file-lib.rs-badge]][c-same_file-lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
 
-`same-file` is a simple crate for determining whether two file paths point to the same file.
+[`same-file`][c-same_file]⮳{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
 Use [`same_file::is_same_file`][c-same_file::is_same_file]{{hi:same_file::is_same_file}}⮳ to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
@@ -59,7 +59,7 @@ Find files modified within the last day in the current directory. Using [`walkdi
 
 Uses [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c-std::iter::Iterator::filter]{{hi:std::iter::Iterator::filter}}⮳ applies to each [`walkdir::IntoIter::filter_entry`][c-walkdir::IntoIter::filter_entry]{{hi:walkdir::IntoIter::filter_entry}}⮳ even if the parent is a hidden directory.
 
-Root dir `"."` yields through `walkdir::WalkDir::depth` usage in `is_not_hidden` predicate.
+Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::depth]⮳{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/skip_dot.rs:example}}
@@ -109,7 +109,7 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}�
 
 [![globset][c-globset-badge]][c-globset] [![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io] [![globset-github][c-globset-github-badge]][c-globset-github] [![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
-`globset` allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more glob patterns against a single candidate path simultaneously, and returning all of the globs that matched.
+[`globset`][c-globset]⮳{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more glob patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/globset.rs:example}}

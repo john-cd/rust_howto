@@ -12,7 +12,7 @@
 
 [OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳
 
-`opencv`
+[`opencv`][c-opencv]⮳{{hi:opencv}}
 
 ```rust,editable
 {{#include ../../../crates/cats/computer_vision/tests/opencv.rs:example}}

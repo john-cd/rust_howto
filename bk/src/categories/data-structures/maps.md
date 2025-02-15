@@ -11,7 +11,7 @@
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`indexmap` offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
+[`indexmap`][c-indexmap]⮳{{hi:indexmap}} offers a hash map that separately keeps track of insertion order and allows you to efficiently iterate over its elements in that order.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/tests/maps/indexmap.rs:example}}
@@ -24,7 +24,7 @@
 [![multimap-github][c-multimap-github-badge]][c-multimap-github]
 [![multimap-lib.rs][c-multimap-lib.rs-badge]][c-multimap-lib.rs]
 
-`multimap` is implemented as a thin wrapper around `std::collections::HashMap`. It allows multiple values for a given key.
+[`multimap`][c-multimap]⮳{{hi:multimap}} is implemented as a thin wrapper around [`std::collections::HashMap`][c-std::collections::HashMap]⮳{{hi:std::collections::HashMap}}. It allows multiple values for a given key.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/maps/multimap.rs:example}}
@@ -39,7 +39,7 @@
 
 Use `slotmap` to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
 
-`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap`, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and `SparseSecondaryMap` are also provided that map further objects to the keys created by one of the slot maps.
+`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap`, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and [`SparseSecondaryMap`][SparseSecondaryMap]⮳{{hi:SparseSecondaryMap}} are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/maps/slotmap.rs:example}}

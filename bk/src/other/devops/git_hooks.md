@@ -14,7 +14,7 @@ Git hook scripts are useful for automatically identifying simple issues, such as
 
 [cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for cargo projects with 🐶
 
-Add the `cargo-husky` crate to the `[dev-dependencies]` section of your project's `Cargo.toml`.
+Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]
@@ -33,7 +33,7 @@ cargo test
 
 [`pre-commit` hooks][pre-commit.com-hooks-website]
 
-`pre-commit` is written in Python. Include the following into your `Dockerfile` or run the commands by hand to install `pre-commit`:
+`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]⮳{{hi:Dockerfile}} or run the commands by hand to install [`pre-commit`][c-devx_pre_commit]⮳{{hi:pre-commit}}:
 
 ```sh
 # Install python3, pipx, pre-commit (Ubuntu & friends)

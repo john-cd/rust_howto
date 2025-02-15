@@ -16,7 +16,7 @@
 
 [![relm4-website][c-relm4-website-badge]][c-relm4-website] [![relm4][c-relm4-badge]][c-relm4] [![relm4-crates.io][c-relm4-crates.io-badge]][c-relm4-crates.io] [![relm4-github][c-relm4-github-badge]][c-relm4-github] [![relm4-lib.rs][c-relm4-lib.rs-badge]][c-relm4-lib.rs]{{hi:relm4}}{{hi:Elm}}{{hi:Gtk}}{{hi:Gtk4}}{{hi:Gui}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-`relm4` is a higher-level library that sits on top of `gtk4-rs`. An idiomatic GUI library inspired by `Elm`.
+[`relm4`][c-relm4]⮳{{hi:relm4}} is a higher-level library that sits on top of `gtk4-rs`. An idiomatic GUI library inspired by `Elm`.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/gtk/relm4.rs:example}}

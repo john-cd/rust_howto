@@ -4,7 +4,7 @@
 
 ## `deps.rs` {#deps-rs}
 
-[`deps.rs`][deps-rs-website]⮳ [(github)][deps-rs-github]⮳ uses semantic versioning to detect outdated or insecure dependencies in your project's`Cargo.toml`.
+[`deps.rs`][deps-rs-website]⮳ [(github)][deps-rs-github]⮳ uses semantic versioning to detect outdated or insecure dependencies in your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
 ## Rust Digger {#rust-digger}
 

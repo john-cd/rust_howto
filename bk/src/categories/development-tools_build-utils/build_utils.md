@@ -2,7 +2,7 @@
 
 {{#include build_utils.incl.md}}
 
-This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See `crates.io`'s [documentation on the matter][book-cargo-build-script]⮳ for more information.
+This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See [`crates.io`][crates.io-website]{{hi:crates.io}}'s [documentation on the matter][book-cargo-build-script]⮳ for more information.
 
 ## Compile and link statically to a bundled C library {#cc}
 
@@ -10,13 +10,13 @@ This section covers "build-time" tooling, or code that is run prior to compiling
 
 To accommodate scenarios where additional C, C++, or assembly is required in a project, the [`cc`][c-cc]{{hi:cc}}⮳ crate offers a simple api for compiling bundled C/C++/asm code into static libraries (`.a`) that can be statically linked to by [`rustc`][rustc].
 
-The following example has some bundled C code (`src/hello.c`) that will be used from rust. Before compiling rust source code, the "build" file (`build.rs`) specified in `Cargo.toml` runs. Using the [cc][c-cc]{{hi:cc}}⮳ crate, a static library file will be produced (in this case, `libhello.a`, see [`cc::Build::compile`][c-cc::Build::compile]{{hi:cc::Build::compile}}⮳) which can then be used from rust by declaring the external function signatures in an [`compile`][c-cc::Build::compile]⮳, which can then be used from rust by declaring the external function signatures in an [extern block][book-rust-reference-extern-blocks]⮳ block.
+The following example has some bundled C code (`src/hello.c`) that will be used from rust. Before compiling rust source code, the "build" file (`build.rs`) specified in [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} runs. Using the [cc][c-cc]{{hi:cc}}⮳ crate, a static library file will be produced (in this case, `libhello.a`, see [`cc::Build::compile`][c-cc::Build::compile]{{hi:cc::Build::compile}}⮳) which can then be used from rust by declaring the external function signatures in an [`compile`][c-cc::Build::compile]⮳, which can then be used from rust by declaring the external function signatures in an [extern block][book-rust-reference-extern-blocks]⮳ block.
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c-cc::Build]{{hi:cc::Build}}⮳. For more complex build requirements, [`cc::Build`][c-cc::Build]{{hi:cc::Build}}⮳ offers a full suite of builder methods for specifying [`cc::Build::include`][c-cc::Build::include]{{hi:cc::Build::include}}⮳ paths and extra compiler [`cc::Build::flag`][c-cc::Build::flag]{{hi:cc::Build::flag}}s⮳.
 
 ### `Cargo.toml` {#skip1}
 
-`Cargo.toml`
+[`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}
 
 ```toml
 [package]

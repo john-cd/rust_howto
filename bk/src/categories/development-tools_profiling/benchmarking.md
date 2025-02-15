@@ -35,7 +35,7 @@
 [![divan-lib.rs][c-divan-lib.rs-badge]][c-divan-lib.rs]
 [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
-`divan` is a simple yet powerful benchmarking library with allocation profiling.
+[`divan`][c-divan]⮳{{hi:divan}} is a simple yet powerful benchmarking library with allocation profiling.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/benches/divan.rs:example}}
@@ -49,7 +49,7 @@
 [![hyperfine-lib.rs][c-hyperfine-lib.rs-badge]][c-hyperfine-lib.rs]
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-`hyperfine` is a tool for benchmarking compiled binaries (similar to unix time command but better).
+[`hyperfine`][c-hyperfine]⮳{{hi:hyperfine}} is a tool for benchmarking compiled binaries (similar to unix time command but better).
 
 - Statistical analysis across multiple runs.
 - Support for arbitrary shell commands.

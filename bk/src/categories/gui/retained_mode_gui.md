@@ -16,9 +16,9 @@
 
 [![floem][c-floem-badge]][c-floem] [![floem-crates.io][c-floem-crates.io-badge]][c-floem-crates.io] [![floem-github][c-floem-github-badge]][c-floem-github] [![floem-lib.rs][c-floem-lib.rs-badge]][c-floem-lib.rs]{{hi:floem}}
 
-`floem` is a native Rust UI library with fine-grained reactivity, and inspired by [`xilem`][c-xilem-github]{{hi:xilem}}⮳, [`leptos`][c-leptos-github]{{hi:leptos}}⮳ and [`rui`][c-rui-github]{{hi:rui}}⮳. `floem` aims to be a high performance declarative UI library requiring minimal user effort.
+[`floem`][c-floem]⮳{{hi:floem}} is a native Rust UI library with fine-grained reactivity, and inspired by [`xilem`][c-xilem-github]{{hi:xilem}}⮳, [`leptos`][c-leptos-github]{{hi:leptos}}⮳ and [`rui`][c-rui-github]{{hi:rui}}⮳. [`floem`][c-floem]⮳{{hi:floem}} aims to be a high performance declarative UI library requiring minimal user effort.
 
-`floem` is currently more complete than any of them for native UI. Used by the `lapce` text editor.
+[`floem`][c-floem]⮳{{hi:floem}} is currently more complete than any of them for native UI. Used by the `lapce` text editor.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/floem.rs:example}}
@@ -38,7 +38,7 @@
 
 [![vizia][c-vizia-badge]][c-vizia] [![vizia-crates.io][c-vizia-crates.io-badge]][c-vizia-crates.io] [![vizia-github][c-vizia-github-badge]][c-vizia-github] [![vizia-lib.rs][c-vizia-lib.rs-badge]][c-vizia-lib.rs]{{hi:vizia}}
 
-`vizia` is a declarative desktop GUI framework
+[`vizia`][c-vizia]⮳{{hi:vizia}} is a declarative desktop GUI framework
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/vizia.rs:example}}

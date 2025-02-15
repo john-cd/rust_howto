@@ -43,7 +43,7 @@ cargo watch -x check -x test -x run
 - after encountering first error the rest of build time is limited by default
 - files can be automatically opened in your text editor on affected lines
 
-This tool is especially useful in combination with `cargo-watch`.
+This tool is especially useful in combination with [`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

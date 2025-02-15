@@ -65,7 +65,7 @@ cargo fix
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, formatting of the code, of JSON, and YAML files...) before committing code, prior to submission to code review.
 
-Add the `cargo-husky` crate to the `[dev-dependencies]` section of your project's `Cargo.toml`.
+Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
 ```toml
 [dev-dependencies]

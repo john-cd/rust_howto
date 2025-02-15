@@ -6,7 +6,7 @@
 
 [![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]{{hi:percent_encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ using the [`percent_encoding::utf8_percent_encode`][c-percent_encoding::utf8_percent_encode]{{hi:percent_encoding::utf8_percent_encode}}⮳ function from the `percent_encoding`{{hi:percent_encoding}} crate. Then decode using the [`percent_encoding::percent_decode`][c-percent_encoding::percent_decode]{{hi:percent_encoding::percent_decode}}⮳ function.
+Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ using the [`percent_encoding`][c-percent_encoding]⮳{{hi:percent_encoding}} crate. Then decode using the [`percent_encoding::percent_decode`][c-percent_encoding::percent_decode]{{hi:percent_encoding::percent_decode}}⮳ function.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/strings/percent_encode.rs:example}}
@@ -44,7 +44,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 [![base64][c-base64-badge]][c-base64]{{hi:base64}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Encodes byte slice into `base64`{{hi:base64}} String using [`base64::encode`][c-base64::encode]{{hi:base64::encode}} and decodes it with [`base64::decode`][c-base64::decode]{{hi:base64::decode}}.
+Encodes byte slice into [`base64`][c-base64]⮳{{hi:base64}} {{hi:base64}} String using [`base64::encode`][c-base64::encode]{{hi:base64::encode}} and decodes it with [`base64::decode`][c-base64::decode]{{hi:base64::decode}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/strings/base64.rs:example}}

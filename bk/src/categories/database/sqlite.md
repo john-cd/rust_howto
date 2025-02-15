@@ -2,7 +2,7 @@
 
 {{#include sqlite.incl.md}}
 
-`rusqlite` provides an API to SQLite and gives access to advanced SQlite features.
+[`rusqlite`][c-rusqlite]⮳{{hi:rusqlite}} provides an API to SQLite and gives access to advanced SQlite features.
 
 ## Create a SQLite database {#create-database-sqlite}
 

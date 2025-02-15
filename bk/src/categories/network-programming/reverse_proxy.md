@@ -9,7 +9,7 @@
 [![rathole-github][c-rathole-github-badge]][c-rathole-github]
 [![rathole-lib.rs][c-rathole-lib.rs-badge]][c-rathole-lib.rs]
 
-[Rathole][c-rathole-github]⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. `rathole` is similar to tools like `frp` and `ngrok`.
+[Rathole][c-rathole-github]⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c-rathole]⮳{{hi:rathole}} is similar to tools like `frp` and [`ngrok`][c-ngrok]⮳{{hi:ngrok}}.
 
 NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a server with a public IP.
 
@@ -49,7 +49,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 ./rathole client.toml
 ```
 
-`rathole` can automatically determine to run in the server mode or the client mode, according to the content of the configuration file, if only one of `[server]` and `[client]` block is present.
+[`rathole`][c-rathole]⮳{{hi:rathole}} can automatically determine to run in the server mode or the client mode, according to the content of the configuration file, if only one of `[server]` and `[client]` block is present.
 
 ## `ngrok` {#ngrok}
 
@@ -77,7 +77,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-`pingora` is a library for building fast, reliable and evolvable network services.
+[`pingora`][c-pingora]⮳{{hi:pingora}}  is a library for building fast, reliable and evolvable network services.
 
 - [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳
 - [Pingora quick start][c-pingora-quick-start-github]⮳

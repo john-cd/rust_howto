@@ -6,7 +6,7 @@
 
 [`gping`][c-gping-github]{{hi:gping}}
 
-`gping` is like `ping`, but with a graph.
+[`gping`][c-gping]⮳{{hi:gping}} is like `ping`, but with a graph.
 
 ```sh
 apt install gping

@@ -6,7 +6,7 @@
 - After the book is built using [`mdbook`][c-mdbook]{{hi:mdbook}}⮳, the resulting HTML and Javascript are found in `book/html`.
 - The intermediate (processed) Markdown is in `book/markdown`. The [`mdbook`][c-mdbook]{{hi:mdbook}}⮳ configuration is in `book.toml`; the templates and assets are in `theme` and `static` respectively.
 - The Rust code is organized as a [`cargo`][c-cargo]{{hi:cargo}}⮳ workspace:
-  - Examples that are embedded in the book are found in crates below `crates/ex`, named after sections of the book or grouping multiple (crates.io) categories of examples. Each example is in a single, short `.rs` file. The `Cargo.toml` within these crates list the dependencies used by the embedded examples. Use `cargo add <crate> -F <feature>` while in the appropriate crate folder to add more as required.
+  - Examples that are embedded in the book are found in crates below `crates/ex`, named after sections of the book or grouping multiple (crates.io) categories of examples. Each example is in a single, short `.rs` file. The [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} within these crates list the dependencies used by the embedded examples. Use `cargo add <crate> -F <feature>` while in the appropriate crate folder to add more as required.
   - Additional examples that are too long or complex to be inserted in the book itself can be added under `crates/xmpl`.
   - `crates/tools` contains utilities to build sections of the book, for example some indices.
 - The Dev Container and Docker (Compose) configuration files are found in `.devcontainer`.

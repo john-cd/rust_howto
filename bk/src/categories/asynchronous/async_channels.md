@@ -38,7 +38,7 @@ Another example:
 
 [![async-channel][c-async_channel-badge]][c-async_channel] [![async-channel-crates.io][c-async_channel-crates.io-badge]][c-async_channel-crates.io] [![async-channel-github][c-async_channel-github-badge]][c-async_channel-github] [![async-channel-lib.rs][c-async_channel-lib.rs-badge]][c-async_channel-lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-`async-channel` offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
+[`async-channel`][c-async_channel]⮳{{hi:async-channel}} offers two kinds of async multi-producer multi-consumer channel, where each message can be received by only one of all existing consumers.
 
 - Bounded channel with limited capacity,
 - Unbounded channel with unlimited capacity.
@@ -77,7 +77,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 [![kanal-github][c-kanal-github-badge]][c-kanal-github]
 [![kanal-lib.rs][c-kanal-lib.rs-badge]][c-kanal-lib.rs]
 
-`kanal` offers fast sync and async channels:
+[`kanal`][c-kanal]⮳{{hi:kanal}} offers fast sync and async channels:
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/kanal.rs:example}}

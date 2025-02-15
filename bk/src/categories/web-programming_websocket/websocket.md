@@ -28,7 +28,7 @@
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:WebSocket}}
 
-Use `tokio-tungstenite` if you are using the `tokio` async executor.
+Use [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}} if you are using the `tokio` async executor.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/tests/tokio_tungstenite.rs:example}}

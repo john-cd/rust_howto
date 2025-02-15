@@ -26,10 +26,10 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 
 | Traits | Types |
 |---|---|
-| `Send` and `Sync` | primitives; `(T1, T2)`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`,  `Vec`, `Box`, `Option` (depending on underlying types); `String`, `&str`; `Mutex`, `Atomic*`... |
+| `Send` and `Sync` | primitives; `(T1, T2)`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`,  `Vec`, `Box`, [`Option`][c-std::option::Option]⮳{{hi:Option}} (depending on underlying types); [`String`][c-std::string::ToString]⮳{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
 | `!Send` and `!Sync` | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe |
 | `Send` and `!Sync` | `mpsc::Receiver<T>`; `UnsafeCell`, `Cell`, `RefCell`: when a type has interior mutability, we must be sure that we mutate it from one place only, but this place can be everywhere as long as it is singular |
-| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and `MutexGuard`; `&mut T` if  T is `!Send`; structs which use thread-local storage and accesses that info in `Drop` |
+| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c-std::sync::MutexGuard]⮳{{hi:MutexGuard}}; `&mut T` if  T is `!Send`; structs which use thread-local storage and accesses that info in `Drop` |
 
 ## Implementing `Send` and `Sync` {#implementing-send-sync}
 

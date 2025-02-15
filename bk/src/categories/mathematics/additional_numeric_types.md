@@ -28,7 +28,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 
 [![num-bigint][c-num_bigint-badge]][c-num_bigint] [![num-bigint-crates.io][c-num_bigint-crates.io-badge]][c-num_bigint-crates.io] [![num-bigint-github][c-num_bigint-github-badge]][c-num_bigint-github] [![num-bigint-lib.rs][c-num_bigint-lib.rs-badge]][c-num_bigint-lib.rs]{{hi:num-bigint}}{{hi:Bignum}}{{hi:Mathematics}}{{hi:Numerics}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`num-bigint` is a big integer implementation for Rust. "It's not the fastest, but it's part of the trusted `num` library."
+[`num-bigint`][c-num_bigint]⮳{{hi:num-bigint}} is a big integer implementation for Rust. "It's not the fastest, but it's part of the trusted `num` library."
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/num_bigint.rs:example}}
@@ -38,7 +38,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 
 [![rug][c-rug-badge]][c-rug] [![rug-crates.io][c-rug-crates.io-badge]][c-rug-crates.io] [![rug-github][c-rug-github-badge]][c-rug-github] [![rug-lib.rs][c-rug-lib.rs-badge]][c-rug-lib.rs]{{hi:rug}}{{hi:Bignum}}{{hi:Gmp}}{{hi:Math}}{{hi:Numerics}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}}
 
-`rug` offers arbitrary-precision integers, rational, floating-point and complex numbers based on GMP, MPFR and MPC. LGPL licensed. Wrapper for GMP. Much faster than `num-bigint`.
+`rug` offers arbitrary-precision integers, rational, floating-point and complex numbers based on GMP, MPFR and MPC. LGPL licensed. Wrapper for GMP. Much faster than [`num-bigint`][c-num_bigint]⮳{{hi:num-bigint}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/rug.rs:example}}
@@ -58,7 +58,7 @@ Numeric traits for generic mathematics. Traits like Number, Add, etc that allow 
 
 [![ordered-float][c-ordered_float-badge]][c-ordered_float] [![ordered-float-crates.io][c-ordered_float-crates.io-badge]][c-ordered_float-crates.io] [![ordered-float-github][c-ordered_float-github-badge]][c-ordered_float-github] [![ordered-float-lib.rs][c-ordered_float-lib.rs-badge]][c-ordered_float-lib.rs]{{hi:ordered-float}}{{hi:F32}}{{hi:F64}}{{hi:No_std}}{{hi:Ord}}{{hi:Sort}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-`ordered-float` provides wrappers for total ordering on floats. Float types that don't allow `NaN` and are therefore orderable. You can also use the `total_cmp` method from the standard library like `sort_by(|a, b| a.total_cmp(&b))`.
+[`ordered-float`][c-ordered_float]⮳{{hi:ordered-float}}  provides wrappers for total ordering on floats. Float types that don't allow `NaN` and are therefore orderable. You can also use the `total_cmp` method from the standard library like `sort_by(|a, b| a.total_cmp(&b))`.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/ordered_float.rs:example}}

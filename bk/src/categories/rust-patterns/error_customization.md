@@ -8,7 +8,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 
 [![anyhow][c-anyhow-badge]][c-anyhow] [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![anyhow-github][c-anyhow-github-badge]][c-anyhow-github] [![anyhow-lib.rs][c-anyhow-lib.rs-badge]][c-anyhow-lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`anyhow` provides a flexible concrete Error type built on `std::error::Error`.
+`anyhow` provides a flexible concrete Error type built on [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}.
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
@@ -16,13 +16,13 @@ Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Resu
 {{#include ../../../crates/cats/rust_patterns/tests/error/anyhow.rs:example}}
 ```
 
-Anyhow works with any error type that has an impl of `std::error::Error`{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
+Anyhow works with any error type that has an impl of [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
 
 ## `thisError` {#thiserror}
 
 [![thiserror][c-thiserror-badge]][c-thiserror] [![thiserror-crates.io][c-thiserror-crates.io-badge]][c-thiserror-crates.io] [![thiserror-github][c-thiserror-github-badge]][c-thiserror-github] [![thiserror-lib.rs][c-thiserror-lib.rs-badge]][c-thiserror-lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-[`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library's `std::error::Error` trait.
+[`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library's [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}} trait.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/thiserror.rs:example}}
@@ -57,7 +57,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 
 `color-eyre` is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
 
-It is a fork of `anyhow` that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise `anyhow` is simpler.
+It is a fork of `anyhow` that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c-anyhow]⮳{{hi:anyhow}} is simpler.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/color_eyre.rs:example}}

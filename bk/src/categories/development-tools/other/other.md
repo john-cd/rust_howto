@@ -39,7 +39,7 @@ cargo build --release
 
 [shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-`shuttle`
+[`shuttle`][launchpad-shuttle.rs]⮳{{hi:shuttle}} 
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/tests/other/shuttle.rs:example}}

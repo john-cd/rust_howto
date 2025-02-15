@@ -42,9 +42,9 @@ This works by embedding data about the dependency tree in JSON format into a ded
 [![cargo-license-lib.rs][c-cargo_license-lib.rs-badge]][c-cargo_license-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo-license` is a `cargo` subcommand to see license of dependencies.
+[`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}} is a `cargo` subcommand to see license of dependencies.
 
-You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or `cargo-license`.
+You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}}.
 
 ## `cargo deny` {#cargo-deny}
 
@@ -54,7 +54,7 @@ You can install cargo-license with `cargo install cargo-license` and run it in y
 [![cargo-deny-lib.rs][c-cargo_deny-lib.rs-badge]][c-cargo_deny-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo-deny` is a cargo plugin that lets you lint your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
+[`cargo-deny`][c-cargo_deny]⮳{{hi:cargo-deny}} is a cargo plugin that lets you lint your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
 
 - Checks the license information for each crate.
 - Checks for / bans specific crates in your graph, as well as duplicates.

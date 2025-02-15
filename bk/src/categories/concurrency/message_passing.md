@@ -18,13 +18,13 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 
 [![crossbeam-channel-website][c-crossbeam_channel-website-badge]][c-crossbeam_channel-website] [![crossbeam-channel][c-crossbeam_channel-badge]][c-crossbeam_channel] [![crossbeam-channel-crates.io][c-crossbeam_channel-crates.io-badge]][c-crossbeam_channel-crates.io] [![crossbeam-channel-github][c-crossbeam_channel-github-badge]][c-crossbeam_channel-github] [![crossbeam-channel-lib.rs][c-crossbeam_channel-lib.rs-badge]][c-crossbeam_channel-lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`crossbeam-channel` offers multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
+[`crossbeam-channel`][c-crossbeam_channel]⮳{{hi:crossbeam-channel}} offers multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel.rs:example}}
 ```
 
-Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi:Timeouts}}
+Example using specialized channels for `tickers`{{hi:Tickers}} and [`timeout`][c-reqwest::ClientBuilder::timeout]⮳{{hi:Timeout}}
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel_after_tick.rs:example}}
@@ -37,7 +37,7 @@ Example using specialized channels for `tickers`{{hi:Tickers}} and `timeout`{{hi
 [![flume-github][c-flume-github-badge]][c-flume-github]
 [![flume-lib.rs][c-flume-lib.rs-badge]][c-flume-lib.rs]
 
-The `flume` crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the `std::sync::mpsc` module, but with additional features and improved performance. It is smaller and simpler than `crossbeam-channel` and almost as fast.
+The [`flume`][c-flume]⮳{{hi:flume}} crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the [`std::sync::mpsc`][c-std::sync::mpsc::channel]⮳{{hi:std::sync::mpsc}} module, but with additional features and improved performance. It is smaller and simpler than [`crossbeam-channel`][c-crossbeam_channel]⮳{{hi:crossbeam-channel}} and almost as fast.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/message_passing/flume.rs:example}}

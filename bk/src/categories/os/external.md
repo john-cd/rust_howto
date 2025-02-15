@@ -16,7 +16,7 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:External command}}
 
-Opens the `python` interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. The [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
+Opens the `python`{{hi:python}} interpreter using an external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}}⮳ and passes it a python statement for execution. The [`std::process::Output`][c-std::process::Output]{{hi:std::process::Output}}⮳ of statement is then parsed.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/tests/external/send_input.rs:example}}

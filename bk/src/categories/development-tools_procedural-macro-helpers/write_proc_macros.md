@@ -2,7 +2,7 @@
 
 {{#include write_proc_macros.incl.md}}
 
-Procedural macro crates almost always will link to the compiler-provided `proc_macro` crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
+Procedural macro crates almost always will link to the compiler-provided [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
 
 This crate primarily contains a TokenStream type. Procedural macros operate over token streams instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural macros to target. A token stream is roughly equivalent to Vec<TokenTree> where a TokenTree can roughly be thought of as lexical token. For example foo is an Ident token, . is a Punct token, and 1.2 is a Literal token. The TokenStream type, unlike Vec<TokenTree>, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
 
@@ -46,7 +46,7 @@ The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsi
 
 [`proc_macro2`][c-proc_macro2]{{hi:proc-macro2}}⮳ [![proc_macro2-github][c-proc_macro2-github-badge]][c-proc_macro2-github] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
 
-A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.
+A substitute implementation of the compiler's [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} API to decouple token-based libraries from the procedural macro use case.
 
 A wrapper around the procedural macro API of the compiler's proc_macro crate. This library serves two purposes:
 
@@ -66,7 +66,7 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 [![darling][c-darling-badge]][c-darling] [![darling-crates.io][c-darling-crates.io-badge]][c-darling-crates.io] [![darling-github][c-darling-github-badge]][c-darling-github] [![darling-lib.rs][c-darling-lib.rs-badge]][c-darling-lib.rs]{{hi:darling}}
 
-`darling` provides derive macros to easily parse derive macro inputs.
+[`darling`][c-darling]⮳{{hi:darling}} provides derive macros to easily parse derive macro inputs.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}

@@ -30,11 +30,11 @@ Allow access to data from one thread at a time.
 
 [![parking_lot][c-parking_lot-badge]][c-parking_lot] [![parking_lot-crates.io][c-parking_lot-crates.io-badge]][c-parking_lot-crates.io] [![parking_lot-github][c-parking_lot-github-badge]][c-parking_lot-github] [![parking_lot-lib.rs][c-parking_lot-lib.rs-badge]][c-parking_lot-lib.rs]{{hi:parking_lot}}{{hi:Mutex}}{{hi:Thread}}{{hi:Rwlock}}{{hi:Condvar}}{{hi:Once}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-`parking_lot` is a more compact and efficient implementation of the standard synchronization primitives.
+[`parking_lot`][c-parking_lot]⮳{{hi:parking_lot}} is a more compact and efficient implementation of the standard synchronization primitives.
 
 [`parking_lot`][c-parking_lot]{{hi:parking_lot}}⮳ provides implementations of [`parking_lot::Mutex`][c-parking_lot::Mutex]{{hi:parking_lot::Mutex}}⮳, [`parking_lot::RwLock`][c-parking_lot::RwLock]{{hi:parking_lot::RwLock}}⮳, [`parking_lot::Condvar`][c-parking_lot::Condvar]{{hi:parking_lot::Condvar}}⮳ and [`parking_lot::Once`][c-parking_lot::Once]{{hi:parking_lot::Once}}⮳ that are smaller, faster and more flexible than those in the Rust standard library. It also provides a [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]{{hi:parking_lot::ReentrantMutex}}⮳ type.
 
-`std::sync::Mutex`{{hi:std::sync::Mutex}} works fine, but `parking_lot`{{hi:parking_lot}} is faster.
+[`std::sync::Mutex`][c-std::sync::Mutex]⮳{{hi:std::sync::Mutex}} {{hi:std::sync::Mutex}} works fine, but [`parking_lot`][c-parking_lot]⮳{{hi:parking_lot}} is faster.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_parking_lot.rs:example}}
@@ -66,7 +66,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 [![arc-swap][c-arc_swap-badge]][c-arc_swap] [![arc-swap-crates.io][c-arc_swap-crates.io-badge]][c-arc_swap-crates.io] [![arc-swap-github][c-arc_swap-github-badge]][c-arc_swap-github] [![arc-swap-lib.rs][c-arc_swap-lib.rs-badge]][c-arc_swap-lib.rs]{{hi:arc-swap}}{{hi:Arc}}{{hi:Atomic}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
-The `ArcSwap` type in `arc-swap` is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing) or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
+The `ArcSwap` type in [`arc-swap`][c-arc_swap]⮳{{hi:arc-swap}} is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing) or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

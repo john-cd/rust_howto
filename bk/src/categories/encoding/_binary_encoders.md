@@ -6,7 +6,7 @@
 
 [![bincode][c-bincode-badge]][c-bincode] [![bincode-crates.io][c-bincode-crates.io-badge]][c-bincode-crates.io] [![bincode-github][c-bincode-github-badge]][c-bincode-github] [![bincode-lib.rs][c-bincode-lib.rs-badge]][c-bincode-lib.rs]{{hi:bincode}}{{hi:Deserialize}}{{hi:Serialize}}{{hi:Binary}}{{hi:Encode}}{{hi:Decode}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-`bincode` is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
+[`bincode`][c-bincode]⮳{{hi:bincode}} is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/bincode.rs:example}}
@@ -18,7 +18,7 @@
 
 [![prost][c-prost-badge]][c-prost] [![prost-crates.io][c-prost-crates.io-badge]][c-prost-crates.io] [![prost-github][c-prost-github-badge]][c-prost-github] [![prost-lib.rs][c-prost-lib.rs-badge]][c-prost-lib.rs]{{hi:prost}}{{hi:Protobuf}}{{hi:Serialization}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-`prost` is a Protocol Buffers implementation for the Rust Language.
+[`prost`][c-prost]⮳{{hi:prost}} is a Protocol Buffers implementation for the Rust Language.
 
 In you `main.rs` file:
 
@@ -42,7 +42,7 @@ In `build.rs`:
 
 [![protobuf][c-protobuf-badge]][c-protobuf] [![protobuf-crates.io][c-protobuf-crates.io-badge]][c-protobuf-crates.io] [![protobuf-github][c-protobuf-github-badge]][c-protobuf-github] [![protobuf-lib.rs][c-protobuf-lib.rs-badge]][c-protobuf-lib.rs]{{hi:protobuf}}
 
-`protobuf` is a Rust implementation of Google protocol buffers.
+[`protobuf`][c-protobuf]⮳{{hi:protobuf}} is a Rust implementation of Google protocol buffers.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/protobuf.rs:example}}
@@ -52,7 +52,7 @@ In `build.rs`:
 
 [![rmp-serde][c-rmp_serde-badge]][c-rmp_serde] [![rmp-serde-crates.io][c-rmp_serde-crates.io-badge]][c-rmp_serde-crates.io] [![rmp-serde-github][c-rmp_serde-github-badge]][c-rmp_serde-github] [![rmp-serde-lib.rs][c-rmp_serde-lib.rs-badge]][c-rmp_serde-lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-`rmp-serde` connects the `MessagePack` library with `serde`, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
+[`rmp-serde`][c-rmp_serde]⮳{{hi:rmp-serde}} connects the `MessagePack` library with [`serde`][c-serde]⮳{{hi:serde}}, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/rmp_serde.rs:example}}
@@ -62,7 +62,7 @@ In `build.rs`:
 
 [![ciborium][c-ciborium-badge]][c-ciborium] [![ciborium-crates.io][c-ciborium-crates.io-badge]][c-ciborium-crates.io] [![ciborium-github][c-ciborium-github-badge]][c-ciborium-github] [![ciborium-lib.rs][c-ciborium-lib.rs-badge]][c-ciborium-lib.rs]{{hi:ciborium}}{{hi:CBOR}}{{hi:Serde}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-Concise Binary Object Representation is a binary data serialization format loosely based on JSON. `ciborium` is a `serde` implementation of CBOR using ciborium-basic.
+Concise Binary Object Representation is a binary data serialization format loosely based on JSON. [`ciborium`][c-ciborium]⮳{{hi:ciborium}} is a [`serde`][c-serde]⮳{{hi:serde}} implementation of CBOR using ciborium-basic.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/ciborium.rs:example}}
@@ -72,7 +72,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 
 [![flatbuffers-website][c-flatbuffers-website-badge]][c-flatbuffers-website] [![flatbuffers][c-flatbuffers-badge]][c-flatbuffers] [![flatbuffers-crates.io][c-flatbuffers-crates.io-badge]][c-flatbuffers-crates.io] [![flatbuffers-github][c-flatbuffers-github-badge]][c-flatbuffers-github] [![flatbuffers-lib.rs][c-flatbuffers-lib.rs-badge]][c-flatbuffers-lib.rs]{{hi:flatbuffers}}{{hi:flatbuffers}}{{hi:Serialization}}{{hi:Zero-copy}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 
-`flatbuffers` is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
+[`flatbuffers`][c-flatbuffers]⮳{{hi:flatbuffers}} is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/flatbuffers.rs:example}}
@@ -82,7 +82,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 
 [![capnp][c-capnp-badge]][c-capnp] [![capnp-crates.io][c-capnp-crates.io-badge]][c-capnp-crates.io] [![capnp-github][c-capnp-github-badge]][c-capnp-github] [![capnp-lib.rs][c-capnp-lib.rs-badge]][c-capnp-lib.rs]{{hi:capnp}} [![capnpc][c-capnpc-badge]][c-capnpc] [![capnpc-crates.io][c-capnpc-crates.io-badge]][c-capnpc-crates.io] [![capnpc-github][c-capnpc-github-badge]][c-capnpc-github] [![capnpc-lib.rs][c-capnpc-lib.rs-badge]][c-capnpc-lib.rs]{{hi:capnpc}}{{hi:Encoding}}{{hi:Protocol}}{{hi:Serialization}}
 
-`capnp` is the runtime library for Cap'n Proto data encoding. `capnpc` is used for Cap'n Proto code generation.
+[`capnp`][c-capnp]⮳{{hi:capnp}} is the runtime library for Cap'n Proto data encoding. [`capnpc`][c-capnpc]⮳{{hi:capnpc}} is used for Cap'n Proto code generation.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/capnp.rs:example}}

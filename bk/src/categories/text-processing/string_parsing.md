@@ -18,7 +18,7 @@ Collect individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} stri
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
-Creates a custom struct `RGB` and implements the `FromStr`{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
+Creates a custom struct `RGB` and implements the [`FromStr`][c-std::str::FromStr]⮳{{hi:FromStr}} trait to convert a provided color hex code into its RGB color code.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/tests/string_parsing/from_str.rs:example}}

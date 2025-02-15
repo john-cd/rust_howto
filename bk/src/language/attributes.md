@@ -17,7 +17,7 @@ Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribut
 
 ## Lint attributes {#lint-attributes}
 
-During early development, place the following attributes at the top of `main.rs` or `lib.rs`
+During early development, place the following attributes at the top of `main.rs` or `lib.rs`:
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/attributes_debug.rs:example}}

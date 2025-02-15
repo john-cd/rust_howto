@@ -2,7 +2,7 @@
 
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No alloc}}
 
-Crates that are able to function without the Rust `alloc` crate.
+Crates that are able to function without the Rust [`alloc`][c-alloc]⮳{{hi:alloc}} crate.
 
 {{#include no_alloc.incl.md}}
 

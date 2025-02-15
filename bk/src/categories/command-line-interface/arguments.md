@@ -78,7 +78,7 @@ Fast compile times, fast runtime, pedantic about correctness. API is less ergono
 [![pico-args-github][c-pico_args-github-badge]][c-pico_args-github]
 [![pico-args-lib.rs][c-pico_args-lib.rs-badge]][c-pico_args-lib.rs]
 
-The `pico-args` crate is a small and fast library for parsing command-line arguments in Rust.
+The [`pico-args`][c-pico_args]⮳{{hi:pico-args}}  crate is a small and fast library for parsing command-line arguments in Rust.
 
 - No help generation
 - Only flags, options, free arguments and subcommands are supported
@@ -102,7 +102,7 @@ The `pico-args` crate is a small and fast library for parsing command-line argum
 
 [![structopt][c-structopt-badge]][c-structopt] [![structopt-crates.io][c-structopt-crates.io-badge]][c-structopt-crates.io] [![structopt-github][c-structopt-github-badge]][c-structopt-github] [![structopt-lib.rs][c-structopt-lib.rs-badge]][c-structopt-lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-`structopt` parses command line arguments by defining a struct.
+[`structopt`][c-structopt]⮳{{hi:structopt}} parses command line arguments by defining a struct.
 
 ### Argument parsing {#skip1}
 

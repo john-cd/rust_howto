@@ -16,7 +16,7 @@ This example will sort{{hi:Sorting}} a Vector of integers via [`std::vec::Vec::s
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-A vector{{hi:Vector}} of f32 or f64 can be sorted with `sort_by` and [`std::cmp::PartialOrd::partial_cmp`][c-std::cmp::PartialOrd::partial_cmp]{{hi:std::cmp::PartialOrd::partial_cmp}}⮳.
+A vector{{hi:Vector}} of f32 or f64 can be sorted with [`sort_by`][c-std::vec::Vec::sort_by]⮳{{hi:sort_by}} and [`std::cmp::PartialOrd::partial_cmp`][c-std::cmp::PartialOrd::partial_cmp]{{hi:std::cmp::PartialOrd::partial_cmp}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/tests/sort/sort_float.rs:example}}

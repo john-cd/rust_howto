@@ -11,7 +11,7 @@
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
 
-`inquire` provides several different prompts in order to interactively ask the user for information via the CLI.
+[`inquire`][c-inquire]⮳{{hi:inquire}} provides several different prompts in order to interactively ask the user for information via the CLI.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/user_interaction/inquire.rs:example}}

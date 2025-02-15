@@ -4,10 +4,10 @@
 
 Two key libraries:
 
-- `once_cell`: newer crate with more ergonomic API. Should be preferred for all new projects.
-- `lazy_static`: older crate. API is less convenient, but crate is stable and maintained.
+- [`once_cell`][c-once_cell]⮳{{hi:once_cell}}: newer crate with more ergonomic API. Should be preferred for all new projects.
+- [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}}: older crate. Its API is less convenient, but crate is stable and maintained.
 
-The core functionality of `once_cell` is now included in the standard library with the remaining parts on track to be stabilized in future.
+The core functionality of [`once_cell`][c-once_cell]⮳{{hi:once_cell}} is now included in the standard library with the remaining parts on track to be stabilized in future.
 
 ## `std` {#std}
 
@@ -31,7 +31,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-[`once_cell`][c-once_cell]{{hi:once_cell}}⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. `once_cell` also has a [`once_cell::sync::Lazy`][c-once_cell::sync::Lazy]{{hi:once_cell::sync::Lazy}}⮳ type, build on top of [`OnceCell`][c-once_cell::sync::OnceCell]⮳:
+[`once_cell`][c-once_cell]{{hi:once_cell}}⮳ provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c-once_cell]⮳{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c-once_cell::sync::Lazy]{{hi:once_cell::sync::Lazy}}⮳ type, build on top of [`OnceCell`][c-once_cell::sync::OnceCell]⮳:
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/tests/once_cell/once_cell2.rs:example}}
@@ -47,7 +47,7 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`lazy_static`
+[`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} 
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_static.rs:example}}

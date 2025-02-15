@@ -12,7 +12,7 @@ The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attribu
 {{#include ../../crates/standard_library/tests/other/derive.rs:example}}
 ```
 
-You can use the `cargo_expand`{{hi:cargo-expand}} utility to see the exact code that is generated for your specific type.
+You can use the [`cargo_expand`][c-cargo_expand]⮳{{hi:cargo_expand}} utility to see the exact code that is generated for your specific type.
 
 See also:
 

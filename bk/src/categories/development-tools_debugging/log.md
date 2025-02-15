@@ -12,7 +12,7 @@ The [`log`][c-log]{{hi:log}}⮳ crate provides logging utilities{{hi:Logging uti
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_debug.rs:example}}
 ```
 
-No output prints when running this code. By default, the log level{{hi:Log levels}} is `error`, and any lower levels are dropped.
+No output prints when running this code. By default, the log level{{hi:Log levels}} is [`error`][c-std::error::Error]⮳{{hi:error}}, and any lower levels are dropped.
 
 Set the [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environment variable to print the message:
 
@@ -42,7 +42,7 @@ Proper error handling{{hi:Error handling}} considers exceptions exceptional. Her
 
 `log`
 
-`env_logger`
+[`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 
 Creates a custom logger configuration{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
 

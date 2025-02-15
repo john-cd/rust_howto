@@ -6,7 +6,7 @@
 
 [![bitflags][c-bitflags-badge]][c-bitflags] [![bitflags-crates.io][c-bitflags-crates.io-badge]][c-bitflags-crates.io] [![bitflags-github][c-bitflags-github-badge]][c-bitflags-github] [![bitflags-lib.rs][c-bitflags-lib.rs-badge]][c-bitflags-lib.rs]{{hi:bitflags}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`bitflags` offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear` operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
+[`bitflags`][c-bitflags]⮳{{hi:bitflags}} offers a macro to generate structures which behave like bitflags. It creates type-safe bitfield{{hi:bitfield}} type `MyFlags` with help of [`bitflags::bitflags`][c-bitflags::bitflags]{{hi:bitflags::bitflags}}⮳ macro and implements elementary `clear`{{hi:clear}} operation as well as [`std::fmt::Display`][c-std::fmt::Display]{{hi:std::fmt::Display}}⮳ trait for it. Subsequently, shows basic bitwise operations{{hi:Bitwise operations}} and formatting.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/tests/bits/bitfield.rs:example}}
@@ -19,7 +19,7 @@
 [![flagset-github][c-flagset-github-badge]][c-flagset-github]
 [![flagset-lib.rs][c-flagset-lib.rs-badge]][c-flagset-lib.rs]
 
-`flagset` is a ergonomic approach to handling flags that combines the best of existing crates like `bitflags` and `enumflags` without their downsides.
+[`flagset`][c-flagset]⮳{{hi:flagset}} is a ergonomic approach to handling flags that combines the best of existing crates like [`bitflags`][c-bitflags]⮳{{hi:bitflags}}  and `enumflags` without their downsides.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/bits/flagset.rs:example}}

@@ -13,7 +13,7 @@
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 [![cat-os::unix-apis][cat-os::unix-apis-badge]][cat-os::unix-apis]{{hi:Unix APIs}}
 
-`rustix` offers efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, bitflags instead of bare integer flags, and several other conveniences.
+[`rustix`][c-rustix]⮳{{hi:rustix}} offers efficient and safe POSIX / *nix / Winsock syscall-like APIs. It uses idiomatic Rust types: refs, slices, Results instead of raw pointers, safe wrappers around raw file descriptors, bitflags instead of bare integer flags, and several other conveniences.
 
 ```rust,editable
 {{#include ../../../crates/cats/os_unix_apis/tests/rustix.rs:example}}

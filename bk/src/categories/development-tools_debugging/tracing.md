@@ -6,7 +6,7 @@
 
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
-Add to `Cargo.toml`
+Add to [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
 ```toml
 [dependencies]
@@ -56,7 +56,7 @@ Or with a custom formatting layer
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_spans.rs:example}}
 ```
 
-One-liner with `.entered()`:
+One-liner with `entered`:
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_span_entered.rs:example}}

@@ -63,9 +63,9 @@ In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as eit
 [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
 The [`ndarray`][c-ndarray]{{hi:ndarray}}⮳ crate supports a number of ways to create arrays -- this recipe creates
-[`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ from `std::Vec` using [`std::convert::From`][c-std::convert::From]{{hi:std::convert::From}}⮳. Then, it sums the arrays element-wise.
+[`ndarray::Array`][c-ndarray::Array]{{hi:ndarray::Array}}⮳ from [`std::Vec`][c-std::vec::Vec]⮳{{hi:std::Vec}} using [`std::convert::From`][c-std::convert::From]{{hi:std::convert::From}}⮳. Then, it sums the arrays element-wise.
 
-This recipe contains an example of comparing two floating-point vectors element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c-approx::assert_abs_diff_eq]{{hi:approx::assert_abs_diff_eq}}⮳ macro from the [`approx`][c-approx]{{hi:approx}}⮳ crate allows for convenient element-wise comparisons. To use the [`approx`][c-approx]{{hi:approx}}⮳ crate with [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, the [`approx`][c-approx]{{hi:approx}}⮳ feature must be added to the [`ndarray`][c-ndarray]{{hi:ndarray}}⮳ dependency in `Cargo.toml`. For example,
+This recipe contains an example of comparing two floating-point vectors element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c-approx::assert_abs_diff_eq]{{hi:approx::assert_abs_diff_eq}}⮳ macro from the [`approx`][c-approx]{{hi:approx}}⮳ crate allows for convenient element-wise comparisons. To use the [`approx`][c-approx]{{hi:approx}}⮳ crate with [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, the [`approx`][c-approx]{{hi:approx}}⮳ feature must be added to the [`ndarray`][c-ndarray]{{hi:ndarray}}⮳ dependency in [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}. For example,
 `ndarray = { version = "0.15.6", features = [ "approx" ] }`.
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes

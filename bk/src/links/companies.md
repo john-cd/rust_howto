@@ -119,7 +119,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Meilisearch][meilisearch-website]⮳[(github)][meilisearch-github]⮳ | |
 | [Memfault][memfault-website]⮳ | |
 | [Meta][meta-website]⮳ | Uses Rust for the source control backend, Libra (now Diem), and other server-side projects. Facebook's primary source control system is partially written in Rust. |
-| [Microsoft][microsoft-website]⮳ | Uses Rust for various projects, including the Windows kernel, Azure, and Visual Studio. `windows-rs` allows you to call Windows API using Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge-github]⮳ and Kusto, the core query and storage engine for [Azure Data Explorer][azure-data-explorer]⮳. |
+| [Microsoft][microsoft-website]⮳ | Uses Rust for various projects, including the Windows kernel, Azure, and Visual Studio. [`windows-rs`][windows-rs]⮳{{hi:windows-rs}} allows you to call Windows API using Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge-github]⮳ and Kusto, the core query and storage engine for [Azure Data Explorer][azure-data-explorer]⮳. |
 | [MoveParallel][moveparallel-website]⮳ | |
 | [Mozilla][mozilla-website]⮳[(github)][mozilla-github]⮳ | The creators of Rust, Mozilla has used the language in various projects, including parts of the Firefox web browser. See [Servo][servo-website]⮳. |
 | [Multi media, LLC][multimediallc-website]⮳ | |

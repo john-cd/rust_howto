@@ -81,6 +81,6 @@ Randomly generates a string of given length ASCII characters with custom user-de
 
 [![fastrand][c-fastrand-badge]][c-fastrand] [![fastrand-crates.io][c-fastrand-crates.io-badge]][c-fastrand-crates.io] [![fastrand-github][c-fastrand-github-badge]][c-fastrand-github] [![fastrand-lib.rs][c-fastrand-lib.rs-badge]][c-fastrand-lib.rs]{{hi:fastrand}}{{hi:Fast}}{{hi:Rand}}{{hi:Random}}{{hi:Simple}}{{hi:Wyrand}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
-`fastrand` is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than rand
+[`fastrand`][c-fastrand]⮳{{hi:fastrand}} is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than rand
 
 </div>

@@ -18,7 +18,7 @@
 
 [![fyrox-website][c-fyrox-website-badge]][c-fyrox-website] [![fyrox][c-fyrox-badge]][c-fyrox] [![fyrox-crates.io][c-fyrox-crates.io-badge]][c-fyrox-crates.io] [![fyrox-github][c-fyrox-github-badge]][c-fyrox-github] [![fyrox-lib.rs][c-fyrox-lib.rs-badge]][c-fyrox-lib.rs]{{hi:fyrox}}{{hi:3d}}{{hi:Engine}}{{hi:Game}}{{hi:Gui}}{{hi:Sound}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
-`fyrox` is a 2D/3D game engine with a scene editor. Like Godot, but in Rust.
+[`fyrox`][c-fyrox]⮳{{hi:fyrox}} is a 2D/3D game engine with a scene editor. Like Godot, but in Rust.
 
 "An OOP-focused game engine with 3D and 2D support and a full GUI scene editor."
 
@@ -40,7 +40,7 @@
 
 [![macroquad][c-macroquad-badge]][c-macroquad] [![macroquad-crates.io][c-macroquad-crates.io-badge]][c-macroquad-crates.io] [![macroquad-github][c-macroquad-github-badge]][c-macroquad-github] [![macroquad-lib.rs][c-macroquad-lib.rs-badge]][c-macroquad-lib.rs]{{hi:macroquad}}
 
-`macroquad` is "a simple and easy to use 2D game library, great for beginners."
+[`macroquad`][c-macroquad]⮳{{hi:macroquad}} is "a simple and easy to use 2D game library, great for beginners."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/macroquad.rs:example}}

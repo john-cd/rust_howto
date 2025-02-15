@@ -21,7 +21,7 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 `portable-atomic`
 `embedded-hal`
-`postcard`
+[`postcard`][c-postcard]⮳{{hi:postcard}}
 `strun`
 `smoltcp`
 ...

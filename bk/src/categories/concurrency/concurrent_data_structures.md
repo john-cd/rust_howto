@@ -30,7 +30,7 @@ Concurrent queues.
 
 [![flurry][c-flurry-badge]][c-flurry] [![flurry-crates.io][c-flurry-crates.io-badge]][c-flurry-crates.io] [![flurry-github][c-flurry-github-badge]][c-flurry-github] [![flurry-lib.rs][c-flurry-lib.rs-badge]][c-flurry-lib.rs]{{hi:flurry}}{{hi:Map}}{{hi:Concurrent}}{{hi:Hashmap}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`flurry` is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to `std::collections::HashMap`. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c-flurry]).
+[`flurry`][c-flurry]⮳{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c-std::collections::HashMap]⮳{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c-flurry]).
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/flurry.rs:example}}
@@ -40,7 +40,7 @@ Concurrent queues.
 
 [![papaya][c-papaya-badge]][c-papaya] [![papaya-crates.io][c-papaya-crates.io-badge]][c-papaya-crates.io] [![papaya-github][c-papaya-github-badge]][c-papaya-github] [![papaya-lib.rs][c-papaya-lib.rs-badge]][c-papaya-lib.rs]{{hi:papaya}}{{hi:Atomic}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Lock-free}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`papaya` offers a fast and ergonomic concurrent hash-table for read-heavy workloads.
+[`papaya`][c-papaya]⮳{{hi:papaya}} offers a fast and ergonomic concurrent hash-table for read-heavy workloads.
 
 - Ergonomic lock-free API — no more deadlocks!
 - Powerful atomic operations.

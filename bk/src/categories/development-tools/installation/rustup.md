@@ -6,7 +6,7 @@
 
 [![rustup][rustup-website-badge]][rustup-website] [Rustup documentation][rustup-documentation]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs, manages, and upgrades versions of the rust compiler `rustc`, the Rust package manager `cargo`, the Rust linter `clippy`, the Rust code formatter `rustfmt`, etc.
+[`rustup`][rustup-website]{{hi:rustup}}⮳ is a toolchain multiplexer. It installs, manages, and upgrades versions of the rust compiler [`rustc`][rustc]⮳{{hi:rustc}}, the Rust package manager `cargo`, the Rust linter `clippy`, the Rust code formatter `rustfmt`, etc.
 
 More precisely, `rustup` can install and manage multiple Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][rustc]{{hi:rustc}}⮳ and [`cargo`][c-cargo]{{hi:cargo}}⮳ executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
 
