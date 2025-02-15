@@ -20,7 +20,12 @@ _default:
   ./replace_inline_links.sh {{root}}
 # TODO P2
 
-## .... GET LINK ....
+# (WIP)(BEWARE: modifies files) Insert potential cross-links into the book's Markdown
+[unix]
+@cross_link:
+  ./suggest_cross_links.sh {{root}}
+
+## .... GET LINK (MANUAL) ....
 
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
 [unix]
