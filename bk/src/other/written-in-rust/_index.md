@@ -1,6 +1,6 @@
 # Tools built in Rust
 
-## Development Tools
+## Development tools
 
 {{#include development_tools.incl.md}}
 
@@ -8,9 +8,9 @@
 
 {{#include python_tools.incl.md}}
 
-## Others
+## Other tools written in Rust
 
-{{#include others.incl.md}}
+{{#include other_tools.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

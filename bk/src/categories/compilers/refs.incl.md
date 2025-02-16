@@ -8,3 +8,8 @@
 [ex-compilers-mold-linker]: faster_linking.md#mold-linker
 [ex-compilers-optimization-levels]: reduce_compilation_duration.md#optimization-levels
 [ex-compilers-salsa]: incremental_computation.md#salsa
+[p-alternatives]: ../development-tools_debugging/alternatives.md
+[p-cargo]: ../development-tools/cargo/cargo.md
+[p-configuration]: ../config/configuration.md
+[p-strings]: ../../standard-library/strings.md
+[p-toml]: ../parser-implementations/toml.md

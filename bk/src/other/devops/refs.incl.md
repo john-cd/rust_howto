@@ -10,3 +10,16 @@
 [ex-devops-pre-commit]: git_hooks.md#pre-commit
 [ex-devops-release-plz]: release_automation.md#release-plz
 [ex-devops-rust-digger]: dependency_management.md#rust-digger
+[p-cargo]: ../../categories/development-tools/cargo/cargo.md
+[p-configuration]: ../../categories/config/configuration.md
+[p-crates]: ../../crates/index.md
+[p-development-tools]: ../../categories/development-tools/index.md
+[p-formatting]: ../../categories/development-tools/formatting/formatting.md
+[p-github-actions]: github_actions.md
+[p-images]: ../../categories/multimedia_images/images.md
+[p-language]: ../../language/index.md
+[p-maintaining]: ../../categories/development-tools_cargo-plugins/maintaining.md
+[p-mdbook]: ../../categories/development-tools/documentation/mdbook.md
+[p-rustup]: ../../categories/development-tools/installation/rustup.md
+[p-toml]: ../../categories/parser-implementations/toml.md
+[p-versioning]: ../../categories/development-tools/versioning/versioning.md

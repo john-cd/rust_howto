@@ -1,10 +1,10 @@
 # Send, Sync traits
 
-{{#include send.incl.md}}{{hi:Send}}{{hi:Sync}{{hi:'static}}}
+{{#include send_sync.incl.md}}{{hi:Send}}{{hi:Sync}{{hi:'static}}}
 
 ## `Send` and `Sync` traits {#send-sync}
 
-The `Send` and `Sync` traits are fundamental to Rust's concurrency. You can think of Send as "Exclusive access is thread-safe," and Sync as "Shared access is thread-safe."
+The `Send` and `Sync` [traits][p-traits] are fundamental to Rust's [concurrency][p-concurrency]. You can think of Send as "Exclusive access is thread-safe," and Sync as "Shared access is thread-safe."
 
 A type is `Send` if it can be _transferred across thread boundaries_. Most types in Rust are `Send` by default, as long as they don't contain non-`Send` types.
 
@@ -33,11 +33,11 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 
 ## Implementing `Send` and `Sync` {#implementing-send-sync}
 
-As discussed above, `Send` and `Sync` are automatically derived traits. This means that, unlike almost every other trait, if a type is composed entirely of `Send` or `Sync` types, then it is `Send` or `Sync`.
+As discussed above, `Send` and `Sync` are automatically derived [traits][p-traits]. This means that, unlike almost every other trait, if a type is composed entirely of `Send` or `Sync` types, then it is `Send` or `Sync`.
 
 If you want to work with non-`Sync` / `Send` types like raw pointers, you should build an abstraction on which `Send` and `Sync` can be derived.
 
-Note that, by implementing the unsafe marker traits `Send` and `Sync`, you _guarantee_ that your struct can be sent across threads safely. This means the usage of `MyStruct` must not cause data races or other thread safety issues. An incorrect implementation can cause Undefined Behavior. Caveat lector!
+Note that, by implementing the unsafe marker [traits][p-traits] `Send` and `Sync`, you _guarantee_ that your struct can be sent across threads safely. This means the usage of `MyStruct` must not cause data races or other thread safety issues. An incorrect implementation can cause Undefined Behavior. Caveat lector!
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

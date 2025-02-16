@@ -33,11 +33,11 @@
 
 [`zerocopy`][c-zerocopy]⮳{{hi:zerocopy}} makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
 
-- No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
-- Performance: Eliminating data copying can significantly improve performance, especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).
+- No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the [memory][p-memory] of one data structure as another.
+- [Performance][p-performance]: Eliminating data copying can significantly improve [performance][p-performance], especially in scenarios involving frequent data transfers between different [memory][p-memory] regions (e.g., network I/O, inter-process communication).
 - Safety: The zerocopy crate provides mechanisms to ensure safe and correct zero-copy operations.
 
-Zerocopy is often used in network programming, where high performance and low memory overhead are critical, or image handling.
+Zerocopy is often used in [network programming][p-network-programming], where high [performance][p-performance] and low [memory][p-memory] overhead are critical, or image handling.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/typecasts/zerocopy.rs:example}}

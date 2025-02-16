@@ -11,7 +11,7 @@ fetches values to populate those, and provides them according to the source's pr
 
 Config lets you set a set of default parameters and then extend them via merging in configuration from a variety of sources:
 
-- Files in JSON, TOML, YAML, INI, RON, JSON5; and
+- Files in [JSON][p-json], [TOML][p-toml], YAML, INI, RON, [JSON][p-json]5; and
 - Environment variables
 - String literals in well-known formats;
 - Programmatic overrides.

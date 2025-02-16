@@ -163,7 +163,7 @@ MD033: false
   # allowed_elements: []
 
 # MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md034.md
-MD034: true
+MD034: false
 
 # MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md035.md
 MD035:
@@ -262,7 +262,7 @@ MD054:
   # Allow autolinks; default: true
   autolink: false
   # Allow inline links and images; default: true
-  inline: true
+  inline: false
   # Allow full reference links and images
   full: true
   # Allow collapsed reference links and images; default: true

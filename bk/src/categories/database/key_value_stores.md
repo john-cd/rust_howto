@@ -1,12 +1,12 @@
 # Key-value stores
 
-{{#include kv.incl.md}}
+{{#include key_value_stores.incl.md}}
 
 ## `heed` {#heed}
 
 [![heed][c-heed-badge]][c-heed] [![heed-crates.io][c-heed-crates.io-badge]][c-heed-crates.io] [![heed-github][c-heed-github-badge]][c-heed-github] [![heed-lib.rs][c-heed-lib.rs-badge]][c-heed-lib.rs]{{hi:heed}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-`heed` is a fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value database library.
+`heed` is a fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value [database][p-database] library.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}

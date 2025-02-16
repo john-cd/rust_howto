@@ -62,7 +62,7 @@ In `build.rs`:
 
 [![ciborium][c-ciborium-badge]][c-ciborium] [![ciborium-crates.io][c-ciborium-crates.io-badge]][c-ciborium-crates.io] [![ciborium-github][c-ciborium-github-badge]][c-ciborium-github] [![ciborium-lib.rs][c-ciborium-lib.rs-badge]][c-ciborium-lib.rs]{{hi:ciborium}}{{hi:CBOR}}{{hi:Serde}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-Concise Binary Object Representation is a binary data serialization format loosely based on JSON. [`ciborium`][c-ciborium]⮳{{hi:ciborium}} is a [`serde`][c-serde]⮳{{hi:serde}} implementation of CBOR using ciborium-basic.
+Concise Binary Object Representation is a binary data serialization format loosely based on [JSON][p-json]. [`ciborium`][c-ciborium]⮳{{hi:ciborium}} is a [`serde`][c-serde]⮳{{hi:serde}} implementation of CBOR using ciborium-basic.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/proto/ciborium.rs:example}}
@@ -103,7 +103,7 @@ In `foo.capnp`:
 ### Key Features of Cap'n Proto {#skip2}
 
 - Compact and efficient: Cap'n Proto is designed to be very space-efficient for both on-the-wire and in-memory representations.
-- Fast: Cap'n Proto offers excellent performance, especially for serialization and deserialization.
+- Fast: Cap'n Proto offers excellent [performance][p-performance], especially for serialization and deserialization.
 - Language-agnostic: You can generate code in various programming languages from a single .capnp definition file.
 - Schema evolution: Cap'n Proto supports schema evolution, allowing you to modify the structure of your data over time without breaking compatibility.
 

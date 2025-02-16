@@ -6,15 +6,15 @@ Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 
 ## Character Sets
 
-{{#include strings.incl.md}}
+{{#include string_encoding.incl.md}}
 
 ## CSV Processing
 
 {{#include csv.incl.md}}
 
-## Structured Data
+## Structured Data (Complex Encoding)
 
-{{#include complex.incl.md}}
+{{#include complex_encoding.incl.md}}
 
 ## Serde
 

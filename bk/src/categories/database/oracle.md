@@ -1,6 +1,6 @@
 # Oracle DB
 
-Oracle Database is a multi-model database management system produced and marketed by Oracle Corporation.
+Oracle [Database][p-database] is a multi-model [database][p-database] management system produced and marketed by Oracle Corporation.
 
 ## `diesel_oci` {#diesel_oci}
 

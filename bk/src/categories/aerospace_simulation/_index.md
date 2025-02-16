@@ -4,7 +4,7 @@
 
 ## Aerospace Simulation
 
-{{#include simulation.incl.md}}
+{{#include aerospace_simulation.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

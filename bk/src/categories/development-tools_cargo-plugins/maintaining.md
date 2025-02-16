@@ -105,6 +105,6 @@ $ cargo semver-checks
 
 [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack] [![cargo-hack-crates.io][c-cargo_hack-crates.io-badge]][c-cargo_hack-crates.io] [![cargo-hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github] [![cargo-hack-lib.rs][c-cargo_hack-lib.rs-badge]][c-cargo_hack-lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
-`cargo hack` is a `cargo` subcommand to provide various options useful for testing and continuous integration.
+`cargo hack` is a `cargo` subcommand to provide various options useful for [testing][p-testing] and continuous integration.
 
 </div>

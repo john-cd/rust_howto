@@ -9,8 +9,8 @@ The following are topics that deserve (additional) coverage and examples:
 - Rust Macros
 - Advanced data structures
 - Testing
-- GPU processing, CUDA
-- Machine learning, Tensorflow
+- [GPU][p-gpu] processing, CUDA
+- [Machine [learning][p-learning]][p-machine-learning], Tensorflow
 - Email
 - Template Engines
 - Caching
@@ -18,30 +18,30 @@ The following are topics that deserve (additional) coverage and examples:
 - WASM
 - Algorithms
 - Rust patterns
-- Authentication / authorization: OAuth2, LDAP/AD, DNS lookups...
+- [Authentication][p-authentication] / authorization: OAuth2, LDAP/AD, DNS lookups...
 - Continuous Deployment & Integration (CD / CI) for Rust projects
-- Use of Rust in AWS and other Cloud services
-- Serverless Rust
-- More database examples, including object databases, graph databases, e.g. BonsaiDB, neo4j
+- Use of Rust in [AWS][p-aws] and other [Cloud][p-cloud] services
+- [Serverless][p-serverless] Rust
+- More [database][p-database] examples, including object databases, graph [databases][p-databases], e.g. BonsaiDB, neo4j
 - Embedded
 - Visualization
 - Graphics
-- Games, Game Engines
-- Search engines
-- Compression: Zip files and other archives
+- [Games][p-games], Game Engines
+- [Search][p-search] engines
+- [Compression][p-compression]: Zip files and other archives
 - Buffer pools, garbage collection, or other reference-counted examples
 - IPv6 address processing
-- Cloud: load balancers, status reporting (Vigil), routing, orchestration, containers
+- [Cloud][p-cloud]: load balancers, status reporting (Vigil), routing, orchestration, containers
 - Reverse proxies
 - Web programming
 - Virtualization
 - Version control: libgit2: clone, change branches, create commits, push, pull
-- Crypto, SSL, SSH, other public key encryption, X.509, RusTLS
-- Network programming: Basic and advanced TCP/IP networking
+- Crypto, SSL, SSH, other public key [encryption][p-encryption], X.509, RusTLS
+- [Network programming][p-network-programming]: Basic and advanced TCP/IP networking
 - Interfacing with FLTK (Fast Light Tool Kit)
 - Raft Consensus library
 - Network file systems
-- Statistics, math
+- [Statistics][p-statistics], math
 - Sound
 - API bindings
 - FFI
@@ -59,9 +59,9 @@ The following are topics that deserve (additional) coverage and examples:
 - Computer Vision
 - Robotics
 - Simulation
-- Science (Geo, Neuro)
+- [Science][p-science] ([Geo][p-geo], Neuro)
 - Finance
-- Aerospace-related crates: drones, UAVs, space protocols, simulation...
+- Aerospace-related [crates][p-crates]: [drones][p-drones], [UAVs][p-uavs], [space protocols][p-space-protocols], [simulation][p-simulation]...
 - Cryptocurrencies
 
 Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.

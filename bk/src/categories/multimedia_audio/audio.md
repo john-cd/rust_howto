@@ -4,6 +4,8 @@
 
 ## Record, output, or process audio {#audio}
 
+  multimedia
+
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_audio/tests/audio.rs:example}}
 ```

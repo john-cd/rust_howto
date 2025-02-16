@@ -4,7 +4,7 @@
 
 Research tools and processing of data related to the brain and nervous system.
 
-{{#include neuro.incl.md}}
+{{#include neuroscience.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

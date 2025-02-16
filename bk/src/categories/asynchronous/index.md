@@ -18,6 +18,8 @@ Crates to help you deal with events independently of the main program flow, usin
 
 {{#include async_and_blocking.incl.md}}
 
+{{#include async_utilities.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

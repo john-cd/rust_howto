@@ -6,7 +6,7 @@
 
 The [`futures`][c-futures]{{hi:futures}}⮳ crate provides a number of core abstractions for writing asynchronous code{{hi:Asynchronous}}.
 
-In most cases, you will use this crate directly only when writing async code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p-tokio] for example.
+In most cases, you will use this crate directly only when writing [async][p-async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p-tokio] for example.
 
 ## Selecting futures {#selecting-futures}
 
@@ -40,12 +40,12 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 
-[p-tokio]: tokio.md
+[p-tokio]: [tokio][p-tokio].md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [P1 cover future-utils ](https://github.com/john-cd/rust_howto/issues/634)?
 
-futures = Utility functions for working with Futures and Streams
+futures = Utility [functions][p-functions] for working with Futures and Streams
 </div>

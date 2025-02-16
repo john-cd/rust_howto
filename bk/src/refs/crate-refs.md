@@ -1,4 +1,3 @@
-
 [c-accesskit-badge]: https://img.shields.io/crates/v/accesskit?label=accesskit
 [c-accesskit-crates.io-badge]: https://img.shields.io/badge/crates.io-accesskit-crimson
 [c-accesskit-crates.io]: https://crates.io/crates/accesskit
@@ -9,7 +8,6 @@
 [c-accesskit]: https://docs.rs/accesskit
 [c-actix_web-badge]: https://img.shields.io/crates/v/actix-web?label=actix-web
 [c-actix_web-crates.io-badge]: https://img.shields.io/badge/crates.io-actix--web-crimson
-[c-actix_web-crates.io]: https://crates.io/crates/actix_web
 [c-actix_web-github-badge]: https://img.shields.io/badge/actix--web-steelblue?logo=github
 [c-actix_web-github]: https://github.com/actix/actix-web
 [c-actix_web-lib.rs-badge]: https://img.shields.io/badge/lib.rs-actix--web-yellow
@@ -124,6 +122,7 @@
 [c-arc_swap-github]: https://github.com/vorner/arc-swap
 [c-arc_swap-lib.rs-badge]: https://img.shields.io/badge/lib.rs-arc--swap-yellow
 [c-arc_swap-lib.rs]: https://lib.rs/crates/arc-swap
+[c-arc_swap::ArcSwap]: https://docs.rs/arc-swap/latest/arc_swap/type.ArcSwap.html
 [c-arc_swap]: https://docs.rs/arc_swap
 [c-argon2-badge]: https://img.shields.io/crates/v/argon2?label=argon2
 [c-argon2-crates.io-badge]: https://img.shields.io/badge/crates.io-argon2-crimson
@@ -664,13 +663,18 @@
 [c-cargo_zigbuild-lib.rs]: https://lib.rs/crates/cargo-zigbuild
 [c-cargo_zigbuild]: https://docs.rs/cargo_zigbuild
 [c-cargo-badge]: https://img.shields.io/crates/v/cargo?label=cargo
+[c-cargo-binutils-github]: https://github.com/rust-embedded/cargo-binutils
 [c-cargo-book]: https://doc.rust-lang.org/stable/cargo
+[c-cargo-cargo.lock]: https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
+[c-cargo-clippy]: https://doc.rust-lang.org/stable/clippy/usage.html
 [c-cargo-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo-crimson
 [c-cargo-crates.io]: https://crates.io/crates/cargo
 [c-cargo-github-badge]: https://img.shields.io/badge/cargo-steelblue?logo=github
 [c-cargo-github]: https://github.com/rust-lang/cargo
 [c-cargo-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo-yellow
 [c-cargo-lib.rs]: https://lib.rs/crates/cargo
+[c-cargo-quickinstall-github]: https://github.com/cargo-bins/cargo-quickinstall
+[c-cargo-rustflags]: https://doc.rust-lang.org/cargo/reference/config.html
 [c-cargo-website-badge]: https://img.shields.io/badge/cargo-coral
 [c-cargo-website]: https://doc.rust-lang.org/cargo/index.html
 [c-cargo]: https://docs.rs/cargo
@@ -1012,6 +1016,8 @@
 [c-data_encoding-github]: https://github.com/ia0/data-encoding
 [c-data_encoding-lib.rs-badge]: https://img.shields.io/badge/lib.rs-data--encoding-yellow
 [c-data_encoding-lib.rs]: https://lib.rs/crates/data-encoding
+[c-data_encoding::Encoding::encode]: https://docs.rs/data-encoding/latest/data_encoding/struct.Encoding.html#method.encode
+[c-data_encoding::HEXUPPER]: https://docs.rs/data-encoding/latest/data_encoding/constant.HEXUPPER.html
 [c-data_encoding]: https://docs.rs/data-encoding
 [c-datafusion-badge]: https://img.shields.io/crates/v/datafusion?label=datafusion
 [c-datafusion-crates.io-badge]: https://img.shields.io/badge/crates.io-datafusion-crimson
@@ -1089,6 +1095,7 @@
 [c-diesel_oci-lib.rs-badge]: https://img.shields.io/badge/lib.rs-diesel--oci-yellow
 [c-diesel_oci-lib.rs]: https://lib.rs/crates/diesel-oci
 [c-diesel_oci]: https://docs.rs/diesel-oci
+[c-diesel-async]: https://docs.rs/diesel-async/latest/diesel_async
 [c-diesel-badge]: https://img.shields.io/crates/v/diesel?label=diesel
 [c-diesel-crates.io-badge]: https://img.shields.io/badge/crates.io-diesel-crimson
 [c-diesel-crates.io]: https://crates.io/crates/diesel
@@ -1263,6 +1270,14 @@
 [c-embassy-website-badge]: https://img.shields.io/badge/embassy-coral
 [c-embassy-website]: https://embassy.dev
 [c-embassy]: https://docs.rs/embassy
+[c-embedded_hal-badge]: https://img.shields.io/crates/v/embedded-hal?label=embedded-hal
+[c-embedded_hal-crates.io-badge]: https://img.shields.io/badge/crates.io-embedded--hal-crimson
+[c-embedded_hal-crates.io]: https://crates.io/crates/embedded_hal
+[c-embedded_hal-github-badge]: https://img.shields.io/badge/embedded--hal-steelblue?logo=github
+[c-embedded_hal-github]: https://github.com/rust-embedded/embedded-hal
+[c-embedded_hal-lib.rs-badge]: https://img.shields.io/badge/lib.rs-embedded--hal-yellow
+[c-embedded_hal-lib.rs]: https://lib.rs/crates/embedded-hal
+[c-embedded_hal]: https://docs.rs/embedded-hal
 [c-env_logger-badge]: https://img.shields.io/crates/v/env_logger?label=env_logger
 [c-env_logger-crates.io-badge]: https://img.shields.io/badge/crates.io-env__logger-crimson
 [c-env_logger-crates.io]: https://crates.io/crates/env_logger
@@ -1432,6 +1447,7 @@
 [c-futures-website-badge]: https://img.shields.io/badge/futures-coral
 [c-futures-website]: https://rust-lang.github.io/futures-rs
 [c-futures::future::Select]: https://docs.rs/futures/latest/futures/future/struct.Select.html
+[c-futures::join]: https://docs.rs/futures/latest/futures/macro.join.html
 [c-futures::prelude::stream::StreamExt::filter]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.filter
 [c-futures::prelude::stream::StreamExt::fold]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.fold
 [c-futures::prelude::stream::StreamExt::for_each_concurrent]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.for_each_concurrent
@@ -1537,6 +1553,7 @@
 [c-gtk4-website-badge]: https://img.shields.io/badge/gtk4-coral
 [c-gtk4-website]: https://gtk-rs.org/gtk4-rs
 [c-gtk4]: https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4
+[c-heapless]: https://docs.rs/heapless/latest/heapless
 [c-heed-badge]: https://img.shields.io/crates/v/heed?label=heed
 [c-heed-crates.io-badge]: https://img.shields.io/badge/crates.io-heed-crimson
 [c-heed-crates.io]: https://crates.io/crates/heed
@@ -1619,6 +1636,7 @@
 [c-indexmap-github]: https://github.com/indexmap-rs/indexmap
 [c-indexmap-lib.rs-badge]: https://img.shields.io/badge/lib.rs-indexmap-yellow
 [c-indexmap-lib.rs]: https://lib.rs/crates/indexmap
+[c-indexmap::set::IndexSet]: https://docs.rs/indexmap/latest/indexmap/set/struct.IndexSet.html
 [c-indexmap]: https://docs.rs/indexmap
 [c-indicatif-badge]: https://img.shields.io/crates/v/indicatif?label=indicatif
 [c-indicatif-crates.io-badge]: https://img.shields.io/badge/crates.io-indicatif-crimson
@@ -1673,8 +1691,10 @@
 [c-just-crates.io]: https://crates.io/crates/just
 [c-just-github-badge]: https://img.shields.io/badge/just-steelblue?logo=github
 [c-just-github]: https://github.com/casey/just
+[c-just-justfile]: https://just.systems/man/en/quick-start.html
 [c-just-lib.rs-badge]: https://img.shields.io/badge/lib.rs-just-yellow
 [c-just-lib.rs]: https://lib.rs/crates/just
+[c-just-mod.just]: https://just.systems/man/en/modules1190.html?highlight=mod.just#modules1190
 [c-just-programmer-manual]: https://just.systems/man/en
 [c-just-website-badge]: https://img.shields.io/badge/just-coral
 [c-just-website]: https://just.systems
@@ -1763,6 +1783,7 @@
 [c-libc-lib.rs-badge]: https://img.shields.io/badge/lib.rs-libc-yellow
 [c-libc-lib.rs]: https://lib.rs/crates/libc
 [c-libc]: https://docs.rs/libc
+[c-linear_map::LinearMap]: https://docs.rs/linear-map/latest/linear_map/struct.LinearMap.html
 [c-linfa-badge]: https://img.shields.io/crates/v/linfa?label=linfa
 [c-linfa-crates.io-badge]: https://img.shields.io/badge/crates.io-linfa-crimson
 [c-linfa-crates.io]: https://crates.io/crates/linfa
@@ -1961,6 +1982,7 @@
 [c-mdbook_yapp-lib.rs]: https://lib.rs/crates/mdbook-yapp
 [c-mdbook_yapp]: https://docs.rs/mdbook-yapp
 [c-mdbook-badge]: https://img.shields.io/crates/v/mdbook?label=mdbook
+[c-mdbook-book.toml]: https://rust-lang.github.io/mdBook/format/configuration/index.html
 [c-mdbook-crates.io-badge]: https://img.shields.io/badge/crates.io-mdbook-crimson
 [c-mdbook-crates.io]: https://crates.io/crates/mdbook
 [c-mdbook-docs.rs]: https://docs.rs/mdbook
@@ -2116,6 +2138,7 @@
 [c-ndarray::ArrayBase]: https://docs.rs/ndarray/latest/ndarray/struct.ArrayBase.html
 [c-ndarray::ArrayView]: https://docs.rs/ndarray/latest/ndarray/type.ArrayView.html
 [c-ndarray::ArrayView1]: https://docs.rs/ndarray/latest/ndarray/type.ArrayView1.html
+[c-ndarray::linalg::Dot]: https://docs.rs/ndarray/latest/ndarray/linalg/trait.Dot.html
 [c-ndarray]: https://docs.rs/ndarray
 [c-neon-badge]: https://img.shields.io/crates/v/neon?label=neon
 [c-neon-crates.io-badge]: https://img.shields.io/badge/crates.io-neon-crimson
@@ -2223,6 +2246,7 @@
 [c-once_cell-lib.rs]: https://lib.rs/crates/once_cell
 [c-once_cell::sync::Lazy]: https://docs.rs/once_cell/latest/once_cell/sync/struct.Lazy.html
 [c-once_cell::sync::OnceCell]: https://docs.rs/once_cell/latest/once_cell/sync/struct.OnceCell.html
+[c-once_cell::unsync - Rust::OnceCell]: https://docs.rs/once_cell/latest/once_cell/unsync/struct.OnceCell.html
 [c-once_cell]: https://docs.rs/once_cell
 [c-oneshot-badge]: https://img.shields.io/crates/v/oneshot?label=oneshot
 [c-oneshot-crates.io-badge]: https://img.shields.io/badge/crates.io-oneshot-crimson
@@ -2403,6 +2427,7 @@
 [c-plotly-github]: https://github.com/plotly/plotly.rs
 [c-plotly-lib.rs-badge]: https://img.shields.io/badge/lib.rs-plotly-yellow
 [c-plotly-lib.rs]: https://lib.rs/crates/plotly
+[c-plotly.rs-github]: https://github.com/plotly/plotly.rs
 [c-plotly]: https://docs.rs/plotly
 [c-polars-badge]: https://img.shields.io/crates/v/polars?label=polars
 [c-polars-book-badge]: https://img.shields.io/badge/polars_book-coral
@@ -2417,6 +2442,14 @@
 [c-polars-website-badge]: https://img.shields.io/badge/polars-coral
 [c-polars-website]: https://www.pola.rs
 [c-polars]: https://docs.rs/polars
+[c-portable_atomic-badge]: https://img.shields.io/crates/v/portable-atomic?label=portable-atomic
+[c-portable_atomic-crates.io-badge]: https://img.shields.io/badge/crates.io-portable--atomic-crimson
+[c-portable_atomic-crates.io]: https://crates.io/crates/portable_atomic
+[c-portable_atomic-github-badge]: https://img.shields.io/badge/portable--atomic-steelblue?logo=github
+[c-portable_atomic-github]: https://github.com/taiki-e/portable-atomic
+[c-portable_atomic-lib.rs-badge]: https://img.shields.io/badge/lib.rs-portable--atomic-yellow
+[c-portable_atomic-lib.rs]: https://lib.rs/crates/portable-atomic
+[c-portable_atomic]: https://docs.rs/portable-atomic
 [c-postage-badge]: https://img.shields.io/crates/v/postage?label=postage
 [c-postage-crates.io-badge]: https://img.shields.io/badge/crates.io-postage-crimson
 [c-postage-crates.io]: https://crates.io/crates/postage
@@ -2424,6 +2457,7 @@
 [c-postage-github]: https://github.com/austinjones/postage-rs
 [c-postage-lib.rs-badge]: https://img.shields.io/badge/lib.rs-postage-yellow
 [c-postage-lib.rs]: https://lib.rs/crates/postage
+[c-postage::broadcast]: https://docs.rs/postage/latest/postage/broadcast/index.html
 [c-postage]: https://docs.rs/postage
 [c-postcard-badge]: https://img.shields.io/crates/v/postcard?label=postcard
 [c-postcard-crates.io-badge]: https://img.shields.io/badge/crates.io-postcard-crimson
@@ -2519,6 +2553,7 @@
 [c-quote-github]: https://github.com/dtolnay/quote
 [c-quote-lib.rs-badge]: https://img.shields.io/badge/lib.rs-quote-yellow
 [c-quote-lib.rs]: https://lib.rs/crates/quote
+[c-quote::quote]: https://docs.rs/quote/latest/quote/macro.quote.html
 [c-quote]: https://docs.rs/quote
 [c-r3bl_tuify-badge]: https://img.shields.io/crates/v/r3bl_tuify?label=r3bl_tuify
 [c-r3bl_tuify-crates.io-badge]: https://img.shields.io/badge/crates.io-r3bl__tuify-crimson
@@ -2592,8 +2627,10 @@
 [c-rayon-github]: https://github.com/rayon-rs/rayon
 [c-rayon-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rayon-yellow
 [c-rayon-lib.rs]: https://lib.rs/crates/rayon
+[c-rayon::iter::IntoParallelIterator::into_par_iter]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelIterator.html#tymethod.into_par_iter
 [c-rayon::iter::IntoParallelRefIterator::par_iter_mut]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
 [c-rayon::iter::IntoParallelRefIterator::par_iter]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
+[c-rayon::iter::IntoParallelRefMutIterator::par_iter_mut]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
 [c-rayon::iter::ParallelIterator::all]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.all
 [c-rayon::iter::ParallelIterator::any]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.any
 [c-rayon::iter::ParallelIterator::filter]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.filter
@@ -2785,6 +2822,14 @@
 [c-roxygen-lib.rs-badge]: https://img.shields.io/badge/lib.rs-roxygen-yellow
 [c-roxygen-lib.rs]: https://lib.rs/crates/roxygen
 [c-roxygen]: https://docs.rs/roxygen
+[c-rppal-badge]: https://img.shields.io/crates/v/rppal?label=rppal
+[c-rppal-crates.io-badge]: https://img.shields.io/badge/crates.io-rppal-crimson
+[c-rppal-crates.io]: https://crates.io/crates/rppal
+[c-rppal-github-badge]: https://img.shields.io/badge/rppal-steelblue?logo=github
+[c-rppal-github]: https://github.com/golemparts/rppal
+[c-rppal-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rppal-yellow
+[c-rppal-lib.rs]: https://lib.rs/crates/rppal
+[c-rppal]: https://docs.rs/rppal
 [c-rsa-badge]: https://img.shields.io/crates/v/rsa?label=rsa
 [c-rsa-crates.io-badge]: https://img.shields.io/badge/crates.io-rsa-crimson
 [c-rsa-crates.io]: https://crates.io/crates/rsa
@@ -2993,6 +3038,14 @@
 [c-seaography-website-badge]: https://img.shields.io/badge/seaography-coral
 [c-seaography-website]: https://www.sea-ql.org/Seaography
 [c-seaography]: https://docs.rs/seaography
+[c-seize-badge]: https://img.shields.io/crates/v/seize?label=seize
+[c-seize-crates.io-badge]: https://img.shields.io/badge/crates.io-seize-crimson
+[c-seize-crates.io]: https://crates.io/crates/seize
+[c-seize-github-badge]: https://img.shields.io/badge/seize-steelblue?logo=github
+[c-seize-github]: https://github.com/ibraheemdev/seize
+[c-seize-lib.rs-badge]: https://img.shields.io/badge/lib.rs-seize-yellow
+[c-seize-lib.rs]: https://lib.rs/crates/seize
+[c-seize]: https://docs.rs/seize
 [c-select-badge]: https://img.shields.io/crates/v/select?label=select
 [c-select-crates.io-badge]: https://img.shields.io/badge/crates.io-select-crimson
 [c-select-crates.io]: https://crates.io/crates/select
@@ -3127,6 +3180,9 @@
 [c-slotmap-github]: https://github.com/orlp/slotmap
 [c-slotmap-lib.rs-badge]: https://img.shields.io/badge/lib.rs-slotmap-yellow
 [c-slotmap-lib.rs]: https://lib.rs/crates/slotmap
+[c-slotmap::HopSlotMap]: https://docs.rs/slotmap/latest/slotmap/struct.HopSlotMap.html
+[c-slotmap::SecondaryMap]: https://docs.rs/slotmap/latest/slotmap/struct.SecondaryMap.html
+[c-slotmap::SparseSecondaryMap]: https://docs.rs/slotmap/latest/slotmap/struct.SparseSecondaryMap.html
 [c-slotmap]: https://docs.rs/slotmap
 [c-smallvec-badge]: https://img.shields.io/crates/v/smallvec?label=smallvec
 [c-smallvec-crates.io-badge]: https://img.shields.io/badge/crates.io-smallvec-crimson
@@ -3154,6 +3210,16 @@
 [c-smol-lib.rs-badge]: https://img.shields.io/badge/lib.rs-smol-yellow
 [c-smol-lib.rs]: https://lib.rs/crates/smol
 [c-smol]: https://docs.rs/smol
+[c-smoltcp-badge]: https://img.shields.io/crates/v/smoltcp?label=smoltcp
+[c-smoltcp-crates.io-badge]: https://img.shields.io/badge/crates.io-smoltcp-crimson
+[c-smoltcp-crates.io]: https://crates.io/crates/smoltcp
+[c-smoltcp-github-badge]: https://img.shields.io/badge/smoltcp-steelblue?logo=github
+[c-smoltcp-github]: https://github.com/smoltcp-rs/smoltcp
+[c-smoltcp-lib.rs-badge]: https://img.shields.io/badge/lib.rs-smoltcp-yellow
+[c-smoltcp-lib.rs]: https://lib.rs/crates/smoltcp
+[c-smoltcp-website-badge]: https://img.shields.io/badge/smoltcp-coral
+[c-smoltcp-website]: https://github.com/smoltcp-rs/smoltcp
+[c-smoltcp]: https://docs.rs/smoltcp
 [c-sniffnet-badge]: https://img.shields.io/crates/v/sniffnet?label=sniffnet
 [c-sniffnet-crates.io-badge]: https://img.shields.io/badge/crates.io-sniffnet-crimson
 [c-sniffnet-crates.io]: https://crates.io/crates/sniffnet
@@ -3204,12 +3270,18 @@
 [c-std-badge]: https://img.shields.io/badge/std-firebrick?logo=rust
 [c-std-core::cell::OnceCell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
 [c-std-core::iter::Iterator::filter_map]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
+[c-std::assert_eq]: https://doc.rust-lang.org/std/macro.assert_eq.html
 [c-std::borrow::Borrow]: https://doc.rust-lang.org/std/borrow/trait.Borrow.html
+[c-std::borrow::BorrowMut]: https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html
 [c-std::borrow::Cow::into_owned]: https://doc.rust-lang.org/std/borrow/enum.Cow.html#method.into_owned
 [c-std::borrow::Cow]: https://doc.rust-lang.org/std/borrow/enum.Cow.html
 [c-std::borrow::ToOwned]: https://doc.rust-lang.org/std/borrow/trait.ToOwned.html
 [c-std::boxed::Box]: https://doc.rust-lang.org/std/boxed/struct.Box.html
 [c-std::cell::Cell]: https://doc.rust-lang.org/std/cell/struct.Cell.html
+[c-std::cell::OnceCell]: https://doc.rust-lang.org/std/cell/struct.OnceCell.html
+[c-std::cell::RefCell::try_borrow]: https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.try_borrow
+[c-std::cell::RefCell]: https://doc.rust-lang.org/std/cell/struct.RefCell.html
+[c-std::cell::UnsafeCell]: https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
 [c-std::clone::Clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html
 [c-std::cmp::Eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
 [c-std::cmp::Ord::cmp]: https://doc.rust-lang.org/std/cmp/trait.Ord.html#tymethod.cmp
@@ -3218,8 +3290,13 @@
 [c-std::cmp::PartialEq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
 [c-std::cmp::PartialOrd::partial_cmp]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#tymethod.partial_cmp
 [c-std::cmp::PartialOrd]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
+[c-std::collections::BinaryHeap]: https://doc.rust-lang.org/std/collections/struct.BinaryHeap.html
+[c-std::collections::BTreeMap]: https://doc.rust-lang.org/std/collections/struct.BTreeMap.html
+[c-std::collections::BTreeSet]: https://doc.rust-lang.org/std/collections/struct.BTreeSet.html
 [c-std::collections::hash_map::Entry]: https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html
 [c-std::collections::HashMap]: https://doc.rust-lang.org/std/collections/struct.HashMap.html
+[c-std::collections::HashSet]: https://doc.rust-lang.org/std/collections/struct.HashSet.htmlps://crates.io/crates/actix_web
+[c-std::collections::LinkedList]: https://doc.rust-lang.org/std/collections/struct.LinkedList.html
 [c-std::convert::AsMut]: https://doc.rust-lang.org/std/convert/trait.AsMut.html
 [c-std::convert::AsRef]: https://doc.rust-lang.org/std/convert/trait.AsRef.html
 [c-std::convert::From]: https://doc.rust-lang.org/std/convert/trait.From.html
@@ -3251,6 +3328,7 @@
 [c-std::io::Read]: https://doc.rust-lang.org/std/io/trait.Read.html
 [c-std::io::Stderr]: https://doc.rust-lang.org/std/io/struct.Stderr.html
 [c-std::io::Stdout]: https://doc.rust-lang.org/std/io/struct.Stdout.html
+[c-std::iter::IntoIterator::into_iter]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html#tymethod.into_iter
 [c-std::iter::Iterator::all]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.all
 [c-std::iter::Iterator::any]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
 [c-std::iter::Iterator::filter]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.filter
@@ -3263,6 +3341,7 @@
 [c-std::marker::Sync]: https://doc.rust-lang.org/std/marker/trait.Sync.html
 [c-std::marker::Unpin]: https://doc.rust-lang.org/std/marker/trait.Unpin.html
 [c-std::net::SocketAddrV4]: https://doc.rust-lang.org/std/net/struct.SocketAddrV4.html
+[c-std::num::Saturating]: https://doc.rust-lang.org/std/num/struct.Saturating.html
 [c-std::ops::Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
 [c-std::ops::Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
 [c-std::ops::Fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
@@ -3285,8 +3364,13 @@
 [c-std::path::Path::strip_prefix]: https://doc.rust-lang.org/std/path/struct.Path.html#method.strip_prefix
 [c-std::process::Command]: https://doc.rust-lang.org/std/process/struct.Command.html
 [c-std::process::Output]: https://doc.rust-lang.org/std/process/struct.Output.html
+[c-std::process::Stdio::piped]: https://doc.rust-lang.org/std/process/struct.Stdio.html#method.piped
 [c-std::process::Stdio]: https://doc.rust-lang.org/std/process/struct.Stdio.html
+[c-std::rc::Rc::downgrade]: https://doc.rust-lang.org/std/rc/struct.Rc.html
+[c-std::rc::Rc]: https://doc.rust-lang.org/std/rc/struct.Rc.html
 [c-std::result::Result::unwrap_or]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or
+[c-std::result::Result::unwrap]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap
+[c-std::result::Result]: https://doc.rust-lang.org/std/result/enum.Result.html
 [c-std::str::FromStr]: https://doc.rust-lang.org/std/str/trait.FromStr.html
 [c-std::string::String]: https://doc.rust-lang.org/std/string/struct.String.html
 [c-std::string::ToString]: https://doc.rust-lang.org/std/string/trait.ToString.html
@@ -3301,9 +3385,14 @@
 [c-std::sync::mpsc::Receiver::recv]: https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
 [c-std::sync::Mutex]: https://doc.rust-lang.org/std/sync/struct.Mutex.html
 [c-std::sync::MutexGuard]: https://doc.rust-lang.org/std/sync/struct.MutexGuard.html
+[c-std::sync::OnceLock]: https://doc.rust-lang.org/std/sync/struct.OnceLock.html
 [c-std::sync::RwLock]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
+[c-std::sync::RwLockReadGuard]: https://doc.rust-lang.org/std/sync/struct.RwLockReadGuard.html
+[c-std::sync::RwLockWriteGuard]: https://doc.rust-lang.org/std/sync/struct.RwLockWriteGuard.html#method.downgrade
 [c-std::task::Poll]: https://doc.rust-lang.org/std/task/enum.Poll.html
 [c-std::thread::scope]: https://doc.rust-lang.org/std/thread/fn.scope.html
+[c-std::thread::sleep]: https://doc.rust-lang.org/std/thread/fn.sleep.html
+[c-std::thread::spawn]: https://doc.rust-lang.org/std/thread/fn.spawn.html
 [c-std::time::Duration::as_secs]: https://doc.rust-lang.org/std/time/struct.Duration.html#method.as_secs
 [c-std::time::Duration]: https://doc.rust-lang.org/std/time/struct.Duration.html
 [c-std::time::Instant::elapsed]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.elapsed
@@ -3314,6 +3403,7 @@
 [c-std::vec::Vec::sort_by]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
 [c-std::vec::Vec::sort_unstable]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_unstable
 [c-std::vec::Vec::sort]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort
+[c-std::vec::Vec]: https://doc.rust-lang.org/std/vec/struct.Vec.html
 [c-std]: https://doc.rust-lang.org/std
 [c-stdx-badge]: https://img.shields.io/crates/v/stdx?label=stdx
 [c-stdx-crates.io-badge]: https://img.shields.io/badge/crates.io-stdx-crimson
@@ -3331,6 +3421,14 @@
 [c-structopt-lib.rs-badge]: https://img.shields.io/badge/lib.rs-structopt-yellow
 [c-structopt-lib.rs]: https://lib.rs/crates/structopt
 [c-structopt]: https://docs.rs/structopt
+[c-strum-badge]: https://img.shields.io/crates/v/strum?label=strum
+[c-strum-crates.io-badge]: https://img.shields.io/badge/crates.io-strum-crimson
+[c-strum-crates.io]: https://crates.io/crates/strum
+[c-strum-github-badge]: https://img.shields.io/badge/strum-steelblue?logo=github
+[c-strum-github]: https://github.com/Peternator7/strum
+[c-strum-lib.rs-badge]: https://img.shields.io/badge/lib.rs-strum-yellow
+[c-strum-lib.rs]: https://lib.rs/crates/strum
+[c-strum]: https://docs.rs/strum
 [c-stylish-badge]: https://img.shields.io/crates/v/stylish?label=stylish
 [c-stylish-crates.io-badge]: https://img.shields.io/badge/crates.io-stylish-crimson
 [c-stylish-crates.io]: https://crates.io/crates/stylish
@@ -3634,6 +3732,7 @@
 [c-toml-github]: https://github.com/toml-rs/toml
 [c-toml-lib.rs-badge]: https://img.shields.io/badge/lib.rs-toml-yellow
 [c-toml-lib.rs]: https://lib.rs/crates/toml
+[c-toml::Value]: https://docs.rs/toml/latest/toml/enum.Value.html
 [c-toml]: https://docs.rs/toml
 [c-tonic-badge]: https://img.shields.io/crates/v/tonic?label=tonic
 [c-tonic-crates.io-badge]: https://img.shields.io/badge/crates.io-tonic-crimson
@@ -3690,6 +3789,7 @@
 [c-tracing-next-steps]: https://tokio.rs/tokio/topics/tracing-next-steps
 [c-tracing-website-badge]: https://img.shields.io/badge/tracing-coral
 [c-tracing-website]: https://tracing.rs/tracing
+[c-tracing::span::Span::enter]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.enter
 [c-tracing::span::Span::in_scope]: https://docs.rs/tracing/latest/tracing/span/struct.Span.html#method.in_scope
 [c-tracing]: https://docs.rs/tracing
 [c-tree_sitter-badge]: https://img.shields.io/crates/v/tree-sitter?label=tree-sitter

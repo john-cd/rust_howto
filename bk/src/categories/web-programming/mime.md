@@ -6,7 +6,7 @@
 
 [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
-The following example shows how to parse a [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}} type from a string using the [mime][c-mime]{{hi:mime}}⮳ crate. [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ produces a default [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ type in an [`std::result::Result::unwrap_or`][c-std::result::Result::unwrap_or]{{hi:std::result::Result::unwrap_or}}⮳ clause.
+The following example shows how to [parse][p-parse] a [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}} type from a string using the [mime][c-mime]{{hi:mime}}⮳ crate. [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ produces a default [`mime::Mime`][c-mime::Mime]{{hi:mime::Mime}}⮳ type in an [`std::result::Result::unwrap_or`][c-std::result::Result::unwrap_or]{{hi:std::result::Result::unwrap_or}}⮳ clause.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/tests/mime/string.rs:example}}

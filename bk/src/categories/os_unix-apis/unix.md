@@ -27,7 +27,7 @@
 [![nix-lib.rs][c-nix-lib.rs-badge]][c-nix-lib.rs]
 [![cat-os::unix-apis][cat-os::unix-apis-badge]][cat-os::unix-apis]{{hi:Unix APIs}}
 
-`nix` provides bindings to the various *nix system functions (Unix, Linux, MacOS, etc.).
+`nix` provides bindings to the various *nix system [functions][p-functions] (Unix, [Linux][p-linux], [MacOS][p-macos], etc.).
 
 ```rust,editable
 {{#include ../../../crates/cats/os_unix_apis/tests/nix.rs:example}}

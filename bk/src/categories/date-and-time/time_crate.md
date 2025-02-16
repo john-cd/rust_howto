@@ -1,6 +1,6 @@
 # Time
 
-{{#include time.incl.md}}
+{{#include time_crate.incl.md}}
 
 ## Use the `time` crate {#time-crate}
 
@@ -10,7 +10,7 @@
 [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`time` is a date and time library that is fully interoperable with the standard library and mostly compatible with `#![no_std]`.
+`time` is a [date and time][p-date-and-time] library that is fully interoperable with the [standard library][p-standard-library] and mostly compatible with `#![no_std]`.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/tests/time.rs:example}}

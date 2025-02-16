@@ -12,3 +12,10 @@
 [ex-web-programming_http-client-query-the-github-api]: apis.md#query-the-github-api
 [ex-web-programming_http-client-reqwest]: http_clients.md#reqwest
 [ex-web-programming_http-client-ureq]: http_clients.md#ureq
+[p-asynchronous]: ../asynchronous/index.md
+[p-building]: ../development-tools_cargo-plugins/building.md
+[p-hyper]: ../web-programming_http-server/_hyper.md
+[p-json]: ../parser-implementations/json.md
+[p-main]: ../../language/main.md
+[p-server]: ../network-programming/server.md
+[p-url]: ../web-programming/url.md

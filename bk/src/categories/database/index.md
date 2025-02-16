@@ -12,21 +12,37 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include postgres.incl.md}}
 
+## Microsoft SQL Server (MSSQL)
+
+{{#include mssql.incl.md}}
+
+## Oracle DB
+
+{{#include oracle.incl.md}}
+
 ## Connection pools
 
 {{#include connection_pool.incl.md}}
+
+## Query builders and ORMs
+
+{{#include query_builders_orms.incl.md}}
 
 ## NoSQL and friends
 
 {{#include nosql.incl.md}}
 
+## Key-Value Stores
+
+{{#include key_value_stores.incl.md}}
+
 ## Search
 
 {{#include search.incl.md}}
 
-## Query builders and ORMs
+## Message Queues (AMQP)
 
-{{#include query_builders_orms.incl.md}}
+{{#include amqp.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

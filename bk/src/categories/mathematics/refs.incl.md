@@ -20,3 +20,11 @@
 [ex-mathematics-vector-comparison]: linear_algebra.md#vector-comparison
 [ex-mathematics-vector-norm]: linear_algebra.md#vector-norm
 [ex-mathematics-verifying-tan-is-equal-to-sin-divided-by-cos]: trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[p-complex-numbers]: complex_numbers.md
+[p-functions]: ../../language/functions.md
+[p-iterators]: ../../language/iterators.md
+[p-json]: ../parser-implementations/json.md
+[p-mathematics]: index.md
+[p-option]: ../../standard-library/option.md
+[p-traits]: ../../language/traits.md
+[p-vectors]: ../../standard-library/vectors.md

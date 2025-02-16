@@ -52,11 +52,11 @@ Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineer
 
 [data_engineering: spice.ai (P1)](https://github.com/john-cd/rust_howto/issues/591)
 
-Big Data Processing for the AI Era [LakeSail][lakesail]
+Big [Data Processing][p-data-processing] for the AI Era [LakeSail][lakesail]
 
 [lakesail]: <https://lakesail.com/>
 
-Visualize streams of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
+Visualize [streams][p-streams] of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
 
 [`rerun`][rerun]
 

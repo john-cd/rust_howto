@@ -61,7 +61,7 @@ The [`monostate`][c-monostate]⮳{{hi:monostate}} library implements a type macr
 
 [serde: write (P1)](https://github.com/john-cd/rust_howto/issues/352)
 
-dedupe JSON with complex.md
+dedupe [JSON][p-json] with complex.md
 [Supported formats](https://docs.rs/serde/latest/serde/#data-formats)
 
 </div>

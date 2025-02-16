@@ -2,9 +2,9 @@
 
 {{#include write_proc_macros.incl.md}}
 
-Procedural macro crates almost always will link to the compiler-provided [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
+Procedural macro [crates][p-crates] almost always will link to the compiler-provided [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
 
-This crate primarily contains a TokenStream type. Procedural macros operate over token streams instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural macros to target. A token stream is roughly equivalent to Vec<TokenTree> where a TokenTree can roughly be thought of as lexical token. For example foo is an Ident token, . is a Punct token, and 1.2 is a Literal token. The TokenStream type, unlike Vec<TokenTree>, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
+This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to Vec<TokenTree> where a TokenTree can roughly be thought of as lexical token. For example foo is an Ident token, . is a Punct token, and 1.2 is a Literal token. The TokenStream type, unlike Vec<TokenTree>, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
 
 ## Parse Rust source code into an abstract syntax tree {#syn}
 
@@ -50,9 +50,9 @@ A substitute implementation of the compiler's [`proc_macro`][c-proc_macro]⮳{{h
 
 A wrapper around the procedural macro API of the compiler's proc_macro crate. This library serves two purposes:
 
-Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc_macro are entirely specific to procedural macros and cannot ever exist in code outside of a procedural macro. Meanwhile proc_macro2 types may exist anywhere including non-macro code. By developing foundational libraries like syn and quote against proc_macro2 rather than proc_macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
+Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc_macro are entirely specific to procedural [macros][p-macros] and cannot ever exist in code outside of a procedural macro. Meanwhile proc_macro2 types may exist anywhere including non-macro code. By developing foundational libraries like syn and quote against proc_macro2 rather than proc_macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
 
-Make procedural macros unit testable. As a consequence of being specific to procedural macros, nothing that uses proc_macro can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using proc_macro2.
+Make procedural [macros][p-macros] unit testable. As a consequence of being specific to procedural [macros][p-macros], nothing that uses proc_macro can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using proc_macro2.
 
 [![proc-macro-workshop][proc-macro-workshop-badge]][proc-macro-workshop]
 
@@ -80,6 +80,6 @@ Make procedural macros unit testable. As a consequence of being specific to proc
 
 ## Report errors from within a procedural macro
 
-Procedural macros have two ways of reporting errors. The first is to `panic`. The second is to emit a `compile_error` macro invocation.
+Procedural [macros][p-macros] have two ways of reporting errors. The first is to `panic`. The second is to emit a `compile_error` macro invocation.
 
 </div>

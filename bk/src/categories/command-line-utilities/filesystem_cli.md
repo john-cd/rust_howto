@@ -1,6 +1,6 @@
 # File listing and display
 
-{{#include filesystem.incl.md}}
+{{#include filesystem_cli.incl.md}}
 
 ## `lsd` {#lsd}
 
@@ -42,7 +42,7 @@ bat -A /etc/hosts
 [![open-github][c-open-github-badge]][c-open-github]
 [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]
 
-`open` opens a path or URL using the program configured on the system.
+`open` opens a path or [URL][p-url] using the program configured on the system.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

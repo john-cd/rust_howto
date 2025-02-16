@@ -1,6 +1,6 @@
 # Write code
 
-{{#include writing.incl.md}}
+{{#include code_writing.incl.md}}
 
 ## Generate a Rust project from a template {#cargo-generate}
 
@@ -20,7 +20,7 @@
 [![cargo-crates-github][c-cargo_crates-github-badge]][c-cargo_crates-github]
 [![cargo-crates-lib.rs][c-cargo_crates-lib.rs-badge]][c-cargo_crates-lib.rs]
 
-`cargo crates` is a cargo command to quickly open the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ or[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳ page for the latest version of a crate.
+`cargo crates` is a [cargo][p-cargo] command to quickly open the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ or[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳ page for the latest version of a crate.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

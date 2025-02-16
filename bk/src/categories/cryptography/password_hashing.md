@@ -6,9 +6,9 @@ A [key derivation function][key_derivation_function]⮳ (KDF) is a cryptographic
 
 The original use for a KDF is key derivation, the generation of multiple keys from secret passwords or passphrases.
 
-Despite their original use for key derivation, KDFs are possibly better known for their use in password hashing (password verification by hash comparison), as used by the `passwd` file or `shadow` password file. Password hash functions should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
+Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p-hashing] (password verification by hash comparison), as used by the `passwd` file or `shadow` password file. Password hash [functions][p-functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic. The non-secret parameters are called "salt" in this context.
 
-In that role, key derivation functions take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive.
+In that role, key derivation [functions][p-functions] take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive.
 
 ## Hash a password, then verify a password against the hash {#argon2}
 
@@ -49,7 +49,7 @@ The [`scrypt`][c-scrypt]⮳{{hi:scrypt}} key derivation function is designed to 
 [![bcrypt-github][c-bcrypt-github-badge]][c-bcrypt-github]
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
-['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, bcrypt cannot be used to derive a 512-bit key from a password.
+['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force [search][p-search] attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, bcrypt cannot be used to [derive][p-derive] a 512-bit key from a password.
 
 [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}
 
@@ -69,7 +69,7 @@ The salt is generated using [`ring::rand::SecureRandom::fill`][c-ring::rand::Sec
 {{#include ../../../crates/cats/cryptography/tests/password_hashing/pbkdf2.rs:example}}
 ```
 
-For more algorithms, see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github].
+For more [algorithms][p-algorithms], see [Rust Crypto Password Hashes][rustcrypto-password-hashes-github].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

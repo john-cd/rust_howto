@@ -99,5 +99,5 @@ bacon clippy
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/919)
-(See cargo-make if you want something with a bulkier syntax but more cross-platform portability)
+(See cargo-make if you want something with a bulkier syntax but more [cross-platform][p-cross-platform] portability)
 </div>

@@ -1,6 +1,6 @@
 # Neuroscience
 
-{{#include neuro.incl.md}}
+{{#include neuroscience.incl.md}}
 
 ## Neuro {#neuro}
 

@@ -22,11 +22,11 @@ _default:
 list_not_tested:
     #!/usr/bin/env bash
     root="{{root}}/"
-    comm -1 -3 <(find "${root}crates/ex" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
-          <(find "${root}crates/ex" -type f -wholename "*/tests/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
+    comm -1 -3 <(find "${root}crates" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
+          <(find "${root}crates" -type f -wholename "*/tests/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
     echo "DONE"
 
-# Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates/ex)
+# Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates)
 [unix]
 @convert_example_placeholders:
     ./convert_example_placeholders.sh {{root}}

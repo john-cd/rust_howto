@@ -1,6 +1,6 @@
 # Command-line argument parsing
 
-{{#include arguments.incl.md}}
+{{#include argument_parsing.incl.md}}
 
 ## Using clap's builder API {#clap-builder}
 

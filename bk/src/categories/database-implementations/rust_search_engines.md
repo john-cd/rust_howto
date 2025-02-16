@@ -1,6 +1,6 @@
 # Search engines written in Rust
 
-{{#include search.incl.md}}
+{{#include rust_search_engines.incl.md}}
 
 ## `meilisearch` {#meilisearch}
 
@@ -9,7 +9,7 @@
 [![meilisearch-github][c-meilisearch-github-badge]][c-meilisearch-github]
 [![meilisearch-lib.rs][c-meilisearch-lib.rs-badge]][c-meilisearch-lib.rs]
 
-[meilisearch][c-meilisearch-github]⮳ is a fast search API that fits into your apps, websites, and workflow.
+[meilisearch][c-meilisearch-github]⮳ is a fast [search][p-search] API that fits into your apps, websites, and workflow.
 
 ```rust,editable
 {{#include ../../../crates/cats/database_implementations/tests/search/meilisearch.rs:example}}
@@ -24,7 +24,7 @@
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-database-implementations][cat-database-implementations-badge]][cat-database-implementations]{{hi:Database implementations}}
 
-[tantivy][c-tantivy-github]⮳ is a full-text search engine library inspired by Apache Lucene.
+[tantivy][c-tantivy-github]⮳ is a full-text [search][p-search] engine library inspired by Apache Lucene.
 
 ```rust,editable
 {{#include ../../../crates/cats/database_implementations/tests/search/tantivy.rs:example}}

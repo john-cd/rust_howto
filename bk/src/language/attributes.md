@@ -29,7 +29,7 @@ For production-ready code{{hi:Production-ready code}}, replace the above by the 
 {{#include ../../crates/language/tests/feat/attributes_production.rs:example}}
 ```
 
-You also apply these attributes to specific functions:
+You also apply these attributes to specific [functions][p-functions]:
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/allow_dead_code.rs:example}}

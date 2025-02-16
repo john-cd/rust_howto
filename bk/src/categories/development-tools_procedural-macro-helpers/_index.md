@@ -20,7 +20,7 @@ Declarative macros are defined using a `macro_rules!` syntax and work by pattern
 
 ## Tools for macro development
 
-{{#include tools.incl.md}}
+{{#include macro_tools.incl.md}}
 
 ## Compile macros ahead of time
 

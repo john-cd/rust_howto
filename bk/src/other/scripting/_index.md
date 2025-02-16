@@ -1,5 +1,7 @@
 # Scripting in Rust
 
+## Rhai
+
 {{#include rhai.incl.md}}
 
 {{#include refs.incl.md}}

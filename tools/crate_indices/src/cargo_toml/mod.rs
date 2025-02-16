@@ -9,7 +9,7 @@ use walkdir::WalkDir;
 pub fn get_dependencies() -> Result<Vec<String>> {
     let mut dependencies: Vec<String> = Vec::new();
 
-    for entry in WalkDir::new("/code/crates/ex").min_depth(1).into_iter() {
+    for entry in WalkDir::new("/code/crates").min_depth(1).into_iter() {
         let entry = entry?;
         if entry.file_name() == "Cargo.toml" {
             let path = entry.path();

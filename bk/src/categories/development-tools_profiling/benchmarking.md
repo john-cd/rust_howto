@@ -21,7 +21,7 @@
 
 `criterion` is a statistically accurate benchmarking tool.
 
-`criterion.rs` helps you write fast code by detecting and measuring performance improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the performance of your code.
+`criterion` helps you write fast code by detecting and measuring [performance][p-performance] improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the [performance][p-performance] of your code.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/tests/criterion.rs:example}}
@@ -56,8 +56,8 @@
 - Constant feedback about the benchmark progress and current estimates.
 - Warm-up runs can be executed before the actual benchmark.
 - Cache-clearing commands can be set up before each timing run.
-- Statistical outlier detection to detect interference from other programs and caching effects.
-- Export results to various formats: CSV, JSON, Markdown, AsciiDoc.
+- Statistical outlier detection to detect interference from other programs and [caching][p-caching] effects.
+- Export results to various formats: [CSV][p-csv], [JSON][p-json], [Markdown][p-markdown], AsciiDoc.
 - Parameterized benchmarks (e.g. vary the number of threads).
 - Cross-platform
 

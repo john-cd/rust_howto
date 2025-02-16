@@ -6,7 +6,7 @@
 
 [![iced-website][c-iced-website-badge]][c-iced-website] [![iced][c-iced-badge]][c-iced] [![iced-crates.io][c-iced-crates.io-badge]][c-iced-crates.io] [![iced-github][c-iced-github-badge]][c-iced-github] [![iced-lib.rs][c-iced-lib.rs-badge]][c-iced-lib.rs]{{hi:iced}}{{hi:Graphics}}{{hi:Gui}}{{hi:Interface}}{{hi:Ui}}{{hi:Widgets}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-[`iced`][c-iced]⮳ is a cross-platform GUI library for Rust, inspired by Elm. Retained mode UI with a nice API. It's usable for basic apps, but has a number of missing features including multiple windows, layers, and proper text rendering.
+[`iced`][c-iced]⮳ is a [cross-platform][p-cross-platform] [GUI][p-gui] library for Rust, inspired by Elm. Retained mode UI with a nice API. It's usable for basic apps, but has a number of missing features including multiple [windows][p-windows], layers, and proper text [rendering][p-rendering].
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/iced.rs:example}}

@@ -49,7 +49,7 @@ Key constructs in Rust:
 
 ## `Send` and `Sync`
 
-{{#include send.incl.md}}
+{{#include send_sync.incl.md}}
 
 ## See also
 

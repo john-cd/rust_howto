@@ -2,7 +2,7 @@
 
 {{#include github_actions.incl.md}}
 
-GitHub Action for installing development tools (mainly from GitHub Releases).
+GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
 ## Install development tools {#installation-of-development-tools}
 
@@ -41,7 +41,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 [![rust-cache-github][c-rust_cache-github-badge]][c-rust_cache-github]
 [![rust-cache-lib.rs][c-rust_cache-lib.rs-badge]][c-rust_cache-lib.rs]
 
-`Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a cargo build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
+`Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a [cargo][p-cargo] build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
 
 Example `.github/workflows/<name>.yml`
 
@@ -127,7 +127,7 @@ rust-cache (github action)
 Github action to cache compilation artifacts and speed up subsequent runs.
 
 install-action (github action)
-GitHub Action for installing development tools (mainly from GitHub Releases).
+GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
 ### CI {#ci}
 

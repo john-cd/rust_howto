@@ -6,7 +6,7 @@
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:csv::StringRecord}}⮳ — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
+Reads standard [CSV][p-csv] records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:csv::StringRecord}}⮳ — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
 [`csv::ByteRecord`][c-csv::ByteRecord]{{hi:csv::ByteRecord}}⮳ makes no assumptions about UTF-8.
 
 ```rust,editable
@@ -23,7 +23,7 @@ Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:c
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi: Delimiter}}
 
-Reads CSV records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::ReaderBuilder::delimiter]{{hi:csv::ReaderBuilder::delimiter}}⮳.
+Reads [CSV][p-csv] records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::ReaderBuilder::delimiter]{{hi:csv::ReaderBuilder::delimiter}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/csv/delimiter.rs:example}}
@@ -39,7 +39,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 {{#include ../../../crates/cats/encoding/tests/csv/filter.rs:example}}
 ```
 
-This example has been adapted from [the csv crate tutorial][c-csv-tutorial]⮳
+This example has been adapted from [the [csv][p-csv] crate tutorial][c-csv-tutorial]⮳
 
 ## Handle invalid CSV data with `serde` {#handle-invalid-csv}
 
@@ -65,7 +65,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-The following example shows how to serialize custom structs{{hi:Serialize custom structs}} as CSV records using the [`serde`][c-serde]{{hi:serde}}⮳ crate.
+The following example shows how to serialize custom [structs][p-structs]{{hi:Serialize custom structs}} as CSV records using the [`serde`][c-serde]{{hi:serde}}⮳ crate.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/csv/serde_serialize.rs:example}}
@@ -75,7 +75,7 @@ The following example shows how to serialize custom structs{{hi:Serialize custom
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Transform a CSV file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][c-csv]{{hi:csv}}⮳ crate to read and write the csv file, and [`serde`][c-serde]{{hi:serde}}⮳ to deserialize and serialize the rows to and from bytes.
+Transform a [CSV][p-csv] file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][c-csv]{{hi:csv}}⮳ crate to read and write the csv file, and [`serde`][c-serde]{{hi:serde}}⮳ to deserialize and serialize the rows to and from bytes.
 
 See [`csv::Reader::deserialize`][c-csv::Reader::deserialize]{{hi:csv::Reader::deserialize}}⮳, [`serde::Deserialize`][c-serde::Deserialize]{{hi:serde::Deserialize}}⮳ and [`std::str::FromStr`][c-std::str::FromStr]{{hi:std::str::FromStr}}⮳.
 

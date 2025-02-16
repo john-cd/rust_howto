@@ -6,7 +6,7 @@
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Log levels}}
 
-Creates two modules `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environmental variable.
+Creates two [modules][p-modules] `foo` and nested `foo::bar` with logging directives controlled separately with [`RUST_LOG`][c-env_logger-RUST_LOG]{{hi:RUST_LOG}}⮳ environmental variable.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_mod.rs:example}}

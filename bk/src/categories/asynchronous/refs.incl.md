@@ -24,5 +24,14 @@
 [ex-asynchronous-streams]: streams.md#streams
 [ex-asynchronous-tokio-runtime]: async_and_blocking.md#tokio-runtime
 [ex-asynchronous-tokio]: async_channels.md#tokio
-[ex-asynchronous-utilities]: utilities.md#utilities
+[ex-asynchronous-utilities]: async_utilities.md#utilities
 [ex-asynchronous-which-crate-provides-what]: async.md#which-crate-provides-what
+[p-async]: async.md
+[p-functions]: ../../language/functions.md
+[p-futures]: futures.md
+[p-language]: ../../language/index.md
+[p-main]: ../../language/main.md
+[p-node]: ../development-tools_ffi/node.md
+[p-tokio]: tokio.md
+[p-traits]: ../../language/traits.md
+[p-writing]: ../development-tools_cargo-plugins/code_writing.md

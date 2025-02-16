@@ -6,7 +6,7 @@
 
 This program depicts the use of [`ansi_term`][c-ansi_term-crates.io]{{hi:ansi_term}}⮳ crate and how it is used for controlling colors and formatting, such as blue bold text or yellow underlined text, on ANSI terminals{{hi:ANSI terminals}}.
 
-There are two main data structures in [`ansi_term`][c-ansi_term-crates.io]{{hi:ansi_term}}⮳: [`ansi_term::ANSIString`][c-ansi_term::ANSIString]{{hi:ansi_term::ANSIString}}⮳ and [`Style`][c-ansi_term::Style]{{hi:ansi_term:Style}}⮳. A [`Style`][c-ansi_term::Style]⮳{{hi:Style}} holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Color variants that represent simple foreground color styles. An [`ansi_term::ANSIString`][c-ansi_term::ANSIString]{{hi:ansi_term::ANSIString}}⮳ is a string paired with a [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳.
+There are two main [data structures][p-data-structures] in [`ansi_term`][c-ansi_term-crates.io]{{hi:ansi_term}}⮳: [`ansi_term::ANSIString`][c-ansi_term::ANSIString]{{hi:ansi_term::ANSIString}}⮳ and [`Style`][c-ansi_term::Style]{{hi:ansi_term:Style}}⮳. A [`Style`][c-ansi_term::Style]⮳{{hi:Style}} holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Color variants that represent simple foreground color styles. An [`ansi_term::ANSIString`][c-ansi_term::ANSIString]{{hi:ansi_term::ANSIString}}⮳ is a string paired with a [`ansi_term::Style`][c-ansi_term::Style]{{hi:ansi_term::Style}}⮳.
 
 **Note:** British English uses *Color* instead of *Color*.
 
@@ -43,10 +43,10 @@ For anything more complex than plain foreground color changes, the code needs to
 [![crossterm-github][c-crossterm-github-badge]][c-crossterm-github]
 [![crossterm-lib.rs][c-crossterm-lib.rs-badge]][c-crossterm-lib.rs]
 
-Low-level cross-platform terminal rendering and event handling.
+Low-level [cross-platform][p-cross-platform] terminal [rendering][p-rendering] and event handling.
 
-[`crossterm`][c-crossterm]⮳ is a pure-Rust, terminal manipulation library used to write cross-platform text-based interfaces.
-It supports all UNIX and Windows terminals down to Windows 7.
+[`crossterm`][c-crossterm]⮳ is a pure-Rust, terminal manipulation library used to write [cross-platform][p-cross-platform] text-based interfaces.
+It supports all [UNIX][p-unix] and Windows terminals down to [Windows][p-windows] 7.
 
 - Full control over writing and flushing output buffer
 - Is tty
@@ -71,7 +71,7 @@ Most popular
 
 [![termcolor][c-termcolor-badge]][c-termcolor] [![termcolor-crates.io][c-termcolor-crates.io-badge]][c-termcolor-crates.io] [![termcolor-github][c-termcolor-github-badge]][c-termcolor-github] [![termcolor-lib.rs][c-termcolor-lib.rs-badge]][c-termcolor-lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
 
-[`termcolor`][c-termcolor] is a simple cross platform library for writing colored text to a terminal.
+[`termcolor`][c-termcolor] is a simple [cross platform][p-cross-platform] library for writing colored text to a terminal.
 
 ## `anstyle` {#anstyle}
 
@@ -83,7 +83,7 @@ Most popular
 
 [![anstream-website][c-anstream-website-badge]][c-anstream-website] [![anstream][c-anstream-badge]][c-anstream] [![anstream-crates.io][c-anstream-crates.io-badge]][c-anstream-crates.io] [![anstream-github][c-anstream-github-badge]][c-anstream-github] [![anstream-lib.rs][c-anstream-lib.rs-badge]][c-anstream-lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-[`anstream`][c-anstream] is a simple cross platform library for writing colored text to a terminal.
+[`anstream`][c-anstream] is a simple [cross platform][p-cross-platform] library for writing colored text to a terminal.
 
 [![nu-ansi-term][c-nu_ansi_term-badge]][c-nu_ansi_term] [![nu-ansi-term-crates.io][c-nu_ansi_term-crates.io-badge]][c-nu_ansi_term-crates.io] [![nu-ansi-term-github][c-nu_ansi_term-github-badge]][c-nu_ansi_term-github] [![nu-ansi-term-lib.rs][c-nu_ansi_term-lib.rs-badge]][c-nu_ansi_term-lib.rs]{{hi:nu-ansi-term}}
 

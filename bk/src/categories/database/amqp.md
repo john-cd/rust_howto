@@ -1,8 +1,8 @@
-# AMQP
+# Message Queues (AMQP)
 
 {{#include amqp.incl.md}}
 
-## Lapin {#lapin}
+## Connect to RabbitMQ with `lapin` {#lapin}
 
 [![lapin][c-lapin-badge]][c-lapin] [![lapin-crates.io][c-lapin-crates.io-badge]][c-lapin-crates.io] [![lapin-github][c-lapin-github-badge]][c-lapin-github] [![lapin-lib.rs][c-lapin-lib.rs-badge]][c-lapin-lib.rs]{{hi:lapin}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
@@ -17,4 +17,5 @@
 
 <div class="hidden">
 [P1 finish; add to SUMMARY](https://github.com/john-cd/rust_howto/issues/1064)
+
 </div>

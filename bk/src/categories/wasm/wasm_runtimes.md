@@ -1,6 +1,6 @@
 # WebAssembly Runtimes
 
-{{#include others.incl.md}}
+{{#include wasm_runtimes.incl.md}}
 
 ## `wasmer` {#wasmer}
 
@@ -44,7 +44,7 @@ Install the [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} CLI with:
 curl https://wasmtime.dev/install.sh -sSf | bash
 ```
 
-Compile your Rust source code (here, `hello.rs`) to WASM, then execute it with [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}:
+Compile your Rust source code (here, `hello.rs`) to [WASM][p-wasm], then execute it with [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}:
 
 ```sh
 rustup target add wasm32-wasip1

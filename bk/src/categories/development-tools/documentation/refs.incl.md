@@ -17,3 +17,6 @@
 [ex-documentation-roxygen]: documentation.md#roxygen
 [ex-documentation-termbook]: mdbook.md#termbook
 [ex-documentation-yapp]: mdbook.md#yapp
+[p-books]: ../../../links/books.md
+[p-cargo]: ../cargo/cargo.md
+[p-concurrency]: ../../concurrency/index.md

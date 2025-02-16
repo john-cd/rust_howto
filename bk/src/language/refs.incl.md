@@ -55,3 +55,12 @@
 [ex-language-variables-and-constants]: variables_and_constants.md#variables-and-constants
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
+[p-documentation]: ../categories/development-tools/documentation/documentation.md
+[p-enums]: enums.md
+[p-functions]: functions.md
+[p-option]: ../standard-library/option.md
+[p-rustup]: ../categories/development-tools/installation/rustup.md
+[p-standard-library]: ../standard-library/index.md
+[p-structs]: structs.md
+[p-traits]: traits.md
+[p-unix]: ../categories/os_unix-apis/unix.md

@@ -20,7 +20,7 @@ To process multiple items from a stream{{hi:Stream}} concurrently, use the [`fut
 
 ## See also
 
-See also Tokio [`async-stream`][c-async_stream]⮳{{hi:async-stream}}.
+See also [Tokio][p-tokio] [`async-stream`][c-async_stream]⮳{{hi:async-stream}}.
 
 [![async-stream][c-async_stream-badge]][c-async_stream]{{hi:async-stream}} [![async_stream-github][c-async_stream-github-badge]][c-async_stream-github]
 

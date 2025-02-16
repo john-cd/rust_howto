@@ -4,7 +4,7 @@
 
 ## Aerospace Protocols
 
-{{#include protocols.incl.md}}
+{{#include aerospace_protocols.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

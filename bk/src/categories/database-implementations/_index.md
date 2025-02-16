@@ -4,13 +4,13 @@
 
 Databases allow clients to store and query large amounts of data in an efficient manner. This category is for database management systems implemented in Rust.
 
-## Databases
+## Databases written in Rust
 
 {{#include databases.incl.md}}
 
-## Search
+## Search engines written in Rust
 
-{{#include search.incl.md}}
+{{#include rust_search_engines.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

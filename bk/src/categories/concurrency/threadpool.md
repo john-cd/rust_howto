@@ -22,7 +22,7 @@ This example generates an image by drawing a fractal from the [Julia set][web-ju
 
 [web-julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
 
-Allocate memory for output image of given width and height with [`image::ImageBuffer::new`][c-image::ImageBuffer::new]{{hi:image::ImageBuffer::new}}⮳.
+Allocate [memory][p-memory] for output image of given width and height with [`image::ImageBuffer::new`][c-image::ImageBuffer::new]{{hi:image::ImageBuffer::new}}⮳.
 [`image::Rgb::from_channels`][c-image::Rgb::from_channels]{{hi:image::Rgb::from_channels}}⮳ calculates RGB pixel values. Create [`threadpool::ThreadPool`][c-threadpool::ThreadPool]{{hi:threadpool::ThreadPool}}⮳ with thread count equal to number of cores with [`num_cpus::get`][c-num_cpus::get]{{hi:num_cpus::get}}⮳.
 [`threadpool::ThreadPool::execute`][c-threadpool::ThreadPool::execute]{{hi:threadpool::ThreadPool::execute}}⮳ receives each pixel as a separate job.
 

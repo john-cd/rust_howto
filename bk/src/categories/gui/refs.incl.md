@@ -24,3 +24,15 @@
 [ex-gui-webrender]: 2d_renderers.md#webrender
 [ex-gui-winit]: window_creation.md#winit
 [ex-gui-xilem]: other_gui.md#xilem
+[p-audio]: ../multimedia_audio/audio.md
+[p-containers]: ../../other/containers/containers.md
+[p-cross-platform]: ../../other/cross-platform/_index.md
+[p-documentation]: ../development-tools/documentation/documentation.md
+[p-embedded]: ../embedded/_index.md
+[p-game-development]: ../game-development/game_development.md
+[p-gpu]: ../../other/gpu/gpu.md
+[p-gui]: _index.md
+[p-main]: ../../language/main.md
+[p-option]: ../../standard-library/option.md
+[p-rendering]: ../rendering/rendering.md
+[p-windows]: ../os_windows-apis/windows.md

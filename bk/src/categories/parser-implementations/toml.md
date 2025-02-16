@@ -6,7 +6,7 @@
 
 [![toml][c-toml-badge]][c-toml] [![toml-crates.io][c-toml-crates.io-badge]][c-toml-crates.io] [![toml-github][c-toml-github-badge]][c-toml-github] [![toml-lib.rs][c-toml-lib.rs-badge]][c-toml-lib.rs]{{hi:toml}}{{hi:Encoding}}{{hi:toml}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 
-`toml` is a native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for TOML data to facilitate deserializing and serializing Rust structures.
+`toml` is a native Rust encoder and decoder of TOML-formatted files and [streams][p-streams]. Provides implementations of the standard Serialize/Deserialize [traits][p-traits] for TOML data to facilitate deserializing and serializing Rust structures.
 
 ## `toml_edit` {#toml-edit}
 

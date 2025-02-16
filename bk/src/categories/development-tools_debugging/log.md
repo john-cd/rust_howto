@@ -30,7 +30,7 @@ DEBUG:main: Executing query: DROP TABLE students
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-Proper error handling{{hi:Error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`log`][c-log]{{hi:log}}'s convenience macro [`log::error`][c-log::error]{{hi:log::error}}⮳.
+Proper [error handling][p-error-handling]{{hi:Error handling}} considers exceptions exceptional. Here, an error logs to stderr with [`log`][c-log]{{hi:log}}'s convenience macro [`log::error`][c-log::error]{{hi:log::error}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_error.rs:example}}
@@ -44,7 +44,7 @@ Proper error handling{{hi:Error handling}} considers exceptions exceptional. Her
 
 [`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 
-Creates a custom logger configuration{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
+Creates a custom logger [configuration][p-configuration]{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_stdout.rs:example}}
@@ -54,7 +54,7 @@ Creates a custom logger configuration{{hi:Custom logger configuration}} using th
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-Implements a custom logger `ConsoleLogger` which prints to stdout. In order to use the logging macros, `ConsoleLogger` implements the [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ trait and [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ installs it.
+Implements a custom logger `ConsoleLogger` which prints to stdout. In order to use the logging [macros][p-macros], `ConsoleLogger` implements the [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ trait and [`log::Log`][c-log::Log]{{hi:log::Log}}⮳ installs it.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_custom_logger.rs:example}}

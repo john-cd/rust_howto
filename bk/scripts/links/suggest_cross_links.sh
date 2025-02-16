@@ -54,13 +54,12 @@ do
   # Use directory name if index or _index
   base="$( basename -s .md $( sed -E -e 's/_?index.md//' -e 's/other.?\.md//' <<< ${file} ) | sed -E -e 's/^_//' )"
   if [ -z ${base} ]; then
-    echo ">> Skip"
     continue
   fi
   if [ ${#base} -lt 3 ]; then
     continue
   fi
-  if [ $base == "other" -o $base == "result" -o $base == "time" ]; then
+  if [ $base == "other" -o $base == "result" -o $base == "time" -o $base == "install" -o $base == "main" -o $base == "building" -o $base == "toml" -o $base == "crates" -o $base == "learning" ]; then
     continue
   fi
   with_space=$(tr '_-' ' ' <<< $base)
@@ -73,8 +72,9 @@ do
   # ...in all book Markdown files, except a few categories
   # Ignore patterns in {{#include }} statements
   # -l = Print the paths with at least one match; -P = PRCE engine; -t = file type; -g = glob
-  start_line='(^[^#{]*?[^a-zA-Z#/\`\\["_-])'
-  after='([^a-zA-Z"}/\\]_-])'
+  start_line='(^[^|[#{]*?[^a-zA-Z#/`["_=@.,:<-])'
+  after='([^a-zA-Z"}/._-])'
+  #echo "${start_line}${pattern}${after}"
   for file_with_pattern in $(rg -t md -P -l -i -t md -g '!*.incl.md' -g '!*SUMMARY.md' -g '!*index.md' -g'!*refs.md' -g'!*crates*' "${start_line}${pattern}${after}" "${root}src" )
   do
     # Do not self-reference

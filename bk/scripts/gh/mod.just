@@ -56,7 +56,7 @@ create_issues_for_examples:
   for file in $(find {{root}} -type f -name "*.rs" )
   do
     base=$(basename $file)
-    rel=$(realpath --relative-to={{root}}/crates/ex $file)
+    rel=$(realpath --relative-to={{root}}/crates $file)
     echo ">> $rel"
     for todo in $(sed -nE 's~^ *// *TODO(.*)$~\1~pg' $file)
     do

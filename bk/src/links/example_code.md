@@ -4,13 +4,13 @@
 
 Example codebases include:
 
-- A full template for a REST API written in Rust, engineered for maximum testability: [rust-rest][rust_rest-github]⮳
+- A full template for a REST API [written in Rust][p-written-in-rust], engineered for maximum testability: [rust-rest][rust_rest-github]⮳
 
 ## RealWorld {#realworld}
 
 [![realworld-example-apps][realworld-example-apps-badge]][realworld-example-apps]
 
-- A full-stack RealWorld implementation using Rust, Axum, sqlx, and Yew: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳
+- A full-stack RealWorld implementation using Rust, [Axum][p-axum], sqlx, and [Yew][p-yew]: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳
 
 ## Source code for Rust books {#rust-book-source-code}
 

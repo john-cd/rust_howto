@@ -18,8 +18,8 @@
 Features:
 
 - Similar to JavaScript+Rust with dynamic typing
-- Tight integration with native Rust functions and types
-- Sand-boxing - the scripting engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
+- Tight integration with native Rust [functions][p-functions] and types
+- Sand-boxing - the [scripting][p-scripting] engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/scripting/rhai.rs:example}}

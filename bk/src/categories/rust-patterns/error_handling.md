@@ -12,7 +12,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 {{#include ../../../crates/cats/rust_patterns/tests/error/panic.rs:example}}
 ```
 
-`panic!` is closely tied with the `unwrap` method of both `Option` and `Result` enums. Both implementations call `panic!` when they are set to `None` or `Err` variants.
+`panic!` is closely tied with the `unwrap` method of both `Option` and `Result` [enums][p-enums]. Both implementations call `panic!` when they are set to `None` or `Err` variants.
 
 ```rust,editable,should_panic
 {{#include ../../../crates/cats/rust_patterns/tests/error/unwrap.rs:example}}
@@ -60,7 +60,7 @@ Another example:
 
 [`std::io::Error`][c-std::io::Error]{{hi:std::io::Error}}⮳ defined type implementing the [`std::error::Error`][c-std::error::Error]{{hi:std::error::Error}}⮳ trait.
 
-The below recipe will tell how long the system has been running by opening the Unix file `/proc/uptime` and parse the content to get the first number. It returns the uptime, unless there is an error.
+The below recipe will tell how long the system has been running by opening the [Unix][p-unix] file `/proc/uptime` and [parse][p-parse] the content to get the first number. It returns the uptime, unless there is an error.
 
 ```rust,editable
 {{#include ../../../crates/language/tests/feat/main_test.rs:example}}

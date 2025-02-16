@@ -11,7 +11,7 @@
 Key Features:
 
 - Interactive HTML within Rust: Includes a macro for declaring interactive HTML using Rust expressions (similar to JSX in React).
-- High Performance: Yew ensures optimal performance by minimizing DOM API calls during page rendering and simplifying the process of offloading tasks to background web workers.
+- High Performance: Yew ensures optimal [performance][p-performance] by minimizing DOM API calls during page [rendering][p-rendering] and simplifying the process of offloading tasks to background web workers.
 - JavaScript Interoperability: Yew supports JavaScript integration, allowing the use of NPM packages and integrating smoothly with existing JavaScript projects.
 
 ```rust,editable
@@ -30,5 +30,5 @@ Key Features:
 <div class="hidden">
 [yew: write / organize (P2)](https://github.com/john-cd/rust_howto/issues/498)
 
-cover other WASM based frameworks
+cover other [WASM][p-wasm] based frameworks
 </div>

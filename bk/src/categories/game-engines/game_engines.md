@@ -20,7 +20,7 @@
 
 [`fyrox`][c-fyrox]⮳{{hi:fyrox}} is a 2D/3D game engine with a scene editor. Like Godot, but in Rust.
 
-"An OOP-focused game engine with 3D and 2D support and a full GUI scene editor."
+"An OOP-focused game engine with 3D and 2D support and a full [GUI][p-gui] scene editor."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/fyrox.rs:example}}
@@ -30,7 +30,7 @@
 
 [![ggez-website][c-ggez-website-badge]][c-ggez-website] [![ggez][c-ggez-badge]][c-ggez] [![ggez-crates.io][c-ggez-crates.io-badge]][c-ggez-crates.io] [![ggez-github][c-ggez-github-badge]][c-ggez-github] [![ggez-lib.rs][c-ggez-lib.rs-badge]][c-ggez-lib.rs]{{hi:ggez}}{{hi:Game}}{{hi:Graphics}}{{hi:2d}}{{hi:ggez}}{{hi:Engine}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}}
 
-`ggez` is "a simpler option for 2d games only."
+`ggez` is "a simpler [option][p-option] for 2d [games][p-games] only."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/ggez.rs:example}}
@@ -50,9 +50,9 @@
 
 [![glam][c-glam-badge]][c-glam] [![glam-crates.io][c-glam-crates.io-badge]][c-glam-crates.io] [![glam-github][c-glam-github-badge]][c-glam-github] [![glam-lib.rs][c-glam-lib.rs-badge]][c-glam-lib.rs]{{hi:glam}}{{hi:Gamedev}}{{hi:Math}}{{hi:Matrix}}{{hi:Quaternion}}{{hi:Vector}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`glam` is a 3D math library for games and graphics.
+`glam` is a 3D math library for [games][p-games] and [graphics][p-graphics].
 
-"Fast math library optimized for game development use cases."
+"Fast math library optimized for [game development][p-game-development] use cases."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/glam.rs:example}}

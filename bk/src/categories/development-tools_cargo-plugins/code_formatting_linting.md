@@ -63,7 +63,7 @@ cargo fix
 
 [cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for cargo projects with 🐶
 
-Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, formatting of the code, of JSON, and YAML files...) before committing code, prior to submission to code review.
+Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p-formatting] of the code, of [JSON][p-json], and YAML files...) before committing code, prior to submission to code review.
 
 Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
@@ -78,7 +78,7 @@ Then run tests in your project directory.
 cargo test
 ```
 
-See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework for managing and maintaining multi-language pre-commit hooks.
+See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework for managing and [maintaining][p-maintaining] multi-language pre-commit hooks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

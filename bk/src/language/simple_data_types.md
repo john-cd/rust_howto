@@ -14,7 +14,7 @@
   - Access via `let five_hundred = x.0;`
   - Destructuring via `let (x, y, z) = tup;`
 - Arrays: `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. access via `let first = a[0];`
-  - A vector is a similar collection type provided by the standard library that is allowed to grow or shrink in size
+  - A vector is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size
 - Unit (aka void): `()`
 - Type aliases: `type Kilometers = i32;`
 

@@ -11,7 +11,7 @@ The default linker does a good job, but there are faster alternatives depending 
 - [`lld`][lld-website]{{hi:lld}}⮳ on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
 - [`zld`][zld-github]{{hi:zld}}⮳ on MacOS. [![zld-github][zld-github-badge]][zld-github]
 
-To speed up the linking phase you have to install the alternative linker on your machine and add this configuration file to the project:
+To speed up the linking phase you have to install the alternative linker on your machine and add this [configuration][p-configuration] file to the project:
 
 ```toml
 # .cargo/config.toml

@@ -4,7 +4,7 @@
 
 ## Aerospace
 
-{{#include aero.incl.md}}
+{{#include aerospace.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

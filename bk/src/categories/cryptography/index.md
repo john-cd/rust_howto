@@ -4,13 +4,37 @@
 
 Securing data.
 
+## AEAD
+
+{{#include aead.incl.md}}
+
+## Certificates
+
+{{#include certificates.incl.md}}
+
 ## Encryption
 
 {{#include encryption.incl.md}}
 
-## Hashing
+### Hashing
 
 {{#include hashing.incl.md}}
+
+## Password Hashing
+
+{{#include password_hashing.incl.md}}
+
+## Signatures
+
+{{#include signature.incl.md}}
+
+## TLS
+
+{{#include tls.incl.md}}
+
+## Utilities
+
+{{#include cryptography_utilities.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

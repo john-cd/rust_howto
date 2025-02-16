@@ -28,7 +28,7 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 
 [![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database}} [![csv-sample][csv-sample-badge]][csv-sample]
 
-This recipe lists the nationalities of the first 7999 artists in the database of the [`Museum of Modern Art`][csv-sample]⮳ in descending order.
+This recipe lists the nationalities of the first 7999 artists in the [database][p-database] of the [`Museum of Modern Art`][csv-sample]⮳ in descending order.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/postgres/aggregate_data.rs:example}}
@@ -59,7 +59,7 @@ This recipe lists the nationalities of the first 7999 artists in the database of
 
 [`cornucopia`][c-cornucopia]⮳{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳
 
-Cornucopia is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual database and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
+Cornucopia is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual [database][p-database] and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
 
 The basic premise is thus to:
 

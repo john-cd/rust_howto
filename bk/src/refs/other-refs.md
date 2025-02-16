@@ -1,3 +1,4 @@
+
 [1password-github]: https://github.com/1Password
 [1password-website]: https://1password.com
 [360dialog-website]: https://www.360dialog.com
@@ -51,6 +52,7 @@
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
+[aws-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
 [azure-iot-edge-github]: https://github.com/Azure/iotedge
 [baseview-github-badge]: https://img.shields.io/badge/baseview-steelblue?logo=github
@@ -123,6 +125,7 @@
 [book-easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [book-effective-rust-badge]: https://img.shields.io/badge/Effective_rust-peru?logo=mdbook
 [book-effective-rust]: https://www.oreilly.com/library/view/effective-rust/9781098151393
+[book-embedded-no_std]: https://docs.rust-embedded.org/book/intro/no-std.html
 [book-mdbook-badge]: https://img.shields.io/badge/mdBook-peru?logo=mdbook
 [book-programming-rust-2nd-edition-badge]: https://img.shields.io/badge/Programming_rust_2nd_edition-peru?logo=mdbook
 [book-programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586
@@ -285,6 +288,7 @@
 [chroma-website]: https://www.trychroma.com
 [clever-cloud-website]: https://www.clever-cloud.com
 [client-side-server-with-rust]: https://logankeenan.com/posts/client-side-server-with-rust-a-new-approach-to-ui-development
+[clion-website]: https://www.jetbrains.com/clion
 [cloudflare-blog]: https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet
 [cloudflare-github]: https://github.com/cloudflare
 [cloudflare-website]: https://www.cloudflare.com
@@ -292,6 +296,7 @@
 [cmccomb-website]: https://cmccomb.com/smartcore_vs_linfa
 [code-maven]: https://rust.code-maven.com
 [codeday-website]: https://www.codeday.org
+[codeLLDB-github]: https://github.com/vadimcn/codelldb
 [codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
 [codevoweb-website]: https://codevoweb.com
 [commitlint-pre-commit-hook-github]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
@@ -326,7 +331,9 @@
 [dapr-website]: https://dapr.io
 [databend-github-badge]: https://img.shields.io/badge/databend-steelblue?logo=github
 [databend-github]: https://github.com/datafuselabs/databend
+[databend-website]: https://www.databend.com
 [datarobot-website]: http://www.datarobot.com
+[daytona-github]: https://github.com/daytonaio
 [daytona-website]: https://www.daytona.io
 [deepgram-github]: https://github.com/deepgram
 [deepgram-website]: https://deepgram.com
@@ -337,6 +344,7 @@
 [desktop-lite-github]: https://github.com/devcontainers/features/tree/main/src/desktop-lite
 [dev-container-cli-github]: https://github.com/devcontainers/cli
 [dev-container-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+[dev-containers-devcontainer.json]: https://code.visualstudio.com/docs/devcontainers/create-dev-container
 [devolutions-website]: https://devolutions.net
 [devx-github-badge]: https://img.shields.io/badge/devx-steelblue?logo=github
 [devx-github]: https://github.com/elastio/devx
@@ -345,6 +353,7 @@
 [discord-website]: https://discord.com
 [disney-website]: https://www.disney.com
 [distil-networks-website]: https://www.distilnetworks.com
+[django-website]: https://www.djangoproject.com
 [docker-cache-github]: https://github.com/ScribeMD/docker-cache
 [docker-compose-website]: https://docs.docker.com/compose
 [docker-desktop-website]: https://www.docker.com/products/docker-desktop
@@ -371,6 +380,7 @@
 [exonum-website]: https://exonum.com
 [faraday-github]: https://github.com/faradayio
 [faraday-website]: http://www.faraday.ai
+[fastly-website]: https://www.fastly.com
 [fedi-website]: https://fedi.xyz
 [fedimint-github]: https://github.com/fedimint/fedimint
 [fermyon-website]: https://www.fermyon.com
@@ -378,7 +388,9 @@
 [ferrous-systems-github]: https://github.com/ferrous-systems
 [ferrous-systems-website]: https://ferrous-systems.com
 [figma-website]: https://www.figma.com
+[firecracker-github]: https://github.com/firecracker-microvm/firecracker
 [firecracker-microvm-website]: https://firecracker-microvm.github.io
+[firefox-website]: https://www.mozilla.org/en-US/firefox/new
 [firosolutions-github]: https://github.com/firosolutions
 [firosolutions-website]: http://firosolutions.com
 [flowdesk-website]: https://flodesk.com
@@ -388,6 +400,7 @@
 [freiheit-website]: https://freiheit.com
 [gamaspace-website]: https://www.gamaspace.com
 [gist-api]: https://developer.github.com/v3/gists
+[git-gitignore-website]: https://git-scm.com/docs/gitignore
 [github-api-rate-limiting]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
 [github-api]: https://developer.github.com/v3/auth
 [github-website]: https://github.com
@@ -399,6 +412,7 @@
 [grail-website]: https://grail.com
 [greenbone-website]: https://greenbone.github.io
 [gremlin-website]: https://www.gremlin.com
+[gtk4-rs-website]: https://gtk-rs.org/gtk4-rs/git/book/introduction.html
 [guide-to-transform-any-machine-into-a-codespace]: https://www.daytona.io/dotfiles/diy-guide-to-transform-any-machine-into-a-codespace
 [headlines-github-badge]: https://img.shields.io/badge/headlines-steelblue?logo=github
 [headlines-github]: https://github.com/creativcoder/headlines
@@ -425,6 +439,9 @@
 [install_action-github]: https://github.com/taiki-e/install-action
 [integer32-github]: https://github.com/integer32llc
 [integer32-website]: https://www.integer32.com
+[intellij-website]: https://www.jetbrains.com/idea
+[io_uring-wikipedia]: https://en.wikipedia.org/wiki/Io_uring
+[jekyll-website]: https://jekyllrb.com
 [jetbrains-website]: https://www.jetbrains.com
 [jfrog-website]: https://jfrog.com
 [jj-github]: https://github.com/martinvonz/jj
@@ -450,6 +467,7 @@
 [lib-rs-stats]: https://lib.rs/stats
 [lib-rs]: https://lib.rs
 [libra-website]: https://libra.org
+[libsodium-website]: https://doc.libsodium.org
 [linebender-website]: https://linebender.org
 [linkerd-website]: https://linkerd.io
 [linux-embracing-rust-will-boost-robotics-community]: https://www.therobotreport.com/linux-embracing-rust-will-boost-robotics-community
@@ -460,6 +478,7 @@
 [localhost:3000]: http://localhost:3000
 [lpalmieri-badge]: https://img.shields.io/badge/lpalmieri-coral
 [lpalmieri-website]: https://www.lpalmieri.com
+[luajit-website]: https://luajit.org
 [lynx-website]: https://www.lynx.com
 [machina-labs-website]: https://machinalabs.ai
 [maidsafe-website]: http://www.maidsafe.net
@@ -490,6 +509,9 @@
 [multimediallc-website]: https://multimediallc.com
 [nextroll-website]: https://www.nextroll.com
 [nginx-proxy-manager]: https://nginxproxymanager.com
+[nginx-website]: https://nginx.org
+[ngrok-website]: https://ngrok.com
+[node.js-website]: https://nodejs.org
 [novonordisk-website]: https://novonordisk.com
 [npm-github]: https://github.com/npm
 [npm-website]: https://www.npmjs.com
@@ -502,8 +524,10 @@
 [onesignal-website]: https://onesignal.com
 [openobserve-github-badge]: https://img.shields.io/badge/openobserve-steelblue?logo=github
 [openobserve-github]: https://github.com/openobserve/openobserve
+[openobserve-website]: https://openobserve.ai
 [opensrcsec-website]: https://opensrcsec.com
 [opentelemetry-rust]: https://opentelemetry.io/docs/instrumentation/rust
+[opentelemetry-website]: https://opentelemetry.io
 [openuk-website]: https://openuk.uk
 [openvas-github]: https://github.com/greenbone/openvas-scanner
 [os-sci-website]: https://os-sci.com
@@ -538,6 +562,7 @@
 [primitive-f64::sin]: https://doc.rust-lang.org/std/primitive.f64.html#method.sin
 [primitive-f64::sqrt]: https://doc.rust-lang.org/std/primitive.f64.html#method.sqrt
 [primitive-f64::to_radians]: https://doc.rust-lang.org/std/primitive.f64.html#method.to_radians
+[primitive-f64::total_cmp]: https://doc.rust-lang.org/std/primitive.f64.html#method.total_cmp
 [primitive-f64]: https://doc.rust-lang.org/std/primitive.f64.html
 [primitive-i128]: https://doc.rust-lang.org/std/primitive.i128.html
 [primitive-i16]: https://doc.rust-lang.org/std/primitive.i16.html
@@ -568,6 +593,7 @@
 [qdrant-website]: https://qdrant.tech
 [qumulo-website]: https://qumulo.com
 [qwiet-ai-website]: https://qwiet.ai
+[rails-website]: https://rubyonrails.org
 [readyset-website]: https://readyset.io
 [realworld-actix-fullstack-github]: https://github.com/Bechma/realworld-actix-fullstack
 [realworld-example-apps-badge]: https://img.shields.io/badge/realworld_examples-steelblue?logo=github
@@ -610,6 +636,7 @@
 [rust-blog]: https://blog.rust-lang.org
 [rust-by-example]: https://doc.rust-lang.org/rust-by-example/index.html
 [rust-by-practice-github]: https://github.com/sunface/rust-by-practice
+[rust-cache-github]: https://github.com/Swatinem/rust-cache
 [rust-ci-tooling]: https://rodneylab.com/rust-ci-tooling
 [rust-companies-github]: https://github.com/omarabid/rust-companies
 [rust-cookbook-contributors]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
@@ -620,7 +647,7 @@
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation-website]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
-[rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates/ex
+[rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
 [rust-howto-drafts-badge]: https://img.shields.io/badge/rust__howto_drafts-steelblue?logo=github
@@ -663,18 +690,21 @@
 [rustcrypto-password-hashes-github]: https://github.com/RustCrypto/password-hashes#rustcrypto-password-hashes
 [rustdesk-github]: https://github.com/rustdesk
 [rustdesk-website]: https://rustdesk.com
+[rustfmt.toml]: https://rust-lang.github.io/rustfmt
 [rustmagazine.org]: https://rustmagazine.org
 [rustnl-website]: https://rustnl.org
 [rustpython-github]: https://github.com/RustPython/RustPython
 [rustrover-website]: https://www.jetbrains.com/rust
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup
+[rustup-RUSTUP_]: https://rust-lang.github.io/rustup/environment-variables.html?highlight=RUSTUP_#environment-variables
 [rustup-website-badge]: https://img.shields.io/badge/rustup-coral
 [rustup-website]: https://rustup.rs
 [rustwasm-website]: https://rustwasm.github.io/docs/book/reference/deploying-to-production.html
 [salesforce-website]: https://www.salesforce.com
 [sandboxvr-website]: https://sandboxvr.com
 [sandstorm-website]: https://sandstorm.io
+[scikit-learn-website]: https://scikit-learn.org/stable/index.html
 [scytherobotics-website]: https://www.scytherobotics.com
 [sensirion-website]: https://sensirion.com
 [sentry-website]: https://sentry.io
@@ -684,6 +714,7 @@
 [shopify-website]: https://www.shopify.com
 [shuttle-examples-github]: https://github.com/shuttle-hq/shuttle-examples
 [shuttle-rs-website]: https://www.shuttle.rs
+[simdjson-github]: https://github.com/simdjson/simdjson
 [slowtec-website]: http://www.slowtec.de
 [smartthings-website]: http://www.smartthings.com
 [snips-website]: https://snips.ai
@@ -745,6 +776,7 @@
 [upload-a-build-artifact-website]: https://github.com/marketplace/actions/upload-a-build-artifact
 [uv-github]: https://github.com/astral-sh/uv
 [vailsys-website]: https://www.vailsys.com
+[valgrind-website]: https://valgrind.org
 [veecle-website]: https://www.veecle.io
 [vello-website]: https://linebender.org/vello
 [versioneye-github]: https://github.com/VersionEye
@@ -753,6 +785,7 @@
 [volta-github]: https://github.com/volta-cli
 [volta-website]: https://volta.sh
 [volvo-website]: https://www.volvocars.com
+[vscode-website]: https://code.visualstudio.com
 [warp-website]: https://www.warp.dev
 [wasmer-website]: https://wasmer.io
 [watchful-website]: https://www.watchful.io

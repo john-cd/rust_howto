@@ -28,6 +28,10 @@
 
 {{#include categories/asynchronous/async_traits.incl.md}}
 
+### Async Utilities
+
+{{#include categories/asynchronous/async_utilities.incl.md}}
+
 ### Futures
 
 {{#include categories/asynchronous/futures.incl.md}}
@@ -39,10 +43,6 @@
 ### Tokio
 
 {{#include categories/asynchronous/tokio.incl.md}}
-
-### Utilities
-
-{{#include categories/asynchronous/utilities.incl.md}}
 
 ## Authentication
 
@@ -56,9 +56,9 @@
 
 {{#include categories/command-line-interface/ansi_terminal.incl.md}}
 
-### Arguments
+### Argument Parsing
 
-{{#include categories/command-line-interface/arguments.incl.md}}
+{{#include categories/command-line-interface/argument_parsing.incl.md}}
 
 ### TUI
 
@@ -70,13 +70,13 @@
 
 ## Command Line Utilities
 
-### Filesystem
+### Filesystem Cli
 
-{{#include categories/command-line-utilities/filesystem.incl.md}}
+{{#include categories/command-line-utilities/filesystem_cli.incl.md}}
 
-### Networking
+### Networking Cli
 
-{{#include categories/command-line-utilities/networking.incl.md}}
+{{#include categories/command-line-utilities/networking_cli.incl.md}}
 
 ### Shells
 
@@ -114,10 +114,6 @@
 
 {{#include categories/concurrency/message_passing.incl.md}}
 
-### Send
-
-{{#include categories/concurrency/send.incl.md}}
-
 ### Send Sync
 
 {{#include categories/concurrency/send_sync.incl.md}}
@@ -146,9 +142,13 @@
 
 {{#include categories/cryptography/aead.incl.md}}
 
-### Certs
+### Certificates
 
-{{#include categories/cryptography/certs.incl.md}}
+{{#include categories/cryptography/certificates.incl.md}}
+
+### Cryptography Utilities
+
+{{#include categories/cryptography/cryptography_utilities.incl.md}}
 
 ### Encryption
 
@@ -162,17 +162,13 @@
 
 {{#include categories/cryptography/password_hashing.incl.md}}
 
-### Sign
+### Signature
 
-{{#include categories/cryptography/sign.incl.md}}
+{{#include categories/cryptography/signature.incl.md}}
 
 ### TLS
 
 {{#include categories/cryptography/tls.incl.md}}
-
-### Utilities
-
-{{#include categories/cryptography/utilities.incl.md}}
 
 ## Data Structures
 
@@ -202,9 +198,9 @@
 
 {{#include categories/database/connection_pool.incl.md}}
 
-### KV
+### Key Value Stores
 
-{{#include categories/database/kv.incl.md}}
+{{#include categories/database/key_value_stores.incl.md}}
 
 ### MSSQL
 
@@ -244,9 +240,9 @@
 
 {{#include categories/date-and-time/parse.incl.md}}
 
-### Time
+### Time Crate
 
-{{#include categories/date-and-time/time.incl.md}}
+{{#include categories/date-and-time/time_crate.incl.md}}
 
 ## Cargo
 
@@ -336,6 +332,10 @@
 
 {{#include categories/development-tools_cargo-plugins/code_formatting_linting.incl.md}}
 
+### Code Writing
+
+{{#include categories/development-tools_cargo-plugins/code_writing.incl.md}}
+
 ### Cross Compiling
 
 {{#include categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
@@ -351,10 +351,6 @@
 ### Watching For Changes
 
 {{#include categories/development-tools_cargo-plugins/watching_for_changes.incl.md}}
-
-### Writing
-
-{{#include categories/development-tools_cargo-plugins/writing.incl.md}}
 
 ## Development Tools: Debugging
 
@@ -380,9 +376,9 @@
 
 ## Encoding
 
-### Complex
+### Complex Encoding
 
-{{#include categories/encoding/complex.incl.md}}
+{{#include categories/encoding/complex_encoding.incl.md}}
 
 ### CSV
 
@@ -396,9 +392,9 @@
 
 {{#include categories/encoding/serde.incl.md}}
 
-### Strings
+### String Encoding
 
-{{#include categories/encoding/strings.incl.md}}
+{{#include categories/encoding/string_encoding.incl.md}}
 
 ### Typecasts
 
@@ -410,9 +406,9 @@
 
 {{#include categories/filesystem/cwd.incl.md}}
 
-### Dir
+### Directory Traversal
 
-{{#include categories/filesystem/dir.incl.md}}
+{{#include categories/filesystem/directory_traversal.incl.md}}
 
 ### File Watching
 
@@ -470,9 +466,9 @@
 
 ## OS
 
-### External
+### External Commands
 
-{{#include categories/os/external.incl.md}}
+{{#include categories/os/external_commands.incl.md}}
 
 ### Low Level System Calls
 

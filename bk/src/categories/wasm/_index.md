@@ -39,9 +39,9 @@ WASM can be used to build virtual machines or emulators for other architectures,
 
 {{#include yew.incl.md}}
 
-## Others
+## WASM Runtimes
 
-{{#include others.incl.md}}
+{{#include wasm_runtimes.incl.md}}
 
 ## See also
 

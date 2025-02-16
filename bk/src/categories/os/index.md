@@ -6,7 +6,7 @@ Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 
 ## External
 
-{{#include external.incl.md}}
+{{#include external_commands.incl.md}}
 
 ## Low-level system calls
 

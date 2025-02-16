@@ -8,14 +8,14 @@
 [![cargo-make-crates.io][c-cargo_make-crates.io-badge]][c-cargo_make-crates.io]
 [![cargo-make-github][c-cargo_make-github-badge]][c-cargo_make-github]
 [![cargo-make-lib.rs][c-cargo_make-lib.rs-badge]][c-cargo_make-lib.rs]
-[![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+[![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::[testing][p-testing]]{{hi:Testing}}
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build Utils}}
 
 `cargo make` is a Rust task runner and build tool. The [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} task runner enables to define and configure sets of tasks and run them as a flow. A task is a command, script, rust code, or other sub tasks to execute. Tasks can have dependencies which are also tasks that will be executed before the task itself.
-With a simple toml based configuration file, you can define a multi platform build script that can run build, test, generate documentation, run bench tests, run security validations and more, executed by running a single command.
+With a simple [toml][p-toml] based [configuration][p-configuration] file, you can define a multi platform build script that can run build, test, generate [documentation][p-documentation], run bench tests, run security validations and more, executed by running a single command.
 
 Install with
 
@@ -38,7 +38,7 @@ cargo make --version
 The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are the following:
 
 - It doesn't require any other binaries besides `cargo` and [`rustc`][rustc]⮳{{hi:rustc}}, it fully bootstraps from them
-- Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
+- Unlike bash, it can more easily be [cross platform][p-cross-platform], as it doesn't use the shell.
 
 ### Use `devx` {#devx}
 

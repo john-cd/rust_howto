@@ -21,7 +21,7 @@ There is no clear answer as to which is best between `time` and [`chrono`][c-chr
 
 ## Using the `time` crate
 
-{{#include time.incl.md}}
+{{#include time_crate.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

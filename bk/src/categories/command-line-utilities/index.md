@@ -4,11 +4,11 @@
 
 ## Filesystem
 
-{{#include filesystem.incl.md}}
+{{#include filesystem_cli.incl.md}}
 
 ## Networking
 
-{{#include networking.incl.md}}
+{{#include networking_cli.incl.md}}
 
 ## Shells
 

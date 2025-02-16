@@ -8,7 +8,7 @@
 
 `ignore` is a library for efficiently matching ignore files such as `.gitignore` against file paths.
 
-Recursive filesystem walking that respects ignore files (like .gitignore)
+Recursive [filesystem][p-filesystem] walking that respects ignore files (like .gitignore)
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/ignore.rs:example}}

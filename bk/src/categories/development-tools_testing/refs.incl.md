@@ -5,9 +5,9 @@
 [ex-development-tools_testing-cargo-test]: testing.md#cargo-test
 [ex-development-tools_testing-custom-message]: testing.md#custom-message
 [ex-development-tools_testing-insta]: testing.md#insta
-[p-time]: ../date-and-time/time.md
 [p-cargo]: ../development-tools/cargo/cargo.md
-[p-install]: ../development-tools/installation/install.md
-[p-testing]: testing.md
 [p-crates]: ../../crates/index.md
+[p-install]: ../development-tools/installation/install.md
 [p-language]: ../../language/index.md
+[p-testing]: testing.md
+[p-time]: ../date-and-time/time_crate.md

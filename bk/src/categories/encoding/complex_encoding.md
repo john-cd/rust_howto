@@ -1,6 +1,6 @@
 # Structured Data
 
-{{#include complex.incl.md}}
+{{#include complex_encoding.incl.md}}
 
 ## Serialize and deserialize unstructured JSON {#serde-json}
 
@@ -8,9 +8,9 @@
 
 The [`serde_json`][c-serde_json]{{hi:serde_json}}⮳ crate provides a [`serde_json::from_str`][c-serde_json::from_str]{{hi:serde_json::from_str}}⮳ function to parse{{hi:Parsing}} a `&str` of JSON.
 
-Unstructured JSON can be parsed into a universal [`serde_json::Value`][c-serde_json::Value]{{hi:serde_json::Value}}⮳ type that is able to represent any valid JSON data.
+Unstructured [JSON][p-json] can be parsed into a universal [`serde_json::Value`][c-serde_json::Value]{{hi:serde_json::Value}}⮳ type that is able to represent any valid JSON data.
 
-The example below shows a `&str` of JSON being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
+The example below shows a `&str` of [JSON][p-json] being parsed. The expected value is declared using the [`serde_json::json`][c-serde_json::json]{{hi:serde_json::json}}⮳ macro.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/serde/json.rs:example}}
@@ -20,14 +20,14 @@ The example below shows a `&str` of JSON being parsed. The expected value is dec
 
 [![toml][c-toml-badge]][c-toml]{{hi:toml}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
-TOML is a simple, ergonomic, and readable configuration format that is often used by Rust's tooling - for example `cargo`.
-The following parses some TOML into a universal `toml::Value` that is able to represent any valid TOML data.
+TOML is a simple, ergonomic, and readable [configuration][p-configuration] format that is often used by Rust's tooling - for example `cargo`.
+The following parses some TOML into a universal `toml::Value` that is able to represent any valid [TOML][p-toml] data.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/toml/toml.rs:example}}
 ```
 
-Parse TOML into your own structs using [`serde`][c-serde]{{hi:serde}}⮳.
+Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]{{hi:serde}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/toml/toml1.rs:example}}

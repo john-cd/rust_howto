@@ -11,7 +11,7 @@
 
 [`RustPython`][rustpython-github]{{hi:RustPython}}⮳ is an open-source Python Interpreter written in Rust.
 
-RustPython supports Python 3 (CPython >= 3.11.0). RustPython can be embedded into Rust programs to use Python as a scripting language for your application, or it can be compiled to WebAssembly in order to run Python in the browser.
+RustPython supports Python 3 (CPython >= 3.11.0). RustPython can be embedded into Rust programs to use Python as a [scripting][p-scripting] language for your application, or it can be compiled to WebAssembly in order to run Python in the browser.
 
 ```bash
 cargo install --git https://github.com/RustPython/RustPython rustpython

@@ -30,7 +30,7 @@ tracing-subscriber = "0.3"
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber2.rs:example}}
 ```
 
-Or with a custom formatting layer
+Or with a custom [formatting][p-formatting] layer
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber3.rs:example}}

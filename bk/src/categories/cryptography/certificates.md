@@ -1,5 +1,7 @@
 # Create certificates
 
+{{#include certificates.incl.md}}
+
 For more formats, see Rust Crypto Formats.
 
 - der{{hi:der}}
@@ -11,7 +13,7 @@ For more formats, see Rust Crypto Formats.
 
 [![der-website][c-der-website-badge]][c-der-website] [![der][c-der-badge]][c-der] [![der-crates.io][c-der-crates.io-badge]][c-der-crates.io] [![der-github][c-der-github-badge]][c-der-github] [![der-lib.rs][c-der-lib.rs-badge]][c-der-lib.rs]{{hi:der}}{{hi:Crypto}}{{hi:Asn1}}{{hi:Pkcs}}{{hi:Itu}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Pure Rust embedded-friendly implementation of the Distinguished Encoding Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std` targets.
+Pure Rust embedded-friendly implementation of the Distinguished [Encoding][p-encoding] Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std` targets.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/certs/der.rs:example}}

@@ -4,7 +4,7 @@
 
 The [`AsRef`][c-std::convert::AsRef]⮳{{hi:AsRef}} trait in Rust is used for cheap reference-to-reference conversions.
 It provides a way to convert an object into a reference to another type.
-This trait is often used to allow functions to accept arguments in multiple forms.
+This trait is often used to allow [functions][p-functions] to accept arguments in multiple forms.
 
 ```rust,editable
 {{#include ../../crates/standard_library/tests/other/asref.rs:example}}

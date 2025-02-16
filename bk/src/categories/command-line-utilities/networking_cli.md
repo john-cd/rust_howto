@@ -1,6 +1,6 @@
 # Networking
 
-{{#include networking.incl.md}}
+{{#include networking_cli.incl.md}}
 
 ## `gping` {#gping}
 

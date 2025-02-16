@@ -32,7 +32,7 @@ cargo audit
 
 It audits binaries for known bugs or security vulnerabilities in production, at scale, with zero bookkeeping.
 
-This works by embedding data about the dependency tree in JSON format into a dedicated linker section of the compiled executable.
+This works by embedding data about the dependency tree in [JSON][p-json] format into a dedicated linker section of the compiled executable.
 
 ## List the license(s) of dependencies {#cargo-license}
 
@@ -57,8 +57,8 @@ You can install cargo-license with `cargo install cargo-license` and run it in y
 [`cargo-deny`][c-cargo_deny]⮳{{hi:cargo-deny}} is a cargo plugin that lets you lint your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
 
 - Checks the license information for each crate.
-- Checks for / bans specific crates in your graph, as well as duplicates.
-- Checks advisory databases for crates with security vulnerabilities, or that have been marked as Unmaintained, or which have been yanked from their source registry.
+- Checks for / bans specific [crates][p-crates] in your graph, as well as duplicates.
+- Checks advisory [databases][p-databases] for [crates][p-crates] with security vulnerabilities, or that have been marked as Unmaintained, or which have been yanked from their source registry.
 - Checks the source location for each crate.
 
 Install with:

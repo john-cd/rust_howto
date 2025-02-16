@@ -15,18 +15,18 @@ An actor is a lightweight, independent unit of computation that encapsulates sta
 
 Key Benefits of Using Actors:
 
-- Simplified concurrency: Actors make it easier to write concurrent code without having to deal with low-level threading primitives.
+- Simplified [concurrency][p-concurrency]: Actors make it easier to write concurrent code without having to deal with low-level threading primitives.
 - Improved modularity: Actors promote a modular design, making it easier to develop and maintain complex systems.
 - Enhanced scalability: Actors can be easily distributed across multiple machines, allowing your system to scale horizontally.
 - Increased resilience: Actors can be restarted or replicated, making your system more fault-tolerant.
 
 Possible applications of actor frameworks:
 
-- Web scraping: fetch data from multiple websites simultaneously,
+- Web [scraping][p-scraping]: fetch data from multiple websites simultaneously,
 - Game servers: represent each player or game entity by an actor,
 - Microservices: implement microservices as a set of actors,
 - IoT devices: represent individual devices as actors,
-- Real-time analytics: process streams of data by a succession of actors,
+- Real-time analytics: process [streams][p-streams] of data by a succession of actors,
 - Chat applications,
 - Telecommunications.
 

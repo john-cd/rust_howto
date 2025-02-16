@@ -14,7 +14,7 @@
 
 [cargo-hakari][c-cargo_hakari-crates.io]{{hi:cargo-hakari}}⮳ manage "workspace-hack" packages to speed up builds in large workspaces.
 
-`cargo hakari` is a command-line application to manage "workspace-hack" crates. Use it to speed up local `cargo build` and `cargo check` commands by up to 100x, and cumulatively by up to 1.7x or more.
+`cargo hakari` is a command-line application to manage "workspace-hack" [crates][p-crates]. Use it to speed up local `cargo build` and `cargo check` commands by up to 100x, and cumulatively by up to 1.7x or more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

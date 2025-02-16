@@ -1,5 +1,7 @@
 # Signature
 
+{{#include signature.incl.md}}
+
 ## Sign and verify a message with a HMAC digest {#hmac}
 
 [![ring][c-ring-badge]][c-ring] [![ring-crates.io][c-ring-crates.io-badge]][c-ring-crates.io] [![ring-github][c-ring-github-badge]][c-ring-github] [![ring-lib.rs][c-ring-lib.rs-badge]][c-ring-lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -12,7 +14,7 @@ Uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to creates a [`ring::signa
 
 ## Compute digital signatures {#skip1}
 
-For more algorithms, see Rust Crypto Signatures:
+For more [algorithms][p-algorithms], see Rust Crypto Signatures:
 
 - ed25519{{hi:ed25519}}. Use in conjunction with the [`ed25519-dalek`][c-ed25519_dalek]⮳{{hi:ed25519-dalek}} crate.
 - ecdsa{{hi:ecdsa}}
@@ -24,7 +26,7 @@ For more algorithms, see Rust Crypto Signatures:
 
 The [`ed25519`][c-ed25519]⮳{{hi:ed25519}} crate is a support library for Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032), providing signature type definitions and PKCS#8 private key decoding/encoding support.
 
-It doesn't contain an implementation of Ed25519, but instead contains an ed25519::Signature type which other crates can use in conjunction with the signature::Signer and signature::Verifier traits.
+It doesn't contain an implementation of Ed25519, but instead contains an ed25519::Signature type which other [crates][p-crates] can use in conjunction with the signature::Signer and signature::Verifier [traits][p-traits].
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/sign/ed25519.rs:example}}

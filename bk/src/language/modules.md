@@ -18,7 +18,7 @@ In any file other than the crate root, you can declare sub-modules{{hi:Sub-modul
 - In the file src/garden/vegetables.rs
 - In the file src/garden/vegetables/mod.rs (older style)
 
-In Rust, all items (functions, methods, structs, enums, modules, and constants) are private to parent modules by default. Items can access other items in the same module, even when private.
+In Rust, all items ([functions][p-functions], methods, [structs][p-structs], [enums][p-enums], modules, and constants) are private to parent modules by default. Items can access other items in the same module, even when private.
 
 Items in a parent module can't use the private items{{hi:Private items}} inside child modules, but items in child modules can use the items in their ancestor modules.
 
@@ -42,7 +42,7 @@ Idiomatic - bringing the function's parent module into scope, not the function i
 {{#include ../../crates/language/tests/feat/modules2.rs:example}}
 ```
 
-On the other hand, when bringing in structs, enums, and other items with use, it's idiomatic to specify the full path.
+On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and other items with use, it's idiomatic to specify the full path.
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/modules3.rs:example}}

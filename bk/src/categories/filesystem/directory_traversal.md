@@ -1,6 +1,6 @@
 # Directory Traversal
 
-{{#include dir.incl.md}}
+{{#include directory_traversal.incl.md}}
 
 ## Find files that have been modified in the last 24 hours {#find-files-modified-last-24-hours}
 

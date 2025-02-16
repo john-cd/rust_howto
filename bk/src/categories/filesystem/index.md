@@ -22,7 +22,7 @@ Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
 
 ## Directory Traversal
 
-{{#include dir.incl.md}}
+{{#include directory_traversal.incl.md}}
 
 ## Walk the Filesystem while Respecting Ignore Files
 

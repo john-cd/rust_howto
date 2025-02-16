@@ -44,10 +44,10 @@ Concurrent queues.
 
 - Ergonomic lock-free API — no more deadlocks!
 - Powerful atomic operations.
-- Seamless usage in async contexts.
-- Extremely scalable, low-latency reads (see performance).
+- Seamless usage in [async][p-async] contexts.
+- Extremely scalable, low-latency reads (see [performance][p-performance]).
 - Predictable latency across all operations.
-- Efficient memory usage, with garbage collection powered by `seize`.
+- Efficient [memory][p-memory] usage, with garbage collection powered by `seize`.
 ([doc][c-papaya])
 
 ```rust,editable

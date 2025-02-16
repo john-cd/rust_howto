@@ -3,3 +3,6 @@
 [ex-data-processing-dataframes]: dataframes.md#dataframes
 [ex-data-processing-datafusion]: data_engineering.md#datafusion
 [ex-data-processing-manipulate-csv-files-from-the-command-line]: csv.md#manipulate-csv-files-from-the-command-line
+[p-csv]: ../../categories/encoding/csv.md
+[p-data-processing]: _index.md
+[p-streams]: ../../categories/asynchronous/streams.md

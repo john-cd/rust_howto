@@ -48,16 +48,16 @@
   - [Enable screen readers](categories/accessibility/screen_readers.md)
 
 - [Aerospace](categories/aerospace/_index.md)
-  - [Aerospace](categories/aerospace/aero.md)
+  - [Aerospace](categories/aerospace/aerospace.md)
 
 - [Aerospace - Drones](categories/aerospace_drones/_index.md)
   - [Drones](categories/aerospace_drones/drones.md)
 
 - [Aerospace - Protocols](categories/aerospace_protocols/_index.md)
-  - [Protocols](categories/aerospace_protocols/protocols.md)
+  - [Protocols](categories/aerospace_protocols/aerospace_protocols.md)
 
 - [Aerospace - Simulation](categories/aerospace_simulation/_index.md)
-  - [Simulation](categories/aerospace_simulation/simulation.md)
+  - [Simulation](categories/aerospace_simulation/aerospace_simulation.md)
 
 - [Aerospace - Space Protocols](categories/aerospace_space-protocols/_index.md)
   - [Space Protocols](categories/aerospace_space-protocols/space_protocols.md)
@@ -86,7 +86,7 @@
   - [Streams](categories/asynchronous/streams.md)
   - [Futures crate](categories/asynchronous/futures.md)
   - [Mixing async and blocking code](categories/asynchronous/async_and_blocking.md)
-  - [Utilities](categories/asynchronous/utilities.md)
+  - [Utilities](categories/asynchronous/async_utilities.md)
 
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
@@ -100,14 +100,14 @@
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
 
 - [Command-line interface](categories/command-line-interface/index.md)
-  - [Argument parsing](categories/command-line-interface/arguments.md)
+  - [Argument parsing](categories/command-line-interface/argument_parsing.md)
   - [ANSI terminal](categories/command-line-interface/ansi_terminal.md)
   - [Terminal user interfaces](categories/command-line-interface/tui.md)
   - [User interaction](categories/command-line-interface/user_interaction.md)
 
 - [Command-line utilities](categories/command-line-utilities/index.md)
-  - [Filesystem](categories/command-line-utilities/filesystem.md)
-  - [Networking](categories/command-line-utilities/networking.md)
+  - [Filesystem](categories/command-line-utilities/filesystem_cli.md)
+  - [Networking](categories/command-line-utilities/networking_cli.md)
   - [Shells](categories/command-line-utilities/shells.md)
 
 - [Compilers](categories/compilers/_index.md)
@@ -152,10 +152,10 @@
   - [Password hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
   - [AEAD](categories/cryptography/aead.md)
-  - [Certs](categories/cryptography/certs.md)
-  - [Sign](categories/cryptography/sign.md)
+  - [Certs](categories/cryptography/certificates.md)
+  - [Sign](categories/cryptography/signature.md)
   - [TLS](categories/cryptography/tls.md)
-  - [Utilities](categories/cryptography/utilities.md)
+  - [Utilities](categories/cryptography/cryptography_utilities.md)
 
 - [Data processing](other/data-processing/_index.md)
   - [CSV](other/data-processing/csv.md)
@@ -176,18 +176,18 @@
   - [Connection pools](categories/database/connection_pool.md)
   - [Query builders and ORMs](categories/database/query_builders_orms.md)
   - [NoSQL](categories/database/nosql.md)
-  - [KV stores](categories/database/kv.md)
+  - [KV stores](categories/database/key_value_stores.md)
   - [Search](categories/database/search.md)
   - [AMQP](categories/database/amqp.md)
 
 - [Database implementations](categories/database-implementations/_index.md)
   - [Databases](categories/database-implementations/databases.md)
-  - [Search](categories/database-implementations/search.md)
+  - [Search](categories/database-implementations/rust_search_engines.md)
 
 - [Date and time](categories/date-and-time/index.md)
   - [Duration and calculation](categories/date-and-time/duration.md)
   - [Parsing and displaying](categories/date-and-time/parse.md)
-  - [`time` crate](categories/date-and-time/time.md)
+  - [`time` crate](categories/date-and-time/time_crate.md)
 
 - [Development tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
@@ -210,7 +210,7 @@
   - [Build-time tools](categories/development-tools_build-utils/build_utils.md)
 
 - [Development tools - cargo plugins](categories/development-tools_cargo-plugins/index.md)
-  - [Writing code](categories/development-tools_cargo-plugins/writing.md)
+  - [Writing code](categories/development-tools_cargo-plugins/code_writing.md)
   - [Code formatting, linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)
   - [Building](categories/development-tools_cargo-plugins/building.md)
   - [Cross-compiling](categories/development-tools_cargo-plugins/cross_compiling.md)
@@ -238,7 +238,7 @@
 
 - [Development tools - procedural macro helpers](categories/development-tools_procedural-macro-helpers/_index.md)
   - [Crates for macro development](categories/development-tools_procedural-macro-helpers/write_proc_macros.md)
-  - [Tools for macro development](categories/development-tools_procedural-macro-helpers/tools.md)
+  - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
   - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
 
 - [Development tools - performance, profiling](categories/development-tools_profiling/_index.md)
@@ -268,9 +268,9 @@
   - [Emulators](categories/emulators/emulators.md)
 
 - [Encoding and serialization](categories/encoding/index.md)
-  - [Character sets](categories/encoding/strings.md)
+  - [Character sets](categories/encoding/string_encoding.md)
   - [CSV processing](categories/encoding/csv.md)
-  - [Structured data](categories/encoding/complex.md)
+  - [Structured data](categories/encoding/complex_encoding.md)
   - [Serialization with `serde`](categories/encoding/serde.md)
   - [Typecasting](categories/encoding/typecasts.md)
   - [Binary encoders](categories/encoding/_binary_encoders.md)
@@ -285,7 +285,7 @@
 - [File system](categories/filesystem/index.md)
   - [Read & write](categories/filesystem/read-write.md)
   - [Current working directory](categories/filesystem/cwd.md)
-  - [Directory traversal](categories/filesystem/dir.md)
+  - [Directory traversal](categories/filesystem/directory_traversal.md)
   - [Ignore files](categories/filesystem/_ignore.md)
   - [File watching](categories/filesystem/file_watching.md)
   - [Temporary files and directories](categories/filesystem/tempfile.md)
@@ -364,7 +364,7 @@
   - [No `std`](categories/no-std/no_std.md)
 
 - [Operating systems](categories/os/index.md)
-  - [External commands](categories/os/external.md)
+  - [External commands](categories/os/external_commands.md)
   - [Low-level system calls](categories/os/low_level_system_calls.md)
   - [Rust OSes](categories/os/rust_os.md)
 
@@ -421,7 +421,7 @@
   - [Geo](categories/science_geo/geo.md)
 
 - [Science - Neuro](categories/science_neuroscience/_index.md)
-  - [Neuro](categories/science_neuroscience/neuro.md)
+  - [Neuro](categories/science_neuroscience/neuroscience.md)
 
 - [Scripting](other/scripting/_index.md)
   - [Rhai](other/scripting/rhai.md)
@@ -456,7 +456,7 @@
 
 - [Web assembly](categories/wasm/_index.md)
   - [Yew](categories/wasm/yew.md)
-  - [Others](categories/wasm/others.md)
+  - [Others](categories/wasm/wasm_runtimes.md)
 
 - [Web programming](categories/web-programming/index.md)
   - [Extracting links](categories/web-programming/scraping.md)
@@ -487,7 +487,7 @@
 - [Written in Rust](other/written-in-rust/_index.md)
   - [Development tools](other/written-in-rust/development_tools.md)
   - [Python tools](other/written-in-rust/python_tools.md)
-  - [Others](other/written-in-rust/others.md)
+  - [Others](other/written-in-rust/other_tools.md)
 
 ---
 

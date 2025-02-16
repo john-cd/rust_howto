@@ -1,8 +1,11 @@
-[ex-command-line-utilities-bat]: filesystem.md#bat
-[ex-command-line-utilities-broot]: filesystem.md#broot
-[ex-command-line-utilities-exa]: filesystem.md#exa
-[ex-command-line-utilities-gping]: networking.md#gping
-[ex-command-line-utilities-lsd]: filesystem.md#lsd
+[ex-command-line-utilities-bat]: filesystem_cli.md#bat
+[ex-command-line-utilities-broot]: filesystem_cli.md#broot
+[ex-command-line-utilities-exa]: filesystem_cli.md#exa
+[ex-command-line-utilities-gping]: networking_cli.md#gping
+[ex-command-line-utilities-lsd]: filesystem_cli.md#lsd
 [ex-command-line-utilities-nushell]: shells.md#nushell
-[ex-command-line-utilities-open]: filesystem.md#open
+[ex-command-line-utilities-open]: filesystem_cli.md#open
 [ex-command-line-utilities-starship]: shells.md#starship
+[p-install]: ../development-tools/installation/install.md
+[p-rustup]: ../development-tools/installation/rustup.md
+[p-url]: ../web-programming/url.md

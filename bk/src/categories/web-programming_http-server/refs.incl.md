@@ -12,3 +12,9 @@
 [ex-web-programming_http-server-tower-http]: middleware.md#tower-http
 [ex-web-programming_http-server-tower]: middleware.md#tower
 [ex-web-programming_http-server-zola]: static_website_generators.md#zola
+[p-authentication]: ../authentication/index.md
+[p-documentation]: ../development-tools/documentation/documentation.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md
+[p-server]: ../network-programming/server.md
+[p-toml]: ../parser-implementations/toml.md
+[p-tracing]: ../development-tools_debugging/tracing.md

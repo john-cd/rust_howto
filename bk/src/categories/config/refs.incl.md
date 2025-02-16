@@ -3,3 +3,7 @@
 [ex-config-dotenvy]: environment_variables.md#dotenvy
 [ex-config-env]: environment_variables.md#env
 [ex-config-envy]: environment_variables.md#envy
+[p-config]: index.md
+[p-json]: ../parser-implementations/json.md
+[p-structs]: ../../language/structs.md
+[p-toml]: ../parser-implementations/toml.md

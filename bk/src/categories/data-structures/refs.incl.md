@@ -7,3 +7,7 @@
 [ex-data-structures-slotmap]: maps.md#slotmap
 [ex-data-structures-smallvec]: stack_allocated_arrays.md#smallvec
 [ex-data-structures-tinyvec]: stack_allocated_arrays.md#tinyvec
+[p-containers]: ../../other/containers/containers.md
+[p-databases]: ../database-implementations/databases.md
+[p-functions]: ../../language/functions.md
+[p-protocols]: ../aerospace_protocols/aerospace_protocols.md

@@ -31,7 +31,7 @@ cargo watch -x check -x test -x run
 [![cargo-limit-github][c-cargo_limit-github-badge]][c-cargo_limit-github]
 [![cargo-limit-lib.rs][c-cargo_limit-lib.rs-badge]][c-cargo_limit-lib.rs]
 
-[cargo-limit][c-cargo_limit-crates.io]⮳ is Cargo with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
+[cargo-limit][c-cargo_limit-crates.io]⮳ is [Cargo][p-cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 
 - errors have highest priority
 - they never appear in the middle of warnings

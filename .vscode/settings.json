@@ -2,4 +2,7 @@
     "search.exclude": {
         "**/target": true
     },
+    "markdown.validate.ignoredLinks": [
+        "[https://github.com/Swatinem/rust-cache](https://github.com/Swatinem/rust-cache)"
+    ],
 }

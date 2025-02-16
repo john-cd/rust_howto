@@ -18,9 +18,9 @@ Calling [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Calculates and displays the date and time{{hi:Date and time}} two weeks from now using [`chrono::Date::checked_add_signed`][c-chrono::Date::checked_add_signed]{{hi:chrono::Date::checked_add_signed}}⮳ and the date of the day before that using [`chrono::Date::checked_sub_signed`][c-chrono::Date::checked_sub_signed]{{hi:chrono::Date::checked_sub_signed}}⮳
+Calculates and displays the [date and time][p-date-and-time]{{hi:Date and time}} two weeks from now using [`chrono::Date::checked_add_signed`][c-chrono::Date::checked_add_signed]{{hi:chrono::Date::checked_add_signed}}⮳ and the date of the day before that using [`chrono::Date::checked_sub_signed`][c-chrono::Date::checked_sub_signed]{{hi:chrono::Date::checked_sub_signed}}⮳
 
-The methods return None if the date and time cannot be calculated.
+The methods return None if the [date and time][p-date-and-time] cannot be calculated.
 
 Escape sequences that are available for the
 [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ can be found at [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳.

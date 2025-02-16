@@ -18,7 +18,7 @@
 
 Any item annotated with `#[doc(hidden)]` will not appear in the documentation.
 
-Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using cargo), with a website inside.
+Run `rustdoc src/lib.rs --crate-name <name>` or `cargo doc --open` to create a new directory, `doc` (or `target/doc` when using [cargo][p-cargo]), with a website inside.
 
 ## Create module- or crate-level documentation {#module-or-crate-level-documentation}
 

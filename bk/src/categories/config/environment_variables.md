@@ -28,7 +28,7 @@ Use [`std::env`][c-std::env::var]⮳{{hi:std::env}} to retrieve a single environ
 
 [![envy][c-envy-badge]][c-envy] [![envy-crates.io][c-envy-crates.io-badge]][c-envy-crates.io] [![envy-github][c-envy-github-badge]][c-envy-github] [![envy-lib.rs][c-envy-lib.rs-badge]][c-envy-lib.rs]{{hi:envy}}{{hi:Env}}{{hi:Serde}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
-`envy` can deserialize environment variables into type-safe structs.
+`envy` can deserialize environment variables into type-safe [structs][p-structs].
 
 ```toml
 [dependencies]
@@ -48,5 +48,5 @@ serde = { version = "1.0.216", features = ["derive"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[environment_variables: interaction between config and env variables (P1)](https://github.com/john-cd/rust_howto/issues/271)
+[environment_variables: interaction between [config][p-config] and env variables (P1)](https://github.com/john-cd/rust_howto/issues/271)
 </div>

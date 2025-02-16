@@ -10,7 +10,7 @@
 
 [![log][c-log-badge]][c-log] [![log-crates.io][c-log-crates.io-badge]][c-log-crates.io] [![log-github][c-log-github-badge]][c-log-github] [![log-lib.rs][c-log-lib.rs-badge]][c-log-lib.rs]{{hi:log}}{{hi:Logging}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-`log` is an older and simpler crate, if your needs are simple and you are not using any async code.
+`log` is an older and simpler crate, if your needs are simple and you are not using any [async][p-async] code.
 
 ### `slog` {#slog}
 
@@ -31,11 +31,11 @@ Consider using [`tracing`][c-tracing]⮳{{hi:tracing}} instead, especially if yo
 [`log4rs`][c-log4rs::append::file::FileAppender]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::config::Config]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::encode::pattern]⮳{{hi:log4rs}} [`log4rs`][c-log4rs]⮳{{hi:log4rs}} is a highly configurable multi-output logging implementation for the `log` facade.
 
 ```rust,editable
-use log::{error, info, warn};
-use log4rs;
+use [log][p-log]::{error, info, warn};
+use [log][p-log]4rs;
 
-fn main() {
-    log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
+fn [main][p-main]() {
+    [log][p-log]4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
 
     info!("booting up");
 
@@ -50,9 +50,9 @@ fn main() {
 [`env_logger`][c-env_logger]⮳{{hi:env_logger}} is a logging implementation for log which is configured via an environment variable. [`env_logger`][c-env_logger]⮳{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the `log` crate instead.
 
 ```rust,editable
-use log::info;
+use [log][p-log]::info;
 
-fn main() {
+fn [main][p-main]() {
     env_logger::init();
 
     info!("starting up");
@@ -65,13 +65,13 @@ fn main() {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
+[P1 write, organize together with the old [log][p-log] content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
 
 ## Other frameworks {#skip2}
 
 ### `OpenTelemetry` {#open-telemetry}
 
-[OpenTelemetry Rust documentation][opentelemetry-rust]⮳
+[OpenTelemetry Rust [documentation][p-documentation]][opentelemetry-rust]⮳
 
 `OpenTelemetry`
 

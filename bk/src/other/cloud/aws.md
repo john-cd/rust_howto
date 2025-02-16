@@ -4,11 +4,11 @@
 
 [AWS rust][blog-sustainability-with-rust]⮳
 
-At AWS, Rust has quickly become critical to building infrastructure at scale. `Firecracker` is an open source virtualization technology that powers AWS Lambda and other serverless offerings.
+At AWS, Rust has quickly become critical to building infrastructure at scale. `Firecracker` is an open source [virtualization][p-virtualization] technology that powers AWS Lambda and other [serverless][p-serverless] offerings.
 
 ## Develop and deploy applications with the AWS SDK for Rust {#aws-sdk-rust}
 
-Call AWS services using idiomatic Rust APIs.
+Call AWS services using idiomatic Rust [APIs][p-apis].
 
 [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳
 
