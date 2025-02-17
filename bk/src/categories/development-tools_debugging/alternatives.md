@@ -31,8 +31,8 @@ Consider using [`tracing`][c-tracing]⮳{{hi:tracing}} instead, especially if yo
 [`log4rs`][c-log4rs::append::file::FileAppender]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::config::Config]⮳{{hi:log4rs}} [`log4rs`][c-log4rs::encode::pattern]⮳{{hi:log4rs}} [`log4rs`][c-log4rs]⮳{{hi:log4rs}} is a highly configurable multi-output logging implementation for the `log` facade.
 
 ```rust,editable
-use [log][p-log]::{error, info, warn};
-use [log][p-log]4rs;
+use log::{error, info, warn};
+use log4rs;
 
 fn [main][p-main]() {
     [log][p-log]4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();

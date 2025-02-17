@@ -64,3 +64,5 @@
 [p-structs]: structs.md
 [p-traits]: traits.md
 [p-unix]: ../categories/os_unix-apis/unix.md
+[p-automatic-derivation]: ../standard-library/derive.md
+[p-async]: ../categories/asynchronous/index.md

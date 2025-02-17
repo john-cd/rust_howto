@@ -61,7 +61,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Simulation
 - [Science][p-science] ([Geo][p-geo], Neuro)
 - Finance
-- Aerospace-related [crates][p-crates]: [drones][p-drones], [UAVs][p-uavs], [space protocols][p-space-protocols], [simulation][p-simulation]...
+- Aerospace-related crates: [drones][p-drones], [UAVs][p-uavs], [space protocols][p-space-protocols], [simulation][p-simulation]...
 - Cryptocurrencies
 
 Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.

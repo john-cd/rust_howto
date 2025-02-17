@@ -40,7 +40,6 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 
-[p-tokio]: [tokio][p-tokio].md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

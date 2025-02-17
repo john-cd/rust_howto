@@ -38,7 +38,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
-Spawns a child process and redirects [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳ to the same file. It follows the same idea as [run piped external commands][p-run-piped-external-commands], however [`std::process::Stdio`][c-std::process::Stdio]{{hi:std::process::Stdio}}⮳ writes to a specified file. [`std::fs::File::try_clone`][c-std::fs::File::try_clone]{{hi:std::fs::File::try_clone}}⮳ references the same file handle for [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳. It will ensure that both handles write with the same cursor position.
+Spawns a child process and redirects [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳ to the same file. It follows the same idea as [run piped external commands][ex-os-run-piped-external-commands], however [`std::process::Stdio`][c-std::process::Stdio]{{hi:std::process::Stdio}}⮳ writes to a specified file. [`std::fs::File::try_clone`][c-std::fs::File::try_clone]{{hi:std::fs::File::try_clone}}⮳ references the same file handle for [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳. It will ensure that both handles write with the same cursor position.
 
 The below recipe is equivalent to run the [Unix][p-unix] shell command `ls . oops >out.txt 2>&1`.
 
@@ -50,7 +50,7 @@ The below recipe is equivalent to run the [Unix][p-unix] shell command `ls . oop
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
-In [Run an external command and process its `stdout`][p-run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
+In [Run an external command and process its `stdout`][ex-os-run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
 [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ continuously as soon as the [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ is updated.
 
 The below recipe is equivalent to the [Unix][p-unix] shell command `journalctl | grep usb`.
@@ -78,8 +78,6 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`duct`][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. `duct` makes it easy to build pipelines and redirect I/O like a shell. At the same time, `duct` helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
 
-[p-run-an-external-command-and-process-stdout]: #run-an-external-command-and-process-stdout
-[p-run-piped-external-commands]: #run-piped-external-commands
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

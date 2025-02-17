@@ -86,7 +86,6 @@ See [Async][p-async]⮳
 
 [Traits (blog)][blog-traits]⮳
 
-[p-async]: ../categories/asynchronous/index.md
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
