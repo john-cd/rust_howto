@@ -11,7 +11,7 @@
 
 [xsv][c-xsv-github]{{hi:xsv}}⮳ is a fast {{i:CSV}} command line toolkit written in Rust.
 
-`xsv` can be used to index, slice, analyze, split and join [CSV][p-csv] files.
+`xsv` can be used to index, slice, analyze, split and join CSV files.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -8,7 +8,7 @@ Use `just doc` to generate the [documentation][p-documentation] for [`docs.rs`][
 
 ## Using a Dev Container feature {#dev-container-feature}
 
-Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite-github]{{hi:desktop-lite}}⮳ to install a light GUI manager{{hi:GUI manager}}. Add the following to [`devcontainer.json`][devcontainer.json]⮳{{hi:devcontainer.json}}:
+Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite-github]{{hi:desktop-lite}}⮳ to install a light GUI manager{{hi:GUI manager}}. Add the following to [`devcontainer.json`][dev-containers-devcontainer.json]⮳{{hi:devcontainer.json}}:
 
 ```json
 "features": {

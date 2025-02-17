@@ -32,7 +32,7 @@
 [p-encoding]: index.md
 [p-json]: ../parser-implementations/json.md
 [p-memory]: ../development-tools_profiling/memory.md
-[p-network-programming]: ../network-programming/_index.md
+[p-network-programming]: ../network-programming/index.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-slices]: ../../language/slices.md
 [p-structs]: ../../language/structs.md

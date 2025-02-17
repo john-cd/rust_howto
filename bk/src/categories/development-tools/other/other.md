@@ -19,7 +19,7 @@ Roogle is a Rust API search engine, which allows you to [search][p-search] funct
 
 [How to minimize Rust binary size][min-sized-rust-github]⮳
 
-By default, Rust optimizes for execution speed, compilation speed, and ease of debugging. This approach is suitable for most applications, as it balances [performance][p-performance] and developer productivity. However, in specific scenarios where binary size is a critical concern (e.g., [embedded][p-embedded] systems or deployment to constrained environments), Rust offers mechanisms to optimize for smaller binary sizes.
+By default, Rust optimizes for execution speed, compilation speed, and ease of debugging. This approach is suitable for most applications, as it balances [performance][p-performance] and developer productivity. However, in specific scenarios where binary size is a critical concern (e.g., embedded systems or deployment to constrained environments), Rust offers mechanisms to optimize for smaller binary sizes.
 
 ```sh
 cargo build --release

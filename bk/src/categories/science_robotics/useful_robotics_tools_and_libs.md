@@ -25,7 +25,7 @@
 
 Zenoh is a great tool for data storage, query, and computations over geographically distributed systems.
 
-Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a [Unix][p-unix] file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, [JSON][p-json], raw bytes buffers).
+Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a Unix file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, [JSON][p-json], raw bytes buffers).
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/tests/zenoh.rs:example}}

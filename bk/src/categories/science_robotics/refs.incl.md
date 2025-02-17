@@ -5,7 +5,7 @@
 [ex-science_robotics-zenoh]: useful_robotics_tools_and_libs.md#zenoh
 [p-computer-vision]: ../computer-vision/_index.md
 [p-json]: ../parser-implementations/json.md
-[p-network-programming]: ../network-programming/_index.md
+[p-network-programming]: ../network-programming/index.md
 [p-opencv]: ../computer-vision/opencv.md
 [p-robotics]: robotics.md
 [p-unix]: ../os_unix-apis/unix.md

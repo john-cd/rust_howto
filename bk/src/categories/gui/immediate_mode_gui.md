@@ -9,7 +9,7 @@
 [![egui-github][c-egui-github-badge]][c-egui-github]
 [![egui-lib.rs][c-egui-lib.rs-badge]][c-egui-lib.rs]
 
-[`egui`][c-egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. `egui` aims to be the best choice when you want a simple way to create a GUI, or you want to add a [GUI][p-gui] to a game engine.
+[`egui`][c-egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. `egui` aims to be the best choice when you want a simple way to create a GUI, or you want to add a GUI to a game engine.
 
 Immediate-mode UI. Lots of widgets. The most usable out of the box if your needs are simple and you don't need to customize of the look and feel.
 

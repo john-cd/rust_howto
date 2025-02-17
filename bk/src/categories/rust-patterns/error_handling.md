@@ -60,7 +60,7 @@ Another example:
 
 [`std::io::Error`][c-std::io::Error]{{hi:std::io::Error}}⮳ defined type implementing the [`std::error::Error`][c-std::error::Error]{{hi:std::error::Error}}⮳ trait.
 
-The below recipe will tell how long the system has been running by opening the [Unix][p-unix] file `/proc/uptime` and [parse][p-parse] the content to get the first number. It returns the uptime, unless there is an error.
+The below recipe will tell how long the system has been running by opening the Unix file `/proc/uptime` and [parse][p-parse] the content to get the first number. It returns the uptime, unless there is an error.
 
 ```rust,editable
 {{#include ../../../crates/language/tests/feat/main_test.rs:example}}

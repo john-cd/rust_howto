@@ -18,7 +18,7 @@
 - Services and Proxies (e.g. `linkerd`, `cloudflare`, [`fastly`][fastly]⮳{{hi:fastly}} ).
 - Use of bleeding-edge protocols e.g HTTP/3.
 
-For other [server][p-server] use cases, please consider higher-level, easier libraries (like `axum`). Reach for the [`reqwest`][c-reqwest]⮳{{hi:reqwest}} crate, if looking for a convenient HTTP client.
+For other server use cases, please consider higher-level, easier libraries (like `axum`). Reach for the [`reqwest`][c-reqwest]⮳{{hi:reqwest}} crate, if looking for a convenient HTTP client.
 
 Note that [`hyper`][c-hyper]⮳{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`](https://crates.io/crates/hyper-tls), [`hyper-rustls`](https://crates.io/crates/hyper-rustls) and [`hyper-openssl`](https://crates.io/crates/hyper-openssl) crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c-tungstenite]⮳{{hi:tungstenite}} crates for WebSockets.
 

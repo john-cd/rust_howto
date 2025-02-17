@@ -91,7 +91,7 @@
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
 
-- [Caching](categories/caching/_index.md)
+- [Caching](categories/caching/index.md)
   - [LRU caching](categories/caching/lru.md)
 
 - [Cloud](other/cloud/_index.md)
@@ -180,7 +180,7 @@
   - [Search](categories/database/search.md)
   - [AMQP](categories/database/amqp.md)
 
-- [Database implementations](categories/database-implementations/_index.md)
+- [Database implementations](categories/database-implementations/index.md)
   - [Databases](categories/database-implementations/databases.md)
   - [Search](categories/database-implementations/rust_search_engines.md)
 
@@ -241,12 +241,12 @@
   - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
   - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
 
-- [Development tools - performance, profiling](categories/development-tools_profiling/_index.md)
+- [Development tools - performance, profiling](categories/development-tools_profiling/index.md)
   - [Benchmarking](categories/development-tools_profiling/benchmarking.md)
   - [Low-level profiling tools](categories/development-tools_profiling/assembly.md)
   - [Memory usage analysis](categories/development-tools_profiling/memory.md)
 
-- [Development tools - testing](categories/development-tools_testing/_index.md)
+- [Development tools - testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)
   - [Fuzzing](categories/development-tools_testing/fuzzing.md)
 
@@ -353,7 +353,7 @@
 - [Multimedia encoding](categories/multimedia_encoding/_index.md)
   - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
 
-- [Network](categories/network-programming/_index.md)
+- [Network Programming](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)
   - [Reverse_proxy](categories/network-programming/reverse_proxy.md)
 
@@ -380,10 +380,10 @@
 - [Operating systems - Unix](categories/os_unix-apis/_index.md)
   - [Unix](categories/os_unix-apis/unix.md)
 
-- [Operating systems - Windows](categories/os_windows-apis/_index.md)
+- [Operating systems - Windows](categories/os_windows-apis/index.md)
   - [Windows](categories/os_windows-apis/windows.md)
 
-- [Parser implementations](categories/parser-implementations/_index.md)
+- [Parser implementations](categories/parser-implementations/index.md)
   - [Parser implementations](categories/parser-implementations/parser_implementations.md)
   - [JSON](categories/parser-implementations/json.md)
   - [Markdown](categories/parser-implementations/markdown.md)

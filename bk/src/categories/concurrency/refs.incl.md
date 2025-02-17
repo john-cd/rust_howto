@@ -52,3 +52,4 @@
 [p-standard-library]: ../../standard-library/index.md
 [p-streams]: ../asynchronous/streams.md
 [p-traits]: ../../language/traits.md
+[p-strings]: ../../standard-library/strings.md

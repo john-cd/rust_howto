@@ -40,7 +40,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 Spawns a child process and redirects [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳ to the same file. It follows the same idea as [run piped external commands][ex-os-run-piped-external-commands], however [`std::process::Stdio`][c-std::process::Stdio]{{hi:std::process::Stdio}}⮳ writes to a specified file. [`std::fs::File::try_clone`][c-std::fs::File::try_clone]{{hi:std::fs::File::try_clone}}⮳ references the same file handle for [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ and [`std::io::Stderr`][c-std::io::Stderr]{{hi:std::io::Stderr}}⮳. It will ensure that both handles write with the same cursor position.
 
-The below recipe is equivalent to run the [Unix][p-unix] shell command `ls . oops >out.txt 2>&1`.
+The below recipe is equivalent to run the Unix shell command `ls . oops >out.txt 2>&1`.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/tests/external/error_file.rs:example}}
@@ -53,7 +53,7 @@ The below recipe is equivalent to run the [Unix][p-unix] shell command `ls . oop
 In [Run an external command and process its `stdout`][ex-os-run-an-external-command-and-process-stdout], processing doesn't start until the external [`std::process::Command`][c-std::process::Command]{{hi:std::process::Command}} is finished. The recipe below calls `std::process::Stdio::piped` to create a pipe, and reads
 [`std::io::Stdout`][c-std::io::Stdout]{{hi:std::io::Stdout}}⮳ continuously as soon as the [`std::io::BufReader`][c-std::io::BufReader]{{hi:std::io::BufReader}}⮳ is updated.
 
-The below recipe is equivalent to the [Unix][p-unix] shell command `journalctl | grep usb`.
+The below recipe is equivalent to the Unix shell command `journalctl | grep usb`.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/tests/external/continuous.rs:example}}

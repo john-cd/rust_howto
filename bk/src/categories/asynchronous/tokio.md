@@ -8,8 +8,8 @@
 
 Tokio{{hi:tokio}} is an asynchronous runtime{{hi:Asynchronous runtime}} for the Rust programming language. It provides the building blocks needed for writing networking applications{{hi:Networking applications}}. Tokio provides a few major components:
 
-- Multiple variations of the runtime for executing [asynchronous][p-asynchronous] code. Everything from a multi-threaded{{hi:Multithreading}}, work-stealing runtime{{hi:Work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:Single-threaded runtime}}.
-- An [asynchronous][p-asynchronous] version of the [standard library][p-standard-library].
+- Multiple variations of the runtime for executing [asynchronous][p-async] code. Everything from a multi-threaded{{hi:Multithreading}}, work-stealing runtime{{hi:Work-stealing runtime}} to a light-weight, single-threaded runtime{{hi:Single-threaded runtime}}.
+- An [asynchronous][p-async] version of the [standard library][p-standard-library].
 - A large ecosystem of libraries.
 
 - creating and running a runtime{{hi:Runtime}}, spawning tasks{{hi:Spawning tasks}}, working with I/O and timers, and handling errors.

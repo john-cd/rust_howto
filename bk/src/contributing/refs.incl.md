@@ -37,14 +37,12 @@
 [p-main]: ../language/main.md
 [p-markdown]: ../categories/parser-implementations/markdown.md
 [p-modules]: ../language/modules.md
-[p-network-programming]: ../categories/network-programming/_index.md
+[p-network-programming]: ../categories/network-programming/index.md
 [p-protocols]: ../categories/aerospace_protocols/aerospace_protocols.md
 [p-science]: ../categories/science/_index.md
 [p-search]: ../categories/database/search.md
 [p-server]: ../categories/network-programming/server.md
 [p-serverless]: ../other/cloud/serverless.md
-[p-simulation]: ../categories/aerospace_simulation/aerospace_simulation.md
-[p-simulation]: ../categories/simulation/simulation.md
 [p-space-protocols]: ../categories/aerospace_space-protocols/space_protocols.md
 [p-src]: ../index.md
 [p-statistics]: ../categories/mathematics/statistics.md

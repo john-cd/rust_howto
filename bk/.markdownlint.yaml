@@ -262,7 +262,7 @@ MD054:
   # Allow autolinks; default: true
   autolink: false
   # Allow inline links and images; default: true
-  inline: false
+  inline: true
   # Allow full reference links and images
   full: true
   # Allow collapsed reference links and images; default: true

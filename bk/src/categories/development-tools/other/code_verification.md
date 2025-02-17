@@ -8,10 +8,10 @@ Formal Methods are a collection of mathematically rigorous techniques used to sp
 
 Program verification is the process of formally proving the correctness of a program. This involves analyzing the code and ensuring that it meets specific properties, such as:
 
-- [Memory][p-memory] safety: The program does not have [memory][p-memory] leaks, buffer overflows, or other memory-related errors.
+- Memory safety: The program does not have memory leaks, buffer overflows, or other memory-related errors.
 - Thread safety: The program can be executed concurrently without causing data races or other [concurrency][p-concurrency] issues.
 - Functional correctness: The program produces the correct output for all valid inputs.
-- [Performance][p-performance]: The program meets specific [performance][p-performance] requirements, such as execution time or [memory][p-memory] usage.
+- [Performance][p-performance]: The program meets specific [performance][p-performance] requirements, such as execution time or memory usage.
 
 There are two [main][p-main] approaches to Rust program verification:
 
@@ -25,13 +25,13 @@ There are two [main][p-main] approaches to Rust program verification:
 
 [kani][c-kani-github]⮳ is a Rust verifier / model checker. A model checker formally verifies that a system like a software program meets a given specification, using mathematical techniques (automated reasoning) to prove that a system satisfies a property for all possible states and behaviors. Model checkers explore the entire state space of the system, as opposed to approaches like [fuzzing][p-fuzzing] and property [testing][p-testing].
 
-Model checking is a valuable technique for verifying the correctness of critical systems, such as safety-critical software and communication protocols. Kani is particularly useful for verifying unsafe code blocks. Some example properties you can prove with Kani include [memory][p-memory] safety (e.g., null pointer dereferences, use-after-free, etc.), the absence of certain runtime errors (i.e., index out of bounds, panics), the absence of some types of unexpected behavior (e.g., arithmetic overflows), in addition to user-specified assertions.
+Model checking is a valuable technique for verifying the correctness of critical systems, such as safety-critical software and communication protocols. Kani is particularly useful for verifying unsafe code blocks. Some example properties you can prove with Kani include memory safety (e.g., null pointer dereferences, use-after-free, etc.), the absence of certain runtime errors (i.e., index out of bounds, panics), the absence of some types of unexpected behavior (e.g., arithmetic overflows), in addition to user-specified assertions.
 
 At present, Kani does not support verifying concurrent code.
 
 Kani offers an easy installation [option][p-option] on three platforms:
 
-- x86_64-unknown-linux-gnu (Most [Linux][p-linux] distributions)
+- x86_64-unknown-linux-gnu (Most Linux distributions)
 - x86_64-apple-darwin (Intel Mac OS)
 - aarch64-apple-darwin (Apple Silicon Mac OS)
 

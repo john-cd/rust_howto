@@ -16,7 +16,7 @@
 
 [![tao][c-tao-badge]][c-tao] [![tao-crates.io][c-tao-crates.io-badge]][c-tao-crates.io] [![tao-github][c-tao-github-badge]][c-tao-github] [![tao-lib.rs][c-tao-lib.rs-badge]][c-tao-lib.rs]{{hi:tao}}{{hi:Windowing}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-`tao` is a cross-platform window manager library. The TAO of [cross-platform][p-cross-platform] windowing. A library in Rust built for [`tauri`][c-tauri]⮳{{hi:tauri}}.
+`tao` is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
 "A fork of winit by the Tauri project, which adds support for things like system menus that desktop apps need."
 

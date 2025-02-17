@@ -35,3 +35,7 @@
 [p-tokio]: tokio.md
 [p-traits]: ../../language/traits.md
 [p-writing]: ../development-tools_cargo-plugins/code_writing.md
+[p-streams]: streams.md
+[p-standard-library]: ../../standard-library/index.md
+[p-macros]: ../../language/macros.md
+[p-crates]: ../../crates/index.md
