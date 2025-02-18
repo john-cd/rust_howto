@@ -11,7 +11,9 @@
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
 
-[`inquire`][c-inquire]⮳{{hi:inquire}} provides several different prompts in order to interactively ask the user for information via the CLI.
+[`inquire`][c-inquire]⮳{{hi:inquire}} provides several different prompts, in order to interactively ask the user for information via the CLI.
+
+It offers a range of built-in prompts for various data types, including text input, selections, confirmations, and password entry, simplifying the creation of interactive CLI applications.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/user_interaction/inquire.rs:example}}
@@ -25,9 +27,7 @@
 [![indicatif-lib.rs][c-indicatif-lib.rs-badge]][c-indicatif-lib.rs]
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-[`indicatif`][c-indicatif]{{hi:indicatif}}⮳ is a Rust library for indicating progress in command line applications to users.
-
-This currently primarily provides progress bars and spinners as well as basic color support.{{hi:Progress bars and spinners}}
+[`indicatif`][c-indicatif]{{hi:indicatif}}⮳ is a progress bar library for command line applications. It allows developers to easily create and manage progress bars, spinners, and other visual feedback mechanisms to display the progress of long-running tasks.{{hi:Progress bars and spinners}}
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/tests/user_interaction/indicatif.rs:example}}

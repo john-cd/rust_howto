@@ -2,11 +2,19 @@
 
 Techniques to help create command line interfaces{{hi:Command-line interface}}, such as argument parsers{{hi:Argument parsers}}, line editing{{hi:Line editing}}, or output coloring and formatting{{hi:Output coloring and formatting}}
 
+## Argument Parsing
+
 {{#include argument_parsing.incl.md}}
+
+## ANSI Terminal Handling
 
 {{#include ansi_terminal.incl.md}}
 
+## Terminal User Interfaces (TUI)
+
 {{#include tui.incl.md}}
+
+## User Interactions
 
 {{#include user_interaction.incl.md}}
 
