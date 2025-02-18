@@ -6,11 +6,6 @@ use subtle::CtOption;
 
 // Pure-Rust traits and utilities for constant-time cryptographic
 // implementations.
-//
-// This code is a low-level library, intended for implementing cryptographic
-// protocols. It consists of a Choice type, and a collection of traits using
-// Choice instead of bool, which are intended to execute in constant-time.
-// The Choice type is a wrapper around a u8 that holds a 0 or 1.
 
 fn main() {
     // Example 1: Constant-time equality
