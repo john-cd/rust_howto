@@ -2,11 +2,11 @@
 
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-## Filesystem
+## Filesystem Utilities
 
 {{#include filesystem_cli.incl.md}}
 
-## Networking
+## Networking Utilities
 
 {{#include networking_cli.incl.md}}
 
