@@ -2,6 +2,21 @@
 
 [![cat-cryptography::cryptocurrencies][cat-cryptography::cryptocurrencies-badge]][cat-cryptography::cryptocurrencies]{{hi:Cryptocurrencies}}
 
+Cryptocurrencies are digital or virtual currencies designed to work as a medium of exchange. They use cryptography to secure and verify transactions as well as to control the creation of new units of a particular cryptocurrency. Unlike traditional currencies issued by central banks, cryptocurrencies operate independently of any central authority, relying on a decentralized system.
+
+Cryptocurrencies are typically based on a decentralized network, meaning no single entity controls them. This is often achieved through blockchain technology. A blockchain is a distributed, immutable ledger that records transactions in "blocks" that are linked together chronologically. This creates a transparent and secure record of all transactions.
+
+Many (but not all) cryptocurrencies use a process called "mining" to verify transactions and add them to the blockchain. Miners use powerful computers to solve complex mathematical problems, and the first to solve the problem gets to add the next block to the chain and is rewarded with newly created cryptocurrency.
+
+Rust has become popular in the cryptocurrency space, due to its performance, security, and developer-friendly features.
+
+BEWARE: Be wary of scams.
+
+- Cryptocurrency prices are notoriously volatile, experiencing dramatic swings in value in short periods. This makes them highly speculative "investments", with the potential for significant losses.
+- The cryptocurrency space attracts scammers who may try to defraud users through phishing, fake ICOs, or other schemes.
+- The relatively unregulated nature of cryptocurrency markets makes them susceptible to manipulation, such as "pump and dump" schemes.
+- Cryptocurrency exchanges and wallets can be vulnerable to hacking attempts.
+
 ## Cryptocurrencies
 
 {{#include cryptocurrencies.incl.md}}
