@@ -50,7 +50,7 @@ Your favorite number must be 256.
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}} [(tutorial)][c-clap-tutorial] [(cookbook)][c-clap-cookbook] [![clap examples][c-clap-examples-badge]][c-clap-examples] [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-`clap`
+`clap_derive` simplifies CLI creation in Rust via a `derive` macro, automatically generating command-line argument parsing logic from `struct` definitions.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/clap.rs:example}}
@@ -65,7 +65,7 @@ Your favorite number must be 256.
 [![lexopt-github][c-lexopt-github-badge]][c-lexopt-github]
 [![lexopt-lib.rs][c-lexopt-lib.rs-badge]][c-lexopt-lib.rs]
 
-Fast compile times, fast runtime, pedantic about correctness. API is less ergonomic
+`lexopt` offers efficient and ergonomic command-line argument parsing. It prioritizes simplicity and performance with a declarative approach, avoiding complex macros. Expect fast compile times, fast runtime, but a tool pedantic about correctness. Its API is less ergonomic.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/lexopt.rs:example}}
@@ -80,13 +80,15 @@ Fast compile times, fast runtime, pedantic about correctness. API is less ergono
 
 The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
 
-- No help generation
-- Only flags, options, free arguments and subcommands are supported
-- No combined flags (like -vvv or -abc)
+`pico-args` is tiny, dependency-free, and designed for extremely fast and minimal command-line argument parsing. It focuses on speed and small binary size, making it suitable for resource-constrained environments or applications where performance is critical. It offers a simple API for basic argument parsing but may not be as feature-rich as larger crates. Note the following:
+
+- No help generation.
+- Only flags, options, free arguments and subcommands are supported.
+- No combined flags (like -vvv or -abc).
 - Options can be separated by a space, = (with the `eq-separator` feature) or nothing.
-- Arguments can be in any order
-- Non UTF-8 arguments are supported
-- Fast compile times, fast runtime, more lax about correctness. API is more ergonomic
+- Arguments can be in any order.
+- Non UTF-8 arguments are supported.
+- Ergonomic API.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/pico_args.rs:example}}
@@ -102,7 +104,9 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 [![structopt][c-structopt-badge]][c-structopt] [![structopt-crates.io][c-structopt-crates.io-badge]][c-structopt-crates.io] [![structopt-github][c-structopt-github-badge]][c-structopt-github] [![structopt-lib.rs][c-structopt-lib.rs-badge]][c-structopt-lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-[`structopt`][c-structopt]⮳{{hi:structopt}} parses command line arguments by defining a struct.
+[`structopt`][c-structopt]⮳{{hi:structopt}} parses command line arguments by defining a `struct`.
+
+`structopt` (now superseded by `clap`) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
 ### Argument parsing {#skip1}
 
