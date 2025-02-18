@@ -356,7 +356,7 @@
 
 ### Alternatives
 
-{{#include categories/development-tools_debugging/alternatives.incl.md}}
+{{#include categories/development-tools_debugging/tracing_alternatives.incl.md}}
 
 ### Config Log
 
