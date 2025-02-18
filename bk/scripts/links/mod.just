@@ -20,10 +20,10 @@ _default:
   ./replace_inline_links.sh {{root}}
 # TODO P2
 
-# (WIP)(BEWARE: modifies files) Insert potential cross-links into the book's Markdown
+# (BEWARE: modifies files; manual editing required) Insert potential cross-links into the book's Markdown
 [unix]
 @cross_link:
-  ./suggest_cross_links.sh {{root}}
+  ./cross_link.sh {{root}}
 
 ## .... GET LINK (MANUAL) ....
 
