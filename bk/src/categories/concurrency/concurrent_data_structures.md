@@ -8,9 +8,11 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench]⮳.
 
 [![dashmap][c-dashmap-badge]][c-dashmap] [![dashmap-crates.io][c-dashmap-crates.io-badge]][c-dashmap-crates.io] [![dashmap-github][c-dashmap-github-badge]][c-dashmap-github] [![dashmap-lib.rs][c-dashmap-lib.rs-badge]][c-dashmap-lib.rs]{{hi:dashmap}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}[![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Fast concurrent HashMap for Rust.
+[`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is a fast concurrent `HashMap` i.e. a concurrent associative array.{{hi:Concurrent associative array}}
 
-[`dashmap`][c-dashmap]{{hi:dashmap}}⮳ is an implementation of a concurrent associative array{{hi:Concurrent associative array}} / hashmap in Rust. [`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
+[`dashmap`][c-dashmap]{{hi:dashmap}}⮳ tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
+
+It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency.  This makes `dashmap` a good choice when you need a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/dashmap.rs:example}}
@@ -20,7 +22,7 @@ Fast concurrent HashMap for Rust.
 
 [![crossbeam-queue-website][c-crossbeam_queue-website-badge]][c-crossbeam_queue-website] [![crossbeam-queue][c-crossbeam_queue-badge]][c-crossbeam_queue] [![crossbeam-queue-crates.io][c-crossbeam_queue-crates.io-badge]][c-crossbeam_queue-crates.io] [![crossbeam-queue-github][c-crossbeam_queue-github-badge]][c-crossbeam_queue-github] [![crossbeam-queue-lib.rs][c-crossbeam_queue-lib.rs-badge]][c-crossbeam_queue-lib.rs]{{hi:crossbeam-queue}}{{hi:Queue}}{{hi:Mpmc}}{{hi:Lock-free}}{{hi:Producer}}{{hi:Consumer}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Concurrent queues.
+`crossbeam-queue` provides various concurrent queue implementations in Rust, designed for efficient and safe communication between threads. It offers different queue types optimized for various use cases, including single-producer/single-consumer, multi-producer/multi-consumer, and bounded/unbounded queues.  These queues are essential for building concurrent data structures and message-passing systems, enabling threads to exchange data without race conditions or memory safety issues.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/crossbeam_queue.rs:example}}
