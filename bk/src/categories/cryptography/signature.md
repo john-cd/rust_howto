@@ -30,7 +30,7 @@ It doesn't contain an implementation of Ed25519, but instead contains an `ed2551
 
 A key pair, consisting of a private key and a public key, is generated. The private key is kept secret, while the public key is shared with others.
 To sign a message, a hash of the message is created. This hash is then signed using the private key, producing the digital signature.
-The recipient uses the sender’s public key to verify the signature. If the signature is valid, it confirms that the message is authentic and has not been altered.
+The recipient uses the sender's public key to verify the signature. If the signature is valid, it confirms that the message is authentic and has not been altered.
 
 `ed25519-dalek` is compatible with `no_std` environments, making it suitable for embedded systems or situations where the standard library is not available.
 
