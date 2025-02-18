@@ -63,4 +63,29 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 <div class="hidden">
 [faster_linking: review - some linkers are deprecated (P2)](https://github.com/john-cd/rust_howto/issues/242)
+
+Optimizing Rust linking involves several strategies to reduce binary size and link time.  Here's a breakdown:
+
+- Link-Time Optimization (LTO): Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve performance by eliminating dead code and inlining functions more effectively.  Use the -C lto=fat or -C lto=thin (faster but less aggressive) compiler flags.  LTO typically requires more memory and time during compilation.
+
+- Codegen Units:  Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness.  Experiment to find the optimal balance.
+
+- Panic Strategy:  The default panic strategy (unwind) includes unwinding information, which increases binary size.  Switching to the abort panic strategy (using -C panic=abort) reduces binary size but prevents stack unwinding in case of a panic.  Use abort only if unwinding is not required.
+
+- Strip Symbols:  Stripping debug symbols from the final binary using strip or compiler flags like -C strip=debuginfo significantly reduces binary size. This is essential for release builds.
+
+- Minimize Dependencies:  Reducing the number of dependencies, especially those with large or complex codebases, directly impacts link time and binary size.  Analyze dependencies and consider alternatives if possible.
+
+- Static Linking:  Static linking (using -C prefer-dynamic=no) can sometimes reduce binary size if shared libraries introduce overhead. However, it can also increase the size if multiple binaries link against the same library.  Consider the trade-offs.
+
+- Optimize Dependencies:  Ensure dependencies are also built with optimizations enabled.  This can be achieved by setting appropriate build profiles for dependencies in your Cargo.toml.
+
+- Profile-Guided Optimization (PGO):  PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better performance and smaller binaries.  This involves a more complex build process but can be beneficial for performance-critical applications.
+
+- Linker Flags:  Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
+
+- Incremental Compilation: While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
+
+- Region-based compilation: This feature can improve compile times, especially for larger crates.
+
 </div>
