@@ -8,6 +8,8 @@
 
 Simple work-stealing parallelism for Rust using [`rayon`][c-rayon]⮳{{hi:rayon}}.
 
+`rayon` makes it easy to write parallel code. It provides data parallelism through iterators and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving performance on multi-core processors.
+
 ### Iterate in parallel {#par-iter}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
@@ -22,7 +24,7 @@ Convert calls to `iter` or `iter_mut` or `into_iter` into `par_iter` or [`par_it
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-[`rayon`][c-rayon]{{hi:rayon}}
+[`rayon`][c-rayon]{{hi:rayon}} simplifies parallel sorting in Rust by providing parallel iterators and functions that can be used to sort collections concurrently.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/multithreading_rayon_parsort.rs:example}}
