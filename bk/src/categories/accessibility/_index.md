@@ -4,6 +4,8 @@
 
 Assistive technology that helps overcome disabilities and impairments to make software usable by as many people as possible.
 
+## Screen Readers
+
 {{#include screen_readers.incl.md}}
 
 {{#include refs.incl.md}}
