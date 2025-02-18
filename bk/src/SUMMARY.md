@@ -223,7 +223,7 @@
   - [Tracing](categories/development-tools_debugging/tracing.md)
   - [Log messages](categories/development-tools_debugging/log.md)
   - [Logging configuration](categories/development-tools_debugging/config_log.md)
-  - [Alternatives](categories/development-tools_debugging/alternatives.md)
+  - [Alternatives](categories/development-tools_debugging/tracing_alternatives.md)
   - [Diagnostic functions](categories/development-tools_debugging/diagnostic_functions.md)
 
 - [Development tools - FFI](categories/development-tools_ffi/_index.md)
@@ -244,7 +244,7 @@
 - [Development tools - performance, profiling](categories/development-tools_profiling/index.md)
   - [Benchmarking](categories/development-tools_profiling/benchmarking.md)
   - [Low-level profiling tools](categories/development-tools_profiling/assembly.md)
-  - [Memory usage analysis](categories/development-tools_profiling/memory.md)
+  - [Memory usage analysis](categories/development-tools_profiling/memory_usage_analysis.md)
 
 - [Development tools - testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)

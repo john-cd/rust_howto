@@ -1,6 +1,6 @@
 # Memory usage analysis
 
-{{#include memory.incl.md}}
+{{#include memory_usage_analysis.incl.md}}
 
 ## Profile heap memory {#dhat}
 

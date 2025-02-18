@@ -15,7 +15,7 @@
 [p-fuzzing]: ../../development-tools_testing/fuzzing.md
 [p-linux]: ../../os_linux-apis/linux.md
 [p-main]: ../../../language/main.md
-[p-memory]: ../../development-tools_profiling/memory.md
+[p-memory]: ../../development-tools_profiling/memory_usage_analysis.md
 [p-option]: ../../../standard-library/option.md
 [p-performance]: ../../development-tools_cargo-plugins/performance.md
 [p-search]: ../../database/search.md

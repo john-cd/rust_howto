@@ -38,13 +38,13 @@
 [p-async]: ../asynchronous/async.md
 [p-building]: ../development-tools_cargo-plugins/building.md
 [p-concurrency]: index.md
-[p-concurrent_data_structures]: concurrent_data_structures.md
+[p-concurrent-data-structures]: concurrent_data_structures.md
 [p-global-static]: ../memory-management/global_static.md
 [p-hashmaps]: ../../standard-library/hashmaps.md
 [p-lazy-initialization]: ../memory-management/lazy_initialization.md
 [p-main]: ../../language/main.md
 [p-memory]: ../development-tools_profiling/memory.md
-[p-message_passing]: message_passing.md
+[p-message-passing]: message_passing.md
 [p-multithreading]: explicit_threads.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-scraping]: ../web-programming/scraping.md

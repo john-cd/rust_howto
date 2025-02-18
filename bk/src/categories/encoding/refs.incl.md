@@ -31,7 +31,7 @@
 [p-csv]: ../../other/data-processing/csv.md
 [p-encoding]: index.md
 [p-json]: ../parser-implementations/json.md
-[p-memory]: ../development-tools_profiling/memory.md
+[p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-network-programming]: ../network-programming/index.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-slices]: ../../language/slices.md

@@ -10,7 +10,7 @@ Development tools to help you figure out the performance of your code.
 
 ## Memory usage analysis
 
-{{#include memory.incl.md}}
+{{#include memory_usage_analysis.incl.md}}
 
 ## Low-level profiling tools
 

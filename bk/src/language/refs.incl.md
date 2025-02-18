@@ -55,6 +55,8 @@
 [ex-language-variables-and-constants]: variables_and_constants.md#variables-and-constants
 [ex-language-while-let]: match.md#while-let
 [ex-language-while]: control_flow.md#while
+[p-async]: ../categories/asynchronous/index.md
+[p-automatic-derivation]: ../standard-library/derive.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-enums]: enums.md
 [p-functions]: functions.md
@@ -64,5 +66,3 @@
 [p-structs]: structs.md
 [p-traits]: traits.md
 [p-unix]: ../categories/os_unix-apis/unix.md
-[p-automatic-derivation]: ../standard-library/derive.md
-[p-async]: ../categories/asynchronous/index.md

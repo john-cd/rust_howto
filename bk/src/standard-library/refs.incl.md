@@ -24,7 +24,7 @@
 [p-functions]: ../language/functions.md
 [p-gui]: ../categories/gui/_index.md
 [p-lazy-initialization]: ../categories/memory-management/lazy_initialization.md
-[p-memory]: ../categories/development-tools_profiling/memory.md
+[p-memory]: ../categories/development-tools_profiling/memory_usage_analysis.md
 [p-regex]: ../categories/text-processing/regex.md
 [p-shared-state]: ../categories/concurrency/shared_state.md
 [p-structs]: ../language/structs.md

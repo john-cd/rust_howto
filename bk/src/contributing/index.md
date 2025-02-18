@@ -4,7 +4,7 @@ This book is in its **early days**. Contributions, from small edits to whole cha
 
 It is also intended to be easy for (new) Rust programmers to contribute to and get involved with the Rust community.
 
-Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto-github]⮳. Draft pages are kept in [this folder][rust-howto-drafts]⮳. An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p-topics_of_interest]⮳ page.
+Feel free to submit an issue or a pull request{{hi:Pull request}} to the [repo][rust-howto-github]⮳. Draft pages are kept in [this folder][rust-howto-drafts]⮳. An informal (and very long) list of subjects we would like to cover is kept in the [topics of interest][p-topics-of-interest]⮳ page.
 
 Embedded examples should be ideally _runnable_ on the [Rust playground][rust-playground-website]⮳ or at least directly copy-pasteable into Rust code.
 
@@ -24,7 +24,7 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 [![rust-howto-github][rust-howto-github-badge]][rust-howto-github]
 
-[p-topics_of_interest]: topics_of_interest.md
+[p-topics-of-interest]: topics_of_interest.md
 [p-crates]: ../crates/index.md
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

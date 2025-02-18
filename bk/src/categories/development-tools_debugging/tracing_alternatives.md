@@ -1,6 +1,6 @@
 # Alternatives
 
-{{#include alternatives.incl.md}}
+{{#include tracing_alternatives.incl.md}}
 
 ## Use older alternatives to `tracing` {#skip1}
 
@@ -35,7 +35,7 @@ use log::{error, info, warn};
 use log4rs;
 
 fn [main][p-main]() {
-    [log][p-log]4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
+    log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
 
     info!("booting up");
 

@@ -34,7 +34,7 @@
 [p-embedded]: ../embedded/_index.md
 [p-graphql]: ../web-programming_http-server/_graphql.md
 [p-ignore]: ../filesystem/_ignore.md
-[p-memory]: ../development-tools_profiling/memory.md
+[p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-option]: ../../standard-library/option.md
 [p-server]: ../network-programming/server.md
 [p-tokio]: ../asynchronous/tokio.md

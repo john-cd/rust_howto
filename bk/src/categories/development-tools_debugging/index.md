@@ -18,7 +18,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 ## Alternatives
 
-{{#include alternatives.incl.md}}
+{{#include tracing_alternatives.incl.md}}
 
 ## Diagnostic functions
 
