@@ -35,3 +35,4 @@ uuid = { version = "1.11.0", features = [
 ## General
 anyhow = "1.0.95"
 crates_io_api = "0.11.0"
+heapless = "0.8.0"

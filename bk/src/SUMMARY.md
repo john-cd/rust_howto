@@ -164,6 +164,7 @@
   - [Data engineering](other/data-processing/data_engineering.md)
 
 - [Data structures](categories/data-structures/index.md)
+  - [Stacks and queues](categories/data-structures/stack_and_queue.md)
   - [Bitfields](categories/data-structures/bitfield.md)
   - [Maps](categories/data-structures/maps.md)
   - [Stack-allocated arrays](categories/data-structures/stack_allocated_arrays.md)

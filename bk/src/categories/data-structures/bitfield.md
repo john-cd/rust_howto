@@ -2,6 +2,8 @@
 
 {{#include bitfield.incl.md}}
 
+A bitfield is a data structure that efficiently stores a sequence of bits.  It is a way to represent a set of boolean flags or options in a compact manner, using individual bits within an integer or an array of integers. Bitfields save memory and potentially improve performance.
+
 ## Define and operate on a type represented as a bitfield {#bitfield}
 
 [![bitflags][c-bitflags-badge]][c-bitflags] [![bitflags-crates.io][c-bitflags-crates.io-badge]][c-bitflags-crates.io] [![bitflags-github][c-bitflags-github-badge]][c-bitflags-github] [![bitflags-lib.rs][c-bitflags-lib.rs-badge]][c-bitflags-lib.rs]{{hi:bitflags}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
@@ -19,6 +21,8 @@
 [![flagset-github][c-flagset-github-badge]][c-flagset-github]
 [![flagset-lib.rs][c-flagset-lib.rs-badge]][c-flagset-lib.rs]
 
+A flagset refers to a bitfield used to represent a set of boolean flags or options, where each bit has a specific meaning.
+
 [`flagset`][c-flagset]⮳{{hi:flagset}} is a ergonomic approach to handling flags that combines the best of existing crates like [`bitflags`][c-bitflags]⮳{{hi:bitflags}} and `enumflags` without their downsides.
 
 ```rust,editable,noplayground
@@ -30,4 +34,6 @@
 
 <div class="hidden">
 [bitfield: review (P1)](https://github.com/john-cd/rust_howto/issues/279)
+
+Cover `bitvec`: Provides efficient storage and manipulation of bit vectors.
 </div>
