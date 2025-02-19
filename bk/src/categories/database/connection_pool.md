@@ -12,14 +12,16 @@
 {{#include ../../../crates/cats/database/tests/connection_pool/deadpool.rs:example}}
 ```
 
+Here is an example demonstrating the use of `deadpool` to connect to a Postgres database:
+
+```rust,editable
+{{#include ../../../crates/cats/database/tests/connection_pool/deadpool2.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [connection_pool: expand; example (P1)](https://github.com/john-cd/rust_howto/issues/284)
-
-```rust,editable
-{{#include ../../../crates/cats/database/tests/connection_pool/deadpool2.rs:example}}
-```
 
 </div>
