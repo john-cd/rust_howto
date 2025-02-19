@@ -1669,3 +1669,8 @@ btreeset
 linkedlist
 MultiMap
 deallocated
+ArrayVec
+FnvIndexSet
+rangemap
+ArrayString
+bitvec
