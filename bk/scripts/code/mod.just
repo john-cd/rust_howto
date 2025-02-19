@@ -108,17 +108,18 @@ alias nt := nextest
 # Test the code used by the book (no doctests) (default packages, default features)
 @nextest: _clean_temp_dir && _clean_temp_dir
   echo "Test the code under {{root}} (no doctests, default packages, default features)"
-  cd {{root}}; cargo nextest run --all-targets --locked --no-fail-fast --status-level all
+  cd {{root}} && cargo nextest run --all-targets --locked --no-fail-fast --status-level all
 
 alias nta := nextestall
 
 # Test all code in the workspace, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
   echo "Test all code in the workspace in {{root}} (incl. doctests) (all features)"
-  cd {{root}} ; cargo test --doc --workspace --quiet ; cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{root}} && cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features && cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
+  echo "Clean temp folders"
   {{root}}/../bin/clean
 #cargo run --manifest-path {{justfile_directory()}}/../tools/Cargo.toml -p clean --quiet
 
