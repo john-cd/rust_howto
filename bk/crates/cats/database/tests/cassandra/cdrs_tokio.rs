@@ -1,12 +1,12 @@
 // // ANCHOR: example
-
-// // Async Cassandra DB driver written in Rust
+// // COMING SOON
+// // ANCHOR_END: example
 
 // use std::sync::Arc;
 
 // use cdrs_tokio::IntoCdrsValue;
 // use cdrs_tokio::TryFromRow;
-// use cdrs_tokio::TryFromUdt;
+// // use cdrs_tokio::TryFromUdt;
 // use cdrs_tokio::authenticators::StaticPasswordAuthenticatorProvider;
 // use cdrs_tokio::cluster::NodeTcpConfigBuilder;
 // use cdrs_tokio::cluster::TcpConnectionManager;
@@ -19,7 +19,8 @@
 // use cdrs_tokio::transport::TransportTcp;
 // use tokio;
 // use uuid::Uuid;
-// // `cdrs` is a native Cassandra DB client written in Rust.
+
+// // `cdrs_tokio` is a native async Cassandra DB client written in Rust.
 
 // type CurrentSession = Session<
 //     TransportTcp,
@@ -68,13 +69,15 @@
 //     session
 //         .query(
 //             "CREATE KEYSPACE IF NOT EXISTS test_keyspace WITH replication =
-// {'class': 'SimpleStrategy', 'replication_factor': 1};"         )
+// {'class': 'SimpleStrategy', 'replication_factor': 1};",
+//         )
 //         .await?;
 
 //     session
 //         .query(
 //             "CREATE TABLE IF NOT EXISTS test_keyspace.users (id UUID PRIMARY
-// KEY, name TEXT, age INT);"         )
+// KEY, name TEXT, age INT);",
+//         )
 //         .await?;
 
 //     // Insert a row into the 'users' table
@@ -112,12 +115,11 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn require_external_svc() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [ P2 finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
+// // [P2 finish; see also https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/crud_operations.rs](https://github.com/john-cd/rust_howto/issues/1017)
 // // https://github.com/krojew/cdrs-tokio/blob/master/cdrs-tokio/examples/multiple_thread.rs

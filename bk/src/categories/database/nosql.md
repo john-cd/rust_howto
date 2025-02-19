@@ -31,31 +31,30 @@ Redis-rs is a high level redis library for Rust. It provides convenient access t
 {{#include ../../../crates/cats/database/tests/nosql/redis.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+## Connect to Cassandra using `cdrs_tokio` {#cdrs_tokio}
 
-<div class="hidden">
+[![cdrs-tokio][c-cdrs_tokio-badge]][c-cdrs_tokio] [![cdrs-tokio-crates.io][c-cdrs_tokio-crates.io-badge]][c-cdrs_tokio-crates.io] [![cdrs-tokio-github][c-cdrs_tokio-github-badge]][c-cdrs_tokio-github] [![cdrs-tokio-lib.rs][c-cdrs_tokio-lib.rs-badge]][c-cdrs_tokio-lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[P1 add the following](https://github.com/john-cd/rust_howto/issues/1068)
+[`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} is an async Cassandra DB (or Scylla DB) driver. It uses the `tokio` async runtime.
 
-## `cassandra_protocol` {#cassandra_protocol}
+```rust,editable,noplayground
+{{#include ../../../crates/cats/database/tests/cassandra/cdrs_tokio.rs:example}}
+```
+
+## Connect to Cassandra using `cassandra_protocol` {#cassandra_protocol}
 
 [![cassandra-protocol][c-cassandra_protocol-badge]][c-cassandra_protocol] [![cassandra-protocol-crates.io][c-cassandra_protocol-crates.io-badge]][c-cassandra_protocol-crates.io] [![cassandra-protocol-github][c-cassandra_protocol-github-badge]][c-cassandra_protocol-github] [![cassandra-protocol-lib.rs][c-cassandra_protocol-lib.rs-badge]][c-cassandra_protocol-lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`cassandra-protocol`][c-cassandra_protocol]⮳{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. This crate provides a low-level implementation of the Cassandra protocol. It is used by the `cdrs` crate to communicate with Cassandra.
+[`cassandra-protocol`][c-cassandra_protocol]⮳{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. Prefer the `cdrs_tokio` crate unless you need a low-level implementation.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/cassandra/cassandra_protocol.rs:example}}
 ```
 
-## `cdrs_tokio` {#cdrs_tokio}
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
-[![cdrs-tokio][c-cdrs_tokio-badge]][c-cdrs_tokio] [![cdrs-tokio-crates.io][c-cdrs_tokio-crates.io-badge]][c-cdrs_tokio-crates.io] [![cdrs-tokio-github][c-cdrs_tokio-github-badge]][c-cdrs_tokio-github] [![cdrs-tokio-lib.rs][c-cdrs_tokio-lib.rs-badge]][c-cdrs_tokio-lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
-
-[`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} is an async Cassandra DB driver written in Rust. This crate provides an asynchronous driver for Cassandra. It is built on top of the `cdrs` crate and uses the `tokio` runtime.
-
-```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/cassandra/cdrs_tokio.rs:example}}
-```
+<div class="hidden">
+[P1 review](https://github.com/john-cd/rust_howto/issues/1068)
 
 </div>
