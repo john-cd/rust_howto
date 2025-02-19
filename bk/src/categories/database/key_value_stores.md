@@ -6,7 +6,7 @@
 
 [![heed][c-heed-badge]][c-heed] [![heed-crates.io][c-heed-crates.io-badge]][c-heed-crates.io] [![heed-github][c-heed-github-badge]][c-heed-github] [![heed-lib.rs][c-heed-lib.rs-badge]][c-heed-lib.rs]{{hi:heed}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-`heed` is a fully typed LMDB (mdb.master) wrapper with minimum overhead. LMDB is a high performant, light-weight, embedded key-value [database][p-database] library.
+`heed` is a fully-typed LMDB wrapper with minimum overhead. LMDB (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p-database] library that provides key/value storage. It's known for its minimal memory footprint and ACID (Atomicity, Consistency, Isolation, Durability) properties.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}
