@@ -6,7 +6,7 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 
 [![diesel-oci][c-diesel_oci-badge]][c-diesel_oci] [![diesel-oci-crates.io][c-diesel_oci-crates.io-badge]][c-diesel_oci-crates.io] [![diesel-oci-github][c-diesel_oci-github-badge]][c-diesel_oci-github] [![diesel-oci-lib.rs][c-diesel_oci-lib.rs-badge]][c-diesel_oci-lib.rs]{{hi:diesel-oci}}{{hi:Sql}}{{hi:Oci}}{{hi:Diesel}}{{hi:Oracle}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`diesel_oci`][c-diesel_oci]⮳{{hi:diesel}} is an OCI database adapter for [`diesel`][c-diesel]⮳{{hi:diesel}}.
+[`diesel_oci`][c-diesel_oci]⮳{{hi:diesel}} is an OCI database adapter for [`diesel`][c-diesel]⮳{{hi:diesel}}. "Oracle Call Interface" is the comprehensive native C language interface to Oracle Database.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/oracle/diesel_oci.rs:example}}

@@ -1,81 +1,122 @@
-// // ANCHOR: example
+// ANCHOR: example
 // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+use std::env;
 
-// use diesel::prelude::*;
-// use diesel_oci::OciConnection;
-// use dotenvy::dotenv;
-// use std::env;
+// Import diesel
+use diesel::prelude::*;
+// Import the oracle connection type
+use diesel_oci::OciConnection;
+use dotenvy::dotenv;
 
-// // Diesel backend and connection implementation for Oracle databases
+// `diesel_oci` is a Diesel backend and connection implementation for Oracle
+// databases.
 
-// // In your `Cargo.toml`, add the following dependencies:
-// // [dependencies]
-// // diesel = { version = "2.2.6", features = [ ] }
-// // diesel-oci = "0.3.0"
-// // dotenvy = "0.15.0"
-// // tokio = { version = "1", features = ["full"] }
+// In your `Cargo.toml`, add the following dependencies:
+// [dependencies]
+// diesel = { version = "2.2.6", features = [ ] }
+// diesel-oci = "0.3.0"
+// dotenvy = "0.15.0"
+// tokio = { version = "1", features = ["full"] }
 
-// diesel::table! {
-//     use diesel::sql_types::*;
-//     // use diesel_full_text_search::*;
+diesel::table! {
+    use diesel::sql_types::*;
+    // use diesel_full_text_search::*;
 
-//     /// The table containing all users
-//     users {
-//         /// The user's unique id
-//         id -> Integer,
-//         username -> Text,
-//         password -> Text,
-//     }
-// }
-// // See: https://docs.diesel.rs/2.2.x/diesel/macro.table.html
+    /// The table containing all users
+    users {
+        /// The user's unique id
+        id -> Integer,
+        username -> Text,
+        password -> Text,
+    }
+}
+// See: https://docs.diesel.rs/2.2.x/diesel/macro.table.html
 
-// // Define a struct to hold the query results
-// #[derive(Queryable, PartialEq, Debug)]
-// struct User {
-//     username: String,
-//     password: String,
-// }
+// Define a struct to hold the query results
+#[derive(Queryable, PartialEq, Debug)]
+struct User {
+    username: String,
+    password: String,
+}
 
-// fn main() -> anyhow::Result<()> {
-//     // Load environment variables (for secure handling of credentials)
-//     dotenv().ok();
+fn main() -> anyhow::Result<()> {
+    // Load environment variables (for secure handling of credentials)
+    dotenv().ok();
 
-//     // Fetch connection details from environment variables
-//     let db_url = env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL not set");
-//     let username = env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME
-// not set");     let password =
-// env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
+    // Fetch connection details from environment variables
+    let db_url = env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL not set");
+    let username =
+        env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME not set");
+    let password =
+        env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
 
-//     // Set up a connection to Oracle DB using Diesel and diesel_oci
-//     let mut connection: OciConnection = establish_connection(&db_url,
-// &username, &password)?;
+    // Set up a connection to Oracle DB using Diesel and diesel_oci
+    let mut _connection: OciConnection =
+        establish_connection(&db_url, &username, &password)?;
 
-//     // Query the database (fetching users as an example)
-//     let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
-//         .load::<User>(&mut connection)?;
+    // // FIXME P2
+    // // Query the database (fetching users as an example)
+    // let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
+    //     .load::<User>(&mut connection)?;
 
-//     // Print the results
-//     for user in results {
-//         println!("Username: {}, Password: {}", user.username, user.password);
-//     }
+    // // Print the results
+    // for user in results {
+    //     println!("Username: {}, Password: {}", user.username, user.password);
+    // }
 
-//     Ok(())
-// }
+    // // Use the connection similary to any other diesel connection
+    // let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
 
-// /// Establishes a connection to the Oracle database
-// fn establish_connection(db_url: &str, username: &str, password: &str) ->
-// Result<OciConnection, ConnectionError> {     // Example:
-// "oracle://user:secret@127.0.0.1/MY_DB"     let connection_string =
-// format!("oracle://{}:{}@{}", username, password, db_url);
+    Ok(())
+}
 
-//     // Create and return the connection
-//     OciConnection::establish(&connection_string)
-// }
+/// Establishes a connection to the Oracle database
+fn establish_connection(
+    db_url: &str,
+    username: &str,
+    password: &str,
+) -> Result<OciConnection, ConnectionError> {
+    // Example: "oracle://user:secret@127.0.0.1/MY_DB"
+    let connection_string =
+        format!("oracle://{}:{}@{}", username, password, db_url);
 
-// #[test]
-// fn require_external_svc() -> anyhow::Result<()> {
-//     main()?;
-//     Ok(())
-// }
-// [ P2 finish example; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
+    // Create and return the connection
+    OciConnection::establish(&connection_string)
+}
+
+#[test]
+fn require_external_svc() -> anyhow::Result<()> {
+    unsafe {
+        env::set_var("ORACLE_DB_USERNAME", "SYS");
+        env::set_var("ORACLE_DB_PASSWORD", "CHANGE_ON_INSTALL");
+        env::set_var("ORACLE_DB_URL", "rust_howto_dev-redis-1");
+    }
+    main()?;
+    Ok(())
+}
+// [P2 debug; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
+// Issue: Cannot locate a 64-bit Oracle Client library
+
+// TODO figure out install of the client
+
+// The simplest Oracle Client is the free Oracle Instant Client.
+// Only the “Basic” or “Basic Light” package is required.
+// https://www.oracle.com/database/technologies/instant-client.html
+// https://github.com/oracle/docker-images/tree/main/OracleInstantClient
+
+// TODO review install steps in https://odpi-c.readthedocs.io/en/latest/user_guide/introduction.html
+// Oracle Database Programming Interface for C (ODPI-C) is an open source
+// library of C code that simplifies the use of common Oracle Call Interface
+// (OCI) features for Oracle Database drivers and user applications.
+// Install:
+// sudo apt-get update
+// sudo apt-get -y install odpic-dev
+// sudo apt-get -y install odpic-doc
+
+// To install Oracle Database on Ubuntu, first download the database software
+// from the official Oracle website, then install OpenJDK 11 using the command
+// `sudo apt install openjdk-11-jdk`. After that, extract the downloaded
+// software and run the setup script to complete the installation.
+
+// See also https://github.com/oracle/docker-images/tree/main/OracleDatabase
