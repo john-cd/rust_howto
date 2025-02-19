@@ -45,4 +45,4 @@ time = "0.3.37"
 tokio = { version = "1.43.0", features = ["full"] }
 walkdir = "2.5.0"
 async-trait = "0.1.86"
-papaya = "0.1.8"
+papaya = "0.2.0"
