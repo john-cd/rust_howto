@@ -32,7 +32,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include nosql.incl.md}}
 
-## Key-Value Stores
+## Key-Value stores
 
 {{#include key_value_stores.incl.md}}
 
@@ -40,7 +40,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include search.incl.md}}
 
-## Message Queues (AMQP)
+## Message queues (AMQP)
 
 {{#include amqp.incl.md}}
 
@@ -50,21 +50,5 @@ Interface with database management systems{{hi:Database management systems}}.
 <div class="hidden">
 
 [P1 organize](https://github.com/john-cd/rust_howto/issues/1065)
-
-## AMQP
-
-{{#include amqp.incl.md}}
-
-## Key-value stores
-
-{{#include kv.incl.md}}
-
-## MSSQL
-
-{{#include mssql.incl.md}}
-
-## Oracle
-
-{{#include oracle.incl.md}}
 
 </div>
