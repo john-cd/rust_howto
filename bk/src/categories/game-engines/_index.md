@@ -12,4 +12,29 @@ Crates that try to provide a "one-stop-shop" for all of your game development ne
 <div class="hidden">
 [game-engines/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/370)
 
+Specific Engine Crates
+
+`bevy`: The Bevy engine crate itself.
+`amethyst`: The Amethyst engine crate.
+`ggez`: The ggez crate.
+`macroquad`: The macroquad crate.
+
+`Bevy`: A data-driven game engine built on the Entity Component System (ECS) architecture.  Very popular, actively developed, and a great choice for both 2D and 3D games.  Known for its ease of use and rapid iteration.
+
+`Amethyst`: Another data-oriented game engine, also using an ECS architecture.  Focuses on data-driven design and modularity.
+
+`ggez`: A simple and easy-to-use 2D game framework.  Good for beginners, learning, and smaller projects.  Less complex than Bevy or Amethyst.
+
+`macroquad`:  A user-friendly framework for 2D games and interactive applications.  It focuses on ease of use and quick prototyping.
+
+`Fyrox`: A 3D game engine with a visual editor.  Good for those who prefer a more visual approach to game development.
+
+`Godot-Rust`: Bindings that allow you to use Rust as a scripting language within the Godot Engine.  This lets you leverage Godot's features and editor while writing game logic in Rust.
+
+`Tetra`:  A simple 2D game framework inspired by Love2D.
+
+It's worth noting that "game engine" is a broad term.  Some of these are full-fledged engines with built-in rendering, physics, and other features (like `Bevy`, `Amethyst`, and `Fyrox`). Others are more focused frameworks that provide the building blocks for creating games (like `ggez`, `macroquad`, and `Tetra`).  `Godot-Rust` is a special case, as it integrates Rust into an existing engine.
+
+The best choice depends on your project's needs and your preferred development style.  For beginners, `ggez` or `macroquad` might be good starting points.  For more complex projects, Bevy is a very strong contender.  If you want a visual editor, `Fyrox` is a good option.  And if you like `Godot`, `Godot-Rust` lets you use Rust with it.
+
 </div>
