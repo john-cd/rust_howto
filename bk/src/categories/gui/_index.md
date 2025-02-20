@@ -1,6 +1,6 @@
 # GUI
 
-[![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
+[![cat-gui][cat-gui-badge]][cat-gui]{{hi::GUI}}
 
 Tooling to help you create a graphical user interface.
 
@@ -69,5 +69,53 @@ Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
 
 <div class="hidden">
 [gui/_index: organize (P1)](https://github.com/john-cd/rust_howto/issues/397)
+
+## Key Concepts
+
+- Immediate Mode vs. Retained Mode: Immediate mode GUIs redraw everything every frame, while retained mode GUIs maintain a data structure representing the UI state.
+- Event Handling: How the GUI responds to user input.
+- Layout: How UI elements are arranged.
+- Styling: How the UI looks.
+- Cross-Platform: Whether the GUI can run on multiple operating systems.
+
+## Immediate Mode GUI
+
+- `egui`: A very popular and easy-to-use immediate mode GUI library. Great for tools, games, and quick prototyping.
+
+## Retained Mode GUI
+
+- `iced`: A cross-platform GUI library focused on simplicity, type safety, and a declarative style (using Elm architecture).
+- `tauri`: Framework for building desktop applications with web technologies (HTML, CSS, JavaScript). While not strictly a -GUI- crate itself, it allows you to build GUIs using web technologies.
+- `slint`: A declarative UI toolkit for embedded and desktop applications.
+
+## GUI Frameworks (Higher Level)
+
+- `dioxus`: A library for building fast, portable, and ergonomic user interfaces with Rust. Similar in some ways to React.
+
+## Bindings to Native GUI Toolkits
+
+- `gtk-rs`: Bindings to GTK.
+- `qt-rs`: Bindings to Qt.
+- `winit`: While primarily for window creation, `winit` is often used as a foundation for building custom GUIs or integrating with other GUI libraries. It handles window events and input.
+
+## Web-Based GUIs (Using Web Technologies)
+
+- `yew`: A modern Rust framework inspired by React for creating single-page web applications. Can be used to build web-based GUIs.
+- `seed`: Another web framework for building web apps.
+
+## Other GUI-Related Crates
+
+- `druid`: A data-first Rust UI toolkit.
+- `conrod`: An older, but still usable, immediate mode GUI library.
+
+## Choosing the right crate
+
+- Simple GUIs, Tools, Games: `egui` is an excellent choice.
+- More Complex Applications, Declarative UI `iced` or `slint`.
+- Web-Based GUIs `yew` or `seed`.
+- Native Look and Feel `gtk-rs` or `qt-rs` (but require more setup and native dependencies).
+- Web Technologies for Desktop `tauri`.
+
+For most common GUI needs, `egui` and `iced` are excellent starting points. If you're targeting the web, `yew` or `seed` are good choices. If you need a native look and feel or have existing experience with GTK or Qt, then their respective bindings might be appropriate. `tauri` is a good option if you're comfortable with web technologies and want to build cross-platform desktop apps.
 
 </div>

@@ -28,4 +28,37 @@
 <div class="hidden">
 [gtk: write (P2)](https://github.com/john-cd/rust_howto/issues/383)
 
+For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The `gdk`, `gio`, and `glib` crates are used indirectly through `gtk`. Understanding GTK concepts and consulting the official GTK documentation are crucial for effective development.
+
+## Key Concepts
+
+- Widgets: The basic building blocks of a GTK application (buttons, labels, windows, etc.).
+- Signals: How GTK widgets communicate with each other and your application code (e.g., button clicks).
+- Layouts: How widgets are arranged within windows.
+- Events: User input (mouse clicks, keyboard presses, etc.).
+- GTK Main Loop: The event loop that processes GTK events.
+
+## GTK Bindings
+
+`gtk` is the primary crate for using GTK in Rust. It provides safe and idiomatic bindings to the GTK library. It's the-most important* crate for GTK development in Rust.
+
+## Related GTK Crates
+
+- `gdk`: Provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level graphics and windowing. You'll often use this indirectly through `gtk`.
+- `gio`: Bindings to the GIO (GNOME Input/Output) library, used for asynchronous operations, file I/O, and other system-related tasks in GTK applications.
+- `glib`: Provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
+
+### Build Tools
+
+- `cargo`: The standard Rust build tool.
+- pkg-config: Often used to find and link against the GTK libraries during the build process.
+
+### GTK Version Compatibility
+
+Make sure the `gtk` crate version you're using is compatible with the GTK version installed on your system.
+
+### Documentation
+
+The official GTK documentation is essential. While the `gtk` crate provides Rust bindings, understanding the underlying GTK concepts is crucial.
+
 </div>

@@ -40,4 +40,9 @@
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
+## Windowing and Input
+
+`winit`: A window creation and event handling library. Essential for getting a window on the screen and handling input.
+`sdl2`: Can also be used for windowing and input, but winit is often preferred in the Rust ecosystem.
+
 </div>

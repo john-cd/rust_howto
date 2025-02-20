@@ -60,4 +60,47 @@
 <div class="hidden">
 [2d_renderers: write; titles (P2)](https://github.com/john-cd/rust_howto/issues/377)
 
+## Pixel-Based (Raster) 2D Rendering
+
+- `pixels`: A crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D graphics or when you need fine-grained control.
+- `raqote`: A fast 2D graphics library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
+- `tiny-skia`: A small, fast, and portable 2D graphics library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
+
+## Vector-Based 2D Rendering
+
+- `lyon`: A library for generating vector paths and shapes. It's useful for creating the -geometry- for vector graphics, but you'd typically use a rendering library like `wgpu`, `raqote`, or `tiny-skia` to actually -draw- them. `lyon` handles the math and path calculations.
+
+## Hybrid (Raster and Vector)
+
+- `wgpu`: While primarily a low-level, cross-platform GPU API, `wgpu` -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use `lyon` to generate vector paths and then `wgpu` to render them.
+
+## Higher-Level 2D Rendering (Often Part of UI or Game Frameworks)
+
+- `iced`: A cross-platform GUI library that uses a renderer (often `wgpu` or `tiny-skia`) to draw its UI elements. This means it can be used for basic 2D graphics as well.
+- `egui`: An immediate mode GUI library that can also be used for simple 2D drawing.
+- `ggez`, `macroquad`, `tetra`: 2D game frameworks that provide built-in rendering capabilities.
+
+## Text Rendering
+
+- `text-render`: A crate for rendering text. Often used with other 2D graphics libraries.
+
+## Image Loading and Manipulation (Essential for 2D Graphics)
+
+- `image`: A widely used crate for loading and manipulating various image formats.
+
+## Color Handling
+
+- `palette`: Working with colors.
+
+## Choosing the Right Library
+
+- Simple 2D, Direct Pixel Manipulation: `pixels`.
+- General-Purpose 2D, Canvas-Like API: `raqote`.
+- Lightweight, Performant 2D: `tiny-skia`.
+- Vector Path Generation: `lyon`.
+- High Performance 2D/3D (using GPU): `wgpu` (but more complex).
+- UI with 2D Graphics: `iced`, `egui`.
+- Game Development: `ggez`, `macroquad`, `tetra`.
+
+Most 2D projects will find `raqote` or `tiny-skia` to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated graphics, `wgpu` is the way to go. If you're making a game, one of the game frameworks will likely be the easiest option.
 </div>
