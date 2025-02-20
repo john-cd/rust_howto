@@ -21,4 +21,14 @@ Notable crypto projects using Rust include:
 
 <div class="hidden">
 [cryptocurrencies: write (P3)](https://github.com/john-cd/rust_howto/issues/278)
+Link to:
+
+Cryptographic Primitives: ring, rust-crypto, sha2, secp256k1 (for elliptic curve cryptography, often used in Bitcoin)
+Blockchain Data Structures: (Often implemented directly without dedicated crates, but libraries like bitcoin may provide some).
+Bitcoin: bitcoin
+Ethereum: web3 (for interacting with Ethereum), ethers
+Other Cryptocurrencies: (Many cryptocurrencies have their own Rust libraries. Search for crates specific to the coin you're interested in.)
+Wallet Development: (Often involves a combination of the above crates and custom logic)
+Smart Contracts (Solidity): (Primarily a Solidity ecosystem, but Rust may be used for testing or interacting with contracts via crates like ethers)
+
 </div>
