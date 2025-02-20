@@ -64,4 +64,41 @@
 {{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}
 ```
 
+## Foreign Function Interface (FFI)
+
+std::ffi: Provides the core tools for working with FFI, including types like CString, CStr, and raw pointers.
+libc: Provides definitions for standard C library functions and types.
+
+## C Header Generation
+
+cbindgen: Generates C header files from Rust code, which is essential for making Rust functions callable from C/C++.
+
+## C++ Interoperability
+
+cxx: A safe and ergonomic way to interact with C++ code. Handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
+
+## Build Integration
+
+cc: A crate that helps with compiling C/C++ code within your Rust build script (build.rs). This is often necessary when working with FFI or C++ bindings.
+
+## Memory Management
+
+(Requires careful attention when crossing the FFI boundary. Often involves using Box::into_raw and Box::from_raw to transfer ownership of memory.)
+
+## String Conversion
+
+std::ffi::CString, std::ffi::CStr: For converting between Rust strings and C/C++ strings.
+
+## Error Handling
+
+(Requires careful design to handle errors across the FFI boundary. Often involves returning error codes or using Result types and converting them to C-compatible representations.)
+
+## Unsafe Code
+
+FFI code often requires unsafe blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
+
+## Binding Generators (for C++)
+
+While tools like SWIG exist, cxx is generally preferred for modern C++ interop with Rust as it's more idiomatic and safer.
+
 </div>
