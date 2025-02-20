@@ -29,4 +29,17 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/907)
+
+Argument Parsing: clap, structopt, argh
+Interactive Prompts: dialoguer, console
+Progress Bars: indicatif, pbr
+Table Formatting: prettytable, term-table
+Color Output: ansi_term, owo-colors
+General CLI Utilities: structopt, clap (often handle more than just argument parsing)
+File System Operations: std::fs, pathdiff
+Process Management: std::process
+Text Manipulation: regex, grep-cli, bat (for cat like functionality)
+Configuration: config, serde (for serialization)
+Logging: log, env_logger
+
 </div>
