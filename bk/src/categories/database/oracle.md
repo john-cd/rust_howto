@@ -12,7 +12,7 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 {{#include ../../../crates/cats/database/tests/oracle/diesel_oci.rs:example}}
 ```
 
-## `oracle` {#oracle}
+## Connect to an Oracle database with `oracle` {#oracle}
 
 [![oracle][c-oracle-badge]][c-oracle] [![oracle-crates.io][c-oracle-crates.io-badge]][c-oracle-crates.io] [![oracle-github][c-oracle-github-badge]][c-oracle-github] [![oracle-lib.rs][c-oracle-lib.rs-badge]][c-oracle-lib.rs]{{hi:oracle}}{{hi:Database}}{{hi:oracle}}
 
