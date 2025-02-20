@@ -88,4 +88,22 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 - Region-based compilation: This feature can improve compile times, especially for larger crates.
 
+## Also
+
+Link-Time Optimization (LTO): Controlled via Cargo.toml. Can sometimes improve linking times, but often increases compile time.  Experiment to see if it helps.
+
+ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
+
+Static Linking:  Generally faster than dynamic linking.  Often the default in Rust.
+
+Reducing Dependencies:  Fewer dependencies mean less code for the linker to process. Analyze your dependencies with cargo tree.
+
+Code Size Reduction: Smaller code size can lead to faster linking.  Techniques like minimizing generics and using more compact data structures can help.
+
+Linker Flags:  Experiment with linker flags, but be careful and measure the impact.
+
+Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
+
+Incremental Linking: Cargo's incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
+
 </div>

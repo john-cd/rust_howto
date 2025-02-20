@@ -88,4 +88,13 @@ Reducing Rust compilation duration involves several strategies, targeting both t
   - cargo-bloat: This tool can help you identify large dependencies contributing to compile times.
   - cargo-graph: This tool can visualize your dependency graph, making it easier to identify potential issues.
 
+Profiling: cargo flamegraph, perf (system profiler)
+Code Optimization: (Often done without specific crates, focusing on algorithmic efficiency, data structures, and avoiding unnecessary allocations/copies)
+Dependency Management: (Minimize dependencies, use cargo tree to analyze)
+Link-Time Optimization (LTO): (Controlled via Cargo.toml)
+Incremental Compilation: (Leverage Cargo's caching, be mindful of changes that invalidate the cache)
+Build Profiles: (Optimize for release builds with appropriate flags in Cargo.toml)
+Compiler Flags: (Experiment with compiler flags, but be careful and measure improvements)
+Code Generation: (Avoid excessive monomorphization, consider techniques like dynamic dispatch where applicable)
+
 </div>
