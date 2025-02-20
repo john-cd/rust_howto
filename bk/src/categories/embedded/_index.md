@@ -57,4 +57,64 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
    `rppal` is an interface for the Raspberry Pi's GPIO, I2C, PWM, SPI and UART peripherals.
 
+## `no-std` Environments
+
+`core`: (Standard library) Provides the bare minimum for writing code without the standard library.
+`alloc`: (Standard library) Provides memory allocation APIs for no-std environments.
+
+## Embedded Frameworks/HALs (Hardware Abstraction Layers)
+
+`embedded-hal`: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
+`cortex-m`: Provides access to Cortex-M microcontroller peripherals.
+`stm32fxxx-hal`: HALs for specific STM32 microcontrollers. (Many microcontroller families have their own HAL crates.)
+`nrf52-hal`: HALs for Nordic Semiconductor nRF52 microcontrollers.
+`esp-hal`: HAL for Espressif chips.
+
+## Peripheral Access Crates (PACs)
+
+These crates provide direct access to the microcontroller's registers. You'll often use a HAL on top of a PAC.
+
+`stm32fxxx-pac`: PACs for STM32 microcontrollers.
+
+Similar PACs exist for most microcontroller families.
+
+## Real-Time Operating Systems (RTOS)
+
+`rtic`: A framework for building real-time applications.
+`bare-metal`: A minimal RTOS.
+`freertos-rs`: Bindings to FreeRTOS.
+
+## Concurrency
+
+`atomic`: Provides atomic types for safe concurrency in embedded systems.
+
+## Memory Management (in no-std)
+
+`alloc`: (Standard library) Provides allocation APIs.
+`wee_alloc`: A small and efficient allocator for embedded systems.
+
+## Debugging
+
+`OpenOCD`, `GDB`: Common debugging tools for embedded systems.
+
+## Flash Programming
+
+`probe-rs`: A tool for flashing and debugging embedded devices.
+
+## Other Useful Crates
+
+`nb`: Non-blocking I/O helpers.
+`defmt`: A logging framework designed for embedded systems.
+`panic-halt`: Halts the microcontroller on panic.
+
+## Key Concepts
+
+- Memory-mapped I/O: How you interact with peripherals.
+- Interrupts: How the microcontroller responds to events.
+- Concurrency: How to manage multiple tasks.
+- Real-time constraints: Meeting deadlines.
+- Low-power design: Conserving energy.
+
+The `embedded-hal` crate is the most important for writing portable embedded code.  You'll then choose a HAL crate specific to your microcontroller family (e.g., `stm32fxxx-hal`).  PACs give you direct register access, but you'll usually work with a HAL.  RTOSs are used for more complex embedded applications.  `defmt` is a very useful logging crate.
+
 </div>
