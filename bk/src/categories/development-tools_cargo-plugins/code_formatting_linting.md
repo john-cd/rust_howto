@@ -85,4 +85,17 @@ See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework 
 
 <div class="hidden">
 [code_formatting_linting: expand (P1)](https://github.com/john-cd/rust_howto/issues/310)
+
+Linting:
+
+cargo clippy: The primary linter for Rust code, catching stylistic issues and potential bugs.
+Formatting:
+
+cargo fmt: The standard Rust code formatter.
+Dead Code Detection:
+
+cargo deadlinks: Finds broken links in your documentation.
+Other Style/Quality Checks: (Often integrated into CI rather than run as separate cargo plugins)
+
+rust-analyzer: While primarily an LSP (Language Server Protocol) implementation for IDEs, it also performs many code analysis checks that can be considered a form of linting. It's often used in CI.
 </div>

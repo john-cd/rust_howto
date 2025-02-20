@@ -82,4 +82,15 @@ cargo deny check licenses
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/922)
+
+Security Audits:
+
+cargo audit: Checks for crates with known security vulnerabilities.
+Linting/Style: (While not strictly "auditing" in the security sense, these help find potential problems)
+
+cargo clippy: Lints your code for stylistic issues and potential bugs.
+Dependency Analysis: (Useful for understanding your supply chain and potential risks)
+
+cargo tree: Displays your dependency tree, showing all transitive dependencies.
+cargo outdated: Checks for outdated dependencies, which might have security fixes available.
 </div>

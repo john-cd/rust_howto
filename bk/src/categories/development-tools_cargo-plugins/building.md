@@ -62,4 +62,31 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 
 <div class="hidden">
 [building: expand (P1)](https://github.com/john-cd/rust_howto/issues/309)
+
+Link to:
+
+General Build Tools:
+
+cargo build: (Built-in, but fundamental) Compiles your project.
+cargo check: Checks your code for errors without compiling.
+Cross-Compilation:
+
+cross: Simplifies cross-compilation.
+Packaging/Distribution:
+
+cargo-deb: Creates Debian packages.
+cargo-rpm: Creates RPM packages.
+create-dmg: Creates macOS disk images.
+Build Automation/Task Running:
+
+xtask: Manages complex build tasks, often used for CI/CD.
+Build Script Helpers:
+
+cc: Helps with compiling C/C++ code in build scripts.
+pkg-config: Finds system libraries.
+Code Generation: (Often done in build scripts, but no single "build util" crate)
+
+Link-Time Optimization (LTO) Configuration: (Configured in Cargo.toml, not a separate plugin)
+
+Incremental Compilation Management: (Handled by cargo directly)
 </div>

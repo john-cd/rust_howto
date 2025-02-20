@@ -50,4 +50,12 @@ This tool is especially useful in combination with [`cargo-watch`][c-cargo_watch
 
 <div class="hidden">
 [watching_for_changes: expand (P1)](https://github.com/john-cd/rust_howto/issues/315)
+
+File Watching and Rebuilding:
+
+cargo watch: Watches your project for changes and automatically rebuilds and reruns your code. This is the most common and generally recommended tool.
+Other File Watching Tools: (Less common for Rust projects specifically, but might be used in more complex setups)
+
+watchexec: A general-purpose file watcher that can execute commands on file changes. You could use it to trigger Cargo commands, but cargo watch is usually simpler.
+It's worth noting that some IDEs also have built-in file watching and automatic build features.  If you're using an IDE, check its settings as you might not need a separate tool like cargo watch.
 </div>

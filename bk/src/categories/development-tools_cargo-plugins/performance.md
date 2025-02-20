@@ -21,4 +21,19 @@
 
 <div class="hidden">
 [performance: expand (P1)](https://github.com/john-cd/rust_howto/issues/314)
+
+Profiling:
+
+cargo flamegraph: Generates flame graphs to visualize performance bottlenecks.
+cargo bench: (Built-in) Runs benchmarks to measure performance.
+Optimization Analysis:
+
+cargo expand: Expands macros, which can sometimes help you understand generated code and identify optimization opportunities. (Not strictly a performance tool itself, but useful).
+Benchmarking:
+
+cargo bench: (Built-in) Runs benchmarks to measure performance.
+Other Performance Tools: (Often used in conjunction with Rust, but not Cargo plugins)
+
+perf: (System profiler)
+valgrind (Memory debugging and profiling)
 </div>

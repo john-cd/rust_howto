@@ -107,4 +107,37 @@ $ cargo semver-checks
 
 `cargo hack` is a `cargo` subcommand to provide various options useful for [testing][p-testing] and continuous integration.
 
+Code Formatting:
+
+cargo fmt: Formats your code to a consistent style.
+Linting:
+
+cargo clippy: Catches common code errors and style issues.
+Dependency Management:
+
+cargo tree: Displays your dependency tree to help you understand your project's dependencies.
+cargo outdated: Checks for outdated dependencies.
+cargo audit: Checks for crates with known security vulnerabilities.
+Dead Code Detection:
+
+cargo deadlinks: Finds broken links in your documentation.
+Documentation Generation:
+
+cargo doc: Generates documentation from your code.
+Testing:
+
+cargo test: Runs your unit and integration tests.
+Benchmarking:
+
+cargo bench: Runs your benchmarks.
+Code Coverage:
+
+cargo tarpaulin: Runs code coverage analysis.
+Refactoring: (Often IDE-driven, but some tools exist)
+
+cargo-expand: Expands macros, which can be helpful for understanding code and refactoring. (Not strictly refactoring itself, but a helpful tool.)
+Version Management:
+
+cargo-bump: Helps to automate version updates in your Cargo.toml.
+
 </div>

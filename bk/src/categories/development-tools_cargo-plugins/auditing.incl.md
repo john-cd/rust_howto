@@ -7,5 +7,4 @@
 
 <div class="hidden">
 [auditing.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/307)
-
 </div>
