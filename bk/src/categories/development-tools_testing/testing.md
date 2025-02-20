@@ -86,4 +86,53 @@ First, install the CLI with `cargo install cargo-insta`. Second, create a test, 
 <div class="hidden">
 [testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
 
+## Unit Testing
+
+std::test: (Built-in) The standard Rust testing framework for writing unit tests. Uses #[test] attribute.
+
+## Integration Testing
+
+Often uses std::test as well, but integration tests are placed in a separate tests directory and focus on testing interactions between modules or components.
+
+## Documentation Testing
+
+Uses #[doc = "```"] in doc comments to embed testable examples in your documentation.
+
+## Property-Based Testing
+
+proptest: A powerful crate for property-based testing, where you define properties that your code should satisfy, and proptest generates many random inputs to verify those properties.
+quickcheck: Another property-based testing crate. proptest is often preferred for its flexibility.
+
+## Mocking
+
+mockall: A popular crate for creating mock objects for testing.
+faux: Another mocking library.
+
+## Test Data Generation
+
+Often done with custom functions or data structures, but crates like faker can be useful for generating realistic test data.
+
+## Test Runners
+
+cargo test: (Built-in) Runs your tests.
+
+## Test Organization
+
+rstest: A crate for writing data-driven tests.
+
+## Assertion Libraries
+
+assert_matches: A crate for matching on patterns in assertions.
+
+## Asynchronous Testing
+
+Often involves using tokio::test or similar runtime-specific attributes for testing asynchronous code.
+
+## Coverage Testing
+
+grcov: A code coverage tool.
+tarpaulin: Another code coverage tool.
+
+For most basic testing needs, std::test will be sufficient.  For more advanced testing, especially property-based testing, proptest is highly recommended.  mockall or faux will help when you need to mock dependencies.  rstest is great for parameterized tests.  And for ensuring your tests cover a good portion of your code, grcov or tarpaulin can be used.
+
 </div>
