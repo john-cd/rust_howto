@@ -32,4 +32,27 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 Debugging with gdb or lldb: Basic debugging techniques.
 
+Logging Framework: log (provides the logging macros and facade)
+
+Log Implementations (Loggers):
+
+env_logger: A simple logger that configures logging based on environment variables.
+log4rs: A more flexible logger that supports configuration files.
+tracing: A newer, structured logging library with spans and context.
+
+Log Formatting/Output:
+
+tracing-subscriber: Used with tracing to format and output logs.
+
+Asynchronous Logging:
+
+(Often achieved using a logger like tracing combined with asynchronous tasks.)
+
+Log Filtering:
+
+(Can be done with env_logger, log4rs, or tracing-subscriber.)
+
+Panic Logging:
+
+log-panics: Logs panics with backtraces.
 </div>

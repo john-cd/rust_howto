@@ -81,4 +81,22 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/925)
+
+Logging Framework: log (provides the logging macros and facade)
+
+Log Implementations (Loggers):
+
+env_logger: A popular logger that configures logging based on environment variables.
+log4rs: A more flexible logger that supports configuration files (YAML, TOML, JSON).
+tracing: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for formatting and output.
+Log Formatting:
+
+tracing-subscriber: Used with tracing to format log output, often to JSON or other structured formats. Can also be used for filtering.
+Configuration Files (for loggers like log4rs):
+
+serde: (Not a logging crate itself, but necessary for deserializing configuration files in formats like YAML, TOML, or JSON)
+yaml-rust, serde_yaml, toml, serde_json: (Crates for parsing the respective configuration file formats)
+Other Utilities:
+
+log-panics: Logs panics with backtraces.
 </div>
