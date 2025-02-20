@@ -13,4 +13,5 @@
 
 <div class="hidden">
 [protocols: write (P3)](https://github.com/john-cd/rust_howto/issues/195)
+
 </div>
