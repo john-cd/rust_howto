@@ -67,6 +67,17 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 <div class="hidden">
 [code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
 
+Link to:
+
+Static Analysis/Linting: clippy (for catching common code errors and style issues)
+Formal Verification: kani (model checker), crucible (symbolic execution) - These are more advanced and complex tools.
+Property-Based Testing: proptest, quickcheck
+Unit Testing: std::test (built-in testing framework)
+Integration Testing: (Often uses std::test but focuses on testing interactions between modules or components)
+Fuzzing: cargo fuzz, afl.rs (bindings to AFL)
+Type Checking: (Built into the Rust compiler)
+Code Review Tools: (Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.)
+
 TODO P1 add [Model_checking](https://en.wikipedia.org/wiki/Model_checking) [getting-started](https://model-checking.github.io/kani/getting-started.html)
 [announcing-the-kani-rust-verifier-project](https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html)
 [using-the-kani-rust-verifier-on-a-firecracker-example](https://model-checking.github.io/kani-verifier-blog/2022/07/13/using-the-kani-rust-verifier-on-a-firecracker-example.html)

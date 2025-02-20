@@ -100,4 +100,15 @@ bacon clippy
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/919)
 (See cargo-make if you want something with a bulkier syntax but more cross-platform portability)
+
+Build System: cargo (the primary build system for Rust)
+Build Scripts: (Using build.rs files in your project)
+Build Profiles: (Configuring build options in Cargo.toml for debug, release, etc.)
+Cross-Compilation: cross (tool to simplify cross-compilation), target specifications in Cargo.toml
+Link-Time Optimization (LTO): (Controlled via Cargo.toml)
+Build Dependencies: (Managed by cargo)
+Incremental Compilation: (Handled by cargo)
+Build Automation (for complex builds): xtask
+Compiler Flags: (Configurable in Cargo.toml)
+Code Generation: (Often done with procedural macros or build scripts)
 </div>

@@ -53,6 +53,17 @@ Tools that provide developer-facing features such as testing, debugging, linting
 [development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
 [index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
+Build System/Package Manager: cargo
+Formatter: rustfmt
+Linter: clippy
+Testing Framework: std::test (built-in), rstest (for data-driven tests)
+Debugging: gdb, lldb (often used via IDE integration), cargo-debug
+Profiling: cargo flamegraph, perf (system profiler)
+Documentation Generator: cargo doc
+Code Coverage: grcov, tarpaulin
+Continuous Integration: (Often uses CI platforms directly; no specific Rust crates needed, but xtask can help manage CI tasks)
+Code Analysis: cargo clippy, rust-analyzer (for Language Server Protocol support in IDEs)
+
 fd-find as a more human-friendly alternative to find which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
 
 hyperfine as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc.
