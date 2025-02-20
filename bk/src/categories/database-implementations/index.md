@@ -18,4 +18,20 @@ Databases allow clients to store and query large amounts of data in an efficient
 <div class="hidden">
 [database-implementations: expand (P2)](https://github.com/john-cd/rust_howto/issues/292)
 
+Embedded Databases:
+
+sled: A high-performance embedded database.
+lmdb-rs: Bindings to the LMDB embedded database.
+rocksdb: Bindings to the RocksDB embedded database (though RocksDB itself is written in C++).
+tikv: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways.
+
+Key-Value Stores:
+
+sled and lmdb-rs above can also be used as key-value stores.
+
+Other Databases (Partially or Primarily Rust):
+
+tantivy: A full-text search engine library.
+qdrant: A vector similarity search engine.
+
 </div>

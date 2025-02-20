@@ -35,4 +35,10 @@
 
 <div class="hidden">
 [search: expand (P2)](https://github.com/john-cd/rust_howto/issues/291)
+
+Full-Text Search (Local): tantivy, elastic-client (for Elasticsearch), meilisearch (client)
+Fuzzy Searching: fuzzy-matcher, strsim
+Regular Expressions: regex
+String Searching (Multiple Patterns): aho-corasick
+Vector Search: qdrant, faiss-rs (bindings to FAISS)
 </div>
