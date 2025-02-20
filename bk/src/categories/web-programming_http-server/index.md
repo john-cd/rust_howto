@@ -51,4 +51,12 @@ Serve data over HTTP.
 
 [P1 review](https://github.com/john-cd/rust_howto/issues/977)
 
+Building Web Applications:
+
+Basic Web Server: Creating a simple web server using a framework like actix-web, rocket, or warp.
+Routing and Handling Requests: Defining routes and handling HTTP requests.
+Templating: Using a templating engine like Tera or Handlebars.
+Database Integration: Connecting to a database and performing queries in a web application.
+Authentication and Authorization: Implementing basic authentication and authorization.
+
 </div>

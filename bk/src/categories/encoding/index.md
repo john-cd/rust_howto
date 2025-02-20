@@ -38,4 +38,6 @@ Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 {{#include no_external_schema.incl.md}}
 
 [P1 review](https://github.com/john-cd/rust_howto/issues/929)
+
+Working with Binary Data: Recipes for reading and writing raw binary data, handling bitwise operations, and working with byte buffers.
 </div>

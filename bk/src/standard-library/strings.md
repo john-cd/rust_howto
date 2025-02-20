@@ -36,6 +36,9 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
 <div class="hidden">
 [strings: review (P1)](https://github.com/john-cd/rust_howto/issues/630)
+
+String manipulation, formatting, searching, replacing, regular expressions, Unicode handling, and working with different string types (String, &str, OsString).
 </div>

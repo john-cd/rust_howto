@@ -26,4 +26,7 @@ Development tools to help you figure out the performance of your code.
 <div class="hidden">
 [development-tools_profiling/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/337)
 
+Profiling: Using profiling tools to identify performance bottlenecks.
+
+Performance Optimization: Recipes for optimizing code performance, including using SIMD instructions and profiling tools.
 </div>

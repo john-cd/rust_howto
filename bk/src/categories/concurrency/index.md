@@ -60,4 +60,15 @@ Key constructs in Rust:
 
 <div class="hidden">
 [concurrency: add somewhere [Rust Atomics][book-rust-atomics] (P1)](https://github.com/john-cd/rust_howto/issues/263)
+
+Concurrency and Parallelism:
+
+Threads: Creating and managing threads, using mutexes and other synchronization primitives.
+Channels: Communicating between threads using channels.
+Atomic Operations: Using atomic types for thread-safe data access.
+Shared Memory and Message Passing: A comparison of different concurrency models and when to use them.
+Async/Await and Futures: A deep dive into asynchronous programming in Rust.
+Working with Thread Pools: Using a thread pool for efficient task execution.
+Parallel Iteration: Using iterators in parallel with crates like rayon.
+
 </div>

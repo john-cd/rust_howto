@@ -61,4 +61,7 @@ Additional Data Structures:
 `rangemap`: Stores key-value pairs where keys are ranges.
 `ndarray`: Provides an n-dimensional array for numerical computation.
 `roaring`: Implements compressed bitsets.
+
+Implementing and using linked lists, deques, binary trees, and other less common but sometimes necessary structures.
+
 </div>

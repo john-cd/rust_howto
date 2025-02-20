@@ -16,4 +16,6 @@ Rust implementations of core algorithms{{hi:Algorithms}}, such as hashing{{hi:Ha
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+
+Sorting and Searching: Implementing or using standard sorting algorithms (merge sort, quicksort) and searching algorithms (binary search).
 </div>
