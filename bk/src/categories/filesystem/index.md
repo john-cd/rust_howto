@@ -77,7 +77,7 @@ Working with the File System and I/O:
 
 `std::fs`: (Standard library) Supports working with symbolic links (though this is platform-dependent).
 
-## File Watching
+## File Watching 2
 
 `notify`: A crate for watching files and directories for changes.
 
