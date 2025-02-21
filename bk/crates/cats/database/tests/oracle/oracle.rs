@@ -7,7 +7,7 @@ use oracle::Error;
 
 // Rust bindings to ODPI-C
 
-// In `.env`:
+// Add to your `.env` file:
 // ORACLE_DB_USERNAME=your_username
 // ORACLE_DB_PASSWORD=your_password
 // ORACLE_DB_URL=your_db_host:port/your_service_name
