@@ -33,7 +33,7 @@ Shared solutions for particular situations specific to programming in Rust.
 
 {{#include _builder_pattern.incl.md}}
 
-[index: organize / write P1]https://github.com/john-cd/rust_howto/issues/469
+[index: organize / write P1](https://github.com/john-cd/rust_howto/issues/469)
 
 ## Rust Patterns Organized by Topic
 
