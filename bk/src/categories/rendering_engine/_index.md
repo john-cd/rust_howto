@@ -17,4 +17,8 @@ High-level solutions for rendering on the screen.
 `rend3`: A 3D rendering engine built on top of wgpu. Provides higher-level abstractions for rendering.
 `bevy_render`: Bevy's rendering system (part of the Bevy game engine).
 
+| Rendering Engine/Library | Rust Crates/Ecosystem | Focus/Features |
+| 2D/3D - General Purpose Engines | `bevy`| Data-driven, modular game engine built on top of WGPU. Focuses on performance and developer experience. Supports 2D and 3D rendering. |
+| 2D/3D - Lower Level Graphics| `wgpu`, `vulkano`, `glium` | `wgpu` is a cross-platform, low-level graphics API that exposes modern GPU capabilities. `vulkano` is a Rust wrapper around the Vulkan API. `glium` is an older, but simpler OpenGL wrapper.These are lower-level and require more detailed graphics programming knowledge. |
+
 </div>
