@@ -1,6 +1,6 @@
 # Binary Heaps
 
-{{#include binary_heap.incl.md}}
+{{#include binaryheap.incl.md}}
 
 ## Implement a priority queue
 

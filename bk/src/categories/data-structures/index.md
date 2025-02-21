@@ -38,7 +38,7 @@ Standard library collections include:
 
 ## Binary Heaps / Priority Queues
 
-{{#include binary_heaps.incl.md}}
+{{#include binaryheap.incl.md}}
 
 ## UUIDs
 
