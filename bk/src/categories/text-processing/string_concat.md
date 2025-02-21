@@ -17,4 +17,5 @@
 
 <div class="hidden">
 [P1 review](https://github.com/john-cd/rust_howto/issues/964)
+
 </div>
