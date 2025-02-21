@@ -21,11 +21,11 @@ Core Flight Control & Communication:
 
  Rust Crates:
 
-- mavlink: For MAVLink encoding/decoding.
-- Link to embedded-hal: For hardware abstraction (if working with embedded systems).
+- `mavlink`: For MAVLink encoding/decoding.
+- Link to `embedded-hal`: For hardware abstraction (if working with embedded systems).
 - pid: For PID controller implementation.
-- Link to nalgebra: For linear algebra (essential for control algorithms).
-- Link to num-traits & num-complex: For numerical and complex number operations.
+- Link to `nalgebra`: For linear algebra (essential for control algorithms).
+- Link to `num-traits` & `num-complex`: For numerical and complex number operations.
 
 Sensor Integration:
 
@@ -37,8 +37,8 @@ Other Sensors: Cameras, LiDAR, ultrasonic sensors.
  Rust Crates:
 
 - (Sensor-specific crates are common): Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
-- i2cdev, spidev, serialport: For low-level hardware communication.
-- gpsd-client: For interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
+- `i2cdev`, `spidev`, `serialport` for low-level hardware communication.
+- `gpsd-client`: For interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
 
 Link to Computer Vision & Image Processing
 
@@ -46,8 +46,8 @@ Link to Computer Vision & Image Processing
 - Image Processing: Image filtering, feature extraction.
 - SLAM (Simultaneous Localization and Mapping): Building a map of the environment and localizing the drone within it.
 - Link to Rust Crates:
- opencv: Bindings for the OpenCV library (powerful for computer vision).
- image: For image loading and manipulation.
- ndarray: For efficient array operations (often used in image processing).
+ `opencv`: Bindings for the OpenCV library (powerful for computer vision).
+ `image`: For image loading and manipulation.
+ `ndarray`: For efficient array operations (often used in image processing).
 
 </div>

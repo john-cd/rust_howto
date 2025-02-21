@@ -44,7 +44,7 @@ For most projects, `fluent` is probably the best starting point due to its moder
 
 ## Message Formatting
 
- Often handled by the localization system you choose (e.g., gettext, Fluent). Message formatting involves inserting variables and other dynamic content into localized strings.
+Often handled by the localization system you choose (e.g., gettext, Fluent). Message formatting involves inserting variables and other dynamic content into localized strings.
 
 ## Resource Management
 
@@ -52,10 +52,10 @@ Localization systems typically handle loading and managing translated resources 
 
 ## Pluralization
 
-- Handling plural forms correctly in different languages is a key part of localization. Localization systems often provide features for this.
+Handling plural forms correctly in different languages is a key part of localization. Localization systems often provide features for this.
 
 ## Translation (Not in Rust Directly)
 
-Translation itself is usually done by human translators or using machine translation services. Rust crates help you-use## the translations, but they don't perform the translation.
+Translation itself is usually done by human translators or using machine translation services. Rust crates help you use the translations, but they don't perform the translation.
 
 </div>

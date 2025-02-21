@@ -35,6 +35,5 @@ Link to Parsing: Use crates like nom or binascii to parse binary data structures
 Link to Data Structures
 Link to serde
 Link to Encoding/Decoding
-Link to
 
 </div>

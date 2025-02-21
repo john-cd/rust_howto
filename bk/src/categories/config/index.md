@@ -20,18 +20,18 @@ TODO P1 link:
 
 Configuration File Formats:
 
-TOML: toml
-YAML: serde_yaml, yaml-rust
-JSON: serde_json
-INI: ini
+TOML: `toml`
+YAML: `serde_yaml`, `yaml-rust`
+JSON: `serde_json`
+INI: `ini`
 
 Configuration Management:
 
-config: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
-serde: (Not a config crate itself, but essential for serializing and deserializing configuration data in most cases).
-Environment Variables: std::env (for accessing environment variables directly).
+`config`: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
+`serde`: (Not a config crate itself, but essential for serializing and deserializing configuration data in most cases).
+Environment Variables: `std::env` (for accessing environment variables directly).
 
-Command-Line Arguments (Often used in conjunction with config): clap, structopt, argh
+Command-Line Arguments (Often used in conjunction with `config`): `clap`, `structopt`, `argh`
 
 Configuration Validation: (Often done manually or with custom functions, but schemars can be used to generate JSON schema for validation).
 

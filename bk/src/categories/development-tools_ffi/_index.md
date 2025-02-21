@@ -18,27 +18,33 @@ link to pyo3 file as well
 
 C Bindings (FFI):
 
-cbindgen: Generates C header files from Rust code.
-std::ffi, libc: Standard library modules for FFI.
+`cbindgen`: Generates C header files from Rust code.
+`std::ffi`, `libc`: Standard library modules for FFI.
+
 Python:
 
-pyo3: Excellent for creating Python extensions in Rust and embedding Python in Rust. Very versatile.
-cpython: Lower-level bindings to the CPython interpreter. More complex, but offers more control.
-rust-python: Another option for Python bindings.
+`pyo3`: Excellent for creating Python extensions in Rust and embedding Python in Rust. Very versatile.
+`cpython`: Lower-level bindings to the CPython interpreter. More complex, but offers more control.
+`rust-python`: Another option for Python bindings.
+
 JavaScript (WebAssembly):
 
-wasm-bindgen: Facilitates communication between Rust and JavaScript when compiling to WebAssembly.
+`wasm-bindgen`: Facilitates communication between Rust and JavaScript when compiling to WebAssembly.
+
 Node.js (NAPI):
 
-neon: Makes it easy to write Node.js addons in Rust.
+`neon`: Makes it easy to write Node.js addons in Rust.
+
 Other Languages:
 
 (Many languages have their own FFI mechanisms. You'll often need to find or create bindings specific to the language you want to interact with. Sometimes, tools like SWIG can be used, but are less common with Rust than other languages.)
+
 Build Tools:
 
-cargo: (Essential for building Rust projects that involve FFI or bindings.)
-maturin: Specifically for building and distributing Python packages that include Rust extensions.
+`cargo`: (Essential for building Rust projects that involve FFI or bindings.)
+`maturin`: Specifically for building and distributing Python packages that include Rust extensions.
+
 General Binding Generators (Less Common with Rust):
 
-SWIG (Simplified Wrapper and Interface Generator): While widely used with other languages, it's less frequently used with Rust due to the effectiveness of crates like pyo3 and wasm-bindgen
+`SWIG` (Simplified Wrapper and Interface Generator): While widely used with other languages, it's less frequently used with Rust due to the effectiveness of crates like `pyo3` and `wasm-bindgen`
 </div>

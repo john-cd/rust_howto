@@ -55,39 +55,40 @@ Here's a short list of Cargo plugins by topic:
 
 Code Quality/Analysis:
 
-cargo clippy: Lints your code.
-cargo fmt: Formats your code.
-cargo deadlinks: Finds broken links in your documentation.
-cargo audit: Checks for dependencies with known vulnerabilities.
+`cargo clippy`: Lints your code.
+`cargo fmt`: Formats your code.
+`cargo deadlinks`: Finds broken links in your documentation.
+`cargo audit`: Checks for dependencies with known vulnerabilities.
 
 Dependency Management:
 
-cargo tree: Displays your dependency tree.
-cargo outdated: Checks for outdated dependencies.
-cargo add: Adds dependencies to your Cargo.toml.
-cargo rm: Removes dependencies.
+`cargo tree`: Displays your dependency tree.
+`cargo outdated`: Checks for outdated dependencies.
+`cargo add`: Adds dependencies to your Cargo.toml.
+`cargo rm`: Removes dependencies.
 
 Testing/Benchmarking:
 
-cargo test: Runs your tests (built-in, but often considered a plugin).
-cargo bench: Runs your benchmarks (built-in).
-cargo fuzz: Runs your fuzz tests.
+`cargo test`: Runs your tests (built-in, but often considered a plugin).
+`cargo bench`: Runs your benchmarks (built-in).
+`cargo fuzz`: Runs your fuzz tests.
+
 Documentation:
 
-cargo doc: Generates documentation (built-in).
+`cargo doc`: Generates documentation (built-in).
 
 Publishing/Distribution:
 
-cargo publish: Publishes your crate to crates.io (built-in).
-cargo-deb: Creates Debian packages.
-cargo-rpm: Creates RPM packages.
+`cargo publish`: Publishes your crate to crates.io (built-in).
+`cargo-deb`: Creates Debian packages.
+`cargo-rpm`: Creates RPM packages.
 
 Miscellaneous:
 
-cargo-tarpaulin: Runs code coverage analysis.
-cargo-flamegraph: Generates flame graphs for profiling.
-cargo-edit: Edits your Cargo.toml file.
-cargo-watch: Watches your project for changes and rebuilds.
+`cargo-tarpaulin`: Runs code coverage analysis.
+`cargo-flamegraph`: Generates flame graphs for profiling.
+`cargo-edit`: Edits your Cargo.toml file.
+`cargo-watch`: Watches your project for changes and rebuilds.
 
 ---
 
@@ -133,13 +134,13 @@ Creating a Cargo Plugin: You create a regular Rust project (often a binary crate
 
 Essential Crates (for plugin functionality):
 
-Argument Parsing: clap, structopt, argh (for parsing command-line arguments passed to the plugin)
-Working with Cargo: (You might interact with Cargo.toml or other Cargo metadata. No single crate, but serde is often used for parsing TOML or JSON.)
-File System Operations: std::fs, pathdiff
-Process Management: std::process (for running other commands)
-Networking/HTTP (if needed): reqwest, hyper
-Serialization/Deserialization: serde (for handling configuration or data)
-Logging: log, env_logger
+Argument Parsing: `clap`, `structopt`, `argh` (for parsing command-line arguments passed to the plugin)
+Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but serde is often used for parsing TOML or JSON.)
+File System Operations: `std::fs`, `pathdiff`
+Process Management: `std::process` (for running other commands)
+Networking/HTTP (if needed): `reqwest`, `hyper`
+Serialization/Deserialization: `serde` (for handling configuration or data)
+Logging: `log`, `env_logger`
 Cargo API (Unstable): There is an unstable Cargo API that plugins could use, but it's not recommended for most plugins due to its instability. If you need very deep integration, you might explore it, but be prepared for changes.
 
 In essence, you build a regular Rust application. The "Cargo plugin" aspect comes from the naming convention and how Cargo discovers and executes it. The crates you use depend entirely on what your plugin is designed to do.

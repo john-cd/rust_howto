@@ -71,7 +71,7 @@ Similar PACs exist for most microcontroller families.
 
 ### Device Drivers
 
-Writing device drivers in Rust is complex and often involves unsafe code and close interaction with the operating system kernel. There aren't general-purpose "driver crates." You'll typically need to work with platform-specific driver APIs.
+Writing device drivers in Rust is complex and often involves unsafe code and close interaction with the operating system kernel. You'll typically need to work with platform-specific driver APIs.
 
 ### Hardware Access (User Space)
 

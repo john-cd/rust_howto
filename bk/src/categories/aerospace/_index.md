@@ -14,9 +14,9 @@
 
 - Data: Parse Telemetry: demonstrate parsing common aerospace telemetry formats (e.g., CSV, binary formats, custom protocols) using crates like serde, nom, or byteorder
 
-- Crates like geo, georust, or proj for tasks such as:
-  - Calculating distances and bearings between locations. geo
-  - Converting between coordinate systems (e.g., latitude/longitude to UTM). proj
+- Crates like `geo`, `georust`, or `proj` for tasks such as:
+  - Calculating distances and bearings between locations. `geo`
+  - Converting between coordinate systems (e.g., latitude/longitude to UTM). `proj`
   - Working with geometric shapes (points, lines, polygons).
 
 - Math:

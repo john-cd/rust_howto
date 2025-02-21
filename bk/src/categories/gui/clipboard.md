@@ -18,7 +18,7 @@
 <div class="hidden">
 [P2 write; expand](https://github.com/john-cd/rust_howto/issues/638)?
 
-In most cases, the clipboard crate will be all you need for basic clipboard functionality (reading and writing text).If you're in a Wasm context, you'll need to use JavaScript interop.For more complex data formats, you'll likely need to handle them separately.
+In most cases, the `clipboard` crate will be all you need for basic clipboard functionality (reading and writing text).If you're in a Wasm context, you'll need to use JavaScript interop.For more complex data formats, you'll likely need to handle them separately.
 
 ## Clipboard Access
 
@@ -34,10 +34,10 @@ Clipboard access in WASM is restricted due to security reasons. You'll typically
 
 ### Platform-Specific Considerations
 
-The clipboard crate handles platform differences for you, so you generally don't need to worry about the specifics of each operating system's clipboard API.
+The `clipboard` crate handles platform differences for you, so you generally don't need to worry about the specifics of each operating system's clipboard API.
 
 ### Data Formats
 
-The clipboard crate primarily focuses on text. For other data formats (images, files, etc.), you might need to explore more specialized crates or platform-specific APIs.
+The `clipboard` crate primarily focuses on text. For other data formats (images, files, etc.), you might need to explore more specialized crates or platform-specific APIs.
 
 </div>

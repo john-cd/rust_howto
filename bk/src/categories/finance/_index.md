@@ -44,7 +44,7 @@ Many options depending on your data source. Examples:
 
 ## Trading and Market Data
 
-Often requires specific API wrappers or libraries for the exchanges or data providers you're using. There isn't a single "trading crate.")
+Often requires specific API wrappers or libraries for the exchanges or data providers you're using. There isn't a single "trading crate."
 
 ## Risk Management
 

@@ -25,22 +25,25 @@ Sensor Simulation: Simulating the behavior of sensors, such as IMUs, GPS receive
 Multi-body Dynamics: Simulating the interaction of multiple bodies, which is important fo
 
 Rust Crates and Approaches:
- Physics Engines:
+
+Physics Engines:
 
  (Limited mature physics engines in pure Rust): This is a challenging area. Many robust physics engines are written in C/C++.
-  rapier: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-  bevy_rapier: Integration between rapier and the bevy game engine.
-  FFI (Foreign Function Interface): For more advanced aerospace simulations, you'll likely need to use FFI to interact with existing C/C++ physics engines like:
-  Bullet: A popular open-source physics engine.
-  ODE (Open Dynamics Engine): Another open-source option.
-  Simbody: A high-performance library for multibody dynamics (often used in robotics and aerospace).
-  Linear Algebra:
+  `rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
+  `bevy_rapier`: Integration between rapier and the bevy game engine.
 
- nalgebra: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
- ndarray: Another good option for numerical array operations.
+FFI (Foreign Function Interface): For more advanced aerospace simulations, you'll likely need to use FFI to interact with existing C/C++ physics engines like:
+  `Bullet`: A popular open-source physics engine.
+  `ODE` (Open Dynamics Engine): Another open-source option.
+  `Simbody`: A high-performance library for multibody dynamics (often used in robotics and aerospace).
 
- Link to Visualization:
+Linear Algebra:
 
-  bevy: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
-  plotters: For creating plots and charts of simulation data.
+ `nalgebra`: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
+ `ndarray`: Another good option for numerical array operations.
+
+Link to Visualization:
+
+  `bevy`: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
+  `plotters`: For creating plots and charts of simulation data.
 </div>

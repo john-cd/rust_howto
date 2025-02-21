@@ -51,14 +51,14 @@ Interface with database management systems{{hi:Database management systems}}.
 
 [P1 organize](https://github.com/john-cd/rust_howto/issues/1065)
 
-PostgreSQL: tokio-postgres, postgres
-MySQL: mysql_async, sqlx (with MySQL support)
-SQLite: rusqlite
-MongoDB: mongodb
-Redis: redis
-Generic SQL (using SQLx): sqlx (supports multiple databases)
-Object-Relational Mappers (ORMs): diesel, sea-orm
-Database Migrations: sea-orm-cli (for SeaORM), diesel_cli (for Diesel), migrate
-Connection Pooling: bb8, deadpool
+PostgreSQL: `tokio-postgres`, `postgres`
+MySQL: `mysql_async`, `sqlx` (with MySQL support)
+SQLite: `rusqlite`
+MongoDB: `mongodb`
+Redis: `redis`
+Generic SQL (using SQLx): `sqlx` (supports multiple databases)
+Object-Relational Mappers (ORMs): `diesel`, `sea-orm`
+Database Migrations: `sea-orm-cli` (for SeaORM), `diesel_cli` (for Diesel), `migrate`
+Connection Pooling: `bb8`, `deadpool`
 
 </div>

@@ -16,33 +16,36 @@ Crates to help with sending, receiving, formatting, and parsing email.
 
 ## Sending Email
 
-lettre: A widely used crate for sending emails. Supports various transports (SMTP, sendmail, etc.). Generally the recommended choice.
-mail-send: Another option for sending emails.
+`lettre`: A widely used crate for sending emails. Supports various transports (SMTP, sendmail, etc.). Generally the recommended choice.
+`mail-send`: Another option for sending emails.
 
 ## Email Parsing
 
-mailparse: A crate for parsing email messages.
+`mailparse`: A crate for parsing email messages.
+
 MIME (Multipurpose Internet Mail Extensions):
 
-mime: A crate for working with MIME types and structures. Often used when constructing or parsing emails.
+`mime`: A crate for working with MIME types and structures. Often used when constructing or parsing emails.
+
 Building Email Messages:
 
 Often done using a combination of the crates above. lettre provides convenient builders
 
 ## Asynchronous Email Sending
 
-lettre: Supports asynchronous sending.
+`lettre`: Supports asynchronous sending.
 
 ## TLS (Transport Layer Security)
 
-lettre: Integrates with TLS for secure email transmission.
+`lettre`: Integrates with TLS for secure email transmission.
 Authentication:
 
-lettre: Supports various authentication mechanisms for SMTP.
+`lettre`: Supports various authentication mechanisms for SMTP.
 
 ## Email Clients (IMAP/POP3 - Less Common in Rust)
 
-(While some crates exist for IMAP/POP3, they are less mature and widely used than the sending crates. If you need to interact with mailboxes, you might need to search for specific IMAP/POP3 crates or consider using a separate email client library.)
+While some crates exist for IMAP/POP3, they are less mature and widely used than the sending crates. If you need to interact with mailboxes, you might need to search for specific IMAP/POP3 crates or consider using a separate email client library.)\
 
-For most email sending needs, lettre is the recommended crate. It provides a comprehensive and easy-to-use API. mailparse is essential if you need to parse incoming emails. The mime crate is helpful for constructing complex email messages. If you need client functionality, you'll likely have to do some more research to find crates that meet your needs.
+For most email sending needs, `lettre` is the recommended crate. It provides a comprehensive and easy-to-use API. `mailparse` is essential if you need to parse incoming emails. The `mime` crate is helpful for constructing complex email messages.
+
 </div>

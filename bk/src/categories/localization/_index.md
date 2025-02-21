@@ -42,7 +42,7 @@ For most new projects, `fluent` is a good starting point due to its modern desig
 
 ## Message Formatting (Part of Localization)
 
-- Often handled by the localization system you choose (e.g., gettext, Fluent). Message formatting involves inserting variables and other dynamic content into localized strings.
+Often handled by the localization system you choose (e.g., `gettext`, `Fluent`). Message formatting involves inserting variables and other dynamic content into localized strings.
 
 ## Resource Management (Part of Localization)
 

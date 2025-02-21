@@ -46,8 +46,8 @@ Here's a short list of memory management crates in Rust, categorized by topic:
 
 ## Memory Safety Tools (Essential for Development)
 
-- Address Sanitizer (ASan): (Compiler feature) Detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`).
-- Memory Sanitizer (MSan): (Compiler feature) Detects uninitialized memory usage.
+- Address Sanitizer (`ASan`): (Compiler feature) Detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`).
+- Memory Sanitizer (`MSan`): (Compiler feature) Detects uninitialized memory usage.
 
 ## Memory Profiling
 
@@ -95,8 +95,8 @@ These are built into the Rust language itself, not specific crates. Mastering th
 
 ## Memory Safety Tools
 
-- Address Sanitizer (ASan): A compiler-based tool for detecting memory errors (use-after-free, memory leaks, etc.). Enable it with compiler flags (e.g., `-fsanitize=address`).-Highly recommended## during development.
-- Memory Sanitizer (MSan): Detects use of uninitialized memory.
+- Address Sanitizer (`ASan`): A compiler-based tool for detecting memory errors (use-after-free, memory leaks, etc.). Enable it with compiler flags (e.g., `-fsanitize=address`). Highly recommended during development.
+- Memory Sanitizer (`MSan`): Detects use of uninitialized memory.
 
 ## Memory Profiling 2
 

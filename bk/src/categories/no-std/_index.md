@@ -47,7 +47,8 @@ These are crucial for interacting with hardware in embedded systems.
 These provide direct access to microcontroller registers. You'll often use a HAL on top of a PAC.
 
 - `stm32fxxx-pac`: PACs for STM32 microcontrollers.
-- (Similar PACs exist for most microcontroller families.)
+
+Similar PACs exist for most microcontroller families.
 
 ## Other Useful Crates for `no_std`
 

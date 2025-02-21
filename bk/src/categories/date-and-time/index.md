@@ -29,9 +29,9 @@ There is no clear answer as to which is best between `time` and [`chrono`][c-chr
 <div class="hidden">
 TODO P1 review
 
-Date and Time Types: chrono, time (newer crate, often preferred)
-Time Zones: chrono-tz, time (built-in support)
-Formatting and Parsing: chrono, time
-Durations and Time Intervals: chrono, time
-Clock and Time Measurement: std::time (for basic timekeeping), measure_time (for convenient benchmarking)
+Date and Time Types: `chrono`, `time` (newer crate, often preferred)
+Time Zones: `chrono-tz`, `time` (built-in support)
+Formatting and Parsing: `chrono`, `time`
+Durations and Time Intervals: `chrono`, `time`
+Clock and Time Measurement: `std::time` (for basic timekeeping), `measure_time` (for convenient benchmarking)
 </div>
