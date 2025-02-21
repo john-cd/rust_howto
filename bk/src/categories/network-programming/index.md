@@ -17,4 +17,57 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/944)
+
+## Key Concepts
+
+- TCP: Transmission Control Protocol (reliable, connection-oriented).
+- UDP: User Datagram Protocol (unreliable, connectionless).
+- Sockets: Endpoints for network communication.
+- Ports: Numbers used to identify specific applications or services on a host.
+- IP addresses: Numbers used to identify devices on a network.
+- HTTP: Hypertext Transfer Protocol (used for web communication).
+- WebSockets: A protocol for bidirectional communication between a client and server.
+
+## Choosing Crates
+
+- Basic networking: `std::net` (for simple TCP/UDP communication).
+- High-performance, asynchronous networking: `tokio`.
+- HTTP client: `reqwest`.
+- HTTP server/web framework: `actix-web`, `warp`, or `axum`.
+- WebSockets: `tokio-tungstenite`.
+
+For most common network applications, `tokio` is essential for handling asynchronous I/O efficiently. For HTTP clients, `reqwest` is a good choice. For building web servers, `actix-web`, `warp`, or `axum` are popular options. For lower-level network programming or very specific needs, you might need to explore other crates or combine crates together.
+
+## Network Sockets (Low-Level)
+
+- `std::net`: (Standard library) Provides basic networking functionality, including TCP and UDP sockets.
+
+## Asynchronous Networking
+
+- `tokio`: A powerful and widely used asynchronous runtime. Essential for building high-performance network applications. Provides abstractions for working with sockets, streams, and other network primitives asynchronously.
+- `mio`: A lower-level I/O library used by `tokio`. You'll rarely use `mio` directly unless you have very specific performance needs.
+
+Link to:
+
+## HTTP Clients and Servers
+
+- `reqwest`: A popular and easy-to-use HTTP client.
+- `hyper`: A low-level HTTP library. Often used to build custom HTTP clients or servers.
+- `actix-web`: A powerful and ergonomic web framework built on top of `hyper`.
+- `warp`: A lightweight and composable web framework.
+- `axum`: A newer web framework with a focus on type safety and developer experience.
+
+## WebSockets
+
+- `tokio-tungstenite`: A WebSocket library built on `tokio`.
+- `tungstenite`: A lower-level WebSocket library.
+
+## Network Protocols (Specific Protocols)
+
+Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
+
+## Serialization/Deserialization (Often Needed for Network Communication)
+
+- `serde`: A widely used serialization framework. Often used to serialize data before sending it over the network and deserialize it after receiving it.
+
 </div>
