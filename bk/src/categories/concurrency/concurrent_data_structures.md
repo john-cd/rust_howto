@@ -44,7 +44,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 
 [`papaya`][c-papaya]⮳{{hi:papaya}} offers a fast and ergonomic concurrent hash-table for read-heavy workloads.
 
-- Ergonomic lock-free API — no more deadlocks!
+- Ergonomic lock-free API - no more deadlocks!
 - Powerful atomic operations.
 - Seamless usage in [async][p-async] contexts.
 - Extremely scalable, low-latency reads (see [performance][p-performance]).

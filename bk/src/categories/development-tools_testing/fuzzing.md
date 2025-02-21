@@ -46,7 +46,7 @@ afl.rs: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzze
 
 ## Target Definition: (Essential)
 
-You'll need to define a fuzz target—a function in your code that the fuzzer will call with different inputs. This is a crucial step in setting up fuzzing.
+You'll need to define a fuzz target - a function in your code that the fuzzer will call with different inputs. This is a crucial step in setting up fuzzing.
 
 ## Corpus Management: (Important for effective fuzzing)
 

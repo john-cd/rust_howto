@@ -6,7 +6,7 @@
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:csv::StringRecord}}⮳ — a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
+Reads standard CSV records into [`csv::StringRecord`][c-csv::StringRecord]{{hi:csv::StringRecord}}⮳ - a weakly typed data representation which expects valid UTF-8 rows. Alternatively,
 [`csv::ByteRecord`][c-csv::ByteRecord]{{hi:csv::ByteRecord}}⮳ makes no assumptions about UTF-8.
 
 ```rust,editable

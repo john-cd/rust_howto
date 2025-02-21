@@ -63,7 +63,7 @@ fn manipulate_zero_bytes() {
     println!("{:?}", my_struct2);
     // Sets every byte in self to 0. While this is similar to doing
     // *self = Self::new_zeroed(), it differs in that zero does not semantically
-    // drop the current value and replace it with a new one — it simply
+    // drop the current value and replace it with a new one - it simply
     // modifies the bytes of the existing value.
     my_struct2.zero();
     assert_eq!(my_struct2.field, [0; 8]);
