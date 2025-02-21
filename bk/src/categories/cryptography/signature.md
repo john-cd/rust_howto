@@ -54,7 +54,7 @@ ECDSA (Elliptic Curve Digital Signature Algorithm) is a widely used digital sign
 
 [![dsa-website][c-dsa-website-badge]][c-dsa-website] [![dsa][c-dsa-badge]][c-dsa] [![dsa-crates.io][c-dsa-crates.io-badge]][c-dsa-crates.io] [![dsa-github][c-dsa-github-badge]][c-dsa-github] [![dsa-lib.rs][c-dsa-lib.rs-badge]][c-dsa-lib.rs]{{hi:dsa}}{{hi:Crypto}}{{hi:Signature}}{{hi:NIST}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-DSA (Digital Signature Algorithm) is a Federal Information Processing Standard (FIPS) for digital signatures.  It's a public-key cryptosystem used for creating digital signatures, which provide authentication and integrity for digital data.  While once widely used, DSA has been superseded by algorithms like ECDSA and Ed25519 due to factors like key size and performance.
+DSA (Digital Signature Algorithm) is a Federal Information Processing Standard (FIPS) for digital signatures. It's a public-key cryptosystem used for creating digital signatures, which provide authentication and integrity for digital data. While once widely used, DSA has been superseded by algorithms like ECDSA and Ed25519 due to factors like key size and performance.
 
 `dsa` is a pure Rust implementation of the Digital Signature Algorithm (DSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic
 signatures as well as support for added entropy.

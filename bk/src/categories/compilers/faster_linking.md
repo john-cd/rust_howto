@@ -64,25 +64,25 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 <div class="hidden">
 [faster_linking: review - some linkers are deprecated (P2)](https://github.com/john-cd/rust_howto/issues/242)
 
-Optimizing Rust linking involves several strategies to reduce binary size and link time.  Here's a breakdown:
+Optimizing Rust linking involves several strategies to reduce binary size and link time. Here's a breakdown:
 
-- Link-Time Optimization (LTO): Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve performance by eliminating dead code and inlining functions more effectively.  Use the -C lto=fat or -C lto=thin (faster but less aggressive) compiler flags.  LTO typically requires more memory and time during compilation.
+- Link-Time Optimization (LTO): Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve performance by eliminating dead code and inlining functions more effectively. Use the -C lto=fat or -C lto=thin (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
-- Codegen Units:  Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness.  Experiment to find the optimal balance.
+- Codegen Units: Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness. Experiment to find the optimal balance.
 
-- Panic Strategy:  The default panic strategy (unwind) includes unwinding information, which increases binary size.  Switching to the abort panic strategy (using -C panic=abort) reduces binary size but prevents stack unwinding in case of a panic.  Use abort only if unwinding is not required.
+- Panic Strategy: The default panic strategy (unwind) includes unwinding information, which increases binary size. Switching to the abort panic strategy (using -C panic=abort) reduces binary size but prevents stack unwinding in case of a panic. Use abort only if unwinding is not required.
 
-- Strip Symbols:  Stripping debug symbols from the final binary using strip or compiler flags like -C strip=debuginfo significantly reduces binary size. This is essential for release builds.
+- Strip Symbols: Stripping debug symbols from the final binary using strip or compiler flags like -C strip=debuginfo significantly reduces binary size. This is essential for release builds.
 
-- Minimize Dependencies:  Reducing the number of dependencies, especially those with large or complex codebases, directly impacts link time and binary size.  Analyze dependencies and consider alternatives if possible.
+- Minimize Dependencies: Reducing the number of dependencies, especially those with large or complex codebases, directly impacts link time and binary size. Analyze dependencies and consider alternatives if possible.
 
-- Static Linking:  Static linking (using -C prefer-dynamic=no) can sometimes reduce binary size if shared libraries introduce overhead. However, it can also increase the size if multiple binaries link against the same library.  Consider the trade-offs.
+- Static Linking: Static linking (using -C prefer-dynamic=no) can sometimes reduce binary size if shared libraries introduce overhead. However, it can also increase the size if multiple binaries link against the same library. Consider the trade-offs.
 
-- Optimize Dependencies:  Ensure dependencies are also built with optimizations enabled.  This can be achieved by setting appropriate build profiles for dependencies in your Cargo.toml.
+- Optimize Dependencies: Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your Cargo.toml.
 
-- Profile-Guided Optimization (PGO):  PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better performance and smaller binaries.  This involves a more complex build process but can be beneficial for performance-critical applications.
+- Profile-Guided Optimization (PGO): PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better performance and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
 
-- Linker Flags:  Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
+- Linker Flags: Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
 
 - Incremental Compilation: While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
 
@@ -90,17 +90,17 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 ## Also
 
-Link-Time Optimization (LTO): Controlled via Cargo.toml. Can sometimes improve linking times, but often increases compile time.  Experiment to see if it helps.
+Link-Time Optimization (LTO): Controlled via Cargo.toml. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 
 ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
 
-Static Linking:  Generally faster than dynamic linking.  Often the default in Rust.
+Static Linking: Generally faster than dynamic linking. Often the default in Rust.
 
-Reducing Dependencies:  Fewer dependencies mean less code for the linker to process. Analyze your dependencies with cargo tree.
+Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with cargo tree.
 
-Code Size Reduction: Smaller code size can lead to faster linking.  Techniques like minimizing generics and using more compact data structures can help.
+Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing generics and using more compact data structures can help.
 
-Linker Flags:  Experiment with linker flags, but be careful and measure the impact.
+Linker Flags: Experiment with linker flags, but be careful and measure the impact.
 
 Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
 

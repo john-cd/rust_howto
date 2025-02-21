@@ -18,7 +18,7 @@
 <div class="hidden">
 [P2 write](https://github.com/john-cd/rust_howto/issues/1072)
 
-Interfacing with Java from Rust is typically done using the Java Native Interface (JNI).  Here's a breakdown:
+Interfacing with Java from Rust is typically done using the Java Native Interface (JNI). Here's a breakdown:
 
 ## JNI Bindings
 
@@ -44,6 +44,6 @@ Data Marshaling: You'll need to convert data between Rust and Java types (e.g., 
 Class Loading: You'll need to ensure that the Java classes your Rust code interacts with are loaded correctly.
 Exception Handling: You'll need to handle Java exceptions in your Rust code.
 
-The jni crate is the core crate for JNI interaction.  jni-rs is highly recommended to simplify development.  Code generation is often a necessary step, and the exact approach can vary.  Be prepared for some manual work and boilerplate code when working with JNI.
+The jni crate is the core crate for JNI interaction. jni-rs is highly recommended to simplify development. Code generation is often a necessary step, and the exact approach can vary. Be prepared for some manual work and boilerplate code when working with JNI.
 
 </div>

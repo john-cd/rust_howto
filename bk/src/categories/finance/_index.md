@@ -62,6 +62,6 @@ There aren't widely used, general-purpose accounting crates in Rust yet. This ar
 - Risk management: Volatility, diversification, etc.
 - Financial modeling: Building models to analyze financial data.
 
-The `financial` crate is a good starting point for basic financial calculations. For more advanced analysis, you'll likely need the statistics and linear algebra crates.  Date/time handling is essential. Data access depends on your data source.  Trading and accounting often require custom solutions or very specific API integrations.
+The `financial` crate is a good starting point for basic financial calculations. For more advanced analysis, you'll likely need the statistics and linear algebra crates. Date/time handling is essential. Data access depends on your data source. Trading and accounting often require custom solutions or very specific API integrations.
 
 </div>

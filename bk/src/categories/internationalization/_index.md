@@ -28,23 +28,23 @@ Link to localization, accessibility
 - If you want a modern and expressive localization system, `fluent` is a strong option.
 - For basic i18n utilities (language tags, etc.), `unic-langid` is helpful.
 
-For most projects, `fluent` is probably the best starting point due to its modern design and expressiveness.  `gettext` is a solid choice if you have existing gettext experience or requirements.  Remember that translation itself is an external process; the Rust crates help you manage and use the translated resources.
+For most projects, `fluent` is probably the best starting point due to its modern design and expressiveness. `gettext` is a solid choice if you have existing gettext experience or requirements. Remember that translation itself is an external process; the Rust crates help you manage and use the translated resources.
 
 ## Localization (l10n)
 
-- `gettext`:  A popular crate for using gettext, a widely used localization system.  It's a good choice if you're already familiar with gettext or need its specific features.
-- `fluent`:  A localization system developed by Mozilla.  The `fluent-rs` crate provides bindings to Fluent.  Fluent is designed to be expressive and efficient.
-- `intl-rs`:  Provides some internationalization utilities, but it's not a full localization solution on its own.
+- `gettext`: A popular crate for using gettext, a widely used localization system. It's a good choice if you're already familiar with gettext or need its specific features.
+- `fluent`: A localization system developed by Mozilla. The `fluent-rs` crate provides bindings to Fluent. Fluent is designed to be expressive and efficient.
+- `intl-rs`: Provides some internationalization utilities, but it's not a full localization solution on its own.
 
 ## Internationalization (i18n) Utilities
 
-- `unic-langid`: For parsing and working with language tags (e.g., "en-US", "fr").  Essential for handling locale information.
+- `unic-langid`: For parsing and working with language tags (e.g., "en-US", "fr"). Essential for handling locale information.
 - `chrono`: (Not specifically for i18n, but essential) For date and time formatting, which needs to be localized.
 - `num-format`: (Also not specifically for i18n, but important) For number formatting, which varies by locale.
 
 ## Message Formatting
 
- Often handled by the localization system you choose (e.g., gettext, Fluent).  Message formatting involves inserting variables and other dynamic content into localized strings.
+ Often handled by the localization system you choose (e.g., gettext, Fluent). Message formatting involves inserting variables and other dynamic content into localized strings.
 
 ## Resource Management
 
@@ -52,10 +52,10 @@ Localization systems typically handle loading and managing translated resources 
 
 ## Pluralization
 
-- Handling plural forms correctly in different languages is a key part of localization.  Localization systems often provide features for this.
+- Handling plural forms correctly in different languages is a key part of localization. Localization systems often provide features for this.
 
 ## Translation (Not in Rust Directly)
 
-Translation itself is usually done by human translators or using machine translation services.  Rust crates help you-use##  the translations, but they don't perform the translation.
+Translation itself is usually done by human translators or using machine translation services. Rust crates help you-use## the translations, but they don't perform the translation.
 
 </div>

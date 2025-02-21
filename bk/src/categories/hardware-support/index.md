@@ -21,7 +21,7 @@ Discuss no-std programming and memory management.
 
 ---
 
-For embedded systems, the HAL crates are essential.  For operating system interaction, you'll often use system calls.  For external peripherals, you'll need to find or create crates that provide access to the specific device.  Writing device drivers is a complex topic and requires a deep understanding of the operating system and hardware.
+For embedded systems, the HAL crates are essential. For operating system interaction, you'll often use system calls. For external peripherals, you'll need to find or create crates that provide access to the specific device. Writing device drivers is a complex topic and requires a deep understanding of the operating system and hardware.
 
 ## Key Concepts
 

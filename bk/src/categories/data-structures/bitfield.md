@@ -2,7 +2,7 @@
 
 {{#include bitfield.incl.md}}
 
-A bitfield is a data structure that efficiently stores a sequence of bits.  It is a way to represent a set of boolean flags or options in a compact manner, using individual bits within an integer or an array of integers. Bitfields save memory and potentially improve performance.
+A bitfield is a data structure that efficiently stores a sequence of bits. It is a way to represent a set of boolean flags or options in a compact manner, using individual bits within an integer or an array of integers. Bitfields save memory and potentially improve performance.
 
 ## Define and operate on a type represented as a bitfield {#bitfield}
 

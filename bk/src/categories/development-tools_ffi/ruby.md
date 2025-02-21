@@ -28,7 +28,7 @@ The tie between Ruby and Rust.
 <div class="hidden">
 [P2 write](https://github.com/john-cd/rust_howto/issues/1076)
 
-Interfacing with Ruby from Rust is typically done using the Ruby C API.  Here's a breakdown:
+Interfacing with Ruby from Rust is typically done using the Ruby C API. Here's a breakdown:
 
 ## Ruby C API Bindings
 
@@ -56,5 +56,5 @@ Data Marshaling: You'll need to convert data between Rust and Ruby types. rutie 
 Garbage Collection: Ruby has its own garbage collector. rutie helps to manage this interaction and prevent memory leaks.
 Embedding Ruby: You can also embed a Ruby interpreter in your Rust application using the Ruby C API (and thus, rutie).
 
-rutie is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust. It's highly recommended to use it unless you have very specific low-level Ruby C API requirements.  It abstracts away much of the complexity of manual Ruby C API interaction.
+rutie is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust. It's highly recommended to use it unless you have very specific low-level Ruby C API requirements. It abstracts away much of the complexity of manual Ruby C API interaction.
 </div>

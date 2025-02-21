@@ -70,6 +70,6 @@ This is a more advanced technique and often involves custom scripting or tools. 
 
 proptest, quickcheck: These crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
 
-In almost all cases, cargo fuzz will be your primary tool for fuzzing Rust code. It uses libFuzzer, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly.  Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
+In almost all cases, cargo fuzz will be your primary tool for fuzzing Rust code. It uses libFuzzer, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
 
 </div>

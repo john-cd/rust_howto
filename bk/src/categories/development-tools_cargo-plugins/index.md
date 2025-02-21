@@ -127,9 +127,9 @@ cargo-watch: Watches your project for changes and rebuilds.
 
 ## Creating a Cargo plugin
 
-Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something).  Therefore, there aren't specific crates for creating cargo plugins, but rather crates that are used within cargo plugins.  Here's a breakdown:
+Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating cargo plugins, but rather crates that are used within cargo plugins. Here's a breakdown:
 
-Creating a Cargo Plugin:  You create a regular Rust project (often a binary crate) and name the executable cargo-something.  Cargo will automatically discover and run these executables.
+Creating a Cargo Plugin: You create a regular Rust project (often a binary crate) and name the executable cargo-something. Cargo will automatically discover and run these executables.
 
 Essential Crates (for plugin functionality):
 
@@ -140,8 +140,8 @@ Process Management: std::process (for running other commands)
 Networking/HTTP (if needed): reqwest, hyper
 Serialization/Deserialization: serde (for handling configuration or data)
 Logging: log, env_logger
-Cargo API (Unstable):  There is an unstable Cargo API that plugins could use, but it's not recommended for most plugins due to its instability.  If you need very deep integration, you might explore it, but be prepared for changes.
+Cargo API (Unstable): There is an unstable Cargo API that plugins could use, but it's not recommended for most plugins due to its instability. If you need very deep integration, you might explore it, but be prepared for changes.
 
-In essence, you build a regular Rust application.  The "Cargo plugin" aspect comes from the naming convention and how Cargo discovers and executes it.  The crates you use depend entirely on what your plugin is designed to do.
+In essence, you build a regular Rust application. The "Cargo plugin" aspect comes from the naming convention and how Cargo discovers and executes it. The crates you use depend entirely on what your plugin is designed to do.
 
 </div>

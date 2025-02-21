@@ -31,5 +31,5 @@ Lazy Init: lazy_static (runtime init, simple), once_cell (runtime init, more con
 Mutable Global: parking_lot::Mutex/RwLock (thread-safe).
 Thread-Local: std::thread_local.
 Atomic: std::sync::atomic.
-Prefer once_cell over lazy_static.  Use mutexes/rwlocks for mutable globals.  Consider alternatives to globals.
+Prefer once_cell over lazy_static. Use mutexes/rwlocks for mutable globals. Consider alternatives to globals.
 </div>

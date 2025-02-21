@@ -90,5 +90,5 @@ Base64:
 
 `serde`: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
 
-It's important to choose the right encoding crate for the job.  For general character encoding, encoding is a good choice.  For JSON, serde_json is the standard.  For other formats, look for crates that support them specifically.  serde is the underlying engine for many of these, providing a consistent way to work with serialization.
+It's important to choose the right encoding crate for the job. For general character encoding, encoding is a good choice. For JSON, serde_json is the standard. For other formats, look for crates that support them specifically. serde is the underlying engine for many of these, providing a consistent way to work with serialization.
 </div>

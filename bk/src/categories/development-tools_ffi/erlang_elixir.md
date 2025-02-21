@@ -18,7 +18,7 @@
 <div class="hidden">
 [P2 write](https://github.com/john-cd/rust_howto/issues/1070)
 
-Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs (Native Implemented Functions).  Here's a breakdown:
+Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs (Native Implemented Functions). Here's a breakdown:
 
 Ports:
 
@@ -40,5 +40,5 @@ Other Considerations:
 Error Handling: Careful error handling is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
 Concurrency: Erlang/Elixir and Rust have different concurrency models. You'll need to be mindful of how you manage concurrency across the FFI boundary.
 Data Types: You'll need to map data types between Rust and Erlang/Elixir. The erlang_term crate can help with this.
-The erlang_nif crate is the key for writing NIFs.  For ports, you'll primarily use standard Rust I/O mechanisms.  Serialization libraries are crucial for efficient data exchange in both cases.
+The erlang_nif crate is the key for writing NIFs. For ports, you'll primarily use standard Rust I/O mechanisms. Serialization libraries are crucial for efficient data exchange in both cases.
 </div>

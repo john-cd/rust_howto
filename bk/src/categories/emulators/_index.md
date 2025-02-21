@@ -12,7 +12,7 @@ Emulators allow one computer to behave like another, often to allow running soft
 <div class="hidden">
 [emulators/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/348)
 
-Building an emulator is a substantial project.  You'll likely spend a lot of time on the core logic (CPU emulation, memory management) and then use crates for graphics, sound, and other peripherals as needed.
+Building an emulator is a substantial project. You'll likely spend a lot of time on the core logic (CPU emulation, memory management) and then use crates for graphics, sound, and other peripherals as needed.
 
 - CPU Emulation
 - Memory Management
@@ -22,7 +22,7 @@ Building an emulator is a substantial project.  You'll likely spend a lot of tim
 - Instruction Decoding:
 - State Management:
 - Concurrency (for performance):
-  - rayon: Can be used for parallelizing parts of the emulation.
+- rayon: Can be used for parallelizing parts of the emulation.
 
 Link to
 

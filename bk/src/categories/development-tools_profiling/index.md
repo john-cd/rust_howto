@@ -66,6 +66,6 @@ Callgrind:
 
 callgrind: A performance analysis tool. Often used with kcachegrind for visualization.
 
-It's important to choose the right profiling tool for the job. Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like perf provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations.  Tracing helps you understand the flow of your program.
+It's important to choose the right profiling tool for the job. Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like perf provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
 
 </div>

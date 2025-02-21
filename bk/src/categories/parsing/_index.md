@@ -18,7 +18,7 @@ Create parsers for binary and text formats. Format-specific parsers belong in ot
 | Lexing/Tokenization | `logos`, `lexical`, `regex` | `logos` generates fast lexers. `lexical` is another lexer generator. `regex` is useful for simpler tokenization or text processing. |
 | Parser Generators | `lalrpop`, `pest` | These tools define the grammar and generate the parser code. |
 | Combinator Parsers | `nom`, `chumsky`, `combine` | These libraries provide functions that can be combined to build more complex parsers. |
-| Error Handling |  | Good error messages are crucial. Consider crates that provide helpful error reporting. |
+| Error Handling | | Good error messages are crucial. Consider crates that provide helpful error reporting. |
 | Abstract Syntax Trees (AST) | Often implemented in custom structs | Parsers usually produce an AST, which represents the structure of the parsed input. You'll often define your own structs for this. |
 | Serialization/Deserialization | `serde` | If you need to serialize or deserialize the AST, `serde` is the standard library. |
 

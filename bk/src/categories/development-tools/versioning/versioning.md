@@ -65,7 +65,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/920)
 
-Semantic Versioning (SemVer):  (The concept itself.  No specific crate implements SemVer, but crates like semver help work with SemVer strings.)
+Semantic Versioning (SemVer): (The concept itself. No specific crate implements SemVer, but crates like semver help work with SemVer strings.)
 Version Parsing and Comparison: semver (crate for parsing, comparing, and manipulating SemVer strings)
 Version Bumping: cargo-bump (a tool to automate bumping versions in your Cargo.toml file according to SemVer rules)
 Dependency Management (with version constraints): cargo (uses SemVer for specifying dependencies in Cargo.toml)

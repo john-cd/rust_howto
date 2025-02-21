@@ -55,5 +55,5 @@ Addons: You'll create a Node.js addon that exposes your Rust functions to JavaSc
 Data Marshaling: You'll need to convert data between Rust and JavaScript types. neon helps with this.
 Event Loop: You'll need to be mindful of Node.js's event loop and ensure that your Rust code interacts with it correctly (e.g., using asynchronous operations when necessary).
 
-neon is the most important crate here. It significantly simplifies the process of creating Node.js addons in Rust. It's highly recommended to use it unless you have very specific low-level N-API requirements.  It abstracts away much of the complexity of manual N-API interaction.
+neon is the most important crate here. It significantly simplifies the process of creating Node.js addons in Rust. It's highly recommended to use it unless you have very specific low-level N-API requirements. It abstracts away much of the complexity of manual N-API interaction.
 </div>

@@ -44,6 +44,6 @@ Lua State: You'll work with a Lua state in your Rust code to interact with the L
 Calling Lua Functions from Rust: The binding crates provide ways to call Lua functions from Rust.
 Calling Rust Functions from Lua: You can register Rust functions with Lua so that they can be called from Lua scripts.
 Stack Manipulation (Lower-Level Bindings): If you use lower-level bindings, you might need to manipulate the Lua stack directly. Higher-level crates abstract this away.
-rlua and mlua provide a much more ergonomic and safe way to interact with Lua compared to using the raw Lua C API directly.  They are the recommended starting points for Lua/Rust integration.
+rlua and mlua provide a much more ergonomic and safe way to interact with Lua compared to using the raw Lua C API directly. They are the recommended starting points for Lua/Rust integration.
 
 </div>

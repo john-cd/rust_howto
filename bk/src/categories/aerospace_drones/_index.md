@@ -19,13 +19,13 @@ Core Flight Control & Communication:
 - Real-time Systems: Handling sensor data and control loops within strict timing constraints.
 - Embedded Systems: Interfacing with hardware, memory management, no-std programming (if applicable).
 
-  Rust Crates:
+ Rust Crates:
 
-  - mavlink: For MAVLink encoding/decoding.
-  - Link to embedded-hal: For hardware abstraction (if working with embedded systems).
-  - pid: For PID controller implementation.
-  - Link to nalgebra: For linear algebra (essential for control algorithms).
-  - Link to num-traits & num-complex: For numerical and complex number operations.
+- mavlink: For MAVLink encoding/decoding.
+- Link to embedded-hal: For hardware abstraction (if working with embedded systems).
+- pid: For PID controller implementation.
+- Link to nalgebra: For linear algebra (essential for control algorithms).
+- Link to num-traits & num-complex: For numerical and complex number operations.
 
 Sensor Integration:
 
@@ -34,7 +34,7 @@ GPS Integration: Receiving and processing GPS data for localization and navigati
 Barometer/Altimeter: Altitude measurement.
 Other Sensors: Cameras, LiDAR, ultrasonic sensors.
 
-  Rust Crates:
+ Rust Crates:
 
 - (Sensor-specific crates are common): Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
 - i2cdev, spidev, serialport: For low-level hardware communication.
@@ -46,8 +46,8 @@ Link to Computer Vision & Image Processing
 - Image Processing: Image filtering, feature extraction.
 - SLAM (Simultaneous Localization and Mapping): Building a map of the environment and localizing the drone within it.
 - Link to Rust Crates:
-  opencv: Bindings for the OpenCV library (powerful for computer vision).
-  image: For image loading and manipulation.
-  ndarray: For efficient array operations (often used in image processing).
+ opencv: Bindings for the OpenCV library (powerful for computer vision).
+ image: For image loading and manipulation.
+ ndarray: For efficient array operations (often used in image processing).
 
 </div>

@@ -95,6 +95,6 @@ Often used with file I/O to read and write structured data (JSON, YAML, TOML, et
 
 `tar`, `zip`: Crates for working with tar and zip archives.
 
-For most common file system tasks, `std::fs` and `std::path` will be sufficient. `fs_extra` is useful for more advanced operations. `tempfile` is great for working with temporary files.  `glob` simplifies file pattern matching.  `notify` is essential for file watching.  And, of course, `serde` is very often used to handle the contents of files when you're working with structured data.
+For most common file system tasks, `std::fs` and `std::path` will be sufficient. `fs_extra` is useful for more advanced operations. `tempfile` is great for working with temporary files. `glob` simplifies file pattern matching. `notify` is essential for file watching. And, of course, `serde` is very often used to handle the contents of files when you're working with structured data.
 
 </div>

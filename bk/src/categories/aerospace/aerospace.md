@@ -4,12 +4,12 @@
 
 ## Aerospace {#aero}
 
-  drones
-  UAVs
-  [aerospace][p-aerospace] protocols
-  simulation
-  [aerospace][p-aerospace] simulation
-  space protocols
+ drones
+ UAVs
+ [aerospace][p-aerospace] protocols
+ simulation
+ [aerospace][p-aerospace] simulation
+ space protocols
 
 ```rust,editable
 {{#include ../../../crates/cats/aerospace/tests/aero.rs:example}}

@@ -20,5 +20,5 @@ Instrumentation: (Often done with macros provided by tracing or other instrument
 Output and Formatting: tracing-subscriber (formats and outputs traces to various destinations)
 Filtering: tracing-subscriber (allows filtering of traces based on level, target, etc.)
 Asynchronous Tracing: (Supported by tracing through its asynchronous span management)
-Integration with other tools: (Often tracing is used with other tools like Jaeger or Zipkin for distributed tracing.  There might be specific crates for those integrations, but tracing is the core.)
+Integration with other tools: (Often tracing is used with other tools like Jaeger or Zipkin for distributed tracing. There might be specific crates for those integrations, but tracing is the core.)
 </div>

@@ -133,6 +133,6 @@ Often involves using tokio::test or similar runtime-specific attributes for test
 grcov: A code coverage tool.
 tarpaulin: Another code coverage tool.
 
-For most basic testing needs, std::test will be sufficient.  For more advanced testing, especially property-based testing, proptest is highly recommended.  mockall or faux will help when you need to mock dependencies.  rstest is great for parameterized tests.  And for ensuring your tests cover a good portion of your code, grcov or tarpaulin can be used.
+For most basic testing needs, std::test will be sufficient. For more advanced testing, especially property-based testing, proptest is highly recommended. mockall or faux will help when you need to mock dependencies. rstest is great for parameterized tests. And for ensuring your tests cover a good portion of your code, grcov or tarpaulin can be used.
 
 </div>

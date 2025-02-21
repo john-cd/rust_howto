@@ -60,6 +60,6 @@ Understanding how macros work, token streams, ASTs, and the difference between a
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.)
 
-In short, you'll almost always use proc-macro, syn, and quote when writing procedural macros.  trybuild is highly recommended for testing.  Understanding the underlying metaprogramming concepts is key to effectively using these crates.
+In short, you'll almost always use proc-macro, syn, and quote when writing procedural macros. trybuild is highly recommended for testing. Understanding the underlying metaprogramming concepts is key to effectively using these crates.
 
 </div>

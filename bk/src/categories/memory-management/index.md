@@ -20,7 +20,7 @@ Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garb
 
 ## Key Points
 
-- Ownership and borrowing are language features, not crates.  They are fundamental to Rust's memory safety.
+- Ownership and borrowing are language features, not crates. They are fundamental to Rust's memory safety.
 - Smart pointers are the most common way to manage memory beyond basic ownership.
 - ASan is essential for catching memory errors during development.
 - Memory profiling tools are important for optimizing memory usage.
@@ -30,7 +30,7 @@ Here's a short list of memory management crates in Rust, categorized by topic:
 
 ## Core Allocation (Rarely Used Directly)
 
-- `alloc`: (Standard library) Provides the fundamental allocation APIs.  Most other memory management tools are built on top of it.
+- `alloc`: (Standard library) Provides the fundamental allocation APIs. Most other memory management tools are built on top of it.
 
 ## Smart Pointers (Commonly Used)
 
@@ -58,8 +58,8 @@ Link to:
 
 ## Other (Less Common or Specialized)
 
-- Garbage Collection:  Rust generally avoids GC.  If you need it, you'd likely have to explore very specialized options.
-- Custom Allocators:  You can implement custom allocators, but this is usually only necessary for very specific performance requirements.
+- Garbage Collection: Rust generally avoids GC. If you need it, you'd likely have to explore very specialized options.
+- Custom Allocators: You can implement custom allocators, but this is usually only necessary for very specific performance requirements.
 
 ---
 

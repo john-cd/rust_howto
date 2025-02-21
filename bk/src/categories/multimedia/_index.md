@@ -40,6 +40,6 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 - Image processing: `image`.
 - Low-level graphics: `wgpu` (if you need to render video or perform GPU-accelerated processing).
 
-For most multimedia tasks, you'll need to combine several crates. For example, you might use `image` to load images, `cpal` to play audio, and `wgpu` to render video.  FFmpeg bindings are very powerful, but they can be more complex to work with.
+For most multimedia tasks, you'll need to combine several crates. For example, you might use `image` to load images, `cpal` to play audio, and `wgpu` to render video. FFmpeg bindings are very powerful, but they can be more complex to work with.
 
 </div>

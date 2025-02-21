@@ -57,5 +57,5 @@ cargo watch: Watches your project for changes and automatically rebuilds and rer
 Other File Watching Tools: (Less common for Rust projects specifically, but might be used in more complex setups)
 
 watchexec: A general-purpose file watcher that can execute commands on file changes. You could use it to trigger Cargo commands, but cargo watch is usually simpler.
-It's worth noting that some IDEs also have built-in file watching and automatic build features.  If you're using an IDE, check its settings as you might not need a separate tool like cargo watch.
+It's worth noting that some IDEs also have built-in file watching and automatic build features. If you're using an IDE, check its settings as you might not need a separate tool like cargo watch.
 </div>

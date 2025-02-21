@@ -18,23 +18,23 @@ Working with files, directories, permissions, etc.
 
 - `std::fs`, `std::path`
 
-## Process Management:  Forking, spawning processes, signals, pipes
+## Process Management: Forking, spawning processes, signals, pipes
 
 - `std::process`, `nix`
 
-## Networking (Sockets):  TCP/IP, UDP, low-level socket programming
+## Networking (Sockets): TCP/IP, UDP, low-level socket programming
 
 - `std::net`, `socket2`
 
-## System Calls:  Directly interacting with the operating system
+## System Calls: Directly interacting with the operating system
 
 - `nix`, `libc` (for raw system call access, use with caution)
 
-## Terminal Interaction:  Working with TTYs, terminal attributes
+## Terminal Interaction: Working with TTYs, terminal attributes
 
 - `termion`, `crossterm`
 
-## Time and Dates:  Working with system time, timers
+## Time and Dates: Working with system time, timers
 
 - `std::time`, `chrono`
 
