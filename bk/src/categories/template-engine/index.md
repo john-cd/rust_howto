@@ -18,4 +18,41 @@ Crates designed to combine templates with data to produce result documents, usua
 <div class="hidden">
 [template-engine/index: write (P1)](https://github.com/john-cd/rust_howto/issues/482)
 
+## Rust Crates for Template Engines
+
+This table lists popular Rust template engines and categorizes them by their approach and features.
+
+| Template Engine | Description | Key Features | Crate Name |
+|---|---|---|---|
+| String-based Templating (Simple) | Focuses on string interpolation and simple logic within templates. | Easy to learn, good for basic templating. | `minijinja`, `tera` (can also be used for more advanced cases) |
+| String-based Templating (Advanced) | Offers more advanced features like control flow, loops, and expressions. | More powerful, but can be more complex. | `tera`, `handlebars` |
+| Type-safe Templating | Leverages Rust's type system for compile-time checking of templates. | Improved safety and reduced runtime errors. | `askama`, `maud` |
+| HTML Templating | Specifically designed for generating HTML. | Often includes features like HTML escaping and code formatting. | `maud`, `yew` (components can act like templates), `perseus` (for static site generation) |
+| Markup Templating (General) | Can be used for various markup languages (HTML, XML, etc.). | Flexible and extensible. | `markup` |
+| Logic-less Templating | Emphasizes separation of concerns by minimizing logic within templates. | Cleaner templates, often used with more complex logic handled in Rust code. | `handlebars`, `minijinja` (can be used in a logic-less way) |
+| High-Performance Templating | Optimized for speed and efficiency. | Suitable for applications where performance is critical. | `minijinja`, `tera` (benchmarks show good performance) |
+| Compile-time Templating | Templates are processed at compile time, reducing runtime overhead. | Faster rendering, but requires recompilation for template changes. | `askama`, `maud` |
+
+## Crate Details
+
+* `minijinja`: A lightweight and fast templating engine inspired by Jinja2. Good balance of features and performance. Suitable for both simple and more complex scenarios.
+* `tera`: A powerful and flexible templating engine with support for various features, including custom functions and filters. Can be used for both simple and advanced templating needs.
+* `handlebars`: A logic-less templating engine inspired by Handlebars.js. Good for separating presentation from logic.
+* `askama`: A type-safe and compile-time templating engine. Provides excellent compile-time error checking. Good for applications where safety and performance are critical.
+* `maud`: A fast and type-safe HTML templating engine that generates HTML at compile time. Excellent for web development.
+* `markup`: A general-purpose markup templating engine. Can be used for various markup languages.
+* `yew`: A front-end framework for building web apps with Rust. Components can be used like templates.
+* `perseus`: A static site generator that uses templates.
+
+## Choosing a Template Engine
+
+The best template engine for your project depends on your specific requirements:
+
+* Simplicity: For basic templating, `minijinja` is a good choice.
+* Power and Flexibility: `tera` offers a wide range of features.
+* Type Safety: `askama` and `maud` provide compile-time checking.
+* Performance: `minijinja`, `tera`, `askama`, and `maud` are all performant.
+* HTML Generation: `maud` and `yew` are well-suited for HTML templating.
+* Logic-less Templating: `handlebars` and `minijinja` (used in a certain way) are good choices.
+
 </div>
