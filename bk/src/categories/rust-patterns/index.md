@@ -76,7 +76,7 @@ Shared solutions for particular situations specific to programming in Rust.
 | Factory | Often implemented directly, no specific crate | Commonly implemented using traits and generics. |
 | Strategy | Often implemented directly, no specific crate | Often implemented using trait objects or enums. |
 | Observer | [`event-listener`][c-event_listener]⮳{{hi:event-listener}} | Helps implement the observer pattern. |
-| Dependency Injection | `di`, [`yew`][c-yew]⮳{{hi:yew}} for front-end | Dependency injection frameworks exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
+| Dependency Injection | [`di`][c-di]⮳{{hi:di}}, [`yew`][c-yew]⮳{{hi:yew}} for front-end | Dependency injection frameworks exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
 | Closures | | Fundamental language features. |
 | Iterators | | Fundamental language features, but the [`itertools`][c-itertools]⮳{{hi:itertools}} crate provides additional iterator adapters. |
 | Macros | | Fundamental language features. Crates like [`syn`][c-syn]⮳{{hi:syn}} and [`quote`][c-quote]⮳{{hi:quote}} are used for procedural macros. |

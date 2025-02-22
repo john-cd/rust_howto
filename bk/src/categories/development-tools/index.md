@@ -60,7 +60,7 @@ Testing Framework: `std::test` (built-in), [`rstest`][c-rstest]⮳{{hi:rstest}} 
 Debugging: [`gdb`][c-gdb]⮳{{hi:gdb}}, [`lldb`][c-lldb]⮳{{hi:lldb}} (often used via IDE integration), `cargo-debug`
 Profiling: `cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (system profiler)
 Documentation Generator: `cargo doc`
-Code Coverage: [`grcov`][c-grcov]⮳{{hi:grcov}}, `tarpaulin`
+Code Coverage: [`grcov`][c-grcov]⮳{{hi:grcov}}, [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}}
 Continuous Integration: often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c-xtask]⮳{{hi:xtask}} can help manage CI tasks
 Code Analysis: `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs)
 

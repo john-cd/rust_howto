@@ -39,7 +39,7 @@
 
 [`hyper`][c-hyper]⮳{{hi:hyper}} is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the [`tokio`][c-tokio]⮳{{hi:tokio}} async runtime, but can support other runtimes.
 
-[`hyper`][c-hyper]⮳{{hi:hyper}} is meant to be a low-level building block and is indeed used by higher-level libraries such as `curl`, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, and `aws-sdk`. You will likely reach for [`hyper`][c-hyper]⮳{{hi:hyper}} to design such tools or access to bleeding-edge features (like HTTP/3).
+[`hyper`][c-hyper]⮳{{hi:hyper}} is meant to be a low-level building block and is indeed used by higher-level libraries such as [`curl`][c-curl]⮳{{hi:curl}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, and `aws-sdk`. You will likely reach for [`hyper`][c-hyper]⮳{{hi:hyper}} to design such tools or access to bleeding-edge features (like HTTP/3).
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}

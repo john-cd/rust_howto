@@ -18,7 +18,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 - Core & Tooling:
   - WCAG Basics: Essential links and level explanations.
 
-- Link to Web: [`html5ever`][c-html5ever]⮳{{hi:html5ever}} / [`tl`][c-tl]⮳{{hi:tl}} (HTML parsing), `css-rs` (CSS parsing), [`url`][c-url]⮳{{hi:url}} (URLs).
+- Link to Web: [`html5ever`][c-html5ever]⮳{{hi:html5ever}} / [`tl`][c-tl]⮳{{hi:tl}} (HTML parsing), [`css-rs`][c-css]⮳{{hi:css-rs}} (CSS parsing), [`url`][c-url]⮳{{hi:url}} (URLs).
   - Semantic HTML: Use elements like <article>, <nav>.
   - Image Alt Text: Good and bad examples, decorative images.
   - Accessible Forms: Labels, errors, keyboard navigation.

@@ -13,7 +13,7 @@
 
 [`hyper`][c-hyper]⮳{{hi:hyper}} is meant to be a building block for libraries and applications, for uses cases including:
 
-- Low-level client libraries (e.g. `curl`, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, `aws-sdk`),
+- Low-level client libraries (e.g. [`curl`][c-curl]⮳{{hi:curl}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, `aws-sdk`),
 - Web server frameworks (e.g. [`deno`][c-deno]⮳{{hi:deno}}, [`axum`][c-axum]⮳{{hi:axum}}),
 - Services and Proxies (e.g. `linkerd`, [`cloudflare`][c-cloudflare]⮳{{hi:cloudflare}}, [`fastly`][fastly]⮳{{hi:fastly}} ).
 - Use of bleeding-edge protocols e.g HTTP/3.

@@ -16,7 +16,7 @@ Direct hardware access is generally considered unsafe and requires careful consi
 
 | Topic/Area | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Low-Level Graphics (Vulkan) | [`vulkano`][c-vulkano]⮳{{hi:vulkano}}, `ash` | `ash` is a lower-level, more direct binding to Vulkan. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides a safer, higher-level abstraction. These are closer to the metal than many other options. |
+| Low-Level Graphics (Vulkan) | [`vulkano`][c-vulkano]⮳{{hi:vulkano}}, `ash` | [`ash`][c-ash]⮳{{hi:ash}} is a lower-level, more direct binding to Vulkan. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides a safer, higher-level abstraction. These are closer to the metal than many other options. |
 | Low-Level Graphics (Direct3D 12 - Windows) | [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} (with a D3D12 backend), `d3d12` (more raw bindings) | Direct3D 12 access is usually through [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}'s backend or lower level bindings like `d3d12`. Windows-specific. |
 | Low-Level Graphics (Metal - macOS/iOS) | [`metal`][c-metal]⮳{{hi:metal}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} (with a Metal backend) | Metal access is provided by the [`metal`][c-metal]⮳{{hi:metal}} crate or through [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}. macOS/iOS specific. |
 | Window Management & Input (Cross-Platform) | [`winit`][c-winit]⮳{{hi:winit}}, `raw-window-handle` | These crates are essential for interacting with the window system, which is a prerequisite for any rendering. `raw-window-handle` is used to get the window handle to pass to graphics APIs. [`winit`][c-winit]⮳{{hi:winit}} provides a higher-level abstraction for window creation and event handling. |

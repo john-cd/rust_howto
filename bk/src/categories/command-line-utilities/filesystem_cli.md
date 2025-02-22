@@ -14,7 +14,7 @@ apt install lsd
 
 [![exa-github][c-exa-github-badge]][c-exa-github]{{hi:exa}}
 
-`exa` is a fast, colorful, and informative replacement for `ls`, offering improved defaults and a user-friendly experience. [`exa`][c-exa]⮳{{hi:exa}} offers more extensive customization options compared to lsd. You can configure colors, icons, and output format in more detail with exa. [`lsd`][c-lsd]⮳{{hi:lsd}} uses a configuration file to store user preferences, while [`exa`][c-exa]⮳{{hi:exa}} primarily relies on command-line flags.
+[`exa`][c-exa]⮳{{hi:exa}} is a fast, colorful, and informative replacement for `ls`, offering improved defaults and a user-friendly experience. [`exa`][c-exa]⮳{{hi:exa}} offers more extensive customization options compared to lsd. You can configure colors, icons, and output format in more detail with exa. [`lsd`][c-lsd]⮳{{hi:lsd}} uses a configuration file to store user preferences, while [`exa`][c-exa]⮳{{hi:exa}} primarily relies on command-line flags.
 
 ## `broot` {#broot}
 

@@ -24,8 +24,8 @@ Parsers implemented for particular formats or languages.
 | Regular Expressions | [`regex`][c-regex]⮳{{hi:regex}} | The standard crate for regular expression parsing and matching. |
 | INI | [`ini`][c-ini]⮳{{hi:ini}} | For parsing INI configuration files. |
 | GraphQL | [`graphql_parser`][c-graphql_parser]⮳{{hi:graphql_parser}}, [`juniper`][c-juniper]⮳{{hi:juniper}} | [`graphql_parser`][c-graphql_parser]⮳{{hi:graphql_parser}} parses GraphQL queries. [`juniper`][c-juniper]⮳{{hi:juniper}} is a GraphQL server implementation and includes parsing capabilities. |
-| WebAssembly (WAT/Wasm) | `wat`, [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}} | [`wat`][c-wat]⮳{{hi:wat}} is for parsing WAT (WebAssembly Text Format). [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}} is a more general WebAssembly tooling library. |
+| WebAssembly (WAT/Wasm) | [`wat`][c-wat]⮳{{hi:wat}}, [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}} | [`wat`][c-wat]⮳{{hi:wat}} is for parsing WAT (WebAssembly Text Format). [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}} is a more general WebAssembly tooling library. |
 | SQL | [`sqlparser`][c-sqlparser]⮳{{hi:sqlparser}}, [`diesel`][c-diesel]⮳{{hi:diesel}} | [`sqlparser`][c-sqlparser]⮳{{hi:sqlparser}} is a general SQL parser. [`diesel`][c-diesel]⮳{{hi:diesel}} is an ORM that includes SQL parsing. |
-| Rust Code | `syn`, [`quote`][c-quote]⮳{{hi:quote}} | [`syn`][c-syn]⮳{{hi:syn}} parses Rust code into an AST. [`quote`][c-quote]⮳{{hi:quote}} is often used alongside [`syn`][c-syn]⮳{{hi:syn}} for code generation. |
+| Rust Code | [`syn`][c-syn]⮳{{hi:syn}}, [`quote`][c-quote]⮳{{hi:quote}} | [`syn`][c-syn]⮳{{hi:syn}} parses Rust code into an AST. [`quote`][c-quote]⮳{{hi:quote}} is often used alongside [`syn`][c-syn]⮳{{hi:syn}} for code generation. |
 
 </div>

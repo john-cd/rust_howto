@@ -29,12 +29,12 @@ Specific Engine Crates
 
 [`Fyrox`][c-fyrox]⮳{{hi:Fyrox}}: A 3D game engine with a visual editor. Good for those who prefer a more visual approach to game development.
 
-`Godot-Rust`: Bindings that allow you to use Rust as a scripting language within the Godot Engine. This lets you leverage Godot's features and editor while writing game logic in Rust.
+[`Godot-Rust`][c-godot_rust]⮳{{hi:Godot-Rust}}: Bindings that allow you to use Rust as a scripting language within the Godot Engine. This lets you leverage Godot's features and editor while writing game logic in Rust.
 
 [`Tetra`][c-tetra]⮳{{hi:Tetra}}: A simple 2D game framework inspired by Love2D.
 
-It's worth noting that "game engine" is a broad term. Some of these are full-fledged engines with built-in rendering, physics, and other features (like [`Bevy`][c-bevy]⮳{{hi:Bevy}}, [`Amethyst`][c-amethyst]⮳{{hi:Amethyst}}, and [`Fyrox`][c-fyrox]⮳{{hi:Fyrox}}). Others are more focused frameworks that provide the building blocks for creating games (like [`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}}, and [`Tetra`][c-tetra]⮳{{hi:Tetra}}). `Godot-Rust` is a special case, as it integrates Rust into an existing engine.
+It's worth noting that "game engine" is a broad term. Some of these are full-fledged engines with built-in rendering, physics, and other features (like [`Bevy`][c-bevy]⮳{{hi:Bevy}}, [`Amethyst`][c-amethyst]⮳{{hi:Amethyst}}, and [`Fyrox`][c-fyrox]⮳{{hi:Fyrox}}). Others are more focused frameworks that provide the building blocks for creating games (like [`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}}, and [`Tetra`][c-tetra]⮳{{hi:Tetra}}). [`Godot-Rust`][c-godot_rust]⮳{{hi:Godot-Rust}} is a special case, as it integrates Rust into an existing engine.
 
-The best choice depends on your project's needs and your preferred development style. For beginners, [`ggez`][c-ggez]⮳{{hi:ggez}} or [`macroquad`][c-macroquad]⮳{{hi:macroquad}} might be good starting points. For more complex projects, Bevy is a very strong contender. If you want a visual editor, [`Fyrox`][c-fyrox]⮳{{hi:Fyrox}} is a good option. And if you like `Godot`, `Godot-Rust` lets you use Rust with it.
+The best choice depends on your project's needs and your preferred development style. For beginners, [`ggez`][c-ggez]⮳{{hi:ggez}} or [`macroquad`][c-macroquad]⮳{{hi:macroquad}} might be good starting points. For more complex projects, Bevy is a very strong contender. If you want a visual editor, [`Fyrox`][c-fyrox]⮳{{hi:Fyrox}} is a good option. And if you like `Godot`, [`Godot-Rust`][c-godot_rust]⮳{{hi:Godot-Rust}} lets you use Rust with it.
 
 </div>

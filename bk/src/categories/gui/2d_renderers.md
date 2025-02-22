@@ -72,7 +72,7 @@
 
 ## Hybrid (Raster and Vector)
 
-- `wgpu`: While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
+- [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
 
 ## Higher-Level 2D Rendering (Often Part of UI or Game Frameworks)
 
