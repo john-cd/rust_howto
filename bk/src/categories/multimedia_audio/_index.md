@@ -22,14 +22,14 @@ Record, output, or process audio.
 
 ## Audio
 
-- `cpal`: Cross-platform audio input and output. A good general-purpose audio crate.
-- `sdl2`: Can also be used for audio.
-- `miniaudio`: A minimal audio library.
+- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate.
+- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio.
+- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library.
 
 Audio Input/Output:
 
-- `cpal`: Cross-platform audio input and output. A good general-purpose audio crate for most needs.
-- `miniaudio`: A minimal audio library focused on simplicity.
+- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate for most needs.
+- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library focused on simplicity.
 
 Audio Processing:
 
@@ -38,31 +38,31 @@ Audio Processing:
 
 Audio Formats and Codecs:
 
-- `ogg`: For Ogg Vorbis files.
-- `flac`: For FLAC files.
+- [`ogg`][c-ogg]⮳{{hi:ogg}}: For Ogg Vorbis files.
+- [`flac`][c-flac]⮳{{hi:flac}}: For FLAC files.
 - `mp3`: For MP3 files (often requires external dependencies).
-- `wav`: For WAV files.
+- [`wav`][c-wav]⮳{{hi:wav}}: For WAV files.
 
 Synthesis:
 
-- `synth-rs`: A crate for audio synthesis.
+- [`synth-rs`][c-synth]⮳{{hi:synth-rs}}: A crate for audio synthesis.
 
 Game Audio:
 
-- `sdl2`: (Can also be used for audio in games).
+- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: (Can also be used for audio in games).
 
 Other Audio Libraries:
 
-- `symphonia`: A comprehensive audio decoding library.
-- `iced_audio`: Audio playback for the `iced` GUI framework.
+- [`symphonia`][c-symphonia]⮳{{hi:symphonia}}: A comprehensive audio decoding library.
+- [`iced_audio`][c-iced_audio]⮳{{hi:iced_audio}}: Audio playback for the [`iced`][c-iced]⮳{{hi:iced}} GUI framework.
 
 ## Choosing Crates
 
-- General audio I/O: `cpal` is usually the best choice.
-- Minimal audio: `miniaudio` might be suitable.
+- General audio I/O: [`cpal`][c-cpal]⮳{{hi:cpal}} is usually the best choice.
+- Minimal audio: [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}} might be suitable.
 - Audio processing: `rubberband`, `rust-dsp`.
-- Specific formats: Use the crates for the formats you need (e.g., `ogg`, `flac`, `wav`).
+- Specific formats: Use the crates for the formats you need (e.g., [`ogg`][c-ogg]⮳{{hi:ogg}}, [`flac`][c-flac]⮳{{hi:flac}}, [`wav`][c-wav]⮳{{hi:wav}}).
 
-For most common audio tasks, `cpal` will be sufficient. If you need to work with specific audio formats, use the corresponding crates. For more advanced audio processing, explore crates like `rubberband` or `rust-dsp`. For game development, `sdl2` or game-specific audio libraries might be relevant.
+For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. If you need to work with specific audio formats, use the corresponding crates. For more advanced audio processing, explore crates like `rubberband` or `rust-dsp`. For game development, [`sdl2`][c-sdl2]⮳{{hi:sdl2}} or game-specific audio libraries might be relevant.
 
 </div>

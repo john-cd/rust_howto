@@ -6,7 +6,7 @@
 
 [The Cargo book][c-cargo-book]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:cargo}}
 
-`cargo`
+[`cargo`][c-cargo]⮳{{hi:cargo}}
 
 `cargo help` or `cargo <command> --help`
 

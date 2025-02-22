@@ -35,7 +35,7 @@ While compilation of this tool also works on Rust stable, it needs Rust nightly 
 [![cargo-machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
 [![cargo-machete-lib.rs][c-cargo_machete-lib.rs-badge]][c-cargo_machete-lib.rs]
 
-[`cargo-machete`][blog-cargo-machete]⮳ is a `cargo` tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
+[`cargo-machete`][blog-cargo-machete]⮳ is a [`cargo`][c-cargo]⮳{{hi:cargo}} tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
 
 Install and run with:
 
@@ -51,7 +51,7 @@ cargo machete
 [![cargo-outdated-github][c-cargo_outdated-github-badge]][c-cargo_outdated-github]
 [![cargo-outdated-lib.rs][c-cargo_outdated-lib.rs-badge]][c-cargo_outdated-lib.rs]
 
-[`cargo-outdated`][c-cargo_outdated]⮳{{hi:cargo-outdated}} is a `cargo` subcommand for displaying when dependencies are out of date.
+[`cargo-outdated`][c-cargo_outdated]⮳{{hi:cargo-outdated}} is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand for displaying when dependencies are out of date.
 
 If you are using VS Code, also look into the `Dependi` VS Code plugin.
 
@@ -87,7 +87,7 @@ $ cargo semver-checks
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo cache`][c-cargo_cache-github]{{hi:cargo-cache}}⮳ manages the `cargo` cache ($CARGO_HOME or ~/.cargo/), shows sizes and removes directories selectively.
+[`cargo cache`][c-cargo_cache-github]{{hi:cargo-cache}}⮳ manages the [`cargo`][c-cargo]⮳{{hi:cargo}} cache ($CARGO_HOME or ~/.cargo/), shows sizes and removes directories selectively.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -105,7 +105,7 @@ $ cargo semver-checks
 
 [![cargo-hack][c-cargo_hack-badge]][c-cargo_hack] [![cargo-hack-crates.io][c-cargo_hack-crates.io-badge]][c-cargo_hack-crates.io] [![cargo-hack-github][c-cargo_hack-github-badge]][c-cargo_hack-github] [![cargo-hack-lib.rs][c-cargo_hack-lib.rs-badge]][c-cargo_hack-lib.rs]{{hi:cargo-hack}}{{hi:Cargo}}{{hi:Subcommand}}{{hi:Testing}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
-`cargo hack` is a `cargo` subcommand to provide various options useful for [testing][p-testing] and continuous integration.
+`cargo hack` is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand to provide various options useful for [testing][p-testing] and continuous integration.
 
 Code Formatting:
 

@@ -34,15 +34,15 @@ Here's a short list of memory management crates in Rust, categorized by topic:
 
 ## Smart Pointers (Commonly Used)
 
-- `std::boxed::Box`: For heap allocation.
-- `std::rc::Rc`: For reference-counted shared ownership.
-- `std::sync::Arc`: For atomically reference-counted shared ownership (thread-safe).
-- `std::cell::RefCell`: For interior mutability.
-- `std::sync::Mutex`: For safe mutable access from multiple threads.
+- [`std::boxed::Box`][c-std::boxed::Box]⮳{{hi:std::boxed::Box}}: For heap allocation.
+- [`std::rc::Rc`][c-std::rc::Rc]⮳{{hi:std::rc::Rc}}: For reference-counted shared ownership.
+- [`std::sync::Arc`][c-std::sync::Arc]⮳{{hi:std::sync::Arc}}: For atomically reference-counted shared ownership (thread-safe).
+- [`std::cell::RefCell`][c-std::cell::RefCell]⮳{{hi:std::cell::RefCell}}: For interior mutability.
+- [`std::sync::Mutex`][c-std::sync::Mutex]⮳{{hi:std::sync::Mutex}}: For safe mutable access from multiple threads.
 
 ## Specialized Allocators
 
-- `wee_alloc`: A small and efficient allocator, often used in embedded systems or WebAssembly.
+- [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}: A small and efficient allocator, often used in embedded systems or WebAssembly.
 
 ## Memory Safety Tools (Essential for Development)
 
@@ -53,8 +53,8 @@ Here's a short list of memory management crates in Rust, categorized by topic:
 
 Link to:
 
-- `valgrind` (with `massif` or `memcheck`): External tool. Powerful memory profiler.
-- `heaptrack`: External tool. Heap profiler.
+- [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): External tool. Powerful memory profiler.
+- [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: External tool. Heap profiler.
 
 ## Other (Less Common or Specialized)
 
@@ -91,7 +91,7 @@ These are built into the Rust language itself, not specific crates. Mastering th
 ## Memory Allocation
 
 - `alloc`: (Standard library) Provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on.
-- `wee_alloc`: A small and efficient allocator often used in embedded systems or WebAssembly.
+- [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly.
 
 ## Memory Safety Tools
 
@@ -102,14 +102,14 @@ These are built into the Rust language itself, not specific crates. Mastering th
 
 Link to:
 
-- `valgrind` (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
-- `heaptrack`: A heap profiler that can track memory allocations.
+- [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
+- [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: A heap profiler that can track memory allocations.
 
 ## Garbage Collection (Not Typical in Rust)
 
 Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is extremely rare in Rust.
 
-`seize` crate
+[`seize`][c-seize]⮳{{hi:seize}} crate
 
 ## Unsafe Code and Raw Pointers
 

@@ -20,7 +20,7 @@ runtime-checked builders, works with &self, &mut self builder patterns. The olde
 
 [![bon-website][c-bon-website-badge]][c-bon-website] [![bon][c-bon-badge]][c-bon] [![bon-crates.io][c-bon-crates.io-badge]][c-bon-crates.io] [![bon-github][c-bon-github-badge]][c-bon-github] [![bon-lib.rs][c-bon-lib.rs-badge]][c-bon-lib.rs]{{hi:bon}}{{hi:Builder}}{{hi:Constructor}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-`bon` is a next-gen compile-time-checked builder generator, named function arguments.
+[`bon`][c-bon]⮳{{hi:bon}} is a next-gen compile-time-checked builder generator, named function arguments.
 
 bon - compile-time-checked builders, named function arguments via builders (foo().arg(...).call()), fallible/async builders, method builders (self.foo(...).arg(...).call()). The newest crate built based on lessons learned from typed-builder and derive_builder (33K downloads/month, but gaining popularity, 1095 stars, 3 months old).
 

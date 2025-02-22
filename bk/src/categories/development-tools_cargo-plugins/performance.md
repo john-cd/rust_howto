@@ -6,7 +6,7 @@
 
 [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard] [![cargo-wizard-crates.io][c-cargo_wizard-crates.io-badge]][c-cargo_wizard-crates.io] [![cargo-wizard-github][c-cargo_wizard-github-badge]][c-cargo_wizard-github] [![cargo-wizard-lib.rs][c-cargo_wizard-lib.rs-badge]][c-cargo_wizard-lib.rs]{{hi:cargo-wizard}}{{hi:Profile}}{{hi:Cargo}}{{hi:Template}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo wizard`][c-cargo_wizard-github]{{hi:cargo-wizard}}⮳ is a `cargo` subcommand for configuring Cargo projects. It applies profile and config templates to your Cargo project to configure it for maximum performance, fast compile times or minimal binary size.
+[`cargo wizard`][c-cargo_wizard-github]{{hi:cargo-wizard}}⮳ is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand for configuring Cargo projects. It applies profile and config templates to your Cargo project to configure it for maximum performance, fast compile times or minimal binary size.
 
 ## `cargo hakari` {#cargo-hakari}
 

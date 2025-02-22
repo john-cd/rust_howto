@@ -14,12 +14,12 @@ Create parsers for binary and text formats. Format-specific parsers belong in ot
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |
-| General Parsing | `nom`, `pest`, `lalrpop`, `chumsky`, `combine` | `nom` is good for binary formats and complex grammars. `pest` is easy for text-based grammars. `lalrpop` generates efficient parsers. `chumsky` is a parser combinator library, `combine` is another popular choice. |
-| Lexing/Tokenization | `logos`, `lexical`, `regex` | `logos` generates fast lexers. `lexical` is another lexer generator. `regex` is useful for simpler tokenization or text processing. |
-| Parser Generators | `lalrpop`, `pest` | These tools define the grammar and generate the parser code. |
-| Combinator Parsers | `nom`, `chumsky`, `combine` | These libraries provide functions that can be combined to build more complex parsers. |
+| General Parsing | `nom`, `pest`, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}}, [`chumsky`][c-chumsky]⮳{{hi:chumsky}}, [`combine`][c-combine]⮳{{hi:combine}} | [`nom`][c-nom]⮳{{hi:nom}} is good for binary formats and complex grammars. [`pest`][c-pest]⮳{{hi:pest}} is easy for text-based grammars. [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} generates efficient parsers. [`chumsky`][c-chumsky]⮳{{hi:chumsky}} is a parser combinator library, [`combine`][c-combine]⮳{{hi:combine}} is another popular choice. |
+| Lexing/Tokenization | [`logos`][c-logos]⮳{{hi:logos}}, [`lexical`][c-lexical]⮳{{hi:lexical}}, [`regex`][c-regex]⮳{{hi:regex}} | [`logos`][c-logos]⮳{{hi:logos}} generates fast lexers. [`lexical`][c-lexical]⮳{{hi:lexical}} is another lexer generator. [`regex`][c-regex]⮳{{hi:regex}} is useful for simpler tokenization or text processing. |
+| Parser Generators | [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}}, [`pest`][c-pest]⮳{{hi:pest}} | These tools define the grammar and generate the parser code. |
+| Combinator Parsers | [`nom`][c-nom]⮳{{hi:nom}}, [`chumsky`][c-chumsky]⮳{{hi:chumsky}}, [`combine`][c-combine]⮳{{hi:combine}} | These libraries provide functions that can be combined to build more complex parsers. |
 | Error Handling | | Good error messages are crucial. Consider crates that provide helpful error reporting. |
 | Abstract Syntax Trees (AST) | Often implemented in custom structs | Parsers usually produce an AST, which represents the structure of the parsed input. You'll often define your own structs for this. |
-| Serialization/Deserialization | `serde` | If you need to serialize or deserialize the AST, `serde` is the standard library. |
+| Serialization/Deserialization | [`serde`][c-serde]⮳{{hi:serde}} | If you need to serialize or deserialize the AST, [`serde`][c-serde]⮳{{hi:serde}} is the standard library. |
 
 </div>

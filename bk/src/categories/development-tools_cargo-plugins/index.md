@@ -80,51 +80,51 @@ Documentation:
 Publishing/Distribution:
 
 `cargo publish`: Publishes your crate to crates.io (built-in).
-`cargo-deb`: Creates Debian packages.
-`cargo-rpm`: Creates RPM packages.
+[`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}: Creates Debian packages.
+[`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}: Creates RPM packages.
 
 Miscellaneous:
 
-`cargo-tarpaulin`: Runs code coverage analysis.
-`cargo-flamegraph`: Generates flame graphs for profiling.
-`cargo-edit`: Edits your Cargo.toml file.
-`cargo-watch`: Watches your project for changes and rebuilds.
+[`cargo-tarpaulin`][c-cargo_tarpaulin]⮳{{hi:cargo-tarpaulin}}: Runs code coverage analysis.
+[`cargo-flamegraph`][c-cargo_flamegraph]⮳{{hi:cargo-flamegraph}}: Generates flame graphs for profiling.
+[`cargo-edit`][c-cargo_edit]⮳{{hi:cargo-edit}}: Edits your Cargo.toml file.
+[`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}}: Watches your project for changes and rebuilds.
 
 ---
 
-`cargo-afl` for fuzzing
+[`cargo-afl`][c-cargo_afl]⮳{{hi:cargo-afl}} for fuzzing
 
-`cargo-asm` and `cargo-expand` to investigate what the compiler generates from your code (`cargo-expand` shows the expanded output from macros)
+[`cargo-asm`][c-cargo_asm]⮳{{hi:cargo-asm}} and [`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} to investigate what the compiler generates from your code ([`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} shows the expanded output from macros)
 
-`cargo-audit` for checking whether any of your dependencies are of a version that has a security advisory out against them.
+[`cargo-audit`][c-cargo_audit]⮳{{hi:cargo-audit}} for checking whether any of your dependencies are of a version that has a security advisory out against them.
 
-`cargo-bloat` for identifying what's contributing to your binary's size (eg. modules with generic functions or macros not designed with size-efficiency in mind)
+[`cargo-bloat`][c-cargo_bloat]⮳{{hi:cargo-bloat}} for identifying what's contributing to your binary's size (eg. modules with generic functions or macros not designed with size-efficiency in mind)
 
-`cargo-cache`, `cargo-sweep`, and `cargo-prune` for keeping disk consumption by build artifacts and other regeneratable files under control.
+[`cargo-cache`][c-cargo_cache]⮳{{hi:cargo-cache}}, [`cargo-sweep`][c-cargo_sweep]⮳{{hi:cargo-sweep}}, and [`cargo-prune`][c-cargo_prune]⮳{{hi:cargo-prune}} for keeping disk consumption by build artifacts and other regeneratable files under control.
 
-`cargo-deadlinks` Check cargo doc output for broken old-style/manual intra-doc links.
+[`cargo-deadlinks`][c-cargo_deadlinks]⮳{{hi:cargo-deadlinks}} Check cargo doc output for broken old-style/manual intra-doc links.
 
-`cargo-edit` for `cargo add <dependency>`, `cargo rm <dependency>` and `cargo upgrade` to update your Cargo.toml's versions. (Functionality eventually planned to be part of Cargo itself)
+[`cargo-edit`][c-cargo_edit]⮳{{hi:cargo-edit}} for `cargo add <dependency>`, `cargo rm <dependency>` and `cargo upgrade` to update your Cargo.toml's versions. (Functionality eventually planned to be part of Cargo itself)
 
-`cargo-geiger` for identifying dependencies with unsafe code so you can either audit them or find alternatives if you don't feel skilled enough to do your own auditing.
+[`cargo-geiger`][c-cargo_geiger]⮳{{hi:cargo-geiger}} for identifying dependencies with unsafe code so you can either audit them or find alternatives if you don't feel skilled enough to do your own auditing.
 
-`cargo-modules` for rendering a tree or Graphviz graph of the modules within a crate
+[`cargo-modules`][c-cargo_modules]⮳{{hi:cargo-modules}} for rendering a tree or Graphviz graph of the modules within a crate
 
-`cargo-outdated` for listing packages that have newer versions than what your Cargo.toml and Cargo.lock are pinning.
+[`cargo-outdated`][c-cargo_outdated]⮳{{hi:cargo-outdated}} for listing packages that have newer versions than what your Cargo.toml and Cargo.lock are pinning.
 
-`cargo-tree` to investigate dependencies (I like to use -d to list crates where more than one version is getting pulled in and what's pulling each version in.)
+[`cargo-tree`][c-cargo_tree]⮳{{hi:cargo-tree}} to investigate dependencies (I like to use -d to list crates where more than one version is getting pulled in and what's pulling each version in.)
 
-`cargo-update` to provide a cargo install-update to check for and install new versions of cargo install's commands.
+[`cargo-update`][c-cargo_update]⮳{{hi:cargo-update}} to provide a cargo install-update to check for and install new versions of cargo install's commands.
 
-`cargo-watch` to re-run a command every time the source changes. (eg. `cargo test`)
+[`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}} to re-run a command every time the source changes. (eg. `cargo test`)
 
-`flamegraph` as an easy way to generate flamegraphs for visualizing performance profiles of Rust programs.
+[`flamegraph`][c-flamegraph]⮳{{hi:flamegraph}} as an easy way to generate flamegraphs for visualizing performance profiles of Rust programs.
 
-`cargo-about`, `cargo-deny`, `cargo-license`, or `cargo-lichking` for license compliance management
+[`cargo-about`][c-cargo_about]⮳{{hi:cargo-about}}, [`cargo-deny`][c-cargo_deny]⮳{{hi:cargo-deny}}, [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}}, or [`cargo-lichking`][c-cargo_lichking]⮳{{hi:cargo-lichking}} for license compliance management
 
-`cargo-audit` and `cargo-sweep`
+[`cargo-audit`][c-cargo_audit]⮳{{hi:cargo-audit}} and [`cargo-sweep`][c-cargo_sweep]⮳{{hi:cargo-sweep}}
 
-`cargo-spellcheck`
+[`cargo-spellcheck`][c-cargo_spellcheck]⮳{{hi:cargo-spellcheck}}
 
 ## Creating a Cargo plugin
 
@@ -134,13 +134,13 @@ Creating a Cargo Plugin: You create a regular Rust project (often a binary crate
 
 Essential Crates (for plugin functionality):
 
-Argument Parsing: `clap`, `structopt`, `argh` (for parsing command-line arguments passed to the plugin)
+Argument Parsing: [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}}, [`argh`][c-argh]⮳{{hi:argh}} (for parsing command-line arguments passed to the plugin)
 Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but serde is often used for parsing TOML or JSON.)
-File System Operations: `std::fs`, `pathdiff`
+File System Operations: `std::fs`, [`pathdiff`][c-pathdiff]⮳{{hi:pathdiff}}
 Process Management: `std::process` (for running other commands)
-Networking/HTTP (if needed): `reqwest`, `hyper`
-Serialization/Deserialization: `serde` (for handling configuration or data)
-Logging: `log`, `env_logger`
+Networking/HTTP (if needed): [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, [`hyper`][c-hyper]⮳{{hi:hyper}}
+Serialization/Deserialization: [`serde`][c-serde]⮳{{hi:serde}} (for handling configuration or data)
+Logging: [`log`][c-log]⮳{{hi:log}}, [`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 Cargo API (Unstable): There is an unstable Cargo API that plugins could use, but it's not recommended for most plugins due to its instability. If you need very deep integration, you might explore it, but be prepared for changes.
 
 In essence, you build a regular Rust application. The "Cargo plugin" aspect comes from the naming convention and how Cargo discovers and executes it. The crates you use depend entirely on what your plugin is designed to do.

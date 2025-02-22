@@ -44,6 +44,6 @@ Linear Algebra:
 
 Link to Visualization:
 
-  `bevy`: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
-  `plotters`: For creating plots and charts of simulation data.
+  [`bevy`][c-bevy]⮳{{hi:bevy}}: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
+  [`plotters`][c-plotters]⮳{{hi:plotters}}: For creating plots and charts of simulation data.
 </div>

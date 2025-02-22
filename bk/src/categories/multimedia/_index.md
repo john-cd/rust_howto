@@ -35,11 +35,11 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 
 ## Choosing Crates
 
-- General audio: `cpal` is a good starting point.
-- Video encoding: `rav1e`, `x264`, or `ffmpeg-next` (if you need many codecs).
-- Image processing: `image`.
-- Low-level graphics: `wgpu` (if you need to render video or perform GPU-accelerated processing).
+- General audio: [`cpal`][c-cpal]⮳{{hi:cpal}} is a good starting point.
+- Video encoding: [`rav1e`][c-rav1e]⮳{{hi:rav1e}}, [`x264`][c-x264]⮳{{hi:x264}}, or [`ffmpeg-next`][c-ffmpeg_next]⮳{{hi:ffmpeg-next}} (if you need many codecs).
+- Image processing: [`image`][c-image]⮳{{hi:image}}.
+- Low-level graphics: [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (if you need to render video or perform GPU-accelerated processing).
 
-For most multimedia tasks, you'll need to combine several crates. For example, you might use `image` to load images, `cpal` to play audio, and `wgpu` to render video. FFmpeg bindings are very powerful, but they can be more complex to work with.
+For most multimedia tasks, you'll need to combine several crates. For example, you might use [`image`][c-image]⮳{{hi:image}} to load images, [`cpal`][c-cpal]⮳{{hi:cpal}} to play audio, and [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render video. FFmpeg bindings are very powerful, but they can be more complex to work with.
 
 </div>

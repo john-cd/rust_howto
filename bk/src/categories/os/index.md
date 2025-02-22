@@ -34,13 +34,13 @@ Rust offers various ways to interact with the operating system, depending on you
 
 ## Choosing Crates
 
-- Basic OS interaction (files, processes, environment): `std` (standard library).
-- Asynchronous networking: `tokio`.
-- Date and time: `chrono` or `time`.
-- System information: `sysinfo`.
+- Basic OS interaction (files, processes, environment): [`std`][c-std]⮳{{hi:std}} (standard library).
+- Asynchronous networking: [`tokio`][c-tokio]⮳{{hi:tokio}}.
+- Date and time: [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}}.
+- System information: [`sysinfo`][c-sysinfo]⮳{{hi:sysinfo}}.
 - Low-level OS interaction or access to specific OS features: Use system calls directly (via `std::os::unix` or `std::os::windows`) or FFI.
 
-For most common OS interactions, the standard library (`std`) will be sufficient. For high-performance networking, `tokio` is essential. For date and time, `chrono` or `time` are good choices. For system information, use `sysinfo`. For very specific or platform-dependent OS features, you might need to use system calls or FFI.
+For most common OS interactions, the standard library ([`std`][c-std]⮳{{hi:std}}) will be sufficient. For high-performance networking, [`tokio`][c-tokio]⮳{{hi:tokio}} is essential. For date and time, [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}} are good choices. For system information, use [`sysinfo`][c-sysinfo]⮳{{hi:sysinfo}}. For very specific or platform-dependent OS features, you might need to use system calls or FFI.
 
 Here's a breakdown:
 
@@ -55,8 +55,8 @@ Link to:
 
 - `std::fs` provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.).
 - `std::path` provides types and functions for working with file paths (`Path`, `PathBuf`).
-- `fs_extra` is a crate that provides additional file system operations.
-- Use `tempfile` for creating temporary files and directories.
+- [`fs_extra`][c-fs_extra]⮳{{hi:fs_extra}} is a crate that provides additional file system operations.
+- Use [`tempfile`][c-tempfile]⮳{{hi:tempfile}} for creating temporary files and directories.
 
 ## Process Management
 
@@ -69,7 +69,7 @@ Link to:
 ## Networking
 
 - `std::net` provides basic networking functionality (TCP, UDP).
-- `tokio` is a powerful asynchronous runtime, essential for high-performance networking applications.
+- [`tokio`][c-tokio]⮳{{hi:tokio}} is a powerful asynchronous runtime, essential for high-performance networking applications.
 
 ## Threads
 
@@ -77,17 +77,17 @@ Link to:
 
 ## Time
 
-- `std::time` for working with time and durations.
-- `chrono` is widely used crate for date and time calculations.
-- `time` is a newer crate for date and time.
+- [`std::time`][c-std::time]⮳{{hi:std::time}} for working with time and durations.
+- [`chrono`][c-chrono]⮳{{hi:chrono}} is widely used crate for date and time calculations.
+- [`time`][c-time]⮳{{hi:time}} is a newer crate for date and time.
 
 ## Random Number Generation
 
-- `rand`: A popular random number generator crate.
+- [`rand`][c-rand]⮳{{hi:rand}}: A popular random number generator crate.
 
 ## Operating System Information
 
-- `sysinfo`: A crate for retrieving system information (CPU, memory, etc.).
+- [`sysinfo`][c-sysinfo]⮳{{hi:sysinfo}}: A crate for retrieving system information (CPU, memory, etc.).
 
 ## Foreign Function Interface (FFI)
 

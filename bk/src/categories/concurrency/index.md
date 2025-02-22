@@ -15,7 +15,7 @@ Parallelism implies:
 
 Key constructs in Rust:
 
-- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. `std::thread::spawn`{{hi:std::thread::spawn}}.
+- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. [`std::thread::spawn`][c-std::thread::spawn]⮳{{hi:std::thread::spawn}}{{hi:std::thread::spawn}}.
 - Mutexes e.g. [`std::sync::Mutex`][c-std::sync::Mutex]⮳{{hi:std::sync::Mutex}} protect shared data from race conditions.
 - Channels{{hi:Channels}} e.g. [`std::sync::mpsc`][c-std::sync::mpsc::channel]⮳{{hi:std::sync::mpsc}} allow threads to communicate and exchange data.
 

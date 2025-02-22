@@ -22,7 +22,7 @@ The [`zeroize`][c-zeroize]⮳{{hi:zeroize}} crate securely clear secrets from me
 
 It consists of a `Choice` type, and a collection of [traits][p-traits] using `Choice` instead of bool, which are intended to execute in constant-time. The Choice type is a wrapper around a u8 that holds a 0 or 1.
 
-The `subtle` crate is a low-level library and doesn't implement cryptographic algorithms itself. Instead, it provides the building blocks for developers to implement cryptographic algorithms in a way that minimizes the risk of timing attacks. It's typically used in low-level cryptographic libraries or when implementing custom cryptographic protocols.
+The [`subtle`][c-subtle]⮳{{hi:subtle}} crate is a low-level library and doesn't implement cryptographic algorithms itself. Instead, it provides the building blocks for developers to implement cryptographic algorithms in a way that minimizes the risk of timing attacks. It's typically used in low-level cryptographic libraries or when implementing custom cryptographic protocols.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/utilities/subtle.rs:example}}

@@ -21,11 +21,11 @@ Core Flight Control & Communication:
 
  Rust Crates:
 
-- `mavlink`: For MAVLink encoding/decoding.
-- Link to `embedded-hal`: For hardware abstraction (if working with embedded systems).
+- [`mavlink`][c-mavlink]⮳{{hi:mavlink}}: For MAVLink encoding/decoding.
+- Link to [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: For hardware abstraction (if working with embedded systems).
 - pid: For PID controller implementation.
-- Link to `nalgebra`: For linear algebra (essential for control algorithms).
-- Link to `num-traits` & `num-complex`: For numerical and complex number operations.
+- Link to [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}: For linear algebra (essential for control algorithms).
+- Link to [`num-traits`][c-num_traits]⮳{{hi:num-traits}} & [`num-complex`][c-num_complex]⮳{{hi:num-complex}}: For numerical and complex number operations.
 
 Sensor Integration:
 
@@ -37,7 +37,7 @@ Other Sensors: Cameras, LiDAR, ultrasonic sensors.
  Rust Crates:
 
 - (Sensor-specific crates are common): Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
-- `i2cdev`, `spidev`, `serialport` for low-level hardware communication.
+- `i2cdev`, [`spidev`][c-spidev]⮳{{hi:spidev}}, [`serialport`][c-serialport]⮳{{hi:serialport}} for low-level hardware communication.
 - `gpsd-client`: For interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
 
 Link to Computer Vision & Image Processing

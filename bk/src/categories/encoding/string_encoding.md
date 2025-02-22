@@ -12,7 +12,7 @@ Encode an input string with [percent_encoding][wikipedia-percent_encoding]⮳ us
 {{#include ../../../crates/cats/encoding/tests/strings/percent_encode.rs:example}}
 ```
 
-The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, `url` encodes `?` in a [URL][p-url] path but not in a query string.
+The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, [`url`][c-url]⮳{{hi:url}} encodes `?` in a [URL][p-url] path but not in a query string.
 
 The return value of [encoding][p-encoding] is an iterator of `&str` [slices][p-slices] which collect into a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳.
 

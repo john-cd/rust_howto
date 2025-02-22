@@ -20,7 +20,7 @@ Stack allocation has several important characteristics:
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`arrayvec` provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed size array-backed vector and string types.
+[`arrayvec`][c-arrayvec]⮳{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed size array-backed vector and string types.
 
 `ArrayVec` is a vector-like collection with a fixed capacity that is determined at compile time.
 `ArrayVec` allocates its storage on the stack rather than on the heap, which can lead to better performance.
@@ -38,7 +38,7 @@ It offers a simple API but also dereferences to a `slice`, so that the full `sli
 [![smallvec-lib.rs][c-smallvec-lib.rs-badge]][c-smallvec-lib.rs]
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`smallvec` provides a vector that can store a small number of elements on the stack.
+[`smallvec`][c-smallvec]⮳{{hi:smallvec}} provides a vector that can store a small number of elements on the stack.
 Arrays that are stack-allocated will fallback to the heap if the fixed stack capacity is exceeded.
 
 ```rust,editable,noplayground

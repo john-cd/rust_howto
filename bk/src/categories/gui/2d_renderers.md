@@ -36,7 +36,7 @@
 
 [![vger][c-vger-badge]][c-vger] [![vger-crates.io][c-vger-crates.io-badge]][c-vger-crates.io] [![vger-github][c-vger-github-badge]][c-vger-github] [![vger-lib.rs][c-vger-lib.rs-badge]][c-vger-lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
-`vger` is a 2D [GPU][p-gpu] renderer for dynamic UIs.
+[`vger`][c-vger]⮳{{hi:vger}} is a 2D [GPU][p-gpu] renderer for dynamic UIs.
 
 "A simpler WGPU-based option which is less innovative but currently more stable than [`vello`][c-vello]⮳{{hi:vello}}."
 
@@ -62,23 +62,23 @@
 
 ## Pixel-Based (Raster) 2D Rendering
 
-- `pixels`: A crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p-graphics] or when you need fine-grained control.
-- `raqote`: A fast 2D [graphics][p-graphics] library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
-- `tiny-skia`: A small, fast, and portable 2D [graphics][p-graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
+- [`pixels`][c-pixels]⮳{{hi:pixels}}: A crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p-graphics] or when you need fine-grained control.
+- [`raqote`][c-raqote]⮳{{hi:raqote}}: A fast 2D [graphics][p-graphics] library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
+- [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}}: A small, fast, and portable 2D [graphics][p-graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
 ## Vector-Based 2D Rendering
 
-- `lyon`: A library for generating vector paths and shapes. It's useful for creating the -geometry- for vector [graphics][p-graphics], but you'd typically use a [rendering][p-rendering] library like `wgpu`, `raqote`, or `tiny-skia` to actually -draw- them. `lyon` handles the math and path calculations.
+- `lyon`: A library for generating vector paths and shapes. It's useful for creating the -geometry- for vector [graphics][p-graphics], but you'd typically use a [rendering][p-rendering] library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually -draw- them. [`lyon`][c-lyon]⮳{{hi:lyon}} handles the math and path calculations.
 
 ## Hybrid (Raster and Vector)
 
-- `wgpu`: While primarily a low-level, cross-platform GPU API, `wgpu` -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use `lyon` to generate vector paths and then `wgpu` to render them.
+- `wgpu`: While primarily a low-level, cross-platform GPU API, `wgpu` -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
 
 ## Higher-Level 2D Rendering (Often Part of UI or Game Frameworks)
 
-- `iced`: A [cross-platform][p-cross-platform] GUI library that uses a renderer (often `wgpu` or `tiny-skia`) to draw its UI elements. This means it can be used for basic 2D graphics as well.
-- `egui`: An [immediate mode GUI][p-immediate-mode-gui] library that can also be used for simple 2D drawing.
-- `ggez`, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , `tetra`: 2D game frameworks that provide built-in rendering capabilities.
+- [`iced`][c-iced]⮳{{hi:iced}}: A [cross-platform][p-cross-platform] GUI library that uses a renderer (often [`wgpu`][c-wgpu]⮳{{hi:wgpu}} or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}}) to draw its UI elements. This means it can be used for basic 2D graphics as well.
+- [`egui`][c-egui]⮳{{hi:egui}}: An [immediate mode GUI][p-immediate-mode-gui] library that can also be used for simple 2D drawing.
+- [`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , [`tetra`][c-tetra]⮳{{hi:tetra}}: 2D game frameworks that provide built-in rendering capabilities.
 
 ## Text Rendering
 
@@ -86,21 +86,21 @@
 
 ## Image Loading and Manipulation (Essential for 2D Graphics)
 
-- `image`: A widely used crate for loading and manipulating various image formats.
+- [`image`][c-image]⮳{{hi:image}}: A widely used crate for loading and manipulating various image formats.
 
 ## Color Handling
 
-- `palette`: Working with colors.
+- [`palette`][c-palette]⮳{{hi:palette}}: Working with colors.
 
 ## Choosing the Right Library
 
-- Simple 2D, Direct Pixel Manipulation: `pixels`.
-- General-Purpose 2D, Canvas-Like API: `raqote`.
-- Lightweight, Performant 2D: `tiny-skia`.
-- Vector Path Generation: `lyon`.
-- High Performance 2D/3D (using GPU): `wgpu` (but more complex).
-- UI with 2D [Graphics][p-graphics]: `iced`, `egui`.
-- [Game Development][p-game-development]: `ggez`, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , `tetra`.
+- Simple 2D, Direct Pixel Manipulation: [`pixels`][c-pixels]⮳{{hi:pixels}}.
+- General-Purpose 2D, Canvas-Like API: [`raqote`][c-raqote]⮳{{hi:raqote}}.
+- Lightweight, Performant 2D: [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}}.
+- Vector Path Generation: [`lyon`][c-lyon]⮳{{hi:lyon}}.
+- High Performance 2D/3D (using GPU): [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (but more complex).
+- UI with 2D [Graphics][p-graphics]: [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}}.
+- [Game Development][p-game-development]: [`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , [`tetra`][c-tetra]⮳{{hi:tetra}}.
 
-Most 2D projects will find `raqote` or `tiny-skia` to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p-graphics], `wgpu` is the way to go. If you're making a game, one of the game frameworks will likely be the easiest option.
+Most 2D projects will find [`raqote`][c-raqote]⮳{{hi:raqote}} or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated [graphics][p-graphics], [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is the way to go. If you're making a game, one of the game frameworks will likely be the easiest option.
 </div>

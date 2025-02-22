@@ -42,7 +42,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`cxx` provides safe C++ <-> Rust interop by generating code for both sides.
+[`cxx`][c-cxx]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/cpp/cxx.rs:example}}

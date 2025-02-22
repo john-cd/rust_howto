@@ -8,7 +8,7 @@
 
 Simple work-stealing parallelism for Rust using [`rayon`][c-rayon]⮳{{hi:rayon}}.
 
-`rayon` makes it easy to write parallel code. It provides data parallelism through [iterators][p-iterators] and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving [performance][p-performance] on multi-core processors.
+[`rayon`][c-rayon]⮳{{hi:rayon}} makes it easy to write parallel code. It provides data parallelism through [iterators][p-iterators] and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving [performance][p-performance] on multi-core processors.
 
 ### Iterate in parallel {#par-iter}
 
@@ -104,7 +104,7 @@ This example uses [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::Paral
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![glob][c-glob-badge]][c-glob]{{hi:glob}} [![image][c-image-badge]][c-image]{{hi:image}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current directory then saves them in a new folder called `thumbnails`.
+This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current directory then saves them in a new folder called [`thumbnails`][c-thumbnails]⮳{{hi:thumbnails}}.
 
 [`glob::glob_with::glob_with`][c-glob::glob_with]{{hi:glob::glob_with::glob_with}}⮳ finds jpeg files in current directory. [`rayon`][c-rayon]{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c-rayon::iter::IntoParallelRefIterator::par_iter]{{hi:rayon::iter::IntoParallelRefIterator::par_iter}}⮳ calling [`image::DynamicImage::resize`][c-image::DynamicImage::resize]{{hi:image::DynamicImage::resize}}⮳
 
@@ -117,5 +117,5 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 
 <div class="hidden">
 [data_parallelism: polish; dedupe with multithreading.md (P1)](https://github.com/john-cd/rust_howto/issues/260)
-rayon_thumbnails.rs is noplayground - linking with `cc` failed: exit status: 1 - fix?
+rayon_thumbnails.rs is noplayground - linking with [`cc`][c-cc]⮳{{hi:cc}} failed: exit status: 1 - fix?
 </div>

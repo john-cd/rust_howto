@@ -6,7 +6,7 @@
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-Install `rustfmt` with `rustup component add rustfmt`
+Install [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} with `rustup component add rustfmt`
 
 ```sh
 rustfmt <filename e.g. lib.rs> <main.rs> ...
@@ -15,7 +15,7 @@ rustfmt <filename e.g. lib.rs> <main.rs> ...
 cargo fmt
 ```
 
-Using `--check` instructs `rustfmt`{{hi:rustfmt}}⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
+Using `--check` instructs [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}}{{hi:rustfmt}}⮳ to exit with an error code if the input is not formatted correctly (useful for CI).
 
 ```sh
 cargo fmt --all -- --check
@@ -71,7 +71,7 @@ rustfmt --help=config
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-For things you do not want `rustfmt` to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
+For things you do not want [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} to mangle, use `#[rustfmt::skip]`{{hi:rustfmt::skip}} , `#[rustfmt::skip::macros(macro_name)]`{{hi:rustfmt::skip::macros(macro_name)}} , or `#![rustfmt::skip::attributes(custom_attribute)]`{{hi:rustfmt::skip::attributes(custom_attribute)}}
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

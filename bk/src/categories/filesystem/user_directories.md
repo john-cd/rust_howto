@@ -8,7 +8,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 
 [![dirs][c-dirs-badge]][c-dirs] [![dirs-crates.io][c-dirs-crates.io-badge]][c-dirs-crates.io] [![dirs-github][c-dirs-github-badge]][c-dirs-github] [![dirs-lib.rs][c-dirs-lib.rs-badge]][c-dirs-lib.rs]{{hi:dirs}}{{hi:App_dirs}}{{hi:Xdg}}{{hi:Path}}{{hi:Folder}}{{hi:Basedir}}
 
-`dirs` is a low-level library that provides platform-specific standard locations of directories for [config][p-config], cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on [Windows][p-windows], and the Standard Directory guidelines on macOS.
+[`dirs`][c-dirs]⮳{{hi:dirs}} is a low-level library that provides platform-specific standard locations of directories for [config][p-config], cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on [Windows][p-windows], and the Standard Directory guidelines on macOS.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/user_directories/dirs.rs:example}}
@@ -20,7 +20,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 
 [`directories`][c-directories]⮳{{hi:directories}} is a mid-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows and macOS by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.
 
-[`directories`][c-directories]⮳{{hi:directories}} is a higher-level library than `dirs` and can also compute paths for applications.
+[`directories`][c-directories]⮳{{hi:directories}} is a higher-level library than [`dirs`][c-dirs]⮳{{hi:dirs}} and can also compute paths for applications.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/user_directories/directories.rs:example}}
@@ -38,7 +38,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 
 [![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
 
-`open` opens a path or [URL][p-url] using the program configured on the system.
+[`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/open.rs:example}}

@@ -19,7 +19,7 @@ Rust code that adheres to standard practices will generally run well on macOS. H
 ## System Calls (Low-Level OS Interaction)
 
 - `std::os::unix`: macOS is a Unix-like operating system, so a large portion of the Unix system calls provided by `std::os::unix` will work correctly.
-- `nix`: A crate providing more comprehensive access to Unix-like system calls. It is often preferred over using `std::os::unix` directly.
+- [`nix`][c-nix]⮳{{hi:nix}}: A crate providing more comprehensive access to Unix-like system calls. It is often preferred over using `std::os::unix` directly.
 
 ## File System Interaction
 
@@ -33,7 +33,7 @@ Rust code that adheres to standard practices will generally run well on macOS. H
 ## Networking
 
 - `std::net` works well on macOS.
-- `tokio`: For asynchronous networking. Essential for high-performance network applications on macOS.
+- [`tokio`][c-tokio]⮳{{hi:tokio}}: For asynchronous networking. Essential for high-performance network applications on macOS.
 
 ## Threads
 
@@ -41,8 +41,8 @@ Rust code that adheres to standard practices will generally run well on macOS. H
 
 ## Time
 
-- `std::time` works well on macOS.
-- `chrono` or `time`: For date and time calculations.
+- [`std::time`][c-std::time]⮳{{hi:std::time}} works well on macOS.
+- [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}}: For date and time calculations.
 
 ## macOS-Specific APIs (e.g., Cocoa, Objective-C)
 

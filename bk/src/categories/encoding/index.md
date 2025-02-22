@@ -43,26 +43,26 @@ Working with Binary Data: Recipes for reading and writing raw binary data, handl
 
 ## Character Encoding
 
-`encoding`: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
+[`encoding`][c-encoding]⮳{{hi:encoding}}: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
 Base64:
 
 [`base64`][c-base64]⮳{{hi:base64}}: A widely used crate for Base64 encoding and decoding.
 
 ## URL Encoding
 
-`percent-encoding`: Handles URL encoding and decoding.
+[`percent-encoding`][c-percent_encoding]⮳{{hi:percent-encoding}}: Handles URL encoding and decoding.
 
 ## JSON
 
-`serde_json`: A very popular crate for JSON serialization and deserialization. serde is used for the underlying serialization framework.
+[`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization. serde is used for the underlying serialization framework.
 
 ## TOML (Tom's Obvious, Minimal Language)
 
-`toml`: For working with TOML files.
+[`toml`][c-toml]⮳{{hi:toml}}: For working with TOML files.
 
 ## YAML (YAML Ain't Markup Language)
 
-`serde_yaml`: For YAML serialization and deserialization. Uses serde.
+[`serde_yaml`][c-serde_yaml]⮳{{hi:serde_yaml}}: For YAML serialization and deserialization. Uses serde.
 
 ## BSON (Binary JSON)
 
@@ -74,12 +74,12 @@ Base64:
 
 ## CBOR (Concise Binary Object Representation)
 
-`serde_cbor`: For CBOR encoding and decoding.
+[`serde_cbor`][c-serde_cbor]⮳{{hi:serde_cbor}}: For CBOR encoding and decoding.
 
 ## XML
 
 [`quick-xml`][c-quick_xml]⮳{{hi:quick-xml}} : A fast XML parser.
-`serde_xml_rs`: For serializing and deserializing XML.
+[`serde_xml_rs`][c-serde_xml_rs]⮳{{hi:serde_xml_rs}}: For serializing and deserializing XML.
 
 ## Binary Data (General)
 
@@ -88,7 +88,7 @@ Base64:
 
 ## Data Serialization Framework (Used by many of the above)
 
-`serde`: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
+[`serde`][c-serde]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
 
 It's important to choose the right encoding crate for the job. For general character encoding, encoding is a good choice. For JSON, serde_json is the standard. For other formats, look for crates that support them specifically. serde is the underlying engine for many of these, providing a consistent way to work with serialization.
 </div>

@@ -62,7 +62,7 @@ void greet(const char* name) {
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-`cc`
+[`cc`][c-cc]⮳{{hi:cc}}
 
 Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cc::Build::cpp`][c-cc::Build::cpp]{{hi:cc::Build::cpp}}⮳ and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
 
@@ -105,7 +105,7 @@ int multiply(int x, int y) {
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-`cc`
+[`cc`][c-cc]⮳{{hi:cc}}
 
 It is simple to build bundled C code with custom defines using [`cc::Build::define`][c-cc::Build::define]{{hi:cc::Build::define}}⮳
 The method takes an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ value, so it is possible to create defines such as `#define APP_NAME "foo"`

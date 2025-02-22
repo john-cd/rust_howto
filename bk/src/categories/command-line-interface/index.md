@@ -30,16 +30,16 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/907)
 
-Argument Parsing: `clap`, `structopt`, `argh`
-Interactive Prompts: `dialoguer`, `console`
-Progress Bars: `indicatif`, `pbr`
-Table Formatting: `prettytable`, `term-table`
-Color Output: `ansi_term`, `owo-colors`
-General CLI Utilities: `structopt`, `clap` (often handle more than just argument parsing)
-File System Operations: `std::fs`, `pathdiff`
+Argument Parsing: [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}}, [`argh`][c-argh]⮳{{hi:argh}}
+Interactive Prompts: [`dialoguer`][c-dialoguer]⮳{{hi:dialoguer}}, [`console`][c-console]⮳{{hi:console}}
+Progress Bars: [`indicatif`][c-indicatif]⮳{{hi:indicatif}}, `pbr`
+Table Formatting: [`prettytable`][c-prettytable]⮳{{hi:prettytable}}, [`term-table`][c-term_table]⮳{{hi:term-table}}
+Color Output: [`ansi_term`][c-ansi_term]⮳{{hi:ansi_term}}, [`owo-colors`][c-owo_colors]⮳{{hi:owo-colors}}
+General CLI Utilities: [`structopt`][c-structopt]⮳{{hi:structopt}}, [`clap`][c-clap]⮳{{hi:clap}} (often handle more than just argument parsing)
+File System Operations: `std::fs`, [`pathdiff`][c-pathdiff]⮳{{hi:pathdiff}}
 Process Management: `std::process`
-Text Manipulation: `regex`, `grep-cli`, `bat` (for `cat` like functionality)
-Configuration: `config`, `serde` (for serialization)
-Logging: `log`, `env_logger`
+Text Manipulation: [`regex`][c-regex]⮳{{hi:regex}}, [`grep-cli`][c-grep_cli]⮳{{hi:grep-cli}}, [`bat`][c-bat]⮳{{hi:bat}} (for `cat` like functionality)
+Configuration: [`config`][c-config]⮳{{hi:config}}, [`serde`][c-serde]⮳{{hi:serde}} (for serialization)
+Logging: [`log`][c-log]⮳{{hi:log}}, [`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 
 </div>

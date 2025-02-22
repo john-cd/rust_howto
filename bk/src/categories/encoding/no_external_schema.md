@@ -18,7 +18,7 @@
 
 [![rkyv][c-rkyv-badge]][c-rkyv] [![rkyv-crates.io][c-rkyv-crates.io-badge]][c-rkyv-crates.io] [![rkyv-github][c-rkyv-github-badge]][c-rkyv-github] [![rkyv-lib.rs][c-rkyv-lib.rs-badge]][c-rkyv-lib.rs]{{hi:rkyv}}{{hi:Serialization}}{{hi:Zero-copy}}{{hi:Archive}}{{hi:No_std}}{{hi:rkyv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}}
 
-`rkyv` is a fast zero-copy deserialization framework that allows arbitrary field types and safe zero-copy mutation.
+[`rkyv`][c-rkyv]⮳{{hi:rkyv}} is a fast zero-copy deserialization framework that allows arbitrary field types and safe zero-copy mutation.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/no_external_schema_file/rkyv.rs:example}}

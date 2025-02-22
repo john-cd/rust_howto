@@ -20,32 +20,32 @@ Working with files, directories, permissions, etc.
 
 ## Process Management: Forking, spawning processes, signals, pipes
 
-- `std::process`, `nix`
+- `std::process`, [`nix`][c-nix]⮳{{hi:nix}}
 
 ## Networking (Sockets): TCP/IP, UDP, low-level socket programming
 
-- `std::net`, `socket2`
+- `std::net`, [`socket2`][c-socket2]⮳{{hi:socket2}}
 
 ## System Calls: Directly interacting with the operating system
 
-- `nix`, `libc` (for raw system call access, use with caution)
+- [`nix`][c-nix]⮳{{hi:nix}}, [`libc`][c-libc]⮳{{hi:libc}} (for raw system call access, use with caution)
 
 ## Terminal Interaction: Working with TTYs, terminal attributes
 
-- `termion`, `crossterm`
+- [`termion`][c-termion]⮳{{hi:termion}}, [`crossterm`][c-crossterm]⮳{{hi:crossterm}}
 
 ## Time and Dates: Working with system time, timers
 
-- `std::time`, `chrono`
+- [`std::time`][c-std::time]⮳{{hi:std::time}}, [`chrono`][c-chrono]⮳{{hi:chrono}}
 
 ## User and Group Management
 
 Getting user/group information.
 
-- `nix`
+- [`nix`][c-nix]⮳{{hi:nix}}
 
 ## Signals: Handling POSIX signals
 
-- `nix`, `signal-hook`
+- [`nix`][c-nix]⮳{{hi:nix}}, [`signal-hook`][c-signal_hook]⮳{{hi:signal-hook}}
 
 </div>

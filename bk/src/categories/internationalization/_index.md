@@ -24,23 +24,23 @@ Link to localization, accessibility
 
 ## Choosing the right crate
 
-- If you're already using gettext or need its features, `gettext` is a good choice.
-- If you want a modern and expressive localization system, `fluent` is a strong option.
-- For basic i18n utilities (language tags, etc.), `unic-langid` is helpful.
+- If you're already using gettext or need its features, [`gettext`][c-gettext]⮳{{hi:gettext}} is a good choice.
+- If you want a modern and expressive localization system, [`fluent`][c-fluent]⮳{{hi:fluent}} is a strong option.
+- For basic i18n utilities (language tags, etc.), [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}} is helpful.
 
-For most projects, `fluent` is probably the best starting point due to its modern design and expressiveness. `gettext` is a solid choice if you have existing gettext experience or requirements. Remember that translation itself is an external process; the Rust crates help you manage and use the translated resources.
+For most projects, [`fluent`][c-fluent]⮳{{hi:fluent}} is probably the best starting point due to its modern design and expressiveness. [`gettext`][c-gettext]⮳{{hi:gettext}} is a solid choice if you have existing gettext experience or requirements. Remember that translation itself is an external process; the Rust crates help you manage and use the translated resources.
 
 ## Localization (l10n)
 
-- `gettext`: A popular crate for using gettext, a widely used localization system. It's a good choice if you're already familiar with gettext or need its specific features.
-- `fluent`: A localization system developed by Mozilla. The `fluent-rs` crate provides bindings to Fluent. Fluent is designed to be expressive and efficient.
-- `intl-rs`: Provides some internationalization utilities, but it's not a full localization solution on its own.
+- [`gettext`][c-gettext]⮳{{hi:gettext}}: A popular crate for using gettext, a widely used localization system. It's a good choice if you're already familiar with gettext or need its specific features.
+- [`fluent`][c-fluent]⮳{{hi:fluent}}: A localization system developed by Mozilla. The [`fluent-rs`][c-fluent]⮳{{hi:fluent-rs}} crate provides bindings to Fluent. Fluent is designed to be expressive and efficient.
+- [`intl-rs`][c-intl_rs]⮳{{hi:intl-rs}}: Provides some internationalization utilities, but it's not a full localization solution on its own.
 
 ## Internationalization (i18n) Utilities
 
-- `unic-langid`: For parsing and working with language tags (e.g., "en-US", "fr"). Essential for handling locale information.
-- `chrono`: (Not specifically for i18n, but essential) For date and time formatting, which needs to be localized.
-- `num-format`: (Also not specifically for i18n, but important) For number formatting, which varies by locale.
+- [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}}: For parsing and working with language tags (e.g., "en-US", "fr"). Essential for handling locale information.
+- [`chrono`][c-chrono]⮳{{hi:chrono}}: (Not specifically for i18n, but essential) For date and time formatting, which needs to be localized.
+- [`num-format`][c-num_format]⮳{{hi:num-format}}: (Also not specifically for i18n, but important) For number formatting, which varies by locale.
 
 ## Message Formatting
 

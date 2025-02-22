@@ -17,5 +17,5 @@
 TODO P1 write
 here or in std lib section?
 
-`priority-queue`: Implements a priority queue using a heap.
+[`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}}: Implements a priority queue using a heap.
 </div>

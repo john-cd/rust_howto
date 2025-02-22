@@ -12,7 +12,7 @@
 [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-Bindings for directly calling `libc` functions.
+Bindings for directly calling [`libc`][c-libc]⮳{{hi:libc}} functions.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/tests/low_level_system_calls/libc.rs:example}}

@@ -30,15 +30,15 @@ Direct access to CPU features (like inline [assembly][p-assembly]) is usually on
 
 `std::arch`: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
 
-`packed_simd`: A crate for portable SIMD.
+[`packed_simd`][c-packed_simd]⮳{{hi:packed_simd}}: A crate for portable SIMD.
 
 ## Atomic Operations
 
-`std::sync::atomic`: (Standard library) Provides atomic types for safe concurrent access to data. Essential for multi-threaded programming.
+[`std::sync::atomic`][c-std::sync::atomic]⮳{{hi:std::sync::atomic}}: (Standard library) Provides atomic types for safe concurrent access to data. Essential for multi-threaded programming.
 
 ## CPU Identification
 
-`cpuid`: A crate for getting CPU information (vendor, features, etc.).
+[`cpuid`][c-cpuid]⮳{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.).
 
 ## Low-Level Programming and Optimization
 
@@ -57,8 +57,8 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 ### Concurrency and Multithreading (Related to CPU Utilization)
 
 `std::thread`: (Standard library) For creating and managing threads.
-`rayon`: A [data parallelism][p-data-parallelism] library that makes it easy to parallelize computations.
-`tokio`: An [asynchronous][p-asynchronous] runtime for writing concurrent applications.
+[`rayon`][c-rayon]⮳{{hi:rayon}}: A [data parallelism][p-data-parallelism] library that makes it easy to parallelize computations.
+[`tokio`][c-tokio]⮳{{hi:tokio}}: An [asynchronous][p-asynchronous] runtime for writing concurrent applications.
 
 ### Other Relevant Topics
 

@@ -6,7 +6,7 @@
 
 [![sqlx][c-sqlx-badge]][c-sqlx] [![sqlx-crates.io][c-sqlx-crates.io-badge]][c-sqlx-crates.io] [![sqlx-github][c-sqlx-github-badge]][c-sqlx-github] [![sqlx-lib.rs][c-sqlx-lib.rs-badge]][c-sqlx-lib.rs]{{hi:sqlx}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
-[`sqlx`][c-sqlx]⮳ is a low-level, [asynchronous][p-asynchronous] SQL library for Rust. It supports various [databases][p-databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both `tokio` and [`async-std`][c-async_std]⮳{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
+[`sqlx`][c-sqlx]⮳ is a low-level, [asynchronous][p-asynchronous] SQL library for Rust. It supports various [databases][p-databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c-tokio]⮳{{hi:tokio}} and [`async-std`][c-async_std]⮳{{hi:async-std}} async runtimes. It features compile-time checked queries without a DSL. SQLx is not an ORM.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/query_builders_orms/sqlx.rs:example}}
@@ -18,9 +18,9 @@
 
 The [`diesel`][c-diesel]⮳{{hi:diesel}} crate is a powerful ORM (object-relational mapper) and query builder for Rust. It allows you to interact with databases in a type-safe and efficient manner. ORMs help object-oriented programmers abstract the details of relational databases, and do not require writing raw SQL queries.
 
-[`diesel`][c-diesel]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c-diesel]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but `diesel-async` provides an async connection implementation.
+[`diesel`][c-diesel]⮳{{hi:diesel}} supports PostgreSQL, MySQL, and SQLite. [`diesel`][c-diesel]⮳{{hi:diesel}} has excellent performance and takes an approach of strict compile time guarantees. The main crate is synchronous only, but [`diesel-async`][c-diesel-async]⮳{{hi:diesel-async}} provides an async connection implementation.
 
-To create a new [`diesel`][c-diesel]⮳{{hi:diesel}} project targeting `sqlite`, follow these steps:
+To create a new [`diesel`][c-diesel]⮳{{hi:diesel}} project targeting [`sqlite`][c-sqlite]⮳{{hi:sqlite}}, follow these steps:
 
 - Add the necessary dependencies to your Cargo.toml file (update the versions as needed):
 

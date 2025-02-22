@@ -6,7 +6,7 @@
 
 [![just][c-just-badge]][c-just] [![just-crates.io][c-just-crates.io-badge]][c-just-crates.io] [![just-github][c-just-github-badge]][c-just-github] [![just-lib.rs][c-just-lib.rs-badge]][c-just-lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-`just`{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to `make` without the ability to detect file changes, but with significantly fewer syntactic warts.
+[`just`][c-just]⮳{{hi:just}}{{hi:just}} is a command runner{{hi:Command runner}}. It is a Rust-based equivalent to `make` without the ability to detect file changes, but with significantly fewer syntactic warts.
 
 Consult the [Just programmer's manual][c-just-programmer-manual]⮳.
 
@@ -46,7 +46,7 @@ foo:
 
 ### Install `just` in a Dev Container {#skip2}
 
-`just`
+[`just`][c-just]⮳{{hi:just}}
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye

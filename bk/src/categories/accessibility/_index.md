@@ -18,7 +18,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 - Core & Tooling:
   - WCAG Basics: Essential links and level explanations.
 
-- Link to Web: `html5ever` / `tl` (HTML parsing), `css-rs` (CSS parsing), `url` (URLs).
+- Link to Web: [`html5ever`][c-html5ever]⮳{{hi:html5ever}} / `tl` (HTML parsing), `css-rs` (CSS parsing), [`url`][c-url]⮳{{hi:url}} (URLs).
   - Semantic HTML: Use elements like <article>, <nav>.
   - Image Alt Text: Good and bad examples, decorative images.
   - Accessible Forms: Labels, errors, keyboard navigation.
@@ -33,7 +33,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
   - Custom Accessible Components (GUI): Focus, keyboard, ARIA.
 
 - Link to CLI: termcolor (terminal styling), crossterm (terminal manipulation).
-- Link to GUI: GUI crate itself (e.g., `iced`, `egui`).
+- Link to GUI: GUI crate itself (e.g., [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}}).
 - Link to: serde (data handling), log/tracing (logging).
 
 </div>

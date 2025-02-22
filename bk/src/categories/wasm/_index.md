@@ -57,29 +57,29 @@ This table outlines common WebAssembly (WASM) development tasks and relevant Rus
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Compiling Rust to WASM | `wasm-bindgen`, `cargo-wasi` | `wasm-bindgen` is essential for bridging between Rust and JavaScript, allowing you to interact with the browser's APIs from your Rust/WASM code. `cargo-wasi` is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices). |
-| WASM Runtime (in Rust) | `wasmi`, `wasi-rs` | `wasmi` is a WASM interpreter written in Rust. `wasi-rs` provides bindings for the WASI API, enabling your WASM code to interact with the host environment when running outside the browser. |
-| Interacting with JavaScript from Rust/WASM | `wasm-bindgen` |  `wasm-bindgen` handles the complexities of passing data between Rust/WASM and JavaScript. |
-| Calling Rust/WASM functions from JavaScript | `wasm-bindgen` |  `wasm-bindgen` also facilitates calling Rust/WASM functions from JavaScript. |
-| Managing WASM Memory | `wasm-bindgen` (implicitly), `wee_alloc` | `wasm-bindgen` helps manage WASM memory. `wee_alloc` is a memory allocator designed for WASM. |
-| Web Frameworks (using WASM) | `yew`, `seed`, [`leptos`][c-leptos]⮳{{hi:leptos}}  | These frameworks enable building complex web applications with Rust/WASM. They provide component-based architectures and other tools for structuring web apps. |
-| Game Development (using WASM) | `winit` (windowing), `wgpu` (WebGPU bindings), `bevy` (game engine - can target WASM) | Rust can be used for game development targeting the web via WASM. [`winit`][c-winit]⮳{{hi:winit}}  handles window creation, `wgpu` provides access to WebGPU, and `bevy` is a Rust game engine that can compile to WASM. |
-| Server-Side WASM (WASI) | `cargo-wasi`, `wasi-rs` |  WASI allows you to run WASM code on servers or other environments outside the browser. |
-| Debugging WASM | Browser developer tools, `console_error_panic_hook` | Browser developer tools can be used to debug WASM. `console_error_panic_hook` helps with better error reporting in the browser console. |
-| Testing WASM | `wasm-bindgen-test` | `wasm-bindgen-test` provides utilities for testing your Rust/WASM code. |
-| Size Optimization | `wee_alloc`, `twiggy`, `wasm-opt` |  `wee_alloc` can help reduce WASM binary size. `twiggy` is a tool for analyzing WASM binaries. `wasm-opt` is a tool for optimizing WASM code. |
+| Compiling Rust to WASM | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}}, [`cargo-wasi`][c-cargo_wasi]⮳{{hi:cargo-wasi}} | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} is essential for bridging between Rust and JavaScript, allowing you to interact with the browser's APIs from your Rust/WASM code. [`cargo-wasi`][c-cargo_wasi]⮳{{hi:cargo-wasi}} is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices). |
+| WASM Runtime (in Rust) | [`wasmi`][c-wasmi]⮳{{hi:wasmi}}, [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} | [`wasmi`][c-wasmi]⮳{{hi:wasmi}} is a WASM interpreter written in Rust. [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment when running outside the browser. |
+| Interacting with JavaScript from Rust/WASM | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} |  [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} handles the complexities of passing data between Rust/WASM and JavaScript. |
+| Calling Rust/WASM functions from JavaScript | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} |  [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} also facilitates calling Rust/WASM functions from JavaScript. |
+| Managing WASM Memory | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} (implicitly), [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} | [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} helps manage WASM memory. [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} is a memory allocator designed for WASM. |
+| Web Frameworks (using WASM) | [`yew`][c-yew]⮳{{hi:yew}}, `seed`, [`leptos`][c-leptos]⮳{{hi:leptos}}  | These frameworks enable building complex web applications with Rust/WASM. They provide component-based architectures and other tools for structuring web apps. |
+| Game Development (using WASM) | [`winit`][c-winit]⮳{{hi:winit}} (windowing), `wgpu` (WebGPU bindings), `bevy` (game engine - can target WASM) | Rust can be used for game development targeting the web via WASM. [`winit`][c-winit]⮳{{hi:winit}}  handles window creation, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c-bevy]⮳{{hi:bevy}} is a Rust game engine that can compile to WASM. |
+| Server-Side WASM (WASI) | [`cargo-wasi`][c-cargo_wasi]⮳{{hi:cargo-wasi}}, [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} |  WASI allows you to run WASM code on servers or other environments outside the browser. |
+| Debugging WASM | Browser developer tools, [`console_error_panic_hook`][c-console_error_panic_hook]⮳{{hi:console_error_panic_hook}} | Browser developer tools can be used to debug WASM. [`console_error_panic_hook`][c-console_error_panic_hook]⮳{{hi:console_error_panic_hook}} helps with better error reporting in the browser console. |
+| Testing WASM | [`wasm-bindgen-test`][c-wasm_bindgen_test]⮳{{hi:wasm-bindgen-test}} | [`wasm-bindgen-test`][c-wasm_bindgen_test]⮳{{hi:wasm-bindgen-test}} provides utilities for testing your Rust/WASM code. |
+| Size Optimization | [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}, [`twiggy`][c-twiggy]⮳{{hi:twiggy}}, [`wasm-opt`][c-wasm_opt]⮳{{hi:wasm-opt}} |  [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} can help reduce WASM binary size. [`twiggy`][c-twiggy]⮳{{hi:twiggy}} is a tool for analyzing WASM binaries. [`wasm-opt`][c-wasm_opt]⮳{{hi:wasm-opt}} is a tool for optimizing WASM code. |
 
 ## Key Considerations
 
-- `wasm-bindgen` is fundamental for almost all Rust/WASM development that interacts with the browser.
-- `WASI`: WASI is important if you want to run your WASM code outside of the browser.
-- Web Frameworks: Frameworks like `yew`, `seed`, and [`leptos`][c-leptos]⮳{{hi:leptos}}  simplify web application development with Rust/WASM.
+- [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} is fundamental for almost all Rust/WASM development that interacts with the browser.
+- [`WASI`][c-wasi]⮳{{hi:WASI}}: WASI is important if you want to run your WASM code outside of the browser.
+- Web Frameworks: Frameworks like [`yew`][c-yew]⮳{{hi:yew}}, `seed`, and [`leptos`][c-leptos]⮳{{hi:leptos}}  simplify web application development with Rust/WASM.
 - Performance:  Rust's performance characteristics translate well to WASM, making it suitable for performance-sensitive web applications.
 - Debugging: Browser developer tools are essential for debugging WASM.
-- Size Optimization:  WASM binary size is important for web performance.  Use tools like `wee_alloc`, `twiggy`, and `wasm-opt` to reduce size.
+- Size Optimization:  WASM binary size is important for web performance.  Use tools like [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}, [`twiggy`][c-twiggy]⮳{{hi:twiggy}}, and [`wasm-opt`][c-wasm_opt]⮳{{hi:wasm-opt}} to reduce size.
 
 ## Workflow
 
-A typical Rust/WASM development workflow involves writing Rust code, using `wasm-bindgen` to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
+A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
 
 </div>

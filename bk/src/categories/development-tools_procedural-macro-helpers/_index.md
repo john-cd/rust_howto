@@ -42,14 +42,14 @@ You use `#[derive(...)]` and `#[attribute]` to define and apply macros.
 
 ## Parsing
 
-`syn`: A popular crate for parsing Rust code into an Abstract Syntax Tree (AST). This is essential for most procedural macros that need to understand the structure of the code they're manipulating.
+[`syn`][c-syn]⮳{{hi:syn}}: A popular crate for parsing Rust code into an Abstract Syntax Tree (AST). This is essential for most procedural macros that need to understand the structure of the code they're manipulating.
 
 Code Generation:
 
-`quote`: A crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone.
+[`quote`][c-quote]⮳{{hi:quote}}: A crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone.
 Testing:
 
-`trybuild`: A crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
+[`trybuild`][c-trybuild]⮳{{hi:trybuild}}: A crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
 Debugging:
 
 Debugging procedural macros can be tricky. Often involves printing token streams to the console or using tools like cargo expand to see the generated code.
@@ -62,6 +62,6 @@ Understanding how macros work, token streams, ASTs, and the difference between a
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
 
-In short, you'll almost always use `proc-macro`, `syn`, and `quote` when writing procedural macros. `trybuild` is highly recommended for testing. Understanding the underlying metaprogramming concepts is key to effectively using these crates.
+In short, you'll almost always use `proc-macro`, [`syn`][c-syn]⮳{{hi:syn}}, and [`quote`][c-quote]⮳{{hi:quote}} when writing procedural macros. [`trybuild`][c-trybuild]⮳{{hi:trybuild}} is highly recommended for testing. Understanding the underlying metaprogramming concepts is key to effectively using these crates.
 
 </div>

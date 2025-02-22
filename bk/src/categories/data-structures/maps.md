@@ -43,9 +43,9 @@ A MultiMap allows you to store multiple values for a single key, which can be us
 
 Slotmap offers a way to handle collections where items can be added or removed dynamically, and each item is identified by a unique key. Slotmap ensures stable indices, meaning once an item is inserted, its key remains valid until the item is explicitly removed.
 
-Use `slotmap` to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
+Use [`slotmap`][c-slotmap]⮳{{hi:slotmap}} to store collections of objects that need stable, safe references but have no clear ownership otherwise, such as game entities or graph nodes.
 
-`slotmap` provides three containers with persistent unique keys to access stored values, `SlotMap`, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and [`SparseSecondaryMap`][c-slotmap::SparseSecondaryMap]⮳{{hi:SparseSecondaryMap}} are also provided that map further objects to the keys created by one of the slot maps.
+[`slotmap`][c-slotmap]⮳{{hi:slotmap}} provides three containers with persistent unique keys to access stored values, [`SlotMap`][c-slotmap]⮳{{hi:SlotMap}}, `HopSlotMap` and `DenseSlotMap`. Two secondary maps, `SecondaryMap` and [`SparseSecondaryMap`][c-slotmap::SparseSecondaryMap]⮳{{hi:SparseSecondaryMap}} are also provided that map further objects to the keys created by one of the slot maps.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/tests/maps/slotmap.rs:example}}

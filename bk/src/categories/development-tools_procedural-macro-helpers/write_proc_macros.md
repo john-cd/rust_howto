@@ -80,6 +80,6 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 
 ## Report errors from within a procedural macro
 
-Procedural [macros][p-macros] have two ways of reporting errors. The first is to `panic`. The second is to emit a `compile_error` macro invocation.
+Procedural [macros][p-macros] have two ways of reporting errors. The first is to [`panic`][c-panic]⮳{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
 
 </div>

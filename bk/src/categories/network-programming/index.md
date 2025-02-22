@@ -31,12 +31,12 @@ Deal with higher-level network protocols{{hi:Network protocols}} such as FTP{{hi
 ## Choosing Crates
 
 - Basic networking: `std::net` (for simple TCP/UDP communication).
-- High-performance, asynchronous networking: `tokio`.
-- HTTP client: `reqwest`.
-- HTTP server/web framework: `actix-web`, `warp`, or `axum`.
-- WebSockets: `tokio-tungstenite`.
+- High-performance, asynchronous networking: [`tokio`][c-tokio]⮳{{hi:tokio}}.
+- HTTP client: [`reqwest`][c-reqwest]⮳{{hi:reqwest}}.
+- HTTP server/web framework: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`warp`][c-warp]⮳{{hi:warp}}, or [`axum`][c-axum]⮳{{hi:axum}}.
+- WebSockets: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}.
 
-For most common network applications, `tokio` is essential for handling asynchronous I/O efficiently. For HTTP clients, `reqwest` is a good choice. For building web servers, `actix-web`, `warp`, or `axum` are popular options. For lower-level network programming or very specific needs, you might need to explore other crates or combine crates together.
+For most common network applications, [`tokio`][c-tokio]⮳{{hi:tokio}} is essential for handling asynchronous I/O efficiently. For HTTP clients, [`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a good choice. For building web servers, [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`warp`][c-warp]⮳{{hi:warp}}, or [`axum`][c-axum]⮳{{hi:axum}} are popular options. For lower-level network programming or very specific needs, you might need to explore other crates or combine crates together.
 
 ## Network Sockets (Low-Level)
 
@@ -44,23 +44,23 @@ For most common network applications, `tokio` is essential for handling asynchro
 
 ## Asynchronous Networking
 
-- `tokio`: A powerful and widely used asynchronous runtime. Essential for building high-performance network applications. Provides abstractions for working with sockets, streams, and other network primitives asynchronously.
-- `mio`: A lower-level I/O library used by `tokio`. You'll rarely use `mio` directly unless you have very specific performance needs.
+- [`tokio`][c-tokio]⮳{{hi:tokio}}: A powerful and widely used asynchronous runtime. Essential for building high-performance network applications. Provides abstractions for working with sockets, streams, and other network primitives asynchronously.
+- `mio`: A lower-level I/O library used by [`tokio`][c-tokio]⮳{{hi:tokio}}. You'll rarely use [`mio`][c-mio]⮳{{hi:mio}} directly unless you have very specific performance needs.
 
 Link to:
 
 ## HTTP Clients and Servers
 
-- `reqwest`: A popular and easy-to-use HTTP client.
-- `hyper`: A low-level HTTP library. Often used to build custom HTTP clients or servers.
-- `actix-web`: A powerful and ergonomic web framework built on top of `hyper`.
-- `warp`: A lightweight and composable web framework.
-- `axum`: A newer web framework with a focus on type safety and developer experience.
+- [`reqwest`][c-reqwest]⮳{{hi:reqwest}}: A popular and easy-to-use HTTP client.
+- [`hyper`][c-hyper]⮳{{hi:hyper}}: A low-level HTTP library. Often used to build custom HTTP clients or servers.
+- [`actix-web`][c-actix_web]⮳{{hi:actix-web}}: A powerful and ergonomic web framework built on top of [`hyper`][c-hyper]⮳{{hi:hyper}}.
+- [`warp`][c-warp]⮳{{hi:warp}}: A lightweight and composable web framework.
+- [`axum`][c-axum]⮳{{hi:axum}}: A newer web framework with a focus on type safety and developer experience.
 
 ## WebSockets
 
-- `tokio-tungstenite`: A WebSocket library built on `tokio`.
-- `tungstenite`: A lower-level WebSocket library.
+- [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}: A WebSocket library built on [`tokio`][c-tokio]⮳{{hi:tokio}}.
+- [`tungstenite`][c-tungstenite]⮳{{hi:tungstenite}}: A lower-level WebSocket library.
 
 ## Network Protocols (Specific Protocols)
 
@@ -68,6 +68,6 @@ Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 
 ## Serialization/Deserialization (Often Needed for Network Communication)
 
-- `serde`: A widely used serialization framework. Often used to serialize data before sending it over the network and deserialize it after receiving it.
+- [`serde`][c-serde]⮳{{hi:serde}}: A widely used serialization framework. Often used to serialize data before sending it over the network and deserialize it after receiving it.
 
 </div>

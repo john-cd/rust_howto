@@ -35,7 +35,7 @@ Redis-rs is a high level redis library for Rust. It provides convenient access t
 
 [![cdrs-tokio][c-cdrs_tokio-badge]][c-cdrs_tokio] [![cdrs-tokio-crates.io][c-cdrs_tokio-crates.io-badge]][c-cdrs_tokio-crates.io] [![cdrs-tokio-github][c-cdrs_tokio-github-badge]][c-cdrs_tokio-github] [![cdrs-tokio-lib.rs][c-cdrs_tokio-lib.rs-badge]][c-cdrs_tokio-lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} is an async Cassandra DB (or Scylla DB) driver. It uses the `tokio` async runtime.
+[`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} is an async Cassandra DB (or Scylla DB) driver. It uses the [`tokio`][c-tokio]⮳{{hi:tokio}} async runtime.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/cassandra/cdrs_tokio.rs:example}}
@@ -45,7 +45,7 @@ Redis-rs is a high level redis library for Rust. It provides convenient access t
 
 [![cassandra-protocol][c-cassandra_protocol-badge]][c-cassandra_protocol] [![cassandra-protocol-crates.io][c-cassandra_protocol-crates.io-badge]][c-cassandra_protocol-crates.io] [![cassandra-protocol-github][c-cassandra_protocol-github-badge]][c-cassandra_protocol-github] [![cassandra-protocol-lib.rs][c-cassandra_protocol-lib.rs-badge]][c-cassandra_protocol-lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`cassandra-protocol`][c-cassandra_protocol]⮳{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. Prefer the `cdrs_tokio` crate unless you need a low-level implementation.
+[`cassandra-protocol`][c-cassandra_protocol]⮳{{hi:Cassandra}} provides a Cassandra protocol implementation in Rust. Prefer the [`cdrs_tokio`][c-cdrs_tokio]⮳{{hi:cdrs_tokio}} crate unless you need a low-level implementation.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/cassandra/cassandra_protocol.rs:example}}

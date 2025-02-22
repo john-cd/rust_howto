@@ -53,32 +53,32 @@ Tools that provide developer-facing features such as testing, debugging, linting
 [development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
 [index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
-Build System/Package Manager: `cargo`
-Formatter: `rustfmt`
-Linter: `clippy`
-Testing Framework: `std::test` (built-in), `rstest` (for data-driven tests)
+Build System/Package Manager: [`cargo`][c-cargo]⮳{{hi:cargo}}
+Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}}
+Linter: [`clippy`][c-clippy]⮳{{hi:clippy}}
+Testing Framework: `std::test` (built-in), [`rstest`][c-rstest]⮳{{hi:rstest}} (for data-driven tests)
 Debugging: `gdb`, `lldb` (often used via IDE integration), `cargo-debug`
 Profiling: `cargo flamegraph`, `perf` (system profiler)
 Documentation Generator: `cargo doc`
-Code Coverage: `grcov`, `tarpaulin`
-Continuous Integration: often uses CI platforms directly; no specific Rust crates needed, but `xtask` can help manage CI tasks
+Code Coverage: [`grcov`][c-grcov]⮳{{hi:grcov}}, `tarpaulin`
+Continuous Integration: often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c-xtask]⮳{{hi:xtask}} can help manage CI tasks
 Code Analysis: `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs)
 
-`fd-find` as a more human-friendly alternative to `find` which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
+[`fd-find`][c-fd_find]⮳{{hi:fd-find}} as a more human-friendly alternative to `find` which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
 
-`hyperfine` as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc.
+[`hyperfine`][c-hyperfine]⮳{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc.
 
-`miniserve` as a simple, easy way to serve up some files or accept some uploads over HTTP.
+[`miniserve`][c-miniserve]⮳{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP.
 
-`ripgrep` for fast searching of file contents
+[`ripgrep`][c-ripgrep]⮳{{hi:ripgrep}} for fast searching of file contents
 
-`rust-script` as a way to quickly write little single-file programs in Rust without having to spin up a whole project.
+[`rust-script`][c-rust_script]⮳{{hi:rust-script}} as a way to quickly write little single-file programs in Rust without having to spin up a whole project.
 
-`skim` as a Rust clone of fzf with some additional features. (Including being usable as a library you can embed in your own programs)
+[`skim`][c-skim]⮳{{hi:skim}} as a Rust clone of fzf with some additional features. (Including being usable as a library you can embed in your own programs)
 
-`tokei` for gathering statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language)
+[`tokei`][c-tokei]⮳{{hi:tokei}} for gathering statistics about a codebase (i.e. number of files, lines, lines of code, lines of comments, and lines of blanks, per language)
 
-`xd` as an alternative to xxd that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters.
+[`xd`][c-xd]⮳{{hi:xd}} as an alternative to xxd that doesn't have as many features, but renders un-printable characters in a reversible "codepage 437 plus a symbol for NULL" mapping to ensure that all patterns in the visualization of binary files are visible... not just ones that occur in printable characters.
 
-`cross`
+[`cross`][c-cross]⮳{{hi:cross}}
 </div>

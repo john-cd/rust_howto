@@ -6,7 +6,7 @@
 
 [![xml-website][c-xml-website-badge]][c-xml-website] [![xml][c-xml-badge]][c-xml] [![xml-crates.io][c-xml-crates.io-badge]][c-xml-crates.io] [![xml-github][c-xml-github-badge]][c-xml-github] [![xml-lib.rs][c-xml-lib.rs-badge]][c-xml-lib.rs]{{hi:xml}}{{hi:Sax}}{{hi:Parsing}}{{hi:Writer}}{{hi:xml}}{{hi:Parser}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}}
 
-`xml` is an XML library written in pure Rust.
+[`xml`][c-xml]⮳{{hi:xml}} is an XML library written in pure Rust.
 
 ## `quick-xml` {#quick-xml}
 

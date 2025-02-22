@@ -11,7 +11,7 @@
 [![cat-accessibility][cat-accessibility-badge]][cat-accessibility]{{hi:Accessibility}}
 [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-`accesskit` is a Rust crate that simplifies UI [accessibility][p-accessibility] by providing a [cross-platform][p-cross-platform] way to represent UI structure and content to assistive technologies. It allows you to export a semantic tree representing your UI to make accessible to screen readers and other assistive technologies.
+[`accesskit`][c-accesskit]⮳{{hi:accesskit}} is a Rust crate that simplifies UI [accessibility][p-accessibility] by providing a [cross-platform][p-cross-platform] way to represent UI structure and content to assistive technologies. It allows you to export a semantic tree representing your UI to make accessible to screen readers and other assistive technologies.
 
 ```rust,editable
 {{#include ../../../crates/cats/accessibility/tests/accesskit.rs:example}}

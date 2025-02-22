@@ -28,12 +28,12 @@ Link to
 
 ## Graphics
 
-`pixels`: A crate for working with pixel buffers, often used for rendering graphics.
-`sdl2`: Bindings to the SDL library, which can be used for window management, input, and graphics.
-`wgpu`: A crate for portable GPU compute.
+[`pixels`][c-pixels]⮳{{hi:pixels}}: A crate for working with pixel buffers, often used for rendering graphics.
+[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Bindings to the SDL library, which can be used for window management, input, and graphics.
+[`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A crate for portable GPU compute.
 
 ## Sound
 
-`cpal`: A crate for cross-platform audio input and output.
+[`cpal`][c-cpal]⮳{{hi:cpal}}: A crate for cross-platform audio input and output.
 
 </div>

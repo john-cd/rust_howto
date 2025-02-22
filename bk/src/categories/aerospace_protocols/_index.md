@@ -16,12 +16,12 @@ Common Aerospace Protocols:
 
 MAVLink (Micro Air Vehicle Link): A very widely used protocol for communication between drones (and other unmanned vehicles) and ground control stations. It's message-based and defines a standard set of messages for various purposes (e.g., flight control, telemetry, sensor data).
 
-Rust Crates: `mavlink` is the primary crate for MAVLink in Rust. It provides encoding and decoding of MAVLink messages.
+Rust Crates: [`mavlink`][c-mavlink]⮳{{hi:mavlink}} is the primary crate for MAVLink in Rust. It provides encoding and decoding of MAVLink messages.
  CAN (Controller Area Network): A robust and reliable serial communication protocol often used in aerospace for communication between various electronic components (e.g., sensors, actuators, controllers).
 
 Rust Crates:
-`socketcan`: For interacting with CAN buses on Linux systems (often used with USB-CAN adapters).
-`can-rs`: A more general CAN crate, potentially supporting other platforms.
+[`socketcan`][c-socketcan]⮳{{hi:socketcan}}: For interacting with CAN buses on Linux systems (often used with USB-CAN adapters).
+[`can-rs`][c-can]⮳{{hi:can-rs}}: A more general CAN crate, potentially supporting other platforms.
 For embedded systems, you might use crates like [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}  and implement CAN communication using the microcontroller's peripherals.
 
 ARINC 429: A widely used standard for data transfer in commercial aircraft avionics. It's a unidirectional, broadcast-oriented protocol.

@@ -63,15 +63,15 @@ Working with the File System and I/O:
 
 ## File System Operations (More Advanced)
 
-`fs_extra`: A crate that provides additional file system operations, such as copying directories recursively, setting file permissions, etc.
+[`fs_extra`][c-fs_extra]⮳{{hi:fs_extra}}: A crate that provides additional file system operations, such as copying directories recursively, setting file permissions, etc.
 
 ## Temporary Files and Directories 2
 
-`tempfile`: A crate for creating temporary files and directories.
+[`tempfile`][c-tempfile]⮳{{hi:tempfile}}: A crate for creating temporary files and directories.
 
 ## Globbing (Matching File Patterns)
 
-`glob`: A crate for matching file paths using glob patterns.
+[`glob`][c-glob]⮳{{hi:glob}}: A crate for matching file paths using glob patterns.
 
 ## Symbolic Links
 
@@ -79,22 +79,22 @@ Working with the File System and I/O:
 
 ## File Watching 2
 
-`notify`: A crate for watching files and directories for changes.
+[`notify`][c-notify]⮳{{hi:notify}}: A crate for watching files and directories for changes.
 
 ## Serialization/Deserialization (for file content)
 
-`serde`: Not a file system crate itself, but extremely relevant
+[`serde`][c-serde]⮳{{hi:serde}}: Not a file system crate itself, but extremely relevant
 
 Often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files.
 
 ## Compression/Decompression
 
-`flate2`, `gzip`, `bzip2`, `xz2`: Crates for working with various compression formats (often used when dealing with files).
+[`flate2`][c-flate2]⮳{{hi:flate2}}, `gzip`, [`bzip2`][c-bzip2]⮳{{hi:bzip2}}, `xz2`: Crates for working with various compression formats (often used when dealing with files).
 
 ## Archive Files (tar, zip, etc.)
 
-`tar`, `zip`: Crates for working with tar and zip archives.
+[`tar`][c-tar]⮳{{hi:tar}}, `zip`: Crates for working with tar and zip archives.
 
-For most common file system tasks, `std::fs` and `std::path` will be sufficient. `fs_extra` is useful for more advanced operations. `tempfile` is great for working with temporary files. `glob` simplifies file pattern matching. `notify` is essential for file watching. And, of course, `serde` is very often used to handle the contents of files when you're working with structured data.
+For most common file system tasks, `std::fs` and `std::path` will be sufficient. [`fs_extra`][c-fs_extra]⮳{{hi:fs_extra}} is useful for more advanced operations. [`tempfile`][c-tempfile]⮳{{hi:tempfile}} is great for working with temporary files. [`glob`][c-glob]⮳{{hi:glob}} simplifies file pattern matching. [`notify`][c-notify]⮳{{hi:notify}} is essential for file watching. And, of course, [`serde`][c-serde]⮳{{hi:serde}} is very often used to handle the contents of files when you're working with structured data.
 
 </div>

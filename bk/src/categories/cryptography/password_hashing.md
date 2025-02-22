@@ -12,7 +12,7 @@ Despite their original use for key derivation, KDFs are possibly better known fo
 
 In that role, key derivation [functions][p-functions] take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive. In cryptography, "salt" refers to non-secret, random data added to input data before hashing it.
 
-Popular password hashing algorithms include `bcrypt`, `Argon2` and `scrypt`.
+Popular password hashing algorithms include [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}, [`Argon2`][c-argon2]⮳{{hi:Argon2}} and [`scrypt`][c-scrypt]⮳{{hi:scrypt}}.
 
 ## Hash a password, then verify a password against the hash {#argon2}
 

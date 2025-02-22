@@ -32,17 +32,17 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 Debugging with `gdb` or `lldb`: Basic debugging techniques.
 
-Logging Framework: `log` (provides the logging macros and facade)
+Logging Framework: [`log`][c-log]⮳{{hi:log}} (provides the logging macros and facade)
 
 Log Implementations (Loggers):
 
-`env_logger`: A simple logger that configures logging based on environment variables.
-`log4rs`: A more flexible logger that supports configuration files.
-`tracing`: A newer, structured logging library with spans and context.
+[`env_logger`][c-env_logger]⮳{{hi:env_logger}}: A simple logger that configures logging based on environment variables.
+[`log4rs`][c-log4rs]⮳{{hi:log4rs}}: A more flexible logger that supports configuration files.
+[`tracing`][c-tracing]⮳{{hi:tracing}}: A newer, structured logging library with spans and context.
 
 Log Formatting/Output:
 
-`tracing-subscriber`: Used with tracing to format and output logs.
+[`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}}: Used with tracing to format and output logs.
 
 Asynchronous Logging:
 
@@ -50,9 +50,9 @@ Asynchronous Logging:
 
 Log Filtering:
 
-(Can be done with `env_logger`, `log4rs`, or `tracing-subscriber`.)
+(Can be done with [`env_logger`][c-env_logger]⮳{{hi:env_logger}}, [`log4rs`][c-log4rs]⮳{{hi:log4rs}}, or [`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}}.)
 
 Panic Logging:
 
-`log-panics`: Logs panics with backtraces.
+[`log-panics`][c-log_panics]⮳{{hi:log-panics}}: Logs panics with backtraces.
 </div>

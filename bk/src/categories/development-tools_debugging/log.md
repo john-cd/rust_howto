@@ -40,7 +40,7 @@ Proper [error handling][p-error-handling]{{hi:Error handling}} considers excepti
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-`log`
+[`log`][c-log]⮳{{hi:log}}
 
 [`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 
@@ -64,7 +64,7 @@ Implements a custom logger `ConsoleLogger` which prints to stdout. In order to u
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![syslog][c-syslog-badge]][c-syslog]{{hi:syslog}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:syslog}}
 
-`log`
+[`log`][c-log]⮳{{hi:log}}
 
 Logs messages to [UNIX `syslog`][unix-syslog-website]⮳. Initializes logger backend with [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ records the program submitting the log entry's classification, [`syslog::init`][c-syslog::init]{{hi:syslog::init}}⮳ denotes allowed log verbosity{{hi:Log verbosity}} and `Option<&str>` holds optional application name.
 

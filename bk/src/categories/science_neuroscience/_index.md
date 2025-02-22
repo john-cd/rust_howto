@@ -18,16 +18,16 @@ The Rust neuroscience ecosystem is still developing, but there's growing interes
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Neuroimaging Data Formats | `nifti`, `dicom` | `nifti` handles the NIfTI format, a common neuroimaging data format. `dicom` is for DICOM, another crucial format, particularly for MRI. |
+| Neuroimaging Data Formats | [`nifti`][c-nifti]⮳{{hi:nifti}}, [`dicom`][c-dicom]⮳{{hi:dicom}} | [`nifti`][c-nifti]⮳{{hi:nifti}} handles the NIfTI format, a common neuroimaging data format. [`dicom`][c-dicom]⮳{{hi:dicom}} is for DICOM, another crucial format, particularly for MRI. |
 | Neuroimaging Analysis | (Developing area) | This area is still relatively nascent in pure Rust. Integration with existing tools via FFI might be common. |
 | Computational Neuroscience | (Often uses numerical computation crates) | Computational neuroscience often involves simulations and modeling, which can leverage Rust's performance. |
 | Electrophysiology Data Analysis | (Developing area) | Analysis of EEG, MEG, and other electrophysiological data is an active area of development. |
 | Brain-Computer Interfaces (BCIs) | (Developing area) | BCI development is likely to involve low-level hardware interaction and real-time processing, where Rust's performance can be beneficial. |
 | Connectomics | (Developing area) | Analysis of brain networks and connections is an area ripe for development in Rust. |
 | Data Visualization (Neuroscience-Specific) | (Developing area) | While general-purpose visualization crates can be used, neuroscience-specific visualization tools are less common in pure Rust. |
-| Machine Learning for Neuroscience | (Uses general ML crates like `linfa`, `tch-rs`) | Machine learning techniques are widely used in neuroscience, and Rust's ML ecosystem can be leveraged. |
-| Numerical Computation | `nalgebra`, `ndarray`, `statrs` | These crates are essential for numerical computations commonly used in neuroscience. |
-| Data Analysis & Manipulation | `polars`, `dataframe` | These crates are useful for working with large datasets in neuroscience. |
+| Machine Learning for Neuroscience | (Uses general ML crates like [`linfa`][c-linfa]⮳{{hi:linfa}}, [`tch-rs`][c-tch]⮳{{hi:tch-rs}}) | Machine learning techniques are widely used in neuroscience, and Rust's ML ecosystem can be leveraged. |
+| Numerical Computation | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`ndarray`][c-ndarray]⮳{{hi:ndarray}}, [`statrs`][c-statrs]⮳{{hi:statrs}} | These crates are essential for numerical computations commonly used in neuroscience. |
+| Data Analysis & Manipulation | [`polars`][c-polars]⮳{{hi:polars}}, [`dataframe`][c-dataframe]⮳{{hi:dataframe}} | These crates are useful for working with large datasets in neuroscience. |
 | Bioinformatics & Genomics (Related) | (Relevant crates might exist) | Some neuroscience research overlaps with bioinformatics, so relevant crates from that domain might be applicable. |
 
 ## Key Considerations

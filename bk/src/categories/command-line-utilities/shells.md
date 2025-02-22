@@ -16,7 +16,7 @@
 
 [Nushell][nushell-website]⮳[(github)][nushell-github]⮳
 
-`nushell` (or `Nu`) is a modern shell designed with a focus on structured data and a powerful, consistent language.
+[`nushell`][c-nushell]⮳{{hi:nushell}} (or `Nu`) is a modern shell designed with a focus on structured data and a powerful, consistent language.
 
 Unlike traditional shells that primarily handle text, `Nu` treats data as structured tables, enabling users to easily query, filter, and manipulate information directly within the shell. Its [language][p-language] combines familiar shell concepts with a more structured syntax, allowing for complex data processing pipelines. `Nu` also allows users to define custom commands and integrate with external tools.
 

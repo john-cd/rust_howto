@@ -58,19 +58,19 @@ Link to stdlib pages
 
 Additional Data Structures:
 
-`rangemap`: Stores key-value pairs where keys are ranges.
-`ndarray`: Provides an n-dimensional array for numerical computation.
-`roaring`: Implements compressed bitsets.
+[`rangemap`][c-rangemap]⮳{{hi:rangemap}}: Stores key-value pairs where keys are ranges.
+[`ndarray`][c-ndarray]⮳{{hi:ndarray}}: Provides an n-dimensional array for numerical computation.
+[`roaring`][c-roaring]⮳{{hi:roaring}}: Implements compressed bitsets.
 
 Implementing and using linked lists, deques, binary trees, and other less common but sometimes necessary structures.
 
 Standard Library: `std::collections` (Vec, HashMap, LinkedList, BTreeMap, HashSet, etc.)
 Immutable Data Structures: `im`, `rpds`
 Specialized Data Structures:
-Graphs: `petgraph`, `graph_rs`
-Trees: `indextree`, `rayon-trie`
-Bloom Filters: `bloomfilter`
-Skip Lists: `skiplist`
-Serialization/Deserialization (often used with data structures): `serde`
+Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}
+Trees: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`
+Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}
+Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}
+Serialization/Deserialization (often used with data structures): [`serde`][c-serde]⮳{{hi:serde}}
 
 </div>

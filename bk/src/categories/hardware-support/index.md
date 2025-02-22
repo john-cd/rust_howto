@@ -39,11 +39,11 @@ Here's a breakdown by category:
 
 ### HALs (Hardware Abstraction Layers)
 
-- `embedded-hal`: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This is essential for writing portable embedded code.
-- `cortex-m`: Provides access to Cortex-M microcontroller peripherals.
+- [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This is essential for writing portable embedded code.
+- [`cortex-m`][c-cortex_m]⮳{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
 - `stm32fxxx-hal`: HALs for specific STM32 microcontrollers. (Many microcontroller families have their own HAL crates.)
-- `nrf52-hal`: HALs for Nordic Semiconductor nRF52 microcontrollers.
-- `esp-hal`: HAL for Espressif chips.
+- [`nrf52-hal`][c-nrf52_hal]⮳{{hi:nrf52-hal}}: HALs for Nordic Semiconductor nRF52 microcontrollers.
+- [`esp-hal`][c-esp_hal]⮳{{hi:esp-hal}}: HAL for Espressif chips.
 
 Many other microcontroller families have their own HAL crates.
 
@@ -85,15 +85,15 @@ Accessing hardware from user space (without a driver) is often restricted for se
 
 #### Serial Communication
 
-`serialport`: A crate for working with serial ports.
+[`serialport`][c-serialport]⮳{{hi:serialport}}: A crate for working with serial ports.
 
 #### Networking
 
-Standard networking crates like `std::net` or crates like `tokio` for asynchronous networking are used for network hardware interaction.
+Standard networking crates like `std::net` or crates like [`tokio`][c-tokio]⮳{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
 
 #### Graphics Cards (GPUs)
 
-`wgpu`, `gfx-hal`, `vulkano`: These crates are used for interacting with GPUs (see the Graphics section).
+[`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}: These crates are used for interacting with GPUs (see the Graphics section).
 
 #### Other Peripherals
 
@@ -101,6 +101,6 @@ For specialized hardware, you'll often need to find or create crates that provid
 
 ### General Hardware Interaction
 
-`ioctl`: A crate for performing ioctl (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
+[`ioctl`][c-ioctl]⮳{{hi:ioctl}}: A crate for performing ioctl (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
 
 </div>

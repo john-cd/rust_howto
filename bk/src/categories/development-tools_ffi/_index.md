@@ -18,22 +18,22 @@ link to pyo3 file as well
 
 C Bindings (FFI):
 
-`cbindgen`: Generates C header files from Rust code.
-`std::ffi`, `libc`: Standard library modules for FFI.
+[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}: Generates C header files from Rust code.
+`std::ffi`, [`libc`][c-libc]⮳{{hi:libc}}: Standard library modules for FFI.
 
 Python:
 
-`pyo3`: Excellent for creating Python extensions in Rust and embedding Python in Rust. Very versatile.
-`cpython`: Lower-level bindings to the CPython interpreter. More complex, but offers more control.
+[`pyo3`][c-pyo3]⮳{{hi:pyo3}}: Excellent for creating Python extensions in Rust and embedding Python in Rust. Very versatile.
+[`cpython`][c-cpython]⮳{{hi:cpython}}: Lower-level bindings to the CPython interpreter. More complex, but offers more control.
 `rust-python`: Another option for Python bindings.
 
 JavaScript (WebAssembly):
 
-`wasm-bindgen`: Facilitates communication between Rust and JavaScript when compiling to WebAssembly.
+[`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}}: Facilitates communication between Rust and JavaScript when compiling to WebAssembly.
 
 Node.js (NAPI):
 
-`neon`: Makes it easy to write Node.js addons in Rust.
+[`neon`][c-neon]⮳{{hi:neon}}: Makes it easy to write Node.js addons in Rust.
 
 Other Languages:
 
@@ -41,10 +41,10 @@ Other Languages:
 
 Build Tools:
 
-`cargo`: (Essential for building Rust projects that involve FFI or bindings.)
-`maturin`: Specifically for building and distributing Python packages that include Rust extensions.
+[`cargo`][c-cargo]⮳{{hi:cargo}}: (Essential for building Rust projects that involve FFI or bindings.)
+[`maturin`][c-maturin]⮳{{hi:maturin}}: Specifically for building and distributing Python packages that include Rust extensions.
 
 General Binding Generators (Less Common with Rust):
 
-`SWIG` (Simplified Wrapper and Interface Generator): While widely used with other languages, it's less frequently used with Rust due to the effectiveness of crates like `pyo3` and `wasm-bindgen`
+`SWIG` (Simplified Wrapper and Interface Generator): While widely used with other languages, it's less frequently used with Rust due to the effectiveness of crates like [`pyo3`][c-pyo3]⮳{{hi:pyo3}} and [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}}
 </div>

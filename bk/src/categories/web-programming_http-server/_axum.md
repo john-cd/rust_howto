@@ -6,7 +6,7 @@
 
 [![axum][c-axum-badge]][c-axum] [![axum-crates.io][c-axum-crates.io-badge]][c-axum-crates.io] [![axum-github][c-axum-github-badge]][c-axum-github] [![axum-lib.rs][c-axum-lib.rs-badge]][c-axum-lib.rs]{{hi:axum}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
-`axum` is a web framework that focuses on ergonomics and modularity. It is an official part of the `tokio` project. `axum` is recommended for most new projects.
+`axum` is a web framework that focuses on ergonomics and modularity. It is an official part of the [`tokio`][c-tokio]⮳{{hi:tokio}} project. [`axum`][c-axum]⮳{{hi:axum}} is recommended for most new projects.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/tests/axum.rs:example}}

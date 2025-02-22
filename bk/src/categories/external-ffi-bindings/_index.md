@@ -16,7 +16,7 @@
 
 ## C Bindings
 
-`libc` (provides definitions for C standard library functions and types)
+[`libc`][c-libc]⮳{{hi:libc}} (provides definitions for C standard library functions and types)
 
 ## Generating C Header Files
 
@@ -36,7 +36,7 @@ Often involves returning error codes or using Result types and converting them t
 
 ## Build System Integration (for FFI)
 
-Usually handled with build scripts (`build.rs`) and the `cc` crate for compiling C/C++ code, if necessary.
+Usually handled with build scripts (`build.rs`) and the [`cc`][c-cc]⮳{{hi:cc}} crate for compiling C/C++ code, if necessary.
 
 ## Safety (unsafe blocks)
 
@@ -44,6 +44,6 @@ FFI code often requires unsafe blocks because the Rust compiler cannot guarantee
 
 ## Calling Rust from other languages
 
-While [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}  helps with C, other languages might have their own FFI mechanisms. `cpython` and `pyo3` are common for Python.
+While [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}  helps with C, other languages might have their own FFI mechanisms. [`cpython`][c-cpython]⮳{{hi:cpython}} and [`pyo3`][c-pyo3]⮳{{hi:pyo3}} are common for Python.
 
 </div>

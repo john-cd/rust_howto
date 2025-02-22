@@ -42,7 +42,7 @@ This works by embedding data about the dependency tree in [JSON][p-json] format 
 [![cargo-license-lib.rs][c-cargo_license-lib.rs-badge]][c-cargo_license-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}} is a `cargo` subcommand to see license of dependencies.
+[`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}} is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand to see license of dependencies.
 
 You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}}.
 

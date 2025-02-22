@@ -20,8 +20,8 @@ The example below shows a `&str` of [JSON][p-json] being parsed. The expected va
 
 [![toml][c-toml-badge]][c-toml]{{hi:toml}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
-TOML is a simple, ergonomic, and readable [configuration][p-configuration] format that is often used by Rust's tooling - for example `cargo`.
-The following parses some TOML into a universal `toml::Value` that is able to represent any valid [TOML][p-toml] data.
+TOML is a simple, ergonomic, and readable [configuration][p-configuration] format that is often used by Rust's tooling - for example [`cargo`][c-cargo]⮳{{hi:cargo}}.
+The following parses some TOML into a universal [`toml::Value`][c-toml::Value]⮳{{hi:toml::Value}} that is able to represent any valid [TOML][p-toml] data.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/tests/toml/toml.rs:example}}

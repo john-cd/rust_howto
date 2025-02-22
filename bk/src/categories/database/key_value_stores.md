@@ -6,8 +6,8 @@
 
 [![heed][c-heed-badge]][c-heed] [![heed-crates.io][c-heed-crates.io-badge]][c-heed-crates.io] [![heed-github][c-heed-github-badge]][c-heed-github] [![heed-lib.rs][c-heed-lib.rs-badge]][c-heed-lib.rs]{{hi:heed}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-`heed` is a fully-typed `LMDB` wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p-database] library that provides key/value storage.
-Use `heed` for:
+[`heed`][c-heed]⮳{{hi:heed}} is a fully-typed `LMDB` wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p-database] library that provides key/value storage.
+Use [`heed`][c-heed]⮳{{hi:heed}} for:
 
 - [Caching][p-caching]: App data, web pages or images,
 - [Embedded][p-embedded] [databases][p-databases] for mobile apps, IoT devices, desktop applications,
@@ -24,15 +24,15 @@ Advantages include speed, minimal memory footprint, [embedded][p-embedded] use, 
 
 [![rocksdb][c-rocksdb-badge]][c-rocksdb] [![rocksdb-crates.io][c-rocksdb-crates.io-badge]][c-rocksdb-crates.io] [![rocksdb-github][c-rocksdb-github-badge]][c-rocksdb-github] [![rocksdb-lib.rs][c-rocksdb-lib.rs-badge]][c-rocksdb-lib.rs]{{hi:rocksdb}}{{hi:Database}}{{hi:Embedded}}{{hi:Lsm-tree}}{{hi:Persistence}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 
-[`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}} is a Rust wrapper for Facebook's `RocksDB` embeddable database. `RocksDB` is a high performance database for key-value data. Use `rocksdb`:
+[`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}} is a Rust wrapper for Facebook's `RocksDB` embeddable database. [`RocksDB`][c-rocksdb]⮳{{hi:RocksDB}} is a high performance database for key-value data. Use [`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}}:
 
 - As the storage engine for other [databases][p-databases] (MySQL, MongoDB, TiKV...),
 - For [caching][p-caching],
 - To handle time-series data, indexes for [search][p-search] engines, persistent message queues
 
-`RocksDB` is employed in stream processing frameworks like `Apache Flink` and `Kafka Streams` to maintain the state of streaming applications.
+[`RocksDB`][c-rocksdb]⮳{{hi:RocksDB}} is employed in stream processing frameworks like `Apache Flink` and `Kafka Streams` to maintain the state of streaming applications.
 
-`RocksDB` is great for performance, scalability, flexibility, embeddability. Avoid when dealing with complex SQL or distributed transactions.
+[`RocksDB`][c-rocksdb]⮳{{hi:RocksDB}} is great for performance, scalability, flexibility, embeddability. Avoid when dealing with complex SQL or distributed transactions.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/rocksdb/rocksdb.rs:example}}

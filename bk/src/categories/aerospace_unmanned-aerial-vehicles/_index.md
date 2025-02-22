@@ -15,11 +15,11 @@
 Key UAV Communication & Control Protocols:
 
 - MAVLink (Micro Air Vehicle Link): The dominant protocol for communication between drones and ground control stations (GCS). It's message-based, covering everything from basic flight control to sensor data and telemetry.
-- Link to `mavlink` crate
+- Link to [`mavlink`][c-mavlink]⮳{{hi:mavlink}} crate
 - `DroneCAN`: A CAN-based protocol specifically designed for UAVs and robotics. It aims for reliability and real-time performance.
-- `can-rs` (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
-- `sbus`/`s.bus`: A serial communication protocol often used for radio control (RC) receivers and servos.
-- serial port crates (`serialport`) and implement the sbus/s.bus decoding logic yourself.
+- [`can-rs`][c-can]⮳{{hi:can-rs}} (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
+- [`sbus`][c-sbus]⮳{{hi:sbus}}/`s.bus`: A serial communication protocol often used for radio control (RC) receivers and servos.
+- serial port crates ([`serialport`][c-serialport]⮳{{hi:serialport}}) and implement the sbus/s.bus decoding logic yourself.
 - Spektrum DSM/DSMX: Another common RC protocol.
 - FrSky SmartPort/FPort: A telemetry protocol used by FrSky RC systems.
 

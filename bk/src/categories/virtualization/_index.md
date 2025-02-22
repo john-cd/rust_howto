@@ -16,13 +16,13 @@ The Rust virtualization ecosystem is still under development, but there's growin
 
 | Topic | Rust Crates | Notes |
 |---|---|---|
-| Virtual Machine Management (VMM) / Hypervisors | `virtio-rs`, `kvm-rs`, `vmm-sysutil` | These crates provide low-level interfaces for interacting with hypervisors like KVM. `virtio-rs` provides Rust implementations of Virtio devices. `kvm-rs` allows controlling KVM. `vmm-sysutil` offers utilities for VMMs. These are often used to build higher-level VMMs. |
+| Virtual Machine Management (VMM) / Hypervisors | `virtio-rs`, [`kvm-rs`][c-kvm]⮳{{hi:kvm-rs}}, `vmm-sysutil` | These crates provide low-level interfaces for interacting with hypervisors like KVM. `virtio-rs` provides Rust implementations of Virtio devices. [`kvm-rs`][c-kvm]⮳{{hi:kvm-rs}} allows controlling KVM. `vmm-sysutil` offers utilities for VMMs. These are often used to build higher-level VMMs. |
 | Containerization | `oci-spec`, `runc` (indirectly via other tools) | While `runc` itself is written in Go, Rust crates like `oci-spec` are used for working with OCI (Open Container Initiative) specifications, which are fundamental to containerization. Many container-related tools are being developed in Rust. |
-| Sandboxing (WASM) | `wasmi`, `wasi-rs` | `wasmi` is a WebAssembly interpreter, useful for sandboxing untrusted code. `wasi-rs` provides bindings for the WebAssembly System Interface (WASI). |
+| Sandboxing (WASM) | [`wasmi`][c-wasmi]⮳{{hi:wasmi}}, [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} | [`wasmi`][c-wasmi]⮳{{hi:wasmi}} is a WebAssembly interpreter, useful for sandboxing untrusted code. [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} provides bindings for the WebAssembly System Interface (WASI). |
 | Cloud Hypervisors | `cloud-hypervisor` | `cloud-hypervisor` is a VMM specifically designed for cloud workloads. |
 | Virtualization Frameworks (Higher-Level) | (Developing area) | Higher-level frameworks that abstract away the complexities of VMMs are still emerging in Rust. |
-| Emulation | `qemu-rs` (bindings) | `qemu-rs` provides bindings to QEMU, a powerful emulator that can be used for virtualization. |
-| Virtual Networking | `slirp` (bindings), `tun-tap` | `slirp` provides a user-mode network stack. `tun-tap` allows creating virtual network interfaces. |
+| Emulation | [`qemu-rs`][c-qemu]⮳{{hi:qemu-rs}} (bindings) | [`qemu-rs`][c-qemu]⮳{{hi:qemu-rs}} provides bindings to QEMU, a powerful emulator that can be used for virtualization. |
+| Virtual Networking | `slirp` (bindings), [`tun-tap`][c-tun_tap]⮳{{hi:tun-tap}} | `slirp` provides a user-mode network stack. [`tun-tap`][c-tun_tap]⮳{{hi:tun-tap}} allows creating virtual network interfaces. |
 | Virtual Storage | (Developing area) | Virtual storage solutions are an area where development is ongoing. |
 | Image Formats (Virtual Disks) | (Often uses existing image libraries) | Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using existing image processing libraries or creating custom parsers. |
 
@@ -36,7 +36,7 @@ The Rust virtualization ecosystem is still under development, but there's growin
 
 ## Strategies for Development
 
-- Low-Level Interaction: Use crates like `virtio-rs`, `kvm-rs`, and `vmm-sysutil` to interact directly with hypervisors.
+- Low-Level Interaction: Use crates like `virtio-rs`, [`kvm-rs`][c-kvm]⮳{{hi:kvm-rs}}, and `vmm-sysutil` to interact directly with hypervisors.
 - FFI: Leverage existing virtualization libraries (often written in C or other languages) using FFI.
 - Containerization: Use crates like `oci-spec` to work with containerization technologies.
 - Sandboxing: Employ WebAssembly and related crates for sandboxing.

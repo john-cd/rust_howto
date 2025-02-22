@@ -42,10 +42,10 @@ Crates to help you deal with events independently of the main program flow, usin
 <div class="hidden">
 [ P1 need titles](https://github.com/john-cd/rust_howto/issues/905)
 
-Runtimes: `tokio`, `async-std`, `smol`
-Futures/Streams: `futures`, `tokio-stream`
-Async I/O: `tokio`, `async-std`
-Link to Networking / Websocket / HTTP: `tokio-tungstenite`, `hyper`, `reqwest`
-Link to Concurrency: `tokio::sync`, `async-channel`
+Runtimes: [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}}, [`smol`][c-smol]⮳{{hi:smol}}
+Futures/Streams: [`futures`][c-futures]⮳{{hi:futures}}, [`tokio-stream`][c-tokio_stream]⮳{{hi:tokio-stream}}
+Async I/O: [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}}
+Link to Networking / Websocket / HTTP: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`hyper`][c-hyper]⮳{{hi:hyper}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}
+Link to Concurrency: `tokio::sync`, [`async-channel`][c-async_channel]⮳{{hi:async-channel}}
 
 </div>

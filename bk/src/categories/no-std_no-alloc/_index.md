@@ -40,11 +40,11 @@ Here's a breakdown:
 
 - `alloc`: (Standard library) While you're -avoiding- it, understanding -why- you're avoiding it is important. It's the standard library's allocation crate.
 
-- `wee_alloc`: A small and efficient allocator often used in embedded systems or WebAssembly. It can be useful if you -do- need some allocation, but want a very small allocator.
+- [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}: A small and efficient allocator often used in embedded systems or WebAssembly. It can be useful if you -do- need some allocation, but want a very small allocator.
 
-- `panic-halt`, `panic-abort`: Crates for defining panic behavior in `no_std` environments.
+- [`panic-halt`][c-panic_halt]⮳{{hi:panic-halt}}, [`panic-abort`][c-panic_abort]⮳{{hi:panic-abort}}: Crates for defining panic behavior in `no_std` environments.
 
-- `embedded-hal`: Essential for interacting with hardware in embedded systems, which are often `no_alloc` environments.
+- [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: Essential for interacting with hardware in embedded systems, which are often `no_alloc` environments.
 
 ## Key Considerations
 

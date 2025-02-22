@@ -12,7 +12,7 @@ Bindings to Linux-specific APIs.
 <div class="hidden">
 [ P2 review](https://github.com/john-cd/rust_howto/issues/948)
 
-Most standard Rust code will work on Linux without modification. For Linux-specific features, you might need to use `nix`, FFI, or find crates that provide bindings to the specific interface you're working with. Be careful with `unsafe` code and consult the Linux documentation. For general system programming tasks, the standard library is often sufficient.
+Most standard Rust code will work on Linux without modification. For Linux-specific features, you might need to use [`nix`][c-nix]⮳{{hi:nix}}, FFI, or find crates that provide bindings to the specific interface you're working with. Be careful with `unsafe` code and consult the Linux documentation. For general system programming tasks, the standard library is often sufficient.
 
 Rust code that adheres to standard practices will generally run seamlessly on Linux. However, if you need to interact with Linux-specific features, here's a breakdown:
 
@@ -20,7 +20,7 @@ Rust code that adheres to standard practices will generally run seamlessly on Li
 
 - `std::os::unix`: (Standard library) This module provides access to a large number of Unix system calls, which are generally the same or very similar across Linux and other Unix-like systems. This is your primary way to interact with the Linux kernel directly.
 
-- `nix`: A crate providing more comprehensive access to Unix-like system calls, including many Linux-specific ones. It is often preferred over using `std::os::unix` directly for better type safety and error handling.
+- [`nix`][c-nix]⮳{{hi:nix}}: A crate providing more comprehensive access to Unix-like system calls, including many Linux-specific ones. It is often preferred over using `std::os::unix` directly for better type safety and error handling.
 
 ## File System Interaction
 
@@ -34,7 +34,7 @@ Rust code that adheres to standard practices will generally run seamlessly on Li
 ## Networking
 
 - `std::net`: (Standard library) For basic networking (TCP, UDP). Works well on Linux.
-- `tokio`: For asynchronous networking. Essential for high-performance network applications on Linux.
+- [`tokio`][c-tokio]⮳{{hi:tokio}}: For asynchronous networking. Essential for high-performance network applications on Linux.
 
 ## Threads
 
@@ -42,8 +42,8 @@ Rust code that adheres to standard practices will generally run seamlessly on Li
 
 ## Time
 
-- `std::time`: (Standard library) For working with time and durations. Works well on Linux.
-- `chrono` or `time`: For date and time calculations.
+- [`std::time`][c-std::time]⮳{{hi:std::time}}: (Standard library) For working with time and durations. Works well on Linux.
+- [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}}: For date and time calculations.
 
 ## Device Drivers (Kernel-Level)
 

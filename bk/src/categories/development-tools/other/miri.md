@@ -10,7 +10,7 @@
 
 ## Install the `miri` interpreter {#miri-installation}
 
-`miri`
+[`miri`][c-miri]⮳{{hi:miri}}
 
 ```bash
 rustup +nightly component add miri

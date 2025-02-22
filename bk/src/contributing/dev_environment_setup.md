@@ -48,7 +48,7 @@ need Python
 
 ## Alternative `just` install {#skip1}
 
-`just`
+[`just`][c-just]⮳{{hi:just}}
 
 ```dockerfile
 # RUN <<EOF

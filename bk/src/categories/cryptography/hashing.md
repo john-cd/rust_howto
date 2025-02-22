@@ -44,7 +44,7 @@ For more [algorithms][p-algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sh
 
 SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions designed by the National Security Agency (NSA) and standardized by NIST.
 
-`sha2` is a pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used variant.
+[`sha2`][c-sha2]⮳{{hi:sha2}} is a pure Rust implementation of the SHA-2 hash function family, including SHA-224, SHA-256, SHA-384, and SHA-512. SHA-256 is the most commonly used variant.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/hashing/sha2.rs:example}}
@@ -54,7 +54,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 [![sha1][c-sha1-badge]][c-sha1] [![sha1-crates.io][c-sha1-crates.io-badge]][c-sha1-crates.io] [![sha1-github][c-sha1-github-badge]][c-sha1-github] [![sha1-lib.rs][c-sha1-lib.rs-badge]][c-sha1-lib.rs]{{hi:sha1}}{{hi:Hash}}{{hi:sha1}}{{hi:Crypto}}{{hi:Digest}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`sha1` implements the SHA-1 hash function.
+[`sha1`][c-sha1]⮳{{hi:sha1}} implements the SHA-1 hash function.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/hashing/sha1.rs:example}}
@@ -64,7 +64,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 [![md-5][c-md_5-badge]][c-md_5] [![md-5-crates.io][c-md_5-crates.io-badge]][c-md_5-crates.io] [![md-5-github][c-md_5-github-badge]][c-md_5-github] [![md-5-lib.rs][c-md_5-lib.rs-badge]][c-md_5-lib.rs]{{hi:md-5}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`md-5` implements the MD5 hash function.
+[`md-5`][c-md_5]⮳{{hi:md-5}} implements the MD5 hash function.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/hashing/md_5.rs:example}}

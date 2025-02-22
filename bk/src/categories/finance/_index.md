@@ -12,35 +12,35 @@ Dealing with money: accounting, trading, investments, taxes, banking and payment
 
 ## Financial Calculations
 
-`financial`: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
+[`financial`][c-financial]⮳{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
 `rust-finance`: Another crate with financial functions.
 
 ## Working with Currencies
 
-`iso4217`: Provides ISO 4217 currency codes.
-`rust-money`: For working with monetary values and currencies.
+[`iso4217`][c-iso4217]⮳{{hi:iso4217}}: Provides ISO 4217 currency codes.
+[`rust-money`][c-rust_money]⮳{{hi:rust-money}}: For working with monetary values and currencies.
 
 ## Date and Time (Essential for Finance)
 
-`chrono`: A widely used crate for date and time calculations.
-`time`: A newer crate, often preferred.
+[`chrono`][c-chrono]⮳{{hi:chrono}}: A widely used crate for date and time calculations.
+[`time`][c-time]⮳{{hi:time}}: A newer crate, often preferred.
 
 ## Data Analysis and Statistics
 
-`statrs`: A comprehensive statistics library.
-`nalgebra`: Linear algebra crate, often used in financial modeling.
-`ndarray`: N-dimensional arrays, useful for handling financial data.
+[`statrs`][c-statrs]⮳{{hi:statrs}}: A comprehensive statistics library.
+[`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}: Linear algebra crate, often used in financial modeling.
+[`ndarray`][c-ndarray]⮳{{hi:ndarray}}: N-dimensional arrays, useful for handling financial data.
 
 ## Data Access (Often Needed)
 
 Many options depending on your data source. Examples:
-`reqwest`: For making HTTP requests to financial APIs.
-`csv`: For reading and writing CSV files (common for financial data).
-`serde`: For serializing and deserializing financial data (JSON, etc.).
+[`reqwest`][c-reqwest]⮳{{hi:reqwest}}: For making HTTP requests to financial APIs.
+[`csv`][c-csv]⮳{{hi:csv}}: For reading and writing CSV files (common for financial data).
+[`serde`][c-serde]⮳{{hi:serde}}: For serializing and deserializing financial data (JSON, etc.).
 
 ## Charting and Visualization
 
-`plotters`: A plotting library for creating charts and graphs of financial data.
+[`plotters`][c-plotters]⮳{{hi:plotters}}: A plotting library for creating charts and graphs of financial data.
 
 ## Trading and Market Data
 
@@ -62,6 +62,6 @@ There aren't widely used, general-purpose accounting crates in Rust yet. This ar
 - Risk management: Volatility, diversification, etc.
 - Financial modeling: Building models to analyze financial data.
 
-The `financial` crate is a good starting point for basic financial calculations. For more advanced analysis, you'll likely need the statistics and linear algebra crates. Date/time handling is essential. Data access depends on your data source. Trading and accounting often require custom solutions or very specific API integrations.
+The [`financial`][c-financial]⮳{{hi:financial}} crate is a good starting point for basic financial calculations. For more advanced analysis, you'll likely need the statistics and linear algebra crates. Date/time handling is essential. Data access depends on your data source. Trading and accounting often require custom solutions or very specific API integrations.
 
 </div>

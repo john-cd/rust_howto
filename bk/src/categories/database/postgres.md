@@ -41,7 +41,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 [![tokio-postgres-github][c-tokio_postgres-github-badge]][c-tokio_postgres-github]
 [![tokio-postgres-lib.rs][c-tokio_postgres-lib.rs-badge]][c-tokio_postgres-lib.rs]
 
-[`tokio-postgres`][c-tokio_postgres]⮳{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the `tokio` runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than `SQLx`.
+[`tokio-postgres`][c-tokio_postgres]⮳{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c-sqlx]⮳{{hi:SQLx}}.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/postgres/tokio_postgres.rs:example}}
@@ -59,7 +59,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 
 [`cornucopia`][c-cornucopia]⮳{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c-cornucopia-github]⮳.
 
-`cornucopia` is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual [database][p-database] and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
+[`cornucopia`][c-cornucopia]⮳{{hi:cornucopia}} is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual [database][p-database] and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
 
 The basic premise is thus to:
 

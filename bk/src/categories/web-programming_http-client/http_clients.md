@@ -9,7 +9,7 @@
 [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github]
 [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]
 
-[`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the `tokio` runtime.
+[`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime.
 
 ## `ureq` {#ureq}
 
@@ -19,7 +19,7 @@
 [![ureq-lib.rs][c-ureq-lib.rs-badge]][c-ureq-lib.rs]
 [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
-`ureq` is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
+[`ureq`][c-ureq]⮳{{hi:ureq}} is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/ureq.rs:example}}
@@ -37,9 +37,9 @@
 [![hyper-github][c-hyper-github-badge]][c-hyper-github]
 [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]
 
-[`hyper`][c-hyper]⮳{{hi:hyper}} is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the `tokio` async runtime, but can support other runtimes.
+[`hyper`][c-hyper]⮳{{hi:hyper}} is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the [`tokio`][c-tokio]⮳{{hi:tokio}} async runtime, but can support other runtimes.
 
-`hyper` is meant to be a low-level building block and is indeed used by higher-level libraries such as `curl`, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, and `aws-sdk`. You will likely reach for [`hyper`][c-hyper]⮳{{hi:hyper}} to design such tools or access to bleeding-edge features (like HTTP/3).
+[`hyper`][c-hyper]⮳{{hi:hyper}} is meant to be a low-level building block and is indeed used by higher-level libraries such as `curl`, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, and `aws-sdk`. You will likely reach for [`hyper`][c-hyper]⮳{{hi:hyper}} to design such tools or access to bleeding-edge features (like HTTP/3).
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
