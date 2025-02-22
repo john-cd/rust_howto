@@ -12,8 +12,8 @@ fn main() -> anyhow::Result<()> {
     // Look for "temp" subfolders
     // The root path is hard-coded to avoid any issues with the current working
     // directory
-    for entry in WalkDir::new("/code/crates")
-        .min_depth(2) // Look at the grandchildren, etc of the root folder
+    for entry in WalkDir::new("/code/bk/crates")
+        //.min_depth(2) // Look at the grandchildren, etc of the root folder
         .into_iter()
         .filter_entry(|e| e.file_type().is_dir()) // Only look at directories
         .filter_map(|e| e.ok())

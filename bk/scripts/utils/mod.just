@@ -26,20 +26,20 @@ empty := ''
 
 # Call mdbook-utils to manage links, ref definitions, etc...
 @utils cmd=help *subcmd=empty:
-  mdbook-utils {{cmd}} {{subcmd}}
+  cd {{root}} && mdbook-utils {{cmd}} {{subcmd}}
 # TODO P2 clarify
 
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 [unix]
 @templ cmd=help *subcmd=empty:
   if [ ! -f {{root}}/../bin/templ ]; then just -f {{root}}/../tools/justfile release; fi
-  {{root}}/../bin/templ {{cmd}} {{subcmd}}
+  cd {{root}} && ../bin/templ {{cmd}} {{subcmd}}
 # TODO P2 clarify
 
 [windows]
 @templ cmd=help *subcmd=empty:
   if ( -Not (Test-Path -Path {{root}}\..\bin\templ.exe )) { just -f {{root}}\..\tools\justfile release }
-  {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
+  cd root; {{root}}\..\bin\templ.exe {{cmd}} {{subcmd}}
 
 # Autogenerate a chapter (from template)
 #@autogen:
