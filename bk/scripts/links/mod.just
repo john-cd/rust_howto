@@ -8,6 +8,16 @@ _default:
 
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
+# (BEWARE: modifies files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
+[unix]
+@insert_crate_links:
+  ./insert_crate_links.sh {{root}}
+
+# (BEWARE: modifies files; manual editing required) Insert potential cross-links into the book's Markdown
+[unix]
+@cross_link:
+  ./cross_link.sh {{root}}
+
 # Suggest reference-style links and reference definitions to replace bare URLs found in the book's markdown (manual review necessary)
 [unix]
 @suggest:
@@ -20,10 +30,7 @@ _default:
   ./replace_inline_links.sh {{root}}
 # TODO P2
 
-# (BEWARE: modifies files; manual editing required) Insert potential cross-links into the book's Markdown
-[unix]
-@cross_link:
-  ./cross_link.sh {{root}}
+
 
 ## .... GET LINK (MANUAL) ....
 
