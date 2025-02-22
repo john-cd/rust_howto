@@ -2,7 +2,7 @@
 
 {{#include password_hashing.incl.md}}
 
-Password hashing is a crucial security practice that protects user passwords by one-way transforming them into a string of characters, called a "hash", which reverse-engineering into the password is computationally infeasible. This hash is then stored instead of the actual password. Password hashing protects against data breaches: If a database is compromised, attackers won't be able to see the actual passwords, only the hashed versions.
+Password hashing is a crucial security practice that protects user passwords by one-way transforming them into a string of characters, called a "hash", which reverse-engineering into the password is computationally infeasible. This hash is then stored instead of the actual password. Password [hashing][p-hashing] protects against data breaches: If a [database][p-database] is compromised, attackers won't be able to see the actual passwords, only the hashed versions.
 
 A [key derivation function][key_derivation_function]⮳ (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value, such as a master key, a password, or a passphrase, using a pseudorandom function (typically a cryptographic hash function or block cipher).
 

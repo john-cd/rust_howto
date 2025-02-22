@@ -36,11 +36,13 @@
 [ex-concurrency-thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
 [p-async-channels]: ../asynchronous/async_channels.md
 [p-async]: ../asynchronous/async.md
+[p-asynchronous]: ../asynchronous/index.md
 [p-building]: ../development-tools_cargo-plugins/building.md
 [p-concurrency]: index.md
 [p-concurrent-data-structures]: concurrent_data_structures.md
 [p-global-static]: ../memory-management/global_static.md
 [p-hashmaps]: ../../standard-library/hashmaps.md
+[p-iterators]: ../../language/iterators.md
 [p-lazy-initialization]: ../memory-management/lazy_initialization.md
 [p-main]: ../../language/main.md
 [p-memory]: ../development-tools_profiling/memory.md
@@ -51,5 +53,5 @@
 [p-shared-state]: shared_state.md
 [p-standard-library]: ../../standard-library/index.md
 [p-streams]: ../asynchronous/streams.md
-[p-traits]: ../../language/traits.md
 [p-strings]: ../../standard-library/strings.md
+[p-traits]: ../../language/traits.md

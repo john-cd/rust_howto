@@ -29,7 +29,7 @@ You'll often need to generate some boilerplate code to bridge between Rust and J
 
 ## jni-rs (Helpful Tool)
 
-While not a binding generator in the traditional sense, jni-rs provides helpful macros and utilities to make writing JNI code in Rust easier. It simplifies many common JNI tasks.
+While not a binding generator in the traditional sense, jni-rs provides helpful [macros][p-macros] and utilities to make writing JNI code in Rust easier. It simplifies many common JNI tasks.
 
 ## Build Tools
 

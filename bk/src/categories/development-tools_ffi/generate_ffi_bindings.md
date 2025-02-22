@@ -71,7 +71,7 @@ libc: Provides definitions for standard C library functions and types.
 
 ## C Header Generation
 
-cbindgen: Generates C header files from Rust code, which is essential for making Rust functions callable from C/C++.
+cbindgen: Generates C header files from Rust code, which is essential for making Rust [functions][p-functions] callable from C/C++.
 
 ## C++ Interoperability
 
@@ -87,7 +87,7 @@ cc: A crate that helps with compiling C/C++ code within your Rust build script (
 
 ## String Conversion
 
-std::ffi::CString, std::ffi::CStr: For converting between Rust strings and C/C++ strings.
+std::ffi::CString, std::ffi::CStr: For converting between Rust [strings][p-strings] and C/C++ strings.
 
 ## Error Handling
 

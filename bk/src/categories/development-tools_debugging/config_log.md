@@ -49,7 +49,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 
 Creates a custom logger{{hi:Custom logger}} configuration with [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳
-Each log entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ to get the current [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ in local timezone and uses [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ with [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳ to format a timestamp used in the final log.
+Each [log][p-log] entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ to get the current [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ in local timezone and uses [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ with [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳ to format a timestamp used in the final log.
 
 The example calls [`env_logger::Builder::format`][c-env_logger::Builder::format]{{hi:env_logger::Builder::format}}⮳ to set a closure which formats each message text with timestamp, [`log::Record::level`][c-log::Record::level]{{hi:log::Record::level}}⮳ and body ([`log::Record::args`][c-log::Record::args]{{hi:log::Record::args}}⮳).
 
@@ -82,20 +82,20 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/925)
 
-Logging Framework: log (provides the logging macros and facade)
+Logging Framework: [log][p-log] (provides the logging [macros][p-macros] and facade)
 
 Log Implementations (Loggers):
 
 env_logger: A popular logger that configures logging based on environment variables.
-log4rs: A more flexible logger that supports configuration files (YAML, TOML, JSON).
-tracing: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for formatting and output.
-Log Formatting:
+log4rs: A more flexible logger that supports [configuration][p-configuration] files (YAML, TOML, JSON).
+tracing: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for [formatting][p-formatting] and output.
+Log [Formatting][p-formatting]:
 
-tracing-subscriber: Used with tracing to format log output, often to JSON or other structured formats. Can also be used for filtering.
-Configuration Files (for loggers like log4rs):
+tracing-subscriber: Used with [tracing][p-tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
+Configuration Files (for loggers like [log][p-log]4rs):
 
-serde: (Not a logging crate itself, but necessary for deserializing configuration files in formats like YAML, TOML, or JSON)
-yaml-rust, serde_yaml, toml, serde_json: (Crates for parsing the respective configuration file formats)
+serde: (Not a logging crate itself, but necessary for deserializing [configuration][p-configuration] files in formats like YAML, TOML, or JSON)
+yaml-rust, serde_yaml, toml, serde_json: (Crates for [parsing][p-parsing] the respective [configuration][p-configuration] file formats)
 Other Utilities:
 
 log-panics: Logs panics with backtraces.

@@ -44,8 +44,8 @@ For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use
 
 ## Related GTK Crates
 
-- `gdk`: Provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level graphics and windowing. You'll often use this indirectly through `gtk`.
-- `gio`: Bindings to the GIO (GNOME Input/Output) library, used for asynchronous operations, file I/O, and other system-related tasks in GTK applications.
+- `gdk`: Provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p-graphics] and windowing. You'll often use this indirectly through `gtk`.
+- `gio`: Bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p-asynchronous] operations, file I/O, and other system-related tasks in GTK applications.
 - `glib`: Provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
 
 ### Build Tools

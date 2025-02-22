@@ -41,7 +41,7 @@ Xcode: (For building the Objective-C/Swift side and integrating with the Rust li
 
 Objective-C Runtime: You'll use the objc crate to interact with the Objective-C runtime.
 Messaging: You'll send messages to Objective-C objects using the objc crate.
-Data Marshaling: You'll need to convert data between Rust types and Objective-C types (e.g., converting Rust strings to NSStrings, and vice-versa).
+Data Marshaling: You'll need to convert data between Rust types and Objective-C types (e.g., converting Rust [strings][p-strings] to NSStrings, and vice-versa).
 Memory Management: Objective-C uses manual reference counting (ARC). You'll need to be mindful of memory management to avoid leaks or crashes. The objc crate provides tools to help with this.
 Error Handling: You'll need to handle Objective-C exceptions in your Rust code.
 Swift Interop (Important Note): If you're working with Swift, you'll likely interact with Objective-C as an intermediary, as Swift has excellent Objective-C interoperability. So, the workflow is often: Rust -> Objective-C -> Swift.

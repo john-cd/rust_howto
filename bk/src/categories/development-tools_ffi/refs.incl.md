@@ -11,4 +11,14 @@
 [ex-development-tools_ffi-rustler]: erlang_elixir.md#rustler
 [ex-development-tools_ffi-rutie]: ruby.md#rutie
 [ex-development-tools_ffi-uniffi]: generate_ffi_bindings.md#uniffi
+[p-asynchronous]: ../asynchronous/index.md
+[p-concurrency]: ../concurrency/index.md
+[p-error-handling]: ../rust-patterns/error_handling.md
+[p-functions]: ../../language/functions.md
+[p-json]: ../parser-implementations/json.md
+[p-language]: ../../language/index.md
+[p-macros]: ../../language/macros.md
 [p-modules]: ../../language/modules.md
+[p-option]: ../../standard-library/option.md
+[p-serde]: ../encoding/serde.md
+[p-strings]: ../../standard-library/strings.md

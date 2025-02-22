@@ -6,6 +6,9 @@
 [ex-command-line-utilities-nushell]: shells.md#nushell
 [ex-command-line-utilities-open]: filesystem_cli.md#open
 [ex-command-line-utilities-starship]: shells.md#starship
+[p-configuration]: ../config/configuration.md
+[p-filesystem]: ../filesystem/index.md
 [p-install]: ../development-tools/installation/install.md
+[p-language]: ../../language/index.md
 [p-rustup]: ../development-tools/installation/rustup.md
 [p-url]: ../web-programming/url.md

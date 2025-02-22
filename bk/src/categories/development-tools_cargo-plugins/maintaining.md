@@ -123,7 +123,7 @@ Dead Code Detection:
 cargo deadlinks: Finds broken links in your documentation.
 Documentation Generation:
 
-cargo doc: Generates documentation from your code.
+cargo doc: Generates [documentation][p-documentation] from your code.
 Testing:
 
 cargo test: Runs your unit and integration tests.
@@ -135,7 +135,7 @@ Code Coverage:
 cargo tarpaulin: Runs code coverage analysis.
 Refactoring: (Often IDE-driven, but some tools exist)
 
-cargo-expand: Expands macros, which can be helpful for understanding code and refactoring. (Not strictly refactoring itself, but a helpful tool.)
+cargo-expand: Expands [macros][p-macros], which can be helpful for understanding code and refactoring. (Not strictly refactoring itself, but a helpful tool.)
 Version Management:
 
 cargo-bump: Helps to automate version updates in your Cargo.toml.

@@ -9,5 +9,9 @@
 [ex-data-structures-tinyvec]: stack_allocated_arrays.md#tinyvec
 [p-containers]: ../../other/containers/containers.md
 [p-databases]: ../database-implementations/databases.md
+[p-embedded]: ../embedded/_index.md
 [p-functions]: ../../language/functions.md
+[p-links]: ../../links/links.md
+[p-log]: ../development-tools_debugging/log.md
 [p-protocols]: ../aerospace_protocols/aerospace_protocols.md
+[p-search]: ../database/search.md

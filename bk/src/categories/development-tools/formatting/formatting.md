@@ -80,6 +80,6 @@ For things you do not want `rustfmt` to mangle, use `#[rustfmt::skip]`{{hi:rustf
 [formatting: add link for formatting attributes (P1)](https://github.com/john-cd/rust_howto/issues/300)
 
 Code Formatter: rustfmt (the standard Rust code formatter)
-Configuration: (Configuration is done through rustfmt.toml files)
-Integration: (Most IDEs have built-in rustfmt integration)
+Configuration: ([Configuration][p-configuration] is done through rustfmt.toml files)
+Integration: (Most [IDEs][p-ides] have built-in rustfmt integration)
 </div>

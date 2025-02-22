@@ -31,10 +31,14 @@
 [p-csv]: ../../other/data-processing/csv.md
 [p-encoding]: index.md
 [p-json]: ../parser-implementations/json.md
+[p-language]: ../../language/index.md
 [p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-network-programming]: ../network-programming/index.md
+[p-parsing]: ../parsing/_index.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-slices]: ../../language/slices.md
 [p-structs]: ../../language/structs.md
 [p-toml]: ../parser-implementations/toml.md
+[p-trait-objects]: ../../language/trait_objects.md
+[p-traits]: ../../language/traits.md
 [p-url]: ../web-programming/url.md

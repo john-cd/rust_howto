@@ -35,11 +35,11 @@ Examples: [![cross-toml-example][c-cross-toml-example-badge]][c-cross-toml-examp
 <div class="hidden">
 [cross_compilation: expand (P2)](https://github.com/john-cd/rust_howto/issues/240)
 
-Build Systems: cargo, xtask (for managing complex builds)
-Target Specification: (Handled by cargo through target triples)
+Build Systems: [cargo][p-cargo], xtask (for managing complex builds)
+Target Specification: (Handled by [cargo][p-cargo] through target triples)
 Cross-Compilation Tools: cross (a popular tool that uses Docker to simplify cross-compilation)
 C/C++ Dependencies: (Often a source of complexity; cc crate can help)
-Platform-Specific Code: (Use conditional compilation attributes like cfg to manage platform-specific code)
+Platform-Specific Code: (Use conditional compilation [attributes][p-attributes] like cfg to manage platform-specific code)
 Foreign Function Interface (FFI): std::ffi (for interacting with C code, which might require cross-compilation)
 
 </div>

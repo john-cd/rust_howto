@@ -1,1 +1,8 @@
 [ex-hardware-support-check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
+[p-assembly]: ../development-tools_profiling/assembly.md
+[p-asynchronous]: ../asynchronous/index.md
+[p-data-parallelism]: ../concurrency/data_parallelism.md
+[p-embedded]: ../embedded/_index.md
+[p-functions]: ../../language/functions.md
+[p-linux]: ../os_linux-apis/linux.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md

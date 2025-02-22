@@ -41,7 +41,7 @@ Address Sanitizer (`ASan`): Often integrated into the compiler; can detect memor
 
 Tracing (for understanding allocation patterns):
 
-`tracing`: While not a direct memory profiler, tracing can help you understand the flow of your program and identify areas where excessive allocations might be occurring.
+`tracing`: While not a direct memory profiler, [tracing][p-tracing] can help you understand the flow of your program and identify areas where excessive allocations might be occurring.
 
 ## Heap Inspection Tools
 

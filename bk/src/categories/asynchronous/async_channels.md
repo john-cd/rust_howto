@@ -28,7 +28,7 @@ Another example:
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-[`tokio`][blog-actors-with-tokio]⮳{{hi:tokio}} [`tokio`][c-cdrs_tokio]⮳{{hi:tokio}} [`tokio`][c-tokio::sync::oneshot]⮳{{hi:tokio}} [`tokio`][c-tokio::task::LocalSet]⮳{{hi:tokio}} [`tokio`][c-tokio::task::spawn]⮳{{hi:tokio}} [`tokio`][c-tokio::task::spawn_blocking]⮳{{hi:tokio}} [`tokio`][c-tokio]⮳{{hi:tokio}} [`tokio`][c-tokio_examples]⮳{{hi:tokio}} [`tokio`][c-tokio_graceful_shutdown]⮳{{hi:tokio}} [`tokio`][c-tokio_postgres]⮳{{hi:tokio}} [`tokio`][c-tokio_tungstenite]⮳{{hi:tokio}} [`tokio`][c-tokio_tutorial]⮳{{hi:tokio}} 
+[`tokio`][c-tokio]⮳{{hi:tokio}}
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/async_channels_mpsc.rs:example}}

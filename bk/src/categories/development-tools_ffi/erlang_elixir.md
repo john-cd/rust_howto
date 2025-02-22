@@ -37,8 +37,8 @@ cargo: (Essential for building the Rust side of the integration.)
 rebar3 or mix: (For building the Erlang/Elixir side and managing dependencies.)
 Other Considerations:
 
-Error Handling: Careful error handling is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
-Concurrency: Erlang/Elixir and Rust have different concurrency models. You'll need to be mindful of how you manage concurrency across the FFI boundary.
+Error Handling: Careful [error handling][p-error-handling] is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
+Concurrency: Erlang/Elixir and Rust have different concurrency models. You'll need to be mindful of how you manage [concurrency][p-concurrency] across the FFI boundary.
 Data Types: You'll need to map data types between Rust and Erlang/Elixir. The erlang_term crate can help with this.
 The erlang_nif crate is the key for writing NIFs. For ports, you'll primarily use standard Rust I/O mechanisms. Serialization libraries are crucial for efficient data exchange in both cases.
 </div>

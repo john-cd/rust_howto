@@ -39,8 +39,8 @@ nodejs-sys: Provides lower-level bindings to the Node.js API, but neon is genera
 
 ## Communication/Serialization
 
-serde: (Often used for serializing and deserializing data passed between Rust and Node.js. Although N-API provides mechanisms for passing data, using serde can be helpful for more complex data structures.)
-serde_json: (If you're exchanging JSON data.)
+serde: (Often used for serializing and deserializing data passed between Rust and Node.js. Although N-API provides mechanisms for passing data, using [serde][p-serde] can be helpful for more complex data structures.)
+serde_json: (If you're exchanging [JSON][p-json] data.)
 
 ## Build Tools
 
@@ -53,7 +53,7 @@ node-gyp: (Often used for building native Node.js addons, but neon simplifies th
 N-API: You'll write Rust code that interacts with the N-API to create Node.js objects, call JavaScript functions, and handle data.
 Addons: You'll create a Node.js addon that exposes your Rust functions to JavaScript.
 Data Marshaling: You'll need to convert data between Rust and JavaScript types. neon helps with this.
-Event Loop: You'll need to be mindful of Node.js's event loop and ensure that your Rust code interacts with it correctly (e.g., using asynchronous operations when necessary).
+Event Loop: You'll need to be mindful of Node.js's event loop and ensure that your Rust code interacts with it correctly (e.g., using [asynchronous][p-asynchronous] operations when necessary).
 
 neon is the most important crate here. It significantly simplifies the process of creating Node.js addons in Rust. It's highly recommended to use it unless you have very specific low-level N-API requirements. It abstracts away much of the complexity of manual N-API interaction.
 </div>

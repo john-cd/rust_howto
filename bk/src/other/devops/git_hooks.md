@@ -2,7 +2,7 @@
 
 {{#include git_hooks.incl.md}}
 
-Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor formatting of the code or configuration files, when committing in `git`, prior to submission to code review or start of a CI workflow.
+Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [formatting][p-formatting] of the code or [configuration][p-configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
 
 ## Check your code before committing it {#check-your-code-before-committing}
 

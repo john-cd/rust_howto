@@ -66,7 +66,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 Optimizing Rust linking involves several strategies to reduce binary size and link time. Here's a breakdown:
 
-- Link-Time Optimization (LTO): Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve performance by eliminating dead code and inlining functions more effectively. Use the -C lto=fat or -C lto=thin (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
+- Link-Time Optimization (LTO): Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p-performance] by eliminating dead code and inlining functions more effectively. Use the -C lto=fat or -C lto=thin (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
 - Codegen Units: Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness. Experiment to find the optimal balance.
 
@@ -80,7 +80,7 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 - Optimize Dependencies: Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your Cargo.toml.
 
-- Profile-Guided Optimization (PGO): PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better performance and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
+- Profile-Guided Optimization (PGO): PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better [performance][p-performance] and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
 
 - Linker Flags: Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
 
@@ -96,14 +96,14 @@ ThinLTO: A variant of LTO that can offer a better balance between compile time a
 
 Static Linking: Generally faster than dynamic linking. Often the default in Rust.
 
-Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with cargo tree.
+Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p-cargo] tree.
 
-Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing generics and using more compact data structures can help.
+Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p-generics] and using more compact data structures can help.
 
 Linker Flags: Experiment with linker flags, but be careful and measure the impact.
 
 Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
 
-Incremental Linking: Cargo's incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
+Incremental Linking: [Cargo][p-cargo]'s incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
 
 </div>

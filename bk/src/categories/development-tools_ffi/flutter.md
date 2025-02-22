@@ -24,7 +24,7 @@ Rust Side:
 
 flutter_rust_bridge: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
 
-std::ffi, libc: (These are standard library modules for lower-level FFI interaction. You'll likely use these indirectly via flutter_rust_bridge, or if you're implementing the FFI manually.)
+std::ffi, libc: (These are standard library [modules][p-modules] for lower-level FFI interaction. You'll likely use these indirectly via flutter_rust_bridge, or if you're implementing the FFI manually.)
 
 cbindgen: (Useful if you're working with C code as an intermediary, although flutter_rust_bridge generally handles this for you.)
 
@@ -43,7 +43,7 @@ Key Concepts and Workflow:
 
 FFI: You'll define functions in Rust that are callable from Dart.
 Code Generation: flutter_rust_bridge helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
-Data Serialization: You'll serialize data in Rust (e.g., using serde) and deserialize it in Dart, or vice-versa.
+Data Serialization: You'll serialize data in Rust (e.g., using [serde][p-serde]) and deserialize it in Dart, or vice-versa.
 Platform Channels (if needed): For more complex interactions, you might use platform channels, but flutter_rust_bridge often abstracts this away.
 The flutter_rust_bridge crate is the most important crate here. It significantly simplifies the process of creating and managing the FFI bridge between Rust and Flutter/Dart. It's highly recommended to use it unless you have very specific low-level FFI needs.
 </div>

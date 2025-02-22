@@ -28,7 +28,7 @@ cargo flamegraph: Generates flame graphs to visualize performance bottlenecks.
 cargo bench: (Built-in) Runs benchmarks to measure performance.
 Optimization Analysis:
 
-cargo expand: Expands macros, which can sometimes help you understand generated code and identify optimization opportunities. (Not strictly a performance tool itself, but useful).
+cargo expand: Expands [macros][p-macros], which can sometimes help you understand generated code and identify optimization opportunities. (Not strictly a performance tool itself, but useful).
 Benchmarking:
 
 cargo bench: (Built-in) Runs benchmarks to measure performance.

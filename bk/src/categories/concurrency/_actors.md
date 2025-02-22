@@ -58,7 +58,7 @@ Possible applications of actor frameworks:
 
 [`ractor`][c-ractor]⮳{{hi:ractor}} is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
 
-Ractor is a Rust crate providing a simple, lightweight actor framework. It facilitates concurrent programming by enabling the creation and management of actors, which communicate through asynchronous message passing. Ractor focuses on ease of use and aims to provide a minimal but functional actor system, suitable for applications where a full-fledged actor framework like Riker might be overkill. It provides tools for defining actor behavior, sending and receiving messages, and handling actor lifecycles.
+Ractor is a Rust crate providing a simple, lightweight actor framework. It facilitates concurrent programming by enabling the creation and management of actors, which communicate through [asynchronous][p-asynchronous] message passing. Ractor focuses on ease of use and aims to provide a minimal but functional actor system, suitable for applications where a full-fledged actor framework like Riker might be overkill. It provides tools for defining actor behavior, sending and receiving messages, and handling actor lifecycles.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/actors/ractor.rs:example}}

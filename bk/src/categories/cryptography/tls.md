@@ -2,7 +2,7 @@
 
 {{#include tls.incl.md}}
 
-Transport Layer Security (TLS) is a cryptographic protocol designed to provide secure communication over a computer network. It is widely used in applications such as web browsing, email, and instant messaging to ensure that data transmitted between the client and server remains private and integral. TLS is the successor to the Secure Sockets Layer (SSL) protocol.
+Transport Layer Security (TLS) is a cryptographic protocol designed to provide secure communication over a computer network. It is widely used in applications such as web browsing, [email][p-email], and instant messaging to ensure that data transmitted between the client and [server][p-server] remains private and integral. TLS is the successor to the Secure Sockets Layer (SSL) protocol.
 
 ## `rustls` {#rustls}
 

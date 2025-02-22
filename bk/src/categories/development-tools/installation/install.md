@@ -22,8 +22,8 @@ The `cargo install` command manages `cargo`'s local set of installed binary [cra
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/918)
 
-Package Managers: cargo (for Rust itself and Rust projects)
-Installer Generators: cargo-deb, cargo-rpm, create-dmg (for creating Debian packages, RPM packages, and macOS disk images, respectively)
+Package Managers: [cargo][p-cargo] (for Rust itself and Rust projects)
+Installer Generators: cargo-deb, cargo-rpm, create-dmg (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively)
 Cross-Platform Installers: tauri-bundler (for bundling desktop applications)
 Self-Updating: self_update
 Build Systems (for installation scripts): xtask (for managing complex builds and installation-related tasks)

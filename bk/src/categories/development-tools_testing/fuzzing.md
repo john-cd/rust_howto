@@ -41,8 +41,8 @@ TODO P2 cover valgrind
 
 ## Fuzzing Engines
 
-cargo fuzz: The most common and recommended way to perform fuzzing in Rust. It integrates well with Cargo and uses libFuzzer under the hood.
-afl.rs: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but cargo fuzz with libFuzzer is often sufficient and easier to set up.
+cargo fuzz: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p-cargo] and uses libFuzzer under the hood.
+afl.rs: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p-cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
 ## Target Definition: (Essential)
 

@@ -9,3 +9,4 @@
 [p-json]: ../parser-implementations/json.md
 [p-markdown]: ../parser-implementations/markdown.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
+[p-tracing]: ../development-tools_debugging/tracing.md

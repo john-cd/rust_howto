@@ -6,7 +6,7 @@
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
-Validates that an email address{{hi:Email address}} is formatted correctly, and extracts everything before the `@` symbol.
+Validates that an [email][p-email] address{{hi:Email address}} is formatted correctly, and extracts everything before the `@` symbol.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/tests/regex/email.rs:example}}

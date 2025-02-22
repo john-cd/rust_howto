@@ -26,7 +26,9 @@
 [ex-database-transaction]: sqlite.md#transaction
 [p-async]: ../asynchronous/async.md
 [p-asynchronous]: ../asynchronous/index.md
+[p-caching]: ../caching/index.md
 [p-cargo]: ../development-tools/cargo/cargo.md
+[p-configuration]: ../config/configuration.md
 [p-crates]: ../../crates/index.md
 [p-database]: index.md
 [p-databases]: ../database-implementations/databases.md
@@ -36,7 +38,11 @@
 [p-ignore]: ../filesystem/_ignore.md
 [p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-option]: ../../standard-library/option.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md
+[p-postgres]: postgres.md
+[p-search]: search.md
 [p-server]: ../network-programming/server.md
+[p-streams]: ../asynchronous/streams.md
 [p-tokio]: ../asynchronous/tokio.md
 [p-toml]: ../parser-implementations/toml.md
 [p-url]: ../web-programming/url.md

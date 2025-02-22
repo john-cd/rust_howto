@@ -29,8 +29,15 @@
 [p-cross-platform]: ../../other/cross-platform/_index.md
 [p-databases]: ../database-implementations/databases.md
 [p-documentation]: ../development-tools/documentation/documentation.md
+[p-file-watching]: ../filesystem/file_watching.md
 [p-formatting]: ../development-tools/formatting/formatting.md
+[p-ides]: ../text-editors/ides.md
 [p-json]: ../parser-implementations/json.md
+[p-language]: ../../language/index.md
+[p-links]: ../../links/links.md
+[p-macos]: ../os_macos-apis/macos.md
+[p-macros]: ../../language/macros.md
 [p-maintaining]: maintaining.md
+[p-regex]: ../text-processing/regex.md
 [p-testing]: ../development-tools_testing/testing.md
 [p-toml]: ../parser-implementations/toml.md

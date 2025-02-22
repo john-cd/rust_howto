@@ -9,7 +9,16 @@
 [ex-compilers-optimization-levels]: reduce_compilation_duration.md#optimization-levels
 [ex-compilers-salsa]: incremental_computation.md#salsa
 [p-alternatives]: ../development-tools_debugging/tracing_alternatives.md
+[p-attributes]: ../../language/attributes.md
+[p-caching]: ../caching/index.md
 [p-cargo]: ../development-tools/cargo/cargo.md
 [p-configuration]: ../config/configuration.md
+[p-contributing]: ../../contributing/index.md
+[p-duration]: ../date-and-time/duration.md
+[p-functions]: ../../language/functions.md
+[p-generics]: ../../language/generics.md
+[p-modules]: ../../language/modules.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-strings]: ../../standard-library/strings.md
 [p-toml]: ../parser-implementations/toml.md
+[p-versioning]: ../development-tools/versioning/versioning.md

@@ -11,11 +11,11 @@
 
 [Rathole][c-rathole-github]⮳ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c-rathole]⮳{{hi:rathole}} is similar to tools like `frp` and [`ngrok`][c-ngrok]⮳{{hi:ngrok}}.
 
-NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a server with a public IP.
+NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a [server][p-server] with a public IP.
 
-Configuration of a service is split into the client side and the server side, and a token is mandatory.
+Configuration of a service is split into the client side and the [server][p-server] side, and a token is mandatory.
 
-- Server Setup: On a server with a public IP, create a `server.toml` file with the necessary configurations.
+- Server Setup: On a [server][p-server] with a public IP, create a `server.toml` file with the necessary configurations.
 
 ```toml
 # server.toml

@@ -32,7 +32,7 @@ lua53: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained co
 
 ## Communication/Data Marshaling
 
-(The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like serde in the same way as with some other FFI scenarios.)
+(The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like [serde][p-serde] in the same way as with some other FFI scenarios.)
 
 ## Build Tools
 

@@ -23,6 +23,8 @@
 [p-cross-platform]: ../../other/cross-platform/_index.md
 [p-data-structures]: ../data-structures/index.md
 [p-main]: ../../language/main.md
+[p-parsing]: ../parsing/_index.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-rendering]: ../rendering/rendering.md
 [p-testing]: ../development-tools_testing/testing.md
 [p-unix]: ../os_unix-apis/unix.md

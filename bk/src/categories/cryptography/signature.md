@@ -32,7 +32,7 @@ A key pair, consisting of a private key and a public key, is generated. The priv
 To sign a message, a hash of the message is created. This hash is then signed using the private key, producing the digital signature.
 The recipient uses the sender's public key to verify the signature. If the signature is valid, it confirms that the message is authentic and has not been altered.
 
-`ed25519-dalek` is compatible with `no_std` environments, making it suitable for embedded systems or situations where the standard library is not available.
+`ed25519-dalek` is compatible with `no_std` environments, making it suitable for [embedded][p-embedded] systems or situations where the standard library is not available.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/sign/ed25519_dalek.rs:example}}
@@ -54,7 +54,7 @@ ECDSA (Elliptic Curve Digital Signature Algorithm) is a widely used digital sign
 
 [![dsa-website][c-dsa-website-badge]][c-dsa-website] [![dsa][c-dsa-badge]][c-dsa] [![dsa-crates.io][c-dsa-crates.io-badge]][c-dsa-crates.io] [![dsa-github][c-dsa-github-badge]][c-dsa-github] [![dsa-lib.rs][c-dsa-lib.rs-badge]][c-dsa-lib.rs]{{hi:dsa}}{{hi:Crypto}}{{hi:Signature}}{{hi:NIST}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-DSA (Digital Signature Algorithm) is a Federal Information Processing Standard (FIPS) for digital signatures. It's a public-key cryptosystem used for creating digital signatures, which provide authentication and integrity for digital data. While once widely used, DSA has been superseded by algorithms like ECDSA and Ed25519 due to factors like key size and performance.
+DSA (Digital Signature Algorithm) is a Federal Information Processing Standard (FIPS) for digital signatures. It's a public-key cryptosystem used for creating digital signatures, which provide [authentication][p-authentication] and integrity for digital data. While once widely used, DSA has been superseded by algorithms like ECDSA and Ed25519 due to factors like key size and performance.
 
 `dsa` is a pure Rust implementation of the Digital Signature Algorithm (DSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979 deterministic
 signatures as well as support for added entropy.

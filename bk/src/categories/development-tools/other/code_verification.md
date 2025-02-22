@@ -71,10 +71,10 @@ Link to:
 
 Static Analysis/Linting: clippy (for catching common code errors and style issues)
 Formal Verification: kani (model checker), crucible (symbolic execution) - These are more advanced and complex tools.
-Property-Based Testing: proptest, quickcheck
-Unit Testing: std::test (built-in testing framework)
-Integration Testing: (Often uses std::test but focuses on testing interactions between modules or components)
-Fuzzing: cargo fuzz, afl.rs (bindings to AFL)
+Property-Based [Testing][p-testing]: proptest, quickcheck
+Unit Testing: std::test (built-in [testing][p-testing] framework)
+Integration Testing: (Often uses std::test but focuses on [testing][p-testing] interactions between modules or components)
+Fuzzing: [cargo][p-cargo] fuzz, afl.rs (bindings to AFL)
 Type Checking: (Built into the Rust compiler)
 Code Review Tools: (Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.)
 

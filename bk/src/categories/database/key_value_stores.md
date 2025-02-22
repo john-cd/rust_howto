@@ -9,12 +9,12 @@
 `heed` is a fully-typed `LMDB` wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p-database] library that provides key/value storage.
 Use `heed` for:
 
-- Caching: App data, web pages or images,
-- Embedded databases for mobile apps, IoT devices, desktop applications,
-- Indexing: Local search index or metadata storage,
-- Game state persistence, configuration storage.
+- [Caching][p-caching]: App data, web pages or images,
+- [Embedded][p-embedded] [databases][p-databases] for mobile apps, IoT devices, desktop applications,
+- Indexing: Local [search][p-search] index or metadata storage,
+- Game state persistence, [configuration][p-configuration] storage.
 
-Advantages include speed, minimal memory footprint, embedded use, memory mapping, and ACID (Atomicity, Consistency, Isolation, Durability) properties. It is not ideal for huge datasets, complex queries, or network access.
+Advantages include speed, minimal memory footprint, [embedded][p-embedded] use, memory mapping, and ACID (Atomicity, Consistency, Isolation, Durability) properties. It is not ideal for huge datasets, complex queries, or network access.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/kv/heed.rs:example}}
@@ -26,9 +26,9 @@ Advantages include speed, minimal memory footprint, embedded use, memory mapping
 
 [`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}} is a Rust wrapper for Facebook's `RocksDB` embeddable database. `RocksDB` is a high performance database for key-value data. Use `rocksdb`:
 
-- As the storage engine for other databases (MySQL, MongoDB, TiKV...),
-- For caching,
-- To handle time-series data, indexes for search engines, persistent message queues
+- As the storage engine for other [databases][p-databases] (MySQL, MongoDB, TiKV...),
+- For [caching][p-caching],
+- To handle time-series data, indexes for [search][p-search] engines, persistent message queues
 
 `RocksDB` is employed in stream processing frameworks like `Apache Flink` and `Kafka Streams` to maintain the state of streaming applications.
 

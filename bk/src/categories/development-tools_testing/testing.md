@@ -92,7 +92,7 @@ std::test: (Built-in) The standard Rust testing framework for writing unit tests
 
 ## Integration Testing
 
-Often uses std::test as well, but integration tests are placed in a separate tests directory and focus on testing interactions between modules or components.
+Often uses std::test as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
 
 ## Documentation Testing
 

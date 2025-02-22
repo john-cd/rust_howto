@@ -4,9 +4,9 @@
 
 "Authenticated Encryption" is a scheme that simultaneously assures the data confidentiality (the encrypted message is impossible to understand without the knowledge of a secret key) and authenticity (it is unforgeable) - see https://en.wikipedia.org/wiki/Authenticated_encryption
 
-Authenticated encryption with associated data (AEAD) is a variant of AE that allows the message to include "associated data" (AD). AD is additional non-confidential information, which integrity is protected (i.e., it is readable, but tampering with it will be detected). A typical example is the header of a network packet that contains its destination address. To properly route the packet, all intermediate nodes in the message path need to know the destination, but for security reasons they cannot possess the secret key.
+Authenticated [encryption][p-encryption] with associated data (AEAD) is a variant of AE that allows the message to include "associated data" (AD). AD is additional non-confidential information, which integrity is protected (i.e., it is readable, but tampering with it will be detected). A typical example is the header of a network packet that contains its destination address. To properly route the packet, all intermediate nodes in the message path need to know the destination, but for security reasons they cannot possess the secret key.
 
-AEAD is commonly used in secure communication protocols like TLS (Transport Layer Security). See also:
+AEAD is commonly used in secure communication protocols like [TLS][p-tls] (Transport Layer Security). See also:
 
 - https://codahale.com/towards-a-safer-footgun/
 - https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html
@@ -17,7 +17,7 @@ AEAD is commonly used in secure communication protocols like TLS (Transport Laye
 
 [`aes-gcm-siv`][c-aes_gcm_siv]⮳{{hi:aes-gcm-siv}} is a pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
 
-AES-GCM-SIV (Advanced Encryption Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
+AES-GCM-SIV (Advanced [Encryption][p-encryption] Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/tests/aead/aes_gcm_siv.rs:example}}

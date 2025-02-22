@@ -44,7 +44,7 @@ Install the [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} CLI with:
 curl https://wasmtime.dev/install.sh -sSf | bash
 ```
 
-Compile your Rust source code (here, `hello.rs`) to WASM, then execute it with [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}:
+Compile your Rust source code (here, `hello.rs`) to [WASM][p-wasm], then execute it with [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}:
 
 ```sh
 rustup target add wasm32-wasip1
@@ -78,7 +78,7 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 
 ## Rust Crates for WASM Runtimes
 
-This table focuses specifically on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute WASM bytecode. This is distinct from tools used to *compile* to WASM (like `wasm-bindgen`).
+This table focuses specifically on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute WASM bytecode. This is distinct from tools used to *compile* to [WASM][p-wasm] (like `wasm-bindgen`).
 
 The [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
 
@@ -94,7 +94,7 @@ The [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  runtime, backed by Mozilla, has 
 ## Key Considerations
 
 - Interpreter vs. AOT Compilation: `wasmi` is an interpreter, while [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  uses AOT compilation. AOT compilation generally leads to faster execution but may have a longer startup time.
-- WASI Support: WASI is crucial for running WASM outside of the browser, and all the listed runtimes support it.
+- WASI Support: WASI is crucial for running [WASM][p-wasm] outside of the browser, and all the listed runtimes support it.
 - Embeddability: Most of these runtimes are designed to be embeddable into other applications.
 - Performance: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is generally considered to be very performant due to its AOT compilation.
 - Security: WASM runtimes often prioritize security, as WASM is often used to execute untrusted code.
@@ -104,6 +104,6 @@ The [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  runtime, backed by Mozilla, has 
 - General Purpose/Sandboxing: `wasmi` is a good choice.
 - Performance: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is highly recommended.
 - Cloud/Serverless: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is the most common choice.
-- Embedded Systems: `rwasm` is designed for resource-constrained environments.
+- [Embedded][p-embedded] Systems: `rwasm` is designed for resource-constrained environments.
 
 </div>

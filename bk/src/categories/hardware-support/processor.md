@@ -24,7 +24,7 @@ Rust generally doesn't require direct CPU manipulation. The compiler and standar
 SIMD and atomic operations are important for performance.
 Concurrency and multithreading allow you to utilize multiple CPU cores.
 Profiling tools help you identify CPU-related performance issues.
-Direct access to CPU features (like inline assembly) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
+Direct access to CPU features (like inline [assembly][p-assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
 
 ## SIMD (Single Instruction, Multiple Data)
 
@@ -44,7 +44,7 @@ Direct access to CPU features (like inline assembly) is usually only necessary f
 
 ### Inline Assembly
 
-You can use inline assembly in Rust with the asm! macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
+You can use inline [assembly][p-assembly] in Rust with the asm! macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
 
 ### Compiler Intrinsics
 
@@ -57,13 +57,13 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 ### Concurrency and Multithreading (Related to CPU Utilization)
 
 `std::thread`: (Standard library) For creating and managing threads.
-`rayon`: A data parallelism library that makes it easy to parallelize computations.
-`tokio`: An asynchronous runtime for writing concurrent applications.
+`rayon`: A [data parallelism][p-data-parallelism] library that makes it easy to parallelize computations.
+`tokio`: An [asynchronous][p-asynchronous] runtime for writing concurrent applications.
 
 ### Other Relevant Topics
 
 Memory Model: Understanding the CPU's memory model is important for writing correct concurrent code.
 Operating System Interaction: System calls are used to interact with the operating system, which in turn interacts with the CPU.
-Embedded Systems Programming: In embedded systems, you often have more direct access to CPU features and peripherals. (See the Embedded Systems section for relevant crates.)
+Embedded Systems Programming: In embedded systems, you often have more direct access to CPU features and peripherals. (See the [Embedded][p-embedded] Systems section for relevant crates.)
 
 </div>

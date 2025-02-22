@@ -63,36 +63,36 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 [reduce_compilation_duration: review (P2)](https://github.com/john-cd/rust_howto/issues/245)
 fix reference section
 
-Reducing Rust compilation duration involves several strategies, targeting both the compiler and project structure. Here's a breakdown:
+Reducing Rust compilation [duration][p-duration] involves several strategies, targeting both the compiler and project structure. Here's a breakdown:
 
 - Compiler-Level Optimizations:
 - Incremental Compilation: Ensure incremental compilation is enabled (the default). It reuses previously compiled code, significantly speeding up subsequent builds after changes. Avoid actions that invalidate the cache, such as changing dependencies or build scripts unnecessarily.
 - Codegen Units: Increasing the number of codegen units (-C codegen-units=N) allows the compiler to parallelize code generation. Experiment to find the optimal value; too many can hinder Link-Time Optimization (LTO).
-- Link-Time Optimization (LTO): While LTO can improve runtime performance, it increases compile time, especially "fat" LTO. Consider using "thin" LTO (-C lto=thin) for a faster, though less aggressive, approach. For debug builds, disable LTO entirely (-C lto=no).
-- Profile-Guided Optimization (PGO): PGO can improve runtime performance but requires additional compilation and profiling steps, thus increasing overall build time. Use PGO only for release builds where runtime performance is critical, and not for general development.
-- Ccache: Using ccache can dramatically speed up compilation by caching compiled objects. It's particularly effective when recompiling similar code across multiple projects or branches.
+- Link-Time Optimization (LTO): While LTO can improve runtime [performance][p-performance], it increases compile time, especially "fat" LTO. Consider using "thin" LTO (-C lto=thin) for a faster, though less aggressive, approach. For debug builds, disable LTO entirely (-C lto=no).
+- Profile-Guided Optimization (PGO): PGO can improve runtime performance but requires additional compilation and profiling steps, thus increasing overall build time. Use PGO only for release builds where runtime [performance][p-performance] is critical, and not for general development.
+- Ccache: Using ccache can dramatically speed up compilation by [caching][p-caching] compiled objects. It's particularly effective when recompiling similar code across multiple projects or branches.
 - Build Profiles: Use the dev profile for development, which prioritizes fast compilation over optimizations. Switch to the release profile only for final builds.
 - Project Structure and Dependencies:
 - Minimize Dependencies: Reducing the number of dependencies is crucial. Analyze your Cargo.toml and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
-- Dependency Versioning: Use precise dependency versions in Cargo.toml to prevent unexpected dependency updates that could trigger recompilation.
+- Dependency [Versioning][p-versioning]: Use precise dependency versions in Cargo.toml to prevent unexpected dependency updates that could trigger recompilation.
 - Workspace Optimization: For multi-crate projects, use a workspace to share dependencies and enable workspace-level optimizations. This can reduce redundant compilation.
 - Avoid Unnecessary Recompilation: Be mindful of changes that trigger recompilation. For example, changing build scripts or modifying Cargo.toml can invalidate the cache.
 - Feature Flags: Use feature flags to conditionally compile code. This allows you to exclude unnecessary code during development, reducing compilation time.
 - Precompiled Dependencies: For large, infrequently changing dependencies, consider using precompiled versions if available.
-- Code Organization: Organizing your code into smaller, independent modules can improve incremental compilation by reducing the scope of changes.
+- Code Organization: Organizing your code into smaller, independent [modules][p-modules] can improve incremental compilation by reducing the scope of changes.
 - Hardware Considerations:
 - CPU Cores: A multi-core CPU significantly speeds up compilation, especially when using multiple codegen units.
 - RAM: Sufficient RAM is essential, especially when using LTO or compiling large projects.
 - SSD: A fast SSD can greatly reduce I/O bottlenecks during compilation.
 - Tools:
-- cargo-bloat: This tool can help you identify large dependencies contributing to compile times.
+- cargo-bloat: This tool can help you identify large dependencies [contributing][p-contributing] to compile times.
 - cargo-graph: This tool can visualize your dependency graph, making it easier to identify potential issues.
 
-Profiling: cargo flamegraph, perf (system profiler)
+Profiling: [cargo][p-cargo] flamegraph, perf (system profiler)
 Code Optimization: (Often done without specific crates, focusing on algorithmic efficiency, data structures, and avoiding unnecessary allocations/copies)
-Dependency Management: (Minimize dependencies, use cargo tree to analyze)
+Dependency Management: (Minimize dependencies, use [cargo][p-cargo] tree to analyze)
 Link-Time Optimization (LTO): (Controlled via Cargo.toml)
-Incremental Compilation: (Leverage Cargo's caching, be mindful of changes that invalidate the cache)
+Incremental Compilation: (Leverage [Cargo][p-cargo]'s [caching][p-caching], be mindful of changes that invalidate the cache)
 Build Profiles: (Optimize for release builds with appropriate flags in Cargo.toml)
 Compiler Flags: (Experiment with compiler flags, but be careful and measure improvements)
 Code Generation: (Avoid excessive monomorphization, consider techniques like dynamic dispatch where applicable)

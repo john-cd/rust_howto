@@ -8,7 +8,7 @@
 
 Simple work-stealing parallelism for Rust using [`rayon`][c-rayon]⮳{{hi:rayon}}.
 
-`rayon` makes it easy to write parallel code. It provides data parallelism through iterators and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving performance on multi-core processors.
+`rayon` makes it easy to write parallel code. It provides data parallelism through [iterators][p-iterators] and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving [performance][p-performance] on multi-core processors.
 
 ### Iterate in parallel {#par-iter}
 

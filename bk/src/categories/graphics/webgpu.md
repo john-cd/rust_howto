@@ -31,7 +31,7 @@
 - Shaders: Programs that run on the GPU.
 - Pipelines: The sequence of steps involved in rendering.
 - Buffers: Memory on the GPU.
-- Textures: Images used in rendering.
+- Textures: [Images][p-images] used in rendering.
 - Bind Groups: How shaders access resources.
 
 ## WebGPU Bindings
@@ -42,7 +42,7 @@
 
 ## Windowing and Event Handling
 
-- `winit`: A window creation and event handling library. Essential for getting a window on the screen and handling input. Often used with `wgpu`.
+- `winit`: A [window creation][p-window-creation] and event handling library. Essential for getting a window on the screen and handling input. Often used with `wgpu`.
 
 ## Shader Language
 
@@ -54,7 +54,7 @@ Handled through `wgpu`. You write compute shaders in WGSL and then use the `wgpu
 
 ### Graphics Pipeline
 
-Managed through `wgpu`. You configure the graphics pipeline using the `wgpu` API.
+Managed through `wgpu`. You configure the [graphics][p-graphics] pipeline using the `wgpu` API.
 
 ### Texture Handling
 
@@ -62,8 +62,8 @@ Handled through `wgpu`. `wgpu` provides ways to create and manage textures.
 
 ### Mathematics (Linear Algebra)
 
-- `nalgebra`: A popular linear algebra library. Essential for graphics programming.
-- `glam`: Another linear algebra library, often used in game and graphics development.
+- `nalgebra`: A popular [linear algebra][p-linear-algebra] library. Essential for graphics programming.
+- `glam`: Another [linear algebra][p-linear-algebra] library, often used in game and graphics development.
 
 ### Debugging
 
@@ -73,6 +73,6 @@ Handled through `wgpu`. `wgpu` provides ways to create and manage textures.
 
 `cargo`: The standard Rust build tool.
 
-For WebGPU development in Rust, `wgpu` is the essential crate. You'll use it to interact with the WebGPU API, manage resources, configure pipelines, and write shaders in WGSL. `winit` is needed for window management. Linear algebra libraries are important for graphics calculations. Debugging is typically done through browser developer tools or platform-specific tools.
+For WebGPU development in Rust, `wgpu` is the essential crate. You'll use it to interact with the WebGPU API, manage resources, configure pipelines, and write shaders in WGSL. `winit` is needed for window management. [Linear algebra][p-linear-algebra] libraries are important for graphics calculations. Debugging is typically done through browser developer tools or platform-specific tools.
 
 </div>

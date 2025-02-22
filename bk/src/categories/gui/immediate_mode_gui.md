@@ -32,19 +32,19 @@ Immediate-mode UI. Lots of widgets. The most usable out of the box if your needs
 ## Key Concepts of Immediate Mode GUI
 
 - Redrawing Every Frame: Immediate mode GUIs redraw the entire UI on every frame. This simplifies the API but can be less efficient for very complex UIs if not optimized.
-- State Management: You manage the UI state directly in your application code. The GUI library doesn't maintain an internal representation of the UI.
-- Declarative Style (Often): While not strictly required, immediate mode GUIs are often used in a declarative style, where you describe the UI layout and elements in your code, and the GUI library handles the rendering.
+- State Management: You manage the UI state directly in your application code. The [GUI][p-gui] library doesn't maintain an internal representation of the UI.
+- Declarative Style (Often): While not strictly required, immediate mode GUIs are often used in a declarative style, where you describe the [UI layout][p-ui-layout] and elements in your code, and the GUI library handles the rendering.
 
-For almost all cases where you want an immediate mode GUI in Rust, `egui` is the recommended choice. It's well-featured, performant, and has a great community.
+For almost all cases where you want an immediate mode [GUI][p-gui] in Rust, `egui` is the recommended choice. It's well-featured, performant, and has a great community.
 
 ## Immediate Mode GUI Libraries
 
-- `egui`: This is the most popular and widely used immediate mode GUI library in Rust. It's well-documented, actively maintained, and a great choice for most projects. It's particularly well-suited for tools, games, and applications where performance and ease of use are important.
-- `conrod`: An older immediate mode GUI library. While still usable, `egui` is generally preferred for new projects due to its better documentation and active maintenance.
+- `egui`: This is the most popular and widely used immediate mode [GUI][p-gui] library in Rust. It's well-documented, actively maintained, and a great choice for most projects. It's particularly well-suited for tools, [games][p-games], and applications where performance and ease of use are important.
+- `conrod`: An older immediate mode [GUI][p-gui] library. While still usable, `egui` is generally preferred for new projects due to its better [documentation][p-documentation] and active maintenance.
 
 ## Integration with Rendering
 
-Immediate mode GUI libraries often need to be integrated with a rendering backend. `egui` has its own renderers for various platforms and backends, including `wgpu`, `glow`, and others.
+Immediate mode [GUI][p-gui] libraries often need to be integrated with a [rendering][p-rendering] backend. `egui` has its own renderers for various platforms and backends, including `wgpu`, `glow`, and others.
 
 ## Use Cases
 

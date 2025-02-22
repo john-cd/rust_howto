@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/database/tests/connection_pool/deadpool.rs:example}}
 ```
 
-Here is an example demonstrating the use of `deadpool` to connect to a Postgres database:
+Here is an example demonstrating the use of `deadpool` to connect to a [Postgres][p-postgres] database:
 
 ```rust,editable
 {{#include ../../../crates/cats/database/tests/connection_pool/deadpool2.rs:example}}

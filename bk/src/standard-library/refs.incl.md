@@ -21,11 +21,15 @@
 [p-asref]: asref.md
 [p-crates]: ../crates/index.md
 [p-data-structures]: ../categories/data-structures/index.md
+[p-formatting]: ../categories/development-tools/formatting/formatting.md
 [p-functions]: ../language/functions.md
 [p-gui]: ../categories/gui/_index.md
+[p-hashing]: ../categories/cryptography/hashing.md
+[p-iterators]: ../language/iterators.md
 [p-lazy-initialization]: ../categories/memory-management/lazy_initialization.md
 [p-memory]: ../categories/development-tools_profiling/memory_usage_analysis.md
 [p-regex]: ../categories/text-processing/regex.md
 [p-shared-state]: ../categories/concurrency/shared_state.md
+[p-sorting]: ../categories/algorithms/sorting.md
 [p-structs]: ../language/structs.md
 [p-traits]: ../language/traits.md

@@ -20,7 +20,7 @@
 
 [`fyrox`][c-fyrox]⮳{{hi:fyrox}} is a 2D/3D game engine with a scene editor. Like Godot, but in Rust.
 
-"An OOP-focused game engine with 3D and 2D support and a full GUI scene editor."
+"An OOP-focused game engine with 3D and 2D support and a full [GUI][p-gui] scene editor."
 
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/tests/fyrox.rs:example}}

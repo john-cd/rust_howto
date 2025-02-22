@@ -26,7 +26,7 @@ For most common file dialog needs, `rfd` is the recommended crate. It's cross-pl
 
 ### GUI Framework Integration
 
-Some GUI frameworks, like `iced` or `egui`, might have their own file dialog integration, but often they use the underlying `rfd` crate or similar.
+Some [GUI][p-gui] frameworks, like `iced` or `egui`, might have their own file dialog integration, but often they use the underlying `rfd` crate or similar.
 
 ### Platform-Specific Considerations
 
@@ -34,10 +34,10 @@ The `rfd` crate handles platform differences for you, so you generally don't nee
 
 ### WebAssembly (WASM) Considerations
 
-File dialogs in WASM are restricted due to security reasons. You'll typically need to use JavaScript APIs to interact with file systems in a Wasm context. Crates like `wasm-bindgen` would be used for this JavaScript interop.
+File dialogs in [WASM][p-wasm] are restricted due to security reasons. You'll typically need to use JavaScript [APIs][p-apis] to interact with file systems in a Wasm context. Crates like `wasm-bindgen` would be used for this JavaScript interop.
 
 ### Asynchronous Operations
 
-`rfd` supports asynchronous file dialogs.
+`rfd` supports [asynchronous][p-asynchronous] file dialogs.
 
 </div>

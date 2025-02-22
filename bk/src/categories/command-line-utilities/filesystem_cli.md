@@ -20,7 +20,7 @@ apt install lsd
 
 [`broot`][c-broot-website]{{hi:broot}} [![broot-github][c-broot-github-badge]][c-broot-github] is a new way to see and navigate directory trees.
 
-`broot` is an interactive directory tree explorer implemented in Rust, designed for efficient filesystem navigation and manipulation. It provides a navigable, hierarchical view of the filesystem, enabling rapid traversal via keyboard shortcuts and intuitive navigation. Beyond basic exploration, `broot` integrates file management operations (move, copy, delete, rename) directly within its interface. Its shell integration allows seamless transitions between `broot` and the shell, facilitating efficient workflow integration.
+`broot` is an interactive directory tree explorer implemented in Rust, designed for efficient filesystem navigation and manipulation. It provides a navigable, hierarchical view of the [filesystem][p-filesystem], enabling rapid traversal via keyboard shortcuts and intuitive navigation. Beyond basic exploration, `broot` integrates file management operations (move, copy, delete, rename) directly within its interface. Its shell integration allows seamless transitions between `broot` and the shell, facilitating efficient workflow integration.
 
 ## `bat` {#bat}
 

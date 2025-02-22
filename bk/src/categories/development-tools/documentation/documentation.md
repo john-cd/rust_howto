@@ -53,7 +53,7 @@ Doc Comments: (Using /// or //! in your code)
 Testing with Documentation Examples: (Using #[doc = "```"] in doc comments)
 Markdown Processing (for docs): pulldown-cmark, comrak
 Generating Documentation from Tests: (Often done with custom scripts or build tools)
-API Documentation Generators (for REST APIs, etc.): (Often tied to web frameworks; no single dominant crate)
+API Documentation Generators (for REST [APIs][p-apis], etc.): (Often tied to web frameworks; no single dominant crate)
 
 ### Add documentation to function arguments in Rust {#roxygen}
 

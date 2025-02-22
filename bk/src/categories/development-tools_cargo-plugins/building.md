@@ -88,5 +88,5 @@ Code Generation: (Often done in build scripts, but no single "build util" crate)
 
 Link-Time Optimization (LTO) Configuration: (Configured in Cargo.toml, not a separate plugin)
 
-Incremental Compilation Management: (Handled by cargo directly)
+Incremental Compilation Management: (Handled by [cargo][p-cargo] directly)
 </div>

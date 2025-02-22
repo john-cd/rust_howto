@@ -68,7 +68,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 Semantic Versioning (SemVer): (The concept itself. No specific crate implements SemVer, but crates like semver help work with SemVer strings.)
 Version Parsing and Comparison: semver (crate for parsing, comparing, and manipulating SemVer strings)
 Version Bumping: cargo-bump (a tool to automate bumping versions in your Cargo.toml file according to SemVer rules)
-Dependency Management (with version constraints): cargo (uses SemVer for specifying dependencies in Cargo.toml)
+Dependency Management (with version constraints): [cargo][p-cargo] (uses SemVer for specifying dependencies in Cargo.toml)
 Release Management: (Often involves tagging Git releases, which is not Rust-specific)
-Changelog Generation: (Often handled with tools outside of the Rust ecosystem, but some crates might assist with parsing commit messages, etc.)
+Changelog Generation: (Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p-parsing] commit messages, etc.)
 </div>

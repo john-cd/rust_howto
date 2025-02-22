@@ -9,8 +9,8 @@ The following are topics that deserve (additional) coverage and examples:
 - Rust Macros
 - Advanced data structures
 - Testing
-- GPU processing, CUDA
-- Machine learning, Tensorflow
+- [GPU][p-gpu] processing, CUDA
+- [Machine learning][p-machine-learning], Tensorflow
 - Email
 - Template Engines
 - Caching
@@ -20,18 +20,18 @@ The following are topics that deserve (additional) coverage and examples:
 - Rust patterns
 - [Authentication][p-authentication] / authorization: OAuth2, LDAP/AD, DNS lookups...
 - Continuous Deployment & Integration (CD / CI) for Rust projects
-- Use of Rust in AWS and other Cloud services
-- Serverless Rust
+- Use of Rust in [AWS][p-aws] and other [Cloud][p-cloud] services
+- [Serverless][p-serverless] Rust
 - More [database][p-database] examples, including object databases, graph [databases][p-databases], e.g. BonsaiDB, neo4j
 - Embedded
 - Visualization
 - Graphics
-- Games, Game Engines
+- [Games][p-games], Game Engines
 - [Search][p-search] engines
 - [Compression][p-compression]: Zip files and other archives
 - Buffer pools, garbage collection, or other reference-counted examples
 - IPv6 address processing
-- Cloud: load balancers, status reporting (Vigil), routing, orchestration, containers
+- [Cloud][p-cloud]: load balancers, status reporting (Vigil), routing, orchestration, containers
 - Reverse proxies
 - Web programming
 - Virtualization
@@ -59,9 +59,9 @@ The following are topics that deserve (additional) coverage and examples:
 - Computer Vision
 - Robotics
 - Simulation
-- Science (Geo, Neuro)
+- [Science][p-science] (Geo, Neuro)
 - Finance
-- Aerospace-related crates: drones, UAVs, space protocols, simulation...
+- Aerospace-related crates: [drones][p-drones], UAVs, [space protocols][p-space-protocols], simulation...
 - Cryptocurrencies
 
 Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`drafts`][rust-howto-drafts] folder.
