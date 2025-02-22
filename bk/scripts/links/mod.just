@@ -8,6 +8,11 @@ _default:
 
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
+# (BEWARE: modifies files; manual editing required) Insert links to categories
+[unix]
+@insert_category_links:
+  ./insert_category_links.sh {{root}}
+
 # (BEWARE: modifies files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
 [unix]
 @insert_crate_links:

@@ -9,6 +9,7 @@ set -ue
 
 root="$(realpath $1)/"
 
+# Markdown files
 files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
 
 # Insert potential links to crates into the book's Markdown
@@ -29,7 +30,7 @@ do
       fi
       echo "Pattern: ${pattern}"
       # Find the reference, if any, and create the links, separated by spaces.
-      links=$(rg -INio --null-data '\[(c-)?([^\]]*'${pattern}'[^-]*)\]:' -r '[`'"${in_backticks}"'`][$1$2]⮳{{hi:'"${in_backticks}"'}}' ${root}src/refs | tr '\0' ' ')
+      links=$(rg -INio --null-data '\[(c-)?([^\]]*'${pattern}'[^-]*)\]:' -r '[`'"${in_backticks}"'`][$1$2]⮳{{hi:'"${in_backticks}"'}}' ${root}src/refs/crate-refs.md | tr '\0' ' ')
       if [ -n "${links}" ]; then
         links=$( sed -E -e 's#(\\|~|&)#\\\1#g' <<< "$links" ) # Escape \ ~ & and newlines
         echo "Links: ${links}"
