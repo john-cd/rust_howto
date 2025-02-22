@@ -55,7 +55,7 @@ To test the [`docker`][docker-website]{{hi:docker}}⮳ image manually, use
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/book rust_howto_ci bash
+docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
 [Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳
