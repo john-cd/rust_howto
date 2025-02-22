@@ -10,7 +10,8 @@ To generate `crates_by_category.md`,
 a. Extract all crates listed in `crates.md`
 
 ```sh
-grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tools/crate_indices/crates.txt
+cd bk
+grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/crates/crates_alphabetical.md > ../tools/crate_indices/crates.txt
 ```
 
 `(?<= )` and `(?= )` are non-capturing look-behind and look-ahead groups, respectively.
@@ -20,14 +21,15 @@ grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/key_crates/crates_alpabetical.md > ./tool
 b. Optionally, extract all crates currently used in the book examples from `crates/**/Cargo.toml`
 
 ```sh
-just crate_indices l >> ./tools/crate_indices/crates.txt
-sort -u -o ./tools/crate_indices/crates.txt ./tools/crate_indices/crates.txt
+cd bk
+just indices crate_indices l >> ../tools/crate_indices/crates.txt
+sort -u -o ../tools/crate_indices/crates.txt ../tools/crate_indices/crates.txt
 ```
 
 c. Call the tool:
 
 ```sh
-cat ./tools/crate_indices/crates.txt | just crate_indices c > output.md
+cat ../tools/crate_indices/crates.txt | just indices crate_indices c > output.md
 ```
 
 `just` calls `cargo run -p crate_indices --`
@@ -39,7 +41,7 @@ You can merge with the existing table in `crates_by_category.md` using `sort -u 
 To generate the alphabetical index of crates, update `crates.txt` then use
 
 ```sh
-cat ./tools/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
+cat ../tools/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
 ```
 
 ## Master file of reference definitions
@@ -49,7 +51,7 @@ All URLs to crates.io, docs.rs. lib.rs... for the book are stored in `./src/refs
 Update the master file of reference definition using the following command:
 
 ```sh
-cat ./tools/crate_indices/crates.txt | just crate_indices u -f ./src/refs/crate-refs.md
+cat ../tools/crate_indices/crates.txt | just crate_indices u -f ./src/refs/crate-refs.md
 ```
 
 Edit by hand where needed.

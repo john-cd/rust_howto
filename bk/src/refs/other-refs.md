@@ -295,8 +295,8 @@
 [cloudflare-workers-website]: https://workers.cloudflare.com
 [cmccomb-website]: https://cmccomb.com/smartcore_vs_linfa
 [code-maven]: https://rust.code-maven.com
-[codeday-website]: https://www.codeday.org
 [codeLLDB-github]: https://github.com/vadimcn/codelldb
+[codeday-website]: https://www.codeday.org
 [codevoweb-website-badge]: https://img.shields.io/badge/codevoweb-coral
 [codevoweb-website]: https://codevoweb.com
 [commitlint-pre-commit-hook-github]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
@@ -572,8 +572,8 @@
 [primitive-isize]: https://doc.rust-lang.org/std/primitive.isize.html
 [primitive-never]: https://doc.rust-lang.org/std/primitive.never.html
 [primitive-slice::len]: https://doc.rust-lang.org/std/primitive.slice.html#method.len
-[primitive-slice::sort_by]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by
 [primitive-slice::sort]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort
+[primitive-slice::sort_by]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by
 [primitive-slice::split_at]: https://doc.rust-lang.org/std/primitive.slice.html#method.split_at
 [primitive-u128]: https://doc.rust-lang.org/std/primitive.u128.html
 [primitive-u16]: https://doc.rust-lang.org/std/primitive.u16.html
@@ -622,11 +622,6 @@
 [rocket-realworld-example-badge]: https://img.shields.io/badge/realworld_rocket_example-steelblue?logo=github
 [rocket-realworld-example]: https://github.com/TatriX/realworld-rust-rocket/tree/master
 [routific-website]: https://routific.com
-[rust_gpu-github-badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
-[rust_gpu-github]: https://github.com/EmbarkStudios/rust-gpu
-[rust_rest-github-badge]: https://img.shields.io/badge/rust--rest-steelblue?logo=github
-[rust_rest-github]: https://github.com/emanguy/rust-rest
-[rust_tutorial_that_actually_teaches_rust]: https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
 [rust-analyzer-helix-website]: https://rust-analyzer.github.io/manual.html#helix
 [rust-analyzer-plugin]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
 [rust-analyzer-visual-studio-website]: https://rust-analyzer.github.io/manual.html#visual-studio-2022
@@ -684,6 +679,11 @@
 [rust-vim-github]: https://github.com/rust-lang/rust.vim
 [rust-web-framework-comparison-github]: https://github.com/flosse/rust-web-framework-comparison
 [rust]: https://www.rust-lang.org
+[rust_gpu-github-badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
+[rust_gpu-github]: https://github.com/EmbarkStudios/rust-gpu
+[rust_rest-github-badge]: https://img.shields.io/badge/rust--rest-steelblue?logo=github
+[rust_rest-github]: https://github.com/emanguy/rust-rest
+[rust_tutorial_that_actually_teaches_rust]: https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust
 [rustacean-station]: https://rustacean-station.org
 [rustc-badge]:https://img.shields.io/badge/rustc-tan
 [rustc]: https://doc.rust-lang.org/rustc/index.html
@@ -695,9 +695,9 @@
 [rustnl-website]: https://rustnl.org
 [rustpython-github]: https://github.com/RustPython/RustPython
 [rustrover-website]: https://www.jetbrains.com/rust
+[rustup-RUSTUP_]: https://rust-lang.github.io/rustup/environment-variables.html?highlight=RUSTUP_#environment-variables
 [rustup-command-examples]: https://rust-lang.github.io/rustup/examples.html
 [rustup-documentation]: https://rust-lang.github.io/rustup
-[rustup-RUSTUP_]: https://rust-lang.github.io/rustup/environment-variables.html?highlight=RUSTUP_#environment-variables
 [rustup-website-badge]: https://img.shields.io/badge/rustup-coral
 [rustup-website]: https://rustup.rs
 [rustwasm-website]: https://rustwasm.github.io/docs/book/reference/deploying-to-production.html
