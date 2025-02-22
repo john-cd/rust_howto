@@ -1,16 +1,18 @@
-# Chapter 1
+# Scrub hidden sections and don't include hidden files
 
-## Hidden section
+## The following <div> should be hidden
 
 <div class="hidden">
-THIS IS NOT SEEN.
+THIS SHOULD NOT BE SEEN.
 </div>
 
-## Includes
 
-{{#include ./included.md}}
+## The following should be included
 
-## Hidden Includes
+{{#include ./included.txt}}
+
+
+## These includes should be hidden
 
 ### Include a file
 
@@ -61,29 +63,3 @@ THIS IS NOT SEEN.
 ### Inserting runnable Rust files with attributes
 
 {{#playground _hidden.rs editable}}
-
-## Code blocks
-
-```rust,ignore
-fn main() {}
-```
-
-## Links
-
-- [Inline]( https://www.rust-lang.org/what/cli )
-- [Reference-style][ref]
-- [Link to Github][github]
-- [shortcut]
-- [collapsed][]
-- <https://www.rust-lang.org/> autolink
-- [invalid-ref][invalid-ref]
-
-## Reference definitions
-
-[ref]: https://rust-cli.github.io/book/index.html
-[github]: https://github.com/john-cd
-[shortcut]: https://rust-cli.github.io/book/in-depth/human-communication.html
-[collapsed]: https://rust-cli.github.io/book/in-depth/signals.html
-[invalid-ref]: http:://a.com
-
-{{#include ./refs.md}}

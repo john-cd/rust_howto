@@ -44,18 +44,24 @@ impl Preprocessor for Preproc {
 
         let conf: PreprocConfig = self.retrieve_config(&ctx.config);
         // Compile the replacement Regex(es) only once per book
-        let regexes = get_regexes(&conf);
+        let rrs = get_regexes_and_replacements(&conf);
 
-        // If the preprocessor configuration is fully disabled, return the
-        // orginal book
-        if !regexes.is_empty() {
+        // If the preprocessor configuration is fully disabled,
+        // return the orginal book
+        if !rrs.is_empty() {
             book.for_each_mut(|item: &mut BookItem| {
                 if let BookItem::Chapter(ref mut chapter) = item {
                     info!("Processing chapter '{}'", chapter.name);
                     let content = &mut chapter.content;
-                    for re in regexes.iter() {
+                    for rr in rrs.iter() {
+                        let repl = if let Some(ref repl) = rr.replacement {
+                            repl.as_str()
+                        } else {
+                            ""
+                        };
                         // Remove all regex-matching sections
-                        *content = re.replace_all(content, "").into_owned();
+                        *content =
+                            rr.re.replace_all(content, repl).into_owned();
                         // tracing::debug!(content);
                     }
                 };

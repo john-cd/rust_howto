@@ -1,3 +1,5 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [Preprocessor Directives](./directives.md)
+- [Scrub hidden sections and don't include hidden files](./hidden.md)
+- [Others](./others.md)

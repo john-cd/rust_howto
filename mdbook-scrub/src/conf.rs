@@ -17,6 +17,16 @@ pub struct PreprocConfig {
     pub do_not_include_hidden_chapters: bool,
     // Define the prefix for hidden chapters (default = '_')
     pub hidden_chapter_prefix: String,
+    // Convert {{c: <crate name> }} into links
+    pub process_crate_directives: bool,
+    // Convert category directive {{cat: <category> <optional categories>.. }}
+    // into links
+    pub process_category_directives: bool,
+    // Convert page directive {{p: <page/chapter_name>}} into a link
+    pub process_page_directives: bool,
+    // // Convert {{crate: <crate name> <extra categories> }} into Markdown
+    // // links to the crate and its categories
+    // pub process_crate_block_directives: bool,
     // // FUTURE
     // // Check internal URLs (and external URLs if check_external_urls = true)
     // // (default = true)
@@ -37,6 +47,9 @@ impl Default for PreprocConfig {
             remove_hidden_sections: true,
             do_not_include_hidden_chapters: true,
             hidden_chapter_prefix: "_".into(),
+            process_crate_directives: true,
+            process_category_directives: true,
+            process_page_directives: true,
             // check_urls: true,
             // check_external_urls: false,
             // detect_unused_reference_definitions: true,

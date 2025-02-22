@@ -1,4 +1,4 @@
-I am included!
+THIS SHOULD BE SEEN
 
 [The reference definition is in the parent file this file is included into][ref]
 
