@@ -20,7 +20,7 @@
 
 ## Generating C Header Files
 
-`cbindgen` (generates C header files from Rust code, crucial for making Rust functions callable from C)
+[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}  (generates C header files from Rust code, crucial for making Rust functions callable from C)
 
 ## Memory Management across FFI boundaries
 
@@ -44,6 +44,6 @@ FFI code often requires unsafe blocks because the Rust compiler cannot guarantee
 
 ## Calling Rust from other languages
 
-While `cbindgen` helps with C, other languages might have their own FFI mechanisms. `cpython` and `pyo3` are common for Python.
+While [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}  helps with C, other languages might have their own FFI mechanisms. `cpython` and `pyo3` are common for Python.
 
 </div>

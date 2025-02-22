@@ -6,7 +6,7 @@
 
 [![ignore][c-ignore-badge]][c-ignore] [![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io] [![ignore-github][c-ignore-github-badge]][c-ignore-github] [![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 
-`ignore` is a library for efficiently matching ignore files such as `.gitignore` against file paths.
+[`ignore`][c-ignore]⮳{{hi:ignore}} [`ignore`][c-serde_ignored]⮳{{hi:ignore}}  is a library for efficiently matching ignore files such as `.gitignore` against file paths.
 
 Recursive [filesystem][p-filesystem] walking that respects ignore files (like .gitignore)
 

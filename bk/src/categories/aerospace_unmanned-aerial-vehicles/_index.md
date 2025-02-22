@@ -24,7 +24,7 @@ Key UAV Communication & Control Protocols:
 - FrSky SmartPort/FPort: A telemetry protocol used by FrSky RC systems.
 
 - Link to Parsing Binary Data: Crates like nom or binascii
-- Link to Data Structures and Serialization: Define Rust structs to represent the message formats of the protocols. `serde` can be used for serialization/deserialization.
+- Link to Data Structures and Serialization: Define Rust structs to represent the message formats of the protocols. [`serde`][c-serde]⮳{{hi:serde}} can be used for serialization/deserialization.
 - Link to FFI (Foreign Function Interface): If existing C/C++ libraries are available, FFI can be a viable option, but it adds complexity.
 - Link to `no_std` (for embedded systems): If your target is a flight controller running on an embedded system, `no_std` is essential.
 

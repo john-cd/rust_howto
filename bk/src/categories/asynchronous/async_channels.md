@@ -28,7 +28,7 @@ Another example:
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
-`tokio`
+[`tokio`][blog-actors-with-tokio]⮳{{hi:tokio}} [`tokio`][c-cdrs_tokio]⮳{{hi:tokio}} [`tokio`][c-tokio::sync::oneshot]⮳{{hi:tokio}} [`tokio`][c-tokio::task::LocalSet]⮳{{hi:tokio}} [`tokio`][c-tokio::task::spawn]⮳{{hi:tokio}} [`tokio`][c-tokio::task::spawn_blocking]⮳{{hi:tokio}} [`tokio`][c-tokio]⮳{{hi:tokio}} [`tokio`][c-tokio_examples]⮳{{hi:tokio}} [`tokio`][c-tokio_graceful_shutdown]⮳{{hi:tokio}} [`tokio`][c-tokio_postgres]⮳{{hi:tokio}} [`tokio`][c-tokio_tungstenite]⮳{{hi:tokio}} [`tokio`][c-tokio_tutorial]⮳{{hi:tokio}} 
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/async_channels_mpsc.rs:example}}
@@ -58,7 +58,7 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 [![postage-github][c-postage-github-badge]][c-postage-github]
 [![postage-lib.rs][c-postage-lib.rs-badge]][c-postage-lib.rs]
 
-`postage` is a feature-rich, portable [async][p-async] channel library, with different options than [Tokio][p-tokio]. `postage::broadcast` provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
+[`postage`][c-postage::broadcast]⮳{{hi:postage}} [`postage`][c-postage]⮳{{hi:postage}}  is a feature-rich, portable [async][p-async] channel library, with different options than [Tokio][p-tokio]. [`postage::broadcast`][c-postage::broadcast]⮳{{hi:postage::broadcast}}  provides a lossless MPMC channel, which all receivers are guaranteed to receive each message.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/postage.rs:example}}

@@ -78,7 +78,7 @@
 
 - `iced`: A cross-platform GUI library that uses a renderer (often `wgpu` or `tiny-skia`) to draw its UI elements. This means it can be used for basic 2D graphics as well.
 - `egui`: An immediate mode GUI library that can also be used for simple 2D drawing.
-- `ggez`, `macroquad`, `tetra`: 2D game frameworks that provide built-in rendering capabilities.
+- `ggez`, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , `tetra`: 2D game frameworks that provide built-in rendering capabilities.
 
 ## Text Rendering
 
@@ -100,7 +100,7 @@
 - Vector Path Generation: `lyon`.
 - High Performance 2D/3D (using GPU): `wgpu` (but more complex).
 - UI with 2D Graphics: `iced`, `egui`.
-- Game Development: `ggez`, `macroquad`, `tetra`.
+- Game Development: `ggez`, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , `tetra`.
 
 Most 2D projects will find `raqote` or `tiny-skia` to be a good balance of features and performance. If you need very low-level control or are working with GPU-accelerated graphics, `wgpu` is the way to go. If you're making a game, one of the game frameworks will likely be the easiest option.
 </div>

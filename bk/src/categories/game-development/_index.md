@@ -19,7 +19,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 `bevy`: A data-driven game engine. Very popular and actively developed. A good choice for 2D and 3D games.
 `Amethyst`: Another game engine, focusing on data-oriented design.
 `ggez`: A simple 2D game framework. Good for beginners and smaller projects.
-`macroquad`: Easy to use framework for 2D games and interactive applications.
+[`macroquad`][c-macroquad]⮳{{hi:macroquad}} : Easy to use framework for 2D games and interactive applications.
 
 See also `winit`: A window creation and event handling library. Often used as a foundation for custom engines or when more control is needed.
 
@@ -37,7 +37,7 @@ See also `winit`: A window creation and event handling library. Often used as a 
 
 ## Input
 
-`winit`: Handles window events, including input.
+[`winit`][c-winit]⮳{{hi:winit}} : Handles window events, including input.
 `sdl2`: Can also be used for input
 
 ## Game Logic/State Management
@@ -92,9 +92,9 @@ Engine-specific; but crates like `image` for image loading are often used.
 
 ## Choosing the Right Crates
 
-Simple 2D Games: `ggez`, `macroquad`, or a combination of `winit`, `pixels`, and `cpal`.
+Simple 2D Games: `ggez`, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , or a combination of [`winit`][c-winit]⮳{{hi:winit}} , `pixels`, and `cpal`.
 More Complex 2D/3D Games: `Bevy` or `Amethyst`.
-Custom Engines or Low-Level Graphics: `winit`, `wgpu`, `gfx-hal`.
+Custom Engines or Low-Level Graphics: [`winit`][c-winit]⮳{{hi:winit}} , `wgpu`, `gfx-hal`.
 Data-Driven Design: An ECS library like `bevy_ecs`, `specs`, or `hecs`.
 Physics: `rapier` or `nphysics`.
 

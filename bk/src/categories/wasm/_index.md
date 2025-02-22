@@ -6,7 +6,7 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 ## What is WASM?
 
-WebAssembly (abbreviated WASM) is a binary instruction format that is designed to be a portable compilation target for programming languages. WASM binaries typically have a `.wasm` file extension. The textual representation of WebAssembly has a `.wat` file extension.
+WebAssembly (abbreviated WASM) is a binary instruction format that is designed to be a portable compilation target for programming languages. WASM binaries typically have a [`.wasm`][book-rustwasm]⮳{{hi:.wasm}} [`.wasm`][cat-wasm]⮳{{hi:.wasm}} [`.wasm`][c-wasmer]⮳{{hi:.wasm}} [`.wasm`][c-wasmtime]⮳{{hi:.wasm}}  file extension. The textual representation of WebAssembly has a `.wat` file extension.
 
 WebAssembly was created primarily to address the limitations of JavaScript (performance, security) and the desire to bring other programming languages to the Web.
 
@@ -62,8 +62,8 @@ This table outlines common WebAssembly (WASM) development tasks and relevant Rus
 | Interacting with JavaScript from Rust/WASM | `wasm-bindgen` |  `wasm-bindgen` handles the complexities of passing data between Rust/WASM and JavaScript. |
 | Calling Rust/WASM functions from JavaScript | `wasm-bindgen` |  `wasm-bindgen` also facilitates calling Rust/WASM functions from JavaScript. |
 | Managing WASM Memory | `wasm-bindgen` (implicitly), `wee_alloc` | `wasm-bindgen` helps manage WASM memory. `wee_alloc` is a memory allocator designed for WASM. |
-| Web Frameworks (using WASM) | `yew`, `seed`, `leptos` | These frameworks enable building complex web applications with Rust/WASM. They provide component-based architectures and other tools for structuring web apps. |
-| Game Development (using WASM) | `winit` (windowing), `wgpu` (WebGPU bindings), `bevy` (game engine - can target WASM) | Rust can be used for game development targeting the web via WASM. `winit` handles window creation, `wgpu` provides access to WebGPU, and `bevy` is a Rust game engine that can compile to WASM. |
+| Web Frameworks (using WASM) | `yew`, `seed`, [`leptos`][c-leptos]⮳{{hi:leptos}}  | These frameworks enable building complex web applications with Rust/WASM. They provide component-based architectures and other tools for structuring web apps. |
+| Game Development (using WASM) | `winit` (windowing), `wgpu` (WebGPU bindings), `bevy` (game engine - can target WASM) | Rust can be used for game development targeting the web via WASM. [`winit`][c-winit]⮳{{hi:winit}}  handles window creation, `wgpu` provides access to WebGPU, and `bevy` is a Rust game engine that can compile to WASM. |
 | Server-Side WASM (WASI) | `cargo-wasi`, `wasi-rs` |  WASI allows you to run WASM code on servers or other environments outside the browser. |
 | Debugging WASM | Browser developer tools, `console_error_panic_hook` | Browser developer tools can be used to debug WASM. `console_error_panic_hook` helps with better error reporting in the browser console. |
 | Testing WASM | `wasm-bindgen-test` | `wasm-bindgen-test` provides utilities for testing your Rust/WASM code. |
@@ -73,7 +73,7 @@ This table outlines common WebAssembly (WASM) development tasks and relevant Rus
 
 - `wasm-bindgen` is fundamental for almost all Rust/WASM development that interacts with the browser.
 - `WASI`: WASI is important if you want to run your WASM code outside of the browser.
-- Web Frameworks: Frameworks like `yew`, `seed`, and `leptos` simplify web application development with Rust/WASM.
+- Web Frameworks: Frameworks like `yew`, `seed`, and [`leptos`][c-leptos]⮳{{hi:leptos}}  simplify web application development with Rust/WASM.
 - Performance:  Rust's performance characteristics translate well to WASM, making it suitable for performance-sensitive web applications.
 - Debugging: Browser developer tools are essential for debugging WASM.
 - Size Optimization:  WASM binary size is important for web performance.  Use tools like `wee_alloc`, `twiggy`, and `wasm-opt` to reduce size.

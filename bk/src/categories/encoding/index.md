@@ -46,7 +46,7 @@ Working with Binary Data: Recipes for reading and writing raw binary data, handl
 `encoding`: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
 Base64:
 
-`base64`: A widely used crate for Base64 encoding and decoding.
+[`base64`][c-base64]⮳{{hi:base64}}: A widely used crate for Base64 encoding and decoding.
 
 ## URL Encoding
 
@@ -70,7 +70,7 @@ Base64:
 
 ## MessagePack
 
-`rmp-serde`: For MessagePack serialization and deserialization.
+[`rmp-serde`][c-rmp_serde]⮳{{hi:rmp-serde}} : For MessagePack serialization and deserialization.
 
 ## CBOR (Concise Binary Object Representation)
 
@@ -78,13 +78,13 @@ Base64:
 
 ## XML
 
-`quick-xml`: A fast XML parser.
+[`quick-xml`][c-quick_xml]⮳{{hi:quick-xml}} : A fast XML parser.
 `serde_xml_rs`: For serializing and deserializing XML.
 
 ## Binary Data (General)
 
-`byteorder`: For reading and writing binary data in different endianness.
-`bincode`: A crate for efficiently serializing and deserializing data in a compact binary format.
+[`byteorder`][c-byteorder]⮳{{hi:byteorder}}: For reading and writing binary data in different endianness.
+[`bincode`][c-bincode]⮳{{hi:bincode}}: A crate for efficiently serializing and deserializing data in a compact binary format.
 
 ## Data Serialization Framework (Used by many of the above)
 

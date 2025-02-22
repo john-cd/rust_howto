@@ -80,30 +80,30 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 
 This table focuses specifically on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute WASM bytecode. This is distinct from tools used to *compile* to WASM (like `wasm-bindgen`).
 
-The `wasmtime` runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
+The [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
 
 | Runtime Crate | Description | Key Features | WASI Support | Embeddable | Notes |
 |---|---|---|---|---|---|
 | `wasmi` | WASM interpreter written in Rust. | Interprets WASM bytecode, good for sandboxing and portability. | Yes (via `wasi-rs`) | Yes | A popular and actively maintained WASM interpreter. |
-| `wasmtime` | A fast and secure runtime for WebAssembly, developed by Mozilla. | Ahead-of-time (AOT) compilation for performance, supports WASI. | Yes | Yes | Focuses on speed and security. Used in various projects. |
-| `cranelift` (used by `wasmtime`) | A code generator used by `wasmtime` for AOT compilation. | Generates optimized machine code from WASM. | N/A (part of `wasmtime`) | N/A | Not a runtime itself, but a crucial component of `wasmtime`. |
-| `wasi-rs` | Bindings and utilities for the WebAssembly System Interface (WASI). | Provides an API for WASM modules to interact with the host environment (file system, networking, etc.). | Yes | Yes | Essential for running WASM outside of the browser. Used by `wasmi` and `wasmtime`. |
-| `lucet` (mostly deprecated) | A cloud-native WebAssembly runtime. | Designed for serverless and cloud environments. | Yes | Yes | Largely superseded by `wasmtime`. Still relevant for some legacy systems. |
+| [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} | A fast and secure runtime for WebAssembly, developed by Mozilla. | Ahead-of-time (AOT) compilation for performance, supports WASI. | Yes | Yes | Focuses on speed and security. Used in various projects. |
+| `cranelift` (used by `wasmtime`) | A code generator used by `wasmtime` for AOT compilation. | Generates optimized machine code from WASM. | N/A (part of `wasmtime`) | N/A | Not a runtime itself, but a crucial component of [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} . |
+| `wasi-rs` | Bindings and utilities for the WebAssembly System Interface (WASI). | Provides an API for WASM modules to interact with the host environment (file system, networking, etc.). | Yes | Yes | Essential for running WASM outside of the browser. Used by `wasmi` and [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} . |
+| `lucet` (mostly deprecated) | A cloud-native WebAssembly runtime. | Designed for serverless and cloud environments. | Yes | Yes | Largely superseded by [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} . Still relevant for some legacy systems. |
 | `rwasm` | A lightweight WASM runtime. | Small footprint, suitable for embedded systems. | Yes | Yes | Designed for resource-constrained environments. |
 
 ## Key Considerations
 
-- Interpreter vs. AOT Compilation: `wasmi` is an interpreter, while `wasmtime` uses AOT compilation. AOT compilation generally leads to faster execution but may have a longer startup time.
+- Interpreter vs. AOT Compilation: `wasmi` is an interpreter, while [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  uses AOT compilation. AOT compilation generally leads to faster execution but may have a longer startup time.
 - WASI Support: WASI is crucial for running WASM outside of the browser, and all the listed runtimes support it.
 - Embeddability: Most of these runtimes are designed to be embeddable into other applications.
-- Performance: `wasmtime` is generally considered to be very performant due to its AOT compilation.
+- Performance: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is generally considered to be very performant due to its AOT compilation.
 - Security: WASM runtimes often prioritize security, as WASM is often used to execute untrusted code.
 
 ## Choosing a Runtime
 
 - General Purpose/Sandboxing: `wasmi` is a good choice.
-- Performance: `wasmtime` is highly recommended.
-- Cloud/Serverless: `wasmtime` is the most common choice.
+- Performance: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is highly recommended.
+- Cloud/Serverless: [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}  is the most common choice.
 - Embedded Systems: `rwasm` is designed for resource-constrained environments.
 
 </div>
