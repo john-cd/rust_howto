@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -ue
+set -u
 
 # Insert crate links
 #
@@ -21,16 +21,23 @@ do
   # -N = --no-line-number -I = --no-filename -r = replace -i = ignore case
   for in_backticks in $(rg -INioP '(?<![\[`])`([^ `\[\]]+?)`(?![\]`])' -r '$1' $file | sort -u)
   do
-    if [[ ${#in_backticks} -gt 4 ]]; then
-      underscored=$(echo ${in_backticks} | tr '-' '_')
-      if [ ${underscored} != ${in_backticks} ]; then
-        pattern="(${in_backticks}|${underscored})"
+    if [[ ${#in_backticks} -gt 1 ]]; then
+      trimmed="${in_backticks/%[\._-]rs/}" # remove .rs or -rs or _rs
+      if [ ${trimmed} != ${in_backticks} ]; then
+        pattern="${in_backticks}|${trimmed}"
       else
-        pattern="(${in_backticks})"
+        pattern="${in_backticks}"
+      fi
+      underscored=$(echo ${pattern} | tr '-' '_')
+      if [ ${underscored} != ${pattern} ]; then
+        pattern="(${pattern}|${underscored})"
+      else
+        pattern="(${pattern})"
       fi
       echo "Pattern: ${pattern}"
       # Find the reference, if any, and create the link(s), separated by spaces if multiple. Trim last space.
-      links=$(rg -INio --null-data '\[(c-'"${pattern}"')\]:' -r '[`'"${in_backticks}"'`][$1]⮳{{hi:'"${in_backticks}"'}}' ${root}src/refs/crate-refs.md | tr '\0' ' ' | sed -e 's/[[:space:]]+$//' )
+      # -I = no filename; -N = no line number; -o = only-matching; -i = ignore case
+      links=$(rg -INio --null-data '\[(c-'"${pattern}"')\]:' -r '[`'"${in_backticks}"'`][$1]⮳{{hi:'"${in_backticks}"'}}' ${root}src/refs/crate-refs.md | tr '\0' ' ' | sed -E -e 's/ +$//' )
       if [ -n "${links}" ]; then
         links=$( sed -E -e 's#(\\|~|&)#\\\1#g' <<< "$links" ) # Escape \ ~ &
         echo "Links: ${links}"
