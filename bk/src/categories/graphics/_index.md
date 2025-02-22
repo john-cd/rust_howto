@@ -28,7 +28,7 @@ Let's break down the graphics libraries and applications in Rust, focusing on ra
 
 ## Libraries (Crates)
 
-- `wgpu`: While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw primitives. It doesn't provide high-level drawing functions directly, but it's the foundation upon which many higher-level graphics libraries are built. It's excellent for performance and control.
+- [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw primitives. It doesn't provide high-level drawing functions directly, but it's the foundation upon which many higher-level graphics libraries are built. It's excellent for performance and control.
 - [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: Another low-level graphics API abstraction layer. Similar to [`wgpu`][c-wgpu]⮳{{hi:wgpu}} in that it can be used for drawing primitives, but requires more manual setup.
 - [`pixels`][c-pixels]⮳{{hi:pixels}}: A crate for working with pixel buffers. Great for 2D raster graphics. You can draw points, lines, and other primitives by directly manipulating the pixel data.
 - [`raqote`][c-raqote]⮳{{hi:raqote}}: A fast 2D graphics library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images.

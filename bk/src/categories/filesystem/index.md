@@ -89,11 +89,11 @@ Often used with file I/O to read and write structured data (JSON, YAML, TOML, et
 
 ## Compression/Decompression
 
-[`flate2`][c-flate2]⮳{{hi:flate2}}, `gzip`, [`bzip2`][c-bzip2]⮳{{hi:bzip2}}, `xz2`: Crates for working with various compression formats (often used when dealing with files).
+[`flate2`][c-flate2]⮳{{hi:flate2}}, [`gzip`][c-gzip]⮳{{hi:gzip}}, [`bzip2`][c-bzip2]⮳{{hi:bzip2}}, [`xz2`][c-xz2]⮳{{hi:xz2}}: Crates for working with various compression formats (often used when dealing with files).
 
 ## Archive Files (tar, zip, etc.)
 
-[`tar`][c-tar]⮳{{hi:tar}}, `zip`: Crates for working with tar and zip archives.
+[`tar`][c-tar]⮳{{hi:tar}}, [`zip`][c-zip]⮳{{hi:zip}}: Crates for working with tar and zip archives.
 
 For most common file system tasks, `std::fs` and `std::path` will be sufficient. [`fs_extra`][c-fs_extra]⮳{{hi:fs_extra}} is useful for more advanced operations. [`tempfile`][c-tempfile]⮳{{hi:tempfile}} is great for working with temporary files. [`glob`][c-glob]⮳{{hi:glob}} simplifies file pattern matching. [`notify`][c-notify]⮳{{hi:notify}} is essential for file watching. And, of course, [`serde`][c-serde]⮳{{hi:serde}} is very often used to handle the contents of files when you're working with structured data.
 

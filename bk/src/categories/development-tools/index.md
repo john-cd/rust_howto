@@ -57,8 +57,8 @@ Build System/Package Manager: [`cargo`][c-cargo]⮳{{hi:cargo}}
 Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}}
 Linter: [`clippy`][c-clippy]⮳{{hi:clippy}}
 Testing Framework: `std::test` (built-in), [`rstest`][c-rstest]⮳{{hi:rstest}} (for data-driven tests)
-Debugging: `gdb`, `lldb` (often used via IDE integration), `cargo-debug`
-Profiling: `cargo flamegraph`, `perf` (system profiler)
+Debugging: [`gdb`][c-gdb]⮳{{hi:gdb}}, [`lldb`][c-lldb]⮳{{hi:lldb}} (often used via IDE integration), `cargo-debug`
+Profiling: `cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (system profiler)
 Documentation Generator: `cargo doc`
 Code Coverage: [`grcov`][c-grcov]⮳{{hi:grcov}}, `tarpaulin`
 Continuous Integration: often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c-xtask]⮳{{hi:xtask}} can help manage CI tasks

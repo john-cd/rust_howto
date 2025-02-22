@@ -44,7 +44,7 @@ For almost all cases where you want an immediate mode [GUI][p-gui] in Rust, [`eg
 
 ## Integration with Rendering
 
-Immediate mode [GUI][p-gui] libraries often need to be integrated with a [rendering][p-rendering] backend. [`egui`][c-egui]⮳{{hi:egui}} has its own renderers for various platforms and backends, including [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, `glow`, and others.
+Immediate mode [GUI][p-gui] libraries often need to be integrated with a [rendering][p-rendering] backend. [`egui`][c-egui]⮳{{hi:egui}} has its own renderers for various platforms and backends, including [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`glow`][c-glow]⮳{{hi:glow}}, and others.
 
 ## Use Cases
 

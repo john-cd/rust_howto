@@ -40,7 +40,7 @@ Audio Formats and Codecs:
 
 - [`ogg`][c-ogg]⮳{{hi:ogg}}: For Ogg Vorbis files.
 - [`flac`][c-flac]⮳{{hi:flac}}: For FLAC files.
-- `mp3`: For MP3 files (often requires external dependencies).
+- [`mp3`][c-mp3]⮳{{hi:mp3}}: For MP3 files (often requires external dependencies).
 - [`wav`][c-wav]⮳{{hi:wav}}: For WAV files.
 
 Synthesis:

@@ -76,7 +76,7 @@ Shared solutions for particular situations specific to programming in Rust.
 | Factory | Often implemented directly, no specific crate | Commonly implemented using traits and generics. |
 | Strategy | Often implemented directly, no specific crate | Often implemented using trait objects or enums. |
 | Observer | [`event-listener`][c-event_listener]⮳{{hi:event-listener}} | Helps implement the observer pattern. |
-| Dependency Injection | `di`, `yew` for front-end | Dependency injection frameworks exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
+| Dependency Injection | `di`, [`yew`][c-yew]⮳{{hi:yew}} for front-end | Dependency injection frameworks exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
 | Closures | | Fundamental language features. |
 | Iterators | | Fundamental language features, but the [`itertools`][c-itertools]⮳{{hi:itertools}} crate provides additional iterator adapters. |
 | Macros | | Fundamental language features. Crates like [`syn`][c-syn]⮳{{hi:syn}} and [`quote`][c-quote]⮳{{hi:quote}} are used for procedural macros. |
@@ -85,7 +85,7 @@ Shared solutions for particular situations specific to programming in Rust.
 | Parsing | [`nom`][c-nom]⮳{{hi:nom}}, [`pest`][c-pest]⮳{{hi:pest}}, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} | These crates are useful for parsing various input formats. |
 | Serialization Serde | [`serde`][c-serde]⮳{{hi:serde}}, [`serde_json`][c-serde_json]⮳{{hi:serde_json}}, [`serde_yaml`][c-serde_yaml]⮳{{hi:serde_yaml}}, [`toml`][c-toml]⮳{{hi:toml}} | [`serde`][c-serde]⮳{{hi:serde}} is a powerful framework for serialization and deserialization. |
 | CLI Argument Parsing | [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}} | These crates help with parsing command-line arguments. |
-| Logging | `log`, [`env_logger`][c-env_logger]⮳{{hi:env_logger}}, [`tracing`][c-tracing]⮳{{hi:tracing}} | [`log`][c-log]⮳{{hi:log}} is a logging facade, and [`env_logger`][c-env_logger]⮳{{hi:env_logger}} and [`tracing`][c-tracing]⮳{{hi:tracing}} are logging implementations. |
+| Logging | [`log`][c-log]⮳{{hi:log}}, [`env_logger`][c-env_logger]⮳{{hi:env_logger}}, [`tracing`][c-tracing]⮳{{hi:tracing}} | [`log`][c-log]⮳{{hi:log}} is a logging facade, and [`env_logger`][c-env_logger]⮳{{hi:env_logger}} and [`tracing`][c-tracing]⮳{{hi:tracing}} are logging implementations. |
 | Testing | Built-in - no specific crates | Rust has built-in support for unit and integration testing. Crates like [`rstest`][c-rstest]⮳{{hi:rstest}} can help with testing. |
 | Asynchronous Programming | [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}}, [`futures`][c-futures]⮳{{hi:futures}} | [`tokio`][c-tokio]⮳{{hi:tokio}} and [`async-std`][c-async_std]⮳{{hi:async-std}} are asynchronous runtimes. [`futures`][c-futures]⮳{{hi:futures}} provides utilities for working with futures. |
 

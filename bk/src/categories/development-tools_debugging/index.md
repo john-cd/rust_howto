@@ -30,7 +30,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 <div class="hidden">
 [index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
-Debugging with `gdb` or `lldb`: Basic debugging techniques.
+Debugging with [`gdb`][c-gdb]⮳{{hi:gdb}} or [`lldb`][c-lldb]⮳{{hi:lldb}}: Basic debugging techniques.
 
 Logging Framework: [`log`][c-log]⮳{{hi:log}} (provides the logging macros and facade)
 

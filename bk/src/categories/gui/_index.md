@@ -101,7 +101,7 @@ Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
 ## Web-Based GUIs (Using Web Technologies)
 
 - [`yew`][c-yew]⮳{{hi:yew}}: A modern Rust framework inspired by React for creating single-page web applications. Can be used to build web-based GUIs.
-- `seed`: Another web framework for building web apps.
+- [`seed`][c-seed]⮳{{hi:seed}}: Another web framework for building web apps.
 
 ## Other GUI-Related Crates
 
@@ -112,10 +112,10 @@ Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
 
 - Simple GUIs, Tools, Games: [`egui`][c-egui]⮳{{hi:egui}} is an excellent choice.
 - More Complex Applications, Declarative UI [`iced`][c-iced]⮳{{hi:iced}} or [`slint`][c-slint]⮳{{hi:slint}}.
-- Web-Based GUIs [`yew`][c-yew]⮳{{hi:yew}} or `seed`.
+- Web-Based GUIs [`yew`][c-yew]⮳{{hi:yew}} or [`seed`][c-seed]⮳{{hi:seed}}.
 - Native Look and Feel `gtk-rs` or [`qt-rs`][c-qt]⮳{{hi:qt-rs}} (but require more setup and native dependencies).
 - Web Technologies for Desktop [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
-For most common GUI needs, [`egui`][c-egui]⮳{{hi:egui}} and [`iced`][c-iced]⮳{{hi:iced}} are excellent starting points. If you're targeting the web, [`yew`][c-yew]⮳{{hi:yew}} or `seed` are good choices. If you need a native look and feel or have existing experience with GTK or Qt, then their respective bindings might be appropriate. [`tauri`][c-tauri]⮳{{hi:tauri}} is a good option if you're comfortable with web technologies and want to build cross-platform desktop apps.
+For most common GUI needs, [`egui`][c-egui]⮳{{hi:egui}} and [`iced`][c-iced]⮳{{hi:iced}} are excellent starting points. If you're targeting the web, [`yew`][c-yew]⮳{{hi:yew}} or [`seed`][c-seed]⮳{{hi:seed}} are good choices. If you need a native look and feel or have existing experience with GTK or Qt, then their respective bindings might be appropriate. [`tauri`][c-tauri]⮳{{hi:tauri}} is a good option if you're comfortable with web technologies and want to build cross-platform desktop apps.
 
 </div>

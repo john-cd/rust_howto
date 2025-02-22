@@ -52,7 +52,7 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 ### Profiling
 
-`cargo flamegraph`, `perf` (Linux): These tools help you identify performance bottlenecks in your code, which can be related to CPU usage.
+`cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (Linux): These tools help you identify performance bottlenecks in your code, which can be related to CPU usage.
 
 ### Concurrency and Multithreading (Related to CPU Utilization)
 

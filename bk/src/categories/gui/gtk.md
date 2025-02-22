@@ -28,7 +28,7 @@
 <div class="hidden">
 [gtk: write (P2)](https://github.com/john-cd/rust_howto/issues/383)
 
-For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The `gdk`, `gio`, and `glib` crates are used indirectly through `gtk`. Understanding GTK concepts and consulting the official GTK documentation are crucial for effective development.
+For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c-gdk]⮳{{hi:gdk}}, [`gio`][c-gio]⮳{{hi:gio}}, and [`glib`][c-glib]⮳{{hi:glib}} crates are used indirectly through `gtk`. Understanding GTK concepts and consulting the official GTK documentation are crucial for effective development.
 
 ## Key Concepts
 
@@ -44,9 +44,9 @@ For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use
 
 ## Related GTK Crates
 
-- `gdk`: Provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p-graphics] and windowing. You'll often use this indirectly through `gtk`.
-- `gio`: Bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p-asynchronous] operations, file I/O, and other system-related tasks in GTK applications.
-- `glib`: Provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
+- [`gdk`][c-gdk]⮳{{hi:gdk}}: Provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p-graphics] and windowing. You'll often use this indirectly through `gtk`.
+- [`gio`][c-gio]⮳{{hi:gio}}: Bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p-asynchronous] operations, file I/O, and other system-related tasks in GTK applications.
+- [`glib`][c-glib]⮳{{hi:glib}}: Provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
 
 ### Build Tools
 

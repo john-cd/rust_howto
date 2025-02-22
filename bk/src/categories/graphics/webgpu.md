@@ -50,15 +50,15 @@
 
 ### Compute Shaders
 
-Handled through `wgpu`. You write compute shaders in WGSL and then use the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API to dispatch them.
+Handled through [`wgpu`][c-wgpu]⮳{{hi:wgpu}}. You write compute shaders in WGSL and then use the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API to dispatch them.
 
 ### Graphics Pipeline
 
-Managed through `wgpu`. You configure the [graphics][p-graphics] pipeline using the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API.
+Managed through [`wgpu`][c-wgpu]⮳{{hi:wgpu}}. You configure the [graphics][p-graphics] pipeline using the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API.
 
 ### Texture Handling
 
-Handled through `wgpu`. [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides ways to create and manage textures.
+Handled through [`wgpu`][c-wgpu]⮳{{hi:wgpu}}. [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides ways to create and manage textures.
 
 ### Mathematics (Linear Algebra)
 

@@ -11,7 +11,7 @@
 
 [`tinysearch`][c-tinysearch-website] is a lightweight, fast, full-text search engine. It is designed for static websites.
 
-[`tinysearch`][c-tinysearch]⮳{{hi:tinysearch}} is compiled to WebAssembly to run in a browser. It can be used together with static site generators such as `Jekyll`, `Hugo`, `Zola`, `Cobalt`, or `Pelican`.
+[`tinysearch`][c-tinysearch]⮳{{hi:tinysearch}} is compiled to WebAssembly to run in a browser. It can be used together with static site generators such as `Jekyll`, `Hugo`, [`Zola`][c-zola]⮳{{hi:Zola}}, `Cobalt`, or `Pelican`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

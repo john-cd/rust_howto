@@ -37,7 +37,7 @@ Address Sanitizer (`ASan`): Often integrated into the compiler; can detect memor
 
 ## Debugging Tools (for examining memory)
 
-`gdb`, `lldb`: Debuggers can be used to inspect memory, examine variables, and track allocations.
+[`gdb`][c-gdb]⮳{{hi:gdb}}, [`lldb`][c-lldb]⮳{{hi:lldb}}: Debuggers can be used to inspect memory, examine variables, and track allocations.
 
 Tracing (for understanding allocation patterns):
 

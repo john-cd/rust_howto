@@ -45,7 +45,7 @@ For most common network applications, [`tokio`][c-tokio]⮳{{hi:tokio}} is essen
 ## Asynchronous Networking
 
 - [`tokio`][c-tokio]⮳{{hi:tokio}}: A powerful and widely used asynchronous runtime. Essential for building high-performance network applications. Provides abstractions for working with sockets, streams, and other network primitives asynchronously.
-- `mio`: A lower-level I/O library used by [`tokio`][c-tokio]⮳{{hi:tokio}}. You'll rarely use [`mio`][c-mio]⮳{{hi:mio}} directly unless you have very specific performance needs.
+- [`mio`][c-mio]⮳{{hi:mio}}: A lower-level I/O library used by [`tokio`][c-tokio]⮳{{hi:tokio}}. You'll rarely use [`mio`][c-mio]⮳{{hi:mio}} directly unless you have very specific performance needs.
 
 Link to:
 

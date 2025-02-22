@@ -81,7 +81,7 @@ Accessing hardware from user space (without a driver) is often restricted for se
 
 #### USB
 
-`rusb`: A library for accessing USB devices.
+[`rusb`][c-rusb]⮳{{hi:rusb}}: A library for accessing USB devices.
 
 #### Serial Communication
 

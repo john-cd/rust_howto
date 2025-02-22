@@ -48,7 +48,7 @@ Often handled directly or with ECS libraries. See below.
 
 [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}}: Bevy's built-in ECS.
 [`specs`][c-specs]⮳{{hi:specs}}: A popular and mature ECS library.
-`hecs`: Another ECS implementation.
+[`hecs`][c-hecs]⮳{{hi:hecs}}: Another ECS implementation.
 
 ## Physics
 
@@ -95,7 +95,7 @@ Engine-specific; but crates like [`image`][c-image]⮳{{hi:image}} for image loa
 Simple 2D Games: [`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , or a combination of [`winit`][c-winit]⮳{{hi:winit}} , [`pixels`][c-pixels]⮳{{hi:pixels}}, and [`cpal`][c-cpal]⮳{{hi:cpal}}.
 More Complex 2D/3D Games: [`Bevy`][c-bevy]⮳{{hi:Bevy}} or [`Amethyst`][c-amethyst]⮳{{hi:Amethyst}}.
 Custom Engines or Low-Level Graphics: [`winit`][c-winit]⮳{{hi:winit}} , [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}.
-Data-Driven Design: An ECS library like [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}}, [`specs`][c-specs]⮳{{hi:specs}}, or `hecs`.
+Data-Driven Design: An ECS library like [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}}, [`specs`][c-specs]⮳{{hi:specs}}, or [`hecs`][c-hecs]⮳{{hi:hecs}}.
 Physics: `rapier` or [`nphysics`][c-nphysics]⮳{{hi:nphysics}}.
 
 </div>

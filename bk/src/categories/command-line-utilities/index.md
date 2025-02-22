@@ -27,7 +27,7 @@ TODO P1
 Here's a list of some common command-line utilities written in Rust:
 
 [`ripgrep`][c-ripgrep]⮳{{hi:ripgrep}} (rg): A very fast replacement for grep.
-`fd`: A faster alternative to find.
+[`fd`][c-fd]⮳{{hi:fd}}: A faster alternative to find.
 [`bat`][c-bat]⮳{{hi:bat}}: A cat clone with syntax highlighting and Git integration.
 [`exa`][c-exa]⮳{{hi:exa}}: A modern replacement for ls.
 [`delta`][c-delta]⮳{{hi:delta}}: A pager for git diff output.
@@ -35,9 +35,9 @@ Here's a list of some common command-line utilities written in Rust:
 [`just`][c-just]⮳{{hi:just}}: A command runner for project-specific tasks (like make but better).
 [`zoxide`][c-zoxide]⮳{{hi:zoxide}}: A directory jumper.
 [`bottom`][c-bottom]⮳{{hi:bottom}}: A customizable and cross-platform process monitor.
-`dust`: A tool to assess disk usage.
-`sd`: A drop-in replacement for sed.
-`xplr`: A highly configurable file explorer.
-`navi`: An interactive cheatsheet tool.
+[`dust`][c-dust]⮳{{hi:dust}}: A tool to assess disk usage.
+[`sd`][c-sd]⮳{{hi:sd}}: A drop-in replacement for sed.
+[`xplr`][c-xplr]⮳{{hi:xplr}}: A highly configurable file explorer.
+[`navi`][c-navi]⮳{{hi:navi}}: An interactive cheatsheet tool.
 
 </div>

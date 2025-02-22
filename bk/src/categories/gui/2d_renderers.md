@@ -68,11 +68,11 @@
 
 ## Vector-Based 2D Rendering
 
-- `lyon`: A library for generating vector paths and shapes. It's useful for creating the -geometry- for vector [graphics][p-graphics], but you'd typically use a [rendering][p-rendering] library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually -draw- them. [`lyon`][c-lyon]⮳{{hi:lyon}} handles the math and path calculations.
+- [`lyon`][c-lyon]⮳{{hi:lyon}}: A library for generating vector paths and shapes. It's useful for creating the -geometry- for vector [graphics][p-graphics], but you'd typically use a [rendering][p-rendering] library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually -draw- them. [`lyon`][c-lyon]⮳{{hi:lyon}} handles the math and path calculations.
 
 ## Hybrid (Raster and Vector)
 
-- `wgpu`: While primarily a low-level, cross-platform GPU API, `wgpu` -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
+- `wgpu`: While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} -is- capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
 
 ## Higher-Level 2D Rendering (Often Part of UI or Game Frameworks)
 

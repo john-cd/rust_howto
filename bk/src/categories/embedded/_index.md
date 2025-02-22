@@ -95,7 +95,7 @@ Similar PACs exist for most microcontroller families.
 
 ## Debugging
 
-`OpenOCD`, `GDB`: Common debugging tools for embedded systems.
+`OpenOCD`, [`GDB`][c-gdb]⮳{{hi:GDB}}: Common debugging tools for embedded systems.
 
 ## Flash Programming
 
@@ -103,7 +103,7 @@ Similar PACs exist for most microcontroller families.
 
 ## Other Useful Crates
 
-`nb`: Non-blocking I/O helpers.
+[`nb`][c-nb]⮳{{hi:nb}}: Non-blocking I/O helpers.
 [`defmt`][c-defmt]⮳{{hi:defmt}}: A logging framework designed for embedded systems.
 [`panic-halt`][c-panic_halt]⮳{{hi:panic-halt}}: Halts the microcontroller on panic.
 

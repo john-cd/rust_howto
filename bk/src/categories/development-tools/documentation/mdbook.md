@@ -133,7 +133,7 @@ jobs:
 
 [![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] [![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io] [![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github] [![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Pre-processor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
-`yapp` is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} pre-processor that simply replaces text in chapters. Phrases to be replaced with specified content are defined in plain-text configuration file.
+[`yapp`][c-yapp]⮳{{hi:yapp}} is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} pre-processor that simply replaces text in chapters. Phrases to be replaced with specified content are defined in plain-text configuration file.
 
 ### Create a journal with `mdbook-journal` {#mdbook-journal}
 

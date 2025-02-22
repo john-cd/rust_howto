@@ -57,7 +57,7 @@ For most general-purpose math needs, [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} 
 ## Statistics 2
 
 - [`statrs`][c-statrs]⮳{{hi:statrs}}: A comprehensive statistics library.
-- `rand`: While primarily for random number generation, [`rand`][c-rand]⮳{{hi:rand}} also provides some statistical distributions and functions.
+- [`rand`][c-rand]⮳{{hi:rand}}: While primarily for random number generation, [`rand`][c-rand]⮳{{hi:rand}} also provides some statistical distributions and functions.
 
 ## Numbers
 
@@ -82,7 +82,7 @@ For most general-purpose math needs, [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} 
 
 Link:
 
-- `uom`: A type-safe dimensional analysis library.
+- [`uom`][c-uom]⮳{{hi:uom}}: A type-safe dimensional analysis library.
 
 ## Optimization
 

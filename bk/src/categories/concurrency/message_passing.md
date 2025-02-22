@@ -24,7 +24,7 @@ Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programmi
 {{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel.rs:example}}
 ```
 
-Example using specialized channels for `tickers`{{hi:Tickers}} and [`timeout`][c-reqwest::ClientBuilder::timeout]⮳{{hi:Timeout}}
+Example using specialized channels for [`tickers`][c-tickers]⮳{{hi:tickers}}{{hi:Tickers}} and [`timeout`][c-reqwest::ClientBuilder::timeout]⮳{{hi:Timeout}}
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/tests/message_passing/message_passing_crossbeam_channel_after_tick.rs:example}}

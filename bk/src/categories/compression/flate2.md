@@ -4,7 +4,7 @@
 
 [![flate2][c-flate2-badge]][c-flate2] [![flate2-crates.io][c-flate2-crates.io-badge]][c-flate2-crates.io] [![flate2-github][c-flate2-github-badge]][c-flate2-github] [![flate2-lib.rs][c-flate2-lib.rs-badge]][c-flate2-lib.rs]{{hi:flate2}}{{hi:Encoding}}{{hi:Gzip}}{{hi:Zlib}}{{hi:Deflate}}{{hi:Zlib-ng}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 
-[`flate2`][c-flate2]⮳{{hi:flate2}} provides DEFLATE compression and decompression, exposed as Read/BufRead/Write streams. [`flate2`][c-flate2]⮳{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system `zlib`. Supports zlib, gzip, and raw deflate streams.
+[`flate2`][c-flate2]⮳{{hi:flate2}} provides DEFLATE compression and decompression, exposed as Read/BufRead/Write streams. [`flate2`][c-flate2]⮳{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`][c-zlib]⮳{{hi:zlib}}. Supports zlib, gzip, and raw deflate streams.
 
 Supported formats:
 

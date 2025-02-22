@@ -65,7 +65,7 @@ Additional Data Structures:
 Implementing and using linked lists, deques, binary trees, and other less common but sometimes necessary structures.
 
 Standard Library: `std::collections` (Vec, HashMap, LinkedList, BTreeMap, HashSet, etc.)
-Immutable Data Structures: `im`, `rpds`
+Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}
 Specialized Data Structures:
 Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}
 Trees: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`

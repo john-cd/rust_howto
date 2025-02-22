@@ -38,7 +38,7 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 ## System Profilers (for more in-depth analysis)
 
-`perf` (Linux): A powerful system profiler. cargo flamegraph often uses perf under the hood.
+[`perf`][c-perf]⮳{{hi:perf}} (Linux): A powerful system profiler. cargo flamegraph often uses perf under the hood.
 [`dtrace`][c-dtrace]⮳{{hi:dtrace}} (macOS, BSD): Another system profiler.
 `VTune` (Intel): A commercial profiler.
 

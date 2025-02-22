@@ -16,12 +16,12 @@ The Rust geoscience ecosystem is developing, and while not as mature as Python's
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Geospatial Data Structures | `geo`, `geos`, `wkt` | `geo` provides fundamental geospatial types and algorithms. `geos` offers bindings to the GEOS library for more advanced operations. `wkt` handles Well-Known Text (WKT) parsing and serialization. |
-| Geospatial Data Formats | `gdal`, [`raster`][c-raster]⮳{{hi:raster}}, [`geotiff`][c-geotiff]⮳{{hi:geotiff}} | `gdal` provides bindings to the GDAL library for reading and writing various geospatial raster and vector formats. [`raster`][c-raster]⮳{{hi:raster}} provides a pure Rust alternative for working with raster data. [`geotiff`][c-geotiff]⮳{{hi:geotiff}} specifically focuses on GeoTIFF files. |
-| Coordinate Reference Systems (CRS) & Projections | `proj`, `crs` | `proj` offers bindings to the PROJ library for coordinate transformations. `crs` is a newer crate focused on CRS management in Rust. |
-| Spatial Analysis | (Often built upon `geo` and `geos`) | Many spatial analysis operations can be implemented using the core geospatial crates. |
+| Geospatial Data Structures | `geo`, `geos`, `wkt` | [`geo`][c-geo]⮳{{hi:geo}} provides fundamental geospatial types and algorithms. [`geos`][c-geos]⮳{{hi:geos}} offers bindings to the GEOS library for more advanced operations. [`wkt`][c-wkt]⮳{{hi:wkt}} handles Well-Known Text (WKT) parsing and serialization. |
+| Geospatial Data Formats | `gdal`, [`raster`][c-raster]⮳{{hi:raster}}, [`geotiff`][c-geotiff]⮳{{hi:geotiff}} | [`gdal`][c-gdal]⮳{{hi:gdal}} provides bindings to the GDAL library for reading and writing various geospatial raster and vector formats. [`raster`][c-raster]⮳{{hi:raster}} provides a pure Rust alternative for working with raster data. [`geotiff`][c-geotiff]⮳{{hi:geotiff}} specifically focuses on GeoTIFF files. |
+| Coordinate Reference Systems (CRS) & Projections | `proj`, `crs` | [`proj`][c-proj]⮳{{hi:proj}} offers bindings to the PROJ library for coordinate transformations. `crs` is a newer crate focused on CRS management in Rust. |
+| Spatial Analysis | (Often built upon [`geo`][c-geo]⮳{{hi:geo}} and [`geos`][c-geos]⮳{{hi:geos}}) | Many spatial analysis operations can be implemented using the core geospatial crates. |
 | Geostatistics | (Developing area) | This area is still developing in Rust. Some crates might emerge or be based on numerical computation crates. |
-| Remote Sensing | (Often uses `gdal` or [`raster`][c-raster]⮳{{hi:raster}}) | Remote sensing applications often leverage raster processing capabilities provided by crates like `gdal` or [`raster`][c-raster]⮳{{hi:raster}}. |
+| Remote Sensing | (Often uses `gdal` or [`raster`][c-raster]⮳{{hi:raster}}) | Remote sensing applications often leverage raster processing capabilities provided by crates like [`gdal`][c-gdal]⮳{{hi:gdal}} or [`raster`][c-raster]⮳{{hi:raster}}. |
 | GIS (Geographic Information Systems) | (Developing area) | Full-fledged GIS functionality is still under development. Crates are emerging to address specific aspects. |
 | 3D Geospatial Data | (Developing area) | Work is ongoing in this area. Integration with 3D graphics libraries could be a direction. |
 | Visualization | [`plotters`][c-plotters]⮳{{hi:plotters}}, [`iced`][c-iced]⮳{{hi:iced}} (general purpose) | General-purpose plotting libraries can be used to visualize geospatial data. Specialized geospatial visualization crates are less common. |

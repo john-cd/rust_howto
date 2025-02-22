@@ -66,7 +66,7 @@ Base64:
 
 ## BSON (Binary JSON)
 
-`bson`: For working with BSON, a binary representation of JSON-like documents.
+[`bson`][c-bson]⮳{{hi:bson}}: For working with BSON, a binary representation of JSON-like documents.
 
 ## MessagePack
 

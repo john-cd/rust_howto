@@ -21,7 +21,7 @@ No Standard Library: You don't have access to the standard library ([`std`][c-st
 - Memory Management: You might need to manage memory manually, especially if you need dynamic allocation.
 - Concurrency: If you're working with multiple tasks or interrupts, you'll need to consider concurrency carefully.
 
-When working in `no_std`, you'll almost always use the `core` crate. If you need dynamic allocation, you'll also use the `alloc` crate and provide an allocator. For embedded systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller. Remember to handle panics appropriately. Consider other useful crates like `nb`, [`defmt`][c-defmt]⮳{{hi:defmt}}, and [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} as needed.
+When working in `no_std`, you'll almost always use the `core` crate. If you need dynamic allocation, you'll also use the `alloc` crate and provide an allocator. For embedded systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller. Remember to handle panics appropriately. Consider other useful crates like [`nb`][c-nb]⮳{{hi:nb}}, [`defmt`][c-defmt]⮳{{hi:defmt}}, and [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} as needed.
 
 ## Key Crates
 
@@ -52,7 +52,7 @@ Similar PACs exist for most microcontroller families.
 
 ## Other Useful Crates for `no_std`
 
-- `nb`: Non-blocking I/O helpers.
+- [`nb`][c-nb]⮳{{hi:nb}}: Non-blocking I/O helpers.
 - [`defmt`][c-defmt]⮳{{hi:defmt}}: A logging framework designed for embedded systems.
 - [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}}: A small and efficient allocator for embedded systems or WebAssembly.
 - [`atomic`][c-atomic]⮳{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems.

@@ -45,8 +45,8 @@ This table outlines common web development tasks and relevant Rust crates. The R
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Web Frameworks (Full-Stack) | [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, `axum`, [`rocket`][c-rocket]⮳{{hi:rocket}}, `warp` | These frameworks provide tools for building web applications, including routing, middleware, templating, and more. [`actix-web`][c-actix_web]⮳{{hi:actix-web}} is known for its performance. [`axum`][c-axum]⮳{{hi:axum}} is built on top of [`tower`][c-tower]⮳{{hi:tower}} and [`hyper`][c-hyper]⮳{{hi:hyper}}. [`rocket`][c-rocket]⮳{{hi:rocket}} uses a more declarative approach. [`warp`][c-warp]⮳{{hi:warp}} is a more lightweight framework. |
-| Front-end Frameworks (WASM) | [`yew`][c-yew]⮳{{hi:yew}}, `seed`, [`leptos`][c-leptos]⮳{{hi:leptos}}, [`dominator`][c-dominator]⮳{{hi:dominator}} | These frameworks enable building interactive web UIs with Rust compiled to WebAssembly (WASM). They provide component-based architectures and other tools for structuring front-end applications. |
+| Web Frameworks (Full-Stack) | [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}} | These frameworks provide tools for building web applications, including routing, middleware, templating, and more. [`actix-web`][c-actix_web]⮳{{hi:actix-web}} is known for its performance. [`axum`][c-axum]⮳{{hi:axum}} is built on top of [`tower`][c-tower]⮳{{hi:tower}} and [`hyper`][c-hyper]⮳{{hi:hyper}}. [`rocket`][c-rocket]⮳{{hi:rocket}} uses a more declarative approach. [`warp`][c-warp]⮳{{hi:warp}} is a more lightweight framework. |
+| Front-end Frameworks (WASM) | [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}}, [`dominator`][c-dominator]⮳{{hi:dominator}} | These frameworks enable building interactive web UIs with Rust compiled to WebAssembly (WASM). They provide component-based architectures and other tools for structuring front-end applications. |
 | Asynchronous Programming (Essential for Web) | [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}} | These are asynchronous runtimes that are fundamental for writing efficient and scalable web applications in Rust. |
 | Networking (Low-Level) | `tokio::net`, `std::net` | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
 | HTTP Clients | [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, [`isahc`][c-isahc]⮳{{hi:isahc}} | These crates provide HTTP client functionality for making requests to external services. |
@@ -60,7 +60,7 @@ This table outlines common web development tasks and relevant Rust crates. The R
 | WebSockets | [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`async-tungstenite`][c-async_tungstenite]⮳{{hi:async-tungstenite}} | These crates provide WebSocket support. |
 | GraphQL | [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}} | These crates enable building GraphQL APIs. |
 | REST API Design | (Often uses web frameworks and serialization crates) | REST APIs are typically built using web frameworks and serialization crates. |
-| Static Site Generation (SSG) | [`perseus`][c-perseus]⮳{{hi:perseus}}, `zola` | These tools generate static websites from templates and content. |
+| Static Site Generation (SSG) | [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola]⮳{{hi:zola}} | These tools generate static websites from templates and content. |
 | Testing | (Built-in testing framework, [`reqwest`][c-reqwest]⮳{{hi:reqwest}} for integration testing) | Rust has a built-in testing framework, and [`reqwest`][c-reqwest]⮳{{hi:reqwest}} can be used for integration testing of web services. |
 
 ## Key Considerations
@@ -73,9 +73,9 @@ This table outlines common web development tasks and relevant Rust crates. The R
 ## Choosing the Right Crates
 
 - Full-Stack Web App: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}}
-- Front-end Web App (WASM): [`yew`][c-yew]⮳{{hi:yew}}, `seed`, [`leptos`][c-leptos]⮳{{hi:leptos}}
+- Front-end Web App (WASM): [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}}
 - REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}
 - GraphQL API: [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}
-- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, `zola`
+- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola]⮳{{hi:zola}}
 
 </div>

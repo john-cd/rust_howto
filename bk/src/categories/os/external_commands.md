@@ -76,7 +76,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 [![duct-github][c-duct-github-badge]][c-duct-github]
 [![duct-lib.rs][c-duct-lib.rs-badge]][c-duct-lib.rs]
 
-[`duct`][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. `duct` makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c-duct]⮳{{hi:duct}} helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
+[`duct`][c-duct-github]{{hi:duct}}⮳ is a library for running child processes. [`duct`][c-duct]⮳{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c-duct]⮳{{hi:duct}} helps you write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c-duct-gotchas-github]⮳ are handled for you.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

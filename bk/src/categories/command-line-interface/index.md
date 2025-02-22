@@ -32,7 +32,7 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 
 Argument Parsing: [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}}, [`argh`][c-argh]⮳{{hi:argh}}
 Interactive Prompts: [`dialoguer`][c-dialoguer]⮳{{hi:dialoguer}}, [`console`][c-console]⮳{{hi:console}}
-Progress Bars: [`indicatif`][c-indicatif]⮳{{hi:indicatif}}, `pbr`
+Progress Bars: [`indicatif`][c-indicatif]⮳{{hi:indicatif}}, [`pbr`][c-pbr]⮳{{hi:pbr}}
 Table Formatting: [`prettytable`][c-prettytable]⮳{{hi:prettytable}}, [`term-table`][c-term_table]⮳{{hi:term-table}}
 Color Output: [`ansi_term`][c-ansi_term]⮳{{hi:ansi_term}}, [`owo-colors`][c-owo_colors]⮳{{hi:owo-colors}}
 General CLI Utilities: [`structopt`][c-structopt]⮳{{hi:structopt}}, [`clap`][c-clap]⮳{{hi:clap}} (often handle more than just argument parsing)

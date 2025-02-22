@@ -12,7 +12,7 @@ Bindings to macOS-specific APIs.
 <div class="hidden">
 [ P2 review](https://github.com/john-cd/rust_howto/issues/949)
 
-Most standard Rust code will work on macOS without modification. For macOS-specific features, you'll need to use FFI and potentially the `objc` crate. Be careful with `unsafe` code and consult the Apple documentation. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient.
+Most standard Rust code will work on macOS without modification. For macOS-specific features, you'll need to use FFI and potentially the [`objc`][c-objc]⮳{{hi:objc}} crate. Be careful with `unsafe` code and consult the Apple documentation. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient.
 
 Rust code that adheres to standard practices will generally run well on macOS. However, if you need to interact with macOS-specific features, here's a breakdown:
 
@@ -54,7 +54,7 @@ Rust's FFI allows you to call functions written in other languages (e.g., C, Obj
 
 ## Objective-C Runtime Interaction
 
-- `objc`: A crate for interacting with the Objective-C runtime. This is essential if you need to work with Objective-C objects or frameworks.
+- [`objc`][c-objc]⮳{{hi:objc}}: A crate for interacting with the Objective-C runtime. This is essential if you need to work with Objective-C objects or frameworks.
 
 ## Key Considerations
 

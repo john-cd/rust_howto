@@ -38,7 +38,7 @@ Other Sensors: Cameras, LiDAR, ultrasonic sensors.
 
 - (Sensor-specific crates are common): Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
 - `i2cdev`, [`spidev`][c-spidev]⮳{{hi:spidev}}, [`serialport`][c-serialport]⮳{{hi:serialport}} for low-level hardware communication.
-- `gpsd-client`: For interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
+- [`gpsd-client`][c-gpsd_client]⮳{{hi:gpsd-client}}: For interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
 
 Link to Computer Vision & Image Processing
 

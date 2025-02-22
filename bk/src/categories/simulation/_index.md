@@ -18,7 +18,7 @@ The Rust ecosystem offers several options for building simulations, ranging from
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Game Engines (Adaptable for Simulation) | `bevy`, [`amethyst`][c-amethyst]⮳{{hi:amethyst}}, `wgpu` (lower-level graphics) | Game engines provide a foundation for simulations, especially those with visual components. [`bevy`][c-bevy]⮳{{hi:bevy}} is a popular data-driven game engine. [`amethyst`][c-amethyst]⮳{{hi:amethyst}} is another option. [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a lower-level crate useful if you need fine-grained control over rendering for your simulation. |
+| Game Engines (Adaptable for Simulation) | [`bevy`][c-bevy]⮳{{hi:bevy}}, [`amethyst`][c-amethyst]⮳{{hi:amethyst}}, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (lower-level graphics) | Game engines provide a foundation for simulations, especially those with visual components. [`bevy`][c-bevy]⮳{{hi:bevy}} is a popular data-driven game engine. [`amethyst`][c-amethyst]⮳{{hi:amethyst}} is another option. [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a lower-level crate useful if you need fine-grained control over rendering for your simulation. |
 | Physics Engines | `rapier`, `bevy_rapier` (Bevy integration), [`nphysics`][c-nphysics]⮳{{hi:nphysics}} | `rapier` is a physics engine focused on performance. `bevy_rapier` integrates `rapier` with the [`bevy`][c-bevy]⮳{{hi:bevy}} game engine. [`nphysics`][c-nphysics]⮳{{hi:nphysics}} is another physics engine. |
 | Discrete Event Simulation (DES) | (Developing area) | This area is still developing in pure Rust. General-purpose crates might be used to implement DES logic. |
 | Agent-Based Modeling (ABM) | (Developing area) | Similar to DES, ABM libraries are emerging. General-purpose crates and custom logic are often used. |
