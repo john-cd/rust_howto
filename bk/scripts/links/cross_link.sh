@@ -13,7 +13,7 @@ files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -na
 
 # Search for potential page-to-page cross-links
 
-# Create an array of filenames (base names)
+# Create an array of regex patterns from file names
 # Create an associative array base -> orginal filepath
 patterns=()
 declare -A original_files
@@ -42,10 +42,10 @@ IFS=$'\n' sorted=($(printf '%s\n' "${patterns[@]}" | awk '{ print length($0)" "$
 # sort -r = reverse -n = numeric -u = unique -s = stable
 unset IFS
 
-for value in "${original_files[@]}"
-do
-     echo $value
-done
+# for value in "${original_files[@]}"
+# do
+#      echo $value
+# done
 
 for pattern in "${sorted[@]}"
 do
@@ -64,10 +64,11 @@ do
     fi
     echo ">>> File with pattern: $file_with_pattern"
     with_dash=$( tr ' ' '-' <<< "${pattern}" )
+    # Insert [...][p-<page name>] link
     sed -E -i "s~${start_line}(${pattern})${after}~\1[\2][p-${with_dash}]\3~gI" "${file_with_pattern}" # -n  p
-    # Add reference to proper refs.incl.md
+    # Add reference [p-<page name>]: <file path> to proper `refs.incl.md`
     dir=$(dirname $file_with_pattern)
-    echo ">>>> Original file: ${original_files[$pattern]}"
+    #echo ">>>> Original file: ${original_files[$pattern]}"
     echo "[p-${with_dash}]: $(realpath --relative-to=${dir} ${original_files[$pattern]})" >> "${dir}"'/refs.incl.md'
     sort -u -o "${dir}"'/refs.incl.md' "${dir}"'/refs.incl.md'
   done
