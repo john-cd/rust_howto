@@ -5,8 +5,8 @@
 [ex-network-programming-pingora]: reverse_proxy.md#pingora
 [ex-network-programming-rathole]: reverse_proxy.md#rathole
 [p-asynchronous]: ../asynchronous/index.md
-[p-linux]: ../os_linux-apis/linux.md
+[p-linux]: # "../os_linux-apis/linux.md"
 [p-requests]: ../web-programming_http-client/requests.md
 [p-server]: server.md
 [p-toml]: ../parser-implementations/toml.md
-[p-written-in-rust]: ../../other/written-in-rust/_index.md
+[p-written-in-rust]:  # "../../other/written-in-rust/_index.md"

@@ -11,4 +11,4 @@
 [p-macros]: ../../language/macros.md
 [p-main]: ../../language/main.md
 [p-streams]: ../asynchronous/streams.md
-[p-wasm]: ../wasm/_index.md
+[p-wasm]:  # "../wasm/_index.md"

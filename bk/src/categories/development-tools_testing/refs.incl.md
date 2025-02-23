@@ -13,7 +13,7 @@
 [p-install]: ../development-tools/installation/install.md
 [p-language]: ../../language/index.md
 [p-modules]: ../../language/modules.md
-[p-scripting]: ../../other/scripting/_index.md
+[p-scripting]:  # "../../other/scripting/_index.md"
 [p-search]: ../database/search.md
 [p-testing]: testing.md
 [p-time]: ../date-and-time/time_crate.md

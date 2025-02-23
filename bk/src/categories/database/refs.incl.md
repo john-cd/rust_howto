@@ -32,10 +32,10 @@
 [p-crates]: ../../crates/index.md
 [p-database]: index.md
 [p-databases]: ../database-implementations/databases.md
-[p-email]: ../email/_index.md
-[p-embedded]: ../embedded/_index.md
-[p-graphql]: ../web-programming_http-server/_graphql.md
-[p-ignore]: ../filesystem/_ignore.md
+[p-email]:  # "../email/_index.md"
+[p-embedded]:  # "../embedded/_index.md"
+[p-graphql]:  # "../web-programming_http-server/_graphql.md"
+[p-ignore]:  # "../filesystem/_ignore.md"
 [p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-option]: ../../standard-library/option.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md

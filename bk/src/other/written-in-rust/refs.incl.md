@@ -16,10 +16,10 @@
 [ex-written-in-rust-television]: other_tools.md#television
 [ex-written-in-rust-uv]: python_tools.md#uv
 [ex-written-in-rust-zed]: development_tools.md#zed
-[p-cross-platform]: ../cross-platform/_index.md
-[p-embedded]: ../../categories/embedded/_index.md
+[p-cross-platform]:  # "../cross-platform/_index.md"
+[p-embedded]:  # "../../categories/embedded/_index.md"
 [p-filesystem]: ../../categories/filesystem/index.md
-[p-gui]: ../../categories/gui/_index.md
+[p-gui]:  # "../../categories/gui/_index.md"
 [p-language]: ../../language/index.md
-[p-scripting]: ../scripting/_index.md
+[p-scripting]:  # "../scripting/_index.md"
 [p-written-in-rust]: _index.md
