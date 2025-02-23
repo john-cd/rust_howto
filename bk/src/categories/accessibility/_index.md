@@ -13,7 +13,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 
 <div class="hidden">
 
-- Configure clippy for better accessibility.
+- Configure `clippy` for better accessibility.
 
 - Core & Tooling:
   - WCAG Basics: Essential links and level explanations.
@@ -32,8 +32,8 @@ Assistive technology that helps overcome disabilities and impairments to make so
   - Accessibility Testing Checklist: Manual and automated tests.
   - Custom Accessible Components (GUI): Focus, keyboard, ARIA.
 
-- Link to CLI: termcolor (terminal styling), crossterm (terminal manipulation).
+- Link to CLI: `termcolor` (terminal styling), `crossterm` (terminal manipulation).
 - Link to GUI: GUI crate itself (e.g., [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}}).
-- Link to: serde (data handling), log/tracing (logging).
+- Link to `serde` (data handling), `log`/`tracing` (logging).
 
 </div>
