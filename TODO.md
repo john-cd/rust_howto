@@ -1,5 +1,38 @@
 # TODOs
 
+## Upgrade to 1.85
+
+## Finish pandoc setup; generate PDF version of book
+
+## Add text
+
+- language
+- standard library
+- links
+- other
+- crates
+- contributing
+
+---
+
+## Finish preproc directives in mdbook-scrub: wikilinks, etc
+
+## Replace cross-links by wikilinks??
+
+## Insert category links -
+
+---
+
+## Refresh crate alpha and crate by category indices
+
+---
+
+## Move mdbook-utils repo
+
+---
+
+## Setup bacon
+
 ---
 
 ## Add git hooks to automate formatting / clippy check / fix before commit
