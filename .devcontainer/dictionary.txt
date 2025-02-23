@@ -2614,3 +2614,5 @@ zola
 zoxide
 zstd
 zurich
+argmin
+lucet
