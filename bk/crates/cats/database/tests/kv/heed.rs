@@ -26,7 +26,7 @@ fn main() -> anyhow::Result<()> {
         env.create_database(&mut wtxn, None)?;
 
     // Write data to the database
-    db.put(&mut wtxn, &1, &"Hello, world!")?;
+    db.put(&mut wtxn, &1, "Hello, world!")?;
     wtxn.commit()?;
 
     // Open a read transaction
