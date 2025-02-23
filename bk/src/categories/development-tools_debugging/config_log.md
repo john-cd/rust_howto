@@ -86,17 +86,18 @@ Logging Framework: [log][p-log] (provides the logging [macros][p-macros] and fac
 
 Log Implementations (Loggers):
 
-env_logger: A popular logger that configures logging based on environment variables.
-log4rs: A more flexible logger that supports [configuration][p-configuration] files (YAML, TOML, JSON).
-tracing: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for [formatting][p-formatting] and output.
+`env_logger`: A popular logger that configures logging based on environment variables.
+`log4rs`: A more flexible logger that supports [configuration][p-configuration] files (YAML, TOML, JSON).
+`tracing`: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for [formatting][p-formatting] and output.
+
 Log [Formatting][p-formatting]:
 
-tracing-subscriber: Used with [tracing][p-tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
+`tracing-subscriber`: Used with [tracing][p-tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
 Configuration Files (for loggers like [log][p-log]4rs):
 
-serde: (Not a logging crate itself, but necessary for deserializing [configuration][p-configuration] files in formats like YAML, TOML, or JSON)
-yaml-rust, serde_yaml, toml, serde_json: (Crates for [parsing][p-parsing] the respective [configuration][p-configuration] file formats)
+`serde`: (Not a logging crate itself, but necessary for deserializing [configuration][p-configuration] files in formats like YAML, TOML, or JSON)
+yaml-rust, serde_yml, toml, serde_json: (Crates for [parsing][p-parsing] the respective [configuration][p-configuration] file formats)
 Other Utilities:
 
-log-panics: Logs panics with backtraces.
+`log-panics`: Logs panics with backtraces.
 </div>

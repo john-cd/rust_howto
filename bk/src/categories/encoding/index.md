@@ -58,23 +58,23 @@ Base64:
 
 ## TOML (Tom's Obvious, Minimal Language)
 
-[`toml`][c-toml]⮳{{hi:toml}}: For working with TOML files.
+[`toml`][c-toml]⮳{{hi:toml}} for working with TOML files.
 
 ## YAML (YAML Ain't Markup Language)
 
-[`serde_yaml`][c-serde_yaml]⮳{{hi:serde_yaml}}: For YAML serialization and deserialization. Uses serde.
+[`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} for YAML serialization and deserialization. Uses `serde`.
 
 ## BSON (Binary JSON)
 
-[`bson`][c-bson]⮳{{hi:bson}}: For working with BSON, a binary representation of JSON-like documents.
+[`bson`][c-bson]⮳{{hi:bson}} for working with BSON, a binary representation of JSON-like documents.
 
 ## MessagePack
 
-[`rmp-serde`][c-rmp_serde]⮳{{hi:rmp-serde}} : For MessagePack serialization and deserialization.
+[`rmp-serde`][c-rmp_serde]⮳{{hi:rmp-serde}} for MessagePack serialization and deserialization.
 
 ## CBOR (Concise Binary Object Representation)
 
-[`serde_cbor`][c-serde_cbor]⮳{{hi:serde_cbor}}: For CBOR encoding and decoding.
+[`serde_cbor`][c-serde_cbor]⮳{{hi:serde_cbor}} for CBOR encoding and decoding.
 
 ## XML
 
@@ -90,5 +90,6 @@ Base64:
 
 [`serde`][c-serde]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
 
-It's important to choose the right encoding crate for the job. For general character encoding, encoding is a good choice. For JSON, serde_json is the standard. For other formats, look for crates that support them specifically. serde is the underlying engine for many of these, providing a consistent way to work with serialization.
+For general character encoding, encoding is a good choice. For JSON, serde_json is the standard. For other formats, look for crates that support them specifically. `serde` is the underlying engine for many of these, providing a consistent way to work with serialization.
+
 </div>

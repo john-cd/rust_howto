@@ -83,7 +83,7 @@ Shared solutions for particular situations specific to programming in Rust.
 | Unsafe Code | | A language feature use with extreme care!. |
 | FFI Foreign Function Interface| | A language feature. |
 | Parsing | [`nom`][c-nom]⮳{{hi:nom}}, [`pest`][c-pest]⮳{{hi:pest}}, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} | These crates are useful for parsing various input formats. |
-| Serialization Serde | [`serde`][c-serde]⮳{{hi:serde}}, [`serde_json`][c-serde_json]⮳{{hi:serde_json}}, [`serde_yaml`][c-serde_yaml]⮳{{hi:serde_yaml}}, [`toml`][c-toml]⮳{{hi:toml}} | [`serde`][c-serde]⮳{{hi:serde}} is a powerful framework for serialization and deserialization. |
+| Serialization Serde | [`serde`][c-serde]⮳{{hi:serde}}, [`serde_json`][c-serde_json]⮳{{hi:serde_json}}, [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`toml`][c-toml]⮳{{hi:toml}} | [`serde`][c-serde]⮳{{hi:serde}} is a powerful framework for serialization and deserialization. |
 | CLI Argument Parsing | [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}} | These crates help with parsing command-line arguments. |
 | Logging | [`log`][c-log]⮳{{hi:log}}, [`env_logger`][c-env_logger]⮳{{hi:env_logger}}, [`tracing`][c-tracing]⮳{{hi:tracing}} | [`log`][c-log]⮳{{hi:log}} is a logging facade, and [`env_logger`][c-env_logger]⮳{{hi:env_logger}} and [`tracing`][c-tracing]⮳{{hi:tracing}} are logging implementations. |
 | Testing | Built-in - no specific crates | Rust has built-in support for unit and integration testing. Crates like [`rstest`][c-rstest]⮳{{hi:rstest}} can help with testing. |

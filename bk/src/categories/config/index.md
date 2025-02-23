@@ -21,7 +21,7 @@ TODO P1 link:
 Configuration File Formats:
 
 TOML: [`toml`][c-toml]⮳{{hi:toml}}
-YAML: [`serde_yaml`][c-serde_yaml]⮳{{hi:serde_yaml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
+YAML: [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
 JSON: [`serde_json`][c-serde_json]⮳{{hi:serde_json}}
 INI: [`ini`][c-ini]⮳{{hi:ini}}
 
