@@ -164,9 +164,13 @@
   - [Data engineering](other/data-processing/data_engineering.md)
 
 - [Data structures](categories/data-structures/index.md)
-  - [Stacks and queues](categories/data-structures/stack_and_queue.md)
-  - [Bitfields](categories/data-structures/bitfield.md)
   - [Maps](categories/data-structures/maps.md)
+  - [B-trees](categories/data-structures/btrees.md)
+  - [Stacks and queues](categories/data-structures/stack_and_queue.md)
+  - [Binary Heaps](categories/data-structures/binaryheap.md)
+  - [Linked lists](categories/data-structures/linkedlist.md)
+  - [Bitfields](categories/data-structures/bitfield.md)
+  - [Heapless data structures](categories/data-structures/heapless.md)
   - [Stack-allocated arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
 
@@ -386,11 +390,14 @@
   - [Windows](categories/os_windows-apis/windows.md)
 
 - [Parser implementations](categories/parser-implementations/index.md)
-  - [Parser implementations](categories/parser-implementations/parser_implementations.md)
+  - [HTML](categories/parser-implementations/html.md)
+  - [INI](categories/parser-implementations/ini.md)
   - [JSON](categories/parser-implementations/json.md)
   - [Markdown](categories/parser-implementations/markdown.md)
   - [TOML](categories/parser-implementations/toml.md)
   - [XML](categories/parser-implementations/xml.md)
+  - [YAML](categories/parser-implementations/yaml.md)
+  - [Programming languages](categories/parser-implementations/programming_languages.md)
 
 - [Parsing](categories/parsing/_index.md)
   - [Parsing](categories/parsing/parsing.md)

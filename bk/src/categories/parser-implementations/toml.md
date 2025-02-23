@@ -2,6 +2,8 @@
 
 {{#include toml.incl.md}}
 
+[`toml`][c-toml]⮳{{hi:toml}} is the primary crate.
+
 ## `toml` {#toml}
 
 [![toml][c-toml-badge]][c-toml] [![toml-crates.io][c-toml-crates.io-badge]][c-toml-crates.io] [![toml-github][c-toml-github-badge]][c-toml-github] [![toml-lib.rs][c-toml-lib.rs-badge]][c-toml-lib.rs]{{hi:toml}}{{hi:Encoding}}{{hi:toml}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}

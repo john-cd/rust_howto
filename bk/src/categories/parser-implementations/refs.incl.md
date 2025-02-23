@@ -1,6 +1,6 @@
 [ex-parser-implementations-basic-toml]: toml.md#basic-toml
 [ex-parser-implementations-comrak]: markdown.md#comrak
-[ex-parser-implementations-javascript]: parser_implementations.md#javascript
+[ex-parser-implementations-javascript]: programming_languages.md#javascript_parsing
 [ex-parser-implementations-json5]: json.md#json5
 [ex-parser-implementations-markdown]: markdown.md#markdown
 [ex-parser-implementations-pulldown-cmark]: markdown.md#pulldown-cmark

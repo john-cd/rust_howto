@@ -594,7 +594,7 @@
 [ex-other-shuttle-rs]: categories/development-tools/other/other.md#shuttle-rs
 [ex-parser-implementations-basic-toml]: categories/parser-implementations/toml.md#basic-toml
 [ex-parser-implementations-comrak]: categories/parser-implementations/markdown.md#comrak
-[ex-parser-implementations-javascript]: categories/parser-implementations/parser_implementations.md#javascript
+[ex-parser-implementations-javascript]: categories/parser-implementations/programming_languages.md#javascript
 [ex-parser-implementations-json5]: categories/parser-implementations/json.md#json5
 [ex-parser-implementations-markdown]: categories/parser-implementations/markdown.md#markdown
 [ex-parser-implementations-pulldown-cmark]: categories/parser-implementations/markdown.md#pulldown-cmark
