@@ -82,7 +82,7 @@ alias d := doc
 
 @release: clippy nextest buildbook
   echo "Build the pre-processor in $(pwd) in release mode and copy to {{root}}/../bin"
-  cargo build --bins --locked --release -Z unstable-options --artifact-dir "{{root}}/../bin"
+  cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "{{root}}/../bin"
 
 ## Utilities --------------------------------------
 

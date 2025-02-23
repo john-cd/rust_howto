@@ -124,8 +124,8 @@ RUN <<EOF
 
     # ------------------------------
     ## Technically the following section is only required for development
-    ## but we want to cache these layers before `rustup nightly`,
-    ## which changes very often.
+    ## but we want to cache these layers before `rustup nightly`
+    ## which changes very often (if we do install it).
 
     ## Install `just` (from the binary release)
     ## Install cargo plugins
@@ -141,11 +141,11 @@ EOF
 ## Installed second to last, because the tool is still in development
 RUN cargo install --locked mdbook-utils
 
-## Install nightly fmt - last, since it changes very often
-## Rust edition 2024 preparation: make the `nightly` toolchain the default until release of Rust 1.85
+## Install nightly - last, since it changes very often
 RUN rustup toolchain install nightly \
-    && rustup component add rustfmt clippy --toolchain nightly \
-    && rustup default nightly
+    && rustup component add rustfmt clippy --toolchain nightly
+# Optional: make nightly the default
+#     && rustup default nightly
 
 WORKDIR /code
 
