@@ -8,17 +8,11 @@ _default:
 
 ## ---- CHAPTER MANAGEMENT -----------------------------------
 
-# List chapters (pages) in Wikilink format
+# List, in Wikilink format, chapters (pages) containing a keyword (or list all if none provided).
 [unix]
-list:
-  #! /usr/bin/env bash
-  files=$( find {{root}}/src -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
-  for file in ${files}
-  do
-    base=$(echo "$file" | sed -E 's/[_]?index.md$//' | xargs basename -s ".md")
-    clean=$(echo "${base}" | tr '_-' ' ' | sed -E 's/\w+/\u&/g; s/\b(api|uav|orm)(.?)\b/\U\1\E\2/gI; s/\b(aead|amqp|aws|cd|ci|cli|cow|csv|ffi|gtk|http|html|hmac|ini|json|lru|mime|miri|mssql|os|toml|tls|tui|ui|url|uuid|xml|yaml|gui|wasm|2d)\b/\U&/I; s/\b(in|of|and|for)\b/\L&/gI' )
-    echo "[[${base} | ${clean}]]"
-  done | sort -u
+@list keyword='':
+  ./list_chapters.sh {{root}} {{keyword}}
+
 
 # Hides some markdown sections/ pages by adding a _ prefix to all filenames listed in `hiddenfiles.txt`
 [confirm]
