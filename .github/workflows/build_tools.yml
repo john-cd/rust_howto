@@ -59,10 +59,13 @@ jobs:
     - name: Install just
       run: cargo binstall --no-confirm just
 
-    - name: Install nightly Rust
+    - name: Update Rust; Install nightly Rust
       run: |
+        rustup update stable
+        rustup default stable
         rustup toolchain install nightly
         rustup component add rustfmt --toolchain nightly
+        rustup show
 
     - name: Check the format
       run: just fa
