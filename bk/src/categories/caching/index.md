@@ -37,4 +37,8 @@ Store the results of previous computations in order to reuse the results.
 [[file_watching | File Watching]]
 [[watching_for_changes | Watching for Changes]]
 
+web page caching [[web-programming | Web Programming]] [[web-programming_http-server | Web Programming HTTP Server]]
+
+database query caching
+
 </div>

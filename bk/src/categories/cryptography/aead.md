@@ -50,4 +50,8 @@ For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 
 <div class="hidden">
 TODO P1 write
+
+[[encryption | Encryption]]
+[[hashing | Hashing]]
+
 </div>

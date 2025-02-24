@@ -61,4 +61,8 @@ It allows multiple threads to concurrently read and write to the map with minima
 
 <div class="hidden">
 [concurrent_data_structures: finish (P1)](https://github.com/john-cd/rust_howto/issues/258)
+
+[[async | Async]]
+[[async_channels | Async Channels]]
+
 </div>

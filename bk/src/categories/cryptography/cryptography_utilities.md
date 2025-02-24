@@ -33,4 +33,7 @@ The [`subtle`][c-subtle]⮳{{hi:subtle}} crate is a low-level library and doesn'
 
 <div class="hidden">
 TODO P2 write
+
+[[memory-management | Memory Management]]
+
 </div>
