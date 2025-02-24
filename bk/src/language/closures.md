@@ -48,4 +48,12 @@ Functions may also be used as arguments.
 <div class="hidden">
 [closures: edit (P1)](https://github.com/john-cd/rust_howto/issues/539)
 
+## See also
+
+[[functions | Functions]]
+
+[[rust-patterns | Rust Patterns]]
+
+[[functional_programming | Functional Programming]]
+
 </div>

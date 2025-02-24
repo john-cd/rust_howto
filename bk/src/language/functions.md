@@ -40,4 +40,9 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 <div class="hidden">
 [functions: add desc (P1)](https://github.com/john-cd/rust_howto/issues/543)
 
+## See also
+
+[[closures | Closures]]
+
+[[rust-patterns | Rust Patterns]]
 </div>

@@ -75,4 +75,9 @@ See [Automatic derivation][p-automatic-derivation].
 <div class="hidden">
 [P1 review](https://github.com/john-cd/rust_howto/issues/985)
 
+[[derive | Derive]]
+
+[[rust-patterns | Rust Patterns]]
+
+[[testing | Testing]]
 </div>

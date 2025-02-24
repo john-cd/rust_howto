@@ -16,4 +16,16 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 <div class="hidden">
 [enums: edit (P1)](https://github.com/john-cd/rust_howto/issues/542)
 
+## See also
+
+[[option | Option]]
+[[result | Result]]
+
+[[simple_data_types | Simple Data Types]]
+[[structs | Structs]]
+
+[[rust-patterns | Rust Patterns]]
+[[match | Match]]
+
+[[functional_programming | Functional Programming]]
 </div>

@@ -36,4 +36,10 @@ Also `else if <cond> { ... }`
 <div class="hidden">
 [control_flow: add description (P1)](https://github.com/john-cd/rust_howto/issues/541)
 
+## See also
+
+[[match | Match]]
+
+[[rust-patterns | Rust Patterns]]
+
 </div>
