@@ -25,6 +25,16 @@ Several Rust crates cater to various aspects of computer vision. Here's a breakd
 - `candle`: This crate provides a minimal and efficient tensor library for machine learning, often used in computer vision applications.
 - [`fast-image-resize`][c-fast_image_resize]⮳{{hi:fast-image-resize}}: This crate provides a fast image resizing implementation, which can be useful when performance is critical.
 
-For general-purpose computer vision, the [`opencv`][c-opencv]⮳{{hi:opencv}} crate is often a good starting point. For image I/O and manipulation, image and imageproc are essential. For more specialized tasks or when a pure Rust implementation is desired, other crates like rust-cv, vision, or machine learning-focused crates like tch, tract, or candle might be more appropriate.
+For general-purpose computer vision, the [`opencv`][c-opencv]⮳{{hi:opencv}} crate is often a good starting point. For image I/O and manipulation, image and imageproc are essential. For more specialized tasks or when a pure Rust implementation is desired, other crates like `rust-cv`, `vision`, or machine learning-focused crates like `tch`, `tract`, or `candle` might be more appropriate.
 
+[[mathematics | Mathematics]]
+[[linear_algebra | Linear Algebra]]
+
+[[_machine_learning |  Machine Learning]]
+
+[[multimedia | Multimedia]]
+[[multimedia_images | Multimedia Images]]
+[[multimedia_video | Multimedia Video]]
+
+[[science_robotics | Science Robotics]]
 </div>

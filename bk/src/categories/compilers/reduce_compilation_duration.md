@@ -100,5 +100,11 @@ Code Generation: (Avoid excessive monomorphization, consider techniques like dyn
 [[development-tools | Development Tools]]
 [[development-tools_build-utils | Development Tools Build Utils]]
 [[development-tools_cargo-plugins | Development Tools Cargo Plugins]]
+[[development-tools_profiling | Development Tools Profiling]]
+[[build_utils | Build Utils]]
 
+[[benchmarking | Benchmarking]]
+[[performance | Performance]]
+
+[[faster_linking | Faster Linking]]
 </div>

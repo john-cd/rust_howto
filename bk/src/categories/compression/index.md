@@ -28,4 +28,7 @@ Link to:
 
 Data Serialization (often used with compression): [`serde`][c-serde]⮳{{hi:serde}} (not a compression crate, but crucial for preparing data for compression)
 
+[[complex_encoding | Complex Encoding]]
+[[serde | Serde]]
+
 </div>

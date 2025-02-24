@@ -19,7 +19,7 @@
 - Machine Learning: Integrating [machine learning][p-machine-learning] algorithms for tasks like image classification, pattern recognition, and more.
 - 3D Vision: Working with depth cameras, stereo vision, and 3D reconstruction.
 
-OpenCV is written in C++ but offers interfaces for other languages, including Rust. It's [cross-platform][p-cross-platform], running on various operating systems (Windows, Linux, macOS, Android, iOS), and is used in a wide range of applications, including:
+OpenCV is written in C++ but offers interfaces for other languages, including Rust. It is [cross-platform][p-cross-platform], running on various operating systems (Windows, Linux, macOS, Android, iOS), and is used in a wide range of applications, including:
 
 - Computer Vision Research: Providing a standard platform for implementing and [testing][p-testing] computer vision algorithms.
 - Industrial Automation: Enabling tasks like quality control, object recognition, and robotic vision.
@@ -39,4 +39,16 @@ The [`opencv`][c-opencv]⮳{{hi:opencv}} Rust crate provides bindings to OpenCV.
 <div class="hidden">
 [opencv: expand, add example (P2)](https://github.com/john-cd/rust_howto/issues/257)
 
+[[algorithms | Algorithms]]
+
+[[mathematics | Mathematics]]
+[[linear_algebra | Linear Algebra]]
+
+[[_machine_learning |  Machine Learning]]
+
+[[multimedia | Multimedia]]
+[[multimedia_images | Multimedia Images]]
+[[multimedia_video | Multimedia Video]]
+
+[[science_robotics | Science Robotics]]
 </div>

@@ -28,4 +28,6 @@ The flate2 crate in Rust provides bindings to the zlib, zlib-ng, and minizlib co
 
 https://crates.io/crates/flate2
 
+[[filesystem | Filesystem]]
+[[compression | Compression]]
 </div>

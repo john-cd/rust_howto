@@ -88,4 +88,14 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 [_actors: organize (P2)](https://github.com/john-cd/rust_howto/issues/269)
 
 TODO P2 add [ractor blog](https://slawlor.github.io/ractor/)
+
+[[message_passing | Message Passing]]
+
+[[network-programming | Network Programming]]
+
+[[_actix | Actix]]
+[[web-programming | Web Programming]]
+[[web-programming_http-server | Web Programming HTTP Server]]
+
+[[concurrency | Concurrency]]
 </div>
