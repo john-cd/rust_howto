@@ -8,4 +8,4 @@
 [p-linux]: # "../os_linux-apis/linux.md"
 [p-macos]: ../os_macos-apis/macos.md
 [p-windows]: ../os_windows-apis/windows.md
-[p-written-in-rust]:  # "../../other/written-in-rust/_index.md"
+[p-written-in-rust]: # "../../other/written-in-rust/_index.md"

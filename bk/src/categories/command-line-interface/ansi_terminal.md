@@ -81,13 +81,13 @@ Most popular
 
 [![anstream-website][c-anstream-website-badge]][c-anstream-website] [![anstream][c-anstream-badge]][c-anstream] [![anstream-crates.io][c-anstream-crates.io-badge]][c-anstream-crates.io] [![anstream-github][c-anstream-github-badge]][c-anstream-github] [![anstream-lib.rs][c-anstream-lib.rs-badge]][c-anstream-lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
-[`anstream`][c-anstream] is a cross-platform library for writing colored text to a terminal. It offers a streaming API for composing and writing styled ANSI output to terminals. It facilitates efficient construction of complex styled strings via chaining, minimizing allocations and optimizing write operations. [`anstream`][c-anstream]⮳{{hi:anstream}}  supports configurable output destinations (stdout, stderr, or custom writers) and guarantees correct ANSI escape code handling for cross-platform compatibility.
+[`anstream`][c-anstream] is a cross-platform library for writing colored text to a terminal. It offers a streaming API for composing and writing styled ANSI output to terminals. It facilitates efficient construction of complex styled strings via chaining, minimizing allocations and optimizing write operations. [`anstream`][c-anstream]⮳{{hi:anstream}} supports configurable output destinations (stdout, stderr, or custom writers) and guarantees correct ANSI escape code handling for cross-platform compatibility.
 
 ## `nu-ansi-term` {#nu-ansi-term}
 
 [![nu-ansi-term][c-nu_ansi_term-badge]][c-nu_ansi_term] [![nu-ansi-term-crates.io][c-nu_ansi_term-crates.io-badge]][c-nu_ansi_term-crates.io] [![nu-ansi-term-github][c-nu_ansi_term-github-badge]][c-nu_ansi_term-github] [![nu-ansi-term-lib.rs][c-nu_ansi_term-lib.rs-badge]][c-nu_ansi_term-lib.rs]{{hi:nu-ansi-term}}
 
-[`nu-ansi-term`][c-nu_ansi_term] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c-nu_ansi_term]⮳{{hi:nu-ansi-term}}  provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][c-nushell]⮳{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
+[`nu-ansi-term`][c-nu_ansi_term] is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c-nu_ansi_term]⮳{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][c-nushell]⮳{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
 
 ## `ansiterm` {#ansiterm}
 
@@ -99,7 +99,7 @@ Most popular
 
 [![console][c-console-badge]][c-console] [![console-crates.io][c-console-crates.io-badge]][c-console-crates.io] [![console-github][c-console-github-badge]][c-console-github] [![console-lib.rs][c-console-lib.rs-badge]][c-console-lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
 
-[`console`][c-console] is a terminal and console abstraction for Rust. The [`console`][c-console]⮳{{hi:console}}  crate provides a comprehensive set of tools for building interactive console applications. It offers features such as styled text output with ANSI escape code support, progress bar rendering, user input handling (including password prompting and line editing), and terminal manipulation. console aims to simplify the development of rich command-line interfaces by abstracting away platform-specific terminal complexities and providing a consistent API for common console interactions.
+[`console`][c-console] is a terminal and console abstraction for Rust. The [`console`][c-console]⮳{{hi:console}} crate provides a comprehensive set of tools for building interactive console applications. It offers features such as styled text output with ANSI escape code support, progress bar rendering, user input handling (including password prompting and line editing), and terminal manipulation. console aims to simplify the development of rich command-line interfaces by abstracting away platform-specific terminal complexities and providing a consistent API for common console interactions.
 
 ## `owo-colors` {#owo-colors}
 

@@ -28,22 +28,22 @@ Rust Crates and Approaches:
 
 Physics Engines:
 
- (Limited mature physics engines in pure Rust): This is a challenging area. Many robust physics engines are written in C/C++.
-  `rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-  `bevy_rapier`: Integration between rapier and the bevy game engine.
+(Limited mature physics engines in pure Rust): This is a challenging area. Many robust physics engines are written in C/C++.
+`rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
+`bevy_rapier`: Integration between rapier and the bevy game engine.
 
 FFI (Foreign Function Interface): For more advanced aerospace simulations, you'll likely need to use FFI to interact with existing C/C++ physics engines like:
-  `Bullet`: A popular open-source physics engine.
-  `ODE` (Open Dynamics Engine): Another open-source option.
-  `Simbody`: A high-performance library for multibody dynamics (often used in robotics and aerospace).
+`Bullet`: A popular open-source physics engine.
+`ODE` (Open Dynamics Engine): Another open-source option.
+`Simbody`: A high-performance library for multibody dynamics (often used in robotics and aerospace).
 
 Linear Algebra:
 
- `nalgebra`: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
- `ndarray`: Another good option for numerical array operations.
+`nalgebra`: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
+`ndarray`: Another good option for numerical array operations.
 
 Link to Visualization:
 
-  [`bevy`][c-bevy]⮳{{hi:bevy}}: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
-  [`plotters`][c-plotters]⮳{{hi:plotters}}: For creating plots and charts of simulation data.
+[`bevy`][c-bevy]⮳{{hi:bevy}}: A data-driven game engine that might be suitable for 3D visualization of aerospace simulations.
+[`plotters`][c-plotters]⮳{{hi:plotters}}: For creating plots and charts of simulation data.
 </div>

@@ -9,9 +9,9 @@
 [ex-other-shuttle-rs]: other.md#shuttle-rs
 [p-cargo]: ../cargo/cargo.md
 [p-concurrency]: ../../concurrency/index.md
-[p-cross-platform]:  # "../../../other/cross-platform/_index.md"
+[p-cross-platform]: # "../../../other/cross-platform/_index.md"
 [p-download]: ../../web-programming_http-client/download.md
-[p-embedded]:  # "../../embedded/_index.md"
+[p-embedded]: # "../../embedded/_index.md"
 [p-functions]: ../../../language/functions.md
 [p-fuzzing]: ../../development-tools_testing/fuzzing.md
 [p-linux]: # "../../os_linux-apis/linux.md"

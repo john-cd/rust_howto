@@ -101,7 +101,7 @@
 [ex-compression-decompress-a-tarball-removing-prefix]: categories/compression/tar.md#decompress-a-tarball-removing-prefix
 [ex-compression-decompress-a-tarball]: categories/compression/tar.md#decompress-a-tarball
 [ex-computer-vision-opencv]: categories/computer-vision/opencv.md#opencv
-[ex-concurrency-actix]:  # "categories/concurrency/_actors.md#actix"
+[ex-concurrency-actix]: # "categories/concurrency/_actors.md#actix"
 [ex-concurrency-any-or-all-in-parallel]: categories/concurrency/data_parallelism.md#any-or-all-in-parallel
 [ex-concurrency-arc-swap]: categories/concurrency/shared_state.md#arc-swap
 [ex-concurrency-atomics]: categories/concurrency/shared_state.md#atomics
@@ -125,9 +125,9 @@
 [ex-concurrency-parallel-sorting]: categories/concurrency/data_parallelism.md#parallel-sorting
 [ex-concurrency-parking-lot]: categories/concurrency/shared_state.md#parking-lot
 [ex-concurrency-pass-data-between-two-threads]: categories/concurrency/crossbeam.md#pass-data-between-two-threads
-[ex-concurrency-ractor]:  # "categories/concurrency/_actors.md#ractor"
+[ex-concurrency-ractor]: # "categories/concurrency/_actors.md#ractor"
 [ex-concurrency-rayon]: categories/concurrency/data_parallelism.md#rayon
-[ex-concurrency-riker]:  # "categories/concurrency/_actors.md#riker"
+[ex-concurrency-riker]: # "categories/concurrency/_actors.md#riker"
 [ex-concurrency-scoped-threads]: categories/concurrency/explicit_threads.md#scoped-threads
 [ex-concurrency-search-in-parallel]: categories/concurrency/data_parallelism.md#search-in-parallel
 [ex-concurrency-send-sync]: categories/concurrency/send_sync.md#send-sync
@@ -135,7 +135,7 @@
 [ex-concurrency-sort-in-parallel]: categories/concurrency/data_parallelism.md#sort-in-parallel
 [ex-concurrency-spawn-a-short-lived-thread]: categories/concurrency/crossbeam.md#spawn-a-short-lived-thread
 [ex-concurrency-spawn-join]: categories/concurrency/explicit_threads.md#spawn-join
-[ex-concurrency-stakker]:  # "categories/concurrency/_actors.md#stakker"
+[ex-concurrency-stakker]: # "categories/concurrency/_actors.md#stakker"
 [ex-concurrency-thumbnails-in-parallel]: categories/concurrency/data_parallelism.md#thumbnails-in-parallel
 [ex-config-config]: categories/config/configuration.md#config
 [ex-config-confy]: categories/config/configuration.md#confy
@@ -361,24 +361,24 @@
 [ex-embedded-embassy]: categories/embedded/embassy.md#embassy
 [ex-emulators-emulators]: categories/emulators/emulators.md#emulators
 [ex-encoding-base64]: categories/encoding/string_encoding.md#base64
-[ex-encoding-bincode]:  # "categories/encoding/_binary_encoders.md#bincode"
+[ex-encoding-bincode]: # "categories/encoding/_binary_encoders.md#bincode"
 [ex-encoding-bytemuck]: categories/encoding/typecasts.md#bytemuck
 [ex-encoding-byteorder]: categories/encoding/complex_encoding.md#byteorder
-[ex-encoding-capnp]:  # "categories/encoding/_binary_encoders.md#capnp"
-[ex-encoding-ciborium]:  # "categories/encoding/_binary_encoders.md#ciborium"
+[ex-encoding-capnp]: # "categories/encoding/_binary_encoders.md#capnp"
+[ex-encoding-ciborium]: # "categories/encoding/_binary_encoders.md#ciborium"
 [ex-encoding-data-encoding]: categories/encoding/string_encoding.md#data-encoding
 [ex-encoding-filter-csv]: categories/encoding/csv.md#filter-csv
-[ex-encoding-flatbuffers]:  # "categories/encoding/_binary_encoders.md#flatbuffers"
+[ex-encoding-flatbuffers]: # "categories/encoding/_binary_encoders.md#flatbuffers"
 [ex-encoding-handle-invalid-csv]: categories/encoding/csv.md#handle-invalid-csv
 [ex-encoding-monostate]: categories/encoding/serde.md#monostate
 [ex-encoding-percent-encoding]: categories/encoding/string_encoding.md#percent-encoding
 [ex-encoding-postcard]: categories/encoding/no_external_schema.md#postcard
-[ex-encoding-prost]:  # "categories/encoding/_binary_encoders.md#prost"
-[ex-encoding-protobuf]:  # "categories/encoding/_binary_encoders.md#protobuf"
+[ex-encoding-prost]: # "categories/encoding/_binary_encoders.md#prost"
+[ex-encoding-protobuf]: # "categories/encoding/_binary_encoders.md#protobuf"
 [ex-encoding-read-csv-different-delimiter]: categories/encoding/csv.md#read-csv-different-delimiter
 [ex-encoding-read-csv-records]: categories/encoding/csv.md#read-csv-records
 [ex-encoding-rkyv]: categories/encoding/no_external_schema.md#rkyv
-[ex-encoding-rmp-serde]:  # "categories/encoding/_binary_encoders.md#rmp-serde"
+[ex-encoding-rmp-serde]: # "categories/encoding/_binary_encoders.md#rmp-serde"
 [ex-encoding-serde-ignored]: categories/encoding/serde.md#serde-ignored
 [ex-encoding-serde-json2]: categories/encoding/serde.md#serde-json2
 [ex-encoding-serde-json]: categories/encoding/complex_encoding.md#serde-json
@@ -408,7 +408,7 @@
 [ex-filesystem-remove_dir_all]: categories/filesystem/cwd.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: categories/filesystem/tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: categories/filesystem/directory_traversal.md#traverse-directories-while-skipping-dotfiles
-[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]:  # "categories/filesystem/_ignore.md#walk-the-filesystem-while-respecting-ignore-files"
+[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: # "categories/filesystem/_ignore.md#walk-the-filesystem-while-respecting-ignore-files"
 [ex-filesystem-watch-files-or-dirs]: categories/filesystem/file_watching.md#watch-files-or-dirs
 [ex-finance-rustquant]: categories/finance/quant.md#rustquant
 [ex-formatting-formatting-attributes]: categories/development-tools/formatting/formatting.md#formatting-attributes
@@ -616,10 +616,10 @@
 [ex-rust-patterns-abstract-factory]: categories/rust-patterns/design_patterns.md#abstract-factory
 [ex-rust-patterns-anyhow]: categories/rust-patterns/error_customization.md#anyhow
 [ex-rust-patterns-avoid-discarding-errors-during-error-conversions]: categories/rust-patterns/error_handling.md#avoid-discarding-errors-during-error-conversions
-[ex-rust-patterns-bon]:  # "categories/rust-patterns/_builder_pattern.md#bon"
+[ex-rust-patterns-bon]: # "categories/rust-patterns/_builder_pattern.md#bon"
 [ex-rust-patterns-color-eyre]: categories/rust-patterns/error_customization.md#color-eyre
 [ex-rust-patterns-compose-iterators-with-itertools]: categories/rust-patterns/functional_programming.md#compose-iterators-with-itertools
-[ex-rust-patterns-derive_builder]:  # "categories/rust-patterns/_builder_pattern.md#derive_builder"
+[ex-rust-patterns-derive_builder]: # "categories/rust-patterns/_builder_pattern.md#derive_builder"
 [ex-rust-patterns-dyn-clone]: categories/rust-patterns/design_patterns.md#dyn-clone
 [ex-rust-patterns-handle-errors-correctly-in-main]: categories/rust-patterns/error_handling.md#handle-errors-correctly-in-main
 [ex-rust-patterns-irrecoverable-panics]: categories/rust-patterns/error_handling.md#irrecoverable-panics
@@ -628,13 +628,13 @@
 [ex-rust-patterns-obtain-backtrace]: categories/rust-patterns/error_handling.md#obtain-backtrace
 [ex-rust-patterns-question-mark-operator]: categories/rust-patterns/error_handling.md#question-mark-operator
 [ex-rust-patterns-recoverable-errors-with-result]: categories/rust-patterns/error_handling.md#recoverable-errors-with-result
-[ex-rust-patterns-rust-idioms]:  # "categories/rust-patterns/_rust_idioms.md#rust-idioms"
+[ex-rust-patterns-rust-idioms]: # "categories/rust-patterns/_rust_idioms.md#rust-idioms"
 [ex-rust-patterns-thiserror]: categories/rust-patterns/error_customization.md#thiserror
-[ex-rust-patterns-typed-builder]:  # "categories/rust-patterns/_builder_pattern.md#typed-builder"
+[ex-rust-patterns-typed-builder]: # "categories/rust-patterns/_builder_pattern.md#typed-builder"
 [ex-rust-patterns-typestate-pattern]: categories/rust-patterns/design_patterns.md#typestate-pattern
 [ex-rust-patterns-unwrap-or-else]: categories/rust-patterns/error_handling.md#unwrap-or-else
-[ex-science-classical-ml]:  # "categories/science/_machine_learning.md#classical-ml"
-[ex-science-deep-learning]:  # "categories/science/_machine_learning.md#deep-learning"
+[ex-science-classical-ml]: # "categories/science/_machine_learning.md#classical-ml"
+[ex-science-deep-learning]: # "categories/science/_machine_learning.md#deep-learning"
 [ex-science_geo-geo]: categories/science_geo/geo.md#geo
 [ex-science_neuroscience-neuro]: categories/science_neuroscience/neuroscience.md#neuro
 [ex-science_robotics-bonsai-bt]: categories/science_robotics/useful_robotics_tools_and_libs.md#bonsai-bt
@@ -717,17 +717,17 @@
 [ex-web-programming_http-client-query-the-github-api]: categories/web-programming_http-client/apis.md#query-the-github-api
 [ex-web-programming_http-client-reqwest]: categories/web-programming_http-client/http_clients.md#reqwest
 [ex-web-programming_http-client-ureq]: categories/web-programming_http-client/http_clients.md#ureq
-[ex-web-programming_http-server-actix]:  # "categories/web-programming_http-server/_actix.md#actix"
+[ex-web-programming_http-server-actix]: # "categories/web-programming_http-server/_actix.md#actix"
 [ex-web-programming_http-server-alternatives]: categories/web-programming_http-server/middleware.md#alternatives
-[ex-web-programming_http-server-async-graphql]:  # "categories/web-programming_http-server/_graphql.md#async-graphql"
-[ex-web-programming_http-server-axum]:  # "categories/web-programming_http-server/_axum.md#axum"
+[ex-web-programming_http-server-async-graphql]: # "categories/web-programming_http-server/_graphql.md#async-graphql"
+[ex-web-programming_http-server-axum]: # "categories/web-programming_http-server/_axum.md#axum"
 [ex-web-programming_http-server-cors]: categories/web-programming_http-server/cors.md#cors
-[ex-web-programming_http-server-hyper]:  # "categories/web-programming_http-server/_hyper.md#hyper"
+[ex-web-programming_http-server-hyper]: # "categories/web-programming_http-server/_hyper.md#hyper"
 [ex-web-programming_http-server-leptos]: categories/web-programming_http-server/other_frameworks.md#leptos
-[ex-web-programming_http-server-loco]:  # "categories/web-programming_http-server/_batteries-included_frameworks.md#loco"
+[ex-web-programming_http-server-loco]: # "categories/web-programming_http-server/_batteries-included_frameworks.md#loco"
 [ex-web-programming_http-server-rocket]: categories/web-programming_http-server/other_frameworks.md#rocket
-[ex-web-programming_http-server-rust-on-nails]:  # "categories/web-programming_http-server/_batteries-included_frameworks.md#rust-on-nails"
-[ex-web-programming_http-server-tonic]:  # "categories/web-programming_http-server/_grpc.md#tonic"
+[ex-web-programming_http-server-rust-on-nails]: # "categories/web-programming_http-server/_batteries-included_frameworks.md#rust-on-nails"
+[ex-web-programming_http-server-tonic]: # "categories/web-programming_http-server/_grpc.md#tonic"
 [ex-web-programming_http-server-tower-http]: categories/web-programming_http-server/middleware.md#tower-http
 [ex-web-programming_http-server-tower]: categories/web-programming_http-server/middleware.md#tower
 [ex-web-programming_http-server-zola]: categories/web-programming_http-server/static_website_generators.md#zola

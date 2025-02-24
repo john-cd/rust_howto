@@ -49,7 +49,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 ## Mark as `deprecated` {#deprecated}
 
- `deprecated`
+`deprecated`
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/attributes_deprecated.rs:example}}

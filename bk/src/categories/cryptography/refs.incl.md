@@ -30,8 +30,8 @@
 [p-crates]: ../../crates/index.md
 [p-database]: ../database/index.md
 [p-derive]: ../../standard-library/derive.md
-[p-email]:  # "../email/_index.md"
-[p-embedded]:  # "../embedded/_index.md"
+[p-email]: # "../email/_index.md"
+[p-embedded]: # "../embedded/_index.md"
 [p-encoding]: ../encoding/index.md
 [p-encryption]: encryption.md
 [p-functions]: ../../language/functions.md

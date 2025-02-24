@@ -20,10 +20,10 @@
 [ex-command-line-interface-termcolor]: ansi_terminal.md#termcolor
 [ex-command-line-interface-termion]: ansi_terminal.md#termion
 [ex-command-line-interface-yansi]: ansi_terminal.md#yansi
-[p-cross-platform]:  # "../../other/cross-platform/_index.md"
+[p-cross-platform]: # "../../other/cross-platform/_index.md"
 [p-data-structures]: ../data-structures/index.md
 [p-main]: ../../language/main.md
-[p-parsing]:  # "../parsing/_index.md"
+[p-parsing]: # "../parsing/_index.md"
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-rendering]: ../rendering/rendering.md
 [p-testing]: ../development-tools_testing/testing.md

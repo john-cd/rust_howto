@@ -1,3 +1,3 @@
 [ex-os_windows-apis-winapi]: windows.md#winapi
 [ex-os_windows-apis-windows]: windows.md#windows
-[p-gui]:  # "../gui/_index.md"
+[p-gui]: # "../gui/_index.md"

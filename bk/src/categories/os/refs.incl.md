@@ -11,4 +11,4 @@
 [p-functions]: ../../language/functions.md
 [p-log]: ../development-tools_debugging/log.md
 [p-unix]: # "../os_unix-apis/unix.md"
-[p-written-in-rust]:  # "../../other/written-in-rust/_index.md"
+[p-written-in-rust]: # "../../other/written-in-rust/_index.md"

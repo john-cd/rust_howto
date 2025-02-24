@@ -16,7 +16,7 @@
 [p-authentication]: ../categories/authentication/index.md
 [p-aws]: # "../other/cloud/aws.md"
 [p-cargo]: ../categories/development-tools/cargo/cargo.md
-[p-cloud]:  # "../other/cloud/_index.md"
+[p-cloud]: # "../other/cloud/_index.md"
 [p-compression]: ../categories/compression/index.md
 [p-configuration]: ../categories/config/configuration.md
 [p-crates]: ../crates/index.md
@@ -24,7 +24,7 @@
 [p-databases]: ../categories/database-implementations/databases.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-drones]: # "../categories/aerospace_drones/drones.md"
-[p-embedded]:  # "../categories/embedded/_index.md"
+[p-embedded]: # "../categories/embedded/_index.md"
 [p-encryption]: ../categories/cryptography/encryption.md
 [p-formatting]: ../categories/development-tools/formatting/formatting.md
 [p-games]: # "../categories/games/games.md"
@@ -33,13 +33,13 @@
 [p-json]: ../categories/parser-implementations/json.md
 [p-language]: ../language/index.md
 [p-learning]: ../links/learning.md
-[p-machine-learning]:  # "../categories/science/_machine_learning.md"
+[p-machine-learning]: # "../categories/science/_machine_learning.md"
 [p-main]: ../language/main.md
 [p-markdown]: ../categories/parser-implementations/markdown.md
 [p-modules]: ../language/modules.md
 [p-network-programming]: ../categories/network-programming/index.md
 [p-protocols]: ../categories/aerospace_protocols/aerospace_protocols.md
-[p-science]:  # "../categories/science/_index.md"
+[p-science]: # "../categories/science/_index.md"
 [p-search]: ../categories/database/search.md
 [p-server]: ../categories/network-programming/server.md
 [p-serverless]: # "../other/cloud/serverless.md"

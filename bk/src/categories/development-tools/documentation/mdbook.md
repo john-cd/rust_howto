@@ -42,7 +42,7 @@ mdbook serve --open
 
 [![mdbook-hide][c-mdbook_hide-badge]][c-mdbook_hide] [![mdbook-hide-crates.io][c-mdbook_hide-crates.io-badge]][c-mdbook_hide-crates.io] [![mdbook-hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github] [![mdbook-hide-lib.rs][c-mdbook_hide-lib.rs-badge]][c-mdbook_hide-lib.rs]{{hi:mdbook-hide}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-[`mdbook-hide`][c-mdbook_hide]⮳{{hi:mdbook-hide}}  is a pre-processor for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} that adds support for hidden chapters.
+[`mdbook-hide`][c-mdbook_hide]⮳{{hi:mdbook-hide}} is a pre-processor for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} that adds support for hidden chapters.
 
 ```bash
 cargo install mdbook-hide
