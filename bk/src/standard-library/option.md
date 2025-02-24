@@ -63,4 +63,10 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 <div class="hidden">
 [option: finish Option page map, unwrap_or (P1)](https://github.com/john-cd/rust_howto/issues/625)
 
+## See also
+
+[[match | Match]]
+[[iterators | Iterators]]
+[[result | Result]]
+[[rust-patterns | Rust Patterns]]
 </div>

@@ -33,4 +33,9 @@ See also:
 <div class="hidden">
 [derive: review (P1)](https://github.com/john-cd/rust_howto/issues/621)
 
+## See also
+
+[[attributes | Attributes]]
+
+[[rust-patterns | Rust Patterns]]
 </div>

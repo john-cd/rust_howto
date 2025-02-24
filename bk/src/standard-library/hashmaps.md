@@ -18,10 +18,19 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 <div class="hidden">
 [hashmaps: add (P1)](https://github.com/john-cd/rust_howto/issues/622)
 
-[[data-structures | Data Structures]]
-
 Creating, inserting, retrieving, deleting, iterating, and using different [hashing][p-hashing] algorithms. Include examples of using HashMap and HashSet.
 
-[[hashmaps | Hashmaps]]
+## See also
+
+[[hashing | Hashing]]
+
+[[data-structures | Data Structures]]
 [[maps | Maps]]
+[[btrees | Btrees]]
+
+[[concurrent_data_structures | Concurrent Data Structures]]
+
+[[databases | Databases]]
+[[key_value_stores | Key Value Stores]]
+
 </div>

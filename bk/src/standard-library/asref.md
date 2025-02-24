@@ -23,4 +23,6 @@ NOTES:
 <div class="hidden">
 [asref: write (P1)](https://github.com/john-cd/rust_howto/issues/619)
 
+[[smart_pointers | Smart Pointers]]
+
 </div>

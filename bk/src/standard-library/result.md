@@ -20,4 +20,12 @@
 <div class="hidden">
 [result: write (P1)](https://github.com/john-cd/rust_howto/issues/626)
 
+[[option | Option]]
+
+[[error_handling | Error Handling]]
+[[error_customization | Error Customization]]
+
+[[iterators | Iterators]]
+
+[[rust-patterns | Rust Patterns]]
 </div>
