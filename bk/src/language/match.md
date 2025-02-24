@@ -40,4 +40,12 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 <div class="hidden">
 [match: add more / edit (P1)](https://github.com/john-cd/rust_howto/issues/551)
 
+[[option | Option]]
+[[result | Result]]
+
+[[control_flow | Control Flow]]
+
+[[error_handling | Error Handling]]
+
+[[rust-patterns | Rust Patterns]]
 </div>

@@ -58,4 +58,9 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 
 - [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳
 
+## See also
+
+[[lifetimes | Lifetimes]]
+
+[[rust-patterns | Rust Patterns]]
 </div>

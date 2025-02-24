@@ -16,4 +16,13 @@
 <div class="hidden">
 [generics: edit (P1)](https://github.com/john-cd/rust_howto/issues/545)
 
+## See also
+
+[[structs | Structs]]
+[[enums | Enums]]
+[[functions | Functions]]
+[[traits | Traits]]
+
+[[rust-patterns | Rust Patterns]]
+
 </div>

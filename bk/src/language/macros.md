@@ -18,4 +18,12 @@ The [Little Book of Rust Macros][book-rust-macros]⮳
 <div class="hidden">
 [macros: write (P1)](https://github.com/john-cd/rust_howto/issues/548)
 
+## See also
+
+[[development-tools_procedural-macro-helpers | Development Tools Procedural Macro Helpers]]
+[[write_proc_macros | Write Proc Macros]]
+[[compile_macros | Compile Macros]]
+[[macro_tools | Macro Tools]]
+
+[[rust-patterns | Rust Patterns]]
 </div>

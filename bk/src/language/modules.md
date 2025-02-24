@@ -55,4 +55,9 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 [modules: review (P1)](https://github.com/john-cd/rust_howto/issues/553)
 
 add rust-module-system
+
+## See also
+
+[[package_layout | Package Layout]]
+
 </div>

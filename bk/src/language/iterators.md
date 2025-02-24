@@ -16,4 +16,11 @@
 <div class="hidden">
 [iterators: edit (P1)](https://github.com/john-cd/rust_howto/issues/546)
 
+[[vectors | Vectors]]
+
+[[closures | Closures]]
+[[functional_programming | Functional Programming]]
+
+[[data-structures | Data Structures]]
+
 </div>
