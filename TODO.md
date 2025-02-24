@@ -1,5 +1,7 @@
 # TODOs
 
+## Manually insert rest of cross-links
+
 ## Finish pandoc setup; generate PDF version of book
 
 ## Add text
@@ -17,14 +19,11 @@
 
 - Scrub links to hidden pages instead of commenting e.g. [p-cross-platform]: # "../../other/cross-platform/_index.md"
 - Scrub any left-over {{#example ...}}, {{#crate ...}}, {{#categories ...}}, {{hi: ...}}, etc and warn.
-- Wikilinks
 - Crate link
 - Crate badge?
 - Category link?
 - Category badges
 - Crate blocks
-
-## Replace cross-links by wikilinks??
 
 ## Insert category links
 
