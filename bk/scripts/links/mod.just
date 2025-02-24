@@ -8,13 +8,13 @@ _default:
 
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies files; manual editing required) Insert links to categories
+# (BEWARE: modifies many files; manual editing required) Insert links to categories
 [unix]
 @insert_category_links:
   ./insert_category_links.sh {{root}}
 # TODO insert preproc directive instead of link? replace link to crates.io category search page to link to category main page?
 
-# (BEWARE: modifies files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
+# (BEWARE: modifies many files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
 [unix]
 @insert_crate_links:
   ./insert_crate_links.sh {{root}}
