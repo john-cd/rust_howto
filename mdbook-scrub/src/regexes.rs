@@ -14,8 +14,9 @@ pub fn get_regexes_and_replacements(
 ) -> Vec<RegexAndReplacement> {
     let mut rr = vec![];
     if conf.remove_hidden_sections {
-        let re = Regex::new(r#"(<div class="hidden">)[^<]+?(</div>)"#)
-            .expect("Invalid regex");
+        let re =
+            Regex::new(r#"<div *class *= *"hidden">([^<]|<[^/])+</ *div *>"#)
+                .expect("Invalid regex");
         rr.push(RegexAndReplacement {
             re,
             replacement: None,
