@@ -62,8 +62,7 @@ jobs:
     - name: Install nightly Rust
       run: |
         rustup toolchain install nightly
-        rustup component add rustfmt clippy --toolchain nightly
-        rustup default nightly
+        rustup component add rustfmt --toolchain nightly
 
     - name: Check the format
       run: just fa

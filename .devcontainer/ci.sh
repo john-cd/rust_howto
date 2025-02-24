@@ -32,7 +32,7 @@ cargo +nightly fmt --all --check
 cargo fetch
 
 ## Build & release the mdbook-scrub preprocessor
-cargo build --bins --locked --release -Z unstable-options --manifest-path '../mdbook-scrub/Cargo.toml' --artifact-dir "../bin"
+cargo +nightly build --bins --locked --release -Z unstable-options --manifest-path '../mdbook-scrub/Cargo.toml' --artifact-dir "../bin"
 
 ## Make sure all examples (and tools) compile
 ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`

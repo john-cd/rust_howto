@@ -144,8 +144,9 @@ RUN cargo install --locked mdbook-utils
 ## Install nightly - last, since it changes very often
 RUN rustup toolchain install nightly \
     && rustup component add rustfmt clippy --toolchain nightly
-# Optional: make nightly the default
+## Optional: make nightly the default
 #     && rustup default nightly
+## You must update all .github wokflows as well
 
 WORKDIR /code
 

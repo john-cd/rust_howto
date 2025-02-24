@@ -38,9 +38,8 @@ jobs:
       - name: Install nightly Rust
         run: |
           rustup toolchain install nightly
-          rustup default nightly
       - name: Build & release mdbook-scrub
-        run: cargo build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
+        run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: './mdbook-scrub'
       - name: Build the book
         run: |

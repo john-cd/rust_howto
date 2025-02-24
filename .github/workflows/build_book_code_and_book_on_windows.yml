@@ -92,8 +92,7 @@ jobs:
       - name: Install nightly Rust
         run: |
           rustup toolchain install nightly
-          rustup component add rustfmt clippy --toolchain nightly
-          rustup default nightly
+          rustup component add rustfmt --toolchain nightly
 
       - name: Output Rust version (debug)
         run: rustup --version
@@ -116,7 +115,7 @@ jobs:
           cargo test --workspace --doc --locked --profile ci -- --show-output
 
       - name: Build / release mdbook-scrub
-        run: cargo build --bins --locked --release -Z unstable-options --artifact-dir "..\bin"
+        run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "..\bin"
         working-directory: '.\mdbook-scrub'
 
       - name: Build the book
