@@ -4,6 +4,5 @@
 | [`pre-commit`][ex-devops-pre-commit] | [`pre-commit`][pre-commit.com-website]⮳ |
 
 <div class="hidden">
-[git_hooks.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/601)
-
+FIXME
 </div>

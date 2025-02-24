@@ -8,7 +8,7 @@
 | [Social media][ex-written-in-rust-social-media] |
 
 <div class="hidden">
-[others.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/614)
+FIXME
 
 | [`television`][ex-written-in-rust-television] |
 </div>

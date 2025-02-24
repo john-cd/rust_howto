@@ -6,6 +6,5 @@
 | [`uv`][ex-written-in-rust-uv] | [`uv`][uv-github]⮳ |
 
 <div class="hidden">
-[python_tools.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/616)
-
+FIXME
 </div>

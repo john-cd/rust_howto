@@ -12,8 +12,3 @@
 | [Trait bounds][ex-language-trait-bounds] |
 | [Constants in traits][ex-language-constants-in-traits] |
 | [Async and traits][ex-language-async-and-traits] |
-
-<div class="hidden">
-[traits.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/560)
-
-</div>
