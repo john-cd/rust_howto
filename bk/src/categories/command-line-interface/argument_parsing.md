@@ -111,4 +111,9 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 ### Argument parsing {#skip1}
 
 [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]
+
+[[parse | Parse]]
+[[parser-implementations | Parser Implementations]]
+[[parsing | Parsing]]
+[[string_parsing | String Parsing]]
 </div>

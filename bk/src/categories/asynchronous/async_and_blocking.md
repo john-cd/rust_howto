@@ -84,4 +84,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 <div class="hidden">
 [async_and_blocking: cleanup (P1)](https://github.com/john-cd/rust_howto/issues/213)
+
+[[concurrency | Concurrency]]
+
 </div>

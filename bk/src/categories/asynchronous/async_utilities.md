@@ -22,5 +22,10 @@ The [`await-tree`][c-await_tree]⮳{{hi:await-tree}} crate provides a convenient
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/906)
+[P1 review](https://github.com/john-cd/rust_howto/issues/906)
+
+[[concurrency | Concurrency]]
+[[development_tools | Development Tools]]
+[[development-tools_profiling | Development Tools Profiling]]
+
 </div>

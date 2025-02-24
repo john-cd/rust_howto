@@ -42,4 +42,7 @@ It offers a range of built-in prompts for various data types, including text inp
 
 <div class="hidden">
 [user_interaction: write (P1)](https://github.com/john-cd/rust_howto/issues/235)
+
+[[user_directories | User Directories]]
+[[ansi_terminal | Ansi Terminal]]
 </div>

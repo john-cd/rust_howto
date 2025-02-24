@@ -35,4 +35,7 @@ In addition, [traits][p-traits] that use `-> impl Trait` and `[async][p-async] f
 [async_traits: review new Rust features (P1)](https://github.com/john-cd/rust_howto/issues/216)
 
 async-trait = Provides a workaround for the lack of [language][p-language] support for [async][p-async] [functions][p-functions] in traits
+
+[[trait_objects | Trait Objects]]
+[[traits | Traits]]
 </div>

@@ -40,4 +40,7 @@ Here's a list of some common command-line utilities written in Rust:
 [`xplr`][c-xplr]⮳{{hi:xplr}}: A highly configurable file explorer.
 [`navi`][c-navi]⮳{{hi:navi}}: An interactive cheatsheet tool.
 
+[[command-line-interface | Command Line Interface]]
+[[external_commands | External Commands]]
+[[links | Links]]
 </div>

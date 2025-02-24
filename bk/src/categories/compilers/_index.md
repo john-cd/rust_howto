@@ -27,6 +27,31 @@ Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreter
 
 C to Rust translation, refactoring, and cross-checking.
 
-Cross-Compile for ARM: no_std setup.
+[[cross-platform | Cross Platform]]
+[[cross_compilation | Cross Compilation]]
+[[cross_compiling | Cross Compiling]]
 
+Cross-Compile for ARM: no_std setup.
+[[no_std | No Std]]
+
+[[parse | Parse]]
+[[parser-implementations | Parser Implementations]]
+[[programming_languages | Programming Languages]]
+
+[[parsing | Parsing]]
+
+[[development-tools | Development Tools]]
+[[development-tools_build-utils | Development Tools Build Utils]]
+[[development-tools_cargo-plugins | Development Tools Cargo Plugins]]
+[[development-tools_debugging | Development Tools Debugging]]
+[[development-tools_ffi | Development Tools FFI]]
+[[development-tools_procedural-macro-helpers | Development Tools Procedural Macro Helpers]]
+[[development-tools_profiling | Development Tools Profiling]]
+[[development-tools_testing | Development Tools Testing]]
+[[development_editing | Development Editing]]
+[[text-editors | Text Editors]]
+
+[[cd_ci | CD CI]]
+
+[[compile_macros | Compile Macros]]
 </div>

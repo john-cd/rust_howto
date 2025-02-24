@@ -17,4 +17,10 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 
 <div class="hidden">
 [basic_authentication: expand (P2)](https://github.com/john-cd/rust_howto/issues/224) authentication/basic.rs is noplayground because of network use. rewrite?
+
+[[cryptography | Cryptography]]
+[[encryption | Encryption]]
+[[signature | Signature]]
+[[certificates | Certificates]]
+
 </div>

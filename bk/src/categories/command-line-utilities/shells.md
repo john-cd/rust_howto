@@ -25,4 +25,7 @@ Unlike traditional shells that primarily handle text, `Nu` treats data as struct
 
 <div class="hidden">
 [shells: expand (P1)](https://github.com/john-cd/rust_howto/issues/239)
+
+[[command-line-interface | Command Line Interface]]
+[[external_commands | External Commands]]
 </div>

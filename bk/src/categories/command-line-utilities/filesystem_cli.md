@@ -52,4 +52,8 @@ bat -A /etc/hosts
 
 <div class="hidden">
 [filesystem: organize (P1)](https://github.com/john-cd/rust_howto/issues/237)
+
+[[filesystem | Filesystem]]
+[[command-line-interface | Command Line Interface]]
+[[external_commands | External Commands]]
 </div>

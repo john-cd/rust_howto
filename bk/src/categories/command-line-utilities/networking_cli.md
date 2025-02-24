@@ -17,4 +17,9 @@ apt install gping
 
 <div class="hidden">
 [networking: write (P1)](https://github.com/john-cd/rust_howto/issues/238)
+
+[[command-line-interface | Command Line Interface]]
+[[external_commands | External Commands]]
+
+[[network-programming | Network Programming]]
 </div>

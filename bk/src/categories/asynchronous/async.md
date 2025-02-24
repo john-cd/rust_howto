@@ -71,11 +71,14 @@ Alternatives to the [Tokio][p-tokio] async ecosystem include:
 
 [Asynchronous Programming in Rust (book)][book-asynchronous-programming-in-rust]⮳
 
-[p-tokio]: ./tokio.md
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [P1 [async-what-is-blocking][blog-async-what-is-blocking]](https://github.com/john-cd/rust_howto/issues/633)
+
 [communicating-between-sync-and-async-code][communicating-between-sync-and-async-code-website]
+
+[[concurrency | Concurrency]]
+
 </div>

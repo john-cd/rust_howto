@@ -35,4 +35,13 @@ A library to build rich terminal user interfaces or dashboards
 
 <div class="hidden">
 [tui: expand (P1)](https://github.com/john-cd/rust_howto/issues/234)
+
+[[gui | GUI]]
+[[immediate_mode_gui | Immediate Mode GUI]]
+[[other_gui | Other GUI]]
+[[retained_mode_gui | Retained Mode GUI]]
+[[web_based_gui | Web Based GUI]]
+
+[[ansi_terminal | Ansi Terminal]]
+[[user_interaction | User Interaction]]
 </div>

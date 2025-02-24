@@ -42,4 +42,6 @@ Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` b
 <div class="hidden">
 [sorting: organize (P1)](https://github.com/john-cd/rust_howto/issues/209)
 
+[[data-structures | Data Structures]]
+[[btrees | Btrees]]
 </div>

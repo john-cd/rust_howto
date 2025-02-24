@@ -26,7 +26,9 @@
 
 [`comemo`][c-comemo]⮳{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p-functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p-performance] for functions with expensive computations but fixed inputs. comemo uses const generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, comemo avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
 
-- Cargo's Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically.
+- `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically.
+
+[[cargo | Cargo]]
 
 - Understanding Incremental Compilation: Knowing how [Cargo][p-cargo]'s incremental compiler works ([caching][p-caching], invalidation) is key to maximizing its benefits. Changes to dependencies, function signatures, or certain code structures can invalidate the cache.
 
@@ -37,8 +39,18 @@ Structuring code to minimize changes that trigger recompilation (e.g., separatin
 Being mindful of how [generics][p-generics] and macros can affect recompilation.
 Build Profiles: Release builds can sometimes behave differently with incremental compilation due to optimizations.
 
-cargo tree is also a useful tool for dependency analysis.
+`cargo tree` is also a useful tool for dependency analysis.
 
 - Debugging Incremental Compilation: Sometimes, unexpected recompilation can occur. [Cargo][p-cargo]'s verbose output can help diagnose these situations. There aren't specific crates for this, but careful observation of compiler output is key.
+
+[[parse | Parse]]
+[[parser-implementations | Parser Implementations]]
+[[programming_languages | Programming Languages]]
+
+[[parsing | Parsing]]
+
+[[development-tools | Development Tools]]
+[[development-tools_build-utils | Development Tools Build Utils]]
+[[development-tools_cargo-plugins | Development Tools Cargo Plugins]]
 
 </div>

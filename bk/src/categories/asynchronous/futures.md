@@ -47,4 +47,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 [P1 cover future-utils ](https://github.com/john-cd/rust_howto/issues/634)?
 
 futures = Utility [functions][p-functions] for working with Futures and Streams
+
+[[tokio | Tokio]]
+
 </div>

@@ -45,7 +45,16 @@ Crates to help you deal with events independently of the main program flow, usin
 Runtimes: [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}}, [`smol`][c-smol]⮳{{hi:smol}}
 Futures/Streams: [`futures`][c-futures]⮳{{hi:futures}}, [`tokio-stream`][c-tokio_stream]⮳{{hi:tokio-stream}}
 Async I/O: [`tokio`][c-tokio]⮳{{hi:tokio}}, [`async-std`][c-async_std]⮳{{hi:async-std}}
-Link to Networking / Websocket / HTTP: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`hyper`][c-hyper]⮳{{hi:hyper}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}
-Link to Concurrency: `tokio::sync`, [`async-channel`][c-async_channel]⮳{{hi:async-channel}}
+
+Networking / Websocket / HTTP: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`hyper`][c-hyper]⮳{{hi:hyper}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}
+[[network-programming | Network Programming]]
+[[web-programming_http-client | Web Programming HTTP Client]]
+[[web-programming_http-server | Web Programming HTTP Server]]
+[[web-programming_websocket | Web Programming Websocket]]
+
+Concurrency: `tokio::sync`, [`async-channel`][c-async_channel]⮳{{hi:async-channel}}
+[[concurrency | Concurrency]]
+[[concurrent_data_structures | Concurrent Data Structures]]
+[[async_channels | Async Channels]]
 
 </div>

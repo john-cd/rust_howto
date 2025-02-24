@@ -33,6 +33,7 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 ## Data Exchange
 
 [`serde`][c-serde]⮳{{hi:serde}}: While not strictly Python-specific, serde's serialization capabilities are often crucial for efficiently exchanging data between Rust and Python. You'd likely use [`serde_json`][c-serde_json]⮳{{hi:serde_json}} or another format in conjunction with your chosen Python binding crate.
+
 [[complex_encoding | Complex Encoding]]
 [[encoding | Encoding]]
 [[json | JSON]]
@@ -43,6 +44,9 @@ Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. 
 
 [`maturin`][c-maturin]⮳{{hi:maturin}}: A popular tool for building and distributing Python packages that include Rust extensions. Handles the complexities of compilation and linking.
 `setuptools-rust`: Another option for integrating Rust builds into Python's setuptools.
+
+[[development-tools_build-utils | Development Tools Build Utils]]
+[[code_build | Code Build]]
 
 ## C Bindings (FFI)
 

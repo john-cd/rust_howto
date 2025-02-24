@@ -129,4 +129,6 @@ Termion aims to be simple and yet expressive. It is bindless, meaning that it is
 
 Termion is a pure Rust library that provides a cross-platform interface for controlling the terminal. It gives access to advanced terminal features like cursor manipulation, color control, and raw mode, enabling developers to create interactive command-line applications. Being pure Rust, it avoids external dependencies and offers predictable performance.
 
+[[user_interaction | User Interaction]]
+
 </div>
