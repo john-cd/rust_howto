@@ -80,8 +80,6 @@ For most general-purpose math needs, [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} 
 
 ## Units of Measurement
 
-Link:
-
 - [`uom`][c-uom]⮳{{hi:uom}}: A type-safe dimensional analysis library.
 
 ## Optimization
@@ -90,7 +88,7 @@ Link:
 
 ## Plotting and Graphing (Visualizing Math)
 
-Link:
+[[visualization | Visualization]]
 
 - [`plotters`][c-plotters]⮳{{hi:plotters}}: A plotting library for creating charts and graphs.
 

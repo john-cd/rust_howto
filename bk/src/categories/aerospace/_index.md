@@ -14,31 +14,33 @@
 
 - Data: Parse Telemetry: demonstrate parsing common aerospace telemetry formats (e.g., CSV, binary formats, custom protocols) using crates like serde, nom, or byteorder
 
-- Crates like [`geo`][c-geo]⮳{{hi:geo}}, `georust`, or [`proj`][c-proj]⮳{{hi:proj}} for tasks such as:
+[[science_geo | Geoscience]]
+
+- Crates like [`geo`][c-geo]⮳{{hi:geo}}, or [`proj`][c-proj]⮳{{hi:proj}} for tasks such as:
   - Calculating distances and bearings between locations. [`geo`][c-geo]⮳{{hi:geo}}
   - Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c-proj]⮳{{hi:proj}}
   - Working with geometric shapes (points, lines, polygons).
 
 - Math:
   - Kalman Filter Basics: Simple implementation or usage.
-  - Matrix Operations: nalgebra example (rotations).
+  - Matrix Operations: `nalgebra` example (rotations).
   - Numerical Integration: Trapezoidal rule example.
   - Quaternion Usage: Rotation representation.
 
-- Link to Hardware section
+- [[hardware-support | Hardware Support]]
 
 - Concurrency/Safety:
-  - Link to Safe Concurrency: Message passing example.
+  - Safe [[concurrency | Concurrency]]: Message passing example.
   - no_std Memory Safety: Example with unsafe blocks.
 
-- Link to Testing:
+- [[testing | Testing]]
   - Unit Test
-  - Property Testing: proptest for a specific property.
+  - Property Testing: `proptest` for a specific property.
 
 - Aerospace Examples:
   - Orbital Parameters: Calculation from vectors.
   - Basic Attitude Control: Simplified algorithm.
 
-- Link to formal verification and how tools like kani might be used to prove properties of Rust code.
+- Formal [[code_verification | Code Verification]] and how tools like `kani` might be used to prove properties of Rust code.
 
 </div>

@@ -34,8 +34,7 @@ This said, we provide below an example of a HTTP server, following the recommend
 <div class="hidden">
 [hyper: write (P1)](https://github.com/john-cd/rust_howto/issues/515)
 
-Link:
-[hello-world/](https://hyper.rs/guides/1/server/hello-world/)
+[hello-world](https://hyper.rs/guides/1/server/hello-world/)
 [examples](https://github.com/hyperium/hyper/tree/master/examples)
 
 </div>

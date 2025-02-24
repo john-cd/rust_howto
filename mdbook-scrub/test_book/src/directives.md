@@ -18,6 +18,8 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 
 [[scraping | Scraping]]
 
+[[science_geo]]
+
 
 ## Just the crate link
 

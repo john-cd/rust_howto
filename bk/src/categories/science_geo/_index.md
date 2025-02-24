@@ -12,6 +12,11 @@ Processing of spatial information, maps, navigation data, and geographic informa
 <div class="hidden">
 [P2 write](https://github.com/john-cd/rust_howto/issues/958)
 
+- Crates like [`geo`][c-geo]⮳{{hi:geo}}, or [`proj`][c-proj]⮳{{hi:proj}} for tasks such as:
+  - Calculating distances and bearings between locations. [`geo`][c-geo]⮳{{hi:geo}}
+  - Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c-proj]⮳{{hi:proj}}
+  - Working with geometric shapes (points, lines, polygons).
+
 The Rust geoscience ecosystem is developing, and while not as mature as Python's, it offers promising options, especially for performance-sensitive applications.
 
 | Topic | Rust Crates (Examples) | Notes |
@@ -30,9 +35,9 @@ The Rust geoscience ecosystem is developing, and while not as mature as Python's
 
 ## Key Considerations
 
-* Maturity: The Rust geoscience ecosystem is evolving. Some areas might have fewer mature options compared to Python's GDAL/OGR or other GIS libraries.
-* Performance: Rust's performance can be a significant advantage for geospatial processing, especially for large datasets.
-* Interoperability: Bindings to established libraries like GDAL and PROJ are crucial for accessing a wide range of geospatial functionalities.
-* Community: The Rust geoscience community is growing, and more libraries and resources are becoming available.
+- Maturity: The Rust geoscience ecosystem is evolving. Some areas might have fewer mature options compared to Python's GDAL/OGR or other GIS libraries.
+- Performance: Rust's performance can be a significant advantage for geospatial processing, especially for large datasets.
+- Interoperability: Bindings to established libraries like GDAL and PROJ are crucial for accessing a wide range of geospatial functionalities.
+- Community: The Rust geoscience community is growing, and more libraries and resources are becoming available.
 
 </div>

@@ -56,9 +56,10 @@ For video streaming, you'll often need to combine video encoding/decoding with n
 
 Building a full-fledged video player in Rust is a complex undertaking. You'd likely combine video decoding with graphics libraries ([`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`pixels`][c-pixels]⮳{{hi:pixels}}, etc.) and audio libraries ([`cpal`][c-cpal]⮳{{hi:cpal}}).
 
-Link:
-
 ## Image Processing
+
+[[images | Images]]
+[[multimedia_images | Multimedia Images]]
 
 - [`image`][c-image]⮳{{hi:image}}: A widely used crate for image loading and manipulation.
 
@@ -66,5 +67,9 @@ Link:
 
 - [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform GPU API. Used for rendering video or other graphical elements.
 - [`pixels`][c-pixels]⮳{{hi:pixels}}: For working with pixel buffers (often used with images or video frames).
+
+[[graphics | Graphics]]
+[[graphics_apis | Graphics APIs]]
+[[rendering_graphics-api | Rendering Graphics API]]
 
 </div>
