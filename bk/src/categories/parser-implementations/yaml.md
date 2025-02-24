@@ -8,6 +8,10 @@
 
 `serde_yml` is a robust Rust library that simplifies the serialization and deserialization of Rust data structures to and from YAML format using the widely-used `serde` framework.
 
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/yaml/serde_yml.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

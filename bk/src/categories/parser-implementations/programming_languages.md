@@ -21,7 +21,9 @@
 
 [`sqlparser`][c-sqlparser]⮳{{hi:sqlparser}} is a general SQL lexer and parser with support for ANSI SQL:2011.
 
-{{#example sqlparser}}
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/programming_languages/sqlparser.rs:example}}
+```
 
 ### See also
 

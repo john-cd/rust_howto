@@ -8,7 +8,9 @@
 
 `html5ever` is a high-performance browser-grade HTML5 parser.
 
-{{#example html5ever}}
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/html/html5ever.rs:example}}
+```
 
 ## Parse HTML with `tl` {#tl}
 
@@ -16,7 +18,9 @@
 
 `tl` is a fast HTML parser written in pure Rust.
 
-{{#example tl}}
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/html/tl.rs:example}}
+```
 
 ## Parse CSS with `css` {#css-rs}
 
@@ -24,7 +28,9 @@
 
 `css` is a crate that uses the cssparser and selectors crates to provide a domain model for CSS Stylesheets. Intended to allow effective minification of CSS and CSS transformations such as autoprefixing and removal by other crates
 
-{{#example css}}
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/html/css.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

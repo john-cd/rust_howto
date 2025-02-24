@@ -8,7 +8,9 @@
 
 `rust-ini` is an INI configuration file parsing library.
 
-{{#example rust_ini}}
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/tests/ini/rust_ini.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

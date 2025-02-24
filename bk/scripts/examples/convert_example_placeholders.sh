@@ -65,6 +65,7 @@ do
       mkdir -p $absoluteexampledir
       # Create a GitHub ticket
       issue=$( gh issue create --title "Add example ${examplename}" --body "${examplefile}" )
+      sleep 3
       # Add a stub file for the example
       cat > "$absoluteexampledir/${examplename}.rs" <<- EOF
 // ANCHOR: example
