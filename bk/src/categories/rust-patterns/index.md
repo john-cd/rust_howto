@@ -116,4 +116,10 @@ Shared solutions for particular situations specific to programming in Rust.
 | Template Method | Defining the skeleton of an algorithm and letting subclasses define specific steps. | Often implemented directly using traits | Traits are helpful for defining the template. |
 | Visitor | Adding new operations to objects without changing their classes. | Often implemented directly using traits | Traits are usually used for visitor implementations. |
 
+---
+
+## `typenum`
+
+Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers. It also provides a type-level array of type-level numbers, but its implementation is incomplete.
+
 </div>
