@@ -64,7 +64,8 @@ fn main() {
     }
 
     // Example using OwnedValue (for modifications)
-    // This is slower then the BorrowedValue as a tradeoff for getting rid of lifetimes.
+    // This is slower then the BorrowedValue as a tradeoff for getting rid of
+    // lifetimes.
     let mut owned_json: OwnedValue =
         simd_json::to_owned_value(&mut json_string).unwrap();
 
