@@ -18,18 +18,28 @@
 
 `tl` is a fast HTML parser written in pure Rust.
 
+Add the following to your `Cargo.toml`:
+
+```toml
+[dependencies]
+tl = "0.7.8"
+# or, with explicit SIMD support
+# (requires a nightly compiler!)
+tl = { version = "0.7.8", features = ["simd"] }
+```
+
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/tests/html/tl.rs:example}}
 ```
 
-## Parse CSS with `css` {#css-rs}
+## Parse CSS with `cssparser` {#css-rs}
 
-[![css-website][c-css-website-badge]][c-css-website] [![css][c-css-badge]][c-css] [![css-crates.io][c-css-crates.io-badge]][c-css-crates.io] [![css-github][c-css-github-badge]][c-css-github] [![css-lib.rs][c-css-lib.rs-badge]][c-css-lib.rs]{{hi:css}}{{hi:css}}
+[![cssparser][c-cssparser-badge]][c-cssparser] [![cssparser-crates.io][c-cssparser-crates.io-badge]][c-cssparser-crates.io] [![cssparser-github][c-cssparser-github-badge]][c-cssparser-github] [![cssparser-lib.rs][c-cssparser-lib.rs-badge]][c-cssparser-lib.rs]{{hi:cssparser}}{{hi:Css}}{{hi:Syntax}}{{hi:Parser}}
 
-`css` is a crate that uses the cssparser and selectors crates to provide a domain model for CSS Stylesheets. Intended to allow effective minification of CSS and CSS transformations such as autoprefixing and removal by other crates
+`cssparser` is a Rust implementation of CSS Syntax Level 3.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/tests/html/css.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/tests/html/cssparser.rs:example}}
 ```
 
 {{#include refs.incl.md}}

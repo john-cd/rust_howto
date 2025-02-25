@@ -12,7 +12,7 @@ use swc_ecma_parser::lexer::Lexer;
 // `swc_ecma_parser` is a library for parsing ECMAScript (JavaScript) code.
 
 // In `Cargo.toml`:
-// swc_ecma_parser = "6.0.1"
+// swc_ecma_parser = "6.0.1" # or latest
 // swc_ecma_ast = "5.0.1"
 // swc_common = "5.0.0"
 

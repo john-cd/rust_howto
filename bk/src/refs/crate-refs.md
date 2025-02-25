@@ -1505,6 +1505,14 @@
 [c-css-website-badge]: https://img.shields.io/badge/css-coral
 [c-css-website]: https://github.com/lemonrock/css
 [c-css]: https://docs.rs/css
+[c-cssparser-badge]: https://img.shields.io/crates/v/cssparser?label=cssparser
+[c-cssparser-crates.io-badge]: https://img.shields.io/badge/crates.io-cssparser-crimson
+[c-cssparser-crates.io]: https://crates.io/crates/cssparser
+[c-cssparser-github-badge]: https://img.shields.io/badge/cssparser-steelblue?logo=github
+[c-cssparser-github]: https://github.com/servo/rust-cssparser
+[c-cssparser-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cssparser-yellow
+[c-cssparser-lib.rs]: https://lib.rs/crates/cssparser
+[c-cssparser]: https://docs.rs/cssparser
 [c-csv-badge]: https://img.shields.io/crates/v/csv?label=csv
 [c-csv-crates.io-badge]: https://img.shields.io/badge/crates.io-csv-crimson
 [c-csv-crates.io]: https://crates.io/crates/csv
