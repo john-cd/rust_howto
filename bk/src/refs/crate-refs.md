@@ -6755,6 +6755,14 @@
 [c-wgpu-website-badge]: https://img.shields.io/badge/wgpu-coral
 [c-wgpu-website]: https://wgpu.rs
 [c-wgpu]: https://docs.rs/wgpu
+[c-which-badge]: https://img.shields.io/crates/v/which?label=which
+[c-which-crates.io-badge]: https://img.shields.io/badge/crates.io-which-crimson
+[c-which-crates.io]: https://crates.io/crates/which
+[c-which-github-badge]: https://img.shields.io/badge/which-steelblue?logo=github
+[c-which-github]: https://github.com/harryfei/which-rs
+[c-which-lib.rs-badge]: https://img.shields.io/badge/lib.rs-which-yellow
+[c-which-lib.rs]: https://lib.rs/crates/which
+[c-which]: https://docs.rs/which
 [c-winapi-badge]: https://img.shields.io/crates/v/winapi?label=winapi
 [c-winapi-crates.io-badge]: https://img.shields.io/badge/crates.io-winapi-crimson
 [c-winapi-crates.io]: https://crates.io/crates/winapi

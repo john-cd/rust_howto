@@ -93,4 +93,12 @@ Link to:
 
 Rust's FFI allows you to call functions written in other languages (e.g., C) that might interact with the OS directly. This is often used when you need to access OS features that aren't directly exposed by Rust's standard library or other crates.
 
+---
+
+## Locate installed executable with `which` {#which}
+
+[![which][c-which-badge]][c-which] [![which-crates.io][c-which-crates.io-badge]][c-which-crates.io] [![which-github][c-which-github-badge]][c-which-github] [![which-lib.rs][c-which-lib.rs-badge]][c-which-lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
+
+A Rust equivalent of Unix command "which". Locate installed executable (cross platform).
+
 </div>
