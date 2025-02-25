@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use simd_json::OwnedValue;
 use simd_json::derived::ValueObjectAccess;
 use simd_json::derived::ValueObjectAccessAsArray;
@@ -73,7 +72,7 @@ fn main() {
         *name = OwnedValue::from("Bob");
     }
 
-    println!("Modified Owned JSON: {}", owned_json.to_string());
+    println!("Modified Owned JSON: {}", owned_json);
 }
 // ANCHOR_END: example
 

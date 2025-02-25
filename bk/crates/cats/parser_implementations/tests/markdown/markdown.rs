@@ -16,12 +16,6 @@ This is a simple paragraph with **bold** and *italic* text.
 
 * List item 1
 * List item 2
-
-```rust
-fn example() {
-    println!("Hello from Rust!");
-}
-```
 "#;
 
     let html_output = to_html(markdown_text);

@@ -1,5 +1,4 @@
 // ANCHOR: example
-use json5;
 use serde_json::Value;
 
 // JSON5 is an extension to the popular JSON file format that aims to be easier
