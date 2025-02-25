@@ -115,4 +115,8 @@ Rust does not have a garbage collector in the traditional sense. It uses ownersh
 
 Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when absolutely necessary for interacting with external code or hardware. They bypass Rust's safety guarantees and require very careful manual memory management.
 
+---
+
+TODO P2 add `bumpalo`
+
 </div>
