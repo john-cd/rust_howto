@@ -10,8 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "value_formatting" ]
+categories = ["value_formatting"]
 publish.workspace = true
 
 [dependencies]
-# TODO P2 ad deps
+ryu = "1.0.19"

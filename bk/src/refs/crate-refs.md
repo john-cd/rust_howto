@@ -5127,6 +5127,14 @@
 [c-rwasm-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rwasm-yellow
 [c-rwasm-lib.rs]: https://lib.rs/crates/rwasm
 [c-rwasm]: https://docs.rs/rwasm
+[c-ryu-badge]: https://img.shields.io/crates/v/ryu?label=ryu
+[c-ryu-crates.io-badge]: https://img.shields.io/badge/crates.io-ryu-crimson
+[c-ryu-crates.io]: https://crates.io/crates/ryu
+[c-ryu-github-badge]: https://img.shields.io/badge/ryu-steelblue?logo=github
+[c-ryu-github]: https://github.com/dtolnay/ryu
+[c-ryu-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ryu-yellow
+[c-ryu-lib.rs]: https://lib.rs/crates/ryu
+[c-ryu]: https://docs.rs/ryu
 [c-salsa-badge]: https://img.shields.io/crates/v/salsa?label=salsa
 [c-salsa-crates.io-badge]: https://img.shields.io/badge/crates.io-salsa-crimson
 [c-salsa-crates.io]: https://crates.io/crates/salsa

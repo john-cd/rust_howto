@@ -28620,6 +28620,9 @@ dependencies = [
 [[package]]
 name = "value_formatting"
 version = "0.1.2"
+dependencies = [
+ "ryu",
+]
 
 [[package]]
 name = "vart"
