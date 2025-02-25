@@ -64,15 +64,15 @@ do
       # Create the folder for the test, if missing
       mkdir -p $absoluteexampledir
       # Create a GitHub ticket
-      issue=$( gh issue create --title "Add example ${examplename}" --body "${examplefile}" )
+      issue=$( gh issue create --title "Add example ${examplename}" --body "[${examplename}](https://github.com/john-cd/rust_howto/tree/main/$(realpath --relative-to=/code ${absoluteexampledir})/${examplename}.rs )" )
       sleep 3
       # Add a stub file for the example
       cat > "$absoluteexampledir/${examplename}.rs" <<- EOF
 // ANCHOR: example
-fn main() {
-    todo!();
-    }
+// COMING SOON
 // ANCHOR_END: example
+fn main() {
+}
 
 #[test]
 #[ignore = "not yet implemented"]
