@@ -1,4 +1,4 @@
-[ex-accessibility-accesskit]: categories/accessibility/screen_readers.md#accesskit
+[ex-accessibility-accesskit]: ../drafts/categories/accessibility/screen_readers.md#accesskit
 [ex-aerospace-aero]: categories/aerospace/aerospace.md#aero
 [ex-aerospace_drones-drones]: categories/aerospace_drones/drones.md#drones
 [ex-aerospace_protocols-aerospace_protocols]: categories/aerospace_protocols/aerospace_protocols.md#aerospace_protocols
