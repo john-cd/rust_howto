@@ -2711,6 +2711,14 @@
 [c-http_body_util-lib.rs-badge]: https://img.shields.io/badge/lib.rs-http--body--util-yellow
 [c-http_body_util-lib.rs]: https://lib.rs/crates/http-body-util
 [c-http_body_util]: https://docs.rs/http-body-util
+[c-humantime-badge]: https://img.shields.io/crates/v/humantime?label=humantime
+[c-humantime-crates.io-badge]: https://img.shields.io/badge/crates.io-humantime-crimson
+[c-humantime-crates.io]: https://crates.io/crates/humantime
+[c-humantime-github-badge]: https://img.shields.io/badge/humantime-steelblue?logo=github
+[c-humantime-github]: https://github.com/tailhook/humantime
+[c-humantime-lib.rs-badge]: https://img.shields.io/badge/lib.rs-humantime-yellow
+[c-humantime-lib.rs]: https://lib.rs/crates/humantime
+[c-humantime]: https://docs.rs/humantime
 [c-hyper-badge]: https://img.shields.io/crates/v/hyper?label=hyper
 [c-hyper-crates.io-badge]: https://img.shields.io/badge/crates.io-hyper-crimson
 [c-hyper-crates.io]: https://crates.io/crates/hyper
