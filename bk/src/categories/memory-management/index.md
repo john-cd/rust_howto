@@ -117,6 +117,24 @@ Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when absolutely n
 
 ---
 
-TODO P2 add `bumpalo`
+TODO P2 add
+
+## `bumpalo` {#bumpalo}
+
+[![bumpalo][c-bumpalo-badge]][c-bumpalo] [![bumpalo-crates.io][c-bumpalo-crates.io-badge]][c-bumpalo-crates.io] [![bumpalo-github][c-bumpalo-github-badge]][c-bumpalo-github] [![bumpalo-lib.rs][c-bumpalo-lib.rs-badge]][c-bumpalo-lib.rs]{{hi:bumpalo}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+A fast bump allocation arena for Rust.
+
+## `slab` {#slab}
+
+[![slab][c-slab-badge]][c-slab] [![slab-crates.io][c-slab-crates.io-badge]][c-slab-crates.io] [![slab-github][c-slab-github-badge]][c-slab-github] [![slab-lib.rs][c-slab-lib.rs-badge]][c-slab-lib.rs]{{hi:slab}}{{hi:slab}}{{hi:Allocator}}{{hi:No_std}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+Pre-allocated storage for a uniform data type.
+
+Slab provides pre-allocated storage for a single data type. If many values of a single type are being allocated, it can be more efficient to pre-allocate the necessary storage. Since the size of the type is uniform, memory fragmentation can be avoided. Storing, clearing, and lookup operations become very cheap.
+
+While Slab may look like other Rust collections, it is not intended to be used as a general purpose collection. The primary difference between Slab and Vec is that Slab returns the key when storing the value.
+
+It is important to note that keys may be reused. In other words, once a value associated with a given key is removed from a slab, that key may be returned from future calls to insert.
 
 </div>
