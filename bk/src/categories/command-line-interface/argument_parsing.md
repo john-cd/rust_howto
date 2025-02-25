@@ -116,4 +116,11 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 [[parser-implementations | Parser Implementations]]
 [[parsing | Parsing]]
 [[string_parsing | String Parsing]]
+
+---
+
+## `clap_complete`
+
+Generate shell completion scripts for your `clap::Command`
+
 </div>
