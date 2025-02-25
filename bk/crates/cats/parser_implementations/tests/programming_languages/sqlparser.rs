@@ -6,7 +6,8 @@ use sqlparser::ast::Statement;
 use sqlparser::dialect::GenericDialect;
 use sqlparser::parser::Parser;
 
-// `sqlparser` can be used as a foundation for SQL query engines and SQL analysis.
+// `sqlparser` can be used as a foundation for SQL query engines and SQL
+// analysis.
 //
 // Add to your `Cargo.toml`:
 // sqlparser = { version = "0.54.0", features = ["visitor"] }

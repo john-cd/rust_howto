@@ -55,4 +55,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P1 add example](https://github.com/john-cd/rust_howto/issues/1088)

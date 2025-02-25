@@ -1,6 +1,4 @@
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 use tl::Node;
 use tl::Parser;
 use tl::VDom;
@@ -54,6 +52,7 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() -> anyhow::Result<()> {

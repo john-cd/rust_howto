@@ -63,4 +63,3 @@ fn main() {
 fn test() {
     main();
 }
-// [P1 add example](https://github.com/john-cd/rust_howto/issues/1106)
