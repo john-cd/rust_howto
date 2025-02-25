@@ -58,16 +58,33 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 ---
 
-## `textwrap`
+## `textwrap` {#textwrap}
+
+[![textwrap][c-textwrap-badge]][c-textwrap] [![textwrap-crates.io][c-textwrap-crates.io-badge]][c-textwrap-crates.io] [![textwrap-github][c-textwrap-github-badge]][c-textwrap-github] [![textwrap-lib.rs][c-textwrap-lib.rs-badge]][c-textwrap-lib.rs]{{hi:textwrap}}{{hi:Text}}{{hi:Typesetting}}{{hi:Wrap}}{{hi:Formatting}}{{hi:Hyphenation}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 Library for word wrapping, indenting, and dedenting strings. Has optional support for Unicode and emojis as well as machine hyphenation.
 
-## `bstr`
+## `bstr` {#bstr}
+
+[![bstr][c-bstr-badge]][c-bstr] [![bstr-crates.io][c-bstr-crates.io-badge]][c-bstr-crates.io] [![bstr-github][c-bstr-github-badge]][c-bstr-github] [![bstr-lib.rs][c-bstr-lib.rs-badge]][c-bstr-lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+A string type that is not required to be valid UTF-8.
 
 This crate provides extension traits for &[u8] and Vec<u8> that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's String and str types in that they are not required to be valid UTF-8, but may be fully or partially valid UTF-8.
 
-## `similar`
+## `similar` {#similar}
+
+[![similar][c-similar-badge]][c-similar] [![similar-crates.io][c-similar-crates.io-badge]][c-similar-crates.io] [![similar-github][c-similar-github-badge]][c-similar-github] [![similar-lib.rs][c-similar-lib.rs-badge]][c-similar-lib.rs]{{hi:similar}}{{hi:Difference}}{{hi:Diff}}{{hi:Compare}}{{hi:Changes}}{{hi:Patience}}
+
+A diff library for Rust
 
 Similar is a dependency free crate for Rust that implements different diffing algorithms and high level interfaces for it.
+
+## `strsim` {#strsim}
+
+[![strsim][c-strsim-badge]][c-strsim] [![strsim-crates.io][c-strsim-crates.io-badge]][c-strsim-crates.io] [![strsim-github][c-strsim-github-badge]][c-strsim-github] [![strsim-lib.rs][c-strsim-lib.rs-badge]][c-strsim-lib.rs]{{hi:strsim}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+Implementations of string similarity metrics. Includes Hamming, Levenshtein,
+OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 
 </div>
