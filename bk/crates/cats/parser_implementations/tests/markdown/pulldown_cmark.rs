@@ -38,8 +38,7 @@ fn example() {
     // Set up parser options. We enable all common extensions.
     let options = Options::all();
 
-    // Create a parser from the markdown input.
-    //  `Parser::new_ext(markdown_input, options)` creates a `Parser` instance
+    // `Parser::new_ext(markdown_input, options)` creates a `Parser` instance
     // from the Markdown input string and the specified options. This parser
     // will iterate through the Markdown tokens.
     let parser = Parser::new_ext(markdown_input, options);
