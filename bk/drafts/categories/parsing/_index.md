@@ -10,7 +10,7 @@ Create parsers for binary and text formats. Format-specific parsers belong in ot
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/952)
+[P2 review](https://github.com/john-cd/rust_howto/issues/952)
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |

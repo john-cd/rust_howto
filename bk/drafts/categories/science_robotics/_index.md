@@ -30,7 +30,7 @@ The Rust robotics ecosystem is gaining momentum, offering performance, safety, a
 | Control Systems | (Developing area) | Control systems libraries are an area where development is ongoing. Numerical computation crates are often used. |
 | Path Planning | (Developing area) | Path planning algorithms are often implemented using graph algorithms and search techniques. |
 | Simulation | [`bevy`][c-bevy]⮳{{hi:bevy}} (game engine - can be used for robotics simulation) | Game engines like [`bevy`][c-bevy]⮳{{hi:bevy}} can be adapted for robotics simulation. |
-| Embedded Systems Development | (Uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and platform-specific crates) | Rust is well-suited for embedded systems, and the [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} ecosystem is crucial for robotics applications targeting microcontrollers. |
+| Embedded Systems Development | Use [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and platform-specific crates | Rust is well-suited for embedded systems, and the [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} ecosystem is crucial for robotics applications targeting microcontrollers. |
 | Real-Time Communication | (Often relies on OS-level features or specialized crates) | Real-time communication is critical for robotics and may involve specific crates or OS-level programming. |
 | Robotics Frameworks (High-Level) | (Developing area) | High-level robotics frameworks in pure Rust are still emerging. |
 
