@@ -22,6 +22,10 @@ Deal with the complexities of human language when expressed in textual form.
 <div class="hidden">
 [P1 review](https://github.com/john-cd/rust_howto/issues/963)
 
+## `aho-corasick`
+
+---
+
 This table outlines common text processing tasks and relevant Rust crates.
 
 | Topic | Rust Crates | Notes |
@@ -51,5 +55,19 @@ This table outlines common text processing tasks and relevant Rust crates.
 - Performance: For performance-critical tasks, consider using crates optimized for speed, such as [`regex`][c-regex]⮳{{hi:regex}} for regular expressions or specialized parsing libraries.
 - Specific Task: Choose the crate that is most appropriate for your specific text processing task. Don't use a full-fledged parsing library if you only need basic string manipulation.
 - Ecosystem: The Rust text processing ecosystem is rich and evolving, so explore different options to find the best fit for your project.
+
+---
+
+## `textwrap`
+
+Library for word wrapping, indenting, and dedenting strings. Has optional support for Unicode and emojis as well as machine hyphenation.
+
+## `bstr`
+
+This crate provides extension traits for &[u8] and Vec<u8> that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's String and str types in that they are not required to be valid UTF-8, but may be fully or partially valid UTF-8.
+
+## `similar`
+
+Similar is a dependency free crate for Rust that implements different diffing algorithms and high level interfaces for it.
 
 </div>
