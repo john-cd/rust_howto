@@ -39,6 +39,16 @@ Create applications for the Web.
 
 The [`http`][c-http]⮳{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
 
+{{#example http}}
+
+### `http-body-util` {#http-body-util}
+
+[![http-body-util][c-http_body_util-badge]][c-http_body_util] [![http-body-util-crates.io][c-http_body_util-crates.io-badge]][c-http_body_util-crates.io] [![http-body-util-github][c-http_body_util-github-badge]][c-http_body_util-github] [![http-body-util-lib.rs][c-http_body_util-lib.rs-badge]][c-http_body_util-lib.rs]{{hi:http-body-util}}{{hi:Http}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
+
+Combinators and adapters for HTTP request or response bodies.
+
+See also [http-body](https://github.com/hyperium/http-body).
+
 ---
 
 This table outlines common web development tasks and relevant Rust crates. The Rust web ecosystem offers a variety of options, from low-level networking to high-level frameworks.
