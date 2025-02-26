@@ -1121,6 +1121,14 @@
 [c-cffi-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cffi-yellow
 [c-cffi-lib.rs]: https://lib.rs/crates/cffi
 [c-cffi]: https://docs.rs/cffi
+[c-cfg_if-badge]: https://img.shields.io/crates/v/cfg-if?label=cfg-if
+[c-cfg_if-crates.io-badge]: https://img.shields.io/badge/crates.io-cfg--if-crimson
+[c-cfg_if-crates.io]: https://crates.io/crates/cfg_if
+[c-cfg_if-github-badge]: https://img.shields.io/badge/cfg--if-steelblue?logo=github
+[c-cfg_if-github]: https://github.com/alexcrichton/cfg-if
+[c-cfg_if-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cfg--if-yellow
+[c-cfg_if-lib.rs]: https://lib.rs/crates/cfg-if
+[c-cfg_if]: https://docs.rs/cfg-if
 [c-cgmath-badge]: https://img.shields.io/crates/v/cgmath?label=cgmath
 [c-cgmath-crates.io-badge]: https://img.shields.io/badge/crates.io-cgmath-crimson
 [c-cgmath-crates.io]: https://crates.io/crates/cgmath

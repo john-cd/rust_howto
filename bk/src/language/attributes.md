@@ -80,4 +80,17 @@ See [Automatic derivation][p-automatic-derivation].
 [[rust-patterns | Rust Patterns]]
 
 [[testing | Testing]]
+
+---
+
+## `cfg-if` {#cfg-if}
+
+[![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
+
+A macro to ergonomically define an item depending on a large number of #[cfg]
+parameters. Structured like an if-else chain, the first matching branch is the
+item that gets emitted.
+
+{{#example cfg-if}}
+
 </div>
