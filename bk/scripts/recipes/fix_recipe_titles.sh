@@ -7,7 +7,7 @@ IFS=$'\n\t'
 # Usage: ./scripts/recipe_tables/check_recipe_tables.sh <root folder>
 
 root="$(realpath $1)/"
-for file in $(find ${root}src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
+for file in $(find ${root}src ${root}drafts -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do
     echo ">>${file}"
     name=$(basename $file .md)

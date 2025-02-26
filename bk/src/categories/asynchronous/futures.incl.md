@@ -6,4 +6,6 @@
 
 <div class="hidden">
 FIXME
+
+| [`futures-util`][ex-asynchronous-futures-util] | {{#crate }} | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 </div>

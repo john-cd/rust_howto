@@ -1,7 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  | [![serde_yml][c-serde_yml-badge]][c-serde_yml] | [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations] |
+| [Parse YAML with `serde_yml`][ex-parser-implementations-serde_yml] | [![serde_yml][c-serde_yml-badge]][c-serde_yml] | [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations] |
 
 <div class="hidden">
-FIXME
 </div>

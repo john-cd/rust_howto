@@ -4,6 +4,7 @@
 [ex-language-attributes]: attributes.md#attributes
 [ex-language-automatic-trait-derivation]: attributes.md#automatic-trait-derivation
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
+[ex-language-cfg-if]: attributes.md#cfg-if
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
 [ex-language-closures]: closures.md#closures

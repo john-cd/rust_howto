@@ -18,5 +18,6 @@
 | [`termcolor`][ex-command-line-interface-termcolor] | [![termcolor][c-termcolor-badge]][c-termcolor] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 | [`yansi`][ex-command-line-interface-yansi] | [![yansi][c-yansi-badge]][c-yansi] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 | [`termion`][ex-command-line-interface-termion] | [![termion][c-termion-badge]][c-termion] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
+| [`nu-ansi-term`][ex-command-line-interface-nu-ansi-term] | {{#crate }} | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 
 </div>

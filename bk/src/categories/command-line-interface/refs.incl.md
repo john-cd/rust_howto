@@ -12,6 +12,7 @@
 [ex-command-line-interface-indicatif]: user_interaction.md#indicatif
 [ex-command-line-interface-inquire]: user_interaction.md#inquire
 [ex-command-line-interface-lexopt]: argument_parsing.md#lexopt
+[ex-command-line-interface-nu-ansi-term]: ansi_terminal.md#nu-ansi-term
 [ex-command-line-interface-owo-colors]: ansi_terminal.md#owo-colors
 [ex-command-line-interface-pico-args]: argument_parsing.md#pico-args
 [ex-command-line-interface-ratatui]: tui.md#ratatui

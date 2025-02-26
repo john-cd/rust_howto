@@ -7,6 +7,7 @@
 [ex-asynchronous-calling-blocking-from-async]: async_and_blocking.md#calling-blocking-from-async
 [ex-asynchronous-diff-other-languages]: async.md#diff-other-languages
 [ex-asynchronous-futures-executor]: async_and_blocking.md#futures-executor
+[ex-asynchronous-futures-util]: futures.md#futures-util
 [ex-asynchronous-graceful-shutdown]: tokio.md#graceful-shutdown
 [ex-asynchronous-io]: tokio.md#io
 [ex-asynchronous-join]: tokio.md#join
@@ -27,15 +28,15 @@
 [ex-asynchronous-utilities]: async_utilities.md#utilities
 [ex-asynchronous-which-crate-provides-what]: async.md#which-crate-provides-what
 [p-async]: async.md
+[p-crates]: ../../crates/index.md
 [p-functions]: ../../language/functions.md
 [p-futures]: futures.md
 [p-language]: ../../language/index.md
+[p-macros]: ../../language/macros.md
 [p-main]: ../../language/main.md
 [p-node]: ../development-tools_ffi/node.md
+[p-standard-library]: ../../standard-library/index.md
+[p-streams]: streams.md
 [p-tokio]: tokio.md
 [p-traits]: ../../language/traits.md
 [p-writing]: ../development-tools_cargo-plugins/code_writing.md
-[p-streams]: streams.md
-[p-standard-library]: ../../standard-library/index.md
-[p-macros]: ../../language/macros.md
-[p-crates]: ../../crates/index.md

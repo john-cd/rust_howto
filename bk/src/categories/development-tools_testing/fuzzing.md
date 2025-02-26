@@ -39,28 +39,32 @@ TODO P2 cover valgrind
 
 [`valgrind`][c-valgrind]⮳{{hi:valgrind}}
 
-## Fuzzing Engines
+## Fuzzing Engines {#fuzzing_engines}
 
 cargo fuzz: The most common and recommended way to perform fuzzing in Rust. It integrates well with [Cargo][p-cargo] and uses libFuzzer under the hood.
 afl.rs: Bindings to the American Fuzzy Lop (AFL) fuzzer. AFL is a powerful fuzzer, but [cargo][p-cargo] fuzz with libFuzzer is often sufficient and easier to set up.
 
-## Target Definition: (Essential)
+### Target Definition: (Essential)
 
 You'll need to define a fuzz target - a function in your code that the fuzzer will call with different inputs. This is a crucial step in setting up fuzzing.
 
-## Corpus Management: (Important for effective fuzzing)
+## Corpus Management
+
+(Important for effective fuzzing)
 
 A corpus is a set of initial inputs that the fuzzer uses as a starting point. `cargo fuzz` helps manage corpora.
 
-## Coverage-Guided Fuzzing: (Most effective)
+## Coverage-Guided Fuzzing
 
-libFuzzer (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses code coverage information to guide its search for bugs.
+(Most effective)
+
+`libFuzzer` (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses code coverage information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
 ## Sanitizers (for detecting errors)
 
-Address Sanitizer (ASan): Detects memory errors (e.g., use-after-free, memory leaks). Enable it with compiler flags (e.g., -fsanitize=address).
-Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer overflow, out-of-bounds access). Enable it with compiler flags (e.g., -fsanitize=undefined).
+Address Sanitizer (ASan): Detects memory errors (e.g., use-after-free, memory leaks). Enable it with compiler flags (e.g., `-fsanitize=address`).
+Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer overflow, out-of-bounds access). Enable it with compiler flags (e.g., `-fsanitize=undefined`).
 
 ## Differential Fuzzing: (For comparing implementations)
 
@@ -68,7 +72,7 @@ This is a more advanced technique and often involves custom scripting or tools. 
 
 ## Property-Based Testing (Related, but not strictly fuzzing)
 
-proptest, quickcheck: These crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
+`proptest`, `quickcheck`: These crates are used for property-based testing, which is a different but complementary technique to fuzzing. Property-based testing generates many random inputs to verify properties of your code.
 
 In almost all cases, `cargo fuzz` will be your primary tool for fuzzing Rust code. It uses `libFuzzer`, a powerful and modern fuzzing engine, and simplifies the fuzzing process significantly. Make sure you define good fuzz targets and use sanitizers to detect errors effectively.
 

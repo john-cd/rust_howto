@@ -86,51 +86,51 @@ First, install the CLI with `cargo install cargo-insta`. Second, create a test, 
 <div class="hidden">
 [testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
 
-## Unit Testing
+## Unit Testing {#testing}
 
 `std::test`: (Built-in) The standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
-## Integration Testing
+## Integration Testing {#integration_testing}
 
 Often uses `std::test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
 
-## Documentation Testing
+## Documentation Testing {#doc_testing}
 
 Uses `#[doc = "```"]` in doc comments to embed testable examples in your documentation.
 
-## Property-Based Testing
+## Property-Based Testing {#proptesting}
 
 `proptest`: A powerful crate for property-based testing, where you define properties that your code should satisfy, and proptest generates many random inputs to verify those properties.
 `quickcheck`: Another property-based testing crate. proptest is often preferred for its flexibility.
 
-## Mocking
+## Mocking {#mocking}
 
 `mockall`: A popular crate for creating mock objects for testing.
 `faux`: Another mocking library.
 
-## Test Data Generation
+## Test Data Generation {#test_data_generation}
 
 Often done with custom functions or data structures, but crates like `faker` can be useful for generating realistic test data.
 
-## Test Runners
+## Test Runners {#test_runners}
 
 `cargo test` runs your tests.
 
 `cargo nextest`
 
-## Test Organization
+## Test Organization {#test_organization}
 
 [`rstest`][c-rstest]⮳{{hi:rstest}} is a crate for writing data-driven tests.
 
-## Assertion Libraries
+## Assertion Libraries {#assertion_libraries}
 
 `assert_matches`: A crate for matching on patterns in assertions.
 
-## Asynchronous Testing
+## Asynchronous Testing {#async_testing}
 
 Often involves using `tokio::test` or similar runtime-specific attributes for testing asynchronous code.
 
-## Coverage Testing
+## Coverage Testing {#coverage_testing}
 
 [`grcov`][c-grcov]⮳{{hi:grcov}}: A code coverage tool.
 [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}}: Another code coverage tool.

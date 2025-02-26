@@ -12,7 +12,7 @@ set -euo pipefail
 
 root="$(realpath $1)/"
 # Iterate through subchapters
-for file in $(find ${root}src -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
+for file in $(find ${root}src ${root}drafts -type f -name "*.md" -not -name "*.incl.md" -not -name "*index.md" -not -name "*refs.md")
 do
 base=$(basename $file)
 dir=$(dirname $file)

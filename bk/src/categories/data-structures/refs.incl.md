@@ -1,11 +1,17 @@
 [ex-data-structures-arrayvec]: stack_allocated_arrays.md#arrayvec
 [ex-data-structures-bitfield]: bitfield.md#bitfield
+[ex-data-structures-btreemap]: btrees.md#btreemap
+[ex-data-structures-btreeset]: btrees.md#btreeset
 [ex-data-structures-flagset]: bitfield.md#flagset
 [ex-data-structures-generate-parse-uuid]: uuid.md#generate-parse-uuid
+[ex-data-structures-heapless]: heapless.md#heapless
 [ex-data-structures-indexmap]: maps.md#indexmap
+[ex-data-structures-linkedlist]: linkedlist.md#linkedlist
 [ex-data-structures-multimap]: maps.md#multimap
+[ex-data-structures-queue]: stack_and_queue.md#queue
 [ex-data-structures-slotmap]: maps.md#slotmap
 [ex-data-structures-smallvec]: stack_allocated_arrays.md#smallvec
+[ex-data-structures-stack]: stack_and_queue.md#stack
 [ex-data-structures-tinyvec]: stack_allocated_arrays.md#tinyvec
 [p-containers]: ../../other/containers/containers.md
 [p-databases]: ../database-implementations/databases.md

@@ -4,3 +4,8 @@
 | [`ed25519-dalek`][ex-cryptography-ed25519-dalek] | [![ed25519-dalek-website][c-ed25519_dalek-website-badge]][c-ed25519_dalek-website] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 | [`ecdsa`][ex-cryptography-ecdsa] | [![ecdsa][c-ecdsa-badge]][c-ecdsa] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 | [`dsa`][ex-cryptography-dsa] | [![dsa][c-dsa-badge]][c-dsa] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+| [cryptography HMAC][ex-cryptography-hmac] | {{#crate }} | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
+
+<div class="hidden">
+FIXME
+</div>
