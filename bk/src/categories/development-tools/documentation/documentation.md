@@ -48,7 +48,7 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 <div class="hidden">
 [documentation: add (P2)](https://github.com/john-cd/rust_howto/issues/297)
 
-Documentation Generator: cargo doc (built-in)
+Documentation Generator: `cargo doc` (built-in)
 Doc Comments: (Using /// or //! in your code)
 Testing with Documentation Examples: (Using #[doc = "```"] in doc comments)
 Markdown Processing (for docs): pulldown-cmark, comrak

@@ -12,7 +12,7 @@ Git hook scripts are useful for automatically identifying simple issues, such as
 [![cargo-husky-lib.rs][c-cargo_husky-lib.rs-badge]][c-cargo_husky-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for cargo projects with 🐶
+[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for `cargo` projects with 🐶
 
 Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 

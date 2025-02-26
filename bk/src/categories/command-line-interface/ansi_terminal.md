@@ -61,7 +61,7 @@ It supports all UNIX and Windows terminals down to [Windows][p-windows] 7. Featu
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ansi_terminal: ansi_term is archived (P0)](https://github.com/john-cd/rust_howto/issues/231)
+[ansi_terminal: `ansi_term` is archived (P0)](https://github.com/john-cd/rust_howto/issues/231)
 
 Most popular
 

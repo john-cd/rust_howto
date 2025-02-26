@@ -51,7 +51,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 <div class="hidden">
 [development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
-[index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / `log` / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
 Build System/Package Manager: [`cargo`][c-cargo]⮳{{hi:cargo}}
 Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}}

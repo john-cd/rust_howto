@@ -58,7 +58,7 @@ Your favorite number must be 256.
 
 ## See also
 
-### lexopt {#lexopt}
+### `lexopt` {#lexopt}
 
 [![lexopt][c-lexopt-badge]][c-lexopt]{{hi:lexopt}}
 [![lexopt-crates.io][c-lexopt-crates.io-badge]][c-lexopt-crates.io]
@@ -98,7 +98,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[arguments: expand lexopt and pico-args (P1)](https://github.com/john-cd/rust_howto/issues/233)
+[arguments: expand `lexopt` and `pico-args` (P1)](https://github.com/john-cd/rust_howto/issues/233)
 
 ### `structopt` {#structopt}
 

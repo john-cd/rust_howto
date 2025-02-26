@@ -32,7 +32,7 @@ Rust Support: Likely needs a custom implementation based on the CCSDS specificat
 - PUS (Packet Utilization Standard): A CCSDS standard for on-board data handling.
 Rust Support: Likely needs a custom implementation based on the CCSDS specifications.
 
-## Parsing: Use crates like nom or binascii to parse binary data structures defined in the protocol specifications
+## Parsing: Use crates like `nom` or binascii to parse binary data structures defined in the protocol specifications
 
 [[parse | Parse]]
 [[parser-implementations | Parser Implementations]]

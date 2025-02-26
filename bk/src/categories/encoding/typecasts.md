@@ -35,7 +35,7 @@
 
 - No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
 - [Performance][p-performance]: Eliminating data copying can significantly improve [performance][p-performance], especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).
-- Safety: The zerocopy crate provides mechanisms to ensure safe and correct zero-copy operations.
+- Safety: The `zerocopy` crate provides mechanisms to ensure safe and correct zero-copy operations.
 
 Zerocopy is often used in [network programming][p-network-programming], where high [performance][p-performance] and low memory overhead are critical, or image handling.
 

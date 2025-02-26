@@ -64,7 +64,7 @@ If you are using VS Code, also look into the `Dependi` VS Code plugin.
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-semver-checks`][c-cargo_semver_checks]⮳{{hi:cargo-semver-checks}} scans your Rust crate for semver violations.
+[`cargo-semver-checks`][c-cargo_semver_checks]⮳{{hi:cargo-semver-checks}} scans your Rust crate for `semver` violations.
 
 ```sh
 # If you already use `cargo-binstall` for faster tool installations:

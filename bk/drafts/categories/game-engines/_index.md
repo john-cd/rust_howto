@@ -17,7 +17,7 @@ Specific Engine Crates
 [`bevy`][c-bevy]⮳{{hi:bevy}}: The Bevy engine crate itself.
 [`amethyst`][c-amethyst]⮳{{hi:amethyst}}: The Amethyst engine crate.
 [`ggez`][c-ggez]⮳{{hi:ggez}}: The ggez crate.
-[`macroquad`][c-macroquad]⮳{{hi:macroquad}}: The macroquad crate.
+[`macroquad`][c-macroquad]⮳{{hi:macroquad}}: The `macroquad` crate.
 
 [`Bevy`][c-bevy]⮳{{hi:Bevy}}: A data-driven game engine built on the Entity Component System (ECS) architecture. Very popular, actively developed, and a great choice for both 2D and 3D games. Known for its ease of use and rapid iteration.
 

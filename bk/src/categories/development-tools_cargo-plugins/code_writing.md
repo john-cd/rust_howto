@@ -34,9 +34,9 @@ Code Snippets/Templates: (No single dominant crate or plugin. Often handled with
 
 Scaffolding/Project Generation: (Tools like [cargo][p-cargo] new are built-in. Other project templates might be managed separately or integrated into build tools.)
 
-Documentation Generation: cargo doc (while primarily for documentation output, it does involve processing and "generating" documentation from your code).
+Documentation Generation: `cargo doc` (while primarily for documentation output, it does involve processing and "generating" documentation from your code).
 
 API [Documentation][p-documentation] Generators (for REST APIs, etc.): (Often tied to web frameworks; no single dominant crate).
 
-String Manipulation/Text Processing (Often used in code generation): [regex][p-regex], itertools (not cargo plugins, but commonly used crates).
+String Manipulation/Text Processing (Often used in code generation): [regex][p-regex], `itertools` (not `cargo` plugins, but commonly used crates).
 </div>

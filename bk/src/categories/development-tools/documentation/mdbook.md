@@ -107,7 +107,7 @@ jobs:
 
 [![mdbook-toc][c-mdbook_toc-badge]][c-mdbook_toc] [![mdbook-toc-crates.io][c-mdbook_toc-crates.io-badge]][c-mdbook_toc-crates.io] [![mdbook-toc-github][c-mdbook_toc-github-badge]][c-mdbook_toc-github] [![mdbook-toc-lib.rs][c-mdbook_toc-lib.rs-badge]][c-mdbook_toc-lib.rs]{{hi:mdbook-toc}}
 
-[`mdbook-toc`][c-mdbook_toc]⮳{{hi:mdbook-toc}} is a pre-processor for mdbook to add inline Table of Contents support.
+[`mdbook-toc`][c-mdbook_toc]⮳{{hi:mdbook-toc}} is a pre-processor for `mdbook` to add inline Table of Contents support.
 
 ### `mdbook-theme` {#mdbook-theme}
 
@@ -119,7 +119,7 @@ jobs:
 
 [![mdbook-pagetoc][c-mdbook_pagetoc-badge]][c-mdbook_pagetoc] [![mdbook-pagetoc-crates.io][c-mdbook_pagetoc-crates.io-badge]][c-mdbook_pagetoc-crates.io] [![mdbook-pagetoc-github][c-mdbook_pagetoc-github-badge]][c-mdbook_pagetoc-github] [![mdbook-pagetoc-lib.rs][c-mdbook_pagetoc-lib.rs-badge]][c-mdbook_pagetoc-lib.rs]{{hi:mdbook-pagetoc}}{{hi:Toc}}{{hi:Table}}{{hi:Pagetoc}}{{hi:Mdbook}}{{hi:Contents}}
 
-[`mdbook-pagetoc`][c-mdbook_pagetoc]⮳{{hi:mdbook-pagetoc}} is a mdbook plugin that provides a table of contents for each page.
+[`mdbook-pagetoc`][c-mdbook_pagetoc]⮳{{hi:mdbook-pagetoc}} is a `mdbook` plugin that provides a table of contents for each page.
 
 ## Create pages from a template {#skip2}
 

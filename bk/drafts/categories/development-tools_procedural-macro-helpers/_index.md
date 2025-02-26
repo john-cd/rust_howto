@@ -52,7 +52,7 @@ Testing:
 [`trybuild`][c-trybuild]⮳{{hi:trybuild}}: A crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
 Debugging:
 
-Debugging procedural macros can be tricky. Often involves printing token streams to the console or using tools like cargo expand to see the generated code.
+Debugging procedural macros can be tricky. Often involves printing token streams to the `console` or using tools like `cargo expand` to see the generated code.
 
 ## Metaprogramming Concepts
 

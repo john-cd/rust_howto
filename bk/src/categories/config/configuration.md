@@ -32,7 +32,7 @@ Config lets you set a set of default parameters and then extend them via merging
 
 [![confy][c-confy-badge]][c-confy] [![confy-crates.io][c-confy-crates.io-badge]][c-confy-crates.io] [![confy-github][c-confy-github-badge]][c-confy-github] [![confy-lib.rs][c-confy-lib.rs-badge]][c-confy-lib.rs]{{hi:confy}}
 
-[`confy`][c-confy]⮳{{hi:confy}} is a Rust crate that simplifies reading and writing TOML or YAML configuration files. It uses serde for easy serialization/deserialization of config structs, handles file I/O, and supports defaults and environment variable overrides.
+[`confy`][c-confy]⮳{{hi:confy}} is a Rust crate that simplifies reading and writing TOML or YAML configuration files. It uses `serde` for easy serialization/deserialization of config structs, handles file I/O, and supports defaults and environment variable overrides.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/config/tests/confy.rs:example}}

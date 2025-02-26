@@ -63,7 +63,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 <div class="hidden">
 [useful_robotics_tools_and_libs: locate libs, organize, write (P2)](https://github.com/john-cd/rust_howto/issues/479)
 
-[P2 link to opencv example under computer vision](https://github.com/john-cd/rust_howto/issues/960)
+[P2 link to `opencv` example under computer vision](https://github.com/john-cd/rust_howto/issues/960)
 
 [behavior-tree-wikipedia]:https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
 

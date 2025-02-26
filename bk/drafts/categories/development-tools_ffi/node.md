@@ -35,7 +35,7 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 neon: This crate provides a safe and convenient way to write Node.js addons in Rust using N-API. It handles a lot of the boilerplate and memory management. This is the strongly recommended approach.
 Other (Less Common) Options:
 
-nodejs-sys: Provides lower-level bindings to the Node.js API, but neon is generally preferred for ease of use and safety.
+nodejs-sys: Provides lower-level bindings to the Node.js API, but `neon` is generally preferred for ease of use and safety.
 
 ## Communication/Serialization
 
@@ -46,13 +46,13 @@ serde_json: (If you're exchanging [JSON][p-json] data.)
 
 cargo: (For building the Rust library.)
 npm or yarn: (For managing the Node.js side and integrating with the Rust addon.)
-node-gyp: (Often used for building native Node.js addons, but neon simplifies this process.)
+node-gyp: (Often used for building native Node.js addons, but `neon` simplifies this process.)
 
 ## Key Concepts and Workflow
 
 N-API: You'll write Rust code that interacts with the N-API to create Node.js objects, call JavaScript functions, and handle data.
 Addons: You'll create a Node.js addon that exposes your Rust functions to JavaScript.
-Data Marshaling: You'll need to convert data between Rust and JavaScript types. neon helps with this.
+Data Marshaling: You'll need to convert data between Rust and JavaScript types. `neon` helps with this.
 Event Loop: You'll need to be mindful of Node.js's event loop and ensure that your Rust code interacts with it correctly (e.g., using [asynchronous][p-asynchronous] operations when necessary).
 
 neon is the most important crate here. It significantly simplifies the process of creating Node.js addons in Rust. It's highly recommended to use it unless you have very specific low-level N-API requirements. It abstracts away much of the complexity of manual N-API interaction.

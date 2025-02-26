@@ -47,7 +47,7 @@ fn [main][p-main]() {
 
 [![env_logger][c-env_logger-badge]][c-env_logger] [![env_logger-crates.io][c-env_logger-crates.io-badge]][c-env_logger-crates.io] [![env_logger-github][c-env_logger-github-badge]][c-env_logger-github] [![env_logger-lib.rs][c-env_logger-lib.rs-badge]][c-env_logger-lib.rs]{{hi:env_logger}}{{hi:Log}}{{hi:Logger}}{{hi:Logging}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
-[`env_logger`][c-env_logger]⮳{{hi:env_logger}} is a logging implementation for log which is configured via an environment variable. [`env_logger`][c-env_logger]⮳{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the [`log`][c-log]⮳{{hi:log}} crate instead.
+[`env_logger`][c-env_logger]⮳{{hi:env_logger}} is a logging implementation for `log` which is configured via an environment variable. [`env_logger`][c-env_logger]⮳{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the [`log`][c-log]⮳{{hi:log}} crate instead.
 
 ```rust,editable
 use [log][p-log]::info;

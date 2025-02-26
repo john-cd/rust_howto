@@ -28,7 +28,7 @@
 
 [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action-github]⮳
 
-[Experience about deploying mdbook on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳
+[Experience about deploying `mdbook` on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

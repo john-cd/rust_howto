@@ -61,7 +61,7 @@ cargo fix
 [![cargo-husky-lib.rs][c-cargo_husky-lib.rs-badge]][c-cargo_husky-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for cargo projects with 🐶
+[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for `cargo` projects with 🐶
 
 Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p-formatting] of the code, of [JSON][p-json], and YAML files...) before committing code, prior to submission to code review.
 
@@ -95,7 +95,7 @@ cargo fmt: The standard Rust code formatter.
 Dead Code Detection:
 
 cargo deadlinks: Finds broken links in your documentation.
-Other Style/Quality Checks: (Often integrated into CI rather than run as separate cargo plugins)
+Other Style/Quality Checks: (Often integrated into CI rather than run as separate `cargo` plugins)
 
 rust-analyzer: While primarily an LSP (Language Server Protocol) implementation for IDEs, it also performs many code analysis checks that can be considered a form of linting. It's often used in CI.
 </div>

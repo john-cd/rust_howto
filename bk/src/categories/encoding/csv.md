@@ -39,7 +39,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 {{#include ../../../crates/cats/encoding/tests/csv/filter.rs:example}}
 ```
 
-This example has been adapted from [the csv crate tutorial][c-csv-tutorial]⮳
+This example has been adapted from [the `csv` crate tutorial][c-csv-tutorial]⮳
 
 ## Handle invalid CSV data with `serde` {#handle-invalid-csv}
 
@@ -75,7 +75,7 @@ The following example shows how to serialize custom [structs][p-structs]{{hi:Ser
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
-Transform a [CSV][p-csv] file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][c-csv]{{hi:csv}}⮳ crate to read and write the csv file, and [`serde`][c-serde]{{hi:serde}}⮳ to deserialize and serialize the rows to and from bytes.
+Transform a [CSV][p-csv] file containing a color name and a hex color into one with a color name and an rgb color. Utilizes the [`csv`][c-csv]{{hi:csv}}⮳ crate to read and write the CSV file, and [`serde`][c-serde]{{hi:serde}}⮳ to deserialize and serialize the rows to and from bytes.
 
 See [`csv::Reader::deserialize`][c-csv::Reader::deserialize]{{hi:csv::Reader::deserialize}}⮳, [`serde::Deserialize`][c-serde::Deserialize]{{hi:serde::Deserialize}}⮳ and [`std::str::FromStr`][c-std::str::FromStr]{{hi:std::str::FromStr}}⮳.
 

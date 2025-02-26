@@ -54,7 +54,7 @@ Base64:
 
 ## JSON
 
-[`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization. serde is used for the underlying serialization framework.
+[`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization. `serde` is used for the underlying serialization framework.
 
 ## TOML (Tom's Obvious, Minimal Language)
 
@@ -90,6 +90,6 @@ Base64:
 
 [`serde`][c-serde]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
 
-For general character encoding, encoding is a good choice. For JSON, serde_json is the standard. For other formats, look for crates that support them specifically. `serde` is the underlying engine for many of these, providing a consistent way to work with serialization.
+For general character encoding, encoding is a good choice. For JSON, `serde_json` is the standard. For other formats, look for crates that support them specifically. `serde` is the underlying engine for many of these, providing a consistent way to work with serialization.
 
 </div>

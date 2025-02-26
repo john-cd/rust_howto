@@ -14,7 +14,7 @@ Tools to help you better interface with other languages. This includes binding g
 <div class="hidden">
 [development-tools_ffi/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/325)
 
-link to pyo3 file as well
+link to `pyo3` file as well
 
 C Bindings (FFI):
 

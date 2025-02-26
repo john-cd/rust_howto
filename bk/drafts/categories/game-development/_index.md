@@ -25,7 +25,7 @@ See also [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling
 
 ## Graphics
 
-[`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with winit or game engines.
+[`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with `winit` or game engines.
 [`rend3`][c-rend3]⮳{{hi:rend3}}: A 3D rendering engine built on top of wgpu.
 [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A low-level graphics API abstraction layer.
 [`image`][c-image]⮳{{hi:image}}: For image loading and manipulation.

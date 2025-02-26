@@ -74,7 +74,7 @@ Example `.github/workflows/<name>.yml`
     # default: "CARGO CC CFLAGS CXX CMAKE RUST"
     env-vars: ""
 
-    # The cargo workspaces and target directory configuration.
+    # The `cargo` workspaces and target directory configuration.
     # These entries are separated by newlines and have the form
     # `$workspace -> $target`. The `$target` part is treated as a directory
     # relative to the `$workspace` and defaults to "target" if not explicitly given.
@@ -85,7 +85,7 @@ Example `.github/workflows/<name>.yml`
     cache-directories: ""
 
     # Determines whether workspace `target` directories are cached.
-    # If `false`, only the cargo registry will be cached.
+    # If `false`, only the `cargo` registry will be cached.
     # default: "true"
     cache-targets: ""
 

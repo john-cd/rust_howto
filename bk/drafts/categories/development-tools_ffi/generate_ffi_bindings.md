@@ -99,6 +99,6 @@ FFI code often requires unsafe blocks because the Rust compiler cannot guarantee
 
 ## Binding Generators (for C++)
 
-While tools like SWIG exist, cxx is generally preferred for modern C++ interop with Rust as it's more idiomatic and safer.
+While tools like SWIG exist, `cxx` is generally preferred for modern C++ interop with Rust as it's more idiomatic and safer.
 
 </div>

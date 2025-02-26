@@ -38,7 +38,7 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 ## System Profilers (for more in-depth analysis)
 
-[`perf`][c-perf]⮳{{hi:perf}} (Linux): A powerful system profiler. cargo flamegraph often uses perf under the hood.
+[`perf`][c-perf]⮳{{hi:perf}} (Linux): A powerful system profiler. `cargo flamegraph` often uses perf under the hood.
 [`dtrace`][c-dtrace]⮳{{hi:dtrace}} (macOS, BSD): Another system profiler.
 `VTune` (Intel): A commercial profiler.
 
@@ -56,7 +56,7 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 ## Tracing (for understanding program flow)
 
-[`tracing`][c-tracing]⮳{{hi:tracing}}: While not strictly a profiler in the performance sense, tracing allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools.
+[`tracing`][c-tracing]⮳{{hi:tracing}}: While not strictly a profiler in the performance sense, `tracing` allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools.
 
 ## Sampling Profilers (for CPU usage)
 

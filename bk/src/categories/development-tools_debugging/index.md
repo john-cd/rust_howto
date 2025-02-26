@@ -28,7 +28,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: reorganize; dedupe alternatives / log / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / `log` / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
 Debugging with [`gdb`][c-gdb]⮳{{hi:gdb}} or [`lldb`][c-lldb]⮳{{hi:lldb}}: Basic debugging techniques.
 
@@ -42,11 +42,11 @@ Log Implementations (Loggers):
 
 Log Formatting/Output:
 
-[`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}}: Used with tracing to format and output logs.
+[`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}}: Used with `tracing` to format and output logs.
 
 Asynchronous Logging:
 
-(Often achieved using a logger like tracing combined with asynchronous tasks.)
+(Often achieved using a logger like `tracing` combined with asynchronous tasks.)
 
 Log Filtering:
 

@@ -46,7 +46,7 @@ Let's break down the graphics libraries and applications in Rust, focusing on ra
 [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Bindings to the SDL library, which can be used for window management, input, and graphics.
 
 [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. It's a popular choice for modern graphics development in Rust.
-[`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A lower-level graphics API abstraction layer. More control, but more complex. wgpu is often preferred for its ease of use.
+[`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A lower-level graphics API abstraction layer. More control, but more complex. `wgpu` is often preferred for its ease of use.
 [`vulkano`][c-vulkano]⮳{{hi:vulkano}}: Rust bindings for the Vulkan API. Very powerful, but also very complex. Only use this if you absolutely need the fine-grained control that Vulkan provides.
 
 ### 2D Raster Graphics (Pixel Manipulation)
@@ -115,7 +115,7 @@ bevy_render: Bevy's rendering system (part of the Bevy game engine).
 Windowing and Input:
 
 [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling library. Essential for getting a window on the screen and handling input.
-[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: (Can also be used for windowing and input, but winit is often preferred in the Rust ecosystem).
+[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: (Can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem).
 
 ### Image Loading and Manipulation
 
@@ -127,7 +127,7 @@ Often handled by the rendering engine or directly using the low-level graphics A
 
 ### Shaders
 
-Shaders are usually written in a shading language (like GLSL or WGSL) and then loaded by your Rust code. wgpu uses WGSL.
+Shaders are usually written in a shading language (like GLSL or WGSL) and then loaded by your Rust code. `wgpu` uses WGSL.
 
 ### Mathematics (Linear Algebra)
 

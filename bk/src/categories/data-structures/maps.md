@@ -19,7 +19,7 @@ IndexMap is a data structure in Rust that combines the features of a hashmap and
 {{#include ../../../crates/cats/data_structures/tests/maps/indexmap.rs:example}}
 ```
 
-## Store data in a multimap {#multimap}
+## Store data in a `multimap` {#multimap}
 
 [![multimap][c-multimap-badge]][c-multimap]{{hi:multimap}}
 [![multimap-crates.io][c-multimap-crates.io-badge]][c-multimap-crates.io]

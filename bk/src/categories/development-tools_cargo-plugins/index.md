@@ -102,7 +102,7 @@ Miscellaneous:
 
 [`cargo-cache`][c-cargo_cache]⮳{{hi:cargo-cache}}, [`cargo-sweep`][c-cargo_sweep]⮳{{hi:cargo-sweep}}, and [`cargo-prune`][c-cargo_prune]⮳{{hi:cargo-prune}} for keeping disk consumption by build artifacts and other regeneratable files under control.
 
-[`cargo-deadlinks`][c-cargo_deadlinks]⮳{{hi:cargo-deadlinks}} Check cargo doc output for broken old-style/manual intra-doc links.
+[`cargo-deadlinks`][c-cargo_deadlinks]⮳{{hi:cargo-deadlinks}} Check `cargo doc` output for broken old-style/manual intra-doc links.
 
 [`cargo-edit`][c-cargo_edit]⮳{{hi:cargo-edit}} for `cargo add <dependency>`, `cargo rm <dependency>` and `cargo upgrade` to update your Cargo.toml's versions. (Functionality eventually planned to be part of Cargo itself)
 
@@ -114,7 +114,7 @@ Miscellaneous:
 
 [`cargo-tree`][c-cargo_tree]⮳{{hi:cargo-tree}} to investigate dependencies (I like to use -d to list crates where more than one version is getting pulled in and what's pulling each version in.)
 
-[`cargo-update`][c-cargo_update]⮳{{hi:cargo-update}} to provide a cargo install-update to check for and install new versions of cargo install's commands.
+[`cargo-update`][c-cargo_update]⮳{{hi:cargo-update}} to provide a cargo install-update to check for and install new versions of `cargo install` commands.
 
 [`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}} to re-run a command every time the source changes. (eg. `cargo test`)
 
@@ -128,14 +128,14 @@ Miscellaneous:
 
 ## Creating a Cargo plugin
 
-Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating cargo plugins, but rather crates that are used within cargo plugins. Here's a breakdown:
+Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating `cargo` plugins, but rather crates that are used within `cargo` plugins. Here's a breakdown:
 
 Creating a Cargo Plugin: You create a regular Rust project (often a binary crate) and name the executable cargo-something. Cargo will automatically discover and run these executables.
 
 Essential Crates (for plugin functionality):
 
 Argument Parsing: [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}}, [`argh`][c-argh]⮳{{hi:argh}} (for parsing command-line arguments passed to the plugin)
-Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but serde is often used for parsing TOML or JSON.)
+Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but `serde` is often used for parsing TOML or JSON.)
 File System Operations: `std::fs`, [`pathdiff`][c-pathdiff]⮳{{hi:pathdiff}}
 Process Management: `std::process` (for running other commands)
 Networking/HTTP (if needed): [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, [`hyper`][c-hyper]⮳{{hi:hyper}}

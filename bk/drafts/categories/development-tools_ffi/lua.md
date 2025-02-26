@@ -28,7 +28,7 @@ Interfacing with Lua from Rust is typically done using the Lua C API, and there 
 
 rlua: A safe and high-level binding to Lua. It's a popular choice.
 mlua: Another good option for Lua bindings. It focuses on being lightweight and efficient.
-lua53: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained control or are working with a specific Lua version, this might be an option. However, rlua or mlua are usually preferred for ease of use.
+lua53: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained control or are working with a specific Lua version, this might be an option. However, `rlua` or `mlua` are usually preferred for ease of use.
 
 ## Communication/Data Marshaling
 
@@ -44,6 +44,6 @@ Lua State: You'll work with a Lua state in your Rust code to interact with the L
 Calling Lua Functions from Rust: The binding crates provide ways to call Lua functions from Rust.
 Calling Rust Functions from Lua: You can register Rust functions with Lua so that they can be called from Lua scripts.
 Stack Manipulation (Lower-Level Bindings): If you use lower-level bindings, you might need to manipulate the Lua stack directly. Higher-level crates abstract this away.
-rlua and mlua provide a much more ergonomic and safe way to interact with Lua compared to using the raw Lua C API directly. They are the recommended starting points for Lua/Rust integration.
+`rlua` and `mlua` provide a much more ergonomic and safe way to interact with Lua compared to using the raw Lua C API directly. They are the recommended starting points for Lua/Rust integration.
 
 </div>

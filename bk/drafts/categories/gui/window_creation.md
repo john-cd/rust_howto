@@ -18,7 +18,7 @@
 
 [`tao`][c-tao]⮳{{hi:tao}} is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
-"A fork of winit by the Tauri project, which adds support for things like system menus that desktop apps need."
+"A fork of `winit` by the Tauri project, which adds support for things like system menus that desktop apps need."
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
@@ -43,6 +43,6 @@
 ## Windowing and Input
 
 [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling library. Essential for getting a window on the screen and handling input.
-[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for windowing and input, but winit is often preferred in the Rust ecosystem.
+[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem.
 
 </div>

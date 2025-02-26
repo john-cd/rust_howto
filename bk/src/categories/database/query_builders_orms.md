@@ -153,7 +153,7 @@ while let Some(todo) = todos.next().await {
 
 [Seaography GraphQL server][c-seaography-website]{{hi:seaography}}⮳
 
-Built on top of sqlx (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
+Built on top of `sqlx` (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/query_builders_orms/sea_orm.rs:example}}

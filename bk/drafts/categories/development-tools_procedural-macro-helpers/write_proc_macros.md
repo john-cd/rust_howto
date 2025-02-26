@@ -50,7 +50,7 @@ A substitute implementation of the compiler's [`proc_macro`][c-proc_macro]⮳{{h
 
 A wrapper around the procedural macro API of the compiler's proc_macro crate. This library serves two purposes:
 
-Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc_macro are entirely specific to procedural [macros][p-macros] and cannot ever exist in code outside of a procedural macro. Meanwhile proc_macro2 types may exist anywhere including non-macro code. By developing foundational libraries like syn and quote against proc_macro2 rather than proc_macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
+Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc_macro are entirely specific to procedural [macros][p-macros] and cannot ever exist in code outside of a procedural macro. Meanwhile `proc_macro2` types may exist anywhere including non-macro code. By developing foundational libraries like `syn` and `quote` against `proc_macro2` rather than proc_macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
 
 Make procedural [macros][p-macros] unit testable. As a consequence of being specific to procedural [macros][p-macros], nothing that uses proc_macro can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using proc_macro2.
 

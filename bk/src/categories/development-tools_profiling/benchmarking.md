@@ -47,7 +47,7 @@
 [![hyperfine-lib.rs][c-hyperfine-lib.rs-badge]][c-hyperfine-lib.rs]
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
-[`hyperfine`][c-hyperfine]⮳{{hi:hyperfine}} is a tool for benchmarking compiled binaries (similar to unix time command but better).
+[`hyperfine`][c-hyperfine]⮳{{hi:hyperfine}} is a tool for benchmarking compiled binaries (similar to unix 'time' command but better).
 
 - Statistical analysis across multiple runs.
 - Support for arbitrary shell commands.

@@ -63,7 +63,7 @@ Consider this example for "generate random numbers within a range":
 {{#include ../crates/about/tests/about.rs:example}}
 ```
 
-To work with it locally we can run the following commands to create a new cargo project, and change to that directory:
+To work with it locally we can run the following commands to create a new `cargo` project, and change to that directory:
 
 ```sh
 cargo new my-example --bin

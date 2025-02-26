@@ -88,7 +88,7 @@ Log Implementations (Loggers):
 
 `env_logger`: A popular logger that configures logging based on environment variables.
 `log4rs`: A more flexible logger that supports [configuration][p-configuration] files (YAML, TOML, JSON).
-`tracing`: A newer, more structured logging library with support for spans and context. Often used with tracing-subscriber for [formatting][p-formatting] and output.
+`tracing`: A newer, more structured logging library with support for spans and context. Often used with `tracing-subscriber` for [formatting][p-formatting] and output.
 
 Log [Formatting][p-formatting]:
 

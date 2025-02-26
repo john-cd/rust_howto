@@ -15,7 +15,7 @@
 {{#include ../../../crates/other/tests/data_processing/arrow.rs:example}}
 ```
 
-## Query in-memory data with datafusion {#datafusion}
+## Query in-memory data with `datafusion` {#datafusion}
 
 [![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}}
 [![datafusion-crates.io][c-datafusion-crates.io-badge]][c-datafusion-crates.io]

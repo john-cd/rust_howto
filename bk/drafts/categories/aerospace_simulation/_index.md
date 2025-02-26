@@ -43,7 +43,7 @@ Simulating the interaction of multiple bodies, which is important fo
 Limited mature physics engines in pure Rust: This is a challenging area. Many robust physics engines are written in C/C++.
 
 - `rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-- `bevy_rapier`: Integration between rapier and the bevy game engine.
+- `bevy_rapier`: Integration between rapier and the `bevy` game engine.
 
 [[game-development | Game Development]]
 [[game-engines | Game Engines]]

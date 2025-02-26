@@ -54,7 +54,7 @@ You can install cargo-license with `cargo install cargo-license` and run it in y
 [![cargo-deny-lib.rs][c-cargo_deny-lib.rs-badge]][c-cargo_deny-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo-deny`][c-cargo_deny]⮳{{hi:cargo-deny}} is a cargo plugin that lets you lint your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
+[`cargo-deny`][c-cargo_deny]⮳{{hi:cargo-deny}} is a `cargo` plugin that lets you lint your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
 
 - Checks the license information for each crate.
 - Checks for / bans specific [crates][p-crates] in your graph, as well as duplicates.

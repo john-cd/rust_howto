@@ -29,7 +29,7 @@ MIME (Multipurpose Internet Mail Extensions):
 
 Building Email Messages:
 
-Often done using a combination of the crates above. lettre provides convenient builders
+Often done using a combination of the crates above. `lettre` provides convenient builders
 
 ## Asynchronous Email Sending
 
