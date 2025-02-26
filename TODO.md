@@ -15,6 +15,14 @@
 
 ## Incoporate the added text in `categories`
 
+## Finish 56 COMING SOON examples
+
+- parser impl
+- crypto
+- database
+- proc macros
+- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
+
 ## Finish preproc directives in mdbook-scrub
 
 - Scrub links to hidden pages instead of commenting e.g. [p-cross-platform]: # "../../other/cross-platform/_index.md"
