@@ -17,6 +17,11 @@
 {{#include ../../../crates/cats/accessibility/tests/accesskit.rs:example}}
 ```
 
+## See also
+
+- [[gui | GUI]]
+- [[web-programming_http-server | Web Programming: HTTP Server]]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
