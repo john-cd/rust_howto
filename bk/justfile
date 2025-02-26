@@ -127,6 +127,9 @@ mod chapters 'scripts/chapters'
 # Manage the main table of contents
 mod toc 'scripts/toc'
 
+# Manage crates
+mod crates 'scripts/crates'
+
 # Alias for utils
 u *args='':
   @just utils {{args}}

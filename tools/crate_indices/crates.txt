@@ -33,6 +33,7 @@ bacon
 base16ct
 base64
 base64ct
+basic-toml
 bat
 bcrypt
 bevy
@@ -98,6 +99,7 @@ clap
 clap-verbosity-flag
 color-eyre
 comemo
+comrak
 concat-string
 concat_string
 concat_strs
@@ -121,6 +123,7 @@ crossbeam_utils
 crossterm
 crux_core
 crux_macros
+cssparser
 csv
 cxx
 cxx-build
@@ -188,6 +191,7 @@ gping
 heapless
 heed
 hex-literal
+html5ever
 http
 http-body-util
 http_body_util
@@ -204,6 +208,7 @@ insta
 itertools
 jni
 joinery
+json5
 just
 kanal
 kani
@@ -226,6 +231,8 @@ log4rs
 lru
 lsd
 macroquad
+markdown
+markup5ever_arcdom
 md5
 mdbook
 mdbook-cmdrun
@@ -315,8 +322,10 @@ prost
 prost-build
 prost-types
 protobuf
+pulldown-cmark
 pyo3
 pyoxidizer
+quick-xml
 quote
 r3bl_tuify
 ractor
@@ -336,11 +345,13 @@ rkyv
 rmp-serde
 rocksdb
 roogle
+roxmltree
 rsa
 ruff
 rug
 rui
 rusqlite
+rust-ini
 rust_cache
 rust_decimal
 rust_decimal_macros
@@ -350,6 +361,7 @@ rustix
 rustler
 rustls
 rustquant
+ryu
 salsa
 same-file
 same_file
@@ -363,9 +375,11 @@ serde
 serde_derive
 serde_ignored
 serde_json
+serde_yml
 sha1
 sha2
 sibyl
+simd-json
 skia-safe
 sled
 slint
@@ -377,6 +391,7 @@ slotmap
 smallvec
 smartcore
 smol
+sqlparser
 sqlx
 stakker
 starship
@@ -403,6 +418,7 @@ time
 tinysearch
 tinytemplate
 tinyvec
+tl
 tokio
 tokio-graceful-shutdown
 tokio-postgres
@@ -411,6 +427,7 @@ tokio-tungstenite
 tokio-util
 tokio_graceful_shutdown
 toml
+toml_edit
 tonic
 tonic-build
 tower
@@ -444,6 +461,9 @@ windows
 winit
 x509-cert
 xilem
+xml
+xml5ever
+xmlparser
 xshell
 xsv
 yapp
