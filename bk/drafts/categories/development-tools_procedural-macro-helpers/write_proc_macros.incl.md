@@ -7,6 +7,5 @@
 | [`darling`][ex-development-tools_procedural-macro-helpers-darling] | [![darling][c-darling-badge]][c-darling] | [![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers] |
 
 <div class="hidden">
-[write_proc_macros.incl: examples' title (P2)](https://github.com/john-cd/rust_howto/issues/330)
-
+FIXME
 </div>

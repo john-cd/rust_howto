@@ -7,6 +7,5 @@
 | [`glam`][ex-game-engines-glam] | [![glam][c-glam-badge]][c-glam] | [![cat-game-engines][cat-game-engines-badge]][cat-game-engines] |
 
 <div class="hidden">
-[game_engines.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/368)
-
+FIXME
 </div>

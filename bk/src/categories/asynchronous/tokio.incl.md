@@ -7,5 +7,5 @@
 | [Graceful shutdown][ex-asynchronous-graceful-shutdown] | [![tokio_graceful_shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown] | [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous] |
 
 <div class="hidden">
-[tokio.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/222)
+FIXME
 </div>

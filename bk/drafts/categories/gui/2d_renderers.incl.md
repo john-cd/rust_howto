@@ -7,6 +7,5 @@
 | [`webrender`][ex-gui-webrender] | [![webrender][c-webrender-badge]][c-webrender] | [![cat-gui][cat-gui-badge]][cat-gui] |
 
 <div class="hidden">
-[2d_renderers.incl: title (P2)](https://github.com/john-cd/rust_howto/issues/376)
-
+FIXME
 </div>

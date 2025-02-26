@@ -7,4 +7,5 @@
 | [Measure build times][ex-compilers-build-time] | [![cargo-website][c-cargo-website-badge]][c-cargo-website] | [![cat-compilers][cat-compilers-badge]][cat-compilers] |
 
 <div class="hidden">
+FIXME
 </div>

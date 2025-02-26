@@ -4,4 +4,5 @@
 | [Bind to Unix-specific APIs with `nix`][ex-os_unix-apis-nix] | [![nix][c-nix-badge]][c-nix] | [![cat-os::unix-apis][cat-os::unix-apis-badge]][cat-os::unix-apis] |
 
 <div class="hidden">
+FIXME
 </div>
