@@ -118,8 +118,34 @@ Shared solutions for particular situations specific to programming in Rust.
 
 ---
 
-## `typenum`
+## `typenum` {#typenum}
+
+[![typenum][c-typenum-badge]][c-typenum] [![typenum-crates.io][c-typenum-crates.io-badge]][c-typenum-crates.io] [![typenum-github][c-typenum-github-badge]][c-typenum-github] [![typenum-lib.rs][c-typenum-lib.rs-badge]][c-typenum-lib.rs]{{hi:typenum}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
 Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers. It also provides a type-level array of type-level numbers, but its implementation is incomplete.
+
+{{#example typenum}}
+
+TODO P2 write
+
+---
+
+## `indoc` {#indoc}
+
+[![indoc][c-indoc-badge]][c-indoc] [![indoc-crates.io][c-indoc-crates.io-badge]][c-indoc-crates.io] [![indoc-github][c-indoc-github-badge]][c-indoc-github] [![indoc-lib.rs][c-indoc-lib.rs-badge]][c-indoc-lib.rs]{{hi:indoc}}{{hi:String}}{{hi:Literal}}{{hi:Heredoc}}{{hi:Nowdoc}}{{hi:Multiline}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+The `indoc!()` macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
+
+The `indoc` crate exports five additional macros to substitute conveniently for the standard library's formatting macros:
+
+`formatdoc!($fmt, ...)` — equivalent to `format!(indoc!($fmt), ...)`
+`printdoc!($fmt, ...)` — equivalent to `print!(indoc!($fmt), ...)`
+`eprintdoc!($fmt, ...)` — equivalent to `eprint!(indoc!($fmt), ...)`
+`writedoc!($dest, $fmt, ...)` — equivalent to `write!($dest, indoc!($fmt), ...)`
+`concatdoc!(...)` — equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
+
+{{#example indoc}}
+
+TODO P2 write
 
 </div>
