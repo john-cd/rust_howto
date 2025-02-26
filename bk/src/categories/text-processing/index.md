@@ -87,4 +87,12 @@ Similar is a dependency free crate for Rust that implements different diffing al
 Implementations of string similarity metrics. Includes Hamming, Levenshtein,
 OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 
+## `memchr` {#memchr}
+
+[![memchr][c-memchr-badge]][c-memchr] [![memchr-crates.io][c-memchr-crates.io-badge]][c-memchr-crates.io] [![memchr-github][c-memchr-github-badge]][c-memchr-github] [![memchr-lib.rs][c-memchr-lib.rs-badge]][c-memchr-lib.rs]{{hi:memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}
+
+This library provides heavily optimized routines for string search primitives.
+
+Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for 1, 2 or 3 byte search and single substring search.
+
 </div>

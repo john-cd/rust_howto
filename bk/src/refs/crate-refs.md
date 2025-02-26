@@ -3509,6 +3509,14 @@
 [c-meilisearch-lib.rs-badge]: https://img.shields.io/badge/lib.rs-meilisearch-yellow
 [c-meilisearch-lib.rs]: https://lib.rs/crates/meilisearch
 [c-meilisearch]: https://docs.rs/meilisearch
+[c-memchr-badge]: https://img.shields.io/crates/v/memchr?label=memchr
+[c-memchr-crates.io-badge]: https://img.shields.io/badge/crates.io-memchr-crimson
+[c-memchr-crates.io]: https://crates.io/crates/memchr
+[c-memchr-github-badge]: https://img.shields.io/badge/memchr-steelblue?logo=github
+[c-memchr-github]: https://github.com/BurntSushi/memchr
+[c-memchr-lib.rs-badge]: https://img.shields.io/badge/lib.rs-memchr-yellow
+[c-memchr-lib.rs]: https://lib.rs/crates/memchr
+[c-memchr]: https://docs.rs/memchr
 [c-memmap2-badge]: https://img.shields.io/crates/v/memmap2?label=memmap2
 [c-memmap2-crates.io-badge]: https://img.shields.io/badge/crates.io-memmap2-crimson
 [c-memmap2-crates.io]: https://crates.io/crates/memmap2
