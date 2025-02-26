@@ -14,8 +14,9 @@ categories = ["wasm"]
 publish.workspace = true
 
 [dependencies]
+js-sys = "0.3.77"
 wasmer = "5.0.4"
-wasmtime = "29.0.1"
+wasmtime = "30.0.2"
 yew = { version = "0.21.0", features = ["csr"] }
 
 ## General

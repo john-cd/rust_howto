@@ -16,6 +16,7 @@ publish.workspace = true
 [dependencies]
 basic-toml = "0.1.9"
 comrak = "0.35.0"
+configparser = "3.1.0"
 cssparser = "0.34.0"
 html5ever = "0.29.1"
 json5 = "0.4.1"

@@ -15,10 +15,15 @@ publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.95"
+cfg-if = "1.0.0"
 color-eyre = "0.6.3"
 dyn-clone = "1.0.17"
+indoc = "2.0.5"
 # eyre = "0.6.12" # outdated, see color-eyre
 itertools = "0.14.0"
 miette = { version = "7.2.0", features = ["fancy"] }
+pin-project = "1.1.9"
+pin-project-lite = "0.2.16"
 reqwest = { version = "0.12.12", features = ["blocking"] }
 thiserror = "2.0.1"
+typenum = "1.18.0"

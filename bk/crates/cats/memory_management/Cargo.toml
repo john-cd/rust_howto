@@ -14,8 +14,10 @@ categories = ["memory_management"]
 publish.workspace = true
 
 [dependencies]
+bumpalo = "3.17.0"
 lazy_static = "1.5.0"
 once_cell = "1.20.2"
+slab = "0.4.9"
 
 # General
 anyhow = "1.0.95"

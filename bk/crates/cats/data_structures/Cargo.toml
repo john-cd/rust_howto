@@ -36,3 +36,8 @@ uuid = { version = "1.11.0", features = [
 anyhow = "1.0.95"
 crates_io_api = "0.11.0"
 heapless = "0.8.0"
+either = "1.14.0"
+rangemap = "1.5.1"
+petgraph = "0.7.1"
+bloomfilter = "3.0.1"
+skiplist = "0.5.1"

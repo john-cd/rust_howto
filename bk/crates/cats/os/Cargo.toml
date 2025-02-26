@@ -15,6 +15,7 @@ publish.workspace = true
 
 [dependencies]
 libc = "0.2.169"
+which = "7.0.2"
 
 ## General
 anyhow = "1.0.95"

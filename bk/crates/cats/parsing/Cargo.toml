@@ -10,11 +10,11 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "parsing" ]
+categories = ["parsing"]
 publish.workspace = true
 
 [dependencies]
-## Parsing and friends
+binascii = "0.1.4"
 nom = "8.0.0"
 pest = "2.7.15"
 pest_derive = "2.7.15"
