@@ -1,6 +1,10 @@
 // ANCHOR: example
 // COMING SOON
 // ANCHOR_END: example
+
+// For format-preserving editing or finer control over output, use `toml_edit`
+// instead of `toml`
+
 fn main() {
     todo!();
 }
