@@ -6,5 +6,4 @@
 | [`cargo deny`][ex-development-tools_cargo-plugins-cargo-deny] | [![cargo-deny][c-cargo_deny-badge]][c-cargo_deny] | [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins] |
 
 <div class="hidden">
-[auditing.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/307)
 </div>

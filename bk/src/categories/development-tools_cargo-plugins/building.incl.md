@@ -5,5 +5,5 @@
 | [Make Rust a better `bash` with `xshell`][ex-development-tools_cargo-plugins-xshell] | [![xshell][c-xshell-badge]][c-xshell] | [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins] |
 
 <div class="hidden">
-[building.incl: fix (P1)](https://github.com/john-cd/rust_howto/issues/308)
+FIXME
 </div>

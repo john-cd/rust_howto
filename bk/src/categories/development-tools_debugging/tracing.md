@@ -90,4 +90,14 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 [tracing: [tracing-next-steps][c-tracing-next-steps] (P1)](https://github.com/john-cd/rust_howto/issues/322)
 
 [tracing-next-steps][c-tracing-next-steps]
+
+Tracing Framework: tracing (provides the core tracing functionality, spans, events, etc.)
+Span Management: (Handled by tracing through its span API)
+Event Logging: (Also handled by tracing using macros like event! and debug!, info!, warn!, error!)
+Context Propagation: (Built into tracing's span system)
+Instrumentation: (Often done with macros provided by tracing or other instrumentation libraries)
+Output and Formatting: tracing-subscriber (formats and outputs traces to various destinations)
+Filtering: tracing-subscriber (allows filtering of traces based on level, target, etc.)
+Asynchronous Tracing: (Supported by tracing through its asynchronous span management)
+Integration with other tools: (Often tracing is used with other tools like Jaeger or Zipkin for distributed tracing. There might be specific crates for those integrations, but tracing is the core.)
 </div>

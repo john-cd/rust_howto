@@ -5,6 +5,4 @@
 | [`hyper`][ex-web-programming_http-client-hyper] | [![hyper][c-hyper-badge]][c-hyper] | [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client] |
 
 <div class="hidden">
-[http_clients.incl: titles (P1)](https://github.com/john-cd/rust_howto/issues/503)
-
 </div>

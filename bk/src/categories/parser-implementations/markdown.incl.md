@@ -5,6 +5,4 @@
 | [`pulldown-cmark`][ex-parser-implementations-pulldown-cmark] | [![pulldown-cmark][c-pulldown_cmark-badge]][c-pulldown_cmark] | [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations] |
 
 <div class="hidden">
-[markdown.incl: titles (P2)](https://github.com/john-cd/rust_howto/issues/441)
-
 </div>

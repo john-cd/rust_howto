@@ -2,3 +2,7 @@
 |--------|--------|------------|
 |  |  | [![cat-data-structures][cat-data-structures-badge]][cat-data-structures] |
 |  |  | [![cat-data-structures][cat-data-structures-badge]][cat-data-structures] |
+
+<div class="hidden">
+FIXME
+</div>

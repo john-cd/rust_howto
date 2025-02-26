@@ -7,5 +7,4 @@
 | [`blake3`][ex-cryptography-blake3] | [![blake3][c-blake3-badge]][c-blake3] | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 
 <div class="hidden">
-[P1](https://github.com/john-cd/rust_howto/issues/911)
 </div>

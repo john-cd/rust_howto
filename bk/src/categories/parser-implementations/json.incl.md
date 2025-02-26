@@ -5,6 +5,4 @@
 | [`simd-json`][ex-parser-implementations-simd-json] | [![simd-json][c-simd_json-badge]][c-simd_json] | [![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations] |
 
 <div class="hidden">
-[json.incl: fix (P2)](https://github.com/john-cd/rust_howto/issues/439)
-
 </div>
