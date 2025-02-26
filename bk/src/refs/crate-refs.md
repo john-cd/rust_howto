@@ -2305,6 +2305,14 @@
 [c-fs_extra-lib.rs-badge]: https://img.shields.io/badge/lib.rs-fs__extra-yellow
 [c-fs_extra-lib.rs]: https://lib.rs/crates/fs_extra
 [c-fs_extra]: https://docs.rs/fs_extra
+[c-future_utils-badge]: https://img.shields.io/crates/v/future-utils?label=future-utils
+[c-future_utils-crates.io-badge]: https://img.shields.io/badge/crates.io-future--utils-crimson
+[c-future_utils-crates.io]: https://crates.io/crates/future_utils
+[c-future_utils-github-badge]: https://img.shields.io/badge/future--utils-steelblue?logo=github
+[c-future_utils-github]: https://github.com/canndrew/future-utils
+[c-future_utils-lib.rs-badge]: https://img.shields.io/badge/lib.rs-future--utils-yellow
+[c-future_utils-lib.rs]: https://lib.rs/crates/future-utils
+[c-future_utils]: https://docs.rs/future-utils
 [c-futures-badge]: https://img.shields.io/crates/v/futures?label=futures
 [c-futures-crates.io-badge]: https://img.shields.io/badge/crates.io-futures-crimson
 [c-futures-crates.io]: https://crates.io/crates/futures
