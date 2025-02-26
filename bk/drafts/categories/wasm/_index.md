@@ -82,4 +82,14 @@ This table outlines common WebAssembly (WASM) development tasks and relevant Rus
 
 A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
 
+---
+
+## `js-sys` {#js-sys}
+
+[![js-sys-website][c-js_sys-website-badge]][c-js_sys-website] [![js-sys][c-js_sys-badge]][c-js_sys] [![js-sys-crates.io][c-js_sys-crates.io-badge]][c-js_sys-crates.io] [![js-sys-github][c-js_sys-github-badge]][c-js_sys-github] [![js-sys-lib.rs][c-js_sys-lib.rs-badge]][c-js_sys-lib.rs]{{hi:js-sys}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
+
+Bindings for all JS global objects and functions found in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the `wasm-bindgen` crate.
+
+This does not include any Web, Node, or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
+
 </div>

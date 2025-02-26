@@ -2938,6 +2938,16 @@
 [c-jpeg_decoder-lib.rs-badge]: https://img.shields.io/badge/lib.rs-jpeg--decoder-yellow
 [c-jpeg_decoder-lib.rs]: https://lib.rs/crates/jpeg-decoder
 [c-jpeg_decoder]: https://docs.rs/jpeg-decoder
+[c-js_sys-badge]: https://img.shields.io/crates/v/js-sys?label=js-sys
+[c-js_sys-crates.io-badge]: https://img.shields.io/badge/crates.io-js--sys-crimson
+[c-js_sys-crates.io]: https://crates.io/crates/js_sys
+[c-js_sys-github-badge]: https://img.shields.io/badge/js--sys-steelblue?logo=github
+[c-js_sys-github]: https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys
+[c-js_sys-lib.rs-badge]: https://img.shields.io/badge/lib.rs-js--sys-yellow
+[c-js_sys-lib.rs]: https://lib.rs/crates/js-sys
+[c-js_sys-website-badge]: https://img.shields.io/badge/js--sys-coral
+[c-js_sys-website]: https://rustwasm.github.io/wasm-bindgen
+[c-js_sys]: https://docs.rs/js-sys
 [c-json5-badge]: https://img.shields.io/crates/v/json5?label=json5
 [c-json5-crates.io-badge]: https://img.shields.io/badge/crates.io-json5-crimson
 [c-json5-crates.io]: https://crates.io/crates/json5
