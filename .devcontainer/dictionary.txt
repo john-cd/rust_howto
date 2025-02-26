@@ -2647,3 +2647,10 @@ Substring
 Memmem
 substring
 CamelCase
+formatdoc
+printdoc
+eprintdoc
+writedoc
+concatdoc
+AsyncRead
+AsyncWrite
