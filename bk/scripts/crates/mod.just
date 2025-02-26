@@ -8,11 +8,11 @@ _default:
 
 ## ---- CRATE MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies many files) put all crate names in the book's Markdown between ` ` (the crate names are sourced from a text file passed as an argument)
+# (BEWARE: modifies many files; manual review required) put all crate names in the book's Markdown between ` ` (the crate names are sourced from a text file passed as an argument)
 backtick crate_list:
    #! /usr/bin/env bash
    set -euo pipefail
-   for crate in $(cat {{root}}/{{crate_list}})
+   for crate in $( cat {{root}}/{{crate_list}} | sed -e '/^(time|just|directories|image|open|log)$/d' )
    do
      echo ">> $crate"
      find {{root}} -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
