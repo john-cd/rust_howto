@@ -18,7 +18,7 @@
 
 [![json5][c-json5-badge]][c-json5] [![json5-crates.io][c-json5-crates.io-badge]][c-json5-crates.io] [![json5-github][c-json5-github-badge]][c-json5-github] [![json5-lib.rs][c-json5-lib.rs-badge]][c-json5-lib.rs]{{hi:json5}}{{hi:Serde}}{{hi:Parse}}{{hi:json5}}{{hi:Parser}}{{hi:Json}}
 
-[`json5`][c-json5]⮳{{hi:json5}} is a Rust JSON5 serializer and deserializer which speaks `serde`.
+[`json5`][c-json5]⮳{{hi:json5}} is a Rust JSON5 serializer and deserializer which speaks [`serde`][c-serde]⮳{{hi:serde}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/tests/json/json5.rs:example}}

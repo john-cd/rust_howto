@@ -79,7 +79,7 @@ For things you do not want [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} to mangle, us
 <div class="hidden">
 [formatting: add link for formatting attributes (P1)](https://github.com/john-cd/rust_howto/issues/300)
 
-Code Formatter: `rustfmt` (the standard Rust code formatter)
+Code Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} (the standard Rust code formatter)
 Configuration: ([Configuration][p-configuration] is done through rustfmt.toml files)
-Integration: (Most [IDEs][p-ides] have built-in `rustfmt` integration)
+Integration: (Most [IDEs][p-ides] have built-in [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} integration)
 </div>

@@ -53,7 +53,7 @@ The [`scrypt`][c-scrypt]⮳{{hi:scrypt}} key derivation function is designed to 
 [![bcrypt-github][c-bcrypt-github-badge]][c-bcrypt-github]
 [![bcrypt-lib.rs][c-bcrypt-lib.rs-badge]][c-bcrypt-lib.rs]
 
-['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force [search][p-search] attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, `bcrypt` cannot be used to [derive][p-derive] a 512-bit key from a password.
+['bcrypt'][bcrypt-wikipedia]⮳ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt-wikipedia]⮳ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force [search][p-search] attacks even with increasing computation power. ['bcrypt'][bcrypt-wikipedia]⮳ is not a key derivation function (KDF). For example, [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}} cannot be used to [derive][p-derive] a 512-bit key from a password.
 
 [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}
 

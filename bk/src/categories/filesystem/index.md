@@ -71,7 +71,7 @@ Working with the File System and I/O:
 
 ## Globbing (Matching File Patterns)
 
-[`glob`][c-glob]⮳{{hi:glob}}: A crate for matching file paths using `glob` patterns.
+[`glob`][c-glob]⮳{{hi:glob}}: A crate for matching file paths using [`glob`][c-glob]⮳{{hi:glob}} patterns.
 
 ## Symbolic Links
 

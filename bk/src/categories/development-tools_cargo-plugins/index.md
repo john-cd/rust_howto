@@ -128,14 +128,14 @@ Miscellaneous:
 
 ## Creating a Cargo plugin
 
-Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating `cargo` plugins, but rather crates that are used within `cargo` plugins. Here's a breakdown:
+Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating `cargo` plugins, but rather crates that are used within [`cargo`][c-cargo]⮳{{hi:cargo}} plugins. Here's a breakdown:
 
 Creating a Cargo Plugin: You create a regular Rust project (often a binary crate) and name the executable cargo-something. Cargo will automatically discover and run these executables.
 
 Essential Crates (for plugin functionality):
 
 Argument Parsing: [`clap`][c-clap]⮳{{hi:clap}}, [`structopt`][c-structopt]⮳{{hi:structopt}}, [`argh`][c-argh]⮳{{hi:argh}} (for parsing command-line arguments passed to the plugin)
-Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but `serde` is often used for parsing TOML or JSON.)
+Working with Cargo: (You might interact with `Cargo.toml` or other Cargo metadata. No single crate, but [`serde`][c-serde]⮳{{hi:serde}} is often used for parsing TOML or JSON.)
 File System Operations: `std::fs`, [`pathdiff`][c-pathdiff]⮳{{hi:pathdiff}}
 Process Management: `std::process` (for running other commands)
 Networking/HTTP (if needed): [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, [`hyper`][c-hyper]⮳{{hi:hyper}}

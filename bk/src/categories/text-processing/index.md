@@ -108,7 +108,7 @@ Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for 1
 
 [![heck][c-heck-badge]][c-heck] [![heck-crates.io][c-heck-crates.io-badge]][c-heck-crates.io] [![heck-github][c-heck-github-badge]][c-heck-github] [![heck-lib.rs][c-heck-lib.rs-badge]][c-heck-lib.rs]{{hi:heck}}{{hi:Unicode}}{{hi:String}}{{hi:Case}}{{hi:Snake}}{{hi:Camel}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`heck` is a case conversion library. This library exists to provide case conversion between common cases like CamelCase and snake_case.
+[`heck`][c-heck]⮳{{hi:heck}} is a case conversion library. This library exists to provide case conversion between common cases like CamelCase and snake_case.
 
 {{#example heck}}
 

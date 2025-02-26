@@ -109,7 +109,7 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}�
 
 [![globset][c-globset-badge]][c-globset] [![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io] [![globset-github][c-globset-github-badge]][c-globset-github] [![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
-[`globset`][c-globset]⮳{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more `glob` patterns against a single candidate path simultaneously, and returning all of the globs that matched.
+[`globset`][c-globset]⮳{{hi:globset}} allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c-glob]⮳{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/globset.rs:example}}

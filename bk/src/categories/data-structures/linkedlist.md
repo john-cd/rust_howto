@@ -23,5 +23,5 @@
 TODO P1 write
 Include stack / queue examples
 
-Here or in `std` lib section?
+Here or in [`std`][c-std]⮳{{hi:std}} lib section?
 </div>

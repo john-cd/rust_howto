@@ -58,7 +58,7 @@ Base64:
 
 ## JSON
 
-[`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization. `serde` is used for the underlying serialization framework.
+[`serde_json`][c-serde_json]⮳{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization. [`serde`][c-serde]⮳{{hi:serde}} is used for the underlying serialization framework.
 
 [[json | JSON]]
 
@@ -70,7 +70,7 @@ Base64:
 
 ## YAML (YAML Ain't Markup Language)
 
-[`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} for YAML serialization and deserialization. Uses `serde`.
+[`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} for YAML serialization and deserialization. Uses [`serde`][c-serde]⮳{{hi:serde}}.
 
 [[yaml | YAML]]
 
@@ -108,7 +108,7 @@ Base64:
 
 [`serde`][c-serde]⮳{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde.
 
-For general character encoding, encoding is a good choice. For JSON, `serde_json` is the standard. For other formats, look for crates that support them specifically. `serde` is the underlying engine for many of these, providing a consistent way to work with serialization.
+For general character encoding, encoding is a good choice. For JSON, [`serde_json`][c-serde_json]⮳{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c-serde]⮳{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
 
 [[complex_encoding | Complex Encoding]]
 

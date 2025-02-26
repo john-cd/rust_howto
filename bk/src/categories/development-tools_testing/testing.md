@@ -120,7 +120,7 @@ Often done with custom functions or data structures, but crates like `faker` can
 
 ## Test Organization
 
-`rstest` is a crate for writing data-driven tests.
+[`rstest`][c-rstest]⮳{{hi:rstest}} is a crate for writing data-driven tests.
 
 ## Assertion Libraries
 
@@ -132,9 +132,9 @@ Often involves using `tokio::test` or similar runtime-specific attributes for te
 
 ## Coverage Testing
 
-`grcov`: A code coverage tool.
-`tarpaulin`: Another code coverage tool.
+[`grcov`][c-grcov]⮳{{hi:grcov}}: A code coverage tool.
+[`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}}: Another code coverage tool.
 
-For most basic testing needs, `std::test` will be sufficient. For more advanced testing, especially property-based testing, `proptest` is highly recommended. `mockall` or `faux` will help when you need to mock dependencies. rstest is great for parameterized tests. And for ensuring your tests cover a good portion of your code, `grcov` or `tarpaulin` can be used.
+For most basic testing needs, `std::test` will be sufficient. For more advanced testing, especially property-based testing, `proptest` is highly recommended. `mockall` or `faux` will help when you need to mock dependencies. rstest is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c-grcov]⮳{{hi:grcov}} or [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}} can be used.
 
 </div>

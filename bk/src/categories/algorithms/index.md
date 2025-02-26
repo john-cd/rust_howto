@@ -22,7 +22,7 @@ Sorting and Searching: Implementing or using standard sorting algorithms (merge 
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |
-| Sorting | `std::cmp`, [`itertools`][c-itertools]⮳{{hi:itertools}}, [`rand`][c-rand]⮳{{hi:rand}} | `std::cmp` provides ordering traits, `itertools` for iterators, `rand` for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
+| Sorting | `std::cmp`, [`itertools`][c-itertools]⮳{{hi:itertools}}, [`rand`][c-rand]⮳{{hi:rand}} | `std::cmp` provides ordering traits, [`itertools`][c-itertools]⮳{{hi:itertools}} for iterators, [`rand`][c-rand]⮳{{hi:rand}} for generating test data. No single crate is the sorting crate, as `std::slice::sort` is often sufficient. |
 | Searching | std::cmp | Binary search is available in the standard library. |
 | Data Structures (General) | `std::collections`, [`im`][c-im]⮳{{hi:im}}, [`petgraph`][c-petgraph]⮳{{hi:petgraph}} | `std::collections` for common structures (Vec, HashMap, etc.), [`im`][c-im]⮳{{hi:im}} for immutable data structures, [`petgraph`][c-petgraph]⮳{{hi:petgraph}} for graphs. |
 | Graph Algorithms | [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}} | [`petgraph`][c-petgraph]⮳{{hi:petgraph}} is a popular graph library. [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}} provides pathfinding algorithms. |

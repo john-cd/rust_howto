@@ -70,7 +70,7 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 Link to:
 
 Static Analysis/Linting: clippy (for catching common code errors and style issues)
-Formal Verification: `kani` (model checker), crucible (symbolic execution) - These are more advanced and complex tools.
+Formal Verification: [`kani`][c-kani]⮳{{hi:kani}} (model checker), crucible (symbolic execution) - These are more advanced and complex tools.
 Property-Based [Testing][p-testing]: proptest, quickcheck
 Unit Testing: std::test (built-in [testing][p-testing] framework)
 Integration Testing: (Often uses std::test but focuses on [testing][p-testing] interactions between modules or components)

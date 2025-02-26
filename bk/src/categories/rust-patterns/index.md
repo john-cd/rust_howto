@@ -136,7 +136,7 @@ TODO P2 write
 
 The `indoc!()` macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
 
-The `indoc` crate exports five additional macros to substitute conveniently for the standard library's formatting macros:
+The [`indoc`][c-indoc]⮳{{hi:indoc}} crate exports five additional macros to substitute conveniently for the standard library's formatting macros:
 
 `formatdoc!($fmt, ...)` — equivalent to `format!(indoc!($fmt), ...)`
 `printdoc!($fmt, ...)` — equivalent to `print!(indoc!($fmt), ...)`

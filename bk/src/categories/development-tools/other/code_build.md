@@ -99,12 +99,12 @@ bacon clippy
 
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/919)
-(See `cargo-make` if you want something with a bulkier syntax but more cross-platform portability)
+(See [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability)
 
 Build System: [cargo][p-cargo] (the primary build system for Rust)
 Build Scripts: (Using build.rs files in your project)
 Build Profiles: (Configuring build options in Cargo.toml for debug, release, etc.)
-Cross-Compilation: `cross` (tool to simplify cross-compilation), target specifications in Cargo.toml
+Cross-Compilation: [`cross`][c-cross]⮳{{hi:cross}} (tool to simplify cross-compilation), target specifications in Cargo.toml
 Link-Time Optimization (LTO): (Controlled via Cargo.toml)
 Build Dependencies: (Managed by [cargo][p-cargo])
 Incremental Compilation: (Handled by [cargo][p-cargo])

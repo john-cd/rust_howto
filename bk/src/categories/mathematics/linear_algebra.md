@@ -144,5 +144,5 @@ General-purpose linear algebra library with transformations and statically-sized
 
 ndarray{{hi:ndarray}}
 
-Less featureful than `nalgebra` but supports arbitrarily dimensioned arrays
+Less featureful than [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} but supports arbitrarily dimensioned arrays
 </div>

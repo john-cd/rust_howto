@@ -26,7 +26,7 @@ It doesn't contain an implementation of Ed25519, but instead contains an `ed2551
 
 [![ed25519-dalek-website][c-ed25519_dalek-website-badge]][c-ed25519_dalek-website] [![ed25519-dalek][c-ed25519_dalek-badge]][c-ed25519_dalek] [![ed25519-dalek-crates.io][c-ed25519_dalek-crates.io-badge]][c-ed25519_dalek-crates.io] [![ed25519-dalek-github][c-ed25519_dalek-github-badge]][c-ed25519_dalek-github] [![ed25519-dalek-lib.rs][c-ed25519_dalek-lib.rs-badge]][c-ed25519_dalek-lib.rs]{{hi:ed25519-dalek}}{{hi:Cryptography}}{{hi:Ed25519}}{{hi:Signature}}{{hi:ECC}}{{hi:Curve25519}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-[`ed25519-dalek`][c-ed25519_dalek]⮳{{hi:ed25519-dalek}} contains `ed25519` EdDSA key generation, signing, and verification algorithms in pure Rust.
+[`ed25519-dalek`][c-ed25519_dalek]⮳{{hi:ed25519-dalek}} contains [`ed25519`][c-ed25519]⮳{{hi:ed25519}} EdDSA key generation, signing, and verification algorithms in pure Rust.
 
 A key pair, consisting of a private key and a public key, is generated. The private key is kept secret, while the public key is shared with others.
 To sign a message, a hash of the message is created. This hash is then signed using the private key, producing the digital signature.

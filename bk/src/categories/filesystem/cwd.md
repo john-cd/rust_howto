@@ -18,7 +18,7 @@
 
 - rename directory management
 - find a spot for the following
-- also cover `std` implementation
+- also cover [`std`][c-std]⮳{{hi:std}} implementation
 
 ## `remove_dir_all` {#remove_dir_all}
 

@@ -15,7 +15,7 @@
 
 <div class="hidden">
 TODO P1 write
-here or in `std` lib section?
+here or in [`std`][c-std]⮳{{hi:std}} lib section?
 
 [`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}}: Implements a priority queue using a heap.
 </div>

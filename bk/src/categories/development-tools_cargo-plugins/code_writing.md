@@ -38,5 +38,5 @@ Documentation Generation: `cargo doc` (while primarily for documentation output,
 
 API [Documentation][p-documentation] Generators (for REST APIs, etc.): (Often tied to web frameworks; no single dominant crate).
 
-String Manipulation/Text Processing (Often used in code generation): [regex][p-regex], `itertools` (not `cargo` plugins, but commonly used crates).
+String Manipulation/Text Processing (Often used in code generation): [regex][p-regex], [`itertools`][c-itertools]⮳{{hi:itertools}} (not [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but commonly used crates).
 </div>

@@ -79,7 +79,7 @@ Serialization/Deserialization (often used with data structures): [`serde`][c-ser
 
 [![either][c-either-badge]][c-either] [![either-crates.io][c-either-crates.io-badge]][c-either-crates.io] [![either-github][c-either-github-badge]][c-either-github] [![either-lib.rs][c-either-lib.rs-badge]][c-either-lib.rs]{{hi:either}}{{hi:Data-structure}}{{hi:No_std}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-The enum `Either` with variants `Left` and `Right` is a general purpose sum type with two cases.
+The enum [`Either`][c-either]⮳{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases.
 
 `Either` has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`.
 

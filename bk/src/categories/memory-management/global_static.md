@@ -27,9 +27,9 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 [P0 merge global_static.md and [lazy_initialization][p-lazy-initialization].md; review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)
 
 Immutable Global: static (compile-time init, limited).
-Lazy Init: `lazy_static` (runtime init, simple), `once_cell` (runtime init, more control).
+Lazy Init: [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c-once_cell]⮳{{hi:once_cell}} (runtime init, more control).
 Mutable Global: parking_lot::Mutex/RwLock (thread-safe).
 Thread-Local: std::thread_local.
 Atomic: std::sync::atomic.
-Prefer `once_cell` over lazy_static. Use mutexes/rwlocks for mutable globals. Consider alternatives to globals.
+Prefer [`once_cell`][c-once_cell]⮳{{hi:once_cell}} over lazy_static. Use mutexes/rwlocks for mutable globals. Consider alternatives to globals.
 </div>
