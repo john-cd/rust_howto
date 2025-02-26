@@ -2,19 +2,12 @@
 
 [![cat-aerospace::space-protocols][cat-aerospace::space-protocols-badge]][cat-aerospace::space-protocols]{{hi:Space protocols}}
 
-## Space protocols
-
 {{#include space_protocols.incl.md}}
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+## CCSDS (Consultative Committee for Space Data Systems)
 
-<div class="hidden">
-[P3](https://github.com/john-cd/rust_howto/issues/202)
+It is a suite of standards covering various aspects of space data systems, including:
 
-## Common Space Protocols
-
-- CCSDS (Consultative Committee for Space Data Systems): A suite of standards covering various aspects of space data systems, including:
 - Packet Telemetry: For transmitting scientific data from spacecraft.
 - Telecommand: For sending commands to spacecraft.
 - Space Link Protocols: For managing communication links.
@@ -23,28 +16,41 @@
 
 Direct, comprehensive CCSDS crate support is limited. You'll likely find fragments or need to build upon lower-level crates.
 
-- SCOS-2000 (Spacecraft Control and Operation System-2000): A European Space Agency (ESA) standard for spacecraft control.
-Rust Support: Very limited. FFI with existing ESA libraries (if available) or custom implementations are the likely paths.
+## SCOS-2000 (Spacecraft Control and Operation System-2000)
 
-- COP-1 (Command Operating Procedure-1): A CCSDS telecommand protocol.
-Rust Support: Likely needs a custom implementation based on the CCSDS specifications.
+SCOS-2000 is an European Space Agency (ESA) standard for spacecraft control.
 
-- PUS (Packet Utilization Standard): A CCSDS standard for on-board data handling.
-Rust Support: Likely needs a custom implementation based on the CCSDS specifications.
+Use FFI with existing ESA libraries. See [[development-tools_ffi | Development Tools: FFI]]
 
-## Parsing: Use crates like `nom` or binascii to parse binary data structures defined in the protocol specifications
+## COP-1 (Command Operating Procedure-1)
 
-[[parse | Parse]]
-[[parser-implementations | Parser Implementations]]
-[[parsing | Parsing]]
+COP-1 is a CCSDS telecommand protocol. You will likely needs a custom implementation based on the CCSDS specifications.
+
+## PUS (Packet Utilization Standard)
+
+PUS is a CCSDS standard for on-board data handling. You will likely needs a custom implementation based on the CCSDS specifications.
+
+## Parsing
+
+Use crates like `nom` or `binascii` to parse binary data structures defined in the protocol specifications
+
+See:
+
+- [[parser-implementations | Parser Implementations]].
+- [[parsing | Parsing]].
 
 ## Data Structures
 
-[[data-structures | Data Structures]]
+See [[data-structures | Data Structures]].
 
 ## Encoding/Decoding
 
-[[encoding | Encoding]]
-[[complex_encoding | Complex Encoding]]
+See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[P3](https://github.com/john-cd/rust_howto/issues/202)
 
 </div>
