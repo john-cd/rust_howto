@@ -64,6 +64,8 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 Library for word wrapping, indenting, and dedenting strings. Has optional support for Unicode and emojis as well as machine hyphenation.
 
+{{#example textwrap}}
+
 ## `bstr` {#bstr}
 
 [![bstr][c-bstr-badge]][c-bstr] [![bstr-crates.io][c-bstr-crates.io-badge]][c-bstr-crates.io] [![bstr-github][c-bstr-github-badge]][c-bstr-github] [![bstr-lib.rs][c-bstr-lib.rs-badge]][c-bstr-lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
@@ -71,6 +73,8 @@ Library for word wrapping, indenting, and dedenting strings. Has optional suppor
 A string type that is not required to be valid UTF-8.
 
 This crate provides extension traits for &[u8] and Vec<u8> that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's String and str types in that they are not required to be valid UTF-8, but may be fully or partially valid UTF-8.
+
+{{#example bstr}}
 
 ## `similar` {#similar}
 
@@ -80,12 +84,15 @@ A diff library for Rust
 
 Similar is a dependency free crate for Rust that implements different diffing algorithms and high level interfaces for it.
 
+{{#example similar}}
+
 ## `strsim` {#strsim}
 
 [![strsim][c-strsim-badge]][c-strsim] [![strsim-crates.io][c-strsim-crates.io-badge]][c-strsim-crates.io] [![strsim-github][c-strsim-github-badge]][c-strsim-github] [![strsim-lib.rs][c-strsim-lib.rs-badge]][c-strsim-lib.rs]{{hi:strsim}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
-Implementations of string similarity metrics. Includes Hamming, Levenshtein,
-OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
+Implementations of string similarity metrics. Includes Hamming, Levenshtein, OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
+
+{{#example strsim}}
 
 ## `memchr` {#memchr}
 
@@ -94,5 +101,15 @@ OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 This library provides heavily optimized routines for string search primitives.
 
 Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for 1, 2 or 3 byte search and single substring search.
+
+{{#example memchr}}
+
+## `heck` {#heck}
+
+[![heck][c-heck-badge]][c-heck] [![heck-crates.io][c-heck-crates.io-badge]][c-heck-crates.io] [![heck-github][c-heck-github-badge]][c-heck-github] [![heck-lib.rs][c-heck-lib.rs-badge]][c-heck-lib.rs]{{hi:heck}}{{hi:Unicode}}{{hi:String}}{{hi:Case}}{{hi:Snake}}{{hi:Camel}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+`heck` is a case conversion library. This library exists to provide case conversion between common cases like CamelCase and snake_case.
+
+{{#example heck}}
 
 </div>

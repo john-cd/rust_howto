@@ -2703,6 +2703,14 @@
 [c-heaptrack-lib.rs-badge]: https://img.shields.io/badge/lib.rs-heaptrack-yellow
 [c-heaptrack-lib.rs]: https://lib.rs/crates/heaptrack
 [c-heaptrack]: https://docs.rs/heaptrack
+[c-heck-badge]: https://img.shields.io/crates/v/heck?label=heck
+[c-heck-crates.io-badge]: https://img.shields.io/badge/crates.io-heck-crimson
+[c-heck-crates.io]: https://crates.io/crates/heck
+[c-heck-github-badge]: https://img.shields.io/badge/heck-steelblue?logo=github
+[c-heck-github]: https://github.com/withoutboats/heck
+[c-heck-lib.rs-badge]: https://img.shields.io/badge/lib.rs-heck-yellow
+[c-heck-lib.rs]: https://lib.rs/crates/heck
+[c-heck]: https://docs.rs/heck
 [c-hecs-badge]: https://img.shields.io/crates/v/hecs?label=hecs
 [c-hecs-crates.io-badge]: https://img.shields.io/badge/crates.io-hecs-crimson
 [c-hecs-crates.io]: https://crates.io/crates/hecs
