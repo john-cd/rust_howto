@@ -1952,6 +1952,14 @@
 [c-egui::Ui]: https://docs.rs/egui/latest/egui/struct.Ui.html
 [c-egui]: https://docs.rs/egui
 [c-egui_demo_lib-github]: https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/code_example.rs
+[c-either-badge]: https://img.shields.io/crates/v/either?label=either
+[c-either-crates.io-badge]: https://img.shields.io/badge/crates.io-either-crimson
+[c-either-crates.io]: https://crates.io/crates/either
+[c-either-github-badge]: https://img.shields.io/badge/either-steelblue?logo=github
+[c-either-github]: https://github.com/rayon-rs/either
+[c-either-lib.rs-badge]: https://img.shields.io/badge/lib.rs-either-yellow
+[c-either-lib.rs]: https://lib.rs/crates/either
+[c-either]: https://docs.rs/either
 [c-elasticsearch-badge]: https://img.shields.io/crates/v/elasticsearch?label=elasticsearch
 [c-elasticsearch-crates.io-badge]: https://img.shields.io/badge/crates.io-elasticsearch-crimson
 [c-elasticsearch-crates.io]: https://crates.io/crates/elasticsearch
