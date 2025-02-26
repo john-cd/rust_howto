@@ -31,6 +31,8 @@
 
 ---
 
+## Clean up playground
+
 ## Move mdbook-utils repo ?
 
 ---
