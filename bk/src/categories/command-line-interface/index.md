@@ -63,4 +63,12 @@ Logging: [`log`][c-log]⮳{{hi:log}}, [`env_logger`][c-env_logger]⮳{{hi:env_lo
 [[tracing | Tracing]]
 [[tracing_alternatives | Tracing Alternatives]]
 
+---
+
+## `colored` {#colored}
+
+[![colored][c-colored-badge]][c-colored] [![colored-crates.io][c-colored-crates.io-badge]][c-colored-crates.io] [![colored-github][c-colored-github-badge]][c-colored-github] [![colored-lib.rs][c-colored-lib.rs-badge]][c-colored-lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
+
+The most simple way to add colors in your terminal
+
 </div>

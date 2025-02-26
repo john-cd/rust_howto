@@ -1272,6 +1272,14 @@
 [c-color_eyre-lib.rs-badge]: https://img.shields.io/badge/lib.rs-color--eyre-yellow
 [c-color_eyre-lib.rs]: https://lib.rs/crates/color-eyre
 [c-color_eyre]: https://docs.rs/color_eyre
+[c-colored-badge]: https://img.shields.io/crates/v/colored?label=colored
+[c-colored-crates.io-badge]: https://img.shields.io/badge/crates.io-colored-crimson
+[c-colored-crates.io]: https://crates.io/crates/colored
+[c-colored-github-badge]: https://img.shields.io/badge/colored-steelblue?logo=github
+[c-colored-github]: https://github.com/mackwic/colored
+[c-colored-lib.rs-badge]: https://img.shields.io/badge/lib.rs-colored-yellow
+[c-colored-lib.rs]: https://lib.rs/crates/colored
+[c-colored]: https://docs.rs/colored
 [c-combine-badge]: https://img.shields.io/crates/v/combine?label=combine
 [c-combine-crates.io-badge]: https://img.shields.io/badge/crates.io-combine-crimson
 [c-combine-crates.io]: https://crates.io/crates/combine
