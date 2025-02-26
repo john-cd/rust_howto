@@ -1,7 +1,8 @@
 // ANCHOR: example
 use ryu::Buffer;
 
-// Pure Rust implementation of Ryū, an algorithm to quickly convert floating point numbers to decimal strings.
+// Pure Rust implementation of Ryū, an algorithm to quickly convert floating
+// point numbers to decimal strings.
 
 fn main() {
     let mut buffer = Buffer::new();
