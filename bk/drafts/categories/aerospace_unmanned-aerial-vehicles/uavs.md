@@ -8,6 +8,10 @@
 {{#include ../../../crates/cats/aerospace_unmanned_aerial_vehicles/tests/uavs.rs:example}}
 ```
 
+## See also
+
+- [[aerospace | Aerospace]]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
