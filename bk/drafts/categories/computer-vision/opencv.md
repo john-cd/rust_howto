@@ -33,22 +33,21 @@ The [`opencv`][c-opencv]⮳{{hi:opencv}} Rust crate provides bindings to OpenCV.
 {{#include ../../../crates/cats/computer_vision/tests/opencv.rs:example}}
 ```
 
+## See also
+
+- [[algorithms | Algorithms]].
+- [[mathematics | Mathematics]].
+- [[linear_algebra | Linear Algebra]].
+- [[_machine_learning |  Machine Learning]].
+- [[multimedia | Multimedia]].
+- [[multimedia_images | Multimedia Images]].
+- [[multimedia_video | Multimedia Video]].
+- [[science_robotics | Science Robotics]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [opencv: expand, add example (P2)](https://github.com/john-cd/rust_howto/issues/257)
 
-[[algorithms | Algorithms]]
-
-[[mathematics | Mathematics]]
-[[linear_algebra | Linear Algebra]]
-
-[[_machine_learning |  Machine Learning]]
-
-[[multimedia | Multimedia]]
-[[multimedia_images | Multimedia Images]]
-[[multimedia_video | Multimedia Video]]
-
-[[science_robotics | Science Robotics]]
 </div>
