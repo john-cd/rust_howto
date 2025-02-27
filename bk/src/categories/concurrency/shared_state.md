@@ -62,6 +62,10 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 {{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_crossbeam.rs:example}}
 ```
 
+## Atomic Operations
+
+[`std::sync::atomic`][c-std::sync::atomic]⮳{{hi:std::sync::atomic}} provides atomic types for safe concurrent access to data. Essential for multi-threaded programming.
+
 ## `arc-swap` {#arc-swap}
 
 [![arc-swap][c-arc_swap-badge]][c-arc_swap] [![arc-swap-crates.io][c-arc_swap-crates.io-badge]][c-arc_swap-crates.io] [![arc-swap-github][c-arc_swap-github-badge]][c-arc_swap-github] [![arc-swap-lib.rs][c-arc_swap-lib.rs-badge]][c-arc_swap-lib.rs]{{hi:arc-swap}}{{hi:Arc}}{{hi:Atomic}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
@@ -75,4 +79,6 @@ The `ArcSwap` type in [`arc-swap`][c-arc_swap]⮳{{hi:arc-swap}} is a container 
 [shared_state: review (P1)](https://github.com/john-cd/rust_howto/issues/266)
 
 [P0 refer to the lazy_static.rs, lazy_constant.rs examples. refer to global_static.md and lazy_initialization.md](https://github.com/john-cd/rust_howto/issues/910)
+
+split atomics to separate page?
 </div>
