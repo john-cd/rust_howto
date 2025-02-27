@@ -19,8 +19,7 @@
 
 ## See also
 
-- [[gui | GUI]]
-- [[web-programming_http-server | Web Programming: HTTP Server]]
+- [[gui | GUI]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

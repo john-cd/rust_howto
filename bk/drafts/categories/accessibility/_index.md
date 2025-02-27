@@ -4,28 +4,15 @@
 
 Assistive technology that helps overcome disabilities and impairments to make software usable by as many people as possible.
 
-## Screen Readers
+- WCAG: Essential links and level explanations.
+
+## Tooling for Screen Readers
 
 {{#include screen_readers.incl.md}}
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-
-Configure `clippy` for better accessibility.
-
-## Core & Tooling
-
-- WCAG Basics: Essential links and level explanations.
-
-## Web
+## Accessible Web
 
 [`html5ever`][c-html5ever]⮳{{hi:html5ever}} / [`tl`][c-tl]⮳{{hi:tl}} (HTML parsing), [`css-rs`][c-css]⮳{{hi:css-rs}} (CSS parsing), [`url`][c-url]⮳{{hi:url}} (URLs).
-
-[[web-programming | Web Programming]]
-[[web-programming_http-server | HTTP Server]]
-[[web_based_gui | Web Based GUI]]
 
 - Semantic HTML: Use elements like <article>, <nav>. [[html | HTML]]
 - Image Alt Text: Good and bad examples, decorative images.
@@ -34,28 +21,43 @@ Configure `clippy` for better accessibility.
 - Color Contrast: Checking ratios, good/bad examples.
 - Keyboard Navigation: Tab order, focus indicators.
 
-## General
+See
 
-- Accessible CLIs: Clear output, screen reader support. [[command-line-interface | Command Line Interface]]
-- I18n: Language considerations. [[internationalization | Internationalization]]
-- Accessibility Testing Checklist: Manual and automated tests.
-- Custom Accessible Components (GUI): Focus, keyboard, ARIA. [[gui | GUI]]
+- [[web-programming | Web Programming]]
+- [[web-programming_http-server | HTTP Server]]
+- [[web_based_gui | Web-based GUI]]
 
-## CLI
+## Accessible CLIs
+
+Clear output, screen reader support. [[command-line-interface | Command Line Interface]]
 
 `termcolor` (terminal styling), `crossterm` (terminal manipulation).
 
-## GUI
+See [[command-line-interface | Command Line Interface]].
 
+## Accessible Components (GUI)
+
+Focus, keyboard, ARIA.
 GUI crate itself (e.g., [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}}).
 
-## See also
+Consult the following sections:
 
-`serde` (data handling) [[encoding | Encoding]]
+- [[gui | GUI]].
+- [[gtk | GTK]].
+- [[immediate_mode_gui | Immediate Mode GUI]].
+- [[retained_mode_gui | Retained Mode GUI]].
+- [[text_layout | Text Layout]].
+- [[ui_layout | UI Layout]].
+- [[web_based_gui | Web Based GUI]].
 
-`log`/`tracing` (logging)
-[[log | Log]]
-[[tracing | Tracing]]
-[[tracing_alternatives | Tracing Alternatives]]
+## Related Topics
 
+- Language considerations: see I18n / [[internationalization | Internationalization]].
+- Accessibility Testing: see [[development-tools_testing | Testing]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
 </div>
