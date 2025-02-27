@@ -13,7 +13,7 @@ Rust has become popular in the cryptocurrency space, due to its performance, sec
 BEWARE: Be wary of scams.
 
 - Cryptocurrency prices are notoriously volatile, experiencing dramatic swings in value in short periods. This makes them highly speculative "investments", with the potential for significant losses.
-- The cryptocurrency space attracts scammers who may try to defraud users through phishing, fake ICOs, or other schemes.
+- The cryptocurrency space attracts scammers, who may try to defraud users through phishing, fake ICOs, or other schemes.
 - The relatively unregulated nature of cryptocurrency markets makes them susceptible to manipulation, such as "pump and dump" schemes.
 - Cryptocurrency exchanges and wallets can be vulnerable to hacking attempts.
 
@@ -23,9 +23,9 @@ BEWARE: Be wary of scams.
 
 - Bitcoin: `bitcoin`.
 - Ethereum: `web3` (for interacting with Ethereum), `ethers`.
-- Other Cryptocurrencies: many cryptocurrencies have their own Rust libraries. Search for crates specific to the coin you're interested in.
-- Wallet Development: Often involves a combination of the above crates and custom logic.
-- Smart Contracts (Solidity): primarily a Solidity ecosystem, but Rust may be used for [testing][p-testing] or interacting with contracts via crates like `ethers`.
+- Other Cryptocurrencies: many cryptocurrencies have their own Rust libraries.
+- Wallet Development: often involves a combination of the above crates and custom logic.
+- Smart Contracts: primarily a `Solidity` ecosystem, but Rust may be used for [testing][p-testing] or interacting with contracts via crates like `ethers`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
