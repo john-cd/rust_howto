@@ -12,6 +12,12 @@
 {{#include ../../../crates/cats/finance/tests/rustquant.rs:example}}
 ```
 
+## See also
+
+- [[mathematics | Mathematics]]
+- [[linear_algebra | Linear Algebra]]
+- [[statistics | Statistics]]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
