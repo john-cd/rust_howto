@@ -8,15 +8,13 @@
 [ex-development-tools_testing-coverage_testing]: testing.md#coverage_testing
 [ex-development-tools_testing-custom-message]: testing.md#custom-message
 [ex-development-tools_testing-doc_testing]: testing.md#doc_testing
-[ex-development-tools_testing-fuzzing_engines]: fuzzing.md#fuzzing_engines
 [ex-development-tools_testing-insta]: testing.md#insta
 [ex-development-tools_testing-integration_testing]: testing.md#integration_testing
-[ex-development-tools_testing-mocking]: testing.md#mocking
 [ex-development-tools_testing-proptesting]: testing.md#proptesting
 [ex-development-tools_testing-test_data_generation]: testing.md#test_data_generation
 [ex-development-tools_testing-test_organization]: testing.md#test_organization
 [ex-development-tools_testing-test_runners]: testing.md#test_runners
-[ex-development-tools_testing-testing]: testing.md#testing
+[ex-development-tools_testing-testing]: testing.md#unit_testing
 [p-asynchronous]: ../asynchronous/index.md
 [p-attributes]: ../../language/attributes.md
 [p-cargo]: ../development-tools/cargo/cargo.md

@@ -2,59 +2,26 @@
 
 {{#include testing.incl.md}}
 
-## Test your code with `cargo test` {#cargo-test}
+For most basic code testing needs, using `cargo test` and `std::test` will be sufficient. For more advanced testing, especially property-based testing, `proptest` is highly recommended. `mockall` or `faux` will help when you need to mock dependencies. `rstest` is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c-grcov]⮳{{hi:grcov}} or [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}} can be used.
 
-[![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}
-[![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io]
-[![cargo-github][c-cargo-github-badge]][c-cargo-github]
-[![cargo-lib.rs][c-cargo-lib.rs-badge]][c-cargo-lib.rs]
+## Unit Testing {#unit_testing}
 
-`cargo test` to run all tests.
-`cargo test test_prefix` to run all tests that start with the provided prefix.
-`cargo test -- --show-output` to show output (println!) that is otherwise captured during tests.
+`std::test`: (Built-in) The standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
-```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/tests1.rs:example}}
-```
+## Integration Testing {#integration_testing}
 
-## Emit a custom message {#custom-message}
+Often uses `std::test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
 
-[![std][c-std-badge]][c-std] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
+[`rstest`][c-rstest]⮳{{hi:rstest}} is a resource-based test framework for writing data-driven tests.
 
-```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/tests_custom_message.rs:example}}
-```
+This framework focuses on integration-testing, that means external software, not necessarily written in rust.
+`rtest` works by using stateful resources. It uses macros to build a executable binary that can handle all your filters and returns a nice output.
 
-## Test your code faster with `cargo nextest` {#cargo-nextest}
+## Documentation Testing {#doc_testing}
 
-[![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
-[![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]
-[![cargo-nextest-github][c-cargo_nextest-github-badge]][c-cargo_nextest-github]
-[![cargo-nextest-lib.rs][c-cargo_nextest-lib.rs-badge]][c-cargo_nextest-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
+Uses `#[doc = "```"]` in doc comments to embed testable examples in your documentation.
 
-[`cargo-nextest`][c-cargo_nextest-website]⮳ is a new, faster test runner for Rust.
-
-```sh
-cargo nextest run
-cargo test --doc
-```
-
-## `approx` {#approx}
-
-[![approx][c-approx-badge]][c-approx]{{hi:approx}}
-[![approx-crates.io][c-approx-crates.io-badge]][c-approx-crates.io]
-[![approx-github][c-approx-github-badge]][c-approx-github]
-[![approx-lib.rs][c-approx-lib.rs-badge]][c-approx-lib.rs]
-[![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
-
-[`approx`][c-approx]{{hi:approx}}⮳ allows approximate floating point equality comparisons and assertions.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/approx.rs:example}}
-```
-
-## Test your code against snapshots {#insta}
+## Snapshot testing: test your code against snapshots {#insta}
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}
 [![insta-crates.io][c-insta-crates.io-badge]][c-insta-crates.io]
@@ -76,65 +43,14 @@ First, install the CLI with `cargo install cargo-insta`. Second, create a test, 
 {{#include ../../../crates/cats/development_tools_testing/tests/insta.rs:example}}
 ```
 
-## Measure your code coverage {#cargo-tarpaulin}
+## Asynchronous Testing {#async_testing}
 
-[![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
+Often involves using `tokio::test` or similar runtime-specific attributes for testing asynchronous code.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
-
-## Unit Testing {#testing}
-
-`std::test`: (Built-in) The standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
-
-## Integration Testing {#integration_testing}
-
-Often uses `std::test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
-
-## Documentation Testing {#doc_testing}
-
-Uses `#[doc = "```"]` in doc comments to embed testable examples in your documentation.
-
-## Property-Based Testing {#proptesting}
-
-`proptest`: A powerful crate for property-based testing, where you define properties that your code should satisfy, and proptest generates many random inputs to verify those properties.
-`quickcheck`: Another property-based testing crate. proptest is often preferred for its flexibility.
-
-## Mocking {#mocking}
-
-`mockall`: A popular crate for creating mock objects for testing.
-`faux`: Another mocking library.
-
-## Test Data Generation {#test_data_generation}
-
-Often done with custom functions or data structures, but crates like `faker` can be useful for generating realistic test data.
-
-## Test Runners {#test_runners}
-
-`cargo test` runs your tests.
-
-`cargo nextest`
-
-## Test Organization {#test_organization}
-
-[`rstest`][c-rstest]⮳{{hi:rstest}} is a crate for writing data-driven tests.
-
-## Assertion Libraries {#assertion_libraries}
-
-`assert_matches`: A crate for matching on patterns in assertions.
-
-## Asynchronous Testing {#async_testing}
-
-Often involves using `tokio::test` or similar runtime-specific attributes for testing asynchronous code.
-
-## Coverage Testing {#coverage_testing}
-
-[`grcov`][c-grcov]⮳{{hi:grcov}}: A code coverage tool.
-[`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}}: Another code coverage tool.
-
-For most basic testing needs, `std::test` will be sufficient. For more advanced testing, especially property-based testing, `proptest` is highly recommended. `mockall` or `faux` will help when you need to mock dependencies. rstest is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c-grcov]⮳{{hi:grcov}} or [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}} can be used.
 
 </div>

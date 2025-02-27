@@ -8,6 +8,18 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 
 {{#include testing.incl.md}}
 
+### Assertion Libraries
+
+{{#include assertions.incl.md}}
+
+### Property-based Testing
+
+{{#include property_based_testing.incl.md}}
+
+## Code Coverage
+
+{{#include code_coverage.incl.md}}
+
 ## Fuzzing
 
 {{#include fuzzing.incl.md}}
