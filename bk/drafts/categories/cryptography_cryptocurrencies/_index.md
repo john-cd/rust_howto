@@ -21,6 +21,12 @@ BEWARE: Be wary of scams.
 
 {{#include cryptocurrencies.incl.md}}
 
+- Bitcoin: `bitcoin`.
+- Ethereum: `web3` (for interacting with Ethereum), `ethers`.
+- Other Cryptocurrencies: many cryptocurrencies have their own Rust libraries. Search for crates specific to the coin you're interested in.
+- Wallet Development: Often involves a combination of the above crates and custom logic.
+- Smart Contracts (Solidity): primarily a Solidity ecosystem, but Rust may be used for [testing][p-testing] or interacting with contracts via crates like `ethers`.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
