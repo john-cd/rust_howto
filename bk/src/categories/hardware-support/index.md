@@ -4,7 +4,7 @@
 
 Interface with specific CPU{{hi:CPU}} or other hardware{{hi:Hardware}} features.
 
-For embedded systems, the HAL crates are essential. For operating system interaction, you'll often use system calls. For external peripherals, you'll need to find or create crates that provide access to the specific device. Writing device drivers is a complex topic and requires a deep understanding of the operating system and hardware.
+For embedded systems, HAL crates are essential. For operating system interaction, you'll often use system calls. For external peripherals, you'll need to find or create crates that provide access to the specific device. Writing device drivers is a complex topic and requires a deep understanding of the operating system and hardware.
 
 ## Processor Management
 
@@ -14,7 +14,7 @@ For embedded systems, the HAL crates are essential. For operating system interac
 
 {{#include peripherals.incl.md}}
 
-## Related Topics
+## See also
 
 ### Memory Management
 
@@ -36,18 +36,16 @@ See [[os_freebsd-apis | FreeBSD APIs]], [[os_linux-apis | Linux APIs]], [[os_mac
 
 See [[embedded | Embedded]].
 
-### Others
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[P1 expand hardware-support](https://github.com/john-cd/rust_howto/issues/70)
 
 - Memory-mapped I/O: How you interact with hardware registers in embedded systems.
 - Interrupts: How hardware signals the CPU in embedded systems.
 - System calls: How user-space programs request services from the operating system kernel.
 - Device drivers: Software that interfaces between the operating system and hardware.
 - Hardware protocols: How devices communicate with each other.
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[P1 expand hardware-support/](https://github.com/john-cd/rust_howto/issues/70)
 
 </div>
