@@ -9,7 +9,7 @@
 [![embassy-github][c-embassy-github-badge]][c-embassy-github]
 [![embassy-lib.rs][c-embassy-lib.rs-badge]][c-embassy-lib.rs]
 
-[`embassy`][c-embassy]⮳{{hi:embassy}}
+[`embassy`][c-embassy]⮳{{hi:embassy}} is the next-generation framework for embedded applications. Write safe, correct and energy-efficient embedded code faster, using the Rust programming language, its async facilities, and the Embassy libraries.
 
 ```rust,editable
 {{#include ../../../crates/cats/embedded/tests/embassy.rs:example}}
