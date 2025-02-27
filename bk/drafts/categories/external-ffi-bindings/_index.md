@@ -2,48 +2,25 @@
 
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
+Direct Rust FFI bindings to libraries written in other languages; often denoted by a `-sys` suffix. Safe and idiomatic wrappers are in the [[api-bindings | API Bindings]] category.
+
+| Topic | Example(s) | Related Chapter(s) |
+| --- | --- | --- |
+| Audio | `alsa-sys`: Bindings to the ALSA library. `portaudio-sys`: Bindings to the PortAudio library. | [[multimedia_audio | Multimedia: Audio]] |
+| Cryptography | `openssl-sys`: Bindings to OpenSSL. `libsodium-sys`: Bindings to the libsodium library. | [[cryptography | Cryptography]] |
+| Database | `libsqlite3-sys`: Bindings to the SQLite library. `pq-sys`: Bindings to the PostgreSQL library. | [[database | Database]] |
+| Graphics | `glfw-sys`: Bindings to the GLFW library. `vulkan-sys`: Bindings to the Vulkan API. | [[graphics | Graphics]] |
+| Networking | `libcurl-sys`: Bindings to the libcurl library. `libssh2-sys`: Bindings to the libssh2 library. | [[network-programming | Network Programming]] |
+| Parsing | `libxml2-sys`: Bindings to the libxml2 library. | [[parsing | Parsing]] |
+| System | `libc`: Bindings to various C library functions and types. `windows-sys`: Bindings to Windows APIs. | [[os | OS]] [[os_windows-apis | OS Windows APIs]] |
+| Miscellaneous | `libgit2-sys`: Bindings to the libgit2 library. |  |
+
 {{#include external_ffi_bindings.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[external-ffi-bindings/_index: fix (P2)](https://github.com/john-cd/rust_howto/issues/356)
-
-## Foreign Function Interface (FFI) Basics
-
-`std::ffi` (provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.)
-
-## C Bindings
-
-[`libc`][c-libc]⮳{{hi:libc}} (provides definitions for C standard library functions and types)
-
-## Generating C Header Files
-
-[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} (generates C header files from Rust code, crucial for making Rust functions callable from C)
-
-## Memory Management across FFI boundaries
-
-Requires careful consideration; often involves using Box::into_raw and Box::from_raw to transfer ownership of memory between Rust and C
-
-## String Conversion
-
-`std::ffi::CString`, `std::ffi::CStr` for converting between Rust strings and C strings
-
-## Error Handling (across FFI boundaries)
-
-Often involves returning error codes or using Result types and converting them to C-compatible representations
-
-## Build System Integration (for FFI)
-
-Usually handled with build scripts (`build.rs`) and the [`cc`][c-cc]⮳{{hi:cc}} crate for compiling C/C++ code, if necessary.
-
-## Safety (unsafe blocks)
-
-FFI code often requires unsafe blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
-
-## Calling Rust from other languages
-
-While [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} helps with C, other languages might have their own FFI mechanisms. [`cpython`][c-cpython]⮳{{hi:cpython}} and [`pyo3`][c-pyo3]⮳{{hi:pyo3}} are common for Python.
+[external-ffi-bindings/_index: review (P2)](https://github.com/john-cd/rust_howto/issues/356)
 
 </div>

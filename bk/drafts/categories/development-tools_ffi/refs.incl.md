@@ -22,3 +22,5 @@
 [p-option]: ../../standard-library/option.md
 [p-serde]: ../encoding/serde.md
 [p-strings]: ../../standard-library/strings.md
+[ex-api-bindings-pyo3]: ../development-tools_ffi/python.md#pyo3
+[p-performance]: ../development-tools_cargo-plugins/performance.md

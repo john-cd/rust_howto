@@ -2,6 +2,10 @@
 
 {{#include external_ffi_bindings.incl.md}}
 
+## C Bindings
+
+[`libc`][c-libc]⮳{{hi:libc}} (provides definitions for C standard library functions and types)
+
 ## FFI {#ffi}
 
 ```rust,editable
