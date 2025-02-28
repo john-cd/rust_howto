@@ -47,6 +47,12 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 {{#include ../../../crates/cats/parsing/tests/tree_sitter.rs:example}}
 ```
 
+## See also
+
+- [[parser-implementations | Parser Implementations]]
+- [[text-processing | Text Processing]]
+- [[string_parsing | String Parsing]]
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

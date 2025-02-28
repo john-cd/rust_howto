@@ -158,7 +158,7 @@
 - [Operating systems - Unix](categories/os_unix-apis/_index.md)
   - [Unix](categories/os_unix-apis/unix.md)
 
-- [Parsing](categories/parsing/_index.md)
+- [Parsing](categories/parsing/index.md)
   - [Parsing](categories/parsing/parsing.md)
 
 - [Rendering](categories/rendering/_index.md)
