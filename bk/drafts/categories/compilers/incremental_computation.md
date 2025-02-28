@@ -18,17 +18,15 @@
 
 [`comemo`][c-comemo]⮳{{hi:comemo}} offers incremental computation through constrained memoization.
 
+[`comemo`][c-comemo]⮳{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p-functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p-performance] for functions with expensive computations but fixed inputs. `comemo` uses `const` generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, `comemo` avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [incremental_computation: write / add to index.md and summary (P2)](https://github.com/john-cd/rust_howto/issues/244)
 
-[`comemo`][c-comemo]⮳{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p-functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p-performance] for functions with expensive computations but fixed inputs. `comemo` uses const generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, `comemo` avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
-
-- `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically.
-
-[[cargo | Cargo]]
+- `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically. See [[cargo | Cargo]].
 
 - Understanding Incremental Compilation: Knowing how [Cargo][p-cargo]'s incremental compiler works ([caching][p-caching], invalidation) is key to maximizing its benefits. Changes to dependencies, function signatures, or certain code structures can invalidate the cache.
 
