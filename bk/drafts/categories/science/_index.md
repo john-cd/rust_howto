@@ -44,4 +44,16 @@ The Rust ML ecosystem is still evolving, but several promising crates are availa
 * Interoperability: Crates like [`tch-rs`][c-tch]⮳{{hi:tch-rs}} demonstrate a path toward leveraging existing frameworks like PyTorch from Rust. FFI Foreign Function Interface can be used to integrate with other languages.
 * Community: The Rust ML community is growing, and more resources and libraries are becoming available.
 
+[Clustering](https://www.arewelearningyet.com/clustering/)
+[Data Processing](https://www.arewelearningyet.com/data-preprocessing/)
+[Data Structures](https://www.arewelearningyet.com/data-structures/)
+[Decision Trees](https://www.arewelearningyet.com/decision-trees/)
+[GPU Computing](https://www.arewelearningyet.com/gpu-computing/)
+[Linear Classifiers](https://www.arewelearningyet.com/linear-classifiers/)
+[Metaheuristics](https://www.arewelearningyet.com/metaheuristics/)
+[MLOps](https://www.arewelearningyet.com/mlops/)
+[Neural Networks](https://www.arewelearningyet.com/neural-networks/)
+[Natural Language Processing](https://www.arewelearningyet.com/nlp/)
+[Reinforcement learning](https://www.arewelearningyet.com/reinforcement/)
+[Scientific Computing](https://www.arewelearningyet.com/scientific-computing/)
 </div>
