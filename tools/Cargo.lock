@@ -1447,6 +1447,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_rate"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "clap_builder",
+ "tool_lib",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
