@@ -299,6 +299,14 @@
 [c-atomic-lib.rs-badge]: https://img.shields.io/badge/lib.rs-atomic-yellow
 [c-atomic-lib.rs]: https://lib.rs/crates/atomic
 [c-atomic]: https://docs.rs/atomic
+[c-autocfg-badge]: https://img.shields.io/crates/v/autocfg?label=autocfg
+[c-autocfg-crates.io-badge]: https://img.shields.io/badge/crates.io-autocfg-crimson
+[c-autocfg-crates.io]: https://crates.io/crates/autocfg
+[c-autocfg-github-badge]: https://img.shields.io/badge/autocfg-steelblue?logo=github
+[c-autocfg-github]: https://github.com/cuviper/autocfg
+[c-autocfg-lib.rs-badge]: https://img.shields.io/badge/lib.rs-autocfg-yellow
+[c-autocfg-lib.rs]: https://lib.rs/crates/autocfg
+[c-autocfg]: https://docs.rs/autocfg
 [c-await-badge]: https://img.shields.io/crates/v/await?label=await
 [c-await-crates.io-badge]: https://img.shields.io/badge/crates.io-await-crimson
 [c-await-crates.io]: https://crates.io/crates/await

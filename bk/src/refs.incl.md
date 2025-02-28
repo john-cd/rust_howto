@@ -241,9 +241,9 @@
 [ex-date-and-time-perform-checked-date-time-calc]: categories/date-and-time/duration.md#perform-checked-date-time-calc
 [ex-date-and-time-time-crate]: categories/date-and-time/time_crate.md#time-crate
 [ex-date-and-time-unix-timestamp]: categories/date-and-time/parse.md#unix-timestamp
-[ex-development-tools_build-utils-cc-custom-defines]: categories/development-tools_build-utils/build_utils.md#cc-custom-defines
-[ex-development-tools_build-utils-cc]: categories/development-tools_build-utils/build_utils.md#cc
-[ex-development-tools_build-utils-cpp]: categories/development-tools_build-utils/build_utils.md#cpp
+[ex-development-tools_build-utils-cc-custom-defines]: categories/development-tools_build-utils/build_time_tooling.md#cc-custom-defines
+[ex-development-tools_build-utils-cc]: categories/development-tools_build-utils/build_time_tooling.md#cc
+[ex-development-tools_build-utils-cpp]: categories/development-tools_build-utils/build_time_tooling.md#cpp
 [ex-development-tools_cargo-plugins-cargo-audit]: categories/development-tools_cargo-plugins/auditing.md#cargo-audit
 [ex-development-tools_cargo-plugins-cargo-auditable]: categories/development-tools_cargo-plugins/auditing.md#cargo-auditable
 [ex-development-tools_cargo-plugins-cargo-cache]: categories/development-tools_cargo-plugins/maintaining.md#cargo-cache

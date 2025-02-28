@@ -1,6 +1,6 @@
 # Build time tooling
 
-{{#include build_utils.incl.md}}
+{{#include build_time_tooling.incl.md}}
 
 This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See [`crates.io`][crates.io-website]{{hi:crates.io}}'s [documentation on the matter][book-cargo-build-script]⮳ for more information.
 
