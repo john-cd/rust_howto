@@ -207,7 +207,7 @@
   - [Yew](categories/wasm/yew.md)
   - [Others](categories/wasm/wasm_runtimes.md)
 
-- [Web programming - websocket](categories/web-programming_websocket/_index.md)
+- [Web programming - websocket](categories/web-programming_websocket/index.md)
   - [Websocket](categories/web-programming_websocket/websocket.md)
 
 - [Written in Rust](other/written-in-rust/_index.md)
