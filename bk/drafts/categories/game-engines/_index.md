@@ -33,4 +33,6 @@ See also [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling
 [game-engines/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/370)
 
 Needs full review
+
+Add link to [Engines](https://arewegameyet.rs/ecosystem/engines/): 2D and 3D engines and frameworks
 </div>
