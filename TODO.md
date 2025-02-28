@@ -15,6 +15,10 @@
 
 ## Incoporate the added text in `categories`
 
+- compilers
+- development tools: FFI - reorg. with other FFI topics
+- drafts: stopped at "games"
+
 ## Finish 56 COMING SOON examples
 
 - parser impl

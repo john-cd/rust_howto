@@ -74,4 +74,6 @@ Sorting and Searching: Implementing or using standard sorting algorithms (merge 
 
 [[finance | Finance]]
 
+Cover https://crates.io/crates/pathfinding
+
 </div>

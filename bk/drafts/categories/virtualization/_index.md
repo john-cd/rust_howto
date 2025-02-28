@@ -42,4 +42,11 @@ The Rust virtualization ecosystem is still under development, but there's growin
 - Sandboxing: Employ WebAssembly and related crates for sandboxing.
 - Community Building: Contribute to the development of higher-level virtualization frameworks and tools in Rust.
 
+TODO cover
+
+- https://firecracker-microvm.github.io/  https://lib.rs/gh/firecracker-microvm/firecracker/jailer
+- https://github.com/hyperlight-dev/hyperlight
+
+Mention https://lib.rs/crates/polkavm (in Emulators)
+
 </div>

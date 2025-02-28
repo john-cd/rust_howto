@@ -26,4 +26,6 @@ Fast floating point to string conversion.
 <div class="hidden">
 [value-formatting: choose crates, write (P2)](https://github.com/john-cd/rust_howto/issues/490)
 
+TODO cover `itoa` - high # of downloads
+
 </div>

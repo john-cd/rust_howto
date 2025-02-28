@@ -8,4 +8,6 @@
 <div class="hidden">
 [gpu/_index: edit (P1)](https://github.com/john-cd/rust_howto/issues/608)
 
+TODO review https://www.arewelearningyet.com/gpu-computing/
+
 </div>
