@@ -20,7 +20,8 @@ This does not include any Web, Node, or any other JS environment APIs. Only the 
 
 ## Accessing DOM and Web APIs via Rust
 
-TODO
+The `web-sys` crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
+Essentially, `web-sys` is the bridge that lets your Rust code talk to the browser.
 
 ## Calling Rust/WASM functions from JavaScript
 
