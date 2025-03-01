@@ -41,4 +41,8 @@ web page caching [[web-programming | Web Programming]] [[web-programming_http-se
 
 database query caching
 
+Hybrid cache:
+
+`foyer`
+
 </div>
