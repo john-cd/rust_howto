@@ -4880,7 +4880,7 @@ version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eadd868a2ce9ca38de7eeafdcec9c7065ef89b42b32f0839278d55f35c54d1ff"
 dependencies = [
- "clap 4.5.30",
+ "clap 4.5.31",
  "heck 0.4.1",
  "indexmap 2.7.1",
  "log",
@@ -5252,9 +5252,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.30"
+version = "4.5.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "92b7b18d71fad5313a1e320fa9897994228ce274b60faa4d694fe0ea89cd9e6d"
+checksum = "027bb0d98429ae334a8698531da7077bdf906419543a35a55c2cb1b66437d767"
 dependencies = [
  "clap_builder",
  "clap_derive 4.5.28",
@@ -5262,9 +5262,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.30"
+version = "4.5.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a35db2071778a7344791a4fb4f95308b5673d219dee3ae348b86642574ecc90c"
+checksum = "5589e0cba072e0f3d23791efac0fd8627b49c829c196a492e88168e6a669d863"
 dependencies = [
  "anstream",
  "anstyle",
@@ -5279,7 +5279,7 @@ version = "4.5.46"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f5c5508ea23c5366f77e53f5a0070e5a84e51687ec3ef9e0464c86dc8d13ce98"
 dependencies = [
- "clap 4.5.30",
+ "clap 4.5.31",
 ]
 
 [[package]]
@@ -5685,7 +5685,7 @@ version = "0.1.2"
 dependencies = [
  "ansi_term",
  "anyhow",
- "clap 4.5.30",
+ "clap 4.5.31",
  "clap_complete",
  "colored 3.0.0",
  "console",
@@ -5747,7 +5747,7 @@ checksum = "52602e10393cfaaf8accaf707f2da743dc22cbe700a343ff8dbc9e5e04bc6b74"
 dependencies = [
  "bon 3.3.2",
  "caseless",
- "clap 4.5.30",
+ "clap 4.5.31",
  "entities",
  "memchr",
  "shell-words",
@@ -6267,7 +6267,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d21d8c5cf5940c13b1d82977fc5d4230714ce76d991c5c00b8a1c791c691dcf"
 dependencies = [
  "chumsky 0.8.0",
- "clap 4.5.30",
+ "clap 4.5.31",
  "codegen_template",
  "heck 0.4.1",
  "indexmap 1.9.3",
@@ -6693,7 +6693,7 @@ dependencies = [
  "anes",
  "cast",
  "ciborium",
- "clap 4.5.30",
+ "clap 4.5.31",
  "criterion-plot",
  "is-terminal",
  "itertools 0.10.5",
@@ -7203,7 +7203,7 @@ version = "1.0.141"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e43afb0e3b2ef293492a31ecd796af902112460d53e5f923f7804f348a769f9c"
 dependencies = [
- "clap 4.5.30",
+ "clap 4.5.31",
  "codespan-reporting",
  "proc-macro2 1.0.93",
  "quote 1.0.38",
@@ -9054,7 +9054,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e0583193020b29b03682d8d33bb53a5b0f50df6daacece12ca99b904cfdcb8c4"
 dependencies = [
  "cfg-if 1.0.0",
- "clap 4.5.30",
+ "clap 4.5.31",
  "condtype",
  "divan-macros",
  "libc",
@@ -11080,7 +11080,7 @@ dependencies = [
  "base64 0.22.1",
  "bitflags 2.8.0",
  "bytemuck",
- "clap 4.5.30",
+ "clap 4.5.31",
  "fxhash",
  "fyrox-animation",
  "fyrox-core",
@@ -15948,7 +15948,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ec8762a66ade27c5157288ca46db51a77bbd95cb2d7ad87bcaada9621e3a4d9"
 dependencies = [
  "chrono",
- "clap 4.5.30",
+ "clap 4.5.31",
  "colored 2.2.0",
  "cruet 0.14.0",
  "duct",
@@ -15977,7 +15977,7 @@ dependencies = [
  "bytes",
  "cfg-if 1.0.0",
  "chrono",
- "clap 4.5.30",
+ "clap 4.5.31",
  "colored 2.2.0",
  "cruet 0.13.3",
  "duct",
@@ -21057,7 +21057,7 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "997600a2c33a4dc7344c0fedf72bc160c0e233e1be6cecd4ea1052d8a78ebb83"
 dependencies = [
- "clap 4.5.30",
+ "clap 4.5.31",
  "crossterm 0.28.1",
  "r3bl_ansi_color",
  "r3bl_core",
@@ -23343,7 +23343,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0646647444d3a0366e30f26ff39f1656cc062b3dbf1f2e3d70cd9dc244b62cf7"
 dependencies = [
  "chrono",
- "clap 4.5.30",
+ "clap 4.5.31",
  "dotenvy",
  "glob",
  "regex",
@@ -23375,7 +23375,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b97ed0bea0d92241722718e239d899c051066a5fb259ced9986b9f60e488e076"
 dependencies = [
  "async-trait",
- "clap 4.5.30",
+ "clap 4.5.31",
  "dotenvy",
  "futures",
  "sea-orm",
@@ -28290,7 +28290,7 @@ dependencies = [
  "anyhow",
  "camino",
  "cargo_metadata 0.15.4",
- "clap 4.5.30",
+ "clap 4.5.31",
  "uniffi_bindgen",
  "uniffi_build",
  "uniffi_core",
