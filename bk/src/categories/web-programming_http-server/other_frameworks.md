@@ -22,26 +22,10 @@
 {{#include ../../../crates/cats/web_programming_http_server/tests/rocket.rs:example}}
 ```
 
-## `leptos` {#leptos}
-
-[![leptos][c-leptos-badge]][c-leptos]{{hi:leptos}}{{hi:HTTP server}}
-[![leptos-crates.io][c-leptos-crates.io-badge]][c-leptos-crates.io]
-[![leptos-github][c-leptos-github-badge]][c-leptos-github]
-[![leptos-lib.rs][c-leptos-lib.rs-badge]][c-leptos-lib.rs]
-[![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
-
-[`leptos`][c-leptos-github]{{hi:leptos}}⮳ is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/tests/leptos.rs:example}}
-```
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[other_frameworks: organize (P1)](https://github.com/john-cd/rust_howto/issues/518)
-
 [other_frameworks: organize (P1)](https://github.com/john-cd/rust_howto/issues/518)
 
 </div>

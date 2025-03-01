@@ -1,4 +1,4 @@
-# Yew
+# Yew Web Framework
 
 {{#include yew.incl.md}}
 
@@ -30,5 +30,4 @@ Key Features:
 <div class="hidden">
 [yew: write / organize (P2)](https://github.com/john-cd/rust_howto/issues/498)
 
-cover other [WASM][p-wasm] based frameworks
 </div>

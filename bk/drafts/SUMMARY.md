@@ -203,7 +203,7 @@
 - [Visualization](categories/visualization/_index.md)
   - [Visualization](categories/visualization/visualization.md)
 
-- [Web assembly](categories/wasm/_index.md)
+- [Web assembly](categories/wasm/index.md)
   - [Yew](categories/wasm/yew.md)
   - [Others](categories/wasm/wasm_runtimes.md)
 
