@@ -200,7 +200,7 @@
 - [Virtualization](categories/virtualization/_index.md)
   - [Virtualization](categories/virtualization/virtualization.md)
 
-- [Visualization](categories/visualization/_index.md)
+- [Visualization](categories/visualization/index.md)
   - [Visualization](categories/visualization/visualization.md)
 
 - [Web assembly](categories/wasm/index.md)
