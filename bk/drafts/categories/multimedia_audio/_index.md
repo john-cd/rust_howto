@@ -4,6 +4,42 @@
 
 Record, output, or process audio.
 
+## Audio
+
+- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate.
+- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio.
+- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library.
+
+### Audio Input/Output
+
+- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate for most needs.
+- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library focused on simplicity.
+
+### Audio Processing
+
+- `rubberband`: Time-stretching and pitch-shifting library.
+- `rust-dsp`: Digital signal processing (DSP) library.
+
+### Audio Formats and Codecs
+
+- [`ogg`][c-ogg]⮳{{hi:ogg}}: For Ogg Vorbis files.
+- [`flac`][c-flac]⮳{{hi:flac}}: For FLAC files.
+- [`mp3`][c-mp3]⮳{{hi:mp3}}: For MP3 files (often requires external dependencies).
+- [`wav`][c-wav]⮳{{hi:wav}}: For WAV files.
+
+### Audio Synthesis
+
+- [`synth-rs`][c-synth]⮳{{hi:synth-rs}}: A crate for audio synthesis.
+
+### Game Audio
+
+- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: (Can also be used for audio in games).
+
+### Other Audio Libraries
+
+- [`symphonia`][c-symphonia]⮳{{hi:symphonia}}: A comprehensive audio decoding library.
+- [`iced_audio`][c-iced_audio]⮳{{hi:iced_audio}}: Audio playback for the [`iced`][c-iced]⮳{{hi:iced}} GUI framework.
+
 {{#include audio.incl.md}}
 
 {{#include refs.incl.md}}
@@ -12,6 +48,8 @@ Record, output, or process audio.
 <div class="hidden">
 [P2 fix](https://github.com/john-cd/rust_howto/issues/941)
 
+TODO review below
+
 ## Key Concepts
 
 - Codecs: Algorithms for encoding and decoding audio.
@@ -19,42 +57,6 @@ Record, output, or process audio.
 - Bit depth: The number of bits used to represent each sample.
 - Channels: The number of audio channels (e.g., mono, stereo).
 - DSP: Digital signal processing techniques.
-
-## Audio
-
-- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate.
-- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio.
-- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library.
-
-Audio Input/Output:
-
-- [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate for most needs.
-- [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library focused on simplicity.
-
-Audio Processing:
-
-- `rubberband`: Time-stretching and pitch-shifting library.
-- `rust-dsp`: Digital signal processing (DSP) library.
-
-Audio Formats and Codecs:
-
-- [`ogg`][c-ogg]⮳{{hi:ogg}}: For Ogg Vorbis files.
-- [`flac`][c-flac]⮳{{hi:flac}}: For FLAC files.
-- [`mp3`][c-mp3]⮳{{hi:mp3}}: For MP3 files (often requires external dependencies).
-- [`wav`][c-wav]⮳{{hi:wav}}: For WAV files.
-
-Synthesis:
-
-- [`synth-rs`][c-synth]⮳{{hi:synth-rs}}: A crate for audio synthesis.
-
-Game Audio:
-
-- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: (Can also be used for audio in games).
-
-Other Audio Libraries:
-
-- [`symphonia`][c-symphonia]⮳{{hi:symphonia}}: A comprehensive audio decoding library.
-- [`iced_audio`][c-iced_audio]⮳{{hi:iced_audio}}: Audio playback for the [`iced`][c-iced]⮳{{hi:iced}} GUI framework.
 
 ## Choosing Crates
 
