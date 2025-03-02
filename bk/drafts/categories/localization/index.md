@@ -27,7 +27,7 @@ Handling plural forms correctly in different languages is a key part of localiza
 
 ## Related Topics
 
-## Internationalization (i18n) Utilities (Supporting Localization)
+## Internationalization (i18n) Utilities
 
 - [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}}: For parsing and working with language tags (e.g., "en-US", "fr"). Essential for identifying locales.
 - [`intl-rs`][c-intl_rs]⮳{{hi:intl-rs}}: Provides some internationalization utilities, but it's not a full localization solution on its own. It can be helpful for specific formatting tasks.
@@ -44,6 +44,10 @@ Translation itself is usually done by human translators or using machine transla
 <div class="hidden">
 [write (P2)](https://github.com/john-cd/rust_howto/issues/405)
 TODO review below
+
+- ICU (International Components for Unicode): The [`icu`][c-icu]⮳{{hi:icu}} crate family provides a robust and comprehensive set of tools for internationalization, including number, date/time, and currency formatting. It's a powerful option but adds some complexity.
+- [`Fluent`][c-fluent]⮳{{hi:Fluent}} is a modern and expressive message formatting system that handles complex localization needs well.
+- [`Gettext`][c-gettext]⮳{{hi:Gettext}} is a mature and widely used i18n system. [`gettext-rs`][c-gettext]⮳{{hi:gettext-rs}} provides a Rust implementation.
 
 ## Key Concepts
 

@@ -132,7 +132,7 @@
 - [Localization](categories/localization/index.md)
   - [Localization](categories/localization/localization.md)
 
-- [Machine learning](categories/science/machine_learning.md)
+- [Machine learning](categories/science/classical_machine_learning.md)
 
 - [Multimedia](categories/multimedia/index.md)
   - [Multimedia](categories/multimedia/multimedia.md)
@@ -192,7 +192,7 @@
   - [Simulation](categories/simulation/simulation.md)
 
 - [Value formatting](categories/value-formatting/index.md)
-  - [Value formatting](categories/value-formatting/value-formatting.md)
+  - [Value formatting](categories/value-formatting/number_formatting.md)
 
 - [Video](categories/multimedia_video/index.md)
   - [Video](categories/multimedia_video/video.md)

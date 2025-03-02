@@ -1,10 +1,8 @@
-# Value formatting
+# Format values for display to a user, potentially adapting the display to various languages and regions
 
 [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
 
-{{#include value-formatting.incl.md}}
-
-## Format values for display to a user, potentially adapting the display to various languages and regions {#value-formatting}
+{{#include number_formatting.incl.md}}
 
 ## Convert floating point to string quickly with `ryu` {#ryu}
 
@@ -16,16 +14,22 @@ Fast floating point to string conversion.
 {{#include ../../../crates/cats/value_formatting/tests/ryu.rs:example}}
 ```
 
+## Convert integers to string quickly with `iota` {#itoa}
+
+[![itoa][c-itoa-badge]][c-itoa] [![itoa-crates.io][c-itoa-crates.io-badge]][c-itoa-crates.io] [![itoa-github][c-itoa-github-badge]][c-itoa-github] [![itoa-lib.rs][c-itoa-lib.rs-badge]][c-itoa-lib.rs]{{hi:itoa}}{{hi:Integer}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}} [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
+
+Fast integer primitive to string conversion.
+
 ## See also
 
-[[text-processing | Text Processing]]
+- [[internationalization | Internationalization]]
+- [[localization | Localization]]
+- [[text-processing | Text Processing]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [value-formatting: choose crates, write (P2)](https://github.com/john-cd/rust_howto/issues/490)
-
-TODO cover `itoa` - high # of downloads
-
+TODO cover num-format, icu, fluent
 </div>

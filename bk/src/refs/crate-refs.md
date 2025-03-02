@@ -3003,6 +3003,14 @@
 [c-itertools-lib.rs-badge]: https://img.shields.io/badge/lib.rs-itertools-yellow
 [c-itertools-lib.rs]: https://lib.rs/crates/itertools
 [c-itertools]: https://docs.rs/itertools
+[c-itoa-badge]: https://img.shields.io/crates/v/itoa?label=itoa
+[c-itoa-crates.io-badge]: https://img.shields.io/badge/crates.io-itoa-crimson
+[c-itoa-crates.io]: https://crates.io/crates/itoa
+[c-itoa-github-badge]: https://img.shields.io/badge/itoa-steelblue?logo=github
+[c-itoa-github]: https://github.com/dtolnay/itoa
+[c-itoa-lib.rs-badge]: https://img.shields.io/badge/lib.rs-itoa-yellow
+[c-itoa-lib.rs]: https://lib.rs/crates/itoa
+[c-itoa]: https://docs.rs/itoa
 [c-jni-badge]: https://img.shields.io/crates/v/jni?label=jni
 [c-jni-crates.io-badge]: https://img.shields.io/badge/crates.io-jni-crimson
 [c-jni-crates.io]: https://crates.io/crates/jni
