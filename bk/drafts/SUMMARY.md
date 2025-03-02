@@ -44,7 +44,7 @@
   - [Open CV](categories/computer-vision/opencv.md)
 
 - [Containers](other/containers/_index.md)
-  - [Containers](other/containers/containers.md)
+  - [Containers](categories/virtualization/containers.md)
 
 - [Cross-platform Development](other/cross-platform/_index.md)
   - [Crux](other/cross-platform/crux.md)
@@ -197,7 +197,7 @@
 - [Video](categories/multimedia_video/_index.md)
   - [Video](categories/multimedia_video/video.md)
 
-- [Virtualization](categories/virtualization/_index.md)
+- [Virtualization](categories/virtualization/index.md)
   - [Virtualization](categories/virtualization/virtualization.md)
 
 - [Visualization](categories/visualization/index.md)
