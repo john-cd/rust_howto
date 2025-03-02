@@ -60,4 +60,6 @@ API Documentation Generators (for REST [APIs][p-apis], etc.): (Often tied to web
 [![roxygen][c-roxygen-badge]][c-roxygen] [![roxygen-crates.io][c-roxygen-crates.io-badge]][c-roxygen-crates.io] [![roxygen-github][c-roxygen-github-badge]][c-roxygen-github] [![roxygen-lib.rs][c-roxygen-lib.rs-badge]][c-roxygen-lib.rs]{{hi:roxygen}}{{hi:Arguments}}{{hi:Document}}{{hi:Doxygen}}{{hi:Function}}{{hi:Parameters}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
 [`roxygen`][c-roxygen]⮳{{hi:roxygen}} helps seamlessly document function parameters with [`rustdoc`][book-rustdoc]⮳{{hi:rustdoc}}.
+
+Mermaid.js for documentation: `aquamarine`
 </div>
