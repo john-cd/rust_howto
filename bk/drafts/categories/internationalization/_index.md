@@ -11,6 +11,7 @@ Tools to help develop software capable of adapting to various languages and regi
 
 <div class="hidden">
 [internationalization/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/402)
+TODO review below
 
 Link to localization, accessibility
 
@@ -24,9 +25,9 @@ Link to localization, accessibility
 
 ## Choosing the right crate
 
-- If you're already using gettext or need its features, [`gettext`][c-gettext]⮳{{hi:gettext}} is a good choice.
+- If you're already using `gettext` or need its features, [`gettext`][c-gettext]⮳{{hi:gettext}} is a good choice.
 - If you want a modern and expressive localization system, [`fluent`][c-fluent]⮳{{hi:fluent}} is a strong option.
-- For basic i18n utilities (language tags, etc.), [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}} is helpful.
+- For basic 'i18n' utilities (language tags, etc.), [`unic-langid`][c-unic_langid]⮳{{hi:unic-langid}} is helpful.
 
 For most projects, [`fluent`][c-fluent]⮳{{hi:fluent}} is probably the best starting point due to its modern design and expressiveness. [`gettext`][c-gettext]⮳{{hi:gettext}} is a solid choice if you have existing gettext experience or requirements. Remember that translation itself is an external process; the Rust crates help you manage and use the translated resources.
 
@@ -54,8 +55,8 @@ Localization systems typically handle loading and managing translated resources 
 
 Handling plural forms correctly in different languages is a key part of localization. Localization systems often provide features for this.
 
-## Translation (Not in Rust Directly)
+## Translation
 
-Translation itself is usually done by human translators or using machine translation services. Rust crates help you use the translations, but they don't perform the translation.
+Translation itself is usually done by human translators or using machine translation services. Rust helps you use the translations, but they don't perform the translation.
 
 </div>
