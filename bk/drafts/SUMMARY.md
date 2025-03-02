@@ -174,8 +174,8 @@
   - [Graphics APIs](categories/rendering_graphics-api/graphics_apis.md)
 
 - [Robotics](categories/science_robotics/index.md)
-  - [Robotics](categories/science_robotics/robotics.md)
-  - [Useful robotics tools and libraries](categories/science_robotics/useful_robotics_tools_and_libs.md)
+  - [Robotics](categories/science_robotics/robot_operating_systems.md)
+  - [Useful robotics tools and libraries](categories/science_robotics/robotics_frameworks.md)
 
 - [Science](categories/science/index.md)
 

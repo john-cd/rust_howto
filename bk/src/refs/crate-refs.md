@@ -4660,6 +4660,14 @@
 [c-quote-lib.rs]: https://lib.rs/crates/quote
 [c-quote::quote]: https://docs.rs/quote/latest/quote/macro.quote.html
 [c-quote]: https://docs.rs/quote
+[c-r2r-badge]: https://img.shields.io/crates/v/r2r?label=r2r
+[c-r2r-crates.io-badge]: https://img.shields.io/badge/crates.io-r2r-crimson
+[c-r2r-crates.io]: https://crates.io/crates/r2r
+[c-r2r-github-badge]: https://img.shields.io/badge/r2r-steelblue?logo=github
+[c-r2r-github]: https://github.com/sequenceplanner/r2r
+[c-r2r-lib.rs-badge]: https://img.shields.io/badge/lib.rs-r2r-yellow
+[c-r2r-lib.rs]: https://lib.rs/crates/r2r
+[c-r2r]: https://docs.rs/r2r
 [c-r3bl_tuify-badge]: https://img.shields.io/crates/v/r3bl_tuify?label=r3bl_tuify
 [c-r3bl_tuify-crates.io-badge]: https://img.shields.io/badge/crates.io-r3bl__tuify-crimson
 [c-r3bl_tuify-crates.io]: https://crates.io/crates/r3bl_tuify

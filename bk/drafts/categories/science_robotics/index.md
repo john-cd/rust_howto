@@ -4,48 +4,91 @@
 
 Crates related to robotics.
 
-{{#include robotics.incl.md}}
+While still developing, the Rust robotics ecosystem is gaining momentum. Rust's performance is a major advantage for robotics, especially for real-time control, sensor processing, and computationally intensive tasks. Rust's memory safety and performance make it well-suited for embedded systems and microcontrollers. Some areas might have fewer mature options compared to Python's ROS or other robotics frameworks.
 
-{{#include useful_robotics_tools_and_libs.incl.md}}
+## Robot Operating Systems
+
+{{#include robot_operating_systems.incl.md}}
+
+## Robotics Frameworks
+
+{{#include robotics_frameworks.incl.md}}
+
+## Hardware Integration
+
+{{#include hardware_integration.incl.md}}
+
+Consider [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and platform-specific crates. [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c-linux_embedded_hal]⮳{{hi:linux-embedded-hal}} provides implementations for Linux systems.
+
+See also
+
+- [[embedded | Embedded Systems]] Development.
+- [[hardware-support | Hardware]] Abstraction.
+
+## File Loading
+
+Import/Export various files related with Robotics
+
+`assimp-rs` (open-asset-importer) - Rust bindings for the Assimp library.
+`mcap` - Rust library for reading and writing MCAP log files
+`urdf-rs` - URDF Loader for Rust
+`pcd-ros` - Read point cloud data from PCD file format
+
+See also [[parser-implementations | Parser Implementations]].
+
+## Control Systems: Motion control, feedback loops, PID controllers, Path Planning
+
+{{#include control_systems.incl.md}}
+
+## Perception and Sensors
+
+{{#include perception_and_sensors.incl.md}}
+
+See also the [[computer-vision | Computer Vision]] chapter: [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}}, for example, provides bindings to OpenCV for computer vision tasks.
+
+## Artificial Intelligence and Decision-making for Robotics
+
+{{#include artificial_intelligence.incl.md}}
+
+See also the machine learning chapters: [[classical_machine_learning | Classical Machine Learning]] and [[deep_learning | Deep Learning]].
+
+## Simulation and Visualization
+
+{{#include simulation_visualization.incl.md}}
+
+See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chpaters. [[game-engines | Game Engines]] like [`bevy`][c-bevy]⮳{{hi:bevy}} can also be adapted for robotics simulation.
+
+## Math and Geometry-related libraries for Robotics
+
+- `nalgebra` - Linear algebra library for Rust.
+- `ncollide` - 2 and 3-dimensional collision detection library in Rust.
+- `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
+- `k` - Kinematics Library for rust-lang.
+- `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language thinked for robotics
+- `ndarray` - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
+- `faer-rs` - Linear algebra foundation for the Rust programming language
+
+See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
+
+## Related Topics
+
+Leverage existing robotics libraries (often written in C++, Python, or other languages) by creating Rust bindings using [[development-tools_ffi | FFI]]. Also utilize Rust's [[concurrency | concurrency]] crates to build robotics-specific tools.
+
+## See also
+
+[![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳
+
+[Robotics (lib.rs)][robotics-lib.rs]⮳ [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
+
+[Why rust for robots][why-rust-for-robots]⮳
+
+[Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [organize (P2)](https://github.com/john-cd/rust_howto/issues/480)
-
-## Rust Crates for Robotics
-
-The Rust robotics ecosystem is gaining momentum, offering performance, safety, and concurrency benefits. While still developing in some areas, several promising crates are available.
-
-| Topic | Rust Crates | Notes |
-|---|---|---|
-| Robot Operating System (ROS) Integration | [`rosrust`][c-rosrust]⮳{{hi:rosrust}}, `ros_control_rs` | [`rosrust`][c-rosrust]⮳{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control. |
-| Hardware Abstraction | [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}, [`linux-embedded-hal`][c-linux_embedded_hal]⮳{{hi:linux-embedded-hal}} | [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} defines a standard trait interface for interacting with embedded hardware. [`linux-embedded-hal`][c-linux_embedded_hal]⮳{{hi:linux-embedded-hal}} provides implementations for Linux systems. |
-| Motor Control | (Often uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and specific hardware crates) | Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}. |
-| Sensor Integration | (Often uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and specific hardware crates) | Sensor integration is similar to motor control, often requiring crates that interact with specific sensor hardware. |
-| Actuator Control | (Often uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and specific hardware crates) | Similar to motor control, often relying on low-level hardware interaction. |
-| Computer Vision | [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}} (bindings to OpenCV), [`image`][c-image]⮳{{hi:image}} | [`opencv-rs`][c-opencv]⮳{{hi:opencv-rs}} provides bindings to OpenCV for computer vision tasks. [`image`][c-image]⮳{{hi:image}} is for image processing. |
-| Motion Planning | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`alga`][c-alga]⮳{{hi:alga}} (linear algebra), (Developing area for specialized planners) | Linear algebra crates like [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`alga`][c-alga]⮳{{hi:alga}} are foundational. Specialized motion planning libraries are still developing in pure Rust. |
-| Control Systems | (Developing area) | Control systems libraries are an area where development is ongoing. Numerical computation crates are often used. |
-| Path Planning | (Developing area) | Path planning algorithms are often implemented using graph algorithms and search techniques. |
-| Simulation | [`bevy`][c-bevy]⮳{{hi:bevy}} (game engine - can be used for robotics simulation) | Game engines like [`bevy`][c-bevy]⮳{{hi:bevy}} can be adapted for robotics simulation. |
-| Embedded Systems Development | Use [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and platform-specific crates | Rust is well-suited for embedded systems, and the [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} ecosystem is crucial for robotics applications targeting microcontrollers. |
-| Real-Time Communication | (Often relies on OS-level features or specialized crates) | Real-time communication is critical for robotics and may involve specific crates or OS-level programming. |
-| Robotics Frameworks (High-Level) | (Developing area) | High-level robotics frameworks in pure Rust are still emerging. |
-
-## Key Considerations
-
-- Maturity: The Rust robotics ecosystem is still developing, but it's rapidly improving. Some areas might have fewer mature options compared to Python's ROS or other robotics frameworks.
-- Performance: Rust's performance is a major advantage for robotics, especially for real-time control, sensor processing, and computationally intensive tasks.
-- Embedded Systems: Rust's memory safety and performance make it well-suited for robotics applications targeting embedded systems and microcontrollers.
-- ROS Integration: [`rosrust`][c-rosrust]⮳{{hi:rosrust}} is a key crate for integrating Rust code with ROS-based robotics systems.
-- Community: The Rust robotics community is growing, and more resources and libraries are becoming available.
-
-## Strategies for Development
-
-- FFI: Leverage existing robotics libraries (often written in C++, Python, or other languages) by creating Rust bindings using FFI.
-- Embedded HAL: Embrace the [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} ecosystem for hardware interaction.
-- General-Purpose Crates: Utilize Rust's excellent numerical computation, data analysis, and concurrency crates to build robotics-specific tools.
-
+TODO review in depth; review https://robotics.rs/
+review https://github.com/rust-embedded/wg/
 </div>
