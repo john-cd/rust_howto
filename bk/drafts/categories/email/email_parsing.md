@@ -10,4 +10,13 @@
 
 ## MIME (Multipurpose Internet Mail Extensions)
 
+[![mime][c-mime-badge]][c-mime] [![mime-crates.io][c-mime-crates.io-badge]][c-mime-crates.io] [![mime-github][c-mime-github-badge]][c-mime-github] [![mime-lib.rs][c-mime-lib.rs-badge]][c-mime-lib.rs]{{hi:mime}}{{hi:mime}}{{hi:Media-extensions}}{{hi:Media-types}}
+
 [`mime`][c-mime]⮳{{hi:mime}} works with MIME types and structures. It is often used when constructing or parsing emails.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
+</div>
