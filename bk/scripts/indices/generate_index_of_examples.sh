@@ -14,7 +14,7 @@ clean() {
     s/.*/\L&/;
     s/[a-z]*/\u&/g;
     s/\s(In|Of|And|With)\s/\L&/g;
-    s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm)/\U&/g;
+    s/(Ansi|Uuid|Ffi|Os|Wasm|bsd|Gpu|Api|Gui|Lru|cv|Cd|Ci|Csv|Aws|Cors|Http|Ide|sql|ql|Tui|Mssql|Amqp|Kv|Tls|Aead|Orm|Hmac)/\U&/g;
     s/Asref/`AsRef`/g;
     s/Cow/`Cow`/g;
     s/Grpc/gRPC/g;
@@ -35,7 +35,7 @@ echo $'# Index of Examples\n' > "${index_file}"
 
 # Leaf directories only
 # https://stackoverflow.com/questions/4269798/use-gnu-find-to-show-only-the-leaf-directories
-for dir in $(find ${root}src/* -type d -not -path "${root}src/refs" -exec sh -c '(ls -p "{}"|grep />/dev/null)||echo "{}"' \;)
+for dir in $(find ${root}src/* -type d -not -path "${root}src/refs" -exec sh -c '(ls -p "{}"|grep />/dev/null)||echo "{}"' \; | sort)
 do
     # Ignore chapters that are hidden
     if [[ -f "$dir/_index.md" ]]; then
@@ -47,7 +47,7 @@ do
     last=$(clean $last)
     echo -e "## ${last}\n" >> "${index_file}"
     # Iterate all subchapter TOCs, ignoring hidden ones
-    for file in $(find $dir -type f -name '[^_]*.incl.md' -not -name "refs.incl.md")
+    for file in $(find $dir -type f -name '[^_]*.incl.md' -not -name "refs.incl.md" | sort)
     do
         incl=$(realpath --relative-to=${root}src $file)
         base=$(basename $file)

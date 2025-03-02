@@ -50,6 +50,12 @@
 
 {{#include categories/authentication/basic_authentication.incl.md}}
 
+## Caching
+
+### LRU
+
+{{#include categories/caching/lru.incl.md}}
+
 ## Command Line Interface
 
 ### ANSI Terminal
@@ -158,6 +164,10 @@
 
 {{#include categories/cryptography/hashing.incl.md}}
 
+### Hmac
+
+{{#include categories/cryptography/hmac.incl.md}}
+
 ### Password Hashing
 
 {{#include categories/cryptography/password_hashing.incl.md}}
@@ -172,9 +182,25 @@
 
 ## Data Structures
 
+### Binaryheap
+
+{{#include categories/data-structures/binaryheap.incl.md}}
+
 ### Bitfield
 
 {{#include categories/data-structures/bitfield.incl.md}}
+
+### Btrees
+
+{{#include categories/data-structures/btrees.incl.md}}
+
+### Heapless
+
+{{#include categories/data-structures/heapless.incl.md}}
+
+### Linkedlist
+
+{{#include categories/data-structures/linkedlist.incl.md}}
 
 ### Maps
 
@@ -183,6 +209,10 @@
 ### Stack Allocated Arrays
 
 {{#include categories/data-structures/stack_allocated_arrays.incl.md}}
+
+### Stack and Queue
+
+{{#include categories/data-structures/stack_and_queue.incl.md}}
 
 ### UUID
 
@@ -229,6 +259,16 @@
 ### SQLite
 
 {{#include categories/database/sqlite.incl.md}}
+
+## Database Implementations
+
+### Databases
+
+{{#include categories/database-implementations/databases.incl.md}}
+
+### Rust Search Engines
+
+{{#include categories/database-implementations/rust_search_engines.incl.md}}
 
 ## Date and Time
 
@@ -314,9 +354,17 @@
 
 ## Development Tools: Build Utils
 
-### Build Utils
+### Autocfg
 
-{{#include categories/development-tools_build-utils/build_utils.incl.md}}
+{{#include categories/development-tools_build-utils/autocfg.incl.md}}
+
+### Build Cache
+
+{{#include categories/development-tools_build-utils/build_cache.incl.md}}
+
+### Build Time Tooling
+
+{{#include categories/development-tools_build-utils/build_time_tooling.incl.md}}
 
 ## Development Tools: Cargo Plugins
 
@@ -354,10 +402,6 @@
 
 ## Development Tools: Debugging
 
-### Alternatives
-
-{{#include categories/development-tools_debugging/tracing_alternatives.incl.md}}
-
 ### Config Log
 
 {{#include categories/development-tools_debugging/config_log.incl.md}}
@@ -373,6 +417,54 @@
 ### Tracing
 
 {{#include categories/development-tools_debugging/tracing.incl.md}}
+
+### Tracing Alternatives
+
+{{#include categories/development-tools_debugging/tracing_alternatives.incl.md}}
+
+## Development Tools: Profiling
+
+### Assembly
+
+{{#include categories/development-tools_profiling/assembly.incl.md}}
+
+### Benchmarking
+
+{{#include categories/development-tools_profiling/benchmarking.incl.md}}
+
+### Memory Usage Analysis
+
+{{#include categories/development-tools_profiling/memory_usage_analysis.incl.md}}
+
+## Development Tools: Testing
+
+### Assertions
+
+{{#include categories/development-tools_testing/assertions.incl.md}}
+
+### Code Coverage
+
+{{#include categories/development-tools_testing/code_coverage.incl.md}}
+
+### Fuzzing
+
+{{#include categories/development-tools_testing/fuzzing.incl.md}}
+
+### Mocking
+
+{{#include categories/development-tools_testing/mocking.incl.md}}
+
+### Property Based Testing
+
+{{#include categories/development-tools_testing/property_based_testing.incl.md}}
+
+### Test Runners
+
+{{#include categories/development-tools_testing/test_runners.incl.md}}
+
+### Testing
+
+{{#include categories/development-tools_testing/testing.incl.md}}
 
 ## Encoding
 
@@ -428,6 +520,10 @@
 
 ## Hardware Support
 
+### Peripherals
+
+{{#include categories/hardware-support/peripherals.incl.md}}
+
 ### Processor
 
 {{#include categories/hardware-support/processor.incl.md}}
@@ -464,6 +560,16 @@
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
 
+## Network Programming
+
+### Reverse Proxy
+
+{{#include categories/network-programming/reverse_proxy.incl.md}}
+
+### Server
+
+{{#include categories/network-programming/server.incl.md}}
+
 ## OS
 
 ### External Commands
@@ -477,6 +583,46 @@
 ### Rust OS
 
 {{#include categories/os/rust_os.incl.md}}
+
+## OS: Windows APIs
+
+### Windows
+
+{{#include categories/os_windows-apis/windows.incl.md}}
+
+## Parser Implementations
+
+### Html
+
+{{#include categories/parser-implementations/html.incl.md}}
+
+### Ini
+
+{{#include categories/parser-implementations/ini.incl.md}}
+
+### Json
+
+{{#include categories/parser-implementations/json.incl.md}}
+
+### Markdown
+
+{{#include categories/parser-implementations/markdown.incl.md}}
+
+### Programming Languages
+
+{{#include categories/parser-implementations/programming_languages.incl.md}}
+
+### Toml
+
+{{#include categories/parser-implementations/toml.incl.md}}
+
+### Xml
+
+{{#include categories/parser-implementations/xml.incl.md}}
+
+### Yaml
+
+{{#include categories/parser-implementations/yaml.incl.md}}
 
 ## Rust Patterns
 
@@ -586,10 +732,6 @@
 
 {{#include contributing/api_documentation.incl.md}}
 
-### Development Editing
-
-{{#include contributing/development_editing.incl.md}}
-
 ### Dev Container Docker
 
 {{#include contributing/dev_container_docker.incl.md}}
@@ -597,6 +739,10 @@
 ### Dev Environment Setup
 
 {{#include contributing/dev_environment_setup.incl.md}}
+
+### Development Editing
+
+{{#include contributing/development_editing.incl.md}}
 
 ### Optional Preprocessors
 
@@ -690,13 +836,13 @@
 
 {{#include language/structs.incl.md}}
 
-### Traits
-
-{{#include language/traits.incl.md}}
-
 ### Trait Objects
 
 {{#include language/trait_objects.incl.md}}
+
+### Traits
+
+{{#include language/traits.incl.md}}
 
 ### Variables and Constants
 
