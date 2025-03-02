@@ -4,14 +4,6 @@
 
 Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
-{{#include unix.incl.md}}
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[os_unix-apis/_index: review (P2)](https://github.com/john-cd/rust_howto/issues/437)
-
 ## File System Operations
 
 Working with files, directories, permissions, etc.
@@ -47,5 +39,15 @@ Getting user/group information.
 ## Signals: Handling POSIX signals
 
 - [`nix`][c-nix]⮳{{hi:nix}}, [`signal-hook`][c-signal_hook]⮳{{hi:signal-hook}}
+
+## Code Examples
+
+{{#include unix.incl.md}}
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[os_unix-apis/_index: review (P2)](https://github.com/john-cd/rust_howto/issues/437)
 
 </div>
