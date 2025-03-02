@@ -2654,3 +2654,8 @@ writedoc
 concatdoc
 AsyncRead
 AsyncWrite
+autocfg
+Autocfg
+stateful
+proptesting
+Autoconf
