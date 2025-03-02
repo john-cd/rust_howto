@@ -16,6 +16,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data-processing/_index: organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/594)
+[organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/594)
 
 </div>

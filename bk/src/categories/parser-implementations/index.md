@@ -48,7 +48,7 @@ Parsers implemented for particular formats or languages.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[parser-implementations/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/447)
+[write (P2)](https://github.com/john-cd/rust_howto/issues/447)
 
 Review `async-graphql-parser`
 

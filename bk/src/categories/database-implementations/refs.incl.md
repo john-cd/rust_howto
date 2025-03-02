@@ -5,7 +5,7 @@
 [ex-database-implementations-tantivy]: rust_search_engines.md#tantivy
 [p-compression]: ../compression/index.md
 [p-database]: ../database/index.md
-[p-embedded]: # "../embedded/_index.md"
+[p-embedded]: # "../embedded/index.md"
 [p-encoding]: ../encoding/index.md
 [p-iterators]: ../../language/iterators.md
 [p-search]: ../database/search.md

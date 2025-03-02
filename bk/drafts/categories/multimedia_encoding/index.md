@@ -41,6 +41,6 @@ Link to:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[multimedia_encoding/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/418)
+[write (P2)](https://github.com/john-cd/rust_howto/issues/418)
 TODO Link to related categories
 </div>

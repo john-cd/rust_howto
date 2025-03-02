@@ -4,6 +4,6 @@
 [ex-game-engines-macroquad]: game_engines.md#macroquad
 [p-game-development]: ../game-development/game_development.md
 [p-games]: # "../games/games.md"
-[p-graphics]: # "../graphics/_index.md"
-[p-gui]: # "../gui/_index.md"
+[p-graphics]: # "../graphics/index.md"
+[p-gui]: # "../gui/index.md"
 [p-option]: ../../standard-library/option.md

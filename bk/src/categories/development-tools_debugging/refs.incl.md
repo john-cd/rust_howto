@@ -33,6 +33,6 @@
 [p-main]: ../../language/main.md
 [p-modules]: ../../language/modules.md
 [p-parse]: ../date-and-time/parse.md
-[p-parsing]: # "../parsing/_index.md"
+[p-parsing]: # "../parsing/index.md"
 [p-toml]: ../parser-implementations/toml.md
 [p-tracing]: tracing.md

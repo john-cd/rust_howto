@@ -23,7 +23,7 @@
 [p-data-structures]: ../categories/data-structures/index.md
 [p-formatting]: ../categories/development-tools/formatting/formatting.md
 [p-functions]: ../language/functions.md
-[p-gui]: # "../categories/gui/_index.md"
+[p-gui]: # "../categories/gui/index.md"
 [p-hashing]: ../categories/cryptography/hashing.md
 [p-iterators]: ../language/iterators.md
 [p-lazy-initialization]: ../categories/memory-management/lazy_initialization.md

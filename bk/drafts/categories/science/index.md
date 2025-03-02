@@ -12,7 +12,7 @@ Solving problems involving physics, chemistry, biology, machine learning, geosci
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[science/_index: write P1]https://github.com/john-cd/rust_howto/issues/472
+[write P1]https://github.com/john-cd/rust_howto/issues/472
 
 [Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]
 

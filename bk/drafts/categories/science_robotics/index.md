@@ -12,7 +12,7 @@ Crates related to robotics.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[science_robotics/_index: organize (P2)](https://github.com/john-cd/rust_howto/issues/480)
+[organize (P2)](https://github.com/john-cd/rust_howto/issues/480)
 
 ## Rust Crates for Robotics
 

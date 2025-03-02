@@ -8,5 +8,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cross-platform/_index: add / edit (P1)](https://github.com/john-cd/rust_howto/issues/583)
+[add / edit (P1)](https://github.com/john-cd/rust_howto/issues/583)
 </div>

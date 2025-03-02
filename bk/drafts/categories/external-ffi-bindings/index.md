@@ -21,6 +21,6 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[external-ffi-bindings/_index: review (P2)](https://github.com/john-cd/rust_howto/issues/356)
+[review (P2)](https://github.com/john-cd/rust_howto/issues/356)
 
 </div>

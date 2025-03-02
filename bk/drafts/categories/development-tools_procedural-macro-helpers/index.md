@@ -30,7 +30,7 @@ Declarative macros are defined using a `macro_rules!` syntax and work by pattern
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[procedural-macro-helpers/_index: fix (P2)](https://github.com/john-cd/rust_howto/issues/332)
+[fix (P2)](https://github.com/john-cd/rust_howto/issues/332)
 
 ## Procedural Macro Definition
 

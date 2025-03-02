@@ -42,7 +42,7 @@ Translation itself is usually done by human translators or using machine transla
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[localization/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/405)
+[write (P2)](https://github.com/john-cd/rust_howto/issues/405)
 TODO review below
 
 ## Key Concepts

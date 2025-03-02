@@ -26,7 +26,7 @@
 [p-cargo]: ../development-tools/cargo/cargo.md
 [p-configuration]: ../config/configuration.md
 [p-crates]: ../../crates/index.md
-[p-cross-platform]: # "../../other/cross-platform/_index.md"
+[p-cross-platform]: # "../../other/cross-platform/index.md"
 [p-databases]: ../database-implementations/databases.md
 [p-documentation]: ../development-tools/documentation/documentation.md
 [p-file-watching]: ../filesystem/file_watching.md

@@ -30,7 +30,7 @@ See also [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[game-engines/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/370)
+[expand (P2)](https://github.com/john-cd/rust_howto/issues/370)
 
 Needs full review
 

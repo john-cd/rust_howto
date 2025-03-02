@@ -26,7 +26,7 @@ There's a growing collection of smaller indie games made with Rust on `itch.io`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[games/_index: write (P2)](https://github.com/john-cd/rust_howto/issues/373)
+[write (P2)](https://github.com/john-cd/rust_howto/issues/373)
 
 https://arewegameyet.rs/#games
 

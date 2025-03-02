@@ -28,20 +28,20 @@
 [p-asynchronous]: ../asynchronous/index.md
 [p-audio]: ../multimedia_audio/audio.md
 [p-containers]: ../virtualization/containers.md
-[p-cross-platform]: # "../../other/cross-platform/_index.md"
+[p-cross-platform]: # "../../other/cross-platform/index.md"
 [p-data-formats]: ../rendering_data-formats/data_formats.md
 [p-documentation]: ../development-tools/documentation/documentation.md
-[p-embedded]: # "../embedded/_index.md"
+[p-embedded]: # "../embedded/index.md"
 [p-game-development]: ../game-development/game_development.md
 [p-games]: # "../games/games.md"
 [p-gpu]: # "../../other/gpu/gpu.md"
-[p-graphics]: # "../graphics/_index.md"
-[p-gui]: _index.md
+[p-graphics]: # "../graphics/index.md"
+[p-gui]: index.md
 [p-immediate-mode-gui]: immediate_mode_gui.md
 [p-main]: ../../language/main.md
 [p-option]: ../../standard-library/option.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-rendering]: ../rendering/rendering.md
 [p-ui-layout]: ui_layout.md
-[p-wasm]: # "../wasm/_index.md"
+[p-wasm]: # "../wasm/index.md"
 [p-windows]: ../os_windows-apis/windows.md

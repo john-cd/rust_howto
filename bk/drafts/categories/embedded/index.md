@@ -78,7 +78,7 @@ See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Comp
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[embedded/_index: write; cover: (P2)](https://github.com/john-cd/rust_howto/issues/346)
+[write; cover: (P2)](https://github.com/john-cd/rust_howto/issues/346)
 
 ## Data acquisition and calibration
 

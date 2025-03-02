@@ -34,7 +34,7 @@
 [p-language]: ../../language/index.md
 [p-memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p-network-programming]: ../network-programming/index.md
-[p-parsing]: # "../parsing/_index.md"
+[p-parsing]: # "../parsing/index.md"
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-slices]: ../../language/slices.md
 [p-structs]: ../../language/structs.md

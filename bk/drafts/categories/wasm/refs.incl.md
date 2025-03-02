@@ -3,7 +3,7 @@
 [ex-wasm-yew]: yew.md#yew
 [ex-wasm-leptos]: leptos.md#leptos
 [p-building]: ../development-tools_cargo-plugins/building.md
-[p-embedded]: # "../embedded/_index.md"
+[p-embedded]: # "../embedded/index.md"
 [p-functions]: ../../language/functions.md
 [p-modules]: ../../language/modules.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md

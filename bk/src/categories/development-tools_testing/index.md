@@ -28,6 +28,6 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development-tools_testing/_index: expand (P2)](https://github.com/john-cd/rust_howto/issues/341)
+[expand (P2)](https://github.com/john-cd/rust_howto/issues/341)
 
 </div>

@@ -8,5 +8,5 @@
 [ex-text-processing-longer-regex-example]: regex2.md#longer-regex-example
 [ex-text-processing-replace-all-occurrences-of-one-text-pattern-with-another-pattern]: regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex-text-processing-verify-and-extract-login-from-an-email-address]: regex.md#verify-and-extract-login-from-an-email-address
-[p-email]: # "../email/_index.md"
+[p-email]: # "../email/index.md"
 [p-log]: ../development-tools_debugging/log.md
