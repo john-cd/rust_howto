@@ -17,8 +17,8 @@ There's a growing collection of smaller indie games made with Rust on `itch.io`.
 ## Where to find more
 
 - [`Are we game yet?`](https://arewegameyet.rs) This website is a fantastic resource for all things Rust game development. It has lists of games, engines, libraries, and more.
-- [`itch.io`](https://itch.io) or [GOG.com](https://www.gog.com) As mentioned above, itch.io is a great place to discover indie games, and many developers use Rust.
-- `Reddit`: The r/rust subreddit often has discussions about game development, and you might find announcements of new Rust games there.
+- [`itch.io`](https://itch.io) or [GOG.com](https://www.gog.com).
+- `Reddit`: The 'r/rust' subreddit often has discussions about game development, and you might find announcements of new Rust games there.
 
 {{#include games.incl.md}}
 
@@ -26,8 +26,8 @@ There's a growing collection of smaller indie games made with Rust on `itch.io`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/373)
-
-https://arewegameyet.rs/#games
+[write](https://github.com/john-cd/rust_howto/issues/373)
+need in depth review
+review https://arewegameyet.rs/#games
 
 </div>
