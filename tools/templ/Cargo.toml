@@ -15,7 +15,7 @@ publish = false
 
 [dependencies]
 anyhow = "1.0.95"
-clap = { version = "4.5.28", features = ["cargo"] }
+clap = { version = "4.5.31", features = ["cargo"] }
 clap_builder = "4.5.20"
 tool_lib = { path = "../tool_lib" }
 tracing = "0.1.41"
