@@ -2659,3 +2659,6 @@ Autocfg
 stateful
 proptesting
 Autoconf
+eprint
+itoa
+rtest
