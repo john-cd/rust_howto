@@ -13,5 +13,6 @@
 
 <div class="hidden">
 [neuro: write (P2)](https://github.com/john-cd/rust_howto/issues/476)
+TODO cover nifti, dicom?
 
 </div>
