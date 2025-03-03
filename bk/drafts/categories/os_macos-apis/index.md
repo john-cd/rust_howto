@@ -4,17 +4,9 @@
 
 Bindings to macOS-specific APIs.
 
-{{#include macos.incl.md}}
+Most standard Rust code will work on macOS without modification. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient. In fact, if you want your code to be portable across different operating systems, stick to the standard library and avoid macOS-specific APIs unless absolutely necessary.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/949)
-
-Most standard Rust code will work on macOS without modification. For macOS-specific features, you'll need to use FFI and potentially the [`objc`][c-objc]⮳{{hi:objc}} crate. Be careful with `unsafe` code and consult the Apple documentation. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient.
-
-Rust code that adheres to standard practices will generally run well on macOS. However, if you need to interact with macOS-specific features, here's a breakdown:
+For macOS-specific features, you'll need to use the [`objc`][c-objc]⮳{{hi:objc}} crate and potentially FFI. Be careful with `unsafe` code and consult the Apple documentation.
 
 ## System Calls (Low-Level OS Interaction)
 
@@ -33,7 +25,7 @@ Rust code that adheres to standard practices will generally run well on macOS. H
 ## Networking
 
 - `std::net` works well on macOS.
-- [`tokio`][c-tokio]⮳{{hi:tokio}}: For asynchronous networking. Essential for high-performance network applications on macOS.
+- For asynchronous networking, use [`tokio`][c-tokio]⮳{{hi:tokio}}.
 
 ## Threads
 
@@ -42,24 +34,30 @@ Rust code that adheres to standard practices will generally run well on macOS. H
 ## Time
 
 - [`std::time`][c-std::time]⮳{{hi:std::time}} works well on macOS.
-- [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}}: For date and time calculations.
-
-## macOS-Specific APIs (e.g., Cocoa, Objective-C)
-
-For interacting with macOS-specific frameworks like Cocoa or Objective-C, you'll need to use Foreign Function Interface (FFI).
-
-## Foreign Function Interface (FFI)
-
-Rust's FFI allows you to call functions written in other languages (e.g., C, Objective-C) that interact with macOS directly. This is how you'll access macOS-specific APIs.
+- Use [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}} for date and time calculations.
 
 ## Objective-C Runtime Interaction
 
-- [`objc`][c-objc]⮳{{hi:objc}}: A crate for interacting with the Objective-C runtime. This is essential if you need to work with Objective-C objects or frameworks.
+If you need to work with Objective-C objects or frameworks, consider the [`objc`][c-objc]⮳{{hi:objc}} crate.
+See [[objc | Objc]].
 
-## Key Considerations
+## Other macOS-Specific APIs
 
-- Portability: If you want your code to be portable across different operating systems, stick to the standard library and avoid macOS-specific APIs unless absolutely necessary.
-- `unsafe` Code: Using FFI or interacting with the Objective-C runtime often involves `unsafe` code. Be very careful when working with `unsafe` code.
-- Documentation: Consult the Apple developer documentation for details on macOS-specific APIs or frameworks.
+For interacting with macOS-specific frameworks, first review the [[api-bindings | API Bindings]] category on 'crates.io'.
 
+If no safe wrapper exists for the desired functionality, you may need to use Foreign Function Interface (FFI).
+See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindings | External FFI Bindings]].
+
+## Code Examples
+
+{{#include macos.incl.md}}
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[review](https://github.com/john-cd/rust_howto/issues/949)
+review in depth
+interface with Cocoa
+Swift bindings
 </div>
