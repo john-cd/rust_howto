@@ -15,7 +15,7 @@ publish.workspace = true
 
 [dependencies]
 ansi_term = "0.12.1"                                 # NOTE: unmaintained
-clap = { version = "4.5.28", features = ["derive"] }
+clap = { version = "4.5.31", features = ["derive"] }
 clap_complete = "4.5.46"
 # clap-verbosity-flag = "3.0.0" # TODO P2
 console = "0.15.10"
