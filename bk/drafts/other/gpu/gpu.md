@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[gpu: write (P1)](https://github.com/john-cd/rust_howto/issues/607)
+[gpu: write](https://github.com/john-cd/rust_howto/issues/607)
 
 [Reddit][reddit]
 

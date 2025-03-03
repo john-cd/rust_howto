@@ -26,7 +26,7 @@ The tie between Ruby and Rust.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1076)
+[write](https://github.com/john-cd/rust_howto/issues/1076)
 
 Interfacing with Ruby from Rust is typically done using the Ruby C API. Here's a breakdown:
 

@@ -55,6 +55,6 @@ See [[testing | Testing]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P3](https://github.com/john-cd/rust_howto/issues/190)
+[review](https://github.com/john-cd/rust_howto/issues/190)
 
 </div>

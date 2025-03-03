@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write; expand](https://github.com/john-cd/rust_howto/issues/638)?
+[write; expand](https://github.com/john-cd/rust_howto/issues/638)?
 
 In most cases, the [`clipboard`][c-clipboard]⮳{{hi:clipboard}} crate will be all you need for basic clipboard functionality (reading and writing text).If you're in a [Wasm][p-wasm] context, you'll need to use JavaScript interop.For more complex [data formats][p-data-formats], you'll likely need to handle them separately.
 

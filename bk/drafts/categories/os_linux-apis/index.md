@@ -10,7 +10,7 @@ Bindings to Linux-specific APIs.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/948)
+[review](https://github.com/john-cd/rust_howto/issues/948)
 
 Most standard Rust code will work on Linux without modification. For Linux-specific features, you might need to use [`nix`][c-nix]⮳{{hi:nix}}, FFI, or find crates that provide bindings to the specific interface you're working with. Be careful with `unsafe` code and consult the Linux documentation. For general system programming tasks, the standard library is often sufficient.
 

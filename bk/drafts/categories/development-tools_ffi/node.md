@@ -26,7 +26,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1074)
+[write](https://github.com/john-cd/rust_howto/issues/1074)
 
 Interfacing with Node.js from Rust is typically done using Node-API (N-API), which is a stable ABI for Node.js addons.
 

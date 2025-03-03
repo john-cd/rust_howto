@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[internationalization: select crates, write (P2)](https://github.com/john-cd/rust_howto/issues/401)
+[internationalization: select crates, write](https://github.com/john-cd/rust_howto/issues/401)
 
 </div>

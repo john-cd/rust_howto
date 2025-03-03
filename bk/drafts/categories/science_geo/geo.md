@@ -16,6 +16,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[geo: write (P2)](https://github.com/john-cd/rust_howto/issues/474)
+[geo: write](https://github.com/john-cd/rust_howto/issues/474)
 
 </div>

@@ -10,7 +10,7 @@ Bindings to macOS-specific APIs.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/949)
+[review](https://github.com/john-cd/rust_howto/issues/949)
 
 Most standard Rust code will work on macOS without modification. For macOS-specific features, you'll need to use FFI and potentially the [`objc`][c-objc]⮳{{hi:objc}} crate. Be careful with `unsafe` code and consult the Apple documentation. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient.
 

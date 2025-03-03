@@ -8,5 +8,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[games: write (P3)](https://github.com/john-cd/rust_howto/issues/372)
+[games: write](https://github.com/john-cd/rust_howto/issues/372)
 </div>

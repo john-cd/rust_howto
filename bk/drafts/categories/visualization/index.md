@@ -46,6 +46,6 @@ See [[gui | GUI]] and [[wasm | WASM]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/969)
+[review](https://github.com/john-cd/rust_howto/issues/969)
 
 </div>

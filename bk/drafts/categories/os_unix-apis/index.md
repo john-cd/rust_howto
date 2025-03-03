@@ -48,6 +48,6 @@ Getting user/group information.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review (P2)](https://github.com/john-cd/rust_howto/issues/437)
+[review](https://github.com/john-cd/rust_howto/issues/437)
 
 </div>

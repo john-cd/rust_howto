@@ -29,6 +29,6 @@ Features:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[rhai: write (P1)](https://github.com/john-cd/rust_howto/issues/610)
+[rhai: write](https://github.com/john-cd/rust_howto/issues/610)
 
 </div>

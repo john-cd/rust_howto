@@ -10,8 +10,8 @@ Tools to help develop software capable of adapting to various languages and regi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/402)
-TODO review below
+[write](https://github.com/john-cd/rust_howto/issues/402)
+Review below:
 
 Link to localization, accessibility
 

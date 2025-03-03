@@ -12,5 +12,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[no_std: write (P2)](https://github.com/john-cd/rust_howto/issues/426)
+[no_std: write](https://github.com/john-cd/rust_howto/issues/426)
 </div>

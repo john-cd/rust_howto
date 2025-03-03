@@ -12,7 +12,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[emulators: write (P2)](https://github.com/john-cd/rust_howto/issues/347)
+[emulators: write](https://github.com/john-cd/rust_howto/issues/347)
 
 ## Virtual Machines / CPU Emulators
 

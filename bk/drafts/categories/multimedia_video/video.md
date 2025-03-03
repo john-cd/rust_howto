@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[video: write (P2)](https://github.com/john-cd/rust_howto/issues/422)
+[write](https://github.com/john-cd/rust_howto/issues/422)
 
 </div>

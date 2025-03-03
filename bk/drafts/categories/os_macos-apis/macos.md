@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[macos: write (P2)](https://github.com/john-cd/rust_howto/issues/435)
+[macos: write](https://github.com/john-cd/rust_howto/issues/435)
 
 </div>

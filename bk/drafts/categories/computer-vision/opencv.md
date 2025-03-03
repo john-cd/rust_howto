@@ -48,6 +48,6 @@ The [`opencv`][c-opencv]⮳{{hi:opencv}} Rust crate provides bindings to OpenCV.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[opencv: expand, add example (P2)](https://github.com/john-cd/rust_howto/issues/257)
+[opencv: expand, add example](https://github.com/john-cd/rust_howto/issues/257)
 
 </div>

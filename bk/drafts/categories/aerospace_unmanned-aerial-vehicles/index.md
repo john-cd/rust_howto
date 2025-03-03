@@ -53,6 +53,6 @@ See [[no_std | No Std]] and [[no_alloc | No Alloc]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aerospace_unmanned-aerial-vehicles: write (P3)](https://github.com/john-cd/rust_howto/issues/205)
+[aerospace_unmanned-aerial-vehicles: write](https://github.com/john-cd/rust_howto/issues/205)
 
 </div>

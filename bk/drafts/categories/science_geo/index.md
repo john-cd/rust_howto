@@ -10,7 +10,7 @@ Processing of spatial information, maps, navigation data, and geographic informa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/958)
+[write](https://github.com/john-cd/rust_howto/issues/958)
 
 - Crates like [`geo`][c-geo]⮳{{hi:geo}}, or [`proj`][c-proj]⮳{{hi:proj}} for tasks such as:
   - Calculating distances and bearings between locations. [`geo`][c-geo]⮳{{hi:geo}}

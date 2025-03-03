@@ -52,7 +52,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[generate_ffi_bindings: write (P2)](https://github.com/john-cd/rust_howto/issues/324)
+[generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
 
 ## `uniffi` {#uniffi}
 

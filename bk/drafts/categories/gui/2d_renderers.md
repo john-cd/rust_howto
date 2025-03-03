@@ -58,7 +58,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[2d_renderers: write; titles (P2)](https://github.com/john-cd/rust_howto/issues/377)
+[2d_renderers: write; titles](https://github.com/john-cd/rust_howto/issues/377)
 
 ## Pixel-Based (Raster) 2D Rendering
 

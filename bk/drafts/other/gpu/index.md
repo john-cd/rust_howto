@@ -6,8 +6,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[edit (P1)](https://github.com/john-cd/rust_howto/issues/608)
-
-TODO review https://www.arewelearningyet.com/gpu-computing/
+[edit](https://github.com/john-cd/rust_howto/issues/608)
+review https://www.arewelearningyet.com/gpu-computing/
 
 </div>

@@ -51,6 +51,6 @@ See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P3](https://github.com/john-cd/rust_howto/issues/202)
+[write](https://github.com/john-cd/rust_howto/issues/202)
 
 </div>

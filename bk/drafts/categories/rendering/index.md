@@ -10,7 +10,7 @@ Real-time or offline rendering of 2D or 3D graphics, usually with the help of a 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/953)
+[review](https://github.com/john-cd/rust_howto/issues/953)
 
 ## Rendering in Rust: Topics and Crates
 

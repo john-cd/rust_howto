@@ -53,6 +53,6 @@ Async binding for Tungstenite.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[websocket: write (P2)](https://github.com/john-cd/rust_howto/issues/520)
+[websocket: write](https://github.com/john-cd/rust_howto/issues/520)
 
 </div>

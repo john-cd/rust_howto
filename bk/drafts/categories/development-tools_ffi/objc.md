@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1075)
+[write](https://github.com/john-cd/rust_howto/issues/1075)
 
 Interfacing with Objective-C from Rust is primarily done using the objc crate and related tools. Here's a breakdown:
 

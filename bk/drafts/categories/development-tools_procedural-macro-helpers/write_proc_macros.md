@@ -76,7 +76,7 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write_proc_macros: write (P2)](https://github.com/john-cd/rust_howto/issues/331)
+[write_proc_macros: write](https://github.com/john-cd/rust_howto/issues/331)
 
 ## Report errors from within a procedural macro
 

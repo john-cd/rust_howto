@@ -16,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[uavs: write (P3)](https://github.com/john-cd/rust_howto/issues/204)
+[uavs: write](https://github.com/john-cd/rust_howto/issues/204)
 </div>

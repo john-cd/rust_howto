@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data_formats: locate crates, write (P2)](https://github.com/john-cd/rust_howto/issues/453)
+[data_formats: locate crates, write](https://github.com/john-cd/rust_howto/issues/453)
 
 </div>

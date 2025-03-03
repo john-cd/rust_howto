@@ -14,5 +14,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[simulation: write (P2)](https://github.com/john-cd/rust_howto/issues/481)
+[simulation: write](https://github.com/john-cd/rust_howto/issues/481)
 </div>

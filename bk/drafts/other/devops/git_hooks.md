@@ -73,7 +73,7 @@ pre-commit run --all-files
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[git_hooks: write (P1)](https://github.com/john-cd/rust_howto/issues/602)
+[git_hooks: write](https://github.com/john-cd/rust_howto/issues/602)
 
 identify useful hooks for Rust
 

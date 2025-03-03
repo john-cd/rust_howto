@@ -66,8 +66,6 @@ Consider `libxml2` (bindings to the libxml2 library) for XML parsing. See [[pars
 
 See [[development-tools_ffi | Development Tools FFI]].
 
-TODO
-
 ## Web APIs (Client)
 
 Consider using [`reqwest`][c-reqwest]⮳{{hi:reqwest}} (or [`isahc`][c-isahc]⮳{{hi:isahc}} or [`surf`][c-surf]⮳{{hi:surf}}). Refer to:
@@ -108,6 +106,6 @@ Bindings to Graphical User Interfaces, such as `gtk-rs` (bindings to the GTK lib
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[api-bindings: polish (P2)](https://github.com/john-cd/rust_howto/issues/211)
-
+[api-bindings: polish](https://github.com/john-cd/rust_howto/issues/211)
+review Programming Language Bindings location
 </div>

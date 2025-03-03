@@ -17,6 +17,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[space_protocols: write (P3)](https://github.com/john-cd/rust_howto/issues/201)
+[space_protocols: write](https://github.com/john-cd/rust_howto/issues/201)
 
 </div>

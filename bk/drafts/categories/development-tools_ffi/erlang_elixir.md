@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1070)
+[write](https://github.com/john-cd/rust_howto/issues/1070)
 
 Interfacing with Erlang/Elixir from Rust typically involves using ports or NIFs (Native Implemented Functions). Here's a breakdown:
 

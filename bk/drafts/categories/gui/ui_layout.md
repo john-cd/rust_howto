@@ -35,5 +35,5 @@ Morphorm is suitable for various use cases, including:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/934)
+[review](https://github.com/john-cd/rust_howto/issues/934)
 </div>

@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[file_dialogs: write (P2)](https://github.com/john-cd/rust_howto/issues/381)
+[file_dialogs: write](https://github.com/john-cd/rust_howto/issues/381)
 
 For most common file dialog needs, [`rfd`][c-rfd]⮳{{hi:rfd}} is the recommended crate. It's cross-platform, easy to use, and well-maintained. If you're in a Wasm context, you'll need to use JavaScript interop.
 

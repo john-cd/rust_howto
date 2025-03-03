@@ -10,6 +10,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[architecture: write (P1)](https://github.com/john-cd/rust_howto/issues/572)
+[architecture: write](https://github.com/john-cd/rust_howto/issues/572)
 
 </div>

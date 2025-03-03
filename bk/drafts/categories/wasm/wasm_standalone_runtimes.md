@@ -106,7 +106,6 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[others: organize/write (P2)](https://github.com/john-cd/rust_howto/issues/496) need full review
-
-TODO cover wasmer in intro
+[others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
+cover wasmer in intro
 </div>

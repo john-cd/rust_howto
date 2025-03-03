@@ -17,6 +17,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[csv: organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/585)
+[csv: organize / edit](https://github.com/john-cd/rust_howto/issues/585)
 
 </div>

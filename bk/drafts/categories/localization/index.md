@@ -42,8 +42,8 @@ Translation itself is usually done by human translators or using machine transla
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/405)
-TODO review below
+[write](https://github.com/john-cd/rust_howto/issues/405)
+review below
 
 - ICU (International Components for Unicode): The [`icu`][c-icu]⮳{{hi:icu}} crate family provides a robust and comprehensive set of tools for internationalization, including number, date/time, and currency formatting. It's a powerful option but adds some complexity.
 - [`Fluent`][c-fluent]⮳{{hi:Fluent}} is a modern and expressive message formatting system that handles complex localization needs well.

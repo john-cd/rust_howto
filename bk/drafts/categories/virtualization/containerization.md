@@ -6,8 +6,6 @@
 - [Bollard](https://crates.io/crates/bollard): An asynchronous Rust client library for the Docker API, offering extensive features for container management.
 - [Dockworker](https://crates.io/crates/dockworker): A Docker client library for managing containers and images.
 
-TODO cover https://github.com/containers/podman
-
 ## Kubernetes and Orchestration
 
 - [Kube](https://crates.io/crates/kube): A Kubernetes client for managing containerized applications in Kubernetes clusters
@@ -19,8 +17,6 @@ While [`runc`][c-runc]⮳{{hi:runc}} itself is written in Go, Rust crates like `
 ### Container Runtime
 
 'containerd' is an industry-standard container runtime. It is available as a daemon for Linux and Windows, which can manage the complete container lifecycle of its host system: image transfer and storage, container execution and supervision, low-level storage and network attachments, etc.
-
-TODO cover https://github.com/containerd/rust-extensions A collection of Rust crates to extend containerd.
 
 ### Container Image Management
 
@@ -40,4 +36,6 @@ Mention https://github.com/moby/buildkit
 <div class="hidden">
 TODO write
 need in-depth review
+cover https://github.com/containers/podman
+cover https://github.com/containerd/rust-extensions A collection of Rust crates to extend containerd.
 </div>

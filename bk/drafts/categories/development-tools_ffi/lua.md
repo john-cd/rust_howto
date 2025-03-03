@@ -20,7 +20,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1073)
+[write](https://github.com/john-cd/rust_howto/issues/1073)
 
 Interfacing with Lua from Rust is typically done using the Lua C API, and there are several Rust crates that provide bindings to it.
 

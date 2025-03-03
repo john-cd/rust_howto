@@ -26,7 +26,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[gtk: write (P2)](https://github.com/john-cd/rust_howto/issues/383)
+[gtk: write](https://github.com/john-cd/rust_howto/issues/383)
 
 For GTK development in Rust, the `gtk` crate is absolutely essential. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c-gdk]⮳{{hi:gdk}}, [`gio`][c-gio]⮳{{hi:gio}}, and [`glib`][c-glib]⮳{{hi:glib}} crates are used indirectly through `gtk`. Understanding GTK concepts and consulting the official GTK documentation are crucial for effective development.
 

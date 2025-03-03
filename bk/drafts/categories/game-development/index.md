@@ -38,7 +38,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand (P2)](https://github.com/john-cd/rust_howto/issues/367)
+[expand](https://github.com/john-cd/rust_howto/issues/367)
 
 [2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more
 [3D Format Loaders](https://arewegameyet.rs/ecosystem/3dformatloaders): FBX, OBJ and more.

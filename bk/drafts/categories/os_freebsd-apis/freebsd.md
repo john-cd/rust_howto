@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[freebsd: write (P2)](https://github.com/john-cd/rust_howto/issues/433)
+[freebsd: write](https://github.com/john-cd/rust_howto/issues/433)
 
 </div>

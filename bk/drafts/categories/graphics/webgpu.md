@@ -21,7 +21,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[webgpu: write (P2)](https://github.com/john-cd/rust_howto/issues/375)
+[webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
 
 - review [rust-gpu-ecosystem-website]: [https://rust-gpu.github.io/ecosystem](https://rust-gpu.github.io/ecosystem)
 

@@ -46,9 +46,8 @@ Record, output, or process audio.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 fix](https://github.com/john-cd/rust_howto/issues/941)
-
-TODO review below
+[fix](https://github.com/john-cd/rust_howto/issues/941)
+review below
 
 ## Key Concepts
 

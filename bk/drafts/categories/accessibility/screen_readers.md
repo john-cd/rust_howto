@@ -25,5 +25,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[screen_readers: write (P2)](https://github.com/john-cd/rust_howto/issues/187)
+[screen_readers: write](https://github.com/john-cd/rust_howto/issues/187)
 </div>

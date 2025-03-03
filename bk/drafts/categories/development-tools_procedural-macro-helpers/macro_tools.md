@@ -17,5 +17,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tools: write (P2)](https://github.com/john-cd/rust_howto/issues/329)
+[tools: write](https://github.com/john-cd/rust_howto/issues/329)
 </div>

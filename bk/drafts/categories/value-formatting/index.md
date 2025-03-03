@@ -34,9 +34,9 @@ This table covers Rust crates relevant for formatting values for display.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/967)
+[review](https://github.com/john-cd/rust_howto/issues/967)
 need in-depth review
 Mention rtu, itoa in this page
-TODO cover  https://crates.io/crates/Inflector
+cover  https://crates.io/crates/Inflector
 
 </div>

@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[localization: write (P2)](https://github.com/john-cd/rust_howto/issues/404)
+[localization: write](https://github.com/john-cd/rust_howto/issues/404)
 
 </div>

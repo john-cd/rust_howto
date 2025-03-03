@@ -46,7 +46,7 @@ Framework for creating fast and reliable robots.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[useful_robotics_tools_and_libs: locate libs, organize, write (P2)](https://github.com/john-cd/rust_howto/issues/479)
+[useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
 
 ## Frameworks
 

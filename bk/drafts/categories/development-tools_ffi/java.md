@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1072)
+[write](https://github.com/john-cd/rust_howto/issues/1072)
 
 Interfacing with Java from Rust is typically done using the Java Native Interface (JNI). Here's a breakdown:
 

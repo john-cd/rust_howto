@@ -26,6 +26,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[web_based_gui: write (P2)](https://github.com/john-cd/rust_howto/issues/394)
+[web_based_gui: write](https://github.com/john-cd/rust_howto/issues/394)
 
 </div>

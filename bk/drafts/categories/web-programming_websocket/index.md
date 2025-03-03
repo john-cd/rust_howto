@@ -36,6 +36,6 @@ The following table outlines common tasks for working with WebSockets in Rust, a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/979)
+[review](https://github.com/john-cd/rust_howto/issues/979)
 
 </div>

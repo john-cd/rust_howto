@@ -74,7 +74,7 @@ There aren't widely used, general-purpose accounting crates in Rust yet. This ar
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/365)
+[write](https://github.com/john-cd/rust_howto/issues/365)
 
 Needs in-depth review.
 

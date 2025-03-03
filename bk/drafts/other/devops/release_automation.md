@@ -27,7 +27,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[release_automation: write (P1)](https://github.com/john-cd/rust_howto/issues/604)
+[release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
 
 ## `cargo-dist` {#cargo-dist}
 

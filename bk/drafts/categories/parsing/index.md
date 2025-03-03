@@ -29,6 +29,6 @@ This chapter focuses on writing parsers for binary and text formats. Existing fo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/952)
+[review](https://github.com/john-cd/rust_howto/issues/952)
 
 </div>

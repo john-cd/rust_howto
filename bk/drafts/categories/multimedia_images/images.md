@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[images: write (P2)](https://github.com/john-cd/rust_howto/issues/420)
+[images: write](https://github.com/john-cd/rust_howto/issues/420)
 
 </div>

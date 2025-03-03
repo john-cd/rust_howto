@@ -38,6 +38,6 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 fix](https://github.com/john-cd/rust_howto/issues/908)
+[fix](https://github.com/john-cd/rust_howto/issues/908)
 
 </div>

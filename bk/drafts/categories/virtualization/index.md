@@ -86,9 +86,8 @@ Virtual storage solutions are an area where development is ongoing.
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/968)
-TODO write / need in-depth review
-
-TODO cover
+need in-depth review
+cover
 
 https://github.com/rust-vmm/community
 https://github.com/rust-vmm/vmm-sys-util

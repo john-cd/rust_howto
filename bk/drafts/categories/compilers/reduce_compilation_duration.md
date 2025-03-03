@@ -60,7 +60,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[reduce_compilation_duration: review (P2)](https://github.com/john-cd/rust_howto/issues/245)
+[reduce_compilation_duration: review](https://github.com/john-cd/rust_howto/issues/245)
 fix reference section
 
 Reducing Rust compilation [duration][p-duration] involves several strategies, targeting both the compiler and project structure. Here's a breakdown:

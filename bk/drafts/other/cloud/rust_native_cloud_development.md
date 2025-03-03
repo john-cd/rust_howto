@@ -15,6 +15,6 @@ Cloud platforms that offer first-class support for Rust.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_native_cloud_development: write (P1)](https://github.com/john-cd/rust_howto/issues/576)
+[rust_native_cloud_development: write](https://github.com/john-cd/rust_howto/issues/576)
 
 </div>

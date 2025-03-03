@@ -10,7 +10,7 @@ Bindings to FreeBSD-specific APIs.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/947)
+[review](https://github.com/john-cd/rust_howto/issues/947)
 
 Most standard Rust code will work on FreeBSD without modification. If you need to use FreeBSD-specific system calls, the [`syscall`][c-syscall]⮳{{hi:syscall}} crate or FFI will be necessary. Be careful with `unsafe` code and consult the FreeBSD documentation. For general system programming tasks (file I/O, networking, processes), the standard library is usually sufficient.
 

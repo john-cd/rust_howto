@@ -22,6 +22,6 @@ While some crates exist for IMAP/POP3, they are less mature and widely used than
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/343)
+[write](https://github.com/john-cd/rust_howto/issues/343)
 
 </div>

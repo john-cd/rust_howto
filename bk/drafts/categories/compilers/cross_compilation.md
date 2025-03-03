@@ -52,6 +52,6 @@ Examples: [![cross-toml-example][c-cross-toml-example-badge]][c-cross-toml-examp
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cross_compilation: expand (P2)](https://github.com/john-cd/rust_howto/issues/240)
+[cross_compilation: expand](https://github.com/john-cd/rust_howto/issues/240)
 
 </div>

@@ -24,6 +24,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P1)](https://github.com/john-cd/rust_howto/issues/605)
+[write](https://github.com/john-cd/rust_howto/issues/605)
 
 </div>

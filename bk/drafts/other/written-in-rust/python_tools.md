@@ -43,6 +43,6 @@ conda install rustpython -c conda-forge
 [`uv`][uv-github]{{hi:uv}}⮳
 
 <div class="hidden">
-[python_tools: write (P1)](https://github.com/john-cd/rust_howto/issues/617)
+[python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
 
 </div>

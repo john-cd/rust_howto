@@ -50,6 +50,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[game_engines: write (P2)](https://github.com/john-cd/rust_howto/issues/369)
+[game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
 
 </div>

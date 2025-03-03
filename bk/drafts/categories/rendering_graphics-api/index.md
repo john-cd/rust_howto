@@ -10,7 +10,7 @@ Provide direct access to the hardware's or the operating system's rendering capa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/956)
+[review](https://github.com/john-cd/rust_howto/issues/956)
 
 Direct hardware access is generally considered unsafe and requires careful consideration of memory safety and concurrency. Many crates provide safe abstractions *over* these unsafe operations.
 

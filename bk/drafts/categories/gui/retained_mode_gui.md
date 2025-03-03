@@ -28,7 +28,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[retained_mode_gui: organize (P2)](https://github.com/john-cd/rust_howto/issues/389)
+[retained_mode_gui: organize](https://github.com/john-cd/rust_howto/issues/389)
 
 - slint
 - xilem

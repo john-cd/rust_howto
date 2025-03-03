@@ -63,5 +63,5 @@ FFI or custom implementations are likely needed.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aerospace protocols: write (P3)](https://github.com/john-cd/rust_howto/issues/196)
+[aerospace protocols: write](https://github.com/john-cd/rust_howto/issues/196)
 </div>

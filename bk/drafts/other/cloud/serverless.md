@@ -20,6 +20,6 @@ Dapr Rust SDK example: [![dapr-rust-examples][dapr-rust-examples-badge]][dapr-ru
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[serverless: edit (P1)](https://github.com/john-cd/rust_howto/issues/578)
+[serverless: edit](https://github.com/john-cd/rust_howto/issues/578)
 
 </div>

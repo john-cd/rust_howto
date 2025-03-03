@@ -37,7 +37,7 @@ Spacedrive is an open source cross-platform file explorer, powered by a virtual 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[others: review/add (P2)](https://github.com/john-cd/rust_howto/issues/615)
+[others: review/add](https://github.com/john-cd/rust_howto/issues/615)
 
 ### `television` {#television}
 

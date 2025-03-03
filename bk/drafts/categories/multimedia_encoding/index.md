@@ -41,6 +41,6 @@ Link to:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/418)
-TODO Link to related categories
+[write](https://github.com/john-cd/rust_howto/issues/418)
+Link to related categories
 </div>

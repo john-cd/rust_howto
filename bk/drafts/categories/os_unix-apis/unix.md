@@ -37,6 +37,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[unix: write (P2)](https://github.com/john-cd/rust_howto/issues/436)
+[unix: write](https://github.com/john-cd/rust_howto/issues/436)
 
 </div>

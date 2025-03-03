@@ -10,7 +10,7 @@ High-level solutions for rendering on the screen.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/955)
+[review](https://github.com/john-cd/rust_howto/issues/955)
 
 ## Rendering Engines (Built on Low-Level APIs)
 

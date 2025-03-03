@@ -6,8 +6,6 @@ A typical Rust/WASM development workflow involves writing Rust code, using [`was
 
 ## Compiling Rust to WASM (wasm32-unknown-unknown compilation target)
 
-TODO
-
 ## Tools and Frameworks (e.g., wasm-pack, cargo-generate)
 
 ### `wasm-pack` {#wasm-pack}
@@ -53,8 +51,6 @@ pub fn greet(name: &str) {
 
 #### Integration Testing with JavaScript
 
-TODO
-
 #### Debugging WASM
 
 Browser developer tools can be used to debug WASM.
@@ -71,21 +67,20 @@ WASM binary size is important for web performance. Use tools like [`wee_alloc`][
 
 #### Improving Execution Speed
 
-TODO
-
 #### Leveraging SIMD in WASM
 
-TODO
-
 #### Profiling Rust-WASM Applications
-
-TODO
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO polish
+write Improving Execution Speed
+write Integration Testing with JavaScript
+write Compiling Rust to WASM
+write Leveraging SIMD in WASM
+write Profiling Rust-WASM Applications
 
 Cite [Compiling from Rust to WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm)
 

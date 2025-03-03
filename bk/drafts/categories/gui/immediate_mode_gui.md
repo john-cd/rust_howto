@@ -27,7 +27,7 @@ Immediate-mode UI. Lots of widgets. The most usable out of the box if your needs
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[immediate_mode_gui: write (P2)](https://github.com/john-cd/rust_howto/issues/385)
+[immediate_mode_gui: write](https://github.com/john-cd/rust_howto/issues/385)
 
 ## Key Concepts of Immediate Mode GUI
 

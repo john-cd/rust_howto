@@ -44,6 +44,6 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[other_gui: organize; titles (P1)](https://github.com/john-cd/rust_howto/issues/387)
+[other_gui: organize; titles](https://github.com/john-cd/rust_howto/issues/387)
 
 </div>

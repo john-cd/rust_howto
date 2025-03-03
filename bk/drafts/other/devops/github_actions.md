@@ -118,7 +118,7 @@ Example `.github/workflows/<name>.yml`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[github_actions: cover the following - see blessed.rs (P1)](https://github.com/john-cd/rust_howto/issues/600)
+[github_actions: cover the following - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
 
 rust-toolchain (github action)
 Github action to install Rust components via rustup

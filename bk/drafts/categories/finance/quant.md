@@ -22,6 +22,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[quant: write (P2)](https://github.com/john-cd/rust_howto/issues/364)
+[quant: write](https://github.com/john-cd/rust_howto/issues/364)
 
 </div>

@@ -1,8 +1,23 @@
 # TODOs
 
+- Spelling
+
 ## Manually insert rest of cross-links
 
 ## Finish pandoc setup; generate PDF version of book
+
+## Incoporate the added text in `categories`
+
+- drafts: Finish
+  - Graphics
+  - Internationalization / localization
+  - Multimedia
+  - Containers
+  - WASM?
+  - compilers
+  - development tools: FFI - reorg. with other FFI topics
+
+- src: TODO
 
 ## Add text
 
@@ -12,12 +27,6 @@
 - other
 - crates
 - contributing
-
-## Incoporate the added text in `categories`
-
-- compilers
-- development tools: FFI - reorg. with other FFI topics
-- drafts: stopped at "games"
 
 ## Finish 56 COMING SOON examples
 
@@ -29,7 +38,7 @@
 
 ## Finish preproc directives in mdbook-scrub
 
-- Scrub links to hidden pages instead of commenting e.g. [p-cross-platform]: # "../../other/cross-platform/_index.md"
+- Scrub links to hidden pages instead of commenting e.g. [p-cross-platform]: # "../../other/cross-platform/index.md"
 - Scrub any left-over {{#example ...}}, {{#crate ...}}, {{#categories ...}}, {{hi: ...}}, etc and warn.
 - Crate link
 - Crate badge?

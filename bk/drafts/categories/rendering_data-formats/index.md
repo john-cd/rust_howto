@@ -10,7 +10,7 @@ Loading and parsing of data formats related to 2D or 3D rendering, like 3D model
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/954)
+[review](https://github.com/john-cd/rust_howto/issues/954)
 
 ## Loading and Parsing 2D/3D Rendering Data Formats
 

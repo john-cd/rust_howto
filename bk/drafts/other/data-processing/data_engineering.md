@@ -46,20 +46,12 @@ Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineer
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data_engineering: organize / edit (P1)](https://github.com/john-cd/rust_howto/issues/589)
-
-[data_engineering: cover ballista (P3)](https://github.com/john-cd/rust_howto/issues/590)
-
-[data_engineering: spice.ai (P1)](https://github.com/john-cd/rust_howto/issues/591)
-
+[data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
+cover ballista
+cover spice.ai
 Big [Data Processing][p-data-processing] for the AI Era [LakeSail][lakesail]
-
-[lakesail]: <https://lakesail.com/>
-
+[lakesail]: https://lakesail.com
 Visualize [streams][p-streams] of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
-
 [`rerun`][rerun]
-
-[rerun]: <https://github.com/rerun-io/rerun>
-
+[rerun]: https://github.com/rerun-io/rerun  (see also Robotics)
 </div>

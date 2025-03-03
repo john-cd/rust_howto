@@ -18,6 +18,6 @@ This section covers the use of the Rust language in cloud computing and serverle
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[edit (P1)](https://github.com/john-cd/rust_howto/issues/579)
+[edit](https://github.com/john-cd/rust_howto/issues/579)
 
 </div>

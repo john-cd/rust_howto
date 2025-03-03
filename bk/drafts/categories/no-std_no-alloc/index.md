@@ -10,7 +10,7 @@ Crates that are able to function without the Rust [`alloc`][c-alloc]⮳{{hi:allo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 review](https://github.com/john-cd/rust_howto/issues/945)
+[review](https://github.com/john-cd/rust_howto/issues/945)
 
 The term "no_alloc" usually refers to environments where dynamic memory allocation is not available or desirable (e.g., embedded systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the `alloc` crate and its associated functions.
 

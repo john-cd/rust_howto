@@ -68,7 +68,7 @@ Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[organize (P1)](https://github.com/john-cd/rust_howto/issues/397)
+[organize](https://github.com/john-cd/rust_howto/issues/397)
 
 ## Key Concepts
 

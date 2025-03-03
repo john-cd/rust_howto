@@ -81,6 +81,6 @@ Link
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 write](https://github.com/john-cd/rust_howto/issues/940)
+[write](https://github.com/john-cd/rust_howto/issues/940)
 Link to related pages
 </div>

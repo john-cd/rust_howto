@@ -79,7 +79,7 @@ Many languages have their own FFI mechanisms. You'll often need to find or creat
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/325)
+[write](https://github.com/john-cd/rust_howto/issues/325)
 
 ## Foreign Function Interface (FFI) Basics
 

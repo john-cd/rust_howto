@@ -21,5 +21,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aero: write (P3)](https://github.com/john-cd/rust_howto/issues/189)
+[aero: write](https://github.com/john-cd/rust_howto/issues/189)
 </div>

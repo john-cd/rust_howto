@@ -30,6 +30,6 @@ Fast integer primitive to string conversion.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[value-formatting: choose crates, write (P2)](https://github.com/john-cd/rust_howto/issues/490)
-TODO cover num-format, icu, fluent
+[value-formatting: choose crates, write](https://github.com/john-cd/rust_howto/issues/490)
+cover num-format, icu, fluent
 </div>

@@ -12,6 +12,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[rendering_engines: locate crates (P2)](https://github.com/john-cd/rust_howto/issues/455)
+[rendering_engines: locate crates](https://github.com/john-cd/rust_howto/issues/455)
 
 </div>

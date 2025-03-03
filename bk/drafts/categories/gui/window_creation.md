@@ -28,7 +28,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[window_creation: write (P2)](https://github.com/john-cd/rust_howto/issues/396)
+[window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
 
 ## `baseview` {#baseview}
 

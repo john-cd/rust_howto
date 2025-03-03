@@ -62,6 +62,6 @@ Consider using:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[aerospace_simulation: write (P3)](https://github.com/john-cd/rust_howto/issues/199)
+[aerospace_simulation: write](https://github.com/john-cd/rust_howto/issues/199)
 
 </div>

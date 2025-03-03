@@ -44,8 +44,6 @@ Building a full-fledged video player in Rust is a complex undertaking. You'd lik
 
 ## Transcoding: Converting video from one format to another
 
-TODO
-
 ## Related Topics
 
 ### Image Processing
@@ -68,9 +66,11 @@ TODO
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 write](https://github.com/john-cd/rust_howto/issues/943)
+[write](https://github.com/john-cd/rust_howto/issues/943)
 
 - Codecs: Algorithms for encoding and decoding video.
 - Formats: How encoded video data is structured (e.g., MP4, MKV).
+
+Link to Transcoding
 
 </div>

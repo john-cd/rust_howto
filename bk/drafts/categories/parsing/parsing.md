@@ -57,7 +57,7 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[parsing: write; examples (P2)](https://github.com/john-cd/rust_howto/issues/448)
+[parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
 - combine
 - peg

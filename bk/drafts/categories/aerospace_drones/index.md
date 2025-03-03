@@ -64,6 +64,6 @@ Consider using:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P3](https://github.com/john-cd/rust_howto/issues/193)
+[write](https://github.com/john-cd/rust_howto/issues/193)
 
 </div>

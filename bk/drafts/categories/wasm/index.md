@@ -42,6 +42,6 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/970)
+[write](https://github.com/john-cd/rust_howto/issues/970)
 
 </div>

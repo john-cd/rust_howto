@@ -26,6 +26,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[text_layout: write (P2)](https://github.com/john-cd/rust_howto/issues/391)
+[text_layout: write](https://github.com/john-cd/rust_howto/issues/391)
 
 </div>

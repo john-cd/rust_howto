@@ -57,6 +57,6 @@ See [[development-tools_debugging | Development Tools: Debugging]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write (P2)](https://github.com/john-cd/rust_howto/issues/348)
+[write](https://github.com/john-cd/rust_howto/issues/348)
 
 </div>

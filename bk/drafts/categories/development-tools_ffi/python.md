@@ -59,6 +59,6 @@ See [[development-tools_build-utils | Build Utils]] and [[code_build | Code Buil
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[python_interop: write (P2)](https://github.com/john-cd/rust_howto/issues/210)
+[python_interop: write](https://github.com/john-cd/rust_howto/issues/210)
 
 </div>

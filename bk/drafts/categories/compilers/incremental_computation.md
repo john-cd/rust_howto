@@ -24,7 +24,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[incremental_computation: write / add to index.md and summary (P2)](https://github.com/john-cd/rust_howto/issues/244)
+[incremental_computation: write / add to index.md and summary](https://github.com/john-cd/rust_howto/issues/244)
 
 - `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically. See [[cargo | Cargo]].
 

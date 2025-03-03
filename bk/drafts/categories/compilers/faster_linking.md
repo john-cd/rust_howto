@@ -119,9 +119,8 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[faster_linking: review - some linkers are deprecated (P2)](https://github.com/john-cd/rust_howto/issues/242)
-
-TODO cover:
+[faster_linking: review - some linkers are deprecated](https://github.com/john-cd/rust_howto/issues/242)
+Cover:
 
 ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
 
