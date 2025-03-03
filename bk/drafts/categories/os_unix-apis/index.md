@@ -4,9 +4,7 @@
 
 Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
-## File System Operations
-
-Working with files, directories, permissions, etc.
+## File System Operations: Working with files, directories, permissions, etc
 
 - `std::fs`, `std::path`
 
@@ -30,9 +28,7 @@ Working with files, directories, permissions, etc.
 
 - [`std::time`][c-std::time]⮳{{hi:std::time}}, [`chrono`][c-chrono]⮳{{hi:chrono}}
 
-## User and Group Management
-
-Getting user/group information.
+## User and Group Management: Getting user/group information
 
 - [`nix`][c-nix]⮳{{hi:nix}}
 
@@ -49,5 +45,5 @@ Getting user/group information.
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/437)
-
+convert into table?
 </div>
