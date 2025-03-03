@@ -2,7 +2,7 @@
 
 [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No alloc}}
 
-The term "no_alloc" usually refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the `alloc` crate and its associated functions.
+The term "no_alloc" refers to environments where *dynamic* memory allocation is not available or desirable (e.g., [[embedded | Embedded]] systems, kernel development, or performance-sensitive applications). The concept revolves around avoiding the use of the `alloc` crate and its associated functions.
 
 `no_alloc` memory allocation can be made deterministic, which is important for real-time systems or other applications where predictable performance is crucial.
 
@@ -19,9 +19,9 @@ Note the following:
 
 - Avoiding Dynamic Data Structures: In `no_alloc`, you'll typically avoid dynamic data structures like `Vec`, `String`, `Box`, `Rc`, `Arc`, etc., as these rely on heap allocation. Instead, you'll use fixed-size arrays, structs, and other data structures that can be allocated on the stack or statically.
 
-- Const Generics: These are very useful for working with fixed-size data structures in `no_alloc` contexts.
+- [[Const Generics]] are very useful for working with fixed-size data structures in `no_alloc` contexts.
 
-- Static Allocation: You can also use static allocation for data that is known at compile time. This is done using the `static` keyword. Static variables have a fixed memory location and a lifetime that lasts for the entire duration of the program. See [[global_static | Global Static]].
+- Static Allocation: You can also use [[static allocation]] for data that is known at compile time. This is done using the `static` keyword. Static variables have a fixed memory location and a lifetime that lasts for the entire duration of the program. See [[global_static | Global Static]].
 
 - Bump Allocators: A simple and fast allocation strategy often used in `no_alloc` environments. A bump allocator simply increments a pointer to allocate memory. It's very efficient but doesn't support deallocation. See [[memory-management | Memory Management]].
 
@@ -54,6 +54,7 @@ Consult the [`no_alloc`][cat-no-std::no-alloc] category on `crates.io`.
 - [[embedded | Embedded]] Systems
 - [[memory-management | Memory Management]]
 - [[memory_usage_analysis | Memory Usage Analysis]]
+- [[stack_allocated_arrays | Stack Allocated Arrays]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

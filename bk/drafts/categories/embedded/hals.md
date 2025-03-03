@@ -4,11 +4,13 @@
 
 The [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} crate is the most important for writing portable embedded code. You'll then choose a HAL crate specific to your microcontroller family (e.g., `stm32fxxx-hal`). PACs give you direct register access, but you'll usually work with a HAL. RTOSs are used for more complex embedded applications. [`defmt`][c-defmt]⮳{{hi:defmt}} is a very useful logging crate.
 
-[`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
-[`cortex-m`][c-cortex_m]⮳{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
-`stm32fxxx-hal`: HALs for specific STM32 microcontrollers. (Many microcontroller families have their own HAL crates.)
-[`nrf52-hal`][c-nrf52_hal]⮳{{hi:nrf52-hal}}: HALs for Nordic Semiconductor nRF52 microcontrollers.
-[`esp-hal`][c-esp_hal]⮳{{hi:esp-hal}}: HAL for Espressif chips.
+## Key Crates
+
+- [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}: A crucial crate that defines common traits for interacting with peripherals (GPIO, SPI, I2C, UART, etc.). This crate is essential for writing portable embedded code.
+- [`cortex-m`][c-cortex_m]⮳{{hi:cortex-m}}: Provides access to Cortex-M microcontroller peripherals.
+- `stm32fxxx-hal`: HALs for specific STM32 microcontrollers. (Many microcontroller families have their own HAL crates.)
+- [`nrf52-hal`][c-nrf52_hal]⮳{{hi:nrf52-hal}}: HALs for Nordic Semiconductor nRF52 microcontrollers.
+- [`esp-hal`][c-esp_hal]⮳{{hi:esp-hal}}: HAL for Espressif chips.
 
 Many other microcontroller families have their own HAL crates.
 
