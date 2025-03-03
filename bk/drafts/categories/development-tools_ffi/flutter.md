@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/1071)
+[write](https://github.com/john-cd/rust_howto/issues/1071)
 
 Interfacing with Flutter/Dart from Rust is primarily done using FFI (Foreign Function Interface) and requires a bit of setup on both the Rust and Dart sides.
 
