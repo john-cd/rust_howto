@@ -1,6 +1,6 @@
 | Recipe | Links |
 |--------|--------|
-| [Architect your Rust app][ex-architecture-architecture] | {{#crate }} |
+| | {{#crate }} |
 
 <div class="hidden">
 FIXME
