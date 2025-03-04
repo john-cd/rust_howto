@@ -10,7 +10,7 @@ A Rust drawing library focus on data plotting for both WASM and native applicati
 
 {{#example plotters}}
 
-## Plot and graph data {#graph-data}
+## Plot and graph data with `plotly` {#graph-data}
 
 [![plotly][c-plotly-badge]][c-plotly]{{hi:plotly}}
 [![plotly-crates.io][c-plotly-crates.io-badge]][c-plotly-crates.io]
