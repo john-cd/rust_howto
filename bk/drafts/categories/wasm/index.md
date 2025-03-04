@@ -8,23 +8,24 @@ Tooling targeting WebAssembly or manipulating WebAssembly.
 
 See [[wasm_basics | WASM Basics]].
 
+## WASM Development Process
+
+See [[wasm_development | WASM Development]].
+
 ## WASM Runtime Environments
 
-### Browser-based Execution
-
-### Node.js with WASM
-
-### Standalone WASM Runtimes (e.g., Wasmtime, Wasmer)
-
-See [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
+- Browser-based Execution
+- Node.js with WASM
+- [[wasm_standalone_runtimes | WASM Standalone Runtimes]]
+- Embedded Systems with WASM in Rust
 
 {{#include wasm_runtimes.incl.md}}
-
-### Embedded Systems with WASM in Rust
 
 ## Interfacing Rust WASM and JavaScript
 
 See [[interfacing_with_javascript | Interfacing with Javascript]].
+
+{{#include interfacing_with_javascript.incl.md}}
 
 ## Build an entire Web application in Rust using WASM-based Web Frameworks
 
@@ -43,5 +44,6 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/970)
-
+Browser-based Execution
+Node.js with WASM
 </div>

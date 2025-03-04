@@ -1,7 +1,7 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-|  |  | [![cat-wasm][cat-wasm-badge]][cat-wasm] |
-|  |  | [![cat-wasm][cat-wasm-badge]][cat-wasm] |
+|  | {{#crate }} | [![cat-wasm][cat-wasm-badge]][cat-wasm] |
+|  | {{#crate }} | [![cat-wasm][cat-wasm-badge]][cat-wasm] |
 
 <div class="hidden">
 FIXME

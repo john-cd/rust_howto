@@ -54,14 +54,12 @@ Rust can be used for game development targeting the web via WASM. [`winit`][c-wi
 
 <div class="hidden">
 TODO polish
-
 - What is WebAssembly?
 - Rust-WASM Ecosystem
 - WebAssembly's Binary Format
 - WASM Text Representation (WAT)
 
 Application Areas
-
 - Web Applications (e.g., Single Page Applications)
 - Image, Video, and Audio Processing
 - Game Development
