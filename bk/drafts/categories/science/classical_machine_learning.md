@@ -35,5 +35,4 @@ Kin in spirit to Python's `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focu
 
 <div class="hidden">
 [organize / write](https://github.com/john-cd/rust_howto/issues/473)
-
 </div>
