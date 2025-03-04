@@ -4,4 +4,5 @@
 | [Implement Websocket while using the `tokio` async runtime][ex-web-programming_websocket-general-purpose] | [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
 
 <div class="hidden">
+FIXME
 </div>
