@@ -34,5 +34,5 @@ docker init
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/988)
+[review/write](https://github.com/john-cd/rust_howto/issues/988)
 </div>

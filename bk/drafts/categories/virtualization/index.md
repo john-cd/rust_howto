@@ -54,7 +54,9 @@ Virtual storage solutions are an area where development is ongoing.
 - `block-util`: Utilities for block device emulation.
 - `virtio-blk`: Virtio block device implementation.
 
-| Image Formats (Virtual Disks) | (Often uses existing image libraries) | Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using existing image processing libraries or creating custom parsers. |
+## Image Formats (Virtual Disks)
+
+Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using existing image processing libraries or creating custom parsers.
 
 ## Security
 

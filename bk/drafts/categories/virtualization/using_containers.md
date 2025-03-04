@@ -8,3 +8,10 @@ See https://testcontainers.com/
 - [Mockito](https://crates.io/crates/mockito): Useful for mocking HTTP requests in containerized environments.
 
 See [[mocking | Mocking]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
+</div>
