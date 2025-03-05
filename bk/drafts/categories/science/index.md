@@ -33,7 +33,7 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 | Data [[visualization | Visualization]] | [`plotters`][c-plotters]⮳{{hi:plotters}}, [`iced`][c-iced]⮳{{hi:iced}}, [`egui`][c-egui]⮳{{hi:egui}} | While not strictly ML-specific, these crates are essential for visualizing data and model performance. |
 | [[linear_algebra | Linear Algebra]] & Numerical Computation | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`ndarray`][c-ndarray]⮳{{hi:ndarray}}, [`matrix`][c-matrix]⮳{{hi:matrix}} | These crates provide efficient array and matrix operations, essential for many ML algorithms. |
 
-FFI (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
+[[development-tools_ffi | FFI]] (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
