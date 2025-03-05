@@ -342,6 +342,16 @@
 [c-axum-lib.rs-badge]: https://img.shields.io/badge/lib.rs-axum-yellow
 [c-axum-lib.rs]: https://lib.rs/crates/axum
 [c-axum]: https://docs.rs/axum
+[c-azul-badge]: https://img.shields.io/crates/v/azul?label=azul
+[c-azul-crates.io-badge]: https://img.shields.io/badge/crates.io-azul-crimson
+[c-azul-crates.io]: https://crates.io/crates/azul
+[c-azul-github-badge]: https://img.shields.io/badge/azul-steelblue?logo=github
+[c-azul-github]: https://github.com/fschutt/azul
+[c-azul-lib.rs-badge]: https://img.shields.io/badge/lib.rs-azul-yellow
+[c-azul-lib.rs]: https://lib.rs/crates/azul
+[c-azul-website-badge]: https://img.shields.io/badge/azul-coral
+[c-azul-website]: https://azul.rs
+[c-azul]: https://docs.rs/azul
 [c-bacon-badge]: https://img.shields.io/crates/v/bacon?label=bacon
 [c-bacon-crates.io-badge]: https://img.shields.io/badge/crates.io-bacon-crimson
 [c-bacon-crates.io]: https://crates.io/crates/bacon

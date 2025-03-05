@@ -6,7 +6,7 @@
 
 [![winit][c-winit-badge]][c-winit] [![winit-crates.io][c-winit-crates.io-badge]][c-winit-crates.io] [![winit-github][c-winit-github-badge]][c-winit-github] [![winit-lib.rs][c-winit-lib.rs-badge]][c-winit-lib.rs]{{hi:winit}}{{hi:Windowing}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-[`winit`][c-winit]⮳{{hi:winit}} is a cross-platform window creation library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice."
+[`winit`][c-winit]⮳{{hi:winit}} is a cross-platform window creation and event handling library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice." ([blessed.rs](https://blessed.rs/crates)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/winit.rs:example}}
@@ -18,17 +18,11 @@
 
 [`tao`][c-tao]⮳{{hi:tao}} is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
-"A fork of `winit` by the Tauri project, which adds support for things like system menus that desktop apps need."
+"A fork of `winit` by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs](https://blessed.rs/crates)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
 ```
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
 
 ## `baseview` {#baseview}
 
@@ -40,9 +34,13 @@
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
-## Windowing and Input
+## See also
 
-[`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling library. Essential for getting a window on the screen and handling input.
-[`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem.
+[`sdl2`][c-sdl2]⮳{{hi:sdl2}} can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
 </div>

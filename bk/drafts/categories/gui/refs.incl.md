@@ -4,7 +4,6 @@
 [ex-gui-dioxus]: web_based_gui.md#dioxus
 [ex-gui-druid]: other_gui.md#druid
 [ex-gui-egui]: immediate_mode_gui.md#egui
-[ex-gui-femtovg]: 2d_renderers.md#femtovg
 [ex-gui-floem]: retained_mode_gui.md#floem
 [ex-gui-gpui]: other_gui.md#gpui
 [ex-gui-gtk4]: gtk.md#gtk4
@@ -13,15 +12,11 @@
 [ex-gui-parley]: text_layout.md#parley
 [ex-gui-relm4]: gtk.md#relm4
 [ex-gui-rfd]: file_dialogs.md#rfd
-[ex-gui-skia-safe]: 2d_renderers.md#skia-safe
 [ex-gui-slint]: other_gui.md#slint
 [ex-gui-taffy]: ui_layout.md#taffy
 [ex-gui-tao]: window_creation.md#tao
 [ex-gui-tauri]: web_based_gui.md#tauri
-[ex-gui-vello]: 2d_renderers.md#vello
-[ex-gui-vger]: 2d_renderers.md#vger
 [ex-gui-vizia]: retained_mode_gui.md#vizia
-[ex-gui-webrender]: 2d_renderers.md#webrender
 [ex-gui-winit]: window_creation.md#winit
 [ex-gui-xilem]: other_gui.md#xilem
 [p-apis]: ../web-programming_http-client/apis.md

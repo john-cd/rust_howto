@@ -111,7 +111,6 @@
   - [GPU](other/gpu/gpu.md)
 
 - [GUI](categories/gui/index.md)
-  - [2D Renderers](categories/gui/2d_renderers.md)
   - [Clipboard](categories/gui/clipboard.md)
   - [File Dialogs](categories/gui/file_dialogs.md)
   - [GTK](categories/gui/gtk.md)
