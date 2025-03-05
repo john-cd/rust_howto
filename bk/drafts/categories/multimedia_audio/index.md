@@ -45,4 +45,11 @@ For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. 
 [fix](https://github.com/john-cd/rust_howto/issues/941)
 review in depth
 synth is old
+- Audio Decoding and Encoding
+- Audio Effects and Filters
+- Audio Streaming
+- Audio Synthesis
+- Audio Analysis
+- Audio Compression
+- Audio Rendering
 </div>

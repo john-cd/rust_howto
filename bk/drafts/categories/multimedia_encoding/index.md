@@ -38,4 +38,8 @@ See [[multimedia_images | Multimedia: Image]].
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/418)
+- Audio Formats (MP3, WAV, OGG)
+- Video Formats (MP4, AVI, MKV)
+- Image Formats (JPEG, PNG, GIF)
+- Codecs (H.264, VP9, Opus)
 </div>
