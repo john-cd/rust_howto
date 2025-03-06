@@ -7,6 +7,7 @@ actix_web
 aes-gcm
 aes-gcm-siv
 afl
+aho-corasick
 ansi_term
 anyhow
 approx
@@ -37,14 +38,18 @@ basic-toml
 bat
 bcrypt
 bevy
+binascii
 bincode
 bindgen
 bitflags
 blake3
+bloomfilter
 bonsai-bt
 bonsai_bt
 broot
+bstr
 build-info
+bumpalo
 bytemuck
 byteorder
 bytes
@@ -92,12 +97,15 @@ cassandra-protocol
 cbindgen
 cc
 cdrs-tokio
+cfg-if
 chacha20poly1305
 chrono
 ciborium
 clap
 clap-verbosity-flag
+clap_complete
 color-eyre
+colored
 comemo
 comrak
 concat-string
@@ -105,6 +113,7 @@ concat_string
 concat_strs
 config
 config1
+configparser
 confy
 console
 cornucopia
@@ -159,6 +168,7 @@ ed25519
 ed25519-dalek
 eframe
 egui
+either
 elasticsearch
 embassy
 env_logger
@@ -189,12 +199,14 @@ globset
 glommio
 gping
 heapless
+heck
 heed
 hex-literal
 html5ever
 http
 http-body-util
 http_body_util
+humantime
 hyper
 hyper-tls
 hyper-util
@@ -203,11 +215,13 @@ ignore
 image
 indexmap
 indicatif
+indoc
 inquire
 insta
 itertools
 jni
 joinery
+js-sys
 json5
 just
 kanal
@@ -257,6 +271,7 @@ mdbook_theme
 mdbook_toc
 meilisearch
 meilisearch-sdk
+memchr
 memmap2
 miette
 mime
@@ -307,6 +322,8 @@ pest_derive
 pest_generator
 petgraph
 pico-args
+pin-project
+pin-project-lite
 pingora
 pkcs8
 plotly
@@ -331,6 +348,7 @@ r3bl_tuify
 ractor
 rand
 rand_distr
+rangemap
 ratatui
 rayon
 redis
@@ -380,7 +398,10 @@ sha1
 sha2
 sibyl
 simd-json
+similar
 skia-safe
+skiplist
+slab
 sled
 slint
 slog
@@ -396,6 +417,7 @@ sqlx
 stakker
 starship
 std
+strsim
 subtle
 surrealdb
 swc_common
@@ -411,6 +433,7 @@ tauri
 tempfile
 tera
 termbook
+textwrap
 thiserror
 threadpool
 tiberius
@@ -441,6 +464,7 @@ tree-sitter
 tree-sitter-rust
 trillium
 tungstenite
+typenum
 unicode-segmentation
 unicode_segmentation
 uniffi
@@ -456,6 +480,7 @@ wasmtime
 watt
 webpki-roots
 wgpu
+which
 winapi
 windows
 winit
