@@ -105,7 +105,6 @@
   - [Game engines](categories/game-engines/game_engines.md)
 
 - [Graphics](categories/graphics/index.md)
-  - [WebGPU](categories/rendering/webgpu.md)
 
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
@@ -163,6 +162,7 @@
 - [Rendering](categories/rendering/index.md)
   - [2D Renderers](categories/rendering/2d_renderers.md)
   - [Rendering](categories/rendering/rendering.md)
+  - [WebGPU](categories/rendering/webgpu.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
   - [Data formats](categories/rendering_data-formats/data_formats.md)
