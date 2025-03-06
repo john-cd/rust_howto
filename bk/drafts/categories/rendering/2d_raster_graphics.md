@@ -16,8 +16,6 @@
 
 ## `tiny-skia` {#tiny-skia}
 
-A tiny Skia subset ported to Rust.
-
 [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p-graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
 ## Related Topics

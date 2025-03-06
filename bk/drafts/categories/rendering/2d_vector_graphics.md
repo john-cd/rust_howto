@@ -2,17 +2,45 @@
 
 {{#include 2d_vector_graphics.incl.md}}
 
-[`lyon`][c-lyon]⮳{{hi:lyon}} generates vector paths and shapes. Often used with a rendering library. For basic geometry, you might just use structs and functions within your own code. [`lyon`][c-lyon]⮳{{hi:lyon}} can also generate various types of curves (Bézier curves, etc.).
-
-It's useful for creating the geometry for vector graphics, but you'd typically use a rendering library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually draw them.
-
-Also consider `femtovg`.
-
 ## `lyon` {#lyon}
 
 [`lyon`][c-lyon]⮳{{hi:lyon}} is a library for generating vector paths and shapes. It's useful for creating the geometry for vector [graphics][p-graphics], but you'd typically use a [rendering][p-rendering] library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually draw them. [`lyon`][c-lyon]⮳{{hi:lyon}} handles the math and path calculations.
 
+[`lyon`][c-lyon]⮳{{hi:lyon}} generates vector paths and shapes. Often used with a rendering library. For basic geometry, you might just use structs and functions within your own code. [`lyon`][c-lyon]⮳{{hi:lyon}} can also generate various types of curves (Bézier curves, etc.).
+
+It's useful for creating the geometry for vector graphics, but you'd typically use a rendering library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually draw them.
+
+## `femtovg` {#femtovg}
+
+[![femtovg][c-femtovg-badge]][c-femtovg] [![femtovg-crates.io][c-femtovg-crates.io-badge]][c-femtovg-crates.io] [![femtovg-github][c-femtovg-github-badge]][c-femtovg-github] [![femtovg-lib.rs][c-femtovg-lib.rs-badge]][c-femtovg-lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
+
+[`femtovg`][c-femtovg]⮳{{hi:femtovg}} is an anti-aliased 2D vector drawing library. It is "OpenGL based. Offers a simple API. Probably the easiest to get started with." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/femtovg.rs:example}}
+```
+
+## `vger` {#vger}
+
+[![vger][c-vger-badge]][c-vger] [![vger-crates.io][c-vger-crates.io-badge]][c-vger-crates.io] [![vger-github][c-vger-github-badge]][c-vger-github] [![vger-lib.rs][c-vger-lib.rs-badge]][c-vger-lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
+
+[`vger`][c-vger]⮳{{hi:vger}} is a 2D [GPU][p-gpu] renderer for dynamic UIs.
+
+"A simpler WGPU-based option which is less innovative but currently more stable than [`vello`][c-vello]⮳{{hi:vello}}." ([blessed.rs](https://blessed.rs/crates#section-graphics)).
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/vger.rs:example}}
+```
+
 ## Related Topics
+
+- [[2d_renderers | 2D Renderers]].
+- [[2d_raster_graphics | 2D Raster Graphics]].
+- [[3d_renderers | 3d Renderers]].
+- [[opengl | OpenGL]].
+- [[rendering | Rendering]].
+- [[rendering_engines | Rendering Engines]].
+- [[svg_rendering | SVG Rendering]].
 
 ## See also
 

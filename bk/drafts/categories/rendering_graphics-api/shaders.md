@@ -1,4 +1,4 @@
-# Shaders
+# Shaders (GLSL, HLSL, SPIR-V)
 
 {{#include shaders.incl.md}}
 
@@ -13,7 +13,16 @@ Shaders are programs that run on the GPU (Graphics Processing Unit). There are s
 
 Shaders are written in specialized programming languages like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). `wgpu` uses WGSL.
 
+## Topics
+
+- SPIR-V compilation
+- GLSL/HLSL compilation
+- Compute Shaders
+- GPU Compute
+
 ## `naga` {#naga}
+
+[`naga`][c-naga]⮳{{hi:naga}} is a general-purpose shader translation and analysis tool.
 
 Shader translator and validator. Part of the `wgpu` project.
 
@@ -25,20 +34,46 @@ Making Rust a first-class language and ecosystem for GPU shaders
 
 Multi-platform high-performance compute language extension for Rust.
 
-## `spirv-reflect` {#spirv-reflect}
+## GLSL/HLSL compilation
 
-## Compute Shaders (GPGPU)
+TODO
+
+## SPIR-V
+
+### `glsl-to-spirv`
+
+[`glsl-to-spirv`][c-glsl_to_spirv]⮳{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
+
+### `spirv-builder`
+
+For building spirv modules.
+
+### `spirv-reflect` {#spirv-reflect}
+
+For inspecting SPIR-V shaders
+
+### `shaderc` {#shaderc}
+
+[`shaderc`][c-shaderc]⮳{{hi:shaderc}} is a Rust wrapper for the shaderc library (compiles GLSL/HLSL to SPIR-V).
+
+## Compute Shaders and GPU Compute (GPGPU)
 
 Compute Shaders are often handled through the low-level graphics APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} or [`vulkano`][c-vulkano]⮳{{hi:vulkano}}.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+## Related Topics
+
+- [[gpu | GPU]]
+- [[gpu_abstraction_layers | GPU Abstraction Layers]]
 
 ## See also
 
 - [[typecasts | Typecasts]] and especially `bytemuck` - A crate for mucking around with piles of bytes.
-- [Are we Game e=yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/)
+- [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/)
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+TODO decide what to cover, write
+review https://crates.io/crates/gpu-allocator
 </div>

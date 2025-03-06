@@ -38,6 +38,8 @@
 
 [`sdl2`][c-sdl2]⮳{{hi:sdl2}} can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem.
 
+[`glfw`][c-glfw]⮳{{hi:glfw}} provides bindings to the GLFW library.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

@@ -22,9 +22,10 @@ Consider:
 - [[rendering_data-formats | Rendering: Data Formats]].
 - [[rendering_graphics-api | Rendering Graphics API]] - 2D/3D Lower Level Graphics.
 
-Applications:
+### Applications
 
-- [[game-development | Game Development]] and [[game_engines | Game Engines]].
+- [[game-development | Game Development]].
+- [[game_engines | Game Engines]].
 - [[gui | GUI]].
 
 {{#include refs.incl.md}}

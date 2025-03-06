@@ -25,5 +25,4 @@
 [edit](https://github.com/john-cd/rust_howto/issues/608)
 decide what to cover
 review https://www.arewelearningyet.com/gpu-computing/
-Link to `wgpu`, `vulkano`, `cubecl`, `rust-gpu`
 </div>

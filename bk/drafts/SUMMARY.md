@@ -161,8 +161,6 @@
 
 - [Rendering](categories/rendering/index.md)
   - [2D Renderers](categories/rendering/2d_renderers.md)
-  - [Rendering](categories/rendering/rendering.md)
-  - [WebGPU](categories/rendering/webgpu.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
   - [Data formats](categories/rendering_data-formats/data_formats.md)
@@ -171,7 +169,8 @@
   - [Rendering engines](categories/rendering_engine/rendering_engines.md)
 
 - [Rendering - graphics APIs](categories/rendering_graphics-api/index.md)
-  - [Graphics APIs](categories/rendering_graphics-api/graphics_apis.md)
+  - [Native Graphics APIs](categories/rendering_graphics-api/native_graphics_apis.md)
+  - [WebGPU](categories/rendering_graphics-api/webgpu.md)
 
 - [Robotics](categories/science_robotics/index.md)
   - [Robotics](categories/science_robotics/robot_operating_systems.md)

@@ -4,38 +4,55 @@
 
 Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 
-## `glow` {#glow}
+## Topics
 
-GL on Whatever: a set of bindings to run GL (Open GL, OpenGL ES, and WebGL) anywhere, and avoid target-specific code.
+- Forward Rendering
+- Deferred Rendering
+- Physically Based Rendering (PBR)
+- Ray Tracing
+- Global Illumination
+- Shadow Mapping
+- Ambient Occlusion
+- Level of Detail (LOD)
 
-## `glutin` {#glutin}
+Many algorithms are implemented within engines like `bevy` or `rend3`.
 
-Cross-platform OpenGL context provider.
+| 3D Graphics | [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`bevy`][c-bevy]⮳{{hi:bevy}}, [`rend3`][c-rend3]⮳{{hi:rend3}}, [`glium`][c-glium]⮳{{hi:glium}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}| [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a cross-platform, low-level graphics API. [`bevy`][c-bevy]⮳{{hi:bevy}} is a data-driven game engine. [`rend3`][c-rend3]⮳{{hi:rend3}} is a rendering engine built on wgpu. [`glium`][c-glium]⮳{{hi:glium}} is an OpenGL wrapper. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} is a Vulkan wrapper. |
 
-## `ash` {#ash}
+[`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with `winit` or game engines.  [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A low-level graphics API abstraction layer.
 
-Vulkan bindings for Rust.
+## `rend3` {#rend3}
 
-## `wgpu` {#wgpu}
+[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of wgpu.
 
-Cross-platform, safe, pure-rust graphics API
+## `three-d` {#threed}
 
-## `glium` {#glium}
+A OpenGL/WebGL/OpenGL ES renderer which seeks to make graphics simple but still have the power to efficiently draw exactly what you want.
 
-Elegant and safe OpenGL wrapper. Glium is an intermediate layer between OpenGL and your application. You still need to manually handle the graphics pipeline, but without having to use OpenGL's old and error-prone API. Its objectives: - Be safe to use. Many aspects of OpenGL that can trigger a crash if misused are automatically handled by glium. - Provide an API that enforces good pratices such as RAII or stateless function calls. - Be compatible with all OpenGL versions that support shaders, providing unified API when things diverge. - Avoid all OpenGL errors beforehand. - Produce optimized OpenGL function calls, and allow the user to easily use modern OpenGL techniques.
+## `kiss3d` {#kiss3d}
 
-## `gl` {#gl}
+Keep It Simple, Stupid 3d graphics engine.
 
-OpenGL bindings.
+This library is born from the frustration that today’s 3D graphics library are either:
 
-## `vulkano` {#vulkano}
+- Too low level: you have to write your own shaders and opening a window takes 8 hours, 300 lines of code and 10L of coffee.
+- High level, but too hard to understand/use: these libraries are made to create beautiful photoreal (or close to it) animations or games. They have many features; too many, in fact, if you just want to draw a few objects on the screen with as little friction as possible.
+kiss3d is not designed to be feature-complete or fast. It is designed to let you draw simple geometric figures and play with them with as little friction as possible.
 
-Safe wrapper for the Vulkan graphics API.
+## Hardware Acceleration
 
-## Related Topics
+Often depends on the 3D API or rendering engine used. Libraries like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}, and [`glium`][c-glium]⮳{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
 
-- [[2d_raster_graphics | 2D Raster Graphics]].
-- [[2d_vector_graphics | 2D Vector Graphics]].
+See:
+
+- [[rendering_graphics-api | Rendering: Graphics API]].
+- [[gpu_abstraction_layers | GPU Abstraction Layers]].
+- [[native_graphics_apis | Native Graphics APIs]].
+- [[vulkan | Vulkan]].
+- [[opengl | OpenGL]].
+
+### Applications
+
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
 
@@ -48,11 +65,5 @@ Safe wrapper for the Vulkan graphics API.
 
 <div class="hidden">
 TODO write. decide what to cover
-
-3D Rendering
-
-- wgpu: Safe and portable GPU abstraction in Rust, based on WebGPU.
-- gfx-rs: A low-level, cross-platform graphics API for Rust.
-- vulkano: Safe and rich Rust wrapper around the Vulkan API.
-
+See also `fast-poisson-disk` for generating point distributions.
 </div>
