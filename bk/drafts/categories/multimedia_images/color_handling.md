@@ -1,0 +1,18 @@
+# Color Handling
+
+{{#include color_handling.incl.md}}
+
+## `palette` {#palette}
+
+[![palette][c-palette-badge]][c-palette] [![palette-crates.io][c-palette-crates.io-badge]][c-palette-crates.io] [![palette-github][c-palette-github-badge]][c-palette-github] [![palette-lib.rs][c-palette-lib.rs-badge]][c-palette-lib.rs]{{hi:palette}}{{hi:Linear}}{{hi:Pixel}}{{hi:Rgb}}{{hi:Color}}{{hi:Conversion}} [![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+Convert and manage colors with a focus on correctness, flexibility and ease of use.
+
+{{#example palette}}
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
+</div>

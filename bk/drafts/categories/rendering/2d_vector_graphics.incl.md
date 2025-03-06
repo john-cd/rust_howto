@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| | {{#crate }} | [![cat-rendering::engine][cat-rendering::engine-badge]][cat-rendering::engine] |
+| | {{#crate }} | [![cat-rendering][cat-rendering-badge]][cat-rendering] |
 
 <div class="hidden">
 FIXME

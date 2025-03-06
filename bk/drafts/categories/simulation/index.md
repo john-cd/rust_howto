@@ -20,7 +20,11 @@ The Rust ecosystem offers several options for building simulations, ranging from
 | Finite Element Analysis (FEA) | | Similar to CFD, FEA relies on numerical computation and is an area where development is ongoing. |
 | Molecular Dynamics (MD) | | MD simulations also rely heavily on numerical computation. |
 
-## Code Examples
+## Physics Engines
+
+{{#include physics_engine.incl.md}}
+
+## Other Code Examples
 
 {{#include simulation.incl.md}}
 
@@ -29,7 +33,7 @@ The Rust ecosystem offers several options for building simulations, ranging from
 | Topic | Rust Crate(s) | Notes |
 |---|---|---|
 | Data [[visualization | Visualization]] | [`plotters`][c-plotters]⮳{{hi:plotters}} |  |
-| [[game_engines | Game Engines]] (Adaptable for Simulation) | [`bevy`][c-bevy]⮳{{hi:bevy}}, [`amethyst`][c-amethyst]⮳{{hi:amethyst}}, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (lower-level graphics) | Game engines provide a foundation for simulations, especially those with visual components. [`bevy`][c-bevy]⮳{{hi:bevy}} is a popular data-driven game engine. [`amethyst`][c-amethyst]⮳{{hi:amethyst}} is another option. [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a lower-level crate useful if you need fine-grained control over rendering for your simulation. |
+| [[game_engines | Game Engines]] (Adaptable for Simulation) | [`bevy`][c-bevy]⮳{{hi:bevy}}, [`amethyst`][c-amethyst]⮳{{hi:amethyst}}, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (lower-level graphics) | Game engines provide a foundation for simulations, especially those with visual components. [`bevy`][c-bevy]⮳{{hi:bevy}} is a popular data-driven game engine. [`amethyst`][c-amethyst]⮳{{hi:amethyst}} is another option. |
 | Numerical Computation & [[linear_algebra | Linear Algebra]] | [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}, [`ndarray`][c-ndarray]⮳{{hi:ndarray}}, [`statrs`][c-statrs]⮳{{hi:statrs}} | |
 | Parallel & Distributed Computing, [[concurrency | Concurrency]] | Often uses crates like [`rayon`][c-rayon]⮳{{hi:rayon}}, [`tokio`][c-tokio]⮳{{hi:tokio}}. [`mpi-rs`][c-mpi]⮳{{hi:mpi-rs}} provides bindings for MPI. | Rust's concurrency features can be used to parallelize simulations. |
 | [[randomness | Random]] Number Generation | [`rand`][c-rand]⮳{{hi:rand}} | |
@@ -39,5 +43,4 @@ The Rust ecosystem offers several options for building simulations, ranging from
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/961)
-
 </div>

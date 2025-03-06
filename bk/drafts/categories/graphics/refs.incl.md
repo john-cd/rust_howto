@@ -1,4 +1,3 @@
-[ex-graphics-wgpu]: webgpu.md#wgpu
 [p-cross-platform]: # "../../other/cross-platform/index.md"
 [p-graphics]: index.md
 [p-images]: ../multimedia_images/images.md

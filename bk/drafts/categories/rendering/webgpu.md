@@ -61,7 +61,7 @@ See [[mathematics | Mathematics]]. The key crates are:
 
 <div class="hidden">
 [webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
-review [rust-gpu-ecosystem-website]: [https://rust-gpu.github.io/ecosystem](https://rust-gpu.github.io/ecosystem)
+review [rust-gpu-ecosystem-website]: https://rust-gpu.github.io/ecosystem
 review in depth
 table for related topics?
 </div>

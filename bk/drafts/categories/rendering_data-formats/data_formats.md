@@ -8,6 +8,8 @@
 {{#include ../../../crates/cats/rendering_data_formats/tests/data_formats.rs:example}}
 ```
 
+## Related Topics
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

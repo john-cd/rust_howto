@@ -1,17 +1,16 @@
 # TODOs
 
-- Spelling
-
-## Manually insert rest of cross-links
+## Manually insert rest of cross-links WIP
 
 ## Finish pandoc setup; generate PDF version of book
 
-## Incoporate the added text in `categories`
+## Incoporate the added text in `categories` WIP
 
 - drafts: Finish
   - Graphics
-  - Internationalization / localization
-  - Multimedia
+  - Rendering
+  - GUI
+  - Internationalization
   - Containers
   - WASM?
   - compilers

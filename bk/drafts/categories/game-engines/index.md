@@ -34,5 +34,13 @@ See also [`winit`][c-winit]⮳{{hi:winit}}: A window creation and event handling
 
 Needs full review
 
+Consider:
+
+- [`Bevy`][c-bevy]⮳{{hi:Bevy}}: A data-driven game engine that includes a rendering system.
+- [`Amethyst`][c-amethyst]⮳{{hi:Amethyst}}: Another game engine with rendering capabilities.
+
+General Purpose: `bevy`, `ggez`.
+Lightweight: `miniquad`, `macroquad`.
+
 Add link to [Engines](https://arewegameyet.rs/ecosystem/engines/): 2D and 3D engines and frameworks
 </div>
