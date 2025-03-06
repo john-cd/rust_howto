@@ -12,7 +12,7 @@ _default:
 backtick crate_list:
    #! /usr/bin/env bash
    set -euo pipefail
-   for crate in $( cat {{root}}/{{crate_list}} | sed -e '/^(time|just|directories|image|open|log)$/d' )
+   for crate in $( cat {{root}}/{{crate_list}} | sed -e '/^(time|just|directories|image|open|log|either|which|similar|cargo|just)$/d' )
    do
      echo ">> $crate"
      find {{root}} -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
