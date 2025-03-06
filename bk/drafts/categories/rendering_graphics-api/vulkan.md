@@ -21,8 +21,4 @@ Safe wrapper for the Vulkan graphics API.
 
 <div class="hidden">
 TODO decide what to cover / write
-Consider:
-
-- `erupt`
-
 </div>

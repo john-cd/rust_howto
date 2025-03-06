@@ -9,9 +9,8 @@ High-level solutions for rendering on the screen.
 Consider:
 
 - [`rend3`][c-rend3]⮳{{hi:rend3}}: A 3D rendering engine built on top of `wgpu`. Provides higher-level abstractions for rendering.
-- [`bevy_render`][c-bevy_render]⮳{{hi:bevy_render}}: Bevy's rendering system (part of the Bevy game engine).
-- 3D Rendering: `three-rs`.
-- [`bevy`][c-bevy]⮳{{hi:bevy}}: Data-driven, modular game engine built on top of WGPU. Focuses on performance and developer experience. Supports 2D and 3D rendering.
+- [`bevy_render`][c-bevy_render]⮳{{hi:bevy_render}}: Bevy's rendering system (part of the `bevy` game engine).
+- `three-rs`.
 
 {{#include rendering_engines.incl.md}}
 
@@ -33,4 +32,5 @@ Consider:
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/955)
+should be a pointer to rendering
 </div>

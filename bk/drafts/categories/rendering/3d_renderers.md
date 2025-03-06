@@ -4,6 +4,8 @@
 
 Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 
+3D rendering is the 3D computer graphics process of converting 3D models into 2D images.
+
 ## Topics
 
 - Forward Rendering
@@ -15,15 +17,11 @@ Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 - Ambient Occlusion
 - Level of Detail (LOD)
 
-Many algorithms are implemented within engines like `bevy` or `rend3`.
-
-| 3D Graphics | [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`bevy`][c-bevy]⮳{{hi:bevy}}, [`rend3`][c-rend3]⮳{{hi:rend3}}, [`glium`][c-glium]⮳{{hi:glium}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}| [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a cross-platform, low-level graphics API. [`bevy`][c-bevy]⮳{{hi:bevy}} is a data-driven game engine. [`rend3`][c-rend3]⮳{{hi:rend3}} is a rendering engine built on wgpu. [`glium`][c-glium]⮳{{hi:glium}} is an OpenGL wrapper. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} is a Vulkan wrapper. |
-
-[`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with `winit` or game engines.  [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A low-level graphics API abstraction layer.
+Many algorithms are implemented within engines like `rend3` or game engines like `bevy`.
 
 ## `rend3` {#rend3}
 
-[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of wgpu.
+[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of `wgpu`.
 
 ## `three-d` {#threed}
 
@@ -55,6 +53,7 @@ See:
 
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
+- [[gui | GUI]].
 
 ## See also
 

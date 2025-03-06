@@ -31,7 +31,14 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 
 Image processing operations.
 
-- Image Analysis
+Image Processing Fundamentals:
+
+- Image Filtering (Blur, Sharpen, Edge Detection)
+- Image Transformations (Resizing, Rotation)
+- Image Compression
+- Color Space Conversion
+
+Image Analysis
 
 {{#example imageproc}}
 

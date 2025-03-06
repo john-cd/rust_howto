@@ -2,10 +2,6 @@
 
 {{#include rendering_engines.incl.md}}
 
-- [`rend3`][c-rend3]⮳{{hi:rend3}}: A 3D rendering engine built on top of `wgpu`. Provides higher-level abstractions for rendering.
-- [`bevy_render`][c-bevy_render]⮳{{hi:bevy_render}}: Bevy's rendering system (part of the Bevy game engine).
-- 3D Rendering: `three-rs`.
-
 ## Use a render engine {#render}
 
 ```rust,editable

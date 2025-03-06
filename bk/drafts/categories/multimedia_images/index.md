@@ -12,6 +12,8 @@ For most common image tasks, the [`image`][c-image]⮳{{hi:image}} crate will be
 
 [`imageproc`][c-imageproc]⮳{{hi:imageproc}} provides more advanced image processing algorithms.
 
+Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodepng`][c-lodepng]⮳{{hi:lodepng}}, [`jpeg-decoder`][c-jpeg_decoder]⮳{{hi:jpeg-decoder}}, [`gif`][c-gif]⮳{{hi:gif}}, [`webp`][c-webp]⮳{{hi:webp}}.
+
 {{#include images.incl.md}}
 
 ## Low-level pixel manipulation - Pixel Buffers and Data Structures
@@ -33,11 +35,11 @@ See
 - [[rendering | Rendering]].
 - [[rendering_data-formats | Rendering Data Formats]].
 - [[rendering_engine | Rendering Engine]].
-- [[rendering_graphics-api | Rendering Graphics API]].
+- [[rendering_graphics-api | Rendering: Graphics API]].
 
 ## GPU-accelerated image processing
 
-The [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing.
+The [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing. See [[gpu_abstraction_layers | GPU Abstraction Layers]], [[native_graphics_apis | Native Graphics APIs]], and [[shaders | Shaders]].
 
 ## Related Topics
 

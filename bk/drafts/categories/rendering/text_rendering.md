@@ -4,6 +4,8 @@
 
 Libraries and tools for loading and rendering fonts.
 
+[`fontdue`][c-fontdue]⮳{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c-ttf_parser]⮳{{hi:ttf-parser}} and [`opentype`][c-opentype]⮳{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c-ab_glyph]⮳{{hi:ab_glyph}} is another font rendering option.
+
 ## `ab_glyph` {#ab_glyph}
 
 API for loading, scaling, positioning and rasterizing OpenType font glyphs.

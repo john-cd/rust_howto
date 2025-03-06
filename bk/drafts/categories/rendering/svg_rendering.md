@@ -2,6 +2,8 @@
 
 {{#include svg_rendering.incl.md}}
 
+[`resvg`][c-resvg]⮳{{hi:resvg}} is an SVG rendering library. [`usvg`][c-usvg]⮳{{hi:usvg}} is another option. Used for scalable vector graphics.
+
 ## `resvg` {#resvg}
 
 [`resvg`][c-resvg]⮳{{hi:resvg}} is an SVG rendering library.
