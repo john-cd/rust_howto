@@ -12,15 +12,16 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 {{#include ../../../crates/cats/authentication/tests/basic.rs:example}}
 ```
 
+## Related Topics
+
+- [[cryptography | Cryptography]].
+- [[encryption | Encryption]].
+- [[signature | Signatures]].
+- [[certificates | Certificates]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [basic_authentication: expand (P2)](https://github.com/john-cd/rust_howto/issues/224) authentication/basic.rs is noplayground because of network use. rewrite?
-
-[[cryptography | Cryptography]]
-[[encryption | Encryption]]
-[[signature | Signature]]
-[[certificates | Certificates]]
-
 </div>
