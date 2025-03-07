@@ -45,13 +45,14 @@ AES-GCM-SIV (Advanced [Encryption][p-encryption] Standard - Galois/Counter Mode 
 
 For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}.
 
+## Related Topics
+
+- [[encryption | Encryption]].
+- [[hashing | Hashing]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO P1 write
-
-[[encryption | Encryption]]
-[[hashing | Hashing]]
-
 </div>

@@ -53,11 +53,13 @@ An X.509 certificate is a standardized format for public key certificates used i
 {{#include ../../../crates/cats/cryptography/tests/certs/x509_cert.rs:example}}
 ```
 
+## Related Topics
+
+- [[signature | Signature]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO P1 write
-
-[[signature | Signature]]
 </div>
