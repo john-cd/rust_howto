@@ -1,4 +1,8 @@
 
+- [Faster linking](../src/categories/development-tools/compilation/faster_linking.md)
+- [Cross-compilation](../src/categories/development-tools/cross-compilation/cross_compilation.md)
+- [Incremental computation](categories/compilers/incremental_computation.md)
+
 - [Accessibility](./drafts/categories/accessibility/index.md)
   - [Enable screen readers](./drafts/categories/accessibility/screen_readers.md)
 
@@ -35,10 +39,7 @@
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
 
 - [Compilers](categories/compilers/index.md)
-  - [Compilation duration reduction](categories/compilers/reduce_compilation_duration.md)
-  - [Faster linking](categories/compilers/faster_linking.md)
-  - [Cross-compilation](categories/compilers/cross_compilation.md)
-  - [Incremental computation](categories/compilers/incremental_computation.md)
+  - [Compilation duration reduction](../src/categories/development-tools/compilation/reduce_compilation_duration.md)
 
 - [Computer vision](categories/computer-vision/index.md)
   - [Open CV](categories/computer-vision/opencv.md)

@@ -2,25 +2,23 @@
 
 Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
 
-## Rust Compilation Optimization
+Tools for programming languages: compilers, interpreters, transpilers, and virtual machines
 
-### Faster linking {#faster-linking}
+## Write Compilers
 
-{{#include faster_linking.incl.md}}
+### Incremental Computation
 
-### Compilation duration reduction {#compilation-duration-reduction}
+{{#include incremental_computation.incl.md}}
 
-{{#include reduce_compilation_duration.incl.md}}
+## Compiler implementations
 
-## Cross-compilation {#cross-compilation}
+TODO
 
-{{#include cross_compilation.incl.md}}
+### Interpreters
 
-See also [[cross_compiling | Cross Compiling (Cargo Plugins)]]
+### Transpilers
 
-## Transpilers
-
-{{#include transpilers.incl.md}}
+See also [[transpilers | Transpilers]].
 
 ## Related Topics
 
@@ -38,6 +36,49 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fix](https://github.com/john-cd/rust_howto/issues/908)
+[review](https://github.com/john-cd/rust_howto/issues/908)
+decide what to cover:
+
+## Linking
+
+`link-cplusplus`
+Link libstdc++ or libc++ automatically or manually
+
+## Code Generation
+
+`typify`
+JSON schema to rust type code generator
+
+## Compiler implementations, including interpreters and transpilers
+
+### Cucumber
+
+`gherkin` is a pure Rust implementation of Gherkin language (`.feature` file) for Cucumber testing framework.
+
+`cucumber-expressions` Cucumber Expressions AST and parser.
+
+### Protobuf
+
+`protox` is a rust implementation of the protobuf compiler.
+
+### Rust
+
+`polonius-engine`: Core definition for the Rust borrow checker.
+
+### C
+
+`clang`: A somewhat idiomatic Rust wrapper for libclang
+
+### Swift
+
+`swift-rs`:  Call Swift from Rust with ease!
+
+### JavaScript
+
+`oxc`
+
+[oxc.rs/](https://oxc.rs)
+
+See
 
 </div>
