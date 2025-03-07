@@ -33,5 +33,4 @@ Essentially, `web-sys` is the bridge that lets your Rust code talk to the browse
 <div class="hidden">
 TODO write
 cover `web-sys`
-
 </div>

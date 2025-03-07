@@ -29,5 +29,4 @@ Key Features:
 
 <div class="hidden">
 [yew: write / organize](https://github.com/john-cd/rust_howto/issues/498)
-
 </div>

@@ -13,6 +13,5 @@
 
 <div class="hidden">
 [neuro: write](https://github.com/john-cd/rust_howto/issues/476)
-cover nifti, dicom?
-
+cover `nifti`, `dicom`?
 </div>

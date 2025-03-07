@@ -18,5 +18,4 @@
 
 <div class="hidden">
 [csv: organize / edit](https://github.com/john-cd/rust_howto/issues/585)
-
 </div>

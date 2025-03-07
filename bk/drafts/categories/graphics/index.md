@@ -79,5 +79,5 @@ Often requires specialized libraries or custom implementations using compute [[s
 <div class="hidden">
 TODO write / organize / review in depth
 what applications do we want to cover?
-cover nannou
+cover `nannou`
 </div>

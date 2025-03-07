@@ -17,12 +17,13 @@ NOTES:
 
 [When and why to use AsRef<T>instead of &T][stackoverflow-asref]⮳{{hi:asref}}
 
+## Related Topics
+
+- [[smart_pointers | Smart Pointers]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [asref: write (P1)](https://github.com/john-cd/rust_howto/issues/619)
-
-[[smart_pointers | Smart Pointers]]
-
 </div>

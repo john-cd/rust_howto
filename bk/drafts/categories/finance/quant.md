@@ -23,5 +23,4 @@
 
 <div class="hidden">
 [quant: write](https://github.com/john-cd/rust_howto/issues/364)
-
 </div>

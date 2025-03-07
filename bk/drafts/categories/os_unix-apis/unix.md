@@ -38,5 +38,4 @@
 
 <div class="hidden">
 [unix: write](https://github.com/john-cd/rust_howto/issues/436)
-
 </div>

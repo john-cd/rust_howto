@@ -36,7 +36,6 @@ This table covers Rust crates relevant for formatting values for display.
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/967)
 need in-depth review
-Mention rtu, itoa in this page
-cover  https://crates.io/crates/Inflector
-
+Mention `rtu`, `itoa` in this page
+cover  `Inflector`
 </div>

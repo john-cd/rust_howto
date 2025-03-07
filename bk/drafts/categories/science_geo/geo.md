@@ -17,5 +17,4 @@
 
 <div class="hidden">
 [geo: write](https://github.com/john-cd/rust_howto/issues/474)
-
 </div>

@@ -20,5 +20,4 @@
 
 <div class="hidden">
 [embassy: add embassy, others](https://github.com/john-cd/rust_howto/issues/345)
-
 </div>

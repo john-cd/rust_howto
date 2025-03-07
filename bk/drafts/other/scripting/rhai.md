@@ -30,5 +30,4 @@ Features:
 
 <div class="hidden">
 [rhai: write](https://github.com/john-cd/rust_howto/issues/610)
-
 </div>

@@ -15,5 +15,4 @@
 
 <div class="hidden">
 [dependency_management: improve](https://github.com/john-cd/rust_howto/issues/597)
-
 </div>

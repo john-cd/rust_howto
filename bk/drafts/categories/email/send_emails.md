@@ -45,5 +45,4 @@
 
 <div class="hidden">
 [send_emails: write](https://github.com/john-cd/rust_howto/issues/342)
-
 </div>

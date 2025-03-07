@@ -23,5 +23,4 @@ While some crates exist for IMAP/POP3, they are less mature and widely used than
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/343)
-
 </div>

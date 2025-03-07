@@ -6,6 +6,13 @@
 {{#include ../../crates/language/tests/feat/iterators.rs:example}}
 ```
 
+## Related Topics
+
+- [[closures | Closures]].
+- [[data-structures | Data Structures]].
+- [[functional_programming | Functional Programming]].
+- [[vectors | Vectors]].
+
 ## See also
 
 [Iterators][book-rust-iterators]{{hi:iterators}}⮳
@@ -14,13 +21,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[iterators: edit (P1)](https://github.com/john-cd/rust_howto/issues/546)
-
-[[vectors | Vectors]]
-
-[[closures | Closures]]
-[[functional_programming | Functional Programming]]
-
-[[data-structures | Data Structures]]
-
+[iterators: edit](https://github.com/john-cd/rust_howto/issues/546)
 </div>

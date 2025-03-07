@@ -36,6 +36,6 @@ Mention https://github.com/moby/buildkit
 <div class="hidden">
 TODO write
 need in-depth review
-cover https://github.com/containers/podman
-cover https://github.com/containerd/rust-extensions A collection of Rust crates to extend containerd.
+cover [podman](https://github.com/containers/podman)
+cover [containerd-rust-extensions](https://github.com/containerd/rust-extensions) A collection of Rust crates to extend containerd.
 </div>

@@ -19,5 +19,4 @@ Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Ar
 
 <div class="hidden">
 [dataframes: organize / edit](https://github.com/john-cd/rust_howto/issues/587)
-
 </div>

@@ -58,5 +58,4 @@ See [[development-tools_debugging | Development Tools: Debugging]].
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/348)
-
 </div>

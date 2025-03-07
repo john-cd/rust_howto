@@ -13,5 +13,4 @@
 
 <div class="hidden">
 [linux: write](https://github.com/john-cd/rust_howto/issues/434)
-
 </div>

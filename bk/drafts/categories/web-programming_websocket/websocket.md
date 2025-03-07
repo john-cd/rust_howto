@@ -54,5 +54,4 @@ Async binding for Tungstenite.
 
 <div class="hidden">
 [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
-
 </div>

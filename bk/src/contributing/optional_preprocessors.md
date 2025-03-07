@@ -1,4 +1,4 @@
-# MdBook pre-processors {#optional-preprocessors}
+# MdBook pre-processors
 
 {{#include optional_preprocessors.incl.md}}
 
@@ -22,5 +22,5 @@ cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[optional_preprocessors: add (P1)](https://github.com/john-cd/rust_howto/issues/530)
+[optional_preprocessors: add](https://github.com/john-cd/rust_howto/issues/530)
 </div>

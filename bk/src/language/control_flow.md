@@ -30,16 +30,14 @@ Also `else if <cond> { ... }`
 {{#include ../../crates/language/tests/feat/for1.rs:example}}
 ```
 
+## Related Topics
+
+- [[match | Match]].
+- [[rust-patterns | Rust Patterns]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[control_flow: add description (P1)](https://github.com/john-cd/rust_howto/issues/541)
-
-## See also
-
-[[match | Match]]
-
-[[rust-patterns | Rust Patterns]]
-
+[control_flow: add description](https://github.com/john-cd/rust_howto/issues/541)
 </div>

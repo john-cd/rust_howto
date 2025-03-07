@@ -21,11 +21,17 @@ If you need to interact with FreeBSD-specific libraries or APIs that are written
 
 {{#include freebsd.incl.md}}
 
+## Related Topics
+
+- [[os | OS]].
+- [[os_linux-apis | OS: Linux APIs]].
+- [[os_macos-apis | OS: macOS APIs]].
+- [[os_unix-apis | OS: Unix APIs]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/947)
-link to related topics
 link to API bindings / External FFI cats in crates.io
 </div>

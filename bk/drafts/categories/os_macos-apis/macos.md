@@ -13,5 +13,4 @@
 
 <div class="hidden">
 [macos: write](https://github.com/john-cd/rust_howto/issues/435)
-
 </div>

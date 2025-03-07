@@ -70,5 +70,5 @@ Please also consult the [`TODO.md`][rust-howto-todo-github] file and the [`draft
 {{#include refs.incl.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/981)
+[review](https://github.com/john-cd/rust_howto/issues/981)
 </div>

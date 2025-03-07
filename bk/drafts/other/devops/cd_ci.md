@@ -35,5 +35,4 @@
 
 <div class="hidden">
 [cd_ci: organize](https://github.com/john-cd/rust_howto/issues/595)
-
 </div>

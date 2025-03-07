@@ -26,22 +26,17 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../../crates/language/tests/feat/lifetime.rs:example}}
 ```
 
+## Related Topics
+
+- [[cow | COW]].
+- [[memory-management | Memory Management]].
+- [[ownership_borrowing | Ownership Borrowing]].
+- [[rust-patterns | Rust Patterns]].
+- [[typecasts | Typecasts]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [lifetimes: review (P1)](https://github.com/john-cd/rust_howto/issues/547)
-
-## See also
-
-[[ownership_borrowing | Ownership Borrowing]]
-
-[[cow | COW]]
-
-[[memory-management | Memory Management]]
-
-[[rust-patterns | Rust Patterns]]
-
-[[typecasts | Typecasts]]
-
 </div>

@@ -21,5 +21,4 @@
 
 <div class="hidden">
 [compile_macros: write](https://github.com/john-cd/rust_howto/issues/327)
-
 </div>

@@ -1,3 +1,7 @@
 ||
 |--------|
-| [Optional pre-processors][ex-contributing-optional-preprocessors] |
+| |
+
+<div class="hidden">
+FIXME
+</div>

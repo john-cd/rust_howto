@@ -29,5 +29,4 @@ A Rust drawing library focus on data plotting for both WASM and native applicati
 <div class="hidden">
 [visualization: write](https://github.com/john-cd/rust_howto/issues/494)
 cover `charming` `egui_plot` https://github.com/plotters-rs/plotters-wasm-demo
-
 </div>

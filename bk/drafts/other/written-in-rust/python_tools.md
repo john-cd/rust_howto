@@ -44,5 +44,4 @@ conda install rustpython -c conda-forge
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
-
 </div>

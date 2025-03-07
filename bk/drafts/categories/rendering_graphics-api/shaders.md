@@ -75,5 +75,5 @@ Compute Shaders are often handled through the low-level graphics APIs like [`wgp
 
 <div class="hidden">
 TODO decide what to cover, write
-review https://crates.io/crates/gpu-allocator
+review `gpu-allocator`
 </div>

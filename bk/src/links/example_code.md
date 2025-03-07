@@ -22,5 +22,4 @@ Example codebases include:
 
 <div class="hidden">
 [example_code: add more (P1)](https://github.com/john-cd/rust_howto/issues/566)
-
 </div>

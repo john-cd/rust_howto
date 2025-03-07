@@ -15,5 +15,4 @@
 
 <div class="hidden">
 [data_formats: locate crates, write](https://github.com/john-cd/rust_howto/issues/453)
-
 </div>

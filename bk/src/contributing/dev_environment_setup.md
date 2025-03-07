@@ -1,4 +1,4 @@
-# Development Environment Setup {#dev-env-setup}
+# Development Environment Setup
 
 {{#include dev_environment_setup.incl.md}}
 

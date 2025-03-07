@@ -16,8 +16,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/993)
-
-Review https://github.com/rust-unofficial/awesome-rust
-
+[organize](https://github.com/john-cd/rust_howto/issues/993)
+Review `awesome-rust` https://github.com/rust-unofficial/awesome-rust
 </div>

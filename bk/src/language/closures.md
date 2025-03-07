@@ -42,18 +42,15 @@ To force a move:
 
 Functions may also be used as arguments.
 
+## Related Topics
+
+- [[functions | Functions]].
+- [[rust-patterns | Rust Patterns]].
+- [[functional_programming | Functional Programming]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[closures: edit (P1)](https://github.com/john-cd/rust_howto/issues/539)
-
-## See also
-
-[[functions | Functions]]
-
-[[rust-patterns | Rust Patterns]]
-
-[[functional_programming | Functional Programming]]
-
+[closures: edit](https://github.com/john-cd/rust_howto/issues/539)
 </div>

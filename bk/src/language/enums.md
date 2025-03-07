@@ -16,27 +16,22 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 
 [`strum`][c-strum]⮳{{hi:strum}} provides helpful macros for working with enums and strings.
 
-## See also
-
-Common `enums`:
+## Common `enums`
 
 - [[option | Option]].
 - [[result | Result]].
 
-Related data types:
-
-- [[simple_data_types | Simple Data Types]].
-- [[structs | Structs]].
+## Related Topics
 
 - [[match | Match]].
-
 - [[rust-patterns | Rust Patterns]].
 - [[functional_programming | Functional Programming]].
+- [[simple_data_types | Simple Data Types]].
+- [[structs | Structs]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[enums: edit (P1)](https://github.com/john-cd/rust_howto/issues/542)
-
+[enums: edit](https://github.com/john-cd/rust_howto/issues/542)
 </div>

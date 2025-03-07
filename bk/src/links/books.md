@@ -18,12 +18,11 @@
 - [Writing Interpreters in Rust: a Guide][writing-interpreters-in-rust]{{hi:Interpreters}}⮳.
 - [Asynchronous Programming in Rust][book-asynchronous-programming-in-rust]⮳.
 - The [`rustdoc` book][book-rustdoc]⮳.
+- [Rust Atomics][book-rust-atomics]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[books: add / review (P1)](https://github.com/john-cd/rust_howto/issues/565)
-
-add [Rust Atomics][book-rust-atomics]
+[books: add / review](https://github.com/john-cd/rust_howto/issues/565)
 </div>

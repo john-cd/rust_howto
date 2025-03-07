@@ -19,5 +19,4 @@ This section covers the use of the Rust language in cloud computing and serverle
 
 <div class="hidden">
 [edit](https://github.com/john-cd/rust_howto/issues/579)
-
 </div>

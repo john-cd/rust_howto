@@ -26,5 +26,4 @@ Notable crypto projects using Rust include:
 
 <div class="hidden">
 [cryptocurrencies: write](https://github.com/john-cd/rust_howto/issues/278)
-
 </div>

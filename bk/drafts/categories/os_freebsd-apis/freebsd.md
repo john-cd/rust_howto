@@ -13,5 +13,4 @@
 
 <div class="hidden">
 [freebsd: write](https://github.com/john-cd/rust_howto/issues/433)
-
 </div>

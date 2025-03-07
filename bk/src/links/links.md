@@ -25,5 +25,4 @@
 
 <div class="hidden">
 [links: add more (P1)](https://github.com/john-cd/rust_howto/issues/569)
-
 </div>

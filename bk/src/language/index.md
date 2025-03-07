@@ -10,6 +10,5 @@ Rust prefers snake case for variables and functions, so a method would be called
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/986)
-
+[review](https://github.com/john-cd/rust_howto/issues/986)
 </div>

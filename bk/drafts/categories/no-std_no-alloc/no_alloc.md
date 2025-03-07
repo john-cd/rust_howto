@@ -13,5 +13,4 @@
 
 <div class="hidden">
 [no_alloc: write](https://github.com/john-cd/rust_howto/issues/428)
-
 </div>

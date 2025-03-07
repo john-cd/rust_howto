@@ -51,5 +51,4 @@
 
 <div class="hidden">
 [game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
-
 </div>

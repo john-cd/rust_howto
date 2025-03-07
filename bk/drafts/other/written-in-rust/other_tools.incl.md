@@ -9,6 +9,4 @@
 
 <div class="hidden">
 FIXME
-
-| [`television`][ex-written-in-rust-television] |
 </div>

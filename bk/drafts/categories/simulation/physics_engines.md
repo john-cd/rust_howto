@@ -19,6 +19,5 @@
 
 <div class="hidden">
 TODO write / decide what to cover
-
 `bevy_rapier` integrates `rapier` with the [`bevy`][c-bevy]⮳{{hi:bevy}} game engine.
 </div>

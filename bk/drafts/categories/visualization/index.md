@@ -47,5 +47,4 @@ See [[gui | GUI]] and [[wasm | WASM]].
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/969)
-
 </div>

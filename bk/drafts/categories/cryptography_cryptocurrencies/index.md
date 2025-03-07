@@ -32,5 +32,4 @@ BEWARE: Be wary of scams.
 
 <div class="hidden">
 [cryptocurrencies: write](https://github.com/john-cd/rust_howto/issues/278)
-
 </div>

@@ -22,5 +22,4 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/356)
-
 </div>
