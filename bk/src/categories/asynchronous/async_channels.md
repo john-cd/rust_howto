@@ -64,12 +64,6 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/postage.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[async_channels: review (P1)](https://github.com/john-cd/rust_howto/issues/215) add other `postage` channels?
-
 ## `kanal` {#kanal}
 
 [![kanal][c-kanal-badge]][c-kanal]{{hi:kanal}}
@@ -83,7 +77,14 @@ When all Senders or all Receivers are dropped, the channel becomes closed. When 
 {{#include ../../../crates/cats/asynchronous/tests/async_channels/kanal.rs:example}}
 ```
 
-[[concurrency | Concurrency]]
-[[concurrent_data_structures | Concurrent Data Structures]]
+## Related Topics
 
+- [[concurrency | Concurrency]].
+- [[concurrent_data_structures | Concurrent Data Structures]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[async_channels: review](https://github.com/john-cd/rust_howto/issues/215) add other `postage` channels?
 </div>

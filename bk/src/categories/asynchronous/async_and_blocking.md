@@ -79,12 +79,13 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}
 ```
 
+## Related Topics
+
+- [[concurrency | Concurrency]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [async_and_blocking: cleanup (P1)](https://github.com/john-cd/rust_howto/issues/213)
-
-[[concurrency | Concurrency]]
-
 </div>
