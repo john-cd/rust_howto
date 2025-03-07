@@ -18,14 +18,15 @@ The [`await-tree`][c-await_tree]⮳{{hi:await-tree}} crate provides a convenient
 {{#include ../../../crates/cats/concurrency/tests/await_tree.rs:example}}
 ```
 
+## Related Topics
+
+- [[concurrency | Concurrency]].
+- [[development_tools | Development Tools]].
+- [[development-tools_profiling | Development Tools Profiling]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/906)
-
-[[concurrency | Concurrency]]
-[[development_tools | Development Tools]]
-[[development-tools_profiling | Development Tools Profiling]]
-
+[review](https://github.com/john-cd/rust_howto/issues/906)
 </div>
