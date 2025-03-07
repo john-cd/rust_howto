@@ -2,10 +2,9 @@
 
 [![cat-game-development][cat-game-development-badge]][cat-game-development]{{hi:Game development}}
 
-THis section focuses on individual parts of game development.
-For high-level Game Engines/Frameworks, review the [[game-engines | Game Engines]] category.
+This section focuses on individual parts of game development. For high-level game engines or frameworks, review the [[game-engines | Game Engines]] category.
 
-Game development in Rust is a vibrant area, and the crates you'll need depend on the type of game you're making. Here's a breakdown:
+Game development in Rust is a vibrant area, and the crates you'll need depend on the type of game you're making:
 
 | Game Type | Rust crate(s) |
 |---|---|
@@ -13,6 +12,8 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 | More Complex 2D/3D Games | [`Bevy`][c-bevy]⮳{{hi:Bevy}} or [`Amethyst`][c-amethyst]⮳{{hi:Amethyst}} |
 | Custom Engines or Low-Level Graphics | [`winit`][c-winit]⮳{{hi:winit}} , [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} |
 | Data-Driven Design | ECS libraries like [`bevy_ecs`][c-bevy_ecs]⮳{{hi:bevy_ecs}}, [`specs`][c-specs]⮳{{hi:specs}}, or [`hecs`][c-hecs]⮳{{hi:hecs}} |
+
+## Code Examples
 
 {{#include game_development.incl.md}}
 
@@ -34,25 +35,35 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 | Scripting | See [Scripting Languages](https://arewegameyet.rs/ecosystem/scripting) for scripting languages embeddable in a Rust game. | [`rhai`][c-rhai]⮳{{hi:rhai}}: An embeddable scripting language. `lua`: Lua bindings. |
 | Other Useful Crates | | [`rand`][c-rand]⮳{{hi:rand}}: For random number generation. |
 
+See also:
+
+- [[artificial_intelligence | Artificial Intelligence]] for Robotics.
+- [[classical_machine_learning | Classical Machine Learning]].
+- [[deep_learning | Deep Learning]].
+- [[games | Games]].
+- [[game_engines | Game Engines]].
+
+## References
+
+Are we Game yet?
+
+- [AI](https://arewegameyet.rs/ecosystem/ai/): AI libraries, steering, behaviour trees, planners, etc.
+- [Animation](https://arewegameyet.rs/ecosystem/animation/): rigging, tweening, anything related to animation.
+- [Audio](https://arewegameyet.rs/ecosystem/audio/): Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
+- [ECS](https://arewegameyet.rs/ecosystem/ecs/): Entity Component System implementations
+- [Input](https://arewegameyet.rs/ecosystem/input/): Libraries to handle controllers, gamepads, keyboards, etc.
+- [Math](https://arewegameyet.rs/ecosystem/math/): Linear algebra libraries, quaternions, color conversion and more.
+- [Mesh Tools](https://arewegameyet.rs/ecosystem/mesh/): Tools for optimising and processing meshes.
+- [Networking](https://arewegameyet.rs/ecosystem/networking/): Multiplayer, Protocols, and more
+- [Tools](https://arewegameyet.rs/ecosystem/tools/): Tools & other game-dev related libraries
+- [UI](https://arewegameyet.rs/ecosystem/ui/): Immediate mode UI libraries and more
+- [VR](https://arewegameyet.rs/ecosystem/vr/): VR engines and libraries
+- [Windowing](https://arewegameyet.rs/ecosystem/windowing/) Windowing and Context Creation crates
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/367)
-
-[AI](https://arewegameyet.rs/ecosystem/ai/): AI libraries, steering, behaviour trees, planners, etc.
-[Animation](https://arewegameyet.rs/ecosystem/animation/): rigging, tweening, anything related to animation.
-[Audio](https://arewegameyet.rs/ecosystem/audio/): Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-[ECS](https://arewegameyet.rs/ecosystem/ecs/): Entity Component System implementations
-[Input](https://arewegameyet.rs/ecosystem/input/): Libraries to handle controllers, gamepads, keyboards, etc.
-[Math](https://arewegameyet.rs/ecosystem/math/): Linear algebra libraries, quaternions, color conversion and more.
-[Mesh Tools](https://arewegameyet.rs/ecosystem/mesh/): Tools for optimising and processing meshes.
-[Networking](https://arewegameyet.rs/ecosystem/networking/): Multiplayer, Protocols, and more
-[Tools](https://arewegameyet.rs/ecosystem/tools/): Tools & other game-dev related libraries
-[UI](https://arewegameyet.rs/ecosystem/ui/): Immediate mode UI libraries and more
-[VR](https://arewegameyet.rs/ecosystem/vr/): VR engines and libraries
-[Windowing](https://arewegameyet.rs/ecosystem/windowing/) Windowing and Context Creation crates
-
-[`ggez`][c-ggez]⮳{{hi:ggez}}, [`macroquad`][c-macroquad]⮳{{hi:macroquad}} , [`tetra`][c-tetra]⮳{{hi:tetra}}.
-piston
+cover [`tetra`][c-tetra]⮳{{hi:tetra}}, `piston`.
 </div>
