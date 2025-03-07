@@ -71,17 +71,18 @@ WASM binary size is important for web performance. Use tools like [`wee_alloc`][
 
 #### Profiling Rust-WASM Applications
 
+## References
+
+[Compiling from Rust to WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm)⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO polish
+TODO write
 write Improving Execution Speed
 write Integration Testing with JavaScript
 write Compiling Rust to WASM
 write Leveraging SIMD in WASM
 write Profiling Rust-WASM Applications
-
-Cite [Compiling from Rust to WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm)
-
 </div>

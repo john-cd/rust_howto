@@ -20,32 +20,34 @@ In essence, WebAssembly bridges the gap between high-level programming languages
 
 Inside the browser:
 
+- Web Applications (e.g., Single Page Applications).
 - Gaming: Powering complex game logic and graphics.
-- Data visualization and analysis: Handling heavy data processing tasks.
-- Audio/video processing: Enabling real-time audio and video manipulation.
-- Image Recognition: Real-time image processing and recognition.
-- Music Applications: Streaming and caching music.
-- Cryptography: Performing cryptographic operations efficiently.
-- Peer-to-Peer Applications: Collaborative editing, decentralized and centralized applications.
+- Data visualization and analysis (e.g., charts, maps).
+- Real-time audio and video manipulation / processing.
+- Real-time image processing and recognition.
+- Streaming and caching music.
+- Performing cryptographic operations efficiently.
+- Peer-to-Peer Applications e.g., collaborative editing.
 - Virtual/Augmented Reality (VR/AR): Handling the demanding computations required for immersive experiences.
 - Scientific Visualization and Simulation.
 
 While WebAssembly was initially designed for the web, its benefits like portability, performance, and security have led to its adoption in various non-browser environments:
 
-- Server-Side Compute: Running untrusted code on the server side,
-  - Serverless Computing,
+- Server-Side Compute:
+  - Running untrusted code on the server side.
+  - Serverless Computing.
+  - Edge Computing.
   - Distributed computations across multiple nodes.
-  - Edge Computing,
-- Cross-Platform Development,
-- Embedded Systems and IoT,
-- Hybrid Native Apps: Combining native and web technologies on mobile devices,
+- Cross-Platform Development.
+- Embedded Systems and IoT.
+- Hybrid Native Apps: Combining native and web technologies on mobile devices.
 - Plugin systems for e.g. desktop applications, extending their functionality with secure and isolated modules.
 
 WASM can be used to build virtual machines or emulators for other architectures, enabling execution of legacy software or providing sand-boxed environments.
 
 See [webassembly.org](https://webassembly.org) and [madewithwebassembly.com](https://madewithwebassembly.com/).
 
-### Game Development using WASM
+### Example: Game Development using WASM
 
 Rust can be used for game development targeting the web via WASM. [`winit`][c-winit]⮳{{hi:winit}} handles window creation, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c-bevy]⮳{{hi:bevy}} is a Rust game engine that can compile to WASM.
 
@@ -53,19 +55,5 @@ Rust can be used for game development targeting the web via WASM. [`winit`][c-wi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO polish
-
-- What is WebAssembly?
-- Rust-WASM Ecosystem
-- WebAssembly's Binary Format
-- WASM Text Representation (WAT)
-
-Application Areas:
-
-- Web Applications (e.g., Single Page Applications)
-- Image, Video, and Audio Processing
-- Game Development
-- Scientific Computing and Simulations
-- Data Visualization and Rendering (e.g., charts, maps)
-
+TODO final review
 </div>
