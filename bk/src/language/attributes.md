@@ -63,34 +63,28 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../../crates/language/tests/feat/conditional_compilation.rs:example}}
 ```
 
-## See also
+### `cfg-if` {#cfg-if}
 
-[Attributes reference][book-rust-reference-attributes]⮳
+[![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
 
-[![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
+A macro to ergonomically define an item depending on a large number of #[cfg] parameters. Structured like an if-else chain, the first matching branch is the item that gets emitted.
+
+{{#example cfg-if}}
+
+## Related Topics
+
+- [[derive | Derive]].
+- [[rust-patterns | Rust Patterns]].
+- [[testing | Testing]].
+
+## References
+
+- [Attributes reference][book-rust-reference-attributes]⮳
+- [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/985)
-
-[[derive | Derive]]
-
-[[rust-patterns | Rust Patterns]]
-
-[[testing | Testing]]
-
----
-
-## `cfg-if` {#cfg-if}
-
-[![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
-
-A macro to ergonomically define an item depending on a large number of #[cfg]
-parameters. Structured like an if-else chain, the first matching branch is the
-item that gets emitted.
-
-{{#example cfg-if}}
-
+[review](https://github.com/john-cd/rust_howto/issues/985)
 </div>
