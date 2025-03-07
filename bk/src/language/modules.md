@@ -48,16 +48,14 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 {{#include ../../crates/language/tests/feat/modules3.rs:example}}
 ```
 
+## Related Topics
+
+- [[package_layout | Package Layout]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[modules: review (P1)](https://github.com/john-cd/rust_howto/issues/553)
-
+[modules: review](https://github.com/john-cd/rust_howto/issues/553)
 add rust-module-system
-
-## See also
-
-[[package_layout | Package Layout]]
-
 </div>

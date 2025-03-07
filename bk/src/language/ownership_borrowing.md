@@ -48,19 +48,18 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 
 If you have a mutable reference{{hi:Mutable references}} to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
 
+## Related Topics
+
+- [[lifetimes | Lifetimes]].
+- [[rust-patterns | Rust Patterns]].
+
+## References
+
+- [Rust re-borrowing and memory safety][blog-rust-re-borrowing-and-memory-safety]⮳.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[ownership_borrowing: add text (P1)](https://github.com/john-cd/rust_howto/issues/554)
-
-## Memory safety {#memory-safety}
-
-- [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳.
-
-## See also
-
-[[lifetimes | Lifetimes]]
-
-[[rust-patterns | Rust Patterns]]
+[ownership_borrowing: add text](https://github.com/john-cd/rust_howto/issues/554)
 </div>
