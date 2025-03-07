@@ -30,18 +30,15 @@ A library to build rich terminal user interfaces or dashboards
 
 [![r3bl_tuify][c-r3bl_tuify-badge]][c-r3bl_tuify]{{hi:r3bl_tuify}} [![r3bl_tuify-crates.io][c-r3bl_tuify-crates.io-badge]][c-r3bl_tuify-crates.io]⮳ [![blog-tuify][blog-tuify-badge]][blog-tuify]⮳
 
+## Related Topics
+
+- [[ansi_terminal | ANSI Terminal]].
+- [[gui | GUI]].
+- [[user_interaction | User Interaction]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tui: expand (P1)](https://github.com/john-cd/rust_howto/issues/234)
-
-[[gui | GUI]]
-[[immediate_mode_gui | Immediate Mode GUI]]
-[[other_gui | Other GUI]]
-[[retained_mode_gui | Retained Mode GUI]]
-[[web_based_gui | Web Based GUI]]
-
-[[ansi_terminal | Ansi Terminal]]
-[[user_interaction | User Interaction]]
+[tui: expand](https://github.com/john-cd/rust_howto/issues/234)
 </div>

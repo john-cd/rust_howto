@@ -7,4 +7,5 @@
 | [`open`][ex-command-line-utilities-open] | [![open][c-open-badge]][c-open] | [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities] |
 
 <div class="hidden">
+FIXME
 </div>

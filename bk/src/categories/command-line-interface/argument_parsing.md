@@ -94,12 +94,6 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/pico_args.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[arguments: expand `lexopt` and `pico-args` (P1)](https://github.com/john-cd/rust_howto/issues/233)
-
 ### `structopt` {#structopt}
 
 [![structopt][c-structopt-badge]][c-structopt] [![structopt-crates.io][c-structopt-crates.io-badge]][c-structopt-crates.io] [![structopt-github][c-structopt-github-badge]][c-structopt-github] [![structopt-lib.rs][c-structopt-lib.rs-badge]][c-structopt-lib.rs]{{hi:structopt}}{{hi:Docopt}}{{hi:Clap}}{{hi:Derive}}{{hi:Cli}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
@@ -108,14 +102,22 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 [`structopt`][c-structopt]⮳{{hi:structopt}} (now superseded by [`clap`][c-clap]⮳{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
+## Related Topics
+
+- [[parse | Parse]].
+- [[parser-implementations | Parser Implementations]].
+- [[parsing | Parsing]].
+- [[string_parsing | String Parsing]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[arguments: expand `lexopt` and `pico-args` (P1)](https://github.com/john-cd/rust_howto/issues/233)
+
 ### Argument parsing {#skip1}
 
 [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]
-
-[[parse | Parse]]
-[[parser-implementations | Parser Implementations]]
-[[parsing | Parsing]]
-[[string_parsing | String Parsing]]
 
 ---
 

@@ -37,12 +37,14 @@ It offers a range of built-in prompts for various data types, including text inp
 {{#include ../../../crates/cats/command_line_interface/tests/user_interaction/indicatif2.rs:example}}
 ```
 
+## Related Topics
+
+- [[ansi_terminal | ANSI Terminals]].
+- [[user_directories | User Directories]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[user_interaction: write (P1)](https://github.com/john-cd/rust_howto/issues/235)
-
-[[user_directories | User Directories]]
-[[ansi_terminal | Ansi Terminal]]
+[user_interaction: write](https://github.com/john-cd/rust_howto/issues/235)
 </div>

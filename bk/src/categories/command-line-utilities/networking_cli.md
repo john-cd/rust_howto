@@ -12,14 +12,15 @@
 apt install gping
 ```
 
+## Related Topics
+
+- [[command-line-interface | Command Line Interface]].
+- [[external_commands | External Commands]].
+- [[network-programming | Network Programming]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[networking: write (P1)](https://github.com/john-cd/rust_howto/issues/238)
-
-[[command-line-interface | Command Line Interface]]
-[[external_commands | External Commands]]
-
-[[network-programming | Network Programming]]
+[networking: write](https://github.com/john-cd/rust_howto/issues/238)
 </div>

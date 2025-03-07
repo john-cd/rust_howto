@@ -47,13 +47,15 @@ bat -A /etc/hosts
 
 [`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system. [`open`][c-open]⮳{{hi:open}} is a cross-platform command-line utility for opening files and URLs in their default associated applications. It abstracts away the platform-specific commands for opening files (like xdg-open on Linux, open on macOS, and start on Windows), providing a consistent and convenient way to launch files, websites, or directories from the terminal regardless of the operating system.
 
+## Related Topics
+
+- [[command-line-interface | Command Line Interface]].
+- [[external_commands | External Commands]].
+- [[filesystem | Filesystem]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[filesystem: organize (P1)](https://github.com/john-cd/rust_howto/issues/237)
-
-[[filesystem | Filesystem]]
-[[command-line-interface | Command Line Interface]]
-[[external_commands | External Commands]]
+[filesystem: organize](https://github.com/john-cd/rust_howto/issues/237)
 </div>
