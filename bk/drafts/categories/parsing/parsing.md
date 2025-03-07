@@ -47,7 +47,13 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 {{#include ../../../crates/cats/parsing/tests/tree_sitter.rs:example}}
 ```
 
-## See also
+## Other Notable Crates
+
+- `combine`.
+- `peg`.
+- `chumsky`.
+
+## Related Topics
 
 - [[parser-implementations | Parser Implementations]].
 - [[text-processing | Text Processing]].
@@ -58,9 +64,4 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 
 <div class="hidden">
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
-
-- `combine`.
-- `peg`.
-- `chumsky`.
-
 </div>
