@@ -70,6 +70,20 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 - `RefCell<T>` (and `Cell<T>`, `OnceCell<T>`) do not implement `Sync` and are therefore _single-threaded_. The corresponding `Sync` version of `RefCell<T>` is `RwLock<T>`. Use `Mutex<T>`, `RwLock<T>`, `OnceLock<T>`, or atomic types when working with multiple threads.
 
+## `Cell` {#cell}
+
+`Cell<T>` is a type that provides simple, byte-wise copy-able mutability. It is commonly used for types that implement the `Copy` trait, like integers and booleans. `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and [`replace`][c-regex::Regex::replace_all]⮳{{hi:replace}} [`replace`][c-regex::Replacer]⮳{{hi:replace}} .
+
+```rust,editable
+{{#include ../../crates/standard_library/tests/other/cell.rs:example}}
+```
+
+"`Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else."
+
+## `OnceCell` {#oncecell}
+
+- The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for scenarios where you want [lazy initialization][p-lazy-initialization] without the overhead of thread synchronization.
+
 ## Related Data Structures
 
 - [[cow | COW]] (Copy-on-Write).
@@ -86,29 +100,11 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-
-[smart_pointers: review (P1)](https://github.com/john-cd/rust_howto/issues/628)
-
+[smart_pointers: review](https://github.com/john-cd/rust_howto/issues/628)
 [![book-rust-rc][book-rust-rc-badge]][book-rust-rc]{{hi:Rc}}
-
 [![book-rust-refcell][book-rust-refcell-badge]][book-rust-refcell]{{hi:RefCell}}
 
 - finish to rewrite Cell, OnceCell.
-
 - example: RefCell inside of Rc.
-
-## `Cell` {#cell}
-
-`Cell<T>` is a type that provides simple, byte-wise copy-able mutability. It is commonly used for types that implement the `Copy` trait, like integers and booleans. `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and [`replace`][c-regex::Regex::replace_all]⮳{{hi:replace}} [`replace`][c-regex::Replacer]⮳{{hi:replace}} .
-
-```rust,editable
-{{#include ../../crates/standard_library/tests/other/cell.rs:example}}
-```
-
-"`Cell<T>` implements interior mutability by moving values in and out of the cell. That is, an `&mut T` to the inner value can never be obtained, and the value itself cannot be directly obtained without replacing it with something else."
-
-## `OnceCell` {#oncecell}
-
-- The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for scenarios where you want [lazy initialization][p-lazy-initialization] without the overhead of thread synchronization.
 
 </div>
