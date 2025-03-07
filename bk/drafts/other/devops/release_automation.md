@@ -23,16 +23,15 @@
 
 [`release-plz`][c-release_plz]⮳{{hi:release-plz}} lets you release Rust crates from CI with a Release PR.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
-
 ## `cargo-dist` {#cargo-dist}
 
 [![cargo-dist-website][c-cargo_dist-website-badge]][c-cargo_dist-website] [![cargo-dist][c-cargo_dist-badge]][c-cargo_dist] [![cargo-dist-crates.io][c-cargo_dist-crates.io-badge]][c-cargo_dist-crates.io] [![cargo-dist-github][c-cargo_dist-github-badge]][c-cargo_dist-github] [![cargo-dist-lib.rs][c-cargo_dist-lib.rs-badge]][c-cargo_dist-lib.rs]{{hi:cargo-dist}}
 
 [`cargo-dist`][c-cargo_dist]⮳{{hi:cargo-dist}} packages shippable applications for Rust.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
 </div>
