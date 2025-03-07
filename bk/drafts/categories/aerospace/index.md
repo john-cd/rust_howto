@@ -12,7 +12,7 @@
 
 See [[code_verification | Code Verification]].
 
-- How tools like `kani` might be used to prove properties of Rust code
+- How tools like `kani` might be used to prove properties of Rust code.
 
 ### Concurrency
 
@@ -21,7 +21,7 @@ See [[code_verification | Code Verification]].
 
 ### Data
 
-- Data: Parse Telemetry: demonstrate parsing common aerospace telemetry formats (e.g., CSV, binary formats, custom protocols) using crates like serde, nom, or byteorder
+- Data: Parse Telemetry: demonstrate parsing common aerospace telemetry formats (e.g., CSV, binary formats, custom protocols) using crates like serde, nom, or byteorder.
 
 ### Geoscience
 
@@ -29,8 +29,8 @@ See [[science_geo | Geoscience]].
 
 Consider using crates like [`geo`][c-geo]⮳{{hi:geo}} or [`proj`][c-proj]⮳{{hi:proj}} for tasks such as:
 
-- Calculating distances and bearings between locations. [`geo`][c-geo]⮳{{hi:geo}}
-- Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c-proj]⮳{{hi:proj}}
+- Calculating distances and bearings between locations. [`geo`][c-geo]⮳{{hi:geo}}.
+- Converting between coordinate systems (e.g., latitude/longitude to UTM). [`proj`][c-proj]⮳{{hi:proj}}.
 - Working with geometric shapes (points, lines, polygons).
 
 ### Hardware
@@ -56,5 +56,4 @@ See [[testing | Testing]].
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/190)
-
 </div>

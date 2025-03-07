@@ -54,5 +54,4 @@ See [[no_std | No Std]] and [[no_alloc | No Alloc]].
 
 <div class="hidden">
 [aerospace_unmanned-aerial-vehicles: write](https://github.com/john-cd/rust_howto/issues/205)
-
 </div>

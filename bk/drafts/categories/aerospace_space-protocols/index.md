@@ -52,5 +52,4 @@ See [[encoding | Encoding]] and especially [[complex_encoding | Complex Encoding
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/202)
-
 </div>
