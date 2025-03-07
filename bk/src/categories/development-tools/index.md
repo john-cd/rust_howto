@@ -53,6 +53,26 @@ Tools that provide developer-facing features such as testing, debugging, linting
 [development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
 [index: reorganize; dedupe alternatives / `log` / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
 
+## Optimize Rust Compilation
+
+### Compilation duration reduction
+
+{{#include reduce_compilation_duration.incl.md}}
+
+### Faster linking
+
+{{#include faster_linking.incl.md}}
+
+## Cross-compile Rust Code
+
+{{#include cross_compilation.incl.md}}
+
+See also [[cross_compiling | Cross Compiling (Cargo Plugins)]]
+
+## Transpile into Rust
+
+{{#include transpilers.incl.md}}
+
 Build System/Package Manager: [`cargo`][c-cargo]⮳{{hi:cargo}}
 Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}}
 Linter: [`clippy`][c-clippy]⮳{{hi:clippy}}
