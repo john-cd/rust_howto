@@ -8,17 +8,19 @@ Encode or decode binary data in multimedia formats.
 
 ## Video Encoding
 
-For most video encoding tasks, choosing the appropriate codec ([`rav1e`][c-rav1e]⮳{{hi:rav1e}}, [`x264`][c-x264]⮳{{hi:x264}}, [`x265`][c-x265]⮳{{hi:x265}}, [`vpx`][c-vpx]⮳{{hi:vpx}}) is the first step. If you need to work with a wide range of codecs or perform transcoding, [`ffmpeg-next`][c-ffmpeg_next]⮳{{hi:ffmpeg-next}} is a powerful but more complex option.
+Crates are available for most common codecs: [`rav1e`][c-rav1e]⮳{{hi:rav1e}}, [`x264`][c-x264]⮳{{hi:x264}}, [`x265`][c-x265]⮳{{hi:x265}}, [`vpx`][c-vpx]⮳{{hi:vpx}}.
+
+If you need to work with a wide range of codecs (MP4, AVI, MKV, H.264, VP9, Opus...), [`ffmpeg-next`][c-ffmpeg_next]⮳{{hi:ffmpeg-next}} is a powerful but more complex option.
 
 See [[multimedia_video | Multimedia: Video]].
 
 ## Audio Encoding
 
-Many crates exist for specific audio codecs: - [`ogg`][c-ogg]⮳{{hi:ogg}}, [`flac`][c-flac]⮳{{hi:flac}}, [`mp3`][c-mp3]⮳{{hi:mp3}}, [`wav`][c-wav]⮳{{hi:wav}}... See [[multimedia_audio | Multimedia: Audio]].
+Many crates exist for specific audio codecs (MP3, WAV, OGG): [`ogg`][c-ogg]⮳{{hi:ogg}}, [`flac`][c-flac]⮳{{hi:flac}}, [`mp3`][c-mp3]⮳{{hi:mp3}}, [`wav`][c-wav]⮳{{hi:wav}}... See [[multimedia_audio | Multimedia: Audio]].
 
 ## Image Encoding
 
-While primarily for image loading and manipulation, [`image`][c-image]⮳{{hi:image}} also supports encoding to some formats (e.g., PNG, JPEG).
+While primarily for image loading and manipulation, [`image`][c-image]⮳{{hi:image}} also supports encoding to some formats (e.g., JPEG, PNG, GIF).
 See [[multimedia_images | Multimedia: Image]].
 
 ## Transcoding
@@ -38,8 +40,4 @@ See [[multimedia_images | Multimedia: Image]].
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/418)
-- Audio Formats (MP3, WAV, OGG)
-- Video Formats (MP4, AVI, MKV)
-- Image Formats (JPEG, PNG, GIF)
-- Codecs (H.264, VP9, Opus)
 </div>
