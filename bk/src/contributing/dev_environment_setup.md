@@ -35,17 +35,6 @@ You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review `.devcontainer/Dockerfile` for other dependencies.
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-[dev_environment_setup: review (P1)](https://github.com/john-cd/rust_howto/issues/527)
-
-[dev_environment_setup: windows install (P1)](https://github.com/john-cd/rust_howto/issues/528)
-
-`winget install openssl`
-need Python
-
 ## Alternative `just` install {#skip1}
 
 [`just`][c-just]⮳{{hi:just}}
@@ -71,4 +60,12 @@ need Python
 # EOF
 ```
 
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[dev_environment_setup: review](https://github.com/john-cd/rust_howto/issues/527)
+write windows install
+`winget install openssl`
+need Python
 </div>

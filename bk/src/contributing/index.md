@@ -31,5 +31,4 @@ Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
 <div class="hidden">
 [contributing/index: edit (P1)](https://github.com/john-cd/rust_howto/issues/529)
-
 </div>

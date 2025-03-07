@@ -1,4 +1,4 @@
-## Repo structure {#repo-structure}
+# Repo structure {#repo-structure}
 
 {{#include repo_structure.incl.md}}
 
@@ -11,22 +11,22 @@
   - `crates/tools` contains utilities to build sections of the book, for example some indices.
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]⮳{{hi:.devcontainer}} .
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-[repo_structure: edit (P1)](https://github.com/john-cd/rust_howto/issues/533)
-
 ## All examples are fully and continuously tested {#examples-fully-tested}
 
 In order to make sure that all examples work, they are backed by tests, similar to the following:
 
 ```rust,editable,noplayground
-# [test]
+#[test]
 fn test() {
     main();
 }
 ```
 
 For the sake of readability, that boilerplate is hidden by default. In order to read the full contents, click on the "expand" (<i class="fa fa-expand"></i>) button located in the top right corner of the code snippets.
+
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[repo_structure: edit (P1)](https://github.com/john-cd/rust_howto/issues/533)
 </div>

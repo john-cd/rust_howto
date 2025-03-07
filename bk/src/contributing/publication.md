@@ -1,4 +1,4 @@
-## Publish to crates.io {#publish}
+# Publish to crates.io {#publish}
 
 {{#include publication.incl.md}}
 
@@ -22,5 +22,4 @@ The `crates/publish` folder contains a placeholder crate, so that the book could
 
 <div class="hidden">
 [publication: edit (P1)](https://github.com/john-cd/rust_howto/issues/531)
-
 </div>
