@@ -28,7 +28,10 @@ Kin in spirit to Python's `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focu
 
 ## See also
 
-[Are we learning yet?][are-we-learning-yet?-website]⮳
+- [Are we learning yet?][are-we-learning-yet?-website]⮳.
+- [Clustering](https://www.arewelearningyet.com/clustering/)⮳.
+- [Decision Trees](https://www.arewelearningyet.com/decision-trees/)⮳.
+- [Linear Classifiers](https://www.arewelearningyet.com/linear-classifiers/)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

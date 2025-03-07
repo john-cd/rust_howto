@@ -35,31 +35,25 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 
 [[development-tools_ffi | FFI]] (Foreign Function Interface) can be used to integrate with ML frameworks written in other languages.
 
+## References
+
+- [Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]⮳.
+- [Choosing the Right Rust Machine Learning Framework][blog-choosing-the-right-machine-learning-framework]⮳.
+- [ML in Rust - Ranking][ml-in-rust-ossinsight-website]⮳.
+- [Data Processing](https://www.arewelearningyet.com/data-preprocessing/)⮳.
+- [Data Structures](https://www.arewelearningyet.com/data-structures/)⮳.
+- [GPU Computing](https://www.arewelearningyet.com/gpu-computing/)⮳.
+- [Metaheuristics](https://www.arewelearningyet.com/metaheuristics/)⮳.
+- [MLOps](https://www.arewelearningyet.com/mlops/)⮳.
+- [Natural Language Processing](https://www.arewelearningyet.com/nlp/)⮳.
+- [Reinforcement learning](https://www.arewelearningyet.com/reinforcement/)⮳.
+- [Scientific Computing](https://www.arewelearningyet.com/scientific-computing/)⮳.
+
+[why rust is becoming a contender in ai development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write]https://github.com/john-cd/rust_howto/issues/472
-
-[Why Rust is becoming a contender in AI development][why rust is becoming a contender in ai development]
-
-[why rust is becoming a contender in ai development]: https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development
-
-[Clustering](https://www.arewelearningyet.com/clustering/)
-[Data Processing](https://www.arewelearningyet.com/data-preprocessing/)
-[Data Structures](https://www.arewelearningyet.com/data-structures/)
-[Decision Trees](https://www.arewelearningyet.com/decision-trees/)
-[GPU Computing](https://www.arewelearningyet.com/gpu-computing/)
-[Linear Classifiers](https://www.arewelearningyet.com/linear-classifiers/)
-[Metaheuristics](https://www.arewelearningyet.com/metaheuristics/)
-[MLOps](https://www.arewelearningyet.com/mlops/)
-[Neural Networks](https://www.arewelearningyet.com/neural-networks/)
-[Natural Language Processing](https://www.arewelearningyet.com/nlp/)
-[Reinforcement learning](https://www.arewelearningyet.com/reinforcement/)
-[Scientific Computing](https://www.arewelearningyet.com/scientific-computing/)
-
-Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX [ML in Rust - Ranking][ml-in-rust-ossinsight-website]
-
-[Choosing the Right Rust Machine Learning Framework][blog-choosing-the-right-machine-learning-framework]
-
+[write](https://github.com/john-cd/rust_howto/issues/472)
+Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX
 </div>
