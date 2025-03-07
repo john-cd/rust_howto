@@ -35,11 +35,25 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 {{#include flash.incl.md}}
 
+## Data acquisition and calibration
+
+TODO
+
+## Memory-mapped I/O
+
+TODO
+Microcontrollers commonly interact with peripherals via memory-mapped I/O.
+
+## Interrupts
+
+TODO
+Microcontrollers respond to events via interrupts.
+
 ## Useful crates for embedded systems programming
 
 {{#include useful_crates_embedded.incl.md}}
 
-## See also
+## Related Topics
 
 - [Embedded devices working group][embedded-devices-working-group]⮳.
 - [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials-github]⮳.
@@ -79,15 +93,4 @@ See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Comp
 
 <div class="hidden">
 [write; cover](https://github.com/john-cd/rust_howto/issues/346)
-
-## Data acquisition and calibration
-
-## Memory-mapped I/O
-
-How you interact with peripherals.
-
-## Interrupts
-
-How the microcontroller responds to events.
-
 </div>
