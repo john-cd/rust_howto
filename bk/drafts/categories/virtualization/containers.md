@@ -4,11 +4,9 @@
 
 ## Docker {#docker}
 
-[Docker][docker-website]⮳
-
-[Docker Rust guide][docker-rust-guide]⮳
-
-[Docker Desktop][docker-desktop-website]⮳
+- [Docker][docker-website]⮳.
+- [Docker Rust guide][docker-rust-guide]⮳.
+- [Docker Desktop][docker-desktop-website]⮳.
 
 ### References
 
