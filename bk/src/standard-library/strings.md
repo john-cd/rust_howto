@@ -34,45 +34,37 @@ Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-
 
 Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳
 
+## Related data structures
+
+- [[slices | Slices]].
+- [[vectors | Vectors]].
+- [[cow | COW]].
+
+## String manipulation
+
+- [[regex | Regex]].
+- [[parsing | Parsing]].
+- [[text-processing | Text Processing]].
+- [[string_parsing | String Parsing]].
+- [[string_concat | String Concatenation]].
+
+## See also
+
+- [[algorithms | Algorithms]].
+- [[encoding | Encoding]].
+- [[internationalization | Internationalization]].
+- [[localization | Localization]].
+- [[search | Search]].
+- [[rust_search_engines | Rust Search Engines]].
+- [[template-engine | Template Engine]].
+- [[text_layout | Text Layout]].
+- [[value-formatting | Value Formatting]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[strings: review (P1)](https://github.com/john-cd/rust_howto/issues/630)
+[strings: add](https://github.com/john-cd/rust_howto/issues/630)
 
 String manipulation, [formatting][p-formatting], searching, replacing, regular expressions, Unicode handling, and working with different string types (String, &str, OsString).
-
-## See also
-
-- Related data structures
-
-[[slices | Slices]]
-[[vectors | Vectors]]
-[[cow | COW]]
-
-[[encoding | Encoding]]
-
-[[localization | Localization]]
-[[internationalization | Internationalization]]
-[[value-formatting | Value Formatting]]
-
-- String manipulation
-
-[[regex | Regex]]
-[[parsing | Parsing]]
-[[text-processing | Text Processing]]
-[[string_parsing | String Parsing]]
-[[string_concat | String Concat]]
-
-[[algorithms | Algorithms]]
-
-[[text_layout | Text Layout]]
-
-[[template-engine | Template Engine]]
-
-- String search
-
-[[search | Search]]
-[[rust_search_engines | Rust Search Engines]]
-
 </div>

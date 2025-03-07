@@ -12,6 +12,19 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../../crates/standard_library/tests/other/hashmaps.rs:example}}
 ```
 
+## Related Data Structures
+
+- [[btrees | B-trees]].
+- [[maps | Other Maps]].
+
+## Related Topics
+
+- [[concurrent_data_structures | Concurrent Data Structures]].
+- [[data-structures | Data Structures]].
+- [[databases | Databases]].
+- [[hashing | Hashing]].
+- [[key_value_stores | Key-Value Stores]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
@@ -19,18 +32,4 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 [hashmaps: add (P1)](https://github.com/john-cd/rust_howto/issues/622)
 
 Creating, inserting, retrieving, deleting, iterating, and using different [hashing][p-hashing] algorithms. Include examples of using HashMap and HashSet.
-
-## See also
-
-[[hashing | Hashing]]
-
-[[data-structures | Data Structures]]
-[[maps | Maps]]
-[[btrees | Btrees]]
-
-[[concurrent_data_structures | Concurrent Data Structures]]
-
-[[databases | Databases]]
-[[key_value_stores | Key Value Stores]]
-
 </div>

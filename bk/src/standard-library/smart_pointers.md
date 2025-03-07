@@ -70,6 +70,18 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 - `RefCell<T>` (and `Cell<T>`, `OnceCell<T>`) do not implement `Sync` and are therefore _single-threaded_. The corresponding `Sync` version of `RefCell<T>` is `RwLock<T>`. Use `Mutex<T>`, `RwLock<T>`, `OnceLock<T>`, or atomic types when working with multiple threads.
 
+## Related Data Structures
+
+- [[cow | COW]] (Copy-on-Write).
+
+## Related Topics
+
+- [[concurrency | Concurrency]].
+- [[memory-management | Memory Management]].
+- [[memory_usage_analysis | Memory Usage Analysis]].
+- [[rust-patterns | Rust Patterns]].
+- [[shared_state | Shared State]].
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
@@ -98,15 +110,5 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 ## `OnceCell` {#oncecell}
 
 - The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for scenarios where you want [lazy initialization][p-lazy-initialization] without the overhead of thread synchronization.
-
-[[memory-management | Memory Management]]
-[[memory_usage_analysis | Memory Usage Analysis]]
-
-[[rust-patterns | Rust Patterns]]
-
-[[cow | COW]]
-
-[[concurrency | Concurrency]]
-[[shared_state | Shared State]]
 
 </div>

@@ -28,14 +28,14 @@ See also:
 {{#include ../../crates/standard_library/tests/other/derive_more.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
-<div class="hidden">
-[derive: review (P1)](https://github.com/john-cd/rust_howto/issues/621)
-
 ## See also
 
-[[attributes | Attributes]]
+- [[attributes | Attributes]]
+- [[rust-patterns | Rust Patterns]]
 
-[[rust-patterns | Rust Patterns]]
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[derive: review (P1)](https://github.com/john-cd/rust_howto/issues/621)
 </div>

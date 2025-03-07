@@ -59,22 +59,22 @@ Use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::
 {{#include ../../crates/standard_library/tests/cow/cow7.rs:example}}
 ```
 
-These examples were adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳
+These examples were adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
+
+## Related Data Structures
+
+- [[strings | Strings]].
+
+## See also
+
+- [[lifetimes | Lifetimes]].
+- [[memory-management | Memory Management]].
+- [[ownership_borrowing | Ownership & Borrowing]].
+- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [cow: add more (P1)](https://github.com/john-cd/rust_howto/issues/620)
-
-## See also
-
-[[ownership_borrowing | Ownership & Borrowing]]
-[[lifetimes | Lifetimes]]
-
-[[memory-management | Memory Management]]
-[[rust-patterns | Rust Patterns]]
-
-[[strings | Strings]]
-
 </div>
