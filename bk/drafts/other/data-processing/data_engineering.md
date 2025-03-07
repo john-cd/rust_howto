@@ -38,20 +38,21 @@
 
 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 
-## See also
+## Other frameworks
 
-Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}
+- Big [Data Processing][p-data-processing] for the AI Era: [LakeSail][lakesail-website]⮳.
+- [`rerun`][rerun]⮳: visualize streams of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust. (see also [[science_robotics | Robotics]]).
 
+## References
+
+- Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}.
+
+[lakesail-website]: https://lakesail.com
+[rerun]: https://github.com/rerun-io/rerun
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
-cover `ballista`
-cover `spice.ai`
-Big [Data Processing][p-data-processing] for the AI Era [LakeSail][lakesail]
-[lakesail]: https://lakesail.com
-Visualize [streams][p-streams] of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust.
-[`rerun`][rerun]
-[rerun]: https://github.com/rerun-io/rerun  (see also Robotics)
+cover `ballista` `spice.ai`
 </div>
