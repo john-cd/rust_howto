@@ -56,22 +56,19 @@ It allows multiple threads to concurrently read and write to the map with minima
 {{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/papaya.rs:example}}
 ```
 
+## Related Topics
+
+- [[async | Async]].
+- [[async_channels | Async Channels]].
+- [[data-structures | Data Structures]].
+- [[global_static | Global Static]].
+- [[rust-patterns | Rust Patterns]].
+- [[send_sync | Send and Sync]].
+- [[shared_state | Shared State]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[concurrent_data_structures: finish (P1)](https://github.com/john-cd/rust_howto/issues/258)
-
-[[async | Async]]
-[[async_channels | Async Channels]]
-
-[[data-structures | Data Structures]]
-
-[[global_static | Global Static]]
-
-[[rust-patterns | Rust Patterns]]
-
-[[shared_state | Shared State]]
-
-[[send_sync | Send Sync]]
+[concurrent_data_structures: finish](https://github.com/john-cd/rust_howto/issues/258)
 </div>

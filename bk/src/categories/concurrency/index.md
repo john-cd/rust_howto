@@ -21,9 +21,13 @@ Key constructs in Rust:
 
 ## Explicit threads
 
+Creating and managing threads, using mutexes and other synchronization primitives.
+
 {{#include explicit_threads.incl.md}}
 
 ## Threadpools
+
+Using thread pools for efficient task execution.
 
 {{#include threadpool.incl.md}}
 
@@ -33,9 +37,13 @@ Key constructs in Rust:
 
 ## Message passing and channels
 
+Communicating between threads using channels.
+
 {{#include message_passing.incl.md}}
 
 ## Shared state
+
+Shared Memory. Using atomic types for thread-safe data access.
 
 {{#include shared_state.incl.md}}
 
@@ -45,39 +53,32 @@ Key constructs in Rust:
 
 ## Data parallelism
 
+Using iterators in parallel with crates like `rayon`.
+
 {{#include data_parallelism.incl.md}}
 
 ## `Send` and `Sync`
 
 {{#include send_sync.incl.md}}
 
-## See also
+## Related Topics
 
-[![Rust concurrency book][book-rust-concurrency-badge]][book-rust-concurrency]⮳
+- [[async | Async]].
+- [[async_and_blocking | Async and Blocking]].
+- [[async_channels | Async Channels]].
+- [[concurrent_data_structures | Concurrent Data Structures]].
+- [[message_passing | Message Passing]].
+- [[explicit_threads | Explicit Threads]].
+- [[processor | Processor]].
+
+## References
+
+- [![Rust concurrency book][book-rust-concurrency-badge]][book-rust-concurrency]⮳.
+- [Rust Atomics][book-rust-atomics]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[concurrency: add somewhere [Rust Atomics][book-rust-atomics] (P1)](https://github.com/john-cd/rust_howto/issues/263)
-
-Concurrency and Parallelism:
-
-Threads: Creating and managing threads, using mutexes and other synchronization primitives.
-Channels: Communicating between threads using channels.
-Atomic Operations: Using atomic types for thread-safe data access.
-Shared Memory and Message Passing: A comparison of different concurrency models and when to use them.
-Async/Await and Futures: A deep dive into asynchronous programming in Rust.
-Working with Thread Pools: Using a thread pool for efficient task execution.
-Parallel Iteration: Using iterators in parallel with crates like rayon.
-
-[[async | Async]]
-[[async_and_blocking | Async and Blocking]]
-[[async_channels | Async Channels]]
-[[concurrent_data_structures | Concurrent Data Structures]]
-[[message_passing | Message Passing]]
-[[explicit_threads | Explicit Threads]]
-
-[[processor | Processor]]
-
+[concurrency: add somewhere ](https://github.com/john-cd/rust_howto/issues/263)
 </div>
