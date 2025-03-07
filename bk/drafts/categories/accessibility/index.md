@@ -14,7 +14,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 
 [`html5ever`][c-html5ever]⮳{{hi:html5ever}} / [`tl`][c-tl]⮳{{hi:tl}} (HTML parsing), [`css-rs`][c-css]⮳{{hi:css-rs}} (CSS parsing), [`url`][c-url]⮳{{hi:url}} (URLs).
 
-- Semantic HTML: Use elements like <article>, <nav>. [[html | HTML]]
+- Semantic HTML: Use elements like <article>, <nav>. [[html | HTML]].
 - Image Alt Text: Good and bad examples, decorative images.
 - Accessible Forms: Labels, errors, keyboard navigation.
 - ARIA Essentials: When and how to use aria-label, etc.
@@ -23,9 +23,9 @@ Assistive technology that helps overcome disabilities and impairments to make so
 
 See
 
-- [[web-programming | Web Programming]]
-- [[web-programming_http-server | HTTP Server]]
-- [[web_based_gui | Web-based GUI]]
+- [[web-programming | Web Programming]].
+- [[web-programming_http-server | HTTP Server]].
+- [[web_based_gui | Web-based GUI]].
 
 ## Accessible CLIs
 
