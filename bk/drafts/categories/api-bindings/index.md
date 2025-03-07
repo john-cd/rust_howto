@@ -107,5 +107,4 @@ Bindings to Graphical User Interfaces, such as `gtk-rs` (bindings to the GTK lib
 
 <div class="hidden">
 [api-bindings: polish](https://github.com/john-cd/rust_howto/issues/211)
-review Programming Language Bindings location
 </div>
