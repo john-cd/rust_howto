@@ -77,25 +77,23 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 {{#include ../../../crates/cats/concurrency/tests/actors/actix.rs:example}}
 ```
 
-## See also
+## Related Topics
 
-[Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳
+- [[_actix | Actix]] Web.
+- [[concurrency | Concurrency]].
+- [[message_passing | Message Passing]].
+- [[network-programming | Network Programming]].
+- [[web-programming | Web Programming]].
+- [[web-programming_http-server | Web Programming: HTTP Server]].
+
+## References
+
+- [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳.
+- [ractor blog](https://slawlor.github.io/ractor).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[_actors: organize (P2)](https://github.com/john-cd/rust_howto/issues/269)
-
-TODO P2 add [ractor blog](https://slawlor.github.io/ractor/)
-
-[[message_passing | Message Passing]]
-
-[[network-programming | Network Programming]]
-
-[[_actix | Actix]]
-[[web-programming | Web Programming]]
-[[web-programming_http-server | Web Programming HTTP Server]]
-
-[[concurrency | Concurrency]]
+[_actors: organize](https://github.com/john-cd/rust_howto/issues/269)
 </div>
