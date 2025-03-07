@@ -213,11 +213,11 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 [Volvo][volvo]
 
-[volvo]: <https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line>
+[volvo]: https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line
 
 ## Jobs {#jobs}
 
 [Rust jobs-report (Sep. 2024)][rust-jobs-report]
 
-[rust-jobs-report]: <https://filtra.io/rust/jobs-report/sep-24>
+[rust-jobs-report]: https://filtra.io/rust/jobs-report/sep-24
 </div>

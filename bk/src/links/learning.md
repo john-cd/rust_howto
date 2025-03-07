@@ -20,30 +20,22 @@
 - A bunch of [links][p-links] to blog posts, articles, videos, etc for learning Rust [rust-learning][rust-learning-github]
 - [`Rust Language Bible`][rust-course-github]
 - [How to learn modern Rust][how_to_learn_modern_rust-github]
+- [`roadmap.sh` for Rust](https://roadmap.sh/rust)
 
+## Ferrous systems {#ferrous-systems-training}
+
+- [Why rust][why rust]⮳
+- [Rust training][rust training]⮳
+- [Rust exercises][rust exercises]⮳
+- [WASM training][wasm training]⮳
+
+[rust training]: https://github.com/ferrous-systems/rust-training
+[rust exercises]: https://github.com/ferrous-systems/rust-exercises
+[why rust]: https://github.com/ferrous-systems/why-rust
+[wasm training]: https://github.com/ferrous-systems/wasm-training-2022
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [learning: organize (P1)](https://github.com/john-cd/rust_howto/issues/568)
-
-[`roadmap.sh` for Rust](https://roadmap.sh/rust)
-
-## Ferrous systems {#ferrous-systems-training}
-
-[Rust training][rust training]
-
-[rust training]: https://github.com/ferrous-systems/rust-training
-
-[Rust exercises][rust exercises]
-
-[rust exercises]: https://github.com/ferrous-systems/rust-exercises
-
-[Why rust][why rust]
-
-[why rust]: https://github.com/ferrous-systems/why-rust
-
-[WASM training][wasm training]
-
-[wasm training]: https://github.com/ferrous-systems/wasm-training-2022
 </div>
