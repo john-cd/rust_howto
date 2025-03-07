@@ -22,7 +22,7 @@ See [[simulation_visualization | Simulation Visualization]].
 
 ## Related Topics
 
-- [[computer-vision | Computer Vision]]
+- [[computer-vision | Computer Vision]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

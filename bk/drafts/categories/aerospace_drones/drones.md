@@ -10,10 +10,10 @@
 
 ## See also
 
-- [[aerospace | Aerospace]]
-- [[aerospace_protocols | Aerospace Protocols]]
-- [[embedded | Embedded Systems]]
-- [[uavs | UAVs]]
+- [[aerospace | Aerospace]].
+- [[aerospace_protocols | Aerospace Protocols]].
+- [[embedded | Embedded Systems]].
+- [[uavs | UAVs]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

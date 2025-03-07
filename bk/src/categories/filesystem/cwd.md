@@ -16,9 +16,9 @@
 <div class="hidden">
 [cwd: move to proper location (P1)](https://github.com/john-cd/rust_howto/issues/357)
 
-- rename directory management
-- find a spot for the following
-- also cover [`std`][c-std]⮳{{hi:std}} implementation
+- rename directory management.
+- find a spot for the following.
+- also cover [`std`][c-std]⮳{{hi:std}} implementation.
 
 ## `remove_dir_all` {#remove_dir_all}
 

@@ -79,8 +79,8 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 
 [`pingora`][c-pingora]⮳{{hi:pingora}} is a library for building fast, reliable and evolvable network services.
 
-- [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳
-- [Pingora quick start][c-pingora-quick-start-github]⮳
+- [Pingora (github)][c-pingora-github]{{hi:pingora}}⮳.
+- [Pingora quick start][c-pingora-quick-start-github]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/tests/reverse_proxy/pingora.rs:example}}

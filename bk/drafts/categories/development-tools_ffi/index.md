@@ -70,10 +70,10 @@ Many languages have their own FFI mechanisms. You'll often need to find or creat
 [`cargo`][c-cargo]⮳{{hi:cargo}}: (Essential for building Rust projects that involve FFI or bindings.)
 [`maturin`][c-maturin]⮳{{hi:maturin}}: Specifically for building and distributing Python packages that include Rust extensions.
 
-- [[build_utils | Build Utils]]
-- [[code_build | Code Build]]
-- [[building | Building]]
-- [[development-tools_build-utils | Development Tools: Build Utils]]
+- [[build_utils | Build Utils]].
+- [[code_build | Code Build]].
+- [[building | Building]].
+- [[development-tools_build-utils | Development Tools: Build Utils]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

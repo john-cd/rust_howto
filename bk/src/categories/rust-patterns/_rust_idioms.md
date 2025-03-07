@@ -4,8 +4,8 @@
 
 ## See also
 
-- [Rust unofficial patterns][rust-unofficial-patterns-github]
-- [Rust state machine pattern][rust-state-machine-pattern]
+- [Rust unofficial patterns][rust-unofficial-patterns-github].
+- [Rust state machine pattern][rust-state-machine-pattern].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

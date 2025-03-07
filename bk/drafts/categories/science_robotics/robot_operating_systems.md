@@ -58,15 +58,15 @@ Formally specified Rust bindings for ROS2.
 
 ## Other Crates
 
-- `ros2_rust` - Rust bindings for ROS2
+- `ros2_rust` - Rust bindings for ROS2.
 - `roslibrust` - Pure Rust implementation of a rosbridge client.
-- `rclrust` - Yet another ROS2 Rust client
-- `RustDDS` - Rust implementation of Data Distribution Service
-- `rosbag` - Reading rosbag files in pure Rust
+- `rclrust` - Yet another ROS2 Rust client.
+- `RustDDS` - Rust implementation of Data Distribution Service.
+- `rosbag` - Reading rosbag files in pure Rust.
 - `rustros_tf` - A rust implementation of the Tf library.
 - `ros_pointcloud2` - The safe way of using PointCloud2 messages in ROS1 and ROS2.
-- `optimization-engine` - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems
-- `transforms` - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware
+- `optimization-engine` - Fast & Accurate Embedded Optimization for next-generation Robotics and Autonomous Systems.
+- `transforms` - A minimal and stand-alone crate inspired by the ROS2 tf library, but not dependent on ROS or middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

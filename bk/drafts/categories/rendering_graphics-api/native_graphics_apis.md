@@ -4,11 +4,11 @@
 
 Low-Level Rendering Graphics APIs include:
 
-- Direct3D (DirectX)
-- Metal
-- OpenGL
-- Vulkan
-- WebGL and WebGPU
+- Direct3D (DirectX).
+- Metal.
+- OpenGL.
+- Vulkan.
+- WebGL and WebGPU.
 
 ## Vulkan
 
@@ -36,7 +36,7 @@ See also `metal-rs`: `Metal` bindings.
 
 ## Related Topics
 
-- [[gpu | GPU]]
+- [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].
 - [[rendering | Rendering]].
 

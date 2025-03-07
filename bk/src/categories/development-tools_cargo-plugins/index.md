@@ -38,12 +38,12 @@ Subcommands that extend the capabilities of Cargo.
 
 ## See also
 
-- Testing
-- Build Utils
-- Debugging
-- FFI
-- Procedural Macro Helpers
-- Profiling
+- Testing.
+- Build Utils.
+- Debugging.
+- FFI.
+- Procedural Macro Helpers.
+- Profiling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

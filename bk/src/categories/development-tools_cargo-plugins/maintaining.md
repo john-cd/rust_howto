@@ -10,8 +10,8 @@
 
 Currently available subcommands:
 
-- `cargo upgrade`
-- `cargo set-version`
+- `cargo upgrade`.
+- `cargo set-version`.
 
 ## Find unused dependencies {#find-unused-dependencies}
 

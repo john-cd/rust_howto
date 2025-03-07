@@ -10,7 +10,7 @@ MAVLink (Micro Air Vehicle Link) is the dominant protocol for communication betw
 
 Consider using:
 
-- [`mavlink`][c-mavlink]⮳{{hi:mavlink}} crate
+- [`mavlink`][c-mavlink]⮳{{hi:mavlink}} crate.
 - `DroneCAN`: A CAN-based protocol specifically designed for UAVs and robotics. It aims for reliability and real-time performance.
 - [`can-rs`][c-can]⮳{{hi:can-rs}} (general CAN crate) and socketcan (Linux-specific) are relevant. However, DroneCAN-specific higher-level crates might require custom work or FFI with existing C/C++ implementations.
 - [`sbus`][c-sbus]⮳{{hi:sbus}}/`s.bus`: A serial communication protocol often used for radio control (RC) receivers and servos.
@@ -38,10 +38,10 @@ If existing C/C++ libraries are available, FFI can be a viable option, but it ad
 
 See:
 
-- [[development-tools_ffi | FFI]]
-- [[external-ffi-bindings | External FFI Bindings]]
-- [[external_ffi_bindings | External FFI Bindings]]
-- [[generate_ffi_bindings | Generate FFI Bindings]]
+- [[development-tools_ffi | FFI]].
+- [[external-ffi-bindings | External FFI Bindings]].
+- [[external_ffi_bindings | External FFI Bindings]].
+- [[generate_ffi_bindings | Generate FFI Bindings]].
 
 ### `no_std` (for embedded systems)
 

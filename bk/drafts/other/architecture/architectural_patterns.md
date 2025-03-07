@@ -20,11 +20,11 @@
 
 - Configuration Management: Loading and managing settings with `config` or `dotenv`.
 - Logging and Monitoring: Structured logging with `tracing` or `log`.
-- Error Handling
-- Testing and Quality Assurance
-- Performance Optimization
-- Security
-- Deployment and Operations
+- Error Handling.
+- Testing and Quality Assurance.
+- Performance Optimization.
+- Security.
+- Deployment and Operations.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

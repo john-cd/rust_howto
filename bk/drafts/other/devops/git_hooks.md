@@ -77,9 +77,9 @@ pre-commit run --all-files
 
 identify useful hooks for Rust
 
-- cargo fmt
+- cargo fmt.
 - cargo check, clippy, test...
-- spell checks
+- spell checks.
 
 add a sample config
 

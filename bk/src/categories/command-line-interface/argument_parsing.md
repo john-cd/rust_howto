@@ -25,12 +25,12 @@ USAGE:
   testing [OPTIONS]
 
 FLAGS:
-  -h, --help    Prints help information
-  -V, --version  Prints version information
+  -h, --help    Prints help information.
+  -V, --version  Prints version information.
 
 OPTIONS:
-  -f, --file <file>   A cool file
-  -n, --number <num>  Five less than your favorite number
+  -f, --file <file>   A cool file.
+  -n, --number <num>  Five less than your favorite number.
 ```
 
 We can test the application by running a command like the following.

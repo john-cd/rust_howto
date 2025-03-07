@@ -21,12 +21,12 @@ Key Benefits of Using Actors:
 
 Possible applications of actor frameworks:
 
-- Web [scraping][p-scraping]: fetch data from multiple websites simultaneously,
-- Game servers: represent each player or game entity by an actor,
-- Microservices: implement microservices as a set of actors,
-- IoT devices: represent individual devices as actors,
-- Real-time analytics: process [streams][p-streams] of data by a succession of actors,
-- Chat applications,
+- Web [scraping][p-scraping]: fetch data from multiple websites simultaneously.
+- Game servers: represent each player or game entity by an actor.
+- Microservices: implement microservices as a set of actors.
+- IoT devices: represent individual devices as actors.
+- Real-time analytics: process [streams][p-streams] of data by a succession of actors.
+- Chat applications.
 - Telecommunications.
 
 ## `stakker` {#stakker}

@@ -14,10 +14,10 @@
 
 ## See also
 
-- [Axum examples][c-axum-examples]⮳
-- ["Real world" examples with `axum` and `sqlx`][realworld-rust-axum-sqlx-github]⮳
+- [Axum examples][c-axum-examples]⮳.
+- ["Real world" examples with `axum` and `sqlx`][realworld-rust-axum-sqlx-github]⮳.
 - Explore [`realworld.how`][realworld.how]⮳ for additional examples.
-- [`crates.io` example source code (using Axum)][crates.io-example-source-code]⮳
+- [`crates.io` example source code (using Axum)][crates.io-example-source-code]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

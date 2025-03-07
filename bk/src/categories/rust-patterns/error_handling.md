@@ -110,6 +110,6 @@ Run the recipe with `RUST_BACKTRACE=1` to display a detailed backtrace associate
 
 [error_handling: need examples for (P1)](https://github.com/john-cd/rust_howto/issues/466)
 
-- unwrap
+- unwrap.
 
 </div>

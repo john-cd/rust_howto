@@ -57,12 +57,12 @@ This table outlines common tasks for building web clients in Rust and relevant c
 
 ## Choosing the Right Crate
 
-- Simple HTTP Requests: [`ureq`][c-ureq]⮳{{hi:ureq}}
-- General-Purpose HTTP Client: [`reqwest`][c-reqwest]⮳{{hi:reqwest}}
-- Performance-Focused HTTP Client: [`isahc`][c-isahc]⮳{{hi:isahc}}
-- WebSockets: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`async-tungstenite`][c-async_tungstenite]⮳{{hi:async-tungstenite}}
-- REST API Interaction: [`reqwest`][c-reqwest]⮳{{hi:reqwest}} + [`serde`][c-serde]⮳{{hi:serde}}
-- GraphQL Client: [`graphql_client`][c-graphql_client]⮳{{hi:graphql_client}}
-- WASM Client (Fetching Data): [`reqwest`][c-reqwest]⮳{{hi:reqwest}} (WASM) or [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} + [`fetch`][c-fetch]⮳{{hi:fetch}} API
+- Simple HTTP Requests: [`ureq`][c-ureq]⮳{{hi:ureq}}.
+- General-Purpose HTTP Client: [`reqwest`][c-reqwest]⮳{{hi:reqwest}}.
+- Performance-Focused HTTP Client: [`isahc`][c-isahc]⮳{{hi:isahc}}.
+- WebSockets: [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`async-tungstenite`][c-async_tungstenite]⮳{{hi:async-tungstenite}}.
+- REST API Interaction: [`reqwest`][c-reqwest]⮳{{hi:reqwest}} + [`serde`][c-serde]⮳{{hi:serde}}.
+- GraphQL Client: [`graphql_client`][c-graphql_client]⮳{{hi:graphql_client}}.
+- WASM Client (Fetching Data): [`reqwest`][c-reqwest]⮳{{hi:reqwest}} (WASM) or [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} + [`fetch`][c-fetch]⮳{{hi:fetch}} API.
 
 </div>

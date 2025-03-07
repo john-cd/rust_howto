@@ -16,8 +16,8 @@
 <div class="hidden">
 [ P1 review](https://github.com/john-cd/rust_howto/issues/926)
 
-- move to proper location
-- cover [`std::any::type_name`][std::any::type_name]
+- move to proper location.
+- cover [`std::any::type_name`][std::any::type_name].
 
 [std::any::type_name]: https://doc.rust-lang.org/std/any/fn.type_name.html
 </div>

@@ -34,9 +34,9 @@ For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. 
 
 ## Related Topics
 
-- [[multimedia | Multimedia]]
-- [[multimedia_encoding | Multimedia: Encoding]]
-- [[multimedia_video | Multimedia: Video]]
+- [[multimedia | Multimedia]].
+- [[multimedia_encoding | Multimedia: Encoding]].
+- [[multimedia_video | Multimedia: Video]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -45,11 +45,11 @@ For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. 
 [fix](https://github.com/john-cd/rust_howto/issues/941)
 review in depth
 synth is old
-- Audio Decoding and Encoding
-- Audio Effects and Filters
-- Audio Streaming
-- Audio Synthesis
-- Audio Analysis
-- Audio Compression
-- Audio Rendering
+- Audio Decoding and Encoding.
+- Audio Effects and Filters.
+- Audio Streaming.
+- Audio Synthesis.
+- Audio Analysis.
+- Audio Compression.
+- Audio Rendering.
 </div>

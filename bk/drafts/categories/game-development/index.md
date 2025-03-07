@@ -50,15 +50,15 @@ Are we Game yet?
 - [AI](https://arewegameyet.rs/ecosystem/ai/): AI libraries, steering, behaviour trees, planners, etc.
 - [Animation](https://arewegameyet.rs/ecosystem/animation/): rigging, tweening, anything related to animation.
 - [Audio](https://arewegameyet.rs/ecosystem/audio/): Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-- [ECS](https://arewegameyet.rs/ecosystem/ecs/): Entity Component System implementations
+- [ECS](https://arewegameyet.rs/ecosystem/ecs/): Entity Component System implementations.
 - [Input](https://arewegameyet.rs/ecosystem/input/): Libraries to handle controllers, gamepads, keyboards, etc.
 - [Math](https://arewegameyet.rs/ecosystem/math/): Linear algebra libraries, quaternions, color conversion and more.
 - [Mesh Tools](https://arewegameyet.rs/ecosystem/mesh/): Tools for optimising and processing meshes.
-- [Networking](https://arewegameyet.rs/ecosystem/networking/): Multiplayer, Protocols, and more
-- [Tools](https://arewegameyet.rs/ecosystem/tools/): Tools & other game-dev related libraries
-- [UI](https://arewegameyet.rs/ecosystem/ui/): Immediate mode UI libraries and more
-- [VR](https://arewegameyet.rs/ecosystem/vr/): VR engines and libraries
-- [Windowing](https://arewegameyet.rs/ecosystem/windowing/) Windowing and Context Creation crates
+- [Networking](https://arewegameyet.rs/ecosystem/networking/): Multiplayer, Protocols, and more.
+- [Tools](https://arewegameyet.rs/ecosystem/tools/): Tools & other game-dev related libraries.
+- [UI](https://arewegameyet.rs/ecosystem/ui/): Immediate mode UI libraries and more.
+- [VR](https://arewegameyet.rs/ecosystem/vr/): VR engines and libraries.
+- [Windowing](https://arewegameyet.rs/ecosystem/windowing/) Windowing and Context Creation crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -10,8 +10,8 @@
 
 ## See also
 
-- [[aerospace | Aerospace]]
-- [[aerospace_protocols | Aerospace Protocols]]
+- [[aerospace | Aerospace]].
+- [[aerospace_protocols | Aerospace Protocols]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

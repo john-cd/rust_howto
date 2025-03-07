@@ -10,7 +10,7 @@ This book is **a compendium of Rust ecosystem examples and resources**. It is in
 
 This book is intended for
 
-- new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources,
+- new Rust programmers, to get an overview of the capabilities of the Rust ecosystem and pointers to other resources.
 - experienced programmers, to find code examples and review best practices for common programming tasks.
 
 Readers should have already some basic familiarity with [`Rust`][rust]{{hi:Rust}}⮳ concepts. The [`Rust book`][book-rust]{{hi:Rust book}}⮳ is an excellent resource for complete beginners to get started with. This said, key features of the language are succinctly summarized in this book's [language][p-lang] section.
@@ -45,8 +45,8 @@ New Rust programmers should be comfortable reading from the first section to the
 
 If you are simply looking for the solution to a simple task, the easiest ways to find a specific recipe are to
 
-- use the search button,
-- scan the left-side bar for categories you are interested in,
+- use the search button.
+- scan the left-side bar for categories you are interested in.
 - scan the [Index of examples][p-index-examples], and from there, click on the name of the recipe to view it.
 - look up into the [Word index][p-word-index] lists concepts, crates (in lowercase), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c-parking_lot::ReentrantMutex]⮳{{hi:parking_lot::ReentrantMutex}}).
 - consult the alphabetical and categorical crates indices.
@@ -114,8 +114,8 @@ This book is intended to provide expansive coverage of "key" or "foundational" c
 
 Key crates are identified by cross-referencing:
 
-- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources,
-- most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳,
+- [`blessed.rs`][blessed-rs-website]{{hi:blessed.rs}}⮳ and similar resources.
+- most downloaded crates (overall and per category) in [`crates.io`][crates.io-website]{{hi:crates.io}}⮳.
 - high-quality crates per [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳ [statistics][lib-rs-stats]⮳.
 
 The selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR), if the author missed an important, widely used crate.

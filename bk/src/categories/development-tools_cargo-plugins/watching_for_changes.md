@@ -33,15 +33,15 @@ cargo watch -x check -x test -x run
 
 [cargo-limit][c-cargo_limit-crates.io]⮳ is [Cargo][p-cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 
-- errors have highest priority
-- they never appear in the middle of warnings
-- warnings are skipped by default until errors are fixed
-- external path dependencies' warnings are skipped by default
-- all messages come in reversed order by default to avoid extra scrolling
-- messages are grouped by filenames
-- number of messages can be limited
-- after encountering first error the rest of build time is limited by default
-- files can be automatically opened in your text editor on affected lines
+- errors have highest priority.
+- they never appear in the middle of warnings.
+- warnings are skipped by default until errors are fixed.
+- external path dependencies' warnings are skipped by default.
+- all messages come in reversed order by default to avoid extra scrolling.
+- messages are grouped by filenames.
+- number of messages can be limited.
+- after encountering first error the rest of build time is limited by default.
+- files can be automatically opened in your text editor on affected lines.
 
 This tool is especially useful in combination with [`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}}.
 

@@ -41,8 +41,8 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 ## See also
 
-- [Embedded devices working group][embedded-devices-working-group]⮳
-- [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials-github]⮳
+- [Embedded devices working group][embedded-devices-working-group]⮳.
+- [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials-github]⮳.
 
 ### `no-std` Environments
 

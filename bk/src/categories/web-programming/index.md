@@ -82,10 +82,10 @@ This table outlines common web development tasks and relevant Rust crates. The R
 
 ## Choosing the Right Crates
 
-- Full-Stack Web App: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}}
-- Front-end Web App (WASM): [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}}
-- REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}
-- GraphQL API: [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}
-- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola]⮳{{hi:zola}}
+- Full-Stack Web App: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}}.
+- Front-end Web App (WASM): [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}}.
+- REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}.
+- GraphQL API: [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}.
+- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola]⮳{{hi:zola}}.
 
 </div>

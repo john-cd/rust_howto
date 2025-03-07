@@ -20,12 +20,12 @@
 
 ## Related Topics
 
-- [[development-tools | Development Tools]]
-- [[development-tools_build-utils | Development Tools: Build Utils]]
-- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]]
-- [[parsing | Parsing]]
-- [[parser-implementations | Parser Implementations]]
-  - [[programming_languages | Programming Languages]]
+- [[development-tools | Development Tools]].
+- [[development-tools_build-utils | Development Tools: Build Utils]].
+- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+- [[parsing | Parsing]].
+- [[parser-implementations | Parser Implementations]].
+  - [[programming_languages | Programming Languages]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

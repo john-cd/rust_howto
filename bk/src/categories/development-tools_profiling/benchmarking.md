@@ -57,7 +57,7 @@
 - Statistical outlier detection to detect interference from other programs and [caching][p-caching] effects.
 - Export results to various formats: [CSV][p-csv], [JSON][p-json], [Markdown][p-markdown], AsciiDoc.
 - Parameterized benchmarks (e.g. vary the number of threads).
-- Cross-platform
+- Cross-platform.
 
 ```sh
 cargo install --locked hyperfine

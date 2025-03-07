@@ -18,7 +18,7 @@
 <div class="hidden">
 [lru: expand (P2)](https://github.com/john-cd/rust_howto/issues/227)
 
-- In-Memory Caches: [`lru`][c-lru]⮳{{hi:lru}}, [`moka`][c-moka]⮳{{hi:moka}}, [`cached`][c-cached]⮳{{hi:cached}}
+- In-Memory Caches: [`lru`][c-lru]⮳{{hi:lru}}, [`moka`][c-moka]⮳{{hi:moka}}, [`cached`][c-cached]⮳{{hi:cached}}.
 
 [[database | Database]]
 [[nosql | Nosql]]

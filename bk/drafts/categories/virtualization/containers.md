@@ -12,8 +12,8 @@
 
 ### References
 
-- Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}
-- [Docker's Rust guide][docker-rust-guide]⮳
+- Docker's [getting started][docker-getting-started]⮳ docs.{{hi:docker}}.
+- [Docker's Rust guide][docker-rust-guide]⮳.
 
 ## Docker Compose {#docker-compose}
 
@@ -28,7 +28,7 @@ docker init
 
 - Build your image: `docker build -t myapp .`.
 - If your [cloud][p-cloud]{{hi:Cloud}} uses a different CPU architecture than your development machine (e.g., you are on a Mac M1 and your cloud provider is amd64), you'll want to build the image for that platform, e.g.: `docker build --platform=linux/amd64 -t myapp .`.
-- Start your application by running: `docker compose up --build`
+- Start your application by running: `docker compose up --build`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

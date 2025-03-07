@@ -52,14 +52,14 @@ Example from [tokio_graceful_shutdown][c-tokio_graceful_shutdown]{{hi:tokio_grac
 
 ## Useful links
 
-- [`tokio.rs`][c-tokio-website]
-- [![tokio examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}
-- [tokio-rs `async-stream`][c-async_stream-github]
-- [tokio-rs `mio`][c-mio-github]
-- [`tokio` glossary][c-tokio_glossary-website]⮳
-- [`tokio` tutorial][c-tokio_tutorial]{{hi:tokio}}⮳
-- Tokio "mini-Redis" example: [![tokio-mini-redis][c-tokio_mini_redis-github-badge]][c-tokio_mini_redis-github]
-- Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template-github][rust-tokio-template-github-badge]][rust-tokio-template-github]
+- [`tokio.rs`][c-tokio-website].
+- [![tokio examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}.
+- [tokio-rs `async-stream`][c-async_stream-github].
+- [tokio-rs `mio`][c-mio-github].
+- [`tokio` glossary][c-tokio_glossary-website]⮳.
+- [`tokio` tutorial][c-tokio_tutorial]{{hi:tokio}}⮳.
+- Tokio "mini-Redis" example: [![tokio-mini-redis][c-tokio_mini_redis-github-badge]][c-tokio_mini_redis-github].
+- Template for a tokio-rs app with logging & command line argument parser: [![rust-tokio-template-github][rust-tokio-template-github-badge]][rust-tokio-template-github].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -20,15 +20,15 @@
 
 Dioxus supports:
 
-- Server-side rendering
-- Concurrent rendering (with async support)
-- Web/Desktop/Mobile support
-- Pre-rendering and hydration
-- Fragments and Suspense
-- Inline-styles
-- Custom event handlers
-- Custom elements
-- Basic fine-grained reactivity (SolidJS / Svelte-like)
+- Server-side rendering.
+- Concurrent rendering (with async support).
+- Web/Desktop/Mobile support.
+- Pre-rendering and hydration.
+- Fragments and Suspense.
+- Inline-styles.
+- Custom event handlers.
+- Custom elements.
+- Basic fine-grained reactivity (SolidJS / Svelte-like).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/dioxus.rs:example}}

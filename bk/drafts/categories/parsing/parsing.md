@@ -49,9 +49,9 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 
 ## See also
 
-- [[parser-implementations | Parser Implementations]]
-- [[text-processing | Text Processing]]
-- [[string_parsing | String Parsing]]
+- [[parser-implementations | Parser Implementations]].
+- [[text-processing | Text Processing]].
+- [[string_parsing | String Parsing]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -59,8 +59,8 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 <div class="hidden">
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
-- `combine`
-- `peg`
-- `chumsky`
+- `combine`.
+- `peg`.
+- `chumsky`.
 
 </div>

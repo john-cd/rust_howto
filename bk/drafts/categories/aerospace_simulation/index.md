@@ -9,7 +9,7 @@
 - Control Systems: Simulating the behavior of control systems, such as PID controllers, attitude control systems, and guidance algorithms.
 - Environment Modeling: Creating models of the environment, including terrain, atmosphere, and other objects (e.g., other aircraft, obstacles).
 - Sensor Simulation: Simulating the behavior of sensors, such as IMUs, GPS receivers, and cameras.
-- Multi-body Dynamics: Simulating the interaction of multiple bodies, which is important fo
+- Multi-body Dynamics: Simulating the interaction of multiple bodies.
 
 ## Physics Engines
 

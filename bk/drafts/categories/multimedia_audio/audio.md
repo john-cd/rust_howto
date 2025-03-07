@@ -10,9 +10,9 @@
 
 ## Related Topics
 
-- [[multimedia | Multimedia]]
-- [[multimedia_encoding | Multimedia: Encoding]]
-- [[multimedia_video | Multimedia: Video]]
+- [[multimedia | Multimedia]].
+- [[multimedia_encoding | Multimedia: Encoding]].
+- [[multimedia_video | Multimedia: Video]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

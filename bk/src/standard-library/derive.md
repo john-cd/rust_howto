@@ -16,7 +16,7 @@ You can use the [`cargo_expand`][c-cargo_expand]⮳{{hi:cargo_expand}} utility t
 
 See also:
 
-- [Derive][book-rust-reference-derive]⮳
+- [Derive][book-rust-reference-derive]⮳.
 
 ## Derive More {#derive-more}
 
@@ -30,8 +30,8 @@ See also:
 
 ## See also
 
-- [[attributes | Attributes]]
-- [[rust-patterns | Rust Patterns]]
+- [[attributes | Attributes]].
+- [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

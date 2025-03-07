@@ -51,13 +51,13 @@ FFI or custom implementations are likely needed.
 
 ## See also
 
-- [[aerospace | Aerospace]]
-- [[aerospace_drones | Drones]]
-- [[aerospace_simulation | Aerospace Simulation]]
-- [[aerospace_space-protocols | Space Protocols]]
-- [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]]
-- [[hardware-support | Hardware Support]]
-- [[simulation | Simulation]]
+- [[aerospace | Aerospace]].
+- [[aerospace_drones | Drones]].
+- [[aerospace_simulation | Aerospace Simulation]].
+- [[aerospace_space-protocols | Space Protocols]].
+- [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]].
+- [[hardware-support | Hardware Support]].
+- [[simulation | Simulation]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

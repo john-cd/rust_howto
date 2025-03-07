@@ -10,7 +10,7 @@
 
 ## See also
 
-- [[aerospace | Aerospace]]
+- [[aerospace | Aerospace]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

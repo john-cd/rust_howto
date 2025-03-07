@@ -98,9 +98,9 @@ This table outlines common tasks for building web servers in Rust and relevant c
 
 ## Choosing the Right Crates
 
-- Full-Stack Web App: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}}
-- REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}
-- GraphQL API: [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}
-- Low-Level HTTP Server (Custom): [`hyper`][c-hyper]⮳{{hi:hyper}}
+- Full-Stack Web App: [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`axum`][c-axum]⮳{{hi:axum}}, [`rocket`][c-rocket]⮳{{hi:rocket}}, [`warp`][c-warp]⮳{{hi:warp}}.
+- REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}.
+- GraphQL API: [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}.
+- Low-Level HTTP Server (Custom): [`hyper`][c-hyper]⮳{{hi:hyper}}.
 
 </div>

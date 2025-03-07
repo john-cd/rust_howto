@@ -20,18 +20,18 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 
 Common `enums`:
 
-- [[option | Option]]
-- [[result | Result]]
+- [[option | Option]].
+- [[result | Result]].
 
 Related data types:
 
-- [[simple_data_types | Simple Data Types]]
-- [[structs | Structs]]
+- [[simple_data_types | Simple Data Types]].
+- [[structs | Structs]].
 
-- [[match | Match]]
+- [[match | Match]].
 
-- [[rust-patterns | Rust Patterns]]
-- [[functional_programming | Functional Programming]]
+- [[rust-patterns | Rust Patterns]].
+- [[functional_programming | Functional Programming]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

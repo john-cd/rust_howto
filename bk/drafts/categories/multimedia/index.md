@@ -28,11 +28,11 @@ See [[multimedia_encoding | Multimedia: Encoding]].
 
 ### Graphics and Rendering
 
-- [[graphics | Graphics]]
-- [[rendering | Rendering]]
-- [[rendering_data-formats | Rendering Data Formats]]
-- [[rendering_engines | Rendering Engines]]
-- [[rendering_graphics-api | Rendering: Graphics API]]
+- [[graphics | Graphics]].
+- [[rendering | Rendering]].
+- [[rendering_data-formats | Rendering Data Formats]].
+- [[rendering_engines | Rendering Engines]].
+- [[rendering_graphics-api | Rendering: Graphics API]].
 
 ### Networking and Streaming
 

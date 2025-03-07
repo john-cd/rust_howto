@@ -6,7 +6,7 @@ Manage the complexity of dealing with the fourth dimension.
 
 There are two key libraries:
 
-- [`chrono`][c-chrono]⮳{{hi:chrono}}: a comprehensive, full-featured, yet complex date and time library,
+- [`chrono`][c-chrono]⮳{{hi:chrono}}: a comprehensive, full-featured, yet complex date and time library.
 - [`time`][c-time]⮳{{hi:time}}: a smaller, simpler library with limited functionality.
 
 There is no clear answer as to which is best between [`time`][c-time]⮳{{hi:time}} and [`chrono`][c-chrono]⮳{{hi:chrono}}. Evaluate for yourself between these two, but both are trusted and well-maintained.
@@ -41,9 +41,9 @@ Clock and Time Measurement: [`std::time`][c-std::time]⮳{{hi:std::time}} (for b
 
 A parser and formatter for `std::time::{Duration, SystemTime}`.
 
-- Parses durations in free form like 15days 2min 2s
-- Formats durations in similar form 2years 2min 12us
-- Parses and formats timestamp in rfc3339 format: 2018-01-01T12:53:00Z
-- Parses timestamps in a weaker format: 2018-01-01 12:53:00
+- Parses durations in free form like 15days 2min 2s.
+- Formats durations in similar form 2years 2min 12us.
+- Parses and formats timestamp in rfc3339 format: 2018-01-01T12:53:00Z.
+- Parses timestamps in a weaker format: 2018-01-01 12:53:00.
 
 </div>

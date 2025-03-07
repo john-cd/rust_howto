@@ -21,9 +21,9 @@ Consider `bonsai-bt` (Behavior Tree implementation) and `optimization-engine`, a
 
 ## Related Topics
 
-- [[computer-vision | Computer Vision]]
-- [[classical_machine_learning | Classical Machine Learning]]
-- [[deep_learning | Deep Learning]]
+- [[computer-vision | Computer Vision]].
+- [[classical_machine_learning | Classical Machine Learning]].
+- [[deep_learning | Deep Learning]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

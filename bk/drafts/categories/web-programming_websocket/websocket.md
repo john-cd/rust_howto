@@ -45,9 +45,9 @@ Async binding for Tungstenite.
 
 ## Related Topics
 
-- [[web-programming | Web Programming]]
-- [[web-programming_http-client | Web Programming: HTTP Client]]
-- [[web-programming_http-server | Web Programming: HTTP Server]]
+- [[web-programming | Web Programming]].
+- [[web-programming_http-client | Web Programming: HTTP Client]].
+- [[web-programming_http-server | Web Programming: HTTP Server]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

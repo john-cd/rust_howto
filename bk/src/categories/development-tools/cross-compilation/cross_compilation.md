@@ -43,10 +43,10 @@ Examples: [![cross-toml-example][c-cross-toml-example-badge]][c-cross-toml-examp
 
 ## Related Topics
 
-- [[autocfg | Autocfg]]
-- [[build_time_tooling | Build Time Tooling]]
-- [[development-tools_build-utils | Development Tools: Build Utils]]
-- [[hardware-support | Hardware Support]]
+- [[autocfg | Autocfg]].
+- [[build_time_tooling | Build Time Tooling]].
+- [[development-tools_build-utils | Development Tools: Build Utils]].
+- [[hardware-support | Hardware Support]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

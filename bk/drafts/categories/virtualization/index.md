@@ -43,7 +43,7 @@ These crates provide low-level interfaces for interacting with hypervisors like 
 
 - `net_util`: Utilities for network device emulation.
 - `vhost-user-backend`: A library for implementing vhost-user backends.
-- `slirp` (bindings), [`tun-tap`][c-tun_tap]⮳{{hi:tun-tap}}
+- `slirp` (bindings), [`tun-tap`][c-tun_tap]⮳{{hi:tun-tap}}.
 
 `slirp` provides a user-mode network stack. [`tun-tap`][c-tun_tap]⮳{{hi:tun-tap}} allows creating virtual network interfaces.
 

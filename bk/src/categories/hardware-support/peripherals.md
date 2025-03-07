@@ -24,8 +24,8 @@ For specialized hardware, you'll often need to find or create crates that provid
 
 ## See also
 
-- [[embedded | Embedded Systems]]
-- [[os | OS]]
+- [[embedded | Embedded Systems]].
+- [[os | OS]].
 
 ### Device Drivers
 

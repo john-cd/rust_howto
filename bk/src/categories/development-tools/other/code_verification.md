@@ -31,9 +31,9 @@ At present, Kani does not support verifying concurrent code.
 
 Kani offers an easy installation [option][p-option] on three platforms:
 
-- x86_64-unknown-linux-gnu (Most Linux distributions)
-- x86_64-apple-darwin (Intel Mac OS)
-- aarch64-apple-darwin (Apple Silicon Mac OS)
+- x86_64-unknown-linux-gnu (Most Linux distributions).
+- x86_64-apple-darwin (Intel Mac OS).
+- aarch64-apple-darwin (Apple Silicon Mac OS).
 
 Python version 3.7 or newer and the package installer `pip` must be installed.
 

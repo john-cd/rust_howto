@@ -10,8 +10,8 @@
 
 ## See also
 
-- [[aerospace | Aerospace]]
-- [[simulation | Simulation]]
+- [[aerospace | Aerospace]].
+- [[simulation | Simulation]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -6,10 +6,10 @@ Cryptographic certificates, also known as digital certificates, are electronic c
 
 For more formats, see Rust Crypto Formats.
 
-- der{{hi:der}}
-- pem-rfc7468{{hi:pem-rfc7468}}
-- pkcs8{{hi:pkcs8}}
-- x509-cert{{hi:x509-cert}}
+- der{{hi:der}}.
+- pem-rfc7468{{hi:pem-rfc7468}}.
+- pkcs8{{hi:pkcs8}}.
+- x509-cert{{hi:x509-cert}}.
 
 ## DER {#der}
 

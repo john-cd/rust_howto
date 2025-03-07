@@ -56,7 +56,7 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 
 ## Memory safety {#memory-safety}
 
-- [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳
+- [rust-re-borrowing-and-memory-safety][blog-rust-re-borrowing-and-memory-safety]⮳.
 
 ## See also
 

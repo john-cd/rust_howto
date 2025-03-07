@@ -8,7 +8,7 @@
 
 ## Kubernetes and Orchestration
 
-- [Kube](https://crates.io/crates/kube): A Kubernetes client for managing containerized applications in Kubernetes clusters
+- [Kube](https://crates.io/crates/kube): A Kubernetes client for managing containerized applications in Kubernetes clusters.
 
 ## Container Internals
 

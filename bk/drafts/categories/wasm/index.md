@@ -14,10 +14,10 @@ See [[wasm_development | WASM Development]].
 
 ## WASM Runtime Environments
 
-- Browser-based Execution
-- Node.js with WASM
-- [[wasm_standalone_runtimes | WASM Standalone Runtimes]]
-- Embedded Systems with WASM in Rust
+- Browser-based Execution.
+- Node.js with WASM.
+- [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
+- Embedded Systems with WASM in Rust.
 
 {{#include wasm_runtimes.incl.md}}
 

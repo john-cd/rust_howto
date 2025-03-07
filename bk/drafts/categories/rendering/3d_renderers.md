@@ -8,14 +8,14 @@ Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 
 ## Topics
 
-- Forward Rendering
-- Deferred Rendering
-- Physically Based Rendering (PBR)
-- Ray Tracing
-- Global Illumination
-- Shadow Mapping
-- Ambient Occlusion
-- Level of Detail (LOD)
+- Forward Rendering.
+- Deferred Rendering.
+- Physically Based Rendering (PBR).
+- Ray Tracing.
+- Global Illumination.
+- Shadow Mapping.
+- Ambient Occlusion.
+- Level of Detail (LOD).
 
 Many algorithms are implemented within engines like `rend3` or game engines like `bevy`.
 

@@ -15,10 +15,10 @@ Shaders are written in specialized programming languages like GLSL (OpenGL Shadi
 
 ## Topics
 
-- SPIR-V compilation
-- GLSL/HLSL compilation
-- Compute Shaders
-- GPU Compute
+- SPIR-V compilation.
+- GLSL/HLSL compilation.
+- Compute Shaders.
+- GPU Compute.
 
 ## `naga` {#naga}
 
@@ -62,13 +62,13 @@ Compute Shaders are often handled through the low-level graphics APIs like [`wgp
 
 ## Related Topics
 
-- [[gpu | GPU]]
-- [[gpu_abstraction_layers | GPU Abstraction Layers]]
+- [[gpu | GPU]].
+- [[gpu_abstraction_layers | GPU Abstraction Layers]].
 
 ## See also
 
 - [[typecasts | Typecasts]] and especially `bytemuck` - A crate for mucking around with piles of bytes.
-- [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/)
+- [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

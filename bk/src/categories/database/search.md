@@ -31,7 +31,7 @@
 {{#include ../../../crates/cats/database/tests/search/elasticsearch.rs:example}}
 ```
 
-- [`tinysearch`][c-tinysearch]⮳{{hi:tinysearch}} is not that popular
+- [`tinysearch`][c-tinysearch]⮳{{hi:tinysearch}} is not that popular.
 
 [database/search.md: expand (P2)](https://github.com/john-cd/rust_howto/issues/288)
 </div>

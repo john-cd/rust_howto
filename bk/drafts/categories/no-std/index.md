@@ -38,10 +38,10 @@ Consult the [`no-std`][cat-no-std] category on `crates.io`.
 
 ## Related Topics
 
-- [[embedded | Embedded]] Systems
-- [[memory-management | Memory Management]]
-- [[memory_usage_analysis | Memory Usage Analysis]]
-- [[no-std_no-alloc | No Alloc]]
+- [[embedded | Embedded]] Systems.
+- [[memory-management | Memory Management]].
+- [[memory_usage_analysis | Memory Usage Analysis]].
+- [[no-std_no-alloc | No Alloc]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

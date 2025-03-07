@@ -45,15 +45,15 @@ Consider using:
 
 ## See also
 
-- [[additional_numeric_types | Additional Numeric Types]]
-- [[algorithms | Algorithms]]
-- [[computer-vision | Computer Vision]]
-- [[hardware-support | Hardware Support]]
-- [[images | Images]]
-- [[linear_algebra | Linear Algebra]]
-- [[mathematics | Mathematics]]
-- [[multimedia_images | Multimedia Images]]
-- [[linear_algebra | Linear Algebra]]
+- [[additional_numeric_types | Additional Numeric Types]].
+- [[algorithms | Algorithms]].
+- [[computer-vision | Computer Vision]].
+- [[hardware-support | Hardware Support]].
+- [[images | Images]].
+- [[linear_algebra | Linear Algebra]].
+- [[mathematics | Mathematics]].
+- [[multimedia_images | Multimedia Images]].
+- [[linear_algebra | Linear Algebra]].
 
 Consider using:
 

@@ -17,8 +17,8 @@
 
 Features:
 
-- Similar to JavaScript+Rust with dynamic typing
-- Tight integration with native Rust [functions][p-functions] and types
+- Similar to JavaScript+Rust with dynamic typing.
+- Tight integration with native Rust [functions][p-functions] and types.
 - Sand-boxing - the [scripting][p-scripting] engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
 
 ```rust,editable

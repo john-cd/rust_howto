@@ -10,8 +10,8 @@
 
 Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 
-- Image Decoding and Encoding
-- Image Compression
+- Image Decoding and Encoding.
+- Image Compression.
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_images/tests/images.rs:example}}
@@ -21,7 +21,7 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 
 [![image][c-image-badge]][c-image] [![image-crates.io][c-image-crates.io-badge]][c-image-crates.io] [![image-github][c-image-github-badge]][c-image-github] [![image-lib.rs][c-image-lib.rs-badge]][c-image-lib.rs]{{hi:image}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-multimedia::encoding][cat-multimedia::encoding-badge]][cat-multimedia::encoding]{{hi:Encoding}} [![cat-multimedia::images][cat-multimedia::images-badge]][cat-multimedia::images]{{hi:Images}}
 
-- Image Filters and Transformations
+- Image Filters and Transformations.
 
 {{#example image}}
 
@@ -33,10 +33,10 @@ Image processing operations.
 
 Image Processing Fundamentals:
 
-- Image Filtering (Blur, Sharpen, Edge Detection)
-- Image Transformations (Resizing, Rotation)
-- Image Compression
-- Color Space Conversion
+- Image Filtering (Blur, Sharpen, Edge Detection).
+- Image Transformations (Resizing, Rotation).
+- Image Compression.
+- Color Space Conversion.
 
 Image Analysis
 

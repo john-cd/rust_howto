@@ -8,8 +8,8 @@ Authenticated [encryption][p-encryption] with associated data (AEAD) is a varian
 
 AEAD is commonly used in secure communication protocols like [TLS][p-tls] (Transport Layer Security). See also:
 
-- https://codahale.com/towards-a-safer-footgun/
-- https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html
+- https://codahale.com/towards-a-safer-footgun/.
+- https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html.
 
 ## `aes-gcm-siv` {#aes-gcm-siv}
 

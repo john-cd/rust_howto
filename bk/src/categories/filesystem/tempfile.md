@@ -18,6 +18,6 @@
 <div class="hidden">
 [tempfile: write (P1)](https://github.com/john-cd/rust_howto/issues/361)
 
-- tempdir
+- tempdir.
 
 </div>

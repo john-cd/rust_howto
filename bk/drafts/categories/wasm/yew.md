@@ -20,9 +20,9 @@ Key Features:
 
 ### See also
 
-- [What is Yew?][c-yew-website]⮳
+- [What is Yew?][c-yew-website]⮳.
 
-- [Example "Real World" app built with Rust + Yew + WebAssembly][c-yew-realworld-example]⮳ [![yew-realworld-example][c-yew-realworld-example-badge]][c-yew-realworld-example]
+- [Example "Real World" app built with Rust + Yew + WebAssembly][c-yew-realworld-example]⮳ [![yew-realworld-example][c-yew-realworld-example-badge]][c-yew-realworld-example].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

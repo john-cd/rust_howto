@@ -91,20 +91,20 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 ## Reference
 
-- [Eight solutions for troubleshooting your Rust build times][blog-rust-build-times]⮳
-- [How I improved my Rust compile times by seventy-five percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳
-- [Rust compilation time][blog-rust-compilation-time]⮳
+- [Eight solutions for troubleshooting your Rust build times][blog-rust-build-times]⮳.
+- [How I improved my Rust compile times by seventy-five percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳.
+- [Rust compilation time][blog-rust-compilation-time]⮳.
 
 ## Related Topics
 
-- [[benchmarking | Benchmarking]]
-- [[build_utils | Build Utils]]
-- [[development-tools | Development Tools]]
-- [[development-tools_build-utils | Development Tools: Build Utils]]
-- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]]
-- [[development-tools_profiling | Development Tools: Profiling]]
-- [[faster_linking | Faster Linking]]
-- [[performance | Performance]]
+- [[benchmarking | Benchmarking]].
+- [[build_utils | Build Utils]].
+- [[development-tools | Development Tools]].
+- [[development-tools_build-utils | Development Tools: Build Utils]].
+- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+- [[development-tools_profiling | Development Tools: Profiling]].
+- [[faster_linking | Faster Linking]].
+- [[performance | Performance]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

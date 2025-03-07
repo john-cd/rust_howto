@@ -20,10 +20,10 @@ Most 2D projects will find [`raqote`][c-raqote]⮳{{hi:raqote}} or [`tiny-skia`]
 
 ## Topics
 
-- Sprite Rendering
-- Vector Graphics
-- Text Rendering
-- Canvas Drawing
+- Sprite Rendering.
+- Vector Graphics.
+- Text Rendering.
+- Canvas Drawing.
 
 ## Pixel-Based (Raster) 2D Rendering
 
@@ -89,7 +89,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 ## See also
 
-- [Are we Game yet? 2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more
+- [Are we Game yet? 2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

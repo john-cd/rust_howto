@@ -10,8 +10,8 @@
 
 ## Related Topics
 
-- [[multimedia | Multimedia]]
-- [[multimedia_encoding | Multimedia: Encoding]]
+- [[multimedia | Multimedia]].
+- [[multimedia_encoding | Multimedia: Encoding]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

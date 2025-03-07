@@ -7,7 +7,7 @@ Physics simulation, 3D visualization, testing environments.
 ## Physics simulation for robots
 
 - `rapier` - 2 and 3-dimensional rigid body physics engine for Rust.
-- Rust `zmqRemoteApi` - A Rust ZeroMQ remote API client for coppeliasim robotics simulator
+- Rust `zmqRemoteApi` - A Rust ZeroMQ remote API client for coppeliasim robotics simulator.
 
 ## Visualization
 

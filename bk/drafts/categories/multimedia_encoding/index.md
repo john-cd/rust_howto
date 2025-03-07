@@ -29,11 +29,11 @@ See [[multimedia_images | Multimedia: Image]].
 
 ## Related Topics
 
-- [[encoding | Encoding]]
-- [[multimedia | Multimedia]]
-- [[multimedia_audio | Multimedia: Audio]]
-- [[multimedia_video | Multimedia: Video]]
-- [[multimedia_images | Multimedia: Images]]
+- [[encoding | Encoding]].
+- [[multimedia | Multimedia]].
+- [[multimedia_audio | Multimedia: Audio]].
+- [[multimedia_video | Multimedia: Video]].
+- [[multimedia_images | Multimedia: Images]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -6,35 +6,35 @@ Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
 
 ## File System Operations: Working with files, directories, permissions, etc
 
-- `std::fs`, `std::path`
+- `std::fs`, `std::path`.
 
 ## Process Management: Forking, spawning processes, signals, pipes
 
-- `std::process`, [`nix`][c-nix]⮳{{hi:nix}}
+- `std::process`, [`nix`][c-nix]⮳{{hi:nix}}.
 
 ## Networking (Sockets): TCP/IP, UDP, low-level socket programming
 
-- `std::net`, [`socket2`][c-socket2]⮳{{hi:socket2}}
+- `std::net`, [`socket2`][c-socket2]⮳{{hi:socket2}}.
 
 ## System Calls: Directly interacting with the operating system
 
-- [`nix`][c-nix]⮳{{hi:nix}}, [`libc`][c-libc]⮳{{hi:libc}} (for raw system call access, use with caution)
+- [`nix`][c-nix]⮳{{hi:nix}}, [`libc`][c-libc]⮳{{hi:libc}} (for raw system call access, use with caution).
 
 ## Terminal Interaction: Working with TTYs, terminal attributes
 
-- [`termion`][c-termion]⮳{{hi:termion}}, [`crossterm`][c-crossterm]⮳{{hi:crossterm}}
+- [`termion`][c-termion]⮳{{hi:termion}}, [`crossterm`][c-crossterm]⮳{{hi:crossterm}}.
 
 ## Time and Dates: Working with system time, timers
 
-- [`std::time`][c-std::time]⮳{{hi:std::time}}, [`chrono`][c-chrono]⮳{{hi:chrono}}
+- [`std::time`][c-std::time]⮳{{hi:std::time}}, [`chrono`][c-chrono]⮳{{hi:chrono}}.
 
 ## User and Group Management: Getting user/group information
 
-- [`nix`][c-nix]⮳{{hi:nix}}
+- [`nix`][c-nix]⮳{{hi:nix}}.
 
 ## Signals: Handling POSIX signals
 
-- [`nix`][c-nix]⮳{{hi:nix}}, [`signal-hook`][c-signal_hook]⮳{{hi:signal-hook}}
+- [`nix`][c-nix]⮳{{hi:nix}}, [`signal-hook`][c-signal_hook]⮳{{hi:signal-hook}}.
 
 ## Code Examples
 

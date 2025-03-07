@@ -4,7 +4,7 @@
 
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
-- Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.{{hi:Smart pointers}}
+- Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.{{hi:Smart pointers}}.
 
 ## `Box` {#box}
 
@@ -26,8 +26,8 @@ let _val = boxed.len();
 
 Use `Box<T>` when
 
-- you have a dynamically sized type, whose size can't be known at compile time,
-- you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type,
+- you have a dynamically sized type, whose size can't be known at compile time.
+- you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
 - you don't want to rely on stack space.
 
 ```rust,editable
@@ -93,9 +93,9 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 [![book-rust-refcell][book-rust-refcell-badge]][book-rust-refcell]{{hi:RefCell}}
 
-- finish to rewrite Cell, OnceCell
+- finish to rewrite Cell, OnceCell.
 
-- example: RefCell inside of Rc
+- example: RefCell inside of Rc.
 
 ## `Cell` {#cell}
 

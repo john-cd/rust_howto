@@ -4,19 +4,19 @@
 
 [![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
-- Integers: [`i8`][primitive-i8]{{hi:i8}}⮳, [`i16`][primitive-i16]{{hi:i16}}⮳, [`i32`][primitive-i32]{{hi:i32}}⮳, [`i64`][primitive-i64]{{hi:i64}}⮳, [`i128`][primitive-i128]{{hi:i128}}⮳, [`isize`][primitive-isize]{{hi:isize}}⮳
-- Unsigned: [`u8`][primitive-u8]{{hi:u8}}⮳, [`u16`][primitive-u16]{{hi:u16}}⮳, [`u32`][primitive-u32]{{hi:u32}}⮳, [`u128`][primitive-u128]{{hi:u128}}⮳, [`usize`][primitive-usize]{{hi:usize}}⮳
+- Integers: [`i8`][primitive-i8]{{hi:i8}}⮳, [`i16`][primitive-i16]{{hi:i16}}⮳, [`i32`][primitive-i32]{{hi:i32}}⮳, [`i64`][primitive-i64]{{hi:i64}}⮳, [`i128`][primitive-i128]{{hi:i128}}⮳, [`isize`][primitive-isize]{{hi:isize}}⮳.
+- Unsigned: [`u8`][primitive-u8]{{hi:u8}}⮳, [`u16`][primitive-u16]{{hi:u16}}⮳, [`u32`][primitive-u32]{{hi:u32}}⮳, [`u128`][primitive-u128]{{hi:u128}}⮳, [`usize`][primitive-usize]{{hi:usize}}⮳.
   - [`usize`][primitive-usize]{{hi:usize}}⮳ and [`isize`][primitive-isize]{{hi:isize}}⮳ are 32 or 64 bits, depending on the architecture of the computer.
-- Floating point: [`f32`][primitive-f32]{{hi:f32}}⮳, [`f64`][primitive-f64]{{hi:f64}}⮳
-- Boolean: [`bool`][primitive-bool]{{hi:bool}}⮳: `true`, `false`
-- Char: `let z: char = 'ℤ';` Unicode
-- Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);`
-  - Access via `let five_hundred = x.0;`
-  - Destructuring via `let (x, y, z) = tup;`
-- Arrays: `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. access via `let first = a[0];`
-  - A vector is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size
-- Unit (aka void): `()`
-- Type aliases: `type Kilometers = i32;`
+- Floating point: [`f32`][primitive-f32]{{hi:f32}}⮳, [`f64`][primitive-f64]{{hi:f64}}⮳.
+- Boolean: [`bool`][primitive-bool]{{hi:bool}}⮳: `true`, `false`.
+- Char: `let z: char = 'ℤ';` Unicode.
+- Tuples: `let tup: (i32, f64, u8) = (500, 6.4, 1);`.
+  - Access via `let five_hundred = x.0;`.
+  - Destructuring via `let (x, y, z) = tup;`.
+- Arrays: `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. access via `let first = a[0];`.
+  - A vector is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size.
+- Unit (aka void): `()`.
+- Type aliases: `type Kilometers = i32;`.
 
 ## Handle overflows {#overflow-handling}
 
@@ -31,8 +31,8 @@
 <div class="hidden">
 [simple_data_types: edit (P1)](https://github.com/john-cd/rust_howto/issues/557)
 
-- [ ] table?
-- [ ] add examples
+- [ ] table?.
+- [ ] add examples.
 
 [`char`][primitive-char]
 [`never`][primitive-never]

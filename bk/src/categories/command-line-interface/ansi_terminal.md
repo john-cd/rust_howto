@@ -46,11 +46,11 @@ For anything more complex than plain foreground color changes, the code needs to
 [`crossterm`][c-crossterm]⮳ is a pure-Rust, low-level terminal rendering and event handling library used to write cross-platform text-based interfaces.
 It supports all UNIX and Windows terminals down to [Windows][p-windows] 7. Features include the following:
 
-- Full control over writing and flushing output buffer,
-- `Is tty` function,
-- Cursor manipulation,
-- Styled output,
-- Terminal handling,
+- Full control over writing and flushing output buffer.
+- `Is tty` function.
+- Cursor manipulation.
+- Styled output.
+- Terminal handling.
 - Events (key inputs, mouse...).
 
 ```rust,editable

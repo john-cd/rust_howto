@@ -22,9 +22,9 @@ Fast integer primitive to string conversion.
 
 ## See also
 
-- [[internationalization | Internationalization]]
-- [[localization | Localization]]
-- [[text-processing | Text Processing]]
+- [[internationalization | Internationalization]].
+- [[localization | Localization]].
+- [[text-processing | Text Processing]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

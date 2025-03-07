@@ -21,9 +21,9 @@ This chapter focuses on writing parsers for binary and text formats. Existing fo
 
 ## Related Topics
 
-- [[argument_parsing | Argument Parsing]]
-- [[parser-implementations | Parser Implementations]]
-- [[text-processing | Text Processing]]
+- [[argument_parsing | Argument Parsing]].
+- [[parser-implementations | Parser Implementations]].
+- [[text-processing | Text Processing]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

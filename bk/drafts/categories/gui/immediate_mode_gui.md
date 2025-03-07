@@ -25,11 +25,11 @@ For almost all cases where you want an immediate mode [GUI][p-gui] in Rust, [`eg
 
 [`egui`][c-egui]⮳ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][c-egui]⮳{{hi:egui}} aims to be the best choice when you want a simple way to create a GUI and you don't need to customize of the look and feel, or you want to add a GUI to a game engine. Great for tools and quick prototyping.
 
-- [egui.rs][c-egui-website]⮳
-- [`egui` demo lib][c-egui_demo_lib-github]⮳
-- [`egui` widgets][c-egui-widgets]⮳
-- [`egui` containers][c-egui-containers]⮳
-- [`egui` main struct Ui][c-egui::Ui]⮳
+- [egui.rs][c-egui-website]⮳.
+- [`egui` demo lib][c-egui_demo_lib-github]⮳.
+- [`egui` widgets][c-egui-widgets]⮳.
+- [`egui` containers][c-egui-containers]⮳.
+- [`egui` main struct Ui][c-egui::Ui]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui.rs:example}}

@@ -17,8 +17,8 @@
 
 ## Lists of Rust links {#links}
 
-- [The Rust Starter Pack][rust-starter-pack]⮳
-- [`Awesome Rust`][awesome-rust-github]⮳ [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github]
+- [The Rust Starter Pack][rust-starter-pack]⮳.
+- [`Awesome Rust`][awesome-rust-github]⮳ [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

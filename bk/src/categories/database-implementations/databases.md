@@ -8,23 +8,23 @@
 
 [`sled`][c-sled-github]⮳ is a high-performance, fairly low-level, embedded [database][p-database]. It can be thought of as a `BTreeMap<[u8], [u8]>` that stores its data on disk.
 
-- Storage on disk, without dealing with files
-- No external database
-- No network costs
-- API similar to a thread-safe `BTreeMap<[u8], [u8]>`
-- Serializable (ACID) transactions for atomically reading and writing to multiple keys in multiple keyspaces
-- Fully atomic single-key operations, including compare and swap
-- Zero-copy reads
-- Write batches
-- Subscription to changes on key prefixes
-- Multiple keyspaces
-- Merge operators
-- Forward and reverse [iterators][p-iterators] over ranges of items
-- Crash-safe monotonic ID generator capable of generating 75-125 million unique ID's per second
-- [`zstd`][c-zstd]⮳{{hi:zstd}} [compression][p-compression] (use the [compression][p-compression] build feature, disabled by default)
-- CPU-scalable, lock-free implementation
-- Flash-optimized log-structured storage
-- Uses modern b-tree techniques such as prefix [encoding][p-encoding] and suffix truncation for reducing the storage costs of long keys with shared prefixes. If keys are the same length and sequential then the system can avoid storing 99%+ of the key data in most cases, essentially acting like a learned index
+- Storage on disk, without dealing with files.
+- No external database.
+- No network costs.
+- API similar to a thread-safe `BTreeMap<[u8], [u8]>`.
+- Serializable (ACID) transactions for atomically reading and writing to multiple keys in multiple keyspaces.
+- Fully atomic single-key operations, including compare and swap.
+- Zero-copy reads.
+- Write batches.
+- Subscription to changes on key prefixes.
+- Multiple keyspaces.
+- Merge operators.
+- Forward and reverse [iterators][p-iterators] over ranges of items.
+- Crash-safe monotonic ID generator capable of generating 75-125 million unique ID's per second.
+- [`zstd`][c-zstd]⮳{{hi:zstd}} [compression][p-compression] (use the [compression][p-compression] build feature, disabled by default).
+- CPU-scalable, lock-free implementation.
+- Flash-optimized log-structured storage.
+- Uses modern b-tree techniques such as prefix [encoding][p-encoding] and suffix truncation for reducing the storage costs of long keys with shared prefixes. If keys are the same length and sequential then the system can avoid storing 99%+ of the key data in most cases, essentially acting like a learned index.
 
 ```rust,editable
 {{#include ../../../crates/cats/database_implementations/tests/databases/sled.rs:example}}

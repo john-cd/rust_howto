@@ -51,10 +51,10 @@ Consult the [`no_alloc`][cat-no-std::no-alloc] category on `crates.io`.
 
 ## Related Topics
 
-- [[embedded | Embedded]] Systems
-- [[memory-management | Memory Management]]
-- [[memory_usage_analysis | Memory Usage Analysis]]
-- [[stack_allocated_arrays | Stack Allocated Arrays]]
+- [[embedded | Embedded]] Systems.
+- [[memory-management | Memory Management]].
+- [[memory_usage_analysis | Memory Usage Analysis]].
+- [[stack_allocated_arrays | Stack Allocated Arrays]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

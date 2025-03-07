@@ -8,9 +8,9 @@
 
 Supported formats:
 
-- deflate
-- zlib
-- gzip
+- deflate.
+- zlib.
+- gzip.
 
 Compress, then decompress data:
 

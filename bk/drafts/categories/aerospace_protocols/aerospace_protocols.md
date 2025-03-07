@@ -10,9 +10,9 @@
 
 ## See also
 
-- [[aerospace | Aerospace]]
-- [[embedded | Embedded Systems]]
-- [[space_protocols | Space Protocols]]
+- [[aerospace | Aerospace]].
+- [[embedded | Embedded Systems]].
+- [[space_protocols | Space Protocols]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

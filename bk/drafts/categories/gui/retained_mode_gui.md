@@ -43,9 +43,9 @@
 [`slint`][c-slint]⮳{{hi:slint}} is a GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications.
 Possibly the most complete rust-native UI library. But note that it's dual GPL3/commercial licensed.
 
-- [slint.dev][c-slint-website]⮳
-- [Slint (github)][c-slint-github]⮳
-- [madewithslint.com][c-slint-madewithslint-website]⮳
+- [slint.dev][c-slint-website]⮳.
+- [Slint (github)][c-slint-github]⮳.
+- [madewithslint.com][c-slint-madewithslint-website]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/slint.rs:example}}

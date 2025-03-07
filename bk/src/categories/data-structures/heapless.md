@@ -12,9 +12,9 @@ This can be particularly useful for [embedded][p-embedded] systems or other envi
 
 [`heapless`][c-heapless]⮳{{hi:heapless}} includes:
 
-- `heapless::pool::arc::Arc` – like [`std::sync::Arc`][c-std::sync::Arc]⮳{{hi:std::sync::Arc}} but backed by a lock-free memory pool rather than `#[global_allocator]`,
-- `heapless::pool::boxed::Box` – like [`std::boxed::Box`][c-std::boxed::Box]⮳{{hi:std::boxed::Box}} but backed by a lock-free memory pool rather than `#[global_allocator]`,
-- `heapless::binary_heap::BinaryHeap` – priority queue
+- `heapless::pool::arc::Arc` – like [`std::sync::Arc`][c-std::sync::Arc]⮳{{hi:std::sync::Arc}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
+- `heapless::pool::boxed::Box` – like [`std::boxed::Box`][c-std::boxed::Box]⮳{{hi:std::boxed::Box}} but backed by a lock-free memory pool rather than `#[global_allocator]`.
+- `heapless::binary_heap::BinaryHeap` – priority queue.
 - `heapless::IndexMap` - like [`IndexMap`][c-indexmap]⮳{{hi:IndexMap}}.
 - `heapless::IndexSet` and `FnvIndexSet` – like [`indexmap::set::IndexSet`][c-indexmap::set::IndexSet]⮳{{hi:indexmap::set::IndexSet}}, hash set where the iteration order of the values is independent of their hash values.
 - `heapless::LinearMap` - a fixed capacity map / dictionary that performs lookups via linear search.

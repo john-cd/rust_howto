@@ -66,8 +66,8 @@ signatures as well as support for added entropy.
 For more [algorithms][p-algorithms], see Rust Crypto Signatures:
 
 - ed25519{{hi:ed25519}}. Use in conjunction with the [`ed25519-dalek`][c-ed25519_dalek]⮳{{hi:ed25519-dalek}} crate.
-- ecdsa{{hi:ecdsa}}
-- dsa{{hi:dsa}}
+- ecdsa{{hi:ecdsa}}.
+- dsa{{hi:dsa}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

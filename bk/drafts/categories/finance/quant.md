@@ -14,9 +14,9 @@
 
 ## See also
 
-- [[mathematics | Mathematics]]
-- [[linear_algebra | Linear Algebra]]
-- [[statistics | Statistics]]
+- [[mathematics | Mathematics]].
+- [[linear_algebra | Linear Algebra]].
+- [[statistics | Statistics]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -54,8 +54,8 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 <div class="hidden">
 [cryptography: review / incorporate (P2)](https://github.com/john-cd/rust_howto/issues/274)
 
-- ring
-- rust-crypto
+- ring.
+- rust-crypto.
 
 ### `sodiumoxide`
 

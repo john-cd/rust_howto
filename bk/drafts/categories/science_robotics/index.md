@@ -64,9 +64,9 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 - `ncollide` - 2 and 3-dimensional collision detection library in Rust.
 - `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
 - `k` - Kinematics Library for rust-lang.
-- `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language thinked for robotics
+- `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language thinked for robotics.
 - `ndarray` - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
-- `faer-rs` - Linear algebra foundation for the Rust programming language
+- `faer-rs` - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.
 

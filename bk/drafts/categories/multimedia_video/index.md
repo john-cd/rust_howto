@@ -47,6 +47,6 @@ Building a full-fledged video player in Rust is a complex undertaking. You'd lik
 [write](https://github.com/john-cd/rust_howto/issues/943)
 review `gstreamer`
 Cover
-- Video Effects and Filters
-- Video Analysis
+- Video Effects and Filters.
+- Video Analysis.
 </div>

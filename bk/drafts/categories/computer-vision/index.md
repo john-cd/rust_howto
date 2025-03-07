@@ -21,9 +21,9 @@ For image I/O and manipulation, `image` and `imageproc` are essential. For more 
 
 See:
 
-- [[multimedia | Multimedia]]
-- [[multimedia_images | Multimedia: Images]]
-- [[multimedia_video | Multimedia: Video]]
+- [[multimedia | Multimedia]].
+- [[multimedia_images | Multimedia: Images]].
+- [[multimedia_video | Multimedia: Video]].
 
 ## Image Processing
 

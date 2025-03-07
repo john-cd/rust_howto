@@ -80,13 +80,13 @@ Needs in-depth review.
 
 Review / incorporate:
 
-- `rust_decimal` - ~2M downloads
-- `iso_currency` - ~19k downloads
-- `RustQuant` ~4.1k
-- `apca` mentioned in Awesome Rust
-- `stochastic-rs` mentioned in Awesome Rust
-- Mention `financial` a collection of finance calculations mimicking some of Excel Financial Functions interface
-- Mention `black_scholes`
+- `rust_decimal` - ~2M downloads.
+- `iso_currency` - ~19k downloads.
+- `RustQuant` ~4.1k.
+- `apca` mentioned in Awesome Rust.
+- `stochastic-rs` mentioned in Awesome Rust.
+- Mention `financial` a collection of finance calculations mimicking some of Excel Financial Functions interface.
+- Mention `black_scholes`.
 
 Cover Excel data import, yahoo finance, databento, alpaca.
 
