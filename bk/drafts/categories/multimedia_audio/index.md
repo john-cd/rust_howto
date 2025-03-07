@@ -6,27 +6,39 @@ Record, output, or process audio.
 
 For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. If you need to work with specific audio formats, use the corresponding crates (e.g., [`ogg`][c-ogg]⮳{{hi:ogg}}, [`flac`][c-flac]⮳{{hi:flac}}, [`wav`][c-wav]⮳{{hi:wav}}). For game development, [`sdl2`][c-sdl2]⮳{{hi:sdl2}} or game-specific audio libraries might be relevant.
 
-## Audio
+## General Audio
 
 - [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate.
 - [`miniaudio`][c-miniaudio]⮳{{hi:miniaudio}}: A minimal audio library.
 - [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio.
 
-### Audio Formats and Codecs
-
-- [`ogg`][c-ogg]⮳{{hi:ogg}}: For Ogg Vorbis files.
-- [`flac`][c-flac]⮳{{hi:flac}}: For FLAC files.
-- [`mp3`][c-mp3]⮳{{hi:mp3}}: For MP3 files (often requires external dependencies).
-- [`wav`][c-wav]⮳{{hi:wav}}: For WAV files.
-
-### Audio Synthesis
-
-- [`synth-rs`][c-synth]⮳{{hi:synth-rs}}: A crate for audio synthesis.
-
-### Other Audio Libraries
+See also:
 
 - [`symphonia`][c-symphonia]⮳{{hi:symphonia}}: A comprehensive audio decoding library.
 - [`iced_audio`][c-iced_audio]⮳{{hi:iced_audio}}: Audio playback for the [`iced`][c-iced]⮳{{hi:iced}} GUI framework.
+
+## Specific Audio Codecs
+
+Use:
+
+- [`ogg`][c-ogg]⮳{{hi:ogg}} for Ogg Vorbis files.
+- [`flac`][c-flac]⮳{{hi:flac}} for FLAC files.
+- [`mp3`][c-mp3]⮳{{hi:mp3}} for MP3 files (often requires external dependencies).
+- [`wav`][c-wav]⮳{{hi:wav}} for WAV files.
+
+## Audio Effects, Filters, and Compression
+
+TODO
+
+## Audio Streaming
+
+TODO
+
+## Audio Synthesis
+
+Use [`synth-rs`][c-synth]⮳{{hi:synth-rs}} for audio synthesis.
+
+## Audio Analysis
 
 ## Code Examples
 
@@ -45,11 +57,4 @@ For most common audio tasks, [`cpal`][c-cpal]⮳{{hi:cpal}} will be sufficient. 
 [fix](https://github.com/john-cd/rust_howto/issues/941)
 review in depth
 synth is old
-- Audio Decoding and Encoding.
-- Audio Effects and Filters.
-- Audio Streaming.
-- Audio Synthesis.
-- Audio Analysis.
-- Audio Compression.
-- Audio Rendering.
 </div>

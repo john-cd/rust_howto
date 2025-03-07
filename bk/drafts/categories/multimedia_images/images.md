@@ -42,15 +42,14 @@ Image Analysis
 
 {{#example imageproc}}
 
+## GPU-accelerated image processing
+
+Low-level graphics APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
+See [[rendering_graphics-api | Rendering: Graphics API]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [images: write](https://github.com/john-cd/rust_howto/issues/420)
-
-## GPU-accelerated image processing
-
-[`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}
-
-These low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing.
 </div>
