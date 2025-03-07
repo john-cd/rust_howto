@@ -61,6 +61,14 @@ pre-commit install
 pre-commit run --all-files
 ```
 
+## Useful Hooks for Rust
+
+TODO
+
+- `cargo fmt`.
+- `cargo check`, clippy, test...
+- spell checks.
+
 ## Useful links
 
 [Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling]
@@ -74,13 +82,4 @@ pre-commit run --all-files
 
 <div class="hidden">
 [git_hooks: write](https://github.com/john-cd/rust_howto/issues/602)
-
-identify useful hooks for Rust
-
-- `cargo fmt`.
-- `cargo check`, clippy, test...
-- spell checks.
-
-add a sample config
-
 </div>

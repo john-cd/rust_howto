@@ -114,24 +114,22 @@ Example `.github/workflows/<name>.yml`
     cache-provider: ""
 ```
 
+## Useful GitHub Actions
+
+TODO
+
+- `rust-toolchain`: Github action to install Rust components via rustup
+- `rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
+- `install-action`: GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
+
+## See also
+
+- A type-safe GitHub Actions workflow generator: [`gh-workflow`][gh-workflow].
+
+[gh-workflow]: <https://crates.io/crates/gh-workflow>
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [github_actions: cover the following - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
-
-rust-toolchain (github action)
-Github action to install Rust components via rustup
-
-rust-cache (github action)
-Github action to cache compilation artifacts and speed up subsequent runs.
-
-install-action (github action)
-GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
-
-### CI {#ci}
-
-A type-safe GitHub Actions workflow generator [`gh-workflow`][gh-workflow]
-
-[gh-workflow]: <https://crates.io/crates/gh-workflow>
 </div>
