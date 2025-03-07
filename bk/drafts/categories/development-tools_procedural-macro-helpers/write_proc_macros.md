@@ -2,9 +2,13 @@
 
 {{#include write_proc_macros.incl.md}}
 
+You'll almost always use `proc-macro`, [`syn`][c-syn]⮳{{hi:syn}}, and [`quote`][c-quote]⮳{{hi:quote}} when writing procedural macros. [`trybuild`][c-trybuild]⮳{{hi:trybuild}} is highly recommended for testing.
+
+## `proc-macro` {#proc_macro}
+
 Procedural macro [crates][p-crates] almost always will link to the compiler-provided [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
 
-This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to Vec<TokenTree> where a TokenTree can roughly be thought of as lexical token. For example foo is an Ident token, . is a Punct token, and 1.2 is a Literal token. The TokenStream type, unlike Vec<TokenTree>, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
+This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
 
 ## Parse Rust source code into an abstract syntax tree {#syn}
 
@@ -34,7 +38,7 @@ The [`syn`][c-syn]{{hi:syn}}⮳ crate in Rust is a fundamental library for parsi
 
 [![quote][c-quote-badge]][c-quote] [![quote-crates.io][c-quote-crates.io-badge]][c-quote-crates.io] [![quote-github][c-quote-github-badge]][c-quote-github] [![quote-lib.rs][c-quote-lib.rs-badge]][c-quote-lib.rs]{{hi:quote}}{{hi:Macros}}{{hi:Syn}}[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-[`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
+[`quote`][c-quote]⮳{{hi:quote}} is a crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone. [`quote`][c-quote]⮳ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/quote.rs:example}}
@@ -72,14 +76,23 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}
 ```
 
+## Report errors from within a procedural macro
+
+Procedural [macros][p-macros] have two ways of reporting errors. The first is to [`panic`][c-panic]⮳{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
+
+## Testing and Debugging
+
+[`trybuild`][c-trybuild]⮳{{hi:trybuild}} is a crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
+
+Debugging procedural macros can be tricky. Often involves printing token streams to the `console` or using tools like `cargo expand` to see the generated code.
+
+## Documentation
+
+Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write_proc_macros: write](https://github.com/john-cd/rust_howto/issues/331)
-
-## Report errors from within a procedural macro
-
-Procedural [macros][p-macros] have two ways of reporting errors. The first is to [`panic`][c-panic]⮳{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
-
 </div>

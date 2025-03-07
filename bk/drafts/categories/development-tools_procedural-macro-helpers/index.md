@@ -31,37 +31,7 @@ Declarative macros are defined using a `macro_rules!` syntax and work by pattern
 
 <div class="hidden">
 [fix](https://github.com/john-cd/rust_howto/issues/332)
-
-## Procedural Macro Definition
-
-`proc-macro`: (Standard library crate) Provides the core tools for writing procedural macros, including token streams, parsing, and code generation. This is what you'll use inside your macro definition crate.
-
-Macro Attributes and Derives:
-
-You use `#[derive(...)]` and `#[attribute]` to define and apply macros.
-
-## Parsing
-
-[`syn`][c-syn]⮳{{hi:syn}}: A popular crate for parsing Rust code into an Abstract Syntax Tree (AST). This is essential for most procedural macros that need to understand the structure of the code they're manipulating.
-
-Code Generation:
-
-[`quote`][c-quote]⮳{{hi:quote}}: A crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone.
-Testing:
-
-[`trybuild`][c-trybuild]⮳{{hi:trybuild}}: A crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
-Debugging:
-
-Debugging procedural macros can be tricky. Often involves printing token streams to the `console` or using tools like `cargo expand` to see the generated code.
-
-## Metaprogramming Concepts
-
-Understanding how macros work, token streams, ASTs, and the difference between attribute macros, derive macros, and function-like macros is crucial.
-
-## Documentation
-
-Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
-
-In short, you'll almost always use `proc-macro`, [`syn`][c-syn]⮳{{hi:syn}}, and [`quote`][c-quote]⮳{{hi:quote}} when writing procedural macros. [`trybuild`][c-trybuild]⮳{{hi:trybuild}} is highly recommended for testing. Understanding the underlying metaprogramming concepts is key to effectively using these crates.
-
+explain
+- token streams
+- ASTs
 </div>
