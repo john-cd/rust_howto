@@ -2340,6 +2340,16 @@
 [c-form_urlencoded::byte_serialize]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.byte_serialize.html
 [c-form_urlencoded::parse]: https://docs.rs/form_urlencoded/latest/form_urlencoded/fn.parse.html
 [c-form_urlencoded]: https://docs.rs/form_urlencoded
+[c-foyer-badge]: https://img.shields.io/crates/v/foyer?label=foyer
+[c-foyer-crates.io-badge]: https://img.shields.io/badge/crates.io-foyer-crimson
+[c-foyer-crates.io]: https://crates.io/crates/foyer
+[c-foyer-github-badge]: https://img.shields.io/badge/foyer-steelblue?logo=github
+[c-foyer-github]: https://github.com/foyer-rs/foyer
+[c-foyer-lib.rs-badge]: https://img.shields.io/badge/lib.rs-foyer-yellow
+[c-foyer-lib.rs]: https://lib.rs/crates/foyer
+[c-foyer-website-badge]: https://img.shields.io/badge/foyer-coral
+[c-foyer-website]: https://foyer.rs
+[c-foyer]: https://docs.rs/foyer
 [c-freertos-badge]: https://img.shields.io/crates/v/freertos?label=freertos
 [c-freertos-crates.io-badge]: https://img.shields.io/badge/crates.io-freertos-crimson
 [c-freertos-crates.io]: https://crates.io/crates/freertos
