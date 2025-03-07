@@ -71,16 +71,15 @@ Randomly generates a string of given length ASCII characters with custom user-de
 {{#include ../../../crates/cats/algorithms/tests/rand/rand_choose.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[randomness: add fastrand (P2)](https://github.com/john-cd/rust_howto/issues/208)
-
 ## `fastrand` {#fastrand}
 
 [![fastrand][c-fastrand-badge]][c-fastrand] [![fastrand-crates.io][c-fastrand-crates.io-badge]][c-fastrand-crates.io] [![fastrand-github][c-fastrand-github-badge]][c-fastrand-github] [![fastrand-lib.rs][c-fastrand-lib.rs-badge]][c-fastrand-lib.rs]{{hi:fastrand}}{{hi:Fast}}{{hi:Rand}}{{hi:Random}}{{hi:Simple}}{{hi:Wyrand}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
-[`fastrand`][c-fastrand]⮳{{hi:fastrand}} is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than rand
+[`fastrand`][c-fastrand]⮳{{hi:fastrand}} is a simple and fast random number generator. No dependencies, non-cryptographically secure random numbers, lower complexity than `rand`.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[randomness: add fastrand](https://github.com/john-cd/rust_howto/issues/208)
 </div>

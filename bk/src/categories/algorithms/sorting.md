@@ -36,12 +36,14 @@ Sorts a vector{{hi:Vector}} of Person structs with properties `name` and `age` b
 
 [glidesort][c-glidesort-github]⮳ is a Rust implementation of Glidesort, a stable adaptive quicksort/mergesort hybrid sorting algorithm.
 
+## Related Topics
+
+- [[data-structures | Data Structures]].
+- [[btrees | B-trees]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[sorting: organize (P1)](https://github.com/john-cd/rust_howto/issues/209)
-
-[[data-structures | Data Structures]]
-[[btrees | Btrees]]
+[sorting: organize](https://github.com/john-cd/rust_howto/issues/209)
 </div>
