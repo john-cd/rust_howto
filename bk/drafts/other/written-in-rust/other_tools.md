@@ -38,11 +38,4 @@ Spacedrive is an open source cross-platform file explorer, powered by a virtual 
 
 <div class="hidden">
 [others: review/add](https://github.com/john-cd/rust_howto/issues/615)
-
-### `television` {#television}
-
-[![television][c-television-badge]][c-television] [![television-crates.io][c-television-crates.io-badge]][c-television-crates.io] [![television-github][c-television-github-badge]][c-television-github] [![television-lib.rs][c-television-lib.rs-badge]][c-television-lib.rs]{{hi:television}}{{hi:Fuzzy}}{{hi:Preview}}{{hi:Search}}{{hi:Terminal}}{{hi:Tui}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
-
-[`television`][c-television]⮳{{hi:television}} is a blazingly fast general purpose fuzzy finder TUI.
-
 </div>

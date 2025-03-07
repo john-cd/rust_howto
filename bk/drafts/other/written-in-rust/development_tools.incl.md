@@ -1,7 +1,7 @@
 ||
 |--------|
-| [Compilers][ex-written-in-rust-compilers] |
 | [`swc`][ex-written-in-rust-swc] |
+| [JavaScript tooling][ex-written-in-rust-javascript-tooling] |
 | [Code editors][ex-written-in-rust-code-editors] |
 | [`lapce`][ex-written-in-rust-lapce] |
 | [`zed`][ex-written-in-rust-zed] |
@@ -9,7 +9,4 @@
 
 <div class="hidden">
 FIXME
-
-| [JavaScript tooling][ex-written-in-rust-javascript-tooling] |
-
 </div>

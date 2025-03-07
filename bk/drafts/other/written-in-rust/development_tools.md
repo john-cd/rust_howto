@@ -2,9 +2,13 @@
 
 {{#include development_tools.incl.md}}
 
-## Compilers {#compilers}
+## JavaScript tooling {#javascript-tooling}
 
-### `swc` {#swc}
+- [Volta][volta-website]⮳[(github)][volta-github]⮳
+- [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
+- `Bun`
+
+### `swc` compiler {#swc}
 
 [![swc][c-swc-badge]][c-swc]{{hi:swc}}
 [![swc-crates.io][c-swc-crates.io-badge]][c-swc-crates.io]
@@ -12,6 +16,8 @@
 [![swc-lib.rs][c-swc-lib.rs-badge]][c-swc-lib.rs]
 
 [`swc` (github)][c-swc-github]⮳ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
+
+See also [[programming_languages | Programming Language]] parsers.
 
 ## Code editors {#code-editors}
 
@@ -36,21 +42,19 @@
 
 [`pantsbuild.org`][pantsbuild-website]⮳ {{hi:pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker.
 
+## Utilities {#utilities}
+
+[`television`][c-television]⮳{{hi:television}} is a blazingly fast general purpose fuzzy finder TUI.
+
+It integrates with your shell and lets you quickly search through any kind of data source (files, git repositories, environment variables, docker images, you name it) using a fuzzy matching algorithm.
+
+## Related Topics
+
+- [[programming_languages | Programming Language]] parsers.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development_tools: organize](https://github.com/john-cd/rust_howto/issues/612)
-add link to `swc_ecma_parser` example
-
-[[programming_languages | Programming Languages]]
-
-development_tools: find a spot for
-
-### JavaScript tooling {#javascript-tooling}
-
-- [Volta][volta-website]⮳[(github)][volta-github]⮳
-- [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
-- Bun
-
+[organize](https://github.com/john-cd/rust_howto/issues/612)
 </div>
