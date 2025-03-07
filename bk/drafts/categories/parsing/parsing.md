@@ -59,7 +59,8 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 <div class="hidden">
 [parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
 
-- combine
-- peg
+- `combine`
+- `peg`
+- `chumsky`
 
 </div>
