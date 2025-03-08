@@ -14,11 +14,11 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 
 [scraping][p-scraping]
 
-[[scraping]]
+- [[scraping]].
 
-[[scraping | Scraping]]
+- [[scraping | Scraping]].
 
-[[science_geo]]
+- [[science_geo]].
 
 
 ## Just the crate link
