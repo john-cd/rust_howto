@@ -6,16 +6,13 @@
 
 Optimizing Rust linking involves several strategies to reduce binary size and link time.
 
-ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
+- ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
+- Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p-cargo] tree.
+- Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p-generics] and using more compact data structures can help.
+- Linker Flags: Experiment with linker flags, but be careful and measure the impact.
+- Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
 
-Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p-cargo] tree.
-
-Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p-generics] and using more compact data structures can help.
-
-Linker Flags: Experiment with linker flags, but be careful and measure the impact.
-
-Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
-[[development-tools_profiling | Development Tools Profiling]]
+- [[development-tools_profiling | Development Tools Profiling]].
 
 ## `rustc` Configuration
 
@@ -64,7 +61,8 @@ Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove
 While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
 
 Incremental Linking: [Cargo][p-cargo]'s incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
-[[incremental_computation | Incremental Computation]]
+
+- [[incremental_computation | Incremental Computation]].
 
 ## Conditional Compilation
 
