@@ -48,7 +48,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 
-Creates a custom logger{{hi:Custom logger}} configuration with [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳
+Creates a custom logger{{hi:Custom logger}} configuration with [`env_logger::Builder`][c-env_logger::Builder]{{hi:env_logger::Builder}}⮳.
 Each [log][p-log] entry calls [`chrono::offset::Local::now`][c-chrono::offset::Local::now]{{hi:chrono::offset::Local::now}}⮳ to get the current [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ in local timezone and uses [`chrono::DateTime::format`][c-chrono::DateTime::format]{{hi:chrono::DateTime::format}}⮳ with [`chrono::format::strftime`][c-chrono::format::strftime]{{hi:chrono::format::strftime}}⮳ to format a timestamp used in the final log.
 
 The example calls [`env_logger::Builder::format`][c-env_logger::Builder::format]{{hi:env_logger::Builder::format}}⮳ to set a closure which formats each message text with timestamp, [`log::Record::level`][c-log::Record::level]{{hi:log::Record::level}}⮳ and body ([`log::Record::args`][c-log::Record::args]{{hi:log::Record::args}}⮳).
@@ -70,7 +70,7 @@ stderr output will contain
 
 [`log4rs`][c-log4rs]{{hi:log4rs}}⮳ configures log output to a custom location{{hi:Log output to a custom location}}. [`log4rs`][c-log4rs]{{hi:log4rs}}⮳ can use either an external YAML file or a builder configuration.
 
-Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file::FileAppender`][c-log4rs::append::file::FileAppender]{{hi:log4rs::append::file::FileAppender}}⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`log4rs::encode::pattern`][c-log4rs::encode::pattern]{{hi:log4rs::encode::pattern}}⮳ Assigns the configuration to [`log4rs::config::Config`][c-log4rs::config::Config]{{hi:log4rs::config::Config}}⮳ and sets the default [`log::LevelFilter`][c-log::LevelFilter]{{hi:log::LevelFilter}}⮳
+Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file::FileAppender`][c-log4rs::append::file::FileAppender]{{hi:log4rs::append::file::FileAppender}}⮳ An appender defines the logging destination. The configuration continues with encoding using a custom pattern from [`log4rs::encode::pattern`][c-log4rs::encode::pattern]{{hi:log4rs::encode::pattern}}⮳ Assigns the configuration to [`log4rs::config::Config`][c-log4rs::config::Config]{{hi:log4rs::config::Config}}⮳ and sets the default [`log::LevelFilter`][c-log::LevelFilter]{{hi:log::LevelFilter}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_custom.rs:example}}

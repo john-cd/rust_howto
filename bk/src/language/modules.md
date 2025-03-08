@@ -24,7 +24,7 @@ Items in a parent module can't use the private items{{hi:Private items}} inside 
 
 [![book-rust-by-example-visibility-rules][book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
 
-[A clear explanation of Rust's module system][rust-module-system-website]⮳
+[A clear explanation of Rust's module system][rust-module-system-website]⮳.
 
 ## `use` keyword {#use-keyword}
 

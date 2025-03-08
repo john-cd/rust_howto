@@ -6,7 +6,7 @@
 
 The [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ attribute{{hi:Attributes}} generates code that will implement a trait with its own default implementation{{hi:Default implementation}} on the type you've annotated with the derive syntax.
 
-[Derivable traits][book-rust-derivable-traits]{{hi:Derivable traits}}⮳
+[Derivable traits][book-rust-derivable-traits]{{hi:Derivable traits}}⮳.
 
 ```rust,editable,editable
 {{#include ../../crates/standard_library/tests/other/derive.rs:example}}

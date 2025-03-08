@@ -45,7 +45,7 @@ The [`flume`][c-flume]⮳{{hi:flume}} crate is a library that provides multiple-
 
 ## See also
 
-[Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳
+[Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

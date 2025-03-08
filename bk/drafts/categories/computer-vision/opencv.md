@@ -10,7 +10,7 @@
 [![opencv-lib.rs][c-opencv-lib.rs-badge]][c-opencv-lib.rs]
 [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]
 
-[OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳
+See also [OpenCV (example)][c-opencv-example]{{hi:opencv}}⮳.
 
 'OpenCV' (Open Source Computer Vision Library) is a widely-used open-source library for computer vision, [machine learning][p-machine-learning], and image processing. It provides a comprehensive set of tools and algorithms for various tasks, including:
 

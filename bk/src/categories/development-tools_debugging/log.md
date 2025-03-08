@@ -44,7 +44,7 @@ Proper [error handling][p-error-handling]{{hi:Error handling}} considers excepti
 
 [`env_logger`][c-env_logger]⮳{{hi:env_logger}}
 
-Creates a custom logger [configuration][p-configuration]{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳
+Creates a custom logger [configuration][p-configuration]{{hi:Custom logger configuration}} using the [`env_logger::Builder::target`][c-env_logger::Builder::target]{{hi:env_logger::Builder::target}}⮳ to set the target of the log output to [`env_logger::fmt::Target`][c-env_logger::fmt::Target]{{hi:env_logger::fmt::Target}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_stdout.rs:example}}

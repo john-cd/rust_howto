@@ -60,7 +60,7 @@
 | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket]{{hi:WebSocket}} | Crates to communicate over the WebSocket protocol. | [![actix-web][c-actix_web-badge]][c-actix_web]{{hi:actix-web}} |
 | [![cat-os::windows-apis][cat-os::windows-apis-badge]][cat-os::windows-apis]{{hi:Windows APIs}} | Bindings to Windows-specific APIs. | [![windows][c-windows-badge]][c-windows]{{hi:windows}} |
 
-[All Valid Categories][crates.io-category_slugs]⮳
+[All Valid Categories][crates.io-category_slugs]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -2,7 +2,7 @@
 
 {{#include rust_install.incl.md}}
 
-[Install Rust][rust-install-rust]{{hi:Rust installation}}⮳
+[Install Rust][rust-install-rust]{{hi:Rust installation}}⮳.
 
 ## Install Rust and create a first project {#rust-install}
 

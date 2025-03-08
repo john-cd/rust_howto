@@ -14,8 +14,7 @@ or older resources, such as:
 
 - [Rust starter pack][rust-starter-pack]{{hi:Rust starter pack}}⮳.
 - [![stdx][c-stdx-github-badge]][c-stdx-github]{{hi:stdx}}.
-
-[Best of Rust crates][best-of-rust-crates]
+- [Best of Rust crates][best-of-rust-crates].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

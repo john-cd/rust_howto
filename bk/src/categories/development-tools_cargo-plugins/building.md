@@ -24,7 +24,7 @@ cargo install --force cargo-make
 cargo make --version
 ```
 
-[automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]⮳
+[automating-your-rust-workflows-with-cargo-make][c-cargo_make-blog]⮳.
 
 ## `cargo xtask` {cargo-xtask}
 

@@ -23,7 +23,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 
 ## Just the crate link
 
-[`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳
+[`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳.
 
 {{c: xyz}}
 

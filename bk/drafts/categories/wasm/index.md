@@ -37,13 +37,13 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 
 ## See also
 
-[Rust and WebAssembly (book)][book-rustwasm]{{hi:WASM}}⮳
+[Rust and WebAssembly (book)][book-rustwasm]{{hi:WASM}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/970)
-Browser-based Execution
-Node.js with WASM
+Browser-based Execution.
+Node.js with WASM.
 </div>

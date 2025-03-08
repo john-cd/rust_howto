@@ -38,7 +38,7 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 
 ## See also
 
-[The rustdoc book][book-rustdoc]{{hi:rustdoc}}⮳
+[The rustdoc book][book-rustdoc]{{hi:rustdoc}}⮳.
 
 [`docs.rs`][docs-rs]{{hi:docs.rs}}⮳: open-source documentation{{hi:Documentation}} host for Rust crates.
 

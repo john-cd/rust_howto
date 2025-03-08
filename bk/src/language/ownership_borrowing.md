@@ -20,7 +20,7 @@ When the owner goes out of scope{{hi:Scope}}, the value will be dropped.
 {{#include ../../crates/language/tests/feat/ownership2.rs:example}}
 ```
 
-Rust will never automatically create deep copies of your data. Use [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳
+Rust will never automatically create deep copies of your data. Use [`std::clone::Clone`][c-std::clone::Clone]{{hi:std::clone::Clone}}⮳.
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/clone.rs:example}}

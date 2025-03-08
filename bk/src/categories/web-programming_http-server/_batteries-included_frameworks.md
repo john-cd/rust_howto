@@ -18,11 +18,11 @@
 
 ## Rust on Nails {#rust-on-nails}
 
-[Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳
+[Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳.
 
 ## See also
 
-[Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-and-next-js]⮳
+[Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-and-next-js]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -10,7 +10,7 @@
 
 [`candle`][c-candle_core]⮳{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural network.
 
-[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳
+[Candle: a minimalist machine learning framework for rust that focuses on performance including GPU support and ease of use][blog-candle]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/tests/ml/candle.rs:example}}

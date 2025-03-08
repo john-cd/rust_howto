@@ -21,7 +21,7 @@ dyn Trait + 'static
 
 ## See also
 
-[Trait Objects (docs)][book-rust-trait-objects]{{hi:Trait objects}}⮳
+[Trait Objects (docs)][book-rust-trait-objects]{{hi:Trait objects}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

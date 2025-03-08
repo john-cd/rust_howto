@@ -20,7 +20,7 @@ mdbook serve --open
 
 [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳
+[Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳.
 
 ## Augment `mdbook` with plugins {#skip1}
 
@@ -93,7 +93,7 @@ jobs:
 <div class="hidden">
 [mdbook: organize, expand (P1)](https://github.com/john-cd/rust_howto/issues/299)
 
-[mdslides][mdslides]
+- [mdslides][mdslides]
 
 [mdslides]: https://github.com/ferrous-systems/mdslides
 

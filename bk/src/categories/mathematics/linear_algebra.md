@@ -43,7 +43,7 @@ Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
-Creates a 1-D array (vector) with [`ndarray::arr1`][c-ndarray::arr1]{{hi:ndarray::arr1}}⮳ and a 2-D array (matrix) with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳
+Creates a 1-D array (vector) with [`ndarray::arr1`][c-ndarray::arr1]{{hi:ndarray::arr1}}⮳ and a 2-D array (matrix) with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}⮳.
 
 First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with `ndarray::Array2::dot`⮳ (Matrix multiplication is performed using `ndarray::Array2::dot`⮳, while the `*` operator performs element-wise multiplication.)
 

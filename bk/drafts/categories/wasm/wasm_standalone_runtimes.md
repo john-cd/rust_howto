@@ -84,7 +84,7 @@ rustc hello.rs --target wasm32-wasip1
 wasmtime hello.wasm
 ```
 
-[docs.wasmtime.dev][c-wasmtime-docs]⮳
+[docs.wasmtime.dev][c-wasmtime-docs]⮳.
 
 The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
 
@@ -100,7 +100,7 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 
 ## See also
 
-[rustwasm.github.io][rustwasm-website]{{hi:rustwasm}}⮳
+[rustwasm.github.io][rustwasm-website]{{hi:rustwasm}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

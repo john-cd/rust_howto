@@ -8,9 +8,9 @@ In Rust, a library or executable program is called a crate{{hi:Crate}}. Crates a
 
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
-The Rust community's crate registry: [`crates.io`][crates.io-website]{{hi:crates.io}}⮳
+The Rust community's crate registry: [`crates.io`][crates.io-website]{{hi:crates.io}}⮳.
 
-Alternative to [`crates.io`][crates.io-website]⮳{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳
+Alternative to [`crates.io`][crates.io-website]⮳{{hi:crates.io}}: [`lib.rs`][lib-rs]{{hi:lib.rs}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

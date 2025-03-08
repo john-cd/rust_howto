@@ -2,7 +2,7 @@
 
 {{#include other_frameworks.incl.md}}
 
-[Rust web framework comparison][rust-web-framework-comparison-github]⮳
+[Rust web framework comparison][rust-web-framework-comparison-github]⮳.
 
 ## Implement a HTTP server using `rocket` {#rocket}
 
@@ -16,7 +16,7 @@
 
 [![rocket-realworld-example][rocket-realworld-example-badge]][rocket-realworld-example]{{hi:rocket}}
 
-[Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳
+[Rust + Rocket RealWorld framework implementation][rocket-realworld-example]⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/tests/rocket.rs:example}}

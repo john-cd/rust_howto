@@ -97,11 +97,10 @@ While primarily for window creation, [`winit`][c-winit]⮳{{hi:winit}} is often 
 - [[web-programming | Web Programming]].
 - [[web-programming_http-server | Web Programming: HTTP Server]].
 
-## See also
+## References
 
-Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳
-
-[Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][client-side-server-with-rust]⮳
+- Turn any webpage into a desktop app with Rust [Pake][pake-github]⮳.
+- [Logan Keenan - Client-Side Server with Rust- A New Approach to UI Development][client-side-server-with-rust]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

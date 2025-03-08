@@ -20,9 +20,9 @@
 
 ## Write Rust code with VS Code {#vs-code}
 
-[Rust plugin for VS Code][rust-analyzer-plugin]{{hi:Rust analyzer}}⮳
+[Rust plugin for VS Code][rust-analyzer-plugin]{{hi:Rust analyzer}}⮳.
 
-[`rust-analyzer`][rust-analyzer-website]⮳
+[`rust-analyzer`][rust-analyzer-website]⮳.
 
 ## Write Rust code with the `zed` editor {#zed}
 
@@ -36,7 +36,7 @@
 
 ## See also
 
-[Six IDEs built for Rust][blog-6-ides-built-for-rust]⮳
+[Six IDEs built for Rust][blog-6-ides-built-for-rust]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

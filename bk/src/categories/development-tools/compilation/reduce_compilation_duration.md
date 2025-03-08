@@ -81,7 +81,7 @@ cargo add-dynamic polars --features csv-file,lazy,list,describe,rows,fmt,strings
 cargo build
 ```
 
-[Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳
+[Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳.
 
 ## Compile incrementally {#incremental-compilation}
 

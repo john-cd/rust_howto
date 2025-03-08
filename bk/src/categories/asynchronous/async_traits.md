@@ -10,7 +10,7 @@ As of Rust 1.75, it is possible to have [`async`][book-rust-reference-async]{{hi
 {{#include ../../../crates/cats/asynchronous/tests/async_traits/async_traits.rs:example}}
 ```
 
-[Stabilizing [async][p-async] fn in traits in 2023][blog-stabilizing-async-fn-in-traits]⮳
+[Stabilizing [async][p-async] fn in traits in 2023][blog-stabilizing-async-fn-in-traits]⮳.
 
 This is in turn enabled by return-position `impl Trait` in [traits][p-traits]{{hi:Return-position `impl Trait` in traits}}, since `async fn`{{hi:async fn}} is sugar for functions that return `-> impl Future`.
 

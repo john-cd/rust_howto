@@ -17,7 +17,7 @@ Roogle is a Rust API [search][p-search] engine, which allows you to [search][p-s
 
 ## Minimize Rust binary sizes {#binary-minimizer}
 
-[How to minimize Rust binary size][min-sized-rust-github]⮳
+[How to minimize Rust binary size][min-sized-rust-github]⮳.
 
 By default, Rust optimizes for execution speed, compilation speed, and ease of debugging. This approach is suitable for most applications, as it balances [performance][p-performance] and developer productivity. However, in specific scenarios where binary size is a critical concern (e.g., embedded systems or deployment to constrained environments), Rust offers mechanisms to optimize for smaller binary sizes.
 
@@ -27,7 +27,7 @@ cargo build --release
 
 ## Generate Rust code {#code-generators}
 
-[Top artificial intelligence tools that can generate code to help programmers][blog-ai-tools-that-can-generate-code]⮳
+[Top artificial intelligence tools that can generate code to help programmers][blog-ai-tools-that-can-generate-code]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

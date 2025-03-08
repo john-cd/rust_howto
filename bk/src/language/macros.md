@@ -2,7 +2,7 @@
 
 {{#include macros.incl.md}}
 
-[Rust reference - Macros][book-rust-reference-macros]⮳
+[Rust reference - Macros][book-rust-reference-macros]⮳.
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/macros.rs:example}}

@@ -21,7 +21,7 @@ Assistive technology that helps overcome disabilities and impairments to make so
 - Color Contrast: Checking ratios, good/bad examples.
 - Keyboard Navigation: Tab order, focus indicators.
 
-See
+See:
 
 - [[web-programming | Web Programming]].
 - [[web-programming_http-server | HTTP Server]].
@@ -29,9 +29,9 @@ See
 
 ## Accessible CLIs
 
-Clear output, screen reader support. [[command-line-interface | Command Line Interface]]
+Clear output, screen reader support. See [[command-line-interface | Command Line Interface]].
 
-`termcolor` (terminal styling), `crossterm` (terminal manipulation).
+- `termcolor` (terminal styling), `crossterm` (terminal manipulation).
 
 See [[command-line-interface | Command Line Interface]].
 

@@ -151,7 +151,7 @@ while let Some(todo) = todos.next().await {
 
 [![sea-orm][c-sea_orm-badge]][c-sea_orm]{{hi:sea-orm}} [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website] [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
-[Seaography GraphQL server][c-seaography-website]{{hi:seaography}}⮳
+[Seaography GraphQL server][c-seaography-website]{{hi:seaography}}⮳.
 
 Built on top of [`sqlx`][c-sqlx]⮳{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
 

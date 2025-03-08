@@ -8,7 +8,7 @@
 
 Similar to the Pandas library in Python but in pure Rust. Uses the {{i:Apache Arrow}} Columnar Format as the memory model.
 
-[docs.pola.rs][c-polars-docs]⮳
+[docs.pola.rs][c-polars-docs]⮳.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/data_processing/polars.rs:example}}

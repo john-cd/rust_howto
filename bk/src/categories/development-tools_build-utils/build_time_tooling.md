@@ -107,7 +107,7 @@ int multiply(int x, int y) {
 
 [`cc`][c-cc]⮳{{hi:cc}}
 
-It is simple to build bundled C code with custom defines using [`cc::Build::define`][c-cc::Build::define]{{hi:cc::Build::define}}⮳
+It is simple to build bundled C code with custom defines using [`cc::Build::define`][c-cc::Build::define]{{hi:cc::Build::define}}⮳.
 The method takes an [`std::option::Option`][c-std::option::Option]{{hi:std::option::Option}}⮳ value, so it is possible to create defines such as `#define APP_NAME "foo"`
 as well as `#define WELCOME` (pass [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ as the value for a value-less define). This example builds
 a bundled C file with dynamic defines set in `build.rs` and prints "`Welcome to foo - version 1.0.2`"
@@ -154,5 +154,5 @@ void print_app_info() {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/921)
+[review](https://github.com/john-cd/rust_howto/issues/921)
 </div>

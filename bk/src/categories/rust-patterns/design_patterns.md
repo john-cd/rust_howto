@@ -4,7 +4,7 @@
 
 ## Implement an abstract factory {#abstract-factory}
 
-[abstract-factory in rust][abstract-factory-in-rust-website]⮳
+[abstract-factory in rust][abstract-factory-in-rust-website]⮳.
 
 ## Clone a struct storing a boxed trait object {#dyn-clone}
 
@@ -30,6 +30,7 @@ The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` tr
 ## Implement the typestate pattern in Rust {#typestate-pattern}
 
 The typestate pattern is an API design pattern that encodes information about an object's run-time state in its compile-time type.
-[typestate pattern][blog-typestate-pattern]
+
+- [typestate pattern][blog-typestate-pattern].
 
 </div>

@@ -24,7 +24,7 @@ Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite-githu
 },
 ```
 
-and the following to the [`Dockerfile`][dockerfile]{{hi:Dockerfile}}⮳
+and the following to the [`Dockerfile`][dockerfile]{{hi:Dockerfile}}⮳.
 
 ```Dockerfile
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y firefox-esr

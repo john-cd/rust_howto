@@ -76,13 +76,13 @@ Leverage existing robotics libraries (often written in C++, Python, or other lan
 
 ## See also
 
-[![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳
+[![robotics.rs][robotics-rs-website-badge]][robotics-rs-website] [robotics.rs][robotics-rs-website]⮳..
 
 [Robotics (lib.rs)][robotics-lib.rs]⮳ [![cat-science::robotics][cat-science::robotics-badge]][cat-science::robotics]{{hi:Robotics}}
 
-[Why rust for robots][why-rust-for-robots]⮳
+[Why rust for robots][why-rust-for-robots]⮳.
 
-[Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳
+[Linux embracing Rust will boost robotics community][linux-embracing-rust-will-boost-robotics-community]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

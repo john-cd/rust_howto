@@ -15,7 +15,7 @@
 
 ## See also
 
-[Iterators][book-rust-iterators]{{hi:iterators}}⮳
+[Iterators][book-rust-iterators]{{hi:iterators}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

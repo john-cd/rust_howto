@@ -6,7 +6,7 @@
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}{{hi:Elapsed time}}
 
-Measures [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::time::Instant::elapsed}}⮳ since [`std::time::Instant::now`][c-std::time::Instant::now]{{hi:std::time::Instant::now}}⮳
+Measures [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::time::Instant::elapsed}}⮳ since [`std::time::Instant::now`][c-std::time::Instant::now]{{hi:std::time::Instant::now}}⮳.
 
 Calling [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::time::Instant::elapsed}}⮳ returns a [`std::time::Duration`][c-std::time::Duration]{{hi:std::time::Duration}}⮳ that we print at the end of the example. This method will not mutate or reset the [`std::time::Instant`][c-std::time::Instant]{{hi:std::time::Instant}}⮳ object.
 
@@ -18,7 +18,7 @@ Calling [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Calculates and displays the [date and time][p-date-and-time]{{hi:Date and time}} two weeks from now using [`chrono::Date::checked_add_signed`][c-chrono::Date::checked_add_signed]{{hi:chrono::Date::checked_add_signed}}⮳ and the date of the day before that using [`chrono::Date::checked_sub_signed`][c-chrono::Date::checked_sub_signed]{{hi:chrono::Date::checked_sub_signed}}⮳
+Calculates and displays the [date and time][p-date-and-time]{{hi:Date and time}} two weeks from now using [`chrono::Date::checked_add_signed`][c-chrono::Date::checked_add_signed]{{hi:chrono::Date::checked_add_signed}}⮳ and the date of the day before that using [`chrono::Date::checked_sub_signed`][c-chrono::Date::checked_sub_signed]{{hi:chrono::Date::checked_sub_signed}}⮳.
 
 The methods return None if the [date and time][p-date-and-time] cannot be calculated.
 

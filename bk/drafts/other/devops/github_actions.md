@@ -34,7 +34,7 @@ GitHub Action for installing [development tools][p-development-tools] (mainly fr
 
 ## Cache your compilation {#compilation-caching}
 
-[`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳
+[`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳.
 
 [![rust-cache][c-rust_cache-badge]][c-rust_cache]{{hi:rust-cache}}
 [![rust-cache-crates.io][c-rust_cache-crates.io-badge]][c-rust_cache-crates.io]

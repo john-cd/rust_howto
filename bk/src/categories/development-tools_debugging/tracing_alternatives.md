@@ -71,7 +71,7 @@ fn [main][p-main]() {
 
 ### `OpenTelemetry` {#open-telemetry}
 
-[OpenTelemetry Rust [documentation][p-documentation]][opentelemetry-rust]⮳
+[OpenTelemetry Rust [documentation][p-documentation]][opentelemetry-rust]⮳.
 
 `OpenTelemetry`
 

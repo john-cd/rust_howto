@@ -10,7 +10,7 @@
 {{#include ../../../crates/cats/text_processing/tests/string_concat.rs:example}}
 ```
 
-[String concatenation benchmark][concat-benchmark-github]⮳
+[String concatenation benchmark][concat-benchmark-github]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

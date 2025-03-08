@@ -24,7 +24,7 @@ Use [`std::env`][c-std::env::var]⮳{{hi:std::env}} to retrieve a single environ
 {{#include ../../../crates/cats/config/tests/env/env.rs:example}}
 ```
 
-[Working with environment variables in Rust][blog-working-with-env-variables]⮳
+[Working with environment variables in Rust][blog-working-with-env-variables]⮳.
 
 ## `envy` {#envy}
 

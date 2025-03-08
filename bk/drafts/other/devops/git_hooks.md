@@ -31,7 +31,7 @@ cargo test
 
 [`pre-commit`][pre-commit.com-website]⮳ is a Python framework for managing and maintaining multi-language pre-commit hooks.
 
-[`pre-commit` hooks][pre-commit.com-hooks-website]
+- [`pre-commit` hooks][pre-commit.com-hooks-website].
 
 `pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]⮳{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
 
@@ -71,11 +71,9 @@ TODO
 
 ## Useful links
 
-[Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling]
-
-[`pre-commit-rust`][pre-commit-rust-github]
-
-[A pre-commit hook for commitlint][commitlint-pre-commit-hook-github]
+- [Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling].
+- [`pre-commit-rust`][pre-commit-rust-github].
+- [A pre-commit hook for commitlint][commitlint-pre-commit-hook-github].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

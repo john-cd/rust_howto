@@ -39,7 +39,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 {{#include ../../../crates/cats/encoding/tests/csv/filter.rs:example}}
 ```
 
-This example has been adapted from [the `csv` crate tutorial][c-csv-tutorial]⮳
+This example has been adapted from [the `csv` crate tutorial][c-csv-tutorial]⮳.
 
 ## Handle invalid CSV data with `serde` {#handle-invalid-csv}
 

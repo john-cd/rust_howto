@@ -6,7 +6,7 @@
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}
 
-Gets the current UTC [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ and its hour/minute/second{{hi:Hour/minute/second}} via [`chrono::Timelike`][c-chrono::Timelike]{{hi:chrono::Timelike}}⮳ and its year/month/day/weekday{{hi:year/month/day/weekday}} via [`chrono::Datelike`][c-chrono::Datelike]{{hi:chrono::Datelike}}⮳
+Gets the current UTC [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTime}}⮳ and its hour/minute/second{{hi:Hour/minute/second}} via [`chrono::Timelike`][c-chrono::Timelike]{{hi:chrono::Timelike}}⮳ and its year/month/day/weekday{{hi:year/month/day/weekday}} via [`chrono::Datelike`][c-chrono::Datelike]{{hi:chrono::Datelike}}⮳.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/tests/chrono/current.rs:example}}
@@ -16,7 +16,7 @@ Gets the current UTC [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTi
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
-Converts a date{{hi:date}} given by [`chrono::naive::NaiveDate::from_ymd`][c-chrono::naive::NaiveDate::from_ymd]{{hi:chrono::naive::NaiveDate::from_ymd}}⮳ and [`chrono::naive::NaiveTime::from_hms`][c-chrono::naive::NaiveTime::from_hms]{{hi:chrono::naive::NaiveTime::from_hms}}⮳ to [UNIX time stamp][wikipedia-unix-timestamp]⮳ using [`chrono::naive::NaiveDateTime::timestamp`][c-chrono::naive::NaiveDateTime::timestamp]{{hi:chrono::naive::NaiveDateTime::timestamp}}⮳
+Converts a date{{hi:date}} given by [`chrono::naive::NaiveDate::from_ymd`][c-chrono::naive::NaiveDate::from_ymd]{{hi:chrono::naive::NaiveDate::from_ymd}}⮳ and [`chrono::naive::NaiveTime::from_hms`][c-chrono::naive::NaiveTime::from_hms]{{hi:chrono::naive::NaiveTime::from_hms}}⮳ to [UNIX time stamp][wikipedia-unix-timestamp]⮳ using [`chrono::naive::NaiveDateTime::timestamp`][c-chrono::naive::NaiveDateTime::timestamp]{{hi:chrono::naive::NaiveDateTime::timestamp}}⮳.
 
 Then it calculates what was the date after one billion seconds since January 1, 1970 0:00:00 UTC, using [`chrono::naive::NaiveDateTime::from_timestamp`][c-chrono::naive::NaiveDateTime::from_timestamp]{{hi:chrono::naive::NaiveDateTime::from_timestamp}}⮳.
 

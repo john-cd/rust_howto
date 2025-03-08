@@ -80,11 +80,11 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 ## Async and traits {#async-and-traits}
 
-See [Async][p-async]⮳
+See [Async][p-async]⮳.
 
 ## See also
 
-[Traits (blog)][blog-traits]⮳
+[Traits (blog)][blog-traits]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

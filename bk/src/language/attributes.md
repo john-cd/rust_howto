@@ -57,7 +57,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 ## Compile conditionally {#conditional-compilation}
 
-[Conditional compilation][book-rust-reference-conditional-compilation]⮳
+[Conditional compilation][book-rust-reference-conditional-compilation]⮳.
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/conditional_compilation.rs:example}}
@@ -79,7 +79,7 @@ A macro to ergonomically define an item depending on a large number of #[cfg] pa
 
 ## References
 
-- [Attributes reference][book-rust-reference-attributes]⮳
+- [Attributes reference][book-rust-reference-attributes]⮳.
 - [![Rust by example - attributes][book-rust-by-example-attributes-badge]][book-rust-by-example-attributes]
 
 {{#include refs.incl.md}}

@@ -4,7 +4,7 @@
 
 ## Use Rust for serverless computing {#serverless-computing}
 
-[Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳
+[Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳.
 
 ## Use the `dapr` distributed runtime {#dapr}
 

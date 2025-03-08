@@ -14,6 +14,7 @@
 <div class="hidden">
 [slices: add text (P1)](https://github.com/john-cd/rust_howto/issues/558)
 
-[`slice::sort_by`][primitive-slice::sort_by]
-[`slice::split_at`][primitive-slice::split_at]
+- [`slice::sort_by`][primitive-slice::sort_by].
+- [`slice::split_at`][primitive-slice::split_at].
+
 </div>

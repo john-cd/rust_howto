@@ -58,7 +58,7 @@ docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --b
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
-[Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳
+[Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳.
 
 ### Push image to Docker Hub {#push-image-to-docker-hub}
 

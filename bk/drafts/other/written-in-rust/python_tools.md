@@ -23,7 +23,7 @@ conda install rustpython -c conda-forge
 
 ## `pyOxidizer` {#pyoxidizer}
 
-[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳
+[![pyOxidizer][c-pyoxidizer-badge]][c-pyoxidizer-github]{{hi:pyOxidizer}}⮳.
 
 [`pyOxidizer`][c-pyoxidizer]⮳{{hi:pyOxidizer}} is a utility for producing binaries that embed Python.
 
@@ -33,14 +33,14 @@ conda install rustpython -c conda-forge
 
 ## `Ruff` {#ruff}
 
-[Ruff][c-ruff]{{hi:ruff}}⮳
+[Ruff][c-ruff]{{hi:ruff}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 ## `uv` {#uv}
 
-[`uv`][uv-github]{{hi:uv}}⮳
+[`uv`][uv-github]{{hi:uv}}⮳.
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)

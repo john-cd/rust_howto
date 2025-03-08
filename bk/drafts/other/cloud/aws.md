@@ -2,7 +2,7 @@
 
 {{#include aws.incl.md}}
 
-[AWS rust][blog-sustainability-with-rust]⮳
+[AWS rust][blog-sustainability-with-rust]⮳.
 
 At AWS, Rust has quickly become critical to building infrastructure at scale. `Firecracker` is an open source [virtualization][p-virtualization] technology that powers AWS Lambda and other serverless offerings.
 
@@ -10,9 +10,9 @@ At AWS, Rust has quickly become critical to building infrastructure at scale. `F
 
 Call AWS services using idiomatic Rust [APIs][p-apis].
 
-[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳
+[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
 
-[AWS SDK examples][aws-doc-sdk-examples-github]⮳
+[AWS SDK examples][aws-doc-sdk-examples-github]⮳.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/cloud/aws_sdk.rs:example}}
@@ -20,13 +20,13 @@ Call AWS services using idiomatic Rust [APIs][p-apis].
 
 ## Implement Lambda functions in Rust {#lambda}
 
-[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳
+[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
 
 Use the AWS SDK from within a Lambda function:
 
-[Create Lambda functions with Rust][aws-create-lambda-functions-with-rust]⮳
+[Create Lambda functions with Rust][aws-create-lambda-functions-with-rust]⮳.
 
-[AWS Lambda Rust runtime examples][aws-lambda-rust-runtime-examples-github]⮳
+[AWS Lambda Rust runtime examples][aws-lambda-rust-runtime-examples-github]⮳.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/cloud/aws_lambda.rs:example}}

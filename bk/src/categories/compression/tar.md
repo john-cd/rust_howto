@@ -18,7 +18,7 @@ Decompress ([`flate2::read::GzDecoder`][c-flate2::read::GzDecoder]{{hi:flate2::r
 
 Compress `/var/log` directory into `archive.tar.gz`.
 
-Creates a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ wrapped in [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ and [`tar::Builder`][c-tar::Builder]{{hi:tar::Builder}}⮳
+Creates a [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ wrapped in [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ and [`tar::Builder`][c-tar::Builder]{{hi:tar::Builder}}⮳.
 
 Adds contents of `/var/log` directory recursively into the archive under `backup/logs`path with [`tar::Builder::append_dir_all`][c-tar::Builder::append_dir_all]{{hi:tar::Builder::append_dir_all}}⮳. [`flate2::write::GzEncoder`][c-flate2::write::GzEncoder]{{hi:flate2::write::GzEncoder}}⮳ is responsible for transparently compressing the data prior to writing it into `archive.tar.gz`.
 

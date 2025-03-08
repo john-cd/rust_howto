@@ -32,7 +32,7 @@ Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-
 {{#include ../../crates/standard_library/tests/strings3.rs:example}}
 ```
 
-Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳
+Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 
 ## Related data structures
 
