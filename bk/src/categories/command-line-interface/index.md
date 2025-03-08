@@ -39,7 +39,7 @@ Techniques to help create command line interfaces{{hi:Command-line interface}}, 
 ## References
 
 - [Command Line Applications in Rust (book)][book-rust-cli]⮳.
-- Lonk to the [Code][book-command-line-rust-github]⮳ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
+- Look to the [Code][book-command-line-rust-github]⮳ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
