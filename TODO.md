@@ -2,18 +2,15 @@
 
 ## Manually insert rest of cross-links WIP
 
+- src: WIP
+
 ## Finish pandoc setup; generate PDF version of book
 
 ## Incoporate the added text in `categories` WIP
 
 - drafts: Finish
-  - Graphics
-  - Rendering
-  - GUI
-  - Internationalization
   - Containers
-  - WASM?
-  - compilers
+  - WASM
   - development tools: FFI - reorg. with other FFI topics
 
 - src: TODO
@@ -24,6 +21,13 @@
 - standard library
 - links
 - other
+  - Cloud
+  - cross-platform
+  - data proc
+  - devops
+  - gpu
+  - scripting
+  - written in rust
 - crates
 - contributing
 

@@ -3,7 +3,7 @@
 ## Define Objectives and Requirements
 
 - Identify the purpose of the project (e.g., web service, embedded system, CLI tool, etc.).
-  - Web Applications: Frameworks like Actix-web, Rocket, or Axum.
+  - Web Applications: Frameworks like Actix-web, `rocket`, or `axum`.
   - CLI Tools: Building command-line utilities with `clap` or `structopt`.
   - Embedded Systems: Leveraging Rust's low-level control for IoT devices.
 
