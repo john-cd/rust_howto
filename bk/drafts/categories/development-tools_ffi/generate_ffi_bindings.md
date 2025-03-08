@@ -1,8 +1,8 @@
-# Generate FFI bindings to C or C++ code
+# Generate Foreign Function Interface (FFI) bindings to C or C++ code
 
 {{#include generate_ffi_bindings.incl.md}}
 
-## `bindgen` {#bindgen}
+## Generate Rust code that calls into C libraries with `bindgen` {#bindgen}
 
 [![bindgen][c-bindgen-badge]][c-bindgen]{{hi:bindgen}}
 [![bindgen-crates.io][c-bindgen-crates.io-badge]][c-bindgen-crates.io]
@@ -11,13 +11,13 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-[`bindgen`][c-bindgen]⮳{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries.
+[`bindgen`][c-bindgen]⮳{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries. It creates Rust code allowing you to call into a C library's functions and use its types.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/bindgen.rs:example}}
 ```
 
-## `cbindgen` {#cbindgen}
+## Generates C header files from Rust code with `cbindgen` {#cbindgen}
 
 [![cbindgen][c-cbindgen-badge]][c-cbindgen]{{hi:cbindgen}}
 [![cbindgen-crates.io][c-cbindgen-crates.io-badge]][c-cbindgen-crates.io]
@@ -26,7 +26,7 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-external-ffi-bindings][cat-external-ffi-bindings-badge]][cat-external-ffi-bindings]{{hi:External FFI bindings}}
 
-[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} generates C bindings to Rust libraries.
+[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} generates C bindings to Rust libraries, making Rust [functions][p-functions] callable from C/C++.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/cbindgen.rs:example}}
@@ -42,17 +42,13 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-[`cxx`][c-cxx]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides.
+[`cxx`][c-cxx]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. `cxx` handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
+
+While tools like 'SWIG' exist, `cxx` is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/cpp/cxx.rs:example}}
 ```
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
 
 ## `uniffi` {#uniffi}
 
@@ -64,41 +60,27 @@
 {{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}
 ```
 
-## Foreign Function Interface (FFI)
+## FFI Caveats
 
-std::ffi: Provides the core tools for working with FFI, including types like CString, CStr, and raw pointers.
-libc: Provides definitions for standard C library functions and types.
+- FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
+- Memory Management across FFI boundaries requires careful consideration. It often involves using `Box::into_raw` and `Box::from_raw` to transfer ownership of memory between Rust and C.
+- Error Handling across FFI boundaries often involves returning error codes or using `Result` types and converting them to C-compatible representations.
 
-## C Header Generation
+## Related Topics
 
-cbindgen: Generates C header files from Rust code, which is essential for making Rust [functions][p-functions] callable from C/C++.
+### C / C++ Build Integration
 
-## C++ Interoperability
+`cc` helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
-cxx: A safe and ergonomic way to interact with C++ code. Handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
+### Utilities
 
-## Build Integration
+- `std::ffi` provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
+  - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust strings and C strings.
+- [`libc`][c-libc]⮳{{hi:libc}} provides access to the standard C library.
 
-cc: A crate that helps with compiling C/C++ code within your Rust build script (build.rs). This is often necessary when working with FFI or C++ bindings.
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
-## Memory Management
-
-(Requires careful attention when crossing the FFI boundary. Often involves using Box::into_raw and Box::from_raw to transfer ownership of memory.)
-
-## String Conversion
-
-std::ffi::CString, std::ffi::CStr: For converting between Rust [strings][p-strings] and C/C++ strings.
-
-## Error Handling
-
-(Requires careful design to handle errors across the FFI boundary. Often involves returning error codes or using Result types and converting them to C-compatible representations.)
-
-## Unsafe Code
-
-FFI code often requires unsafe blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
-
-## Binding Generators (for C++)
-
-While tools like SWIG exist, `cxx` is generally preferred for modern C++ interop with Rust as it's more idiomatic and safer.
-
+<div class="hidden">
+[generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
 </div>
