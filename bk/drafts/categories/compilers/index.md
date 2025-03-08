@@ -2,7 +2,7 @@
 
 Compiler{{hi:Compilers}} implementations, including interpreters{{hi:Interpreters}} and transpilers{{hi:Transpilers}}.
 
-Tools for programming languages: compilers, interpreters, transpilers, and virtual machines
+Tools for programming languages: compilers, interpreters, transpilers, and virtual machines.
 
 ## Write Compilers
 
@@ -16,9 +16,50 @@ TODO
 
 ### Interpreters
 
+TODO
+
 ### Transpilers
 
 See also [[transpilers | Transpilers]].
+
+## Linking
+
+`link-cplusplus`: Link libstdc++ or libc++ automatically or manually.
+
+## Code Generation
+
+`typify`: JSON schema to rust type code generator.
+
+## Compiler implementations, including interpreters and transpilers
+
+### Cucumber
+
+- `gherkin` is a pure Rust implementation of Gherkin language (`.feature` file) for Cucumber testing framework.
+- `cucumber-expressions`: Cucumber Expressions AST and parser.
+
+### Protobuf
+
+- `protox` is a rust implementation of the protobuf compiler.
+
+### Rust
+
+- `polonius-engine`: Core definition for the Rust borrow checker.
+
+### C
+
+- `clang`: A somewhat idiomatic Rust wrapper for `libclang`.
+
+### Swift
+
+- `swift-rs`:  Call Swift from Rust with ease!
+
+### JavaScript
+
+- `oxc`
+
+[oxc.rs/](https://oxc.rs)
+
+See also: [[interfacing_with_javascript | Interfacing With Javascript]].
 
 ## Related Topics
 
@@ -37,48 +78,5 @@ See also [[transpilers | Transpilers]].
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/908)
-decide what to cover:
-
-## Linking
-
-`link-cplusplus`
-Link libstdc++ or libc++ automatically or manually
-
-## Code Generation
-
-`typify`
-JSON schema to rust type code generator
-
-## Compiler implementations, including interpreters and transpilers
-
-### Cucumber
-
-`gherkin` is a pure Rust implementation of Gherkin language (`.feature` file) for Cucumber testing framework.
-
-`cucumber-expressions` Cucumber Expressions AST and parser.
-
-### Protobuf
-
-`protox` is a rust implementation of the protobuf compiler.
-
-### Rust
-
-`polonius-engine`: Core definition for the Rust borrow checker.
-
-### C
-
-`clang`: A somewhat idiomatic Rust wrapper for libclang
-
-### Swift
-
-`swift-rs`:  Call Swift from Rust with ease!
-
-### JavaScript
-
-`oxc`
-
-[oxc.rs/](https://oxc.rs)
-
-See
-
+decide what to cover
 </div>
