@@ -57,18 +57,6 @@ It supports all UNIX and Windows terminals down to [Windows][p-windows] 7. Featu
 {{#include ../../../crates/cats/command_line_interface/examples/crossterm.rs:example}}
 ```
 
-## Related Topics
-
-- [[user_interaction | User Interaction]].
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[ansi_terminal: `ansi_term` is archived (P0)](https://github.com/john-cd/rust_howto/issues/231)
-
-Most popular
-
 ## `termcolor` {#termcolor}
 
 [![termcolor][c-termcolor-badge]][c-termcolor] [![termcolor-crates.io][c-termcolor-crates.io-badge]][c-termcolor-crates.io] [![termcolor-github][c-termcolor-github-badge]][c-termcolor-github] [![termcolor-lib.rs][c-termcolor-lib.rs-badge]][c-termcolor-lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
@@ -137,5 +125,15 @@ Termion is a pure Rust library that provides a cross-platform interface for cont
 
 [![colored][c-colored-badge]][c-colored] [![colored-crates.io][c-colored-crates.io-badge]][c-colored-crates.io] [![colored-github][c-colored-github-badge]][c-colored-github] [![colored-lib.rs][c-colored-lib.rs-badge]][c-colored-lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
 
-The most simple way to add colors in your terminal
+The most simple way to add colors in your terminal.
+
+## Related Topics
+
+- [[user_interaction | User Interaction]].
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[ansi_terminal: `ansi_term` is archived; write / decide what to cover](https://github.com/john-cd/rust_howto/issues/231)
 </div>
