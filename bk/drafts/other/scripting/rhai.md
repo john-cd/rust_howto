@@ -13,17 +13,27 @@
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-[rhai][c-rhai-website]{{hi:rhai}}⮳ is an embedded scripting language and evaluation engine for Rust that gives a safe and easy way to add scripting to any application.{{hi:Scripting in Rust}}
+[rhai][c-rhai-website]{{hi:rhai}}⮳ is an embedded scripting language and evaluation engine that gives a safe and easy way to add scripting to any Rust application.{{hi:Scripting in Rust}}
 
 Features:
 
-- Similar to JavaScript+Rust with dynamic typing.
+- Similar to JavaScript + Rust, with dynamic typing.
 - Tight integration with native Rust [functions][p-functions] and types.
-- Sand-boxing - the [scripting][p-scripting] engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
+- Function Registration: it can expose Rust functions into scripts.
+- Sand-boxing: the [scripting][p-scripting] engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
+- Robust error reporting.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/scripting/rhai.rs:example}}
 ```
+
+## Rhai Ecosystem
+
+There are independent packages that provides additional functionality, for example:
+
+- `rhai-fs` provides file system access within Rhai scripts.
+- `rhai-rand` provides random number generation using the `rand` crate and array shuffling and sampling
+- `rhai-sci` provides functions useful for scientific computing, inspired by languages like MATLAB, Octave, and R.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
