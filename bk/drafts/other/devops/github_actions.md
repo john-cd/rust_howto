@@ -114,7 +114,7 @@ Example `.github/workflows/<name>.yml`
     cache-provider: ""
 ```
 
-## Useful GitHub Actions
+## Useful GitHub Actions {#skip}
 
 TODO
 
@@ -122,7 +122,7 @@ TODO
 - `rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
 - `install-action`: GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
-## See also
+## See also {#skip}
 
 - A type-safe GitHub Actions workflow generator: [`gh-workflow`][gh-workflow].
 

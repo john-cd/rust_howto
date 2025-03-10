@@ -15,9 +15,6 @@ Utilities for build scripts and other build time steps.
 
 {{#include build_cache.incl.md}}
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
 ## Related Topics
 
 | | |
@@ -31,6 +28,8 @@ Utilities for build scripts and other build time steps.
 | Task Runners | [`xtask`][c-xtask]⮳{{hi:xtask}} for managing complex build tasks, often used for CI/CD, testing, etc. |
 | Testing | `cargo test` |
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 <div class="hidden">
 [development-tools_build-utils/index: add](https://github.com/john-cd/rust_howto/issues/306)
 </div>

@@ -62,7 +62,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 {{#include ../../../crates/cats/concurrency/tests/shared_state/shared_state_crossbeam.rs:example}}
 ```
 
-## Atomic Operations
+## Atomic Operations {#skip}
 
 [`std::sync::atomic`][c-std::sync::atomic]⮳{{hi:std::sync::atomic}} provides atomic types for safe concurrent access to data. Essential for multi-threaded programming.
 

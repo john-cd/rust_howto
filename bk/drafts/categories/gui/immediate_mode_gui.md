@@ -4,13 +4,13 @@
 
 For almost all cases where you want an immediate mode [GUI][p-gui] in Rust, [`egui`][c-egui]⮳{{hi:egui}} is the recommended choice. It's well-featured, performant, and has a great community.
 
-## Key Concepts
+## Key Concepts {#skip}
 
 - Immediate mode GUIs redraw the entire UI on every frame. This simplifies the API but can be less efficient for very complex UIs.
 - You'll manage the UI state directly in your application code. The [GUI][p-gui] library doesn't maintain an internal representation of the UI.
 - Immediate-mode GUIs are often used in a declarative style, where you describe the [UI layout][p-ui-layout] and elements in your code, and the GUI library handles the rendering.
 
-## Use Cases
+## Use Cases {#skip}
 
 - Tools: Immediate mode GUIs are often used for creating tools and editors because they are easy to prototype and iterate on.
 - Games: The performance of immediate mode GUIs makes them suitable for game UIs.

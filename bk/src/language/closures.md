@@ -42,7 +42,7 @@ To force a move:
 
 Functions may also be used as arguments.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[functions | Functions]].
 - [[rust-patterns | Rust Patterns]].

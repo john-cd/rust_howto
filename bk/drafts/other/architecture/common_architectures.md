@@ -1,6 +1,6 @@
-## Common Architectural Patterns in Rust
+# Common Architectural Patterns in Rust
 
-## Layered Architecture
+## Layered Architecture {#skip}
 
 - Separation into layers like Presentation, Business Logic, and Data Access.
 - Encourages modularity and testability.
@@ -9,13 +9,13 @@
 {{#include ../../../crates/other/tests/architecture/layered_architecture.rs:example}}
 ```
 
-## Microservices Architecture
+## Microservices Architecture {#skip1}
 
 - Breaks applications into smaller, independent services.
 - Scalable and resilient, commonly paired with REST or [[_grpc | gRPC]].
 - Crates like `axum`, `warp` or `tonic` can help build such services.
 
-### Key Concepts
+### Key Concepts {#skip2}
 
 - Communication: Microservices communicate over the network.
 - Independent Deployment and Scaling: Each microservice can be deployed and scaled independently.
@@ -32,12 +32,12 @@
 
 See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], [[amqp | AMQP]].
 
-## Hexagonal Architecture (Ports and Adapters)
+## Hexagonal Architecture (Ports and Adapters) {#skip3}
 
 - Decouple business logic from external systems.
 - Enable testability and flexibility by abstracting dependencies through interfaces (ports).
 
-### Core Concepts
+### Core Concepts {#skip4}
 
 It divides the system into three main layers:
 
@@ -47,13 +47,13 @@ It divides the system into three main layers:
 
 This architecture enables the core application to function independently of infrastructure and technology specifics.
 
-### Advantages
+### Advantages {#skip5}
 
 - Easy to swap out external systems (e.g., changing a database or UI framework) without affecting core logic.
 - Promotes clean and maintainable code.
 - Ideal for systems where clear boundaries and independence from external systems are important.
 
-### Use Cases
+### Use Cases {#skip6}
 
 - Complex systems requiring flexibility.
 - Traditional enterprise applications with a focus on maintainability and modularity.
@@ -61,12 +61,12 @@ This architecture enables the core application to function independently of infr
 
 See [[cross-platform | Cross Platform]] development.
 
-## Event-Driven Architecture
+## Event-Driven Architecture {#skip7}
 
 - Enable loose coupling and scalability by structuring systems around events.
 - Promote responsiveness and resilience in distributed systems.
 
-### Core Concepts
+### Core Concepts {#skip8}
 
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
 - Event Bus/Queue: Acts as a mediator for events, often using tools like `Kafka`, `RabbitMQ`, or other message brokers.
@@ -75,37 +75,37 @@ See [[cross-platform | Cross Platform]] development.
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
-### Advantages
+### Advantages {#skip9}
 
 - Highly scalable and responsive, as components can work independently.
 - Naturally supports asynchronous workflows and real-time data processing.
 - Encourages microservices architecture by isolating components.
 
-### Use Cases
+### Use Cases {#skip}
 
 - Systems with high throughput or real-time requirements (e.g., financial systems, IoT platforms, social media apps).
 - Large-scale distributed systems where scalability and availability are key.
 
-## Actor Model
+## Actor Model {#skip}
 
 - Emphasizes concurrency with isolated actors that communicate via messages.
 - Libraries like `actix` support actor-based designs.
 
 See [[_actors |  Actors]].
 
-## Command Query Responsibility Segregation (CQRS)
+## Command Query Responsibility Segregation (CQRS) {#skip}
 
 - Separates read and write operations into distinct models.
 - Useful for systems with high read/write demands or complex business rules.
 
-## Pipelines/Streams
+## Pipelines/Streams {#skip}
 
 - Processes data sequentially through a series of stages.
 - Common in data-intensive applications.
 
 See [[data_parallelism | Data Parallelism]], [[data-processing | Data Processing]].
 
-## Event Sourcing
+## Event Sourcing {#skip}
 
 - Stores the state of a system as a sequence of events.
 - Useful in systems requiring auditability or history reconstruction.

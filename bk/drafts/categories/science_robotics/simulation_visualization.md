@@ -4,28 +4,28 @@
 
 Physics simulation, 3D visualization, testing environments.
 
-## Physics simulation for robots
+## Physics simulation for robots {#skip}
 
 - `rapier` - 2 and 3-dimensional rigid body physics engine for Rust.
 - Rust `zmqRemoteApi` - A Rust ZeroMQ remote API client for coppeliasim robotics simulator.
 
-## Visualization
+## Visualization {#skip}
 
 Graphic and visualization for Robotics.
 
-`kiss3d` - Keep it simple, stupid 3D graphics engine for Rust.
-`urdf-viz` - URDF visualizer
-`rerun` - A logging SDK and visualizer for computer vision and robotics
+- `kiss3d` - Keep it simple, stupid 3D graphics engine for Rust.
+- `urdf-viz` - URDF visualizer
+- `rerun` - A logging SDK and visualizer for computer vision and robotics
 
-### `kiss3d`
+### `kiss3d` {#kiss3d}
 
 Simple 3D graphics engine for visualization.
 
-### `urdf-viz`
+### `urdf-viz` {#urdf-viz}
 
 URDF visualizer for robot models.
 
-### `rerun`
+### `rerun` {#rerun}
 
 Logging SDK and visualizer for robotics.
 

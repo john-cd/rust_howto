@@ -71,7 +71,7 @@ A macro to ergonomically define an item depending on a large number of #[cfg] pa
 
 {{#example cfg-if}}
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[derive | Derive]].
 - [[rust-patterns | Rust Patterns]].

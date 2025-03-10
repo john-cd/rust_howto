@@ -34,7 +34,7 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 {{#include ../../crates/language/tests/feat/diverging_functions.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[closures | Closures]].
 - [[rust-patterns | Rust Patterns]].

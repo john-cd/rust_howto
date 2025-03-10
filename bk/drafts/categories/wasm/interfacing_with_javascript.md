@@ -18,12 +18,12 @@ Bindings for all JS global objects and functions found in all JS environments li
 
 This does not include any Web, Node, or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
 
-## Accessing DOM and Web APIs via Rust
+## Accessing DOM and Web APIs via Rust {#skip}
 
 The `web-sys` crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
 Essentially, `web-sys` is the bridge that lets your Rust code talk to the browser.
 
-## Calling Rust/WASM functions from JavaScript
+## Calling Rust/WASM functions from JavaScript {#skip1}
 
 [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} also facilitates calling Rust/WASM functions from JavaScript.
 

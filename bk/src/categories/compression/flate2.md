@@ -14,7 +14,7 @@ Compress, then decompress data:
 {{#include ../../../crates/cats/compression/tests/gzip/flate2.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[filesystem | Filesystem]].
 - [[compression | Compression]].

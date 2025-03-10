@@ -102,7 +102,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 [`structopt`][c-structopt]⮳{{hi:structopt}} (now superseded by [`clap`][c-clap]⮳{{hi:clap}}) simplifies command-line argument parsing by automatically generating parsers from struct definitions. It leverages a derive macro to reduce boilerplate and provides a declarative way to define CLI options, arguments, and subcommands, making it easier to create complex and well-documented command-line interfaces.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[parse | Parse]].
 - [[parser-implementations | Parser Implementations]].
@@ -121,7 +121,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 ---
 
-## `clap_complete`
+## `clap_complete` {#clap_complete}
 
 Generate shell completion scripts for your `clap::Command`
 </div>

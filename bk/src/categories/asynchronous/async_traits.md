@@ -28,7 +28,7 @@ In addition, [traits][p-traits] that use `-> impl Trait` and `[async][p-async] f
 {{#include ../../../crates/cats/asynchronous/tests/async_traits/async_traits3.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[trait_objects | Trait Objects]].
 - [[traits | Traits]].

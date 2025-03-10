@@ -2,7 +2,7 @@
 
 {{#include external_ffi_bindings.incl.md}}
 
-## C Bindings
+## C Bindings {#skip}
 
 [`libc`][c-libc]⮳{{hi:libc}} provides definitions for C standard library functions and types.
 

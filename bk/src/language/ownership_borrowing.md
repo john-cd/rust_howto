@@ -48,7 +48,7 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 
 If you have a mutable reference{{hi:Mutable references}} to a value, you can have no other simultaneous references{{hi:Simultaneous references}} to that value! Functions like a read/write lock{{hi:Read/write lock}}.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[lifetimes | Lifetimes]].
 - [[rust-patterns | Rust Patterns]].

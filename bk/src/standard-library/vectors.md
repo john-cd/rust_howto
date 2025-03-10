@@ -12,7 +12,7 @@ Vectors (`Vec`) can only store values that are the same type.
 {{#include ../../crates/standard_library/tests/other/vectors.rs:example}}
 ```
 
-## Related Data Structures
+## Related Data Structures {#skip}
 
 - [[btrees | B-trees]].
 - [[binaryheap | Binary Heaps]].

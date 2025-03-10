@@ -26,7 +26,7 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../../crates/language/tests/feat/lifetime.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[cow | COW]].
 - [[memory-management | Memory Management]].

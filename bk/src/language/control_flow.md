@@ -30,7 +30,7 @@ Also `else if <cond> { ... }`
 {{#include ../../crates/language/tests/feat/for1.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[match | Match]].
 - [[rust-patterns | Rust Patterns]].

@@ -6,7 +6,7 @@ A 2D renderer is a software component that generates two-dimensional images by d
 
 Two essential components of 2D rendering are rasterization and anti-aliasing. Rasterization involves converting vector-based graphic images into raster images, which consist of grids of pixels. Anti-aliasing, on the other hand, is a technique used to smooth the edges of images to reduce jaggedness or pixelation.
 
-## Choosing the Right Library
+## Choosing the Right Library {#skip}
 
 [`raqote`][c-raqote]⮳{{hi:raqote}} is a fast, pure Rust 2D graphics library. [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} is another good option. [`cairo-rs`][c-cairo]⮳{{hi:cairo-rs}} provides bindings to the Cairo library. |
 
@@ -18,22 +18,22 @@ Most 2D projects will find [`raqote`][c-raqote]⮳{{hi:raqote}} or [`tiny-skia`]
 - Vector Path Generation: [`lyon`][c-lyon]⮳{{hi:lyon}}.
 - High Performance 2D/3D (using GPU): [`wgpu`][c-wgpu]⮳{{hi:wgpu}} (but more complex).
 
-## Topics
+## Topics {#skip1}
 
 - Sprite Rendering.
 - Vector Graphics.
 - Text Rendering.
 - Canvas Drawing.
 
-## Pixel-Based (Raster) 2D Rendering
+## Pixel-Based (Raster) 2D Rendering {#skip2}
 
 See [[2d_raster_graphics | 2D Raster Graphics]].
 
-## Vector-Based 2D Rendering
+## Vector-Based 2D Rendering {#skip3}
 
 See [[2d_vector_graphics | 2D Vector Graphics]].
 
-## Hybrid (Raster and Vector)
+## Hybrid (Raster and Vector) {#skip4}
 
 While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
 
@@ -59,7 +59,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
 ```
 
-## Other renderers {#skip1}
+## Other renderers {#skip5}
 
 ## `vello` {#vello}
 
@@ -71,7 +71,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip6}
 
 - [[color_handling | Color Handling]].
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].
@@ -81,13 +81,13 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 - [[svg_rendering | SVG Rendering]].
 - [[text_rendering | Text Rendering]].
 
-### Applications
+### Applications {#skip7}
 
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
 - UI with 2D [Graphics][p-graphics]: see [[gui | GUI]].
 
-## See also
+## See also {#skip8}
 
 - [Are we Game yet? 2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more.
 

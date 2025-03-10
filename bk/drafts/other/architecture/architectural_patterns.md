@@ -2,7 +2,7 @@
 
 {{#include architectural_patterns.incl.md}}
 
-## Repository Pattern
+## Repository Pattern {#skip}
 
 - Encapsulates data access logic, separating it from business logic.
 - Makes it easier to test the business logic by using mock repositories.
@@ -14,7 +14,7 @@
 {{#include ../../../crates/other/tests/architecture/repository.rs:example}}
 ```
 
-## State Machine Pattern
+## State Machine Pattern {#skip1}
 
 - Models systems as a collection of states and transitions.
 - Useful for handling workflows or processes with clear states.
@@ -23,7 +23,7 @@
 {{#include ../../../crates/other/tests/architecture/state_machine.rs:example}}
 ```
 
-## Dependency Injection
+## Dependency Injection {#skip2}
 
 - Promotes modularity by injecting dependencies at runtime or compile time.
 - Achievable using crates like `shaku`.
@@ -33,7 +33,7 @@
 {{#include ../../../crates/other/tests/architecture/di.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip3}
 
 - [[config | Configuration]] Management: Loading and managing settings with `config` or `dotenv`.
 - Logging and Monitoring: Structured logging with `tracing` or `log`. See [[development-tools_debugging | Development Tools: Debugging]].

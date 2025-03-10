@@ -34,13 +34,13 @@ Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-
 
 Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 
-## Related data structures
+## Related data structures {#skip}
 
 - [[slices | Slices]].
 - [[vectors | Vectors]].
 - [[cow | COW]].
 
-## String manipulation
+## String manipulation {#skip}
 
 - [[regex | Regex]].
 - [[parsing | Parsing]].
@@ -48,7 +48,7 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 - [[string_parsing | String Parsing]].
 - [[string_concat | String Concatenation]].
 
-## See also
+## See also {#skip}
 
 - [[algorithms | Algorithms]].
 - [[encoding | Encoding]].

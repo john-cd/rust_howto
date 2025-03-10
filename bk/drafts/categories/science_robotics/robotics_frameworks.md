@@ -36,7 +36,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 {{#include ../../../crates/cats/science_robotics/tests/openrr.rs:example}}
 ```
 
-## `copper`
+## `copper` {#copper}
 
 Framework for creating fast and reliable robots.
 
@@ -48,12 +48,12 @@ Framework for creating fast and reliable robots.
 <div class="hidden">
 [useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
 
-## Frameworks
+## Frameworks {#skip}
 
 `dora-rs` - A fast and simple robotics frameworks for AI.
 `Peng` - A minimal quadrotor autonomy framework
 
-## gRPC
+## gRPC {#skip}
 
 gRPC A high performance, open source universal RPC framework.
 

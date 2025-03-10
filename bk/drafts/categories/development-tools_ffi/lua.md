@@ -24,21 +24,21 @@
 
 Interfacing with Lua from Rust is typically done using the Lua C API, and there are several Rust crates that provide bindings to it.
 
-## Lua Bindings
+## Lua Bindings {#skip1}
 
-rlua: A safe and high-level binding to Lua. It's a popular choice.
-mlua: Another good option for Lua bindings. It focuses on being lightweight and efficient.
-lua53: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained control or are working with a specific Lua version, this might be an option. However, `rlua` or `mlua` are usually preferred for ease of use.
+- `rlua`: A safe and high-level binding to Lua. It's a popular choice.
+- `mlua`: Another good option for Lua bindings. It focuses on being lightweight and efficient.
+- `lua53`: Direct, lower-level bindings to Lua 5.3. If you need very fine-grained control or are working with a specific Lua version, this might be an option. However, `rlua` or `mlua` are usually preferred for ease of use.
 
-## Communication/Data Marshaling
+## Communication/Data Marshaling  {#skip2}
 
-(The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like [serde][p-serde] in the same way as with some other FFI scenarios.)
+The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like [serde][p-serde] in the same way as with some other FFI scenarios.
 
-## Build Tools
+## Build Tools {#skip3}
 
-cargo: For building your Rust code.
+`cargo` for building your Rust code.
 
-## Key Concepts
+## Key Concepts {#skip4}
 
 Lua State: You'll work with a Lua state in your Rust code to interact with the Lua interpreter.
 Calling Lua Functions from Rust: The binding crates provide ways to call Lua functions from Rust.

@@ -6,7 +6,7 @@ Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 
 3D rendering is the 3D computer graphics process of converting 3D models into 2D images.
 
-## Topics
+## Topics {#skip}
 
 - Forward Rendering.
 - Deferred Rendering.
@@ -37,7 +37,7 @@ This library is born from the frustration that today’s 3D graphics library are
 - High level, but too hard to understand/use: these libraries are made to create beautiful photoreal (or close to it) animations or games. They have many features; too many, in fact, if you just want to draw a few objects on the screen with as little friction as possible.
 kiss3d is not designed to be feature-complete or fast. It is designed to let you draw simple geometric figures and play with them with as little friction as possible.
 
-## Hardware Acceleration
+## Hardware Acceleration {#skip1}
 
 Often depends on the 3D API or rendering engine used. Libraries like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}, and [`glium`][c-glium]⮳{{hi:glium}} provide access to hardware acceleration through graphics APIs like WebGPU, OpenGL, Vulkan, Metal, and DirectX.
 
@@ -49,13 +49,13 @@ See:
 - [[vulkan | Vulkan]].
 - [[opengl | OpenGL]].
 
-### Applications
+### Applications {#skip2}
 
 - [[game-development | Game Development]].
 - [[game_engines | Game Engines]].
 - [[gui | GUI]].
 
-## See also
+## See also {#skip3}
 
 - [Are we Game yet? 3D Rendering](https://arewegameyet.rs/ecosystem/3drendering).
 

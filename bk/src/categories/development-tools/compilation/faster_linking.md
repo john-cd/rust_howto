@@ -14,49 +14,49 @@ Optimizing Rust linking involves several strategies to reduce binary size and li
 
 - [[development-tools_profiling | Development Tools Profiling]].
 
-## `rustc` Configuration
+## `rustc` Configuration {#skip}
 
-### Link-Time Optimization (LTO)
+### Link-Time Optimization (LTO) {#skip}
 
 Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p-performance] by eliminating dead code and inlining functions more effectively. Use the `-C lto=fat` or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
 
 Link-Time Optimization (LTO) is controlled via `Cargo.toml`. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
 
-## Codegen Units
+## Codegen Units {#skip}
 
 Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness. Experiment to find the optimal balance.
 
-## Panic Strategy
+## Panic Strategy {#skip}
 
 The default panic strategy (unwind) includes unwinding information, which increases binary size. Switching to the abort panic strategy (using `-C panic=abort`) reduces binary size but prevents stack unwinding in case of a panic. Use abort only if unwinding is not required.
 
-## Strip Symbols
+## Strip Symbols {#skip}
 
 Stripping debug symbols from the final binary using compiler flags like `-C strip=debuginfo` significantly reduces binary size. This is essential for release builds.
 
-## Minimize Dependencies
+## Minimize Dependencies {#skip}
 
 Reducing the number of dependencies, especially those with large or complex codebases, directly impacts link time and binary size. Analyze dependencies and consider alternatives if possible.
 
-## Static Linking
+## Static Linking {#skip}
 
 Static linking (using `-C prefer-dynamic=no`) can sometimes reduce binary size if shared libraries introduce overhead. However, it can also increase the size if multiple binaries link against the same library. Consider the trade-offs.
 
 Generally faster than dynamic linking. Often the default in Rust.
 
-## Optimize Dependencies
+## Optimize Dependencies {#skip}
 
 Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your `Cargo.toml`.
 
-## Profile-Guided Optimization (PGO)
+## Profile-Guided Optimization (PGO) {#skip}
 
 PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better [performance][p-performance] and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
 
-## Linker Flags
+## Linker Flags {#skip}
 
 Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
 
-## Incremental Compilation
+## Incremental Compilation {#skip}
 
 While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
 
@@ -64,11 +64,11 @@ Incremental Linking: [Cargo][p-cargo]'s incremental compilation can help, but so
 
 - [[incremental_computation | Incremental Computation]].
 
-## Conditional Compilation
+## Conditional Compilation {#skip}
 
 This feature can improve compile times, especially for larger crates.
 
-## Choosing the right linker
+## Choosing the right linker {#skip}
 
 The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking{{hi:Linking}} than the default Rust linker.
 
@@ -120,7 +120,7 @@ linker = "clang"
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].
@@ -131,7 +131,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 - [[development-tools_testing | Development Tools Testing]].
 - [[performance | Performance]].
 
-## References
+## References {#skip}
 
 - [Enable Fast Compiles (Bevy)][c-bevy-enable-fast-compiles]{{hi:bevy}}⮳.
 

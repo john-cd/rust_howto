@@ -1,11 +1,11 @@
 # Software Architecture: Steps
 
-## Define Objectives and Requirements
+## Define Objectives and Requirements {#skip}
 
 - Identify the purpose of the project (e.g., [[web-programming | web]]  service, [[embedded | embedded]] system, [[command-line-interface | CLI]] tool, etc.).
 - List functional and non-functional requirements (e.g., performance, scalability, maintainability...).
 
-## Choose a Project Structure
+## Choose a Project Structure {#skip}
 
 - Use Rust's [[modules | module]] system for code organization.
 - A common structure is as follows:
@@ -25,13 +25,13 @@ tests/            (integration tests)
 
 - Large projects may benefit from dependency injection, promoting modularity and testability.
 
-## Design System Components
+## Design System Components {#skip}
 
 - Core Modules: Define the core business logic of the system. Use [[traits | Traits]] for abstraction and flexibility.
 - Data Models: Design type-safe models using Rust's [[structs | `struct`]]s and [[enums | `enum`]]s.
 - Concurrency and Asynchrony: Leverage tools like `tokio` for [[asynchronous | asynchronous]] tasks.
 
-## Choose Key Technologies
+## Choose Key Technologies {#skip}
 
 - Determine the necessary Rust libraries and external integrations.
 - Use this book!
@@ -48,7 +48,7 @@ Cross-cutting concerns:
 - Database: Use `sqlx` or `diesel` for interacting with databases.
 - Logging: Use `tracing` or `log` for structured logging.
 
-## Handle Error Management
+## Handle Error Management {#skip}
 
 - Use Rust's `Result` and `Option` types to handle errors gracefully.
 - Create custom error types using `thiserror` and use `anyhow` for descriptive error messages.
@@ -58,13 +58,13 @@ See:
 - [[error_handling | Error Handling]].
 - [[error_customization | Error Customization]].
 
-## Ensure Security
+## Ensure Security {#skip}
 
 - Safe [[concurrency | Concurrency]]: Avoiding data races with Rust's ownership model.
 - [[cryptography | Cryptography]]: Using crates like `ring` or the `rust-crypto` suite.
 - [[authentication | Authentication]].
 
-## Ensure Test Coverage
+## Ensure Test Coverage {#skip}
 
 - Write unit tests using `#[test]` in individual modules.
 - Include integration tests for component interaction.
@@ -72,7 +72,7 @@ See:
 
 See [[testing | Testing]].
 
-## Optimize Performance
+## Optimize Performance {#skip}
 
 - Profile and benchmark using `criterion` or other profiling tools.
 - Minimize memory allocation and leverage Rust's zero-cost abstractions.
@@ -83,14 +83,14 @@ See [[testing | Testing]].
 
 See [[performance | Performance]] and [[development-tools_profiling | Profiling]].
 
-## Deployment and Operations
+## Deployment and Operations {#skip}
 
 - [[building | Build]]  the project using `cargo build`.
 - Containerize with Docker or deploy to a platform like AWS, GCP, or Azure.
 - Integrate CI/CD pipelines using GitHub Actions, GitLab CI, or other tools.
 - Observability: Monitor with tools like Prometheus or Grafana.
 
-## See also
+## See also {#skip}
 
 [Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-and-next-js]⮳{{hi:SaaS}}
 

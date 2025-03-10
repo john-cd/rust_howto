@@ -2,12 +2,12 @@
 
 {{#include python.incl.md}}
 
-## Calling Rust from Python
+## Calling Rust from Python {#skip}
 
 - As detailed below, [`pyo3`][c-pyo3]⮳{{hi:pyo3}} is a popular crate for exposing Rust functions and modules to Python (and for embedding Python in Rust). This is the most common approach.
 - While primarily a C tool, [`cffi`][c-cffi]⮳{{hi:cffi}} can be used in conjunction with Rust and Python to create bindings. Less common than [`pyo3`][c-pyo3]⮳{{hi:pyo3}} for this direction.
 
-## Calling Python from Rust
+## Calling Python from Rust {#skip}
 
 - [`cpython`][c-cpython]⮳{{hi:cpython}} provides direct bindings to the CPython interpreter. Lower-level, but very powerful.
 - [`pyo3`][c-pyo3]⮳{{hi:pyo3}} is higher-level and easier to use than `cpython` for many use cases.
@@ -31,7 +31,7 @@ Use Rust from Python:
 {{#include ../../../crates/cats/api_bindings/tests/use_rust_from_python.rs}}
 ```
 
-## Data Exchange between Rust and Python
+## Data Exchange between Rust and Python {#skip}
 
 While not Python-specific, [`serde`][c-serde]⮳{{hi:serde}}'s serialization capabilities allow for efficiently exchanging data between Rust and Python. You'd likely use [`serde_json`][c-serde_json]⮳{{hi:serde_json}} or another format in conjunction with your chosen Python binding crate.
 
@@ -42,11 +42,11 @@ See also:
 - [[json | JSON]].
 - [[serde | Serde]].
 
-## Numerical Data
+## Numerical Data {#skip}
 
 If you're working with numerical data, integrating with [`numpy`][c-numpy]⮳{{hi:numpy}} is often essential. Crates like `ndarray` in Rust can also facilitate this. See [[mathematics | Mathematics]].
 
-## Build Tools
+## Build Tools {#skip}
 
 - [`maturin`][c-maturin]⮳{{hi:maturin}} is a popular tool for building and distributing Python packages that include Rust extensions. It handles the complexities of compilation and linking.
 - `setuptools-rust` is Another option for integrating Rust builds into Python's setuptools.

@@ -42,7 +42,7 @@ Image Analysis
 
 {{#example imageproc}}
 
-## GPU-accelerated image processing
+## GPU-accelerated image processing {#skip}
 
 Low-level graphics APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
 See [[rendering_graphics-api | Rendering: Graphics API]].

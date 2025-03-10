@@ -127,7 +127,7 @@ Termion is a pure Rust library that provides a cross-platform interface for cont
 
 The most simple way to add colors in your terminal.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[user_interaction | User Interaction]].
 

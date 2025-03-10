@@ -26,7 +26,7 @@ Consider the following Rust crates for your in-memory caching needs: [`lru`][c-l
 
 [`cached`][c-cached]⮳{{hi:cached}} provides generic cache implementations and simplified function memoization.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[database | Database]].
 - [[database-implementations | Database Implementations]].

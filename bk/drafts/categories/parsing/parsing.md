@@ -47,13 +47,13 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 {{#include ../../../crates/cats/parsing/tests/tree_sitter.rs:example}}
 ```
 
-## Other Notable Crates
+## Other Notable Crates {#skip}
 
 - `combine`.
 - `peg`.
 - `chumsky`.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[parser-implementations | Parser Implementations]].
 - [[text-processing | Text Processing]].

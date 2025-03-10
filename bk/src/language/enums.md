@@ -16,12 +16,12 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 
 [`strum`][c-strum]⮳{{hi:strum}} provides helpful macros for working with enums and strings.
 
-## Common `enums`
+## Common `enums` {#skip}
 
 - [[option | Option]].
 - [[result | Result]].
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[match | Match]].
 - [[rust-patterns | Rust Patterns]].

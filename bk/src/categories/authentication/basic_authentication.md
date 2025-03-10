@@ -12,7 +12,7 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 {{#include ../../../crates/cats/authentication/tests/basic.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[cryptography | Cryptography]].
 - [[encryption | Encryption]].

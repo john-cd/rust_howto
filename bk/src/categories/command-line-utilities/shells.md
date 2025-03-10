@@ -20,7 +20,7 @@
 
 Unlike traditional shells that primarily handle text, `Nu` treats data as structured tables, enabling users to easily query, filter, and manipulate information directly within the shell. Its [language][p-language] combines familiar shell concepts with a more structured syntax, allowing for complex data processing pipelines. `Nu` also allows users to define custom commands and integrate with external tools.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[command-line-interface | Command Line Interface]].
 - [[external_commands | External Commands]].

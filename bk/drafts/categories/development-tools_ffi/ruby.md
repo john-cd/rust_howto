@@ -26,16 +26,16 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 {{#include ../../../crates/cats/development_tools_ffi/tests/ruby/magnus.rs:example}}
 ```
 
-## Other Less Common Options
+## Other Less Common Options {#skip}
 
 - Directly using the Ruby C API is possible, but it's complex and error-prone. `rutie` is almost always the better choice.
 - Embedding Ruby: You can also embed a Ruby interpreter in your Rust application using the Ruby C API (and thus, `rutie`).
 
-## Communication / Data Marshaling between Ruby and Rust
+## Communication / Data Marshaling between Ruby and Rust {#skip1}
 
 The `rutie` crate handles much of the data marshaling between Rust and Ruby types. `serde` can be used for serializing and deserializing data if needed, but often `rutie`'s built-in conversion mechanisms are sufficient.
 
-## Build Tools for Rust + Ruby
+## Build Tools for Rust + Ruby {#skip2}
 
 Use:
 

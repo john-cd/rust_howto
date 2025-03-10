@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/multimedia_audio/tests/audio.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[multimedia | Multimedia]].
 - [[multimedia_encoding | Multimedia: Encoding]].

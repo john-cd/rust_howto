@@ -52,11 +52,11 @@ While ROS traditionally favored Python and C++, Rust is gradually gaining tracti
 {{#include ../../../crates/cats/science_robotics/tests/robotics.rs:example}}
 ```
 
-## `safe_drive`
+## `safe_drive` {#safe_drive}
 
 Formally specified Rust bindings for ROS2.
 
-## Other Crates
+## Other Crates {#skip}
 
 - `ros2_rust` - Rust bindings for ROS2.
 - `roslibrust` - Pure Rust implementation of a rosbridge client.

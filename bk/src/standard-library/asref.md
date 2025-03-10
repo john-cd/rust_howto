@@ -17,7 +17,7 @@ NOTES:
 
 [When and why to use AsRef<T>instead of &T][stackoverflow-asref]⮳{{hi:asref}}
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[smart_pointers | Smart Pointers]].
 

@@ -10,18 +10,18 @@
 {{#include ../../crates/standard_library/tests/other/result.rs:example}}
 ```
 
-## Related Data Structures
+## Related Data Structures {#skip}
 
 - [[option | Option]].
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[error_handling | Error Handling]].
 - [[error_customization | Error Customization]].
 - [[iterators | Iterators]].
 - [[rust-patterns | Rust Patterns]].
 
-## References
+## References {#skip}
 
 - [What is the Rust equivalent to a `try catch` statement][stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]⮳.
 

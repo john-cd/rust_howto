@@ -20,7 +20,7 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 A simple `no_std` font parser and rasterizer.
 
-## `ttf-parser` and  `opentype`
+## `ttf-parser` and  `opentype` {#ttf-parser}
 
 [`ttf-parser`][c-ttf_parser]⮳{{hi:ttf-parser}} and [`opentype`][c-opentype]⮳{{hi:opentype}} provide lower-level font parsing capabilities.
 
@@ -28,11 +28,11 @@ A simple `no_std` font parser and rasterizer.
 
 [`opentype`][c-opentype]⮳{{hi:opentype}}
 
-## See also
+## See also {#skip}
 
 - `sdl2`: SDL2 bindings for Rust.
 
-## Related Topics
+## Related Topics {#skip1}
 
 - [Are we Game yet? Text Rendering](https://arewegameyet.rs/ecosystem/textrendering/).
 - [[text_layout | Text Layout]].

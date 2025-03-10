@@ -79,7 +79,7 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_tokio_runtime.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[concurrency | Concurrency]].
 

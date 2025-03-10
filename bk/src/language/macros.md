@@ -13,7 +13,7 @@
 - [Rust by example - Macros][book-rust-by-example-macros]⮳ [![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]{{hi:Macros}}⮳.
 - The [Little Book of Rust Macros][book-rust-macros]⮳.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
   - [[compile_macros | Compile Macros]].

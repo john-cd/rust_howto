@@ -18,7 +18,7 @@
 
 [`comemo`][c-comemo]⮳{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p-functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p-performance] for functions with expensive computations but fixed inputs. `comemo` uses `const` generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, `comemo` avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].

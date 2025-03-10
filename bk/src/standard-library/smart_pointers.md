@@ -84,11 +84,11 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 
 - The `OnceCell` type provides a way to define a value that will be initialized at most once. It's useful for scenarios where you want [lazy initialization][p-lazy-initialization] without the overhead of thread synchronization.
 
-## Related Data Structures
+## Related Data Structures {#skip}
 
 - [[cow | COW]] (Copy-on-Write).
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[concurrency | Concurrency]].
 - [[memory-management | Memory Management]].

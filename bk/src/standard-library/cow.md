@@ -61,11 +61,11 @@ Use any method to get a reference and then call [`std::borrow::ToOwned`][c-std::
 
 These examples were adapted from a [StackOverflow discussion][stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]⮳.
 
-## Related Data Structures
+## Related Data Structures {#skip}
 
 - [[strings | Strings]].
 
-## See also
+## See also {#skip}
 
 - [[lifetimes | Lifetimes]].
 - [[memory-management | Memory Management]].

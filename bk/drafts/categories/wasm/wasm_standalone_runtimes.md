@@ -2,7 +2,7 @@
 
 {{#include wasm_runtimes.incl.md}}
 
-## WASM Runtimes
+## WASM Runtimes {#skip}
 
 This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute WASM bytecode. This is distinct from tools used to *compile* to [WASM][p-wasm].
 
@@ -13,7 +13,7 @@ This table focuses on Rust crates that can be used as WebAssembly (WASM) runtime
 | [`cranelift`][c-cranelift]⮳{{hi:cranelift}} (used by [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}) | A code generator used by [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} for AOT compilation. | Generates optimized machine code from WASM. | N/A (part of [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}) | N/A | Not a runtime itself, but a crucial component of [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}. |
 | [`rwasm`][c-rwasm]⮳{{hi:rwasm}} | A lightweight WASM runtime. | Small footprint, suitable for embedded systems. | Yes | Yes | Designed for resource-constrained environments. |
 
-## Choosing a Runtime
+## Choosing a Runtime {#skip1}
 
 The [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
 
@@ -32,7 +32,7 @@ Notes:
 - [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} is generally considered to be very performant due to its AOT compilation.
 - WASM runtimes often prioritize security, as WASM is often used to execute untrusted code.
 
-## Code Examples
+## Code Examples {#skip2}
 
 ### `wasmer` {#wasmer}
 
@@ -92,7 +92,7 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 {{#include ../../../crates/cats/wasm/tests/wasmtime.rs:example}}
 ```
 
-## WebAssembly System Interface (WASI)
+## WebAssembly System Interface (WASI) {#skip3}
 
 [`wasi-rs`][c-wasi]⮳{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment (file system, networking, etc.). In particular, WASI allows you to run WASM code on servers or other environments outside the browser. Used by [`wasmi`][c-wasmi]⮳{{hi:wasmi}} and [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}.
 

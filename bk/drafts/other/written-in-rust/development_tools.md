@@ -48,7 +48,7 @@ See also [[programming_languages | Programming Language]] parsers.
 
 It integrates with your shell and lets you quickly search through any kind of data source (files, git repositories, environment variables, docker images, you name it) using a fuzzy matching algorithm.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[programming_languages | Programming Language]] parsers.
 

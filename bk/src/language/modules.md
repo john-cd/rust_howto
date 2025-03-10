@@ -48,7 +48,7 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 {{#include ../../crates/language/tests/feat/modules3.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[package_layout | Package Layout]].
 

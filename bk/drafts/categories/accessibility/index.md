@@ -1,4 +1,4 @@
-# Accessibility {#accessibility}
+# Accessibility
 
 [![cat-accessibility][cat-accessibility-badge]][cat-accessibility]{{hi:Accessibility}}
 

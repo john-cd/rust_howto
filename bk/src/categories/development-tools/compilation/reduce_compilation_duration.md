@@ -4,7 +4,7 @@
 
 Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [duration][p-duration] involves several strategies, targeting both the compiler and project structure. Here's a breakdown:
 
-## Project Structure and Dependencies
+## Project Structure and Dependencies {#skip}
 
 - _Reduce the number of dependencies_. Analyze your `Cargo.toml` and eliminate unused or redundant dependencies. Consider alternatives if a dependency is excessively large or slow to compile.
 - For multi-crate projects, use a _workspace_ to share dependencies and enable workspace-level optimizations. This can reduce redundant compilation.
@@ -13,7 +13,7 @@ Rust compile times{{hi:Compile times}} can be long. Reducing Rust compilation [d
 - Precompiled Dependencies: For large, infrequently changing dependencies, consider using precompiled versions if available.
 - Code Organization: Organizing your code into smaller, independent [modules][p-modules] can improve incremental compilation by reducing the scope of changes.
 
-## Compiler-Level Optimizations
+## Compiler-Level Optimizations {#skip}
 
 - Build Profiles: Use the `dev` profile for development, which prioritizes fast compilation over optimizations. Switch to the `release` profile only for final builds.
 - Ensure incremental compilation is enabled (the default). It reuses previously compiled code, significantly speeding up subsequent builds after changes. Avoid actions that invalidate the cache, such as changing dependencies or build scripts unnecessarily.
@@ -23,13 +23,13 @@ Consider using "thin" LTO (`-C lto=thin`) for a faster, though less aggressive, 
 - Profile-Guided Optimization (PGO): PGO can improve runtime performance but requires additional compilation and profiling steps, thus increasing overall build time. Use PGO only for release builds where runtime [performance][p-performance] is critical, and not for general development.
 - Ccache: Using ccache can dramatically speed up compilation by [caching][p-caching] compiled objects. It's particularly effective when recompiling similar code across multiple projects or branches.
 
-## Build Machine Hardware Considerations
+## Build Machine Hardware Considerations {#skip}
 
 - CPU Cores: A multi-core CPU significantly speeds up compilation, especially when using multiple codegen units.
 - RAM: Sufficient RAM is essential, especially when using LTO or compiling large projects.
 - SSD: A fast SSD can greatly reduce I/O bottlenecks during compilation.
 
-## Tools
+## Tools {#skip}
 
 - `cargo-bloat` can help you identify large dependencies [contributing][p-contributing] to compile times.
 - `cargo-graph` can visualize your dependency graph, making it easier to identify potential issues.
@@ -89,13 +89,13 @@ cargo build
 
 From-scratch builds with incremental compilation{{hi:Incremental compilation}} enabled adds about 15–20% overhead compared to disabled. The initial build needs to write out more intermediate state in order for later incremental builds to take advantage of it. In a CI{{hi:CI}} situation, it would be extremely unusual for there to be a later incremental build within the same job. The jobs are not making changes to source code and rebuilding. However, workflows that cache the target directory across runs might be benefiting from incremental compilation.
 
-## Reference
+## References {#skip}
 
 - [Eight solutions for troubleshooting your Rust build times][blog-rust-build-times]⮳.
 - [How I improved my Rust compile times by seventy-five percent][blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]⮳.
 - [Rust compilation time][blog-rust-compilation-time]⮳.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[benchmarking | Benchmarking]].
 - [[build_utils | Build Utils]].
@@ -111,7 +111,6 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/245)
-</div>
 
 - `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically. See [[cargo | Cargo]].
 
@@ -127,3 +126,5 @@ Build Profiles: Release builds can sometimes behave differently with incremental
 `cargo tree` is also a useful tool for dependency analysis.
 
 - Debugging Incremental Compilation: Sometimes, unexpected recompilation can occur. [Cargo][p-cargo]'s verbose output can help diagnose these situations. There aren't specific crates for this, but careful observation of compiler output is key.
+
+</div>

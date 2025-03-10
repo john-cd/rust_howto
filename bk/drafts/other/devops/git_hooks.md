@@ -61,7 +61,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## Useful Hooks for Rust
+## Useful Hooks for Rust {#skip}
 
 TODO
 

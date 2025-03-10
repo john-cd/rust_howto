@@ -4,7 +4,7 @@
 
 For GTK development in Rust, use the `gtk` crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c-gdk]⮳{{hi:gdk}}, [`gio`][c-gio]⮳{{hi:gio}}, and [`glib`][c-glib]⮳{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
 
-## Key Concepts
+## Key Concepts {#skip}
 
 - Widgets: The basic building blocks of a GTK application (buttons, labels, windows, etc.).
 - Signals: How GTK widgets communicate with each other and your application code (e.g., button clicks).
@@ -34,7 +34,7 @@ Make sure the `gtk` crate version you're using is compatible with the GTK versio
 {{#include ../../../crates/cats/gui/examples/gtk/relm4.rs:example}}
 ```
 
-## Related GTK Crates
+## Related GTK Crates {#skip}
 
 - [`gdk`][c-gdk]⮳{{hi:gdk}} provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p-graphics] and windowing. You'll often use this indirectly through `gtk`.
 - [`gio`][c-gio]⮳{{hi:gio}} offers bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p-asynchronous] operations, file I/O, and other system-related tasks in GTK applications.

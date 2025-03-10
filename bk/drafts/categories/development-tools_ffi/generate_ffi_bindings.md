@@ -60,19 +60,19 @@ While tools like 'SWIG' exist, `cxx` is generally preferred for modern C++ inter
 {{#include ../../../crates/cats/development_tools_ffi/tests/uniffi.rs:example}}
 ```
 
-## FFI Caveats
+## FFI Caveats {#skip}
 
 - FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
 - Memory Management across FFI boundaries requires careful consideration. It often involves using `Box::into_raw` and `Box::from_raw` to transfer ownership of memory between Rust and C.
 - Error Handling across FFI boundaries often involves returning error codes or using `Result` types and converting them to C-compatible representations.
 
-## Related Topics
+## Related Topics {#skip}
 
-### C / C++ Build Integration
+### C / C++ Build Integration {#skip1}
 
 `cc` helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
-### Utilities
+### Utilities {#skip2}
 
 - `std::ffi` provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
   - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust strings and C strings.

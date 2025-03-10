@@ -6,7 +6,7 @@
 {{#include ../../crates/language/tests/feat/iterators.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[closures | Closures]].
 - [[data-structures | Data Structures]].

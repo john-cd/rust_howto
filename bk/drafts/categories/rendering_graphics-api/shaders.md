@@ -13,7 +13,7 @@ Shaders are programs that run on the GPU (Graphics Processing Unit). There are s
 
 Shaders are written in specialized programming languages like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). `wgpu` uses WGSL.
 
-## Topics
+## Topics {#skip}
 
 - SPIR-V compilation.
 - GLSL/HLSL compilation.
@@ -34,17 +34,17 @@ Making Rust a first-class language and ecosystem for GPU shaders
 
 Multi-platform high-performance compute language extension for Rust.
 
-## GLSL/HLSL compilation
+## GLSL/HLSL compilation {#skip}
 
 TODO
 
-## SPIR-V
+## SPIR-V {#skip}
 
-### `glsl-to-spirv`
+### `glsl-to-spirv` {#skip}
 
 [`glsl-to-spirv`][c-glsl_to_spirv]⮳{{hi:glsl-to-spirv}} compiles GLSL to SPIR-V.
 
-### `spirv-builder`
+### `spirv-builder` {#skip}
 
 For building spirv modules.
 
@@ -56,16 +56,16 @@ For inspecting SPIR-V shaders
 
 [`shaderc`][c-shaderc]⮳{{hi:shaderc}} is a Rust wrapper for the shaderc library (compiles GLSL/HLSL to SPIR-V).
 
-## Compute Shaders and GPU Compute (GPGPU)
+## Compute Shaders and GPU Compute (GPGPU) {#skip}
 
 Compute Shaders are often handled through the low-level graphics APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} or [`vulkano`][c-vulkano]⮳{{hi:vulkano}}.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].
 
-## See also
+## See also {#skip}
 
 - [[typecasts | Typecasts]] and especially `bytemuck` - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).

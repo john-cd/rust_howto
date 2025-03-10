@@ -27,7 +27,7 @@ Features:
 {{#include ../../../crates/other/tests/scripting/rhai.rs:example}}
 ```
 
-## Rhai Ecosystem
+## Rhai Ecosystem {#skip}
 
 There are independent packages that provides additional functionality, for example:
 

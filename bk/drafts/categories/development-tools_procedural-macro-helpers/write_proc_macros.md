@@ -76,17 +76,17 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}
 ```
 
-## Report errors from within a procedural macro
+## Report errors from within a procedural macro {#skip}
 
 Procedural [macros][p-macros] have two ways of reporting errors. The first is to [`panic`][c-panic]⮳{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
 
-## Testing and Debugging
+## Testing and Debugging {#skip}
 
 [`trybuild`][c-trybuild]⮳{{hi:trybuild}} is a crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
 
 Debugging procedural macros can be tricky. Often involves printing token streams to the `console` or using tools like `cargo expand` to see the generated code.
 
-## Documentation
+## Documentation {#skip}
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
 

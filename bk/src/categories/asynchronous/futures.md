@@ -44,7 +44,7 @@ Common utilities and extension traits for the `futures-rs` library. Extensions t
 
 {{#example futures-util}}
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[tokio | Tokio]].
 

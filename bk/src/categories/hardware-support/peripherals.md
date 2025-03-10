@@ -1,37 +1,37 @@
 # Peripheral Devices
 
-## USB
+## USB {#skip}
 
 [`rusb`][c-rusb]⮳{{hi:rusb}} is a library for accessing USB devices.
 
-## Serial Communication
+## Serial Communication {#skip}
 
 [`serialport`][c-serialport]⮳{{hi:serialport}} works with serial ports.
 
-## Networking
+## Networking {#skip}
 
 Standard networking crates like `std::net` or crates like [`tokio`][c-tokio]⮳{{hi:tokio}} for asynchronous networking are used for network hardware interaction.
 
-## Graphics Cards (GPUs)
+## Graphics Cards (GPUs) {#skip}
 
 [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}, [`vulkano`][c-vulkano]⮳{{hi:vulkano}}: These crates are used for interacting with GPUs (see the [[graphics | Graphics]] section).
 
-## General Hardware Interaction
+## General Hardware Interaction {#skip}
 
 [`ioctl`][c-ioctl]⮳{{hi:ioctl}}: A crate for performing 'ioctl' (input/output control) operations on file descriptors. Often used for interacting with device drivers or hardware.
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 
-## See also
+## See also {#skip}
 
 - [[embedded | Embedded Systems]].
 - [[os | OS]].
 
-### Device Drivers
+### Device Drivers {#skip}
 
 Writing device drivers in Rust is complex and often involves unsafe code and close interaction with the operating system kernel. You'll typically need to work with platform-specific driver APIs.
 
-### Hardware Access (User Space)
+### Hardware Access (User Space) {#skip}
 
 Accessing hardware from user space (without a driver) is often restricted for security reasons. It might involve using system calls or interacting with specific device files. See [[os | OS]].
 

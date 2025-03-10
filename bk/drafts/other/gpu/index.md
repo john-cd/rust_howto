@@ -4,13 +4,13 @@
 
 ## `blas` {#blas}
 
-## `ocl`
+## `ocl` {#ocl}
 
-## `cuda_std`
+## `cuda_std` {#cuda_std}
 
-## `dfdx`
+## `dfdx` {#dfdx}
 
-## `wonnx`
+## `wonnx` {#wonnx}
 
 ## See also
 

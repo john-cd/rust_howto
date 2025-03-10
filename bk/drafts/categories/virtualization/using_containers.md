@@ -1,6 +1,6 @@
 # Using Containers
 
-## Testing and Debugging with Containers
+## Testing and Debugging with Containers {#skip}
 
 - [Testcontainers](https://crates.io/crates/testcontainers): A library for running Docker containers in integration tests.
 See https://testcontainers.com/

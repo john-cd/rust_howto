@@ -28,7 +28,7 @@ The [`subtle`][c-subtle]⮳{{hi:subtle}} crate is a low-level library and doesn'
 {{#include ../../../crates/cats/cryptography/tests/utilities/subtle.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[memory-management | Memory Management]].
 

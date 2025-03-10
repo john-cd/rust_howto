@@ -30,25 +30,25 @@
 
 Interfacing with Node.js from Rust is typically done using Node-API (N-API), which is a stable ABI for Node.js addons.
 
-## Node-API Bindings
+## Node-API Bindings {#skip}
 
 `neon`: This crate provides a safe and convenient way to write Node.js addons in Rust using N-API. It handles a lot of the boilerplate and memory management. This is the strongly recommended approach.
 Other (Less Common) Options:
 
 `nodejs-sys`: Provides lower-level bindings to the Node.js API, but `neon` is generally preferred for ease of use and safety.
 
-## Communication/Serialization
+## Communication/Serialization {#skip}
 
 `serde`: (Often used for serializing and deserializing data passed between Rust and Node.js. Although N-API provides mechanisms for passing data, using [serde][p-serde] can be helpful for more complex data structures.)
 serde_json: (If you're exchanging [JSON][p-json] data.)
 
-## Build Tools
+## Build Tools {#skip}
 
 `cargo` for building the Rust library.
 `npm` or `yarn` for managing the Node.js side and integrating with the Rust addon.)
 `node-gyp` often used for building native Node.js addons, but `neon` simplifies this process.)
 
-## Key Concepts and Workflow
+## Key Concepts and Workflow {#skip}
 
 N-API: You'll write Rust code that interacts with the N-API to create Node.js objects, call JavaScript functions, and handle data.
 Addons: You'll create a Node.js addon that exposes your Rust functions to JavaScript.

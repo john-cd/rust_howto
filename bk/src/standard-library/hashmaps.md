@@ -12,12 +12,12 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../../crates/standard_library/tests/other/hashmaps.rs:example}}
 ```
 
-## Related Data Structures
+## Related Data Structures {#skip}
 
 - [[btrees | B-trees]].
 - [[maps | Other Maps]].
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[concurrent_data_structures | Concurrent Data Structures]].
 - [[data-structures | Data Structures]].

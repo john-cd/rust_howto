@@ -12,7 +12,7 @@
 {{#include ../../crates/language/tests/feat/async_main.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[asynchronous | Asynchronous]].
 - [[functions | Functions]].

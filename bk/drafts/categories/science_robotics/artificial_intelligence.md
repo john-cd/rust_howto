@@ -19,7 +19,7 @@ Consider `bonsai-bt` (Behavior Tree implementation) and `optimization-engine`, a
 {{#include ../../../crates/cats/science_robotics/tests/bonsai_bt.rs:example}}
 ```
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[computer-vision | Computer Vision]].
 - [[classical_machine_learning | Classical Machine Learning]].

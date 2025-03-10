@@ -56,7 +56,7 @@ Encodes byte slice into [`base64`][c-base64]⮳{{hi:base64}} {{hi:base64}} Strin
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/930)
 
-## URL Encoding
+## URL Encoding {#percent-encoding}
 
 [![percent-encoding][c-percent_encoding-badge]][c-percent_encoding] [![percent-encoding-crates.io][c-percent_encoding-crates.io-badge]][c-percent_encoding-crates.io] [![percent-encoding-github][c-percent_encoding-github-badge]][c-percent_encoding-github] [![percent-encoding-lib.rs][c-percent_encoding-lib.rs-badge]][c-percent_encoding-lib.rs]{{hi:percent-encoding}}
 

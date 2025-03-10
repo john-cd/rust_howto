@@ -2,7 +2,7 @@
 
 {{#include build_cache.incl.md}}
 
-## Use `sccache`
+## Use `sccache` {#sccache}
 
 [![sccache][c-sccache-badge]][c-sccache] [![sccache-crates.io][c-sccache-crates.io-badge]][c-sccache-crates.io] [![sccache-github][c-sccache-github-badge]][c-sccache-github] [![sccache-lib.rs][c-sccache-lib.rs-badge]][c-sccache-lib.rs]{{hi:sccache}}{{hi:Ccache}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build Utils}}
 
