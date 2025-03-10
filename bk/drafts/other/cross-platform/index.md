@@ -1,12 +1,68 @@
 # Cross-platform Development
 
-## Crux
+Cross-platform development refers to the practice of creating software applications that can run on multiple operating systems and devices (Windows, macOS, Linux, and mobile operating systems like iOS and Android) without requiring significant changes to the codebase.
+
+## Approaches
+
+## Cross-compilation
+
+For applications that do not require a graphical user interface (e.g., CLI tools, servers), simple cross-compilation may be sufficient.
+
+- `cargo` and `rustup` natively allow developers to build applications for different target platforms from a single development environment.
+- `cross` is a tool for cross-compiling Rust projects.
+
+Conditional compilation also you to write platform-specific code that behaves differently on Windows, macOS, or Linux.
+
+The #[cfg(...)] attribute is the primary mechanism for conditional compilation. It allows you to specify conditions that must be met for the code to be included in the compilation, including the target operating system (e.g., target_os = "windows", target_os = "linux") and/or the target architectures (e.g., target_arch = "x86_64", target_arch = "arm").
+
+## Web Development
+
+Web applications are intrinsically cross-platform, since most platforms have a web browser. You may ship your application as a web application (traditional web pages or a single page application).
+
+Rust can be compiled to WebAssembly, allowing developers to run performant code in web browsers. See the [[wasm | WASM]] chapter.
+
+## Desktop Applications
+
+Rust can be used to build high-performance desktop applications for Windows, macOS, and Linux.
+
+Frameworks like `tauri` enable building cross-platform desktop apps by combining Rust's backend with web technologies for the frontend.
+
+## Mobile Development
+
+While native mobile development with Rust is nascent, Rust can be combined with frameworks like `Flutter` to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
+
+## Embedded Systems
+
+Rust is becoming increasingly used in embedded systems due to its performance and safety.
+
+## Notable Cross-Platform Application Frameworks
+
+## `tauri` {#tauri}
+
+`tauri` allows you to build desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
+
+## `wry` {#wry}
+
+Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with `tauri`.
+
+## `crux`
+
+Crux is a framework for building cross-platform applications with a focus on testability and code reuse. It separates your application's logic into a Rust core that can be shared across platforms, with platform-specific "shells" for the UI.
 
 {{#include crux.incl.md}}
+
+## `dioxus`
+
+Dioxus is a Rust-based framework designed for building cross-platform user interfaces. It enables developers to create applications for web, desktop, and mobile platforms using a single Rust codebase. Dioxus is designed to be familiar to developers with web development experience, utilizing concepts similar to HTML, CSS, and JavaScript. It includes features like hot reloading, server-side rendering, and support for modern web technologies. It uses a Virtual DOM for efficient UI updates. It also provides a CLI tool to aid in project creation, building, and serving.
+
+## GTK
+
+`GTK-rs` is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[add / edit](https://github.com/john-cd/rust_howto/issues/583)
+[add / write](https://github.com/john-cd/rust_howto/issues/583)
+link to other chapters
 </div>
