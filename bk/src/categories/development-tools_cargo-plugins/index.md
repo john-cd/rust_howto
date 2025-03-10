@@ -49,7 +49,7 @@ Subcommands that extend the capabilities of Cargo.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development-tools_cargo-plugins/index: review (P1)](https://github.com/john-cd/rust_howto/issues/311)
+[development-tools_cargo-plugins/index: review](https://github.com/john-cd/rust_howto/issues/311)
 
 Here's a short list of Cargo plugins by topic:
 

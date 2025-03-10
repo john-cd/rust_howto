@@ -16,7 +16,7 @@ Databases allow clients to store and query large amounts of data in an efficient
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[database-implementations: expand (P2)](https://github.com/john-cd/rust_howto/issues/292)
+[database-implementations: expand](https://github.com/john-cd/rust_howto/issues/292)
 
 Embedded Databases:
 

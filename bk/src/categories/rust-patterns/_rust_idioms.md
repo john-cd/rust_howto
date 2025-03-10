@@ -11,6 +11,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_idioms: write (P1)](https://github.com/john-cd/rust_howto/issues/471)
-
+[rust_idioms: write](https://github.com/john-cd/rust_howto/issues/471)
 </div>

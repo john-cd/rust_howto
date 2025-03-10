@@ -103,7 +103,7 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}то
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[dir: cover `globset` (P2)](https://github.com/john-cd/rust_howto/issues/358)
+[dir: cover `globset`](https://github.com/john-cd/rust_howto/issues/358)
 
 ## `globset` {#globset}
 

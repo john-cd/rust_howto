@@ -20,5 +20,5 @@ The following example uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to c
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 </div>

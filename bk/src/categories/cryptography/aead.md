@@ -54,5 +54,5 @@ For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 </div>

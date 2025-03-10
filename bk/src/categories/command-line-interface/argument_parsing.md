@@ -113,7 +113,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[arguments: expand `lexopt` and `pico-args` (P1)](https://github.com/john-cd/rust_howto/issues/233)
+[arguments: expand `lexopt` and `pico-args`](https://github.com/john-cd/rust_howto/issues/233)
 
 ### Argument parsing {#skip1}
 
@@ -124,5 +124,4 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 ## `clap_complete`
 
 Generate shell completion scripts for your `clap::Command`
-
 </div>

@@ -26,7 +26,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/924)
+[review](https://github.com/john-cd/rust_howto/issues/924)
 
 Code Generation (Procedural Macros): (Procedural macros are the primary way to do code generation in Rust. There aren't specific [cargo][p-cargo] plugins for writing proc [macros][p-macros], but they are often used within projects that might also have other build-related plugins.)
 

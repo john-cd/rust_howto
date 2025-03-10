@@ -29,5 +29,5 @@ Unlike traditional shells that primarily handle text, `Nu` treats data as struct
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shells: expand (P1)](https://github.com/john-cd/rust_howto/issues/239)
+[shells: expand](https://github.com/john-cd/rust_howto/issues/239)
 </div>

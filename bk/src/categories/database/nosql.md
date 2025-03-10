@@ -55,6 +55,5 @@ Redis-rs is a high level `redis` library for Rust. It provides convenient access
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/1068)
-
+[review](https://github.com/john-cd/rust_howto/issues/1068)
 </div>

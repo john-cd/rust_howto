@@ -116,6 +116,6 @@ This example generates thumbnails for all `jpg`{{hi:JPEG}} files in the current 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data_parallelism: polish; dedupe with multithreading.md (P1)](https://github.com/john-cd/rust_howto/issues/260)
+[data_parallelism: polish; dedupe with multithreading.md](https://github.com/john-cd/rust_howto/issues/260)
 rayon_thumbnails.rs is noplayground - linking with [`cc`][c-cc]⮳{{hi:cc}} failed: exit status: 1 - fix?
 </div>

@@ -20,5 +20,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[time: write (P1)](https://github.com/john-cd/rust_howto/issues/293)
+[time: write](https://github.com/john-cd/rust_howto/issues/293)
 </div>

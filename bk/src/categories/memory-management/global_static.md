@@ -22,9 +22,9 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[global_static: expand - `once_cell` crate and in `std` (P1)](https://github.com/john-cd/rust_howto/issues/409)
+[global_static: expand - `once_cell` crate and in `std`](https://github.com/john-cd/rust_howto/issues/409)
 
-[P0 merge global_static.md and [lazy_initialization][p-lazy-initialization].md; review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)
+[merge global_static.md and [lazy_initialization][p-lazy-initialization].md; review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)
 
 Immutable Global: static (compile-time init, limited).
 Lazy Init: [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c-once_cell]⮳{{hi:once_cell}} (runtime init, more control).

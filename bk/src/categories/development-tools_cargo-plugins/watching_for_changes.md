@@ -49,7 +49,7 @@ This tool is especially useful in combination with [`cargo-watch`][c-cargo_watch
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[watching_for_changes: expand (P1)](https://github.com/john-cd/rust_howto/issues/315)
+[watching_for_changes: expand](https://github.com/john-cd/rust_howto/issues/315)
 
 File Watching and Rebuilding:
 

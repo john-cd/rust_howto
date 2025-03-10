@@ -66,7 +66,7 @@ It is in 100% safe Rust code. It is similar to [`smallvec`][c-smallvec]⮳{{hi:s
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[stack_allocated_arrays: write (P1)](https://github.com/john-cd/rust_howto/issues/282)
+[stack_allocated_arrays: write](https://github.com/john-cd/rust_howto/issues/282)
 
 - Review [https://docs.rs/tinyvec/latest/tinyvec/](https://docs.rs/tinyvec/latest/tinyvec/).
 

@@ -16,7 +16,7 @@ Facilitate configuration management{{hi:Configuration management}} for applicati
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 link:
+TODO link:
 
 Configuration File Formats:
 

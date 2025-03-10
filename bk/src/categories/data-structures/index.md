@@ -52,28 +52,25 @@ Standard library collections include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data-structures: expand (P1)](https://github.com/john-cd/rust_howto/issues/280)
-
+[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 Link to stdlib pages
 
-Additional Data Structures:
+## Additional Data Structures
 
-[`rangemap`][c-rangemap]⮳{{hi:rangemap}}: Stores key-value pairs where keys are ranges.
-[`ndarray`][c-ndarray]⮳{{hi:ndarray}}: Provides an n-dimensional array for numerical computation.
-[`roaring`][c-roaring]⮳{{hi:roaring}}: Implements compressed bitsets.
+- [`rangemap`][c-rangemap]⮳{{hi:rangemap}} stores key-value pairs where keys are ranges.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} provides an n-dimensional array for numerical computation.
+- [`roaring`][c-roaring]⮳{{hi:roaring}} implements compressed bitsets.
 
 Implementing and using linked lists, deques, binary trees, and other less common but sometimes necessary structures.
 
-Standard Library: `std::collections` (Vec, HashMap, LinkedList, BTreeMap, HashSet, etc.)
-Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}
-Specialized Data Structures:
-Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}
-Trees: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`
-Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}
-Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}
-Serialization/Deserialization (often used with data structures): [`serde`][c-serde]⮳{{hi:serde}}
-
----
+- Standard Library: `std::collections` (Vec, HashMap, LinkedList, BTreeMap, HashSet, etc.)
+- Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}
+- Specialized Data Structures:
+  - Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}
+  - Trees: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`
+  - Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}
+  - Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}
+- Serialization / Deserialization (often used with data structures): [`serde`][c-serde]⮳{{hi:serde}}
 
 ## `either` {#either}
 
@@ -84,5 +81,4 @@ The enum [`Either`][c-either]⮳{{hi:Either}} with variants `Left` and `Right` i
 `Either` has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`.
 
 Includes macros `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`. Note that `Either` is general purpose. For describing success or error, use the regular `Result`.
-
 </div>

@@ -20,5 +20,5 @@ RSA (Rivest-Shamir-Adleman) is one of the most widely used public-key cryptosyst
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[encryption: expand (P2)](https://github.com/john-cd/rust_howto/issues/272)
+[encryption: expand](https://github.com/john-cd/rust_howto/issues/272)
 </div>

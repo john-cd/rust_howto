@@ -10,7 +10,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[regex2: better title (P1)](https://github.com/john-cd/rust_howto/issues/489)
+[regex2: better title](https://github.com/john-cd/rust_howto/issues/489)
 
 {{#include regex.incl.md}}
 

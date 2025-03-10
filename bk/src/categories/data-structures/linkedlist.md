@@ -20,8 +20,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 Include stack / queue examples
-
 Here or in [`std`][c-std]⮳{{hi:std}} lib section?
 </div>

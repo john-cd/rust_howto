@@ -50,6 +50,5 @@ SurrealDB is a scalable, distributed, collaborative, document-graph [database][p
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[databases: expand / write (P2)](https://github.com/john-cd/rust_howto/issues/290)
-
+[databases: expand / write](https://github.com/john-cd/rust_howto/issues/290)
 </div>

@@ -32,5 +32,5 @@ This can be particularly useful for [embedded][p-embedded] systems or other envi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 </div>

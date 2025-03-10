@@ -23,5 +23,4 @@ The user interface{{hi:User interface}} layer is built natively, with modern dec
 
 <div class="hidden">
 [crux: add / edit](https://github.com/john-cd/rust_howto/issues/582)
-
 </div>

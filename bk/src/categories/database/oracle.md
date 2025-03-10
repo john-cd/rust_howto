@@ -36,7 +36,5 @@ Oracle [Database][p-database] is a multi-model [database][p-database] management
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-[P1 write](https://github.com/john-cd/rust_howto/issues/1069)
-
+[write](https://github.com/john-cd/rust_howto/issues/1069)
 </div>

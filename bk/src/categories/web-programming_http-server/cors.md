@@ -18,5 +18,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cors: write (P1)](https://github.com/john-cd/rust_howto/issues/510)
+[cors: write](https://github.com/john-cd/rust_howto/issues/510)
 </div>

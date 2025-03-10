@@ -66,7 +66,7 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[crates_by_category: verify all crates are added to at least one category above (P2)](https://github.com/john-cd/rust_howto/issues/534)
+[crates_by_category: verify all crates are added to at least one category above](https://github.com/john-cd/rust_howto/issues/534)
 
 [![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
 [![cornucopia][c-cornucopia-badge]][c-cornucopia]{{hi:cornucopia}}

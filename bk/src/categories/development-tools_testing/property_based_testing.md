@@ -38,6 +38,5 @@ Often done with custom functions or data structures, but crates like `faker` can
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 cover property [testing][p-testing] [proptest](https://github.com/proptest-rs/proptest)
-
+TODO cover property [testing][p-testing] [proptest](https://github.com/proptest-rs/proptest)
 </div>

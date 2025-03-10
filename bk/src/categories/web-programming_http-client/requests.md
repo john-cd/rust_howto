@@ -47,6 +47,5 @@ The request targets [http://httpbin.org/headers][httpbin.org-headers] service wh
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/976)
-
+[review](https://github.com/john-cd/rust_howto/issues/976)
 </div>

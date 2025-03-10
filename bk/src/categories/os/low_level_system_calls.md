@@ -22,6 +22,5 @@ Bindings for directly calling [`libc`][c-libc]⮳{{hi:libc}} functions.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[low_level_system_calls: write (P1)](https://github.com/john-cd/rust_howto/issues/430)
-
+[low_level_system_calls: write](https://github.com/john-cd/rust_howto/issues/430)
 </div>

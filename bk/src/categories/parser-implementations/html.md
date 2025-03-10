@@ -46,10 +46,9 @@ tl = { version = "0.7.8", features = ["simd"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+TODO write
 
 [`scraper`][c-scraper]⮳{{hi:scraper}}, [`select`][c-select]⮳{{hi:select}}, [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}}
 
 [`scraper`][c-scraper]⮳{{hi:scraper}} uses CSS selectors. [`select`][c-select]⮳{{hi:select}} is another option. [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}} is a fast and robust HTML parser.
-
 </div>

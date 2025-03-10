@@ -14,8 +14,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 here or in [`std`][c-std]⮳{{hi:std}} lib section?
-
-[`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}}: Implements a priority queue using a heap.
+[`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}} implements a priority queue using a heap.
 </div>

@@ -19,7 +19,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[memory: write (P2)](https://github.com/john-cd/rust_howto/issues/336)
+[memory: write](https://github.com/john-cd/rust_howto/issues/336)
 
 ## Memory Profiling (Allocation Tracking)
 

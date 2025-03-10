@@ -45,7 +45,7 @@
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
-[http_clients: expand (P1)](https://github.com/john-cd/rust_howto/issues/504)
+[http_clients: expand](https://github.com/john-cd/rust_howto/issues/504)
 See hyper.md in server.
 [hyper.rs](http://hyper.rs/)
 [examples](https://github.com/hyperium/hyper/tree/master/examples)

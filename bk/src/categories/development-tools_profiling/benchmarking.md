@@ -79,5 +79,5 @@ hyperfine --warmup 3 'grep -R TODO *'
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[benchmarking: write (P2)](https://github.com/john-cd/rust_howto/issues/335)
+[benchmarking: write](https://github.com/john-cd/rust_howto/issues/335)
 </div>

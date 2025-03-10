@@ -28,7 +28,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: reorganize; dedupe alternatives / `log` / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
 
 Debugging with [`gdb`][c-gdb]⮳{{hi:gdb}} or [`lldb`][c-lldb]⮳{{hi:lldb}}: Basic debugging techniques.
 

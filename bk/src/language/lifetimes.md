@@ -38,5 +38,5 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[lifetimes: review (P1)](https://github.com/john-cd/rust_howto/issues/547)
+[lifetimes: review](https://github.com/john-cd/rust_howto/issues/547)
 </div>

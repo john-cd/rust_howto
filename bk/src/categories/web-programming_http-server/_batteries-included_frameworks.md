@@ -28,6 +28,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[batteries-included_frameworks: write (P1)](https://github.com/john-cd/rust_howto/issues/509)
+[batteries-included_frameworks: write](https://github.com/john-cd/rust_howto/issues/509)
 
 </div>

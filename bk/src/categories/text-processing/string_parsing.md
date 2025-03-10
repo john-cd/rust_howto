@@ -28,5 +28,5 @@ Creates a custom struct `RGB` and implements the [`FromStr`][c-std::str::FromStr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/965)
+[review](https://github.com/john-cd/rust_howto/issues/965)
 </div>

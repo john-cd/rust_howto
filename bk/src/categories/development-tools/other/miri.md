@@ -24,5 +24,5 @@ cargo miri run
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[miri: polish (P1)](https://github.com/john-cd/rust_howto/issues/304)
+[miri: polish](https://github.com/john-cd/rust_howto/issues/304)
 </div>

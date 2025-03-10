@@ -24,6 +24,7 @@ Shared solutions for particular situations specific to programming in Rust.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[index: organize / write](https://github.com/john-cd/rust_howto/issues/469)
 
 ## Rust idioms
 
@@ -32,8 +33,6 @@ Shared solutions for particular situations specific to programming in Rust.
 ## Builder patterns
 
 {{#include _builder_pattern.incl.md}}
-
-[index: organize / write P1](https://github.com/john-cd/rust_howto/issues/469)
 
 ## Rust Patterns Organized by Topic
 
@@ -126,8 +125,6 @@ Typenum is a Rust library for type-level numbers evaluated at compile time. It c
 
 {{#example typenum}}
 
-TODO P2 write
-
 ---
 
 ## `indoc` {#indoc}
@@ -145,8 +142,6 @@ The [`indoc`][c-indoc]⮳{{hi:indoc}} crate exports five additional macros to su
 `concatdoc!(...)` — equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
 
 {{#example indoc}}
-
-TODO P2 write
 
 ## `pin-project` and `pin-project-lite` {#pin-project}
 
@@ -166,7 +161,4 @@ The `pin_project!` macro creates a projection type covering all the fields of st
 
 See also https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning
 https://doc.rust-lang.org/std/pin/struct.Pin.html
-
-TODO P2 write
-
 </div>

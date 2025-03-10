@@ -16,6 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tinytemplate: write; add sample from tools code (P1)](https://github.com/john-cd/rust_howto/issues/484)
-
+[tinytemplate: write; add sample from tools code](https://github.com/john-cd/rust_howto/issues/484)
 </div>

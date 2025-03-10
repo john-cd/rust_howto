@@ -10,7 +10,7 @@ Bindings to Windows-specific APIs.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 review](https://github.com/john-cd/rust_howto/issues/950)
+[review](https://github.com/john-cd/rust_howto/issues/950)
 
 | Topic | Rust Crates|
 | --- | --- |

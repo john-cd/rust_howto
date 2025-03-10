@@ -20,7 +20,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[performance: expand (P1)](https://github.com/john-cd/rust_howto/issues/314)
+[performance: expand](https://github.com/john-cd/rust_howto/issues/314)
 
 Profiling:
 

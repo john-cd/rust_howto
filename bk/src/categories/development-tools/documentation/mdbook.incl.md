@@ -6,7 +6,7 @@
 | [Let readers execute your sample code in the Rust playground][ex-documentation-playground] | [![rust-playground][rust-playground-website-badge]][rust-playground-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 
 <div class="hidden">
-[mdbook.incl: titles (P1)](https://github.com/john-cd/rust_howto/issues/298)
+[mdbook.incl: titles](https://github.com/john-cd/rust_howto/issues/298)
 
 | [`mdbook-cmdrun`][ex-documentation-mdbook-cmdrun] | [![mdbook-cmdrun][c-mdbook_cmdrun-badge]][c-mdbook_cmdrun] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Create a journal with `mdbook-journal`][ex-documentation-mdbook-journal] | [![mdbook-journal][c-mdbook_journal-badge]][c-mdbook_journal] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |

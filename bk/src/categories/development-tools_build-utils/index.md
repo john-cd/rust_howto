@@ -32,6 +32,5 @@ Utilities for build scripts and other build time steps.
 | Testing | `cargo test` |
 
 <div class="hidden">
-[development-tools_build-utils/index: add (P2)](https://github.com/john-cd/rust_howto/issues/306)
-
+[development-tools_build-utils/index: add](https://github.com/john-cd/rust_howto/issues/306)
 </div>

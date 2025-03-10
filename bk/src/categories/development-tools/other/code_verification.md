@@ -65,7 +65,7 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[code_verification: expand; revise refs.incl.md (P1)](https://github.com/john-cd/rust_howto/issues/303)
+[code_verification: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/303)
 
 Link to:
 
@@ -77,15 +77,11 @@ Integration Testing: (Often uses std::test but focuses on [testing][p-testing] i
 Fuzzing: [cargo][p-cargo] fuzz, afl.rs (bindings to AFL)
 Type Checking: (Built into the Rust compiler)
 Code Review Tools: (Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.)
-
-TODO P1 add [Model_checking](https://en.wikipedia.org/wiki/Model_checking) [getting-started](https://model-checking.github.io/kani/getting-started.html)
+add [Model_checking](https://en.wikipedia.org/wiki/Model_checking) [getting-started](https://model-checking.github.io/kani/getting-started.html)
 [announcing-the-kani-rust-verifier-project](https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html)
 [using-the-kani-rust-verifier-on-a-firecracker-example](https://model-checking.github.io/kani-verifier-blog/2022/07/13/using-the-kani-rust-verifier-on-a-firecracker-example.html)
 [sing-the-kani-rust-verifier-on-a-rust-standard-library-cve](https://model-checking.github.io/kani-verifier-blog/2022/06/01/using-the-kani-rust-verifier-on-a-rust-standard-library-cve.html)
-
-TODO P2 cover [loom](https://github.com/tokio-rs/loom) and [shuttle](https://github.com/awslabs/shuttle) for [concurrency][p-concurrency] testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
-
-TODO P2 cover [MIRAI](https://github.com/endorlabs/MIRAI)
-
-TODO P2 cover [prusti](https://www.pm.inf.ethz.ch/research/prusti.html) [creusot](https://github.com/creusot-rs/creusot)
+cover [loom](https://github.com/tokio-rs/loom) and [shuttle](https://github.com/awslabs/shuttle) for [concurrency][p-concurrency] testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
+cover [MIRAI](https://github.com/endorlabs/MIRAI)
+cover [prusti](https://www.pm.inf.ethz.ch/research/prusti.html) [creusot](https://github.com/creusot-rs/creusot)
 </div>

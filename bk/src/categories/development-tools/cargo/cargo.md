@@ -97,5 +97,5 @@ cargo add actix-web@4.0.0
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/915)
+[review](https://github.com/john-cd/rust_howto/issues/915)
 </div>

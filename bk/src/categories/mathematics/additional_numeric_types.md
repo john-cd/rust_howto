@@ -68,6 +68,5 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[additional_numeric_types: write (P1)](https://github.com/john-cd/rust_howto/issues/407)
-
+[additional_numeric_types: write](https://github.com/john-cd/rust_howto/issues/407)
 </div>

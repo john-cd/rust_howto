@@ -36,6 +36,6 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/978)
+[review](https://github.com/john-cd/rust_howto/issues/978)
 
 </div>

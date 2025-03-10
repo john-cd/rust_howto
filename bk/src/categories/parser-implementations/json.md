@@ -38,6 +38,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[json: include in index.md / SUMMARY.md; write (P2)](https://github.com/john-cd/rust_howto/issues/440)
-
+[json: include in index.md / SUMMARY.md; write](https://github.com/john-cd/rust_howto/issues/440)
 </div>

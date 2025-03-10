@@ -98,7 +98,7 @@ bacon clippy
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/919)
+[review](https://github.com/john-cd/rust_howto/issues/919)
 (See [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability)
 
 Build System: [cargo][p-cargo] (the primary build system for Rust)

@@ -33,7 +33,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P2 write](https://github.com/john-cd/rust_howto/issues/951)
+[write](https://github.com/john-cd/rust_howto/issues/951)
 
 ## Parse Rust Code {#rust_parsing}
 

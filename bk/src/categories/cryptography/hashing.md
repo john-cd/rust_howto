@@ -74,7 +74,5 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-[hashing: improve (P1)](https://github.com/john-cd/rust_howto/issues/273) review [blessed.rs][blessed-rs-website]
-
+[hashing: improve](https://github.com/john-cd/rust_howto/issues/273) review [blessed.rs][blessed-rs-website]
 </div>

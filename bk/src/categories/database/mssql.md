@@ -16,6 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 organize / write](https://github.com/john-cd/rust_howto/issues/1067)
-
+[organize / write](https://github.com/john-cd/rust_howto/issues/1067)
 </div>

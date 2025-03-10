@@ -51,7 +51,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[postgres: `cornucopia` (P2)](https://github.com/john-cd/rust_howto/issues/286)
+[postgres: `cornucopia`](https://github.com/john-cd/rust_howto/issues/286)
 
 ## `cornucopia` for postgres {#cornucopia}
 

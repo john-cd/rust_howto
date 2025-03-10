@@ -30,7 +30,7 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[user_directories: write (P1)](https://github.com/john-cd/rust_howto/issues/362)
+[user_directories: write](https://github.com/john-cd/rust_howto/issues/362)
 
 - find a spot for the following:
 

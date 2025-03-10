@@ -84,7 +84,7 @@ See also [`pre-commit`][pre-commit.com-website]⮳, which is a Python framework 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[code_formatting_linting: expand (P1)](https://github.com/john-cd/rust_howto/issues/310)
+[code_formatting_linting: expand](https://github.com/john-cd/rust_howto/issues/310)
 
 Linting:
 

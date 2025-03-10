@@ -36,6 +36,5 @@ cargo test --doc
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[testing: write (P2)](https://github.com/john-cd/rust_howto/issues/340)
-
+[testing: write](https://github.com/john-cd/rust_howto/issues/340)
 </div>

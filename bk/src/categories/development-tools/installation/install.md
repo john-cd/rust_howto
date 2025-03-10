@@ -20,7 +20,7 @@ The `cargo install` command manages [`cargo`][c-cargo]⮳{{hi:cargo}}'s local se
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/918)
+[review](https://github.com/john-cd/rust_howto/issues/918)
 
 Package Managers: [cargo][p-cargo] (for Rust itself and Rust projects)
 Installer Generators: cargo-deb, cargo-rpm, create-dmg (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively)

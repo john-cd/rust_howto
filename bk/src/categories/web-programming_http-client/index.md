@@ -24,7 +24,7 @@ Make HTTP network requests.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[web-programming_http-client/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/505)
+[web-programming_http-client/index: fix](https://github.com/john-cd/rust_howto/issues/505)
 
 This table outlines common tasks for building web clients in Rust and relevant crates. Web clients in Rust can range from simple HTTP request libraries to more advanced tools for interacting with APIs or building web applications that fetch data.
 

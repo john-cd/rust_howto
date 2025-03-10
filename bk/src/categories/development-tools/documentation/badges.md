@@ -10,8 +10,6 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
 <div class="hidden">
-[badges: expand (P1)](https://github.com/john-cd/rust_howto/issues/296)
-
+[badges: expand](https://github.com/john-cd/rust_howto/issues/296)
 </div>

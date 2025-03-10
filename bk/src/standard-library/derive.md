@@ -37,5 +37,5 @@ See also:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[derive: review (P1)](https://github.com/john-cd/rust_howto/issues/621)
+[derive: review](https://github.com/john-cd/rust_howto/issues/621)
 </div>

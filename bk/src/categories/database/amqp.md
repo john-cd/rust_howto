@@ -21,6 +21,5 @@ task queues, background job processing, and publish-subscribe (pub-sub).
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 finish](https://github.com/john-cd/rust_howto/issues/1064)
-
+[finish](https://github.com/john-cd/rust_howto/issues/1064)
 </div>

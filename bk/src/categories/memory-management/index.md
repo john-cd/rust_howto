@@ -16,7 +16,7 @@ Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garb
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[memory-management/index: organize (P1)](https://github.com/john-cd/rust_howto/issues/410)
+[memory-management/index: organize](https://github.com/john-cd/rust_howto/issues/410)
 
 ## Key Points
 
@@ -114,10 +114,6 @@ Rust does not have a garbage collector in the traditional sense. It uses ownersh
 ## Unsafe Code and Raw Pointers
 
 Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when absolutely necessary for interacting with external code or hardware. They bypass Rust's safety guarantees and require very careful manual memory management.
-
----
-
-TODO P2 add
 
 ## `bumpalo` {#bumpalo}
 

@@ -77,7 +77,7 @@ For things you do not want [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} to mangle, us
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[formatting: add link for formatting attributes (P1)](https://github.com/john-cd/rust_howto/issues/300)
+[formatting: add link for formatting attributes](https://github.com/john-cd/rust_howto/issues/300)
 
 Code Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} (the standard Rust code formatter)
 Configuration: ([Configuration][p-configuration] is done through rustfmt.toml files)

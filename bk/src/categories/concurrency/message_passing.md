@@ -51,5 +51,5 @@ The [`flume`][c-flume]⮳{{hi:flume}} crate is a library that provides multiple-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[message_passing: polish (P1)](https://github.com/john-cd/rust_howto/issues/264)
+[message_passing: polish](https://github.com/john-cd/rust_howto/issues/264)
 </div>

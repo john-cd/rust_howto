@@ -34,7 +34,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[search: expand (P2)](https://github.com/john-cd/rust_howto/issues/291)
+[search: expand](https://github.com/john-cd/rust_howto/issues/291)
 
 Full-Text [Search][p-search] (Local): tantivy, elastic-client (for Elasticsearch), [`meilisearch`][c-meilisearch]⮳{{hi:meilisearch}} (client)
 Fuzzy Searching: fuzzy-matcher, strsim

@@ -26,6 +26,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[other_frameworks: organize (P1)](https://github.com/john-cd/rust_howto/issues/518)
+[other_frameworks: organize](https://github.com/john-cd/rust_howto/issues/518)
 
 </div>

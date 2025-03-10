@@ -25,5 +25,5 @@ NOTES:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[asref: write (P1)](https://github.com/john-cd/rust_howto/issues/619)
+[asref: write](https://github.com/john-cd/rust_howto/issues/619)
 </div>

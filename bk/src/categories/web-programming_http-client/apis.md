@@ -44,6 +44,7 @@ The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[review](https://github.com/john-cd/rust_howto/issues/974)
 
 ## Consume a paginated RESTful API {#consume-a-paginated-restful-api}
 
@@ -64,7 +65,5 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]{{
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/tests/apis/rate_limited.rs:example}}
 ```
-
-[P1 review](https://github.com/john-cd/rust_howto/issues/974)
 
 </div>

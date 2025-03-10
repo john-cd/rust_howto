@@ -42,6 +42,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ides: update (P1)](https://github.com/john-cd/rust_howto/issues/486)
-
+[ides: update](https://github.com/john-cd/rust_howto/issues/486)
 </div>

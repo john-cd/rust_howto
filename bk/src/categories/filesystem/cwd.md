@@ -14,7 +14,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cwd: move to proper location (P1)](https://github.com/john-cd/rust_howto/issues/357)
+[cwd: move to proper location](https://github.com/john-cd/rust_howto/issues/357)
 
 - rename directory management.
 - find a spot for the following.

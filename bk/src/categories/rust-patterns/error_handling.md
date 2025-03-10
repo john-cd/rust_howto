@@ -70,7 +70,9 @@ The below recipe will tell how long the system has been running by opening the U
 
 [![reqwest][c-reqwest-badge]][c-reqwest] [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io] [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github] [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.<div class="hidden">[P1 move somewhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
+Uses [`reqwest::blocking`][c-reqwest::blocking]⮳ to query a random integer generator web service. Converts the string response into an integer.
+
+<div class="hidden">[move somewhere else](https://github.com/john-cd/rust_howto/issues/642)</div>
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/error/retain.rs:example}}
@@ -80,7 +82,6 @@ Uses [`reqwest`][c-reqwest]{{hi:reqwest}}⮳::[blocking][c-reqwest::blocking]⮳
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
 ## Obtain the backtrace in complex error scenarios {#obtain-backtrace}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
@@ -106,9 +107,9 @@ Error level - description
 
 Run the recipe with `RUST_BACKTRACE=1` to display a detailed backtrace associated with this error.
 
-[error_handling: fix / organize (P1)](https://github.com/john-cd/rust_howto/issues/465)
+[error_handling: fix / organize](https://github.com/john-cd/rust_howto/issues/465)
 
-[error_handling: need examples for (P1)](https://github.com/john-cd/rust_howto/issues/466)
+[error_handling: need examples for](https://github.com/john-cd/rust_howto/issues/466)
 
 - unwrap.
 

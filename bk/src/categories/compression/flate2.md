@@ -23,5 +23,5 @@ Compress, then decompress data:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 write; add to SUMMARY](https://github.com/john-cd/rust_howto/issues/1062)
+[write](https://github.com/john-cd/rust_howto/issues/1062)
 </div>

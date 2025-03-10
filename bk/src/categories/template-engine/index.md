@@ -16,7 +16,7 @@ Crates designed to combine templates with data to produce result documents, usua
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[template-engine/index: write (P1)](https://github.com/john-cd/rust_howto/issues/482)
+[template-engine/index: write](https://github.com/john-cd/rust_howto/issues/482)
 
 ## Rust Crates for Template Engines
 

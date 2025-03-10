@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tempfile: write (P1)](https://github.com/john-cd/rust_howto/issues/361)
+[tempfile: write](https://github.com/john-cd/rust_howto/issues/361)
 
 - tempdir.
 

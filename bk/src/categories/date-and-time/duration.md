@@ -43,5 +43,5 @@ Gets the local time{{hi:Time}} and displays it using [`chrono::offset::Local::no
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/913)
+[review](https://github.com/john-cd/rust_howto/issues/913)
 </div>

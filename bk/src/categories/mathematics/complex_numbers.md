@@ -57,5 +57,5 @@ Complex numbers have a range of interesting properties when it comes to how they
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P2 final review](https://github.com/john-cd/rust_howto/issues/935)
+[final review](https://github.com/john-cd/rust_howto/issues/935)
 </div>

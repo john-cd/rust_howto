@@ -24,7 +24,7 @@ Development tools to help you figure out the performance of your code.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand (P2)](https://github.com/john-cd/rust_howto/issues/337)
+[expand](https://github.com/john-cd/rust_howto/issues/337)
 
 Profiling: Using profiling tools to identify performance bottlenecks.
 

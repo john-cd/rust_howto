@@ -33,7 +33,6 @@ A flagset refers to a bitfield used to represent a set of boolean flags or optio
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[bitfield: review (P1)](https://github.com/john-cd/rust_howto/issues/279)
-
-Cover [`bitvec`][c-bitvec]⮳{{hi:bitvec}}: Provides efficient storage and manipulation of bit vectors.
+[bitfield: review](https://github.com/john-cd/rust_howto/issues/279)
+Cover: [`bitvec`][c-bitvec]⮳{{hi:bitvec}} provides efficient storage and manipulation of bit vectors.
 </div>

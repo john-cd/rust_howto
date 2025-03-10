@@ -41,6 +41,5 @@ MediaWiki link syntax is described [here][mediawiki-link-syntax]⮳.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/972)
-
+[review](https://github.com/john-cd/rust_howto/issues/972)
 </div>

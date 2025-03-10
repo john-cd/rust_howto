@@ -91,7 +91,7 @@ jobs:
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[mdbook: organize, expand (P1)](https://github.com/john-cd/rust_howto/issues/299)
+[mdbook: organize, expand](https://github.com/john-cd/rust_howto/issues/299)
 
 - [mdslides][mdslides]
 

@@ -87,7 +87,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tracing: [tracing-next-steps][c-tracing-next-steps] (P1)](https://github.com/john-cd/rust_howto/issues/322)
+[tracing: [tracing-next-steps][c-tracing-next-steps]](https://github.com/john-cd/rust_howto/issues/322)
 
 [tracing-next-steps][c-tracing-next-steps]
 

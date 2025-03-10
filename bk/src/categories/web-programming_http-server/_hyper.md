@@ -32,7 +32,7 @@ This said, we provide below an example of a HTTP server, following the recommend
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[hyper: write (P1)](https://github.com/john-cd/rust_howto/issues/515)
+[hyper: write](https://github.com/john-cd/rust_howto/issues/515)
 
 [hello-world](https://hyper.rs/guides/1/server/hello-world/)
 [examples](https://github.com/hyperium/hyper/tree/master/examples)

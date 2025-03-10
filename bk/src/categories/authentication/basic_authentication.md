@@ -23,5 +23,5 @@ Uses [`reqwest::RequestBuilder::basic_auth`][c-reqwest::RequestBuilder::basic_au
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[basic_authentication: expand (P2)](https://github.com/john-cd/rust_howto/issues/224) authentication/basic.rs is noplayground because of network use. rewrite?
+[basic_authentication: expand](https://github.com/john-cd/rust_howto/issues/224) authentication/basic.rs is noplayground because of network use. rewrite?
 </div>

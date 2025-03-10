@@ -22,6 +22,5 @@ Here is an example demonstrating the use of [`deadpool`][c-deadpool]⮳{{hi:dead
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[connection_pool: expand; example (P1)](https://github.com/john-cd/rust_howto/issues/284)
-
+[connection_pool: expand; example](https://github.com/john-cd/rust_howto/issues/284)
 </div>

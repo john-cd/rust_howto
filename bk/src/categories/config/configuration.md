@@ -42,5 +42,5 @@ Config lets you set a set of default parameters and then extend them via merging
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[configuration: expand; add text (P1)](https://github.com/john-cd/rust_howto/issues/270)
+[configuration: expand; add text](https://github.com/john-cd/rust_howto/issues/270)
 </div>

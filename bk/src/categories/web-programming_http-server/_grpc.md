@@ -24,6 +24,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[grpc: write (P1)](https://github.com/john-cd/rust_howto/issues/514)
+[grpc: write](https://github.com/john-cd/rust_howto/issues/514)
 
 </div>

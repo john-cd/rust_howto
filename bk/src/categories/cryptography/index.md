@@ -52,7 +52,7 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cryptography: review / incorporate (P2)](https://github.com/john-cd/rust_howto/issues/274)
+[cryptography: review / incorporate](https://github.com/john-cd/rust_howto/issues/274)
 
 - ring.
 - rust-crypto.

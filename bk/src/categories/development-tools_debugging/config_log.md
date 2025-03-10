@@ -80,7 +80,7 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/925)
+[review](https://github.com/john-cd/rust_howto/issues/925)
 
 Logging Framework: [log][p-log] (provides the logging [macros][p-macros] and facade)
 

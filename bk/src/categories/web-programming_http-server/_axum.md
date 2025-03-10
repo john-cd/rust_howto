@@ -23,6 +23,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[axum: write (P1)](https://github.com/john-cd/rust_howto/issues/507)
+[axum: write](https://github.com/john-cd/rust_howto/issues/507)
 
 </div>

@@ -26,6 +26,6 @@ Struct fields{{hi:Fields}} follow the general rule of everything being private b
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[structs: add description (P1)](https://github.com/john-cd/rust_howto/issues/559)
+[structs: add description](https://github.com/john-cd/rust_howto/issues/559)
 
 </div>

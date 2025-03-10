@@ -43,10 +43,8 @@ Note that, by implementing the unsafe marker [traits][p-traits] `Send` and `Sync
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-[Send / Sync custom implementation: finish example in playground crate (P1 / P2)](https://github.com/john-cd/rust_howto/issues/265)
-
-[P1](https://github.com/john-cd/rust_howto/issues/909)
+[Send / Sync custom implementation: finish example in playground crate](https://github.com/john-cd/rust_howto/issues/265)
+[write](https://github.com/john-cd/rust_howto/issues/909)
 
 - Credit [Understanding the Send trait](https://stackoverflow.com/questions/59428096/understanding-the-send-trait).
 
@@ -67,5 +65,4 @@ In the following example, we define a struct with a raw pointer to some data.
 
 We spawn multiple threads to demonstrate that `MyStruct` is `Send` and `Sync`. Each thread prints the value of the data pointer.
 The data pointer remains valid and that the usage of `MyStruct` is thread-safe.
-
 </div>

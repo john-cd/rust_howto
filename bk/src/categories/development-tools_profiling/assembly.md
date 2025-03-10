@@ -15,6 +15,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[assembly: write (P2)](https://github.com/john-cd/rust_howto/issues/333)
-
+[assembly: write](https://github.com/john-cd/rust_howto/issues/333)
 </div>

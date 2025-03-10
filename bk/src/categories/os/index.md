@@ -20,7 +20,7 @@ Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[os/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/429)
+[os/index: fix](https://github.com/john-cd/rust_howto/issues/429)
 
 Rust offers various ways to interact with the operating system, depending on your needs.
 

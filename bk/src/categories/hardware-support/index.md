@@ -40,7 +40,7 @@ See [[embedded | Embedded]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 expand hardware-support](https://github.com/john-cd/rust_howto/issues/70)
+[expand hardware-support](https://github.com/john-cd/rust_howto/issues/70)
 
 - Memory-mapped I/O: How you interact with hardware registers in embedded systems.
 - Interrupts: How hardware signals the CPU in embedded systems.

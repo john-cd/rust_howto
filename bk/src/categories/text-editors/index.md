@@ -10,7 +10,7 @@ Applications for editing text.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/962)
+[review](https://github.com/john-cd/rust_howto/issues/962)
 
 ## IDEs and Text Editors with Rust Support
 

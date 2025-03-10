@@ -50,8 +50,8 @@ Tools that provide developer-facing features such as testing, debugging, linting
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development-tools/index: add (P2)](https://github.com/john-cd/rust_howto/issues/301)
-[index: reorganize; dedupe alternatives / `log` / config_log (P1)](https://github.com/john-cd/rust_howto/issues/319)
+[development-tools/index: add](https://github.com/john-cd/rust_howto/issues/301)
+[index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
 
 ## Optimize Rust Compilation
 

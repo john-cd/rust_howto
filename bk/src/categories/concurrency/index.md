@@ -80,5 +80,5 @@ Using iterators in parallel with crates like `rayon`.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[concurrency: add somewhere ](https://github.com/john-cd/rust_howto/issues/263)
+[concurrency: add somewhere](https://github.com/john-cd/rust_howto/issues/263)
 </div>

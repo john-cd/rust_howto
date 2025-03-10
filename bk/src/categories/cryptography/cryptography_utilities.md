@@ -36,5 +36,5 @@ The [`subtle`][c-subtle]⮳{{hi:subtle}} crate is a low-level library and doesn'
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
+TODO write
 </div>

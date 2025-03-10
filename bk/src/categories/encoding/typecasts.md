@@ -47,12 +47,11 @@ Zerocopy is often used in [network programming][p-network-programming], where hi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-[typecasts: write (P1)](https://github.com/john-cd/rust_howto/issues/354)
+[typecasts: write](https://github.com/john-cd/rust_howto/issues/354)
 
 Rust is a statically typed [language][p-language], so "type casting" in the traditional C/C++ sense is less common. Instead, Rust emphasizes explicit type conversions and traits. Here's a breakdown:
 
-## Type Conversion (using as)
+## Type Conversion (using `as`)
 
 The `as` keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
 

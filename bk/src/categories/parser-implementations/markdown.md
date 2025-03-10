@@ -38,6 +38,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[markdown: write; include in index.md / SUMMARY.md (P2)](https://github.com/john-cd/rust_howto/issues/442)
-
+[markdown: write](https://github.com/john-cd/rust_howto/issues/442)
 </div>

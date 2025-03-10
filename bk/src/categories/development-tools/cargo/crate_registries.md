@@ -16,7 +16,7 @@ Alternative to [`crates.io`][crates.io-website]⮳{{hi:crates.io}}: [`lib.rs`][l
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[crate_registries: expand (P1)](https://github.com/john-cd/rust_howto/issues/294)
+[crate_registries: expand](https://github.com/john-cd/rust_howto/issues/294)
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/tests/crate_registries/crates_io.rs:example}}

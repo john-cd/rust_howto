@@ -73,5 +73,5 @@ For more [algorithms][p-algorithms], see Rust Crypto Signatures:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P1 write
+TODO write
 </div>

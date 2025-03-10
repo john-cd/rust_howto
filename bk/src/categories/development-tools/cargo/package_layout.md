@@ -44,5 +44,5 @@ If you're building a non-end product, such as a rust library that other rust pac
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/916)
+[review](https://github.com/john-cd/rust_howto/issues/916)
 </div>

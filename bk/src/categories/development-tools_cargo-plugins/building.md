@@ -61,7 +61,7 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[building: expand (P1)](https://github.com/john-cd/rust_howto/issues/309)
+[building: expand](https://github.com/john-cd/rust_howto/issues/309)
 
 Link to:
 

@@ -152,7 +152,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 | [Routific][routific-website] | High [performance][p-performance] route optimization software. |
 | [RustNL][rustnl-website]⮳ | |
 | [Rustdesk][rustdesk-website]⮳[(github)][rustdesk-github]⮳ | |
-| [Salesforce ][salesforce-website]⮳ | Uses Rust & WASM for MuleSoft's Flex Gateway, a new gateway running on Envoy. |
+| [Salesforce][salesforce-website]⮳ | Uses Rust & WASM for MuleSoft's Flex Gateway, a new gateway running on Envoy. |
 | [SandboxVR][sandboxvr-website]⮳ | |
 | [Sandstorm][sandstorm-website]⮳ | The backend of their Collections app is written in Rust. |
 | [Scythe Robotics][scytherobotics-website]⮳ | |
@@ -209,7 +209,7 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 finish](https://github.com/john-cd/rust_howto/issues/987)
+[finish](https://github.com/john-cd/rust_howto/issues/987)
 
 - [Volvo][volvo].
 

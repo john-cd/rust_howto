@@ -56,7 +56,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[xml: include in index.md / SUMMARY.md; write (P2)](https://github.com/john-cd/rust_howto/issues/446)
+[xml: include in index.md / SUMMARY.md; write](https://github.com/john-cd/rust_howto/issues/446)
 
 [`minidom`][c-minidom]⮳{{hi:minidom}} builds a DOM tree.
 

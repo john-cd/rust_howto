@@ -55,7 +55,7 @@ Use [`slotmap`][c-slotmap]⮳{{hi:slotmap}} to store collections of objects that
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[maps: write / expand (P1)](https://github.com/john-cd/rust_howto/issues/281)
+[maps: write / expand](https://github.com/john-cd/rust_howto/issues/281)
 
 ## See also
 

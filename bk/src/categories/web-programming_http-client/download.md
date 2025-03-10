@@ -15,7 +15,7 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 ```
 
 <div class="hidden">
-[P0 wrong example](https://github.com/john-cd/rust_howto/issues/644)?
+[wrong example](https://github.com/john-cd/rust_howto/issues/644)?
 </div>
 
 ## POST a file to `paste.rs` {#post-a-file-to-paste-rs}
@@ -46,6 +46,5 @@ The Range header is defined in [`RFC7233`][http-range-rfc7233]{{hi:RFC-7233}}⮳
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[P1 review](https://github.com/john-cd/rust_howto/issues/975)
-
+[review](https://github.com/john-cd/rust_howto/issues/975)
 </div>

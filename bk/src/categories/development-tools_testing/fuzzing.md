@@ -65,14 +65,9 @@ The `proptest`, `quickcheck` crates are used for property-based testing, which i
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fuzzing: review fuzzing crates (P1)](https://github.com/john-cd/rust_howto/issues/339)
-
-TODO P2 cover [bolero](https://github.com/camshaft/bolero/)
-
+[fuzzing: review fuzzing crates](https://github.com/john-cd/rust_howto/issues/339)
+cover [bolero](https://github.com/camshaft/bolero/)
 [`bolero`][c-bolero]⮳{{hi:bolero}}
-
-TODO P2 cover valgrind
-
+cover valgrind
 [`valgrind`][c-valgrind]⮳{{hi:valgrind}}
-
 </div>

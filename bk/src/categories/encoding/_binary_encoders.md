@@ -111,6 +111,5 @@ In `foo.capnp`:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY (P2)](https://github.com/john-cd/rust_howto/issues/349)
-
+[binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY](https://github.com/john-cd/rust_howto/issues/349)
 </div>

@@ -76,9 +76,7 @@ The `ArcSwap` type in [`arc-swap`][c-arc_swap]⮳{{hi:arc-swap}} is a container 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shared_state: review (P1)](https://github.com/john-cd/rust_howto/issues/266)
-
-[P0 refer to the lazy_static.rs, lazy_constant.rs examples. refer to global_static.md and lazy_initialization.md](https://github.com/john-cd/rust_howto/issues/910)
-
+[shared_state: review](https://github.com/john-cd/rust_howto/issues/266)
+[refer to the lazy_static.rs, lazy_constant.rs examples. refer to global_static.md and lazy_initialization.md](https://github.com/john-cd/rust_howto/issues/910)
 split atomics to separate page?
 </div>

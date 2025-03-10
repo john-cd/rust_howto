@@ -79,5 +79,5 @@ For more [algorithms][p-algorithms], see [Rust Crypto Password Hashes][rustcrypt
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[password_hashing: write (P1)](https://github.com/john-cd/rust_howto/issues/275)
+[password_hashing: write](https://github.com/john-cd/rust_howto/issues/275)
 </div>

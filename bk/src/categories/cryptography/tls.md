@@ -32,8 +32,7 @@ Choose [`native-tls`][c-native_tls]⮳{{hi:native-tls}} when ease of use and aut
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO P2 write
-
-https://en.wikipedia.org/wiki/Rustls
-
+TODO write
+[Rustls][rustls-wikipedia]
+[rustls-wikipedia]: https://en.wikipedia.org/wiki/Rustls
 </div>

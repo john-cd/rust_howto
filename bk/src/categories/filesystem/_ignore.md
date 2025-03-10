@@ -18,6 +18,5 @@ Recursive [filesystem][p-filesystem] walking that respects ignore files (like .g
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ignore: write (P1)](https://github.com/john-cd/rust_howto/issues/360)
-
+[ignore: write](https://github.com/john-cd/rust_howto/issues/360)
 </div>

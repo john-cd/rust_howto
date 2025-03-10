@@ -49,7 +49,7 @@ Serve data over HTTP.
 
 {{#include static_website_generators.incl.md}}
 
-[P1 review](https://github.com/john-cd/rust_howto/issues/977)
+[review](https://github.com/john-cd/rust_howto/issues/977)
 
 Building Web Applications:
 

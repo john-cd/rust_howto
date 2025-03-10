@@ -76,5 +76,5 @@ These examples were adapted from a [StackOverflow discussion][stackoverflow-how-
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[cow: add more (P1)](https://github.com/john-cd/rust_howto/issues/620)
+[cow: add more](https://github.com/john-cd/rust_howto/issues/620)
 </div>

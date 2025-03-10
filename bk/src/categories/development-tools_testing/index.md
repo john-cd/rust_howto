@@ -28,6 +28,5 @@ Tools to help you verify the correctness{{hi:Correctness}} of your code.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand (P2)](https://github.com/john-cd/rust_howto/issues/341)
-
+[expand](https://github.com/john-cd/rust_howto/issues/341)
 </div>

@@ -23,9 +23,8 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[functional_programming: cover the most useful functions (P1)](https://github.com/john-cd/rust_howto/issues/467)
-
-[functional_programming: review - lens is not used that often (P1)](https://github.com/john-cd/rust_howto/issues/468)
+[functional_programming: cover the most useful functions](https://github.com/john-cd/rust_howto/issues/467)
+review - lens is not used that often
 
 ## Use `lens` {#lens}
 

@@ -81,8 +81,6 @@ In embedded systems, you often have more direct access to CPU features and perip
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[processor: expand (P2)](https://github.com/john-cd/rust_howto/issues/399)
-
-TODO link to Atomics
-
+[processor: expand](https://github.com/john-cd/rust_howto/issues/399)
+link to Atomics
 </div>

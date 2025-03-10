@@ -27,6 +27,6 @@ dyn Trait + 'static
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[trait_objects: review (P1)](https://github.com/john-cd/rust_howto/issues/562)
+[trait_objects: review](https://github.com/john-cd/rust_howto/issues/562)
 
 </div>

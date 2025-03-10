@@ -26,9 +26,8 @@ Create applications for the Web.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[web-programming/index: cover `http` crate (P1)](https://github.com/john-cd/rust_howto/issues/500)
-[web-programming/index: organize (P1)](https://github.com/john-cd/rust_howto/issues/499)
-[web-programming_http-client/index: fix (P1)](https://github.com/john-cd/rust_howto/issues/505)
+[web-programming/index: cover `http` crate](https://github.com/john-cd/rust_howto/issues/500)
+organize, fix
 
 ## HTTP types & interfaces
 

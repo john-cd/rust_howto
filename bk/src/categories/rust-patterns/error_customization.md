@@ -73,6 +73,6 @@ Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecate
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[error_customization: write / organize / titles (P1)](https://github.com/john-cd/rust_howto/issues/463)
+[error_customization: write / organize / titles](https://github.com/john-cd/rust_howto/issues/463)
 
 </div>

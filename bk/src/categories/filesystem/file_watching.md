@@ -16,6 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[file_watching: write (P1)](https://github.com/john-cd/rust_howto/issues/359)
-
+[file_watching: write](https://github.com/john-cd/rust_howto/issues/359)
 </div>

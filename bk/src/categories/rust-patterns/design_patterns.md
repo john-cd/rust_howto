@@ -25,7 +25,7 @@ The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` tr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[design_patterns: rethink where that stuff should go (P1)](https://github.com/john-cd/rust_howto/issues/461)
+[design_patterns: rethink where that stuff should go](https://github.com/john-cd/rust_howto/issues/461)
 
 ## Implement the typestate pattern in Rust {#typestate-pattern}
 

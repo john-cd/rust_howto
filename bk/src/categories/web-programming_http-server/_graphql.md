@@ -21,7 +21,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[graphql: write (P1)](https://github.com/john-cd/rust_howto/issues/511) integrate in seography graphql section?
+[graphql: write](https://github.com/john-cd/rust_howto/issues/511) integrate in seography graphql section?
 
 - [`juniper`][c-juniper]⮳{{hi:juniper}}, [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}.
 

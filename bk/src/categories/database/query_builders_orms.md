@@ -145,7 +145,7 @@ while let Some(todo) = todos.next().await {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 write / move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
+[write / move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
 
 ## SeaORM {#sea-orm}
 

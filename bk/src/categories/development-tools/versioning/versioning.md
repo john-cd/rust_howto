@@ -63,7 +63,7 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[ P1 review](https://github.com/john-cd/rust_howto/issues/920)
+[review](https://github.com/john-cd/rust_howto/issues/920)
 
 Semantic Versioning (SemVer): (The concept itself. No specific crate implements SemVer, but crates like [`semver`][c-semver]⮳{{hi:semver}} help work with SemVer strings.)
 Version Parsing and Comparison: [`semver`][c-semver]⮳{{hi:semver}} (crate for parsing, comparing, and manipulating SemVer strings)
