@@ -156,8 +156,8 @@
 
 //         fn validate(&self, command: &Command) -> Result<()> {
 //             match command {
-//                 Command::CreateProduct { quantity, .. } if *quantity == 0 => {
-//                     Err(anyhow::anyhow!(
+//                 Command::CreateProduct { quantity, .. } if *quantity == 0 =>
+// {                     Err(anyhow::anyhow!(
 //                         "Cannot create product with zero quantity!"
 //                     ))
 //                 }
@@ -186,16 +186,16 @@
 //                     let current_quantity = self.get_current_quantity(id);
 //                     if let Some(current) = current_quantity {
 //                         let new_quantity =
-//                             (current as i32 + quantity).max(0) as u32; // TODO handle errore
-//                         let event = ProductEvent::ProductQuantityUpdated {
-//                             id,
+//                             (current as i32 + quantity).max(0) as u32; //
+// TODO handle errore                         let event =
+// ProductEvent::ProductQuantityUpdated {                             id,
 //                             new_quantity,
 //                         };
 //                         self.event_store.apply_event(event);
 //                         Ok(())
 //                     } else {
-//                         Err(anyhow::anyhow!("Product with id {} not found", id))
-//                     }
+//                         Err(anyhow::anyhow!("Product with id {} not found",
+// id))                     }
 //                 }
 //             }
 //         }
@@ -271,8 +271,8 @@
 //                     let mut read_model = self.read_model.write().unwrap();
 //                     read_model.insert(id, Product::new(id, name, quantity));
 //                 }
-//                 ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
-//                     let mut read_model = self.read_model.write().unwrap();
+//                 ProductEvent::ProductQuantityUpdated { id, new_quantity } =>
+// {                     let mut read_model = self.read_model.write().unwrap();
 //                     if let Some(product) = read_model.get_mut(&id) {
 //                         product.set_quantity(new_quantity);
 //                     }
