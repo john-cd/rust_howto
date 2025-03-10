@@ -1,3 +1,4 @@
+mod cqrs;
 mod di;
 mod layered_architecture;
 mod repository;
