@@ -72,13 +72,4 @@ Implementing and using linked lists, deques, binary trees, and other less common
   - Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}
 - Serialization / Deserialization (often used with data structures): [`serde`][c-serde]⮳{{hi:serde}}
 
-## `either` {#either}
-
-[![either][c-either-badge]][c-either] [![either-crates.io][c-either-crates.io-badge]][c-either-crates.io] [![either-github][c-either-github-badge]][c-either-github] [![either-lib.rs][c-either-lib.rs-badge]][c-either-lib.rs]{{hi:either}}{{hi:Data-structure}}{{hi:No_std}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
-
-The enum [`Either`][c-either]⮳{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases.
-
-`Either` has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`.
-
-Includes macros `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`. Note that `Either` is general purpose. For describing success or error, use the regular `Result`.
 </div>
