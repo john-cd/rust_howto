@@ -15,7 +15,7 @@ publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.95"
-cargo_toml = "0.21.0"
+cargo_toml = "0.22.1"
 clap = { version = "4.5.31", features = ["cargo"] }
 clap_builder = "4.5.20"
 itertools = "0.14.0"
