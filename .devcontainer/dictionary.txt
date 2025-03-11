@@ -2665,3 +2665,7 @@ rtest
 azul
 Combinatorics
 Transpile
+frunk
+HLists
+monads
+Memoize
