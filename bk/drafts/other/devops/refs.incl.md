@@ -1,3 +1,4 @@
+[ex-devops-cargo-deb]: release_automation.md#cargo-deb
 [ex-devops-cargo-dist]: release_automation.md#cargo-dist
 [ex-devops-cargo-release]: release_automation.md#cargo-release
 [ex-devops-cdci]: cd_ci.md#cdci

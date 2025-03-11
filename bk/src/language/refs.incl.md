@@ -47,6 +47,7 @@
 [ex-language-simple-data-types]: simple_data_types.md#simple-data-types
 [ex-language-slices]: slices.md#slices
 [ex-language-structs]: structs.md#structs
+[ex-language-strum]: enums.md#strum
 [ex-language-supertraits]: traits.md#supertraits
 [ex-language-trait-bounds]: traits.md#trait-bounds
 [ex-language-trait-objects]: trait_objects.md#trait-objects

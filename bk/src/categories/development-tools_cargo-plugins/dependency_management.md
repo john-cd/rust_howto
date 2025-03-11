@@ -29,23 +29,23 @@ The [`deps.rs`][deps-rs-website]⮳ website uses semantic versioning to detect o
 
 See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
-## `cargo-edit`
+## `cargo-edit` {#cargo-edit}
 
 Adds 'cargo upgrade' and 'cargo set-version' commands to cargo
 
-## `cargo-outdated`
+## `cargo-outdated` {#cargo-outdated}
 
 Finds dependencies that have available updates
 
-## `cargo-audit`
+## `cargo-audit` {#cargo-audit}
 
 Check dependencies for reported security vulnerabilities
 
-## `cargo-license`
+## `cargo-license` {#cargo-license}
 
 Lists licenses of all dependencies
 
-## `cargo-deny`
+## `cargo-deny` {#cargo-deny}
 
 Enforce policies on your code and dependencies.
 </div>

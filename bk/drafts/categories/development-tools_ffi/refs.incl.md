@@ -8,6 +8,7 @@
 [ex-development-tools_ffi-napi]: node.md#napi
 [ex-development-tools_ffi-neon]: node.md#neon
 [ex-development-tools_ffi-objc2]: objc.md#objc2
+[ex-development-tools_ffi-pyo3]: python.md#pyo3
 [ex-development-tools_ffi-rustler]: erlang_elixir.md#rustler
 [ex-development-tools_ffi-rutie]: ruby.md#rutie
 [ex-development-tools_ffi-uniffi]: generate_ffi_bindings.md#uniffi
@@ -20,7 +21,6 @@
 [p-macros]: ../../language/macros.md
 [p-modules]: ../../language/modules.md
 [p-option]: ../../standard-library/option.md
+[p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-serde]: ../encoding/serde.md
 [p-strings]: ../../standard-library/strings.md
-[ex-api-bindings-pyo3]: ../development-tools_ffi/python.md#pyo3
-[p-performance]: ../development-tools_cargo-plugins/performance.md

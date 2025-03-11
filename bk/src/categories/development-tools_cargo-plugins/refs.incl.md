@@ -17,8 +17,10 @@
 [ex-development-tools_cargo-plugins-cargo-semver-checks]: maintaining.md#cargo-semver-checks
 [ex-development-tools_cargo-plugins-cargo-watch]: watching_for_changes.md#cargo-watch
 [ex-development-tools_cargo-plugins-cargo-wizard]: performance.md#cargo-wizard
+[ex-development-tools_cargo-plugins-deps-rs]: dependency_management.md#deps-rs
 [ex-development-tools_cargo-plugins-devx]: building.md#devx
 [ex-development-tools_cargo-plugins-find-unused-dependencies]: maintaining.md#find-unused-dependencies
+[ex-development-tools_cargo-plugins-rust-digger]: dependency_management.md#rust-digger
 [ex-development-tools_cargo-plugins-rustfix]: code_formatting_linting.md#rustfix
 [ex-development-tools_cargo-plugins-rustfmt]: code_formatting_linting.md#rustfmt
 [ex-development-tools_cargo-plugins-xshell]: building.md#xshell

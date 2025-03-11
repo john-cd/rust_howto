@@ -1,4 +1,5 @@
 [ex-hardware-support-check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
+[ex-hardware-support-simd]: processor.md#simd
 [p-assembly]: ../development-tools_profiling/assembly.md
 [p-asynchronous]: ../asynchronous/index.md
 [p-data-parallelism]: ../concurrency/data_parallelism.md

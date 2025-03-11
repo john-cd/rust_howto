@@ -1,5 +1,6 @@
 [ex-science-classical-ml]: classical_machine_learning.md#classical-ml
 [ex-science-deep-learning]: classical_machine_learning.md#deep-learning
+[ex-science-deep-learning]: deep_learning.md#deep-learning
 [p-algorithms]: ../algorithms/index.md
 [p-gpu]: # "../../other/gpu/gpu.md"
 [p-learning]: ../../links/learning.md

@@ -7,7 +7,7 @@ set -euo pipefail
 root="$(realpath $1)/"
 
 # Anchors should only appear in subchapters, where the examples live.
-for file in $(find "${root}src" -type f \( -name "*.md" -not -name "*index.md" -not -name "*.incl.md" -not -name "*-refs.md" \) )
+for file in $(find "${root}src" "${root}drafts" -type f \( -name "*.md" -not -name "*index.md" -not -name "*.incl.md" -not -name "*-refs.md" \) )
 do
     echo ">> $file"
     base=$(basename $file)

@@ -10,7 +10,7 @@
 [ex-cryptography-ecdsa]: signature.md#ecdsa
 [ex-cryptography-ed25519-dalek]: signature.md#ed25519-dalek
 [ex-cryptography-ed25519]: signature.md#ed25519
-[ex-cryptography-hmac]: signature.md#hmac
+[ex-cryptography-hmac]: hmac.md#hmac
 [ex-cryptography-md-5]: hashing.md#md-5
 [ex-cryptography-native-tls]: tls.md#native-tls
 [ex-cryptography-pbkdf2]: password_hashing.md#pbkdf2

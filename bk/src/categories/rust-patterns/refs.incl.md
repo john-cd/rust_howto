@@ -6,6 +6,7 @@
 [ex-rust-patterns-compose-iterators-with-itertools]: functional_programming.md#compose-iterators-with-itertools
 [ex-rust-patterns-derive_builder]: _builder_pattern.md#derive_builder
 [ex-rust-patterns-dyn-clone]: design_patterns.md#dyn-clone
+[ex-rust-patterns-either]: functional_programming.md#either
 [ex-rust-patterns-handle-errors-correctly-in-main]: error_handling.md#handle-errors-correctly-in-main
 [ex-rust-patterns-irrecoverable-panics]: error_handling.md#irrecoverable-panics
 [ex-rust-patterns-lens]: functional_programming.md#lens

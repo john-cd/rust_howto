@@ -6,7 +6,9 @@
 [ex-command-line-interface-bold-text]: ansi_terminal.md#bold-text
 [ex-command-line-interface-clap-builder]: argument_parsing.md#clap-builder
 [ex-command-line-interface-clap-derive]: argument_parsing.md#clap-derive
+[ex-command-line-interface-clap_complete]: argument_parsing.md#clap_complete
 [ex-command-line-interface-colored-text]: ansi_terminal.md#colored-text
+[ex-command-line-interface-colored]: ansi_terminal.md#colored
 [ex-command-line-interface-console]: ansi_terminal.md#console
 [ex-command-line-interface-crossterm]: ansi_terminal.md#crossterm
 [ex-command-line-interface-indicatif]: user_interaction.md#indicatif
