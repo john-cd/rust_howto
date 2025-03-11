@@ -1,5 +1,10 @@
 # TODOs
 
+regen refdefs
+update recipe tables
+insert crate links
+replace inline links
+
 ## Manually insert rest of cross-links WIP
 
 - src: WIP
@@ -13,18 +18,20 @@
   - WASM
   - development tools: FFI - reorg. with other FFI topics
 
-- src: TODO
+- other: cloud, cross-platform, data proc, gpu, scripting, written in rust
+
+review drafts section for what I missed
+
+- src: review bookmarks: reorg added text
 
 ## Add text
 
-- language
+- language - WIP
 - standard library
 - links
 - other
   - Cloud
-  - cross-platform
-  - data proc
-  - devops
+  - cross-platform?
   - gpu
   - scripting
   - written in rust
