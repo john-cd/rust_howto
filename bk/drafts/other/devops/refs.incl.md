@@ -1,15 +1,13 @@
 [ex-devops-cargo-dist]: release_automation.md#cargo-dist
 [ex-devops-cargo-release]: release_automation.md#cargo-release
 [ex-devops-cdci]: cd_ci.md#cdci
-[ex-devops-check-your-code-before-committing]: git_hooks.md#check-your-code-before-committing
+[ex-devops-check-your-code-before-committing]: version_control.md#check-your-code-before-committing
 [ex-devops-ci]: github_actions.md#ci
 [ex-devops-compilation-caching]: github_actions.md#compilation-caching
 [ex-devops-daytona]: devops.md#daytona
-[ex-devops-deps-rs]: dependency_management.md#deps-rs
 [ex-devops-installation-of-development-tools]: github_actions.md#installation-of-development-tools
-[ex-devops-pre-commit]: git_hooks.md#pre-commit
+[ex-devops-pre-commit]: version_control.md#pre-commit
 [ex-devops-release-plz]: release_automation.md#release-plz
-[ex-devops-rust-digger]: dependency_management.md#rust-digger
 [p-cargo]: ../../categories/development-tools/cargo/cargo.md
 [p-configuration]: ../../categories/config/configuration.md
 [p-crates]: ../../crates/index.md

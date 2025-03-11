@@ -51,6 +51,10 @@ Subcommands that extend the capabilities of Cargo.
 <div class="hidden">
 [development-tools_cargo-plugins/index: review](https://github.com/john-cd/rust_howto/issues/311)
 
+## Dependency Management
+
+{{#include dependency_management.incl.md}}
+
 Here's a short list of Cargo plugins by topic:
 
 Code Quality/Analysis:

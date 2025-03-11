@@ -2,37 +2,49 @@
 
 {{#include cd_ci.incl.md}}
 
-[Continuous Integration (cargo book)][book-cargo-continuous-integration]⮳.
+CI/CD (Continuous Integration/Continuous Delivery or Deployment) systems are essential for automating the release process.
+
+Popular tooling include:
+
+- `GitHub Actions`.
+- `GitLab CI/CD`.
+- `Jenkins`.
+- `CircleCI`.
+
+## Workflow Example (GitHub Actions)
+
+- Developers push code changes to a Git repository.
+- `GitHub Actions` is triggered by the push or pull request.
+- Within the workflow, `cargo` builds the Rust application in release mode.
+- `cargo` runs all (unit, integration, and end-to-end) tests.
+- The built binary is packaged (e.g., zipped).
+- `GitHub Actions` creates a new release on GitHub, attaching the packaged binary.
+- Deployment (Optional): `GitHub Actions` deploys the application to a target environment.
+
+See [[github_actions | Github Actions]].
 
 ## See also
 
-[Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines-rust-project]⮳.
+[Continuous Integration (cargo book)][book-cargo-continuous-integration]⮳.
 
-[Creating a docker container action][creating-a-docker-container-action-website]⮳.
-
-["Upload a Build Artifact" Github Action][upload-a-build-artifact-website]⮳.
-
-[`docker-cache`][docker-cache-github]{{hi:docker-cache}}⮳.
-
-[Cached Docker images][cached-docker-images]⮳.
-
-[Docker GitHub Action][docker-github-action]⮳.
-
-[Cache storage backends][cache-storage-backends]⮳.
-
-[Cache management with GitHub Actions][cache-management-with-gitHub-actions-website]⮳.
-
-[How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳.
-
-[Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳.
-
-[GitHub Action for installing development tools (mainly from GitHub Releases)][install_action-github]⮳.
-
-[Experience about deploying `mdbook` on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳.
+- [Optimizing CI/CD pipelines][blog-optimizing-ci-cd-pipelines-rust-project]⮳.
+- [Creating a docker container action][creating-a-docker-container-action-website]⮳.
+- ["Upload a Build Artifact" Github Action][upload-a-build-artifact-website]⮳.
+- [`docker-cache`][docker-cache-github]{{hi:docker-cache}}⮳.
+- [Cached Docker images][cached-docker-images]⮳.
+- [Docker GitHub Action][docker-github-action]⮳.
+- [Cache storage backends][cache-storage-backends]⮳.
+- [Cache management with GitHub Actions][cache-management-with-gitHub-actions-website]⮳.
+- [How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳.
+- [Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳.
+- [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action-github]⮳.
+- [Experience about deploying `mdbook` on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cd_ci: organize](https://github.com/john-cd/rust_howto/issues/595)
+[cd_ci: write](https://github.com/john-cd/rust_howto/issues/595)
+organize links
+example: https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
 </div>

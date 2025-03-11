@@ -1,7 +1,11 @@
 
-- [Faster linking](../src/categories/development-tools/compilation/faster_linking.md)
-- [Cross-compilation](../src/categories/development-tools/cross-compilation/cross_compilation.md)
+- [Faster linking](categories/development-tools/compilation/faster_linking.md)
+- [Cross-compilation](categories/development-tools/cross-compilation/cross_compilation.md)
 - [Incremental computation](categories/compilers/incremental_computation.md)
+
+- [Dependency Management](categories/development-tools_cargo-plugins/dependency_management.md)
+
+---
 
 - [Accessibility](./drafts/categories/accessibility/index.md)
   - [Enable screen readers](./drafts/categories/accessibility/screen_readers.md)
@@ -75,8 +79,7 @@
 
 - [DevOps](other/devops/index.md)
   - [DevOps](other/devops/devops.md)
-  - [Dependency Management](other/devops/dependency_management.md)
-  - [Git Hooks](other/devops/git_hooks.md)
+  - [Git Hooks](other/devops/version_control.md)
   - [Github Actions](other/devops/github_actions.md)
   - [Release Automation](other/devops/release_automation.md)
   - [CD/CI](other/devops/cd_ci.md)

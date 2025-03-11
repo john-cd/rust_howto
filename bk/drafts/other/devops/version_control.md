@@ -1,8 +1,10 @@
-# Git hook scripts
+# Version Control
 
-{{#include git_hooks.incl.md}}
+{{#include version_control.incl.md}}
 
-Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [formatting][p-formatting] of the code or [configuration][p-configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
+Rust projects use version control (typically `Git`) like any other software. `Git` tracks changes to your code, enables collaboration, and allows you to revert to previous versions. Cargo's `Cargo.lock` file specifically ensures reproducible builds by pinning exact dependency versions, which can also be version controlled.
+
+The following describes tools that make
 
 ## Check your code before committing it {#check-your-code-before-committing}
 
@@ -12,7 +14,9 @@ Git hook scripts are useful for automatically identifying simple issues, such as
 [![cargo-husky-lib.rs][c-cargo_husky-lib.rs-badge]][c-cargo_husky-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for `cargo` projects with 🐶
+Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p-configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
+
+[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for `cargo` projects with 🐶.
 
 Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
@@ -43,14 +47,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && pipx ensurepath
 ```
 
-- Verify that it is properly installed:
+Verify that it is properly installed:
 
 ```sh
 pre-commit --version
 ```
 
-- Add a file called `.pre-commit-config.yaml` to the root of your project. Use `pre-commit sample-config` for a template.
-- Edit it to configure your preferred hooks.
+Add a file called `.pre-commit-config.yaml` to the root of your project. Use `pre-commit sample-config` for a template.
+Edit it to configure your preferred hooks.
 
 ```sh
 # Set up the git hook scripts
@@ -61,7 +65,7 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## Useful Hooks for Rust {#skip}
+## Useful Git Hooks for Rust {#skip}
 
 TODO
 
@@ -69,7 +73,15 @@ TODO
 - `cargo check`, clippy, test...
 - spell checks.
 
-## Useful links
+## Related Topics
+
+- [[development-tools_testing | Development Tools Testing]].
+- [[development-tools_cargo-plugins | Development Tools Cargo Plugins]].
+  - [[building | Building]].
+  - [[code_formatting_linting | Code Formatting & Linting]].
+  - [[versioning | Versioning]].
+
+## See also
 
 - [Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling].
 - [`pre-commit-rust`][pre-commit-rust-github].

@@ -131,5 +131,10 @@ TODO
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[github_actions: cover the following - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
+[github_actions - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
+write / review in depth
+
+rust-toolchain (github action): Github action to install Rust components via rustup
+rust-cache (github action): Github action to cache compilation artifacts and speed up subsequent runs.
+install-action (github action): GitHub Action for installing development tools (mainly from GitHub Releases).
 </div>

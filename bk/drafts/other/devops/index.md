@@ -1,28 +1,77 @@
 # DevOps and Rust
 
-## DevOps
+DevOps is the integration and automation of the software development and information technology operations. It prioritizes automation, collaboration, and continuous improvement. The following is a brief description of key DevOps practices and common tools:
 
-{{#include devops.incl.md}}
+| Key DevOps Practices | Description | Technologies (examples) |
+| Version Control | Tracking changes. Undoing mistakes easily. Protecting against data loss. | Git, GitHub, GitLab, Bitbucket. |
+| CI/CD | Automating code testing and the release process. Automatically deploying changes to production. | Jenkins, GitLab CI/CD, CircleCI, Azure DevOps, AWS CodePipeline. |
+| Infrastructure as Code | Managing infrastructure through code. Enabling automation and version control of infrastructure. | Terraform, Open Tofu, AWS CloudFormation, Pulumi. |
+| Configuration Management Tools | Automating the configuration of systems and software. Ensuring consistency and repeatability. | Ansible, Puppet, Chef. |
+| Containerization and Orchestration | Packaging an application and its dependencies into a single, portable unit called a container. | Docker, Kubernetes, Amazon ECS. |
+| Monitoring and Logging Tools | Collecting and analyzing data to understand system performance. Proactive identification and resolution of issues. | Prometheus, Grafana, ELK stack (Elasticsearch, Logstash, Kibana), Splunk, DataDog. |
+| Cloud Computing | On-demand delivery of computing services over the Internet. | AWS, Azure, Google Cloud Platform (GCP). |
+| DevSecOps | Integrating security practices into every stage of the DevOps lifecycle. | Snyk, HashiCorp Vault, AWS Secrets Manager, Splunk |
 
-## Dependency Management
+Rust coders, like developers in other fields, frequently leverage DevOps methods and tooling. GitHub, GitHub Actions, and Docker are especially frequently used in Rust open-source projects.
 
-{{#include dependency_management.incl.md}}
+## Version Control
 
-## Git Hooks
+{{#include version_control.incl.md}}
 
-{{#include git_hooks.incl.md}}
+## CD/CI
 
-## GitHub Actions
+CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It's a set of practices that automate the software development lifecycle, aiming to deliver code changes more frequently and reliably.
+
+{{#include ci_cd.incl.md}}
 
 {{#include github_actions.incl.md}}
 
-## Release Automation
+### Release Automation
 
 {{#include release_automation.incl.md}}
+
+## Infrastructure as Code
+
+## Configuration Management Tools
+
+## Containerization and Orchestration
+
+See [[containers | Containers]].
+
+## Devops tools written in Rust
+
+Rust is also commonly being used to build DevOps tools. A few examples follow:
+
+- Chef's `Habitat` is a Rust-based infrastructure automation and management tool. Chef Habitat lets you bundle all of your dependencies, codebases, and lifecycle events in a package separate from the user’s operating system.
+- Faraday used Rust to develop its `Cage` project. `Cage` is most useful when you want to reuse existing Docker images. You can load existing images into your local environment and start adding new components from local source trees.
+- `sccache` is a [[build_cache | cache]]. compiler tool that can automatically package local toolchains. It supports Rust and C/C++.
+- `config-rs` is a layered [[config | configuration]] system for Rust applications.
+
+Refer to the [[written-in-rust | "Written in Rust"]] chapter as well.
+
+## Related Topics
+
+- [[config | Config]].
+- [[environment_variables | Environment Variables]].
+- Deployment on [[cloud | Cloud]] platforms ([[aws | AWS]], Azure, GCP).
+- Unit, integration, and end-to-end [[testing | tests]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/605)
+- Infrastructure as Code
+- Configuration Management Tools
+- Containerization and Orchestration
+Review
+https://community.chef.io/tools/chef-habitat
+https://github.com/habitat-sh/habitat
+
+https://github.com/kcl-lang/kcl
+https://www.kcl-lang.io/docs/user_docs/getting-started/
+
+`docker-api`: a Rust interface to Docker containers
+
+https://dev.to/mark_mwendia_0298dd9c0aad/optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd-474d
 </div>
