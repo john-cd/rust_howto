@@ -14,11 +14,11 @@ Libraries that provide a cross-platform abstraction over native graphics APIs.
 
 ## Key Rust Crates {#skip}
 
-- `wgpu-rs`.
+- [`wgpu-rs`][c-wgpu]⮳{{hi:wgpu-rs}}.
 - `gfx-rs`: A low-level, cross-platform graphics abstraction (historically used, less active now).
   - [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A lower-level graphics API abstraction layer. More control, but more complex. Similar to [`wgpu`][c-wgpu]⮳{{hi:wgpu}} in that it can be used for drawing primitives, but requires more manual setup.
 
-`wgpu` is often preferred for its ease of use.
+[`wgpu`][c-wgpu]⮳{{hi:wgpu}} is often preferred for its ease of use.
 
 ## WebGPU {#skip}
 

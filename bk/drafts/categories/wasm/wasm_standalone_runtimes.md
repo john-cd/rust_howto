@@ -68,7 +68,7 @@ You can embed the Wasmer runtime in your code with the Wasmer SDK:
 [![wasmtime-lib.rs][c-wasmtime-lib.rs-badge]][c-wasmtime-lib.rs]
 [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-`wasmtime` is a lightweight WebAssembly runtime that is fast, secure, and standards-compliant. Wasmtime runs WebAssembly code outside of the Web, and can be used both as a command-line utility or as a library embedded in a larger application.
+[`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} is a lightweight WebAssembly runtime that is fast, secure, and standards-compliant. Wasmtime runs WebAssembly code outside of the Web, and can be used both as a command-line utility or as a library embedded in a larger application.
 
 Install the [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} CLI with:
 
@@ -107,5 +107,5 @@ The [`wasmtime`][c-wasmtime-github]⮳ crate is a high-level API to expose the W
 
 <div class="hidden">
 [others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
-cover `wasmer` in intro
+cover [`wasmer`][c-wasmer]⮳{{hi:wasmer}} in intro
 </div>

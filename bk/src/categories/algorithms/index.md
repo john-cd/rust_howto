@@ -85,5 +85,5 @@ The following table denotes the most common crates used for each algorithm categ
 <div class="hidden">
 TODO review; add graph examples
 table for related topics?
-Cover `pathfinding`
+Cover [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}}
 </div>

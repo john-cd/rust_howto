@@ -2,7 +2,7 @@
 
 {{#include deep_learning.incl.md}}
 
-`candle` is more focused on inference and provides more pre-trained models, while `burn` is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
+`candle` is more focused on inference and provides more pre-trained models, while [`burn`][c-burn]⮳{{hi:burn}} is more focused on supporting the whole workflow from training to inference. `candle` relies on the underlying cuTENSOR and cuDNNv8 libraries, enabling efficient execution on NVIDIA GPUs.
 
 ## `candle` {#deep-learning}
 

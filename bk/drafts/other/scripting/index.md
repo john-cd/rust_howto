@@ -2,7 +2,7 @@
 
 Scripting involves writing small programs, often in high-level, interpreted languages, to automate tasks, manipulate data, or control software workflows. It is widely used for system administration, task automation, web development, and integrating various software components efficiently.
 
-Crates like `rhai` enable embedding scripting capabilities into Rust applications, allowing efficient automation and customization while leveraging Rust's strong type system and concurrency features.
+Crates like [`rhai`][c-rhai]⮳{{hi:rhai}} enable embedding scripting capabilities into Rust applications, allowing efficient automation and customization while leveraging Rust's strong type system and concurrency features.
 
 ## Common Use Cases for Scripting
 
@@ -30,7 +30,7 @@ Rhai is a lightweight scripting language similar to Rust that integrates well wi
 
 ### Lua
 
-The Lua scripting language has a robust, widely used, mature ecosystem. Use `rlua` or `mlua` to interact with or embed Lua.
+The Lua scripting language has a robust, widely used, mature ecosystem. Use `rlua` or [`mlua`][c-mlua]⮳{{hi:mlua}} to interact with or embed Lua.
 See [[lua | Lua]].
 
 ## JavaScript
@@ -48,13 +48,13 @@ See also [[node | Node]].
 You may also integrate Python into Rust applications via:
 
 - `rust-cpython` (older bindings).
-- `pyo3`.
+- [`pyo3`][c-pyo3]⮳{{hi:pyo3}}.
 
 See [[python | Python]].
 
 ## WebAssembly
 
-Alternatively, you may embed a WebAssembly runtime like `wasmtime`, or a WebAssembly interpreter (e.g. `wasmi`), into your Rust application.
+Alternatively, you may embed a WebAssembly runtime like [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c-wasmi]⮳{{hi:wasmi}}), into your Rust application.
 WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, C#...) compiles to WASM.
 
 See [[wasm | WASM]] and [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
@@ -63,16 +63,16 @@ See [[wasm | WASM]] and [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
 
 To build your own custom scripting language, consider using the following crates:
 
-- Lexical Analysis: `logos`, a fast and efficient lexer generator.
-- Parser Generators: `pest`, a Parsing Expression Grammar (PEG) parser, or `lalrpop`, a LALR(1) parser generator.
-- Parser Combinators: `nom` or `chumsky`.
+- Lexical Analysis: [`logos`][c-logos]⮳{{hi:logos}}, a fast and efficient lexer generator.
+- Parser Generators: [`pest`][c-pest]⮳{{hi:pest}}, a Parsing Expression Grammar (PEG) parser, or [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}}, a LALR(1) parser generator.
+- Parser Combinators: [`nom`][c-nom]⮳{{hi:nom}} or [`chumsky`][c-chumsky]⮳{{hi:chumsky}}.
 See [[text-processing | Text Processing]], [[parsing | Parsing]], and for examples, [[parser-implementations | Parser Implementations]] and [[programming_languages | Programming Languages]].
 
-Abstract Syntax Tree (AST) manipulation is usually custom-built. `syn`, a library for parsing Rust code, and `quote` may be good examples - see [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
+Abstract Syntax Tree (AST) manipulation is usually custom-built. [`syn`][c-syn]⮳{{hi:syn}}, a library for parsing Rust code, and [`quote`][c-quote]⮳{{hi:quote}} may be good examples - see [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
 
 If your scripting language compiles to an executable, use the `object` crate. It supports reading relocatable object files and executable files, and writing COFF/ELF/Mach-O/XCOFF relocatable object files and ELF/PE executable files.
 
-- Handle errors with `thiserror`, `anyhow`, and `codespan-reporting`, a library for generating human-readable error messages with source code snippets. See [[error_handling | Error Handling]], [[error_customization | Error Customization]].
+- Handle errors with [`thiserror`][c-thiserror]⮳{{hi:thiserror}}, [`anyhow`][c-anyhow]⮳{{hi:anyhow}}, and `codespan-reporting`, a library for generating human-readable error messages with source code snippets. See [[error_handling | Error Handling]], [[error_customization | Error Customization]].
 
 ## Related Topics
 

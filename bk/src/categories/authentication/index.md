@@ -13,7 +13,7 @@ The process of confirming identities.
 | [[password_hashing | Password Hashing]] | [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}, [`argon2`][c-argon2]⮳{{hi:argon2}}, [`scrypt`][c-scrypt]⮳{{hi:scrypt}}| [[hashing | Hashing]] |
 | JWT (JSON Web Tokens) | [`jsonwebtoken`][c-jsonwebtoken]⮳{{hi:jsonwebtoken}} | |
 | OAuth 2.0 | [`oauth2`][c-oauth2]⮳{{hi:oauth2}} | |
-| Web Authentication | Often tied to web frameworks like `actix-web`, `warp`, etc. No single dominant crate. | See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]]. |
+| Web Authentication | Often tied to web frameworks like [`actix-web`][c-actix_web]⮳{{hi:actix-web}}, [`warp`][c-warp]⮳{{hi:warp}}, etc. No single dominant crate. | See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]]. |
 | [[cryptography | Cryptographic]] Primitives | [`ring`][c-ring]⮳{{hi:ring}}, [`rust-crypto`][c-rust_crypto]⮳{{hi:rust-crypto}} (often abstracted by higher-level crates). | See [[encryption | Encryption]], [[signature | Signatures]], [[certificates | Certificates]] and [[cryptography_utilities | Cryptography Utilities]] |
 
 ## References

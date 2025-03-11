@@ -8,7 +8,7 @@ Sensor integration often requires specialized crates that interact with specific
 
 ## Sensor data processing {#skip}
 
-`ndarray`: N-dimensional tensor arithmetic
+[`ndarray`][c-ndarray]⮳{{hi:ndarray}}: N-dimensional tensor arithmetic
 
 ## Handling PointCloud2 messages in ROS {#skip}
 

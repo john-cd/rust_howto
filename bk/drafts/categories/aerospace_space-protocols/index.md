@@ -32,7 +32,7 @@ PUS is a CCSDS standard for on-board data handling. You will likely needs a cust
 
 ## Parsing
 
-Use crates like `nom` or `binascii` to parse binary data structures defined in the protocol specifications
+Use crates like [`nom`][c-nom]⮳{{hi:nom}} or `binascii` to parse binary data structures defined in the protocol specifications
 
 See:
 

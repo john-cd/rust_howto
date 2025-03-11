@@ -31,7 +31,7 @@ See:
 
 Clear output, screen reader support. See [[command-line-interface | Command Line Interface]].
 
-- `termcolor` (terminal styling), `crossterm` (terminal manipulation).
+- [`termcolor`][c-termcolor]⮳{{hi:termcolor}} (terminal styling), [`crossterm`][c-crossterm]⮳{{hi:crossterm}} (terminal manipulation).
 
 See [[command-line-interface | Command Line Interface]].
 

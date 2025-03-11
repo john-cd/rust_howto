@@ -40,7 +40,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 
 [![future-utils][c-future_utils-badge]][c-future_utils] [![future-utils-crates.io][c-future_utils-crates.io-badge]][c-future_utils-crates.io] [![future-utils-github][c-future_utils-github-badge]][c-future_utils-github] [![future-utils-lib.rs][c-future_utils-lib.rs-badge]][c-future_utils-lib.rs]{{hi:future-utils}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-Common utilities and extension traits for the `futures-rs` library. Extensions to Rust's `Future` and `Stream` traits. Combinators and utilities for working with `Futures`, `Streams`, `Sinks`, and the `AsyncRead` and `AsyncWrite` traits.
+Common utilities and extension traits for the [`futures-rs`][c-futures]⮳{{hi:futures-rs}} library. Extensions to Rust's `Future` and `Stream` traits. Combinators and utilities for working with `Futures`, `Streams`, `Sinks`, and the `AsyncRead` and `AsyncWrite` traits.
 
 {{#example futures-util}}
 

@@ -32,7 +32,7 @@ Features:
 There are independent packages that provides additional functionality, for example:
 
 - `rhai-fs` provides file system access within Rhai scripts.
-- `rhai-rand` provides random number generation using the `rand` crate and array shuffling and sampling
+- `rhai-rand` provides random number generation using the [`rand`][c-rand]⮳{{hi:rand}} crate and array shuffling and sampling
 - `rhai-sci` provides functions useful for scientific computing, inspired by languages like MATLAB, Octave, and R.
 
 {{#include refs.incl.md}}

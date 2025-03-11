@@ -20,9 +20,9 @@ The Rust visualization ecosystem offers a variety of options, from general-purpo
 
 - Rust (compiled to WASM) can use the Canvas API via `web-sys` to draw 2D graphics directly in the browser. This is suitable for simpler visualizations and interactive graphics.
 - For 3D visualizations and high-performance graphics, Rust can leverage WebGL through `web-sys`.
-- Libraries like `wgpu` and `three-d` simplify WebGL development in Rust.
-  - `wgpu` is a WebGPU implementation that allows you to write portable graphics code that can run on WebGL, Vulkan, Metal, and DirectX 12. It provides a efficient way to perform GPU accelerated computations and rendering. This is important for complex 3D rendering and large datasets.
-  - `three-d` is a Rust 3D graphics library built on top of `wgpu`. It simplifies 3D rendering and provides a high-level API for creating interactive 3D visualizations.
+- Libraries like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} and `three-d` simplify WebGL development in Rust.
+  - [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a WebGPU implementation that allows you to write portable graphics code that can run on WebGL, Vulkan, Metal, and DirectX 12. It provides a efficient way to perform GPU accelerated computations and rendering. This is important for complex 3D rendering and large datasets.
+  - `three-d` is a Rust 3D graphics library built on top of [`wgpu`][c-wgpu]⮳{{hi:wgpu}}. It simplifies 3D rendering and provides a high-level API for creating interactive 3D visualizations.
 
 [`yew`][c-yew]⮳{{hi:yew}} (a front-end framework) and [`egui`][c-egui]⮳{{hi:egui}} (an immediate mode GUI) may also be useful.
 

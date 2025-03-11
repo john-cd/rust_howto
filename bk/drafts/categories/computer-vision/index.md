@@ -15,7 +15,7 @@ Several other pure-Rust crates cater to various aspects of computer vision:
 
 ## Related Topics
 
-For image I/O and manipulation, `image` and `imageproc` are essential. For more specialized tasks, machine learning-focused crates like `tch`, `tract`, or `candle` are appropriate.
+For image I/O and manipulation, [`image`][c-image]⮳{{hi:image}} and [`imageproc`][c-imageproc]⮳{{hi:imageproc}} are essential. For more specialized tasks, machine learning-focused crates like [`tch`][c-tch]⮳{{hi:tch}}, [`tract`][c-tract]⮳{{hi:tract}}, or `candle` are appropriate.
 
 ## Multimedia
 
@@ -35,7 +35,7 @@ See [[multimedia_images | Multimedia: Images]].
 
 ## Linear Algebra
 
-- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`ndarray`][c-ndarray]⮳{{hi:ndarray}} provide linear algebra and multi-dimensional array capabilities, respectively. They are frequently used in computer vision for tasks involving matrix operations and algorithm implementations. [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} is often preferred for smaller, fixed-size matrices, while `ndarray` is better suited for larger, dynamically sized arrays.
+- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`ndarray`][c-ndarray]⮳{{hi:ndarray}} provide linear algebra and multi-dimensional array capabilities, respectively. They are frequently used in computer vision for tasks involving matrix operations and algorithm implementations. [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} is often preferred for smaller, fixed-size matrices, while [`ndarray`][c-ndarray]⮳{{hi:ndarray}} is better suited for larger, dynamically sized arrays.
 
 See [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
 

@@ -132,7 +132,7 @@ Miscellaneous:
 
 ## Creating a Cargo plugin
 
-Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating `cargo` plugins, but rather crates that are used within [`cargo`][c-cargo]⮳{{hi:cargo}} plugins. Here's a breakdown:
+Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but rather crates that are used within [`cargo`][c-cargo]⮳{{hi:cargo}} plugins. Here's a breakdown:
 
 Creating a Cargo Plugin: You create a regular Rust project (often a binary crate) and name the executable cargo-something. Cargo will automatically discover and run these executables.
 

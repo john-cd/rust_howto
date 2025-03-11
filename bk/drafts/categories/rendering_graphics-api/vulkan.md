@@ -14,7 +14,7 @@
 
 Safe wrapper for the Vulkan graphics API.
 
-[`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides Rust bindings for the Vulkan API. Very powerful, but also very complex. Only use this if you absolutely need the fine-grained control that Vulkan provides. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides a safer, higher-level abstraction than `ash`. Both are lower-level and require more detailed graphics programming knowledge.
+[`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides Rust bindings for the Vulkan API. Very powerful, but also very complex. Only use this if you absolutely need the fine-grained control that Vulkan provides. [`vulkano`][c-vulkano]⮳{{hi:vulkano}} provides a safer, higher-level abstraction than [`ash`][c-ash]⮳{{hi:ash}}. Both are lower-level and require more detailed graphics programming knowledge.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -2,7 +2,7 @@
 
 {{#include ruby.incl.md}}
 
-Interfacing with Ruby from Rust is typically done using the Ruby C API via a binding crate. `rutie` is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust. It's highly recommended to use it unless you have very specific low-level Ruby C API requirements. It abstracts away much of the complexity of manual Ruby C API interaction.
+Interfacing with Ruby from Rust is typically done using the Ruby C API via a binding crate. [`rutie`][c-rutie]⮳{{hi:rutie}} is the key crate here. It significantly simplifies the process of creating Ruby extensions in Rust. It's highly recommended to use it unless you have very specific low-level Ruby C API requirements. It abstracts away much of the complexity of manual Ruby C API interaction.
 
 ## Interop with Ruby via `rutie` {#rutie}
 
@@ -10,7 +10,7 @@ Interfacing with Ruby from Rust is typically done using the Ruby C API via a bin
 
 The tie between Ruby and Rust.
 
-The `rutie` crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration. It handles a lot of the boilerplate and memory management.
+The [`rutie`][c-rutie]⮳{{hi:rutie}} crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration. It handles a lot of the boilerplate and memory management.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/ruby/rutie.rs:example}}
@@ -28,18 +28,18 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 
 ## Other Less Common Options {#skip}
 
-- Directly using the Ruby C API is possible, but it's complex and error-prone. `rutie` is almost always the better choice.
-- Embedding Ruby: You can also embed a Ruby interpreter in your Rust application using the Ruby C API (and thus, `rutie`).
+- Directly using the Ruby C API is possible, but it's complex and error-prone. [`rutie`][c-rutie]⮳{{hi:rutie}} is almost always the better choice.
+- Embedding Ruby: You can also embed a Ruby interpreter in your Rust application using the Ruby C API (and thus, [`rutie`][c-rutie]⮳{{hi:rutie}}).
 
 ## Communication / Data Marshaling between Ruby and Rust {#skip1}
 
-The `rutie` crate handles much of the data marshaling between Rust and Ruby types. `serde` can be used for serializing and deserializing data if needed, but often `rutie`'s built-in conversion mechanisms are sufficient.
+The `rutie` crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c-serde]⮳{{hi:serde}} can be used for serializing and deserializing data if needed, but often [`rutie`][c-rutie]⮳{{hi:rutie}}'s built-in conversion mechanisms are sufficient.
 
 ## Build Tools for Rust + Ruby {#skip2}
 
 Use:
 
-- `cargo` for building the Rust library.
+- [`cargo`][c-cargo]⮳{{hi:cargo}} for building the Rust library.
 - `rake` or `bundler` for managing the Ruby side and integrating with the Rust library.
 
 {{#include refs.incl.md}}

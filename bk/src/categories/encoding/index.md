@@ -4,7 +4,7 @@
 
 Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
 
-For general character encoding, `encoding` is a good choice. For JSON, [`serde_json`][c-serde_json]⮳{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c-serde]⮳{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
+For general character encoding, [`encoding`][c-encoding]⮳{{hi:encoding}} is a good choice. For JSON, [`serde_json`][c-serde_json]⮳{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c-serde]⮳{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
 
 ## Character Encoding
 

@@ -4,15 +4,15 @@
 
 Interfacing with Flutter/Dart from Rust is primarily done using FFI (Foreign Function Interface) and requires a bit of setup on both the Rust and Dart sides.
 
-The `flutter_rust_bridge` crate is the most important crate. It significantly simplifies the process of creating and managing the FFI bridge between Rust and Flutter/Dart. It's highly recommended to use it unless you have very specific low-level FFI needs.
+The [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} crate is the most important crate. It significantly simplifies the process of creating and managing the FFI bridge between Rust and Flutter/Dart. It's highly recommended to use it unless you have very specific low-level FFI needs.
 
 ## Rust Side {#skip1}
 
-`flutter_rust_bridge`: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
+[`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}}: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
 
-`std::ffi`, `libc`: These are standard library [modules][p-modules] for lower-level FFI interaction. You'll likely use these indirectly via `flutter_rust_bridge`, or if you're implementing the FFI manually.
+`std::ffi`, [`libc`][c-libc]⮳{{hi:libc}}: These are standard library [modules][p-modules] for lower-level FFI interaction. You'll likely use these indirectly via [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}}, or if you're implementing the FFI manually.
 
-`cbindgen`: Useful if you're working with C code as an intermediary, although `flutter_rust_bridge` generally handles this for you.
+[`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}}: Useful if you're working with C code as an intermediary, although [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} generally handles this for you.
 
 ## Dart/Flutter Side {#skip2}
 
@@ -24,7 +24,7 @@ The `flutter_rust_bridge` crate is the most important crate. It significantly si
 
 [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} is a Flutter/Dart and Rust binding generator.
 
-`flutter_rust_bridge` helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
+[`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/flutter/flutter_rust_bridge.rs:example}}
@@ -34,16 +34,16 @@ The `flutter_rust_bridge` crate is the most important crate. It significantly si
 
 You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
 
-- `serde` can serialize and deserialize data passed between Rust and Dart.
-- `bincode` is a compact binary format often used for efficient FFI communication.
+- [`serde`][c-serde]⮳{{hi:serde}} can serialize and deserialize data passed between Rust and Dart.
+- [`bincode`][c-bincode]⮳{{hi:bincode}} is a compact binary format often used for efficient FFI communication.
 
-For more complex interactions, you might use platform channels, but `flutter_rust_bridge` often abstracts this away.
+For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} often abstracts this away.
 
 ## Build Tools {#skip4}
 
 Use:
 
-- `cargo` for building the Rust library.
+- [`cargo`][c-cargo]⮳{{hi:cargo}} for building the Rust library.
 - Flutter's build system.
 
 {{#include refs.incl.md}}

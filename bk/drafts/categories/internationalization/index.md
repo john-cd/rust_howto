@@ -50,7 +50,7 @@ Note that string translation itself is usually done by human translators or usin
 To generate locale-specific formats for dates and times, use:
 
 - [`chrono`][c-chrono]⮳{{hi:chrono}}.
-- `time`.
+- [`time`][c-time]⮳{{hi:time}}.
 
 ## Formatting of Numbers and Currencies
 

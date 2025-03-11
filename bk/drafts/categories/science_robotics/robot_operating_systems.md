@@ -40,13 +40,13 @@ While ROS traditionally favored Python and C++, Rust is gradually gaining tracti
 
 [![rosrust][c-rosrust-badge]][c-rosrust] [![rosrust-crates.io][c-rosrust-crates.io-badge]][c-rosrust-crates.io] [![rosrust-github][c-rosrust-github-badge]][c-rosrust-github] [![rosrust-lib.rs][c-rosrust-lib.rs-badge]][c-rosrust-lib.rs]{{hi:rosrust}}
 
-`rosrust` is a pure Rust implementation of a ROS client library.
+[`rosrust`][c-rosrust]⮳{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
 
 ## `r2r`: Minimal ROS2 Rust bindings {#r2r}
 
 [![r2r][c-r2r-badge]][c-r2r] [![r2r-crates.io][c-r2r-crates.io-badge]][c-r2r-crates.io] [![r2r-github][c-r2r-github-badge]][c-r2r-github] [![r2r-lib.rs][c-r2r-lib.rs-badge]][c-r2r-lib.rs]{{hi:r2r}}
 
-`r2r` offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
+[`r2r`][c-r2r]⮳{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/tests/robotics.rs:example}}

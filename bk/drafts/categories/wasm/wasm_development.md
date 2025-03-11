@@ -37,7 +37,7 @@ pub fn greet(name: &str) {
 }
 ```
 
-`wasm-pack` uses `wasm-bindgen` to provide a bridge between the types of JavaScript and Rust. It allows JavaScript to call a Rust API with a string, or a Rust function to catch a JavaScript exception.
+`wasm-pack` uses [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} to provide a bridge between the types of JavaScript and Rust. It allows JavaScript to call a Rust API with a string, or a Rust function to catch a JavaScript exception.
 
 ### Memory Management in WASM (e.g., `std::alloc`) {#skip2}
 

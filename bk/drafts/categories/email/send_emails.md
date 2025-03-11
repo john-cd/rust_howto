@@ -13,7 +13,7 @@
 [![cat-email][cat-email-badge]][cat-email]{{hi:Email}}
 [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
-`lettre` provides convenient builders.
+[`lettre`][c-lettre]⮳{{hi:lettre}} provides convenient builders.
 
 {{example build_email_messages}}
 

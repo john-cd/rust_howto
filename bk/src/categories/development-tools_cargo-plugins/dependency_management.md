@@ -2,7 +2,7 @@
 
 {{#include dependency_management.incl.md}}
 
-Rust's dependency management is handled by `Cargo`, its built-in package manager.
+Rust's dependency management is handled by [`Cargo`][c-cargo]⮳{{hi:Cargo}}, its built-in package manager.
 
 - `Cargo.toml`, located at the root of a Rust project, is the manifest file that defines the project's metadata and dependencies.
 The [dependencies] section within `Cargo.toml` is where you specify the external crates (libraries) your project relies on.

@@ -39,9 +39,9 @@ Sensor-specific crates are common: Often, you'll use crates provided by the sens
 
 Consider using:
 
-- `opencv`: Bindings for the OpenCV library (powerful for computer vision).
-- `image` for image loading and manipulation.
-- `ndarray` for efficient array operations (often used in image processing).
+- [`opencv`][c-opencv]⮳{{hi:opencv}}: Bindings for the OpenCV library (powerful for computer vision).
+- [`image`][c-image]⮳{{hi:image}} for image loading and manipulation.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} for efficient array operations (often used in image processing).
 
 ## See also
 

@@ -45,7 +45,7 @@ Consider [`cpal`][c-cpal]⮳{{hi:cpal}}, a crate for cross-platform audio input 
 
 ## Concurrency
 
-`rayon` can be used for parallelizing parts of the emulation (for performance). See [[concurrency | Concurrency]].
+[`rayon`][c-rayon]⮳{{hi:rayon}} can be used for parallelizing parts of the emulation (for performance). See [[concurrency | Concurrency]].
 
 ## Tooling
 

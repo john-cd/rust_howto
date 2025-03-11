@@ -30,7 +30,7 @@ A simple `no_std` font parser and rasterizer.
 
 ## See also {#skip}
 
-- `sdl2`: SDL2 bindings for Rust.
+- [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: SDL2 bindings for Rust.
 
 ## Related Topics {#skip1}
 

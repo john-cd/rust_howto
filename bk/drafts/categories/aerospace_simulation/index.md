@@ -16,7 +16,7 @@
 There are few mature physics engines in pure Rust. Many robust physics engines are written in C/C++.
 
 - `rapier`: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
-- `bevy_rapier`: Integration between `rapier` and the `bevy` game engine.
+- `bevy_rapier`: Integration between `rapier` and the [`bevy`][c-bevy]⮳{{hi:bevy}} game engine.
 
 See also:
 
@@ -46,8 +46,8 @@ See [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
 
 Consider using:
 
-- `nalgebra`: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
-- `ndarray`: Another good option for numerical array operations.
+- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}}: Excellent for vector, matrix, and quaternion operations, which are fundamental to aerospace simulations.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}}: Another good option for numerical array operations.
 
 ## Visualization
 

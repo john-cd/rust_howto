@@ -12,7 +12,7 @@
 
 See [[code_verification | Code Verification]].
 
-- How tools like `kani` might be used to prove properties of Rust code.
+- How tools like [`kani`][c-kani]⮳{{hi:kani}} might be used to prove properties of Rust code.
 
 ### Concurrency
 
@@ -40,14 +40,14 @@ See [[hardware-support | Hardware Support]].
 ### Mathematics
 
 - Kalman Filters.
-- Matrix Operations: `nalgebra` (rotations).
+- Matrix Operations: [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} (rotations).
 - Numerical Integration: Trapezoidal rule example.
 - Quaternion: Rotation representation.
 
 ### Testing
 
 - Unit Test.
-- Property Testing: `proptest` for a specific property.
+- Property Testing: [`proptest`][c-proptest]⮳{{hi:proptest}} for a specific property.
 
 See [[testing | Testing]].
 

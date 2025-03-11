@@ -55,9 +55,9 @@ Possibly the most complete rust-native UI library. But note that it's dual GPL3/
 
 [![azul-website][c-azul-website-badge]][c-azul-website] [![azul][c-azul-badge]][c-azul] [![azul-crates.io][c-azul-crates.io-badge]][c-azul-crates.io] [![azul-github][c-azul-github-badge]][c-azul-github] [![azul-lib.rs][c-azul-lib.rs-badge]][c-azul-lib.rs]{{hi:azul}}{{hi:User-interface}}{{hi:Gui}}{{hi:Svg}}{{hi:Graphics}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}}
 
-`Azul` GUI is a free, functional, reactive GUI framework for rapid development of desktop applications written in Rust, C, and C++, using the Mozilla `WebRender` rendering engine.
+[`Azul`][c-azul]⮳{{hi:Azul}} GUI is a free, functional, reactive GUI framework for rapid development of desktop applications written in Rust, C, and C++, using the Mozilla [`WebRender`][c-webrender]⮳{{hi:WebRender}} rendering engine.
 
-Azul is a document object model, similar to HTML and CSS. Because Azul leverages `WebRender`, it provides features like gradients, box shadows, border styling, and CSS transforms. Azul is licensed under MPL-2.0. You can build proprietary applications using `azul` without having to publish your code, but you have to publish changes made to the library itself.
+Azul is a document object model, similar to HTML and CSS. Because Azul leverages [`WebRender`][c-webrender]⮳{{hi:WebRender}}, it provides features like gradients, box shadows, border styling, and CSS transforms. Azul is licensed under MPL-2.0. You can build proprietary applications using [`azul`][c-azul]⮳{{hi:azul}} without having to publish your code, but you have to publish changes made to the library itself.
 
 {{#example azul}}
 

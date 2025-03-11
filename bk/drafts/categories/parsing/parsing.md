@@ -49,9 +49,9 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 
 ## Other Notable Crates {#skip}
 
-- `combine`.
+- [`combine`][c-combine]⮳{{hi:combine}}.
 - `peg`.
-- `chumsky`.
+- [`chumsky`][c-chumsky]⮳{{hi:chumsky}}.
 
 ## Related Topics {#skip}
 

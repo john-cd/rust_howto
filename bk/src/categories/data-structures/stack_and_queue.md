@@ -30,5 +30,5 @@ A queue is a FIFO (First-In, First-Out) data structure. `VecDeque` (Vector Deque
 <div class="hidden">
 TODO write
 include stack / queue examples
-here or in `std` lib section?
+here or in [`std`][c-std]⮳{{hi:std}} lib section?
 </div>

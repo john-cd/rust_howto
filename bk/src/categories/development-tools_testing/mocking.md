@@ -4,8 +4,8 @@
 
 Consider using:
 
-- `mockall`: A popular crate for creating mock objects for testing.
-- `faux`: Another mocking library.
+- [`mockall`][c-mockall]⮳{{hi:mockall}}: A popular crate for creating mock objects for testing.
+- [`faux`][c-faux]⮳{{hi:faux}}: Another mocking library.
 
 ## Mock with `mockall` {#mocking}
 

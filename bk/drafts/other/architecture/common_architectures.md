@@ -13,7 +13,7 @@
 
 - Breaks applications into smaller, independent services.
 - Scalable and resilient, commonly paired with REST or [[_grpc | gRPC]].
-- Crates like `axum`, `warp` or `tonic` can help build such services.
+- Crates like [`axum`][c-axum]⮳{{hi:axum}}, [`warp`][c-warp]⮳{{hi:warp}} or [`tonic`][c-tonic]⮳{{hi:tonic}} can help build such services.
 
 ### Key Concepts {#skip2}
 
@@ -24,7 +24,7 @@
 - API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, authentication, and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for asynchronous communication.
 - Containerization: Use `Docker` and `Kubernetes` for containerization and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; `Elasticsearch`, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
+- Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c-elasticsearch]⮳{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
 - Error Handling and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with `Vault`.
 - Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).
@@ -71,7 +71,7 @@ See [[cross-platform | Cross Platform]] development.
 - Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
 - Event Bus/Queue: Acts as a mediator for events, often using tools like `Kafka`, `RabbitMQ`, or other message brokers.
 - Asynchronous Communication: Components operate independently and interact via events.
-- Often implemented with libraries like `tokio` or `async-std`.
+- Often implemented with libraries like [`tokio`][c-tokio]⮳{{hi:tokio}} or [`async-std`][c-async_std]⮳{{hi:async-std}}.
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
@@ -89,7 +89,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 ## Actor Model {#skip}
 
 - Emphasizes concurrency with isolated actors that communicate via messages.
-- Libraries like `actix` support actor-based designs.
+- Libraries like [`actix`][c-actix]⮳{{hi:actix}} support actor-based designs.
 
 See [[_actors |  Actors]].
 

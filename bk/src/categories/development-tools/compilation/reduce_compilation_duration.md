@@ -31,7 +31,7 @@ Consider using "thin" LTO (`-C lto=thin`) for a faster, though less aggressive, 
 
 ## Tools {#skip}
 
-- `cargo-bloat` can help you identify large dependencies [contributing][p-contributing] to compile times.
+- [`cargo-bloat`][c-cargo_bloat]⮳{{hi:cargo-bloat}} can help you identify large dependencies [contributing][p-contributing] to compile times.
 - `cargo-graph` can visualize your dependency graph, making it easier to identify potential issues.
 
 Profiling: [cargo][p-cargo] flamegraph, perf (system profiler)
@@ -112,7 +112,7 @@ From-scratch builds with incremental compilation{{hi:Incremental compilation}} e
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/245)
 
-- `Cargo`'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically. See [[cargo | Cargo]].
+- [`Cargo`][c-cargo]⮳{{hi:Cargo}}'s Incremental Compilation: This is the primary mechanism for incremental compilation in Rust. It's built into [Cargo][p-cargo] and generally "just works" automatically. See [[cargo | Cargo]].
 
 - Understanding Incremental Compilation: Knowing how [Cargo][p-cargo]'s incremental compiler works ([caching][p-caching], invalidation) is key to maximizing its benefits. Changes to dependencies, function signatures, or certain code structures can invalidate the cache.
 

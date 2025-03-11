@@ -8,7 +8,7 @@ Suppose you have a sorting function. A property you could test is that the outpu
 
 Consider using:
 
-- `proptest`: A powerful crate for property-based testing, where you define properties that your code should satisfy, and proptest generates many random inputs to verify those properties.
+- [`proptest`][c-proptest]⮳{{hi:proptest}}: A powerful crate for property-based testing, where you define properties that your code should satisfy, and proptest generates many random inputs to verify those properties.
 - `quickcheck`: Another property-based testing crate. proptest is often preferred for its flexibility.
 
 ## `proptest` {#proptesting}
@@ -30,7 +30,7 @@ proptest = "1.0.0"
 
 A library for generating fake data such as names, addresses, and phone numbers.
 
-Often done with custom functions or data structures, but crates like `faker` can be useful for generating realistic test data.
+Often done with custom functions or data structures, but crates like [`faker`][c-faker]⮳{{hi:faker}} can be useful for generating realistic test data.
 
 {{#example faker}}
 

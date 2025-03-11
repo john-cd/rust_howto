@@ -14,7 +14,7 @@
 
 [![assert_matches][c-assert_matches-badge]][c-assert_matches] [![assert_matches-crates.io][c-assert_matches-crates.io-badge]][c-assert_matches-crates.io] [![assert_matches-github][c-assert_matches-github-badge]][c-assert_matches-github] [![assert_matches-lib.rs][c-assert_matches-lib.rs-badge]][c-assert_matches-lib.rs]{{hi:assert_matches}}{{hi:Pattern}}{{hi:Assert}}{{hi:Match}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-`assert_matches`: A crate for matching on patterns in assertions.
+[`assert_matches`][c-assert_matches]⮳{{hi:assert_matches}}: A crate for matching on patterns in assertions.
 
 ## `approx` {#approx}
 

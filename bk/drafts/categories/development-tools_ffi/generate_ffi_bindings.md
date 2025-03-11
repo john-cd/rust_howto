@@ -42,9 +42,9 @@
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
-[`cxx`][c-cxx]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. `cxx` handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
+[`cxx`][c-cxx]⮳{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c-cxx]⮳{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
 
-While tools like 'SWIG' exist, `cxx` is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
+While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/tests/cpp/cxx.rs:example}}
@@ -70,7 +70,7 @@ While tools like 'SWIG' exist, `cxx` is generally preferred for modern C++ inter
 
 ### C / C++ Build Integration {#skip1}
 
-`cc` helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
+[`cc`][c-cc]⮳{{hi:cc}} helps with compiling C/C++ code within your Rust build script (`build.rs`). This is often necessary when working with FFI or C++ bindings. See [[build_time_tooling | Build Time Tooling]].
 
 ### Utilities {#skip2}
 

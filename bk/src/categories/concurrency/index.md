@@ -53,7 +53,7 @@ Shared Memory. Using atomic types for thread-safe data access.
 
 ## Data parallelism
 
-Using iterators in parallel with crates like `rayon`.
+Using iterators in parallel with crates like [`rayon`][c-rayon]⮳{{hi:rayon}}.
 
 {{#include data_parallelism.incl.md}}
 

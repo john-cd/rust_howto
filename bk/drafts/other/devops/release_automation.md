@@ -8,8 +8,8 @@ How you distribute your application depends on the target platform:
 
 - Libraries: publish (open-source) Rust libraries to `crates.io`.
 - Executables: publish binaries to a service where they can be downloaded from (e.g., `GitHub Releases`).
-- Containers: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like `AWS` or `Azure`.
-- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using cargo plugins like `cargo-deb`, `cargo-rpm`...
+- Containers: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like [`AWS`][c-aws]⮳{{hi:AWS}} or `Azure`.
+- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using cargo plugins like [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}, [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}...
 
 ## Cargo {#skip}
 
@@ -52,7 +52,7 @@ The following are the typical steps to release a crate to `crates.io`:
 [![cargo-release-lib.rs][c-cargo_release-lib.rs-badge]][c-cargo_release-lib.rs]
 [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo-release` automates the release process, including version bumping and publishing to `crates.io`. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
+[`cargo-release`][c-cargo_release]⮳{{hi:cargo-release}} automates the release process, including version bumping and publishing to `crates.io`. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help you get up and running quickly.
 
 ## `release-plz` {#release-plz}
 

@@ -10,7 +10,7 @@
 ## Calling Python from Rust {#skip}
 
 - [`cpython`][c-cpython]⮳{{hi:cpython}} provides direct bindings to the CPython interpreter. Lower-level, but very powerful.
-- [`pyo3`][c-pyo3]⮳{{hi:pyo3}} is higher-level and easier to use than `cpython` for many use cases.
+- [`pyo3`][c-pyo3]⮳{{hi:pyo3}} is higher-level and easier to use than [`cpython`][c-cpython]⮳{{hi:cpython}} for many use cases.
 - `rust-python` is another option for Python bindings.
 
 ## Interop with Python with `pyo3` {#pyo3}
@@ -44,7 +44,7 @@ See also:
 
 ## Numerical Data {#skip}
 
-If you're working with numerical data, integrating with [`numpy`][c-numpy]⮳{{hi:numpy}} is often essential. Crates like `ndarray` in Rust can also facilitate this. See [[mathematics | Mathematics]].
+If you're working with numerical data, integrating with [`numpy`][c-numpy]⮳{{hi:numpy}} is often essential. Crates like [`ndarray`][c-ndarray]⮳{{hi:ndarray}} in Rust can also facilitate this. See [[mathematics | Mathematics]].
 
 ## Build Tools {#skip}
 

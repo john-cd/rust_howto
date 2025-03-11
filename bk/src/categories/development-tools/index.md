@@ -51,7 +51,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 <div class="hidden">
 [development-tools/index: add](https://github.com/john-cd/rust_howto/issues/301)
-[index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
+[index: reorganize; dedupe alternatives / [`log`][c-log]⮳{{hi:log}} / config_log](https://github.com/john-cd/rust_howto/issues/319)
 
 ## Optimize Rust Compilation
 
@@ -84,7 +84,7 @@ Code Coverage: [`grcov`][c-grcov]⮳{{hi:grcov}}, [`tarpaulin`][c-tarpaulin]⮳{
 Continuous Integration: often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c-xtask]⮳{{hi:xtask}} can help manage CI tasks
 Code Analysis: `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs)
 
-[`fd-find`][c-fd_find]⮳{{hi:fd-find}} as a more human-friendly alternative to `find` which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
+[`fd-find`][c-fd_find]⮳{{hi:fd-find}} as a more human-friendly alternative to [`find`][c-find]⮳{{hi:find}} which, by default, ignores paths listed in things like .gitignore and mimics Vim's smartcase option.
 
 [`hyperfine`][c-hyperfine]⮳{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc.
 

@@ -32,7 +32,7 @@ Direct3D 12 access is usually through [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}'s 
 
 Metal access is provided by the [`metal`][c-metal]⮳{{hi:metal}} crate or through [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} (with a Metal backend). macOS/iOS specific.
 
-See also `metal-rs`: `Metal` bindings.
+See also [`metal-rs`][c-metal]⮳{{hi:metal-rs}}: 'Metal' bindings.
 
 ## Related Topics {#skip}
 

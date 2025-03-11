@@ -10,7 +10,7 @@ You can build simple Rust applications to automate repetitive tasks. The followi
 
 ## External Process Management {#skip1}
 
-- `duct`.
+- [`duct`][c-duct]⮳{{hi:duct}}.
 - `std::process` (standard library).
 
 See [[external_commands | External Commands]].

@@ -8,7 +8,7 @@ Store the results of previous computations, in order to reuse the results.
 
 ## Hybrid Caches
 
-`foyer` is a hybrid cache for Rust.
+[`foyer`][c-foyer]⮳{{hi:foyer}} is a hybrid cache for Rust.
 
 ## Distributed Caches
 

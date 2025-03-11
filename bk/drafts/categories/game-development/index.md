@@ -21,7 +21,7 @@ Game development in Rust is a vibrant area, and the crates you'll need depend on
 
 | Topic | Description | Relevant Rust crate(s) |
 |---|---|---|
-| [[graphics | Graphics]] | | [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with `winit` or game engines. [`rend3`][c-rend3]⮳{{hi:rend3}}: A 3D rendering engine built on top of wgpu. [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A low-level graphics API abstraction layer. [`image`][c-image]⮳{{hi:image}} for image loading and manipulation. |
+| [[graphics | Graphics]] | | [`wgpu`][c-wgpu]⮳{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with [`winit`][c-winit]⮳{{hi:winit}} or game engines. [`rend3`][c-rend3]⮳{{hi:rend3}}: A 3D rendering engine built on top of wgpu. [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}}: A low-level graphics API abstraction layer. [`image`][c-image]⮳{{hi:image}} for image loading and manipulation. |
 | [[multimedia_audio | Audio]] | | [`cpal`][c-cpal]⮳{{hi:cpal}}: Cross-platform audio I/O. [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for audio |
 | Inputs | See also [[gui | GUI]]. | [`winit`][c-winit]⮳{{hi:winit}} : Handles window events, including input. [`sdl2`][c-sdl2]⮳{{hi:sdl2}}: Can also be used for input. |
 | Game Logic / State Management | Often handled directly or with ECS libraries. See below. | |
@@ -65,5 +65,5 @@ Are we Game yet?
 
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/367)
-cover [`tetra`][c-tetra]⮳{{hi:tetra}}, `piston`.
+cover [`tetra`][c-tetra]⮳{{hi:tetra}}, [`piston`][c-piston]⮳{{hi:piston}}.
 </div>

@@ -11,7 +11,7 @@ Shaders are programs that run on the GPU (Graphics Processing Unit). There are s
 - Geometry Shaders: These shaders work with entire primitives (points, lines, or triangles) and can generate new geometry or modify existing geometry before it is rasterized.
 - Compute Shaders: These shaders are used for general-purpose computing tasks that are not directly related to rendering. They can perform complex calculations and data processing on the GPU.
 
-Shaders are written in specialized programming languages like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). `wgpu` uses WGSL.
+Shaders are written in specialized programming languages like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c-wgpu]⮳{{hi:wgpu}} uses WGSL.
 
 ## Topics {#skip}
 
@@ -24,7 +24,7 @@ Shaders are written in specialized programming languages like GLSL (OpenGL Shadi
 
 [`naga`][c-naga]⮳{{hi:naga}} is a general-purpose shader translation and analysis tool.
 
-Shader translator and validator. Part of the `wgpu` project.
+Shader translator and validator. Part of the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} project.
 
 ## `rust-gpu` {#rust-gpu}
 
@@ -67,7 +67,7 @@ Compute Shaders are often handled through the low-level graphics APIs like [`wgp
 
 ## See also {#skip}
 
-- [[typecasts | Typecasts]] and especially `bytemuck` - A crate for mucking around with piles of bytes.
+- [[typecasts | Typecasts]] and especially [`bytemuck`][c-bytemuck]⮳{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).
 
 {{#include refs.incl.md}}

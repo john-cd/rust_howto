@@ -18,7 +18,7 @@
 
 [`tao`][c-tao]⮳{{hi:tao}} is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
-"A fork of `winit` by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs](https://blessed.rs/crates)).
+"A fork of [`winit`][c-winit]⮳{{hi:winit}} by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs](https://blessed.rs/crates)).
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
@@ -36,7 +36,7 @@
 
 ## See also
 
-[`sdl2`][c-sdl2]⮳{{hi:sdl2}} can also be used for windowing and input, but `winit` is often preferred in the Rust ecosystem.
+[`sdl2`][c-sdl2]⮳{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c-winit]⮳{{hi:winit}} is often preferred in the Rust ecosystem.
 
 [`glfw`][c-glfw]⮳{{hi:glfw}} provides bindings to the GLFW library.
 

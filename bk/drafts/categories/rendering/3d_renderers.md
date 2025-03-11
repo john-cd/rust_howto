@@ -17,11 +17,11 @@ Graphics APIs, wrappers for and backends to Vulkan and OpenGL.
 - Ambient Occlusion.
 - Level of Detail (LOD).
 
-Many algorithms are implemented within engines like `rend3` or game engines like `bevy`.
+Many algorithms are implemented within engines like [`rend3`][c-rend3]⮳{{hi:rend3}} or game engines like [`bevy`][c-bevy]⮳{{hi:bevy}}.
 
 ## `rend3` {#rend3}
 
-[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of `wgpu`.
+[`rend3`][c-rend3]⮳{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c-wgpu]⮳{{hi:wgpu}}.
 
 ## `three-d` {#threed}
 

@@ -15,8 +15,8 @@ Popular tooling include:
 
 - Developers push code changes to a Git repository.
 - `GitHub Actions` is triggered by the push or pull request.
-- Within the workflow, `cargo` builds the Rust application in release mode.
-- `cargo` runs all (unit, integration, and end-to-end) tests.
+- Within the workflow, [`cargo`][c-cargo]⮳{{hi:cargo}} builds the Rust application in release mode.
+- [`cargo`][c-cargo]⮳{{hi:cargo}} runs all (unit, integration, and end-to-end) tests.
 - The built binary is packaged (e.g., zipped).
 - `GitHub Actions` creates a new release on GitHub, attaching the packaged binary.
 - Deployment (Optional): `GitHub Actions` deploys the application to a target environment.
@@ -38,7 +38,7 @@ See [[github_actions | Github Actions]].
 - [How to cache docker-compose build inside github-action][stackoverflow-how-to-cache-docker-compose-build-inside-github-action]⮳.
 - [Optimizing CI/CD pipelines in your Rust projects][blog-optimizing-ci-cd-pipelines-rust-project]⮳.
 - [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action-github]⮳.
-- [Experience about deploying `mdbook` on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳.
+- [Experience about deploying [`mdbook`][c-mdbook]⮳{{hi:mdbook}} on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

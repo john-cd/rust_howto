@@ -16,7 +16,7 @@ The following describes tools that make
 
 Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p-configuration] files, when committing in `git`, prior to submission to code review or start of a CI workflow.
 
-[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for `cargo` projects with 🐶.
+[cargo-husky][c-cargo_husky-github]{{hi:cargo-husky}}⮳ setup Git hooks automatically for [`cargo`][c-cargo]⮳{{hi:cargo}} projects with 🐶.
 
 Add the [`cargo-husky`][c-cargo_husky]⮳{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 

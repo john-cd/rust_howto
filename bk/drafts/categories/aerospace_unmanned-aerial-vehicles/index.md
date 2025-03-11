@@ -22,7 +22,7 @@ Consider using:
 
 ### Parsing Binary Data
 
-Consider using crates like `nom` or `binascii`.
+Consider using crates like [`nom`][c-nom]⮳{{hi:nom}} or `binascii`.
 
 See [[parsing | Parsing]] and [[_binary_encoders |  Binary Encoders]].
 

@@ -27,7 +27,7 @@ The `erlang_nif` crate allows you to write NIFs in Rust. NIFs run within the Erl
 Use the following crates:
 
 - [[serde | `serde`]] for serializing and deserializing data exchanged between Rust and Erlang/Elixir.
-- `bincode` is a compact binary format that is often used for efficient communication.
+- [`bincode`][c-bincode]⮳{{hi:bincode}} is a compact binary format that is often used for efficient communication.
 - `erlang_term` converts Erlang External Term Format to Rust objects, without using Erlang NIFs.
 
 ## Build Tools {#skip}

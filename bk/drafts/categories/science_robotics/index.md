@@ -29,7 +29,7 @@ See also
 
 Import/Export various files related with Robotics
 
-`assimp-rs` (open-asset-importer) - Rust bindings for the Assimp library.
+[`assimp-rs`][c-assimp]⮳{{hi:assimp-rs}} (open-asset-importer) - Rust bindings for the Assimp library.
 `mcap` - Rust library for reading and writing MCAP log files
 `urdf-rs` - URDF Loader for Rust
 `pcd-ros` - Read point cloud data from PCD file format
@@ -60,12 +60,12 @@ See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Sim
 
 ## Math and Geometry-related libraries for Robotics
 
-- `nalgebra` - Linear algebra library for Rust.
+- [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} - Linear algebra library for Rust.
 - `ncollide` - 2 and 3-dimensional collision detection library in Rust.
 - `kdtree` - K-dimensional tree in Rust for fast geospatial indexing.
 - `k` - Kinematics Library for rust-lang.
 - `static-math` - Safe and fast mathematical operations with static arrays in Rust programming language thinked for robotics.
-- `ndarray` - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} - N-dimensional tensor arithmetic library, inspired by python’s NumPy.
 - `faer-rs` - Linear algebra foundation for the Rust programming language.
 
 See also the numerical computation ([[additional_numeric_types | Additional Numeric Types]], [[linear_algebra | Linear Algebra]]), [[data-processing | data]] analysis sections.

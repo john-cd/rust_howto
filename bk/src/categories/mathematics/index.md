@@ -56,7 +56,7 @@ Generating random numbers for simulations, cryptography, etc.
 Numerical integration, differentiation, and root-finding.
 
 - `rust-num`: numerical traits and operations.
-- `ndarray`: numerical computations.
+- [`ndarray`][c-ndarray]⮳{{hi:ndarray}}: numerical computations.
 
 ## Optimization
 
@@ -76,13 +76,13 @@ Stability analysis, chaos theory, and control systems.
 
 Graphs, networks, and shortest paths.
 
-- `petgraph` (graph data structures and algorithms).
+- [`petgraph`][c-petgraph]⮳{{hi:petgraph}} (graph data structures and algorithms).
 
 ## Discrete Mathematics
 
 Combinatorics, set theory, and logic.
 
-- `bit-set` (bit manipulation), `regex` (pattern matching).
+- `bit-set` (bit manipulation), [`regex`][c-regex]⮳{{hi:regex}} (pattern matching).
 
 ## Units of Measurement
 

@@ -29,7 +29,7 @@ tests/            (integration tests)
 
 - Core Modules: Define the core business logic of the system. Use [[traits | Traits]] for abstraction and flexibility.
 - Data Models: Design type-safe models using Rust's [[structs | `struct`]]s and [[enums | `enum`]]s.
-- Concurrency and Asynchrony: Leverage tools like `tokio` for [[asynchronous | asynchronous]] tasks.
+- Concurrency and Asynchrony: Leverage tools like [`tokio`][c-tokio]⮳{{hi:tokio}} for [[asynchronous | asynchronous]] tasks.
 
 ## Choose Key Technologies {#skip}
 
@@ -38,20 +38,20 @@ tests/            (integration tests)
 
 For example, consider:
 
-- Web Applications: Frameworks like Actix-web, `rocket`, or `axum`.
-- CLI Tools: Building command-line utilities with `clap` or `structopt`.
+- Web Applications: Frameworks like Actix-web, [`rocket`][c-rocket]⮳{{hi:rocket}}, or [`axum`][c-axum]⮳{{hi:axum}}.
+- CLI Tools: Building command-line utilities with [`clap`][c-clap]⮳{{hi:clap}} or [`structopt`][c-structopt]⮳{{hi:structopt}}.
 - Embedded Systems: Leveraging Rust's low-level control for IoT devices.
 
 Cross-cutting concerns:
 
-- Configuration: Use `config` or `dotenvy` for loading environment variables.
-- Database: Use `sqlx` or `diesel` for interacting with databases.
-- Logging: Use `tracing` or `log` for structured logging.
+- Configuration: Use [`config`][c-config]⮳{{hi:config}} or [`dotenvy`][c-dotenvy]⮳{{hi:dotenvy}} for loading environment variables.
+- Database: Use [`sqlx`][c-sqlx]⮳{{hi:sqlx}} or [`diesel`][c-diesel]⮳{{hi:diesel}} for interacting with databases.
+- Logging: Use [`tracing`][c-tracing]⮳{{hi:tracing}} or [`log`][c-log]⮳{{hi:log}} for structured logging.
 
 ## Handle Error Management {#skip}
 
 - Use Rust's `Result` and `Option` types to handle errors gracefully.
-- Create custom error types using `thiserror` and use `anyhow` for descriptive error messages.
+- Create custom error types using [`thiserror`][c-thiserror]⮳{{hi:thiserror}} and use [`anyhow`][c-anyhow]⮳{{hi:anyhow}} for descriptive error messages.
 
 See:
 
@@ -61,24 +61,24 @@ See:
 ## Ensure Security {#skip}
 
 - Safe [[concurrency | Concurrency]]: Avoiding data races with Rust's ownership model.
-- [[cryptography | Cryptography]]: Using crates like `ring` or the `rust-crypto` suite.
+- [[cryptography | Cryptography]]: Using crates like [`ring`][c-ring]⮳{{hi:ring}} or the [`rust-crypto`][c-rust_crypto]⮳{{hi:rust-crypto}} suite.
 - [[authentication | Authentication]].
 
 ## Ensure Test Coverage {#skip}
 
 - Write unit tests using `#[test]` in individual modules.
 - Include integration tests for component interaction.
-- Use mocking libraries like `mockall` to test without relying on real external systems.
+- Use mocking libraries like [`mockall`][c-mockall]⮳{{hi:mockall}} to test without relying on real external systems.
 
 See [[testing | Testing]].
 
 ## Optimize Performance {#skip}
 
-- Profile and benchmark using `criterion` or other profiling tools.
+- Profile and benchmark using [`criterion`][c-criterion]⮳{{hi:criterion}} or other profiling tools.
 - Minimize memory allocation and leverage Rust's zero-cost abstractions.
 - Memory Management: Minimizing allocations and leveraging stack memory.
-- Profiling Tools: Using `perf` or `valgrind` for performance analysis.
-- Parallelism: Utilizing `rayon` for data parallelism.
+- Profiling Tools: Using [`perf`][c-perf]⮳{{hi:perf}} or [`valgrind`][c-valgrind]⮳{{hi:valgrind}} for performance analysis.
+- Parallelism: Utilizing [`rayon`][c-rayon]⮳{{hi:rayon}} for data parallelism.
 - Concurrency: Fearless concurrency using threads, async/await, and message passing.
 
 See [[performance | Performance]] and [[development-tools_profiling | Profiling]].
