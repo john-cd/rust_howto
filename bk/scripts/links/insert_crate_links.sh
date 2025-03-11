@@ -10,7 +10,7 @@ set -u
 root="$(realpath $1)/"
 
 # Markdown files
-files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
+files=$(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
 
 # Insert potential links to crates into the book's Markdown
 for file in ${files}
