@@ -26,6 +26,7 @@
 [ex-development-tools_cargo-plugins-xshell]: building.md#xshell
 [ex-development-tools_cargo-plugins-zig]: cross_compiling.md#zig
 [p-cargo]: ../development-tools/cargo/cargo.md
+[p-code-coverage]: ../development-tools_testing/code_coverage.md
 [p-configuration]: ../config/configuration.md
 [p-crates]: ../../crates/index.md
 [p-cross-platform]: # "../../other/cross-platform/index.md"

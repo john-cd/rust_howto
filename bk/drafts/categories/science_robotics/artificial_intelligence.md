@@ -35,6 +35,6 @@ TODO write
 Rust Crates:
 
 - `dora-rs`: Robotics framework for AI applications. Low usage.
-- `optimization-engine`: Embedded optimization for robotics.
+- `optimization-engine`: [Embedded][p-embedded] optimization for robotics.
 
 </div>

@@ -2,7 +2,7 @@
 
 {{#include text_rendering.incl.md}}
 
-Libraries and tools for loading and rendering fonts.
+Libraries and tools for loading and [rendering][p-rendering] fonts.
 
 [`fontdue`][c-fontdue]⮳{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c-ttf_parser]⮳{{hi:ttf-parser}} and [`opentype`][c-opentype]⮳{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c-ab_glyph]⮳{{hi:ab_glyph}} is another font rendering option.
 
@@ -12,7 +12,7 @@ API for loading, scaling, positioning and rasterizing OpenType font glyphs.
 
 ## `rusttype` {#rusttype}
 
-`rusttype` is a TrueType font rasterizer and a pure Rust alternative to libraries like FreeType. RustType provides an API for loading, querying and rasterising TrueType fonts. It also provides an implementation of a dynamic GPU glyph cache for hardware font rendering.
+`rusttype` is a TrueType font rasterizer and a pure Rust alternative to libraries like FreeType. RustType provides an API for loading, querying and rasterising TrueType fonts. It also provides an implementation of a dynamic [GPU][p-gpu] glyph cache for hardware font rendering.
 
 ## `fontdue` {#fontdue}
 

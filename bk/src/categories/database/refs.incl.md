@@ -40,6 +40,7 @@
 [p-option]: ../../standard-library/option.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-postgres]: postgres.md
+[p-programming-languages]: ../parser-implementations/programming_languages.md
 [p-search]: search.md
 [p-server]: ../network-programming/server.md
 [p-streams]: ../asynchronous/streams.md

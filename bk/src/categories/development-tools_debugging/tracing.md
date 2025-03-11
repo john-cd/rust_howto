@@ -93,11 +93,11 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 Tracing Framework: tracing (provides the core tracing functionality, spans, events, etc.)
 Span Management: (Handled by tracing through its span API)
-Event Logging: (Also handled by tracing using macros like event! and debug!, info!, warn!, error!)
+Event Logging: (Also handled by tracing using [macros][p-macros] like event! and debug!, info!, warn!, error!)
 Context Propagation: (Built into tracing's span system)
-Instrumentation: (Often done with macros provided by tracing or other instrumentation libraries)
-Output and Formatting: tracing-subscriber (formats and outputs traces to various destinations)
+Instrumentation: (Often done with [macros][p-macros] provided by tracing or other instrumentation libraries)
+Output and [Formatting][p-formatting]: tracing-subscriber (formats and outputs traces to various destinations)
 Filtering: tracing-subscriber (allows filtering of traces based on level, target, etc.)
-Asynchronous Tracing: (Supported by tracing through its asynchronous span management)
+Asynchronous Tracing: (Supported by tracing through its [asynchronous][p-asynchronous] span management)
 Integration with other tools: (Often tracing is used with other tools like Jaeger or Zipkin for distributed tracing. There might be specific crates for those integrations, but tracing is the core.)
 </div>

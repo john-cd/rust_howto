@@ -14,9 +14,23 @@
 [ex-science_robotics-safe_drive]: robot_operating_systems.md#safe_drive
 [ex-science_robotics-urdf-viz]: simulation_visualization.md#urdf-viz
 [ex-science_robotics-zenoh]: robotics_frameworks.md#zenoh
-[p-computer-vision]: # "../computer-vision/index.md"
+[p-computer-vision]: ../computer-vision/index.md
+[p-concurrency]: ../../../src/categories/concurrency/index.md
+[p-embedded]: ../embedded/index.md
+[p-graphics]: ../graphics/index.md
+[p-grpc]: ../../../src/categories/web-programming_http-server/_grpc.md
 [p-json]: ../parser-implementations/json.md
+[p-linear-algebra]: ../../../src/categories/mathematics/linear_algebra.md
+[p-localization]: ../localization/index.md
+[p-middleware]: ../../../src/categories/web-programming_http-server/middleware.md
 [p-network-programming]: ../network-programming/index.md
+[p-node]: ../development-tools_ffi/node.md
 [p-opencv]: ../computer-vision/opencv.md
+[p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
+[p-python]: ../development-tools_ffi/python.md
 [p-robotics]: robot_operating_systems.md
-[p-unix]: # "../os_unix-apis/unix.md"
+[p-sensors]: ../embedded/sensors.md
+[p-simulation]: ../simulation/simulation.md
+[p-unix]: ../os_unix-apis/unix.md
+[p-visualization]: ../visualization/visualization.md

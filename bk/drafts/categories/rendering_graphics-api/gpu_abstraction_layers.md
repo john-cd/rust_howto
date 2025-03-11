@@ -2,11 +2,11 @@
 
 {{#include webgpu.incl.md}}
 
-Libraries that provide a cross-platform abstraction over native graphics APIs.
+Libraries that provide a [cross-platform][p-cross-platform] abstraction over native graphics APIs.
 
 ## Key Concepts {#skip}
 
-- Shaders: Programs that run on the GPU.
+- [Shaders][p-shaders]: Programs that run on the GPU.
 - Pipelines: The sequence of steps involved in rendering.
 - Buffers: Memory on the GPU.
 - Textures: [Images][p-images] used in rendering.

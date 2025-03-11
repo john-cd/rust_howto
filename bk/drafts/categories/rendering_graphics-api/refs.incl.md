@@ -12,4 +12,11 @@
 [ex-rendering_graphics-api-spirv-reflect]: shaders.md#spirv-reflect
 [ex-rendering_graphics-api-vulkano]: vulkan.md#vulkano
 [ex-rendering_graphics-api-wgpu]: gpu_abstraction_layers.md#wgpu
+[p-attributes]: ../../../src/language/attributes.md
 [p-crates]: ../../crates/index.md
+[p-cross-platform]: ../../other/cross-platform/index.md
+[p-gpu]: ../../other/gpu/gpu.md
+[p-graphics]: ../graphics/index.md
+[p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
+[p-rendering]: ../rendering/index.md
+[p-shaders]: shaders.md

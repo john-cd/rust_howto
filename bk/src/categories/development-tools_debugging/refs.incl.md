@@ -23,6 +23,7 @@
 [ex-development-tools_debugging-timestamp-in-log-messages]: config_log.md#timestamp-in-log-messages
 [ex-development-tools_debugging-type-name-of-val]: diagnostic_functions.md#type-name-of-val
 [p-async]: ../asynchronous/async.md
+[p-asynchronous]: ../asynchronous/index.md
 [p-cargo]: ../development-tools/cargo/cargo.md
 [p-configuration]: ../config/configuration.md
 [p-documentation]: ../development-tools/documentation/documentation.md

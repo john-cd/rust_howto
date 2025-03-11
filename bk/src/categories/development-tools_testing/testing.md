@@ -15,7 +15,7 @@ Often uses `std::test` as well, but integration tests are placed in a separate t
 [`rstest`][c-rstest]⮳{{hi:rstest}} is a resource-based test framework for writing data-driven tests.
 
 This framework focuses on integration-testing, that means external software, not necessarily written in rust.
-`rtest` works by using stateful resources. It uses macros to build a executable binary that can handle all your filters and returns a nice output.
+`rtest` works by using stateful resources. It uses [macros][p-macros] to build a executable binary that can handle all your filters and returns a nice output.
 
 ## Documentation Testing {#doc_testing}
 
@@ -45,7 +45,7 @@ First, install the CLI with `cargo install cargo-insta`. Second, create a test, 
 
 ## Asynchronous Testing {#async_testing}
 
-Often involves using `tokio::test` or similar runtime-specific attributes for testing asynchronous code.
+Often involves using `tokio::test` or similar runtime-specific [attributes][p-attributes] for testing [asynchronous][p-asynchronous] code.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -10,7 +10,7 @@
 
 [![linfa][c-linfa-badge]][c-linfa]{{hi:linfa}} [![linfa-crates.io][c-linfa-crates.io-badge]][c-linfa-crates.io] [![linfa-website][c-linfa-website-badge]][c-linfa-website] [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}{{hi:Machine learning}}
 
-Kin in spirit to Python's `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focuses on common pre-processing tasks and classical ML algorithms for everyday ML tasks. Provides a convenient, bundled approach to many machine learning algorithms.
+Kin in spirit to [Python][p-python]'s `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:linfa}} focuses on common pre-processing tasks and classical ML algorithms for everyday ML tasks. Provides a convenient, bundled approach to many machine learning algorithms.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/tests/ml/linfa.rs:example}}

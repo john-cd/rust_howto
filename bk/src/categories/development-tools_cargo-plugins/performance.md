@@ -32,7 +32,7 @@ cargo expand: Expands [macros][p-macros], which can sometimes help you understan
 Benchmarking:
 
 cargo bench: (Built-in) Runs benchmarks to measure performance.
-Other Performance Tools: (Often used in conjunction with Rust, but not Cargo plugins)
+Other Performance Tools: (Often used in conjunction with Rust, but not [Cargo][p-cargo] plugins)
 
 perf: (System profiler)
 valgrind (Memory debugging and profiling)

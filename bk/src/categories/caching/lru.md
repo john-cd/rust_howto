@@ -2,7 +2,7 @@
 
 {{#include lru.incl.md}}
 
-Consider the following Rust crates for your in-memory caching needs: [`lru`][c-lru]⮳{{hi:lru}}, [`moka`][c-moka]⮳{{hi:moka}}, and [`cached`][c-cached]⮳{{hi:cached}}.
+Consider the following Rust crates for your in-memory [caching][p-caching] needs: [`lru`][c-lru]⮳{{hi:lru}}, [`moka`][c-moka]⮳{{hi:moka}}, and [`cached`][c-cached]⮳{{hi:cached}}.
 
 ## Use a LRU cache {#lru-cache}
 

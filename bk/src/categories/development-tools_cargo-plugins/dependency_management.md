@@ -7,7 +7,7 @@ Rust's dependency management is handled by [`Cargo`][c-cargo]⮳{{hi:Cargo}}, it
 - `Cargo.toml`, located at the root of a Rust project, is the manifest file that defines the project's metadata and dependencies.
 The [dependencies] section within `Cargo.toml` is where you specify the external crates (libraries) your project relies on.
 - `Cargo.lock` records the exact versions of all dependencies used in a project. It ensures that builds are reproducible, even if new versions of dependencies are released.
-- Cargo automates the process of downloading from `crates.io`, building, and linking dependencies. It resolves dependency versions, ensuring compatibility and preventing conflicts.
+- [Cargo][p-cargo] automates the process of downloading from `crates.io`, building, and linking dependencies. It resolves dependency versions, ensuring compatibility and preventing conflicts.
 
 See the [[cargo | Cargo]] and [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]] chapters.
 
@@ -31,7 +31,7 @@ See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
 
 ## `cargo-edit` {#cargo-edit}
 
-Adds 'cargo upgrade' and 'cargo set-version' commands to cargo
+Adds 'cargo upgrade' and '[cargo][p-cargo] set-version' commands to cargo
 
 ## `cargo-outdated` {#cargo-outdated}
 

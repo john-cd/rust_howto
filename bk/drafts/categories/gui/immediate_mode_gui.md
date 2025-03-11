@@ -13,7 +13,7 @@ For almost all cases where you want an immediate mode [GUI][p-gui] in Rust, [`eg
 ## Use Cases {#skip}
 
 - Tools: Immediate mode GUIs are often used for creating tools and editors because they are easy to prototype and iterate on.
-- Games: The performance of immediate mode GUIs makes them suitable for game UIs.
+- [Games][p-games]: The [performance][p-performance] of immediate mode GUIs makes them suitable for game UIs.
 - Prototyping: The ease of use and rapid iteration make immediate mode GUIs good for prototyping.
 
 ## `egui` {#egui}

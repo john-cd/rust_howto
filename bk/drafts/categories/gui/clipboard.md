@@ -28,5 +28,5 @@ Clipboard access in [WASM][p-wasm] is restricted due to security reasons. You'll
 <div class="hidden">
 [write; expand](https://github.com/john-cd/rust_howto/issues/638)?
 Cover `clipboard-win`
-Details of WASM integration
+Details of [WASM][p-wasm] integration
 </div>

@@ -64,7 +64,7 @@ While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferre
 
 - FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
 - Memory Management across FFI boundaries requires careful consideration. It often involves using `Box::into_raw` and `Box::from_raw` to transfer ownership of memory between Rust and C.
-- Error Handling across FFI boundaries often involves returning error codes or using `Result` types and converting them to C-compatible representations.
+- [Error Handling][p-error-handling] across FFI boundaries often involves returning error codes or using `Result` types and converting them to C-compatible representations.
 
 ## Related Topics {#skip}
 
@@ -75,7 +75,7 @@ While tools like 'SWIG' exist, [`cxx`][c-cxx]⮳{{hi:cxx}} is generally preferre
 ### Utilities {#skip2}
 
 - `std::ffi` provides types for interacting with C code, like `CString`, `CStr`, `c_char`, etc.
-  - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust strings and C strings.
+  - Use `std::ffi::CString`, `std::ffi::CStr` for converting between Rust [strings][p-strings] and C strings.
 - [`libc`][c-libc]⮳{{hi:libc}} provides access to the standard C library.
 
 {{#include refs.incl.md}}

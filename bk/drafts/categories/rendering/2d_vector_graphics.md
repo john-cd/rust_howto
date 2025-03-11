@@ -8,7 +8,7 @@
 
 [`lyon`][c-lyon]⮳{{hi:lyon}} generates vector paths and shapes. Often used with a rendering library. For basic geometry, you might just use structs and functions within your own code. [`lyon`][c-lyon]⮳{{hi:lyon}} can also generate various types of curves (Bézier curves, etc.).
 
-It's useful for creating the geometry for vector graphics, but you'd typically use a rendering library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually draw them.
+It's useful for creating the geometry for vector graphics, but you'd typically use a [rendering][p-rendering] library like [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`raqote`][c-raqote]⮳{{hi:raqote}}, or [`tiny-skia`][c-tiny_skia]⮳{{hi:tiny-skia}} to actually draw them.
 
 ## `femtovg` {#femtovg}
 

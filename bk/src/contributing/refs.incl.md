@@ -48,4 +48,5 @@
 [p-statistics]: ../categories/mathematics/statistics.md
 [p-toml]: ../categories/parser-implementations/toml.md
 [p-uavs]: ../categories/aerospace_unmanned-aerial-vehicles/uavs.md
+[p-version-control]: # "../other/devops/version_control.md"
 [p-windows]: ../categories/os_windows-apis/windows.md

@@ -44,7 +44,7 @@ For anything more complex than plain foreground color changes, the code needs to
 [![crossterm-lib.rs][c-crossterm-lib.rs-badge]][c-crossterm-lib.rs]
 
 [`crossterm`][c-crossterm]⮳ is a pure-Rust, low-level terminal rendering and event handling library used to write cross-platform text-based interfaces.
-It supports all UNIX and Windows terminals down to [Windows][p-windows] 7. Features include the following:
+It supports all [UNIX][p-unix] and [Windows][p-windows] terminals down to [Windows][p-windows] 7. Features include the following:
 
 - Full control over writing and flushing output buffer.
 - `Is tty` function.
@@ -119,7 +119,7 @@ It supports all UNIX and Windows terminals down to [Windows][p-windows] 7. Featu
 
 Termion aims to be simple and yet expressive. It is bindless, meaning that it is not a front-end to some other library (e.g., ncurses or termbox), but a standalone library directly talking to the TTY.
 
-Termion is a pure Rust library that provides a cross-platform interface for controlling the terminal. It gives access to advanced terminal features like cursor manipulation, color control, and raw mode, enabling developers to create interactive command-line applications. Being pure Rust, it avoids external dependencies and offers predictable performance.
+Termion is a pure Rust library that provides a [cross-platform][p-cross-platform] interface for controlling the terminal. It gives access to advanced terminal features like cursor manipulation, color control, and raw mode, enabling developers to create interactive command-line applications. Being pure Rust, it avoids external dependencies and offers predictable performance.
 
 ## `colored` {#colored}
 

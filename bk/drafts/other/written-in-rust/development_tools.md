@@ -46,7 +46,7 @@ See also [[programming_languages | Programming Language]] parsers.
 
 [`television`][c-television]⮳{{hi:television}} is a blazingly fast general purpose fuzzy finder TUI.
 
-It integrates with your shell and lets you quickly search through any kind of data source (files, git repositories, environment variables, docker images, you name it) using a fuzzy matching algorithm.
+It integrates with your shell and lets you quickly [search][p-search] through any kind of data source (files, git repositories, [environment variables][p-environment-variables], docker images, you name it) using a fuzzy matching algorithm.
 
 ## Related Topics {#skip}
 

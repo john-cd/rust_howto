@@ -16,7 +16,7 @@ The [`wasm-bindgen`](https://rustwasm.github.io/docs/wasm-bindgen) guide covers 
 
 Bindings for all JS global objects and functions found in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} crate.
 
-This does not include any Web, Node, or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
+This does not include any Web, [Node][p-node], or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
 
 ## Accessing DOM and Web APIs via Rust {#skip}
 

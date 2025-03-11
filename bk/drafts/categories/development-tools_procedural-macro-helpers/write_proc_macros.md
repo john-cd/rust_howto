@@ -84,7 +84,7 @@ Procedural [macros][p-macros] have two ways of reporting errors. The first is to
 
 [`trybuild`][c-trybuild]⮳{{hi:trybuild}} is a crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
 
-Debugging procedural macros can be tricky. Often involves printing token streams to the [`console`][c-console]⮳{{hi:console}} or using tools like `cargo expand` to see the generated code.
+Debugging procedural [macros][p-macros] can be tricky. Often involves printing token streams to the [`console`][c-console]⮳{{hi:console}} or using tools like `cargo expand` to see the generated code.
 
 ## Documentation {#skip}
 

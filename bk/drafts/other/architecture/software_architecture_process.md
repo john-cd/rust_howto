@@ -27,9 +27,9 @@ tests/            (integration tests)
 
 ## Design System Components {#skip}
 
-- Core Modules: Define the core business logic of the system. Use [[traits | Traits]] for abstraction and flexibility.
+- Core [Modules][p-modules]: Define the core business logic of the system. Use [[traits | Traits]] for abstraction and flexibility.
 - Data Models: Design type-safe models using Rust's [[structs | `struct`]]s and [[enums | `enum`]]s.
-- Concurrency and Asynchrony: Leverage tools like [`tokio`][c-tokio]⮳{{hi:tokio}} for [[asynchronous | asynchronous]] tasks.
+- [Concurrency][p-concurrency] and Asynchrony: Leverage tools like [`tokio`][c-tokio]⮳{{hi:tokio}} for [[asynchronous | asynchronous]] tasks.
 
 ## Choose Key Technologies {#skip}
 
@@ -40,12 +40,12 @@ For example, consider:
 
 - Web Applications: Frameworks like Actix-web, [`rocket`][c-rocket]⮳{{hi:rocket}}, or [`axum`][c-axum]⮳{{hi:axum}}.
 - CLI Tools: Building command-line utilities with [`clap`][c-clap]⮳{{hi:clap}} or [`structopt`][c-structopt]⮳{{hi:structopt}}.
-- Embedded Systems: Leveraging Rust's low-level control for IoT devices.
+- [Embedded][p-embedded] Systems: Leveraging Rust's low-level control for IoT devices.
 
 Cross-cutting concerns:
 
 - Configuration: Use [`config`][c-config]⮳{{hi:config}} or [`dotenvy`][c-dotenvy]⮳{{hi:dotenvy}} for loading environment variables.
-- Database: Use [`sqlx`][c-sqlx]⮳{{hi:sqlx}} or [`diesel`][c-diesel]⮳{{hi:diesel}} for interacting with databases.
+- [Database][p-database]: Use [`sqlx`][c-sqlx]⮳{{hi:sqlx}} or [`diesel`][c-diesel]⮳{{hi:diesel}} for interacting with databases.
 - Logging: Use [`tracing`][c-tracing]⮳{{hi:tracing}} or [`log`][c-log]⮳{{hi:log}} for structured logging.
 
 ## Handle Error Management {#skip}
@@ -68,7 +68,7 @@ See:
 
 - Write unit tests using `#[test]` in individual modules.
 - Include integration tests for component interaction.
-- Use mocking libraries like [`mockall`][c-mockall]⮳{{hi:mockall}} to test without relying on real external systems.
+- Use [mocking][p-mocking] libraries like [`mockall`][c-mockall]⮳{{hi:mockall}} to test without relying on real external systems.
 
 See [[testing | Testing]].
 
@@ -79,15 +79,15 @@ See [[testing | Testing]].
 - Memory Management: Minimizing allocations and leveraging stack memory.
 - Profiling Tools: Using [`perf`][c-perf]⮳{{hi:perf}} or [`valgrind`][c-valgrind]⮳{{hi:valgrind}} for performance analysis.
 - Parallelism: Utilizing [`rayon`][c-rayon]⮳{{hi:rayon}} for data parallelism.
-- Concurrency: Fearless concurrency using threads, async/await, and message passing.
+- Concurrency: Fearless [concurrency][p-concurrency] using threads, async/await, and message passing.
 
 See [[performance | Performance]] and [[development-tools_profiling | Profiling]].
 
 ## Deployment and Operations {#skip}
 
 - [[building | Build]]  the project using `cargo build`.
-- Containerize with Docker or deploy to a platform like AWS, GCP, or Azure.
-- Integrate CI/CD pipelines using GitHub Actions, GitLab CI, or other tools.
+- Containerize with Docker or deploy to a platform like [AWS][p-aws], GCP, or Azure.
+- Integrate CI/CD pipelines using [GitHub Actions][p-github-actions], GitLab CI, or other tools.
 - Observability: Monitor with tools like Prometheus or Grafana.
 
 ## See also {#skip}

@@ -37,7 +37,7 @@ Useful for representing values that can take on one of two different forms, whic
 
 [`Either`][c-either]⮳{{hi:Either}} has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`.
 
-Includes macros `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`. Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describing success or error, use the regular `Result`.
+Includes [macros][p-macros] `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`. Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describing success or error, use the regular `Result`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -69,7 +69,7 @@ Use cases: Useful for complex data transformations and metaprogramming.
 
 im (Immutable Data Structures):
 
-Purpose: Provides immutable data structures, such as lists, maps, and sets.
+Purpose: Provides immutable data structures, such as lists, [maps][p-maps], and sets.
 Benefits: Facilitates functional programming by providing data structures that cannot be modified in place, ensuring immutability.
 When to use: Crucial when you need to ensure that data does not change in unexpected ways.
 

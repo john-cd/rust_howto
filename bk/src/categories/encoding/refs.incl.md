@@ -36,6 +36,7 @@
 [p-network-programming]: ../network-programming/index.md
 [p-parsing]: # "../parsing/index.md"
 [p-performance]: ../development-tools_cargo-plugins/performance.md
+[p-programming-languages]: ../parser-implementations/programming_languages.md
 [p-slices]: ../../language/slices.md
 [p-structs]: ../../language/structs.md
 [p-toml]: ../parser-implementations/toml.md

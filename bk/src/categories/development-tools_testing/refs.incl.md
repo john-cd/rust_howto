@@ -22,13 +22,17 @@
 [p-asynchronous]: ../asynchronous/index.md
 [p-attributes]: ../../language/attributes.md
 [p-cargo]: ../development-tools/cargo/cargo.md
+[p-code-coverage]: code_coverage.md
 [p-crates]: ../../crates/index.md
 [p-functions]: ../../language/functions.md
 [p-install]: ../development-tools/installation/install.md
 [p-language]: ../../language/index.md
+[p-macros]: ../../language/macros.md
 [p-modules]: ../../language/modules.md
+[p-requests]: ../web-programming_http-client/requests.md
 [p-scripting]: # "../../other/scripting/index.md"
 [p-search]: ../database/search.md
+[p-sorting]: ../algorithms/sorting.md
 [p-testing]: testing.md
 [p-time]: ../date-and-time/time_crate.md
 [p-tokio]: ../asynchronous/tokio.md

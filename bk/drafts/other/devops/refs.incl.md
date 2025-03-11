@@ -9,8 +9,9 @@
 [ex-devops-installation-of-development-tools]: github_actions.md#installation-of-development-tools
 [ex-devops-pre-commit]: version_control.md#pre-commit
 [ex-devops-release-plz]: release_automation.md#release-plz
-[p-cargo]: ../../categories/development-tools/cargo/cargo.md
+[p-cargo]: ../../../src/categories/development-tools/cargo/cargo.md
 [p-configuration]: ../../categories/config/configuration.md
+[p-containers]: ../../categories/virtualization/containers.md
 [p-crates]: ../../crates/index.md
 [p-development-tools]: ../../categories/development-tools/index.md
 [p-formatting]: ../../categories/development-tools/formatting/formatting.md
@@ -19,6 +20,8 @@
 [p-language]: ../../language/index.md
 [p-maintaining]: ../../categories/development-tools_cargo-plugins/maintaining.md
 [p-mdbook]: ../../categories/development-tools/documentation/mdbook.md
-[p-rustup]: ../../categories/development-tools/installation/rustup.md
+[p-python]: ../../categories/development-tools_ffi/python.md
+[p-rustup]: ../../../src/categories/development-tools/installation/rustup.md
+[p-testing]: ../../../src/categories/development-tools_testing/testing.md
 [p-toml]: ../../categories/parser-implementations/toml.md
 [p-versioning]: ../../categories/development-tools/versioning/versioning.md

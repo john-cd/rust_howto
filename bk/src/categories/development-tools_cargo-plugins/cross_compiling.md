@@ -21,9 +21,9 @@ cargo install --locked cargo-zigbuild
 Cross-Compilation Tool:
 
 cross: Simplifies cross-compilation by using Docker containers. This is the most common and recommended approach.
-Target Management (within Cargo):
+Target Management (within [Cargo][p-cargo]):
 
-cargo build --target <target_triple>: Cargo itself supports cross-compilation by specifying the target architecture. [`cross`][c-cross]⮳{{hi:cross}} just makes this easier. You'll still need to configure targets in your project.
+cargo build --target <target_triple>: [Cargo][p-cargo] itself supports cross-compilation by specifying the target architecture. [`cross`][c-cross]⮳{{hi:cross}} just makes this easier. You'll still need to configure targets in your project.
 Other Cross-Compilation Helpers: (Less common or more specialized)
 
 (Often, cross-compilation involves dealing with C/C++ dependencies. The [`cc`][c-cc]⮳{{hi:cc}} crate, used in build scripts, can be helpful)

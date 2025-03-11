@@ -38,7 +38,7 @@ Use the following crates:
 ## Other Considerations {#skip}
 
 - Careful [error handling][p-error-handling] is crucial, especially with NIFs, as a crash in the NIF can bring down the entire Erlang VM.
-- Erlang/Elixir and Rust have different concurrency models. You'll need to be mindful of how you manage [concurrency][p-concurrency] across the FFI boundary.- You'll need to map data types between Rust and Erlang/Elixir. The `erlang_term` crate can help with this.
+- Erlang/Elixir and Rust have different [concurrency][p-concurrency] models. You'll need to be mindful of how you manage [concurrency][p-concurrency] across the FFI boundary.- You'll need to map data types between Rust and Erlang/Elixir. The `erlang_term` crate can help with this.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

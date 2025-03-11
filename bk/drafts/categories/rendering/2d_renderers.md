@@ -2,9 +2,9 @@
 
 {{#include 2d_renderers.incl.md}}
 
-A 2D renderer is a software component that generates two-dimensional images by displaying graphics on a screen, typically using techniques like rasterization to create shapes, text, and images. It is commonly used in applications such as games, graphic design, and user interfaces.
+A 2D renderer is a software component that generates two-dimensional [images][p-images] by displaying [graphics][p-graphics] on a screen, typically using techniques like rasterization to create shapes, text, and images. It is commonly used in applications such as games, graphic design, and user interfaces.
 
-Two essential components of 2D rendering are rasterization and anti-aliasing. Rasterization involves converting vector-based graphic images into raster images, which consist of grids of pixels. Anti-aliasing, on the other hand, is a technique used to smooth the edges of images to reduce jaggedness or pixelation.
+Two essential components of 2D [rendering][p-rendering] are rasterization and anti-aliasing. Rasterization involves converting vector-based graphic images into raster images, which consist of grids of pixels. Anti-aliasing, on the other hand, is a technique used to smooth the edges of images to reduce jaggedness or pixelation.
 
 ## Choosing the Right Library {#skip}
 
@@ -35,7 +35,7 @@ See [[2d_vector_graphics | 2D Vector Graphics]].
 
 ## Hybrid (Raster and Vector) {#skip4}
 
-While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
+While primarily a low-level, [cross-platform][p-cross-platform] GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw both raster and vector graphics. It's very powerful and performant but requires more setup and code compared to the higher-level libraries. You'd use [`lyon`][c-lyon]⮳{{hi:lyon}} to generate vector paths and then [`wgpu`][c-wgpu]⮳{{hi:wgpu}} to render them.
 
 See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 

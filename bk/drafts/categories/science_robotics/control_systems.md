@@ -6,7 +6,7 @@ Motion control, feedback loops, PID controllers.
 
 - Motor Control: Often uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and specific hardware crates. Motor control often involves low-level hardware interaction using crates based on [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}}.
 - Actuator Control: Often uses [`embedded-hal`][c-embedded_hal]⮳{{hi:embedded-hal}} and specific hardware crates.
-- Motion Planning: Linear algebra crates like [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`alga`][c-alga]⮳{{hi:alga}} are foundational.
+- Motion Planning: [Linear algebra][p-linear-algebra] crates like [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`alga`][c-alga]⮳{{hi:alga}} are foundational.
 - [[path_planning | Path Planning]]: Path planning algorithms are often implemented using graph algorithms and search techniques.
 
 ## `nalgebra`: Linear algebra library for control algorithms {#nalgebra}

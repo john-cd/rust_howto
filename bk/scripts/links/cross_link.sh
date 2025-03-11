@@ -9,7 +9,7 @@ set -ue
 
 root="$(realpath $1)/"
 
-files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
+files=$(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
 
 # Search for potential page-to-page cross-links
 
@@ -29,7 +29,7 @@ do
     continue
   fi
   # Skip common words
-  if [ $base == "other" -o $base == "result" -o $base == "time" -o $base == "install" -o $base == "main" -o $base == "building" -o $base == "toml" -o $base == "crates" -o $base == "learning" ]; then
+  if [ $base == "other" -o $base == "GPU" -o $base == "windows" -o $base == "graphics" -o $base == "attributes" -o $base == "algorithms" -o $base == "linux" -o $base == "option" -o $base == "unix" -o $base == "parse" -o $base == "configuration" -o $base == "language" -o $base == "links" -o $base == "functions" -o $base == "server" -o $base == "documentation" -o $base == "result" -o $base == "time" -o $base == "install" -o $base == "main" -o $base == "building" -o $base == "toml" -o $base == "crates" -o $base == "learning"  -o $base == "log" ]; then
     continue
   fi
   pattern="$(tr '_' ' ' <<< "$base")"
@@ -56,7 +56,7 @@ do
   start_line='(^[^|[#{]*?[^a-zA-Z#/`["_=@.,:<-])'
   after='([^a-zA-Z"}/._-])'
   #echo "${start_line}${pattern}${after}"
-  for file_with_pattern in $(rg -t md -P -l -i -t md -g '!*.incl.md' -g '!*SUMMARY.md' -g '!*index.md' -g'!*refs.md' -g'!*crates*' "${start_line}(${pattern})${after}" "${root}src" )
+  for file_with_pattern in $(rg -t md -P -l -i -t md -g '!*.incl.md' -g '!*SUMMARY.md' -g '!*index.md' -g'!*refs.md' -g'!*crates*' "${start_line}(${pattern})${after}" "${root}drafts" )
   do
     # Do not self-reference
     if [ "$file_with_pattern" == "${original_files[$pattern]}" ]; then

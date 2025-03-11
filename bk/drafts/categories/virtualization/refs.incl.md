@@ -5,3 +5,5 @@
 [ex-virtualization-virt]: virtualization.md#virt
 [p-cloud]: # "../cloud/index.md"
 [p-containers]: ./containers.md
+[p-linux]: ../os_linux-apis/linux.md
+[p-windows]: ../../../src/categories/os_windows-apis/windows.md

@@ -5,10 +5,22 @@
 [ex-wasm-wasmer]: wasm_standalone_runtimes.md#wasmer
 [ex-wasm-wasmtime]: wasm_standalone_runtimes.md#wasmtime
 [ex-wasm-yew]: yew.md#yew
+[p-apis]: ../../../src/categories/web-programming_http-client/apis.md
+[p-audio]: ../multimedia_audio/audio.md
 [p-building]: ../development-tools_cargo-plugins/building.md
-[p-embedded]: # "../embedded/index.md"
+[p-caching]: ../../../src/categories/caching/index.md
+[p-cross-platform]: ../../other/cross-platform/index.md
+[p-embedded]: ../embedded/index.md
+[p-emulators]: ../emulators/index.md
 [p-functions]: ../../language/functions.md
-[p-modules]: ../../language/modules.md
-[p-performance]: ../development-tools_cargo-plugins/performance.md
+[p-game-development]: ../game-development/game_development.md
+[p-html]: ../../../src/categories/parser-implementations/html.md
+[p-modules]: ../../../src/language/modules.md
+[p-node]: ../development-tools_ffi/node.md
+[p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p-rendering]: ../rendering/rendering.md
+[p-serverless]: ../../other/cloud/serverless.md
+[p-testing]: ../../../src/categories/development-tools_testing/testing.md
+[p-visualization]: ../visualization/visualization.md
 [p-wasm]: index.md

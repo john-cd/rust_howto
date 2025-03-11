@@ -2,7 +2,7 @@
 
 {{#include native_graphics_apis.incl.md}}
 
-Low-Level Rendering Graphics APIs include:
+Low-Level [Rendering][p-rendering] Graphics APIs include:
 
 - Direct3D (DirectX).
 - Metal.

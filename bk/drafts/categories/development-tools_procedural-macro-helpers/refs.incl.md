@@ -6,10 +6,11 @@
 [ex-development-tools_procedural-macro-helpers-quote]: write_proc_macros.md#quote
 [ex-development-tools_procedural-macro-helpers-syn]: write_proc_macros.md#syn
 [ex-development-tools_procedural-macro-helpers-watt]: compile_macros.md#watt
+[p-attributes]: ../../../src/language/attributes.md
 [p-building]: ../development-tools_cargo-plugins/building.md
 [p-configuration]: ../config/configuration.md
 [p-crates]: ../../crates/index.md
-[p-macros]: ../../language/macros.md
+[p-macros]: ../../../src/language/macros.md
 [p-main]: ../../language/main.md
-[p-streams]: ../asynchronous/streams.md
+[p-streams]: ../../../src/categories/asynchronous/streams.md
 [p-wasm]: # "../wasm/index.md"

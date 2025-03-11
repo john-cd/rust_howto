@@ -6,7 +6,7 @@
 
 [![plotters-website][c-plotters-website-badge]][c-plotters-website] [![plotters][c-plotters-badge]][c-plotters] [![plotters-crates.io][c-plotters-crates.io-badge]][c-plotters-crates.io] [![plotters-github][c-plotters-github-badge]][c-plotters-github] [![plotters-lib.rs][c-plotters-lib.rs-badge]][c-plotters-lib.rs]{{hi:plotters}}{{hi:Drawing}}{{hi:Plotting}}{{hi:Visualization}}{{hi:Webassembly}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-A Rust drawing library focus on data plotting for both WASM and native applications.
+A Rust drawing library focus on data plotting for both [WASM][p-wasm] and native applications.
 
 {{#example plotters}}
 

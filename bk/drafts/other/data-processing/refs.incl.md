@@ -5,4 +5,5 @@
 [ex-data-processing-manipulate-csv-files-from-the-command-line]: csv.md#manipulate-csv-files-from-the-command-line
 [p-csv]: # "../../categories/encoding/csv.md"
 [p-data-processing]: index.md
+[p-python]: ../../categories/development-tools_ffi/python.md
 [p-streams]: ../../categories/asynchronous/streams.md

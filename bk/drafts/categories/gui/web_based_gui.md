@@ -21,7 +21,7 @@
 Dioxus supports:
 
 - Server-side rendering.
-- Concurrent rendering (with async support).
+- Concurrent [rendering][p-rendering] (with async support).
 - Web/Desktop/Mobile support.
 - Pre-rendering and hydration.
 - Fragments and Suspense.

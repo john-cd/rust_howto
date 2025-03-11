@@ -29,7 +29,7 @@ A corpus is a set of initial inputs that the fuzzer uses as a starting point. `c
 
 (Most effective)
 
-`libFuzzer` (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses code coverage information to guide its search for bugs.
+`libFuzzer` (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p-code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
 ### Sanitizers (for detecting errors) {#skip}
@@ -39,7 +39,7 @@ Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer 
 
 ### Differential Fuzzing: (For comparing implementations) {#skip}
 
-This is a more advanced technique and often involves custom scripting or tools. There aren't specific crates for it.
+This is a more advanced technique and often involves custom [scripting][p-scripting] or tools. There aren't specific crates for it.
 
 ## `cargo fuzz` {#cargo_fuzz}
 

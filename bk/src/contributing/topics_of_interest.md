@@ -35,7 +35,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Reverse proxies.
 - Web programming.
 - Virtualization.
-- Version control: libgit2: clone, change branches, create commits, push, pull.
+- [Version control][p-version-control]: libgit2: clone, change branches, create commits, push, pull.
 - Crypto, SSL, SSH, other public key [encryption][p-encryption], X.509, RusTLS.
 - Network programming: Basic and advanced TCP/IP networking.
 - Interfacing with FLTK (Fast Light Tool Kit).

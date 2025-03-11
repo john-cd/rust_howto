@@ -24,7 +24,7 @@ Morphorm is suitable for various use cases, including:
 
 - UI Frameworks.
 - [Game Development][p-game-development].
-- Developing cross-platform desktop applications.
+- Developing [cross-platform][p-cross-platform] desktop applications.
 - Layout in resource-constrained environments ([embedded][p-embedded] systems).
 
 ```rust,editable

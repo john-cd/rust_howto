@@ -19,8 +19,12 @@
 [ex-rust-patterns-typed-builder]: _builder_pattern.md#typed-builder
 [ex-rust-patterns-typestate-pattern]: design_patterns.md#typestate-pattern
 [ex-rust-patterns-unwrap-or-else]: error_handling.md#unwrap-or-else
+[p-closures]: ../../language/closures.md
 [p-csv]: # "../encoding/csv.md"
 [p-enums]: ../../language/enums.md
 [p-functions]: ../../language/functions.md
+[p-language]: ../../language/index.md
+[p-macros]: ../../language/macros.md
+[p-maps]: ../data-structures/maps.md
 [p-parse]: ../date-and-time/parse.md
 [p-unix]: # "../os_unix-apis/unix.md"
