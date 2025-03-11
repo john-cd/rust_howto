@@ -1,25 +1,32 @@
 # Common Architectural Patterns in Rust
 
-## Layered Architecture {#skip}
+{{#include common_architectures.incl.md}}
 
-- Separation into layers like Presentation, Business Logic, and Data Access.
-- Encourages modularity and testability.
+## Layered Architecture {#layered-architecture}
+
+A layered architecture is a traditional software design pattern that organizes an application into distinct horizontal layers, like Presentation, Business Logic, and Data Access. Each layer performs a specific role, and they are arranged in a hierarchical order. It encourages separation of concerns, modularity, and testability.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/architecture/layered_architecture.rs:example}}
 ```
 
-## Microservices Architecture {#skip1}
+## Microservices Architecture {#microservices}
 
-- Breaks applications into smaller, independent services.
-- Scalable and resilient, commonly paired with REST or [[_grpc | gRPC]].
-- Crates like [`axum`][c-axum]⮳{{hi:axum}}, [`warp`][c-warp]⮳{{hi:warp}} or [`tonic`][c-tonic]⮳{{hi:tonic}} can help build such services.
+A microservices architecture structures an application as a collection of small, independent services, built around business capabilities.
+Each microservice
 
-### Key Concepts {#skip2}
+- is a self-contained unit that performs a specific business function;
+- can be developed, deployed, and scaled independently;
+- typically manages its own database, promoting data independence;
+- and can use different programming languages, frameworks, and databases, allowing teams to choose the best tools for each job.
 
-- Communication: Microservices communicate over the network.
-- Independent Deployment and Scaling: Each microservice can be deployed and scaled independently.
-- Technology Agnosticism: Microservices could be written in different languages.
+Microservices communicate with each other through well-defined APIs, promoting loose coupling.
+
+Crates like [`axum`][c-axum]⮳{{hi:axum}}, [`warp`][c-warp]⮳{{hi:warp}} or [`tonic`][c-tonic]⮳{{hi:tonic}} can help build such services.
+
+### Key Technologies {#skip2}
+
+- Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
 - Service Discovery: Use a service registry (e.g., `Consul`, `etcd`) to dynamically discover microservice locations.
 - API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p-authentication], and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p-asynchronous] communication.
@@ -30,18 +37,17 @@
 - Authentication/Authorization: Implement security with `JWT` (JSON Web Tokens) or `OAuth 2.0` / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. `Envoy`, `Istio`).
 - Tracing: Implement distributed tracing to track requests across microservices, using `OpenTelemetry`, `Jaeger`, or `Zipkin`.
 
-See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], [[amqp | AMQP]].
+See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], and [[amqp | AMQP]].
 
-## Hexagonal Architecture (Ports and Adapters) {#skip3}
+## Hexagonal Architecture (Ports and Adapters) {#hexagonal-architecture}
 
-- Decouple business logic from external systems.
-- Enable testability and flexibility by abstracting dependencies through interfaces (ports).
+The hexagonal architecture, also known as the "Ports and Adapters" architecture, is a software design pattern that emphasizes separating the core business logic of an application from its external dependencies. It enables testability, flexibility, separation of concerns, and dependency inversion.
 
 ### Core Concepts {#skip4}
 
-It divides the system into three main layers:
+The "Ports and Adapters" architecture divides the system into three main layers:
 
-- Core (Business Logic): The heart of the application, independent of external systems.
+- Core (Business Logic): The heart of the application, independent of external systems. It contains the domain model.
 - Ports: Interfaces that define how the core interacts with external systems.
 - Adapters: Implementations of ports to connect the core with specific external systems (e.g., [databases][p-databases], APIs, UIs).
 
@@ -61,7 +67,9 @@ This [architecture][p-architecture] enables the core application to function ind
 
 See [[cross-platform | Cross Platform]] development.
 
-## Event-Driven Architecture {#skip7}
+## Event-Driven Architecture {#event-driven-architecture}
+
+In an Event-driven architecture (EDA), applications communicate by producing and consuming events. Instead of direct, synchronous requests, systems react to changes in state represented by these events.
 
 - Enable loose coupling and scalability by structuring systems around events.
 - Promote responsiveness and resilience in distributed systems.
@@ -86,34 +94,39 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 - Systems with high throughput or real-time requirements (e.g., financial systems, IoT platforms, social media apps).
 - Large-scale distributed systems where scalability and availability are key.
 
-## Actor Model {#skip}
+## Actor Model {#actor-model}
 
-- Emphasizes [concurrency][p-concurrency] with isolated actors that communicate via messages.
-- Libraries like [`actix`][c-actix]⮳{{hi:actix}} support actor-based designs.
+The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p-concurrency].
+Actors encapsulate state, behavior, and a mailbox. Actors communicate exclusively by sending and receiving asynchronous messages. They are like independent entities that can receive and process messages.
 
-See [[_actors |  Actors]].
+Libraries like [`actix`][c-actix]⮳{{hi:actix}} support actor-based designs.
 
-## Command Query Responsibility Segregation (CQRS) {#skip}
+See the [[_actors |  Actors]] chapter for more details.
 
-- Separates read and write operations into distinct models.
-- Useful for systems with high read/write demands or complex business rules.
+## Command Query Responsibility Segregation (CQRS) {#cqrs}
 
-## Pipelines/Streams {#skip}
+Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates read and write operations. This separation allows for independent optimization of each operation, leading to improved performance, scalability, and security. It is useful for systems with high read/write demands or complex business rules.
 
-- Processes data sequentially through a series of stages.
-- Common in data-intensive applications.
+## Pipelines/Streams {#pipelines}
+
+Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.
 
 See [[data_parallelism | Data Parallelism]], [[data-processing | Data Processing]].
 
-## Event Sourcing {#skip}
+## Event Sourcing {#event-sourcing}
 
-- Stores the state of a system as a sequence of events.
-- Useful in systems requiring auditability or history reconstruction.
+Event sourcing focuses on storing a sequence of events that represent changes to the state of an application, rather than storing the current state itself. In essence, it's about recording "what happened" rather than "what is." It is useful in systems requiring auditability or history reconstruction.
+
+## Related Topics
+
+- [[cloud | Cloud]].
+- [[concurrency | Concurrency]].
+- [[data-processing | Data Processing]].
+- [[web-programming | Web Programming]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO write / detail every architecture
-link to other chapters
 </div>
