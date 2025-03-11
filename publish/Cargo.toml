@@ -17,4 +17,4 @@ publish = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cargo_toml = "0.21.0"
+cargo_toml = "0.22.1"
