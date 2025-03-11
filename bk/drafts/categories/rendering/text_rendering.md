@@ -34,9 +34,10 @@ A simple `no_std` font parser and rasterizer.
 
 ## Related Topics {#skip1}
 
-- [Are we Game yet? Text Rendering](https://arewegameyet.rs/ecosystem/textrendering/).
+- [Are we Game yet? Text Rendering][are we game yet? text rendering].
 - [[text_layout | Text Layout]].
 
+[are we game yet? text rendering]: https://arewegameyet.rs/ecosystem/textrendering
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

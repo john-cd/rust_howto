@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Implement deep learning algorithms][ex-science-deep-learning] | [![candle-core][c-candle_core-badge]][c-candle_core] [![burn][c-burn-badge]][c-burn] | [![cat-science][cat-science-badge]][cat-science] |
+| [`candle`][ex-science-deep-learning] | [![candle-core][c-candle_core-badge]][c-candle_core] [![burn][c-burn-badge]][c-burn] | [![cat-science][cat-science-badge]][cat-science] |
 
 <div class="hidden">
 FIXME

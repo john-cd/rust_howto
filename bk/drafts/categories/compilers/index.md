@@ -57,7 +57,8 @@ See also [[transpilers | Transpilers]].
 
 - `oxc`
 
-[oxc.rs/](https://oxc.rs)
+[oxc.rs/][oxc.rs/]
+[oxc.rs/]: https://oxc.rs
 
 See also: [[interfacing_with_javascript | Interfacing With Javascript]].
 

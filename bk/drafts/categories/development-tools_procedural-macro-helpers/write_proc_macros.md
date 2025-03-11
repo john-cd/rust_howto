@@ -8,7 +8,7 @@ You'll almost always use `proc-macro`, [`syn`][c-syn]⮳{{hi:syn}}, and [`quote`
 
 Procedural macro [crates][p-crates] almost always will link to the compiler-provided [`proc_macro`][c-proc_macro]⮳{{hi:proc_macro}} crate. The proc_macro crate provides types required for writing procedural macros and facilities to make it easier.
 
-This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)]( https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream ).
+This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][(reference)].
 
 ## Parse Rust source code into an abstract syntax tree {#syn}
 
@@ -90,9 +90,12 @@ Debugging procedural macros can be tricky. Often involves printing token streams
 
 Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
 
+[(reference)]:  https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.proc_macro.token-stream
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write_proc_macros: write](https://github.com/john-cd/rust_howto/issues/331)
+[write_proc_macros: write][write_proc_macros: write]
+[write_proc_macros: write]: https://github.com/john-cd/rust_howto/issues/331
+
 </div>

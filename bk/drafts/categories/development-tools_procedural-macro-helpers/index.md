@@ -6,7 +6,8 @@ Rust macros enable metaprogramming, allowing you to write code that generates ot
 
 This capability allows for code reuse by reducing boilerplate and enhancing readability through more expressive syntax. Macros are expanded at compile time, so their output is checked syntactically and type checked. Macros are used for tasks like implementing common traits, creating domain-specific languages, and achieving performance optimizations through compile-time computation and code transformation.
 
-The term 'macro' [(book)](https://doc.rust-lang.org/book/ch19-06-macros.html) refers to a family of features in Rust: declarative macros (also known as "macros by example") and three kinds of _procedural macros_, the focus of this section:
+The term 'macro' [(book)][book-macro] refers to a family of features in rust: declarative macros (also known as "macros by example")
+ and three kinds of _procedural macros_, the focus of this section:
 
 - Custom #[derive] macros, used on structs and enums, which specify code to be added.
 - Attribute-like macros that define custom attributes usable on any item.
@@ -26,6 +27,7 @@ Declarative macros are defined using a `macro_rules!` syntax and work by pattern
 
 {{#include compile_macros.incl.md}}
 
+[book-macro]: https://doc.rust-lang.org/book/ch19-06-macros.html
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

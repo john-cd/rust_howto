@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| | [![wgpu][c-wgpu-badge]][c-wgpu] | [![cat-graphics][cat-graphics-badge]][cat-graphics] |
+| [rendering_graphics api wgpu][ex-rendering_graphics-api-wgpu] | [![wgpu][c-wgpu-badge]][c-wgpu] | [![cat-graphics][cat-graphics-badge]][cat-graphics] |
 
 <div class="hidden">
 FIXME
