@@ -16,7 +16,7 @@ build = "build.rs"
 
 [dependencies]
 base64 = "0.22.1"
-bincode = "1.3.3"
+bincode = "2.0.1"
 bytemuck = { version = "1.21.0", features = ["derive"] }
 byteorder = "1.5.0"
 capnp = "0.20.3"

@@ -15,7 +15,7 @@ publish.workspace = true
 
 [dependencies]
 basic-toml = "0.1.9"
-comrak = "0.35.0"
+comrak = "0.36.0"
 configparser = "3.1.0"
 cssparser = "0.34.0"
 html5ever = "0.29.1"
@@ -29,7 +29,7 @@ rust-ini = "0.21.1"
 serde_json = "1.0.139"
 serde_yml = "0.0.12"
 simd-json = "0.14.3"
-sqlparser = { version = "0.54.0", features = ["visitor"] }
+sqlparser = { version = "0.55.0", features = ["visitor"] }
 swc_ecma_parser = "10.0.0"
 swc_ecma_ast = "8.0.0"
 swc_common = "8.0.0"

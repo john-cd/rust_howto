@@ -10,7 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "game_engines" ]
+categories = ["game_engines"]
 publish.workspace = true
 
 [dependencies]
@@ -18,7 +18,7 @@ bevy = { version = "0.15.1", optional = true }
 fyrox = "0.36.0"
 fyrox-core = "0.36.0"
 # ggez = "0.9.3" # TODO P1 conflict with wgpu
-glam = "0.29.2"
+glam = "0.30.0"
 macroquad = "0.4.13"
 
 [features]

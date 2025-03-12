@@ -10,13 +10,13 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "api_bindings" ]
+categories = ["api_bindings"]
 publish.workspace = true
 
 [dependencies]
 
 [target.'cfg(target_os = "linux")'.dependencies]
-pyo3 = "0.23.4" # was pinned to 0.21 to avoid conflict with `polars`
+pyo3 = "0.24.0" # was pinned to 0.21 to avoid conflict with `polars`
 
 [features]
 # default = []

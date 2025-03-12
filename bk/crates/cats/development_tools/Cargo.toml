@@ -32,7 +32,7 @@ doc-comment = "0.3.3"
 # miri
 semver = "1.0.24"
 # termbook = "1.4.2" # requires mdbook; TODO P3 review pre-requisites
-yapp = "0.4.1"
+yapp = "0.5.0"
 
 ## General
 anyhow = "1.0.95"

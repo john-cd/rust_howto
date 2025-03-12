@@ -14,7 +14,7 @@ categories = ["database_implementations"]
 publish.workspace = true
 
 [dependencies]
-meilisearch-sdk = "0.27.1"
+meilisearch-sdk = "0.28.0"
 sled = "0.34.7"
 surrealdb = { version = "2.1.4", features = ["kv-mem"], optional = true }
 tantivy = { version = "0.22.0", optional = true }

@@ -16,6 +16,6 @@ readme = "README.md"
 license = "CC0-1.0"
 
 [dependencies]
-accesskit = "0.17.1"
-accesskit_winit = "0.23.1"
+accesskit = "0.18.0"
+accesskit_winit = "0.25.0"
 winit = "0.30.8"
