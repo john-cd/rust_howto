@@ -68,22 +68,23 @@ RUN apt-get update \
     systemd \
     wget \
     xorg-dev \
-    && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && wget https://github.com/Kitware/CMake/releases/download/v3.31.0-rc3/cmake-3.31.0-rc3-linux-x86_64.sh \
-    -q -O /tmp/cmake-install.sh \
-    && chmod u+x /tmp/cmake-install.sh \
-    && mkdir /opt/cmake-3.31.0-rc3/ \
-    && /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.0-rc3/ \
-    && rm /tmp/cmake-install.sh \
-    && ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
+    && rm -rf /var/lib/apt/lists/*
 
 ## Optionally install linker and other utilities
 # mold clang \
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
+
+# Install CMake
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.0-rc3/cmake-3.31.0-rc3-linux-x86_64.sh \
+    -q -O /tmp/cmake-install.sh && \
+    chmod u+x /tmp/cmake-install.sh && \
+    mkdir /opt/cmake-3.31.0-rc3/ && \
+    /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.0-rc3/ && \
+    rm /tmp/cmake-install.sh && \
+    ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
 
 ## Update Rust if needed
 ## Install clippy
@@ -159,7 +160,9 @@ FROM base AS development
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y jq fzf
+    && apt-get install -y jq fzf \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 # `fzf` is a fast fuzzy search used by `just`
 ## Other optional tools:
 # firefox-esr \
@@ -175,19 +178,15 @@ RUN curl -sS https://webi.sh/gh | sh
 # RUN pipx install pre-commit \
 #     && pipx ensurepath
 
-## Install optional cargo plugins
-## Install bacon tool
-RUN <<EOF
-cargo install --locked kani-verifier
-cargo install --locked bacon
-EOF
+## Install tools
+RUN cargo install --locked kani-verifier && \
+    cargo install --locked bacon && \
+    cargo binstall --no-confirm ripgrep
+## Install optional cargo plugins:
 #  cargo install --locked cargo-outdated || true
 #  cargo install --locked cargo-udeps || true
 #  cargo install --locked cargo-audit || true
 #  cargo install --locked cargo-pants || true
-
-## Install optional tools: ripgrep
-RUN cargo binstall --no-confirm ripgrep
 ## Optionally, install tool to convert TOML to JSON
 #   && cargo binstall --no-confirm toml2json \
 
@@ -207,7 +206,6 @@ EOF
 # itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
 ARG EMAIL=nobody@users.noreply.github.com
 ARG GIT_AUTHOR_NAME=nemo
-
 RUN git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
 
 ## For `mdbook serve --open`
