@@ -363,7 +363,7 @@
 [docker-website]: https://www.docker.com
 [dockerfile]: https://docs.docker.com/reference/dockerfile
 [docs-rs]: https://docs.rs
-[docs-shuttle-rs]: https://docs.shuttle.rs/introduction/welcome
+[docs-shuttle-dev]: https://docs.shuttle.dev/introduction/welcome
 [dropbox-capture-website]: https://www.dropbox.com/capture
 [dropbox-website]: https://dropbox.com
 [dungeonfog-github]: https://github.com/dungeonfog
@@ -460,7 +460,7 @@
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
 [lapce-website]: https://lap.dev/lapce
-[launchpad-shuttle.rs]: https://www.shuttle.rs/launchpad
+[launchpad-shuttle.dev]: https://www.shuttle.dev/launchpad
 [lechevspace-github]: https://github.com/LechevSpace
 [lechevspace-website]: https://lechev.space
 [lemmy-github]: https://github.com/LemmyNet/lemmy

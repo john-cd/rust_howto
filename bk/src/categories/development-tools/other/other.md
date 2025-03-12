@@ -34,15 +34,4 @@ cargo build --release
 
 <div class="hidden">
 [other: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/305)
-
-## Deploy your Rust code on `shuttle.rs` {#shuttle-rs}
-
-[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
-
-[`shuttle`][launchpad-shuttle.rs]⮳{{hi:shuttle}}
-
-```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/other/shuttle.rs:example}}
-```
-
 </div>

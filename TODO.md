@@ -1,9 +1,9 @@
 # TODOs
 
-regen refdefs
 update recipe tables
-insert crate links
 replace inline links
+fix inline_link script
+review tools and consolidate
 
 ## Manually insert rest of cross-links WIP
 
@@ -18,7 +18,12 @@ replace inline links
   - WASM
   - development tools: FFI - reorg. with other FFI topics
 
-- other: cloud, cross-platform, data proc, gpu, scripting, written in rust
+- other:
+  - cross-platform WIP
+  - data proc,
+  - gpu,
+  - scripting WIP
+  - written in rust
 
 review drafts section for what I missed
 

@@ -39,7 +39,6 @@
 
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
-  - [Serverless computing](other/cloud/serverless.md)
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
 
 - [Compilers](categories/compilers/index.md)

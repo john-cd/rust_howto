@@ -2,39 +2,61 @@
 
 {{#include aws.incl.md}}
 
-[AWS rust][blog-sustainability-with-rust]⮳.
+Amazon Web Services (AWS) is a comprehensive and widely adopted cloud computing platform provided by Amazon.com.
 
-At AWS, Rust has quickly become critical to building infrastructure at scale. `Firecracker` is an open source [virtualization][p-virtualization] technology that powers AWS Lambda and other serverless offerings.
+At AWS, Rust has quickly become critical to building infrastructure at scale. For example, `Firecracker`, written in majority in Rust, is an open source [virtualization][p-virtualization] technology that powers AWS Lambda and other serverless offerings.
 
-## Develop and deploy applications with the AWS SDK for Rust {#aws-sdk-rust}
+In addition, Rust is commonly used by AWS' clients to build cloud applications, from backends to complete web applications.
 
-Call AWS services using idiomatic Rust [APIs][p-apis].
+Rust code is frequently implemented as:
 
-[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
+- serverless functions that run on a Function-as-a-Service (FaaS) platform like the aforementioned AWS Lambda,
+- (micro)services that are then deployed on a containerized platform (AWS ECS, EKS, App Runner...) or on EC2 machines.
 
-[AWS SDK examples][aws-doc-sdk-examples-github]⮳.
+## Implement AWS Lambda functions in Rust {#lambda}
+
+Rust's performance and small binary size make it a great choice for serverless functions. Rust Lambda functions can start quickly and consume fewer resources, leading to lower costs and improved performance.
+
+The following example provides a template for a Lambda function written in Rust.
+
+You can also use the AWS SDK from within a Lambda function to interact with AWS services like S3 or CloudWatch (see the example below).
+
+```rust,editable
+{{#include ../../../crates/other/tests/cloud/aws_lambda.rs:example}}
+```
+
+See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime-examples-github]⮳ webpages.
+
+## Interact with AWS services with the AWS SDK for Rust {#aws-sdk-rust}
+
+AWS has developed an official AWS SDK for Rust, which allows developers to interact with AWS services using the Rust programming language.
+This SDK provides a set of libraries that simplify the use of services like Amazon S3, Amazon EC2, DynamoDB, and others.
+
+See, for example:
+
+- [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
+- [AWS SDK examples][aws-doc-sdk-examples-github]⮳.
 
 ```rust,editable
 {{#include ../../../crates/other/tests/cloud/aws_sdk.rs:example}}
 ```
 
-## Implement Lambda functions in Rust {#lambda}
+## References
 
-[AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
-
-Use the AWS SDK from within a Lambda function:
-
-[Create Lambda functions with Rust][aws-create-lambda-functions-with-rust]⮳.
-
-[AWS Lambda Rust runtime examples][aws-lambda-rust-runtime-examples-github]⮳.
-
-```rust,editable
-{{#include ../../../crates/other/tests/cloud/aws_lambda.rs:example}}
-```
+- [AWS and Rust][blog-sustainability-with-rust]⮳.
+- [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [aws: write](https://github.com/john-cd/rust_howto/issues/574)
+Cover?
+## Containerized applications  on AWS Fargate, ECS, EKS
+## Deploy Rust applications to Elastic Beanstalk
+## Deploy Rust applications to App Runner
+## Deploy Rust applications to EC2 machines
+
+- [Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳ framework.
+
 </div>

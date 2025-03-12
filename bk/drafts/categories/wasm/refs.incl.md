@@ -20,7 +20,7 @@
 [p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p-rendering]: ../rendering/rendering.md
-[p-serverless]: ../../other/cloud/serverless.md
+[p-serverless]: ../../other/cloud/_fragment.md
 [p-testing]: ../../../src/categories/development-tools_testing/testing.md
 [p-visualization]: ../visualization/visualization.md
 [p-wasm]: index.md

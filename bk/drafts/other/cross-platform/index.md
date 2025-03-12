@@ -1,6 +1,6 @@
 # Cross-platform Development
 
-Cross-platform development refers to the practice of creating software applications that can run on multiple operating systems and devices (Windows, macOS, Linux, and mobile operating systems like iOS and Android) without requiring significant changes to the codebase.
+Cross-platform development refers to the practice of creating software applications that can run on multiple operating systems and devices (Windows, macOS, Linux, and mobile operating systems like iOS and Android) without requiring multiple codebases.
 
 ## Approaches
 
@@ -10,6 +10,8 @@ For applications that do not require a graphical user interface (e.g., CLI tools
 
 - [`cargo`][c-cargo]⮳{{hi:cargo}} and [`rustup`][c-rustup]⮳{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
 - [`cross`][c-cross]⮳{{hi:cross}} is a tool for cross-compiling Rust projects.
+
+See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
 
 Conditional compilation also you to write platform-specific code that behaves differently on Windows, macOS, or Linux.
 

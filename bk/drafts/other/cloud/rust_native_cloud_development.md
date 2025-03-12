@@ -1,19 +1,40 @@
-# Rust-native cloud development
+# Rust-native Cloud platforms that offer first-class support for Rust
 
 {{#include rust_native_cloud_development.incl.md}}
 
-Cloud platforms that offer first-class support for Rust.
+While it is common to deploy Rust applications to Cloud services like AWS, Azure and GCP, a new breed of Cloud services specific tailored to the needs of Rust developers is emerging.
 
-## `shuttle` {#shuttle}
+## Deploy your Rust code on `shuttle.dev` {#shuttle}
 
-[`shuttle`][launchpad-shuttle.rs]⮳{{hi:shuttle}}
+[shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
-[docs.shuttle.rs][docs-shuttle-rs]{{hi:shuttle.rs}}
-[Shuttle examples][shuttle-examples-github]
+`Shuttle.dev` is a Rust-native cloud development platform that simplifies backend development and deployment using Rust. Here's a summary of its key capabilities:
+
+- Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). `Shuttle` handles provisioning resources like databases, secrets, and storage.
+- Rapid Deployment: your Rust applications can be deployed quickly and easily to the cloud with minimal configuration.
+- Framework Support: Shuttle is compatible with popular Rust frameworks (`Axum`, `Actix Web`, `Rocket`, `Warp`, `Tower` and more). The Discord Bot building frameworks `Serenity` and `Poise` are also officially supported.
+- Out-of-the-box logging support.
+
+It offers a free tier with access to essential features for individual developers and small projects.
+
+```rust,editable
+{{#include ../../../crates/other/tests/cloud/shuttle.rs:example}}
+```
+
+## References
+
+- [`shuttle`][launchpad-shuttle.dev]⮳{{hi:shuttle}}
+- [docs.shuttle.dev][docs-shuttle-rs]{{hi:shuttle.rs}}
+- [Shuttle examples][shuttle-examples-github]
+
+## Related Topics
+
+- [[aws | AWS]].
+- [[development_tools | Development Tools]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_native_cloud_development: write](https://github.com/john-cd/rust_howto/issues/576)
+[write](https://github.com/john-cd/rust_howto/issues/576)
 </div>

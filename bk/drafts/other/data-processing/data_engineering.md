@@ -2,7 +2,7 @@
 
 {{#include data_engineering.incl.md}}
 
-## Develop data analytics applications that process columnar data with Arrow {#arrow}
+## Develop data analytics applications that process columnar data with `arrow` {#arrow}
 
 [![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}
 [![arrow-crates.io][c-arrow-crates.io-badge]][c-arrow-crates.io]
