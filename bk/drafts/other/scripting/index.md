@@ -47,7 +47,7 @@ See also [[node | Node]].
 
 You may also integrate Python into Rust applications via:
 
-- `rust-cpython` (older bindings).
+- `cpython` (older bindings).
 - [`pyo3`][c-pyo3]⮳{{hi:pyo3}}.
 
 See [[python | Python]].
@@ -55,7 +55,8 @@ See [[python | Python]].
 ## WebAssembly
 
 Alternatively, you may embed a WebAssembly runtime like [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}}, or a WebAssembly interpreter (e.g. [`wasmi`][c-wasmi]⮳{{hi:wasmi}}), into your Rust application.
-WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, C#...) compiles to WASM.
+
+WASM offers portable bytecode and sandboxed execution. Many languages (C, C++, Rust, Go, C#...) compile to or have their VMs in WASM. A list is found in [Awesome WebAssembly Languages](https://github.com/appcypher/awesome-wasm-langs#typescript)⮳.
 
 See [[wasm | WASM]] and [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
 
