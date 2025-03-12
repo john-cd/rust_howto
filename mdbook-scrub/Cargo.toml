@@ -18,8 +18,8 @@ categories = [
 anyhow = "1.0.97"
 clap = "4.5.32"
 futures-util = "0.3.31"
-mdbook = "=0.4.35"                                    # pinned
-moka = { version = "0.12.10", features = ["future"] }
+mdbook = "=0.4.35"      # pinned
+#moka = { version = "0.12.10", features = ["future"] }
 # simd available for the x64 platform
 pulldown-cmark = { version = "0.13.0", default-features = false, features = [
     "simd",
