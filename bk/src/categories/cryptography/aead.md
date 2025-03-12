@@ -8,8 +8,8 @@ Authenticated [encryption][p-encryption] with associated data (AEAD) is a varian
 
 AEAD is commonly used in secure communication protocols like [TLS][p-tls] (Transport Layer Security). See also:
 
-- https://codahale.com/towards-a-safer-footgun/.
-- https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html.
+- ["Towards a safer footgun"][codahale-website].
+- [AES-GCM-SIV][imperialviolet-website].
 
 ## `aes-gcm-siv` {#aes-gcm-siv}
 
@@ -50,6 +50,8 @@ For more [algorithms][p-algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 - [[encryption | Encryption]].
 - [[hashing | Hashing]].
 
+[codahale-website]: https://codahale.com/towards-a-safer-footgun
+[imperialviolet-website]: https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
