@@ -2,7 +2,7 @@
 
 {{#include crux.incl.md}}
 
-## Develop across platforms with Crux {#develop-across-platforms}
+## Develop across platforms with `crux` {#develop-across-platforms}
 
 [![crux_core][c-crux_core-badge]][c-crux_core]{{hi:crux}} [![crux_core-github][c-crux_core-github-badge]][c-crux_core-github]{{hi:Cross-platform development}}
 
@@ -23,4 +23,5 @@ The user interface{{hi:User interface}} layer is built natively, with modern dec
 
 <div class="hidden">
 [crux: add / edit](https://github.com/john-cd/rust_howto/issues/582)
+link to archicture pages
 </div>
