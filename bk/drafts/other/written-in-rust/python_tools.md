@@ -40,7 +40,16 @@ conda install rustpython -c conda-forge
 
 ## `uv` {#uv}
 
-[`uv`][uv-github]{{hi:uv}}⮳.
+"uv" is a relatively new and fast Python package installer and resolver, designed as a drop-in replacement for `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. It's gaining popularity for its speed and efficiency.
+
+Key features include:
+
+- Installing and managing Python versions.
+- Running and installing tools published as Python packages.
+- Installing packages from `PyPI`.
+- Resolving dependencies and generating lock files (like `pip-compile`).
+- Working with virtual environments.
+- Supports `Cargo`-style workspaces for scalable projects.
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
