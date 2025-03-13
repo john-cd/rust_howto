@@ -186,6 +186,8 @@ https://arangodb.com/
 `rerun` visualizes streams of multimodal data.
 https://github.com/rerun-io/rerun
 
+[![rerun-website][c-rerun-website-badge]][c-rerun-website] [![rerun][c-rerun-badge]][c-rerun] [![rerun-crates.io][c-rerun-crates.io-badge]][c-rerun-crates.io] [![rerun-github][c-rerun-github-badge]][c-rerun-github] [![rerun-lib.rs][c-rerun-lib.rs-badge]][c-rerun-lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
+
 [`polars`][c-polars]⮳ Dataframes powered by a multithreaded, vectorized query engine, written in Rust
 https://github.com/pola-rs/polars
 

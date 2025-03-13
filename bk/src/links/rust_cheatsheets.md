@@ -10,9 +10,8 @@
 ## Comparison to other languages {#comparison-to-other-languages}
 
 - [Rust for C# developers][book-rust-for-C#-developers]{{hi:Comparison to other languages}}⮳.
-- [A comparison of Rust's borrow checker to the one in C#][csborrow]⮳.
+- [A comparison of Rust's borrow checker to the one in C#][blog-csborrow]⮳.
 
-[csborrow]: https://em-tg.github.io/csborrow
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

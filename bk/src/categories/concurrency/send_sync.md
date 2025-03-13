@@ -46,19 +46,14 @@ Note that, by implementing the unsafe marker [traits][p-traits] `Send` and `Sync
 [Send / Sync custom implementation: finish example in playground crate](https://github.com/john-cd/rust_howto/issues/265)
 [write](https://github.com/john-cd/rust_howto/issues/909)
 
-- Credit [Understanding the Send trait](https://stackoverflow.com/questions/59428096/understanding-the-send-trait).
-
-- Reference [https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html).
-[https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/](https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/)
-
-[nomicon/send-and-sync](https://doc.rust-lang.org/nomicon/send-and-sync.html)
-[extensible-concurrency-sync-and-send](https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html)
-Implementing Vec: [https://doc.rust-lang.org/nomicon/vec/vec.html](https://doc.rust-lang.org/nomicon/vec/vec.html)
-[https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/](https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync/)
-[https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html)
+- Credit [Understanding the Send trait][stackoverflow-understanding-the-send-trait]
+- [The Rustonomicon: Send and Sync][book-rustonomicon-send-and-sync]
+- [The Rustonomicon: Example: Implementing Vec][book-rustonomicon-implementing-vec]
+- [An unsafe tour of Rust's Send and Sync][blog-nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]
+- [Extensible Concurrency with the Sync and Send Traits][book-rust-extensible-concurrency-sync-and-send]
+- [Rust: A unique perspective][blog-rust-a-unique-perspective-html]
 
 - Need deep tech review.
-
 - Add Send / Sync impl example. See code in playground crate:
 
 In the following example, we define a struct with a raw pointer to some data.

@@ -41,18 +41,24 @@
 ## Other frameworks {#skip}
 
 - Big [Data Processing][p-data-processing] for the AI Era: [LakeSail][lakesail-website]⮳.
-- [`rerun`][rerun]⮳: visualize streams of multi-modal data. Free, fast, easy to use, and simple to integrate. Built in Rust. (see also [[science_robotics | Robotics]]).
+- [`rerun`][c-rerun-github]⮳ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
 
 ## References {#skip1}
 
 - Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}.
 
-[lakesail-website]: https://lakesail.com
-[rerun]: https://github.com/rerun-io/rerun
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
-cover `ballista` `spice.ai`
+cover
+`ballista`
+`spice.ai`
+
+---
+
+[![rerun-website][c-rerun-website-badge]][c-rerun-website] [![rerun][c-rerun-badge]][c-rerun] [![rerun-crates.io][c-rerun-crates.io-badge]][c-rerun-crates.io] [![rerun-github][c-rerun-github-badge]][c-rerun-github] [![rerun-lib.rs][c-rerun-lib.rs-badge]][c-rerun-lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
+
+Log images, point clouds, etc, and visualize them effortlessly
 </div>

@@ -29,13 +29,11 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[http_clients: expand](https://github.com/john-cd/rust_howto/issues/504)
 
 ## Build a HTTP client with `hyper` {#hyper}
 
-[![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}}{{hi:HTTP client}}{{hi:HTTP server}}
-[![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io]
-[![hyper-github][c-hyper-github-badge]][c-hyper-github]
-[![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]
+[![hyper-website][c-hyper-website-badge]][c-hyper-website] [![hyper][c-hyper-badge]][c-hyper] [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io] [![hyper-github][c-hyper-github-badge]][c-hyper-github] [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
 [`hyper`][c-hyper]⮳{{hi:hyper}} is a HTTP/1 and HTTP/2 implementation (both client and server) that works best with the [`tokio`][c-tokio]⮳{{hi:tokio}} async runtime, but can support other runtimes.
 
@@ -45,8 +43,7 @@
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
-[http_clients: expand](https://github.com/john-cd/rust_howto/issues/504)
 See hyper.md in server.
-[hyper.rs](http://hyper.rs/)
-[examples](https://github.com/hyperium/hyper/tree/master/examples)
+
+[`hyper` examples][c-hyper-examples-github]
 </div>

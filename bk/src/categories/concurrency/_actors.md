@@ -89,7 +89,7 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 ## References
 
 - [Actors with `Tokio`][blog-actors-with-tokio]{{hi:Actors}}⮳.
-- [ractor blog](https://slawlor.github.io/ractor).
+- [`ractor` blog][ractor blog][c-ractor-blog]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

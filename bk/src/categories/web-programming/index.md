@@ -46,7 +46,11 @@ The [`http`][c-http]⮳{{hi:http}} crate doesn't actually contain an HTTP implem
 
 Combinators and adapters for HTTP request or response bodies.
 
-See also [http-body](https://github.com/hyperium/http-body).
+---
+
+[![http-body][c-http_body-badge]][c-http_body] [![http-body-crates.io][c-http_body-crates.io-badge]][c-http_body-crates.io] [![http-body-github][c-http_body-github-badge]][c-http_body-github] [![http-body-lib.rs][c-http_body-lib.rs-badge]][c-http_body-lib.rs]{{hi:http-body}}{{hi:Http}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
+
+Trait representing an asynchronous, streaming, HTTP request or response body.
 
 ---
 

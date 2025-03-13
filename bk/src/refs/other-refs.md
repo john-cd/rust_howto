@@ -32,6 +32,7 @@
 [are-we-gui-yet?-website-badge]: https://img.shields.io/badge/are_we_gui_yet-coral
 [are-we-gui-yet?-website]: https://www.areweguiyet.com
 [are-we-learning-yet?-badge]: https://img.shields.io/badge/are_we_learning_yet-coral
+[are-we-learning-yet?-gpu-computing-website]: https://www.arewelearningyet.com/gpu-computing
 [are-we-learning-yet?-website]: https://www.arewelearningyet.com
 [are-we-web-yet?-website-badge]: https://img.shields.io/badge/are_we_web_yet-coral
 [are-we-web-yet?-website]: https://www.arewewebyet.org
@@ -81,11 +82,14 @@
 [blog-cargo-machete-badge]: https://img.shields.io/badge/blog-cargo_machete-beige
 [blog-cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete
 [blog-choosing-the-right-machine-learning-framework]: https://medium.com/@athan.seal/choosing-the-right-rust-machine-learning-framework-candle-burn-dfdx-or-tch-rs-17501f6cd765
+[blog-csborrow]: https://em-tg.github.io/csborrow
 [blog-how-i-improved-my-rust-compile-times-by-seventy-five-percent]: https://benw.is/posts/how-i-improved-my-rust-compile-times-by-seventy-five-percent
+[blog-nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]: https://nyanpasu64.gitlab.io/blog/an-unsafe-tour-of-rust-s-send-and-sync
 [blog-optimizing-ci-cd-pipelines-badge]: https://img.shields.io/badge/blog-optimizing_ci_cd_pipelines-beige
 [blog-optimizing-ci-cd-pipelines-rust-project]: https://blog.logrocket.com/optimizing-ci-cd-pipelines-rust-projects
 [blog-practical-rust-badge]: https://img.shields.io/badge/blog-practical_rust-beige
 [blog-practical-rust]: https://dev.to/werner
+[blog-rust-a-unique-perspective-html]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
 [blog-rust-build-times-badge]: https://img.shields.io/badge/blog-Rust_build_times-beige
 [blog-rust-build-times]: https://jondot.medium.com/8-steps-for-troubleshooting-your-rust-build-times-2ffc965fd13e
 [blog-rust-compilation-time]: https://www.williballenthin.com/post/rust-compilation-time
@@ -192,6 +196,7 @@
 [book-rust-design-patterns]: https://rust-unofficial.github.io/patterns
 [book-rust-error-handling-badge]: https://img.shields.io/badge/Rust_Book-error_handling-blue?logo=mdbook
 [book-rust-error-handling]: https://doc.rust-lang.org/book/ch09-00-error-handling.html
+[book-rust-extensible-concurrency-sync-and-send]: https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html
 [book-rust-for-C#-developers-badge]: https://img.shields.io/badge/Rust_for_C_sharp_developers-peru?logo=mdbook
 [book-rust-for-C#-developers]: https://microsoft.github.io/rust-for-dotnet-devs/latest
 [book-rust-handle-errors-in-Rust-badge]: https://img.shields.io/badge/Rust_Book-Handle_errors_in_Rust-blue?logo=mdbook
@@ -254,6 +259,8 @@
 [book-rustdoc-badge]: https://img.shields.io/badge/Rustdoc-peru?logo=mdbook
 [book-rustdoc]: https://doc.rust-lang.org/rustdoc/index.html
 [book-rustonomicon-badge]: https://img.shields.io/badge/Rustonomicon-peru?logo=mdbook
+[book-rustonomicon-implementing-vec]: https://doc.rust-lang.org/nomicon/vec/vec.html
+[book-rustonomicon-send-and-sync]: https://doc.rust-lang.org/nomicon/send-and-sync.html
 [book-rustonomicon]: https://doc.rust-lang.org/nomicon
 [book-rustwasm-badge]: https://img.shields.io/badge/Rust_wasm-peru?logo=mdbook
 [book-rustwasm]: https://rustwasm.github.io/docs/book
@@ -294,6 +301,7 @@
 [cloudflare-website]: https://www.cloudflare.com
 [cloudflare-workers-website]: https://workers.cloudflare.com
 [cmccomb-website]: https://cmccomb.com/smartcore_vs_linfa
+[codahale-website]: https://codahale.com/towards-a-safer-footgun
 [code-maven]: https://rust.code-maven.com
 [codeLLDB-github]: https://github.com/vadimcn/codelldb
 [codeday-website]: https://www.codeday.org
@@ -316,6 +324,7 @@
 [crates.io-most-recent-downloads]: https://crates.io/crates?sort=recent-downloads
 [crates.io-website]: https://crates.io
 [creating-a-docker-container-action-website]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+[creusot-github]: https://github.com/creusot-rs/creusot
 [cross-rs-github]: https://github.com/cross-rs
 [cryptape-website]: http://cryptape.com
 [cryptosat-github]: https://github.com/cryptosat
@@ -386,7 +395,11 @@
 [fermyon-website]: https://www.fermyon.com
 [ferrocene-website]: https://ferrocene.dev
 [ferrous-systems-github]: https://github.com/ferrous-systems
+[ferrous-systems-rust-exercises-github]: https://github.com/ferrous-systems/rust-exercises
+[ferrous-systems-rust-training-github]: https://github.com/ferrous-systems/rust-training
+[ferrous-systems-wasm-training-github]: https://github.com/ferrous-systems/wasm-training-2022
 [ferrous-systems-website]: https://ferrous-systems.com
+[ferrous-systems-why-rust-github]: https://github.com/ferrous-systems/why-rust
 [figma-website]: https://www.figma.com
 [firecracker-github]: https://github.com/firecracker-microvm/firecracker
 [firecracker-microvm-website]: https://firecracker-microvm.github.io
@@ -434,6 +447,7 @@
 [hyperswitch-website]: https://hyperswitch.io
 [immunant-github]: https://github.com/immunant
 [immunant-website]: https://immunant.com
+[imperialviolet-website]: https://www.imperialviolet.org/2017/05/14/aesgcmsiv.html
 [infinyon-website]: https://infinyon.com
 [insta-website]: https://insta.rs
 [install_action-github]: https://github.com/taiki-e/install-action
@@ -459,6 +473,7 @@
 [kryptco-github]: https://github.com/kryptco
 [l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
+[lakesail-website]: https://lakesail.com
 [lapce-website]: https://lap.dev/lapce
 [launchpad-shuttle.dev]: https://www.shuttle.dev/launchpad
 [lechevspace-github]: https://github.com/LechevSpace
@@ -495,6 +510,7 @@
 [meta-website]: https://www.meta.com
 [microsoft-website]: https://www.microsoft.com
 [min-sized-rust-github]: https://github.com/johnthagen/min-sized-rust
+[mirai-github]: https://github.com/endorlabs/MIRAI
 [ml-in-rust-ossinsight-website]: https://ossinsight.io/collections/ml-in-rust/?monthly-rankings=prs
 [mold-github-badge]: https://img.shields.io/badge/mold-steelblue?logo=github
 [mold-github]: https://github.com/rui314/mold
@@ -586,6 +602,7 @@
 [proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
 [project-deios-website]: https://www.dungeonfog.com/news/project-deios
 [promotic-edu-website]: https://promotic-edu.org
+[prusti-website]: https://www.pm.inf.ethz.ch/research/prusti.html
 [pucpr-website]: https://www.pucpr.br
 [pyenv-github-badge]: https://img.shields.io/badge/pyenv-steelblue?logo=github
 [pyenv-github]: https://github.com/pyenv/pyenv
@@ -616,6 +633,7 @@
 [rfc-2822]: https://www.ietf.org/rfc/rfc2822.txt
 [rfc-3339]: https://www.ietf.org/rfc/rfc3339.txt
 [river-github]: https://github.com/memorysafety/river
+[roadmap-rust-website]: https://roadmap.sh/rust
 [robotics-lib.rs]: https://lib.rs/science/robotics
 [robotics-rs-website-badge]: https://img.shields.io/badge/robotics.rs-coral
 [robotics-rs-website]: https://robotics.rs
@@ -642,6 +660,7 @@
 [rust-formal-methods-website]: https://rust-formal-methods.github.io
 [rust-foundation-website]: https://foundation.rust-lang.org
 [rust-gentle-intro]: https://stevedonovan.github.io/rust-gentle-intro
+[rust-gpu-github]: https://github.com/Rust-GPU/rust-gpu
 [rust-howto-code-examples-github]: https://github.com/john-cd/rust_howto/tree/main/crates
 [rust-howto-contributing-badge]: https://img.shields.io/badge/contributing_to_rust__howto-steelblue?logo=github
 [rust-howto-contributing]: https://github.com/john-cd/rust_howto/blob/main/CONTRIBUTING.md
@@ -731,6 +750,7 @@
 [stackoverflow-asref]: https://stackoverflow.com/questions/66026309/when-and-why-to-use-asreft-instead-of-t
 [stackoverflow-how-do-i-get-a-str-or-string-from-stdborrowcowstr]: https://stackoverflow.com/questions/47147844/how-do-i-get-a-str-or-string-from-stdborrowcowstr
 [stackoverflow-how-to-cache-docker-compose-build-inside-github-action]: https://stackoverflow.com/questions/61491484/how-to-cache-docker-compose-build-inside-github-action
+[stackoverflow-understanding-the-send-trait]: https://stackoverflow.com/questions/59428096/understanding-the-send-trait
 [stackoverflow-use-local-dockerfile-in-a-github-action]: https://stackoverflow.com/questions/61154750/use-local-dockerfile-in-a-github-action
 [stackoverflow-what-is-the-rust-equivalent-to-a-try-catch-statement]: https://stackoverflow.com/questions/55755552/what-is-the-rust-equivalent-to-a-try-catch-statement
 [stargazers]: https://developer.github.com/v3/activity/starring/#list-stargazers
@@ -793,6 +813,7 @@
 [webgpu-website]: https://gpuweb.github.io/gpuweb
 [why-rust-for-robots]: https://www.tangramvision.com/blog/why-rust-for-robots
 [wikipedia-haversine-formula]: https://en.wikipedia.org/wiki/Haversine_formula
+[wikipedia-model-checking]: https://en.wikipedia.org/wiki/Model_checking
 [wikipedia-parsing-expression-grammars]: https://en.wikipedia.org/wiki/Parsing_expression_grammar
 [wikipedia-percent_encoding]: https://en.wikipedia.org/wiki/percent-encoding
 [wikipedia-race-condition]: https://en.wikipedia.org/wiki/Race_condition#File_systems
@@ -816,3 +837,4 @@
 [zld-github-badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zld-github]: https://github.com/michaeleisel/zld
 [zs-website]: https://www.zs.com
+[are-we-game-yet?-engines-website]: https://arewegameyet.rs/ecosystem/engines

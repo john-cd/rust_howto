@@ -33,6 +33,5 @@ Choose [`native-tls`][c-native_tls]⮳{{hi:native-tls}} when ease of use and aut
 
 <div class="hidden">
 TODO write
-[Rustls][rustls-wikipedia]
-[rustls-wikipedia]: https://en.wikipedia.org/wiki/Rustls
+[Rustls][c-rustls-wikipedia]
 </div>

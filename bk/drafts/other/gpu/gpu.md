@@ -13,12 +13,12 @@
 ```
 
 [reddit]: https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming/?share_id=in53a04f7pnykanqye5tb&utm_content=1&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=22&rdt=58853
-[wgpu-website]: https://wgpu.rs
-[rust-gpu-github]: https://github.com/Rust-GPU/rust-gpu
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [gpu: write](https://github.com/john-cd/rust_howto/issues/607)
 Review [Reddit blog][reddit]
+Reference [rust-gpu-github]
 </div>

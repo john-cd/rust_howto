@@ -124,9 +124,8 @@ TODO
 
 ## See also {#skip}
 
-- A type-safe GitHub Actions workflow generator: [`gh-workflow`][gh-workflow].
+- A type-safe GitHub Actions workflow generator: [`gh-workflow`][c-gh_workflow].
 
-[gh-workflow]: <https://crates.io/crates/gh-workflow>
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
@@ -137,4 +136,7 @@ write / review in depth
 rust-toolchain (github action): Github action to install Rust components via rustup
 rust-cache (github action): Github action to cache compilation artifacts and speed up subsequent runs.
 install-action (github action): GitHub Action for installing development tools (mainly from GitHub Releases).
+
+---
+[![gh-workflow][c-gh_workflow-badge]][c-gh_workflow] [![gh-workflow-crates.io][c-gh_workflow-crates.io-badge]][c-gh_workflow-crates.io] [![gh-workflow-github][c-gh_workflow-github-badge]][c-gh_workflow-github] [![gh-workflow-lib.rs][c-gh_workflow-lib.rs-badge]][c-gh_workflow-lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
 </div>

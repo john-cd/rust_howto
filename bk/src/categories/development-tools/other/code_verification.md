@@ -76,12 +76,43 @@ Unit Testing: std::test (built-in [testing][p-testing] framework)
 Integration Testing: (Often uses std::test but focuses on [testing][p-testing] interactions between modules or components)
 Fuzzing: [cargo][p-cargo] fuzz, afl.rs (bindings to AFL)
 Type Checking: (Built into the Rust compiler)
-Code Review Tools: (Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.)
-add [Model_checking](https://en.wikipedia.org/wiki/Model_checking) [getting-started](https://model-checking.github.io/kani/getting-started.html)
-[announcing-the-kani-rust-verifier-project](https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html)
-[using-the-kani-rust-verifier-on-a-firecracker-example](https://model-checking.github.io/kani-verifier-blog/2022/07/13/using-the-kani-rust-verifier-on-a-firecracker-example.html)
-[sing-the-kani-rust-verifier-on-a-rust-standard-library-cve](https://model-checking.github.io/kani-verifier-blog/2022/06/01/using-the-kani-rust-verifier-on-a-rust-standard-library-cve.html)
-cover [loom](https://github.com/tokio-rs/loom) and [shuttle](https://github.com/awslabs/shuttle) for [concurrency][p-concurrency] testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
-cover [MIRAI](https://github.com/endorlabs/MIRAI)
-cover [prusti](https://www.pm.inf.ethz.ch/research/prusti.html) [creusot](https://github.com/creusot-rs/creusot)
+Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
+add
+[Model_checking][wikipedia-model-checking]
+
+- [The Kani Rust Verifier][c-kani-website]⮳.
+- [Announcing the Kani Rust Verifier Project][c-kani-announcing-the-kani-rust-verifier-project-blog]⮳.
+- [Using the Kani Rust Verifier on a Firecracker Example][c-kani-using-the-kani-rust-verifier-on-a-firecracker-example-blog]⮳.
+- [Using the Kani Rust Verifier on a Rust Standard Library CVE][c-kani-using-the-kani-rust-verifier-on-a-rust-standard-library-cve]⮳.
+
+---
+
+[![loom][c-loom-badge]][c-loom] [![loom-crates.io][c-loom-crates.io-badge]][c-loom-crates.io] [![loom-github][c-loom-github-badge]][c-loom-github] [![loom-lib.rs][c-loom-lib.rs-badge]][c-loom-lib.rs]{{hi:loom}}{{hi:Lock-free}}{{hi:Atomic}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+Permutation testing for concurrent code
+
+---
+
+[![shuttle][c-shuttle-badge]][c-shuttle] [![shuttle-crates.io][c-shuttle-crates.io-badge]][c-shuttle-crates.io] [![shuttle-github][c-shuttle-github-badge]][c-shuttle-github] [![shuttle-lib.rs][c-shuttle-lib.rs-badge]][c-shuttle-lib.rs]{{hi:shuttle}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+
+A library for testing concurrent Rust code
+
+---
+
+^^ for [concurrency][p-concurrency] testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
+
+---
+
+cover
+[MIRAI][mirai-github]⮳.
+
+cover
+[prusti][prusti-website]⮳.
+
+Prusti is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
+
+---
+[Creusot][creusot-github]⮳.
+
+Creusot helps you prove your code is correct in an automated fashion.
 </div>
