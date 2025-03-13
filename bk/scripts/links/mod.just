@@ -42,8 +42,8 @@ _default:
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links
 [unix]
 @get pattern:
-  ./make_link.sh {{root}} {{pattern}}
+  ./get_link.sh {{root}} {{pattern}}
 
 [windows]
-@make_link pattern:
+@get pattern:
   echo "Not implemented for Windows!"
