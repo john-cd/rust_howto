@@ -2669,3 +2669,6 @@ frunk
 HLists
 monads
 Memoize
+footgun
+codahale
+imperialviolet
