@@ -17,6 +17,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[database/search.md: expand](https://github.com/john-cd/rust_howto/issues/288)
 
 ## Connect to Elasticsearch {#elasticsearch}
 
@@ -33,5 +34,4 @@
 
 - [`tinysearch`][c-tinysearch]⮳{{hi:tinysearch}} is not that popular.
 
-[database/search.md: expand](https://github.com/john-cd/rust_howto/issues/288)
 </div>
