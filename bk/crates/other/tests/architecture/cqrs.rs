@@ -187,7 +187,7 @@
 //                     if let Some(current) = current_quantity {
 //                         let new_quantity =
 //                             (current as i32 + quantity).max(0) as u32; //
-// TODO handle errore                         let event =
+// TODO handle errors                         let event =
 // ProductEvent::ProductQuantityUpdated {                             id,
 //                             new_quantity,
 //                         };
