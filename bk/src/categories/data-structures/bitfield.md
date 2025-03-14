@@ -29,10 +29,17 @@ A flagset refers to a bitfield used to represent a set of boolean flags or optio
 {{#include ../../../crates/cats/data_structures/tests/bits/flagset.rs:example}}
 ```
 
+## `bitvec` {#bitvec}
+
+[![bitvec-website][c-bitvec-website-badge]][c-bitvec-website] [![bitvec][c-bitvec-badge]][c-bitvec] [![bitvec-crates.io][c-bitvec-crates.io-badge]][c-bitvec-crates.io] [![bitvec-github][c-bitvec-github-badge]][c-bitvec-github] [![bitvec-lib.rs][c-bitvec-lib.rs-badge]][c-bitvec-lib.rs]{{hi:bitvec}}{{hi:Bitstream}}{{hi:Bitvector}}{{hi:Bitmap}}{{hi:Bitfields}}{{hi:bitvec}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+
+[`bitvec`][c-bitvec]⮳{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields
+
+{{#example bitvec}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[bitfield: review](https://github.com/john-cd/rust_howto/issues/279)
-Cover: [`bitvec`][c-bitvec]⮳{{hi:bitvec}} provides efficient storage and manipulation of bit vectors.
+[bitfield: edit / review](https://github.com/john-cd/rust_howto/issues/279)
 </div>
