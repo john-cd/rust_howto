@@ -2672,3 +2672,5 @@ Memoize
 footgun
 codahale
 imperialviolet
+mirai
+nyanpasu
