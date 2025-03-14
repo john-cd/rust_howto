@@ -1,4 +1,4 @@
-[ex-text-processing-benchmark]: string_concat.md#benchmark
+[ex-text-processing-string-concat]: string_concat.md#string-concat
 [ex-text-processing-collect-unicode-graphemes]: string_parsing.md#collect-unicode-graphemes
 [ex-text-processing-extract-a-list-of-unique-hashtags-from-a-text]: regex.md#extract-a-list-of-unique-hashtags-from-a-text
 [ex-text-processing-extract-phone-numbers-from-text]: regex.md#extract-phone-numbers-from-text

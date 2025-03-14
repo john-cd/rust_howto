@@ -3090,6 +3090,14 @@
 [c-job-lib.rs-badge]: https://img.shields.io/badge/lib.rs-job-yellow
 [c-job-lib.rs]: https://lib.rs/crates/job
 [c-job]: https://docs.rs/job
+[c-joinery-badge]: https://img.shields.io/crates/v/joinery?label=joinery
+[c-joinery-crates.io-badge]: https://img.shields.io/badge/crates.io-joinery-crimson
+[c-joinery-crates.io]: https://crates.io/crates/joinery
+[c-joinery-github-badge]: https://img.shields.io/badge/joinery-steelblue?logo=github
+[c-joinery-github]: https://github.com/Lucretiel/joinery
+[c-joinery-lib.rs-badge]: https://img.shields.io/badge/lib.rs-joinery-yellow
+[c-joinery-lib.rs]: https://lib.rs/crates/joinery
+[c-joinery]: https://docs.rs/joinery
 [c-jpeg_decoder-badge]: https://img.shields.io/crates/v/jpeg-decoder?label=jpeg-decoder
 [c-jpeg_decoder-crates.io-badge]: https://img.shields.io/badge/crates.io-jpeg--decoder-crimson
 [c-jpeg_decoder-crates.io]: https://crates.io/crates/jpeg_decoder

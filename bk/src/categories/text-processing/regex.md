@@ -69,6 +69,20 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../../crates/cats/text_processing/tests/regex/fancy_regex.rs:example}}
 ```
 
+## Longer Regex Example {#longer-regex-example}
+
+[![regex][c-regex-badge]][c-regex]{{hi:regex}} [![regex-github][c-regex-github-badge]][c-regex-github] [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/regex/regex.rs:example}}
+```
+
+## Related Topics {#skip}
+
+- [[rust_search_engines | Rust Search Engines]].
+- [[search | Search]].
+- [[strings | Strings]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

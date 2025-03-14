@@ -6,10 +6,9 @@
 | [Filter a log file by matching multiple regular expressions][ex-text-processing-filter-a-log-file-by-matching-multiple-regular-expressions] | [![regex][c-regex-badge]][c-regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 | [Replace all occurrences of one text pattern with another pattern][ex-text-processing-replace-all-occurrences-of-one-text-pattern-with-another-pattern] | [![regex][c-regex-badge]][c-regex] [![lazy_static][c-lazy_static-badge]][c-lazy_static] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 | [Longer regex example][ex-text-processing-longer-regex-example] | [![regex][c-regex-badge]][c-regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Use regular expressions with back-references and lookarounds][ex-text-processing-fancy-regex] | [![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
+| [Longer Regex Example][ex-text-processing-longer-regex-example] | [![regex][c-regex-badge]][c-regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 
 <div class="hidden">
-[regex.incl: fix](https://github.com/john-cd/rust_howto/issues/487)
-
-| [Use regular expressions with back-references and lookarounds][ex-text-processing-fancy-regex] | [![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] | [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
-
+FIXME
 </div>
