@@ -113,7 +113,9 @@ checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
 name = "autogen"
 version = "0.1.2"
 dependencies = [
- "tool_lib",
+ "anyhow",
+ "pest",
+ "pest_derive",
 ]
 
 [[package]]

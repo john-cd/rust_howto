@@ -14,11 +14,13 @@ categories = ["development-tools", "command-line-utilities", "text-processing"]
 publish = false
 
 [dependencies]
-#anyhow = "1.0.95"
+pest = "2.7.15"
+pest_derive = "2.7.15"
+anyhow = "1.0.97"
 #pgp = "0.14.2"
 #serde = { version = "1.0.217", features = ["derive"] }
 #tera = "1.20.0"
-tool_lib = { path = "../tool_lib" }
+#tool_lib = { path = "../tool_lib" }
 
 
 [[bin]]

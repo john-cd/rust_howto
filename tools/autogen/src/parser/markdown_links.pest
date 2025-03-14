@@ -1,0 +1,119 @@
+//! Parse markdown links and refdefs
+
+document = { SOI ~ element* ~ EOI }
+
+element = _{ hidden_text | triple_quoted_string | backticked | link | reference_definition | naked_url | other }
+
+//  Matches any text that is not a link or reference definition.
+other = _{ ( !element ~ ANY )+ }
+
+// Hidden text (simplified)
+hidden_text = _{ "<div class=\"hidden\">" ~ ( !"</div>" ~ ANY ) ~ "</div>" ~ SP* ~ NEWLINE }
+
+// Triple-quoted strings:  ``` ... ```
+triple_quoted_string = _{
+    "```"
+    ~ triple_quoted_character*
+    ~ "```"
+}
+triple_quoted_character = {
+    !"```"        // if the following text is not three apostrophes
+    ~ ANY         // then consume one character
+}
+
+// Backticked string: ` ... ` or `` ... ``
+backticked = _{  ("`" ~ inner_no_bactick ~ "`") |  ( "``" ~ inner_no_dual_bactick ~ "``" ) }
+inner_no_bactick = @{ ( !"`" ~ ANY)* }
+inner_no_dual_bactick = @{ (!"``" ~ ANY)* }
+
+link = _{ autolink | image | inline_link | reference_style_link }
+
+// Autolink: <http://autolink.com/>
+autolink = { "<" ~ inner_autolink ~ ">" }
+inner_autolink = @{ ( !("<" | ">" | SP) ~ ANY )+ }
+
+// Link elements (simplified)
+link_text = @{ (!"]" ~ ANY)+ }
+link_destination = @{ (!(")" | "\"" | SP) ~ ANY)+ }
+link_title = _{ "\"" ~ ( !"\"" ~ ANY)* ~ "\"" }
+link_label = @{ SP* ~ (!("[" | "]" | SP) ~ ANY)+ ~ SP*}
+
+// Images: ![foo](/url "title")
+image = _{ "![" ~ link_text ~ "]" ~ "(" ~ SP* ~ link_destination ~ SP* ~ link_title? ~ SP* ~ ")" }
+
+// Inline link: [text](url)
+inline_link = { "[" ~ link_text ~ "]" ~ "(" ~ SP* ~ link_destination ~ SP* ~ link_title? ~ SP* ~ ")" }
+
+// Reference-style link: [text][label] (simplified)
+reference_style_link = _{ "![" ~ link_text ~ "][" ~ link_label ~ "]" }
+
+// Reference definition: [label]: destination "title"
+reference_definition = { SP{,3} ~ "[" ~ link_label ~ "]:" ~ SP* ~ link_destination ~ SP* ~ link_title? ~ SP* }
+
+// Naked URL
+naked_url = { issue_url | github_url | crates_url | lib_url | docs_url | general_url }
+
+// Example: https://github.com/john-cd/rust_howto/issues/602
+issue_url = { http ~ "github.com/john-cd/rust_howto/issues/" ~ ASCII_DIGIT+ }
+
+// `github.com` URLs other than issue URLs
+// Example: https://github.com/rustdesk/rustdesk
+github_url = { github_url_prefix ~ ( "/" ~ org) ~ ("/" ~ repo)? ~ end_of_url? }
+github_url_prefix =  _{ http ~ "github.com" }
+org = @{ (!"/" ~ ANY)+ }
+repo = @{ (!"/" ~ ANY)+ }
+
+// `crates.io` URLs
+// Example: https://crates.io/crates/sd
+crates_url = { crate_url_prefix ~ "/" ~ crate_name ~ end_of_url? }
+crate_url_prefix = _{ http ~ "crates.io/crates" }
+crate_name = @{ (ASCII_ALPHANUMERIC | "-" | "_")+ }
+
+// `lib.rs` URLs
+// Example: https://lib.rs/crates/lapin
+lib_url = { lib_url_prefix ~ ("/" ~ crate_name)? ~ end_of_url? }
+lib_url_prefix = _{ http ~ "lib.rs/crates" }
+
+// `docs.rs` URLs
+// Examples:
+// https://docs.rs/lapin
+// https://docs.rs/ansi_term/latest/ansi_term/struct.Style.html#method.new
+docs_url = { docs_url_prefix ~ ("/" ~ crate_name)? ~ end_of_url? }
+docs_url_prefix = _{ http ~ "docs.rs" }
+
+// General URLs (simplified)
+// Example of URLs to process:
+// https://arangodb.com/
+// http://localhost:6080
+general_url = { http ~ host ~ port? ~ path? ~ query? ~ fragment? }
+http = _{ "http" ~ "s"? ~ "://"}
+host = { ASCII_ALPHANUMERIC+ ~ ("." ~ ASCII_ALPHANUMERIC+)* }
+port = _{ ":" ~ ASCII_DIGIT+ }
+path = { "/" ~ (!("?" | "#") ~ url_char)* }
+query = _{ "?" ~ (!"?" ~ url_char)* }
+fragment = _{ "#" ~ (!"#" ~ url_char)* }
+
+// End of URL e.g. /path?query#fragment
+// Cannot end by a final period
+end_of_url = _{ "/" ~ (!("." ~ SP) ~ url_char)* }
+
+// Valid chars in URLs are A-Z, a-z, 0-9, -, ., _, ~, :, /, ?, #, [, ], @, !, $, &, ', (, ), *, +, ,, ;, %, and =
+// ":" | "/" | "@" | "?" | "#" have special meaning in URLs
+url_char = _{ ASCII_ALPHANUMERIC | "-" | "." | "_" | "~" | "[" | "]" | "!" | "$" | "&" | "'" | "(" | ")" | "*" | "+" | "," | ";" | "%" | "=" | ":" | "/" | "@" | "?" | "#" }
+
+// Spaces
+SP = _{ " " | "\t" }
+
+
+// TODO LATER
+
+// ATX Heading
+// heading = { SP{,3} ~ "#"{,6} ~ (SP+ ~ ( ANY ) ~ (SP+ ~ "#"* ~ SP*)? )? ~ NEWLINE }
+
+// Includes
+// Examples: {{#include categories/web-programming_http-client/apis.incl.md}}
+// include = _{ "{{" ~ SP* ~ "#" ~ SP* ~ "include" ~ SP+ ~ (!"}" ~ ANY)* ~ "}}" }
+
+// Customm Tags
+// {{#crate ...}}
+// crate_include = { "{{" ~ SP* ~ "#" ~ SP* ~ "crate" ~ SP+ ~ (!"}" ~ ANY)* ~ "}}" }
