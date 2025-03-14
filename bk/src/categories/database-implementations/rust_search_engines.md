@@ -30,15 +30,19 @@
 {{#include ../../../crates/cats/database_implementations/tests/search/tantivy.rs:example}}
 ```
 
+## Related Topics
+
+| Topic | Rust crate(s) | Notes |
+|---|---|---|
+| Full-Text [Search][p-search] | `elastic` (for Elasticsearch) | |
+| Fuzzy Searching | `fuzzy-matcher`, `strsim` | `strsim` provides string similarity metrics. See [[text-processing | Text Processing]]. |
+| Regular Expressions | `regex` | See [[regex | Regex]]. |
+| String Search (Multiple Patterns at Once) | `aho-corasick` | See [[text-processing | Text Processing]]. |
+| Vector Search | `qdrant`, `faiss-rs` (bindings to FAISS) | |
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [search: expand](https://github.com/john-cd/rust_howto/issues/291)
-
-Full-Text [Search][p-search] (Local): tantivy, elastic-client (for Elasticsearch), [`meilisearch`][c-meilisearch]⮳{{hi:meilisearch}} (client)
-Fuzzy Searching: fuzzy-matcher, strsim
-Regular Expressions: regex
-String Searching (Multiple Patterns): aho-corasick
-Vector Search: qdrant, faiss-rs (bindings to FAISS)
 </div>
