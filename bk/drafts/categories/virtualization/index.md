@@ -73,7 +73,7 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 - Rust's performance, safety, and concurrency features make it well-suited for virtualization.
 - Virtualization requires in-depth security and Rust's memory safety is a significant advantage.
 - Rust is also relevant for virtualization on embedded systems.
-- Integrating with existing virtualization technologies (e.g., KVM, QEMU) is a common approach.
+- Integrating with existing virtualization technologies (e.g., `KVM`, `QEMU`) is a common approach.
 
 ## Related Topics
 
