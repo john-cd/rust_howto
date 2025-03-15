@@ -69,7 +69,9 @@ See [Automatic derivation][p-automatic-derivation].
 
 A macro to ergonomically define an item depending on a large number of #[cfg] parameters. Structured like an if-else chain, the first matching branch is the item that gets emitted.
 
-{{#example cfg-if}}
+```rust,editable
+{{#include ../../crates/language/tests/feat/cfg_if.rs:example}}
+```
 
 ## Related Topics {#skip}
 

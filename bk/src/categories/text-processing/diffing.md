@@ -8,7 +8,9 @@
 
 `diff` is an LCS-based slice and string diffing implementation.
 
-{{#example diff}}
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/diffing/diff.rs:example}}
+```
 
 ## `similar` {#similar}
 
@@ -16,7 +18,9 @@
 
 `similar` is a dependency-free crate for Rust that implements different diffing algorithms and high level interfaces for it.
 
-{{#example similar}}
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/diffing/similar.rs:example}}
+```
 
 ## Related Topics {#skip}
 

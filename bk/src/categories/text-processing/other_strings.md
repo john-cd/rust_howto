@@ -16,7 +16,9 @@ The need for this type arises from the fact that:
 
 `std::ffi::OsStr` is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
-{{#example osstring}}
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/other_strings/osstring.rs:example}}
+```
 
 ## `CString` and `CStr` {#cstring}
 
@@ -30,7 +32,9 @@ A `CString` can be created from either a byte slice or a byte vector, or anythin
 
 The primary use case for these kinds of strings is interoperating with C-like code.
 
-{{#example cstring}}
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/other_strings/cstring.rs:example}}
+```
 
 ## `bstr` {#bstr}
 
@@ -40,7 +44,9 @@ The primary use case for these kinds of strings is interoperating with C-like co
 
 This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their use as byte strings, where byte strings are conventionally UTF-8. This differs from the standard library's `String` and `str` types in that they are *not* required to be valid UTF-8, but may be fully or partially valid UTF-8.
 
-{{#example bstr}}
+```rust,editable
+{{#include ../../../crates/cats/text_processing/tests/other_strings/bstr.rs:example}}
+```
 
 ## Related Topics {#skip}
 

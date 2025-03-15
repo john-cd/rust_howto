@@ -38,7 +38,9 @@ organize, fix
 
 The [`http`][c-http]⮳{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
 
-{{#example http}}
+```rust,editable
+{{#include ../../../crates/cats/web_programming/tests/index/http.rs:example}}
+```
 
 ### `http-body-util` {#http-body-util}
 

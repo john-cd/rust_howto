@@ -7,6 +7,7 @@ mod attributes_must_use;
 mod attributes_production;
 mod borrowing;
 mod borrowing_mutable;
+mod cfg_if;
 mod clone;
 mod closures;
 mod closures_as_input_parameters;

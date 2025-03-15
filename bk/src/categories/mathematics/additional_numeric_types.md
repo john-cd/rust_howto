@@ -69,4 +69,13 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 
 <div class="hidden">
 [additional_numeric_types: write](https://github.com/john-cd/rust_howto/issues/407)
+
+## `typenum` {#typenum}
+
+[![typenum][c-typenum-badge]][c-typenum] [![typenum-crates.io][c-typenum-crates.io-badge]][c-typenum-crates.io] [![typenum-github][c-typenum-github-badge]][c-typenum-github] [![typenum-lib.rs][c-typenum-lib.rs-badge]][c-typenum-lib.rs]{{hi:typenum}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
+
+Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers. It also provides a type-level array of type-level numbers, but its implementation is incomplete.
+
+{{#example typenum}}
+
 </div>

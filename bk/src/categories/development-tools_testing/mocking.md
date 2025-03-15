@@ -13,7 +13,9 @@ Consider using:
 
 A powerful mock object library for Rust.
 
-{{#example mockall}}
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/tests/mocking/mockall.rs:example}}
+```
 
 ## Mock Structs with `faux` {#faux}
 
@@ -21,7 +23,9 @@ A powerful mock object library for Rust.
 
 A library to mock structs.
 
-{{#example faux}}
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/tests/mocking/faux.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

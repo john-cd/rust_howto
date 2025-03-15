@@ -24,7 +24,7 @@ The following explores some notable Rust crates that aid in functional programmi
 It offers a wide range of functions for combining, grouping, and manipulating iterators, for example `itertools::zip_longest`, `itertools::group_by`.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/rust_patterns/itertools.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/itertools.rs:example}}
 ```
 
 ## `either` {#either}

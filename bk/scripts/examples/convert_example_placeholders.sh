@@ -14,11 +14,11 @@ do
   # grep -P = Perl regex; -o = show only nonempty parts of lines that match; -h =  suppress the file name prefix on output
   # (?<= ) = lookbehind; (?= ) = lookahead
   # read -r = do not allow backslashes to escape any characters
-  grep -Poh '(?<=\{\{#example ).+?(?=\}\})' $file | tr '-' '_' | while read -r examplename ;
+  grep -Poh '(?<=\{\{#example ).+?(?=\}\})' $file | while read -r examplename ;
   do
     if [[ -n "${examplename}" ]]; then
         echo "Processing example: ${examplename}"
-        # P2 does not handle non-category examples
+        # TODO does not handle non-category examples
         current_file_dir=$(dirname $file)
         category=$(basename $current_file_dir | tr '-' '_')
         folder_in_tests=$(basename $file '.md')
@@ -58,35 +58,35 @@ do
       absoluteexampledir="${root}crates/cats/${category}/tests/${folder_in_tests}"
       exampledir=$(realpath --relative-to=$current_file_dir "${absoluteexampledir}" | tr '-' '_')
       # echo "exampledir: $exampledir"
-      examplefile="${exampledir}/${examplename}.rs"
+      examplefilename=$(tr '-' '_' <<< ${examplename})
+      examplefile="${exampledir}/${examplefilename}.rs"
       #echo "examplefile: $examplefile"
       sed -Ei 's~\{\{#example\s*?'${examplename}'\s*?\}\}~```rust,editable\n\{\{#include '$examplefile':example\}\}\n```~g' $file
       # Create the folder for the test, if missing
       mkdir -p $absoluteexampledir
       # Create a GitHub ticket
-      issue=$( gh issue create --title "Add example ${examplename}" --body "[${examplename}](https://github.com/john-cd/rust_howto/tree/main/$(realpath --relative-to=/code ${absoluteexampledir})/${examplename}.rs )" )
+      issue=$( gh issue create --title "Add example for: ${examplename}" --body "[${examplefilename}](https://github.com/john-cd/rust_howto/tree/main/$(realpath --relative-to=${root} ${absoluteexampledir})/${examplefilename}.rs )" )
       sleep 3
       # Add a stub file for the example
-      cat > "$absoluteexampledir/${examplename}.rs" <<- EOF
+      cat > "$absoluteexampledir/${examplefilename}.rs" <<- EOF
 // ANCHOR: example
 // COMING SOON
 // ANCHOR_END: example
-fn main() {
-}
+fn main() {}
 
 #[test]
 #[ignore = "not yet implemented"]
 fn test() {
     main();
 }
-// [P1 add example](${issue})
+// [add example](${issue})
 EOF
 
       # Add the example file as a module to `main.rs`
-      if [[ -z $(grep -Foh "${examplename}" "$absoluteexampledir/main.rs") ]]; then
+      if [[ -z $(grep -Foh "${examplefilename}" "$absoluteexampledir/main.rs") ]]; then
         echo " Adding to $absoluteexampledir/main.rs"
         cat >> "$absoluteexampledir/main.rs" <<- EOF
-mod ${examplename};
+mod ${examplefilename};
 EOF
       fi
     fi

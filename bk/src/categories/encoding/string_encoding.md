@@ -62,5 +62,8 @@ Encodes byte slice into [`base64`][c-base64]⮳{{hi:base64}} {{hi:base64}} Strin
 
 [`percent-encoding`][c-percent_encoding]⮳{{hi:percent-encoding}} handles URL encoding and decoding.
 
-{{#example percent-encoding}}
+```rust,editable
+{{#include ../../../crates/cats/encoding/tests/string_encoding/percent_encoding.rs:example}}
+```
+
 </div>

@@ -42,7 +42,9 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides an extension trait th
 
 Common utilities and extension [traits][p-traits] for the [`futures-rs`][c-futures]⮳{{hi:futures-rs}} library. Extensions to Rust's `Future` and `Stream` traits. Combinators and utilities for working with `Futures`, `Streams`, `Sinks`, and the `AsyncRead` and `AsyncWrite` traits.
 
-{{#example futures-util}}
+```rust,editable
+{{#include ../../../crates/cats/asynchronous/tests/futures/futures_util.rs:example}}
+```
 
 ## Related Topics {#skip}
 

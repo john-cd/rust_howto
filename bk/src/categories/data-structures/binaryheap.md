@@ -16,7 +16,9 @@
 
 [`priority-queue`][c-priority_queue]⮳{{hi:priority-queue}} implements a Priority Queue implemented as a heap with a function to efficiently change the priority of an item. Priority and items are stored in an IndexMap and the queue is implemented as a Heap of indexes.
 
-{{#example priority-queue}}
+```rust,editable
+{{#include ../../../crates/data_structures/tests/binaryheap/priority_queue.rs:example}}
+```
 
 ## Related Topics
 

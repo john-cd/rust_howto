@@ -22,7 +22,9 @@ Hypothesis-like property-based [testing][p-testing] and shrinking.
 proptest = "1.0.0"
 ```
 
-{{#example proptest}}
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/proptest.rs:example}}
+```
 
 ## Test Data Generation {#test_data_generation}
 
@@ -32,7 +34,9 @@ A library for generating fake data such as names, addresses, and phone numbers.
 
 Often done with custom [functions][p-functions] or data structures, but crates like [`faker`][c-faker]⮳{{hi:faker}} can be useful for generating realistic test data.
 
-{{#example faker}}
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/faker.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
