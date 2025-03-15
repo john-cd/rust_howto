@@ -107,6 +107,10 @@ See the [[_actors |  Actors]] chapter for more details.
 
 Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates read and write operations. This separation allows for independent optimization of each operation, leading to improved performance, scalability, and security. It is useful for systems with high read/write demands or complex business rules.
 
+```rust,editable
+{{#include ../../../crates/other/tests/architecture/cqrs.rs:example}}
+```
+
 ## Pipelines/Streams {#pipelines}
 
 Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.

@@ -1,5 +1,7 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use anyhow::Result;
 
 // // Separation of Concerns in CQRS:
@@ -364,7 +366,6 @@
 //     // }
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> Result<()> {
