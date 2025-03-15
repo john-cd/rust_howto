@@ -10,7 +10,7 @@
 
 [`nphysics`][c-nphysics]⮳{{hi:nphysics}} is another physics engine.
 
-## See also
+## See Also
 
 - [Physics](https://arewegameyet.rs/ecosystem/physics).
 

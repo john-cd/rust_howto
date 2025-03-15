@@ -19,7 +19,7 @@ dyn Trait + Send + Sync
 dyn Trait + 'static
 ```
 
-## See also
+## See Also
 
 [Trait Objects (docs)][book-rust-trait-objects]{{hi:Trait objects}}⮳.
 

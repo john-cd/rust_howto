@@ -18,7 +18,7 @@ To process multiple items from a stream{{hi:Stream}} concurrently, use the [`fut
 {{#include ../../../crates/cats/asynchronous/tests/streams/streams2.rs:example}}
 ```
 
-## See also
+## See Also
 
 See also [Tokio][p-tokio] [`async-stream`][c-async_stream]⮳{{hi:async-stream}}.
 

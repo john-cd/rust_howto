@@ -48,7 +48,7 @@ Common utilities and extension [traits][p-traits] for the [`futures-rs`][c-futur
 
 - [[tokio | Tokio]].
 
-## See also
+## See Also
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 

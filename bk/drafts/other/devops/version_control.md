@@ -81,7 +81,7 @@ TODO
   - [[code_formatting_linting | Code Formatting & Linting]].
   - [[versioning | Versioning]].
 
-## See also
+## See Also
 
 - [Rust CI Tooling: Clippy, commitlint, pre-commit][rust-ci-tooling].
 - [`pre-commit-rust`][pre-commit-rust-github].

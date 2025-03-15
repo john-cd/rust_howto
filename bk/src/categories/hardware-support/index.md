@@ -14,7 +14,7 @@ For embedded systems, HAL crates are essential. For operating system interaction
 
 {{#include peripherals.incl.md}}
 
-## See also
+## See Also
 
 ### Memory Management
 

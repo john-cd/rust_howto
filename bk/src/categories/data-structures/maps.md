@@ -57,7 +57,7 @@ Use [`slotmap`][c-slotmap]⮳{{hi:slotmap}} to store collections of objects that
 <div class="hidden">
 [maps: write / expand](https://github.com/john-cd/rust_howto/issues/281)
 
-## See also
+## See Also
 
 [Splay tree][wikipedia-splay-tree]{{hi:Splay tree}}⮳.
 

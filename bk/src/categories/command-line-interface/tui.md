@@ -22,7 +22,7 @@ cargo install cargo-generate
 cargo generate ratatui/templates simple
 ```
 
-## See also
+## See Also
 
 [![tui][c-tui-badge]][c-tui] [![tui-crates.io][c-tui-crates.io-badge]][c-tui-crates.io] [![tui-github][c-tui-github-badge]][c-tui-github] [![tui-lib.rs][c-tui-lib.rs-badge]][c-tui-lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
 

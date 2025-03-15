@@ -34,7 +34,7 @@
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
-## See also
+## See Also
 
 [`sdl2`][c-sdl2]⮳{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c-winit]⮳{{hi:winit}} is often preferred in the Rust ecosystem.
 

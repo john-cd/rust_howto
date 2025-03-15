@@ -24,7 +24,7 @@
 - Image Loading and Manipulation: see [[multimedia_images | Multimedia: Images]].
 - [[2d_vector_graphics | 2D Vector Graphics]].
 
-## See also
+## See Also
 
 [Are we Game yet? 2D Rendering][are we game yet? 2d rendering]: Sprites, vectors, splines, hex grids and more
 

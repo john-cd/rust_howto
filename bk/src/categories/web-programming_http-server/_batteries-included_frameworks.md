@@ -20,7 +20,7 @@
 
 [Rust on Nails][rust-on-nails-website]{{hi:Rust on Nails}}⮳.
 
-## See also
+## See Also
 
 [Building a SaaS with Rust and Next.js][blog-building-a-saas-with-rust-and-next-js]⮳.
 

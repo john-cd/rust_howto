@@ -42,7 +42,7 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 - [[rendering_engines | Rendering Engines]].
 - [[svg_rendering | SVG Rendering]].
 
-## See also
+## See Also
 
 [2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more
 

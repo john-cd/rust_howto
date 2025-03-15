@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/aerospace_protocols/tests/aero_protocols.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[aerospace | Aerospace]].
 - [[embedded | Embedded Systems]].

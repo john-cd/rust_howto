@@ -74,7 +74,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_instrument.rs:example}}
 ```
 
-## See also {#related-crates}
+## See Also {#related-crates}
 
 [![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
 [![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]

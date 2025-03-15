@@ -55,7 +55,7 @@ See:
 - [[game_engines | Game Engines]].
 - [[gui | GUI]].
 
-## See also {#skip3}
+## See Also {#skip3}
 
 - [Are we Game yet? 3D Rendering][are we game yet? 3d rendering]
 [are we game yet? 3d rendering]: https://arewegameyet.rs/ecosystem/3drendering

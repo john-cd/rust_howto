@@ -62,7 +62,7 @@ The [`icu`][c-icu]⮳{{hi:icu}} crate family (named after 'International Compone
 
 {{#include internationalization.incl.md}}
 
-## See also
+## See Also
 
 - [[accessibility | Accessibility]].
 - [[command-line-interface | Command Line Interface]].

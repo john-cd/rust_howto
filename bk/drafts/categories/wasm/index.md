@@ -35,7 +35,7 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 
 {{#include leptos.incl.md}}
 
-## See also
+## See Also
 
 [Rust and WebAssembly (book)][book-rustwasm]{{hi:WASM}}⮳.
 

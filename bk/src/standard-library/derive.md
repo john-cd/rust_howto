@@ -28,7 +28,7 @@ See also:
 {{#include ../../crates/standard_library/tests/other/derive_more.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[attributes | Attributes]].
 - [[rust-patterns | Rust Patterns]].

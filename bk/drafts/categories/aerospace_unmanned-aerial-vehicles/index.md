@@ -18,7 +18,7 @@ Consider using:
 - Spektrum DSM/DSMX: Another common RC protocol.
 - FrSky SmartPort/FPort: A telemetry protocol used by FrSky RC systems.
 
-## See also
+## See Also
 
 ### Parsing Binary Data
 

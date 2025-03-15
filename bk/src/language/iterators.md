@@ -13,7 +13,7 @@
 - [[functional_programming | Functional Programming]].
 - [[vectors | Vectors]].
 
-## See also
+## See Also
 
 [Iterators][book-rust-iterators]{{hi:iterators}}⮳.
 

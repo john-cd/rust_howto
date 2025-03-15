@@ -46,7 +46,7 @@ For WebGPU development in Rust, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is the essential 
 {{#include ../../../crates/cats/graphics/tests/wgpu.rs:example}}
 ```
 
-### See also {#skip}
+### See Also {#skip}
 
 - `web-sys`: Web bindings, used for WebGPU in the browser.
 

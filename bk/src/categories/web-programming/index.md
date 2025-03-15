@@ -16,7 +16,7 @@ Create applications for the Web.
 
 {{#include scraping.incl.md}}
 
-## See also
+## See Also
 
 [Are we Web yet?][are-we-web-yet?-website]⮳.
 

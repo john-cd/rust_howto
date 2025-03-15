@@ -26,7 +26,7 @@ Kin in spirit to [Python][p-python]'s `scikit-learn`, [`linfa`][c-linfa]⮳{{hi:
 {{#include ../../../crates/cats/science/tests/ml/smartcore.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [Are we learning yet?][are-we-learning-yet?-website]⮳.
 - [Clustering](https://www.arewelearningyet.com/clustering/)⮳.

@@ -122,7 +122,7 @@ TODO
 - `rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
 - `install-action`: GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
-## See also {#skip}
+## See Also {#skip}
 
 - A type-safe GitHub Actions workflow generator: [`gh-workflow`][c-gh_workflow].
 

@@ -16,7 +16,7 @@ Development tools to help you figure out the performance of your code.
 
 {{#include assembly.incl.md}}
 
-## See also
+## See Also
 
 [Rust Performance Book][book-rust-performance] [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]{{hi:Rust performance}}
 

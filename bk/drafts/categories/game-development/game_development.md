@@ -20,7 +20,7 @@
 {{#include ../../../crates/cats/game_engines/tests/glam.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[game-engines | Game Engines]].
 - [[games | Games]] written in Rust.

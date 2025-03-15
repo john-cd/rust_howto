@@ -33,7 +33,7 @@ This table outlines common tasks for building web clients in Rust and relevant c
 | HTTP Clients (Making Requests) | [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, [`isahc`][c-isahc]⮳{{hi:isahc}}, [`ureq`][c-ureq]⮳{{hi:ureq}} | [`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a popular and versatile HTTP client. [`isahc`][c-isahc]⮳{{hi:isahc}} is another option with a focus on performance. [`ureq`][c-ureq]⮳{{hi:ureq}} is a lightweight and easy-to-use HTTP client. |
 | Asynchronous HTTP Clients | (Often provided by the crates above with async features) | Most modern HTTP client crates support asynchronous requests using `async` and [`await`][c-await]⮳{{hi:await}}. |
 
-## See also
+## See Also
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|

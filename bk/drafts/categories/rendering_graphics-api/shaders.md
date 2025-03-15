@@ -65,7 +65,7 @@ Compute Shaders are often handled through the low-level graphics APIs like [`wgp
 - [[gpu | GPU]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].
 
-## See also {#skip}
+## See Also {#skip}
 
 - [[typecasts | Typecasts]] and especially [`bytemuck`][c-bytemuck]⮳{{hi:bytemuck}} - A crate for mucking around with piles of bytes.
 - [Are we Game yet? - Shaders](https://arewegameyet.rs/ecosystem/shader/).

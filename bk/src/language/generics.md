@@ -10,7 +10,7 @@
 {{#include ../../crates/language/tests/feat/generic_structs.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[structs | Structs]].
 - [[enums | Enums]].

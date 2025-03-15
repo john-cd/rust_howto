@@ -65,7 +65,7 @@ These examples were adapted from a [StackOverflow discussion][stackoverflow-how-
 
 - [[strings | Strings]].
 
-## See also {#skip}
+## See Also {#skip}
 
 - [[lifetimes | Lifetimes]].
 - [[memory-management | Memory Management]].

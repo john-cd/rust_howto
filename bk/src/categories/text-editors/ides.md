@@ -34,7 +34,7 @@
 
 `zed`
 
-## See also
+## See Also
 
 [Six IDEs built for Rust][blog-6-ides-built-for-rust]⮳.
 

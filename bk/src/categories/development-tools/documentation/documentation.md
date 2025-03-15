@@ -36,7 +36,7 @@ To add a "run" button on your documentation (allowing its execution in the rust 
 {{#include ../../../../crates/cats/development_tools/tests/rustdoc4.rs:example}}
 ```
 
-## See also
+## See Also
 
 [The rustdoc book][book-rustdoc]{{hi:rustdoc}}⮳.
 

@@ -2,7 +2,7 @@
 
 {{#include rust_idioms.incl.md}}{{hi:Rust patterns}}
 
-## See also
+## See Also
 
 - [Rust unofficial patterns][rust-unofficial-patterns-github].
 - [Rust state machine pattern][rust-state-machine-pattern].

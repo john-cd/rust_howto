@@ -56,7 +56,7 @@ Your favorite number must be 256.
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/clap.rs:example}}
 ```
 
-## See also
+## See Also
 
 ### `lexopt` {#lexopt}
 

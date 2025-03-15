@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/aerospace_simulation/tests/aero_simulation.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[aerospace | Aerospace]].
 - [[simulation | Simulation]].

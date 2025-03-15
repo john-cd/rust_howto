@@ -24,7 +24,7 @@ Vectors (`Vec`) can only store values that are the same type.
 - [[stack_and_queue | Stacks and Queues]].
 - [[strings | Strings]].
 
-## See also
+## See Also
 
 - [[algorithms | Algorithms]].
 - [[encoding | Encoding]].

@@ -25,7 +25,7 @@
 {{#include ../../../crates/cats/parser_implementations/tests/programming_languages/sqlparser.rs:example}}
 ```
 
-### See also
+### See Also
 
 [`diesel`][c-diesel]⮳{{hi:diesel}} is an ORM that includes SQL parsing.
 

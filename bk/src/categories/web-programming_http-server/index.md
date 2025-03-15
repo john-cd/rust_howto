@@ -74,7 +74,7 @@ This table outlines common tasks for building web servers in Rust and relevant c
 | REST API Design | (Often uses web frameworks and serialization crates) | REST APIs are typically built using web frameworks and serialization crates. |
 | Static File Serving | (Often provided by web frameworks or through crates like `serve-static`) | Serving static files is a common task, often handled by the framework or a dedicated crate. |
 
-## See also
+## See Also
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|

@@ -82,7 +82,7 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 See [Async][p-async]⮳.
 
-## See also
+## See Also
 
 [Traits (blog)][blog-traits]⮳.
 

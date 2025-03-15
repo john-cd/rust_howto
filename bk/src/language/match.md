@@ -30,7 +30,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 {{#include ../../crates/language/tests/feat/while_let.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[control_flow | Control Flow]].
 - [[error_handling | Error Handling]].

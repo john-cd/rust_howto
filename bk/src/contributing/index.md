@@ -14,7 +14,7 @@ Unless you explicitly state otherwise, any contribution you intentionally submit
 
 Please read [CONTRIBUTING.md][rust-howto-contributing] for more details.
 
-## See also
+## See Also
 
 [![rust-howto-todo-github][rust-howto-todo-github-badge]][rust-howto-todo-github]
 

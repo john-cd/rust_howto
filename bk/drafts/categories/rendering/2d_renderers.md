@@ -87,7 +87,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 - [[game_engines | Game Engines]].
 - UI with 2D [Graphics][p-graphics]: see [[gui | GUI]].
 
-## See also {#skip8}
+## See Also {#skip8}
 
 - [Are we Game yet? 2D Rendering](https://arewegameyet.rs/ecosystem/2drendering/): Sprites, vectors, splines, hex grids and more.
 

@@ -8,7 +8,7 @@
 {{#include ../../../crates/cats/aerospace_space_protocols/tests/space_protocols.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[aerospace | Aerospace]].
 - [[aerospace_protocols | Aerospace Protocols]].

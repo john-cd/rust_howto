@@ -22,7 +22,7 @@ Standard networking crates like `std::net` or crates like [`tokio`][c-tokio]⮳{
 
 For specialized hardware, you'll often need to find or create crates that provide access to the device's API or protocol.
 
-## See also {#skip}
+## See Also {#skip}
 
 - [[embedded | Embedded Systems]].
 - [[os | OS]].

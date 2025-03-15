@@ -43,7 +43,7 @@ The [`flume`][c-flume]⮳{{hi:flume}} crate is a library that provides multiple-
 {{#include ../../../crates/cats/concurrency/tests/message_passing/flume.rs:example}}
 ```
 
-## See also
+## See Also
 
 [Message passing (rust book)][book-rust-message-passing]{{hi:Message passing}}⮳.
 

@@ -56,7 +56,7 @@ These methods extract the contained value in an [`std::option::Option`][c-std::o
 {{#include ../../crates/standard_library/tests/option/options3.rs:example}}
 ```
 
-## See also
+## See Also
 
 - [[iterators | Iterators]].
 - [[match | Match]].

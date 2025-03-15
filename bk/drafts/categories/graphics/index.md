@@ -69,7 +69,7 @@ Often requires specialized libraries or custom implementations using compute [[s
 - Mathematics / Linear Algebra: [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`glam`][c-glam]⮳{{hi:glam}} are used for vector and matrix math. Also consider [`cgmath`][c-cgmath]⮳{{hi:cgmath}} and `euclid` for geometry. See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]] and [[game_development | Game Development]].
 - [[simulation | Simulation]] and [[physics_engines | Physics Engines]].
 
-## See also
+## See Also
 
 - [gfx-rs.github.io](https://gfx-rs.github.io).
 
