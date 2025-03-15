@@ -6,7 +6,7 @@ Channels{{hi:Channels}} are similar to single ownership, because once you transf
 
 The Rust [standard library][p-standard-library] provides smart pointer types, such as `Mutex<T>`{{hi:Mutex}} and `Arc<T>`{{hi:Arc}}, that are safe to use in concurrent contexts.
 
-## Maintain a global mutable state {#global-mutable-state}
+## Maintain a Global Mutable State {#global-mutable-state}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static] [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io] [![lazy_static-github][c-lazy_static-github-badge]][c-lazy_static-github] [![lazy_static-lib.rs][c-lazy_static-lib.rs-badge]][c-lazy_static-lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}{{hi:Global mutable state}}
 

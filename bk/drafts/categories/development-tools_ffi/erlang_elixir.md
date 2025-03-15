@@ -1,4 +1,4 @@
-# Generate FFI bindings to Erlang / Elixir code
+# Generate FFI Bindings to Erlang / Elixir Code
 
 {{#include erlang_elixir.incl.md}}
 
@@ -22,7 +22,7 @@ The `erlang_nif` crate allows you to write NIFs in Rust. NIFs run within the Erl
 {{#include ../../../crates/cats/development_tools_ffi/tests/erlang_elixir/rustler.rs:example}}
 ```
 
-## Communication/Serialization (for both ports and NIFs) {#skip}
+## Communication/Serialization (for both Ports and NIFs) {#skip}
 
 Use the following crates:
 

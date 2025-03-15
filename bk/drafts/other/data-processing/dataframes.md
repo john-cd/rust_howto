@@ -2,7 +2,7 @@
 
 {{#include dataframes.incl.md}}
 
-## Manipulate data in a tabular format {#dataframes}
+## Manipulate Data in a Tabular Format {#dataframes}
 
 [![polars][c-polars-badge]][c-polars]{{hi:polars}} [![polars-book][c-polars-book-badge]][c-polars-book] [![polars-github][c-polars-github-badge]][c-polars-github]{{hi:Dataframes}}
 

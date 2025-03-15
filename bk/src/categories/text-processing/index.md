@@ -33,7 +33,7 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 {{#include text_manipulation.incl.md}}
 
-### Find, Extract, and Replace Text using Regular Expressions
+### Find, Extract, and Replace Text Using Regular Expressions
 
 {{#include regex.incl.md}}
 

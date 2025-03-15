@@ -1,4 +1,4 @@
-# Key-value stores
+# Key-value Stores
 
 {{#include key_value_stores.incl.md}}
 

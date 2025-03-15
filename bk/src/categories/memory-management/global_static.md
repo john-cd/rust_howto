@@ -1,8 +1,8 @@
-# Global static
+# Global Static
 
 {{#include global_static.incl.md}}
 
-## Declare lazily evaluated constants {#declare-lazily-evaluated-constant}
+## Declare Lazily Evaluated Constants {#declare-lazily-evaluated-constant}
 
 [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
 [![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io]

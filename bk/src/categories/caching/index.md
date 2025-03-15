@@ -22,21 +22,21 @@ Refer to the following chapters:
 - [[file_watching | File Watching]].
 - [[watching_for_changes | Watching for Changes]].
 
-## Web page caching
+## Web Page Caching
 
 See:
 
 - [[web-programming | Web Programming]].
 - [[web-programming_http-server | Web Programming HTTP Server]].
 
-## Database query caching
+## Database Query Caching
 
 Refer to:
 
 - [[database | Database]].
 - [[database-implementations | Database Implementations]].
 
-### Serialization and Deserialization prior to Caching
+### Serialization and Deserialization Prior to Caching
 
 Refer to:
 

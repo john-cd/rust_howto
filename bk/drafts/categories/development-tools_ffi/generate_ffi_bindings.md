@@ -1,8 +1,8 @@
-# Generate Foreign Function Interface (FFI) bindings to C or C++ code
+# Generate Foreign Function Interface (FFI) Bindings to C or C++ Code
 
 {{#include generate_ffi_bindings.incl.md}}
 
-## Generate Rust code that calls into C libraries with `bindgen` {#bindgen}
+## Generate Rust code that Calls into C Libraries with `bindgen` {#bindgen}
 
 [![bindgen][c-bindgen-badge]][c-bindgen]{{hi:bindgen}}
 [![bindgen-crates.io][c-bindgen-crates.io-badge]][c-bindgen-crates.io]
@@ -17,7 +17,7 @@
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/bindgen.rs:example}}
 ```
 
-## Generates C header files from Rust code with `cbindgen` {#cbindgen}
+## Generates C Header Files from Rust code with `cbindgen` {#cbindgen}
 
 [![cbindgen][c-cbindgen-badge]][c-cbindgen]{{hi:cbindgen}}
 [![cbindgen-crates.io][c-cbindgen-crates.io-badge]][c-cbindgen-crates.io]
@@ -32,7 +32,7 @@
 {{#include ../../../crates/cats/development_tools_ffi/tests/c/cbindgen.rs:example}}
 ```
 
-## Interop between C++ and Rust {#cxx}
+## Interop Between C++ and Rust {#cxx}
 
 [![cxx][c-cxx-badge]][c-cxx]{{hi:cxx}}
 [![cxx-crates.io][c-cxx-crates.io-badge]][c-cxx-crates.io]

@@ -15,7 +15,7 @@ A powerful mock object library for Rust.
 
 {{#example mockall}}
 
-## Mock structs with `faux` {#faux}
+## Mock Structs with `faux` {#faux}
 
 [![faux][c-faux-badge]][c-faux] [![faux-crates.io][c-faux-crates.io-badge]][c-faux-crates.io] [![faux-github][c-faux-github-badge]][c-faux-github] [![faux-lib.rs][c-faux-lib.rs-badge]][c-faux-lib.rs]{{hi:faux}}{{hi:faux}}{{hi:Mock}}{{hi:Mocking}}{{hi:Test}}{{hi:Testing}}
 

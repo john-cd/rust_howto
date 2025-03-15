@@ -1,10 +1,10 @@
-# Build time tooling
+# Build Time Tooling
 
 {{#include build_time_tooling.incl.md}}
 
 This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See [`crates.io`][crates.io-website]{{hi:crates.io}}'s [documentation on the matter][book-cargo-build-script]⮳ for more information.
 
-## Compile and link statically to a bundled C library {#cc}
+## Compile and Link Statically to a Bundled C Library {#cc}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build utils}}
 
@@ -58,7 +58,7 @@ void greet(const char* name) {
 {{#include ../../../crates/cats/development_tools_build_utils/tests/cc_bundled_static1.rs:example}}
 ```
 
-## Compile and link statically to a bundled C++ library {#cpp}
+## Compile and Link Statically to a Bundled C++ Library {#cpp}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
@@ -101,7 +101,7 @@ int multiply(int x, int y) {
 {{#include ../../../crates/cats/development_tools_build_utils/tests/cc_bundled_cpp1.rs:example}}
 ```
 
-## Compile a C library while setting custom defines {#cc-custom-defines}
+## Compile a C Library While Setting Custom Defines {#cc-custom-defines}
 
 [![cc][c-cc-badge]][c-cc]{{hi:cc}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

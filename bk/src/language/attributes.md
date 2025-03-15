@@ -15,7 +15,7 @@
 
 Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribute is declared within.
 
-## Lint attributes {#lint-attributes}
+## Lint Attributes {#lint-attributes}
 
 During early development, place the following attributes at the top of `main.rs` or `lib.rs`:
 
@@ -37,7 +37,7 @@ You also apply these attributes to specific [functions][p-functions]:
 
 List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
 
-## Automatically derive common traits {#automatic-trait-derivation}
+## Automatically Derive Common Traits {#automatic-trait-derivation}
 
 See [Automatic derivation][p-automatic-derivation].
 
@@ -55,7 +55,7 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../../crates/language/tests/feat/attributes_deprecated.rs:example}}
 ```
 
-## Compile conditionally {#conditional-compilation}
+## Compile Conditionally {#conditional-compilation}
 
 [Conditional compilation][book-rust-reference-conditional-compilation]⮳.
 

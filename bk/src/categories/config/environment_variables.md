@@ -1,4 +1,4 @@
-# Environment variables
+# Environment Variables
 
 {{#include environment_variables.incl.md}}
 

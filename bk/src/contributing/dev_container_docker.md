@@ -31,9 +31,9 @@ Test the docker compose{{hi:docker compose}} setup used during development (whic
 
 ```bash
 cd ./.devcontainer
-docker compose build # uses compose.yaml and compose.override.yaml
+docker compose build # Uses `compose.yaml` and `compose.override.yaml`
 docker compose up -d
-# or simply
+# Or simply
 docker compose up --build -d
 ```
 
@@ -46,7 +46,7 @@ Test the docker compose setup used during CI using:
 ```bash
 cd ./.devcontainer
 docker compose -f compose.yaml -f compose-ci.yaml build
-docker compose -f compose.yaml -f compose-ci.yaml run book # or simply docker compose -f compose.yaml -f compose-ci.yaml up
+docker compose -f compose.yaml -f compose-ci.yaml run book # Or simply docker compose -f compose.yaml -f compose-ci.yaml up
 ```
 
 It uses the `ci` target in `.devcontainer/Dockerfile`.
@@ -60,15 +60,15 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rus
 
 [Related Stackoverflow question][stackoverflow-use-local-dockerfile-in-a-github-action]⮳.
 
-### Push image to Docker Hub {#push-image-to-docker-hub}
+### Push Image to Docker Hub {#push-image-to-docker-hub}
 
 From the project root folder, use the following to build and push the `development` image:
 
 ```bash
 docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.75.0-slim-bookworm --build-arg MDBOOK_VERSION=0.4.36 .
-# or docker tag rust_howto_dev johncd/rust_howto_dev:latest
+# Or `docker tag rust_howto_dev johncd/rust_howto_dev:latest`
 docker login
-# or docker login -u "user" -p "password" docker.io
+# Or `docker login -u "user" -p "password" docker.io`
 docker push johncd/rust_howto_dev:latest
 ```
 

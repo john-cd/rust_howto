@@ -13,7 +13,7 @@
 
 Rust tool to collect and aggregate code coverage data for multiple source files.
 
-## Measure your code coverage with `cargo_tarpaulin` {#cargo_tarpaulin}
+## Measure your code Coverage with `cargo_tarpaulin` {#cargo_tarpaulin}
 
 [![cargo_tarpaulin-github][c-cargo_tarpaulin-github-badge]][c-cargo_tarpaulin-github]{{hi:cargo-tarpaulin}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 

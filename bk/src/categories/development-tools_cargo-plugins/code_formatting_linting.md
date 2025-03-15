@@ -1,8 +1,8 @@
-# Code formatting and linting
+# Code Formatting and Linting
 
 {{#include code_formatting_linting.incl.md}}
 
-## Format your code {#rustfmt}
+## Format Your Code {#rustfmt}
 
 [![rustfmt-nightly][c-rustfmt_nightly-badge]][c-rustfmt_nightly]{{hi:rustfmt-nightly}}
 [![rustfmt-nightly-crates.io][c-rustfmt_nightly-crates.io-badge]][c-rustfmt_nightly-crates.io]
@@ -22,7 +22,7 @@ cargo fmt
 cargo fmt -- --check
 ```
 
-## Lint your code {#cargo-clippy}
+## Lint Your Code {#cargo-clippy}
 
 [![clippy][c-clippy-badge]][c-clippy]{{hi:clippy}}
 [![clippy-crates.io][c-clippy-crates.io-badge]][c-clippy-crates.io]
@@ -39,7 +39,7 @@ cargo clippy
 
 Mute a warning using the `#[allow(clippy::lint_name)]` attributes.
 
-## Fix compiler warnings automatically {#rustfix}
+## Fix Compiler Warnings Automatically {#rustfix}
 
 [![rustfix][c-rustfix-badge]][c-rustfix]{{hi:rustfix}}
 [![rustfix-crates.io][c-rustfix-crates.io-badge]][c-rustfix-crates.io]
@@ -53,7 +53,7 @@ Can automatically fix compiler warnings that have a clear way to correct the pro
 cargo fix
 ```
 
-## Format or lint your code before committing it {#cargo-husky}
+## Format or Lint Your Code Before Committing it {#cargo-husky}
 
 [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]{{hi:cargo-husky}}
 [![cargo-husky-crates.io][c-cargo_husky-crates.io-badge]][c-cargo_husky-crates.io]

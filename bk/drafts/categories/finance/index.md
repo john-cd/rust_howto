@@ -16,7 +16,7 @@ Date/time handling is essential. Data access depends on your data source. Tradin
 
 For advanced analysis, you'll likely need the statistics and linear algebra crates.
 
-## Financial modeling
+## Financial Modeling
 
 Building models to analyze financial data.
 

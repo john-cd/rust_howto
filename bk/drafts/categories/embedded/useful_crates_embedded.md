@@ -1,4 +1,4 @@
-# Useful crates for embedded systems programming
+# Useful Crates for Embedded Systems Programming
 
 {{#include useful_crates_embedded.incl.md}}
 

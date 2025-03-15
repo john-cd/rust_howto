@@ -1,4 +1,4 @@
-# Key crates
+# Key Crates
 
 {{#include index.incl.md}}
 

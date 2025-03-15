@@ -1,14 +1,14 @@
-# Development tools written in Rust
+# Development Tools Written in Rust
 
 {{#include development_tools.incl.md}}
 
-## JavaScript tooling {#javascript-tooling}
+## JavaScript Tooling {#javascript-tooling}
 
 - [Volta][volta-website]⮳[(github)][volta-github]⮳.
 - [Deno][deno-website]⮳ uses Rust for its JavaScript and TypeScript runtime.
 - `Bun`.
 
-### `swc` compiler {#swc}
+### `swc` Compiler {#swc}
 
 [![swc][c-swc-badge]][c-swc]{{hi:swc}}
 [![swc-crates.io][c-swc-crates.io-badge]][c-swc-crates.io]
@@ -19,7 +19,7 @@
 
 See also [[programming_languages | Programming Language]] parsers.
 
-## Code editors {#code-editors}
+## Code Editors {#code-editors}
 
 ### `lapce` {#lapce}
 
@@ -38,7 +38,7 @@ See also [[programming_languages | Programming Language]] parsers.
 
 [`zed`][c-zed-github]{{hi:zed}}⮳ is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
 
-## Build tools {#build-tools}
+## Build Tools {#build-tools}
 
 [`pantsbuild.org`][pantsbuild-website]⮳ {{hi:pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker.
 

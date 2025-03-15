@@ -2,7 +2,7 @@
 
 {{#include string_concat.incl.md}}
 
-## Concatenate strings {#string-concat}
+## Concatenate Strings {#string-concat}
 
 String concatenation is the operation of joining two or more strings together end-to-end to create a new, single string.
 

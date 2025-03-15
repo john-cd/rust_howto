@@ -6,7 +6,7 @@
 - [`fluent`][c-fluent]⮳{{hi:fluent}} is a localization system developed by Mozilla. The [`fluent-rs`][c-fluent]⮳{{hi:fluent-rs}} crate provides bindings to Fluent. It is often a preferred option for new projects.
 - [`intl-rs`][c-intl_rs]⮳{{hi:intl-rs}} provides some internationalization utilities, but it's not a full localization solution on its own.
 
-## Internationalize your app {#internationalization}
+## Internationalize Your App {#internationalization}
 
 ```rust,editable
 {{#include ../../../crates/cats/internationalization/tests/internationalization1.rs:example}}

@@ -38,7 +38,7 @@ CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It's
 
 See [[containers | Containers]].
 
-## Devops tools written in Rust
+## Devops Tools Written in Rust
 
 Rust is also commonly being used to build DevOps tools. A few examples follow:
 

@@ -13,7 +13,7 @@ Currently available subcommands:
 - `cargo upgrade`.
 - `cargo set-version`.
 
-## Find unused dependencies {#find-unused-dependencies}
+## Find Unused Dependencies {#find-unused-dependencies}
 
 ### `cargo udeps` {#skip1}
 
@@ -44,7 +44,7 @@ cargo install cargo-machete
 cargo machete
 ```
 
-## Detect dependencies that are out of date {#cargo-outdated}
+## Detect Dependencies that are out of Date {#cargo-outdated}
 
 [![cargo-outdated][c-cargo_outdated-badge]][c-cargo_outdated]{{hi:cargo-outdated}}
 [![cargo-outdated-crates.io][c-cargo_outdated-crates.io-badge]][c-cargo_outdated-crates.io]
@@ -55,7 +55,7 @@ cargo machete
 
 If you are using VS Code, also look into the `Dependi` VS Code plugin.
 
-## Lint your crate API changes for semver violations {#cargo-semver-checks}
+## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}
 
 [![cargo-semver-checks][c-cargo_semver_checks-badge]][c-cargo_semver_checks]
 [![cargo-semver-checks-crates.io][c-cargo_semver_checks-crates.io-badge]][c-cargo_semver_checks-crates.io]
@@ -67,17 +67,17 @@ If you are using VS Code, also look into the `Dependi` VS Code plugin.
 [`cargo-semver-checks`][c-cargo_semver_checks]⮳{{hi:cargo-semver-checks}} scans your Rust crate for [`semver`][c-semver]⮳{{hi:semver}} violations.
 
 ```sh
-# If you already use `cargo-binstall` for faster tool installations:
+# If you Already Use `cargo-binstall` for Faster Tool installations:
 $ cargo binstall cargo-semver-checks
 
 # Otherwise:
 $ cargo install cargo-semver-checks --locked
 
-# Lint a new release for SemVer breakage before `cargo publish`:
+# Lint a new Release for SemVer Breakage Before `cargo publish`:
 $ cargo semver-checks
 ```
 
-## Manage the `cargo` cache {#cargo-cache}
+## Manage the `cargo` Cache {#cargo-cache}
 
 [![cargo-cache][c-cargo_cache-badge]][c-cargo_cache]{{hi:cargo-cache}}
 [![cargo-cache-crates.io][c-cargo_cache-crates.io-badge]][c-cargo_cache-crates.io]

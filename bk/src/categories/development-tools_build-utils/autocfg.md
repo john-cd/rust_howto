@@ -1,4 +1,4 @@
-# Configure code based on compiler support
+# Configure Code Based on Compiler Support
 
 {{#include build_cache.incl.md}}
 
@@ -14,7 +14,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [build-dependencies]
-autocfg = "1.0.0" # or latest version
+autocfg = "1.0.0" # Or latest version
 ```
 
 ```rust,editable

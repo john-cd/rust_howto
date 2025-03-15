@@ -1,8 +1,8 @@
-# CSV processing
+# CSV Processing
 
 {{#include csv.incl.md}}
 
-## Read CSV records {#read-csv-records}
+## Read CSV Records {#read-csv-records}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -19,7 +19,7 @@ Reads standard [CSV][p-csv] records into [`csv::StringRecord`][c-csv::StringReco
 {{#include ../../../crates/cats/encoding/tests/csv/read1.rs:example}}
 ```
 
-## Read CSV records with different delimiter {#read-csv-different-delimiter}
+## Read CSV Records with Different Delimiters {#read-csv-different-delimiter}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi: Delimiter}}
 
@@ -29,7 +29,7 @@ Reads [CSV][p-csv] records with a tab [`csv::ReaderBuilder::delimiter`][c-csv::R
 {{#include ../../../crates/cats/encoding/tests/csv/delimiter.rs:example}}
 ```
 
-## Filter CSV records matching a predicate {#filter-csv}
+## Filter CSV Records {#filter-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -41,7 +41,7 @@ Returns _only_ the rows from `data` with a field that matches `query`.
 
 This example has been adapted from [the `csv` crate tutorial][c-csv-tutorial]⮳.
 
-## Handle invalid CSV data with `serde` {#handle-invalid-csv}
+## Handle Invalid CSV data with `serde` {#handle-invalid-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -51,7 +51,7 @@ CSV files often contain invalid data{{hi:Invalid data}}. For these cases, the [`
 {{#include ../../../crates/cats/encoding/tests/csv/invalid.rs:example}}
 ```
 
-## Serialize records to CSV {#serialize-to-csv}
+## Serialize Records to CSV {#serialize-to-csv}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -61,7 +61,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c-csv::Writer]
 {{#include ../../../crates/cats/encoding/tests/csv/serialize.rs:example}}
 ```
 
-## Serialize records to CSV using `serde` {#serialize-to-csv-using-serde}
+## Serialize Records to CSV Using `serde` {#serialize-to-csv-using-serde}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -71,7 +71,7 @@ The following example shows how to serialize custom [structs][p-structs]{{hi:Ser
 {{#include ../../../crates/cats/encoding/tests/csv/serde_serialize.rs:example}}
 ```
 
-## Transform a CSV column {#transform-csv-column}
+## Transform a CSV Column {#transform-csv-column}
 
 [![csv][c-csv-badge]][c-csv]{{hi:csv}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

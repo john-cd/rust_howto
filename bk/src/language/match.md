@@ -1,4 +1,4 @@
-# Match, if let, while let {#match}
+# Match, if let, While let {#match}
 
 {{#include match.incl.md}}
 

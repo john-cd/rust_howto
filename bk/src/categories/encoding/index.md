@@ -70,7 +70,7 @@ See [[xml | XML]].
 
 See [[_binary_encoders |  Binary Encoders]].
 
-## Binary Encoders without external schemas
+## Binary Encoders Without External Schemas
 
 {{#include no_external_schema.incl.md}}
 

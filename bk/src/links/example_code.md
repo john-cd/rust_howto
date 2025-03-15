@@ -1,4 +1,4 @@
-# Example code {#example-code}
+# Example Code {#example-code}
 
 {{#include example_code.incl.md}}{{hi:Example code}}
 
@@ -12,7 +12,7 @@ Example codebases include:
 
 - A full-stack RealWorld implementation using Rust, [`axum`][c-axum]⮳{{hi:axum}}, [`sqlx`][c-sqlx]⮳{{hi:sqlx}}, and [`yew`][c-yew]⮳{{hi:yew}}: [realworld-rust-axum-sqlx][realworld-rust-axum-sqlx-github]⮳.
 
-## Source code for Rust books {#rust-book-source-code}
+## Source Code for Rust Books {#rust-book-source-code}
 
 - [code][book-zero-to-production-github]⮳ for [Zero To Production In Rust (book)][book-zero-to-production]⮳.
 - Source Code for ['Practical Rust Web Projects'][practical-rust-web-projects-github]⮳ by Shing Lyu.

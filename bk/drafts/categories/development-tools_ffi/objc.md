@@ -1,4 +1,4 @@
-# Generate FFI bindings to Objective-C code
+# Generate FFI Bindings to Objective-C Code
 
 {{#include objc.incl.md}}
 

@@ -1,8 +1,8 @@
-# Send, Sync traits
+# Send, Sync Traits
 
 {{#include send_sync.incl.md}}{{hi:Send}}{{hi:Sync}{{hi:'static}}}
 
-## `Send` and `Sync` traits {#send-sync}
+## `Send` and `Sync` Traits {#send-sync}
 
 The `Send` and `Sync` [traits][p-traits] are fundamental to Rust's [concurrency][p-concurrency]. You can think of Send as "Exclusive access is thread-safe," and Sync as "Shared access is thread-safe."
 
@@ -22,7 +22,7 @@ A type is `Sync` if it is safe to be referenced from multiple threads _simultane
 {{#include ../../../crates/cats/concurrency/tests/send_sync/send_sync.rs:example}}
 ```
 
-## Existing implementations of `Send` and `Sync` {#existing-impl-send-sync}
+## Existing Implementations of `Send` and `Sync` {#existing-impl-send-sync}
 
 | Traits | Types |
 |---|---|

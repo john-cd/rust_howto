@@ -1,8 +1,8 @@
-# Memory usage analysis
+# Memory Usage Analysis
 
 {{#include memory_usage_analysis.incl.md}}
 
-## Profile heap memory {#dhat}
+## Profile Heap Memory {#dhat}
 
 [![dhat][c-dhat-badge]][c-dhat]{{hi:dhat}}
 [![dhat-crates.io][c-dhat-crates.io-badge]][c-dhat-crates.io]
@@ -31,11 +31,11 @@
 [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `memcheck`): Excellent for detecting memory leaks.
 Address Sanitizer (`ASan`): Often integrated into the compiler; can detect memory leaks and other memory errors. Enable it with compiler flags (e.g., `-fsanitize=address`).
 
-## Memory Usage Analysis (for specific regions) {#skip}
+## Memory Usage Analysis (for Specific regions) {#skip}
 
 [`measure_time`][c-measure_time]⮳{{hi:measure_time}}: While not strictly a memory profiler, it can help you measure the execution time of code blocks, which can be useful when investigating memory-related performance issues.
 
-## Debugging Tools (for examining memory) {#skip}
+## Debugging Tools (for Examining memory) {#skip}
 
 [`gdb`][c-gdb]⮳{{hi:gdb}}, [`lldb`][c-lldb]⮳{{hi:lldb}}: Debuggers can be used to inspect memory, examine variables, and track allocations.
 

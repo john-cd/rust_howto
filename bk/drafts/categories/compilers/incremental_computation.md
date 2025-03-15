@@ -2,7 +2,7 @@
 
 {{#include incremental_computation.incl.md}}
 
-## Implementing incremental computation with `salsa` {#salsa}
+## Implementing Incremental Computation with `salsa` {#salsa}
 
 [![salsa][c-salsa-badge]][c-salsa] [![salsa-crates.io][c-salsa-crates.io-badge]][c-salsa-crates.io] [![salsa-github][c-salsa-github-badge]][c-salsa-github] [![salsa-lib.rs][c-salsa-lib.rs-badge]][c-salsa-lib.rs]{{hi:salsa}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
@@ -10,7 +10,7 @@
 
 [`salsa`][c-salsa]⮳{{hi:salsa}} is designed for situations where you have a large computation that can be broken down into smaller, interdependent pieces. Salsa automatically tracks dependencies between these pieces, and when a change occurs, it only recomputes the affected parts, rather than the entire computation. This is crucial for [performance][p-performance] in scenarios like compilers, build systems, and interactive tools where changes are frequent and full recomputation is expensive.
 
-## Implementing incremental computation with `comemo` {#comemo}
+## Implementing Incremental Computation with `comemo` {#comemo}
 
 [![comemo][c-comemo-badge]][c-comemo] [![comemo-crates.io][c-comemo-crates.io-badge]][c-comemo-crates.io] [![comemo-github][c-comemo-github-badge]][c-comemo-github] [![comemo-lib.rs][c-comemo-lib.rs-badge]][c-comemo-lib.rs]{{hi:comemo}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 

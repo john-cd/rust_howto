@@ -24,7 +24,7 @@
 
 [`rust-analyzer`][rust-analyzer-website]⮳.
 
-## Write Rust code with the `zed` editor {#zed}
+## Write Rust code with the `zed` Editor {#zed}
 
 [![zed][c-zed-badge]][c-zed-website]{{hi:zed}}
 [![zed][c-zed-badge]][c-zed-website]{{hi:zed}}

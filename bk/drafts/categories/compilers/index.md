@@ -10,7 +10,7 @@ Tools for programming languages: compilers, interpreters, transpilers, and virtu
 
 {{#include incremental_computation.incl.md}}
 
-## Compiler implementations
+## Compiler Implementations
 
 TODO
 
@@ -30,7 +30,7 @@ See also [[transpilers | Transpilers]].
 
 `typify`: JSON schema to rust type code generator.
 
-## Compiler implementations, including interpreters and transpilers
+## Compiler Implementations, Including Interpreters and Transpilers
 
 ### Cucumber
 

@@ -1,4 +1,4 @@
-# Embassy and friends
+# Embassy and Friends
 
 {{#include embassy.incl.md}}
 

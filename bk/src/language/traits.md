@@ -8,7 +8,7 @@
 
 {{i:Trait}} methods{{hi:Methods}} are in scope only when their trait is.
 
-## Default implementation {#default-implementation}
+## Default Implementation {#default-implementation}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/traits2.rs:example}}
@@ -20,7 +20,7 @@
 {{#include ../../crates/language/tests/feat/traits3.rs:example}}
 ```
 
-## "Newtype" pattern {#newtype-pattern}
+## "Newtype" Pattern {#newtype-pattern}
 
 Unlike interfaces{{hi:Interfaces}} in languages like Java, C# or Scala, new traits{{hi:Traits}} can be implemented for _existing_ types.
 
@@ -34,13 +34,13 @@ One restriction to note is that we can implement a trait on a type only if at le
 {{#include ../../crates/language/tests/feat/newtype.rs:example}}
 ```
 
-## Traits as parameters {#traits-as-parameters}
+## Traits as Parameters {#traits-as-parameters}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/traits_as_parameters.rs:example}}
 ```
 
-## Multiple traits {#multiple-traits}
+## Multiple Traits {#multiple-traits}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/traits5.rs:example}}
@@ -54,31 +54,31 @@ One restriction to note is that we can implement a trait on a type only if at le
 {{#include ../../crates/language/tests/feat/rpit.rs:example}}
 ```
 
-## Generic traits {#generic-traits}
+## Generic Traits {#generic-traits}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/generic_traits.rs:example}}
 ```
 
-## Associated types {#associated-types}
+## Associated Types {#associated-types}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/associated_types.rs:example}}
 ```
 
-## Trait bounds {#trait-bounds}
+## Trait Bounds {#trait-bounds}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/trait_bounds.rs:example}}
 ```
 
-## Constants in traits {#constants-in-traits}
+## Constants in Traits {#constants-in-traits}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/const_in_traits.rs:example}}
 ```
 
-## Async and traits {#async-and-traits}
+## Async and Traits {#async-and-traits}
 
 See [Async][p-async]⮳.
 

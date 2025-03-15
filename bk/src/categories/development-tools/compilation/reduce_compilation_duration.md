@@ -1,4 +1,4 @@
-# Reduce compilation duration
+# Reduce Compilation Duration
 
 {{#include reduce_compilation_duration.incl.md}}
 
@@ -43,7 +43,7 @@ Build Profiles: (Optimize for release builds with appropriate flags in Cargo.tom
 Compiler Flags: (Experiment with compiler flags, but be careful and measure improvements)
 Code Generation: (Avoid excessive monomorphization, consider techniques like dynamic dispatch where applicable)
 
-## Measure build times {#build-time}
+## Measure Build Times {#build-time}
 
 [![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -55,7 +55,7 @@ time cargo build
 cargo build --timings
 ```
 
-## Optimize compilation levels {#optimization-levels}
+## Optimize Compilation Levels {#optimization-levels}
 
 [![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -71,7 +71,7 @@ opt-level = 1
 opt-level = 3
 ```
 
-## Use dynamic linking {#dynamic-linking}
+## Use Dynamic Linking {#dynamic-linking}
 
 [![cargo-add-dynamic][c-cargo_add_dynamic-badge]][c-cargo_add_dynamic] [![cargo-add-dynamic-crates.io][c-cargo_add_dynamic-crates.io-badge]][c-cargo_add_dynamic-crates.io] [![cargo-add-dynamic-github][c-cargo_add_dynamic-github-badge]][c-cargo_add_dynamic-github] [![cargo-add-dynamic-lib.rs][c-cargo_add_dynamic-lib.rs-badge]][c-cargo_add_dynamic-lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -83,7 +83,7 @@ cargo build
 
 [Speeding up incremental Rust compilation with dylibs][blog-speeding-up-incremental-rust-compilation]⮳.
 
-## Compile incrementally {#incremental-compilation}
+## Compile Incrementally {#incremental-compilation}
 
 [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 

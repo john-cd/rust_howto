@@ -2,7 +2,7 @@
 
 {{#include cargo.incl.md}}
 
-## Basic `cargo` usage {#basic-cargo-usage}
+## Basic `cargo` Usage {#basic-cargo-usage}
 
 [The Cargo book][c-cargo-book]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:cargo}}
 
@@ -13,10 +13,10 @@
 ```sh
 cargo --version
 
-# Create a new project. Can add --bin or --lib
+# Create a new project. You can add `--bin` or `--lib`
 cargo new hello_cargo
 
-# Creates an executable file in target/debug/hello_cargo
+# Creates an executable file in `target/debug/hello_cargo`
 cargo build
 cargo build --release
 
@@ -26,7 +26,7 @@ cargo run
 # Pass arguments to the program and collect output
 cargo run -- arg1 somefile.txt > output.txt
 
-# Quickly checks your code to make sure it compiles but doesn't produce an executable
+# Quickly checks your code to make sure it compiles, but doesn't produce an executable
 cargo check
 
 # Removes build artifacts
@@ -35,13 +35,13 @@ cargo clean
 # Looks for tests to run in two places: in each of your src files and any tests in tests/.
 cargo test
 
-# Updates all dependencies - respect the SemVer constraints in cargo.toml
+# Updates all dependencies - respect the SemVer constraints in Cargo.toml
 cargo update
 # Updates just "regex"
 cargo update -p regex
 ```
 
-## `Cargo.toml` and lock files {#cargo-toml}
+## `Cargo.toml` and Lock Files {#cargo-toml}
 
 ```toml
 # Configure the package
@@ -55,11 +55,11 @@ edition = "2021"
 
 [dependencies]
 
-# Reference a crate to be pulled from `crates.io`
+# Reference a Crate to be Pulled from `crates.io`
 time = "0.1.12"
-# This is equivalent to the ^0.1.12 SemVer version range.
-# `cargo update time` should update to version 0.1.13 if it is the latest 0.1.z release,
-# but would not update to 0.2.0
+# This is equivalent to the `^0.1.12` SemVer version range.
+# `cargo update time` should update to version `0.1.13`, if it is the latest `0.1.z` release,
+# but would not update to `0.2.0`
 
 # Reference a Git repo
 regex = { git = "https://github.com/rust-lang/regex.git" }

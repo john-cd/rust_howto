@@ -10,13 +10,13 @@ There are two main [data structures][p-data-structures] in [`ansi_term`][c-ansi_
 
 **Note:** British English uses *Color* instead of *Color*.
 
-## Print colored text to the terminal {#colored-text}
+## Print Colored Text to the Terminal {#colored-text}
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic.rs:example}}
 ```
 
-### Print bold text to the terminal {#bold-text}
+### Print Bold Text to the Terminal {#bold-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -26,7 +26,7 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic1.rs:example}}
 ```
 
-### Print bold and colored text to the terminal {#bold-colored-text}
+### Print Bold and Colored Text to the Terminal {#bold-colored-text}
 
 [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -36,7 +36,7 @@ For anything more complex than plain foreground color changes, the code needs to
 {{#include ../../../crates/cats/command_line_interface/tests/ansi_term/ansi_term_basic2.rs:example}}
 ```
 
-## Manipulate the cursor, style the output, handle input events {#crossterm}
+## Manipulate the Cursor, Style the Output, Handle Input Events {#crossterm}
 
 [![crossterm][c-crossterm-badge]][c-crossterm]{{hi:crossterm}}
 [![crossterm-crates.io][c-crossterm-crates.io-badge]][c-crossterm-crates.io]

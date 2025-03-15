@@ -1,4 +1,4 @@
-# Generate FFI bindings to Ruby code
+# Generate FFI Bindings to Ruby Code
 
 {{#include ruby.incl.md}}
 
@@ -16,7 +16,7 @@ The [`rutie`][c-rutie]⮳{{hi:rutie}} crate provides a high-level and safe inter
 {{#include ../../../crates/cats/development_tools_ffi/tests/ruby/rutie.rs:example}}
 ```
 
-## Write Ruby extension gems in Rust, or call Ruby code from a Rust with `magnus` {#magnus}
+## Write Ruby Extension gems in Rust, or call Ruby code from a Rust with `magnus` {#magnus}
 
 [![magnus][c-magnus-badge]][c-magnus] [![magnus-crates.io][c-magnus-crates.io-badge]][c-magnus-crates.io] [![magnus-github][c-magnus-github-badge]][c-magnus-github] [![magnus-lib.rs][c-magnus-lib.rs-badge]][c-magnus-lib.rs]{{hi:magnus}}{{hi:Ruby}}{{hi:Extension}}{{hi:Gem}}{{hi:Rubygem}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 
@@ -31,7 +31,7 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 - Directly using the Ruby C API is possible, but it's complex and error-prone. [`rutie`][c-rutie]⮳{{hi:rutie}} is almost always the better choice.
 - Embedding Ruby: You can also embed a Ruby interpreter in your Rust application using the Ruby C API (and thus, [`rutie`][c-rutie]⮳{{hi:rutie}}).
 
-## Communication / Data Marshaling between Ruby and Rust {#skip1}
+## Communication / Data Marshaling Between Ruby and Rust {#skip1}
 
 The `rutie` crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c-serde]⮳{{hi:serde}} can be used for serializing and deserializing data if needed, but often [`rutie`][c-rutie]⮳{{hi:rutie}}'s built-in conversion mechanisms are sufficient.
 

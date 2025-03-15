@@ -4,11 +4,11 @@
 
 Make HTTP network requests.
 
-## HTTP client libraries
+## HTTP Client Libraries
 
 {{#include http_clients.incl.md}}
 
-## Make HTTP requests
+## Make HTTP Requests
 
 {{#include requests.incl.md}}
 
@@ -16,7 +16,7 @@ Make HTTP network requests.
 
 {{#include apis.incl.md}}
 
-## Download and upload
+## Download and Upload
 
 {{#include download.incl.md}}
 

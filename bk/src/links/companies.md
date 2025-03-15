@@ -1,4 +1,4 @@
-# Companies that use or contribute to Rust {#companies}
+# Companies that Use or Contribute to Rust {#companies}
 
 {{#include companies.incl.md}}
 

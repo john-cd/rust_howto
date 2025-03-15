@@ -1,8 +1,8 @@
-# Low-level interaction with the operating system
+# Low-level Interaction with the Operating System
 
 {{#include low_level_system_calls.incl.md}}
 
-## Call `libc`, the C standard library {#call-libc}
+## Call `libc`, the C Standard Library {#call-libc}
 
 [![libc][c-libc-badge]][c-libc]{{hi:libc}}
 [![libc-crates.io][c-libc-crates.io-badge]][c-libc-crates.io]

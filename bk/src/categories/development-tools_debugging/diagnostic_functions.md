@@ -1,8 +1,8 @@
-# Diagnostic functions
+# Diagnostic Functions
 
 {{#include diagnostic_functions.incl.md}}
 
-## Get the type name of the pointed-to value {#type-name-of-val}
+## Get the Type Name of the Pointed-to Value {#type-name-of-val}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

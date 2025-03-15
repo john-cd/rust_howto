@@ -1,4 +1,4 @@
-# Stack-allocated arrays
+# Stack-allocated Arrays
 
 {{#include stack_allocated_arrays.incl.md}}
 

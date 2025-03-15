@@ -1,4 +1,4 @@
-# Rust + containers
+# Rust + Containers
 
 {{#include containers.incl.md}}
 

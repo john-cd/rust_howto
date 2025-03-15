@@ -40,7 +40,7 @@ before = [ "links" ]
 
 Please review the `test_book\book.toml` for a complete example.
 
-## Remove hidden sections
+## Remove Hidden Sections
 
 ```html
 <div class="hidden">This is not be seen.</div>

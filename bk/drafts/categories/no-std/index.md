@@ -32,7 +32,7 @@ Remember to handle panics appropriately. Consider other useful crates like [`nb`
 
 {{#include no_std.incl.md}}
 
-## Crates that are able to function without the Rust standard library
+## Crates Functioning Without the Rust Standard Library
 
 Consult the [`no-std`][cat-no-std] category on `crates.io`.
 

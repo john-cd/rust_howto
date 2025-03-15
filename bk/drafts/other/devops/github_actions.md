@@ -4,7 +4,7 @@
 
 GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
-## Install development tools {#installation-of-development-tools}
+## Install Development Tools {#installation-of-development-tools}
 
 ```yaml
     - name: Install cargo check tools
@@ -32,7 +32,7 @@ GitHub Action for installing [development tools][p-development-tools] (mainly fr
     tool: cargo-binstall,just,mdbook,mdbook-lintcheck
 ```
 
-## Cache your compilation {#compilation-caching}
+## Cache Your Compilation {#compilation-caching}
 
 [`rust-cache`][c-rust_cache-github]{{hi:rust-cache}}⮳.
 
@@ -59,12 +59,12 @@ Example `.github/workflows/<name>.yml`
 
     # A cache key that is used instead of the automatic `job`-based key,
     # and is stable over multiple jobs.
-    # default: empty
+    # Default: empty
     shared-key: ""
 
     # An additional cache key that is added alongside the automatic `job`-based
     # cache key and can be used to further differentiate jobs.
-    # default: empty
+    # Default: empty
     key: ""
 
     # A whitespace separated list of env-var *prefixes* who's value contributes
@@ -84,7 +84,7 @@ Example `.github/workflows/<name>.yml`
     # Additional non workspace directories to be cached, separated by newlines.
     cache-directories: ""
 
-    # Determines whether workspace `target` directories are cached.
+    # Determines whether the workspace `target` directories are cached.
     # If `false`, only the `cargo` registry will be cached.
     # default: "true"
     cache-targets: ""

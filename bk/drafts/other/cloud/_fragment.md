@@ -3,7 +3,7 @@
 
 | [Use the `dapr` distributed runtime][ex-cloud-dapr] | [![dapr-rust-sdk-github][dapr-rust-sdk-github-badge]][dapr-rust-sdk-github] |
 
-## Use the `dapr` distributed runtime {#dapr}
+## Use the `dapr` Distributed Runtime {#dapr}
 
 [Dapr][dapr-website]{{hi:dapr}}⮳ is a portable, event-driven, serverless runtime for building distributed applications across cloud and edge.
 

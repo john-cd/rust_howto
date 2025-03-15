@@ -1,10 +1,10 @@
-# Rust-native Cloud platforms that offer first-class support for Rust
+# Rust-native Cloud Platforms that Offer First-class Support for Rust
 
 {{#include rust_native_cloud_development.incl.md}}
 
 While it is common to deploy Rust applications to Cloud services like AWS, Azure and GCP, a new breed of Cloud services specific tailored to the needs of Rust developers is emerging.
 
-## Deploy your Rust code on `shuttle.dev` {#shuttle}
+## Deploy Rust Code on `shuttle.dev` {#shuttle}
 
 [shuttle.rs][shuttle-rs-website]{{hi:shuttle.rs}}⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 

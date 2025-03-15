@@ -2,7 +2,7 @@
 
 {{#include linkedlist.incl.md}}
 
-## Stored data in a linked list {#linkedlist}
+## Stored Data in a Linked List {#linkedlist}
 
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 

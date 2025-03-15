@@ -2,7 +2,7 @@
 
 {{#include parse.incl.md}}
 
-## Examine the date and time {#examine-date-and-time}
+## Examine the Date and Time {#examine-date-and-time}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}
 
@@ -12,7 +12,7 @@ Gets the current UTC [`chrono::DateTime`][c-chrono::DateTime]{{hi:chrono::DateTi
 {{#include ../../../crates/cats/date_and_time/tests/chrono/current.rs:example}}
 ```
 
-## Convert date to UNIX timestamp and vice versa {#unix-timestamp}
+## Convert Date to UNIX Timestamp and Vice Versa {#unix-timestamp}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
@@ -24,7 +24,7 @@ Then it calculates what was the date after one billion seconds since January 1, 
 {{#include ../../../crates/cats/date_and_time/tests/chrono/timestamp.rs:example}}
 ```
 
-## Display formatted date and time {#display-formatted-date-time}
+## Display Formatted Date and Time {#display-formatted-date-time}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
@@ -36,7 +36,7 @@ Formats the current time in the well-known [RFC 2822 format][rfc-2822]{{hi:RFC-2
 {{#include ../../../crates/cats/date_and_time/tests/chrono/format.rs:example}}
 ```
 
-## Parse string into `DateTime` struct {#parse-string-into-datetime-struct}
+## Parse a String into a `DateTime` Struct {#parse-string-into-datetime-struct}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 

@@ -14,7 +14,7 @@ Queries GitHub [stargazers API v3][stargazers]⮳ with [`reqwest::get`][c-reqwes
 {{#include ../../../crates/cats/web_programming_http_client/tests/apis/rest_get.rs:example}}
 ```
 
-## Check if an API resource exists {#check-if-an-api-resource-exists}
+## Check if an API Resource Exists {#check-if-an-api-resource-exists}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 
@@ -26,7 +26,7 @@ Due to both [`reqwest::ClientBuilder::build`][c-reqwest::ClientBuilder::build]{{
 {{#include ../../../crates/cats/web_programming_http_client/tests/apis/rest_head.rs:example}}
 ```
 
-## Create and delete a Gist with the GitHub API {#create-and-delete-gist-with-github-api}
+## Create and Delete a Gist with the GitHub API {#create-and-delete-gist-with-github-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
@@ -46,7 +46,7 @@ The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize a
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/974)
 
-## Consume a paginated RESTful API {#consume-a-paginated-restful-api}
+## Consume a Paginated RESTful API {#consume-a-paginated-restful-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 
@@ -56,7 +56,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 {{#include ../../../crates/cats/web_programming_http_client/tests/apis/paginated.rs:example}}
 ```
 
-## Handle a rate-limited API {#handle-a-rate-limited-api}
+## Handle a Rate-limited API {#handle-a-rate-limited-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
 

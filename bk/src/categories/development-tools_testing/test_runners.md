@@ -17,7 +17,7 @@
 {{#include ../../../crates/cats/development_tools_testing/tests/tests1.rs:example}}
 ```
 
-## Test your code faster with `cargo nextest` {#cargo-nextest}
+## Test your code Faster with `cargo nextest` {#cargo-nextest}
 
 [![cargo-nextest][c-cargo_nextest-badge]][c-cargo_nextest]{{hi:cargo-nextest}}
 [![cargo-nextest-crates.io][c-cargo_nextest-crates.io-badge]][c-cargo_nextest-crates.io]

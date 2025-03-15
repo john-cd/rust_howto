@@ -1,8 +1,8 @@
-# Game engines
+# Game Engines
 
 {{#include game_engines.incl.md}}
 
-## Develop games with `bevy` {#bevy}
+## Develop Games with `bevy` {#bevy}
 
 [![bevy-website][c-bevy-website-badge]][c-bevy-website] [![bevy][c-bevy-badge]][c-bevy] [![bevy-crates.io][c-bevy-crates.io-badge]][c-bevy-crates.io] [![bevy-github][c-bevy-github-badge]][c-bevy-github] [![bevy-lib.rs][c-bevy-lib.rs-badge]][c-bevy-lib.rs]{{hi:bevy}}{{hi:bevy}}{{hi:Engine}}{{hi:Game}}{{hi:Gamedev}}{{hi:Graphics}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
@@ -14,7 +14,7 @@
 {{#include ../../../crates/cats/game_engines/tests/bevy.rs:example}}
 ```
 
-### Develop games with `fyrox` {#fyrox}
+### Develop Games with `fyrox` {#fyrox}
 
 [![fyrox-website][c-fyrox-website-badge]][c-fyrox-website] [![fyrox][c-fyrox-badge]][c-fyrox] [![fyrox-crates.io][c-fyrox-crates.io-badge]][c-fyrox-crates.io] [![fyrox-github][c-fyrox-github-badge]][c-fyrox-github] [![fyrox-lib.rs][c-fyrox-lib.rs-badge]][c-fyrox-lib.rs]{{hi:fyrox}}{{hi:3d}}{{hi:Engine}}{{hi:Game}}{{hi:Gui}}{{hi:Sound}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}} [![cat-gui][cat-gui-badge]][cat-gui]{{hi:GUI}} [![cat-rendering][cat-rendering-badge]][cat-rendering]{{hi:Rendering}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-graphics][cat-graphics-badge]][cat-graphics]{{hi:Graphics}}
 
@@ -26,7 +26,7 @@
 {{#include ../../../crates/cats/game_engines/tests/fyrox.rs:example}}
 ```
 
-### Develop 2D games with `ggez` {#ggez}
+### Develop 2D Games with `ggez` {#ggez}
 
 [![ggez-website][c-ggez-website-badge]][c-ggez-website] [![ggez][c-ggez-badge]][c-ggez] [![ggez-crates.io][c-ggez-crates.io-badge]][c-ggez-crates.io] [![ggez-github][c-ggez-github-badge]][c-ggez-github] [![ggez-lib.rs][c-ggez-lib.rs-badge]][c-ggez-lib.rs]{{hi:ggez}}{{hi:Game}}{{hi:Graphics}}{{hi:2d}}{{hi:ggez}}{{hi:Engine}} [![cat-game-engines][cat-game-engines-badge]][cat-game-engines]{{hi:Game engines}}
 
@@ -36,7 +36,7 @@
 {{#include ../../../crates/cats/game_engines/tests/ggez.rs:example}}
 ```
 
-### Develop 2D games with `macroquad` {#macroquad}
+### Develop 2D Games with `macroquad` {#macroquad}
 
 [![macroquad][c-macroquad-badge]][c-macroquad] [![macroquad-crates.io][c-macroquad-crates.io-badge]][c-macroquad-crates.io] [![macroquad-github][c-macroquad-github-badge]][c-macroquad-github] [![macroquad-lib.rs][c-macroquad-lib.rs-badge]][c-macroquad-lib.rs]{{hi:macroquad}}
 

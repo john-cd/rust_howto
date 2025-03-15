@@ -2,7 +2,7 @@
 
 {{#include regex.incl.md}}
 
-## Verify and extract login from an email address {#verify-and-extract-login-from-an-email-address}
+## Verify and Extract Login from an Email Address {#verify-and-extract-login-from-an-email-address}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -12,7 +12,7 @@ Validates that an [email][p-email] address{{hi:Email address}} is formatted corr
 {{#include ../../../crates/cats/text_processing/tests/regex/email.rs:example}}
 ```
 
-## Extract a list of unique #hashtags from a text {#extract-a-list-of-unique-hashtags-from-a-text}
+## Extract a list of Unique #hashtags from a Text {#extract-a-list-of-unique-hashtags-from-a-text}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -24,7 +24,7 @@ The hashtag regex given here only catches Latin hashtags that start with a lette
 {{#include ../../../crates/cats/text_processing/tests/regex/hashtags.rs:example}}
 ```
 
-## Extract phone numbers from text {#extract-phone-numbers-from-text}
+## Extract Phone Numbers from Text {#extract-phone-numbers-from-text}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -34,7 +34,7 @@ Processes a string of text using [`regex::Regex::captures_iter`][c-regex::Regex:
 {{#include ../../../crates/cats/text_processing/tests/regex/phone.rs:example}}
 ```
 
-## Filter a log file by matching multiple regular expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
+## Filter a log File by Matching Multiple Regular Expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -46,7 +46,7 @@ A [`regex::RegexSetBuilder`][c-regex::RegexSetBuilder]{{hi:regex::RegexSetBuilde
 {{#include ../../../crates/cats/text_processing/tests/regex/filter_log.rs:example}}
 ```
 
-## Replace all occurrences of one text pattern with another pattern {#replace-all-occurrences-of-one-text-pattern-with-another-pattern}
+## Replace all Occurrences of one text Pattern with Another Pattern {#replace-all-occurrences-of-one-text-pattern-with-another-pattern}
 
 [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
@@ -59,7 +59,7 @@ The method [`regex::Regex::replace_all`][c-regex::Regex::replace_all]{{hi:regex:
 {{#include ../../../crates/cats/text_processing/tests/regex/replace.rs:example}}
 ```
 
-## Use regular expressions with back-references and lookarounds {#fancy-regex}
+## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
 
 [![fancy-regex][c-fancy_regex-badge]][c-fancy_regex] [![fancy-regex-crates.io][c-fancy_regex-crates.io-badge]][c-fancy_regex-crates.io] [![fancy-regex-github][c-fancy_regex-github-badge]][c-fancy_regex-github] [![fancy-regex-lib.rs][c-fancy_regex-lib.rs-badge]][c-fancy_regex-lib.rs]{{hi:fancy-regex}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

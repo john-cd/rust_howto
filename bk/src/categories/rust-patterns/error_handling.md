@@ -2,7 +2,7 @@
 
 {{#include error_handling.incl.md}}
 
-## Trigger and handle irrecoverable panics {#irrecoverable-panics}
+## Trigger and Handle Irrecoverable Panics {#irrecoverable-panics}
 
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -18,7 +18,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 {{#include ../../../crates/cats/rust_patterns/tests/error/unwrap.rs:example}}
 ```
 
-## Provide a fallback value with `unwrap_or_else` {#unwrap-or-else}
+## Provide a Fallback Value with `unwrap_or_else` {#unwrap-or-else}
 
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -26,7 +26,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 {{#include ../../../crates/cats/rust_patterns/tests/error/unwrap_or_else.rs:example}}
 ```
 
-## Return recoverable errors with `Result` {#recoverable-errors-with-result}
+## Return Recoverable Errors with `Result` {#recoverable-errors-with-result}
 
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -34,7 +34,7 @@ The [`panic!(...)`][c-std::panic] macro allows a program to terminate immediatel
 {{#include ../../../crates/cats/rust_patterns/tests/error/error_handling.rs:example}}
 ```
 
-## Propagate errors with the `?` operator {#question-mark-operator}
+## Propagate Errors with the `?` Operator {#question-mark-operator}
 
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -54,7 +54,7 @@ Another example:
 
 `std::io` defines the type alias `type Result<T> = std::result::Result<T, std::io::Error>;`
 
-## Handle errors correctly in main {#handle-errors-correctly-in-main}
+## Handle Errors Correctly in `main` {#handle-errors-correctly-in-main}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}.
 
@@ -66,7 +66,7 @@ The below recipe will tell how long the system has been running by opening the U
 {{#include ../../../crates/language/tests/feat/main_test.rs:example}}
 ```
 
-## Avoid discarding errors during error conversions {#avoid-discarding-errors-during-error-conversions}
+## Avoid Discarding Errors During Error Conversions {#avoid-discarding-errors-during-error-conversions}
 
 [![reqwest][c-reqwest-badge]][c-reqwest] [![reqwest-crates.io][c-reqwest-crates.io-badge]][c-reqwest-crates.io] [![reqwest-github][c-reqwest-github-badge]][c-reqwest-github] [![reqwest-lib.rs][c-reqwest-lib.rs-badge]][c-reqwest-lib.rs]{{hi:reqwest}}{{hi:Client}}{{hi:Http}}{{hi:Request}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -82,7 +82,7 @@ Uses [`reqwest::blocking`][c-reqwest::blocking]⮳ to query a random integer gen
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-## Obtain the backtrace in complex error scenarios {#obtain-backtrace}
+## Obtain the Backtrace in Complex Error Scenarios {#obtain-backtrace}
 
 [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 

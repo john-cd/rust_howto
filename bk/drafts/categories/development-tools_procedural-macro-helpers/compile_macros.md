@@ -1,4 +1,4 @@
-# Compile macros ahead of time
+# Compile Macros Ahead of Time
 
 {{#include compile_macros.incl.md}}
 

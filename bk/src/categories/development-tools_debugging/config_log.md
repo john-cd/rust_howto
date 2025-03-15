@@ -2,7 +2,7 @@
 
 {{#include config_log.incl.md}}
 
-## Enable log levels per module {#enable-log-levels-per-module}
+## Enable Log Levels per Module {#enable-log-levels-per-module}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Log levels}}
 
@@ -29,7 +29,7 @@ INFO:test::foo::bar: [bar] info
 DEBUG:test::foo::bar: [bar] debug
 ```
 
-## Use a custom environment variable to set up logging {#custom-env-var-for-logging}
+## Use a Custom Environment Variable to Set Up Logging {#custom-env-var-for-logging}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
@@ -44,7 +44,7 @@ All these steps are normally done internally by [`env_logger::init`][c-env_logge
 {{#include ../../../crates/cats/development_tools_debugging/tests/log/log_env_variable.rs:example}}
 ```
 
-## Include a timestamp in log messages {#timestamp-in-log-messages}
+## Include a Timestamp in Log Messages {#timestamp-in-log-messages}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![env_logger][c-env_logger-badge]][c-env_logger]{{hi:env_logger}} [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 
@@ -64,7 +64,7 @@ stderr output will contain
 2017-05-22T21:57:06 [INFO] - info
 ```
 
-## Log messages to a custom location {#log-to-custom-location}
+## Log Messages to a Custom Location {#log-to-custom-location}
 
 [![log][c-log-badge]][c-log]{{hi:log}} [![log4rs][c-log4rs-badge]][c-log4rs]{{hi:log4rs}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 

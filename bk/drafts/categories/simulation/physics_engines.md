@@ -1,4 +1,4 @@
-# 2D and 3D physics engines
+# 2D and 3D Physics Engines
 
 {{#include physics_engines.incl.md}}
 

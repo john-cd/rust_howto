@@ -1,4 +1,4 @@
-# Compute digital signatures
+# Compute Digital Signatures
 
 {{#include signature.incl.md}}
 

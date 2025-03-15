@@ -2,7 +2,7 @@
 
 {{#include links.incl.md}}
 
-## Key websites {#key-websites}
+## Key Websites {#key-websites}
 
 |||
 |---|---|
@@ -15,7 +15,7 @@
 | [`blessed`][blessed-rs-website]⮳ | Unofficial guide to (the best of) the Rust ecosystem |
 | [`github.com`][github-website]⮳ | The home of most Rust code repositories |
 
-## Lists of Rust links {#links}
+## Lists of Rust Links {#links}
 
 - [The Rust Starter Pack][rust-starter-pack]⮳.
 - [`Awesome Rust`][awesome-rust-github]⮳ [![awesome-rust-github][awesome-rust-github-badge]][awesome-rust-github].

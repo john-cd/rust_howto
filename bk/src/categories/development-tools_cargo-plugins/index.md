@@ -4,7 +4,7 @@
 
 Subcommands that extend the capabilities of Cargo.
 
-## Writing code
+## Writing Code
 
 {{#include code_writing.incl.md}}
 
@@ -16,7 +16,7 @@ Subcommands that extend the capabilities of Cargo.
 
 {{#include building.incl.md}}
 
-## Watching for changes
+## Watching for Changes
 
 {{#include watching_for_changes.incl.md}}
 
@@ -130,7 +130,7 @@ Miscellaneous:
 
 [`cargo-spellcheck`][c-cargo_spellcheck]⮳{{hi:cargo-spellcheck}}
 
-## Creating a Cargo plugin
+## Creating a Cargo Plugin
 
 Cargo plugins are essentially just executables that follow a certain naming convention (cargo-something). Therefore, there aren't specific crates for creating [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but rather crates that are used within [`cargo`][c-cargo]⮳{{hi:cargo}} plugins. Here's a breakdown:
 

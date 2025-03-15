@@ -1,4 +1,4 @@
-# Binary encoders
+# Binary Encoders
 
 {{#include binary_encoders.incl.md}}
 

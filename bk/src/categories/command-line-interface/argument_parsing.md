@@ -1,8 +1,8 @@
-# Command-line argument parsing
+# Command-line Argument Parsing
 
 {{#include argument_parsing.incl.md}}
 
-## Using clap's builder API {#clap-builder}
+## Using `clap`'s Builder API {#clap-builder}
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}} [![clap-examples][c-clap-examples-badge]][c-clap-examples] [![clap-github][c-clap-github-badge]][c-clap-github] [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -46,7 +46,7 @@ The file passed is: myfile.txt
 Your favorite number must be 256.
 ```
 
-## Using `clap`'s derive API {#clap-derive}
+## Using `clap`'s Derive API {#clap-derive}
 
 [![clap][c-clap-badge]][c-clap]{{hi:clap}} [(tutorial)][c-clap-tutorial] [(cookbook)][c-clap-cookbook] [![clap examples][c-clap-examples-badge]][c-clap-examples] [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
 
@@ -71,7 +71,7 @@ Your favorite number must be 256.
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/lexopt.rs:example}}
 ```
 
-### Parse command-line arguments with `pico-args` {#pico-args}
+### Parse Command-line Arguments with `pico-args` {#pico-args}
 
 [![pico-args][c-pico_args-badge]][c-pico_args]{{hi:pico-args}}
 [![pico-args-crates.io][c-pico_args-crates.io-badge]][c-pico_args-crates.io]
@@ -115,7 +115,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 <div class="hidden">
 [arguments: expand `lexopt` and `pico-args`](https://github.com/john-cd/rust_howto/issues/233)
 
-### Argument parsing {#skip1}
+### Argument Parsing {#skip1}
 
 - [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog].
 

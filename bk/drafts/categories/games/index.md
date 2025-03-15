@@ -14,7 +14,7 @@ Here are some notable games built with Rust:
 
 There's a growing collection of smaller indie games made with Rust on `itch.io`. You can find everything from puzzle games to platformers to simulations there. Check out the ["made with Rust"](https://itch.io/games/made-with-rust) tag!
 
-## Where to find more
+## Where to Find More
 
 - [`Are we game yet?`](https://arewegameyet.rs) This website is a fantastic resource for all things Rust game development. It has lists of games, engines, libraries, and more.
 - [`itch.io`](https://itch.io) or [GOG.com](https://www.gog.com).

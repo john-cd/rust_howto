@@ -16,9 +16,9 @@ Note that opening the code folder in VS Code may take a little while the first t
 If you are not using VS Code, install the [Dev Container CLI][dev-container-cli-github]⮳ or simply install the required tools on your local machine:
 
 ```bash
-sudo apt-get update # or equivalent for other distros
-# sudo apt-get install fzf # optional
-# sudo apt-get mold clang # if using
+sudo apt-get update # Or equivalent for other distros
+# sudo apt-get install fzf # Optional
+# sudo apt-get mold clang # If using
 rustup update
 rustup component add clippy
 cargo install cargo-nextest
@@ -26,7 +26,7 @@ cargo install mdbook
 cargo install just
 cargo install mdbook_linkcheck
 cargo install mdbook-utils
-# for cargo +nightly fmt
+# for `cargo +nightly fmt`
 rustup toolchain install nightly
 rustup component add rustfmt --toolchain nightly
 ```
@@ -35,7 +35,7 @@ You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review `.devcontainer/Dockerfile` for other dependencies.
 
-## Alternative `just` install {#skip1}
+## Alternative `just` Install {#skip1}
 
 [`just`][c-just]⮳{{hi:just}}
 
@@ -49,7 +49,7 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 # EOF
 ```
 
-## Alternative `mdbook` install {#skip2}
+## Alternative `mdbook` Install {#skip2}
 
 [`mdbook`][c-mdbook]⮳{{hi:mdbook}}
 

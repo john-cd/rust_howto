@@ -15,7 +15,7 @@ You can build simple Rust applications to automate repetitive tasks. The followi
 
 See [[external_commands | External Commands]].
 
-## Interacting with shells {#skip2}
+## Interact with Shells {#skip2}
 
 - `shell-words` process command line arguments according to the [parsing][p-parsing] rules of Unix shells.
 - `shellexpand` is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).

@@ -1,4 +1,4 @@
-# Value formatting
+# Value Formatting
 
 [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
 

@@ -1,8 +1,8 @@
-# Explicit threads
+# Explicit Threads
 
 {{#include explicit_threads.incl.md}}
 
-## Use spawn & join {#spawn-join}
+## Use `spawn` & `join` {#spawn-join}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Join}}
 
@@ -12,7 +12,7 @@
 
 Note: when the main thread of a Rust program completes, all spawned threads{{hi:Spawned threads}} are shut down, whether or not they have finished running.
 
-## Use scoped threads {#scoped-threads}
+## Use Scoped Threads {#scoped-threads}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 

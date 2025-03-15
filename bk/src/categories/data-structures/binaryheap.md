@@ -2,7 +2,7 @@
 
 {{#include binaryheap.incl.md}}
 
-## Implement a priority queue {#skip}
+## Implement a Priority Queue {#skip}
 
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 

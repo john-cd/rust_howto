@@ -1,4 +1,4 @@
-# Message passing and channels
+# Message Passing and Channels
 
 {{#include message_passing.incl.md}}
 
@@ -6,7 +6,7 @@ One increasingly popular approach to ensuring safe [concurrency][p-concurrency] 
 
 Message passing in [`async`][book-rust-reference-async]{{hi:async}}⮳ programming is covered in a separate page: [async channels][p-async-channels]{{hi:Async channels}}.
 
-## Multiple producers, single consumer {#mpsc}
+## Multiple Producers, Single Consumer {#mpsc}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:MPSC}}
 

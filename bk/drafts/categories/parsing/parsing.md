@@ -1,8 +1,8 @@
-# Parsing utilities
+# Parsing Utilities
 
 {{#include parsing.incl.md}}
 
-## Create a parser with `nom` {#nom}
+## Create a Parser with `nom` {#nom}
 
 [![nom][c-nom-badge]][c-nom]{{hi:nom}}
 [![nom-crates.io][c-nom-crates.io-badge]][c-nom-crates.io]
@@ -18,7 +18,7 @@ See also: the [nominomicon][c-nom-nominomicon]⮳ book.
 {{#include ../../../crates/cats/parsing/tests/nom.rs:example}}
 ```
 
-## Create a parser with `pest` {#pest}
+## Create a Parser with `pest` {#pest}
 
 [![pest][c-pest-badge]][c-pest]{{hi:pest}}
 [![pest-crates.io][c-pest-crates.io-badge]][c-pest-crates.io]
@@ -34,7 +34,7 @@ Grammars are saved in separate [`.pest`][c-pest]⮳{{hi:.pest}}  files which ar
 {{#include ../../../crates/cats/parsing/tests/pest/pest.rs:example}}
 ```
 
-### Create a parser with `tree-sitter` {#tree-sitter}
+### Create a Parser with `tree-sitter` {#tree-sitter}
 
 [![tree-sitter][c-tree_sitter-badge]][c-tree_sitter]{{hi:tree-sitter}}
 [![tree-sitter-crates.io][c-tree_sitter-crates.io-badge]][c-tree_sitter-crates.io]

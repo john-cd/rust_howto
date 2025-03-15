@@ -2,7 +2,7 @@
 
 {{#include no_std.incl.md}}
 
-## Crates that work with no `std` {#no-std}
+## Crates Working Without `std` {#no-std}
 
 ```rust,editable
 {{#include ../../../crates/cats/no_std/tests/no_std1.rs:example}}

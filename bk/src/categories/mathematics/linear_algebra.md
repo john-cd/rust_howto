@@ -2,7 +2,7 @@
 
 {{#include linear_algebra.incl.md}}
 
-## Add matrices {#adding-matrices}
+## Add Matrices {#adding-matrices}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -19,7 +19,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/add_matrices.rs:example}}
 ```
 
-## Multiply matrices {#multiplying-matrices}
+## Multiply Matrices {#multiplying-matrices}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -34,7 +34,7 @@ Creates two matrices with [`ndarray::arr2`][c-ndarray::arr2]{{hi:ndarray::arr2}}
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/multiply_matrices.rs:example}}
 ```
 
-## Multiply a scalar with a vector and a matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
+## Multiply a Scalar with a Vector and a Matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -53,7 +53,7 @@ In [`ndarray`][c-ndarray]{{hi:ndarray}}⮳, 1-D arrays can be interpreted as eit
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/multiply_scalar_vector_matrix.rs:example}}
 ```
 
-## Compare vectors {#vector-comparison}
+## Compare Vectors {#vector-comparison}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -76,7 +76,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/vector_comparison.rs:example}}
 ```
 
-## Calculate vector norms {#vector-norm}
+## Calculate Vector Norms {#vector-norm}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]
@@ -98,7 +98,7 @@ Note that both [`l1_norm`][l1-norm]{{hi:L1 norm}}⮳ and [`l2_norm`][l2-norm]{{h
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/vector_norm.rs:example}}
 ```
 
-## Invert a matrix {#invert-matrix}
+## Invert a Matrix {#invert-matrix}
 
 [![nalgebra][c-nalgebra-badge]][c-nalgebra]{{hi:nalgebra}}
 [![nalgebra-crates.io][c-nalgebra-crates.io-badge]][c-nalgebra-crates.io]
@@ -115,7 +115,7 @@ Creates a 3x3 matrix with [`nalgebra::Matrix3`][c-nalgebra::Matrix3]{{hi:nalgebr
 {{#include ../../../crates/cats/mathematics/tests/linear_algebra/invert_matrix.rs:example}}
 ```
 
-## (De)serialize a matrix {#deserialize-a-matrix}
+## (De)serialize a Matrix {#deserialize-a-matrix}
 
 [![ndarray][c-ndarray-badge]][c-ndarray]{{hi:ndarray}}
 [![ndarray-crates.io][c-ndarray-crates.io-badge]][c-ndarray-crates.io]

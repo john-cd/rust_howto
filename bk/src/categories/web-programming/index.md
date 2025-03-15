@@ -4,11 +4,11 @@
 
 Create applications for the Web.
 
-## Manipulate uniform resource locations (URLs)
+## Manipulate Uniform Resource Locations (URLs)
 
 {{#include url.incl.md}}
 
-## Handle media types (MIME)
+## Handle Media Types (MIME)
 
 {{#include mime.incl.md}}
 
@@ -29,7 +29,7 @@ Create applications for the Web.
 [web-programming/index: cover `http` crate](https://github.com/john-cd/rust_howto/issues/500)
 organize, fix
 
-## HTTP types & interfaces
+## HTTP Types & Interfaces
 
 [![http][c-http-badge]][c-http]{{hi:http}}
 [![http-crates.io][c-http-crates.io-badge]][c-http-crates.io]

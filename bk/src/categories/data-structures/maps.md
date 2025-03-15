@@ -1,8 +1,8 @@
-# Hashmap's friends
+# Hashmap's Friends
 
 {{#include maps.incl.md}}
 
-## Store data in an insertion-ordered map {#indexmap}
+## Store Data in an Insertion-ordered Map {#indexmap}
 
 [![indexmap][c-indexmap-badge]][c-indexmap]{{hi:indexmap}}
 [![indexmap-crates.io][c-indexmap-crates.io-badge]][c-indexmap-crates.io]
@@ -19,7 +19,7 @@ IndexMap is a data structure in Rust that combines the features of a hashmap and
 {{#include ../../../crates/cats/data_structures/tests/maps/indexmap.rs:example}}
 ```
 
-## Store data in a `multimap` {#multimap}
+## Store Data in a `multimap` {#multimap}
 
 [![multimap][c-multimap-badge]][c-multimap]{{hi:multimap}}
 [![multimap-crates.io][c-multimap-crates.io-badge]][c-multimap-crates.io]
@@ -34,7 +34,7 @@ A MultiMap allows you to store multiple values for a single key, which can be us
 {{#include ../../../crates/cats/data_structures/tests/maps/multimap.rs:example}}
 ```
 
-## Store collections of objects that need stable, safe references {#slotmap}
+## Store Collections of Objects that Need Stable, Safe References {#slotmap}
 
 [![slotmap][c-slotmap-badge]][c-slotmap]{{hi:slotmap}}
 [![slotmap-crates.io][c-slotmap-crates.io-badge]][c-slotmap-crates.io]

@@ -1,8 +1,8 @@
-# CSV files
+# CSV Files
 
 {{#include csv.incl.md}}
 
-## Manipulate CSV files from the command line {#manipulate-csv-files-from-the-command-line}
+## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
 
 [![xsv][c-xsv-badge]][c-xsv]{{hi:xsv}}
 [![xsv-crates.io][c-xsv-crates.io-badge]][c-xsv-crates.io]

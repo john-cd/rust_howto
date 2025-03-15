@@ -2,7 +2,7 @@
 
 {{#include postgres.incl.md}}
 
-## Create tables in a Postgres database {#create-tables-postgres}
+## Create Tables in a Postgres Database {#create-tables-postgres}
 
 [![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -14,7 +14,7 @@ Use the [`postgres`][c-postgres]{{hi:postgres}}⮳ crate to create tables in a P
 {{#include ../../../crates/cats/database/tests/postgres/create_tables.rs:example}}
 ```
 
-## Insert and query data {#insert-query-data-postgres}
+## Insert and Query Data {#insert-query-data-postgres}
 
 [![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -24,7 +24,7 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 {{#include ../../../crates/cats/database/tests/postgres/insert_query_data.rs:example}}
 ```
 
-## Aggregate data {#aggregate-data-postgres}
+## Aggregate Data {#aggregate-data-postgres}
 
 [![postgres][c-postgres-badge]][c-postgres]{{hi:postgres}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database}} [![csv-sample][csv-sample-badge]][csv-sample]
 
@@ -34,7 +34,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 {{#include ../../../crates/cats/database/tests/postgres/aggregate_data.rs:example}}
 ```
 
-## Connect to and query Postgres asynchronously with `tokio-postgres` {#tokio-postgres}
+## Connect to and Query Postgres Asynchronously with `tokio-postgres` {#tokio-postgres}
 
 [![tokio-postgres][c-tokio_postgres-badge]][c-tokio_postgres]{{hi:tokio-postgres}}
 [![tokio-postgres-crates.io][c-tokio_postgres-crates.io-badge]][c-tokio_postgres-crates.io]
@@ -53,7 +53,7 @@ This recipe lists the nationalities of the first 7999 artists in the [database][
 <div class="hidden">
 [postgres: `cornucopia`](https://github.com/john-cd/rust_howto/issues/286)
 
-## `cornucopia` for postgres {#cornucopia}
+## `cornucopia` for Postgres {#cornucopia}
 
 [![cornucopia-website][c-cornucopia-website-badge]][c-cornucopia-website] [![cornucopia][c-cornucopia-badge]][c-cornucopia] [![cornucopia-crates.io][c-cornucopia-crates.io-badge]][c-cornucopia-crates.io] [![cornucopia-github][c-cornucopia-github-badge]][c-cornucopia-github] [![cornucopia-lib.rs][c-cornucopia-lib.rs-badge]][c-cornucopia-lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat-database][cat-database-badge]][cat-database]{{hi:Database interfaces}}
 

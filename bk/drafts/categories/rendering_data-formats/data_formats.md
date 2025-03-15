@@ -1,8 +1,8 @@
-# Data formats
+# Data Formats
 
 {{#include data_formats.incl.md}}
 
-## Data format {#data-format}
+## Data Format {#data-format}
 
 ```rust,editable
 {{#include ../../../crates/cats/rendering_data_formats/tests/data_formats.rs:example}}

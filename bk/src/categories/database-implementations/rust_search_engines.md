@@ -1,4 +1,4 @@
-# Search engines written in Rust
+# Search Engines Written in Rust
 
 {{#include rust_search_engines.incl.md}}
 

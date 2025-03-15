@@ -4,7 +4,7 @@
 
 Consider the following Rust crates for your in-memory [caching][p-caching] needs: [`lru`][c-lru]⮳{{hi:lru}}, [`moka`][c-moka]⮳{{hi:moka}}, and [`cached`][c-cached]⮳{{hi:cached}}.
 
-## Use a LRU cache {#lru-cache}
+## Use a LRU Cache {#lru-cache}
 
 [![lru][c-lru-badge]][c-lru]{{hi:lru}} [![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
 

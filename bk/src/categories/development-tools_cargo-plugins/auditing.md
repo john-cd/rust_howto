@@ -2,7 +2,7 @@
 
 {{#include auditing.incl.md}}
 
-## Audit `cargo.lock` files for crates containing security vulnerabilities {#cargo-audit}
+## Audit `cargo.lock` Files for Crates Containing Security Vulnerabilities {#cargo-audit}
 
 [![cargo-audit][c-cargo_audit-badge]][c-cargo_audit]{{hi:cargo-audit}}
 [![cargo-audit-crates.io][c-cargo_audit-crates.io-badge]][c-cargo_audit-crates.io]
@@ -19,7 +19,7 @@ cargo install cargo-audit
 cargo audit
 ```
 
-## Embed the exact crate versions in your Rust executable for auditability {#cargo-auditable}
+## Embed the Exact Crate Versions in Your Rust Executable for Auditability {#cargo-auditable}
 
 [![cargo-auditable][c-cargo_auditable-badge]][c-cargo_auditable]{{hi:cargo-auditable}}
 [![cargo-auditable-crates.io][c-cargo_auditable-crates.io-badge]][c-cargo_auditable-crates.io]
@@ -34,7 +34,7 @@ It audits binaries for known bugs or security vulnerabilities in production, at 
 
 This works by embedding data about the dependency tree in [JSON][p-json] format into a dedicated linker section of the compiled executable.
 
-## List the license(s) of dependencies {#cargo-license}
+## List the license(s) of Dependencies {#cargo-license}
 
 [![cargo-license][c-cargo_license-badge]][c-cargo_license]{{hi:cargo-license}}
 [![cargo-license-crates.io][c-cargo_license-crates.io-badge]][c-cargo_license-crates.io]

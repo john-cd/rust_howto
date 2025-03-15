@@ -10,7 +10,7 @@
 {{#include ../../crates/language/tests/feat/closures.rs:example}}
 ```
 
-## Closure with type annotations {#closure-with-type-annotations}
+## Closure with Type Annotations {#closure-with-type-annotations}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/closures_with_type_annotations.rs:example}}
@@ -30,7 +30,7 @@ To force a move:
 {{#include ../../crates/language/tests/feat/closures_move.rs:example}}
 ```
 
-## Closures as input parameters {#closures-as-input-parameters}
+## Closures as Input Parameters {#closures-as-input-parameters}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/closures_as_input_parameters.rs:example}}

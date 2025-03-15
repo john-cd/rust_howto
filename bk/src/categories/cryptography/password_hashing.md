@@ -14,7 +14,7 @@ In that role, key derivation [functions][p-functions] take a password, a salt, (
 
 Popular password hashing algorithms include [`bcrypt`][c-bcrypt]⮳{{hi:bcrypt}}, [`Argon2`][c-argon2]⮳{{hi:Argon2}} and [`scrypt`][c-scrypt]⮳{{hi:scrypt}}.
 
-## Hash a password, then verify a password against the hash {#argon2}
+## Hash a Password, then Verify a Password Against the Hash {#argon2}
 
 [![argon2][c-argon2-badge]][c-argon2]{{hi:argon2}}
 [![argon2-crates.io][c-argon2-crates.io-badge]][c-argon2-crates.io]
@@ -61,7 +61,7 @@ The [`scrypt`][c-scrypt]⮳{{hi:scrypt}} key derivation function is designed to 
 {{#include ../../../crates/cats/cryptography/tests/password_hashing/bcrypt.rs:example}}
 ```
 
-## Salt and hash a password with PBKDF2 {#pbkdf2}
+## Salt and Hash a Password with PBKDF2 {#pbkdf2}
 
 [![ring][c-ring-badge]][c-ring] [![ring-crates.io][c-ring-crates.io-badge]][c-ring-crates.io] [![ring-github][c-ring-github-badge]][c-ring-github] [![ring-lib.rs][c-ring-lib.rs-badge]][c-ring-lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![data-encoding][c-data_encoding-badge]][c-data_encoding] [![data-encoding-crates.io][c-data_encoding-crates.io-badge]][c-data_encoding-crates.io] [![data-encoding-github][c-data_encoding-github-badge]][c-data_encoding-github] [![data-encoding-lib.rs][c-data_encoding-lib.rs-badge]][c-data_encoding-lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

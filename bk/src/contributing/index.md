@@ -1,4 +1,4 @@
-# Call for contributions
+# Call for Contributions
 
 This book is in its **early days**. Contributions, from small edits to whole chapters, are most welcome.
 

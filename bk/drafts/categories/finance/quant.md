@@ -1,4 +1,4 @@
-# Quantitative financial analysis
+# Quantitative Financial Analysis
 
 {{#include quant.incl.md}}
 

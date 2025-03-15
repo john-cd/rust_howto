@@ -2,7 +2,7 @@
 
 {{#include url.incl.md}}
 
-## Parse a URL from a string to a `Url` type {#parse-a-url-from-a-string-to-a-url-type}
+## Parse a URL from a String to a `Url` Type {#parse-a-url-from-a-string-to-a-url-type}
 
 [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -16,7 +16,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 {{#include ../../../crates/cats/web_programming/tests/url/parse.rs:example}}
 ```
 
-## Create a base URL by removing path segments {#create-a-base-url-by-removing-path-segments}
+## Create a Base URL by Removing Path Segments {#create-a-base-url-by-removing-path-segments}
 
 [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -26,7 +26,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 {{#include ../../../crates/cats/web_programming/tests/url/base.rs:example}}
 ```
 
-## Create new URLs from a base URL {#create-new-urls-from-a-base-url}
+## Create new URLs from a Base URL {#create-new-urls-from-a-base-url}
 
 [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -36,7 +36,7 @@ The [`url::Url::join`][c-url::Url::join]{{hi:url::Url::join}}⮳ method creates 
 {{#include ../../../crates/cats/web_programming/tests/url/new.rs:example}}
 ```
 
-## Extract the URL origin (scheme / host / port) {#extract-the-url-origin}
+## Extract the URL Origin (scheme / Host / port) {#extract-the-url-origin}
 
 [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 
@@ -52,7 +52,7 @@ The [`url::Url`][c-url::Url]{{hi:url::Url}}⮳ struct exposes various methods to
 {{#include ../../../crates/cats/web_programming/tests/url/origin1.rs:example}}
 ```
 
-## Remove fragment identifiers and query pairs from a URL {#remove-fragment-identifiers-and-query-pairs}
+## Remove Fragment Identifiers and Query Pairs from a URL {#remove-fragment-identifiers-and-query-pairs}
 
 [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}
 

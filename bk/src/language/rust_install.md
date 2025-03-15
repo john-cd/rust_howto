@@ -4,7 +4,7 @@
 
 [Install Rust][rust-install-rust]{{hi:Rust installation}}⮳.
 
-## Install Rust and create a first project {#rust-install}
+## Install Rust and Create a First Project {#rust-install}
 
 - Install [Rustup][rustup-website]{{hi:rustup}}⮳.
 

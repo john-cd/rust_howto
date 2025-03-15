@@ -26,7 +26,7 @@ Items in a parent module can't use the private items{{hi:Private items}} inside 
 
 [A clear explanation of Rust's module system][rust-module-system-website]⮳.
 
-## `use` keyword {#use-keyword}
+## `use` Keyword {#use-keyword}
 
 Create a shortcut to a path with the [`use`][book-rust-reference-use]{{hi:use}}⮳ keyword once, and then use the shorter name everywhere else in the scope.
 

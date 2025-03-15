@@ -4,11 +4,11 @@
 
 Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garbage collection{{hi:Garbage collection}}, reference counting{{hi:Reference counting}}, or interfaces to foreign memory managers.
 
-## Global statics
+## Global Statics
 
 {{#include global_static.incl.md}}
 
-## Lazy initialization
+## Lazy Initialization
 
 {{#include lazy_initialization.incl.md}}
 
@@ -80,7 +80,7 @@ For most common Rust development, understanding ownership, borrowing, and lifeti
 
 These are built into the Rust language itself, not specific crates. Mastering these is essential for understanding Rust's memory management.
 
-## Smart Pointers (for managing memory beyond basic ownership)
+## Smart Pointers (for Managing Memory beyond Basic ownership)
 
 - `Box`: For allocating data on the heap.
 - `Rc` (Reference Counting): For shared ownership of data.

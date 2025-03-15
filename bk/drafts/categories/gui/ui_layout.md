@@ -1,4 +1,4 @@
-# UI layout
+# UI Layout
 
 {{#include ui_layout.incl.md}}
 

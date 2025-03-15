@@ -2,7 +2,7 @@
 
 [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Development tools::Build Utils}}
 
-## Build-time tooling
+## Build-time Tooling
 
 Utilities for build scripts and other build time steps.
 

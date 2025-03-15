@@ -45,7 +45,7 @@ Note the following:
 
 {{#include no_alloc.incl.md}}
 
-## Crates that are able to function without the Rust [`alloc`][c-alloc]⮳{{hi:alloc}} crate
+## Crates Functioning Without the Rust [`alloc`][c-alloc]⮳{{hi:alloc}} Crate
 
 Consult the [`no_alloc`][cat-no-std::no-alloc] category on `crates.io`.
 

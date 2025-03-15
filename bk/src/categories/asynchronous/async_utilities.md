@@ -2,7 +2,7 @@
 
 {{#include async_utilities.incl.md}}
 
-## Visualize the structure of asynchronous tasks and their dependencies {#utilities}
+## Visualize the Structure of Asynchronous Tasks and Their Dependencies {#utilities}
 
 [![await-tree][c-await_tree-badge]][c-await_tree]{{hi:Await tree}}
 [![await-tree-crates.io][c-await_tree-crates.io-badge]][c-await_tree-crates.io]

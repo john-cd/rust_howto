@@ -2,7 +2,7 @@
 
 {{#include mime.incl.md}}
 
-## Get a MIME type from a string {#get-mime-type-from-string}
+## Get a MIME Type from a String {#get-mime-type-from-string}
 
 [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -12,7 +12,7 @@ The following example shows how to [parse][p-parse] a [`mime::Mime`][c-mime::Mim
 {{#include ../../../crates/cats/web_programming/tests/mime/string.rs:example}}
 ```
 
-## Get a MIME type from a filename {#get-mimetype-from-filename}
+## Get a MIME Type from a Filename {#get-mimetype-from-filename}
 
 [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -22,7 +22,7 @@ The following example shows how to return the correct MIME{{hi:MIME type}} type 
 {{#include ../../../crates/cats/web_programming/tests/mime/filename.rs:example}}
 ```
 
-## Parse the MIME type of a HTTP response {#parse-the-mime-type-of-a-http-response}
+## Parse the MIME Type of a HTTP Response {#parse-the-mime-type-of-a-http-response}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![mime][c-mime-badge]][c-mime]{{hi:mime}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 

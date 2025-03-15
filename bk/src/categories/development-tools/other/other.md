@@ -15,7 +15,7 @@ Roogle is a Rust API [search][p-search] engine, which allows you to [search][p-s
 | fn(type) -> type | fn(Option<Option<T>>) -> [Option][p-option]<T> |
 | (type) -> type | (&mut Vec<T>, value: T) |
 
-## Minimize Rust binary sizes {#binary-minimizer}
+## Minimize Rust Binary Sizes {#binary-minimizer}
 
 [How to minimize Rust binary size][min-sized-rust-github]⮳.
 
@@ -25,7 +25,7 @@ By default, Rust optimizes for execution speed, compilation speed, and ease of d
 cargo build --release
 ```
 
-## Generate Rust code {#code-generators}
+## Generate Rust Code {#code-generators}
 
 [Top artificial intelligence tools that can generate code to help programmers][blog-ai-tools-that-can-generate-code]⮳.
 

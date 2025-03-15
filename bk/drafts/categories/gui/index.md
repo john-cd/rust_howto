@@ -4,7 +4,7 @@
 
 Tooling to help you create a graphical user interface.
 
-## Choosing the right framework
+## Choosing the Right Framework
 
 GTK and Tauri are probably the only options which can be described as production-ready without caveats. The Rust native options are usable for simple projects but are all still quite incomplete.
 
@@ -68,13 +68,13 @@ See [[graphics | Graphics]] and [[rendering | Rendering]].
 
 {{#include text_layout.incl.md}}
 
-### Window creation
+### Window Creation
 
 While primarily for window creation, [`winit`][c-winit]⮳{{hi:winit}} is often used as a foundation for building custom GUIs or integrating with other GUI libraries. It handles window events and input.
 
 {{#include window_creation.incl.md}}
 
-### File dialogs
+### File Dialogs
 
 {{#include file_dialogs.incl.md}}
 

@@ -1,4 +1,4 @@
-# Window creation
+# Window Creation
 
 {{#include window_creation.incl.md}}
 

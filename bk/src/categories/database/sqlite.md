@@ -4,7 +4,7 @@
 
 [`rusqlite`][c-rusqlite]⮳{{hi:rusqlite}} provides an API to SQLite and gives access to advanced SQlite features.
 
-## Create a SQLite database {#create-database-sqlite}
+## Create a SQLite Database {#create-database-sqlite}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}} [![rusqlite-documentation][c-rusqlite-documentation-badge]][c-rusqlite-documentation] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -17,7 +17,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on [Windows][p-wi
 {{#include ../../../crates/cats/database/tests/sqlite/initialization.rs:example}}
 ```
 
-## Insert and select data {#insert-select-data}
+## Insert and Select Data {#insert-select-data}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 
@@ -27,7 +27,7 @@ the [documentation][c-rusqlite-documentation]⮳ for compiling on [Windows][p-wi
 {{#include ../../../crates/cats/database/tests/sqlite/insert_select.rs:example}}
 ```
 
-## Using transactions {#transaction}
+## Using Transactions {#transaction}
 
 [![rusqlite][c-rusqlite-badge]][c-rusqlite]{{hi:rusqlite}} [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
 

@@ -55,11 +55,11 @@ Tools that provide developer-facing features such as testing, debugging, linting
 
 ## Optimize Rust Compilation
 
-### Compilation duration reduction
+### Compilation Duration Reduction
 
 {{#include reduce_compilation_duration.incl.md}}
 
-### Faster linking
+### Faster Linking
 
 {{#include faster_linking.incl.md}}
 

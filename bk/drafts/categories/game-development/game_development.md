@@ -2,7 +2,7 @@
 
 {{#include game_development.incl.md}}
 
-## Game development {#game-development}
+## Game Development {#game-development}
 
 ```rust,editable
 {{#include ../../../crates/cats/game_development/tests/game_development1.rs:example}}

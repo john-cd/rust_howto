@@ -31,7 +31,7 @@ Use Rust from Python:
 {{#include ../../../crates/cats/api_bindings/tests/use_rust_from_python.rs}}
 ```
 
-## Data Exchange between Rust and Python {#skip}
+## Data Exchange Between Rust and Python {#skip}
 
 While not Python-specific, [`serde`][c-serde]⮳{{hi:serde}}'s serialization capabilities allow for efficiently exchanging data between Rust and Python. You'd likely use [`serde_json`][c-serde_json]⮳{{hi:serde_json}} or another format in conjunction with your chosen Python binding crate.
 

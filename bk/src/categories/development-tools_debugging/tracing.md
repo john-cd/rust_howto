@@ -10,13 +10,13 @@ Add to [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}}.
 
 ```toml
 [dependencies]
-tracing = "0.1.41" # or latest version
+tracing = "0.1.41" # Or latest version
 tracing-subscriber = "0.3"
 ```
 
-## Initialize the logger {#initialization}
+## Initialize the Logger {#initialization}
 
-### Enable basic tracing {#basic-tracing}
+### Enable Basic Tracing {#basic-tracing}
 
 {{hi:Tracing}}
 
@@ -24,7 +24,7 @@ tracing-subscriber = "0.3"
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber.rs:example}}
 ```
 
-### Combine layers {#combine-layers}
+### Combine Layers {#combine-layers}
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber2.rs:example}}
@@ -36,7 +36,7 @@ Or with a custom [formatting][p-formatting] layer
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber3.rs:example}}
 ```
 
-### Configure a custom event formatter {#custom-event-formatter}
+### Configure a Custom Event Formatter {#custom-event-formatter}
 
 {{hi:Custom event formatter}}
 
@@ -68,7 +68,7 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_span_in_scope.rs:example}}
 ```
 
-## Add tracing spans to functions {#add-tracing-spans-to-fn}
+## Add Tracing Spans to Functions {#add-tracing-spans-to-fn}
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_instrument.rs:example}}

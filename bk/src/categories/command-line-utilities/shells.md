@@ -1,4 +1,4 @@
-# Shells and related utilities
+# Shells and Related Utilities
 
 {{#include shells.incl.md}}
 

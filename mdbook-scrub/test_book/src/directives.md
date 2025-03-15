@@ -1,8 +1,8 @@
-# Preprocessor directives
+# Preprocessor Directives
 
 The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 
-## Page link
+## Page Link
 
 <https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>
 
@@ -21,7 +21,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 - [[science_geo]].
 
 
-## Just the crate link
+## Just the Crate Link
 
 [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳.
 
@@ -32,7 +32,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 {{c: x_y-z }}
 
 
-## Crate badge
+## Crate Badge
 
 [![num][c-num-badge]][c-num]{{hi:num}}⮳
 
@@ -43,7 +43,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 {{c_b: x_y-z}}
 
 
-## Just the category link
+## Just the Category Link
 
 [testing][cat-development-tools::testing]⮳{{hi:development-tools::testing}}
 
@@ -60,7 +60,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 {{cat: xyz | XYZ }}
 
 
-## Category badge
+## Category Badge
 
 [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]
 
@@ -77,7 +77,7 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 {{cat_b: no_std }}
 
 
-## Crate block
+## Crate Block
 
 {{crate: crt }}
 

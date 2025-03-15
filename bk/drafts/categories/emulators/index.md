@@ -8,7 +8,7 @@ Please also review [[virtualization | Virtualization]].
 
 {{#include emulators.incl.md}}
 
-## Building an emulator
+## Building an Emulator
 
 Building an emulator is a substantial project. You'll likely spend a lot of time on the core logic (CPU emulation, memory management) and then use crates for graphics, sound, and other peripherals as needed.
 

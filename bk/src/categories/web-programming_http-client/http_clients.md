@@ -1,4 +1,4 @@
-# HTTP clients
+# HTTP Clients
 
 {{#include http_clients.incl.md}}{{hi:HTTP client}}
 
@@ -31,7 +31,7 @@
 <div class="hidden">
 [http_clients: expand](https://github.com/john-cd/rust_howto/issues/504)
 
-## Build a HTTP client with `hyper` {#hyper}
+## Build a HTTP Client with `hyper` {#hyper}
 
 [![hyper-website][c-hyper-website-badge]][c-hyper-website] [![hyper][c-hyper-badge]][c-hyper] [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io] [![hyper-github][c-hyper-github-badge]][c-hyper-github] [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 

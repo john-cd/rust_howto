@@ -1,4 +1,4 @@
-# Software built in Rust
+# Software Built in Rust
 
 This section provides a few examples of software written in Rust, organized by topic, to give an idea of what has been and can be built with Rust. The [`awesome-rust`][awesome-rust-github] repository contains a far more complete list of Rust applications, dev tools, and libraries.
 
@@ -83,11 +83,11 @@ This section provides a few examples of software written in Rust, organized by t
 
 {{#include development_tools.incl.md}}
 
-## Python tools written in Rust
+## Python Tools Written in Rust
 
 {{#include python_tools.incl.md}}
 
-## Other tools written in Rust
+## Other Tools Written in Rust
 
 {{#include other_tools.incl.md}}
 

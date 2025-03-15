@@ -4,7 +4,7 @@
 
 [![Rust by example - Generics][book-rust-by-example-generics-badge]][book-rust-by-example-generics]{{hi:Generics}}
 
-## Generic structs {#generic-structs}
+## Generic Structs {#generic-structs}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/generic_structs.rs:example}}

@@ -1,8 +1,8 @@
-# User interaction
+# User Interaction
 
 {{#include user_interaction.incl.md}}
 
-## Ask for confirmation, selection, text input {#inquire}
+## Ask for Confirmation, Selection, Text Input {#inquire}
 
 [![inquire][c-inquire-badge]][c-inquire]{{hi:inquire}}
 [![inquire-crates.io][c-inquire-crates.io-badge]][c-inquire-crates.io]
@@ -19,7 +19,7 @@ It offers a range of built-in prompts for various data types, including text inp
 {{#include ../../../crates/cats/command_line_interface/tests/user_interaction/inquire.rs:example}}
 ```
 
-## Display progress bars and spinners {#indicatif}
+## Display Progress Bars and Spinners {#indicatif}
 
 [![indicatif][c-indicatif-badge]][c-indicatif]{{hi:indicatif}}
 [![indicatif-crates.io][c-indicatif-crates.io-badge]][c-indicatif-crates.io]

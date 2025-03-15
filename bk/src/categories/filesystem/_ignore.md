@@ -1,8 +1,8 @@
-# Walk the filesystem
+# Walk the Filesystem
 
 {{#include ignore.incl.md}}
 
-## Walk the filesystem while respecting ignore files {#walk-the-filesystem-while-respecting-ignore-files}
+## Walk the Filesystem While Respecting Ignore Files {#walk-the-filesystem-while-respecting-ignore-files}
 
 [![ignore][c-ignore-badge]][c-ignore] [![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io] [![ignore-github][c-ignore-github-badge]][c-ignore-github] [![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 

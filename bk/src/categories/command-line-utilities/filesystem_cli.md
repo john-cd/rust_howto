@@ -1,4 +1,4 @@
-# File listing and display
+# File Listing and Display
 
 {{#include filesystem_cli.incl.md}}
 
@@ -30,11 +30,11 @@ apt install lsd
 
 ```sh
 bat README.md
-# Display multiple files at once
+# Display multiple Files at once
 bat src/*.rs
 # Read from stdin, determine the syntax automatically
 curl -s https://sh.rustup.rs | bat
-# Show and highlight non-printable characters:
+# Show and Highlight non-printable characters:
 bat -A /etc/hosts
 ```
 

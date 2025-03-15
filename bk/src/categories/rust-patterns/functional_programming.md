@@ -1,4 +1,4 @@
-# Functional programming
+# Functional Programming
 
 {{#include functional_programming.incl.md}}
 
@@ -8,7 +8,7 @@ Rust is not a purely functional language but incorporates many features from fun
 
 The following explores some notable Rust crates that aid in functional programming.
 
-## Compose iterators {#compose-iterators-with-itertools}
+## Compose Iterators {#compose-iterators-with-itertools}
 
 [![itertools][c-itertools-badge]][c-itertools]{{hi:itertools}}{{hi:Iterators}}
 [![itertools-crates.io][c-itertools-crates.io-badge]][c-itertools-crates.io]

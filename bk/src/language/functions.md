@@ -10,7 +10,7 @@
 
 The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the default return type{{hi:Return type}} when no type is given for a function. It could be omitted: `fn log(message: &str) { ... }`
 
-## Generic functions {#generic-functions}
+## Generic Functions {#generic-functions}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/generic_functions.rs:example}}
@@ -20,13 +20,13 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 {{#include ../../crates/language/tests/feat/generic_functions2.rs:example}}
 ```
 
-## Function pointers {#function-pointers}
+## Function Pointers {#function-pointers}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/function_pointers.rs:example}}
 ```
 
-## Diverging functions {#diverging-functions}
+## Diverging Functions {#diverging-functions}
 
 {{i:Diverging functions}} never return.
 

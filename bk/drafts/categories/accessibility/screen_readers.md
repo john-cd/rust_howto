@@ -2,7 +2,7 @@
 
 {{#include screen_readers.incl.md}}
 
-## Make a user interface accessible to screen readers {#accesskit}
+## Make a User Interface Accessible to Screen Readers {#accesskit}
 
 [![accesskit][c-accesskit-badge]][c-accesskit]{{hi:accesskit}}
 [![accesskit-crates.io][c-accesskit-crates.io-badge]][c-accesskit-crates.io]

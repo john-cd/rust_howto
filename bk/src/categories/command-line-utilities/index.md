@@ -1,4 +1,4 @@
-# Command-line utilities written in Rust
+# Command-line Utilities Written in Rust
 
 [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 

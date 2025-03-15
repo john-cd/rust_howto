@@ -36,7 +36,7 @@ Import/Export various files related with Robotics
 
 See also [[parser-implementations | Parser Implementations]].
 
-## Control Systems: Motion control, feedback loops, PID controllers, Path Planning
+## Control Systems: Motion Control, Feedback Loops, PID Controllers, Path Planning
 
 {{#include control_systems.incl.md}}
 
@@ -58,7 +58,7 @@ See also the machine learning chapters: [[classical_machine_learning | Classical
 
 See also the [[simulation | Simulation]], [[aerospace_simulation | Aerospace Simulation]], and [[visualization | Visualization]] chpaters. [[game-engines | Game Engines]] like [`bevy`][c-bevy]⮳{{hi:bevy}} can also be adapted for robotics simulation.
 
-## Math and Geometry-related libraries for Robotics
+## Math and Geometry-related Libraries for Robotics
 
 - [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} - Linear algebra library for Rust.
 - `ncollide` - 2 and 3-dimensional collision detection library in Rust.

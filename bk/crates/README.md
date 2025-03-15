@@ -22,7 +22,7 @@ crates
 - `other` contains the code examples for the Rust ecosystem that can't be mapped to a [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ category.
 - `standard_library` contains the code examples for the Rust standard library.
 
-## In each crate
+## In Each Crate
 
 - `Cargo.toml` list all dependencies / libraries used in the book.
 - Run `cargo add <crate>` (or edit `Cargo.toml`) in the appropriate crate to add new dependencies that new examples may require.
@@ -31,7 +31,7 @@ crates
 `temp` contains the outputs of the tests.
 `src` contains a stub `lib.rs` file.
 
-## Common commands
+## Common Commands
 
 Type `just` to browse common commands, or manually enter the following:
 

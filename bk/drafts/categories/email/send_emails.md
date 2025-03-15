@@ -1,4 +1,4 @@
-# Send emails
+# Send Emails
 
 {{#include send_emails.incl.md}}
 
@@ -17,7 +17,7 @@
 
 {{example build_email_messages}}
 
-## Send emails {#lettre}
+## Send Emails {#lettre}
 
 [![lettre][c-lettre-badge]][c-lettre]{{hi:lettre}} [![cat-email][cat-email-badge]][cat-email]{{hi:Email}}
 [![lettre-crates.io][c-lettre-crates.io-badge]][c-lettre-crates.io]
@@ -30,11 +30,11 @@
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
 ```
 
-### Send emails asynchronously {#skip}
+### Send Emails Asynchronously {#skip}
 
 [`lettre`][c-lettre]⮳{{hi:lettre}} supports asynchronous sending.
 
-### Send emails securely {#skip}
+### Send Emails Securely {#skip}
 
 [`lettre`][c-lettre]⮳{{hi:lettre}} integrates with TLS (Transport Layer Security) for secure email transmission.
 

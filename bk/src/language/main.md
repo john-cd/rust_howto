@@ -1,4 +1,4 @@
-# Main function {#main-function}
+# Main Function {#main-function}
 
 {{#include main.incl.md}}{{hi:main}}
 
@@ -6,7 +6,7 @@
 {{#include ../../crates/language/tests/feat/main_test.rs:example}}
 ```
 
-## Async main function {#async-main-function}
+## Async Main Function {#async-main-function}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/async_main.rs:example}}

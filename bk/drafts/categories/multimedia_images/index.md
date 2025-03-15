@@ -16,7 +16,7 @@ Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodep
 
 {{#include images.incl.md}}
 
-## Low-level pixel manipulation - Pixel Buffers and Data Structures
+## Low-level Pixel Manipulation - Pixel Buffers and Data Structures
 
 [`pixels`][c-pixels]⮳{{hi:pixels}} is a crate for working with pixel buffers directly. Useful for low-level image manipulation or when integrating with graphics APIs.
 
@@ -37,7 +37,7 @@ See
 - [[rendering_engine | Rendering Engine]].
 - [[rendering_graphics-api | Rendering: Graphics API]].
 
-## GPU-accelerated image processing
+## GPU-accelerated Image Processing
 
 The [`wgpu`][c-wgpu]⮳{{hi:wgpu}}, [`gfx-hal`][c-gfx_hal]⮳{{hi:gfx-hal}} low-level graphics APIs are often used for displaying images or performing GPU-accelerated image processing. See [[gpu_abstraction_layers | GPU Abstraction Layers]], [[native_graphics_apis | Native Graphics APIs]], and [[shaders | Shaders]].
 

@@ -2,7 +2,7 @@
 
 {{#include search.incl.md}}
 
-## Add a full-text search engine to a static website {#tinysearch}
+## Add a Full-text Search Engine to a Static Website {#tinysearch}
 
 [![tinysearch][c-tinysearch-badge]][c-tinysearch]{{hi:tinysearch}}
 [![tinysearch-crates.io][c-tinysearch-crates.io-badge]][c-tinysearch-crates.io]

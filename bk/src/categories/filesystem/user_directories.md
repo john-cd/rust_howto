@@ -1,4 +1,4 @@
-# User directories
+# User Directories
 
 {{#include user_directories.incl.md}}
 

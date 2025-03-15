@@ -22,7 +22,7 @@ Use `{:?}` to use the [`std::fmt::Debug`][c-std::fmt::Debug]{{hi:std::fmt::Debug
 
 Also use `dbg!(&rect1);` for debug output{{hi:Debug output}} (returns ownership of the expression's value).
 
-## Concatenate strings {#string-concatenation}
+## Concatenate Strings {#string-concatenation}
 
 [![std][c-std-badge]][c-std]
 
@@ -34,13 +34,13 @@ Here are several common methods to concatenate{{hi:Concatenation}} [`String`][c-
 
 Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 
-## Related data structures {#skip}
+## Related Data Structures {#skip}
 
 - [[slices | Slices]].
 - [[vectors | Vectors]].
 - [[cow | COW]].
 
-## String manipulation {#skip}
+## String Manipulation {#skip}
 
 - [[regex | Regex]].
 - [[parsing | Parsing]].

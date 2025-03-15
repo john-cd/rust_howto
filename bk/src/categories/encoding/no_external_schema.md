@@ -1,4 +1,4 @@
-# Non-self-describing, no external schema file
+# Non-self-describing, no External Schema File
 
 {{#include no_external_schema.incl.md}}
 

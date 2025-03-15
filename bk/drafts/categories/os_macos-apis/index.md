@@ -41,7 +41,7 @@ For macOS-specific features, you'll need to use the [`objc`][c-objc]⮳{{hi:objc
 If you need to work with Objective-C objects or frameworks, consider the [`objc`][c-objc]⮳{{hi:objc}} crate.
 See [[objc | Objc]].
 
-## Other macOS-Specific APIs
+## Other macOS-specific APIs
 
 For interacting with macOS-specific frameworks, first review the [[api-bindings | API Bindings]] category on 'crates.io'.
 

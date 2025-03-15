@@ -4,7 +4,7 @@
 
 A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c-wasm_bindgen]⮳{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
 
-## Compiling Rust to WASM (wasm32-unknown-unknown compilation target) {#skip}
+## Compiling Rust to WASM (wasm32-unknown-unknown Compilation target) {#skip}
 
 ## Tools and Frameworks (e.g., `wasm-pack`, `cargo-generate`) {#skip1}
 

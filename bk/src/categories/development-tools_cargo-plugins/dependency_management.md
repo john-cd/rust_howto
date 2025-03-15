@@ -1,4 +1,4 @@
-# Dependency management
+# Dependency Management
 
 {{#include dependency_management.incl.md}}
 

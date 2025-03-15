@@ -1,4 +1,4 @@
-# Crates by category
+# Crates by Category
 
 | Category | Description | Crates |
 | --- | --- | --- |

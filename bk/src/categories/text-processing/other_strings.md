@@ -1,4 +1,4 @@
-# OS and non-UTF8 strings
+# OS and non-UTF8 Strings
 
 {{#include other_strings.incl.md}}
 

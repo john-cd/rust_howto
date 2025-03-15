@@ -18,7 +18,7 @@ It allows multiple threads to concurrently read and write to the map with minima
 {{#include ../../../crates/cats/concurrency/tests/concurrent_data_structures/dashmap.rs:example}}
 ```
 
-## Bounded multi-producer multi-consumer queue {#crossbeam-queue}
+## Bounded Multi-producer Multi-consumer Queue {#crossbeam-queue}
 
 [![crossbeam-queue-website][c-crossbeam_queue-website-badge]][c-crossbeam_queue-website] [![crossbeam-queue][c-crossbeam_queue-badge]][c-crossbeam_queue] [![crossbeam-queue-crates.io][c-crossbeam_queue-crates.io-badge]][c-crossbeam_queue-crates.io] [![crossbeam-queue-github][c-crossbeam_queue-github-badge]][c-crossbeam_queue-github] [![crossbeam-queue-lib.rs][c-crossbeam_queue-lib.rs-badge]][c-crossbeam_queue-lib.rs]{{hi:crossbeam-queue}}{{hi:Queue}}{{hi:Mpmc}}{{hi:Lock-free}}{{hi:Producer}}{{hi:Consumer}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

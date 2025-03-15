@@ -8,11 +8,11 @@ Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
 
 {{#include external_commands.incl.md}}
 
-## Low-level system calls
+## Low-level System Calls
 
 {{#include low_level_system_calls.incl.md}}
 
-## Operating Systems written in Rust
+## Operating Systems Written in Rust
 
 {{#include rust_os.incl.md}}
 
@@ -95,7 +95,7 @@ Rust's FFI allows you to call functions written in other languages (e.g., C) tha
 
 ---
 
-## Locate installed executable with `which` {#which}
+## Locate Installed Executable with `which` {#which}
 
 [![which][c-which-badge]][c-which] [![which-crates.io][c-which-crates.io-badge]][c-which-crates.io] [![which-github][c-which-github-badge]][c-which-github] [![which-lib.rs][c-which-lib.rs-badge]][c-which-lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
 

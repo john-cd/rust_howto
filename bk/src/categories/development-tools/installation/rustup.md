@@ -2,7 +2,7 @@
 
 {{#include rustup.incl.md}}
 
-## Install and manage Rust toolchains with `rustup` {#rustup}
+## Install and Manage Rust Toolchains with `rustup` {#rustup}
 
 [![rustup][rustup-website-badge]][rustup-website] [Rustup documentation][rustup-documentation]⮳ [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
@@ -18,13 +18,13 @@ Key [`rustup` commands][rustup-command-examples]⮳ include the following:
 # Rustup's help
 rustup help
 
-# Show the help page for a subcommand (like `toolchain`)
+# Show the help page for a Subcommand (like `toolchain`)
 rustup toolchain help
 
 # Show which toolchain will be used in the current directory
 rustup show
 
-# Update to a new version of Rust
+# Update to a new Version of Rust
 rustup update
 
 # Show which toolchain will be used in the current directory

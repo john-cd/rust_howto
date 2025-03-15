@@ -1,4 +1,4 @@
-# Automatic trait derivation
+# Automatic Trait Derivation
 
 {{#include derive.incl.md}}
 

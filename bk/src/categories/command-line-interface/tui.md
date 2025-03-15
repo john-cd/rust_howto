@@ -2,7 +2,7 @@
 
 {{#include tui.incl.md}}
 
-## Build complex TUI {#ratatui}
+## Build Complex TUI {#ratatui}
 
 [![ratatui][c-ratatui-badge]][c-ratatui]{{hi:ratatui}}
 [![ratatui-crates.io][c-ratatui-crates.io-badge]][c-ratatui-crates.io]

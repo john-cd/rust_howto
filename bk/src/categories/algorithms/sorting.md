@@ -2,7 +2,7 @@
 
 {{#include sorting.incl.md}}
 
-## Sort a vector of integers {#sort-vector-integers}
+## Sort a Vector of Integers {#sort-vector-integers}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -12,7 +12,7 @@ This example will sort{{hi:Sorting}} a Vector of integers via [`std::vec::Vec::s
 {{#include ../../../crates/cats/algorithms/tests/sort/sort1.rs:example}}
 ```
 
-## Sort a vector of floats {#sort-vector-floats}
+## Sort a Vector of Floats {#sort-vector-floats}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -22,7 +22,7 @@ A vector{{hi:Vector}} of f32 or f64 can be sorted with [`sort_by`][c-std::vec::V
 {{#include ../../../crates/cats/algorithms/tests/sort/sort_float.rs:example}}
 ```
 
-## Sort a vector of structs {#sort-vector-structs}
+## Sort a Vector of Structs {#sort-vector-structs}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 

@@ -20,7 +20,7 @@ The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is
 {{#include ../../crates/language/tests/feat/generic_lifetime.rs:example}}
 ```
 
-## Lifetime Annotations in Struct Definitions and methods {#lifetime-annotations}
+## Lifetime Annotations in Struct Definitions and Methods {#lifetime-annotations}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/lifetime.rs:example}}

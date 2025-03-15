@@ -40,7 +40,7 @@ In some cases, it is necessary to run one or more [futures][p-futures] that do n
 {{#include ../../../crates/cats/asynchronous/tests/tokio/tokio21.rs:example}}
 ```
 
-## Graceful shutdown {#graceful-shutdown}
+## Graceful Shutdown {#graceful-shutdown}
 
 [![tokio-graceful-shutdown][c-tokio_graceful_shutdown-badge]][c-tokio_graceful_shutdown] [![tokio-graceful-shutdown-crates.io][c-tokio_graceful_shutdown-crates.io-badge]][c-tokio_graceful_shutdown-crates.io] [![tokio-graceful-shutdown-github][c-tokio_graceful_shutdown-github-badge]][c-tokio_graceful_shutdown-github] [![tokio-graceful-shutdown-lib.rs][c-tokio_graceful_shutdown-lib.rs-badge]][c-tokio_graceful_shutdown-lib.rs]{{hi:tokio-graceful-shutdown}}{{hi:Shutdown}}{{hi:Tokio}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -50,7 +50,7 @@ Example from [tokio_graceful_shutdown][c-tokio_graceful_shutdown]{{hi:tokio_grac
 {{#include ../../../crates/cats/asynchronous/tests/tokio/tokio_graceful_shutdown.rs:example}}
 ```
 
-## Useful links
+## Useful Links
 
 - [`tokio.rs`][c-tokio-website].
 - [![tokio examples][c-tokio_examples-badge]][c-tokio_examples]{{hi:Tokio examples}}.

@@ -1,4 +1,4 @@
-# Essential Rust links
+# Essential Rust Links
 
 {{#include index.incl.md}}
 

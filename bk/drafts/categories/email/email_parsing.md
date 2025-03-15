@@ -1,6 +1,6 @@
 # Email Parsing
 
-## Parse emails {#mailparse}
+## Parse Emails {#mailparse}
 
 [![mailparse-website][c-mailparse-website-badge]][c-mailparse-website] [![mailparse][c-mailparse-badge]][c-mailparse] [![mailparse-crates.io][c-mailparse-crates.io-badge]][c-mailparse-crates.io] [![mailparse-github][c-mailparse-github-badge]][c-mailparse-github] [![mailparse-lib.rs][c-mailparse-lib.rs-badge]][c-mailparse-lib.rs]{{hi:mailparse}}{{hi:Email}}{{hi:Maildir}}{{hi:Mime}}{{hi:Parser}}{{hi:Rfc822}} [![cat-email][cat-email-badge]][cat-email]{{hi:Email}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 

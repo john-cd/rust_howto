@@ -10,7 +10,7 @@ Simple work-stealing parallelism for Rust using [`rayon`][c-rayon]⮳{{hi:rayon}
 
 [`rayon`][c-rayon]⮳{{hi:rayon}} makes it easy to write parallel code. It provides data parallelism through [iterators][p-iterators] and task parallelism through scoped threads, allowing developers to convert sequential code to parallel versions with minimal changes. Rayon manages the thread pool and workload distribution, simplifying parallel programming and improving [performance][p-performance] on multi-core processors.
 
-### Iterate in parallel {#par-iter}
+### Iterate in Parallel {#par-iter}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -20,7 +20,7 @@ Convert calls to `iter` or `iter_mut` or `into_iter` into `par_iter` or [`par_it
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/multithreading_rayon.rs:example}}
 ```
 
-### Sort in parallel {#parallel-sorting}
+### Sort in Parallel {#parallel-sorting}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -30,7 +30,7 @@ Convert calls to `iter` or `iter_mut` or `into_iter` into `par_iter` or [`par_it
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/multithreading_rayon_parsort.rs:example}}
 ```
 
-### Implement custom parallel tasks {#custom-parallel-tasks}
+### Implement Custom Parallel Tasks {#custom-parallel-tasks}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}{{hi:Parallel tasks}}
 
@@ -40,7 +40,7 @@ Convert calls to `iter` or `iter_mut` or `into_iter` into `par_iter` or [`par_it
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/multithreading_rayon_custom.rs:example}}
 ```
 
-## Mutate the elements of an array in parallel {#mutate-array-in-parallel}
+## Mutate the Elements of an Array in Parallel {#mutate-array-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -51,7 +51,7 @@ The example uses the [`rayon`][c-rayon]{{hi:rayon}}⮳ crate, which is a data pa
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/rayon_iter_mut.rs:example}}
 ```
 
-## Test in parallel if any or all elements of a collection match a given predicate {#any-or-all-in-parallel}
+## Test in Parallel if Any or All Elements of a Collection Match a Given Predicate {#any-or-all-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -61,7 +61,7 @@ This example demonstrates using the [`rayon::iter::ParallelIterator::any`][c-ray
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/rayon_any_all.rs:example}}
 ```
 
-## Search items using a given predicate in parallel {#search-in-parallel}
+## Search Items Using a Given Predicate in Parallel {#search-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -75,7 +75,7 @@ Also note that the argument to the closure is a reference to a reference (`&&x`)
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/rayon_parallel_search.rs:example}}
 ```
 
-## Sort a vector in parallel {#sort-in-parallel}
+## Sort a Vector in Parallel {#sort-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -88,7 +88,7 @@ exist to sort an enumerable data type, [`rayon::slice::ParallelSliceMut::par_sor
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/rayon_parallel_sort.rs:example}}
 ```
 
-## Map-reduce in parallel {#map-reduce-in-parallel}
+## Map-reduce in Parallel {#map-reduce-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
@@ -100,7 +100,7 @@ This example uses [`rayon::iter::ParallelIterator::filter`][c-rayon::iter::Paral
 {{#include ../../../crates/cats/concurrency/tests/data_parallelism/rayon_map_reduce.rs:example}}
 ```
 
-## Generate JPEG thumbnails in parallel {#thumbnails-in-parallel}
+## Generate JPEG Thumbnails in Parallel {#thumbnails-in-parallel}
 
 [![rayon][c-rayon-badge]][c-rayon] [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io] [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]{{hi:rayon}}{{hi:Concurrency}}{{hi:Parallel}}{{hi:Thread}}{{hi:Performance}}{{hi:Join}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![glob][c-glob-badge]][c-glob]{{hi:glob}} [![image][c-image-badge]][c-image]{{hi:image}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

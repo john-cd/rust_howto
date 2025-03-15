@@ -2,7 +2,7 @@
 
 {{#include versioning.incl.md}}
 
-## Parse and increment a version string {#parse-and-increment-a-version-string}
+## Parse and Increment a Version String {#parse-and-increment-a-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} version string{{hi:Version string}}
 
@@ -14,7 +14,7 @@ Note that in accordance with the [semantic versioning specification`][c-semver-s
 {{#include ../../../../crates/cats/development_tools/tests/semver/semver_increment.rs:example}}
 ```
 
-## Parse a complex version string {#parse-a-complex-version-string}
+## Parse a Complex Version String {#parse-a-complex-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -26,7 +26,7 @@ Note that, in accordance with the Specification, build metadata is parsed but no
 {{#include ../../../../crates/cats/development_tools/tests/semver/semver_complex.rs:example}}
 ```
 
-## Check if a given version is pre-release {#check-if-pre-release}
+## Check if a Given Version is Pre-release {#check-if-pre-release}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -36,7 +36,7 @@ Given two versions, [`semver::Version`][c-semver::Version]{{hi:semver::Version}}
 {{#include ../../../../crates/cats/development_tools/tests/semver/semver_prerelease.rs:example}}
 ```
 
-## Find the latest version satisfying a given range {#find-latest-version-within-range}
+## Find the Latest Version Satisfying a Given Range {#find-latest-version-within-range}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
 
@@ -47,7 +47,7 @@ Given a list of version &strs, finds the latest [`semver::Version`][c-semver::Ve
 {{#include ../../../../crates/cats/development_tools/tests/semver/semver_latest.rs:example}}
 ```
 
-## Check external command version for compatibility {#check-external-command-version-for-compat}
+## Check External Command Version for Compatibility {#check-external-command-version-for-compat}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 

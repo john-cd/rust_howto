@@ -1,8 +1,8 @@
-# Multithreading with the `crossbeam` crate
+# Multithreading with the `crossbeam` Crate
 
 {{#include crossbeam.incl.md}}
 
-## Spawn a short-lived thread {#spawn-a-short-lived-thread}
+## Spawn a Short-lived Thread {#spawn-a-short-lived-thread}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}{{hi:Short-lived thread}}
 
@@ -14,7 +14,7 @@ This example splits the array in half and performs the work in separate threads.
 {{#include ../../../crates/cats/concurrency/tests/crossbeam/crossbeam_spawn.rs:example}}
 ```
 
-## Create a parallel pipeline {#parallel-pipeline}
+## Create a Parallel Pipeline {#parallel-pipeline}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -30,7 +30,7 @@ Reading from the channels via the iterator [`crossbeam_channel::Receiver::iter`]
 {{#include ../../../crates/cats/concurrency/tests/crossbeam/crossbeam_complex.rs:example}}
 ```
 
-## Pass data between two threads {#pass-data-between-two-threads}
+## Pass Data Between Two Threads {#pass-data-between-two-threads}
 
 [![crossbeam][c-crossbeam-badge]][c-crossbeam] [![crossbeam-crates.io][c-crossbeam-crates.io-badge]][c-crossbeam-crates.io] [![crossbeam-github][c-crossbeam-github-badge]][c-crossbeam-github] [![crossbeam-lib.rs][c-crossbeam-lib.rs-badge]][c-crossbeam-lib.rs]{{hi:crossbeam}}{{hi:Garbage}}{{hi:Non-blocking}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

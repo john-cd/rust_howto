@@ -34,7 +34,7 @@ Making Rust a first-class language and ecosystem for GPU shaders
 
 Multi-platform high-performance compute language extension for Rust.
 
-## GLSL/HLSL compilation {#skip}
+## GLSL/HLSL Compilation {#skip}
 
 TODO
 

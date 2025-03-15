@@ -35,7 +35,7 @@ Most standard Rust code will work on Linux without modification. For general sys
 - [`std::time`][c-std::time]⮳{{hi:std::time}}: working with time and durations. Works well on Linux.
 - Also use [`chrono`][c-chrono]⮳{{hi:chrono}} or [`time`][c-time]⮳{{hi:time}} for date and time calculations.
 
-## Linux-Specific Features (e.g., systemd, specific kernel interfaces)
+## Linux-Specific Features (e.g., `systemd`, Specific Kernel interfaces)
 
 For interacting with Linux-specific services or APIs, you'll often need to find or create crates that provide bindings to those specific interfaces.
 

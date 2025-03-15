@@ -37,7 +37,7 @@ Generating random numbers for simulations, cryptography, etc.
 
 - [`rand`][c-rand]⮳{{hi:rand}}: A popular and widely used random number generator crate.
 
-## Additional numeric types
+## Additional Numeric Types
 
 - [`num-bigint`][c-num_bigint]⮳{{hi:num-bigint}} for arbitrary-precision integers.
 - [`num-rational`][c-num_rational]⮳{{hi:num-rational}} for rational numbers.

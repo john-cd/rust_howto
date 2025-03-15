@@ -48,7 +48,7 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 
 [`devx-cmd`][c-devx_cmd]⮳{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c-devx_pre_commit]⮳{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
 
-## Make Rust a better `bash` with `xshell` {#xshell}
+## Make Rust a Better `bash` with `xshell` {#xshell}
 
 [![xshell][c-xshell-badge]][c-xshell]{{hi:xshell}}
 [![xshell-crates.io][c-xshell-crates.io-badge]][c-xshell-crates.io]

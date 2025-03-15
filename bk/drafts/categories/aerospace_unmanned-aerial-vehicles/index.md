@@ -43,7 +43,7 @@ See:
 - [[external_ffi_bindings | External FFI Bindings]].
 - [[generate_ffi_bindings | Generate FFI Bindings]].
 
-### `no_std` (for embedded systems)
+### `no_std` (for Embedded systems)
 
 If your target is a flight controller running on an embedded system, `no_std` is essential.
 

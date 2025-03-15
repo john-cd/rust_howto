@@ -1,4 +1,4 @@
-# Batteries-included frameworks
+# Batteries-included Frameworks
 
 {{#include batteries-included_frameworks.incl.md}}
 

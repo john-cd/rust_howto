@@ -2,7 +2,7 @@
 
 {{#include assertions.incl.md}}
 
-## Emit a custom message {#custom-message}
+## Emit a Custom Message {#custom-message}
 
 [![std][c-std-badge]][c-std] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}}
 
@@ -10,7 +10,7 @@
 {{#include ../../../crates/cats/development_tools_testing/tests/tests_custom_message.rs:example}}
 ```
 
-## Assert that a value matches a pattern with `assert_matches` {#assertion_libraries}
+## Assert that a Value Matches a Pattern with `assert_matches` {#assertion_libraries}
 
 [![assert_matches][c-assert_matches-badge]][c-assert_matches] [![assert_matches-crates.io][c-assert_matches-crates.io-badge]][c-assert_matches-crates.io] [![assert_matches-github][c-assert_matches-github-badge]][c-assert_matches-github] [![assert_matches-lib.rs][c-assert_matches-lib.rs-badge]][c-assert_matches-lib.rs]{{hi:assert_matches}}{{hi:Pattern}}{{hi:Assert}}{{hi:Match}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 

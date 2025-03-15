@@ -1,4 +1,4 @@
-# Generate FFI bindings to Node.js code
+# Generate FFI Bindings to Node.js Code
 
 {{#include node.incl.md}}
 

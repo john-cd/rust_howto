@@ -20,19 +20,19 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include oracle.incl.md}}
 
-## Connection pools
+## Connection Pools
 
 {{#include connection_pool.incl.md}}
 
-## Query builders and ORMs
+## Query Builders and ORMs
 
 {{#include query_builders_orms.incl.md}}
 
-## NoSQL and friends
+## NoSQL and Friends
 
 {{#include nosql.incl.md}}
 
-## Key-Value stores
+## Key-Value Stores
 
 {{#include key_value_stores.incl.md}}
 
@@ -40,7 +40,7 @@ Interface with database management systems{{hi:Database management systems}}.
 
 {{#include search.incl.md}}
 
-## Message queues (AMQP)
+## Message Queues (AMQP)
 
 {{#include amqp.incl.md}}
 

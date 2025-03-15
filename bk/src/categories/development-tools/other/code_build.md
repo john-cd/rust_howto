@@ -1,8 +1,8 @@
-# Manage and build code
+# Manage and Build Code
 
 {{#include code_build.incl.md}}
 
-## Save and run project-specific commands with the `just` command runner {#just}
+## Save and run project-specific Commands with the `just` Command Runner {#just}
 
 [![just][c-just-badge]][c-just] [![just-crates.io][c-just-crates.io-badge]][c-just-crates.io] [![just-github][c-just-github-badge]][c-just-github] [![just-lib.rs][c-just-lib.rs-badge]][c-just-lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
 
@@ -29,7 +29,7 @@ check:
 build: check
  @cargo build
 
-# Run a binary or example of the local packagels
+# Run a binary or example of the local package
 run: check
  @cargo run
 
@@ -50,11 +50,11 @@ foo:
 
 ```Dockerfile
 FROM mcr.microsoft.com/devcontainers/base:bullseye
-# or perhaps mcr.microsoft.com/devcontainers/rust:bullseye if you want rust & cargo
+# Or perhaps `mcr.microsoft.com/devcontainers/rust:bullseye` if you want Rust & `cargo`
 
 SHELL ["bash", "-c"]
 
-# Prerequisites to install Just: https://just.systems/man/en
+# Prerequisites to Install Just: https://just.systems/man/en
 RUN <<EOF
  wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
  echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
@@ -72,7 +72,7 @@ For Alpine, use [`apk`][apk-website]{{hi:apk}}⮳:
 RUN apk add just
 ```
 
-## Check your Rust code in the background {#bacon}
+## Check Your Rust Code in the Background {#bacon}
 
 [![bacon][c-bacon-badge]][c-bacon]{{hi:bacon}}
 [![bacon-crates.io][c-bacon-crates.io-badge]][c-bacon-crates.io]
@@ -84,7 +84,7 @@ RUN apk add just
 [`bacon`][c-bacon]⮳{{hi:bacon}} is a background rust code checker. It is designed for minimal interaction, so that you can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
 
 ```sh
-# Install or update `bacon`
+# Install or Update `bacon`
 cargo install --locked bacon
 
 # Check the current project

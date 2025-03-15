@@ -6,7 +6,7 @@ Rust projects use version control (typically `Git`) like any other software. `Gi
 
 The following describes tools that make
 
-## Check your code before committing it {#check-your-code-before-committing}
+## Check Your Code Before Committing it {#check-your-code-before-committing}
 
 [![cargo-husky][c-cargo_husky-badge]][c-cargo_husky]{{hi:cargo-husky}}
 [![cargo-husky-crates.io][c-cargo_husky-crates.io-badge]][c-cargo_husky-crates.io]
@@ -40,7 +40,7 @@ cargo test
 `pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile]⮳{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
 
 ```sh
-# Install python3, pipx, pre-commit (Ubuntu & friends)
+# Install `python3`, `pipx`, `pre-commit` (Ubuntu & friends)
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y python3 pipx \
     && pipx install pre-commit \
@@ -61,7 +61,7 @@ Edit it to configure your preferred hooks.
 pre-commit install
 
 # It's usually a good idea to run the hooks against all of the files when adding new hooks
-# (pre-commit will only run on the changed files during git hooks)
+# (`pre-commit` will only run on the changed files during git hooks)
 pre-commit run --all-files
 ```
 

@@ -27,7 +27,7 @@ See [[interfacing_with_javascript | Interfacing with Javascript]].
 
 {{#include interfacing_with_javascript.incl.md}}
 
-## Build an entire Web application in Rust using WASM-based Web Frameworks
+## Build an Entire Web Application in Rust Using WASM-based Web Frameworks
 
 The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}} frameworks enable building complex web applications with Rust/WASM.
 

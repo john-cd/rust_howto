@@ -2,7 +2,7 @@
 
 {{#include duration.incl.md}}
 
-## Measure the elapsed time between two code sections {#measure-elapsed-time}
+## Measure the Elapsed Time Between Two Code Sections {#measure-elapsed-time}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}{{hi:Elapsed time}}
 
@@ -14,7 +14,7 @@ Calling [`std::time::Instant::elapsed`][c-std::time::Instant::elapsed]{{hi:std::
 {{#include ../../../crates/cats/date_and_time/tests/duration/profile.rs:example}}
 ```
 
-## Perform checked date and time calculations {#perform-checked-date-time-calc}
+## Perform Checked Date and Time Calculations {#perform-checked-date-time-calc}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 
@@ -29,7 +29,7 @@ Escape sequences that are available for the
 {{#include ../../../crates/cats/date_and_time/tests/chrono/checked.rs:example}}
 ```
 
-## Convert a local time to another timezone {#convert-local-time}
+## Convert a Local Time to Another Timezone {#convert-local-time}
 
 [![chrono][c-chrono-badge]][c-chrono]{{hi:chrono}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]
 

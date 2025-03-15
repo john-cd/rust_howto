@@ -21,7 +21,7 @@ This framework focuses on integration-testing, that means external software, not
 
 Uses `#[doc = "```"]` in doc comments to embed testable examples in your documentation.
 
-## Snapshot testing: test your code against snapshots {#insta}
+## Snapshot Testing: Test Your Code Against Snapshots {#insta}
 
 [![insta][c-insta-badge]][c-insta]{{hi:insta}}
 [![insta-crates.io][c-insta-crates.io-badge]][c-insta-crates.io]

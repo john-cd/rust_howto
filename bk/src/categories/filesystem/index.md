@@ -24,7 +24,7 @@ Dealing with files{{hi:Files}} and file systems{{hi:File systems}}.
 
 {{#include directory_traversal.incl.md}}
 
-## Walk the Filesystem while Respecting Ignore Files
+## Walk the Filesystem While Respecting Ignore Files
 
 {{#include _ignore.incl.md}}
 
@@ -81,7 +81,7 @@ Working with the File System and I/O:
 
 [`notify`][c-notify]⮳{{hi:notify}}: A crate for watching files and directories for changes.
 
-## Serialization/Deserialization (for file content)
+## Serialization/Deserialization (for File content)
 
 [`serde`][c-serde]⮳{{hi:serde}}: Not a file system crate itself, but extremely relevant
 

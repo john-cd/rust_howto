@@ -1,4 +1,4 @@
-# Package layout {#package-layout}
+# Package Layout {#package-layout}
 
 {{#include package_layout.incl.md}}
 
@@ -21,13 +21,13 @@
 │       ├── main.rs
 │       └── bench_module.rs
 ├── examples/
-│   ├── simple.rs                   # cargo run --example simple
+│   ├── simple.rs                   # `cargo run --example simple`
 │   └── multi-file-example/
 │       ├── main.rs
 │       └── ex_module.rs
 └── tests/                          # Integration tests go in the tests directory.
     ├── some-integration-tests.rs   # Tests in your src files should be unit tests
-    └── multi-file-test/            # and documentation tests.
+    └── multi-file-test/            # And documentation tests.
         ├── main.rs
         └── test_module.rs
 ```

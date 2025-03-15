@@ -36,13 +36,13 @@ While ROS traditionally favored [Python][p-python] and C++, Rust is gradually ga
 
 [`rosrust`][c-rosrust]⮳{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control.
 
-## `rosrust`: Pure Rust implementation of a ROS client library {#rosrust}
+## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 
 [![rosrust][c-rosrust-badge]][c-rosrust] [![rosrust-crates.io][c-rosrust-crates.io-badge]][c-rosrust-crates.io] [![rosrust-github][c-rosrust-github-badge]][c-rosrust-github] [![rosrust-lib.rs][c-rosrust-lib.rs-badge]][c-rosrust-lib.rs]{{hi:rosrust}}
 
 [`rosrust`][c-rosrust]⮳{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
 
-## `r2r`: Minimal ROS2 Rust bindings {#r2r}
+## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
 [![r2r][c-r2r-badge]][c-r2r] [![r2r-crates.io][c-r2r-crates.io-badge]][c-r2r-crates.io] [![r2r-github][c-r2r-github-badge]][c-r2r-github] [![r2r-lib.rs][c-r2r-lib.rs-badge]][c-r2r-lib.rs]{{hi:r2r}}
 

@@ -2,7 +2,7 @@
 
 {{#include static_website_generators.incl.md}}
 
-## Create a simple website using a static website generator {#zola}
+## Create a Simple Website Using a Static Website Generator {#zola}
 
 [![zola][c-zola-badge]][c-zola-website] [![zola-github][c-zola-github-badge]][c-zola-github] [![zola-lib.rs][c-zola-lib.rs-badge]][c-zola-lib.rs]{{hi:zola}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}<div class="hidden">zola is not a crate in crates.io / doc.rs</div>
 
@@ -22,7 +22,7 @@ Open the `config.toml` file. Here's a basic example:
 base_url = "https://example.com"
 title = "My Zola Site"
 description = "A simple site powered by Zola"
-# other configuration options...
+# Other Configuration Options...
 ```
 
 Create a first post in `content/blog/first-post.md` with the following content:

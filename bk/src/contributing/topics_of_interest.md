@@ -1,4 +1,4 @@
-# Topics of interest {#topics-of-interest}
+# Topics of Interest {#topics-of-interest}
 
 {{#include topics_of_interest.incl.md}}
 

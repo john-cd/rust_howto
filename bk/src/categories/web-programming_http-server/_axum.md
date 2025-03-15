@@ -2,7 +2,7 @@
 
 {{#include axum.incl.md}}
 
-## Create a web server with `axum` {#axum}
+## Create a web Server with `axum` {#axum}
 
 [![axum][c-axum-badge]][c-axum] [![axum-crates.io][c-axum-crates.io-badge]][c-axum-crates.io] [![axum-github][c-axum-github-badge]][c-axum-github] [![axum-lib.rs][c-axum-lib.rs-badge]][c-axum-lib.rs]{{hi:axum}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 

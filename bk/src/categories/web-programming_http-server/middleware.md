@@ -26,7 +26,7 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 {{#include ../../../crates/cats/web_programming_http_server/tests/middleware/tower_http.rs:example}}
 ```
 
-## Investigate alternatives to `tower` {#alternatives}
+## Investigate Alternatives to `tower` {#alternatives}
 
 [![trillium][c-trillium-badge]][c-trillium] [![trillium-crates.io][c-trillium-crates.io-badge]][c-trillium-crates.io] [![trillium-github][c-trillium-github-badge]][c-trillium-github] [![trillium-lib.rs][c-trillium-lib.rs-badge]][c-trillium-lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}{{hi:HTTP server}}
 

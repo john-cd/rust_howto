@@ -31,11 +31,11 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 {{#include sensors.incl.md}}
 
-## Flash programming
+## Flash Programming
 
 {{#include flash.incl.md}}
 
-## Data acquisition and calibration
+## Data Acquisition and Calibration
 
 TODO
 
@@ -49,7 +49,7 @@ Microcontrollers commonly interact with peripherals via memory-mapped I/O.
 TODO
 Microcontrollers respond to events via interrupts.
 
-## Useful crates for embedded systems programming
+## Useful Crates for Embedded Systems Programming
 
 {{#include useful_crates_embedded.incl.md}}
 
@@ -84,7 +84,7 @@ See [[concurrency | Concurrency]].
 
 See [[development-tools_debugging | Debugging]].
 
-## Cross-compiling Rust code for target architectures commonly used (e.g., ARM, RISC-V)
+## Cross-compiling Rust Code for Target Architectures Commonly Used (e.g., ARM, RISC-V)
 
 See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
 

@@ -15,15 +15,15 @@ The term 'macro' [(book)][book-macro] refers to a family of features in rust: de
 
 Declarative macros are defined using a `macro_rules!` syntax and work by pattern matching, where you provide patterns and corresponding code templates. They are excellent for simple syntactic transformations and reducing boilerplate based on structural patterns. Procedural macros, on the other hand, are more like functions that operate on Rust code as input and produce Rust code as output. Procedural macros are one of the more complex but powerful parts of Rust, allowing for complex code generation and manipulation of the abstract syntax tree (AST).
 
-## Write procedural macros
+## Write Procedural Macros
 
 {{#include write_proc_macros.incl.md}}
 
-## Tools for macro development
+## Tools for Macro Development
 
 {{#include macro_tools.incl.md}}
 
-## Compile macros ahead of time
+## Compile Macros Ahead of Time
 
 {{#include compile_macros.incl.md}}
 

@@ -4,7 +4,7 @@
 
 Unicode segmentation is the process of dividing a string of Unicode text into meaningful units, such as grapheme clusters (user-perceived characters), words, and sentences, following the rules defined by the Unicode Standard.
 
-## Collect unicode graphemes {#collect-unicode-graphemes}
+## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
 [![unicode-segmentation][c-unicode_segmentation-badge]][c-unicode_segmentation] [![unicode-segmentation-crates.io][c-unicode_segmentation-crates.io-badge]][c-unicode_segmentation-crates.io] [![unicode-segmentation-github][c-unicode_segmentation-github-badge]][c-unicode_segmentation-github] [![unicode-segmentation-lib.rs][c-unicode_segmentation-lib.rs-badge]][c-unicode_segmentation-lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

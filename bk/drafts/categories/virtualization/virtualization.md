@@ -2,7 +2,7 @@
 
 {{#include virtualization.incl.md}}
 
-## Implement virtualization {#virt}
+## Implement Virtualization {#virt}
 
 ```rust,editable
 {{#include ../../../crates/cats/virtualization/tests/virtualization1.rs:example}}

@@ -8,11 +8,11 @@ Development tools to help you figure out the performance of your code.
 
 {{#include benchmarking.incl.md}}
 
-## Memory usage analysis
+## Memory Usage Analysis
 
 {{#include memory_usage_analysis.incl.md}}
 
-## Low-level profiling tools
+## Low-level Profiling Tools
 
 {{#include assembly.incl.md}}
 
@@ -36,7 +36,7 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 `cargo flamegraph`: The most popular tool for generating flame graphs from Rust programs. It integrates well with Cargo and makes profiling very easy.
 
-## System Profilers (for more in-depth analysis)
+## System Profilers (In-depth Analysis)
 
 [`perf`][c-perf]⮳{{hi:perf}} (Linux): A powerful system profiler. `cargo flamegraph` often uses perf under the hood.
 [`dtrace`][c-dtrace]⮳{{hi:dtrace}} (macOS, BSD): Another system profiler.
@@ -46,7 +46,7 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 `cargo bench`: (Built-in) Allows you to write benchmarks directly in your Rust code.
 
-## In-Code Profiling (for specific regions)
+## In-Code Profiling (Specific Code Regions)
 
 [`measure_time`][c-measure_time]⮳{{hi:measure_time}}: A simple crate for measuring the execution time of code blocks.
 
@@ -54,11 +54,11 @@ Performance Optimization: Recipes for optimizing code performance, including usi
 
 [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind.
 
-## Tracing (for understanding program flow)
+## Tracing - Understanding Program Flow
 
 [`tracing`][c-tracing]⮳{{hi:tracing}}: While not strictly a profiler in the performance sense, [`tracing`][c-tracing]⮳{{hi:tracing}} allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools.
 
-## Sampling Profilers (for CPU usage)
+## Sampling Profilers (CPU Usage)
 
 [`samply`][c-samply]⮳{{hi:samply}}: A native sampling profiler focusing on ease of use.
 

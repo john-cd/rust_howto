@@ -1,8 +1,8 @@
-# mdBook
+# `mdBook`
 
 {{#include mdbook.incl.md}}
 
-## Write online books with `mdBook` {#mdbook}
+## Write Online Books with `mdBook` {#mdbook}
 
 [![mdbook-github][c-mdbook-github-badge]][c-mdbook-github]{{hi:mdbook}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
@@ -16,29 +16,29 @@ cargo install mdbook
 mdbook serve --open
 ```
 
-## Let readers execute your sample code in the Rust playground {#playground}
+## Let Readers Execute Sample Code in the Rust Playground {#playground}
 
 [![Rust by example - Playground][book-rust-by-example-playground-badge]][book-rust-by-example-playground] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
 
 [Playground (Rust by example)][book-rust-by-example-playground]{{hi:Rust by example}}⮳.
 
-## Augment `mdbook` with plugins {#skip1}
+## Augment `mdbook` with Plugins {#skip1}
 
 [`mdbook`][c-mdbook]⮳{{hi:mdbook}} has a large number of [third-party plugins][c-mdbook-third-party-plugins-wiki]⮳.
 
-### Check links with `mdbook-linkcheck` {#mdbook-linkcheck}
+### Check Links with `mdbook-linkcheck` {#mdbook-linkcheck}
 
 [![mdbook-linkcheck][c-mdbook_linkcheck-badge]][c-mdbook_linkcheck] [![mdbook-linkcheck-crates.io][c-mdbook_linkcheck-crates.io-badge]][c-mdbook_linkcheck-crates.io] [![mdbook-linkcheck-github][c-mdbook_linkcheck-github-badge]][c-mdbook_linkcheck-github] [![mdbook-linkcheck-lib.rs][c-mdbook_linkcheck-lib.rs-badge]][c-mdbook_linkcheck-lib.rs]{{hi:mdbook-linkcheck}}
 
 [`mdbook-linkcheck`][c-mdbook_linkcheck]⮳{{hi:mdbook-linkcheck}} is a backend for [`mdbook`][c-mdbook]⮳{{hi:mdbook}}, which will check your links for you.
 
-### Hide entire chapters with `mdbook-private` {#mdbook-private}
+### Hide Entire Chapters with `mdbook-private` {#mdbook-private}
 
 [![mdbook-private][c-mdbook_private-badge]][c-mdbook_private] [![mdbook-private-crates.io][c-mdbook_private-crates.io-badge]][c-mdbook_private-crates.io] [![mdbook-private-github][c-mdbook_private-github-badge]][c-mdbook_private-github] [![mdbook-private-lib.rs][c-mdbook_private-lib.rs-badge]][c-mdbook_private-lib.rs]{{hi:mdbook-private}}
 
 [`mdbook-private`][c-mdbook_private]⮳{{hi:mdbook-private}} is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} pre-processor that controls visibility of private chapters and sections within them.
 
-### Hide pages with `mdbook-hide` {#mdbook-hide}
+### Hide Pages with `mdbook-hide` {#mdbook-hide}
 
 [![mdbook-hide][c-mdbook_hide-badge]][c-mdbook_hide] [![mdbook-hide-crates.io][c-mdbook_hide-crates.io-badge]][c-mdbook_hide-crates.io] [![mdbook-hide-github][c-mdbook_hide-github-badge]][c-mdbook_hide-github] [![mdbook-hide-lib.rs][c-mdbook_hide-lib.rs-badge]][c-mdbook_hide-lib.rs]{{hi:mdbook-hide}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]
 
@@ -48,7 +48,7 @@ mdbook serve --open
 cargo install mdbook-hide
 ```
 
-## Deploy your book or documentation in a CD / CI pipeline {#cd-ci}
+## Deploy Your Book or Documentation via a CD / CI Pipeline {#cd-ci}
 
 `GitHub Actions` is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
 
@@ -97,11 +97,11 @@ jobs:
 
 [mdslides]: https://github.com/ferrous-systems/mdslides
 
-## Test code in your `mdbook` {#termbook}
+## Test Code in Your `mdbook` {#termbook}
 
 [Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} to keep your documentation tested:
 
-## Add a table of contents to each page {#skip1}
+## Add a Table of Contents to Each Page {#skip1}
 
 ### `mdbook-toc` {#mdbook-toc}
 
@@ -121,21 +121,21 @@ jobs:
 
 [`mdbook-pagetoc`][c-mdbook_pagetoc]⮳{{hi:mdbook-pagetoc}} is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} plugin that provides a table of contents for each page.
 
-## Create pages from a template {#skip2}
+## Create Pages from a Template {#skip2}
 
-### Create pages from a template with `mdbook-tera` {#mdbook-tera}
+### Create Pages from a Template with `mdbook-tera` {#mdbook-tera}
 
 [![mdbook-tera][c-mdbook_tera-badge]][c-mdbook_tera] [![mdbook-tera-crates.io][c-mdbook_tera-crates.io-badge]][c-mdbook_tera-crates.io] [![mdbook-tera-github][c-mdbook_tera-github-badge]][c-mdbook_tera-github] [![mdbook-tera-lib.rs][c-mdbook_tera-lib.rs-badge]][c-mdbook_tera-lib.rs]{{hi:mdbook-tera}}{{hi:Pre-processor}}{{hi:Tera}}{{hi:Mdbook}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}
 
 [`mdbook-tera`][c-mdbook_tera]⮳{{hi:mdbook-tera}} is a Tera pre-processor for mdBook.
 
-### Replace text in chapters with `yapp` {#yapp}
+### Replace Text in Chapters with `yapp` {#yapp}
 
 [![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] [![mdbook-yapp-crates.io][c-mdbook_yapp-crates.io-badge]][c-mdbook_yapp-crates.io] [![mdbook-yapp-github][c-mdbook_yapp-github-badge]][c-mdbook_yapp-github] [![mdbook-yapp-lib.rs][c-mdbook_yapp-lib.rs-badge]][c-mdbook_yapp-lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Pre-processor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}[![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
 [`yapp`][c-yapp]⮳{{hi:yapp}} is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} pre-processor that simply replaces text in chapters. Phrases to be replaced with specified content are defined in plain-text configuration file.
 
-### Create a journal with `mdbook-journal` {#mdbook-journal}
+### Create a Journal with `mdbook-journal` {#mdbook-journal}
 
 [![mdbook-journal-website][c-mdbook_journal-website-badge]][c-mdbook_journal-website] [![mdbook-journal][c-mdbook_journal-badge]][c-mdbook_journal] [![mdbook-journal-crates.io][c-mdbook_journal-crates.io-badge]][c-mdbook_journal-crates.io] [![mdbook-journal-github][c-mdbook_journal-github-badge]][c-mdbook_journal-github] [![mdbook-journal-lib.rs][c-mdbook_journal-lib.rs-badge]][c-mdbook_journal-lib.rs]{{hi:mdbook-journal}}{{hi:Book}}{{hi:Gitbook}}{{hi:Markdown}}{{hi:Mdbook}}{{hi:Plugin}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}} [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engine}}
 

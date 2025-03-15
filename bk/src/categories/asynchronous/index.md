@@ -1,4 +1,4 @@
-# Asynchronous programming
+# Asynchronous Programming
 
 [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 

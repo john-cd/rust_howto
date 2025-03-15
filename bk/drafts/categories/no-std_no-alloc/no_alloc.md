@@ -2,7 +2,7 @@
 
 {{#include no_alloc.incl.md}}
 
-## Crates that work without `alloc` {#noalloc}
+## Crates Working Without `alloc` {#noalloc}
 
 ```rust,editable
 {{#include ../../../crates/cats/no_std_no_alloc/tests/no_alloc.rs:example}}

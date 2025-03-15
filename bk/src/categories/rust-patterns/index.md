@@ -4,19 +4,19 @@
 
 Shared solutions for particular situations specific to programming in Rust.
 
-## Handle errors
+## Handle Errors
 
 {{#include error_handling.incl.md}}
 
-## Customize errors
+## Customize Errors
 
 {{#include error_customization.incl.md}}
 
-## Rust design patterns
+## Rust Design Patterns
 
 {{#include design_patterns.incl.md}}
 
-## Functional programming
+## Functional Programming
 
 {{#include functional_programming.incl.md}}
 
@@ -26,11 +26,11 @@ Shared solutions for particular situations specific to programming in Rust.
 <div class="hidden">
 [index: organize / write](https://github.com/john-cd/rust_howto/issues/469)
 
-## Rust idioms
+## Rust Idioms
 
 {{#include _rust_idioms.incl.md}}
 
-## Builder patterns
+## Builder Patterns
 
 {{#include _builder_pattern.incl.md}}
 

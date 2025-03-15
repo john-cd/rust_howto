@@ -6,7 +6,7 @@ Behavior trees, decision-making, machine learning.
 
 Consider [`bonsai-bt`][c-bonsai_bt]⮳{{hi:bonsai-bt}} (Behavior Tree implementation) and `optimization-engine`, a pure Rust framework for embedded nonconvex optimization.
 
-## Create a behavior tree with `bonsai-bt` {#bonsai-bt}
+## Create a Behavior Tree with `bonsai-bt` {#bonsai-bt}
 
 [![bonsai-bt][c-bonsai_bt-badge]][c-bonsai_bt]{{hi:bonsai-bt}}
 [![bonsai-bt-crates.io][c-bonsai_bt-crates.io-badge]][c-bonsai_bt-crates.io]

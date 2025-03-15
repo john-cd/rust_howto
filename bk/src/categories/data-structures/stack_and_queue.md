@@ -4,7 +4,7 @@
 
 While Rust's standard library doesn't have dedicated `Stack` and `Queue` types in the same way some other languages do, you can easily implement their functionality using existing data structures, primarily `Vec` (for stack-like behavior) and `VecDeque` (for queue-like behavior).
 
-## Implement a stack using `Vec` {#stack}
+## Implement a Stack Using `Vec` {#stack}
 
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
@@ -14,7 +14,7 @@ A stack is a LIFO (Last-In, First-Out) data structure. You can use a `Vec` to mi
 {{#include ../../../crates/standard_library/tests/data_structures/stack.rs:example}}
 ```
 
-## Implement a queue using `VecDeque` {#queue}
+## Implement a Queue Using `VecDeque` {#queue}
 
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 

@@ -1,4 +1,4 @@
-# Repo structure {#repo-structure}
+# Repo Structure {#repo-structure}
 
 {{#include repo_structure.incl.md}}
 
@@ -11,7 +11,7 @@
   - `crates/tools` contains utilities to build sections of the book, for example some indices.
 - The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]⮳{{hi:.devcontainer}} .
 
-## All examples are fully and continuously tested {#examples-fully-tested}
+## All Examples are Fully and Continuously Tested {#examples-fully-tested}
 
 In order to make sure that all examples work, they are backed by tests, similar to the following:
 

@@ -4,7 +4,7 @@
 
 [Rust web framework comparison][rust-web-framework-comparison-github]⮳.
 
-## Implement a HTTP server using `rocket` {#rocket}
+## Implement a HTTP Server Using `rocket` {#rocket}
 
 [![rocket][c-rocket-badge]][c-rocket]{{hi:rocket}}{{hi:HTTP server}}
 [![rocket-crates.io][c-rocket-crates.io-badge]][c-rocket-crates.io]

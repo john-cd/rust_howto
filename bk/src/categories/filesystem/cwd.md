@@ -1,8 +1,8 @@
-# Current working directory
+# Current Working Directory
 
 {{#include cwd.incl.md}}
 
-## Get the current working directory {#cwd}
+## Get the Current Working Directory {#cwd}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

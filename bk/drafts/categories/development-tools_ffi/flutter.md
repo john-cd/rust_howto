@@ -1,4 +1,4 @@
-# Generate FFI bindings to Flutter code
+# Generate FFI Bindings to Flutter Code
 
 {{#include flutter.incl.md}}
 
@@ -30,7 +30,7 @@ The [`flutter_rust_bridge`][c-flutter_rust_bridge]⮳{{hi:flutter_rust_bridge}} 
 {{#include ../../../crates/cats/development_tools_ffi/tests/flutter/flutter_rust_bridge.rs:example}}
 ```
 
-## Communication between Rust and Dart {#skip3}
+## Communication Between Rust and Dart {#skip3}
 
 You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
 

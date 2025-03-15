@@ -19,7 +19,7 @@ There are two [main][p-main] approaches to Rust program verification:
 
 2. Dynamic verification: This involves running the program with different inputs and checking its behavior against expected results. Techniques like fuzz [testing][p-testing] can be used to identify potential issues.
 
-## Verify your Rust code {#code-verifiers}
+## Verify Your Rust Code {#code-verifiers}
 
 [![kani][c-kani-badge]][c-kani] [![kani-crates.io][c-kani-crates.io-badge]][c-kani-crates.io] [![kani-github][c-kani-github-badge]][c-kani-github] [![kani-lib.rs][c-kani-lib.rs-badge]][c-kani-lib.rs]{{hi:kani}}{{hi:Model-checking}}{{hi:Verification}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:kani}}
 

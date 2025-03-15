@@ -1,8 +1,8 @@
-# Make HTTP requests
+# Make HTTP Requests
 
 {{#include requests.incl.md}}
 
-## Make a HTTP GET request {#make-a-http-get-request}
+## Make a HTTP GET Request {#make-a-http-get-request}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -12,7 +12,7 @@ Parses the supplied [URL][p-url] and makes a synchronous HTTP GET request with [
 {{#include ../../../crates/cats/web_programming_http_client/tests/requests/get.rs:example}}
 ```
 
-## Make a HTTP GET request asynchronously {#async}
+## Make a HTTP GET Request Asynchronously {#async}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![tokio-website][c-tokio-website-badge]][c-tokio-website] [![tokio][c-tokio-badge]][c-tokio] [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io] [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -27,7 +27,7 @@ Uses the [asynchronous][p-asynchronous] versions of [`reqwest`][c-reqwest]{{hi:r
 {{#include ../../../crates/cats/web_programming_http_client/tests/requests/get1.rs:example}}
 ```
 
-## Set custom headers and URL parameters for a REST request {#custom-headers-and-url-parameters}
+## Set Custom Headers and URL Parameters for a REST Request {#custom-headers-and-url-parameters}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![hyper][c-hyper-badge]][c-hyper]{{hi:hyper}} [![url][c-url-badge]][c-url]{{hi:url}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}}
 

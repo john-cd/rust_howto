@@ -69,7 +69,7 @@ apt install hyperfine
 hyperfine 'sleep 0.3'
 # Change the number of runs to perform
 hyperfine --runs 5 'sleep 0.3'
-# Compare the runtimes of different programs
+# Compare the run times of different programs
 hyperfine 'hexdump file' 'xxd file'
 # Run the benchmark on a warm cache
 hyperfine --warmup 3 'grep -R TODO *'

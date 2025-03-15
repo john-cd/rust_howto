@@ -13,7 +13,7 @@
 
 [`cpuid`][c-cpuid]⮳{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
 
-### Check the number of logical cpu cores {#check-number-of-logical-cpu-cores}
+### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
 [![num_cpus][c-num_cpus-badge]][c-num_cpus] [![num_cpus-crates.io][c-num_cpus-crates.io-badge]][c-num_cpus-crates.io] [![num_cpus-github][c-num_cpus-github-badge]][c-num_cpus-github] [![num_cpus-lib.rs][c-num_cpus-lib.rs-badge]][c-num_cpus-lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat-hardware-support][cat-hardware-support-badge]][cat-hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
 
@@ -33,7 +33,7 @@ You can use inline [assembly][p-assembly] in Rust with the asm! macro, but it's 
 
 Compiler intrinsics are functions that map directly to CPU instructions. They're often used for low-level optimization. Access to intrinsics is usually through `std::arch`.
 
-## SIMD (Single Instruction, Multiple Data) operations {#simd}
+## SIMD (Single Instruction, Multiple Data) Operations {#simd}
 
 `std::arch`: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
 

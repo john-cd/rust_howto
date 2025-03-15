@@ -1,6 +1,6 @@
 # Others
 
-## Code blocks
+## Code Blocks
 
 ```rust,ignore
 fn main() {}
@@ -16,7 +16,7 @@ fn main() {}
 - <https://www.rust-lang.org/> autolink
 - [invalid-ref][invalid-ref]
 
-## Reference definitions
+## Reference Definitions
 
 [ref]: https://rust-cli.github.io/book/index.html
 [github]: https://github.com/john-cd

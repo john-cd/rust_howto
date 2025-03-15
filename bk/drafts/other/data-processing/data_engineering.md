@@ -2,7 +2,7 @@
 
 {{#include data_engineering.incl.md}}
 
-## Develop data analytics applications that process columnar data with `arrow` {#arrow}
+## Process Columnar Data with `arrow` {#arrow}
 
 [![arrow][c-arrow-badge]][c-arrow]{{hi:arrow}}
 [![arrow-crates.io][c-arrow-crates.io-badge]][c-arrow-crates.io]
@@ -15,7 +15,7 @@
 {{#include ../../../crates/other/tests/data_processing/arrow.rs:example}}
 ```
 
-## Query in-memory data with `datafusion` {#datafusion}
+## Query In-memory Data with `datafusion` {#datafusion}
 
 [![datafusion][c-datafusion-badge]][c-datafusion]{{hi:datafusion}}
 [![datafusion-crates.io][c-datafusion-crates.io-badge]][c-datafusion-crates.io]
@@ -38,7 +38,7 @@
 
 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 
-## Other frameworks {#skip}
+## Other Frameworks {#skip}
 
 - Big [Data Processing][p-data-processing] for the AI Era: [LakeSail][lakesail-website]⮳.
 - [`rerun`][c-rerun-github]⮳ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).

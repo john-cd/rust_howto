@@ -1,4 +1,4 @@
-# Databases written in Rust
+# Databases Written in Rust
 
 {{#include databases.incl.md}}
 

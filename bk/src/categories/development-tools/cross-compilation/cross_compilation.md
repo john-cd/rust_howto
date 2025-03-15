@@ -12,7 +12,7 @@
 
 ## Cross-compile with `cargo` {#cross-compile-with-cargo}
 
-## Cross-compile for multiple target OSes and architectures {#cross-compilation}
+## Cross-compile for Multiple Target OSes and Architectures {#cross-compilation}
 
 [![cross][c-cross-badge]][c-cross]{{hi:cross}} [![cross-github][c-cross-github-badge]][c-cross-github] [![cat-compilers][cat-compilers-badge]][cat-compilers]{{hi:Compilers}}
 
@@ -23,7 +23,7 @@ Cross-Compilation Tools include [`cross`][c-cross]⮳{{hi:cross}}, a popular too
 ```sh
 cargo install cross --git https://github.com/cross-rs/cross
 
-# Optionally, if you have cargo-binstall, you can install via pre-built binary
+# Optionally, if you have `cargo-binstall`, you can install the pre-built binary
 cargo binstall cross
 ```
 

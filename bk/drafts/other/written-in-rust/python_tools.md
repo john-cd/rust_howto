@@ -1,4 +1,4 @@
-# Tools for Python written in Rust
+# Tools for Python Written in Rust
 
 {{#include python_tools.incl.md}}
 

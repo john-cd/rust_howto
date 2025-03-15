@@ -4,11 +4,11 @@
 
 Crates designed to combine templates with data to produce result documents, usually with an emphasis on processing text.
 
-## Create HTML files from a template
+## Create HTML Files from a Template
 
 {{#include tera.incl.md}}
 
-## Create Markdown fragments from a template
+## Create Markdown Fragments from a Template
 
 {{#include tinytemplate.incl.md}}
 

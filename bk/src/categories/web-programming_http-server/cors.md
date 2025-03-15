@@ -1,4 +1,4 @@
-# Cross-origin resource sharing
+# Cross-origin Resource Sharing
 
 {{#include cors.incl.md}}
 

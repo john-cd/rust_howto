@@ -1,4 +1,4 @@
-# Generate FFI bindings to Java code
+# Generate FFI Bindings to Java Code
 
 {{#include java.incl.md}}
 

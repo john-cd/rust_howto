@@ -16,11 +16,11 @@ Standard library collections include:
 - `VecDeque<T>` (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
 - `BinaryHeap<T>` is a binary heap, often used to implement a priority queue.
 
-## Stack-allocated arrays
+## Stack-allocated Arrays
 
 {{#include stack_allocated_arrays.incl.md}}
 
-## Hashmaps and friends
+## Hashmaps and Friends
 
 {{#include maps.incl.md}}
 

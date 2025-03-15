@@ -2,7 +2,7 @@
 
 {{#include external_commands.incl.md}}
 
-## Run an external command and process its `stdout` {#run-an-external-command-and-process-stdout}
+## Run an External Command and Process its `stdout` {#run-an-external-command-and-process-stdout}
 
 [![std][c-std-badge]][c-std] [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
 
@@ -12,7 +12,7 @@ Runs `git log --oneline` as an external [`std::process::Command`][c-std::process
 {{#include ../../../crates/cats/os/tests/external/process_output.rs:example}}
 ```
 
-## Run an external command, passing it `stdin`, then check for an error code {#run-an-external-command-passing-stdin-and-check-for-error-code}
+## Run an External command, Passing it `stdin`, then Check for an Error Code {#run-an-external-command-passing-stdin-and-check-for-error-code}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:External command}}
 
@@ -22,7 +22,7 @@ Opens the `python`{{hi:python}} interpreter using an external [`std::process::Co
 {{#include ../../../crates/cats/os/tests/external/send_input.rs:example}}
 ```
 
-## Run piped external commands {#run-piped-external-commands}
+## Run Piped External Commands {#run-piped-external-commands}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}{{hi:Piped external commands}}
 
@@ -34,7 +34,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 {{#include ../../../crates/cats/os/tests/external/piped.rs:example}}
 ```
 
-## Redirect both the `stdout` and `stderr` of a child process to the same file {#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file}
+## Redirect both the `stdout` and `stderr` of a Child Process to the Same File {#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -46,7 +46,7 @@ The below recipe is equivalent to run the [Unix][p-unix] shell command `ls . oop
 {{#include ../../../crates/cats/os/tests/external/error_file.rs:example}}
 ```
 
-## Continuously process the outputs of a child process {#continuously-process-child-process-outputs}
+## Continuously Process the Outputs of a Child Process {#continuously-process-child-process-outputs}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -59,7 +59,7 @@ The below recipe is equivalent to the Unix shell command `journalctl | grep usb`
 {{#include ../../../crates/cats/os/tests/external/continuous.rs:example}}
 ```
 
-## Read an environment variable {#read-environment-variable}
+## Read an Environment Variable {#read-environment-variable}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}}
 
@@ -69,7 +69,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 {{#include ../../../crates/cats/os/tests/read_env_variable.rs:example}}
 ```
 
-## Run child processes using `duct` {#run-child-processes-using-duct}
+## Run Child Processes Using `duct` {#run-child-processes-using-duct}
 
 [![duct][c-duct-badge]][c-duct]{{hi:duct}}
 [![duct-crates.io][c-duct-crates.io-badge]][c-duct-crates.io]

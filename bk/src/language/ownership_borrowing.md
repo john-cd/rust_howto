@@ -40,7 +40,7 @@ Passing a variable to a function will move or copy, just as assignment does. To 
 {{#include ../../crates/language/tests/feat/borrowing.rs:example}}
 ```
 
-### Mutable references {#mutable-reference}
+### Mutable References {#mutable-reference}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/borrowing_mutable.rs:example}}

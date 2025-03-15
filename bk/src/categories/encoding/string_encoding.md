@@ -2,7 +2,7 @@
 
 {{#include string_encoding.incl.md}}
 
-## Percent-encode a string {#percent-encoding}
+## Percent-encode a String {#percent-encoding}
 
 [![percent_encoding][c-percent_encoding-badge]][c-percent_encoding]{{hi:percent_encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -16,7 +16,7 @@ The encode set defines which bytes (in addition to non-ASCII and controls) need 
 
 The return value of [encoding][p-encoding] is an iterator of `&str` [slices][p-slices] which collect into a [`std::string::String`][c-std::string::String]{{hi:std::string::String}}⮳.
 
-## Encode a string as application/x-www-form-urlencoded {#url}
+## Encode a String as application/x-www-form-urlencoded {#url}
 
 [![url][c-url-badge]][c-url] [![url-crates.io][c-url-crates.io-badge]][c-url-crates.io] [![url-github][c-url-github-badge]][c-url-github] [![url-lib.rs][c-url-lib.rs-badge]][c-url-lib.rs]{{hi:url}}{{hi:Parser}}{{hi:url}}[![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}[![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}[![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}}[![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}}
 
@@ -26,7 +26,7 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 {{#include ../../../crates/cats/encoding/tests/strings/url_encode.rs:example}}
 ```
 
-## Encode and decode hexadecimal {#data-encoding}
+## Encode and Decode Hexadecimal {#data-encoding}
 
 [![data-encoding][c-data_encoding-badge]][c-data_encoding]{{hi:Data encoding}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 
@@ -40,7 +40,7 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 {{#include ../../../crates/cats/encoding/tests/strings/hex.rs:example}}
 ```
 
-## Encode and decode base64 {#base64}
+## Encode and Decode base64 {#base64}
 
 [![base64][c-base64-badge]][c-base64]{{hi:base64}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}
 

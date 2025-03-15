@@ -28,7 +28,7 @@
 {{#include ../../../crates/cats/encoding/tests/serde/serde_json.rs:example}}
 ```
 
-## Handle unknown fields when deserializing with `serde-ignored` {#serde-ignored}
+## Handle Unknown Fields When Deserializing, with `serde-ignored` {#serde-ignored}
 
 [![serde-ignored][c-serde_ignored-badge]][c-serde_ignored]{{hi:serde-ignored}}
 [![serde-ignored-crates.io][c-serde_ignored-crates.io-badge]][c-serde_ignored-crates.io]

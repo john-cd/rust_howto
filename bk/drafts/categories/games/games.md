@@ -2,7 +2,7 @@
 
 {{#include games.incl.md}}
 
-## Games written in Rust {#games}
+## Games Written in Rust {#games}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

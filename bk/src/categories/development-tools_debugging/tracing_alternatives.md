@@ -2,7 +2,7 @@
 
 {{#include tracing_alternatives.incl.md}}
 
-## Use older alternatives to `tracing` {#skip1}
+## Use Older Alternatives to `tracing` {#skip1}
 
 [`tracing`][c-tracing]⮳{{hi:tracing}} is now the "go-to" crate for logging, but [`log`][c-log]⮳{{hi:log}}, [`slog`][c-slog]⮳{{hi:slog}} and [`log4rs`][c-log4rs]⮳{{hi:log4rs}} are still in extensive use.
 
@@ -67,7 +67,7 @@ fn [main][p-main]() {
 <div class="hidden">
 [write, organize together with the old [log][p-log] content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
 
-## Other frameworks {#skip2}
+## Other Frameworks {#skip2}
 
 ### `OpenTelemetry` {#open-telemetry}
 

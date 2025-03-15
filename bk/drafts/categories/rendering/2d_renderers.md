@@ -59,7 +59,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 {{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
 ```
 
-## Other renderers {#skip5}
+## Other Renderers {#skip5}
 
 ## `vello` {#vello}
 

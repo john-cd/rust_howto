@@ -2,7 +2,7 @@
 
 {{#include string_parsing.incl.md}}
 
-## Implement the `FromStr` trait for a custom `struct` {#implement-the-fromstr-trait-for-a-custom-struct}
+## Implement the `FromStr` Trait for a Custom `struct` {#implement-the-fromstr-trait-for-a-custom-struct}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 

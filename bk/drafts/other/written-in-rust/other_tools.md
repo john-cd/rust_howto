@@ -1,12 +1,12 @@
-# Other tools written in Rust
+# Other Tools Written in Rust
 
 {{#include other_tools.incl.md}}
 
-## File managers {#file-managers}
+## File Managers {#file-managers}
 
 `Spacedrive` is an open source [cross-platform][p-cross-platform] file explorer, powered by a virtual distributed [filesystem][p-filesystem] written in Rust. [spacedrive][spacedrive-github]⮳ [![spacedrive-github][spacedrive-github-badge]][spacedrive-github]
 
-## Remote desktops {#remote-desktops}
+## Remote Desktops {#remote-desktops}
 
 [![rustdesk][c-rustdesk-badge]][c-rustdesk]{{hi:rustdesk}}
 [![rustdesk-crates.io][c-rustdesk-crates.io-badge]][c-rustdesk-crates.io]
@@ -15,7 +15,7 @@
 
 [rustdesk][c-rustdesk-github]{{hi:rustdesk}}⮳ is an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
 
-## Email applications {#email-applications}
+## Email Applications {#email-applications}
 
 [![postsack][postsack-github-badge]][postsack-github]
 
@@ -29,7 +29,7 @@
 
 [hyperswitch][hyperswitch-github]{{hi:hyperswitch}}⮳ is an open source payments switch written in Rust to make payments fast, reliable and affordable.
 
-## Social media {#social-media}
+## Social Media {#social-media}
 
 [lemmy][lemmy-github]{{hi:lemmy}}⮳ is a link aggregator and forum for the fediverse.
 

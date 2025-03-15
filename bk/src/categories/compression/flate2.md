@@ -1,6 +1,6 @@
 # Deflate
 
-## Compress then decompress {#compress-decompress}
+## Compress then Decompress {#compress-decompress}
 
 [![flate2][c-flate2-badge]][c-flate2] [![flate2-crates.io][c-flate2-crates.io-badge]][c-flate2-crates.io] [![flate2-github][c-flate2-github-badge]][c-flate2-github] [![flate2-lib.rs][c-flate2-lib.rs-badge]][c-flate2-lib.rs]{{hi:flate2}}{{hi:Encoding}}{{hi:Gzip}}{{hi:Zlib}}{{hi:Deflate}}{{hi:Zlib-ng}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}} [![cat-compression][cat-compression-badge]][cat-compression]{{hi:Compression}}
 

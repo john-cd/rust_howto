@@ -2,7 +2,7 @@
 
 {{#include complex_encoding.incl.md}}
 
-## Serialize and deserialize unstructured JSON {#serde-json}
+## Serialize and Deserialize Unstructured JSON {#serde-json}
 
 [![serde_json][c-serde_json-badge]][c-serde_json]{{hi:serde_json}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:Deserialization}}{{hi:JSON}}
 
@@ -16,7 +16,7 @@ The example below shows a `&str` of [JSON][p-json] being parsed. The expected va
 {{#include ../../../crates/cats/encoding/tests/serde/json.rs:example}}
 ```
 
-## Deserialize a TOML configuration file {#toml}
+## Deserialize a TOML Configuration File {#toml}
 
 [![toml][c-toml-badge]][c-toml]{{hi:toml}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}}{{hi:TOML}}
 
@@ -33,7 +33,7 @@ Parse [TOML][p-toml] into your own [structs][p-structs] using [`serde`][c-serde]
 {{#include ../../../crates/cats/encoding/tests/toml/toml1.rs:example}}
 ```
 
-## Read and write integers in little-endian byte order {#byteorder}
+## Read and Write Integers in Little-endian Byte Order {#byteorder}
 
 [![byteorder][c-byteorder-badge]][c-byteorder] [![byteorder-crates.io][c-byteorder-crates.io-badge]][c-byteorder-crates.io] [![byteorder-github][c-byteorder-github-badge]][c-byteorder-github] [![byteorder-lib.rs][c-byteorder-lib.rs-badge]][c-byteorder-lib.rs]{{hi:byteorder}}{{hi:Little-endian}}{{hi:Big-endian}}{{hi:Endian}}{{hi:Byte}}{{hi:Binary}}{{hi:Encoding}}{{hi:Byte order}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-parsing][cat-parsing-badge]][cat-parsing]{{hi:Parsing tools}}
 

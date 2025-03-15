@@ -2,7 +2,7 @@
 
 {{#include async_and_blocking.incl.md}}
 
-## Call blocking code from async code {#calling-blocking-from-async}
+## Call Blocking Code from Async Code {#calling-blocking-from-async}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:Blocking code}}
@@ -24,7 +24,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 {{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_spawn_blocking.rs:example}}
 ```
 
-## Use the `rayon` crate {#rayon}
+## Use the `rayon` Crate {#rayon}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}} [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io]
 [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]
@@ -36,7 +36,7 @@ Use [`tokio::task::spawn_blocking`][c-tokio::task::spawn_blocking]{{hi:tokio::ta
 {{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_rayon.rs:example}}
 ```
 
-### Spawn a dedicated thread {#spawn-a-dedicated-thread}
+### Spawn a Dedicated Thread {#spawn-a-dedicated-thread}
 
 [![rayon][c-rayon-badge]][c-rayon]{{hi:rayon}} [![rayon-crates.io][c-rayon-crates.io-badge]][c-rayon-crates.io]
 [![rayon-github][c-rayon-github-badge]][c-rayon-github] [![rayon-lib.rs][c-rayon-lib.rs-badge]][c-rayon-lib.rs]
@@ -50,14 +50,14 @@ If a blocking operation{{hi:Blocking operation}} keeps running forever, you shou
 {{#include ../../../crates/cats/asynchronous/tests/call_blocking_from_async/call_blocking_from_async_spawn_dedicated_thread.rs:example}}
 ```
 
-## Call async code from blocking code {#call-async-from-blocking}
+## Call Async Code from Blocking Code {#call-async-from-blocking}
 
 [Bridging with sync code][c-tokio_bridging_with_sync_code-website]⮳ [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
 
 In other cases, it may be easier to structure the application as largely synchronous{{hi:Synchronous code}}, with smaller or logically distinct asynchronous{{hi:Asynchronous}} portions. For instance, a GUI{{hi:GUI}} application might want to run the GUI code on the main thread and run a Tokio runtime next to it on another thread.
 
-### Use the `futures` executor {#futures-executor}
+### Use the `futures` Executor {#futures-executor}
 
 [![futures_executor][c-futures_executor-badge]][c-futures_executor]{{hi:futures_executor}}
 [![futures_executor-crates.io][c-futures_executor-crates.io-badge]][c-futures_executor-crates.io]
@@ -70,7 +70,7 @@ In other cases, it may be easier to structure the application as largely synchro
 {{#include ../../../crates/cats/asynchronous/tests/call_async_from_blocking/call_async_from_blocking_futures_executor.rs:example}}
 ```
 
-### Use the Tokio runtime directly {#tokio-runtime}
+### Use the Tokio Runtime Directly {#tokio-runtime}
 
 [![tokio][c-tokio-badge]][c-tokio]{{hi:tokio}} [![tokio-crates.io][c-tokio-crates.io-badge]][c-tokio-crates.io]
 [![tokio-github][c-tokio-github-badge]][c-tokio-github] [![tokio-lib.rs][c-tokio-lib.rs-badge]][c-tokio-lib.rs] [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}

@@ -2,7 +2,7 @@
 
 {{#include performance.incl.md}}
 
-## Configure your `cargo` project for maximum performance, fast compile times or minimal binary size {#cargo-wizard}
+## Configure your `cargo` project for Maximum Performance, Fast Compile Times or Minimal Binary Size {#cargo-wizard}
 
 [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard] [![cargo-wizard-crates.io][c-cargo_wizard-crates.io-badge]][c-cargo_wizard-crates.io] [![cargo-wizard-github][c-cargo_wizard-github-badge]][c-cargo_wizard-github] [![cargo-wizard-lib.rs][c-cargo_wizard-lib.rs-badge]][c-cargo_wizard-lib.rs]{{hi:cargo-wizard}}{{hi:Profile}}{{hi:Cargo}}{{hi:Template}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 

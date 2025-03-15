@@ -1,8 +1,8 @@
-# Additional numeric types
+# Additional Numeric Types
 
 {{#include additional_numeric_types.incl.md}}
 
-## Abstract over different number types {#abstracting-over-number-types}
+## Abstract over Different Number Types {#abstracting-over-number-types}
 
 [![num-traits][c-num_traits-badge]][c-num_traits] [![num-traits-crates.io][c-num_traits-crates.io-badge]][c-num_traits-crates.io] [![num-traits-github][c-num_traits-github-badge]][c-num_traits-github] [![num-traits-lib.rs][c-num_traits-lib.rs-badge]][c-num_traits-lib.rs]{{hi:num-traits}}{{hi:Numerics}}{{hi:Mathematics}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -12,7 +12,7 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/num_traits.rs:example}}
 ```
 
-## Use big integers {#big-integers}
+## Use Big Integers {#big-integers}
 
 ### `num` {#skip1}
 
@@ -44,7 +44,7 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/rug.rs:example}}
 ```
 
-## Use big decimals {#big-decimal}
+## Use Big Decimals {#big-decimal}
 
 [![rust_decimal][c-rust_decimal-badge]][c-rust_decimal] [![rust_decimal-crates.io][c-rust_decimal-crates.io-badge]][c-rust_decimal-crates.io] [![rust_decimal-github][c-rust_decimal-github-badge]][c-rust_decimal-github] [![rust_decimal-lib.rs][c-rust_decimal-lib.rs-badge]][c-rust_decimal-lib.rs]{{hi:rust_decimal}}{{hi:Decimal}}{{hi:Financial}}{{hi:Fixed}}{{hi:Number}}{{hi:Precision}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}} [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -54,7 +54,7 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 {{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/rust_decimal.rs:example}}
 ```
 
-## Sort floats {#sortable-floats}
+## Sort Floats {#sortable-floats}
 
 [![ordered-float][c-ordered_float-badge]][c-ordered_float] [![ordered-float-crates.io][c-ordered_float-crates.io-badge]][c-ordered_float-crates.io] [![ordered-float-github][c-ordered_float-github-badge]][c-ordered_float-github] [![ordered-float-lib.rs][c-ordered_float-lib.rs-badge]][c-ordered_float-lib.rs]{{hi:ordered-float}}{{hi:F32}}{{hi:F64}}{{hi:No_std}}{{hi:Ord}}{{hi:Sort}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 

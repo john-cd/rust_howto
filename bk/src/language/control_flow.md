@@ -1,10 +1,10 @@
-# Control flow {#control-flow}
+# Control Flow {#control-flow}
 
 {{#include control_flow.incl.md}}
 
 [![Rust by example - Control flow][book-rust-by-example-flow_control-badge]][book-rust-by-example-flow_control]{{hi:Control flow}}
 
-## If else {#if-else}
+## If Else {#if-else}
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/if_else.rs:example}}

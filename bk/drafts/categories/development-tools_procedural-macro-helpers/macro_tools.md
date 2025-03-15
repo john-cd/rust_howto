@@ -1,4 +1,4 @@
-# Tools for macro development
+# Tools for Macro Development
 
 {{#include macro_tools.incl.md}}
 

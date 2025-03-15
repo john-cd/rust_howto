@@ -1,8 +1,8 @@
-# Write code
+# Write Code
 
 {{#include code_writing.incl.md}}
 
-## Generate a Rust project from a template {#cargo-generate}
+## Generate a Rust Project from a Template {#cargo-generate}
 
 [![cargo-generate][c-cargo_generate-badge]][c-cargo_generate]{{hi:cargo-generate}}
 [![cargo-generate-crates.io][c-cargo_generate-crates.io-badge]][c-cargo_generate-crates.io]
@@ -13,7 +13,7 @@
 
 [Cargo Generate][c-cargo_generate-crates.io]{{hi:cargo-generate}}⮳ is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template.
 
-## Quickly open the `crates.io` or `docs.rs` page for the latest version of a crate {#cargo-open}
+## Quickly Open the `crates.io` or `docs.rs` Page for the Latest Version of a Crate {#cargo-open}
 
 [![cargo-crates][c-cargo_crates-badge]][c-cargo_crates]{{hi:cargo-crates}}
 [![cargo-crates-crates.io][c-cargo_crates-crates.io-badge]][c-cargo_crates-crates.io]

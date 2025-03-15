@@ -2,7 +2,7 @@
 
 {{#include statistics.incl.md}}
 
-## Calculate measures of central tendency {#measures-of-central-tendency}
+## Calculate Measures of Central Tendency {#measures-of-central-tendency}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 
@@ -26,7 +26,7 @@ The final example calculates the mode using a mutable [`std::collections::HashMa
 {{#include ../../../crates/cats/mathematics/tests/stats/central_tendency2.rs:example}}
 ```
 
-## Compute the standard deviation {#standard-deviation}
+## Compute the Standard Deviation {#standard-deviation}
 
 [![std][c-std-badge]][c-std]{{hi:std}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}}
 

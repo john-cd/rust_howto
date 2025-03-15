@@ -1,8 +1,8 @@
-# File watching
+# File Watching
 
 {{#include file_watching.incl.md}}
 
-## Watch files or directories and execute a function when they change {#watch-files-or-dirs}
+## Watch Files or Directories and Execute a Function When They Change {#watch-files-or-dirs}
 
 [![notify-website][c-notify-website-badge]][c-notify-website] [![notify][c-notify-badge]][c-notify] [![notify-crates.io][c-notify-crates.io-badge]][c-notify-crates.io] [![notify-github][c-notify-github-badge]][c-notify-github] [![notify-lib.rs][c-notify-lib.rs-badge]][c-notify-lib.rs]{{hi:notify}}{{hi:Events}}{{hi:Filesystem}}{{hi:notify}}{{hi:Watch}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 

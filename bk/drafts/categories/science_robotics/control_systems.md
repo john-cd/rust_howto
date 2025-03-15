@@ -9,15 +9,15 @@ Motion control, feedback loops, PID controllers.
 - Motion Planning: [Linear algebra][p-linear-algebra] crates like [`nalgebra`][c-nalgebra]⮳{{hi:nalgebra}} and [`alga`][c-alga]⮳{{hi:alga}} are foundational.
 - [[path_planning | Path Planning]]: Path planning algorithms are often implemented using graph algorithms and search techniques.
 
-## `nalgebra`: Linear algebra library for control algorithms {#nalgebra}
+## `nalgebra`: Linear Algebra Library for Control Algorithms {#nalgebra}
 
-## `k`: Kinematics library for robotics {#k}
+## `k`: Kinematics Library for Robotics {#k}
 
 ## Path Planning {#skip}
 
 Collision avoidance, trajectory optimization.
 
-## `pathfinding`: Pathfinding algorithms for navigation {#pathfinding}
+## `pathfinding`: Pathfinding Algorithms for Navigation {#pathfinding}
 
 Pathfinding library for rust
 

@@ -103,6 +103,9 @@ mod recipes 'scripts/recipes'
 # Manage crates / dependencies
 mod deps 'scripts/deps'
 
+# Manage titles
+mod titles 'scripts/titles'
+
 # Manage include statements
 mod includes 'scripts/includes'
 

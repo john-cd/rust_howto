@@ -1,4 +1,4 @@
-# Text layout
+# Text Layout
 
 {{#include text_layout.incl.md}}
 

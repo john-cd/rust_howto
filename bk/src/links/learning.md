@@ -22,7 +22,7 @@
 - [How to learn modern Rust][how_to_learn_modern_rust-github]⮳.
 - [Roadmap for Rust][roadmap-rust-website]⮳.
 
-## Ferrous systems {#ferrous-systems-training}
+## Ferrous Systems {#ferrous-systems-training}
 
 - [Why Rust?][ferrous-systems-why-rust-github]⮳.
 - [Rust training][ferrous-systems-rust-training-github]⮳.

@@ -32,12 +32,12 @@ A corpus is a set of initial inputs that the fuzzer uses as a starting point. `c
 `libFuzzer` (used by `cargo fuzz`): libFuzzer is a coverage-guided fuzzer, meaning it uses [code coverage][p-code-coverage] information to guide its search for bugs.
 AFL: Also a coverage-guided fuzzer.
 
-### Sanitizers (for detecting errors) {#skip}
+### Sanitizers (for Detecting errors) {#skip}
 
 Address Sanitizer (ASan): Detects memory errors (e.g., use-after-free, memory leaks). Enable it with compiler flags (e.g., `-fsanitize=address`).
 Undefined Behavior Sanitizer (UBSan): Detects undefined behavior (e.g., integer overflow, out-of-bounds access). Enable it with compiler flags (e.g., `-fsanitize=undefined`).
 
-### Differential Fuzzing: (For comparing implementations) {#skip}
+### Differential Fuzzing: (For Comparing implementations) {#skip}
 
 This is a more advanced technique and often involves custom [scripting][p-scripting] or tools. There aren't specific crates for it.
 

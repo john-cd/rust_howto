@@ -1,4 +1,4 @@
-# Release automation
+# Release Automation
 
 {{#include release_automation.incl.md}}
 
@@ -19,7 +19,7 @@ Cargo handles building the release binaries or packaging your Rust code in `.cra
 - `cargo package` create a distributable, compressed .crate file with the source code of the package in the current directory. The resulting file will be stored in the `target/package` directory.
 - `cargo publish` uploads a package to the registry (typically `crates.io`).
 
-## Publish a crate to `crates.io` {#skip}
+## Publish a Crate to `crates.io` {#skip}
 
 The following are the typical steps to release a crate to `crates.io`:
 
@@ -44,7 +44,7 @@ The following are the typical steps to release a crate to `crates.io`:
   - `cargo publish --dry-run`.
   - When ready, `cargo publish`.
 
-## Publish a new crate version with `cargo release` {#cargo-release}
+## Publish a New Crate Version with `cargo release` {#cargo-release}
 
 [![cargo-release][c-cargo_release-badge]][c-cargo_release]{{hi:cargo-release}}
 [![cargo-release-crates.io][c-cargo_release-crates.io-badge]][c-cargo_release-crates.io]
@@ -71,7 +71,7 @@ The following are the typical steps to release a crate to `crates.io`:
 
 [`cargo-dist`][c-cargo_dist]⮳{{hi:cargo-dist}} packages shippable applications for Rust.
 
-## Create Debian and RPM packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
+## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
 
 ## Related Topics {#skip}
 

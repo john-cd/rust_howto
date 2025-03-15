@@ -2,7 +2,7 @@
 
 {{#include encoding.incl.md}}
 
-## Encode your media {#encoding}
+## Encode Your Media {#encoding}
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_encoding/tests/encoding.rs:example}}

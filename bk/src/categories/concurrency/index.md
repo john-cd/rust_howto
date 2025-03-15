@@ -19,7 +19,7 @@ Key constructs in Rust:
 - Mutexes e.g. [`std::sync::Mutex`][c-std::sync::Mutex]⮳{{hi:std::sync::Mutex}} protect shared data from race conditions.
 - Channels{{hi:Channels}} e.g. [`std::sync::mpsc`][c-std::sync::mpsc::channel]⮳{{hi:std::sync::mpsc}} allow threads to communicate and exchange data.
 
-## Explicit threads
+## Explicit Threads
 
 Creating and managing threads, using mutexes and other synchronization primitives.
 
@@ -31,27 +31,27 @@ Using thread pools for efficient task execution.
 
 {{#include threadpool.incl.md}}
 
-## Multithreading with the `crossbeam` crate
+## Multithreading with the `crossbeam` Crate
 
 {{#include crossbeam.incl.md}}
 
-## Message passing and channels
+## Message Passing and Channels
 
 Communicating between threads using channels.
 
 {{#include message_passing.incl.md}}
 
-## Shared state
+## Shared State
 
 Shared Memory. Using atomic types for thread-safe data access.
 
 {{#include shared_state.incl.md}}
 
-## Concurrent data structures
+## Concurrent Data Structures
 
 {{#include concurrent_data_structures.incl.md}}
 
-## Data parallelism
+## Data Parallelism
 
 Using iterators in parallel with crates like [`rayon`][c-rayon]⮳{{hi:rayon}}.
 

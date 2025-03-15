@@ -1,4 +1,4 @@
-# Web serving
+# Web Serving
 
 [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
 
@@ -17,11 +17,11 @@ Serve data over HTTP.
 
 {{#include _axum.incl.md}}
 
-## Batteries-included frameworks
+## Batteries-included Frameworks
 
 {{#include _batteries-included_frameworks.incl.md}}
 
-## Cross-origin resource sharing
+## Cross-origin Resource Sharing
 
 {{#include cors.incl.md}}
 
@@ -41,11 +41,11 @@ Serve data over HTTP.
 
 {{#include middleware.incl.md}}
 
-## Other frameworks
+## Other Frameworks
 
 {{#include other_frameworks.incl.md}}
 
-## Static website generators
+## Static Website Generators
 
 {{#include static_website_generators.incl.md}}
 

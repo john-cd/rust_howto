@@ -10,7 +10,7 @@ Hashes are widely used in various applications such as:
 - Password Storage: Storing hashed versions of passwords rather than plain text to enhance security.
 - Digital Signatures: Verifying the authenticity and integrity of messages or documents.
 
-## Calculate the SHA-256 digest of a file {#sha256}
+## Calculate the SHA-256 Digest of a File {#sha256}
 
 [![ring][c-ring-badge]][c-ring] [![ring-crates.io][c-ring-crates.io-badge]][c-ring-crates.io] [![ring-github][c-ring-github-badge]][c-ring-github] [![ring-lib.rs][c-ring-lib.rs-badge]][c-ring-lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}}
 
@@ -24,7 +24,7 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 {{#include ../../../crates/cats/cryptography/tests/hashing/sha_digest.rs:example}}
 ```
 
-## Use general-purpose hashing algorithms {#skip1}
+## Use General-purpose Hashing Algorithms {#skip1}
 
 For more [algorithms][p-algorithms], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
 

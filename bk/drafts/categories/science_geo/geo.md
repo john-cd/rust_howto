@@ -2,7 +2,7 @@
 
 {{#include geo.incl.md}}
 
-## Process spatial information, maps, navigation data, and geographic information systems {#geo}
+## Process Spatial Information, Maps, Navigation Data, and Geographic Information Systems {#geo}
 
 [![geo][c-geo-badge]][c-geo] [![geo-crates.io][c-geo-crates.io-badge]][c-geo-crates.io] [![geo-github][c-geo-github-badge]][c-geo-github] [![geo-lib.rs][c-geo-lib.rs-badge]][c-geo-lib.rs]{{hi:geo}}{{hi:GIS}}{{hi:Geography}}{{hi:geo}}{{hi:Geospatial}} [![cat-science::geo][cat-science::geo-badge]][cat-science::geo]{{hi:Geospatial}}
 

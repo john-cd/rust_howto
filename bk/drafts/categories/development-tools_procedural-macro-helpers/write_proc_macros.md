@@ -1,4 +1,4 @@
-# Write procedural macros
+# Write Procedural Macros
 
 {{#include write_proc_macros.incl.md}}
 
@@ -10,7 +10,7 @@ Procedural macro [crates][p-crates] almost always will link to the compiler-prov
 
 This crate primarily contains a TokenStream type. Procedural [macros][p-macros] operate over token [streams][p-streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p-macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree` can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][(reference)].
 
-## Parse Rust source code into an abstract syntax tree {#syn}
+## Parse Rust Source Code into an Abstract Syntax Tree {#syn}
 
 [![syn][c-syn-badge]][c-syn] [![syn-crates.io][c-syn-crates.io-badge]][c-syn-crates.io] [![syn-github][c-syn-github-badge]][c-syn-github] [![syn-lib.rs][c-syn-lib.rs-badge]][c-syn-lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat-development-tools::procedural-macro-helpers][cat-development-tools::procedural-macro-helpers-badge]][cat-development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat-parser-implementations][cat-parser-implementations-badge]][cat-parser-implementations]{{hi:Parser implementations}}
 
@@ -76,7 +76,7 @@ Make procedural [macros][p-macros] unit testable. As a consequence of being spec
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/tests/darling.rs:example}}
 ```
 
-## Report errors from within a procedural macro {#skip}
+## Report Errors from Within a Procedural Macro {#skip}
 
 Procedural [macros][p-macros] have two ways of reporting errors. The first is to [`panic`][c-panic]⮳{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
 

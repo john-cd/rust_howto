@@ -1,4 +1,4 @@
-# Implement Rust applications on AWS
+# Implement Rust Applications on AWS
 
 {{#include aws.incl.md}}
 
@@ -13,7 +13,7 @@ Rust code is frequently implemented as:
 - serverless functions that run on a Function-as-a-Service (FaaS) platform like the aforementioned AWS Lambda,
 - (micro)services that are then deployed on a containerized platform (AWS ECS, EKS, App Runner...) or on EC2 machines.
 
-## Implement AWS Lambda functions in Rust {#lambda}
+## Implement AWS Lambda Functions in Rust {#lambda}
 
 Rust's performance and small binary size make it a great choice for serverless functions. Rust Lambda functions can start quickly and consume fewer resources, leading to lower costs and improved performance.
 
@@ -27,7 +27,7 @@ You can also use the AWS SDK from within a Lambda function to interact with AWS 
 
 See also the ["Create Lambda functions with Rust"][aws-create-lambda-functions-with-rust]⮳ and ["AWS Lambda Rust runtime examples"][aws-lambda-rust-runtime-examples-github]⮳ webpages.
 
-## Interact with AWS services with the AWS SDK for Rust {#aws-sdk-rust}
+## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
 AWS has developed an official AWS SDK for Rust, which allows developers to interact with AWS services using the Rust programming language.
 This SDK provides a set of libraries that simplify the use of services like Amazon S3, Amazon EC2, DynamoDB, and others.
@@ -52,10 +52,10 @@ See, for example:
 <div class="hidden">
 [aws: write](https://github.com/john-cd/rust_howto/issues/574)
 Cover?
-## Containerized applications  on AWS Fargate, ECS, EKS
-## Deploy Rust applications to Elastic Beanstalk
-## Deploy Rust applications to App Runner
-## Deploy Rust applications to EC2 machines
+## Containerized Applications on AWS Fargate, ECS, EKS
+## Deploy Rust Applications to Elastic Beanstalk
+## Deploy Rust Applications to App Runner
+## Deploy Rust Applications to EC2 machines
 
 - [Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳ framework.
 

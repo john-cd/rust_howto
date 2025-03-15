@@ -1,4 +1,4 @@
-# Futures crate
+# Futures Crate
 
 {{#include futures.incl.md}}
 
@@ -8,7 +8,7 @@ The [`futures`][c-futures]{{hi:futures}}⮳ crate provides a number of core abst
 
 In most cases, you will use this crate directly only when writing [async][p-async] code{{hi:async}} intended to work for multiple runtimes. Otherwise, use the utilities provided by the ecosystem of your choice - [Tokio][p-tokio] for example.
 
-## Selecting futures {#selecting-futures}
+## Selecting Futures {#selecting-futures}
 
 [![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -18,7 +18,7 @@ In most cases, you will use this crate directly only when writing [async][p-asyn
 {{#include ../../../crates/cats/asynchronous/tests/futures/futures1.rs:example}}
 ```
 
-## Joining futures {#joining-futures}
+## Joining Futures {#joining-futures}
 
 [![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 
@@ -26,7 +26,7 @@ In most cases, you will use this crate directly only when writing [async][p-asyn
 {{#include ../../../crates/cats/asynchronous/tests/futures/futures2.rs:example}}
 ```
 
-## Map, then, either, flatten {#map-then-either-flatten}
+## Map, `then`, `either`, `flatten` {#map-then-either-flatten}
 
 [![futures-website][c-futures-website-badge]][c-futures-website] [![futures][c-futures-badge]][c-futures] [![futures-crates.io][c-futures-crates.io-badge]][c-futures-crates.io] [![futures-github][c-futures-github-badge]][c-futures-github] [![futures-lib.rs][c-futures-lib.rs-badge]][c-futures-lib.rs]{{hi:futures}}{{hi:Async}}{{hi:Future}}{{hi:futures}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}}
 

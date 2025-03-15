@@ -2,7 +2,7 @@
 
 {{#include rendering_engines.incl.md}}
 
-## Use a render engine {#render}
+## Use a Render Engine {#render}
 
 ```rust,editable
 {{#include ../../../crates/cats/rendering_engine/tests/render.rs:example}}

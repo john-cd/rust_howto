@@ -1,4 +1,4 @@
-# Generate FFI bindings to Lua code
+# Generate FFI Bindings to Lua Code
 
 {{#include lua.incl.md}}
 

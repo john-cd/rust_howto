@@ -1,4 +1,4 @@
-# Windows API bindings
+# Windows API Bindings
 
 {{#include windows.incl.md}}
 

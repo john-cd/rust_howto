@@ -20,7 +20,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 {{#include tracing_alternatives.incl.md}}
 
-## Diagnostic functions
+## Diagnostic Functions
 
 {{#include diagnostic_functions.incl.md}}
 

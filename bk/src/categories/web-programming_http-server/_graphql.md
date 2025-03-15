@@ -2,7 +2,7 @@
 
 {{#include graphql.incl.md}}
 
-## Create a GraphQL endpoint {#async-graphql}
+## Create a GraphQL Endpoint {#async-graphql}
 
 [![async-graphql][c-async_graphql-badge]][c-async_graphql]{{hi:async-graphql}}
 [![async-graphql-crates.io][c-async_graphql-crates.io-badge]][c-async_graphql-crates.io]

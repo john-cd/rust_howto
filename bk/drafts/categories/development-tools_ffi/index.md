@@ -1,16 +1,16 @@
-# FFI - Foreign functions interfaces / Interop
+# FFI - Foreign Functions Interfaces / Interop
 
 [![cat-development-tools::ffi][cat-development-tools::ffi-badge]][cat-development-tools::ffi]{{hi:FFI}}
 
 This chapter covers tools to help you better interface with other languages. This includes binding generators and helpful language constructs. Existing, non-idiomatic or unsafe FFI bindings may be found in [[external-ffi-bindings | External FFI Bindings]]. Idiomatic wrappers can be found in the [[api-bindings | API Bindings]] section.
 
-## Generate FFI bindings to C or C++ code
+## Generate FFI Bindings to C or C++ Code
 
 - [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} generates C header files from Rust code.
 
 {{#include generate_ffi_bindings.incl.md}}
 
-## Calling Rust from other languages
+## Calling Rust from Other Languages
 
 While [`cbindgen`][c-cbindgen]⮳{{hi:cbindgen}} helps with C, other languages might have their own FFI mechanisms. [`cpython`][c-cpython]⮳{{hi:cpython}} and [`pyo3`][c-pyo3]⮳{{hi:pyo3}} are common for Python.
 

@@ -47,7 +47,7 @@ WASM can be used to build virtual machines or [emulators][p-emulators] for other
 
 See [webassembly.org](https://webassembly.org) and [madewithwebassembly.com](https://madewithwebassembly.com/).
 
-### Example: Game Development using WASM {#skip}
+### Example: Game Development Using WASM {#skip}
 
 Rust can be used for [game development][p-game-development] targeting the web via WASM. [`winit`][c-winit]⮳{{hi:winit}} handles window creation, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c-bevy]⮳{{hi:bevy}} is a Rust game engine that can compile to WASM.
 

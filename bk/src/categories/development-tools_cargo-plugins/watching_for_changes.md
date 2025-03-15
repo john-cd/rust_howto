@@ -1,4 +1,4 @@
-# Watching for changes
+# Watching for Changes
 
 {{#include watching_for_changes.incl.md}}
 
@@ -19,8 +19,8 @@ cargo install cargo-watch
 cargo watch -x check
 
 # Run `cargo check` after code changes.
-# If it succeeds, it launches `cargo` test.
-# If tests pass, it launches the application with `cargo` run.
+# If it succeeds, it launches `cargo test`.
+# If tests pass, it launches the application with `cargo run`.
 cargo watch -x check -x test -x run
 ```
 
