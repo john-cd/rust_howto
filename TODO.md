@@ -1,17 +1,13 @@
 # TODOs
 
-update recipe tables
-replace inline links
-fix inline_link script
-review tools and consolidate
+## Finish mdbook-scrub
 
-## Manually insert rest of cross-links WIP
+- remove wikilinks in preproc so that book could build
 
-- src: WIP
+## Incoporate the added text WIP
 
-## Finish pandoc setup; generate PDF version of book
-
-## Incoporate the added text in `categories` WIP
+- src: review bookmarks; reorg added text
+  - done: text proc
 
 - drafts: Finish
   - Containers
@@ -23,11 +19,9 @@ review tools and consolidate
   - data proc,
   - gpu,
   - scripting WIP
-  - written in rust
+  - written in rust WIP
 
-review drafts section for what I missed
-
-- src: review bookmarks: reorg added text
+- review drafts section for what I missed
 
 ## Add text
 
@@ -43,13 +37,11 @@ review drafts section for what I missed
 - crates
 - contributing
 
-## Finish 56 COMING SOON examples
+## Finish pandoc setup; generate PDF version of book
 
-- parser impl
-- crypto
-- database
-- proc macros
-- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
+## Manually insert rest of cross-links WIP
+
+- src: WIP
 
 ## Finish preproc directives in mdbook-scrub
 
@@ -60,22 +52,43 @@ review drafts section for what I missed
 - Category link?
 - Category badges
 - Crate blocks
+- Recipe table
 
-## Insert category links
+## replace new {{#example }
+
+## Replace inline links and naked URLs by ref-style links
+
+- fix inline_link script
+- finish pest parser
 
 ## Refresh crate alpha and crate by category indices
 
----
+- need better coordination of master crate list, list of deps in Cargo.toml, and indices
 
-## Clean up playground
+## Update recipe tables
+
+- improve scripts that generate links / update recipe tables
+
+## Review tools and consolidate
+
+- clean up `just chapters list`
+- monorepo with mdbook-utils?
+
+## Finish 56 COMING SOON examples
+
+- parser impl
+- crypto
+- database
+- proc macros
+- pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
+
+## Insert more category links
+
+## Clean up playground crate
 
 ## Move mdbook-utils repo ?
 
----
-
 ## Setup bacon
-
----
 
 ## Add git hooks to automate formatting / clippy check / fix before commit
 
@@ -127,6 +140,8 @@ Try local / inline caching as well
 
 Write a .yml build workflow file for Linux
 
+---
+
 ## Free further space on CI runner
 
 Already using the `free-disk-space-ubuntu` action
@@ -172,3 +187,11 @@ Add build job to main workflow
 ---
 
 ## Fix .github issue templates
+
+---
+
+## Build rust_rate tool
+
+- retrieve most downloaded / recently downloaded / most relevant crates from crates.io / lib.rs
+- collect other sources of ranking: r/rust, awesome-rust, etc
+- generate a list of crates that should be included in the book
