@@ -9,7 +9,7 @@
 C to Rust translation, refactoring, and cross-checking.
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+{{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 TODO write

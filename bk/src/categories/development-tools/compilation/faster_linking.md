@@ -136,7 +136,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 - [Enable Fast Compiles (Bevy)][c-bevy-enable-fast-compiles]{{hi:bevy}}⮳.
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+{{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 [faster_linking: review - some linkers are deprecated](https://github.com/john-cd/rust_howto/issues/242)

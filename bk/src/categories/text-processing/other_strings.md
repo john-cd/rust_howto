@@ -26,7 +26,7 @@ The need for this type arises from the fact that:
 
 A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
 
-`std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a &[u8] slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the repr(transparent) notwithstanding) and should not be placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
+`std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a `&[u8]` slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the repr(transparent) notwithstanding) and should not be placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
 
 `&CStr` is to `CString` as &str is to String: the former in each pair are borrowed references; the latter are owned strings.
 

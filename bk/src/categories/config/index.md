@@ -16,9 +16,6 @@ Configuration management {{hi:Configuration management}} is the practice of hand
 Configuration crates like `config-rs`, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
 Excellent for 12-factor applications.
 
-grafton-config:
-Provides a comprehensive solution, with features such as dynamic configuration and token expansion.
-
 Command-Line Arguments:
 Using crates like clap to parse command-line arguments.
 Suitable for passing simple configuration options.

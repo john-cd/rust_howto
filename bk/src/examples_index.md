@@ -164,7 +164,7 @@
 
 {{#include categories/cryptography/hashing.incl.md}}
 
-### Hmac
+### HMAC
 
 {{#include categories/cryptography/hmac.incl.md}}
 
@@ -298,6 +298,22 @@
 
 {{#include categories/development-tools/cargo/package_layout.incl.md}}
 
+## Compilation
+
+### Faster Linking
+
+{{#include categories/development-tools/compilation/faster_linking.incl.md}}
+
+### Reduce Compilation Duration
+
+{{#include categories/development-tools/compilation/reduce_compilation_duration.incl.md}}
+
+## Cross Compilation
+
+### Cross Compilation
+
+{{#include categories/development-tools/cross-compilation/cross_compilation.incl.md}}
+
 ## Documentation
 
 ### Badges
@@ -346,6 +362,12 @@
 
 {{#include categories/development-tools/other/other.incl.md}}
 
+## Transcompilation
+
+### Transpilers
+
+{{#include categories/development-tools/transcompilation/transpilers.incl.md}}
+
 ## Versioning
 
 ### Versioning
@@ -387,6 +409,10 @@
 ### Cross Compiling
 
 {{#include categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
+
+### Dependency Management
+
+{{#include categories/development-tools_cargo-plugins/dependency_management.incl.md}}
 
 ### Maintaining
 
@@ -660,21 +686,37 @@
 
 ## Text Processing
 
+### Diffing
+
+{{#include categories/text-processing/diffing.incl.md}}
+
+### Other Strings
+
+{{#include categories/text-processing/other_strings.incl.md}}
+
 ### Regex
 
 {{#include categories/text-processing/regex.incl.md}}
-
-### Regex2
-
-{{#include categories/text-processing/regex2.incl.md}}
 
 ### String Concat
 
 {{#include categories/text-processing/string_concat.incl.md}}
 
+### String Manipulation
+
+{{#include categories/text-processing/string_manipulation.incl.md}}
+
 ### String Parsing
 
 {{#include categories/text-processing/string_parsing.incl.md}}
+
+### String Search
+
+{{#include categories/text-processing/string_search.incl.md}}
+
+### Unicode
+
+{{#include categories/text-processing/unicode.incl.md}}
 
 ## Web Programming
 

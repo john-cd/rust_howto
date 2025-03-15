@@ -31,7 +31,7 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 ### Manipulate Strings
 
-{{#include text_manipulation.incl.md}}
+{{#include string_manipulation.incl.md}}
 
 ### Find, Extract, and Replace Text Using Regular Expressions
 

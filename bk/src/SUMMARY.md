@@ -151,15 +151,22 @@
   - [Versioning](categories/development-tools/versioning/versioning.md)
   - [Other](categories/development-tools/other/other.md)
     - [Code building](categories/development-tools/other/code_build.md)
+    - [Cross-compilation](categories/development-tools/cross-compilation/cross_compilation.md)
     - [Code verification](categories/development-tools/other/code_verification.md)
     - [`miri`](categories/development-tools/other/miri.md)
+    - [Reduce compilation duration](categories/development-tools/compilation/reduce_compilation_duration.md)
+    - [Faster linking](categories/development-tools/compilation/faster_linking.md)
+    - [Transpilers](categories/development-tools/transcompilation/transpilers.md)
 
 - [Development tools - build-time tooling](categories/development-tools_build-utils/index.md)
   - [Build-time tools](categories/development-tools_build-utils/build_time_tooling.md)
+  - [Autocfg](categories/development-tools_build-utils/autocfg.md)
+  - [Build cache](categories/development-tools_build-utils/build_cache.md)
 
 - [Development tools - cargo plugins](categories/development-tools_cargo-plugins/index.md)
   - [Writing code](categories/development-tools_cargo-plugins/code_writing.md)
   - [Code formatting, linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)
+  - [Dependency_management](categories/development-tools_cargo-plugins/dependency_management.md)
   - [Building](categories/development-tools_cargo-plugins/building.md)
   - [Cross-compiling](categories/development-tools_cargo-plugins/cross_compiling.md)
   - [Watching for changes](categories/development-tools_cargo-plugins/watching_for_changes.md)
@@ -180,7 +187,12 @@
   - [Memory usage analysis](categories/development-tools_profiling/memory_usage_analysis.md)
 
 - [Development tools - testing](categories/development-tools_testing/index.md)
+  - [Assertions](categories/development-tools_testing/assertions.md)
   - [Testing](categories/development-tools_testing/testing.md)
+  - [Property-based testing](categories/development-tools_testing/property_based_testing.md)
+  - [Mocking](categories/development-tools_testing/mocking.md)
+  - [Test runners](categories/development-tools_testing/test_runners.md)
+  - [Code coverage](categories/development-tools_testing/code_coverage.md)
   - [Fuzzing](categories/development-tools_testing/fuzzing.md)
 
 - [Encoding and serialization](categories/encoding/index.md)
@@ -206,6 +218,7 @@
 
 - [Hardware support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
+  - [Peripherals](categories/hardware-support/peripherals.md)
 
 - [Mathematics](categories/mathematics/index.md)
   - [Linear algebra](categories/mathematics/linear_algebra.md)
@@ -255,9 +268,13 @@
 
 - [Text processing](categories/text-processing/index.md)
   - [Regular expressions](categories/text-processing/regex.md)
-    - [Longer regex example](categories/text-processing/regex2.md)
   - [String parsing](categories/text-processing/string_parsing.md)
   - [String concatenation](categories/text-processing/string_concat.md)
+  - [String manipulation](categories/text-processing/string_manipulation.md)
+  - [String search](categories/text-processing/string_search.md)
+  - [Unicode handling](categories/text-processing/unicode.md)
+  - [Diffing](categories/text-processing/diffing.md)
+  - [OS and C strings](categories/text-processing/other_strings.md)
 
 - [Web programming](categories/web-programming/index.md)
   - [Extracting links](categories/web-programming/scraping.md)

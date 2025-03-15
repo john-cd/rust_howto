@@ -14,7 +14,7 @@
 
 ### Newsletters {#newsletters}
 
-- [`shuttle.rs/launchpad`][launchpad-shuttle.rs] has tutorial-style lessons and real-world examples.
+- [`shuttle.rs/launchpad`][launchpad-shuttle.dev] has tutorial-style lessons and real-world examples.
 
 ## Meetups {#meetups}
 

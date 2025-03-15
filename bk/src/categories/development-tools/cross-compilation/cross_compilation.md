@@ -49,7 +49,7 @@ Examples: [![cross-toml-example][c-cross-toml-example-badge]][c-cross-toml-examp
 - [[hardware-support | Hardware Support]].
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+{{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 [cross_compilation: expand](https://github.com/john-cd/rust_howto/issues/240)
