@@ -11,7 +11,7 @@ Physics [simulation][p-simulation], 3D [visualization][p-visualization], testing
 
 ## Visualization {#skip}
 
-Graphic and [visualization][p-visualization] for Robotics.
+Graphics and [visualization][p-visualization] for Robotics.
 
 - `kiss3d` - Keep it simple, stupid 3D [graphics][p-graphics] engine for Rust.
 - `urdf-viz` - URDF visualizer
