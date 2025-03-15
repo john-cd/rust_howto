@@ -13,7 +13,7 @@ This table outlines common text processing tasks and relevant Rust crates.
 | Regular Expressions | [`regex`][c-regex]⮳{{hi:regex}}, [`fancy-regex`][c-fancy_regex]⮳{{hi:fancy-regex}} | `regex` is the standard Regex crate. `fancy-regex` provides more advanced features. |
 | String Search | `aho-corasick`, `memchr` | String search can be done with regular expressions or with algorithms like Aho-Corasick. |
 | Fuzzy Matching | [`fuzzy-matcher`][c-fuzzy_matcher]⮳{{hi:fuzzy-matcher}}, `strsim` | `fuzzy-matcher` provides fuzzy string matching. `strsim` implement string similarity metrics. |
-| Diffing & Patching | [`diff`][c-diff]⮳{{hi:diff}}, `similar` | Thes crates calculate differences between text files. |
+| Diffing & Patching | [`diff`][c-diff]⮳{{hi:diff}}, `similar` | These crates calculate differences between text files. |
 | OS, C, and other strings | `std::ffi`, `bstr` | `std::ffi` provides types for platform-native strings and C-style, NUL-terminated strings. `bstr` offers a string type that is not required to be valid UTF-8. |
 | Unicode handling | `unicode-segmentation` | [`unicode-segmentation`][c-unicode_segmentation]⮳{{hi:unicode-segmentation}} correctly handles Unicode graphemes and word boundaries. |
 

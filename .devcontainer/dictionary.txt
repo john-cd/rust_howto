@@ -2674,3 +2674,14 @@ codahale
 imperialviolet
 mirai
 nyanpasu
+grafton
+OsString
+OsStr
+osstring
+cstring
+repr
+interoperating
+bitfields
+Hyperium
+Bitstream
+Bitvector
