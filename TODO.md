@@ -4,10 +4,14 @@
 
 - remove wikilinks in preproc so that book could build
 
+## Links
+
+- finish to review bookmarks and include in text
+
 ## Incoporate the added text WIP
 
 - src: review bookmarks; reorg added text
-  - done: text proc
+  - done: text proc, config
 
 - drafts: Finish
   - Containers
@@ -30,7 +34,7 @@
 - links
 - other
   - Cloud
-  - cross-platform?
+  - cross-platform
   - gpu
   - scripting
   - written in rust
