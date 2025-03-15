@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["aerospace_drones"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 

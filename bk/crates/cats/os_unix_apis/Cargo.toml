@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["os_unix_apis"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 anyhow = "1.0.95"

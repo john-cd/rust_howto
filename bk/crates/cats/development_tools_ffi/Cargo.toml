@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "development_tools_ffi" ] # TODO P1 fix categories
 publish.workspace = true
+autolib = false
 
 [dependencies]
 cxx = "1.0.136"

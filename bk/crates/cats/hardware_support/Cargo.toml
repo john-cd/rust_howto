@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "hardware_support" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 num_cpus = "1.16.0"

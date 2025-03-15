@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["config"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # The config package has the same name than the current crate,

@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["compression"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 flate2 = "1.1.0"

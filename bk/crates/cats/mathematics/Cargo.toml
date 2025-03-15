@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["mathematics"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 nalgebra = { version = "0.33.2", features = ["serde-serialize"] }

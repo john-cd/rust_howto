@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "email" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 lettre = { version = "0.11.11", features = [ "tokio1-native-tls" ] }

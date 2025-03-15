@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["concurrency"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 actix = "0.13.5"

@@ -13,6 +13,7 @@ keywords.workspace = true
 categories = ["encoding"]
 publish.workspace = true
 build = "build.rs"
+autolib = false
 
 [dependencies]
 base64 = "0.22.1"

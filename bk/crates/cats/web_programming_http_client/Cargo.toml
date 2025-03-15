@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["web_programming_http_client"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 hyper = "1.5.0"

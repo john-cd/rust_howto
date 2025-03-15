@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["command_line_interface"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 ansi_term = "0.12.1"                                 # NOTE: unmaintained

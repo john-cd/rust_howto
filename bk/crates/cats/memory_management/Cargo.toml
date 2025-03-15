@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["memory_management"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 bumpalo = "3.17.0"

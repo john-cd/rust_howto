@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["template_engine"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 tera = "1.20.0"

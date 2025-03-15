@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "rendering_data_formats" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # TODO P2

@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "multimedia_audio" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # TODO P2

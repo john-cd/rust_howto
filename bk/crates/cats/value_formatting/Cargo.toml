@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["value_formatting"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 ryu = "1.0.19"

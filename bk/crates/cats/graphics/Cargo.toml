@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "graphics" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 wgpu = "24.0.1" # was pinned to 0.16.0 for ggez

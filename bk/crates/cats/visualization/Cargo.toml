@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["visualization"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 plotly = "0.12.1"

@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["database_implementations"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 meilisearch-sdk = "0.28.0"

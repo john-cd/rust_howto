@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["parsing"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 binascii = "0.1.4"

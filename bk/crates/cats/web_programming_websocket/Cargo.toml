@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["web_programming_websocket"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 async-tungstenite = { version = "0.29.1", features = [

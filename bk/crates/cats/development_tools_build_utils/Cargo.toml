@@ -13,6 +13,7 @@ keywords.workspace = true
 categories = ["development_tools_build_utils"]
 publish.workspace = true
 build = "build.rs"
+autolib = false
 
 [dependencies]
 anyhow = "1.0.95"

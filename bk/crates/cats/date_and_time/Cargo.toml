@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "date_and_time" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 chrono = "0.4.39"

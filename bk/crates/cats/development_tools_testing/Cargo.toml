@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["development_tools_testing"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 afl = "0.15.13"

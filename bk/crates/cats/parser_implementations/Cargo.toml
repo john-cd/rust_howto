@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["parser_implementations"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 basic-toml = "0.1.9"

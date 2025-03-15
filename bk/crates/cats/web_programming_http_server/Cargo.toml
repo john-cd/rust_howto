@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["web_programming_http_server"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 actix-web = "4.9.0"

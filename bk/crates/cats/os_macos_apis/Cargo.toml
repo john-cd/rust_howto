@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "os_macos_apis" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # TODO P2

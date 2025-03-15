@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "no_std_no_alloc" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # TODO P2 add deps

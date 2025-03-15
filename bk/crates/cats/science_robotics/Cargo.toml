@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["science_robotics"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 bonsai-bt = "0.10.0"

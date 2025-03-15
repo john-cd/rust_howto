@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["algorithms"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 rand = { version = "0.9.0", features = ["thread_rng"] }

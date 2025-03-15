@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["gui"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 arboard = "3.4.1"

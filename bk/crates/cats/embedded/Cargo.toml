@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = [ "embedded" ]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 # embassy = "0.0.0" # TODO P1 review installation / required dependencies

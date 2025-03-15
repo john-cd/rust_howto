@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["asynchronous"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 async-channel = "2.3.1"

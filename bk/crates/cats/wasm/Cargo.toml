@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["wasm"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 js-sys = "0.3.77"

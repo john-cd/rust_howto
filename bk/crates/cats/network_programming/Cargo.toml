@@ -12,6 +12,7 @@ license = "CC0-1.0"
 keywords.workspace = true
 categories = ["network_programming"]
 publish.workspace = true
+autolib = false
 
 [dependencies]
 hyper = "1.6.0"
