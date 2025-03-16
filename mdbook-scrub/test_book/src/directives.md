@@ -21,6 +21,8 @@ The {{ ... }} blocks below should be replaced by (a) Markdown link(s).
 - [[science_geo]].
 
 
+TODO finish below
+
 ## Just the Crate Link
 
 [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳.

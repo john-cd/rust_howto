@@ -54,14 +54,13 @@ impl Preprocessor for Preproc {
                     info!("Processing chapter '{}'", chapter.name);
                     let content = &mut chapter.content;
                     for rr in rrs.iter() {
-                        let repl = if let Some(ref repl) = rr.replacement {
-                            repl.as_str()
+                        *content = if let Some(ref repl) = rr.replacement {
+                            rr.re.replace_all(content, repl).into_owned()
                         } else {
-                            ""
+                            // If replacement is `None`,
+                            // just delete the matching text
+                            rr.re.replace_all(content, "").into_owned()
                         };
-                        // Remove all regex-matching sections
-                        *content =
-                            rr.re.replace_all(content, repl).into_owned();
                         // tracing::debug!(content);
                     }
                 };

@@ -12,11 +12,20 @@ pub struct PreprocConfig {
     // Remove all markdown within HTML tags with class `hidden` from the book
     // (default = true)
     pub remove_hidden_sections: bool,
-    // Do not include hidden files i.e. files that start with
+    // Do not {{#include }} hidden files i.e. files that start with
     // `hidden_chapter_prefix` (default = true)
     pub do_not_include_hidden_chapters: bool,
     // Define the prefix for hidden chapters (default = '_')
     pub hidden_chapter_prefix: String,
+    // Remove any left-over {{#example }} directives and log a warning
+    // {{#example }} is a custom directive for this book
+    pub scrub_example_directives: bool,
+    // Remove any left-over {{#crate }} directives and log a warning
+    // {{#crate }} is a custom directive for this book
+    pub scrub_crate_directives: bool,
+    // Remove any left-over [[file | title]] wikilinks and log a warning
+    pub scrub_wikilinks: bool,
+    // TODO
     // Convert {{c: <crate name> }} into links
     pub process_crate_directives: bool,
     // Convert category directive {{cat: <category> <optional categories>.. }}
@@ -47,6 +56,10 @@ impl Default for PreprocConfig {
             remove_hidden_sections: true,
             do_not_include_hidden_chapters: true,
             hidden_chapter_prefix: "_".into(),
+            scrub_example_directives: true,
+            scrub_crate_directives: true,
+            scrub_wikilinks: true,
+            // TODO
             process_crate_directives: true,
             process_category_directives: true,
             process_page_directives: true,

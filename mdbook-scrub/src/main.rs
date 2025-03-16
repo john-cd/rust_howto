@@ -49,10 +49,11 @@ fn main() {
     }
 }
 
-// If the preprocessor supports the renderer, then mdbook runs it a second time,
-// passing JSON data into stdin. The JSON consists of an array of [context,
-// book] where context is the serialized object PreprocessorContext and book is
-// a Book object containing the content of the book.
+// If the preprocessor supports the renderer, then `mdbook` runs it a second
+// time, passing JSON data into `stdin`. The JSON consists of an array of
+// [context, book] where `context` is the serialized object
+// `PreprocessorContext` and `book` is a `Book` object containing the content of
+// the book.
 fn handle_preprocessing(pre: &dyn Preprocessor) -> Result<(), Error> {
     let (ctx, book) = CmdPreprocessor::parse_input(io::stdin())?;
 
