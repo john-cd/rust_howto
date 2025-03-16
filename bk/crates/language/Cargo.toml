@@ -18,4 +18,8 @@ autolib = false
 
 [dependencies]
 anyhow = "1.0.95"
+cfg-if = "1.0.0"
 tokio = { version = "1.43.0", features = ["full"] }
+
+[features]
+full = []
