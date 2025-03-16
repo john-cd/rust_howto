@@ -1,6 +1,8 @@
 # Caching
 
-Store the results of previous computations, in order to reuse the results.
+[![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
+
+Caching refers to storing the results of previous computations, in order to reuse the results.
 
 ## In-Memory Caches
 
@@ -48,6 +50,5 @@ Refer to:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cover Moka, etc](https://github.com/john-cd/rust_howto/issues/228)
-write
+TODO write
 </div>
