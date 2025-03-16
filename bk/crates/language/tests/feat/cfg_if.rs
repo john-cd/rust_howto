@@ -1,6 +1,7 @@
 // ANCHOR: example
 
-// The `cfg-if` crate is useful for conditional compilation based on configuration flags.
+// The `cfg-if` crate is useful for conditional compilation based on
+// configuration flags.
 
 // First, add the dependency to your Cargo.toml:
 // [dependencies]
