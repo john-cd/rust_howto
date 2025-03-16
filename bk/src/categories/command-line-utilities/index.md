@@ -38,7 +38,7 @@ Here's a list of some common command-line utilities written in Rust:
 
 ## References
 
-[My terminal became more Rusty][blog-rusty-terminal]⮳.
+- [My terminal became more Rusty][blog-rusty-terminal]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
