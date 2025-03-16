@@ -7649,6 +7649,7 @@ dependencies = [
  "linked-hash-map 0.5.6",
  "multimap",
  "petgraph 0.7.1",
+ "priority-queue",
  "rangemap",
  "skiplist",
  "slotmap",
@@ -15503,6 +15504,7 @@ name = "language"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "cfg-if 1.0.0",
  "tokio",
 ]
 
@@ -20748,6 +20750,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "353e1ca18966c16d9deb1c69278edbc5f194139612772bd9537af60ac231e1e6"
 dependencies = [
  "elliptic-curve 0.13.8",
+]
+
+[[package]]
+name = "priority-queue"
+version = "2.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f759742601cb7ee8df8780e5f7f9ab7134fb6c5dd2748a61ddd7c960e24db2f8"
+dependencies = [
+ "autocfg",
+ "equivalent",
+ "indexmap 2.8.0",
 ]
 
 [[package]]
