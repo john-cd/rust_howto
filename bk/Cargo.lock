@@ -7638,6 +7638,7 @@ dependencies = [
  "anyhow",
  "arrayvec 0.7.6",
  "bitflags 2.9.0",
+ "bitvec",
  "bloomfilter",
  "bytes",
  "crates_io_api",
