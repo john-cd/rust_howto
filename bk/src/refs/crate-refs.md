@@ -769,6 +769,14 @@
 [c-cargo_binstall-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--binstall-yellow
 [c-cargo_binstall-lib.rs]: https://lib.rs/crates/cargo-binstall
 [c-cargo_binstall]: https://docs.rs/cargo-binstall
+[c-cargo_binutils-badge]: https://img.shields.io/crates/v/cargo-binutils?label=cargo-binutils
+[c-cargo_binutils-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--binutils-crimson
+[c-cargo_binutils-crates.io]: https://crates.io/crates/cargo_binutils
+[c-cargo_binutils-github-badge]: https://img.shields.io/badge/cargo--binutils-steelblue?logo=github
+[c-cargo_binutils-github]: https://github.com/rust-embedded/cargo-binutils
+[c-cargo_binutils-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cargo--binutils-yellow
+[c-cargo_binutils-lib.rs]: https://lib.rs/crates/cargo-binutils
+[c-cargo_binutils]: https://github.com/rust-embedded/cargo-binutils#cargo-binutils
 [c-cargo_bloat-badge]: https://img.shields.io/crates/v/cargo-bloat?label=cargo-bloat
 [c-cargo_bloat-crates.io-badge]: https://img.shields.io/badge/crates.io-cargo--bloat-crimson
 [c-cargo_bloat-crates.io]: https://crates.io/crates/cargo_bloat
