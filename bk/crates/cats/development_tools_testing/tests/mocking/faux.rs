@@ -1,7 +1,8 @@
 // ANCHOR: example
 use faux::when;
 
-// `faux` allows you to mock the methods of structs for testing without complicating or polluting your code.
+// `faux` allows you to mock the methods of structs for testing without
+// complicating or polluting your code.
 
 #[derive(Debug, Clone, PartialEq)]
 struct User {

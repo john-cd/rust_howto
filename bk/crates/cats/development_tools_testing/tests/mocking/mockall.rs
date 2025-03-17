@@ -15,8 +15,8 @@ struct User {
 }
 
 // Define our repository trait with the `#[automock]` attribute.
-// It automatically generates a mock implementation of your trait, named Mock{TraitName}.
-// In our case, it creates a `MockUserRepository`.
+// It automatically generates a mock implementation of your trait, named
+// Mock{TraitName}. In our case, it creates a `MockUserRepository`.
 #[automock]
 trait UserRepository {
     fn find_by_id(&self, id: u64) -> Option<User>;
@@ -39,7 +39,11 @@ impl<T: UserRepository> UserService<T> {
             .ok_or_else(|| format!("User with id {} not found", id))
     }
 
-    fn update_user_email(&self, id: u64, new_email: String) -> Result<User, String> {
+    fn update_user_email(
+        &self,
+        id: u64,
+        new_email: String,
+    ) -> Result<User, String> {
         // Get the user
         let mut user = self.get_user(id)?;
 
@@ -135,9 +139,9 @@ mod tests {
         mock_repo
             .expect_save()
             .withf(|user: &User| {
-                user.id == 1 &&
-                user.name == "John Doe" &&
-                user.email == "newemail@example.com"
+                user.id == 1
+                    && user.name == "John Doe"
+                    && user.email == "newemail@example.com"
             })
             .times(1)
             .returning(|_| Ok(()));
@@ -146,7 +150,8 @@ mod tests {
         let service = UserService::new(mock_repo);
 
         // Call the method we want to test
-        let result = service.update_user_email(1, "newemail@example.com".to_string());
+        let result =
+            service.update_user_email(1, "newemail@example.com".to_string());
 
         // Assert the result
         assert!(result.is_ok());
