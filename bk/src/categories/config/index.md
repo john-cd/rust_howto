@@ -38,14 +38,14 @@ Document configuration: Provide clear documentation of all configuration options
 
 ## Related Topics
 
-Configuration File Formats:
+### Configuration File Formats
 
-TOML: [`toml`][c-toml]⮳{{hi:toml}}
-YAML: [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
-JSON: [`serde_json`][c-serde_json]⮳{{hi:serde_json}}
-INI: [`ini`][c-ini]⮳{{hi:ini}}
+- TOML: [`toml`][c-toml]⮳{{hi:toml}}
+- YAML: [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
+- JSON: [`serde_json`][c-serde_json]⮳{{hi:serde_json}}
+- INI: [`ini`][c-ini]⮳{{hi:ini}}
 
-Configuration Management:
+### Configuration Management
 
 - [`config`][c-config]⮳{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
 [`serde`][c-serde]⮳{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
@@ -61,5 +61,5 @@ Configuration Validation: (Often done manually or with custom functions, but sch
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
+TODO write
 </div>
