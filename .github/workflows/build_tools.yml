@@ -22,7 +22,6 @@ defaults:
 
 env:
   CARGO_TERM_COLOR: always
-  CARGO_TARGET_DIR: ./tools/target
 
 jobs:
   build:
@@ -44,7 +43,7 @@ jobs:
           /usr/local/cargo/registry/index/
           /usr/local/cargo/registry/cache/
           /usr/local/cargo/git/db/
-          mdbook-scrub/target/
+          tools/target/
           target/
         key: rust_howto-tools-${{ runner.os }}-cargo-${{ hashFiles('tools/Cargo.lock') }}
         restore-keys: |

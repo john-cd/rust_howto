@@ -19,12 +19,12 @@ services:
       - type: bind
         source: ..
         target: /code
-      # The Docker fs is ephemeral; we save the dependencies src and build caches in docker volumes, so that we don't need to redownload and rebuild them
+      # The Docker FS is ephemeral; we save the dependencies src and build caches in docker volumes, so that we don't need to redownload and rebuild them
       # every time the container is restarted.
       # Contains the dependencies (source) cache and installed bins https://doc.rust-lang.org/cargo/guide/cargo-home.html
       - cargo_home_cache:/usr/local/cargo/
       # Contains the compile cache:
-      - cargo_target_cache:/cargo-target-rust_howto/ # See {bk, tool, ...}/.cargo/config.toml
+      - cargo_target_cache:/code/target/ # See {bk, tool, ...}/.cargo/config.toml. Note this should override the bind mount for that subfolder.
       - command_history:/command_history
     ## Required for ptrace-based debugger like C++, Go, and Rust.
     cap_add:

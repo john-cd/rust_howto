@@ -44,12 +44,12 @@ xdg-settings get default-web-browser
 Point your browser to [http://localhost:6080][locahost:6080] and use [`vscode`][vscode-website]⮳{{hi:vscode}} as the password. Open the HTML file of your choice with:
 
 ```bash
-xdg-open /cargo-target-rust_howto/target/doc/deps/index.html
+xdg-open /code/target/bk/doc/deps/index.html
 ```
 
 ### Other Methods to Preview the Documentation HTML {#other-methods-to-preview-the-documentation-html}
 
-- Add the target directory e.g. `/cargo-target-rust_howto/target` to the VS Code Explorer view (`File` > `Add Folder to Workspace...`), then right-click the `/cargo-target-rust_howto/target/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
+- Right-click the `/code/target/bk/doc` folder in the VS Code Explorer view and select `Download...` or use VS Code's built-in `Simple Browser` command.
 - Or install the `Live Server` or MS `Live Preview` VS Code extensions.
 
 {{#include refs.incl.md}}

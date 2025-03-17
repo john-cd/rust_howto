@@ -15,10 +15,6 @@ on:
 env:
   CARGO_TERM_COLOR: always
 
-defaults:
-  run:
-    working-directory: '.\bk'
-
 ## ---------------------------------------------------------------------
 
 ## See `ci.sh` for equivalent steps when using Docker
@@ -52,8 +48,8 @@ jobs:
             /usr/local/cargo/registry/index/
             /usr/local/cargo/registry/cache/
             /usr/local/cargo/git/db/
-            /cargo-target-rust_howto/
             target/
+            bk/target/
           key: rust_howto-book-${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
             rust_howto-book-${{ runner.os }}-cargo-
@@ -102,20 +98,25 @@ jobs:
 
       - name: Format
         run: cargo +nightly fmt --all --check
+        working-directory: '.\bk'
 
       - name: Fetch
         run: cargo fetch
+        working-directory: '.\bk'
 
       - name: Build
         run: cargo build --workspace --all-targets --locked --profile ci
+        working-directory: '.\bk'
 
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
+        working-directory: '.\bk'
 
       - name: Run tests
         run: |
           cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
+        working-directory: '.\bk'
 
       - name: Build / release mdbook-scrub
         run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "..\bin"
@@ -123,3 +124,4 @@ jobs:
 
       - name: Build the book
         run: mdbook build; copy static\*.* book\html; mdbook-utils sitemap
+        working-directory: '.\bk'

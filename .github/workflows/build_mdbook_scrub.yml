@@ -22,7 +22,6 @@ defaults:
 
 env:
   CARGO_TERM_COLOR: always
-  CARGO_TARGET_DIR: ./mdbook-scrub/target
 
 jobs:
   build:

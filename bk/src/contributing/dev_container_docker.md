@@ -16,7 +16,7 @@ To cache the crate and the target folders from run to run, add
 
 ```bash
 --mount type=volume,src=rust_howto_cargo_crate_cache,dst=/usr/local/cargo/registry/
---mount type=volume,src=rust_howto_cargo_target_cache,dst=/cargo-target-rust_howto/
+--mount type=volume,src=rust_howto_cargo_target_cache,dst=/code/target/
 ```
 
 To connect to the (host OS) docker engine from within the container, add

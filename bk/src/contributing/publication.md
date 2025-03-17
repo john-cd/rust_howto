@@ -14,7 +14,7 @@ The `crates/publish` folder contains a placeholder crate, so that the book could
 - `cargo doc`.
 - Review `cargo package --list`.
 - `cargo package`.
-- Review the packaging output in `/cargo-target-rust_howto/target/package`.
+- Review the packaging output in `/code/target/bk/package`.
 - When ready, `cargo publish --dry-run; cargo publish`.
 
 {{#include refs.incl.md}}

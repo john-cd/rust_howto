@@ -151,7 +151,7 @@ RUN rustup toolchain install nightly \
 
 WORKDIR /code
 
-## --------------------------------
+## ------------------------------------------------------------------------------------------------
 ## Stage for development
 FROM base AS development
 
@@ -219,7 +219,7 @@ ENTRYPOINT [ "./.devcontainer/dev.sh" ]
 ## The command is passed to `dev.sh`.
 CMD [ "sleep", "infinity" ]
 
-## --------------------------------
+## ------------------------------------------------------------------------------------------------
 ## Stage for Continuous Integration (book building)
 FROM base AS ci
 
@@ -228,8 +228,6 @@ FROM base AS ci
 ## https://www.cyberciti.biz/faq/perl-warning-setting-locale-failed-in-debian-ubuntu/
 # ENV LC_CTYPE=en_US.UTF-8
 # ENV LC_ALL=en_US.UTF-8
-
-ENV CARGO_TARGET_DIR=./target/
 
 ## The following is a bit of a hack to try to speed up CI: create separate docker layers for the dependencies and the code / examples
 ## Use `just push_ci` to build the CI image locally, push it to DockerHub; GitHub Actions will pull this image and use it as cache.

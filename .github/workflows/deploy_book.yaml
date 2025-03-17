@@ -46,8 +46,6 @@ jobs:
       - name: Build & release mdbook-scrub
         run: cargo +nightly build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: './mdbook-scrub'
-        env:
-          CARGO_TARGET_DIR: './cargo-target-rust_howto/mdbook-scrub/'
       - name: Build the book
         run: |
           mdbook build
