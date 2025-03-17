@@ -8620,6 +8620,7 @@ version = "0.1.2"
 dependencies = [
  "afl",
  "approx 0.4.0",
+ "faux",
  "insta",
 ]
 
@@ -10450,6 +10451,29 @@ name = "fastrand"
 version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be"
+
+[[package]]
+name = "faux"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4a8e414cd04dc036003ccd2cc56492d5a7365e9d3f40b27c43606e42b54e5d1f"
+dependencies = [
+ "faux_macros",
+ "paste",
+]
+
+[[package]]
+name = "faux_macros"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dfc583ba3a3c259f1986c68e1501228013a34224b9ac97d17b30d7f017213b2a"
+dependencies = [
+ "darling 0.20.10",
+ "proc-macro2 1.0.94",
+ "quote 1.0.40",
+ "syn 2.0.100",
+ "uuid 1.16.0",
+]
 
 [[package]]
 name = "fd-lock"
