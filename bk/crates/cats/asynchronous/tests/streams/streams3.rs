@@ -32,7 +32,7 @@ async fn main() {
 
     // Create a stream of futures:
     // `iter` converts an `Iterator` into a `Stream`
-    let stream = stream::iter(vec![1, 2, 3, 4, 5]).map(|id| fetch_data(id));
+    let stream = stream::iter(vec![1, 2, 3, 4, 5]).map(fetch_data);
 
     // Process stream with `for_each_concurrent`, which
     // runs this stream to completion, executing the provided asynchronous
