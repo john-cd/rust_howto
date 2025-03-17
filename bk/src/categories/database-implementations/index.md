@@ -4,6 +4,12 @@
 
 Databases allow clients to store and query large amounts of data in an efficient manner. This category is for database management systems implemented in Rust.
 
+| Database Type | Rust crates |
+|---|---|
+| Embedded Databases | [`sled`][c-sled]⮳{{hi:sled}}: A high-performance embedded database. [`lmdb-rs`][c-lmdb_rs]⮳{{hi:lmdb-rs}}: Bindings to the LMDB embedded database. [`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}}: Bindings to the RocksDB embedded database. `tikv`: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways. |
+| Key-Value Stores | [`sled`][c-sled]⮳{{hi:sled}} and [`lmdb-rs`][c-lmdb_rs]⮳{{hi:lmdb-rs}} above can also be used as key-value stores. |
+| Other Databases | [`tantivy`][c-tantivy]⮳{{hi:tantivy}}: A full-text search engine library. [`qdrant`][c-qdrant]⮳{{hi:qdrant}}: A vector similarity search engine. |
+
 ## Databases Written in Rust
 
 {{#include databases.incl.md}}
@@ -17,21 +23,4 @@ Databases allow clients to store and query large amounts of data in an efficient
 
 <div class="hidden">
 [database-implementations: expand](https://github.com/john-cd/rust_howto/issues/292)
-
-Embedded Databases:
-
-[`sled`][c-sled]⮳{{hi:sled}}: A high-performance embedded database.
-[`lmdb-rs`][c-lmdb_rs]⮳{{hi:lmdb-rs}}: Bindings to the LMDB embedded database.
-[`rocksdb`][c-rocksdb]⮳{{hi:rocksdb}}: Bindings to the RocksDB embedded database (though RocksDB itself is written in C++).
-`tikv`: A distributed transactional key-value database (used in TiDB). While not strictly embedded, it's often used in similar ways.
-
-Key-Value Stores:
-
-[`sled`][c-sled]⮳{{hi:sled}} and [`lmdb-rs`][c-lmdb_rs]⮳{{hi:lmdb-rs}} above can also be used as key-value stores.
-
-Other Databases (Partially or Primarily Rust):
-
-[`tantivy`][c-tantivy]⮳{{hi:tantivy}}: A full-text search engine library.
-[`qdrant`][c-qdrant]⮳{{hi:qdrant}}: A vector similarity search engine.
-
 </div>
