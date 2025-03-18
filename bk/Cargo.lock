@@ -27347,6 +27347,7 @@ dependencies = [
  "anyhow",
  "bstr",
  "concat-string",
+ "console",
  "diff",
  "fancy-regex 0.14.0",
  "heck 0.5.0",
