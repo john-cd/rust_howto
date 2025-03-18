@@ -1,8 +1,8 @@
 // // ANCHOR: example
 // use toml_edit::{Document, value, Item, ArrayOfTables};
 
-// // For format-preserving editing or finer control over output, use `toml_edit`
-// // instead of `toml`
+// // For format-preserving editing or finer control over output, use
+// `toml_edit` // instead of `toml`
 
 // fn main() -> Result<(), Box<dyn std::error::Error>> {
 //    // Parse existing TOML
@@ -31,8 +31,8 @@
 //    doc["dependencies"]["toml_edit"] = value("0.22.24");
 
 //    // Add a feature to an existing dependency
-//    if let Some(Item::Value(v)) = doc.get_mut("dependencies").and_then(|deps| deps.get_mut("tokio")) {
-//        if let Some(t) = v.as_table_like_mut() {
+//    if let Some(Item::Value(v)) = doc.get_mut("dependencies").and_then(|deps|
+// deps.get_mut("tokio")) {        if let Some(t) = v.as_table_like_mut() {
 //            let features = t.get_mut("features")
 //                .and_then(|f| f.as_array_mut())
 //                .expect("tokio features should be an array");
