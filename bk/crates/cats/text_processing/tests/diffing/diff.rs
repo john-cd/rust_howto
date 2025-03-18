@@ -1,5 +1,5 @@
 // ANCHOR: example
-use diff::Chunk;
+use diff::Result;
 
 // Add to your `Cargo.toml`:
 // [dependencies]
@@ -10,22 +10,17 @@ fn main() -> anyhow::Result<()> {
     let new_text =
         "Hello world\nThis is a sample\nOf the diff library\nWith a new line";
 
-    // Generate the diff
+    // Computes the diff between the lines of two strings.
     let changeset = diff::lines(old_text, new_text);
 
     // Print the diff
-    for chunk in changeset.iter_all_changes() {
+    for chunk in changeset {
         match chunk {
-            Chunk::Equal(s) => println!(" {}", s),
-            Chunk::Delete(s) => println!("-{}", s),
-            Chunk::Insert(s) => println!("+{}", s),
+            Result::Both(s, _) => println!(" {}", s),
+            Result::Left(s) => println!("-{}", s),
+            Result::Right(s) => println!("+{}", s),
         }
     }
-
-    // Get a summary of changes
-    println!("\nSummary:");
-    println!("  {} insertions", changeset.insertions());
-    println!("  {} deletions", changeset.deletions());
 
     Ok(())
 }
