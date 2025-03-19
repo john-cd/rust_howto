@@ -1,5 +1,5 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = ["clap_builder_xmpl"]
 
 # Default values for packages in the workspace
