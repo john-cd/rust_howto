@@ -21368,6 +21368,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "165859e9e55f79d67b96c5d96f4e88b6f2695a1972849c15a6a3f5c59fc2c003"
 dependencies = [
  "memchr",
+ "serde 1.0.219",
 ]
 
 [[package]]
@@ -27375,6 +27376,7 @@ dependencies = [
  "fuzzy-matcher",
  "heck 0.5.0",
  "hyphenation",
+ "indoc",
  "joinery",
  "lazy_static",
  "memchr",
