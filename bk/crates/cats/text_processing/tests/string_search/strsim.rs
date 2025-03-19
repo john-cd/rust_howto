@@ -43,7 +43,7 @@ fn main() {
 
     // Example: Finding closest match
     let target = "rusty";
-    let candidates = vec!["dusty", "rust", "trust", "crusty"];
+    let candidates = ["dusty", "rust", "trust", "crusty"];
 
     let closest = candidates
         .iter()

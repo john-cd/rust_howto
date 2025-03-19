@@ -56,7 +56,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     // Using with byte offsets
-    let patterns = &[&[b'a', b'b', b'c'], &[b'd', b'e', b'f']];
+    let patterns = &[b"abc", b"def"];
     let ac = AhoCorasick::new(patterns)?;
 
     let text = b"abcdef";
