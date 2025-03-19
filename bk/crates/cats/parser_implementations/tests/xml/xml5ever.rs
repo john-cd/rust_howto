@@ -152,8 +152,8 @@
 //         self.stack.len() - 1
 //     }
 
-//     fn create_comment(&mut self, _text: markup::tendril::StrTendril) -> usize {
-//         0 // Simplified
+//     fn create_comment(&mut self, _text: markup::tendril::StrTendril) -> usize
+// {         0 // Simplified
 //     }
 
 //     fn create_pi(
@@ -227,8 +227,8 @@
 //         // Simplified
 //     }
 
-//     fn set_quirks_mode(&mut self, _mode: markup5ever::interface::QuirksMode) {
-//         // Simplified
+//     fn set_quirks_mode(&mut self, _mode: markup5ever::interface::QuirksMode)
+// {         // Simplified
 //     }
 // }
 
