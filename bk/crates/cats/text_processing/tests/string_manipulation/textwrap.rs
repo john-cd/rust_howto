@@ -1,8 +1,9 @@
 // ANCHOR: example
+use std::borrow::Cow;
+
 use hyphenation::Language;
 use hyphenation::Load;
 use hyphenation::Standard;
-use std::borrow::Cow;
 use textwrap::Options;
 use textwrap::WordSplitter;
 use textwrap::fill;
