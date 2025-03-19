@@ -3,7 +3,7 @@ use std::cmp::Reverse;
 
 use priority_queue::PriorityQueue;
 
-// Add this dependency to your Cargo.toml:
+// Add this dependency to your `Cargo.toml`:
 // [dependencies]
 // priority-queue = "1.3.1"
 

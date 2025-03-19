@@ -2,8 +2,8 @@
 // use mlua::prelude::*;
 
 // // In a module mode, `mlua` allows to create a compiled Lua module that can
-// be // loaded from Lua code using require. In this case mlua uses an external
-// Lua // runtime
+// // be loaded from Lua code using `require``. In this case, mlua uses an
+// // external Lua runtime
 
 // // Add the following to your `Cargo.toml` file:
 // // [lib]
@@ -40,4 +40,4 @@
 // }
 // // ANCHOR_END: example
 
-// [ P1 write; add to markdown](https://github.com/john-cd/rust_howto/issues/1031)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1031)

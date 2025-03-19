@@ -1,10 +1,11 @@
 // ANCHOR: example
-fn main() {}
+// COMING SOON
 // ANCHOR_END: example
+fn main() {}
 
 #[test]
-#[ignore = "later"]
+#[ignore = "not yet implemented"]
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/759)
+// [WIP write NOW](https://github.com/john-cd/rust_howto/issues/759)

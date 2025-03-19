@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use gtk::Application;
@@ -86,4 +86,4 @@
 // }
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/780) review https://gtk-rs.org/
+// // [WIP finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)

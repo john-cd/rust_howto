@@ -1,5 +1,6 @@
 // // ANCHOR: example
-
+// // COMING SOON
+// // ANCHOR_END: example
 // // This will serialize and then deserialize a Person protobuf message and
 // // print out its contents.
 
@@ -26,10 +27,9 @@
 
 //     println!("Name: {}, Age: {}", decoded_person.name, decoded_person.age);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// [ P1 finish prost example](https://github.com/john-cd/rust_howto/issues/1044)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1044)

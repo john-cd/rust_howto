@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use vello::Renderer;
 // use vello::peniko::Brush;
 // use vello::peniko::Color;
@@ -85,7 +87,6 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/791)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/791)

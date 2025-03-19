@@ -27,4 +27,4 @@
 // fn test() {
 //     main();
 // }
-// [ P1 write; add to markdown; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)
+// [WIP finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

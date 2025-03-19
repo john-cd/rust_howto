@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use pingora::prelude::*;
@@ -30,5 +31,5 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/812); require network??
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/812); require network??
 // // https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs

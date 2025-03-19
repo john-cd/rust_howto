@@ -146,4 +146,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/710) fix heavy test; secure the connection;
+// [WIP review fix heavy test; secure the connection](https://github.com/john-cd/rust_howto/issues/710)

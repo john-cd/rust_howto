@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use std::collections::HashMap;
 // use std::time::Duration;
 
@@ -104,12 +106,11 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/841)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/841)
 // // https://github.com/Sollimann/bonsai/blob/1aa74afcb11603e86d5c7e941a70b2533e844e16/examples/src/async_drone/main.rs
 // // https://github.com/Sollimann/bonsai/blob/main/docs/concepts/README.md

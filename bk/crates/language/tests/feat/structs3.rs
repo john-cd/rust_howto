@@ -22,5 +22,3 @@ fn main() {
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/876)
-// [structs3: example (P1)](https://github.com/john-cd/rust_howto/issues/182)

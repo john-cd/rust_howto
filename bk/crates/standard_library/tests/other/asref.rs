@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn print_length<T: AsRef<str>>(s: T) {
     let s_ref: &str = s.as_ref();
     println!("The length of '{}' is {}", s_ref, s_ref.len());

@@ -1,6 +1,7 @@
 // #![allow(dead_code)]
-
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use relm4::ComponentParts;
 // use relm4::ComponentSender;
 // use relm4::RelmApp;
@@ -173,7 +174,6 @@
 //     let app = RelmApp::new("relm4.example.simple_manual");
 //     app.run::<CounterModel>(1);
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/784) review https://relm4.org/book/stable/
+// // [WIP finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)

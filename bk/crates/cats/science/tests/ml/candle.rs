@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // // Data types of elements allowed in tensors.
 // use candle_core::DType;
@@ -104,7 +106,6 @@
 
 //     main();
 // }
-// // ANCHOR_END: example
-// // [P2](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
 // // https://github.com/ToluClassics/candle-tutorial
 // // https://huggingface.github.io/candle/index.html

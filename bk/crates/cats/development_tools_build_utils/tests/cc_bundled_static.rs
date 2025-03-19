@@ -10,4 +10,4 @@ fn main() {
 fn test() {
     main();
 }
-// [P1 deal with cc](https://github.com/john-cd/rust_howto/issues/899)
+// [WIP finish; deal with cc](https://github.com/john-cd/rust_howto/issues/899)

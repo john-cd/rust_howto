@@ -1,4 +1,6 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // Specialized window creation library targetting windows
 // to be embedded in other applications (e.g. DAW plugins)
@@ -15,6 +17,5 @@
 pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
-// ANCHOR_END: example
 
-// [ P2 write; add to markdown; https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)
+// [WIP write; review https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)

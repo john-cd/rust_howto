@@ -36,4 +36,3 @@ fn main() {
 fn test() {
     main();
 }
-// [attributes_debug:  example (P1)](https://github.com/john-cd/rust_howto/issues/181)

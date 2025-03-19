@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use glutin::{
 //     event::{Event, WindowEvent},
 //     event_loop::{ControlFlow, EventLoop},
@@ -103,7 +105,6 @@
 //     fn begin_section(&mut self, _a: &'static str) {}
 //     fn end_section(&mut self) {}
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/793)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/793)

@@ -13,8 +13,8 @@ fn fibonacci(n: u64) -> u64 {
     }
 }
 
-// The benchmark_fibonacci function benchmarks the performance of the fibonacci
-// function with the input 20.
+// The `benchmark_fibonacci` function benchmarks the performance of the
+// fibonacci function with the input `20`.
 fn benchmark_fibonacci(c: &mut Criterion) {
     c.bench_function("fibonacci 20", |b| b.iter(|| fibonacci(black_box(20))));
 }
@@ -31,4 +31,3 @@ criterion_main!(benches);
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/745)

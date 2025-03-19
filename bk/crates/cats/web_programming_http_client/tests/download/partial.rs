@@ -100,4 +100,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [partial: flaky test (P1)](https://github.com/john-cd/rust_howto/issues/176)
+// [WIP review; flaky test](https://github.com/john-cd/rust_howto/issues/176)

@@ -35,4 +35,4 @@ async fn main() {
 // fn test() {
 //     main();
 // }
-// [P2](https://github.com/john-cd/rust_howto/issues/771) need proper testing
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/771) need proper testing

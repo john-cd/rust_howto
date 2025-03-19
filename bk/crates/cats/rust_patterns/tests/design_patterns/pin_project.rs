@@ -93,8 +93,8 @@
 //     fn process(self: Pin<&mut Self>) {
 //         match self.project() {
 //             EnumProj::Variant1(pinned, unpinned) => {
-//                 println!("Processing Variant1 with unpinned: {:?}", unpinned);
-//                 // pinned is Pin<&mut T>
+//                 println!("Processing Variant1 with unpinned: {:?}",
+// unpinned);                 // pinned is Pin<&mut T>
 //                 // unpinned is &mut U
 //             }
 //             EnumProj::Variant2(pinned) => {
@@ -103,8 +103,8 @@
 //             }
 //             EnumProj::Variant3(unpinned) => {
 //                 // unpinned is &mut U
-//                 println!("Processing Variant3 with unpinned: {:?}", unpinned);
-//             }
+//                 println!("Processing Variant3 with unpinned: {:?}",
+// unpinned);             }
 //         }
 //     }
 // }
@@ -161,4 +161,4 @@
 // fn test() {
 //     main();
 // }
-// // [add example](https://github.com/john-cd/rust_howto/issues/1120)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/1120)

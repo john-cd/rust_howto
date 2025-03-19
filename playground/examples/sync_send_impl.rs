@@ -97,7 +97,7 @@ fn main() {
 fn test() {
     main();
 }
-// [P1 add example for Send / Sync custom impl](https://github.com/john-cd/rust_howto/issues/93)
+// [WIP add example for Send / Sync custom impl](https://github.com/john-cd/rust_howto/issues/93)
 // Implement a simplified Mutex instead?
 // https://doc.rust-lang.org/src/std/sync/mutex.rs.html
 

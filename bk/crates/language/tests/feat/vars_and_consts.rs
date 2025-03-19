@@ -1,6 +1,5 @@
 #![allow(unused)]
 // ANCHOR: example
-
 fn main() {
     // `const` is set to a constant expression
     // The type must be annotated

@@ -1,4 +1,6 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use std::thread;
 // use std::time::Duration;
 // use std::time::UNIX_EPOCH;
@@ -53,7 +55,6 @@
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
-// ANCHOR_END: example
 
 #[test]
 fn require_network() -> anyhow::Result<()> {
@@ -62,4 +63,4 @@ fn require_network() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// [rate_limited: fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 (P0)](https://github.com/john-cd/rust_howto/issues/177)
+// [WIP fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 SOON](https://github.com/john-cd/rust_howto/issues/177)

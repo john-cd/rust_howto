@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 #[derive(Debug)]
 struct User {
     active: bool,

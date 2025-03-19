@@ -23,4 +23,4 @@
 // }
 // // ANCHOR_END: example
 
-// [ P1 write; add to markdown](https://github.com/john-cd/rust_howto/issues/1036)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1036)

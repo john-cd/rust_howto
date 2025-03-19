@@ -19,7 +19,7 @@
 // }
 // // ANCHOR_END: derive_macro
 
-// TODO P1 write; review https://docs.rs/syn/latest/syn/index.html
+// TODO write; review https://docs.rs/syn/latest/syn/index.html
 
 // // ANCHOR: attribute_macro
 // extern crate proc_macro;
@@ -44,4 +44,4 @@
 // }
 // // ANCHOR_END: attribute_macro
 
-// TODO P1 write
+// TODO WIP finish

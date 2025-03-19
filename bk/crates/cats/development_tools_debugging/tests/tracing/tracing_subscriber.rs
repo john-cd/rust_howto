@@ -27,5 +27,4 @@ rusty_fork_test! {
 // println!
 // set to noplayground
 // default level?
-
-// [tracing_subscriber:  (P1)](https://github.com/john-cd/rust_howto/issues/159)
+// [WIP review](https://github.com/john-cd/rust_howto/issues/159)

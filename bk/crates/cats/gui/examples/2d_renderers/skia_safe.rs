@@ -1,6 +1,6 @@
 // #![allow(dead_code)]
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // // Skia Setup: Sets up the Skia context, surface, and canvas for drawing.
@@ -163,4 +163,4 @@
 // }
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/786)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/786)

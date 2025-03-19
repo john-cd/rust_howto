@@ -89,7 +89,7 @@ fn main() {
 fn test() {
     main();
 }
-// [P2](https://github.com/john-cd/rust_howto/issues/810)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/810)
 // review https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a
 // https://www.datadoghq.com/blog/engineering/introducing-glommio/
 // https://docs.rs/glommio/latest/glommio/

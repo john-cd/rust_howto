@@ -27,4 +27,4 @@ pub fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-// [tar: tar_strip_prefix.rs is noplayground - fix? (P1)](https://github.com/john-cd/rust_howto/issues/256)
+// [WIP review; tar_strip_prefix.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/256)

@@ -32,7 +32,6 @@ fn main() {
         println!("{}: {}", key, value);
     }
 }
-
 // ANCHOR_END: example
 
 #[test]

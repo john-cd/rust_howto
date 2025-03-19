@@ -1,4 +1,5 @@
 // // ANCHOR: example
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use accesskit::Action;
@@ -150,5 +151,5 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/676)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/676)
 // // https://accesskit.dev/

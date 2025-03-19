@@ -1,4 +1,7 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
+
 // use std::io::Cursor;
 // // use std::io::Read;
 // // use std::io::Write;
@@ -48,10 +51,9 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// [ P1 finish](https://github.com/john-cd/rust_howto/issues/1046)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1046)

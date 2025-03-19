@@ -3,6 +3,8 @@
 // // See `Cargo.toml`
 // use config1 as config;
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use std::collections::HashMap;
 // use std::fs;
 
@@ -111,11 +113,10 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// // https://github.com/rust-cli/config-rs/tree/main/examples
+// // TODO WIP finish; https://github.com/rust-cli/config-rs/tree/main/examples

@@ -127,4 +127,4 @@
 // }
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/788)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/788)

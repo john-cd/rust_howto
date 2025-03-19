@@ -1,5 +1,7 @@
 #![allow(dead_code)]
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // Imports from the module created by `tonic` (see below):
 // pub struct HelloReply { pub message: String, }
 use helloworld::HelloReply;
@@ -63,11 +65,10 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // Look for additional examples in https://github.com/hyperium/tonic/tree/master/examples
-// ANCHOR_END: example
 
 // #[test]
 // fn require_network() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [P1](https://github.com/john-cd/rust_howto/issues/870) need to write full integration test, testing the endpoint then stopping the server
+// [WIP review; need to write full integration test, testing the endpoint then stopping the server](https://github.com/john-cd/rust_howto/issues/870)

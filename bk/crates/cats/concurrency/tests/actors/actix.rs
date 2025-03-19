@@ -45,5 +45,5 @@ fn main() {
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/682) test fails
+// [WIP finish; test fails](https://github.com/john-cd/rust_howto/issues/682)
 // `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime

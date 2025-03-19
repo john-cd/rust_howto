@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use std::convert::Infallible;
@@ -37,4 +37,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/811)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/811)

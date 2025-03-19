@@ -1,13 +1,14 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 fn main() {}
-// ANCHOR_END: example
 
 #[test]
 #[ignore = "later"]
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/886) need to review - see gpu.md
+// [WIP write LATER](https://github.com/john-cd/rust_howto/issues/886) need to review - see gpu.md
 // Crates:
 // https://github.com/Rust-GPU
 // https://github.com/Rust-GPU/rust-gpu https://rust-gpu.github.io/ https://rust-gpu.github.io/rust-gpu/book/

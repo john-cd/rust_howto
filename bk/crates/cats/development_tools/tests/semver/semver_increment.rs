@@ -38,4 +38,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [ P0 increment_*() no longer exist; remove example maybe](https://github.com/john-cd/rust_howto/issues/903)
+// [WIP finish NOW increment_*() no longer exist; remove example maybe](https://github.com/john-cd/rust_howto/issues/903)

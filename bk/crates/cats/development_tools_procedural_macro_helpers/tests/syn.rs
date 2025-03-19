@@ -4,15 +4,15 @@ use quote::quote;
 use syn::Expr;
 use syn::ItemFn;
 use syn::Result;
-// `syn`` takes Rust code as input (typically a TokenStream, which represents a
-// sequence of tokens in Rust code) and transforms it into an Abstract Syntax
-// Tree (AST). This AST is represented by a set of syn data structures that
+
+// `syn`` takes Rust code as input (typically a `TokenStream`, which represents
+// a sequence of tokens in Rust code) and transforms it into an Abstract Syntax
+// Tree (AST). This AST is represented by a set of `syn` data structures that
 // mirror the grammatical structure of Rust. For example, you'll find structs in
-// syn representing items (like functions, structs, enums), expressions,
+// `syn` representing items (like functions, structs, enums), expressions,
 // statements, attributes, and more. You can then easily traverse the AST,
 // inspect different parts of the code and modify it.
 
-// TODO
 fn simple() -> Result<()> {
     let code = "assert_eq!(u8::max_value(), 255)";
     let expr = syn::parse_str::<Expr>(code)?;
@@ -20,7 +20,6 @@ fn simple() -> Result<()> {
     Ok(())
 }
 
-// TODO
 fn m() -> anyhow::Result<()> {
     // Example Rust code to parse
     let code = r#"
@@ -64,7 +63,6 @@ fn main() -> anyhow::Result<()> {
     m()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 #[test]
@@ -72,5 +70,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/743)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/743)
 // See https://github.com/dtolnay/syn/tree/master/examples

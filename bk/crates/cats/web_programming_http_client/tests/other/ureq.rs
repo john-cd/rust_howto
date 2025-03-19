@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() -> anyhow::Result<()> {
     let url = "https://jsonplaceholder.typicode.com/posts/1";
     let response: String =
@@ -15,4 +14,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/862)
+// [WIP NOW write more?](https://github.com/john-cd/rust_howto/issues/862)

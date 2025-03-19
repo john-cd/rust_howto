@@ -1,4 +1,6 @@
 // ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
 // use bytemuck::Zeroable;
 // use bytemuck::AnyBitPattern;
 use bytemuck::NoUninit;
@@ -52,10 +54,9 @@ fn main() {
     to_from_bytes();
     cast();
 }
-// ANCHOR_END: example
 
 #[test]
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/753) finish
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/753) finish

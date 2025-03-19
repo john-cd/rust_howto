@@ -1,6 +1,6 @@
 // #![cfg(feature = "polars")]
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // // In `Cargo.toml`:
@@ -42,4 +42,4 @@
 // fn test() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/885)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/885)

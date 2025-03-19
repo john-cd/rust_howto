@@ -74,4 +74,4 @@
 // fn test() {
 //     main();
 // }
-// // [add stakker example](https://github.com/john-cd/rust_howto/issues/94)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/94)

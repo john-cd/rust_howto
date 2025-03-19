@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 use std::clone::Clone;
 use std::fmt::Debug;
 

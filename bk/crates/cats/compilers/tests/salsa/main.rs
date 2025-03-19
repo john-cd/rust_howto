@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use salsa::Database;
 
 // // This example demonstrates a simple dependency graph:
@@ -95,10 +97,10 @@
 // mod __salsa_internal {
 //     pub use salsa;
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
+// // TODO WIP finish

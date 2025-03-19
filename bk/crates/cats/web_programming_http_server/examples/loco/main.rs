@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 use anyhow::Result;
 // use loco_rs::app::AppContext;
 // use loco_rs::app::Hooks;
@@ -74,6 +76,5 @@ async fn main() -> Result<()> {
 // pub async fn tasks(_ctx: &AppContext, _tasks: &mut Tasks) -> Result<()> {
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
-// // [P0](https://github.com/john-cd/rust_howto/issues/868)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/868)

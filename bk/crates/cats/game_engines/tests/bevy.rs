@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use bevy::prelude::*;
@@ -40,4 +40,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/767)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/767)

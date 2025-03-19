@@ -10,8 +10,9 @@ use serde::Serialize;
 // [dependencies]
 // postcard = "1.0.0"
 
-// # By default, `serde` has the `std` feature enabled, which makes it
-// unsuitable for embedded targets # disabling default-features fixes this
+// By default, `serde` has the `std` feature enabled, which makes it
+// unsuitable for embedded targets. Disabling default-features fixes this:
+//
 // serde = { version = "1.0.*", default-features = false }
 
 // Example from https://lib.rs/crates/postcard
@@ -55,4 +56,4 @@ fn main() {
 fn test() {
     main();
 }
-// [ P1 review postcard example](https://github.com/john-cd/rust_howto/issues/1038)
+// [WIP review postcard example](https://github.com/john-cd/rust_howto/issues/1038)

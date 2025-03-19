@@ -70,4 +70,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P2 fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)
+// [WIP fix heavy test](https://github.com/john-cd/rust_howto/issues/1019)

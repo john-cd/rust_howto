@@ -55,7 +55,7 @@ fn main() -> anyhow::Result<()> {
     let mut _connection: OciConnection =
         establish_connection(&db_url, &username, &password)?;
 
-    // // FIXME P2
+    // // FIXME WIP
     // // Query the database (fetching users as an example)
     // let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
     //     .load::<User>(&mut connection)?;
@@ -95,7 +95,7 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P2 debug; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
+// [WIP finish; debug; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
 // Issue: Cannot locate a 64-bit Oracle Client library
 
 // TODO figure out install of the client

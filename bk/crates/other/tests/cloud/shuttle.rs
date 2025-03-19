@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use shuttle_microservice::prelude::*;
@@ -23,4 +23,4 @@
 // fn test() {
 //     main();
 // }
-// // [add shuttle.rs example P1](https://github.com/john-cd/rust_howto/issues/49)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/49)

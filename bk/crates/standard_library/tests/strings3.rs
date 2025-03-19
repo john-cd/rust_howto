@@ -1,7 +1,6 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
-
 #[macro_use(concat_string)]
 extern crate concat_string;
 

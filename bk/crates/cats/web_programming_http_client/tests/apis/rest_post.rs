@@ -80,4 +80,4 @@ fn main() { println!("hello world!");}
 fn require_network() {
     println!("{:?}", main());
 }
-// [rest_post: rewrite so that a username and password are not required? (P1)](https://github.com/john-cd/rust_howto/issues/178)
+// [WIP review; rewrite so that a username and password are not required? SOON](https://github.com/john-cd/rust_howto/issues/178)

@@ -1,5 +1,6 @@
-// ANCHOR: example
-// ANCHOR_END: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 use anyhow::Context;
 use http_body_util::BodyExt;
@@ -78,6 +79,6 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/859)
+// [WIP review SOON](https://github.com/john-cd/rust_howto/issues/859)
 // review https://hyper.rs/
 // reference https://github.com/hyperium/hyper/blob/master/examples/client.rs

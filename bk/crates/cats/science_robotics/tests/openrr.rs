@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 // use openrr::JointTrajectoryClient;
 // use openrr::RobotClient;
@@ -125,5 +125,5 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/843)
+// // [WIP write](https://github.com/john-cd/rust_howto/issues/843)
 // // https://openrr.github.io/openrr-tutorial/en/html/index.html

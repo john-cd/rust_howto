@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // // `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
@@ -38,4 +38,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/748)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/748)

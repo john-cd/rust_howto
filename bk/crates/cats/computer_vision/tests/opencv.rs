@@ -57,4 +57,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 fn test() {
     main().unwrap();
 }
-// [ P2 expand example; review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff](https://github.com/john-cd/rust_howto/issues/1079)
+// [WIP review; expand example; review https://blog.devgenius.io/rust-and-opencv-bb0467bf35ff](https://github.com/john-cd/rust_howto/issues/1079)

@@ -25,4 +25,4 @@ rusty_fork_test! {
         main();
     }
 }
-// [tracing_subscriber2: does it print? (P0)](https://github.com/john-cd/rust_howto/issues/160)
+// [WIP review NOW; does it print?](https://github.com/john-cd/rust_howto/issues/160)

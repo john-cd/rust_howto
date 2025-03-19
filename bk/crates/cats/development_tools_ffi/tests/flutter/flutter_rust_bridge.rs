@@ -31,4 +31,4 @@
 // }
 // // ANCHOR_END: example
 
-// [ P1 write; add to markdown - reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)
+// [WIP finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)

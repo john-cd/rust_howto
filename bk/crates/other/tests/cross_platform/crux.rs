@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use crux_core::{
 //     render::{render, Render},
 //     App, Command,
@@ -104,11 +106,10 @@
 //     // app.update(Event::Increment);
 //     // app.update(Event::Decrement);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/880)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/880)
 // // https://github.com/redbadger/crux/blob/master/examples/counter/shared/src/app.rs

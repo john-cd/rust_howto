@@ -52,4 +52,4 @@
 // // #[test]
 // // fn test() {
 // // }
-// [ P1 write; add to markdown](https://github.com/john-cd/rust_howto/issues/1029)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1029)

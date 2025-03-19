@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use comemo::{Tracked, Memoized};
 
 // // A function we want to memoize
@@ -86,10 +88,10 @@
 //     println!("Result 7: {}", result7);
 
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
+// TODO WIP finish

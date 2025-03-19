@@ -3,9 +3,10 @@ use mlua::prelude::*;
 
 // `mlua` provides bindings to Lua programming language for Rust
 
-// By default mlua does not enable any features.
-// For example, add the following to your `Cargo.toml` file to enable Lua 5.4
-// support: ```toml
+// By default, `mlua` does not enable any features.
+// For example, add the following to your `Cargo.toml` file
+// to enable Lua 5.4 support:
+// ```toml
 // [dependencies]
 // mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
 // ```
@@ -32,4 +33,3 @@ fn test() -> LuaResult<()> {
     main()?;
     Ok(())
 }
-// [ P1 write; add to markdown](https://github.com/john-cd/rust_howto/issues/1030)

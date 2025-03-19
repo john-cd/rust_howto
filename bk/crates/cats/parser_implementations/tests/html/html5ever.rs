@@ -57,11 +57,10 @@
 // }
 
 // #[test]
-// #[ignore = "not yet implemented"]
 // fn test() {
 //     main();
 // }
-// // [P1 add example](https://github.com/john-cd/rust_howto/issues/1090)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/1090)
 // // Look at
 // // https://github.com/servo/html5ever/blob/main/rcdom/examples/html2html.rs
 // // https://github.com/servo/html5ever/blob/main/rcdom/examples/print-rcdom.rs

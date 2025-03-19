@@ -1,4 +1,6 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // Trait that handles the application events:
 use winit::application::ApplicationHandler;
 // An event from a `Window`: Resized, Moved, etc.
@@ -81,7 +83,6 @@ pub fn main() -> anyhow::Result<()> {
     event_loop.run_app(&mut app)?;
     Ok(())
 }
-// // ANCHOR_END: example
 
-// // [P1](https://github.com/john-cd/rust_howto/issues/794)
+// // [WIP review](https://github.com/john-cd/rust_howto/issues/794)
 // https://github.com/rust-windowing/winit/tree/master/examples

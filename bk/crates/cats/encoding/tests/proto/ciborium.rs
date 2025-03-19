@@ -1,8 +1,6 @@
 // ANCHOR: example
 use std::io::Cursor;
 
-// use std::io::Read;
-// use std::io::Write;
 use ciborium::de::from_reader;
 use ciborium::ser::into_writer;
 use serde::Deserialize;
@@ -43,4 +41,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [ P1 finish](https://github.com/john-cd/rust_howto/issues/1042)
+// [WIP NOW rewiew](https://github.com/john-cd/rust_howto/issues/1042)

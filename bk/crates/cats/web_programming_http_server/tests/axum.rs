@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -100,15 +102,13 @@ async fn main() -> anyhow::Result<()> {
     axum::serve(listener, router).await?;
     Ok(())
 }
-// ANCHOR_END: example
 
-// TODO time limit
 // #[test]
 // fn require_network() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [P0](https://github.com/john-cd/rust_howto/issues/865)
+// [WIP review time limit](https://github.com/john-cd/rust_howto/issues/865)
 // https://docs.rs/axum/latest/axum/index.html
 // https://docs.rs/axum/0.8.1/axum/extract/struct.State.html
 // https://docs.rs/axum/0.8.1/axum/extract/index.html

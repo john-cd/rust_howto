@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use RustQuant::prelude::*;
@@ -39,4 +39,4 @@
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/764) review
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/764) review

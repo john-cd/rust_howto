@@ -50,4 +50,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO P2 review https://github.com/snapview/tokio-tungstenite/tree/master/examples
+// TODO WIP review https://github.com/snapview/tokio-tungstenite/tree/master/examples

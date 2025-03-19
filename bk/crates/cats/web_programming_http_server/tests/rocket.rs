@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // #[get("/")]
@@ -15,4 +15,4 @@
 // #[test]
 // fn require_network() {
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/869)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/869)

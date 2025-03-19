@@ -57,4 +57,5 @@ async fn main() {
 fn test() {
     main();
 }
-// ["full"] }` Technically, the #[tokio::main] attribute is a macro
+// TODO WIP review ["full"] }` Technically, the #[tokio::main] attribute is a
+// macro

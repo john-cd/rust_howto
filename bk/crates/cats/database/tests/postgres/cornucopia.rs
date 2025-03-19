@@ -1,4 +1,6 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use cornucopia_async::GenericClient;
 // use tokio_postgres::{NoTls, Error};
 
@@ -42,10 +44,9 @@
 
 //     Ok(())
 // }
-// ANCHOR_END: example
 
 #[test]
 fn require_external_svc() {
     // main();
 }
-// [P2](https://github.com/john-cd/rust_howto/issues/708)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/708)

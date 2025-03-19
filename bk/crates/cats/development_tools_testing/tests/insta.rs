@@ -11,7 +11,7 @@ pub fn format_user(name: &str, age: u32) -> String {
 
 // The following is a test that uses `insta`
 // to snapshot the output, in e.g. `tests/snapshot.rs`.
-// Run with `cargo test`
+// Run with `cargo test`.
 
 use insta::assert_snapshot;
 
@@ -24,5 +24,3 @@ fn test_format_user() {
     assert_snapshot!("format_user_snapshot", formatted);
 }
 // ANCHOR_END: example
-
-// [P1](https://github.com/john-cd/rust_howto/issues/750)

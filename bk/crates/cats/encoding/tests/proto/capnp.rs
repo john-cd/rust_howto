@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use capnp::serialize;
 // use foo_capnp::my_struct::Builder;
 
@@ -54,10 +56,9 @@
 
 //     println!("Cap'n Proto message size: {}", write_buffer.len());
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// [ P1 finish capnp example; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041)
+// [WIP finish; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041)

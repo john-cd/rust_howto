@@ -41,5 +41,3 @@ fn main() {
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/875)
-// [associated_types:  example (P1)](https://github.com/john-cd/rust_howto/issues/180)

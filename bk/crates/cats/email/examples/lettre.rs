@@ -34,3 +34,4 @@ fn main() {
 }
 // ANCHOR_END: example
 // Requires valid SMTP credentials to run
+// TODO WIP review

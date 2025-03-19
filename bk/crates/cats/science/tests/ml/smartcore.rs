@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // // KNNClassifier
 // // use smartcore::neighbors::knn_classifier::*;
@@ -58,10 +60,9 @@
 
 //     DenseMatrix::from_array(n_samples, n_features, &data)
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [P2](https://github.com/john-cd/rust_howto/issues/837)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/837)

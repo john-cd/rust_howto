@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use tree_sitter::Language;
 // use tree_sitter::Parser;
 // use tree_sitter::Query;
@@ -55,7 +57,7 @@
 
 //     // Execute the query on the syntax tree
 
-// // FIXME P1
+// // FIXME
 //     // println!("Variable declarations:");
 //     // for m in query_cursor.matches(&query, tree.root_node(),
 // code.as_bytes()) {     //     for capture in m.capture {
@@ -126,11 +128,10 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/827)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/827)

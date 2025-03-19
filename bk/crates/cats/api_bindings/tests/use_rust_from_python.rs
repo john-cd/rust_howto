@@ -3,6 +3,7 @@
 #![allow(clippy::useless_conversion)]
 #![cfg(target_os = "linux")]
 // ANCHOR: example
+// COMING SOON
 // ANCHOR_END: example
 
 use std::result::Result;
@@ -24,7 +25,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 }
 
 fn main() {
-    // [ P0 fix](https://github.com/john-cd/rust_howto/issues/996)
+    // [WIP finish; fix](https://github.com/john-cd/rust_howto/issues/996)
 }
 
 #[test]

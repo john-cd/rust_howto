@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use tao::event::Event;
 // use tao::event::WindowEvent;
 // use tao::event_loop::ControlFlow;
@@ -61,7 +63,6 @@
 //         }
 //     });
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/789)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/789)

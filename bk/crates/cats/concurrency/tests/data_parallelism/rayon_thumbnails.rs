@@ -66,6 +66,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
-// [rayon_thumbnails: address the need for test jpg (P1)](https://github.com/john-cd/rust_howto/issues/146)
-// [data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc - fix? (P1)](https://github.com/john-cd/rust_howto/issues/261)
+// [WIP review; rayon_thumbnails: address the need for test jpg data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc - fix?](https://github.com/john-cd/rust_howto/issues/261)

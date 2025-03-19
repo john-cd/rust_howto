@@ -1,6 +1,8 @@
 // ANCHOR: example
 use std::fmt;
 
+// BEWARE: supertrait are NOT inheritance!
+
 trait OutlinePrint: fmt::Display {
     fn outline_print(&self) {
         println!("* {} *", self);
@@ -17,10 +19,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// BEWARE: supertrait are NOT inheritance!
 #[test]
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/877)
-// [traits3: example  (P1)](https://github.com/john-cd/rust_howto/issues/183)
+// TODO WIP review NOW

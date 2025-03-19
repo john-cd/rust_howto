@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // // In your `Cargo.toml`, add the `protobuf` crate as a dependency:
 // // [dependencies]
@@ -38,10 +40,9 @@
 //     // Print the deserialized Person message
 //     println!("Deserialized person: {:?}", deserialized_person);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// [ P1 write protobuf example](https://github.com/john-cd/rust_howto/issues/1045)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1045)

@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use aws_config::meta::region::RegionProviderChain;
@@ -49,4 +49,4 @@
 // fn require_network() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/879)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/879)

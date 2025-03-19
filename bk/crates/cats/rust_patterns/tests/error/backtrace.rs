@@ -1,4 +1,6 @@
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // use std::fmt;
 
@@ -48,7 +50,6 @@ use anyhow::Result;
 fn main() -> Result<()> {
     Ok(())
 }
-// ANCHOR_END: example
 
 #[test]
 fn test() {
@@ -57,4 +58,4 @@ fn test() {
     assert!(res.is_ok());
 }
 
-// [backtrace: rewrite (P0)](https://github.com/john-cd/rust_howto/issues/168)
+// [WIP review rewrite SOON](https://github.com/john-cd/rust_howto/issues/168)

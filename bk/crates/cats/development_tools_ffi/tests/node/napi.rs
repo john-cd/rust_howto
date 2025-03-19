@@ -44,4 +44,4 @@
 
 // // ANCHOR_END: example
 
-// [ P1 write; add to markdown; https://lib.rs/crates/napi; https://github.com/napi-rs/package-template](https://github.com/john-cd/rust_howto/issues/1032)
+// [WIP finish; https://lib.rs/crates/napi; https://github.com/napi-rs/package-template](https://github.com/john-cd/rust_howto/issues/1032)

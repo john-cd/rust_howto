@@ -34,4 +34,4 @@ fn main() -> Result<()> {
 fn test() {
     println!("{:?}", main());
 }
-// [P1 deal with extern](https://github.com/john-cd/rust_howto/issues/900)
+// [WIP finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)

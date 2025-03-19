@@ -1,4 +1,7 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
+
 // use flatbuffers::FlatBufferBuilder;
 
 // // The `flatbuffers` crate provides runtime support
@@ -52,11 +55,10 @@
 
 //     println!("FlatBuffer size: {}", finished_bytes.len());
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
 // // https://flatbuffers.dev/languages/rust/
-// [ P1 finish flatbuffers example](https://github.com/john-cd/rust_howto/issues/1043)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1043)

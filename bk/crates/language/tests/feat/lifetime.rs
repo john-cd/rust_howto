@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 struct ImportantExcerpt<'a> {
     part: &'a str,
 }

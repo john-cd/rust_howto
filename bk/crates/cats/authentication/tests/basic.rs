@@ -35,5 +35,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
-// [basic_authentication: authentication/basic.rs is noplayground because of network use. rewrite?  (P1)](https://github.com/john-cd/rust_howto/issues/225)
+// [WIP review; authentication/basic.rs is noplayground because of network use. rewrite?](https://github.com/john-cd/rust_howto/issues/225)

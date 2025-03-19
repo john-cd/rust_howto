@@ -69,4 +69,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [phone: println!("{}", ); (P1)](https://github.com/john-cd/rust_howto/issues/173)
+// [WIP review NOW println!("{}", );](https://github.com/john-cd/rust_howto/issues/173)

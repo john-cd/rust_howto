@@ -17,4 +17,4 @@ fn main() {
 fn test() {
     main();
 }
-// [P1 deal with extern](https://github.com/john-cd/rust_howto/issues/901)
+// [WIP finish; deal with extern](https://github.com/john-cd/rust_howto/issues/901)

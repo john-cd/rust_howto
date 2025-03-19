@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use async_tungstenite::tokio::connect_async;
 // use futures_util::SinkExt;
 // use futures_util::StreamExt;
@@ -44,10 +46,9 @@
 //         println!("Received: {}", msg);
 //     }
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn require_network() {
 //     main();
 // }
-// [ P1 write; add to markdown; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
+// [WIP finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

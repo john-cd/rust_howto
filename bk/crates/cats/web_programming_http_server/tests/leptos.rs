@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use leptos::prelude::*;
 // use leptos::mount::mount_to_body;
 
@@ -49,12 +51,11 @@
 //     // Mount the app to the HTML body.
 //     mount_to_body(App)
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/867)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/867)
 // // https://leptos.dev/
 // // https://github.com/leptos-rs/awesome-leptos

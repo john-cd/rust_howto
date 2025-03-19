@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // // (backend)
@@ -67,4 +67,4 @@
 // }
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/790)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/790)

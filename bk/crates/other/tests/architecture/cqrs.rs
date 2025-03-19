@@ -249,7 +249,6 @@
 
 //     impl ProductRepository for SimpleProductRepository {
 //         fn get_product(&self, id: u32) -> Option<Product> {
-//             todo!();
 //         }
 //         // TODO consume events
 //     }
@@ -373,7 +372,7 @@
 //     Ok(())
 // }
 
-// TODO finish!
+// TODO WIP finish
 
 // // https://martinfowler.com/bliki/CQRS.html
 // // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs

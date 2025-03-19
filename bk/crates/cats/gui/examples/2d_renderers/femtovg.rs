@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use femtovg::Align;
@@ -114,4 +114,4 @@
 // }
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/777)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/777)

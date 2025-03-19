@@ -1,6 +1,5 @@
 #![cfg(feature = "arrow")]
 // ANCHOR: example
-
 use std::sync::Arc;
 
 use arrow::array::Array;
@@ -75,4 +74,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [ P2 add more; read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html](https://github.com/john-cd/rust_howto/issues/1081)
+// [WIP add more; read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html](https://github.com/john-cd/rust_howto/issues/1081)

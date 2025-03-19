@@ -12,9 +12,9 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// [ P1 deal wth cc](https://github.com/john-cd/rust_howto/issues/1000)
 #[ignore = "WIP"]
 #[test]
 fn test() {
     main();
 }
+// [WIP finish; deal wth cc](https://github.com/john-cd/rust_howto/issues/1000)

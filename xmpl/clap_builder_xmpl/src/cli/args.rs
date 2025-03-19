@@ -200,4 +200,4 @@ mod tests {
         assert_eq!(get_arg_verbose(&m.unwrap()), 1);
     }
 }
-// [P1 fix test](https://github.com/john-cd/rust_howto/issues/895)
+// [WIP fix test](https://github.com/john-cd/rust_howto/issues/895)

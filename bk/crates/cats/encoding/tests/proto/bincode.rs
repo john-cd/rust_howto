@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use std::fs::File;
 // use std::io::Cursor;
 
@@ -42,11 +44,10 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [ P1 write bincode example](https://github.com/john-cd/rust_howto/issues/1040)
+// [WIP finish](https://github.com/john-cd/rust_howto/issues/1040)

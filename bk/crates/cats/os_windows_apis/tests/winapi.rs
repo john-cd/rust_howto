@@ -103,4 +103,4 @@ fn main() {
 fn test() {
     main();
 }
-// [P2](https://github.com/john-cd/rust_howto/issues/822)
+// [WIP review / test](https://github.com/john-cd/rust_howto/issues/822)

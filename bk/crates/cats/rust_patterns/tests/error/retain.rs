@@ -28,5 +28,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [P1 flaky test](https://github.com/john-cd/rust_howto/issues/834)
-// [retain: flaky test (P1)](https://github.com/john-cd/rust_howto/issues/171)
+// [WIP review; flaky test](https://github.com/john-cd/rust_howto/issues/834)

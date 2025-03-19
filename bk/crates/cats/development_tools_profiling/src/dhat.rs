@@ -108,5 +108,4 @@ fn heap_usage_testing() {
 fn test() {
     main();
 }
-// [P1](https://github.com/john-cd/rust_howto/issues/746) automate: cargo run --features dhat-heap / cargo run --features dhat-ad-hoc
-// Can be flaky
+// [WIP finish; can be flaky](https://github.com/john-cd/rust_howto/issues/746) automate: cargo run --features dhat-heap / cargo run --features dhat-ad-hoc

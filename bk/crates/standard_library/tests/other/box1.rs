@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 // Define a Node struct to represent a single element in a linked list.
 struct Node {
     value: i32,

@@ -58,4 +58,4 @@ rusty_fork_test! {
         main();
     }
 }
-// [log_env_variable: test fully and review vs text (P1)](https://github.com/john-cd/rust_howto/issues/157)
+// [WIP review; test fully and review vs text](https://github.com/john-cd/rust_howto/issues/157)

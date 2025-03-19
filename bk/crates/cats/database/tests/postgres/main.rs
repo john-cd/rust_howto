@@ -12,4 +12,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     // aggregate_data::main()?;
     Ok(())
 }
-// [P0](https://github.com/john-cd/rust_howto/issues/713)
+// [WIP NOW review](https://github.com/john-cd/rust_howto/issues/713)

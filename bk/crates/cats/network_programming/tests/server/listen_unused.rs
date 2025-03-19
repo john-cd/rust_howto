@@ -25,4 +25,4 @@ fn main() -> Result<(), Error> {
 fn test() {
     println!("{:?}", main());
 }
-// [listen_unused: listens to a connection forever (P1)](https://github.com/john-cd/rust_howto/issues/166)
+// [WIP finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166)

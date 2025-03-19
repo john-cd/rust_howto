@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 trait Summary {
     // Method signature that describe the behavior of the types that implement
     // this trait. Function signatures do not include a function body

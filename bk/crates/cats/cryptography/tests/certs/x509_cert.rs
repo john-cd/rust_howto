@@ -60,4 +60,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/705)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/705)

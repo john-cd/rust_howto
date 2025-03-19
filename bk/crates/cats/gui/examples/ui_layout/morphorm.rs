@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use morphorm::*;
 // // use morphorm_ecs::*;
 
@@ -92,7 +94,6 @@
 //     );
 //     println!("Margin Box: {:?}", margin_box.get_bounds());
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P2](https://github.com/john-cd/rust_howto/issues/782)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/782)

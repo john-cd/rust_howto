@@ -59,4 +59,4 @@ fn test() {
     );
     assert_eq!(extend_extension(&Path::new(""), "new"), Path::new(""));
 }
-// [P1 file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)
+// [WIP file_prefix is still unstable.](https://github.com/john-cd/rust_howto/issues/902)

@@ -1,5 +1,8 @@
 #![allow(dead_code)]
-// ANCHOR: example
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
+
 // version_id then join version_id and Version.id to retrieve crate
 // name Consider a simpler API for example purposes
 
@@ -107,7 +110,6 @@
 fn main() -> anyhow::Result<()> {
     Ok(())
 }
-// ANCHOR_END: example
 
 #[test]
 fn require_network() -> anyhow::Result<()> {
@@ -116,5 +118,4 @@ fn require_network() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// [P0 fix - the API no longer returns a crate_id - need to get](https://github.com/john-cd/rust_howto/issues/860)
-// [paginated: fix - the API no longer returns a crate_id - need to get (P0)](https://github.com/john-cd/rust_howto/issues/175)
+// [WIP fix - the API no longer returns a crate_id - need to get; SOON](https://github.com/john-cd/rust_howto/issues/860)

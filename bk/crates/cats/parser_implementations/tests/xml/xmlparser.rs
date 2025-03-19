@@ -21,9 +21,9 @@
 
 //     for token in Tokenizer::from(xml) {
 //         match token {
-//             Ok(Token::Declaration { version, encoding, standalone, span: _ }) => {
-//                 println!("XML Declaration: version={} encoding={:?} standalone={:?}",
-//                     version, encoding, standalone);
+//             Ok(Token::Declaration { version, encoding, standalone, span: _ })
+// => {                 println!("XML Declaration: version={} encoding={:?}
+// standalone={:?}",                     version, encoding, standalone);
 //             }
 //             Ok(Token::Comment { text, span: _ }) => {
 //                 println!("{}Comment: {}", " ".repeat(depth * 2), text);
@@ -79,4 +79,4 @@
 // fn test() {
 //     main();
 // }
-// // [add example](https://github.com/john-cd/rust_howto/issues/1102)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/1102)

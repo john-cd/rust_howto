@@ -90,5 +90,4 @@ async fn main() {
 fn require_network() {
     main();
 }
-// [P1 finish](https://github.com/john-cd/rust_howto/issues/871)
-// [tower_http: finish (P1)](https://github.com/john-cd/rust_howto/issues/179)
+// [WIP review](https://github.com/john-cd/rust_howto/issues/871)

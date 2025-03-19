@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use xilem::component::Component;
 // use xilem::context::EventCx;
 // use xilem::view::Adapt;
@@ -70,9 +72,8 @@
 //     // Start the application.
 //     xilem::run(app(), AppModel { counter: 0 })
 // }
-// // ANCHOR_END: example
 
 pub fn main() {}
-// // [P1](https://github.com/john-cd/rust_howto/issues/795)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/795)
 // // https://github.com/linebender/xilem
 // // https://raphlinus.github.io/rust/gui/2022/07/15/next-dozen-guis.html

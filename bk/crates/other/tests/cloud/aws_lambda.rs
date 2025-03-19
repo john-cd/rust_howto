@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use lambda_runtime::Context;
@@ -51,4 +51,4 @@
 // fn require_network() {
 //     main();
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/878)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/878)

@@ -1,7 +1,7 @@
 // #![allow(dead_code)]
 // #![cfg(target_os = "linux")]
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use pyo3::ffi::c_str;
@@ -62,4 +62,4 @@
 //     main();
 // }
 
-// // [fix py examples](https://github.com/john-cd/rust_howto/issues/78)
+// // [WIP finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)

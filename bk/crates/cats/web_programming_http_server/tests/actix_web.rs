@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use actix_web::App;
@@ -25,4 +25,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [P1](https://github.com/john-cd/rust_howto/issues/863)
+// // [WIP finish](https://github.com/john-cd/rust_howto/issues/863)

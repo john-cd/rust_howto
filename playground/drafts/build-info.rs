@@ -46,4 +46,4 @@
 // }
 
 fn main() {}
-// [ P2 review / convert into example](https://github.com/john-cd/rust_howto/issues/1060)?
+// [WIP review / convert into example](https://github.com/john-cd/rust_howto/issues/1060)?

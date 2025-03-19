@@ -48,4 +48,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [semver_latest: review - add println!("{}") (P0)](https://github.com/john-cd/rust_howto/issues/156)
+// [WIP review NOW - add println!("{}")](https://github.com/john-cd/rust_howto/issues/156)

@@ -1,5 +1,5 @@
 // // ANCHOR: example
-// COMING SOON
+// // COMING SOON
 // // ANCHOR_END: example
 
 // use std::env;
@@ -79,4 +79,4 @@
 // fn require_external_svc() {
 //     main();
 // }
-// // [P0](https://github.com/john-cd/rust_howto/issues/709)
+// // [WIP finish SOON](https://github.com/john-cd/rust_howto/issues/709)

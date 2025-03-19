@@ -59,5 +59,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [streams: streams2.rs is noplayground because it requires a network. rewrite? (P1)](https://github.com/john-cd/rust_howto/issues/221)
-// [asynchronous/streams.md: P1 add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
+// [WIP finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
