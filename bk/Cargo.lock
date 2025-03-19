@@ -19805,6 +19805,7 @@ dependencies = [
  "html5ever 0.30.0",
  "json5",
  "markdown",
+ "markup5ever 0.15.0",
  "markup5ever_arcdom",
  "pulldown-cmark",
  "quick-xml 0.37.2",
