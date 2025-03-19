@@ -48,9 +48,9 @@ fn main() {
                 // Add text before the match
                 highlighted.push_str(&item[last_idx..idx]);
                 // Add the matched character with formatting
-                highlighted.push_str("[");
+                highlighted.push('[');
                 highlighted.push(item.chars().nth(idx).unwrap());
-                highlighted.push_str("]");
+                highlighted.push(']');
                 last_idx = idx + 1;
             }
 
