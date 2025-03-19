@@ -7,7 +7,7 @@ fn main() {
     let matcher = SkimMatcherV2::default();
 
     // Define some example strings to search through
-    let items = vec![
+    let items = [
         "fuzzy", "hazy", "buzzy", "scuzzy", "cloudy", "fuzzily", "fuzzed",
     ];
 
