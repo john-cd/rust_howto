@@ -38,10 +38,17 @@
 
 𝗗𝗮𝘁𝗮, 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 & 𝗔𝗜. Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend-github]⮳{{hi:Analytics}}
 
+## `rerun` {#rerun}
+
+[![rerun-website][c-rerun-website-badge]][c-rerun-website] [![rerun][c-rerun-badge]][c-rerun] [![rerun-crates.io][c-rerun-crates.io-badge]][c-rerun-crates.io] [![rerun-github][c-rerun-github-badge]][c-rerun-github] [![rerun-lib.rs][c-rerun-lib.rs-badge]][c-rerun-lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
+
+[`rerun`][c-rerun-github]⮳ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
+
+Log images, point clouds, etc, and visualize them effortlessly.
+
 ## Other Frameworks {#skip}
 
 - Big [Data Processing][p-data-processing] for the AI Era: [LakeSail][lakesail-website]⮳.
-- [`rerun`][c-rerun-github]⮳ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
 
 ## References {#skip1}
 
@@ -55,10 +62,4 @@
 cover
 `ballista`
 `spice.ai`
-
----
-
-[![rerun-website][c-rerun-website-badge]][c-rerun-website] [![rerun][c-rerun-badge]][c-rerun] [![rerun-crates.io][c-rerun-crates.io-badge]][c-rerun-crates.io] [![rerun-github][c-rerun-github-badge]][c-rerun-github] [![rerun-lib.rs][c-rerun-lib.rs-badge]][c-rerun-lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
-
-Log images, point clouds, etc, and visualize them effortlessly
 </div>
