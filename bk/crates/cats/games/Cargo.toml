@@ -14,4 +14,4 @@ categories = [ "games" ]
 publish.workspace = true
 
 [dependencies]
-# TODO P2
+# TODO

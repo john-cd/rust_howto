@@ -9,7 +9,7 @@ repos:
           - id: check-yaml
           - id: check-added-large-files
           - id: check-toml
-# TODO P0 revise git hooks
+# TODO revise git hooks NOW
 # Another example:
 # repos:
 #   - repo: https://github.com/pre-commit/pre-commit-hooks

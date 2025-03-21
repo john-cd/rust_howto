@@ -27,11 +27,11 @@ alias bb := buildbook
 
 # Generate new reference definitions for all crate the book's examples depend on...
 @_generate-refdefs:
-# TODO P3 mdbook-utils refdefs
+# TODO mdbook-utils refdefs
 
 # Generate the index and the category page.
 @_generate-index-category:
-# TODO P2
+# TODO
 
 # Add static assets to book output
 [unix]

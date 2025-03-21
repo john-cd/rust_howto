@@ -16,7 +16,7 @@ services:
         ## GitHub Action cache https://docs.docker.com/build/ci/github-actions/cache/#github-cache
         ## As above, it only works when using a buildx builder with `docker-container` driver, etc in a GitHub Actions workflow
         ## Ignored otherwise
-        ## TODO P1 make gha caching work
+        ## TODO make gha caching work
         - type=gha,scope=rust_howto_ci
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
@@ -30,6 +30,6 @@ services:
         bind:
           create_host_path: true
       ## bind mounts do not work when trying to cache /usr/local/cargo, since it obscures the pre-existing contents of the folder in the docker layer
-      ## TODO P1 use tmpfs mounts to speed up the build process; first measure the folder sizes on the github runner
+      ## TODO use tmpfs mounts to speed up the build process; first measure the folder sizes on the github runner
       # - type: tmpfs
       #   target: /usr/local/cargo/

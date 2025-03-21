@@ -33,18 +33,18 @@ crux_macros = "0.4.4"
 ## Data processing
 arrow = { version = "54.2.1", features = ["prettyprint"], optional = true }
 datafusion = { version = "46.0.0", optional = true }
-#polars = { version = "0.46.0", optional = true } # TODO P1
+#polars = { version = "0.46.0", optional = true } # TODO
 
 ## GPU
-# TODO P2 add deps
+# TODO add deps
 
 ## Scripting
 rhai = "1.21.0"
 
-## Written in Rust TODO P2
+## Written in Rust TODO
 # bat
 # broot
-# exa = "0.10.1" # FIXME P2 review conflicts
+# exa = "0.10.1" # FIXME review conflicts
 # gping = "1.17.3" # not a lib
 # just = "1.36.0"
 # lsd

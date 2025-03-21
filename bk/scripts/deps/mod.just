@@ -20,4 +20,4 @@ _default:
 # Check for security advisories, license issues, etc
 @check_crates:
   cd {{root}} && cargo deny check --hide-inclusion-graph
-# TODO WIP
+# TODO

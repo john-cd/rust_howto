@@ -46,6 +46,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write. create missing examples
-cover `inventory` crate for DI?
+TODO write. create missing examples. cover `inventory` crate for DI?
 </div>

@@ -35,7 +35,7 @@ Rust can be used to build high-performance desktop applications for Windows, mac
 
 Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with [`tauri`][c-tauri]⮳{{hi:tauri}}.
 
-TODO
+FIXME
 
 ### GTK
 
@@ -45,13 +45,13 @@ TODO
 
 While native mobile development with Rust is nascent, Rust can be combined with frameworks like `Flutter` to create cross-platform mobile apps. Rust can provide the backend logic, and Flutter handles the UI.
 
-TODO
+FIXME
 
 ## Embedded Systems
 
 Rust is becoming increasingly used in embedded systems due to its performance and safety.
 
-TODO
+FIXME
 
 ## Notable Cross-Platform Application Frameworks
 

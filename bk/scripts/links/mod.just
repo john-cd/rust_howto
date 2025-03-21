@@ -29,13 +29,13 @@ _default:
 [unix]
 @suggest:
   ./suggest_links_for_bare_urls.sh {{root}}
-# TODO P2 review
+# TODO review
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 [unix]
 @replace_inline_links:
   ./replace_inline_links.sh {{root}}
-# TODO P2 review
+# TODO review
 
 ## .... GET LINK (MANUAL) ....
 

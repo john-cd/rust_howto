@@ -2,7 +2,8 @@
 
 ## Finish mdbook-scrub
 
-- remove wikilinks in preproc so that book could build
+- scrub {{#crate }}
+- process {{#crate }}, etc
 
 ## Links
 

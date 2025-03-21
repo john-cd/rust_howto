@@ -67,7 +67,7 @@ pre-commit run --all-files
 
 ## Useful Git Hooks for Rust {#skip}
 
-TODO
+FIXME
 
 - `cargo fmt`.
 - `cargo check`, clippy, test...

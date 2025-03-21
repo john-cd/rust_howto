@@ -15,7 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# embassy = "0.0.0" # TODO P1 review installation / required dependencies
+# embassy = "0.0.0" # TODO review installation / required dependencies
 
 [features]
 #default = []

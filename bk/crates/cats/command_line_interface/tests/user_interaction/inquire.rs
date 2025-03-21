@@ -34,4 +34,4 @@ fn main() {
 // ANCHOR_END: example
 
 // No tests - this example requires use input
-// TODO WIP review how to test
+// TODO WIP review NOW how to test

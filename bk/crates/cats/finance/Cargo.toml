@@ -15,7 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-#RustQuant = "0.3" # TODO P2 heavy build (polars, nalgebra, etc)
+#RustQuant = "0.3" # TODO heavy build (polars, nalgebra, etc)
 
 [features]
 #default = []

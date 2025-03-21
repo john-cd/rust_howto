@@ -94,4 +94,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO WIP review https://surrealdb.com/docs/
+// TODO WIP NOW review https://surrealdb.com/docs/

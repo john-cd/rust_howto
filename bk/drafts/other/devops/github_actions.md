@@ -116,7 +116,7 @@ Example `.github/workflows/<name>.yml`
 
 ## Useful GitHub Actions {#skip}
 
-TODO
+FIXME
 
 - `rust-toolchain`: Github action to install Rust components via rustup
 - `rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.

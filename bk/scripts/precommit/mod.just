@@ -18,7 +18,7 @@ _default:
 
 ## ---- PRE-COMMIT -----------------------------------
 
-# TODO P1 finish - install pre-commit or use cargo-husky?
+# TODO finish - install pre-commit or use cargo-husky?
 # Combining just + pre-commit
 # pre-commit: https://pre-commit.com/
 # based on https://github.com/casey/just/blob/master/examples/pre-commit.just
@@ -42,7 +42,7 @@ _default:
 
 ## ---- GIT TOWN -----------------------------------------
 
-# TODO P2 review git town
+# TODO review git town
 # https://www.git-town.com/ (setup receipt)
 
 # WIP configure git town

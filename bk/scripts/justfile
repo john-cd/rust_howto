@@ -6,7 +6,7 @@ _default:
 
 ## ---- DEFAULT -------------------------------------
 
-# TODO P2 would like to use `bash` as the shell, when on Windows, rather than
+# TODO would like to use `bash` as the shell, when on Windows, rather than
 #set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 #set windows-shell := ["cmd.exe", "/c"]
 

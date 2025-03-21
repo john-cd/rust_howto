@@ -211,4 +211,4 @@ editable = true            # allows editing the source code
 # # Arbitrary other Pandoc options can be specified as they would be in a Pandoc defaults file
 # # (see https://pandoc.org/MANUAL.html#defaults-files) but written in TOML instead of YAML...
 
-# TODO P1 generate PDF with https://crates.io/crates/mdbook-pandoc
+# TODO NOW generate PDF with https://crates.io/crates/mdbook-pandoc

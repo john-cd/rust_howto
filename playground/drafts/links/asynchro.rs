@@ -45,7 +45,7 @@ pub fn launch() -> Result<()> {
     for t in tasks {
         // The `spawn` method returns a `JoinHandle`. A `JoinHandle` is
         // a future, so we can wait for it using `block_on`.
-        let _ = runtime.block_on(t)?; // TODO
+        let _ = runtime.block_on(t)?; // FIXME
     }
     Ok(())
 }

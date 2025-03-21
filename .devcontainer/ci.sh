@@ -19,7 +19,7 @@ cd ./bk
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
-## TODO P2
+## TODO
 ## Check dependencies
 # cargo deny check \
 #     && cargo outdated --exit-code 1 \

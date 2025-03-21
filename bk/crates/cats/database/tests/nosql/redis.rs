@@ -50,5 +50,5 @@ fn require_external_svc() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO WIP review
+// TODO WIP review NOW
 // redis://[<username>][:<password>@]<hostname>[:port][/[<db>][?

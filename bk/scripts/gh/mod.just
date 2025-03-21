@@ -34,11 +34,10 @@ create_issues_for_markdown:
     base=$(basename $file '.md')
     rel=$(realpath --relative-to={{root}} $file)
     echo ">> $rel"
-    ## extract TODO P0/1/2/3 ...
-    for todo in $(grep -Eoh '\s*TODO\s*(P[0-9])?:?\s+.*$' $file)
+    for todo in $(grep -Eoh '\s*TODO\s*:?\s+.*$' $file)
     do
-      #echo "gh issue create --title '${rel}: ${todo:-fix (P1)}' --body '[${rel}](https://github.com/john-cd/rust_howto/blob/main/${rel})'; sleep 3"
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "markdown,auto")
+      #echo "gh issue create --title '${rel}: ${todo:-fix}' --body '[${rel}](https://github.com/john-cd/rust_howto/blob/main/${rel})'; sleep 3"
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "markdown,auto")
       # Escape [ and ]
       echo "$issue_url"
       todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
@@ -62,7 +61,7 @@ create_issues_for_examples:
     do
       todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
       echo ">${todo}<"
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix (P1)}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main//crates/${rel})" --label "code example,auto")
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main//crates/${rel})" --label "code example,auto")
       echo "$issue_url"
       # Escape [ and ]
       sed -E -i 's~TODO('${todo}')~[\1]('${issue_url}')~' $file
@@ -82,7 +81,7 @@ create_issues_for_examples:
 #     sleep 2
 #   done
 
-## TODO P1
+## TODO
 
 ## HACK: Replace TODO lines in the markdown by a link to previously created GitHub Issues
 #add_gh_links:
@@ -98,13 +97,12 @@ create_issues_for_examples:
 #    fi
 #    rel=$(realpath --relative-to={{root}} $file )
 #    echo ">> $rel"
-#    ## extract strings after TODO P0/1/2/3...
-#    for todo in $(sed -nE -e 's~^\s*TODO\s*(P[0-9])?:?\s*([^[]+?)$~\2~pg' $file )
+#    for todo in $(sed -nE -e 's~^\s*TODO\s*:?\s*([^[]+?)$~\2~pg' $file )
 #    do
-#      echo "${base}: ${todo:-fix (P1)}"
+#      echo "${base}: ${todo:-fix}"
 #      ## Search for GitHub issue(s) that match the string
 #      ## https://pkg.go.dev/text/template
-#      link=$(gh issue list --search "${base}: ${todo:-fix (P1)}" --json title,url --template '{{{{range .}}[{{{{.title}}]({{{{.url}})\n{{{{end}}')
+#      link=$(gh issue list --search "${base}: ${todo:-fix}" --json title,url --template '{{{{range .}}[{{{{.title}}]({{{{.url}})\n{{{{end}}')
 #      if [[ -n "$link" ]]; then
 #        # Replace the TODO line by a [ issue title ]( issue url )
 #        sed -E -i 's~^(\s*TODO\s*(P[0-9])?\s*'${todo}')$~'${link}'~g' $file
@@ -112,7 +110,7 @@ create_issues_for_examples:
 #    done
 #  done
 
-## TODO P1
+## TODO
 
 # HACK
 [unix]
