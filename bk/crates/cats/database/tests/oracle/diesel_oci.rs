@@ -95,17 +95,17 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP finish; debug; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
+// [WIP finish NOW; debug; need heavy test](https://github.com/john-cd/rust_howto/issues/1020)
 // Issue: Cannot locate a 64-bit Oracle Client library
 
-// TODO figure out install of the client
+// figure out install of the client
 
 // The simplest Oracle Client is the free Oracle Instant Client.
 // Only the “Basic” or “Basic Light” package is required.
 // https://www.oracle.com/database/technologies/instant-client.html
 // https://github.com/oracle/docker-images/tree/main/OracleInstantClient
 
-// TODO review install steps in https://odpi-c.readthedocs.io/en/latest/user_guide/introduction.html
+// review install steps in https://odpi-c.readthedocs.io/en/latest/user_guide/introduction.html
 // Oracle Database Programming Interface for C (ODPI-C) is an open source
 // library of C code that simplifies the use of common Oracle Call Interface
 // (OCI) features for Oracle Database drivers and user applications.

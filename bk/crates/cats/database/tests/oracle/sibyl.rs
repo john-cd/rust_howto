@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // // Sibyl is an OCI-based interface between Rust applications and Oracle
 // // databases. Sibyl supports both blocking (threads) and nonblocking (async)
@@ -76,14 +78,13 @@
 
 //     Ok(())
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn require_external_svc() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [WIP finish; review https://lib.rs/crates/sibyl ; also test / review in depth install steps](https://github.com/john-cd/rust_howto/issues/1022)
+// [WIP finish NOW; review https://lib.rs/crates/sibyl ; also test / review in depth install steps](https://github.com/john-cd/rust_howto/issues/1022)
 // // https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/sdk-instant-client.html
 // // https://docs.oracle.com/en/database/oracle/oracle-database/19/lacli/installing-ic-arm-packages.html
 // // https://help.ubuntu.com/community/RPM/AlienHowto

@@ -31,5 +31,5 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/812); require network??
+// // [WIP finish NOW](https://github.com/john-cd/rust_howto/issues/812); require network??
 // // https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs

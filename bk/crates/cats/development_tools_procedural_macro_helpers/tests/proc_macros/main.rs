@@ -13,8 +13,8 @@
 //     my_function();
 // }
 
-// TODO WIP finish NOW; review the following; decide what examples are needed for
-// proc macros. move proc macros to lib.rs
+// TODO WIP finish NOW; review the following; decide what examples are needed
+// for proc macros. move proc macros to lib.rs
 // reorganize examples in folders
 
 // https://doc.rust-lang.org/proc_macro/index.html

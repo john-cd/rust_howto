@@ -95,7 +95,6 @@ Good documentation is essential for any procedural macro. Document your macro's 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write_proc_macros: write][write_proc_macros: write]
-[write_proc_macros: write]: https://github.com/john-cd/rust_howto/issues/331
+[write_proc_macros: write](https://github.com/john-cd/rust_howto/issues/331)
 
 </div>

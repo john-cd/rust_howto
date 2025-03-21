@@ -85,5 +85,5 @@ docker push johncd/rust_howto_ci:latest
 
 <div class="hidden">
 [dev_container_docker: review](https://github.com/john-cd/rust_howto/issues/525)
-- [ ] rust and Docker; multistage builds.
+rust and Docker; multistage builds.
 </div>

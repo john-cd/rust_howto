@@ -59,4 +59,4 @@ fn main() {
 fn test() {
     main();
 }
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/753) finish
+// [WIP finish NOW](https://github.com/john-cd/rust_howto/issues/753)
