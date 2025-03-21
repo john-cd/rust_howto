@@ -20,6 +20,14 @@ For advanced analysis, you'll likely need the statistics and linear algebra crat
 
 Building models to analyze financial data.
 
+## Financial Calculations
+
+[`financial`][c-financial]⮳{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
+
+- Time value of money: Present value, future value, etc.
+- Interest rates: Simple, compound, APR, APY.
+- Financial instruments: Stocks, bonds, options, etc.
+
 ## Related Topics
 
 ## Decimal Number Handling
@@ -88,13 +96,5 @@ Review / incorporate:
 - Mention `black_scholes`.
 
 Cover Excel data import, yahoo finance, databento, alpaca.
-
-## Financial Calculations
-
-[`financial`][c-financial]⮳{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
-
-- Time value of money: Present value, future value, etc.
-- Interest rates: Simple, compound, APR, APY.
-- Financial instruments: Stocks, bonds, options, etc.
 
 </div>
