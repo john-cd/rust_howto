@@ -45,6 +45,7 @@ See, for example:
 
 - [AWS and Rust][blog-sustainability-with-rust]⮳.
 - [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
+- [Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳ framework.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -56,7 +57,4 @@ Cover?
 ## Deploy Rust Applications to Elastic Beanstalk
 ## Deploy Rust Applications to App Runner
 ## Deploy Rust Applications to EC2 machines
-
-- [Serverless rust][serverless-rust-website]{{hi:Serverless}}⮳ framework.
-
 </div>
