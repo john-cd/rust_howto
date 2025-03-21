@@ -6,7 +6,7 @@ _default:
 
 ## ---- DEFAULT -------------------------------------
 
-# TODO would like to use `bash` as the shell, when on Windows, rather than
+# [would like to use `bash` as the shell, when on Windows, rather than](https://github.com/john-cd/rust_howto/issues/1249)
 #set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 #set windows-shell := ["cmd.exe", "/c"]
 
@@ -33,7 +33,7 @@ set windows-shell := [ "C:\\cygwin64\\bin\\bash.exe", "-uc"]
     echo '{{source_directory()}}'
     echo '{{invocation_directory()}}'
 
-# TODO make [script] work
+# [make [script] work](https://github.com/john-cd/rust_howto/issues/1250)
 
 set unstable
 
@@ -49,7 +49,7 @@ set script-interpreter := [ "C:\\cygwin64\\bin\\bash.exe", "-u"]
     echo '{{invocation_directory()}}'
     PATH="/bin:$PATH" && echo "$PATH"; pwd
 
-# TODO make cypath conversion work
+# [make cypath conversion work](https://github.com/john-cd/rust_howto/issues/1251)
 
 # p := shell('bin/cygpath --unix "$1"', 'D:\')
 
@@ -59,7 +59,7 @@ set script-interpreter := [ "C:\\cygwin64\\bin\\bash.exe", "-u"]
 #test3:
 #    echo '{{ p }}'
 
-# TODO convert Windows path to Cygwin path
+# [convert Windows path to Cygwin path](https://github.com/john-cd/rust_howto/issues/1252)
 
 root := if os_family() == 'windows' {
   quote(replace(justfile_directory(), '\', '/'))
@@ -67,4 +67,4 @@ root := if os_family() == 'windows' {
   quote(justfile_directory())
 }
 
-# TODO review https://github.com/casey/just/issues/2599
+# [review https://github.com/casey/just/issues/2599](https://github.com/john-cd/rust_howto/issues/1253)

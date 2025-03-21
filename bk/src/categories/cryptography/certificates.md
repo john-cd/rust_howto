@@ -61,5 +61,5 @@ An X.509 certificate is a standardized format for public key certificates used i
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1179)
 </div>

@@ -12,4 +12,4 @@ fn main() -> anyhow::Result<()> {
     xilem::main();
     Ok(())
 }
-// [WIP finish fix](https://github.com/john-cd/rust_howto/issues/1051)
+// [finish fix](https://github.com/john-cd/rust_howto/issues/1051)

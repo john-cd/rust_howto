@@ -35,5 +35,5 @@ Burn is a comprehensive dynamic Deep Learning Framework built using Rust with fl
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1205)
 </div>

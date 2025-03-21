@@ -36,4 +36,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review NOW](https://github.com/john-cd/rust_howto/issues/174)
+// [review NOW](https://github.com/john-cd/rust_howto/issues/174)

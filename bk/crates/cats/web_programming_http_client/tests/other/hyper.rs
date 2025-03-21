@@ -79,6 +79,6 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review SOON](https://github.com/john-cd/rust_howto/issues/859)
+// [review SOON](https://github.com/john-cd/rust_howto/issues/859)
 // review https://hyper.rs/
 // reference https://github.com/hyperium/hyper/blob/master/examples/client.rs

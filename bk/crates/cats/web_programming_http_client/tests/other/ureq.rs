@@ -14,4 +14,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP NOW write more?](https://github.com/john-cd/rust_howto/issues/862)
+// [NOW write more?](https://github.com/john-cd/rust_howto/issues/862)

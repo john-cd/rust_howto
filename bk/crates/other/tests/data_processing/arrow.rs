@@ -74,4 +74,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// [WIP add more; read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html](https://github.com/john-cd/rust_howto/issues/1081)
+// [add more; read / write from csv / JSON; serde; generic code; https://arrow.apache.org/rust/arrow/index.html](https://github.com/john-cd/rust_howto/issues/1081)

@@ -14,11 +14,10 @@ categories = ["development_tools"]
 publish.workspace = true
 
 [dependencies]
-# TODO bacon ="3.2.0"
+# [add? bacon ="3.2.0"](https://github.com/john-cd/rust_howto/issues/1261)
 crates_io_api = "0.11.0"
 cross = "0.2.5"
 doc-comment = "0.3.3"
-# TODO
 # mdbook
 # mdbook-cmdrun
 # mdbook-journal
@@ -31,7 +30,8 @@ doc-comment = "0.3.3"
 # mdbook-toc
 # miri
 semver = "1.0.24"
-# termbook = "1.4.2" # requires mdbook; TODO review pre-requisites
+# termbook = "1.4.2"
+# [termbook requires mdbook; review pre-requisites LATER](https://github.com/john-cd/rust_howto/issues/1294)
 yapp = "0.5.0"
 
 ## General

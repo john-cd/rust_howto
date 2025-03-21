@@ -301,4 +301,4 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish NOW](https://github.com/john-cd/rust_howto/issues/1103)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1103)

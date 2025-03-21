@@ -34,5 +34,5 @@ See also [[shells | Shells]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write; where does this chapter belong?
+[write; where does this chapter belong](https://github.com/john-cd/rust_howto/issues/1232)?
 </div>

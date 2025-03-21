@@ -4,4 +4,4 @@
 mod cli;
 
 fn main() {}
-// [WIP decide what to do](https://github.com/john-cd/rust_howto/issues/1061)
+// [decide what to do](https://github.com/john-cd/rust_howto/issues/1061)

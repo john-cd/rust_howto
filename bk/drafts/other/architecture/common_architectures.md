@@ -132,5 +132,5 @@ Event sourcing focuses on storing a sequence of events that represent changes to
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / detail every architecture
+[write / detail every architecture](https://github.com/john-cd/rust_howto/issues/1230)
 </div>

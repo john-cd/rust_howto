@@ -97,4 +97,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [WIP write; see also https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html](https://github.com/john-cd/rust_howto/issues/1016)
+// // [write SOON; see also https://docs.rs/cassandra-protocol/latest/cassandra_protocol/index.html](https://github.com/john-cd/rust_howto/issues/1016)

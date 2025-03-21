@@ -46,4 +46,4 @@
 // #[test]
 // fn test() {
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/741)
+// // [finish](https://github.com/john-cd/rust_howto/issues/741)

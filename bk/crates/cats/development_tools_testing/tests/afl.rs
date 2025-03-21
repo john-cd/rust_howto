@@ -38,4 +38,4 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/748)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/748)

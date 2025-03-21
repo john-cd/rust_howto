@@ -84,5 +84,5 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-// // [WIP review](https://github.com/john-cd/rust_howto/issues/794)
+// // [review](https://github.com/john-cd/rust_howto/issues/794)
 // https://github.com/rust-windowing/winit/tree/master/examples

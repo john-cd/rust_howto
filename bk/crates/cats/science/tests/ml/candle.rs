@@ -106,6 +106,6 @@
 
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
+// // [finish](https://github.com/john-cd/rust_howto/issues/835) review https://huggingface.github.io/candle/index.html
 // // https://github.com/ToluClassics/candle-tutorial
 // // https://huggingface.github.io/candle/index.html

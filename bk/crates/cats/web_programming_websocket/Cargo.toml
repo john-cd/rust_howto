@@ -18,7 +18,8 @@ autolib = false
 async-tungstenite = { version = "0.29.1", features = [
     "tokio-runtime",
     "tokio-native-tls",
-] } # TODO review
+] }
+# [async-tungstenite: review](https://github.com/john-cd/rust_howto/issues/1291)
 tokio-tungstenite = "0.26.1"
 tungstenite = "0.26.0"
 

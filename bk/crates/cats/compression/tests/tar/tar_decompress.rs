@@ -16,4 +16,4 @@ pub fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
-// [WIP review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254)
+// [review; tar_decompress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/254)

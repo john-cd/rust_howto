@@ -45,4 +45,4 @@
 // fn test() {
 //     main();
 // }
-// // [WIP fix SOON](https://github.com/john-cd/rust_howto/issues/1001)
+// // [fix SOON](https://github.com/john-cd/rust_howto/issues/1001)

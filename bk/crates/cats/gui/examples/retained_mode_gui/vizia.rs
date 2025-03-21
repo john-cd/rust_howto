@@ -20,4 +20,4 @@
 //     app.run();
 // }
 
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/1052)
+// [finish](https://github.com/john-cd/rust_howto/issues/1052)

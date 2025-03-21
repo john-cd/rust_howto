@@ -15,4 +15,4 @@
 // #[test]
 // fn require_network() {
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/869)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/869)

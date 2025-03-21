@@ -90,4 +90,4 @@ async fn main() {
 fn require_network() {
     main();
 }
-// [WIP review](https://github.com/john-cd/rust_howto/issues/871)
+// [review](https://github.com/john-cd/rust_howto/issues/871)

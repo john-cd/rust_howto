@@ -43,4 +43,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review how to test](https://github.com/john-cd/rust_howto/issues/884
+// [review how to test](https://github.com/john-cd/rust_howto/issues/884

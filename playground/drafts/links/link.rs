@@ -8,13 +8,13 @@ pub struct Link {
     url: url::Url,
 }
 
-// TODO
+// FIXME
 pub fn check_links(content: &str, check_external_links: bool) -> Vec<Link> {
     // if check_external_links {}
     Vec::new()
 }
 
-// TODO
+// FIXME
 fn check_external_links(content: &str) -> Vec<Link> {
     todo!();
     // Vec::new()

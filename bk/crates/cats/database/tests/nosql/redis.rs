@@ -50,5 +50,4 @@ fn require_external_svc() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO WIP review NOW
-// redis://[<username>][:<password>@]<hostname>[:port][/[<db>][?
+// [review NOW; redis://[<username>][:<password>@]<hostname>[:port][/[<db>][](https://github.com/john-cd/rust_howto/issues/1161)?

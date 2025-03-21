@@ -12,11 +12,11 @@ Tools for programming languages: compilers, interpreters, transpilers, and virtu
 
 ## Compiler Implementations
 
-TODO
+FIXME
 
 ### Interpreters
 
-TODO
+FIXME
 
 ### Transpilers
 

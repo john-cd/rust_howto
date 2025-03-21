@@ -10,7 +10,7 @@ set -u
 
 root="$(realpath $1)/"
 
-# TODO pass a var
+# [pass a var](https://github.com/john-cd/rust_howto/issues/1243)
 #pattern=('(?<!: |["`([])(http(?:s)?://(?:www\d?\.|github\.com/)?)([^./]+)(\S+)?')
 #"${pattern[@]}"
 

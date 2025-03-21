@@ -176,4 +176,4 @@
 // }
 
 pub fn main() {}
-// // [WIP finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)
+// // [finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)

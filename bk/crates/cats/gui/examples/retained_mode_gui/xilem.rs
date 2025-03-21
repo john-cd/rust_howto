@@ -74,6 +74,6 @@
 // }
 
 pub fn main() {}
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/795)
+// // [finish](https://github.com/john-cd/rust_howto/issues/795)
 // // https://github.com/linebender/xilem
 // // https://raphlinus.github.io/rust/gui/2022/07/15/next-dozen-guis.html

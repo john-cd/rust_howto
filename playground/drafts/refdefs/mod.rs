@@ -15,10 +15,10 @@ use tracing::trace;
 use tracing::warn;
 mod fs;
 
-// TODO
+// FIXME
 pub fn detect_unused_reference_definitions(content: &str) {}
 
-// TODO
+// FIXME
 pub fn delete_unused_reference_definitions(
     content: &str,
     unused_refs: Vec<BrokenLink<'static>>,

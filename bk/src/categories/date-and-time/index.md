@@ -27,7 +27,7 @@ There is no clear answer as to which is best between [`time`][c-time]⮳{{hi:tim
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
+[review](https://github.com/john-cd/rust_howto/issues/1188)
 
 Date and Time Types: [`chrono`][c-chrono]⮳{{hi:chrono}}, [`time`][c-time]⮳{{hi:time}} (newer crate, often preferred)
 Time Zones: [`chrono-tz`][c-chrono_tz]⮳{{hi:chrono-tz}}, [`time`][c-time]⮳{{hi:time}} (built-in support)

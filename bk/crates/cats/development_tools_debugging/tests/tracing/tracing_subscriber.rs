@@ -27,4 +27,4 @@ rusty_fork_test! {
 // println!
 // set to noplayground
 // default level?
-// [WIP review](https://github.com/john-cd/rust_howto/issues/159)
+// [review](https://github.com/john-cd/rust_howto/issues/159)

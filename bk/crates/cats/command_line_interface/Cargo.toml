@@ -18,7 +18,7 @@ autolib = false
 ansi_term = "0.12.1"                                 # NOTE: unmaintained
 clap = { version = "4.5.31", features = ["derive"] }
 clap_complete = "4.5.46"
-# clap-verbosity-flag = "3.0.0" # TODO
+# FIXME clap-verbosity-flag = "3.0.0"
 console = "0.15.10"
 crossterm = "0.28.1"
 indicatif = "0.17.9"

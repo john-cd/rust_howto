@@ -25,7 +25,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 }
 
 fn main() {
-    // [WIP finish; fix](https://github.com/john-cd/rust_howto/issues/996)
+    // [finish; fix](https://github.com/john-cd/rust_howto/issues/996)
 }
 
 #[test]

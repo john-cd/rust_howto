@@ -86,4 +86,4 @@
 // }
 
 pub fn main() {}
-// // [WIP finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)
+// // [finish; review https://gtk-rs.org/](https://github.com/john-cd/rust_howto/issues/780)

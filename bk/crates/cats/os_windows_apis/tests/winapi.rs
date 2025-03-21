@@ -99,8 +99,8 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "WIP"]
+#[ignore = "Needs review"]
 fn test() {
     main();
 }
-// [WIP review / test](https://github.com/john-cd/rust_howto/issues/822)
+// [review / test](https://github.com/john-cd/rust_howto/issues/822)

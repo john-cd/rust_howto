@@ -60,7 +60,7 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/1090)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1090)
 // // Look at
 // // https://github.com/servo/html5ever/blob/main/rcdom/examples/html2html.rs
 // // https://github.com/servo/html5ever/blob/main/rcdom/examples/print-rcdom.rs

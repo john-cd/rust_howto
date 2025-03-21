@@ -51,4 +51,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO WIP NOW rename
+// [NOW rename](https://github.com/john-cd/rust_howto/issues/1150)

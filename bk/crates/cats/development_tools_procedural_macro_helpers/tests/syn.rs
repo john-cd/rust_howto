@@ -70,5 +70,5 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/743)
+// [finish](https://github.com/john-cd/rust_howto/issues/743)
 // See https://github.com/dtolnay/syn/tree/master/examples

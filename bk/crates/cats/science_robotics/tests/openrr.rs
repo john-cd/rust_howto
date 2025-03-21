@@ -125,5 +125,5 @@
 // fn test() {
 //     main();
 // }
-// // [WIP write](https://github.com/john-cd/rust_howto/issues/843)
+// // [write](https://github.com/john-cd/rust_howto/issues/843)
 // // https://openrr.github.io/openrr-tutorial/en/html/index.html

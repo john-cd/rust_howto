@@ -31,4 +31,4 @@ fn test() -> io::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP NOW review](https://github.com/john-cd/rust_howto/issues/1005)
+// [NOW review](https://github.com/john-cd/rust_howto/issues/1005)

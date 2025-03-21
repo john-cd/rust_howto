@@ -33,15 +33,15 @@ crux_macros = "0.4.4"
 ## Data processing
 arrow = { version = "54.2.1", features = ["prettyprint"], optional = true }
 datafusion = { version = "46.0.0", optional = true }
-#polars = { version = "0.46.0", optional = true } # TODO
+#polars = { version = "0.46.0", optional = true } # FIXME
 
 ## GPU
-# TODO add deps
+# FIXME add deps
 
 ## Scripting
 rhai = "1.21.0"
 
-## Written in Rust TODO
+## Written in Rust FIXME
 # bat
 # broot
 # exa = "0.10.1" # FIXME review conflicts

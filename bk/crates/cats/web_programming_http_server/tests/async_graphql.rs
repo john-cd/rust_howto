@@ -52,5 +52,5 @@
 // fn require_network() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/864)
+// // [finish](https://github.com/john-cd/rust_howto/issues/864)
 // // https://github.com/async-graphql/examples

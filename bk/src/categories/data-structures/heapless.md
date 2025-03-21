@@ -32,5 +32,5 @@ This can be particularly useful for [embedded][p-embedded] systems or other envi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1171)
 </div>

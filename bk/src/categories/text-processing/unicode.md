@@ -23,5 +23,5 @@ Unicode segmentation is the process of dividing a string of Unicode text into me
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
+[review](https://github.com/john-cd/rust_howto/issues/1192)
 </div>

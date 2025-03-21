@@ -39,4 +39,4 @@ do
 #   fi
 done
 
-# TODO clean up
+# [clean up](https://github.com/john-cd/rust_howto/issues/1258)

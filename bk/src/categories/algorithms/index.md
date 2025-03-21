@@ -83,7 +83,7 @@ The following table denotes the most common crates used for each algorithm categ
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review; add graph examples
+[review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
 table for related topics?
 Cover [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}}
 </div>

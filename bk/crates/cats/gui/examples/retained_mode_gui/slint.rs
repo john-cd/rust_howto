@@ -17,5 +17,5 @@ pub fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/787) figure how to test - neither WAYLAND_DISPLAY nor WAYLAND_SOCKET nor DISPLAY is set.
+// [finish](https://github.com/john-cd/rust_howto/issues/787) figure how to test - neither WAYLAND_DISPLAY nor WAYLAND_SOCKET nor DISPLAY is set.
 // see vs code Wayland setting!

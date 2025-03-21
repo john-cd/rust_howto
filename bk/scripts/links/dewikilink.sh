@@ -6,7 +6,7 @@ set -u
 #
 # Usage <script>.sh <root folder of book>
 
-# TODO handle  [[...]] without title
+# [handle  [[...]] without title](https://github.com/john-cd/rust_howto/issues/1244)
 
 root="$(realpath $1)/"
 

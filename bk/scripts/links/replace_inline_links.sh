@@ -10,7 +10,7 @@ set -euo pipefail
 # https://crates.io/crates/sd
 # https://github.com/rustdesk/rustdesk
 
-# TODO fix
+# [fix](https://github.com/john-cd/rust_howto/issues/1238)
 # 1. do not convert links to GitHub issues e.g. https://github.com/john-cd/rust_howto/issues links
 # 2. skip text between ``` and ```
 # p = print; t = branch; : = label

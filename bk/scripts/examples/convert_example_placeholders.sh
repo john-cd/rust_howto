@@ -18,7 +18,7 @@ do
   do
     if [[ -n "${examplename}" ]]; then
         echo "Processing example: ${examplename}"
-        # TODO does not handle non-category examples
+        # [does not handle non-category examples](https://github.com/john-cd/rust_howto/issues/1257)
         current_file_dir=$(dirname $file)
         category=$(basename $current_file_dir | tr '-' '_')
         folder_in_tests=$(basename $file '.md')

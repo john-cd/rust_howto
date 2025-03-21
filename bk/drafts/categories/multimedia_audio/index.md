@@ -28,11 +28,11 @@ Use:
 
 ## Audio Effects, Filters, and Compression
 
-TODO
+FIXME
 
 ## Audio Streaming
 
-TODO
+FIXME
 
 ## Audio Synthesis
 

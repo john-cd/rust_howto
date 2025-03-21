@@ -50,5 +50,5 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1214)
 </div>

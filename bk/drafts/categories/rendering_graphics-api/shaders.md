@@ -36,7 +36,7 @@ Multi-platform high-performance compute language extension for Rust.
 
 ## GLSL/HLSL Compilation {#skip}
 
-TODO
+FIXME
 
 ## SPIR-V {#skip}
 
@@ -74,6 +74,6 @@ Compute Shaders are often handled through the low-level graphics APIs like [`wgp
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO decide what to cover, write
+[decide what to cover, write](https://github.com/john-cd/rust_howto/issues/1228)
 review `gpu-allocator`
 </div>

@@ -94,4 +94,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO WIP NOW review https://surrealdb.com/docs/
+// [NOW review https://surrealdb.com/docs/](https://github.com/john-cd/rust_howto/issues/1148)

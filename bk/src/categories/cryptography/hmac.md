@@ -20,5 +20,5 @@ The following example uses [`ring::hmac`][c-ring::hmac]{{hi:ring::hmac}}⮳ to c
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1181)
 </div>

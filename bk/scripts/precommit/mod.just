@@ -18,34 +18,34 @@ _default:
 
 ## ---- PRE-COMMIT -----------------------------------
 
-# TODO finish - install pre-commit or use cargo-husky?
+# [finish - install pre-commit or use cargo-husky](https://github.com/john-cd/rust_howto/issues/1245)?
 # Combining just + pre-commit
 # pre-commit: https://pre-commit.com/
 # based on https://github.com/casey/just/blob/master/examples/pre-commit.just
 
-# TODO review
+# [review](https://github.com/john-cd/rust_howto/issues/1246)
 # https://github.com/prettier/prettier (pre-commit hook)
 
-# WIP Fix auto-fixable lint issues in staged files
+# FIXME Fix auto-fixable lint issues in staged files
 @fix:
     pre-commit run prettier    # fixes all Markdown (& other) lint issues
 
-# WIP Install/update code automation: pre-commit...
+# FIXME Install/update code automation: pre-commit...
 @install:
     curl https://pre-commit.com/install-local.py | python3 -
 #npm i -g prettier
-# TODO move to Dockerfile
+# [move to Dockerfile](https://github.com/john-cd/rust_howto/issues/1247)
 
-# WIP Setup/update pre-commit hooks (optional)
+# FIXME Setup/update pre-commit hooks (optional)
 @setup:
     pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
 ## ---- GIT TOWN -----------------------------------------
 
-# TODO review git town
+# [review](https://github.com/john-cd/rust_howto/issues/1246) git town
 # https://www.git-town.com/ (setup receipt)
 
-# WIP configure git town
+# Configure `git town`
 @config_git_town:
     git config git-town.code-hosting-driver gitea  # setup git-town with gitea
     git config git-town.code-hosting-origin-hostname gitea.example.org  # setup git-town origin hostname

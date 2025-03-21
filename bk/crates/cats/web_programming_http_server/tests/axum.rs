@@ -38,11 +38,11 @@ async fn root() -> &'static str {
 // The `Path` extractor gives you the path parameters (here `id` in
 // `/users/{id}`) and deserializes them.
 async fn get_user(Path(id): Path<u64>) {
-    // TODO
+    // FIXME
 }
 
 async fn post_user(Path(id): Path<u64>) {
-    // TODO
+    // FIXME
 }
 
 // The wildcard e.g. `/assets/{*path}` is passed as a String
@@ -52,19 +52,19 @@ async fn serve_asset(Path(path): Path<String>) -> String {
 
 // `Query` gives you the query parameters and deserializes them
 async fn query(Query(_params): Query<HashMap<String, String>>) {
-    // TODO
+    // FIXME
 }
 
 // Buffer the request body and deserialize it as JSON into a
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
 async fn json(Json(_payload): Json<serde_json::Value>) {
-    // TODO
+    // FIXME
 }
 
 // Access the application state via the `State` extractor
 async fn state(State(state): State<Arc<AppState>>) {
-    // TODO state.request_count
+    // FIXME state.request_count
 }
 
 // Fallbacks apply to routes that aren't matched by anything in the router
@@ -74,7 +74,7 @@ async fn fallback(uri: Uri) -> (StatusCode, String) {
 
 #[tokio::main] // `tokio` macros and rt-multi-thread features should be enabled
 async fn main() -> anyhow::Result<()> {
-    // TODO
+    // FIXME
     //  tracing_subscriber::registry()
     //     .with(
     //         tracing_subscriber::EnvFilter::try_from_default_env()
@@ -92,7 +92,7 @@ async fn main() -> anyhow::Result<()> {
     let router = Router::new()
         .route("/", get(root)) // Could be `get`, `post`, or `delete`...
         .route("/users/{id}", get(get_user).post(post_user))
-        //TODO .route("/assets/{*path}", get(serve_asset)) // Note: doesn't match empty segments i.e. /assets or /assets/
+        //FIXME .route("/assets/{*path}", get(serve_asset)) // Note: doesn't match empty segments i.e. /assets or /assets/
         .fallback(fallback)
         .with_state(shared_state);
 
@@ -108,7 +108,7 @@ async fn main() -> anyhow::Result<()> {
 //     main()?;
 //     Ok(())
 // }
-// [WIP review time limit](https://github.com/john-cd/rust_howto/issues/865)
+// [review time limit](https://github.com/john-cd/rust_howto/issues/865)
 // https://docs.rs/axum/latest/axum/index.html
 // https://docs.rs/axum/0.8.1/axum/extract/struct.State.html
 // https://docs.rs/axum/0.8.1/axum/extract/index.html

@@ -39,5 +39,5 @@ See also Bioinformatics & Genomics. Some neuroscience research overlaps with bio
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/959)
-TODO also cover Biology! see lib.rs categorization
+[also cover Biology! see lib.rs categorization](https://github.com/john-cd/rust_howto/issues/1197)
 </div>

@@ -61,4 +61,4 @@
 // fn test() {
 //     main();
 // }
-// [WIP finish; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041)
+// [finish; see https://capnproto.org/ https://capnproto.org/rust.html https://capnproto.org/install.html](https://github.com/john-cd/rust_howto/issues/1041)

@@ -16,7 +16,7 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1186)
 
 [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
 

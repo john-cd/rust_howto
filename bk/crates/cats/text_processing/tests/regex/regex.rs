@@ -138,4 +138,4 @@ fn test() {
 }
 // [^!] excludes !
 // [text] not preceded by ! or ], not followed by [ or <spaces>[ or (
-// TODO WIP review NOW
+// [review NOW](https://github.com/john-cd/rust_howto/issues/1160)

@@ -22,4 +22,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO WIP review NOW
+// [review NOW](https://github.com/john-cd/rust_howto/issues/1146)

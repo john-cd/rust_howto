@@ -42,4 +42,4 @@ pub extern "C" fn create_point(x: f64, y: f64) -> Point {
 // 5) The generated C header file (bindings.h) will be located in the
 //    target/debug/build/<project-name>-*/out/ directory.
 
-// [WIP fix SOON see build.rs](https://github.com/john-cd/rust_howto/issues/1002)
+// [fix SOON see build.rs](https://github.com/john-cd/rust_howto/issues/1002)

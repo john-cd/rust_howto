@@ -13,4 +13,4 @@ pub fn main() {
     }
 }
 // ANCHOR_END: example
-// [WIP how to test](https://github.com/john-cd/rust_howto/issues/785)
+// [how to test](https://github.com/john-cd/rust_howto/issues/785)

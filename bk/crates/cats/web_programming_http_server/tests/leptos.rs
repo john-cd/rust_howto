@@ -56,6 +56,6 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/867)
+// // [finish](https://github.com/john-cd/rust_howto/issues/867)
 // // https://leptos.dev/
 // // https://github.com/leptos-rs/awesome-leptos

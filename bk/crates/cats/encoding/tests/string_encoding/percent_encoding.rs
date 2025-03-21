@@ -8,4 +8,4 @@ fn main() {}
 fn test() {
     main();
 }
-// [WIP NOW write](https://github.com/john-cd/rust_howto/issues/1127)
+// [NOW write](https://github.com/john-cd/rust_howto/issues/1127)

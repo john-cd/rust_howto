@@ -9,7 +9,7 @@ repos:
           - id: check-yaml
           - id: check-added-large-files
           - id: check-toml
-# TODO revise git hooks NOW
+# [revise git hooks NOW](https://github.com/john-cd/rust_howto/issues/1264)
 # Another example:
 # repos:
 #   - repo: https://github.com/pre-commit/pre-commit-hooks

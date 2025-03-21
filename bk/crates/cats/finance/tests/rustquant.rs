@@ -39,4 +39,4 @@
 // fn test() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/764) review
+// // [finish](https://github.com/john-cd/rust_howto/issues/764) review

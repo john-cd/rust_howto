@@ -10,4 +10,4 @@ fn main() {}
 fn test() {
     main();
 }
-// [WIP write LATER](https://github.com/john-cd/rust_howto/issues/817)
+// [write LATER](https://github.com/john-cd/rust_howto/issues/817)

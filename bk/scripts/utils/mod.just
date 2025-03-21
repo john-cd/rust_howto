@@ -27,14 +27,14 @@ empty := ''
 # Call mdbook-utils to manage links, ref definitions, etc...
 @utils cmd=help *subcmd=empty:
   cd {{root}} && mdbook-utils {{cmd}} {{subcmd}}
-# TODO clarify
+# [clarify](https://github.com/john-cd/rust_howto/issues/1254)
 
 # Run the templating tool e.g to create badges and reference definitions for a given crate or category
 [unix]
 @templ cmd=help *subcmd=empty:
   if [ ! -f {{root}}/../bin/templ ]; then just -f {{root}}/../tools/justfile release; fi
   cd {{root}} && ../bin/templ {{cmd}} {{subcmd}}
-# TODO clarify
+# [clarify](https://github.com/john-cd/rust_howto/issues/1254)
 
 [windows]
 @templ cmd=help *subcmd=empty:
@@ -44,4 +44,4 @@ empty := ''
 # Autogenerate a chapter (from template)
 #@autogen:
 #  {{root}}/../bin/autogen
-# TODO finish
+# [finish](https://github.com/john-cd/rust_howto/issues/1256)

@@ -9,7 +9,7 @@ use walkdir::WalkDir;
 pub fn get_dependencies() -> Result<Vec<String>> {
     let mut dependencies: Vec<String> = Vec::new();
 
-    // TODO fix hardcoded path
+// [fix hardcoded path](https://github.com/john-cd/rust_howto/issues/1267)
     for entry in WalkDir::new("/code/bk/crates").min_depth(1).into_iter() {
         let entry = entry?;
         if entry.file_name() == "Cargo.toml" {

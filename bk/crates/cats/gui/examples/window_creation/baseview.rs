@@ -18,4 +18,4 @@ pub fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-// [WIP write; review https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)
+// [write; review https://github.com/RustAudio/baseview](https://github.com/john-cd/rust_howto/issues/1056)

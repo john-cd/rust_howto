@@ -62,4 +62,4 @@
 //     main();
 // }
 
-// // [WIP finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)
+// // [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)

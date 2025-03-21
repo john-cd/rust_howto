@@ -43,4 +43,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review flaky test(https://github.com/john-cd/rust_howto/issues/165)
+// [review flaky test(https://github.com/john-cd/rust_howto/issues/165)

@@ -51,4 +51,4 @@
 // fn require_network() {
 //     main();
 // }
-// [WIP finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
+// [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

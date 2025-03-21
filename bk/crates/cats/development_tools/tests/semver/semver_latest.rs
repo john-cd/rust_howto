@@ -48,4 +48,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review NOW - add println!("{}")](https://github.com/john-cd/rust_howto/issues/156)
+// [review NOW - add println!("{}")](https://github.com/john-cd/rust_howto/issues/156)

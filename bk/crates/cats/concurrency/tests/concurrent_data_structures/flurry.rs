@@ -106,4 +106,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO WIP review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs NOW
+// [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs NOW](https://github.com/john-cd/rust_howto/issues/1152)

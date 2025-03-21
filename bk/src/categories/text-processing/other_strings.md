@@ -57,6 +57,6 @@ This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1194)
 credit the std documentation https://doc.rust-lang.org/std/ffi/struct.OsString.html
 </div>

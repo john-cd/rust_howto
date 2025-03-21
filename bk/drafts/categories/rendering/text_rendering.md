@@ -42,5 +42,5 @@ A simple `no_std` font parser and rasterizer.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / decide what to cover
+[write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1212)
 </div>

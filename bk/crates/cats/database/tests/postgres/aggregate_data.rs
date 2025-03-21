@@ -39,4 +39,4 @@ pub fn main() -> Result<(), Error> {
     Ok(())
 }
 // ANCHOR_END: example
-// TODO WIP NOW review NOW
+// [NOW review NOW](https://github.com/john-cd/rust_howto/issues/1162)

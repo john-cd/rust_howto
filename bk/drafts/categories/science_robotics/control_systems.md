@@ -55,6 +55,6 @@ Inverse and forward kinematics for 6-axis robots with a parallel base and spheri
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1208)
 Review `pid`
 </div>

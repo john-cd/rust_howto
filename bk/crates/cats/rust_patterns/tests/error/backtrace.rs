@@ -58,4 +58,4 @@ fn test() {
     assert!(res.is_ok());
 }
 
-// [WIP review rewrite SOON](https://github.com/john-cd/rust_howto/issues/168)
+// [review rewrite SOON](https://github.com/john-cd/rust_howto/issues/168)

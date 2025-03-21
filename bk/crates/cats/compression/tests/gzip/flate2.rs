@@ -29,9 +29,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "WIP"]
+#[ignore = "Needs review"]
 fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP NOW read / write a file](https://github.com/john-cd/rust_howto/issues/1009)
+// [NOW read / write a file](https://github.com/john-cd/rust_howto/issues/1009)

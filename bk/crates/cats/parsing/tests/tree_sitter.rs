@@ -134,4 +134,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/827)
+// // [finish](https://github.com/john-cd/rust_howto/issues/827)

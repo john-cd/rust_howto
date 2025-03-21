@@ -37,16 +37,16 @@ Crates that are primarily useful on embedded devices or without an operating sys
 
 ## Data Acquisition and Calibration
 
-TODO
+FIXME
 
 ## Memory-mapped I/O
 
-TODO
+FIXME
 Microcontrollers commonly interact with peripherals via memory-mapped I/O.
 
 ## Interrupts
 
-TODO
+FIXME
 Microcontrollers respond to events via interrupts.
 
 ## Useful Crates for Embedded Systems Programming

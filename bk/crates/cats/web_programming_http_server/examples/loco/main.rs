@@ -77,4 +77,4 @@ async fn main() -> Result<()> {
 //     Ok(())
 // }
 
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/868)
+// // [finish](https://github.com/john-cd/rust_howto/issues/868)

@@ -40,4 +40,4 @@
 // }
 // // ANCHOR_END: example
 
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/1031)
+// [finish](https://github.com/john-cd/rust_howto/issues/1031)

@@ -56,4 +56,4 @@ fn main() {
 fn test() {
     main();
 }
-// [WIP review postcard example](https://github.com/john-cd/rust_howto/issues/1038)
+// [review postcard example](https://github.com/john-cd/rust_howto/issues/1038)

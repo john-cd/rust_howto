@@ -51,4 +51,4 @@
 // fn require_network() {
 //     main();
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/878)
+// // [finish](https://github.com/john-cd/rust_howto/issues/878)

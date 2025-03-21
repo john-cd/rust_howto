@@ -34,7 +34,7 @@ Mention https://github.com/moby/buildkit
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1225)
 need in-depth review
 cover [podman](https://github.com/containers/podman)
 cover [containerd-rust-extensions](https://github.com/containerd/rust-extensions) A collection of Rust crates to extend containerd.

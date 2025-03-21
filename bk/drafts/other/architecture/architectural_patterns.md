@@ -46,5 +46,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write. create missing examples. cover `inventory` crate for DI?
+[write. create missing examples. cover `inventory` crate for DI](https://github.com/john-cd/rust_howto/issues/1231)?
 </div>

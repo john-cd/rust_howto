@@ -12,5 +12,5 @@ Sccache is a ccache-like tool. It is used as a compiler wrapper and avoids compi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1167)
 </div>

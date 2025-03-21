@@ -163,4 +163,4 @@
 // }
 
 pub fn main() {}
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/786)
+// // [finish](https://github.com/john-cd/rust_howto/issues/786)

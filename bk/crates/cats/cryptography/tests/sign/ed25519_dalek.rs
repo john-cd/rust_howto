@@ -44,5 +44,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// TODO WIP review NOW; Note: conflicts with rand = "0.9.0". Uses "0.8.5"
-// instead.
+// [review NOW; Note: conflicts with rand = "0.9.0". Uses "0.8.5"](https://github.com/john-cd/rust_howto/issues/1153)

@@ -29,4 +29,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review NOW print](https://github.com/john-cd/rust_howto/issues/167)
+// [review NOW print](https://github.com/john-cd/rust_howto/issues/167)

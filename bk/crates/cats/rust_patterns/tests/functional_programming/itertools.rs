@@ -37,4 +37,4 @@ fn main() {
 fn test() {
     main();
 }
-// [WIP NOW itertools: println!("{}", );](https://github.com/john-cd/rust_howto/issues/170)
+// [NOW itertools: println!("{}", );](https://github.com/john-cd/rust_howto/issues/170)

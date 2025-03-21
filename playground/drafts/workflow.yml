@@ -1,5 +1,5 @@
 
-# TODO clean up the following:
+# [clean up the following:](https://github.com/john-cd/rust_howto/issues/1268)
 
 # - name: Upload artifacts (optional)
 #   uses: actions/upload-artifact@v3
@@ -40,7 +40,7 @@
 #     cache-from: type=gha
 #     cache-to: type=gha,mode=max
 
-# TODO review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main
+# [review https://github.com/actions-rust-lang/setup-rust-toolchain/tree/main](https://github.com/john-cd/rust_howto/issues/1269)
 # https://github.com/marketplace/actions/set-up-a-rust-toolchain
 # https://github.com/actions/starter-workflows/tree/main
 # https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-rust
@@ -100,7 +100,7 @@
 #     load: true # load to local image storage
 
 ## Advanced caching
-## TODO consider using https://github.com/marketplace/actions/rust-cache
+## [consider using https://github.com/marketplace/actions/rust-cache](https://github.com/john-cd/rust_howto/issues/1270)
 ## Once we stop using Nightly Rust! See also
 ## - https://ectobit.com/blog/speed-up-github-actions-rust-pipelines/
 ## - https://doc.rust-lang.org/cargo/guide/cargo-home.html?highlight=crate%20cache#caching-the-cargo-home-in-ci

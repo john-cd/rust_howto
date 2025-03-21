@@ -72,11 +72,11 @@ pub fn get_regexes_and_replacements(
             })),
         });
     }
-    // rr.append(&mut directives(conf));  // TODO
+    // rr.append(&mut directives(conf));  // FIXME
     rr
 }
 
-// TODO WIP finish NOW
+// [finish NOW](https://github.com/john-cd/rust_howto/issues/1265)
 // #[allow(dead_code)]
 // fn directives(conf: &PreprocConfig) -> Vec<RegexAndReplacement> {
 //     let mut rr = vec![];

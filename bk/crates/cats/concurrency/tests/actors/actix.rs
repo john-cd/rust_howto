@@ -41,9 +41,9 @@ fn main() {
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "WIP"]
+#[ignore = "Needs review"]
 fn test() {
     main();
 }
-// [WIP finish; test fails](https://github.com/john-cd/rust_howto/issues/682)
+// [finish; test fails](https://github.com/john-cd/rust_howto/issues/682)
 // `spawn_local` called from outside of a `task::LocalSet` or LocalRuntime

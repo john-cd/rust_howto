@@ -92,4 +92,4 @@ fn require_external_svc() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP finish SOON](https://github.com/john-cd/rust_howto/issues/719) need heay test
+// [finish SOON](https://github.com/john-cd/rust_howto/issues/719) need heay test

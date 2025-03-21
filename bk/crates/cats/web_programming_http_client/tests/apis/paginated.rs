@@ -118,4 +118,4 @@ fn require_network() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// [WIP fix - the API no longer returns a crate_id - need to get; SOON](https://github.com/john-cd/rust_howto/issues/860)
+// [fix - the API no longer returns a crate_id - need to get; SOON](https://github.com/john-cd/rust_howto/issues/860)

@@ -18,7 +18,8 @@ autolib = false
 bevy = { version = "0.15.1", optional = true }
 fyrox = "0.36.0"
 fyrox-core = "0.36.0"
-# ggez = "0.9.3" # TODO conflict with wgpu
+# ggez = "0.9.3"
+# [ggez conflict with wgpu LATER](https://github.com/john-cd/rust_howto/issues/1289)
 glam = "0.30.0"
 macroquad = "0.4.13"
 

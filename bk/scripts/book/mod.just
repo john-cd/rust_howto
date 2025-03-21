@@ -27,11 +27,11 @@ alias bb := buildbook
 
 # Generate new reference definitions for all crate the book's examples depend on...
 @_generate-refdefs:
-# TODO mdbook-utils refdefs
+# [mdbook-utils refdefs](https://github.com/john-cd/rust_howto/issues/1237)
 
 # Generate the index and the category page.
 @_generate-index-category:
-# TODO
+# [generate index of crates by category](https://github.com/john-cd/rust_howto/issues/1274)
 
 # Add static assets to book output
 [unix]

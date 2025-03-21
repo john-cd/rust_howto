@@ -57,5 +57,4 @@ async fn main() {
 fn test() {
     main();
 }
-// TODO WIP review NOW ["full"] }` Technically, the #[tokio::main] attribute is
-// a macro
+// [review NOW ["full"] }` Technically, the #[tokio::main] attribute is a macro](https://github.com/john-cd/rust_howto/issues/1156)

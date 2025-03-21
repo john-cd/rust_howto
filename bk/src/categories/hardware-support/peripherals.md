@@ -39,5 +39,5 @@ Accessing hardware from user space (without a driver) is often restricted for se
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1177)
 </div>

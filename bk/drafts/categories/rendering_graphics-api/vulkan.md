@@ -20,5 +20,5 @@ Safe wrapper for the Vulkan graphics API.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO decide what to cover / write
+[decide what to cover / write](https://github.com/john-cd/rust_howto/issues/1227)
 </div>

@@ -25,7 +25,7 @@ pub struct PreprocConfig {
     pub scrub_crate_directives: bool,
     // Remove any left-over [[file | title]] wikilinks and log a warning
     pub scrub_wikilinks: bool,
-    // TODO
+    // FIXME
     // Convert {{c: <crate name> }} into links
     pub process_crate_directives: bool,
     // Convert category directive {{cat: <category> <optional categories>.. }}
@@ -59,7 +59,7 @@ impl Default for PreprocConfig {
             scrub_example_directives: true,
             scrub_crate_directives: true,
             scrub_wikilinks: true,
-            // TODO
+            // FIXME
             process_crate_directives: true,
             process_category_directives: true,
             process_page_directives: true,

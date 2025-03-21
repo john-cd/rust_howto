@@ -31,6 +31,6 @@ Essentially, `web-sys` is the bridge that lets your Rust code talk to the browse
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1218)
 cover `web-sys`
 </div>

@@ -50,4 +50,4 @@
 //     main()?;
 //     Ok(())
 // }
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/1040)
+// [finish](https://github.com/john-cd/rust_howto/issues/1040)

@@ -12,13 +12,13 @@ _default:
 [unix]
 @insert_category_links:
   ./insert_category_links.sh {{root}}
-# TODO insert preproc directive instead of link? replace link to crates.io category search page to link to category main page?
+# [insert preproc directive instead of link. replace link to crates.io category search page to link to category main page.](https://github.com/john-cd/rust_howto/issues/1281)
 
 # (BEWARE: modifies many files; manual editing required) Insert links to crate [`...`][c-<crate name>] into the book's Markdown
 [unix]
 @insert_crate_links:
   ./insert_crate_links.sh {{root}}
-# TODO fix - one link only; should we have crate landing pages instead of linking to the docs?
+# [fix - one link only; should we have crate landing pages instead of linking to the docs](https://github.com/john-cd/rust_howto/issues/1240)?
 
 # (BEWARE: modifies many files; manual editing required) Insert cross-links (from page to page) [...][p-<page>] into the book's Markdown
 [unix]
@@ -29,13 +29,13 @@ _default:
 [unix]
 @suggest:
   ./suggest_links_for_bare_urls.sh {{root}}
-# TODO review
+# [review](https://github.com/john-cd/rust_howto/issues/1241)
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 [unix]
 @replace_inline_links:
   ./replace_inline_links.sh {{root}}
-# TODO review
+# [review](https://github.com/john-cd/rust_howto/issues/1241)
 
 ## .... GET LINK (MANUAL) ....
 

@@ -101,9 +101,9 @@
 //         // Get a snapshot of the events
 //         fn get_events(&self) -> Vec<ProductEvent> {
 //             let events = self.events.read().unwrap();
-//             events.clone() // TODO
+//             events.clone() // FIXME
 //         }
-//         // TODO get most recent useful events by reverse iteration
+//         // FIXME get most recent useful events by reverse iteration
 //     }
 
 //     // In this example, the EventStore is held in memory,
@@ -189,7 +189,7 @@
 //                     if let Some(current) = current_quantity {
 //                         let new_quantity =
 //                             (current as i32 + quantity).max(0) as u32; //
-// TODO handle errors                         let event =
+// FIXME handle errors                         let event =
 // ProductEvent::ProductQuantityUpdated {                             id,
 //                             new_quantity,
 //                         };
@@ -239,10 +239,10 @@
 //     use super::domain::Product;
 //     use super::events::ProductEvent;
 
-//     // TODO repository with domaain objects
+//     // FIXME repository with domain objects
 //     pub trait ProductRepository {
 //         fn get_product(&self, id: u32) -> Option<Product>;
-//         // TODO get_all_products() -> Vec<Product>;
+//         // FIXME get_all_products() -> Vec<Product>;
 //     }
 
 //     pub struct SimpleProductRepository;
@@ -250,10 +250,10 @@
 //     impl ProductRepository for SimpleProductRepository {
 //         fn get_product(&self, id: u32) -> Option<Product> {
 //         }
-//         // TODO consume events
+//         // FIXME consume events
 //     }
 
-//     // TODO DAL with database entities (events here)
+//     // FIXME DAL with database entities (events here)
 //     pub struct SimpleReadStore {
 //         read_model: RwLock<HashMap<u32, Product>>,
 //     }
@@ -265,7 +265,7 @@
 //             }
 //         }
 
-//         // TODO split into store and repo portions?
+//         // FIXME split into store and repo portions?
 //         fn update(&self, event: ProductEvent) {
 //             match event {
 //                 ProductEvent::ProductCreated { id, name, quantity } => {
@@ -372,7 +372,7 @@
 //     Ok(())
 // }
 
-// TODO WIP finish NOW
+// FIXME finish NOW
 
 // // https://martinfowler.com/bliki/CQRS.html
 // // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs

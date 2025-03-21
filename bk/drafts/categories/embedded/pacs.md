@@ -14,5 +14,5 @@ Similar PACs exist for most microcontroller families.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1198)
 </div>

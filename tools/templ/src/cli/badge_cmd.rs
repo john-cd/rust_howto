@@ -22,12 +22,13 @@ pub(super) fn subcommand_badge() -> Command {
             .action(clap::ArgAction::Set)
             .num_args(0..=1)
             .require_equals(true)
-            .default_missing_value("./src/refs/crate-refs.md") // TODO fix hardcoded path
+            .default_missing_value("./src/refs/crate-refs.md")
             .value_name("REFDEF_FILE")
             .value_parser(clap::value_parser!(PathBuf))
             .value_hint(ValueHint::FilePath)
             .help("Add the newly created refdefs to the master markdown file containing reference definitions (crate-refs.md by default), if they don't exist already"))
 }
+// [fix hardcoded path](https://github.com/john-cd/rust_howto/issues/1266)
 
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     let mut cmdargs = None;

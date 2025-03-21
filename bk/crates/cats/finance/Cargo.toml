@@ -15,7 +15,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-#RustQuant = "0.3" # TODO heavy build (polars, nalgebra, etc)
+#RustQuant = {version = "0.3", optional = true }
+# TODO RustQuant: heavy build (polars, nalgebra, etc) LATER
 
 [features]
 #default = []

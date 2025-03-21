@@ -77,7 +77,7 @@ Often requires specialized libraries or custom implementations using compute [[s
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / organize / review in depth
+[write / organize / review in depth](https://github.com/john-cd/rust_howto/issues/1226)
 what applications do we want to cover?
 cover `nannou`
 </div>

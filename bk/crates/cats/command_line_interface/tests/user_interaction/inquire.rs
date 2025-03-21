@@ -34,4 +34,4 @@ fn main() {
 // ANCHOR_END: example
 
 // No tests - this example requires use input
-// TODO WIP review NOW how to test
+// [review NOW how to test](https://github.com/john-cd/rust_howto/issues/1151)

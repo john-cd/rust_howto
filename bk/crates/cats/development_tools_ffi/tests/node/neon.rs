@@ -22,4 +22,4 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 }
 // ANCHOR_END: example
 
-// [WIP finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?
+// [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?

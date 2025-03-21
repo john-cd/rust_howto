@@ -10,7 +10,8 @@ homepage.workspace = true
 repository.workspace = true
 license = "CC0-1.0"
 keywords.workspace = true
-categories = [ "development_tools_ffi" ] # TODO fix categories
+categories = [ "development_tools_ffi" ]
+# [fix categories in all Cargo.toml](https://github.com/john-cd/rust_howto/issues/1307)
 publish.workspace = true
 autolib = false
 

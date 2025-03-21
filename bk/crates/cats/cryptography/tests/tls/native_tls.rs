@@ -33,4 +33,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [WIP finish](https://github.com/john-cd/rust_howto/issues/696)
+// // [finish](https://github.com/john-cd/rust_howto/issues/696)

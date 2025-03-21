@@ -65,4 +65,4 @@ fn test() {
 }
 // logging
 // stream, sink
-// [WIP finish; polish postage.rs example / add examples for other queues](https://github.com/john-cd/rust_howto/issues/80)
+// [finish; polish postage.rs example / add examples for other queues](https://github.com/john-cd/rust_howto/issues/80)

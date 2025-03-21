@@ -38,4 +38,4 @@ fn main() {
     // cc_defines();
     // cpp();
 }
-// [WIP fix SOON](https://github.com/john-cd/rust_howto/issues/998)
+// [fix SOON](https://github.com/john-cd/rust_howto/issues/998)

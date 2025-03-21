@@ -44,5 +44,5 @@ Here's a list of some common command-line utilities written in Rust:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1189)
 </div>

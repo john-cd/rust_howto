@@ -18,6 +18,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / decide what to cover
+[write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1206)
 `bevy_rapier` integrates `rapier` with the [`bevy`][c-bevy]⮳{{hi:bevy}} game engine.
 </div>

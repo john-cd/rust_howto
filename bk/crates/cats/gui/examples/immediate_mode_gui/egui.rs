@@ -38,7 +38,7 @@ impl eframe::App for MyApp {
 // Hard to test. Initializing the event loop outside of the main thread is a
 // significant cross-platform compatibility hazard.
 
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/776) verify the code manually
+// [finish](https://github.com/john-cd/rust_howto/issues/776) verify the code manually
 // thread '<unnamed>' panicked at
 // /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zbus-4.4.0/
 // src/abstractions/executor.rs:189:27: there is no reactor running, must be

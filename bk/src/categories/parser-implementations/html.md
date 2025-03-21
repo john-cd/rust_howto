@@ -46,7 +46,7 @@ tl = { version = "0.7.8", features = ["simd"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1187)
 
 [`scraper`][c-scraper]⮳{{hi:scraper}}, [`select`][c-select]⮳{{hi:select}}, [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}}
 

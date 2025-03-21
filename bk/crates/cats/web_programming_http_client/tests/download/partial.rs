@@ -94,10 +94,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-#[ignore = "WIP"]
+#[ignore = "Needs review"]
 #[test]
 fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [WIP review; flaky test](https://github.com/john-cd/rust_howto/issues/176)
+// [review; flaky test](https://github.com/john-cd/rust_howto/issues/176)

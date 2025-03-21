@@ -55,5 +55,5 @@ Rust can be used for [game development][p-game-development] targeting the web vi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO final review
+[final review](https://github.com/john-cd/rust_howto/issues/1219)
 </div>

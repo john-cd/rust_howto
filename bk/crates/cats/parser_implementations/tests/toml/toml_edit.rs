@@ -66,4 +66,4 @@
 // fn test() {
 //     main();
 // }
-// TODO WIP finish NOW
+// [finish NOW](https://github.com/john-cd/rust_howto/issues/1159)

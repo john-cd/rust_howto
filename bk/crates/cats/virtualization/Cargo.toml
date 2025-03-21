@@ -15,4 +15,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# TODO review  wasmi
+# [review  wasmi](https://github.com/john-cd/rust_howto/issues/1263)

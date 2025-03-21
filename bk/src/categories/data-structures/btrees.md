@@ -39,6 +39,6 @@ B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1168)
 Add links to BTreeMap / BTreeSet examples in [`std`][c-std]⮳{{hi:std}} lib section
 </div>

@@ -30,8 +30,8 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 #[test]
-#[ignore = "WIP"]
+#[ignore = "Needs review"]
 fn test() {
     println!("{:?}", main());
 }
-// [WIP finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)
+// [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)

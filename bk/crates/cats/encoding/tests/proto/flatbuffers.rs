@@ -61,4 +61,4 @@
 //     main();
 // }
 // // https://flatbuffers.dev/languages/rust/
-// [WIP finish](https://github.com/john-cd/rust_howto/issues/1043)
+// [finish](https://github.com/john-cd/rust_howto/issues/1043)

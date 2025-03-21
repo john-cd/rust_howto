@@ -25,4 +25,4 @@ rusty_fork_test! {
         main();
     }
 }
-// [WIP review NOW](https://github.com/john-cd/rust_howto/issues/161)
+// [review NOW](https://github.com/john-cd/rust_howto/issues/161)
