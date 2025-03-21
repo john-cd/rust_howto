@@ -8,12 +8,6 @@
 {{#include ../../../crates/cats/emulators/tests/emulator.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[emulators: write](https://github.com/john-cd/rust_howto/issues/347)
-
 ## Virtual Machines / CPU Emulators {#skip}
 
 Mention `polkavm` (used in smart contracts, etc.) - ~500k downloads.
@@ -24,5 +18,11 @@ https://medium.com/@OneBlockplus/in-depth-analysis-of-polkavm-a-perfect-path-to-
 ## ROM Loading {#skip}
 
 `ihex` is a Rust library for [parsing][p-parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[emulators: write](https://github.com/john-cd/rust_howto/issues/347)
 
 </div>
