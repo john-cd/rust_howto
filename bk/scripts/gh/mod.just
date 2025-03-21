@@ -36,10 +36,9 @@ create_issues_for_markdown:
     echo ">> $rel"
     for todo in $(grep -Eoh '\s*TODO\s*:?\s+.*$' $file)
     do
-      #echo "gh issue create --title '${rel}: ${todo:-fix}' --body '[${rel}](https://github.com/john-cd/rust_howto/blob/main/${rel})'; sleep 3"
       issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "markdown,auto")
-      # Escape [ and ]
       echo "$issue_url"
+      # Escape [ and ]
       todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
       sed -E -i 's~('${todo}')~[\1]('${issue_url}')~' $file
       sleep 3
@@ -63,99 +62,7 @@ create_issues_for_examples:
       echo ">${todo}<"
       issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main//crates/${rel})" --label "code example,auto")
       echo "$issue_url"
-      # Escape [ and ]
       sed -E -i 's~TODO('${todo}')~[\1]('${issue_url}')~' $file
       sleep 3
     done
   done
-
-## TODO
-
-## Delete issues with --label "markdown,auto"
-# delete_issues:
-#   #!/usr/bin/env bash
-#   issues=$(gh issue list --label "markdown,auto" --jq '.[].number' --json number)
-#   for issue in $issues
-#   do
-#     gh issue delete $issue --yes
-#     sleep 2
-#   done
-
-## TODO
-
-## HACK: Replace TODO lines in the markdown by a link to previously created GitHub Issues
-#add_gh_links:
-#  #!/usr/bin/env bash
-#  set -euo pipefail
-#  IFS=$'\t\n'
-#  for file in $(find {{root}} -type f -name "*.md")
-#  do
-#    base=$(basename $file '.md')
-#    if [ $base == "_index" ] || [ $base == "index" ]; then
-#     echo ">> ${file} SKIP"
-#     continue
-#    fi
-#    rel=$(realpath --relative-to={{root}} $file )
-#    echo ">> $rel"
-#    for todo in $(sed -nE -e 's~^\s*TODO\s*:?\s*([^[]+?)$~\2~pg' $file )
-#    do
-#      echo "${base}: ${todo:-fix}"
-#      ## Search for GitHub issue(s) that match the string
-#      ## https://pkg.go.dev/text/template
-#      link=$(gh issue list --search "${base}: ${todo:-fix}" --json title,url --template '{{{{range .}}[{{{{.title}}]({{{{.url}})\n{{{{end}}')
-#      if [[ -n "$link" ]]; then
-#        # Replace the TODO line by a [ issue title ]( issue url )
-#        sed -E -i 's~^(\s*TODO\s*(P[0-9])?\s*'${todo}')$~'${link}'~g' $file
-#      fi
-#    done
-#  done
-
-## TODO
-
-# HACK
-[unix]
-add_gh_links_to_code:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  IFS=$'\t\n'
-  for file in $(find {{root}} -type f -name "*.rs")
-  do
-    base=$(basename $file)
-    rel=$(realpath --relative-to={{root}} $file )
-    echo ">> $rel"
-    ## Search for GitHub issue(s) that match the string
-    ## https://pkg.go.dev/text/template
-    link=$(gh issue list --search "$base" --json title,url --template '{{{{range .}}[{{{{.title}}]({{{{.url}})\n{{{{end}}')
-    echo ">${link}<"
-    if [[ -n "$link" ]]; then
-        # Append [ issue title ]( issue url )
-        sed -E -i '$ a // '${link} $file
-    fi
-  done
-
-## Deduplicate .rs file (no sort - dup. lines must be consecutive)
-#[unix]
-#dedupe:
-#  #!/usr/bin/env bash
-#  set -euo pipefail
-#  IFS=$'\t\n'
-#  for file in $(find {{root}} -type f -name "*.rs")
-#  do
-#    echo $file
-#    #sed -nr '$!N;/^(.*)\n\1$/!P;D' $file > /tmp/temp.rs
-#    uniq $file > /tmp/temp.rs
-#    mv -f /tmp/temp.rs $file
-#  done
-
-## TODO
-
-## move // [...]... lines to the bottom of the file
-#moveline:
-#  #!/usr/bin/env bash
-#  set -euo pipefail
-#  IFS=$'\n\t'
-#  for file in $(find {{root}} -type f -name "*.rs" )
-#  do
-#   cat <(grep -vE '\s*//\s*\[.*' $file) <(grep -E '\s*//\s*\[.*' $file) > /tmp/temp.rs
-#   mv -f /tmp/temp.rs $file
-#  done
