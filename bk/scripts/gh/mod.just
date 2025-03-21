@@ -29,63 +29,96 @@ create_issues_for_markdown:
   #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
+  dir="{{root}}/../"
+  prefix='^\s*TODO\s*:?\s*'
   for file in $(find {{root}}/src {{root}}/drafts -type f -name "*.md" -not -name "*refs.md")
   do
     base=$(basename $file '.md')
-    rel=$(realpath --relative-to={{root}} $file)
+    rel=$(realpath --relative-to=${dir} $file)
     echo ">> $rel"
-    for todo in $(sed -nE 's~^\s*TODO\s*:?\s*(.*)$~\1~pg' $file)
+    for todo in $(sed -nE 's~'"${prefix}"'(.+)$~\1~pg' $file)
     do
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/bk/${rel})" --label "markdown,auto" --assignee "@me")
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "markdown,auto" --assignee "@me")
       echo "$issue_url"
-      # Escape [ and ]
-      todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
-      sed -E -i 's~('^\s*TODO\s*:?\s*'"${todo}"')~[\1]('"${issue_url}"')~' $file
+      # Escape [ ] ? ( )
+      todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
+      sed -E -i 's~'"${prefix}${todo}"'~['"${todo}"']('"${issue_url}"')~' $file
       sleep 3
     done
   done
 
-# Create an GH issue for each TODO line in code examples
+# Create an GH issue for each TODO line in .rs files (incl. code examples)
 [unix]
-create_issues_for_examples:
+create_issues_for_code:
   #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
-  for file in $(find {{root}} -type f -name "*.rs" )
+  dir="{{root}}/../"
+  prefix='^\s*//\s*(//\s*)?'
+  pattern='TODO\s*:?\s*'
+  for file in $(find ${dir} -type f -name "*.rs" )
   do
     base=$(basename $file)
-    rel=$(realpath --relative-to={{root}}/crates $file)
+    rel=$(realpath --relative-to=${dir} $file)
     echo ">> $rel"
-    for todo in $(sed -nE 's~^\s*//\s*(//\s*)?TODO\s*:?\s*(.*)$~\2~pg' $file)
+    for todo in $(sed -nE 's~'"${prefix}${pattern}"'(.*)$~\2~pg' $file)
     do
-      todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
+      todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
       echo ">${todo}<"
-      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/bk/crates/${rel})" --label "code example,auto" --assignee "@me")
+      issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "code example,auto" --assignee "@me")
       echo "$issue_url"
-      sed -E -i 's~TODO\s*:?\s*('"${todo}"')~[\1]('"${issue_url}"')~' $file
+      sed -E -i 's~'"${pattern}${todo}"'~['"${todo}"']('"${issue_url}"')~' $file
       sleep 3
     done
   done
 
 # Create an GH issue for each TODO line in other files (*.sh, *.toml, *.yaml...)
 [unix]
-create_issues_for_other_files:
+create_issues_for_other:
   #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
   dir="{{root}}/../"
+  prefix='^\s*(//\s*(//)?|#+)\s*'
+  pattern='TODO\s*:?\s*'
   for file in $(find "${dir}" -type f -name "*.sh" -o -name "*.just" -o -name "justfile" -o -name "*.toml" -o -name "*.yml" -o -name "*.yaml" -o -name "Dockerfile")
   do
     base=$(basename ${file})
     rel=$(realpath --relative-to=${dir} ${file})
     echo ">> ${rel}"
-    for todo in $(sed -nE 's~^\s*(//\s*(//\s*)?|#+)\s*TODO\s*:?\s*(.*)$~\3~p' $file)
+    for todo in $(sed -nE 's~'"${prefix}${pattern}"'(.*)$~\3~p' $file)
     do
-      todo=$( echo "$todo" | sed -E 's/[[]/\\[/g; s/[]]/\\]/g' )
+      todo=$( echo "$todo" | sed -E 's~[[]~\\[~g; s~[]]~\\]~g; s~([?()])~\\\1~g' )
       echo ">${todo}<"
       issue_url=$(gh issue create --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --label "auto" --assignee "@me")
       echo "$issue_url"
-      sed -E -i 's~TODO\s*:?\s*('"${todo}"')~[\1]('"${issue_url}"')~' $file
+      sed -E -i 's~'"${pattern}${todo}"'~['"${todo}"']('"${issue_url}"')~' $file
       sleep 3
+    done
+  done
+
+# Refresh GitHub issues
+[confirm]
+[unix]
+refresh:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  IFS=$'\n\t'
+  dir="{{root}}/../"
+  for file in $(find "${dir}" -type f -name "*.rs" -o -name "*.md" -o -name "*.toml" -o -name "*.yaml" -o -name "*.yml" -not -path '*/target/*' -not -path '*/bin/*' )
+  do
+    rel=$(realpath --relative-to=${dir} ${file})
+    #echo "> ${rel}"
+    for str in $( sed -En 's~[^[]*\[([^]]*?)\]\(https://github.com/john-cd/rust_howto/issues/([0-9]+)\)~\1@\2@~p' "${file}" )
+    do
+      todo=$( echo "$str" | cut -d@ -f1 )
+      id=$( echo "$str" | cut -d@ -f2 )
+      echo "---"
+      echo "id: ${id}"
+      echo "title: ${rel}: ${todo:-fix}"
+      echo "body: [$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})"
+      gh issue edit "${id}" --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --add-assignee "@me" --add-label "auto"
+      sleep 3
+      break
     done
   done

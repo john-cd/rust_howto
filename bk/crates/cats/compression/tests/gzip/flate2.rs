@@ -34,4 +34,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [NOW read / write a file](https://github.com/john-cd/rust_howto/issues/1009)
+// [read / write a file NOW](https://github.com/john-cd/rust_howto/issues/1009)

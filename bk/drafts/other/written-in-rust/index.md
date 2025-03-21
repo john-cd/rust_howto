@@ -96,8 +96,8 @@ This section provides a few examples of software written in Rust, organized by t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[organize](https://github.com/john-cd/rust_howto/issues/993)
-decide if we need other pages or if we consolidate here
+[organize; decide if we need other pages or if we consolidate here](https://github.com/john-cd/rust_howto/issues/993)
+
 Incorporate the below:
 
 [`starship`][c-starship]⮳

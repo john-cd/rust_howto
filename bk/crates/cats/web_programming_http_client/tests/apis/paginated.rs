@@ -18,7 +18,6 @@
 //     versions: Vec<Version>,
 // }
 
-// // https://github.com/rust-lang/crates.io/issues/856
 // #[derive(Deserialize)]
 // struct Dependency {
 //     version_id: String,
@@ -118,4 +117,5 @@ fn require_network() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// [fix - the API no longer returns a crate_id - need to get; SOON](https://github.com/john-cd/rust_howto/issues/860)
+// [fix - the API no longer returns a crate_id - need to get; NOW](https://github.com/john-cd/rust_howto/issues/860)
+// https://github.com/rust-lang/crates.io/issues/856

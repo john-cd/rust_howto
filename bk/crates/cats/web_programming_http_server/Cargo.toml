@@ -31,7 +31,7 @@ tonic = "0.12.3"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
 # trillium = "0.2.20"
-# TODO trillium: do we need? LATER
+# [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
 
 ## General
 anyhow = "1.0.95"

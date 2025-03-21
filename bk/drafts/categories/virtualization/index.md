@@ -87,8 +87,8 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/968)
-need in-depth review
+[write; need in-depth review](https://github.com/john-cd/rust_howto/issues/968)
+
 cover
 
 https://github.com/rust-vmm/community

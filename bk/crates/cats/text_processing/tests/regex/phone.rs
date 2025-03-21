@@ -69,4 +69,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [review NOW println!("{}", );](https://github.com/john-cd/rust_howto/issues/173)
+// [review; println!("{}", ); NOW](https://github.com/john-cd/rust_howto/issues/173)

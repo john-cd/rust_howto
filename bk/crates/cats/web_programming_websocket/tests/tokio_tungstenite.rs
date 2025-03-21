@@ -50,4 +50,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [NOW review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145)
+// [review https://github.com/snapview/tokio-tungstenite/tree/master/examples NOW](https://github.com/john-cd/rust_howto/issues/1145)

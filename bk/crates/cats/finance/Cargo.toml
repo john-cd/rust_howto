@@ -16,7 +16,7 @@ autolib = false
 
 [dependencies]
 #RustQuant = {version = "0.3", optional = true }
-# TODO RustQuant: heavy build (polars, nalgebra, etc) LATER
+# [RustQuant: heavy build - polars, nalgebra, etc LATER](https://github.com/john-cd/rust_howto/issues/1313)
 
 [features]
 #default = []

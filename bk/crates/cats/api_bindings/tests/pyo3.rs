@@ -61,5 +61,4 @@
 // fn test() {
 //     main();
 // }
-
 // // [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)

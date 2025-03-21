@@ -15,4 +15,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [NOW rename](https://github.com/john-cd/rust_howto/issues/1142)
+// [rename NOW](https://github.com/john-cd/rust_howto/issues/1142)

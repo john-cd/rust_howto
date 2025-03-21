@@ -24,4 +24,4 @@ fn main() {
 fn test() {
     main();
 }
-// [NOW review](https://github.com/john-cd/rust_howto/issues/816)
+// [review NOW](https://github.com/john-cd/rust_howto/issues/816)

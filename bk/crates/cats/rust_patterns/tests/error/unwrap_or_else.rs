@@ -23,4 +23,4 @@ fn main() {
 fn test() {
     main();
 }
-// [NOW unwrap_or_else: println!("{}", );](https://github.com/john-cd/rust_howto/issues/172)
+// [unwrap_or_else: println!("{}", ); NOW](https://github.com/john-cd/rust_howto/issues/172)

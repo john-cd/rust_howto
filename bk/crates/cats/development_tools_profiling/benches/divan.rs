@@ -45,6 +45,5 @@ fn main() {
 // Example adapted from https://nikolaivazquez.com/blog/divan/
 // ANCHOR_END: example
 
-// [finish](https://github.com/john-cd/rust_howto/issues/747) cover more attributes; cover blockbox / bencher
-// add to md https://nikolaivazquez.com/blog/divan/
+// [finish. add to md: https://nikolaivazquez.com/blog/divan/](https://github.com/john-cd/rust_howto/issues/747) cover more attributes; cover blockbox / bencher
 // review https://github.com/nvzqz/divan/tree/v0.1.0/examples/benches

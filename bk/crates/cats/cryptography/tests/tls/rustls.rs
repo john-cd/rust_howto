@@ -75,4 +75,4 @@
 //     main()?;
 //     Ok(())
 // }
-// // [review tokio-rustls](https://github.com/john-cd/rust_howto/issues/700) need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples
+// // [review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples](https://github.com/john-cd/rust_howto/issues/700)

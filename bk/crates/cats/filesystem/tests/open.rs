@@ -30,4 +30,4 @@ fn main() {
 // fn test() {
 //     main();
 // }
-// [how to test properly](https://github.com/john-cd/rust_howto/issues/1004)? add example in .md
+// [how to test properly](https://github.com/john-cd/rust_howto/issues/1004)

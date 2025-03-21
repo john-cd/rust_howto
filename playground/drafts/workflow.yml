@@ -1,5 +1,5 @@
 
-# [clean up the following:](https://github.com/john-cd/rust_howto/issues/1268)
+# [clean up](https://github.com/john-cd/rust_howto/issues/1268)
 
 # - name: Upload artifacts (optional)
 #   uses: actions/upload-artifact@v3

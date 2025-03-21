@@ -58,8 +58,5 @@ Log images, point clouds, etc, and visualize them effortlessly.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
-cover
-`ballista`
-`spice.ai`
+[data_engineering: organize / edit; `ballista`; `spice.ai`](https://github.com/john-cd/rust_howto/issues/589)
 </div>

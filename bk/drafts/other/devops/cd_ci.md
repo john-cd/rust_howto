@@ -44,7 +44,6 @@ See [[github_actions | Github Actions]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cd_ci: write](https://github.com/john-cd/rust_howto/issues/595)
-organize links
+[cd_ci: write; organize links](https://github.com/john-cd/rust_howto/issues/595)
 example: https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
 </div>

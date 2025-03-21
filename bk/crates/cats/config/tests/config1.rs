@@ -119,4 +119,4 @@
 //     main()?;
 //     Ok(())
 // }
-// [finish NOW; https://github.com/rust-cli/config-rs/tree/main/examples](https://github.com/john-cd/rust_howto/issues/1235)
+// [finish; https://github.com/rust-cli/config-rs/tree/main/examples NOW](https://github.com/john-cd/rust_howto/issues/1235)

@@ -66,7 +66,7 @@
 //     main()?;
 //     Ok(())
 // }
-// // [finish SOON](https://github.com/john-cd/rust_howto/issues/866)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/866)
 // // https://hyper.rs/
 // // https://hyper.rs/guides/1/server/hello-world/
 // // https://github.com/hyperium/hyper/tree/master/examples

@@ -63,4 +63,4 @@ fn require_network() -> anyhow::Result<()> {
     res?;
     Ok(())
 }
-// [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 SOON](https://github.com/john-cd/rust_howto/issues/177)
+// [fix interaction with https://docs.github.com/en/rest?apiVersion=2022-11-28 NOW](https://github.com/john-cd/rust_howto/issues/177)

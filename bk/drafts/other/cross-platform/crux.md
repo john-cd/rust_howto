@@ -22,6 +22,5 @@ The user interface{{hi:User interface}} layer is built natively, with modern dec
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[crux: add / edit](https://github.com/john-cd/rust_howto/issues/582)
-link to archicture pages
+[crux: add / edit; link to archicture pages](https://github.com/john-cd/rust_howto/issues/582)
 </div>

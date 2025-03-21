@@ -64,8 +64,5 @@ Review `.devcontainer/Dockerfile` for other dependencies.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[dev_environment_setup: review](https://github.com/john-cd/rust_howto/issues/527)
-write windows install
-`winget install openssl`
-need Python
+[dev_environment_setup: review; write windows install; `winget install openssl`; need Python](https://github.com/john-cd/rust_howto/issues/527)
 </div>

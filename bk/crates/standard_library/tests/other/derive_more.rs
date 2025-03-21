@@ -36,4 +36,4 @@ fn main() {
 fn test() {
     main();
 }
-// [NOW derive_more: println!("{}", );](https://github.com/john-cd/rust_howto/issues/184)
+// [derive_more: println!("{}", ); NOW](https://github.com/john-cd/rust_howto/issues/184)

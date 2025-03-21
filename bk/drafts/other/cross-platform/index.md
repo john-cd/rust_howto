@@ -69,7 +69,5 @@ Dioxus is a Rust-based framework designed for building cross-platform user inter
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[add / write](https://github.com/john-cd/rust_howto/issues/583)
-link to other chapters
-conditional compile
+[add / write; link to other chapters; conditional compile](https://github.com/john-cd/rust_howto/issues/583)
 </div>

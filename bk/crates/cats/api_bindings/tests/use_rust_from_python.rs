@@ -24,11 +24,10 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(my_function, module)?)
 }
 
-fn main() {
-    // [finish; fix](https://github.com/john-cd/rust_howto/issues/996)
-}
+fn main() {}
 
 #[test]
 fn test() {
     main();
 }
+// [finish; fix](https://github.com/john-cd/rust_howto/issues/996)

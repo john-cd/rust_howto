@@ -51,4 +51,4 @@ fn main() {
 fn test() {
     main();
 }
-// [NOW rename](https://github.com/john-cd/rust_howto/issues/1150)
+// [rename NOW](https://github.com/john-cd/rust_howto/issues/1150)

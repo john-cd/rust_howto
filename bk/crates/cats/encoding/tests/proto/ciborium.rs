@@ -41,4 +41,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [NOW rewiew](https://github.com/john-cd/rust_howto/issues/1042)
+// [rewiew NOW](https://github.com/john-cd/rust_howto/issues/1042)

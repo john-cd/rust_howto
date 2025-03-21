@@ -59,7 +59,7 @@
 - Crate blocks
 - Recipe table
 
-## replace new {{#example }
+## replace new {{#example }}
 
 ## Replace inline links and naked URLs by ref-style links
 
@@ -79,7 +79,7 @@
 - clean up `just chapters list`
 - monorepo with mdbook-utils?
 
-## Finish 56 COMING SOON examples
+## Finish COMING SOON examples
 
 - parser impl
 - crypto

@@ -42,7 +42,7 @@ _default:
 
 ## ---- GIT TOWN -----------------------------------------
 
-# [review](https://github.com/john-cd/rust_howto/issues/1246) git town
+# [review git town](https://github.com/john-cd/rust_howto/issues/1246)
 # https://www.git-town.com/ (setup receipt)
 
 # Configure `git town`

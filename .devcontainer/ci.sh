@@ -19,7 +19,7 @@ cd ./bk
 ## Fails if not formatted properly
 cargo +nightly fmt --all --check
 
-## [add cargo plugins](https://github.com/john-cd/rust_howto/issues/1277)
+## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
 ## Check dependencies
 # cargo deny check \
 #     && cargo outdated --exit-code 1 \

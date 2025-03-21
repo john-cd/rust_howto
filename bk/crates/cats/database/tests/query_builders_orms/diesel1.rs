@@ -79,4 +79,4 @@
 // fn require_external_svc() {
 //     main();
 // }
-// // [finish SOON](https://github.com/john-cd/rust_howto/issues/709)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/709)

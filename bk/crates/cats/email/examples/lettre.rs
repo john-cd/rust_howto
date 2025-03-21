@@ -33,5 +33,4 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-// Requires valid SMTP credentials to run
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1144)
+// [review; Requires valid SMTP credentials to run NOW](https://github.com/john-cd/rust_howto/issues/1144)

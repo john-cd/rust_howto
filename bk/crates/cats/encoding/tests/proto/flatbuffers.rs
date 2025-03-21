@@ -60,5 +60,4 @@
 // fn test() {
 //     main();
 // }
-// // https://flatbuffers.dev/languages/rust/
-// [finish](https://github.com/john-cd/rust_howto/issues/1043)
+// [finish; https://flatbuffers.dev/languages/rust/](https://github.com/john-cd/rust_howto/issues/1043)

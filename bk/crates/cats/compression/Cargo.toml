@@ -17,7 +17,7 @@ autolib = false
 [dependencies]
 flate2 = "1.1.0"
 tar = "0.4.43"
-# [zip async_zip](https://github.com/john-cd/rust_howto/issues/1262)
+# [add zip async_zip](https://github.com/john-cd/rust_howto/issues/1262)
 
 ## General
 anyhow = "1.0.95"
