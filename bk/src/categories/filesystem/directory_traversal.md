@@ -99,12 +99,6 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}то
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/ignore_case.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[dir: cover `globset`](https://github.com/john-cd/rust_howto/issues/358)
-
 ## `globset` {#globset}
 
 [![globset][c-globset-badge]][c-globset] [![globset-crates.io][c-globset-crates.io-badge]][c-globset-crates.io] [![globset-github][c-globset-github-badge]][c-globset-github] [![globset-lib.rs][c-globset-lib.rs-badge]][c-globset-lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
@@ -115,4 +109,9 @@ A custom [`glob::MatchOptions`][c-glob::MatchOptions]{{hi:glob::MatchOptions}}то
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/globset.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[write; review](https://github.com/john-cd/rust_howto/issues/358)
 </div>

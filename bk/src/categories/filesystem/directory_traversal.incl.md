@@ -8,10 +8,8 @@
 | [Recursively calculate file sizes at a given depth][ex-filesystem-recursively-calculate-file-sizes-at-given-depth] | [![walkdir][c-walkdir-badge]][c-walkdir] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Find all files with a given extension recursively][ex-filesystem-find-all-png-files-recursively] | [![glob][c-glob-badge]][c-glob] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Find all files with given pattern, ignoring filename case][ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case] | [![glob][c-glob-badge]][c-glob] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
+| [`globset`][ex-filesystem-globset] | [![globset][c-globset-badge]][c-globset] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/931)
-
-| [`globset`][ex-filesystem-globset] | [![globset][c-globset-badge]][c-globset] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
-
 </div>
