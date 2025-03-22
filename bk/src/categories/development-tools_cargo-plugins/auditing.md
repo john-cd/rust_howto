@@ -10,9 +10,7 @@
 [![cargo-audit-lib.rs][c-cargo_audit-lib.rs-badge]][c-cargo_audit-lib.rs]
 [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo.lock`
-
-`cargo audit`
+`cargo audit` checks for crates with known security vulnerabilities.
 
 ```sh
 cargo install cargo-audit
@@ -44,7 +42,7 @@ This works by embedding data about the dependency tree in [JSON][p-json] format 
 
 [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}} is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand to see license of dependencies.
 
-You can install cargo-license with `cargo install cargo-license` and run it in your project directory with: `cargo license` or [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}}.
+You can install `cargo-license` with `cargo install cargo-license` and run it in your project directory with: `cargo license` or [`cargo-license`][c-cargo_license]⮳{{hi:cargo-license}}.
 
 ## `cargo deny` {#cargo-deny}
 
@@ -77,20 +75,16 @@ cargo deny check
 cargo deny check licenses
 ```
 
+## Related Topics
+
+- Dependency Analysis: Useful for understanding your supply chain and potential risks
+  - `cargo tree` displays your dependency tree, showing all transitive dependencies.
+  - `cargo outdated` checks for outdated dependencies, which might have security fixes available.
+- Linting/Style: `cargo clippy` lints your code for stylistic issues and potential bugs.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/922)
-
-Security Audits:
-
-`cargo audit`: Checks for crates with known security vulnerabilities.
-Linting/Style: (While not strictly "auditing" in the security sense, these help find potential problems)
-
-`cargo clippy`: Lints your code for stylistic issues and potential bugs.
-Dependency Analysis: (Useful for understanding your supply chain and potential risks)
-
-`cargo tree`: Displays your dependency tree, showing all transitive dependencies.
-`cargo outdated`: Checks for outdated dependencies, which might have security fixes available.
 </div>
