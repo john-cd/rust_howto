@@ -11,5 +11,4 @@
 | [`globset`][ex-filesystem-globset] | [![globset][c-globset-badge]][c-globset] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/931)
 </div>
