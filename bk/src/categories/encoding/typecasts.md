@@ -2,6 +2,44 @@
 
 {{#include typecasts.incl.md}}
 
+Rust provides no implicit type conversion (coercion) between primitive types. This is a deliberate design choice to improve safety and avoid unexpected behavior.
+
+Instead of "casting," you'll usually implement or use [traits][p-traits] like `From`, `Into`, `TryFrom`, `TryInto`, or `FromStr` for type conversions in Rust. The `as` keyword exists, but it should be used carefully and only when other options aren't suitable, as it can lead to data loss or unexpected behavior if not handled properly.
+
+## Type Conversion using `as` {#skip}
+
+The `as` keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
+
+## Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` {#skip1}
+
+The `From` and `Into` [traits][p-traits] are used for conversions that should always succeed. `From` allows you to define how to convert from a type, and `Into` provides a blanket implementation for converting into a type if From is implemented. This is the preferred way to do type conversions in most cases.
+
+The `TryFrom` and `TryInto` [traits][p-traits] are used for conversions that might fail. They return a `Result` to indicate success or failure. Use these when there's a possibility of the conversion not working (e.g., [parsing][p-parsing] a string to a number).
+
+## Parsing Strings with the `FromStr` trait {#skip2}
+
+The `FromStr` trait is used for [parsing][p-parsing] strings into other types. Many standard types implement `FromStr`.
+
+```rust,editable
+let num: i32 = "123".parse().unwrap();
+```
+
+## Casting Between Numeric Types {#skip3}
+
+Use the `as` keyword, but be very cautious about potential loss of data or unexpected behavior due to truncation or overflow.
+
+## Casting Between Pointers {#skip4}
+
+Pointer casting requires `unsafe` blocks and careful consideration of memory management.
+
+## Polymorphism with Traits (Dynamic Dispatch) {#skip5}
+
+Use [trait objects][p-trait-objects] (`dyn Trait`) for dynamic dispatch.
+
+## Coercions (Implicit Conversions) {#skip6}
+
+Rust performs some implicit coercions, such as dereferencing and unsizing. These are not type casts in the traditional sense, but they do involve implicit changes in type.
+
 ## `bytemuck` {#bytemuck}
 
 [![bytemuck][c-bytemuck-badge]][c-bytemuck]{{hi:bytemuck}}
@@ -43,56 +81,15 @@ Zerocopy is often used in [network programming][p-network-programming], where hi
 {{#include ../../../crates/cats/encoding/tests/typecasts/zerocopy.rs:example}}
 ```
 
+## Key Differences from C/C++ {#skip7}
+
+- Rust is much more explicit about type conversions. This helps to avoid bugs and makes the code more readable.
+- Rust encourages the use of [traits][p-traits] like `From`, `Into`, `TryFrom`, and `TryInto` for conversions. This makes the code more generic and reusable.
+- Rust avoids implicit type casting, which can lead to unexpected behavior in C/C++.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[typecasts: write NOW](https://github.com/john-cd/rust_howto/issues/354)
-
-Rust is a statically typed [language][p-language], so "type casting" in the traditional C/C++ sense is less common. Instead, Rust emphasizes explicit type conversions and traits. Here's a breakdown:
-
-## Type Conversion (using `as`) {#skip}
-
-The `as` keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
-
-## Traits for Conversions {#skip}
-
-`From` and `Into`: These [traits][p-traits] are used for conversions that should always succeed. `From` allows you to define how to convert from a type, and `Into` provides a blanket implementation for converting into a type if From is implemented. This is the preferred way to do type conversions in most cases.
-
-`TryFrom` and `TryInto`: These [traits][p-traits] are used for conversions that might fail. They return a `Result` to indicate success or failure. Use these when there's a possibility of the conversion not working (e.g., [parsing][p-parsing] a string to a number).
-
-## Parsing Strings {#skip}
-
-The `FromStr` trait is used for [parsing][p-parsing] strings into other types. Many standard types implement `FromStr`. Example:
-
-```rust,editable
-let num: i32 = "123".parse().unwrap();
-```
-
-## Casting Between Numeric Types {#skip}
-
-Use the `as` keyword, but be very cautious about potential loss of data or unexpected behavior due to truncation or overflow.
-
-## Casting Between Pointers {#skip}
-
-Requires unsafe blocks and careful consideration of memory management.
-
-## Casting Between Traits (Dynamic Dispatch) {#skip}
-
-Use [trait objects][p-trait-objects] (dyn Trait) for dynamic dispatch, but this is more about polymorphism than traditional type casting.
-
-## Coercions (Implicit Conversions) {#skip}
-
-Rust performs some implicit coercions, such as dereferencing and unsizing. These are not type casts in the traditional sense, but they do involve implicit changes in type.
-
-No Implicit Casting: Rust does not do implicit type casting like C/C++. This is a deliberate design choice to improve safety and avoid unexpected behavior.
-
-## Key Differences from C/C++ {#skip}
-
-Rust is much more explicit about type conversions. This helps to avoid bugs and makes the code more readable.
-Rust encourages the use of [traits][p-traits] like `From`, `Into`, `TryFrom`, and `TryInto` for conversions. This makes the code more generic and reusable.
-Rust avoids implicit type casting, which can lead to unexpected behavior in C/C++.
-
-In summary, instead of "casting," you'll usually implement or use [traits][p-traits] like `From`, `Into`, `TryFrom`, `TryInto`, or FromStr for type conversions in Rust. The `as` keyword exists, but it should be used carefully and only when other options aren't suitable, as it can lead to data loss or unexpected behavior if not handled properly.
-
+[typecasts: write NOW; reorganize](https://github.com/john-cd/rust_howto/issues/354)
 </div>
