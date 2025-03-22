@@ -2,6 +2,18 @@
 
 {{#include tracing.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Tracing Framework | `tracing` provides the core tracing functionality, spans, events, etc. |
+| Span Management | Handled by `tracing` through its span API. |
+| Event Logging | Also handled by tracing using [macros][p-macros] like `event!` and `debug!`, `info!`, `warn!`, `error!`. |
+| Context Propagation | Built into tracing's span system. |
+| Instrumentation | Often done with [macros][p-macros] provided by tracing or other instrumentation libraries. |
+| Output and [Formatting][p-formatting] | `tracing-subscriber` formats and outputs traces to various destinations. |
+| Filtering | `tracing-subscriber` allows filtering of traces based on level, target, etc. |
+| Asynchronous Tracing | Supported by `tracing` through its [asynchronous][p-asynchronous] span management. |
+| Integration with other tools | `tracing` is often used with other tools like `Jaeger` or `Zipkin` for distributed tracing. |
+
 [![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}} [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}
 
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
@@ -88,16 +100,5 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 <div class="hidden">
 [tracing: [tracing-next-steps][c-tracing-next-steps]](https://github.com/john-cd/rust_howto/issues/322)
-
 [tracing-next-steps][c-tracing-next-steps]
-
-Tracing Framework: tracing (provides the core tracing functionality, spans, events, etc.)
-Span Management: (Handled by tracing through its span API)
-Event Logging: (Also handled by tracing using [macros][p-macros] like event! and debug!, info!, warn!, error!)
-Context Propagation: (Built into tracing's span system)
-Instrumentation: (Often done with [macros][p-macros] provided by tracing or other instrumentation libraries)
-Output and [Formatting][p-formatting]: tracing-subscriber (formats and outputs traces to various destinations)
-Filtering: tracing-subscriber (allows filtering of traces based on level, target, etc.)
-Asynchronous Tracing: (Supported by tracing through its [asynchronous][p-asynchronous] span management)
-Integration with other tools: (Often tracing is used with other tools like Jaeger or Zipkin for distributed tracing. There might be specific crates for those integrations, but tracing is the core.)
 </div>
