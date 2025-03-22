@@ -61,12 +61,6 @@ fn [main][p-main]() {
 }
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
-
 ## Other Frameworks {#skip2}
 
 ### `OpenTelemetry` {#open-telemetry}
@@ -81,10 +75,15 @@ fn [main][p-main]() {
 
 ## `OpenObserve` {#open-observe}
 
-[OpenObserve][openobserve-github]{{hi:OpenObserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch/Splunk/DataDog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
+[OpenObserve][openobserve-github]{{hi:OpenObserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch / Splunk / DataDog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[write, organize together with the old log content.](https://github.com/john-cd/rust_howto/issues/649)
 </div>
