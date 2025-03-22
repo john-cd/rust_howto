@@ -2,6 +2,18 @@
 
 {{#include maintaining.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Code Formatting | `cargo fmt` formats your code to a consistent style. |
+| Linting | `cargo clippy` catches common code errors and style issues. |
+| Dependency Management | `cargo tree` displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
+| Documentation Generation | `cargo doc` generates [documentation][p-documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
+| Testing | `cargo test` runs your unit and integration tests. |
+| Benchmarking | `cargo bench` runs your benchmarks. |
+| Code Coverage | `cargo tarpaulin` runs code coverage analysis. |
+| Refactoring | Often IDE-driven, but some tools exist: `cargo-expand` expands [macros][p-macros], which can be helpful for understanding code and refactoring. |
+| Version Management | `cargo-bump` helps to automate version updates in your Cargo.toml. |
+
 ## Edit `Cargo.toml` {#cargo-edit}
 
 [![cargo-edit][c-cargo_edit-badge]][c-cargo_edit] [![cargo-edit-crates.io][c-cargo_edit-crates.io-badge]][c-cargo_edit-crates.io] [![cargo-edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github] [![cargo-edit-lib.rs][c-cargo_edit-lib.rs-badge]][c-cargo_edit-lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
@@ -89,12 +101,6 @@ $ cargo semver-checks
 
 [`cargo cache`][c-cargo_cache-github]{{hi:cargo-cache}}⮳ manages the [`cargo`][c-cargo]⮳{{hi:cargo}} cache ($CARGO_HOME or ~/.cargo/), shows sizes and removes directories selectively.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[maintaining: fix](https://github.com/john-cd/rust_howto/issues/313)
-
 ## `cargo expand` {#cargo-expand}
 
 [![cargo-expand][c-cargo_expand-badge]][c-cargo_expand] [![cargo-expand-crates.io][c-cargo_expand-crates.io-badge]][c-cargo_expand-crates.io] [![cargo-expand-github][c-cargo_expand-github-badge]][c-cargo_expand-github] [![cargo-expand-lib.rs][c-cargo_expand-lib.rs-badge]][c-cargo_expand-lib.rs]{{hi:cargo-expand}}{{hi:Cargo}}{{hi:Macros}}{{hi:Subcommand}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:cargo-expand}}
@@ -107,37 +113,9 @@ $ cargo semver-checks
 
 `cargo hack` is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand to provide various options useful for [testing][p-testing] and continuous integration.
 
-Code Formatting:
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
 
-cargo fmt: Formats your code to a consistent style.
-Linting:
-
-cargo clippy: Catches common code errors and style issues.
-Dependency Management:
-
-cargo tree: Displays your dependency tree to help you understand your project's dependencies.
-cargo outdated: Checks for outdated dependencies.
-cargo audit: Checks for crates with known security vulnerabilities.
-Dead Code Detection:
-
-cargo deadlinks: Finds broken links in your documentation.
-Documentation Generation:
-
-cargo doc: Generates [documentation][p-documentation] from your code.
-Testing:
-
-cargo test: Runs your unit and integration tests.
-Benchmarking:
-
-cargo bench: Runs your benchmarks.
-Code Coverage:
-
-cargo tarpaulin: Runs code coverage analysis.
-Refactoring: (Often IDE-driven, but some tools exist)
-
-cargo-expand: Expands [macros][p-macros], which can be helpful for understanding code and refactoring. (Not strictly refactoring itself, but a helpful tool.)
-Version Management:
-
-cargo-bump: Helps to automate version updates in your Cargo.toml.
-
+<div class="hidden">
+[maintaining: fix](https://github.com/john-cd/rust_howto/issues/313)
 </div>
