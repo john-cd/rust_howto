@@ -2,6 +2,14 @@
 
 {{#include code_writing.incl.md}}
 
+| Topic | Rust Crates |
+| Code Generation (Procedural Macros) | Procedural [macros][p-macros] are the primary way to do code generation in Rust. There aren't specific [cargo][p-cargo] plugins for writing proc [macros][p-macros], but they are often used within projects that might also have other build-related plugins. |
+| Code Snippets/Templates | No single dominant crate or plugin. Often handled with IDE features or custom scripts. |
+| Scaffolding/Project Generation | Tools like `cargo new` are built-in. Other project templates might be managed separately or integrated into build tools. |
+| Documentation Generation | `cargo doc` (while primarily for documentation output, it does involve processing and "generating" [documentation][p-documentation] from your code). |
+| API [Documentation][p-documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate. |
+| String Manipulation/Text Processing (Often used in code generation) | [regex][p-regex], [`itertools`][c-itertools]⮳{{hi:itertools}} (not [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but commonly used crates). |
+
 ## Generate a Rust Project from a Template {#cargo-generate}
 
 [![cargo-generate][c-cargo_generate-badge]][c-cargo_generate]{{hi:cargo-generate}}
@@ -27,16 +35,4 @@
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/924)
-
-Code Generation (Procedural Macros): (Procedural [macros][p-macros] are the primary way to do code generation in Rust. There aren't specific [cargo][p-cargo] plugins for writing proc [macros][p-macros], but they are often used within projects that might also have other build-related plugins.)
-
-Code Snippets/Templates: (No single dominant crate or plugin. Often handled with IDE features or custom scripts.)
-
-Scaffolding/Project Generation: (Tools like [cargo][p-cargo] new are built-in. Other project templates might be managed separately or integrated into build tools.)
-
-Documentation Generation: `cargo doc` (while primarily for documentation output, it does involve processing and "generating" [documentation][p-documentation] from your code).
-
-API [Documentation][p-documentation] Generators (for REST APIs, etc.): (Often tied to web frameworks; no single dominant crate).
-
-String Manipulation/Text Processing (Often used in code generation): [regex][p-regex], [`itertools`][c-itertools]⮳{{hi:itertools}} (not [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but commonly used crates).
 </div>
