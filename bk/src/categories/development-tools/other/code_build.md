@@ -2,6 +2,19 @@
 
 {{#include code_build.incl.md}}
 
+| Topic | Tools |
+|---|---|
+| Build System | [cargo][p-cargo] is the primary build system for Rust. |
+| Build Scripts | Use `build.rs` files in your project. |
+| Build Profiles | Configure build options in `Cargo.toml` for debug, release, etc. |
+| Cross-Compilation | [`cross`][c-cross]⮳{{hi:cross}} simplifies cross-compilation, target specifications in `Cargo.toml`. |
+| Link-Time Optimization (LTO) | Controlled via `Cargo.toml`. |
+| Build Dependencies | Managed by [cargo][p-cargo] |
+| Incremental Compilation | Handled by [cargo][p-cargo]. |
+| Build Automation (for complex builds) | `xtask` |
+| Compiler Flags | Configurable in `Cargo.toml` |
+| Code Generation | Often done with procedural [macros][p-macros] or build scripts. |
+
 ## Save and run project-specific Commands with the `just` Command Runner {#just}
 
 [![just][c-just-badge]][c-just] [![just-crates.io][c-just-crates.io-badge]][c-just-crates.io] [![just-github][c-just-github-badge]][c-just-github] [![just-lib.rs][c-just-lib.rs-badge]][c-just-lib.rs]{{hi:just}}{{hi:Command-line}}{{hi:Development}}{{hi:Runner}}{{hi:Task}}{{hi:Utility}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-command-line-utilities][cat-command-line-utilities-badge]][cat-command-line-utilities]{{hi:Command line utilities}}
@@ -100,15 +113,4 @@ bacon clippy
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/919)
 (See [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability)
-
-Build System: [cargo][p-cargo] (the primary build system for Rust)
-Build Scripts: (Using build.rs files in your project)
-Build Profiles: (Configuring build options in Cargo.toml for debug, release, etc.)
-Cross-Compilation: [`cross`][c-cross]⮳{{hi:cross}} (tool to simplify cross-compilation), target specifications in Cargo.toml
-Link-Time Optimization (LTO): (Controlled via Cargo.toml)
-Build Dependencies: (Managed by [cargo][p-cargo])
-Incremental Compilation: (Handled by [cargo][p-cargo])
-Build Automation (for complex builds): xtask
-Compiler Flags: (Configurable in Cargo.toml)
-Code Generation: (Often done with procedural [macros][p-macros] or build scripts)
 </div>
