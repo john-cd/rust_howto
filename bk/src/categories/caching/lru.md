@@ -41,7 +41,5 @@ Consider the following Rust crates for your in-memory [caching][p-caching] needs
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand](https://github.com/john-cd/rust_howto/issues/227)
-rename file
-review in depth
+[expand; rename file; review in depth](https://github.com/john-cd/rust_howto/issues/227)
 </div>
