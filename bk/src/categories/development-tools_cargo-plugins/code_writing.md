@@ -3,12 +3,10 @@
 {{#include code_writing.incl.md}}
 
 | Topic | Rust Crates |
+|---|---|
 | Code Generation (Procedural Macros) | Procedural [macros][p-macros] are the primary way to do code generation in Rust. There aren't specific [cargo][p-cargo] plugins for writing proc [macros][p-macros], but they are often used within projects that might also have other build-related plugins. |
 | Code Snippets/Templates | No single dominant crate or plugin. Often handled with IDE features or custom scripts. |
 | Scaffolding/Project Generation | Tools like `cargo new` are built-in. Other project templates might be managed separately or integrated into build tools. |
-| Documentation Generation | `cargo doc` (while primarily for documentation output, it does involve processing and "generating" [documentation][p-documentation] from your code). |
-| API [Documentation][p-documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate. |
-| String Manipulation/Text Processing (Often used in code generation) | [regex][p-regex], [`itertools`][c-itertools]⮳{{hi:itertools}} (not [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but commonly used crates). |
 
 ## Generate a Rust Project from a Template {#cargo-generate}
 
@@ -29,6 +27,14 @@
 [![cargo-crates-lib.rs][c-cargo_crates-lib.rs-badge]][c-cargo_crates-lib.rs]
 
 `cargo crates` is a [cargo][p-cargo] command to quickly open the [`crates.io`][crates.io-website]{{hi:crates.io}}⮳ or[`docs.rs`][docs-rs]{{hi:docs.rs}}⮳ page for the latest version of a crate.
+
+## Related Topics
+
+| Topic | Rust Crates |
+|---|---|
+| Documentation Generation | `cargo doc` (while primarily for documentation output, it does involve processing and "generating" [documentation][p-documentation] from your code). |
+| API [Documentation][p-documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate. |
+| String Manipulation / Text Processing (Often used in code generation) | [regex][p-regex], [`itertools`][c-itertools]⮳{{hi:itertools}} (not [`cargo`][c-cargo]⮳{{hi:cargo}} plugins, but commonly used crates). |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
