@@ -2,6 +2,14 @@
 
 {{#include install.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Package Managers | [cargo][p-cargo] |
+| Installer Generators | `cargo-deb`, `cargo-rpm`, `create-dmg` (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively) |
+| Cross-Platform Installers | `tauri-bundler` (for bundling desktop applications) |
+| Self-Updating | `self_update` |
+| Build Systems (for installation scripts) | xtask (for managing complex builds and installation-related tasks) |
+
 ## Build and Install a Rust Binary with `cargo install` {#cargo-install}
 
 [![cargo-website][c-cargo-website-badge]][c-cargo-website] [![cargo][c-cargo-badge]][c-cargo] [![cargo-crates.io][c-cargo-crates.io-badge]][c-cargo-crates.io] [![cargo-github][c-cargo-github-badge]][c-cargo-github] [![cargo-lib.rs][c-cargo-lib.rs-badge]][c-cargo-lib.rs]{{hi:cargo}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
@@ -20,11 +28,5 @@ The `cargo install` command manages [`cargo`][c-cargo]⮳{{hi:cargo}}'s local se
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/918)
-
-Package Managers: [cargo][p-cargo] (for Rust itself and Rust projects)
-Installer Generators: cargo-deb, cargo-rpm, create-dmg (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively)
-Cross-Platform Installers: tauri-bundler (for bundling desktop applications)
-Self-Updating: self_update
-Build Systems (for installation scripts): xtask (for managing complex builds and installation-related tasks)
+[review NOW](https://github.com/john-cd/rust_howto/issues/918)
 </div>
