@@ -1473,6 +1473,14 @@
 [c-cranelift-lib.rs-badge]: https://img.shields.io/badge/lib.rs-cranelift-yellow
 [c-cranelift-lib.rs]: https://lib.rs/crates/cranelift
 [c-cranelift]: https://docs.rs/cranelift
+[c-crates_io-badge]: https://img.shields.io/crates/v/crates-io?label=crates-io
+[c-crates_io-crates.io-badge]: https://img.shields.io/badge/crates.io-crates--io-crimson
+[c-crates_io-crates.io]: https://crates.io/crates/crates_io
+[c-crates_io-github-badge]: https://img.shields.io/badge/crates--io-steelblue?logo=github
+[c-crates_io-github]: https://github.com/rust-lang/cargo
+[c-crates_io-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crates--io-yellow
+[c-crates_io-lib.rs]: https://lib.rs/crates/crates-io
+[c-crates_io]: https://docs.rs/crates-io
 [c-crates_io_api-badge]: https://img.shields.io/crates/v/crates_io_api?label=crates_io_api
 [c-crates_io_api-crates.io-badge]: https://img.shields.io/badge/crates.io-crates__io__api-crimson
 [c-crates_io_api-crates.io]: https://crates.io/crates/crates_io_api
