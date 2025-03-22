@@ -4,21 +4,35 @@
 
 Development tools to help you figure out the performance of your code.
 
-## Benchmarking
+Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like perf provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
+
+| Topic | Rust Crates |
+|---|---|
+| Flame Graphs | `cargo flamegraph` generates flame graphs from Rust programs. |
+| System Profilers (In-depth Analysis) | [`perf`][c-perf]⮳{{hi:perf}} is a powerful system profiler for Linux. `cargo flamegraph` often uses perf under the hood. [`dtrace`][c-dtrace]⮳{{hi:dtrace}} is another system profiler for macOS, BSD. `VTune` (Intel) is a commercial profiler. |
+| Benchmarking | Built-in `cargo bench` allows you to write benchmarks directly in your Rust code. |
+| In-Code Profiling (Specific Code Regions) | [`measure_time`][c-measure_time]⮳{{hi:measure_time}} is a simple crate for measuring the execution time of code blocks. |
+| Memory Profiling | [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind. |
+| Tracing - Understanding Program Flow | [`tracing`][c-tracing]⮳{{hi:tracing}}: While not strictly a profiler in the performance sense, [`tracing`][c-tracing]⮳{{hi:tracing}} allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools. |
+| Sampling Profilers (CPU Usage) | [`samply`][c-samply]⮳{{hi:samply}} is a native sampling profiler focusing on ease of use. [`callgrind`][c-callgrind]⮳{{hi:callgrind}} is a performance analysis tool often used with `kcachegrind` for visualization. |
+
+## Code Examples
+
+### Benchmarking
 
 {{#include benchmarking.incl.md}}
 
-## Memory Usage Analysis
+### Memory Usage Analysis
 
 {{#include memory_usage_analysis.incl.md}}
 
-## Low-level Profiling Tools
+### Low-level Profiling Tools
 
 {{#include assembly.incl.md}}
 
-## See Also
+## References
 
-[Rust Performance Book][book-rust-performance] [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]{{hi:Rust performance}}
+- [Rust Performance Book][book-rust-performance] [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]{{hi:Rust performance}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -27,45 +41,5 @@ Development tools to help you figure out the performance of your code.
 [expand](https://github.com/john-cd/rust_howto/issues/337)
 
 Profiling: Using profiling tools to identify performance bottlenecks.
-
 Performance Optimization: Recipes for optimizing code performance, including using SIMD instructions and profiling tools.
-
----
-
-## Flame Graphs
-
-`cargo flamegraph`: The most popular tool for generating flame graphs from Rust programs. It integrates well with Cargo and makes profiling very easy.
-
-## System Profilers (In-depth Analysis)
-
-[`perf`][c-perf]⮳{{hi:perf}} (Linux): A powerful system profiler. `cargo flamegraph` often uses perf under the hood.
-[`dtrace`][c-dtrace]⮳{{hi:dtrace}} (macOS, BSD): Another system profiler.
-`VTune` (Intel): A commercial profiler.
-
-## Benchmarking2
-
-`cargo bench`: (Built-in) Allows you to write benchmarks directly in your Rust code.
-
-## In-Code Profiling (Specific Code Regions)
-
-[`measure_time`][c-measure_time]⮳{{hi:measure_time}}: A simple crate for measuring the execution time of code blocks.
-
-## Memory Profiling
-
-[`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a powerful tool for memory profiling and leak detection. You'd run your Rust program under Valgrind.
-
-## Tracing - Understanding Program Flow
-
-[`tracing`][c-tracing]⮳{{hi:tracing}}: While not strictly a profiler in the performance sense, [`tracing`][c-tracing]⮳{{hi:tracing}} allows you to instrument your code with spans and events, which can be invaluable for understanding the flow of execution and identifying bottlenecks. Often used in combination with other profiling tools.
-
-## Sampling Profilers (CPU Usage)
-
-[`samply`][c-samply]⮳{{hi:samply}}: A native sampling profiler focusing on ease of use.
-
-Callgrind:
-
-[`callgrind`][c-callgrind]⮳{{hi:callgrind}}: A performance analysis tool. Often used with kcachegrind for visualization.
-
-It's important to choose the right profiling tool for the job. Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like perf provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
-
 </div>
