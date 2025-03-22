@@ -2,6 +2,12 @@
 
 {{#include formatting.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Code Formatter | [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} is the standard Rust code formatter. |
+| Formatting Configuration | [Configuration][p-configuration] is done through `rustfmt.toml` files. |
+| Integration | Most [IDEs][p-ides] have built-in [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} integration. |
+
 ## Format your Rust code with `rustfmt` {#rustfmt}
 
 [![rustfmt_nightly-github][c-rustfmt_nightly-github-badge]][c-rustfmt_nightly-github]{{hi:rustfmt}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
@@ -78,8 +84,4 @@ For things you do not want [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} to mangle, us
 
 <div class="hidden">
 [formatting: add link for formatting attributes](https://github.com/john-cd/rust_howto/issues/300)
-
-Code Formatter: [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} (the standard Rust code formatter)
-Configuration: ([Configuration][p-configuration] is done through rustfmt.toml files)
-Integration: (Most [IDEs][p-ides] have built-in [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} integration)
 </div>
