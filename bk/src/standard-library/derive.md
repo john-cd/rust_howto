@@ -22,13 +22,20 @@ See also:
 
 [![derive_more][c-derive_more-badge]][c-derive_more]{{hi:derive_more}}
 
-[Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}.
+[Derive More (crates)][c-derive_more-crates.io]⮳ derive lots of additional, commonly used traits and static methods for both structs{{hi:Structs}} and enums{{hi:Enums}}:
+
+- Arithmetic Traits: `Add`, `Sub`, `Mul`, `Div`, `AddAssign`, etc. for custom numeric types.
+- Conversion Traits: `From`, `Into`, `TryFrom`, `TryInto` for easy type conversions.
+- Smart Pointer Traits: `Deref`, `DerefMut` for implementing container types.
+- `Display` and `Error`: Better formatting and error handling.
+- `Constructor`: Auto-generates constructors for structs.
+- Boolean Operators: `Not`, `BitAnd`, `BitOr`, etc.
 
 ```rust,editable,noplayground
 {{#include ../../crates/standard_library/tests/other/derive_more.rs:example}}
 ```
 
-## See Also
+## Related Topics
 
 - [[attributes | Attributes]].
 - [[rust-patterns | Rust Patterns]].
