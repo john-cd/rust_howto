@@ -4,6 +4,15 @@
 
 Subcommands that extend the capabilities of Cargo.
 
+| Topic | Rust Crates |
+|---|---|
+| Code Quality/Analysis | `cargo clippy` lints your code. `cargo fmt` formats your code. `cargo deadlinks` finds broken links in your documentation. `cargo audit` checks for dependencies with known vulnerabilities. |
+| Dependency Management | `cargo tree` displays your dependency tree. `cargo outdated` checks for outdated dependencies. `cargo add` adds dependencies to your Cargo.toml. `cargo rm` removes dependencies. |
+| Testing/Benchmarking | `cargo test` runs your tests (built-in, but often considered a plugin). `cargo bench`: Runs your benchmarks (built-in). `cargo fuzz`: Runs your fuzz tests. |
+| Documentation | `cargo doc`: Generates documentation (built-in). |
+| Publishing/Distribution | `cargo publish` publishes your crate to crates.io (built-in). [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}: Creates Debian packages. [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}} creates RPM packages. |
+| Miscellaneous | [`cargo-tarpaulin`][c-cargo_tarpaulin]⮳{{hi:cargo-tarpaulin}} runs code coverage analysis. [`cargo-flamegraph`][c-cargo_flamegraph]⮳{{hi:cargo-flamegraph}} generates flame graphs for profiling. [`cargo-edit`][c-cargo_edit]⮳{{hi:cargo-edit}} edits your Cargo.toml file. [`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}} watches your project for changes and rebuilds. |
+
 ## Writing Code
 
 {{#include code_writing.incl.md}}
@@ -11,6 +20,10 @@ Subcommands that extend the capabilities of Cargo.
 ## Formatting and Linting
 
 {{#include code_formatting_linting.incl.md}}
+
+## Dependency Management
+
+{{#include dependency_management.incl.md}}
 
 ## Building
 
@@ -36,7 +49,7 @@ Subcommands that extend the capabilities of Cargo.
 
 {{#include maintaining.incl.md}}
 
-## See Also
+## Related Topics
 
 - Testing.
 - Build Utils.
@@ -49,52 +62,7 @@ Subcommands that extend the capabilities of Cargo.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development-tools_cargo-plugins/index: review](https://github.com/john-cd/rust_howto/issues/311)
-
-## Dependency Management
-
-{{#include dependency_management.incl.md}}
-
-Here's a short list of Cargo plugins by topic:
-
-Code Quality/Analysis:
-
-`cargo clippy`: Lints your code.
-`cargo fmt`: Formats your code.
-`cargo deadlinks`: Finds broken links in your documentation.
-`cargo audit`: Checks for dependencies with known vulnerabilities.
-
-Dependency Management:
-
-`cargo tree`: Displays your dependency tree.
-`cargo outdated`: Checks for outdated dependencies.
-`cargo add`: Adds dependencies to your Cargo.toml.
-`cargo rm`: Removes dependencies.
-
-Testing/Benchmarking:
-
-`cargo test`: Runs your tests (built-in, but often considered a plugin).
-`cargo bench`: Runs your benchmarks (built-in).
-`cargo fuzz`: Runs your fuzz tests.
-
-Documentation:
-
-`cargo doc`: Generates documentation (built-in).
-
-Publishing/Distribution:
-
-`cargo publish`: Publishes your crate to crates.io (built-in).
-[`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}: Creates Debian packages.
-[`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}: Creates RPM packages.
-
-Miscellaneous:
-
-[`cargo-tarpaulin`][c-cargo_tarpaulin]⮳{{hi:cargo-tarpaulin}}: Runs code coverage analysis.
-[`cargo-flamegraph`][c-cargo_flamegraph]⮳{{hi:cargo-flamegraph}}: Generates flame graphs for profiling.
-[`cargo-edit`][c-cargo_edit]⮳{{hi:cargo-edit}}: Edits your Cargo.toml file.
-[`cargo-watch`][c-cargo_watch]⮳{{hi:cargo-watch}}: Watches your project for changes and rebuilds.
-
----
+[review in depth, reorg table, add below NOW](https://github.com/john-cd/rust_howto/issues/311)
 
 [`cargo-afl`][c-cargo_afl]⮳{{hi:cargo-afl}} for fuzzing
 
