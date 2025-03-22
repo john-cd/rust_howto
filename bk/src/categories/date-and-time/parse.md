@@ -51,9 +51,20 @@ Escape sequences that are available for the [`chrono::DateTime::parse_from_str`]
 {{#include ../../../crates/cats/date_and_time/tests/chrono/parse_string_into_datetime.rs:example}}
 ```
 
+## `humantime` {#humantime}
+
+[![humantime][c-humantime-badge]][c-humantime] [![humantime-crates.io][c-humantime-crates.io-badge]][c-humantime-crates.io] [![humantime-github][c-humantime-github-badge]][c-humantime-github] [![humantime-lib.rs][c-humantime-lib.rs-badge]][c-humantime-lib.rs]{{hi:humantime}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}
+
+A parser and formatter for `std::time::{Duration, SystemTime}`.
+
+- Parses durations in free form like 15days 2min 2s.
+- Formats durations in similar form 2years 2min 12us.
+- Parses and formats timestamp in rfc3339 format: 2018-01-01T12:53:00Z.
+- Parses timestamps in a weaker format: 2018-01-01 12:53:00.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/914)
+[write humantime; review](https://github.com/john-cd/rust_howto/issues/914)
 </div>

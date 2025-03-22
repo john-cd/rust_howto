@@ -36,16 +36,4 @@ There is no clear answer as to which is best between [`time`][c-time]⮳{{hi:tim
 
 <div class="hidden">
 [review in depth NOW](https://github.com/john-cd/rust_howto/issues/1188)
-
-## `humantime` {#humantime}
-
-[![humantime][c-humantime-badge]][c-humantime] [![humantime-crates.io][c-humantime-crates.io-badge]][c-humantime-crates.io] [![humantime-github][c-humantime-github-badge]][c-humantime-github] [![humantime-lib.rs][c-humantime-lib.rs-badge]][c-humantime-lib.rs]{{hi:humantime}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}} [![cat-date-and-time][cat-date-and-time-badge]][cat-date-and-time]{{hi:Date and time}}
-
-A parser and formatter for `std::time::{Duration, SystemTime}`.
-
-- Parses durations in free form like 15days 2min 2s.
-- Formats durations in similar form 2years 2min 12us.
-- Parses and formats timestamp in rfc3339 format: 2018-01-01T12:53:00Z.
-- Parses timestamps in a weaker format: 2018-01-01 12:53:00.
-
 </div>
