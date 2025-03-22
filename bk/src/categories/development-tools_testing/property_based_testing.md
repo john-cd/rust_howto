@@ -26,16 +26,16 @@ proptest = "1.0.0"
 {{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/proptest.rs:example}}
 ```
 
-## Test Data Generation {#test_data_generation}
+## Test Data Generation with `fake` {#test_data_generation}
 
-[![faker][c-faker-badge]][c-faker] [![faker-crates.io][c-faker-crates.io-badge]][c-faker-crates.io] [![faker-github][c-faker-github-badge]][c-faker-github] [![faker-lib.rs][c-faker-lib.rs-badge]][c-faker-lib.rs]{{hi:faker}}
+[![fake][c-fake-badge]][c-fake] [![fake-crates.io][c-fake-crates.io-badge]][c-fake-crates.io] [![fake-github][c-fake-github-badge]][c-fake-github] [![fake-lib.rs][c-fake-lib.rs-badge]][c-fake-lib.rs]{{hi:fake}}{{hi:Random}}{{hi:Generator}}{{hi:Data}}{{hi:Faker}}
 
-A library for generating fake data such as names, addresses, and phone numbers.
+An easy to use library and command line for generating fake data like name, number, address, lorem, dates, etc.
 
-Often done with custom [functions][p-functions] or data structures, but crates like [`faker`][c-faker]⮳{{hi:faker}} can be useful for generating realistic test data.
+Often done with custom [functions][p-functions] or data structures, but crates like [`fake`][c-fake]⮳{{hi:fake}} can be useful for generating realistic test data.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/faker.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/tests/property_based_testing/fake.rs:example}}
 ```
 
 {{#include refs.incl.md}}

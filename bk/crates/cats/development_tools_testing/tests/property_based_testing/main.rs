@@ -1,2 +1,2 @@
-mod faker;
+mod fake;
 mod proptest;

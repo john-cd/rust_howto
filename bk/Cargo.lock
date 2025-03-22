@@ -8620,6 +8620,7 @@ version = "0.1.2"
 dependencies = [
  "afl",
  "approx 0.4.0",
+ "fake",
  "faux",
  "insta",
  "mockall",
@@ -10370,6 +10371,16 @@ checksum = "7cd915d99f24784cdc19fd37ef22b97e3ff0ae756c7e492e9fbfe897d61e2aec"
 dependencies = [
  "indenter",
  "once_cell",
+]
+
+[[package]]
+name = "fake"
+version = "4.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b591050272097cc85b2f3c1cc4817ba4560057d10fcae6f7339f1cf622da0a0f"
+dependencies = [
+ "deunicode",
+ "rand 0.9.0",
 ]
 
 [[package]]
