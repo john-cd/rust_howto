@@ -65,7 +65,7 @@ fn [main][p-main]() {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write, organize together with the old [log][p-log] content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
+[write, organize together with the old log content. incorporate into SUMMARY, etc](https://github.com/john-cd/rust_howto/issues/649)
 
 ## Other Frameworks {#skip2}
 
