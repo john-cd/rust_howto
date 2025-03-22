@@ -87,20 +87,6 @@ jobs:
           publish_dir: ./book
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[mdbook: organize, expand](https://github.com/john-cd/rust_howto/issues/299)
-
-- [mdslides][mdslides]
-
-[mdslides]: https://github.com/ferrous-systems/mdslides
-
-## Test Code in Your `mdbook` {#termbook}
-
-[Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} to keep your documentation tested:
-
 ## Add a Table of Contents to Each Page {#skip1}
 
 ### `mdbook-toc` {#mdbook-toc}
@@ -148,4 +134,19 @@ jobs:
 [![mdbook-cmdrun][c-mdbook_cmdrun-badge]][c-mdbook_cmdrun] [![mdbook-cmdrun-crates.io][c-mdbook_cmdrun-crates.io-badge]][c-mdbook_cmdrun-crates.io] [![mdbook-cmdrun-github][c-mdbook_cmdrun-github-badge]][c-mdbook_cmdrun-github] [![mdbook-cmdrun-lib.rs][c-mdbook_cmdrun-lib.rs-badge]][c-mdbook_cmdrun-lib.rs]{{hi:mdbook-cmdrun}}{{hi:Mdbook}}{{hi:Pre-processor}}{{hi:Runcmd}}
 
 [`mdbook-cmdrun`][c-mdbook_cmdrun]⮳{{hi:mdbook-cmdrun}} is a [`mdbook`][c-mdbook]⮳{{hi:mdbook}} pre-processor to run arbitrary commands.
+
+{{#include refs.incl.md}}
+{{#include ../../../refs/link-refs.md}}
+
+<div class="hidden">
+[mdbook: organize, expand NOW](https://github.com/john-cd/rust_howto/issues/299)
+
+- [mdslides][mdslides]
+
+[mdslides]: https://github.com/ferrous-systems/mdslides
+
+## Test Code in Your `mdbook` {#termbook}
+
+[Byron-termbook][c-termbook-github]{{hi:termbook}} is a runner for [`mdbook`][c-mdbook]⮳{{hi:mdbook}} to keep your documentation tested:
+
 </div>

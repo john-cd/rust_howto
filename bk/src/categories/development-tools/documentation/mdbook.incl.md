@@ -4,10 +4,6 @@
 | [`mdbook` plugins][ex-documentation-mdbook-plugins] | [![mdbook-linkcheck][c-mdbook_linkcheck-badge]][c-mdbook_linkcheck] [![mdbook-private][c-mdbook_private-badge]][c-mdbook_private] [![mdbook-hide][c-mdbook_hide-badge]][c-mdbook_hide] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Deploy your book or documentation in a CD / CI pipeline][ex-documentation-cd-ci] | [GitHub Actions for mdBook][actions-mdbook-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Let readers execute your sample code in the Rust playground][ex-documentation-playground] | [![rust-playground][rust-playground-website-badge]][rust-playground-website] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
-
-<div class="hidden">
-[mdbook.incl: titles](https://github.com/john-cd/rust_howto/issues/298)
-
 | [`mdbook-cmdrun`][ex-documentation-mdbook-cmdrun] | [![mdbook-cmdrun][c-mdbook_cmdrun-badge]][c-mdbook_cmdrun] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Create a journal with `mdbook-journal`][ex-documentation-mdbook-journal] | [![mdbook-journal][c-mdbook_journal-badge]][c-mdbook_journal] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Check links with `mdbook-linkcheck`][ex-documentation-mdbook-linkcheck] | [![mdbook-linkcheck][c-mdbook_linkcheck-badge]][c-mdbook_linkcheck] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
@@ -20,4 +16,6 @@
 | [Test code in your `mdbook`][ex-documentation-termbook] | [Byron-termbook][c-termbook-github] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 | [Replace text in chapters with `yapp`][ex-documentation-yapp] | [![mdbook-yapp][c-mdbook_yapp-badge]][c-mdbook_yapp] | [![cat-development-tools][cat-development-tools-badge]][cat-development-tools] |
 
+<div class="hidden">
+[fix; titles](https://github.com/john-cd/rust_howto/issues/298)
 </div>
