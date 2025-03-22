@@ -2,6 +2,12 @@
 
 {{#include performance.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Profiling and Benchmarking | `cargo flamegraph` generates flame graphs to visualize performance bottlenecks. `cargo bench` (built-in) runs benchmarks to measure performance. |
+| Optimization Analysis| `cargo expand` expands [macros][p-macros], which can sometimes help you understand generated code and identify optimization opportunities. |
+| Other Performance Tools | `perf`: (System profiler); `valgrind` (Memory debugging and profiling) |
+
 ## Configure your `cargo` project for Maximum Performance, Fast Compile Times or Minimal Binary Size {#cargo-wizard}
 
 [![cargo-wizard][c-cargo_wizard-badge]][c-cargo_wizard] [![cargo-wizard-crates.io][c-cargo_wizard-crates.io-badge]][c-cargo_wizard-crates.io] [![cargo-wizard-github][c-cargo_wizard-github-badge]][c-cargo_wizard-github] [![cargo-wizard-lib.rs][c-cargo_wizard-lib.rs-badge]][c-cargo_wizard-lib.rs]{{hi:cargo-wizard}}{{hi:Profile}}{{hi:Cargo}}{{hi:Template}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
@@ -21,19 +27,4 @@
 
 <div class="hidden">
 [performance: expand](https://github.com/john-cd/rust_howto/issues/314)
-
-Profiling:
-
-cargo flamegraph: Generates flame graphs to visualize performance bottlenecks.
-cargo bench: (Built-in) Runs benchmarks to measure performance.
-Optimization Analysis:
-
-cargo expand: Expands [macros][p-macros], which can sometimes help you understand generated code and identify optimization opportunities. (Not strictly a performance tool itself, but useful).
-Benchmarking:
-
-cargo bench: (Built-in) Runs benchmarks to measure performance.
-Other Performance Tools: (Often used in conjunction with Rust, but not [Cargo][p-cargo] plugins)
-
-perf: (System profiler)
-valgrind (Memory debugging and profiling)
 </div>
