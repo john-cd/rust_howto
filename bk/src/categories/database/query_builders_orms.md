@@ -12,6 +12,18 @@
 {{#include ../../../crates/cats/database/tests/query_builders_orms/sqlx.rs:example}}
 ```
 
+## SeaORM {#sea-orm}
+
+[![sea-orm][c-sea_orm-badge]][c-sea_orm]{{hi:sea-orm}} [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website] [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
+
+[Seaography GraphQL server][c-seaography-website]{{hi:seaography}}⮳.
+
+Built on top of [`sqlx`][c-sqlx]⮳{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/database/tests/query_builders_orms/sea_orm.rs:example}}
+```
+
 ## `diesel` {#diesel}
 
 [![diesel][c-diesel-badge]][c-diesel]{{hi:diesel}} [![diesel-lib.rs][c-diesel-lib.rs-badge]][c-diesel-lib.rs] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
@@ -145,18 +157,5 @@ while let Some(todo) = todos.next().await {
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write / move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
-
-## SeaORM {#sea-orm}
-
-[![sea-orm][c-sea_orm-badge]][c-sea_orm]{{hi:sea-orm}} [![sea_orm-website][c-sea_orm-website-badge]][c-sea_orm-website] [![sea_orm-cookbook][c-sea_orm-cookbook-badge]][c-sea_orm-cookbook] [![cat-database][cat-database-badge]][cat-database]{{hi:Databases}}
-
-[Seaography GraphQL server][c-seaography-website]{{hi:seaography}}⮳.
-
-Built on top of [`sqlx`][c-sqlx]⮳{{hi:sqlx}} (see above). There is also a related sea-query crate that provides a query builder without full ORM functionality.
-
-```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/query_builders_orms/sea_orm.rs:example}}
-```
-
+[write; move toasty example to a file](https://github.com/john-cd/rust_howto/issues/912)
 </div>
