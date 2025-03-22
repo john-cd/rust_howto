@@ -8,8 +8,8 @@ use derive_more::DerefMut;
 use derive_more::Display;
 use derive_more::From;
 use derive_more::Into;
-use derive_more::SubAssign;
 use derive_more::Sub;
+use derive_more::SubAssign;
 
 // The `derive_more` crate extends Rust's built-in derive functionality to
 // provide more automatic implementations for common traits.
@@ -77,7 +77,9 @@ fn main() {
 }
 
 // More complex example: Multiple derives on a single type.
-#[derive(Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy)]
+#[derive(
+    Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy,
+)]
 struct Amount(f64);
 
 // Custom error type with derive_more's `Error` trait.
