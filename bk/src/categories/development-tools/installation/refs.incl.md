@@ -4,5 +4,5 @@
 [p-cargo]: ../cargo/cargo.md
 [p-crates]: ../../../crates/index.md
 [p-documentation]: ../documentation/documentation.md
-[p-images]: ../../multimedia_images/images.md
-[p-macos]: ../../os_macos-apis/macos.md
+[p-images]: # "../../multimedia_images/images.md"
+[p-macos]: # "../../os_macos-apis/macos.md"
