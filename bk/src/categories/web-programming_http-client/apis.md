@@ -40,12 +40,6 @@ The [`reqwest::Client`][c-reqwest::Client]{{hi:reqwest::Client}}⮳ is responsib
 
 The example uses HTTP [`basic auth`][http-basic-auth]⮳ in order to authorize access to [`GitHub API`][github-api]{{hi:GitHub API}}⮳. Typical use case would employ one of the much more complex [`OAuth`][oauth-website]{{hi:OAuth}}⮳ authorization flows.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/974)
-
 ## Consume a Paginated RESTful API {#consume-a-paginated-restful-api}
 
 [![reqwest][c-reqwest-badge]][c-reqwest]{{hi:reqwest}} [![serde][c-serde-badge]][c-serde]{{hi:serde}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-encoding][cat-encoding-badge]][cat-encoding]{{hi:Encoding}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]
@@ -66,4 +60,9 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]{{
 {{#include ../../../crates/cats/web_programming_http_client/tests/apis/rate_limited.rs:example}}
 ```
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[review / fix NOW](https://github.com/john-cd/rust_howto/issues/974)
 </div>
