@@ -40,3 +40,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)

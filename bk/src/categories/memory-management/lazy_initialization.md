@@ -1,11 +1,19 @@
-# Lazy Initialization
+# Global Statics and Lazy Initialization
 
 {{#include lazy_initialization.incl.md}}
+
+- Immutable Global: use the `static` keyword (compile-time init, limited).
+- Lazy Init: [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c-once_cell]⮳{{hi:once_cell}} (runtime init, more control).
+- Mutable Global: `parking_lot::Mutex`/`RwLock` (thread-safe).
+- Thread-Local: `std::thread_local`.
+- Atomics: `std::sync::atomic`.
 
 Two key libraries:
 
 - [`once_cell`][c-once_cell]⮳{{hi:once_cell}}: newer crate with more ergonomic API. Should be preferred for all new projects.
 - [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}}: older crate. Its API is less convenient, but crate is stable and maintained.
+
+Prefer [`once_cell`][c-once_cell]⮳{{hi:once_cell}} over lazy_static. Use mutexes / rwlocks for mutable globals. Consider alternatives to globals.
 
 The core functionality of [`once_cell`][c-once_cell]⮳{{hi:once_cell}} is now included in the standard library with the remaining parts on track to be stabilized in future.
 
@@ -53,9 +61,25 @@ The corresponding `Sync` version of `OnceCell<T>` is `OnceLock<T>`.
 {{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_static.rs:example}}
 ```
 
+## Declare Lazily Evaluated Constants {#declare-lazily-evaluated-constant}
+
+[![lazy_static][c-lazy_static-badge]][c-lazy_static]{{hi:lazy_static}}
+[![lazy_static-crates.io][c-lazy_static-crates.io-badge]][c-lazy_static-crates.io]
+[![lazy_static-github][c-lazy_static-github-badge]][c-lazy_static-github]
+[![lazy_static-lib.rs][c-lazy_static-lib.rs-badge]][c-lazy_static-lib.rs]
+[![cat-caching][cat-caching-badge]][cat-caching]{{hi:Caching}}
+[![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
+[![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}}
+
+Declares a lazily evaluated constant [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳. The [`std::collections::HashMap`][c-std::collections::HashMap]{{hi:std::collections::HashMap}}⮳ will be evaluated once and stored behind a global static reference.
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/tests/lazy_static/lazy_constant.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[lazy_initialization: write, dedupe with global_static](https://github.com/john-cd/rust_howto/issues/411)
+[lazy_initialization: write / fix NOW](https://github.com/john-cd/rust_howto/issues/411)
 </div>

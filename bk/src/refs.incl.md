@@ -359,7 +359,7 @@
 [ex-encoding-url]: categories/encoding/string_encoding.md#url
 [ex-encoding-zerocopy]: categories/encoding/typecasts.md#zerocopy
 [ex-filesystem-avoid-writing-and-reading-from-the-same-file]: categories/filesystem/read-write.md#avoid-writing-and-reading-from-the-same-file
-[ex-filesystem-cwd]: categories/filesystem/cwd.md#cwd
+[ex-filesystem-cwd]: categories/filesystem/directories.md#cwd
 [ex-filesystem-directories]: categories/filesystem/user_directories.md#directories
 [ex-filesystem-dirs]: categories/filesystem/user_directories.md#dirs
 [ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case]: categories/filesystem/directory_traversal.md#find-all-files-with-given-pattern-ignoring-filename-case
@@ -373,7 +373,7 @@
 [ex-filesystem-recursively-calculate-file-sizes-at-given-depth]: categories/filesystem/directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex-filesystem-recursively-find-all-files-with-given-predicate]: categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex-filesystem-recursively-find-duplicate-file-names]: categories/filesystem/directory_traversal.md#recursively-find-duplicate-file-names
-[ex-filesystem-remove_dir_all]: categories/filesystem/cwd.md#remove_dir_all
+[ex-filesystem-remove_dir_all]: categories/filesystem/directories.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: categories/filesystem/tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: categories/filesystem/directory_traversal.md#traverse-directories-while-skipping-dotfiles
 [ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: categories/filesystem/_ignore.md#walk-the-filesystem-while-respecting-ignore-files
