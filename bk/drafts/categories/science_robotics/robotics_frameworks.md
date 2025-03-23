@@ -42,12 +42,6 @@ Framework for creating fast and reliable robots.
 
 `copper` is a user-friendly robotics framework designed for creating fast and reliable robots. Copper is to robots what a game engine is to games.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
-
 ## Frameworks {#skip}
 
 `dora-rs` - A fast and simple robotics frameworks for AI.
@@ -59,4 +53,9 @@ gRPC A high performance, open source universal RPC framework.
 
 `CleanIt` - Open-source Autonomy Software in Rust-lang with [gRPC][p-grpc] for the Roomba series robot vacuum cleaners.
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
 </div>
