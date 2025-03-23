@@ -18,7 +18,7 @@ String concatenation is the operation of joining two or more strings together en
 
 ## References
 
-[String concatenation benchmark][concat-benchmark-github]⮳.
+- [String concatenation benchmark][concat-benchmark-github]⮳.
 
 ## Related Topics {#skip}
 
