@@ -1,5 +1,5 @@
 [ex-filesystem-avoid-writing-and-reading-from-the-same-file]: read-write.md#avoid-writing-and-reading-from-the-same-file
-[ex-filesystem-cwd]: cwd.md#cwd
+[ex-filesystem-cwd]: directories.md#cwd
 [ex-filesystem-directories]: user_directories.md#directories
 [ex-filesystem-dirs]: user_directories.md#dirs
 [ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case]: directory_traversal.md#find-all-files-with-given-pattern-ignoring-filename-case
@@ -13,7 +13,7 @@
 [ex-filesystem-recursively-calculate-file-sizes-at-given-depth]: directory_traversal.md#recursively-calculate-file-sizes-at-given-depth
 [ex-filesystem-recursively-find-all-files-with-given-predicate]: directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex-filesystem-recursively-find-duplicate-file-names]: directory_traversal.md#recursively-find-duplicate-file-names
-[ex-filesystem-remove_dir_all]: cwd.md#remove_dir_all
+[ex-filesystem-remove_dir_all]: directories.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: directory_traversal.md#traverse-directories-while-skipping-dotfiles
 [ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: _ignore.md#walk-the-filesystem-while-respecting-ignore-files

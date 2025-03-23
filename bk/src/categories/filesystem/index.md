@@ -8,10 +8,10 @@ For most common file system tasks, `std::fs` and `std::path` will be sufficient.
 
 | Topic | Rust Crates or Modules |
 |---|---|
-| File I/O | `std::fs` (Standard library) provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.). |
-| Paths | `std::path` (Standard library) provides types and functions for working with file paths (`Path`, `PathBuf`), extracting file names, extensions, and other path components. |
-| Directories | `std::fs` (Standard library) includes functions for creating, listing, and traversing directories. |
-| File Metadata | `std::fs` (Standard library) allows you to retrieve information about files (size, modification time, permissions, etc.). |
+| File I/O | `std::fs` (standard library) provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.). |
+| Paths | `std::path` (standard library) provides types and functions for working with file paths (`Path`, `PathBuf`), extracting file names, extensions, and other path components. |
+| Directories | `std::fs` (standard library) includes functions for creating, listing, and traversing directories. |
+| File Metadata | `std::fs` (standard library) allows you to retrieve information about files (size, modification time, permissions, etc.). |
 | File System Operations | [`fs_extra`][c-fs_extra]⮳{{hi:fs_extra}} provides additional file system operations, such as copying directories recursively, setting file permissions, etc. |
 | Temporary Files and Directories | [`tempfile`][c-tempfile]⮳{{hi:tempfile}} creates temporary files and directories. |
 | Globbing (Matching File Patterns) | [`glob`][c-glob]⮳{{hi:glob}} matches file paths using 'glob' patterns. |
@@ -26,17 +26,23 @@ FIXME
 
 {{#include read-write.incl.md}}
 
-## Working with Standard Input/Output
+### Working with Standard Input/Output
 
 Reading from stdin, writing to stdout/stderr, and handling command-line arguments.
 
 FIXME
 
+### Symbolic Links
+
+FIXME
+
+### File Metadata
+
+FIXME
+
 ## Directories
 
-Creating, listing, deleting, and recursively traversing directories.
-
-{{#include cwd.incl.md}}
+{{#include directories.incl.md}}
 
 ### Directory Traversal
 
@@ -58,10 +64,6 @@ Creating, listing, deleting, and recursively traversing directories.
 
 FIXME
 
-## Symbolic Links
-
-FIXME
-
 ## File Watching
 
 {{#include file_watching.incl.md}}
@@ -80,4 +82,17 @@ FIXME
 
 <div class="hidden">
 TODO write, review in depth, add cross links; add missing sections NOW
+
+| [`open`][ex-filesystem-open] | [![open][c-open-badge]][c-open] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
+
+## `open` {#open}
+
+[![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
+
+[`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/tests/open.rs:example}}
+```
+
 </div>

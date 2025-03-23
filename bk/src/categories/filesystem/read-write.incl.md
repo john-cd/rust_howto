@@ -5,4 +5,5 @@
 | [Access a file randomly using a memory map][ex-filesystem-memory-map] | [![memmap2][c-memmap2-badge]][c-memmap2] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
 <div class="hidden">
+FIXME
 </div>

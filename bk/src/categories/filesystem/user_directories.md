@@ -2,7 +2,7 @@
 
 {{#include user_directories.incl.md}}
 
-Get platform-specific locations for [configuration][p-configuration], cache, and other data
+Get platform-specific locations for [configuration][p-configuration], cache, and other data.
 
 ## `dirs` {#dirs}
 
@@ -31,17 +31,4 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 
 <div class="hidden">
 [user_directories: write](https://github.com/john-cd/rust_howto/issues/362)
-
-- find a spot for the following:
-
-## `open` {#open}
-
-[![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
-
-[`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
-
-```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/open.rs:example}}
-```
-
 </div>

@@ -12,12 +12,13 @@
 {{#include ../../../crates/cats/filesystem/tests/tempfile/tempfile.rs:example}}
 ```
 
+### Other Options
+
+- The `tempdir` crate is being merged into `tempfile`.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tempfile: write](https://github.com/john-cd/rust_howto/issues/361)
-
-- tempdir.
-
+[tempfile: write NOW](https://github.com/john-cd/rust_howto/issues/361)
 </div>

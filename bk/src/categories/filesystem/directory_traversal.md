@@ -65,6 +65,18 @@ Root dir `"."` yields through [`walkdir::WalkDir::depth`][c-walkdir::WalkDir::de
 {{#include ../../../crates/cats/filesystem/tests/directory_traversal/skip_dot.rs:example}}
 ```
 
+## Walk the Filesystem While Respecting Ignore Files {#walk-the-filesystem-while-respecting-ignore-files}
+
+[![ignore][c-ignore-badge]][c-ignore] [![ignore-crates.io][c-ignore-crates.io-badge]][c-ignore-crates.io] [![ignore-github][c-ignore-github-badge]][c-ignore-github] [![ignore-lib.rs][c-ignore-lib.rs-badge]][c-ignore-lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
+
+[`ignore`][c-ignore]⮳{{hi:ignore}} [`ignore`][c-serde_ignored]⮳{{hi:ignore}} is a library for efficiently matching ignore files such as `.gitignore` against file paths.
+
+Recursive [filesystem][p-filesystem] walking that respects ignore files (like .gitignore)
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/tests/directory_traversal/ignore.rs:example}}
+```
+
 ## Recursively Calculate File Sizes at a Given Depth {#recursively-calculate-file-sizes-at-given-depth}
 
 [![walkdir][c-walkdir-badge]][c-walkdir] [![walkdir-crates.io][c-walkdir-crates.io-badge]][c-walkdir-crates.io] [![walkdir-github][c-walkdir-github-badge]][c-walkdir-github] [![walkdir-lib.rs][c-walkdir-lib.rs-badge]][c-walkdir-lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}{{hi:File sizes}}

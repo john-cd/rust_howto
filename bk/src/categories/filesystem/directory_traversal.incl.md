@@ -5,10 +5,12 @@
 | [Recursively find duplicate file names][ex-filesystem-recursively-find-duplicate-file-names] | [![walkdir][c-walkdir-badge]][c-walkdir] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Recursively find all files with a given predicate][ex-filesystem-recursively-find-all-files-with-given-predicate] | [![walkdir][c-walkdir-badge]][c-walkdir] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Traverse directories while skipping dotfiles][ex-filesystem-traverse-directories-while-skipping-dotfiles] | [![walkdir][c-walkdir-badge]][c-walkdir] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
+| [Walk the filesystem while respecting ignore files][ex-filesystem-walk-the-filesystem-while-respecting-ignore-files] | [![ignore][c-ignore-badge]][c-ignore] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Recursively calculate file sizes at a given depth][ex-filesystem-recursively-calculate-file-sizes-at-given-depth] | [![walkdir][c-walkdir-badge]][c-walkdir] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Find all files with a given extension recursively][ex-filesystem-find-all-png-files-recursively] | [![glob][c-glob-badge]][c-glob] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [Find all files with given pattern, ignoring filename case][ex-filesystem-find-all-files-with-given-pattern-ignoring-filename-case] | [![glob][c-glob-badge]][c-glob] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 | [`globset`][ex-filesystem-globset] | [![globset][c-globset-badge]][c-globset] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
 <div class="hidden">
+FIXME
 </div>
