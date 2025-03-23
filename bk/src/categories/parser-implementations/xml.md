@@ -1,4 +1,4 @@
-# XML
+# XML Parsing
 
 {{#include xml.incl.md}}
 
@@ -52,12 +52,13 @@
 {{#include ../../../crates/cats/parser_implementations/tests/xml/roxmltree.rs:example}}
 ```
 
+## Other Options
+
+[`minidom`][c-minidom]⮳{{hi:minidom}} builds a DOM tree.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[xml: include in index.md / SUMMARY.md; write](https://github.com/john-cd/rust_howto/issues/446)
-
-[`minidom`][c-minidom]⮳{{hi:minidom}} builds a DOM tree.
-
+[write](https://github.com/john-cd/rust_howto/issues/446)
 </div>
