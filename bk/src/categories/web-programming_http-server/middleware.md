@@ -37,5 +37,4 @@ A number of third-party libraries support [`tower`][c-tower]{{hi:tower}}⮳ and 
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/978)
-
 </div>

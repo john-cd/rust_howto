@@ -32,6 +32,5 @@ Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; add cross-links; review NOW](https://github.com/john-cd/rust_howto/issues/944)
-review `email_address`, `fast_chemail`
+[write; add cross-links; review; review `email_address`, `fast_chemail` NOW](https://github.com/john-cd/rust_howto/issues/944)
 </div>

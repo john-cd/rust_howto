@@ -29,5 +29,4 @@
 
 <div class="hidden">
 [batteries-included_frameworks: write](https://github.com/john-cd/rust_howto/issues/509)
-
 </div>

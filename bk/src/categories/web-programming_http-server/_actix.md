@@ -24,5 +24,4 @@ Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. A
 
 <div class="hidden">
 [actix: organize / write](https://github.com/john-cd/rust_howto/issues/506)
-
 </div>

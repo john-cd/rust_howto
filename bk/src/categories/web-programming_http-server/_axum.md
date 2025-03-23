@@ -24,5 +24,4 @@
 
 <div class="hidden">
 [axum: write](https://github.com/john-cd/rust_howto/issues/507)
-
 </div>

@@ -37,6 +37,5 @@ For the most comprehensive and user-friendly experience, `VS Code` (with the `ru
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; review in depth NOW](https://github.com/john-cd/rust_howto/issues/962)
-finish the table
+[write; review in depth finish the table NOW](https://github.com/john-cd/rust_howto/issues/962)
 </div>

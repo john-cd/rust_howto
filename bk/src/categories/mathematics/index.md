@@ -111,6 +111,5 @@ Combinatorics, set theory, and logic.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[in depth review](https://github.com/john-cd/rust_howto/issues/936)
-decide what to cover in examples
+[in depth review; decide what to cover in examples](https://github.com/john-cd/rust_howto/issues/936)
 </div>
