@@ -37,5 +37,4 @@ Vectors (`Vec`) can only store values that are the same type.
 
 <div class="hidden">
 [vectors: add](https://github.com/john-cd/rust_howto/issues/631)
-Creating, manipulating, iterating, searching, [sorting][p-sorting], filtering, and performing common operations like map/reduce. Include examples of using slices and [iterators][p-iterators] efficiently.
 </div>
