@@ -107,10 +107,15 @@ bacon
 bacon clippy
 ```
 
+## Related Topics
+
+Consider [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability.
+
+See [[building | Building]].
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/919)
-(See [`cargo-make`][c-cargo_make]⮳{{hi:cargo-make}} if you want something with a bulkier syntax but more cross-platform portability)
+[review; dedupe this page and cargo plugins > building; move from other section NOW](https://github.com/john-cd/rust_howto/issues/919)
 </div>
