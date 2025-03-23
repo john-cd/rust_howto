@@ -4,7 +4,7 @@
 
 Common data structures include arrays and vectors, which are contiguous block of memory that stores elements of the same data type; linked lists (sequences of nodes, where each node contains data and a pointer to the next node); stacks ("last-in, first-out" (LIFO) data structures); queues ("first-in, first-out" (FIFO) data structures); trees (hierarchical data structures consisting of nodes with parent-child relationships); sets (collections of unique elements); and maps (aka dictionaries, which store key-value pairs).
 
-Standard library collections include:
+Standard library collections (in `std::collections`) include:
 
 - `Vec<T>` (Vector) is a dynamic array that can grow or shrink as needed. It's the most commonly used collection in Rust and is similar to a dynamic array or list in other languages. Provides fast access by index.
 - `String` is a growable, UTF-8 encoded string. It's a fundamental data structure for working with text.
@@ -16,11 +16,21 @@ Standard library collections include:
 - `VecDeque<T>` (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
 - `BinaryHeap<T>` is a binary heap, often used to implement a priority queue.
 
-## Stack-allocated Arrays
+## Vectors and Arrays
+
+See [[vectors | Vectors]].
+
+### Stack-allocated Arrays
 
 {{#include stack_allocated_arrays.incl.md}}
 
+## Strings
+
+See [[strings | Strings]].
+
 ## Hashmaps and Friends
+
+See [[hashmaps | Hashmaps]].
 
 {{#include maps.incl.md}}
 
@@ -44,32 +54,33 @@ Standard library collections include:
 
 {{#include uuid.incl.md}}
 
-## Heapless
+## Heapless Data Structures
 
 {{#include heapless.incl.md}}
+
+## Additional Data Structures
+
+- [[simple_data_types | Simple Data Types]].
+- [[smart_pointers | Smart Pointers]].
+- Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}.
+- Specialized Data Structures:
+  - Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}.
+  - Trees and Tries: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`.
+  - Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}.
+  - Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}.
+  - Ranges as keys: [`rangemap`][c-rangemap]⮳{{hi:rangemap}} stores key-value pairs where keys are ranges.
+  - Matrices and Tensors: [`ndarray`][c-ndarray]⮳{{hi:ndarray}} provides an n-dimensional array for numerical computation.
+  - [[dataframes | Dataframes]].
+  - [[concurrent_data_structures | Concurrent Data Structures]].
+  - Bitsets: [`roaring`][c-roaring]⮳{{hi:roaring}} implements compressed bitsets.
+
+## Related Topics
+
+- [[serde | Serialization / Deserialization]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
-Link to stdlib pages
-
-## Additional Data Structures
-
-- [`rangemap`][c-rangemap]⮳{{hi:rangemap}} stores key-value pairs where keys are ranges.
-- [`ndarray`][c-ndarray]⮳{{hi:ndarray}} provides an n-dimensional array for numerical computation.
-- [`roaring`][c-roaring]⮳{{hi:roaring}} implements compressed bitsets.
-
-Implementing and using linked lists, deques, binary trees, and other less common but sometimes necessary structures.
-
-- Standard Library: `std::collections` (Vec, HashMap, LinkedList, BTreeMap, HashSet, etc.)
-- Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}
-- Specialized Data Structures:
-  - Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}
-  - Trees: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`
-  - Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}
-  - Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}
-- Serialization / Deserialization (often used with data structures): [`serde`][c-serde]⮳{{hi:serde}}
-
+[data-structures: expand / organize / link to array (make page) ](https://github.com/john-cd/rust_howto/issues/280)
 </div>

@@ -15,7 +15,7 @@
   - Destructuring via `let (x, y, z) = tup;`.
 - Arrays: `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. access via `let first = a[0];`.
   - A vector is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size.
-- Unit (aka void): `()`.
+- Unit (aka void in other languages): `()`.
 - Type aliases: `type Kilometers = i32;`.
 
 ## Handle Overflows {#overflow-handling}
@@ -29,9 +29,8 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[simple_data_types: edit](https://github.com/john-cd/rust_howto/issues/557)
-table?.
-add examples.
+[simple_data_types: edit / expand](https://github.com/john-cd/rust_howto/issues/557)
+table?. add examples.
 
 - [`char`][primitive-char].
 - [`never`][primitive-never].
