@@ -16,7 +16,7 @@
 [ex-filesystem-remove_dir_all]: directories.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: directory_traversal.md#traverse-directories-while-skipping-dotfiles
-[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: _ignore.md#walk-the-filesystem-while-respecting-ignore-files
+[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files
 [ex-filesystem-watch-files-or-dirs]: file_watching.md#watch-files-or-dirs
 [p-config]: ../config/index.md
 [p-configuration]: ../config/configuration.md

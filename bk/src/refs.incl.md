@@ -376,7 +376,7 @@
 [ex-filesystem-remove_dir_all]: categories/filesystem/directories.md#remove_dir_all
 [ex-filesystem-temporary-files-or-directories]: categories/filesystem/tempfile.md#temporary-files-or-directories
 [ex-filesystem-traverse-directories-while-skipping-dotfiles]: categories/filesystem/directory_traversal.md#traverse-directories-while-skipping-dotfiles
-[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: categories/filesystem/_ignore.md#walk-the-filesystem-while-respecting-ignore-files
+[ex-filesystem-walk-the-filesystem-while-respecting-ignore-files]: categories/filesystem/directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files
 [ex-filesystem-watch-files-or-dirs]: categories/filesystem/file_watching.md#watch-files-or-dirs
 [ex-formatting-formatting-attributes]: categories/development-tools/formatting/formatting.md#formatting-attributes
 [ex-formatting-rustfmt-config]: categories/development-tools/formatting/formatting.md#rustfmt-config

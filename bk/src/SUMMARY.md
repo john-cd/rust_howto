@@ -211,7 +211,6 @@
   - [Read & write](categories/filesystem/read-write.md)
   - [Current working directory](categories/filesystem/directories.md)
   - [Directory traversal](categories/filesystem/directory_traversal.md)
-  - [Ignore files](categories/filesystem/_ignore.md)
   - [File watching](categories/filesystem/file_watching.md)
   - [Temporary files and directories](categories/filesystem/tempfile.md)
   - [User directories](categories/filesystem/user_directories.md)
