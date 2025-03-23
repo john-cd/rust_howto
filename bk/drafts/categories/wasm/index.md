@@ -46,4 +46,5 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 [write](https://github.com/john-cd/rust_howto/issues/970)
 Browser-based Execution.
 Node.js with WASM.
+Cover [`wat`][c-wat]⮳{{hi:wat}}, [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}}
 </div>
