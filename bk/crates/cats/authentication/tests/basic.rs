@@ -1,31 +1,20 @@
 // ANCHOR: example
-use std::fs::File;
-use std::io::copy;
+use reqwest::Error;
+use reqwest::blocking::Client;
 
-use anyhow::Result;
-use tempfile::Builder;
+fn main() -> Result<(), Error> {
+    let client = Client::new();
 
-#[tokio::main]
-async fn main() -> Result<()> {
-    let tmp_dir = Builder::new().prefix("example").tempdir()?;
-    let target = "https://www.rust-lang.org/logos/rust-logo-512x512.png";
-    let response = reqwest::get(target).await?;
+    let user_name = "testuser".to_string();
+    let password: Option<String> = None;
 
-    let mut dest = {
-        let fname = response
-            .url()
-            .path_segments()
-            .and_then(|mut segments| segments.next_back())
-            .and_then(|name| if name.is_empty() { None } else { Some(name) })
-            .unwrap_or("tmp.bin");
+    let response = client
+        .get("https://httpbin.org/")
+        .basic_auth(user_name, password)
+        .send();
 
-        println!("file to download: '{}'", fname);
-        let fname = tmp_dir.path().join(fname);
-        println!("will be located under: '{:?}'", fname);
-        File::create(fname)?
-    };
-    let content = response.text().await?;
-    copy(&mut content.as_bytes(), &mut dest)?;
+    println!("{:?}", response);
+
     Ok(())
 }
 // ANCHOR_END: example
@@ -35,4 +24,3 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [review; authentication/basic.rs is noplayground because of network use. rewrite?](https://github.com/john-cd/rust_howto/issues/225)

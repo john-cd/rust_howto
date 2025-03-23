@@ -12,11 +12,8 @@ Creates a target [`std::fs::File`][c-std::fs::File]{{hi:std::fs::File}}⮳ with 
 [`tempfile::Builder::tempdir`][c-tempfile::Builder::tempdir]{{hi:tempfile::Builder::tempdir}}⮳ and copies downloaded data into it with [`std::io::copy`][c-std::io::copy]{{hi:std::io::copy}}⮳. The temporary directory is automatically removed on program exit.
 
 ```rust,editable
+{{#include ../../../crates/cats/web_programming_http_client/tests/download/download.rs:example}}
 ```
-
-<div class="hidden">
-[wrong example](https://github.com/john-cd/rust_howto/issues/644)?
-</div>
 
 ## POST a File to `paste.rs` {#post-a-file-to-paste-rs}
 

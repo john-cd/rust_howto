@@ -2335,8 +2335,6 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "reqwest",
- "tempfile",
- "tokio",
 ]
 
 [[package]]
@@ -30561,6 +30559,7 @@ dependencies = [
  "hyper-util",
  "reqwest",
  "serde 1.0.219",
+ "tempfile",
  "tokio",
  "ureq 3.0.10",
  "url",

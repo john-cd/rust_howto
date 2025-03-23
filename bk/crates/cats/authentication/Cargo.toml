@@ -15,9 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+reqwest = "0.12.12"
 
 ## General
 anyhow = "1.0.95"
-reqwest = "0.12.12"
-tempfile = "3.15.0"
-tokio = { version = "1.43.0", features = ["full"] }
