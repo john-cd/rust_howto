@@ -28,5 +28,4 @@ dyn Trait + 'static
 
 <div class="hidden">
 [trait_objects: review](https://github.com/john-cd/rust_howto/issues/562)
-
 </div>

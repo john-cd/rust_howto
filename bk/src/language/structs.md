@@ -27,5 +27,4 @@ Struct fields{{hi:Fields}} follow the general rule of everything being private b
 
 <div class="hidden">
 [structs: add description](https://github.com/john-cd/rust_howto/issues/559)
-
 </div>
