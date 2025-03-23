@@ -21,6 +21,8 @@
 - [`Rust Language Bible`][rust-course-github]⮳.
 - [How to learn modern Rust][how_to_learn_modern_rust-github]⮳.
 - [Roadmap for Rust][roadmap-rust-website]⮳.
+- [Rust tutorial that actually teaches Rust][rust_tutorial_that_actually_teaches_rust]⮳.
+- [Rust gentle intro][rust-gentle-intro]⮳.
 
 ## Ferrous Systems {#ferrous-systems-training}
 
