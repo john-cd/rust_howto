@@ -51,11 +51,13 @@ Memory profiling tools like `Valgrind` are useful for optimizing memory usage.
 - [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
 - [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: A heap profiler that can track memory allocations.
 
+See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[memory-management/index: organize; align table and sections; write mssing sections; cross link NOW](https://github.com/john-cd/rust_howto/issues/410)
+[memory-management/index: organize; align table and sections; write missing sections; cross link NOW](https://github.com/john-cd/rust_howto/issues/410)
 cover https://doc.rust-lang.org/beta/unstable-book/compiler-flags/sanitizer.html
 
 | Memory Safety Tools | Address Sanitizer (`ASan`) (Compiler feature) detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`). Memory Sanitizer (`MSan`) (Compiler feature) detects uninitialized memory usage. |
