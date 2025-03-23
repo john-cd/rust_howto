@@ -35,10 +35,18 @@ B-Tree Set is similar to `HashSet`, but it keeps the elements sorted.
 {{#include ../../../crates/standard_library/tests/data_structures/btreeset.rs:example}}
 ```
 
+## Related Topics
+
+- [[hashmaps | Hashmaps]].
+- Other [[maps | Maps]].
+- [[sorting | Sorting]].
+- [[vectors | Vectors]].
+
+Refer as well to the `ordered_float` example in the [[additional_numeric_types | Additional Numeric Types]] chapter.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1168)
-Add links to BTreeMap / BTreeSet examples in [`std`][c-std]⮳{{hi:std}} lib section
 </div>
