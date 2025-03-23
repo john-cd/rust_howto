@@ -4,22 +4,22 @@
 
 [Rust formal methods][rust-formal-methods-website]{{hi:Formal methods}}⮳.
 
-Formal Methods are a collection of mathematically rigorous techniques used to specify, design, and verify software and hardware systems. These methods employ formal logic and mathematical proofs to ensure the correctness and reliability of systems, especially those that are safety-critical or security-critical.
+_Formal methods_ are a collection of mathematically rigorous techniques used to specify, design, and verify software and hardware systems. These methods employ formal logic and mathematical proofs to ensure the correctness and reliability of systems, especially those that are safety-critical or security-critical.
 
-Program verification is the process of formally proving the correctness of a program. This involves analyzing the code and ensuring that it meets specific properties, such as:
+_Program verification_ is the process of formally proving the correctness of a program. This involves analyzing the code and ensuring that it meets specific properties, such as:
 
 - Memory safety: The program does not have memory leaks, buffer overflows, or other memory-related errors.
 - Thread safety: The program can be executed concurrently without causing data races or other [concurrency][p-concurrency] issues.
 - Functional correctness: The program produces the correct output for all valid inputs.
 - [Performance][p-performance]: The program meets specific [performance][p-performance] requirements, such as execution time or memory usage.
 
-There are two [main][p-main] approaches to Rust program verification:
+There are two main approaches to Rust program verification:
 
 1. Static verification: This involves analyzing the code at compile time to identify potential errors and prove the correctness of certain properties. Rust's type system and ownership model already provide a strong foundation for static verification. Additionally, tools like [`miri`][c-miri]⮳{{hi:miri}} and [`kani`][c-kani]⮳{{hi:kani}} can be used to perform more advanced static analysis.
 
 2. Dynamic verification: This involves running the program with different inputs and checking its behavior against expected results. Techniques like fuzz [testing][p-testing] can be used to identify potential issues.
 
-## Verify Your Rust Code {#code-verifiers}
+## Verify Your Rust Code with `kani` {#code-verifiers}
 
 [![kani][c-kani-badge]][c-kani] [![kani-crates.io][c-kani-crates.io-badge]][c-kani-crates.io] [![kani-github][c-kani-github-badge]][c-kani-github] [![kani-lib.rs][c-kani-lib.rs-badge]][c-kani-lib.rs]{{hi:kani}}{{hi:Model-checking}}{{hi:Verification}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}{{hi:kani}}
 
@@ -61,58 +61,51 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 {{#include ../../../../crates/cats/development_tools/src/kani.rs:example}}
 ```
 
+## Concurrent code testing
+
+Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
+
+### `shuttle` {#shuttle}
+
+[![shuttle][c-shuttle-badge]][c-shuttle] [![shuttle-crates.io][c-shuttle-crates.io-badge]][c-shuttle-crates.io] [![shuttle-github][c-shuttle-github-badge]][c-shuttle-github] [![shuttle-lib.rs][c-shuttle-lib.rs-badge]][c-shuttle-lib.rs]{{hi:shuttle}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
+
+`shuttle` is a library for testing concurrent Rust code.
+
+### `loom` {#loom}
+
+[![loom][c-loom-badge]][c-loom] [![loom-crates.io][c-loom-crates.io-badge]][c-loom-crates.io] [![loom-github][c-loom-github-badge]][c-loom-github] [![loom-lib.rs][c-loom-lib.rs-badge]][c-loom-lib.rs]{{hi:loom}}{{hi:Lock-free}}{{hi:Atomic}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+`loom` allows permutation testing for concurrent code.
+
+## Other Tools
+
+- [MIRAI][mirai-github]⮳.
+- [`prusti`][prusti-website]⮳ is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
+- [Creusot][creusot-github]⮳ helps you prove your code is correct in an automated fashion.
+- `crucible` (symbolic execution).
+
+## Related Topics
+
+| Topic | Rust Crates |
+|---|---|
+| Static Analysis/Linting | `clippy` (for catching common code errors and style issues) |
+| Property-Based Testing | `proptest`, `quickcheck` |
+| Unit [Testing][p-testing] | Use `cargo test` (built-in testing framework) |
+| Integration Testing | Often uses`cargo test`. Focuses on testing interactions between modules or components. |
+| Fuzzing | `cargo fuzz`, `afl.rs` (bindings to AFL) |
+| Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
+
+## References
+
+- [Model_checking][wikipedia-model-checking]⮳.
+- [Kani Rust Verifier][c-kani-website]⮳.
+- [Announcing the Kani Rust Verifier Project][c-kani-announcing-the-kani-rust-verifier-project-blog]⮳.
+- [Using the Kani Rust Verifier on a Firecracker Example][c-kani-using-the-kani-rust-verifier-on-a-firecracker-example-blog]⮳.
+- [Using the Kani Rust Verifier on a Rust Standard Library CVE][c-kani-using-the-kani-rust-verifier-on-a-rust-standard-library-cve]⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 [code_verification: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/303)
-
-Link to:
-
-Static Analysis/Linting: clippy (for catching common code errors and style issues)
-Formal Verification: [`kani`][c-kani]⮳{{hi:kani}} (model checker), crucible (symbolic execution) - These are more advanced and complex tools.
-Property-Based [Testing][p-testing]: proptest, quickcheck
-Unit Testing: std::test (built-in [testing][p-testing] framework)
-Integration Testing: (Often uses std::test but focuses on [testing][p-testing] interactions between modules or components)
-Fuzzing: [cargo][p-cargo] fuzz, afl.rs (bindings to AFL)
-Type Checking: (Built into the Rust compiler)
-Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
-add
-[Model_checking][wikipedia-model-checking]
-
-- [The Kani Rust Verifier][c-kani-website]⮳.
-- [Announcing the Kani Rust Verifier Project][c-kani-announcing-the-kani-rust-verifier-project-blog]⮳.
-- [Using the Kani Rust Verifier on a Firecracker Example][c-kani-using-the-kani-rust-verifier-on-a-firecracker-example-blog]⮳.
-- [Using the Kani Rust Verifier on a Rust Standard Library CVE][c-kani-using-the-kani-rust-verifier-on-a-rust-standard-library-cve]⮳.
-
----
-
-[![loom][c-loom-badge]][c-loom] [![loom-crates.io][c-loom-crates.io-badge]][c-loom-crates.io] [![loom-github][c-loom-github-badge]][c-loom-github] [![loom-lib.rs][c-loom-lib.rs-badge]][c-loom-lib.rs]{{hi:loom}}{{hi:Lock-free}}{{hi:Atomic}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
-
-Permutation testing for concurrent code
-
----
-
-[![shuttle][c-shuttle-badge]][c-shuttle] [![shuttle-crates.io][c-shuttle-crates.io-badge]][c-shuttle-crates.io] [![shuttle-github][c-shuttle-github-badge]][c-shuttle-github] [![shuttle-lib.rs][c-shuttle-lib.rs-badge]][c-shuttle-lib.rs]{{hi:shuttle}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
-
-A library for testing concurrent Rust code
-
----
-
-^^ for [concurrency][p-concurrency] testing. Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
-
----
-
-cover
-[MIRAI][mirai-github]⮳.
-
-cover
-[prusti][prusti-website]⮳.
-
-Prusti is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
-
----
-[Creusot][creusot-github]⮳.
-
-Creusot helps you prove your code is correct in an automated fashion.
 </div>
