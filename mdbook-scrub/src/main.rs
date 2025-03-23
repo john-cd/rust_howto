@@ -26,6 +26,7 @@ pub fn make_app() -> Command {
 fn main() {
     let matches = make_app().get_matches();
 
+    // FIXME
     // // Logging
     // let log_file = std::fs::OpenOptions::new()
     //     .append(true)
