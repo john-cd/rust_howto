@@ -38,5 +38,5 @@ Use [`glommio`][c-glommio]⮳{{hi:glommio}} if you need {{i:io_uring support}}. 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[server: write](https://github.com/john-cd/rust_howto/issues/425)
+[server: write; add cross-links: async, web, http server](https://github.com/john-cd/rust_howto/issues/425)
 </div>
