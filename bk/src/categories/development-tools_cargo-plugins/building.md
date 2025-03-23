@@ -38,7 +38,7 @@ cargo make --version
 The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are the following:
 
 - It doesn't require any other binaries besides [`cargo`][c-cargo]⮳{{hi:cargo}} and [`rustc`][rustc]⮳{{hi:rustc}}, it fully bootstraps from them.
-- Unlike bash, it can more easily be cross platform, as it doesn't use the shell.
+- Unlike `bash`, it can more easily be cross platform, as it doesn't use the shell.
 
 ### Use `devx` {#devx}
 
@@ -57,36 +57,21 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 
 [`xshell`][c-xshell-github]⮳{{hi:xshell}} provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts.
 
+## Related Topics
+
+| Topic | Rust Crates |
+|---|---|
+| General Build Tools | `cargo build` (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
+| Cross-Compilation | `cross` simplifies cross-compilation. |
+| Packaging, Distribution | `cargo-deb` creates Debian packages. `cargo-rpm` creates RPM packages. `create-dmg` creates macOS disk images. |
+| Build Script Helpers | `cc` helps with compiling C/C++ code in build scripts. `pkg-config` finds system libraries. |
+| Code Generation | Use build scripts. |
+| Link-Time Optimization (LTO) Configuration | Configured in Cargo.toml |
+| Incremental Compilation Management | Handled by [cargo][p-cargo] directly. |
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[building: expand](https://github.com/john-cd/rust_howto/issues/309)
-
-Link to:
-
-General Build Tools:
-
-cargo build: (Built-in, but fundamental) Compiles your project.
-cargo check: Checks your code for errors without compiling.
-Cross-Compilation:
-
-cross: Simplifies cross-compilation.
-Packaging/Distribution:
-
-cargo-deb: Creates Debian packages.
-cargo-rpm: Creates RPM packages.
-create-dmg: Creates macOS disk images.
-Build Automation/Task Running:
-
-xtask: Manages complex build tasks, often used for CI/CD.
-Build Script Helpers:
-
-cc: Helps with compiling C/C++ code in build scripts.
-pkg-config: Finds system libraries.
-Code Generation: (Often done in build scripts, but no single "build util" crate)
-
-Link-Time Optimization (LTO) Configuration: (Configured in Cargo.toml, not a separate plugin)
-
-Incremental Compilation Management: (Handled by [cargo][p-cargo] directly)
+[building: expand; cross link](https://github.com/john-cd/rust_howto/issues/309)
 </div>
