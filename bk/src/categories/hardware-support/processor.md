@@ -6,7 +6,6 @@
 
 - Rust generally doesn't require direct CPU manipulation. The compiler and standard library provide good abstractions.
 - SIMD and atomic operations are important for performance.
-
 - Direct access to CPU features (like inline [assembly][p-assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
 
 ## CPU Identification {#skip}
@@ -43,11 +42,13 @@ Compiler intrinsics are functions that map directly to CPU instructions. They're
 
 ### Atomic Operations {#skip}
 
+See [[atomics | Atomics]].
+
 ### Profiling {#skip}
 
 Profiling tools help you identify CPU-related performance issues.
 
-`cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (Linux): These tools help you identify performance bottlenecks in your code, which can be related to CPU usage.
+`cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (Linux) help you identify performance bottlenecks in your code, which can be related to CPU usage.
 
 See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
@@ -63,15 +64,11 @@ See [[concurrency | Concurrency]].
 
 ## Memory Model {#skip}
 
-Understanding the CPU's memory model is important for writing correct concurrent code.
-
-See [[memory-management | Memory Management]].
+Understanding the CPU's memory model is important for writing correct concurrent code. See [[memory-management | Memory Management]].
 
 ### Operating System Interaction {#skip}
 
-System calls are used to interact with the operating system, which in turn interacts with the CPU.
-
-See [[os | OS]].
+System calls are used to interact with the operating system, which in turn interacts with the CPU. See [[os | OS]].
 
 ### Embedded Systems Programming {#skip}
 
@@ -81,6 +78,5 @@ In embedded systems, you often have more direct access to CPU features and perip
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[processor: expand](https://github.com/john-cd/rust_howto/issues/399)
-link to Atomics
+[processor: expand NOW](https://github.com/john-cd/rust_howto/issues/399)
 </div>
