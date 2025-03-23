@@ -10,7 +10,7 @@
 {{#include ../../crates/standard_library/tests/other/strings.rs:example}}
 ```
 
-## Placeholders {#placeholders}
+## String Formatting; Placeholders {#placeholders}
 
 [![std][c-std-badge]][c-std]
 
@@ -42,7 +42,7 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 
 ## String Manipulation {#skip}
 
-- [[regex | Regex]].
+- [[regex | Regex (Regular Expressions)]].
 - [[parsing | Parsing]].
 - [[text-processing | Text Processing]].
 - [[string_parsing | String Parsing]].
@@ -58,12 +58,13 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 - [[rust_search_engines | Rust Search Engines]].
 - [[template-engine | Template Engine]].
 - [[text_layout | Text Layout]].
+- [[unicode | Unicode]] handling.
 - [[value-formatting | Value Formatting]].
+- Working with [[other_strings | Other Strings]] (CString, OsString).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [strings: add](https://github.com/john-cd/rust_howto/issues/630)
-String manipulation, [formatting][p-formatting], searching, replacing, regular expressions, Unicode handling, and working with different string types (String, &str, OsString).
 </div>
