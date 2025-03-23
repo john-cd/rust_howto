@@ -18,6 +18,12 @@ To process multiple items from a stream{{hi:Stream}} concurrently, use the [`fut
 {{#include ../../../crates/cats/asynchronous/tests/streams/streams2.rs:example}}
 ```
 
+The following example showcases various utilities for working with streams:
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/asynchronous/tests/streams/streams3.rs:example}}
+```
+
 ## See Also
 
 See also [Tokio][p-tokio] [`async-stream`][c-async_stream]⮳{{hi:async-stream}}.
@@ -29,9 +35,4 @@ See also [Tokio][p-tokio] [`async-stream`][c-async_stream]⮳{{hi:async-stream}}
 
 <div class="hidden">
 [add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
-
-```rust,editable,noplayground
-{{#include ../../../crates/cats/asynchronous/tests/streams/streams3.rs:example}}
-```
-
 </div>

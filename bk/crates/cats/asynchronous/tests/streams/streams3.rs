@@ -7,8 +7,6 @@ use futures_util::stream::StreamExt;
 // use futures_util::stream::TryStreamExt;
 use tokio::time;
 
-// This example showcases various utilities for working with streams.
-
 // Add these dependencies to your Cargo.toml:
 // [dependencies]
 // futures = "0.3"
