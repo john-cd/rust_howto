@@ -2,6 +2,14 @@
 
 {{#include external_commands.incl.md}}
 
+## Locate Installed Executables with `which` {#which}
+
+[![which][c-which-badge]][c-which] [![which-crates.io][c-which-crates.io-badge]][c-which-crates.io] [![which-github][c-which-github-badge]][c-which-github] [![which-lib.rs][c-which-lib.rs-badge]][c-which-lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
+
+`which` is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
+
+{{#example which}}
+
 ## Run an External Command and Process its `stdout` {#run-an-external-command-and-process-stdout}
 
 [![std][c-std-badge]][c-std] [![regex][c-regex-badge]][c-regex]{{hi:regex}} [![cat-os][cat-os-badge]][cat-os]{{hi:OS}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}{{hi:External command}}{{hi:stdout}}
@@ -82,5 +90,5 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/946)
+[write which; review](https://github.com/john-cd/rust_howto/issues/946)
 </div>

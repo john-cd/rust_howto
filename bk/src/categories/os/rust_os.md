@@ -16,5 +16,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; move to written-in-rust](https://github.com/john-cd/rust_howto/issues/639)?
+[write; move to written-in-rust?](https://github.com/john-cd/rust_howto/issues/639)
 </div>
