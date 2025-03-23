@@ -2374,6 +2374,14 @@
 [c-freertos-lib.rs-badge]: https://img.shields.io/badge/lib.rs-freertos-yellow
 [c-freertos-lib.rs]: https://lib.rs/crates/freertos
 [c-freertos]: https://docs.rs/freertos
+[c-frunk-badge]: https://img.shields.io/crates/v/frunk?label=frunk
+[c-frunk-crates.io-badge]: https://img.shields.io/badge/crates.io-frunk-crimson
+[c-frunk-crates.io]: https://crates.io/crates/frunk
+[c-frunk-github-badge]: https://img.shields.io/badge/frunk-steelblue?logo=github
+[c-frunk-github]: https://github.com/lloydmeta/frunk
+[c-frunk-lib.rs-badge]: https://img.shields.io/badge/lib.rs-frunk-yellow
+[c-frunk-lib.rs]: https://lib.rs/crates/frunk
+[c-frunk]: https://docs.rs/frunk
 [c-fs_extra-badge]: https://img.shields.io/crates/v/fs_extra?label=fs_extra
 [c-fs_extra-crates.io-badge]: https://img.shields.io/badge/crates.io-fs__extra-crimson
 [c-fs_extra-crates.io]: https://crates.io/crates/fs_extra
