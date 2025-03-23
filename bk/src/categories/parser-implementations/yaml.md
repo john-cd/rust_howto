@@ -12,14 +12,13 @@
 {{#include ../../../crates/cats/parser_implementations/tests/yaml/serde_yml.rs:example}}
 ```
 
+## Other Options
+
+Consider [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}. 'serde_yaml' is deprecated.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1186)
-
-[`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}}, [`yaml-rust`][c-yaml_rust]⮳{{hi:yaml-rust}}
-
-[`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} integrates well with [`serde`][c-serde]⮳{{hi:serde}}.
-
 </div>
