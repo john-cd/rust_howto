@@ -2,21 +2,7 @@
 
 [![cat-template-engine][cat-template-engine-badge]][cat-template-engine]{{hi:Template engines}}
 
-Crates designed to combine templates with data to produce result documents, usually with an emphasis on processing text.
-
-## Create HTML Files from a Template
-
-{{#include tera.incl.md}}
-
-## Create Markdown Fragments from a Template
-
-{{#include tinytemplate.incl.md}}
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[template-engine/index: write](https://github.com/john-cd/rust_howto/issues/482)
+Crates designed to combine templates with data to produce documents, usually with an emphasis on processing text.
 
 ## Rust Crates for Template Engines
 
@@ -55,4 +41,19 @@ The best template engine for your project depends on your specific requirements:
 * HTML Generation: [`maud`][c-maud]⮳{{hi:maud}} and [`yew`][c-yew]⮳{{hi:yew}} are well-suited for HTML templating.
 * Logic-less Templating: [`handlebars`][c-handlebars]⮳{{hi:handlebars}} and [`minijinja`][c-minijinja]⮳{{hi:minijinja}} (used in a certain way) are good choices.
 
+## Code Examples
+
+### Create HTML Files from a Template
+
+{{#include tera.incl.md}}
+
+### Create Markdown Fragments from a Template
+
+{{#include tinytemplate.incl.md}}
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[template-engine/index: write](https://github.com/john-cd/rust_howto/issues/482)
 </div>
