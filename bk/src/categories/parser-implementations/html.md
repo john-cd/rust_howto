@@ -42,13 +42,19 @@ tl = { version = "0.7.8", features = ["simd"] }
 {{#include ../../../crates/cats/parser_implementations/tests/html/cssparser.rs:example}}
 ```
 
+## `scraper` {#scraper}
+
+[![scraper][c-scraper-badge]][c-scraper] [![scraper-crates.io][c-scraper-crates.io-badge]][c-scraper-crates.io] [![scraper-github][c-scraper-github-badge]][c-scraper-github] [![scraper-lib.rs][c-scraper-lib.rs-badge]][c-scraper-lib.rs]{{hi:scraper}}{{hi:Css}}{{hi:Html}}{{hi:Selector}}{{hi:Scraping}}
+
+HTML parsing and querying with CSS selectors. [`scraper`][c-scraper]⮳{{hi:scraper}} uses CSS selectors.
+
+## Other options
+
+[`select`][c-select]⮳{{hi:select}} is another option. [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}} is a fast and robust HTML parser.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1187)
-
-[`scraper`][c-scraper]⮳{{hi:scraper}}, [`select`][c-select]⮳{{hi:select}}, [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}}
-
-[`scraper`][c-scraper]⮳{{hi:scraper}} uses CSS selectors. [`select`][c-select]⮳{{hi:select}} is another option. [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}} is a fast and robust HTML parser.
 </div>
