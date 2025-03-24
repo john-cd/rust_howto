@@ -2,7 +2,6 @@
 
 {{#include rust_idioms.incl.md}}{{hi:Rust patterns}}
 
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
