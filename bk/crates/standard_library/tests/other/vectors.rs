@@ -48,7 +48,8 @@ fn main() {
     println!("Sorted numbers: {:?}", sorted_numbers);
 
     // Filtering
-    let even_numbers: Vec<i32> = numbers.iter().filter(|&x| x % 2 == 0).cloned().collect();
+    let even_numbers: Vec<i32> =
+        numbers.iter().filter(|&x| x % 2 == 0).cloned().collect();
     println!("Even numbers: {:?}", even_numbers);
 
     // Map
@@ -79,15 +80,15 @@ fn main() {
     for num in mutable_slice.iter_mut() {
         *num *= 2;
     }
-    println!("Mutable numbers after slice mutation: {:?}", mutable_numbers);
+    println!(
+        "Mutable numbers after slice mutation: {:?}",
+        mutable_numbers
+    );
 
     // Chaining iterators for complex operations
     let numbers2: Vec<i32> = vec![10, 20, 30, 40, 50];
-    let filtered_squared_sum: i32 = numbers2
-        .iter()
-        .filter(|&x| x > &20)
-        .map(|&x| x * x)
-        .sum();
+    let filtered_squared_sum: i32 =
+        numbers2.iter().filter(|&x| x > &20).map(|&x| x * x).sum();
 
     println!("Filtered squared sum: {}", filtered_squared_sum);
 
