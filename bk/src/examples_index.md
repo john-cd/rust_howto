@@ -100,6 +100,10 @@
 
 ## Concurrency
 
+### Atomics
+
+{{#include categories/concurrency/atomics.incl.md}}
+
 ### Concurrent Data Structures
 
 {{#include categories/concurrency/concurrent_data_structures.incl.md}}
@@ -432,9 +436,17 @@
 
 {{#include categories/development-tools_debugging/config_log.incl.md}}
 
+### Debugging
+
+{{#include categories/development-tools_debugging/debugging.incl.md}}
+
 ### Diagnostic Functions
 
 {{#include categories/development-tools_debugging/diagnostic_functions.incl.md}}
+
+### Distributed Telemetry
+
+{{#include categories/development-tools_debugging/distributed_telemetry.incl.md}}
 
 ### Log
 
@@ -520,9 +532,9 @@
 
 ## Filesystem
 
-### `cwd`
+### Directories
 
-{{#include categories/filesystem/cwd.incl.md}}
+{{#include categories/filesystem/directories.incl.md}}
 
 ### Directory Traversal
 
@@ -578,13 +590,13 @@
 
 ## Memory Management
 
-### Global Static
-
-{{#include categories/memory-management/global_static.incl.md}}
-
 ### Lazy Initialization
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
+
+### Memory Allocation
+
+{{#include categories/memory-management/memory_allocation.incl.md}}
 
 ## Network Programming
 
@@ -650,23 +662,15 @@
 
 {{#include categories/parser-implementations/yaml.incl.md}}
 
-## Rust Patterns
-
-### Design Patterns
-
-{{#include categories/rust-patterns/design_patterns.incl.md}}
+## Error: Handling
 
 ### Error Customization
 
-{{#include categories/rust-patterns/error_customization.incl.md}}
+{{#include categories/rust-patterns/error_handling/error_customization.incl.md}}
 
 ### Error Handling
 
-{{#include categories/rust-patterns/error_handling.incl.md}}
-
-### Functional Programming
-
-{{#include categories/rust-patterns/functional_programming.incl.md}}
+{{#include categories/rust-patterns/error_handling/error_handling.incl.md}}
 
 ## Template Engine
 
@@ -719,6 +723,10 @@
 {{#include categories/text-processing/unicode.incl.md}}
 
 ## Web Programming
+
+### HTTP Types and Interfaces
+
+{{#include categories/web-programming/http_types_and_interfaces.incl.md}}
 
 ### Mime
 

@@ -553,7 +553,6 @@
 [ex-rust-patterns-obtain-backtrace]: categories/rust-patterns/error_handling/error_handling.md#obtain-backtrace
 [ex-rust-patterns-question-mark-operator]: categories/rust-patterns/error_handling/error_handling.md#question-mark-operator
 [ex-rust-patterns-recoverable-errors-with-result]: categories/rust-patterns/error_handling/error_handling.md#recoverable-errors-with-result
-[ex-rust-patterns-rust-idioms]: categories/rust-patterns/_rust_idioms.md#rust-idioms
 [ex-rust-patterns-thiserror]: categories/rust-patterns/error_handling/error_customization.md#thiserror
 [ex-rust-patterns-typed-builder]: categories/rust-patterns/_builder_pattern.md#typed-builder
 [ex-rust-patterns-typestate-pattern]: categories/rust-patterns/design_patterns.md#typestate-pattern
@@ -580,9 +579,9 @@
 [ex-standard-library-vec]: standard-library/vectors.md#vec
 [ex-template-engine-create-html-from-template]: categories/template-engine/tera.md#create-html-from-template
 [ex-template-engine-tinytemplate]: categories/template-engine/tinytemplate.md#tinytemplate
-[ex-text-editors-helix]: categories/text-editors/ides.md
-[ex-text-editors-intelliJ]: categories/text-editors/ides.md
-[ex-text-editors-neovim]: categories/text-editors/ides.md
+[ex-text-editors-helix]: categories/text-editors/ides.md#helix
+[ex-text-editors-neovim]: categories/text-editors/ides.md#neovim
+[ex-text-editors-rustrover]: categories/text-editors/ides.md#rustrover
 [ex-text-editors-vs-code]: categories/text-editors/ides.md#vs-code
 [ex-text-editors-zed]: categories/text-editors/ides.md#zed
 [ex-text-processing-collect-unicode-graphemes]: categories/text-processing/string_parsing.md#collect-unicode-graphemes
