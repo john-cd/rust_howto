@@ -90,7 +90,5 @@ See [Async][p-async]⮳.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[traits: review](https://github.com/john-cd/rust_howto/issues/561)
-[async_traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/216)
-
+[traits: review; async_traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/561)
 </div>
