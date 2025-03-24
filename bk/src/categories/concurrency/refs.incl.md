@@ -1,7 +1,7 @@
 [ex-concurrency-actix]: _actors.md#actix
 [ex-concurrency-any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel
-[ex-concurrency-arc-swap]: shared_state.md#arc-swap
-[ex-concurrency-atomics]: shared_state.md#atomics
+[ex-concurrency-arc-swap]: atomics.md#arc-swap
+[ex-concurrency-atomics]: atomics.md#atomics
 [ex-concurrency-crossbeam-channel]: message_passing.md#crossbeam-channel
 [ex-concurrency-crossbeam-queue]: concurrent_data_structures.md#crossbeam-queue
 [ex-concurrency-custom-parallel-tasks]: data_parallelism.md#custom-parallel-tasks

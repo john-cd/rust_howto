@@ -1,9 +1,9 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| | | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
-| | | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
-| | | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
-| | | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
+| [`bumpalo`][ex-memory-management-bumpalo] | {{#crate }} | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
+| [Garbage Collection with `seize`][ex-memory-management-seize] | {{#crate }} | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
+| [`slab`][ex-memory-management-slab] | {{#crate }} | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
+| [`wee_alloc`][ex-memory-management-wee_alloc] | {{#crate }} | [![cat-memory-management][cat-memory-management-badge]][cat-memory-management] |
 
 <div class="hidden">
 FIXME

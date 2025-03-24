@@ -3,7 +3,7 @@
 [ex-development-tools_cargo-plugins-cargo-cache]: maintaining.md#cargo-cache
 [ex-development-tools_cargo-plugins-cargo-clippy]: code_formatting_linting.md#cargo-clippy
 [ex-development-tools_cargo-plugins-cargo-deny]: auditing.md#cargo-deny
-[ex-development-tools_cargo-plugins-cargo-edit]: maintaining.md#cargo-edit
+[ex-development-tools_cargo-plugins-cargo-edit]: dependency_management.md#cargo-edit
 [ex-development-tools_cargo-plugins-cargo-expand]: maintaining.md#cargo-expand
 [ex-development-tools_cargo-plugins-cargo-generate]: code_writing.md#cargo-generate
 [ex-development-tools_cargo-plugins-cargo-hack]: maintaining.md#cargo-hack
@@ -13,13 +13,13 @@
 [ex-development-tools_cargo-plugins-cargo-limit]: watching_for_changes.md#cargo-limit
 [ex-development-tools_cargo-plugins-cargo-make]: building.md#cargo-make
 [ex-development-tools_cargo-plugins-cargo-open]: code_writing.md#cargo-open
-[ex-development-tools_cargo-plugins-cargo-outdated]: maintaining.md#cargo-outdated
+[ex-development-tools_cargo-plugins-cargo-outdated]: dependency_management.md#cargo-outdated
 [ex-development-tools_cargo-plugins-cargo-semver-checks]: maintaining.md#cargo-semver-checks
 [ex-development-tools_cargo-plugins-cargo-watch]: watching_for_changes.md#cargo-watch
 [ex-development-tools_cargo-plugins-cargo-wizard]: performance.md#cargo-wizard
 [ex-development-tools_cargo-plugins-deps-rs]: dependency_management.md#deps-rs
 [ex-development-tools_cargo-plugins-devx]: building.md#devx
-[ex-development-tools_cargo-plugins-find-unused-dependencies]: maintaining.md#find-unused-dependencies
+[ex-development-tools_cargo-plugins-find-unused-dependencies]: dependency_management.md#find-unused-dependencies
 [ex-development-tools_cargo-plugins-rust-digger]: dependency_management.md#rust-digger
 [ex-development-tools_cargo-plugins-rustfix]: code_formatting_linting.md#rustfix
 [ex-development-tools_cargo-plugins-rustfmt]: code_formatting_linting.md#rustfmt

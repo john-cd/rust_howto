@@ -12,7 +12,8 @@ use http::StatusCode;
 // - `StatusCode` for what sort of response came back,
 // - `Version` for how this was communicated,
 // - `HeaderName` / `HeaderValue` definitions to get grouped in a `HeaderMap`.
-// Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or `rewest`.
+// Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
+// `rewest`.
 
 fn main() {
     // Create a request

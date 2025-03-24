@@ -8,6 +8,7 @@
 [ex-os-run-an-external-command-passing-stdin-and-check-for-error-code]: external_commands.md#run-an-external-command-passing-stdin-and-check-for-error-code
 [ex-os-run-child-processes-using-duct]: external_commands.md#run-child-processes-using-duct
 [ex-os-run-piped-external-commands]: external_commands.md#run-piped-external-commands
+[ex-os-which]: external_commands.md#which
 [p-functions]: ../../language/functions.md
 [p-log]: ../development-tools_debugging/log.md
 [p-unix]: # "../os_unix-apis/unix.md"

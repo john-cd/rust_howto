@@ -29,6 +29,7 @@
 [aptoslabs-website]: https://aptoslabs.com
 [are-we-async-yet?-website-badge]: https://img.shields.io/badge/are_we_async_yet-coral
 [are-we-async-yet?-website]: https://areweasyncyet.rs
+[are-we-game-yet?-engines-website]: https://arewegameyet.rs/ecosystem/engines
 [are-we-gui-yet?-website-badge]: https://img.shields.io/badge/are_we_gui_yet-coral
 [are-we-gui-yet?-website]: https://www.areweguiyet.com
 [are-we-learning-yet?-badge]: https://img.shields.io/badge/are_we_learning_yet-coral
@@ -587,6 +588,7 @@
 [primitive-i8]: https://doc.rust-lang.org/std/primitive.i8.html
 [primitive-isize]: https://doc.rust-lang.org/std/primitive.isize.html
 [primitive-never]: https://doc.rust-lang.org/std/primitive.never.html
+[primitive-unit]: https://doc.rust-lang.org/std/primitive.unit.html
 [primitive-slice::len]: https://doc.rust-lang.org/std/primitive.slice.html#method.len
 [primitive-slice::sort]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort
 [primitive-slice::sort_by]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by
@@ -837,4 +839,3 @@
 [zld-github-badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zld-github]: https://github.com/michaeleisel/zld
 [zs-website]: https://www.zs.com
-[are-we-game-yet?-engines-website]: https://arewegameyet.rs/ecosystem/engines

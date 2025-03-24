@@ -1,14 +1,14 @@
-[ex-rust-patterns-anyhow]: error_customization.md#anyhow
-[ex-rust-patterns-avoid-discarding-errors-during-error-conversions]: error_handling.md#avoid-discarding-errors-during-error-conversions
-[ex-rust-patterns-color-eyre]: error_customization.md#color-eyre
-[ex-rust-patterns-handle-errors-correctly-in-main]: error_handling.md#handle-errors-correctly-in-main
-[ex-rust-patterns-irrecoverable-panics]: error_handling.md#irrecoverable-panics
-[ex-rust-patterns-miette]: error_customization.md#miette
-[ex-rust-patterns-obtain-backtrace]: error_handling.md#obtain-backtrace
-[ex-rust-patterns-question-mark-operator]: error_handling.md#question-mark-operator
-[ex-rust-patterns-recoverable-errors-with-result]: error_handling.md#recoverable-errors-with-result
-[ex-rust-patterns-thiserror]: error_customization.md#thiserror
-[ex-rust-patterns-unwrap-or-else]: error_handling.md#unwrap-or-else
+[ex-error_handling-anyhow]: error_customization.md#anyhow
+[ex-error_handling-avoid-discarding-errors-during-error-conversions]: error_handling.md#avoid-discarding-errors-during-error-conversions
+[ex-error_handling-color-eyre]: error_customization.md#color-eyre
+[ex-error_handling-handle-errors-correctly-in-main]: error_handling.md#handle-errors-correctly-in-main
+[ex-error_handling-irrecoverable-panics]: error_handling.md#irrecoverable-panics
+[ex-error_handling-miette]: error_customization.md#miette
+[ex-error_handling-obtain-backtrace]: error_handling.md#obtain-backtrace
+[ex-error_handling-question-mark-operator]: error_handling.md#question-mark-operator
+[ex-error_handling-recoverable-errors-with-result]: error_handling.md#recoverable-errors-with-result
+[ex-error_handling-thiserror]: error_customization.md#thiserror
+[ex-error_handling-unwrap-or-else]: error_handling.md#unwrap-or-else
 [p-closures]: ../../../language/closures.md
 [p-csv]: # "../../encoding/csv.md"
 [p-enums]: ../../../language/enums.md

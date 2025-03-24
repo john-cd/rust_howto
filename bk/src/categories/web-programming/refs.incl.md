@@ -6,6 +6,9 @@
 [ex-web-programming-extract-the-url-origin]: url.md#extract-the-url-origin
 [ex-web-programming-get-mime-type-from-string]: mime.md#get-mime-type-from-string
 [ex-web-programming-get-mimetype-from-filename]: mime.md#get-mimetype-from-filename
+[ex-web-programming-http-body-util]: http_types_and_interfaces.md#http-body-util
+[ex-web-programming-http-body]: http_types_and_interfaces.md#http-body
+[ex-web-programming-http]: http_types_and_interfaces.md#http
 [ex-web-programming-parse-a-url-from-a-string-to-a-url-type]: url.md#parse-a-url-from-a-string-to-a-url-type
 [ex-web-programming-parse-the-mime-type-of-a-http-response]: mime.md#parse-the-mime-type-of-a-http-response
 [ex-web-programming-remove-fragment-identifiers-and-query-pairs]: url.md#remove-fragment-identifiers-and-query-pairs

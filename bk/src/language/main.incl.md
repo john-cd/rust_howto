@@ -1,4 +1,4 @@
 ||
 |--------|
-| [Main function][ex-language-main-function] |
-| [Async main function][ex-language-async-main-function] |
+| [Main Function][ex-language-main-function] |
+| [Async Main Function][ex-language-async-main-function] |

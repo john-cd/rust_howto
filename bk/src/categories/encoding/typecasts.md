@@ -16,7 +16,7 @@ The `From` and `Into` [traits][p-traits] are used for conversions that should al
 
 The `TryFrom` and `TryInto` [traits][p-traits] are used for conversions that might fail. They return a `Result` to indicate success or failure. Use these when there's a possibility of the conversion not working (e.g., [parsing][p-parsing] a string to a number).
 
-## Parsing Strings with the `FromStr` trait {#skip2}
+## Parsing Strings with the `FromStr` Trait {#skip2}
 
 The `FromStr` trait is used for [parsing][p-parsing] strings into other types. Many standard types implement `FromStr`.
 

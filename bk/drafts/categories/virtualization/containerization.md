@@ -1,5 +1,7 @@
 # Containerization
 
+{{#include containerization.incl.md}}
+
 ## Docker Container Integration {#skip}
 
 - [Shiplift](https://crates.io/crates/shiplift): A high-level API for interacting with the Docker daemon, managing containers, images, and networks.

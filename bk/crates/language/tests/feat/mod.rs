@@ -42,6 +42,7 @@ mod modules3;
 mod newtype;
 mod ownership;
 mod ownership2;
+mod primitive_types;
 mod rpit;
 mod shadowing;
 mod slices;

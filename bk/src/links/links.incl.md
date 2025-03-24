@@ -1,4 +1,4 @@
 ||
 |--------|
-| [Key websites][ex-links-key-websites] |
-| [Lists of Rust links][ex-links-links] |
+| [Key Websites][ex-links-key-websites] |
+| [Lists of Rust Links][ex-links-links] |

@@ -1,4 +1,4 @@
 ||
 |--------|
-| [Companies that use or contribute to Rust][ex-links-companies] |
+| [Companies that Use or Contribute to Rust][ex-links-companies] |
 | [Jobs][ex-links-jobs] |

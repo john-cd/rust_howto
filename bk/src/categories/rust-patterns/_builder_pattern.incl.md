@@ -5,4 +5,5 @@
 | [`typed-builder`][ex-rust-patterns-typed-builder] | [![typed-builder][c-typed_builder-badge]][c-typed_builder] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 
 <div class="hidden">
+FIXME
 </div>

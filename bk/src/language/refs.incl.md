@@ -8,6 +8,7 @@
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
 [ex-language-closures]: closures.md#closures
+[ex-language-composite-types]: simple_data_types.md#composite-types
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-control-flow]: control_flow.md#control-flow
@@ -53,6 +54,7 @@
 [ex-language-trait-objects]: trait_objects.md#trait-objects
 [ex-language-traits-as-parameters]: traits.md#traits-as-parameters
 [ex-language-traits]: traits.md#traits
+[ex-language-type-aliases]: simple_data_types.md#type-aliases
 [ex-language-use-keyword]: modules.md#use-keyword
 [ex-language-variables-and-constants]: variables_and_constants.md#variables-and-constants
 [ex-language-while-let]: match.md#while-let

@@ -4,6 +4,8 @@
 
 ## Games Written in Rust {#games}
 
+{{#include ../../../crates/cats/games/tests/games.rs:example}}
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

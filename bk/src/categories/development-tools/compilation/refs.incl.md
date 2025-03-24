@@ -4,11 +4,11 @@
 [ex-compilation-incremental-compilation]: reduce_compilation_duration.md#incremental-compilation
 [ex-compilation-mold-linker]: faster_linking.md#mold-linker
 [ex-compilation-optimization-levels]: reduce_compilation_duration.md#optimization-levels
-[p-cargo]: ../cargo/cargo.md
-[p-performance]: ../../development-tools_cargo-plugins/performance.md
-[p-configuration]: ../../config/configuration.md
-[p-generics]: ../../../language/generics.md
 [p-caching]: ../../caching/index.md
+[p-cargo]: ../cargo/cargo.md
+[p-configuration]: ../../config/configuration.md
 [p-contributing]: ../../../contributing/index.md
-[p-modules]: ../../../language/modules.md
 [p-duration]: ../../date-and-time/duration.md
+[p-generics]: ../../../language/generics.md
+[p-modules]: ../../../language/modules.md
+[p-performance]: ../../development-tools_cargo-plugins/performance.md

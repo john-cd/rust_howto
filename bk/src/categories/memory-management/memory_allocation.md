@@ -8,7 +8,7 @@
 
 wee_alloc: The Wasm-Enabled, Elfin Allocator
 
-## Pre-allocated storage for a uniform data type {#skip}
+## Pre-allocated Storage for a Uniform Data Type {#skip}
 
 ### `slab` {#slab}
 

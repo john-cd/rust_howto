@@ -6,6 +6,7 @@
 [ex-devops-ci]: github_actions.md#ci
 [ex-devops-compilation-caching]: github_actions.md#compilation-caching
 [ex-devops-daytona]: devops.md#daytona
+[ex-devops-github-actions]: cd_ci.md#github-actions
 [ex-devops-installation-of-development-tools]: github_actions.md#installation-of-development-tools
 [ex-devops-pre-commit]: version_control.md#pre-commit
 [ex-devops-release-plz]: release_automation.md#release-plz

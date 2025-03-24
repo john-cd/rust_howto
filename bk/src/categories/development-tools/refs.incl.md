@@ -1,7 +1,16 @@
 [ex-cargo-basic-cargo-usage]: cargo/cargo.md#basic-cargo-usage
 [ex-cargo-cargo-toml]: cargo/cargo.md#cargo-toml
 [ex-cargo-crate-registries]: cargo/crate_registries.md#crate-registries
+[ex-cargo-crates_io]: cargo/crate_registries.md#crates_io
 [ex-cargo-package-layout]: cargo/package_layout.md#package-layout
+[ex-compilation-build-time]: compilation/reduce_compilation_duration.md#build-time
+[ex-compilation-dynamic-linking]: compilation/reduce_compilation_duration.md#dynamic-linking
+[ex-compilation-faster-linking]: compilation/faster_linking.md#faster-linking
+[ex-compilation-incremental-compilation]: compilation/reduce_compilation_duration.md#incremental-compilation
+[ex-compilation-mold-linker]: compilation/faster_linking.md#mold-linker
+[ex-compilation-optimization-levels]: compilation/reduce_compilation_duration.md#optimization-levels
+[ex-cross-compilation-cross-compilation]: cross-compilation/cross_compilation.md#cross-compilation
+[ex-cross-compilation-cross-compile-with-cargo]: cross-compilation/cross_compilation.md#cross-compile-with-cargo
 [ex-documentation-badges]: documentation/badges.md#badges
 [ex-documentation-cd-ci]: documentation/mdbook.md#cd-ci
 [ex-documentation-documenting-your-code]: documentation/documentation.md#documenting-your-code
@@ -31,13 +40,63 @@
 [ex-other-binary-minimizer]: other/other.md#binary-minimizer
 [ex-other-code-generators]: other/other.md#code-generators
 [ex-other-code-verifiers]: other/code_verification.md#code-verifiers
+[ex-other-concurrent-code-verification]: other/code_verification.md#concurrent-code-verification
 [ex-other-just]: other/code_build.md#just
+[ex-other-loom]: other/code_verification.md#loom
 [ex-other-miri-installation]: other/miri.md#miri-installation
 [ex-other-miri]: other/miri.md#miri
 [ex-other-roogle]: other/other.md#roogle
 [ex-other-shuttle-rs]: other/other.md#shuttle-rs
+[ex-other-shuttle]: other/code_verification.md#shuttle
+[ex-transcompilation-c2rust]: transcompilation/transpilers.md#c2rust
 [ex-versioning-check-external-command-version-for-compat]: versioning/versioning.md#check-external-command-version-for-compat
 [ex-versioning-check-if-pre-release]: versioning/versioning.md#check-if-pre-release
 [ex-versioning-find-latest-version-within-range]: versioning/versioning.md#find-latest-version-within-range
 [ex-versioning-parse-a-complex-version-string]: versioning/versioning.md#parse-a-complex-version-string
 [ex-versioning-parse-and-increment-a-version-string]: versioning/versioning.md#parse-and-increment-a-version-string
+[p-apis]: documentation/../../web-programming_http-client/apis.md
+[p-attributes]: cross-compilation/../../../language/attributes.md
+[p-attributes]: formatting/../../../language/attributes.md
+[p-books]: documentation/../../../links/books.md
+[p-building]: cargo/../../development-tools_cargo-plugins/building.md
+[p-caching]: compilation/../../caching/index.md
+[p-cargo]: cargo/cargo.md
+[p-cargo]: compilation/../cargo/cargo.md
+[p-cargo]: cross-compilation/../cargo/cargo.md
+[p-cargo]: documentation/../cargo/cargo.md
+[p-cargo]: installation/../cargo/cargo.md
+[p-cargo]: other/../cargo/cargo.md
+[p-cargo]: versioning/../cargo/cargo.md
+[p-concurrency]: documentation/../../concurrency/index.md
+[p-concurrency]: other/../../concurrency/index.md
+[p-config]: formatting/../../config/index.md
+[p-configuration]: compilation/../../config/configuration.md
+[p-configuration]: formatting/../../config/configuration.md
+[p-contributing]: compilation/../../../contributing/index.md
+[p-crates]: installation/../../../crates/index.md
+[p-cross-platform]: other/# "../../../other/cross-platform/index.md"
+[p-documentation]: installation/../documentation/documentation.md
+[p-download]: other/../../web-programming_http-client/download.md
+[p-duration]: compilation/../../date-and-time/duration.md
+[p-embedded]: other/# "../../embedded/index.md"
+[p-functions]: other/../../../language/functions.md
+[p-fuzzing]: other/../../development-tools_testing/fuzzing.md
+[p-generics]: compilation/../../../language/generics.md
+[p-ides]: formatting/../../text-editors/ides.md
+[p-images]: installation/# "../../multimedia_images/images.md"
+[p-linux]: other/# "../../os_linux-apis/linux.md"
+[p-macos]: installation/# "../../os_macos-apis/macos.md"
+[p-macros]: other/../../../language/macros.md
+[p-main]: cargo/../../../language/main.md
+[p-main]: formatting/../../../language/main.md
+[p-main]: other/../../../language/main.md
+[p-memory]: other/../../development-tools_profiling/memory_usage_analysis.md
+[p-modules]: compilation/../../../language/modules.md
+[p-option]: other/../../../standard-library/option.md
+[p-parsing]: versioning/# "../../parsing/index.md"
+[p-performance]: compilation/../../development-tools_cargo-plugins/performance.md
+[p-performance]: other/../../development-tools_cargo-plugins/performance.md
+[p-search]: other/../../database/search.md
+[p-strings]: versioning/../../../standard-library/strings.md
+[p-testing]: other/../../development-tools_testing/testing.md
+[p-toml]: formatting/../../parser-implementations/toml.md

@@ -37,7 +37,9 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 `im` provides immutable data structures, such as lists, [maps][p-maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
 
-{{#example im}}
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/im.rs:example}}
+```
 
 ## Use a general purpose sum type with `either` {#either}
 
@@ -47,7 +49,9 @@ The enum [`Either`][c-either]⮳{{hi:Either}} with variants `Left` and `Right` i
 
 Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describing success or error, use the regular `Result` enum.
 
-{{#example either}}
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/either.rs:example}}
+```
 
 ## Use Functional Programming Data Structures and Type-level Programming Tools with `frunk` {#frunk}
 
@@ -55,7 +59,9 @@ Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describin
 
 Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like `HList` (heterogeneous lists), `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
 
-{{#example frunk}}
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/tests/functional_programming/frunk.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

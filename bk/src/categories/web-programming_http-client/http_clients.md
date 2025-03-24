@@ -11,7 +11,9 @@
 
 [`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime.
 
-{{#example reqwest}}
+```rust,editable
+{{#include ../../../crates/cats/web_programming_http_client/tests/http_clients/reqwest.rs:example}}
+```
 
 ## `ureq` {#ureq}
 

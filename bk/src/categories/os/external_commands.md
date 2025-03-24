@@ -8,7 +8,9 @@
 
 `which` is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
 
-{{#example which}}
+```rust,editable
+{{#include ../../../crates/cats/os/tests/external_commands/which.rs:example}}
+```
 
 ## Run an External Command and Process its `stdout` {#run-an-external-command-and-process-stdout}
 

@@ -1,5 +1,9 @@
+[ex-memory-management-bumpalo]: memory_allocation.md#bumpalo
 [ex-memory-management-declare-lazily-evaluated-constant]: lazy_initialization.md#declare-lazily-evaluated-constant
 [ex-memory-management-lazy-static]: lazy_initialization.md#lazy-static
 [ex-memory-management-once-cell]: lazy_initialization.md#once-cell
+[ex-memory-management-seize]: memory_allocation.md#seize
+[ex-memory-management-slab]: memory_allocation.md#slab
 [ex-memory-management-std]: lazy_initialization.md#std
+[ex-memory-management-wee_alloc]: memory_allocation.md#wee_alloc
 [p-lazy-initialization]: lazy_initialization.md

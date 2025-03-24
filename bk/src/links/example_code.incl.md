@@ -1,5 +1,5 @@
 ||
 |--------|
-| [Example code][ex-links-example-code] |
+| [Example Code][ex-links-example-code] |
 | [RealWorld][ex-links-realworld] |
-| [Source code for Rust books][ex-links-rust-book-source-code] |
+| [Source Code for Rust Books][ex-links-rust-book-source-code] |

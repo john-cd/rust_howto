@@ -16,7 +16,9 @@
 
 [`usize`][primitive-usize]{{hi:usize}}⮳ and [`isize`][primitive-isize]{{hi:isize}}⮳ are 32 or 64 bits, depending on the architecture of the computer.
 
-{{#example primitive_types}}
+```rust,editable
+{{#include ../../crates/language/tests/feat/primitive_types.rs:example}}
+```
 
 ## Composite Types {#composite-types}
 

@@ -1,7 +1,8 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Implement Websocket using a low-level library][ex-web-programming_websocket-low-level] | [![tungstenite][c-tungstenite-badge]][c-tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
-| [Implement Websocket while using the `tokio` async runtime][ex-web-programming_websocket-general-purpose] | [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
+| [Implement Websocket Using a low-level Library][ex-web-programming_websocket-low-level] | [![tungstenite][c-tungstenite-badge]][c-tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
+| [Implement Websocket While Using the `tokio` Async Runtime][ex-web-programming_websocket-general-purpose] | [![tokio-tungstenite][c-tokio_tungstenite-badge]][c-tokio_tungstenite] | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
+| [Implement Websocket While Using the `async-std` Async Runtime][ex-web-programming_websocket-async-std] | {{#crate }} | [![cat-web-programming::websocket][cat-web-programming::websocket-badge]][cat-web-programming::websocket] |
 
 <div class="hidden">
 FIXME

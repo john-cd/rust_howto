@@ -1,4 +1,4 @@
 ||
 |--------|
 | [Modules][ex-language-modules] |
-| [`use` keyword][ex-language-use-keyword] |
+| [`use` Keyword][ex-language-use-keyword] |

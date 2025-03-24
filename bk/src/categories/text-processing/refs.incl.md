@@ -1,12 +1,24 @@
-[ex-text-processing-string-concat]: string_concat.md#string-concat
-[ex-text-processing-collect-unicode-graphemes]: string_parsing.md#collect-unicode-graphemes
+[ex-text-processing-aho-corasick]: string_search.md#aho-corasick
+[ex-text-processing-bstr]: other_strings.md#bstr
+[ex-text-processing-collect-unicode-graphemes]: unicode.md#collect-unicode-graphemes
+[ex-text-processing-cstring]: other_strings.md#cstring
+[ex-text-processing-diff]: diffing.md#diff
 [ex-text-processing-extract-a-list-of-unique-hashtags-from-a-text]: regex.md#extract-a-list-of-unique-hashtags-from-a-text
 [ex-text-processing-extract-phone-numbers-from-text]: regex.md#extract-phone-numbers-from-text
 [ex-text-processing-fancy-regex]: regex.md#fancy-regex
 [ex-text-processing-filter-a-log-file-by-matching-multiple-regular-expressions]: regex.md#filter-a-log-file-by-matching-multiple-regular-expressions
+[ex-text-processing-fuzzy-matcher]: string_search.md#fuzzy-matcher
+[ex-text-processing-heck]: string_manipulation.md#heck
 [ex-text-processing-implement-the-fromstr-trait-for-a-custom-struct]: string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
+[ex-text-processing-indoc]: string_manipulation.md#indoc
 [ex-text-processing-longer-regex-example]: regex.md#longer-regex-example
+[ex-text-processing-memchr]: string_search.md#memchr
+[ex-text-processing-osstring]: other_strings.md#osstring
 [ex-text-processing-replace-all-occurrences-of-one-text-pattern-with-another-pattern]: regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
+[ex-text-processing-similar]: diffing.md#similar
+[ex-text-processing-string-concat]: string_concat.md#string-concat
+[ex-text-processing-strsim]: string_search.md#strsim
+[ex-text-processing-textwrap]: string_manipulation.md#textwrap
 [ex-text-processing-verify-and-extract-login-from-an-email-address]: regex.md#verify-and-extract-login-from-an-email-address
 [p-email]: # "../email/index.md"
 [p-log]: ../development-tools_debugging/log.md

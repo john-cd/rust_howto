@@ -26,3 +26,5 @@ do
 done
 
 echo "DONE"
+
+# TODO escape & in titles; combine with the generate / fix recipe table script

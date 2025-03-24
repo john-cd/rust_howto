@@ -1,3 +1,11 @@
+[ex-architecture-actor-model]: common_architectures.md#actor-model
+[ex-architecture-cqrs]: common_architectures.md#cqrs
+[ex-architecture-event-driven-architecture]: common_architectures.md#event-driven-architecture
+[ex-architecture-event-sourcing]: common_architectures.md#event-sourcing
+[ex-architecture-hexagonal-architecture]: common_architectures.md#hexagonal-architecture
+[ex-architecture-layered-architecture]: common_architectures.md#layered-architecture
+[ex-architecture-microservices]: common_architectures.md#microservices
+[ex-architecture-pipelines]: common_architectures.md#pipelines
 [p-architecture]: index.md
 [p-asynchronous]: ../../../src/categories/asynchronous/index.md
 [p-authentication]: ../../../src/categories/authentication/index.md

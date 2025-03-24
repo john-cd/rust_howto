@@ -11,6 +11,7 @@
 [ex-parser-implementations-quick-xml]: xml.md#quick-xml
 [ex-parser-implementations-roxmltree]: xml.md#roxmltree
 [ex-parser-implementations-rust_parsing]: programming_languages.md#rust_parsing
+[ex-parser-implementations-scraper]: html.md#scraper
 [ex-parser-implementations-serde-json]: json.md#serde-json
 [ex-parser-implementations-serde_yml]: yaml.md#serde_yml
 [ex-parser-implementations-simd-json]: json.md#simd-json

@@ -1,5 +1,6 @@
 [ex-data-structures-arrayvec]: stack_allocated_arrays.md#arrayvec
 [ex-data-structures-bitfield]: bitfield.md#bitfield
+[ex-data-structures-bitvec]: bitfield.md#bitvec
 [ex-data-structures-btreemap]: btrees.md#btreemap
 [ex-data-structures-btreeset]: btrees.md#btreeset
 [ex-data-structures-flagset]: bitfield.md#flagset
@@ -8,6 +9,7 @@
 [ex-data-structures-indexmap]: maps.md#indexmap
 [ex-data-structures-linkedlist]: linkedlist.md#linkedlist
 [ex-data-structures-multimap]: maps.md#multimap
+[ex-data-structures-priority-queue]: binaryheap.md#priority-queue
 [ex-data-structures-queue]: stack_and_queue.md#queue
 [ex-data-structures-slotmap]: maps.md#slotmap
 [ex-data-structures-smallvec]: stack_allocated_arrays.md#smallvec

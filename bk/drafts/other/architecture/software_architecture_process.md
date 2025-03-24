@@ -1,5 +1,7 @@
 # Software Architecture: Steps
 
+{{#include software_architecture_process.incl.md}}
+
 ## Define Objectives and Requirements {#skip}
 
 - Identify the purpose of the project (e.g., [[web-programming | web]]  service, [[embedded | embedded]] system, [[command-line-interface | CLI]] tool, etc.).

@@ -26,11 +26,11 @@ Hardware signals the CPU through interrupts.
 
 FIXME
 
-## Device drivers
+## Device Drivers
 
 Software that interfaces between the operating system and hardware.
 
-## Hardware protocols
+## Hardware Protocols
 
 FIXME how devices communicate with each other
 

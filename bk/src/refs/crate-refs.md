@@ -27,6 +27,7 @@
 [c-actix]: https://docs.rs/actix
 [c-actix_web-badge]: https://img.shields.io/crates/v/actix-web?label=actix-web
 [c-actix_web-crates.io-badge]: https://img.shields.io/badge/crates.io-actix--web-crimson
+[c-actix_web-crates.io]: https://crates.io/crates/actix_web
 [c-actix_web-github-badge]: https://img.shields.io/badge/actix--web-steelblue?logo=github
 [c-actix_web-github]: https://github.com/actix/actix-web
 [c-actix_web-lib.rs-badge]: https://img.shields.io/badge/lib.rs-actix--web-yellow
@@ -5017,6 +5018,16 @@
 [c-reqwest::header::HeaderValue]: https://docs.rs/reqwest/latest/reqwest/header/struct.HeaderValue.html
 [c-reqwest::header]: https://docs.rs/reqwest/latest/reqwest/header/index.html
 [c-reqwest]: https://docs.rs/reqwest
+[c-rerun-badge]: https://img.shields.io/crates/v/rerun?label=rerun
+[c-rerun-crates.io-badge]: https://img.shields.io/badge/crates.io-rerun-crimson
+[c-rerun-crates.io]: https://crates.io/crates/rerun
+[c-rerun-github-badge]: https://img.shields.io/badge/rerun-steelblue?logo=github
+[c-rerun-github]: https://github.com/rerun-io/rerun
+[c-rerun-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rerun-yellow
+[c-rerun-lib.rs]: https://lib.rs/crates/rerun
+[c-rerun-website-badge]: https://img.shields.io/badge/rerun-coral
+[c-rerun-website]: https://rerun.io
+[c-rerun]: https://docs.rs/rerun
 [c-resvg-badge]: https://img.shields.io/crates/v/resvg?label=resvg
 [c-resvg-crates.io-badge]: https://img.shields.io/badge/crates.io-resvg-crimson
 [c-resvg-crates.io]: https://crates.io/crates/resvg

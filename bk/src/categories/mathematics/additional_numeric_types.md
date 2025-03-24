@@ -70,7 +70,9 @@ Numeric [traits][p-traits] for generic [mathematics][p-mathematics]. [Traits][p-
 
 Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers. It also provides a type-level array of type-level numbers, but its implementation is incomplete.
 
-{{#example typenum}}
+```rust,editable
+{{#include ../../../crates/cats/mathematics/tests/additional_numeric_types/typenum.rs:example}}
+```
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

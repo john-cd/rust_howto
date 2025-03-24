@@ -8,14 +8,15 @@
 [ex-development-tools_debugging-env-logger]: tracing_alternatives.md#env-logger
 [ex-development-tools_debugging-events]: tracing.md#events
 [ex-development-tools_debugging-initialization]: tracing.md#initialization
+[ex-development-tools_debugging-jaeger]: distributed_telemetry.md#jaeger
 [ex-development-tools_debugging-log-error-message-to-console]: log.md#log-error-message-to-console
 [ex-development-tools_debugging-log-to-console]: log.md#log-to-console
 [ex-development-tools_debugging-log-to-custom-location]: config_log.md#log-to-custom-location
 [ex-development-tools_debugging-log-to-stdout]: log.md#log-to-stdout
 [ex-development-tools_debugging-log4rs]: tracing_alternatives.md#log4rs
 [ex-development-tools_debugging-log]: tracing_alternatives.md#log
-[ex-development-tools_debugging-open-observe]: tracing_alternatives.md#open-observe
-[ex-development-tools_debugging-open-telemetry]: tracing_alternatives.md#open-telemetry
+[ex-development-tools_debugging-open-observe]: distributed_telemetry.md#open-observe
+[ex-development-tools_debugging-open-telemetry]: distributed_telemetry.md#open-telemetry
 [ex-development-tools_debugging-related-crates]: tracing.md#related-crates
 [ex-development-tools_debugging-slog]: tracing_alternatives.md#slog
 [ex-development-tools_debugging-spans]: tracing.md#spans

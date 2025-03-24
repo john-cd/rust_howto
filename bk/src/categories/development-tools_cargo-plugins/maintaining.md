@@ -14,59 +14,6 @@
 | Refactoring | Often IDE-driven, but some tools exist: `cargo-expand` expands [macros][p-macros], which can be helpful for understanding code and refactoring. |
 | Version Management | `cargo-bump` helps to automate version updates in your Cargo.toml. |
 
-## Edit `Cargo.toml` {#cargo-edit}
-
-[![cargo-edit][c-cargo_edit-badge]][c-cargo_edit] [![cargo-edit-crates.io][c-cargo_edit-crates.io-badge]][c-cargo_edit-crates.io] [![cargo-edit-github][c-cargo_edit-github-badge]][c-cargo_edit-github] [![cargo-edit-lib.rs][c-cargo_edit-lib.rs-badge]][c-cargo_edit-lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
-
-`cargo edit` provides commands for modifying a [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} file. It allows you to add, remove, and upgrade dependencies by modifying your [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} file from the command line.
-
-Currently available subcommands:
-
-- `cargo upgrade`.
-- `cargo set-version`.
-
-## Find Unused Dependencies {#find-unused-dependencies}
-
-### `cargo udeps` {#skip1}
-
-[![cargo-udeps][c-cargo_udeps-badge]][c-cargo_udeps]{{hi:cargo-udeps}}
-[![cargo-udeps-crates.io][c-cargo_udeps-crates.io-badge]][c-cargo_udeps-crates.io]
-[![cargo-udeps-github][c-cargo_udeps-github-badge]][c-cargo_udeps-github]
-[![cargo-udeps-lib.rs][c-cargo_udeps-lib.rs-badge]][c-cargo_udeps-lib.rs]
-[![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}}
-[![cat-development-tools::cargo-plugins][cat-development-tools::cargo-plugins-badge]][cat-development-tools::cargo-plugins]{{hi:Cargo plugins}}
-
-[`udeps`][c-cargo_udeps-crates.io]{{hi:udeps}}⮳ find unused dependencies in [`Cargo.toml`][book-cargo-cargo-toml]⮳{{hi:Cargo.toml}} .
-
-While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
-
-### `cargo machete` {#skip2}
-
-[![cargo-machete][c-cargo_machete-badge]][c-cargo_machete]{{hi:cargo-machete}}
-[![cargo-machete-crates.io][c-cargo_machete-crates.io-badge]][c-cargo_machete-crates.io]
-[![cargo-machete-github][c-cargo_machete-github-badge]][c-cargo_machete-github]
-[![cargo-machete-lib.rs][c-cargo_machete-lib.rs-badge]][c-cargo_machete-lib.rs]
-
-[`cargo-machete`][blog-cargo-machete]⮳ is a [`cargo`][c-cargo]⮳{{hi:cargo}} tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
-
-Install and run with:
-
-```sh
-cargo install cargo-machete
-cargo machete
-```
-
-## Detect Dependencies that are out of Date {#cargo-outdated}
-
-[![cargo-outdated][c-cargo_outdated-badge]][c-cargo_outdated]{{hi:cargo-outdated}}
-[![cargo-outdated-crates.io][c-cargo_outdated-crates.io-badge]][c-cargo_outdated-crates.io]
-[![cargo-outdated-github][c-cargo_outdated-github-badge]][c-cargo_outdated-github]
-[![cargo-outdated-lib.rs][c-cargo_outdated-lib.rs-badge]][c-cargo_outdated-lib.rs]
-
-[`cargo-outdated`][c-cargo_outdated]⮳{{hi:cargo-outdated}} is a [`cargo`][c-cargo]⮳{{hi:cargo}} subcommand for displaying when dependencies are out of date.
-
-If you are using VS Code, also look into the `Dependi` VS Code plugin.
-
 ## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}
 
 [![cargo-semver-checks][c-cargo_semver_checks-badge]][c-cargo_semver_checks]

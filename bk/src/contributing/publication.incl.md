@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Publish to crates.io][ex-contributing-publish] |
+| [Publish to `crates.io`][ex-contributing-publish] |
 
 <div class="hidden">
 FIXME

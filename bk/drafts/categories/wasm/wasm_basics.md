@@ -1,5 +1,7 @@
 # WASM Basics
 
+{{#include wasm_basics.incl.md}}
+
 ## What is WASM? {#skip}
 
 WebAssembly (abbreviated [WASM][p-wasm]) is a low-level assembly-like language with a compact binary format that can be run in modern web browsers.

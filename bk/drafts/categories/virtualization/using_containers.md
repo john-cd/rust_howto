@@ -1,5 +1,7 @@
 # Using Containers
 
+{{#include using_containers.incl.md}}
+
 ## Testing and Debugging with Containers {#skip}
 
 - [Testcontainers](https://crates.io/crates/testcontainers): A library for running Docker containers in integration tests.
@@ -13,5 +15,5 @@ See [[mocking | Mocking]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1224)
+[write / fix](https://github.com/john-cd/rust_howto/issues/1224)
 </div>

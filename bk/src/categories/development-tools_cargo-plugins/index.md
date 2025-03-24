@@ -64,6 +64,8 @@ Subcommands that extend the capabilities of Cargo.
 <div class="hidden">
 [review in depth, reorg table, add below NOW](https://github.com/john-cd/rust_howto/issues/311)
 
+{{#include ../../../crates/cats/development_tools_cargo_plugins/tests/plugins.rs}}
+
 [`cargo-afl`][c-cargo_afl]⮳{{hi:cargo-afl}} for fuzzing
 
 [`cargo-asm`][c-cargo_asm]⮳{{hi:cargo-asm}} and [`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} to investigate what the compiler generates from your code ([`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} shows the expanded output from macros)

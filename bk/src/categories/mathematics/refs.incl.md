@@ -17,6 +17,7 @@
 [ex-mathematics-rug]: additional_numeric_types.md#rug
 [ex-mathematics-sortable-floats]: additional_numeric_types.md#sortable-floats
 [ex-mathematics-standard-deviation]: statistics.md#standard-deviation
+[ex-mathematics-typenum]: additional_numeric_types.md#typenum
 [ex-mathematics-vector-comparison]: linear_algebra.md#vector-comparison
 [ex-mathematics-vector-norm]: linear_algebra.md#vector-norm
 [ex-mathematics-verifying-tan-is-equal-to-sin-divided-by-cos]: trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
