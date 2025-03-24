@@ -3,5 +3,5 @@
 [ex-compression-decompress-a-tarball-removing-prefix]: tar.md#decompress-a-tarball-removing-prefix
 [ex-compression-decompress-a-tarball]: tar.md#decompress-a-tarball
 [p-compression]: index.md
-[p-error-handling]: ../rust-patterns/error_handling.md
+[p-error-handling]: ../rust-patterns/error_handling/error_handling.md
 [p-streams]: ../asynchronous/streams.md

@@ -7,7 +7,7 @@
 [p-database]: ../../../src/categories/database/index.md
 [p-databases]: ../../../src/categories/database-implementations/databases.md
 [p-embedded]: ../../categories/embedded/index.md
-[p-error-handling]: ../../../src/categories/rust-patterns/error_handling.md
+[p-error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p-github-actions]: ../devops/github_actions.md
 [p-json]: ../../../src/categories/parser-implementations/json.md
 [p-mocking]: ../../../src/categories/development-tools_testing/mocking.md

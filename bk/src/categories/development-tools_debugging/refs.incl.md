@@ -27,7 +27,7 @@
 [p-cargo]: ../development-tools/cargo/cargo.md
 [p-configuration]: ../config/configuration.md
 [p-documentation]: ../development-tools/documentation/documentation.md
-[p-error-handling]: ../rust-patterns/error_handling.md
+[p-error-handling]: ../rust-patterns/error_handling/error_handling.md
 [p-formatting]: ../development-tools/formatting/formatting.md
 [p-log]: log.md
 [p-macros]: ../../language/macros.md

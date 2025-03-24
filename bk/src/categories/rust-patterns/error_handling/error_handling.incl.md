@@ -9,4 +9,5 @@
 | [Handle errors correctly in main][ex-rust-patterns-handle-errors-correctly-in-main] | [![std][c-std-badge]][c-std] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 
 <div class="hidden">
+FIXME review
 </div>

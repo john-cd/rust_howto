@@ -25,7 +25,7 @@
 [p-development-tools]: ../categories/development-tools/index.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-embedded]: # "../categories/embedded/index.md"
-[p-error-handling]: ../categories/rust-patterns/error_handling.md
+[p-error-handling]: ../categories/rust-patterns/error_handling/error_handling.md
 [p-generics]: ../language/generics.md
 [p-java]: ../categories/development-tools_ffi/java.md
 [p-language]: ../language/index.md

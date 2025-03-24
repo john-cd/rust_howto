@@ -14,7 +14,7 @@
 [ex-development-tools_ffi-uniffi]: generate_ffi_bindings.md#uniffi
 [p-asynchronous]: ../asynchronous/index.md
 [p-concurrency]: ../../../src/categories/concurrency/index.md
-[p-error-handling]: ../../../src/categories/rust-patterns/error_handling.md
+[p-error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p-functions]: ../../language/functions.md
 [p-json]: ../parser-implementations/json.md
 [p-language]: ../../language/index.md

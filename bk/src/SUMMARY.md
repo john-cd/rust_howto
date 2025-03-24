@@ -204,8 +204,8 @@
   - [Binary encoders](categories/encoding/_binary_encoders.md)
   - [Binary encoders, no external schema](categories/encoding/no_external_schema.md)
 
-- [Error handling](categories/rust-patterns/error_handling.md)
-  - [Error customization](categories/rust-patterns/error_customization.md)
+- [Error handling](categories/rust-patterns/error_handling/error_handling.md)
+  - [Error customization](categories/rust-patterns/error_handling/error_customization.md)
 
 - [File system](categories/filesystem/index.md)
   - [Read & write](categories/filesystem/read-write.md)

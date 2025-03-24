@@ -13,7 +13,7 @@ Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/anyhow.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/anyhow.rs:example}}
 ```
 
 Anyhow works with any error type that has an impl of [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
@@ -25,7 +25,7 @@ Anyhow works with any error type that has an impl of [`std::error::Error`][c-std
 [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ provides a convenient [`derive`][book-rust-reference-derive]{{hi:derive}}⮳ macro for the standard library's [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}} trait.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/thiserror.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/thiserror.rs:example}}
 ```
 
 The `#[error(...)]` messages support a shorthand for interpolating fields from the error.
@@ -48,7 +48,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 [`miette`][c-miette]⮳{{hi:miette}} is a fancy diagnostic reporting library and protocol.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/miette.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/miette.rs:example}}
 ```
 
 ## `color-eyre` {#color-eyre}
@@ -60,7 +60,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 It is a fork of [`anyhow`][c-anyhow::Result]⮳{{hi:anyhow}} [`anyhow`][c-anyhow]⮳{{hi:anyhow}} that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c-anyhow]⮳{{hi:anyhow}} is simpler.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/color_eyre.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/color_eyre.rs:example}}
 ```
 
 ## See Also
@@ -70,7 +70,7 @@ It is a fork of [`anyhow`][c-anyhow::Result]⮳{{hi:anyhow}} [`anyhow`][c-anyhow
 Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecated.
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+{{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
 [error_customization: write / organize / titles](https://github.com/john-cd/rust_howto/issues/463)

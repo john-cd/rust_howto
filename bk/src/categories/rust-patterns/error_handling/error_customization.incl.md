@@ -6,4 +6,5 @@
 | [`color-eyre`][ex-rust-patterns-color-eyre] | [![color-eyre][c-color_eyre-badge]][c-color_eyre] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 
 <div class="hidden">
+FIXME
 </div>
