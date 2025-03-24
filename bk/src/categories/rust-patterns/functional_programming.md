@@ -51,7 +51,7 @@ Note that [`Either`][c-either]⮳{{hi:Either}} is general purpose. For describin
 
 ## Use Functional Programming Data Structures and Type-level Programming Tools with `frunk` {#frunk}
 
-[![frunk][c-frunk-badge]][c-frunk] [![frunk-crates.io][c-frunk-crates.io-badge]][c-frunk-crates.io] [![frunk-github][c-frunk-github-badge]][c-frunk-github] [![frunk-lib.rs][c-frunk-lib.rs-badge]][c-frunk-lib.rs]{{hi:frunk}}{{hi:Monoid}}{{hi:Generic}}{{hi:Hlist}}{{hi:Validated}}{{hi:frunk}}
+[![frunk][c-frunk-badge]][c-frunk] [![frunk-crates.io][c-frunk-crates.io-badge]][c-frunk-crates.io] [![frunk-github][c-frunk-github-badge]][c-frunk-github] [![frunk-lib.rs][c-frunk-lib.rs-badge]][c-frunk-lib.rs]{{hi:frunk}}{{hi:Monoid}}{{hi:Generic}}{{hi:HList}}{{hi:Validated}}{{hi:frunk}}
 
 Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like `HList` (heterogeneous lists), `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
 

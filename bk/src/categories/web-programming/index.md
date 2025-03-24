@@ -63,7 +63,7 @@ See [[authentication | Authentication]].
 
 See [[_graphql | GraphQL]].
 
-### Websockets
+### WebSockets
 
 See [[web-programming_websocket | Web Programming: Websocket]].
 

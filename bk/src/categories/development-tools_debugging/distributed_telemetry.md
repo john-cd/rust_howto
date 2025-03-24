@@ -8,7 +8,7 @@ Prometheus and OpenTelemetry are two prominent open-source observability project
 
 `OpenTelemetry` is a complete observability framework suitable for monitoring microservices and "cloud-native", modern, distributed systems. It is compatible with most major OSS and commercial backends.
 
-`OpenTelemetry` is a collection of APIs, SDKs, and tools to instrument, generate, collect, and export metrics, logs, and traces to help analyze your software’s performance and behavior.
+`OpenTelemetry` is a collection of APIs, SDKs, and tools to instrument, generate, collect, and export metrics, logs, and traces to help analyze your software's performance and behavior.
 
 Distributed tracing, a key aspect of observability, enables developers to track and analyze requests spanning multiple services.
 
