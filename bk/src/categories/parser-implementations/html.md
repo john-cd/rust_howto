@@ -48,7 +48,7 @@ tl = { version = "0.7.8", features = ["simd"] }
 
 HTML parsing and querying with CSS selectors. [`scraper`][c-scraper]⮳{{hi:scraper}} uses CSS selectors.
 
-## Other options
+## Other Options {#skip}
 
 [`select`][c-select]⮳{{hi:select}} is another option. [`kuchiki`][c-kuchiki]⮳{{hi:kuchiki}} is a fast and robust HTML parser.
 

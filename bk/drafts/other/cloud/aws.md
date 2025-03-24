@@ -41,7 +41,7 @@ See, for example:
 {{#include ../../../crates/other/tests/cloud/aws_sdk.rs:example}}
 ```
 
-## References
+## References {#skip}
 
 - [AWS and Rust][blog-sustainability-with-rust]⮳.
 - [AWS Rust SDK][aws-rust-sdk-website]{{hi:AWS}}⮳.
@@ -53,8 +53,8 @@ See, for example:
 <div class="hidden">
 [aws: write](https://github.com/john-cd/rust_howto/issues/574)
 Cover?
-## Containerized Applications on AWS Fargate, ECS, EKS
-## Deploy Rust Applications to Elastic Beanstalk
-## Deploy Rust Applications to App Runner
-## Deploy Rust Applications to EC2 machines
+Containerized Applications on AWS Fargate, ECS, EKS
+Deploy Rust Applications to Elastic Beanstalk
+Deploy Rust Applications to App Runner
+Deploy Rust Applications to EC2 machines
 </div>

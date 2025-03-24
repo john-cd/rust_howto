@@ -61,7 +61,7 @@ Kani works like `cargo test` except that it will analyze "proof harnesses" inste
 {{#include ../../../../crates/cats/development_tools/src/kani.rs:example}}
 ```
 
-## Concurrent code testing
+## Concurrent Code Verification {#concurrent-code-verification}
 
 Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p-testing]).
 
@@ -77,14 +77,14 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 `loom` allows permutation testing for concurrent code.
 
-## Other Tools
+## Other Tools {#skip}
 
 - [MIRAI][mirai-github]⮳.
 - [`prusti`][prusti-website]⮳ is an automated program verifier for Rust, based on the Viper infrastructure. It leverages Rust's strong type guarantees to simplify the specification and verification of Rust programs.
 - [Creusot][creusot-github]⮳ helps you prove your code is correct in an automated fashion.
 - `crucible` (symbolic execution).
 
-## Related Topics
+## Related Topics {#skip}
 
 | Topic | Rust Crates |
 |---|---|
@@ -95,7 +95,7 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 | Fuzzing | `cargo fuzz`, `afl.rs` (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
 
-## References
+## References {#skip}
 
 - [Model_checking][wikipedia-model-checking]⮳.
 - [Kani Rust Verifier][c-kani-website]⮳.

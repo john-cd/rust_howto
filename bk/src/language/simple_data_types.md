@@ -18,7 +18,7 @@
 
 {{#example primitive_types}}
 
-## Composite Types
+## Composite Types {#composite-types}
 
 | Type | Examples |
 |---|---|
@@ -37,7 +37,7 @@ See also:
 - [[structs | Structs]].
 - [[vectors | Vectors]].
 
-## Type Aliases
+## Type Aliases {#type-aliases}
 
 Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
 
@@ -48,7 +48,7 @@ Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
 - Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
-## Related Topics
+## Related Topics {#skip}
 
 - [[data-structures | Data Structures]]
 

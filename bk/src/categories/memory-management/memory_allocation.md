@@ -8,7 +8,7 @@
 
 wee_alloc: The Wasm-Enabled, Elfin Allocator
 
-## Pre-allocated storage for a uniform data type
+## Pre-allocated storage for a uniform data type {#skip}
 
 ### `slab` {#slab}
 
@@ -39,4 +39,5 @@ Fast, efficient, and predictable memory reclamation for concurrent data structur
 
 <div class="hidden">
 TODO write NOW
+other allocators
 </div>

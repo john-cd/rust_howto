@@ -11,7 +11,7 @@ Popular tooling include:
 - `Jenkins`.
 - `CircleCI`.
 
-## Workflow Example (GitHub Actions)
+## Workflow Example (GitHub Actions) {#github-actions}
 
 - Developers push code changes to a Git repository.
 - `GitHub Actions` is triggered by the push or pull request.
@@ -23,7 +23,7 @@ Popular tooling include:
 
 See [[github_actions | Github Actions]].
 
-## See Also
+## See Also {#skip}
 
 [Continuous Integration (cargo book)][book-cargo-continuous-integration]⮳.
 

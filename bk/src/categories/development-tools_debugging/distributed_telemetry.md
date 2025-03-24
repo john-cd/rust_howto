@@ -49,7 +49,7 @@ Review:
 - Grafana
 - Fluentd: Open-Source Log Collector https://github.com/fluent/fluentd
 
-## Jaeger
+## Jaeger {#jaeger}
 
 `Jaeger` is a Cloud Native Computing Foundation (CNCF) open-source, end-to-end distributed tracing system built for monitoring and troubleshooting microservices-based architectures.
 

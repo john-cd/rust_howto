@@ -12,7 +12,7 @@
 {{#include ../../../crates/cats/filesystem/tests/tempfile/tempfile.rs:example}}
 ```
 
-### Other Options
+### Other Options {#skip}
 
 - The `tempdir` crate is being merged into `tempfile`.
 
