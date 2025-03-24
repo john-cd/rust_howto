@@ -1,6 +1,8 @@
-# Logs
+# Tracing
 
 {{#include tracing.incl.md}}
+
+Tracing refers to the process of capturing and recording information about the execution of a software program.
 
 | Topic | Rust Crates |
 |---|---|

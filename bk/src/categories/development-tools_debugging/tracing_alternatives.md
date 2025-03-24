@@ -61,26 +61,6 @@ fn [main][p-main]() {
 }
 ```
 
-## Other Frameworks {#skip2}
-
-### `OpenTelemetry` {#open-telemetry}
-
-[OpenTelemetry Rust [documentation][p-documentation]][opentelemetry-rust]⮳.
-
-`OpenTelemetry`
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_telemetry.rs:example}}
-```
-
-## `OpenObserve` {#open-observe}
-
-[OpenObserve][openobserve-github]{{hi:OpenObserve}}⮳ (written in Rust) is a petabyte-scale Elasticsearch / Splunk / DataDog alternative for logs, metrics, traces, RUM, error tracking, and session replay.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_debugging/tests/other/open_observe.rs:example}}
-```
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

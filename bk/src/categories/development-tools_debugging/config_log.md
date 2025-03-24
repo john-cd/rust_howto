@@ -81,23 +81,4 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/925)
-
-Logging Framework: [log][p-log] (provides the logging [macros][p-macros] and facade)
-
-Log Implementations (Loggers):
-
-[`env_logger`][c-env_logger]⮳{{hi:env_logger}}: A popular logger that configures logging based on environment variables.
-[`log4rs`][c-log4rs]⮳{{hi:log4rs}}: A more flexible logger that supports [configuration][p-configuration] files (YAML, TOML, JSON).
-[`tracing`][c-tracing]⮳{{hi:tracing}}: A newer, more structured logging library with support for spans and context. Often used with [`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}} for [formatting][p-formatting] and output.
-
-Log [Formatting][p-formatting]:
-
-[`tracing-subscriber`][c-tracing_subscriber]⮳{{hi:tracing-subscriber}}: Used with [tracing][p-tracing] to format log output, often to JSON or other structured formats. Can also be used for filtering.
-Configuration Files (for loggers like [log][p-log]4rs):
-
-[`serde`][c-serde]⮳{{hi:serde}}: (Not a logging crate itself, but necessary for deserializing [configuration][p-configuration] files in formats like YAML, TOML, or JSON)
-yaml-rust, serde_yml, toml, serde_json: (Crates for [parsing][p-parsing] the respective [configuration][p-configuration] file formats)
-Other Utilities:
-
-[`log-panics`][c-log_panics]⮳{{hi:log-panics}}: Logs panics with backtraces.
 </div>
