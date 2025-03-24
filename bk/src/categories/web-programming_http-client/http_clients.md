@@ -11,6 +11,8 @@
 
 [`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime.
 
+{{#example reqwest}}
+
 ## `ureq` {#ureq}
 
 [![ureq][c-ureq-badge]][c-ureq]{{hi:ureq}}
@@ -25,12 +27,6 @@
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/ureq.rs:example}}
 ```
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[http_clients: expand](https://github.com/john-cd/rust_howto/issues/504)
-
 ## Build a HTTP Client with `hyper` {#hyper}
 
 [![hyper-website][c-hyper-website-badge]][c-hyper-website] [![hyper][c-hyper-badge]][c-hyper] [![hyper-crates.io][c-hyper-crates.io-badge]][c-hyper-crates.io] [![hyper-github][c-hyper-github-badge]][c-hyper-github] [![hyper-lib.rs][c-hyper-lib.rs-badge]][c-hyper-lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat-network-programming][cat-network-programming-badge]][cat-network-programming]{{hi:Network programming}} [![cat-web-programming::http-client][cat-web-programming::http-client-badge]][cat-web-programming::http-client]{{hi:HTTP client}} [![cat-web-programming::http-server][cat-web-programming::http-server-badge]][cat-web-programming::http-server]{{hi:HTTP server}}
@@ -43,7 +39,13 @@
 {{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
 ```
 
-See hyper.md in server.
+## References
 
-[`hyper` examples][c-hyper-examples-github]
+- [`hyper` examples][c-hyper-examples-github]⮳.
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[http_clients: expand; link to hyper.md in server.](https://github.com/john-cd/rust_howto/issues/504)
 </div>
