@@ -4,5 +4,4 @@
 
 <div class="hidden">
 FIXME
-| [Use `lens`][ex-rust-patterns-lens] | [![lens_rs][c-lens_rs-badge]][c-lens_rs] | [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns] |
 </div>

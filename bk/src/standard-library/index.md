@@ -41,5 +41,4 @@
 
 <div class="hidden">
 [standard-library/index: review](https://github.com/john-cd/rust_howto/issues/623)
-Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits.
 </div>
