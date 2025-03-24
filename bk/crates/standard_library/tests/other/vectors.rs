@@ -1,9 +1,11 @@
 #![allow(clippy::vec_init_then_push)]
-
+#![allow(clippy::useless_vec)]
+#![allow(clippy::unnecessary_fold)]
 // ANCHOR: example
 fn main() {
     // Creating a `Vec`
-    let _numbers: Vec<i32> = vec![1, 2, 3]; // or vec!(1, 2, 3)
+    let _numbers: Vec<i32> = vec![1, 2, 3]; // or vec!(1, 2, 3).
+    // Note that an array would work as well in this specific case.
 
     // The above is a shortcut for:
     let mut numbers: Vec<i32> = Vec::new();
