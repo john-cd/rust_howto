@@ -482,7 +482,7 @@
 [ex-mathematics-vector-comparison]: categories/mathematics/linear_algebra.md#vector-comparison
 [ex-mathematics-vector-norm]: categories/mathematics/linear_algebra.md#vector-norm
 [ex-mathematics-verifying-tan-is-equal-to-sin-divided-by-cos]: categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
-[ex-memory-management-declare-lazily-evaluated-constant]: categories/memory-management/global_static.md#declare-lazily-evaluated-constant
+[ex-memory-management-declare-lazily-evaluated-constant]: categories/memory-management/lazy_initialization.md#declare-lazily-evaluated-constant
 [ex-memory-management-lazy-static]: categories/memory-management/lazy_initialization.md#lazy-static
 [ex-memory-management-once-cell]: categories/memory-management/lazy_initialization.md#once-cell
 [ex-memory-management-std]: categories/memory-management/lazy_initialization.md#std

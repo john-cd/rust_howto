@@ -227,7 +227,6 @@
   - [Additional numeric types](categories/mathematics/additional_numeric_types.md)
 
 - [Memory management](categories/memory-management/index.md)
-  - [Global static](categories/memory-management/global_static.md)
   - [Lazy initialization](categories/memory-management/lazy_initialization.md)
 
 - [Network Programming](categories/network-programming/index.md)
