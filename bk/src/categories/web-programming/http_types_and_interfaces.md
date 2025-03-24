@@ -12,7 +12,7 @@
 The [`http`][c-http]⮳{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming/tests/index/http.rs:example}}
+{{#include ../../../crates/cats/web_programming/tests/http_types_and_interfaces/http.rs:example}}
 ```
 
 ## `http-body` {#http-body}
