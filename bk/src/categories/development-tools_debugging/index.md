@@ -62,5 +62,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 - https://metrics.rs/
 - https://crates.io/crates/tokio-metrics
+- https://crates.io/crates/cadence
+- https://crates.io/crates/sentry
 
 </div>

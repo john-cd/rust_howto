@@ -37,6 +37,7 @@ TODO write / expand; link to CNCF; cross link
 https://opentelemetry.io/
 https://github.com/open-telemetry
 https://github.com/davidB/tracing-opentelemetry-instrumentation-sdk/tree/main/axum-tracing-opentelemetry
+https://tirslo.medium.com/opentelemetry-examples-with-rust-67f77ccb025f
 
 Review:
 
