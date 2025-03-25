@@ -255,7 +255,7 @@
   - [YAML](categories/parser-implementations/yaml.md)
   - [Programming Languages](categories/parser-implementations/programming_languages.md)
 
-- [Rust patterns](categories/rust-patterns/index.md)
+- [Rust Patterns](categories/rust-patterns/index.md)
   - [Design Patterns](categories/rust-patterns/design_patterns.md)
   - [Functional Programming](categories/rust-patterns/functional_programming.md)
   - [Rust Idioms](categories/rust-patterns/_rust_idioms.md)
