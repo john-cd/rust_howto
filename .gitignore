@@ -1,6 +1,7 @@
 *.url
 *.bak
-/bin/
+/bin
+!bin/README.md
 
 # Windows ------------------------
 
