@@ -4249,6 +4249,15 @@ dependencies = [
 
 [[package]]
 name = "bitmaps"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "031043d04099746d8db04daf1fa424b2bc8bd69d92b25962dcde24da39ab64a2"
+dependencies = [
+ "typenum",
+]
+
+[[package]]
+name = "bitmaps"
 version = "3.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a1d084b0137aaa901caf9f1e8b21daa6aa24d41cd806e111335541eff9683bd6"
@@ -11032,6 +11041,62 @@ dependencies = [
 ]
 
 [[package]]
+name = "frunk"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "874b6a17738fc273ec753618bac60ddaeac48cb1d7684c3e7bd472e57a28b817"
+dependencies = [
+ "frunk_core",
+ "frunk_derives",
+ "frunk_proc_macros",
+ "serde 1.0.219",
+]
+
+[[package]]
+name = "frunk_core"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3529a07095650187788833d585c219761114005d5976185760cf794d265b6a5c"
+dependencies = [
+ "serde 1.0.219",
+]
+
+[[package]]
+name = "frunk_derives"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e99b8b3c28ae0e84b604c75f721c21dc77afb3706076af5e8216d15fd1deaae3"
+dependencies = [
+ "frunk_proc_macro_helpers",
+ "quote 1.0.40",
+ "syn 2.0.100",
+]
+
+[[package]]
+name = "frunk_proc_macro_helpers"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "05a956ef36c377977e512e227dcad20f68c2786ac7a54dacece3746046fea5ce"
+dependencies = [
+ "frunk_core",
+ "proc-macro2 1.0.94",
+ "quote 1.0.40",
+ "syn 2.0.100",
+]
+
+[[package]]
+name = "frunk_proc_macros"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67e86c2c9183662713fea27ea527aad20fb15fee635a71081ff91bf93df4dc51"
+dependencies = [
+ "frunk_core",
+ "frunk_proc_macro_helpers",
+ "quote 1.0.40",
+ "syn 2.0.100",
+]
+
+[[package]]
 name = "fs-err"
 version = "2.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12333,7 +12398,7 @@ dependencies = [
  "ahash 0.7.8",
  "backtrace",
  "bitflags 2.9.0",
- "bitmaps",
+ "bitmaps 3.2.1",
  "buddy-alloc",
  "cc",
  "concurrent-queue 1.2.4",
@@ -13018,7 +13083,7 @@ dependencies = [
  "log",
  "presser",
  "thiserror 1.0.69",
- "windows 0.54.0",
+ "windows 0.58.0",
 ]
 
 [[package]]
@@ -14601,6 +14666,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "im"
+version = "15.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d0acd33ff0285af998aaf9b57342af478078f53492322fafc47450e09397e0e9"
+dependencies = [
+ "bitmaps 2.1.0",
+ "rand_core 0.6.4",
+ "rand_xoshiro",
+ "sized-chunks",
+ "typenum",
+ "version_check",
+]
+
+[[package]]
 name = "image"
 version = "0.24.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -14698,7 +14777,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8a9aa791c7b5a71b636b7a68207fdebf171ddfc593d9c8506ec4cbc527b6a84"
 dependencies = [
  "implicit-clone-derive",
- "indexmap 1.9.3",
+ "indexmap 2.8.0",
 ]
 
 [[package]]
@@ -15994,7 +16073,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34"
 dependencies = [
  "cfg-if 1.0.0",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.6",
 ]
 
 [[package]]
@@ -23153,6 +23232,9 @@ dependencies = [
  "cfg-if 1.0.0",
  "color-eyre",
  "dyn-clone",
+ "either",
+ "frunk",
+ "im",
  "indoc",
  "itertools 0.14.0",
  "miette 7.5.0",
@@ -25028,6 +25110,16 @@ dependencies = [
  "proc-macro2 1.0.94",
  "quote 1.0.40",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "sized-chunks"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "16d69225bde7a69b235da73377861095455d298f2b970996eec25ddbb42b3d1e"
+dependencies = [
+ "bitmaps 2.1.0",
+ "typenum",
 ]
 
 [[package]]
@@ -28551,7 +28643,7 @@ version = "1.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
 dependencies = [
- "cfg-if 0.1.10",
+ "cfg-if 1.0.0",
  "static_assertions",
 ]
 
@@ -30842,7 +30934,7 @@ dependencies = [
  "js-sys",
  "log",
  "naga 0.19.2",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle 0.6.2",
  "smallvec 1.14.0",
@@ -30867,7 +30959,7 @@ dependencies = [
  "js-sys",
  "log",
  "naga 22.1.0",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle 0.6.2",
  "smallvec 1.14.0",
@@ -30946,7 +31038,7 @@ dependencies = [
  "log",
  "naga 0.19.2",
  "once_cell",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle 0.6.2",
  "rustc-hash 1.1.0",
@@ -30972,7 +31064,7 @@ dependencies = [
  "log",
  "naga 22.1.0",
  "once_cell",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "raw-window-handle 0.6.2",
  "rustc-hash 1.1.0",
@@ -31063,7 +31155,7 @@ dependencies = [
  "ndk-sys 0.5.0+25.2.9519653",
  "objc",
  "once_cell",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "range-alloc",
  "raw-window-handle 0.6.2",
@@ -31108,7 +31200,7 @@ dependencies = [
  "ndk-sys 0.5.0+25.2.9519653",
  "objc",
  "once_cell",
- "parking_lot 0.11.2",
+ "parking_lot 0.12.3",
  "profiling",
  "range-alloc",
  "raw-window-handle 0.6.2",
