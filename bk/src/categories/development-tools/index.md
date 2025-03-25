@@ -29,9 +29,9 @@ See also [Rust tools][rust-tools]{{hi:Rust tools}}⮳.
 
 ## Rust Compilation
 
-{{#include reduce_compilation_duration.incl.md}}
+{{#include compilation/reduce_compilation_duration.incl.md}}
 
-{{#include faster_linking.incl.md}}
+{{#include compilation/faster_linking.incl.md}}
 
 ## Documentation
 
@@ -57,13 +57,13 @@ See also [Rust tools][rust-tools]{{hi:Rust tools}}⮳.
 
 ## Rust Code Cross-compilation
 
-{{#include cross_compilation.incl.md}}
+{{#include cross-compilation/cross_compilation.incl.md}}
 
 See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Transpilation into Rust
 
-{{#include transpilers.incl.md}}
+{{#include transcompilation/transpilers.incl.md}}
 
 ## Other
 

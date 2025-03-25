@@ -38,7 +38,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 ```
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/thiserror2.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/thiserror2.rs:example}}
 ```
 
 ## `miette` {#miette}

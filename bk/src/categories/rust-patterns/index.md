@@ -22,9 +22,9 @@ Shared solutions for particular situations specific to programming in Rust.
 | `?` Operator | Propagate errors concisely. | The Rust Book, "Error Handling". |
 | `From` Trait | Define conversions between types with `From`, often used for error handling. | Standard library documentation. |
 
-{{#include error_handling.incl.md}}
+{{#include error_handling/error_handling.incl.md}}
 
-{{#include error_customization.incl.md}}
+{{#include error_handling/error_customization.incl.md}}
 
 ### Generics & Traits
 

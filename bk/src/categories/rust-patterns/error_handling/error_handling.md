@@ -91,7 +91,7 @@ This recipe shows how to handle a complex error scenario and then print a backtr
 The recipe attempts to deserialize the value `256` into a [`u8`][primitive-u8]{{hi:u8}}⮳. An error will bubble up from Serde then [`csv`][c-csv]⮳{{hi:csv}} and finally up to the user code.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/error/backtrace.rs:example}}
+{{#include ../../../../crates/cats/rust_patterns/tests/error/backtrace.rs:example}}
 ```
 
 Backtrace error rendered:
