@@ -22,7 +22,11 @@ Shared solutions for particular situations specific to programming in Rust.
 | `?` Operator | Propagate errors concisely. | The Rust Book, "Error Handling". |
 | `From` Trait | Define conversions between types with `From`, often used for error handling. | Standard library documentation. |
 
+#### Error Handling
+
 {{#include error_handling/error_handling.incl.md}}
+
+#### Error Customization
 
 {{#include error_handling/error_customization.incl.md}}
 
@@ -66,21 +70,34 @@ Shared solutions for particular situations specific to programming in Rust.
 
 ## Design Patterns
 
+### Creational Patterns
+
 | Design Pattern | Description | Helpful Rust Crates | Notes |
 |---|---|---|---|
-| **Creational Patterns** | | | |
 | Builder | Constructing complex objects step-by-step. | [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} for code generation | Often implemented directly using structs and methods. [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} reduces boilerplate. |
 | Factory | Creating objects of different types based on some criteria. | Often implemented directly using traits, enums, or closures. | Traits and generics are frequently used. |
 | Abstract Factory | Creating families of related objects. | Often implemented directly using traits and generics | |
 | Singleton | Ensuring a class has only one instance. | Often implemented directly using static variables or lazy initialization | Can be implemented with [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} though often discouraged in modern Rust. |
-| **Structural Patterns** | | | |
+
+#### Builder Patterns
+
+{{#include builder_pattern.incl.md}}
+
+### Structural Patterns
+
+| Design Pattern | Description | Helpful Rust Crates | Notes |
+|---|---|---|---|
 | Adapter | Making incompatible interfaces work together. | Often implemented directly using traits | Traits are key for implementing adapters. |
 | Composite | Representing hierarchical tree-like structures. | Often implemented directly using structs and enums | |
 | Decorator | Adding behavior to objects dynamically. | Often implemented directly using traits | Traits are commonly used for decorators. |
 | Facade | Providing a simplified interface to a complex system. |  | Usually a matter of structuring your code. |
 | Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using `Rc` or `Arc` | `Rc` and `Arc` are used for shared ownership. |
 | Proxy | Controlling access to another object. | Often implemented directly | Can be implemented with custom types and dereferencing. |
-| **Behavioral Patterns** | | | |
+
+### Behavioral Patterns
+
+| Design Pattern | Description | Helpful Rust Crates | Notes |
+|---|---|---|---|
 | Chain of Responsibility | Handling requests by passing them along a chain of handlers. | Often implemented directly using enums or function pointers | |
 | Command | Encapsulating a request as an object. | Often implemented directly using structs and closures | Closures can be helpful for command implementations. |
 | Interpreter | Defining a grammatical representation for a language and providing an interpreter. | Parsing crates like [`nom`][c-nom]⮳{{hi:nom}}, [`pest`][c-pest]⮳{{hi:pest}}, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} can be helpful | |
@@ -88,18 +105,15 @@ Shared solutions for particular situations specific to programming in Rust.
 | Mediator | Defining an object that controls how other objects interact. | Often implemented directly | |
 | Memento | Capturing and externalizing an object's internal state. | Often implemented directly using structs and serialization | [`serde`][c-serde]⮳{{hi:serde}} can be useful for serialization. |
 | Observer | Notifying interested parties when a state changes. | [`event-listener`][c-event_listener]⮳{{hi:event-listener}} | Helps with implementing the observer pattern. |
-| State | Altering an object's behavior when its internal state changes. | Often implemented directly using enums | Enums are often used to represent states. |
-| Strategy | Choosing an algorithm at runtime. | Often implemented directly using trait objects or enums | Trait objects or enums are commonly used. |
+| State | Altering an object's behavior when its internal state changes. | Often implemented directly using enums. | Enums are often used to represent states. |
+| Strategy | Choosing an algorithm at runtime. | Often implemented directly using trait objects or enums. | Trait objects or enums are commonly used. |
 | Template Method | Defining the skeleton of an algorithm and letting subclasses define specific steps. | Often implemented directly using traits | Traits are helpful for defining the template. |
 | Visitor | Adding new operations to objects without changing their classes. | Often implemented directly using traits | Traits are usually used for visitor implementations. |
-
 | Dependency Injection | Providing dependencies to components. | Dependency injection frameworks (`shaku`) exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
 
 ### Code Examples for Rust Design Patterns
 
 {{#include design_patterns.incl.md}}
-
-{{#include _builder_pattern.incl.md}}
 
 ## Related Programming Tasks
 
@@ -114,8 +128,8 @@ Shared solutions for particular situations specific to programming in Rust.
 
 ## References
 
-- [Rust unofficial patterns][rust-unofficial-patterns-github]⮳.
-- [Rust state machine pattern][rust-state-machine-pattern]⮳.
+- [Rust Unofficial: patterns][rust-unofficial-patterns-github]⮳.
+- [Rust: state machine pattern][rust-state-machine-pattern]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

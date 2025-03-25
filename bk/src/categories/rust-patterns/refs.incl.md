@@ -10,16 +10,16 @@
 [ex-error_handling-thiserror]: error_handling/error_customization.md#thiserror
 [ex-error_handling-unwrap-or-else]: error_handling/error_handling.md#unwrap-or-else
 [ex-rust-patterns-abstract-factory]: design_patterns.md#abstract-factory
-[ex-rust-patterns-bon]: _builder_pattern.md#bon
+[ex-rust-patterns-bon]: builder_pattern.md#bon
 [ex-rust-patterns-compose-iterators-with-itertools]: functional_programming.md#compose-iterators-with-itertools
-[ex-rust-patterns-derive_builder]: _builder_pattern.md#derive_builder
+[ex-rust-patterns-derive_builder]: builder_pattern.md#derive_builder
 [ex-rust-patterns-dyn-clone]: design_patterns.md#dyn-clone
 [ex-rust-patterns-either]: functional_programming.md#either
 [ex-rust-patterns-frunk]: functional_programming.md#frunk
 [ex-rust-patterns-im]: functional_programming.md#im
 [ex-rust-patterns-lens]: functional_programming.md#lens
 [ex-rust-patterns-pin-project]: design_patterns.md#pin-project
-[ex-rust-patterns-typed-builder]: _builder_pattern.md#typed-builder
+[ex-rust-patterns-typed-builder]: builder_pattern.md#typed-builder
 [ex-rust-patterns-typestate-pattern]: design_patterns.md#typestate-pattern
 [p-closures]: ../../language/closures.md
 [p-csv]: # "../encoding/csv.md"
