@@ -76,11 +76,11 @@
 
 ## Command Line Utilities
 
-### Filesystem Cli
+### Filesystem CLI
 
 {{#include categories/command-line-utilities/filesystem_cli.incl.md}}
 
-### Networking Cli
+### Networking CLI
 
 {{#include categories/command-line-utilities/networking_cli.incl.md}}
 
@@ -90,7 +90,7 @@
 
 ## Compression
 
-### Flate2
+### `flate2`
 
 {{#include categories/compression/flate2.incl.md}}
 
@@ -108,7 +108,7 @@
 
 {{#include categories/concurrency/concurrent_data_structures.incl.md}}
 
-### Crossbeam
+### `crossbeam`
 
 {{#include categories/concurrency/crossbeam.incl.md}}
 
@@ -202,7 +202,7 @@
 
 {{#include categories/data-structures/heapless.incl.md}}
 
-### Linkedlist
+### `LinkedList`
 
 {{#include categories/data-structures/linkedlist.incl.md}}
 
@@ -380,7 +380,7 @@
 
 ## Development Tools: Build Utils
 
-### Autocfg
+### `autocfg`
 
 {{#include categories/development-tools_build-utils/autocfg.incl.md}}
 
@@ -548,7 +548,7 @@
 
 {{#include categories/filesystem/read-write.incl.md}}
 
-### Tempfile
+### `tempfile`
 
 {{#include categories/filesystem/tempfile.incl.md}}
 
@@ -590,7 +590,7 @@
 
 ## Memory Management
 
-### Lazy Initialization
+### Lazy INItialization
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
 
@@ -630,15 +630,15 @@
 
 ## Parser Implementations
 
-### Html
+### HTML
 
 {{#include categories/parser-implementations/html.incl.md}}
 
-### Ini
+### INI
 
 {{#include categories/parser-implementations/ini.incl.md}}
 
-### Json
+### JSON
 
 {{#include categories/parser-implementations/json.incl.md}}
 
@@ -650,15 +650,15 @@
 
 {{#include categories/parser-implementations/programming_languages.incl.md}}
 
-### Toml
+### TOML
 
 {{#include categories/parser-implementations/toml.incl.md}}
 
-### Xml
+### XML
 
 {{#include categories/parser-implementations/xml.incl.md}}
 
-### Yaml
+### YAML
 
 {{#include categories/parser-implementations/yaml.incl.md}}
 
@@ -674,11 +674,11 @@
 
 ## Template Engine
 
-### Tera
+### `tera`
 
 {{#include categories/template-engine/tera.incl.md}}
 
-### Tinytemplate
+### `tinytemplate`
 
 {{#include categories/template-engine/tinytemplate.incl.md}}
 
@@ -728,7 +728,7 @@
 
 {{#include categories/web-programming/http_types_and_interfaces.incl.md}}
 
-### Mime
+### MIME
 
 {{#include categories/web-programming/mime.incl.md}}
 
@@ -736,11 +736,11 @@
 
 {{#include categories/web-programming/scraping.incl.md}}
 
-### Url
+### URL
 
 {{#include categories/web-programming/url.incl.md}}
 
-## Web Programming: HTTP Client
+## Web Programming: HTTP CLIent
 
 ### APIs
 
@@ -750,7 +750,7 @@
 
 {{#include categories/web-programming_http-client/download.incl.md}}
 
-### HTTP Clients
+### HTTP CLIents
 
 {{#include categories/web-programming_http-client/http_clients.incl.md}}
 
