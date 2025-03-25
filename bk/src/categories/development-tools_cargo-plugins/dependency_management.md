@@ -74,11 +74,15 @@ The [`deps.rs`][deps-rs-website]⮳ website uses semantic versioning to detect o
 
 [`rust-digger.code-maven.com`][rust-digger-website]⮳ collects data about [Rust Crates][crates.io-website]⮳ to find the common practices of Open Source Rust developers and trying to improve the Rust ecosystem.
 
+## Related Topics {#skip}
+
+- [[cargo | Cargo]].
+- [[development_tools | Development Tools]].
+- [[versioning | Versioning]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[dependency_management: improve](https://github.com/john-cd/rust_howto/issues/597)
-
-See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+[dependency_management: review](https://github.com/john-cd/rust_howto/issues/597)
 </div>
