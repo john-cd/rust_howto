@@ -62,9 +62,9 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 | Topic | Rust Crates |
 |---|---|
 | General Build Tools | `cargo build` (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
-| Cross-Compilation | `cross` simplifies cross-compilation. |
-| Packaging, Distribution | `cargo-deb` creates Debian packages. `cargo-rpm` creates RPM packages. `create-dmg` creates macOS disk images. |
-| Build Script Helpers | `cc` helps with compiling C/C++ code in build scripts. `pkg-config` finds system libraries. |
+| Cross-Compilation | [`cross`][c-cross]⮳{{hi:cross}} simplifies cross-compilation. |
+| Packaging, Distribution | [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}} creates RPM packages. `create-dmg` creates macOS disk images. |
+| Build Script Helpers | [`cc`][c-cc]⮳{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c-pkg_config]⮳{{hi:pkg-config}} finds system libraries. |
 | Code Generation | Use build scripts. |
 | Link-Time Optimization (LTO) Configuration | Configured in Cargo.toml |
 | Incremental Compilation Management | Handled by [cargo][p-cargo] directly. |

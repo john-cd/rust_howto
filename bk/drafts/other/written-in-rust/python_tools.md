@@ -49,7 +49,7 @@ Key features include:
 - Installing packages from `PyPI`.
 - Resolving dependencies and generating lock files (like `pip-compile`).
 - Working with virtual environments.
-- Supports `Cargo`-style workspaces for scalable projects.
+- Supports [`Cargo`][c-cargo]⮳{{hi:Cargo}}-style workspaces for scalable projects.
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)

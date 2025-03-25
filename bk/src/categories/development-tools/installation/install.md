@@ -5,7 +5,7 @@
 | Topic | Rust Crates |
 |---|---|
 | Package Managers | [cargo][p-cargo] |
-| Installer Generators | `cargo-deb`, `cargo-rpm`, `create-dmg` (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively) |
+| Installer Generators | [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}, [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}, `create-dmg` (for creating Debian packages, RPM packages, and [macOS][p-macos] disk [images][p-images], respectively) |
 | Cross-Platform Installers | `tauri-bundler` (for bundling desktop applications) |
 | Self-Updating | `self_update` |
 | Build Systems (for installation scripts) | xtask (for managing complex builds and installation-related tasks) |

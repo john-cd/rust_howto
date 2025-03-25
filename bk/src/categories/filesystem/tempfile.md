@@ -14,7 +14,7 @@
 
 ### Other Options {#skip}
 
-- The `tempdir` crate is being merged into `tempfile`.
+- The `tempdir` crate is being merged into [`tempfile`][c-tempfile]⮳{{hi:tempfile}}.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

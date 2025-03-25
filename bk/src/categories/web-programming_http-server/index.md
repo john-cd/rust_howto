@@ -26,7 +26,7 @@ The following table outlines common tasks for building web servers in Rust and r
 
 Choose a web framework that fits your project's complexity and requirements. [`actix-web`][c-actix_web]⮳{{hi:actix-web}} is popular for performance-sensitive applications. [`axum`][c-axum]⮳{{hi:axum}} is a good choice for those familiar with [`tower`][c-tower]⮳{{hi:tower}} and [`hyper`][c-hyper]⮳{{hi:hyper}}. [`rocket`][c-rocket]⮳{{hi:rocket}} is a good choice for smaller projects or if you prefer a more declarative approach. [`warp`][c-warp]⮳{{hi:warp}} is very lightweight.
 
-If your web server needs to interact with a database, choose a framework compatible with the appropriate database driver. Plan your authentication and authorization strategy in advance. You should also consider which templating engine (like `Tera` or `Handlebars`) works best with your web framework.
+If your web server needs to interact with a database, choose a framework compatible with the appropriate database driver. Plan your authentication and authorization strategy in advance. You should also consider which templating engine (like [`Tera`][c-tera]⮳{{hi:Tera}} or [`Handlebars`][c-handlebars]⮳{{hi:Handlebars}}) works best with your web framework.
 
 ## Frameworks
 
@@ -76,7 +76,7 @@ Middleware is a powerful way to add functionality to your web server.
 
 | Topic | Rust Crates (Examples) | Notes |
 |---|---|---|
-| Asynchronous Programming (Essential for Web Servers) | [`tokio`][c-tokio]⮳{{hi:tokio}}, `smol` | These asynchronous runtimes are fundamental for building efficient and scalable web servers in Rust. [`tokio`][c-tokio]⮳{{hi:tokio}} is the most widely used. |
+| Asynchronous Programming (Essential for Web Servers) | [`tokio`][c-tokio]⮳{{hi:tokio}}, [`smol`][c-smol]⮳{{hi:smol}} | These asynchronous runtimes are fundamental for building efficient and scalable web servers in Rust. [`tokio`][c-tokio]⮳{{hi:tokio}} is the most widely used. |
 | Networking (Low-Level) | `tokio::net`, `std::net` | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
 | Templating | [`minijinja`][c-minijinja]⮳{{hi:minijinja}}, [`tera`][c-tera]⮳{{hi:tera}}, [`handlebars`][c-handlebars]⮳{{hi:handlebars}}, [`askama`][c-askama]⮳{{hi:askama}} | Templating engines are used to generate HTML dynamically. |
 | Serialization/Deserialization (JSON, etc.) | [`serde`][c-serde]⮳{{hi:serde}}, [`serde_json`][c-serde_json]⮳{{hi:serde_json}}, [`serde_yml`][c-serde_yml]⮳{{hi:serde_yml}} | [`serde`][c-serde]⮳{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |

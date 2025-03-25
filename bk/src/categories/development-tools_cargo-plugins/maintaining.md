@@ -11,7 +11,7 @@
 | Testing | `cargo test` runs your unit and integration tests. |
 | Benchmarking | `cargo bench` runs your benchmarks. |
 | Code Coverage | `cargo tarpaulin` runs code coverage analysis. |
-| Refactoring | Often IDE-driven, but some tools exist: `cargo-expand` expands [macros][p-macros], which can be helpful for understanding code and refactoring. |
+| Refactoring | Often IDE-driven, but some tools exist: [`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} expands [macros][p-macros], which can be helpful for understanding code and refactoring. |
 | Version Management | `cargo-bump` helps to automate version updates in your Cargo.toml. |
 
 ## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}

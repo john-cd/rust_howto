@@ -11,9 +11,9 @@ Configuration management {{hi:Configuration management}} is the practice of hand
 ## Common Approaches
 
 - [[environment_variables | Environment Variables]] are suitable for simple configurations. The `std::env` module provides access to environment variables.
-- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: `toml`, `serde_json`, `ron`, `serde`.
+- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c-toml]⮳{{hi:toml}}, [`serde_json`][c-serde_json]⮳{{hi:serde_json}}, `ron`, [`serde`][c-serde]⮳{{hi:serde}}.
 
-FIXME Configuration crates like `config-rs`, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
+FIXME Configuration crates like [`config-rs`][c-config]⮳{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
 Excellent for 12-factor applications.
 
 Command-Line Arguments:

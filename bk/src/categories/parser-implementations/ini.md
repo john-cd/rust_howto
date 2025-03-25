@@ -14,7 +14,7 @@
 
 ## Other Options {#skip}
 
-[`ini`][c-ini]⮳{{hi:ini}} can be used for parsing INI configuration files. `ini` is a simple macro built on top of `configparser`.
+[`ini`][c-ini]⮳{{hi:ini}} can be used for parsing INI configuration files. [`ini`][c-ini]⮳{{hi:ini}} is a simple macro built on top of `configparser`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

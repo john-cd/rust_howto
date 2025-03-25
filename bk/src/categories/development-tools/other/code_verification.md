@@ -69,13 +69,13 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 [![shuttle][c-shuttle-badge]][c-shuttle] [![shuttle-crates.io][c-shuttle-crates.io-badge]][c-shuttle-crates.io] [![shuttle-github][c-shuttle-github-badge]][c-shuttle-github] [![shuttle-lib.rs][c-shuttle-lib.rs-badge]][c-shuttle-lib.rs]{{hi:shuttle}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}} [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing]{{hi:Testing}} [![cat-asynchronous][cat-asynchronous-badge]][cat-asynchronous]{{hi:Asynchronous}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}}
 
-`shuttle` is a library for testing concurrent Rust code.
+[`shuttle`][c-shuttle]⮳{{hi:shuttle}} is a library for testing concurrent Rust code.
 
 ### `loom` {#loom}
 
 [![loom][c-loom-badge]][c-loom] [![loom-crates.io][c-loom-crates.io-badge]][c-loom-crates.io] [![loom-github][c-loom-github-badge]][c-loom-github] [![loom-lib.rs][c-loom-lib.rs-badge]][c-loom-lib.rs]{{hi:loom}}{{hi:Lock-free}}{{hi:Atomic}} [![cat-concurrency][cat-concurrency-badge]][cat-concurrency]{{hi:Concurrency}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`loom` allows permutation testing for concurrent code.
+[`loom`][c-loom]⮳{{hi:loom}} allows permutation testing for concurrent code.
 
 ## Other Tools {#skip}
 
@@ -88,11 +88,11 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 | Topic | Rust Crates |
 |---|---|
-| Static Analysis/Linting | `clippy` (for catching common code errors and style issues) |
-| Property-Based Testing | `proptest`, `quickcheck` |
+| Static Analysis/Linting | [`clippy`][c-clippy]⮳{{hi:clippy}} (for catching common code errors and style issues) |
+| Property-Based Testing | [`proptest`][c-proptest]⮳{{hi:proptest}}, `quickcheck` |
 | Unit [Testing][p-testing] | Use `cargo test` (built-in testing framework) |
 | Integration Testing | Often uses`cargo test`. Focuses on testing interactions between modules or components. |
-| Fuzzing | `cargo fuzz`, `afl.rs` (bindings to AFL) |
+| Fuzzing | `cargo fuzz`, [`afl.rs`][c-afl]⮳{{hi:afl.rs}} (bindings to AFL) |
 | Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc.
 
 ## References {#skip}

@@ -11,7 +11,7 @@
 | Link-Time Optimization (LTO) | Controlled via `Cargo.toml`. |
 | Build Dependencies | Managed by [cargo][p-cargo] |
 | Incremental Compilation | Handled by [cargo][p-cargo]. |
-| Build Automation (for complex builds) | `xtask` |
+| Build Automation (for complex builds) | [`xtask`][c-xtask]⮳{{hi:xtask}} |
 | Compiler Flags | Configurable in `Cargo.toml` |
 | Code Generation | Often done with procedural [macros][p-macros] or build scripts. |
 

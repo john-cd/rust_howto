@@ -33,7 +33,7 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 
 ## Communication / Data Marshaling Between Ruby and Rust {#skip1}
 
-The `rutie` crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c-serde]⮳{{hi:serde}} can be used for serializing and deserializing data if needed, but often [`rutie`][c-rutie]⮳{{hi:rutie}}'s built-in conversion mechanisms are sufficient.
+The [`rutie`][c-rutie]⮳{{hi:rutie}} crate handles much of the data marshaling between Rust and Ruby types. [`serde`][c-serde]⮳{{hi:serde}} can be used for serializing and deserializing data if needed, but often [`rutie`][c-rutie]⮳{{hi:rutie}}'s built-in conversion mechanisms are sufficient.
 
 ## Build Tools for Rust + Ruby {#skip2}
 

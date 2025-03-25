@@ -12,7 +12,7 @@ While it is common to deploy Rust applications to Cloud services like AWS, Azure
 
 - Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). `Shuttle` handles provisioning resources like databases, secrets, and storage.
 - Rapid Deployment: your Rust applications can be deployed quickly and easily to the cloud with minimal configuration.
-- Framework Support: Shuttle is compatible with popular Rust frameworks (`Axum`, `Actix Web`, `Rocket`, `Warp`, `Tower` and more). The Discord Bot building frameworks `Serenity` and `Poise` are also officially supported.
+- Framework Support: Shuttle is compatible with popular Rust frameworks ([`Axum`][c-axum]⮳{{hi:Axum}}, `Actix Web`, [`Rocket`][c-rocket]⮳{{hi:Rocket}}, [`Warp`][c-warp]⮳{{hi:Warp}}, [`Tower`][c-tower]⮳{{hi:Tower}} and more). The Discord Bot building frameworks `Serenity` and `Poise` are also officially supported.
 - Out-of-the-box logging support.
 
 It offers a free tier with access to essential features for individual developers and small projects.

@@ -8,9 +8,9 @@ Rust is not a purely functional language, but incorporates many features from fu
 
 The following explores some notable Rust crates that aid in functional programming:
 
-- `itertools` is often used with iterator chains, enhancing the standard iterator functions.
-- `im` replaces standard collections when immutability is required.
-- `frunk` is used for complex functional programming needs, especially those involving type-level programming.
+- [`itertools`][c-itertools]⮳{{hi:itertools}} is often used with iterator chains, enhancing the standard iterator functions.
+- [`im`][c-im]⮳{{hi:im}} replaces standard collections when immutability is required.
+- [`frunk`][c-frunk]⮳{{hi:frunk}} is used for complex functional programming needs, especially those involving type-level programming.
 
 ## Compose Iterators {#compose-iterators-with-itertools}
 
@@ -35,7 +35,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [![im-website][c-im-website-badge]][c-im-website] [![im][c-im-badge]][c-im] [![im-crates.io][c-im-crates.io-badge]][c-im-crates.io] [![im-github][c-im-github-badge]][c-im-github] [![im-lib.rs][c-im-lib.rs-badge]][c-im-lib.rs]{{hi:im}}{{hi:Persistent}}{{hi:Hamt}}{{hi:Immutable}}{{hi:B-tree}}{{hi:Rrb-tree}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-`im` provides immutable data structures, such as lists, [maps][p-maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
+[`im`][c-im]⮳{{hi:im}} provides immutable data structures, such as lists, [maps][p-maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it when you need to ensure that data does not change in unexpected ways.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/tests/functional_programming/im.rs:example}}

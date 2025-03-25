@@ -4,9 +4,9 @@
 
 - Immutable Global: use the `static` keyword (compile-time init, limited).
 - Lazy Init: [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c-once_cell]⮳{{hi:once_cell}} (runtime init, more control).
-- Mutable Global: `parking_lot::Mutex`/`RwLock` (thread-safe).
+- Mutable Global: [`parking_lot::Mutex`][c-parking_lot::Mutex]⮳{{hi:parking_lot::Mutex}}/`RwLock` (thread-safe).
 - Thread-Local: `std::thread_local`.
-- Atomics: `std::sync::atomic`.
+- Atomics: [`std::sync::atomic`][c-std::sync::atomic]⮳{{hi:std::sync::atomic}}.
 
 Two key libraries:
 

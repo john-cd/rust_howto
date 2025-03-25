@@ -35,10 +35,10 @@
 | Topic | Rust crate(s) | Notes |
 |---|---|---|
 | Full-Text [Search][p-search] | `elastic` (for Elasticsearch) | |
-| Fuzzy Searching | `fuzzy-matcher`, `strsim` | `strsim` provides string similarity metrics. See [[text-processing | Text Processing]]. |
-| Regular Expressions | `regex` | See [[regex | Regex]]. |
-| String Search (Multiple Patterns at Once) | `aho-corasick` | See [[text-processing | Text Processing]]. |
-| Vector Search | `qdrant`, `faiss-rs` (bindings to FAISS) | |
+| Fuzzy Searching | [`fuzzy-matcher`][c-fuzzy_matcher]⮳{{hi:fuzzy-matcher}}, `strsim` | [`strsim`][c-strsim]⮳{{hi:strsim}} provides string similarity metrics. See [[text-processing | Text Processing]]. |
+| Regular Expressions | [`regex`][c-regex]⮳{{hi:regex}} | See [[regex | Regex]]. |
+| String Search (Multiple Patterns at Once) | [`aho-corasick`][c-aho_corasick]⮳{{hi:aho-corasick}} | See [[text-processing | Text Processing]]. |
+| Vector Search | [`qdrant`][c-qdrant]⮳{{hi:qdrant}}, `faiss-rs` (bindings to FAISS) | |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

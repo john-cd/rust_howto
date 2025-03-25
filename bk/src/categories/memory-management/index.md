@@ -46,7 +46,7 @@ Rust does not have a garbage collector in the traditional sense. It uses ownersh
 
 ### Memory Safety Tools
 
-Memory profiling tools like `Valgrind` are useful for optimizing memory usage.
+Memory profiling tools like [`Valgrind`][c-valgrind]⮳{{hi:Valgrind}} are useful for optimizing memory usage.
 
 - [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
 - [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: A heap profiler that can track memory allocations.

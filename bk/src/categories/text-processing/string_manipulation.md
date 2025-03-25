@@ -16,7 +16,7 @@
 
 [![textwrap][c-textwrap-badge]][c-textwrap] [![textwrap-crates.io][c-textwrap-crates.io-badge]][c-textwrap-crates.io] [![textwrap-github][c-textwrap-github-badge]][c-textwrap-github] [![textwrap-lib.rs][c-textwrap-lib.rs-badge]][c-textwrap-lib.rs]{{hi:textwrap}}{{hi:Text}}{{hi:Typesetting}}{{hi:Wrap}}{{hi:Formatting}}{{hi:Hyphenation}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}} [![cat-text-processing][cat-text-processing-badge]][cat-text-processing]{{hi:Text processing}}
 
-`textwrap` provides word wrapping, indenting, and dedenting strings. It has optional support for Unicode and emojis, as well as machine hyphenation.
+[`textwrap`][c-textwrap]⮳{{hi:textwrap}} provides word wrapping, indenting, and dedenting strings. It has optional support for Unicode and emojis, as well as machine hyphenation.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/tests/string_manipulation/textwrap.rs:example}}

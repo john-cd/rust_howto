@@ -6,7 +6,7 @@
 
 [![which][c-which-badge]][c-which] [![which-crates.io][c-which-crates.io-badge]][c-which-crates.io] [![which-github][c-which-github-badge]][c-which-github] [![which-lib.rs][c-which-lib.rs-badge]][c-which-lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}} [![cat-os][cat-os-badge]][cat-os]{{hi:Operating systems}}
 
-`which` is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
+[`which`][c-which]⮳{{hi:which}} is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/tests/external_commands/which.rs:example}}

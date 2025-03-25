@@ -6,7 +6,7 @@
 |---|---|
 | Profiling and Benchmarking | `cargo flamegraph` generates flame graphs to visualize performance bottlenecks. `cargo bench` (built-in) runs benchmarks to measure performance. |
 | Optimization Analysis| `cargo expand` expands [macros][p-macros], which can sometimes help you understand generated code and identify optimization opportunities. |
-| Other Performance Tools | `perf`: (System profiler); `valgrind` (Memory debugging and profiling) |
+| Other Performance Tools | [`perf`][c-perf]⮳{{hi:perf}}: (System profiler); [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (Memory debugging and profiling) |
 
 ## Configure your `cargo` Project for Maximum Performance, Fast Compile Times or Minimal Binary Size {#cargo-wizard}
 

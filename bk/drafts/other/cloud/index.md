@@ -25,7 +25,7 @@ Rust is commonly used to develop reliable and efficient cloud infrastructure com
 - Container runtimes (e.g., `Youki`),
 - Service meshes (e.g., `Linkerd`),
 - MicroVMs (e.g., `Firecracker`),
-- Operating systems optimized for containers (e.g., `Bottlerocket`).
+- Operating systems optimized for containers (e.g., [`Bottlerocket`][c-bottlerocket]⮳{{hi:Bottlerocket}}).
 
 Refer to:
 

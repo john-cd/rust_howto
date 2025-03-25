@@ -57,12 +57,12 @@ Example `.github/workflows/<name>.yml`
     # default: "v0-rust"
     prefix-key: ""
 
-    # A cache key that is used instead of the automatic `job`-based key,
+    # A cache key that is used instead of the automatic [`job`][c-job]⮳{{hi:job}}-based key,
     # and is stable over multiple jobs.
     # Default: empty
     shared-key: ""
 
-    # An additional cache key that is added alongside the automatic `job`-based
+    # An additional cache key that is added alongside the automatic [`job`][c-job]⮳{{hi:job}}-based
     # cache key and can be used to further differentiate jobs.
     # Default: empty
     key: ""
@@ -74,7 +74,7 @@ Example `.github/workflows/<name>.yml`
     # default: "CARGO CC CFLAGS CXX CMAKE RUST"
     env-vars: ""
 
-    # The `cargo` workspaces and target directory configuration.
+    # The [`cargo`][c-cargo]⮳{{hi:cargo}} workspaces and target directory configuration.
     # These entries are separated by newlines and have the form
     # `$workspace -> $target`. The `$target` part is treated as a directory
     # relative to the `$workspace` and defaults to "target" if not explicitly given.
@@ -85,7 +85,7 @@ Example `.github/workflows/<name>.yml`
     cache-directories: ""
 
     # Determines whether the workspace `target` directories are cached.
-    # If `false`, only the `cargo` registry will be cached.
+    # If `false`, only the [`cargo`][c-cargo]⮳{{hi:cargo}} registry will be cached.
     # default: "true"
     cache-targets: ""
 
@@ -119,7 +119,7 @@ Example `.github/workflows/<name>.yml`
 FIXME
 
 - `rust-toolchain`: Github action to install Rust components via rustup
-- `rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
+- [`rust-cache`][c-rust_cache]⮳{{hi:rust-cache}}: Github action to cache compilation artifacts and speed up subsequent runs.
 - `install-action`: GitHub Action for installing [development tools][p-development-tools] (mainly from GitHub Releases).
 
 ## See Also {#skip}

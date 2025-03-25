@@ -15,7 +15,7 @@ Graphics and [visualization][p-visualization] for Robotics.
 
 - `kiss3d` - Keep it simple, stupid 3D [graphics][p-graphics] engine for Rust.
 - `urdf-viz` - URDF visualizer
-- `rerun` - A logging SDK and visualizer for computer vision and robotics
+- [`rerun`][c-rerun]⮳{{hi:rerun}} - A logging SDK and visualizer for computer vision and robotics
 
 ### `kiss3d` {#kiss3d}
 

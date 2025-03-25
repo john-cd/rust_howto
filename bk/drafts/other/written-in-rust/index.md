@@ -22,14 +22,14 @@ This section provides a few examples of software written in Rust, organized by t
   - Performance monitoring tools.
   - File manipulation tools.
   - Examples:
-    - `ripgrep`: A line-oriented search tool.
-    - `exa`: A modern replacement for ls.
-    - `bat`: A `cat` clone with syntax highlighting and Git integration.
-    - `fd`: A simple, fast, and user-friendly alternative to find.
-    - `zoxide`: A smarter cd command.
-    - `dust`: A more intuitive version of du.
-    - `bottom`: A graphical process/system monitor.
-    - `sd`: An intuitive find & replace CLI.
+    - [`ripgrep`][c-ripgrep]⮳{{hi:ripgrep}}: A line-oriented search tool.
+    - [`exa`][c-exa]⮳{{hi:exa}}: A modern replacement for ls.
+    - [`bat`][c-bat]⮳{{hi:bat}}: A `cat` clone with syntax highlighting and Git integration.
+    - [`fd`][c-fd]⮳{{hi:fd}}: A simple, fast, and user-friendly alternative to find.
+    - [`zoxide`][c-zoxide]⮳{{hi:zoxide}}: A smarter cd command.
+    - [`dust`][c-dust]⮳{{hi:dust}}: A more intuitive version of du.
+    - [`bottom`][c-bottom]⮳{{hi:bottom}}: A graphical process/system monitor.
+    - [`sd`][c-sd]⮳{{hi:sd}}: An intuitive find & replace CLI.
 
 ## Web Development
 
@@ -40,7 +40,7 @@ This section provides a few examples of software written in Rust, organized by t
 - WebAssembly ([[wasm | WASM]]):
   - Front-end web applications.
   - Portable code for web browsers.
-    - Libraries like `yew` and `leptos` enable building complex front-end web applications with Rust.
+    - Libraries like [`yew`][c-yew]⮳{{hi:yew}} and [`leptos`][c-leptos]⮳{{hi:leptos}} enable building complex front-end web applications with Rust.
 - Networking:
   - Network protocols.
   - VPN software.
@@ -58,11 +58,11 @@ This section provides a few examples of software written in Rust, organized by t
   - Database drivers.
   - Examples:
     - `TiKV`: A distributed transactional key-value database.
-    - `Neon`: serverless postgres.
+    - [`Neon`][c-neon]⮳{{hi:Neon}}: serverless postgres.
 - Game Development:
   - Game engines.
   - Game tools.
-  - Example: Game engines and game tools are being developed using the `Bevy` game engine.
+  - Example: Game engines and game tools are being developed using the [`Bevy`][c-bevy]⮳{{hi:Bevy}} game engine.
 - Distributed Systems:
   - Blockchain technology.
   - Cloud computing tools.
@@ -74,8 +74,8 @@ This section provides a few examples of software written in Rust, organized by t
   - Language compilers.
   - Language interpreters.
   - Examples:
-    - `SWC`, a very fast Typescript/Javascript compiler.
-    - `Deno`, a JavaScript, TypeScript, and WebAssembly runtime.
+    - [`SWC`][c-swc]⮳{{hi:SWC}}, a very fast Typescript/Javascript compiler.
+    - [`Deno`][c-deno]⮳{{hi:Deno}}, a JavaScript, TypeScript, and WebAssembly runtime.
 - Package Managers:
   - Software distribution tools.
 - Linters and Formatters:
@@ -183,7 +183,7 @@ https://github.com/facebook/starlark-rust
 
 https://arangodb.com/
 
-`rerun` visualizes streams of multimodal data.
+[`rerun`][c-rerun]⮳{{hi:rerun}} visualizes streams of multimodal data.
 https://github.com/rerun-io/rerun
 
 [![rerun-website][c-rerun-website-badge]][c-rerun-website] [![rerun][c-rerun-badge]][c-rerun] [![rerun-crates.io][c-rerun-crates.io-badge]][c-rerun-crates.io] [![rerun-github][c-rerun-github-badge]][c-rerun-github] [![rerun-lib.rs][c-rerun-lib.rs-badge]][c-rerun-lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat-visualization][cat-visualization-badge]][cat-visualization]{{hi:Visualization}} [![cat-computer-vision][cat-computer-vision-badge]][cat-computer-vision]{{hi:Computer vision}}
@@ -209,10 +209,10 @@ https://github.com/kata-containers/kata-containers
 `firecracker` Secure and fast microVMs for serverless computing.
 https://github.com/firecracker-microvm/firecracker
 
-`television`
+[`television`][c-television]⮳{{hi:television}}
 https://github.com/alexpasmantier/television
 
-`rustdesk` - An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
+[`rustdesk`][c-rustdesk]⮳{{hi:rustdesk}} - An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
 https://github.com/rustdesk/rustdesk
 
 [`sd`][c-sd]⮳ An intuitive find & replace CLI
@@ -236,7 +236,7 @@ https://github.com/uutils/coreutils
 [`nushell`][c-nushell]⮳  A new type of shell
 https://github.com/nushell/nushell
 
-`lsd` The next gen ls command
+[`lsd`][c-lsd]⮳{{hi:lsd}} The next gen ls command
 https://github.com/lsd-rs/lsd
 
 [`ruff`][c-ruff]⮳  An extremely fast Python linter and code formatter, written in Rust.

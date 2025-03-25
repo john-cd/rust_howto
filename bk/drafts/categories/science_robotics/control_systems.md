@@ -29,7 +29,7 @@ Collision avoidance, trajectory optimization.
 
 [![pathfinding-website][c-pathfinding-website-badge]][c-pathfinding-website] [![pathfinding][c-pathfinding-badge]][c-pathfinding] [![pathfinding-crates.io][c-pathfinding-crates.io-badge]][c-pathfinding-crates.io] [![pathfinding-github][c-pathfinding-github-badge]][c-pathfinding-github] [![pathfinding-lib.rs][c-pathfinding-lib.rs-badge]][c-pathfinding-lib.rs]{{hi:pathfinding}}{{hi:Astar}}{{hi:Graph}}{{hi:Flow}}{{hi:Dijkstra}}{{hi:Shortest-path}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
-`pathfinding` offers pathfinding, flow, and graph algorithms.
+[`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}} offers pathfinding, flow, and graph algorithms.
 
 {{#example pathfinding}}
 
@@ -37,7 +37,7 @@ Collision avoidance, trajectory optimization.
 
 [![rrt][c-rrt-badge]][c-rrt] [![rrt-crates.io][c-rrt-crates.io-badge]][c-rrt-crates.io] [![rrt-github][c-rrt-github-badge]][c-rrt-github] [![rrt-lib.rs][c-rrt-lib.rs-badge]][c-rrt-lib.rs]{{hi:rrt}}{{hi:Search}}{{hi:Path-finding}}{{hi:Robotics}}{{hi:rrt}} [![cat-algorithms][cat-algorithms-badge]][cat-algorithms]{{hi:Algorithms}}
 
-`rrt` stands for Rapidly-exploring Random Tree library. Path finding using dual-RRT connect.
+[`rrt`][c-rrt]⮳{{hi:rrt}} stands for Rapidly-exploring Random Tree library. Path finding using dual-RRT connect.
 
 ## `openrr-planner` {#openrr-planner}
 

@@ -47,7 +47,7 @@ See also [[node | Node]].
 
 You may also integrate Python into Rust applications via:
 
-- `cpython` (older bindings).
+- [`cpython`][c-cpython]⮳{{hi:cpython}} (older bindings).
 - [`pyo3`][c-pyo3]⮳{{hi:pyo3}}.
 
 See [[python | Python]].
