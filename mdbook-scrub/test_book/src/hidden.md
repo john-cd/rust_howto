@@ -1,4 +1,4 @@
-# Scrub Hidden Sections - Don't Include Hidden Files
+# Scrub Hidden Sections + Stop Including Hidden Files
 
 ## The Following <div> Should Be Hidden
 
@@ -6,19 +6,23 @@
 THIS SHOULD NOT BE SEEN.
 </div>
 
-
-## The Following Should Be Included
+## The Following File Should Be Included
 
 {{#include ./included.txt}}
 
+## The Following Includes Should Be Hidden
 
-## These Includes Should Be Hidden
-
-### Include a File
+### Include The Whole File
 
 ```rust
 {{#include _hidden.rs}}
 ```
+
+{{#include _hidden.rs }}
+
+{{ #include _hidden.rs}}
+
+{{# include _hidden.rs}}
 
 ### Partially Include a File - Third Line Only
 
@@ -26,7 +30,7 @@ THIS SHOULD NOT BE SEEN.
 {{#include _hidden.rs:3}}
 ```
 
-### Partially Include a File - Up to Line 5
+### Partially Include a File - up to Line 5
 
 ```rust
 {{#include _hidden.rs::5}}
@@ -38,13 +42,13 @@ THIS SHOULD NOT BE SEEN.
 {{#include _hidden.rs:2:}}
 ```
 
-### Partially Include a File - Between Lines 2 and 5
+### Partially Include a File - between Lines 2 and 5
 
 ```rust
 {{#include _hidden.rs:2:5}}
 ```
 
-### Partially Include a File into Your Book Using Anchors
+### Partially Include a File into Your Book using Anchors
 
 ```rust
 {{ #include _hidden.rs:component }}
@@ -63,3 +67,10 @@ THIS SHOULD NOT BE SEEN.
 ### Inserting Runnable Rust Files with Attributes
 
 {{#playground _hidden.rs editable}}
+
+## The Following Just Imports / Defines Reference Definitions
+
+The links in the first section should work.
+
+{{#include refs.md}}
+[ref]: https://rust-cli.github.io/book/index.html

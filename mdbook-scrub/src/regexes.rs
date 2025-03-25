@@ -8,7 +8,7 @@ type Replacement = Box<dyn Fn(&Captures) -> String>;
 
 pub struct RegexAndReplacement {
     pub re: Regex,
-    // Most often set to None for no replacement / deletion
+    // Most often set to None for no replacement, meaning deletion
     pub replacement: Option<Replacement>,
 }
 

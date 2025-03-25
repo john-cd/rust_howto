@@ -1,5 +1,7 @@
 # Wikilinks
 
+<https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>
+
 The following wikilinks should be replaced by their `title`, if present:
 
 ~[[]]~
