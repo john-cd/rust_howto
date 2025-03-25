@@ -15,4 +15,6 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-lru = "0.13"
+cached = "0.55.1"
+lru = "0.13.0"
+moka = { version = "0.12.10", features = ["sync"] }
