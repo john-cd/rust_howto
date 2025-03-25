@@ -1,4 +1,4 @@
-| Recipe | Crates |
-|--------|--------|
-| [Use the `dapr` Distributed Runtime][ex-cloud-dapr] | {{#crate }} |
-| [cloud serverless computing][ex-cloud-serverless-computing] | {{#crate }} |
+| Recipe |
+|--------|
+| [Use the `dapr` Distributed Runtime][ex-cloud-dapr] |
+| [cloud serverless computing][ex-cloud-serverless-computing] |

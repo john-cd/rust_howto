@@ -1,7 +1,3 @@
-| Recipe | Links |
-|--------|--------|
-| | {{#crate }} |
-
 <div class="hidden">
-FIXME
+Empty
 </div>

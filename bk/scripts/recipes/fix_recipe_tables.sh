@@ -29,7 +29,7 @@ if [ -f "${dir}/refs.incl.md" ]; then
         then
             title=$(echo ${label} | tr '-' ' ')
             # Add table row with link in the corresponding .incl.md
-            echo "| [${title}][ex-${label}] | {{#crate }} | {{#categories }} |" >> "${file%.md}.incl.md"
+            echo "| [${title}][ex-${label}] | | |" >> "${file%.md}.incl.md"
         fi
         done
     fi
