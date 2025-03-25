@@ -1,6 +1,11 @@
 # Wikilinks
 
-<https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>
+The `rust_howto` book uses wikilinks to insert links to other pages.
+
+See <https://en.wikipedia.org/wiki/Help:Link#Wikilinks_(internal_links)>.
+
+Any left-over directives should be scrubbed by `mdbook-scrub` if the corresponding
+configuration toggle is set (which is the default).
 
 The following wikilinks should be replaced by their `title`, if present:
 

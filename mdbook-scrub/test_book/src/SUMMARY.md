@@ -2,8 +2,8 @@
 
 - [Scrub hidden sections and don't include hidden files](./hidden.md)
 - [Scrub wikilinks](./wikilinks.md)
-- [Scrub example directives](./example_directives.md)
-- [Scrub category directives](./category_directives.md)
-- [Scrub crate directives](./crate_directives.md)
+- [Scrub example directives](./examples.md)
+- [Scrub category directives](./categories.md)
+- [Scrub crate directives](./crates.md)
 - [Scrub crate blocks](./crate_blocks.md)
 - [Others](./others.md)
