@@ -10,9 +10,9 @@ WebAssembly was created primarily to address the limitations of JavaScript (perf
 
 - JavaScript, while versatile, can struggle with computationally intensive tasks. WebAssembly code is small and fast, running at near-native speeds within the browser.
 - WebAssembly is designed to complement and run alongside JavaScript — using the WebAssembly JavaScript APIs, you can load WebAssembly modules into a JavaScript app and share functionality between the two.
-- WASM is a low-level, assembly-like language: It is designed to be a compilation target for other languages like C, C++, and Rust. This means you can write code in these languages and compile it into WebAssembly for execution in the browser (and nowadays, outside of it). WASM allows developers to leverage their existing codebases and skills. This opens up the web to a wider range of developers and enables the reuse of existing libraries and tools.
-- WASM is designed to be platform-independent, running consistently across different browsers and operating systems.
-- WASM operates within a secure sand-boxed environment, mitigating security risks.
+- WASM is a low-level, assembly-like language: It is designed to be a compilation target for other languages like C, C++, and Rust. This means you can write code in these languages and compile it into WebAssembly for execution in the browser (and nowadays, outside of it). [WASM][p-wasm] allows developers to leverage their existing codebases and skills. This opens up the web to a wider range of developers and enables the reuse of existing libraries and tools.
+- [WASM][p-wasm] is designed to be platform-independent, running consistently across different browsers and operating systems.
+- [WASM][p-wasm] operates within a secure sand-boxed environment, mitigating security risks.
 
 WebAssembly binaries typically have a [`.wasm`][book-rustwasm]⮳{{hi:.wasm}} file extension. The textual representation of WebAssembly has a `.wat` file extension.
 
@@ -27,7 +27,7 @@ Inside the browser:
 - Data [visualization][p-visualization] and analysis (e.g., charts, maps).
 - Real-time [audio][p-audio] and video manipulation / processing.
 - Real-time image processing and recognition.
-- Streaming and caching music.
+- Streaming and [caching][p-caching] music.
 - Performing cryptographic operations efficiently.
 - Peer-to-Peer Applications e.g., collaborative editing.
 - Virtual/Augmented Reality (VR/AR): Handling the demanding computations required for immersive experiences.

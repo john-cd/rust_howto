@@ -4,7 +4,7 @@
 
 ## WASM Runtimes {#skip}
 
-This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute WASM bytecode. This is distinct from tools used to *compile* to [WASM][p-wasm].
+This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute [WASM][p-wasm] bytecode. This is distinct from tools used to *compile* to [WASM][p-wasm].
 
 | Runtime Crate | Description | Key Features | WASI Support | Embeddable | Notes |
 |---|---|---|---|---|---|
@@ -30,7 +30,7 @@ Notes:
 - WASI support is crucial for running [WASM][p-wasm] outside of the browser, and all the listed runtimes support it.
 - Most of these runtimes are designed to be embeddable into other applications.
 - [`wasmtime`][c-wasmtime]⮳{{hi:wasmtime}} is generally considered to be very performant due to its AOT compilation.
-- WASM runtimes often prioritize security, as WASM is often used to execute untrusted code.
+- WASM runtimes often prioritize security, as [WASM][p-wasm] is often used to execute untrusted code.
 
 ## Code Examples {#skip2}
 

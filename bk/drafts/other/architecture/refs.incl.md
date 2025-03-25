@@ -6,6 +6,8 @@
 [ex-architecture-layered-architecture]: common_architectures.md#layered-architecture
 [ex-architecture-microservices]: common_architectures.md#microservices
 [ex-architecture-pipelines]: common_architectures.md#pipelines
+[p-actors]: ../../../src/categories/concurrency/_actors.md
+[p-apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p-architecture]: index.md
 [p-asynchronous]: ../../../src/categories/asynchronous/index.md
 [p-authentication]: ../../../src/categories/authentication/index.md
@@ -18,9 +20,11 @@
 [p-error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p-github-actions]: ../devops/github_actions.md
 [p-json]: ../../../src/categories/parser-implementations/json.md
+[p-memory-allocation]: ../../../src/categories/memory-management/memory_allocation.md
 [p-mocking]: ../../../src/categories/development-tools_testing/mocking.md
 [p-modules]: ../../../src/language/modules.md
 [p-parsing]: ../../categories/parsing/parsing.md
 [p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p-requests]: ../../../src/categories/web-programming_http-client/requests.md
 [p-tracing]: ../../../src/categories/development-tools_debugging/tracing.md

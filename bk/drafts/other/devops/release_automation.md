@@ -2,14 +2,14 @@
 
 {{#include release_automation.incl.md}}
 
-Release automation involves automating the process of building, testing, packaging, and distributing your Rust applications.
+Release automation involves automating the process of building, [testing][p-testing], packaging, and distributing your Rust applications.
 
 How you distribute your application depends on the target platform:
 
 - Libraries: publish (open-source) Rust libraries to `crates.io`.
 - Executables: publish binaries to a service where they can be downloaded from (e.g., `GitHub Releases`).
-- Containers: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like [`AWS`][c-aws]⮳{{hi:AWS}} or `Azure`.
-- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using cargo plugins like [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}, [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}...
+- [Containers][p-containers]: Use `Docker` to create the container image, push it to a private or public registry (e.g. `DockerHub`, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. `Kubernetes`) or a Cloud service like [`AWS`][c-aws]⮳{{hi:AWS}} or `Azure`.
+- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p-cargo] plugins like [`cargo-deb`][c-cargo_deb]⮳{{hi:cargo-deb}}, [`cargo-rpm`][c-cargo_rpm]⮳{{hi:cargo-rpm}}...
 
 ## Cargo {#skip}
 
@@ -36,7 +36,7 @@ The following are the typical steps to release a crate to `crates.io`:
 - Increase the application's version number in `Cargo.toml`.
 - Make sure all code is committed and pushed to its repository.
 - Create and push a git tag.
-- Publish the package in the cargo registry (for example, crates.io).
+- Publish the package in the [cargo][p-cargo] registry (for example, crates.io).
   - Go to [`crates.io`][crates.io-website]{{hi:crates.io}}⮳, sign in, and create an API token in `Account Settings` > `API Tokens`, if not done already.
   - Use `cargo login` to save the token in `$CARGO_HOME/credentials.toml`.
   - Review `cargo package --list`, the list of source code files included in the package.
@@ -75,7 +75,7 @@ The following are the typical steps to release a crate to `crates.io`:
 
 ## Related Topics {#skip}
 
-- Testing Automation
+- [Testing][p-testing] Automation
   - Code [[code_formatting_linting | linting]] .
   - Unit, integration, and end-to-end [[testing | tests]].
 - Deployment

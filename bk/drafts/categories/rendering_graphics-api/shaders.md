@@ -4,7 +4,7 @@
 
 Languages and tools for writing, compiling, and using shaders.
 
-Shaders are programs that run on the GPU (Graphics Processing Unit). There are several types of shaders, including:
+Shaders are programs that run on the [GPU][p-gpu] (Graphics Processing Unit). There are several types of shaders, including:
 
 - Vertex Shaders: These shaders process the attributes of each vertex in a 3D model. They can transform vertex positions, apply lighting calculations, and manipulate vertex data before it is rasterized into pixels.
 - Fragment Shaders (or Pixel Shaders): These shaders handle the color and other attributes of individual pixels. They determine the final color of each pixel by applying textures, lighting effects, and other visual effects.
@@ -18,7 +18,7 @@ Shaders are written in specialized programming languages like GLSL (OpenGL Shadi
 - SPIR-V compilation.
 - GLSL/HLSL compilation.
 - Compute Shaders.
-- GPU Compute.
+- [GPU][p-gpu] Compute.
 
 ## `naga` {#naga}
 
@@ -28,7 +28,7 @@ Shader translator and validator. Part of the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} proj
 
 ## `rust-gpu` {#rust-gpu}
 
-Making Rust a first-class language and ecosystem for GPU shaders
+Making Rust a first-class language and ecosystem for [GPU][p-gpu] shaders
 
 ## `cubecl` {#cubecl}
 

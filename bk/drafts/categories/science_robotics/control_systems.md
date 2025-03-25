@@ -13,7 +13,7 @@ Motion control, feedback loops, PID controllers.
 
 [![nalgebra-website][c-nalgebra-website-badge]][c-nalgebra-website] [![nalgebra][c-nalgebra-badge]][c-nalgebra] [![nalgebra-crates.io][c-nalgebra-crates.io-badge]][c-nalgebra-crates.io] [![nalgebra-github][c-nalgebra-github-badge]][c-nalgebra-github] [![nalgebra-lib.rs][c-nalgebra-lib.rs-badge]][c-nalgebra-lib.rs]{{hi:nalgebra}}{{hi:Math}}{{hi:Algebra}}{{hi:Linear}}{{hi:Matrix}}{{hi:Vector}} [![cat-mathematics][cat-mathematics-badge]][cat-mathematics]{{hi:Mathematics}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-science][cat-science-badge]][cat-science]{{hi:Science}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}}
 
-General-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices.
+General-purpose [linear algebra][p-linear-algebra] library with transformations and statically-sized or dynamically-sized matrices.
 
 ## `k`: Kinematics Library for Robotics {#k}
 

@@ -5,7 +5,7 @@ set -u
 #
 # Usage <script>.sh <root folder of book>
 # Beware: may modify a lot of files. Manual editing is required after run.
-# Does not handle text in ``` ``` blocks correctly.
+# Does not handle text in ``` ``` blocks or in [[ | ]] or [ ]( ) correctly.
 
 root="$(realpath $1)/"
 

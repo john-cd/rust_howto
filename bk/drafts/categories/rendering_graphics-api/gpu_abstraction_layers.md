@@ -10,7 +10,7 @@ Libraries that provide a [cross-platform][p-cross-platform] abstraction over nat
 - Pipelines: The sequence of steps involved in rendering.
 - Buffers: Memory on the GPU.
 - Textures: [Images][p-images] used in rendering.
-- Bind Groups: How shaders access resources.
+- Bind Groups: How [shaders][p-shaders] access resources.
 
 ## Key Rust Crates {#skip}
 
@@ -22,7 +22,7 @@ Libraries that provide a [cross-platform][p-cross-platform] abstraction over nat
 
 ## WebGPU {#skip}
 
-WebGPU is a JavaScript, C++, Rust, and C API that allows portably and efficiently utilizing a device's graphics processing unit (GPU). This is achieved with the underlying Vulkan, Metal, or Direct3D 12 system APIs.
+WebGPU is a JavaScript, C++, Rust, and C API that allows portably and efficiently utilizing a device's graphics processing unit ([GPU][p-gpu]). This is achieved with the underlying [Vulkan][p-vulkan], Metal, or Direct3D 12 system APIs.
 
 WebGPU enables 3D graphics within an HTML canvas. It also has robust support for general-purpose GPU computations.
 
@@ -34,13 +34,13 @@ For WebGPU development in Rust, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is the essential 
 
 [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is a safe and portable Rusty [WebGPU][wikipedia-webgpu]{{hi:WebGPU}}⮳ API wrapper. It is a cross-platform, safe, pure-Rust [graphics][p-graphics] API that exposes modern GPU capabilities. It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and WebGPU on WASM. The API is based on the [WebGPU standard][webgpu-website]⮳. It is suitable for general purpose graphics and compute on the GPU. It serves as the core of the WebGPU integration in Firefox and Deno.
 
-- Shader Language: WGSL (WebGPU Shading Language) is the shader language used by WebGPU. You'll write your shaders in WGSL. You'll use it in your shader code (which is then loaded by [`wgpu`][c-wgpu]⮳{{hi:wgpu}}).
+- Shader Language: WGSL (WebGPU Shading Language) is the shader language used by WebGPU. You'll write your [shaders][p-shaders] in WGSL. You'll use it in your shader code (which is then loaded by [`wgpu`][c-wgpu]⮳{{hi:wgpu}}).
 - Graphics Pipeline: You configure the [graphics][p-graphics] pipeline using the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API.
 - Texture Handling: [`wgpu`][c-wgpu]⮳{{hi:wgpu}} provides ways to create and manage textures.
 - While primarily a low-level, cross-platform GPU API, [`wgpu`][c-wgpu]⮳{{hi:wgpu}} is capable of rasterization and can be used to draw primitives. It doesn't provide high-level drawing functions directly, but it's the foundation upon which many higher-level graphics libraries are built. It's excellent for performance and control.
 - Compute Shaders: You write compute shaders in WGSL and then use the [`wgpu`][c-wgpu]⮳{{hi:wgpu}} API to dispatch them.
 
-- Debugging: WebGPU has built-in debugging capabilities that can be accessed through browser developer tools (if you're targeting the web) or through debugging tools specific to your platform (if you're targeting native).
+- Debugging: WebGPU has built-in debugging capabilities that can be accessed through browser developer tools (if you're targeting the web) or through [debugging][p-debugging] tools specific to your platform (if you're targeting native).
 
 ```rust,editable
 {{#include ../../../crates/cats/graphics/tests/wgpu.rs:example}}

@@ -17,7 +17,7 @@ Each microservice
 
 - is a self-contained unit that performs a specific business function;
 - can be developed, deployed, and scaled independently;
-- typically manages its own database, promoting data independence;
+- typically manages its own [database][p-database], promoting data independence;
 - and can use different programming languages, frameworks, and databases, allowing teams to choose the best tools for each job.
 
 Microservices communicate with each other through well-defined APIs, promoting loose coupling.
@@ -30,7 +30,7 @@ Crates like [`axum`][c-axum]⮳{{hi:axum}}, [`warp`][c-warp]⮳{{hi:warp}} or [`
 - Service Discovery: Use a service registry (e.g., `Consul`, `etcd`) to dynamically discover microservice locations.
 - API Gateway: Use an API gateway (e.g., `Kong`) to handle routing, [authentication][p-authentication], and other cross-cutting concerns.
 - Message Queues: Use message queues (e.g., `RabbitMQ`, `Kafka`) for [asynchronous][p-asynchronous] communication.
-- Containerization: Use `Docker` and `Kubernetes` for [containerization][p-containerization] and orchestration.
+- [Containerization][p-containerization]: Use `Docker` and `Kubernetes` for [containerization][p-containerization] and orchestration.
 - Logging and Monitoring: Implement central logging and monitoring with `Fluentd`; [`Elasticsearch`][c-elasticsearch]⮳{{hi:Elasticsearch}}, `Logstash`, and `Kibana`; `Graylog`, `Splunk`, `Prometheus` and/or `Grafana`.
 - [Error Handling][p-error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
 - Configuration Management: externalize configuration and secrets e.g. with `Vault`.
@@ -86,7 +86,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 ### Advantages {#skip9}
 
 - Highly scalable and responsive, as components can work independently.
-- Naturally supports asynchronous workflows and real-time data processing.
+- Naturally supports [asynchronous][p-asynchronous] workflows and real-time data processing.
 - Encourages microservices architecture by isolating components.
 
 ### Use Cases {#skip}
@@ -97,7 +97,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 ## Actor Model {#actor-model}
 
 The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p-concurrency].
-Actors encapsulate state, behavior, and a mailbox. Actors communicate exclusively by sending and receiving asynchronous messages. They are like independent entities that can receive and process messages.
+Actors encapsulate state, behavior, and a mailbox. [Actors][p-actors] communicate exclusively by sending and receiving [asynchronous][p-asynchronous] messages. They are like independent entities that can receive and process messages.
 
 Libraries like [`actix`][c-actix]⮳{{hi:actix}} support actor-based designs.
 

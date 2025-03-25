@@ -77,11 +77,11 @@ See [[testing | Testing]].
 ## Optimize Performance {#skip}
 
 - Profile and benchmark using [`criterion`][c-criterion]⮳{{hi:criterion}} or other profiling tools.
-- Minimize memory allocation and leverage Rust's zero-cost abstractions.
+- Minimize [memory allocation][p-memory-allocation] and leverage Rust's zero-cost abstractions.
 - Memory Management: Minimizing allocations and leveraging stack memory.
 - Profiling Tools: Using [`perf`][c-perf]⮳{{hi:perf}} or [`valgrind`][c-valgrind]⮳{{hi:valgrind}} for performance analysis.
 - Parallelism: Utilizing [`rayon`][c-rayon]⮳{{hi:rayon}} for data parallelism.
-- Concurrency: Fearless [concurrency][p-concurrency] using threads, async/await, and message passing.
+- [Concurrency][p-concurrency]: Fearless [concurrency][p-concurrency] using threads, async/await, and message passing.
 
 See [[performance | Performance]] and [[development-tools_profiling | Profiling]].
 
