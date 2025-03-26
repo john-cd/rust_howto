@@ -10,7 +10,7 @@ pub fn main() -> Result<(), std::io::Error> {
     let tar_gz = File::open(path)?;
     let tar = GzDecoder::new(tar_gz);
     let mut archive = Archive::new(tar);
-    archive.unpack(".")?;
+    archive.unpack("temp")?;
     println!("archive file unpacked!");
     Ok(())
 }
