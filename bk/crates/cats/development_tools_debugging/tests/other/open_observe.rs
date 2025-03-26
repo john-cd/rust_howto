@@ -1,4 +1,6 @@
 // // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 
 // // OpenObserve (O2 for short) is a cloud-native observability platform built
 // // specifically for logs, metrics, traces, analytics, RUM (Real User
@@ -222,7 +224,6 @@
 
 //     tracing::info!(histogram.baz = 10, "histogram example",);
 // }
-// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
