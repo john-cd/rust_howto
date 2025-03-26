@@ -4,8 +4,11 @@ use serde::Serialize;
 pub(super) static INDEX_ANCHORS: &str =
     r"{{ for keyword in keywords }}\{\{hi:{keyword}}}{{ endfor }} ";
 
-/// Returns {{hi:keyword1}}{{hi:keyword2}}... pseudo-markdown.
-/// For use with `mdbook-indexing`.
+/// Generates a string of index anchors for use with `mdbook-indexing`.
+///
+/// This function takes a vector of keywords and returns a string in the format:
+/// `{{hi:keyword1}}{{hi:keyword2}}...`. This format is a pseudo-markdown syntax
+/// recognized by the `mdbook-indexing` preprocessor.
 pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
     #[derive(Serialize)]
     struct Context<'a> {

@@ -10,10 +10,11 @@ use std::path::Path;
 use anyhow::Result;
 use itertools::Itertools;
 
-// Merge the contents of a text file and a Vec of text lines,
-// - Create a backup copy of the source text file
-// - Sort and deduplicate the merged lines
-// - Write back to the same file
+/// Merge the contents of a text file and a `Vec` of text lines.
+///
+/// - Create a backup copy of the source text file
+/// - Sort and deduplicate the merged lines
+/// - Write back to the same file
 pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> {
     let filepath = filepath.as_ref();
 
@@ -36,7 +37,13 @@ pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> 
     Ok(())
 }
 
-// Vec<String> and &Vec<String> are both AsRef<[u8]>
+/// Write each item to a file.
+///
+/// This function takes a path and an iterator of items that can be converted to byte slices.
+/// It creates a file at the given path and writes each item to the file, followed by a newline.
+/// It then ensures that all data is written to the underlying storage.
+///
+/// Vec<String> and &Vec<String> are both AsRef<[u8]>
 fn write_each(
     path: impl AsRef<Path>,
     items: impl IntoIterator<Item = impl AsRef<[u8]>>,

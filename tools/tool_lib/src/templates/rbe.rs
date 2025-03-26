@@ -8,7 +8,10 @@ pub(super) static RBE: &str = "
 [book-rust-by-example-{concept | underscored}]: https://doc.rust-lang.org/rust-by-example/{concept | underscored}.html
 ";
 
-/// create_rbe_badge
+/// Creates a badge that links to the Rust By Example book.
+///
+/// The badge will be rendered with the given concept, and will link to the
+/// corresponding page in the Rust By Example book.
 ///
 /// concept: name of the language element / Rust By Example book
 /// chapter e.g. "attributes"

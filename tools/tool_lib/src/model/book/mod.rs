@@ -10,6 +10,7 @@ pub use recipe::*;
 pub use renderable::*;
 pub use subchapter::*;
 
+/// Represents the different types of objects that can be rendered in the book.
 pub enum RenderableObjects {
     Chapter(Chapter),
     Subchapter(Subchapter),

@@ -17,6 +17,10 @@ pub use crates_by_category::*;
 pub use index_anchors::*;
 pub use rbe::*;
 
+/// Build a template engine with the custom formatters:
+/// - `underscored`: replace `-` by `_` per the Rust convention for module names
+/// - `shielded`: used to escape `-` to `--`, `_` to `__`, and replace " " by `_` for use in
+///   shields.io URLs
 fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     let mut tt = TinyTemplate::new();
     // replace - by _ per the Rust convention for module names

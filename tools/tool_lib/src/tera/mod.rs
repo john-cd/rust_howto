@@ -23,7 +23,12 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     })
 });
 
-/// Returns a Hashmap; key = template name; value = rendered template
+/// Renders all the templates specified in the `Renderable` trait.
+///
+/// The `Renderable` trait provides the following:
+/// - the list of templates to render
+/// - the context to use for rendering
+/// - the destination file path for each rendered template
 pub fn render(r: impl Renderable) -> Result<()> {
     let templ: &Result<Tera, tera::Error> = &TEMPLATES;
     if let Err(e) = templ {

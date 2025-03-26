@@ -14,6 +14,16 @@ pub use diff::*;
 pub use ext::*;
 pub use merge::*;
 
+/// Writes the given `contents` to a file at `filepath` if the file does not
+/// already exist. If the file exists, it will attempt to create a new file
+/// with a modified name.
+///
+/// If the file exists, it will append `.new` to the filename. If that file
+/// also exists, it will append `.new` again, and so on, up to 3 times.
+///
+/// If it fails to create a new file after 3 attempts, it will return an
+/// error.
+///
 pub fn write_if_not_exists<P: AsRef<Path>>(filepath: P, contents: String) -> Result<()> {
     let filepath = filepath.as_ref();
     if !filepath.is_file() {
@@ -38,11 +48,13 @@ pub fn write_if_not_exists<P: AsRef<Path>>(filepath: P, contents: String) -> Res
     Ok(())
 }
 
+/// Backs up the file at `filepath` (if it exists) and then writes the given
+/// `contents` to the file.
 pub fn backup_then_write_to<P: AsRef<Path>>(filepath: P, contents: String) -> Result<()> {
     backup(&filepath)?;
 
     let filepath = filepath.as_ref();
-    let mut file = File::create(filepath)?;
+    let mut file = File::create(filepath)?; // Create a file if it does not exist, and truncate it if it does.
     file.write_all(contents.as_bytes())?;
     // Surface any I/O errors that could otherwise be swallowed when
     // the file is closed implicitly by being dropped.

@@ -38,6 +38,9 @@ pub(super) static CRATE_REFDEFS: &str = "\
 {{ if homepage_defined }}[c-{crate_name | underscored}-website]: {homepage}{{ endif }}
 ";
 
+/// The different modes for generating content related to a crate.
+///
+/// This enum defines the different types of content that can be generated for a crate, such as badges, description, and reference definitions.
 pub enum GenerationMode {
     CrateBadges,
     CrateDescription,
@@ -45,6 +48,7 @@ pub enum GenerationMode {
 }
 
 #[derive(Serialize)]
+/// Context data used for rendering templates.
 struct Context<'a> {
     crate_name: &'a str,
     description_defined: bool,
@@ -57,9 +61,11 @@ struct Context<'a> {
     repository: String, // URL e.g. https://github.com/serde-rs/serde
 }
 
-/// create_crate_badges_or_refdefs
+/// Generates crate badges, description, or reference definitions based on the provided crate data and generation mode.
 ///
-/// crate_name: name of the crate (per crates.io / lib.rs)
+/// # Arguments
+///
+/// * `crate_data` - A reference to the `crates_io_api::Crate` struct containing information about the crate.
 pub fn create_crate_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
@@ -104,10 +110,16 @@ pub fn create_crate_badges_or_refdefs(
     Ok(rendered)
 }
 
-// Get rid of repeats in e.g. https://docs.rs/quote/latest/quote
-// Normalize e.g. https://docs.rs/crate/termbook to https://docs.rs/termbook
-// Normalize e.g. https://docs.rs/tungstenite/0.24.0 to https://docs.rs/tungstenite
-// Normalize e.g. https://docs.rs/watchmaker/0.1.0/watchmaker/fn.solve.html to https://docs.rs/watchmaker
+/// Normalizes a documentation URL from docs.rs.
+///
+/// This function cleans up and standardizes URLs from docs.rs. It handles various formats,
+/// including those with version numbers, crate prefixes, and function paths.
+///
+/// # Examples
+///
+/// *   `https://docs.rs/quote/latest/quote` becomes `https://docs.rs/quote`
+/// *   `https://docs.rs/crate/termbook` becomes `https://docs.rs/termbook`
+/// *   `https://docs.rs/tungstenite/0.24.0` becomes `https://docs.rs/tungstenite`
 fn normalize_docs_url(url: &str) -> std::borrow::Cow<str> {
     let re1: &Regex = regex!(r"http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
     // If no match is found, then the haystack is returned unchanged.

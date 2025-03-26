@@ -6,6 +6,10 @@ pub(super) static ALPHABETICAL_ROW: &str = r"## {first_letter}
 {{ for name in crate_names }}[![{name}][c-{name | underscored}-badge]][c-{name | underscored}] {{ endfor }}
 ";
 
+/// The context for rendering a section of the "crates by alphabetic order" page.
+///
+/// `first_letter` is the first letter of the crates in this section.
+/// `crate_names` is the list of crate names in this section.
 #[derive(Serialize)]
 struct Context<'a> {
     first_letter: &'a str,

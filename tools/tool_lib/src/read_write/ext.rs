@@ -3,9 +3,19 @@ use std::ffi::OsString;
 use std::path::Path;
 use std::path::PathBuf;
 
-// Add `insert` after the file base name and the file extension (if there is
-// one); otherwise set it as the extension For example, `file.md` becomes
-// `file.new.md`
+/// Add `insert` after the file base name and before the file extension (if there is
+/// one); otherwise set it as the extension. For example, `file.md` becomes
+/// `file.new.md`
+///
+/// # Examples
+///
+/// ```rust
+/// use std::path::Path;
+/// use tool_lib::read_write::ext::extend_extension;
+///
+/// assert_eq!(extend_extension(&Path::new("file.md"), "new"), Path::new("file.new.md"));
+/// assert_eq!(extend_extension(&Path::new("file"), "new"), Path::new("file.new"));
+/// ```
 pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
     let filepath = filepath.as_ref();
 

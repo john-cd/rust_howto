@@ -5,7 +5,7 @@ pub trait Renderable: Serialize {
     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable>;
 }
 
-// An empty implementation of the trait
+/// An empty implementation of the `Renderable` trait.
 #[derive(Serialize, Debug)]
 pub struct Render;
 

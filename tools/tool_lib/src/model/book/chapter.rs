@@ -22,6 +22,12 @@ pub struct Chapter {
 // }
 
 impl Chapter {
+    /// Creates a new `Chapter` instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `description` - The description of the chapter.
+    /// * `subchapters` - A vector of subchapters within this chapter.
     fn new(description: String, subchapters: Vec<Subchapter>) -> Self {
         Self {
             description,

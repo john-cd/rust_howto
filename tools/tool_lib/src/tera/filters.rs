@@ -11,6 +11,9 @@ use std::collections::HashMap;
 use tera::Result;
 use tera::Value;
 
+/// Replaces all `-` characters with `_` in a string.
+///
+/// If the input is not a string, it is returned unchanged.
 pub fn underscored(val: &Value, _context: &HashMap<String, Value>) -> Result<Value> {
     match val {
         Value::String(s) => Ok(Value::String(s.replace("-", "_"))),
@@ -18,6 +21,9 @@ pub fn underscored(val: &Value, _context: &HashMap<String, Value>) -> Result<Val
     }
 }
 
+/// Replaces `-` with `--`, `_` with `__`, and ` ` with `_` in a string.
+///
+/// If the input is not a string, it is returned unchanged.
 pub fn shielded(val: &Value, _context: &HashMap<String, Value>) -> Result<Value> {
     if let Some(v) = val.as_str() {
         Ok(Value::String(
