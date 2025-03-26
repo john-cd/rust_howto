@@ -23,11 +23,12 @@ SHELL ["bash", "-c"]
 ## `cmake`
 ## `libopencv-dev` `clang` `libclang-dev` for `opencv`
 ## `llvm` for `llvm-config` required for `clang-sys`
-## for Tauri: `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev`
+## `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev` for `tauri`
 ## `python3` for `pyo3`
 ## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
-## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for openrr
+## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
+## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
 ## Note: the following caching should only be useful for development. Removed to save space on the GitHub Action runner
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -41,6 +42,7 @@ RUN apt-get update \
     clang \
     cmake \
     curl \
+    diffutils \
     file \
     gcc \
     libasound2-dev \
@@ -61,6 +63,8 @@ RUN apt-get update \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
     llvm \
+    m4 \
+    make \
     pkg-config \
     protobuf-compiler \
     python3 \
