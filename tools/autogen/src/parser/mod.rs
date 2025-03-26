@@ -20,7 +20,6 @@
 //     Text(&'a str),
 // }
 
-
 // fn parse_markdown(input: &str) -> Result<Vec<MarkdownElement>, Error<Rule>> {
 //     let mut pairs = MarkdownLinkParser::parse(Rule::document, input)?;
 //     let mut elements = Vec::new();
