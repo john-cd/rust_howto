@@ -5,6 +5,7 @@ use std::path::Path;
 use tracing::info;
 use walkdir::WalkDir;
 
+/// Main entry point of the clean tool.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         //.with_max_level(tracing::Level::INFO)
@@ -26,6 +27,8 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
+
+/// Checks if a directory entry is hidden (starts with a dot).
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()

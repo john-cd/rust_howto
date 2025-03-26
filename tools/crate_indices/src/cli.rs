@@ -20,12 +20,13 @@ pub(crate) enum Cmd {
     UpdateRefDefs(CmdArgs2),
 }
 
-// The command arguments
+/// The command arguments for `category_page` and `alphabetical_page`
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
     pub crate_names: Vec<String>,
 }
 
+/// The command arguments for `update_refdefs`
 #[derive(Debug)]
 pub(crate) struct CmdArgs2 {
     pub crate_names: Vec<String>,
@@ -69,6 +70,7 @@ fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
     Ok(args)
 }
 
+/// Get the list of crate names from the command line arguments
 fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
     m.get_many::<String>("crate_name")
         .unwrap_or_default()
@@ -76,6 +78,7 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
         .collect::<Vec<String>>()
 }
 
+/// Get the file path from the command line arguments
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path has a default value")
@@ -103,6 +106,7 @@ fn subcommand_category_page() -> Command {
         .arg(arg_crate_name())
 }
 
+/// Builds the `alphabetical_page` subcommand of the CLI user interface
 fn subcommand_alphabetical_page() -> Command {
     Command::new("alphabetical_page")
         .visible_alias("a")
@@ -110,12 +114,14 @@ fn subcommand_alphabetical_page() -> Command {
         .arg(arg_crate_name())
 }
 
+/// Builds the `list_crates` subcommand of the CLI user interface
 fn subcommand_list_crates() -> Command {
     Command::new("list_crates")
         .visible_alias("l")
         .about("Returns the list of crates used in the book")
 }
 
+/// Builds the `update_refdefs` subcommand of the CLI user interface
 fn subcommand_update_refdefs() -> Command {
     Command::new("update_refdefs")
         .visible_alias("u")
@@ -124,6 +130,7 @@ fn subcommand_update_refdefs() -> Command {
         .arg(arg_file_path())
 }
 
+/// Builds the `crate_name` argument of the CLI user interface
 fn arg_crate_name() -> clap::Arg {
     Arg::new("crate_name")
         .required(true)
@@ -132,6 +139,7 @@ fn arg_crate_name() -> clap::Arg {
         .help("Enter the crate name(s)")
 }
 
+/// Builds the `file_path` argument of the CLI user interface
 fn arg_file_path() -> clap::Arg {
     Arg::new("file_path")
         .long("file")

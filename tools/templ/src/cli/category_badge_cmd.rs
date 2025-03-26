@@ -20,6 +20,7 @@ pub(super) fn subcommand_category_badge() -> Command {
         )
 }
 
+/// Returns the command line arguments for the `category_badge` subcommand
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("category_badge") {

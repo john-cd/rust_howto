@@ -3,6 +3,11 @@ use anyhow::Context;
 use anyhow::Result;
 use tool_lib::create_crate_badges_or_refdefs;
 
+/// Creates a badge for a crate, including its name, keywords, categories, description, and reference definitions.
+///
+/// # Arguments
+///
+/// * `name` - The name of the crate.
 pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<(String, Vec<String>)> {
     let mut s = String::new();
     let info =
@@ -46,6 +51,12 @@ pub(super) fn create_crate_badge_with_categories(name: &str) -> Result<(String, 
     Ok((s, vector_of_lines))
 }
 
+/// Capitalizes the first letter of a string if it is not equal to another string.
+///
+/// # Arguments
+///
+/// * `s` - The string to capitalize.
+/// * `should_not_be` - The string that `s` should not be equal to.
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {
     if s != should_not_be {
         let mut c = s.chars();

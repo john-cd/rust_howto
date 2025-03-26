@@ -24,6 +24,11 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Walks through a directory and processes all markdown files.
+///
+/// # Arguments
+///
+/// * `dir` - The directory to walk through.
 fn walk_directory(dir: &Path) -> Result<()> {
     for entry in WalkDir::new(dir).into_iter().filter_map(|e| e.ok()) {
         let f_name = entry.file_name().to_string_lossy();
@@ -35,6 +40,13 @@ fn walk_directory(dir: &Path) -> Result<()> {
     Ok(())
 }
 
+/// Replaces all directives in a (Markdown) file.
+///
+/// # Arguments
+///
+/// * `filepath` - The path to the file to process.
+///
+/// # Returns
 fn replace_in_file(filepath: &Path) -> Result<()> {
     let mut file = File::open(filepath)?;
     let size = file.metadata()?.len() as usize;
@@ -58,12 +70,19 @@ static REGEX: LazyLock<Regex> = LazyLock::new(|| {
         .unwrap()
 });
 
-// {{!crate xyz}}
-// {{!docs xyz}}
-// {{!github xyz}}
-// {{!lib.rs xyz}}
-// {{!crates.io xyz}}
-// {{!web xyz}}
+/// Replaces the following directives by the corresponding markdown, in a given string.
+/// {{!crate xyz}}
+/// {{!docs xyz}}
+/// {{!github xyz}}
+/// {{!lib.rs xyz}}
+/// {{!crates.io xyz}}
+/// {{!web xyz}}
+///
+/// # Arguments
+///
+/// * `text` - The text to process.
+///
+/// # Returns the updated String.
 fn replace(text: &str) -> String {
     let mut res = text.to_string();
     res.reserve(150);

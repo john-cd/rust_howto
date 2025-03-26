@@ -8,6 +8,10 @@ use anyhow::Result;
 use itertools::Itertools;
 use tool_lib::Category;
 
+/// This binary creates markdown files for the crate indices
+///
+/// It can create a page with crates grouped by category,
+/// a page with crates grouped alphabetically, or update the refdefs.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::WARN)
