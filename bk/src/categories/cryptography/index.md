@@ -16,7 +16,7 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 
 {{#include encryption.incl.md}}
 
-## AEAD
+## AEAD (Authenticated Encryption with Associated Data)
 
 {{#include aead.incl.md}}
 
@@ -28,7 +28,7 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 
 {{#include password_hashing.incl.md}}
 
-## HMAC
+## HMAC (Hash-based Message Authentication Code)
 
 {{#include hmac.incl.md}}
 
@@ -40,7 +40,7 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 
 {{#include certificates.incl.md}}
 
-## TLS
+## TLS (Transport Layer Security)
 
 {{#include tls.incl.md}}
 
