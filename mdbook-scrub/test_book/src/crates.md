@@ -7,37 +7,42 @@ configuration toggle is set (which is the default).
 
 ## Crate Links
 
-{{docs: xyz}}
-{{github: xyz}}
-{{lib.rs: xyz}}
-{{crate: xyz}}
+Internal crate page: {{crate xyz}}
+`docs.rs` link: {{docs xyz}}
+Github link: {{github xyz}}
+`lib.rs` link: {{lib.rs xyz}}
+`crates.io` link: {{crates.io xyz}}
+Website for the crate: {{web xyz}}
 
+{{crate xyz}}
 {{crate: xyz}}
-{{crate: xyz }}
-{{crate: x_y-z }}
+{{crate xyz }}
+{{crate x_y-z }}
 
-Example of rendered crate link:
+Example of rendered links:
+
+[`diesel`][c-diesel]⮳{{hi:diesel}}
 
 [`mdbook-linkcheck`][c-mdbook_linkcheck-github]{{hi:mdbook-linkcheck}}⮳.
 
 ## Crate Badges
 
-{{crateb}}
+{{!crate xyz}}
+{{!docs: xyz}}
+{{!github xyz}}
+{{!lib.rs xyz}}
+{{!crates.io xyz}}
+{{!web xyz}}
 
-{{crateb: }}
-
-{{crateb: xyz}}
-
-{{crateb: xyz }}
-
-{{crateb: x_y-z}}
+{{!crate: xyz}}
+{{!crate: xyz }}
+{{!crate: x_y-z}}
 
 Multiple badges:
 
-{{crateb: abc def}}
+{{!crate abc def}}
+{{!crate cargo-deb cargo-rpm}}
 
 Example of rendered crate badge:
 
-[![num][c-num-badge]][c-num]{{hi:num}}⮳
-
-##
+[![num][c-num-badge]][c-num]{{hi:num}}
