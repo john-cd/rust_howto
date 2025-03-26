@@ -36,18 +36,24 @@
 
 ## Finish pandoc setup; generate PDF version of book
 
-## Bookmarks
-
-- finish to review bookmarks and include in text
-
 ## Manually insert rest of cross-links WIP
 
 - src: WIP
 
+## Replace ⮳ by ↗ ?
+
+<https://fontawesome.com/icons/external-link?f=classic&s=light>
+
+<https://gist.github.com/miguelmota/322c89234d60de578f37d3c6d30f7e41#file-external_link_arrow-txt>
+
+## Bookmarks
+
+- finish to review bookmarks and include in text
+
 ## Implement directives
 
 - Crate link
-- Crate badge?
+- Crate badge - WIP link tool
 - Category link?
 - Category badges
 - Crate blocks
@@ -66,7 +72,7 @@
 
 - improve scripts that generate links / update recipe tables
 
-## Review tools and consolidate
+## Review tools and consolidate WIP
 
 - clean up `just chapters list`
 - monorepo with mdbook-utils?
@@ -78,8 +84,6 @@
 - database
 - proc macros
 - pyo3, ractor, polars, datafusion, aws_lambda, aws_sdk
-
-## Insert more category links
 
 ## Clean up playground crate
 
