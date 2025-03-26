@@ -49,4 +49,4 @@ alias nta := nextestall
 
 @release:
   echo "Build the tools in $(pwd) in release mode and copy to {{root}}/../bin"
-  cargo +nightly build --bins --all-targets --locked --all-features --release -Z unstable-options --artifact-dir "{{root}}/../bin"
+  cargo +nightly build --bins --locked --all-features --release -Z unstable-options --artifact-dir "{{root}}/../bin"
