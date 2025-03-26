@@ -14,7 +14,7 @@ Fast floating point to string conversion.
 {{#include ../../../crates/cats/value_formatting/tests/ryu.rs:example}}
 ```
 
-## Convert Integers to String Quickly with `iota` {#itoa}
+## Convert Integers to String Quickly with `itoa` {#itoa}
 
 [![itoa][c-itoa-badge]][c-itoa] [![itoa-crates.io][c-itoa-crates.io-badge]][c-itoa-crates.io] [![itoa-github][c-itoa-github-badge]][c-itoa-github] [![itoa-lib.rs][c-itoa-lib.rs-badge]][c-itoa-lib.rs]{{hi:itoa}}{{hi:Integer}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-no-std::no-alloc][cat-no-std::no-alloc-badge]][cat-no-std::no-alloc]{{hi:No dynamic allocation}} [![cat-value-formatting][cat-value-formatting-badge]][cat-value-formatting]{{hi:Value formatting}}
 
