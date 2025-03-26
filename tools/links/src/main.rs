@@ -54,7 +54,8 @@ fn replace_in_file(filepath: &Path) -> Result<()> {
 }
 
 static REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"\{\{\s*!\s*(docs|github|lib\.rs|crates\.io|web|crate)\s*:*\s*([^ }][^}]*)\}\}").unwrap()
+    Regex::new(r"\{\{\s*!\s*(docs|github|lib\.rs|crates\.io|web|crate)\s*:*\s*([^ }][^}]*)\}\}")
+        .unwrap()
 });
 
 // {{!crate xyz}}
