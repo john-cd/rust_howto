@@ -2430,6 +2430,16 @@
 [c-futures_executor-website]: https://github.com/rust-lang/futures-rs/blob/master/futures-executor/README.md
 [c-futures_executor::block_on]: https://docs.rs/futures_executor/latest/futures_executor/fn.block_on.html
 [c-futures_executor]: https://docs.rs/futures-executor
+[c-futures_util-badge]: https://img.shields.io/crates/v/futures-util?label=futures-util
+[c-futures_util-crates.io-badge]: https://img.shields.io/badge/crates.io-futures--util-crimson
+[c-futures_util-crates.io]: https://crates.io/crates/futures_util
+[c-futures_util-github-badge]: https://img.shields.io/badge/futures--util-steelblue?logo=github
+[c-futures_util-github]: https://github.com/rust-lang/futures-rs
+[c-futures_util-lib.rs-badge]: https://img.shields.io/badge/lib.rs-futures--util-yellow
+[c-futures_util-lib.rs]: https://lib.rs/crates/futures-util
+[c-futures_util-website-badge]: https://img.shields.io/badge/futures--util-coral
+[c-futures_util-website]: https://rust-lang.github.io/futures-rs
+[c-futures_util]: https://docs.rs/futures-util
 [c-fuzzy_matcher-badge]: https://img.shields.io/crates/v/fuzzy-matcher?label=fuzzy-matcher
 [c-fuzzy_matcher-crates.io-badge]: https://img.shields.io/badge/crates.io-fuzzy--matcher-crimson
 [c-fuzzy_matcher-crates.io]: https://crates.io/crates/fuzzy_matcher
