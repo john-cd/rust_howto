@@ -54,7 +54,7 @@ fn replace_in_file(filepath: &Path) -> Result<()> {
 }
 
 static REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"\{\{\s*!\s*(docs|github|lib\.rs|crates\.io|web|crate)\s*:*\s*([^}]+)\}\}").unwrap()
+    Regex::new(r"\{\{\s*!\s*(docs|github|lib\.rs|crates\.io|web|crate)\s*:*\s*([^ }][^}]*)\}\}").unwrap()
 });
 
 // {{!crate xyz}}
@@ -66,7 +66,7 @@ static REGEX: LazyLock<Regex> = LazyLock::new(|| {
 fn replace(text: &str) -> String {
     let mut res = text.to_string();
     res.reserve(150);
-    for (matching, typ, crates) in REGEX.captures_iter(&text).map(|caps| {
+    for (matching, typ, crates) in REGEX.captures_iter(text).map(|caps| {
         (
             caps.get(0).map_or("", |m| m.as_str()), // Guaranteed to return a non-None value.
             caps.get(1).map_or("", |m| m.as_str()),
@@ -85,7 +85,7 @@ fn replace(text: &str) -> String {
         let replacement = crates.split_whitespace().map(|crate_name| { format!(
                 "[![{crate_name}][c-{crate_name}{suffix}-badge]][c-{crate_name}{suffix}]{{{{hi:{crate_name}}}}}"
             ) }).collect::<Vec<_>>().join("");
-        println!("{} {} {} {}", matching, typ, crates,replacement);
+        tracing::debug!("{} {} {} {}", matching, typ, crates, replacement);
         res = res.replace(matching, &replacement);
     }
     res
@@ -164,6 +164,14 @@ mod tests {
         let expected = "";
         assert_eq!(replace(text), expected);
     }
+
+    #[test]
+    fn test_replace_no_crate_name() {
+        let text = "{{!crate }}";
+        let expected = "{{!crate }}";
+        assert_eq!(replace(text), expected);
+    }
+
     #[test]
     fn test_replace_single_crate() {
         let text = "{{!crate clap}}";
