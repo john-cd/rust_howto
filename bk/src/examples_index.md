@@ -590,7 +590,7 @@
 
 ## Memory Management
 
-### Lazy INItialization
+### Lazy Initialization
 
 {{#include categories/memory-management/lazy_initialization.incl.md}}
 
@@ -740,7 +740,7 @@
 
 {{#include categories/web-programming/url.incl.md}}
 
-## Web Programming: HTTP CLIent
+## Web Programming: HTTP Client
 
 ### APIs
 
@@ -750,7 +750,7 @@
 
 {{#include categories/web-programming_http-client/download.incl.md}}
 
-### HTTP CLIents
+### HTTP Clients
 
 {{#include categories/web-programming_http-client/http_clients.incl.md}}
 
