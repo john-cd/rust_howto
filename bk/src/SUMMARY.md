@@ -210,7 +210,7 @@
 - [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
   - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)
 
-- [File system](categories/filesystem/index.md)
+- [File System](categories/filesystem/index.md)
   - [File Reading & Writing](categories/filesystem/read-write.md)
   - [Directories](categories/filesystem/directories.md)
   - [Directory Traversal](categories/filesystem/directory_traversal.md)
