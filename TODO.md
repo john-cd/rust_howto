@@ -1,65 +1,57 @@
 # TODOs
 
-## Finish mdbook-scrub
+## First pass for not yet impl examples - WIP
 
-- scrub {{#crate }}
-- process {{#crate }}, etc
+## Finish preproc directives in mdbook-scrub
 
-## Links
+- Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
+- Scrub links to hidden pages instead of having to comment e.g. [p-cross-platform]: # "../../other/cross-platform/index.md"
 
-- finish to review bookmarks and include in text
+## Incoporate the added text in src WIP
 
-## Incoporate the added text WIP
+- src: reorg added text WIP
 
-- src: review bookmarks; reorg added text
-  - done: text proc, config
+## Incoporate the added text in drafts
 
 - drafts: Finish
   - Containers
-  - WASM
   - development tools: FFI - reorg. with other FFI topics
 
 - other:
-  - cross-platform WIP
+  - cross-platform (partially done)
   - data proc,
   - gpu,
-  - scripting WIP
-  - written in rust WIP
+  - scripting (partially done)
+  - written in rust (partially done)
 
 - review drafts section for what I missed
 
 ## Add text
 
 - language - WIP
-- standard library
+- standard library WIP
 - links
-- other
-  - Cloud
-  - cross-platform
-  - gpu
-  - scripting
-  - written in rust
-- crates
+- key crates
 - contributing
 
 ## Finish pandoc setup; generate PDF version of book
+
+## Bookmarks
+
+- finish to review bookmarks and include in text
 
 ## Manually insert rest of cross-links WIP
 
 - src: WIP
 
-## Finish preproc directives in mdbook-scrub
+## Implement directives
 
-- Scrub links to hidden pages instead of commenting e.g. [p-cross-platform]: # "../../other/cross-platform/index.md"
-- Scrub any left-over {{#example ...}}, {{#crate ...}}, {{#categories ...}}, {{hi: ...}}, etc and warn.
 - Crate link
 - Crate badge?
 - Category link?
 - Category badges
 - Crate blocks
 - Recipe table
-
-## replace new {{#example }}
 
 ## Replace inline links and naked URLs by ref-style links
 
