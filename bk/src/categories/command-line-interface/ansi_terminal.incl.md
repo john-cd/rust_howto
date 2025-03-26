@@ -14,8 +14,8 @@
 | [`termcolor`][ex-command-line-interface-termcolor] | [![termcolor][c-termcolor-badge]][c-termcolor] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 | [`yansi`][ex-command-line-interface-yansi] | [![yansi][c-yansi-badge]][c-yansi] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 | [`termion`][ex-command-line-interface-termion] | [![termion][c-termion-badge]][c-termion] | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
-| [`nu-ansi-term`][ex-command-line-interface-nu-ansi-term] | {{!crate nu-ansi-term}} | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
-| [`colored`][ex-command-line-interface-colored] | {{!crate colored}} | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
+| [`nu-ansi-term`][ex-command-line-interface-nu-ansi-term] | [![nu-ansi-term][c-nu-ansi-term-badge]][c-nu-ansi-term]{{hi:nu-ansi-term}} | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
+| [`colored`][ex-command-line-interface-colored] | [![colored][c-colored-badge]][c-colored]{{hi:colored}} | [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface] |
 
 <div class="hidden">
 FIXME
