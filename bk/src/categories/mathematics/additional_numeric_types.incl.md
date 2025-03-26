@@ -7,7 +7,7 @@
 | [`num-bigint`][ex-mathematics-num-bigint] | [![num-bigint][c-num_bigint-badge]][c-num_bigint] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
 | [`num`][ex-mathematics-num] | [![num][c-num-badge]][c-num] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
 | [`rug`][ex-mathematics-rug] | [![rug][c-rug-badge]][c-rug] | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] [![cat-science][cat-science-badge]][cat-science] |
-| [`typenum`][ex-mathematics-typenum] | {{#crate }} | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
+| [`typenum`][ex-mathematics-typenum] | {{!crate typenum}} | [![cat-mathematics][cat-mathematics-badge]][cat-mathematics] |
 
 <div class="hidden">
 FIXME

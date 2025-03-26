@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
-| [Game Development][ex-game-development-game-development] | {{#crate }} | [![cat-game-development][cat-game-development-badge]][cat-game-development] |
+| [Game Development][ex-game-development-game-development] | {{!crate }} | [![cat-game-development][cat-game-development-badge]][cat-game-development] |
 | [`glam`][ex-game-development-glam] | [![glam][c-glam-badge]][c-glam] | [![cat-game-development][cat-game-development-badge]][cat-game-development] [![cat-game-engines][cat-game-engines-badge]][cat-game-engines] |
 
 <div class="hidden">

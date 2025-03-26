@@ -6,7 +6,7 @@ For most basic code testing needs, using `cargo test` and `std::test` will be su
 
 ## Unit Testing {#unit_testing}
 
-`std::test`: (Built-in) The standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
+`std::test` (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
 ## Integration Testing {#integration_testing}
 

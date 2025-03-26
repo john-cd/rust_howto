@@ -1,4 +1,4 @@
-||
-|--------|
-| [Enums][ex-language-enums] |
-| [`strum`][ex-language-strum] | {{#crate }} | {{#categories }} |
+|||
+|---|---|
+| [Enums][ex-language-enums] | |
+| [`strum`][ex-language-strum] | {{!crate strum}} |

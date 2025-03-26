@@ -7,7 +7,7 @@
 | [Redirect both the `stdout` and `stderr` of a Child Process to the Same File][ex-os-redirect-both-stdout-and-stderr-of-child-process-to-the-same-file] | [![std][c-std-badge]][c-std] | [![cat-os][cat-os-badge]][cat-os] |
 | [Continuously Process the Outputs of a Child Process][ex-os-continuously-process-child-process-outputs] | [![std][c-std-badge]][c-std] | [![cat-os][cat-os-badge]][cat-os] [![cat-text-processing][cat-text-processing-badge]][cat-text-processing] |
 | [Run Child Processes Using `duct`][ex-os-run-child-processes-using-duct] | [![duct][c-duct-badge]][c-duct] | [![cat-os][cat-os-badge]][cat-os] |
-| [Locate Installed Executables with `which`][ex-os-which] | {{#crate }} | [![cat-os][cat-os-badge]][cat-os] |
+| [Locate Installed Executables with `which`][ex-os-which] | {{!crate which}} | [![cat-os][cat-os-badge]][cat-os] |
 
 <div class="hidden">
 </div>
