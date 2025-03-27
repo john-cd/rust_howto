@@ -15,10 +15,7 @@ publish = false
 
 [dependencies]
 anyhow = "1.0.95"
+clap = "4.5.33"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 walkdir = "2.5.0"
-
-[[bin]]
-name = "clean"
-path = "src/main.rs"

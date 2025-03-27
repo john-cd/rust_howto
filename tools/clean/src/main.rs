@@ -1,19 +1,33 @@
+use clap::Parser;
 use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
-
+use std::path::PathBuf;
 use tracing::info;
 use walkdir::WalkDir;
 
-/// Main entry point of the clean tool.
+#[derive(Parser, Debug)]
+#[clap(version)]
+struct Args {
+    #[clap(help = "Path to directory to process")]
+    directory: PathBuf,
+}
+
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
-        //.with_max_level(tracing::Level::INFO)
+        .with_max_level(tracing::Level::WARN)
         .init();
+
+    let args = Args::parse();
+    // Root directory of the book e.g. /code/bk/
+    let root_dir = args.directory;
+    let crates_dir = root_dir.join("crates");
+    println!("Cleaning {}", crates_dir.display());
+
     // Look for "temp" subfolders
     // The root path is hard-coded to avoid any issues with the current working
     // directory
-    for entry in WalkDir::new("/code/bk/crates")
+    for entry in WalkDir::new(crates_dir)
         //.min_depth(2) // Look at the grandchildren, etc of the root folder
         .into_iter()
         .filter_entry(|e| e.file_type().is_dir()) // Only look at directories
@@ -21,7 +35,6 @@ fn main() -> anyhow::Result<()> {
     // Silently skip folders with permission errors
     {
         if entry.path().ends_with("temp") {
-            // println!("Clean {:?}", entry.path());
             clean_folder(entry.path())?;
         }
     }

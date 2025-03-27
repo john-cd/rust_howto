@@ -125,8 +125,7 @@ alias nta := nextestall
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
   echo "Clean temp folders"
-  {{root}}/../bin/clean
-#cargo run --manifest-path {{justfile_directory()}}/../tools/Cargo.toml -p clean --quiet
+  {{root}}/../bin/clean {{root}}
 
 alias r := run
 
