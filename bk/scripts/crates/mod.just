@@ -18,4 +18,4 @@ backtick crate_list:
      find {{root}} -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
         -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
    done
-# just crates backtick ../tools/crate_indices/crates.txt
+# just crates backtick master/crates.txt

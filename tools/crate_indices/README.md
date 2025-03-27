@@ -3,15 +3,13 @@
 The `crate_indices` tool creates indexes of crates e.g. by category and by alphabetical order.
 Run the tool via `just crate_indices`.
 
-## 'crates by category' page
-
-To generate `crates_by_category.md`,
+## Update the master list of crates
 
 a. Extract all crates listed in `crates.md`
 
 ```sh
 cd bk
-grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/crates/crates_alphabetical.md > ../tools/crate_indices/crates.txt
+grep -Po '(?<=\]\[c-)\w+?(?=\])' ./src/crates/crates_alphabetical.md >> ./master/crates.txt
 ```
 
 `(?<= )` and `(?= )` are non-capturing look-behind and look-ahead groups, respectively.
@@ -22,14 +20,16 @@ b. Optionally, extract all crates currently used in the book examples from `crat
 
 ```sh
 cd bk
-just indices crate_indices l >> ../tools/crate_indices/crates.txt
-sort -u -o ../tools/crate_indices/crates.txt ../tools/crate_indices/crates.txt
+just indices crate_indices l >> ./master/crates.txt
+sort -u -o ./master/crates.txt ./master/crates.txt
 ```
 
-c. Call the tool:
+## 'crates by category' page
+
+To generate `crates_by_category.md`, call the tool:
 
 ```sh
-cat ../tools/crate_indices/crates.txt | just indices crate_indices c > output.md
+cat ./master/crates.txt | just indices crate_indices c > output.md
 ```
 
 `just` calls `cargo run -p crate_indices --`
@@ -41,7 +41,8 @@ You can merge with the existing table in `crates_by_category.md` using `sort -u 
 To generate the alphabetical index of crates, update `crates.txt` then use
 
 ```sh
-cat ../tools/crate_indices/crates.txt | just crate_indices a > crates_alphabetical.md
+cd bk
+cat ./master/crates.txt | just crate_indices a > crates_alphabetical.md
 ```
 
 ## Master file of reference definitions
@@ -51,7 +52,7 @@ All URLs to crates.io, docs.rs. lib.rs... for the book are stored in `./src/refs
 Update the master file of reference definition using the following command:
 
 ```sh
-cat ../tools/crate_indices/crates.txt | just crate_indices u -f ./src/refs/crate-refs.md
+cat ./master/crates.txt | just crate_indices u -f ./src/refs/crate-refs.md
 ```
 
 Edit by hand where needed.
