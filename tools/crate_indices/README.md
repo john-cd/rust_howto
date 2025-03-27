@@ -43,7 +43,7 @@ To generate the alphabetical index of crates, update `crates.txt` then use
 
 ```sh
 cd bk
-cat ./master/crates.txt | just crate_indices alphabetical_page > crates_alphabetical.md
+cat ./master/crates.txt | just indices crate_indices alphabetical_page > crates_alphabetical.md
 ```
 
 ## Master file of reference definitions
@@ -53,7 +53,7 @@ All URLs to crates.io, docs.rs. lib.rs... for the book are stored in `./src/refs
 Update the master file of reference definition using the following command:
 
 ```sh
-cat ./master/crates.txt | just crate_indices update_refdefs -f ./src/refs/crate-refs.md
+cat ./master/crates.txt | just indices crate_indices update_refdefs -f ./src/refs/crate-refs.md
 ```
 
 Edit by hand where needed.
