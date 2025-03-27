@@ -42,6 +42,7 @@ binascii
 bincode
 bindgen
 bitflags
+bitvec
 blake3
 bloomfilter
 bonsai-bt
@@ -53,6 +54,7 @@ bumpalo
 bytemuck
 byteorder
 bytes
+cached
 candle-core
 candle-nn
 candle_core
@@ -112,7 +114,6 @@ concat-string
 concat_string
 concat_strs
 config
-config1
 configparser
 confy
 console
@@ -149,6 +150,7 @@ dhat
 diesel
 diesel-oci
 diesel_migrations
+diff
 digest
 dioxus
 dioxus-desktop
@@ -175,7 +177,9 @@ env_logger
 envy
 exa
 eyre
+fake
 fancy-regex
+faux
 femtovg
 flagset
 flatbuffers
@@ -186,10 +190,12 @@ flurry
 flutter_rust_bridge
 form-urlencoded
 form_urlencoded
+frunk
 futures
 futures-executor
 futures-util
 futures_executor
+fuzzy-matcher
 fyrox
 fyrox-core
 glam
@@ -210,8 +216,10 @@ humantime
 hyper
 hyper-tls
 hyper-util
+hyphenation
 iced
 ignore
+im
 image
 indexmap
 indicatif
@@ -246,6 +254,7 @@ lru
 lsd
 macroquad
 markdown
+markup5ever
 markup5ever_arcdom
 md5
 mdbook
@@ -279,6 +288,8 @@ minifb
 mio
 miri
 mlua
+mockall
+moka
 mongodb
 monostate
 morphorm
@@ -333,6 +344,7 @@ postage
 postcard
 postgres
 postscript
+priority-queue
 proc-macro2
 proc_macro2
 prost
@@ -396,6 +408,7 @@ serde_json
 serde_yml
 sha1
 sha2
+shaku
 sibyl
 simd-json
 similar
