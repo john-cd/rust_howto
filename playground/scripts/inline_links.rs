@@ -1,7 +1,7 @@
 #!/usr/bin/env -S cargo +nightly -Zscript
 ---cargo
 [dependencies]
-clap = { version = "4.2", features = ["derive"] }
+clap = { version = "4.5", features = ["derive"] }
 ---
 
 // https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script
