@@ -323,14 +323,12 @@ name = "crate_indices"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "cargo_toml",
  "clap",
  "clap_builder",
  "itertools",
  "tool_lib",
  "tracing",
  "tracing-subscriber",
- "walkdir",
 ]
 
 [[package]]
@@ -1976,6 +1974,7 @@ name = "tool_lib"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "cargo_toml",
  "crates_io_api",
  "itertools",
  "once_cell",
@@ -1988,6 +1987,7 @@ dependencies = [
  "toml",
  "tracing",
  "trim-in-place",
+ "walkdir",
 ]
 
 [[package]]

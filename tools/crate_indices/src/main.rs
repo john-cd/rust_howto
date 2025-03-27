@@ -1,4 +1,3 @@
-mod cargo_toml;
 mod cli;
 
 use std::collections::HashMap;
@@ -71,8 +70,9 @@ fn main() -> anyhow::Result<()> {
                 println!("{}", markdown);
             }
         }
-        cli::Cmd::ListCrates => {
-            let list = cargo_toml::get_dependencies()?;
+        cli::Cmd::ListCrates(dircmdargs) => {
+            let book_root = dircmdargs.dirpathbuf;
+            let list = tool_lib::get_dependencies(book_root)?;
             for crt in list {
                 println!("{}", crt);
             }

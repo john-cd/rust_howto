@@ -1,20 +1,25 @@
-//! Read Cargo.toml and extract dependencies
+//! Read Cargo.toml files and extract dependencies
 
 use anyhow::Result;
 use cargo_toml::Manifest;
+use std::path::Path;
 use walkdir::WalkDir;
+use tracing::debug;
 
-/// Return a list of dependencies for the book's code examples
-/// (from Cargo.toml files)
-pub fn get_dependencies() -> Result<Vec<String>> {
+/// Return a sorted, deduplicated list of dependencies for the book's code examples.
+///
+/// Inspect all `Cargo.toml` files in the provided directory or in its children,
+/// collect the dependencies, build dependencies, etc.
+pub fn get_dependencies<P: AsRef<Path>>(root: P) -> Result<Vec<String>> {
     let mut dependencies: Vec<String> = Vec::new();
 
-    // [fix hardcoded path](https://github.com/john-cd/rust_howto/issues/1267)
-    for entry in WalkDir::new("/code/bk/crates").min_depth(1).into_iter() {
+    let root = root.as_ref();
+    debug!("Searching for Cargo.toml manifests in {}", root.display());
+    for entry in WalkDir::new(root).min_depth(1).into_iter() {
         let entry = entry?;
         if entry.file_name() == "Cargo.toml" {
             let path = entry.path();
-            // println!("> Reading {}", path.display());
+            debug!("Reading {}", path.display());
             let manifest = Manifest::from_path(path)?;
             // Cargo.toml refers to the workspace Cargo.toml,
             // therefore some fields are not available until

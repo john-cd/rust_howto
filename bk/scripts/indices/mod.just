@@ -14,6 +14,7 @@ help := 'help'
 empty := ''
 
 # Create the `crates by category` and `crates (alphabetical)` pages
+[no-cd]
 @crate_indices cmd=help *subcmd=empty:
   {{root}}/../bin/crate-indices {{cmd}} {{subcmd}}
 # or: cargo run -p crate_indices -- {{cmd}} {{subcmd}}

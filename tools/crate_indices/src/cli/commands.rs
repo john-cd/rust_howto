@@ -1,94 +1,13 @@
-use std::ffi::OsString;
-use std::io;
-use std::io::BufRead;
-use std::io::IsTerminal;
+//! CLI commands
 use std::path::PathBuf;
 
 use clap::Arg;
 use clap::Command;
 use clap_builder::builder::ValueHint;
 
-/// The command that the end user selected
-#[allow(dead_code)]
-#[derive(Default, Debug)]
-pub(crate) enum Cmd {
-    #[default]
-    None,
-    CategoryPage(CmdArgs),
-    AlphabeticalCratePage(CmdArgs),
-    ListCrates,
-    UpdateRefDefs(CmdArgs2),
-}
-
-/// The command arguments for `category_page` and `alphabetical_page`
-#[derive(Debug)]
-pub(crate) struct CmdArgs {
-    pub crate_names: Vec<String>,
-}
-
-/// The command arguments for `update_refdefs`
-#[derive(Debug)]
-pub(crate) struct CmdArgs2 {
-    pub crate_names: Vec<String>,
-    pub filepathbuf: PathBuf,
-}
-
-pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
-    // Parse the specified command-line arguments, exiting on failure.
-    let matches = cli().get_matches_from(capture_stdin()?);
-    if let Some(m) = matches.subcommand_matches("category_page") {
-        Ok(Cmd::CategoryPage(CmdArgs {
-            crate_names: get_crate_names(m),
-        }))
-    } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
-        Ok(Cmd::AlphabeticalCratePage(CmdArgs {
-            crate_names: get_crate_names(m),
-        }))
-    } else if let Some(m) = matches.subcommand_matches("update_refdefs") {
-        Ok(Cmd::UpdateRefDefs(CmdArgs2 {
-            crate_names: get_crate_names(m),
-            filepathbuf: get_file_path(m),
-        }))
-    } else if let Some(_m) = matches.subcommand_matches("list_crates") {
-        Ok(Cmd::ListCrates)
-    } else {
-        Ok(Cmd::None)
-    }
-}
-
-/// Read from Stdin e.g. if called with `cat file.txt | my_app `
-fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
-    let mut args: Vec<OsString> = std::env::args_os().collect();
-    let stdin = io::stdin();
-    // Are you or are you not a tty?
-    if !stdin.is_terminal() {
-        let handle = stdin.lock();
-        for l in handle.lines() {
-            args.push(l?.into());
-        }
-    }
-    Ok(args)
-}
-
-/// Get the list of crate names from the command line arguments
-fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
-    m.get_many::<String>("crate_name")
-        .unwrap_or_default()
-        .map(|v| v.into())
-        .collect::<Vec<String>>()
-}
-
-/// Get the file path from the command line arguments
-fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
-    m.get_one::<PathBuf>("file_path")
-        .expect("file_path has a default value")
-        .to_path_buf()
-}
-
 /// Builds the CLI user interface
-fn cli() -> Command {
+pub(super) fn cli() -> Command {
     clap::command!() // reads name, version, author, and description from `Cargo.toml`
-        //.about("")
         .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
         .flatten_help(true) // Flatten subcommand help into the current command's help
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
@@ -119,6 +38,7 @@ fn subcommand_list_crates() -> Command {
     Command::new("list_crates")
         .visible_alias("l")
         .about("Returns the list of crates used in the book")
+        .arg(arg_directory())
 }
 
 /// Builds the `update_refdefs` subcommand of the CLI user interface
@@ -130,13 +50,15 @@ fn subcommand_update_refdefs() -> Command {
         .arg(arg_file_path())
 }
 
+// Arguments -------------------------------------------------
+
 /// Builds the `crate_name` argument of the CLI user interface
 fn arg_crate_name() -> clap::Arg {
     Arg::new("crate_name")
         .required(true)
         .value_name("CRATE_NAME") // placeholder for the argument's value in the help message / usage.
         .action(clap::ArgAction::Append)
-        .help("Enter the crate name(s)")
+        .help("Crate name(s)")
 }
 
 /// Builds the `file_path` argument of the CLI user interface
@@ -150,5 +72,19 @@ fn arg_file_path() -> clap::Arg {
         .value_parser(clap::value_parser!(PathBuf))
         .value_hint(ValueHint::FilePath)
         .default_value("./src/refs/crate-refs.md")
-        .help("Enter the file path")
+        .help("File path")
+}
+
+/// Builds the `directory` argument of the CLI user interface
+fn arg_directory() -> clap::Arg {
+    Arg::new("directory")
+        .long("directory")
+        .short('d')
+        .required(false)
+        .action(clap::ArgAction::Set)
+        .value_name("DIR_PATH") // placeholder for the argument's value in the help message / usage.
+        .value_parser(clap::value_parser!(PathBuf))
+        .value_hint(ValueHint::DirPath)
+        .default_value(".")
+        .help("Path of the directory to search for Cargo.toml files")
 }
