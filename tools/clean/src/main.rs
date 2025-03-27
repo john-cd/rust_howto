@@ -1,8 +1,9 @@
-use clap::Parser;
 use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
 use std::path::PathBuf;
+
+use clap::Parser;
 use tracing::info;
 use walkdir::WalkDir;
 

@@ -1,11 +1,13 @@
-use anyhow::Result;
-use clap::Parser;
-use regex::Regex;
+use std::fs::File;
 use std::io::Read;
 use std::io::Write;
 use std::path::Path;
 use std::path::PathBuf;
-use std::{fs::File, sync::LazyLock};
+use std::sync::LazyLock;
+
+use anyhow::Result;
+use clap::Parser;
+use regex::Regex;
 use walkdir::WalkDir;
 
 #[derive(Parser, Debug)]

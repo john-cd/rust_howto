@@ -21,31 +21,26 @@ fn main() -> anyhow::Result<()> {
             return Err(anyhow::anyhow!("You did not enter a command!"));
         }
         cli::Cmd::CategoryPage(c) => {
-            let crates_with_categories: Result<Vec<(String, Vec<Category>)>> =
-                c.crate_names
-                    .into_iter()
-                    .filter(|name| name != "std")
-                    .map(|n| {
-                        let name = n.trim();
-                        let cats = tool_lib::get_categories_for_crate(name)?;
-                        Ok((name.into(), cats))
-                    })
-                    .collect();
+            let crates_with_categories: Result<Vec<(String, Vec<Category>)>> = c
+                .crate_names
+                .into_iter()
+                .filter(|name| name != "std")
+                .map(|n| {
+                    let name = n.trim();
+                    let cats = tool_lib::get_categories_for_crate(name)?;
+                    Ok((name.into(), cats))
+                })
+                .collect();
 
             // Flatten the Vec((String, Vec<Cat>)) into Vec<(Cat, String)>,
             // sort and group by category
-            let category_and_crates: HashMap<Category, Vec<String>> =
-                crates_with_categories?
-                    .into_iter()
-                    .flat_map(|(name, cats)| {
-                        cats.into_iter().map(move |cat| (cat, name.clone()))
-                    })
-                    .sorted() // needs Itertools
-                    .into_group_map(); // needs Itertools
+            let category_and_crates: HashMap<Category, Vec<String>> = crates_with_categories?
+                .into_iter()
+                .flat_map(|(name, cats)| cats.into_iter().map(move |cat| (cat, name.clone())))
+                .sorted() // needs Itertools
+                .into_group_map(); // needs Itertools
 
-            for (cat, crate_names) in
-                category_and_crates.iter().sorted_by_key(|x| x.0)
-            {
+            for (cat, crate_names) in category_and_crates.iter().sorted_by_key(|x| x.0) {
                 let markdown = tool_lib::create_category_and_crates(
                     &cat.category,
                     &cat.slug,
@@ -62,19 +57,16 @@ fn main() -> anyhow::Result<()> {
                 .iter()
                 .sorted()
                 .map(|n| {
-                    let f: String =
-                        n.chars().next().unwrap().to_uppercase().collect();
+                    let f: String = n.chars().next().unwrap().to_uppercase().collect();
                     (f, n)
                 })
                 .into_group_map();
 
-            for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0)
-            {
-                let markdown =
-                    tool_lib::create_alphabetical_crate_page_section(
-                        first_letter,
-                        crates.iter().map(AsRef::as_ref).collect(),
-                    )?;
+            for (first_letter, crates) in grouped.iter().sorted_by_key(|x| x.0) {
+                let markdown = tool_lib::create_alphabetical_crate_page_section(
+                    first_letter,
+                    crates.iter().map(AsRef::as_ref).collect(),
+                )?;
                 println!("{}", markdown);
             }
         }
