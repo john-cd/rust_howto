@@ -74,3 +74,86 @@ fn clean_folder(dir: &Path) -> anyhow::Result<()> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use std::path::Path;
+
+    use tempfile::tempdir;
+
+    use super::*;
+
+    #[test]
+    fn test_is_hidden() {
+        let dir = tempdir().unwrap();
+        let hidden_file = dir.path().join(".hidden.txt");
+        let visible_file = dir.path().join("visible.txt");
+
+        fs::File::create(&hidden_file).unwrap();
+        fs::File::create(&visible_file).unwrap();
+
+        let hidden_entry = fs::read_dir(dir.path())
+            .unwrap()
+            .find(|e| e.as_ref().unwrap().path() == hidden_file)
+            .unwrap()
+            .unwrap();
+
+        let visible_entry = fs::read_dir(dir.path())
+            .unwrap()
+            .find(|e| e.as_ref().unwrap().path() == visible_file)
+            .unwrap()
+            .unwrap();
+
+        assert!(is_hidden(&hidden_entry));
+        assert!(!is_hidden(&visible_entry));
+    }
+
+    // Helper function to create a dummy directory structure for testing
+    fn create_dummy_dir(root: &Path) {
+        fs::create_dir_all(root.join("temp")).unwrap();
+        fs::File::create(root.join("temp").join("file1.txt")).unwrap();
+        fs::File::create(root.join("temp").join(".hidden.txt")).unwrap();
+        fs::create_dir(root.join("temp").join("subdir")).unwrap();
+        fs::File::create(root.join("temp").join("subdir").join("file2.txt")).unwrap();
+        fs::File::create(root.join("file3.txt")).unwrap();
+        fs::File::create(root.join(".gitkeep")).unwrap();
+    }
+
+    #[test]
+    fn test_clean_folder() {
+        let dir = tempdir().unwrap();
+        let temp_dir = dir.path().join("temp");
+        create_dummy_dir(dir.path());
+
+        // Check that the files and folders exist before cleaning
+        assert!(temp_dir.join("file1.txt").exists());
+        assert!(temp_dir.join(".hidden.txt").exists());
+        assert!(temp_dir.join("subdir").exists());
+        assert!(temp_dir.join("subdir").join("file2.txt").exists());
+        assert!(dir.path().join("file3.txt").exists());
+        assert!(dir.path().join(".gitkeep").exists());
+
+        clean_folder(&temp_dir).unwrap();
+
+        // Check that the files and folders have been removed
+        assert!(!temp_dir.join("file1.txt").exists());
+        assert!(temp_dir.join(".hidden.txt").exists()); // should not be removed
+        assert!(!temp_dir.join("subdir").exists());
+        assert!(!temp_dir.join("subdir").join("file2.txt").exists());
+        assert!(dir.path().join("file3.txt").exists()); // should not be removed
+        assert!(dir.path().join(".gitkeep").exists()); // should not be removed
+    }
+
+    #[test]
+    fn test_clean_folder_nonexistent() {
+        let dir = tempdir().unwrap();
+        let non_existent_dir = dir.path().join("nonexistent");
+
+        // Check that the folder does not exist
+        assert!(!non_existent_dir.exists());
+
+        // Should not panic
+        let result = clean_folder(&non_existent_dir);
+        assert!(result.is_ok());
+    }
+}
