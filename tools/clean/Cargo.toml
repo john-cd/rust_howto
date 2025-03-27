@@ -15,7 +15,8 @@ publish = false
 
 [dependencies]
 anyhow = "1.0.95"
-clap = "4.5.33"
+clap = { version = "4.5.31", features = ["derive"] }
+tempfile = "3.19.1"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 walkdir = "2.5.0"
