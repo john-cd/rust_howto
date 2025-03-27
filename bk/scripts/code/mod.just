@@ -93,9 +93,14 @@ alias ca := clippyall
   echo "Test any doctests in the workspace in {{root}}"
   cd {{root}}; cargo test --workspace --doc --locked
 
-alias ntc := nextestcurrent
-
 current_crate := file_name(invocation_directory())
+
+alias ntt := nextestthis
+
+@nextestthis test:
+  cargo nextest run --locked --no-fail-fast --success-output final -E 'test(~{{test}}) or binary_id(~{{test}})'
+
+alias ntc := nextestcurrent
 
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 [no-cd]

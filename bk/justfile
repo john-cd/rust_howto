@@ -56,6 +56,9 @@ ba:
 ca:
   @just code clippyall
 
+ntt test:
+  @just code nextestthis {{test}}
+
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 [no-cd]
 ntc:
