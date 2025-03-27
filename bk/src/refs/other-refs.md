@@ -588,7 +588,6 @@
 [primitive-i8]: https://doc.rust-lang.org/std/primitive.i8.html
 [primitive-isize]: https://doc.rust-lang.org/std/primitive.isize.html
 [primitive-never]: https://doc.rust-lang.org/std/primitive.never.html
-[primitive-unit]: https://doc.rust-lang.org/std/primitive.unit.html
 [primitive-slice::len]: https://doc.rust-lang.org/std/primitive.slice.html#method.len
 [primitive-slice::sort]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort
 [primitive-slice::sort_by]: https://doc.rust-lang.org/std/primitive.slice.html#method.sort_by
@@ -599,6 +598,7 @@
 [primitive-u32]: https://doc.rust-lang.org/std/primitive.u32.html
 [primitive-u64]: https://doc.rust-lang.org/std/primitive.u64.html
 [primitive-u8]: https://doc.rust-lang.org/std/primitive.u8.html
+[primitive-unit]: https://doc.rust-lang.org/std/primitive.unit.html
 [primitive-usize]: https://doc.rust-lang.org/std/primitive.usize.html
 [proc-macro-workshop-badge]: https://img.shields.io/badge/proc_macro_workshop-steelblue?logo=github
 [proc-macro-workshop]: https://github.com/dtolnay/proc-macro-workshop
