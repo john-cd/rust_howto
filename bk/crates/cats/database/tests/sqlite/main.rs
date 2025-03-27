@@ -6,6 +6,7 @@ mod transactions;
 
 #[test]
 fn test() -> anyhow::Result<()> {
+    let _ = std::fs::remove_file("temp/cats.db");
     initialization::main()?;
     insert_select::main()?;
     transactions::main()?;
