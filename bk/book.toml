@@ -154,7 +154,7 @@ site-url = "/rust_howto/"
 # input-404 = "not-found.md"
 
 [output.html.print]
-enable = true              # include support for printable output
+enable = false             # support for printable output
 page-break = false         # insert page-break after each chapter
 
 [output.html.fold]
