@@ -81,14 +81,14 @@ RUN apt-get update \
 ## See configuration in .cargo/config.toml
 ## If using the `slim` Rust image, you may need to install: curl pkg-config libssl-dev
 
-# Install CMake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.0-rc3/cmake-3.31.0-rc3-linux-x86_64.sh \
-    -q -O /tmp/cmake-install.sh && \
-    chmod u+x /tmp/cmake-install.sh && \
-    mkdir /opt/cmake-3.31.0-rc3/ && \
-    /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.0-rc3/ && \
-    rm /tmp/cmake-install.sh && \
-    ln -s /opt/cmake-3.31.0-rc3/bin/* /usr/local/bin
+# Install CMake (installed by `apt` above)
+# RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-linux-x86_64.sh \
+#     -q -O /tmp/cmake-install.sh && \
+#     chmod u+x /tmp/cmake-install.sh && \
+#     mkdir /opt/cmake-3.31.6/ && \
+#     /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.31.6/ && \
+#     rm /tmp/cmake-install.sh && \
+#     ln -s /opt/cmake-3.31.6/bin/* /usr/local/bin
 
 ## Update Rust if needed
 ## Install clippy
