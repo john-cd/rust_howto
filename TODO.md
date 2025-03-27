@@ -2,10 +2,57 @@
 
 ## First pass for not yet impl examples - WIP
 
+## Go trough VS Code bookmarks (dev container)
+
+---
+
+## Finish pandoc setup; generate PDF version of book
+
+---
+
+## Review tools and consolidate WIP
+
+- clean: done
+- crate-indices WIP
+- autogen TODO
+- links
+- templ
+- tool_lib
+
+document WIP
+add tests WIP
+consolidate CLIs
+
 ## Finish preproc directives in mdbook-scrub
 
 - Scrub any left-over {{#example ...}}, {{#crate ...}}... etc and warn. WIP
 - Scrub links to hidden pages instead of having to comment e.g. [p-cross-platform]: # "../../other/cross-platform/index.md"
+
+## Implement directives (in `link`?)
+
+- Crate link
+- Crate badge - WIP link tool
+- Category link?
+- Category badges
+- Crate blocks
+- Recipe table
+
+## Replace inline links and naked URLs by ref-style links
+
+- fix inline_link script and/or finish pest parser (currently in autogen - move / cleanup)
+
+## Update recipe tables
+
+- improve scripts that generate links / update recipe tables
+
+---
+
+# Make it work on WSL fully
+
+- also fix VS code disconnect from WSL
+
+
+---
 
 ## Incoporate the added text in src WIP
 
@@ -34,8 +81,6 @@
 - key crates
 - contributing
 
-## Finish pandoc setup; generate PDF version of book
-
 ## Manually insert rest of cross-links WIP
 
 - src: WIP
@@ -46,36 +91,9 @@
 
 <https://gist.github.com/miguelmota/322c89234d60de578f37d3c6d30f7e41#file-external_link_arrow-txt>
 
-## Bookmarks
+## Chrome Bookmarks
 
-- finish to review bookmarks and include in text
-
-## Implement directives
-
-- Crate link
-- Crate badge - WIP link tool
-- Category link?
-- Category badges
-- Crate blocks
-- Recipe table
-
-## Replace inline links and naked URLs by ref-style links
-
-- fix inline_link script
-- finish pest parser
-
-## Refresh crate alpha and crate by category indices
-
-- need better coordination of master crate list, list of deps in Cargo.toml, and indices
-
-## Update recipe tables
-
-- improve scripts that generate links / update recipe tables
-
-## Review tools and consolidate WIP
-
-- clean up `just chapters list`
-- monorepo with mdbook-utils?
+- finish to review chrome bookmarks and include in text
 
 ## Finish COMING SOON examples
 
