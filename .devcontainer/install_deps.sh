@@ -5,8 +5,6 @@ set -euo pipefail
 #
 # Essentially a copy of the Dockerfile.
 
-MDBOOK_VERSION="0.4.35"
-
 sudo apt-get update \
 && export DEBIAN_FRONTEND=noninteractive \
 && sudo apt-get install -y --no-install-recommends \
@@ -47,22 +45,25 @@ sudo apt-get update \
     systemd \
     wget \
     xorg-dev \
-&& sudo apt-get clean -y \
+&& sudo apt-get clean -y
 
+sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && sudo apt-get install -y jq fzf \
+    && sudo apt-get clean
+
+# Rust install
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update && rustup component add clippy rustfmt
+rustup toolchain install nightly \
+    && rustup component add rustfmt clippy --toolchain nightly
 
+## binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
 cargo binstall --no-confirm --secure cargo-nextest
 
-# mdbook not installed
-if [ ! hash mdbook 2>/dev/null ]; then
-    cargo binstall --version ${MDBOOK_VERSION} --no-confirm mdbook
-fi
-# mdbook installed but old version - force the installation of the new version
-if [[ $(mdbook -V) != "mdbook v${MDBOOK_VERSION}" ]]; then
-    cargo binstall --version ${MDBOOK_VERSION} --no-confirm --force mdbook
-fi
+# mdbook
+cargo binstall --version "0.4.35" --no-confirm --force mdbook
 
 cargo binstall --no-confirm mdbook-linkcheck
 cargo binstall --no-confirm mdbook-private
@@ -74,19 +75,11 @@ cargo binstall --no-confirm lychee
 
 cargo install --locked mdbook-utils
 
-rustup toolchain install nightly \
-    && rustup component add rustfmt clippy --toolchain nightly
-
-sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && sudo apt-get install -y jq fzf \
-    && sudo apt-get clean
-
+# GitHub
 curl -sS https://webi.sh/gh | sh
 
 cargo install --locked kani-verifier && \
     cargo install --locked bacon && \
     cargo binstall --no-confirm ripgrep
 
-#EMAIL=nobody@users.noreply.github.com
-#GIT_AUTHOR_NAME=nemo
-#git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
+git config --global user.email "John CD" && git config --global user.name john-cd@users.noreply.github.com
