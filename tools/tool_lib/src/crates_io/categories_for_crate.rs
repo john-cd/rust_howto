@@ -36,3 +36,4 @@ pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>
         .map(model::Category::new)
         .collect())
 }
+// TODO unit tests

@@ -77,3 +77,4 @@ fn backup<P: AsRef<Path>>(filepath: P) -> Result<()> {
     }
     Ok(())
 }
+// TODO unit tests

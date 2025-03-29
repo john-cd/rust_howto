@@ -4,3 +4,4 @@ use serde::Serialize;
 
 #[derive(Serialize, Debug)]
 pub struct ExampleIndex;
+// TODO finish; unit tests

@@ -8,3 +8,4 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     let body = response.text()?;
     Ok(body)
 }
+// TODO unit tests; consolidate with mod.rs?

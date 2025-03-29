@@ -43,3 +43,4 @@ pub fn print_diffs(s1: &str, s2: &str) {
         print!("{}{}", sign, change);
     }
 }
+// TODO unit tests

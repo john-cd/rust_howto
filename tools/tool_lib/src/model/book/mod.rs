@@ -16,3 +16,4 @@ pub enum RenderableObjects {
     Subchapter(Subchapter),
     ExampleIndex(ExampleIndex),
 }
+// TODO finish; unit tests

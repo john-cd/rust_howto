@@ -57,3 +57,4 @@ fn write_each(
     file.sync_all()?;
     Ok(())
 }
+// TODO unit tests

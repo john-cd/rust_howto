@@ -59,3 +59,5 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
 //   let  t = INSTANCE.get_or_init(|| { build_template_engine() });
 //   t
 // }
+
+// TODO finish; unit tests; tinytemplate vs tera?

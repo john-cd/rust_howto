@@ -68,3 +68,4 @@ fn extract_crate_names(depset: &DepsSet) -> Vec<String> {
         .map(|k| String::from(k.trim()))
         .collect()
 }
+// TODO unit tests

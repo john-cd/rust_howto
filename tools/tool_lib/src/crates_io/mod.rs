@@ -49,3 +49,4 @@ fn get_client() -> Result<SyncClient> {
 //     let crates = client.crates(q)?;
 //     Ok(crates)
 // }
+// TODO unit tests; cleanup
