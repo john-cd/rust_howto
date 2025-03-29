@@ -6420,6 +6420,8 @@
 [c-std-badge]: https://img.shields.io/badge/std-firebrick?logo=rust
 [c-std-core::cell::OnceCell]: https://doc.rust-lang.org/core/cell/struct.OnceCell.html
 [c-std-core::iter::Iterator::filter_map]: https://doc.rust-lang.org/core/iter/trait.Iterator.html#method.filter_map
+[c-std::arch]: https://doc.rust-lang.org/std/arch/index.html
+[c-std::arch-badge]: https://img.shields.io/badge/std-firebrick?logo=rust
 [c-std::any::type_name]: https://doc.rust-lang.org/std/any/fn.type_name.html
 [c-std::assert_eq]: https://doc.rust-lang.org/std/macro.assert_eq.html
 [c-std::borrow::BorrowMut]: https://doc.rust-lang.org/std/borrow/trait.BorrowMut.html

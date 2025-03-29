@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Unit Testing][ex-development-tools_testing-unit_testing] | [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}[![std::test][c-std::test-badge]][c-std::test]{{hi:std::test}} | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing] |
+| [Unit Testing][ex-development-tools_testing-unit_testing] | [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}} | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing] |
 | [Integration Testing][ex-development-tools_testing-integration_testing] | [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}}[![rstest][c-rstest-badge]][c-rstest]{{hi:rstest}} | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing] |
 | [Documentation Testing][ex-development-tools_testing-doc_testing] | [![cargo][c-cargo-badge]][c-cargo]{{hi:cargo}} | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing] |
 | [Snapshot Testing: Test Your Code Against Snapshots][ex-development-tools_testing-insta] | [![insta][c-insta-badge]][c-insta] | [![cat-development-tools::testing][cat-development-tools::testing-badge]][cat-development-tools::testing] |
