@@ -1,7 +1,5 @@
 # TODOs
 
-## First pass for not yet impl examples - WIP
-
 ## Go trough VS Code bookmarks (dev container)
 
 ---
