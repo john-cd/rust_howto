@@ -26,7 +26,7 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 - [[match | Match]].
 - [[rust-patterns | Rust Patterns]].
 - [[functional_programming | Functional Programming]].
-- [[simple_data_types | Simple Data Types]].
+- [[data_types | Data Types]].
 - [[structs | Structs]].
 
 {{#include refs.incl.md}}

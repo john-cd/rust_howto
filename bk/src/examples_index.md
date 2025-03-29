@@ -874,9 +874,9 @@
 
 {{#include language/rust_install.incl.md}}
 
-### Simple Data Types
+### Data Types
 
-{{#include language/simple_data_types.incl.md}}
+{{#include language/data_types.incl.md}}
 
 ### Slices
 

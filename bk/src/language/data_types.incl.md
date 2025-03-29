@@ -1,6 +1,6 @@
 ||
 |--------|
-| [Simple Data Types][ex-language-simple-data-types] |
+| [Scalar Data Types][ex-language-scalar-data-types] |
+| [Compound Types][ex-language-compound-types] |
 | [Handle Overflows][ex-language-overflow-handling] |
-| [Composite Types][ex-language-composite-types] |
 | [Type Aliases][ex-language-type-aliases] |

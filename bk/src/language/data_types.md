@@ -1,8 +1,10 @@
-# Simple Data Types {#simple-data-types}
+# Data Types
 
-{{#include simple_data_types.incl.md}}
+{{#include data_types.incl.md}}
 
 [![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
+
+## Scalar Data Types {#scalar-data-types}
 
 | Type Family | Types | Examples |
 |---|---|---|
@@ -17,10 +19,19 @@
 [`usize`][primitive-usize]{{hi:usize}}⮳ and [`isize`][primitive-isize]{{hi:isize}}⮳ are 32 or 64 bits, depending on the architecture of the computer.
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/primitive_types.rs:example}}
+{{#include ../../crates/language/tests/feat/scalar_data_types.rs:example}}
 ```
 
-## Composite Types {#composite-types}
+### Handle Overflows {#overflow-handling}
+
+- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
+- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
+- Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
+- Saturate at the value's minimum or maximum values with the `saturating_*` methods.
+
+## Compound Data Types: Tuples and Arrays {#compound-types}
+
+Compound types can group multiple values into one type. Rust has two primitive compound types: tuples and arrays.
 
 | Type | Examples |
 |---|---|
@@ -28,6 +39,10 @@
 | Arrays | `let a: [i32; 5] = [1, 2, 3, 4, 5];` allocated on the stack. Access via `let first = a[0];`. |
 
 A [[vectors | Vector]] is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size.
+
+```rust,editable
+{{#include ../../crates/language/tests/feat/compound_data_types.rs:example}}
+```
 
 See also:
 
@@ -43,12 +58,6 @@ See also:
 
 Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
 
-## Handle Overflows {#overflow-handling}
-
-- Wrap in all modes with the `wrapping_*` methods, such as [`wrapping_add`][primitive-u32::wrapping_add]{{hi:wrapping_add}}⮳.
-- Return the [`std::option::Option::None`][c-std::option::Option::None]{{hi:std::option::Option::None}}⮳ value if there is overflow{{hi:Overflow}} with the `checked_*` methods.
-- Return the value and a boolean indicating whether there was overflow with the `overflowing_*` methods.
-- Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
 ## Related Topics {#skip}
 
@@ -58,5 +67,5 @@ Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[simple_data_types: edit / expand; add examples](https://github.com/john-cd/rust_howto/issues/557)
+[data_types: edit / expand; add examples](https://github.com/john-cd/rust_howto/issues/557)
 </div>

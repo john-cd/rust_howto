@@ -416,7 +416,7 @@
 [ex-language-closure-with-type-annotations]: language/closures.md#closure-with-type-annotations
 [ex-language-closures-as-input-parameters]: language/closures.md#closures-as-input-parameters
 [ex-language-closures]: language/closures.md#closures
-[ex-language-composite-types]: language/simple_data_types.md#composite-types
+[ex-language-compound-types]: language/data_types.md#compound-types
 [ex-language-conditional-compilation]: language/attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: language/traits.md#constants-in-traits
 [ex-language-control-flow]: language/control_flow.md#control-flow
@@ -448,12 +448,12 @@
 [ex-language-must-use]: language/attributes.md#must-use
 [ex-language-mutable-reference]: language/ownership_borrowing.md#mutable-reference
 [ex-language-newtype-pattern]: language/traits.md#newtype-pattern
-[ex-language-overflow-handling]: language/simple_data_types.md#overflow-handling
+[ex-language-overflow-handling]: language/data_types.md#overflow-handling
 [ex-language-ownership]: language/ownership_borrowing.md#ownership
 [ex-language-return-position-impl-trait]: language/traits.md#return-position-impl-trait
 [ex-language-rust-install]: language/rust_install.md#rust-install
 [ex-language-shadowing]: language/variables_and_constants.md#shadowing
-[ex-language-simple-data-types]: language/simple_data_types.md#simple-data-types
+[ex-language-data-types]: language/data_types.md
 [ex-language-slices]: language/slices.md#slices
 [ex-language-structs]: language/structs.md#structs
 [ex-language-strum]: language/enums.md#strum
@@ -462,7 +462,7 @@
 [ex-language-trait-objects]: language/trait_objects.md#trait-objects
 [ex-language-traits-as-parameters]: language/traits.md#traits-as-parameters
 [ex-language-traits]: language/traits.md#traits
-[ex-language-type-aliases]: language/simple_data_types.md#type-aliases
+[ex-language-type-aliases]: language/data_types.md#type-aliases
 [ex-language-use-keyword]: language/modules.md#use-keyword
 [ex-language-variables-and-constants]: language/variables_and_constants.md#variables-and-constants
 [ex-language-while-let]: language/match.md#while-let

@@ -8,7 +8,7 @@
 [ex-language-closure-with-type-annotations]: closures.md#closure-with-type-annotations
 [ex-language-closures-as-input-parameters]: closures.md#closures-as-input-parameters
 [ex-language-closures]: closures.md#closures
-[ex-language-composite-types]: simple_data_types.md#composite-types
+[ex-language-compound-types]: data_types.md#compound-types
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-control-flow]: control_flow.md#control-flow
@@ -40,12 +40,12 @@
 [ex-language-must-use]: attributes.md#must-use
 [ex-language-mutable-reference]: ownership_borrowing.md#mutable-reference
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
-[ex-language-overflow-handling]: simple_data_types.md#overflow-handling
+[ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
 [ex-language-rust-install]: rust_install.md#rust-install
 [ex-language-shadowing]: variables_and_constants.md#shadowing
-[ex-language-simple-data-types]: simple_data_types.md#simple-data-types
+[ex-language-data-types]: data_types.md
 [ex-language-slices]: slices.md#slices
 [ex-language-structs]: structs.md#structs
 [ex-language-strum]: enums.md#strum
@@ -54,7 +54,7 @@
 [ex-language-trait-objects]: trait_objects.md#trait-objects
 [ex-language-traits-as-parameters]: traits.md#traits-as-parameters
 [ex-language-traits]: traits.md#traits
-[ex-language-type-aliases]: simple_data_types.md#type-aliases
+[ex-language-type-aliases]: data_types.md#type-aliases
 [ex-language-use-keyword]: modules.md#use-keyword
 [ex-language-variables-and-constants]: variables_and_constants.md#variables-and-constants
 [ex-language-while-let]: match.md#while-let

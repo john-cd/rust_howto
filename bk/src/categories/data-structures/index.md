@@ -60,7 +60,7 @@ See [[hashmaps | Hashmaps]].
 
 ## Additional Data Structures
 
-- [[simple_data_types | Simple Data Types]].
+- [[data_types | Data Types]].
 - [[smart_pointers | Smart Pointers]].
 - Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}.
 - Specialized Data Structures:
