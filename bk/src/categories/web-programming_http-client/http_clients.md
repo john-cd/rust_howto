@@ -11,9 +11,7 @@
 
 [`reqwest`][c-reqwest]⮳{{hi:reqwest}} is a full-fat HTTP client. It can be used in both synchronous and asynchronous code. It requires the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime.
 
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/tests/http_clients/reqwest.rs:example}}
-```
+Multiple examples using `reqwest` are found in [[apis | APIs]], [[download | Download]], [[requests | Requests]].
 
 ## `ureq` {#ureq}
 
@@ -26,7 +24,7 @@
 [`ureq`][c-ureq]⮳{{hi:ureq}} is a minimal synchronous HTTP client, focused on simplicity and minimizing dependencies.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/tests/other/ureq.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/http_clients/ureq.rs:example}}
 ```
 
 ## Build a HTTP Client with `hyper` {#hyper}
@@ -38,7 +36,7 @@
 [`hyper`][c-hyper]⮳{{hi:hyper}} is meant to be a low-level building block and is indeed used by higher-level libraries such as [`curl`][c-curl]⮳{{hi:curl}}, [`reqwest`][c-reqwest]⮳{{hi:reqwest}}, and `aws-sdk`. You will likely reach for [`hyper`][c-hyper]⮳{{hi:hyper}} to design such tools or access to bleeding-edge features (like HTTP/3).
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/tests/other/hyper.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/tests/http_clients/hyper.rs:example}}
 ```
 
 ## References
