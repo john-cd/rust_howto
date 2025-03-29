@@ -18,7 +18,6 @@
 // // `typenum` provides type-level numbers evaluated at compile time.
 // // It depends only on libcore.
 
-
 // // Define a generic struct that uses type-level numbers
 // // without runtime overhead.
 
@@ -41,11 +40,11 @@
 // //     cols: PhantomData<C>,
 // // }
 
-// // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero, const N: usize> Matrix<T, R, C, N>
-// // {
+// // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero, const N: usize>
+// Matrix<T, R, C, N> // {
 // //     fn new(data: [T; N]) -> Self {
-// //         assert_eq!(data.len(), R::to_usize() * C::to_usize()); // guaranteed!
-// //         Matrix {
+// //         assert_eq!(data.len(), R::to_usize() * C::to_usize()); //
+// guaranteed! //         Matrix {
 // //             data,
 // //             rows: PhantomData,
 // //             cols: PhantomData,
@@ -75,8 +74,8 @@
 // // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero, const N: usize>
 // //     IndexMut<(usize, usize)> for Matrix<T, R, C, N>
 // // {
-// //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut Self::Output {
-// //         let index = row * self.cols() + col;
+// //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut
+// Self::Output { //         let index = row * self.cols() + col;
 // //         &mut self.data[index]
 // //     }
 // // }
@@ -103,9 +102,9 @@
 //     Assert<{ N == R::USIZE * C::USIZE }>: IsTrue,
 // {
 //     // const N: usize = R::USIZE * C::USIZE;
-//     // type D = [T; {R::USIZE * C::USIZE}]; // unstable generic params in const expressions
-//     fn new(data: [T; N]) -> Self   // [T; Self::N] does not work
-//     {
+//     // type D = [T; {R::USIZE * C::USIZE}]; // unstable generic params in
+// const expressions     fn new(data: [T; N]) -> Self   // [T; Self::N] does not
+// work     {
 //      Matrix {
 //             data: data.as_ptr(),
 //             rows: PhantomData,
@@ -145,8 +144,8 @@
 // // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero>
 // //     IndexMut<(usize, usize)> for Matrix<T, R, C>
 // // {
-// //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut Self::Output {
-// //         let index = row * self.cols() + col;
+// //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut
+// Self::Output { //         let index = row * self.cols() + col;
 // //         &mut self.data[index]
 // //     }
 // // }
@@ -177,8 +176,8 @@
 
 //     // Compile-time dimension checking - can't have negative number of rows
 //     // Uncomment to see compile-time error
-//     // let invalid_matrix = Matrix::<typenum::N2, U2>::new([1.0, 2.0, 3.0, 4.0,
-//     // 5.0, 6.0]);
+//     // let invalid_matrix = Matrix::<typenum::N2, U2>::new([1.0, 2.0, 3.0,
+// 4.0,     // 5.0, 6.0]);
 // }
 
 // #[test]
