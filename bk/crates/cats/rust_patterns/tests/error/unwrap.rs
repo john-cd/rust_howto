@@ -1,6 +1,4 @@
 // ANCHOR: example
-// use std::str::FromStr;
-
 fn main() {
     let number_str = "42";
 
