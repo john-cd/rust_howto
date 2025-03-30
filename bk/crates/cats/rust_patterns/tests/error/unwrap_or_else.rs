@@ -4,6 +4,16 @@ use std::fs::File;
 use std::io::ErrorKind;
 
 fn main() {
+    // Simple example
+    let some_option: Option<&str> = None;
+    // Use `unwrap_or_else` to provide a default value with custom logic
+    let result = some_option.unwrap_or_else(|| {
+        println!("Option was None. Providing default value.");
+        "default_value"
+    });
+    println!("Result: {}", result);
+
+    // Fallback example
     if !fs::exists("temp").unwrap() {
         fs::create_dir("temp").unwrap();
     }
@@ -23,4 +33,3 @@ fn main() {
 fn test() {
     main();
 }
-// [unwrap_or_else: println!("{}", ); NOW](https://github.com/john-cd/rust_howto/issues/172)
