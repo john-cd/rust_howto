@@ -4,21 +4,27 @@
 
 Use [`anyhow`][c-anyhow]{{hi:anyhow}}⮳ if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c-thiserror]{{hi:thiserror}}⮳ if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
 
-## `anyhow` {#anyhow}
+## Simplify Error Handling and Attach Context to Errors with `anyhow` {#anyhow}
 
 [![anyhow][c-anyhow-badge]][c-anyhow] [![anyhow-crates.io][c-anyhow-crates.io-badge]][c-anyhow-crates.io] [![anyhow-github][c-anyhow-github-badge]][c-anyhow-github] [![anyhow-lib.rs][c-anyhow-lib.rs-badge]][c-anyhow-lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-[`anyhow`][c-anyhow]⮳{{hi:anyhow}} provides a flexible concrete Error type built on [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}.
+[`anyhow`][c-anyhow]⮳{{hi:anyhow}} provides `anyhow::Error`, a flexible concrete Error type built on [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}.
 
 Use `Result<T, anyhow::Error>` or equivalently [`anyhow::Result{{hi:anyhow::Result}}<T>`][c-anyhow::Result]⮳ as the return type of any fallible function.
+
+You can use `anyhow` to:
+
+- Create errors easily.
+- Attach context to help the person troubleshooting the error understand where things went wrong.
+- Work with dynamic error types (`Box<dyn Error>`) conveniently.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/tests/error/anyhow.rs:example}}
 ```
 
-Anyhow works with any error type that has an impl of [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
+`anyhow` works with any error type that has an impl of [`std::error::Error`][c-std::error::Error]⮳{{hi:std::error::Error}}, including ones defined in your crate e.g. using [`thiserror`][c-thiserror]{{hi:thiserror}}⮳.
 
-## `thisError` {#thiserror}
+## Create Custom Error Types Declaratively with `thisError` {#thiserror}
 
 [![thiserror][c-thiserror-badge]][c-thiserror] [![thiserror-crates.io][c-thiserror-crates.io-badge]][c-thiserror-crates.io] [![thiserror-github][c-thiserror-github-badge]][c-thiserror-github] [![thiserror-lib.rs][c-thiserror-lib.rs-badge]][c-thiserror-lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -41,7 +47,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../crates/cats/rust_patterns/tests/error/thiserror2.rs:example}}
 ```
 
-## `miette` {#miette}
+## Provide Human-readable Diagnostics with `miette` {#miette}
 
 [![miette][c-miette-badge]][c-miette] [![miette-crates.io][c-miette-crates.io-badge]][c-miette-crates.io] [![miette-github][c-miette-github-badge]][c-miette-github] [![miette-lib.rs][c-miette-lib.rs-badge]][c-miette-lib.rs]{{hi:miette}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
@@ -51,7 +57,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../crates/cats/rust_patterns/tests/error/miette.rs:example}}
 ```
 
-## `color-eyre` {#color-eyre}
+## Create Colorful and User-friendly Error Eeports with `color-eyre` {#color-eyre}
 
 [![color-eyre][c-color_eyre-badge]][c-color_eyre] [![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io] [![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github] [![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]{{hi:color-eyre}}
 
@@ -73,5 +79,5 @@ Do not use [Error Chain][c-error_chain]{{hi:error_chain}}⮳, which is deprecate
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[error_customization: write / organize / titles](https://github.com/john-cd/rust_howto/issues/463)
+[error_customization: write / organize](https://github.com/john-cd/rust_howto/issues/463)
 </div>

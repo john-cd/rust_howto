@@ -4,19 +4,27 @@ use std::fs::File;
 use std::io::ErrorKind;
 
 fn main() {
-    // Simple example
+    // Use `unwrap_or` to provide a default value if `maybe_value` is `None`.
+    let maybe_value: Option<i32> = None;
+    let value: i32 = maybe_value.unwrap_or(0);
+    println!("Value: {}", value); // Prints zero.
+
+    // Use `unwrap_or` to provide a default value if a `Result` is `Err`.
+    let result: Result<i32, &str> = Err("Something went wrong");
+    let value: i32 = result.unwrap_or(42);
+    println!("Value: {}", value); // Prints 42.
+
+    // Use `unwrap_or_else` to compute a default value (within a closure)
+    // when an `Option` is `None` or `Result` an `Err`.
     let some_option: Option<&str> = None;
-    // Use `unwrap_or_else` to provide a default value with custom logic
-    let result = some_option.unwrap_or_else(|| {
+    let value: &str = some_option.unwrap_or_else(|| {
         println!("Option was None. Providing default value.");
         "default_value"
     });
-    println!("Result: {}", result);
+    println!("Value: {}", value);
 
-    // Fallback example
-    if !fs::exists("temp").unwrap() {
-        fs::create_dir("temp").unwrap();
-    }
+    // Fallback example: try to open a file; if the file was not found, try to
+    // create the file. Otherwise, panic.
     let _greeting_file = File::open("temp/hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
             File::create("temp/hello.txt").unwrap_or_else(|error| {
@@ -31,5 +39,8 @@ fn main() {
 
 #[test]
 fn test() {
+    if !fs::exists("temp").unwrap() {
+        fs::create_dir("temp").unwrap();
+    }
     main();
 }

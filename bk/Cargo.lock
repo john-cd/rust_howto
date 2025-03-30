@@ -23262,6 +23262,7 @@ dependencies = [
  "anyhow",
  "cfg-if 1.0.0",
  "color-eyre",
+ "csv",
  "dyn-clone",
  "either",
  "frunk",
@@ -23272,6 +23273,7 @@ dependencies = [
  "pin-project",
  "pin-project-lite",
  "reqwest",
+ "serde 1.0.219",
  "thiserror 2.0.12",
  "typenum",
 ]
