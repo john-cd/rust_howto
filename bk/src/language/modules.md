@@ -52,10 +52,13 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 
 - [[package_layout | Package Layout]].
 
+## References {#skip1}
+
+- A [clear explanation of Rust’s module system][rust-module-system-website]⮳.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
 [modules: review](https://github.com/john-cd/rust_howto/issues/553)
-add rust-module-system
 </div>
