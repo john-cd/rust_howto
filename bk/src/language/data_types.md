@@ -44,6 +44,12 @@ A [[vectors | Vector]] is a similar collection type provided by the [standard li
 {{#include ../../crates/language/tests/feat/compound_data_types.rs:example}}
 ```
 
+## Type Aliases {#type-aliases}
+
+Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
+
+## Related Topics {#skip}
+
 See also:
 
 - [[enums | Enums]].
@@ -53,15 +59,7 @@ See also:
 - [[strings | Strings]].
 - [[structs | Structs]].
 - [[vectors | Vectors]].
-
-## Type Aliases {#type-aliases}
-
-Use the `type` keyword to declare type aliases: `type Kilometers = i32;`.
-
-
-## Related Topics {#skip}
-
-- [[data-structures | Data Structures]]
+- [[data-structures | Data Structures]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
