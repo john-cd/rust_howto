@@ -72,4 +72,13 @@ review https://geo-ant.github.io/blog/2023/rust-type-level-programming/
 https://nota-lang.org/examples/blog-post/standalone/
 review https://crates.io/crates/tap
 ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in std lib?
+
+## `rpds` {#rpds}
+
+[![rpds][c-rpds-badge]][c-rpds] [![rpds-crates.io][c-rpds-crates.io-badge]][c-rpds-crates.io] [![rpds-github][c-rpds-github-badge]][c-rpds-github] [![rpds-lib.rs][c-rpds-lib.rs-badge]][c-rpds-lib.rs]{{hi:rpds}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Persistent}}{{hi:Immutable}}{{hi:Data-structures}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+`rpds` provides persistent data structures with structural sharing.
+
+{{#example rpds}}
+
 </div>
