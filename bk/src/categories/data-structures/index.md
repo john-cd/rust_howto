@@ -2,59 +2,59 @@
 
 [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
 
-Common data structures include arrays and vectors, which are contiguous block of memory that stores elements of the same data type; linked lists (sequences of nodes, where each node contains data and a pointer to the next node); stacks ("last-in, first-out" (LIFO) data structures); queues ("first-in, first-out" (FIFO) data structures); trees (hierarchical data structures consisting of nodes with parent-child relationships); sets (collections of unique elements); and maps (aka dictionaries, which store key-value pairs).
+Common data structures include [[data_types | arrays]] and [[vectors | vectors]], which are contiguous block of memory that stores elements of the same data type; [[linkedlist |linked lists]] (sequences of nodes, where each node contains data and a pointer to the next node); [[stack_and_queue |stacks]] ("last-in, first-out" (LIFO) data structures); [[stack_and_queue | queues]] ("first-in, first-out" (FIFO) data structures); [[btrees |trees]] (hierarchical data structures consisting of nodes with parent-child relationships); sets (collections of unique elements); and [[hashmaps |maps]] (aka dictionaries, which store key-value pairs).
 
 Standard library collections (in `std::collections`) include:
 
-- `Vec<T>` (Vector) is a dynamic array that can grow or shrink as needed. It's the most commonly used collection in Rust and is similar to a dynamic array or list in other languages. Provides fast access by index.
-- `String` is a growable, UTF-8 encoded string. It's a fundamental data structure for working with text.
-- `HashMap<K, V>` (Hash Map) stores key-value pairs, allowing for efficient lookup of values based on their keys. Uses a hash function for fast average-case access.
-- `BTreeMap<K, V>` (B-Tree Map) is similar to `HashMap`, but it keeps the keys sorted. Provides ordered access to key-value pairs.
-- `HashSet<T>` (Hash Set) stores a collection of unique elements. Used for efficiently checking membership and ensuring uniqueness.
-- `BTreeSet<T>` (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
-- `LinkedList<T>` is a doubly linked list. Useful for frequent insertions and deletions at arbitrary positions, but less efficient for random access.
-- `VecDeque<T>` (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
-- `BinaryHeap<T>` is a binary heap, often used to implement a priority queue.
+- [[vectors | `Vec<T>`]] (Vector) is a dynamic array that can grow or shrink as needed. It's the most commonly used collection in Rust and is similar to a dynamic array or list in other languages. Provides fast access by index.
+- [[strings | `String`]] is a growable, UTF-8 encoded string. It's a fundamental data structure for working with text.
+- [[hashmaps | `HashMap<K, V>`]] (Hash Map) stores key-value pairs, allowing for efficient lookup of values based on their keys. Uses a hash function for fast average-case access.
+- [[btrees | `BTreeMap<K, V>`]] (B-Tree Map) is similar to `HashMap`, but it keeps the keys sorted. Provides ordered access to key-value pairs.
+- [[hashmaps | `HashSet<T>`]] (Hash Set) stores a collection of unique elements. Used for efficiently checking membership and ensuring uniqueness.
+- [[btrees | `BTreeSet<T>`]] (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
+- [[linkedlist | `LinkedList<T>`]] is a doubly linked list. Useful for frequent insertions and deletions at arbitrary positions, but less efficient for random access.
+- [[stack_and_queue |`VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
+- [[binaryheap | `BinaryHeap<T>`]] is a binary heap, often used to implement a priority queue.
 
-## Vectors and Arrays
+Refer to the [[language | Language]] and [[standard-library | Standard Library]] sections for examples of use.
 
-See [[vectors | Vectors]].
+## Code Examples
+
+The following examples cover less commonly-used data structures:
 
 ### Stack-allocated Arrays
 
 {{#include stack_allocated_arrays.incl.md}}
 
-## Strings
-
-See [[strings | Strings]].
-
-## Hashmaps and Friends
-
-See [[hashmaps | Hashmaps]].
+### Ordered Maps, MultiMaps, and Friends
 
 {{#include maps.incl.md}}
 
-## BTreeMap and BTreeSet
+### BTreeMap and BTreeSet
 
 {{#include btrees.incl.md}}
 
-## Stacks and Queues
+### Stacks and Queues
 
 {{#include stack_and_queue.incl.md}}
 
-## Bitflags
+### Linked Lists
 
-{{#include bitfield.incl.md}}
+{{#include linkedlist.incl.md}}
 
-## Binary Heaps / Priority Queues
+### Binary Heaps / Priority Queues
 
 {{#include binaryheap.incl.md}}
 
-## UUIDs
+### Bitflags and Fields
+
+{{#include bitfield.incl.md}}
+
+### UUIDs
 
 {{#include uuid.incl.md}}
 
-## Heapless Data Structures
+### Heapless Data Structures
 
 {{#include heapless.incl.md}}
 
@@ -62,10 +62,10 @@ See [[hashmaps | Hashmaps]].
 
 - [[data_types | Data Types]].
 - [[smart_pointers | Smart Pointers]].
-- Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}.
+- Immutable Data Structures: [`im`][c-im]⮳{{hi:im}}, [`rpds`][c-rpds]⮳{{hi:rpds}}. See [[functional_programming | Functional Programming]].
 - Specialized Data Structures:
   - Graphs: [`petgraph`][c-petgraph]⮳{{hi:petgraph}}, [`graph_rs`][c-graph_rs]⮳{{hi:graph_rs}}.
-  - Trees and Tries: [`indextree`][c-indextree]⮳{{hi:indextree}}, `rayon-trie`.
+  - Trees and Tries: [`indextree`][c-indextree]⮳{{hi:indextree}}.
   - Bloom Filters: [`bloomfilter`][c-bloomfilter]⮳{{hi:bloomfilter}}.
   - Skip Lists: [`skiplist`][c-skiplist]⮳{{hi:skiplist}}.
   - Ranges as keys: [`rangemap`][c-rangemap]⮳{{hi:rangemap}} stores key-value pairs where keys are ranges.
@@ -82,5 +82,5 @@ See [[hashmaps | Hashmaps]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data-structures: expand / organize / link to array (make page) ](https://github.com/john-cd/rust_howto/issues/280)
+[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 </div>

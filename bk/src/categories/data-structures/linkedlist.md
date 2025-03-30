@@ -16,11 +16,14 @@
 {{#include ../../../crates/standard_library/tests/data_structures/linkedlist.rs:example}}
 ```
 
+## Related Topics {#skip}
+
+- [[vectors | Vectors]].
+- [[stack_and_queue | Stacks and Queues]].
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1170)
-Include stack / queue examples
-Here or in [`std`][c-std]⮳{{hi:std}} lib section?
+[expand](https://github.com/john-cd/rust_howto/issues/1170)
 </div>
