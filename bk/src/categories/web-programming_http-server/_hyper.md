@@ -28,31 +28,27 @@ This said, we provide below an example of a HTTP server, following the recommend
 {{#include ../../../crates/cats/web_programming_http_server/tests/hyper_server.rs:example}}
 ```
 
+## `hyper` TLS Support {#skip}
+
+[![hyper-tls-website][c-hyper_tls-website-badge]][c-hyper_tls-website] [![hyper-tls][c-hyper_tls-badge]][c-hyper_tls] [![hyper-tls-crates.io][c-hyper_tls-crates.io-badge]][c-hyper_tls-crates.io] [![hyper-tls-github][c-hyper_tls-github-badge]][c-hyper_tls-github] [![hyper-tls-lib.rs][c-hyper_tls-lib.rs-badge]][c-hyper_tls-lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
+
+Default TLS implementation for use with `hyper`.
+
+[![hyper-rustls][c-hyper_rustls-badge]][c-hyper_rustls] [![hyper-rustls-crates.io][c-hyper_rustls-crates.io-badge]][c-hyper_rustls-crates.io] [![hyper-rustls-github][c-hyper_rustls-github-badge]][c-hyper_rustls-github] [![hyper-rustls-lib.rs][c-hyper_rustls-lib.rs-badge]][c-hyper_rustls-lib.rs]{{hi:hyper-rustls}}
+
+Rustls + `hyper` integration for pure rust HTTPS.
+
+[![hyper-openssl][c-hyper_openssl-badge]][c-hyper_openssl] [![hyper-openssl-crates.io][c-hyper_openssl-crates.io-badge]][c-hyper_openssl-crates.io] [![hyper-openssl-github][c-hyper_openssl-github-badge]][c-hyper_openssl-github] [![hyper-openssl-lib.rs][c-hyper_openssl-lib.rs-badge]][c-hyper_openssl-lib.rs]{{hi:hyper-openssl}}
+
+Hyper TLS support via OpenSSL.
+
+## References {#skip}
+
+- [`hyper` examples][c-hyper-examples-github]⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[hyper: write](https://github.com/john-cd/rust_howto/issues/515)
-
----
-
-[`hyper` examples][c-hyper-examples-github]
-
----
-
-[![hyper-openssl][c-hyper_openssl-badge]][c-hyper_openssl] [![hyper-openssl-crates.io][c-hyper_openssl-crates.io-badge]][c-hyper_openssl-crates.io] [![hyper-openssl-github][c-hyper_openssl-github-badge]][c-hyper_openssl-github] [![hyper-openssl-lib.rs][c-hyper_openssl-lib.rs-badge]][c-hyper_openssl-lib.rs]{{hi:hyper-openssl}}
-
-Hyper TLS support via OpenSSL
-
----
-
-[![hyper-rustls][c-hyper_rustls-badge]][c-hyper_rustls] [![hyper-rustls-crates.io][c-hyper_rustls-crates.io-badge]][c-hyper_rustls-crates.io] [![hyper-rustls-github][c-hyper_rustls-github-badge]][c-hyper_rustls-github] [![hyper-rustls-lib.rs][c-hyper_rustls-lib.rs-badge]][c-hyper_rustls-lib.rs]{{hi:hyper-rustls}}
-
-Rustls+hyper integration for pure rust HTTPS
-
----
-
-[![hyper-tls-website][c-hyper_tls-website-badge]][c-hyper_tls-website] [![hyper-tls][c-hyper_tls-badge]][c-hyper_tls] [![hyper-tls-crates.io][c-hyper_tls-crates.io-badge]][c-hyper_tls-crates.io] [![hyper-tls-github][c-hyper_tls-github-badge]][c-hyper_tls-github] [![hyper-tls-lib.rs][c-hyper_tls-lib.rs-badge]][c-hyper_tls-lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
-
-Default TLS implementation for use with hyper
+[hyper: fix](https://github.com/john-cd/rust_howto/issues/515)
 </div>
