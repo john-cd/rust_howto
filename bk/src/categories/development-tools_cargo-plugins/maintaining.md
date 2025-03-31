@@ -4,15 +4,15 @@
 
 | Topic | Rust Crates |
 |---|---|
-| Code Formatting | `cargo fmt` formats your code to a consistent style. |
-| Linting | `cargo clippy` catches common code errors and style issues. |
-| Dependency Management | `cargo tree` displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
+| [[code_formatting_linting | Code Formatting]] | `cargo fmt` formats your code to a consistent style. |
+| [[code_formatting_linting | Linting]] | `cargo clippy` catches common code errors and style issues. |
+| [[dependency_management | Dependency Management]] | `cargo tree` displays your dependency tree to help you understand your project's dependencies. `cargo outdated` checks for outdated dependencies. `cargo audit` checks for crates with known security vulnerabilities. |
 | Documentation Generation | `cargo doc` generates [documentation][p-documentation] from your code. `cargo deadlinks` finds broken links in your documentation. |
-| Testing | `cargo test` runs your unit and integration tests. |
-| Benchmarking | `cargo bench` runs your benchmarks. |
-| Code Coverage | `cargo tarpaulin` runs code coverage analysis. |
-| Refactoring | Often IDE-driven, but some tools exist: [`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} expands [macros][p-macros], which can be helpful for understanding code and refactoring. |
-| Version Management | `cargo-bump` helps to automate version updates in your Cargo.toml. |
+| [[testing | Testing]] | `cargo test` runs your unit and integration tests. |
+| [[benchmarking | Benchmarking]] | `cargo bench` runs your benchmarks. |
+| [[code_coverage | Code Coverage]] | `cargo tarpaulin` runs code coverage analysis. |
+| Refactoring | Refactoring is often IDE-driven, but some tools exist: [`cargo-expand`][c-cargo_expand]⮳{{hi:cargo-expand}} expands [macros][p-macros], for example. |
+| [[versioning | Version Management]] | `cargo-bump` helps to automate version updates in your Cargo.toml. |
 
 ## Lint Your Crate API Changes for Semver Violations {#cargo-semver-checks}
 
@@ -64,5 +64,5 @@ $ cargo semver-checks
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[maintaining: fix](https://github.com/john-cd/rust_howto/issues/313)
+[maintaining: fix; titles; decide what goes where](https://github.com/john-cd/rust_howto/issues/313)
 </div>
