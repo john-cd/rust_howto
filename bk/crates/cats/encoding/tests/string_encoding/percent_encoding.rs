@@ -28,7 +28,8 @@ fn decode_url_component(encoded: &str) -> Result<String> {
 
 // Custom encoding with a specific ASCII set.
 fn custom_encode(input: &str) -> String {
-    // Create a 'fragment' custom set that only encodes spaces and some special characters.
+    // Create a 'fragment' custom set that only encodes spaces and some special
+    // characters.
     /// See https://url.spec.whatwg.org/#fragment-percent-encode-set
     const FRAGMENT: &AsciiSet =
         &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
