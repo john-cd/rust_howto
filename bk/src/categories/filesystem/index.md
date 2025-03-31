@@ -72,16 +72,17 @@ FIXME
 
 | Topic | Rust Crates or Modules |
 |---|---|
-| Serialization/Deserialization (for File content) | [`serde`][c-serde]⮳{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
-| Compression/Decompression | [`flate2`][c-flate2]⮳{{hi:flate2}}, [`gzip`][c-gzip]⮳{{hi:gzip}}, [`bzip2`][c-bzip2]⮳{{hi:bzip2}}, [`xz2`][c-xz2]⮳{{hi:xz2}} work with various compression formats (often used when dealing with files). |
-| Archive Files (tar, zip, etc.) | [`tar`][c-tar]⮳{{hi:tar}}, [`zip`][c-zip]⮳{{hi:zip}} can be used for working with tar and zip archives. |
-| Network I/O | |
+| [[serde | Serialization/Deserialization]] | [`serde`][c-serde]⮳{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
+| [[compression | Compression/Decompression]] | [`flate2`][c-flate2]⮳{{hi:flate2}}, [`gzip`][c-gzip]⮳{{hi:gzip}}, [`bzip2`][c-bzip2]⮳{{hi:bzip2}}, [`xz2`][c-xz2]⮳{{hi:xz2}} work with various compression formats (often used when dealing with files). |
+| [[tar | Archive Files]] (tar, zip, etc.) | [`tar`][c-tar]⮳{{hi:tar}}, [`zip`][c-zip]⮳{{hi:zip}} can be used for working with tar and zip archives. |
+
+See also [[network-programming | Network Programming]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write, review in depth, add cross links; add missing sections NOW
+TODO write, review in depth, add missing sections NOW
 
 | [`open`][ex-filesystem-open] | [![open][c-open-badge]][c-open] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
 
