@@ -18,7 +18,7 @@ A stack is a LIFO (Last-In, First-Out) data structure. You can use a `Vec` to mi
 
 [![std][c-std-badge]][c-std] [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]
 
-A queue is a FIFO (First-In, First-Out) data structure. `VecDeque` (Vector Deque) is well-suited for implementing queues because it provides efficient `push_back` (add to the rear) and `pop_front` (remove from the front) operations.
+A queue is a FIFO (First-In, First-Out) data structure. `VecDeque` (Vector Deque) is well-suited for implementing queues, because it provides efficient `push_back` (add to the rear) and `pop_front` (remove from the front) operations.
 
 ```rust,editable
 {{#include ../../../crates/standard_library/tests/data_structures/queue.rs:example}}
@@ -29,5 +29,4 @@ A queue is a FIFO (First-In, First-Out) data structure. `VecDeque` (Vector Deque
 
 <div class="hidden">
 [write NOW](https://github.com/john-cd/rust_howto/issues/1169)
-here or in [`std`][c-std]⮳{{hi:std}} lib section?
 </div>
