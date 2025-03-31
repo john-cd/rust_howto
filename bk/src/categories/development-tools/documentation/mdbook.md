@@ -129,7 +129,7 @@ jobs:
 
 ## Other {#skip3}
 
-### `mdbook-cmdrun` {#mdbook-cmdrun}
+### Preprocess your Book via Arbitrary Commands with `mdbook-cmdrun` {#mdbook-cmdrun}
 
 [![mdbook-cmdrun][c-mdbook_cmdrun-badge]][c-mdbook_cmdrun] [![mdbook-cmdrun-crates.io][c-mdbook_cmdrun-crates.io-badge]][c-mdbook_cmdrun-crates.io] [![mdbook-cmdrun-github][c-mdbook_cmdrun-github-badge]][c-mdbook_cmdrun-github] [![mdbook-cmdrun-lib.rs][c-mdbook_cmdrun-lib.rs-badge]][c-mdbook_cmdrun-lib.rs]{{hi:mdbook-cmdrun}}{{hi:Mdbook}}{{hi:Pre-processor}}{{hi:Runcmd}}
 
