@@ -1,25 +1,36 @@
 // ANCHOR: example
+// Import the HashMap data structure from the standard library's collections
+// module.
 use std::collections::HashMap;
 
 fn main() {
+    // Create a new, empty HashMap called 'scores'.
     let mut scores = HashMap::new();
 
+    // Insert a key-value pair into the HashMap.
+    // The key is "Blue" (a `String`), and the value is 10 (an `i32`).
     scores.insert(String::from("Blue"), 10);
 
-    // Update the value
+    // Update the value associated with the key "Blue".
+    // The previous value will be replaced with 25.
     scores.insert(String::from("Blue"), 25);
 
+    // Get the value associated with 'team_name' from the HashMap.
     let team_name = String::from("Blue");
-    // Get an Option<i32> rather than an Option<&i32>, then unwrap_or to
-    // set score to zero if scores doesn't have an entry for the key.
+    // .get() returns an Option<&i32>.
+    // .copied() converts it to Option<i32> by copying the value.
+    // .unwrap_or(0) returns the value if it exists, or 0 if it doesn't.
     let _score = scores.get(&team_name).copied().unwrap_or(0);
 
-    // Enumerate
+    // Iterate over and print the key-value pairs in the HashMap.
+    // '&scores' borrows the HashMap immutably.
     for (key, value) in &scores {
         println!("{key}: {value}");
     }
 
-    // Adding a Key and Value only if a Key isn't present
+    // Insert a key-value pair only if the key doesn't already exist.
+    // .entry() returns an `Entry` enum, and `or_insert` inserts the value if
+    // the key is absent.
     scores.entry(String::from("Yellow")).or_insert(50);
 }
 // ANCHOR_END: example
