@@ -90,17 +90,20 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 ## See Also {#related-crates}
 
-[![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
-[![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]
-[![tracing_journald-github][c-tracing_journald-github-badge]][c-tracing_journald-github]
-[![tracing_journald-lib.rs][c-tracing_journald-lib.rs-badge]][c-tracing_journald-lib.rs]
+- [![tracing_journald][c-tracing_journald-badge]][c-tracing_journald]{{hi:tracing_journald}}
+- [![tracing_journald-crates.io][c-tracing_journald-crates.io-badge]][c-tracing_journald-crates.io]
+- [![tracing_journald-github][c-tracing_journald-github-badge]][c-tracing_journald-github]
+- [![tracing_journald-lib.rs][c-tracing_journald-lib.rs-badge]][c-tracing_journald-lib.rs]
 
 [tracing_journald][c-tracing_journald]⮳ provides support for logging [`tracing`][c-tracing-crates.io]⮳ events natively to [journald][journald]⮳, preserving any structured information.
+
+## References
+
+- [Next steps with Tracing][c-tracing-next-steps]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tracing: [tracing-next-steps][c-tracing-next-steps]](https://github.com/john-cd/rust_howto/issues/322)
-[tracing-next-steps][c-tracing-next-steps]
+[review](https://github.com/john-cd/rust_howto/issues/322)
 </div>
