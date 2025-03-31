@@ -1,10 +1,10 @@
 # TODOs
 
-## Go trough VS Code bookmarks (dev container)
+## Go trough VS Code bookmarks (dev container) WIP
 
 ---
 
-## Finish pandoc setup; generate PDF version of book
+## Finish pandoc setup; generate PDF version of book WIP
 
 ---
 
@@ -45,10 +45,9 @@ consolidate CLIs
 
 ---
 
-# Make it work on WSL fully
+## Make it work on WSL fully
 
 - also fix VS code disconnect from WSL
-
 
 ---
 
