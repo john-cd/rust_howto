@@ -54,7 +54,7 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 
 ## References {#skip1}
 
-- A [clear explanation of Rust’s module system][rust-module-system-website]⮳.
+- A [clear explanation of Rust's module system][rust-module-system-website]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

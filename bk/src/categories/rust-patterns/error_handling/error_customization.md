@@ -57,7 +57,7 @@ The `#[error(...)]` messages support a shorthand for interpolating fields from t
 {{#include ../../../../crates/cats/rust_patterns/tests/error/miette.rs:example}}
 ```
 
-## Create Colorful and User-friendly Error Eeports with `color-eyre` {#color-eyre}
+## Create Colorful and User-friendly Error Reports with `color-eyre` {#color-eyre}
 
 [![color-eyre][c-color_eyre-badge]][c-color_eyre] [![color-eyre-crates.io][c-color_eyre-crates.io-badge]][c-color_eyre-crates.io] [![color-eyre-github][c-color_eyre-github-badge]][c-color_eyre-github] [![color-eyre-lib.rs][c-color_eyre-lib.rs-badge]][c-color_eyre-lib.rs]{{hi:color-eyre}}
 
