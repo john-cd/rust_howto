@@ -50,6 +50,10 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 {{#include metrics.incl.md}}
 
+## Distributed Telemetry
+
+{{#include distributed_telemetry.incl.md}}
+
 ## Related Topics
 
 - [[development-tools | Development Tools]].
