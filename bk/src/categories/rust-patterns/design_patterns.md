@@ -39,8 +39,8 @@ The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` tr
 
 See also:
 
-- https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning
-- https://doc.rust-lang.org/std/pin/struct.Pin.html
+- [Projections and Structural Pinning](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning)⮳.
+- [std::pin::Pin](https://doc.rust-lang.org/std/pin/struct.Pin.html)⮳.
 
 ## Implement the Typestate Pattern in Rust {#typestate-pattern}
 

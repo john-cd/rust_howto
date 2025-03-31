@@ -74,10 +74,10 @@ Shared solutions for particular situations specific to programming in Rust.
 
 | Design Pattern | Description | Helpful Rust Crates | Notes |
 |---|---|---|---|
-| Builder | Constructing complex objects step-by-step. | [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} for code generation | Often implemented directly using structs and methods. [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} reduces boilerplate. |
+| Builder | Constructing complex objects step-by-step. | Use [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} for code generation. | Often implemented directly using structs and methods. [`derive_builder`][c-derive_builder]⮳{{hi:derive_builder}} reduces boilerplate. |
 | Factory | Creating objects of different types based on some criteria. | Often implemented directly using traits, enums, or closures. | Traits and generics are frequently used. |
-| Abstract Factory | Creating families of related objects. | Often implemented directly using traits and generics | |
-| Singleton | Ensuring a class has only one instance. | Often implemented directly using static variables or lazy initialization | Can be implemented with [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}} though often discouraged in modern Rust. |
+| Abstract Factory | Creating families of related objects. | Often implemented directly using traits and generics. | |
+| Singleton | Ensuring a class has only one instance. | Often implemented directly using static variables or lazy initialization. | Can be implemented with [`lazy_static`][c-lazy_static]⮳{{hi:lazy_static}}, though Singletons are often discouraged in Rust. |
 
 #### Builder Patterns
 
@@ -91,8 +91,8 @@ Shared solutions for particular situations specific to programming in Rust.
 | Composite | Representing hierarchical tree-like structures. | Often implemented directly using structs and enums | |
 | Decorator | Adding behavior to objects dynamically. | Often implemented directly using traits | Traits are commonly used for decorators. |
 | Facade | Providing a simplified interface to a complex system. |  | Usually a matter of structuring your code. |
-| Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using `Rc` or `Arc` | `Rc` and `Arc` are used for shared ownership. |
-| Proxy | Controlling access to another object. | Often implemented directly | Can be implemented with custom types and dereferencing. |
+| Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using `Rc` or `Arc`. | `Rc` and `Arc` are used for shared ownership. |
+| Proxy | Controlling access to another object. | Often implemented directly. | Can be implemented with custom types and dereferencing. |
 
 ### Behavioral Patterns
 
@@ -136,11 +136,4 @@ Shared solutions for particular situations specific to programming in Rust.
 
 <div class="hidden">
 [index: organize / write / add cross links](https://github.com/john-cd/rust_howto/issues/469)
-
-Reuse:
-
-## Rust Idioms
-
-{{#include _rust_idioms.incl.md}}
-
 </div>
