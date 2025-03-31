@@ -2,6 +2,14 @@
 
 {{#include versioning.incl.md}}
 
+| Topic | Rust Crates |
+|---|---|
+| Version Parsing and Comparison | [`semver`][c-semver]⮳{{hi:semver}} parses, compares, and manipulates SemVer (Semantic Versioning) strings. |
+| Version Bumping | `cargo-bump` is a tool to automate bumping versions in your `Cargo.toml` file according to SemVer rules. See [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]]. |
+| Dependency Management (with version constraints) | [cargo][p-cargo] uses SemVer for specifying dependencies in `Cargo.toml`. See the [[cargo | Cargo]] chapter for more details. |
+| Release Management | Often involves tagging `Git` releases. |
+| Changelog Generation | Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p-parsing] commit messages, etc. |
+
 ## Parse and Increment a Version String {#parse-and-increment-a-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} version string{{hi:Version string}}
@@ -63,12 +71,5 @@ Runs `git --version` using [`std::process::Command`][c-std::process::Command]{{h
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/920)
-
-Semantic Versioning (SemVer): (The concept itself. No specific crate implements SemVer, but crates like [`semver`][c-semver]⮳{{hi:semver}} help work with SemVer strings.)
-Version Parsing and Comparison: [`semver`][c-semver]⮳{{hi:semver}} (crate for parsing, comparing, and manipulating SemVer strings)
-Version Bumping: cargo-bump (a tool to automate bumping versions in your Cargo.toml file according to SemVer rules)
-Dependency Management (with version constraints): [cargo][p-cargo] (uses SemVer for specifying dependencies in Cargo.toml)
-Release Management: (Often involves tagging Git releases, which is not Rust-specific)
-Changelog Generation: (Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p-parsing] commit messages, etc.)
+[review / align with intro](https://github.com/john-cd/rust_howto/issues/920)
 </div>
