@@ -14,7 +14,7 @@ Rust's memory management is a core strength: you won't often need to manually ma
 | Specialized Allocators | [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} is a small and efficient allocator, often used in embedded systems or WebAssembly. |
 | Memory Profiling | [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): External tool. Powerful memory profiler. [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: External tool. Heap profiler. |
 
-## Smart Pointers (for Managing Memory beyond Basic ownership)
+## Memory Management Beyond Basic Ownership with Smart Pointers
 
 - `Box`: For allocating data on the heap.
 - `Rc` (Reference Counting): For shared ownership of data.
@@ -22,13 +22,22 @@ Rust's memory management is a core strength: you won't often need to manually ma
 - `RefCell`: For interior mutability (allowing you to mutate data even when there are immutable references to it).
 - `Mutex`: For safe mutable access to data from multiple threads.
 
-## Global Statics and Lazy Initialization
+See [[smart_pointers | Smart Pointers]].
+
+## Statics and Lazy Initialization
+
+`static` refers to items that have a fixed memory location and a `'static` lifetime, meaning they exist for the entire duration of the program.
+These are similar to constants but represent a specific memory location. All references to a static item point to the same memory location.
+Static items can be mutable (), but modifying them requires an  block due to potential concurrency issues. They are often used for global variables or shared state across threads. See [[shared_state | Shared State]].
+
+Lazy initialization is a technique where a resource or variable is initialized only when it's first accessed, rather than at the start of the program. Lazy initialization is particularly useful for expensive computations or resources that may not be needed during the program's execution.
+It is commonly used with statics.
 
 {{#include lazy_initialization.incl.md}}
 
 ## Unsafe Code and Raw Pointers
 
-Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when absolutely necessary for interacting with external code or hardware. They bypass Rust's safety guarantees and require very careful manual memory management.
+Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when necessary for interacting with external code or hardware. They bypass Rust's safety guarantees and require careful manual memory management.
 
 ## Custom Memory Allocation, Garbage Collection
 
@@ -38,7 +47,7 @@ The core `alloc` crate provides the core allocation APIs. You'll rarely use this
 
 Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust.
 
-- [`seize`][c-seize]⮳{{hi:seize}} crate FIXME.
+- The [`seize`][c-seize]⮳{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
 
 {{#include memory_allocation.incl.md}}
 
@@ -51,6 +60,8 @@ Memory profiling tools like [`Valgrind`][c-valgrind]⮳{{hi:Valgrind}} are usefu
 - [`valgrind`][c-valgrind]⮳{{hi:valgrind}} (with `massif` or `memcheck`): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
 - [`heaptrack`][c-heaptrack]⮳{{hi:heaptrack}}: A heap profiler that can track memory allocations.
 
+Address Sanitizer (`ASan`, a compiler feature) detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`). Memory Sanitizer (`MSan`, another compiler feature) detects uninitialized memory usage.
+
 See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
 
 {{#include refs.incl.md}}
@@ -59,7 +70,7 @@ See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_
 <div class="hidden">
 [memory-management/index: organize; align table and sections; write missing sections; cross link NOW](https://github.com/john-cd/rust_howto/issues/410)
 cover https://doc.rust-lang.org/beta/unstable-book/compiler-flags/sanitizer.html
-
-| Memory Safety Tools | Address Sanitizer (`ASan`) (Compiler feature) detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`). Memory Sanitizer (`MSan`) (Compiler feature) detects uninitialized memory usage. |
-
+cover ASan and MSan
+other allocators
+unsafe
 </div>
