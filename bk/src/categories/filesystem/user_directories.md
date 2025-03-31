@@ -1,4 +1,4 @@
-# User Directories
+# User Directories and Preferred Applications
 
 {{#include user_directories.incl.md}}
 
@@ -24,6 +24,16 @@ Get platform-specific locations for [configuration][p-configuration], cache, and
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/tests/user_directories/directories.rs:example}}
+```
+
+## Open a file or URL using the program configured on your system {#open}
+
+[![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
+
+[`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/tests/open.rs:example}}
 ```
 
 {{#include refs.incl.md}}

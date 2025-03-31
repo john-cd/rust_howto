@@ -83,17 +83,4 @@ See also [[network-programming | Network Programming]].
 
 <div class="hidden">
 TODO write, review in depth, add missing sections NOW
-
-| [`open`][ex-filesystem-open] | [![open][c-open-badge]][c-open] | [![cat-filesystem][cat-filesystem-badge]][cat-filesystem] |
-
-## `open` {#open}
-
-[![open][c-open-badge]][c-open] [![open-crates.io][c-open-crates.io-badge]][c-open-crates.io] [![open-github][c-open-github-badge]][c-open-github] [![open-lib.rs][c-open-lib.rs-badge]][c-open-lib.rs]{{hi:open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
-
-[`open`][c-open]⮳{{hi:open}} opens a path or [URL][p-url] using the program configured on the system.
-
-```rust,editable
-{{#include ../../../crates/cats/filesystem/tests/open.rs:example}}
-```
-
 </div>
