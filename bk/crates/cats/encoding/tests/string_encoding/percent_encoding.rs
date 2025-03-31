@@ -8,29 +8,28 @@ use percent_encoding::percent_encode;
 use percent_encoding::utf8_percent_encode;
 
 // URLs use special characters to indicate the parts of the request. For
-// example, a ? question mark marks the end of a path and the start of a query
+// example, a `?` question mark marks the end of a path and the start of a query
 // string.
 
-// Percent encoding replaces reserved characters with the % escape character
+// Percent encoding replaces reserved characters with the `%` escape character
 // followed by a byte value as two hexadecimal digits. For example, an ASCII
-// space is replaced with %20.
+// space is replaced with `%20`.
+// This example uses the NON_ALPHANUMERIC set to encode everything that is not
+// an ASCII letter or digit.
 fn encode_url_component(input: &str) -> String {
-    // Percent-encode the given bytes with the given set.
-    // This example uses NON_ALPHANUMERIC, which encodes everything that is not
-    // an ASCII letter or digit.
     percent_encode(input.as_bytes(), NON_ALPHANUMERIC).to_string()
 }
 
-// Decode a percent-encoded string
+// Decode a percent-encoded string.
 fn decode_url_component(encoded: &str) -> Result<String> {
     let decoded = percent_decode_str(encoded).decode_utf8()?.to_string();
     Ok(decoded)
 }
 
-// Custom encoding with a specific ASCII set
+// Custom encoding with a specific ASCII set.
 fn custom_encode(input: &str) -> String {
-    // Create a custom set that only encodes spaces and some special characters
-    /// https://url.spec.whatwg.org/#fragment-percent-encode-set
+    // Create a 'fragment' custom set that only encodes spaces and some special characters.
+    /// See https://url.spec.whatwg.org/#fragment-percent-encode-set
     const FRAGMENT: &AsciiSet =
         &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
     // Percent-encode the UTF-8 encoding of the given string.
