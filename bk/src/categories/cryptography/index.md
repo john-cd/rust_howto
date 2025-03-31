@@ -14,33 +14,83 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 
 ## Encryption
 
+Transforming plaintext into ciphertext for confidentiality.
+
+- Types: Symmetric (shared key) vs. Asymmetric (key pair).
+- Algorithms: AES, RSA.
+- Purpose: Confidentiality.
+
 {{#include encryption.incl.md}}
 
 ## AEAD (Authenticated Encryption with Associated Data)
+
+Encryption scheme providing both confidentiality and authentication.
+
+- Associated Data: Additional data bound to the ciphertext but not encrypted.
+- Algorithms: AES-GCM, ChaCha20-Poly1305.
+- Purpose: Confidentiality and authentication.
 
 {{#include aead.incl.md}}
 
 ## Hashing
 
+One-way function producing a fixed-size "digest." Hashing is used in digital signatures, HMACs, and password hashing.
+
+- Properties: Deterministic, collision-resistant, preimage-resistant.
+- Algorithms: SHA-256, BLAKE3.
+- Purpose: Data integrity.
+
 {{#include hashing.incl.md}}
 
 ## Password Hashing
+
+One-way hashing specifically to protect passwords.
+
+- Goals: Resistance to brute-force, rainbow table attacks.
+- Algorithms: bcrypt, Argon2, scrypt; salting (adding a unique random value before hashing).
+- Purpose: Password protection.
 
 {{#include password_hashing.incl.md}}
 
 ## HMAC (Hash-based Message Authentication Code)
 
+A Message Authentication Code (MAC) is a cryptographic checksum using a shared secret key.
+HMAC (Hash-based MAC) uses a hash function with a secret key.
+
+- Purpose: Integrity and authentication (but not non-repudiation).
+
 {{#include hmac.incl.md}}
 
-## Signatures
+## Digital Signatures
+
+Cryptographic mechanism for authentication, integrity, and non-repudiation.
+Digital signatures are used to sign certificates and other documents.
+
+- Process: Signing with private key, verifying with public key.
+- Algorithms: RSA, ECDSA, Ed25519.
+- Purpose: Authentication, message integrity, non-repudiation.
 
 {{#include signature.incl.md}}
 
-## Certificates
+## Digital Certificates (X.509)
+
+Digital documents binding a public key to an identity.
+
+- Components: Subject, issuer, public key, validity period, signature.
+- Certificate Authorities (CAs): Trusted third parties.
+- Purpose: Identity verification.
 
 {{#include certificates.incl.md}}
 
 ## TLS (Transport Layer Security)
+
+Cryptographic protocol for secure communication over a network.
+
+- Handshake: Establishing a secure connection.
+- Encryption: TLS uses encryption (often AEAD) to protect data in transit.
+- Authentication: Verifying server (and optionally client) identity.
+- Certificates: Used for authentication.
+- Purpose: Secure communication.
 
 {{#include tls.incl.md}}
 
@@ -52,86 +102,5 @@ It covers both Symmetric Cryptography and Asymmetric Cryptography. The former us
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cryptography: review / incorporate](https://github.com/john-cd/rust_howto/issues/274)
-
-- ring.
-- rust-crypto.
-
-### `sodiumoxide`
-
-[![sodiumoxide][c-sodiumoxide-badge]][c-sodiumoxide] [![sodiumoxide-crates.io][c-sodiumoxide-crates.io-badge]][c-sodiumoxide-crates.io] [![sodiumoxide-github][c-sodiumoxide-github-badge]][c-sodiumoxide-github] [![sodiumoxide-lib.rs][c-sodiumoxide-lib.rs-badge]][c-sodiumoxide-lib.rs]{{hi:sodiumoxide}}{{hi:NaCl}}{{hi:Libsodium}}{{hi:Crypto}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
-
-[`sodiumoxide`][c-sodiumoxide]⮳{{hi:sodiumoxide}} is a fast cryptographic library for Rust (bindings to [`libsodium`][c-libsodium]⮳{{hi:libsodium}}).
-
-I. Core Concepts
-
-A. Encryption:
-
-1. Definition: Transforming plaintext into ciphertext for confidentiality.
-2. Types: Symmetric (shared key) vs. Asymmetric (key pair).
-3. Algorithms: Examples (AES, RSA).
-4. Purpose: Confidentiality.
-
-B. Hashing:
-
-1. Definition: One-way function producing a fixed-size "digest."
-2. Properties: Deterministic, collision-resistant, preimage-resistant.
-3. Algorithms: Examples (SHA-256, BLAKE3).
-4. Purpose: Data integrity.
-
-C. Digital Signatures:
-
-1. Definition: Cryptographic mechanism for authentication, integrity, and non-repudiation.
-2. Process: Signing with private key, verifying with public key.
-3. Algorithms: Examples (RSA, ECDSA, Ed25519).
-4. Purpose: Authentication, integrity, non-repudiation.
-
-D. Message Authentication Code (MAC):
-
-1. Definition: Cryptographic checksum using a shared secret key.
-2. HMAC (Hash-based MAC): Using a hash function with a secret key.
-3. Purpose: Integrity and authentication (but not non-repudiation).
-
-E. Password Hashing:
-
-1. Definition: One-way hashing specifically for passwords.
-2. Goals: Resistance to brute-force, rainbow table attacks.
-3. Algorithms: Examples (bcrypt, Argon2, scrypt).
-4. Salting: Adding a unique random value before hashing.
-5. Purpose: Password protection.
-
-II. Advanced Concepts and Protocols
-
-A. Authenticated Encryption with Associated Data (AEAD):
-
-1. Definition: Encryption scheme providing both confidentiality and authentication.
-2. Associated Data: Additional data bound to the ciphertext but not encrypted.
-3. Algorithms: Examples (AES-GCM, ChaCha20-Poly1305).
-4. Purpose: Confidentiality and authentication.
-
-B. Digital Certificates (X.509):
-
-1. Definition: Digital documents binding a public key to an identity.
-2. Components: Subject, issuer, public key, validity period, signature.
-3. Certificate Authorities (CAs): Trusted third parties.
-4. Purpose: Identity verification.
-
-C. Transport Layer Security (TLS):
-
-1. Definition: Cryptographic protocol for secure communication over a network.
-2. Handshake: Establishing a secure connection.
-3. Encryption: Protecting data in transit.
-4. Authentication: Verifying server (and optionally client) identity.
-5. Certificates: Used for authentication.
-6. Purpose: Secure communication.
-
-III. Relationships and Usage
-
-A. Certificates are used in TLS to authenticate servers (and sometimes clients).
-B. TLS uses encryption (often AEAD) to protect data in transit.
-C. Digital signatures are used to sign certificates and other documents.
-D. Hashing is used in digital signatures, HMACs, and password hashing.
-E. Password hashing is used to protect user passwords.
-F. HMACs are used for message authentication.
-G. AEAD combines encryption and authentication.
+[cryptography: review](https://github.com/john-cd/rust_howto/issues/274)
 </div>
