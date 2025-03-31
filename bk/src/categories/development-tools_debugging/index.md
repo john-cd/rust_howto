@@ -48,10 +48,7 @@ Help you figure out what is going on with your code such as logging{{hi:Logging}
 
 ## Metrics
 
-- [`metrics`](https://metrics.rs) is a batteries-included instrumentation ecosystem for Rust, allowing you to quickly and easily instrument your libraries and applications.
-- [`tokio-metrics`](https://crates.io/crates/tokio-metrics) provides utilities for collecting metrics from a Tokio application, including runtime and per-task metrics.
-- [`cadence`](https://crates.io/crates/cadence) is an extensible `statsd` client for Rust.
-- [`sentry`](https://crates.io/crates/sentry) is a ['Sentry'](https://getsentry.com) client for Rust.
+{{#include metrics.incl.md}}
 
 ## Related Topics
 

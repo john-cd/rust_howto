@@ -5024,6 +5024,14 @@
 [c-proj-lib.rs-badge]: https://img.shields.io/badge/lib.rs-proj-yellow
 [c-proj-lib.rs]: https://lib.rs/crates/proj
 [c-proj]: https://docs.rs/proj
+[c-prometheus-badge]: https://img.shields.io/crates/v/prometheus?label=prometheus
+[c-prometheus-crates.io-badge]: https://img.shields.io/badge/crates.io-prometheus-crimson
+[c-prometheus-crates.io]: https://crates.io/crates/prometheus
+[c-prometheus-github-badge]: https://img.shields.io/badge/prometheus-steelblue?logo=github
+[c-prometheus-github]: https://github.com/tikv/rust-prometheus
+[c-prometheus-lib.rs-badge]: https://img.shields.io/badge/lib.rs-prometheus-yellow
+[c-prometheus-lib.rs]: https://lib.rs/crates/prometheus
+[c-prometheus]: https://docs.rs/prometheus
 [c-proptest-badge]: https://img.shields.io/crates/v/proptest?label=proptest
 [c-proptest-crates.io-badge]: https://img.shields.io/badge/crates.io-proptest-crimson
 [c-proptest-crates.io]: https://crates.io/crates/proptest
