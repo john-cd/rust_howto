@@ -29,5 +29,5 @@ A slice is a reference to a contiguous sequence of elements within a collection.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[slices: add text](https://github.com/john-cd/rust_howto/issues/558)
+TODO review
 </div>
