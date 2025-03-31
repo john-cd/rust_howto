@@ -2,7 +2,7 @@
 
 [![cat-development-tools::profiling][cat-development-tools::profiling-badge]][cat-development-tools::profiling]{{hi:Profiling}}
 
-Development tools to help you figure out the performance of your code.
+This section covers profiling tools to identify performance bottlenecks.
 
 Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like perf provide more detailed information. Benchmarking helps you measure the impact of code changes. Memory profilers help you find memory leaks and excessive allocations. Tracing helps you understand the flow of your program.
 
@@ -32,14 +32,11 @@ Flame graphs are excellent for visualizing CPU usage and identifying hot spots. 
 
 ## References
 
-- [Rust Performance Book][book-rust-performance] [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]{{hi:Rust performance}}
+- The [Rust Performance Book][book-rust-performance]⮳. [![book-rust-performance-github][book-rust-performance-github-badge]][book-rust-performance-github]{{hi:Rust performance}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand](https://github.com/john-cd/rust_howto/issues/337)
-
-Profiling: Using profiling tools to identify performance bottlenecks.
-Performance Optimization: Recipes for optimizing code performance, including using SIMD instructions and profiling tools.
+[expand / review](https://github.com/john-cd/rust_howto/issues/337)
 </div>
