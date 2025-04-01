@@ -56,7 +56,13 @@ Your favorite number must be 256.
 {{#include ../../../crates/cats/command_line_interface/tests/arguments/clap.rs:example}}
 ```
 
-## See Also
+## Generate Shell Completion Scripts with `clap_complete` {#clap_complete}
+
+[![clap_complete][c-clap_complete-badge]][c-clap_complete] [![clap_complete-crates.io][c-clap_complete-crates.io-badge]][c-clap_complete-crates.io] [![clap_complete-github][c-clap_complete-github-badge]][c-clap_complete-github] [![clap_complete-lib.rs][c-clap_complete-lib.rs-badge]][c-clap_complete-lib.rs]{{hi:clap_complete}}{{hi:Bash}}{{hi:Clap}}{{hi:Cli}}{{hi:Completion}} [![cat-command-line-interface][cat-command-line-interface-badge]][cat-command-line-interface]{{hi:Command-line interface}}
+
+`clap_complete` generates shell completion scripts for your `clap::Command`.
+
+## `clap` Alternatives {#skip}
 
 ### Parse Command-line Arguments with `lexopt` {#lexopt}
 
@@ -106,7 +112,7 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 
 - [Parsing arguments in Rust, without using dependencies][parsing-arguments-rust-no-dep-blog]⮳.
 
-## Related Topics {#skip}
+## Related Topics {#skip2}
 
 - [[parse | Parse]].
 - [[parser-implementations | Parser Implementations]].
@@ -117,9 +123,5 @@ The [`pico-args`][c-pico_args]⮳{{hi:pico-args}} crate is a small and fast libr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[arguments: expand `lexopt` and `pico-args`](https://github.com/john-cd/rust_howto/issues/233)
-
-## `clap_complete` {#clap_complete}
-
-Generate shell completion scripts for your `clap::Command`
+[arguments: review](https://github.com/john-cd/rust_howto/issues/233)
 </div>
