@@ -29,7 +29,7 @@ lapin = "2.5.0"
 mongodb = { version = "3.1.1", optional = true }
 oracle = "0.6.3"
 postgres = "0.19.9"
-redis = "0.29.0"
+redis = "0.29.2"
 rocksdb = "0.23.0"
 rusqlite = "0.32.1"                                                          # pinned
 sea-orm = "1.1.3"
