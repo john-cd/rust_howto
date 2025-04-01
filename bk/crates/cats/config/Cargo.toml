@@ -23,7 +23,7 @@ confy = "0.6.1"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
 envy = "0.4.2"
-lexopt = "0.3.0"
+lexopt = "0.3.1"
 
 ## General
 anyhow = "1.0.95"
