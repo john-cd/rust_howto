@@ -2733,3 +2733,5 @@ regenerable
 PromQL
 HashSets
 HashSet
+hashsets
+hashset
