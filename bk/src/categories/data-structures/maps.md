@@ -56,11 +56,4 @@ Use [`slotmap`][c-slotmap]⮳{{hi:slotmap}} to store collections of objects that
 
 <div class="hidden">
 [maps: write / expand](https://github.com/john-cd/rust_howto/issues/281)
-
-## See Also
-
-[Splay tree][wikipedia-splay-tree]{{hi:Splay tree}}⮳.
-
-A splay tree is a self-adjusting binary search tree that ensures recently accessed elements are quick to access again. It achieves this by performing a specific operation called "splaying" on the accessed node, which moves it to the root of the tree. This way, frequently accessed nodes stay near the root, making them faster to reach.
-
 </div>
