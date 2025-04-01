@@ -80,6 +80,5 @@ Alternatives to the [Tokio][p-tokio] async ecosystem include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/633)
-review in depth
+[write; review in depth](https://github.com/john-cd/rust_howto/issues/633)
 </div>
