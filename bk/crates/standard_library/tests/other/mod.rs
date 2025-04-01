@@ -4,6 +4,7 @@ mod cell;
 mod derive;
 mod derive_more;
 mod hashmaps;
+mod hashset;
 mod rc;
 mod refcell;
 mod result;
