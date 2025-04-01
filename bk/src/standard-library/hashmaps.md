@@ -29,6 +29,5 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[hashmaps: add](https://github.com/john-cd/rust_howto/issues/622)
-Creating, inserting, retrieving, deleting, iterating, and using different [hashing][p-hashing] algorithms. Include examples of using HashMap and HashSet.
+[hashmaps: add](https://github.com/john-cd/rust_howto/issues/622).
 </div>
