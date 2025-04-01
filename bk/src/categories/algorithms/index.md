@@ -27,63 +27,20 @@ The following table denotes the most common crates used for each algorithm categ
 
 ## Related Topics
 
-### Compression
-
-- [[compression | Compression]].
-
-### Cryptography
-
-- [[cryptography | Cryptography]].
-- [[cryptography_utilities | Cryptography Utilities]].
-- [[encryption | Encryption]].
-- [[hashing | Hashing]].
-- [[password_hashing | Password Hashing]].
-
-### Data Processing
-
-- [[data-processing | Data Processing]].
-
-### Data Structures
-
-- [[concurrent_data_structures | Concurrent Data Structures]].
-- [[data-structures | Data Structures]].
-
-### Mathematics
-
-- [[additional_numeric_types | Additional Numeric Types]].
-- [[complex_numbers | Complex Numbers]].
-- [[linear_algebra | Linear Algebra]].
-- [[mathematics | Mathematics]].
-- [[statistics | Statistics]].
-- [[trigonometry | Trigonometry]].
-
-### Science
-
-- [[science | Science]].
-- [[_machine_learning |  Machine Learning]].
-- [[science_geo | Geoscience]].
-- [[science_neuroscience | Neuroscience]].
-- [[science_robotics | Science Robotics]].
-- [[simulation | Simulation]].
-
-## Search
-
-- [[search | Search]].
-- [[rust_search_engines | Search Engines]].
-
-### Strings
-
-- [[string_concat | String Concat]].
-- [[string_encoding | String Encoding]].
-- [[string_parsing | String Parsing]].
-- [[strings | Strings]].
-- [[text-processing | Text Processing]].
+| Topic | Related Links |
+|---|---|
+| [[compression | Compression]] | |
+| [[cryptography | Cryptography]] | [[cryptography_utilities | Cryptography Utilities]], [[encryption | Encryption]], [[hashing | Hashing]], [[password_hashing | Password Hashing]] |
+| [[data-processing | Data Processing]] | |
+| [[data-structures | Data Structures]] | [[concurrent_data_structures | Concurrent Data Structures]] |
+| [[mathematics | Mathematics]] | [[additional_numeric_types | Additional Numeric Types]], [[complex_numbers | Complex Numbers]], [[linear_algebra | Linear Algebra]], [[statistics | Statistics]], [[trigonometry | Trigonometry]]. |
+| [[science | Science]] | [[_machine_learning |  Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], [[simulation | Simulation]] |
+| [[search | Search]] | [[rust_search_engines | Search Engines]] |
+| [[strings | Strings]] | [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], [[text-processing | Text Processing]] |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [review; add graph examples](https://github.com/john-cd/rust_howto/issues/1165)
-table for related topics?
-Cover [`pathfinding`][c-pathfinding]⮳{{hi:pathfinding}}
 </div>
