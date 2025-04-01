@@ -35,7 +35,7 @@ Use [`std::env`][c-std::env::var]⮳{{hi:std::env}} to retrieve a single environ
 ```toml
 [dependencies]
 envy = "0.4"
-serde = { version = "1.0.216", features = ["derive"] }
+serde = { version = "1.0.217", features = ["derive"] }
 ```
 
 ```rust,editable,should_panic,noplayground
