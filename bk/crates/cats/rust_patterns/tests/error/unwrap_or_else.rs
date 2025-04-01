@@ -1,4 +1,5 @@
 // ANCHOR: example
+#![allow(clippy::unnecessary_literal_unwrap)]
 use std::fs;
 use std::fs::File;
 use std::io::ErrorKind;

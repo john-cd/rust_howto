@@ -18,8 +18,8 @@ fn main() {
     let m = 42; // Compiler infers i32 by default
 
     // Floating-point types
-    let n: f32 = 3.14159; // 32-bit float
-    let o: f64 = 2.71828; // 64-bit float (default for floats)
+    let n: f32 = 3.1; // 32-bit float
+    let o: f64 = 2.7; // 64-bit float (default for floats)
 
     // Boolean type
     let p: bool = true;

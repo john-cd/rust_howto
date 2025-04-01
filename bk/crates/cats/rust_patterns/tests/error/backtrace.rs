@@ -37,8 +37,8 @@ impl Rgb {
 // string.
 impl fmt::UpperHex for Rgb {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let hexa = u32::from(self.red) << 16
-            | u32::from(self.blue) << 8
+        let hexa = (u32::from(self.red) << 16)
+            | (u32::from(self.blue) << 8)
             | u32::from(self.green);
         write!(f, "{:X}", hexa)
     }

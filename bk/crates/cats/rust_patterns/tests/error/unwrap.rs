@@ -1,4 +1,6 @@
 // ANCHOR: example
+#![allow(clippy::unnecessary_literal_unwrap)]
+
 fn main() {
     let number_str = "42";
 

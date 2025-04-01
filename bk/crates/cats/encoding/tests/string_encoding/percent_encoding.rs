@@ -91,7 +91,7 @@ mod tests {
 
         assert!(custom_encoded.contains("%20"), "Spaces should be encoded");
         assert!(
-            custom_encoded.contains("%2B") == false,
+            !custom_encoded.contains("%2B"),
             "Plus should not be encoded in this test"
         );
     }
