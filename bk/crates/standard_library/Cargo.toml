@@ -21,4 +21,5 @@ anyhow = "1.0.95"
 concat-string = "1.0.1"
 concat_strs = "1.0.2"
 derive_more = { version = "2.0.1", features = ["full"] }
+fnv = "1.0.7"
 thiserror = "2.0.8"

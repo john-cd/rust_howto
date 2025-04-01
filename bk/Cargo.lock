@@ -26084,6 +26084,7 @@ dependencies = [
  "concat-string",
  "concat_strs",
  "derive_more 2.0.1",
+ "fnv",
  "thiserror 2.0.12",
 ]
 
