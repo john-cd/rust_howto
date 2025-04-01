@@ -26,6 +26,8 @@ time cargo build
 cargo build --timings
 ```
 
+You may also use `hyperfine`. See [[benchmarking | Benchmarking]].
+
 ## Incremental Compilation {#incremental-compilation}
 
 Incremental compilation in Rust is built into [Cargo][p-cargo] and `rustc`, and generally "just works" automatically. It reuses previously compiled code, significantly speeding up subsequent builds after changes.
@@ -117,7 +119,5 @@ Consider using remote build servers or a separate build machine for large projec
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[write / expand / cross link](https://github.com/john-cd/rust_howto/issues/245)
-hyperfine
-align table and text
+[write / expand / align table and text](https://github.com/john-cd/rust_howto/issues/245)
 </div>
