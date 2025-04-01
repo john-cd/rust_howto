@@ -19,7 +19,7 @@ The following table outlines common web development tasks and relevant Rust crat
 | Web Authentication & Authorization | [`actix-web-httpauth`][c-actix_web_httpauth]⮳{{hi:actix-web-httpauth}} (for Actix Web), [`tower-http`][c-tower_http]⮳{{hi:tower-http}} (generic middleware) | Authentication and authorization are often handled through middleware or dedicated crates. |
 | WebSockets | [`tokio-tungstenite`][c-tokio_tungstenite]⮳{{hi:tokio-tungstenite}}, [`async-tungstenite`][c-async_tungstenite]⮳{{hi:async-tungstenite}} | These crates provide WebSocket support. |
 | GraphQL | [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}, [`juniper`][c-juniper]⮳{{hi:juniper}} | These crates enable building GraphQL APIs. |
-| Static Site Generation (SSG) | [`perseus`][c-perseus]⮳{{hi:perseus}} (based on `sycamore`), [`zola`][c-zola]⮳{{hi:zola}} | These tools generate static websites from templates and content. |
+| Static Site Generation (SSG) | [`perseus`][c-perseus]⮳{{hi:perseus}} (based on `sycamore`), [`zola`][c-zola-website]⮳{{hi:zola}} | These tools generate static websites from templates and content. |
 
 ## Choosing the Right Crates
 

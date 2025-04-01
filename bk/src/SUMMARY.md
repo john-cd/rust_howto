@@ -258,7 +258,6 @@
 - [Rust Patterns](categories/rust-patterns/index.md)
   - [Design Patterns](categories/rust-patterns/design_patterns.md)
   - [Functional Programming](categories/rust-patterns/functional_programming.md)
-  - [Rust Idioms](categories/rust-patterns/_rust_idioms.md)
   - [Builder Pattern](categories/rust-patterns/builder_pattern.md)
 
 - [Template Engines](categories/template-engine/index.md)
