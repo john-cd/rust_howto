@@ -63,6 +63,5 @@ Crates to help you deal with events independently of the main program flow, usin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[need titles](https://github.com/john-cd/rust_howto/issues/905)
-write
+[review](https://github.com/john-cd/rust_howto/issues/905)
 </div>
