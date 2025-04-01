@@ -53,6 +53,5 @@ Allow access to data from one thread at a time.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shared_state: review; add cross links](https://github.com/john-cd/rust_howto/issues/266)
-[refer to the lazy_static.rs, lazy_constant.rs examples](https://github.com/john-cd/rust_howto/issues/910)
+[shared_state: review](https://github.com/john-cd/rust_howto/issues/266)
 </div>
