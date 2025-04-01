@@ -20,7 +20,7 @@
 
 Use [`std::env`][c-std::env::var]⮳{{hi:std::env}} to retrieve a single environment variable{{hi:Environment variables}}.
 
-```rust,editable,should_panic
+```rust,editable
 {{#include ../../../crates/cats/config/tests/env/env.rs:example}}
 ```
 
@@ -38,7 +38,7 @@ envy = "0.4"
 serde = { version = "1.0.217", features = ["derive"] }
 ```
 
-```rust,editable,should_panic,noplayground
+```rust,editable,noplayground
 {{#include ../../../crates/cats/config/tests/env/envy.rs:example}}
 ```
 

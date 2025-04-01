@@ -9,7 +9,15 @@ HashMap is a key-value data structure. It allows you to store data in an unorder
 All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each other, and all of the values{{hi:Values}} must have the same type.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/other/hashmaps.rs:example}}
+{{#include ../../crates/standard_library/tests/hashmaps/hashmaps.rs:example}}
+```
+
+## HashSets {#hashsets}
+
+[![std][c-std-badge]][c-std]{{hi:std}}
+
+```rust,editable
+{{#include ../../crates/standard_library/tests/hashmaps/hashset.rs:example}}
 ```
 
 ## Related Data Structures {#skip}

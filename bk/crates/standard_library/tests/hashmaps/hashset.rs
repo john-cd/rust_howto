@@ -51,12 +51,18 @@ fn main() {
     println!("Difference (set1 - set2): {:?}", difference); // 1, 2
 
     // Symmetric difference (elements in either set but not both)
-    let symmetric_difference: HashSet<_> = set1.symmetric_difference(&set2).cloned().collect();
+    let symmetric_difference: HashSet<_> =
+        set1.symmetric_difference(&set2).cloned().collect();
     println!("Symmetric Difference: {:?}", symmetric_difference); // 1, 2, 4, 5
 
     // Check if a set is a subset of another
     let subset: HashSet<_> = [1, 2].iter().cloned().collect();
-    println!("Is {:?} a subset of {:?}? {}", subset, set1, subset.is_subset(&set1)); // true
+    println!(
+        "Is {:?} a subset of {:?}? {}",
+        subset,
+        set1,
+        subset.is_subset(&set1)
+    ); // true
 
     // Get the length
     println!("Number of languages: {}", languages.len());

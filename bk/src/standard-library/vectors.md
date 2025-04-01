@@ -9,7 +9,7 @@
 Vectors (`Vec`) can only store values that are the same type.
 
 ```rust,editable
-{{#include ../../crates/standard_library/tests/other/vectors.rs:example}}
+{{#include ../../crates/standard_library/tests/data_structures/vectors.rs:example}}
 ```
 
 ## Related Data Structures {#skip}
