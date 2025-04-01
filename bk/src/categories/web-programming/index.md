@@ -27,7 +27,7 @@ The following table outlines common web development tasks and relevant Rust crat
 - Front-end Web App (WASM): [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-leptos]⮳{{hi:leptos}}.
 - REST API: Web framework + [`serde`][c-serde]⮳{{hi:serde}}.
 - GraphQL API: [`async-graphql`][c-async_graphql]⮳{{hi:async-graphql}}.
-- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola]⮳{{hi:zola}}.
+- Static Site Generation: [`perseus`][c-perseus]⮳{{hi:perseus}}, [`zola`][c-zola-website]⮳{{hi:zola}}.
 
 ## Code Examples
 
