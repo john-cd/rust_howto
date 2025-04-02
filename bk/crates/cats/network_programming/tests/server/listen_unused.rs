@@ -1,15 +1,17 @@
 // ANCHOR: example
-//! This example demonstrates a simple TCP server that listens for a single connection,
-//! reads data from the connection, and then prints the received data.
+//! This example demonstrates a simple TCP server that listens for a single
+//! connection, reads data from the connection, and then prints the received
+//! data.
 //!
-//! The server binds to a dynamically assigned port on the loopback interface (127.0.0.1).
-//! It then waits for an incoming connection. Once a connection is established,
-//! it reads data from the client and prints the received message.
+//! The server binds to a dynamically assigned port on the loopback interface
+//! (127.0.0.1). It then waits for an incoming connection. Once a connection is
+//! established, it reads data from the client and prints the received message.
 //!
 //! The server will continue to listen until a client connects and sends data.
 //!
-//! To test this, run the server and then use a tool like `telnet` or `netcat` to connect to the printed port.
-//! For example: `telnet 127.0.0.1 <port>` or `nc 127.0.0.1 <port>`.
+//! To test this, run the server and then use a tool like `telnet` or `netcat`
+//! to connect to the printed port. For example: `telnet 127.0.0.1 <port>` or
+//! `nc 127.0.0.1 <port>`.
 use std::io::Error;
 use std::io::Read;
 use std::net::Ipv4Addr;
