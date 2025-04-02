@@ -4,7 +4,7 @@
 
 ## `OsString` and `OsStr` {#osstring}
 
-`std::ffi::OsString` is a type that can represent owned, mutable platform-native strings, but is cheaply inter-convertible with Rust strings.
+[`std::ffi::OsString`](https://doc.rust-lang.org/std/ffi/struct.OsString.html) is a type that can represent owned, mutable platform-native strings, but is cheaply inter-convertible with Rust strings.
 
 The need for this type arises from the fact that:
 
@@ -14,7 +14,7 @@ The need for this type arises from the fact that:
 
 `OsString` and `OsStr` bridge this gap by simultaneously representing Rust and platform-native string values, and in particular allowing a Rust string to be converted into an “OS” string with no cost if possible. A consequence of this is that `OsString` instances are not NUL terminated; in order to pass to e.g., Unix system call, you should create a `CStr`.
 
-`std::ffi::OsStr` is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
+[`std::ffi::OsStr`](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) is a borrowed reference to an OS string. `&OsStr` is to `OsString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/tests/other_strings/osstring.rs:example}}
@@ -58,5 +58,4 @@ This crate provides extension traits for `&[u8]` and `Vec<u8>` that enable their
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1194)
-credit the std documentation https://doc.rust-lang.org/std/ffi/struct.OsString.html
 </div>
