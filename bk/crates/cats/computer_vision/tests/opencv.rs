@@ -1,6 +1,5 @@
-// `OpenCV` requires `clang`, which is not installed by default on Windows
-#![cfg(all(target_os = "linux", feature = "opencv"))]
 // ANCHOR: example
+#![cfg(all(target_os = "linux", feature = "opencv"))]
 use std::fs;
 
 use image::Rgb;
@@ -12,11 +11,11 @@ use opencv::imgproc;
 use opencv::prelude::*;
 use rand::Rng;
 
-// This example demonstrates how to load an image, convert it to grayscale, and
-// save the result using the opencv crate. The main function is also called in
-// the test to ensure it runs correctly. Make sure you have an input.jpg file in
-// the same directory as the executable or adjust the path accordingly.
-
+/// This example demonstrates how to load an image, convert it to grayscale, and
+/// save the result using the `opencv` crate.
+///
+/// **Note:** `OpenCV` requires `clang`, which is not installed by default on
+/// Windows.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Prep: create a temporary directory
     if !fs::exists("temp")? {
