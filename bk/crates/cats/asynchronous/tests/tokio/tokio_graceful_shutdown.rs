@@ -5,6 +5,7 @@ use tokio_graceful_shutdown::SubsystemBuilder;
 use tokio_graceful_shutdown::SubsystemHandle;
 use tokio_graceful_shutdown::Toplevel;
 
+/// Counts down from 3 to 1, logging each number.
 async fn countdown() {
     for i in (1..=3).rev() {
         tracing::info!("Shutting down in: {}", i);
@@ -12,6 +13,7 @@ async fn countdown() {
     }
 }
 
+/// A subsystem that either counts down or waits for a shutdown request.
 async fn countdown_subsystem(
     subsys: SubsystemHandle,
 ) -> std::result::Result<(), Box<dyn std::error::Error + Send + Sync>> {
@@ -28,10 +30,10 @@ async fn countdown_subsystem(
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Init logging
+    // Init logging.
     tracing_subscriber::fmt().init();
 
-    // Setup and execute subsystem tree
+    // Setup and execute the subsystem tree.
     Toplevel::new(|s| async move {
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
     })
