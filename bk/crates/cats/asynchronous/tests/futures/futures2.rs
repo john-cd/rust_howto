@@ -1,6 +1,7 @@
 // ANCHOR: example
 use futures::join;
 
+/// Print the input value and return it.
 async fn foo(i: u32) -> u32 {
     println!("{i}");
     i

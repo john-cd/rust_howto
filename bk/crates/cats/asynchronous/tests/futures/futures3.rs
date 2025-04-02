@@ -1,10 +1,21 @@
 #![allow(clippy::async_yields_async)]
 // ANCHOR: example
+//! # Futures
+//!
+//! This example demonstrates various operations on futures using the `futures`
+//! crate.
+//!
+//! It showcases how to:
+//! - Map the output of a future to a different type.
+//! - Chain computations onto a future using `then`.
+//! - Use conditional `Either` futures.
+//! - Flatten nested futures.
 use anyhow::Result;
 use futures::future::FutureExt;
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    // Create a future that resolves to the value 1.
     let future_of_1 = async { 1 };
 
     // Map this future's output to a (possibly) different type, returning
@@ -28,7 +39,7 @@ async fn main() -> Result<()> {
     let not_true: bool = future.await;
     assert!(!not_true);
 
-    // Flatten nested futures
+    // Flatten nested futures:
     let nested_future = async { async { 1 } };
     let future = nested_future.flatten();
     let flat = future.await;
