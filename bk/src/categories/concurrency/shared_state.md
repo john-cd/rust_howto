@@ -53,5 +53,5 @@ Allow access to data from one thread at a time.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shared_state: review](https://github.com/john-cd/rust_howto/issues/266)
+[shared_state: review; titles](https://github.com/john-cd/rust_howto/issues/266)
 </div>
