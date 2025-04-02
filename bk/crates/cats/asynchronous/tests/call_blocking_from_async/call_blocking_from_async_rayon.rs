@@ -1,6 +1,10 @@
 // ANCHOR: example
 use rayon::prelude::*;
 
+/// Computes the sum of a vector of numbers in parallel using Rayon.
+///
+/// This function spawns a Rayon task to perform the sum and uses a `oneshot`
+/// channel to return the result to the Tokio runtime.
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
     let (tx, rx) = tokio::sync::oneshot::channel();
 

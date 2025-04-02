@@ -8,6 +8,12 @@ use tokio::task;
 use tokio::time;
 use tokio::time::Duration;
 
+/// `producer` function:
+///
+/// This function simulates a producer that sends messages to a channel.
+///
+/// # Arguments
+/// * `id` - The ID of the producer.
 async fn producer(id: usize, tx: Sender<String>) {
     for i in 0..5 {
         let msg = format!("Producer {}: Message {}", id, i);
@@ -26,6 +32,13 @@ async fn producer(id: usize, tx: Sender<String>) {
     }
 }
 
+/// `consumer` function:
+///
+/// This function simulates a consumer that receives messages from a channel.
+///
+/// # Arguments
+///
+/// * `id` - The ID of the consumer.
 async fn consumer(id: usize, rx: Receiver<String>) {
     // Receives a message from the channel.
     // If the channel is empty, awaits until there is a message.

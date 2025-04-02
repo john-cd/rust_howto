@@ -1,6 +1,10 @@
 // ANCHOR: example
 fn main() {
+    // Create a new multi-threaded runtime. The runtime is used to
+    // execute asynchronous tasks.
     let runtime = tokio::runtime::Builder::new_multi_thread()
+        // Set the number of worker threads. In this case, we only
+        // need one.
         .worker_threads(1)
         .enable_all()
         .build()

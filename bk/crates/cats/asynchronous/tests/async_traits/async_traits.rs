@@ -1,20 +1,24 @@
 // ANCHOR: example
 struct MyHealthChecker;
 
+/// A trait for checking the health of a system.
 trait HealthCheck {
-    async fn check(&mut self) -> bool; // <- async fn defined in a Trait
+    /// Checks the health of the system.
+    ///
+    /// Returns `true` if the system is healthy, `false` otherwise.
+    async fn check(&mut self) -> bool;
 }
 
 impl HealthCheck for MyHealthChecker {
+    // `async fn` implementation in the associated `impl` block.
     async fn check(&mut self) -> bool {
-        // async fn implementation in the associated impl block
         do_async_op().await
     }
 }
 
 async fn do_health_check(mut hc: impl HealthCheck) {
     if !hc.check().await {
-        // use as normal
+        // Use as normal.
         log_health_check_failure().await;
     } else {
         println!("Health check was normal");

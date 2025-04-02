@@ -5,6 +5,9 @@ use postage::sink::Sink;
 use tokio::task;
 use tokio::time::Duration;
 
+/// This function simulates a broadcaster that sends messages to a broadcast
+/// channel. The broadcaster sends two messages, each with a unique identifier,
+/// and then sleeps for a short duration.
 async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
     for i in 0..2 {
         let msg = format!("Broadcaster {}'s message {}", id, i);
@@ -20,6 +23,9 @@ async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
     }
 }
 
+/// This function simulates a receiver that receives messages from a broadcast
+/// channel. The receiver continuously receives messages and prints them until
+/// the channel is closed.
 async fn receiver(name: &'static str, mut rx: broadcast::Receiver<String>) {
     while let Some(msg) = rx.recv().await {
         println!("{} receive {}", name, msg);
@@ -28,6 +34,7 @@ async fn receiver(name: &'static str, mut rx: broadcast::Receiver<String>) {
 
 #[tokio::main]
 async fn main() {
+    // Create a broadcast channel with a capacity of 10 messages.
     // The broadcast channel provides reliable broadcast delivery between
     // multiple senders and multiple receivers. The channel has a fixed
     // capacity, and senders are suspended if the buffer is filled.
@@ -39,18 +46,20 @@ async fn main() {
         broadcaster_tasks.push(task::spawn(broadcaster(i, tx)));
     }
 
-    // Let's create a couple of receivers:
+    // Create a couple of receivers:
     let rx2 = rx.clone();
     task::spawn(receiver("A", rx));
     task::spawn(receiver("B", rx2));
 
+    // Let the broadcasters and receivers run for a short duration.
     tokio::time::sleep(Duration::from_millis(50)).await;
 
-    // We may also subscribe to the channel.
+    // Subscribe to the channel.
     // The receiver will observe all messages sent _after the call to
     // subscribe_. Messages currently in the buffer will not be received.
     let rx3 = tx.subscribe();
     task::spawn(receiver("C", rx3));
+    // Send a last message to the channel.
     let mut tx2 = tx.clone();
     tx2.send("Last message".into()).await.ok();
 

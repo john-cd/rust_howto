@@ -1,8 +1,12 @@
 // ANCHOR: example
+/// This is an asynchronous function that prints "world".
 async fn say_world() {
     println!("world");
 }
 
+/// This is the main asynchronous function.
+/// It demonstrates that calling an async function does not execute its body
+/// immediately.
 #[tokio::main]
 async fn main() {
     // Calling `say_world()` does not execute the body of `say_world()`.

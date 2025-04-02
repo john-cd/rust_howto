@@ -1,10 +1,13 @@
 // ANCHOR: example
 use tokio::sync::mpsc;
 
+/// Simulates some computation that takes a `u32` and returns a `String`.
 async fn some_computation(input: u32) -> String {
-    format!("the result of computation is {}", input)
+    format!("The result of computation is {}", input)
 }
 
+/// Demonstrates a multi-producer, single-consumer (MPSC) channel.
+/// Multiple producers send data to a single receiver.
 pub async fn multi_producer_single_receiver() {
     let (tx, mut rx) = mpsc::channel(100);
 
