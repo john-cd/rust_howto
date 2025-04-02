@@ -1,5 +1,4 @@
 // ANCHOR: example
-#![allow(deprecated)]
 
 /// Generates a random password of a specified length using a predefined
 /// character set.
@@ -27,4 +26,3 @@ fn main() {
 fn test() {
     main();
 }
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1146)
