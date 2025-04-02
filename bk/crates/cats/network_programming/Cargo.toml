@@ -17,7 +17,7 @@ autolib = false
 [dependencies]
 hyper = "1.6.0"
 ngrok = "0.14.0"
-pingora = "0.4.0"
+# TODO pingora = "0.4.0"
 tokio = { version = "1.43.0", features = ["full"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
