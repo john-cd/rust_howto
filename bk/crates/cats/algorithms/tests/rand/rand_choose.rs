@@ -1,10 +1,15 @@
 // ANCHOR: example
 #![allow(deprecated)]
 
+/// Generates a random password of a specified length using a predefined
+/// character set.
 fn main() {
+    // Define the character set to choose from.
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                             abcdefghijklmnopqrstuvwxyz\
                             0123456789)(*&^%$#@!~";
+
+    // Define the length of the password.
     const PASSWORD_LEN: usize = 30;
 
     let password: String = (0..PASSWORD_LEN)

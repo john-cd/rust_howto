@@ -1,11 +1,12 @@
 // ANCHOR: example
 use rand::Rng;
 use rand::distr::Alphanumeric;
-use rand::rng;
 
+/// Generate a random string of 30 alphanumeric characters.
 fn main() {
-    let rand_string: String = rng()
+    let rand_string: String = rand::rng()
         .sample_iter(&Alphanumeric)
+        // Take the first 30 characters.
         .take(30)
         .map(char::from)
         .collect();
