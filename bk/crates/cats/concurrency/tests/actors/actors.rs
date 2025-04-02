@@ -1,3 +1,11 @@
+// // ANCHOR: example
+// //! This example demonstrates a basic actor implementation.
+// //!
+// //! An actor is a concurrent entity that can receive and process messages.
+// //! It's a fundamental building block for concurrent systems.
+// use std::time::Duration;
+// use actors::{Actor, Context, SystemBuilder, Sender};
+
 // struct MyActor;
 
 // impl Actor for MyActor {
@@ -19,5 +27,5 @@
 //     // force main to wait before exiting program
 //     std::thread::sleep(Duration::from_millis(500));
 // }
-
-// [finish](https://github.com/john-cd/rust_howto/issues/1011)
+// // ANCHOR_END: example
+// // [finish](https://github.com/john-cd/rust_howto/issues/1011)

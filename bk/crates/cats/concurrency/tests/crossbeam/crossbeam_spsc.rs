@@ -4,6 +4,8 @@ use std::time;
 
 use crossbeam_channel::unbounded;
 
+/// Example of using crossbeam's unbounded channel for single-producer,
+/// single-consumer (SPSC) communication.
 fn main() {
     let (snd, rcv) = unbounded();
     let n_msgs = 5;

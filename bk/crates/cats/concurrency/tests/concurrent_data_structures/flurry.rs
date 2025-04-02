@@ -4,6 +4,9 @@ use std::thread;
 
 use flurry::HashMap;
 
+/// This example demonstrates the basic usage of the `flurry::HashMap` for
+/// concurrent data access. It showcases how to insert, read, remove, and
+/// iterate over the map, both sequentially and concurrently.
 fn main() {
     // Create a new Flurry HashMap.
     // Wrap in an Arc, so that it can be shared between threads
