@@ -4,7 +4,7 @@
 
 // // In your `Cargo.toml`, add the `protobuf` crate as a dependency:
 // // [dependencies]
-// // protobuf = "3.7.1"
+// // protobuf = "3.7.2" # Or latest
 
 // // Compile the .proto file to generate the Rust code.
 // // You can use the protoc compiler with the Rust plugin
