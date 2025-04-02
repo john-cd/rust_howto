@@ -40,8 +40,8 @@ fn main() -> anyhow::Result<()> {
     let cwd = sh.current_dir();
     println!("New current directory: {}", cwd.display());
 
-    // Write to a file. Paths are relative to the current directory of the Shell.
-    // Creates the file and all intermediate directories
+    // Write to a file. Paths are relative to the current directory of the
+    // Shell. Creates the file and all intermediate directories
     // if they don't exist.
     sh.write_file("test.txt", "Some Content")?;
 
