@@ -6511,9 +6511,9 @@ dependencies = [
 
 [[package]]
 name = "cosmic-text"
-version = "0.13.2"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e418dd4f5128c3e93eab12246391c54a20c496811131f85754dc8152ee207892"
+checksum = "3e1ecbb5db9a4c2ee642df67bcfa8f044dd867dbbaa21bfab139cbc204ffbf67"
 dependencies = [
  "bitflags 2.9.0",
  "fontdb 0.16.2",
@@ -10582,9 +10582,9 @@ dependencies = [
 
 [[package]]
 name = "femtovg"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e9893dbf48a85e6d92e461d8417b883b647b01b1049c9068f30149a1e1d8e483"
+checksum = "47e15d51b37323a171a49399d46f0b0a9ec729d1106976f8fa70d68068b15504"
 dependencies = [
  "bitflags 2.9.0",
  "bytemuck",
@@ -13141,9 +13141,9 @@ checksum = "be136d9dacc2a13cc70bb6c8f902b414fb2641f8db1314637c6b7933411a8f82"
 
 [[package]]
 name = "grid"
-version = "0.15.0"
+version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "36119f3a540b086b4e436bb2b588cf98a68863470e0e880f4d0842f112a3183a"
+checksum = "fb6ae361963ea5fe52038156ea1729f3b4e4ccc0711c362ab2b2d2c0a259e7c3"
 
 [[package]]
 name = "group"
@@ -13231,13 +13231,13 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "arboard",
- "cosmic-text 0.13.2",
+ "cosmic-text 0.14.0",
  "dioxus",
  "dioxus-desktop",
  "dioxus-web",
  "eframe",
  "egui",
- "femtovg 0.13.0",
+ "femtovg 0.14.0",
  "iced",
  "minifb",
  "morphorm",
@@ -13246,7 +13246,7 @@ dependencies = [
  "rfd 0.15.3",
  "skia-safe",
  "slint",
- "taffy 0.7.7",
+ "taffy 0.8.0",
  "tao 0.32.8",
  "tauri",
  "vello 0.4.1",
@@ -26920,12 +26920,12 @@ dependencies = [
 
 [[package]]
 name = "taffy"
-version = "0.7.7"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab4f4d046dd956a47a7e1a2947083d7ac3e6aa3cfaaead36173ceaa5ab11878c"
+checksum = "56a844965df28147d726ecc321bf67f287a9bdec5a655f53d4e7e5cad20443dc"
 dependencies = [
  "arrayvec 0.7.6",
- "grid 0.15.0",
+ "grid 0.16.1",
  "serde 1.0.219",
  "slotmap",
 ]
@@ -28557,9 +28557,9 @@ checksum = "c4013970217383f67b18aef68f6fb2e8d409bc5755227092d32efb0422ba24b8"
 
 [[package]]
 name = "tree-sitter-rust"
-version = "0.23.3"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca8ccb3e3a3495c8a943f6c3fd24c3804c471fd7f4f16087623c7fa4c0068e8a"
+checksum = "4b9b18034c684a2420722be8b2a91c9c44f2546b631c039edf575ccba8c61be1"
 dependencies = [
  "cc",
  "tree-sitter-language",
