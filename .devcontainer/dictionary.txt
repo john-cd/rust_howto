@@ -2735,3 +2735,4 @@ HashSets
 HashSet
 hashsets
 hashset
+swiss
