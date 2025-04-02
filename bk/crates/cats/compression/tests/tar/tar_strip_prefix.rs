@@ -6,6 +6,11 @@ use anyhow::Result;
 use flate2::read::GzDecoder;
 use tar::Archive;
 
+/// This example demonstrates how to extract a tar archive while stripping a
+/// common prefix from the paths of the extracted files.
+///
+/// It opens a gzipped tar archive, iterates over its entries, strips the
+/// "bundle/logs" prefix, and unpacks the files to the new paths.
 pub fn main() -> Result<()> {
     let file = File::open("temp/archive.tar.gz")?;
     let mut archive = Archive::new(GzDecoder::new(file));

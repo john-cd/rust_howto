@@ -7,6 +7,8 @@ use std::fs::File;
 use flate2::Compression;
 use flate2::write::GzEncoder;
 
+/// This function creates a compressed tar archive (tar.gz) of the 'tests'
+/// directory.
 pub fn main() -> Result<(), std::io::Error> {
     // Create a temporary folder
     if !fs::exists("temp")? {
