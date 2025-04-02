@@ -85,7 +85,5 @@ There is an unstable Cargo API, but it's not recommended for most plugins due to
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review in depth, reorg table, review below NOW](https://github.com/john-cd/rust_howto/issues/311)
-
-{{#include ../../../crates/cats/development_tools_cargo_plugins/tests/plugins.rs}}
+[review in depth, reorg table NOW](https://github.com/john-cd/rust_howto/issues/311)
 </div>

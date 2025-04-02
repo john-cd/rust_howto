@@ -48,14 +48,28 @@ The two distinguishing features of [`xtask`][c-cargo_xtask]⮳{{hi:xtask}} are t
 
 [`devx-cmd`][c-devx_cmd]⮳{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c-devx_pre_commit]⮳{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
 
-## Make Rust a Better `bash` with `xshell` {#xshell}
+## Write cross-platform `bash`-like scripts in Rust with `xshell` {#xshell}
 
-[![xshell][c-xshell-badge]][c-xshell]{{hi:xshell}}
-[![xshell-crates.io][c-xshell-crates.io-badge]][c-xshell-crates.io]
-[![xshell-github][c-xshell-github-badge]][c-xshell-github]
-[![xshell-lib.rs][c-xshell-lib.rs-badge]][c-xshell-lib.rs]
+[![xshell][c-xshell-badge]][c-xshell] [![xshell-crates.io][c-xshell-crates.io-badge]][c-xshell-crates.io] [![xshell-github][c-xshell-github-badge]][c-xshell-github] [![xshell-lib.rs][c-xshell-lib.rs-badge]][c-xshell-lib.rs]{{hi:xshell}} [![cat-development-tools::build-utils][cat-development-tools::build-utils-badge]][cat-development-tools::build-utils]{{hi:Build Utils}} [![cat-filesystem][cat-filesystem-badge]][cat-filesystem]{{hi:Filesystem}}
 
-[`xshell`][c-xshell-github]⮳{{hi:xshell}} provides a set of cross-platform utilities for writing cross-platform and ergonomic "bash" scripts.
+"[`xshell`][c-xshell-github]⮳{{hi:xshell}} is a swiss-army knife for writing cross-platform 'bash' scripts in Rust.
+
+It doesn't use the shell directly, but rather re-implements parts of its scripting environment in Rust. The intended use-case is various bits of glue code, which could be written in `bash` or `python`. The original motivation is `xtask` development" [(docs.rs)][c-xshell].
+
+The following example executes shell commands and interacts with the file system. It showcases:
+
+- Basic command execution,
+- Handling command arguments,
+- Working directory manipulation,
+- Using pipes,
+- Checking command status,
+- Conditional execution,
+- Capturing `stderr`,
+- Environment variable manipulation,
+- Path manipulations,
+- File removal.
+
+{{#include ../../../crates/cats/development_tools_cargo_plugins/tests/xshell.rs}}
 
 ## Related Topics
 
