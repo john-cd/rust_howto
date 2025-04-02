@@ -1,17 +1,20 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `clap` crate to parse command-line
+//! arguments.
+//!
+//! It showcases various features such as positional arguments, named arguments,
+//! subcommands, default values, validation, and counting occurrences of flags.
 use std::path::PathBuf;
 
 use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
-// The struct declaring the desired command-line arguments and
-// commands
-
-// The `derive` feature flag is required (see Cargo.toml).
+// The struct declaring the desired command-line arguments and commands:
+// The `derive` feature flag is required (see `Cargo.toml`).
 #[derive(Parser, Debug)]
-// Reads the following attributes the from the package's `Cargo.toml`
-// Alternatively, use #[command(name = "MyApp")] ...
+// Reads the following attributes from the package's `Cargo.toml`
+// Alternatively, use `#[command(name = "MyApp")]`, etc...
 #[command(author, version, about, long_about = None)]
 // Displays Help if no arguments are provided
 #[command(arg_required_else_help = true)]
@@ -50,7 +53,7 @@ pub struct Cli {
     pub command: Option<Commands>,
 }
 
-// The subcommands
+/// The subcommands that can be used with the CLI.
 #[derive(Subcommand, Debug)]
 pub enum Commands {
     /// Read something

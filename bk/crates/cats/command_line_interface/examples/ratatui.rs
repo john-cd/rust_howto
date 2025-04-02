@@ -23,6 +23,10 @@ use ratatui::widgets::Borders;
 use ratatui::widgets::Paragraph;
 use ratatui::widgets::Widget;
 
+/// The main function initializes the terminal, runs the application, and
+/// restores the terminal to its original state.
+///
+/// It also handles any errors that occur during the application's execution.
 fn main() {
     // Create a new DefaultTerminal and initialize it
     // with the following defaults:
@@ -32,18 +36,20 @@ fn main() {
     // - Panic hook installed
     let terminal = ratatui::init();
     let app_result = App::default().run(terminal);
-    // Restore the terminal to its original state
+    // Restore the terminal to its original state.
     ratatui::restore();
     if let Err(err) = app_result {
         println!("{:?}", err);
     }
 }
 
+/// The `App` struct represents the main application state.
 #[derive(Debug, Default)]
 struct App {
     mode: Mode,
 }
 
+/// The `Mode` enum represents the different states of the application.
 #[derive(Debug, Default, PartialEq)]
 enum Mode {
     #[default]
@@ -54,8 +60,10 @@ enum Mode {
 }
 
 impl App {
-    // The `run` function contains the main loop of the application.
-    // It repeatedly draws the UI and handles input events.
+    /// The `run` function contains the main loop of the application.
+    ///
+    /// It repeatedly draws the UI and handles input events until the
+    /// application is in the `Done` mode.
     fn run(&mut self, mut terminal: DefaultTerminal) -> Result<()> {
         while self.mode != Mode::Done {
             // `draw` must render the entire UI.
@@ -67,6 +75,7 @@ impl App {
         Ok(())
     }
 
+    /// The `ui` function is responsible for rendering the user interface.
     fn ui(&self, frame: &mut Frame) {
         // The most important method on `Frame` is `render_widget()`,
         // which renders any type that implements the `Widget` trait:
@@ -75,7 +84,10 @@ impl App {
         frame.render_widget(self, frame.area());
     }
 
-    /// Update the application's state based on user input
+    /// The `handle_events` function updates the application's state based on
+    /// user input.
+    ///
+    /// It reads events from the terminal and handles key press events.
     fn handle_events(&mut self) -> io::Result<()> {
         // Note that the `event::read` function blocks until there is an event.
         match event::read()? {
@@ -89,6 +101,10 @@ impl App {
         Ok(())
     }
 
+    /// The `handle_key_event` function handles key press events.
+    ///
+    /// It updates the application's mode based on the key pressed,
+    /// such as 'q' to quit, 'y' to confirm, or 'n' to cancel.
     fn handle_key_event(&mut self, key_event: KeyEvent) {
         match self.mode {
             Mode::Running => {
@@ -108,8 +124,11 @@ impl App {
     }
 }
 
-// A common compositional pattern is to have a single
-// root widget (the `App` struct itself).
+/// A common compositional pattern is to have a single
+/// root widget (the `App` struct itself).
+///
+/// This implementation of the `Widget` trait for `&App` defines how the
+/// application's UI is rendered.
 impl Widget for &App {
     fn render(self, area: Rect, buf: &mut Buffer) {
         // Create a layout with three vertical chunks using Layout.
@@ -162,6 +181,7 @@ impl Widget for &App {
     }
 }
 
+/// The `MiddleWidget` struct is a custom widget that displays text.
 struct MiddleWidget {
     text: String,
 }
@@ -183,6 +203,10 @@ impl Widget for MiddleWidget {
     }
 }
 
+/// Test function to verify the behavior of `handle_key_event`.
+///
+/// It checks if pressing 'q' in `Running` mode changes the mode to
+/// `Exiting`.
 #[test]
 fn handle_key_event() -> io::Result<()> {
     let mut app = App::default();

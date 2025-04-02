@@ -2,6 +2,8 @@
 use ansi_term::Colour;
 use ansi_term::Style;
 
+/// Demonstrates basic usage of the `ansi_term` crate for colored and styled
+/// terminal output.
 fn main() {
     println!(
         "{}, {} and {}",

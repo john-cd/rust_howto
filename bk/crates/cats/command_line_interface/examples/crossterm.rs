@@ -17,6 +17,7 @@ use crossterm::style::Print;
 use crossterm::style::SetBackgroundColor;
 use crossterm::style::SetForegroundColor;
 use crossterm::terminal;
+use crossterm::terminal::Clear;
 use crossterm::terminal::ClearType;
 
 fn main() -> anyhow::Result<()> {
@@ -30,16 +31,13 @@ fn main() -> anyhow::Result<()> {
     // Clear the screen and move cursor to the top left
     // You can queue commands instead of executing them directly
     // when you call `Write::flush` these commands will be executed.
-    queue!(
-        stdout,
-        terminal::Clear(ClearType::All),
-        cursor::MoveTo(0, 0)
-    )?;
+    queue!(stdout, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
     // Many other commands...
     stdout.flush()?;
 
     // Display instructions
     println!("Press 'q' to exit.");
+    // Set the foreground color to blue and the background color to white.
     execute!(
         stdout,
         SetForegroundColor(Color::Blue),
@@ -49,6 +47,7 @@ fn main() -> anyhow::Result<()> {
     // We can use the `execute` function rather than the macro.
     // The `execute` function returns itself,
     // therefore you can queue another command.
+    // Reset the color to the default.
     stdout.execute(style::ResetColor)?;
 
     loop {

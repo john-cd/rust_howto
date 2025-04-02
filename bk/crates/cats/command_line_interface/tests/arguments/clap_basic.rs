@@ -5,6 +5,7 @@ use clap::Arg;
 use clap::Command;
 use clap::value_parser;
 
+/// Creates the command line interface for the application.
 fn cli() -> Command {
     clap::Command::new("My Test Program")
         .bin_name("test_app")
@@ -28,6 +29,7 @@ fn cli() -> Command {
     // "Optionally sets a config file to use"))
 }
 
+/// Main function that parses command line arguments and prints their values.
 fn main() {
     let matches =
         cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
