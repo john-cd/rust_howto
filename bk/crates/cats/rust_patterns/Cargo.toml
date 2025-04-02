@@ -30,6 +30,7 @@ miette = { version = "7.2.0", features = ["fancy"] }
 pin-project = "1.1.10"
 pin-project-lite = "0.2.16"
 reqwest = { version = "0.12.12", features = ["blocking"] }
+rpds = "1.1.0"
 serde = { version = "1.0.217", features = ["derive"] }
 thiserror = "2.0.1"
 typenum = "1.18.0"
