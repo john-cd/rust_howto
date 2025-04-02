@@ -3,6 +3,15 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// // This example demonstrates how to embed Python code within a Rust
+// application using the `pyo3` crate. // It showcases the ability to define
+// Python functions within Rust, call them, and pass arguments. //
+// // The example covers:
+// // - Defining a Python function as a string.
+// // - Calling the Python function from Rust with and without arguments.
+// // - Passing a Python tuple as an argument from Rust.
+// // - Running a simple Python script from Rust.
+// // - Preparing Python for use in a free-threaded context.
 
 // use pyo3::ffi::c_str;
 // use pyo3::prelude::*;
