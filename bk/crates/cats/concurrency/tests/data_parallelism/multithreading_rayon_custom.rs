@@ -12,6 +12,7 @@ fn main() {
     println!("{}", n);
 }
 
+/// Calculates the nth fibonacci number
 fn fib(n: usize) -> usize {
     if n == 0 || n == 1 {
         return n;

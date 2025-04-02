@@ -1,6 +1,9 @@
 // ANCHOR: example
+use std::fs::File;
 use std::fs::create_dir_all;
+use std::io::Write;
 use std::path::Path;
+use std::path::PathBuf;
 
 use anyhow::Context;
 use anyhow::Result;
@@ -10,6 +13,9 @@ use image::imageops::FilterType;
 use rayon::prelude::*;
 
 fn main() -> Result<()> {
+    // Create test files for the test function
+    create_test_files()?;
+
     let options: MatchOptions = Default::default();
     let files: Vec<_> = glob_with("*.jpg", options)?
         .filter_map(|x| x.ok())
@@ -28,8 +34,9 @@ fn main() -> Result<()> {
     let image_failures: Vec<_> = files
         .par_iter()
         .map(|path| {
-            make_thumbnail(path, thumb_dir, 300)
-                .with_context(|| path.display().to_string())
+            make_thumbnail(path, thumb_dir, 300).with_context(|| {
+                format!("Failed to create thumbnail for: {}", path.display())
+            })
         })
         .filter_map(|x| x.err())
         .collect();
@@ -53,13 +60,31 @@ where
     PB: AsRef<Path>,
 {
     let img = image::open(original.as_ref())?;
-    let file_path = thumb_dir.as_ref().join(original);
+    let file_path = thumb_dir
+        .as_ref()
+        .join(original.as_ref().file_name().unwrap());
 
     Ok(img
         .resize(longest_edge, longest_edge, FilterType::Nearest)
         .save(file_path)?)
 }
-// ANCHOR_END: example
+
+fn create_test_files() -> Result<()> {
+    // Create a directory for test files
+    let test_dir = Path::new("test_images");
+    if !test_dir.exists() {
+        std::fs::create_dir(test_dir)?;
+    }
+
+    // Create a few dummy .jpg files
+    for i in 0..3 {
+        let file_path = test_dir.join(format!("test_{}.jpg", i));
+        let mut file = File::create(&file_path)?;
+        // Write some dummy data to the file (not a real image)
+        file.write_all(b"dummy image data")?;
+    }
+    Ok(())
+}
 
 #[test]
 fn test() -> anyhow::Result<()> {
