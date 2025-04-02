@@ -3,6 +3,7 @@ use futures::Stream;
 use futures::stream;
 use futures::stream::StreamExt;
 
+/// Creates a stream that yields the numbers 1 through 5.
 async fn count_to_five() -> impl Stream<Item = u32> {
     stream::iter(1..=5)
 }
