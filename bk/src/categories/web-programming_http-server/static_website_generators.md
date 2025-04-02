@@ -52,5 +52,4 @@ You can further customize your site by editing the templates in the templates di
 
 <div class="hidden">
 [static_website_generators: write](https://github.com/john-cd/rust_howto/issues/519)
-zola is not a crate in crates.io / doc.rs
 </div>
