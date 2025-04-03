@@ -8,6 +8,8 @@ use flume::Sender;
 use flume::bounded;
 use flume::unbounded;
 
+// Example of using the `flume` crate for message passing.
+//
 // Features:
 // - Unbounded, bounded and rendezvous queues
 // - Drop-in replacement for `std::sync::mpsc`
@@ -79,7 +81,7 @@ fn main() {
     select();
 }
 
-// Requires the "select" feature to be enabled.
+/// Requires the "select" feature to be enabled.
 fn select() {
     let (tx0, rx0) = unbounded();
     let (tx1, rx1) = unbounded();

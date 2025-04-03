@@ -6,12 +6,15 @@ use crossbeam_channel::after;
 use crossbeam_channel::select;
 use crossbeam_channel::tick;
 
+/// This example demonstrates the use of `crossbeam_channel`'s `tick` and `after` functions
+/// to create channels that deliver messages periodically and after a certain duration, respectively.
 fn main() {
     let start = Instant::now();
-    // Channel that delivers messages periodically.
+    // Create a channel that delivers messages periodically every 50 milliseconds.
     let ticker = tick(Duration::from_millis(50));
-    // Channel that delivers a single message
-    // after a certain duration of time.
+
+    // Create a channel that delivers a single message after 1 second.
+    // This acts as a timeout mechanism.
     let timeout = after(Duration::from_secs(1));
 
     loop {

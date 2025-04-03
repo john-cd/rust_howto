@@ -5,24 +5,27 @@ use crossbeam_channel::RecvError;
 use crossbeam_channel::TryRecvError;
 use crossbeam_channel::unbounded;
 
+/// Demonstrates the use of crossbeam channels for message passing between threads.
 fn main() {
     // Create a channel of unbounded capacity.
     let (s1, r1) = unbounded();
 
     // Alternatively, create a channel that can hold at most n messages at
-    // a time. let (s1, r1) = bounded(5);
+    // a time:
+    // let (s1, r1) = bounded(5);
 
     // Senders and receivers can be cloned to use them to multiple
-    // threads. cloning only creates a new handle to the same sending
+    // threads. Cloning only creates a new handle to the same sending
     // or receiving side. It does not create a separate stream of
-    // messages in any way
+    // messages in any way.
     let s2 = s1.clone();
 
-    // Send a message into the channel.
+    // Spawn a new thread to send a message into the channel.
     // Note that the cloned sender is moved into the thread.
     thread::spawn(move || s2.send("Hi!").unwrap());
 
     // Blocks until receiving the message from the channel.
+    // Receive the message and assert that it's "Hi!".
     assert_eq!(r1.recv(), Ok("Hi!"));
 
     // Try receiving a message without blocking.
@@ -43,12 +46,13 @@ fn main() {
     // No more messages can be sent...
     // ERROR s1.send("2").unwrap();
 
-    // .. but any remaining messages can still be received.
+    // ...but any remaining messages can still be received.
     println!("{:?}", r1.iter().collect::<Vec<_>>());
     // Note that the call to `collect` would block if the channel were not
     // disconnected.
 
     // There are no more messages in the channel.
+    // Check if the channel is empty.
     assert!(r1.is_empty());
 
     // After disconnection, calling `r1.recv()` does not block
