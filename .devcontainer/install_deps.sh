@@ -73,6 +73,8 @@ cargo binstall --no-confirm just
 cargo binstall --no-confirm cargo-deny
 cargo binstall --no-confirm lychee
 
+cargo install sccache --locked
+
 cargo install --locked mdbook-utils
 
 # GitHub

@@ -126,6 +126,12 @@ RUN <<EOF
     ## [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278)
     # cargo binstall --no-confirm mdbook-open-on-gh
 
+    # Install sccache
+    # Configure it as a rustc wrapper in $HOME/.cargo/config.toml (for Linux / WSL).
+    # By default, stores its cache locally in ~/.cache/sccache
+    # https://github.com/mozilla/sccache/tree/main
+    cargo install sccache --locked
+
     # ------------------------------
     ## Technically the following section is only required for development
     ## but we want to cache these layers before `rustup nightly`
