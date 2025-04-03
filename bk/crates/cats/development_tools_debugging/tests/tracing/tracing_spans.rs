@@ -3,6 +3,9 @@ use tracing::Level;
 use tracing::span;
 
 fn main() {
+    // Create a new span named "my_span" with the TRACE level.
+    // Spans are used to represent a period of time in the execution of a
+    // program.
     let span = span!(Level::TRACE, "my_span");
     {
         // Current lexical scope.

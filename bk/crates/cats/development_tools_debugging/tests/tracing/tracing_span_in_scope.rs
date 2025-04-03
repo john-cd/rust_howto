@@ -1,11 +1,21 @@
 // ANCHOR: example
+//! Demonstrates how to use tracing spans to instrument code,
+//! including synchronous and asynchronous code.
+//!
+//! This example showcases:
+//! - Creating spans using `info_span!` and `debug_span!`.
+//! - Entering and exiting spans using `in_scope`.
+//! - Instrumenting async blocks and functions using `instrument`.
+//! - How spans are handled across `await` points.
+
 // Extension trait allowing futures to be instrumented with a tracing span,
-// via `instrument(...)`
+// via `instrument(...)`:
 use tracing::Instrument;
 use tracing::debug_span;
 use tracing::info;
 use tracing::info_span;
 
+/// An example async function that demonstrates span usage.
 async fn my_async_function() {
     // Constructs a span at the info level:
     let span = info_span!("my_async_function_scope");
@@ -40,6 +50,7 @@ async fn my_async_function() {
     .await; // ...and await it.
 
     // We can also instrument an async function call.
+    // This will create a new span for the duration of the function call.
     let _some_value = some_other_async_function()
         .instrument(debug_span!("some_other_async_function_scope"))
         .await;
@@ -49,6 +60,7 @@ async fn some_other_async_function() {}
 
 #[tokio::main]
 async fn main() {
+    // Initialize the tracing subscriber to output logs to the console.
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::DEBUG)
         .init();
