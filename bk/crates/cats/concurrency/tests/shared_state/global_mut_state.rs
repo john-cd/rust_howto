@@ -1,4 +1,7 @@
 // ANCHOR: example
+//! Demonstrates the use of a global mutable state protected by a `Mutex`.
+//!
+//! This example uses `lazy_static` to initialize a global `Mutex` containing a `Vec<String>`.
 use std::sync::Mutex;
 
 use anyhow::Result;
@@ -6,6 +9,7 @@ use anyhow::anyhow;
 use lazy_static::lazy_static;
 
 lazy_static! {
+    // A global `Mutex` containing a vector of strings representing fruits.
     static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
 }
 

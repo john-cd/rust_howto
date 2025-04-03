@@ -1,6 +1,9 @@
+
 // ANCHOR: example
 use parking_lot::Once;
 use parking_lot::OnceState;
+
+// Demonstrates the use of `parking_lot::Once` for one-time initialization.
 
 // `Once` is a synchronization primitive which can be used to run a one-time
 // initialization.
