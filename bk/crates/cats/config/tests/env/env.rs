@@ -1,6 +1,10 @@
 // ANCHOR: example
 use std::env;
 
+/// Extracts the value of the `RUST_LOG` environment variable.
+/// If the variable is not set, it defaults to "debug".
+/// It also demonstrates how to handle optional environment variables
+/// and how to inspect them at compile-time.
 fn env_extract() -> String {
     let log_env_var = env::var("RUST_LOG").unwrap_or_else(|_| "debug".into());
     println!("RUST_LOG: {log_env_var}");

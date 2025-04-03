@@ -1,7 +1,9 @@
 // ANCHOR: example
+//! Example of using the `confy` crate for configuration management.
 use serde::Deserialize;
 use serde::Serialize;
 
+/// Represents the configuration for the application.
 #[derive(Serialize, Deserialize, Debug)]
 struct MyConfig {
     version: u8,

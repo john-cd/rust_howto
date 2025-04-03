@@ -3,6 +3,7 @@ use std::env;
 
 use anyhow::Result;
 
+/// Load environment variables from a `.env` file in the current directory.
 fn main() -> Result<()> {
     // Load environment variables from .env file.
     // Fails if .env file not found, not readable or invalid.

@@ -2,14 +2,13 @@
 // than the current crate, thus we renamed it `config1`
 // See `Cargo.toml`
 
-use config1 as config;
 // ANCHOR: example
+use std::collections::HashMap;
 
-// Testing configurations
+use config1 as config;
+
 #[test]
 fn test_config() -> anyhow::Result<(), config::ConfigError> {
-    use std::collections::HashMap;
-
     // The `Environment::source` method can be used when you want to test
     // your code, without the need to change the actual system
     // environment variables.
