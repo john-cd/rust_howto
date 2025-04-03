@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `bcrypt` crate to hash and verify
+//! passwords.
+//!
+//! The `bcrypt` crate provides a way to securely hash passwords using the
+//! bcrypt algorithm. It is a one-way function, meaning that it is
+//! computationally infeasible to reverse the hash.
 use std::error::Error;
 
 use bcrypt::DEFAULT_COST;
@@ -12,7 +18,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let password = "super_secret_password";
 
     // Generate a password hash using the default cost.
-    // The salt is generated randomly using the OS randomness
+    // The salt is generated randomly using OS-derived randomness:
     let hashed_password: String = hash(password, DEFAULT_COST)?;
 
     println!("Hashed password: {}", hashed_password);

@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! Examples of password hashing and key derivation with Argon2.
 use argon2::Argon2;
 use argon2::password_hash::Error;
 use argon2::password_hash::PasswordHash;
@@ -34,8 +35,8 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
-// Hash a password to a “PHC string” suitable for the purposes of password-based
-// authentication.
+/// Hash a password to a “PHC string” suitable for the purposes of
+/// password-based authentication.
 fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
     // Generate a random salt
     let salt = SaltString::generate(&mut OsRng);
@@ -49,8 +50,8 @@ fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
     Ok(phc_string)
 }
 
-// Verify a given password against the provided PHC string.
-// Returns true if the password is correct.
+/// Verify a given password against the provided PHC string.
+/// Returns true if the password is correct.
 fn password_verification(
     password_to_check: &[u8],
     phc_string: &str,
@@ -64,8 +65,8 @@ fn password_verification(
         .is_ok())
 }
 
-// Transform a password into cryptographic keys that can be used for e.g.
-// encryption.
+/// Transform a password into cryptographic keys that can be used for e.g.
+/// encryption.
 fn key_derivation() -> Result<(), Error> {
     let password = b"passwd"; // Bad password; don't use!
     let salt = b"example salt, etc, etc"; // Salt should be unique per password

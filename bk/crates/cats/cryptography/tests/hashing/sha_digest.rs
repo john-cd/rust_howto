@@ -11,6 +11,7 @@ use ring::digest::Context;
 use ring::digest::Digest;
 use ring::digest::SHA256;
 
+/// Calculates the SHA-256 digest of the data read from the given reader.
 fn sha256_digest<R: Read>(mut reader: R) -> Result<Digest> {
     let mut context = Context::new(&SHA256);
     let mut buffer = [0; 1024];

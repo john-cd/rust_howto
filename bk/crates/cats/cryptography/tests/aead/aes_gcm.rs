@@ -1,17 +1,17 @@
 // ANCHOR: example
 // Algorithm
-use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively
-// Cryptokey
+use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
+// Cryptokey:
 use aes_gcm::Key;
-// A nonce is an arbitrary (often random) number
+// A 'nonce' is an arbitrary (often random) number
 // that must be used just once
 // in a cryptographic communication.
 use aes_gcm::Nonce;
-// Trait that provides `encrypt` and `decrypt`
+// Trait that provides `encrypt` and `decrypt`:
 use aes_gcm::aead::Aead;
-// Trait that provides `generate_key`
+// Trait that provides `generate_key`:
 use aes_gcm::aead::KeyInit;
-// The operating-system's random data source
+// The operating-system's random data source:
 use aes_gcm::aead::OsRng;
 
 fn main() {

@@ -3,10 +3,11 @@
 use rand::rngs::OsRng;
 // Encryption using PKCS#1 v1.5 padding.
 use rsa::Pkcs1v15Encrypt;
+// Private and Public keys
 use rsa::RsaPrivateKey;
 use rsa::RsaPublicKey;
 
-// RSA encryption and decryption
+// RSA encryption and decryption.
 //
 // In this example, we
 // - generate a 2048-bit RSA private key using `RsaPrivateKey::new`.
@@ -15,6 +16,7 @@ use rsa::RsaPublicKey;
 // `PaddingScheme::new_pkcs1v15_encrypt`.
 // - decrypt the message using the private key with the same padding scheme.
 //
+// The example is based on the rsa crate documentation.
 // Read the security section of https://docs.rs/rsa/
 
 fn main() {

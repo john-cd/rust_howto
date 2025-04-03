@@ -8,6 +8,8 @@ use scrypt::password_hash::PasswordVerifier;
 use scrypt::password_hash::SaltString;
 use scrypt::password_hash::rand_core::OsRng;
 
+/// This example demonstrates how to use the `scrypt` crate to hash and verify
+/// passwords.
 fn main() -> Result<(), Box<dyn Error>> {
     // 1) When setting the password, hash it and store the hash
 

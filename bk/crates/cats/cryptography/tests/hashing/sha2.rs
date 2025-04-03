@@ -34,6 +34,7 @@ fn main() -> anyhow::Result<()> {
     // Same exercise, but using `Sha512` and `chain_update`:
     let hash3 = Sha512::new()
         .chain_update(b"Hello world!")
+        // `chain_update` can be called repeatedly and is generic over `AsRef<[u8]>`
         .chain_update("String data")
         .finalize();
 

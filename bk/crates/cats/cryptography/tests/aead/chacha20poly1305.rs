@@ -1,39 +1,40 @@
 // ANCHOR: example
-// Trait that provides in-place stateless AEAD.
+// Trait that provides in-place stateless AEAD:
 use chacha20poly1305::AeadInPlace;
-// Algorithm
+// Algorithm:
 use chacha20poly1305::ChaCha20Poly1305;
-// Cryptographic key
+// Cryptographic key:
 use chacha20poly1305::Key;
 // A nonce is an arbitrary (often random) number
-// that must be used just once
-// in a cryptographic communication.
+// that must be used just once in a cryptographic communication.  It is
+// used to ensure that the same plaintext encrypted multiple times with the
+// same key will produce different ciphertexts.
 use chacha20poly1305::Nonce;
-//
+// A tag is used to authenticate the ciphertext:
 use chacha20poly1305::Tag;
-// Trait that provides `generate_nonce`
+// Trait that provides `generate_nonce`:
 use chacha20poly1305::aead::AeadCore;
-// Trait that provides `encrypt` and `decrypt`
-// use chacha20poly1305::aead::Aead;
-// Trait that provides `generate_key`, etc
+// Trait that provides `generate_key`, etc:
 use chacha20poly1305::aead::KeyInit;
 // A random number generator that retrieves randomness from the operating
-// system
+// system:
 use chacha20poly1305::aead::OsRng;
-// Trait for securely erasing values from memory
+// Trait for securely erasing values from memory:
 use zeroize::Zeroize;
 
+// This example demonstrates how to use the ChaCha20Poly1305 AEAD cipher
+// to encrypt and decrypt data, with and without associated data.
+//
 // An Authenticated Encryption with Associated Data (AEAD) cipher,
-// based on the ChaCha20 stream cipher and Poly1305 universal hash function.
+// based on the ChaCha20 stream cipher and Poly1305 universal hash function,
 // ChaCha20Poly1305 is notable for being simple and fast when implemented in
 // pure software.
 
 fn encrypt_then_decrypt() {
-    // Example plaintext to encrypt
+    // Example plaintext to encrypt.
     let mut plaintext: Vec<u8> = b"This is a secret message.".to_vec();
 
-    // Create a key.
-    // Use a cryptographically secure Random Number Generator
+    // Create a key, using a cryptographically secure Random Number Generator
     let mut key: Key = ChaCha20Poly1305::generate_key(&mut OsRng);
 
     // Generate a nonce.

@@ -1,10 +1,13 @@
 // ANCHOR: example
-// An error with absolutely no details (on purpose)
+// An error with absolutely no details (on purpose):
 use ring::error::Unspecified;
 use ring::hmac;
 use ring::rand;
 use ring::rand::SecureRandom;
 
+/// This example demonstrates how to use the `ring` crate to generate an HMAC
+/// (Hash-based Message Authentication Code) signature for a message and then
+/// verify the signature. It uses SHA256 as the underlying hash function.
 fn main() -> Result<(), Unspecified> {
     // 1. Create a key
     let key;

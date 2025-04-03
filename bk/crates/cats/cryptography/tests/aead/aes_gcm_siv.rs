@@ -7,8 +7,9 @@ use aes_gcm_siv::aead::KeyInit;
 use aes_gcm_siv::aead::OsRng;
 use aes_gcm_siv::aead::Payload;
 
-// AES-GCM-SIV (Misuse-Resistant Authenticated Encryption Cipher).
-
+/// This example demonstrates how to use the `aes-gcm-siv` crate to encrypt and
+/// decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
+/// Encryption Cipher).
 fn main() -> Result<(), aes_gcm_siv::Error> {
     // Generate a random 256-bit key
     let key: Key<Aes256GcmSiv> = Aes256GcmSiv::generate_key(&mut OsRng);

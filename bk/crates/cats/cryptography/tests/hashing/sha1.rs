@@ -3,9 +3,9 @@ use hex_literal::hex;
 use sha1::Digest;
 use sha1::Sha1;
 
-// SHA-1 is considered cryptographically broken and should NOT be used for new
-// security-critical applications. It is primarily used for legacy compatibility
-// or non-security-sensitive purposes.
+// BEWARE: SHA-1 is considered cryptographically broken and should NOT be used
+// for new security-critical applications. It is primarily used for legacy
+// compatibility or non-security-sensitive purposes.
 
 fn main() {
     // Create a SHA-1 hasher
