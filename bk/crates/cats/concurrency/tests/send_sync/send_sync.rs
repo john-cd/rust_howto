@@ -3,9 +3,13 @@ use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;
 
+// Demonstrates safe concurrent access to shared data using `Arc` and `Mutex`.
+
 fn main() {
     // Using Arc (Atomic Reference Counting) and Mutex (Mutual Exclusion)
     // to safely share data between threads.
+    // `Arc` allows multiple threads to have shared ownership of the data.
+    // `Mutex` ensures that only one thread can access the data at a time.
     let data = Arc::new(Mutex::new(0));
 
     let mut handles = vec![];
