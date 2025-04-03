@@ -39,22 +39,21 @@ If you want to work with non-`Sync` / `Send` types like raw pointers, you should
 
 Note that, by implementing the unsafe marker [traits][p-traits] `Send` and `Sync`, you _guarantee_ that your struct can be sent across threads safely. This means the usage of `MyStruct` must not cause data races or other thread safety issues. An incorrect implementation can cause Undefined Behavior. Caveat lector!
 
+## References {#skip}
+
+- [Understanding the `Send` trait][stackoverflow-understanding-the-send-trait]⮳.
+- [The Rustonomicon: `Send` and `Sync`][book-rustonomicon-send-and-sync]⮳.
+- [The Rustonomicon: Implementing `Vec`][book-rustonomicon-implementing-vec]⮳.
+- [An unsafe tour of Rust's `Send` and `Sync`][blog-nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]⮳.
+- [Extensible Concurrency with the `Sync` and `Send` Traits][book-rust-extensible-concurrency-sync-and-send]⮳.
+- [Rust: A unique perspective][blog-rust-a-unique-perspective-html]⮳.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [Send / Sync custom implementation: finish example in playground crate](https://github.com/john-cd/rust_howto/issues/265)
-[write](https://github.com/john-cd/rust_howto/issues/909)
-
-- Credit [Understanding the Send trait][stackoverflow-understanding-the-send-trait]
-- [The Rustonomicon: Send and Sync][book-rustonomicon-send-and-sync]
-- [The Rustonomicon: Example: Implementing Vec][book-rustonomicon-implementing-vec]
-- [An unsafe tour of Rust's Send and Sync][blog-nyanpasu64-an-unsafe-tour-of-rust-s-send-and-sync]
-- [Extensible Concurrency with the Sync and Send Traits][book-rust-extensible-concurrency-sync-and-send]
-- [Rust: A unique perspective][blog-rust-a-unique-perspective-html]
-
-- Need deep tech review.
-- Add Send / Sync impl example. See code in playground crate:
+[write; need deep tech review. ](https://github.com/john-cd/rust_howto/issues/909)
 
 In the following example, we define a struct with a raw pointer to some data.
 
