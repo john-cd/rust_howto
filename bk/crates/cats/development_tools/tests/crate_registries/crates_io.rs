@@ -1,3 +1,5 @@
+//! Examples of how to use the 'crates.io' API.
+
 // ANCHOR: example
 use anyhow::Result;
 use crates_io_api::CrateResponse;
@@ -7,15 +9,16 @@ use crates_io_api::SyncClient;
 use tracing::warn;
 
 /// Instantiate the 'crates.io' API client.
+/// The client is configured with a rate limit.
 fn get_client() -> Result<SyncClient> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
-        std::time::Duration::from_millis(1000), // Rate limit interval
+        std::time::Duration::from_millis(1000),
     )?;
     Ok(client)
 }
 
-/// Returns information for a crate, given its name.
+/// Retrieve information for a given crate.
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
     warn!("Calling the 'crates.io' API for {crate_name}");
@@ -23,7 +26,7 @@ fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     Ok(crt)
 }
 
-/// List, for the most downloaded crates, the top dependencies.
+/// List the top dependencies for the most downloaded crates.
 fn list_top_dependencies() -> Result<()> {
     let client = get_client()?;
     // Retrieve summary data.
@@ -40,7 +43,7 @@ fn list_top_dependencies() -> Result<()> {
     Ok(())
 }
 
-/// Search for crates.
+/// Search for crates matching a given query.
 fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
     let client = get_client()?;
 

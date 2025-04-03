@@ -1,18 +1,17 @@
 // ANCHOR: example
 #![allow(dead_code)]
 
-/// Returns a person with the name given them
+/// Returns a `Person` struct with the given name.
 ///
 /// # Arguments
 ///
-/// * `name` - A string slice that holds the name of the person
+/// * `name` - A string slice that holds the name of the person.
 ///
 /// # Examples
 ///
 /// ```
-/// // You can have rust code between fences inside the comments
-/// // If you pass --test to `rustdoc`, it will even test it for you!
-/// use doc::Person;
+/// // You can have Rust code between fences inside the comments.
+/// // If you pass `--test` to `rustdoc`, it will even test it for you!
 /// let person = Person::new("name");
 /// ```
 fn new(name: &str) -> Person {
