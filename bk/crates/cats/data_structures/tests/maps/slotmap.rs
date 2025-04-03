@@ -1,9 +1,15 @@
+// ANCHOR: example
+//! Demonstrates the usage of `SlotMap` and `SecondaryMap` from the `slotmap`
+//! crate.
+//!
+//! This example showcases how to create, insert, access, and remove elements
+//! from a `SlotMap`, and how to use a `SecondaryMap` to associate additional
+//! data with the elements in the `SlotMap`.
 use slotmap::SecondaryMap;
 use slotmap::SlotMap;
 
-// ANCHOR: example
 fn main() {
-    // Create a new SlotMap
+    // Create a new SlotMap.
     let mut sm = SlotMap::new();
 
     // Upon insertion, a unique key is generated.
@@ -17,7 +23,7 @@ fn main() {
     let key2 = sm.insert("value");
     assert_ne!(key1, key2);
 
-    // Access values by key
+    // Access values by key.
     assert_eq!(sm[key1], "value");
     println!("Value for `key1`: {:?}", sm.get(key1));
 
@@ -29,7 +35,7 @@ fn main() {
     sm.remove(key1);
     assert!(!sm.contains_key(key1));
 
-    // Try to access the removed value
+    // Try to access the removed value.
     println!("Key1 after removal: {:?}", sm.get(key1));
 
     assert_eq!(sm.get(key2), Some(&"value"));
@@ -38,6 +44,7 @@ fn main() {
     // returned by SlotMap to other values, to associate arbitrary data with
     // objects stored in slot maps.
     let mut sec = SecondaryMap::new();
+    // Insert a value into the secondary map, associated with `key2`.
     sec.insert(key2, "secondary");
 
     for (key, val) in sm {

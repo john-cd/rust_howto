@@ -1,9 +1,11 @@
 // ANCHOR: example
 use indexmap::IndexMap;
 
-// The indexmap crate in Rust provides a hash table
-// where the keys have a consistent order of insertion,
-// which is preserved when iterating.
+/// This example demonstrates the usage of `IndexMap` from the `indexmap` crate.
+///
+/// `IndexMap` is a hash table that preserves the order of key insertion.
+/// It provides methods for accessing elements by index and using the `entry`
+/// API.
 fn main() {
     // Creating an IndexMap
     let mut map = IndexMap::new();

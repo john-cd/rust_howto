@@ -1,10 +1,13 @@
 // ANCHOR: example
 use arrayvec::ArrayVec;
 
-// ArrayVec is a vector backed by a fixed size array.
-// The capacity is of type usize but is range limited to u32::MAX
-// It offers a simple API but also dereferences to a slice, so that the full
-// slice API is available.
+/// This example demonstrates basic usage of `ArrayVec`.
+///
+/// `ArrayVec` is a vector backed by a fixed-size array.
+///
+/// The capacity is of type `usize` but is range-limited to `u32::MAX`.
+/// It offers a simple API but also dereferences to a slice, so that the full
+/// slice API is available.
 fn main() {
     let mut array = ArrayVec::<_, 2>::new();
     assert_eq!(array.capacity(), 2);

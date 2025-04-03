@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! This example demonstrates how to use a `MultiMap` to store multiple values
+//! for the same key.
 use anyhow::Result;
 use crates_io_api::Category;
 use crates_io_api::SyncClient;

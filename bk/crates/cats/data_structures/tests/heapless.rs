@@ -1,13 +1,18 @@
 // ANCHOR: example
+//! This example demonstrates the usage of `heapless` collections in Rust.
+//!
+//! `heapless` provides fixed-size, stack-allocated data structures, which are
+//! useful when you know the maximum size of your data at compile time and need
+//! to avoid dynamic memory allocation (and potential capacity errors). This is
+//! particularly beneficial in embedded systems or performance-critical
+//! applications where dynamic allocation can be unpredictable or undesirable.
+//!
+//! Choosing `heapless` is a trade-off: you gain performance and determinism but
+//! lose the flexibility of dynamic resizing.
+
 use heapless::FnvIndexMap;
 use heapless::String;
 use heapless::Vec;
-
-// This example illustrates the basic usage of heapless collections, emphasizing
-// the fixed-size nature and the importance of handling potential capacity
-// errors. Choose heapless when you know the maximum size of your data at
-// compile time and need to avoid dynamic allocation. It's a trade-off: you gain
-// performance and determinism but lose the flexibility of dynamic resizing.
 
 fn main() -> anyhow::Result<()> {
     // `heapless`` collections have a fixed, compile-time determined capacity.

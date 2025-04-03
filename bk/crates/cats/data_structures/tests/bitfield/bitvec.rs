@@ -3,10 +3,16 @@ use std::fmt::Debug;
 
 use bitvec::prelude::*;
 
-// Add this dependency to your Cargo.toml:
-// [dependencies]
-// bitvec = "1.0.1"
-
+/// This example demonstrates the usage of the `bitvec` crate for bit
+/// manipulation in Rust.
+///
+/// ## Dependencies
+///
+/// Add the following to your `Cargo.toml`:
+/// ```toml
+/// [dependencies]
+/// bitvec = "1.0.1"
+/// ```
 fn main() {
     // Create a new BitVec with default parameters
     let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];

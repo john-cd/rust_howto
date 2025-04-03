@@ -1,11 +1,17 @@
 // ANCHOR: example
+//! This example demonstrates the usage of the `priority-queue` crate in Rust.
+//! It showcases various functionalities including creating a priority queue,
+//! inserting elements, popping elements, using custom types, and more.
+
 use std::cmp::Reverse;
 
 use priority_queue::PriorityQueue;
 
 // Add this dependency to your `Cargo.toml`:
+// ```toml
 // [dependencies]
 // priority-queue = "1.3.1"
+// ```
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 struct Task {
@@ -14,6 +20,7 @@ struct Task {
 }
 
 impl Task {
+    /// Creates a new `Task` instance.
     fn new(id: u32, name: &str) -> Self {
         Task {
             id,

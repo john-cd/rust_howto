@@ -1,11 +1,12 @@
 // ANCHOR: example
+//! Example of using the `flagset` crate to define and use bitflags.
+//!
+//! FlagSet has no dependencies, incl. the stdlib, so it can be used in `no_std`
+//! environments, such as embedded systems or kernel development.
 use std::os::raw::c_int;
 
 use flagset::FlagSet;
 use flagset::flags;
-
-// FlagSet has no dependencies, incl. the stdlib, so it can be used in `no_std`
-// libraries and applications.
 
 // Flags are defined using the `flags!` macro:
 flags! {
