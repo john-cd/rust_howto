@@ -3,6 +3,9 @@ use chrono::Datelike;
 use chrono::Timelike;
 use chrono::Utc;
 
+/// Demonstrates how to get the current UTC time and date using the chrono
+/// crate. It prints the time in 12-hour format with AM/PM, seconds since
+/// midnight, and the date in year-month-day format.
 fn main() {
     let now = Utc::now();
 

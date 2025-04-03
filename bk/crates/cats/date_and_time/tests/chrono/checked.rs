@@ -4,10 +4,13 @@ use chrono::Duration;
 use chrono::TimeDelta;
 use chrono::Utc;
 
+/// Returns the date and time one day earlier than the given date and time, or
+/// None if the operation would overflow.
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
     date_time.checked_sub_signed(Duration::try_days(1).unwrap())
 }
 
+/// Demonstrates checked arithmetic with `DateTime` and `Duration`.
 fn main() {
     let now = Utc::now();
     println!("{}", now);
