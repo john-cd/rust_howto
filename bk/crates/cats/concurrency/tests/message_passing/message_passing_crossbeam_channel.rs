@@ -5,7 +5,8 @@ use crossbeam_channel::RecvError;
 use crossbeam_channel::TryRecvError;
 use crossbeam_channel::unbounded;
 
-/// Demonstrates the use of crossbeam channels for message passing between threads.
+/// Demonstrates the use of crossbeam channels for message passing between
+/// threads.
 fn main() {
     // Create a channel of unbounded capacity.
     let (s1, r1) = unbounded();

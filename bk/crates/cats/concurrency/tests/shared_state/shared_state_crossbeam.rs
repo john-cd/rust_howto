@@ -5,7 +5,7 @@ use crossbeam_utils::atomic::AtomicCell;
 fn main() {
     // Create a new AtomicCell with an initial value of 7.
     let a = AtomicCell::new(7);
-    
+
     // Extract the inner value from the AtomicCell.
     let v = a.into_inner();
     assert_eq!(v, 7);

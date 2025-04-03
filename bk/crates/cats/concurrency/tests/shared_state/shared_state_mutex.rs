@@ -6,8 +6,8 @@ use std::thread;
 /// Demonstrates using a Mutex to safely share mutable state between threads.
 fn main() {
     // We wrap Mutex in Arc to allow for multiple owners.
-    // Mutex<T> provides mutual exclusion, ensuring only one thread can access the data at a time.
-    // Arc<T> is safe to use in concurrent situations.
+    // Mutex<T> provides mutual exclusion, ensuring only one thread can access
+    // the data at a time. Arc<T> is safe to use in concurrent situations.
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 

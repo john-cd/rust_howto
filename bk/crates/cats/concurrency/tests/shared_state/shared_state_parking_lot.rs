@@ -1,4 +1,3 @@
-
 // ANCHOR: example
 use parking_lot::Once;
 use parking_lot::OnceState;

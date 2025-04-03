@@ -37,14 +37,15 @@ fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
     Rgb([r, g, b])
 }
 
-/// Calculates the number of iterations required for a point to escape the Julia set.
+/// Calculates the number of iterations required for a point to escape the Julia
+/// set.
 ///
-/// This function determines whether a given point (x, y) belongs to the Julia set
-/// for a given complex number `c`. It does this by iteratively applying the
+/// This function determines whether a given point (x, y) belongs to the Julia
+/// set for a given complex number `c`. It does this by iteratively applying the
 /// function z = z^2 + c, starting with z as the complex representation of the
-/// point (x, y). If the magnitude of z exceeds 2.0 within `max_iter` iterations,
-/// the point is considered to have escaped the set. The number of iterations
-/// required for escape is returned.
+/// point (x, y). If the magnitude of z exceeds 2.0 within `max_iter`
+/// iterations, the point is considered to have escaped the set. The number of
+/// iterations required for escape is returned.
 ///
 /// # Arguments
 /// * `c` - The complex number defining the Julia set.
