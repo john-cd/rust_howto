@@ -3,10 +3,13 @@
 // ANCHOR_END: example
 use std::env;
 
-// Import diesel
+// Import diesel.
 use diesel::prelude::*;
-// Import the oracle connection type
+// Import the oracle connection type.
 use diesel_oci::OciConnection;
+// Import dotenvy to load environment variables from a .env file.
+// This is useful for managing configuration settings, especially
+// sensitive information like database credentials.
 use dotenvy::dotenv;
 
 // `diesel_oci` is a Diesel backend and connection implementation for Oracle
@@ -20,6 +23,7 @@ use dotenvy::dotenv;
 // tokio = { version = "1", features = ["full"] }
 
 diesel::table! {
+    // Import sql_types from diesel.
     use diesel::sql_types::*;
     // use diesel_full_text_search::*;
 
@@ -32,13 +36,15 @@ diesel::table! {
     }
 }
 // See: https://docs.diesel.rs/2.2.x/diesel/macro.table.html
+// The `diesel::table!` macro is used to define a table schema in Diesel.
 
-// Define a struct to hold the query results
+// Define a struct to hold the query results.
 #[derive(Queryable, PartialEq, Debug)]
 struct User {
     username: String,
     password: String,
 }
+// `#[derive(Queryable)]` allows Diesel to map database rows to this struct.
 
 fn main() -> anyhow::Result<()> {
     // Load environment variables (for secure handling of credentials)
@@ -71,13 +77,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Establishes a connection to the Oracle database
+/// Establishes a connection to the Oracle database.
 fn establish_connection(
     db_url: &str,
     username: &str,
     password: &str,
 ) -> Result<OciConnection, ConnectionError> {
-    // Example: "oracle://user:secret@127.0.0.1/MY_DB"
+    // Example: "oracle://user:secret@127.0.0.1/MY_DB".
+    // The connection string format is:
+    // "oracle://<username>:<password>@<db_url>"
     let connection_string =
         format!("oracle://{}:{}@{}", username, password, db_url);
 

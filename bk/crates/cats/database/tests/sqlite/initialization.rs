@@ -1,12 +1,16 @@
 // ANCHOR: example
+//! This example demonstrates how to initialize a SQLite database with tables.
+
 use std::fs;
 
 use rusqlite::Connection;
 
 pub fn main() -> anyhow::Result<()> {
+    // Create the "temp" directory if it doesn't exist.
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
     }
+
     let conn = Connection::open("temp/cats.db")?;
 
     conn.execute(

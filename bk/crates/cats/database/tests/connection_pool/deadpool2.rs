@@ -1,28 +1,29 @@
 // ANCHOR: example
+//! This example demonstrates how to use `deadpool-postgres` to manage a pool of
+//! PostgreSQL connections.
+//! `deadpool` is an async pool for connections and objects of any type.
+//! `deadpool_postgres` implements a `deadpool` manager for `tokio-postgres`
+//! and also provides a statement cache by wrapping `tokio_postgres::Client` and
+//! `tokio_postgres::Transaction`.
+//!
+//! Add to your `Config.toml`:
+//! deadpool = "0.12.1" # or latest version
+//! deadpool-postgres = { version = "0.14.1", features = ["serde"] }
+//!
+//! Add you database's configuration to your `.env` file, for example:
+//! PG__HOST=pg.example.com
+//! PG__USER=john_doe
+//! PG__PASSWORD=topsecret
+//! PG__DBNAME=example
+//! PG__POOL__MAX_SIZE=16
+//! PG__POOL__TIMEOUTS__WAIT__SECS=5
+//! PG__POOL__TIMEOUTS__WAIT__NANOS=0
+
 use deadpool_postgres::Runtime;
 use dotenvy::dotenv;
 use tokio_postgres::NoTls;
 
-// Deadpool + Postgres example
-
-// `deadpool` is an async pool for connections and objects of any type.
-// `deadpool_postgres` implements a `deadpool` manager for `tokio-postgres`
-// and also provides a statement cache by wrapping `tokio_postgres::Client` and
-// `tokio_postgres::Transaction`.
-
-// Add to your `Config.toml`:
-// deadpool = "0.12.1" # or latest version
-// deadpool-postgres = { version = "0.14.1", features = ["serde"] }
-
-// Add you database's configuration to your `.env` file, for example:
-// PG__HOST=pg.example.com
-// PG__USER=john_doe
-// PG__PASSWORD=topsecret
-// PG__DBNAME=example
-// PG__POOL__MAX_SIZE=16
-// PG__POOL__TIMEOUTS__WAIT__SECS=5
-// PG__POOL__TIMEOUTS__WAIT__NANOS=0
-
+/// Configuration for the application.
 #[derive(Debug, serde::Deserialize)]
 struct Config {
     pub pg: deadpool_postgres::Config,

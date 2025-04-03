@@ -9,6 +9,7 @@ use meilisearch_sdk::tasks::Task;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A document that can be indexed in MeiliSearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
     id: usize,
@@ -16,19 +17,23 @@ struct MyDocument {
     content: String,
 }
 
+/// This is an example of how to use the MeiliSearch Rust SDK to index and
+/// search documents.
+///
+/// It requires a running MeiliSearch instance.
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> anyhow::Result<()> {
     let meilisearch_url =
         env::var("MEILISEARCH_URL").unwrap_or("http://localhost:7700".into());
     let meilisearch_api_key: Option<String> = env::var("MEILI_MASTER_KEY").ok();
 
-    // Create a client and connect to MeiliSearch
+    // Create a client and connect to MeiliSearch.
     let client = Client::new(meilisearch_url, meilisearch_api_key).unwrap();
 
     // Create an index
     let index: Index = client.index("my_index");
 
-    // Define a list of documents to index
+    // Define a list of documents to index.
     let docs = vec![
         MyDocument {
             id: 1,
@@ -47,7 +52,7 @@ async fn main() -> anyhow::Result<()> {
         },
     ];
 
-    // Index the documents
+    // Index the documents.
     // If the index does not exist, Meilisearch creates it when you first add
     // the documents.
     let task: TaskInfo = index.add_documents(&docs, Some("id")).await?;
@@ -58,7 +63,7 @@ async fn main() -> anyhow::Result<()> {
     println!("Indexing status: {:?}", status);
     assert!(matches!(status, Task::Succeeded { .. }));
 
-    // Perform a search query
+    // Perform a search query.
     let query = "Rust";
     let search_results: SearchResults<MyDocument> = index
         .search()
@@ -66,7 +71,7 @@ async fn main() -> anyhow::Result<()> {
         .execute::<MyDocument>()
         .await?;
 
-    // Print the search results
+    // Print the search results.
     println!("Search results for '{}':", query);
     for hit in search_results.hits {
         println!("{:?}", hit.result);
@@ -79,7 +84,7 @@ async fn main() -> anyhow::Result<()> {
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
     unsafe {
-        // Refer to the compose*.yaml files
+        // Refer to the compose*.yaml files.
         std::env::set_var(
             "MEILISEARCH_URL",
             "http://rust_howto_dev-meilisearch-1:7700",

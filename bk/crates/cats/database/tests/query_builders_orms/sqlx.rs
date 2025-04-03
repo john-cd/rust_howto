@@ -1,10 +1,16 @@
 // ANCHOR: example
+//! This example demonstrates basic usage of the `sqlx` crate for interacting
+//! with a SQLite database.
+//!
+//! It covers creating a connection pool, defining a struct that maps to a
+//! database table, creating a table, inserting data, and retrieving data.
+//!
+//! In Cargo.toml, add the following dependencies:
+//! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
+
 use sqlx::SqlitePool;
 
-// In Cargo.toml, add the following dependencies:
-// sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
-
-#[derive(sqlx::FromRow, Debug, PartialEq, Eq)]
+#[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
 struct User {
     id: i32,
     name: String,
@@ -64,6 +70,7 @@ async fn main() -> anyhow::Result<()> {
 
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {
+    // Test function to run the main example
     main()?;
     Ok(())
 }

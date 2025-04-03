@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Example using the `sled` embeddable database.
+//!
+//! `sled` is a pure-Rust high-performance embedded database.
+//!
+//! Add `sled = "0.34.7"` (or latest) to `Cargo.toml`.
+
 fn main() -> anyhow::Result<()> {
     // Open a sled database
     // A directory will be created if it does not exist

@@ -4,11 +4,15 @@ use postgres::Client;
 use postgres::Error;
 use postgres::NoTls;
 
+/// Represents a nation with its nationality and the count of artists from that
+/// nation.
 struct Nation {
     nationality: String,
     count: i64,
 }
 
+/// Connects to a PostgreSQL database, queries artist nationalities and their
+/// counts, and prints the results. Data from
 // https://github.com/MuseumofModernArt/collection/tree/main
 pub fn main() -> Result<(), Error> {
     // The connection URL is formatted as

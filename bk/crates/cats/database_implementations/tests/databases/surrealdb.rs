@@ -5,21 +5,10 @@ use serde::Serialize;
 use surrealdb::Result;
 // Database client instance for embedded or remote databases:
 use surrealdb::Surreal;
-// For an in-memory database:
+// For an in-memory database, use:
 use surrealdb::engine::local::Mem;
-// For a RocksDB file:
+// For a RocksDB file, use:
 // use surrealdb::engine::local::RocksDb;
-
-// SurrealDB is a scalable, distributed, collaborative,
-// document-graph database for the realtime web.
-
-// The `surrealdb` crate can be used to start an embedded in-memory
-// datastore, an embedded datastore persisted to disk,
-// a browser-based embedded datastore backed by IndexedDB,
-// or for connecting to a distributed TiKV key-value store.
-
-// Add `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
-// to `Cargo.toml` for an in-memory datastore.
 
 // The document to store in the database
 #[derive(Debug, Serialize, Deserialize)]
@@ -28,6 +17,16 @@ struct Person {
     age: u16,
 }
 
+/// SurrealDB is a scalable, distributed, collaborative,
+/// document-graph database for the realtime web.
+///
+/// The `surrealdb` crate can be used to start an embedded in-memory
+/// datastore, an embedded datastore persisted to disk,
+/// a browser-based embedded datastore backed by IndexedDB,
+/// or for connecting to a distributed TiKV key-value store.
+///
+/// Add `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
+/// to `Cargo.toml` for an in-memory datastore.
 #[tokio::main]
 async fn main() -> Result<()> {
     // Initialize a SurrealDB in-memory instance.

@@ -6,6 +6,16 @@ use anyhow::Result;
 use redis::Commands;
 use redis::Connection;
 
+/// Establishes a connection to a Redis server.
+///
+/// This function reads environment variables to determine the Redis server's
+/// hostname, password, and whether to use a secure connection (TLS). It then
+/// constructs a connection URL and attempts to connect to the server.
+///
+/// # Returns
+///
+/// A `Result` containing a `Connection` to the Redis server on success, or an
+/// error if the connection fails.
 fn connect() -> Result<Connection> {
     let redis_host_name = env::var("REDIS_HOSTNAME")
         .context("missing environment variable REDIS_HOSTNAME")?;
@@ -15,8 +25,6 @@ fn connect() -> Result<Connection> {
         Ok(_) => "rediss",
         Err(_) => "redis",
     };
-    // The URL format is
-    // protocol=<protocol>]] For example, "redis://127.0.0.1/"
     let redis_conn_url =
         format!("{}://:{}@{}", uri_scheme, redis_password, redis_host_name);
     // `open` does not actually open a connection yet, but it does perform some
@@ -24,9 +32,18 @@ fn connect() -> Result<Connection> {
     Ok(redis::Client::open(redis_conn_url)?.get_connection()?)
 }
 
+/// Fetches an integer value from Redis.
+///
+/// This function connects to a Redis server, sets a key-value pair ("my_key",
+/// 42), and then retrieves the value associated with "my_key".
+///
+/// # Returns
+///
+/// A `Result` containing the integer value retrieved from Redis on success, or
+/// an error if the operation fails.
 fn fetch_an_integer() -> Result<isize> {
     let mut con = connect()?;
-    // Throw away the result, just make sure it does not fail
+    // Throw away the result, just make sure it does not fail.
     let _: () = con.set("my_key", 42)?;
     // Read back the key and return it. Because the return value
     // from the function is a result for integer, this will automatically

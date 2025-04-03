@@ -4,6 +4,7 @@ use std::fs;
 use anyhow::Result;
 use rusqlite::Connection;
 
+/// Demonstrates successful and rolled-back transactions using `rusqlite`.
 pub fn main() -> Result<()> {
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
@@ -22,6 +23,7 @@ pub fn main() -> Result<()> {
     Ok(())
 }
 
+/// Demonstrates a successful transaction that inserts data into the database.
 fn successful_tx(conn: &mut Connection) -> Result<()> {
     let tx = conn.transaction()?;
     tx.execute("delete from cats; delete from cat_colors", ())?;
@@ -31,6 +33,8 @@ fn successful_tx(conn: &mut Connection) -> Result<()> {
     Ok(())
 }
 
+/// Demonstrates a transaction that is rolled back due to a unique constraint
+/// violation.
 fn rolled_back_tx(conn: &mut Connection) -> Result<()> {
     let tx = conn.transaction()?;
     tx.execute("delete from cats; delete from cat_colors", ())?;

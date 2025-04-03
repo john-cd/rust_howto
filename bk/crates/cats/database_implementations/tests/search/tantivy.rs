@@ -5,12 +5,15 @@ use tantivy::Index;
 use tantivy::ReloadPolicy;
 use tantivy::Score;
 use tantivy::doc;
-use tantivy::schema::*;
+use tantivy::schema::Document as TantivyDocument;
+use tantivy::schema::STORED;
+use tantivy::schema::Schema;
+use tantivy::schema::TEXT;
 
-// `tantivy` is a Lucene-like full-text search engine library written in Rust.
-// This example will demonstrate how to create an index, add documents,
-// and perform a search.
-
+/// `tantivy` is a Lucene-like full-text search engine library written in Rust.
+///
+/// This example will demonstrate how to create an index, add documents,
+/// and perform a search.
 fn main() -> tantivy::Result<()> {
     // Define the schema for your documents
     // Tantivy has a very strict schema. You need to specify in advance, whether

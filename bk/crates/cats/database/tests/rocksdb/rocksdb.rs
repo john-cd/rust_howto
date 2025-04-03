@@ -1,12 +1,15 @@
 // ANCHOR: example
-
-// Example using Facebook's RocksDB embeddable database.
-
-// Ensure you have the RocksDB C++ library installed on your system, because the
-// Rust `rocksdb` crate is just a wrapper around the native C++ RocksDB library.
-// If you're on `Ubuntu`, you can install it with:
-// sudo apt-get install librocksdb-dev
-// You will also need: Clang and LLVM.
+//! Example using Facebook's RocksDB embeddable database.
+//!
+//! Ensure you have the RocksDB C++ library installed on your system, because
+//! the Rust `rocksdb` crate is just a wrapper around the native C++ RocksDB
+//! library. If you're on `Ubuntu`, you can install it with:
+//! sudo apt-get install librocksdb-dev
+//!
+//! On `macOS`, you can install it with:
+//! brew install rocksdb
+//!
+//! You will also need: Clang and LLVM.
 
 use rocksdb::DB;
 use rocksdb::Options;
