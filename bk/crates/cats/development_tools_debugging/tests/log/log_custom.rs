@@ -7,6 +7,7 @@ use log4rs::config::Config;
 use log4rs::config::Root;
 use log4rs::encode::pattern::PatternEncoder;
 
+/// Configures and initializes the logging system using log4rs.
 fn main() -> Result<()> {
     let logfile = FileAppender::builder()
         .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))

@@ -1,9 +1,13 @@
 // ANCHOR: example
 use env_logger::Target;
 
+/// This example demonstrates how to configure the `env_logger` to output logs
+/// to `Stdout`.
 fn main() {
+    // Create a new `env_logger` builder.
     env_logger::Builder::new().target(Target::Stdout).init();
 
+    // Log an error message.
     log::error!("This error has been printed to Stdout");
 }
 // ANCHOR_END: example

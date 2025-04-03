@@ -1,4 +1,6 @@
 // ANCHOR: example
+/// Simulates executing a database query.
+/// This function always returns an error for demonstration purposes.
 fn execute_query(_query: &str) -> Result<(), &'static str> {
     Err("I'm afraid I can't do that")
 }

@@ -1,6 +1,7 @@
 // ANCHOR: example
 
 #[cfg(target_os = "linux")]
+/// Initializes syslog and logs a debug and error message.
 fn main() -> anyhow::Result<()> {
     use syslog::Facility;
 

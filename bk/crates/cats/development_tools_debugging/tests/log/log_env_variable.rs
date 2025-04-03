@@ -1,6 +1,7 @@
 // ANCHOR: example
 
 fn main() {
+    // Initialize the logger.
     init_logger();
 
     log::info!("informational message");
@@ -13,11 +14,17 @@ fn main() {
 }
 
 //#[cfg(not(test))]
+/// Initializes the logger for the application.
+///
+/// This function configures the logger to filter log messages based on
+/// environment variables. It first sets the default log level to `Off`,
+/// meaning no logs will be displayed by default. Then, it attempts to
+/// override this default by parsing the `MY_APP_LOG` environment variable.
 fn init_logger() {
-    // env_logger is a simple logger that can be configured via environment
-    // variables. Example: RUST_LOG=info ./app
+    // `env_logger`` is a simple logger that can be configured via environment
+    // variables. Example: `RUST_LOG=info ./app`
     // Typically you would use:
-    // env_logger::init();
+    // `env_logger::init();`
 
     // Initialise a logger with filter level Off,
     // then override the log filter from an environment variable called
@@ -27,14 +34,14 @@ fn init_logger() {
         .parse_env("MY_APP_LOG")
         .init();
 
-    // Alternatively, `Env` lets us tweak what the environment
-    // variables to read are and what the default
-    // value is if they're missing
+    // Alternatively, `Env` lets us tweak which environment variables to read
+    // and what the default value is if they're missing.
+    //
     // let env = env_logger::Env::default()
-    // // Specify an environment variable to read the filter from.
-    // // If the variable is not set, the default value will be used.
+    // // Specify an environment variable to read the filter from. If the
+    // // variable is not set, the default value will be used.
     // .filter_or("MY_APP_LOG", "trace")
-    // .write_style_or("MY_APP_LOG_STYLE", "always");
+    // .write_style_or("MY_APP_LOG_STYLE", "always"); // Set the log style.
     // env_logger::init_from_env(env);
 }
 // ANCHOR_END: example

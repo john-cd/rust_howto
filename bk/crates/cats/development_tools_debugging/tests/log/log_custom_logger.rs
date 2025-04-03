@@ -1,10 +1,15 @@
 // ANCHOR: example
+//! This example demonstrates how to create a custom logger.
+//!
+//! The custom logger will print log messages to the console.
+
 use log::Level;
 use log::LevelFilter;
 use log::Metadata;
 use log::Record;
 use log::SetLoggerError;
 
+/// The custom logger.
 static CONSOLE_LOGGER: ConsoleLogger = ConsoleLogger;
 
 struct ConsoleLogger;
