@@ -10,15 +10,15 @@
 // use tantivy::schema::Schema;
 // use tantivy::schema::TEXT;
 
-// /// `tantivy` is a Lucene-like full-text search engine library written in Rust.
-// ///
+// /// `tantivy` is a Lucene-like full-text search engine library written in
+// /// Rust.
 // /// This example will demonstrate how to create an index, add documents,
 // /// and perform a search.
 // fn main() -> tantivy::Result<()> {
 //     // Define the schema for your documents
-//     // Tantivy has a very strict schema. You need to specify in advance, whether
-//     // a field is indexed or not, stored or not, and RAM-based or not.
-//     let mut schema_builder = Schema::builder();
+//     // Tantivy has a very strict schema. You need to specify in advance,
+//     // whether a field is indexed or not, stored or not, and RAM-based or
+//     // not: `let mut schema_builder = Schema::builder();`
 
 //     schema_builder.add_text_field("title", TEXT | STORED);
 //     // `TEXT` means the field should be tokenized and indexed,
@@ -35,7 +35,8 @@
 //     // let num_stars_options =
 //     //     NumericOptions::default().set_stored().set_indexed();
 //     // schema_builder.add_u64_field("num_stars", num_stars_options);
-//     // Or simpler: schema_builder.add_u64_field("num_stars", INDEXED | STORED);
+//     // Or simpler: schema_builder.add_u64_field("num_stars", INDEXED |
+//     // STORED);
 
 //     let schema = schema_builder.build();
 
@@ -52,10 +53,11 @@
 //     // Add documents to the index
 //     index_writer.add_document(doc!(
 //         schema.get_field("title").unwrap() => "Document 1",
-//         schema.get_field("body").unwrap() => "This is the body of document 1", ))?;
-//     index_writer.add_document(doc!(
+//         schema.get_field("body").unwrap() => "This is the body of document
+// 1", ))?;     index_writer.add_document(doc!(
 //         schema.get_field("title").unwrap() => "Document 2",
-//         schema.get_field("body").unwrap() => "This is the body of document 2", ))?;
+//         schema.get_field("body").unwrap() => "This is the body of document
+// 2", ))?;
 
 //     // Commit the changes
 //     index_writer.commit()?;
@@ -67,7 +69,8 @@
 //     // Create a reader
 //     let reader = index
 //         .reader_builder()
-//         .reload_policy(ReloadPolicy::OnCommitWithDelay) // The index is reloaded within milliseconds after a new commit is available.
+//         .reload_policy(ReloadPolicy::OnCommitWithDelay) // The index is
+// reloaded within milliseconds after a new commit is available.
 //         .try_into()?;
 //     // OR: let reader = index.reader()?;
 
@@ -101,8 +104,8 @@
 //             retrieved_doc.to_json(&schema),
 //             score
 //         );
-//         // We can also get an explanation to understand how a found document got
-//         // its score.
+//         // We can also get an explanation to understand how a found document
+// got         // its score.
 //         let explanation = query.explain(&searcher, doc_address)?;
 //         println!("{}", explanation.to_pretty_json());
 //     }

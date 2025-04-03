@@ -1,17 +1,19 @@
 // ANCHOR: example
-//! This example demonstrates how to find the maximum matching version from a list of versions
-//! based on a given version requirement string, using the `semver` crate.
+//! This example demonstrates how to find the maximum matching version from a
+//! list of versions based on a given version requirement string, using the
+//! `semver` crate.
 //!
-//! The `find_max_matching_version` function takes a version requirement string and an iterable
-//! of version strings. It parses the version requirement and each version string, then filters
-//! the versions to find those that match the requirement. Finally, it returns the maximum
-//! matching version.
+//! The `find_max_matching_version` function takes a version requirement string
+//! and an iterable of version strings. It parses the version requirement and
+//! each version string, then filters the versions to find those that match the
+//! requirement. Finally, it returns the maximum matching version.
 
 use anyhow::Result;
 use semver::Version;
 use semver::VersionReq;
 
-/// Finds the maximum matching version from an iterable of version strings based on a version requirement string.
+/// Finds the maximum matching version from an iterable of version strings based
+/// on a version requirement string.
 fn find_max_matching_version<'a, I>(
     // The version requirement string (e.g., ">=1.0.0", "<2.0.0").
     version_req_str: &str,

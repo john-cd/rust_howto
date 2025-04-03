@@ -2,7 +2,6 @@
 #![allow(unused_variables)]
 // ANCHOR: example
 
-
 use std::ffi::CString;
 use std::os::raw::c_char;
 
