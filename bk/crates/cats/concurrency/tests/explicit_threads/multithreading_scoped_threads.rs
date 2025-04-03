@@ -4,7 +4,9 @@ use std::path::Path;
 use std::sync::mpsc;
 use std::thread;
 
-// Our error type needs to be `Send` to be used in a channel
+/// Reads the contents of a file and returns them as a String.
+///
+/// The error type needs to be `Send` to be used in a channel.
 fn read_contents<T: AsRef<Path>>(
     file: T,
 ) -> Result<String, Box<dyn Error + Send>> {
