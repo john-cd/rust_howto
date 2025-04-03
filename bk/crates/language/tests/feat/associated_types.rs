@@ -1,10 +1,13 @@
 #![allow(dead_code)]
 // ANCHOR: example
 
+/// A trait that represents an iterator.
 trait Iterator {
-    type Item; // <-- associated type
+    /// The type of the elements yielded by the iterator.
+    type Item;
 
-    // Note the use of :: to refer to the associated type
+    /// Returns the next element in the iterator, or `None` if the iterator is
+    /// exhausted. Note the use of `::` to refer to the associated type.
     fn next(&mut self) -> Option<Self::Item>;
 }
 
@@ -24,10 +27,14 @@ fn use_iterator(it: &mut impl Iterator<Item = u32>) -> Option<u32> {
     it.next()
 }
 
-// A common pattern is a generic type (with a default) and an associated type:
+/// A trait that represents the ability to add two values together.
+///
+/// A common pattern is a generic type (with a default) and an associated type.
 trait Add<Rhs = Self> {
-    type Output; // <-- associated type
+    /// The type of the result of the addition.
+    type Output;
 
+    /// Adds two values together.
     fn add(self, rhs: Rhs) -> Self::Output;
 }
 

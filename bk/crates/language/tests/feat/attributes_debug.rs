@@ -7,26 +7,28 @@
 #![allow(dead_code)]
 #![allow(missing_docs)]
 
-// This import is not used anywhere
+// This import is not used anywhere.
 use std::thread;
 
-// This struct is public but is not documented
+// This struct is public but is not documented.
+
 pub struct S;
 
+/// This function must be used.
 #[must_use]
 fn required() -> u32 {
     42
 }
 
-// Nothing calls this function
+// Nothing calls this function.
 fn dead_code() {}
 
 fn main() {
-    // This variable is not used
+    // This variable is not used.
     let x = 1;
-    // This mutable variable is not used
+    // This mutable variable is not used.
     let mut m = 2;
-    // The return value of this function is not used
+    // The return value of this function is not used.
     required();
     println!("Done!");
 }

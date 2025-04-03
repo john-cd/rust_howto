@@ -1,6 +1,6 @@
 // ANCHOR: example
-// Must use the results of the fn
-// Also applies to traits, structs, enums...
+/// The `#[must_use]` attribute indicates that the results of a function must be
+/// used. This attribute can also be applied to traits, structs, enums, etc.
 #[must_use]
 fn add(a: i32, b: i32) -> i32 {
     a + b

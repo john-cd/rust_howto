@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! Demonstrates the concept of borrowing in Rust.
 fn main() {
     let s1 = String::from("hello");
 
@@ -6,7 +7,7 @@ fn main() {
 
     fn calculate_length(s: &str) -> usize {
         s.len()
-    } // Here, `s` goes out of scope. Because the function does not have
+    } // `s` goes out of scope here. Because the function does not have
     // ownership of what it refers to, `s1` is not dropped.
 
     println!("{s1}");
