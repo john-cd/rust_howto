@@ -1,13 +1,16 @@
 #[allow(dead_code)]
 // ANCHOR: example
+// Declare an external C function.
 unsafe extern "C" {
+    /// This function is defined in C code and prints application information.
     fn print_app_info();
 }
 
 fn main() {
-    // unsafe {
-    //     print_app_info();
-    // }
+    // Call the external C function.
+    unsafe {
+        print_app_info();
+    }
     println!("Printed app info.");
 }
 // ANCHOR_END: example

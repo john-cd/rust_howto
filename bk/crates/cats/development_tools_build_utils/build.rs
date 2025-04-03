@@ -3,13 +3,14 @@
 
 // ANCHOR: C
 fn c() {
+    // Compile `tests/hello.c` into `libhello.a`
     cc::Build::new().file("tests/hello.c").compile("hello");
-    // outputs `libhello.a`
 }
 // ANCHOR_END: C
 
 // ANCHOR: CPP
 fn cpp() {
+    // Compile `src/foo.cpp` into `libfoo.a`
     // Tell Cargo that if the given file changes, to rerun this build script.
     println!("cargo::rerun-if-changed=tests/foo.cpp");
     cc::Build::new()
@@ -21,6 +22,7 @@ fn cpp() {
 
 // ANCHOR: C_DEFINES
 fn cc_defines() {
+    // Compile `tests/foo.c` into `libfoo.a` with defines
     cc::Build::new()
         .define("APP_NAME", "\"foo\"")
         .define(

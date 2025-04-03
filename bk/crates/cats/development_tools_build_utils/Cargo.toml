@@ -17,6 +17,7 @@ autolib = false
 
 [dependencies]
 anyhow = "1.0.95"
+cc = "1.2"
 
 ## See build.rs
 [build-dependencies]

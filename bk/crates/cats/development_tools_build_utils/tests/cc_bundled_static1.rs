@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 // ANCHOR: example
+
+
 use std::ffi::CString;
 use std::os::raw::c_char;
 
@@ -20,6 +22,9 @@ unsafe extern "C" {
     fn greet(name: *const c_char);
 }
 
+/// This example demonstrates how to call C functions from Rust.
+/// It uses the `cc` crate to compile a C file into a static library,
+/// and then links against that library.
 fn main() -> Result<()> {
     // unsafe { hello() }
     let name = prompt("What's your name? ")?;
