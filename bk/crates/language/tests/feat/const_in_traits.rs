@@ -1,6 +1,15 @@
 // ANCHOR: example
+
+/// A trait demonstrating the use of associated constants.
 trait Example {
+    /// An associated constant without a default value.
+    ///
+    /// Implementors of this trait must provide a value for this constant.
     const CONST_NO_DEFAULT: i32;
+
+    /// An associated constant with a default value.
+    ///
+    /// Implementors of this trait can optionally override this default.
     const CONST_WITH_DEFAULT: i32 = 99;
 }
 struct S;

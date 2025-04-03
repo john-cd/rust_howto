@@ -1,21 +1,24 @@
 #![allow(unused_imports, dead_code)]
 // ANCHOR: example
-
-// With the following, `File` without prefix is available in the scope
-// For code from an external crate, the absolute path begins with the
-// crate name - here, the standard `std` library
+// The `use` keyword brings items into scope.
+// With the following, `File` can be used without prefix in the scope.
+// For code from an external crate, the absolute path begins with the crate name.
+// Here, the standard `std` library is an external crate.
 use std::collections::HashMap;
-// Glob - all public objects in `collections` are now in scope
-// Use sparingly
-use std::collections::*;
-// Use `as` to define aliases, for example in case of name conflict
 use std::fmt::Result;
 use std::fs::File;
+
+// Glob - all public objects in `collections` are now in scope.
+// Use sparingly.
+use std::collections::*;
+
+// Use `as` to define aliases, for example in case of name conflict
 use std::io::Result as IoResult;
-// The following is equivalent to `use std::io; use std::io::Write;`
-use std::io::{self, Write};
+
 // You can combine multiple `use` lines together with { } as well
 use std::{cmp::Ordering, fmt};
+// The following is equivalent to `use std::io; use std::io::Write;`
+use std::io::{self, Write};
 
 mod a {
     pub mod b {
@@ -41,12 +44,11 @@ mod c {
     // We can construct relative paths that begin in the parent module,
     // rather than the current module or the crate root, by using `super`
     // at the start of the path.
-    use super::a;
-    // a is now in scope
+    use super::a; // `a` is now in scope.
 
     pub fn do_something_else() {
         let _a = a::A;
-        println!("do_something_else");
+        println!("Do something else.");
     }
 }
 
@@ -55,12 +57,12 @@ mod d {
 }
 // Absolute paths start with the literal `crate`.
 // You can try:
-// use crate::d;
+//use crate::d;
 
 mod e {
     pub mod f {
         pub fn try_that() {
-            println!("try_that");
+            println!("Try that.");
         }
     }
 }

@@ -1,6 +1,8 @@
 // ANCHOR: example
+
+/// This function diverges, meaning it never returns.
+/// It uses the `!` (Never) type to indicate this.
 fn foo() -> ! {
-    // ! is the Never type
     panic!("This call never returns.");
 }
 

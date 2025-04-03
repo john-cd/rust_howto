@@ -1,11 +1,12 @@
 // ANCHOR: example
+
 fn generic<T>(_t: T) {
+    // This is a generic function that can take any type.
     println!("In `generic`");
 }
 
-// Explicitly specified type parameter `char` to `generic()`.
-// Note the turbofish notation ::<>
-
+// We explicitly specify the type parameter `char` for `generic()`.
+// Note the use of the 'turbofish' notation: `::<>`
 fn main() {
     generic::<char>('a');
 }

@@ -1,18 +1,18 @@
 #![allow(dead_code)]
 // ANCHOR: example
 
-// A function which takes a closure as an argument and calls it.
-// <F> denotes that F is a "Generic type parameter"
+// This function demonstrates how to accept a closure as an input parameter.
+// The `F` in `fn apply<F>(f: F)` is a generic type parameter, allowing
+// the function to accept any type that satisfies the specified trait bounds.
 fn apply<F>(f: F)
 where
-    F: FnOnce(),
+    F: FnOnce(), // The closure `f` takes no input and returns nothing.
 {
-    // The closure takes no input and returns nothing.
-    // could also be `Fn` or `FnMut`.
     f();
 }
 
-// A function which takes a closure and returns an `i32`.
+// This function demonstrates how to accept a closure that takes an input
+// and returns a value.
 fn apply_to_3<F>(f: F) -> i32
 where
     // The closure takes an `i32` and returns an `i32`.

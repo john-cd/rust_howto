@@ -1,5 +1,10 @@
 #![allow(dead_code)]
 // ANCHOR: example
+
+/// A struct that holds a reference to a string slice.
+///
+/// The lifetime parameter `'a` specifies that the `ImportantExcerpt`
+/// cannot outlive the string slice it references.
 struct ImportantExcerpt<'a> {
     part: &'a str,
 }

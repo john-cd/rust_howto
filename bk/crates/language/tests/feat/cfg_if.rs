@@ -1,16 +1,18 @@
 // ANCHOR: example
+use cfg_if::cfg_if;
 
-// The `cfg-if` crate is useful for conditional compilation based on
-// configuration flags.
-
+/// This example demonstrates how to use `cfg-if` to conditionally compile
+/// code blocks.
+///
+/// The `cfg-if` crate provides a convenient way to handle conditional
+/// compilation based on configuration flags. This is particularly useful
+/// when you need to write code that behaves differently depending on the
+/// target platform, enabled features, or other build-time configurations.
 // First, add the dependency to your Cargo.toml:
 // [dependencies]
 // cfg-if = "1.0.0"
-
-use cfg_if::cfg_if;
-
 fn main() {
-    // Basic usage example
+    // Basic usage example:
     cfg_if! {
         if #[cfg(target_os = "windows")] {
             println!("Running on Windows!");
@@ -23,7 +25,7 @@ fn main() {
         }
     }
 
-    // Another example with feature flags
+    // Another example with feature flags:
     cfg_if! {
         if #[cfg(feature = "full")] {
             fn get_functionality() -> &'static str {
