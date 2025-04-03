@@ -8,7 +8,11 @@ use image::Rgb;
 use num::complex::Complex;
 use threadpool::ThreadPool;
 
-// Function converting intensity values to RGB
+/// Converts a wavelength (in nanometers) to an RGB color.
+///
+/// This function maps a given wavelength to a corresponding RGB color,
+/// simulating the colors of the visible light spectrum. It uses a piecewise
+/// linear function to determine the red, green, and blue components.
 fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
     let wave = wavelength as f32;
     let (r, g, b) = match wavelength {
@@ -32,7 +36,20 @@ fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
     );
     Rgb([r, g, b])
 }
-// Maps Julia set distance estimation to intensity values
+
+/// Calculates the number of iterations required for a point to escape the Julia set.
+///
+/// This function determines whether a given point (x, y) belongs to the Julia set
+/// for a given complex number `c`. It does this by iteratively applying the
+/// function z = z^2 + c, starting with z as the complex representation of the
+/// point (x, y). If the magnitude of z exceeds 2.0 within `max_iter` iterations,
+/// the point is considered to have escaped the set. The number of iterations
+/// required for escape is returned.
+///
+/// # Arguments
+/// * `c` - The complex number defining the Julia set.
+/// * `x`, `y` - The coordinates of the point to test.
+/// * `width`, `height` - The dimensions of the image.
 fn julia(
     c: Complex<f32>,
     x: u32,
@@ -44,7 +61,7 @@ fn julia(
     let width = width as f32;
     let height = height as f32;
     let mut z = Complex {
-        // scale and translate the point to image coordinates
+        // Scale and translate the point to image coordinates
         re: 3.0 * (x as f32 - 0.5 * width) / width,
         im: 2.0 * (y as f32 - 0.5 * height) / height,
     };
@@ -58,7 +75,13 @@ fn julia(
     }
     i
 }
-// Normalizes color intensity values within RGB range
+
+/// Normalizes a color component value.
+///
+/// This function takes a color component (r, g, or b) and a factor, and
+/// normalizes the color component to an 8-bit value (0-255). It applies a
+/// power function to adjust the intensity and then scales it to the range
+/// of 0-255.
 fn normalize(color: f32, factor: f32) -> u8 {
     ((color * factor).powf(0.8) * 255.) as u8
 }
@@ -102,5 +125,4 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-
 // [review; threadpool_fractal.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/268)

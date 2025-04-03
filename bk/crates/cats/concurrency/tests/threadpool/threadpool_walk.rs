@@ -12,11 +12,13 @@ use ring::digest::SHA256;
 use threadpool::ThreadPool;
 use walkdir::WalkDir;
 
-// Verify the iso extension
+/// Verify that the path ends with an `iso` extension.
 fn is_iso(entry: &Path) -> bool {
     matches!(entry.extension(), Some(e) if e.to_string_lossy().to_lowercase() == "iso")
 }
 
+/// Compute the SHA256 digest of a file.
+/// Returns the digest and the path of the file.
 fn compute_digest<P: AsRef<Path>>(filepath: P) -> Result<(Digest, P), Error> {
     let mut buf_reader = BufReader::new(File::open(&filepath)?);
     let mut context = Context::new(&SHA256);
@@ -33,6 +35,7 @@ fn compute_digest<P: AsRef<Path>>(filepath: P) -> Result<(Digest, P), Error> {
     Ok((context.finish(), filepath))
 }
 
+/// Walk a directory and computes the SHA256 digest of all iso files.
 fn main() -> Result<(), Error> {
     let pool = ThreadPool::new(num_cpus::get());
 
