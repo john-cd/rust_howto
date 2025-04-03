@@ -2736,3 +2736,5 @@ HashSet
 hashsets
 hashset
 swiss
+InfluxDB
+Nagios
