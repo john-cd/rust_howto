@@ -1,29 +1,33 @@
 #![allow(dead_code)]
 // ANCHOR: example
+/// A trait.
 trait Summary {
-    // Method signature that describe the behavior of the types that implement
-    // this trait. Function signatures do not include a function body
-    // (note the ;).
+    /// Method signature.
+    /// Types that implement the `Summary` trait must implement a method with
+    /// the exact signature.
     fn summarize_author(&self) -> String;
 
-    // Traits can provide default implementations
-    // for some or all of their methods.
+    /// Traits can also provide _default implementations_ for some or all of
+    /// their methods or functions.
+    /// - Default implementations have a body.
+    /// - Types that implement the trait can override the default
+    ///   implementations, if desired.
     fn summarize(&self) -> String {
-        // The default implementation has a body.
         // Default implementations can call other methods in the same trait,
         // even if those other methods don't have a default implementation.
+        // Here, the default implementation uses the `summarize_author` method.
         format!("(Read more from {}...)", self.summarize_author())
     }
 }
 
-// Let's define a `Blog` struct...
+/// Let's define a `Blog` struct...
 struct Blog {
     author: String,
 }
 
-// ...that implements the `Summary` trait.
+/// ...that implements the `Summary` trait.
 impl Summary for Blog {
-    // All non-default-implemented methods must be implemented for the struct.
+    /// All non-default-implemented methods must be implemented for the struct.
     fn summarize_author(&self) -> String {
         self.author.clone()
     }

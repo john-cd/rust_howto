@@ -1,10 +1,14 @@
 // ANCHOR: example
 
-// A slice is created by referencing a range of elements within a collection.
-// The range is specified using the `[start..end]` syntax, where `start` is the
-// index of the first element to include, and `end` is the index of the element
+// A slice is a view into a contiguous sequence of elements in a collection.
+// It does not own the data it points to.
+//
+// Slices are created by referencing a range of elements within a collection.
+// The range is specified using the `[start..end]` syntax. `start` is the index
+// of the first element to include, and `end` is the index of the element
 // _after_ the last one to include.
 
+/// Slices from an array.
 fn array() {
     let array = [1, 2, 3, 4, 5];
     // Create a slice referencing elements at indices 1, 2, and 3
@@ -15,7 +19,7 @@ fn array() {
     println!("Entire array: {:?}", all);
 }
 
-// Slices from `Vec`.
+/// Slices from `Vec`.
 fn vectors() {
     let mut my_vector = vec![1, 2, 3, 4, 5];
     let slice = &my_vector[1..4]; // [2, 3, 4]
@@ -28,7 +32,7 @@ fn vectors() {
     println!("{:?}", my_vector); // Output: [1, 2, 10, 4, 5]
 }
 
-// String slices.
+/// String slices.
 fn string() {
     let s = String::from("hello world");
     let hello: &str = &s[0..5]; // or &s[..5];

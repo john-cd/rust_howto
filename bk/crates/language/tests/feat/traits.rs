@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
+
 pub trait Summary {
+    /// Returns a string that summarizes the item.
     fn summarize(&self) -> String;
 }
 
@@ -11,7 +13,7 @@ pub struct NewsArticle {
     pub content: String,
 }
 
-// Implement Trait on a Type
+// Implement the `Summary` trait on the `NewsArticle` type.
 impl Summary for NewsArticle {
     fn summarize(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
@@ -25,6 +27,7 @@ fn main() {
         author: "author".to_string(),
         content: "...".to_string(),
     };
+    // Since the type implements the trait, we can call its method.
     println!("Summary: {}", na.summarize());
 }
 // ANCHOR_END: example

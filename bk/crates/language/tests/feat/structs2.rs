@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+
+/// Represents a user with their active status, username, and email.
 #[derive(Debug)]
 struct User {
     active: bool,

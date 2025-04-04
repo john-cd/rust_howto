@@ -1,9 +1,10 @@
 // ANCHOR: example
-// Bring `HashMap` in scope
+// This allows us to use `HashMap` directly without having to
+// specify its full path.
 use std::collections::HashMap;
 
 fn main() {
-    // We now refer to `HaspMap` without using its path
+    // We now refer to `HashMap` without using its path.
     let mut mymap: HashMap<u32, String> = HashMap::new();
 
     // Let's add something to it then print...

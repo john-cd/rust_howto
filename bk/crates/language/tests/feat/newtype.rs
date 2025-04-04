@@ -1,7 +1,9 @@
 // ANCHOR: example
 use std::fmt;
 
-// Tuple struct wrapping the type we want to add a non-local trait to.
+/// Tuple struct wrapping the type we want to add a non-local trait to.
+///
+/// This is the 'newtype pattern'.
 struct Wrapper(Vec<String>);
 
 impl fmt::Display for Wrapper {
