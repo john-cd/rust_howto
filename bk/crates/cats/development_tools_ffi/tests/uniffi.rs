@@ -1,5 +1,8 @@
-// // ANCHOR: example
-// #![allow(non_snake_case)]
+// ANCHOR: example
+//#![allow(non_snake_case)]
+
+// // This example demonstrates how to use UniFFI to create a Rust library that
+// // can be called from other languages.
 
 // use uniffi::Bindgen;
 

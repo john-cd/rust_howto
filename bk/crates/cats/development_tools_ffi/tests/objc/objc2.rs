@@ -1,7 +1,9 @@
 // // ANCHOR: example
 // use objc2::{class, msg_send, sel, sel_impl};
 
-// fn main() {
+// /// The main function where the Objective-C interaction takes place.
+// /// This function uses `unsafe` because it interacts with raw pointers and
+// foreign code. fn main() {
 //     unsafe {
 //         let class_name = "NSString";
 //         // Retrieve the Objective-C class object for the given class name
@@ -17,7 +19,8 @@
 //         // initializing it with the given string.
 //         let string = msg_send![string, initWithString: "Hello from Rust!"];
 //         // Send the length message to the initialized string object, which
-// returns its length.         let length = msg_send![string, length];
+//         // returns its length.
+//         let length = msg_send![string, length];
 //         println!("String length: {}", length);
 //     }
 // }
@@ -27,4 +30,4 @@
 // fn test() {
 //     main();
 // }
-// [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)
+// // [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

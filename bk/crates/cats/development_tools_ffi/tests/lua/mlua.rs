@@ -1,17 +1,16 @@
 // ANCHOR: example
+//! `mlua` provides bindings to Lua programming language for Rust.
+//! By default, `mlua` does not enable any features.
+//!
+//! For example, add the following to your `Cargo.toml` file
+//! to enable Lua 5.4 support:
+//! ```toml
+//! [dependencies]
+//! mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
+//! ```
 use mlua::prelude::*;
 
-// `mlua` provides bindings to Lua programming language for Rust
-
-// By default, `mlua` does not enable any features.
-// For example, add the following to your `Cargo.toml` file
-// to enable Lua 5.4 support:
-// ```toml
-// [dependencies]
-// mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
-// ```
-
-// In standalone mode mlua allows to add to your application scripting support
+// In standalone mode, `mlua` allows to add scripting support.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
 

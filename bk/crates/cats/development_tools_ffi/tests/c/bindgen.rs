@@ -1,29 +1,33 @@
 // // ANCHOR: example
-// // `bindgen` allows you to generate Rust bindings for (existing) C
-// // (and some C++) libraries.
-
-// // 1. If needed, compile the C library
-// // ```
-// // gcc -c -o example.o example.c
-// // ```
-// // 1b. And create a static library from the object file
-// // ```sh
-// // ar rcs libexample.a example.o
-// // ```
-// // 2. Add `bindgen` to `Cargo.toml`:
-// // ```toml
-// // [build-dependencies]
-// // bindgen = "0.71.1" # or latest version
-// // ```
-// // 3) Create a `build.rs` file in your project's root directory.
-// // 4) Build the Rust project
-// // ```sh
-// // cargo build
-// // ```
-// // 5) Run the Rust project
-// // ```sh
-// // cargo run
-// // ```
+// //! # Bindgen Example
+// //!
+// //! This example demonstrates how to use `bindgen` to generate Rust bindings
+// //! for a C library.
+// //! `bindgen` allows you to generate Rust bindings for (existing) C
+// //! (and some C++) libraries.
+// //!
+// //! 1. If needed, compile the C library
+// //! ```
+// //! gcc -c -o example.o example.c
+// //! ```
+// //! 1b. And create a static library from the object file
+// //! ```sh
+// //! ar rcs libexample.a example.o
+// //! ```
+// //! 2. Add `bindgen` to `Cargo.toml`:
+// //! ```toml
+// //! [build-dependencies]
+// //! bindgen = "0.71.1" # or latest version
+// //! ```
+// //! 3) Create a `build.rs` file in your project's root directory.
+// //! 4) Build the Rust project
+// //! ```sh
+// //! cargo build
+// //! ```
+// //! 5) Run the Rust project
+// //! ```sh
+// //! cargo run
+// //! ```
 
 // extern crate example;
 // use example::add;

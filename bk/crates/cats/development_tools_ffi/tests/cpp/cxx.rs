@@ -2,15 +2,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-
 // use cxx::CxxString;
 // use cxx::let_cxx_string;
 
-// // `cxx` provides a safe mechanism for calling C++ code from Rust and Rust
-// // code from C++.
-
-// // Call a C++ function from Rust:
-
+// /// Call a C++ function from Rust.
+// ///
+// /// `cxx` provides a safe mechanism for calling C++ code from Rust and Rust
+// /// code from C++.
 // #[cxx::bridge]
 // mod ffi {
 //     unsafe extern "C++" {
@@ -21,7 +19,9 @@
 // }
 
 // fn main() {
+//     // Construct a C++ string.
 //     let_cxx_string!(name = "Rust");
+//     // Call a C++ function.
 //     ffi::hello(&name);
 // }
 
