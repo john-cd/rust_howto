@@ -40,7 +40,7 @@ serde_json = "1.0.138"
 tokio = { version = "1.43.0", features = ["full"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-openssl = { version = "0.10.68", features = ["vendored"] }
+openssl = { version = "0.10.72", features = ["vendored"] }
 rusqlite = { version = "0.32.1", features = ["chrono"] }   # pinned
 syslog = "7.0.0"
 
