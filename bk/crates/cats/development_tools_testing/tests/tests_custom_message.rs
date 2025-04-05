@@ -1,12 +1,17 @@
 // ANCHOR: example
-fn main() {
-    let result = "Carl";
+//! This example demonstrates how to use the `assert!` macro with a custom
+//! failure message.
 
+fn check_name(name: &str) {
     assert!(
-        result.contains("Carol"),
-        "Greeting did not contain name, value was `{}`",
-        result
+        name.contains("Carol"),
+        "Name did not contain 'Carol', value was `{}`",
+        name
     );
+}
+
+fn main() {
+    check_name("Carl");
 }
 // ANCHOR_END: example
 

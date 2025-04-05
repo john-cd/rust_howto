@@ -1,30 +1,33 @@
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
 // ANCHOR: example
+//! This example demonstrates how to write unit tests.
 
+/// Represents a rectangle with a width and height.
 struct Rectangle {
     width: u32,
     height: u32,
 }
 
 impl Rectangle {
-    fn can_hold(&self, _another: &Rectangle) -> bool {
-        true
+    /// Checks if this rectangle can hold another rectangle.
+    fn can_hold(&self, another: &Rectangle) -> bool {
+        self.width > another.width && self.height > another.height
     }
 }
 
-// Put unit tests in the same file than the main code
-
-#[cfg(test)] // only for unit tests
+/// This module contains unit tests for the `Rectangle` struct.
+/// You will typically write the unit tests in the same file than the main code.
+/// The `cfg` attribute ensures that the tests are conditionally compiled only when running `cargo test`.
+#[cfg(test)]
 mod tests {
-    // Access to all objects in the parent module,
-    // which contains the main code
+    // The following provides access to all objects in the parent module,
+    // which contains the main code.
     use super::*;
 
-    // Test functions must be free, monomorphic functions that take no
-    // arguments, and commonly return () or Result<T, E> where T:
-    // Termination, E: Debug
-
+    /// Test functions must be free, monomorphic functions that take no
+    /// arguments, and commonly return `()` or `Result<T, E>` where T:
+    /// Termination, E: Debug
     #[test]
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
@@ -41,30 +44,29 @@ mod tests {
         // or assert_ne!(...)
     }
 
-    // This test passes if the code inside the function panics;
-    // It fails if the code inside the function doesn't panic.
-
+    /// This test passes if the code inside the function panics;
+    /// It fails if the code inside the function doesn't panic.
     #[should_panic]
     #[test]
     fn another() {
         panic!("Make this test fail");
     }
 
-    // With Result
-
+    /// Example of test returning `Result`.
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {
-            Ok(()) // Pass if OK
+            Ok(()) // The test passes if it returns `Ok`.
         } else {
             Err(String::from("two plus two does not equal four"))
         }
     }
 
+    /// You may use the `ignore` attribute to bypass a long test during normal testing.
     #[ignore = "This test takes an hour to run. Only run it manually when needed"]
     #[test]
     fn expensive_test() {
-        // Long-running code
+        // Long-running code goes here.
     }
 }
 // ANCHOR_END: example
