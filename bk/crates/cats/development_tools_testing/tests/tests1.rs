@@ -18,7 +18,8 @@ impl Rectangle {
 
 /// This module contains unit tests for the `Rectangle` struct.
 /// You will typically write the unit tests in the same file than the main code.
-/// The `cfg` attribute ensures that the tests are conditionally compiled only when running `cargo test`.
+/// The `cfg` attribute ensures that the tests are conditionally compiled only
+/// when running `cargo test`.
 #[cfg(test)]
 mod tests {
     // The following provides access to all objects in the parent module,
@@ -62,7 +63,8 @@ mod tests {
         }
     }
 
-    /// You may use the `ignore` attribute to bypass a long test during normal testing.
+    /// You may use the `ignore` attribute to bypass a long test during normal
+    /// testing.
     #[ignore = "This test takes an hour to run. Only run it manually when needed"]
     #[test]
     fn expensive_test() {
