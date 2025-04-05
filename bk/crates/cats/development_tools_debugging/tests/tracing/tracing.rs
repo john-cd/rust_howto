@@ -1,8 +1,9 @@
 // ANCHOR: example
-//! This example demonstrates the basic usage of the `tracing` crate for logging events.
+//! This example demonstrates the basic usage of the `tracing` crate for logging
+//! events.
 //!
-//! It showcases how to use different log levels (trace, debug, info, warn, error)
-//! and how to add structured data to log messages.
+//! It showcases how to use different log levels (trace, debug, info, warn,
+//! error) and how to add structured data to log messages.
 
 use tracing::Level;
 use tracing::debug;

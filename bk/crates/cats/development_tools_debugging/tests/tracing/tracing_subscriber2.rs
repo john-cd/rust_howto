@@ -1,11 +1,11 @@
 // ANCHOR: example
-//! This example demonstrates how to configure tracing with `tracing-subscriber`.
-//! It sets up a subscriber that logs to the console and filters logs based on the `RUST_LOG` environment variable.
+//! This example demonstrates how to configure tracing with
+//! `tracing-subscriber`. It sets up a subscriber that logs to the console and
+//! filters logs based on the `RUST_LOG` environment variable.
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
 
 fn main() {
-
     tracing_subscriber::registry()
         .with(tracing_subscriber::fmt::layer().with_writer(std::io::stdout)) // Logs to the console
         .with(tracing_subscriber::filter::EnvFilter::new(

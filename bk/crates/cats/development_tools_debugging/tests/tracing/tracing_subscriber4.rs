@@ -1,7 +1,8 @@
 // ANCHOR: example
 use tracing_subscriber::fmt;
 
-/// This example demonstrates configuring a custom event formatter for the `fmt` subscriber.
+/// This example demonstrates configuring a custom event formatter for the `fmt`
+/// subscriber.
 fn main() {
     // Configure a custom event formatter
     let format = fmt::format()
