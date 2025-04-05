@@ -1,4 +1,5 @@
 // ANCHOR: example
+///! This example shows how to transform CSV data from one format to another.
 use std::str::FromStr;
 
 use anyhow::Result;
@@ -14,6 +15,7 @@ struct Row {
 }
 
 #[derive(Debug)]
+/// A color represented as a hex triplet.
 struct HexColor {
     red: u8,
     green: u8,
@@ -23,6 +25,7 @@ struct HexColor {
 impl FromStr for HexColor {
     type Err = anyhow::Error;
 
+    /// Parse a hex color string into a `HexColor`.
     fn from_str(hex_color: &str) -> std::result::Result<Self, Self::Err> {
         let trimmed = hex_color.trim_matches('#');
         if trimmed.len() != 6 {
@@ -38,6 +41,7 @@ impl FromStr for HexColor {
 }
 
 impl<'de> Deserialize<'de> for HexColor {
+    /// Deserialize a hex color string into a `HexColor`.
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: Deserializer<'de>,
@@ -57,12 +61,12 @@ magenta,#ff00ff"
         .to_owned();
     let mut out = csv::Writer::from_writer(vec![]);
     let mut reader = csv::Reader::from_reader(data.as_bytes());
-    // Deserialize as Row, using the implementation above
+    // Deserialize as `Row`, using the implementation above.
     for result in reader.deserialize() {
         // We need to provide a type hint for automatic deserialization.
         let res: Row = result?;
 
-        // Serialize the tuple as CSV into Vec<u8>
+        // Serialize the tuple as CSV into `Vec<u8>`.
         out.serialize((
             res.color_name,
             res.color.red,

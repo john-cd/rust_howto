@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! This example shows how to serialize data to a CSV file.
 use std::io;
 
 use anyhow::Result;

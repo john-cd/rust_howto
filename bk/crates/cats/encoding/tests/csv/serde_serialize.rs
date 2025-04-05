@@ -1,9 +1,11 @@
 // ANCHOR: example
+//! Demonstrates serializing structs to CSV using `serde`.
 use std::io;
 
 use anyhow::Result;
 use serde::Serialize;
 
+/// A simple struct representing a record with a name, place, and ID.
 #[derive(Serialize)]
 struct Record<'a> {
     name: &'a str,
@@ -11,6 +13,7 @@ struct Record<'a> {
     id: u64,
 }
 
+/// The main function that serializes `Record` structs to CSV and writes to standard output.
 fn main() -> Result<()> {
     let mut wtr = csv::Writer::from_writer(io::stdout());
 

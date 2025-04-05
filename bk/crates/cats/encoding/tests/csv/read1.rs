@@ -1,5 +1,9 @@
 // ANCHOR: example
+//! This example demonstrates deserializing CSV records into a struct.
+
 use serde::Deserialize;
+
+/// Represents a record from the CSV data.
 #[derive(Deserialize)]
 struct Record {
     year: u16,
