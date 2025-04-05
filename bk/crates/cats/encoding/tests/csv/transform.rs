@@ -1,5 +1,6 @@
 // ANCHOR: example
-///! This example shows how to transform CSV data from one format to another.
+//! This example shows how to transform CSV data from one format to
+//! another.
 use std::str::FromStr;
 
 use anyhow::Result;

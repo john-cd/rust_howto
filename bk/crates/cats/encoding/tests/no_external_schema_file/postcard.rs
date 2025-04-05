@@ -1,4 +1,19 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `postcard` crate for serialization
+//! and deserialization without an external schema file.
+//!
+//! Add to your `Cargo.toml` file:
+//! ```toml
+//! [dependencies]
+//! postcard = "1.0.0"
+//! ```
+//!
+//! By default, `serde` has the `std` feature enabled, which makes it
+//! unsuitable for embedded targets. Disabling default-features fixes this:
+//! ```toml
+//! serde = { version = "1.0.*", default-features = false }
+//! ```
+//! Example adapted from https://lib.rs/crates/postcard
 use std::ops::Deref;
 
 use heapless::Vec;
@@ -6,16 +21,6 @@ use postcard::from_bytes;
 use postcard::to_vec;
 use serde::Deserialize;
 use serde::Serialize;
-
-// [dependencies]
-// postcard = "1.0.0"
-
-// By default, `serde` has the `std` feature enabled, which makes it
-// unsuitable for embedded targets. Disabling default-features fixes this:
-//
-// serde = { version = "1.0.*", default-features = false }
-
-// Example from https://lib.rs/crates/postcard
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 struct RefStruct<'a> {

@@ -7,6 +7,8 @@
 // use bincode::deserialize_from;
 // use bincode::serialize_into;
 
+// /// Represents a struct that can be serialized and deserialized using
+// /// bincode.
 // #[derive(Serialize, Deserialize, Debug)]
 // struct MyData {
 //     name: String,
@@ -50,4 +52,4 @@
 //     main()?;
 //     Ok(())
 // }
-// [finish](https://github.com/john-cd/rust_howto/issues/1040)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1040)

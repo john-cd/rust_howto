@@ -1,54 +1,60 @@
 // ANCHOR: example
+//! This example demonstrates zero-cost memory manipulation with `zerocopy`.
+//!
+//! First, add the following to your `Cargo.toml`:
+//! ```toml
+//! zerocopy = { version = "0.8.14", features = ["derive"] } # or latest version
+//! ```
+//!
+//! For performance reasons, CPUs often strongly prefer or even mandate storing
+//! data in memory at addresses that are multiples of the word size (usually 4
+//! or 8 bytes). For example, on a x86 architecture, `u64` and `f64` are often
+//! aligned to 4 bytes (32 bits).
+//!
+//! In order to not waste space while still respecting the CPU's preferred
+//! alignment, the Rust compiler optimizes the layout of composite data
+//! structures (e.g. structs, tuples, arrays, enums...) when storing them in
+//! memory. It may reorder their fields, and may insert "gaps" of one or more
+//! bytes (often called padding) before, between, and after the fields.
+//! As a result, structs, enums... can't, in general, be treated as contiguous
+//! blocks of bytes.
+//!
+//! However, _some can_, given proper restrictions on layout (aka
+//! "representation") and field types. `zerocopy` performs a sophisticated,
+//! compile-time safety analysis to determine whether such zero-cost, zero-copy
+//! conversions are safe. See e.g. https://docs.rs/zerocopy/0.8.14/zerocopy/derive.IntoBytes.html#analysis
+//!
+//! For that purpose, Zerocopy provides several derivable traits: `FromBytes`,
+//! `TryFromBytes`, `FromZeros`, `Immutable`...
 
-// For performance reasons, CPUs often strongly prefer or even mandate storing
-// data in memory at addresses that are multiples of the word size (usually 4 or
-// 8 bytes). For example, on a x86 architecture, u64 and f64 are often aligned
-// to 4 bytes (32 bits).
-//
-// In order to not waste space while still respecting the CPU's preferred
-// alignment, the Rust compiler optimizes the layout of composite data
-// structures (e.g. structs, tuples, arrays, enums...) when storing them in
-// memory. It may reorder their fields, and may insert "gaps" of one or more
-// bytes (often called padding) before, between, and after the fields.
-// As a result, structs, enums... can't, in general, be treated as contiguous
-// blocks of bytes.
-//
-// However, some can, given proper restrictions on layout (aka "representation")
-// and field types. Zerocopy performs a sophisticated, compile-time safety
-// analysis to determine whether such zero-cost, zero-copy conversions are safe.
-// See e.g. https://docs.rs/zerocopy/0.8.14/zerocopy/derive.IntoBytes.html#analysis
-//
-// For that purpose, Zerocopy provides several derivable traits:
-//
+use std::mem::size_of;
+
 // `FromBytes` indicates that a type may safely be converted from an
 // arbitrary byte sequence This is useful for efficiently deserializing
 // structured data from raw bytes. Do not implement this trait yourself!
 // Instead, derive it, as we do below.
 use zerocopy::FromBytes;
 // There is also a `TryFromBytes` trait for types that may safely be
-// converted from certain byte sequences (conditional on runtime checks)
-//
+// converted from certain byte sequences (conditional on runtime checks).
+
 // `FromZeros` indicates that a sequence of zero bytes represents a valid
 // instance of a type.
 use zerocopy::FromZeros;
-// Marker trait that flags types which are free from interior mutability.
-// Required to call certain methods provided by the conversion traits:
+// `Immutable` is a marker trait that flags types which are free from
+// interior mutability.
 use zerocopy::Immutable;
-// `IntoBytes` indicates that a type may safely be converted to a byte
-// sequence initialized bytes of the same size.
+// `Immutable` is required to call certain methods provided by the
+// conversion traits: `IntoBytes` indicates that a type may safely be
+// converted to a byte sequence of initialized bytes of the same size.
 // This is useful for efficiently serializing structured data as raw bytes.
-// Do not implement this trait yourself! Instead, derive it, as we did
-// above.
+// Do not implement this trait yourself! Instead, derive it.
 use zerocopy::IntoBytes;
-// Marker trait that indicates that zerocopy can reason about certain
-// aspects of a type's layout. This trait is required by many of zerocopy's
-// APIs.
+// `KnownLayout` is a marker trait that indicates that zerocopy can reason
+// about certain aspects of a type's layout.
 use zerocopy::KnownLayout;
 
-// Add the following to your `Cargo.toml`:
-// zerocopy = { version = "0.8.14", features = ["derive"] } # or latest version
+// 1. Let's first demonstrate `FromZeros`:
 
-// Let's first demonstrate `FromZeros`:
 #[derive(FromZeros, Debug)]
 struct MyZeroableStruct {
     field: [u8; 8],
@@ -61,6 +67,7 @@ fn manipulate_zero_bytes() {
 
     let mut my_struct2 = MyZeroableStruct { field: [1; 8] };
     println!("{:?}", my_struct2);
+
     // Sets every byte in self to 0. While this is similar to doing
     // *self = Self::new_zeroed(), it differs in that zero does not semantically
     // drop the current value and replace it with a new one - it simply
@@ -69,14 +76,16 @@ fn manipulate_zero_bytes() {
     assert_eq!(my_struct2.field, [0; 8]);
 }
 
-// We then define a fictive network PacketHeader structure.
+// 2. We then define a fictive network `PacketHeader` structure.
 
 // As discussed above, all user-defined composite types (structs, enums,
 // unions...) have a representation that specifies what the layout (its size,
-// alignment, and the order / relative offsets of its fields) is for the type: https://doc.rust-lang.org/reference/type-layout.html#representations
+// alignment, and the order / relative offsets of its fields) is for the type:
+// https://doc.rust-lang.org/reference/type-layout.html#representations
+//
 // Types you expect to pass through an FFI / network boundary most often are
-// most often `repr(C)`, as C is the lingua-franca of the programming world. It
-// means that their layout is exactly that C or C++ expect.
+// most often `repr(C)`, as C is the lingua-franca of the programming world.
+// It means that their layout is exactly that C or C++ expect.
 #[repr(C)]
 // We derive the Zerocopy traits that are required to convert from / to bytes.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
@@ -87,11 +96,11 @@ struct PacketHeader {
     checksum: [u8; 2],
 }
 
-// Define a `Packet` struct.
-// Note that, in this case, the Packet's `body` is a slice, which can have
-// different lengths at runtime. Zerocopy can handle a "slice-based dynamically
-// sized type". A slice DST is a type whose trailing field is either a slice or
-// another slice DST, rather than a type with fixed size.
+/// Define a `Packet` struct.
+/// Note that, in this case, the Packet's `body` is a slice, which can have
+/// different lengths at runtime. Zerocopy can handle a "slice-based dynamically
+/// sized type". A slice DST is a type whose trailing field is either a slice or
+/// another slice DST, rather than a type with fixed size.
 #[repr(C)]
 #[derive(FromBytes, Immutable, KnownLayout)]
 struct Packet {
@@ -99,7 +108,7 @@ struct Packet {
     body: [u8],
 }
 
-// Convert the PacketHeader into bytes
+/// Convert the `PacketHeader` into bytes.
 fn into_bytes() -> anyhow::Result<()> {
     let mut header = PacketHeader {
         src_port: [0, 1],
@@ -109,11 +118,11 @@ fn into_bytes() -> anyhow::Result<()> {
     };
 
     let bytes: &mut [u8] = header.as_mut_bytes();
-    // There is also an `as_bytes` method.
+    // Note: there is also an `as_bytes` method.
 
     assert_eq!(bytes, [0, 1, 2, 3, 4, 5, 6, 7]);
+    // Note that `bytes` and `header` share the same memory.
 
-    // Note that `bytes` and `header` share the same memory
     bytes.reverse();
 
     assert_eq!(
@@ -126,7 +135,7 @@ fn into_bytes() -> anyhow::Result<()> {
         }
     );
 
-    // You can also write a copy to the destination byte array.
+    // You can also write a copy to a destination byte array.
     // If too many or too few target bytes are provided, `write_to` returns
     // `Err` and leaves the target bytes unmodified.
     let mut buf = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -140,7 +149,7 @@ fn into_bytes() -> anyhow::Result<()> {
     Ok(())
 }
 
-// Convert bytes into a Packet
+/// Convert bytes into a `Packet`.
 fn from_bytes() -> anyhow::Result<()> {
     // These bytes encode a `Packet`.
     let bytes: &[u8] = &[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][..];
@@ -155,14 +164,14 @@ fn from_bytes() -> anyhow::Result<()> {
     Ok(())
 }
 
-// Enums can also be used.
+// 3. Enums can also be used.
 
-// An enum can implement `IntoBytes`, if it has
-// - a defined representation (reprs C, u8, u16, u32, u64, usize, i8, i16, i32,
-//   i64, or isize).
-// - no padding bytes; and
-// - Its fields must be `IntoBytes`.
-// Here, the enum is field-less. It stores 0 for A, 1 for B, etc... in a byte.
+/// An enum can implement `IntoBytes`, if it has
+/// - a defined representation (reprs C, u8, u16, u32, u64, usize, i8, i16, i32,
+///   i64, or isize).
+/// - no padding bytes; and
+/// - `IntoBytes` fields.
+/// Here, the enum is field-less. It stores 0 for A, 1 for B, etc... in a byte.
 #[repr(u8)]
 #[derive(IntoBytes, Immutable)]
 enum MyEnum {
@@ -179,8 +188,8 @@ fn enums_also_work() {
     assert_eq!(bytes, [1]);
 }
 
-// Safely transmutes a value of one type
-// to a value of another type of the same size.
+/// 4. Safely transmutes a value of one type
+/// to a value of another type of the same size.
 fn transmute() {
     let one_dimensional: [u8; 8] = [0, 1, 2, 3, 4, 5, 6, 7];
     let two_dimensional: [[u8; 4]; 2] = zerocopy::transmute!(one_dimensional);

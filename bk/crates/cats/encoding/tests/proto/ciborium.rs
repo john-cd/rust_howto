@@ -1,8 +1,10 @@
 // ANCHOR: example
+//! This example show how to (de)serialize CBOR data using the ciborium crate.
 use std::io::Cursor;
 
 use ciborium::de::from_reader;
 use ciborium::ser::into_writer;
+// Import the `Serialize` and `Deserialize` traits from the serde crate.
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -13,6 +15,8 @@ struct MyData {
     is_active: bool,
 }
 
+// The main function demonstrates serializing and deserializing a struct to and
+// from CBOR.
 fn main() -> anyhow::Result<()> {
     // Create a sample data object
     let data = MyData {

@@ -13,7 +13,8 @@ struct Record<'a> {
     id: u64,
 }
 
-/// The main function that serializes `Record` structs to CSV and writes to standard output.
+/// The main function that serializes `Record` structs to CSV and writes to
+/// standard output.
 fn main() -> Result<()> {
     let mut wtr = csv::Writer::from_writer(io::stdout());
 

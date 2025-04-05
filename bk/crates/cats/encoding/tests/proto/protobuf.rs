@@ -1,21 +1,25 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates how to use the `protobuf` crate to serialize
+// //! and deserialize data using Protocol Buffers.
+// //!
+// //! In your `Cargo.toml`, add the `protobuf` crate as a dependency:
+// //! ```toml
+// //! [dependencies]
+// //! protobuf = "3.7.2" # Or latest
+// //! ```
+// //!
+// //! Compile the .proto file to generate the Rust code.
+// //! You can use the `protoc` compiler with the Rust plugin:
+// //! ```sh
+// //! protoc --rust_out=. person.proto
+// //! ```
+// //! This will generate a Rust module with the compiled code for the `Person`
+// //! message.
 
-// // In your `Cargo.toml`, add the `protobuf` crate as a dependency:
-// // [dependencies]
-// // protobuf = "3.7.2" # Or latest
-
-// // Compile the .proto file to generate the Rust code.
-// // You can use the protoc compiler with the Rust plugin
-// // ```sh
-// // protoc --rust_out=. person.proto
-// // ```
-// // This will generate a Rust module with the compiled code for the Person
-// // message.
-
-// // Import the generated code for the Person message
-// // The generated code is in the person.rs file
+// /// Import the generated code for the Person message.
+// /// The generated code is in the `person.rs` file.
 // mod person;
 
 // use person::Person;
@@ -40,9 +44,10 @@
 //     // Print the deserialized Person message
 //     println!("Deserialized person: {:?}", deserialized_person);
 // }
+// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// [finish](https://github.com/john-cd/rust_howto/issues/1045)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1045)

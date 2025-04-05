@@ -1,15 +1,19 @@
 // ANCHOR: example
+//! `serde_ignored` is a crate that helps you handle unknown fields when
+//! deserializing with `serde`. It's useful when you want to ignore fields
+//! that are present in the input but not defined in your struct.
+//!
+//! This example demonstrates how to use `serde_ignored` to deserialize a JSON
+//! object into a struct while ignoring any unknown fields.
+//!
+//! In `Cargo.toml`, add:
+//! ```toml
+//! [dependencies]
+//! serde = { version = "1.0.217", features = ["derive"] } # or latest
+//! serde_ignored = "0.1.10"
+//! serde_json = "1.0.138"
+//! ```
 use serde::Deserialize;
-
-// `serde_ignored` is a crate that helps you handle unknown fields when
-// deserializing with `serde`. It's useful when you want to ignore fields
-// that are present in the input but not defined in your struct.
-
-// In `Cargo.toml`:
-// [dependencies]
-// serde = { version = "1.0.217", features = ["derive"] } # or latest
-// serde_ignored = "0.1.10"
-// serde_json = "1.0.138"
 
 #[allow(dead_code)]
 #[derive(Deserialize, Debug)]
@@ -28,10 +32,10 @@ fn main() {
     }
     "#;
 
-    // Create a vector to store ignored fields
+    // Create a vector to store ignored fields.
     let mut ignored_fields = Vec::new();
 
-    // Deserialize the JSON data, collecting ignored fields
+    // Deserialize the JSON data, collecting ignored fields.
     let result: Result<MyStruct, _> = serde_ignored::deserialize(
         &mut serde_json::Deserializer::from_str(json_data),
         |path: serde_ignored::Path| {
@@ -40,7 +44,7 @@ fn main() {
         },
     );
 
-    // Check the result of deserialization
+    // Check the result of deserialization.
     match result {
         Ok(my_struct) => {
             println!("Deserialized struct: {:?}", my_struct);

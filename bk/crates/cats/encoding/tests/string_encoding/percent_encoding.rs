@@ -1,4 +1,16 @@
 // ANCHOR: example
+//! The following demonstrates how to use percent encoding to handle special
+//! characters in URLs.
+//!
+//! URLs use special characters to indicate the parts of the request. For
+//! example, a `?` question mark marks the end of a path and the start of a
+//! query string. Percent encoding replaces reserved characters with the `%`
+//! escape character followed by a byte value as two hexadecimal digits. For
+//! example, an ASCII space is replaced with `%20`.
+//!
+//! This example uses the NON_ALPHANUMERIC set to encode everything that is not
+//! an ASCII letter or digit.
+
 use anyhow::Result;
 use percent_encoding::AsciiSet;
 use percent_encoding::CONTROLS;
@@ -7,21 +19,14 @@ use percent_encoding::percent_decode_str;
 use percent_encoding::percent_encode;
 use percent_encoding::utf8_percent_encode;
 
-// URLs use special characters to indicate the parts of the request. For
-// example, a `?` question mark marks the end of a path and the start of a query
-// string.
-
-// Percent encoding replaces reserved characters with the `%` escape character
-// followed by a byte value as two hexadecimal digits. For example, an ASCII
-// space is replaced with `%20`.
-// This example uses the NON_ALPHANUMERIC set to encode everything that is not
-// an ASCII letter or digit.
+/// Encodes a string for use as a URL component.
 fn encode_url_component(input: &str) -> String {
     percent_encode(input.as_bytes(), NON_ALPHANUMERIC).to_string()
 }
 
-// Decode a percent-encoded string.
+/// Decodes a percent-encoded string.
 fn decode_url_component(encoded: &str) -> Result<String> {
+    // Decode the percent-encoded string and convert it to UTF-8.
     let decoded = percent_decode_str(encoded).decode_utf8()?.to_string();
     Ok(decoded)
 }
@@ -103,3 +108,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
+// TODO dedupe with other example in percent_encode

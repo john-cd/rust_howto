@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! This example demonstrates how to encode and decode a string using `base64`.
+
 use std::str;
 
 use anyhow::Result;

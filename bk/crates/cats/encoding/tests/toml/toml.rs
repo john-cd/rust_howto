@@ -1,15 +1,18 @@
 // ANCHOR: example
-use toml::Value; /* Representation of a TOML value e.g. String,
-                   * Integer, Float, Array, Table... */
-use toml::de::Error;
+//! The following demonstrates TOML decoding.
+//!
+//! TOML is a minimal configuration file format.
+//! It is designed to map unambiguously to a hash table.
 
-// TOML is a minimal configuration file format.
-// It is designed to map unambiguously to a hash table.
+// Representation of a TOML value e.g. String,
+// Integer, Float, Array, Table...
+use toml::Value;
+use toml::de::Error;
 
 fn main() -> Result<(), Error> {
     // Sample TOML.
     // Note the use of a Rust raw string,
-    // so that there is no need to escape the inner double quotes
+    // so that there is no need to escape the inner double quotes.
     let toml_content = r#"
           # This is a TOML comment
 

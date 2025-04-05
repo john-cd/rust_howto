@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! This example demonstrates how to deserialize TOML data into Rust structs.
+
 use std::collections::HashMap;
 
 use serde::Deserialize;

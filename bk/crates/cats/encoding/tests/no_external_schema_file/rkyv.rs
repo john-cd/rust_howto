@@ -1,12 +1,14 @@
 // ANCHOR: example
+//! `rkyv` (short for "archive") is a high-performance, zero-copy
+//! (de)serialization framework that allows arbitrary field types
+//! and safe zero-copy mutation.
+//!
+//! This example demonstrates how to serialize and deserialize a struct
+//! using `rkyv` without an external schema file.
 use rkyv::Archive;
 use rkyv::Deserialize;
 use rkyv::Serialize;
 use rkyv::rancor::Error;
-
-// `rkyv` (short for "archive") is a high-performance, zero-copy
-// (de)serialization framework that allows arbitrary field types
-// and safe zero-copy mutation.
 
 #[derive(Archive, Deserialize, Serialize, Debug)]
 struct MyStruct {
@@ -15,19 +17,19 @@ struct MyStruct {
 }
 
 fn main() -> anyhow::Result<()> {
-    // Create an instance of MyStruct
+    // Create an instance of `MyStruct`.
     let data = MyStruct {
         field1: "Hello, world!".to_string(),
         field2: 42,
     };
 
-    // Serialize the data to a byte array
+    // Serialize the data to a byte array.
     let buffer = rkyv::to_bytes::<Error>(&data)?;
 
-    // Print the serialized data
+    // Print the serialized data.
     println!("Serialized data: {:?}", buffer);
 
-    // Deserialize the data from the byte array
+    // Deserialize the data from the byte array.
     let deserialized_data = rkyv::from_bytes::<MyStruct, Error>(&buffer[..])?;
 
     println!("{:?}", deserialized_data);
