@@ -1,6 +1,6 @@
 // ANCHOR: example
 // Disables the `dead_code` lint
-#[allow(dead_code)]
+#![allow(dead_code)]
 
 /// This function is defined but never called.
 ///

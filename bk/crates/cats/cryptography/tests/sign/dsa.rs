@@ -9,7 +9,6 @@ use p256::elliptic_curve::rand_core::OsRng;
 /// This example demonstrates the use of the ECDSA (Elliptic Curve Digital
 /// Signature Algorithm) with the P-256 curve for signing and verifying a
 /// message. It uses the `p256` crate for cryptographic operations.
-
 fn main() {
     // Generate a signing key:
     let signing_key = SigningKey::random(&mut OsRng);

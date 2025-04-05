@@ -3,7 +3,6 @@ use std::fs::File;
 use std::fs::create_dir_all;
 use std::io::Write;
 use std::path::Path;
-use std::path::PathBuf;
 
 use anyhow::Context;
 use anyhow::Result;
