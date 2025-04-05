@@ -1,4 +1,13 @@
 // ANCHOR: example
+//! Example of sending an email using the `lettre` crate.
+//!
+//! This example demonstrates how to construct an email message,
+//! configure an SMTP transport, and send the email.
+//!
+//! **Note:** This example requires valid SMTP credentials to run.
+//! You will need to replace `"smtp_username"` and `"smtp_password"`
+//! with your actual credentials.
+
 use lettre::Message;
 use lettre::SmtpTransport;
 use lettre::Transport;
