@@ -1,40 +1,41 @@
 // ANCHOR: example
+//! `dhat` provides heap profiling and ad-hoc profiling capabilities,
+//! similar to those provided by `DHAT`, a powerful heap profiler that
+//! comes with `Valgrind`. Warning: This crate is experimental.
+//!
+//! First, add to your `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! dhat = "0.3.3"
+//!
+//! # You should only use `dhat` in release builds.
+//! [profile.release]
+//! debug = 1
+//!
+//! # Create features that lets you easily switch profiling on and off:
+//! [features]
+//! dhat-heap = []    # if you are doing heap profiling
+//! dhat-ad-hoc = []  # if you are doing ad hoc profiling
+//! ```
 
-// `dhat` provides heap profiling and ad-hoc profiling capabilities to Rust,
-// similar to those provided by `DHAT`, a powerful heap profiler that
-// comes with `Valgrind`. Warning: This crate is experimental.
-
-// First, add to your `Cargo.toml`:
-// [dependencies]
-// dhat = "0.3.3"
-//
-// # You should only use `dhat` in release builds.
-// [profile.release]
-// debug = 1
-//
-// # Create features that lets you easily switch profiling on and off:
-// [features]
-// dhat-heap = []    # if you are doing heap profiling
-// dhat-ad-hoc = []  # if you are doing ad hoc profiling
-
-// The heap profiling works by using a global allocator that wraps the system
-// allocator and tracks all heap allocations.
-// We set `dhat::Alloc` as the global allocator
-// using the #[global_allocator] attribute.
+/// The heap profiling works by using a global allocator that wraps the system
+/// allocator and tracks all heap allocations.
+/// We set `dhat::Alloc` as the global allocator
+/// using the `#[global_allocator]` attribute.
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
 
-// When you run the code below with:
-// cargo run --features dhat-heap
-// `dhat` will collect heap profiling information.
-// The profiling data will be saved in a file named `dhat-heap.json`
-// in the current directory. You can then use e.g.
-// https://nnethercote.github.io/dh_view/dh_view.html
-// to analyze the profiling data.
-// The profiler also prints to `stderr`, like:
-// dhat: Total:     9,200 bytes in 10 blocks (note: "block" = allocation)
-// dhat: At t-gmax: 5,120 bytes in 2 blocks
-// dhat: At t-end:  1,024 bytes in 1 blocks
+/// When you run the code below with:
+/// cargo run --features dhat-heap
+/// `dhat` will collect heap profiling information.
+/// The profiling data will be saved in a file named `dhat-heap.json`
+/// in the current directory. You can then use e.g.
+/// https://nnethercote.github.io/dh_view/dh_view.html
+/// to analyze the profiling data.
+/// The profiler also prints to `stderr`, like:
+/// dhat: Total:     9,200 bytes in 10 blocks (note: "block" = allocation)
+/// dhat: At t-gmax: 5,120 bytes in 2 blocks
+/// dhat: At t-end:  1,024 bytes in 1 blocks
 fn heap_profiling() {
     // Start the heap profiling session
     #[cfg(feature = "dhat-heap")]
@@ -50,12 +51,12 @@ fn heap_profiling() {
     println!("Memory profiling complete!");
 }
 
-// Ad hoc profiling involves manually annotating hot code points.
-// Run with: cargo run --features dhat-ad-hoc
-// The profiler prints to `stderr`:
-// dhat: Total:     100,000 units in 100,000 events
-// dhat: The data has been saved to dhat-ad-hoc.json, and is viewable with
-// dhat/dh_view.html
+/// Ad hoc profiling involves manually annotating hot code points.
+/// Run with: cargo run --features dhat-ad-hoc
+/// The profiler prints to `stderr`:
+/// dhat: Total:     100,000 units in 100,000 events
+/// dhat: The data has been saved to dhat-ad-hoc.json, and is viewable with
+/// dhat/dh_view.html
 fn adhoc_profiling() {
     #[cfg(feature = "dhat-ad-hoc")]
     let _profiler = dhat::Profiler::new_ad_hoc();
@@ -75,8 +76,8 @@ pub fn main() {
     adhoc_profiling();
 }
 
-// `dhat` also supports heap usage testing, where you can write tests and then
-// check that they allocated as much heap memory as you expected.
+/// `dhat` also supports heap usage testing, where you can write tests and then
+/// check that they allocated as much heap memory as you expected.
 #[test]
 fn heap_usage_testing() {
     // `testing()` allows the use of dhat::assert! and related macros,
