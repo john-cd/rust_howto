@@ -1,12 +1,12 @@
 // ANCHOR: example
 use proptest::prelude::*;
 
-// A simple function to test: finds the maximum of two integers
+/// A simple function to test: finds the maximum of two integers
 fn max_of_two(a: i32, b: i32) -> i32 {
     if a > b { a } else { b }
 }
 
-// A function to test: checks if a number is even
+/// A function to test: checks if a number is even
 fn is_even(n: i32) -> bool {
     n % 2 == 0
 }
@@ -15,8 +15,13 @@ fn is_even(n: i32) -> bool {
 mod tests {
     use super::*;
 
-    // Property test for max_of_two function
+    // Tests the `max_of_two` function using property-based testing.
+    //
+    // This test checks two properties:
+    // 1. The result is greater than or equal to both inputs.
+    // 2. The result is equal to one of the inputs.
     proptest! {
+
         // Generate random integers in the range -1000 to 1000
         #[test]
         fn test_max_of_two(a in -1000..1000, b in -1000..1000) {
@@ -31,7 +36,12 @@ mod tests {
         }
     }
 
-    // Property test for is_even function
+    // Tests the `is_even` function using property-based testing.
+    //
+    // This test checks several properties:
+    // 1. `is_even(n)` should be true if and only if `n % 2 == 0`.
+    // 2. `is_even(n + 2)` should be equal to `is_even(n)`.
+    // 3. `is_even(n * 2)` should always be true.
     proptest! {
         // Generate integers across a wide range
         #[test]
@@ -45,9 +55,14 @@ mod tests {
         }
     }
 
-    // Example of generating and testing more complex structures
+    // Example of generating and testing more complex structures:
+    //
+    // This test checks the following property:
+    //
+    // After sorting a vector, all adjacent pairs of elements should be in
+    // non-decreasing order.
     proptest! {
-        // Generate a vector of random integers
+        /// Generate a vector of random integers
         #[test]
         fn test_vec_operations(
             mut vec in prop::collection::vec(0..100, 1..20)
@@ -55,7 +70,7 @@ mod tests {
             // Sort the vector
             vec.sort();
 
-            // Property tests on sorted vector
+            // Property tests on sorted vector.
             prop_assert!(vec.windows(2).all(|w| w[0] <= w[1]));
         }
     }

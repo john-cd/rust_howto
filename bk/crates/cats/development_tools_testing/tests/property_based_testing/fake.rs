@@ -2,6 +2,10 @@
 // ANCHOR: example
 // COMING SOON
 // ANCHOR_END: example
+//! This example demonstrates how to use the `fake` crate to generate fake data
+//! for testing. It covers basic usage, generating data for custom structs, and
+//! using different data providers.
+
 // Trait that generates fake values given a type that implements `Dummy`.
 use fake::Fake;
 // Generate default fake value for given type using `Fake`.
@@ -17,7 +21,7 @@ use fake::faker::lorem::en::Sentence;
 use fake::faker::name::en::FirstName;
 use fake::faker::name::en::LastName;
 
-// A structure to represent a User
+// A structure to represent a User.
 #[derive(Debug)]
 struct User {
     id: u64,
@@ -28,7 +32,7 @@ struct User {
     active: bool,
 }
 
-// A structure to represent an Order
+// A structure to represent an Order.
 #[derive(Debug)]
 struct Order {
     id: u64,
@@ -47,12 +51,12 @@ struct Address {
 }
 
 fn main() {
-    // Use `Faker` to generate default fake value of given type
+    // Use `Faker` to generate default fake value of given type.
     let tuple = Faker.fake::<(u8, u32, f32)>();
     println!("Tuple: {:?}", tuple);
     println!("String: {}", Faker.fake::<String>());
 
-    // Generate a random user
+    // Generate a random user.
     let user = User {
         id: Faker.fake(),
         first_name: FirstName().fake(),
@@ -63,7 +67,7 @@ fn main() {
     };
     println!("Generated User: {:#?}", user);
 
-    // Generate multiple random users
+    // Generate multiple random users.
     let users: Vec<User> = (0..5)
         .map(|_| User {
             id: Faker.fake(),
@@ -76,7 +80,7 @@ fn main() {
         .collect();
     println!("Generated Users: {:#?}", users);
 
-    // Generate a random order with random items
+    // Generate a random order with random items.
     let order = Order {
         id: Faker.fake(),
         user_id: user.id,
@@ -95,12 +99,12 @@ fn main() {
     };
     println!("Generated Order: {:#?}", order);
 
-    // Generate random sentences
+    // Generate random sentences.
     let sentences: Vec<String> =
         (0..3).map(|_| Sentence(3..10).fake()).collect();
     println!("Random Sentences: {:#?}", sentences);
 
-    // Generate random user agents
+    // Generate random user agents.
     let user_agents: Vec<String> = (0..3).map(|_| UserAgent().fake()).collect();
     println!("User Agents: {:#?}", user_agents);
 }
