@@ -1,18 +1,22 @@
 // ANCHOR: example
+//! `syn` is a library for parsing Rust code into a syntax tree.
+//! It is used in procedural macros to manipulate Rust code at compile time.
+//!
+//! `syn` takes Rust code as input (typically a `TokenStream`, which represents
+//! a sequence of tokens in Rust code) and transforms it into an Abstract Syntax
+//! Tree (AST). This AST is represented by a set of `syn` data structures that
+//! mirror the grammatical structure of Rust. For example, you'll find structs
+//! in `syn` representing items (like functions, structs, enums), expressions,
+//! statements, attributes, and more. You can then easily traverse the AST,
+//! inspect different parts of the code and modify it.
 use anyhow::Context;
 use quote::quote;
 use syn::Expr;
 use syn::ItemFn;
 use syn::Result;
 
-// `syn`` takes Rust code as input (typically a `TokenStream`, which represents
-// a sequence of tokens in Rust code) and transforms it into an Abstract Syntax
-// Tree (AST). This AST is represented by a set of `syn` data structures that
-// mirror the grammatical structure of Rust. For example, you'll find structs in
-// `syn` representing items (like functions, structs, enums), expressions,
-// statements, attributes, and more. You can then easily traverse the AST,
-// inspect different parts of the code and modify it.
-
+/// Parse a simple expression - here, an assertion,
+/// and print it.
 fn simple() -> Result<()> {
     let code = "assert_eq!(u8::max_value(), 255)";
     let expr = syn::parse_str::<Expr>(code)?;
@@ -20,6 +24,7 @@ fn simple() -> Result<()> {
     Ok(())
 }
 
+/// Parse a function and modify it.
 fn m() -> anyhow::Result<()> {
     // Example Rust code to parse
     let code = r#"
@@ -28,8 +33,7 @@ fn m() -> anyhow::Result<()> {
         }
     "#;
 
-    // Parse the code into a syntax tree
-    // Parse a string of Rust code into the chosen syntax tree node.
+    // Parse the code into a syntax tree.
     let ast: ItemFn = syn::parse_str(code).context("Failed to parse code")?;
 
     // Manipulate the syntax tree (e.g., change the function body)
@@ -47,12 +51,12 @@ fn m() -> anyhow::Result<()> {
         ..ast
     };
 
-    // Generate the new code
+    // Generate the new code.
     let generated_code = quote! {
         #new_fn
     };
 
-    // Print the generated code
+    // Print the generated code.
     println!("{}", generated_code);
 
     Ok(())
