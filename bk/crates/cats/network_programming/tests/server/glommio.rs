@@ -1,5 +1,12 @@
 // ANCHOR: example
 #![cfg(target_os = "linux")]
+//! This example demonstrates the usage of the `glommio` library for
+//! asynchronous I/O operations in Rust.
+//!
+//! `glommio` is a library providing a safe Rust interface for asynchronous,
+//! thread-local I/O, based on the Linux `io_uring` interface plus Rust's async
+//! support. `glommio` is therefore Linux-only, with a kernel version 5.8 or
+//! newer recommended.
 
 use std::fs::File;
 use std::io::Write;
@@ -12,20 +19,18 @@ use glommio::Shares;
 // use glommio::Task;
 use glommio::executor;
 
-// `glommio` is a library providing a safe Rust interface for asynchronous,
-// thread-local I/O, based on the Linux `io_uring` interface plus Rust's async
-// support. `glommio` is therefore Linux-only, with a kernel version 5.8 or
-// newer recommended.
-
+/// The `main` function demonstrates the basic usage of `glommio` for file I/O
+/// and task scheduling. It creates a file, writes data to it, and then
+/// demonstrates how to use task queues for cooperative multitasking.
 fn main() {
     // Spawn a new LocalExecutor in a new thread with a given task.
     LocalExecutorBuilder::default()
         .spawn(|| async move {
-            // Create a new file or open an existing one
+            // Create a new file or open an existing one:
             let mut file = File::create("temp/example3.txt")
                 .expect("Failed to create file");
 
-            // Write some data to the file
+            // Write some data to the file:
             file.write_all(b"Hello, Glommio!")
                 .expect("Failed to write to file");
         })
@@ -81,6 +86,7 @@ fn main() {
             t2.await;
         })
         .unwrap();
+    println!("glommio example finished");
 }
 // Example adapted from https://docs.rs/glommio/latest/glommio/
 // ANCHOR_END: example

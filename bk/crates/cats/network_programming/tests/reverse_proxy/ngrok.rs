@@ -1,6 +1,15 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates a simple HTTP server that can be exposed to the
+// //! internet using `ngrok`.
+// //!
+// //! ## Usage
+// //!
+// //! 1.  Install ngrok e.g. `brew install ngrok`
+// //! 2.  Run the server: `cargo test --test ngrok`
+// //! 3.  Start ngrok: `ngrok http 3000`
+// //! 4.  Access the server from the internet using the ngrok URL.
 
 // use std::convert::Infallible;
 
