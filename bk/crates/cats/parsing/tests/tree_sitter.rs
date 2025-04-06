@@ -143,7 +143,7 @@
 //         let left_node = left_capture.node;
 //         let right_node = right_capture.node;
 //         let left_name =
-//             
+//
 // &code_with_predicate[left_node.start_byte()..left_node.end_byte()];
 //         let right_value = &code_with_predicate
 //             [right_node.start_byte()..right_node.end_byte()];
