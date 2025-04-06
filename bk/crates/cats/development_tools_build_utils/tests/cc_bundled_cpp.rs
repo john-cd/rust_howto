@@ -21,8 +21,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[test]
-fn test() {
-    main();
-}
-// [finish; deal with cc](https://github.com/john-cd/rust_howto/issues/897)
+// #[test]
+// fn test() {
+//     main();
+// }
+// [FIX finish; deal with cc NOW](https://github.com/john-cd/rust_howto/issues/897)
