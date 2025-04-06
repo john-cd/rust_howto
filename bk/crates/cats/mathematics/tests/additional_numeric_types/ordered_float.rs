@@ -1,13 +1,18 @@
 // ANCHOR: example
 #![allow(clippy::approx_constant)]
+
 use std::collections::BTreeMap;
 
 use ordered_float::OrderedFloat;
 
-// The `ordered-float` crate to handle floating-point numbers that can be used
-// as keys in ordered collections like `BTreeMap`. The `OrderedFloat` type
-// ensures that comparisons involving NaN (Not-a-Number) values are consistent
-// with the requirements for ordered collections.
+/// The `ordered-float` crate provides a wrapper type `OrderedFloat` for
+/// floating-point numbers that can be used as keys in ordered collections
+/// like `BTreeMap`.
+///
+/// The standard floating-point types (f32, f64) do not implement `Ord` because
+/// NaN (Not-a-Number) values do not have a well-defined ordering.
+/// `OrderedFloat` ensures that comparisons involving NaN values are consistent
+/// with the requirements for ordered collections.
 fn main() {
     // Create a BTreeMap with OrderedFloat keys
     let mut map: BTreeMap<OrderedFloat<f64>, &str> = BTreeMap::new();

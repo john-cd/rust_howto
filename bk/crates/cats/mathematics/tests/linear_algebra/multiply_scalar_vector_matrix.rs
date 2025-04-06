@@ -1,4 +1,7 @@
 // ANCHOR: example
+//! This example demonstrates how to multiply a scalar by a vector and then
+//! multiply a matrix by the resulting vector.
+
 use ndarray::Array1;
 use ndarray::arr1;
 use ndarray::arr2;

@@ -1,9 +1,15 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-// // #![feature(generic_const_exprs)]
+// //! # Type-Level Numbers with `typenum`
+// //!
+// //! This example demonstrates the use of the `typenum` crate to perform
+// //! type-level arithmetic and define structures with compile-time
+// //! dimensions.
+// #![feature(generic_const_exprs)]
+
 // use std::marker::PhantomData;
-// use std::ops::Index;
+// // use std::ops::Index;
 // use std::ops::IndexMut;
 
 // use typenum::NonZero;
@@ -16,22 +22,23 @@
 // use typenum::Unsigned;
 
 // // `typenum` provides type-level numbers evaluated at compile time.
-// // It depends only on libcore.
+// // It depends only on `libcore`.
 
 // // Define a generic struct that uses type-level numbers
 // // without runtime overhead.
 
-// // TAKE 1
-
+// /// ## Assertions
+// ///
+// /// The `Assert` struct and `IsTrue` trait are used to perform compile-time
+// /// assertions.
 // struct Assert<const COND: bool> {}
 // trait IsTrue {}
 
 // impl IsTrue for Assert<true> {}
 
+// /// ## Matrix (Take 1)
 // // struct Matrix<T, R, C, const N: usize>
-// // where
-// //     R: Unsigned + NonZero,
-// //     C: Unsigned + NonZero,
+// // where R: Unsigned + NonZero, C: Unsigned + NonZero,
 // //     Assert<{ Self::N == R::USIZE * C::USIZE }>: IsTrue,
 // // {
 // //     data: [T; N],
@@ -41,10 +48,10 @@
 // // }
 
 // // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero, const N: usize>
-// Matrix<T, R, C, N> // {
+// // Matrix<T, R, C, N>  {
 // //     fn new(data: [T; N]) -> Self {
 // //         assert_eq!(data.len(), R::to_usize() * C::to_usize()); //
-// guaranteed! //         Matrix {
+// // guaranteed! //         Matrix {
 // //             data,
 // //             rows: PhantomData,
 // //             cols: PhantomData,
@@ -75,23 +82,32 @@
 // //     IndexMut<(usize, usize)> for Matrix<T, R, C, N>
 // // {
 // //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut
-// Self::Output { //         let index = row * self.cols() + col;
+// // Self::Output {
+// //         let index = row * self.cols() + col;
 // //         &mut self.data[index]
 // //     }
 // // }
 
-// // TAKE 2
-// struct Matrix<T, R, C>
-// {
-//     // Use PhantomData to track the type-level dimensions
+// /// ## Matrix (Take 2)
+// ///
+// /// This is a refined version of the `Matrix` struct that uses type-level
+// /// numbers to define its dimensions.
+// struct Matrix<T, R, C> {
+//     /// Use PhantomData to track the type-level dimensions
 //     rows: PhantomData<R>,
+//     /// Use PhantomData to track the type-level dimensions
 //     cols: PhantomData<C>,
-//     data: *const T, // requires unsafe
+//     /// A raw pointer to the underlying data. This requires `unsafe`
+//     /// operations when accessing the data.
+//     data: *const T,
 // }
 
+// /// ## RightSized Trait
+// ///
+// /// This trait ensures that the matrix data has the correct size.
 // trait RightSized<T, const N: usize> {
-//     //const N: usize;
-//     //type D; // = [T; Self::N]; // unstable default associated type
+//     // const N: usize;
+//     // type D; // = [T; Self::N]; // unstable default associated type
 //     fn new(data: [T; N]) -> Self;
 // }
 
@@ -103,9 +119,10 @@
 // {
 //     // const N: usize = R::USIZE * C::USIZE;
 //     // type D = [T; {R::USIZE * C::USIZE}]; // unstable generic params in
-// const expressions     fn new(data: [T; N]) -> Self   // [T; Self::N] does not
-// work     {
-//      Matrix {
+//     // const expressions
+//     fn new(data: [T; N]) -> Self // [T; Self::N] does not work
+//     {
+//         Matrix {
 //             data: data.as_ptr(),
 //             rows: PhantomData,
 //             cols: PhantomData,
@@ -113,10 +130,14 @@
 //     }
 // }
 
+// // ## Matrix Implementation
+// //
+// // This implementation provides methods to get the number of rows and
+// // columns of the matrix.
 // impl<T, R, C> Matrix<T, R, C>
-//   where
-//       R: Unsigned + NonZero,
-//       C: Unsigned + NonZero,
+// where
+//     R: Unsigned + NonZero,
+//     C: Unsigned + NonZero,
 // {
 //     const LEN: usize = R::USIZE * C::USIZE;
 
@@ -127,7 +148,6 @@
 //     fn cols(&self) -> usize {
 //         C::USIZE
 //     }
-
 // }
 
 // // impl<T, R: Unsigned + NonZero, C: Unsigned + NonZero>
@@ -145,11 +165,13 @@
 // //     IndexMut<(usize, usize)> for Matrix<T, R, C>
 // // {
 // //     fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut
-// Self::Output { //         let index = row * self.cols() + col;
+// // Self::Output { //         let index = row * self.cols() + col;
 // //         &mut self.data[index]
 // //     }
 // // }
 
+// /// This function demonstrates the use of type-level numbers and the `Matrix`
+// /// struct.
 // fn main() {
 //     // Define type-level integers
 //     type Two = U2;
@@ -166,9 +188,9 @@
 //     // Type-level assertions
 //     assert_eq!(Five::to_i32(), 5);
 
-//     // // Create a 2x3 matrix
-//     // let mut matrix_2x3: Matrix<f64, U2, U3, 6> =
-//     //     Matrix::new([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
+//     // Create a 2x3 matrix
+//     let mut matrix_2x3: Matrix<f64, U2, U3> =
+//         Matrix::new([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
 
 //     // println!("Matrix 2x3 element at (1,2): {}", matrix_2x3[(1, 2)]);
 
@@ -177,16 +199,17 @@
 //     // Compile-time dimension checking - can't have negative number of rows
 //     // Uncomment to see compile-time error
 //     // let invalid_matrix = Matrix::<typenum::N2, U2>::new([1.0, 2.0, 3.0,
-// 4.0,     // 5.0, 6.0]);
+//     // 4.0,     // 5.0, 6.0]);
 // }
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // TODO improve
+// // TODO FINISH NOW
 // // https://users.rust-lang.org/t/making-a-type-level-type-function-with-typenum-crate/107008
 // // https://github.com/paholg/typenum/tree/main
+// // https://docs.rs/typenum/latest/typenum/
 // // https://crates.io/crates/generic-array/
 
 // // Need #![feature(generic_const_exprs)] and the nightly toolchain?

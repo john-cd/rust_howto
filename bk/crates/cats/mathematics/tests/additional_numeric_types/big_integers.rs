@@ -1,8 +1,11 @@
 // ANCHOR: example
+//! Demonstrates big integer manipulation.
+
 use num::bigint::BigInt;
 use num::bigint::ToBigInt;
 
-fn factorial(x: i32) -> BigInt {
+/// Calculates the factorial of a non-negative integer using `BigInt`.
+fn factorial(x: u32) -> BigInt {
     if let Some(mut factorial) = 1.to_bigint() {
         for i in 1..=x {
             factorial *= i;
