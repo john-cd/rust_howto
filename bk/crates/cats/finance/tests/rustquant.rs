@@ -1,6 +1,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates how to use the `RustQuant` library to price
+// //! European call and put options using the Black-Scholes-Merton model.
+// //!
+// //! ## Prerequisites
+// //!
+// //! Ensure you have the `RustQuant` library added as a dependency in your
+// //! `Cargo.toml` file.
 
 // use RustQuant::prelude::*;
 
@@ -12,9 +19,13 @@
 //     let volatility = 0.2; // Volatility of the underlying asset
 //     let risk_free_rate = 0.05; // Risk-free interest rate
 
-//     // Create a Black-Scholes model
-// BlackScholesMertonBuilder
+//     let cost_of_carry = 0.0; // Cost of carry (e.g., dividend yield)
+//     let underlying_price = spot_price;
+//     let evaluation_date = 0.0; // Assuming today is time 0
+//     let expiration_date = time_to_maturity;
+//     let option_type = OptionType::Call; // Example: Call option
 
+//     // Create a Black-Scholes-Merton model instance
 //     let bs = BlackScholesMerton::new(
 //         cost_of_carry,
 //         underlying_price,
@@ -23,7 +34,7 @@
 //         risk_free_rate,
 //         evaluation_date,
 //         expiration_date,
-//         option_type
+//         option_type,
 //     );
 
 //     // Calculate the price of a European call option
