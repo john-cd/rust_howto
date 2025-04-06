@@ -1,9 +1,16 @@
 // ANCHOR: example
 // COMING SOON
 // ANCHOR_END: example
+//! This example demonstrates how to use the `Either` enum from the `either`
+//! crate.
+//!
+//! The `Either` enum is a type that represents a value that can be one of two
+//! possible types. It is commonly used in functional programming to handle
+//! situations where a function might return one of two different types.
+
 use either::Either;
 
-// Function that can return two different types
+// Function that can return two different types.
 fn process_input(value: i32) -> Either<String, i32> {
     if value > 0 {
         Either::Right(value * 2)

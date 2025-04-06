@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Demonstrates the use of `?`.
+
 use std::fs::File;
 use std::io;
 use std::io::Read;

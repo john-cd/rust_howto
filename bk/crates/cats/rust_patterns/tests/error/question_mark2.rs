@@ -30,6 +30,11 @@ fn main() {
         Ok(port) => println!("Port: {}", port),
         Err(err) => panic!("{}", err),
     }
+    // Test with an invalid port number (zero).
+    // match parse_port("0") {
+    //     Ok(port) => println!("Port: {}", port),
+    //     Err(err) => panic!("{}", err),
+    // }
 }
 // ANCHOR_END: example
 

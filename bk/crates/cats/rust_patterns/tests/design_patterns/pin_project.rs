@@ -1,6 +1,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! # Pin Project Design Pattern
+// //!
+// //! The following demonstrates the use of the `pin_project` crate to create
+// //! structs and enums that can be safely pinned in memory. Pinning is a
+// //! mechanism that guarantees that the memory location of a value will not
+// //! change, which is crucial for self-referential data structures and
+// //! asynchronous programming.
 // use std::fmt::Debug;
 // use std::marker::PhantomPinned;
 // use std::pin::Pin;
@@ -8,7 +15,11 @@
 // use pin_project::pin_project;
 // use pin_project::pinned_drop;
 
-// // Basic example: a struct with a field that requires pinning
+// /// ## Basic Pinned Struct
+// ///
+// /// This struct demonstrates the basic usage of `#[pin_project]` to create a
+// /// struct with a field that requires pinning (marked by the `#[pin]`
+// /// attribute).
 // #[pin_project]
 // struct BasicPinned<T, U> {
 //     #[pin]
@@ -16,7 +27,11 @@
 //     unpinned: U,
 // }
 
-// // Example with type parameters and where clauses
+// /// ## Generic Pinned Struct
+// ///
+// /// This struct shows how to use `#[pin_project]` on types with type
+// /// parameters and `where` clauses. The `#[pin]` attribute is used to mark
+// /// the field that needs to be pinned.
 // #[pin_project]
 // struct GenericPinned<T, U>
 // where
@@ -28,7 +43,12 @@
 //     unpinned_field: U,
 // }
 
-// // Example with custom drop implementation
+// /// ## Pinned Struct with Custom Drop
+// ///
+// /// This struct demonstrates how to use `#[pin_project(PinnedDrop)]` to
+// /// create a struct with a custom `drop` implementation. The `#[pinned_drop]`
+// /// attribute is used to mark the `impl` block that contains the custom
+// /// `drop` implementation.
 // #[pin_project(PinnedDrop)]
 // struct PinnedWithDrop<T> {
 //     #[pin]
@@ -46,7 +66,11 @@
 //     }
 // }
 
-// // Example with a self-referential struct
+// /// ## Self-Referential Struct
+// ///
+// /// This struct demonstrates how to create a self-referential struct using
+// /// `#[pin_project]`. The `PhantomPinned` marker is used to indicate that the
+// /// struct is not `Unpin`.
 // #[pin_project]
 // struct SelfReferential {
 //     #[pin]
@@ -81,7 +105,11 @@
 //     }
 // }
 
-// // Example with projection and enum
+// /// ## Pinned Enum
+// ///
+// /// This enum demonstrates how to use `#[pin_project(project = EnumProj)]` to
+// /// create an enum with fields that require pinning. The `#[pin]` attribute
+// /// is used to mark the fields that need to be pinned.
 // #[pin_project(project = EnumProj)]
 // enum PinnedEnum<T, U> {
 //     Variant1(#[pin] T, U),
@@ -94,15 +122,15 @@
 //         match self.project() {
 //             EnumProj::Variant1(pinned, unpinned) => {
 //                 println!("Processing Variant1 with unpinned: {:?}",
-// unpinned);                 // pinned is Pin<&mut T>
-//                 // unpinned is &mut U
+// unpinned);                 // `pinned` is `Pin<&mut T>`,
+//                 // `unpinned` is `&mut U`.
 //             }
 //             EnumProj::Variant2(pinned) => {
-//                 // pinned is Pin<&mut T>
+//                 // `pinned` is `Pin<&mut T>`.
 //                 println!("Processing Variant2");
 //             }
 //             EnumProj::Variant3(unpinned) => {
-//                 // unpinned is &mut U
+//                 // `unpinned` is `&mut U`.
 //                 println!("Processing Variant3 with unpinned: {:?}",
 // unpinned);             }
 //         }
@@ -110,7 +138,7 @@
 // }
 
 // fn main() {
-//     // Example 1: Basic pinned struct
+//     // Example 1: Basic pinned struct.
 //     let mut basic = BasicPinned {
 //         pinned: String::from("pinned data"),
 //         unpinned: 42,
@@ -119,36 +147,36 @@
 //     let mut pinned_basic = unsafe { Pin::new_unchecked(&mut basic) };
 //     let projection = pinned_basic.as_mut().project();
 
-//     // projection.pinned is Pin<&mut String>
-//     // projection.unpinned is &mut i32
+//     // `projection.pinned` is `Pin<&mut String>`.
+//     // `projection.unpinned` is `&mut i32`.
 //     *projection.unpinned += 1;
 //     println!("Updated unpinned value: {}", projection.unpinned);
 
-//     // Example 2: Self-referential struct
+//     // Example 2: Self-referential struct.
 //     let mut self_ref =
 //         SelfReferential::new(String::from("self-referential data"));
 
-//     // Pin the struct to the stack
+//     // Pin the struct to the stack.
 //     let mut pinned_self_ref = unsafe { Pin::new_unchecked(&mut self_ref) };
 
-//     // Initialize the self-reference
+//     // Initialize the self-reference.
 //     pinned_self_ref.as_mut().init();
 
-//     // Access the data through the self-reference
+//     // Access the data through the self-reference.
 //     let ptr = pinned_self_ref.as_ref().get_pointer();
 //     let value = pinned_self_ref.as_ref().get_value();
 
 //     println!("Value: {}", value);
 //     println!("Pointer points to value: {}", unsafe { &*ptr });
 
-//     // Example 3: Enum
+//     // Example 3: Enum.
 //     let mut enum_value =
 //         PinnedEnum::Variant1(String::from("pinned enum data"), 123);
 //     let mut pinned_enum = unsafe { Pin::new_unchecked(&mut enum_value) };
 
 //     pinned_enum.as_mut().process();
 
-//     // Example 4: Custom drop
+//     // Example 4: Custom `drop`.
 //     let _pinned_drop = PinnedWithDrop {
 //         pinned_field: 42,
 //         unpinned_field: String::from("will be dropped"),

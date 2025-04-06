@@ -1,15 +1,18 @@
 // ANCHOR: example
+//! This example demonstrates basic error handling in Rust using the `Result`
+//! type.
+
 use std::io;
 use std::io::BufRead;
 
 fn main() {
-    // A `Cursor` behaves like a `File` (but wraps a in-memory buffer).
+    // A `Cursor` behaves like a `File` but wraps an in-memory buffer.
     let mut my_cursor = io::Cursor::new(b"foo\nbar");
     let mut my_string = String::new();
 
-    // `readline` reads all bytes until a newline (the 0xA byte) is reached, and
-    // append them to the provided String. `readline` returns a `Result`
-    // value, which is either success (`Ok`) or failure (`Err`).
+    // `read_line` reads all bytes until a newline (the 0xA byte) is reached,
+    // and append them to the provided String. `read_line` returns a
+    // `Result` value, which is either success (`Ok`) or failure (`Err`).
     let result: Result<usize, std::io::Error> =
         my_cursor.read_line(&mut my_string);
 

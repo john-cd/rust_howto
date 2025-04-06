@@ -1,14 +1,18 @@
 #![allow(dead_code)]
 // ANCHOR: example
 
+// Import the `Error` derive macro from the `thiserror` crate.
 use thiserror::Error;
 
+/// Define a custom error type `DataStoreError` using the `thiserror` crate.
+/// The `Error` derive macro automatically implements the `std::error::Error`
+/// trait.
 #[derive(Error, Debug)]
 pub enum DataStoreError {
-    // A Display impl is generated for your error if you provide
-    // #[error("...")] messages on the struct or each variant of your enum
+    // A `Display` impl is generated for your error if you provide
+    // #[error("...")] messages on the struct or each variant of your enum.
     #[error("data store disconnected")]
-    Disconnect(#[from] std::io::Error), /* A From impl is generated for
+    Disconnect(#[from] std::io::Error), /* A `From` impl is generated for
                                          * each variant containing
                                          * a #[from] attribute. */
 
@@ -28,7 +32,8 @@ pub enum DataStoreError {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Return an error:
+    // For demonstration purposes, return an error of type
+    // `DataStoreError::Unknown`.
     Err(DataStoreError::Unknown)?;
     Ok(())
 }

@@ -1,27 +1,35 @@
 // ANCHOR: example
+//! # Immutable Data Structures with `im`
+//!
+//! The `im` crate provides immutable data structures.
+//! These data structures are especially useful in functional
+//! programming, where data is not modified in place but rather
+//! new data structures are created with the desired changes.
+//!
+//! This said, `im` provides a safe default choice for the most common kinds of
+//! data structures, allowing you to defer careful thinking about the right data
+//! structure for the job until you need to start looking for optimizations.
+//! Most operations are O(log n) or better.
+//!
+//! The most obvious benefit of _immutable data structures_ - avoiding the
+//! accidental mutation of data - is already handled so well by Rust’s type
+//! system that it’s just not something a Rust programmer needs to worry about.
+//! Their most prominent advantage in Rust is therefore _structural sharing_. If
+//! two data structures are mostly copies of each other, most of the memory they
+//! take up will be shared between them. Therefore, making copies of an
+//! immutable data structure is fast and cheap, with actual copying only
+//! occurring when modifications are made. `im` is thus often the right choice
+//! for larger data sets modified infrequently.
+//!
+//! Because `im` makes copies of shared nodes in its data structures before
+//! updating them, the values you store must implement `Clone`. If you want to
+//! store values for which cloning is expensive, or values that don’t implement
+//! `Clone`, you need to wrap them in `Rc` or `Arc`.
 use im::HashMap;
 use im::HashSet;
 use im::Vector;
 use im::hashmap;
 use im::vector;
-
-// `im` provides a safe default choice for the most common kinds of data
-// structures, allowing you to defer careful thinking about the right data
-// structure for the job until you need to start looking for optimisations.
-
-// The most obvious benefit of _immutable data structures_ - avoiding the
-// accidental mutation of data - is already handled so well by Rust’s type
-// system that it’s just not something a Rust programmer needs to worry about.
-// Their most prominent advantage in Rust is therefore _structural sharing_. If
-// two data structures are mostly copies of each other, most of the memory they
-// take up will be shared between them. Therefore, making copies of an immutable
-// data structure is cheap. `im` is thus often the right choice for larger data
-// sets modified infrequently.
-
-// Because `im` makes copies of shared nodes in its data structures before
-// updating them, the values you store must implement `Clone`. If you want to
-// store values for which cloning is expensive, or values that don’t implement
-// `Clone`, you need to wrap them in `Rc` or `Arc`.
 
 fn main() {
     // Immutable Vector (based on RRB trees),

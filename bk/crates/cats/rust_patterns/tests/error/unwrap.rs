@@ -1,5 +1,7 @@
 // ANCHOR: example
 #![allow(clippy::unnecessary_literal_unwrap)]
+//! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
+//! types.
 
 fn main() {
     let number_str = "42";

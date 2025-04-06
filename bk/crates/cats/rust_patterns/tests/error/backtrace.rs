@@ -1,9 +1,5 @@
 // ANCHOR: example
-//! # Backtrace
-//!
 //! This example demonstrates how to use backtraces to debug errors.
-//!
-//! ## Example
 //!
 //! The example code defines a struct `Rgb` that represents a color in RGB
 //! format.
@@ -26,9 +22,12 @@ impl Rgb {
     /// struct.
     fn from_csv(csv_data: &[u8]) -> Result<Rgb> {
         let color = csv::Reader::from_reader(csv_data)
-            .deserialize() // Returns a borrowed iterator over deserialized records. Each item is a Result<Rgb, Error>
+            // Returns a borrowed iterator over deserialized records.
+            // Each item is a `Result<Rgb, Error>`.
+            .deserialize()
             .nth(0)
-            .ok_or(anyhow!("First CSV row does not exist."))?; // Convert `None` into `Result::Err`.
+            // Convert `None` into `Result::Err`.
+            .ok_or(anyhow!("First CSV row does not exist."))?;
         Ok(color?)
     }
 }
@@ -44,7 +43,7 @@ impl fmt::UpperHex for Rgb {
     }
 }
 
-// The `main` function parses a CSV string and prints the result.
+/// The `main` function parses a CSV string and prints the result.
 fn main() -> Result<()> {
     let csv = "red,blue,green
 102,256,204"; // Note the invalid value.

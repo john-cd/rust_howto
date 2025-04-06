@@ -1,9 +1,12 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `anyhow` crate to handle errors
+//! in a Rust program.
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! reqwest = { version = "0.12.12", features = ["blocking"] }
+//! ```
 
-// Add to your `Cargo.toml`:
-// reqwest = { version = "0.12.12", features = ["blocking"] }
-
-// A function that returns a `Result`:
 fn parse_response(
     response: reqwest::blocking::Response,
 ) -> anyhow::Result<u32> {

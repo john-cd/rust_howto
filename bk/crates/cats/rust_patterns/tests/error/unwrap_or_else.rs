@@ -1,11 +1,17 @@
 // ANCHOR: example
+//! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
+//! `Option` and `Result` types.
+//!
+//! `unwrap_or` provides a default value if the `Option` is `None` or the
+//! `Result` is `Err`. `unwrap_or_else` provides a closure to compute a default
+//! value in the same scenarios.
 #![allow(clippy::unnecessary_literal_unwrap)]
 use std::fs;
 use std::fs::File;
 use std::io::ErrorKind;
 
 fn main() {
-    // Use `unwrap_or` to provide a default value if `maybe_value` is `None`.
+    // Use `unwrap_or` to provide a default value if `maybe_value` is `None`:
     let maybe_value: Option<i32> = None;
     let value: i32 = maybe_value.unwrap_or(0);
     println!("Value: {}", value); // Prints zero.
