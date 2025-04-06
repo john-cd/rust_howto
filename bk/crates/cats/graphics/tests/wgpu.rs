@@ -1,6 +1,7 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This is a basic example of using `wgpu` to render a triangle.
 
 // use wgpu::util::DeviceExt;
 // use winit::event::*;
@@ -122,13 +123,13 @@
 //                 let mut render_pass =
 //                     encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
 //                         label: Some("Render Pass"),
-//                         color_attachments: &[wgpu::RenderPassColorAttachment
-// {                             view: &view,
+//                         color_attachments: &[wgpu::RenderPassColorAttachment {
+//                             view: &view,
 //                             resolve_target: None,
 //                             ops: wgpu::Operations {
-//                                 load:
-// wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-// store: true,                             },
+//                                 load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+//                                 store: true,
+//                             },
 //                         }],
 //                         depth_stencil_attachment: None,
 //                     });
