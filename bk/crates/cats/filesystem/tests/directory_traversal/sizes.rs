@@ -1,5 +1,4 @@
 // ANCHOR: example
-//!
 
 use walkdir::WalkDir;
 
