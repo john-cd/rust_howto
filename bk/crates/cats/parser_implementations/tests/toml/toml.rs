@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Example demonstrating TOML parsing and deserialization.
+
 use serde::Deserialize;
 use toml::value::Datetime;
 
@@ -18,6 +20,10 @@ struct Database {
     date: Datetime,
 }
 
+/// Demonstrates parsing a TOML string into a `Config` struct.
+///
+/// It uses `toml::from_str` to parse a string into a
+/// `Config` struct.
 fn main() {
     let toml_string = r#"
         title = "TOML Example"

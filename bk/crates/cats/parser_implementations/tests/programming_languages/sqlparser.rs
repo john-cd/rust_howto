@@ -1,16 +1,19 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `sqlparser` crate to parse SQL
+//! statements, extract information from them, and regenerate the original SQL
+//! text from the parsed Abstract Syntax Tree (AST).
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! sqlparser = { version = "0.54.0", features = ["visitor"] }
+//! ```
 use std::ops::ControlFlow;
 
 use sqlparser::ast::SetExpr;
 use sqlparser::ast::Statement;
 use sqlparser::dialect::GenericDialect;
 use sqlparser::parser::Parser;
-
-// `sqlparser` can be used as a foundation for SQL query engines and SQL
-// analysis.
-//
-// Add to your `Cargo.toml`:
-// sqlparser = { version = "0.54.0", features = ["visitor"] }
 
 fn main() -> anyhow::Result<()> {
     let sql = "SELECT * FROM users WHERE age > 18";
@@ -20,7 +23,7 @@ fn main() -> anyhow::Result<()> {
     // Create a parser for a `Dialect`:
     let mut parser = Parser::new(&dialect).try_with_sql(sql)?;
     // You may configure the parser with e.g.
-    // .with_recursion_limit(n).with_options(options)
+    // `.with_recursion_limit(n).with_options(options)`.
 
     // Parse potentially multiple statements; tokenize the sql string and sets
     // this parser's state to parse the resulting tokens.

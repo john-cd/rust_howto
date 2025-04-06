@@ -1,6 +1,10 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates how to read and write XML data using the
+// //! `xml-rs` crate.
+// //! ## Features
+// //! - Reading XML from a string and parsing its elements and attributes.
 // use std::fs::File;
 // use std::io::BufReader;
 
@@ -13,7 +17,7 @@
 // use xml::writer::XmlEvent as WriteEvent;
 
 // fn main() -> Result<(), Box<dyn std::error::Error>> {
-//     // Example 1: Reading XML
+//     // Example 1: Reading XML.
 //     let xml_input = r#"
 //         <library>
 //             <book id="1">
@@ -62,27 +66,27 @@
 //         }
 //     }
 
-//     // Example 2: Writing XML
+//     // Example 2: Writing XML.
 //     println!("\nExample 2: Writing XML");
 //     let mut writer = EmitterConfig::new()
 //         .perform_indent(true)
 //         .create_writer(Vec::new());
 
-//     // Start document
+//     // Start document:
 //     writer.write(WriteEvent::StartDocument {
 //         version: xml::common::XmlVersion::Version10,
 //         encoding: Some("UTF-8"),
 //         standalone: None,
 //     })?;
 
-//     // Root element
+//     // Root element:
 //     writer.write(WriteEvent::StartElement {
 //         name: OwnedName::local("catalog"),
 //         attributes: vec![],
 //         namespace: xml::namespace::Namespace::empty(),
 //     })?;
 
-//     // First product
+//     // First product:
 //     writer.write(WriteEvent::StartElement {
 //         name: OwnedName::local("product"),
 //         attributes: vec![OwnedAttribute {
@@ -92,7 +96,7 @@
 //         namespace: xml::namespace::Namespace::empty(),
 //     })?;
 
-//     // Name element
+//     // Name element:
 //     writer.write(WriteEvent::StartElement {
 //         name: OwnedName::local("name"),
 //         attributes: vec![],
@@ -103,7 +107,7 @@
 //         name: OwnedName::local("name"),
 //     })?;
 
-//     // Price element
+//     // Price element:
 //     writer.write(WriteEvent::StartElement {
 //         name: OwnedName::local("price"),
 //         attributes: vec![OwnedAttribute {
@@ -117,12 +121,12 @@
 //         name: OwnedName::local("price"),
 //     })?;
 
-//     // Close first product
+//     // Close first product:
 //     writer.write(WriteEvent::EndElement {
 //         name: OwnedName::local("product"),
 //     })?;
 
-//     // Second product (shorter syntax using helper function)
+//     // Second product (shorter syntax using helper function):
 //     writer.write(WriteEvent::start_element("product").attr("id", "456"))?;
 //     writer.write(WriteEvent::start_element("name"))?;
 //     writer.write(WriteEvent::Characters("XML Guide"))?;
@@ -134,12 +138,12 @@
 
 //     writer.write(WriteEvent::end_element())?;
 
-//     // Close root element
+//     // Close root element:
 //     writer.write(WriteEvent::EndElement {
 //         name: OwnedName::local("catalog"),
 //     })?;
 
-//     // Get the resulting XML
+//     // Get the resulting XML.
 //     let result = writer.into_inner();
 //     println!("{}", String::from_utf8(result)?);
 

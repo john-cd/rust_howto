@@ -1,17 +1,23 @@
 // ANCHOR: example
+//! Example of using the `simd-json` crate for parsing and manipulating JSON
+//! data.
+//!
+//! `simd-json` is a Rust port of the extremely fast simdjson c++ library with
+//! `serde` compatibility. For best performance, use `mimalloc` or `jemalloc`
+//! instead of the system allocator used by default.
+//!
+//! Example of using `mimalloc`:
+//! ```rust
+//! use mimalloc::MiMalloc;
+//!
+//! #[global_allocator]
+//! static GLOBAL: MiMalloc = MiMalloc;
+//! ```
 use simd_json::OwnedValue;
 use simd_json::derived::ValueObjectAccess;
 use simd_json::derived::ValueObjectAccessAsArray;
 use simd_json::derived::ValueObjectAccessAsScalar;
 use simd_json::prelude::*;
-
-// `simd-json` is a Rust port of the extremely fast simdjson c++ library with
-// `serde` compatibility. For best performance, use `mimalloc` or `jemalloc`
-// instead of the system allocator used by default. For example:
-// use mimalloc::MiMalloc;
-//
-// #[global_allocator]
-// static GLOBAL: MiMalloc = MiMalloc;
 
 fn main() {
     let mut json_string = br#"
@@ -27,14 +33,14 @@ fn main() {
     "#
     .to_vec();
 
-    // Parse the JSON string into a BorrowedValue.
-    // BorrowedValue is designed for read-only access and avoids unnecessary
+    // Parse the JSON string into a `BorrowedValue`.
+    // `BorrowedValue` is designed for read-only access and avoids unnecessary
     // copying, making it very fast.
     match simd_json::to_borrowed_value(&mut json_string) {
         Ok(json) => {
             println!("Parsed JSON: {:?}", json);
 
-            // Access values using ValueAccess traits
+            // Access values using `ValueAccess` traits.
             if let Some(name) = json.get_str("name") {
                 println!("Name: {}", name);
             }
@@ -62,8 +68,8 @@ fn main() {
         }
     }
 
-    // Example using OwnedValue (for modifications)
-    // This is slower then the BorrowedValue as a tradeoff for getting rid of
+    // Example using `OwnedValue` (for modifications).
+    // This is slower then the `BorrowedValue` as a tradeoff for getting rid of
     // lifetimes.
     let mut owned_json: OwnedValue =
         simd_json::to_owned_value(&mut json_string).unwrap();
@@ -75,7 +81,6 @@ fn main() {
     println!("Modified Owned JSON: {}", owned_json);
 }
 // ANCHOR_END: example
-
 #[test]
 fn test() {
     main();

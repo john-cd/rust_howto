@@ -4,6 +4,7 @@ use serde::Serialize;
 use serde_json::Result;
 use serde_json::Value;
 
+/// Represents a user with a name, age, and a list of phone numbers.
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
     name: String,
@@ -11,7 +12,10 @@ struct User {
     phones: Vec<String>,
 }
 
-// Deserialize a JSON string
+/// Demonstrates parsing and serializing JSON data using the `serde_json` crate.
+///
+/// This function parses a JSON string into a `Value` enum and a custom `User`
+/// struct, then serializes the `User` struct back into a JSON string.
 fn main() -> Result<()> {
     let json_str = r#"
     {
@@ -24,13 +28,14 @@ fn main() -> Result<()> {
     }
     "#;
 
-    // Use the `Value` enum to represent any valid JSON value.
+    // 1. Parse the JSON string into a `Value` enum.
+    // The `Value` enum can represent any valid JSON value.
     let parsed: Value = serde_json::from_str(json_str)?;
-    // There is also `from_slice` for parsing from a byte slice `&[u8]``
-    // and `from_reader` for parsing from any `io::Read` like a `File` or a TCP
-    // stream.
+    // There are also `from_slice` for parsing from a byte slice `&[u8]`
+    // and `from_reader` for parsing from any `io::Read` type,
+    // such as a `File` or a TCP stream.
 
-    // Then access parts of the data by indexing with square brackets.
+    // 2. Access parts of the data by indexing with square brackets.
     // The result of square bracket indexing is a borrow, so the type is
     // `&Value`.
     let name = parsed["name"].as_str().unwrap();
@@ -41,14 +46,15 @@ fn main() -> Result<()> {
     println!("Age: {}", age);
     println!("Phones: {:?}", phones);
 
-    // Or use a custom `struct` that implements `Deserialize`
+    // 3. Parse the JSON string into a custom `User` struct.
+    // The `User` struct must implement the `Deserialize` trait.
     let user: User = serde_json::from_str(json_str)?;
     println!("{:?}", user);
 
-    // Serialize it back to a JSON string.
+    // 4. Serialize the `User` struct back into a JSON string.
     let u = serde_json::to_string(&user)?;
     println!("{u}");
-    // There is also `serde_json::to_vec` which serializes to a `Vec<u8>`
+    // There are also `serde_json::to_vec`, which serializes to a `Vec<u8>`,
     // and `serde_json::to_writer`, which serializes to any `io::Write`,
     // such as a `File` or a TCP stream.
 

@@ -1,13 +1,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-
-// // `html5ever` is an HTML parser developed as part of the Servo project.
-// // It can parse and serialize HTML according to the WHATWG specs (aka
-// "HTML5"). // `html5ever`` uses callbacks to manipulate the DOM, therefore it
-// does not // provide any DOM tree representation. It exclusively uses UTF-8 to
-// represent // strings.
-
+// //! # `html5ever` example
+// //!
+// //! `html5ever` is an HTML parser developed as part of the Servo project.
+// //! It can parse and serialize HTML according to the WHATWG specs (aka
+// //! "HTML5"). `html5ever`` uses callbacks to manipulate the DOM, therefore it
+// //! does not provide any DOM tree representation itself.
+// //! It exclusively uses UTF-8 to represent strings.
 // use std::default::Default;
 
 // // Options for the parser
@@ -26,7 +26,7 @@
 //     let html = "<html><head><title>Example</title></head><body><p>Hello,
 // world!</p></body></html>";
 
-//     // Parse the HTML document
+//     // Parse the HTML document.
 //     let parser: html5ever::driver::Parser<_> =
 //         parse_document(ArcDom::default(), ParseOpts::default());
 //     let dom = parser.read_from(&mut html.as_bytes()).unwrap();

@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! `comrak` is a CommonMark and GitHub-flavored Markdown compatible parser.
 use comrak::Arena;
 use comrak::ComrakOptions;
 use comrak::Options;
@@ -7,8 +8,7 @@ use comrak::markdown_to_html;
 use comrak::nodes::NodeValue;
 use comrak::parse_document;
 
-// `comrak` is a CommonMark and GitHub-flavored Markdown compatible parser.
-
+/// Converts markdown to HTML.
 fn to_html() {
     let markdown_input =
         "# Hello world\n\nThis is **bold** text and *italic* text.";
@@ -18,19 +18,25 @@ fn to_html() {
     println!("{}", html_output);
 }
 
+/// Replaces all instances of `orig_string` with `replacement` in the
+/// markdown document.
+///
+/// # Arguments
+/// * `document` - The markdown document to modify.
+/// * `orig_string` - The string to replace.
 fn replace_text(
     document: &str,
     orig_string: &str,
     replacement: &str,
 ) -> String {
-    // The returned nodes are created in the supplied Arena, and are bound by
+    // The returned nodes are created in the supplied `Arena`, and are bound by
     // its lifetime.
     let arena = Arena::new();
 
-    // Parse the document into a root `AstNode`
+    // Parse the document into a root `AstNode`.
     let root = parse_document(&arena, document, &Options::default());
 
-    // Iterate over all the descendants of root.
+    // Iterate over all the descendants of root, looking for text nodes.
     for node in root.descendants() {
         if let NodeValue::Text(ref mut text) = node.data.borrow_mut().value {
             // If the node is a text node, perform the string replacement.

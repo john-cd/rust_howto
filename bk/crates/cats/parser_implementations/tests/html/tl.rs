@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `tl` crate to parse HTML.
 use tl::Node;
 use tl::Parser;
 use tl::VDom;
@@ -39,7 +40,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     // Find the title.
-    // Also try: p.content, li, p[class].
+    // Also try: `p.content`, `li`, `p[class]`.
     if let Some(handle) =
         dom.query_selector("title").and_then(|mut iter| iter.next())
     {

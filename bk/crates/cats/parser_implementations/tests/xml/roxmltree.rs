@@ -1,30 +1,37 @@
 // ANCHOR: example
+//! This example demonstrates how to parse an XML document using the `roxmltree`
+//! crate.
+//!
+//! The `roxmltree` crate provides a read-only tree representation of an XML
+//! document. It's a good choice for parsing XML when you don't need to modify
+//! the document.
+//!
+//! Built on top of this API, a mapping to the Serde data model is available via
+//! the serde-roxmltree crate.
+//!
+//! This example parses a simple XML document representing a library of books.
 use roxmltree::Document;
-
-// `roxmltree` represents an XML document as a read-only tree.
-// Built on top of this API, a mapping to the Serde data model is available via
-// the serde-roxmltree crate.
 
 fn main() -> anyhow::Result<()> {
     let xml = r#"<?xml version="1.0" encoding="UTF-8"?><library><book id="1"><title>The Rust Programming Language</title><author>Steve Klabnik</author><author>Carol Nichols</author><year>2018</year><categories><category>Programming</category><category>Rust</category></categories></book></library>"#;
 
-    // Parse the XML
+    // Parse the XML.
     let doc = Document::parse(xml)?;
 
-    // Get the root element
+    // Get the root element.
     let root = doc.root_element();
     println!("Root element: {}", root.tag_name().name());
 
-    // Iterate through all books
+    // Iterate through all books.
     for book in root.children().filter(|n| n.has_tag_name("book")) {
         println!("\nBook ID: {}", book.attribute("id").unwrap_or("unknown"));
 
-        // Get the title
+        // Get the title.
         if let Some(title) = book.children().find(|n| n.has_tag_name("title")) {
             println!("Title: {}", title.text().unwrap_or(""));
         }
 
-        // Get all authors
+        // Get all authors.
         let authors: Vec<&str> = book
             .children()
             .filter(|n| n.has_tag_name("author"))
@@ -33,12 +40,12 @@ fn main() -> anyhow::Result<()> {
 
         println!("Authors: {}", authors.join(", "));
 
-        // Get the year
+        // Get the year.
         if let Some(year) = book.children().find(|n| n.has_tag_name("year")) {
             println!("Year: {}", year.text().unwrap_or(""));
         }
 
-        // Get categories
+        // Get categories.
         if let Some(categories) =
             book.children().find(|n| n.has_tag_name("categories"))
         {

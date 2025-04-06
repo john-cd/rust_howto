@@ -1,6 +1,11 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates how to use the `quick-xml` crate for parsing
+// //! and generating XML data in Rust. It covers low-level parsing,
+// //! deserialization with `serde`, creating XML with the writer API, and
+// //! serialization with `serde`.
+// //! See [quick-xml](https://docs.rs/quick-xml/latest/quick_xml).
 // use std::io::Cursor;
 
 // use quick_xml::Reader;
@@ -27,7 +32,7 @@
 // }
 
 // fn main() -> anyhow::Result<()> {
-//     // Example 1: Parse XML using Reader API
+//     // Example 1: Parse XML using the Reader API.
 //     println!("Example 1: Low-level parsing");
 //     let xml = r#"
 //         <person>
@@ -48,7 +53,7 @@
 //     let mut depth = 0;
 //     let mut txt = Vec::new();
 
-//     // Manual parsing loop
+//     // Manual parsing loop.
 //     loop {
 //         match reader.read_event_into(&mut buf) {
 //             Ok(Event::Start(ref e)) => {
@@ -89,12 +94,12 @@
 //         buf.clear();
 //     }
 
-//     // Example 2: Using Serde for deserialization
+//     // Example 2: Using `serde` for deserialization.
 //     println!("\nExample 2: Deserializing XML");
 //     let person: Person = from_str(xml)?;
 //     println!("Deserialized: {:#?}", person);
 
-//     // Example 3: Creating XML with Writer
+//     // Example 3: Creating XML with `Writer`.
 //     println!("\nExample 3: Creating XML");
 //     let mut writer = Writer::new(Cursor::new(Vec::new()));
 
@@ -122,7 +127,7 @@
 //     let result = writer.into_inner().into_inner();
 //     println!("{}", String::from_utf8(result)?);
 
-//     // Example 4: Serializing with Serde
+//     // Example 4: Serializing with `serde`.
 //     println!("\nExample 4: Serializing to XML");
 //     let jane = Person {
 //         name: "Jane Smith".to_string(),
@@ -147,4 +152,4 @@
 //     main()?;
 //     Ok(())
 // }
-// [finish NOW](https://github.com/john-cd/rust_howto/issues/1236)
+// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1236)

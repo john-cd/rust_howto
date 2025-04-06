@@ -1,6 +1,20 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! The following demonstrates how to use the `xml5ever` crate for parsing
+// //! XML documents. It provides two main examples:
+// //!
+// //! 1.  **TokenSink Example**: Shows how to use `TokenSink` to process XML
+// //! tokens as they are parsed.
+// //! 2.  **TreeSink Example**: Demonstrates how to
+// //! build a custom tree structure from an XML document using `TreeSink`. //!
+// //!
+// //! Add to your `Cargo.toml` file:
+// //! ```
+// //! [dependencies]
+// //! xml5ever = "0.21.0"
+// //! markup5ever = "0.15.0" # Or latest
+// //! ```
 // use std::default::Default;
 
 // use markup5ever::interface::QualName;
@@ -19,9 +33,7 @@
 // use xml5ever::tree_builder::NodeOrText;
 // use xml5ever::tree_builder::TreeSink;
 
-// // [dependencies]
-// // xml5ever = "0.21.0"
-// // markup5ever = "0.15.0" # Or latest
+// /// A `TokenSink` implementation that prints XML tokens to the console.
 
 // struct DOMPrinter {
 //     indent: usize,
@@ -39,6 +51,7 @@
 //     }
 // }
 
+// /// Implements the `TokenSink` trait to process XML tokens.
 // impl TokenSink for DOMPrinter {
 //     fn process_token(&mut self, token: Token) {
 //         match token {
@@ -88,7 +101,7 @@
 //     }
 // }
 
-// // Custom TreeSink implementation to demonstrate tree building
+// /// Represents a node in the custom tree structure.
 // #[derive(Debug)]
 // struct Node {
 //     name: Option<QualName>,
@@ -97,6 +110,7 @@
 //     text: Option<String>,
 // }
 
+// /// A `TreeSink` implementation that builds a custom tree structure from XML.
 // struct TreeBuilder {
 //     root: Option<Node>,
 //     stack: Vec<Node>,
@@ -110,6 +124,7 @@
 //         }
 //     }
 
+//     /// Retrieves the root node of the constructed tree.
 //     fn get_tree(mut self) -> Option<Node> {
 //         if self.stack.len() > 0 {
 //             self.root = Some(self.stack.remove(0));
@@ -118,6 +133,7 @@
 //     }
 // }
 
+// /// Implements the `TreeSink` trait to build a custom tree structure.
 // impl TreeSink for TreeBuilder {
 //     type Handle = usize;
 //     type Output = Self;
@@ -208,11 +224,11 @@
 //         _handle: &Self::Handle,
 //         _attrs: Vec<Attribute>,
 //     ) {
-//         // Simplified
+//         // Simplified.
 //     }
 
 //     fn remove_from_parent(&mut self, _target: &Self::Handle) {
-//         // Simplified
+//         // Simplified.
 //     }
 
 //     fn reparent_children(
@@ -220,18 +236,19 @@
 //         _node: &Self::Handle,
 //         _new_parent: &Self::Handle,
 //     ) {
-//         // Simplified
+//         // Simplified.
 //     }
 
 //     fn mark_script_already_started(&mut self, _target: &Self::Handle) {
-//         // Simplified
+//         // Simplified.
 //     }
 
 //     fn set_quirks_mode(&mut self, _mode: markup5ever::interface::QuirksMode)
-// {         // Simplified
+// {         // Simplified.
 //     }
 // }
 
+// /// Recursively prints the tree structure to the console.
 // fn print_node(node: &Node, depth: usize) {
 //     let indent = "  ".repeat(depth);
 

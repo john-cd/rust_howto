@@ -1,6 +1,22 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates how to use the `cssparser` crate to parse CSS.
+// //!
+// //! ## Overview
+// //!
+// //! The code defines a `parse_declaration` function that parses a single CSS
+// //! declaration (e.g., `color: red;`). It then iterates through a CSS string,
+// //! parsing each declaration and printing the property and value.
+// //!
+// //! ## Key Components
+// //!
+// //! - `ParserInput`: Represents the input CSS string.
+// //! - `Parser`: Parses the input string.
+// //! - `parse_declaration`: Parses a single CSS declaration.
+// //! - `ComponentValue`: Represents a component value in CSS (e.g., `red`,
+// //!   `16px`).
+// //! - `Token`: Represents a CSS token (e.g., identifier, number, dimension).
 // use cssparser::*;
 
 // fn main() {
@@ -13,8 +29,9 @@
 //         if let Ok(declaration) = parse_declaration(&mut parser) {
 //             println!("Property: {}, Value: {}", declaration.0,
 // declaration.1);         } else {
-//             parser.expect_exhausted(); // handle errors more gracefully in
-// real code.             break;
+//             parser.expect_exhausted();
+//             // You should handle errors more gracefully in real code.
+//             break;
 //         }
 //     }
 // }

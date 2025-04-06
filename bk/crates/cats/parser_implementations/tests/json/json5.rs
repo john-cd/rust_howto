@@ -1,13 +1,15 @@
 // ANCHOR: example
+//! This example demonstrates how to parse JSON5 data using the `json5` crate.
+//!
+//! [JSON5](https://json5.org) is a superset of JSON that allows for more human-friendly syntax,
+//! such as comments, unquoted keys, and trailing commas.
+//! It aims to be easier to write and maintain by hand (e.g. for config files).
+//! It is not intended to be used for machine-to-machine communication.
 use serde_json::Value;
-
-// JSON5 is an extension to the popular JSON file format that aims to be easier
-// to write and maintain by hand (e.g. for config files). It is not intended to
-// be used for machine-to-machine communication. https://json5.org
 
 fn main() {
     let json5_str = r#"{
-        // comments are allowed
+        // Comments are allowed
         unquoted: 'and you can use single quotes',
         trailingComma: ['in arrays', 'like', 'this', ],
         hexadecimal: 0xDEADbeef,

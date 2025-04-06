@@ -1,12 +1,18 @@
 // ANCHOR: example
+//! Example demonstrating the use of `pulldown-cmark` to parse Markdown and
+//! convert it to HTML.
+//!
+//! `pulldown-cmark` is a parser for CommonMark, a standard dialect of Markdown.
+//! It uses an event-based parsing model. This means it generates a stream of
+//! events representing the Markdown structure, which can then be used to
+//! generate the HTML.
+
 use pulldown_cmark::Options;
+/// The `Parser` struct is the core component of `pulldown-cmark`. It takes
+/// a Markdown string as input and produces a stream of events representing
+/// the parsed Markdown structure.
 use pulldown_cmark::Parser;
 use pulldown_cmark::html;
-
-// `pulldown-cmark` is a parser for CommonMark, a standard dialect of Markdown.
-// `pulldown-cmark` uses an event-based parsing model. This means it generates a
-// stream of events representing the Markdown structure, which are then used to
-// generate the HTML.
 
 fn main() {
     let markdown_input = r#"
@@ -23,16 +29,14 @@ fn example() {
 }
 ```
 "#;
-
     // Set up parser options.
+    //
     // You can enable or disable various Markdown extensions through the
     // `Options` struct, giving you fine-grained control over the parsing
     // process. Here, we enable all common extensions.
     let options = Options::all();
 
-    // `Parser::new_ext(markdown_input, options)` creates a `Parser` instance
-    // from the Markdown input string and the specified options. This parser
-    // will iterate through the Markdown tokens.
+    // `Parser::new_ext(markdown_input, options)` creates a `Parser` instance.
     let parser = Parser::new_ext(markdown_input, options);
 
     // Render the parser output to HTML.
