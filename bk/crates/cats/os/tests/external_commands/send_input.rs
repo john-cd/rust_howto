@@ -1,5 +1,16 @@
 #![cfg(target_family = "unix")]
 // ANCHOR: example
+//! This example demonstrates how to send input to an external command's
+//! standard input (stdin) and process its standard output (stdout) and standard
+//! error (stderr).
+//!
+//! It uses the `rev` command, which reverses each line of its input.
+//!
+//! The example sends the string "1234 56789" to `rev` and then checks if the
+//! output is successful. If successful, it parses the output, splits it into
+//! words, converts them to lowercase, and stores them in a HashSet to get
+//! unique words.
+
 use std::collections::HashSet;
 use std::io::Write;
 use std::process::Command;

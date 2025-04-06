@@ -2,10 +2,20 @@
 #![allow(clippy::single_match)]
 #![cfg(target_family = "unix")]
 
-fn main() -> anyhow::Result<()> {
-    use std::process::Command;
-    use std::process::Stdio;
+use std::process::Command;
+use std::process::Stdio;
 
+/// This example demonstrates how to pipe the output of one external command to
+/// the input of another.
+///
+/// It uses the `du`, `sort`, and `head` commands to find the top 10 largest
+/// files and directories in the current directory.
+///
+/// The `du` command is used to get the disk usage of each file and directory.
+/// The `sort` command is used to sort the output of `du` in reverse
+/// human-readable order. The `head` command is used to get the first 10 lines
+/// of the sorted output.
+fn main() -> anyhow::Result<()> {
     let directory = std::env::current_dir()?;
     let mut du_output_child = Command::new("du")
         .arg("-ah")
