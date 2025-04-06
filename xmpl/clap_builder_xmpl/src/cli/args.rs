@@ -39,7 +39,7 @@ pub(super) fn arg_filepaths() -> Arg {
     Arg::new("filepaths")
         .value_parser(value_parser!(PathBuf))
         .help("File names or paths")
-        .action(ArgAction::Append) // Allow passing multiple filepaths
+        .action(ArgAction::Append) // Allow passing multiple filepaths.
 }
 
 /// Returns the paths of the files to open.
@@ -53,7 +53,7 @@ pub(super) fn get_arg_filepaths(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     Some(m)
 }
 
-/// Global `--verbose / -v` flag that can be added more than once
+/// Global `--verbose / -v` flag that can be added more than once.
 ///
 /// Example: `cargo r -- -vv`
 pub(super) fn arg_verbose() -> Arg {
@@ -82,11 +82,11 @@ mod tests {
     /// Verify that the global argument "config" requires a value.
     #[test]
     fn test_arg_config_malformed() {
-        let m = cli().try_get_matches_from(vec!["prog", "--config"]); // no value provided
+        let m = cli().try_get_matches_from(vec!["prog", "--config"]); // no value provided.
         assert!(m.is_err());
     }
 
-    /// Test the global argument "config"
+    /// Test the global argument "config".
     #[test]
     fn test_arg_config_short() {
         let m = cli().get_matches_from(vec!["prog", "-c", "config.toml"]);
@@ -96,7 +96,7 @@ mod tests {
         );
     }
 
-    /// Test the global argument "config", long form
+    /// Test the global argument "config", long form.
     #[test]
     fn test_arg_config_long() {
         let m = cli().get_matches_from(vec!["prog", "--config", "config.toml"]);
@@ -106,7 +106,7 @@ mod tests {
         );
     }
 
-    /// Test the global argument "config", alias form
+    /// Test the global argument "config", alias form.
     #[test]
     fn test_arg_config_alias() {
         let m = cli().get_matches_from(vec!["prog", "--configuration", "config.toml"]);
@@ -116,7 +116,7 @@ mod tests {
         );
     }
 
-    /// Test passing the "config" argument via an enviroment variable
+    /// Test passing the "config" argument via an enviroment variable.
     #[test]
     fn test_arg_config_env() {
         let key = "TOOL_CONFIG_FILE";
@@ -124,7 +124,7 @@ mod tests {
             std::env::set_var(key, "config.toml");
         }
         let m = cli().try_get_matches_from(vec!["prog"]);
-        // Clean up the env variable
+        // Clean up the env variable.
         unsafe {
             std::env::remove_var(key);
         }
@@ -136,7 +136,7 @@ mod tests {
     }
 
     /// Verify that "--config" can be used globally
-    /// e.g. after a subcommand
+    /// e.g. after a subcommand.
     #[test]
     fn test_arg_config_global() {
         let m = cli().get_matches_from(vec!["prog", "open", "--config", "config.toml", "abc.csv"]);
@@ -154,7 +154,7 @@ mod tests {
 
     // "filepaths" argument -----------
 
-    /// Test the app-level "filepaths" argument
+    /// Test the app-level "filepaths" argument.
     #[test]
     fn test_arg_filepaths_empty() {
         let m = cli().get_matches_from(vec!["prog"]);
@@ -192,7 +192,7 @@ mod tests {
             std::env::set_var(key, "1");
         }
         let m = cli().try_get_matches_from(vec!["prog"]);
-        // clean up the env variable
+        // clean up the env variable.
         unsafe {
             std::env::remove_var(key);
         }

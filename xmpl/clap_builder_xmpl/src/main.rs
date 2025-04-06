@@ -7,7 +7,7 @@ fn main() {
     unsafe {
         std::env::set_var("RUST_LOG", rust_log);
     }
-    env_logger::init(); // Log to stderr
+    env_logger::init(); // Log to stderr.
 
     let (config, cmds) = cli::get_args();
 

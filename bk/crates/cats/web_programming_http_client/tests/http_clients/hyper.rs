@@ -34,7 +34,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
         .ok_or(anyhow::anyhow!("`authority` failed."))?
         .clone();
 
-    // Build the request
+    // Build the request:
     let path = url.path();
     let req = Request::builder()
         .method("GET")
@@ -43,7 +43,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
         //.header("User-Agent", "hyper")
         .body(Empty::<Bytes>::new())?;
 
-    // Send the request and wait for the response
+    // Send the request and wait for the response:
     let mut res = sender.send_request(req).await?;
 
     println!("Response: {}", res.status());
@@ -57,7 +57,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
             io::stdout().write_all(chunk).await?;
         }
     }
-    // Or asynchronously aggregate the chunks of the body
+    // Or asynchronously aggregate the chunks of the body:
     // let body = res.collect().await?.aggregate();
 
     Ok(())

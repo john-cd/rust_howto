@@ -10,7 +10,7 @@ use surrealdb::engine::local::Mem;
 // For a RocksDB file, use:
 // use surrealdb::engine::local::RocksDb;
 
-// The document to store in the database
+// The document to store in the database.
 #[derive(Debug, Serialize, Deserialize)]
 struct Person {
     name: String, // or: Cow<'static, str>
@@ -40,7 +40,7 @@ async fn main() -> Result<()> {
     // Select a namespace and database.
     db.use_ns("test_namespace").use_db("test_db").await?;
 
-    // Create a record with a specific ID
+    // Create a record with a specific ID.
     let created: Option<Person> = db
         .create(("person", "John Doe"))
         .content(Person {

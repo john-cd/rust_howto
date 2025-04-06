@@ -14,7 +14,7 @@ fn main() {
     tiny_vec.push(3);
     tiny_vec.push(4);
 
-    // Print the current state of the TinyVec
+    // Print the current state of the `TinyVec`:
     println!("TinyVec (inline): {:?}", tiny_vec);
 
     // Push beyond the inline capacity, which will cause a heap allocation.
@@ -33,7 +33,7 @@ fn main() {
         println!("Popped value: {}", value);
     }
 
-    // Print the state of the TinyVec after popping
+    // Print the state of the `TinyVec` after popping:
     println!("TinyVec after popping: {:?}", tiny_vec);
 }
 // ANCHOR_END: example

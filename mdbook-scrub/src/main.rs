@@ -27,7 +27,7 @@ fn main() {
     let matches = make_app().get_matches();
 
     // FIXME
-    // // Logging
+    // // Logging:
     // let log_file = std::fs::OpenOptions::new()
     //     .append(true)
     //     .create(true)

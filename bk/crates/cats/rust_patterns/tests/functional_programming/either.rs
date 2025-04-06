@@ -26,7 +26,7 @@ fn main() {
         Either::Right(val) => println!("Processed value: {}", val),
     }
 
-    // Transforming Either values
+    // Transforming `Either` values:
     let _mapped_result =
         result1.map_left(|s| s.to_uppercase()).map_right(|n| n + 10);
 }

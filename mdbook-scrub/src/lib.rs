@@ -13,7 +13,7 @@ use tracing::warn;
 
 // Inspired from https://github.com/rust-lang/mdBook/blob/master/examples/nop-preprocessor.rs
 
-// The main preprocessor Struct
+// The main preprocessor struct.
 pub struct Preproc;
 
 impl Preproc {
@@ -43,11 +43,11 @@ impl Preprocessor for Preproc {
         info!("Running `mdbook-scrub` preprocessor");
 
         let conf: PreprocConfig = self.retrieve_config(&ctx.config);
-        // Compile the replacement Regex(es) only once per book
+        // Compile the replacement Regex(es) only once per book.
         let rrs = get_regexes_and_replacements(&conf);
 
         // If the preprocessor configuration is fully disabled,
-        // return the orginal book
+        // return the orginal book.
         if !rrs.is_empty() {
             book.for_each_mut(|item: &mut BookItem| {
                 if let BookItem::Chapter(ref mut chapter) = item {
@@ -58,7 +58,7 @@ impl Preprocessor for Preproc {
                             rr.re.replace_all(content, repl).into_owned()
                         } else {
                             // If replacement is `None`,
-                            // just delete the matching text
+                            // just delete the matching text.
                             rr.re.replace_all(content, "").into_owned()
                         };
                         // tracing::debug!(content);
@@ -69,7 +69,7 @@ impl Preprocessor for Preproc {
         Ok(book)
     }
 
-    // all usual renderers are supported
+    // All usual renderers are supported.
     fn supports_renderer(&self, renderer: &str) -> bool {
         renderer != "not-supported"
     }
@@ -80,7 +80,7 @@ impl Preproc {
         // Get the table associated with a particular preprocessor.
         match conf.get_preprocessor(self.name()) {
             Some(raw) => {
-                // raw is toml::Table
+                // `raw` is `toml::Table`.
                 let s = toml::to_string(&raw).expect("toml::to_string failed!");
                 let pc: PreprocConfig = match toml::from_str(&s) {
                     Ok(pc) => pc,

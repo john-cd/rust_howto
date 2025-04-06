@@ -31,7 +31,7 @@ async fn main() -> Result<()> {
     let gh_user = env::var("GH_USER")?;
     let gh_pass = env::var("GH_PASS")?;
 
-    // Example POST to the GitHub gists API
+    // Example POST to the GitHub gists API:
     let gist_body = Post {
         description: "the description for this gist",
         public: true,

@@ -1,4 +1,4 @@
-//! Directory handling
+//! Directory handling.
 use std::path::Path;
 use std::path::PathBuf;
 
@@ -7,7 +7,7 @@ use anyhow::Error;
 use anyhow::bail;
 use tracing::info;
 
-/// Check if a path is a directory
+/// Check if a path is a directory.
 ///
 /// Return a PathBuf if it is.
 pub(crate) fn check_is_dir<P>(dir_path: P) -> Result<PathBuf, Error>

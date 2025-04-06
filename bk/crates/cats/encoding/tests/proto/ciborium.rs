@@ -18,22 +18,22 @@ struct MyData {
 // The main function demonstrates serializing and deserializing a struct to and
 // from CBOR.
 fn main() -> anyhow::Result<()> {
-    // Create a sample data object
+    // Create a sample data object.
     let data = MyData {
         name: "Alice".to_string(),
         age: 30,
         is_active: true,
     };
 
-    // Serialize to CBOR
+    // Serialize to CBOR.
     let mut buf = Vec::new();
     into_writer(&data, &mut buf)?;
 
-    // Deserialize from CBOR
+    // Deserialize from CBOR.
     let mut cursor = Cursor::new(&buf[..]);
     let deserialized_data: MyData = from_reader(&mut cursor)?;
 
-    // Print the deserialized data
+    // Print the deserialized data.
     println!("{:?}", deserialized_data);
 
     Ok(())

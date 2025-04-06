@@ -17,23 +17,23 @@ fn add(x: i64, y: i64) -> i64 {
 }
 
 fn main() -> Result<(), Box<EvalAltResult>> {
-    // Create a new `Rhai` scripting engine
+    // Create a new `Rhai` scripting engine.
     let mut engine = Engine::new();
 
-    // Register a Rust function to be used in the script
+    // Register a Rust function to be used in the script.
     engine.register_fn("add", add);
     // With a closure:
     engine.register_fn("foo", |x: i64, y: i64| x * 2 + y * 3);
     // You can also register a custom type with `build_type`.
 
-    // Safety: turn the Engine into an immutable instance
+    // Safety: turn the Engine into an immutable instance.
     // See https://rhai.rs/book/safety/sandbox.html
     let engine = engine;
 
-    // Define a simple script
+    // Define a simple script.
     // Review further examples at https://github.com/rhaiscript/rhai/tree/main/scripts
     let script = r#"
-        // Define variables
+        // Define variables:
         let a = 42;
         let b = 58;
         /* Call the registered function */
@@ -41,14 +41,14 @@ fn main() -> Result<(), Box<EvalAltResult>> {
         result
     "#;
 
-    // Evaluate the script (getting a return value)
+    // Evaluate the script (getting a return value).
     match engine.eval::<i64>(script) {
         Ok(result) => println!("The result of the script is: {}", result),
         Err(e) => println!("Error evaluating the script: {:?}", e),
     }
     // Use 'Dynamic' as the return type if you're not sure what it will be.
 
-    // Or run a script
+    // Or run a script:
     let script = "print(40 + 2);";
     engine.run(script)?;
 

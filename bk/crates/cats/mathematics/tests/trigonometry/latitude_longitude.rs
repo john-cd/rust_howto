@@ -1,8 +1,9 @@
 // ANCHOR: example
-/// Calculates the distance between two points on the Earth's surface using the Haversine formula.
+/// Calculates the distance between two points on the Earth's surface using the
+/// Haversine formula.
 ///
-/// This example demonstrates how to calculate the distance between Paris and London
-/// based on their latitude and longitude coordinates.
+/// This example demonstrates how to calculate the distance between Paris and
+/// London based on their latitude and longitude coordinates.
 fn main() {
     // Earth's radius in kilometers.
     let earth_radius_kilometer = 6371.0_f64;
@@ -24,7 +25,7 @@ fn main() {
 
     // Haversine formula:
     // a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
-    // c = 2 ⋅ atan2( √a, √(1−a) )
+    // c = 2 ⋅ atan2( √a, √(1−a) ).
     let central_angle_inner = (delta_latitude / 2.0).sin().powi(2)
         + paris_latitude.cos()
             * london_latitude.cos()

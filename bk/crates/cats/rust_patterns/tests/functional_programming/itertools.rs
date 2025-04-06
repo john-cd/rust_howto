@@ -4,10 +4,10 @@ fn main() {
     use itertools::assert_equal;
     use itertools::chain;
 
-    // Assert that two iterables produce equal sequences
+    // Assert that two iterables produce equal sequences:
     assert_equal("hello world".split(' '), "hello world".split(' '));
 
-    // Chain
+    // Chain:
     let mut result: Vec<i32> = Vec::new();
 
     for element in chain(&[1, 2, 3], &[4]) {
@@ -15,14 +15,14 @@ fn main() {
     }
     assert_eq!(result, vec![1, 2, 3, 4]);
 
-    // Cloned
+    // Cloned:
     assert_eq!(itertools::cloned(b"abc").next(), Some(b'a'));
 
-    // Deduplicate
+    // Deduplicate:
     let data = vec![1., 1., 2., 3., 3., 2., 2.];
     itertools::assert_equal(data.into_iter().dedup(), vec![1., 2., 3., 2.]);
 
-    // `into_group_map`
+    // `into_group_map`:
     let data = vec![(0, 10), (2, 12), (3, 13), (0, 20), (3, 33), (2, 42)];
     let lookup = data.into_iter().into_group_map();
 

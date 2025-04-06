@@ -39,7 +39,7 @@ pub fn launch() -> Result<()> {
         })
         .collect();
 
-    // Synchronous tasks go here
+    // Synchronous tasks go here.
 
     // Wait for all asynchronous tasks to complete.
     for t in tasks {
@@ -50,7 +50,7 @@ pub fn launch() -> Result<()> {
     Ok(())
 }
 
-// Check a list of urls
+// Check a list of urls:
 async fn check_web_urls(urls: Vec<url::Url>) -> Result<UrlChecks> {
     let tasks: Vec<_> = urls.into_iter().map(check_web_url).collect();
     // Wait for all tasks to complete.

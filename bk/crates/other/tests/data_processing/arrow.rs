@@ -22,8 +22,8 @@ use arrow::util::pretty::print_batches;
 // RUSTFLAGS="-C target-cpu=native -C target-feature=-prefer-256-bit"
 
 fn main() -> Result<()> {
-    // Create a new Int32Array
-    // An Int32Array represents a (potentially nullable) array of i32
+    // Create a new Int32Array.
+    // An `Int32Array` represents a (potentially nullable) array of `i32`.
     let int_array = Int32Array::from(vec![1, 2, 3, 4, 5]);
 
     // Various properties of the array:
@@ -31,20 +31,20 @@ fn main() -> Result<()> {
     assert_eq!(int_array.value(0), 1);
     assert!(!int_array.is_null(0));
 
-    // Create a new Float64Array
+    // Create a new `Float64Array`:
     let float_array = Float64Array::from(vec![5.0, 4.0, 3.0, 2.0, 1.0]);
 
-    // Create a new StringArray
+    // Create a new `StringArray`:
     let string_array = StringArray::from(vec!["a", "b", "c", "d", "e"]);
 
-    // Create a schema for the data
+    // Create a schema for the data:
     let schema = Arc::new(Schema::new(vec![
         Field::new("integers", DataType::Int32, false),
         Field::new("floats", DataType::Float64, false),
         Field::new("strings", DataType::Utf8, false),
     ]));
 
-    // Create a RecordBatch from the arrays and schema
+    // Create a `RecordBatch` from the arrays and schema:
     // It groups one or more columns together into a tabular representation.
     let batch = RecordBatch::try_new(
         schema.clone(),
@@ -55,10 +55,10 @@ fn main() -> Result<()> {
         ],
     )?;
 
-    // Pretty print the record batch
+    // Pretty print the record batch:
     print_batches(&[batch])?;
 
-    // Convert back to native types
+    // Convert back to native types:
     let collected: Vec<_> = float_array.iter().collect();
     assert_eq!(
         collected,

@@ -13,7 +13,7 @@ fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
         "my-user-agent (my-contact@domain.com)",
         std::time::Duration::from_millis(1000), // Rate limit interval
     )?;
-    // Retrieve the crate's information
+    // Retrieve the crate's information:
     let crt = client.get_crate(crate_name)?;
     Ok(crt.categories)
 }
@@ -24,19 +24,19 @@ fn main() -> Result<()> {
     let mut m: MultiMap<String, &str> = MultiMap::new();
     for name in crate_names {
         for cat in get_categories_for_crate(name)? {
-            // There can be multiple crates in the same category
-            // A multimap allows multiple values for the same key
+            // There can be multiple crates in the same category.
+            // A multimap allows multiple values for the same key.
             m.insert(cat.slug, name);
         }
     }
 
-    // Get all values for a given key
+    // Get all values for a given key:
     println!(
         "List of crates in the `config` category: {:?}",
         m.get_vec("config")
     );
 
-    // Or iterate over all keys and the key's vector
+    // Or iterate over all keys and the key's vector:
     for (cat, names) in m.iter_all() {
         println!("Category: {:?}, names: {:?}", cat, names);
     }

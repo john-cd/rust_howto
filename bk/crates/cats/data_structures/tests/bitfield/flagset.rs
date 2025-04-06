@@ -10,7 +10,7 @@ use flagset::flags;
 
 // Flags are defined using the `flags!` macro:
 flags! {
-    // Flag values can be defined implicitly
+    // Flag values can be defined implicitly:
     enum FlagsA: u8 { // Note the field-size type
         Foo, // 0b0001
         Bar, // 0b0010

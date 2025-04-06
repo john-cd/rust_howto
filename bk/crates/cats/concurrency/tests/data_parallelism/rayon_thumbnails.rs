@@ -12,7 +12,7 @@ use image::imageops::FilterType;
 use rayon::prelude::*;
 
 fn main() -> Result<()> {
-    // Create test files for the test function
+    // Create test files for the test function.
     create_test_files()?;
 
     let options: MatchOptions = Default::default();

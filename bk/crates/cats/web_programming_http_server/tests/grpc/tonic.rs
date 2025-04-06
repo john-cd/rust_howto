@@ -57,7 +57,7 @@ async fn main() -> anyhow::Result<()> {
     let greeter = MyGreeter::default();
 
     Server::builder()
-        // Create a router
+        // Create a router:
         .add_service(GreeterServer::new(greeter))
         .serve(addr)
         .await?;

@@ -4,12 +4,13 @@
 // // ANCHOR_END: example
 
 // version_id then join version_id and Version.id to retrieve crate
-// name Consider a simpler API for example purposes
+// name.
+// // Consider a simpler API for example purposes.
 
 // use anyhow::Result;
 // use serde::Deserialize;
 
-// // Structs used to deserialize the JSON produced by the API
+// // Structs used to deserialize the JSON produced by the API.
 
 // #[derive(Deserialize)]
 // struct ApiResponse {
@@ -35,7 +36,7 @@
 //     crate_id: String,
 // }
 
-// // Main struct
+// // Main struct:
 
 // struct ReverseDependencies {
 //     crate_id: String,

@@ -5,8 +5,8 @@ use http::StatusCode;
 
 // The `http` crate contains common types for the HTTP protocol.
 // You’ll find:
-// - `Request`
-// - `Response`
+// - `Request`,
+// - `Response`,
 // - `Uri` for what a `Request` is requesting,
 // - `Method` for how it’s being requested,
 // - `StatusCode` for what sort of response came back,
@@ -16,7 +16,7 @@ use http::StatusCode;
 // `rewest`.
 
 fn main() {
-    // Create a request
+    // Create a request.
     let request = Request::builder()
         .method("GET") // POST, DELETE...
         .uri("https://example.com")
@@ -24,7 +24,7 @@ fn main() {
         .body(())
         .unwrap();
 
-    // Create a response
+    // Create a response.
     let response = Response::builder()
         .status(StatusCode::OK) // NOT_FOUND...
         .header("Content-Type", "text/plain")

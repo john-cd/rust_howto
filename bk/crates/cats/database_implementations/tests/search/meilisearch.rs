@@ -30,7 +30,7 @@ async fn main() -> anyhow::Result<()> {
     // Create a client and connect to MeiliSearch.
     let client = Client::new(meilisearch_url, meilisearch_api_key).unwrap();
 
-    // Create an index
+    // Create an index.
     let index: Index = client.index("my_index");
 
     // Define a list of documents to index.
@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
     let task: TaskInfo = index.add_documents(&docs, Some("id")).await?;
     println!("Indexing task: {:?}", task);
 
-    // Wait for the indexing task to complete
+    // Wait for the indexing task to complete.
     let status = index.wait_for_task(task, None, None).await?;
     println!("Indexing status: {:?}", status);
     assert!(matches!(status, Task::Succeeded { .. }));

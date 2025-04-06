@@ -21,7 +21,7 @@ fn main() {
     // You can also initialize it via a macro:
     let mut small_vec: SmallVec<i32, 4> = smallvec![1, 2, 3, 4];
 
-    // Print the current state of the SmallVec
+    // Print the current state of the SmallVec.
     println!("SmallVec (inline): {:?}", small_vec);
 
     // Push beyond the inline capacity, causing a heap allocation.
@@ -40,7 +40,7 @@ fn main() {
         println!("Popped value: {}", value);
     }
 
-    // Print the state of the SmallVec after popping
+    // Print the state of the SmallVec after popping.
     println!("SmallVec after popping: {:?}", small_vec);
 
     // Split off the SmallVec.

@@ -14,19 +14,19 @@ fn main() {
         .expect("Failed to read input");
     println!("You answered: {:?}", ans);
 
-    // Prompt for the user's name
+    // Prompt for the user's name.
     let name = Text::new("What's your name?")
         .prompt()
         .expect("Failed to read input");
 
-    // Prompt for the user's favorite programming language
+    // Prompt for the user's favorite programming language.
     let languages = vec!["Rust", "Python", "JavaScript", "C++", "Go", "Other"];
     let favorite_language = Select::new("What's your favorite programming language?", languages)
         //.with_help_message("Hint: it is Rust!")
         .prompt()
         .expect("Failed to read input");
 
-    // Display the collected information
+    // Display the collected information.
     println!("Hello, {}!", name);
     println!(
         "Your favorite programming language is {}.",

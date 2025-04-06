@@ -81,12 +81,12 @@ mod business {
 
     impl<R: UserRepository + Send + Sync> UserService for SimpleUserService<R> {
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
-            // Business logic goes here
+            // Business logic goes here.
             self.repo.get_user(id).await
         }
 
         async fn create_user(&self, user: User) -> Result<()> {
-            // Business logic goes here
+            // Business logic goes here.
             self.repo.create_user(user).await
         }
     }

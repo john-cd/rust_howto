@@ -57,7 +57,7 @@ fn main() -> anyhow::Result<()> {
         let mut counter: MutexGuard<'_, i32> = COUNTER.lock().unwrap();
         *counter += 1;
         println!("Counter: {}", *counter);
-    } // The lock is unlocked here
+    } // The lock is unlocked here.
 
     // And again, on a different thread:
     std::thread::spawn(move || {

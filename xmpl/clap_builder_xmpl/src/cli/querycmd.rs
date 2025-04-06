@@ -51,7 +51,7 @@ mod tests {
         let m = cli().try_get_matches_from(vec!["foo", "query"]);
         assert!(m.is_err());
 
-        // empty string
+        // Empty string.
         let m = cli().try_get_matches_from(vec!["foo", ""]);
         assert!(m.is_err());
     }

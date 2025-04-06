@@ -31,12 +31,12 @@ fn cli() -> Command {
     // on_default()) .invalid(styling::AnsiColor::Yellow.
     // on_default());
 
-    Command::new(env!("CARGO_CRATE_NAME")) // or use: crate_name!()
+    Command::new(env!("CARGO_CRATE_NAME")) // Or use: `crate_name!()`.
         .about("A demo CLI-based tool") // Sets the program's description for the short help (-h).
         .long_about("A tool that can open one or more files or query data.") // Sets the program's description for the long help (--help).
         // optional: .after_help("Longer explanation to appear after the options when displaying the help information from --help or -h")
         .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
-        .flatten_help(true) // Flatten subcommand help into the current command's help
+        .flatten_help(true) // Flatten subcommand help into the current command's help.
         .version(crate_version!()) // Sets the version for the short version (-V) and help messages.
         // optional: .propagate_version(true) // Specifies to use the version of the current command for all subcommands.
         // optional: .author(clap::crate_authors!("\n")) // Set the authors. A custom help_template is needed for the author info to show up.
@@ -62,14 +62,14 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
 
     let mut cmds: Vec<Cmd> = Vec::new();
 
-    // files passed directly as arguments
+    // Files passed directly as arguments.
     let mut opt_files = get_arg_filepaths(&matches);
 
-    // files passed after "open" command
+    // Files passed after "open" command.
     opt_files = opt_files.map_or_else(
-        // If None
+        // If None:
         || opencmd::get_args(&matches),
-        // If Some, concatenate the filepaths vectors
+        // If Some, concatenate the filepaths vectors:
         |mut of| {
             if let Some(mut addtl_files) = opencmd::get_args(&matches) {
                 of.append(&mut addtl_files);

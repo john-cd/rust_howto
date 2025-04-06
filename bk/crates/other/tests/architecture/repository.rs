@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
 
-// Define a simple data model
+// Define a simple data model.
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct User {
     id: i32,
@@ -11,7 +11,7 @@ struct User {
     email: String,
 }
 
-// Define the Repository trait
+// Define the Repository trait.
 trait UserRepository {
     fn get_user(&self, id: i32) -> Option<User>;
     fn add_user(&self, user: User);
@@ -20,7 +20,7 @@ trait UserRepository {
     fn get_all_users(&self) -> Vec<User>;
 }
 
-// Implement an in-memory repository
+// Implement an in-memory repository.
 struct InMemoryUserRepository {
     users: Arc<Mutex<HashMap<i32, User>>>,
 }
@@ -60,7 +60,7 @@ impl UserRepository for InMemoryUserRepository {
     }
 }
 
-// Example usage
+// Example usage:
 fn main() {
     let repository: Arc<Mutex<dyn UserRepository + Send>> =
         Arc::new(Mutex::new(InMemoryUserRepository::new()));

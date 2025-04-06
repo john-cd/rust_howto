@@ -6,7 +6,7 @@ use clap::Command;
 use super::args::arg_filepaths;
 use super::args::get_arg_filepaths;
 
-/// Defines the `<exec> open file`
+/// Defines the `<exec> open file`.
 pub(super) fn cmd() -> Command {
     Command::new("open")
         // We could also use: .short_flag('o') or .visible_alias("o")

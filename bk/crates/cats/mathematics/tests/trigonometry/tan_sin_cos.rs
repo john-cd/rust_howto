@@ -1,6 +1,7 @@
 // ANCHOR: example
 
-/// This example demonstrates that the tangent of a number is equal to the sine of the number divided by the cosine of the number.
+/// This example demonstrates that the tangent of a number is equal to the sine
+/// of the number divided by the cosine of the number.
 fn main() {
     // Define a number.
     let x: f64 = 6.0;
