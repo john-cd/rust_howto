@@ -1,7 +1,14 @@
 // ANCHOR: example
+//! This example demonstrates how to skip hidden files and directories during
+//! directory traversal.
+
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
+/// Checks if a directory entry should be included in the traversal.
+///
+/// This function filters out hidden files and directories (those starting with
+/// a dot) except for the root directory itself.
 fn is_not_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()

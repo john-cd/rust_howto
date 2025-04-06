@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! Demonstrates how to get the current working directory.
 use std::env;
 
 use anyhow::Result;

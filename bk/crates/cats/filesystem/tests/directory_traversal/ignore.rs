@@ -1,24 +1,27 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `ignore` crate to traverse a
+//! directory recursively, respecting `.gitignore` and similar files, and
+//! ignoring hidden files.
+//!
+//! In `Cargo.toml`, add:
+//! ```toml
+//! ignore = "0.4" # or latest
+//! ```
+
 use ignore::WalkBuilder;
 
-// The `ignore` crate provides a fast recursive directory iterator
-// that respects `.gitignore` and similar files, ignores hidden files, etc.
-
-// In `Cargo.toml`, add:
-// ignore = "0.4" # or latest
-
 fn main() {
-    // Specify the directory to walk
+    // Specify the directory to walk.
     let root = std::path::Path::new("tests/");
 
     // Create a WalkBuilder and build a new Walk iterator.
-    // A lot more options are available
+    // A lot more options are available.
     let walker = WalkBuilder::new(root)
-        .add("temp/") // Add another directory to walk
-        .standard_filters(true)  // Respect .gitignore and other ignore files
+        .add("temp/") // Add another directory to walk.
+        .standard_filters(true)  // Respect .gitignore and other ignore files.
         .build();
 
-    // Iterate over the entries
+    // Iterate over the entries.
     for result in walker {
         match result {
             Ok(entry) => {

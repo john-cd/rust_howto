@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Demonstrates how to ignore case when matching file names.
+
 use anyhow::Result;
 use glob::MatchOptions;
 use glob::glob_with;

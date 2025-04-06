@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! Find duplicate filenames in the current directory.
 use std::collections::HashMap;
 
 use walkdir::WalkDir;

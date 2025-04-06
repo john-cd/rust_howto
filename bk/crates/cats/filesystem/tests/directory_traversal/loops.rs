@@ -1,15 +1,22 @@
 // ANCHOR: example
 #![cfg(target_os = "linux")]
+//! This example demonstrates the use of the `same_file` crate.
 
 use std::io;
 use std::path::Path;
 use std::path::PathBuf;
 
+// `is_same_file` returns true if the two file paths may correspond to the
+// same file.
 use same_file::is_same_file;
 
-// Returns the two paths that form a loop, if found
-// Returns None otherwise
-// P: AsRef<Path> accepts PathBuf, Path...
+/// `contains_loop` checks if a given path contains a symbolic link loop.
+///
+/// It does this by iteratively truncating the path and checking if the
+/// truncated path is the same file as the original path. If a loop is
+/// found, it returns the two paths that form the loop. Returns None otherwise.
+///
+/// P: AsRef<Path> accepts PathBuf, Path...
 fn contains_loop<P: AsRef<Path>>(
     path: P,
 ) -> io::Result<Option<(PathBuf, PathBuf)>> {
@@ -31,8 +38,6 @@ fn contains_loop<P: AsRef<Path>>(
 }
 
 fn main() {
-    // `is_same_file` returns true if the two file paths may correspond to the
-    // same file.
     assert!(is_same_file("/tmp/foo", "/tmp/./foo").unwrap_or(false));
 
     assert_eq!(
