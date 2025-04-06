@@ -13,9 +13,10 @@ use lazy_static::lazy_static;
 
 // The `lazy_static` macro generates code to ensure that the static variable is
 // initialized only once, the first time it's accessed.
-    // - Any type within the macro needs to fulfill the Sync trait.
-    // - If a type has a destructor, it will not run when the process exits.
-    // - The `static ref` keywords are passed to the macro, they are not part of the language per se.
+// - Any type within the macro needs to fulfill the Sync trait.
+// - If a type has a destructor, it will not run when the process exits.
+// - The `static ref` keywords are passed to the macro, they are not part of the
+//   language per se.
 lazy_static! {
     // `CONFIG` is a lazily-initialized HashMap that holds configuration data.
     static ref CONFIG: HashMap<String, String> = {
