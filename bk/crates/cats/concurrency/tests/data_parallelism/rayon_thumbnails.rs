@@ -69,17 +69,17 @@ where
 }
 
 fn create_test_files() -> Result<()> {
-    // Create a directory for test files
-    let test_dir = Path::new("test_images");
+    // Create a directory for test files.
+    let test_dir = Path::new("temp/test_images");
     if !test_dir.exists() {
-        std::fs::create_dir(test_dir)?;
+        std::fs::create_dir_all(test_dir)?;
     }
 
-    // Create a few dummy .jpg files
+    // Create a few dummy .jpg files.
     for i in 0..3 {
         let file_path = test_dir.join(format!("test_{}.jpg", i));
         let mut file = File::create(&file_path)?;
-        // Write some dummy data to the file (not a real image)
+        // Write some dummy data to the file (not a real image).
         file.write_all(b"dummy image data")?;
     }
     Ok(())
