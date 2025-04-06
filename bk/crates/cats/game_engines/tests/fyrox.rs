@@ -1,9 +1,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-
-// use fyrox::engine::Engine;
+// //! This example demonstrates how to create a simple window with a text
+// widget using the Fyrox game engine. //!
+// //! It creates a window with the title "Hello, Fyrox!" and a text widget that
+// displays "Welcome to Fyrox!". //! It also shows how to handle UI events, such
+// as closing the window. use fyrox::engine::Engine;
 // use fyrox::engine::EngineInitParams;
+
 // use fyrox::event_loop::EventLoop;
 // use fyrox::gui::message::UiMessage;
 // use fyrox::gui::message::UiMessageData;
@@ -15,8 +19,6 @@
 // use fyrox::gui::window::WindowTitle;
 // use fyrox::scene::Scene;
 
-// // This example creates a simple window with the title "Hello, Fyrox!" and a
-// // text widget that displays "Welcome to Fyrox!".
 // fn main() {
 //     // Create an event loop
 //     let event_loop = EventLoop::new();
