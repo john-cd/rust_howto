@@ -1,4 +1,5 @@
 // ANCHOR: example
+//! Demonstrates the use of the `lazy_static` crate.
 use std::collections::HashMap;
 
 use lazy_static::lazy_static;
@@ -12,7 +13,9 @@ lazy_static! {
     };
 }
 
+// Example function: display the access privileges for a given name.
 fn show_access(name: &str) {
+    // Access the global static:
     let access = PRIVILEGES.get(name);
     println!("{}: {:?}", name, access);
 }
