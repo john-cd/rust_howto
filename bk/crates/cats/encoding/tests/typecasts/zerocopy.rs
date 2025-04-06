@@ -171,6 +171,7 @@ fn from_bytes() -> anyhow::Result<()> {
 ///   i64, or isize).
 /// - no padding bytes; and
 /// - `IntoBytes` fields.
+///
 /// Here, the enum is field-less. It stores 0 for A, 1 for B, etc... in a byte.
 #[repr(u8)]
 #[derive(IntoBytes, Immutable)]
@@ -189,7 +190,7 @@ fn enums_also_work() {
 }
 
 /// 4. Safely transmutes a value of one type
-/// to a value of another type of the same size.
+///    to a value of another type of the same size.
 fn transmute() {
     let one_dimensional: [u8; 8] = [0, 1, 2, 3, 4, 5, 6, 7];
     let two_dimensional: [[u8; 4]; 2] = zerocopy::transmute!(one_dimensional);
