@@ -1,51 +1,48 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-
-// use std::sync::Arc;
+// //! # Zenoh Example
+// //!
+// //! This module demonstrates basic publish-subscribe functionality using the
+// //! Zenoh protocol. It showcases how to create a Zenoh session, publish data
+// //! to a topic, and subscribe to receive data from that topic.
 
 // use zenoh::Config;
 // use zenoh::Error;
 // use zenoh::Result;
 // use zenoh::Session;
-// // ZBytes & encoding
 // use zenoh::bytes::{Encoding, ZBytes};
 // use zenoh::config::*;
-// // key_expr & selector
 // use zenoh::key_expr::{KeyExpr, OwnedKeyExpr, keyexpr};
-// // publisher & subscriber
 // use zenoh::pubsub::{Publisher, Subscriber};
-// // quality of service
+// // quality of service:
 // use zenoh::qos::{CongestionControl, Priority};
-// // query & queryable & selectors
+// // query & queryable & selectors:
 // use zenoh::query::{
 //     ConsolidationMode, Parameters, Query, QueryConsolidation, QueryTarget,
 //     Queryable, Reply, Selector,
 // };
-// // sample
 // use zenoh::sample::Sample;
-// // session
-// use zenoh::session::Session;
 
-// // Demonstrate basic publish-subscribe functionality with Zenoh.
+// /// Demonstrate basic publish-subscribe functionality with Zenoh.
 // #[tokio::main]
 // async fn main() -> anyhow::Result<()> {
-//     // Create a Zenoh session
+//     // Create a Zenoh session:
 //     let config = Config::default();
 //     let session = zenoh::open(config).await?;
 
-//     // Publish a value
+//     // Publish a value:
 //     let key = KeyExpr::from("my/topic");
 //     let value = Value::from("Hello, Zenoh!");
 //     session.put(&key, &value).await?;
 //     // or: session.put("key/expression", "value").await?;
 //     println!("Published: {}", value);
 
-//     // Subscribe to a topic
+//     // Subscribe to a topic:
 //     let key_expr = KeyExpr::from("my/topic");
 //     let subscriber = session.declare_subscriber(&key_expr).await?;
 
-//     // Receive and print incoming messages
+//     // Receive and print incoming messages.
 //     loop {
 //         match subscriber.recv_async().await {
 //             Ok(sample) => {
