@@ -1,6 +1,25 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates a simple linear regression model using the
+// //! Candle library. It showcases the basic steps of defining a model,
+// //! training it, and making predictions.
+// //! Candle consists of a number of crates.
+// //! Add to your `Cargo.toml` as needed:
+// //! - Core Datastructures and DataTypes.
+// //! candle-core = "0.8.2"
+// //! - Building blocks for Neural Nets.
+// //! candle-nn = "0.8.2"
+// //! - Rust access to commonly used Datasets like MNIST.
+// //! candle-datasets = "0.8.2"
+// //! - Examples of Candle in Use.
+// //! candle-examples = "0.8.1"
+// //! - Loading and using ONNX models.
+// //! candle-onnx = "0.8.2"
+// //! - Access to Candle from Python.
+// //! candle-pyo3 = "0.8.2"
+// //! - Candle implementation of many published transformer models.
+// //! candle-transformers = "0.8.2"
 
 // // Data types of elements allowed in tensors.
 // use candle_core::DType;
@@ -15,28 +34,11 @@
 // use candle_nn::Linear;
 // use candle_nn::linear;
 
-// // Candle consists of a number of crates.
-// // Add to your `Cargo.toml` as needed:
-// // Core Datastructures and DataTypes.
-// // candle-core = "0.8.2"
-// // Building blocks for Neural Nets.
-// // candle-nn = "0.8.2"
-// // Rust access to commonly used Datasets like MNIST.
-// // candle-datasets = "0.8.2"
-// // Examples of Candle in Use.
-// // candle-examples = "0.8.1"
-// // Loading and using ONNX models.
-// // candle-onnx = "0.8.2"
-// // Access to Candle from Python.
-// // candle-pyo3 = "0.8.2"
-// // Candle implementation of many published transformer models.
-// // candle-transformers = "0.8.2"
-
 // // Choose between `Cpu`, `Cuda`, and `Metal`
 // // For CUDA / Metal, review https://huggingface.github.io/candle/guide/installation.html
 // const DEVICE: candle_core::Device = candle_core::Device::Cpu;
 
-// // Define the model architecture
+// // Define the model architecture:
 // struct LinearModel {
 //     linear: Linear,
 // }
