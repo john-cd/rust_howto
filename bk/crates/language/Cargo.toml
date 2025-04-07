@@ -19,7 +19,7 @@ autolib = false
 [dependencies]
 anyhow = "1.0.95"
 cfg-if = "1.0.0"
-tokio = { version = "1.43.0", features = ["full"] }
+tokio = { version = "1.44.2", features = ["full"] }
 
 [features]
 full = []
