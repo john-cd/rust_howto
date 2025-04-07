@@ -1,44 +1,53 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! This example demonstrates a basic usage of the `smartcore` crate for
+// machine learning tasks. //!
+// //! `smartcore` provides various algorithms for clustering, classification,
+// // regression, and more.
+// //!
+// //! The following includes:
+// //!
+// //! 1.  Generating a synthetic dataset.
+// //! 2.  Fitting a linear regression model to the dataset.
+// //! 3.  Making predictions using the fitted model.
+// //! 4.  Calculating the mean squared error to evaluate the model's
+// performance.
 
-// // KNNClassifier
-// // use smartcore::neighbors::knn_classifier::*;
-// // Various distance metrics
-// // use smartcore::metrics::distance::*;
 // use rand::Rng;
 // use smartcore::linalg::basic::matrix::DenseMatrix;
 // use smartcore::linear::linear_regression::LinearRegression;
 // use smartcore::metrics::mean_squared_error;
-
-// // `smartcore` provides various algorithms for clustering, classification,
-// // regression, and more.
+// // KNNClassifier
+// // use smartcore::neighbors::knn_classifier::*;
+// // Various distance metrics
+// // use smartcore::metrics::distance::*;
 
 // fn main() {
-//     // Generate a dataset using the `generate::make_blobs` function.
+//     // Generate a dataset.
 //     let x: DenseMatrix<f64> = make_blobs(100, 1, 1.0, &vec![1.0, 2.0]);
 //     let y = x.iter().map(|col| col[0] * 3.0 + 1.0).collect::<Vec<f64>>();
 
 //     // Fit a linear regression model to the dataset.
 //     let lr = LinearRegression::fit(&x, &y, Default::default()).unwrap();
 
-//     // Make predictions
+//     // Make predictions.
 //     let y_hat = lr.predict(&x).unwrap();
 
-//     // Calculate the mean squared error
+//     // Calculate the mean squared error.
 //     let mse = mean_squared_error(&y, &y_hat);
 
 //     println!("Predictions: {:?}", y_hat);
 //     println!("Mean Squared Error: {}", mse);
 // }
 
-// // The make_blobs function generates random samples around the specified
-// // cluster centers, creating a dataset with the specified number of samples
-// // and feature
-// // n_samples is the number of samples to generate.
-// // n_features is the number of features for each sample.
-// // cluster_std is the standard deviation of the clusters.
-// // centers is a vector of the center points for the clusters.
+// /// The `make_blobs` function generates random samples around the specified
+// /// cluster centers, creating a dataset with the specified number of samples
+// /// and feature.
+// /// `n_samples` is the number of samples to generate.
+// /// `n_features` is the number of features for each sample.
+// /// `cluster_std` is the standard deviation of the clusters.
+// /// `centers` is a vector of the center points for the clusters.
 // pub fn make_blobs(
 //     n_samples: usize,
 //     n_features: usize,
@@ -60,9 +69,10 @@
 
 //     DenseMatrix::from_array(n_samples, n_features, &data)
 // }
+// // ANCHOR_END: example
 
 // #[test]
 // fn test() {
 //     main();
 // }
-// // [finish](https://github.com/john-cd/rust_howto/issues/837)
+// // [finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)
