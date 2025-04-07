@@ -2,9 +2,18 @@
 
 ## Go trough VS Code bookmarks (dev container) WIP
 
+## Add doc comments to all examples
+
+- WIP
+- to do: gui
+
 ---
 
 ## Finish pandoc setup; generate PDF version of book WIP
+
+---
+
+## sccache
 
 ---
 
