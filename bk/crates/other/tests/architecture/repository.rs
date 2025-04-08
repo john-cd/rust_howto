@@ -3,15 +3,21 @@ use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
 
-// Define a simple data model.
+/// Define a simple data model.
+/// Represents a user with an ID, name, and email.
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct User {
+    /// The unique identifier for the user.
     id: i32,
+    /// The name of the user.
     name: String,
+    /// The email address of the user.
     email: String,
 }
 
-// Define the Repository trait.
+/// Define the UserRepository trait, the contract for a user repository.
+/// This trait outlines the operations that can be performed on a collection of
+/// users, such as retrieving, adding, updating, deleting, and listing users.
 trait UserRepository {
     fn get_user(&self, id: i32) -> Option<User>;
     fn add_user(&self, user: User);
@@ -20,7 +26,10 @@ trait UserRepository {
     fn get_all_users(&self) -> Vec<User>;
 }
 
-// Implement an in-memory repository.
+/// An in-memory implementation of the `UserRepository` trait.
+///
+/// This struct uses a `HashMap` to store users and `Arc<Mutex<>>` to allow for
+/// concurrent access and modification.
 struct InMemoryUserRepository {
     users: Arc<Mutex<HashMap<i32, User>>>,
 }
@@ -33,6 +42,7 @@ impl InMemoryUserRepository {
     }
 }
 
+/// Implementation of the UserRepository trait for InMemoryUserRepository.
 impl UserRepository for InMemoryUserRepository {
     fn get_user(&self, id: i32) -> Option<User> {
         let users = self.users.lock().unwrap();
@@ -60,7 +70,10 @@ impl UserRepository for InMemoryUserRepository {
     }
 }
 
-// Example usage:
+/// Example usage of the `InMemoryUserRepository`.
+///
+/// This function demonstrates how to create a repository, add users, retrieve
+/// users, update users, delete users, and list all users.
 fn main() {
     let repository: Arc<Mutex<dyn UserRepository + Send>> =
         Arc::new(Mutex::new(InMemoryUserRepository::new()));

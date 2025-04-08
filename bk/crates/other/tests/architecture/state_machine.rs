@@ -1,16 +1,24 @@
 // ANCHOR: example
+
+/// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {
+    /// The initial state, indicating that the state machine is ready to start.
     Idle,
+    /// The state indicating that the state machine is currently processing.
     Processing,
+    /// The state indicating that the processing has been completed
+    /// successfully.
     Completed,
+    /// The state indicating that an error occurred during processing.
     Error,
 }
 
+/// Represents the state machine itself, holding the current state.
 struct StateMachine {
     state: State,
 }
-
+/// Represents the possible events that can trigger state transitions.
 #[derive(Debug)]
 enum Event {
     Start,
@@ -19,11 +27,16 @@ enum Event {
     Reset,
 }
 
+/// Implementation of the StateMachine, including state transitions and state
+/// retrieval.
 impl StateMachine {
+    /// Creates a new StateMachine in the Idle state.
     fn new() -> Self {
         StateMachine { state: State::Idle }
     }
 
+    /// Transitions the state machine to a new state based on the current state
+    /// and the received event.
     fn transition(&mut self, event: Event) {
         self.state = match (&self.state, event) {
             (State::Idle, Event::Start) => State::Processing,
@@ -36,6 +49,7 @@ impl StateMachine {
         };
     }
 
+    /// Returns a reference to the current state of the state machine.
     fn get_state(&self) -> &State {
         &self.state
     }

@@ -2,16 +2,22 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! CQRS (Command Query Responsibility Segregation) is an architectural
+// //! pattern that separates the models for reading and writing data.
+// //! This separation allows for independent scaling and optimization of the
+// //! read and write sides.
+// //!
+// //! Separation of Concerns in CQRS:
+// //! - Commands and queries are handled separately.
+// //! - The write side (commands) focuses on state changes.
+// //! - The read side (queries) focuses on efficient data retrieval.
+
 // use anyhow::Result;
 
-// // Separation of Concerns in CQRS:
-// // - Commands and queries are handled separately.
-// // - The write side (commands) focuses on state changes.
-// // - The read side (queries) focuses on efficient data retrieval.
-
-// // Domain Model
+// /// Domain Model.
 // mod domain {
 
+//     /// Represents a product in the domain.
 //     #[derive(Debug, Clone)]
 //     pub struct Product {
 //         id: u32,
@@ -19,12 +25,13 @@
 //         quantity: u32,
 //     }
 
+//     /// Implementation of the Product struct.
 //     impl Product {
 //         pub fn new(id: u32, name: String, quantity: u32) -> Self {
 //             Product { id, name, quantity }
 //         }
 
-//         // Getters
+//         // Getters.
 //         pub fn id(&self) -> u32 {
 //             self.id
 //         }
@@ -45,15 +52,18 @@
 
 // mod events {
 
-//     use serde::Deserialize;
-//     use serde::Serialize;
 //     use std::sync::RwLock;
 
-//     // Events
-//     // - Represent facts about what has happened in the system
-//     // (e.g., ProductCreated, ProductQuantityUpdated).
-//     // - Are stored in the Event Store.
+//     use serde::Deserialize;
+//     use serde::Serialize;
+
+//     /// Events represent facts about what has happened in the system.
+//     ///
+//     /// Examples:
+//     /// - `ProductCreated`.
+//     /// - `ProductQuantityUpdated`.
 //     #[derive(Debug, Clone, Serialize, Deserialize)]
+//     /// Represents events related to products.
 //     pub enum ProductEvent {
 //         ProductCreated {
 //             id: u32,
@@ -66,27 +76,10 @@
 //         },
 //     }
 
-//     // Optional: track event name and version
-//     // pub trait Event {
-//     //     fn event_type(&self) -> String;
-//     //     fn event_version(&self) -> String {
-//     //         "1.0".to_string()
-//     //     }
-//     // }
-
-//     // impl Event for ProductEvent {
-//     //     fn event_type(&self) -> String {
-//     //         let event_type: &str = match self {
-//     //             ProductEvent::ProductCreated { .. } => "ProductCreated",
-//     //             ProductEvent::ProductQuantityUpdated { .. } => {
-//     //                 "ProductQuantityUpdated"
-//     //             }
-//     //         };
-//     //         event_type.to_string()
-//     //     }
-//     // }
-
-//     // Acts as the source of truth for the system's state.
+//     /// `EventRepository` trait.
+//     ///
+//     /// Acts as the source of truth for the system's state.
+//     /// Events are stored in the Event Store.
 //     pub trait EventRepository {
 //         fn apply_event(&self, event: ProductEvent);
 //         fn get_events(&self) -> Vec<ProductEvent>;
@@ -103,10 +96,10 @@
 //             let events = self.events.read().unwrap();
 //             events.clone() // FIXME
 //         }
-//         // FIXME get most recent useful events by reverse iteration
+//         // FIXME get most recent useful events by reverse iteration.
 //     }
 
-//     // In this example, the EventStore is held in memory,
+//     // In this example, the `EventStore` is held in memory,
 //     // but in a real world application, it would be a database.
 //     pub struct SimpleEventStore {
 //         events: RwLock<Vec<ProductEvent>>,
@@ -121,15 +114,18 @@
 //     }
 // }
 
+// /// Commands module.
 // mod commands {
+
+//     use anyhow::Result;
+//     use log::debug;
 
 //     use super::events::EventRepository;
 //     use super::events::ProductEvent;
-//     use anyhow::Result;
 
-//     // Commands
-//     // Represent intentions to change the system's state
-//     // (e.g., CreateProduct, UpdateProductQuantity).
+//     // Commands.
+//     // They represent intentions to change the system's state
+//     // (e.g., `CreateProduct`, `UpdateProductQuantity`).
 //     #[derive(Debug)]
 //     pub enum Command {
 //         CreateProduct {
@@ -156,6 +152,7 @@
 //             CommandHandler { event_store }
 //         }
 
+//         /// Validates a command before applying it.
 //         fn validate(&self, command: &Command) -> Result<()> {
 //             match command {
 //                 Command::CreateProduct { quantity, .. } if *quantity == 0 =>
@@ -172,6 +169,7 @@
 //             }
 //         }
 
+//         /// Handles a command and generates events.
 //         fn handle(&self, command: Command) -> Result<()> {
 //             match command {
 //                 Command::CreateProduct { id, name, quantity } => {
@@ -189,8 +187,9 @@
 //                     if let Some(current) = current_quantity {
 //                         let new_quantity =
 //                             (current as i32 + quantity).max(0) as u32; //
-// FIXME handle errors                         let event =
-// ProductEvent::ProductQuantityUpdated {                             id,
+//                         // FIXME handle errors
+//                         let event = ProductEvent::ProductQuantityUpdated {
+//                             id,
 //                             new_quantity,
 //                         };
 //                         self.event_store.apply_event(event);
@@ -202,11 +201,13 @@
 //             }
 //         }
 
+//         /// Processes a command.
 //         pub fn process(&self, command: Command) -> Result<()> {
 //             self.validate(&command)?;
 //             self.handle(command)
 //         }
 
+//         /// Gets the current quantity of a product by replaying events.
 //         fn get_current_quantity(&self, product_id: u32) -> Option<u32> {
 //             let events = self.event_store.get_events();
 //             let mut current_quantity: Option<u32> = None;
@@ -232,6 +233,7 @@
 //     }
 // }
 
+// /// Read Store module.
 // mod read_store {
 //     use std::collections::HashMap;
 //     use std::sync::RwLock;
@@ -239,21 +241,24 @@
 //     use super::domain::Product;
 //     use super::events::ProductEvent;
 
-//     // FIXME repository with domain objects
+//     /// `ProductRepository` trait.
+//     /// Repository with domain objects.
 //     pub trait ProductRepository {
 //         fn get_product(&self, id: u32) -> Option<Product>;
 //         // FIXME get_all_products() -> Vec<Product>;
 //     }
 
+//     /// `SimpleProductRepository` struct.
 //     pub struct SimpleProductRepository;
 
 //     impl ProductRepository for SimpleProductRepository {
-//         fn get_product(&self, id: u32) -> Option<Product> {
-//         }
+//         fn get_product(&self, id: u32) -> Option<Product> {}
 //         // FIXME consume events
 //     }
 
-//     // FIXME DAL with database entities (events here)
+//     /// SimpleReadStore struct.
+//     ///
+//     /// Data Access Layer (DAL) with database entities (events here).
 //     pub struct SimpleReadStore {
 //         read_model: RwLock<HashMap<u32, Product>>,
 //     }
@@ -265,7 +270,7 @@
 //             }
 //         }
 
-//         // FIXME split into store and repo portions?
+//         /// Updates the read model based on an event.
 //         fn update(&self, event: ProductEvent) {
 //             match event {
 //                 ProductEvent::ProductCreated { id, name, quantity } => {
@@ -281,8 +286,9 @@
 //             }
 //         }
 
-//         // rebuild_read_model() is used to re-create the read model
-//         // from the event store.
+//         /// Rebuilds the read model from the event store.
+//         ///
+//         /// This is used to re-create the read model from the event store.
 //         fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
 //             let mut read_model = self.read_model.write().unwrap();
 //             read_model.clear();
@@ -293,13 +299,14 @@
 //     }
 // }
 
+// /// Query module.
 // mod query {
 
 //     use super::domain::Product;
 //     use super::read_store::ProductRepository;
 
-//     // Query Handler
-//     // - Handles read requests.
+//     /// Query Handler:
+//     /// - Handles read requests.
 //     // - Maintains a read-optimized representation of the data.
 //     // - Is updated by processing events from the Event Store.
 //     // - Uses a hashmap as an in-memory database for the read model.
@@ -314,6 +321,7 @@
 //             }
 //         }
 
+//         /// Gets a product by ID.
 //         fn get_product(&self, id: u32) -> Option<Product> {
 //             // Business logic goes here
 //             self.read_repo.get_product(id)
@@ -321,6 +329,7 @@
 //     }
 // }
 
+// /// Main function.
 // fn main() -> anyhow::Result<()> {
 //     use commands::Command;
 
@@ -329,6 +338,7 @@
 
 //     let read_store = read_store::SimpleReadStore::new();
 //     let query_handler = query::QueryHandler::new(read_store);
+//     let events = command_handler.event_store.get_events();
 
 //     command_handler.process(Command::CreateProduct {
 //         id: 1,
@@ -341,7 +351,7 @@
 //         quantity_change: -3,
 //     })?;
 
-//     //query_handler.rebuild_read_model();
+//     read_store.rebuild_read_model(events);
 
 //     if let Some(product) = query_handler.get_product(1) {
 //         println!("Product: {:?}", product);
@@ -357,7 +367,7 @@
 //         })
 //         .unwrap();
 
-//     // query_handler.rebuild_read_model();
+//     // read_store.rebuild_read_model(events);
 //     // if let Some(product) = query_handler.get_product(2) {
 //     //     println!("Product: {:?}", product);
 //     // } else {
@@ -372,8 +382,7 @@
 //     Ok(())
 // }
 
-// FIXME finish NOW
-
+// // FIXME finish NOW
 // // https://martinfowler.com/bliki/CQRS.html
 // // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1?source=more_series_bottom_blogs
 // // https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2

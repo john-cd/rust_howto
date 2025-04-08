@@ -1,4 +1,14 @@
 // ANCHOR: example
+//! Dependency Injection (DI) is a design pattern that allows us to decouple
+//! components of our application.
+//!
+//! Shaku is a Rust dependency injection library.
+//!
+//! Add to your `Cargo.toml` file:
+//! ```toml
+//! [dependencies]
+//! shaku = "0.7.0" # Or latest
+//! ```
 use std::sync::Arc;
 
 use shaku::Component;
@@ -6,7 +16,7 @@ use shaku::HasComponent;
 use shaku::Interface;
 use shaku::module;
 
-// Define an interface
+// Define an interface.
 trait Greeter: Interface {
     fn greet(&self, name: &str) -> String;
 }
@@ -27,10 +37,11 @@ impl Greeter for EnglishGreeter {
     }
 }
 
-// A component is a struct that implements an Interface trait.
-// Interface traits require certain bounds, such as 'static and optionally Send
-// + Sync if using the thread_safe feature. The `Interface` trait acts as a
-// trait alias for these bounds
+// A component is a struct that implements an `Interface` trait.
+// `Interface` traits require certain bounds, such as 'static and optionally
+// `Send
+// + Sync` if using the `thread_safe` feature. The `Interface` trait acts as a
+// trait alias for these bounds.
 trait Conversation: Interface {
     fn start(&self) -> String;
 }
@@ -39,7 +50,8 @@ trait Conversation: Interface {
 #[shaku(interface = Conversation)]
 struct EnglishConversation {
     // Components can depend on other components.
-    // Make sure the property is declared as a trait object wrapped in an Arc.
+    // Make sure the property is declared as a trait object wrapped in an
+    // `Arc`.
     #[shaku(inject)]
     greeter: Arc<dyn Greeter>,
     #[shaku(default)]
@@ -52,8 +64,8 @@ impl Conversation for EnglishConversation {
     }
 }
 
-// Define a module
-// MyModule is a module that groups related components and providers.
+// Define a module.
+// `MyModule` is a module that groups related components and providers.
 // Modules link together components (and providers), and are core to providing
 // shaku’s compile time guarentees.
 module! {
@@ -67,9 +79,9 @@ fn main() {
     // Create an instance of the module, which manages the dependencies.
     let module = MyModule::builder().build();
 
-    // Resolve the Greeter interface
+    // Resolve the `Greeter` interface.
     let greeter: &dyn Greeter = module.resolve_ref();
-    // Use the resolved component
+    // Use the resolved component.
     let greeting = greeter.greet("World");
     println!("{}", greeting);
 
