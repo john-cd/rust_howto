@@ -1,11 +1,14 @@
 // ANCHOR: example
+//! This example demonstrates a basic WebSocket client using the `tungstenite`
+//! crate.
+//!
+//! `tungstenite` provides lightweight, flexible WebSockets for Rust.
+
 use tungstenite::Message;
 use tungstenite::connect;
 
-// Lightweight, flexible WebSockets for Rust
-
 fn main() -> anyhow::Result<()> {
-    // Connect to a test WebSocket server in blocking mode
+    // Connect to a test WebSocket server in blocking mode.
     let (mut socket, response) = connect("ws://echo.websocket.in")?;
     // To support secure "wss://"" URLs, feature "native-tls" or "rustls-tls"
     // must be turned on. If you want a non-blocking or other custom stream,
@@ -23,7 +26,7 @@ fn main() -> anyhow::Result<()> {
     socket.send(Message::Text("Hello WebSocket".into()))?;
     println!("Message sent");
 
-    // Read a message from the server
+    // Read a message from the server.
     let msg = socket.read()?;
     println!("Received: {}", msg);
 

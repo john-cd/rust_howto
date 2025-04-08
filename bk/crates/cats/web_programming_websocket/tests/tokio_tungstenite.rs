@@ -1,18 +1,22 @@
 // ANCHOR: example
-// Extension trait for Sinks; defines `send()`
+//! Example of an asynchronous WebSocket client with `tokio_tungstenite`.
+//!
+//! The WebSocket protocol provides a simultaneous two-way communication
+//! channel over a single TCP connection, typically between a web browser and
+//! a web server.
+//!
+//! This example connects to a test WebSocket server, sends a message, and
+//! receives an echoed message back.
+
+// Extension trait for Sinks; defines `send()`.
 use futures_util::SinkExt;
-// Extension trait for Streams; defines `next()`
+// Extension trait for Streams; defines `next()`.
 use futures_util::StreamExt;
 use tokio_tungstenite::connect_async;
 use tokio_tungstenite::tungstenite::client::IntoClientRequest;
-// An enum representing the various forms of a WebSocket message: text,
-// binary...
+// An enum representing the various forms of a WebSocket message:
+// text, binary...
 use tokio_tungstenite::tungstenite::protocol::Message;
-
-// Create an asynchronous WebSocket client.
-// The WebSocket protocol provides a simultaneous two-way communication channel
-// over a single TCP connection, typically between a web browser and a web
-// server.
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -31,11 +35,11 @@ async fn main() -> anyhow::Result<()> {
 
     let (mut write, mut read) = ws_stream.split();
 
-    // Send a message to the server
+    // Send a message to the server.
     write.send(Message::Text("Hello WebSocket".into())).await?;
     println!("Message sent!");
 
-    // Read a message from the server
+    // Read a message from the server.
     if let Some(msg) = read.next().await {
         let msg = msg?;
         println!("Received: {}", msg);
