@@ -1,8 +1,11 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-// use vger::canvas::{Canvas, Color};
-// use vger::geom::{Point, Rect, Size};
+// use vger::canvas::Canvas;
+// use vger::canvas::Color;
+// use vger::geom::Point;
+// use vger::geom::Rect;
+// use vger::geom::Size;
 // use vger::platform::run;
 
 // fn main() {
@@ -20,11 +23,14 @@
 //             );
 //             canvas.draw_rect(red_rect, Color::RED);
 
-//             // Blue Circle
-//             canvas.draw_circle(bounds.center() + Point::new(150.0, -50.0),
-// 50.0, Color::BLUE);
+//             // Blue Circle:
+//             canvas.draw_circle(
+//                 bounds.center() + Point::new(150.0, -50.0),
+//                 50.0,
+//                 Color::BLUE,
+//             );
 
-//             // Green Line
+//             // Green Line:
 //             canvas.draw_line(
 //                 bounds.center() + Point::new(-100.0, 50.0),
 //                 bounds.center() + Point::new(0.0, 150.0),
@@ -32,22 +38,22 @@
 //                 5.0, // Line thickness
 //             );
 
-//             // Text (requires a font, see below)
+//             // Text (requires a font, see below):
 //             // canvas.draw_text("Hello, Vger!", bounds.center(),
-// Color::WHITE);
+//             // Color::WHITE);
 
-// // Load a font (replace with your font path)
-// let font_data = include_bytes!("../assets/Roboto-Regular.ttf"); // Example:
-// embed the font let font = Font::new(font_data).unwrap();
+//             // Load a font (replace with your font path)
+//             let font_data = include_bytes!("../assets/Roboto-Regular.ttf");
+//             let font = Font::new(font_data).unwrap();
 
-// // Draw text
-// canvas.draw_text(
-//     "Hello, Vger!",
-//     bounds.center() + Point::new(0.0, -100.0), // Position
-//     &font,                                  // The font
-//     32.0,                                  // Font size
-//     Color::WHITE,
-// );
+//             // Draw text
+//             canvas.draw_text(
+//                 "Hello, Vger!",
+//                 bounds.center() + Point::new(0.0, -100.0), // Position.
+//                 &font,                                     // Font.
+//                 32.0,                                      // Font size.
+//                 Color::WHITE,
+//             );
 
 //             // Path example (triangle)
 //             let path = vger::path::Path::new(vec![
@@ -57,8 +63,8 @@
 //             ]);
 //             canvas.draw_path(&path, Color::YELLOW, 3.0);
 //         },
-//         Size::new(800.0, 600.0), // Initial window size
-//         "Vger Example",           // Window title
+//         Size::new(800.0, 600.0), // Initial window size.
+//         "Vger Example",          // Window title.
 //     );
 // }
 

@@ -203,7 +203,7 @@
 // }
 
 // /// The main function.
-fn main() {
+pub fn main() {
     //     let app = RelmApp::new("relm4.example.simple_manual");
     //     app.run::<CounterModel>(1);
 }
