@@ -1,8 +1,7 @@
 // // ANCHOR: example
-
 // // Framework for building pre-compiled Node.js addons in Rust.
 
-// /// import the preludes
+// /// Import the preludes:
 // use napi::bindgen_prelude::*;
 // use napi_derive::napi;
 // use napi::Env;

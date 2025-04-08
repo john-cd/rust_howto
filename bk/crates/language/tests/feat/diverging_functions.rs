@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function diverges, meaning it never returns.
 /// It uses the `!` (Never) type to indicate this.
 fn foo() -> ! {

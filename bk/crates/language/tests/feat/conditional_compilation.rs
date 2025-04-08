@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function only gets compiled if the target OS is Linux.
 #[cfg(target_os = "linux")]
 fn are_you_on_linux() {

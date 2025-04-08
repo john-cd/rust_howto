@@ -2,6 +2,14 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// /// # Example
+// ///
+// /// This is a simple example of a counter application using `relm4`.
+// ///
+// /// It demonstrates how to create a simple application with a counter that
+// /// can be incremented and decremented. It also shows how to update the view
+// /// based on the model.
+
 // use relm4::ComponentParts;
 // use relm4::ComponentSender;
 // use relm4::RelmApp;
@@ -11,33 +19,40 @@
 // use relm4::gtk::glib::clone;
 // use relm4::gtk::prelude::*;
 
-// // The model type that stores the application state.
+// /// The model type that stores the application state.
 // struct CounterModel {
 //     data: CounterData,
 // }
+
+// /// The data type that stores the counter value.
 // struct CounterData {
+//     /// The current value of the counter.
 //     value: i32,
 //     //...
 // }
 
-// // The message types that describe which information can be sent to update
-// the // model / sent from the component
+// /// The message types that describe which information can be sent to update
+// the model.
 // #[derive(Debug)]
 // enum CounterInput {
 //     Increment,
 //     Decrement,
 // }
 
+// /// The message types that describe which information can be sent from the
+// component.
 // #[derive(Debug)]
 // enum CounterOutput {
 //     CurrentValue(i32),
 // }
 
-// // Cloning a widget doesn't create a new instance, but just increases the
-// // reference count. Widgets are kept alive automatically. Dropping widgets
-// that // are still used somewhere does not destroy them, but just decreases
-// the // reference count. Widgets are not thread-safe. Widgets don't implement
-// Send // and can only be used on the main thread.
+// /// The widgets that are used in the application.
+// ///
+// /// Cloning a widget doesn't create a new instance, but just increases the
+// /// reference count. Widgets are kept alive automatically. Dropping widgets
+// /// that are still used somewhere does not destroy them, but just decreases
+// /// the reference count. Widgets are not thread-safe. Widgets don't implement
+// /// `Send` and can only be used on the main thread.
 // struct CounterWidgets {
 //     // window: gtk::Window,
 //     // vbox: gtk::Box,
@@ -48,19 +63,29 @@
 // }
 
 // impl SimpleComponent for CounterModel {
-//     /// The type of data with which this component will be initialized.
+//     /// The type of data with which this component will be initialized. In
+//     /// this case, an i32.
 //     type Init = i32;
-//     /// The type of the messages that this component can receive.
+//     /// The type of the messages that this component can receive. In this
+//     /// case, `CounterInput`.
 //     type Input = CounterInput;
-//     /// The type of the messages that this component can send.
+//     /// The type of the messages that this component can send. In this case,
+//     /// `CounterOutput`.
 //     type Output = CounterOutput;
-//     /// The root GTK widget that this component will create.
+//     /// The root GTK widget that this component will create. In this case, a
+//     /// `gtk::Window`.
 //     type Root = gtk::Window;
+//     /// The root GTK widget that this component will create.
+//     ///
+//     /// The Root type is the outermost widget of the app. Components can
+//     /// choose this type freely, but the main component must use a Window.
+//     /// In this case, we use a `gtk::Window`.
 //     /// A data structure that contains the widgets that you will need to
-// update.     type Widgets = CounterWidgets;
+// /// update.
+// type Widgets = CounterWidgets;
 
 //     // The Root type is the outermost widget of the app. Components can
-// choose     // this type freely, but the main component must use a Window.
+//     // choose this type freely, but the main component must use a `Window`.
 //     fn init_root() -> Self::Root {
 //         gtk::Window::builder()
 //             .title("Simple app")
@@ -69,6 +94,9 @@
 //             .build()
 //     }
 
+//     /// Initialize the component.
+//     ///
+//     /// This function is called when the component is created.
 //     fn init(
 //         init_value: Self::Init,
 //         window: Self::Root,
@@ -134,7 +162,9 @@
 //         component_parts
 //     }
 
-//     // Process messages and update its model.
+//     /// Process messages and update its model.
+//     ///
+//     /// This function is called when a message is received.
 //     fn update(&mut self, input: Self::Input, sender: ComponentSender<Self>) {
 //         match input {
 //             CounterInput::Increment => {
@@ -152,7 +182,9 @@
 //         }
 //     }
 
-//     // Update the view to represent the updated model.
+//     /// Update the view to represent the updated model.
+//     ///
+//     /// This function is called after the model has been updated.
 //     fn update_view(
 //         &self,
 //         widgets: &mut CounterWidgets,
@@ -170,10 +202,10 @@
 //     }
 // }
 
-// fn main() {
-//     let app = RelmApp::new("relm4.example.simple_manual");
-//     app.run::<CounterModel>(1);
-// }
+// /// The main function.
+fn main() {
+    //     let app = RelmApp::new("relm4.example.simple_manual");
+    //     app.run::<CounterModel>(1);
+}
 
-pub fn main() {}
 // // [finish; review https://relm4.org/book/stable/](https://github.com/john-cd/rust_howto/issues/784)

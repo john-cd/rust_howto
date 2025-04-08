@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // Initialize the logger.
     init_logger();

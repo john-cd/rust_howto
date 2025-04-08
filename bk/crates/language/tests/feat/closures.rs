@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Finds all strings in a list that contain the '@' character.
 fn find_emails(list: Vec<String>) -> Vec<String> {
     list.into_iter()

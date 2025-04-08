@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use std::cell::OnceCell;
 
 fn main() {

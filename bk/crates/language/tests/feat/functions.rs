@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function takes an integer `x` and a character `unit_label` as input.
 /// It calculates a value `y` by adding 3 to `x`.
 /// It then prints the value of `y` along with the `unit_label`.

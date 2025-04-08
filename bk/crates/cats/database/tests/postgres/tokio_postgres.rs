@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// In this example, we:
 ///
 /// - Connect to a PostgreSQL database using `tokio_postgres::connect`.

@@ -1,5 +1,4 @@
 // // ANCHOR: example
-
 // // Integrate a Rust function into a Flutter project using
 // // `flutter_rust_bridge`.
 // // Typical scenarios to combine them include:

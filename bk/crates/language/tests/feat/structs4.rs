@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// A struct representing a rectangle with a width and height.
 struct Rectangle {
     width: u32,

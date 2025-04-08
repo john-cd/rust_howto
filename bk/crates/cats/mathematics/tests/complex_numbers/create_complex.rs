@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Creates complex numbers with integer and floating-point components.
 fn main() {
     // Create a complex number with integer components.

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function takes a mutable reference to a String and appends ", world" to
 /// it.
 fn change(some_string: &mut String) {

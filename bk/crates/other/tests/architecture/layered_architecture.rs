@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 use std::sync::Arc;
 
 use anyhow::Result;

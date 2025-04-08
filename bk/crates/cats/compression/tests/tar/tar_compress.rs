@@ -1,6 +1,5 @@
 #![allow(clippy::incompatible_msrv)]
 // ANCHOR: example
-
 use std::fs;
 use std::fs::File;
 

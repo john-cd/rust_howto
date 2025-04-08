@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // `s` is not valid here, it’s not yet declared.
     {

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Demonstrates the use of a `loop` with a `break` statement to return a value.
 fn main() {
     // Initialize a mutable counter.

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use mime::Mime;
 
 /// Find the mime type of a file based on its extension.

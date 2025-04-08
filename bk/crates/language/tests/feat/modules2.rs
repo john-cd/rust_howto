@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 // We bring the hosting module in scope.
 use front_of_house::hosting;
 

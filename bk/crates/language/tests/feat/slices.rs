@@ -1,12 +1,11 @@
 // ANCHOR: example
-
-// A slice is a view into a contiguous sequence of elements in a collection.
-// It does not own the data it points to.
-//
-// Slices are created by referencing a range of elements within a collection.
-// The range is specified using the `[start..end]` syntax. `start` is the index
-// of the first element to include, and `end` is the index of the element
-// _after_ the last one to include.
+//! A slice is a view into a contiguous sequence of elements in a collection.
+//! It does not own the data it points to.
+//!
+//! Slices are created by referencing a range of elements within a collection.
+//! The range is specified using the `[start..end]` syntax. `start` is the index
+//! of the first element to include, and `end` is the index of the element
+//! _after_ the last one to include.
 
 /// Slices from an array.
 fn array() {

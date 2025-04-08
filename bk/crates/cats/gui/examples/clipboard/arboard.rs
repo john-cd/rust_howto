@@ -1,16 +1,23 @@
 // ANCHOR: example
+//! This example demonstrates how to interact with the system clipboard using
+//! the `arboard` crate.
+//!
+//! The `arboard` crate provides a cross-platform way to copy and paste text to
+//! and from the clipboard.
+//!
+//! This example shows how to create a clipboard instance, set text to the
+//! clipboard, and get text from the clipboard.
 use arboard::Clipboard;
 
-// The `arboard` crate interacts with the clipboard.
 pub fn main() {
-    // Create a new Clipboard instance
+    // Create a new Clipboard instance.
     let mut clipboard = Clipboard::new().unwrap();
 
-    // Set some text to the clipboard
+    // Set some text to the clipboard.
     clipboard.set_text("Hello, clipboard!").unwrap();
     println!("Text copied to clipboard.");
 
-    // Get the text from the clipboard
+    // Get the text from the clipboard.
     let clipboard_text = clipboard.get_text().unwrap();
     println!("Text from clipboard: {}", clipboard_text);
 }

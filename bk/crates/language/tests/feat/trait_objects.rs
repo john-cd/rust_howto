@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// A trait for types that can be drawn.
 trait Draw {
     /// Draws the object.

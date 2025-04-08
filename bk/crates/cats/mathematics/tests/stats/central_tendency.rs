@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Calculates the mean of a set of numbers.
 fn main() {
     // Sample data set.

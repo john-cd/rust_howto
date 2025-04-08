@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Example of using a single-threaded Tokio runtime.
 fn main() {
     tokio::runtime::Builder::new_current_thread()

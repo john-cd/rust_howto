@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use std::f64::consts::PI;
 
 use num::complex::Complex;

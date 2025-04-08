@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use std::io::Error;
 
 use byteorder::LittleEndian;

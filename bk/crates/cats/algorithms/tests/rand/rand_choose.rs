@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Generates a random password of a specified length using a predefined
 /// character set.
 fn main() {

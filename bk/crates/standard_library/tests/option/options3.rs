@@ -1,6 +1,5 @@
 #![allow(clippy::bind_instead_of_map)]
 // ANCHOR: example
-
 use std::fs;
 
 fn read_file(filename: &str) -> Option<String> {

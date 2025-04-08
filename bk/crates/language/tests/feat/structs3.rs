@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 /// A tuple struct.
 ///
 /// Note the ( ) and the lack of field names.

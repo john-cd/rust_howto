@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This example demonstrates a simple HTTP GET request using the `ureq` crate.
 /// It fetches data from a public API endpoint and prints the response.
 fn main() -> anyhow::Result<()> {

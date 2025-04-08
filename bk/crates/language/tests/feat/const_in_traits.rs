@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// A trait demonstrating the use of associated constants.
 trait Example {
     /// An associated constant without a default value.

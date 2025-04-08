@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     let number = 3;
     // Note that `if` is an expression.

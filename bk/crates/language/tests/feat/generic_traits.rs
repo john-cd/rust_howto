@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// A trait that can be implemented for different types.
 trait Test<T> {
     /// A function that takes a generic type `T` as input.

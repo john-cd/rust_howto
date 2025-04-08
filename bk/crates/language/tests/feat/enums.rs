@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 /// An enum to represent different types of messages.
 #[derive(Debug)]
 enum Message {

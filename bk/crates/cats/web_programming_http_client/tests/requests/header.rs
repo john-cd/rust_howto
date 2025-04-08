@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use std::collections::HashMap;
 
 use anyhow::Result;

@@ -1,6 +1,5 @@
 #![allow(unused)]
 // ANCHOR: example
-
 /// Variables and constants are used to store values.
 /// Variables can be mutable or immutable.
 /// Constants are always immutable.

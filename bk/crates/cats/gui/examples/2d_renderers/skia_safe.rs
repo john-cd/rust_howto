@@ -2,25 +2,47 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
-
-// // Skia Setup: Sets up the Skia context, surface, and canvas for drawing.
-// Uses // OpenGL as the backend.
-// // Font Handling: Loads a font (Arial, you may need to
-// // adjust this) and uses it to render text.
-// // Counter and Conditional Rendering:
-// // Implements the counter logic and conditional text rendering.
-// // Winit Integration: Uses winit for window management and event handling.
-// // Resizing: Handles window resizing by recreating the backend render target
-// and // surface.
-// // Input Handling: Uses the Up and Down arrow keys to increment and
-// // decrement the counter. Redraw Loop: Uses request_redraw to trigger
-// redraws, // ensuring the display is updated.
-// // Clear Canvas: Clears the canvas before each
-// // redraw to prevent drawing artifacts.
-// // Error Handling: Includes basic error
-// // handling for Skia operations.
-// // Color Handling: Uses skia_safe's Color type for
-// // setting colors.
+// //! # Skia Setup
+// //!
+// //! This section initializes the Skia graphics library, creating a context,
+// //! a render target, and a surface. The surface is the drawing area where
+// //! Skia will render graphics. It uses OpenGL as the backend.
+// //!
+// //! # Font Handling
+// //!
+// //! Loads a font and uses it to render text.
+// //!
+// //! # Counter and Conditional Rendering
+// //!
+// //! Implements the counter logic and conditional text rendering.
+// //!
+// //! # Winit Integration
+// //!
+// //! Uses winit for window management and event handling.
+// //!
+// //! # Resizing
+// //!
+// //! Handles window resizing by recreating the backend render target and
+// surface. //!
+// //! # Input Handling
+// //!
+// //! Uses the Up and Down arrow keys to increment and decrement the counter.
+// //!
+// //! # Redraw Loop
+// //!
+// //! Uses `request_redraw` to trigger redraws, ensuring the display is
+// updated. //!
+// //! # Clear Canvas
+// //!
+// //! Clears the canvas before each redraw to prevent drawing artifacts.
+// //!
+// //! # Error Handling
+// //!
+// //! Includes basic error handling for Skia operations.
+// //!
+// //! # Color Handling
+// //!
+// //! Uses `skia_safe`'s `Color` type for setting colors.
 
 // use skia_safe::Canvas;
 // use skia_safe::Color;
@@ -43,6 +65,7 @@
 // use winit::window::WindowBuilder;
 
 // fn main() {
+//     // Create a new even loop and window.
 //     let event_loop = EventLoop::new();
 //     let window = WindowBuilder::new()
 //         .with_title("Skia Counter")

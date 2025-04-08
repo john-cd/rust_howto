@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// `'static` indicates that the data pointed to by the reference lives
 /// for the _remaining_ lifetime of the running program. It can still
 /// be coerced to a shorter lifetime.

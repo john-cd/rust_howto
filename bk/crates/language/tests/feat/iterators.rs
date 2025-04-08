@@ -1,6 +1,5 @@
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
-
 /// This example demonstrates the difference between `iter()` and `into_iter()`.
 fn main() {
     let vec1 = vec![1, 2, 3];

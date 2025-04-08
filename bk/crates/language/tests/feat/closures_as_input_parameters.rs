@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 // This function demonstrates how to accept a closure as an input parameter.
 // The `F` in `fn apply<F>(f: F)` is a generic type parameter, allowing
 // the function to accept any type that satisfies the specified trait bounds.

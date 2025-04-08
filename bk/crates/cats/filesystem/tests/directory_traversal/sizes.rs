@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use walkdir::WalkDir;
 
 /// Calculates the total size of all files within a directory tree (within a

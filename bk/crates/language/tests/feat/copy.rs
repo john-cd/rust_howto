@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Integers implement the `Copy` trait, so they are copied instead of moved.
 fn main() {
     let x = 5; // x is an integer.

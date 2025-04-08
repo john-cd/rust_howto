@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // Iterate over an array.
     let a = [10, 20, 30, 40, 50];

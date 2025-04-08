@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 trait Summary {
     fn summarize(&self) -> String;
 }

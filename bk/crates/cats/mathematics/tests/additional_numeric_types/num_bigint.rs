@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 use std::str::FromStr;
 
 use num_bigint::BigInt;

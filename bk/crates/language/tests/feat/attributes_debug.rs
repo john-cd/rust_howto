@@ -10,7 +10,7 @@
 // This import is not used anywhere.
 use std::thread;
 
-// This struct is public but is not documented.
+// This struct is public but is not documented:
 
 pub struct S;
 

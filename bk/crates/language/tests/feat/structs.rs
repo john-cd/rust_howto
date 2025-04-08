@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 /// We first define the struct's fields (which can be of any type).
 /// The `User` struct has four fields: `active`, `username`, `email`, and
 /// `sign_in_count`.

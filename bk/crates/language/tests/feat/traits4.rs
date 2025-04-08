@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// A trait for types that can be hashed to a u64.
 trait MyHash {
     /// Returns a hash of the object.

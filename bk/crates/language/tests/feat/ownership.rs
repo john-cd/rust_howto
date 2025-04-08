@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This example demonstrates the concept of ownership and move semantics in
 /// Rust.
 fn main() {

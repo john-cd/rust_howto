@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 /// Define an `enum` that represents different types of US coins.
 enum Coin {
     Penny,

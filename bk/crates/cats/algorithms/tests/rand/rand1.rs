@@ -1,10 +1,12 @@
 // ANCHOR: example
+//! This example demonstrates the basic usage of the `rand` crate for generating
+//! random numbers.
+//!
+//! In `Cargo.toml`, add:
+//! ```toml
+//! rand = { version = "0.9.0", features = [ "thread_rng" ] }
+//! ```
 
-// In `Cargo.toml`
-// rand = { version = "0.9.0", features = [ "thread_rng" ] }
-
-/// This example demonstrates generating random numbers of various types using
-/// the `rand` crate.
 fn main() {
     // Generate a random value using the thread-local random number generator.
     // `random()` is a shorthand for `rng().random()`

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Demonstrates the use of tuples and arrays in Rust, including their
 /// declaration, access, destructuring, iteration, and mutation.
 fn main() {

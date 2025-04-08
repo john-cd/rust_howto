@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Demonstrates opening a file dialog using the `rfd` crate.
+
 use rfd::FileDialog;
 
 pub fn main() {

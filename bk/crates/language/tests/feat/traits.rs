@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 pub trait Summary {
     /// Returns a string that summarizes the item.
     fn summarize(&self) -> String;

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Calculates the hypotenuse of a right triangle given an angle and the length
 /// of the side opposite to it.
 fn main() {

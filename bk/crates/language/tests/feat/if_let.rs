@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// The `if let` syntax allows you to combine `if` and `let`
 /// to handle values that match a specific pattern, while ignoring others.
 fn main() {

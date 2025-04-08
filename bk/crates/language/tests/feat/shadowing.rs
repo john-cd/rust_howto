@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // `x` is an immutable variable.
     let x = 5;

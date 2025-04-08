@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn generic<T>(_t: T) {
     // This is a generic function that can take any type.
     println!("In `generic`");

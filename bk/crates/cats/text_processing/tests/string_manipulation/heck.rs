@@ -1,8 +1,15 @@
 // ANCHOR: example
-
-// Add to Cargo.toml:
-// [dependencies]
-// heck = "0.4.1"
+//! This example demonstrates how to use the `heck` crate to convert strings
+//! between different casing conventions.
+//!
+//! The `heck` crate provides functions for converting strings to:
+//! snake_case, kebab-case, PascalCase, lowerCamelCase, Title Case.
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! heck = "0.4.1"
+//! ```
 
 use heck::ToKebabCase;
 use heck::ToLowerCamelCase;

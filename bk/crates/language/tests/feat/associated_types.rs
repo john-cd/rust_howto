@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 // ANCHOR: example
-
 /// A trait that represents an iterator.
 trait Iterator {
     /// The type of the elements yielded by the iterator.

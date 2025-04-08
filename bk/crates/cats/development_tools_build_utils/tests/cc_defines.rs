@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Example of how to use `cc::Build` to define preprocessor macros.
 fn main() {
     // cc::Build::new()

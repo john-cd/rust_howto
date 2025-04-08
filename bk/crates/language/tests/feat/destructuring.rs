@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // Destructuring a tuple.
     // The values in the tuple are assigned to the variables in the same order.
