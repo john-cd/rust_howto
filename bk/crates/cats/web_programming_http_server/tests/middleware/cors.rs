@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Example showing how to add CORS headers to responses.
+
 use std::convert::Infallible;
 
 use anyhow::Result;
@@ -14,12 +16,14 @@ use tower::ServiceExt;
 use tower_http::cors::Any;
 use tower_http::cors::CorsLayer;
 
+/// A simple handler that returns an empty response.
 async fn handle(
     _request: Request<Full<Bytes>>,
 ) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(Response::new(Full::default()))
 }
 
+/// Main function that sets up a service with CORS middleware.
 #[tokio::main]
 async fn main() -> Result<()> {
     let cors = CorsLayer::new()

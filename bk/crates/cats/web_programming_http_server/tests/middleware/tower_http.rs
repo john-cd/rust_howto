@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Example of using the `tower-http` middleware.
+
 use std::iter::once;
 use std::sync::Arc;
 
@@ -32,6 +34,7 @@ async fn handler(
     Ok(builder.body(empty_body).unwrap())
 }
 
+/// A mock database connection pool.
 struct DatabaseConnectionPool;
 
 impl DatabaseConnectionPool {
@@ -40,8 +43,8 @@ impl DatabaseConnectionPool {
     }
 }
 
-// Shared state across all request handlers -
-// in this case, a pool of database connections.
+/// Shared state across all request handlers - in this case, a pool of database
+/// connections.
 struct State {
     pool: DatabaseConnectionPool,
 }
@@ -55,33 +58,31 @@ async fn main() {
 
     let content_length_from_response = 0;
 
-    // Use tower's `ServiceBuilder` API to build a stack of tower
-    // middleware wrapping our request handler.
+    // Use tower's `ServiceBuilder` API to build a stack of tower middleware
+    // wrapping our request handler.
     let _service = ServiceBuilder::new()
-        // Mark the `Authorization` request header as sensitive
-        // so it doesn't show in logs
+        // Mark the `Authorization` request header as sensitive so it doesn't show in logs.
         .layer(SetSensitiveRequestHeadersLayer::new(once(AUTHORIZATION)))
-        // High level logging of requests and responses
+        // High level logging of requests and responses.
         .layer(TraceLayer::new_for_http())
-        // Share an `Arc<State>` with all requests
+        // Share an `Arc<State>` with all requests.
         .layer(AddExtensionLayer::new(Arc::new(state)))
-        // Compress responses
+        // Compress responses.
         .layer(CompressionLayer::new())
-        // Propagate `X-Request-Id`s from requests to responses
+        // Propagate `X-Request-Id`s from requests to responses.
         .layer(PropagateHeaderLayer::new(HeaderName::from_static(
             "x-request-id",
         )))
-        // If the response has a known size set the `Content-Length` header
+        // If the response has a known size set the `Content-Length` header.
         .layer(SetResponseHeaderLayer::overriding(
             CONTENT_TYPE,
             content_length_from_response,
         ))
-        //// Authorize requests using a token
+        // Authorize requests using a token.
         //.layer(ValidateRequestHeaderLayer::bearer("passwordlol"))
-        //// Accept only application/json, application/* and */*
-        //// in a request's ACCEPT header
+        // Accept only application/json, application/* and */* in a request's ACCEPT header.
         //.layer(ValidateRequestHeaderLayer::accept("application/json"))
-        // Wrap the `Service` in our middleware stack
+        // Wrap the `Service` in our middleware stack.
         .service_fn(handler);
 }
 // ANCHOR_END: example

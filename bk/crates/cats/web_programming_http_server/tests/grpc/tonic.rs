@@ -1,7 +1,26 @@
 #![allow(dead_code)]
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+//! This example shows how to create a simple gRPC server using the `tonic`
+//! crate.
+//!
+//! Tonic is a gRPC over HTTP/2 library.
+//!
+//! The server implements the `Greeter` service, which has a single method
+//! `say_hello`. The `say_hello` method takes a `HelloRequest` and returns a
+//! `HelloReply`.
+//!
+//! Add the following to your `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! tonic = <tonic-version>
+//! prost = <prost-version>
+//!
+//! [build-dependencies]
+//! tonic-build = <tonic-version>
+//! ```
+
 // Imports from the module created by `tonic` (see below):
 // pub struct HelloReply { pub message: String, }
 use helloworld::HelloReply;
@@ -19,16 +38,6 @@ use tonic::Response;
 // A gRPC status describing the result of an RPC call:
 use tonic::Status;
 use tonic::transport::Server;
-
-// Tonic is a gRPC over HTTP/2 library.
-
-// Add the following to your `Cargo.toml`:
-// [dependencies]
-// tonic = <tonic-version>
-// prost = <prost-version>
-//
-// [build-dependencies]
-// tonic-build = <tonic-version>
 
 pub mod helloworld {
     tonic::include_proto!("helloworld");

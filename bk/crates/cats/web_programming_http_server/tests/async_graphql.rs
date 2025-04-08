@@ -1,6 +1,13 @@
 // // ANCHOR: example
 // // COMING SOON
 // // ANCHOR_END: example
+// //! # Example: Async GraphQL with Axum
+// //!
+// //! This example demonstrates how to set up a simple GraphQL server using the
+// //! `async-graphql` and `axum` crates.
+// //!
+// //! It defines a basic query that returns "Hello, world!" and sets up an Axum
+// //! server to handle GraphQL requests.
 
 // use async_graphql::Context;
 // use async_graphql::EmptyMutation;
@@ -41,6 +48,16 @@
 //         .unwrap();
 // }
 
+// /// Handles incoming GraphQL requests.
+// ///
+// /// This function extracts the GraphQL schema from the Axum extension and the
+// /// GraphQL request from the request body. It then executes the GraphQL
+// /// request against the schema and returns the response.
+// ///
+// /// # Arguments
+// ///
+// /// * `schema` - The GraphQL schema, extracted from the Axum extension.
+// /// * `req` - The GraphQL request, extracted from the request body.
 // async fn graphql_handler(
 //     schema: Extension<Schema<Query, EmptyMutation, EmptySubscription>>,
 //     req: GraphQLRequest,

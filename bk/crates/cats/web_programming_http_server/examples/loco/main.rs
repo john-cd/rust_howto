@@ -1,6 +1,14 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+
+//! This example demonstrates a basic HTTP server using the Loco framework.
+//! It defines a simple User model, routes for fetching and creating users,
+//! and uses Loco's application bootstrapping and startup mechanisms.
+//!
+//! Note: This example requires a database setup and the necessary Loco
+//! dependencies.
+
 use anyhow::Result;
 // use loco_rs::app::AppContext;
 // use loco_rs::app::Hooks;
