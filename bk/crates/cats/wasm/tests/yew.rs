@@ -2,20 +2,28 @@
 // ANCHOR: example
 use yew::prelude::*;
 
-// The `function_component` attribute creates a function component from a normal
-// Rust function. Functions with this attribute must return Html and can
-// optionally receive a reference to the props.
+/// # App Component
+///
+/// This is a simple counter application built with Yew.
+///
+/// The `function_component` attribute creates a function component from a
+/// normal Rust function. Functions with this attribute must return `Html` and
+/// can optionally receive a reference to the props.
 #[function_component(App)]
 fn app() -> Html {
     let counter = use_state(|| 0);
     let increment = {
         let counter = counter.clone();
         Callback::from(move |_| counter.set(*counter + 1))
+        // `Callback::from` is used to create a callback that will be triggered
+        // when the button is clicked.
     };
 
     let decrement = {
         let counter = counter.clone();
         Callback::from(move |_| counter.set(*counter - 1))
+        // `Callback::from` is used to create a callback that will be triggered
+        // when the button is clicked.
     };
 
     html! {
@@ -38,6 +46,7 @@ fn app() -> Html {
     }
 }
 
+/// The main function to render the App component.
 fn main() {
     yew::Renderer::<App>::new().render();
 }

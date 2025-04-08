@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `wasmer` crate to run a WebAssembly
+//! module.
+//!
+//! The WebAssembly module is defined in the WebAssembly Text (WAT) format.
+//! It exports a function named `add` that takes two `i32` parameters and
+//! returns their sum.
 use wasmer::Instance;
 use wasmer::Module;
 use wasmer::Store;
@@ -34,13 +40,13 @@ fn main() -> anyhow::Result<()> {
     // The module doesn't import anything, so we create an empty import object.
     let import_object = imports! {};
 
-    // Instantiate the module
+    // Instantiate the module:
     let instance = Instance::new(&mut store, &module, &import_object)?;
 
-    // Get the `add` function from the exports
+    // Get the `add` function from the exports.
     let add = instance.exports.get_function("add")?;
 
-    // Call the function
+    // Call the function.
     let result = add.call(&mut store, &[1.into(), 2.into()])?;
     println!("1 + 2 = {}", result[0].i32().unwrap());
 

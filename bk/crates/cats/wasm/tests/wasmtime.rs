@@ -1,4 +1,9 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `wasmtime` crate to run WebAssembly
+//! modules.
+//!
+//! It showcases loading a module from WAT (WebAssembly Text Format), defining
+//! host functions, instantiating the module, and calling exported functions.
 use anyhow::Context;
 use anyhow::Result;
 use wasmtime::*;
@@ -38,56 +43,65 @@ static WAT: &str = r#"(module
 )"#;
 
 fn main() -> Result<()> {
-    // Create a WASM engine.
+    // Create a WASM engine, which is the core of the Wasmtime runtime.
     let engine = Engine::default();
 
-    // Create a module from WAT:
+    // Create a module from WAT (WebAssembly Text Format) string.
     let module = Module::new(&engine, WAT)?;
 
-    // Or load a module from a WASM file.
-    // You may store the WAT into a file and compile it using `wat2wasm`.
-    // Install that tool with e.g. `sudo apt-get install wabt`.
-    // let module = Module::from_file(&engine, "hello.wasm").context("Failed to
-    // create WASM module")?;
+    // Alternatively, you can load a module from a WASM file.
+    // To do this, you can store the WAT into a file and compile it using
+    // `wat2wasm`. Install that tool with e.g., `sudo apt-get install wabt`,
+    // then add: ```
+    // let module = Module::from_file(&engine, "hello.wasm")
+    //     .context("Failed to create WASM module")?;
+    // ```
 
-    // Host functionality can be arbitrary Rust functions and is provided
-    // to guests through a `Linker`.
+    // Host functionality (functions defined in Rust) can be provided to the
+    // WebAssembly module through a `Linker`.
     let mut linker = Linker::new(&engine);
 
-    // Define the host function "print_char"
+    // Define the host function "print_char" that the WebAssembly module can
+    // call.
     linker.func_wrap("host", "print_char", |x: i32| {
-        print!("{}", char::from_u32(x as u32).unwrap_or('?')); // Handle invalid char codes
+        // Handle invalid char codes by printing '?'
+        print!("{}", char::from_u32(x as u32).unwrap_or('?'));
     })?;
 
-    // All WASM objects operate within the context of a "store".
-    // `Store` has a type parameter to store host-specific data.
+    // All WebAssembly objects operate within the context of a "store".
+    // `Store` can hold host-specific data, which is `()` in this case (no
+    // data).
     let mut store = Store::new(&engine, ());
 
-    // Create an instance, linking the imports
+    // Create an instance, linking the imports:
     let instance = linker
         .instantiate(&mut store, &module)
         .context("failed to instantiate module")?;
 
-    // Without linker, you may also use:
+    // Without a linker, you can also directly instantiate the module:
+    // ```
     // let instance = Instance::new(&mut store, &module, &[])
-    //    .context("Failed to create WASM instance")?;
+    //     .context("Failed to create WASM instance")?;
+    // ```
 
-    // Get the exported function "greet".
+    // Get the exported function "greet" from the WebAssembly instance.
     let greet = instance
         .get_export(&mut store, "greet")
+        // `get_export` returns an `Extern`, which can be a function, global,
+        // memory, or table. We need to convert it to a function.
         .and_then(|ext: Extern| {
-            ext.into_func() // Returns the underlying Func, if this external is a function.
+            ext.into_func() // Returns the underlying `Func`, if this external is a function.
         })
         .context("Failed to find `greet` function export")?;
 
     // Or:
     // let greet = instance.get_typed_func::<(), ()>(&mut store, "greet")?;
 
-    // Call the "greet" function.
-    greet.call(&mut store, &[], &mut []) // store, params, result
+    // Call the "greet" function with no parameters and no results.
+    greet.call(&mut store, &[], &mut []) // store, parameters, results.
         .context("failed to call `greet` function")?;
 
-    // Example with arguments
+    // Example with arguments:
     let add = instance
         .get_export(&mut store, "add")
         .and_then(|ext: Extern| ext.into_func())
