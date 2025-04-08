@@ -7125,9 +7125,9 @@ checksum = "43da5946c66ffcc7745f48db692ffbb10a83bfe0afd96235c5c2a4fb23994929"
 
 [[package]]
 name = "crux_core"
-version = "0.12.2"
+version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7841ef0555e5dc84e23747fccec6a02ed45507aca01f528001ad2c026972ad4c"
+checksum = "399f3d95c83e02c098523da350dedf1ccce0253d4ea13402f4a41b642a5bfce7"
 dependencies = [
  "anyhow",
  "bincode 1.3.3",
@@ -7145,11 +7145,12 @@ dependencies = [
 
 [[package]]
 name = "crux_macros"
-version = "0.4.5"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "604414ff006961a834912ca0155eb001f634a90d79895575a5c4fd83e3c7ff3f"
+checksum = "ade8dbc66d03a14d29d4181c0c328944da0dbfb062cc8351e606e8dae9bae6a7"
 dependencies = [
  "darling 0.20.11",
+ "heck 0.5.0",
  "proc-macro-error",
  "proc-macro2 1.0.94",
  "quote 1.0.40",
@@ -19648,6 +19649,8 @@ dependencies = [
  "serde 1.0.219",
  "shaku",
  "tokio",
+ "tracing",
+ "tracing-subscriber",
  "uniffi",
 ]
 
