@@ -1,22 +1,31 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+//! This is a basic example of an AWS Lambda function written in Rust.
+//! It demonstrates how to use the `lambda_runtime` crate to create a simple
+//! function that takes a name as input and returns a greeting message.
+//!
+//! Prerequisites:
+//!
+//! - Install the AWS CLI.
+//! - Install the AWS SAM CLI.
+//!
+//! ```sh
+//! cargo build --release --target x86_64-unknown-linux-musl
+//! sam build
+//! sam deploy --guided
+//! ```
 
 // use lambda_runtime::Context;
 // use lambda_runtime::Error;
-// // use lambda_runtime::LambdaEvent;
+// // use lambda_runtime::LambdaEvent; // Not used in this example
 // use lambda_runtime::service_fn;
 // use serde::Deserialize;
 // use serde::Serialize;
+
 // // use serde_json::json;
 // // use tracing::{error, info};
 // use tracing_subscriber;
-
-// // Install AWS CLI
-// // Install AWS SAM CLI
-// // cargo build --release --target x86_64-unknown-linux-musl
-// // sam build
-// // sam deploy --guided
 
 // #[derive(Deserialize)]
 // struct Request {
