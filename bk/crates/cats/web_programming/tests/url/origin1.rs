@@ -1,4 +1,9 @@
 // ANCHOR: example
+//! This example demonstrates how to parse a URL and extract its origin.
+//!
+//! The `url::Url` struct is used to parse the URL string.
+//! The `url::Host` enum is used to represent the host part of the URL.
+//! The `url::Origin` enum is used to represent the origin of the URL.
 use anyhow::Result;
 use url::Host;
 use url::Origin;
@@ -20,7 +25,7 @@ fn main() -> Result<()> {
 
     Ok(())
 }
-// ANCHOR_END: example
+// ANCHOR_END: example_start
 
 #[test]
 fn test() -> anyhow::Result<()> {

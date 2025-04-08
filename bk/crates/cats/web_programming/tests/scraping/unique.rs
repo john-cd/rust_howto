@@ -1,4 +1,9 @@
 // ANCHOR: example
+//! This example demonstrates how to extract unique links from a Wikipedia page.
+//!
+//! It uses the `reqwest` crate to fetch the page content, the `regex` crate to
+//! find links, and the `lazy_static` crate to compile the regex only once.
+
 use std::borrow::Cow;
 use std::collections::HashSet;
 

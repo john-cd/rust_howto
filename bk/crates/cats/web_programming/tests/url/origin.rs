@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Demonstrates parsing a URL and extracting its origin components.
+
 use url::Host;
 use url::ParseError;
 use url::Url;

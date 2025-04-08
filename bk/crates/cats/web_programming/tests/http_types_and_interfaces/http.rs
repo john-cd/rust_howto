@@ -1,19 +1,19 @@
 // ANCHOR: example
+//! This example demonstrates the basic usage of the `http` crate for creating
+//! and manipulating HTTP requests and responses.
+//!
+//! The `http` crate provides fundamental types for working with HTTP, such as
+//! `Request`, `Response`, `Uri` for what a `Request` is requesting, `Method`
+//! for how it’s being requested, `StatusCode` for what sort of response came
+//! back, `Version` for how this was communicated, `HeaderName`, and
+//! `HeaderValue`.
+//!
+//! Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
+//! `reqwest`.
+
 use http::Request;
 use http::Response;
 use http::StatusCode;
-
-// The `http` crate contains common types for the HTTP protocol.
-// You’ll find:
-// - `Request`,
-// - `Response`,
-// - `Uri` for what a `Request` is requesting,
-// - `Method` for how it’s being requested,
-// - `StatusCode` for what sort of response came back,
-// - `Version` for how this was communicated,
-// - `HeaderName` / `HeaderValue` definitions to get grouped in a `HeaderMap`.
-// Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
-// `rewest`.
 
 fn main() {
     // Create a request.

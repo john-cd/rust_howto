@@ -1,4 +1,9 @@
 // ANCHOR: example
+//! This example demonstrates how to extract all the links from a web page.
+//!
+//! `select` is a library to extract useful data from HTML documents, suitable
+//! for web scraping.
+
 use anyhow::Result;
 use select::document::Document;
 use select::predicate::Name;

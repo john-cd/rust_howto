@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Demonstrates parsing MIME types from strings and handling invalid input.
+
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;
 

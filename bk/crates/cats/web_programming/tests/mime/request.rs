@@ -1,16 +1,23 @@
 // ANCHOR: example
+//! This example demonstrates how to retrieve the Content-Type header from a
+//! response and parse it as a MIME type.
+
 use std::str::FromStr;
 
 use anyhow::Result;
+use http::HeaderMap;
 use mime::Mime;
+use reqwest::Response;
 use reqwest::header::CONTENT_TYPE;
 
+/// Retrieves the Content-Type header from a response and parses it as a MIME
+/// type.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let response =
+    let response: Response =
         reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
             .await?;
-    let headers = response.headers();
+    let headers: &HeaderMap = response.headers();
 
     match headers.get(CONTENT_TYPE) {
         None => {

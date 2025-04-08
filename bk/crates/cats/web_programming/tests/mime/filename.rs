@@ -1,7 +1,10 @@
 // ANCHOR: example
+
 use mime::Mime;
 
+/// Find the mime type of a file based on its extension.
 fn find_mimetype(filename: &str) -> Mime {
+    // Split the filename by '.' and collect the parts into a vector.
     let parts: Vec<&str> = filename.split('.').collect();
 
     let res = match parts.last() {
