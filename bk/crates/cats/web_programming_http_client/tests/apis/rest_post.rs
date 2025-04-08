@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Example of using the `reqwest` crate to interact with a REST API.
+
 use std::collections::HashMap;
 use std::env;
 
@@ -8,6 +10,7 @@ use reqwest::Client;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// Represents the structure of a GitHub Gist to be created.
 #[derive(Deserialize, Serialize, Debug)]
 struct Post<'a> {
     description: &'a str,
@@ -15,17 +18,20 @@ struct Post<'a> {
     files: HashMap<&'a str, Content<'a>>,
 }
 
+/// Represents the content of a file within a Gist.
 #[derive(Deserialize, Serialize, Debug)]
 struct Content<'a> {
     content: &'a str,
 }
 
+/// Represents the structure of a Gist as returned by the GitHub API.
 #[derive(Deserialize, Debug)]
 struct Gist {
     id: String,
     html_url: String,
 }
 
+/// Main function to demonstrate creating and deleting a Gist on GitHub.
 #[tokio::main]
 async fn main() -> Result<()> {
     let gh_user = env::var("GH_USER")?;
@@ -41,7 +47,7 @@ async fn main() -> Result<()> {
                 "main.rs",
                 Content {
                     content: r#"
-fn main() { println!("hello world!");}
+fn main() { println!("hello world!"); }
 "#,
                 },
             );

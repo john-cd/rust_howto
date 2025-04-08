@@ -1,4 +1,7 @@
 // ANCHOR: example
+//! This example demonstrates a simple HTTP GET request using the `reqwest`
+//! crate.
+
 use anyhow::Result;
 
 #[tokio::main]

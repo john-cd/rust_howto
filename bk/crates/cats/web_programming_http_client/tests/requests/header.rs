@@ -1,15 +1,19 @@
 // ANCHOR: example
+
 use std::collections::HashMap;
 
 use anyhow::Result;
 use reqwest::header;
 use serde::Deserialize;
 
+/// Represents the structure of the JSON response from `httpbin.org/headers`.
 #[derive(Deserialize, Debug)]
 pub struct HeadersEcho {
+    /// A map of header names to their values.
     pub headers: HashMap<String, String>,
 }
 
+/// Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 fn main() -> Result<()> {
     // Parse an absolute URL from a string and add params to its query string:
     let url = url::Url::parse_with_params(
@@ -27,7 +31,7 @@ fn main() -> Result<()> {
         .default_headers(default_headers)
         .build()?;
 
-    // Headers for this request only.
+    // Headers for this request only:
     let mut headers = header::HeaderMap::new();
     headers.insert(
         reqwest::header::CONTENT_TYPE,

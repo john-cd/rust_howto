@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! Partial download example.
+
 use std::fs::File;
 use std::str::FromStr;
 
@@ -10,6 +12,7 @@ use reqwest::header::CONTENT_LENGTH;
 use reqwest::header::HeaderValue;
 use reqwest::header::RANGE;
 
+/// An iterator that yields `Range` headers.
 struct PartialRangeIter {
     start: u64,
     end: u64,
@@ -17,6 +20,13 @@ struct PartialRangeIter {
 }
 
 impl PartialRangeIter {
+    /// Creates a new `PartialRangeIter`.
+    ///
+    /// # Arguments
+    ///
+    /// * `start` - The start of the range.
+    /// * `end` - The end of the range.
+    /// * `buffer_size` - The size of each chunk.
     pub fn new(start: u64, end: u64, buffer_size: u32) -> Result<Self> {
         if buffer_size == 0 {
             Err(anyhow!(
@@ -31,6 +41,7 @@ impl PartialRangeIter {
     }
 }
 
+/// Implements the `Iterator` trait for `PartialRangeIter`.
 impl Iterator for PartialRangeIter {
     type Item = HeaderValue;
 
@@ -55,6 +66,8 @@ impl Iterator for PartialRangeIter {
     }
 }
 
+/// This function downloads a file from a given URL in chunks,
+/// using the `PartialRangeIter` to generate the `Range` headers.
 fn main() -> Result<()> {
     let url = "https://httpbin.org/range/102400?duration=2";
     const CHUNK_SIZE: u32 = 10240;

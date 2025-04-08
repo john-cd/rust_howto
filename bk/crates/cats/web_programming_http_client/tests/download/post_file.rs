@@ -1,4 +1,6 @@
 // ANCHOR: example
+//! This example shows how to POST a file to a server.
+
 use std::fs::File;
 use std::io::Read;
 
@@ -26,6 +28,7 @@ fn require_network() -> anyhow::Result<()> {
     if !std::fs::exists("temp")? {
         std::fs::create_dir("temp")?;
     }
+    // Create a file to be posted.
     let mut f = File::create("temp/message")?;
     f.write_all(b"Hello")?;
     main()?;

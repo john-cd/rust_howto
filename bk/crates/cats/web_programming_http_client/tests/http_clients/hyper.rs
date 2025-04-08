@@ -1,6 +1,12 @@
-// // ANCHOR: example
+// ANCHOR: example
 // // COMING SOON
-// // ANCHOR_END: example
+// ANCHOR_END: example
+//! Example of using the `hyper` low-level HTTP client to fetch a URL.
+//!
+//! This example demonstrates how to:
+//! - Connect to a remote server using TCP.
+//! - Perform an HTTP GET request.
+//! - Stream the response body to stdout.
 
 use anyhow::Context;
 use http_body_util::BodyExt;
@@ -14,6 +20,11 @@ use tokio::io;
 use tokio::io::AsyncWriteExt as _;
 use tokio::net::TcpStream;
 
+/// Fetches the content of a URL using the `hyper` HTTP client.
+///
+/// This function establishes a TCP connection to the specified host,
+/// sends an HTTP GET request to the given URL, and streams the response
+/// body to standard output.
 async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     let host = url.host().context("uri has no host")?;
     let port = url.port_u16().unwrap_or(80);
