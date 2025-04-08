@@ -1,17 +1,20 @@
 // ANCHOR: example
+//! # Rhai scripting
+//!
+//! Rhai is a lightweight, Rust-based scripting language.
+//! It allows to embed scripting capabilities in Rust applications.
+//!
+//! In Cargo.toml, add:
+//! ```
+//! [dependencies]
+//! rhai = "1.21.0" # or latest version
+//! ```
 use rhai::Engine;
 use rhai::EvalAltResult;
 use rhai::Scope;
 
-// Rhai is a lightweight, Rust-based scripting language.
-// It allows to embed scripting capabilities in Rust applications.
-
-// In Cargo.toml, add:
-// [dependencies]
-// rhai = "1.21.0" # or latest version
-
-// Typically, you'll use Rhai as a thin dynamic wrapper layer over Rust code.
-// Expose a Rust API into Rhai for scripts to call, here a simple function:
+/// Typically, you'll use Rhai as a thin dynamic wrapper layer over Rust code.
+/// Here is a simple function that we'll expose as a Rust API into Rhai for scripts to call:
 fn add(x: i64, y: i64) -> i64 {
     x + y
 }
