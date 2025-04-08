@@ -24,10 +24,9 @@ fn value_in_cents(coin: Coin) -> u8 {
             // `state` is assigned.
             println!("State quarter from {:?}!", state);
             25
-        }
-        // Rust's match expressions are exhaustive. This means that you must cover all possible cases.
-        // If needed, you can use a catchall:
-        //_ => unreachable!(),
+        } // Rust's match expressions are exhaustive. This means that you must cover all possible cases.
+          // If needed, you can use a catchall:
+          //_ => unreachable!(),
     }
 }
 
