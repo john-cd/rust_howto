@@ -9,7 +9,7 @@ Tools that provide developer-facing features such as testing, debugging, linting
 | Build System/Package Manager | [`cargo`][c-cargo]⮳{{hi:cargo}} |
 | Formatter | [`rustfmt`][c-rustfmt]⮳{{hi:rustfmt}} |
 | Linter | [`clippy`][c-clippy]⮳{{hi:clippy}} |
-| Testing Framework | `std::test` (built-in), [`rstest`][c-rstest]⮳{{hi:rstest}} (for data-driven tests) |
+| Testing Framework | `cargo test` (built-in), [`rstest`][c-rstest]⮳{{hi:rstest}} (for data-driven tests) |
 | Debugging | [`gdb`][c-gdb]⮳{{hi:gdb}}, [`lldb`][c-lldb]⮳{{hi:lldb}} (often used via IDE integration), `cargo-debug` |
 | Profiling | `cargo flamegraph`, [`perf`][c-perf]⮳{{hi:perf}} (system profiler) |
 | Documentation Generator | `cargo doc` |

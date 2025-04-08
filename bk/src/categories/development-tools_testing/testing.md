@@ -2,15 +2,15 @@
 
 {{#include testing.incl.md}}
 
-For most basic code testing needs, using `cargo test` and `std::test` will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c-proptest]⮳{{hi:proptest}} is highly recommended. [`mockall`][c-mockall]⮳{{hi:mockall}} or [`faux`][c-faux]⮳{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c-rstest]⮳{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c-grcov]⮳{{hi:grcov}} or [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}} can be used.
+For most basic code testing needs, using `cargo test` will be sufficient. For more advanced testing, especially property-based testing, [`proptest`][c-proptest]⮳{{hi:proptest}} is highly recommended. [`mockall`][c-mockall]⮳{{hi:mockall}} or [`faux`][c-faux]⮳{{hi:faux}} will help when you need to mock dependencies. [`rstest`][c-rstest]⮳{{hi:rstest}} is great for parameterized tests. And for ensuring your tests cover a good portion of your code, [`grcov`][c-grcov]⮳{{hi:grcov}} or [`tarpaulin`][c-tarpaulin]⮳{{hi:tarpaulin}} can be used.
 
 ## Unit Testing {#unit_testing}
 
-`std::test` (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
+`cargo test` (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
 ## Integration Testing {#integration_testing}
 
-Often uses `std::test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
+Often uses `cargo test` as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p-modules] or components.
 
 [`rstest`][c-rstest]⮳{{hi:rstest}} is a resource-based test framework for writing data-driven tests.
 
