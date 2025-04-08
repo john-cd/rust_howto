@@ -25,23 +25,23 @@ fn main() {
         println!("{x}");
     }
 
-    // Pop elements from the BinaryHeap
+    // Pop elements from the `BinaryHeap`.
     while let Some(value) = heap.pop() {
         println!("{}", value);
     }
-    // Since BinaryHeap is a max-heap by default, the elements are printed in
+    // Since `BinaryHeap` is a max-heap by default, the elements are printed in
     // descending order: 9, 5, 4, 3, 1, 1.
 
     // The heap should now be empty.
     assert!(heap.is_empty());
 
     // If you need a min-heap instead of a max-heap,
-    // use std::cmp::Reverse to invert the order.
+    // use `std::cmp::Reverse` to invert the order.
     let mut heap = BinaryHeap::new();
     heap.push(Reverse(3));
     heap.push(Reverse(1));
     heap.push(Reverse(4));
-    // Pop elements from the BinaryHeap
+    // Pop elements from the `BinaryHeap`.
     while let Some(Reverse(value)) = heap.pop() {
         println!("{}", value);
     }

@@ -1,5 +1,14 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! The `derive_more` crate extends Rust's built-in derive functionality to
+//! provide more automatic implementations for common traits.
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! derive_more = "2.0.1" # Or latest
+//! ```
+
 use derive_more::Add;
 use derive_more::AddAssign;
 use derive_more::Constructor;
@@ -11,25 +20,18 @@ use derive_more::Into;
 use derive_more::Sub;
 use derive_more::SubAssign;
 
-// The `derive_more` crate extends Rust's built-in derive functionality to
-// provide more automatic implementations for common traits.
-
-// Add to your `Cargo.toml`:
-// [dependencies]
-// derive_more = "2.0.1" # Or latest
-
-// Basic numeric type with arithmetic operations
+/// Basic numeric type with arithmetic operations.
 #[derive(Add, AddAssign, PartialEq, Debug)]
 struct Point {
     x: i32,
     y: i32,
 }
 
-// Newtype pattern with conversion traits
+/// Newtype pattern with conversion traits.
 #[derive(From, Into, Display, Debug)]
 struct UserId(u64);
 
-// Struct with constructor
+/// Struct with a constructor.
 #[derive(Constructor, Debug)]
 struct User {
     id: UserId,
@@ -37,7 +39,7 @@ struct User {
     active: bool,
 }
 
-// Using Deref and DerefMut
+// Using `Deref` and `DerefMut`.
 #[derive(Deref, DerefMut, Debug)]
 struct Stack<T> {
     #[deref]
@@ -46,34 +48,34 @@ struct Stack<T> {
 }
 
 fn main() {
-    // Using `Add` and `AddAssign``
+    // Using `Add` and `AddAssign`.
     let p1 = Point { x: 1, y: 2 };
     let p2 = Point { x: 3, y: 4 };
-    let p3 = p1 + p2; // Thanks to `Add`
+    let p3 = p1 + p2; // Thanks to `Add`.
     assert_eq!(p3, Point { x: 4, y: 6 });
 
     let mut p4 = Point { x: 5, y: 6 };
-    p4 += Point { x: 1, y: 1 }; // Thanks to `AddAssign`
+    p4 += Point { x: 1, y: 1 }; // Thanks to `AddAssign`.
     assert_eq!(p4, Point { x: 6, y: 7 });
 
-    // Using `From` and `Into`
+    // Using `From` and `Into`.
     let user_id = UserId::from(12345);
     let raw_id: u64 = user_id.into();
     assert_eq!(raw_id, 12345);
 
-    // Using `Display`
-    println!("User ID: {}", UserId(67890)); // Prints "User ID: 67890"
+    // Using `Display`.
+    println!("User ID: {}", UserId(67890)); // Prints "User ID: 67890".
 
-    // Using `Constructor`
+    // Using `Constructor`.
     let user = User::new(UserId(12345), "Alice".to_string(), true);
-    println!("{:?}", user); // User { id: UserId(12345), name: "Alice", active: true }
+    println!("{:?}", user); // User { id: UserId(12345), name: "Alice", active: true }.
 
-    // Using `Deref` and `DerefMut`
+    // Using `Deref` and `DerefMut`.
     let mut stack = Stack {
         items: vec![1, 2, 3],
     };
-    stack.push(4); // Using `Vec`'s push method through `DerefMut`
-    assert_eq!(stack.len(), 4); // Using `Vec`'s len method through `Deref`
+    stack.push(4); // Using `Vec`'s push method through `DerefMut`.
+    assert_eq!(stack.len(), 4); // Using `Vec`'s len method through `Deref`.
 }
 
 // More complex example: Multiple derives on a single type.
@@ -93,7 +95,7 @@ enum AppError {
     InsufficientFundsError,
 }
 
-// Using multiple types with derive_more
+// Using multiple types with `derive_more`.
 fn transfer_amount(
     from: &mut Amount,
     to: &mut Amount,

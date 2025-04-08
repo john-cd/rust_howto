@@ -1,14 +1,17 @@
 // ANCHOR: example
+//! `Result` is a type that represents either success (`Ok`) or failure (`Err`).
+//! It is similar to:
+//! ```
+//! pub enum Result<T, E> {
+//!     Ok(T),
+//!     Err(E),
+//! }
+//! ```
+
 use std::fs::File;
 use std::io;
 use std::io::Read;
 use std::num::ParseIntError;
-
-// Result  is a type that represents either success (Ok) or failure (Err).
-// pub enum Result<T, E> {
-//     Ok(T),
-//     Err(E),
-// }
 
 // Faillible functions like `File::open` return a `Result`...
 fn open_file(file_path: &str) {
@@ -38,26 +41,26 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
     }
 }
 
-// Therefore, use the ? operator as a shortcut to return early
+// Therefore, use the `?` operator as a shortcut to return early
 // in case of an error. The following is equivalent to the previous function.
 fn read_file2(file_path: &str) -> Result<String, io::Error> {
     let mut file: File = File::open(file_path)?;
-    // Note that file is of type `File`, not `io::Result<File> = Result<File,
+    // Note that `file` is of type `File`, not `io::Result<File> = Result<File,
     // io::Error>`
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     Ok(contents)
 }
-// You can even chain method calls immediately after the ?, e.g.
-// File::open(file_path)?.read_to_string(&mut contents)?;
+// You can even chain method calls immediately after the `?`, e.g.
+// `File::open(file_path)?.read_to_string(&mut contents)?;`
 
-// You will often need to return one of multiple Result types.
+// You will often need to return one of multiple `Result` types.
 // You could create a custom error `enum` to do so:
 fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
-    file.read_to_string(&mut contents)?; // `read_to_string` returns `Result<_, io::Error>`
-    let number = contents.trim().parse()?; // `parse` returns `Result<_, std::num::ParseIntError>`
+    file.read_to_string(&mut contents)?; // `read_to_string` returns `Result<_, io::Error>`.
+    let number = contents.trim().parse()?; // `parse` returns `Result<_, std::num::ParseIntError>`.
     Ok(number)
 }
 

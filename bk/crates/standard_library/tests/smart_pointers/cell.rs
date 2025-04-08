@@ -2,7 +2,7 @@
 use std::cell::Cell;
 
 struct MyStruct<T> {
-    // The Cell type allows for interior mutability.
+    // The `Cell` type allows for interior mutability.
     value: Cell<T>,
 }
 
@@ -39,21 +39,21 @@ fn main() {
     let my_int_struct = MyStruct::new(42);
     let my_int_ref = &my_int_struct;
 
-    // Get the current value (i32 is Copy)
+    // Get the current value (`i32` is `Copy`).
     println!("Initial value: {}", my_int_struct.get_value());
 
-    // Set a new value, while using an immutable reference to the struct
+    // Set a new value, while using an immutable reference to the struct.
     my_int_ref.set_value(100);
 
-    // Get the updated value
+    // Get the updated value.
     println!("Updated value: {}", my_int_ref.get_value());
 
     let my_string_struct = MyStruct::new("example".to_string());
     let my_string_ref = &my_string_struct;
 
-    // ERROR, `String` is not `Copy`: my_string.get_value();
+    // ERROR, `String` is not `Copy`: `my_string.get_value();`
 
-    // Get the value, this time using the `take_value` method
+    // Get the value, this time using the `take_value` method.
     println!("String: {}", my_string_ref.take_value());
 
     assert_eq!(my_string_ref.take_value(), "");
@@ -61,7 +61,7 @@ fn main() {
     // Replace the current interior value and returns the replaced value.
     assert_eq!(my_string_struct.value.replace("example2".into()), "");
 
-    // `into_inner` consumes the Cell<T> and returns the interior value.
+    // `into_inner` consumes the `Cell<T>` and returns the interior value.
     let _inner = my_string_struct.value.into_inner();
 }
 // ANCHOR_END: example
