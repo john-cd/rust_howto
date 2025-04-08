@@ -1,8 +1,11 @@
 // ANCHOR: example
-use ryu::Buffer;
+//! # Ryū Example
+//!
+//! This example demonstrates the usage of the `ryu` crate, a pure Rust
+//! implementation of the Ryū algorithm for fast floating-point to decimal
+//! string conversion.
 
-// Pure Rust implementation of Ryū, an algorithm to quickly convert floating
-// point numbers to decimal strings.
+use ryu::Buffer;
 
 fn main() {
     let mut buffer = Buffer::new();
