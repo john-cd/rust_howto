@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Demonstrates the use of `Cow` (Clone-on-Write).
 fn main() {
     use std::borrow::Borrow;

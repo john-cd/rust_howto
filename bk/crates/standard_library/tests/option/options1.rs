@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // `Some` is a variant of the `Option` enum that represents a value.
     let _some_number = Some(5);

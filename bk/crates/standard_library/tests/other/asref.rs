@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function takes a generic type `T` that implements the `AsRef<str>`
 /// trait. It converts the input `s` to a string slice (`&str`) using
 /// `as_ref()`.

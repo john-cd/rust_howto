@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// `derive` is a powerful tool in Rust that allows you to automatically
 /// implement certain traits for your structs and enums.
 ///

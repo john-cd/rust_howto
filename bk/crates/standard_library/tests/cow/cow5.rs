@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     // Create a Cow from a string literal.
     let example = std::borrow::Cow::from("example");

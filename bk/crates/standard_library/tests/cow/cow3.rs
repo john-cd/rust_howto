@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This example demonstrates how to use `Cow` with `String` and `Deref`.
 /// It shows that you can use `Cow` to borrow a string slice and then
 /// use `deref()` to get a `&str` from it.

@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This function simulates baking a cake.
 ///
 /// It takes an optional `sprinkles` argument, which determines

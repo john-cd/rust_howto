@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 fn main() {
     let mut my_string = String::new();
     // Create a Cow that borrows the string literal "example".

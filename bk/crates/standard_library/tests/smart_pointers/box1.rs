@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Represents a single element in a linked list.
 struct Node {
     /// The value stored in this node.

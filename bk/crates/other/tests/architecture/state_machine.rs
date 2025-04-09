@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {
