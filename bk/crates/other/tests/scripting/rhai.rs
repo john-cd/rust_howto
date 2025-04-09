@@ -14,7 +14,8 @@ use rhai::EvalAltResult;
 use rhai::Scope;
 
 /// Typically, you'll use Rhai as a thin dynamic wrapper layer over Rust code.
-/// Here is a simple function that we'll expose as a Rust API into Rhai for scripts to call:
+/// Here is a simple function that we'll expose as a Rust API into Rhai for
+/// scripts to call:
 fn add(x: i64, y: i64) -> i64 {
     x + y
 }

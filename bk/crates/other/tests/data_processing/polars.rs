@@ -4,7 +4,8 @@
 // ANCHOR_END: example
 //! # Polars Data Processing Example
 //!
-//! This example demonstrates basic data processing operations using the Polars library.
+//! This example demonstrates basic data processing operations using the Polars
+//! library.
 //!
 //! ## Prerequisites
 //!
