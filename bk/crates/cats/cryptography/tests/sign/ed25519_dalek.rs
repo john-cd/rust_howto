@@ -45,4 +45,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [review; Note: conflicts with rand = "0.9.0". Uses "0.8.5" NOW](https://github.com/john-cd/rust_howto/issues/1153)
