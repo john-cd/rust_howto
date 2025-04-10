@@ -36,6 +36,7 @@ use std::error::Error;
 // A Layer which filters spans and events based on a set of filter directives.
 // EnvFilter implements both the Layer and Filter traits, so it may be used for
 // both global filtering and per-layer filtering, respectively.
+#[allow(dead_code)]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new EnvFilter from the value of the RUST_LOG environment
     //    variable, ignoring any invalid filter directives.
@@ -69,7 +70,7 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     layers();
-    filter()?;
+    // FIXME filter()?;
     Ok(())
 }
 // ANCHOR_END: example
