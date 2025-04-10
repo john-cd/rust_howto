@@ -62,7 +62,7 @@ fn main() -> Result<()> {
         schema.clone(),
         vec![
             Arc::new(int_array) as Arc<dyn Array>,
-            Arc::new(float_array) as Arc<dyn Array>,
+            Arc::new(float_array.clone()) as Arc<dyn Array>,
             Arc::new(string_array) as Arc<dyn Array>,
         ],
     )?;
