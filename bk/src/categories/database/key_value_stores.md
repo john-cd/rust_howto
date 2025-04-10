@@ -35,7 +35,7 @@ Advantages include speed, minimal memory footprint, [embedded][p-embedded] use, 
 [`RocksDB`][c-rocksdb]⮳{{hi:RocksDB}} is great for performance, scalability, flexibility, embeddability. Avoid when dealing with complex SQL or distributed transactions.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/database/tests/rocksdb/rocksdb.rs:example}}
+{{#include ../../../crates/cats/database/tests/kv/rocksdb.rs:example}}
 ```
 
 {{#include refs.incl.md}}

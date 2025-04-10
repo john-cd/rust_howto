@@ -4,12 +4,14 @@
 //! Ensure you have the RocksDB C++ library installed on your system, because
 //! the Rust `rocksdb` crate is just a wrapper around the native C++ RocksDB
 //! library. If you're on `Ubuntu`, you can install it with:
+//! ```sh
 //! sudo apt-get install librocksdb-dev
-//!
+//! ```
 //! On `macOS`, you can install it with:
+//! ```sh
 //! brew install rocksdb
-//!
-//! You will also need: Clang and LLVM.
+//! ```
+//! You will also need Clang and LLVM.
 
 use rocksdb::DB;
 use rocksdb::Options;
