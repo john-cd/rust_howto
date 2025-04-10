@@ -8604,6 +8604,7 @@ dependencies = [
  "opentelemetry_sdk 0.28.0",
  "rusqlite",
  "rusty-fork",
+ "serde 1.0.219",
  "serde_json",
  "slog",
  "slog-async",
