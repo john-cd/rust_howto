@@ -3,8 +3,8 @@ use tracing_subscriber::fmt;
 use tracing_subscriber::fmt::format::Format;
 use tracing_subscriber::fmt::time::UtcTime;
 
-/// This example demonstrates configuring a custom event formatter, which
-/// the tracing subscriber will use to format events.
+/// This example demonstrates customizing the formatting of log lines for spans
+/// and events. See https://docs.rs/tracing-subscriber/latest/tracing_subscriber/fmt/index.html#customizing-formatters
 fn main() {
     // Configure a custom event formatter.
     let format: Format<_, _> = fmt::format() // Returns the default configuration for an event formatter.

@@ -25,6 +25,7 @@ fn main() {
 
     // This is typicaly called early in the `main()` function of your
     // application. `init()` should not be called by libraries!
+    // That will cause conflicts when executables try to set them later.
 
     // `fmt::init()` sets up a subscriber that logs to the console
     // and filters logs  at runtime based on the `RUST_LOG` environment
@@ -36,8 +37,7 @@ fn main() {
     // Test it out.
     tracing::error!("tracing configured!");
 }
-// Note: `fmt::init()` is equivalent to:
-//
+// `tracing_subscriber::fmt::init()` is equivalent to:
 // tracing_subscriber::fmt() // Returns `SubscriberBuilder::default()`.
 //     .with_env_filter(EnvFilter::from_default_env()) // Reads RUST_LOG.
 //     .init(); // Installs the global default subscriber.

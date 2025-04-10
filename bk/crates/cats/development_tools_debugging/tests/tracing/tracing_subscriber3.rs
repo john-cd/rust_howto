@@ -20,8 +20,7 @@ struct Config {
     path: String,
 }
 
-/// Configure tracing at runtime.
-/// Layers
+/// Demonstrates how to configure tracing at runtime.
 fn main() -> anyhow::Result<()> {
     // Example configuration.
     // In production, this may be loaded from a configuration file or
@@ -34,10 +33,9 @@ fn main() -> anyhow::Result<()> {
     // Setup a human-readable, multi-line logger.
     // `layer()` is a shorthand for the equivalent `Layer::default` function.
     let pretty_layer = fmt::layer().pretty();
-    let subscriber = Registry::default().with(pretty_layer);
 
     // If `cfg.is_prod` is true, also log JSON-formatted logs to a file.
-    let json_optional_layer = if cfg.is_prod {
+    let json_optional_layer: Option<_> = if cfg.is_prod {
         let file = File::create(cfg.path)?;
         let json_layer = fmt::layer().json().with_writer(file);
         Some(json_layer)
@@ -45,6 +43,7 @@ fn main() -> anyhow::Result<()> {
         None
     };
 
+    let subscriber = Registry::default().with(pretty_layer);
     // A `Layer` wrapped in an `Option` also implements the `Layer` trait.
     // This allows individual layers to be enabled or disabled at runtime while
     // always producing a `Subscriber` of the same type.
@@ -71,4 +70,3 @@ rusty_fork_test! {
         main().unwrap();
     }
 }
-// FIXME cover Vec<Layer>

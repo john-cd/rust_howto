@@ -1,13 +1,15 @@
 // ANCHOR: example
-/// Demonstrates how to change the logging level.
+/// Demonstrates how to configure the tracing subscriber
+/// to change the logging level.
 fn main() {
+    // Change the default logging level:
     tracing_subscriber::fmt()
-        // Sets the maximum verbosity level. In this case, enable everything.
-        .with_max_level(tracing::Level::TRACE)
-        // Sets this to be the default, global collector for this application.
+        // Sets the maximum verbosity level.
+        .with_max_level(tracing::Level::DEBUG)
+        // Sets this subscriber to be the global trace collector for this application.
         .init();
+    // You may use `try_init()` instead.
 
-    // Test it.
     tracing::debug!("tracing configured!");
 }
 // ANCHOR_END: example

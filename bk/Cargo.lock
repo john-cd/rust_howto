@@ -8611,9 +8611,11 @@ dependencies = [
  "slog-scope",
  "slog-term",
  "syslog",
+ "tempfile",
  "tokio",
  "tonic",
  "tracing",
+ "tracing-appender",
  "tracing-opentelemetry",
  "tracing-subscriber",
 ]
