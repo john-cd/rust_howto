@@ -142,6 +142,6 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.awai
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/322)
-FIXME tracing_subcriber2
+FIXME tracing_subscriber2
 rename files
 </div>
