@@ -69,7 +69,9 @@ The following example executes shell commands and interacts with the file system
 - Path manipulations,
 - File removal.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_cargo_plugins/tests/xshell.rs}}
+```
 
 ## Related Topics
 
