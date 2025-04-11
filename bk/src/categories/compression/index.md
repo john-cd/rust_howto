@@ -1,6 +1,6 @@
 # Compression
 
-Algorithms for making data smaller.
+This section covers algorithms for making data smaller.
 
 | Purpose | Rust Crate(s) |
 |---|---|
@@ -8,11 +8,11 @@ Algorithms for making data smaller.
 | Specialized | [`brotli`][c-brotli]⮳{{hi:brotli}} (Brotli), [`snap`][c-snap]⮳{{hi:snap}} (Snappy) |
 | Archiving | [`tar`][c-tar]⮳{{hi:tar}}, [`zip`][c-zip]⮳{{hi:zip}} |
 
-## `tar`
+## Working with Tarballs
 
 {{#include tar.incl.md}}
 
-## `flate2`
+## Compression and Decompression
 
 {{#include flate2.incl.md}}
 
@@ -24,7 +24,7 @@ The [`zip`][c-zip]⮳{{hi:zip}} crate allows you to create, open, and manipulate
 
 ## Related Topics
 
-- Data Serialization is often used with compression: see [[complex_encoding | Complex Encoding]].
+Data Serialization is often used with compression: see [[complex_encoding | Complex Encoding]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

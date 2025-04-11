@@ -15,9 +15,13 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-flate2 = "1.1.0"
+flate2 = { version = "1" }
 tar = "0.4.43"
 # [add zip async_zip](https://github.com/john-cd/rust_howto/issues/1262)
 
-## General
+# General
 anyhow = "1.0.95"
+bytes = "1.9.0"
+futures = "0.3.31"
+tokio = { version = "1.44.2", features = ["full"] }
+tokio-util = { version = "0.7.13", features = ["codec"] }
