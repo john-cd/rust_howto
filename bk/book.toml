@@ -1,7 +1,6 @@
 [book]
 authors = ["John CD"]
 language = "en"
-multilingual = false
 # src = "src"  # the directory with the markdown sources, "src" by default
 title = "The Rust How-to Book"
 description = "A compendium of links, code snippets, and recipes for the Rust language and ecosystem."
