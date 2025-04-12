@@ -1,5 +1,13 @@
 # TODOs
 
+finish
+
+- fake
+- tracing_subscriber
+- flate2 example
+- salsa example
+- crux
+
 ## Finish pandoc setup; generate PDF version of book WIP
 
 ---
