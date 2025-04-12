@@ -24,7 +24,7 @@ ignore = "0.4.23"
 memmap2 = "0.9.5"
 notify = "8.0.0"
 open = "5.3.0"
-remove_dir_all = "1.0.0"
+remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
 same-file = "1.0.6"
 # tempdir = "0.3.7" # Outdated, replaced by tempfile
 tempfile = "3.14.0"

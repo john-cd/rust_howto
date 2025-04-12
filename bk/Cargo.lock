@@ -22499,6 +22499,7 @@ dependencies = [
  "fs_at",
  "libc",
  "normpath",
+ "rayon",
  "windows-sys 0.59.0",
 ]
 
