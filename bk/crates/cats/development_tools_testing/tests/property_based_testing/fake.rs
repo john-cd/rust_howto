@@ -12,10 +12,10 @@
 //! ```
 
 // Trait that generates fake values given a type that implements `Dummy`.
+use fake::Dummy;
 use fake::Fake;
 // Generates default fake value for given type using `Fake`.
 use fake::Faker;
-use fake::Dummy;
 // Fake value generation for specific formats:
 use fake::faker::address::en::CityName;
 use fake::faker::address::en::StreetName;
@@ -39,7 +39,8 @@ struct User {
 }
 
 // The `Fake` trait is implemented for any type that implements `Dummy`:
-// Dummy should be implemented instead, and you get the `Fake` implementation for free.
+// Dummy should be implemented instead, and you get the `Fake` implementation
+// for free.
 
 // A structure to represent an Order.
 #[derive(Debug, Dummy)]
@@ -100,8 +101,8 @@ fn main() {
     // Generate a random order with random items.
 
     // type derived Dummy
-// let f: Foo = Faker.fake();
-// println!("{:?}", f);
+    // let f: Foo = Faker.fake();
+    // println!("{:?}", f);
     let order = Order {
         id: Faker.fake(),
         user_id: user.id,
