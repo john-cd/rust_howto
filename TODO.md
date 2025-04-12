@@ -1,19 +1,18 @@
 # TODOs
 
-## Go trough VS Code bookmarks (dev container) WIP
-
-## Add doc comments to all examples
-
-- WIP
-- to do: gui
-
----
-
 ## Finish pandoc setup; generate PDF version of book WIP
 
 ---
 
-## sccache
+## Go trough VS Code bookmarks
+
+- Close NOW tickets WIP
+- Go trough VS Code bookmarks (WSL) WIP
+- Go trough VS Code bookmarks (dev container) WIP
+
+---
+
+## sccache for dev container setup?
 
 ---
 
