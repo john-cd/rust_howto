@@ -1,6 +1,6 @@
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [Parse and Increment a Version String][ex-versioning-parse-and-increment-a-version-string] | [![semver][c-semver-badge]][c-semver] | [![cat-config][cat-config-badge]][cat-config] |
+| [Parse a Version String][ex-versioning-parse-a-version-string] | [![semver][c-semver-badge]][c-semver] | [![cat-config][cat-config-badge]][cat-config] |
 | [Parse a Complex Version String][ex-versioning-parse-a-complex-version-string] | [![semver][c-semver-badge]][c-semver] | [![cat-config][cat-config-badge]][cat-config] |
 | [Check if a Given Version is Pre-release][ex-versioning-check-if-pre-release] | [![semver][c-semver-badge]][c-semver] | [![cat-config][cat-config-badge]][cat-config] |
 | [Find the Latest Version Satisfying a Given Range][ex-versioning-find-latest-version-within-range] | [![semver][c-semver-badge]][c-semver] | [![cat-config][cat-config-badge]][cat-config] |

@@ -635,7 +635,7 @@
 [ex-versioning-check-if-pre-release]: categories/development-tools/versioning/versioning.md#check-if-pre-release
 [ex-versioning-find-latest-version-within-range]: categories/development-tools/versioning/versioning.md#find-latest-version-within-range
 [ex-versioning-parse-a-complex-version-string]: categories/development-tools/versioning/versioning.md#parse-a-complex-version-string
-[ex-versioning-parse-and-increment-a-version-string]: categories/development-tools/versioning/versioning.md#parse-and-increment-a-version-string
+[ex-versioning-parse-a-version-string]: categories/development-tools/versioning/versioning.md#parse-a-version-string
 [ex-web-programming-check-a-webpage-for-broken-links]: categories/web-programming/scraping.md#check-a-webpage-for-broken-links
 [ex-web-programming-create-a-base-url-by-removing-path-segments]: categories/web-programming/url.md#create-a-base-url-by-removing-path-segments
 [ex-web-programming-create-new-urls-from-a-base-url]: categories/web-programming/url.md#create-new-urls-from-a-base-url

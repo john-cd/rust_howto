@@ -10,16 +10,14 @@
 | Release Management | Often involves tagging `Git` releases. |
 | Changelog Generation | Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p-parsing] commit messages, etc. |
 
-## Parse and Increment a Version String {#parse-and-increment-a-version-string}
+## Parse and a Version String {#parse-a-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} version string{{hi:Version string}}
 
-Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a string literal using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳ then increments it by patch, minor, and major version number one by one.
-
-Note that in accordance with the [semantic versioning specification`][c-semver-spec]{{hi:Semantic Versioning Specification}}⮳, incrementing the minor version number{{hi:Version number}} resets the patch version number to 0 and incrementing the major version number resets both the minor and patch version numbers to 0.
+Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a string literal using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/tests/semver/semver_increment.rs:example}}
+{{#include ../../../../crates/cats/development_tools/tests/semver/semver_parse.rs:example}}
 ```
 
 ## Parse a Complex Version String {#parse-a-complex-version-string}
@@ -28,7 +26,7 @@ Note that in accordance with the [semantic versioning specification`][c-semver-s
 
 Constructs a [`semver::Version`][c-semver::Version]{{hi:semver::Version}}⮳ from a complex version string using [`semver::Version::parse`][c-semver::Version::parse]{{hi:semver::Version::parse}}⮳ The string contains pre-release{{hi:Pre-release}} and build metadata{{hi:Build metadata}} as defined in the [semantic versioning specification`][c-semver-spec]{{hi:Semantic versioning specification}}⮳.
 
-Note that, in accordance with the Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
+Note that, in accordance with the SemVer Specification, build metadata is parsed but not considered when comparing versions. In other words, two versions may be equal even if their build strings differ.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/tests/semver/semver_complex.rs:example}}

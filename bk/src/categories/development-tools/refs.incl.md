@@ -53,7 +53,7 @@
 [ex-versioning-check-if-pre-release]: versioning/versioning.md#check-if-pre-release
 [ex-versioning-find-latest-version-within-range]: versioning/versioning.md#find-latest-version-within-range
 [ex-versioning-parse-a-complex-version-string]: versioning/versioning.md#parse-a-complex-version-string
-[ex-versioning-parse-and-increment-a-version-string]: versioning/versioning.md#parse-and-increment-a-version-string
+[ex-versioning-parse-a-version-string]: versioning/versioning.md#parse-a-version-string
 [p-apis]: documentation/../../web-programming_http-client/apis.md
 [p-attributes]: cross-compilation/../../../language/attributes.md
 [p-attributes]: formatting/../../../language/attributes.md
