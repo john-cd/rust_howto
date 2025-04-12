@@ -75,8 +75,8 @@
 
 // // Tells Salsa that MyState is a database.
 // // Each time you run your program, Salsa remembers the values of each
-// // computation in a database. When the inputs change, it consults this database
-// // to look for values that can be reused.
+// // computation in a database. When the inputs change, it consults this
+// // database to look for values that can be reused.
 // impl Database for MyState {}
 
 // fn main() {
