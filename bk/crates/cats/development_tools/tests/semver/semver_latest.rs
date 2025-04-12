@@ -22,6 +22,7 @@ fn find_max_matching_version<'a, I>(
 where
     I: IntoIterator<Item = &'a str>,
 {
+    // SemVer version requirement describing the intersection of some version comparators, such as >=1.2.3, <1.8.
     let vreq = VersionReq::parse(version_req_str)?;
 
     Ok(iterable
@@ -32,8 +33,14 @@ where
 }
 
 fn main() -> Result<()> {
+    let max_matching_version =
+        find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?;
+    println!(
+        "Maximum matching version: {:?}",
+        max_matching_version
+    );
     assert_eq!(
-        find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?,
+        max_matching_version,
         Some(Version::parse("1.0.0")?)
     );
 
@@ -60,4 +67,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [review - add println!("{}") NOW](https://github.com/john-cd/rust_howto/issues/156)
