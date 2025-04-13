@@ -11,14 +11,11 @@
 use aws_config::BehaviorVersion;
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_s3::Client;
-use aws_sdk_s3::Error;
-use tokio;
 use tracing::error;
 use tracing::info;
-use tracing_subscriber;
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
+async fn main() -> anyhow::Result<()> {
     // Initialize tracing subscriber.
     tracing_subscriber::fmt::init();
 

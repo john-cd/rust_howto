@@ -9,7 +9,7 @@
 //! - In particular, the `tracing_subscriber::fmt` module provides a default
 //!   implementation of the `Subscriber` trait that records `Events` and `Spans`
 //!   by formatting them as text and logging them to stdout.
-//! [(docs.rs)](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html)
+//!   [(docs.rs)](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html)
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml

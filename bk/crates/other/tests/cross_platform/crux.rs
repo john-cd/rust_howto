@@ -113,7 +113,7 @@ impl App for Counter {
 // - On Android, as a dynamic library using Java Native Access.
 // - In a browser, as a WebAssembly module.
 fn main() {
-    let _app = Counter::default();
+    let _app = Counter;
     // FIXME
     // Simulate user interactions.
     // app.update(Event::Increment, &mut Model::default(), &Capabilities {

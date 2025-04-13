@@ -5,10 +5,8 @@ use tracing_subscriber::filter::EnvFilter;
 use tracing_subscriber::fmt;
 use tracing_subscriber::layer::SubscriberExt;
 
-/// Demonstrates
-/// - how to write logs to multiple destinations (in this instance,
+/// Demonstrates how to write logs to multiple destinations (in this instance,
 /// stdout and a file) simultaneously.
-/// -
 fn main() {
     let dir = tempfile::tempdir().expect("Failed to create tempdir");
 

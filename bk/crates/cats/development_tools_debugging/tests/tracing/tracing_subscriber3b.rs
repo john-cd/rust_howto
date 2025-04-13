@@ -17,8 +17,7 @@ struct Config {
 }
 
 /// Demonstrates how to configure tracing at runtime,
-/// - dealing with a variable number of `Layer`s of different
-/// types.
+/// - dealing with a variable number of `Layer`s of different types.
 /// - reloading the tracing configuration at runtime.
 fn main() -> anyhow::Result<()> {
     let cfg = Config {
