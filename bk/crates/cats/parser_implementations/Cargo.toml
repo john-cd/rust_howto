@@ -44,5 +44,5 @@ xmlparser = "0.13.6"
 
 ## General
 anyhow = "1.0.96"
-chrono = "0.4.40"
-serde = { version = "1.0.217", features = ["derive"] }
+chrono = { version = "0.4.40", features = [ "serde" ] }
+serde = { version = "1.0.219", features = ["derive"] }
