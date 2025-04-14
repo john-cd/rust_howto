@@ -36,7 +36,8 @@ path = "src/main.rs"
     doc["dependencies"]["toml_edit"] = value("0.22.24");
 
     // Add a feature to an existing dependency.
-    // `Item` is an enum representing either a value, a table, an array of tables, or none.
+    // `Item` is an enum representing either a value, a table, an array of
+    // tables, or none.
     if let Some(Item::Value(tokio)) = doc
         .get_mut("dependencies")
         .and_then(|deps| deps.get_mut("tokio"))
@@ -53,7 +54,10 @@ path = "src/main.rs"
 
     // Add a new table.
     let mut dev_deps = toml_edit::table(); // Empty table.
-    dev_deps.as_table_mut().unwrap().insert("pretty_assertions", value("1.4.1"));
+    dev_deps
+        .as_table_mut()
+        .unwrap()
+        .insert("pretty_assertions", value("1.4.1"));
     doc.insert("dev-dependencies", dev_deps);
 
     // Add to the array of tables.
@@ -64,8 +68,8 @@ path = "src/main.rs"
         bins.push(new_bin);
     }
 
-    // Print the modified document.
-    println!("{}", doc.to_string());
+    // Print the modified document - calls `to_string()`.
+    println!("{}", doc);
 
     Ok(())
 }
