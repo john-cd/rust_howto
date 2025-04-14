@@ -21,6 +21,8 @@ pub fn main() {
     let clipboard_text = clipboard.get_text().unwrap();
     println!("Text from clipboard: {}", clipboard_text);
 }
+// You may also use:  get/set_html/image...
+
 // ANCHOR_END: example
 
 // Requires a clipboard on Linux; otherwise,
