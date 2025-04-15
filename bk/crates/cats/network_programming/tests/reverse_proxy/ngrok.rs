@@ -6,8 +6,8 @@
 // //!
 // //! "ngrok is your app's front door. ngrok is a globally distributed reverse
 // //! proxy that secures, protects and accelerates your applications and
-// //! network  services, no matter where you run them. ngrok supports delivering
-// //! HTTP, TLS or TCP-based applications".
+// //! network  services, no matter where you run them. ngrok supports
+// delivering //! HTTP, TLS or TCP-based applications".
 // //!
 // //! Add to your `Cargo.toml`:
 // //! ```toml
