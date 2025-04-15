@@ -19,6 +19,7 @@
 [ex-rust-patterns-im]: functional_programming.md#im
 [ex-rust-patterns-lens]: functional_programming.md#lens
 [ex-rust-patterns-pin-project]: design_patterns.md#pin-project
+[ex-rust-patterns-rpds]: functional_programming.md#rpds
 [ex-rust-patterns-typed-builder]: builder_pattern.md#typed-builder
 [ex-rust-patterns-typestate-pattern]: design_patterns.md#typestate-pattern
 [p-closures]: ../../language/closures.md

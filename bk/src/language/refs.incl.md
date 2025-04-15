@@ -12,6 +12,7 @@
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-control-flow]: control_flow.md#control-flow
+[ex-language-data-types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
 [ex-language-deprecated]: attributes.md#deprecated
 [ex-language-destructuring]: variables_and_constants.md#destructuring
@@ -44,8 +45,8 @@
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
 [ex-language-rust-install]: rust_install.md#rust-install
+[ex-language-scalar-data-types]: data_types.md#scalar-data-types
 [ex-language-shadowing]: variables_and_constants.md#shadowing
-[ex-language-data-types]: data_types.md
 [ex-language-slices]: slices.md#slices
 [ex-language-structs]: structs.md#structs
 [ex-language-strum]: enums.md#strum

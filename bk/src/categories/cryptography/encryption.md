@@ -16,7 +16,7 @@ RSA (Rivest-Shamir-Adleman) is one of the most widely used public-key cryptosyst
 {{#include ../../../crates/cats/cryptography/tests/rsa.rs:example}}
 ```
 
-## `sodiumoxide`
+## `sodiumoxide` {#sodiumoxide}
 
 [![sodiumoxide][c-sodiumoxide-badge]][c-sodiumoxide] [![sodiumoxide-crates.io][c-sodiumoxide-crates.io-badge]][c-sodiumoxide-crates.io] [![sodiumoxide-github][c-sodiumoxide-github-badge]][c-sodiumoxide-github] [![sodiumoxide-lib.rs][c-sodiumoxide-lib.rs-badge]][c-sodiumoxide-lib.rs]{{hi:sodiumoxide}}{{hi:NaCl}}{{hi:Libsodium}}{{hi:Crypto}} [![cat-cryptography][cat-cryptography-badge]][cat-cryptography]{{hi:Cryptography}}
 

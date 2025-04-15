@@ -5,10 +5,14 @@
 [ex-standard-library-combinators]: option.md#combinators
 [ex-standard-library-convert-cow-to-str]: cow.md#convert-cow-to-str
 [ex-standard-library-convert-cow-to-string]: cow.md#convert-cow-to-string
+[ex-standard-library-custom-hash-function]: hashmaps.md#custom-hash-function
+[ex-standard-library-custom-key-type]: hashmaps.md#custom-key-type
 [ex-standard-library-derive-more]: derive.md#derive-more
 [ex-standard-library-derive]: derive.md#automatic-trait-derivation
 [ex-standard-library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
+[ex-standard-library-hashmap]: hashmaps.md#hashmap
 [ex-standard-library-hashmaps]: hashmaps.md#hashmaps
+[ex-standard-library-hashset]: hashmaps.md#hashset
 [ex-standard-library-oncecell]: smart_pointers.md#oncecell
 [ex-standard-library-option]: option.md#option
 [ex-standard-library-placeholders]: strings.md#placeholders

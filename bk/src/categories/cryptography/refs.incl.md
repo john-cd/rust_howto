@@ -22,6 +22,7 @@
 [ex-cryptography-sha1]: hashing.md#sha1
 [ex-cryptography-sha256]: hashing.md#sha256
 [ex-cryptography-sha2]: hashing.md#sha2
+[ex-cryptography-sodiumoxide]: encryption.md#sodiumoxide
 [ex-cryptography-subtle]: cryptography_utilities.md#subtle
 [ex-cryptography-x509-cert]: certificates.md#x509-cert
 [ex-cryptography-zeroize]: cryptography_utilities.md#zeroize

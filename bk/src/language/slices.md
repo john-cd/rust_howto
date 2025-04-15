@@ -8,7 +8,7 @@ A slice is a reference to a contiguous sequence of elements within a collection.
 - They allow you to work with parts of a collection, enabling flexibility in data manipulation.
 - Slices are often created using the `&[T]` syntax, where `T` is the type of the elements in the slice. For string slices, the type is `&str`.
 
-## Common Use Cases
+## Common Use Cases {#skip}
 
 - Accessing Subsets of Data: Slices are frequently used to access specific portions of arrays, vectors, or strings without copying the entire collection.
 - Function Arguments: Slices are often used as function arguments when you want to operate on a part of a collection.

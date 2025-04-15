@@ -12,7 +12,7 @@ Smart pointers{{hi:Smart pointers}} are special data structures that not only ac
 | `RefCell<T>` | Allows interior mutability (inside an immutable reference). Enforces borrow checking at runtime rather than compile time. Works well with  when shared data requires interior mutability. |
 | `Cell<T>` | Similar to , but with fewer safety checks and restrictions. Enables interior mutability for  types without borrowing. |
 
-## Comparison
+## Comparison {#skip}
 
 - `Rc<T>`{{hi:Rc<T>}} enables multiple owners{{hi:Multiple owners}} of the same data; `Box<T>` and `RefCell<T>` have single owners.
 - `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows only immutable borrows checked at compile time; `RefCell<T>` allows immutable or mutable borrows checked at runtime{{hi:Borrowing}}.
