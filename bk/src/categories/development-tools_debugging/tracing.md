@@ -34,7 +34,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_subscriber1.rs:example}}
 ```
 
-## Log in JSON format {#tracing-log-json}
+## Log in JSON Format {#tracing-log-json}
 
 [![tracing_subscriber][c-tracing_subscriber-badge]][c-tracing_subscriber]{{hi:tracing_subscriber}} [![tracing_subscriber-crates.io][c-tracing_subscriber-crates.io-badge]][c-tracing_subscriber-crates.io]
 
@@ -100,7 +100,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_spans.rs:example}}
 ```
 
-## Create and Enter a Span in a One-liner using `entered` {#span-entered}
+## Create and Enter a Span in a One-liner Using `entered` {#span-entered}
 
 [![tracing][c-tracing-badge]][c-tracing]{{hi:tracing}} [![tracing-github][c-tracing-github-badge]][c-tracing-github] [![cat-development-tools][cat-development-tools-badge]][cat-development-tools]{{hi:Development tools}} [![cat-development-tools::debugging][cat-development-tools::debugging-badge]][cat-development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
@@ -108,7 +108,7 @@ An `Event` signifies something that happened at a moment in time. `tracing`'s `E
 {{#include ../../../crates/cats/development_tools_debugging/tests/tracing/tracing_span_entered.rs:example}}
 ```
 
-## Use Spans to Instrument Synchronous and Asynchronous code {#span-instrument}
+## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
 Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across `.await` points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c-tracing::span::Span::in_scope]{{hi:tracing::span::Span::in_scope}}⮳ to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
 

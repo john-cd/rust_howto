@@ -38,7 +38,7 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 - targets are discovered via service discovery or static configuration
 - multiple modes of graphing and dashboarding support
 
-### Useful links {#skip}
+### Useful Links {#skip}
 
 - [Grafana](https://grafana.com).
 - [Prometheus](https://github.com/prometheus/prometheus) monitoring system and time series database.

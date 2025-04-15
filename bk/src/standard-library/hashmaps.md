@@ -30,7 +30,7 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../../crates/standard_library/tests/hashmaps/custom_hash_function.rs:example}}
 ```
 
-## HashMap using a Custom Type as the Key {#custom-key-type}
+## HashMap Using a Custom Type as the Key {#custom-key-type}
 
 [![std][c-std-badge]][c-std]{{hi:std}}
 

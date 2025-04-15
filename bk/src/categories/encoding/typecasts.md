@@ -6,7 +6,7 @@ Rust provides no implicit type conversion (coercion) between primitive types. Th
 
 Instead of "casting," you'll usually implement or use [traits][p-traits] like `From`, `Into`, `TryFrom`, `TryInto`, or `FromStr` for type conversions in Rust. The `as` keyword exists, but it should be used carefully and only when other options aren't suitable, as it can lead to data loss or unexpected behavior if not handled properly.
 
-## Type Conversion using `as` {#skip}
+## Type Conversion Using `as` {#skip}
 
 The `as` keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
 

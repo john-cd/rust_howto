@@ -106,7 +106,7 @@ fn main() {
 }
 ```
 
-## Transform `Result` values {#map}
+## Transform `Result` Values {#map}
 
 [![std][c-std-badge]][c-std] [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
