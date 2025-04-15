@@ -69,7 +69,7 @@ It is a fork of [`anyhow`][c-anyhow::Result]⮳{{hi:anyhow}} [`anyhow`][c-anyhow
 {{#include ../../../../crates/cats/rust_patterns/tests/error/color_eyre.rs:example}}
 ```
 
-## See Also
+## See Also {#skip}
 
 [![eyre][c-eyre-badge]][c-eyre]{{hi:eyre}}
 

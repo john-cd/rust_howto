@@ -10,7 +10,7 @@
 | Release Management | Often involves tagging `Git` releases. |
 | Changelog Generation | Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p-parsing] commit messages, etc. |
 
-## Parse and a Version String {#parse-a-version-string}
+## Parse a Version String {#parse-a-version-string}
 
 [![semver][c-semver-badge]][c-semver]{{hi:semver}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}} version string{{hi:Version string}}
 

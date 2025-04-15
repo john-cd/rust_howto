@@ -1,4 +1,4 @@
-# Hashmaps {#hashmaps}
+# Hashmaps
 
 {{#include hashmaps.incl.md}}
 

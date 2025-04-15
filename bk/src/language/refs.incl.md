@@ -12,7 +12,6 @@
 [ex-language-conditional-compilation]: attributes.md#conditional-compilation
 [ex-language-constants-in-traits]: traits.md#constants-in-traits
 [ex-language-control-flow]: control_flow.md#control-flow
-[ex-language-data-types]: data_types.md
 [ex-language-default-implementation]: traits.md#default-implementation
 [ex-language-deprecated]: attributes.md#deprecated
 [ex-language-destructuring]: variables_and_constants.md#destructuring

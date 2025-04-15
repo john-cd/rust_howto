@@ -4,4 +4,5 @@
 
 <div class="hidden">
 FIXME
+| [`sodiumoxide`][ex-cryptography-sodiumoxide] | | [![cat-cryptography][cat-cryptography-badge]][cat-cryptography] |
 </div>

@@ -3,7 +3,6 @@
 [ex-development-tools_testing-assertion_libraries]: assertions.md#assertion_libraries
 [ex-development-tools_testing-async_testing]: testing.md#async_testing
 [ex-development-tools_testing-cargo-nextest]: test_runners.md#cargo-nextest
-[ex-development-tools_testing-cargo-tarpaulin]: testing.md#cargo-tarpaulin
 [ex-development-tools_testing-cargo-test]: test_runners.md#cargo-test
 [ex-development-tools_testing-cargo_fuzz]: fuzzing.md#cargo_fuzz
 [ex-development-tools_testing-cargo_tarpaulin]: code_coverage.md#cargo_tarpaulin
@@ -16,8 +15,6 @@
 [ex-development-tools_testing-mocking]: mocking.md#mocking
 [ex-development-tools_testing-proptesting]: property_based_testing.md#proptesting
 [ex-development-tools_testing-test_data_generation]: property_based_testing.md#test_data_generation
-[ex-development-tools_testing-test_organization]: testing.md#test_organization
-[ex-development-tools_testing-test_runners]: testing.md#test_runners
 [ex-development-tools_testing-unit_testing]: testing.md#unit_testing
 [p-asynchronous]: ../asynchronous/index.md
 [p-attributes]: ../../language/attributes.md

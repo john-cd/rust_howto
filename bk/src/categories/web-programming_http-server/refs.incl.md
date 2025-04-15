@@ -4,7 +4,6 @@
 [ex-web-programming_http-server-axum]: _axum.md#axum
 [ex-web-programming_http-server-cors]: cors.md#cors
 [ex-web-programming_http-server-hyper]: _hyper.md#hyper
-[ex-web-programming_http-server-leptos]: other_frameworks.md#leptos
 [ex-web-programming_http-server-loco]: _batteries-included_frameworks.md#loco
 [ex-web-programming_http-server-rocket]: other_frameworks.md#rocket
 [ex-web-programming_http-server-rust-on-nails]: _batteries-included_frameworks.md#rust-on-nails

@@ -1,6 +1,5 @@
 [ex-development-tools_debugging-add-tracing-spans-to-fn]: tracing.md#add-tracing-spans-to-fn
 [ex-development-tools_debugging-basic-tracing]: tracing.md#basic-tracing
-[ex-development-tools_debugging-combine-layers]: tracing.md#combine-layers
 [ex-development-tools_debugging-configure-tracing]: tracing.md#configure-tracing
 [ex-development-tools_debugging-custom-env-var-for-logging]: config_log.md#custom-env-var-for-logging
 [ex-development-tools_debugging-custom-event-formatter]: tracing.md#custom-event-formatter
@@ -8,7 +7,6 @@
 [ex-development-tools_debugging-enable-log-levels-per-module]: config_log.md#enable-log-levels-per-module
 [ex-development-tools_debugging-env-logger]: tracing_alternatives.md#env-logger
 [ex-development-tools_debugging-events]: tracing.md#events
-[ex-development-tools_debugging-initialization]: tracing.md#initialization
 [ex-development-tools_debugging-jaeger]: distributed_telemetry.md#jaeger
 [ex-development-tools_debugging-log-error-message-to-console]: log.md#log-error-message-to-console
 [ex-development-tools_debugging-log-to-console]: log.md#log-to-console
@@ -19,7 +17,6 @@
 [ex-development-tools_debugging-open-observe]: distributed_telemetry.md#open-observe
 [ex-development-tools_debugging-open-telemetry]: distributed_telemetry.md#open-telemetry
 [ex-development-tools_debugging-prometheus]: distributed_telemetry.md#prometheus
-[ex-development-tools_debugging-related-crates]: tracing.md#related-crates
 [ex-development-tools_debugging-slog]: tracing_alternatives.md#slog
 [ex-development-tools_debugging-span-entered]: tracing.md#span-entered
 [ex-development-tools_debugging-span-instrument]: tracing.md#span-instrument

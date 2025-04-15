@@ -3,7 +3,6 @@
 [ex-cryptography-argon2]: password_hashing.md#argon2
 [ex-cryptography-bcrypt]: password_hashing.md#bcrypt
 [ex-cryptography-blake3]: hashing.md#blake3
-[ex-cryptography-certificates]: certificates.md#certificates
 [ex-cryptography-chacha20poly1305]: aead.md#chacha20poly1305
 [ex-cryptography-der]: certificates.md#der
 [ex-cryptography-dsa]: signature.md#dsa

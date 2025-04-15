@@ -3,7 +3,6 @@
 [ex-parser-implementations-css-rs]: html.md#css-rs
 [ex-parser-implementations-html5ever]: html.md#html5ever
 [ex-parser-implementations-ini]: ini.md#ini
-[ex-parser-implementations-javascript]: programming_languages.md#javascript_parsing
 [ex-parser-implementations-javascript_parsing]: programming_languages.md#javascript_parsing
 [ex-parser-implementations-json5]: json.md#json5
 [ex-parser-implementations-markdown]: markdown.md#markdown
