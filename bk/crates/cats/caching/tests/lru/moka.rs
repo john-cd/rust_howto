@@ -1,6 +1,4 @@
 // ANCHOR: example
-// COMING SOON
-// ANCHOR_END: example
 use std::time::Duration;
 
 use moka::sync::Cache;
@@ -29,9 +27,10 @@ fn main() {
     // Remove an entry.
     cache.invalidate("key1");
 }
+// ANCHOR_END: example
 
 #[test]
 fn test() {
     main();
 }
-// [review example; review examples in https://docs.rs/crate/moka/0.12.10 ; cover async case (sep. example)?](https://github.com/john-cd/rust_howto/issues/1319)
+// [review examples in https://docs.rs/crate/moka/0.12.10 ; cover async case (sep. example)?](https://github.com/john-cd/rust_howto/issues/1319)
