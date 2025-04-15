@@ -15,15 +15,25 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-hyper = "1.6.0"
-ngrok = "0.14.0"
+ngrok = { version = "0.15.0", features = [ "axum" ] }
 # TODO pingora = "0.4.0"
+
+## General
+anyhow = "1.0.95"
+axum = { version = "0.8.1", features = ["tokio"] }
 tokio = { version = "1.44.2", features = ["full"] }
+url = "2.5.4"
+
+# TODO
+#async-trait = "0.1.59"
+#hyper = {version = "1", features = ["full"]}
+#hyper-util = { version = "0.1", features = [ "full" ] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 glommio = "0.9.0"
 
 [features]
 default = []
+# TODO
 # ngrok = ["dep:ngrok"]
 # pingora = ["dep:pingora"]

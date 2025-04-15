@@ -58,7 +58,7 @@ local_addr = "127.0.0.1:22" # The address of the service that needs to be forwar
 [![ngrok-github][c-ngrok-github-badge]][c-ngrok-github]
 [![ngrok-lib.rs][c-ngrok-lib.rs-badge]][c-ngrok-lib.rs]
 
-[ngrok][c-ngrok-website]⮳ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the native and idiomatic crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
+[ngrok][c-ngrok-website]⮳ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the Rust-native crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/tests/reverse_proxy/ngrok.rs:example}}
