@@ -23,13 +23,15 @@ regex = "1.11.1"
 reqwest = "0.12.12"
 serde = { version = "1.0.217", features = ["derive"] }
 similar = "2.6.0"
-tempfile = "3.19.1"
 tera = "1.20.0"
 tinytemplate = "1.2.1"
 toml = "0.8.20"
 tracing = "0.1.41"
 trim-in-place = "0.1.7"
 walkdir = "2.5.0"
+
+[dev-dependencies]
+tempfile = "3.19.1"
 
 # Technically defining a target is not required, because cargo autodiscovers it,
 # but useful during CI. See the Dockerfile.
