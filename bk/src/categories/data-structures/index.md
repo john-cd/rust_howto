@@ -46,6 +46,10 @@ The following examples cover less commonly-used data structures:
 
 {{#include binaryheap.incl.md}}
 
+### Graphs
+
+{{#include graph.incl.md}}
+
 ### Bitflags and Fields
 
 {{#include bitfield.incl.md}}

@@ -1,0 +1,20 @@
+# Graphs
+
+{{#include graph.incl.md}}
+
+## Manipulate Graphs with `petgraph` {#petgraph}
+
+[![petgraph][c-petgraph-badge]][c-petgraph] [![petgraph-crates.io][c-petgraph-crates.io-badge]][c-petgraph-crates.io] [![petgraph-github][c-petgraph-github-badge]][c-petgraph-github] [![petgraph-lib.rs][c-petgraph-lib.rs-badge]][c-petgraph-lib.rs]{{hi:petgraph}}{{hi:Data-structure}}{{hi:Graph}}{{hi:Unionfind}}{{hi:Graph-algorithms}} [![cat-data-structures][cat-data-structures-badge]][cat-data-structures]{{hi:Data structures}}
+
+`petgraph` is a graph data structure library that provides graph types and graph algorithms.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/tests/graph/petgraph.rs:example}}
+```
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+TODO write
+</div>
