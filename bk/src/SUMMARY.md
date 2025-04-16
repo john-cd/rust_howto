@@ -77,7 +77,7 @@
 
 - [Compression](categories/compression/index.md)
   - [Working with Tarballs](categories/compression/tar.md)
-  - [Flate2](categories/compression/flate2.md)
+  - [Flate2](categories/compression/compression.md)
 
 - [Concurrency](categories/concurrency/index.md)
   - [Explicit Threads](categories/concurrency/explicit_threads.md)

@@ -86,7 +86,7 @@
 [ex-compilation-mold-linker]: categories/development-tools/compilation/faster_linking.md#mold-linker
 [ex-compilation-optimization-levels]: categories/development-tools/compilation/reduce_compilation_duration.md#optimization-levels
 [ex-compression-compress-a-directory-into-a-tarball]: categories/compression/tar.md#compress-a-directory-into-a-tarball
-[ex-compression-compress-decompress]: categories/compression/flate2.md#compress-decompress
+[ex-compression-compress-decompress]: categories/compression/compression.md#compress-decompress
 [ex-compression-decompress-a-tarball-removing-prefix]: categories/compression/tar.md#decompress-a-tarball-removing-prefix
 [ex-compression-decompress-a-tarball]: categories/compression/tar.md#decompress-a-tarball
 [ex-concurrency-actix]: categories/concurrency/_actors.md#actix
