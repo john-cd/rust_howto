@@ -113,6 +113,7 @@
   - [Binary Heaps](categories/data-structures/binaryheap.md)
   - [Linked Lists](categories/data-structures/linkedlist.md)
   - [Bitfields](categories/data-structures/bitfield.md)
+  - [Graph](categories/data-structures/graph.md)
   - [Heapless Data Structures](categories/data-structures/heapless.md)
   - [Stack-allocated Arrays](categories/data-structures/stack_allocated_arrays.md)
   - [UUIDs](categories/data-structures/uuid.md)
@@ -181,6 +182,7 @@
   - [Alternatives](categories/development-tools_debugging/tracing_alternatives.md)
   - [Log Messages](categories/development-tools_debugging/log.md)
   - [Logging Configuration](categories/development-tools_debugging/config_log.md)
+  - [Metrics](categories/development-tools_debugging/metrics.md)
   - [Distributed Telemetry](categories/development-tools_debugging/distributed_telemetry.md)
   - [Diagnostic Functions](categories/development-tools_debugging/diagnostic_functions.md)
 
