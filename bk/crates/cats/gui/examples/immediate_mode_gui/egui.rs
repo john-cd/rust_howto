@@ -1,11 +1,14 @@
 #![allow(dead_code)]
 // ANCHOR: example
-use eframe::egui;
+//!
+//! In `Cargo.toml`:
+//! ```toml
+//! [dependencies]
+//! egui = "0.17"
+//! eframe = "0.17"
+//! ```
 
-// In `Cargo.toml`:
-// [dependencies]
-// egui = "0.17"
-// eframe = "0.17"
+use eframe::egui;
 
 pub fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions::default();
