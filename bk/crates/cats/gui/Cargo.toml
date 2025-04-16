@@ -55,7 +55,7 @@ anyhow = "1.0.95"
 [features]
 default = []
 dioxus = ["dep:dioxus", "dep:dioxus-web", "dep:dioxus-desktop"]
-# TODO egui = ["dep:eframe", "dep:egui"]
+# [egui = ["dep:eframe", "dep:egui"]](https://github.com/john-cd/rust_howto/issues/1374)
 femtovg = ["dep:femtovg"]
 #gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
 iced = ["dep:iced"]

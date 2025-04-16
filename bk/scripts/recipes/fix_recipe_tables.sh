@@ -38,4 +38,4 @@ done
 
 echo "DONE"
 
-# TODO append before <div class="hidden" >; insert crate and categories badges; handle tables with only one or two columns
+# [append before <div class="hidden" >; insert crate and categories badges; handle tables with only one or two columns](https://github.com/john-cd/rust_howto/issues/1372)
