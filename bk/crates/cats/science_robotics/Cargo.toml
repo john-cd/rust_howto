@@ -30,4 +30,3 @@ async-trait = "0.1.88"
 [features]
 #default = []
 #openrr = ["dep:openrr"]
-#zenoh = ["dep:zenoh"]
