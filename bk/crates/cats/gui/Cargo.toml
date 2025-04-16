@@ -27,7 +27,7 @@ femtovg = { version = "0.14.0", optional = true }
 # gtk = { version = "0.9.5", package = "gtk4", optional = true } # FIXME Make sure to use gtk4; for relm4 / gtk4 examples
 iced = { version = "0.13.1", optional = true }
 minifb = "0.28.0"
-morphorm = "0.6.5"
+morphorm = "0.7.0"
 pollster = { version = "0.4", optional = true } # for vello example
 r3bl_tuify = "0.2.0"
 # relm4 = { version = "0.9.1", optional = true }
@@ -40,7 +40,7 @@ skia-safe = { version = "0.82.0", features = [
 ], optional = true } # pin to 0.78 for slint
 slint = "1.9.1"
 taffy = "0.8.0"
-tao = "0.32.8"
+tao = "0.33.0"
 tauri = "2.0.6" # Requires multiple libraries. See Dockerfile
 vello = { version = "0.4.0", optional = true }
 vger = { version = "0.4.0", optional = true }
@@ -55,7 +55,6 @@ anyhow = "1.0.95"
 [features]
 default = []
 dioxus = ["dep:dioxus", "dep:dioxus-web", "dep:dioxus-desktop"]
-# [egui = ["dep:eframe", "dep:egui"]](https://github.com/john-cd/rust_howto/issues/1374)
 femtovg = ["dep:femtovg"]
 #gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
 iced = ["dep:iced"]

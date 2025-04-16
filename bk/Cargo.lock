@@ -13185,7 +13185,7 @@ dependencies = [
  "skia-safe",
  "slint",
  "taffy 0.8.0",
- "tao 0.32.8",
+ "tao 0.33.0",
  "tauri",
  "vello 0.4.1",
  "vger",
@@ -17511,9 +17511,9 @@ checksum = "7843ec2de400bcbc6a6328c958dc38e5359da6e93e72e37bc5246bf1ae776389"
 
 [[package]]
 name = "morphorm"
-version = "0.6.5"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "45b7267af0ed382cf61348357d63a3b53d3b4db2fdf01c33e4300859f1463a93"
+checksum = "a1da952390ad9f41372f75f451fbca41436c82a90bedaf1fbfae462a747b031b"
 dependencies = [
  "smallvec 1.15.0",
 ]
@@ -26896,6 +26896,45 @@ dependencies = [
  "url",
  "windows 0.60.0",
  "windows-core 0.60.1",
+ "windows-version",
+ "x11-dl",
+]
+
+[[package]]
+name = "tao"
+version = "0.33.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e59c1f38e657351a2e822eadf40d6a2ad4627b9c25557bc1180ec1b3295ef82"
+dependencies = [
+ "bitflags 2.9.0",
+ "core-foundation 0.10.0",
+ "core-graphics 0.24.0",
+ "crossbeam-channel",
+ "dispatch",
+ "dlopen2",
+ "dpi",
+ "gdkwayland-sys",
+ "gdkx11-sys",
+ "gtk",
+ "jni",
+ "lazy_static",
+ "libc",
+ "log",
+ "ndk 0.9.0",
+ "ndk-context",
+ "ndk-sys 0.6.0+11769913",
+ "objc2 0.6.0",
+ "objc2-app-kit 0.3.0",
+ "objc2-foundation 0.3.0",
+ "once_cell",
+ "parking_lot 0.12.3",
+ "raw-window-handle 0.6.2",
+ "scopeguard",
+ "tao-macros",
+ "unicode-segmentation",
+ "url",
+ "windows 0.61.1",
+ "windows-core 0.61.0",
  "windows-version",
  "x11-dl",
 ]
