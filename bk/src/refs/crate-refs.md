@@ -19,7 +19,7 @@
 [c-accesskit_winit-crates.io-badge]: https://img.shields.io/badge/crates.io-accesskit__winit-crimson
 [c-accesskit_winit-crates.io]: https://crates.io/crates/accesskit_winit
 [c-accesskit_winit-github-badge]: https://img.shields.io/badge/accesskit__winit-steelblue?logo=github
-[c-accesskit_winit-github]: https://github.com/AccessKit/accesskit
+[c-accesskit_winit-github]: https://github.com/AccessKit/accesskit/tree/main/platforms/winit
 [c-accesskit_winit-lib.rs-badge]: https://img.shields.io/badge/lib.rs-accesskit__winit-yellow
 [c-accesskit_winit-lib.rs]: https://lib.rs/crates/accesskit_winit
 [c-accesskit_winit]: https://docs.rs/accesskit_winit
@@ -101,7 +101,7 @@
 [c-amethyst-lib.rs-badge]: https://img.shields.io/badge/lib.rs-amethyst-yellow
 [c-amethyst-lib.rs]: https://lib.rs/crates/amethyst
 [c-amethyst-website-badge]: https://img.shields.io/badge/amethyst-coral
-[c-amethyst-website]: https://amethyst.rs
+[c-amethyst-website]: https://github.com/amethyst/amethyst
 [c-amethyst]: https://docs.amethyst.rs/stable/amethyst
 [c-ansi_term-badge]: https://img.shields.io/crates/v/ansi_term?label=ansi_term
 [c-ansi_term-crates.io-badge]: https://img.shields.io/badge/crates.io-ansi__term-crimson
@@ -609,7 +609,7 @@
 [c-broot-lib.rs]: https://lib.rs/crates/broot
 [c-broot-website-badge]: https://img.shields.io/badge/broot-coral
 [c-broot-website]: https://dystroy.org/broot
-[c-broot]: https://dystroy.org/broot
+[c-broot]: https://docs.rs/broot/latest/broot
 [c-brotli-badge]: https://img.shields.io/crates/v/brotli?label=brotli
 [c-brotli-crates.io-badge]: https://img.shields.io/badge/crates.io-brotli-crimson
 [c-brotli-crates.io]: https://crates.io/crates/brotli
@@ -1984,7 +1984,7 @@
 [c-dioxus_desktop-crates.io-badge]: https://img.shields.io/badge/crates.io-dioxus--desktop-crimson
 [c-dioxus_desktop-crates.io]: https://crates.io/crates/dioxus_desktop
 [c-dioxus_desktop-github-badge]: https://img.shields.io/badge/dioxus--desktop-steelblue?logo=github
-[c-dioxus_desktop-github]: https://github.com/DioxusLabs/dioxus
+[c-dioxus_desktop-github]: https://github.com/DioxusLabs/dioxus/tree/main/packages/desktop
 [c-dioxus_desktop-lib.rs-badge]: https://img.shields.io/badge/lib.rs-dioxus--desktop-yellow
 [c-dioxus_desktop-lib.rs]: https://lib.rs/crates/dioxus-desktop
 [c-dioxus_desktop-website-badge]: https://img.shields.io/badge/dioxus--desktop-coral
@@ -2416,14 +2416,6 @@
 [c-flagset-lib.rs-badge]: https://img.shields.io/badge/lib.rs-flagset-yellow
 [c-flagset-lib.rs]: https://lib.rs/crates/flagset
 [c-flagset]: https://docs.rs/flagset
-[c-flamegraph-badge]: https://img.shields.io/crates/v/flamegraph?label=flamegraph
-[c-flamegraph-crates.io-badge]: https://img.shields.io/badge/crates.io-flamegraph-crimson
-[c-flamegraph-crates.io]: https://crates.io/crates/flamegraph
-[c-flamegraph-github-badge]: https://img.shields.io/badge/flamegraph-steelblue?logo=github
-[c-flamegraph-github]: https://github.com/flamegraph-rs/flamegraph
-[c-flamegraph-lib.rs-badge]: https://img.shields.io/badge/lib.rs-flamegraph-yellow
-[c-flamegraph-lib.rs]: https://lib.rs/crates/flamegraph
-[c-flamegraph]: https://docs.rs/flamegraph
 [c-flatbuffers-badge]: https://img.shields.io/crates/v/flatbuffers?label=flatbuffers
 [c-flatbuffers-crates.io-badge]: https://img.shields.io/badge/crates.io-flatbuffers-crimson
 [c-flatbuffers-crates.io]: https://crates.io/crates/flatbuffers
@@ -2616,7 +2608,7 @@
 [c-fyrox_core-crates.io-badge]: https://img.shields.io/badge/crates.io-fyrox--core-crimson
 [c-fyrox_core-crates.io]: https://crates.io/crates/fyrox_core
 [c-fyrox_core-github-badge]: https://img.shields.io/badge/fyrox--core-steelblue?logo=github
-[c-fyrox_core-github]: https://github.com/FyroxEngine/Fyrox
+[c-fyrox_core-github]: https://github.com/FyroxEngine/Fyrox/tree/master/fyrox-core
 [c-fyrox_core-lib.rs-badge]: https://img.shields.io/badge/lib.rs-fyrox--core-yellow
 [c-fyrox_core-lib.rs]: https://lib.rs/crates/fyrox-core
 [c-fyrox_core-website-badge]: https://img.shields.io/badge/fyrox--core-coral
@@ -3171,7 +3163,7 @@
 [c-im-lib.rs]: https://lib.rs/crates/im
 [c-im-website-badge]: https://img.shields.io/badge/im-coral
 [c-im-website]: http://immutable.rs
-[c-im]: http://immutable.rs
+[c-im]: https://docs.rs/im/latest/im
 [c-image-badge]: https://img.shields.io/crates/v/image?label=image
 [c-image-crates.io-badge]: https://img.shields.io/badge/crates.io-image-crimson
 [c-image-crates.io]: https://crates.io/crates/image
@@ -4795,7 +4787,7 @@
 [c-pest_derive-lib.rs]: https://lib.rs/crates/pest_derive
 [c-pest_derive-website-badge]: https://img.shields.io/badge/pest__derive-coral
 [c-pest_derive-website]: https://pest.rs
-[c-pest_derive]: https://docs.rs/pest
+[c-pest_derive]: https://docs.rs/pest_derive/latest/pest_derive
 [c-pest_generator-badge]: https://img.shields.io/crates/v/pest_generator?label=pest_generator
 [c-pest_generator-crates.io-badge]: https://img.shields.io/badge/crates.io-pest__generator-crimson
 [c-pest_generator-crates.io]: https://crates.io/crates/pest_generator
@@ -4863,7 +4855,7 @@
 [c-piston-lib.rs-badge]: https://img.shields.io/badge/lib.rs-piston-yellow
 [c-piston-lib.rs]: https://lib.rs/crates/piston
 [c-piston-website-badge]: https://img.shields.io/badge/piston-coral
-[c-piston-website]: https://github.com/PistonDevelopers/piston
+[c-piston-website]: https://www.piston.rs
 [c-piston]: https://docs.rs/piston
 [c-pixels-badge]: https://img.shields.io/crates/v/pixels?label=pixels
 [c-pixels-crates.io-badge]: https://img.shields.io/badge/crates.io-pixels-crimson
@@ -5269,7 +5261,6 @@
 [c-rayon::ThreadPool]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
 [c-rayon::iter::IntoParallelIterator::into_par_iter]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelIterator.html#tymethod.into_par_iter
 [c-rayon::iter::IntoParallelRefIterator::par_iter]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
-[c-rayon::iter::IntoParallelRefIterator::par_iter_mut]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
 [c-rayon::iter::IntoParallelRefMutIterator::par_iter_mut]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefMutIterator.html#tymethod.par_iter_mut
 [c-rayon::iter::ParallelIterator::all]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.all
 [c-rayon::iter::ParallelIterator::any]: https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.any
@@ -5445,7 +5436,7 @@
 [c-ripgrep-github]: https://github.com/BurntSushi/ripgrep
 [c-ripgrep-lib.rs-badge]: https://img.shields.io/badge/lib.rs-ripgrep-yellow
 [c-ripgrep-lib.rs]: https://lib.rs/crates/ripgrep
-[c-ripgrep]: https://github.com/BurntSushi/ripgrep
+[c-ripgrep]: https://docs.rs/crate/ripgrep/latest
 [c-rkyv-badge]: https://img.shields.io/crates/v/rkyv?label=rkyv
 [c-rkyv-crates.io-badge]: https://img.shields.io/badge/crates.io-rkyv-crimson
 [c-rkyv-crates.io]: https://crates.io/crates/rkyv
@@ -5696,7 +5687,7 @@
 [c-rust_decimal_macros-github]: https://github.com/paupino/rust-decimal
 [c-rust_decimal_macros-lib.rs-badge]: https://img.shields.io/badge/lib.rs-rust__decimal__macros-yellow
 [c-rust_decimal_macros-lib.rs]: https://lib.rs/crates/rust_decimal_macros
-[c-rust_decimal_macros]: https://docs.rs/rust_decimal
+[c-rust_decimal_macros]: https://docs.rs/rust_decimal_macros/latest/rust_decimal_macros
 [c-rust_gpu-badge]: https://img.shields.io/crates/v/rust-gpu?label=rust-gpu
 [c-rust_gpu-crates.io-badge]: https://img.shields.io/badge/crates.io-rust--gpu-crimson
 [c-rust_gpu-crates.io]: https://crates.io/crates/rust_gpu
@@ -5942,7 +5933,7 @@
 [c-sea_orm_cli-lib.rs]: https://lib.rs/crates/sea-orm-cli
 [c-sea_orm_cli-website-badge]: https://img.shields.io/badge/sea--orm--cli-coral
 [c-sea_orm_cli-website]: https://www.sea-ql.org/SeaORM
-[c-sea_orm_cli]: https://docs.rs/sea-orm
+[c-sea_orm_cli]: https://docs.rs/sea-orm-cli/latest/sea_orm_cli
 [c-seaography-badge]: https://img.shields.io/crates/v/seaography?label=seaography
 [c-seaography-crates.io-badge]: https://img.shields.io/badge/crates.io-seaography-crimson
 [c-seaography-crates.io]: https://crates.io/crates/seaography
@@ -6054,7 +6045,7 @@
 [c-serde_toml-github]: https://github.com/toml-rs/toml
 [c-serde_toml-lib.rs-badge]: https://img.shields.io/badge/lib.rs-serde__toml-yellow
 [c-serde_toml-lib.rs]: https://lib.rs/crates/serde_toml
-[c-serde_toml]: https://docs.rs/toml
+[c-serde_toml]: https://docs.rs/serde_toml/0.0.1/serde_toml
 [c-serde_xml_rs-badge]: https://img.shields.io/crates/v/serde-xml-rs?label=serde-xml-rs
 [c-serde_xml_rs-crates.io-badge]: https://img.shields.io/badge/crates.io-serde--xml--rs-crimson
 [c-serde_xml_rs-crates.io]: https://crates.io/crates/serde_xml_rs
@@ -6183,7 +6174,7 @@
 [c-skiplist-crates.io-badge]: https://img.shields.io/badge/crates.io-skiplist-crimson
 [c-skiplist-crates.io]: https://crates.io/crates/skiplist
 [c-skiplist-github-badge]: https://img.shields.io/badge/skiplist-steelblue?logo=github
-[c-skiplist-github]: https://wwwhub.com/JP-Ellis/rust-skiplist
+[c-skiplist-github]: https://github.com/jp-ellis/rust-skiplist
 [c-skiplist-lib.rs-badge]: https://img.shields.io/badge/lib.rs-skiplist-yellow
 [c-skiplist-lib.rs]: https://lib.rs/crates/skiplist
 [c-skiplist-website-badge]: https://img.shields.io/badge/skiplist-coral
@@ -6214,7 +6205,7 @@
 [c-slice-lib.rs]: https://lib.rs/crates/slice
 [c-slice-website-badge]: https://img.shields.io/badge/slice-coral
 [c-slice-website]: https://code.hinaria.com/p/slice
-[c-slice]: https://docs.hinaria.com/p/slice
+[c-slice]: https://docs.rs/slice/latest/slice
 [c-slint-badge]: https://img.shields.io/crates/v/slint?label=slint
 [c-slint-crates.io-badge]: https://img.shields.io/badge/crates.io-slint-crimson
 [c-slint-crates.io]: https://crates.io/crates/slint
@@ -6362,7 +6353,7 @@
 [c-specs-lib.rs-badge]: https://img.shields.io/badge/lib.rs-specs-yellow
 [c-specs-lib.rs]: https://lib.rs/crates/specs
 [c-specs-website-badge]: https://img.shields.io/badge/specs-coral
-[c-specs-website]: https://specs.amethyst.rs
+[c-specs-website]: https://amethyst.github.io/specs
 [c-specs]: https://docs.rs/specs
 [c-spidev-badge]: https://img.shields.io/crates/v/spidev?label=spidev
 [c-spidev-crates.io-badge]: https://img.shields.io/badge/crates.io-spidev-crimson
@@ -6527,7 +6518,7 @@
 [c-std::process::Output]: https://doc.rust-lang.org/std/process/struct.Output.html
 [c-std::process::Stdio::piped]: https://doc.rust-lang.org/std/process/struct.Stdio.html#method.piped
 [c-std::process::Stdio]: https://doc.rust-lang.org/std/process/struct.Stdio.html
-[c-std::rc::Rc::downgrade]: https://doc.rust-lang.org/std/rc/struct.Rc.html
+[c-std::rc::Rc::downgrade]: https://doc.rust-lang.org/std/rc/struct.Rc.html#method.downgrade
 [c-std::rc::Rc]: https://doc.rust-lang.org/std/rc/struct.Rc.html
 [c-std::result::Result::unwrap]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap
 [c-std::result::Result::unwrap_or]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or
@@ -7365,7 +7356,7 @@
 [c-usvg-crates.io-badge]: https://img.shields.io/badge/crates.io-usvg-crimson
 [c-usvg-crates.io]: https://crates.io/crates/usvg
 [c-usvg-github-badge]: https://img.shields.io/badge/usvg-steelblue?logo=github
-[c-usvg-github]: https://github.com/RazrFalcon/resvg
+[c-usvg-github]: https://github.com/linebender/resvg/tree/main/crates/usvg
 [c-usvg-lib.rs-badge]: https://img.shields.io/badge/lib.rs-usvg-yellow
 [c-usvg-lib.rs]: https://lib.rs/crates/usvg
 [c-usvg]: https://docs.rs/usvg

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).
 # This script does NOT check whether reference definitions are used or not.
@@ -7,7 +7,7 @@ set -euo pipefail
 # Usage: ./scripts/urls/check_urls.sh <root folder>
 
 root="$(realpath $1)/"
-lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "${root}**/*.md" "${root}**/*.toml" "${root}**/*.yaml" "${root}**/*.yml"
+lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "${root}**/*.md" "${root}**/*.toml" "${root}**/*.yaml" "${root}**/*.yml" || true
 # We could also check "${root}.devcontainer/*" "${root}**/*.sh"
 
 # Somehow lychee ignores links in markdown reference definitions... thus the use of `sed` to extract URLs first

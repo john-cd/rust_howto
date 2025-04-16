@@ -54,7 +54,6 @@
 [aws-lambda-rust-runtime-examples-github]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk-website-badge]: https://img.shields.io/badge/AWS_rust_sdk-coral
 [aws-rust-sdk-website]: https://aws.amazon.com/sdk-for-rust
-[aws-sdk-website]: https://aws.amazon.com/sdk-for-rust
 [azure-data-explorer]: https://azure.microsoft.com/en-us/products/data-explorer
 [azure-iot-edge-github]: https://github.com/Azure/iotedge
 [baseview-github-badge]: https://img.shields.io/badge/baseview-steelblue?logo=github
@@ -494,7 +493,7 @@
 [localhost:3000]: http://localhost:3000
 [lpalmieri-badge]: https://img.shields.io/badge/lpalmieri-coral
 [lpalmieri-website]: https://www.lpalmieri.com
-[luajit-website]: https://luajit.org
+[luajit-website]: http://luajit.org
 [lynx-website]: https://www.lynx.com
 [machina-labs-website]: https://machinalabs.ai
 [maidsafe-website]: http://www.maidsafe.net
