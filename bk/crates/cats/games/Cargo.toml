@@ -14,4 +14,3 @@ categories = [ "games" ]
 publish.workspace = true
 
 [dependencies]
-# [add deps LATER](https://github.com/john-cd/rust_howto/issues/1304)
