@@ -90,9 +90,9 @@
 
 ## Compression
 
-### `flate2`
+### Compression
 
-{{#include categories/compression/flate2.incl.md}}
+{{#include categories/compression/compression.incl.md}}
 
 ### `tar`
 
@@ -197,6 +197,10 @@
 ### Btrees
 
 {{#include categories/data-structures/btrees.incl.md}}
+
+### Graph
+
+{{#include categories/data-structures/graph.incl.md}}
 
 ### Heapless
 
@@ -451,6 +455,10 @@
 ### Log
 
 {{#include categories/development-tools_debugging/log.incl.md}}
+
+### Metrics
+
+{{#include categories/development-tools_debugging/metrics.incl.md}}
 
 ### Tracing
 
@@ -828,6 +836,10 @@
 
 {{#include language/control_flow.incl.md}}
 
+### Data Types
+
+{{#include language/data_types.incl.md}}
+
 ### Enums
 
 {{#include language/enums.incl.md}}
@@ -873,10 +885,6 @@
 ### Rust Install
 
 {{#include language/rust_install.incl.md}}
-
-### Data Types
-
-{{#include language/data_types.incl.md}}
 
 ### Slices
 
