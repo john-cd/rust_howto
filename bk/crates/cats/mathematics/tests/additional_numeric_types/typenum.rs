@@ -206,7 +206,7 @@
 // fn test() {
 //     main();
 // }
-// // TODO FINISH NOW
+// // [FINISH NOW](https://github.com/john-cd/rust_howto/issues/1351)
 // // https://users.rust-lang.org/t/making-a-type-level-type-function-with-typenum-crate/107008
 // // https://github.com/paholg/typenum/tree/main
 // // https://docs.rs/typenum/latest/typenum/

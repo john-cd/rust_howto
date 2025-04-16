@@ -48,4 +48,4 @@ impl RecipeBuilder {
         self.inner
     }
 }
-// TODO finish; unit tests
+// [finish; unit tests](https://github.com/john-cd/rust_howto/issues/1364)

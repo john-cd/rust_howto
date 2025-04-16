@@ -57,4 +57,4 @@ fn write_each(
     file.sync_all()?;
     Ok(())
 }
-// TODO unit tests
+// [unit tests](https://github.com/john-cd/rust_howto/issues/1371)

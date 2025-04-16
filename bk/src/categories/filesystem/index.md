@@ -82,5 +82,5 @@ See also [[network-programming | Network Programming]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write, review in depth, add missing sections NOW
+[write, review in depth, add missing sections NOW](https://github.com/john-cd/rust_howto/issues/1339)
 </div>

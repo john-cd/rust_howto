@@ -22,5 +22,5 @@ Examples of common metrics include CPU and memory usage; cache hit ratios; respo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write
+[write](https://github.com/john-cd/rust_howto/issues/1345)
 </div>

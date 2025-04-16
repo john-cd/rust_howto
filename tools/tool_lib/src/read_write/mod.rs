@@ -77,4 +77,4 @@ fn backup<P: AsRef<Path>>(filepath: P) -> Result<()> {
     }
     Ok(())
 }
-// TODO unit tests
+// [unit tests](https://github.com/john-cd/rust_howto/issues/1369)

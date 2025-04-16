@@ -71,5 +71,5 @@ Prometheus instrumentation library for Rust applications. Prometheus is an open-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write / expand / organize. what to cover?
+[write / expand / organize. what to cover?](https://github.com/john-cd/rust_howto/issues/1343)
 </div>

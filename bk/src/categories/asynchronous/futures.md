@@ -58,5 +58,5 @@ Common utilities and extension [traits][p-traits] for the [`futures-rs`][c-futur
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO futures = Utility [functions][p-functions] for working with Futures and Streams
+[futures = Utility [functions][p-functions] for working with Futures and Streams](https://github.com/john-cd/rust_howto/issues/1340)
 </div>

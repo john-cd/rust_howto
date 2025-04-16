@@ -34,5 +34,5 @@ The `ArcSwap` type in [`arc-swap`][c-arc_swap]⮳{{hi:arc-swap}} is a container 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO fix NOW
+[fix NOW](https://github.com/john-cd/rust_howto/issues/1342)
 </div>

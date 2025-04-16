@@ -9,4 +9,4 @@ pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let crt = client.get_crate(crate_name)?;
     Ok(crt)
 }
-// TODO unit tests
+// [unit tests](https://github.com/john-cd/rust_howto/issues/1358)

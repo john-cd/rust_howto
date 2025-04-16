@@ -40,4 +40,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO expand; HTTP header interpretation and generation.  LATER
+// [expand; HTTP header interpretation and generation.  LATER](https://github.com/john-cd/rust_howto/issues/1355)

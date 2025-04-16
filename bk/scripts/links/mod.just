@@ -29,13 +29,13 @@ _default:
 [unix]
 @suggest:
   ./suggest_links_for_bare_urls.sh {{root}}
-# [review](https://github.com/john-cd/rust_howto/issues/1241)
+# [review suggest_links_for_bare_urls NOW](https://github.com/john-cd/rust_howto/issues/1241)
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 [unix]
 @replace_inline_links:
   ./replace_inline_links.sh {{root}}
-# [review](https://github.com/john-cd/rust_howto/issues/1241)
+# FIXME
 
 ## .... GET LINK (MANUAL) ....
 

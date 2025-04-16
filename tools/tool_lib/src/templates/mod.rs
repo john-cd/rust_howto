@@ -60,4 +60,4 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
 //   t
 // }
 
-// TODO finish; unit tests; tinytemplate vs tera?
+// [finish; unit tests; tinytemplate vs tera?](https://github.com/john-cd/rust_howto/issues/1361)

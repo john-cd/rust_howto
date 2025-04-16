@@ -108,4 +108,4 @@ fn test() -> Result<()> {
     main()?;
     Ok(())
 }
-// TODO dedupe with other example in percent_encode
+// [dedupe with other example in percent_encode](https://github.com/john-cd/rust_howto/issues/1353)

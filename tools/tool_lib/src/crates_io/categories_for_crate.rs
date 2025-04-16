@@ -36,4 +36,4 @@ pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>
         .map(model::Category::new)
         .collect())
 }
-// TODO unit tests
+// [unit tests](https://github.com/john-cd/rust_howto/issues/1357)

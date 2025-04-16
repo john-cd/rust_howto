@@ -49,4 +49,4 @@ fn get_client() -> Result<SyncClient> {
 //     let crates = client.crates(q)?;
 //     Ok(crates)
 // }
-// TODO unit tests; cleanup
+// [unit tests; cleanup](https://github.com/john-cd/rust_howto/issues/1356)

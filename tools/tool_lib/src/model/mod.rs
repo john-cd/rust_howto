@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-// TODO finish
+// [finish](https://github.com/john-cd/rust_howto/issues/1362)
 pub mod book;
 mod category;
 mod crates;

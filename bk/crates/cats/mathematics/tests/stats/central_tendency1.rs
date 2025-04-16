@@ -118,4 +118,4 @@ fn main() {
 fn test() {
     main();
 }
-// TODO REVIEW
+// [REVIEW](https://github.com/john-cd/rust_howto/issues/1352)

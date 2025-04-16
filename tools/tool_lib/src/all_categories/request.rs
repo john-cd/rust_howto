@@ -8,4 +8,4 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     let body = response.text()?;
     Ok(body)
 }
-// TODO unit tests; consolidate with mod.rs?
+// [unit tests; consolidate with mod.rs?](https://github.com/john-cd/rust_howto/issues/1359)

@@ -38,6 +38,5 @@ Fast, efficient, and predictable memory reclamation for concurrent data structur
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-TODO write NOW
-other allocators
+[write; other allocators NOW](https://github.com/john-cd/rust_howto/issues/1341)
 </div>

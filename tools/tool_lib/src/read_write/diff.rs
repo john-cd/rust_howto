@@ -43,4 +43,4 @@ pub fn print_diffs(s1: &str, s2: &str) {
         print!("{}{}", sign, change);
     }
 }
-// TODO unit tests
+// [unit tests](https://github.com/john-cd/rust_howto/issues/1370)
