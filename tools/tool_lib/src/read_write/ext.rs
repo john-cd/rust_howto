@@ -11,7 +11,7 @@ use std::path::PathBuf;
 ///
 /// ```rust
 /// use std::path::Path;
-/// use tool_lib::read_write::ext::extend_extension;
+/// use tool_lib::extend_extension;
 ///
 /// assert_eq!(extend_extension(&Path::new("file.md"), "new"), Path::new("file.new.md"));
 /// assert_eq!(extend_extension(&Path::new("file"), "new"), Path::new("file.new"));
