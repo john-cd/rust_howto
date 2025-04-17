@@ -27,7 +27,8 @@ pub fn get_all_categories() -> Result<Vec<Category>> {
 ///
 /// Inspired by code in the `crates.io` repository.
 ///
-/// # Arguments
+/// # Arguments:
+/// 
 /// * `categories` - A reference to the TOML table containing category data.
 fn categories_from_toml(
     categories: &toml::value::Table,
@@ -67,7 +68,8 @@ fn categories_from_toml(
 /// and ensures it is a string. If the key is missing or the value is not a string,
 /// it returns an error.
 ///
-/// # Arguments
+/// # Arguments:
+///
 /// * `toml` - A reference to the TOML table.
 /// * `key` - The key to look up in the TOML table.
 fn required_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> Result<&'a str> {
@@ -81,7 +83,8 @@ fn required_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> Res
 /// This function retrieves a value associated with a given key from a TOML table.
 /// If the key is missing or the value is not a string, it returns an empty string.
 ///
-/// # Arguments
+/// # Arguments:
+///
 /// * `toml` - A reference to the TOML table.
 /// * `key` - The key to look up in the TOML table.
 fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a str {
@@ -89,7 +92,7 @@ fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a
 }
 
 impl Category {
-    /// Format a child category as "parent::child"
+    /// Format a child category as "parent::child".
     fn from_parent(
         slug: &str,
         category: &str,
