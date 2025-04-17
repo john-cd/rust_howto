@@ -1,7 +1,8 @@
 #![allow(dead_code)]
 // ANCHOR: example
+//! Simple example of a GUI application with `egui`.
 //!
-//! In `Cargo.toml`:
+//! In `Cargo.toml`, add:
 //! ```toml
 //! [dependencies]
 //! egui = "0.17"
