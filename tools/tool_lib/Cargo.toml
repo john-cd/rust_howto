@@ -31,9 +31,7 @@ trim-in-place = "0.1.7"
 walkdir = "2.5.0"
 
 [dev-dependencies]
+chrono = "0.4.40"
+mockito = "1.7.0"
+serde_json = "1.0"
 tempfile = "3.19.1"
-
-# Technically defining a target is not required, because cargo autodiscovers it,
-# but useful during CI. See the Dockerfile.
-[lib]
-path = "src/lib.rs"
