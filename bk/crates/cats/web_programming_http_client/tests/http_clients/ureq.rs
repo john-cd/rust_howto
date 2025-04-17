@@ -6,7 +6,13 @@ fn main() -> anyhow::Result<()> {
     let url = "https://jsonplaceholder.typicode.com/posts/1";
     // Send a GET request to the URL and read the response body as a string.
     let response: String =
-        ureq::get(url).call()?.body_mut().read_to_string()?;
+        // Make a GET request.
+        ureq::get(url)
+        // Send the request and blocks the caller until we receive a response.
+        .call()?
+        // Return a mutable reference to the associated HTTP body.
+        .body_mut()
+        .read_to_string()?;
 
     println!("Response: {}", response);
     Ok(())
