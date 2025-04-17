@@ -41,13 +41,9 @@ Use `unsafe` code and raw pointers (`*const T`, `*mut T`) only when necessary fo
 
 ## Custom Memory Allocation, Garbage Collection
 
-The core `alloc` crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development.
+The core `alloc` crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development. If needed, reach for the Rust wrappers for the well-known 'jemalloc' and 'mimalloc' memory allocation libraries. In addition, [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
 
-- [`wee_alloc`][c-wee_alloc]⮳{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
-
-Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust.
-
-- The [`seize`][c-seize]⮳{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
+Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If you need garbage collection for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c-seize]⮳{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
 
 {{#include memory_allocation.incl.md}}
 

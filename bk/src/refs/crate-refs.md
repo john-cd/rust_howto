@@ -4004,6 +4004,14 @@
 [c-migrate-lib.rs-badge]: https://img.shields.io/badge/lib.rs-migrate-yellow
 [c-migrate-lib.rs]: https://lib.rs/crates/migrate
 [c-migrate]: https://docs.rs/migrate
+[c-mimalloc-badge]: https://img.shields.io/crates/v/mimalloc?label=mimalloc
+[c-mimalloc-crates.io-badge]: https://img.shields.io/badge/crates.io-mimalloc-crimson
+[c-mimalloc-crates.io]: https://crates.io/crates/mimalloc
+[c-mimalloc-github-badge]: https://img.shields.io/badge/mimalloc-steelblue?logo=github
+[c-mimalloc-github]: https://github.com/purpleprotocol/mimalloc_rust
+[c-mimalloc-lib.rs-badge]: https://img.shields.io/badge/lib.rs-mimalloc-yellow
+[c-mimalloc-lib.rs]: https://lib.rs/crates/mimalloc
+[c-mimalloc]: https://docs.rs/mimalloc
 [c-mime-badge]: https://img.shields.io/crates/v/mime?label=mime
 [c-mime-crates.io-badge]: https://img.shields.io/badge/crates.io-mime-crimson
 [c-mime-crates.io]: https://crates.io/crates/mime
