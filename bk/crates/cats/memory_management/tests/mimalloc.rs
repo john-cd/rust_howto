@@ -1,7 +1,8 @@
 // ANCHOR: example
 //! Demonstrates the use of the mimalloc memory allocator.
 //!
-//! Mimalloc is a general purpose, performance oriented allocator built by Microsoft.
+//! Mimalloc is a general purpose, performance oriented allocator built by
+//! Microsoft.
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
@@ -10,8 +11,8 @@
 //!
 //! A C compiler is required.
 //!
-//! Using secure mode adds guard pages, randomized allocation, encrypted free lists, etc.
-//! The performance penalty is usually around 10%.
+//! Using secure mode adds guard pages, randomized allocation, encrypted free
+//! lists, etc. The performance penalty is usually around 10%.
 //!
 //! ```toml
 //! [dependencies]
