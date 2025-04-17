@@ -57,7 +57,7 @@ rhai = "1.21.0"
 
 ## General
 anyhow = "1.0.95"
-async-trait = "0.1.87"
+async-trait = "0.1.85"
 serde = { version = "1.0.217", features = ["derive"] }
 tokio = "1.44.2"
 tracing = "0.1.41"

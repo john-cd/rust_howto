@@ -48,3 +48,7 @@ categories = [
     "compression",
 ]
 publish = false
+
+# https://github.com/cloudflare/pingora/issues/568
+[patch.crates-io]
+sfv = { git = "https://github.com/undef1nd/sfv.git", tag = "v0.9.4" }
