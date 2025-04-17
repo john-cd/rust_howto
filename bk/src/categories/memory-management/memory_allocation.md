@@ -6,7 +6,17 @@
 
 [![wee_alloc][c-wee_alloc-badge]][c-wee_alloc] [![wee_alloc-crates.io][c-wee_alloc-crates.io-badge]][c-wee_alloc-crates.io] [![wee_alloc-github][c-wee_alloc-github-badge]][c-wee_alloc-github] [![wee_alloc-lib.rs][c-wee_alloc-lib.rs-badge]][c-wee_alloc-lib.rs]{{hi:wee_alloc}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-wasm][cat-wasm-badge]][cat-wasm]{{hi:WebAssembly}} [![cat-web-programming][cat-web-programming-badge]][cat-web-programming]{{hi:Web programming}} [![cat-embedded][cat-embedded-badge]][cat-embedded]{{hi:Embedded development}}
 
-wee_alloc: The Wasm-Enabled, Elfin Allocator
+`wee_alloc` is a Wasm-enabled allocator.
+
+## Use a Custom Allocator with `tikv-jemallocator`
+
+[![tikv-jemallocator][c-tikv_jemallocator-badge]][c-tikv_jemallocator] [![tikv-jemallocator-crates.io][c-tikv_jemallocator-crates.io-badge]][c-tikv_jemallocator-crates.io] [![tikv-jemallocator-github][c-tikv_jemallocator-github-badge]][c-tikv_jemallocator-github] [![tikv-jemallocator-lib.rs][c-tikv_jemallocator-lib.rs-badge]][c-tikv_jemallocator-lib.rs]{{hi:tikv-jemallocator}}{{hi:Allocator}}{{hi:Jemalloc}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-api-bindings][cat-api-bindings-badge]][cat-api-bindings]{{hi:API bindings}}
+
+`tikv-jemallocator` is a Rust allocator backed by 'jemalloc' (a well-known C library).
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/tests/allocators/jemalloc.rs:example}}
+```
 
 ## Pre-allocated Storage for a Uniform Data Type {#skip}
 
@@ -24,7 +34,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 [![bumpalo][c-bumpalo-badge]][c-bumpalo] [![bumpalo-crates.io][c-bumpalo-crates.io-badge]][c-bumpalo-crates.io] [![bumpalo-github][c-bumpalo-github-badge]][c-bumpalo-github] [![bumpalo-lib.rs][c-bumpalo-lib.rs-badge]][c-bumpalo-lib.rs]{{hi:bumpalo}} [![cat-memory-management][cat-memory-management-badge]][cat-memory-management]{{hi:Memory management}} [![cat-no-std][cat-no-std-badge]][cat-no-std]{{hi:No standard library}} [![cat-rust-patterns][cat-rust-patterns-badge]][cat-rust-patterns]{{hi:Rust patterns}}
 
-A fast bump allocation arena for Rust.
+`bumpalo` is a fast bump allocation arena for Rust.
 
 ## Garbage Collection with `seize` {#seize}
 

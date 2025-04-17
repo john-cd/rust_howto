@@ -71,6 +71,5 @@ See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_
 [memory-management/index: organize; align table and sections; write missing sections; cross link NOW](https://github.com/john-cd/rust_howto/issues/410)
 cover https://doc.rust-lang.org/beta/unstable-book/compiler-flags/sanitizer.html
 cover ASan and MSan
-other allocators
 unsafe
 </div>

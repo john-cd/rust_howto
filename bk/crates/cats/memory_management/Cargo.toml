@@ -22,3 +22,7 @@ slab = "0.4.9"
 
 # General
 anyhow = "1.0.95"
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = "0.6"
+tikv-jemalloc-ctl = { version = "0.6.0", features = [ "stats", "use_std" ] }

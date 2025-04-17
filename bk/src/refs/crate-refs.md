@@ -6909,6 +6909,14 @@
 [c-tide-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tide-yellow
 [c-tide-lib.rs]: https://lib.rs/crates/tide
 [c-tide]: https://docs.rs/tide
+[c-tikv_jemallocator-badge]: https://img.shields.io/crates/v/tikv-jemallocator?label=tikv-jemallocator
+[c-tikv_jemallocator-crates.io-badge]: https://img.shields.io/badge/crates.io-tikv--jemallocator-crimson
+[c-tikv_jemallocator-crates.io]: https://crates.io/crates/tikv_jemallocator
+[c-tikv_jemallocator-github-badge]: https://img.shields.io/badge/tikv--jemallocator-steelblue?logo=github
+[c-tikv_jemallocator-github]: https://github.com/tikv/jemallocator
+[c-tikv_jemallocator-lib.rs-badge]: https://img.shields.io/badge/lib.rs-tikv--jemallocator-yellow
+[c-tikv_jemallocator-lib.rs]: https://lib.rs/crates/tikv-jemallocator
+[c-tikv_jemallocator]: https://docs.rs/jemallocator
 [c-time-badge]: https://img.shields.io/crates/v/time?label=time
 [c-time-crates.io-badge]: https://img.shields.io/badge/crates.io-time-crimson
 [c-time-crates.io]: https://crates.io/crates/time
