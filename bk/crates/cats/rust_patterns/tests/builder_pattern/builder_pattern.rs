@@ -62,7 +62,10 @@ impl DatabaseConfigBuilder {
         self
     }
 
-    fn connection_timeout_seconds(mut self, connection_timeout_seconds: u64) -> Self {
+    fn connection_timeout_seconds(
+        mut self,
+        connection_timeout_seconds: u64,
+    ) -> Self {
         self.connection_timeout_seconds = connection_timeout_seconds;
         self
     }
@@ -89,7 +92,6 @@ fn main() {
         .build();
 
     println!("Database Configuration: {:?}", config);
-
 }
 // ANCHOR_END: example
 
