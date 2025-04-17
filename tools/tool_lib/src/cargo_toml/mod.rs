@@ -72,12 +72,12 @@ fn extract_crate_names(depset: &DepsSet) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use std::fs;
+    use std::path::Path;
 
     use cargo_toml::Dependency;
     use cargo_toml::DependencyDetail;
-    use cargo_toml::InheritedDependencyDetail;
     use cargo_toml::DepsSet;
-    use std::path::Path;
+    use cargo_toml::InheritedDependencyDetail;
     use tempfile::tempdir;
 
     use super::*;
@@ -113,7 +113,10 @@ mod tests {
         let mut deps = DepsSet::new();
         deps.insert(
             "inherited_dep".to_string(),
-            Dependency::Inherited(InheritedDependencyDetail { workspace: true, ..Default::default() }),
+            Dependency::Inherited(InheritedDependencyDetail {
+                workspace: true,
+                ..Default::default()
+            }),
         );
 
         let names = extract_crate_names(&deps);
@@ -159,7 +162,10 @@ mod tests {
         deps.insert("simple".to_string(), Dependency::Simple("1.0".to_string()));
         deps.insert(
             "inherited".to_string(),
-            Dependency::Inherited(InheritedDependencyDetail { workspace: true, ..Default::default() }),
+            Dependency::Inherited(InheritedDependencyDetail {
+                workspace: true,
+                ..Default::default()
+            }),
         );
         deps.insert(
             "detailed".to_string(),
