@@ -28,7 +28,7 @@ pub fn get_all_categories() -> Result<Vec<Category>> {
 /// Inspired by code in the `crates.io` repository.
 ///
 /// # Arguments:
-/// 
+///
 /// * `categories` - A reference to the TOML table containing category data.
 fn categories_from_toml(
     categories: &toml::value::Table,

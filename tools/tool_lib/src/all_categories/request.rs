@@ -14,10 +14,11 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 #[allow(unused_imports)]
 #[cfg(test)]
 mod tests {
-    use super::*;
     use anyhow::Result;
     use mockito;
-    use url::Url; // To parse the CATEGORIES_URL.
+    use url::Url;
+
+    use super::*; // To parse the CATEGORIES_URL.
 
     // Helper function to safely set/unset environment variables for proxying
     struct EnvGuard {
@@ -29,17 +30,26 @@ mod tests {
         fn set(key: &str, value: &str) -> Self {
             let key = key.to_string();
             let original_value = std::env::var(&key).ok();
-            unsafe { std::env::set_var(&key, value); }
-            EnvGuard { key, original_value }
+            unsafe {
+                std::env::set_var(&key, value);
+            }
+            EnvGuard {
+                key,
+                original_value,
+            }
         }
     }
 
     impl Drop for EnvGuard {
         fn drop(&mut self) {
             if let Some(ref val) = self.original_value {
-                unsafe { std::env::set_var(&self.key, val); }
+                unsafe {
+                    std::env::set_var(&self.key, val);
+                }
             } else {
-                unsafe { std::env::remove_var(&self.key); }
+                unsafe {
+                    std::env::remove_var(&self.key);
+                }
             }
         }
     }
