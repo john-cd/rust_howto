@@ -10,8 +10,7 @@
 [ex-standard-library-derive-more]: derive.md#derive-more
 [ex-standard-library-derive]: derive.md#automatic-trait-derivation
 [ex-standard-library-extracting-the-value-contained-in-option]: option.md#extracting-the-value-contained-in-option
-[ex-standard-library-hashmap]: hashmaps.md#hashmap
-[ex-standard-library-hashmaps]: hashmaps.md#hashmaps
+[ex-standard-library-hashmaps]: hashmaps.md#hashmap
 [ex-standard-library-hashset]: hashmaps.md#hashset
 [ex-standard-library-oncecell]: smart_pointers.md#oncecell
 [ex-standard-library-option]: option.md#option
