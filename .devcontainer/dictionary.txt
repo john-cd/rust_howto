@@ -2738,3 +2738,7 @@ hashset
 swiss
 InfluxDB
 Nagios
+xyzBuilder
+jemalloc
+mimalloc
+jemallocator
