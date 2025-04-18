@@ -1,36 +1,47 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// //! This is a simple example of a Pingora server that listens on port 8080
-// //! and responds with "Hello, world!".
-// //!
-// //! Pingora is a high-performance and low-level HTTP library in Rust.
-// //! - HTTP 1.x and HTTP 2
-// //! - Modern TLS with OpenSSL or BoringSSL (FIPS compatible)
-// //! - Zero downtime upgrade
-// use pingora::prelude::*;
+// ANCHOR: example
+// COMING SOON
+// ANCHOR_END: example
+//! Pingora example.
+//!
+//! Pingora is a high-performance and low-level async multithreaded library that
+//! can be used build services on top of HTTP/1 and HTTP/2, TLS, or just
+//! TCP/UDS. As a proxy, it supports HTTP/1 and HTTP/2 end-to-end, gRPC, and
+//! websocket proxying.
+//!
+//! Features:
+//! - Modern TLS with OpenSSL or BoringSSL (FIPS compatible).
+//! - Zero-downtime upgrade.
+//! - Integration with Syslog, Prometheus, Sentry, OpenTelemetry and other
+//!   observability tools.
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! async-trait="0.1"
+//! pingora = { version = "0.4", features = [ "lb" ] }
+//! ```
+//!
+//! Make sure that the following is installed on your system:
+//! - Clang (for the boringssl optional feature),
+//! - Perl 5 (for openssl).
+
 // use std::net::SocketAddr;
-// use pingora::server::Server;
+// use std::sync::Arc;
 
-// async fn handle_request(_: Request) -> Response {
-//     Response::new(200, "Hello, world!".into())
-// }
+// use async_trait::async_trait;
+// use pingora::prelude::*;
+use pingora::server::Server;
 
-// /// Create a basic HTTP server that responds with "Hello, world!".
-// #[tokio::main]
-// async fn main() {
-// let addr: SocketAddr = "127.0.0.1:8080".parse().expect("Unable to parse
-// socket address");
-// // The server object represents an entire pingora
-// // server process, which may have multiple independent services.
-// let server = Server::bind(&addr).serve(handle_request);
-// println!("Listening on http://{}", addr);
-//     server.await.expect("Server failed");
-// }
+// FIXME decide what to implement
+fn main() {
+    let mut my_server = Server::new(None).unwrap();
+    my_server.bootstrap();
+    my_server.run_forever();
+}
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// // [finish; require network NOW](https://github.com/john-cd/rust_howto/issues/812)
-// // https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs
+#[ignore = "Needs review"]
+#[test]
+fn require_network() {
+    main();
+}
+// [finish NOW](https://github.com/john-cd/rust_howto/issues/812)
+// https://github.com/cloudflare/pingora/blob/main/pingora/examples/server.rs
