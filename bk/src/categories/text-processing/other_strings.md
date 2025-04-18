@@ -22,15 +22,20 @@ The need for this type arises from the fact that:
 
 ## `CString` and `CStr` {#cstring}
 
-`std::ffi::CString` represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle.
+C strings are different from Rust strings:
 
-A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
+- Rust strings are UTF-8, but C strings may use other encodings.
+- Their character sizes may be different.
+- C strings are nul-terminated, i.e., they have a \0 character at the end.
+- C strings cannot have nul characters in the middle.
 
-`std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a `&[u8]` slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the repr(transparent) notwithstanding) and should not be placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
+Use `CString` and `CStr` when you need to convert Rust UTF-8 strings to and from C-style strings. Their primary use case is **FFI**, Foreign Function Interface, the mechanism by which Rust interacts with code written in other languages with a C ABI, like C and Python.
 
-`&CStr` is to `CString` as &str is to String: the former in each pair are borrowed references; the latter are owned strings.
+[`std::ffi::CString`](https://doc.rust-lang.org/std/ffi/struct.CString.html) represents an owned, C-compatible, nul-terminated string with no nul bytes in the middle. A `CString` can be created from either a byte slice or a byte vector, or anything that implements `Into<Vec<u8>>` (for example, you can build a `CString` straight out of a `String` or a `&str`, since both implement that trait).
 
-The primary use case for these kinds of strings is interoperating with C-like code.
+`std::ffi::CStr` represents a borrowed reference to a nul-terminated array of bytes. It can be constructed safely from a `&[u8]` slice, or unsafely from a raw `*const c_char`. It can be expressed as a literal in the form `c"Hello world"`. Note that this structure does not have a guaranteed layout (the `repr(transparent)` notwithstanding) and should not be directly placed in the signatures of FFI functions. Instead, safe wrappers of FFI functions may leverage `CStr::as_ptr` and the unsafe `CStr::from_ptr` constructor to provide a safe interface to other consumers.
+
+`&CStr` is to `CString` as `&str` is to `String`: the former in each pair are borrowed references; the latter are owned strings.
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/tests/other_strings/cstring.rs:example}}

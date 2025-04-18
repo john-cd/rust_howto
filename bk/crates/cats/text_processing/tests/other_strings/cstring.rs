@@ -1,60 +1,57 @@
-// // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
-// use std::ffi::CStr;
-// use std::ffi::CString;
-// use std::os::raw::c_char;
+// ANCHOR: example
+//! This example demonstrates how to work with C-style strings (`CString` and
+//! `CStr`) in Rust, which are essential for FFI (Foreign Function Interface)
+//! interactions.
 
-// // Example FFI function that takes a C string
-// unsafe {
-//     extern "C" {
-//         fn strlen(s: *const c_char) -> usize;
-//     }
-// }
+use std::ffi::CStr;
+use std::ffi::CString;
+use std::os::raw::c_char;
 
-// fn main() {
-//     // Creating a CString (owned C-compatible string)
-//     let rust_string = "Hello, C world!";
-//     let c_string = CString::new(rust_string).expect("CString creation
-// failed");
+// Example external function that takes a C string
+// (from the standard C library).
+unsafe extern "C" {
+    // It accepts a raw pointer to a C-style string,
+    // which must be terminated by \0 (`nul`).
+    fn strlen(s: *const c_char) -> usize;
+}
 
-//     // Get raw pointer for FFI calls
-//     let raw_ptr: *const c_char = c_string.as_ptr();
+fn main() {
+    // 1. Call a FFI function that requires a C string.
 
-//     unsafe {
-//         // Convert back to a CStr (borrowed C string)
-//         let c_str = CStr::from_ptr(raw_ptr);
+    // Create a CString (owned nul-terminated, C-compatible string) from a Rust
+    // `&str`:
+    let rust_string = "Hello, C world!";
+    let c_string = CString::new(rust_string).expect("CString creation failed");
 
-//         // Convert CStr to Rust string
-//         let back_to_rust = c_str.to_str().expect("Invalid UTF-8");
-//         println!("Converted back: {}", back_to_rust);
-//     }
+    // Get the raw pointer.
+    let raw_ptr: *const c_char = c_string.as_ptr();
 
-//     // Safely call C function
-//     let len = unsafe { strlen(c_string.as_ptr()) };
-//     println!("String length according to C: {}", len);
+    // Call a C function with the raw pointer. Note the unsafe block.
+    let len = unsafe { strlen(raw_ptr) };
+    println!("String length according to C: {}", len);
 
-//     // Working with null-terminated strings from C
-//     unsafe {
-//         // Simulating a string received from C code
-//         // (In real code, this would come from an external C function)
-//         let c_hello = b"Hello\0" as *const u8 as *const c_char;
+    // 2. Work with null-terminated strings from C.
 
-//         // Safely wrap in CStr
-//         let borrowed = CStr::from_ptr(c_hello);
+    // Simulate a string received from C code. Note the `nul` terminator.
+    // In real code, this would come from an external C function call.
+    let c_hello = b"Hello\0" as *const u8 as *const c_char;
+    let borrowed: &CStr;
+    unsafe {
+        // Wrap the pointer in a CStr (borrowed C string slice).
+        borrowed = CStr::from_ptr(c_hello);
+    }
 
-//         // Convert to Rust String
-//         let rust_str = borrowed.to_str().expect("Invalid UTF-8");
-//         println!("From C: {}", rust_str);
+    // Convert to Rust `&str`.
+    let rust_str: &str = borrowed.to_str().expect("Invalid UTF-8");
+    println!("From C: {}", rust_str);
 
-//         // Create owned version
-//         let owned = CString::from(borrowed);
-//         println!("Owned: {:?}", owned);
-//     }
-// }
+    // Create owned version of the C-style String.
+    let owned: CString = CString::from(borrowed);
+    println!("Owned: {:?}", owned);
+}
+// ANCHOR_END: example
 
-// #[test]
-// fn test() {
-//     main();
-// }
-// [finish NOW](https://github.com/john-cd/rust_howto/issues/1139)
+#[test]
+fn test() {
+    main();
+}
