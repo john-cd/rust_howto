@@ -1,5 +1,5 @@
-#![cfg(target_family = "unix")]
 // ANCHOR: example
+#![cfg(target_family = "unix")]
 use std::fs;
 use std::fs::File;
 use std::path::Path;
@@ -16,9 +16,9 @@ use std::process::Stdio;
 fn main() -> Result<(), std::io::Error> {
     let path = Path::new("temp/out.txt");
     let outputs = File::create(path)?;
-    // Creates a new File instance that shares the same underlying file handle
+    // Creates a new `File` instance that shares the same underlying file handle
     // as the existing File instance. Reads, writes, and seeks will affect both
-    // File instances simultaneously.
+    // `File` instances simultaneously.
     let errors = outputs.try_clone()?;
 
     Command::new("ls")
@@ -28,13 +28,18 @@ fn main() -> Result<(), std::io::Error> {
         .spawn()?
         .wait_with_output()?;
 
+    // Print contents of the file.
+    std::fs::read_to_string(path)?
+        .lines()
+        .for_each(|line| println!("{}", line));
+
     Ok(())
 }
 // ANCHOR_END: example
 
 #[test]
 fn test() -> anyhow::Result<()> {
-    // Preparation
+    // Preparation.
     if !fs::exists("temp")? {
         fs::create_dir("temp")?;
     }
@@ -45,4 +50,3 @@ fn test() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
-// [review; print; NOW](https://github.com/john-cd/rust_howto/issues/167)
