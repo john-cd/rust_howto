@@ -9,6 +9,7 @@
 [ex-data-structures-indexmap]: maps.md#indexmap
 [ex-data-structures-linkedlist]: linkedlist.md#linkedlist
 [ex-data-structures-multimap]: maps.md#multimap
+[ex-data-structures-petgraph]: graph.md#petgraph
 [ex-data-structures-priority-queue]: binaryheap.md#priority-queue
 [ex-data-structures-queue]: stack_and_queue.md#queue
 [ex-data-structures-slotmap]: maps.md#slotmap
