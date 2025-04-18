@@ -2,7 +2,7 @@
 
 {{#include builder_pattern.incl.md}}
 
-## Provide a Builder to Construct a Complex Struct {#basic-builder-pattern}
+## Construct a Complex Struct with a Builder {#basic-builder-pattern}
 
 The builder pattern provides a clean and readable way to construct complex objects, especially when dealing with multiple optional fields or validation rules.
 

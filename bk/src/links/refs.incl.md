@@ -21,7 +21,7 @@
 [p-cross-platform]: # "../other/cross-platform/index.md"
 [p-cryptography]: ../categories/cryptography/index.md
 [p-database]: ../categories/database/index.md
-[p-design-patterns]: ../categories/rust-patterns/design_patterns.md
+[p-design-patterns]: ../categories/rust-patterns/behavioral_patterns.md
 [p-development-tools]: ../categories/development-tools/index.md
 [p-documentation]: ../categories/development-tools/documentation/documentation.md
 [p-embedded]: # "../categories/embedded/index.md"

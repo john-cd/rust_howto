@@ -9,18 +9,21 @@
 [ex-error_handling-recoverable-errors-with-result]: error_handling/error_handling.md#recoverable-errors-with-result
 [ex-error_handling-thiserror]: error_handling/error_customization.md#thiserror
 [ex-error_handling-unwrap-or-else]: error_handling/error_handling.md#unwrap-or-else
-[ex-rust-patterns-abstract-factory]: design_patterns.md#abstract-factory
+[ex-rust-patterns-abstract-factory]: creational_patterns.md#abstract-factory
+[ex-rust-patterns-basic-builder-pattern]: builder_pattern.md#basic-builder-pattern
 [ex-rust-patterns-bon]: builder_pattern.md#bon
 [ex-rust-patterns-compose-iterators-with-itertools]: functional_programming.md#compose-iterators-with-itertools
 [ex-rust-patterns-derive_builder]: builder_pattern.md#derive_builder
-[ex-rust-patterns-dyn-clone]: design_patterns.md#dyn-clone
+[ex-rust-patterns-dyn-clone]: rust_specific_patterns.md#dyn-clone
 [ex-rust-patterns-either]: functional_programming.md#either
+[ex-rust-patterns-factory]: creational_patterns.md#factory
 [ex-rust-patterns-frunk]: functional_programming.md#frunk
 [ex-rust-patterns-im]: functional_programming.md#im
-[ex-rust-patterns-pin-project]: design_patterns.md#pin-project
+[ex-rust-patterns-pin-project]: rust_specific_patterns.md#pin-project
 [ex-rust-patterns-rpds]: functional_programming.md#rpds
+[ex-rust-patterns-singleton]: creational_patterns.md#singleton
 [ex-rust-patterns-typed-builder]: builder_pattern.md#typed-builder
-[ex-rust-patterns-typestate-pattern]: design_patterns.md#typestate-pattern
+[ex-rust-patterns-typestate-pattern]: behavioral_patterns.md#typestate-pattern
 [p-closures]: ../../language/closures.md
 [p-csv]: # "../encoding/csv.md"
 [p-enums]: ../../language/enums.md

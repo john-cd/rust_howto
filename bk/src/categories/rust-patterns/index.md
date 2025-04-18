@@ -70,6 +70,8 @@ Shared solutions for particular situations specific to programming in Rust.
 
 ## Design Patterns
 
+Design patterns are well-proven blueprints or best practices for solving recurring problems in software design.
+
 ### Creational Patterns
 
 | Design Pattern | Description | Helpful Rust Crates | Notes |
@@ -83,16 +85,22 @@ Shared solutions for particular situations specific to programming in Rust.
 
 {{#include builder_pattern.incl.md}}
 
+### Other Creational Patterns
+
+{{#include creational_patterns.incl.md}}
+
 ### Structural Patterns
 
 | Design Pattern | Description | Helpful Rust Crates | Notes |
 |---|---|---|---|
-| Adapter | Making incompatible interfaces work together. | Often implemented directly using traits | Traits are key for implementing adapters. |
-| Composite | Representing hierarchical tree-like structures. | Often implemented directly using structs and enums | |
-| Decorator | Adding behavior to objects dynamically. | Often implemented directly using traits | Traits are commonly used for decorators. |
+| Adapter | Making incompatible interfaces work together. | Often implemented directly using traits. | Traits are key for implementing adapters. |
+| Composite | Representing hierarchical tree-like structures. | Often implemented directly using structs and enums. | |
+| Decorator | Adding behavior to objects dynamically. | Often implemented directly using traits. | Traits are commonly used for decorators. |
 | Facade | Providing a simplified interface to a complex system. |  | Usually a matter of structuring your code. |
 | Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using `Rc` or `Arc`. | `Rc` and `Arc` are used for shared ownership. |
 | Proxy | Controlling access to another object. | Often implemented directly. | Can be implemented with custom types and dereferencing. |
+
+{{#include structural_patterns.incl.md}}
 
 ### Behavioral Patterns
 
@@ -100,7 +108,7 @@ Shared solutions for particular situations specific to programming in Rust.
 |---|---|---|---|
 | Chain of Responsibility | Handling requests by passing them along a chain of handlers. | Often implemented directly using enums or function pointers | |
 | Command | Encapsulating a request as an object. | Often implemented directly using structs and closures | Closures can be helpful for command implementations. |
-| Interpreter | Defining a grammatical representation for a language and providing an interpreter. | Parsing crates like [`nom`][c-nom]⮳{{hi:nom}}, [`pest`][c-pest]⮳{{hi:pest}}, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} can be helpful | |
+| Interpreter | Defining a grammatical representation for a language and providing an interpreter. | Parsing crates like [`nom`][c-nom]⮳{{hi:nom}}, [`pest`][c-pest]⮳{{hi:pest}}, [`lalrpop`][c-lalrpop]⮳{{hi:lalrpop}} can be helpful. | |
 | Iterator | Providing a way to access elements of a sequence. | | Iterators are a core language feature. [`itertools`][c-itertools]⮳{{hi:itertools}} provides additional iterator adaptors. |
 | Mediator | Defining an object that controls how other objects interact. | Often implemented directly | |
 | Memento | Capturing and externalizing an object's internal state. | Often implemented directly using structs and serialization | [`serde`][c-serde]⮳{{hi:serde}} can be useful for serialization. |
@@ -111,9 +119,7 @@ Shared solutions for particular situations specific to programming in Rust.
 | Visitor | Adding new operations to objects without changing their classes. | Often implemented directly using traits | Traits are usually used for visitor implementations. |
 | Dependency Injection | Providing dependencies to components. | Dependency injection frameworks (`shaku`) exist, but it's often handled manually, especially in smaller projects. [`yew`][c-yew]⮳{{hi:yew}} uses dependency injection for its component system. |
 
-### Code Examples for Rust Design Patterns
-
-{{#include design_patterns.incl.md}}
+{{#include behavioral_patterns.incl.md}}
 
 ## Related Programming Tasks
 

@@ -258,9 +258,12 @@
   - [Programming Languages](categories/parser-implementations/programming_languages.md)
 
 - [Rust Patterns](categories/rust-patterns/index.md)
-  - [Design Patterns](categories/rust-patterns/design_patterns.md)
+  - [Creational Patterns](categories/rust-patterns/creational_patterns.md)
+    - [Builder Pattern](categories/rust-patterns/builder_pattern.md)
+  - [Structural Patterns](categories/rust-patterns/structural_patterns.md)
+  - [Behavioral Design Patterns](categories/rust-patterns/behavioral_patterns.md)
   - [Functional Programming](categories/rust-patterns/functional_programming.md)
-  - [Builder Pattern](categories/rust-patterns/builder_pattern.md)
+  - [Rust-specific Patterns](categories/rust-patterns/rust_specific_patterns.md)
 
 - [Template Engines](categories/template-engine/index.md)
   - [Tera](categories/template-engine/tera.md)
