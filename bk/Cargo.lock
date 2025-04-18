@@ -23412,6 +23412,7 @@ dependencies = [
  "pin-project-lite",
  "reqwest",
  "rpds",
+ "scopeguard",
  "serde 1.0.219",
  "thiserror 2.0.12",
  "typenum",
