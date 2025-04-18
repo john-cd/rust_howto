@@ -1,5 +1,4 @@
 [ex-development-tools_debugging-add-tracing-spans-to-fn]: tracing.md#add-tracing-spans-to-fn
-[ex-development-tools_debugging-basic-tracing]: tracing.md#basic-tracing
 [ex-development-tools_debugging-configure-tracing]: tracing.md#configure-tracing
 [ex-development-tools_debugging-custom-env-var-for-logging]: config_log.md#custom-env-var-for-logging
 [ex-development-tools_debugging-custom-event-formatter]: tracing.md#custom-event-formatter
