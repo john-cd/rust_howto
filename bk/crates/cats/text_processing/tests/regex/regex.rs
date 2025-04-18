@@ -4,18 +4,19 @@ use std::collections::BTreeMap;
 use once_cell::sync::Lazy;
 use regex::Regex;
 
-// Regular expression and the names of its capture groups.
+/// Store a regular expression and the names of its capture groups.
 struct Re(Regex, Vec<&'static str>);
 
-// Regexes take a while to compile; it is reasonable to store them in
-// a global static
+/// Regexes take a while to compile.
+/// It is reasonable to store them in a global static.
 static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     println!("Initializing Regexes...\n");
     // A sorted map:
     let mut m = BTreeMap::new();
-    // A Markdown inline link:
+    // A Markdown inline link - see https://spec.commonmark.org/
     // (?<name>  ) is a named capture group.
     // \s is a whitespace. \S is a not-whitespace.
+    // [^!] excludes ! before [.
     m.insert(
         "[text](http...)",
         Re(
@@ -24,13 +25,14 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
             vec!["text", "link"],
         ),
     );
-    // A Markdown autolink
+    // A Markdown autolink.
     m.insert(
         "<http...>",
         Re(Regex::new(r"<(?<link>http.*?)>").unwrap(), vec!["link"]),
     );
-    // A Markdown shortcut link
-    // or <spaces>( or :
+    // A Markdown shortcut link.
+    // [text] not preceded by ! or ], not followed by <optional spaces>[ or ( or
+    // :
     m.insert(
         "[text] ...",
         Re(
@@ -38,7 +40,7 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
             vec!["text"],
         ),
     );
-    // A Markdown reference-style link
+    // A Markdown reference-style link.
     m.insert(
         "[text][label]",
         Re(
@@ -48,8 +50,8 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     );
     // A Markdown reference definition (with optional title):
     // (?:  ) is a non-capturing group.
-    // (?m) flags multi-line mode. ^ and $ are the beginning and end of a
-    // line, respectively.
+    // (?m) flags the multi-line mode.
+    // ^ and $ are the beginning and end of a line, respectively.
     m.insert(
         "[label]: url \"title\"",
         Re(Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>\S+)\s*?(?:"(?<title>.*)")?\s*$"#).unwrap(),
@@ -58,7 +60,7 @@ static GLOBAL_REGEX: Lazy<BTreeMap<&str, Re>> = Lazy::new(|| {
     m
 });
 
-#[allow(dead_code)]
+/// Extract and print Markdown inline links e.g. [text](http...).
 fn extract_inline_links(contents: &str) {
     for (_, [text, link]) in GLOBAL_REGEX["[text](http...)"]
         .0
@@ -76,13 +78,13 @@ fn extract_inline_links(contents: &str) {
     }
 }
 
-// Locate markup in text
+/// Locate markup in text.
 fn search_with_all_regexes(contents: &str) {
     // Try to match all reggular expressions
     for (key, re) in GLOBAL_REGEX.iter() {
         println!("----------------------\nLooking for {}:\n", key);
         for caps in re.0.captures_iter(contents) {
-            // Print the whole match
+            // Print the whole match.
             print!("{} -> ", &caps[0]);
             for group in re.1.iter() {
                 print!(
@@ -99,8 +101,8 @@ fn search_with_all_regexes(contents: &str) {
     }
 }
 
-// Example Markdown to process
-fn get_test_markdown() -> String {
+fn main() {
+    // Example Markdown links to process:
     let md: &'static str = "
 <http://url0/>
 
@@ -124,11 +126,10 @@ image_lbl6: image_url6
 
 ![image_lbl8][]
 ";
-    md.to_owned()
-}
 
-fn main() {
-    search_with_all_regexes(get_test_markdown().as_str());
+    extract_inline_links(md);
+
+    search_with_all_regexes(md);
 }
 // ANCHOR_END: example
 
@@ -136,6 +137,3 @@ fn main() {
 fn test() {
     main();
 }
-// [^!] excludes !
-// [text] not preceded by ! or ], not followed by [ or <spaces>[ or (
-// [review NOW](https://github.com/john-cd/rust_howto/issues/1160)
