@@ -15,7 +15,6 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 #[cfg(test)]
 mod tests {
     use anyhow::Result;
-    use mockito;
     use url::Url;
 
     use super::*; // To parse the CATEGORIES_URL.
