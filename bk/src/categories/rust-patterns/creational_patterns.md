@@ -1,6 +1,6 @@
 # Creational Patterns
 
-{{#include design_patterns.incl.md}}
+{{#include creational_patterns.incl.md}}
 
 ## Implement a Factory {#factory}
 
