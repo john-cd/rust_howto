@@ -2,7 +2,9 @@
 [ex-error_handling-avoid-discarding-errors-during-error-conversions]: error_handling/error_handling.md#avoid-discarding-errors-during-error-conversions
 [ex-error_handling-color-eyre]: error_handling/error_customization.md#color-eyre
 [ex-error_handling-handle-errors-correctly-in-main]: error_handling/error_handling.md#handle-errors-correctly-in-main
+[ex-error_handling-handle-errors-in-main]: error_handling/error_handling.md#handle-errors-in-main
 [ex-error_handling-irrecoverable-panics]: error_handling/error_handling.md#irrecoverable-panics
+[ex-error_handling-map]: error_handling/error_handling.md#map
 [ex-error_handling-miette]: error_handling/error_customization.md#miette
 [ex-error_handling-obtain-backtrace]: error_handling/error_handling.md#obtain-backtrace
 [ex-error_handling-question-mark-operator]: error_handling/error_handling.md#question-mark-operator
