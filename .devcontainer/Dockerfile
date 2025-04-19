@@ -29,6 +29,7 @@ SHELL ["bash", "-c"]
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
 ## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
+## `pandoc` for `mdbook-pandoc`
 ## Note: the following caching should only be useful for development. Removed to save space on the GitHub Action runner
 ## --mount=type=cache,target=/var/cache/apt,sharing=locked \
 ## --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -65,11 +66,13 @@ RUN apt-get update \
     llvm \
     m4 \
     make \
+    pandoc \
     pkg-config \
     protobuf-compiler \
     python3 \
     python3.11-dev \
     systemd \
+    texlive-full \
     wget \
     xorg-dev \
     && apt-get clean -y \
@@ -122,6 +125,7 @@ RUN <<EOF
     cargo binstall --no-confirm mdbook-linkcheck
     cargo binstall --no-confirm mdbook-private
     cargo binstall --no-confirm mdbook-indexing
+    cargo install --locked mdbook-pandoc
 
     ## [LATER https://lib.rs/crates/mdbook-open-on-gh add an "Edit this file on GitHub" link on the bottom of every page, linking directly to the source file.](https://github.com/john-cd/rust_howto/issues/1278)
     # cargo binstall --no-confirm mdbook-open-on-gh
@@ -130,7 +134,7 @@ RUN <<EOF
     # Configure it as a rustc wrapper in $HOME/.cargo/config.toml (for Linux / WSL).
     # By default, stores its cache locally in ~/.cache/sccache
     # https://github.com/mozilla/sccache/tree/main
-    cargo install sccache --locked
+    cargo install --locked sccache
 
     # ------------------------------
     ## Technically the following section is only required for development
