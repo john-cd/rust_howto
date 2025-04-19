@@ -10,6 +10,10 @@
 
 ## Implement an Abstract Factory {#abstract-factory}
 
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/tests/creational_patterns/abstract_factory.rs:example}}
+```
+
 See also:
 
 - [abstract-factory in rust][abstract-factory-in-rust-website]⮳.
