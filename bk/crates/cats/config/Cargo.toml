@@ -15,10 +15,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-# The config package has the same name than the current crate,
-# thus we rename it to config1
-# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
-config1 = { version = "0.15.6", package = "config" }
+config = "0.15.6"
 confy = "0.6.1"
 # dotenv = "0.15.0" # outdated, replaced by dotenvy
 dotenvy = "0.15.7"
@@ -27,5 +24,6 @@ lexopt = "0.3.1"
 
 ## General
 anyhow = "1.0.95"
+clap = { version = "4.5", features = [ "cargo" ] }
 serde = { version = "1.0.217", features = ["derive"] }
 serde_derive = "1.0.217"
