@@ -186,15 +186,26 @@ editable = true            # allows editing the source code
 
 ###################################################################
 
+# mdbook-pandoc configuration
+# https://crates.io/crates/mdbook-pandoc
+
 # [output.pandoc]
 # hosted-html = "https://john-cd.com/rust_howto/" # URL of a HTML version of the book
+
+#[output.pandoc.markdown.extensions] # enable additional Markdown extensions
+#gfm = false # enable pulldown-cmark's GitHub Flavored Markdown extensions - blockquotes_tags
+#math = false # parse inline ($a^b$) and display ($$a^b$$) math
+#definition-lists = false # parse definition lists
+#superscript = false # parse superscripted text (^this is superscripted^)
+#subscript = false # parse subscripted text (~this is subscripted~)
 
 # [output.pandoc.code]
 # # Display hidden lines in code blocks (e.g., lines in Rust blocks prefixed by '#').
 # # See https://rust-lang.github.io/mdBook/format/mdbook.html?highlight=hidden#hiding-code-lines
 # show-hidden-lines = false
 
-# [output.pandoc.profile.mybook] # options to pass to Pandoc (see https://pandoc.org/MANUAL.html#defaults-files)
+# # options to pass to Pandoc (see https://pandoc.org/MANUAL.html#defaults-files)
+# [output.pandoc.profile.pdf]
 # output-file = "book.pdf" # output file (within the profile's build directory)
 # to = "latex" # output format
 
@@ -210,4 +221,9 @@ editable = true            # allows editing the source code
 # # Arbitrary other Pandoc options can be specified as they would be in a Pandoc defaults file
 # # (see https://pandoc.org/MANUAL.html#defaults-files) but written in TOML instead of YAML...
 
-# [generate PDF with https://crates.io/crates/mdbook-pandoc NOW](https://github.com/john-cd/rust_howto/issues/1259)
+# # # For example, to pass variables (https://pandoc.org/MANUAL.html#variables):
+# # [output.pandoc.profile.<name>.variables]
+# # # Set the pandoc variable named 'variable-name' to 'value'
+# # variable-name = "value"
+
+# [generate PDF NOW](https://github.com/john-cd/rust_howto/issues/1259)
