@@ -17,8 +17,8 @@ fn parse_response(
 }
 
 // The `main` function may return a `Result` itself.
-// Here we return `anyhow::Result<()>` but you could use `Result<(), Box<dyn
-// Error>>` as the return type.
+// We return `anyhow::Result<()>` but you could use
+// `Result<(), Box<dyn Error>>` as the return type.
 fn main() -> anyhow::Result<()> {
     let url = "https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain".to_string();
     // Issue a HTTP GET request to the API above.

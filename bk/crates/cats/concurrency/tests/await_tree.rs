@@ -20,12 +20,8 @@ use tokio::time::sleep;
 
 #[tokio::main]
 async fn main() {
-
     // Create a configuration.
-    let config = ConfigBuilder::default()
-        .verbose(true)
-        .build()
-        .unwrap();
+    let config = ConfigBuilder::default().verbose(true).build().unwrap();
 
     // Create a new registry, which can contain multiple await-trees.
     let registry = Registry::new(config);
@@ -94,8 +90,8 @@ async fn bar(n: i32) {
     // `pending()` creates a future which never resolves / never finishes -
     // useful for this example.
     pending::<()>()
-    .instrument_await(format!("pending inside bar {n}"))
-    .await;
+        .instrument_await(format!("pending inside bar {n}"))
+        .await;
 }
 
 /// `baz` is an asynchronous function that spawns an anonymous background task
