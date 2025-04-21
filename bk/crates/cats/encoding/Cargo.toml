@@ -20,7 +20,7 @@ base64 = "0.22.1"
 bincode = "2.0.1"
 bytemuck = { version = "1.21.0", features = ["derive"] }
 byteorder = "1.5.0"
-capnp = "0.20.3"
+capnp = "0.21.0"
 ciborium = "0.2.2"
 data-encoding = "2.6.0"
 flatbuffers = "25.1.21"
@@ -46,7 +46,7 @@ heapless = "0.7.17"                                    # pinned to 0.7.17 for po
 serde_ignored = "0.1.10"
 
 [build-dependencies]
-capnpc = "0.20.1"
+capnpc = "0.21.0"
 prost-build = "0.13.4"
 
 [features]
