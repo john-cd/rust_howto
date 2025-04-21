@@ -61,5 +61,5 @@ If you have a mutable reference{{hi:Mutable references}} to a value, you can hav
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[ownership_borrowing: add text](https://github.com/john-cd/rust_howto/issues/554)
+[ownership_borrowing: add text NOW](https://github.com/john-cd/rust_howto/issues/554)
 </div>

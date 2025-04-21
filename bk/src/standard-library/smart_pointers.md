@@ -112,7 +112,7 @@ Attempts to violate borrowing rules (like having multiple mutable borrows) will 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[smart_pointers: review](https://github.com/john-cd/rust_howto/issues/628)
+[smart_pointers: review NOW](https://github.com/john-cd/rust_howto/issues/628)
 - finish to rewrite Cell, OnceCell.
 - example: RefCell inside of Rc.
 Mutex

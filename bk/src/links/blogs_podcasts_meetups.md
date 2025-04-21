@@ -27,5 +27,5 @@ Rust Meetup Linz
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[blogs_podcasts_meetups: organize](https://github.com/john-cd/rust_howto/issues/564)
+[blogs_podcasts_meetups: organize NOW](https://github.com/john-cd/rust_howto/issues/564)
 </div>

@@ -130,5 +130,5 @@ Consult the links section and its books page for other recommendations.
 {{#include refs/link-refs.md}}
 
 <div class="hidden">
-[index: polish](https://github.com/john-cd/rust_howto/issues/536)
+[index: polish NOW](https://github.com/john-cd/rust_howto/issues/536)
 </div>

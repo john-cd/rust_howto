@@ -28,5 +28,5 @@ For the sake of readability, that boilerplate is hidden by default. In order to 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[repo_structure: edit](https://github.com/john-cd/rust_howto/issues/533)
+[repo_structure: edit NOW](https://github.com/john-cd/rust_howto/issues/533)
 </div>

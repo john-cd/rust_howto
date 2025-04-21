@@ -20,5 +20,5 @@ or older resources, such as:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[crates/index: organize](https://github.com/john-cd/rust_howto/issues/535)
+[crates/index: organize NOW](https://github.com/john-cd/rust_howto/issues/535)
 </div>

@@ -52,5 +52,5 @@ Functions may also be used as arguments.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[closures: edit](https://github.com/john-cd/rust_howto/issues/539)
+[closures: edit NOW](https://github.com/john-cd/rust_howto/issues/539)
 </div>

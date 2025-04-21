@@ -21,5 +21,5 @@ The `crates/publish` folder contains a placeholder crate, so that the book could
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[publication: edit](https://github.com/john-cd/rust_howto/issues/531)
+[publication: edit NOW](https://github.com/john-cd/rust_howto/issues/531)
 </div>

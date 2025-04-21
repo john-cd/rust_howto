@@ -60,5 +60,5 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[modules: review](https://github.com/john-cd/rust_howto/issues/553)
+[modules: review NOW](https://github.com/john-cd/rust_howto/issues/553)
 </div>

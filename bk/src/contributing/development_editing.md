@@ -22,5 +22,5 @@ Verify the [markdown][p-markdown] is properly rendered using `just serve` or `md
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[development_editing: review](https://github.com/john-cd/rust_howto/issues/523)
+[development_editing: review NOW](https://github.com/john-cd/rust_howto/issues/523)
 </div>

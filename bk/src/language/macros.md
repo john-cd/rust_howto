@@ -25,5 +25,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[macros: write](https://github.com/john-cd/rust_howto/issues/548)
+[macros: write NOW](https://github.com/john-cd/rust_howto/issues/548)
 </div>

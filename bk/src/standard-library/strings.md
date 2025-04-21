@@ -66,5 +66,5 @@ Examples from [concatenation_benchmarks-rs][concatenation_benchmarks-github]⮳.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[strings: add](https://github.com/john-cd/rust_howto/issues/630)
+[strings: add NOW](https://github.com/john-cd/rust_howto/issues/630)
 </div>

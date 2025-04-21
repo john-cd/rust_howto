@@ -49,5 +49,5 @@ cargo run # run the executable
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_install](https://github.com/john-cd/rust_howto/issues/556)
+[rust_install NOW](https://github.com/john-cd/rust_howto/issues/556)
 </div>

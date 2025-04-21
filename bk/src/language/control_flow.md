@@ -39,5 +39,5 @@ Also `else if <cond> { ... }`
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[control_flow: add description](https://github.com/john-cd/rust_howto/issues/541)
+[control_flow: add description NOW](https://github.com/john-cd/rust_howto/issues/541)
 </div>

@@ -56,5 +56,5 @@ xdg-open /code/target/bk/doc/deps/index.html
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/980)
+[review NOW](https://github.com/john-cd/rust_howto/issues/980)
 </div>

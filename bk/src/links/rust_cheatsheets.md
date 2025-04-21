@@ -16,5 +16,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[rust_cheatsheets: add more](https://github.com/john-cd/rust_howto/issues/570)
+[rust_cheatsheets: add more NOW](https://github.com/john-cd/rust_howto/issues/570)
 </div>

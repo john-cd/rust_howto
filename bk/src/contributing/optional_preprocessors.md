@@ -22,5 +22,5 @@ cargo install mdbook_keeper --git https://github.com/tfpk/mdbook_keeper.git
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[optional_preprocessors: add](https://github.com/john-cd/rust_howto/issues/530)
+[optional_preprocessors: add NOW](https://github.com/john-cd/rust_howto/issues/530)
 </div>

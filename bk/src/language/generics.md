@@ -22,5 +22,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[generics: edit](https://github.com/john-cd/rust_howto/issues/545)
+[generics: edit NOW](https://github.com/john-cd/rust_howto/issues/545)
 </div>

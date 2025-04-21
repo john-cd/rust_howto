@@ -65,5 +65,5 @@ See also:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[data_types: edit / expand; add examples](https://github.com/john-cd/rust_howto/issues/557)
+[data_types: edit / expand; add examples NOW](https://github.com/john-cd/rust_howto/issues/557)
 </div>

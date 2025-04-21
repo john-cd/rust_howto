@@ -44,5 +44,5 @@ See also:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[derive: review](https://github.com/john-cd/rust_howto/issues/621)
+[derive: review NOW](https://github.com/john-cd/rust_howto/issues/621)
 </div>

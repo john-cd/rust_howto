@@ -120,4 +120,4 @@
 //     main();
 //     Ok(())
 // }
-// // [finish NOW](https://github.com/john-cd/rust_howto/issues/1233)
+// // [finish](https://github.com/john-cd/rust_howto/issues/1233)

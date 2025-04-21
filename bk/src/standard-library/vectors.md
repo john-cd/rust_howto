@@ -36,5 +36,5 @@ Vectors (`Vec`) can only store values that are the same type.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[vectors: add](https://github.com/john-cd/rust_howto/issues/631)
+[vectors: add NOW](https://github.com/john-cd/rust_howto/issues/631)
 </div>

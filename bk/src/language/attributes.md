@@ -88,5 +88,5 @@ A macro to ergonomically define an item depending on a large number of `#[cfg]` 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/985)
+[review NOW](https://github.com/john-cd/rust_howto/issues/985)
 </div>

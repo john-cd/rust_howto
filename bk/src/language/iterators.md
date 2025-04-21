@@ -21,5 +21,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[iterators: edit](https://github.com/john-cd/rust_howto/issues/546)
+[iterators: edit NOW](https://github.com/john-cd/rust_howto/issues/546)
 </div>

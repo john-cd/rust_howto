@@ -55,5 +55,5 @@ All of the hashmap{{hi:Hashmap}} keys{{hi:Keys}} must have the same type as each
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[hashmaps: add](https://github.com/john-cd/rust_howto/issues/622).
+[hashmaps: add NOW](https://github.com/john-cd/rust_howto/issues/622).
 </div>

@@ -22,5 +22,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[main: add text](https://github.com/john-cd/rust_howto/issues/550)
+[main: add text NOW](https://github.com/john-cd/rust_howto/issues/550)
 </div>

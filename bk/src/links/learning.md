@@ -35,5 +35,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[learning: organize](https://github.com/john-cd/rust_howto/issues/568)
+[learning: organize NOW](https://github.com/john-cd/rust_howto/issues/568)
 </div>

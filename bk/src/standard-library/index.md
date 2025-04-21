@@ -40,5 +40,5 @@
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[standard-library/index: review; what to cover?](https://github.com/john-cd/rust_howto/issues/623)
+[standard-library/index: review; what to cover? NOW](https://github.com/john-cd/rust_howto/issues/623)
 </div>
