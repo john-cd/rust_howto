@@ -17,14 +17,6 @@
 {{#include ../../../crates/cats/config/tests/configuration/config_hierarchical.rs:example}}
 ```
 
-### Configure your Application using Environment Variables {#load_configuration_from_environment_variables}
-
-[![config][c-config-badge]][c-config] [![config-crates.io][c-config-crates.io-badge]][c-config-crates.io] [![config-github][c-config-github-badge]][c-config-github] [![config-lib.rs][c-config-lib.rs-badge]][c-config-lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}
-
-```rust,editable
-{{#include ../../../crates/cats/config/tests/configuration/config_env_vars.rs:example}}
-```
-
 ### Load Configuration Settings into a Singleton {#load_configuration_into_a_singleton}
 
 [![config][c-config-badge]][c-config] [![config-crates.io][c-config-crates.io-badge]][c-config-crates.io] [![config-github][c-config-github-badge]][c-config-github] [![config-lib.rs][c-config-lib.rs-badge]][c-config-lib.rs]{{hi:config}}{{hi:Environment}}{{hi:Env}}{{hi:Settings}}{{hi:config}}{{hi:Configuration}} [![cat-config][cat-config-badge]][cat-config]{{hi:Configuration}}

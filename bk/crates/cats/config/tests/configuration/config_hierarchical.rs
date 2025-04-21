@@ -102,16 +102,26 @@ mod cfg {
 
         cb = cb
             // Override settings with values from environment variables (with a prefix of
-            // SERVICE) e.g., `SERVICE_DATABASE__MAX_CONNECTIONS=100`
-            .add_source(Environment::with_prefix("SERVICE").separator("__"))
+            // APP) e.g., `APP_DATABASE__MAX_CONNECTIONS=100`
+            .add_source(Environment::with_prefix("APP").prefix_separator("_").separator("__").ignore_empty(true))
             // Programmatic override.
             // This will overwrite any value from other setting sources, if `port` is not `None`.
             .set_override_option("service.port", cli_args.port)?;
 
         // Reads all config sources and attempt to deserialize the entire
         // configuration into the `Settings` type.
-        let s = cb.build()?.try_deserialize()?;
+        let config = cb.build()?;
+        let s: Settings = config.try_deserialize()?;
         Ok(s)
+
+        // You could also get the value for a specific key:
+        // let lvl = config.get("logging.level").context("Error getting
+        // 'logging.level'")?; Or deserialize the config object into a
+        // HashMap:
+        // println!(
+        //         "\n{:?}",
+        //         config.try_deserialize::<HashMap<String, String>>()?
+        //  );
     }
 }
 
@@ -209,7 +219,7 @@ fn main() -> anyhow::Result<()> {
     let settings = cfg::read_settings(cli_args)?;
 
     // 3. Use the settings:
-    println!("Service Name: {}", settings.service.name); // From the base config file.
+    println!("Service Name: {}", settings.service.name); // From the environment variable.
     println!("Service Port: {}", settings.service.port); // Programmatic override.
     println!("Database URL: {}", settings.database.url); // From the base config file.
     println!(
@@ -262,14 +272,22 @@ level = "debug"
 
     fs::write("temp/development.toml", dev_toml)?;
 
-    // You could also override settings by setting env. variables:
+    // Set environment variables to override specific settings, e.g.:
     // ```sh
-    // export SERVICE_SERVICE__PORT=9000
-    // export SERVICE_DATABASE__MAX_CONNECTIONS=25
-    // export SERVICE_LOGGING__LEVEL=error
+    // export APP_SERVICE__PORT=9000
+    // export APP_DATABASE__MAX_CONNECTIONS=25
+    // export APP_LOGGING__LEVEL=error
     // ```
+    unsafe {
+        // Override the name in this example:
+        std::env::set_var("APP_SERVICE__NAME", "MyService");
+    }
 
     main()?;
+
+    unsafe {
+        std::env::remove_var("APP_SERVICE__NAME");
+    }
 
     fs::remove_file("temp/default.toml")?;
     fs::remove_file("temp/development.toml")?;
