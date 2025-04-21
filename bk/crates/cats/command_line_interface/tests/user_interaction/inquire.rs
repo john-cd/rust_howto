@@ -36,5 +36,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// No tests - this example requires use input
-// [review; how to test NOW](https://github.com/john-cd/rust_howto/issues/1151)
+#[test]
+#[ignore = "Requires user input"]
+fn require_user_input() {
+    main();
+}
