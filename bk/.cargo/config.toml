@@ -15,8 +15,9 @@
 # rustdoc = "rustdoc"           # the doc generator tool
 # target = "triple"             # build for the target triple (ignored by `cargo install`)
 # target-dir = "target"         # path of where to place all generated artifacts
-## The target directory is kept outside of /code to avoid bind mounting (which is slow and can be confusing if cargo build is run on the host OS).
-## It is mounted on a separate volume.
+## The target directories of all workspaces are kept in `<root>/target/<workspace_name>`.
+## `<root>/target` is mounted on a separate docker volume to avoid bind mounting (which is very slow).
+## See `compose.override.yaml` for more details.
 target-dir="../target/bk/"
 # rustflags = ["…", "…"]        # custom flags to pass to all compiler invocations
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
