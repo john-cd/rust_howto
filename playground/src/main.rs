@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Look in the examples and drafts folders.");
 }

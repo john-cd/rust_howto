@@ -7,6 +7,7 @@ set -euo pipefail
 
 # Example of URLs to process:
 # https://arangodb.com/
+
 # https://crates.io/crates/sd
 # https://github.com/rustdesk/rustdesk
 
