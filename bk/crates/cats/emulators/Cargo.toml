@@ -15,6 +15,3 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-## [add deps LATER](https://github.com/john-cd/rust_howto/issues/1308)
-
-## General

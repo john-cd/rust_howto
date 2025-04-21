@@ -14,7 +14,7 @@ categories.workspace = true
 publish.workspace = true
 
 [dependencies]
-xshell = { version = "0.2.7" }
+xshell = "0.2.7"
 
 ## General
 anyhow = "1.0.97"

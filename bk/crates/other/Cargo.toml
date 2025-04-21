@@ -27,12 +27,12 @@ aws-sdk-s3 = "1.68.0"
 lambda_runtime = "0.13.0"
 
 ## Cross platform
-crux_core = "0.13.1"
-crux_macros = "0.5.0"
+crux_core = "0.14.0"
+crux_macros = "0.6.0"
 
 ## Data processing
-arrow = { version = "54.2.1", features = ["prettyprint"], optional = true }
-datafusion = { version = "46.0.0", optional = true }
+arrow = { version = "55.0.0", features = ["prettyprint"], optional = true }
+datafusion = { version = "47.0.0", optional = true }
 #polars = { version = "0.46.0", optional = true } # FIXME
 
 ## GPU

@@ -24,10 +24,10 @@ http-body-util = "0.1.2"
 hyper = { version = "1.6.0", features = ["full"] }
 hyper-util = { version = "0.1", features = ["full"] }
 leptos = "0.7"
-loco-rs = "0.14"
+loco-rs = "0.15.0"
 mime = "0.3.17"
 prost = "0.13.4"
-tonic = "0.12.3"
+tonic = "0.13.0"
 tower = { version = "0.5.1", features = ["util"] }
 tower-http = { version = "0.6.1", features = ["full", "auth"] }
 # trillium = "0.2.20"
@@ -42,7 +42,7 @@ tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
 
 [build-dependencies]
-tonic-build = "0.12.3"
+tonic-build = "0.13.0"
 
 [features]
 # default = []

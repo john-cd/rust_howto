@@ -17,7 +17,7 @@ autolib = false
 [dependencies]
 js-sys = "0.3.77"
 wasmer = "5.0.4"
-wasmtime = "30.0.2"
+wasmtime = "32.0.0"
 yew = { version = "0.21.0", features = ["csr"] }
 
 ## General

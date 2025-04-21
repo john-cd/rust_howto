@@ -37,8 +37,8 @@ r3bl_tuify = "0.2.0"
 rfd = "0.15.2"
 skia-safe = { version = "0.82.0", features = [
     "gl",
-], optional = true } # pin to 0.78 for slint
-slint = "1.9.1"
+], optional = true } # pinned for slint
+slint = "1.10.0"
 taffy = "0.8.0"
 tao = "0.33.0"
 tauri = "2.0.6" # Requires multiple libraries. See Dockerfile

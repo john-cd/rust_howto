@@ -18,7 +18,7 @@ autolib = false
 meilisearch-sdk = "0.28.0"
 sled = "0.34.7"
 surrealdb = { version = "2.2.2", features = ["kv-mem"], optional = true }
-tantivy = { version = "0.22.0", optional = true }
+tantivy = { version = "0.24.0", optional = true }
 
 ## General
 anyhow = "1.0.95"

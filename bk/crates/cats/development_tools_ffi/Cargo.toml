@@ -23,6 +23,7 @@ napi = "2.16.13"
 neon = "1.0.0"
 # magnus = "0.7.1"
 mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
+# FIXME
 # objc2 = "0.6.0"
 # objc2-foundation = "0.3.0"
 # objc2-app-kit = "0.3.0"

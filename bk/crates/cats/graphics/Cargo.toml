@@ -15,4 +15,4 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-wgpu = "24.0.1" # was pinned to 0.16.0 for ggez
+wgpu = "25.0.0" # was pinned for ggez
