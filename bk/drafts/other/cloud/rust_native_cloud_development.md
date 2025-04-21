@@ -2,7 +2,7 @@
 
 {{#include rust_native_cloud_development.incl.md}}
 
-While it is common to deploy Rust applications to Cloud services like AWS, Azure and GCP, a new breed of Cloud services specific tailored to the needs of Rust developers is emerging.
+While it is common to deploy Rust applications to Cloud services like [AWS][p-aws], Azure and GCP, a new breed of [Cloud][p-cloud] services specific tailored to the needs of Rust developers is emerging.
 
 ## Deploy Rust Code on `shuttle.dev` {#shuttle}
 
@@ -10,8 +10,8 @@ While it is common to deploy Rust applications to Cloud services like AWS, Azure
 
 `Shuttle.dev` is a Rust-native cloud development platform that simplifies backend development and deployment using Rust. Here's a summary of its key capabilities:
 
-- Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). `Shuttle` handles provisioning resources like databases, secrets, and storage.
-- Rapid Deployment: your Rust applications can be deployed quickly and easily to the cloud with minimal configuration.
+- Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). `Shuttle` handles provisioning resources like [databases][p-databases], secrets, and storage.
+- Rapid Deployment: your Rust applications can be deployed quickly and easily to the [cloud][p-cloud] with minimal configuration.
 - Framework Support: Shuttle is compatible with popular Rust frameworks ([`Axum`][c-axum]⮳{{hi:Axum}}, `Actix Web`, [`Rocket`][c-rocket]⮳{{hi:Rocket}}, [`Warp`][c-warp]⮳{{hi:Warp}}, [`Tower`][c-tower]⮳{{hi:Tower}} and more). The Discord Bot building frameworks `Serenity` and `Poise` are also officially supported.
 - Out-of-the-box logging support.
 

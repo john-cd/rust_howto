@@ -11,7 +11,7 @@ Shaders are programs that run on the [GPU][p-gpu] (Graphics Processing Unit). Th
 - Geometry Shaders: These shaders work with entire primitives (points, lines, or triangles) and can generate new geometry or modify existing geometry before it is rasterized.
 - Compute Shaders: These shaders are used for general-purpose computing tasks that are not directly related to rendering. They can perform complex calculations and data processing on the GPU.
 
-Shaders are written in specialized programming languages like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c-wgpu]⮳{{hi:wgpu}} uses WGSL.
+Shaders are written in specialized [programming languages][p-programming-languages] like GLSL (OpenGL Shading Language), HLSL (High-Level Shading Language for DirectX), and Metal Shading Language (for Apple's Metal API). [`wgpu`][c-wgpu]⮳{{hi:wgpu}} uses WGSL.
 
 ## Topics {#skip}
 
@@ -58,7 +58,7 @@ For inspecting SPIR-V shaders
 
 ## Compute Shaders and GPU Compute (GPGPU) {#skip}
 
-Compute Shaders are often handled through the low-level graphics APIs like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} or [`vulkano`][c-vulkano]⮳{{hi:vulkano}}.
+Compute Shaders are often handled through the low-level graphics [APIs][p-apis] like [`wgpu`][c-wgpu]⮳{{hi:wgpu}} or [`vulkano`][c-vulkano]⮳{{hi:vulkano}}.
 
 ## Related Topics {#skip}
 
