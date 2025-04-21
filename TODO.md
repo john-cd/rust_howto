@@ -1,22 +1,22 @@
 # TODOs
 
-finish
+- Close NOW tickets: WIP
+- Go trough VS Code bookmarks (WSL): WIP
+- Go trough VS Code bookmarks (dev container): WIP
+
+## Finish examples
 
 - fake
 - tracing_subscriber
-- flate2 example
-- salsa example
+- flate2
+- salsa
 - crux
-
-## Finish pandoc setup; generate PDF version of book WIP
+- cssparser
+- quickxml
 
 ---
 
-## Go trough VS Code bookmarks
-
-- Close NOW tickets WIP
-- Go trough VS Code bookmarks (WSL) WIP
-- Go trough VS Code bookmarks (dev container) WIP
+## Finish pandoc setup; generate PDF version of book WIP
 
 ---
 
