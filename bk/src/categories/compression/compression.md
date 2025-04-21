@@ -32,6 +32,10 @@ The [`zip`][c-zip]⮳{{hi:zip}} crate allows you to create, open, and manipulate
 
 [`async-zip`][c-async_zip]⮳{{hi:async-zip}} is a Rust crate providing asynchronous support for reading and writing ZIP archives. Building upon the foundation of the zip crate, async-zip leverages asynchronous programming paradigms (using async/await) to enable non-blocking operations on ZIP files. This is particularly beneficial in I/O-bound contexts, such as network applications or when working with large archives, as it allows other tasks to proceed while ZIP operations are in progress. It integrates with the [`tokio`][c-tokio]⮳{{hi:tokio}} runtime (and other async runtimes). Like its synchronous counterpart, [`async-zip`][c-async_zip]⮳{{hi:async-zip}} supports various ZIP features, including compression, encryption, and metadata handling, but with the added advantage of non-blocking execution.
 
+```rust,editable,noplayground
+{{#include ../../../crates/cats/compression/tests/compression/zip.rs:example}}
+```
+
 ## Related Topics {#skip}
 
 - [[filesystem | Filesystem]].

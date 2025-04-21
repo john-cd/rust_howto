@@ -2000,6 +2000,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "async_zip"
+version = "0.0.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "00b9f7252833d5ed4b00aa9604b563529dd5e11de9c23615de2dcdf91eb87b52"
+dependencies = [
+ "crc32fast",
+ "futures-lite 2.6.0",
+ "pin-project",
+ "thiserror 1.0.69",
+]
+
+[[package]]
 name = "asynchronous"
 version = "0.1.2"
 dependencies = [
@@ -5916,12 +5928,14 @@ name = "compression"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "async_zip",
  "bytes",
  "flate2",
  "futures",
  "tar",
  "tokio",
  "tokio-util",
+ "zip 2.6.1",
 ]
 
 [[package]]
