@@ -2364,6 +2364,7 @@ dependencies = [
  "parking_lot 0.12.3",
  "pin-project",
  "task-local",
+ "tokio",
  "tracing",
  "weak-table",
 ]

@@ -1,4 +1,14 @@
 // ANCHOR: example
+//! This example demonstrates how to use the `await-tree` crate.
+//!
+//! `await-tree` is a tool for visualizing the execution of asynchronous tasks
+//! in Rust. It helps you understand the relationships between tasks and how
+//! they are waiting on each other.
+//!
+//! Add to your `Cargo.toml`:
+//! ```toml
+//! await-tree = "0.3.0" # Or latest
+//! ```
 use await_tree::ConfigBuilder;
 use await_tree::InstrumentAwait;
 use await_tree::Registry;
@@ -10,25 +20,23 @@ use tokio::time::sleep;
 
 #[tokio::main]
 async fn main() {
-    // Create a configuration
-    let verbose_flag = true;
+
+    // Create a configuration.
     let config = ConfigBuilder::default()
-        .verbose(verbose_flag)
+        .verbose(true)
         .build()
         .unwrap();
-    // Simply use `Config::default()` if you don't plan to use
-    // `verbose_instrument_await` (see below)
 
-    // Create a new registry, which can contain multiple await-trees
+    // Create a new registry, which can contain multiple await-trees.
     let registry = Registry::new(config);
 
-    // Spawn three asynchronous tasks, each in its own await-tree
+    // Spawn asynchronous tasks, each in its own await-tree.
     for i in 0_i32..2 {
         // Register an await-tree (identified by a key, here an integer,
         // but it could be a `String` or a custom struct)
-        // and its root span
+        // and its root span.
         let root = registry.register(i, format!("foo {i}"));
-        // Spawns a new asynchronous task, instrumenting it with the root span
+        // Spawns a new asynchronous task, instrumenting it with the root span.
         tokio::spawn(root.instrument(foo(i)));
     }
 
@@ -64,27 +72,34 @@ async fn main() {
     }
 }
 
+/// `foo` is an asynchronous function that spawns two other asynchronous
+/// functions, `bar` and `baz`, and waits for them to complete.
+///
+/// # Arguments
+/// * `n` - An integer used to identify the task.
 async fn foo(n: i32) {
-    // Instrument futures with `instrument_await`
+    // Instrument futures with `instrument_await`.
 
-    // Spans of joined futures will be siblings in the tree
+    // Spans of joined futures will be siblings in the tree.
     join(
         bar(n).instrument_await(format!("bar {n}")), /* The span can be a
                                                       * String */
-        baz(n).instrument_await("baz"), // or `&'static str`
+        baz(n).instrument_await("baz"), // or `&'static str`.
     )
     .await;
 }
 
+/// `bar` is an asynchronous function that never completes.
 async fn bar(n: i32) {
     // `pending()` creates a future which never resolves / never finishes -
-    // useful for this example
+    // useful for this example.
     pending::<()>()
-    // When using `verbose_instrument_await()`, the span won't be displayed if the `verbose` flag in the config is set to false
-    .verbose_instrument_await(format!("pending inside bar {n}"))
+    .instrument_await(format!("pending inside bar {n}"))
     .await;
 }
 
+/// `baz` is an asynchronous function that spawns an anonymous background task
+/// that never completes.
 async fn baz(n: i32) {
     // Inside the scope of a registered/instrumented task, we can also directly
     // spawn new tasks with `await_tree::spawn` or `spawn_anonymous`
@@ -101,3 +116,4 @@ async fn baz(n: i32) {
 fn test() {
     main();
 }
+// TODO clean up
