@@ -1,3 +1,6 @@
+// // ANCHOR: example
+// // COMING SOON
+// // ANCHOR_END: example
 // use std::io::Result as IoResult;
 
 // use bytes::Bytes;
