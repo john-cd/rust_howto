@@ -18,5 +18,5 @@ autolib = false
 
 [dependencies]
 accesskit = "0.18.0"
-accesskit_winit = "0.25.0"
+accesskit_winit = "0.26.0"
 winit = "0.30.8"
