@@ -1,8 +1,9 @@
 // ANCHOR: example
+#![cfg(target_os = "linux")]
+
 use syslog::Facility;
 
 /// Initializes syslog and logs debug and error messages.
-#[cfg(target_os = "linux")]
 fn main() -> anyhow::Result<()> {
     // Initializes syslog with the user facility, debug level filter, and
     // application name.
