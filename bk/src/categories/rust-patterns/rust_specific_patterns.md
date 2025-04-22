@@ -28,7 +28,7 @@ The [`dyn-clone`][c-dyn_clone]⮳{{hi:dyn-clone}} crate provides a `DynClone` tr
 `pin-project-lite` is a lightweight version of `pin-project` written with declarative macros. The `pin_project!` macro creates a projection type covering all the fields of struct.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/tests/design_patterns/pin_project.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/tests/rust_specific_patterns/pin_project.rs:example}}
 ```
 
 See also:
