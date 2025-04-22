@@ -1,11 +1,11 @@
-#!/usr/bin/env -S cargo +nightly -Zscript
----cargo
-[dependencies]
-anyhow = "1.0.95"
-regex = "1.11.1"
-walkdir = "2.5.0"
-xshell = "0.2.7"
----
+// #!/usr/bin/env -S cargo +nightly -Zscript
+// ---cargo
+// [dependencies]
+// anyhow = "1.0.95"
+// regex = "1.11.1"
+// walkdir = "2.5.0"
+// xshell = "0.2.7"
+// ---
 // Rust script - see https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script
 
 // - Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
@@ -20,7 +20,7 @@ use std::sync::LazyLock;
 
 use regex::Regex;
 use walkdir::WalkDir;
-use xshell::{cmd, Shell};
+use xshell::{Shell, cmd};
 
 static GITHUB: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r#"(^|[^"'([]https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'[])⮳]*)?"#).unwrap();
@@ -31,7 +31,6 @@ static RE: LazyLock<Regex> = LazyLock::new(|| {
 });
 
 fn main() -> anyhow::Result<()> {
-
     let root = std::env::args()
         .nth(1)
         .ok_or_else(|| anyhow::anyhow!("Missing root folder argument"))?;
