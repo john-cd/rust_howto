@@ -165,6 +165,7 @@ mod cli {
     /// - Run mode (with default value),
     /// - Optional custom config file path,
     /// - Optional port number override.
+    ///
     /// It can also be used for testing by passing in a custom set of arguments.
     pub fn parse_command_line_args<I, T>(opt_args: Option<I>) -> CommandLineArgs
     where
