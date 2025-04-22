@@ -9,11 +9,10 @@ xshell = "0.2.7"
 // Rust script - see https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script
 
 // - Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
-// - Process http://... naked links
-// - do not convert links to GitHub issues e.g. https://github.com/john-cd/rust_howto/issues links
-// - skip text between ``` and ```
-// - move refdefs into central file
-
+// - Process http://... naked links.
+// - Do not convert links to GitHub issues e.g. https://github.com/john-cd/rust_howto/issues links.
+// - Skip text between ``` and ```.
+// - Move refdefs into central file.
 
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -67,5 +66,5 @@ fn process_file(file: &PathBuf) -> anyhow::Result<()> {
     let re_general = &*RE;
 
     //let after = re.replace_all(before, "$m/$d/$y");
-
+    // TODO
 }
