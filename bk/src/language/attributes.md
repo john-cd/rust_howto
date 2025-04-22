@@ -4,6 +4,8 @@
 
 ## Attributes {#attributes}
 
+Attributes are annotations you attach to your Rust code, like functions, structs, modules, or even entire crates. They provide extra information or instructions to the Rust compiler or other tools (like linters or documentation generators). They don't change the logic of the code directly, but they influence how it's compiled, checked, or processed.
+
 {{i:Attributes}} can take arguments with different syntaxes:
 
 ```rust,editable,compile_fail,noplayground
@@ -13,7 +15,7 @@
 #[attribute(value, value2)]
 ```
 
-Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribute is declared within.
+Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribute is declared within. You often see these at the very top of a file (`lib.rs` or `main.rs`) to apply to the entire crate or module.
 
 ## Lint Attributes {#lint-attributes}
 
