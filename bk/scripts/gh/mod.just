@@ -104,21 +104,26 @@ refresh:
   #!/usr/bin/env bash
   set -euo pipefail
   IFS=$'\n\t'
-  dir="{{root}}/../"
-  for file in $(find "${dir}" -type f -name "*.rs" -o -name "*.md" -o -name "*.toml" -o -name "*.yaml" -o -name "*.yml" -not -path '*/target/*' -not -path '*/bin/*' )
+  repo=$( realpath "{{root}}/../" ) # directory of the repo
+  for file in $( find "${repo}" -mindepth 1 -maxdepth 1 \( -name .git -o -name target -o -name bin \) -prune -o \( -type d -print0 \) | find -files0-from - -type f -not -path "*/book/*" \( -name "*.rs" -o -name "*.md" -o -name "*.toml" -o -name "*.yaml" -o -name "*.yml" \) )
   do
-    rel=$(realpath --relative-to=${dir} ${file})
+    rel=$(realpath --relative-to=${repo} ${file})
     #echo "> ${rel}"
     for str in $( sed -En 's~^\s*\[([^]]*?)\]\(https://github.com/john-cd/rust_howto/issues/([0-9]+)\)~\1@\2@~p' "${file}" )
     do
       todo=$( echo "$str" | cut -d@ -f1 )
       id=$( echo "$str" | cut -d@ -f2 )
-      echo "---"
-      echo "id: ${id}"
-      echo "title: ${rel}: ${todo:-fix}"
-      echo "body: [$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})"
-      gh issue edit "${id}" --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --add-assignee "@me" --add-label "auto"
-      sleep 3
-      break
+      existing_title=$(gh issue view "${id}" --json title --jq '.title')
+      sleep 1
+      if [ "$existing_title" != "${rel}: ${todo:-fix}" ];
+      then
+        echo "---"
+        echo "id: ${id}"
+        echo "previous title: $existing_title"
+        echo "title: ${rel}: ${todo:-fix}"
+        echo "body: [$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})"
+        gh issue edit "${id}" --title "${rel}: ${todo:-fix}" --body "[$rel](https://github.com/john-cd/rust_howto/blob/main/${rel})" --add-assignee "@me" --add-label "auto"
+        sleep 2
+      fi
     done
   done
