@@ -333,5 +333,4 @@
 
 {{#include refs.incl.md}}
 <div class="hidden">
-[make sure all pages are included](https://github.com/john-cd/rust_howto/issues/994)
 </div>
