@@ -66,13 +66,13 @@ RUN apt-get update \
     llvm \
     m4 \
     make \
-    pandoc \
+    # TODO huge pandoc \
     pkg-config \
     protobuf-compiler \
     python3 \
     python3.11-dev \
     systemd \
-    texlive-full \
+    # TODO huge texlive-full \
     wget \
     xorg-dev \
     && apt-get clean -y \
