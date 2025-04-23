@@ -18,6 +18,8 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 `if let`
 
+[![Rust by example - if let][book-rust-by-example-if_let-badge]][book-rust-by-example-if_let]
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/if_let.rs:example}}
 ```

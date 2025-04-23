@@ -2,6 +2,8 @@
 
 {{#include slices.incl.md}}{{hi:Slices}}
 
+[![Rust by example - slices][book-rust-by-example-slices-badge]][book-rust-by-example-slices]
+
 A slice is a reference to a contiguous sequence of elements within a collection. This means it provides a view into a portion of an array, vector, or string, without owning the underlying data.
 
 - Slices are references, so they don't own the data they point to. This makes them efficient, as they avoid unnecessary copying.

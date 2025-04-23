@@ -12,6 +12,8 @@ The unit type{{hi:Unit type}} `()`{{hi:()}} (`void` in some languages) is the de
 
 ## Generic Functions {#generic-functions}
 
+[![Rust by example - generic functions][book-rust-by-example-generic_functions-badge]][book-rust-by-example-generic_functions]
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/generic_functions.rs:example}}
 ```

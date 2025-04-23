@@ -6,6 +6,8 @@
 
 ## If Else {#if-else}
 
+[![Rust by example - if else][book-rust-by-example-if_else-badge]][book-rust-by-example-if_else]
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/if_else.rs:example}}
 ```
@@ -14,17 +16,23 @@ Also `else if <cond> { ... }`
 
 ## Loop {#loop}
 
+[![Rust by example - loop][book-rust-by-example-loop-badge]][book-rust-by-example-loop]
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/loop1.rs:example}}
 ```
 
 ## While {#while}
 
+[![Rust by example - while][book-rust-by-example-while-badge]][book-rust-by-example-while]
+
 ```rust,editable
 {{#include ../../crates/language/tests/feat/while1.rs:example}}
 ```
 
 ## For {#for}
+
+[![Rust by example - for][book-rust-by-example-for-badge]][book-rust-by-example-for]
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/for1.rs:example}}

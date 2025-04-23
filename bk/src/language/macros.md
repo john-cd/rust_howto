@@ -2,7 +2,7 @@
 
 {{#include macros.incl.md}}
 
-[Rust reference - Macros][book-rust-reference-macros]⮳.
+[![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]
 
 ```rust,editable
 {{#include ../../crates/language/tests/feat/macros.rs:example}}
@@ -10,6 +10,7 @@
 
 ## References {#skip}
 
+- [Rust reference - Macros][book-rust-reference-macros]⮳.
 - [Rust by example - Macros][book-rust-by-example-macros]⮳ [![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]{{hi:Macros}}⮳.
 - The [Little Book of Rust Macros][book-rust-macros]⮳.
 

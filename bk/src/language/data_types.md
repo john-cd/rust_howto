@@ -2,9 +2,9 @@
 
 {{#include data_types.incl.md}}
 
-[![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
-
 ## Scalar Data Types {#scalar-data-types}
+
+[![Rust by example - Primitives][book-rust-by-example-primitives-badge]][book-rust-by-example-primitives]{{hi:Primitives}}
 
 | Type Family | Types | Examples |
 |---|---|---|
@@ -30,6 +30,8 @@
 - Saturate at the value's minimum or maximum values with the `saturating_*` methods.
 
 ## Compound Data Types: Tuples and Arrays {#compound-types}
+
+[![Rust by example - tuples][book-rust-by-example-tuples-badge]][book-rust-by-example-tuples] [![Rust by example - array][book-rust-by-example-array-badge]][book-rust-by-example-array]
 
 Compound types can group multiple values into one type. Rust has two primitive compound types: tuples and arrays.
 
