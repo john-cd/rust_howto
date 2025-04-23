@@ -1,5 +1,6 @@
 [ex-concurrency-actix]: _actors.md#actix
 [ex-concurrency-any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel
+[ex-concurrency-arc-mutex]: send_sync.md#arc-mutex
 [ex-concurrency-arc-swap]: atomics.md#arc-swap
 [ex-concurrency-atomics]: atomics.md#atomics
 [ex-concurrency-crossbeam-channel]: message_passing.md#crossbeam-channel
@@ -27,12 +28,13 @@
 [ex-concurrency-riker]: _actors.md#riker
 [ex-concurrency-scoped-threads]: explicit_threads.md#scoped-threads
 [ex-concurrency-search-in-parallel]: data_parallelism.md#search-in-parallel
-[ex-concurrency-send-sync]: send_sync.md#send-sync
+[ex-concurrency-send]: send_sync.md#send
 [ex-concurrency-sha256-of-iso-files-concurrently]: threadpool.md#sha256-of-iso-files-concurrently
 [ex-concurrency-sort-in-parallel]: data_parallelism.md#sort-in-parallel
 [ex-concurrency-spawn-a-short-lived-thread]: crossbeam.md#spawn-a-short-lived-thread
 [ex-concurrency-spawn-join]: explicit_threads.md#spawn-join
 [ex-concurrency-stakker]: _actors.md#stakker
+[ex-concurrency-sync]: send_sync.md#sync
 [ex-concurrency-thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
 [p-async-channels]: ../asynchronous/async_channels.md
 [p-async]: ../asynchronous/async.md
