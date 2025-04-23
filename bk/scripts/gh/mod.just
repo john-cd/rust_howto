@@ -109,7 +109,7 @@ refresh:
   do
     rel=$(realpath --relative-to=${dir} ${file})
     #echo "> ${rel}"
-    for str in $( sed -En 's~[^[]*\[([^]]*?)\]\(https://github.com/john-cd/rust_howto/issues/([0-9]+)\)~\1@\2@~p' "${file}" )
+    for str in $( sed -En 's~^\s*\[([^]]*?)\]\(https://github.com/john-cd/rust_howto/issues/([0-9]+)\)~\1@\2@~p' "${file}" )
     do
       todo=$( echo "$str" | cut -d@ -f1 )
       id=$( echo "$str" | cut -d@ -f2 )
