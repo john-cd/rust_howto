@@ -1,4 +1,4 @@
-# Match, if let, While let {#match}
+# Match, if let, While let
 
 {{#include match.incl.md}}
 
@@ -30,7 +30,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 {{#include ../../crates/language/tests/feat/while_let.rs:example}}
 ```
 
-## See Also
+## See Also {#skip}
 
 - [[control_flow | Control Flow]].
 - [[error_handling | Error Handling]].
@@ -38,7 +38,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 - [[result | Result]].
 - [[rust-patterns | Rust Patterns]].
 
-## References
+## References {#skip}
 
 - [Pattern matching][book-rust-pattern-matching]{{hi:Pattern matching}}⮳.
 

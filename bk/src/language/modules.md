@@ -1,4 +1,4 @@
-# Modules {#modules}
+# Modules
 
 {{#include modules.incl.md}}
 

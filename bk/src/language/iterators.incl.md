@@ -1,3 +1,0 @@
-||
-|--------|
-| [Iterators][ex-language-iterators] |

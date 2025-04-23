@@ -1,3 +1,0 @@
-||
-|--------|
-| [Macros][ex-language-macros] |

@@ -1,4 +1,4 @@
-# Functions {#functions}
+# Functions
 
 {{#include functions.incl.md}}
 

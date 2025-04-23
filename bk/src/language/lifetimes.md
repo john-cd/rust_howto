@@ -1,4 +1,4 @@
-# Lifetimes {#lifetimes}
+# Lifetimes
 
 {{#include lifetimes.incl.md}}
 

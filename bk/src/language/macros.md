@@ -1,4 +1,4 @@
-# Macros {#macros}
+# Macros
 
 {{#include macros.incl.md}}
 
@@ -8,7 +8,7 @@
 {{#include ../../crates/language/tests/feat/macros.rs:example}}
 ```
 
-## References
+## References {#skip}
 
 - [Rust by example - Macros][book-rust-by-example-macros]⮳ [![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]{{hi:Macros}}⮳.
 - The [Little Book of Rust Macros][book-rust-macros]⮳.

@@ -1,4 +1,4 @@
-# Iterators {#iterators}
+# Iterators
 
 {{#include iterators.incl.md}}
 

@@ -4,7 +4,7 @@
 | [Main Function][ex-language-main-function] |
 | [Data Types][ex-language-data-types] |
 | [Variables and Constants][ex-language-variables-and-constants] |
-| [Ownership and Borrowing][ex-language-ownership] |
+| [Ownership and Borrowing][ex-language-ownership_borrowing] |
 | [Control Flow][ex-language-control-flow] |
 | [Slices][ex-language-slices] |
 | [Functions][ex-language-functions] |

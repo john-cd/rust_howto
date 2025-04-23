@@ -1,4 +1,4 @@
-# Enums {#enums}
+# Enums
 
 {{#include enums.incl.md}}
 

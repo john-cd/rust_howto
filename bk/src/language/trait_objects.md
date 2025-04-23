@@ -1,4 +1,4 @@
-# Trait Objects {#trait-objects}
+# Trait Objects
 
 {{#include trait_objects.incl.md}}
 
@@ -19,7 +19,7 @@ dyn Trait + Send + Sync
 dyn Trait + 'static
 ```
 
-## See Also
+## See Also {#skip}
 
 [Trait Objects (docs)][book-rust-trait-objects]{{hi:Trait objects}}⮳.
 

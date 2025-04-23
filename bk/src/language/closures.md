@@ -2,8 +2,6 @@
 
 {{#include closures.incl.md}}
 
-## Closures {#closures}
-
 [![Rust by example - Closures][book-rust-by-example-closures-badge]][book-rust-by-example-closures]
 
 ```rust,editable

@@ -1,4 +1,4 @@
-# Traits {#traits}
+# Traits
 
 {{#include traits.incl.md}}
 
@@ -82,7 +82,7 @@ One restriction to note is that we can implement a trait on a type only if at le
 
 See [Async][p-async]⮳.
 
-## See Also
+## See Also {#skip}
 
 [Traits (blog)][blog-traits]⮳.
 

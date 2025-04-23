@@ -1,4 +1,4 @@
-# Structs {#structs}
+# Structs
 
 {{#include structs.incl.md}}
 

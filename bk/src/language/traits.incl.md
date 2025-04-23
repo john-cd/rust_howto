@@ -1,6 +1,5 @@
 ||
 |--------|
-| [Traits][ex-language-traits] |
 | [Default Implementation][ex-language-default-implementation] |
 | [Supertraits][ex-language-supertraits] |
 | ["Newtype" Pattern][ex-language-newtype-pattern] |

@@ -1,4 +1,4 @@
-# Generics {#generics}
+# Generics
 
 {{#include generics.incl.md}}
 

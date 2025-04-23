@@ -1,4 +1,4 @@
-# Variables and Constants {#variables-and-constants}
+# Variables and Constants
 
 {{#include variables_and_constants.incl.md}}
 
