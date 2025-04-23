@@ -25,5 +25,5 @@ Notable crypto projects using Rust include:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[cryptocurrencies: write](https://github.com/john-cd/rust_howto/issues/278)
+FIXME
 </div>
