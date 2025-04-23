@@ -2,7 +2,7 @@
 |--------|
 | [Rust Installation][ex-language-rust-install] |
 | [Main Function][ex-language-main-function] |
-| [Data Types][ex-language-data-types] |
+| [Data Types][ex-language-data_types] |
 | [Variables and Constants][ex-language-variables-and-constants] |
 | [Ownership and Borrowing][ex-language-ownership_borrowing] |
 | [Control Flow][ex-language-control-flow] |

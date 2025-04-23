@@ -35,3 +35,6 @@
 [p-maps]: ../data-structures/maps.md
 [p-parse]: ../date-and-time/parse.md
 [p-unix]: # "../os_unix-apis/unix.md"
+[ex-error_handling-and_then]: error_handling/error_handling.md#and_then
+[ex-error_handling-convert-result-or-option-into-panic]: error_handling/error_handling.md#convert-result-or-option-into-panic
+[ex-error_handling-result]: error_handling/error_handling.md#result

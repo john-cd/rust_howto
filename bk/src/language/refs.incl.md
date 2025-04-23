@@ -42,6 +42,7 @@
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
 [ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership_borrowing]: ownership_borrowing.md
+[ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
 [ex-language-rust-install]: rust_install.md
 [ex-language-scalar-data-types]: data_types.md#scalar-data-types
