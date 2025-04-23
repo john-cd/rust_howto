@@ -1,5 +1,8 @@
 # TODOs
 
+- language section: write / finish
+- finish to add RBE link #29
+
 - Close NOW tickets: WIP
 - Go trough VS Code bookmarks (WSL): WIP
 - Go trough VS Code bookmarks (dev container): WIP
