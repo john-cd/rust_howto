@@ -14,8 +14,11 @@ publish = false
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-#anyhow = "1.0.95"
+anyhow = "1.0.95"
 inquire = "0.7.5"
+regex = "1.11.1"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
-#walkdir = "2.5.0"
+url = "2.5.4"
+walkdir = "2.5.0"
+xshell = "0.2.7"

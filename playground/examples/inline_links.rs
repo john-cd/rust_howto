@@ -14,21 +14,22 @@
 // - Skip text between ``` and ```.
 // - Move refdefs into central file.
 
-use std::fs;
-use std::path::{Path, PathBuf};
+#![allow(dead_code)]
+
+//use std::fs;
+use std::path::Path;
 use std::sync::LazyLock;
 
 use regex::Regex;
 use walkdir::WalkDir;
-use xshell::{Shell, cmd};
 
 static GITHUB: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r#"(^|[^"'([]https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'[])⮳]*)?"#).unwrap();
+    Regex::new(r#"^|[^"'](https?://github.com/)([^/ ]+/)([^/ ]+)(/[^"'\[\])⮳]*)?"#).unwrap()
 });
+// TODO use url
 
-static RE: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r#"(^|[^"'([]https?://)([^/\s]+)(/[^"'[])⮳]*)?"#).unwrap();
-});
+static RE: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r#"^|[^"'](https?://)([^/\s]+)(/[^"'\[\])⮳]*)?"#).unwrap());
 
 fn main() -> anyhow::Result<()> {
     let root = std::env::args()
@@ -38,11 +39,11 @@ fn main() -> anyhow::Result<()> {
 
     let files = WalkDir::new(root.join("src"))
         .into_iter()
-        .chain(WalkDir::new(root.join("drafts")).into_iter())
+        .chain(WalkDir::new(root.join("drafts")))
         .filter_map(|e| e.ok())
         .filter(|e| {
             e.file_type().is_file()
-                && e.path().extension().map_or(false, |ext| ext == "md")
+                && e.path().extension().is_some_and(|ext| ext == "md")
                 && !e.path().ends_with("refs.incl.md")
                 && !e.path().ends_with("SUMMARY.md")
                 && !e.path().to_string_lossy().contains("refs.md")
@@ -59,11 +60,12 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-fn process_file(file: &PathBuf) -> anyhow::Result<()> {
-    let content = fs::read_to_string(file)?;
-    let re_github = &*GITHUB;
-    let re_general = &*RE;
+fn process_file(_file: &Path) -> anyhow::Result<()> {
+    // let content = fs::read_to_string(file)?;
+    // let re_github = &*GITHUB;
+    // let re_general = &*RE;
 
     //let after = re.replace_all(before, "$m/$d/$y");
     // TODO
+    Ok(())
 }
