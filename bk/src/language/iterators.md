@@ -5,7 +5,7 @@
 [![Rust by example - iterators][book-rust-by-example-iterators-badge]][book-rust-by-example-iterators]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/iterators.rs:example}}
+{{#include ../../crates/language/tests/iterators/iterators.rs:example}}
 ```
 
 ## Related Topics {#skip}
