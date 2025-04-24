@@ -9,7 +9,7 @@
 [![Rust by example - if else][book-rust-by-example-if_else-badge]][book-rust-by-example-if_else]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/if_else.rs:example}}
+{{#include ../../crates/language/tests/control_flow/if_else.rs:example}}
 ```
 
 Also `else if <cond> { ... }`
@@ -19,7 +19,7 @@ Also `else if <cond> { ... }`
 [![Rust by example - loop][book-rust-by-example-loop-badge]][book-rust-by-example-loop]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/loop1.rs:example}}
+{{#include ../../crates/language/tests/control_flow/loop1.rs:example}}
 ```
 
 ## While {#while}
@@ -27,7 +27,7 @@ Also `else if <cond> { ... }`
 [![Rust by example - while][book-rust-by-example-while-badge]][book-rust-by-example-while]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/while1.rs:example}}
+{{#include ../../crates/language/tests/control_flow/while1.rs:example}}
 ```
 
 ## For {#for}
@@ -35,7 +35,7 @@ Also `else if <cond> { ... }`
 [![Rust by example - for][book-rust-by-example-for-badge]][book-rust-by-example-for]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/for1.rs:example}}
+{{#include ../../crates/language/tests/control_flow/for1.rs:example}}
 ```
 
 ## Related Topics {#skip}
