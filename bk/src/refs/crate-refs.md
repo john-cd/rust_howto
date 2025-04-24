@@ -1638,11 +1638,13 @@
 [c-crossbeam_utils-crates.io-badge]: https://img.shields.io/badge/crates.io-crossbeam--utils-crimson
 [c-crossbeam_utils-crates.io]: https://crates.io/crates/crossbeam_utils
 [c-crossbeam_utils-github-badge]: https://img.shields.io/badge/crossbeam--utils-steelblue?logo=github
+[c-crossbeam_utils-github]: https://github.com/crossbeam-rs/crossbeam
 [c-crossbeam_utils-github]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils
 [c-crossbeam_utils-lib.rs-badge]: https://img.shields.io/badge/lib.rs-crossbeam--utils-yellow
 [c-crossbeam_utils-lib.rs]: https://lib.rs/crates/crossbeam-utils
 [c-crossbeam_utils-website-badge]: https://img.shields.io/badge/crossbeam--utils-coral
 [c-crossbeam_utils-website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-utils/README.md
+[c-crossbeam_utils-website]: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils
 [c-crossbeam_utils]: https://docs.rs/crossbeam-utils
 [c-crossterm-badge]: https://img.shields.io/crates/v/crossterm?label=crossterm
 [c-crossterm-crates.io-badge]: https://img.shields.io/badge/crates.io-crossterm-crimson
