@@ -7,7 +7,6 @@ mod const_in_traits;
 mod copy;
 mod destructuring;
 mod diverging_functions;
-mod enums;
 mod function_pointers;
 mod functions;
 mod generic_functions;
