@@ -2,23 +2,20 @@
 // ANCHOR: example
 // The `use` keyword brings items into scope.
 // With the following, `File` can be used without prefix in the scope.
-// For code from an external crate, the absolute path begins with the crate name.
-// Here, the standard `std` library is an external crate.
+// For code from an external crate, the absolute path begins with the crate
+// name. Here, the standard `std` library is an external crate.
 use std::collections::HashMap;
-use std::fmt::Result;
-use std::fs::File;
-
 // Glob - all public objects in `collections` are now in scope.
 // Use sparingly.
 use std::collections::*;
-
+use std::fmt::Result;
+use std::fs::File;
 // Use `as` to define aliases, for example in case of name conflict
 use std::io::Result as IoResult;
-
-// You can combine multiple `use` lines together with { } as well
-use std::{cmp::Ordering, fmt};
 // The following is equivalent to `use std::io; use std::io::Write;`
 use std::io::{self, Write};
+// You can combine multiple `use` lines together with { } as well
+use std::{cmp::Ordering, fmt};
 
 mod a {
     pub mod b {
@@ -57,7 +54,7 @@ mod d {
 }
 // Absolute paths start with the literal `crate`.
 // You can try:
-//use crate::d;
+// use crate::d;
 
 mod e {
     pub mod f {
