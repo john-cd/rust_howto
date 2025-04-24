@@ -5,7 +5,7 @@
 [![Rust by example - macros][book-rust-by-example-macros-badge]][book-rust-by-example-macros]
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/macros.rs:example}}
+{{#include ../../crates/language/tests/macros/macros.rs:example}}
 ```
 
 ## References {#skip}

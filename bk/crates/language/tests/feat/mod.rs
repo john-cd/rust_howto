@@ -8,7 +8,6 @@ mod copy;
 mod destructuring;
 mod generic_traits;
 mod if_let;
-mod macros;
 mod main_fn;
 mod main_fn_with_result;
 mod match1;
