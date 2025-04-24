@@ -11,19 +11,19 @@ Prevent dangling references{{hi:Dangling references}}.
 `&'a mut i32` a mutable reference with an explicit lifetime
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/static_lifetime.rs:example}}
+{{#include ../../crates/language/tests/lifetimes/static_lifetime.rs:example}}
 ```
 
 The generic lifetime{{hi:Lifetimes}} `'a` will get the concrete lifetime that is equal to the smaller of the lifetimes of `x` and `y`:
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/generic_lifetime.rs:example}}
+{{#include ../../crates/language/tests/lifetimes/generic_lifetime.rs:example}}
 ```
 
 ## Lifetime Annotations in Struct Definitions and Methods {#lifetime-annotations}
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/lifetime.rs:example}}
+{{#include ../../crates/language/tests/lifetimes/lifetime.rs:example}}
 ```
 
 ## Related Topics {#skip}
