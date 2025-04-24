@@ -6,6 +6,8 @@ use std::io::Read;
 use anyhow::Result;
 use anyhow::anyhow;
 
+// The below example will tell how long the system has been running by opening the Unix file `/proc/uptime` and [parse][p-parse] the content to get the first number. It returns the uptime, unless there is an error.
+
 // Let's first define a function that returns a `Result`:
 
 /// Reads the system uptime.

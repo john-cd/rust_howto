@@ -163,14 +163,8 @@ To handle a `Result` in the `main` function, you may:
 - ignore the `Result` by assigning it to `let _ = ...` (rarely the right solution),
 - return a `Result` from the `main` function.
 
-The below example will tell how long the system has been running by opening the Unix file `/proc/uptime` and [parse][p-parse] the content to get the first number. It returns the uptime, unless there is an error.
-
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/tests/error/error_handling.rs:example}}
-```
-
-```rust,editable
-{{#include ../../../../crates/language/tests/feat/main_test.rs:example}}
 ```
 
 ## Avoid Discarding Errors During Error Conversions {#avoid-discarding-errors-during-error-conversions}
