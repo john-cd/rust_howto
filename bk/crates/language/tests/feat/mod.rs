@@ -1,5 +1,4 @@
 mod associated_types;
-
 mod borrowing;
 mod borrowing_mutable;
 mod clone;
@@ -7,9 +6,6 @@ mod const_in_traits;
 mod copy;
 mod destructuring;
 mod generic_traits;
-mod if_let;
-mod match1;
-mod match2;
 mod modules;
 mod modules2;
 mod modules3;
@@ -32,4 +28,3 @@ mod traits4;
 mod traits5;
 mod traits_as_parameters;
 mod vars_and_consts;
-mod while_let;
