@@ -1,15 +1,10 @@
 mod associated_types;
-
-
 mod const_in_traits;
-
 mod destructuring;
 mod generic_traits;
 mod newtype;
-
 mod rpit;
 mod shadowing;
-mod slices;
 mod structs;
 mod structs2;
 mod structs3;

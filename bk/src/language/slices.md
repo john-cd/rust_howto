@@ -19,7 +19,7 @@ A slice is a reference to a contiguous sequence of elements within a collection.
 ## Create Slices {#slices}
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/slices.rs:example}}
+{{#include ../../crates/language/tests/slices/slices.rs:example}}
 ```
 
 ## Useful Functions {#skip}
