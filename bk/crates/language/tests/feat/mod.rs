@@ -6,7 +6,6 @@ mod newtype;
 mod rpit;
 mod shadowing;
 mod trait_bounds;
-mod trait_objects;
 mod traits;
 mod traits2;
 mod traits3;
