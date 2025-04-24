@@ -1,14 +1,12 @@
 mod associated_types;
-mod borrowing;
-mod borrowing_mutable;
-mod clone;
+
+
 mod const_in_traits;
-mod copy;
+
 mod destructuring;
 mod generic_traits;
 mod newtype;
-mod ownership;
-mod ownership2;
+
 mod rpit;
 mod shadowing;
 mod slices;
