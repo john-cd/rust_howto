@@ -5,13 +5,13 @@
 [![Rust by example - Variable bindings][book-rust-by-example-variable_bindings-badge]][book-rust-by-example-variable_bindings]{{hi:Variables}} [![Rust by example - constants][book-rust-by-example-constants-badge]][book-rust-by-example-constants]{{hi:const}}
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/vars_and_consts.rs:example}}
+{{#include ../../crates/language/tests/variables_and_constants/vars_and_consts.rs:example}}
 ```
 
 ## Shadowing {#shadowing}
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/shadowing.rs:example}}
+{{#include ../../crates/language/tests/variables_and_constants/shadowing.rs:example}}
 ```
 
 {{hi:Shadowing}}
@@ -19,7 +19,7 @@
 ## Destructuring {#destructuring}
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/destructuring.rs:example}}
+{{#include ../../crates/language/tests/variables_and_constants/destructuring.rs:example}}
 ```
 
 Starting the name of a variable{{hi:Variables}} with an underscore silences unused variable{{hi:Unused variable}} warnings.{{hi:Destructuring}}
