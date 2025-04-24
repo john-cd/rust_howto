@@ -7,7 +7,7 @@
 
 - [Language](language/index.md)
   - [Rust Installation and First Steps](language/rust_install.md)
-  - [Main Function](language/main.md)
+  - [Main Function](language/entrypoint.md)
   - [Data Types](language/data_types.md)
   - [Variables and Constants](language/variables_and_constants.md)
   - [Ownership and Borrowing](language/ownership_borrowing.md)

@@ -422,7 +422,7 @@
 [ex-installation-rustup]: categories/development-tools/installation/rustup.md#rustup
 [ex-language-associated-types]: language/traits.md#associated-types
 [ex-language-async-and-traits]: language/traits.md#async-and-traits
-[ex-language-async-main-function]: language/main.md#async-main-function
+[ex-language-async-main-function]: language/entrypoint.md#async-main-function
 [ex-language-attributes]: language/attributes.md
 [ex-language-automatic-trait-derivation]: language/attributes.md#automatic-trait-derivation
 [ex-language-borrowing]: language/ownership_borrowing.md#borrowing
@@ -455,7 +455,7 @@
 [ex-language-lint-attributes]: language/attributes.md#lint-attributes
 [ex-language-loop]: language/control_flow.md#loop
 [ex-language-macros]: language/macros.md
-[ex-language-main-function]: language/main.md
+[ex-language-main-function]: language/entrypoint.md
 [ex-language-match]: language/match.md
 [ex-language-modules]: language/modules.md
 [ex-language-multiple-traits]: language/traits.md#multiple-traits

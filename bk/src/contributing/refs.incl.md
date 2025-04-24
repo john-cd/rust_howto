@@ -34,7 +34,7 @@
 [p-language]: ../language/index.md
 [p-learning]: ../links/learning.md
 [p-machine-learning]: # "../categories/science/machine_learning.md"
-[p-main]: ../language/main.md
+[p-main]: ../language/entrypoint.md
 [p-markdown]: ../categories/parser-implementations/markdown.md
 [p-modules]: ../language/modules.md
 [p-network-programming]: ../categories/network-programming/index.md

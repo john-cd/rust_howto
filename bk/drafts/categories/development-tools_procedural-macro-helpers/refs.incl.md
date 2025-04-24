@@ -11,6 +11,6 @@
 [p-configuration]: ../config/configuration.md
 [p-crates]: ../../crates/index.md
 [p-macros]: ../../../src/language/macros.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-streams]: ../../../src/categories/asynchronous/streams.md
 [p-wasm]: # "../wasm/index.md"

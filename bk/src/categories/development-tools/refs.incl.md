@@ -87,9 +87,7 @@
 [p-linux]: other/# "../../os_linux-apis/linux.md"
 [p-macos]: installation/# "../../os_macos-apis/macos.md"
 [p-macros]: other/../../../language/macros.md
-[p-main]: cargo/../../../language/main.md
-[p-main]: formatting/../../../language/main.md
-[p-main]: other/../../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-memory]: other/../../development-tools_profiling/memory_usage_analysis.md
 [p-modules]: compilation/../../../language/modules.md
 [p-option]: other/../../../standard-library/option.md

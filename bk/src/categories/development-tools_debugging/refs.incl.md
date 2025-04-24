@@ -38,7 +38,7 @@
 [p-formatting]: ../development-tools/formatting/formatting.md
 [p-log]: log.md
 [p-macros]: ../../language/macros.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-modules]: ../../language/modules.md
 [p-parse]: ../date-and-time/parse.md
 [p-parsing]: # "../parsing/index.md"

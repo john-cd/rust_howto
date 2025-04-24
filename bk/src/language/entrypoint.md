@@ -1,6 +1,6 @@
 # Main Function
 
-{{#include main.incl.md}}{{hi:main}}
+{{#include entrypoint.incl.md}}{{hi:main}}
 
 In Rust, the main function is special. It serves as the mandatory entry point for every executable program.
 The following is the most basic form of a main function:

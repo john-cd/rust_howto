@@ -46,7 +46,7 @@
 [p-hashmaps]: ../../standard-library/hashmaps.md
 [p-iterators]: ../../language/iterators.md
 [p-lazy-initialization]: ../memory-management/lazy_initialization.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.mdint.md
 [p-memory]: ../development-tools_profiling/memory.md
 [p-message-passing]: message_passing.md
 [p-multithreading]: explicit_threads.md

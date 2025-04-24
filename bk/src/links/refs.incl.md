@@ -34,7 +34,7 @@
 [p-linux]: # "../categories/os_linux-apis/linux.md"
 [p-log]: ../categories/development-tools_debugging/log.md
 [p-machine-learning]: # "../categories/science/machine_learning.md"
-[p-main]: ../language/main.md
+[p-main]: ../language/entrypoint.md
 [p-maintaining]: ../categories/development-tools_cargo-plugins/maintaining.md
 [p-middleware]: ../categories/web-programming_http-server/middleware.md
 [p-parse]: ../categories/date-and-time/parse.md

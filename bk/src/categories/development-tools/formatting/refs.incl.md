@@ -5,5 +5,5 @@
 [p-config]: ../../config/index.md
 [p-configuration]: ../../config/configuration.md
 [p-ides]: ../../text-editors/ides.md
-[p-main]: ../../../language/main.md
+[p-main]: ../../../language/entrypoint.md
 [p-toml]: ../../parser-implementations/toml.md

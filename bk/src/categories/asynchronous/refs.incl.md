@@ -33,7 +33,7 @@
 [p-futures]: futures.md
 [p-language]: ../../language/index.md
 [p-macros]: ../../language/macros.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-node]: ../development-tools_ffi/node.md
 [p-standard-library]: ../../standard-library/index.md
 [p-streams]: streams.md

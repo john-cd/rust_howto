@@ -35,7 +35,7 @@
 [p-gui]: index.md
 [p-html]: ../../../src/categories/parser-implementations/html.md
 [p-immediate-mode-gui]: immediate_mode_gui.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-option]: ../../standard-library/option.md
 [p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p-rendering]: ../rendering/index.md

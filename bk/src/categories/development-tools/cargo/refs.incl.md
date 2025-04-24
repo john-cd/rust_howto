@@ -5,4 +5,4 @@
 [ex-cargo-package-layout]: package_layout.md#package-layout
 [p-building]: ../../development-tools_cargo-plugins/building.md
 [p-cargo]: cargo.md
-[p-main]: ../../../language/main.md
+[p-main]: ../../../language/entrypoint.md

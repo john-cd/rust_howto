@@ -1,6 +1,6 @@
 [ex-language-associated-types]: traits.md#associated-types
 [ex-language-async-and-traits]: traits.md#async-and-traits
-[ex-language-async-main-function]: main.md#async-main-function
+[ex-language-async-main-function]: entrypoint.md#async-main-function
 [ex-language-attributes]: attributes.md
 [ex-language-automatic-trait-derivation]: attributes.md#automatic-trait-derivation
 [ex-language-borrowing]: ownership_borrowing.md#borrowing
@@ -33,7 +33,7 @@
 [ex-language-lint-attributes]: attributes.md#lint-attributes
 [ex-language-loop]: control_flow.md#loop
 [ex-language-macros]: macros.md
-[ex-language-main-function]: main.md
+[ex-language-main-function]: entrypoint.md
 [ex-language-match]: match.md
 [ex-language-modules]: modules.md
 [ex-language-multiple-traits]: traits.md#multiple-traits

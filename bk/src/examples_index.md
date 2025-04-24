@@ -868,7 +868,7 @@
 
 ### Main
 
-{{#include language/main.incl.md}}
+{{#include language/entrypoint.incl.md}}
 
 ### Match
 

@@ -16,6 +16,6 @@
 [p-building]: ../development-tools_cargo-plugins/building.md
 [p-hyper]: # "../web-programming_http-server/hyper.md"
 [p-json]: ../parser-implementations/json.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.md
 [p-server]: ../network-programming/server.md
 [p-url]: ../web-programming/url.md

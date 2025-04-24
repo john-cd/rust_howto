@@ -25,7 +25,7 @@
 [ex-command-line-interface-yansi]: ansi_terminal.md#yansi
 [p-cross-platform]: # "../../other/cross-platform/index.md"
 [p-data-structures]: ../data-structures/index.md
-[p-main]: ../../language/main.md
+[p-main]: ../../language/entrypoint.mdint.md
 [p-parsing]: # "../parsing/index.md"
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-rendering]: ../rendering/rendering.md
