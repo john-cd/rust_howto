@@ -7,7 +7,7 @@ mod const_in_traits;
 mod copy;
 mod destructuring;
 mod generic_lifetime;
-mod generic_structs;
+
 mod generic_traits;
 mod if_let;
 mod iterators;
