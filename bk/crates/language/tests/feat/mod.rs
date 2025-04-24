@@ -1,5 +1,5 @@
 mod associated_types;
-mod async_main;
+
 mod borrowing;
 mod borrowing_mutable;
 mod clone;
@@ -8,8 +8,6 @@ mod copy;
 mod destructuring;
 mod generic_traits;
 mod if_let;
-mod main_fn;
-mod main_fn_with_result;
 mod match1;
 mod match2;
 mod modules;
