@@ -19,7 +19,7 @@
 [`usize`][primitive-usize]{{hi:usize}}⮳ and [`isize`][primitive-isize]{{hi:isize}}⮳ are 32 or 64 bits, depending on the architecture of the computer.
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/scalar_data_types.rs:example}}
+{{#include ../../crates/language/tests/data_types/scalar_data_types.rs:example}}
 ```
 
 ### Handle Overflows {#overflow-handling}
@@ -43,7 +43,7 @@ Compound types can group multiple values into one type. Rust has two primitive c
 A [[vectors | Vector]] is a similar collection type provided by the [standard library][p-standard-library] that is allowed to grow or shrink in size.
 
 ```rust,editable
-{{#include ../../crates/language/tests/feat/compound_data_types.rs:example}}
+{{#include ../../crates/language/tests/data_types/compound_data_types.rs:example}}
 ```
 
 ## Type Aliases {#type-aliases}
