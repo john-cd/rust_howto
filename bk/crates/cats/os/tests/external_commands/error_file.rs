@@ -1,6 +1,5 @@
 // ANCHOR: example
 #![cfg(target_family = "unix")]
-use std::fs;
 use std::fs::File;
 use std::path::Path;
 use std::process::Command;
@@ -40,12 +39,12 @@ fn main() -> Result<(), std::io::Error> {
 #[test]
 fn test() -> anyhow::Result<()> {
     // Preparation.
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+    if !std::fs::exists("temp")? {
+        std::fs::create_dir("temp")?;
     }
     let path = Path::new("temp/out.txt");
     if path.exists() {
-        fs::remove_file(path)?;
+        std::fs::remove_file(path)?;
     }
     main()?;
     Ok(())
