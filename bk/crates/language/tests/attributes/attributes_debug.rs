@@ -11,7 +11,6 @@
 use std::thread;
 
 // This struct is public but is not documented:
-
 pub struct S;
 
 /// This function must be used.
@@ -28,7 +27,7 @@ fn main() {
     let x = 1;
     // This mutable variable is not used.
     let mut m = 2;
-    // The return value of this function is not used.
+    // The return value of this function is not used, depsite #[must_use]
     required();
     println!("Done!");
 }

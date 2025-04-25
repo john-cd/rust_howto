@@ -7,7 +7,12 @@ fn add(a: i32, b: i32) -> i32 {
 }
 
 fn main() {
+    // Use the return value of the function.
     println!("{}", add(1, 2));
+
+    // Uncomment the following to see the warning:
+    // "unused return value of `attributes_must_use::add` that must be used"
+    // WARNING: add(2, 3);
 }
 // ANCHOR_END: example
 

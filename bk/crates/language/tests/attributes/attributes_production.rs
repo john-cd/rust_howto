@@ -1,6 +1,5 @@
 // ANCHOR: example
-//! This crate demonstrates the use of attributes for production code.
-//! It includes examples of warnings, denials, and forbidden attributes.
+//! Typical attributes used in production code.
 
 // The `warn` attribute creates compiler warnings in case of violation.
 #![warn(unused, missing_debug_implementations, missing_docs, rust_2018_idioms)]
@@ -21,13 +20,13 @@
 // ERROR: unsafe fn unsafe_func() { println!("This function is marked as
 // unsafe."); }
 
-// ERROR
+// ERROR:
 // fn contains_a_unsafe_block() {
 //     unsafe {
 //     }
 // }
 
-/// This is the required documentation for S.
+/// This is the required documentation for `S`.
 /// We also had to derive `Debug` to avoid a warning.
 #[derive(Debug)]
 pub(crate) struct S;

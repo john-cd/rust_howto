@@ -8,9 +8,12 @@ use cfg_if::cfg_if;
 /// compilation based on configuration flags. This is particularly useful
 /// when you need to write code that behaves differently depending on the
 /// target platform, enabled features, or other build-time configurations.
-// First, add the dependency to your Cargo.toml:
-// [dependencies]
-// cfg-if = "1.0.0"
+///
+/// First, add the dependency to your Cargo.toml:
+/// ```toml
+/// [dependencies]
+/// cfg-if = "1.0.0"
+/// ```
 fn main() {
     // Basic usage example:
     cfg_if! {
