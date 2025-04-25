@@ -19,7 +19,9 @@ Inner attributes{{hi:Attributes}} `#![attr]` apply to the item that the attribut
 
 ## Lint Attributes {#lint-attributes}
 
-During early development, place the following attributes at the top of `main.rs` or `lib.rs`:
+List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`.
+
+During early development, consider placing the following attributes at the top of `main.rs` or `lib.rs`:
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/attributes_debug.rs:example}}
@@ -37,8 +39,6 @@ You also apply these attributes to specific [functions][p-functions]:
 {{#include ../../crates/language/tests/attributes/allow_dead_code.rs:example}}
 ```
 
-List of lint checks{{hi:Lint checks}}: `rustc -W help`. [`rustc`][rustc]{{hi:rustc}}⮳ also recognizes the tool lints for "clippy" and "rustdoc" e.g. `#![warn(clippy::pedantic)]`
-
 ## Automatically Derive Common Traits {#automatic-trait-derivation}
 
 See [Automatic derivation][p-automatic-derivation].
@@ -51,7 +51,7 @@ See [Automatic derivation][p-automatic-derivation].
 
 ## Mark as `deprecated` {#deprecated}
 
-`deprecated`
+When the Rust compiler sees code using an item marked as `#[deprecated]`, it will issue a warning during compilation.
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/attributes_deprecated.rs:example}}
@@ -65,11 +65,11 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../../crates/language/tests/attributes/conditional_compilation.rs:example}}
 ```
 
-### `cfg-if` {#cfg-if}
+### Conditionally compile code blocks with `cfg-if` {#cfg-if}
 
 [![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
 
-A macro to ergonomically define an item depending on a large number of `#[cfg]` parameters. Structured like an if-else chain, the first matching branch is the item that gets emitted.
+`cfg-if` is a macro to ergonomically define an item depending on a large number of `#[cfg]` parameters. It is structured like an "if-else" chain. The first matching branch is the item that gets emitted.
 
 ```rust,editable
 {{#include ../../crates/language/tests/attributes/cfg_if.rs:example}}
@@ -90,5 +90,5 @@ A macro to ergonomically define an item depending on a large number of `#[cfg]` 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[review NOW](https://github.com/john-cd/rust_howto/issues/985)
+[finish review](https://github.com/john-cd/rust_howto/issues/985)
 </div>
