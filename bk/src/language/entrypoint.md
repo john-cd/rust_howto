@@ -11,7 +11,7 @@ The following is the most basic form of a main function:
 
 It's typically found in the `src/main.rs` file of a binary crate project. Note that library crates don't need one.
 
-You can also have the `main` function return a `Result<(), E>` (where `E `is atype that implements the `std::error::Error` trait).
+You can also have the `main` function return a `Result<(), E>` (where `E `is a type that implements the `std::error::Error` trait).
 
 ```rust,editable
 {{#include ../../crates/language/tests/entrypoint/main_fn_with_result.rs:example}}
