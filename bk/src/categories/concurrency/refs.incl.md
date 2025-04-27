@@ -3,6 +3,7 @@
 [ex-concurrency-arc-mutex]: send_sync.md#arc-mutex
 [ex-concurrency-arc-swap]: atomics.md#arc-swap
 [ex-concurrency-atomics]: atomics.md#atomics
+[ex-concurrency-crossbeam-atomics]: atomics.md#crossbeam-atomics
 [ex-concurrency-crossbeam-channel]: message_passing.md#crossbeam-channel
 [ex-concurrency-crossbeam-queue]: concurrent_data_structures.md#crossbeam-queue
 [ex-concurrency-custom-parallel-tasks]: data_parallelism.md#custom-parallel-tasks

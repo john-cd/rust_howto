@@ -14,3 +14,10 @@
 [ex-code_structure-use-keyword-for-dependencies]: dependencies.md#use-keyword-for-dependencies
 [ex-code_structure-use-keyword]: use_keyword.md#use-keyword
 [ex-code_structure-visibility-rules]: modules.md#visibility-rules
+[p-functions]: ../language/functions.md
+[p-enums]: ../language/enums.md
+[p-option]: ../standard-library/option.md
+[p-rustup]: ../categories/development-tools/installation/rustup.md
+[p-standard-library]: ../standard-library/index.md
+[p-structs]: ../language/structs.md
+[p-traits]: ../language/traits.md

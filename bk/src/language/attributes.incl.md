@@ -5,4 +5,4 @@
 | [Mark as `must use`][ex-language-must-use] |
 | [Mark as `deprecated`][ex-language-deprecated] |
 | [Compile Conditionally][ex-language-conditional-compilation] |
-| [`cfg-if`][ex-language-cfg-if] |
+| [Conditionally compile code blocks with `cfg-if`][ex-language-cfg-if] |

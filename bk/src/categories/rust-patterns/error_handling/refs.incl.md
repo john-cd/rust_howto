@@ -10,7 +10,6 @@
 [ex-error_handling-miette]: error_customization.md#miette
 [ex-error_handling-obtain-backtrace]: error_handling.md#obtain-backtrace
 [ex-error_handling-question-mark-operator]: error_handling.md#question-mark-operator
-[ex-error_handling-recoverable-errors-with-result]: error_handling.md#recoverable-errors-with-result
 [ex-error_handling-result]: error_handling.md#result
 [ex-error_handling-thiserror]: error_customization.md#thiserror
 [ex-error_handling-unwrap-or-else]: error_handling.md#unwrap-or-else

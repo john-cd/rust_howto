@@ -15,7 +15,6 @@
 | [Attributes][ex-language-attributes] |
 | [Generics][ex-language-generics] |
 | [Lifetimes][ex-language-lifetimes] |
-| [Modules and `use` Keyword][ex-language-modules] |
 | [Pattern Matching, `if / while let`][ex-language-match] |
 | [Closures][ex-language-closures] |
 | [Iterators][ex-language-iterators] |
