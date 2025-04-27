@@ -89,7 +89,7 @@
 [p-macros]: other/../../../language/macros.md
 [p-main]: ../../language/entrypoint.md
 [p-memory]: other/../../development-tools_profiling/memory_usage_analysis.md
-[p-modules]: compilation/../../../language/modules.md
+[p-modules]: ../../code_structure/modules.md
 [p-option]: other/../../../standard-library/option.md
 [p-parsing]: versioning/# "../../parsing/index.md"
 [p-performance]: compilation/../../development-tools_cargo-plugins/performance.md

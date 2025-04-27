@@ -36,7 +36,7 @@
 [p-machine-learning]: # "../categories/science/machine_learning.md"
 [p-main]: ../language/entrypoint.md
 [p-markdown]: ../categories/parser-implementations/markdown.md
-[p-modules]: ../language/modules.md
+[p-modules]: ../code_structure/modules.md
 [p-network-programming]: ../categories/network-programming/index.md
 [p-protocols]: ../categories/aerospace_protocols/aerospace_protocols.md
 [p-science]: # "../categories/science/index.md"

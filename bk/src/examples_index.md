@@ -784,6 +784,26 @@
 
 {{#include categories/web-programming_http-server/static_website_generators.incl.md}}
 
+## Code Structure
+
+### Code Organization
+
+{{#include code_structure/code_organization.incl.md}}
+
+### Dependencies
+
+{{#include code_structure/dependencies.incl.md}}
+
+{{#include code_structure/index.incl.md}}
+
+### Modules
+
+{{#include code_structure/modules.incl.md}}
+
+### Use Keyword
+
+{{#include code_structure/use_keyword.incl.md}}
+
 ## Contributing
 
 ### API Documentation
@@ -840,6 +860,10 @@
 
 {{#include language/data_types.incl.md}}
 
+### Entrypoint
+
+{{#include language/entrypoint.incl.md}}
+
 ### Enums
 
 {{#include language/enums.incl.md}}
@@ -866,17 +890,9 @@
 
 {{#include language/macros.incl.md}}
 
-### Main
-
-{{#include language/entrypoint.incl.md}}
-
 ### Match
 
 {{#include language/match.incl.md}}
-
-### Modules
-
-{{#include language/modules.incl.md}}
 
 ### Ownership Borrowing
 

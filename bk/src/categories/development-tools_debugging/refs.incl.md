@@ -39,7 +39,7 @@
 [p-log]: log.md
 [p-macros]: ../../language/macros.md
 [p-main]: ../../language/entrypoint.md
-[p-modules]: ../../language/modules.md
+[p-modules]: ../../code_structure/modules.md
 [p-parse]: ../date-and-time/parse.md
 [p-parsing]: # "../parsing/index.md"
 [p-toml]: ../parser-implementations/toml.md

@@ -22,7 +22,7 @@
 [p-json]: ../../../src/categories/parser-implementations/json.md
 [p-memory-allocation]: ../../../src/categories/memory-management/memory_allocation.md
 [p-mocking]: ../../../src/categories/development-tools_testing/mocking.md
-[p-modules]: ../../../src/language/modules.md
+[p-modules]: ../../../src/code_structure/modules.md
 [p-parsing]: ../../categories/parsing/parsing.md
 [p-performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p-programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md

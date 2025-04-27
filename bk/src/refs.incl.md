@@ -46,6 +46,22 @@
 [ex-cargo-crate-registries]: categories/development-tools/cargo/crate_registries.md#crate-registries
 [ex-cargo-crates_io]: categories/development-tools/cargo/crate_registries.md#crates_io
 [ex-cargo-package-layout]: categories/development-tools/cargo/package_layout.md#package-layout
+[ex-code_structure-binary-crate-organization]: code_structure/code_organization.md#binary-crate-organization
+[ex-code_structure-bring-function-in-scope]: code_structure/use_keyword.md#bring-function-in-scope
+[ex-code_structure-bring-item-from-external-crate-into-scope]: code_structure/use_keyword.md#bring-item-from-external-crate-into-scope
+[ex-code_structure-bring-struct-or-enum-in-scope]: code_structure/use_keyword.md#bring-struct-or-enum-in-scope
+[ex-code_structure-code-files]: code_structure/modules.md#code-files
+[ex-code_structure-complex-library-code-organization]: code_structure/code_organization.md#complex-library-code-organization
+[ex-code_structure-dependencies]: code_structure/dependencies.md#dependencies
+[ex-code_structure-flatten-module-hierarchy]: code_structure/code_organization.md#flatten-module-hierarchy
+[ex-code_structure-large-projects]: code_structure/code_organization.md#large-projects
+[ex-code_structure-less-common-code-organization]: code_structure/code_organization.md#less-common-code-organization
+[ex-code_structure-modules]: code_structure/modules.md#modules
+[ex-code_structure-paths]: code_structure/modules.md#paths
+[ex-code_structure-simple-library-code-organization]: code_structure/code_organization.md#simple-library-code-organization
+[ex-code_structure-use-keyword-for-dependencies]: code_structure/dependencies.md#use-keyword-for-dependencies
+[ex-code_structure-use-keyword]: code_structure/use_keyword.md#use-keyword
+[ex-code_structure-visibility-rules]: code_structure/modules.md#visibility-rules
 [ex-command-line-interface-ansi_term-basic]: categories/command-line-interface/ansi_terminal.md#ansi-terminal
 [ex-command-line-interface-ansiterm]: categories/command-line-interface/ansi_terminal.md#ansiterm
 [ex-command-line-interface-anstream]: categories/command-line-interface/ansi_terminal.md#anstream
@@ -95,6 +111,7 @@
 [ex-concurrency-arc-mutex]: categories/concurrency/send_sync.md#arc-mutex
 [ex-concurrency-arc-swap]: categories/concurrency/atomics.md#arc-swap
 [ex-concurrency-atomics]: categories/concurrency/atomics.md#atomics
+[ex-concurrency-crossbeam-atomics]: categories/concurrency/atomics.md#crossbeam-atomics
 [ex-concurrency-crossbeam-channel]: categories/concurrency/message_passing.md#crossbeam-channel
 [ex-concurrency-crossbeam-queue]: categories/concurrency/concurrent_data_structures.md#crossbeam-queue
 [ex-concurrency-custom-parallel-tasks]: categories/concurrency/data_parallelism.md#custom-parallel-tasks
@@ -388,7 +405,6 @@
 [ex-error_handling-miette]: categories/rust-patterns/error_handling/error_customization.md#miette
 [ex-error_handling-obtain-backtrace]: categories/rust-patterns/error_handling/error_handling.md#obtain-backtrace
 [ex-error_handling-question-mark-operator]: categories/rust-patterns/error_handling/error_handling.md#question-mark-operator
-[ex-error_handling-recoverable-errors-with-result]: categories/rust-patterns/error_handling/error_handling.md#recoverable-errors-with-result
 [ex-error_handling-result]: categories/rust-patterns/error_handling/error_handling.md#result
 [ex-error_handling-thiserror]: categories/rust-patterns/error_handling/error_customization.md#thiserror
 [ex-error_handling-unwrap-or-else]: categories/rust-patterns/error_handling/error_handling.md#unwrap-or-else
@@ -457,7 +473,6 @@
 [ex-language-macros]: language/macros.md
 [ex-language-main-function]: language/entrypoint.md
 [ex-language-match]: language/match.md
-[ex-language-modules]: language/modules.md
 [ex-language-multiple-traits]: language/traits.md#multiple-traits
 [ex-language-must-use]: language/attributes.md#must-use
 [ex-language-mutable-reference]: language/ownership_borrowing.md#mutable-reference
@@ -466,10 +481,10 @@
 [ex-language-ownership]: language/ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: language/ownership_borrowing.md
 [ex-language-return-position-impl-trait]: language/traits.md#return-position-impl-trait
-[ex-language-rust-install]: language/rust_install.md
+[ex-language-rust-install]: language/rust_install.md#rust-install
 [ex-language-scalar-data-types]: language/data_types.md#scalar-data-types
 [ex-language-shadowing]: language/variables_and_constants.md#shadowing
-[ex-language-slices]: language/slices.md
+[ex-language-slices]: language/slices.md#slices
 [ex-language-structs]: language/structs.md
 [ex-language-strum]: language/enums.md#strum
 [ex-language-supertraits]: language/traits.md#supertraits
@@ -478,7 +493,6 @@
 [ex-language-traits-as-parameters]: language/traits.md#traits-as-parameters
 [ex-language-traits]: language/traits.md
 [ex-language-type-aliases]: language/data_types.md#type-aliases
-[ex-language-use-keyword]: language/modules.md#use-keyword
 [ex-language-variables-and-constants]: language/variables_and_constants.md
 [ex-language-while-let]: language/match.md#while-let
 [ex-language-while]: language/control_flow.md#while

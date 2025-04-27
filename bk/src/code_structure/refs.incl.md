@@ -1,0 +1,16 @@
+[ex-code_structure-binary-crate-organization]: code_organization.md#binary-crate-organization
+[ex-code_structure-bring-function-in-scope]: use_keyword.md#bring-function-in-scope
+[ex-code_structure-bring-item-from-external-crate-into-scope]: use_keyword.md#bring-item-from-external-crate-into-scope
+[ex-code_structure-bring-struct-or-enum-in-scope]: use_keyword.md#bring-struct-or-enum-in-scope
+[ex-code_structure-code-files]: modules.md#code-files
+[ex-code_structure-complex-library-code-organization]: code_organization.md#complex-library-code-organization
+[ex-code_structure-dependencies]: dependencies.md#dependencies
+[ex-code_structure-flatten-module-hierarchy]: code_organization.md#flatten-module-hierarchy
+[ex-code_structure-large-projects]: code_organization.md#large-projects
+[ex-code_structure-less-common-code-organization]: code_organization.md#less-common-code-organization
+[ex-code_structure-modules]: modules.md#modules
+[ex-code_structure-paths]: modules.md#paths
+[ex-code_structure-simple-library-code-organization]: code_organization.md#simple-library-code-organization
+[ex-code_structure-use-keyword-for-dependencies]: dependencies.md#use-keyword-for-dependencies
+[ex-code_structure-use-keyword]: use_keyword.md#use-keyword
+[ex-code_structure-visibility-rules]: modules.md#visibility-rules

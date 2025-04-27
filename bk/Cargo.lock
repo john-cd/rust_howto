@@ -5667,6 +5667,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "code_structure"
+version = "0.1.2"
+
+[[package]]
 name = "codee"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

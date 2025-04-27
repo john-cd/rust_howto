@@ -3,6 +3,7 @@ resolver = "3"
 members = [
     "crates/about",
     "crates/cats/*",
+    "crates/code_structure",
     "crates/language",
     "crates/other",
     "crates/standard_library",
@@ -11,6 +12,7 @@ exclude = []
 default-members = [
     "crates/about",
     "crates/cats/*",
+    "crates/code_structure",
     "crates/language",
     "crates/other",
     "crates/standard_library",

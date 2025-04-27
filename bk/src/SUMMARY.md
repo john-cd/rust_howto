@@ -21,11 +21,16 @@
   - [Attributes](language/attributes.md)
   - [Generics](language/generics.md)
   - [Lifetimes](language/lifetimes.md)
-  - [Modules and `use` Keyword](language/modules.md)
   - [Pattern Matching, `if / while let`](language/match.md)
   - [Closures](language/closures.md)
   - [Iterators](language/iterators.md)
   - [Macros](language/macros.md)
+
+- [Code Structure](code_structure/index.md)
+  - [Modules and Paths](code_structure/modules.md)
+  - [`use` Keyword](code_structure/use_keyword.md)
+  - [Dependencies](code_structure/dependencies.md)
+  - [Code Organization](code_structure/code_organization.md)
 
 - [Standard Library](standard-library/index.md)
   - [Option](standard-library/option.md)

@@ -1,0 +1,257 @@
+
+# Code Organization
+
+{{#include code_organization.incl.md}}
+
+## Code Organization for a Simple Library {#simple-library-code-organization}
+
+A simple library crate may consist of its crate root (e.g. the `lib.rs` file) and several modules in separate files.
+
+```txt
+- src
+  - lib.rs
+  - module1.rs
+  - module2.rs
+  - ...
+Cargo.toml
+```
+
+where `lib.rs` includes the modules with `mod` statements:
+
+```rust,noplayground
+pub mod module1; // Public modules, so that the contents may be accessible from outside the crate.
+pub mod module2;
+
+// ...
+```
+
+You may also keep the modules private and reexport specific items (or modules) with a `pub use` statement:
+
+```rust,noplayground
+mod module1;
+mod module2;
+
+pub use module1::public_function;
+pub use module2::Struct1;
+```
+
+It is common for `lib.rs` to only contain `mod` and `pub use` statements, and nothing else.
+
+In Rust, there are no requirements to store a single `struct` or `enum` and associated code per file.
+
+On the contrary, it is idiomatic for a module to contain multiple functions, `struct` or `enum` declarations, and `impl` blocks with related functionality. For example, you may write all configuration-related items in the `config` module.
+
+## Code Organization for a Complex Library {#complex-library-code-organization}
+
+As needs grow, you may create nest modules:
+
+```txt
+- src
+  - lib.rs
+  - module1/         # First-level module.
+    - mod.rs
+    - submodule1.rs  # Nested submodule.
+    - submodule2.rs  # Nested submodule.
+  - module2.rs
+  - ...
+Cargo.toml
+```
+
+where `mod.rs` contains:
+
+```rust,noplayground
+pub mod submodule1;
+pub mod submodule2;
+
+// ...
+```
+
+Code elsewhere can then refer to public items in the submodules:
+
+```rust,noplayground
+// In `module2.rs`:
+use super::module1::submodule1;
+use super::module1::submodule2::Struct1;
+
+fn a_func() {
+  submodule1::public_function();
+
+  let _struct = Struct1;
+}
+```
+
+Nested folders are also possible:
+
+```txt
+- src
+  - lib.rs
+  - module1/
+    - mod.rs
+    - submodule1/
+      - mod.rs
+  - module2.rs
+  - ...
+```
+
+## Less Common Code Organizations {#less-common-code-organization}
+
+Less commonly, you may see:
+
+```txt
+- src
+  - lib.rs
+  - module1.rs
+  - module1/
+    - submodule1.rs
+    - submodule2.rs
+  - module2.rs
+  - ...
+```
+
+where the module is a file and its submodules are under a folder named after the module.
+
+Finally, `module1` can also be defined inline in `lib.rs` - especially if the module only contains `mod` / `pub use` statements.
+
+```rust,noplayground
+mod module1 {
+  pub mod submodule1;
+  pub mod submodule2;
+}
+```
+
+## Flatten the Module Hierarchy using Reexports {#flatten-module-hierarchy}
+
+Instead of working with deeply-nested modules, it is convenient to keep submodules private and reexport items of interest instead.
+
+For example, you may write in `module1`:
+
+```rust,noplayground
+mod submodule1;
+mod submodule2;
+
+// Reexport a function and a struct.
+pub use submodule1::public_function;
+pub use submodule2::Struct1;
+```
+
+This flattens the module hierarchy and hides implementation details.
+Code in a parent module then refers to:
+
+```rust,editable,noplayground
+use module1::public_function; // Apppears as if it were defined in `module1`.
+use module1::Struct1;
+```
+
+## Code Organization for Binary Crates {#binary-crate-organization}
+
+Similarily, a simple binary crate may consist of a crate root (e.g. `main.rs`) and several modules in separate files and/or folders.
+
+```txt
+- src
+  - main.rs
+  - module1.rs
+  - module2
+    - mod.rs
+    - submodule1.rs
+    - submodule2.rs
+Cargo.toml
+```
+
+Commonly, `main.rs` is kept minimal and refers to a library crate in the same `src` folder:
+
+```txt
+- src
+  - lib.rs     # Library crate root.
+  - main.rs    # Binary crate root.
+  - module1.rs # Module of the library.
+  - ...
+- tests
+- examples
+Cargo.toml
+```
+
+In that case, `main.rs` imports the contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function. This code organization exposes a public library crate API, which has the advantages of being more easily testable (via integration tests in the `tests` folder). However, if the crate is published on `crates.io`, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
+
+A variation of this code organization puts the command-line argument parsing (or UI) code in a module under `main.rs` and keeps the non-CLI code in the associated library crate.
+
+```rust,noplayground
+mod cli; // Command-line argument parsing.
+
+use crate_name::lib_module::*; // Business logic in the library crate.
+
+fn main() {
+  // ...
+}
+```
+
+## Organize Large Projects using a Workspace {#large-projects}
+
+If your project is huge, you may want to split it into several crates, which you then depend on in your main project. For example, you may create a `xyz-core` crate, a `xyz-derive` crate for procedural macros that let you `#[derive(...)]` traits defined in your core crate, a `xyz-utils` crate, and a `xyz` main crate that binds all subcrates together.
+
+Each crate, of course, should be further split into modules (and submodules) as described above.
+
+You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same `Cargo.lock` and output (e.g. `target`) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml` file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Pratically speaking, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
+
+A typical organization may look as follows:
+
+```txt
+# The root folder of your worskpace.
+- lib1/ # First package subfolder (library crate).
+  - src/
+    - lib.rs
+    - ...
+  - tests/ # Optional integration tests and examples.
+  - examples/
+  - Cargo.toml
+- lib2/ # Second package (library crate + several optional binary crates).
+  - src/
+    - lib.rs
+    - bin
+      - tool1.rs # Optional binary, perhaps a tool for e.g. database migration.
+      - tool2.rs
+  - ...
+  - Cargo.toml
+- main_lib
+  - src/
+    - lib.rs  # Often, a main library crate that reexports individual libraries.
+    - main.rs # Optional binary that uses the library, e.g. a CLI tool.
+  - ...
+- ...
+- target/    # Shared output directory.
+- Cargo.toml # Worskpace Cargo.toml that references the packages.
+- Cargo.lock # Shared lock file (and dependencies).
+```
+
+You may use feature flags in the main library crate's `Cargo.toml` to selectively build subcrates and their dependencies:
+
+```toml
+[dependencies]
+lib1 = { path = "../lib1" }
+lib2 = { path = "../lib2", optional = true }
+
+[features]
+feature2 = ["dep:lib2"]
+```
+
+In projects that mix multiple technologies (a web project or a `mdbook` that combines markdown and Rust code, like this book), it is common to create a "crates" subdirectory that contains all Rust packages.
+
+The main `Cargo.toml` file in the root of the workspace should contain a 'workspace' section that references its packages:
+
+```toml
+[workspace]
+members = [ "lib1", "lib2", "main_lib" ]
+```
+
+Confusingly, a worskpace `Cargo.toml` can also include a 'root package' in addition to members. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
+
+
+## Related Topics {#skip}
+
+- [[package_layout | Package Layout]].
+
+{{#include refs.incl.md}}
+{{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+TODO polish
+</div>
