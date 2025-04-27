@@ -4,8 +4,8 @@
 // IDIOM: we imported the `struct` itself, not its parent module.
 use std::collections::HashMap;
 
-// `HashMap` is declared in the standard library (`std`), which is an external crate.
-// We therefore prefix the path with the crate's name.
+// `HashMap` is declared in the standard library (`std`), which is an external
+// crate. We therefore prefix the path with the crate's name.
 
 fn main() {
     // We now refer to `HashMap` without using its full path.
