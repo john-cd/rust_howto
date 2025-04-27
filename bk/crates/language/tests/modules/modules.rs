@@ -1,80 +1,65 @@
-#![allow(unused_imports, dead_code)]
 // ANCHOR: example
-// The `use` keyword brings items into scope.
-// With the following, `File` can be used without prefix in the scope.
-// For code from an external crate, the absolute path begins with the crate
-// name. Here, the standard `std` library is an external crate.
-use std::collections::HashMap;
-// Glob - all public objects in `collections` are now in scope.
-// Use sparingly.
-use std::collections::*;
-use std::fmt::Result;
-use std::fs::File;
-// Use `as` to define aliases, for example in case of name conflict
-use std::io::Result as IoResult;
-// The following is equivalent to `use std::io; use std::io::Write;`
-use std::io::{self, Write};
-// You can combine multiple `use` lines together with { } as well
-use std::{cmp::Ordering, fmt};
 
-mod a {
-    pub mod b {
-        pub fn fn_in_b() {
-            println!("in b!");
+// Define a module inline.
+// Use the path syntax `module_name::item_name` to access items within.
+mod my_module {
+    // Items defined inside the module are private by default.
+    fn private_function() {
+        println!("Called private_function inside my_module.");
+    }
+
+    // Use `pub` to make items visible outside the module.
+    pub fn public_function() {
+        println!("Called public_function inside my_module.");
+        private_function(); // One can use / call private items within the same module.
+    }
+
+    // Define a nested module.
+    // Nested modules are private by default.
+    // We make both the module and its inner function public to make the latter
+    // accessible.
+    pub mod nested_public_module {
+        pub fn nested_public() {
+            println!("Called nested_public inside nested_module.");
         }
     }
-    pub struct A;
-}
-// For internal code, a relative path starts from the current module and uses
-// `self`, or an identifier in the current module.
-use self::a::b;
-// b is now in scope
 
-// Try the simpler version:
-// use a::b;
+    // Private nested module.
+    mod nested_private_module {
+        #[allow(dead_code)]
+        pub fn nested_public_in_private_module() {}
+    }
 
-fn do_something() {
-    b::fn_in_b();
-}
-
-mod c {
-    // We can construct relative paths that begin in the parent module,
-    // rather than the current module or the crate root, by using `super`
-    // at the start of the path.
-    use super::a; // `a` is now in scope.
-
-    pub fn do_something_else() {
-        let _a = a::A;
-        println!("Do something else.");
+    // This function calls another in its parent module.
+    pub fn call_func_in_parent_module() {
+        // `super` in a path refers to the parent module.
+        super::private_in_parent_module();
     }
 }
 
-mod d {
-    pub fn let_try_this() {}
+// This (private) function can be called from child modules.
+fn private_in_parent_module() {
+    println!("Called private_in_parent_module.");
 }
-// Absolute paths start with the literal `crate`.
-// You can try:
-// use crate::d;
-
-mod e {
-    pub mod f {
-        pub fn try_that() {
-            println!("Try that.");
-        }
-    }
-}
-// `pub use` re-exports the `f` module from the
-// root module, thus external code can use the path
-// `<crate_name>::f::try_that()` instead of
-// `<crate_name>::e::f::try_that()`.
-pub use e::f;
 
 fn main() {
-    do_something();
-    c::do_something_else();
-    // You can of course access the item made public by `pub use` from your
-    // module
-    f::try_that();
+    // Call a public function within a child module.
+    // Note the relative path syntax: `<module_name>::<item_name>`.
+    my_module::public_function();
+
+    // my_module::private_function(); // ERROR: private_function is private.
+
+    // Paths can include multiple segments to reach nested modules.
+    my_module::nested_public_module::nested_public();
+
+    // Note that both the nested module and its inner function had to be public
+    // to be reachable:
+    // my_module::nested_private_module::nested_public();
+    // ERROR: module `nested_private_module` is private.
+
+    // `call_func_in_parent_module` calls a (private) function
+    // in its parent module.
+    my_module::call_func_in_parent_module();
 }
 // ANCHOR_END: example
 
