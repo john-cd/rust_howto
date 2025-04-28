@@ -12,8 +12,8 @@ fn main() {
     // Use of a deprecated item.
     // Normally, we would get a warning abou using a deprecated function.
     foo();
-    // In this case, we used the module-wide `#![allow(deprecated)]` attribute
-    // (first line of the example) to suppress the warning.
+    // In this case, the module-wide `#![allow(deprecated)]` attribute
+    // (first line of the example) suppresses the warning.
 }
 // ANCHOR_END: example
 

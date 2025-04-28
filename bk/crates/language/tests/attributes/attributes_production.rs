@@ -1,5 +1,8 @@
 // ANCHOR: example
-//! Typical attributes used in production code.
+//! Typical lint attributes for production code.
+//!
+//! The following is a set of attributes commonly used in production
+//! code to enforce good practices and catch potential issues early.
 
 // The `warn` attribute creates compiler warnings in case of violation.
 #![warn(unused, missing_debug_implementations, missing_docs, rust_2018_idioms)]
@@ -17,8 +20,9 @@
 
 // WARNING: fn dead_code() { println!("This function is not used!"); }
 
-// ERROR: unsafe fn unsafe_func() { println!("This function is marked as
-// unsafe."); }
+// ERROR: unsafe fn unsafe_func() {
+// println!("This function is marked as unsafe.");
+// }
 
 // ERROR:
 // fn contains_a_unsafe_block() {

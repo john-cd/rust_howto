@@ -43,7 +43,7 @@ fn main() {
 
     println!("Functionality: {}", get_functionality());
 
-    // Nested example
+    // Nested example.
     cfg_if! {
         if #[cfg(target_arch = "x86_64")] {
             cfg_if! {
