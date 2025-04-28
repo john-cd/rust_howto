@@ -111,5 +111,5 @@ Note the following:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[modules: finish NOW](https://github.com/john-cd/rust_howto/issues/553)
+TODO final review
 </div>
