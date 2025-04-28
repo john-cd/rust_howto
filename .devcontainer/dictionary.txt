@@ -2761,3 +2761,5 @@ subdirectories
 subdirectory
 IoResult
 func
+autogenerate
+unexported
