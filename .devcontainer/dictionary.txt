@@ -2748,3 +2748,8 @@ linters
 Unionfind
 AtomicCells
 entrypoint
+namespaces
+submodules
+subcrates
+subfolder
+subdirectory

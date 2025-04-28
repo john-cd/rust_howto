@@ -80,7 +80,7 @@ The following demonstrates the use of (inline) modules, paths to access items wi
 {{#include ../../crates/code_structure/tests/modules/modules.rs:example}}
 ```
 
-## Split your Code amongst Multiple Files and Folders {#code-files}
+## Split your Code among Several Files and Folders {#code-files}
 
 Each crate has a crate root file{{hi:Crate root file}} (typically `main.rs` or `lib.rs` in the `src` folder). You may write all your code in that file, if it is very short. For non-trivial projects, you will write your code in multiple files and/or folders.
 

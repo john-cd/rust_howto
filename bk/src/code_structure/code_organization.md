@@ -144,7 +144,7 @@ use module1::Struct1;
 
 ## Code Organization for Binary Crates {#binary-crate-organization}
 
-Similarily, a simple binary crate may consist of a crate root (e.g. `main.rs`) and several modules in separate files and/or folders.
+Similarly, a simple binary crate may consist of a crate root (e.g. `main.rs`) and several modules in separate files and/or folders.
 
 ```txt
 - src
@@ -190,12 +190,12 @@ If your project is huge, you may want to split it into several crates, which you
 
 Each crate, of course, should be further split into modules (and submodules) as described above.
 
-You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same `Cargo.lock` and output (e.g. `target`) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml` file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Pratically speaking, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
+You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same `Cargo.lock` and output (e.g. `target`) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml` file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
 
 A typical organization may look as follows:
 
 ```txt
-# The root folder of your worskpace.
+# The root folder of your workspace.
 - lib1/ # First package subfolder (library crate).
   - src/
     - lib.rs
@@ -218,7 +218,7 @@ A typical organization may look as follows:
   - ...
 - ...
 - target/    # Shared output directory.
-- Cargo.toml # Worskpace Cargo.toml that references the packages.
+- Cargo.toml # Workspace Cargo.toml that references the packages.
 - Cargo.lock # Shared lock file (and dependencies).
 ```
 
@@ -242,7 +242,7 @@ The main `Cargo.toml` file in the root of the workspace should contain a 'worksp
 members = [ "lib1", "lib2", "main_lib" ]
 ```
 
-Confusingly, a worskpace `Cargo.toml` can also include a 'root package' in addition to members. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
+Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to members. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
 
 
 ## Related Topics {#skip}
