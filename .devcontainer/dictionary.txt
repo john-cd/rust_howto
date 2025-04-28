@@ -2747,9 +2747,15 @@ ArcInner
 linters
 Unionfind
 AtomicCells
+AtomicCell
 entrypoint
 namespaces
+namespace
 submodules
+submodule
 subcrates
+subcrates
+subfolders
 subfolder
+subdirectories
 subdirectory
