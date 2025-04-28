@@ -18,11 +18,21 @@ To declare a module, use the `mod` keyword.
 
 A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in other files, by inserting a semicolon after its declaration: `mod <module_name>;`.
 
+```rust,noplayground
+mod a_file; // Refers to `a_file.rs` or `a_file/mod.rs`.
+
+mod inline_module {
+  pub fn some_function() {
+    // ...
+  }
+}
+```
+
 ## Paths {#paths}
 
 Paths let you access items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. There are two main kinds of paths:
 
-- Relative paths start from the current module you are writing code in.
+Relative paths start from the current module you are writing code in.
 
 ```rust,noplayground
 /// Inline module declaration.
@@ -58,13 +68,15 @@ fn in_parent_module() {
 }
 ```
 
-- Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
+Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
 
 ```rust,editable,noplayground
+// This absolute path refers to `some_function` located inside `submodule_b`,
+// which is inside `module_a`, starting from the crate root.
 crate::module_a::submodule_b::some_function();
 ```
 
-This absolute path refers to `some_function` located inside `submodule_b`, which is inside `module_a`, starting from the crate root.Absolute paths are rarely seen in practice but useful for disambiguation, when a module name is the same than an external dependency.
+Absolute paths are rarely seen in practice but useful for disambiguation, when a module name is the same than an external dependency.
 
 ## Visibility Rules {#visibility-rules}
 

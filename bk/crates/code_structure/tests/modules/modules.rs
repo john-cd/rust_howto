@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 // Define a module inline.
 // Use the path syntax `module_name::item_name` to access items within.
 mod my_module {
