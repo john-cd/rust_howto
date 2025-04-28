@@ -68,7 +68,7 @@ When the Rust compiler sees code using an item marked as `#[deprecated]`, it wil
 {{#include ../../crates/language/tests/attributes/attributes_deprecated.rs:example}}
 ```
 
-## Lint Check Attributes {#lint-attributes}
+## Control Compilation Diagnostic Messages with Lint Check Attributes {#lint-attributes}
 
 The following attributes are used for controlling diagnostic messages (lints) during compilation.
 Replace `...` by the lint name e.g., `dead_code` to detects unused, unexported items.
@@ -98,7 +98,7 @@ During early development, consider placing the following lint attributes at the 
 {{#include ../../crates/language/tests/attributes/attributes_debug.rs:example}}
 ```
 
-### Enforce Good Practices and Catch Issues Early {#production-code-attributes}
+### Enforce Good Practices and Catch Issues Early with Lint Attributes {#production-code-attributes}
 
 For production-ready code{{hi:Production-ready code}}, replace the above by the following (or similar):
 
@@ -106,7 +106,7 @@ For production-ready code{{hi:Production-ready code}}, replace the above by the 
 {{#include ../../crates/language/tests/attributes/attributes_production.rs:example}}
 ```
 
-## Compile Conditionally {#conditional-compilation}
+## Compile Code Conditionally {#conditional-compilation}
 
 Conditional compilation includes or excludes specific pieces of your code based on conditions that are checked at compile time.
 Use the `#[cfg(...)]` attribute to write code that only compiles for a specific operating system or architecture (like x86_64, ARM).
@@ -117,7 +117,7 @@ Use the `#[cfg(...)]` attribute to write code that only compiles for a specific 
 
 See also [Conditional compilation][book-rust-reference-conditional-compilation]⮳.
 
-### Conditionally compile code blocks with `cfg-if` {#cfg-if}
+### Conditionally Compile Code Blocks with `cfg-if` {#cfg-if}
 
 [![cfg-if][c-cfg_if-badge]][c-cfg_if] [![cfg-if-crates.io][c-cfg_if-crates.io-badge]][c-cfg_if-crates.io] [![cfg-if-github][c-cfg_if-github-badge]][c-cfg_if-github] [![cfg-if-lib.rs][c-cfg_if-lib.rs-badge]][c-cfg_if-lib.rs]{{hi:cfg-if}}
 
@@ -137,7 +137,7 @@ See [Automatic derivation][p-automatic-derivation].
 - [[rust-patterns | Rust Patterns]].
 - [[testing | Testing]].
 
-## References
+## References {#skip1}
 
 - [Attributes reference][book-rust-reference-attributes]⮳.
 
@@ -145,7 +145,6 @@ See [Automatic derivation][p-automatic-derivation].
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/985)
-automatic derivation location
-https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html
+TODO automatic derivation location
+insert https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html
 </div>
