@@ -138,7 +138,7 @@ This flattens the module hierarchy and hides implementation details.
 Code in a parent module then refers to:
 
 ```rust,editable,noplayground
-use module1::public_function; // Apppears as if it were defined in `module1`.
+use module1::public_function; // Appears as if it were defined in `module1`.
 use module1::Struct1;
 ```
 

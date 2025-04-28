@@ -2759,3 +2759,5 @@ subfolders
 subfolder
 subdirectories
 subdirectory
+IoResult
+func
