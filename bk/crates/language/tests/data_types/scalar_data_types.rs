@@ -1,40 +1,40 @@
 // ANCHOR: example
 fn main() {
     // Integer types
-    let a: i8 = -128; // 8-bit signed integer
-    let b: u8 = 255; // 8-bit unsigned integer
-    let c: i16 = 32767; // 16-bit signed integer
-    let d: u16 = 65535; // 16-bit unsigned integer
-    let e: i32 = 2147483647; // 32-bit signed integer (default for integers)
-    let f: u32 = 4294967295; // 32-bit unsigned integer
-    let g: i64 = 9223372036854775807; // 64-bit signed integer
-    let h: u64 = 18446744073709551615; // 64-bit unsigned integer
-    let i: i128 = 170141183460469231731687303715884105727; // 128-bit signed integer
-    let j: u128 = 340282366920938463463374607431768211455; // 128-bit unsigned integer
-    let k: isize = 9223372036854775807; // pointer-sized signed integer (depends on architecture)
-    let l: usize = 18446744073709551615; // pointer-sized unsigned integer (depends on architecture)
+    let a: i8 = -128; // 8-bit signed integer.
+    let b: u8 = 255; // 8-bit unsigned integer.
+    let c: i16 = 32767; // 16-bit signed integer.
+    let d: u16 = 65535; // 16-bit unsigned integer.
+    let e: i32 = 2147483647; // 32-bit signed integer (default for integers).
+    let f: u32 = 4294967295; // 32-bit unsigned integer.
+    let g: i64 = 9223372036854775807; // 64-bit signed integer.
+    let h: u64 = 18446744073709551615; // 64-bit unsigned integer.
+    let i: i128 = 170141183460469231731687303715884105727; // 128-bit signed integer.
+    let j: u128 = 340282366920938463463374607431768211455; // 128-bit unsigned integer.
+    let k: isize = 9223372036854775807; // Pointer-sized signed integer (depends on architecture).
+    let l: usize = 18446744073709551615; // Pointer-sized unsigned integer (depends on architecture).
 
-    // Type inference
-    let m = 42; // Compiler infers i32 by default
+    // Type inference.
+    let m = 42; // The compiler infers `i32` by default.
 
-    // Floating-point types
-    let n: f32 = 3.1; // 32-bit float
-    let o: f64 = 2.7; // 64-bit float (default for floats)
+    // Floating-point types.
+    let n: f32 = 3.1; // 32-bit float.
+    let o: f64 = 2.7; // 64-bit float (default for floats).
 
-    // Boolean type
+    // Boolean type.
     let p: bool = true;
     let q: bool = false;
 
-    // Character type (Unicode scalar value)
+    // Character type (Unicode scalar value).
     let r: char = 'a';
-    let s: char = '😀'; // Unicode emoji
-    let t: char = '∞'; // Unicode symbol
+    let s: char = '😀'; // Unicode emoji.
+    let t: char = '∞'; // Unicode symbol.
 
-    // String types
-    let u: &str = "Hello"; // String slice
-    let v: String = String::from("World"); // Owned string
+    // String types.
+    let u: &str = "Hello"; // String slice.
+    let v: String = String::from("World"); // Owned string.
 
-    // Print all values
+    // Print all values.
     println!("Integers:");
     println!("i8: {}", a);
     println!("u8: {}", b);
@@ -67,14 +67,14 @@ fn main() {
     println!("String slice: {}", u);
     println!("Owned string: {}", v);
 
-    // Type operations
+    // Type operations:
     println!("\nType operations:");
     println!(
         "Integer addition: {} + {} = {}",
         a,
         100,
         a.wrapping_add(100)
-    ); // Using wrapping_add to avoid overflow panic
+    ); // Using wrapping_add to avoid overflow panic.
     println!("Float multiplication: {} * {} = {}", n, o, (n as f64) * o);
     println!("Boolean AND: {} && {} = {}", p, q, p && q);
     println!("Boolean OR: {} || {} = {}", p, q, p || q);

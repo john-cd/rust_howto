@@ -39,7 +39,6 @@
 [ex-language-must-use]: attributes.md#must-use
 [ex-language-mutable-reference]: ownership_borrowing.md#mutable-reference
 [ex-language-newtype-pattern]: traits.md#newtype-pattern
-[ex-language-overflow-handling]: data_types.md#overflow-handling
 [ex-language-ownership]: ownership_borrowing.md#ownership
 [ex-language-ownership_borrowing]: ownership_borrowing.md
 [ex-language-return-position-impl-trait]: traits.md#return-position-impl-trait
