@@ -6,11 +6,12 @@ use std::time::Duration;
 fn main() {
     // Closures can use type annotations, as shown below.
     // Multiple statements can be enclosed in a block.
-    let _expensive_closure = |num: u32| -> u32 {
-        println!("Calculating slowly...");
-        thread::sleep(Duration::from_secs(2));
+    let expensive_closure = |num: u64| -> u64 {
+        println!("Calculating...");
+        thread::sleep(Duration::from_secs(num));
         num
     };
+    println!("Return value: {}", expensive_closure(1));
 }
 // ANCHOR_END: example
 

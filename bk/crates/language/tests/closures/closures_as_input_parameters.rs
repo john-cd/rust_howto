@@ -15,6 +15,8 @@ where
 fn apply_to_3<F>(f: F) -> i32
 where
     // The closure takes an `i32` and returns an `i32`.
+    // `Fn` closures can only take immutable references to captured variables
+    // or don't capture anything at all.
     F: Fn(i32) -> i32,
 {
     f(3)
@@ -22,6 +24,8 @@ where
 
 fn main() {
     apply(|| println!("Applied"));
+    let var = 39;
+    println!("`apply_to_3` result: {}", apply_to_3(|x| x + var));
 }
 // ANCHOR_END: example
 
