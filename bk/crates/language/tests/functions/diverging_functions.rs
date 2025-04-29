@@ -5,9 +5,24 @@ fn foo() -> ! {
     panic!("This call never returns.");
 }
 
+// This function never returns control.
+#[allow(dead_code)]
+fn exit_program() -> ! {
+    println!("Exiting the process...");
+    std::process::exit(1);
+}
+
+// This function loops forever.
+#[allow(dead_code)]
+fn forever() -> ! {
+    loop {
+        println!("and ever...");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}
+
 fn main() {
-    println!("Will panic");
-    foo();
+    foo(); // This will panic.
 }
 // ANCHOR_END: example
 
