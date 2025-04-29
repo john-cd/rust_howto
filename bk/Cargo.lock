@@ -15864,6 +15864,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "cfg-if 1.0.0",
+ "strum 0.27.1",
  "tokio",
 ]
 

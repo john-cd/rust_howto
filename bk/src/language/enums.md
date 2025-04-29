@@ -2,13 +2,22 @@
 
 {{#include enums.incl.md}}
 
-[![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]{{hi:Enums}}
+## Enum Syntax {#skip}
+
+[![Rust by example - Enums][book-rust-by-example-enums-badge]][book-rust-by-example-enums]{{hi:Enums}}{{hi:Variants}}
+
+Enums are custom data types that define a set of possible 'variants' or states that a value can be. A value of that enum type can only be one of those variants at any given time. Each variant can optionally hold associated data (fields) of different types like a `struct` or like a `tuple`:
 
 ```rust,editable
 {{#include ../../crates/language/tests/enums/enums.rs:example}}
 ```
 
-If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are then public. We only need [`pub`][book-rust-reference-visibility-and-privacy]{{hi:pub}}⮳ before the [`enum`][book-rust-reference-enum]⮳ keyword.
+If we make an enum{{hi:Enums}} public, all of its variants are then public. We only need [`pub`][book-rust-reference-visibility-and-privacy]{{hi:pub}}⮳ before the [`enum`][book-rust-reference-enum]⮳ keyword.
+
+### Common `enums` {#skip}
+
+- [[option | Option]].
+- [[result | Result]].
 
 ## `strum` {#strum}
 
@@ -16,10 +25,9 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 
 [`strum`][c-strum]⮳{{hi:strum}} provides helpful macros for working with enums and strings.
 
-## Common `enums` {#skip}
-
-- [[option | Option]].
-- [[result | Result]].
+```rust,editable
+{{#include ../../crates/language/tests/enums/strum.rs:example}}
+```
 
 ## Related Topics {#skip}
 
@@ -33,5 +41,4 @@ If we make an enum{{hi:Enums}} public, all of its variants{{hi:Variants}} are th
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[enums: edit NOW](https://github.com/john-cd/rust_howto/issues/542)
 </div>

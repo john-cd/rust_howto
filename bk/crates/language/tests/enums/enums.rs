@@ -25,6 +25,9 @@ impl Message {
                 println!("Change the color to red {r}, green {g}, and blue {b}")
             }
         }
+        // Enums make your code safer, because the compiler knows all the
+        // possible variants a value can have, and makes sure the
+        // `match` expression handles all possibilities.
     }
 }
 
