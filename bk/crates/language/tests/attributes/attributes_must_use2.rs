@@ -72,7 +72,7 @@ pub struct SpinlockGuard<'a, T> {
     lock: &'a Spinlock<T>,
 }
 
-impl<'a, T> Drop for SpinlockGuard<'a, T> {
+impl<T> Drop for SpinlockGuard<'_, T> {
     /// Releases the lock when the guard goes out of scope.
     #[inline]
     fn drop(&mut self) {
@@ -80,7 +80,7 @@ impl<'a, T> Drop for SpinlockGuard<'a, T> {
     }
 }
 
-impl<'a, T> Deref for SpinlockGuard<'a, T> {
+impl<T> Deref for SpinlockGuard<'_, T> {
     type Target = T;
 
     /// Allows immutable access to the protected data.
@@ -93,7 +93,7 @@ impl<'a, T> Deref for SpinlockGuard<'a, T> {
     }
 }
 
-impl<'a, T> DerefMut for SpinlockGuard<'a, T> {
+impl<T> DerefMut for SpinlockGuard<'_, T> {
     /// Allows mutable access to the protected data.
     #[inline]
     fn deref_mut(&mut self) -> &mut Self::Target {
