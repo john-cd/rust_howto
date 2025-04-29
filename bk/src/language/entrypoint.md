@@ -17,9 +17,22 @@ You can also have the `main` function return a `Result<(), E>` (where `E `is a t
 {{#include ../../crates/language/tests/entrypoint/main_fn_with_result.rs:example}}
 ```
 
+It is also common to return a `Result` with a boxed error trait object, especially if multiple error types are possible:
+
+```rust,noplayground
+use std::error::Error;
+// ...
+
+fn main() -> Result<(), Box<dyn Error>> {
+   // ...
+}
+```
+
+More precisely, `main` should return a type that implements `std::process::Termination`. For example, you may return `std::process::ExitCode` to provide a status code the current process can return to its parent.
+
 ## Async Main Function {#async-main-function}
 
-Rust also supports asynchronous main functions for writing concurrent applications using the `async`/`await` syntax. To use `async main`, you typically need an async runtime like `tokio`, often enabled via an attribute macro.
+Rust also supports asynchronous main functions for writing concurrent applications using the `async` / `await` syntax. To use `async main`, you typically need an async runtime like `tokio`, often enabled via an attribute macro.
 
 ```rust,editable
 {{#include ../../crates/language/tests/entrypoint/async_main.rs:example}}
