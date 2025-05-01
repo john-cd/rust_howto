@@ -22,7 +22,7 @@ autolib = false
 shaku = "0.6.2"
 
 ## Cloud
-aws-config = "1.5.13"
+aws-config = "1.6.2"
 aws-sdk-s3 = "1.68.0"
 lambda_runtime = "0.13.0"
 
