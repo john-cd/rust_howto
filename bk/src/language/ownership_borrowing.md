@@ -4,7 +4,7 @@
 
 ## Ownership {#ownership}
 
-[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:move}}{{i:Ownership}}
+[![Rust by example - Ownership][book-rust-by-example-move-badge]][book-rust-by-example-move]{{hi:move}}{{hi:Ownership}}
 
 Rust's ownership system ensures memory safety without needing a garbage collector.{{hi:Garbage collector}} It is a set of rules that the compiler enforces at compile time:
 
