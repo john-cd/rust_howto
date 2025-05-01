@@ -26,6 +26,6 @@
 [p-iterators]: ../../language/iterators.md
 [p-json]: ../parser-implementations/json.md
 [p-mathematics]: index.md
-[p-option]: ../../standard-library/option.md
+[p-option]: ../../../drafts/standard-library/option.md
 [p-traits]: ../../language/traits.md
-[p-vectors]: ../../standard-library/vectors.md
+[p-vectors]: ../../../drafts/standard-library/vectors.md

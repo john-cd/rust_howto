@@ -90,11 +90,11 @@
 [p-main]: ../../language/entrypoint.md
 [p-memory]: other/../../development-tools_profiling/memory_usage_analysis.md
 [p-modules]: ../../code_structure/modules.md
-[p-option]: other/../../../standard-library/option.md
+[p-option]: ../../../drafts/standard-library/option.md
 [p-parsing]: versioning/# "../../parsing/index.md"
 [p-performance]: compilation/../../development-tools_cargo-plugins/performance.md
 [p-performance]: other/../../development-tools_cargo-plugins/performance.md
 [p-search]: other/../../database/search.md
-[p-strings]: versioning/../../../standard-library/strings.md
+[p-strings]: ../../../drafts/standard-library/strings.md
 [p-testing]: other/../../development-tools_testing/testing.md
 [p-toml]: formatting/../../parser-implementations/toml.md

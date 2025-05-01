@@ -8,4 +8,4 @@
 [ex-date-and-time-time-crate]: time_crate.md#time-crate
 [ex-date-and-time-unix-timestamp]: parse.md#unix-timestamp
 [p-date-and-time]: index.md
-[p-standard-library]: ../../standard-library/index.md
+[p-standard-library]: ../../../drafts/standard-library/index.md

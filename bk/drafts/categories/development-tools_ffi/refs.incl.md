@@ -20,7 +20,7 @@
 [p-language]: ../../language/index.md
 [p-macros]: ../../language/macros.md
 [p-modules]: ../../language/modules.md
-[p-option]: ../../../src/standard-library/option.md
+[p-option]: ../../standard-library/option.md
 [p-performance]: ../development-tools_cargo-plugins/performance.md
 [p-serde]: ../encoding/serde.md
-[p-strings]: ../../../src/standard-library/strings.md
+[p-strings]: ../../standard-library/strings.md

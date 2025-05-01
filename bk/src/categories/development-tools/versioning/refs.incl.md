@@ -5,4 +5,4 @@
 [ex-versioning-parse-a-version-string]: versioning.md#parse-a-version-string
 [p-cargo]: ../cargo/cargo.md
 [p-parsing]: # "../../parsing/index.md"
-[p-strings]: ../../../standard-library/strings.md
+[p-strings]: ../../../../drafts/standard-library/strings.md

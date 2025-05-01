@@ -35,7 +35,7 @@
 [p-macros]: ../../language/macros.md
 [p-main]: ../../language/entrypoint.md
 [p-node]: ../development-tools_ffi/node.md
-[p-standard-library]: ../../standard-library/index.md
+[p-standard-library]: ../../../drafts/standard-library/index.md
 [p-streams]: streams.md
 [p-tokio]: tokio.md
 [p-traits]: ../../language/traits.md

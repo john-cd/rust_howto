@@ -16,8 +16,8 @@
 [ex-code_structure-visibility-rules]: modules.md#visibility-rules
 [p-functions]: ../language/functions.md
 [p-enums]: ../language/enums.md
-[p-option]: ../standard-library/option.md
+[p-option]: ../../drafts/standard-library/option.md
 [p-rustup]: ../categories/development-tools/installation/rustup.md
-[p-standard-library]: ../standard-library/index.md
+[p-standard-library]: ../../drafts/standard-library/index.md
 [p-structs]: ../language/structs.md
 [p-traits]: ../language/traits.md
