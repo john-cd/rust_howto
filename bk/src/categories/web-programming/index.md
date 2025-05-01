@@ -87,4 +87,6 @@ See [[web-programming_websocket | Web Programming: Websocket]].
 
 <div class="hidden">
 [web-programming/index: organize; need full review; further cross link NOW](https://github.com/john-cd/rust_howto/issues/500)
+
+- [Which Rust web framework to choose in 2022 (with code examples)](https://kerkour.com/rust-web-framework-2022)
 </div>
