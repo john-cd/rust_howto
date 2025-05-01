@@ -1,6 +1,10 @@
 # Work In Progress
 
-This book is still going through _heavy edits_. Pardon the dust.
+<div class="warning">
+This book is going through __heavy edits__. Pardon the dust.
+
+A large number of chapters, pages, and examples are currently hidden or will soon be, as we are reorganizing the book.
+</div>
 
 ## What You Will Find Here
 
