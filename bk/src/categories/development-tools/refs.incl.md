@@ -72,7 +72,7 @@
 [p-config]: formatting/../../config/index.md
 [p-configuration]: compilation/../../config/configuration.md
 [p-configuration]: formatting/../../config/configuration.md
-[p-contributing]: compilation/../../../contributing/index.md
+[p-contributing]: ../../../drafts/contributing/index.md
 [p-crates]: installation/../../../crates/index.md
 [p-cross-platform]: other/# "../../../other/cross-platform/index.md"
 [p-documentation]: installation/../documentation/documentation.md
