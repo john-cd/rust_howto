@@ -28,7 +28,7 @@
 - [Why Rust is Becoming a Contender in AI Development](https://www.analyticsinsight.net/artificial-intelligence/why-rust-is-becoming-a-contender-in-ai-development)
 - [Parsing arguments in Rust with no dependencies](https://ntietz.com/blog/parsing-arguments-rust-no-deps/)
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
-- [A comparison of Rust’s borrow checker to the one in C#](https://em-tg.github.io/csborrow/)
+- [A comparison of Rust's borrow checker to the one in C#](https://em-tg.github.io/csborrow/)
 
 - [What is the correct way to return an Iterator (or any other trait)?](https://stackoverflow.com/questions/27535289/what-is-the-correct-way-to-return-an-iterator-or-any-other-trait)
 - [Difference Between iter() and into_iter() in Rust](https://crustc.com/difference-iter-and-into_iter/)
@@ -102,7 +102,7 @@
 
 - [Type-level Programming in Rust](https://willcrichton.net/notes/type-level-programming/)
 
-## dataflow graphs
+## Dataflow Graphs
 
 - [fractalide: Reusable Reproducible Composable Software](https://github.com/fractalide/fractalide)
 
