@@ -1,15 +1,8 @@
 #![allow(clippy::useless_vec)]
 // ANCHOR: example
+
 use std::cell::RefCell;
 
-// Simple macro definition:
-macro_rules! pat {
-    ($i:ident) => {
-        Some($i)
-    };
-}
-
-/// This example demonstrates various ways macros can be used in Rust.
 fn main() {
     // Macros can be used as expressions.
     // The following defines a vector:
@@ -19,8 +12,16 @@ fn main() {
     // Print the string:
     println!("Hello!");
 
+    /// Simple macro by example definition.
+    /// This macro wraps an identifier in `Some()`.
+    macro_rules! pat {
+        ($i:ident) => {
+            Some($i)
+        };
+    }
+
     // Macros can be used in a pattern.
-    // Destructure an Option:
+    // Destructure an `Option`:
     if let pat!(x) = Some(1) {
         assert_eq!(x, 1);
     }
@@ -29,6 +30,7 @@ fn main() {
     use_thread_local();
 }
 
+/// This macro by example defines a tuple type.
 macro_rules! Tuple {
     { $A:ty, $B:ty } => { ($A, $B) };
 }
@@ -65,6 +67,7 @@ trait T {
 //
 // When used, the outer macro `example` is expanded,
 // then the inner macro `println` is expanded.
+/// This macro calls the `println!` macro.
 macro_rules! _example {
     () => {
         println!("Macro call in a macro!")
