@@ -211,12 +211,27 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 <div class="hidden">
 [finish NOW](https://github.com/john-cd/rust_howto/issues/987)
 
+## Companies {#skip}
+
+- [rust-companies](https://github.com/omarabid/rust-companies/activity)
 - [Volvo][volvo].
+
+[volvo]: https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line
 
 ## Jobs {#jobs}
 
 - [Rust jobs-report (Sep. 2024)][rust-jobs-report].
-
-[volvo]: https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line
 [rust-jobs-report]: https://filtra.io/rust/jobs-report/sep-24
+
+[Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com/)
+
+[AWS will pay devs to verify Rust standard library because of 7,500 unsafe functions and enormity of task • DEVCLASS](https://devclass.com/2024/11/21/aws-will-pay-devs-to-verify-rust-standard-library-because-of-7500-unsafe-functions-and-enormity-of-task/)
+
+## People {#people}
+
+- [dystroy](https://dystroy.org/)
+- [Sylvain Kerkour](https://kerkour.com/)
+- [I'm an independent open source maintainer - seanmonstar](https://seanmonstar.com/blog/independent-open-source-maintainer/)
+- [leadership-council: Home of the Rust Leadership Council](https://github.com/rust-lang/leadership-council)
+
 </div>
