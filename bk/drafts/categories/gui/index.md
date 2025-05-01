@@ -109,4 +109,6 @@ While primarily for window creation, [`winit`][c-winit]⮳{{hi:winit}} is often 
 [organize](https://github.com/john-cd/rust_howto/issues/397)
 review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again
 cover perseus / zola?
+
+- [Are we (I)DE yet?](https://areweideyet.com/)
 </div>
