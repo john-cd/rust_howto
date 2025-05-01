@@ -2,11 +2,19 @@
 
 {{#include match.incl.md}}
 
+## Match {#match}
+
 [![Rust by example - match][book-rust-by-example-match-badge]][book-rust-by-example-match]{{hi:match}}
+
+## Use `match` to Branch on a Pattern {#use-match-to-branch-on-a-pattern}
+
+The following code demonstrates pattern matching against an enumeration (enum):
 
 ```rust,editable
 {{#include ../../crates/language/tests/match/match1.rs:example}}
 ```
+
+This examples shows pattern matching using a `struct`:
 
 ```rust,editable
 {{#include ../../crates/language/tests/match/match2.rs:example}}
@@ -16,9 +24,9 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 ## `if let` {#if-let}
 
-`if let`
-
 [![Rust by example - if let][book-rust-by-example-if_let-badge]][book-rust-by-example-if_let]
+
+`if let` is a concise way to handle a single pattern in a `match` expression.
 
 ```rust,editable
 {{#include ../../crates/language/tests/match/if_let.rs:example}}
@@ -26,7 +34,7 @@ Patterns accept `1 | 2` for or, `1..=5` for inclusive range, `if x % 2 == 0` gua
 
 ## `while let` {#while-let}
 
-`while let`
+`while let` is similar to `if let`, but it allows you to loop as long as the pattern continues to match.
 
 ```rust,editable
 {{#include ../../crates/language/tests/match/while_let.rs:example}}
