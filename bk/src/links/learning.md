@@ -43,4 +43,12 @@
 - [Rust (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 
+- [Learn to become a Rust developer](https://roadmap.sh/rust)
+- [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)
+
+## Courses
+
+- [rust-course-fei: Rust course](https://github.com/Kobzol/rust-course-fei/tree/main)
+- [Rust Development Classes](https://rust-classes.com/preface)
+
 </div>
