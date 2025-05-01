@@ -27,5 +27,13 @@
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/608)
-decide what to cover
+decide what to cover.
+
+[Rust GPU: The future of GPU programming](https://www.reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming)
+
+## Repos
+
+- [rust-gpu: Making Rust a first-class language and ecosystem for GPU shaders](https://github.com/rust-gpu/rust-gpu)
+- [wgpu-template: A template repository to get started with WGPU and Winit](https://github.com/Foxicution/wgpu-template)
+
 </div>
