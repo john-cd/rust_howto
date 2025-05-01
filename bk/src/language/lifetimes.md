@@ -11,7 +11,7 @@ Lifetimes help prevent dangling references, which occur when a reference points 
 
 A lifetime represents the scope for which a reference is valid. Lifetime names are always prefixed with an apostrophe (e.g., `'a`, `'b`, `'static`). By convention, short, lowercase names are usually used. `'static` is a special lifetime that means the reference is valid for the entire duration of the program.
 
-Lifetimes can be added to function or method signatures, struct definitions, `impl` blocks, and references. When explictly added to references, the lifetime annotation is inserted after `&` and before the `mut` keywords or the type:
+Lifetimes can be added to function or method signatures, struct definitions, `impl` blocks, and references. When explicitly added to references, the lifetime annotation is inserted after `&` and before the `mut` keywords or the type:
 
 - `&'a i32`: a shared reference with an explicit lifetime `'a`.
 - `&i32`: a shared reference with an implicit lifetime (very common).
