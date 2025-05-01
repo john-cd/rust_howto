@@ -91,4 +91,8 @@ Middleware is a powerful way to add functionality to your web server.
 
 <div class="hidden">
 [write / review in depth NOW](https://github.com/john-cd/rust_howto/issues/977)
+
+- [Cot](https://cot.rs)
+- [Salvo](https://salvo.rs)
+
 </div>
