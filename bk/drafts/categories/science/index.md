@@ -58,4 +58,5 @@ The Rust ML ecosystem is relatively young compared to Python's. However, Rust's 
 Review tch-rs, burn, ort, rust-bert, TensorFlow/rust, tract, cudarc, DFDX
 
 - [Awesome-Rust-Neural-Network: A curated collection of Rust projects related to neural networks, designed to complement "Are We Learning Yet?"](https://github.com/BurtonQin/Awesome-Rust-Neural-Network)
+
 </div>

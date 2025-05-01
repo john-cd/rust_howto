@@ -244,7 +244,6 @@ members = [ "lib1", "lib2", "main_lib" ]
 
 Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to members. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
 
-
 ## Related Topics {#skip}
 
 - [[package_layout | Package Layout]].
