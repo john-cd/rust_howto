@@ -12,7 +12,7 @@ fn main() {
     // Call the generic function with an integer.
     print_value(10);
     // Call the generic function with a floating-point number.
-    print_value(3.14);
+    print_value(2.14);
     // Call the generic function with a string slice.
     print_value("hello");
 }

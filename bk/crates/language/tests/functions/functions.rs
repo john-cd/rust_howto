@@ -22,6 +22,7 @@ fn multiply(x: i32, y: i32) -> i32 {
 }
 
 /// Function bodies follow the same rules than blocks:
+#[allow(clippy::let_and_return)]
 fn foo(x: i32) -> i32 {
     let y = {
         let z = 3;
@@ -38,6 +39,7 @@ fn print_coordinates(x: i32, y: i32) {
 }
 
 /// Function using an explicit `return` keyword (rarely needed).
+#[allow(clippy::manual_find)]
 fn find_first_even(numbers: &[i32]) -> Option<i32> {
     for &num in numbers {
         if num % 2 == 0 {

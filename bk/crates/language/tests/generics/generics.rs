@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use std::fmt::Debug;
 
 /// Function with a type parameter and a lifetime.
+#[allow(clippy::needless_lifetimes)]
 fn print_data<'a, T: std::fmt::Debug>(value: &'a T) {
     println!("Data: {:?}", value);
 }
