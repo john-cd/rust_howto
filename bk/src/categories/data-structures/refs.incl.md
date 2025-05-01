@@ -20,7 +20,7 @@
 [p-databases]: ../database-implementations/databases.md
 [p-embedded]: # "../embedded/index.md"
 [p-functions]: ../../language/functions.md
-[p-links]: ../../links/links.md
+[p-links]: ../../../drafts/links/links.md
 [p-log]: ../development-tools_debugging/log.md
 [p-protocols]: ../aerospace_protocols/aerospace_protocols.md
 [p-search]: ../database/search.md

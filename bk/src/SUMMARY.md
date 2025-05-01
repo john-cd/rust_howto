@@ -313,14 +313,14 @@
 
 ---
 
-- [Links](links/index.md)
-  - [Links](links/links.md)
-  - [Example Code](links/example_code.md)
-  - [Cheat Sheets](links/rust_cheatsheets.md)
-  - [Blogs](links/blogs_podcasts_meetups.md)
-  - [Books](links/books.md)
-  - [Companies](links/companies.md)
-  - [Learning](links/learning.md)
+- [Links](../drafts/links/index.md)
+  - [Links](../drafts/links/links.md)
+  - [Example Code](../drafts/links/example_code.md)
+  - [Cheat Sheets](../drafts/links/rust_cheatsheets.md)
+  - [Blogs](../drafts/links/blogs_podcasts_meetups.md)
+  - [Books](../drafts/links/books.md)
+  - [Companies](../drafts/links/companies.md)
+  - [Learning](../drafts/links/learning.md)
 
 - [Contributing](../drafts/contributing/index.md)
   - [Topics of Interest](../drafts/contributing/topics_of_interest.md)

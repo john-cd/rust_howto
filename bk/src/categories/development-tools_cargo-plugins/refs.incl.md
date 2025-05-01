@@ -37,7 +37,7 @@
 [p-ides]: ../text-editors/ides.md
 [p-json]: ../parser-implementations/json.md
 [p-language]: ../../language/index.md
-[p-links]: ../../links/links.md
+[p-links]: ../../../drafts/links/links.md
 [p-macos]: ../os_macos-apis/macos.md
 [p-macros]: ../../language/macros.md
 [p-maintaining]: maintaining.md

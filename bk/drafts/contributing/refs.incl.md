@@ -32,7 +32,7 @@
 [p-gpu]: # "../other/gpu/gpu.md"
 [p-json]: ../../src/categories/parser-implementations/json.md
 [p-language]: ../../src/language/index.md
-[p-learning]: ../../src/links/learning.md
+[p-learning]: ../links/learning.md
 [p-machine-learning]: # "../categories/science/machine_learning.md"
 [p-main]: ../../src/language/entrypoint.md
 [p-markdown]: ../../src/categories/parser-implementations/markdown.md

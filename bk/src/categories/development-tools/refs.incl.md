@@ -57,7 +57,7 @@
 [p-apis]: documentation/../../web-programming_http-client/apis.md
 [p-attributes]: cross-compilation/../../../language/attributes.md
 [p-attributes]: formatting/../../../language/attributes.md
-[p-books]: documentation/../../../links/books.md
+[p-books]: ../../../drafts/links/books.md
 [p-building]: cargo/../../development-tools_cargo-plugins/building.md
 [p-caching]: compilation/../../caching/index.md
 [p-cargo]: cargo/cargo.md
