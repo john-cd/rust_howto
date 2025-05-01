@@ -45,4 +45,8 @@
 
 <div class="hidden">
 [search: expand](https://github.com/john-cd/rust_howto/issues/291)
+
+- [Meilisearch vs Qdrant: Tradeoffs, Strengths and Weaknesses](https://blog.kerollmops.com/meilisearch-vs-qdrant-tradeoffs-strengths-and-weaknesses)
+- [Algolia vs Elasticsearch vs Meilisearch vs Typesense Comparison](https://typesense.org/typesense-vs-algolia-vs-elasticsearch-vs-meilisearch/)
+
 </div>
