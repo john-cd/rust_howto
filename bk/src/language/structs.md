@@ -2,7 +2,11 @@
 
 {{#include structs.incl.md}}
 
+## Struct Syntax {#skip}
+
 [![Rust by example - Structs][book-rust-by-example-structs-badge]][book-rust-by-example-structs]{{hi:Structs}}
+
+Structs are custom data types that allow you to group related data together.
 
 ```rust,editable
 {{#include ../../crates/language/tests/structs/structs.rs:example}}
