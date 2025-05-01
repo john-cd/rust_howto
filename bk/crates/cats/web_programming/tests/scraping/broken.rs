@@ -73,3 +73,4 @@ fn require_network() -> anyhow::Result<()> {
     main()?;
     Ok(())
 }
+// TODO flaky test
