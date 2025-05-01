@@ -20,7 +20,7 @@ fyrox = "0.36.0"
 fyrox-core = "0.36.0"
 # ggez = "0.9.3"
 # [ggez conflict with wgpu LATER](https://github.com/john-cd/rust_howto/issues/1289)
-glam = "0.30.0"
+glam = "0.30.3"
 macroquad = "0.4.13"
 
 [features]
