@@ -47,4 +47,9 @@ The [`yew`][c-yew]⮳{{hi:yew}}, [`seed`][c-seed]⮳{{hi:seed}}, [`leptos`][c-le
 Browser-based Execution.
 Node.js with WASM.
 Cover [`wat`][c-wat]⮳{{hi:wat}}, [`parity-wasm`][c-parity_wasm]⮳{{hi:parity-wasm}}
+
+- [WASIX - The Superset of WASI](https://wasix.org/)
+- [wasmtime: A fast and secure runtime for WebAssembly](https://github.com/bytecodealliance/wasmtime)
+- [WASI.dev](https://wasi.dev/)
+
 </div>
