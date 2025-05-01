@@ -220,12 +220,11 @@ Please also consult the `theirstack.com`'s [list of companies using Rust][theirs
 
 ## Jobs {#jobs}
 
+- [Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com/)
 - [Rust jobs-report (Sep. 2024)][rust-jobs-report].
+- [AWS will pay devs to verify Rust standard library because of 7,500 unsafe functions and enormity of task](https://devclass.com/2024/11/21/aws-will-pay-devs-to-verify-rust-standard-library-because-of-7500-unsafe-functions-and-enormity-of-task/)
+
 [rust-jobs-report]: https://filtra.io/rust/jobs-report/sep-24
-
-[Rust Jobs for Rustaceans](https://jobs.letsgetrusty.com/)
-
-[AWS will pay devs to verify Rust standard library because of 7,500 unsafe functions and enormity of task • DEVCLASS](https://devclass.com/2024/11/21/aws-will-pay-devs-to-verify-rust-standard-library-because-of-7500-unsafe-functions-and-enormity-of-task/)
 
 ## People {#people}
 
