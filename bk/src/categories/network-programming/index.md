@@ -33,4 +33,9 @@ Many crates exist for specific protocols (e.g., SMTP, IMAP, SSH).
 
 <div class="hidden">
 [write; add cross-links; review; review `email_address`, `fast_chemail` NOW](https://github.com/john-cd/rust_howto/issues/944)
+
+## Peer2peer
+
+- [Iroh (blog)](https://www.iroh.computer/blog/iroh-0-33-0-browsers-and-discovery-and-0-RTT-oh-my)
+
 </div>
