@@ -144,6 +144,9 @@ This section provides a few examples of software written in Rust, organized by t
 <div class="hidden">
 [organize; decide if we need other pages or if we consolidate here; table?](https://github.com/john-cd/rust_howto/issues/993)
 
+- [awesome-rust-tools: Harness the power of Rust. Those fast productivity tools based on Rust.](https://github.com/unpluggedcoder/awesome-rust-tools)
+- [awesome-alternatives-in-rust: A curated list of replacements for existing software written in Rust](https://github.com/TaKO8Ki/awesome-alternatives-in-rust)
+
 - [RustDesk](https://rustdesk.com/docs/en/)
 - [OxidOS Automotive](https://oxidos.io/)
 - [ripgrep: ripgrep recursively searches directories for a regex pattern while respecting your gitignore](https://github.com/BurntSushi/ripgrep)
