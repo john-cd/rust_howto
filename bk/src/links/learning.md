@@ -36,4 +36,11 @@
 
 <div class="hidden">
 [learning: organize NOW](https://github.com/john-cd/rust_howto/issues/568)
+
+- [Learning Rust](https://quinedot.github.io/rust-learning/index.html)
+- [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)
+- [GitHub Topics: Rust](https://github.com/topics/rust)
+- [Rust (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))
+- [Rust Language Cheat Sheet](https://cheats.rs/)
+
 </div>
