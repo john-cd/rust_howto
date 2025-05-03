@@ -21,8 +21,3 @@ anyhow = "1.0.95"
 #serde = { version = "1.0.217", features = ["derive"] }
 #tera = "1.20.0"
 #tool_lib = { path = "../tool_lib" }
-
-
-[[bin]]
-name = "autogen"
-path = "src/main.rs"

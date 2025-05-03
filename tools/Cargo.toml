@@ -1,6 +1,6 @@
 [workspace]
-resolver = "2"
-members = ["autogen", "clean", "crate_indices", "links", "templ", "tool_lib"]
+resolver = "3"
+members = ["clean", "crate_indices", "links", "templ", "tool_lib"]
 
 # Default values for packages in the workspace
 [workspace.package]
