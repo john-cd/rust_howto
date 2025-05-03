@@ -1,4 +1,4 @@
-# Code Structure
+# Code Organization
 
 {{#include index.incl.md}}
 
@@ -14,7 +14,7 @@
 
 {{#include dependencies.incl.md}}
 
-## Code Organization
+## Code Organization for Specific Scenarios
 
 {{#include code_organization.incl.md}}
 
