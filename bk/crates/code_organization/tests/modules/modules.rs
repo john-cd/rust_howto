@@ -6,7 +6,6 @@ mod my_module {
     fn private_function() {
         println!("Called private_function inside my_module.");
     }
-
     // Use `pub` to make items visible outside the module.
     pub fn public_function() {
         println!("Called public_function inside my_module.");

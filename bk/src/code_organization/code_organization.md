@@ -1,5 +1,5 @@
 
-# Code Organization
+# Code Organization by Project Type and Size
 
 {{#include code_organization.incl.md}}
 
@@ -113,6 +113,7 @@ where the module is a file and its submodules are under a folder named after the
 Finally, `module1` can also be defined inline in `lib.rs` - especially if the module only contains `mod` / `pub use` statements.
 
 ```rust,noplayground
+// In `lib.rs`:
 mod module1 {
   pub mod submodule1;
   pub mod submodule2;
@@ -126,10 +127,11 @@ Instead of working with deeply-nested modules, it is convenient to keep submodul
 For example, you may write in `module1`:
 
 ```rust,noplayground
+// Private submodules.
 mod submodule1;
 mod submodule2;
 
-// Reexport a function and a struct.
+// Reexport a public function and struct.
 pub use submodule1::public_function;
 pub use submodule2::Struct1;
 ```
@@ -137,9 +139,50 @@ pub use submodule2::Struct1;
 This flattens the module hierarchy and hides implementation details.
 Code in a parent module then refers to:
 
-```rust,editable,noplayground
-use module1::public_function; // Appears as if it were defined in `module1`.
+```rust,noplayground
+// The function and struct appear as if they were defined in `module1`.
+use module1::public_function;
 use module1::Struct1;
+```
+
+See the [[use_keyword | `use` keyword]] chapter.
+
+## Create a Prelude for Commonly Used Items of your Library {#prelude}
+
+Library crates with complex public APIs or deeply nested modules often define a "prelude", a public module that reexports their most commonly used items.
+
+A single glob import e.g., `use crate_name::prelude::*;` brings all these common items into scope in one fell swoop and removes the need for repetitive `use` declarations:
+
+```rust,noplayground
+// src/lib.rs
+pub mod prelude {
+    // Reexport commonly used types, traits, or functions:
+    pub use super::a_module::SuperCommonType;
+    pub use super::a_module::super_common_function;
+
+    // You may also reexport commonly used items from a dependency of your library:
+    pub use my_dependency::some_module::CommonType;
+}
+
+pub mod a_module {
+    pub fn super_common_function() { /* ... */ }
+    pub struct SuperCommonType {
+      // ...
+    }
+}
+
+// In the client:
+use crate_name::prelude::*;
+// No need to import common items individually.
+```
+
+The standard library includes a number of preludes. For example, adding `use std::io::prelude::*;` at the top of I/O heavy modules imports common I/O traits in one line.
+
+There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit `use` statement. Here is an excerpt:
+
+```rust,noplayground
+pub use std::option::Option::{self, Some, None};
+pub use std::fmt::{self, Debug, Display};
 ```
 
 ## Code Organization for Binary Crates {#binary-crate-organization}
@@ -157,12 +200,12 @@ Similarly, a simple binary crate may consist of a crate root (e.g. `main.rs`) an
 Cargo.toml
 ```
 
-Commonly, `main.rs` is kept minimal and refers to a library crate in the same `src` folder:
+Commonly, `main.rs` is kept minimal and refers to a library crate in the same `src` folder. Indeed, a Rust package can contain both a `src/main.rs` binary crate root as well as a `src/lib.rs` library crate root, and both crates will have the package name by default.
 
 ```txt
 - src
   - lib.rs     # Library crate root.
-  - main.rs    # Binary crate root.
+  - main.rs    # Binary crate root. Imports the library crate.
   - module1.rs # Module of the library.
   - ...
 - tests
@@ -170,9 +213,11 @@ Commonly, `main.rs` is kept minimal and refers to a library crate in the same `s
 Cargo.toml
 ```
 
-In that case, `main.rs` imports the contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function. This code organization exposes a public library crate API, which has the advantages of being more easily testable (via integration tests in the `tests` folder). However, if the crate is published on `crates.io`, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
+In that case, `main.rs` imports the public contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function.
 
-A variation of this code organization puts the command-line argument parsing (or UI) code in a module under `main.rs` and keeps the non-CLI code in the associated library crate.
+This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the `tests` folder). However, if the crate is published on `crates.io`, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
+
+A variation of this code organization puts the command-line argument parsing (or UI) code in modules under `main.rs` and keeps the non-user-interface code in the associated library crate.
 
 ```rust,noplayground
 mod cli; // Command-line argument parsing.
@@ -186,9 +231,9 @@ fn main() {
 
 ## Organize Large Projects using a Workspace {#large-projects}
 
-If your project is huge, you may want to split it into several crates, which you then depend on in your main project. For example, you may create a `xyz-core` crate, a `xyz-derive` crate for procedural macros that let you `#[derive(...)]` traits defined in your core crate, a `xyz-utils` crate, and a `xyz` main crate that binds all subcrates together.
+If your project is large, you may want to split it into several crates, which you then depend on in your main project. For example, you may create a `xyz-core` crate, a `xyz-derive` crate for procedural macros that let you `#[derive(...)]` traits defined in your core crate, a `xyz-utils` crate, and a `xyz` main crate that binds all subcrates together.
 
-Each crate, of course, should be further split into modules (and submodules) as described above.
+Each crate, of course, should be further split into modules and submodules as needed.
 
 You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same `Cargo.lock` and output (e.g. `target`) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml` file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
 
@@ -196,18 +241,18 @@ A typical organization may look as follows:
 
 ```txt
 # The root folder of your workspace.
-- lib1/ # First package subfolder (library crate).
+- lib1/ # First package subfolder (a library crate).
   - src/
     - lib.rs
     - ...
   - tests/ # Optional integration tests and examples.
   - examples/
   - Cargo.toml
-- lib2/ # Second package (library crate + several optional binary crates).
+- lib2/ # Second package (a library crate + several optional binary crates).
   - src/
     - lib.rs
     - bin
-      - tool1.rs # Optional binary, perhaps a tool for e.g. database migration.
+      - tool1.rs # Optional binaries, perhaps tools for e.g. database migration.
       - tool2.rs
   - ...
   - Cargo.toml
@@ -242,7 +287,7 @@ The main `Cargo.toml` file in the root of the workspace should contain a 'worksp
 members = [ "lib1", "lib2", "main_lib" ]
 ```
 
-Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to members. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
+Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a `src` folder directly under the workspace root.
 
 ## Related Topics {#skip}
 
@@ -252,5 +297,4 @@ Confusingly, a workspace `Cargo.toml` can also include a 'root package' in addit
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO polish
 </div>

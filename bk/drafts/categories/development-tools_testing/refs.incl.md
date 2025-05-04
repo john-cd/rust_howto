@@ -25,7 +25,7 @@
 [p-install]: ../development-tools/installation/install.md
 [p-language]: ../../language/index.md
 [p-macros]: ../../language/macros.md
-[p-modules]: ../../code_structure/modules.md
+[p-modules]: ../../code_organization/modules.md
 [p-requests]: ../web-programming_http-client/requests.md
 [p-scripting]: # "../../other/scripting/index.md"
 [p-search]: ../database/search.md

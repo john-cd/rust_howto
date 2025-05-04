@@ -10,5 +10,5 @@
 [p-contributing]: ../../../../drafts/contributing/index.md
 [p-duration]: ../../date-and-time/duration.md
 [p-generics]: ../../../language/generics.md
-[p-modules]: ../../../code_structure/modules.md
+[p-modules]: ../../../code_organization/modules.md
 [p-performance]: ../../development-tools_cargo-plugins/performance.md

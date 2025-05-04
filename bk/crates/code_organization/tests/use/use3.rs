@@ -8,7 +8,7 @@ use std::collections::HashMap;
 // crate. We therefore prefix the path with the crate's name.
 
 fn main() {
-    // We now refer to `HashMap` without using its full path.
+    // We now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
 
     // Let's add something to it then print...

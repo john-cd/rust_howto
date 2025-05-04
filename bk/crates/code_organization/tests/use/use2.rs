@@ -1,5 +1,4 @@
 // ANCHOR: example
-
 /// This module represents the front of the house in a restaurant.
 mod front_of_house {
     /// This module handles hosting duties within the front of the house.

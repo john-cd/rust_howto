@@ -2,54 +2,110 @@
 
 {{#include modules.incl.md}}
 
-## Modules {#modules}
+## Structure your Code into Modules {#modules}
 
 [![Rust by example - Modules][book-rust-by-example-mod-badge]][book-rust-by-example-mod]{{hi:mod}}
 
-Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary or a library){{hi:crate}}.
+Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary or a library){{hi:Crate}}. Modules are containers that help:
 
-They help:
+- Group related code - keep functions, structs, enums, etc., that work together in one place.
+- Control visibility - decide which parts of your code are public (usable outside the module) and which are private implementation details.
+- Create namespaces - avoid naming conflicts by putting items into distinct scopes.
 
-- Group related code: Keep functions, structs, enums, etc., that work together in one place.
-- Control visibility: Decide which parts of your code are public (usable outside the module) and which are private implementation details.
-- Create namespaces: Avoid naming conflicts by putting items into distinct scopes.
+Modules form a tree that originates in the "crate root file" (usually `src/lib.rs` for a library crate or `src/main.rs` for a binary crate). In the crate root file, you can declare modules. In turn, in each module, you can nest other modules, and so on.
 
-To declare a module, use the `mod` keyword.
-
-A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in other files, by inserting a semicolon after its declaration: `mod <module_name>;`.
+To declare a module, use the `mod` keyword. A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in a separate file or folder, by inserting a semicolon after its declaration: `mod <module_name>;`:
 
 ```rust,noplayground
-mod a_file; // Refers to `a_file.rs` or `a_file/mod.rs`.
+// Module in separate file: `a_file.rs` or `a_file/mod.rs` - see below.
+mod a_file;
 
+// Inline module.
 mod inline_module {
-  pub fn some_function() {
-    // ...
-  }
+    // The module's items are written within the brackets.
+    fn some_function() {
+      // ...
+    }
 }
 ```
 
-## Paths {#paths}
+Note that modules (and items within) are private by default. Review [[visibility | visibility rules]].
 
-Paths let you access items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. There are two main kinds of paths:
+## Split your Code into Several Files {#code-files}
 
-Relative paths start from the current module you are writing code in.
+Each crate has a crate root file{{hi:Crate root file}} (typically `main.rs` or `lib.rs` in the `src` folder). You may write all your code in that file, if it is very short. For non-trivial projects, you will write your code in multiple files organized into multiple folders.
+
+Write `mod module_name;` to declare a module that has its code in a separate file (note the semicolon at the end and the lack of `{ }`). The compiler then looks for specific files:
+
+- `module_name.rs`,
+- `module_name/mod.rs` (older style),
+
+and effectively insert the contents in the parent module, as if it were an inline module.
+
+You can nest (inline or external-file) modules as you wish:
+
+```rust,noplayground
+// Inline module.
+mod a {
+
+    // The module code is in `a/b.rs` or to `a/b/mod.rs`.
+    // `b.rs` or `mod.rs` can in turn contain modules.
+    mod b;
+
+    // Nested inline module.
+    mod c {
+    // ...
+    }
+}
+```
+
+The "older style" conveniently groups all files for a module and its submodules into one folder, but results in a proliferation of `mod.rs` files.
+
+Note the following:
+
+- Adding `.rs` files to your source code folder does not automatically incorporate the code in your crate. You must add explicit `mod` statements. Editors like 'VS Code' will not analyze your code or display hints while typing if you forget to do so!
+- The `mod` statement must be added to the _parent_ file, not to the file that contains the module itself.
+- Modules (and items within) are private by default. Use the `pub` keyword - see [[visibility | visibility rules]].
+- It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute](https://doc.rust-lang.org/reference/items/modules.html#the-path-attribute)⮳.
+
+## Access Items in your Modules via Paths {#paths}
+
+Paths let you access items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module) or a keyword like `super`, `self`, or `crate`:
+
+```rust,noplayground
+a_module                          // Path to a module.
+a_module::a_function              // Path to a function in a module.
+a_module::Struct1                 // Path to a struct in a module. Also works for enums, constants, etc.
+
+a_module::nested_module           // Path to a nested module.
+a_module::nested_module::b_function // Path to a function in a nested module.
+
+super                             // Path to the parent module.
+super::brother_module             // Path to another module declared in the parent module.
+
+crate::first_level::second_level  // Path to a nested module, starting from the crate root.
+```
+
+Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
 ```rust,noplayground
 /// Inline module declaration.
 mod a_module {
+    /// The inner function is marked public,
+    /// so that it can be accessed. See visibility rules.
     pub fn some_function() {
         // ...
     }
 }
 
 fn call_something_in_a_module() {
-  // Call `some_function` using a relative path:
-  a_module::some_function();
+    // Call `some_function` using a relative path:
+    a_module::some_function();
 
-  // Technically, relative paths starts with a `self` keyword,
-  // which refers to the current module, but it is very often implied:
-  // The above is equivalent to:
-  self::a_module::some_function();
+    // Relative paths can also start with a `self` keyword,
+    // which refers to the current module, but it is very often elided:
+    // The above is equivalent to:
+    self::a_module::some_function();
 }
 ```
 
@@ -71,57 +127,42 @@ fn in_parent_module() {
 Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
 
 ```rust,editable,noplayground
-// This absolute path refers to `some_function` located inside `submodule_b`,
-// which is inside `module_a`, starting from the crate root.
+// In the crate root:
+pub mod module_a {
+  pub mod submodule_b {
+    pub fn some_function() {
+      // ...
+    }
+  }
+}
+
+// Elsewhere in the code:
 crate::module_a::submodule_b::some_function();
 ```
 
-Absolute paths are rarely seen in practice but useful for disambiguation, when a module name is the same than an external dependency.
+Absolute paths are infrequently seen but useful for disambiguation, when a module name is the same than an external dependency.
 
-## Visibility Rules {#visibility-rules}
+Note that paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
 
-[![book-rust-by-example-visibility-rules][book-rust-by-example-visibility-rules-badge]][book-rust-by-example-visibility-rules]
-
-In Rust, all items ([functions][p-functions], methods, [structs][p-structs], [enums][p-enums], modules, and constants) are private to their module by default. Items can access other items in the _same_ module, even when private. Use the `pub` keyword before an item's definition (`pub fn`, `pub struct`, etc.) to make it accessible from outside its module.
-
-Items in a parent module can't use the private items{{hi:Private items}} inside child modules, but items in child modules can use the items in their ancestor modules.
-
-The following demonstrates the use of (inline) modules, paths to access items within modules, and visibility rules.
-
-```rust,editable
-{{#include ../../crates/code_structure/tests/modules/modules.rs:example}}
+```rust,noplayground
+a_module::Enum1::Variant1         // Path to a variant in an enum, itself in a module.
+TypeName::a_function()            // Path to an associated function within a type (e.g. a struct, an enum).
+<ImplType as Trait>::AssocType    // Path to an associated type within a trait.
+TypeName::CONSTANT_NAME           // Path to an associated constant within a type's `impl` block.
 ```
-
-## Split your Code among Several Files and Folders {#code-files}
-
-Each crate has a crate root file{{hi:Crate root file}} (typically `main.rs` or `lib.rs` in the `src` folder). You may write all your code in that file, if it is very short. For non-trivial projects, you will write your code in multiple files and/or folders.
-
-Write `mod module_name;` to declare a module that has its code in a separate file (note the semicolon at the end and the lack of `{ }`). The compiler then looks for specific files:
-
-- `module_name.rs`,
-- `module_name/mod.rs` (older style),
-
-and insert the contents in the parent module, as if it were an inline module.
-
-You can nest (inline and external-file) modules as you wish.
-
-Note the following:
-
-- Adding `.rs` files to your source code folder does not automatically incorporate the code in your crate. You must add an explicit `mod` statement.
-  - Editors like 'VS Code' will not analyze your code or display hints if you forget to do so!
-- The `mod` statement must be added to the _parent_ file, not to the file that contains the module itself.
 
 ## Related Topics {#skip}
 
 - [[package_layout | Package Layout]].
 
-## References {#skip1}
+## References {#skip}
 
+- [Defining Modules to Control Scope and Privacy (Rust book)](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)⮳.
+- [Paths for Referring to an Item in the Module Tree (Rust book)](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html)⮳.
 - A [clear explanation of Rust's module system][rust-module-system-website]⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO final review
 </div>

@@ -788,21 +788,21 @@
 
 ### Code Organization
 
-{{#include code_structure/code_organization.incl.md}}
+{{#include code_organization/code_organization.incl.md}}
 
 ### Dependencies
 
-{{#include code_structure/dependencies.incl.md}}
+{{#include code_organization/dependencies.incl.md}}
 
-{{#include code_structure/index.incl.md}}
+{{#include code_organization/index.incl.md}}
 
 ### Modules
 
-{{#include code_structure/modules.incl.md}}
+{{#include code_organization/modules.incl.md}}
 
 ### Use Keyword
 
-{{#include code_structure/use_keyword.incl.md}}
+{{#include code_organization/use_keyword.incl.md}}
 
 ## Contributing
 

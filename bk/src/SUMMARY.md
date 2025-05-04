@@ -4,11 +4,12 @@
 
 ---
 
-- [Code Structure](code_structure/index.md)
-  - [Modules and Paths](code_structure/modules.md)
-  - [`use` Keyword](code_structure/use_keyword.md)
-  - [Dependencies](code_structure/dependencies.md)
-  - [Code Organization](code_structure/code_organization.md)
+- [Code Organization](code_organization/index.md)
+  - [Modules and Paths](code_organization/modules.md)
+  - [Visibility](code_organization/visibility.md)
+  - [`use` Keyword](code_organization/use_keyword.md)
+  - [Dependencies](code_organization/dependencies.md)
+  - [Code Organization by Project Type and Size](code_organization/code_organization.md)
 
 ---
 

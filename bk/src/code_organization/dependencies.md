@@ -2,14 +2,16 @@
 
 {{#include dependencies.incl.md}}
 
-## Use External Crates (Dependencies) in your Code {#dependencies}
+## Use Items from External Crates (Dependencies) in your Code {#dependencies}
 
-To use a (public) item (`struct`s, functions, etc.) of an external crate, first make sure to include said external crate as a dependency in your crate's `Cargo.toml` file, for example:
+To use a (public) item (structs, enums, traits, functions, etc.) of an external crate, first make sure to include the external crate as a dependency in your crate's `Cargo.toml` file, for example:
 
 ```toml
 [dependencies]
 anyhow = "1.0.95"
 ```
+
+The name of the external crate is followed by `=` and a semantic version specifier. See the [[cargo | Cargo]] chapters for details.
 
 You can then refer to its items using a path that starts with the external crate's name:
 
@@ -24,9 +26,7 @@ The path may include one or more modules as needed e.g., `<crate_name>::<module_
 
 You may start the path with `::` followed by the name of the crate, if a crate name is the same than a module in your crate.
 
-## Bring Items from External Crates into Scope with the `use` Keyword {#use-keyword-for-dependencies}
-
-Once you add an external crate as a dependency, you will often bring items from external crates into scope with the `use` keyword:
+Once you add an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_keyword | `use` Keyword]] chapter for details.
 
 ```rust,noplayground
 // Bring the following items into scope:
@@ -34,39 +34,20 @@ use anyhow::Result; // A type alias.
 use anyhow::anyhow; // The `anyhow!` macro.
 use anyhow::Error;  // A struct.
 
-// Refer to `Result` without having to write its full path:
+// Refer to `Result` without having to write its full path every time:
 fn main() -> Result<()> {
   // ...
   Ok(())
 }
 ```
 
-As with paths to modules within your crate, you may use globs, define aliases, and combine multiple `use` statements:
+## References {#skip}
 
-```rust,noplayground
-// Use a glob (the `*`) to bring all public objects within a module (here
-// `default`) in scope. Use sparingly.
-use std::default::*;
-// Use `as` to define aliases, for example in case of name conflict.
-use std::io::Result as IoResult;
-// You can combine multiple `use` lines together with { }.
-use std::{cmp::Ordering, fmt};
-// The following is equivalent to `use std::io; use std::io::Write;`.
-use std::io::{self, Write};
-
-fn main() -> IoResult { // Use the alias.
-
-    // Use `std::default::Default` without writing down the whole path,
-    // because we imported all public objects from the `default` module.
-    let _i: i8 = Default::default();
-
-    Ok::<(), io::Error>(()) // Use the `io` module imported above.
-}
-```
+- [Using a Crate to Get More Functionality](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#using-a-crate-to-get-more-functionality)⮳.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-TODO review
+TODO review against dev tools > cargo chapters.
 </div>
