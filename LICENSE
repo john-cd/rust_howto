@@ -1,3 +1,37 @@
-Copyright (C) 2024 and later John CD <https://github.com/john-cd> - All Rights Reserved
+# Legal
 
-THE BOOK, CODE, AND SOFTWARE ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, EDITORS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This book is written and edited by [John CD][john-cd]⮳.
+
+Copyright (C) 2024, 2025, and later John CD <https://github.com/john-cd> - All Rights Reserved.
+
+## No Warranty Whatsoever
+
+THE BOOK, CODE, SOFTWARE, AND OTHER CONTENTS OF THIS REPOSITORY (COLLECTIVELY, THE MATERIALS) ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, EDITORS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THEIR USE OR OTHER DEALINGS IN THE MATERIALS.
+
+## Code Examples and Software
+
+All code examples included in or linked from the book, under the `bk/crates` and `xmpl` folders, are licensed under the Creative Commons Zero v1.0 Universal License [LICENSE-CC0][CC0]⮳. All other software (e.g., under the `tools`, `mdbook-scrub`, `publish` folders) is licensed under either of the Apache License Version 2.0 or the MIT license at your option, per the Rust community custom.
+
+Refer to the LICENSE files in their respective folders.
+
+## Contributions
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this repository by you, as defined in the license, shall be licensed as above, without any additional terms or conditions.
+
+## Acknowledgments and Thanks
+
+This project is not affiliated with the [Rust Foundation][rust-foundation-website]⮳. The copyrights, registered trademarks and uses trademarks of the Rust Foundation are hereby acknowledged.
+
+This project incorporates most of the [Rust Cookbook][rust-cookbook-website]⮳, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook-contributors-website]⮳.
+
+## Code of Conduct
+
+This project operates under a [Code of Conduct][code-of-conduct], in the spirit of the [Rust Code of Conduct][rust-code-of-conduct].
+
+[CC0]: https://creativecommons.org/publicdomain/zero/1.0/
+[code-of-conduct]: https://github.com/john-cd/rust_howto/blob/main/CODE_OF_CONDUCT.md
+[john-cd]: https://github.com/john-cd
+[rust-foundation-website]: https://foundation.rust-lang.org
+[rust-code-of-conduct]: https://rustfoundation.org/policy/code-of-conduct
+[rust-cookbook-website]: https://rust-lang-nursery.github.io/rust-cookbook
+[rust-cookbook-contributors-website]: https://github.com/rust-lang-nursery/rust-cookbook/graphs/contributors
