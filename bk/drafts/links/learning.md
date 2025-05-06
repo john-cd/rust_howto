@@ -46,7 +46,7 @@
 - [Learn to become a Rust developer](https://roadmap.sh/rust)
 - [Learning Resources - Blessed.rs](https://blessed.rs/learning-resources)
 
-## Courses
+## Courses {#courses}
 
 - [rust-course-fei: Rust course](https://github.com/Kobzol/rust-course-fei/tree/main)
 - [Rust Development Classes](https://rust-classes.com/preface)
