@@ -14,7 +14,7 @@ Here are examples of functions with or without parameters or return value:
 {{#include ../../crates/language/tests/functions/functions.rs:example}}
 ```
 
-## Generic Functions {#generic-functions}
+## Write a Generic Function {#write-generic-functions}
 
 [![Rust by example - generic functions][book-rust-by-example-generic_functions-badge]][book-rust-by-example-generic_functions]
 

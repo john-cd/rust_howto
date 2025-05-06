@@ -1,4 +1,5 @@
 ||
 |--------|
-| [Closure with Type Annotations][ex-language-closure-with-type-annotations] |
-| [Closures as Input Parameters][ex-language-closures-as-input-parameters] |
+| [Force Closure Capture by Value][ex-language-move-closures] |
+| [Annotate Closure Types][ex-language-closure-with-type-annotations] |
+| [Use Closures as Function Arguments][ex-language-closures-as-input-parameters] |
