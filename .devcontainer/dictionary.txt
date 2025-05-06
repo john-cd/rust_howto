@@ -2880,3 +2880,8 @@ Sylvain
 ident
 Dataflow
 Graphs
+TypeName
+ImplType
+AssocType
+SuperCommonType
+CommonType

@@ -38,7 +38,7 @@ On the other hand, when bringing in [structs][p-structs], [enums][p-enums], and 
 {{#include ../../crates/code_organization/tests/use/use3.rs:example}}
 ```
 
-Note: Rust doesn’t allow importing two items with the same name into one scope. In that case, bring their modules into scope or write their full paths.
+Note: Rust doesn't allow importing two items with the same name into one scope. In that case, bring their modules into scope or write their full paths.
 
 ## Reexport Items with `pub use` {#pub-use}
 
