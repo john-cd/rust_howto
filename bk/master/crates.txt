@@ -26,6 +26,7 @@ async_channel
 async_std
 async_stream
 async_trait
+async_zip
 await-tree
 aws-config
 aws-sdk-s3
@@ -188,6 +189,7 @@ floem
 flume
 flurry
 flutter_rust_bridge
+fnv
 form-urlencoded
 form_urlencoded
 frunk
@@ -283,6 +285,7 @@ meilisearch-sdk
 memchr
 memmap2
 miette
+mimalloc
 mime
 minifb
 mio
@@ -347,6 +350,7 @@ postscript
 priority-queue
 proc-macro2
 proc_macro2
+proptest
 prost
 prost-build
 prost-types
@@ -376,6 +380,7 @@ rmp-serde
 rocksdb
 roogle
 roxmltree
+rpds
 rsa
 ruff
 rug
@@ -395,6 +400,7 @@ ryu
 salsa
 same-file
 same_file
+scopeguard
 scrypt
 sea-orm
 sea_orm
@@ -431,6 +437,7 @@ stakker
 starship
 std
 strsim
+strum
 subtle
 surrealdb
 swc_common
@@ -450,6 +457,8 @@ textwrap
 thiserror
 threadpool
 tiberius
+tikv-jemalloc-ctl
+tikv-jemallocator
 time
 tinysearch
 tinytemplate
@@ -470,6 +479,7 @@ tower
 tower-http
 tower_http
 tracing
+tracing-appender
 tracing-opentelemetry
 tracing-subscriber
 tracing_subscriber
@@ -509,3 +519,4 @@ yew
 zenoh
 zerocopy
 zeroize
+zip
