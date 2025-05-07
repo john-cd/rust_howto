@@ -34,6 +34,9 @@ uniffi = "0.29"
 ## General
 serde = { version = "1.0.217", features = ["derive"] }
 
+[target.'cfg(target_os = "linux")'.dependencies]
+pyo3 = "0.24.1" # was pinned to 0.21 to avoid conflict with `polars`
+
 [build-dependencies]
 bindgen = "0.71.1"
 cbindgen = "0.28.0"
@@ -44,4 +47,5 @@ uniffi = "0.29"
 [features]
 # default = []
 # objc2 = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
+# pyo3 = ["dep:pyo3"]
 # rutie = ["dep:rutie"]

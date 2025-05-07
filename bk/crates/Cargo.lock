@@ -1046,9 +1046,6 @@ checksum = "d301b3b94cb4b2f23d7917810addbbaff90738e0ca2be692bd027e70d7e0330c"
 [[package]]
 name = "api_bindings"
 version = "0.1.2"
-dependencies = [
- "pyo3",
-]
 
 [[package]]
 name = "approx"
@@ -8787,6 +8784,7 @@ dependencies = [
  "mlua",
  "napi",
  "neon",
+ "pyo3",
  "rustler",
  "serde 1.0.219",
  "uniffi",
